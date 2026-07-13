@@ -1,0 +1,61 @@
+{
+  "mode": "applied",
+  "envId": "youshengenglish-6glk12rd6c6e719b",
+  "uploadedCount": 81,
+  "reusedSameContentCount": 0,
+  "verifiedCount": 81,
+  "sampleHashVerifiedCount": 7,
+  "oldReferenceUnchanged": true,
+  "transcriptUrl": "https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_transcripts/A2/pete-the-cat/bundle-sentence-v1.json",
+  "hashVerify": [
+    {
+      "cloudPath": "A2/Pete the Cat/Audio/001-pete-the-cat-cavecat-pete-f07c5df745.mp3",
+      "status": 200,
+      "localSha1": "f07c5df7459603d54f5d14561a40a79b6ac1a3e0",
+      "remoteSha1": "f07c5df7459603d54f5d14561a40a79b6ac1a3e0",
+      "matched": true
+    },
+    {
+      "cloudPath": "A2/Pete the Cat/Covers/001-pete-the-cat-cavecat-pete-a8bb13a26d.jpg",
+      "status": 200,
+      "localSha1": "a8bb13a26d7ee844b46a64f1c8f1a63334d3cf73",
+      "remoteSha1": "a8bb13a26d7ee844b46a64f1c8f1a63334d3cf73",
+      "matched": true
+    },
+    {
+      "cloudPath": "A2/Pete the Cat/Audio/021-pete-the-cat-and-the-mysterious-smell-bd2598f25d.mp3",
+      "status": 200,
+      "localSha1": "bd2598f25d170b169998b0f598d517747cbf50a4",
+      "remoteSha1": "bd2598f25d170b169998b0f598d517747cbf50a4",
+      "matched": true
+    },
+    {
+      "cloudPath": "A2/Pete the Cat/Covers/021-pete-the-cat-and-the-mysterious-smell-ea5cb4ba9f.jpg",
+      "status": 200,
+      "localSha1": "ea5cb4ba9f68c2e4eec44b1c50f12a9b8be7a95b",
+      "remoteSha1": "ea5cb4ba9f68c2e4eec44b1c50f12a9b8be7a95b",
+      "matched": true
+    },
+    {
+      "cloudPath": "A2/Pete the Cat/Audio/040-pete-the-cat-s-wacky-taco-tuesday-dfe9e1262c.mp3",
+      "status": 200,
+      "localSha1": "dfe9e1262c7b158347a07bb6bdfd5a5ab44fe6f4",
+      "remoteSha1": "dfe9e1262c7b158347a07bb6bdfd5a5ab44fe6f4",
+      "matched": true
+    },
+    {
+      "cloudPath": "A2/Pete the Cat/Covers/040-pete-the-cat-s-wacky-taco-tuesday-f244fe5ff1.jpg",
+      "status": 200,
+      "localSha1": "f244fe5ff1bf9ea06b7c3cceb92c102fd534b339",
+      "remoteSha1": "f244fe5ff1bf9ea06b7c3cceb92c102fd534b339",
+      "matched": true
+    },
+    {
+      "cloudPath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json",
+      "status": 200,
+      "localSha1": "37520ea6922272f70f0ffbb82a2c82cb6883c2ed",
+      "remoteSha1": "37520ea6922272f70f0ffbb82a2c82cb6883c2ed",
+      "matched": true
+    }
+  ]
+}

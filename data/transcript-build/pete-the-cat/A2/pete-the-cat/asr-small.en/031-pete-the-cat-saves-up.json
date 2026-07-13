@@ -1,0 +1,4242 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 41.483,
+  "text": "Welcome to the wonderful world of reading. In this I Can Read story, Pete the Cat saves up. You will be going on a fun adventure. Are you ready to read? Here we go! How to Read a Sharkbot Pete the Cat loves the toy store. There are so many groovy things, like the new robot shark toy. It's the coolest! Pete really wants a sharkbot, but Pete didn't bring any money. At home, Pete checks his bank. It's almost empty. He does not have enough money to buy a sharkbot. Pete thinks of ideas for how to earn money so he can buy a sharkbot. Pete looks out the window. It's snowing! He knows what to do. Pete shovels snow for his neighbors. Great job! Says Grumpy Toad's dad. He pays Pete for his work. Thank you, Pete says. Pete thinks about buying hot cocoa, but he saves his money. He will make hot cocoa at home. Not enough to buy a sharkbot. That's okay. He puts the money in his bank. What can I do next, he thinks? Then the snow melts. Mom offers to pay Pete if he helps her plant flowers. You did a great job, Pete! Mom says. Mom pays Pete for his work. Pete thinks about buying a ticket for the movies, but Pete saves his money. He will watch a movie at home. Pete counts his money. Getting closer, Pete says. He puts the money in his bank. It's very hot outside. Pete knows what to do. He sets up a lemonade stand. Everyone shows up to buy a cup of cold lemonade. Yummy! Says Gus. Pete hears the ice cream truck. He thinks about buying an ice pop. But Pete saves his money. He will eat one from the freezer. Pete counts his money. Almost there, Pete says. He puts his money in the bank. When summer ends, Pete has saved almost enough to buy a sharkbot. He's so close! He rakes leaves for Grandma. Awesome! Grandma says and pays Pete for his work. Pete thinks about buying a spooky mask for Halloween, but Pete saves his money. He makes his own spooky mask. Pete puts his money in his bank. The bank looks full! Wow! Pete says. Pete counts the money in his bank. He has saved enough money to buy a sharkbot. Yay! Pete cheers. Mom, Dad and Bob cheer too. Great job saving up, they say. The next day, Pete brings his money to the toy store. Pete hands his money to the clerk. The clerk hands Pete his new sharkbot toy. Pete loves his sharkbot. But now, Pete really wants a rocket racer for his sharkbot to ride. Pete does not have enough money for the rocket racer. But he knows what to do. Saving up is cool. Pete is a registered trademark of Pete the Cat LLC. Production copyright 2023 by Harper Collins Publishers. All rights reserved.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Welcome to the wonderful world of reading.",
+      "startMs": 1060,
+      "endMs": 4720,
+      "avgLogprob": -0.196616,
+      "noSpeechProb": 0.196024,
+      "compressionRatio": 1.261538,
+      "words": [
+        {
+          "index": 1,
+          "text": "Welcome",
+          "startMs": 1060,
+          "endMs": 1860,
+          "probability": 0.611049
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 1860,
+          "endMs": 2400,
+          "probability": 0.991706
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 2400,
+          "endMs": 2560,
+          "probability": 0.993298
+        },
+        {
+          "index": 4,
+          "text": "wonderful",
+          "startMs": 2560,
+          "endMs": 3180,
+          "probability": 0.955555
+        },
+        {
+          "index": 5,
+          "text": "world",
+          "startMs": 3180,
+          "endMs": 3700,
+          "probability": 0.975484
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 3700,
+          "endMs": 4100,
+          "probability": 0.993904
+        },
+        {
+          "index": 7,
+          "text": "reading.",
+          "startMs": 4100,
+          "endMs": 4720,
+          "probability": 0.960454
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "In this I Can Read story, Pete the Cat saves up.",
+      "startMs": 5960,
+      "endMs": 10780,
+      "avgLogprob": -0.196616,
+      "noSpeechProb": 0.196024,
+      "compressionRatio": 1.261538,
+      "words": [
+        {
+          "index": 1,
+          "text": "In",
+          "startMs": 5960,
+          "endMs": 5980,
+          "probability": 0.984462
+        },
+        {
+          "index": 2,
+          "text": "this",
+          "startMs": 5980,
+          "endMs": 6360,
+          "probability": 0.998292
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 6360,
+          "endMs": 6980,
+          "probability": 0.447087
+        },
+        {
+          "index": 4,
+          "text": "Can",
+          "startMs": 6980,
+          "endMs": 7260,
+          "probability": 0.666384
+        },
+        {
+          "index": 5,
+          "text": "Read",
+          "startMs": 7260,
+          "endMs": 7540,
+          "probability": 0.995074
+        },
+        {
+          "index": 6,
+          "text": "story,",
+          "startMs": 7540,
+          "endMs": 8200,
+          "probability": 0.640577
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 8980,
+          "endMs": 9040,
+          "probability": 0.947505
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 9040,
+          "endMs": 9380,
+          "probability": 0.971228
+        },
+        {
+          "index": 9,
+          "text": "Cat",
+          "startMs": 9380,
+          "endMs": 9720,
+          "probability": 0.938083
+        },
+        {
+          "index": 10,
+          "text": "saves",
+          "startMs": 9720,
+          "endMs": 10220,
+          "probability": 0.849214
+        },
+        {
+          "index": 11,
+          "text": "up.",
+          "startMs": 10220,
+          "endMs": 10780,
+          "probability": 0.996991
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "You will be going on a fun adventure.",
+      "startMs": 11540,
+      "endMs": 14240,
+      "avgLogprob": -0.196616,
+      "noSpeechProb": 0.196024,
+      "compressionRatio": 1.261538,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 11540,
+          "endMs": 11800,
+          "probability": 0.995189
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 11800,
+          "endMs": 12000,
+          "probability": 0.995638
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 12000,
+          "endMs": 12200,
+          "probability": 0.997483
+        },
+        {
+          "index": 4,
+          "text": "going",
+          "startMs": 12200,
+          "endMs": 12580,
+          "probability": 0.997437
+        },
+        {
+          "index": 5,
+          "text": "on",
+          "startMs": 12580,
+          "endMs": 12860,
+          "probability": 0.998695
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 12860,
+          "endMs": 13100,
+          "probability": 0.997437
+        },
+        {
+          "index": 7,
+          "text": "fun",
+          "startMs": 13100,
+          "endMs": 13500,
+          "probability": 0.998469
+        },
+        {
+          "index": 8,
+          "text": "adventure.",
+          "startMs": 13500,
+          "endMs": 14240,
+          "probability": 0.997156
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Are you ready to read? Here we go!",
+      "startMs": 15240,
+      "endMs": 19120,
+      "avgLogprob": -0.196616,
+      "noSpeechProb": 0.196024,
+      "compressionRatio": 1.261538,
+      "words": [
+        {
+          "index": 1,
+          "text": "Are",
+          "startMs": 15240,
+          "endMs": 15480,
+          "probability": 0.997157
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 15480,
+          "endMs": 15760,
+          "probability": 0.99913
+        },
+        {
+          "index": 3,
+          "text": "ready",
+          "startMs": 15760,
+          "endMs": 16060,
+          "probability": 0.998563
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 16060,
+          "endMs": 16380,
+          "probability": 0.999217
+        },
+        {
+          "index": 5,
+          "text": "read?",
+          "startMs": 16380,
+          "endMs": 16800,
+          "probability": 0.998897
+        },
+        {
+          "index": 6,
+          "text": "Here",
+          "startMs": 17580,
+          "endMs": 17980,
+          "probability": 0.993955
+        },
+        {
+          "index": 7,
+          "text": "we",
+          "startMs": 17980,
+          "endMs": 18340,
+          "probability": 0.997267
+        },
+        {
+          "index": 8,
+          "text": "go!",
+          "startMs": 18340,
+          "endMs": 19120,
+          "probability": 0.998854
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "How to Read a Sharkbot",
+      "startMs": 27540,
+      "endMs": 28460,
+      "avgLogprob": -0.330804,
+      "noSpeechProb": 0.02959,
+      "compressionRatio": 1.304688,
+      "words": [
+        {
+          "index": 1,
+          "text": "How",
+          "startMs": 27540,
+          "endMs": 28460,
+          "probability": 1.8e-05
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 28460,
+          "endMs": 28460,
+          "probability": 0.170984
+        },
+        {
+          "index": 3,
+          "text": "Read",
+          "startMs": 28460,
+          "endMs": 28460,
+          "probability": 0.000362
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 28460,
+          "endMs": 28460,
+          "probability": 0.284356
+        },
+        {
+          "index": 5,
+          "text": "Sharkbot",
+          "startMs": 28460,
+          "endMs": 28460,
+          "probability": 0.168012
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Pete the Cat loves the toy store.",
+      "startMs": 28460,
+      "endMs": 31140,
+      "avgLogprob": -0.330804,
+      "noSpeechProb": 0.02959,
+      "compressionRatio": 1.304688,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 28460,
+          "endMs": 28460,
+          "probability": 0.00128
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 28460,
+          "endMs": 28740,
+          "probability": 0.918882
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 28740,
+          "endMs": 29160,
+          "probability": 0.746815
+        },
+        {
+          "index": 4,
+          "text": "loves",
+          "startMs": 29160,
+          "endMs": 29780,
+          "probability": 0.899265
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 29780,
+          "endMs": 30220,
+          "probability": 0.974575
+        },
+        {
+          "index": 6,
+          "text": "toy",
+          "startMs": 30220,
+          "endMs": 30580,
+          "probability": 0.965938
+        },
+        {
+          "index": 7,
+          "text": "store.",
+          "startMs": 30580,
+          "endMs": 31140,
+          "probability": 0.993133
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "There are so many groovy things, like the new robot shark toy.",
+      "startMs": 32140,
+      "endMs": 38440,
+      "avgLogprob": -0.330804,
+      "noSpeechProb": 0.02959,
+      "compressionRatio": 1.304688,
+      "words": [
+        {
+          "index": 1,
+          "text": "There",
+          "startMs": 32140,
+          "endMs": 32240,
+          "probability": 0.99089
+        },
+        {
+          "index": 2,
+          "text": "are",
+          "startMs": 32240,
+          "endMs": 32520,
+          "probability": 0.990979
+        },
+        {
+          "index": 3,
+          "text": "so",
+          "startMs": 32520,
+          "endMs": 32980,
+          "probability": 0.985229
+        },
+        {
+          "index": 4,
+          "text": "many",
+          "startMs": 32980,
+          "endMs": 33580,
+          "probability": 0.997506
+        },
+        {
+          "index": 5,
+          "text": "groovy",
+          "startMs": 33580,
+          "endMs": 34680,
+          "probability": 0.975256
+        },
+        {
+          "index": 6,
+          "text": "things,",
+          "startMs": 34680,
+          "endMs": 35420,
+          "probability": 0.995399
+        },
+        {
+          "index": 7,
+          "text": "like",
+          "startMs": 35840,
+          "endMs": 36180,
+          "probability": 0.972154
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 36180,
+          "endMs": 36460,
+          "probability": 0.98879
+        },
+        {
+          "index": 9,
+          "text": "new",
+          "startMs": 36460,
+          "endMs": 36880,
+          "probability": 0.976064
+        },
+        {
+          "index": 10,
+          "text": "robot",
+          "startMs": 36880,
+          "endMs": 37520,
+          "probability": 0.82473
+        },
+        {
+          "index": 11,
+          "text": "shark",
+          "startMs": 37520,
+          "endMs": 37980,
+          "probability": 0.957577
+        },
+        {
+          "index": 12,
+          "text": "toy.",
+          "startMs": 37980,
+          "endMs": 38440,
+          "probability": 0.998173
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "It's the coolest!",
+      "startMs": 39160,
+      "endMs": 40440,
+      "avgLogprob": -0.330804,
+      "noSpeechProb": 0.02959,
+      "compressionRatio": 1.304688,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 39160,
+          "endMs": 39440,
+          "probability": 0.975196
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 39440,
+          "endMs": 39680,
+          "probability": 0.99827
+        },
+        {
+          "index": 3,
+          "text": "coolest!",
+          "startMs": 39680,
+          "endMs": 40440,
+          "probability": 0.995957
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Pete really wants a sharkbot,",
+      "startMs": 42780,
+      "endMs": 45300,
+      "avgLogprob": -0.330804,
+      "noSpeechProb": 0.02959,
+      "compressionRatio": 1.304688,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 42780,
+          "endMs": 43160,
+          "probability": 0.9858
+        },
+        {
+          "index": 2,
+          "text": "really",
+          "startMs": 43160,
+          "endMs": 43780,
+          "probability": 0.993996
+        },
+        {
+          "index": 3,
+          "text": "wants",
+          "startMs": 43780,
+          "endMs": 44240,
+          "probability": 0.992207
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 44240,
+          "endMs": 44640,
+          "probability": 0.990411
+        },
+        {
+          "index": 5,
+          "text": "sharkbot,",
+          "startMs": 44640,
+          "endMs": 45300,
+          "probability": 0.851789
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "but Pete didn't bring any money.",
+      "startMs": 45300,
+      "endMs": 48500,
+      "avgLogprob": -0.081701,
+      "noSpeechProb": 0.0334,
+      "compressionRatio": 1.503311,
+      "words": [
+        {
+          "index": 1,
+          "text": "but",
+          "startMs": 45300,
+          "endMs": 46500,
+          "probability": 0.041518
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 46500,
+          "endMs": 46940,
+          "probability": 0.946985
+        },
+        {
+          "index": 3,
+          "text": "didn't",
+          "startMs": 46940,
+          "endMs": 47560,
+          "probability": 0.996419
+        },
+        {
+          "index": 4,
+          "text": "bring",
+          "startMs": 47560,
+          "endMs": 47760,
+          "probability": 0.996119
+        },
+        {
+          "index": 5,
+          "text": "any",
+          "startMs": 47760,
+          "endMs": 48040,
+          "probability": 0.994121
+        },
+        {
+          "index": 6,
+          "text": "money.",
+          "startMs": 48040,
+          "endMs": 48500,
+          "probability": 0.998726
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "At home, Pete checks his bank.",
+      "startMs": 50560,
+      "endMs": 53280,
+      "avgLogprob": -0.081701,
+      "noSpeechProb": 0.0334,
+      "compressionRatio": 1.503311,
+      "words": [
+        {
+          "index": 1,
+          "text": "At",
+          "startMs": 50560,
+          "endMs": 50940,
+          "probability": 0.992048
+        },
+        {
+          "index": 2,
+          "text": "home,",
+          "startMs": 50940,
+          "endMs": 51460,
+          "probability": 0.997697
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 52000,
+          "endMs": 52180,
+          "probability": 0.997133
+        },
+        {
+          "index": 4,
+          "text": "checks",
+          "startMs": 52180,
+          "endMs": 52560,
+          "probability": 0.998172
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 52560,
+          "endMs": 52860,
+          "probability": 0.997601
+        },
+        {
+          "index": 6,
+          "text": "bank.",
+          "startMs": 52860,
+          "endMs": 53280,
+          "probability": 0.997766
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "It's almost empty.",
+      "startMs": 54060,
+      "endMs": 55560,
+      "avgLogprob": -0.081701,
+      "noSpeechProb": 0.0334,
+      "compressionRatio": 1.503311,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 54060,
+          "endMs": 54340,
+          "probability": 0.94233
+        },
+        {
+          "index": 2,
+          "text": "almost",
+          "startMs": 54340,
+          "endMs": 54740,
+          "probability": 0.997943
+        },
+        {
+          "index": 3,
+          "text": "empty.",
+          "startMs": 54740,
+          "endMs": 55560,
+          "probability": 0.998627
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "He does not have enough money to buy a sharkbot.",
+      "startMs": 56700,
+      "endMs": 60560,
+      "avgLogprob": -0.081701,
+      "noSpeechProb": 0.0334,
+      "compressionRatio": 1.503311,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 56700,
+          "endMs": 57000,
+          "probability": 0.869449
+        },
+        {
+          "index": 2,
+          "text": "does",
+          "startMs": 57000,
+          "endMs": 57220,
+          "probability": 0.932626
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 57220,
+          "endMs": 57640,
+          "probability": 0.997411
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 57640,
+          "endMs": 58000,
+          "probability": 0.997947
+        },
+        {
+          "index": 5,
+          "text": "enough",
+          "startMs": 58000,
+          "endMs": 58380,
+          "probability": 0.994853
+        },
+        {
+          "index": 6,
+          "text": "money",
+          "startMs": 58380,
+          "endMs": 58880,
+          "probability": 0.997966
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 58880,
+          "endMs": 59180,
+          "probability": 0.997276
+        },
+        {
+          "index": 8,
+          "text": "buy",
+          "startMs": 59180,
+          "endMs": 59560,
+          "probability": 0.998462
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 59560,
+          "endMs": 60180,
+          "probability": 0.982825
+        },
+        {
+          "index": 10,
+          "text": "sharkbot.",
+          "startMs": 60180,
+          "endMs": 60560,
+          "probability": 0.645412
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Pete thinks of ideas for how to earn money so he can buy a sharkbot.",
+      "startMs": 63740,
+      "endMs": 69080,
+      "avgLogprob": -0.081701,
+      "noSpeechProb": 0.0334,
+      "compressionRatio": 1.503311,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 63740,
+          "endMs": 64000,
+          "probability": 0.981126
+        },
+        {
+          "index": 2,
+          "text": "thinks",
+          "startMs": 64000,
+          "endMs": 64520,
+          "probability": 0.997109
+        },
+        {
+          "index": 3,
+          "text": "of",
+          "startMs": 64520,
+          "endMs": 64880,
+          "probability": 0.996752
+        },
+        {
+          "index": 4,
+          "text": "ideas",
+          "startMs": 64880,
+          "endMs": 65500,
+          "probability": 0.997516
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 65500,
+          "endMs": 66180,
+          "probability": 0.919411
+        },
+        {
+          "index": 6,
+          "text": "how",
+          "startMs": 66180,
+          "endMs": 66400,
+          "probability": 0.998359
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 66400,
+          "endMs": 66600,
+          "probability": 0.997178
+        },
+        {
+          "index": 8,
+          "text": "earn",
+          "startMs": 66600,
+          "endMs": 66900,
+          "probability": 0.998766
+        },
+        {
+          "index": 9,
+          "text": "money",
+          "startMs": 66900,
+          "endMs": 67280,
+          "probability": 0.997102
+        },
+        {
+          "index": 10,
+          "text": "so",
+          "startMs": 67280,
+          "endMs": 67580,
+          "probability": 0.906022
+        },
+        {
+          "index": 11,
+          "text": "he",
+          "startMs": 67580,
+          "endMs": 67820,
+          "probability": 0.988788
+        },
+        {
+          "index": 12,
+          "text": "can",
+          "startMs": 67820,
+          "endMs": 67980,
+          "probability": 0.99828
+        },
+        {
+          "index": 13,
+          "text": "buy",
+          "startMs": 67980,
+          "endMs": 68220,
+          "probability": 0.993563
+        },
+        {
+          "index": 14,
+          "text": "a",
+          "startMs": 68220,
+          "endMs": 68440,
+          "probability": 0.99174
+        },
+        {
+          "index": 15,
+          "text": "sharkbot.",
+          "startMs": 68440,
+          "endMs": 69080,
+          "probability": 0.990834
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Pete looks out the window.",
+      "startMs": 71200,
+      "endMs": 72820,
+      "avgLogprob": -0.081701,
+      "noSpeechProb": 0.0334,
+      "compressionRatio": 1.503311,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 71200,
+          "endMs": 71540,
+          "probability": 0.994953
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 71540,
+          "endMs": 71860,
+          "probability": 0.99695
+        },
+        {
+          "index": 3,
+          "text": "out",
+          "startMs": 71860,
+          "endMs": 72140,
+          "probability": 0.996458
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 72140,
+          "endMs": 72380,
+          "probability": 0.990249
+        },
+        {
+          "index": 5,
+          "text": "window.",
+          "startMs": 72380,
+          "endMs": 72820,
+          "probability": 0.999606
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "It's snowing! He knows what to do.",
+      "startMs": 73820,
+      "endMs": 77880,
+      "avgLogprob": -0.147349,
+      "noSpeechProb": 0.019719,
+      "compressionRatio": 1.335664,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 73820,
+          "endMs": 74280,
+          "probability": 0.639616
+        },
+        {
+          "index": 2,
+          "text": "snowing!",
+          "startMs": 74280,
+          "endMs": 75080,
+          "probability": 0.991025
+        },
+        {
+          "index": 3,
+          "text": "He",
+          "startMs": 75800,
+          "endMs": 76120,
+          "probability": 0.96074
+        },
+        {
+          "index": 4,
+          "text": "knows",
+          "startMs": 76120,
+          "endMs": 76420,
+          "probability": 0.992034
+        },
+        {
+          "index": 5,
+          "text": "what",
+          "startMs": 76420,
+          "endMs": 76780,
+          "probability": 0.997113
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 76780,
+          "endMs": 77080,
+          "probability": 0.997246
+        },
+        {
+          "index": 7,
+          "text": "do.",
+          "startMs": 77080,
+          "endMs": 77880,
+          "probability": 0.999048
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Pete shovels snow for his neighbors.",
+      "startMs": 79860,
+      "endMs": 82000,
+      "avgLogprob": -0.147349,
+      "noSpeechProb": 0.019719,
+      "compressionRatio": 1.335664,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 79860,
+          "endMs": 79880,
+          "probability": 0.974974
+        },
+        {
+          "index": 2,
+          "text": "shovels",
+          "startMs": 79880,
+          "endMs": 80640,
+          "probability": 0.994747
+        },
+        {
+          "index": 3,
+          "text": "snow",
+          "startMs": 80640,
+          "endMs": 80980,
+          "probability": 0.997322
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 80980,
+          "endMs": 81340,
+          "probability": 0.997286
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 81340,
+          "endMs": 81600,
+          "probability": 0.999368
+        },
+        {
+          "index": 6,
+          "text": "neighbors.",
+          "startMs": 81600,
+          "endMs": 82000,
+          "probability": 0.746139
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Great job! Says Grumpy Toad's dad.",
+      "startMs": 82980,
+      "endMs": 86220,
+      "avgLogprob": -0.147349,
+      "noSpeechProb": 0.019719,
+      "compressionRatio": 1.335664,
+      "words": [
+        {
+          "index": 1,
+          "text": "Great",
+          "startMs": 82980,
+          "endMs": 83300,
+          "probability": 0.530044
+        },
+        {
+          "index": 2,
+          "text": "job!",
+          "startMs": 83300,
+          "endMs": 83960,
+          "probability": 0.985178
+        },
+        {
+          "index": 3,
+          "text": "Says",
+          "startMs": 84760,
+          "endMs": 84900,
+          "probability": 0.469385
+        },
+        {
+          "index": 4,
+          "text": "Grumpy",
+          "startMs": 84900,
+          "endMs": 85400,
+          "probability": 0.90969
+        },
+        {
+          "index": 5,
+          "text": "Toad's",
+          "startMs": 85400,
+          "endMs": 85940,
+          "probability": 0.803773
+        },
+        {
+          "index": 6,
+          "text": "dad.",
+          "startMs": 85940,
+          "endMs": 86220,
+          "probability": 0.801736
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "He pays Pete for his work.",
+      "startMs": 86820,
+      "endMs": 88720,
+      "avgLogprob": -0.147349,
+      "noSpeechProb": 0.019719,
+      "compressionRatio": 1.335664,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 86820,
+          "endMs": 87000,
+          "probability": 0.988788
+        },
+        {
+          "index": 2,
+          "text": "pays",
+          "startMs": 87000,
+          "endMs": 87480,
+          "probability": 0.995727
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 87480,
+          "endMs": 87840,
+          "probability": 0.995457
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 87840,
+          "endMs": 88120,
+          "probability": 0.996978
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 88120,
+          "endMs": 88380,
+          "probability": 0.997387
+        },
+        {
+          "index": 6,
+          "text": "work.",
+          "startMs": 88380,
+          "endMs": 88720,
+          "probability": 0.999102
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Thank you, Pete says.",
+      "startMs": 89380,
+      "endMs": 91320,
+      "avgLogprob": -0.147349,
+      "noSpeechProb": 0.019719,
+      "compressionRatio": 1.335664,
+      "words": [
+        {
+          "index": 1,
+          "text": "Thank",
+          "startMs": 89380,
+          "endMs": 89660,
+          "probability": 0.814948
+        },
+        {
+          "index": 2,
+          "text": "you,",
+          "startMs": 89660,
+          "endMs": 90160,
+          "probability": 0.982446
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 90440,
+          "endMs": 90740,
+          "probability": 0.996078
+        },
+        {
+          "index": 4,
+          "text": "says.",
+          "startMs": 90740,
+          "endMs": 91320,
+          "probability": 0.98751
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Pete thinks about buying hot cocoa,",
+      "startMs": 95640,
+      "endMs": 99380,
+      "avgLogprob": -0.147349,
+      "noSpeechProb": 0.019719,
+      "compressionRatio": 1.335664,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 95640,
+          "endMs": 96560,
+          "probability": 0.932962
+        },
+        {
+          "index": 2,
+          "text": "thinks",
+          "startMs": 96560,
+          "endMs": 97060,
+          "probability": 0.986239
+        },
+        {
+          "index": 3,
+          "text": "about",
+          "startMs": 97060,
+          "endMs": 97500,
+          "probability": 0.996236
+        },
+        {
+          "index": 4,
+          "text": "buying",
+          "startMs": 97500,
+          "endMs": 98080,
+          "probability": 0.977663
+        },
+        {
+          "index": 5,
+          "text": "hot",
+          "startMs": 98080,
+          "endMs": 98520,
+          "probability": 0.987905
+        },
+        {
+          "index": 6,
+          "text": "cocoa,",
+          "startMs": 98520,
+          "endMs": 99380,
+          "probability": 0.934378
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "but he saves his money.",
+      "startMs": 99380,
+      "endMs": 102320,
+      "avgLogprob": -0.100871,
+      "noSpeechProb": 0.024376,
+      "compressionRatio": 1.382353,
+      "words": [
+        {
+          "index": 1,
+          "text": "but",
+          "startMs": 99380,
+          "endMs": 99660,
+          "probability": 0.054697
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 99660,
+          "endMs": 100980,
+          "probability": 0.988804
+        },
+        {
+          "index": 3,
+          "text": "saves",
+          "startMs": 100980,
+          "endMs": 101540,
+          "probability": 0.985783
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 101540,
+          "endMs": 101900,
+          "probability": 0.990911
+        },
+        {
+          "index": 5,
+          "text": "money.",
+          "startMs": 101900,
+          "endMs": 102320,
+          "probability": 0.99895
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "He will make hot cocoa at home.",
+      "startMs": 103120,
+      "endMs": 105120,
+      "avgLogprob": -0.100871,
+      "noSpeechProb": 0.024376,
+      "compressionRatio": 1.382353,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 103120,
+          "endMs": 103260,
+          "probability": 0.98466
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 103260,
+          "endMs": 103440,
+          "probability": 0.97074
+        },
+        {
+          "index": 3,
+          "text": "make",
+          "startMs": 103440,
+          "endMs": 103660,
+          "probability": 0.996921
+        },
+        {
+          "index": 4,
+          "text": "hot",
+          "startMs": 103660,
+          "endMs": 103980,
+          "probability": 0.972497
+        },
+        {
+          "index": 5,
+          "text": "cocoa",
+          "startMs": 103980,
+          "endMs": 104400,
+          "probability": 0.958037
+        },
+        {
+          "index": 6,
+          "text": "at",
+          "startMs": 104400,
+          "endMs": 104720,
+          "probability": 0.99286
+        },
+        {
+          "index": 7,
+          "text": "home.",
+          "startMs": 104720,
+          "endMs": 105120,
+          "probability": 0.998557
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Not enough to buy a sharkbot.",
+      "startMs": 105360,
+      "endMs": 107180,
+      "avgLogprob": -0.100871,
+      "noSpeechProb": 0.024376,
+      "compressionRatio": 1.382353,
+      "words": [
+        {
+          "index": 1,
+          "text": "Not",
+          "startMs": 105360,
+          "endMs": 105400,
+          "probability": 0.598365
+        },
+        {
+          "index": 2,
+          "text": "enough",
+          "startMs": 105400,
+          "endMs": 105780,
+          "probability": 0.992119
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 105780,
+          "endMs": 106060,
+          "probability": 0.995153
+        },
+        {
+          "index": 4,
+          "text": "buy",
+          "startMs": 106060,
+          "endMs": 106300,
+          "probability": 0.993865
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 106300,
+          "endMs": 106540,
+          "probability": 0.980196
+        },
+        {
+          "index": 6,
+          "text": "sharkbot.",
+          "startMs": 106540,
+          "endMs": 107180,
+          "probability": 0.553777
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "That's okay. He puts the money in his bank.",
+      "startMs": 108180,
+      "endMs": 112120,
+      "avgLogprob": -0.100871,
+      "noSpeechProb": 0.024376,
+      "compressionRatio": 1.382353,
+      "words": [
+        {
+          "index": 1,
+          "text": "That's",
+          "startMs": 108180,
+          "endMs": 108540,
+          "probability": 0.960412
+        },
+        {
+          "index": 2,
+          "text": "okay.",
+          "startMs": 108540,
+          "endMs": 109000,
+          "probability": 0.728909
+        },
+        {
+          "index": 3,
+          "text": "He",
+          "startMs": 109780,
+          "endMs": 110020,
+          "probability": 0.988739
+        },
+        {
+          "index": 4,
+          "text": "puts",
+          "startMs": 110020,
+          "endMs": 110300,
+          "probability": 0.987032
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 110300,
+          "endMs": 110620,
+          "probability": 0.970873
+        },
+        {
+          "index": 6,
+          "text": "money",
+          "startMs": 110620,
+          "endMs": 110840,
+          "probability": 0.998896
+        },
+        {
+          "index": 7,
+          "text": "in",
+          "startMs": 110840,
+          "endMs": 111280,
+          "probability": 0.992557
+        },
+        {
+          "index": 8,
+          "text": "his",
+          "startMs": 111280,
+          "endMs": 111580,
+          "probability": 0.998102
+        },
+        {
+          "index": 9,
+          "text": "bank.",
+          "startMs": 111580,
+          "endMs": 112120,
+          "probability": 0.988419
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "What can I do next, he thinks?",
+      "startMs": 114900,
+      "endMs": 118000,
+      "avgLogprob": -0.100871,
+      "noSpeechProb": 0.024376,
+      "compressionRatio": 1.382353,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 114900,
+          "endMs": 115620,
+          "probability": 0.453687
+        },
+        {
+          "index": 2,
+          "text": "can",
+          "startMs": 115620,
+          "endMs": 115940,
+          "probability": 0.987873
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 115940,
+          "endMs": 116380,
+          "probability": 0.99469
+        },
+        {
+          "index": 4,
+          "text": "do",
+          "startMs": 116380,
+          "endMs": 116780,
+          "probability": 0.99706
+        },
+        {
+          "index": 5,
+          "text": "next,",
+          "startMs": 116780,
+          "endMs": 117280,
+          "probability": 0.998618
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 117280,
+          "endMs": 117520,
+          "probability": 0.99349
+        },
+        {
+          "index": 7,
+          "text": "thinks?",
+          "startMs": 117520,
+          "endMs": 118000,
+          "probability": 0.998637
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Then the snow melts.",
+      "startMs": 120160,
+      "endMs": 121700,
+      "avgLogprob": -0.100871,
+      "noSpeechProb": 0.024376,
+      "compressionRatio": 1.382353,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 120160,
+          "endMs": 120600,
+          "probability": 0.983365
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 120600,
+          "endMs": 120820,
+          "probability": 0.956001
+        },
+        {
+          "index": 3,
+          "text": "snow",
+          "startMs": 120820,
+          "endMs": 121180,
+          "probability": 0.99768
+        },
+        {
+          "index": 4,
+          "text": "melts.",
+          "startMs": 121180,
+          "endMs": 121700,
+          "probability": 0.998896
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Mom offers to pay Pete if he helps her plant flowers.",
+      "startMs": 122940,
+      "endMs": 126700,
+      "avgLogprob": -0.100871,
+      "noSpeechProb": 0.024376,
+      "compressionRatio": 1.382353,
+      "words": [
+        {
+          "index": 1,
+          "text": "Mom",
+          "startMs": 122940,
+          "endMs": 123000,
+          "probability": 0.975788
+        },
+        {
+          "index": 2,
+          "text": "offers",
+          "startMs": 123000,
+          "endMs": 123580,
+          "probability": 0.995125
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 123580,
+          "endMs": 123840,
+          "probability": 0.998658
+        },
+        {
+          "index": 4,
+          "text": "pay",
+          "startMs": 123840,
+          "endMs": 124120,
+          "probability": 0.985518
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 124120,
+          "endMs": 124520,
+          "probability": 0.986094
+        },
+        {
+          "index": 6,
+          "text": "if",
+          "startMs": 124520,
+          "endMs": 125040,
+          "probability": 0.967243
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 125040,
+          "endMs": 125220,
+          "probability": 0.998107
+        },
+        {
+          "index": 8,
+          "text": "helps",
+          "startMs": 125220,
+          "endMs": 125500,
+          "probability": 0.967857
+        },
+        {
+          "index": 9,
+          "text": "her",
+          "startMs": 125500,
+          "endMs": 125760,
+          "probability": 0.995062
+        },
+        {
+          "index": 10,
+          "text": "plant",
+          "startMs": 125760,
+          "endMs": 126040,
+          "probability": 0.980042
+        },
+        {
+          "index": 11,
+          "text": "flowers.",
+          "startMs": 126040,
+          "endMs": 126700,
+          "probability": 0.996294
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "You did a great job, Pete!",
+      "startMs": 128440,
+      "endMs": 131280,
+      "avgLogprob": -0.11018,
+      "noSpeechProb": 0.007706,
+      "compressionRatio": 1.416058,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 128440,
+          "endMs": 129320,
+          "probability": 0.230267
+        },
+        {
+          "index": 2,
+          "text": "did",
+          "startMs": 129320,
+          "endMs": 129540,
+          "probability": 0.992594
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 129540,
+          "endMs": 129760,
+          "probability": 0.980482
+        },
+        {
+          "index": 4,
+          "text": "great",
+          "startMs": 129760,
+          "endMs": 130180,
+          "probability": 0.994577
+        },
+        {
+          "index": 5,
+          "text": "job,",
+          "startMs": 130180,
+          "endMs": 130880,
+          "probability": 0.997823
+        },
+        {
+          "index": 6,
+          "text": "Pete!",
+          "startMs": 131160,
+          "endMs": 131280,
+          "probability": 0.982599
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Mom says. Mom pays Pete for his work.",
+      "startMs": 132100,
+      "endMs": 135700,
+      "avgLogprob": -0.11018,
+      "noSpeechProb": 0.007706,
+      "compressionRatio": 1.416058,
+      "words": [
+        {
+          "index": 1,
+          "text": "Mom",
+          "startMs": 132100,
+          "endMs": 132280,
+          "probability": 0.877291
+        },
+        {
+          "index": 2,
+          "text": "says.",
+          "startMs": 132280,
+          "endMs": 132780,
+          "probability": 0.781274
+        },
+        {
+          "index": 3,
+          "text": "Mom",
+          "startMs": 133580,
+          "endMs": 133780,
+          "probability": 0.987158
+        },
+        {
+          "index": 4,
+          "text": "pays",
+          "startMs": 133780,
+          "endMs": 134220,
+          "probability": 0.995641
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 134220,
+          "endMs": 134680,
+          "probability": 0.993743
+        },
+        {
+          "index": 6,
+          "text": "for",
+          "startMs": 134680,
+          "endMs": 134960,
+          "probability": 0.995916
+        },
+        {
+          "index": 7,
+          "text": "his",
+          "startMs": 134960,
+          "endMs": 135180,
+          "probability": 0.995908
+        },
+        {
+          "index": 8,
+          "text": "work.",
+          "startMs": 135180,
+          "endMs": 135700,
+          "probability": 0.998877
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Pete thinks about buying a ticket for the movies,",
+      "startMs": 140180,
+      "endMs": 144480,
+      "avgLogprob": -0.11018,
+      "noSpeechProb": 0.007706,
+      "compressionRatio": 1.416058,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 140180,
+          "endMs": 141060,
+          "probability": 0.963586
+        },
+        {
+          "index": 2,
+          "text": "thinks",
+          "startMs": 141060,
+          "endMs": 141580,
+          "probability": 0.988249
+        },
+        {
+          "index": 3,
+          "text": "about",
+          "startMs": 141580,
+          "endMs": 142080,
+          "probability": 0.994675
+        },
+        {
+          "index": 4,
+          "text": "buying",
+          "startMs": 142080,
+          "endMs": 142620,
+          "probability": 0.995141
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 142620,
+          "endMs": 142840,
+          "probability": 0.988666
+        },
+        {
+          "index": 6,
+          "text": "ticket",
+          "startMs": 142840,
+          "endMs": 143280,
+          "probability": 0.99869
+        },
+        {
+          "index": 7,
+          "text": "for",
+          "startMs": 143280,
+          "endMs": 143660,
+          "probability": 0.995181
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 143660,
+          "endMs": 143840,
+          "probability": 0.981724
+        },
+        {
+          "index": 9,
+          "text": "movies,",
+          "startMs": 143840,
+          "endMs": 144480,
+          "probability": 0.991682
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "but Pete saves his money.",
+      "startMs": 145620,
+      "endMs": 147800,
+      "avgLogprob": -0.11018,
+      "noSpeechProb": 0.007706,
+      "compressionRatio": 1.416058,
+      "words": [
+        {
+          "index": 1,
+          "text": "but",
+          "startMs": 145620,
+          "endMs": 146020,
+          "probability": 0.965065
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 146020,
+          "endMs": 146520,
+          "probability": 0.989192
+        },
+        {
+          "index": 3,
+          "text": "saves",
+          "startMs": 146520,
+          "endMs": 147140,
+          "probability": 0.993965
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 147140,
+          "endMs": 147460,
+          "probability": 0.993291
+        },
+        {
+          "index": 5,
+          "text": "money.",
+          "startMs": 147460,
+          "endMs": 147800,
+          "probability": 0.999517
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "He will watch a movie at home.",
+      "startMs": 148600,
+      "endMs": 150920,
+      "avgLogprob": -0.11018,
+      "noSpeechProb": 0.007706,
+      "compressionRatio": 1.416058,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 148600,
+          "endMs": 148820,
+          "probability": 0.995507
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 148820,
+          "endMs": 149020,
+          "probability": 0.99089
+        },
+        {
+          "index": 3,
+          "text": "watch",
+          "startMs": 149020,
+          "endMs": 149260,
+          "probability": 0.997956
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 149260,
+          "endMs": 149520,
+          "probability": 0.994526
+        },
+        {
+          "index": 5,
+          "text": "movie",
+          "startMs": 149520,
+          "endMs": 149840,
+          "probability": 0.999394
+        },
+        {
+          "index": 6,
+          "text": "at",
+          "startMs": 149840,
+          "endMs": 150420,
+          "probability": 0.97963
+        },
+        {
+          "index": 7,
+          "text": "home.",
+          "startMs": 150420,
+          "endMs": 150920,
+          "probability": 0.998114
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Pete counts his money.",
+      "startMs": 153200,
+      "endMs": 154780,
+      "avgLogprob": -0.11018,
+      "noSpeechProb": 0.007706,
+      "compressionRatio": 1.416058,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 153200,
+          "endMs": 153500,
+          "probability": 0.993478
+        },
+        {
+          "index": 2,
+          "text": "counts",
+          "startMs": 153500,
+          "endMs": 153940,
+          "probability": 0.995429
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 153940,
+          "endMs": 154300,
+          "probability": 0.996054
+        },
+        {
+          "index": 4,
+          "text": "money.",
+          "startMs": 154300,
+          "endMs": 154780,
+          "probability": 0.999103
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Getting closer, Pete says.",
+      "startMs": 154780,
+      "endMs": 158500,
+      "avgLogprob": -0.09889,
+      "noSpeechProb": 0.040804,
+      "compressionRatio": 1.337838,
+      "words": [
+        {
+          "index": 1,
+          "text": "Getting",
+          "startMs": 154780,
+          "endMs": 156160,
+          "probability": 0.046814
+        },
+        {
+          "index": 2,
+          "text": "closer,",
+          "startMs": 156160,
+          "endMs": 157240,
+          "probability": 0.987541
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 157920,
+          "endMs": 157960,
+          "probability": 0.988712
+        },
+        {
+          "index": 4,
+          "text": "says.",
+          "startMs": 157960,
+          "endMs": 158500,
+          "probability": 0.994606
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "He puts the money in his bank.",
+      "startMs": 159380,
+      "endMs": 162120,
+      "avgLogprob": -0.09889,
+      "noSpeechProb": 0.040804,
+      "compressionRatio": 1.337838,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 159380,
+          "endMs": 159640,
+          "probability": 0.977508
+        },
+        {
+          "index": 2,
+          "text": "puts",
+          "startMs": 159640,
+          "endMs": 160020,
+          "probability": 0.986483
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 160020,
+          "endMs": 160360,
+          "probability": 0.985185
+        },
+        {
+          "index": 4,
+          "text": "money",
+          "startMs": 160360,
+          "endMs": 160640,
+          "probability": 0.998901
+        },
+        {
+          "index": 5,
+          "text": "in",
+          "startMs": 160640,
+          "endMs": 161180,
+          "probability": 0.994881
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 161180,
+          "endMs": 161500,
+          "probability": 0.99847
+        },
+        {
+          "index": 7,
+          "text": "bank.",
+          "startMs": 161500,
+          "endMs": 162120,
+          "probability": 0.996677
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "It's very hot outside. Pete knows what to do.",
+      "startMs": 164900,
+      "endMs": 170900,
+      "avgLogprob": -0.09889,
+      "noSpeechProb": 0.040804,
+      "compressionRatio": 1.337838,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 164900,
+          "endMs": 165840,
+          "probability": 0.920261
+        },
+        {
+          "index": 2,
+          "text": "very",
+          "startMs": 165840,
+          "endMs": 166640,
+          "probability": 0.995958
+        },
+        {
+          "index": 3,
+          "text": "hot",
+          "startMs": 166640,
+          "endMs": 167280,
+          "probability": 0.994772
+        },
+        {
+          "index": 4,
+          "text": "outside.",
+          "startMs": 167280,
+          "endMs": 168060,
+          "probability": 0.9984
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 169300,
+          "endMs": 169520,
+          "probability": 0.998826
+        },
+        {
+          "index": 6,
+          "text": "knows",
+          "startMs": 169520,
+          "endMs": 169820,
+          "probability": 0.996192
+        },
+        {
+          "index": 7,
+          "text": "what",
+          "startMs": 169820,
+          "endMs": 170180,
+          "probability": 0.999089
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 170180,
+          "endMs": 170440,
+          "probability": 0.99885
+        },
+        {
+          "index": 9,
+          "text": "do.",
+          "startMs": 170440,
+          "endMs": 170900,
+          "probability": 0.999393
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "He sets up a lemonade stand.",
+      "startMs": 171560,
+      "endMs": 174220,
+      "avgLogprob": -0.09889,
+      "noSpeechProb": 0.040804,
+      "compressionRatio": 1.337838,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 171560,
+          "endMs": 171820,
+          "probability": 0.996146
+        },
+        {
+          "index": 2,
+          "text": "sets",
+          "startMs": 171820,
+          "endMs": 172200,
+          "probability": 0.993331
+        },
+        {
+          "index": 3,
+          "text": "up",
+          "startMs": 172200,
+          "endMs": 172640,
+          "probability": 0.992029
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 172640,
+          "endMs": 172920,
+          "probability": 0.996236
+        },
+        {
+          "index": 5,
+          "text": "lemonade",
+          "startMs": 172920,
+          "endMs": 173620,
+          "probability": 0.990217
+        },
+        {
+          "index": 6,
+          "text": "stand.",
+          "startMs": 173620,
+          "endMs": 174220,
+          "probability": 0.999346
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "Everyone shows up to buy a cup of cold lemonade.",
+      "startMs": 176260,
+      "endMs": 179780,
+      "avgLogprob": -0.09889,
+      "noSpeechProb": 0.040804,
+      "compressionRatio": 1.337838,
+      "words": [
+        {
+          "index": 1,
+          "text": "Everyone",
+          "startMs": 176260,
+          "endMs": 177000,
+          "probability": 0.884378
+        },
+        {
+          "index": 2,
+          "text": "shows",
+          "startMs": 177000,
+          "endMs": 177400,
+          "probability": 0.996284
+        },
+        {
+          "index": 3,
+          "text": "up",
+          "startMs": 177400,
+          "endMs": 177700,
+          "probability": 0.998502
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 177700,
+          "endMs": 177940,
+          "probability": 0.997609
+        },
+        {
+          "index": 5,
+          "text": "buy",
+          "startMs": 177940,
+          "endMs": 178200,
+          "probability": 0.997552
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 178200,
+          "endMs": 178540,
+          "probability": 0.997204
+        },
+        {
+          "index": 7,
+          "text": "cup",
+          "startMs": 178540,
+          "endMs": 178680,
+          "probability": 0.997421
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 178680,
+          "endMs": 179020,
+          "probability": 0.999273
+        },
+        {
+          "index": 9,
+          "text": "cold",
+          "startMs": 179020,
+          "endMs": 179380,
+          "probability": 0.96416
+        },
+        {
+          "index": 10,
+          "text": "lemonade.",
+          "startMs": 179380,
+          "endMs": 179850,
+          "probability": 0.998649
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Yummy! Says Gus.",
+      "startMs": 181320,
+      "endMs": 183340,
+      "avgLogprob": -0.09889,
+      "noSpeechProb": 0.040804,
+      "compressionRatio": 1.337838,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yummy!",
+          "startMs": 181320,
+          "endMs": 181800,
+          "probability": 0.62117
+        },
+        {
+          "index": 2,
+          "text": "Says",
+          "startMs": 182400,
+          "endMs": 182860,
+          "probability": 0.350807
+        },
+        {
+          "index": 3,
+          "text": "Gus.",
+          "startMs": 182860,
+          "endMs": 183340,
+          "probability": 0.923861
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "Pete hears the ice cream truck.",
+      "startMs": 187220,
+      "endMs": 190000,
+      "avgLogprob": -0.103109,
+      "noSpeechProb": 0.005562,
+      "compressionRatio": 1.380952,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 187220,
+          "endMs": 188100,
+          "probability": 0.722244
+        },
+        {
+          "index": 2,
+          "text": "hears",
+          "startMs": 188100,
+          "endMs": 188560,
+          "probability": 0.965863
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 188560,
+          "endMs": 188860,
+          "probability": 0.995574
+        },
+        {
+          "index": 4,
+          "text": "ice",
+          "startMs": 188860,
+          "endMs": 189060,
+          "probability": 0.939812
+        },
+        {
+          "index": 5,
+          "text": "cream",
+          "startMs": 189060,
+          "endMs": 189460,
+          "probability": 0.577603
+        },
+        {
+          "index": 6,
+          "text": "truck.",
+          "startMs": 189460,
+          "endMs": 190000,
+          "probability": 0.999546
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "He thinks about buying an ice pop.",
+      "startMs": 190880,
+      "endMs": 193620,
+      "avgLogprob": -0.103109,
+      "noSpeechProb": 0.005562,
+      "compressionRatio": 1.380952,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 190880,
+          "endMs": 190960,
+          "probability": 0.942817
+        },
+        {
+          "index": 2,
+          "text": "thinks",
+          "startMs": 190960,
+          "endMs": 191320,
+          "probability": 0.995937
+        },
+        {
+          "index": 3,
+          "text": "about",
+          "startMs": 191320,
+          "endMs": 191740,
+          "probability": 0.99162
+        },
+        {
+          "index": 4,
+          "text": "buying",
+          "startMs": 191740,
+          "endMs": 192220,
+          "probability": 0.995135
+        },
+        {
+          "index": 5,
+          "text": "an",
+          "startMs": 192220,
+          "endMs": 192560,
+          "probability": 0.987942
+        },
+        {
+          "index": 6,
+          "text": "ice",
+          "startMs": 192560,
+          "endMs": 193100,
+          "probability": 0.885897
+        },
+        {
+          "index": 7,
+          "text": "pop.",
+          "startMs": 193100,
+          "endMs": 193620,
+          "probability": 0.872279
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "But Pete saves his money.",
+      "startMs": 194860,
+      "endMs": 196940,
+      "avgLogprob": -0.103109,
+      "noSpeechProb": 0.005562,
+      "compressionRatio": 1.380952,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 194860,
+          "endMs": 195060,
+          "probability": 0.944516
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 195060,
+          "endMs": 195500,
+          "probability": 0.979019
+        },
+        {
+          "index": 3,
+          "text": "saves",
+          "startMs": 195500,
+          "endMs": 196200,
+          "probability": 0.989881
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 196200,
+          "endMs": 196560,
+          "probability": 0.994573
+        },
+        {
+          "index": 5,
+          "text": "money.",
+          "startMs": 196560,
+          "endMs": 196940,
+          "probability": 0.999595
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "He will eat one from the freezer.",
+      "startMs": 197720,
+      "endMs": 200180,
+      "avgLogprob": -0.103109,
+      "noSpeechProb": 0.005562,
+      "compressionRatio": 1.380952,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 197720,
+          "endMs": 197940,
+          "probability": 0.9921
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 197940,
+          "endMs": 198160,
+          "probability": 0.987534
+        },
+        {
+          "index": 3,
+          "text": "eat",
+          "startMs": 198160,
+          "endMs": 198480,
+          "probability": 0.997719
+        },
+        {
+          "index": 4,
+          "text": "one",
+          "startMs": 198480,
+          "endMs": 198820,
+          "probability": 0.993645
+        },
+        {
+          "index": 5,
+          "text": "from",
+          "startMs": 198820,
+          "endMs": 199320,
+          "probability": 0.991244
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 199320,
+          "endMs": 199580,
+          "probability": 0.997338
+        },
+        {
+          "index": 7,
+          "text": "freezer.",
+          "startMs": 199580,
+          "endMs": 200180,
+          "probability": 0.997236
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "Pete counts his money.",
+      "startMs": 207080,
+      "endMs": 209280,
+      "avgLogprob": -0.103109,
+      "noSpeechProb": 0.005562,
+      "compressionRatio": 1.380952,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 207080,
+          "endMs": 207960,
+          "probability": 0.93427
+        },
+        {
+          "index": 2,
+          "text": "counts",
+          "startMs": 207960,
+          "endMs": 208500,
+          "probability": 0.994438
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 208500,
+          "endMs": 208840,
+          "probability": 0.993977
+        },
+        {
+          "index": 4,
+          "text": "money.",
+          "startMs": 208840,
+          "endMs": 209280,
+          "probability": 0.999373
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Almost there, Pete says.",
+      "startMs": 210300,
+      "endMs": 212820,
+      "avgLogprob": -0.103109,
+      "noSpeechProb": 0.005562,
+      "compressionRatio": 1.380952,
+      "words": [
+        {
+          "index": 1,
+          "text": "Almost",
+          "startMs": 210300,
+          "endMs": 210720,
+          "probability": 0.285301
+        },
+        {
+          "index": 2,
+          "text": "there,",
+          "startMs": 210720,
+          "endMs": 211800,
+          "probability": 0.996609
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 212200,
+          "endMs": 212340,
+          "probability": 0.998105
+        },
+        {
+          "index": 4,
+          "text": "says.",
+          "startMs": 212340,
+          "endMs": 212820,
+          "probability": 0.998181
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "He puts his money in the bank.",
+      "startMs": 212820,
+      "endMs": 216420,
+      "avgLogprob": -0.134532,
+      "noSpeechProb": 0.013394,
+      "compressionRatio": 1.347518,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 212820,
+          "endMs": 213920,
+          "probability": 0.458169
+        },
+        {
+          "index": 2,
+          "text": "puts",
+          "startMs": 213920,
+          "endMs": 214200,
+          "probability": 0.954197
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 214200,
+          "endMs": 214560,
+          "probability": 0.991365
+        },
+        {
+          "index": 4,
+          "text": "money",
+          "startMs": 214560,
+          "endMs": 214920,
+          "probability": 0.997995
+        },
+        {
+          "index": 5,
+          "text": "in",
+          "startMs": 214920,
+          "endMs": 215560,
+          "probability": 0.993092
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 215560,
+          "endMs": 215820,
+          "probability": 0.997174
+        },
+        {
+          "index": 7,
+          "text": "bank.",
+          "startMs": 215820,
+          "endMs": 216420,
+          "probability": 0.994808
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "When summer ends, Pete has saved almost enough to buy a sharkbot.",
+      "startMs": 219700,
+      "endMs": 225300,
+      "avgLogprob": -0.134532,
+      "noSpeechProb": 0.013394,
+      "compressionRatio": 1.347518,
+      "words": [
+        {
+          "index": 1,
+          "text": "When",
+          "startMs": 219700,
+          "endMs": 220020,
+          "probability": 0.992426
+        },
+        {
+          "index": 2,
+          "text": "summer",
+          "startMs": 220020,
+          "endMs": 220420,
+          "probability": 0.932977
+        },
+        {
+          "index": 3,
+          "text": "ends,",
+          "startMs": 220420,
+          "endMs": 221060,
+          "probability": 0.9985
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 221760,
+          "endMs": 221800,
+          "probability": 0.986075
+        },
+        {
+          "index": 5,
+          "text": "has",
+          "startMs": 221800,
+          "endMs": 222100,
+          "probability": 0.986744
+        },
+        {
+          "index": 6,
+          "text": "saved",
+          "startMs": 222100,
+          "endMs": 222640,
+          "probability": 0.996235
+        },
+        {
+          "index": 7,
+          "text": "almost",
+          "startMs": 222640,
+          "endMs": 223500,
+          "probability": 0.970055
+        },
+        {
+          "index": 8,
+          "text": "enough",
+          "startMs": 223500,
+          "endMs": 224000,
+          "probability": 0.99796
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 224000,
+          "endMs": 224240,
+          "probability": 0.995369
+        },
+        {
+          "index": 10,
+          "text": "buy",
+          "startMs": 224240,
+          "endMs": 224460,
+          "probability": 0.996806
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 224460,
+          "endMs": 224840,
+          "probability": 0.986715
+        },
+        {
+          "index": 12,
+          "text": "sharkbot.",
+          "startMs": 224840,
+          "endMs": 225300,
+          "probability": 0.605001
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "He's so close!",
+      "startMs": 226000,
+      "endMs": 227520,
+      "avgLogprob": -0.134532,
+      "noSpeechProb": 0.013394,
+      "compressionRatio": 1.347518,
+      "words": [
+        {
+          "index": 1,
+          "text": "He's",
+          "startMs": 226000,
+          "endMs": 226340,
+          "probability": 0.971567
+        },
+        {
+          "index": 2,
+          "text": "so",
+          "startMs": 226340,
+          "endMs": 226740,
+          "probability": 0.99618
+        },
+        {
+          "index": 3,
+          "text": "close!",
+          "startMs": 226740,
+          "endMs": 227520,
+          "probability": 0.990068
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "He rakes leaves for Grandma.",
+      "startMs": 229820,
+      "endMs": 232300,
+      "avgLogprob": -0.134532,
+      "noSpeechProb": 0.013394,
+      "compressionRatio": 1.347518,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 229820,
+          "endMs": 230300,
+          "probability": 0.936387
+        },
+        {
+          "index": 2,
+          "text": "rakes",
+          "startMs": 230300,
+          "endMs": 230660,
+          "probability": 0.986919
+        },
+        {
+          "index": 3,
+          "text": "leaves",
+          "startMs": 230660,
+          "endMs": 231160,
+          "probability": 0.994704
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 231160,
+          "endMs": 231580,
+          "probability": 0.999083
+        },
+        {
+          "index": 5,
+          "text": "Grandma.",
+          "startMs": 231580,
+          "endMs": 232300,
+          "probability": 0.862509
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Awesome! Grandma says and pays Pete for his work.",
+      "startMs": 233380,
+      "endMs": 238620,
+      "avgLogprob": -0.134532,
+      "noSpeechProb": 0.013394,
+      "compressionRatio": 1.347518,
+      "words": [
+        {
+          "index": 1,
+          "text": "Awesome!",
+          "startMs": 233380,
+          "endMs": 234020,
+          "probability": 0.099062
+        },
+        {
+          "index": 2,
+          "text": "Grandma",
+          "startMs": 234780,
+          "endMs": 235320,
+          "probability": 0.992476
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 235320,
+          "endMs": 235760,
+          "probability": 0.99103
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 235760,
+          "endMs": 236640,
+          "probability": 0.530069
+        },
+        {
+          "index": 5,
+          "text": "pays",
+          "startMs": 236640,
+          "endMs": 237180,
+          "probability": 0.99412
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 237180,
+          "endMs": 237580,
+          "probability": 0.994387
+        },
+        {
+          "index": 7,
+          "text": "for",
+          "startMs": 237580,
+          "endMs": 237880,
+          "probability": 0.998307
+        },
+        {
+          "index": 8,
+          "text": "his",
+          "startMs": 237880,
+          "endMs": 238100,
+          "probability": 0.998299
+        },
+        {
+          "index": 9,
+          "text": "work.",
+          "startMs": 238100,
+          "endMs": 238620,
+          "probability": 0.999233
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Pete thinks about buying a spooky mask for Halloween,",
+      "startMs": 244000,
+      "endMs": 249620,
+      "avgLogprob": -0.103997,
+      "noSpeechProb": 0.004385,
+      "compressionRatio": 1.432,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 244000,
+          "endMs": 245080,
+          "probability": 0.863464
+        },
+        {
+          "index": 2,
+          "text": "thinks",
+          "startMs": 245080,
+          "endMs": 245740,
+          "probability": 0.989981
+        },
+        {
+          "index": 3,
+          "text": "about",
+          "startMs": 245740,
+          "endMs": 246260,
+          "probability": 0.992303
+        },
+        {
+          "index": 4,
+          "text": "buying",
+          "startMs": 246260,
+          "endMs": 246800,
+          "probability": 0.992899
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 246800,
+          "endMs": 247020,
+          "probability": 0.978588
+        },
+        {
+          "index": 6,
+          "text": "spooky",
+          "startMs": 247020,
+          "endMs": 247960,
+          "probability": 0.971034
+        },
+        {
+          "index": 7,
+          "text": "mask",
+          "startMs": 247960,
+          "endMs": 248560,
+          "probability": 0.987023
+        },
+        {
+          "index": 8,
+          "text": "for",
+          "startMs": 248560,
+          "endMs": 248920,
+          "probability": 0.994813
+        },
+        {
+          "index": 9,
+          "text": "Halloween,",
+          "startMs": 248920,
+          "endMs": 249620,
+          "probability": 0.978233
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "but Pete saves his money.",
+      "startMs": 250000,
+      "endMs": 253200,
+      "avgLogprob": -0.103997,
+      "noSpeechProb": 0.004385,
+      "compressionRatio": 1.432,
+      "words": [
+        {
+          "index": 1,
+          "text": "but",
+          "startMs": 250000,
+          "endMs": 251300,
+          "probability": 0.975428
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 251300,
+          "endMs": 251800,
+          "probability": 0.988643
+        },
+        {
+          "index": 3,
+          "text": "saves",
+          "startMs": 251800,
+          "endMs": 252480,
+          "probability": 0.989808
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 252480,
+          "endMs": 252820,
+          "probability": 0.996383
+        },
+        {
+          "index": 5,
+          "text": "money.",
+          "startMs": 252820,
+          "endMs": 253200,
+          "probability": 0.999243
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "He makes his own spooky mask.",
+      "startMs": 254320,
+      "endMs": 257200,
+      "avgLogprob": -0.103997,
+      "noSpeechProb": 0.004385,
+      "compressionRatio": 1.432,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 254320,
+          "endMs": 254560,
+          "probability": 0.978491
+        },
+        {
+          "index": 2,
+          "text": "makes",
+          "startMs": 254560,
+          "endMs": 254960,
+          "probability": 0.994316
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 254960,
+          "endMs": 255380,
+          "probability": 0.998985
+        },
+        {
+          "index": 4,
+          "text": "own",
+          "startMs": 255380,
+          "endMs": 255840,
+          "probability": 0.998558
+        },
+        {
+          "index": 5,
+          "text": "spooky",
+          "startMs": 255840,
+          "endMs": 256460,
+          "probability": 0.998177
+        },
+        {
+          "index": 6,
+          "text": "mask.",
+          "startMs": 256460,
+          "endMs": 257200,
+          "probability": 0.982918
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "Pete puts his money in his bank.",
+      "startMs": 261820,
+      "endMs": 264920,
+      "avgLogprob": -0.103997,
+      "noSpeechProb": 0.004385,
+      "compressionRatio": 1.432,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 261780,
+          "endMs": 262320,
+          "probability": 0.963071
+        },
+        {
+          "index": 2,
+          "text": "puts",
+          "startMs": 262320,
+          "endMs": 262760,
+          "probability": 0.985001
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 262760,
+          "endMs": 263100,
+          "probability": 0.993402
+        },
+        {
+          "index": 4,
+          "text": "money",
+          "startMs": 263100,
+          "endMs": 263460,
+          "probability": 0.998575
+        },
+        {
+          "index": 5,
+          "text": "in",
+          "startMs": 263460,
+          "endMs": 263980,
+          "probability": 0.996549
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 263980,
+          "endMs": 264320,
+          "probability": 0.997769
+        },
+        {
+          "index": 7,
+          "text": "bank.",
+          "startMs": 264320,
+          "endMs": 264920,
+          "probability": 0.997808
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "The bank looks full!",
+      "startMs": 265720,
+      "endMs": 267620,
+      "avgLogprob": -0.103997,
+      "noSpeechProb": 0.004385,
+      "compressionRatio": 1.432,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 265720,
+          "endMs": 265880,
+          "probability": 0.568364
+        },
+        {
+          "index": 2,
+          "text": "bank",
+          "startMs": 265880,
+          "endMs": 266440,
+          "probability": 0.994291
+        },
+        {
+          "index": 3,
+          "text": "looks",
+          "startMs": 266440,
+          "endMs": 266860,
+          "probability": 0.997996
+        },
+        {
+          "index": 4,
+          "text": "full!",
+          "startMs": 266860,
+          "endMs": 267620,
+          "probability": 0.996345
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "Wow! Pete says.",
+      "startMs": 268860,
+      "endMs": 271040,
+      "avgLogprob": -0.103997,
+      "noSpeechProb": 0.004385,
+      "compressionRatio": 1.432,
+      "words": [
+        {
+          "index": 1,
+          "text": "Wow!",
+          "startMs": 268860,
+          "endMs": 269380,
+          "probability": 0.255094
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 270280,
+          "endMs": 270500,
+          "probability": 0.99808
+        },
+        {
+          "index": 3,
+          "text": "says.",
+          "startMs": 270500,
+          "endMs": 271040,
+          "probability": 0.997094
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "Pete counts the money in his bank.",
+      "startMs": 273820,
+      "endMs": 276640,
+      "avgLogprob": -0.096516,
+      "noSpeechProb": 0.006113,
+      "compressionRatio": 1.381579,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 273820,
+          "endMs": 274700,
+          "probability": 0.954346
+        },
+        {
+          "index": 2,
+          "text": "counts",
+          "startMs": 274700,
+          "endMs": 275140,
+          "probability": 0.990956
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 275140,
+          "endMs": 275440,
+          "probability": 0.993777
+        },
+        {
+          "index": 4,
+          "text": "money",
+          "startMs": 275440,
+          "endMs": 275660,
+          "probability": 0.998971
+        },
+        {
+          "index": 5,
+          "text": "in",
+          "startMs": 275660,
+          "endMs": 275980,
+          "probability": 0.996994
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 275980,
+          "endMs": 276220,
+          "probability": 0.997598
+        },
+        {
+          "index": 7,
+          "text": "bank.",
+          "startMs": 276220,
+          "endMs": 276640,
+          "probability": 0.997194
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "He has saved enough money to buy a sharkbot.",
+      "startMs": 277780,
+      "endMs": 281620,
+      "avgLogprob": -0.096516,
+      "noSpeechProb": 0.006113,
+      "compressionRatio": 1.381579,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 277780,
+          "endMs": 277840,
+          "probability": 0.783205
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 277840,
+          "endMs": 278120,
+          "probability": 0.97862
+        },
+        {
+          "index": 3,
+          "text": "saved",
+          "startMs": 278120,
+          "endMs": 278640,
+          "probability": 0.994167
+        },
+        {
+          "index": 4,
+          "text": "enough",
+          "startMs": 278640,
+          "endMs": 279080,
+          "probability": 0.998012
+        },
+        {
+          "index": 5,
+          "text": "money",
+          "startMs": 279080,
+          "endMs": 279580,
+          "probability": 0.996216
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 279580,
+          "endMs": 280060,
+          "probability": 0.978611
+        },
+        {
+          "index": 7,
+          "text": "buy",
+          "startMs": 280060,
+          "endMs": 280460,
+          "probability": 0.996994
+        },
+        {
+          "index": 8,
+          "text": "a",
+          "startMs": 280460,
+          "endMs": 280900,
+          "probability": 0.990516
+        },
+        {
+          "index": 9,
+          "text": "sharkbot.",
+          "startMs": 280900,
+          "endMs": 281620,
+          "probability": 0.490278
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "Yay! Pete cheers.",
+      "startMs": 283900,
+      "endMs": 286220,
+      "avgLogprob": -0.096516,
+      "noSpeechProb": 0.006113,
+      "compressionRatio": 1.381579,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yay!",
+          "startMs": 283900,
+          "endMs": 284780,
+          "probability": 0.522353
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 285400,
+          "endMs": 285700,
+          "probability": 0.996551
+        },
+        {
+          "index": 3,
+          "text": "cheers.",
+          "startMs": 285700,
+          "endMs": 286220,
+          "probability": 0.922481
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "text": "Mom, Dad and Bob cheer too.",
+      "startMs": 287420,
+      "endMs": 290040,
+      "avgLogprob": -0.096516,
+      "noSpeechProb": 0.006113,
+      "compressionRatio": 1.381579,
+      "words": [
+        {
+          "index": 1,
+          "text": "Mom,",
+          "startMs": 287420,
+          "endMs": 287640,
+          "probability": 0.961704
+        },
+        {
+          "index": 2,
+          "text": "Dad",
+          "startMs": 288020,
+          "endMs": 288300,
+          "probability": 0.56879
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 288300,
+          "endMs": 288600,
+          "probability": 0.605521
+        },
+        {
+          "index": 4,
+          "text": "Bob",
+          "startMs": 288600,
+          "endMs": 289040,
+          "probability": 0.989807
+        },
+        {
+          "index": 5,
+          "text": "cheer",
+          "startMs": 289040,
+          "endMs": 289480,
+          "probability": 0.983091
+        },
+        {
+          "index": 6,
+          "text": "too.",
+          "startMs": 289480,
+          "endMs": 290040,
+          "probability": 0.70734
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "text": "Great job saving up, they say.",
+      "startMs": 291180,
+      "endMs": 294140,
+      "avgLogprob": -0.096516,
+      "noSpeechProb": 0.006113,
+      "compressionRatio": 1.381579,
+      "words": [
+        {
+          "index": 1,
+          "text": "Great",
+          "startMs": 291180,
+          "endMs": 291620,
+          "probability": 0.447418
+        },
+        {
+          "index": 2,
+          "text": "job",
+          "startMs": 291620,
+          "endMs": 292180,
+          "probability": 0.969072
+        },
+        {
+          "index": 3,
+          "text": "saving",
+          "startMs": 292180,
+          "endMs": 292840,
+          "probability": 0.987404
+        },
+        {
+          "index": 4,
+          "text": "up,",
+          "startMs": 292840,
+          "endMs": 293280,
+          "probability": 0.996223
+        },
+        {
+          "index": 5,
+          "text": "they",
+          "startMs": 293320,
+          "endMs": 293620,
+          "probability": 0.987174
+        },
+        {
+          "index": 6,
+          "text": "say.",
+          "startMs": 293620,
+          "endMs": 294140,
+          "probability": 0.998405
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "text": "The next day, Pete brings his money to the toy store.",
+      "startMs": 295940,
+      "endMs": 300620,
+      "avgLogprob": -0.096516,
+      "noSpeechProb": 0.006113,
+      "compressionRatio": 1.381579,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 295940,
+          "endMs": 296400,
+          "probability": 0.996197
+        },
+        {
+          "index": 2,
+          "text": "next",
+          "startMs": 296400,
+          "endMs": 296820,
+          "probability": 0.999572
+        },
+        {
+          "index": 3,
+          "text": "day,",
+          "startMs": 296820,
+          "endMs": 297360,
+          "probability": 0.999509
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 297960,
+          "endMs": 298300,
+          "probability": 0.997558
+        },
+        {
+          "index": 5,
+          "text": "brings",
+          "startMs": 298300,
+          "endMs": 298720,
+          "probability": 0.995787
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 298720,
+          "endMs": 299020,
+          "probability": 0.995487
+        },
+        {
+          "index": 7,
+          "text": "money",
+          "startMs": 299020,
+          "endMs": 299340,
+          "probability": 0.999559
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 299340,
+          "endMs": 299680,
+          "probability": 0.997901
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 299680,
+          "endMs": 299860,
+          "probability": 0.996789
+        },
+        {
+          "index": 10,
+          "text": "toy",
+          "startMs": 299860,
+          "endMs": 300180,
+          "probability": 0.994119
+        },
+        {
+          "index": 11,
+          "text": "store.",
+          "startMs": 300180,
+          "endMs": 300620,
+          "probability": 0.986491
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "text": "Pete hands his money to the clerk.",
+      "startMs": 302820,
+      "endMs": 304820,
+      "avgLogprob": -0.073263,
+      "noSpeechProb": 0.005565,
+      "compressionRatio": 1.623188,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 302820,
+          "endMs": 303040,
+          "probability": 0.983483
+        },
+        {
+          "index": 2,
+          "text": "hands",
+          "startMs": 303040,
+          "endMs": 303460,
+          "probability": 0.971662
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 303460,
+          "endMs": 303680,
+          "probability": 0.98772
+        },
+        {
+          "index": 4,
+          "text": "money",
+          "startMs": 303680,
+          "endMs": 303940,
+          "probability": 0.995714
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 303940,
+          "endMs": 304280,
+          "probability": 0.99786
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 304280,
+          "endMs": 304480,
+          "probability": 0.98881
+        },
+        {
+          "index": 7,
+          "text": "clerk.",
+          "startMs": 304480,
+          "endMs": 304820,
+          "probability": 0.842828
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "text": "The clerk hands Pete his new sharkbot toy.",
+      "startMs": 305560,
+      "endMs": 309740,
+      "avgLogprob": -0.073263,
+      "noSpeechProb": 0.005565,
+      "compressionRatio": 1.623188,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 305560,
+          "endMs": 305820,
+          "probability": 0.992933
+        },
+        {
+          "index": 2,
+          "text": "clerk",
+          "startMs": 305820,
+          "endMs": 306160,
+          "probability": 0.990533
+        },
+        {
+          "index": 3,
+          "text": "hands",
+          "startMs": 306160,
+          "endMs": 306660,
+          "probability": 0.994858
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 306660,
+          "endMs": 306980,
+          "probability": 0.995385
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 306980,
+          "endMs": 307740,
+          "probability": 0.964029
+        },
+        {
+          "index": 6,
+          "text": "new",
+          "startMs": 307740,
+          "endMs": 308500,
+          "probability": 0.985527
+        },
+        {
+          "index": 7,
+          "text": "sharkbot",
+          "startMs": 308500,
+          "endMs": 309200,
+          "probability": 0.524521
+        },
+        {
+          "index": 8,
+          "text": "toy.",
+          "startMs": 309200,
+          "endMs": 309740,
+          "probability": 0.999094
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "text": "Pete loves his sharkbot.",
+      "startMs": 312020,
+      "endMs": 314820,
+      "avgLogprob": -0.073263,
+      "noSpeechProb": 0.005565,
+      "compressionRatio": 1.623188,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 312020,
+          "endMs": 312420,
+          "probability": 0.954353
+        },
+        {
+          "index": 2,
+          "text": "loves",
+          "startMs": 312420,
+          "endMs": 313400,
+          "probability": 0.971365
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 313400,
+          "endMs": 313980,
+          "probability": 0.998375
+        },
+        {
+          "index": 4,
+          "text": "sharkbot.",
+          "startMs": 313980,
+          "endMs": 314820,
+          "probability": 0.979723
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "text": "But now, Pete really wants a rocket racer for his sharkbot to ride.",
+      "startMs": 315840,
+      "endMs": 321920,
+      "avgLogprob": -0.073263,
+      "noSpeechProb": 0.005565,
+      "compressionRatio": 1.623188,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 315840,
+          "endMs": 316080,
+          "probability": 0.985571
+        },
+        {
+          "index": 2,
+          "text": "now,",
+          "startMs": 316080,
+          "endMs": 316620,
+          "probability": 0.991527
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 317220,
+          "endMs": 317560,
+          "probability": 0.996374
+        },
+        {
+          "index": 4,
+          "text": "really",
+          "startMs": 317560,
+          "endMs": 318020,
+          "probability": 0.994806
+        },
+        {
+          "index": 5,
+          "text": "wants",
+          "startMs": 318020,
+          "endMs": 318460,
+          "probability": 0.995808
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 318460,
+          "endMs": 318780,
+          "probability": 0.995769
+        },
+        {
+          "index": 7,
+          "text": "rocket",
+          "startMs": 318780,
+          "endMs": 319460,
+          "probability": 0.769203
+        },
+        {
+          "index": 8,
+          "text": "racer",
+          "startMs": 319460,
+          "endMs": 320040,
+          "probability": 0.994047
+        },
+        {
+          "index": 9,
+          "text": "for",
+          "startMs": 320040,
+          "endMs": 320420,
+          "probability": 0.995866
+        },
+        {
+          "index": 10,
+          "text": "his",
+          "startMs": 320420,
+          "endMs": 320660,
+          "probability": 0.998195
+        },
+        {
+          "index": 11,
+          "text": "sharkbot",
+          "startMs": 320660,
+          "endMs": 321240,
+          "probability": 0.99293
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 321240,
+          "endMs": 321500,
+          "probability": 0.993651
+        },
+        {
+          "index": 13,
+          "text": "ride.",
+          "startMs": 321500,
+          "endMs": 321920,
+          "probability": 0.999784
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "text": "Pete does not have enough money for the rocket racer.",
+      "startMs": 323820,
+      "endMs": 327780,
+      "avgLogprob": -0.073263,
+      "noSpeechProb": 0.005565,
+      "compressionRatio": 1.623188,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 323820,
+          "endMs": 324500,
+          "probability": 0.996509
+        },
+        {
+          "index": 2,
+          "text": "does",
+          "startMs": 324500,
+          "endMs": 324820,
+          "probability": 0.974522
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 324820,
+          "endMs": 325140,
+          "probability": 0.999057
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 325140,
+          "endMs": 325480,
+          "probability": 0.998553
+        },
+        {
+          "index": 5,
+          "text": "enough",
+          "startMs": 325480,
+          "endMs": 325840,
+          "probability": 0.996871
+        },
+        {
+          "index": 6,
+          "text": "money",
+          "startMs": 325840,
+          "endMs": 326340,
+          "probability": 0.999243
+        },
+        {
+          "index": 7,
+          "text": "for",
+          "startMs": 326340,
+          "endMs": 326620,
+          "probability": 0.999115
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 326620,
+          "endMs": 326840,
+          "probability": 0.998033
+        },
+        {
+          "index": 9,
+          "text": "rocket",
+          "startMs": 326840,
+          "endMs": 327180,
+          "probability": 0.973548
+        },
+        {
+          "index": 10,
+          "text": "racer.",
+          "startMs": 327180,
+          "endMs": 327780,
+          "probability": 0.996758
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "text": "But he knows what to do.",
+      "startMs": 328780,
+      "endMs": 331520,
+      "avgLogprob": -0.181113,
+      "noSpeechProb": 0.053049,
+      "compressionRatio": 0.843137,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 328570,
+          "endMs": 329160,
+          "probability": 0.439922
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 329160,
+          "endMs": 329600,
+          "probability": 0.949862
+        },
+        {
+          "index": 3,
+          "text": "knows",
+          "startMs": 329600,
+          "endMs": 329880,
+          "probability": 0.994672
+        },
+        {
+          "index": 4,
+          "text": "what",
+          "startMs": 329880,
+          "endMs": 330260,
+          "probability": 0.99613
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 330260,
+          "endMs": 330580,
+          "probability": 0.997469
+        },
+        {
+          "index": 6,
+          "text": "do.",
+          "startMs": 330580,
+          "endMs": 331520,
+          "probability": 0.998565
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "text": "Saving up is cool.",
+      "startMs": 334300,
+      "endMs": 336780,
+      "avgLogprob": -0.181113,
+      "noSpeechProb": 0.053049,
+      "compressionRatio": 0.843137,
+      "words": [
+        {
+          "index": 1,
+          "text": "Saving",
+          "startMs": 334300,
+          "endMs": 334960,
+          "probability": 0.823847
+        },
+        {
+          "index": 2,
+          "text": "up",
+          "startMs": 334960,
+          "endMs": 335420,
+          "probability": 0.840726
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 335420,
+          "endMs": 335940,
+          "probability": 0.994304
+        },
+        {
+          "index": 4,
+          "text": "cool.",
+          "startMs": 335940,
+          "endMs": 336780,
+          "probability": 0.82511
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "text": "Pete is a registered trademark of Pete the Cat LLC.",
+      "startMs": 361680,
+      "endMs": 369520,
+      "avgLogprob": -0.469735,
+      "noSpeechProb": 0.951194,
+      "compressionRatio": 1.132743,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 361680,
+          "endMs": 362960,
+          "probability": 0.000512
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 362960,
+          "endMs": 364240,
+          "probability": 0.005227
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 364240,
+          "endMs": 366540,
+          "probability": 0.835034
+        },
+        {
+          "index": 4,
+          "text": "registered",
+          "startMs": 366540,
+          "endMs": 366960,
+          "probability": 0.908289
+        },
+        {
+          "index": 5,
+          "text": "trademark",
+          "startMs": 366960,
+          "endMs": 367620,
+          "probability": 0.983526
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 367620,
+          "endMs": 367960,
+          "probability": 0.982662
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 367960,
+          "endMs": 368220,
+          "probability": 0.948196
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 368220,
+          "endMs": 368440,
+          "probability": 0.909396
+        },
+        {
+          "index": 9,
+          "text": "Cat",
+          "startMs": 368440,
+          "endMs": 368700,
+          "probability": 0.860582
+        },
+        {
+          "index": 10,
+          "text": "LLC.",
+          "startMs": 368700,
+          "endMs": 369520,
+          "probability": 0.737632
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "text": "Production copyright 2023 by Harper Collins Publishers.",
+      "startMs": 370640,
+      "endMs": 374800,
+      "avgLogprob": -0.469735,
+      "noSpeechProb": 0.951194,
+      "compressionRatio": 1.132743,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 370640,
+          "endMs": 370640,
+          "probability": 0.900435
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 370640,
+          "endMs": 371420,
+          "probability": 0.806509
+        },
+        {
+          "index": 3,
+          "text": "2023",
+          "startMs": 371420,
+          "endMs": 372620,
+          "probability": 0.958533
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 372620,
+          "endMs": 373160,
+          "probability": 0.777416
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 373160,
+          "endMs": 373620,
+          "probability": 0.993564
+        },
+        {
+          "index": 6,
+          "text": "Collins",
+          "startMs": 373620,
+          "endMs": 374180,
+          "probability": 0.722732
+        },
+        {
+          "index": 7,
+          "text": "Publishers.",
+          "startMs": 374180,
+          "endMs": 374800,
+          "probability": 0.848117
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "text": "All rights reserved.",
+      "startMs": 375600,
+      "endMs": 376860,
+      "avgLogprob": -0.469735,
+      "noSpeechProb": 0.951194,
+      "compressionRatio": 1.132743,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 375600,
+          "endMs": 375860,
+          "probability": 0.957197
+        },
+        {
+          "index": 2,
+          "text": "rights",
+          "startMs": 375860,
+          "endMs": 376180,
+          "probability": 0.967664
+        },
+        {
+          "index": 3,
+          "text": "reserved.",
+          "startMs": 376180,
+          "endMs": 376860,
+          "probability": 0.963366
+        }
+      ]
+    }
+  ]
+}

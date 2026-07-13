@@ -1,0 +1,5025 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 43.357,
+  "text": "Pete the Cat, Falling for Autumn by Kimberly and James Dean performed by James Foe It is the first day of fall and Pete the Cat is feeling blue. I like summer better, he says. In summer I can swim and surf and play at the beach. Maybe you just need to remind yourself of all the things you love about autumn, mom suggests. Hmm, Pete says. I'll try. Pete finds Grandma in the kitchen. She's baking delicious pumpkin pies. The whole house smells sweet and spicy. Pete loves helping Grandma bake pumpkin pie, but he loves helping eat it even more. After the baking is done, Pete picks a squat orange pumpkin from the counter and slips it into his backpack as a souvenir. Next, Pete heads to the town corn maze. Pete and his friends wander through the long twisty paths made of tall corn stalks. The best part of the corn maze is getting lost and having to start over again. As he leaves, Pete plucks a golden corn cob from the maze and places it inside his backpack. Then Pete visits Grandpa, who is knitting on the porch. Grandpa helps Pete use the knitting needles to knit the yarn into cool patterns. Together, Pete and Grandpa make a long cozy scarf for Pete to wear. When they're done, Pete chooses a little ball of leftover yarn and places it inside his backpack. Next, Pete goes to the hay ride at the park. Pete, Bob, Mom, Dad, and Grandpa all pile into a wagon filled with hay. They go on a bumpy wagon ride around the park. Woohoo! Pete shouts. At the end of the ride, Pete grabs a handful of sweet smelling hay from the wagon and stuffs it into his backpack. Pete heads over to the apple orchard where he and Callie go apple picking. They eat sweet apple donuts and drink hot apple cider and fill their buckets with apples of all different shapes and sizes. Before he leaves, Pete chooses a round red apple and drops it into his backpack. Next, Pete stops by the park. He plays touch football with Bob and their friends. Pete scores a touchdown and everyone cheers. After the game, Pete grabs Bob's football and stuffs it into his backpack. It barely fits. Bob won't mind if I borrow this, Pete says. Finally, Pete heads back home. But he stops in his front yard, which is covered in bright leaves falling from the trees. Pete helps his dad rake the leaves into big colorful mounds. Then Pete runs and jumps into all the leaf piles. After he's done jumping, Pete picks a bunch of red and gold and orange leaves and stuffs them into his backpack. Pete's backpack is bursting with fall souvenirs. He can't wait to show Mom. I love autumn, Pete says. Wonderful, says Mom. You know, these would make great decorations for Thanksgiving. So Pete helps Mom fill a basket with all his mementos. They place the basket at the center of the table. You did a great job, Pete, says Mom. It's beautiful, says Dad. Is that my football? asks Bob. Just then, the doorbell rings. The Thanksgiving guests are here. All of Pete's family and friends gather around the dining room table. They tell stories and laugh at jokes while they eat. Everyone is having a great time. Pete looks around the table and smiles. He loves lots of things about autumn. But Pete knows what he loves most all year long. His family and friends. We hope you have enjoyed this recording of Pete the Cat, Falling for Autumn. Text copyright 2020 by James Dean and Kimberly Dean. Illustrations copyright 2020 by James Dean. Pete the Cat is a registered trademark of Pete the Cat LLC. Production copyright 2020 by Harper Collins Publishers. This program was produced by John Marshall Media.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat, Falling for Autumn by Kimberly and James Dean",
+      "startMs": 0,
+      "endMs": 6740,
+      "avgLogprob": -0.281591,
+      "noSpeechProb": 0.00587,
+      "compressionRatio": 1.452229,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 560,
+          "probability": 0.873715
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 560,
+          "endMs": 860,
+          "probability": 0.976348
+        },
+        {
+          "index": 3,
+          "text": "Cat,",
+          "startMs": 860,
+          "endMs": 1220,
+          "probability": 0.82187
+        },
+        {
+          "index": 4,
+          "text": "Falling",
+          "startMs": 2260,
+          "endMs": 2260,
+          "probability": 0.732642
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 2260,
+          "endMs": 2780,
+          "probability": 0.942443
+        },
+        {
+          "index": 6,
+          "text": "Autumn",
+          "startMs": 2780,
+          "endMs": 3420,
+          "probability": 0.981686
+        },
+        {
+          "index": 7,
+          "text": "by",
+          "startMs": 3420,
+          "endMs": 4400,
+          "probability": 0.714554
+        },
+        {
+          "index": 8,
+          "text": "Kimberly",
+          "startMs": 4400,
+          "endMs": 4900,
+          "probability": 0.772848
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 4900,
+          "endMs": 5580,
+          "probability": 0.959549
+        },
+        {
+          "index": 10,
+          "text": "James",
+          "startMs": 5580,
+          "endMs": 6240,
+          "probability": 0.997518
+        },
+        {
+          "index": 11,
+          "text": "Dean",
+          "startMs": 6240,
+          "endMs": 6740,
+          "probability": 0.925458
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "performed by James Foe",
+      "startMs": 7920,
+      "endMs": 9760,
+      "avgLogprob": -0.281591,
+      "noSpeechProb": 0.00587,
+      "compressionRatio": 1.452229,
+      "words": [
+        {
+          "index": 1,
+          "text": "performed",
+          "startMs": 7760,
+          "endMs": 8260,
+          "probability": 0.468304
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 8260,
+          "endMs": 8820,
+          "probability": 0.998788
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 8820,
+          "endMs": 9420,
+          "probability": 0.995844
+        },
+        {
+          "index": 4,
+          "text": "Foe",
+          "startMs": 9420,
+          "endMs": 9760,
+          "probability": 0.828456
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "It is the first day of fall and Pete the Cat is feeling blue.",
+      "startMs": 12600,
+      "endMs": 18880,
+      "avgLogprob": -0.281591,
+      "noSpeechProb": 0.00587,
+      "compressionRatio": 1.452229,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 12280,
+          "endMs": 12780,
+          "probability": 0.12965
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 12780,
+          "endMs": 13460,
+          "probability": 0.993132
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 13460,
+          "endMs": 13660,
+          "probability": 0.997151
+        },
+        {
+          "index": 4,
+          "text": "first",
+          "startMs": 13660,
+          "endMs": 14060,
+          "probability": 0.997725
+        },
+        {
+          "index": 5,
+          "text": "day",
+          "startMs": 14060,
+          "endMs": 14500,
+          "probability": 0.996255
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 14500,
+          "endMs": 14720,
+          "probability": 0.998304
+        },
+        {
+          "index": 7,
+          "text": "fall",
+          "startMs": 14720,
+          "endMs": 15140,
+          "probability": 0.885227
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 15140,
+          "endMs": 16100,
+          "probability": 0.86327
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 16100,
+          "endMs": 16400,
+          "probability": 0.972012
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 16400,
+          "endMs": 16640,
+          "probability": 0.992551
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 16640,
+          "endMs": 17000,
+          "probability": 0.72042
+        },
+        {
+          "index": 12,
+          "text": "is",
+          "startMs": 17000,
+          "endMs": 17820,
+          "probability": 0.973313
+        },
+        {
+          "index": 13,
+          "text": "feeling",
+          "startMs": 17820,
+          "endMs": 18260,
+          "probability": 0.938699
+        },
+        {
+          "index": 14,
+          "text": "blue.",
+          "startMs": 18260,
+          "endMs": 18880,
+          "probability": 0.99392
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "I like summer better, he says. In summer I can swim and surf and play at the beach.",
+      "startMs": 19840,
+      "endMs": 28440,
+      "avgLogprob": -0.281591,
+      "noSpeechProb": 0.00587,
+      "compressionRatio": 1.452229,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 19840,
+          "endMs": 20140,
+          "probability": 0.307217
+        },
+        {
+          "index": 2,
+          "text": "like",
+          "startMs": 20140,
+          "endMs": 20420,
+          "probability": 0.961625
+        },
+        {
+          "index": 3,
+          "text": "summer",
+          "startMs": 20420,
+          "endMs": 20840,
+          "probability": 0.962045
+        },
+        {
+          "index": 4,
+          "text": "better,",
+          "startMs": 20840,
+          "endMs": 21480,
+          "probability": 0.996458
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 21620,
+          "endMs": 22160,
+          "probability": 0.948197
+        },
+        {
+          "index": 6,
+          "text": "says.",
+          "startMs": 22160,
+          "endMs": 22600,
+          "probability": 0.996041
+        },
+        {
+          "index": 7,
+          "text": "In",
+          "startMs": 23220,
+          "endMs": 23500,
+          "probability": 0.991053
+        },
+        {
+          "index": 8,
+          "text": "summer",
+          "startMs": 23500,
+          "endMs": 23920,
+          "probability": 0.978343
+        },
+        {
+          "index": 9,
+          "text": "I",
+          "startMs": 23920,
+          "endMs": 24680,
+          "probability": 0.524397
+        },
+        {
+          "index": 10,
+          "text": "can",
+          "startMs": 24680,
+          "endMs": 24900,
+          "probability": 0.998284
+        },
+        {
+          "index": 11,
+          "text": "swim",
+          "startMs": 24900,
+          "endMs": 25400,
+          "probability": 0.999178
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 25400,
+          "endMs": 26120,
+          "probability": 0.878426
+        },
+        {
+          "index": 13,
+          "text": "surf",
+          "startMs": 26120,
+          "endMs": 26660,
+          "probability": 0.998915
+        },
+        {
+          "index": 14,
+          "text": "and",
+          "startMs": 26660,
+          "endMs": 27360,
+          "probability": 0.97318
+        },
+        {
+          "index": 15,
+          "text": "play",
+          "startMs": 27360,
+          "endMs": 27660,
+          "probability": 0.99815
+        },
+        {
+          "index": 16,
+          "text": "at",
+          "startMs": 27660,
+          "endMs": 27820,
+          "probability": 0.997975
+        },
+        {
+          "index": 17,
+          "text": "the",
+          "startMs": 27820,
+          "endMs": 27960,
+          "probability": 0.998978
+        },
+        {
+          "index": 18,
+          "text": "beach.",
+          "startMs": 27960,
+          "endMs": 28440,
+          "probability": 0.997425
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Maybe you just need to remind yourself of all the things you love about autumn, mom suggests.",
+      "startMs": 30000,
+      "endMs": 37420,
+      "avgLogprob": -0.277491,
+      "noSpeechProb": 0.005332,
+      "compressionRatio": 1.343023,
+      "words": [
+        {
+          "index": 1,
+          "text": "Maybe",
+          "startMs": 30000,
+          "endMs": 30620,
+          "probability": 0.475182
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 30620,
+          "endMs": 31000,
+          "probability": 0.97321
+        },
+        {
+          "index": 3,
+          "text": "just",
+          "startMs": 31000,
+          "endMs": 31200,
+          "probability": 0.98689
+        },
+        {
+          "index": 4,
+          "text": "need",
+          "startMs": 31200,
+          "endMs": 31500,
+          "probability": 0.996906
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 31500,
+          "endMs": 31700,
+          "probability": 0.997554
+        },
+        {
+          "index": 6,
+          "text": "remind",
+          "startMs": 31700,
+          "endMs": 32080,
+          "probability": 0.99546
+        },
+        {
+          "index": 7,
+          "text": "yourself",
+          "startMs": 32080,
+          "endMs": 32680,
+          "probability": 0.997701
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 32680,
+          "endMs": 33360,
+          "probability": 0.894479
+        },
+        {
+          "index": 9,
+          "text": "all",
+          "startMs": 33360,
+          "endMs": 33600,
+          "probability": 0.994393
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 33600,
+          "endMs": 33840,
+          "probability": 0.989131
+        },
+        {
+          "index": 11,
+          "text": "things",
+          "startMs": 33840,
+          "endMs": 34160,
+          "probability": 0.996576
+        },
+        {
+          "index": 12,
+          "text": "you",
+          "startMs": 34160,
+          "endMs": 34380,
+          "probability": 0.989669
+        },
+        {
+          "index": 13,
+          "text": "love",
+          "startMs": 34380,
+          "endMs": 34580,
+          "probability": 0.996321
+        },
+        {
+          "index": 14,
+          "text": "about",
+          "startMs": 34580,
+          "endMs": 34980,
+          "probability": 0.997337
+        },
+        {
+          "index": 15,
+          "text": "autumn,",
+          "startMs": 34980,
+          "endMs": 35660,
+          "probability": 0.624425
+        },
+        {
+          "index": 16,
+          "text": "mom",
+          "startMs": 36260,
+          "endMs": 36560,
+          "probability": 0.643461
+        },
+        {
+          "index": 17,
+          "text": "suggests.",
+          "startMs": 36560,
+          "endMs": 37420,
+          "probability": 0.981927
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Hmm, Pete says. I'll try.",
+      "startMs": 38800,
+      "endMs": 42720,
+      "avgLogprob": -0.277491,
+      "noSpeechProb": 0.005332,
+      "compressionRatio": 1.343023,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hmm,",
+          "startMs": 38800,
+          "endMs": 39040,
+          "probability": 0.459884
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 40000,
+          "endMs": 40000,
+          "probability": 0.990704
+        },
+        {
+          "index": 3,
+          "text": "says.",
+          "startMs": 40000,
+          "endMs": 40500,
+          "probability": 0.99667
+        },
+        {
+          "index": 4,
+          "text": "I'll",
+          "startMs": 41680,
+          "endMs": 41900,
+          "probability": 0.962144
+        },
+        {
+          "index": 5,
+          "text": "try.",
+          "startMs": 41900,
+          "endMs": 42720,
+          "probability": 0.993924
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Pete finds Grandma in the kitchen. She's baking delicious pumpkin pies. The whole house smells sweet and spicy.",
+      "startMs": 45400,
+      "endMs": 54120,
+      "avgLogprob": -0.277491,
+      "noSpeechProb": 0.005332,
+      "compressionRatio": 1.343023,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 45400,
+          "endMs": 45740,
+          "probability": 0.978363
+        },
+        {
+          "index": 2,
+          "text": "finds",
+          "startMs": 45740,
+          "endMs": 46260,
+          "probability": 0.992573
+        },
+        {
+          "index": 3,
+          "text": "Grandma",
+          "startMs": 46260,
+          "endMs": 46800,
+          "probability": 0.731468
+        },
+        {
+          "index": 4,
+          "text": "in",
+          "startMs": 46800,
+          "endMs": 47000,
+          "probability": 0.988701
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 47000,
+          "endMs": 47120,
+          "probability": 0.998092
+        },
+        {
+          "index": 6,
+          "text": "kitchen.",
+          "startMs": 47120,
+          "endMs": 47480,
+          "probability": 0.995299
+        },
+        {
+          "index": 7,
+          "text": "She's",
+          "startMs": 48160,
+          "endMs": 48420,
+          "probability": 0.979602
+        },
+        {
+          "index": 8,
+          "text": "baking",
+          "startMs": 48420,
+          "endMs": 48840,
+          "probability": 0.995288
+        },
+        {
+          "index": 9,
+          "text": "delicious",
+          "startMs": 48840,
+          "endMs": 49720,
+          "probability": 0.998974
+        },
+        {
+          "index": 10,
+          "text": "pumpkin",
+          "startMs": 49720,
+          "endMs": 50320,
+          "probability": 0.985787
+        },
+        {
+          "index": 11,
+          "text": "pies.",
+          "startMs": 50320,
+          "endMs": 50900,
+          "probability": 0.991954
+        },
+        {
+          "index": 12,
+          "text": "The",
+          "startMs": 51560,
+          "endMs": 51720,
+          "probability": 0.994786
+        },
+        {
+          "index": 13,
+          "text": "whole",
+          "startMs": 51720,
+          "endMs": 52000,
+          "probability": 0.998801
+        },
+        {
+          "index": 14,
+          "text": "house",
+          "startMs": 52000,
+          "endMs": 52460,
+          "probability": 0.999129
+        },
+        {
+          "index": 15,
+          "text": "smells",
+          "startMs": 52460,
+          "endMs": 52780,
+          "probability": 0.993689
+        },
+        {
+          "index": 16,
+          "text": "sweet",
+          "startMs": 52780,
+          "endMs": 53280,
+          "probability": 0.997143
+        },
+        {
+          "index": 17,
+          "text": "and",
+          "startMs": 53280,
+          "endMs": 53500,
+          "probability": 0.997925
+        },
+        {
+          "index": 18,
+          "text": "spicy.",
+          "startMs": 53500,
+          "endMs": 54120,
+          "probability": 0.996737
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Pete loves helping Grandma bake pumpkin pie, but he loves helping eat it even more.",
+      "startMs": 55200,
+      "endMs": 62180,
+      "avgLogprob": -0.285661,
+      "noSpeechProb": 0.015252,
+      "compressionRatio": 1.471429,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 55200,
+          "endMs": 55960,
+          "probability": 0.666557
+        },
+        {
+          "index": 2,
+          "text": "loves",
+          "startMs": 55960,
+          "endMs": 56340,
+          "probability": 0.986411
+        },
+        {
+          "index": 3,
+          "text": "helping",
+          "startMs": 56340,
+          "endMs": 56800,
+          "probability": 0.998185
+        },
+        {
+          "index": 4,
+          "text": "Grandma",
+          "startMs": 56800,
+          "endMs": 57260,
+          "probability": 0.719599
+        },
+        {
+          "index": 5,
+          "text": "bake",
+          "startMs": 57260,
+          "endMs": 57540,
+          "probability": 0.990975
+        },
+        {
+          "index": 6,
+          "text": "pumpkin",
+          "startMs": 57540,
+          "endMs": 58020,
+          "probability": 0.948363
+        },
+        {
+          "index": 7,
+          "text": "pie,",
+          "startMs": 58020,
+          "endMs": 58520,
+          "probability": 0.998839
+        },
+        {
+          "index": 8,
+          "text": "but",
+          "startMs": 59300,
+          "endMs": 59340,
+          "probability": 0.978907
+        },
+        {
+          "index": 9,
+          "text": "he",
+          "startMs": 59340,
+          "endMs": 59600,
+          "probability": 0.993435
+        },
+        {
+          "index": 10,
+          "text": "loves",
+          "startMs": 59600,
+          "endMs": 59860,
+          "probability": 0.99174
+        },
+        {
+          "index": 11,
+          "text": "helping",
+          "startMs": 59860,
+          "endMs": 60400,
+          "probability": 0.994462
+        },
+        {
+          "index": 12,
+          "text": "eat",
+          "startMs": 60400,
+          "endMs": 60920,
+          "probability": 0.87187
+        },
+        {
+          "index": 13,
+          "text": "it",
+          "startMs": 60920,
+          "endMs": 61240,
+          "probability": 0.996928
+        },
+        {
+          "index": 14,
+          "text": "even",
+          "startMs": 61240,
+          "endMs": 61620,
+          "probability": 0.990296
+        },
+        {
+          "index": 15,
+          "text": "more.",
+          "startMs": 61620,
+          "endMs": 62180,
+          "probability": 0.997251
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "After the baking is done, Pete picks a squat orange pumpkin from the counter and slips it into his backpack as a souvenir.",
+      "startMs": 64540,
+      "endMs": 73400,
+      "avgLogprob": -0.285661,
+      "noSpeechProb": 0.015252,
+      "compressionRatio": 1.471429,
+      "words": [
+        {
+          "index": 1,
+          "text": "After",
+          "startMs": 64540,
+          "endMs": 64860,
+          "probability": 0.987315
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 64860,
+          "endMs": 65080,
+          "probability": 0.997481
+        },
+        {
+          "index": 3,
+          "text": "baking",
+          "startMs": 65080,
+          "endMs": 65440,
+          "probability": 0.998279
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 65440,
+          "endMs": 65760,
+          "probability": 0.996106
+        },
+        {
+          "index": 5,
+          "text": "done,",
+          "startMs": 65760,
+          "endMs": 66100,
+          "probability": 0.999404
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 66960,
+          "endMs": 67020,
+          "probability": 0.992659
+        },
+        {
+          "index": 7,
+          "text": "picks",
+          "startMs": 67020,
+          "endMs": 67480,
+          "probability": 0.993122
+        },
+        {
+          "index": 8,
+          "text": "a",
+          "startMs": 67480,
+          "endMs": 67680,
+          "probability": 0.991807
+        },
+        {
+          "index": 9,
+          "text": "squat",
+          "startMs": 67680,
+          "endMs": 68080,
+          "probability": 0.858199
+        },
+        {
+          "index": 10,
+          "text": "orange",
+          "startMs": 68080,
+          "endMs": 68620,
+          "probability": 0.927091
+        },
+        {
+          "index": 11,
+          "text": "pumpkin",
+          "startMs": 68620,
+          "endMs": 69140,
+          "probability": 0.996475
+        },
+        {
+          "index": 12,
+          "text": "from",
+          "startMs": 69140,
+          "endMs": 69380,
+          "probability": 0.997479
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 69380,
+          "endMs": 69560,
+          "probability": 0.999068
+        },
+        {
+          "index": 14,
+          "text": "counter",
+          "startMs": 69560,
+          "endMs": 69960,
+          "probability": 0.999399
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 69960,
+          "endMs": 70600,
+          "probability": 0.744126
+        },
+        {
+          "index": 16,
+          "text": "slips",
+          "startMs": 70600,
+          "endMs": 70900,
+          "probability": 0.994195
+        },
+        {
+          "index": 17,
+          "text": "it",
+          "startMs": 70900,
+          "endMs": 71100,
+          "probability": 0.978293
+        },
+        {
+          "index": 18,
+          "text": "into",
+          "startMs": 71100,
+          "endMs": 71320,
+          "probability": 0.98449
+        },
+        {
+          "index": 19,
+          "text": "his",
+          "startMs": 71320,
+          "endMs": 71560,
+          "probability": 0.995752
+        },
+        {
+          "index": 20,
+          "text": "backpack",
+          "startMs": 71560,
+          "endMs": 72080,
+          "probability": 0.985162
+        },
+        {
+          "index": 21,
+          "text": "as",
+          "startMs": 72080,
+          "endMs": 72400,
+          "probability": 0.99368
+        },
+        {
+          "index": 22,
+          "text": "a",
+          "startMs": 72400,
+          "endMs": 72620,
+          "probability": 0.997075
+        },
+        {
+          "index": 23,
+          "text": "souvenir.",
+          "startMs": 72620,
+          "endMs": 73400,
+          "probability": 0.999001
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Next, Pete heads to the town corn maze. Pete and his friends wander through the long twisty paths made of tall corn stalks.",
+      "startMs": 75260,
+      "endMs": 85280,
+      "avgLogprob": -0.185153,
+      "noSpeechProb": 0.034501,
+      "compressionRatio": 1.544503,
+      "words": [
+        {
+          "index": 1,
+          "text": "Next,",
+          "startMs": 75260,
+          "endMs": 76020,
+          "probability": 0.88674
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 76500,
+          "endMs": 76560,
+          "probability": 0.971805
+        },
+        {
+          "index": 3,
+          "text": "heads",
+          "startMs": 76560,
+          "endMs": 76840,
+          "probability": 0.990134
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 76840,
+          "endMs": 77100,
+          "probability": 0.996224
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 77100,
+          "endMs": 77240,
+          "probability": 0.992973
+        },
+        {
+          "index": 6,
+          "text": "town",
+          "startMs": 77240,
+          "endMs": 77520,
+          "probability": 0.979479
+        },
+        {
+          "index": 7,
+          "text": "corn",
+          "startMs": 77520,
+          "endMs": 77920,
+          "probability": 0.955276
+        },
+        {
+          "index": 8,
+          "text": "maze.",
+          "startMs": 77920,
+          "endMs": 78220,
+          "probability": 0.97587
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 79060,
+          "endMs": 79180,
+          "probability": 0.99779
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 79180,
+          "endMs": 79360,
+          "probability": 0.997285
+        },
+        {
+          "index": 11,
+          "text": "his",
+          "startMs": 79360,
+          "endMs": 79660,
+          "probability": 0.997897
+        },
+        {
+          "index": 12,
+          "text": "friends",
+          "startMs": 79660,
+          "endMs": 80040,
+          "probability": 0.994285
+        },
+        {
+          "index": 13,
+          "text": "wander",
+          "startMs": 80040,
+          "endMs": 80380,
+          "probability": 0.961224
+        },
+        {
+          "index": 14,
+          "text": "through",
+          "startMs": 80380,
+          "endMs": 80820,
+          "probability": 0.99406
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 80820,
+          "endMs": 81000,
+          "probability": 0.993914
+        },
+        {
+          "index": 16,
+          "text": "long",
+          "startMs": 81000,
+          "endMs": 81500,
+          "probability": 0.998371
+        },
+        {
+          "index": 17,
+          "text": "twisty",
+          "startMs": 81500,
+          "endMs": 82380,
+          "probability": 0.761547
+        },
+        {
+          "index": 18,
+          "text": "paths",
+          "startMs": 82380,
+          "endMs": 82940,
+          "probability": 0.941788
+        },
+        {
+          "index": 19,
+          "text": "made",
+          "startMs": 82940,
+          "endMs": 83600,
+          "probability": 0.955194
+        },
+        {
+          "index": 20,
+          "text": "of",
+          "startMs": 83600,
+          "endMs": 83860,
+          "probability": 0.996675
+        },
+        {
+          "index": 21,
+          "text": "tall",
+          "startMs": 83860,
+          "endMs": 84280,
+          "probability": 0.998251
+        },
+        {
+          "index": 22,
+          "text": "corn",
+          "startMs": 84280,
+          "endMs": 84760,
+          "probability": 0.996637
+        },
+        {
+          "index": 23,
+          "text": "stalks.",
+          "startMs": 84760,
+          "endMs": 85280,
+          "probability": 0.808883
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "The best part of the corn maze is getting lost and having to start over again.",
+      "startMs": 86140,
+      "endMs": 91820,
+      "avgLogprob": -0.185153,
+      "noSpeechProb": 0.034501,
+      "compressionRatio": 1.544503,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 86140,
+          "endMs": 86540,
+          "probability": 0.996682
+        },
+        {
+          "index": 2,
+          "text": "best",
+          "startMs": 86540,
+          "endMs": 86880,
+          "probability": 0.999343
+        },
+        {
+          "index": 3,
+          "text": "part",
+          "startMs": 86880,
+          "endMs": 87220,
+          "probability": 0.99908
+        },
+        {
+          "index": 4,
+          "text": "of",
+          "startMs": 87220,
+          "endMs": 87400,
+          "probability": 0.997838
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 87400,
+          "endMs": 87580,
+          "probability": 0.99707
+        },
+        {
+          "index": 6,
+          "text": "corn",
+          "startMs": 87580,
+          "endMs": 87880,
+          "probability": 0.997346
+        },
+        {
+          "index": 7,
+          "text": "maze",
+          "startMs": 87880,
+          "endMs": 88260,
+          "probability": 0.997943
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 88260,
+          "endMs": 88860,
+          "probability": 0.952167
+        },
+        {
+          "index": 9,
+          "text": "getting",
+          "startMs": 88860,
+          "endMs": 89160,
+          "probability": 0.998523
+        },
+        {
+          "index": 10,
+          "text": "lost",
+          "startMs": 89160,
+          "endMs": 89640,
+          "probability": 0.999002
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 89640,
+          "endMs": 90180,
+          "probability": 0.912
+        },
+        {
+          "index": 12,
+          "text": "having",
+          "startMs": 90180,
+          "endMs": 90500,
+          "probability": 0.998618
+        },
+        {
+          "index": 13,
+          "text": "to",
+          "startMs": 90500,
+          "endMs": 90700,
+          "probability": 0.998441
+        },
+        {
+          "index": 14,
+          "text": "start",
+          "startMs": 90700,
+          "endMs": 90940,
+          "probability": 0.999321
+        },
+        {
+          "index": 15,
+          "text": "over",
+          "startMs": 90940,
+          "endMs": 91320,
+          "probability": 0.998633
+        },
+        {
+          "index": 16,
+          "text": "again.",
+          "startMs": 91320,
+          "endMs": 91820,
+          "probability": 0.999014
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "As he leaves, Pete plucks a golden corn cob from the maze and places it inside his backpack.",
+      "startMs": 93620,
+      "endMs": 101440,
+      "avgLogprob": -0.185153,
+      "noSpeechProb": 0.034501,
+      "compressionRatio": 1.544503,
+      "words": [
+        {
+          "index": 1,
+          "text": "As",
+          "startMs": 93620,
+          "endMs": 94380,
+          "probability": 0.996198
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 94380,
+          "endMs": 94600,
+          "probability": 0.999333
+        },
+        {
+          "index": 3,
+          "text": "leaves,",
+          "startMs": 94600,
+          "endMs": 95120,
+          "probability": 0.997985
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 95560,
+          "endMs": 95880,
+          "probability": 0.997118
+        },
+        {
+          "index": 5,
+          "text": "plucks",
+          "startMs": 95880,
+          "endMs": 96380,
+          "probability": 0.990532
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 96380,
+          "endMs": 96560,
+          "probability": 0.99443
+        },
+        {
+          "index": 7,
+          "text": "golden",
+          "startMs": 96560,
+          "endMs": 97160,
+          "probability": 0.989416
+        },
+        {
+          "index": 8,
+          "text": "corn",
+          "startMs": 97160,
+          "endMs": 97720,
+          "probability": 0.899668
+        },
+        {
+          "index": 9,
+          "text": "cob",
+          "startMs": 97720,
+          "endMs": 98020,
+          "probability": 0.966616
+        },
+        {
+          "index": 10,
+          "text": "from",
+          "startMs": 98020,
+          "endMs": 98300,
+          "probability": 0.998353
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 98300,
+          "endMs": 98480,
+          "probability": 0.99904
+        },
+        {
+          "index": 12,
+          "text": "maze",
+          "startMs": 98480,
+          "endMs": 98860,
+          "probability": 0.996861
+        },
+        {
+          "index": 13,
+          "text": "and",
+          "startMs": 98860,
+          "endMs": 99420,
+          "probability": 0.888339
+        },
+        {
+          "index": 14,
+          "text": "places",
+          "startMs": 99420,
+          "endMs": 99840,
+          "probability": 0.994955
+        },
+        {
+          "index": 15,
+          "text": "it",
+          "startMs": 99840,
+          "endMs": 100140,
+          "probability": 0.99703
+        },
+        {
+          "index": 16,
+          "text": "inside",
+          "startMs": 100140,
+          "endMs": 100600,
+          "probability": 0.998015
+        },
+        {
+          "index": 17,
+          "text": "his",
+          "startMs": 100600,
+          "endMs": 100920,
+          "probability": 0.998073
+        },
+        {
+          "index": 18,
+          "text": "backpack.",
+          "startMs": 100920,
+          "endMs": 101440,
+          "probability": 0.985092
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Then Pete visits Grandpa, who is knitting on the porch. Grandpa helps Pete use the knitting needles to knit the yarn into cool patterns.",
+      "startMs": 103420,
+      "endMs": 113600,
+      "avgLogprob": -0.10563,
+      "noSpeechProb": 0.018096,
+      "compressionRatio": 1.556701,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 103420,
+          "endMs": 104140,
+          "probability": 0.946786
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 104140,
+          "endMs": 104440,
+          "probability": 0.834807
+        },
+        {
+          "index": 3,
+          "text": "visits",
+          "startMs": 104440,
+          "endMs": 104900,
+          "probability": 0.99508
+        },
+        {
+          "index": 4,
+          "text": "Grandpa,",
+          "startMs": 104900,
+          "endMs": 105580,
+          "probability": 0.941281
+        },
+        {
+          "index": 5,
+          "text": "who",
+          "startMs": 105900,
+          "endMs": 106160,
+          "probability": 0.996706
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 106160,
+          "endMs": 106300,
+          "probability": 0.975576
+        },
+        {
+          "index": 7,
+          "text": "knitting",
+          "startMs": 106300,
+          "endMs": 106560,
+          "probability": 0.998253
+        },
+        {
+          "index": 8,
+          "text": "on",
+          "startMs": 106560,
+          "endMs": 106840,
+          "probability": 0.998201
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 106840,
+          "endMs": 106980,
+          "probability": 0.995278
+        },
+        {
+          "index": 10,
+          "text": "porch.",
+          "startMs": 106980,
+          "endMs": 107320,
+          "probability": 0.996961
+        },
+        {
+          "index": 11,
+          "text": "Grandpa",
+          "startMs": 108340,
+          "endMs": 108660,
+          "probability": 0.99714
+        },
+        {
+          "index": 12,
+          "text": "helps",
+          "startMs": 108660,
+          "endMs": 109020,
+          "probability": 0.997193
+        },
+        {
+          "index": 13,
+          "text": "Pete",
+          "startMs": 109020,
+          "endMs": 109320,
+          "probability": 0.993359
+        },
+        {
+          "index": 14,
+          "text": "use",
+          "startMs": 109320,
+          "endMs": 109540,
+          "probability": 0.99439
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 109540,
+          "endMs": 109760,
+          "probability": 0.995444
+        },
+        {
+          "index": 16,
+          "text": "knitting",
+          "startMs": 109760,
+          "endMs": 109980,
+          "probability": 0.991708
+        },
+        {
+          "index": 17,
+          "text": "needles",
+          "startMs": 109980,
+          "endMs": 110440,
+          "probability": 0.99508
+        },
+        {
+          "index": 18,
+          "text": "to",
+          "startMs": 110440,
+          "endMs": 110920,
+          "probability": 0.971211
+        },
+        {
+          "index": 19,
+          "text": "knit",
+          "startMs": 110920,
+          "endMs": 111140,
+          "probability": 0.994045
+        },
+        {
+          "index": 20,
+          "text": "the",
+          "startMs": 111140,
+          "endMs": 111380,
+          "probability": 0.99471
+        },
+        {
+          "index": 21,
+          "text": "yarn",
+          "startMs": 111380,
+          "endMs": 111820,
+          "probability": 0.998661
+        },
+        {
+          "index": 22,
+          "text": "into",
+          "startMs": 111820,
+          "endMs": 112200,
+          "probability": 0.98718
+        },
+        {
+          "index": 23,
+          "text": "cool",
+          "startMs": 112200,
+          "endMs": 112800,
+          "probability": 0.987998
+        },
+        {
+          "index": 24,
+          "text": "patterns.",
+          "startMs": 112800,
+          "endMs": 113600,
+          "probability": 0.997488
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Together, Pete and Grandpa make a long cozy scarf for Pete to wear.",
+      "startMs": 115200,
+      "endMs": 121060,
+      "avgLogprob": -0.10563,
+      "noSpeechProb": 0.018096,
+      "compressionRatio": 1.556701,
+      "words": [
+        {
+          "index": 1,
+          "text": "Together,",
+          "startMs": 115200,
+          "endMs": 115680,
+          "probability": 0.996794
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 115980,
+          "endMs": 116500,
+          "probability": 0.997906
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 116500,
+          "endMs": 116700,
+          "probability": 0.997975
+        },
+        {
+          "index": 4,
+          "text": "Grandpa",
+          "startMs": 116700,
+          "endMs": 117400,
+          "probability": 0.993868
+        },
+        {
+          "index": 5,
+          "text": "make",
+          "startMs": 117400,
+          "endMs": 117700,
+          "probability": 0.996238
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 117700,
+          "endMs": 118020,
+          "probability": 0.996392
+        },
+        {
+          "index": 7,
+          "text": "long",
+          "startMs": 118020,
+          "endMs": 118400,
+          "probability": 0.998904
+        },
+        {
+          "index": 8,
+          "text": "cozy",
+          "startMs": 118400,
+          "endMs": 119360,
+          "probability": 0.48156
+        },
+        {
+          "index": 9,
+          "text": "scarf",
+          "startMs": 119360,
+          "endMs": 119920,
+          "probability": 0.939959
+        },
+        {
+          "index": 10,
+          "text": "for",
+          "startMs": 119920,
+          "endMs": 120260,
+          "probability": 0.995319
+        },
+        {
+          "index": 11,
+          "text": "Pete",
+          "startMs": 120260,
+          "endMs": 120520,
+          "probability": 0.998542
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 120520,
+          "endMs": 120760,
+          "probability": 0.998316
+        },
+        {
+          "index": 13,
+          "text": "wear.",
+          "startMs": 120760,
+          "endMs": 121060,
+          "probability": 0.999538
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "When they're done, Pete chooses a little ball of leftover yarn and places it inside his backpack.",
+      "startMs": 122740,
+      "endMs": 131080,
+      "avgLogprob": -0.10563,
+      "noSpeechProb": 0.018096,
+      "compressionRatio": 1.556701,
+      "words": [
+        {
+          "index": 1,
+          "text": "When",
+          "startMs": 122740,
+          "endMs": 123460,
+          "probability": 0.998555
+        },
+        {
+          "index": 2,
+          "text": "they're",
+          "startMs": 123460,
+          "endMs": 123680,
+          "probability": 0.979673
+        },
+        {
+          "index": 3,
+          "text": "done,",
+          "startMs": 123680,
+          "endMs": 124120,
+          "probability": 0.999496
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 124780,
+          "endMs": 125120,
+          "probability": 0.997577
+        },
+        {
+          "index": 5,
+          "text": "chooses",
+          "startMs": 125120,
+          "endMs": 125620,
+          "probability": 0.996739
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 125620,
+          "endMs": 125920,
+          "probability": 0.997441
+        },
+        {
+          "index": 7,
+          "text": "little",
+          "startMs": 125920,
+          "endMs": 126280,
+          "probability": 0.997573
+        },
+        {
+          "index": 8,
+          "text": "ball",
+          "startMs": 126280,
+          "endMs": 126740,
+          "probability": 0.998439
+        },
+        {
+          "index": 9,
+          "text": "of",
+          "startMs": 126740,
+          "endMs": 127020,
+          "probability": 0.998643
+        },
+        {
+          "index": 10,
+          "text": "leftover",
+          "startMs": 127020,
+          "endMs": 127500,
+          "probability": 0.876536
+        },
+        {
+          "index": 11,
+          "text": "yarn",
+          "startMs": 127500,
+          "endMs": 128200,
+          "probability": 0.997973
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 128200,
+          "endMs": 128880,
+          "probability": 0.809732
+        },
+        {
+          "index": 13,
+          "text": "places",
+          "startMs": 128880,
+          "endMs": 129360,
+          "probability": 0.996593
+        },
+        {
+          "index": 14,
+          "text": "it",
+          "startMs": 129360,
+          "endMs": 129680,
+          "probability": 0.997853
+        },
+        {
+          "index": 15,
+          "text": "inside",
+          "startMs": 129680,
+          "endMs": 130160,
+          "probability": 0.998434
+        },
+        {
+          "index": 16,
+          "text": "his",
+          "startMs": 130160,
+          "endMs": 130500,
+          "probability": 0.998008
+        },
+        {
+          "index": 17,
+          "text": "backpack.",
+          "startMs": 130500,
+          "endMs": 131080,
+          "probability": 0.994899
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Next, Pete goes to the hay ride at the park. Pete, Bob, Mom, Dad, and Grandpa all pile into a wagon filled with hay.",
+      "startMs": 133400,
+      "endMs": 143100,
+      "avgLogprob": -0.074018,
+      "noSpeechProb": 0.016259,
+      "compressionRatio": 1.533333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Next,",
+          "startMs": 133400,
+          "endMs": 133960,
+          "probability": 0.940858
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 134440,
+          "endMs": 134480,
+          "probability": 0.972189
+        },
+        {
+          "index": 3,
+          "text": "goes",
+          "startMs": 134480,
+          "endMs": 134800,
+          "probability": 0.996907
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 134800,
+          "endMs": 135100,
+          "probability": 0.993768
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 135100,
+          "endMs": 135300,
+          "probability": 0.984553
+        },
+        {
+          "index": 6,
+          "text": "hay",
+          "startMs": 135300,
+          "endMs": 135480,
+          "probability": 0.989765
+        },
+        {
+          "index": 7,
+          "text": "ride",
+          "startMs": 135480,
+          "endMs": 135800,
+          "probability": 0.620771
+        },
+        {
+          "index": 8,
+          "text": "at",
+          "startMs": 135800,
+          "endMs": 136000,
+          "probability": 0.976027
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 136000,
+          "endMs": 136120,
+          "probability": 0.996516
+        },
+        {
+          "index": 10,
+          "text": "park.",
+          "startMs": 136120,
+          "endMs": 136520,
+          "probability": 0.995455
+        },
+        {
+          "index": 11,
+          "text": "Pete,",
+          "startMs": 137240,
+          "endMs": 137380,
+          "probability": 0.987479
+        },
+        {
+          "index": 12,
+          "text": "Bob,",
+          "startMs": 137760,
+          "endMs": 137960,
+          "probability": 0.966737
+        },
+        {
+          "index": 13,
+          "text": "Mom,",
+          "startMs": 138200,
+          "endMs": 138500,
+          "probability": 0.938796
+        },
+        {
+          "index": 14,
+          "text": "Dad,",
+          "startMs": 138800,
+          "endMs": 139020,
+          "probability": 0.995767
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 139180,
+          "endMs": 139380,
+          "probability": 0.979289
+        },
+        {
+          "index": 16,
+          "text": "Grandpa",
+          "startMs": 139380,
+          "endMs": 139840,
+          "probability": 0.994142
+        },
+        {
+          "index": 17,
+          "text": "all",
+          "startMs": 139840,
+          "endMs": 140420,
+          "probability": 0.956075
+        },
+        {
+          "index": 18,
+          "text": "pile",
+          "startMs": 140420,
+          "endMs": 140840,
+          "probability": 0.995012
+        },
+        {
+          "index": 19,
+          "text": "into",
+          "startMs": 140840,
+          "endMs": 141220,
+          "probability": 0.980599
+        },
+        {
+          "index": 20,
+          "text": "a",
+          "startMs": 141220,
+          "endMs": 141380,
+          "probability": 0.995722
+        },
+        {
+          "index": 21,
+          "text": "wagon",
+          "startMs": 141380,
+          "endMs": 141800,
+          "probability": 0.991067
+        },
+        {
+          "index": 22,
+          "text": "filled",
+          "startMs": 141800,
+          "endMs": 142360,
+          "probability": 0.961181
+        },
+        {
+          "index": 23,
+          "text": "with",
+          "startMs": 142360,
+          "endMs": 142760,
+          "probability": 0.999197
+        },
+        {
+          "index": 24,
+          "text": "hay.",
+          "startMs": 142760,
+          "endMs": 143100,
+          "probability": 0.998685
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "They go on a bumpy wagon ride around the park.",
+      "startMs": 143640,
+      "endMs": 147040,
+      "avgLogprob": -0.074018,
+      "noSpeechProb": 0.016259,
+      "compressionRatio": 1.533333,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 143640,
+          "endMs": 143920,
+          "probability": 0.991737
+        },
+        {
+          "index": 2,
+          "text": "go",
+          "startMs": 143920,
+          "endMs": 144140,
+          "probability": 0.991191
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 144140,
+          "endMs": 144380,
+          "probability": 0.995328
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 144380,
+          "endMs": 144580,
+          "probability": 0.986961
+        },
+        {
+          "index": 5,
+          "text": "bumpy",
+          "startMs": 144580,
+          "endMs": 145200,
+          "probability": 0.995682
+        },
+        {
+          "index": 6,
+          "text": "wagon",
+          "startMs": 145200,
+          "endMs": 145620,
+          "probability": 0.980103
+        },
+        {
+          "index": 7,
+          "text": "ride",
+          "startMs": 145620,
+          "endMs": 145960,
+          "probability": 0.902828
+        },
+        {
+          "index": 8,
+          "text": "around",
+          "startMs": 145960,
+          "endMs": 146320,
+          "probability": 0.995822
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 146320,
+          "endMs": 146560,
+          "probability": 0.998597
+        },
+        {
+          "index": 10,
+          "text": "park.",
+          "startMs": 146560,
+          "endMs": 147040,
+          "probability": 0.997464
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Woohoo! Pete shouts.",
+      "startMs": 147780,
+      "endMs": 149580,
+      "avgLogprob": -0.074018,
+      "noSpeechProb": 0.016259,
+      "compressionRatio": 1.533333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Woohoo!",
+          "startMs": 147780,
+          "endMs": 148480,
+          "probability": 0.695621
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 148940,
+          "endMs": 149120,
+          "probability": 0.996147
+        },
+        {
+          "index": 3,
+          "text": "shouts.",
+          "startMs": 149120,
+          "endMs": 149580,
+          "probability": 0.989706
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "At the end of the ride, Pete grabs a handful of sweet smelling hay from the wagon and stuffs it into his backpack.",
+      "startMs": 151900,
+      "endMs": 160800,
+      "avgLogprob": -0.074018,
+      "noSpeechProb": 0.016259,
+      "compressionRatio": 1.533333,
+      "words": [
+        {
+          "index": 1,
+          "text": "At",
+          "startMs": 151900,
+          "endMs": 152200,
+          "probability": 0.995586
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 152200,
+          "endMs": 152360,
+          "probability": 0.999469
+        },
+        {
+          "index": 3,
+          "text": "end",
+          "startMs": 152360,
+          "endMs": 152720,
+          "probability": 0.999687
+        },
+        {
+          "index": 4,
+          "text": "of",
+          "startMs": 152720,
+          "endMs": 152900,
+          "probability": 0.998462
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 152900,
+          "endMs": 153060,
+          "probability": 0.997132
+        },
+        {
+          "index": 6,
+          "text": "ride,",
+          "startMs": 153060,
+          "endMs": 153480,
+          "probability": 0.998909
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 153900,
+          "endMs": 154240,
+          "probability": 0.997581
+        },
+        {
+          "index": 8,
+          "text": "grabs",
+          "startMs": 154240,
+          "endMs": 154620,
+          "probability": 0.996196
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 154620,
+          "endMs": 154860,
+          "probability": 0.997289
+        },
+        {
+          "index": 10,
+          "text": "handful",
+          "startMs": 154860,
+          "endMs": 155260,
+          "probability": 0.907049
+        },
+        {
+          "index": 11,
+          "text": "of",
+          "startMs": 155260,
+          "endMs": 155640,
+          "probability": 0.996337
+        },
+        {
+          "index": 12,
+          "text": "sweet",
+          "startMs": 155640,
+          "endMs": 156200,
+          "probability": 0.997545
+        },
+        {
+          "index": 13,
+          "text": "smelling",
+          "startMs": 156200,
+          "endMs": 156640,
+          "probability": 0.615651
+        },
+        {
+          "index": 14,
+          "text": "hay",
+          "startMs": 156640,
+          "endMs": 157140,
+          "probability": 0.997958
+        },
+        {
+          "index": 15,
+          "text": "from",
+          "startMs": 157140,
+          "endMs": 157420,
+          "probability": 0.997775
+        },
+        {
+          "index": 16,
+          "text": "the",
+          "startMs": 157420,
+          "endMs": 157620,
+          "probability": 0.998498
+        },
+        {
+          "index": 17,
+          "text": "wagon",
+          "startMs": 157620,
+          "endMs": 158060,
+          "probability": 0.997186
+        },
+        {
+          "index": 18,
+          "text": "and",
+          "startMs": 158060,
+          "endMs": 158860,
+          "probability": 0.874193
+        },
+        {
+          "index": 19,
+          "text": "stuffs",
+          "startMs": 158860,
+          "endMs": 159520,
+          "probability": 0.992591
+        },
+        {
+          "index": 20,
+          "text": "it",
+          "startMs": 159520,
+          "endMs": 159600,
+          "probability": 0.988341
+        },
+        {
+          "index": 21,
+          "text": "into",
+          "startMs": 159600,
+          "endMs": 159900,
+          "probability": 0.969247
+        },
+        {
+          "index": 22,
+          "text": "his",
+          "startMs": 159900,
+          "endMs": 160160,
+          "probability": 0.997482
+        },
+        {
+          "index": 23,
+          "text": "backpack.",
+          "startMs": 160160,
+          "endMs": 160800,
+          "probability": 0.978058
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Pete heads over to the apple orchard where he and Callie go apple picking.",
+      "startMs": 162580,
+      "endMs": 168500,
+      "avgLogprob": -0.068842,
+      "noSpeechProb": 0.008853,
+      "compressionRatio": 1.541436,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 162580,
+          "endMs": 163380,
+          "probability": 0.695289
+        },
+        {
+          "index": 2,
+          "text": "heads",
+          "startMs": 163380,
+          "endMs": 163760,
+          "probability": 0.985951
+        },
+        {
+          "index": 3,
+          "text": "over",
+          "startMs": 163760,
+          "endMs": 164100,
+          "probability": 0.993205
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 164100,
+          "endMs": 164300,
+          "probability": 0.994354
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 164300,
+          "endMs": 164460,
+          "probability": 0.991288
+        },
+        {
+          "index": 6,
+          "text": "apple",
+          "startMs": 164460,
+          "endMs": 164800,
+          "probability": 0.883103
+        },
+        {
+          "index": 7,
+          "text": "orchard",
+          "startMs": 164800,
+          "endMs": 165360,
+          "probability": 0.997807
+        },
+        {
+          "index": 8,
+          "text": "where",
+          "startMs": 165360,
+          "endMs": 166060,
+          "probability": 0.607431
+        },
+        {
+          "index": 9,
+          "text": "he",
+          "startMs": 166060,
+          "endMs": 166420,
+          "probability": 0.995659
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 166420,
+          "endMs": 166760,
+          "probability": 0.996681
+        },
+        {
+          "index": 11,
+          "text": "Callie",
+          "startMs": 166760,
+          "endMs": 167360,
+          "probability": 0.721356
+        },
+        {
+          "index": 12,
+          "text": "go",
+          "startMs": 167360,
+          "endMs": 167660,
+          "probability": 0.994798
+        },
+        {
+          "index": 13,
+          "text": "apple",
+          "startMs": 167660,
+          "endMs": 168100,
+          "probability": 0.986325
+        },
+        {
+          "index": 14,
+          "text": "picking.",
+          "startMs": 168100,
+          "endMs": 168500,
+          "probability": 0.952972
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "They eat sweet apple donuts and drink hot apple cider and fill their buckets with apples of all different shapes and sizes.",
+      "startMs": 169840,
+      "endMs": 179080,
+      "avgLogprob": -0.068842,
+      "noSpeechProb": 0.008853,
+      "compressionRatio": 1.541436,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 169840,
+          "endMs": 170100,
+          "probability": 0.991412
+        },
+        {
+          "index": 2,
+          "text": "eat",
+          "startMs": 170100,
+          "endMs": 170360,
+          "probability": 0.998212
+        },
+        {
+          "index": 3,
+          "text": "sweet",
+          "startMs": 170360,
+          "endMs": 170820,
+          "probability": 0.993469
+        },
+        {
+          "index": 4,
+          "text": "apple",
+          "startMs": 170820,
+          "endMs": 171220,
+          "probability": 0.98148
+        },
+        {
+          "index": 5,
+          "text": "donuts",
+          "startMs": 171220,
+          "endMs": 171780,
+          "probability": 0.845806
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 171780,
+          "endMs": 172240,
+          "probability": 0.919503
+        },
+        {
+          "index": 7,
+          "text": "drink",
+          "startMs": 172240,
+          "endMs": 172500,
+          "probability": 0.996495
+        },
+        {
+          "index": 8,
+          "text": "hot",
+          "startMs": 172500,
+          "endMs": 172920,
+          "probability": 0.985497
+        },
+        {
+          "index": 9,
+          "text": "apple",
+          "startMs": 172920,
+          "endMs": 173320,
+          "probability": 0.933225
+        },
+        {
+          "index": 10,
+          "text": "cider",
+          "startMs": 173320,
+          "endMs": 173820,
+          "probability": 0.999741
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 173820,
+          "endMs": 174480,
+          "probability": 0.767867
+        },
+        {
+          "index": 12,
+          "text": "fill",
+          "startMs": 174480,
+          "endMs": 174820,
+          "probability": 0.989688
+        },
+        {
+          "index": 13,
+          "text": "their",
+          "startMs": 174820,
+          "endMs": 175040,
+          "probability": 0.991926
+        },
+        {
+          "index": 14,
+          "text": "buckets",
+          "startMs": 175040,
+          "endMs": 175440,
+          "probability": 0.993925
+        },
+        {
+          "index": 15,
+          "text": "with",
+          "startMs": 175440,
+          "endMs": 175780,
+          "probability": 0.996231
+        },
+        {
+          "index": 16,
+          "text": "apples",
+          "startMs": 175780,
+          "endMs": 176280,
+          "probability": 0.995433
+        },
+        {
+          "index": 17,
+          "text": "of",
+          "startMs": 176280,
+          "endMs": 176560,
+          "probability": 0.992404
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 176560,
+          "endMs": 177040,
+          "probability": 0.997057
+        },
+        {
+          "index": 19,
+          "text": "different",
+          "startMs": 177040,
+          "endMs": 177560,
+          "probability": 0.997546
+        },
+        {
+          "index": 20,
+          "text": "shapes",
+          "startMs": 177560,
+          "endMs": 178040,
+          "probability": 0.998791
+        },
+        {
+          "index": 21,
+          "text": "and",
+          "startMs": 178040,
+          "endMs": 178400,
+          "probability": 0.998396
+        },
+        {
+          "index": 22,
+          "text": "sizes.",
+          "startMs": 178400,
+          "endMs": 179080,
+          "probability": 0.999081
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Before he leaves, Pete chooses a round red apple and drops it into his backpack.",
+      "startMs": 181000,
+      "endMs": 188240,
+      "avgLogprob": -0.068842,
+      "noSpeechProb": 0.008853,
+      "compressionRatio": 1.541436,
+      "words": [
+        {
+          "index": 1,
+          "text": "Before",
+          "startMs": 181000,
+          "endMs": 181800,
+          "probability": 0.996149
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 181800,
+          "endMs": 182100,
+          "probability": 0.998809
+        },
+        {
+          "index": 3,
+          "text": "leaves,",
+          "startMs": 182100,
+          "endMs": 182640,
+          "probability": 0.999042
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 183160,
+          "endMs": 183540,
+          "probability": 0.997662
+        },
+        {
+          "index": 5,
+          "text": "chooses",
+          "startMs": 183540,
+          "endMs": 184020,
+          "probability": 0.994623
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 184020,
+          "endMs": 184360,
+          "probability": 0.987438
+        },
+        {
+          "index": 7,
+          "text": "round",
+          "startMs": 184360,
+          "endMs": 184880,
+          "probability": 0.997448
+        },
+        {
+          "index": 8,
+          "text": "red",
+          "startMs": 184880,
+          "endMs": 185280,
+          "probability": 0.858023
+        },
+        {
+          "index": 9,
+          "text": "apple",
+          "startMs": 185280,
+          "endMs": 185780,
+          "probability": 0.994428
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 185780,
+          "endMs": 186480,
+          "probability": 0.966455
+        },
+        {
+          "index": 11,
+          "text": "drops",
+          "startMs": 186480,
+          "endMs": 186840,
+          "probability": 0.997874
+        },
+        {
+          "index": 12,
+          "text": "it",
+          "startMs": 186840,
+          "endMs": 187100,
+          "probability": 0.992792
+        },
+        {
+          "index": 13,
+          "text": "into",
+          "startMs": 187100,
+          "endMs": 187360,
+          "probability": 0.98553
+        },
+        {
+          "index": 14,
+          "text": "his",
+          "startMs": 187360,
+          "endMs": 187600,
+          "probability": 0.999271
+        },
+        {
+          "index": 15,
+          "text": "backpack.",
+          "startMs": 187600,
+          "endMs": 188240,
+          "probability": 0.970303
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Next, Pete stops by the park. He plays touch football with Bob and their friends. Pete scores a touchdown and everyone cheers.",
+      "startMs": 190360,
+      "endMs": 200200,
+      "avgLogprob": -0.092285,
+      "noSpeechProb": 0.007644,
+      "compressionRatio": 1.482955,
+      "words": [
+        {
+          "index": 1,
+          "text": "Next,",
+          "startMs": 190360,
+          "endMs": 191160,
+          "probability": 0.255084
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 191660,
+          "endMs": 191700,
+          "probability": 0.984938
+        },
+        {
+          "index": 3,
+          "text": "stops",
+          "startMs": 191700,
+          "endMs": 192060,
+          "probability": 0.995481
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 192060,
+          "endMs": 192380,
+          "probability": 0.997515
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 192380,
+          "endMs": 192520,
+          "probability": 0.997133
+        },
+        {
+          "index": 6,
+          "text": "park.",
+          "startMs": 192520,
+          "endMs": 192900,
+          "probability": 0.994473
+        },
+        {
+          "index": 7,
+          "text": "He",
+          "startMs": 193320,
+          "endMs": 193540,
+          "probability": 0.977803
+        },
+        {
+          "index": 8,
+          "text": "plays",
+          "startMs": 193540,
+          "endMs": 193860,
+          "probability": 0.995604
+        },
+        {
+          "index": 9,
+          "text": "touch",
+          "startMs": 193860,
+          "endMs": 194180,
+          "probability": 0.9411
+        },
+        {
+          "index": 10,
+          "text": "football",
+          "startMs": 194180,
+          "endMs": 194840,
+          "probability": 0.956502
+        },
+        {
+          "index": 11,
+          "text": "with",
+          "startMs": 194840,
+          "endMs": 195140,
+          "probability": 0.99317
+        },
+        {
+          "index": 12,
+          "text": "Bob",
+          "startMs": 195140,
+          "endMs": 195440,
+          "probability": 0.992253
+        },
+        {
+          "index": 13,
+          "text": "and",
+          "startMs": 195440,
+          "endMs": 195660,
+          "probability": 0.992506
+        },
+        {
+          "index": 14,
+          "text": "their",
+          "startMs": 195660,
+          "endMs": 195920,
+          "probability": 0.984702
+        },
+        {
+          "index": 15,
+          "text": "friends.",
+          "startMs": 195920,
+          "endMs": 196360,
+          "probability": 0.997502
+        },
+        {
+          "index": 16,
+          "text": "Pete",
+          "startMs": 197080,
+          "endMs": 197180,
+          "probability": 0.99419
+        },
+        {
+          "index": 17,
+          "text": "scores",
+          "startMs": 197180,
+          "endMs": 197560,
+          "probability": 0.991082
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 197560,
+          "endMs": 197820,
+          "probability": 0.986249
+        },
+        {
+          "index": 19,
+          "text": "touchdown",
+          "startMs": 197820,
+          "endMs": 198300,
+          "probability": 0.985071
+        },
+        {
+          "index": 20,
+          "text": "and",
+          "startMs": 198300,
+          "endMs": 199000,
+          "probability": 0.491809
+        },
+        {
+          "index": 21,
+          "text": "everyone",
+          "startMs": 199000,
+          "endMs": 199560,
+          "probability": 0.997053
+        },
+        {
+          "index": 22,
+          "text": "cheers.",
+          "startMs": 199560,
+          "endMs": 200200,
+          "probability": 0.953198
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "After the game, Pete grabs Bob's football and stuffs it into his backpack. It barely fits.",
+      "startMs": 202420,
+      "endMs": 210120,
+      "avgLogprob": -0.092285,
+      "noSpeechProb": 0.007644,
+      "compressionRatio": 1.482955,
+      "words": [
+        {
+          "index": 1,
+          "text": "After",
+          "startMs": 202420,
+          "endMs": 203220,
+          "probability": 0.988995
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 203220,
+          "endMs": 203420,
+          "probability": 0.999018
+        },
+        {
+          "index": 3,
+          "text": "game,",
+          "startMs": 203420,
+          "endMs": 203820,
+          "probability": 0.999159
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 204360,
+          "endMs": 204500,
+          "probability": 0.998183
+        },
+        {
+          "index": 5,
+          "text": "grabs",
+          "startMs": 204500,
+          "endMs": 204900,
+          "probability": 0.997024
+        },
+        {
+          "index": 6,
+          "text": "Bob's",
+          "startMs": 204900,
+          "endMs": 205320,
+          "probability": 0.994201
+        },
+        {
+          "index": 7,
+          "text": "football",
+          "startMs": 205320,
+          "endMs": 205780,
+          "probability": 0.996601
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 205780,
+          "endMs": 206400,
+          "probability": 0.933487
+        },
+        {
+          "index": 9,
+          "text": "stuffs",
+          "startMs": 206400,
+          "endMs": 206940,
+          "probability": 0.989375
+        },
+        {
+          "index": 10,
+          "text": "it",
+          "startMs": 206940,
+          "endMs": 207020,
+          "probability": 0.991241
+        },
+        {
+          "index": 11,
+          "text": "into",
+          "startMs": 207020,
+          "endMs": 207240,
+          "probability": 0.984219
+        },
+        {
+          "index": 12,
+          "text": "his",
+          "startMs": 207240,
+          "endMs": 207460,
+          "probability": 0.998826
+        },
+        {
+          "index": 13,
+          "text": "backpack.",
+          "startMs": 207460,
+          "endMs": 208000,
+          "probability": 0.977635
+        },
+        {
+          "index": 14,
+          "text": "It",
+          "startMs": 208620,
+          "endMs": 208860,
+          "probability": 0.964184
+        },
+        {
+          "index": 15,
+          "text": "barely",
+          "startMs": 208860,
+          "endMs": 209380,
+          "probability": 0.998741
+        },
+        {
+          "index": 16,
+          "text": "fits.",
+          "startMs": 209380,
+          "endMs": 210120,
+          "probability": 0.998762
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Bob won't mind if I borrow this, Pete says.",
+      "startMs": 211460,
+      "endMs": 214780,
+      "avgLogprob": -0.092285,
+      "noSpeechProb": 0.007644,
+      "compressionRatio": 1.482955,
+      "words": [
+        {
+          "index": 1,
+          "text": "Bob",
+          "startMs": 211460,
+          "endMs": 211640,
+          "probability": 0.775618
+        },
+        {
+          "index": 2,
+          "text": "won't",
+          "startMs": 211640,
+          "endMs": 211980,
+          "probability": 0.977002
+        },
+        {
+          "index": 3,
+          "text": "mind",
+          "startMs": 211980,
+          "endMs": 212220,
+          "probability": 0.999224
+        },
+        {
+          "index": 4,
+          "text": "if",
+          "startMs": 212220,
+          "endMs": 212420,
+          "probability": 0.994903
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 212420,
+          "endMs": 212600,
+          "probability": 0.996336
+        },
+        {
+          "index": 6,
+          "text": "borrow",
+          "startMs": 212600,
+          "endMs": 213020,
+          "probability": 0.989112
+        },
+        {
+          "index": 7,
+          "text": "this,",
+          "startMs": 213020,
+          "endMs": 213600,
+          "probability": 0.998714
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 214060,
+          "endMs": 214240,
+          "probability": 0.996123
+        },
+        {
+          "index": 9,
+          "text": "says.",
+          "startMs": 214240,
+          "endMs": 214780,
+          "probability": 0.998192
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Finally, Pete heads back home. But he stops in his front yard, which is covered in bright leaves falling from the trees.",
+      "startMs": 216900,
+      "endMs": 226800,
+      "avgLogprob": -0.095609,
+      "noSpeechProb": 0.012211,
+      "compressionRatio": 1.471338,
+      "words": [
+        {
+          "index": 1,
+          "text": "Finally,",
+          "startMs": 216900,
+          "endMs": 217660,
+          "probability": 0.74652
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 218360,
+          "endMs": 218400,
+          "probability": 0.979957
+        },
+        {
+          "index": 3,
+          "text": "heads",
+          "startMs": 218400,
+          "endMs": 218800,
+          "probability": 0.990977
+        },
+        {
+          "index": 4,
+          "text": "back",
+          "startMs": 218800,
+          "endMs": 219200,
+          "probability": 0.997235
+        },
+        {
+          "index": 5,
+          "text": "home.",
+          "startMs": 219200,
+          "endMs": 219720,
+          "probability": 0.998466
+        },
+        {
+          "index": 6,
+          "text": "But",
+          "startMs": 220660,
+          "endMs": 220880,
+          "probability": 0.992041
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 220880,
+          "endMs": 221040,
+          "probability": 0.984983
+        },
+        {
+          "index": 8,
+          "text": "stops",
+          "startMs": 221040,
+          "endMs": 221480,
+          "probability": 0.995008
+        },
+        {
+          "index": 9,
+          "text": "in",
+          "startMs": 221480,
+          "endMs": 221840,
+          "probability": 0.993628
+        },
+        {
+          "index": 10,
+          "text": "his",
+          "startMs": 221840,
+          "endMs": 222020,
+          "probability": 0.996172
+        },
+        {
+          "index": 11,
+          "text": "front",
+          "startMs": 222020,
+          "endMs": 222300,
+          "probability": 0.99754
+        },
+        {
+          "index": 12,
+          "text": "yard,",
+          "startMs": 222300,
+          "endMs": 222780,
+          "probability": 0.99905
+        },
+        {
+          "index": 13,
+          "text": "which",
+          "startMs": 223300,
+          "endMs": 223500,
+          "probability": 0.994224
+        },
+        {
+          "index": 14,
+          "text": "is",
+          "startMs": 223500,
+          "endMs": 223700,
+          "probability": 0.99794
+        },
+        {
+          "index": 15,
+          "text": "covered",
+          "startMs": 223700,
+          "endMs": 224160,
+          "probability": 0.998323
+        },
+        {
+          "index": 16,
+          "text": "in",
+          "startMs": 224160,
+          "endMs": 224460,
+          "probability": 0.994313
+        },
+        {
+          "index": 17,
+          "text": "bright",
+          "startMs": 224460,
+          "endMs": 224820,
+          "probability": 0.99136
+        },
+        {
+          "index": 18,
+          "text": "leaves",
+          "startMs": 224820,
+          "endMs": 225480,
+          "probability": 0.998778
+        },
+        {
+          "index": 19,
+          "text": "falling",
+          "startMs": 225480,
+          "endMs": 225880,
+          "probability": 0.843598
+        },
+        {
+          "index": 20,
+          "text": "from",
+          "startMs": 225880,
+          "endMs": 226240,
+          "probability": 0.996782
+        },
+        {
+          "index": 21,
+          "text": "the",
+          "startMs": 226240,
+          "endMs": 226440,
+          "probability": 0.996669
+        },
+        {
+          "index": 22,
+          "text": "trees.",
+          "startMs": 226440,
+          "endMs": 226800,
+          "probability": 0.996624
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Pete helps his dad rake the leaves into big colorful mounds. Then Pete runs and jumps into all the leaf piles.",
+      "startMs": 227880,
+      "endMs": 236640,
+      "avgLogprob": -0.095609,
+      "noSpeechProb": 0.012211,
+      "compressionRatio": 1.471338,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 227880,
+          "endMs": 228080,
+          "probability": 0.99751
+        },
+        {
+          "index": 2,
+          "text": "helps",
+          "startMs": 228080,
+          "endMs": 228460,
+          "probability": 0.993989
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 228460,
+          "endMs": 228720,
+          "probability": 0.998118
+        },
+        {
+          "index": 4,
+          "text": "dad",
+          "startMs": 228720,
+          "endMs": 229000,
+          "probability": 0.968475
+        },
+        {
+          "index": 5,
+          "text": "rake",
+          "startMs": 229000,
+          "endMs": 229480,
+          "probability": 0.994389
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 229480,
+          "endMs": 229720,
+          "probability": 0.996631
+        },
+        {
+          "index": 7,
+          "text": "leaves",
+          "startMs": 229720,
+          "endMs": 230100,
+          "probability": 0.997566
+        },
+        {
+          "index": 8,
+          "text": "into",
+          "startMs": 230100,
+          "endMs": 230400,
+          "probability": 0.993646
+        },
+        {
+          "index": 9,
+          "text": "big",
+          "startMs": 230400,
+          "endMs": 230880,
+          "probability": 0.996726
+        },
+        {
+          "index": 10,
+          "text": "colorful",
+          "startMs": 230880,
+          "endMs": 231600,
+          "probability": 0.74136
+        },
+        {
+          "index": 11,
+          "text": "mounds.",
+          "startMs": 231600,
+          "endMs": 232120,
+          "probability": 0.995843
+        },
+        {
+          "index": 12,
+          "text": "Then",
+          "startMs": 232840,
+          "endMs": 233180,
+          "probability": 0.994206
+        },
+        {
+          "index": 13,
+          "text": "Pete",
+          "startMs": 233180,
+          "endMs": 233640,
+          "probability": 0.681429
+        },
+        {
+          "index": 14,
+          "text": "runs",
+          "startMs": 233640,
+          "endMs": 234040,
+          "probability": 0.994683
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 234040,
+          "endMs": 234420,
+          "probability": 0.980898
+        },
+        {
+          "index": 16,
+          "text": "jumps",
+          "startMs": 234420,
+          "endMs": 234920,
+          "probability": 0.998956
+        },
+        {
+          "index": 17,
+          "text": "into",
+          "startMs": 234920,
+          "endMs": 235240,
+          "probability": 0.962496
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 235240,
+          "endMs": 235640,
+          "probability": 0.98556
+        },
+        {
+          "index": 19,
+          "text": "the",
+          "startMs": 235640,
+          "endMs": 235860,
+          "probability": 0.985129
+        },
+        {
+          "index": 20,
+          "text": "leaf",
+          "startMs": 235860,
+          "endMs": 236160,
+          "probability": 0.994031
+        },
+        {
+          "index": 21,
+          "text": "piles.",
+          "startMs": 236160,
+          "endMs": 236640,
+          "probability": 0.996976
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "After he's done jumping, Pete picks a bunch of red and gold and orange leaves and stuffs them into his backpack.",
+      "startMs": 238800,
+      "endMs": 248240,
+      "avgLogprob": -0.077556,
+      "noSpeechProb": 0.007309,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "After",
+          "startMs": 238800,
+          "endMs": 239600,
+          "probability": 0.590552
+        },
+        {
+          "index": 2,
+          "text": "he's",
+          "startMs": 239600,
+          "endMs": 240020,
+          "probability": 0.971926
+        },
+        {
+          "index": 3,
+          "text": "done",
+          "startMs": 240020,
+          "endMs": 240240,
+          "probability": 0.998931
+        },
+        {
+          "index": 4,
+          "text": "jumping,",
+          "startMs": 240240,
+          "endMs": 240880,
+          "probability": 0.997517
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 241700,
+          "endMs": 241740,
+          "probability": 0.969745
+        },
+        {
+          "index": 6,
+          "text": "picks",
+          "startMs": 241740,
+          "endMs": 242120,
+          "probability": 0.973295
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 242120,
+          "endMs": 242380,
+          "probability": 0.981096
+        },
+        {
+          "index": 8,
+          "text": "bunch",
+          "startMs": 242380,
+          "endMs": 242620,
+          "probability": 0.997891
+        },
+        {
+          "index": 9,
+          "text": "of",
+          "startMs": 242620,
+          "endMs": 242920,
+          "probability": 0.996789
+        },
+        {
+          "index": 10,
+          "text": "red",
+          "startMs": 242920,
+          "endMs": 243320,
+          "probability": 0.993315
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 243320,
+          "endMs": 243700,
+          "probability": 0.773982
+        },
+        {
+          "index": 12,
+          "text": "gold",
+          "startMs": 243700,
+          "endMs": 244280,
+          "probability": 0.980265
+        },
+        {
+          "index": 13,
+          "text": "and",
+          "startMs": 244280,
+          "endMs": 244580,
+          "probability": 0.974227
+        },
+        {
+          "index": 14,
+          "text": "orange",
+          "startMs": 244580,
+          "endMs": 245140,
+          "probability": 0.994871
+        },
+        {
+          "index": 15,
+          "text": "leaves",
+          "startMs": 245140,
+          "endMs": 245580,
+          "probability": 0.999326
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 245580,
+          "endMs": 246200,
+          "probability": 0.789517
+        },
+        {
+          "index": 17,
+          "text": "stuffs",
+          "startMs": 246200,
+          "endMs": 246860,
+          "probability": 0.991469
+        },
+        {
+          "index": 18,
+          "text": "them",
+          "startMs": 246860,
+          "endMs": 246980,
+          "probability": 0.998166
+        },
+        {
+          "index": 19,
+          "text": "into",
+          "startMs": 246980,
+          "endMs": 247380,
+          "probability": 0.983921
+        },
+        {
+          "index": 20,
+          "text": "his",
+          "startMs": 247380,
+          "endMs": 247640,
+          "probability": 0.997108
+        },
+        {
+          "index": 21,
+          "text": "backpack.",
+          "startMs": 247640,
+          "endMs": 248240,
+          "probability": 0.993373
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Pete's backpack is bursting with fall souvenirs. He can't wait to show Mom.",
+      "startMs": 250740,
+      "endMs": 256360,
+      "avgLogprob": -0.077556,
+      "noSpeechProb": 0.007309,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete's",
+          "startMs": 250740,
+          "endMs": 251020,
+          "probability": 0.99043
+        },
+        {
+          "index": 2,
+          "text": "backpack",
+          "startMs": 251020,
+          "endMs": 251560,
+          "probability": 0.988936
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 251560,
+          "endMs": 251880,
+          "probability": 0.997744
+        },
+        {
+          "index": 4,
+          "text": "bursting",
+          "startMs": 251880,
+          "endMs": 252520,
+          "probability": 0.999028
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 252520,
+          "endMs": 252940,
+          "probability": 0.998075
+        },
+        {
+          "index": 6,
+          "text": "fall",
+          "startMs": 252940,
+          "endMs": 253300,
+          "probability": 0.967901
+        },
+        {
+          "index": 7,
+          "text": "souvenirs.",
+          "startMs": 253300,
+          "endMs": 254200,
+          "probability": 0.996272
+        },
+        {
+          "index": 8,
+          "text": "He",
+          "startMs": 254640,
+          "endMs": 254860,
+          "probability": 0.965868
+        },
+        {
+          "index": 9,
+          "text": "can't",
+          "startMs": 254860,
+          "endMs": 255160,
+          "probability": 0.997227
+        },
+        {
+          "index": 10,
+          "text": "wait",
+          "startMs": 255160,
+          "endMs": 255420,
+          "probability": 0.999583
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 255420,
+          "endMs": 255640,
+          "probability": 0.998902
+        },
+        {
+          "index": 12,
+          "text": "show",
+          "startMs": 255640,
+          "endMs": 255920,
+          "probability": 0.999184
+        },
+        {
+          "index": 13,
+          "text": "Mom.",
+          "startMs": 255920,
+          "endMs": 256360,
+          "probability": 0.391537
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "I love autumn, Pete says.",
+      "startMs": 257360,
+      "endMs": 260420,
+      "avgLogprob": -0.099492,
+      "noSpeechProb": 0.179563,
+      "compressionRatio": 1.371795,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 257070,
+          "endMs": 257460,
+          "probability": 0.19146
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 257460,
+          "endMs": 258200,
+          "probability": 0.95662
+        },
+        {
+          "index": 3,
+          "text": "autumn,",
+          "startMs": 258200,
+          "endMs": 258940,
+          "probability": 0.792943
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 259620,
+          "endMs": 259720,
+          "probability": 0.973749
+        },
+        {
+          "index": 5,
+          "text": "says.",
+          "startMs": 259720,
+          "endMs": 260420,
+          "probability": 0.993069
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Wonderful, says Mom. You know, these would make great decorations for Thanksgiving.",
+      "startMs": 261700,
+      "endMs": 269600,
+      "avgLogprob": -0.099492,
+      "noSpeechProb": 0.179563,
+      "compressionRatio": 1.371795,
+      "words": [
+        {
+          "index": 1,
+          "text": "Wonderful,",
+          "startMs": 261700,
+          "endMs": 262080,
+          "probability": 0.720166
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 263000,
+          "endMs": 263120,
+          "probability": 0.990262
+        },
+        {
+          "index": 3,
+          "text": "Mom.",
+          "startMs": 263120,
+          "endMs": 263540,
+          "probability": 0.377349
+        },
+        {
+          "index": 4,
+          "text": "You",
+          "startMs": 264380,
+          "endMs": 264600,
+          "probability": 0.983306
+        },
+        {
+          "index": 5,
+          "text": "know,",
+          "startMs": 264600,
+          "endMs": 265100,
+          "probability": 0.998111
+        },
+        {
+          "index": 6,
+          "text": "these",
+          "startMs": 266340,
+          "endMs": 266760,
+          "probability": 0.982588
+        },
+        {
+          "index": 7,
+          "text": "would",
+          "startMs": 266760,
+          "endMs": 267020,
+          "probability": 0.996026
+        },
+        {
+          "index": 8,
+          "text": "make",
+          "startMs": 267020,
+          "endMs": 267300,
+          "probability": 0.997214
+        },
+        {
+          "index": 9,
+          "text": "great",
+          "startMs": 267300,
+          "endMs": 267680,
+          "probability": 0.996385
+        },
+        {
+          "index": 10,
+          "text": "decorations",
+          "startMs": 267680,
+          "endMs": 268500,
+          "probability": 0.996869
+        },
+        {
+          "index": 11,
+          "text": "for",
+          "startMs": 268500,
+          "endMs": 268900,
+          "probability": 0.997678
+        },
+        {
+          "index": 12,
+          "text": "Thanksgiving.",
+          "startMs": 268900,
+          "endMs": 269600,
+          "probability": 0.895931
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "So Pete helps Mom fill a basket with all his mementos. They place the basket at the center of the table.",
+      "startMs": 271920,
+      "endMs": 279300,
+      "avgLogprob": -0.099492,
+      "noSpeechProb": 0.179563,
+      "compressionRatio": 1.371795,
+      "words": [
+        {
+          "index": 1,
+          "text": "So",
+          "startMs": 271920,
+          "endMs": 272260,
+          "probability": 0.990414
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 272260,
+          "endMs": 272580,
+          "probability": 0.922233
+        },
+        {
+          "index": 3,
+          "text": "helps",
+          "startMs": 272580,
+          "endMs": 273060,
+          "probability": 0.984617
+        },
+        {
+          "index": 4,
+          "text": "Mom",
+          "startMs": 273060,
+          "endMs": 273380,
+          "probability": 0.794563
+        },
+        {
+          "index": 5,
+          "text": "fill",
+          "startMs": 273380,
+          "endMs": 273680,
+          "probability": 0.998095
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 273680,
+          "endMs": 273920,
+          "probability": 0.970899
+        },
+        {
+          "index": 7,
+          "text": "basket",
+          "startMs": 273920,
+          "endMs": 274260,
+          "probability": 0.999139
+        },
+        {
+          "index": 8,
+          "text": "with",
+          "startMs": 274260,
+          "endMs": 274560,
+          "probability": 0.996905
+        },
+        {
+          "index": 9,
+          "text": "all",
+          "startMs": 274560,
+          "endMs": 274960,
+          "probability": 0.996974
+        },
+        {
+          "index": 10,
+          "text": "his",
+          "startMs": 274960,
+          "endMs": 275220,
+          "probability": 0.991352
+        },
+        {
+          "index": 11,
+          "text": "mementos.",
+          "startMs": 275220,
+          "endMs": 275940,
+          "probability": 0.977039
+        },
+        {
+          "index": 12,
+          "text": "They",
+          "startMs": 276700,
+          "endMs": 276900,
+          "probability": 0.994057
+        },
+        {
+          "index": 13,
+          "text": "place",
+          "startMs": 276900,
+          "endMs": 277140,
+          "probability": 0.481711
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 277140,
+          "endMs": 277400,
+          "probability": 0.998729
+        },
+        {
+          "index": 15,
+          "text": "basket",
+          "startMs": 277400,
+          "endMs": 277840,
+          "probability": 0.998789
+        },
+        {
+          "index": 16,
+          "text": "at",
+          "startMs": 277840,
+          "endMs": 278020,
+          "probability": 0.996312
+        },
+        {
+          "index": 17,
+          "text": "the",
+          "startMs": 278020,
+          "endMs": 278220,
+          "probability": 0.997499
+        },
+        {
+          "index": 18,
+          "text": "center",
+          "startMs": 278220,
+          "endMs": 278440,
+          "probability": 0.970396
+        },
+        {
+          "index": 19,
+          "text": "of",
+          "startMs": 278440,
+          "endMs": 278720,
+          "probability": 0.998547
+        },
+        {
+          "index": 20,
+          "text": "the",
+          "startMs": 278720,
+          "endMs": 278900,
+          "probability": 0.998914
+        },
+        {
+          "index": 21,
+          "text": "table.",
+          "startMs": 278900,
+          "endMs": 279300,
+          "probability": 0.999479
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "You did a great job, Pete, says Mom. It's beautiful, says Dad.",
+      "startMs": 279300,
+      "endMs": 286380,
+      "avgLogprob": -0.105115,
+      "noSpeechProb": 0.036681,
+      "compressionRatio": 1.325581,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 279300,
+          "endMs": 280260,
+          "probability": 0.152632
+        },
+        {
+          "index": 2,
+          "text": "did",
+          "startMs": 280260,
+          "endMs": 280440,
+          "probability": 0.987999
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 280440,
+          "endMs": 280640,
+          "probability": 0.990287
+        },
+        {
+          "index": 4,
+          "text": "great",
+          "startMs": 280640,
+          "endMs": 280980,
+          "probability": 0.995151
+        },
+        {
+          "index": 5,
+          "text": "job,",
+          "startMs": 280980,
+          "endMs": 281580,
+          "probability": 0.996432
+        },
+        {
+          "index": 6,
+          "text": "Pete,",
+          "startMs": 281800,
+          "endMs": 281960,
+          "probability": 0.982054
+        },
+        {
+          "index": 7,
+          "text": "says",
+          "startMs": 282400,
+          "endMs": 282580,
+          "probability": 0.974846
+        },
+        {
+          "index": 8,
+          "text": "Mom.",
+          "startMs": 282580,
+          "endMs": 282980,
+          "probability": 0.623192
+        },
+        {
+          "index": 9,
+          "text": "It's",
+          "startMs": 283880,
+          "endMs": 284180,
+          "probability": 0.869822
+        },
+        {
+          "index": 10,
+          "text": "beautiful,",
+          "startMs": 284180,
+          "endMs": 284740,
+          "probability": 0.992472
+        },
+        {
+          "index": 11,
+          "text": "says",
+          "startMs": 285460,
+          "endMs": 285840,
+          "probability": 0.995148
+        },
+        {
+          "index": 12,
+          "text": "Dad.",
+          "startMs": 285840,
+          "endMs": 286380,
+          "probability": 0.880443
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Is that my football? asks Bob. Just then, the doorbell rings.",
+      "startMs": 287700,
+      "endMs": 293620,
+      "avgLogprob": -0.105115,
+      "noSpeechProb": 0.036681,
+      "compressionRatio": 1.325581,
+      "words": [
+        {
+          "index": 1,
+          "text": "Is",
+          "startMs": 287700,
+          "endMs": 287840,
+          "probability": 0.914793
+        },
+        {
+          "index": 2,
+          "text": "that",
+          "startMs": 287840,
+          "endMs": 288100,
+          "probability": 0.999091
+        },
+        {
+          "index": 3,
+          "text": "my",
+          "startMs": 288100,
+          "endMs": 288360,
+          "probability": 0.998315
+        },
+        {
+          "index": 4,
+          "text": "football?",
+          "startMs": 288360,
+          "endMs": 289020,
+          "probability": 0.990713
+        },
+        {
+          "index": 5,
+          "text": "asks",
+          "startMs": 289680,
+          "endMs": 289960,
+          "probability": 0.782045
+        },
+        {
+          "index": 6,
+          "text": "Bob.",
+          "startMs": 289960,
+          "endMs": 290460,
+          "probability": 0.996791
+        },
+        {
+          "index": 7,
+          "text": "Just",
+          "startMs": 291440,
+          "endMs": 291580,
+          "probability": 0.98909
+        },
+        {
+          "index": 8,
+          "text": "then,",
+          "startMs": 291580,
+          "endMs": 292140,
+          "probability": 0.995356
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 292560,
+          "endMs": 292660,
+          "probability": 0.996661
+        },
+        {
+          "index": 10,
+          "text": "doorbell",
+          "startMs": 292660,
+          "endMs": 293140,
+          "probability": 0.966185
+        },
+        {
+          "index": 11,
+          "text": "rings.",
+          "startMs": 293140,
+          "endMs": 293620,
+          "probability": 0.994953
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "The Thanksgiving guests are here. All of Pete's family and friends gather around the dining room table.",
+      "startMs": 295560,
+      "endMs": 303200,
+      "avgLogprob": -0.105115,
+      "noSpeechProb": 0.036681,
+      "compressionRatio": 1.325581,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 295560,
+          "endMs": 296120,
+          "probability": 0.9595
+        },
+        {
+          "index": 2,
+          "text": "Thanksgiving",
+          "startMs": 296120,
+          "endMs": 296640,
+          "probability": 0.820144
+        },
+        {
+          "index": 3,
+          "text": "guests",
+          "startMs": 296640,
+          "endMs": 297180,
+          "probability": 0.974245
+        },
+        {
+          "index": 4,
+          "text": "are",
+          "startMs": 297180,
+          "endMs": 297520,
+          "probability": 0.999077
+        },
+        {
+          "index": 5,
+          "text": "here.",
+          "startMs": 297520,
+          "endMs": 297960,
+          "probability": 0.99847
+        },
+        {
+          "index": 6,
+          "text": "All",
+          "startMs": 298580,
+          "endMs": 298860,
+          "probability": 0.994539
+        },
+        {
+          "index": 7,
+          "text": "of",
+          "startMs": 298860,
+          "endMs": 299140,
+          "probability": 0.996565
+        },
+        {
+          "index": 8,
+          "text": "Pete's",
+          "startMs": 299140,
+          "endMs": 299560,
+          "probability": 0.992653
+        },
+        {
+          "index": 9,
+          "text": "family",
+          "startMs": 299560,
+          "endMs": 299860,
+          "probability": 0.998218
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 299860,
+          "endMs": 300120,
+          "probability": 0.997055
+        },
+        {
+          "index": 11,
+          "text": "friends",
+          "startMs": 300120,
+          "endMs": 300640,
+          "probability": 0.997937
+        },
+        {
+          "index": 12,
+          "text": "gather",
+          "startMs": 300640,
+          "endMs": 301100,
+          "probability": 0.992041
+        },
+        {
+          "index": 13,
+          "text": "around",
+          "startMs": 301100,
+          "endMs": 301700,
+          "probability": 0.996775
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 301700,
+          "endMs": 302000,
+          "probability": 0.99353
+        },
+        {
+          "index": 15,
+          "text": "dining",
+          "startMs": 302000,
+          "endMs": 302300,
+          "probability": 0.993165
+        },
+        {
+          "index": 16,
+          "text": "room",
+          "startMs": 302300,
+          "endMs": 302640,
+          "probability": 0.975893
+        },
+        {
+          "index": 17,
+          "text": "table.",
+          "startMs": 302640,
+          "endMs": 303200,
+          "probability": 0.998843
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "They tell stories and laugh at jokes while they eat. Everyone is having a great time.",
+      "startMs": 303200,
+      "endMs": 310160,
+      "avgLogprob": -0.099459,
+      "noSpeechProb": 0.052917,
+      "compressionRatio": 1.430303,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 303200,
+          "endMs": 304020,
+          "probability": 0.705374
+        },
+        {
+          "index": 2,
+          "text": "tell",
+          "startMs": 304020,
+          "endMs": 304260,
+          "probability": 0.991643
+        },
+        {
+          "index": 3,
+          "text": "stories",
+          "startMs": 304260,
+          "endMs": 304920,
+          "probability": 0.995389
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 304920,
+          "endMs": 305440,
+          "probability": 0.814692
+        },
+        {
+          "index": 5,
+          "text": "laugh",
+          "startMs": 305440,
+          "endMs": 305760,
+          "probability": 0.995832
+        },
+        {
+          "index": 6,
+          "text": "at",
+          "startMs": 305760,
+          "endMs": 305980,
+          "probability": 0.989479
+        },
+        {
+          "index": 7,
+          "text": "jokes",
+          "startMs": 305980,
+          "endMs": 306320,
+          "probability": 0.996817
+        },
+        {
+          "index": 8,
+          "text": "while",
+          "startMs": 306320,
+          "endMs": 306660,
+          "probability": 0.984683
+        },
+        {
+          "index": 9,
+          "text": "they",
+          "startMs": 306660,
+          "endMs": 306860,
+          "probability": 0.994138
+        },
+        {
+          "index": 10,
+          "text": "eat.",
+          "startMs": 306860,
+          "endMs": 307200,
+          "probability": 0.998591
+        },
+        {
+          "index": 11,
+          "text": "Everyone",
+          "startMs": 308020,
+          "endMs": 308140,
+          "probability": 0.975764
+        },
+        {
+          "index": 12,
+          "text": "is",
+          "startMs": 308140,
+          "endMs": 308480,
+          "probability": 0.990831
+        },
+        {
+          "index": 13,
+          "text": "having",
+          "startMs": 308480,
+          "endMs": 308820,
+          "probability": 0.998416
+        },
+        {
+          "index": 14,
+          "text": "a",
+          "startMs": 308820,
+          "endMs": 309080,
+          "probability": 0.997902
+        },
+        {
+          "index": 15,
+          "text": "great",
+          "startMs": 309080,
+          "endMs": 309400,
+          "probability": 0.996125
+        },
+        {
+          "index": 16,
+          "text": "time.",
+          "startMs": 309400,
+          "endMs": 310160,
+          "probability": 0.999512
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Pete looks around the table and smiles. He loves lots of things about autumn. But Pete knows what he loves most all year long.",
+      "startMs": 312380,
+      "endMs": 322580,
+      "avgLogprob": -0.099459,
+      "noSpeechProb": 0.052917,
+      "compressionRatio": 1.430303,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 312380,
+          "endMs": 312480,
+          "probability": 0.969967
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 312480,
+          "endMs": 312900,
+          "probability": 0.993514
+        },
+        {
+          "index": 3,
+          "text": "around",
+          "startMs": 312900,
+          "endMs": 313300,
+          "probability": 0.99705
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 313300,
+          "endMs": 313580,
+          "probability": 0.882058
+        },
+        {
+          "index": 5,
+          "text": "table",
+          "startMs": 313580,
+          "endMs": 313980,
+          "probability": 0.998216
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 313980,
+          "endMs": 314260,
+          "probability": 0.9934
+        },
+        {
+          "index": 7,
+          "text": "smiles.",
+          "startMs": 314260,
+          "endMs": 314800,
+          "probability": 0.995488
+        },
+        {
+          "index": 8,
+          "text": "He",
+          "startMs": 315520,
+          "endMs": 315740,
+          "probability": 0.995478
+        },
+        {
+          "index": 9,
+          "text": "loves",
+          "startMs": 315740,
+          "endMs": 316000,
+          "probability": 0.996585
+        },
+        {
+          "index": 10,
+          "text": "lots",
+          "startMs": 316000,
+          "endMs": 316300,
+          "probability": 0.972439
+        },
+        {
+          "index": 11,
+          "text": "of",
+          "startMs": 316300,
+          "endMs": 316580,
+          "probability": 0.99798
+        },
+        {
+          "index": 12,
+          "text": "things",
+          "startMs": 316580,
+          "endMs": 316820,
+          "probability": 0.99617
+        },
+        {
+          "index": 13,
+          "text": "about",
+          "startMs": 316820,
+          "endMs": 317260,
+          "probability": 0.997986
+        },
+        {
+          "index": 14,
+          "text": "autumn.",
+          "startMs": 317260,
+          "endMs": 317680,
+          "probability": 0.532605
+        },
+        {
+          "index": 15,
+          "text": "But",
+          "startMs": 318360,
+          "endMs": 318600,
+          "probability": 0.950367
+        },
+        {
+          "index": 16,
+          "text": "Pete",
+          "startMs": 318600,
+          "endMs": 319000,
+          "probability": 0.979879
+        },
+        {
+          "index": 17,
+          "text": "knows",
+          "startMs": 319000,
+          "endMs": 319340,
+          "probability": 0.997205
+        },
+        {
+          "index": 18,
+          "text": "what",
+          "startMs": 319340,
+          "endMs": 319660,
+          "probability": 0.99606
+        },
+        {
+          "index": 19,
+          "text": "he",
+          "startMs": 319660,
+          "endMs": 319860,
+          "probability": 0.998013
+        },
+        {
+          "index": 20,
+          "text": "loves",
+          "startMs": 319860,
+          "endMs": 320120,
+          "probability": 0.992631
+        },
+        {
+          "index": 21,
+          "text": "most",
+          "startMs": 320120,
+          "endMs": 320700,
+          "probability": 0.995469
+        },
+        {
+          "index": 22,
+          "text": "all",
+          "startMs": 320700,
+          "endMs": 321280,
+          "probability": 0.981766
+        },
+        {
+          "index": 23,
+          "text": "year",
+          "startMs": 321280,
+          "endMs": 321800,
+          "probability": 0.994522
+        },
+        {
+          "index": 24,
+          "text": "long.",
+          "startMs": 321800,
+          "endMs": 322580,
+          "probability": 0.991794
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "His family and friends.",
+      "startMs": 324760,
+      "endMs": 326940,
+      "avgLogprob": -0.099459,
+      "noSpeechProb": 0.052917,
+      "compressionRatio": 1.430303,
+      "words": [
+        {
+          "index": 1,
+          "text": "His",
+          "startMs": 324760,
+          "endMs": 325020,
+          "probability": 0.873983
+        },
+        {
+          "index": 2,
+          "text": "family",
+          "startMs": 325020,
+          "endMs": 325600,
+          "probability": 0.644327
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 325600,
+          "endMs": 326340,
+          "probability": 0.993469
+        },
+        {
+          "index": 4,
+          "text": "friends.",
+          "startMs": 326340,
+          "endMs": 326940,
+          "probability": 0.989853
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "We hope you have enjoyed this recording of Pete the Cat, Falling for Autumn.",
+      "startMs": 329940,
+      "endMs": 335900,
+      "avgLogprob": -0.158828,
+      "noSpeechProb": 0.621336,
+      "compressionRatio": 1.49359,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 329940,
+          "endMs": 330800,
+          "probability": 0.275426
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 330800,
+          "endMs": 331060,
+          "probability": 0.993701
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 331060,
+          "endMs": 331300,
+          "probability": 0.993038
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 331300,
+          "endMs": 331480,
+          "probability": 0.977282
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 331480,
+          "endMs": 331860,
+          "probability": 0.997211
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 331860,
+          "endMs": 332140,
+          "probability": 0.99238
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 332140,
+          "endMs": 332720,
+          "probability": 0.992202
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 332720,
+          "endMs": 333060,
+          "probability": 0.995921
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 333060,
+          "endMs": 333480,
+          "probability": 0.835833
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 333480,
+          "endMs": 333780,
+          "probability": 0.937408
+        },
+        {
+          "index": 11,
+          "text": "Cat,",
+          "startMs": 333780,
+          "endMs": 334060,
+          "probability": 0.728528
+        },
+        {
+          "index": 12,
+          "text": "Falling",
+          "startMs": 334460,
+          "endMs": 334920,
+          "probability": 0.543949
+        },
+        {
+          "index": 13,
+          "text": "for",
+          "startMs": 334920,
+          "endMs": 335300,
+          "probability": 0.882509
+        },
+        {
+          "index": 14,
+          "text": "Autumn.",
+          "startMs": 335300,
+          "endMs": 335900,
+          "probability": 0.968526
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Text copyright 2020 by James Dean and Kimberly Dean.",
+      "startMs": 336820,
+      "endMs": 341720,
+      "avgLogprob": -0.158828,
+      "noSpeechProb": 0.621336,
+      "compressionRatio": 1.49359,
+      "words": [
+        {
+          "index": 1,
+          "text": "Text",
+          "startMs": 336820,
+          "endMs": 337120,
+          "probability": 0.777529
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 337120,
+          "endMs": 337720,
+          "probability": 0.453485
+        },
+        {
+          "index": 3,
+          "text": "2020",
+          "startMs": 337720,
+          "endMs": 338920,
+          "probability": 0.531129
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 338920,
+          "endMs": 339460,
+          "probability": 0.940917
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 339460,
+          "endMs": 339940,
+          "probability": 0.987045
+        },
+        {
+          "index": 6,
+          "text": "Dean",
+          "startMs": 339940,
+          "endMs": 340260,
+          "probability": 0.906517
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 340260,
+          "endMs": 340700,
+          "probability": 0.783899
+        },
+        {
+          "index": 8,
+          "text": "Kimberly",
+          "startMs": 340700,
+          "endMs": 341200,
+          "probability": 0.787304
+        },
+        {
+          "index": 9,
+          "text": "Dean.",
+          "startMs": 341200,
+          "endMs": 341720,
+          "probability": 0.942888
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "Illustrations copyright 2020 by James Dean.",
+      "startMs": 342780,
+      "endMs": 346840,
+      "avgLogprob": -0.158828,
+      "noSpeechProb": 0.621336,
+      "compressionRatio": 1.49359,
+      "words": [
+        {
+          "index": 1,
+          "text": "Illustrations",
+          "startMs": 342780,
+          "endMs": 343320,
+          "probability": 0.91574
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 343320,
+          "endMs": 343960,
+          "probability": 0.960495
+        },
+        {
+          "index": 3,
+          "text": "2020",
+          "startMs": 343960,
+          "endMs": 345100,
+          "probability": 0.982184
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 345100,
+          "endMs": 345880,
+          "probability": 0.988556
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 345880,
+          "endMs": 346380,
+          "probability": 0.998299
+        },
+        {
+          "index": 6,
+          "text": "Dean.",
+          "startMs": 346380,
+          "endMs": 346840,
+          "probability": 0.991994
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Pete the Cat is a registered trademark of Pete the Cat LLC.",
+      "startMs": 347900,
+      "endMs": 352080,
+      "avgLogprob": -0.158828,
+      "noSpeechProb": 0.621336,
+      "compressionRatio": 1.49359,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 347900,
+          "endMs": 348020,
+          "probability": 0.978117
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 348020,
+          "endMs": 348240,
+          "probability": 0.978611
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 348240,
+          "endMs": 348540,
+          "probability": 0.969457
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 348540,
+          "endMs": 348960,
+          "probability": 0.98039
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 348960,
+          "endMs": 349140,
+          "probability": 0.992694
+        },
+        {
+          "index": 6,
+          "text": "registered",
+          "startMs": 349140,
+          "endMs": 349520,
+          "probability": 0.970967
+        },
+        {
+          "index": 7,
+          "text": "trademark",
+          "startMs": 349520,
+          "endMs": 350120,
+          "probability": 0.9843
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 350120,
+          "endMs": 350480,
+          "probability": 0.994824
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 350480,
+          "endMs": 350760,
+          "probability": 0.932657
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 350760,
+          "endMs": 351000,
+          "probability": 0.966022
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 351000,
+          "endMs": 351320,
+          "probability": 0.988177
+        },
+        {
+          "index": 12,
+          "text": "LLC.",
+          "startMs": 351320,
+          "endMs": 352080,
+          "probability": 0.520975
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Production copyright 2020 by Harper Collins Publishers. This program was produced by John Marshall Media.",
+      "startMs": 352080,
+      "endMs": 361560,
+      "avgLogprob": -0.133372,
+      "noSpeechProb": 0.18015,
+      "compressionRatio": 1.029412,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 352080,
+          "endMs": 353560,
+          "probability": 0.073395
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 353560,
+          "endMs": 354260,
+          "probability": 0.817835
+        },
+        {
+          "index": 3,
+          "text": "2020",
+          "startMs": 354260,
+          "endMs": 355360,
+          "probability": 0.755792
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 355360,
+          "endMs": 355900,
+          "probability": 0.952588
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 355900,
+          "endMs": 356260,
+          "probability": 0.986227
+        },
+        {
+          "index": 6,
+          "text": "Collins",
+          "startMs": 356260,
+          "endMs": 356820,
+          "probability": 0.602948
+        },
+        {
+          "index": 7,
+          "text": "Publishers.",
+          "startMs": 356820,
+          "endMs": 357480,
+          "probability": 0.71131
+        },
+        {
+          "index": 8,
+          "text": "This",
+          "startMs": 358560,
+          "endMs": 358660,
+          "probability": 0.990071
+        },
+        {
+          "index": 9,
+          "text": "program",
+          "startMs": 358660,
+          "endMs": 359120,
+          "probability": 0.944374
+        },
+        {
+          "index": 10,
+          "text": "was",
+          "startMs": 359120,
+          "endMs": 359380,
+          "probability": 0.994191
+        },
+        {
+          "index": 11,
+          "text": "produced",
+          "startMs": 359380,
+          "endMs": 359800,
+          "probability": 0.998291
+        },
+        {
+          "index": 12,
+          "text": "by",
+          "startMs": 359800,
+          "endMs": 360240,
+          "probability": 0.997351
+        },
+        {
+          "index": 13,
+          "text": "John",
+          "startMs": 360240,
+          "endMs": 360700,
+          "probability": 0.968359
+        },
+        {
+          "index": 14,
+          "text": "Marshall",
+          "startMs": 360700,
+          "endMs": 361160,
+          "probability": 0.967882
+        },
+        {
+          "index": 15,
+          "text": "Media.",
+          "startMs": 361160,
+          "endMs": 361560,
+          "probability": 0.940966
+        }
+      ]
+    }
+  ]
+}

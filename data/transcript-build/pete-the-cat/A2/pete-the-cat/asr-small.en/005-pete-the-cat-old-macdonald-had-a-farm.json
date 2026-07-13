@@ -1,0 +1,6003 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 76.623,
+  "text": "Pete the Cat, Old MacDonald Had a Farm by James Dean performed by Teddy Walsh Old MacDonald had a farm E-I-E-I-O and on that farm he had some chickens E-I-E-I-O With a cluck cluck here and a cluck cluck there here a cluck there a cluck everywhere a cluck cluck Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some dogs E-I-E-I-O With a wolf wolf here and a wolf wolf there here a wolf there a wolf everywhere a wolf wolf Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some cows E-I-E-I-O With a moo moo here and a moo moo there here a moo there a moo everywhere a moo moo Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and On that farm he had some pigs E-I-E-I-O With an oink oink here and an oink oink there here an oink there an oink everywhere an oink oink Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some horses E-I-E-I-O With a nay nay here and a nay nay there here nay there nay everywhere a nay nay Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some cats E-I-E-I-O With a meow meow here and a meow meow there here a meow there a meow everywhere a meow meow Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some goats E-I-E-I-O With a ba ba here and a ba ba there here a ba there a ba everywhere a ba ba Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some ducks E-I-E-I-O With a quack quack here and a quack quack there here a quack there a quack everywhere a quack quack Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some turkeys E-I-E-I-O With a gobble gobble here and a gobble gobble there here a gobble there a gobble everywhere a gobble gobble Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some roosters E-I-E-I-O With a cockadoodle here and a cockadoodle there here a cockadoodle there a cockadoodle everywhere a cockadoodle Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some donkeys E-I-E-I-O With a hee haw here and a hee haw there here a hee haw there a hee haw everywhere a hee haw Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some sheep E-I-E-I-O With a mama here and a mama there here a mama there a mama everywhere a mama Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some frogs E-I-E-I-O With a ribbit ribbit here and a ribbit ribbit there here ribbit there ribbit everywhere ribbit ribbit Old MacDonald had a farm E-I-E-I-O Old MacDonald had a farm E-I-E-I-O and on that farm he had some geese E-I-E-I-O With a honk honk here and a honk honk there here a honk there a honk everywhere a honk honk Old MacDonald had a farm E-I-E-I-O We hope you have enjoyed this recording of Pete the Cat Old MacDonald had a farm by James Dean This program was produced by John Marshall Media, Executive Producer Karen Joukonsky Illustrations Copyright 2014 by James Dean Production Copyright 2014 by Harper Collins Publishers All rights reserved",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat, Old MacDonald Had a Farm by James Dean",
+      "startMs": 0,
+      "endMs": 5580,
+      "avgLogprob": -0.297157,
+      "noSpeechProb": 0.23658,
+      "compressionRatio": 1.703226,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 540,
+          "probability": 0.682957
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 540,
+          "endMs": 780,
+          "probability": 0.948615
+        },
+        {
+          "index": 3,
+          "text": "Cat,",
+          "startMs": 780,
+          "endMs": 1120,
+          "probability": 0.777498
+        },
+        {
+          "index": 4,
+          "text": "Old",
+          "startMs": 1820,
+          "endMs": 2140,
+          "probability": 0.678784
+        },
+        {
+          "index": 5,
+          "text": "MacDonald",
+          "startMs": 2140,
+          "endMs": 2740,
+          "probability": 0.550572
+        },
+        {
+          "index": 6,
+          "text": "Had",
+          "startMs": 2740,
+          "endMs": 3160,
+          "probability": 0.598449
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 3160,
+          "endMs": 3400,
+          "probability": 0.911461
+        },
+        {
+          "index": 8,
+          "text": "Farm",
+          "startMs": 3400,
+          "endMs": 3780,
+          "probability": 0.986112
+        },
+        {
+          "index": 9,
+          "text": "by",
+          "startMs": 3780,
+          "endMs": 4640,
+          "probability": 0.683161
+        },
+        {
+          "index": 10,
+          "text": "James",
+          "startMs": 4640,
+          "endMs": 5160,
+          "probability": 0.997866
+        },
+        {
+          "index": 11,
+          "text": "Dean",
+          "startMs": 5160,
+          "endMs": 5580,
+          "probability": 0.887969
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "performed by Teddy Walsh",
+      "startMs": 6660,
+      "endMs": 8180,
+      "avgLogprob": -0.297157,
+      "noSpeechProb": 0.23658,
+      "compressionRatio": 1.703226,
+      "words": [
+        {
+          "index": 1,
+          "text": "performed",
+          "startMs": 6580,
+          "endMs": 6920,
+          "probability": 0.260956
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 6920,
+          "endMs": 7360,
+          "probability": 0.996735
+        },
+        {
+          "index": 3,
+          "text": "Teddy",
+          "startMs": 7360,
+          "endMs": 7680,
+          "probability": 0.978565
+        },
+        {
+          "index": 4,
+          "text": "Walsh",
+          "startMs": 7680,
+          "endMs": 8180,
+          "probability": 0.991981
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some chickens E-I-E-I-O",
+      "startMs": 11560,
+      "endMs": 21240,
+      "avgLogprob": -0.297157,
+      "noSpeechProb": 0.23658,
+      "compressionRatio": 1.703226,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 11560,
+          "endMs": 12240,
+          "probability": 0.413128
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 12240,
+          "endMs": 12920,
+          "probability": 0.805942
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 12920,
+          "endMs": 13420,
+          "probability": 0.39807
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 13420,
+          "endMs": 13740,
+          "probability": 0.997147
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 13740,
+          "endMs": 14140,
+          "probability": 0.930893
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 14140,
+          "endMs": 14700,
+          "probability": 0.510467
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 14700,
+          "endMs": 15000,
+          "probability": 0.67644
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 15000,
+          "endMs": 15280,
+          "probability": 0.994708
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 15280,
+          "endMs": 15660,
+          "probability": 0.994573
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 15660,
+          "endMs": 16080,
+          "probability": 0.991758
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 16080,
+          "endMs": 16900,
+          "probability": 0.680602
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 16900,
+          "endMs": 17240,
+          "probability": 0.921552
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 17240,
+          "endMs": 17520,
+          "probability": 0.996172
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 17520,
+          "endMs": 17860,
+          "probability": 0.976128
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 17860,
+          "endMs": 18120,
+          "probability": 0.826267
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 18120,
+          "endMs": 18420,
+          "probability": 0.995208
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 18420,
+          "endMs": 18720,
+          "probability": 0.99623
+        },
+        {
+          "index": 18,
+          "text": "chickens",
+          "startMs": 18720,
+          "endMs": 19220,
+          "probability": 0.987326
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 19220,
+          "endMs": 19760,
+          "probability": 0.868108
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 19760,
+          "endMs": 20060,
+          "probability": 0.985256
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 20060,
+          "endMs": 20340,
+          "probability": 0.998559
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 20340,
+          "endMs": 20700,
+          "probability": 0.998856
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 20700,
+          "endMs": 21240,
+          "probability": 0.997979
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "With a cluck cluck here and a cluck cluck there here a cluck there a cluck everywhere a cluck cluck Old",
+      "startMs": 22620,
+      "endMs": 28600,
+      "avgLogprob": -0.297157,
+      "noSpeechProb": 0.23658,
+      "compressionRatio": 1.703226,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 22620,
+          "endMs": 23300,
+          "probability": 0.737675
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 23300,
+          "endMs": 23560,
+          "probability": 0.978099
+        },
+        {
+          "index": 3,
+          "text": "cluck",
+          "startMs": 23560,
+          "endMs": 23760,
+          "probability": 0.845411
+        },
+        {
+          "index": 4,
+          "text": "cluck",
+          "startMs": 23760,
+          "endMs": 24000,
+          "probability": 0.780132
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 24000,
+          "endMs": 24340,
+          "probability": 0.971624
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 24340,
+          "endMs": 24520,
+          "probability": 0.900966
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 24520,
+          "endMs": 24640,
+          "probability": 0.993146
+        },
+        {
+          "index": 8,
+          "text": "cluck",
+          "startMs": 24640,
+          "endMs": 24920,
+          "probability": 0.994954
+        },
+        {
+          "index": 9,
+          "text": "cluck",
+          "startMs": 24920,
+          "endMs": 25140,
+          "probability": 0.994267
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 25140,
+          "endMs": 25540,
+          "probability": 0.984953
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 25540,
+          "endMs": 26040,
+          "probability": 0.149158
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 26040,
+          "endMs": 26200,
+          "probability": 0.94665
+        },
+        {
+          "index": 13,
+          "text": "cluck",
+          "startMs": 26200,
+          "endMs": 26420,
+          "probability": 0.96472
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 26420,
+          "endMs": 26660,
+          "probability": 0.936707
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 26660,
+          "endMs": 26800,
+          "probability": 0.977201
+        },
+        {
+          "index": 16,
+          "text": "cluck",
+          "startMs": 26800,
+          "endMs": 27040,
+          "probability": 0.994468
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 27040,
+          "endMs": 27360,
+          "probability": 0.930125
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 27360,
+          "endMs": 27700,
+          "probability": 0.972392
+        },
+        {
+          "index": 19,
+          "text": "cluck",
+          "startMs": 27700,
+          "endMs": 27960,
+          "probability": 0.979192
+        },
+        {
+          "index": 20,
+          "text": "cluck",
+          "startMs": 27960,
+          "endMs": 28300,
+          "probability": 0.990662
+        },
+        {
+          "index": 21,
+          "text": "Old",
+          "startMs": 28300,
+          "endMs": 28600,
+          "probability": 0.826519
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "MacDonald had a farm E-I-E-I-O",
+      "startMs": 28600,
+      "endMs": 32280,
+      "avgLogprob": -0.270046,
+      "noSpeechProb": 0.026157,
+      "compressionRatio": 2.126126,
+      "words": [
+        {
+          "index": 1,
+          "text": "MacDonald",
+          "startMs": 28600,
+          "endMs": 28840,
+          "probability": 5e-06
+        },
+        {
+          "index": 2,
+          "text": "had",
+          "startMs": 28840,
+          "endMs": 29760,
+          "probability": 0.938516
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 29760,
+          "endMs": 30000,
+          "probability": 0.993451
+        },
+        {
+          "index": 4,
+          "text": "farm",
+          "startMs": 30000,
+          "endMs": 30440,
+          "probability": 0.913228
+        },
+        {
+          "index": 5,
+          "text": "E",
+          "startMs": 30440,
+          "endMs": 30900,
+          "probability": 0.361047
+        },
+        {
+          "index": 6,
+          "text": "-I",
+          "startMs": 30900,
+          "endMs": 31200,
+          "probability": 0.697766
+        },
+        {
+          "index": 7,
+          "text": "-E",
+          "startMs": 31200,
+          "endMs": 31480,
+          "probability": 0.996917
+        },
+        {
+          "index": 8,
+          "text": "-I",
+          "startMs": 31480,
+          "endMs": 31820,
+          "probability": 0.996269
+        },
+        {
+          "index": 9,
+          "text": "-O",
+          "startMs": 31820,
+          "endMs": 32280,
+          "probability": 0.99446
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some dogs E-I-E-I-O",
+      "startMs": 33920,
+      "endMs": 43420,
+      "avgLogprob": -0.270046,
+      "noSpeechProb": 0.026157,
+      "compressionRatio": 2.126126,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 33920,
+          "endMs": 34520,
+          "probability": 0.235298
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 34520,
+          "endMs": 35120,
+          "probability": 0.942213
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 35120,
+          "endMs": 35660,
+          "probability": 0.992853
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 35660,
+          "endMs": 36000,
+          "probability": 0.997625
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 36000,
+          "endMs": 36360,
+          "probability": 0.988761
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 36360,
+          "endMs": 36860,
+          "probability": 0.963785
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 36860,
+          "endMs": 37160,
+          "probability": 0.993629
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 37160,
+          "endMs": 37460,
+          "probability": 0.998421
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 37460,
+          "endMs": 37820,
+          "probability": 0.999341
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 37820,
+          "endMs": 38300,
+          "probability": 0.995629
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 38300,
+          "endMs": 38960,
+          "probability": 0.219514
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 38960,
+          "endMs": 39320,
+          "probability": 0.970419
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 39320,
+          "endMs": 39620,
+          "probability": 0.991443
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 39620,
+          "endMs": 39900,
+          "probability": 0.986955
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 39900,
+          "endMs": 40140,
+          "probability": 0.922008
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 40140,
+          "endMs": 40440,
+          "probability": 0.996803
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 40440,
+          "endMs": 40720,
+          "probability": 0.997925
+        },
+        {
+          "index": 18,
+          "text": "dogs",
+          "startMs": 40720,
+          "endMs": 41180,
+          "probability": 0.985812
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 41180,
+          "endMs": 41660,
+          "probability": 0.955059
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 41660,
+          "endMs": 41960,
+          "probability": 0.995575
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 41960,
+          "endMs": 42260,
+          "probability": 0.998571
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 42260,
+          "endMs": 42640,
+          "probability": 0.99918
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 42640,
+          "endMs": 43420,
+          "probability": 0.997597
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "With a wolf wolf here and a wolf wolf there here a wolf there a wolf everywhere a wolf wolf Old MacDonald had a farm",
+      "startMs": 44620,
+      "endMs": 52220,
+      "avgLogprob": -0.270046,
+      "noSpeechProb": 0.026157,
+      "compressionRatio": 2.126126,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 44620,
+          "endMs": 45220,
+          "probability": 0.700097
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 45220,
+          "endMs": 45440,
+          "probability": 0.980858
+        },
+        {
+          "index": 3,
+          "text": "wolf",
+          "startMs": 45440,
+          "endMs": 45580,
+          "probability": 0.373018
+        },
+        {
+          "index": 4,
+          "text": "wolf",
+          "startMs": 45580,
+          "endMs": 45860,
+          "probability": 0.315319
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 45860,
+          "endMs": 46220,
+          "probability": 0.967434
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 46220,
+          "endMs": 46400,
+          "probability": 0.919088
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 46400,
+          "endMs": 46520,
+          "probability": 0.983807
+        },
+        {
+          "index": 8,
+          "text": "wolf",
+          "startMs": 46520,
+          "endMs": 46760,
+          "probability": 0.971475
+        },
+        {
+          "index": 9,
+          "text": "wolf",
+          "startMs": 46760,
+          "endMs": 46980,
+          "probability": 0.945997
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 46980,
+          "endMs": 47480,
+          "probability": 0.995348
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 47480,
+          "endMs": 47980,
+          "probability": 0.055615
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 47980,
+          "endMs": 48100,
+          "probability": 0.581417
+        },
+        {
+          "index": 13,
+          "text": "wolf",
+          "startMs": 48100,
+          "endMs": 48260,
+          "probability": 0.991792
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 48260,
+          "endMs": 48560,
+          "probability": 0.952954
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 48560,
+          "endMs": 48740,
+          "probability": 0.770063
+        },
+        {
+          "index": 16,
+          "text": "wolf",
+          "startMs": 48740,
+          "endMs": 48900,
+          "probability": 0.996255
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 48900,
+          "endMs": 49240,
+          "probability": 0.9639
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 49240,
+          "endMs": 49540,
+          "probability": 0.972094
+        },
+        {
+          "index": 19,
+          "text": "wolf",
+          "startMs": 49540,
+          "endMs": 49780,
+          "probability": 0.989442
+        },
+        {
+          "index": 20,
+          "text": "wolf",
+          "startMs": 49780,
+          "endMs": 50060,
+          "probability": 0.987782
+        },
+        {
+          "index": 21,
+          "text": "Old",
+          "startMs": 50060,
+          "endMs": 50360,
+          "probability": 0.762531
+        },
+        {
+          "index": 22,
+          "text": "MacDonald",
+          "startMs": 50360,
+          "endMs": 50960,
+          "probability": 0.979493
+        },
+        {
+          "index": 23,
+          "text": "had",
+          "startMs": 50960,
+          "endMs": 51560,
+          "probability": 0.995074
+        },
+        {
+          "index": 24,
+          "text": "a",
+          "startMs": 51560,
+          "endMs": 51820,
+          "probability": 0.997122
+        },
+        {
+          "index": 25,
+          "text": "farm",
+          "startMs": 51820,
+          "endMs": 52220,
+          "probability": 0.995679
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "E-I-E-I-O",
+      "startMs": 52220,
+      "endMs": 54320,
+      "avgLogprob": -0.270046,
+      "noSpeechProb": 0.026157,
+      "compressionRatio": 2.126126,
+      "words": [
+        {
+          "index": 1,
+          "text": "E",
+          "startMs": 52220,
+          "endMs": 52740,
+          "probability": 0.995011
+        },
+        {
+          "index": 2,
+          "text": "-I",
+          "startMs": 52740,
+          "endMs": 53020,
+          "probability": 0.996276
+        },
+        {
+          "index": 3,
+          "text": "-E",
+          "startMs": 53020,
+          "endMs": 53300,
+          "probability": 0.998732
+        },
+        {
+          "index": 4,
+          "text": "-I",
+          "startMs": 53300,
+          "endMs": 53620,
+          "probability": 0.999316
+        },
+        {
+          "index": 5,
+          "text": "-O",
+          "startMs": 53620,
+          "endMs": 54320,
+          "probability": 0.998322
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some cows E-I-E-I-O",
+      "startMs": 55700,
+      "endMs": 64900,
+      "avgLogprob": -0.183849,
+      "noSpeechProb": 0.013523,
+      "compressionRatio": 2.126126,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 55700,
+          "endMs": 56360,
+          "probability": 0.254166
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 56360,
+          "endMs": 57000,
+          "probability": 0.310677
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 57000,
+          "endMs": 57560,
+          "probability": 0.979729
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 57560,
+          "endMs": 57820,
+          "probability": 0.994517
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 57820,
+          "endMs": 58220,
+          "probability": 0.966433
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 58220,
+          "endMs": 58700,
+          "probability": 0.321478
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 58700,
+          "endMs": 59000,
+          "probability": 0.66855
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 59000,
+          "endMs": 59280,
+          "probability": 0.993947
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 59280,
+          "endMs": 59620,
+          "probability": 0.996408
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 59620,
+          "endMs": 60040,
+          "probability": 0.994078
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 60040,
+          "endMs": 60860,
+          "probability": 0.183777
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 60860,
+          "endMs": 61180,
+          "probability": 0.975123
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 61180,
+          "endMs": 61460,
+          "probability": 0.992082
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 61460,
+          "endMs": 61780,
+          "probability": 0.990679
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 61780,
+          "endMs": 62020,
+          "probability": 0.905515
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 62020,
+          "endMs": 62320,
+          "probability": 0.995366
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 62320,
+          "endMs": 62600,
+          "probability": 0.996606
+        },
+        {
+          "index": 18,
+          "text": "cows",
+          "startMs": 62600,
+          "endMs": 63020,
+          "probability": 0.960374
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 63020,
+          "endMs": 63500,
+          "probability": 0.852579
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 63500,
+          "endMs": 63780,
+          "probability": 0.988926
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 63780,
+          "endMs": 64060,
+          "probability": 0.998081
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 64060,
+          "endMs": 64380,
+          "probability": 0.99797
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 64380,
+          "endMs": 64900,
+          "probability": 0.994556
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "With a moo moo here and a moo moo there here a moo there a moo everywhere a moo moo Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 66320,
+      "endMs": 76300,
+      "avgLogprob": -0.183849,
+      "noSpeechProb": 0.013523,
+      "compressionRatio": 2.126126,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 66320,
+          "endMs": 66980,
+          "probability": 0.525875
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 66980,
+          "endMs": 67120,
+          "probability": 0.978327
+        },
+        {
+          "index": 3,
+          "text": "moo",
+          "startMs": 67120,
+          "endMs": 67380,
+          "probability": 0.790992
+        },
+        {
+          "index": 4,
+          "text": "moo",
+          "startMs": 67380,
+          "endMs": 67640,
+          "probability": 0.813554
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 67640,
+          "endMs": 67980,
+          "probability": 0.962454
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 67980,
+          "endMs": 68180,
+          "probability": 0.915111
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 68180,
+          "endMs": 68300,
+          "probability": 0.987349
+        },
+        {
+          "index": 8,
+          "text": "moo",
+          "startMs": 68300,
+          "endMs": 68560,
+          "probability": 0.988795
+        },
+        {
+          "index": 9,
+          "text": "moo",
+          "startMs": 68560,
+          "endMs": 68800,
+          "probability": 0.996557
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 68800,
+          "endMs": 69260,
+          "probability": 0.993477
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 69260,
+          "endMs": 69740,
+          "probability": 0.073982
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 69740,
+          "endMs": 69880,
+          "probability": 0.812134
+        },
+        {
+          "index": 13,
+          "text": "moo",
+          "startMs": 69880,
+          "endMs": 70060,
+          "probability": 0.979555
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 70060,
+          "endMs": 70340,
+          "probability": 0.906008
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 70340,
+          "endMs": 70480,
+          "probability": 0.978105
+        },
+        {
+          "index": 16,
+          "text": "moo",
+          "startMs": 70480,
+          "endMs": 70660,
+          "probability": 0.993805
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 70660,
+          "endMs": 71040,
+          "probability": 0.870655
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 71040,
+          "endMs": 71400,
+          "probability": 0.981682
+        },
+        {
+          "index": 19,
+          "text": "moo",
+          "startMs": 71400,
+          "endMs": 71620,
+          "probability": 0.990855
+        },
+        {
+          "index": 20,
+          "text": "moo",
+          "startMs": 71620,
+          "endMs": 71960,
+          "probability": 0.994558
+        },
+        {
+          "index": 21,
+          "text": "Old",
+          "startMs": 71960,
+          "endMs": 72280,
+          "probability": 0.793884
+        },
+        {
+          "index": 22,
+          "text": "MacDonald",
+          "startMs": 72280,
+          "endMs": 72920,
+          "probability": 0.962173
+        },
+        {
+          "index": 23,
+          "text": "had",
+          "startMs": 72920,
+          "endMs": 73500,
+          "probability": 0.991414
+        },
+        {
+          "index": 24,
+          "text": "a",
+          "startMs": 73500,
+          "endMs": 73760,
+          "probability": 0.996224
+        },
+        {
+          "index": 25,
+          "text": "farm",
+          "startMs": 73760,
+          "endMs": 74160,
+          "probability": 0.994809
+        },
+        {
+          "index": 26,
+          "text": "E",
+          "startMs": 74160,
+          "endMs": 74720,
+          "probability": 0.991605
+        },
+        {
+          "index": 27,
+          "text": "-I",
+          "startMs": 74720,
+          "endMs": 75020,
+          "probability": 0.99488
+        },
+        {
+          "index": 28,
+          "text": "-E",
+          "startMs": 75020,
+          "endMs": 75320,
+          "probability": 0.996276
+        },
+        {
+          "index": 29,
+          "text": "-I",
+          "startMs": 75320,
+          "endMs": 75700,
+          "probability": 0.999331
+        },
+        {
+          "index": 30,
+          "text": "-O",
+          "startMs": 75700,
+          "endMs": 76300,
+          "probability": 0.997472
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Old MacDonald had a farm E-I-E-I-O and",
+      "startMs": 77780,
+      "endMs": 82400,
+      "avgLogprob": -0.183849,
+      "noSpeechProb": 0.013523,
+      "compressionRatio": 2.126126,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 77780,
+          "endMs": 78440,
+          "probability": 0.910558
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 78440,
+          "endMs": 79080,
+          "probability": 0.982679
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 79080,
+          "endMs": 79700,
+          "probability": 0.996275
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 79700,
+          "endMs": 80000,
+          "probability": 0.998294
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 80000,
+          "endMs": 80400,
+          "probability": 0.995318
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 80400,
+          "endMs": 80900,
+          "probability": 0.994988
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 80900,
+          "endMs": 81200,
+          "probability": 0.996685
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 81200,
+          "endMs": 81480,
+          "probability": 0.998373
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 81480,
+          "endMs": 81820,
+          "probability": 0.999401
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 81820,
+          "endMs": 82360,
+          "probability": 0.998294
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 82360,
+          "endMs": 82690,
+          "probability": 0.95681
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "On that farm he had some pigs E-I-E-I-O",
+      "startMs": 82690,
+      "endMs": 87230,
+      "avgLogprob": -0.207966,
+      "noSpeechProb": 0.030612,
+      "compressionRatio": 2.065574,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 82690,
+          "endMs": 83050,
+          "probability": 0.00784
+        },
+        {
+          "index": 2,
+          "text": "that",
+          "startMs": 83050,
+          "endMs": 83610,
+          "probability": 0.955313
+        },
+        {
+          "index": 3,
+          "text": "farm",
+          "startMs": 83610,
+          "endMs": 83950,
+          "probability": 0.95368
+        },
+        {
+          "index": 4,
+          "text": "he",
+          "startMs": 83950,
+          "endMs": 84190,
+          "probability": 0.711712
+        },
+        {
+          "index": 5,
+          "text": "had",
+          "startMs": 84190,
+          "endMs": 84490,
+          "probability": 0.985623
+        },
+        {
+          "index": 6,
+          "text": "some",
+          "startMs": 84490,
+          "endMs": 84810,
+          "probability": 0.983064
+        },
+        {
+          "index": 7,
+          "text": "pigs",
+          "startMs": 84810,
+          "endMs": 85310,
+          "probability": 0.962834
+        },
+        {
+          "index": 8,
+          "text": "E",
+          "startMs": 85310,
+          "endMs": 85770,
+          "probability": 0.302179
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 85770,
+          "endMs": 86070,
+          "probability": 0.661317
+        },
+        {
+          "index": 10,
+          "text": "-E",
+          "startMs": 86070,
+          "endMs": 86330,
+          "probability": 0.99367
+        },
+        {
+          "index": 11,
+          "text": "-I",
+          "startMs": 86330,
+          "endMs": 86710,
+          "probability": 0.992491
+        },
+        {
+          "index": 12,
+          "text": "-O",
+          "startMs": 86710,
+          "endMs": 87230,
+          "probability": 0.993652
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "With an oink oink here and an oink oink there here an oink there an oink everywhere an oink oink Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 88770,
+      "endMs": 98930,
+      "avgLogprob": -0.207966,
+      "noSpeechProb": 0.030612,
+      "compressionRatio": 2.065574,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 88770,
+          "endMs": 89410,
+          "probability": 0.695094
+        },
+        {
+          "index": 2,
+          "text": "an",
+          "startMs": 89410,
+          "endMs": 89590,
+          "probability": 0.950385
+        },
+        {
+          "index": 3,
+          "text": "oink",
+          "startMs": 89590,
+          "endMs": 89850,
+          "probability": 0.842298
+        },
+        {
+          "index": 4,
+          "text": "oink",
+          "startMs": 89850,
+          "endMs": 90150,
+          "probability": 0.810398
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 90150,
+          "endMs": 90510,
+          "probability": 0.913137
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 90510,
+          "endMs": 90710,
+          "probability": 0.841821
+        },
+        {
+          "index": 7,
+          "text": "an",
+          "startMs": 90710,
+          "endMs": 90830,
+          "probability": 0.934069
+        },
+        {
+          "index": 8,
+          "text": "oink",
+          "startMs": 90830,
+          "endMs": 91130,
+          "probability": 0.992419
+        },
+        {
+          "index": 9,
+          "text": "oink",
+          "startMs": 91130,
+          "endMs": 91450,
+          "probability": 0.939081
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 91450,
+          "endMs": 91830,
+          "probability": 0.977383
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 91830,
+          "endMs": 92330,
+          "probability": 0.110944
+        },
+        {
+          "index": 12,
+          "text": "an",
+          "startMs": 92330,
+          "endMs": 92490,
+          "probability": 0.775239
+        },
+        {
+          "index": 13,
+          "text": "oink",
+          "startMs": 92490,
+          "endMs": 92730,
+          "probability": 0.972111
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 92730,
+          "endMs": 92990,
+          "probability": 0.930893
+        },
+        {
+          "index": 15,
+          "text": "an",
+          "startMs": 92990,
+          "endMs": 93130,
+          "probability": 0.908279
+        },
+        {
+          "index": 16,
+          "text": "oink",
+          "startMs": 93130,
+          "endMs": 93390,
+          "probability": 0.987651
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 93390,
+          "endMs": 93810,
+          "probability": 0.964361
+        },
+        {
+          "index": 18,
+          "text": "an",
+          "startMs": 93810,
+          "endMs": 94050,
+          "probability": 0.930757
+        },
+        {
+          "index": 19,
+          "text": "oink",
+          "startMs": 94050,
+          "endMs": 94290,
+          "probability": 0.989193
+        },
+        {
+          "index": 20,
+          "text": "oink",
+          "startMs": 94290,
+          "endMs": 94610,
+          "probability": 0.963721
+        },
+        {
+          "index": 21,
+          "text": "Old",
+          "startMs": 94610,
+          "endMs": 94890,
+          "probability": 0.658945
+        },
+        {
+          "index": 22,
+          "text": "MacDonald",
+          "startMs": 94890,
+          "endMs": 95590,
+          "probability": 0.321808
+        },
+        {
+          "index": 23,
+          "text": "had",
+          "startMs": 95590,
+          "endMs": 96170,
+          "probability": 0.972749
+        },
+        {
+          "index": 24,
+          "text": "a",
+          "startMs": 96170,
+          "endMs": 96470,
+          "probability": 0.99108
+        },
+        {
+          "index": 25,
+          "text": "farm",
+          "startMs": 96470,
+          "endMs": 96850,
+          "probability": 0.983294
+        },
+        {
+          "index": 26,
+          "text": "E",
+          "startMs": 96850,
+          "endMs": 97450,
+          "probability": 0.917129
+        },
+        {
+          "index": 27,
+          "text": "-I",
+          "startMs": 97450,
+          "endMs": 97750,
+          "probability": 0.983542
+        },
+        {
+          "index": 28,
+          "text": "-E",
+          "startMs": 97750,
+          "endMs": 98070,
+          "probability": 0.993829
+        },
+        {
+          "index": 29,
+          "text": "-I",
+          "startMs": 98070,
+          "endMs": 98450,
+          "probability": 0.998904
+        },
+        {
+          "index": 30,
+          "text": "-O",
+          "startMs": 98450,
+          "endMs": 98930,
+          "probability": 0.992789
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some horses E-I-E-I-O",
+      "startMs": 100650,
+      "endMs": 110070,
+      "avgLogprob": -0.207966,
+      "noSpeechProb": 0.030612,
+      "compressionRatio": 2.065574,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 100650,
+          "endMs": 101290,
+          "probability": 0.856659
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 101290,
+          "endMs": 101930,
+          "probability": 0.951465
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 101930,
+          "endMs": 102470,
+          "probability": 0.990373
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 102470,
+          "endMs": 102710,
+          "probability": 0.996439
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 102710,
+          "endMs": 103150,
+          "probability": 0.993662
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 103150,
+          "endMs": 103630,
+          "probability": 0.980171
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 103630,
+          "endMs": 103910,
+          "probability": 0.992924
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 103910,
+          "endMs": 104190,
+          "probability": 0.998748
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 104190,
+          "endMs": 104570,
+          "probability": 0.999215
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 104570,
+          "endMs": 105070,
+          "probability": 0.997499
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 105070,
+          "endMs": 105730,
+          "probability": 0.379347
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 105730,
+          "endMs": 106070,
+          "probability": 0.883896
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 106070,
+          "endMs": 106370,
+          "probability": 0.997318
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 106370,
+          "endMs": 106670,
+          "probability": 0.992397
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 106670,
+          "endMs": 106930,
+          "probability": 0.788144
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 106930,
+          "endMs": 107250,
+          "probability": 0.997392
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 107250,
+          "endMs": 107550,
+          "probability": 0.998194
+        },
+        {
+          "index": 18,
+          "text": "horses",
+          "startMs": 107550,
+          "endMs": 108050,
+          "probability": 0.988705
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 108050,
+          "endMs": 108570,
+          "probability": 0.956878
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 108570,
+          "endMs": 108870,
+          "probability": 0.994178
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 108870,
+          "endMs": 109170,
+          "probability": 0.998447
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 109170,
+          "endMs": 109530,
+          "probability": 0.999031
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 109530,
+          "endMs": 110070,
+          "probability": 0.998269
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "With a nay nay here and a nay nay there here nay there nay everywhere a nay nay Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 111430,
+      "endMs": 121430,
+      "avgLogprob": -0.168348,
+      "noSpeechProb": 0.07173,
+      "compressionRatio": 1.873786,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 111430,
+          "endMs": 112110,
+          "probability": 0.553927
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 112110,
+          "endMs": 112270,
+          "probability": 0.902967
+        },
+        {
+          "index": 3,
+          "text": "nay",
+          "startMs": 112270,
+          "endMs": 112550,
+          "probability": 0.391782
+        },
+        {
+          "index": 4,
+          "text": "nay",
+          "startMs": 112550,
+          "endMs": 112790,
+          "probability": 0.861394
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 112790,
+          "endMs": 113170,
+          "probability": 0.94587
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 113170,
+          "endMs": 113390,
+          "probability": 0.786059
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 113390,
+          "endMs": 113490,
+          "probability": 0.87968
+        },
+        {
+          "index": 8,
+          "text": "nay",
+          "startMs": 113490,
+          "endMs": 113750,
+          "probability": 0.993799
+        },
+        {
+          "index": 9,
+          "text": "nay",
+          "startMs": 113750,
+          "endMs": 113990,
+          "probability": 0.997278
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 113990,
+          "endMs": 114470,
+          "probability": 0.984399
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 114470,
+          "endMs": 114970,
+          "probability": 0.044632
+        },
+        {
+          "index": 12,
+          "text": "nay",
+          "startMs": 114970,
+          "endMs": 115290,
+          "probability": 0.778608
+        },
+        {
+          "index": 13,
+          "text": "there",
+          "startMs": 115290,
+          "endMs": 115570,
+          "probability": 0.915981
+        },
+        {
+          "index": 14,
+          "text": "nay",
+          "startMs": 115570,
+          "endMs": 115930,
+          "probability": 0.982587
+        },
+        {
+          "index": 15,
+          "text": "everywhere",
+          "startMs": 115930,
+          "endMs": 116330,
+          "probability": 0.931548
+        },
+        {
+          "index": 16,
+          "text": "a",
+          "startMs": 116330,
+          "endMs": 116670,
+          "probability": 0.270209
+        },
+        {
+          "index": 17,
+          "text": "nay",
+          "startMs": 116670,
+          "endMs": 116870,
+          "probability": 0.996048
+        },
+        {
+          "index": 18,
+          "text": "nay",
+          "startMs": 116870,
+          "endMs": 117130,
+          "probability": 0.990301
+        },
+        {
+          "index": 19,
+          "text": "Old",
+          "startMs": 117130,
+          "endMs": 117490,
+          "probability": 0.395704
+        },
+        {
+          "index": 20,
+          "text": "MacDonald",
+          "startMs": 117490,
+          "endMs": 118130,
+          "probability": 0.235786
+        },
+        {
+          "index": 21,
+          "text": "had",
+          "startMs": 118130,
+          "endMs": 118710,
+          "probability": 0.984698
+        },
+        {
+          "index": 22,
+          "text": "a",
+          "startMs": 118710,
+          "endMs": 119030,
+          "probability": 0.991623
+        },
+        {
+          "index": 23,
+          "text": "farm",
+          "startMs": 119030,
+          "endMs": 119430,
+          "probability": 0.954063
+        },
+        {
+          "index": 24,
+          "text": "E",
+          "startMs": 119430,
+          "endMs": 119950,
+          "probability": 0.620944
+        },
+        {
+          "index": 25,
+          "text": "-I",
+          "startMs": 119950,
+          "endMs": 120250,
+          "probability": 0.594802
+        },
+        {
+          "index": 26,
+          "text": "-E",
+          "startMs": 120250,
+          "endMs": 120550,
+          "probability": 0.992805
+        },
+        {
+          "index": 27,
+          "text": "-I",
+          "startMs": 120550,
+          "endMs": 120950,
+          "probability": 0.991331
+        },
+        {
+          "index": 28,
+          "text": "-O",
+          "startMs": 120950,
+          "endMs": 121430,
+          "probability": 0.986719
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some cats E-I-E-I-O",
+      "startMs": 122950,
+      "endMs": 132430,
+      "avgLogprob": -0.168348,
+      "noSpeechProb": 0.07173,
+      "compressionRatio": 1.873786,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 122950,
+          "endMs": 123630,
+          "probability": 0.650919
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 123630,
+          "endMs": 124170,
+          "probability": 0.962983
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 124170,
+          "endMs": 124830,
+          "probability": 0.991604
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 124830,
+          "endMs": 125150,
+          "probability": 0.992799
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 125150,
+          "endMs": 125490,
+          "probability": 0.988934
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 125490,
+          "endMs": 126050,
+          "probability": 0.959994
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 126050,
+          "endMs": 126330,
+          "probability": 0.990451
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 126330,
+          "endMs": 126590,
+          "probability": 0.99839
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 126590,
+          "endMs": 126970,
+          "probability": 0.99916
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 126970,
+          "endMs": 127430,
+          "probability": 0.997066
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 127430,
+          "endMs": 128130,
+          "probability": 0.407644
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 128130,
+          "endMs": 128470,
+          "probability": 0.951293
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 128470,
+          "endMs": 128770,
+          "probability": 0.992852
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 128770,
+          "endMs": 129030,
+          "probability": 0.98807
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 129030,
+          "endMs": 129290,
+          "probability": 0.904354
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 129290,
+          "endMs": 129590,
+          "probability": 0.994003
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 129590,
+          "endMs": 129890,
+          "probability": 0.996927
+        },
+        {
+          "index": 18,
+          "text": "cats",
+          "startMs": 129890,
+          "endMs": 130330,
+          "probability": 0.934552
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 130330,
+          "endMs": 130890,
+          "probability": 0.944085
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 130890,
+          "endMs": 131150,
+          "probability": 0.99034
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 131150,
+          "endMs": 131470,
+          "probability": 0.998185
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 131470,
+          "endMs": 131810,
+          "probability": 0.998821
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 131810,
+          "endMs": 132430,
+          "probability": 0.997437
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "With a meow meow here and a meow meow there here a meow there a meow everywhere a meow meow Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 133770,
+      "endMs": 143530,
+      "avgLogprob": -0.073017,
+      "noSpeechProb": 0.177137,
+      "compressionRatio": 1.961905,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 133770,
+          "endMs": 134370,
+          "probability": 0.556152
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 134370,
+          "endMs": 134510,
+          "probability": 0.95394
+        },
+        {
+          "index": 3,
+          "text": "meow",
+          "startMs": 134510,
+          "endMs": 134810,
+          "probability": 0.618125
+        },
+        {
+          "index": 4,
+          "text": "meow",
+          "startMs": 134810,
+          "endMs": 135070,
+          "probability": 0.89599
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 135070,
+          "endMs": 135370,
+          "probability": 0.96197
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 135370,
+          "endMs": 135570,
+          "probability": 0.70899
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 135570,
+          "endMs": 135670,
+          "probability": 0.922515
+        },
+        {
+          "index": 8,
+          "text": "meow",
+          "startMs": 135670,
+          "endMs": 135950,
+          "probability": 0.990088
+        },
+        {
+          "index": 9,
+          "text": "meow",
+          "startMs": 135950,
+          "endMs": 136230,
+          "probability": 0.997138
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 136230,
+          "endMs": 136650,
+          "probability": 0.988873
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 136650,
+          "endMs": 137130,
+          "probability": 0.016573
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 137130,
+          "endMs": 137270,
+          "probability": 0.276504
+        },
+        {
+          "index": 13,
+          "text": "meow",
+          "startMs": 137270,
+          "endMs": 137530,
+          "probability": 0.995682
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 137530,
+          "endMs": 137750,
+          "probability": 0.83053
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 137750,
+          "endMs": 137890,
+          "probability": 0.939864
+        },
+        {
+          "index": 16,
+          "text": "meow",
+          "startMs": 137890,
+          "endMs": 138190,
+          "probability": 0.997349
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 138190,
+          "endMs": 138510,
+          "probability": 0.899076
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 138510,
+          "endMs": 138770,
+          "probability": 0.957229
+        },
+        {
+          "index": 19,
+          "text": "meow",
+          "startMs": 138770,
+          "endMs": 139050,
+          "probability": 0.996509
+        },
+        {
+          "index": 20,
+          "text": "meow",
+          "startMs": 139050,
+          "endMs": 139430,
+          "probability": 0.9939
+        },
+        {
+          "index": 21,
+          "text": "Old",
+          "startMs": 139430,
+          "endMs": 139670,
+          "probability": 0.389046
+        },
+        {
+          "index": 22,
+          "text": "MacDonald",
+          "startMs": 139670,
+          "endMs": 140290,
+          "probability": 0.131861
+        },
+        {
+          "index": 23,
+          "text": "had",
+          "startMs": 140290,
+          "endMs": 140890,
+          "probability": 0.982895
+        },
+        {
+          "index": 24,
+          "text": "a",
+          "startMs": 140890,
+          "endMs": 141170,
+          "probability": 0.993096
+        },
+        {
+          "index": 25,
+          "text": "farm",
+          "startMs": 141170,
+          "endMs": 141530,
+          "probability": 0.972255
+        },
+        {
+          "index": 26,
+          "text": "E",
+          "startMs": 141530,
+          "endMs": 142070,
+          "probability": 0.681389
+        },
+        {
+          "index": 27,
+          "text": "-I",
+          "startMs": 142070,
+          "endMs": 142330,
+          "probability": 0.590217
+        },
+        {
+          "index": 28,
+          "text": "-E",
+          "startMs": 142330,
+          "endMs": 142650,
+          "probability": 0.983814
+        },
+        {
+          "index": 29,
+          "text": "-I",
+          "startMs": 142650,
+          "endMs": 143010,
+          "probability": 0.990319
+        },
+        {
+          "index": 30,
+          "text": "-O",
+          "startMs": 143010,
+          "endMs": 143530,
+          "probability": 0.990237
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some goats E-I-E-I-O",
+      "startMs": 145170,
+      "endMs": 154570,
+      "avgLogprob": -0.073017,
+      "noSpeechProb": 0.177137,
+      "compressionRatio": 1.961905,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 145170,
+          "endMs": 145770,
+          "probability": 0.614869
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 145770,
+          "endMs": 146330,
+          "probability": 0.918329
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 146330,
+          "endMs": 146910,
+          "probability": 0.965281
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 146910,
+          "endMs": 147270,
+          "probability": 0.993717
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 147270,
+          "endMs": 147570,
+          "probability": 0.990619
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 147570,
+          "endMs": 148090,
+          "probability": 0.972664
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 148090,
+          "endMs": 148390,
+          "probability": 0.992476
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 148390,
+          "endMs": 148650,
+          "probability": 0.996878
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 148650,
+          "endMs": 149010,
+          "probability": 0.999058
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 149010,
+          "endMs": 149450,
+          "probability": 0.996803
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 149450,
+          "endMs": 150210,
+          "probability": 0.447302
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 150210,
+          "endMs": 150530,
+          "probability": 0.929964
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 150530,
+          "endMs": 150830,
+          "probability": 0.993976
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 150830,
+          "endMs": 151130,
+          "probability": 0.984869
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 151130,
+          "endMs": 151370,
+          "probability": 0.909357
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 151370,
+          "endMs": 151670,
+          "probability": 0.995532
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 151670,
+          "endMs": 151970,
+          "probability": 0.99615
+        },
+        {
+          "index": 18,
+          "text": "goats",
+          "startMs": 151970,
+          "endMs": 152390,
+          "probability": 0.928513
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 152390,
+          "endMs": 152910,
+          "probability": 0.956824
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 152910,
+          "endMs": 153250,
+          "probability": 0.98857
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 153250,
+          "endMs": 153550,
+          "probability": 0.99741
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 153550,
+          "endMs": 153930,
+          "probability": 0.998736
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 153930,
+          "endMs": 154570,
+          "probability": 0.996668
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "With a ba ba here and a ba ba there here a ba there a ba everywhere a ba ba Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 155910,
+      "endMs": 165650,
+      "avgLogprob": -0.065457,
+      "noSpeechProb": 0.234873,
+      "compressionRatio": 1.881188,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 155910,
+          "endMs": 156550,
+          "probability": 0.525054
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 156550,
+          "endMs": 156710,
+          "probability": 0.963298
+        },
+        {
+          "index": 3,
+          "text": "ba",
+          "startMs": 156710,
+          "endMs": 156930,
+          "probability": 0.236321
+        },
+        {
+          "index": 4,
+          "text": "ba",
+          "startMs": 156930,
+          "endMs": 157170,
+          "probability": 0.321601
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 157170,
+          "endMs": 157550,
+          "probability": 0.9258
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 157550,
+          "endMs": 157770,
+          "probability": 0.836753
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 157770,
+          "endMs": 157890,
+          "probability": 0.969923
+        },
+        {
+          "index": 8,
+          "text": "ba",
+          "startMs": 157890,
+          "endMs": 158130,
+          "probability": 0.987446
+        },
+        {
+          "index": 9,
+          "text": "ba",
+          "startMs": 158130,
+          "endMs": 158330,
+          "probability": 0.980738
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 158330,
+          "endMs": 158790,
+          "probability": 0.994778
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 158790,
+          "endMs": 159290,
+          "probability": 0.007148
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 159290,
+          "endMs": 159470,
+          "probability": 0.74735
+        },
+        {
+          "index": 13,
+          "text": "ba",
+          "startMs": 159470,
+          "endMs": 159670,
+          "probability": 0.959166
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 159670,
+          "endMs": 159950,
+          "probability": 0.899578
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 159950,
+          "endMs": 160110,
+          "probability": 0.889599
+        },
+        {
+          "index": 16,
+          "text": "ba",
+          "startMs": 160110,
+          "endMs": 160270,
+          "probability": 0.937864
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 160270,
+          "endMs": 160630,
+          "probability": 0.92548
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 160630,
+          "endMs": 160950,
+          "probability": 0.935074
+        },
+        {
+          "index": 19,
+          "text": "ba",
+          "startMs": 160950,
+          "endMs": 161170,
+          "probability": 0.967121
+        },
+        {
+          "index": 20,
+          "text": "ba",
+          "startMs": 161170,
+          "endMs": 161510,
+          "probability": 0.979543
+        },
+        {
+          "index": 21,
+          "text": "Old",
+          "startMs": 161510,
+          "endMs": 161790,
+          "probability": 0.403782
+        },
+        {
+          "index": 22,
+          "text": "MacDonald",
+          "startMs": 161790,
+          "endMs": 162370,
+          "probability": 0.287294
+        },
+        {
+          "index": 23,
+          "text": "had",
+          "startMs": 162370,
+          "endMs": 162990,
+          "probability": 0.974667
+        },
+        {
+          "index": 24,
+          "text": "a",
+          "startMs": 162990,
+          "endMs": 163290,
+          "probability": 0.9934
+        },
+        {
+          "index": 25,
+          "text": "farm",
+          "startMs": 163290,
+          "endMs": 163710,
+          "probability": 0.931815
+        },
+        {
+          "index": 26,
+          "text": "E",
+          "startMs": 163710,
+          "endMs": 164210,
+          "probability": 0.612589
+        },
+        {
+          "index": 27,
+          "text": "-I",
+          "startMs": 164210,
+          "endMs": 164510,
+          "probability": 0.590901
+        },
+        {
+          "index": 28,
+          "text": "-E",
+          "startMs": 164510,
+          "endMs": 164750,
+          "probability": 0.989966
+        },
+        {
+          "index": 29,
+          "text": "-I",
+          "startMs": 164750,
+          "endMs": 165130,
+          "probability": 0.990982
+        },
+        {
+          "index": 30,
+          "text": "-O",
+          "startMs": 165130,
+          "endMs": 165650,
+          "probability": 0.985889
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some ducks E-I-E-I-O",
+      "startMs": 167270,
+      "endMs": 176730,
+      "avgLogprob": -0.065457,
+      "noSpeechProb": 0.234873,
+      "compressionRatio": 1.881188,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 167270,
+          "endMs": 167910,
+          "probability": 0.560633
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 167910,
+          "endMs": 168510,
+          "probability": 0.933413
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 168510,
+          "endMs": 169090,
+          "probability": 0.987429
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 169090,
+          "endMs": 169430,
+          "probability": 0.99698
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 169430,
+          "endMs": 169810,
+          "probability": 0.985804
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 169810,
+          "endMs": 170310,
+          "probability": 0.969137
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 170310,
+          "endMs": 170570,
+          "probability": 0.990326
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 170570,
+          "endMs": 170870,
+          "probability": 0.998596
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 170870,
+          "endMs": 171250,
+          "probability": 0.999018
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 171250,
+          "endMs": 171690,
+          "probability": 0.996152
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 171690,
+          "endMs": 172430,
+          "probability": 0.488064
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 172430,
+          "endMs": 172770,
+          "probability": 0.90059
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 172770,
+          "endMs": 173070,
+          "probability": 0.994924
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 173070,
+          "endMs": 173370,
+          "probability": 0.982225
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 173370,
+          "endMs": 173630,
+          "probability": 0.883305
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 173630,
+          "endMs": 173930,
+          "probability": 0.994725
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 173930,
+          "endMs": 174230,
+          "probability": 0.995984
+        },
+        {
+          "index": 18,
+          "text": "ducks",
+          "startMs": 174230,
+          "endMs": 174650,
+          "probability": 0.972951
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 174650,
+          "endMs": 175190,
+          "probability": 0.953213
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 175190,
+          "endMs": 175470,
+          "probability": 0.9891
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 175470,
+          "endMs": 175770,
+          "probability": 0.99901
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 175770,
+          "endMs": 176110,
+          "probability": 0.998921
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 176110,
+          "endMs": 176730,
+          "probability": 0.997514
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "With a quack quack here and a quack quack there here a quack there a quack everywhere a quack quack Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 178110,
+      "endMs": 188090,
+      "avgLogprob": -0.037815,
+      "noSpeechProb": 0.125826,
+      "compressionRatio": 2.0,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 178110,
+          "endMs": 178750,
+          "probability": 0.460925
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 178750,
+          "endMs": 178970,
+          "probability": 0.968784
+        },
+        {
+          "index": 3,
+          "text": "quack",
+          "startMs": 178970,
+          "endMs": 179250,
+          "probability": 0.869608
+        },
+        {
+          "index": 4,
+          "text": "quack",
+          "startMs": 179250,
+          "endMs": 179550,
+          "probability": 0.844037
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 179550,
+          "endMs": 179850,
+          "probability": 0.932109
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 179850,
+          "endMs": 180050,
+          "probability": 0.78255
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 180050,
+          "endMs": 180170,
+          "probability": 0.981741
+        },
+        {
+          "index": 8,
+          "text": "quack",
+          "startMs": 180170,
+          "endMs": 180430,
+          "probability": 0.996647
+        },
+        {
+          "index": 9,
+          "text": "quack",
+          "startMs": 180430,
+          "endMs": 180710,
+          "probability": 0.991234
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 180710,
+          "endMs": 181090,
+          "probability": 0.985472
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 181090,
+          "endMs": 181630,
+          "probability": 0.012509
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 181630,
+          "endMs": 181790,
+          "probability": 0.835679
+        },
+        {
+          "index": 13,
+          "text": "quack",
+          "startMs": 181790,
+          "endMs": 182030,
+          "probability": 0.9937
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 182030,
+          "endMs": 182270,
+          "probability": 0.87329
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 182270,
+          "endMs": 182410,
+          "probability": 0.89584
+        },
+        {
+          "index": 16,
+          "text": "quack",
+          "startMs": 182410,
+          "endMs": 182730,
+          "probability": 0.996608
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 182730,
+          "endMs": 183070,
+          "probability": 0.954065
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 183070,
+          "endMs": 183330,
+          "probability": 0.940941
+        },
+        {
+          "index": 19,
+          "text": "quack",
+          "startMs": 183330,
+          "endMs": 183590,
+          "probability": 0.995043
+        },
+        {
+          "index": 20,
+          "text": "quack",
+          "startMs": 183590,
+          "endMs": 183950,
+          "probability": 0.990464
+        },
+        {
+          "index": 21,
+          "text": "Old",
+          "startMs": 183950,
+          "endMs": 184210,
+          "probability": 0.494426
+        },
+        {
+          "index": 22,
+          "text": "MacDonald",
+          "startMs": 184210,
+          "endMs": 184810,
+          "probability": 0.183805
+        },
+        {
+          "index": 23,
+          "text": "had",
+          "startMs": 184810,
+          "endMs": 185430,
+          "probability": 0.970645
+        },
+        {
+          "index": 24,
+          "text": "a",
+          "startMs": 185430,
+          "endMs": 185710,
+          "probability": 0.992069
+        },
+        {
+          "index": 25,
+          "text": "farm",
+          "startMs": 185710,
+          "endMs": 186130,
+          "probability": 0.949877
+        },
+        {
+          "index": 26,
+          "text": "E",
+          "startMs": 186130,
+          "endMs": 186690,
+          "probability": 0.604519
+        },
+        {
+          "index": 27,
+          "text": "-I",
+          "startMs": 186690,
+          "endMs": 186970,
+          "probability": 0.568441
+        },
+        {
+          "index": 28,
+          "text": "-E",
+          "startMs": 186970,
+          "endMs": 187290,
+          "probability": 0.991792
+        },
+        {
+          "index": 29,
+          "text": "-I",
+          "startMs": 187290,
+          "endMs": 187670,
+          "probability": 0.990412
+        },
+        {
+          "index": 30,
+          "text": "-O",
+          "startMs": 187670,
+          "endMs": 188090,
+          "probability": 0.986746
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some turkeys E-I-E-I-O",
+      "startMs": 189630,
+      "endMs": 199030,
+      "avgLogprob": -0.037815,
+      "noSpeechProb": 0.125826,
+      "compressionRatio": 2.0,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 189630,
+          "endMs": 190270,
+          "probability": 0.681168
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 190270,
+          "endMs": 190870,
+          "probability": 0.940308
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 190870,
+          "endMs": 191470,
+          "probability": 0.985633
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 191470,
+          "endMs": 191770,
+          "probability": 0.99512
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 191770,
+          "endMs": 192170,
+          "probability": 0.991609
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 192170,
+          "endMs": 192710,
+          "probability": 0.95722
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 192710,
+          "endMs": 192990,
+          "probability": 0.990177
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 192990,
+          "endMs": 193270,
+          "probability": 0.998606
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 193270,
+          "endMs": 193630,
+          "probability": 0.999038
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 193630,
+          "endMs": 194090,
+          "probability": 0.997347
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 194090,
+          "endMs": 194810,
+          "probability": 0.446166
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 194810,
+          "endMs": 195130,
+          "probability": 0.95155
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 195130,
+          "endMs": 195410,
+          "probability": 0.995307
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 195410,
+          "endMs": 195710,
+          "probability": 0.986696
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 195710,
+          "endMs": 195950,
+          "probability": 0.818765
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 195950,
+          "endMs": 196250,
+          "probability": 0.99508
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 196250,
+          "endMs": 196530,
+          "probability": 0.99432
+        },
+        {
+          "index": 18,
+          "text": "turkeys",
+          "startMs": 196530,
+          "endMs": 197130,
+          "probability": 0.96676
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 197130,
+          "endMs": 197550,
+          "probability": 0.904626
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 197550,
+          "endMs": 197830,
+          "probability": 0.992013
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 197830,
+          "endMs": 198150,
+          "probability": 0.99666
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 198150,
+          "endMs": 198470,
+          "probability": 0.998932
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 198470,
+          "endMs": 199030,
+          "probability": 0.998019
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "With a gobble gobble here and a gobble gobble there here a gobble there a gobble everywhere a gobble gobble Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 200390,
+      "endMs": 210090,
+      "avgLogprob": -0.031338,
+      "noSpeechProb": 0.215978,
+      "compressionRatio": 2.045455,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 200390,
+          "endMs": 200990,
+          "probability": 0.445359
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 200990,
+          "endMs": 201130,
+          "probability": 0.968207
+        },
+        {
+          "index": 3,
+          "text": "gobble",
+          "startMs": 201130,
+          "endMs": 201430,
+          "probability": 0.97361
+        },
+        {
+          "index": 4,
+          "text": "gobble",
+          "startMs": 201430,
+          "endMs": 201730,
+          "probability": 0.872444
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 201730,
+          "endMs": 201990,
+          "probability": 0.969862
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 201990,
+          "endMs": 202170,
+          "probability": 0.742913
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 202170,
+          "endMs": 202310,
+          "probability": 0.972363
+        },
+        {
+          "index": 8,
+          "text": "gobble",
+          "startMs": 202310,
+          "endMs": 202570,
+          "probability": 0.996235
+        },
+        {
+          "index": 9,
+          "text": "gobble",
+          "startMs": 202570,
+          "endMs": 202850,
+          "probability": 0.982144
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 202850,
+          "endMs": 203130,
+          "probability": 0.994734
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 203130,
+          "endMs": 203730,
+          "probability": 0.016761
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 203730,
+          "endMs": 203870,
+          "probability": 0.847712
+        },
+        {
+          "index": 13,
+          "text": "gobble",
+          "startMs": 203870,
+          "endMs": 204150,
+          "probability": 0.993605
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 204150,
+          "endMs": 204350,
+          "probability": 0.920493
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 204350,
+          "endMs": 204530,
+          "probability": 0.775481
+        },
+        {
+          "index": 16,
+          "text": "gobble",
+          "startMs": 204530,
+          "endMs": 204790,
+          "probability": 0.993452
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 204790,
+          "endMs": 205150,
+          "probability": 0.981736
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 205150,
+          "endMs": 205370,
+          "probability": 0.952763
+        },
+        {
+          "index": 19,
+          "text": "gobble",
+          "startMs": 205370,
+          "endMs": 205650,
+          "probability": 0.997089
+        },
+        {
+          "index": 20,
+          "text": "gobble",
+          "startMs": 205650,
+          "endMs": 205990,
+          "probability": 0.973217
+        },
+        {
+          "index": 21,
+          "text": "Old",
+          "startMs": 205990,
+          "endMs": 206250,
+          "probability": 0.387346
+        },
+        {
+          "index": 22,
+          "text": "MacDonald",
+          "startMs": 206250,
+          "endMs": 206810,
+          "probability": 0.169132
+        },
+        {
+          "index": 23,
+          "text": "had",
+          "startMs": 206810,
+          "endMs": 207410,
+          "probability": 0.97178
+        },
+        {
+          "index": 24,
+          "text": "a",
+          "startMs": 207410,
+          "endMs": 207730,
+          "probability": 0.991537
+        },
+        {
+          "index": 25,
+          "text": "farm",
+          "startMs": 207730,
+          "endMs": 208150,
+          "probability": 0.955503
+        },
+        {
+          "index": 26,
+          "text": "E",
+          "startMs": 208150,
+          "endMs": 208690,
+          "probability": 0.575891
+        },
+        {
+          "index": 27,
+          "text": "-I",
+          "startMs": 208690,
+          "endMs": 208970,
+          "probability": 0.552868
+        },
+        {
+          "index": 28,
+          "text": "-E",
+          "startMs": 208970,
+          "endMs": 209270,
+          "probability": 0.988014
+        },
+        {
+          "index": 29,
+          "text": "-I",
+          "startMs": 209270,
+          "endMs": 209650,
+          "probability": 0.989553
+        },
+        {
+          "index": 30,
+          "text": "-O",
+          "startMs": 209650,
+          "endMs": 210090,
+          "probability": 0.98573
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some roosters E-I-E-I-O",
+      "startMs": 211750,
+      "endMs": 221030,
+      "avgLogprob": -0.031338,
+      "noSpeechProb": 0.215978,
+      "compressionRatio": 2.045455,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 211750,
+          "endMs": 212350,
+          "probability": 0.764294
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 212350,
+          "endMs": 212910,
+          "probability": 0.928411
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 212910,
+          "endMs": 213510,
+          "probability": 0.981468
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 213510,
+          "endMs": 213830,
+          "probability": 0.996329
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 213830,
+          "endMs": 214230,
+          "probability": 0.985946
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 214230,
+          "endMs": 214750,
+          "probability": 0.933781
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 214750,
+          "endMs": 215030,
+          "probability": 0.988743
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 215030,
+          "endMs": 215330,
+          "probability": 0.996919
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 215330,
+          "endMs": 215670,
+          "probability": 0.99872
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 215670,
+          "endMs": 216110,
+          "probability": 0.997034
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 216110,
+          "endMs": 216810,
+          "probability": 0.536897
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 216810,
+          "endMs": 217150,
+          "probability": 0.862203
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 217150,
+          "endMs": 217450,
+          "probability": 0.996242
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 217450,
+          "endMs": 217730,
+          "probability": 0.985645
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 217730,
+          "endMs": 217990,
+          "probability": 0.676872
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 217990,
+          "endMs": 218290,
+          "probability": 0.995779
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 218290,
+          "endMs": 218590,
+          "probability": 0.997238
+        },
+        {
+          "index": 18,
+          "text": "roosters",
+          "startMs": 218590,
+          "endMs": 219290,
+          "probability": 0.970085
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 219290,
+          "endMs": 219550,
+          "probability": 0.891397
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 219550,
+          "endMs": 219850,
+          "probability": 0.989412
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 219850,
+          "endMs": 220150,
+          "probability": 0.997289
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 220150,
+          "endMs": 220490,
+          "probability": 0.99838
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 220490,
+          "endMs": 221030,
+          "probability": 0.997432
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "With a cockadoodle here and a cockadoodle there here a cockadoodle there a cockadoodle everywhere a cockadoodle Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 222330,
+      "endMs": 233170,
+      "avgLogprob": -0.044875,
+      "noSpeechProb": 0.309264,
+      "compressionRatio": 2.035714,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 222330,
+          "endMs": 223090,
+          "probability": 0.48443
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 223090,
+          "endMs": 223250,
+          "probability": 0.979284
+        },
+        {
+          "index": 3,
+          "text": "cockadoodle",
+          "startMs": 223250,
+          "endMs": 223670,
+          "probability": 0.746573
+        },
+        {
+          "index": 4,
+          "text": "here",
+          "startMs": 223670,
+          "endMs": 224050,
+          "probability": 0.97905
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 224050,
+          "endMs": 224270,
+          "probability": 0.810585
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 224270,
+          "endMs": 224470,
+          "probability": 0.990786
+        },
+        {
+          "index": 7,
+          "text": "cockadoodle",
+          "startMs": 224470,
+          "endMs": 224850,
+          "probability": 0.995734
+        },
+        {
+          "index": 8,
+          "text": "there",
+          "startMs": 224850,
+          "endMs": 225310,
+          "probability": 0.996425
+        },
+        {
+          "index": 9,
+          "text": "here",
+          "startMs": 225310,
+          "endMs": 225910,
+          "probability": 0.015667
+        },
+        {
+          "index": 10,
+          "text": "a",
+          "startMs": 225910,
+          "endMs": 226190,
+          "probability": 0.778449
+        },
+        {
+          "index": 11,
+          "text": "cockadoodle",
+          "startMs": 226190,
+          "endMs": 226730,
+          "probability": 0.989425
+        },
+        {
+          "index": 12,
+          "text": "there",
+          "startMs": 226730,
+          "endMs": 227070,
+          "probability": 0.870911
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 227070,
+          "endMs": 227330,
+          "probability": 0.92408
+        },
+        {
+          "index": 14,
+          "text": "cockadoodle",
+          "startMs": 227330,
+          "endMs": 227950,
+          "probability": 0.993666
+        },
+        {
+          "index": 15,
+          "text": "everywhere",
+          "startMs": 227950,
+          "endMs": 228350,
+          "probability": 0.905956
+        },
+        {
+          "index": 16,
+          "text": "a",
+          "startMs": 228350,
+          "endMs": 228630,
+          "probability": 0.850279
+        },
+        {
+          "index": 17,
+          "text": "cockadoodle",
+          "startMs": 228630,
+          "endMs": 229110,
+          "probability": 0.992971
+        },
+        {
+          "index": 18,
+          "text": "Old",
+          "startMs": 229110,
+          "endMs": 229430,
+          "probability": 0.251899
+        },
+        {
+          "index": 19,
+          "text": "MacDonald",
+          "startMs": 229430,
+          "endMs": 230010,
+          "probability": 0.253917
+        },
+        {
+          "index": 20,
+          "text": "had",
+          "startMs": 230010,
+          "endMs": 230570,
+          "probability": 0.978659
+        },
+        {
+          "index": 21,
+          "text": "a",
+          "startMs": 230570,
+          "endMs": 230870,
+          "probability": 0.994144
+        },
+        {
+          "index": 22,
+          "text": "farm",
+          "startMs": 230870,
+          "endMs": 231250,
+          "probability": 0.960313
+        },
+        {
+          "index": 23,
+          "text": "E",
+          "startMs": 231250,
+          "endMs": 231790,
+          "probability": 0.538541
+        },
+        {
+          "index": 24,
+          "text": "-I",
+          "startMs": 231790,
+          "endMs": 232050,
+          "probability": 0.581309
+        },
+        {
+          "index": 25,
+          "text": "-E",
+          "startMs": 232050,
+          "endMs": 232370,
+          "probability": 0.985367
+        },
+        {
+          "index": 26,
+          "text": "-I",
+          "startMs": 232370,
+          "endMs": 232730,
+          "probability": 0.989243
+        },
+        {
+          "index": 27,
+          "text": "-O",
+          "startMs": 232730,
+          "endMs": 233170,
+          "probability": 0.986839
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some donkeys E-I-E-I-O",
+      "startMs": 234690,
+      "endMs": 243950,
+      "avgLogprob": -0.044875,
+      "noSpeechProb": 0.309264,
+      "compressionRatio": 2.035714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 234690,
+          "endMs": 235450,
+          "probability": 0.580822
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 235450,
+          "endMs": 236010,
+          "probability": 0.950391
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 236010,
+          "endMs": 236610,
+          "probability": 0.988507
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 236610,
+          "endMs": 236910,
+          "probability": 0.997052
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 236910,
+          "endMs": 237310,
+          "probability": 0.990819
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 237310,
+          "endMs": 237770,
+          "probability": 0.963222
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 237770,
+          "endMs": 238030,
+          "probability": 0.992304
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 238030,
+          "endMs": 238310,
+          "probability": 0.997831
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 238310,
+          "endMs": 238710,
+          "probability": 0.998872
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 238710,
+          "endMs": 239150,
+          "probability": 0.99707
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 239150,
+          "endMs": 239890,
+          "probability": 0.405039
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 239890,
+          "endMs": 240130,
+          "probability": 0.949669
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 240130,
+          "endMs": 240430,
+          "probability": 0.996595
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 240430,
+          "endMs": 240750,
+          "probability": 0.988376
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 240750,
+          "endMs": 240990,
+          "probability": 0.814992
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 240990,
+          "endMs": 241270,
+          "probability": 0.99649
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 241270,
+          "endMs": 241570,
+          "probability": 0.996073
+        },
+        {
+          "index": 18,
+          "text": "donkeys",
+          "startMs": 241570,
+          "endMs": 242150,
+          "probability": 0.914925
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 242150,
+          "endMs": 242530,
+          "probability": 0.946163
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 242530,
+          "endMs": 242790,
+          "probability": 0.991944
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 242790,
+          "endMs": 243090,
+          "probability": 0.998254
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 243090,
+          "endMs": 243410,
+          "probability": 0.99867
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 243410,
+          "endMs": 243950,
+          "probability": 0.997762
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "With a hee haw here and a hee haw there here a hee haw there a hee haw everywhere a hee haw Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 245390,
+      "endMs": 255590,
+      "avgLogprob": -0.061902,
+      "noSpeechProb": 0.270766,
+      "compressionRatio": 1.980769,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 245390,
+          "endMs": 246110,
+          "probability": 0.703654
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 246110,
+          "endMs": 246270,
+          "probability": 0.96829
+        },
+        {
+          "index": 3,
+          "text": "hee",
+          "startMs": 246270,
+          "endMs": 246770,
+          "probability": 0.487086
+        },
+        {
+          "index": 4,
+          "text": "haw",
+          "startMs": 246770,
+          "endMs": 246770,
+          "probability": 0.520056
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 246770,
+          "endMs": 247150,
+          "probability": 0.921494
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 247150,
+          "endMs": 247410,
+          "probability": 0.879778
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 247410,
+          "endMs": 247510,
+          "probability": 0.951539
+        },
+        {
+          "index": 8,
+          "text": "hee",
+          "startMs": 247510,
+          "endMs": 248030,
+          "probability": 0.993728
+        },
+        {
+          "index": 9,
+          "text": "haw",
+          "startMs": 248030,
+          "endMs": 248030,
+          "probability": 0.994073
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 248030,
+          "endMs": 248450,
+          "probability": 0.993862
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 248450,
+          "endMs": 249050,
+          "probability": 0.016155
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 249050,
+          "endMs": 249210,
+          "probability": 0.176303
+        },
+        {
+          "index": 13,
+          "text": "hee",
+          "startMs": 249210,
+          "endMs": 249470,
+          "probability": 0.992517
+        },
+        {
+          "index": 14,
+          "text": "haw",
+          "startMs": 249470,
+          "endMs": 249470,
+          "probability": 0.991567
+        },
+        {
+          "index": 15,
+          "text": "there",
+          "startMs": 249470,
+          "endMs": 249690,
+          "probability": 0.948098
+        },
+        {
+          "index": 16,
+          "text": "a",
+          "startMs": 249690,
+          "endMs": 249870,
+          "probability": 0.816944
+        },
+        {
+          "index": 17,
+          "text": "hee",
+          "startMs": 249870,
+          "endMs": 250130,
+          "probability": 0.996302
+        },
+        {
+          "index": 18,
+          "text": "haw",
+          "startMs": 250130,
+          "endMs": 250130,
+          "probability": 0.989737
+        },
+        {
+          "index": 19,
+          "text": "everywhere",
+          "startMs": 250130,
+          "endMs": 250530,
+          "probability": 0.973694
+        },
+        {
+          "index": 20,
+          "text": "a",
+          "startMs": 250530,
+          "endMs": 250790,
+          "probability": 0.977269
+        },
+        {
+          "index": 21,
+          "text": "hee",
+          "startMs": 250790,
+          "endMs": 251310,
+          "probability": 0.9978
+        },
+        {
+          "index": 22,
+          "text": "haw",
+          "startMs": 251310,
+          "endMs": 251310,
+          "probability": 0.991637
+        },
+        {
+          "index": 23,
+          "text": "Old",
+          "startMs": 251310,
+          "endMs": 251690,
+          "probability": 0.36295
+        },
+        {
+          "index": 24,
+          "text": "MacDonald",
+          "startMs": 251690,
+          "endMs": 252270,
+          "probability": 0.143615
+        },
+        {
+          "index": 25,
+          "text": "had",
+          "startMs": 252270,
+          "endMs": 252810,
+          "probability": 0.983823
+        },
+        {
+          "index": 26,
+          "text": "a",
+          "startMs": 252810,
+          "endMs": 253110,
+          "probability": 0.994376
+        },
+        {
+          "index": 27,
+          "text": "farm",
+          "startMs": 253110,
+          "endMs": 253470,
+          "probability": 0.966094
+        },
+        {
+          "index": 28,
+          "text": "E",
+          "startMs": 253470,
+          "endMs": 254070,
+          "probability": 0.550565
+        },
+        {
+          "index": 29,
+          "text": "-I",
+          "startMs": 254070,
+          "endMs": 254330,
+          "probability": 0.636847
+        },
+        {
+          "index": 30,
+          "text": "-E",
+          "startMs": 254330,
+          "endMs": 254630,
+          "probability": 0.987624
+        },
+        {
+          "index": 31,
+          "text": "-I",
+          "startMs": 254630,
+          "endMs": 255010,
+          "probability": 0.993478
+        },
+        {
+          "index": 32,
+          "text": "-O",
+          "startMs": 255010,
+          "endMs": 255590,
+          "probability": 0.978873
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some sheep E-I-E-I-O",
+      "startMs": 257190,
+      "endMs": 266290,
+      "avgLogprob": -0.061902,
+      "noSpeechProb": 0.270766,
+      "compressionRatio": 1.980769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 257190,
+          "endMs": 257910,
+          "probability": 0.779718
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 257910,
+          "endMs": 258450,
+          "probability": 0.961417
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 258450,
+          "endMs": 259050,
+          "probability": 0.987656
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 259050,
+          "endMs": 259370,
+          "probability": 0.994289
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 259370,
+          "endMs": 259730,
+          "probability": 0.991438
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 259730,
+          "endMs": 260170,
+          "probability": 0.960386
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 260170,
+          "endMs": 260450,
+          "probability": 0.991304
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 260450,
+          "endMs": 260690,
+          "probability": 0.998218
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 260690,
+          "endMs": 261050,
+          "probability": 0.999194
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 261050,
+          "endMs": 261470,
+          "probability": 0.995955
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 261470,
+          "endMs": 262230,
+          "probability": 0.424784
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 262230,
+          "endMs": 262530,
+          "probability": 0.952008
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 262530,
+          "endMs": 262810,
+          "probability": 0.992747
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 262810,
+          "endMs": 263090,
+          "probability": 0.990987
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 263090,
+          "endMs": 263330,
+          "probability": 0.942743
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 263330,
+          "endMs": 263630,
+          "probability": 0.993512
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 263630,
+          "endMs": 263890,
+          "probability": 0.996052
+        },
+        {
+          "index": 18,
+          "text": "sheep",
+          "startMs": 263890,
+          "endMs": 264270,
+          "probability": 0.982132
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 264270,
+          "endMs": 264870,
+          "probability": 0.967051
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 264870,
+          "endMs": 265130,
+          "probability": 0.99022
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 265130,
+          "endMs": 265410,
+          "probability": 0.998416
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 265410,
+          "endMs": 265810,
+          "probability": 0.999142
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 265810,
+          "endMs": 266290,
+          "probability": 0.997924
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "With a mama here and a mama there here a mama there a mama everywhere a mama Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 266290,
+      "endMs": 275910,
+      "avgLogprob": -0.061714,
+      "noSpeechProb": 0.586567,
+      "compressionRatio": 1.854369,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 266290,
+          "endMs": 266850,
+          "probability": 0.657537
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 266850,
+          "endMs": 267010,
+          "probability": 0.95282
+        },
+        {
+          "index": 3,
+          "text": "mama",
+          "startMs": 267010,
+          "endMs": 267450,
+          "probability": 0.731136
+        },
+        {
+          "index": 4,
+          "text": "here",
+          "startMs": 267450,
+          "endMs": 267890,
+          "probability": 0.944034
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 267890,
+          "endMs": 268090,
+          "probability": 0.803337
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 268090,
+          "endMs": 268210,
+          "probability": 0.97797
+        },
+        {
+          "index": 7,
+          "text": "mama",
+          "startMs": 268210,
+          "endMs": 268550,
+          "probability": 0.991703
+        },
+        {
+          "index": 8,
+          "text": "there",
+          "startMs": 268550,
+          "endMs": 269110,
+          "probability": 0.993609
+        },
+        {
+          "index": 9,
+          "text": "here",
+          "startMs": 269110,
+          "endMs": 269590,
+          "probability": 0.012841
+        },
+        {
+          "index": 10,
+          "text": "a",
+          "startMs": 269590,
+          "endMs": 269730,
+          "probability": 0.418868
+        },
+        {
+          "index": 11,
+          "text": "mama",
+          "startMs": 269730,
+          "endMs": 269950,
+          "probability": 0.606861
+        },
+        {
+          "index": 12,
+          "text": "there",
+          "startMs": 269950,
+          "endMs": 270170,
+          "probability": 0.870417
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 270170,
+          "endMs": 270350,
+          "probability": 0.659489
+        },
+        {
+          "index": 14,
+          "text": "mama",
+          "startMs": 270350,
+          "endMs": 270550,
+          "probability": 0.910617
+        },
+        {
+          "index": 15,
+          "text": "everywhere",
+          "startMs": 270550,
+          "endMs": 270930,
+          "probability": 0.90518
+        },
+        {
+          "index": 16,
+          "text": "a",
+          "startMs": 270930,
+          "endMs": 271150,
+          "probability": 0.839724
+        },
+        {
+          "index": 17,
+          "text": "mama",
+          "startMs": 271150,
+          "endMs": 271610,
+          "probability": 0.989128
+        },
+        {
+          "index": 18,
+          "text": "Old",
+          "startMs": 271610,
+          "endMs": 272050,
+          "probability": 0.208695
+        },
+        {
+          "index": 19,
+          "text": "MacDonald",
+          "startMs": 272050,
+          "endMs": 272650,
+          "probability": 0.291806
+        },
+        {
+          "index": 20,
+          "text": "had",
+          "startMs": 272650,
+          "endMs": 273190,
+          "probability": 0.9698
+        },
+        {
+          "index": 21,
+          "text": "a",
+          "startMs": 273190,
+          "endMs": 273470,
+          "probability": 0.989828
+        },
+        {
+          "index": 22,
+          "text": "farm",
+          "startMs": 273470,
+          "endMs": 273890,
+          "probability": 0.948991
+        },
+        {
+          "index": 23,
+          "text": "E",
+          "startMs": 273890,
+          "endMs": 274470,
+          "probability": 0.485122
+        },
+        {
+          "index": 24,
+          "text": "-I",
+          "startMs": 274470,
+          "endMs": 274750,
+          "probability": 0.56084
+        },
+        {
+          "index": 25,
+          "text": "-E",
+          "startMs": 274750,
+          "endMs": 275030,
+          "probability": 0.990471
+        },
+        {
+          "index": 26,
+          "text": "-I",
+          "startMs": 275030,
+          "endMs": 275370,
+          "probability": 0.991424
+        },
+        {
+          "index": 27,
+          "text": "-O",
+          "startMs": 275370,
+          "endMs": 275910,
+          "probability": 0.987783
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some frogs E-I-E-I-O",
+      "startMs": 277370,
+      "endMs": 286710,
+      "avgLogprob": -0.061714,
+      "noSpeechProb": 0.586567,
+      "compressionRatio": 1.854369,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 277370,
+          "endMs": 278070,
+          "probability": 0.388175
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 278070,
+          "endMs": 278670,
+          "probability": 0.937858
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 278670,
+          "endMs": 279270,
+          "probability": 0.982204
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 279270,
+          "endMs": 279550,
+          "probability": 0.994954
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 279550,
+          "endMs": 279950,
+          "probability": 0.988859
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 279950,
+          "endMs": 280430,
+          "probability": 0.911901
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 280430,
+          "endMs": 280690,
+          "probability": 0.988539
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 280690,
+          "endMs": 280970,
+          "probability": 0.998374
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 280970,
+          "endMs": 281330,
+          "probability": 0.999203
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 281330,
+          "endMs": 281770,
+          "probability": 0.996647
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 281770,
+          "endMs": 282530,
+          "probability": 0.456934
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 282530,
+          "endMs": 282830,
+          "probability": 0.888112
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 282830,
+          "endMs": 283130,
+          "probability": 0.996637
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 283130,
+          "endMs": 283410,
+          "probability": 0.981934
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 283410,
+          "endMs": 283650,
+          "probability": 0.76621
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 283650,
+          "endMs": 283930,
+          "probability": 0.992711
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 283930,
+          "endMs": 284230,
+          "probability": 0.993663
+        },
+        {
+          "index": 18,
+          "text": "frogs",
+          "startMs": 284230,
+          "endMs": 284750,
+          "probability": 0.959145
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 284750,
+          "endMs": 285210,
+          "probability": 0.90836
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 285210,
+          "endMs": 285510,
+          "probability": 0.991306
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 285510,
+          "endMs": 285790,
+          "probability": 0.998393
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 285790,
+          "endMs": 286150,
+          "probability": 0.998816
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 286150,
+          "endMs": 286710,
+          "probability": 0.99736
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "With a ribbit ribbit here and a ribbit ribbit there here ribbit there ribbit everywhere ribbit ribbit Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 288170,
+      "endMs": 297310,
+      "avgLogprob": -0.060114,
+      "noSpeechProb": 0.413938,
+      "compressionRatio": 2.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 288170,
+          "endMs": 288770,
+          "probability": 0.470277
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 288770,
+          "endMs": 288910,
+          "probability": 0.980251
+        },
+        {
+          "index": 3,
+          "text": "ribbit",
+          "startMs": 288910,
+          "endMs": 289170,
+          "probability": 0.669562
+        },
+        {
+          "index": 4,
+          "text": "ribbit",
+          "startMs": 289170,
+          "endMs": 289470,
+          "probability": 0.915989
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 289470,
+          "endMs": 289710,
+          "probability": 0.980521
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 289710,
+          "endMs": 289870,
+          "probability": 0.735206
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 289870,
+          "endMs": 289990,
+          "probability": 0.962709
+        },
+        {
+          "index": 8,
+          "text": "ribbit",
+          "startMs": 289990,
+          "endMs": 290250,
+          "probability": 0.993882
+        },
+        {
+          "index": 9,
+          "text": "ribbit",
+          "startMs": 290250,
+          "endMs": 290530,
+          "probability": 0.993435
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 290530,
+          "endMs": 290810,
+          "probability": 0.995009
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 290810,
+          "endMs": 291310,
+          "probability": 0.02119
+        },
+        {
+          "index": 12,
+          "text": "ribbit",
+          "startMs": 291310,
+          "endMs": 291710,
+          "probability": 0.912542
+        },
+        {
+          "index": 13,
+          "text": "there",
+          "startMs": 291710,
+          "endMs": 291910,
+          "probability": 0.911714
+        },
+        {
+          "index": 14,
+          "text": "ribbit",
+          "startMs": 291910,
+          "endMs": 292270,
+          "probability": 0.966797
+        },
+        {
+          "index": 15,
+          "text": "everywhere",
+          "startMs": 292270,
+          "endMs": 292650,
+          "probability": 0.967642
+        },
+        {
+          "index": 16,
+          "text": "ribbit",
+          "startMs": 292650,
+          "endMs": 293070,
+          "probability": 0.955915
+        },
+        {
+          "index": 17,
+          "text": "ribbit",
+          "startMs": 293070,
+          "endMs": 293350,
+          "probability": 0.991817
+        },
+        {
+          "index": 18,
+          "text": "Old",
+          "startMs": 293350,
+          "endMs": 293570,
+          "probability": 0.532252
+        },
+        {
+          "index": 19,
+          "text": "MacDonald",
+          "startMs": 293570,
+          "endMs": 294150,
+          "probability": 0.276747
+        },
+        {
+          "index": 20,
+          "text": "had",
+          "startMs": 294150,
+          "endMs": 294690,
+          "probability": 0.972646
+        },
+        {
+          "index": 21,
+          "text": "a",
+          "startMs": 294690,
+          "endMs": 295010,
+          "probability": 0.991305
+        },
+        {
+          "index": 22,
+          "text": "farm",
+          "startMs": 295010,
+          "endMs": 295390,
+          "probability": 0.949105
+        },
+        {
+          "index": 23,
+          "text": "E",
+          "startMs": 295390,
+          "endMs": 295890,
+          "probability": 0.673646
+        },
+        {
+          "index": 24,
+          "text": "-I",
+          "startMs": 295890,
+          "endMs": 296170,
+          "probability": 0.558407
+        },
+        {
+          "index": 25,
+          "text": "-E",
+          "startMs": 296170,
+          "endMs": 296430,
+          "probability": 0.990074
+        },
+        {
+          "index": 26,
+          "text": "-I",
+          "startMs": 296430,
+          "endMs": 296810,
+          "probability": 0.993964
+        },
+        {
+          "index": 27,
+          "text": "-O",
+          "startMs": 296810,
+          "endMs": 297310,
+          "probability": 0.984487
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Old MacDonald had a farm E-I-E-I-O and on that farm he had some geese E-I-E-I-O",
+      "startMs": 298990,
+      "endMs": 307990,
+      "avgLogprob": -0.060114,
+      "noSpeechProb": 0.413938,
+      "compressionRatio": 2.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 298990,
+          "endMs": 299590,
+          "probability": 0.789849
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 299590,
+          "endMs": 300170,
+          "probability": 0.922728
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 300170,
+          "endMs": 300730,
+          "probability": 0.983499
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 300730,
+          "endMs": 301110,
+          "probability": 0.994464
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 301110,
+          "endMs": 301430,
+          "probability": 0.990448
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 301430,
+          "endMs": 301930,
+          "probability": 0.977098
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 301930,
+          "endMs": 302210,
+          "probability": 0.992331
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 302210,
+          "endMs": 302470,
+          "probability": 0.997535
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 302470,
+          "endMs": 302830,
+          "probability": 0.999335
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 302830,
+          "endMs": 303290,
+          "probability": 0.996519
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 303290,
+          "endMs": 303910,
+          "probability": 0.371282
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 303910,
+          "endMs": 304230,
+          "probability": 0.950658
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 304230,
+          "endMs": 304530,
+          "probability": 0.994611
+        },
+        {
+          "index": 14,
+          "text": "farm",
+          "startMs": 304530,
+          "endMs": 304810,
+          "probability": 0.984487
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 304810,
+          "endMs": 305070,
+          "probability": 0.886657
+        },
+        {
+          "index": 16,
+          "text": "had",
+          "startMs": 305070,
+          "endMs": 305330,
+          "probability": 0.990504
+        },
+        {
+          "index": 17,
+          "text": "some",
+          "startMs": 305330,
+          "endMs": 305630,
+          "probability": 0.992453
+        },
+        {
+          "index": 18,
+          "text": "geese",
+          "startMs": 305630,
+          "endMs": 306230,
+          "probability": 0.965673
+        },
+        {
+          "index": 19,
+          "text": "E",
+          "startMs": 306230,
+          "endMs": 306590,
+          "probability": 0.920477
+        },
+        {
+          "index": 20,
+          "text": "-I",
+          "startMs": 306590,
+          "endMs": 306870,
+          "probability": 0.989811
+        },
+        {
+          "index": 21,
+          "text": "-E",
+          "startMs": 306870,
+          "endMs": 307150,
+          "probability": 0.998576
+        },
+        {
+          "index": 22,
+          "text": "-I",
+          "startMs": 307150,
+          "endMs": 307470,
+          "probability": 0.999069
+        },
+        {
+          "index": 23,
+          "text": "-O",
+          "startMs": 307470,
+          "endMs": 307990,
+          "probability": 0.996906
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "With a honk honk here and a honk honk there here a honk there a honk everywhere a honk honk",
+      "startMs": 307990,
+      "endMs": 313410,
+      "avgLogprob": -0.060114,
+      "noSpeechProb": 0.413938,
+      "compressionRatio": 2.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 307990,
+          "endMs": 308590,
+          "probability": 0.457534
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 308590,
+          "endMs": 308790,
+          "probability": 0.990732
+        },
+        {
+          "index": 3,
+          "text": "honk",
+          "startMs": 308790,
+          "endMs": 309010,
+          "probability": 0.875327
+        },
+        {
+          "index": 4,
+          "text": "honk",
+          "startMs": 309010,
+          "endMs": 309270,
+          "probability": 0.98665
+        },
+        {
+          "index": 5,
+          "text": "here",
+          "startMs": 309270,
+          "endMs": 309550,
+          "probability": 0.978696
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 309550,
+          "endMs": 309730,
+          "probability": 0.969168
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 309730,
+          "endMs": 309850,
+          "probability": 0.943197
+        },
+        {
+          "index": 8,
+          "text": "honk",
+          "startMs": 309850,
+          "endMs": 310130,
+          "probability": 0.991347
+        },
+        {
+          "index": 9,
+          "text": "honk",
+          "startMs": 310130,
+          "endMs": 310370,
+          "probability": 0.991817
+        },
+        {
+          "index": 10,
+          "text": "there",
+          "startMs": 310370,
+          "endMs": 310750,
+          "probability": 0.975136
+        },
+        {
+          "index": 11,
+          "text": "here",
+          "startMs": 310750,
+          "endMs": 311250,
+          "probability": 0.226536
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 311250,
+          "endMs": 311410,
+          "probability": 0.146675
+        },
+        {
+          "index": 13,
+          "text": "honk",
+          "startMs": 311410,
+          "endMs": 311590,
+          "probability": 0.988705
+        },
+        {
+          "index": 14,
+          "text": "there",
+          "startMs": 311590,
+          "endMs": 311830,
+          "probability": 0.861589
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 311830,
+          "endMs": 311950,
+          "probability": 0.800022
+        },
+        {
+          "index": 16,
+          "text": "honk",
+          "startMs": 311950,
+          "endMs": 312190,
+          "probability": 0.9863
+        },
+        {
+          "index": 17,
+          "text": "everywhere",
+          "startMs": 312190,
+          "endMs": 312510,
+          "probability": 0.955996
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 312510,
+          "endMs": 312810,
+          "probability": 0.914633
+        },
+        {
+          "index": 19,
+          "text": "honk",
+          "startMs": 312810,
+          "endMs": 313090,
+          "probability": 0.988993
+        },
+        {
+          "index": 20,
+          "text": "honk",
+          "startMs": 313090,
+          "endMs": 313410,
+          "probability": 0.993946
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Old MacDonald had a farm E-I-E-I-O",
+      "startMs": 314730,
+      "endMs": 321090,
+      "avgLogprob": -0.204907,
+      "noSpeechProb": 0.255794,
+      "compressionRatio": 1.398693,
+      "words": [
+        {
+          "index": 1,
+          "text": "Old",
+          "startMs": 314730,
+          "endMs": 315690,
+          "probability": 0.453514
+        },
+        {
+          "index": 2,
+          "text": "MacDonald",
+          "startMs": 315690,
+          "endMs": 316410,
+          "probability": 0.310514
+        },
+        {
+          "index": 3,
+          "text": "had",
+          "startMs": 316410,
+          "endMs": 316950,
+          "probability": 0.65124
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 316950,
+          "endMs": 317270,
+          "probability": 0.992643
+        },
+        {
+          "index": 5,
+          "text": "farm",
+          "startMs": 317270,
+          "endMs": 317670,
+          "probability": 0.871905
+        },
+        {
+          "index": 6,
+          "text": "E",
+          "startMs": 317670,
+          "endMs": 318430,
+          "probability": 0.304843
+        },
+        {
+          "index": 7,
+          "text": "-I",
+          "startMs": 318430,
+          "endMs": 318950,
+          "probability": 0.674852
+        },
+        {
+          "index": 8,
+          "text": "-E",
+          "startMs": 318950,
+          "endMs": 319550,
+          "probability": 0.992519
+        },
+        {
+          "index": 9,
+          "text": "-I",
+          "startMs": 319550,
+          "endMs": 320230,
+          "probability": 0.98665
+        },
+        {
+          "index": 10,
+          "text": "-O",
+          "startMs": 320230,
+          "endMs": 321090,
+          "probability": 0.990098
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "We hope you have enjoyed this recording of Pete the Cat Old MacDonald had a farm by James Dean",
+      "startMs": 323910,
+      "endMs": 332310,
+      "avgLogprob": -0.204907,
+      "noSpeechProb": 0.255794,
+      "compressionRatio": 1.398693,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 323910,
+          "endMs": 324870,
+          "probability": 0.389858
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 324870,
+          "endMs": 325090,
+          "probability": 0.994721
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 325090,
+          "endMs": 325270,
+          "probability": 0.995316
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 325270,
+          "endMs": 325470,
+          "probability": 0.98466
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 325470,
+          "endMs": 325870,
+          "probability": 0.997132
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 325870,
+          "endMs": 326210,
+          "probability": 0.994517
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 326210,
+          "endMs": 326770,
+          "probability": 0.99445
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 326770,
+          "endMs": 327190,
+          "probability": 0.993896
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 327190,
+          "endMs": 327870,
+          "probability": 0.844477
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 327870,
+          "endMs": 328110,
+          "probability": 0.955829
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 328110,
+          "endMs": 328410,
+          "probability": 0.667035
+        },
+        {
+          "index": 12,
+          "text": "Old",
+          "startMs": 328410,
+          "endMs": 329170,
+          "probability": 0.794819
+        },
+        {
+          "index": 13,
+          "text": "MacDonald",
+          "startMs": 329170,
+          "endMs": 329750,
+          "probability": 0.943335
+        },
+        {
+          "index": 14,
+          "text": "had",
+          "startMs": 329750,
+          "endMs": 330230,
+          "probability": 0.885165
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 330230,
+          "endMs": 330470,
+          "probability": 0.995662
+        },
+        {
+          "index": 16,
+          "text": "farm",
+          "startMs": 330470,
+          "endMs": 330870,
+          "probability": 0.922192
+        },
+        {
+          "index": 17,
+          "text": "by",
+          "startMs": 330870,
+          "endMs": 331530,
+          "probability": 0.930989
+        },
+        {
+          "index": 18,
+          "text": "James",
+          "startMs": 331530,
+          "endMs": 332010,
+          "probability": 0.991783
+        },
+        {
+          "index": 19,
+          "text": "Dean",
+          "startMs": 332010,
+          "endMs": 332310,
+          "probability": 0.948924
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "This program was produced by John Marshall Media, Executive Producer Karen Joukonsky",
+      "startMs": 333410,
+      "endMs": 339090,
+      "avgLogprob": -0.204907,
+      "noSpeechProb": 0.255794,
+      "compressionRatio": 1.398693,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 332970,
+          "endMs": 333450,
+          "probability": 0.58761
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 333450,
+          "endMs": 333730,
+          "probability": 0.965159
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 333730,
+          "endMs": 334150,
+          "probability": 0.996508
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 334150,
+          "endMs": 334530,
+          "probability": 0.989176
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 334530,
+          "endMs": 334910,
+          "probability": 0.996638
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 334910,
+          "endMs": 335250,
+          "probability": 0.968873
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 335250,
+          "endMs": 335590,
+          "probability": 0.931006
+        },
+        {
+          "index": 8,
+          "text": "Media,",
+          "startMs": 335590,
+          "endMs": 336130,
+          "probability": 0.867507
+        },
+        {
+          "index": 9,
+          "text": "Executive",
+          "startMs": 336730,
+          "endMs": 337150,
+          "probability": 0.427282
+        },
+        {
+          "index": 10,
+          "text": "Producer",
+          "startMs": 337150,
+          "endMs": 337670,
+          "probability": 0.943063
+        },
+        {
+          "index": 11,
+          "text": "Karen",
+          "startMs": 337670,
+          "endMs": 338330,
+          "probability": 0.724234
+        },
+        {
+          "index": 12,
+          "text": "Joukonsky",
+          "startMs": 338330,
+          "endMs": 339090,
+          "probability": 0.408874
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Illustrations Copyright 2014 by James Dean",
+      "startMs": 340090,
+      "endMs": 343910,
+      "avgLogprob": -0.153118,
+      "noSpeechProb": 0.514348,
+      "compressionRatio": 1.206186,
+      "words": [
+        {
+          "index": 1,
+          "text": "Illustrations",
+          "startMs": 340090,
+          "endMs": 340810,
+          "probability": 0.699023
+        },
+        {
+          "index": 2,
+          "text": "Copyright",
+          "startMs": 340810,
+          "endMs": 341170,
+          "probability": 0.607847
+        },
+        {
+          "index": 3,
+          "text": "2014",
+          "startMs": 341170,
+          "endMs": 342630,
+          "probability": 0.861845
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 342630,
+          "endMs": 343170,
+          "probability": 0.695519
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 343170,
+          "endMs": 343550,
+          "probability": 0.975562
+        },
+        {
+          "index": 6,
+          "text": "Dean",
+          "startMs": 343550,
+          "endMs": 343910,
+          "probability": 0.891354
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Production Copyright 2014 by Harper Collins Publishers",
+      "startMs": 343910,
+      "endMs": 349110,
+      "avgLogprob": -0.153118,
+      "noSpeechProb": 0.514348,
+      "compressionRatio": 1.206186,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 343910,
+          "endMs": 344890,
+          "probability": 0.319607
+        },
+        {
+          "index": 2,
+          "text": "Copyright",
+          "startMs": 344890,
+          "endMs": 345590,
+          "probability": 0.819262
+        },
+        {
+          "index": 3,
+          "text": "2014",
+          "startMs": 345590,
+          "endMs": 346950,
+          "probability": 0.977914
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 346950,
+          "endMs": 347710,
+          "probability": 0.9803
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 347710,
+          "endMs": 348050,
+          "probability": 0.993617
+        },
+        {
+          "index": 6,
+          "text": "Collins",
+          "startMs": 348050,
+          "endMs": 348530,
+          "probability": 0.516918
+        },
+        {
+          "index": 7,
+          "text": "Publishers",
+          "startMs": 348530,
+          "endMs": 349110,
+          "probability": 0.958622
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "All rights reserved",
+      "startMs": 349110,
+      "endMs": 350650,
+      "avgLogprob": -0.153118,
+      "noSpeechProb": 0.514348,
+      "compressionRatio": 1.206186,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 349110,
+          "endMs": 349890,
+          "probability": 0.695631
+        },
+        {
+          "index": 2,
+          "text": "rights",
+          "startMs": 349890,
+          "endMs": 350170,
+          "probability": 0.975473
+        },
+        {
+          "index": 3,
+          "text": "reserved",
+          "startMs": 350170,
+          "endMs": 350650,
+          "probability": 0.995105
+        }
+      ]
+    }
+  ]
+}

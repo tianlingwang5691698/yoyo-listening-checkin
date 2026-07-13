@@ -1,7 +1,7 @@
 const study = require('../facades/study.facade');
 
 const LEVEL_CATEGORY_GROUPS = {
-  A2: ['newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook'],
+  A2: ['newconcept2', 'petethecat', 'unlock2', 'unlock2thirdedition', 'unlock2workbook'],
   B1: ['newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3'],
   B2: ['newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook']
 };
@@ -83,6 +83,7 @@ async function getLevelOverview(event) {
   const standaloneCategoryIds = STANDALONE_CATEGORY_IDS;
   const standaloneOverviews = isA1PhaseOverview ? {
     newconcept2: { directTasks: [], overview: [] },
+    petethecat: { directTasks: [], overview: [] },
     unlock2: { directTasks: [], overview: [] },
     unlock2thirdedition: { directTasks: [], overview: [] },
     unlock2workbook: { directTasks: [], overview: [] },
@@ -150,6 +151,8 @@ async function getLevelOverview(event) {
     levelDebug: {
       newconcept2CatalogCount: study.getCatalog('newconcept2').length,
       newconcept2DirectCount: standaloneOverviews.newconcept2.directTasks.length,
+      peteTheCatCatalogCount: study.getCatalog('petethecat').length,
+      peteTheCatDirectCount: standaloneOverviews.petethecat.directTasks.length,
       unlock2CatalogCount: study.getCatalog('unlock2').length,
       unlock2DirectCount: standaloneOverviews.unlock2.directTasks.length,
       unlock2ThirdEditionCatalogCount: study.getCatalog('unlock2thirdedition').length,

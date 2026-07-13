@@ -1,5 +1,13 @@
 # 小程序设计语言与改动记录
 
+### 2026-07-13 Pete the Cat A2 句级音频素材
+
+- 板块：音频·A2。
+- 文件：`pages/level/index.js`、`pages/listening-plan/index.js`、`cloudfunctions/yoyo/lib/listening-plan-engine.js`、`cloudfunctions/yoyo/lib/catalog-engine.js`、`cloudfunctions/yoyo/lib/task-presenter.js`。
+- 改动：A2 新增 `Pete the Cat` 独立入口和 40 条句级听力；课程页只显示清洗后的故事名，系列名只保留一次。
+- 设计记录：首屏只读 40 条数量摘要，不扫描云目录、不加载 transcript；点进素材后再按需加载任务与句级文本。
+- 验证：检查 40 条音频/封面一一对应、句级时间轴、A2 单一归属、标题去重、首屏性能与旧素材回归。
+
 ### 2026-07-13 v8.5.1 回退点
 
 - 听力连续播放、音频标题清洗与背词卡发音音符动效收口为 `v8.5.1`。

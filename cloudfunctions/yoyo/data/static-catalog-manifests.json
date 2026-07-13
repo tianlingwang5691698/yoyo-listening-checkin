@@ -2062,6 +2062,808 @@
           "filePath": "_transcripts/A1/songs/bundle.json"
         }
       }
+    ],
+    "petethecat": [
+      {
+        "taskId": "pete-the-cat-001",
+        "category": "petethecat",
+        "title": "Pete the Cat Cavecat Pete",
+        "subtitle": "Pete the Cat · 1/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/001-pete-the-cat-cavecat-pete-f07c5df745.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/001-pete-the-cat-cavecat-pete-a8bb13a26d.jpg",
+        "size": 4161318,
+        "repeatTarget": 3,
+        "durationSec": 340.776,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-001",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-002",
+        "category": "petethecat",
+        "title": "Pete the Cat Crayons Rock!",
+        "subtitle": "Pete the Cat · 2/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/002-pete-the-cat-crayons-rock-53c4c3c33d.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/002-pete-the-cat-crayons-rock-5715865e28.jpg",
+        "size": 4089034,
+        "repeatTarget": 3,
+        "durationSec": 334.53,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-002",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-003",
+        "category": "petethecat",
+        "title": "Pete the Cat Firefighter Pete",
+        "subtitle": "Pete the Cat · 3/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/003-pete-the-cat-firefighter-pete-2b4484fe8a.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/003-pete-the-cat-firefighter-pete-606c1a2464.jpg",
+        "size": 4342945,
+        "repeatTarget": 3,
+        "durationSec": 356.31,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-003",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-004",
+        "category": "petethecat",
+        "title": "Pete the Cat Go, Pete, Go!",
+        "subtitle": "Pete the Cat · 4/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/004-pete-the-cat-go-pete-go-ac05130fe3.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/004-pete-the-cat-go-pete-go-6fedc38f2a.jpg",
+        "size": 4779240,
+        "repeatTarget": 3,
+        "durationSec": 391.628,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-004",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-005",
+        "category": "petethecat",
+        "title": "Pete the Cat Old MacDonald Had a Farm",
+        "subtitle": "Pete the Cat · 5/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/005-pete-the-cat-old-macdonald-had-a-farm-6f969326f9.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/005-pete-the-cat-old-macdonald-had-a-farm-2a9dd92220.jpg",
+        "size": 4285807,
+        "repeatTarget": 3,
+        "durationSec": 351.318,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-005",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-006",
+        "category": "petethecat",
+        "title": "Pete the Cat Robo-Pete",
+        "subtitle": "Pete the Cat · 6/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/006-pete-the-cat-robo-pete-c8d3e25c42.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/006-pete-the-cat-robo-pete-e05dcd8d0e.jpg",
+        "size": 4042892,
+        "repeatTarget": 3,
+        "durationSec": 329.747,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-006",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-007",
+        "category": "petethecat",
+        "title": "Pete the Cat Scuba-Cat",
+        "subtitle": "Pete the Cat · 7/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/007-pete-the-cat-scuba-cat-19741839de.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/007-pete-the-cat-scuba-cat-a8767df990.jpg",
+        "size": 3837310,
+        "repeatTarget": 3,
+        "durationSec": 313.028,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-007",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-008",
+        "category": "petethecat",
+        "title": "Pete the Cat Secret Agent",
+        "subtitle": "Pete the Cat · 8/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/008-pete-the-cat-secret-agent-49df67774c.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/008-pete-the-cat-secret-agent-17756d1dc3.jpg",
+        "size": 5425121,
+        "repeatTarget": 3,
+        "durationSec": 446.009,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-008",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-009",
+        "category": "petethecat",
+        "title": "Pete the Cat Sir Pete the Brave",
+        "subtitle": "Pete the Cat · 9/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/009-pete-the-cat-sir-pete-the-brave-80b274e720.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/009-pete-the-cat-sir-pete-the-brave-90db392614.jpg",
+        "size": 3959679,
+        "repeatTarget": 3,
+        "durationSec": 323.175,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-009",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-010",
+        "category": "petethecat",
+        "title": "Pete the Cat Snow Daze",
+        "subtitle": "Pete the Cat · 10/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/010-pete-the-cat-snow-daze-506c895709.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/010-pete-the-cat-snow-daze-33f665d398.jpg",
+        "size": 3592541,
+        "repeatTarget": 3,
+        "durationSec": 292.223,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-010",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-011",
+        "category": "petethecat",
+        "title": "Pete the Cat Super Pete",
+        "subtitle": "Pete the Cat · 11/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/011-pete-the-cat-super-pete-ca707112e1.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/011-pete-the-cat-super-pete-58ad308c5f.jpg",
+        "size": 4085879,
+        "repeatTarget": 3,
+        "durationSec": 334.46,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-011",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-012",
+        "category": "petethecat",
+        "title": "Pete the Cat Talent Show Trouble",
+        "subtitle": "Pete the Cat · 12/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/012-pete-the-cat-talent-show-trouble-602fe82f0c.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/012-pete-the-cat-talent-show-trouble-ed68591ba7.jpg",
+        "size": 5403700,
+        "repeatTarget": 3,
+        "durationSec": 444.546,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-012",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-013",
+        "category": "petethecat",
+        "title": "Pete the Cat The Great Leprechaun Chase",
+        "subtitle": "Pete the Cat · 13/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/013-pete-the-cat-the-great-leprechaun-chase-9c126fa567.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/013-pete-the-cat-the-great-leprechaun-chase-4dc079cab4.jpg",
+        "size": 4446669,
+        "repeatTarget": 3,
+        "durationSec": 365.041,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-013",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-014",
+        "category": "petethecat",
+        "title": "Pete the Cat The Petes Go Marching",
+        "subtitle": "Pete the Cat · 14/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/014-pete-the-cat-the-petes-go-marching-44ab2b1ecb.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/014-pete-the-cat-the-petes-go-marching-3b677745ca.jpg",
+        "size": 3903036,
+        "repeatTarget": 3,
+        "durationSec": 319.762,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-014",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-015",
+        "category": "petethecat",
+        "title": "Pete the Cat Valentine's Day is Cool",
+        "subtitle": "Pete the Cat · 15/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/015-pete-the-cat-valentine-s-day-is-cool-37a79b4987.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/015-pete-the-cat-valentine-s-day-is-cool-6356075e14.jpg",
+        "size": 2115457,
+        "repeatTarget": 3,
+        "durationSec": 171.006,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-015",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-016",
+        "category": "petethecat",
+        "title": "Pete the Cat and His Magic Sunglasses",
+        "subtitle": "Pete the Cat · 16/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/016-pete-the-cat-and-his-magic-sunglasses-051e957e3d.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/016-pete-the-cat-and-his-magic-sunglasses-4747030a68.jpg",
+        "size": 3922761,
+        "repeatTarget": 3,
+        "durationSec": 322.038,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-016",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-017",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Cool Cat Boogie",
+        "subtitle": "Pete the Cat · 17/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/017-pete-the-cat-and-the-cool-cat-boogie-2c8315f8f0.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/017-pete-the-cat-and-the-cool-cat-boogie-79f4338620.jpg",
+        "size": 4069227,
+        "repeatTarget": 3,
+        "durationSec": 331.999,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-017",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-018",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Cool Caterpillar",
+        "subtitle": "Pete the Cat · 18/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/018-pete-the-cat-and-the-cool-caterpillar-b0d418fca7.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/018-pete-the-cat-and-the-cool-caterpillar-2f7a6b65d3.jpg",
+        "size": 4347021,
+        "repeatTarget": 3,
+        "durationSec": 356.96,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-018",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-019",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Easter Basket Bandit",
+        "subtitle": "Pete the Cat · 19/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/019-pete-the-cat-and-the-easter-basket-bandit-c62d37b93a.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/019-pete-the-cat-and-the-easter-basket-bandit-c6ae774584.jpg",
+        "size": 5157376,
+        "repeatTarget": 3,
+        "durationSec": 424.414,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-019",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-020",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Missing Cupcakes",
+        "subtitle": "Pete the Cat · 20/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/020-pete-the-cat-and-the-missing-cupcakes-63b149aad7.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/020-pete-the-cat-and-the-missing-cupcakes-2b3b0c9003.jpg",
+        "size": 3690528,
+        "repeatTarget": 3,
+        "durationSec": 300.815,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-020",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-021",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Mysterious Smell",
+        "subtitle": "Pete the Cat · 21/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/021-pete-the-cat-and-the-mysterious-smell-bd2598f25d.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/021-pete-the-cat-and-the-mysterious-smell-ea5cb4ba9f.jpg",
+        "size": 6229522,
+        "repeatTarget": 3,
+        "durationSec": 514.252,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-021",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-022",
+        "category": "petethecat",
+        "title": "Pete the Cat and the New Guy",
+        "subtitle": "Pete the Cat · 22/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/022-pete-the-cat-and-the-new-guy-e4eb104e99.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/022-pete-the-cat-and-the-new-guy-c11a79e4d5.jpg",
+        "size": 3859918,
+        "repeatTarget": 3,
+        "durationSec": 315.025,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-022",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-023",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Perfect Pizza Party",
+        "subtitle": "Pete the Cat · 23/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/023-pete-the-cat-and-the-perfect-pizza-party-000ec50047.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/023-pete-the-cat-and-the-perfect-pizza-party-dc01238471.jpg",
+        "size": 4141341,
+        "repeatTarget": 3,
+        "durationSec": 338.733,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-023",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-024",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Space Chase",
+        "subtitle": "Pete the Cat · 24/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/024-pete-the-cat-and-the-space-chase-b15f401bd6.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/024-pete-the-cat-and-the-space-chase-cec4c23d0f.jpg",
+        "size": 4702396,
+        "repeatTarget": 3,
+        "durationSec": 386.984,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-024",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-025",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Sprinkle Stealer",
+        "subtitle": "Pete the Cat · 25/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/025-pete-the-cat-and-the-sprinkle-stealer-7ce79e6c9f.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/025-pete-the-cat-and-the-sprinkle-stealer-38f2b70b4c.jpg",
+        "size": 5252975,
+        "repeatTarget": 3,
+        "durationSec": 432.309,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-025",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-026",
+        "category": "petethecat",
+        "title": "Pete the Cat and the Treasure Map",
+        "subtitle": "Pete the Cat · 26/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/026-pete-the-cat-and-the-treasure-map-ea0b12740d.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/026-pete-the-cat-and-the-treasure-map-ff2addeb70.jpg",
+        "size": 4635314,
+        "repeatTarget": 3,
+        "durationSec": 380.505,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-026",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-027",
+        "category": "petethecat",
+        "title": "Pete the Cat Falling for Autumn",
+        "subtitle": "Pete the Cat · 27/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/027-pete-the-cat-falling-for-autumn-55a38618db.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/027-pete-the-cat-falling-for-autumn-098f50cd7b.jpg",
+        "size": 4426881,
+        "repeatTarget": 3,
+        "durationSec": 362.138,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-027",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-028",
+        "category": "petethecat",
+        "title": "Pete the Cat Goes Camping",
+        "subtitle": "Pete the Cat · 28/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/028-pete-the-cat-goes-camping-c3542f4a93.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/028-pete-the-cat-goes-camping-3a2dbc91db.jpg",
+        "size": 4429342,
+        "repeatTarget": 3,
+        "durationSec": 362.719,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-028",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-029",
+        "category": "petethecat",
+        "title": "Pete the Cat Parents' Day Surprise",
+        "subtitle": "Pete the Cat · 29/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/029-pete-the-cat-parents-day-surprise-4d918c919c.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/029-pete-the-cat-parents-day-surprise-df7c8c7b3a.jpg",
+        "size": 6645287,
+        "repeatTarget": 3,
+        "durationSec": 548.502,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-029",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-030",
+        "category": "petethecat",
+        "title": "Pete the Cat Plays Hide-and-Seek",
+        "subtitle": "Pete the Cat · 30/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/030-pete-the-cat-plays-hide-and-seek-0d76f536f2.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/030-pete-the-cat-plays-hide-and-seek-2bf57f28b0.jpg",
+        "size": 4494874,
+        "repeatTarget": 3,
+        "durationSec": 369.22,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-030",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-031",
+        "category": "petethecat",
+        "title": "Pete the Cat Saves Up",
+        "subtitle": "Pete the Cat · 31/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/031-pete-the-cat-saves-up-2f5f39cea4.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/031-pete-the-cat-saves-up-28c0f0bfec.jpg",
+        "size": 4617506,
+        "repeatTarget": 3,
+        "durationSec": 381.759,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-031",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-032",
+        "category": "petethecat",
+        "title": "Pete the Cat's 12 Groovy Days of Christmas",
+        "subtitle": "Pete the Cat · 32/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/032-pete-the-cat-s-12-groovy-days-of-christmas-2ee3ec5610.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/032-pete-the-cat-s-12-groovy-days-of-christmas-f883827b55.jpg",
+        "size": 4827476,
+        "repeatTarget": 3,
+        "durationSec": 396.899,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-032",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-033",
+        "category": "petethecat",
+        "title": "Pete the Cat's Groovy Guide to Life",
+        "subtitle": "Pete the Cat · 33/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/033-pete-the-cat-s-groovy-guide-to-life-2de1da4b6c.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/033-pete-the-cat-s-groovy-guide-to-life-566bdceebf.jpg",
+        "size": 4443249,
+        "repeatTarget": 3,
+        "durationSec": 365.064,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-033",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-034",
+        "category": "petethecat",
+        "title": "Pete the Cat's Groovy Guide to Love",
+        "subtitle": "Pete the Cat · 34/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/034-pete-the-cat-s-groovy-guide-to-love-fce0c20605.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/034-pete-the-cat-s-groovy-guide-to-love-8e7bd4e5b1.jpg",
+        "size": 5025612,
+        "repeatTarget": 3,
+        "durationSec": 413.71,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-034",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-035",
+        "category": "petethecat",
+        "title": "Pete the Cat's Groovy Imagination",
+        "subtitle": "Pete the Cat · 35/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/035-pete-the-cat-s-groovy-imagination-9f52f06cb8.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/035-pete-the-cat-s-groovy-imagination-76faea7b18.jpg",
+        "size": 4788297,
+        "repeatTarget": 3,
+        "durationSec": 393.578,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-035",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-036",
+        "category": "petethecat",
+        "title": "Pete the Cat's Not So Groovy Day",
+        "subtitle": "Pete the Cat · 36/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/036-pete-the-cat-s-not-so-groovy-day-eace5381b8.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/036-pete-the-cat-s-not-so-groovy-day-4e3877d774.jpg",
+        "size": 4860250,
+        "repeatTarget": 3,
+        "durationSec": 400.057,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-036",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-037",
+        "category": "petethecat",
+        "title": "Pete the Kitty and the Unicorn's Missing Colors",
+        "subtitle": "Pete the Cat · 37/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/037-pete-the-kitty-and-the-unicorn-s-missing-colors-f5631e1c94.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/037-pete-the-kitty-and-the-unicorn-s-missing-colors-edee950df3.jpg",
+        "size": 3784664,
+        "repeatTarget": 3,
+        "durationSec": 310.288,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-037",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-038",
+        "category": "petethecat",
+        "title": "Pete the Kitty's Outdoor Art Project",
+        "subtitle": "Pete the Cat · 38/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/038-pete-the-kitty-s-outdoor-art-project-1bf197e808.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/038-pete-the-kitty-s-outdoor-art-project-927c66a706.jpg",
+        "size": 4103659,
+        "repeatTarget": 3,
+        "durationSec": 336.945,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-038",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-039",
+        "category": "petethecat",
+        "title": "Pete the Kitty and the Three Bears",
+        "subtitle": "Pete the Cat · 39/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/039-pete-the-kitty-and-the-three-bears-d0f4409d76.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/039-pete-the-kitty-and-the-three-bears-0e715d1cf3.jpg",
+        "size": 3823293,
+        "repeatTarget": 3,
+        "durationSec": 314.375,
+        "coverTone": "mint",
+        "transcriptTrackId": "track-pete-the-cat-039",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      },
+      {
+        "taskId": "pete-the-cat-040",
+        "category": "petethecat",
+        "title": "Pete the Cat's Wacky Taco Tuesday",
+        "subtitle": "Pete the Cat · 40/40",
+        "audioCloudPath": "A2/Pete the Cat/Audio/040-pete-the-cat-s-wacky-taco-tuesday-dfe9e1262c.mp3",
+        "coverCloudPath": "A2/Pete the Cat/Covers/040-pete-the-cat-s-wacky-taco-tuesday-f244fe5ff1.jpg",
+        "size": 4213377,
+        "repeatTarget": 3,
+        "durationSec": 346.999,
+        "coverTone": "peach",
+        "transcriptTrackId": "track-pete-the-cat-040",
+        "transcriptStatus": "ready",
+        "syncGranularity": "line",
+        "textSource": {
+          "sourceType": "transcript-bundle",
+          "title": "Pete the Cat sentence transcript",
+          "filePath": "_transcripts/A2/pete-the-cat/bundle-sentence-v1.json"
+        }
+      }
     ]
   }
 }

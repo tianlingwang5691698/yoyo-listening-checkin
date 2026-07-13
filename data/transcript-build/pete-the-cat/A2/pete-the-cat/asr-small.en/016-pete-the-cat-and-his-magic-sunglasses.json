@@ -1,0 +1,4188 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 37.953,
+  "text": "Pete the Cat and His Magic Sunglasses, illustrated by James Dean. Story by Kimberly and James Dean. Performed by Teddy Walsh. Pete the Cat did not feel happy. Pete had never, ever, ever, ever been crumpy before. Pete had the blue cat blues. Then, as if things were not bad enough, along came Grumpy Toad. Grumpy Toad was never happy. He always wore a frown. But Grumpy Toad was not grumpy today. He said, these cool blue magic sunglasses make the blues go away. They help you see things in a whole new way. Pete put on the cool blue magic sunglasses. He looked all around, right on. The birds are singing. The sky is bright. The sun is shining. I'm feeling all right. Pete thanked Grumpy Toad for the cool blue magic sunglasses. He went on his way, and soon he saw Squirrel. Squirrel did not look happy. Pete said, what's wrong, Squirrel? I'm so mad. Nothing is going my way. I only found one acorn today. Pete said, try these cool blue magic sunglasses. They help you see things in a whole new way. Squirrel put on the cool blue magic sunglasses and looked all around. Awesome! The birds are singing. The sky is bright. The sun is shining. I'm feeling all right. Pete said goodbye to Squirrel and continued on his way. Soon he saw his friend Turtle. Turtle did not look happy. What's wrong, Turtle? Pete asked. I'm so fresh, cool blue magic sunglasses. They help you see things in a whole new way. Turtle put on the cool blue magic sunglasses and looked all around. Far out! The birds are singing. The sky is bright. The sun is shining. I'm feeling all right. Pete kept rolling along until he saw Alligator. Alligator did not look happy. What's wrong, Alligator? Pete asked. I'm so sad. Nothing is going my way. No one wants to play with me today. Pete said, try these cool blue magic sunglasses. They help you see things in a whole new way. Alligator put on the cool blue magic sunglasses and looked all around. Rockin'! The birds are singing. The sky is bright. The sun is shining. I'm feeling all right. Pete was rolling along and feeling all right when suddenly he fell back. The cool blue magic sunglasses went crack. Uh-oh! Pete didn't know what to do without those sunglasses. Just then, Pete looked up at the tree. Wise old Owl said, Pete, you don't need magic sunglasses to see things in a new way. Just remember to look for the good in every day. Pete looked around without his sunglasses. Too cool! The birds are singing. The sky is bright. The sun is shining. We're feeling all right. We hope you have enjoyed this recording of Pete the Cat and His Magic Sunglasses by Kimberly and James Dean and illustrated by James Dean. This program was produced by John Marshall Media, executive producer Karen Joukonsky, text copyright 2013 by Kimberly and James Dean, illustrations copyright 2013 by James Dean, production copyright 2013 by Harper Collins Publishers, all rights reserved.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat and His Magic Sunglasses, illustrated by James Dean.",
+      "startMs": 0,
+      "endMs": 6660,
+      "avgLogprob": -0.17694,
+      "noSpeechProb": 0.3652,
+      "compressionRatio": 1.475524,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 1360,
+          "probability": 0.756366
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 1360,
+          "endMs": 1600,
+          "probability": 0.969939
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 1600,
+          "endMs": 1920,
+          "probability": 0.87602
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 1920,
+          "endMs": 2300,
+          "probability": 0.964439
+        },
+        {
+          "index": 5,
+          "text": "His",
+          "startMs": 2300,
+          "endMs": 2540,
+          "probability": 0.843534
+        },
+        {
+          "index": 6,
+          "text": "Magic",
+          "startMs": 2540,
+          "endMs": 3100,
+          "probability": 0.980248
+        },
+        {
+          "index": 7,
+          "text": "Sunglasses,",
+          "startMs": 3100,
+          "endMs": 3980,
+          "probability": 0.979415
+        },
+        {
+          "index": 8,
+          "text": "illustrated",
+          "startMs": 5000,
+          "endMs": 5360,
+          "probability": 0.883454
+        },
+        {
+          "index": 9,
+          "text": "by",
+          "startMs": 5360,
+          "endMs": 5740,
+          "probability": 0.99692
+        },
+        {
+          "index": 10,
+          "text": "James",
+          "startMs": 5740,
+          "endMs": 6280,
+          "probability": 0.998545
+        },
+        {
+          "index": 11,
+          "text": "Dean.",
+          "startMs": 6280,
+          "endMs": 6660,
+          "probability": 0.967862
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "Story by Kimberly and James Dean.",
+      "startMs": 7640,
+      "endMs": 10600,
+      "avgLogprob": -0.17694,
+      "noSpeechProb": 0.3652,
+      "compressionRatio": 1.475524,
+      "words": [
+        {
+          "index": 1,
+          "text": "Story",
+          "startMs": 7640,
+          "endMs": 7700,
+          "probability": 0.967717
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 7700,
+          "endMs": 8200,
+          "probability": 0.980972
+        },
+        {
+          "index": 3,
+          "text": "Kimberly",
+          "startMs": 8200,
+          "endMs": 8920,
+          "probability": 0.879296
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 8920,
+          "endMs": 9580,
+          "probability": 0.923609
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 9580,
+          "endMs": 10040,
+          "probability": 0.999474
+        },
+        {
+          "index": 6,
+          "text": "Dean.",
+          "startMs": 10040,
+          "endMs": 10600,
+          "probability": 0.992905
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Performed by Teddy Walsh.",
+      "startMs": 11420,
+      "endMs": 13320,
+      "avgLogprob": -0.17694,
+      "noSpeechProb": 0.3652,
+      "compressionRatio": 1.475524,
+      "words": [
+        {
+          "index": 1,
+          "text": "Performed",
+          "startMs": 11420,
+          "endMs": 11760,
+          "probability": 0.773039
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 11760,
+          "endMs": 12240,
+          "probability": 0.998809
+        },
+        {
+          "index": 3,
+          "text": "Teddy",
+          "startMs": 12240,
+          "endMs": 12900,
+          "probability": 0.967509
+        },
+        {
+          "index": 4,
+          "text": "Walsh.",
+          "startMs": 12900,
+          "endMs": 13320,
+          "probability": 0.980125
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Pete the Cat did not feel happy.",
+      "startMs": 16660,
+      "endMs": 20140,
+      "avgLogprob": -0.17694,
+      "noSpeechProb": 0.3652,
+      "compressionRatio": 1.475524,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 16660,
+          "endMs": 17560,
+          "probability": 0.958527
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 17560,
+          "endMs": 17800,
+          "probability": 0.995468
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 17800,
+          "endMs": 18200,
+          "probability": 0.950685
+        },
+        {
+          "index": 4,
+          "text": "did",
+          "startMs": 18200,
+          "endMs": 18520,
+          "probability": 0.94413
+        },
+        {
+          "index": 5,
+          "text": "not",
+          "startMs": 18520,
+          "endMs": 18940,
+          "probability": 0.997262
+        },
+        {
+          "index": 6,
+          "text": "feel",
+          "startMs": 18940,
+          "endMs": 19460,
+          "probability": 0.998298
+        },
+        {
+          "index": 7,
+          "text": "happy.",
+          "startMs": 19460,
+          "endMs": 20140,
+          "probability": 0.998902
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Pete had never, ever, ever, ever been crumpy before.",
+      "startMs": 21180,
+      "endMs": 26360,
+      "avgLogprob": -0.17694,
+      "noSpeechProb": 0.3652,
+      "compressionRatio": 1.475524,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 21180,
+          "endMs": 21420,
+          "probability": 0.995737
+        },
+        {
+          "index": 2,
+          "text": "had",
+          "startMs": 21420,
+          "endMs": 21720,
+          "probability": 0.997247
+        },
+        {
+          "index": 3,
+          "text": "never,",
+          "startMs": 21720,
+          "endMs": 22380,
+          "probability": 0.998236
+        },
+        {
+          "index": 4,
+          "text": "ever,",
+          "startMs": 23100,
+          "endMs": 23280,
+          "probability": 0.997427
+        },
+        {
+          "index": 5,
+          "text": "ever,",
+          "startMs": 23700,
+          "endMs": 24200,
+          "probability": 0.994586
+        },
+        {
+          "index": 6,
+          "text": "ever",
+          "startMs": 24700,
+          "endMs": 24980,
+          "probability": 0.986907
+        },
+        {
+          "index": 7,
+          "text": "been",
+          "startMs": 24980,
+          "endMs": 25400,
+          "probability": 0.851674
+        },
+        {
+          "index": 8,
+          "text": "crumpy",
+          "startMs": 25400,
+          "endMs": 25820,
+          "probability": 0.770404
+        },
+        {
+          "index": 9,
+          "text": "before.",
+          "startMs": 25820,
+          "endMs": 26360,
+          "probability": 0.998811
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Pete had the blue cat blues.",
+      "startMs": 26360,
+      "endMs": 29940,
+      "avgLogprob": -0.058081,
+      "noSpeechProb": 0.030813,
+      "compressionRatio": 1.537037,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 26360,
+          "endMs": 27620,
+          "probability": 0.445292
+        },
+        {
+          "index": 2,
+          "text": "had",
+          "startMs": 27620,
+          "endMs": 28080,
+          "probability": 0.989154
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 28080,
+          "endMs": 28340,
+          "probability": 0.99282
+        },
+        {
+          "index": 4,
+          "text": "blue",
+          "startMs": 28340,
+          "endMs": 28780,
+          "probability": 0.844052
+        },
+        {
+          "index": 5,
+          "text": "cat",
+          "startMs": 28780,
+          "endMs": 29340,
+          "probability": 0.939733
+        },
+        {
+          "index": 6,
+          "text": "blues.",
+          "startMs": 29340,
+          "endMs": 29940,
+          "probability": 0.903571
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Then, as if things were not bad enough, along came Grumpy Toad.",
+      "startMs": 31320,
+      "endMs": 37240,
+      "avgLogprob": -0.058081,
+      "noSpeechProb": 0.030813,
+      "compressionRatio": 1.537037,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then,",
+          "startMs": 31320,
+          "endMs": 31800,
+          "probability": 0.992448
+        },
+        {
+          "index": 2,
+          "text": "as",
+          "startMs": 32280,
+          "endMs": 32640,
+          "probability": 0.987591
+        },
+        {
+          "index": 3,
+          "text": "if",
+          "startMs": 32640,
+          "endMs": 32840,
+          "probability": 0.997612
+        },
+        {
+          "index": 4,
+          "text": "things",
+          "startMs": 32840,
+          "endMs": 33120,
+          "probability": 0.997209
+        },
+        {
+          "index": 5,
+          "text": "were",
+          "startMs": 33120,
+          "endMs": 33420,
+          "probability": 0.988607
+        },
+        {
+          "index": 6,
+          "text": "not",
+          "startMs": 33420,
+          "endMs": 33680,
+          "probability": 0.998395
+        },
+        {
+          "index": 7,
+          "text": "bad",
+          "startMs": 33680,
+          "endMs": 34040,
+          "probability": 0.996542
+        },
+        {
+          "index": 8,
+          "text": "enough,",
+          "startMs": 34040,
+          "endMs": 34480,
+          "probability": 0.99935
+        },
+        {
+          "index": 9,
+          "text": "along",
+          "startMs": 35140,
+          "endMs": 35560,
+          "probability": 0.957971
+        },
+        {
+          "index": 10,
+          "text": "came",
+          "startMs": 35560,
+          "endMs": 36180,
+          "probability": 0.996673
+        },
+        {
+          "index": 11,
+          "text": "Grumpy",
+          "startMs": 36180,
+          "endMs": 36800,
+          "probability": 0.946191
+        },
+        {
+          "index": 12,
+          "text": "Toad.",
+          "startMs": 36800,
+          "endMs": 37240,
+          "probability": 0.984613
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Grumpy Toad was never happy.",
+      "startMs": 38260,
+      "endMs": 40820,
+      "avgLogprob": -0.058081,
+      "noSpeechProb": 0.030813,
+      "compressionRatio": 1.537037,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 38260,
+          "endMs": 38820,
+          "probability": 0.99754
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 38820,
+          "endMs": 39220,
+          "probability": 0.997614
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 39220,
+          "endMs": 39560,
+          "probability": 0.997201
+        },
+        {
+          "index": 4,
+          "text": "never",
+          "startMs": 39560,
+          "endMs": 40180,
+          "probability": 0.996283
+        },
+        {
+          "index": 5,
+          "text": "happy.",
+          "startMs": 40180,
+          "endMs": 40820,
+          "probability": 0.999035
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "He always wore a frown.",
+      "startMs": 41480,
+      "endMs": 43480,
+      "avgLogprob": -0.058081,
+      "noSpeechProb": 0.030813,
+      "compressionRatio": 1.537037,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 41480,
+          "endMs": 41780,
+          "probability": 0.997617
+        },
+        {
+          "index": 2,
+          "text": "always",
+          "startMs": 41780,
+          "endMs": 42340,
+          "probability": 0.998138
+        },
+        {
+          "index": 3,
+          "text": "wore",
+          "startMs": 42340,
+          "endMs": 42760,
+          "probability": 0.999395
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 42760,
+          "endMs": 43020,
+          "probability": 0.998976
+        },
+        {
+          "index": 5,
+          "text": "frown.",
+          "startMs": 43020,
+          "endMs": 43480,
+          "probability": 0.996021
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "But Grumpy Toad was not grumpy today.",
+      "startMs": 44680,
+      "endMs": 47740,
+      "avgLogprob": -0.058081,
+      "noSpeechProb": 0.030813,
+      "compressionRatio": 1.537037,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 44680,
+          "endMs": 44940,
+          "probability": 0.994093
+        },
+        {
+          "index": 2,
+          "text": "Grumpy",
+          "startMs": 44940,
+          "endMs": 45440,
+          "probability": 0.993098
+        },
+        {
+          "index": 3,
+          "text": "Toad",
+          "startMs": 45440,
+          "endMs": 45880,
+          "probability": 0.997615
+        },
+        {
+          "index": 4,
+          "text": "was",
+          "startMs": 45880,
+          "endMs": 46260,
+          "probability": 0.996961
+        },
+        {
+          "index": 5,
+          "text": "not",
+          "startMs": 46260,
+          "endMs": 46740,
+          "probability": 0.993327
+        },
+        {
+          "index": 6,
+          "text": "grumpy",
+          "startMs": 46740,
+          "endMs": 47260,
+          "probability": 0.879144
+        },
+        {
+          "index": 7,
+          "text": "today.",
+          "startMs": 47260,
+          "endMs": 47740,
+          "probability": 0.997802
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "He said, these cool blue magic sunglasses make the blues go away.",
+      "startMs": 48620,
+      "endMs": 54560,
+      "avgLogprob": -0.058081,
+      "noSpeechProb": 0.030813,
+      "compressionRatio": 1.537037,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 48620,
+          "endMs": 48940,
+          "probability": 0.99667
+        },
+        {
+          "index": 2,
+          "text": "said,",
+          "startMs": 48940,
+          "endMs": 49340,
+          "probability": 0.998929
+        },
+        {
+          "index": 3,
+          "text": "these",
+          "startMs": 49880,
+          "endMs": 50420,
+          "probability": 0.452546
+        },
+        {
+          "index": 4,
+          "text": "cool",
+          "startMs": 50420,
+          "endMs": 50820,
+          "probability": 0.992625
+        },
+        {
+          "index": 5,
+          "text": "blue",
+          "startMs": 50820,
+          "endMs": 51260,
+          "probability": 0.9311
+        },
+        {
+          "index": 6,
+          "text": "magic",
+          "startMs": 51260,
+          "endMs": 51760,
+          "probability": 0.939125
+        },
+        {
+          "index": 7,
+          "text": "sunglasses",
+          "startMs": 51760,
+          "endMs": 52460,
+          "probability": 0.996174
+        },
+        {
+          "index": 8,
+          "text": "make",
+          "startMs": 52460,
+          "endMs": 52940,
+          "probability": 0.989879
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 52940,
+          "endMs": 53180,
+          "probability": 0.999034
+        },
+        {
+          "index": 10,
+          "text": "blues",
+          "startMs": 53180,
+          "endMs": 53600,
+          "probability": 0.987155
+        },
+        {
+          "index": 11,
+          "text": "go",
+          "startMs": 53600,
+          "endMs": 54020,
+          "probability": 0.998796
+        },
+        {
+          "index": 12,
+          "text": "away.",
+          "startMs": 54020,
+          "endMs": 54560,
+          "probability": 0.995611
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "They help you see things in a whole new way.",
+      "startMs": 55560,
+      "endMs": 59340,
+      "avgLogprob": -0.076828,
+      "noSpeechProb": 0.037979,
+      "compressionRatio": 1.60241,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 55460,
+          "endMs": 55900,
+          "probability": 0.389767
+        },
+        {
+          "index": 2,
+          "text": "help",
+          "startMs": 55900,
+          "endMs": 56180,
+          "probability": 0.972704
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 56180,
+          "endMs": 56420,
+          "probability": 0.997963
+        },
+        {
+          "index": 4,
+          "text": "see",
+          "startMs": 56420,
+          "endMs": 56740,
+          "probability": 0.993116
+        },
+        {
+          "index": 5,
+          "text": "things",
+          "startMs": 56740,
+          "endMs": 57200,
+          "probability": 0.996847
+        },
+        {
+          "index": 6,
+          "text": "in",
+          "startMs": 57200,
+          "endMs": 57440,
+          "probability": 0.988907
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 57440,
+          "endMs": 57640,
+          "probability": 0.991744
+        },
+        {
+          "index": 8,
+          "text": "whole",
+          "startMs": 57640,
+          "endMs": 58020,
+          "probability": 0.996729
+        },
+        {
+          "index": 9,
+          "text": "new",
+          "startMs": 58020,
+          "endMs": 58540,
+          "probability": 0.995653
+        },
+        {
+          "index": 10,
+          "text": "way.",
+          "startMs": 58540,
+          "endMs": 59340,
+          "probability": 0.998778
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Pete put on the cool blue magic sunglasses.",
+      "startMs": 60580,
+      "endMs": 63500,
+      "avgLogprob": -0.076828,
+      "noSpeechProb": 0.037979,
+      "compressionRatio": 1.60241,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 60580,
+          "endMs": 60580,
+          "probability": 0.965166
+        },
+        {
+          "index": 2,
+          "text": "put",
+          "startMs": 60580,
+          "endMs": 60920,
+          "probability": 0.99638
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 60920,
+          "endMs": 61220,
+          "probability": 0.997767
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 61220,
+          "endMs": 61500,
+          "probability": 0.994254
+        },
+        {
+          "index": 5,
+          "text": "cool",
+          "startMs": 61500,
+          "endMs": 61880,
+          "probability": 0.925814
+        },
+        {
+          "index": 6,
+          "text": "blue",
+          "startMs": 61880,
+          "endMs": 62300,
+          "probability": 0.827745
+        },
+        {
+          "index": 7,
+          "text": "magic",
+          "startMs": 62300,
+          "endMs": 62800,
+          "probability": 0.971715
+        },
+        {
+          "index": 8,
+          "text": "sunglasses.",
+          "startMs": 62800,
+          "endMs": 63500,
+          "probability": 0.996573
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "He looked all around, right on.",
+      "startMs": 64500,
+      "endMs": 68600,
+      "avgLogprob": -0.076828,
+      "noSpeechProb": 0.037979,
+      "compressionRatio": 1.60241,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 64500,
+          "endMs": 64780,
+          "probability": 0.995059
+        },
+        {
+          "index": 2,
+          "text": "looked",
+          "startMs": 64780,
+          "endMs": 65140,
+          "probability": 0.995419
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 65140,
+          "endMs": 65660,
+          "probability": 0.998456
+        },
+        {
+          "index": 4,
+          "text": "around,",
+          "startMs": 65660,
+          "endMs": 66240,
+          "probability": 0.995749
+        },
+        {
+          "index": 5,
+          "text": "right",
+          "startMs": 67260,
+          "endMs": 67700,
+          "probability": 0.933217
+        },
+        {
+          "index": 6,
+          "text": "on.",
+          "startMs": 67700,
+          "endMs": 68600,
+          "probability": 0.997419
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "The birds are singing. The sky is bright. The sun is shining.",
+      "startMs": 69620,
+      "endMs": 74740,
+      "avgLogprob": -0.076828,
+      "noSpeechProb": 0.037979,
+      "compressionRatio": 1.60241,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 69620,
+          "endMs": 69920,
+          "probability": 0.915397
+        },
+        {
+          "index": 2,
+          "text": "birds",
+          "startMs": 69920,
+          "endMs": 70340,
+          "probability": 0.997091
+        },
+        {
+          "index": 3,
+          "text": "are",
+          "startMs": 70340,
+          "endMs": 70600,
+          "probability": 0.997319
+        },
+        {
+          "index": 4,
+          "text": "singing.",
+          "startMs": 70600,
+          "endMs": 71140,
+          "probability": 0.99717
+        },
+        {
+          "index": 5,
+          "text": "The",
+          "startMs": 71580,
+          "endMs": 71760,
+          "probability": 0.99679
+        },
+        {
+          "index": 6,
+          "text": "sky",
+          "startMs": 71760,
+          "endMs": 72200,
+          "probability": 0.994838
+        },
+        {
+          "index": 7,
+          "text": "is",
+          "startMs": 72200,
+          "endMs": 72500,
+          "probability": 0.95355
+        },
+        {
+          "index": 8,
+          "text": "bright.",
+          "startMs": 72500,
+          "endMs": 72940,
+          "probability": 0.998895
+        },
+        {
+          "index": 9,
+          "text": "The",
+          "startMs": 73620,
+          "endMs": 73780,
+          "probability": 0.997163
+        },
+        {
+          "index": 10,
+          "text": "sun",
+          "startMs": 73780,
+          "endMs": 74120,
+          "probability": 0.987574
+        },
+        {
+          "index": 11,
+          "text": "is",
+          "startMs": 74120,
+          "endMs": 74340,
+          "probability": 0.998834
+        },
+        {
+          "index": 12,
+          "text": "shining.",
+          "startMs": 74340,
+          "endMs": 74740,
+          "probability": 0.995799
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "I'm feeling all right.",
+      "startMs": 75440,
+      "endMs": 77420,
+      "avgLogprob": -0.076828,
+      "noSpeechProb": 0.037979,
+      "compressionRatio": 1.60241,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 75440,
+          "endMs": 75880,
+          "probability": 0.992595
+        },
+        {
+          "index": 2,
+          "text": "feeling",
+          "startMs": 75880,
+          "endMs": 76260,
+          "probability": 0.999365
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 76260,
+          "endMs": 76920,
+          "probability": 0.975049
+        },
+        {
+          "index": 4,
+          "text": "right.",
+          "startMs": 76920,
+          "endMs": 77420,
+          "probability": 0.998419
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Pete thanked Grumpy Toad for the cool blue magic sunglasses.",
+      "startMs": 78500,
+      "endMs": 83040,
+      "avgLogprob": -0.076828,
+      "noSpeechProb": 0.037979,
+      "compressionRatio": 1.60241,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 78500,
+          "endMs": 78780,
+          "probability": 0.990963
+        },
+        {
+          "index": 2,
+          "text": "thanked",
+          "startMs": 78780,
+          "endMs": 79180,
+          "probability": 0.95895
+        },
+        {
+          "index": 3,
+          "text": "Grumpy",
+          "startMs": 79180,
+          "endMs": 79640,
+          "probability": 0.951282
+        },
+        {
+          "index": 4,
+          "text": "Toad",
+          "startMs": 79640,
+          "endMs": 80000,
+          "probability": 0.991998
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 80000,
+          "endMs": 80400,
+          "probability": 0.993177
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 80400,
+          "endMs": 80580,
+          "probability": 0.997841
+        },
+        {
+          "index": 7,
+          "text": "cool",
+          "startMs": 80580,
+          "endMs": 81080,
+          "probability": 0.994826
+        },
+        {
+          "index": 8,
+          "text": "blue",
+          "startMs": 81080,
+          "endMs": 81580,
+          "probability": 0.981032
+        },
+        {
+          "index": 9,
+          "text": "magic",
+          "startMs": 81580,
+          "endMs": 82260,
+          "probability": 0.987011
+        },
+        {
+          "index": 10,
+          "text": "sunglasses.",
+          "startMs": 82260,
+          "endMs": 83040,
+          "probability": 0.993129
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "He went on his way, and soon he saw Squirrel.",
+      "startMs": 83040,
+      "endMs": 87780,
+      "avgLogprob": -0.10323,
+      "noSpeechProb": 0.026882,
+      "compressionRatio": 1.424051,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 83040,
+          "endMs": 84120,
+          "probability": 0.161153
+        },
+        {
+          "index": 2,
+          "text": "went",
+          "startMs": 84120,
+          "endMs": 84360,
+          "probability": 0.993635
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 84360,
+          "endMs": 84660,
+          "probability": 0.996663
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 84660,
+          "endMs": 84860,
+          "probability": 0.993974
+        },
+        {
+          "index": 5,
+          "text": "way,",
+          "startMs": 84860,
+          "endMs": 85220,
+          "probability": 0.998789
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 85900,
+          "endMs": 86160,
+          "probability": 0.961049
+        },
+        {
+          "index": 7,
+          "text": "soon",
+          "startMs": 86160,
+          "endMs": 86580,
+          "probability": 0.99708
+        },
+        {
+          "index": 8,
+          "text": "he",
+          "startMs": 86580,
+          "endMs": 87020,
+          "probability": 0.820714
+        },
+        {
+          "index": 9,
+          "text": "saw",
+          "startMs": 87020,
+          "endMs": 87360,
+          "probability": 0.999322
+        },
+        {
+          "index": 10,
+          "text": "Squirrel.",
+          "startMs": 87360,
+          "endMs": 87780,
+          "probability": 0.748141
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Squirrel did not look happy. Pete said, what's wrong, Squirrel?",
+      "startMs": 88660,
+      "endMs": 93980,
+      "avgLogprob": -0.10323,
+      "noSpeechProb": 0.026882,
+      "compressionRatio": 1.424051,
+      "words": [
+        {
+          "index": 1,
+          "text": "Squirrel",
+          "startMs": 88660,
+          "endMs": 89040,
+          "probability": 0.989373
+        },
+        {
+          "index": 2,
+          "text": "did",
+          "startMs": 89040,
+          "endMs": 89400,
+          "probability": 0.993407
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 89400,
+          "endMs": 89860,
+          "probability": 0.989434
+        },
+        {
+          "index": 4,
+          "text": "look",
+          "startMs": 89860,
+          "endMs": 90140,
+          "probability": 0.998936
+        },
+        {
+          "index": 5,
+          "text": "happy.",
+          "startMs": 90140,
+          "endMs": 90700,
+          "probability": 0.998711
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 91540,
+          "endMs": 91580,
+          "probability": 0.9956
+        },
+        {
+          "index": 7,
+          "text": "said,",
+          "startMs": 91580,
+          "endMs": 91980,
+          "probability": 0.997479
+        },
+        {
+          "index": 8,
+          "text": "what's",
+          "startMs": 92740,
+          "endMs": 93200,
+          "probability": 0.535224
+        },
+        {
+          "index": 9,
+          "text": "wrong,",
+          "startMs": 93200,
+          "endMs": 93540,
+          "probability": 0.999731
+        },
+        {
+          "index": 10,
+          "text": "Squirrel?",
+          "startMs": 93920,
+          "endMs": 93980,
+          "probability": 0.965724
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "I'm so mad. Nothing is going my way.",
+      "startMs": 95680,
+      "endMs": 100640,
+      "avgLogprob": -0.10323,
+      "noSpeechProb": 0.026882,
+      "compressionRatio": 1.424051,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 95680,
+          "endMs": 96080,
+          "probability": 0.981738
+        },
+        {
+          "index": 2,
+          "text": "so",
+          "startMs": 96080,
+          "endMs": 96640,
+          "probability": 0.997924
+        },
+        {
+          "index": 3,
+          "text": "mad.",
+          "startMs": 96640,
+          "endMs": 97580,
+          "probability": 0.979134
+        },
+        {
+          "index": 4,
+          "text": "Nothing",
+          "startMs": 98700,
+          "endMs": 99220,
+          "probability": 0.995267
+        },
+        {
+          "index": 5,
+          "text": "is",
+          "startMs": 99220,
+          "endMs": 99500,
+          "probability": 0.99883
+        },
+        {
+          "index": 6,
+          "text": "going",
+          "startMs": 99500,
+          "endMs": 99760,
+          "probability": 0.999489
+        },
+        {
+          "index": 7,
+          "text": "my",
+          "startMs": 99760,
+          "endMs": 100160,
+          "probability": 0.999001
+        },
+        {
+          "index": 8,
+          "text": "way.",
+          "startMs": 100160,
+          "endMs": 100640,
+          "probability": 0.999418
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "I only found one acorn today. Pete said, try these cool blue magic sunglasses.",
+      "startMs": 101280,
+      "endMs": 110520,
+      "avgLogprob": -0.10323,
+      "noSpeechProb": 0.026882,
+      "compressionRatio": 1.424051,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 101280,
+          "endMs": 101540,
+          "probability": 0.999019
+        },
+        {
+          "index": 2,
+          "text": "only",
+          "startMs": 101540,
+          "endMs": 102000,
+          "probability": 0.997097
+        },
+        {
+          "index": 3,
+          "text": "found",
+          "startMs": 102000,
+          "endMs": 102600,
+          "probability": 0.999575
+        },
+        {
+          "index": 4,
+          "text": "one",
+          "startMs": 102600,
+          "endMs": 103160,
+          "probability": 0.992846
+        },
+        {
+          "index": 5,
+          "text": "acorn",
+          "startMs": 103160,
+          "endMs": 104020,
+          "probability": 0.887507
+        },
+        {
+          "index": 6,
+          "text": "today.",
+          "startMs": 104020,
+          "endMs": 104600,
+          "probability": 0.997689
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 105900,
+          "endMs": 106160,
+          "probability": 0.9983
+        },
+        {
+          "index": 8,
+          "text": "said,",
+          "startMs": 106160,
+          "endMs": 106580,
+          "probability": 0.999182
+        },
+        {
+          "index": 9,
+          "text": "try",
+          "startMs": 107200,
+          "endMs": 107600,
+          "probability": 0.961331
+        },
+        {
+          "index": 10,
+          "text": "these",
+          "startMs": 107600,
+          "endMs": 108200,
+          "probability": 0.994243
+        },
+        {
+          "index": 11,
+          "text": "cool",
+          "startMs": 108200,
+          "endMs": 108780,
+          "probability": 0.991075
+        },
+        {
+          "index": 12,
+          "text": "blue",
+          "startMs": 108780,
+          "endMs": 109260,
+          "probability": 0.791754
+        },
+        {
+          "index": 13,
+          "text": "magic",
+          "startMs": 109260,
+          "endMs": 109840,
+          "probability": 0.957837
+        },
+        {
+          "index": 14,
+          "text": "sunglasses.",
+          "startMs": 109840,
+          "endMs": 110520,
+          "probability": 0.995348
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "They help you see things in a whole new way.",
+      "startMs": 110520,
+      "endMs": 115300,
+      "avgLogprob": -0.063741,
+      "noSpeechProb": 0.082782,
+      "compressionRatio": 1.450549,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 110520,
+          "endMs": 111640,
+          "probability": 0.159375
+        },
+        {
+          "index": 2,
+          "text": "help",
+          "startMs": 111640,
+          "endMs": 111960,
+          "probability": 0.978642
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 111960,
+          "endMs": 112220,
+          "probability": 0.997638
+        },
+        {
+          "index": 4,
+          "text": "see",
+          "startMs": 112220,
+          "endMs": 112560,
+          "probability": 0.992136
+        },
+        {
+          "index": 5,
+          "text": "things",
+          "startMs": 112560,
+          "endMs": 113060,
+          "probability": 0.996795
+        },
+        {
+          "index": 6,
+          "text": "in",
+          "startMs": 113060,
+          "endMs": 113360,
+          "probability": 0.97223
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 113360,
+          "endMs": 113580,
+          "probability": 0.990844
+        },
+        {
+          "index": 8,
+          "text": "whole",
+          "startMs": 113580,
+          "endMs": 113940,
+          "probability": 0.995355
+        },
+        {
+          "index": 9,
+          "text": "new",
+          "startMs": 113940,
+          "endMs": 114480,
+          "probability": 0.996445
+        },
+        {
+          "index": 10,
+          "text": "way.",
+          "startMs": 114480,
+          "endMs": 115300,
+          "probability": 0.998641
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Squirrel put on the cool blue magic sunglasses and looked all around.",
+      "startMs": 117180,
+      "endMs": 122780,
+      "avgLogprob": -0.063741,
+      "noSpeechProb": 0.082782,
+      "compressionRatio": 1.450549,
+      "words": [
+        {
+          "index": 1,
+          "text": "Squirrel",
+          "startMs": 117180,
+          "endMs": 117200,
+          "probability": 0.886977
+        },
+        {
+          "index": 2,
+          "text": "put",
+          "startMs": 117200,
+          "endMs": 117660,
+          "probability": 0.993023
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 117660,
+          "endMs": 117960,
+          "probability": 0.997128
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 117960,
+          "endMs": 118200,
+          "probability": 0.995707
+        },
+        {
+          "index": 5,
+          "text": "cool",
+          "startMs": 118200,
+          "endMs": 118680,
+          "probability": 0.982802
+        },
+        {
+          "index": 6,
+          "text": "blue",
+          "startMs": 118680,
+          "endMs": 119140,
+          "probability": 0.858472
+        },
+        {
+          "index": 7,
+          "text": "magic",
+          "startMs": 119140,
+          "endMs": 119700,
+          "probability": 0.956577
+        },
+        {
+          "index": 8,
+          "text": "sunglasses",
+          "startMs": 119700,
+          "endMs": 120440,
+          "probability": 0.986656
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 120440,
+          "endMs": 121220,
+          "probability": 0.849478
+        },
+        {
+          "index": 10,
+          "text": "looked",
+          "startMs": 121220,
+          "endMs": 121500,
+          "probability": 0.991159
+        },
+        {
+          "index": 11,
+          "text": "all",
+          "startMs": 121500,
+          "endMs": 122100,
+          "probability": 0.997398
+        },
+        {
+          "index": 12,
+          "text": "around.",
+          "startMs": 122100,
+          "endMs": 122780,
+          "probability": 0.995953
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Awesome! The birds are singing. The sky is bright. The sun is shining.",
+      "startMs": 123980,
+      "endMs": 130600,
+      "avgLogprob": -0.063741,
+      "noSpeechProb": 0.082782,
+      "compressionRatio": 1.450549,
+      "words": [
+        {
+          "index": 1,
+          "text": "Awesome!",
+          "startMs": 123980,
+          "endMs": 124820,
+          "probability": 0.37921
+        },
+        {
+          "index": 2,
+          "text": "The",
+          "startMs": 125760,
+          "endMs": 126000,
+          "probability": 0.982559
+        },
+        {
+          "index": 3,
+          "text": "birds",
+          "startMs": 126000,
+          "endMs": 126380,
+          "probability": 0.99332
+        },
+        {
+          "index": 4,
+          "text": "are",
+          "startMs": 126380,
+          "endMs": 126640,
+          "probability": 0.99792
+        },
+        {
+          "index": 5,
+          "text": "singing.",
+          "startMs": 126640,
+          "endMs": 127120,
+          "probability": 0.99747
+        },
+        {
+          "index": 6,
+          "text": "The",
+          "startMs": 127520,
+          "endMs": 127700,
+          "probability": 0.994363
+        },
+        {
+          "index": 7,
+          "text": "sky",
+          "startMs": 127700,
+          "endMs": 128080,
+          "probability": 0.995615
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 128080,
+          "endMs": 128360,
+          "probability": 0.974299
+        },
+        {
+          "index": 9,
+          "text": "bright.",
+          "startMs": 128360,
+          "endMs": 128760,
+          "probability": 0.998597
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 129440,
+          "endMs": 129600,
+          "probability": 0.99624
+        },
+        {
+          "index": 11,
+          "text": "sun",
+          "startMs": 129600,
+          "endMs": 129940,
+          "probability": 0.982814
+        },
+        {
+          "index": 12,
+          "text": "is",
+          "startMs": 129940,
+          "endMs": 130140,
+          "probability": 0.998331
+        },
+        {
+          "index": 13,
+          "text": "shining.",
+          "startMs": 130140,
+          "endMs": 130600,
+          "probability": 0.994874
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "I'm feeling all right.",
+      "startMs": 131400,
+      "endMs": 133340,
+      "avgLogprob": -0.063741,
+      "noSpeechProb": 0.082782,
+      "compressionRatio": 1.450549,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 131400,
+          "endMs": 131880,
+          "probability": 0.991319
+        },
+        {
+          "index": 2,
+          "text": "feeling",
+          "startMs": 131880,
+          "endMs": 132260,
+          "probability": 0.999141
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 132260,
+          "endMs": 132840,
+          "probability": 0.939212
+        },
+        {
+          "index": 4,
+          "text": "right.",
+          "startMs": 132840,
+          "endMs": 133340,
+          "probability": 0.997808
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Pete said goodbye to Squirrel and continued on his way.",
+      "startMs": 134560,
+      "endMs": 138280,
+      "avgLogprob": -0.063741,
+      "noSpeechProb": 0.082782,
+      "compressionRatio": 1.450549,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 134560,
+          "endMs": 134740,
+          "probability": 0.991823
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 134740,
+          "endMs": 135080,
+          "probability": 0.99776
+        },
+        {
+          "index": 3,
+          "text": "goodbye",
+          "startMs": 135080,
+          "endMs": 135520,
+          "probability": 0.873601
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 135520,
+          "endMs": 135880,
+          "probability": 0.99825
+        },
+        {
+          "index": 5,
+          "text": "Squirrel",
+          "startMs": 135880,
+          "endMs": 136280,
+          "probability": 0.76652
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 136280,
+          "endMs": 136700,
+          "probability": 0.93371
+        },
+        {
+          "index": 7,
+          "text": "continued",
+          "startMs": 136700,
+          "endMs": 137240,
+          "probability": 0.997154
+        },
+        {
+          "index": 8,
+          "text": "on",
+          "startMs": 137240,
+          "endMs": 137580,
+          "probability": 0.998185
+        },
+        {
+          "index": 9,
+          "text": "his",
+          "startMs": 137580,
+          "endMs": 137780,
+          "probability": 0.99872
+        },
+        {
+          "index": 10,
+          "text": "way.",
+          "startMs": 137780,
+          "endMs": 138280,
+          "probability": 0.999449
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Soon he saw his friend Turtle. Turtle did not look happy.",
+      "startMs": 138280,
+      "endMs": 144020,
+      "avgLogprob": -0.064534,
+      "noSpeechProb": 0.032608,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "Soon",
+          "startMs": 138280,
+          "endMs": 139340,
+          "probability": 0.127202
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 139340,
+          "endMs": 139680,
+          "probability": 0.687058
+        },
+        {
+          "index": 3,
+          "text": "saw",
+          "startMs": 139680,
+          "endMs": 139980,
+          "probability": 0.998623
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 139980,
+          "endMs": 140220,
+          "probability": 0.996988
+        },
+        {
+          "index": 5,
+          "text": "friend",
+          "startMs": 140220,
+          "endMs": 140600,
+          "probability": 0.997351
+        },
+        {
+          "index": 6,
+          "text": "Turtle.",
+          "startMs": 140600,
+          "endMs": 141020,
+          "probability": 0.604854
+        },
+        {
+          "index": 7,
+          "text": "Turtle",
+          "startMs": 141780,
+          "endMs": 142140,
+          "probability": 0.990705
+        },
+        {
+          "index": 8,
+          "text": "did",
+          "startMs": 142140,
+          "endMs": 142520,
+          "probability": 0.989419
+        },
+        {
+          "index": 9,
+          "text": "not",
+          "startMs": 142520,
+          "endMs": 142980,
+          "probability": 0.994703
+        },
+        {
+          "index": 10,
+          "text": "look",
+          "startMs": 142980,
+          "endMs": 143360,
+          "probability": 0.998394
+        },
+        {
+          "index": 11,
+          "text": "happy.",
+          "startMs": 143360,
+          "endMs": 144020,
+          "probability": 0.997539
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "What's wrong, Turtle? Pete asked.",
+      "startMs": 145240,
+      "endMs": 147700,
+      "avgLogprob": -0.064534,
+      "noSpeechProb": 0.032608,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "What's",
+          "startMs": 145240,
+          "endMs": 145540,
+          "probability": 0.530455
+        },
+        {
+          "index": 2,
+          "text": "wrong,",
+          "startMs": 145540,
+          "endMs": 145880,
+          "probability": 0.998516
+        },
+        {
+          "index": 3,
+          "text": "Turtle?",
+          "startMs": 146160,
+          "endMs": 146360,
+          "probability": 0.96928
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 147040,
+          "endMs": 147200,
+          "probability": 0.992388
+        },
+        {
+          "index": 5,
+          "text": "asked.",
+          "startMs": 147200,
+          "endMs": 147700,
+          "probability": 0.994915
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "I'm so fresh, cool blue magic sunglasses. They help you see things in a whole new way.",
+      "startMs": 148980,
+      "endMs": 157620,
+      "avgLogprob": -0.064534,
+      "noSpeechProb": 0.032608,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 148980,
+          "endMs": 149300,
+          "probability": 0.980126
+        },
+        {
+          "index": 2,
+          "text": "so",
+          "startMs": 149300,
+          "endMs": 149800,
+          "probability": 0.95625
+        },
+        {
+          "index": 3,
+          "text": "fresh,",
+          "startMs": 149800,
+          "endMs": 150420,
+          "probability": 0.757608
+        },
+        {
+          "index": 4,
+          "text": "cool",
+          "startMs": 150940,
+          "endMs": 151100,
+          "probability": 0.847418
+        },
+        {
+          "index": 5,
+          "text": "blue",
+          "startMs": 151100,
+          "endMs": 151600,
+          "probability": 0.470655
+        },
+        {
+          "index": 6,
+          "text": "magic",
+          "startMs": 151600,
+          "endMs": 152280,
+          "probability": 0.870747
+        },
+        {
+          "index": 7,
+          "text": "sunglasses.",
+          "startMs": 152280,
+          "endMs": 152940,
+          "probability": 0.995728
+        },
+        {
+          "index": 8,
+          "text": "They",
+          "startMs": 153840,
+          "endMs": 154200,
+          "probability": 0.998187
+        },
+        {
+          "index": 9,
+          "text": "help",
+          "startMs": 154200,
+          "endMs": 154480,
+          "probability": 0.996503
+        },
+        {
+          "index": 10,
+          "text": "you",
+          "startMs": 154480,
+          "endMs": 154720,
+          "probability": 0.999397
+        },
+        {
+          "index": 11,
+          "text": "see",
+          "startMs": 154720,
+          "endMs": 155060,
+          "probability": 0.996607
+        },
+        {
+          "index": 12,
+          "text": "things",
+          "startMs": 155060,
+          "endMs": 155580,
+          "probability": 0.997287
+        },
+        {
+          "index": 13,
+          "text": "in",
+          "startMs": 155580,
+          "endMs": 155820,
+          "probability": 0.994706
+        },
+        {
+          "index": 14,
+          "text": "a",
+          "startMs": 155820,
+          "endMs": 156020,
+          "probability": 0.996407
+        },
+        {
+          "index": 15,
+          "text": "whole",
+          "startMs": 156020,
+          "endMs": 156460,
+          "probability": 0.997899
+        },
+        {
+          "index": 16,
+          "text": "new",
+          "startMs": 156460,
+          "endMs": 156940,
+          "probability": 0.998331
+        },
+        {
+          "index": 17,
+          "text": "way.",
+          "startMs": 156940,
+          "endMs": 157620,
+          "probability": 0.999222
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Turtle put on the cool blue magic sunglasses and looked all around.",
+      "startMs": 158900,
+      "endMs": 164380,
+      "avgLogprob": -0.064534,
+      "noSpeechProb": 0.032608,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "Turtle",
+          "startMs": 158900,
+          "endMs": 159180,
+          "probability": 0.991404
+        },
+        {
+          "index": 2,
+          "text": "put",
+          "startMs": 159180,
+          "endMs": 159480,
+          "probability": 0.998214
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 159480,
+          "endMs": 159720,
+          "probability": 0.998657
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 159720,
+          "endMs": 159900,
+          "probability": 0.997385
+        },
+        {
+          "index": 5,
+          "text": "cool",
+          "startMs": 159900,
+          "endMs": 160360,
+          "probability": 0.994009
+        },
+        {
+          "index": 6,
+          "text": "blue",
+          "startMs": 160360,
+          "endMs": 160780,
+          "probability": 0.963646
+        },
+        {
+          "index": 7,
+          "text": "magic",
+          "startMs": 160780,
+          "endMs": 161300,
+          "probability": 0.992317
+        },
+        {
+          "index": 8,
+          "text": "sunglasses",
+          "startMs": 161300,
+          "endMs": 162180,
+          "probability": 0.998646
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 162180,
+          "endMs": 162880,
+          "probability": 0.897511
+        },
+        {
+          "index": 10,
+          "text": "looked",
+          "startMs": 162880,
+          "endMs": 163120,
+          "probability": 0.994896
+        },
+        {
+          "index": 11,
+          "text": "all",
+          "startMs": 163120,
+          "endMs": 163740,
+          "probability": 0.998532
+        },
+        {
+          "index": 12,
+          "text": "around.",
+          "startMs": 163740,
+          "endMs": 164380,
+          "probability": 0.997446
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Far out! The birds are singing. The sky is bright. The sun is shining.",
+      "startMs": 165380,
+      "endMs": 172940,
+      "avgLogprob": -0.059198,
+      "noSpeechProb": 0.063527,
+      "compressionRatio": 1.434483,
+      "words": [
+        {
+          "index": 1,
+          "text": "Far",
+          "startMs": 165380,
+          "endMs": 166160,
+          "probability": 0.060427
+        },
+        {
+          "index": 2,
+          "text": "out!",
+          "startMs": 166160,
+          "endMs": 166900,
+          "probability": 0.720308
+        },
+        {
+          "index": 3,
+          "text": "The",
+          "startMs": 167860,
+          "endMs": 168100,
+          "probability": 0.971742
+        },
+        {
+          "index": 4,
+          "text": "birds",
+          "startMs": 168100,
+          "endMs": 168560,
+          "probability": 0.992459
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 168560,
+          "endMs": 168800,
+          "probability": 0.997595
+        },
+        {
+          "index": 6,
+          "text": "singing.",
+          "startMs": 168800,
+          "endMs": 169220,
+          "probability": 0.991686
+        },
+        {
+          "index": 7,
+          "text": "The",
+          "startMs": 169880,
+          "endMs": 169980,
+          "probability": 0.993187
+        },
+        {
+          "index": 8,
+          "text": "sky",
+          "startMs": 169980,
+          "endMs": 170460,
+          "probability": 0.987817
+        },
+        {
+          "index": 9,
+          "text": "is",
+          "startMs": 170460,
+          "endMs": 170720,
+          "probability": 0.90092
+        },
+        {
+          "index": 10,
+          "text": "bright.",
+          "startMs": 170720,
+          "endMs": 171140,
+          "probability": 0.997804
+        },
+        {
+          "index": 11,
+          "text": "The",
+          "startMs": 171880,
+          "endMs": 172020,
+          "probability": 0.995022
+        },
+        {
+          "index": 12,
+          "text": "sun",
+          "startMs": 172020,
+          "endMs": 172340,
+          "probability": 0.986805
+        },
+        {
+          "index": 13,
+          "text": "is",
+          "startMs": 172340,
+          "endMs": 172580,
+          "probability": 0.997256
+        },
+        {
+          "index": 14,
+          "text": "shining.",
+          "startMs": 172580,
+          "endMs": 172940,
+          "probability": 0.993835
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "I'm feeling all right.",
+      "startMs": 173860,
+      "endMs": 175680,
+      "avgLogprob": -0.059198,
+      "noSpeechProb": 0.063527,
+      "compressionRatio": 1.434483,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 173860,
+          "endMs": 174300,
+          "probability": 0.982474
+        },
+        {
+          "index": 2,
+          "text": "feeling",
+          "startMs": 174300,
+          "endMs": 174660,
+          "probability": 0.998627
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 174660,
+          "endMs": 175180,
+          "probability": 0.828288
+        },
+        {
+          "index": 4,
+          "text": "right.",
+          "startMs": 175180,
+          "endMs": 175680,
+          "probability": 0.996928
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Pete kept rolling along until he saw Alligator. Alligator did not look happy.",
+      "startMs": 176980,
+      "endMs": 184280,
+      "avgLogprob": -0.059198,
+      "noSpeechProb": 0.063527,
+      "compressionRatio": 1.434483,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 176980,
+          "endMs": 177180,
+          "probability": 0.985402
+        },
+        {
+          "index": 2,
+          "text": "kept",
+          "startMs": 177180,
+          "endMs": 177560,
+          "probability": 0.997514
+        },
+        {
+          "index": 3,
+          "text": "rolling",
+          "startMs": 177560,
+          "endMs": 178020,
+          "probability": 0.992695
+        },
+        {
+          "index": 4,
+          "text": "along",
+          "startMs": 178020,
+          "endMs": 178700,
+          "probability": 0.996507
+        },
+        {
+          "index": 5,
+          "text": "until",
+          "startMs": 178700,
+          "endMs": 179400,
+          "probability": 0.894201
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 179400,
+          "endMs": 179660,
+          "probability": 0.998197
+        },
+        {
+          "index": 7,
+          "text": "saw",
+          "startMs": 179660,
+          "endMs": 180100,
+          "probability": 0.998759
+        },
+        {
+          "index": 8,
+          "text": "Alligator.",
+          "startMs": 180100,
+          "endMs": 180840,
+          "probability": 0.842234
+        },
+        {
+          "index": 9,
+          "text": "Alligator",
+          "startMs": 181800,
+          "endMs": 182500,
+          "probability": 0.994551
+        },
+        {
+          "index": 10,
+          "text": "did",
+          "startMs": 182500,
+          "endMs": 182960,
+          "probability": 0.993903
+        },
+        {
+          "index": 11,
+          "text": "not",
+          "startMs": 182960,
+          "endMs": 183420,
+          "probability": 0.997998
+        },
+        {
+          "index": 12,
+          "text": "look",
+          "startMs": 183420,
+          "endMs": 183720,
+          "probability": 0.998928
+        },
+        {
+          "index": 13,
+          "text": "happy.",
+          "startMs": 183720,
+          "endMs": 184280,
+          "probability": 0.998708
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "What's wrong, Alligator? Pete asked.",
+      "startMs": 185360,
+      "endMs": 188260,
+      "avgLogprob": -0.059198,
+      "noSpeechProb": 0.063527,
+      "compressionRatio": 1.434483,
+      "words": [
+        {
+          "index": 1,
+          "text": "What's",
+          "startMs": 185360,
+          "endMs": 185820,
+          "probability": 0.769993
+        },
+        {
+          "index": 2,
+          "text": "wrong,",
+          "startMs": 185820,
+          "endMs": 186120,
+          "probability": 0.998983
+        },
+        {
+          "index": 3,
+          "text": "Alligator?",
+          "startMs": 186340,
+          "endMs": 186800,
+          "probability": 0.989956
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 187580,
+          "endMs": 187800,
+          "probability": 0.99617
+        },
+        {
+          "index": 5,
+          "text": "asked.",
+          "startMs": 187800,
+          "endMs": 188260,
+          "probability": 0.995247
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "I'm so sad. Nothing is going my way. No one wants to play with me today.",
+      "startMs": 189540,
+      "endMs": 198100,
+      "avgLogprob": -0.046114,
+      "noSpeechProb": 0.056049,
+      "compressionRatio": 1.509554,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 189540,
+          "endMs": 190380,
+          "probability": 0.79314
+        },
+        {
+          "index": 2,
+          "text": "so",
+          "startMs": 190380,
+          "endMs": 190960,
+          "probability": 0.986885
+        },
+        {
+          "index": 3,
+          "text": "sad.",
+          "startMs": 190960,
+          "endMs": 191920,
+          "probability": 0.981656
+        },
+        {
+          "index": 4,
+          "text": "Nothing",
+          "startMs": 192960,
+          "endMs": 193160,
+          "probability": 0.988144
+        },
+        {
+          "index": 5,
+          "text": "is",
+          "startMs": 193160,
+          "endMs": 193520,
+          "probability": 0.997142
+        },
+        {
+          "index": 6,
+          "text": "going",
+          "startMs": 193520,
+          "endMs": 193800,
+          "probability": 0.998869
+        },
+        {
+          "index": 7,
+          "text": "my",
+          "startMs": 193800,
+          "endMs": 194200,
+          "probability": 0.996627
+        },
+        {
+          "index": 8,
+          "text": "way.",
+          "startMs": 194200,
+          "endMs": 194720,
+          "probability": 0.997863
+        },
+        {
+          "index": 9,
+          "text": "No",
+          "startMs": 195500,
+          "endMs": 195760,
+          "probability": 0.993116
+        },
+        {
+          "index": 10,
+          "text": "one",
+          "startMs": 195760,
+          "endMs": 195960,
+          "probability": 0.988573
+        },
+        {
+          "index": 11,
+          "text": "wants",
+          "startMs": 195960,
+          "endMs": 196340,
+          "probability": 0.997252
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 196340,
+          "endMs": 196580,
+          "probability": 0.99891
+        },
+        {
+          "index": 13,
+          "text": "play",
+          "startMs": 196580,
+          "endMs": 196880,
+          "probability": 0.999351
+        },
+        {
+          "index": 14,
+          "text": "with",
+          "startMs": 196880,
+          "endMs": 197100,
+          "probability": 0.99912
+        },
+        {
+          "index": 15,
+          "text": "me",
+          "startMs": 197100,
+          "endMs": 197360,
+          "probability": 0.999238
+        },
+        {
+          "index": 16,
+          "text": "today.",
+          "startMs": 197360,
+          "endMs": 198100,
+          "probability": 0.997758
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "Pete said, try these cool blue magic sunglasses. They help you see things in a whole new way.",
+      "startMs": 199200,
+      "endMs": 208380,
+      "avgLogprob": -0.046114,
+      "noSpeechProb": 0.056049,
+      "compressionRatio": 1.509554,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 199200,
+          "endMs": 199340,
+          "probability": 0.989992
+        },
+        {
+          "index": 2,
+          "text": "said,",
+          "startMs": 199340,
+          "endMs": 199780,
+          "probability": 0.997027
+        },
+        {
+          "index": 3,
+          "text": "try",
+          "startMs": 200480,
+          "endMs": 200900,
+          "probability": 0.6298
+        },
+        {
+          "index": 4,
+          "text": "these",
+          "startMs": 200900,
+          "endMs": 201440,
+          "probability": 0.991792
+        },
+        {
+          "index": 5,
+          "text": "cool",
+          "startMs": 201440,
+          "endMs": 202020,
+          "probability": 0.873686
+        },
+        {
+          "index": 6,
+          "text": "blue",
+          "startMs": 202020,
+          "endMs": 202500,
+          "probability": 0.905976
+        },
+        {
+          "index": 7,
+          "text": "magic",
+          "startMs": 202500,
+          "endMs": 203120,
+          "probability": 0.966889
+        },
+        {
+          "index": 8,
+          "text": "sunglasses.",
+          "startMs": 203120,
+          "endMs": 203800,
+          "probability": 0.997242
+        },
+        {
+          "index": 9,
+          "text": "They",
+          "startMs": 204700,
+          "endMs": 205120,
+          "probability": 0.997491
+        },
+        {
+          "index": 10,
+          "text": "help",
+          "startMs": 205120,
+          "endMs": 205400,
+          "probability": 0.99566
+        },
+        {
+          "index": 11,
+          "text": "you",
+          "startMs": 205400,
+          "endMs": 205640,
+          "probability": 0.999077
+        },
+        {
+          "index": 12,
+          "text": "see",
+          "startMs": 205640,
+          "endMs": 205920,
+          "probability": 0.997636
+        },
+        {
+          "index": 13,
+          "text": "things",
+          "startMs": 205920,
+          "endMs": 206440,
+          "probability": 0.997167
+        },
+        {
+          "index": 14,
+          "text": "in",
+          "startMs": 206440,
+          "endMs": 206700,
+          "probability": 0.99384
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 206700,
+          "endMs": 206880,
+          "probability": 0.997182
+        },
+        {
+          "index": 16,
+          "text": "whole",
+          "startMs": 206880,
+          "endMs": 207260,
+          "probability": 0.997458
+        },
+        {
+          "index": 17,
+          "text": "new",
+          "startMs": 207260,
+          "endMs": 207740,
+          "probability": 0.997262
+        },
+        {
+          "index": 18,
+          "text": "way.",
+          "startMs": 207740,
+          "endMs": 208380,
+          "probability": 0.998494
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Alligator put on the cool blue magic sunglasses and looked all around.",
+      "startMs": 209800,
+      "endMs": 215300,
+      "avgLogprob": -0.046114,
+      "noSpeechProb": 0.056049,
+      "compressionRatio": 1.509554,
+      "words": [
+        {
+          "index": 1,
+          "text": "Alligator",
+          "startMs": 209800,
+          "endMs": 210080,
+          "probability": 0.962877
+        },
+        {
+          "index": 2,
+          "text": "put",
+          "startMs": 210080,
+          "endMs": 210500,
+          "probability": 0.996204
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 210500,
+          "endMs": 210800,
+          "probability": 0.9982
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 210800,
+          "endMs": 211020,
+          "probability": 0.997356
+        },
+        {
+          "index": 5,
+          "text": "cool",
+          "startMs": 211020,
+          "endMs": 211420,
+          "probability": 0.992238
+        },
+        {
+          "index": 6,
+          "text": "blue",
+          "startMs": 211420,
+          "endMs": 211820,
+          "probability": 0.993251
+        },
+        {
+          "index": 7,
+          "text": "magic",
+          "startMs": 211820,
+          "endMs": 212260,
+          "probability": 0.986268
+        },
+        {
+          "index": 8,
+          "text": "sunglasses",
+          "startMs": 212260,
+          "endMs": 212980,
+          "probability": 0.998521
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 212980,
+          "endMs": 213860,
+          "probability": 0.83702
+        },
+        {
+          "index": 10,
+          "text": "looked",
+          "startMs": 213860,
+          "endMs": 214140,
+          "probability": 0.989173
+        },
+        {
+          "index": 11,
+          "text": "all",
+          "startMs": 214140,
+          "endMs": 214680,
+          "probability": 0.998304
+        },
+        {
+          "index": 12,
+          "text": "around.",
+          "startMs": 214680,
+          "endMs": 215300,
+          "probability": 0.99702
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Rockin'! The birds are singing. The sky is bright. The sun is shining.",
+      "startMs": 216380,
+      "endMs": 223660,
+      "avgLogprob": -0.087619,
+      "noSpeechProb": 0.025223,
+      "compressionRatio": 1.503597,
+      "words": [
+        {
+          "index": 1,
+          "text": "Rockin'!",
+          "startMs": 216380,
+          "endMs": 217420,
+          "probability": 0.371006
+        },
+        {
+          "index": 2,
+          "text": "The",
+          "startMs": 218540,
+          "endMs": 218760,
+          "probability": 0.958992
+        },
+        {
+          "index": 3,
+          "text": "birds",
+          "startMs": 218760,
+          "endMs": 219200,
+          "probability": 0.989042
+        },
+        {
+          "index": 4,
+          "text": "are",
+          "startMs": 219200,
+          "endMs": 219480,
+          "probability": 0.996721
+        },
+        {
+          "index": 5,
+          "text": "singing.",
+          "startMs": 219480,
+          "endMs": 219980,
+          "probability": 0.980283
+        },
+        {
+          "index": 6,
+          "text": "The",
+          "startMs": 220560,
+          "endMs": 220620,
+          "probability": 0.995961
+        },
+        {
+          "index": 7,
+          "text": "sky",
+          "startMs": 220620,
+          "endMs": 221020,
+          "probability": 0.998993
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 221020,
+          "endMs": 221340,
+          "probability": 0.9983
+        },
+        {
+          "index": 9,
+          "text": "bright.",
+          "startMs": 221340,
+          "endMs": 221760,
+          "probability": 0.997789
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 222480,
+          "endMs": 222620,
+          "probability": 0.99621
+        },
+        {
+          "index": 11,
+          "text": "sun",
+          "startMs": 222620,
+          "endMs": 223000,
+          "probability": 0.99084
+        },
+        {
+          "index": 12,
+          "text": "is",
+          "startMs": 223000,
+          "endMs": 223200,
+          "probability": 0.993733
+        },
+        {
+          "index": 13,
+          "text": "shining.",
+          "startMs": 223200,
+          "endMs": 223660,
+          "probability": 0.864944
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "I'm feeling all right.",
+      "startMs": 224600,
+      "endMs": 226800,
+      "avgLogprob": -0.087619,
+      "noSpeechProb": 0.025223,
+      "compressionRatio": 1.503597,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 224600,
+          "endMs": 225140,
+          "probability": 0.991638
+        },
+        {
+          "index": 2,
+          "text": "feeling",
+          "startMs": 225140,
+          "endMs": 225500,
+          "probability": 0.994441
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 225500,
+          "endMs": 226200,
+          "probability": 0.793502
+        },
+        {
+          "index": 4,
+          "text": "right.",
+          "startMs": 226200,
+          "endMs": 226800,
+          "probability": 0.985413
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Pete was rolling along and feeling all right when suddenly he fell back.",
+      "startMs": 228680,
+      "endMs": 235280,
+      "avgLogprob": -0.087619,
+      "noSpeechProb": 0.025223,
+      "compressionRatio": 1.503597,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 228680,
+          "endMs": 228800,
+          "probability": 0.987381
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 228800,
+          "endMs": 229080,
+          "probability": 0.998682
+        },
+        {
+          "index": 3,
+          "text": "rolling",
+          "startMs": 229080,
+          "endMs": 229500,
+          "probability": 0.991876
+        },
+        {
+          "index": 4,
+          "text": "along",
+          "startMs": 229500,
+          "endMs": 230060,
+          "probability": 0.996815
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 230060,
+          "endMs": 230380,
+          "probability": 0.952181
+        },
+        {
+          "index": 6,
+          "text": "feeling",
+          "startMs": 230380,
+          "endMs": 230880,
+          "probability": 0.99875
+        },
+        {
+          "index": 7,
+          "text": "all",
+          "startMs": 230880,
+          "endMs": 231520,
+          "probability": 0.992126
+        },
+        {
+          "index": 8,
+          "text": "right",
+          "startMs": 231520,
+          "endMs": 232140,
+          "probability": 0.998034
+        },
+        {
+          "index": 9,
+          "text": "when",
+          "startMs": 232140,
+          "endMs": 232820,
+          "probability": 0.444062
+        },
+        {
+          "index": 10,
+          "text": "suddenly",
+          "startMs": 232820,
+          "endMs": 233400,
+          "probability": 0.978958
+        },
+        {
+          "index": 11,
+          "text": "he",
+          "startMs": 233400,
+          "endMs": 234240,
+          "probability": 0.671646
+        },
+        {
+          "index": 12,
+          "text": "fell",
+          "startMs": 234240,
+          "endMs": 234660,
+          "probability": 0.998136
+        },
+        {
+          "index": 13,
+          "text": "back.",
+          "startMs": 234660,
+          "endMs": 235280,
+          "probability": 0.998881
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "The cool blue magic sunglasses went crack.",
+      "startMs": 236440,
+      "endMs": 240160,
+      "avgLogprob": -0.087619,
+      "noSpeechProb": 0.025223,
+      "compressionRatio": 1.503597,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 236440,
+          "endMs": 236740,
+          "probability": 0.996525
+        },
+        {
+          "index": 2,
+          "text": "cool",
+          "startMs": 236740,
+          "endMs": 237160,
+          "probability": 0.989944
+        },
+        {
+          "index": 3,
+          "text": "blue",
+          "startMs": 237160,
+          "endMs": 237580,
+          "probability": 0.809502
+        },
+        {
+          "index": 4,
+          "text": "magic",
+          "startMs": 237580,
+          "endMs": 238160,
+          "probability": 0.951682
+        },
+        {
+          "index": 5,
+          "text": "sunglasses",
+          "startMs": 238160,
+          "endMs": 238920,
+          "probability": 0.988545
+        },
+        {
+          "index": 6,
+          "text": "went",
+          "startMs": 238920,
+          "endMs": 239500,
+          "probability": 0.996149
+        },
+        {
+          "index": 7,
+          "text": "crack.",
+          "startMs": 239500,
+          "endMs": 240160,
+          "probability": 0.96104
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Uh-oh! Pete didn't know what to do without those sunglasses.",
+      "startMs": 241160,
+      "endMs": 246340,
+      "avgLogprob": -0.094675,
+      "noSpeechProb": 0.033023,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "Uh",
+          "startMs": 241160,
+          "endMs": 241540,
+          "probability": 0.709784
+        },
+        {
+          "index": 2,
+          "text": "-oh!",
+          "startMs": 241540,
+          "endMs": 241940,
+          "probability": 0.766191
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 243220,
+          "endMs": 243240,
+          "probability": 0.988217
+        },
+        {
+          "index": 4,
+          "text": "didn't",
+          "startMs": 243240,
+          "endMs": 243720,
+          "probability": 0.99528
+        },
+        {
+          "index": 5,
+          "text": "know",
+          "startMs": 243720,
+          "endMs": 244060,
+          "probability": 0.996233
+        },
+        {
+          "index": 6,
+          "text": "what",
+          "startMs": 244060,
+          "endMs": 244400,
+          "probability": 0.978812
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 244400,
+          "endMs": 244660,
+          "probability": 0.996758
+        },
+        {
+          "index": 8,
+          "text": "do",
+          "startMs": 244660,
+          "endMs": 244920,
+          "probability": 0.998723
+        },
+        {
+          "index": 9,
+          "text": "without",
+          "startMs": 244920,
+          "endMs": 245240,
+          "probability": 0.974599
+        },
+        {
+          "index": 10,
+          "text": "those",
+          "startMs": 245240,
+          "endMs": 245620,
+          "probability": 0.992539
+        },
+        {
+          "index": 11,
+          "text": "sunglasses.",
+          "startMs": 245620,
+          "endMs": 246340,
+          "probability": 0.98532
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Just then, Pete looked up at the tree. Wise old Owl said, Pete, you don't need magic sunglasses to see things in a new way.",
+      "startMs": 247940,
+      "endMs": 258720,
+      "avgLogprob": -0.094675,
+      "noSpeechProb": 0.033023,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 247940,
+          "endMs": 248240,
+          "probability": 0.995043
+        },
+        {
+          "index": 2,
+          "text": "then,",
+          "startMs": 248240,
+          "endMs": 248760,
+          "probability": 0.997351
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 249320,
+          "endMs": 249540,
+          "probability": 0.996531
+        },
+        {
+          "index": 4,
+          "text": "looked",
+          "startMs": 249540,
+          "endMs": 249840,
+          "probability": 0.997841
+        },
+        {
+          "index": 5,
+          "text": "up",
+          "startMs": 249840,
+          "endMs": 250080,
+          "probability": 0.998416
+        },
+        {
+          "index": 6,
+          "text": "at",
+          "startMs": 250080,
+          "endMs": 250280,
+          "probability": 0.9968
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 250280,
+          "endMs": 250440,
+          "probability": 0.995961
+        },
+        {
+          "index": 8,
+          "text": "tree.",
+          "startMs": 250440,
+          "endMs": 250800,
+          "probability": 0.997401
+        },
+        {
+          "index": 9,
+          "text": "Wise",
+          "startMs": 252040,
+          "endMs": 252040,
+          "probability": 0.956985
+        },
+        {
+          "index": 10,
+          "text": "old",
+          "startMs": 252040,
+          "endMs": 252360,
+          "probability": 0.694771
+        },
+        {
+          "index": 11,
+          "text": "Owl",
+          "startMs": 252360,
+          "endMs": 252680,
+          "probability": 0.554178
+        },
+        {
+          "index": 12,
+          "text": "said,",
+          "startMs": 252680,
+          "endMs": 253160,
+          "probability": 0.997049
+        },
+        {
+          "index": 13,
+          "text": "Pete,",
+          "startMs": 253920,
+          "endMs": 254060,
+          "probability": 0.525597
+        },
+        {
+          "index": 14,
+          "text": "you",
+          "startMs": 254660,
+          "endMs": 254920,
+          "probability": 0.986296
+        },
+        {
+          "index": 15,
+          "text": "don't",
+          "startMs": 254920,
+          "endMs": 255160,
+          "probability": 0.999059
+        },
+        {
+          "index": 16,
+          "text": "need",
+          "startMs": 255160,
+          "endMs": 255440,
+          "probability": 0.996595
+        },
+        {
+          "index": 17,
+          "text": "magic",
+          "startMs": 255440,
+          "endMs": 256040,
+          "probability": 0.981065
+        },
+        {
+          "index": 18,
+          "text": "sunglasses",
+          "startMs": 256040,
+          "endMs": 256620,
+          "probability": 0.99755
+        },
+        {
+          "index": 19,
+          "text": "to",
+          "startMs": 256620,
+          "endMs": 257080,
+          "probability": 0.993409
+        },
+        {
+          "index": 20,
+          "text": "see",
+          "startMs": 257080,
+          "endMs": 257380,
+          "probability": 0.999228
+        },
+        {
+          "index": 21,
+          "text": "things",
+          "startMs": 257380,
+          "endMs": 257740,
+          "probability": 0.997294
+        },
+        {
+          "index": 22,
+          "text": "in",
+          "startMs": 257740,
+          "endMs": 257960,
+          "probability": 0.998177
+        },
+        {
+          "index": 23,
+          "text": "a",
+          "startMs": 257960,
+          "endMs": 258100,
+          "probability": 0.997376
+        },
+        {
+          "index": 24,
+          "text": "new",
+          "startMs": 258100,
+          "endMs": 258260,
+          "probability": 0.998832
+        },
+        {
+          "index": 25,
+          "text": "way.",
+          "startMs": 258260,
+          "endMs": 258720,
+          "probability": 0.999378
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "Just remember to look for the good in every day.",
+      "startMs": 259520,
+      "endMs": 263260,
+      "avgLogprob": -0.094675,
+      "noSpeechProb": 0.033023,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 259520,
+          "endMs": 259840,
+          "probability": 0.99663
+        },
+        {
+          "index": 2,
+          "text": "remember",
+          "startMs": 259840,
+          "endMs": 260340,
+          "probability": 0.994807
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 260340,
+          "endMs": 260720,
+          "probability": 0.997959
+        },
+        {
+          "index": 4,
+          "text": "look",
+          "startMs": 260720,
+          "endMs": 260940,
+          "probability": 0.999217
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 260940,
+          "endMs": 261200,
+          "probability": 0.998606
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 261200,
+          "endMs": 261360,
+          "probability": 0.992603
+        },
+        {
+          "index": 7,
+          "text": "good",
+          "startMs": 261360,
+          "endMs": 261740,
+          "probability": 0.994711
+        },
+        {
+          "index": 8,
+          "text": "in",
+          "startMs": 261740,
+          "endMs": 262100,
+          "probability": 0.990592
+        },
+        {
+          "index": 9,
+          "text": "every",
+          "startMs": 262100,
+          "endMs": 262740,
+          "probability": 0.915433
+        },
+        {
+          "index": 10,
+          "text": "day.",
+          "startMs": 262740,
+          "endMs": 263260,
+          "probability": 0.999554
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "Pete looked around without his sunglasses.",
+      "startMs": 264580,
+      "endMs": 267040,
+      "avgLogprob": -0.094675,
+      "noSpeechProb": 0.033023,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 264580,
+          "endMs": 264820,
+          "probability": 0.996642
+        },
+        {
+          "index": 2,
+          "text": "looked",
+          "startMs": 264820,
+          "endMs": 265160,
+          "probability": 0.997469
+        },
+        {
+          "index": 3,
+          "text": "around",
+          "startMs": 265160,
+          "endMs": 265560,
+          "probability": 0.997757
+        },
+        {
+          "index": 4,
+          "text": "without",
+          "startMs": 265560,
+          "endMs": 266020,
+          "probability": 0.99645
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 266020,
+          "endMs": 266360,
+          "probability": 0.998481
+        },
+        {
+          "index": 6,
+          "text": "sunglasses.",
+          "startMs": 266360,
+          "endMs": 267040,
+          "probability": 0.998403
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Too cool! The birds are singing. The sky is bright. The sun is shining.",
+      "startMs": 268040,
+      "endMs": 276220,
+      "avgLogprob": -0.090692,
+      "noSpeechProb": 0.061095,
+      "compressionRatio": 1.424242,
+      "words": [
+        {
+          "index": 1,
+          "text": "Too",
+          "startMs": 268040,
+          "endMs": 268720,
+          "probability": 0.049228
+        },
+        {
+          "index": 2,
+          "text": "cool!",
+          "startMs": 268720,
+          "endMs": 269480,
+          "probability": 0.946232
+        },
+        {
+          "index": 3,
+          "text": "The",
+          "startMs": 270900,
+          "endMs": 270980,
+          "probability": 0.942332
+        },
+        {
+          "index": 4,
+          "text": "birds",
+          "startMs": 270980,
+          "endMs": 271460,
+          "probability": 0.980206
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 271460,
+          "endMs": 271760,
+          "probability": 0.993469
+        },
+        {
+          "index": 6,
+          "text": "singing.",
+          "startMs": 271760,
+          "endMs": 272220,
+          "probability": 0.991282
+        },
+        {
+          "index": 7,
+          "text": "The",
+          "startMs": 272820,
+          "endMs": 273000,
+          "probability": 0.994079
+        },
+        {
+          "index": 8,
+          "text": "sky",
+          "startMs": 273000,
+          "endMs": 273460,
+          "probability": 0.997921
+        },
+        {
+          "index": 9,
+          "text": "is",
+          "startMs": 273460,
+          "endMs": 273720,
+          "probability": 0.998338
+        },
+        {
+          "index": 10,
+          "text": "bright.",
+          "startMs": 273720,
+          "endMs": 274140,
+          "probability": 0.998027
+        },
+        {
+          "index": 11,
+          "text": "The",
+          "startMs": 274880,
+          "endMs": 274920,
+          "probability": 0.995488
+        },
+        {
+          "index": 12,
+          "text": "sun",
+          "startMs": 274920,
+          "endMs": 275300,
+          "probability": 0.988098
+        },
+        {
+          "index": 13,
+          "text": "is",
+          "startMs": 275300,
+          "endMs": 275640,
+          "probability": 0.998126
+        },
+        {
+          "index": 14,
+          "text": "shining.",
+          "startMs": 275640,
+          "endMs": 276220,
+          "probability": 0.989848
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "We're feeling all right.",
+      "startMs": 277620,
+      "endMs": 279860,
+      "avgLogprob": -0.090692,
+      "noSpeechProb": 0.061095,
+      "compressionRatio": 1.424242,
+      "words": [
+        {
+          "index": 1,
+          "text": "We're",
+          "startMs": 277620,
+          "endMs": 278100,
+          "probability": 0.980058
+        },
+        {
+          "index": 2,
+          "text": "feeling",
+          "startMs": 278100,
+          "endMs": 278620,
+          "probability": 0.998546
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 278620,
+          "endMs": 279300,
+          "probability": 0.809851
+        },
+        {
+          "index": 4,
+          "text": "right.",
+          "startMs": 279300,
+          "endMs": 279860,
+          "probability": 0.988064
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "We hope you have enjoyed this recording of Pete the Cat and His Magic Sunglasses by Kimberly and James Dean and illustrated by James Dean.",
+      "startMs": 283620,
+      "endMs": 295260,
+      "avgLogprob": -0.090692,
+      "noSpeechProb": 0.061095,
+      "compressionRatio": 1.424242,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 283620,
+          "endMs": 283880,
+          "probability": 0.875307
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 283880,
+          "endMs": 284140,
+          "probability": 0.998837
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 284140,
+          "endMs": 284340,
+          "probability": 0.997554
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 284340,
+          "endMs": 284520,
+          "probability": 0.984784
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 284520,
+          "endMs": 284960,
+          "probability": 0.997707
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 284960,
+          "endMs": 285240,
+          "probability": 0.998265
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 285240,
+          "endMs": 285820,
+          "probability": 0.998138
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 285820,
+          "endMs": 286240,
+          "probability": 0.997296
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 286240,
+          "endMs": 286900,
+          "probability": 0.722012
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 286900,
+          "endMs": 287140,
+          "probability": 0.955263
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 287140,
+          "endMs": 287440,
+          "probability": 0.938137
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 287440,
+          "endMs": 287740,
+          "probability": 0.939358
+        },
+        {
+          "index": 13,
+          "text": "His",
+          "startMs": 287740,
+          "endMs": 288000,
+          "probability": 0.892395
+        },
+        {
+          "index": 14,
+          "text": "Magic",
+          "startMs": 288000,
+          "endMs": 288520,
+          "probability": 0.983594
+        },
+        {
+          "index": 15,
+          "text": "Sunglasses",
+          "startMs": 288520,
+          "endMs": 289300,
+          "probability": 0.977418
+        },
+        {
+          "index": 16,
+          "text": "by",
+          "startMs": 289300,
+          "endMs": 290300,
+          "probability": 0.636359
+        },
+        {
+          "index": 17,
+          "text": "Kimberly",
+          "startMs": 290300,
+          "endMs": 290740,
+          "probability": 0.840312
+        },
+        {
+          "index": 18,
+          "text": "and",
+          "startMs": 290740,
+          "endMs": 291300,
+          "probability": 0.977702
+        },
+        {
+          "index": 19,
+          "text": "James",
+          "startMs": 291300,
+          "endMs": 291800,
+          "probability": 0.998575
+        },
+        {
+          "index": 20,
+          "text": "Dean",
+          "startMs": 291800,
+          "endMs": 292080,
+          "probability": 0.928316
+        },
+        {
+          "index": 21,
+          "text": "and",
+          "startMs": 292080,
+          "endMs": 292960,
+          "probability": 0.581796
+        },
+        {
+          "index": 22,
+          "text": "illustrated",
+          "startMs": 292960,
+          "endMs": 293580,
+          "probability": 0.937262
+        },
+        {
+          "index": 23,
+          "text": "by",
+          "startMs": 293580,
+          "endMs": 294140,
+          "probability": 0.997774
+        },
+        {
+          "index": 24,
+          "text": "James",
+          "startMs": 294140,
+          "endMs": 294920,
+          "probability": 0.99685
+        },
+        {
+          "index": 25,
+          "text": "Dean.",
+          "startMs": 294920,
+          "endMs": 295260,
+          "probability": 0.992571
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "This program was produced by John Marshall Media, executive producer Karen Joukonsky, text copyright 2013 by Kimberly and James Dean, illustrations copyright 2013 by James Dean, production copyright 2013 by Harper Collins Publishers, all rights reserved.",
+      "startMs": 295260,
+      "endMs": 320260,
+      "avgLogprob": -0.194151,
+      "noSpeechProb": 0.474204,
+      "compressionRatio": 1.511905,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 295260,
+          "endMs": 296360,
+          "probability": 0.237303
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 296360,
+          "endMs": 296840,
+          "probability": 0.978697
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 296840,
+          "endMs": 297100,
+          "probability": 0.995386
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 297100,
+          "endMs": 297520,
+          "probability": 0.997051
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 297520,
+          "endMs": 297900,
+          "probability": 0.994007
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 297900,
+          "endMs": 298280,
+          "probability": 0.96764
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 298280,
+          "endMs": 298620,
+          "probability": 0.974327
+        },
+        {
+          "index": 8,
+          "text": "Media,",
+          "startMs": 298620,
+          "endMs": 299160,
+          "probability": 0.964881
+        },
+        {
+          "index": 9,
+          "text": "executive",
+          "startMs": 299920,
+          "endMs": 300160,
+          "probability": 0.608476
+        },
+        {
+          "index": 10,
+          "text": "producer",
+          "startMs": 300160,
+          "endMs": 300800,
+          "probability": 0.997636
+        },
+        {
+          "index": 11,
+          "text": "Karen",
+          "startMs": 300800,
+          "endMs": 301640,
+          "probability": 0.661571
+        },
+        {
+          "index": 12,
+          "text": "Joukonsky,",
+          "startMs": 301640,
+          "endMs": 302440,
+          "probability": 0.377405
+        },
+        {
+          "index": 13,
+          "text": "text",
+          "startMs": 302980,
+          "endMs": 303420,
+          "probability": 0.96158
+        },
+        {
+          "index": 14,
+          "text": "copyright",
+          "startMs": 303420,
+          "endMs": 303960,
+          "probability": 0.979127
+        },
+        {
+          "index": 15,
+          "text": "2013",
+          "startMs": 303960,
+          "endMs": 305240,
+          "probability": 0.969696
+        },
+        {
+          "index": 16,
+          "text": "by",
+          "startMs": 305240,
+          "endMs": 305900,
+          "probability": 0.920321
+        },
+        {
+          "index": 17,
+          "text": "Kimberly",
+          "startMs": 305900,
+          "endMs": 306320,
+          "probability": 0.727195
+        },
+        {
+          "index": 18,
+          "text": "and",
+          "startMs": 306320,
+          "endMs": 306820,
+          "probability": 0.974842
+        },
+        {
+          "index": 19,
+          "text": "James",
+          "startMs": 306820,
+          "endMs": 307260,
+          "probability": 0.998532
+        },
+        {
+          "index": 20,
+          "text": "Dean,",
+          "startMs": 307260,
+          "endMs": 307520,
+          "probability": 0.95045
+        },
+        {
+          "index": 21,
+          "text": "illustrations",
+          "startMs": 308720,
+          "endMs": 308720,
+          "probability": 0.972779
+        },
+        {
+          "index": 22,
+          "text": "copyright",
+          "startMs": 308720,
+          "endMs": 309580,
+          "probability": 0.987144
+        },
+        {
+          "index": 23,
+          "text": "2013",
+          "startMs": 309580,
+          "endMs": 311040,
+          "probability": 0.963023
+        },
+        {
+          "index": 24,
+          "text": "by",
+          "startMs": 311040,
+          "endMs": 312080,
+          "probability": 0.979345
+        },
+        {
+          "index": 25,
+          "text": "James",
+          "startMs": 312080,
+          "endMs": 312520,
+          "probability": 0.998787
+        },
+        {
+          "index": 26,
+          "text": "Dean,",
+          "startMs": 312520,
+          "endMs": 312900,
+          "probability": 0.993403
+        },
+        {
+          "index": 27,
+          "text": "production",
+          "startMs": 313660,
+          "endMs": 313940,
+          "probability": 0.963013
+        },
+        {
+          "index": 28,
+          "text": "copyright",
+          "startMs": 313940,
+          "endMs": 314720,
+          "probability": 0.996981
+        },
+        {
+          "index": 29,
+          "text": "2013",
+          "startMs": 314720,
+          "endMs": 315920,
+          "probability": 0.991749
+        },
+        {
+          "index": 30,
+          "text": "by",
+          "startMs": 315920,
+          "endMs": 317020,
+          "probability": 0.988028
+        },
+        {
+          "index": 31,
+          "text": "Harper",
+          "startMs": 317020,
+          "endMs": 317360,
+          "probability": 0.994041
+        },
+        {
+          "index": 32,
+          "text": "Collins",
+          "startMs": 317360,
+          "endMs": 317820,
+          "probability": 0.540889
+        },
+        {
+          "index": 33,
+          "text": "Publishers,",
+          "startMs": 317820,
+          "endMs": 318360,
+          "probability": 0.826124
+        },
+        {
+          "index": 34,
+          "text": "all",
+          "startMs": 319200,
+          "endMs": 319460,
+          "probability": 0.872538
+        },
+        {
+          "index": 35,
+          "text": "rights",
+          "startMs": 319460,
+          "endMs": 319780,
+          "probability": 0.992187
+        },
+        {
+          "index": 36,
+          "text": "reserved.",
+          "startMs": 319780,
+          "endMs": 320260,
+          "probability": 0.996406
+        }
+      ]
+    }
+  ]
+}

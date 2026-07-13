@@ -1,0 +1,4827 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 46.005,
+  "text": "Harper and Harper Audio present Pete the Cat and the Sprinkle Stealer by Kimberly and James Dean. You know, secret agent Meow. He's also known as Pete the Cat. You've got a new case, secret agent Meow. Not that blasted agent Claw again. That evil cat robot. What is he up to now? Meow's new case hits close to home. Agent Claw stole our recipe for rainbow sprinkle cookies. The big baking contest is tomorrow. With that recipe, he'll win it all. Don't Meow tracks agent Claw with the cat track 2000. Hmm, these lead to Gus's house. Agent Meow, I'm making banana bread for the contest, but my sugar is gone. How strange, and the secret recipe isn't here either. Gus, you haven't seen agent Claw, have you? No, I haven't, but I did find this. He pointed to a line of white crystals. Aha, a sugar trail. Don't worry, my ant bots can follow this no problem. Look, it leads to Callie's house. Agent Meow, I'm baking cupcakes for the contest, but my rainbow sprinkles are gone. And there's no secret recipe hidden in here either. Gulp. Let me just finish this cupcake. Callie, have you seen agent Claw? No, I haven't, but look at this trail. Callie pointed to a trail of rainbow sprinkles. I'll use the sprinkle scanner to see where they go. The sprinkle scanner detected the rainbow sprinkles immediately. The sprinkles are leading me to Grumpy Toad's house. Why so grouchy, Grumpy Toad? I'm baking brownies for the contest, but my chocolate chips are gone. All of a sudden, there was a loud beeping. Agent Meow, I detect chocolate chips nearby. There they are. I'll use the chip-o-meter to follow their trail. Agent Meow, I'm baking apple pie for the baking contest, but my butter is gone. Agent Claw strikes again. Squirrel, have you seen him? No, but I did hear a strange beeping earlier. I'll see if I can hear the beeping with my Mega Meow. Beep, beep, beep. I think I've got something. The Mega Meow led me straight to Agent Claw. Using his jetpack, secret Agent Meow followed Agent Claw from the air. Agent Claw pushes a button that opens a secret door. That must be Agent Claw's secret lair. Super seers activate. Snap, click, zoop. What's he up to now? Secret Agent Meow went into the lair and saw the secret recipe for the rainbow chocolate chip cookies on a device labeled to self-destruct. Look, there it is, the secret recipe and all the ingredients too. Agent Claw was looking at screens that showed his evil plan, steal formula, bake amazing cookies, win it all. Gotcha, Claw. Hand over the recipe. You're too late. I've already said it to self-destruct. If I can't have the recipe, no one can. Claw spilled flower everywhere, exiting in a giant white cloud of flower. Agent Meow springs into action. Five, four, three, two, not on my watch. Agent Meow grabbed giant wire cutters and cut the self-destruct. Got it. Deactivated. Later, Claw got away, but I found the recipe and all your missing stuff. Yay! Secret Agent Meow closes another case. Thank you, Secret Agent Meow. Solving this case was extra sweet. And now I'm going to take another bite of this rainbow cookie. Case closed. We hope you've enjoyed this unabridged production of Pete the Cat and the Sprinkle Stealer. By Kimberly and James Dean. Performed by James Fowey. And directed by Cynthia Lee. Presented by Harper and Harper Audio. This program was produced by John Marshall Media. Executive producer, Almeida Baynut. Text copyright 2022 by Kimberly and James Dean. Production copyright 2022 by Harper Collins Publishers. All rights reserved. Thank you for listening.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Harper and Harper Audio present Pete the Cat and the Sprinkle Stealer by Kimberly and",
+      "startMs": 8760,
+      "endMs": 18360,
+      "avgLogprob": -0.501101,
+      "noSpeechProb": 0.220545,
+      "compressionRatio": 1.089888,
+      "words": [
+        {
+          "index": 1,
+          "text": "Harper",
+          "startMs": 8760,
+          "endMs": 9820,
+          "probability": 0.141149
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 9820,
+          "endMs": 10880,
+          "probability": 0.823431
+        },
+        {
+          "index": 3,
+          "text": "Harper",
+          "startMs": 10880,
+          "endMs": 11260,
+          "probability": 0.849046
+        },
+        {
+          "index": 4,
+          "text": "Audio",
+          "startMs": 11260,
+          "endMs": 11740,
+          "probability": 0.693077
+        },
+        {
+          "index": 5,
+          "text": "present",
+          "startMs": 11740,
+          "endMs": 12280,
+          "probability": 0.809304
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 12280,
+          "endMs": 13640,
+          "probability": 0.308578
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 13640,
+          "endMs": 14000,
+          "probability": 0.897045
+        },
+        {
+          "index": 8,
+          "text": "Cat",
+          "startMs": 14000,
+          "endMs": 14280,
+          "probability": 0.912784
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 14280,
+          "endMs": 14480,
+          "probability": 0.892204
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 14480,
+          "endMs": 14660,
+          "probability": 0.964521
+        },
+        {
+          "index": 11,
+          "text": "Sprinkle",
+          "startMs": 14660,
+          "endMs": 15300,
+          "probability": 0.924965
+        },
+        {
+          "index": 12,
+          "text": "Stealer",
+          "startMs": 15300,
+          "endMs": 16180,
+          "probability": 0.666553
+        },
+        {
+          "index": 13,
+          "text": "by",
+          "startMs": 16180,
+          "endMs": 17320,
+          "probability": 0.871868
+        },
+        {
+          "index": 14,
+          "text": "Kimberly",
+          "startMs": 17320,
+          "endMs": 17800,
+          "probability": 0.715736
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 17800,
+          "endMs": 18360,
+          "probability": 0.969541
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "James Dean.",
+      "startMs": 18360,
+      "endMs": 19320,
+      "avgLogprob": -0.501101,
+      "noSpeechProb": 0.220545,
+      "compressionRatio": 1.089888,
+      "words": [
+        {
+          "index": 1,
+          "text": "James",
+          "startMs": 18360,
+          "endMs": 18880,
+          "probability": 0.995796
+        },
+        {
+          "index": 2,
+          "text": "Dean.",
+          "startMs": 18880,
+          "endMs": 19320,
+          "probability": 0.91618
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "You know, secret agent Meow. He's also known as Pete the Cat. You've got a new case, secret",
+      "startMs": 33320,
+      "endMs": 43580,
+      "avgLogprob": -0.413187,
+      "noSpeechProb": 0.291868,
+      "compressionRatio": 1.083333,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 33320,
+          "endMs": 34220,
+          "probability": 0.110633
+        },
+        {
+          "index": 2,
+          "text": "know,",
+          "startMs": 34220,
+          "endMs": 35120,
+          "probability": 0.970884
+        },
+        {
+          "index": 3,
+          "text": "secret",
+          "startMs": 35700,
+          "endMs": 35700,
+          "probability": 0.579022
+        },
+        {
+          "index": 4,
+          "text": "agent",
+          "startMs": 35700,
+          "endMs": 36140,
+          "probability": 0.898308
+        },
+        {
+          "index": 5,
+          "text": "Meow.",
+          "startMs": 36140,
+          "endMs": 36540,
+          "probability": 0.448767
+        },
+        {
+          "index": 6,
+          "text": "He's",
+          "startMs": 37360,
+          "endMs": 37720,
+          "probability": 0.944807
+        },
+        {
+          "index": 7,
+          "text": "also",
+          "startMs": 37720,
+          "endMs": 38100,
+          "probability": 0.994647
+        },
+        {
+          "index": 8,
+          "text": "known",
+          "startMs": 38100,
+          "endMs": 38700,
+          "probability": 0.976276
+        },
+        {
+          "index": 9,
+          "text": "as",
+          "startMs": 38700,
+          "endMs": 39160,
+          "probability": 0.997348
+        },
+        {
+          "index": 10,
+          "text": "Pete",
+          "startMs": 39160,
+          "endMs": 39520,
+          "probability": 0.886258
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 39520,
+          "endMs": 40000,
+          "probability": 0.933804
+        },
+        {
+          "index": 12,
+          "text": "Cat.",
+          "startMs": 40000,
+          "endMs": 40260,
+          "probability": 0.847374
+        },
+        {
+          "index": 13,
+          "text": "You've",
+          "startMs": 41740,
+          "endMs": 42200,
+          "probability": 0.89501
+        },
+        {
+          "index": 14,
+          "text": "got",
+          "startMs": 42200,
+          "endMs": 42360,
+          "probability": 0.996877
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 42360,
+          "endMs": 42540,
+          "probability": 0.9968
+        },
+        {
+          "index": 16,
+          "text": "new",
+          "startMs": 42540,
+          "endMs": 42740,
+          "probability": 0.99659
+        },
+        {
+          "index": 17,
+          "text": "case,",
+          "startMs": 42740,
+          "endMs": 43020,
+          "probability": 0.992753
+        },
+        {
+          "index": 18,
+          "text": "secret",
+          "startMs": 43580,
+          "endMs": 43580,
+          "probability": 0.91555
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "agent Meow. Not that blasted agent Claw again. That evil cat robot. What is he up to now?",
+      "startMs": 43580,
+      "endMs": 52420,
+      "avgLogprob": -0.177912,
+      "noSpeechProb": 0.385114,
+      "compressionRatio": 1.466292,
+      "words": [
+        {
+          "index": 1,
+          "text": "agent",
+          "startMs": 43580,
+          "endMs": 43940,
+          "probability": 0.049044
+        },
+        {
+          "index": 2,
+          "text": "Meow.",
+          "startMs": 43940,
+          "endMs": 44400,
+          "probability": 0.106092
+        },
+        {
+          "index": 3,
+          "text": "Not",
+          "startMs": 45560,
+          "endMs": 46040,
+          "probability": 0.919367
+        },
+        {
+          "index": 4,
+          "text": "that",
+          "startMs": 46040,
+          "endMs": 46280,
+          "probability": 0.983073
+        },
+        {
+          "index": 5,
+          "text": "blasted",
+          "startMs": 46280,
+          "endMs": 46820,
+          "probability": 0.972261
+        },
+        {
+          "index": 6,
+          "text": "agent",
+          "startMs": 46820,
+          "endMs": 47160,
+          "probability": 0.711217
+        },
+        {
+          "index": 7,
+          "text": "Claw",
+          "startMs": 47160,
+          "endMs": 47560,
+          "probability": 0.44175
+        },
+        {
+          "index": 8,
+          "text": "again.",
+          "startMs": 47560,
+          "endMs": 48020,
+          "probability": 0.983748
+        },
+        {
+          "index": 9,
+          "text": "That",
+          "startMs": 48700,
+          "endMs": 48880,
+          "probability": 0.977439
+        },
+        {
+          "index": 10,
+          "text": "evil",
+          "startMs": 48880,
+          "endMs": 49420,
+          "probability": 0.990944
+        },
+        {
+          "index": 11,
+          "text": "cat",
+          "startMs": 49420,
+          "endMs": 49840,
+          "probability": 0.95204
+        },
+        {
+          "index": 12,
+          "text": "robot.",
+          "startMs": 49840,
+          "endMs": 50280,
+          "probability": 0.936586
+        },
+        {
+          "index": 13,
+          "text": "What",
+          "startMs": 51120,
+          "endMs": 51200,
+          "probability": 0.988422
+        },
+        {
+          "index": 14,
+          "text": "is",
+          "startMs": 51200,
+          "endMs": 51380,
+          "probability": 0.984533
+        },
+        {
+          "index": 15,
+          "text": "he",
+          "startMs": 51380,
+          "endMs": 51560,
+          "probability": 0.994885
+        },
+        {
+          "index": 16,
+          "text": "up",
+          "startMs": 51560,
+          "endMs": 51700,
+          "probability": 0.993729
+        },
+        {
+          "index": 17,
+          "text": "to",
+          "startMs": 51700,
+          "endMs": 51960,
+          "probability": 0.994952
+        },
+        {
+          "index": 18,
+          "text": "now?",
+          "startMs": 51960,
+          "endMs": 52420,
+          "probability": 0.992874
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Meow's new case hits close to home. Agent Claw stole our recipe for rainbow sprinkle",
+      "startMs": 54060,
+      "endMs": 60900,
+      "avgLogprob": -0.177912,
+      "noSpeechProb": 0.385114,
+      "compressionRatio": 1.466292,
+      "words": [
+        {
+          "index": 1,
+          "text": "Meow's",
+          "startMs": 54060,
+          "endMs": 54540,
+          "probability": 0.976787
+        },
+        {
+          "index": 2,
+          "text": "new",
+          "startMs": 54540,
+          "endMs": 54780,
+          "probability": 0.995985
+        },
+        {
+          "index": 3,
+          "text": "case",
+          "startMs": 54780,
+          "endMs": 55120,
+          "probability": 0.989205
+        },
+        {
+          "index": 4,
+          "text": "hits",
+          "startMs": 55120,
+          "endMs": 55440,
+          "probability": 0.990626
+        },
+        {
+          "index": 5,
+          "text": "close",
+          "startMs": 55440,
+          "endMs": 55740,
+          "probability": 0.997137
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 55740,
+          "endMs": 56080,
+          "probability": 0.997317
+        },
+        {
+          "index": 7,
+          "text": "home.",
+          "startMs": 56080,
+          "endMs": 56440,
+          "probability": 0.99461
+        },
+        {
+          "index": 8,
+          "text": "Agent",
+          "startMs": 57800,
+          "endMs": 58140,
+          "probability": 0.975022
+        },
+        {
+          "index": 9,
+          "text": "Claw",
+          "startMs": 58140,
+          "endMs": 58520,
+          "probability": 0.95908
+        },
+        {
+          "index": 10,
+          "text": "stole",
+          "startMs": 58520,
+          "endMs": 58880,
+          "probability": 0.996788
+        },
+        {
+          "index": 11,
+          "text": "our",
+          "startMs": 58880,
+          "endMs": 59140,
+          "probability": 0.990139
+        },
+        {
+          "index": 12,
+          "text": "recipe",
+          "startMs": 59140,
+          "endMs": 59560,
+          "probability": 0.995236
+        },
+        {
+          "index": 13,
+          "text": "for",
+          "startMs": 59560,
+          "endMs": 59960,
+          "probability": 0.992554
+        },
+        {
+          "index": 14,
+          "text": "rainbow",
+          "startMs": 59960,
+          "endMs": 60380,
+          "probability": 0.867455
+        },
+        {
+          "index": 15,
+          "text": "sprinkle",
+          "startMs": 60380,
+          "endMs": 60900,
+          "probability": 0.909108
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "cookies. The big baking contest is tomorrow. With that recipe, he'll win it all. Don't",
+      "startMs": 60900,
+      "endMs": 73560,
+      "avgLogprob": -0.177912,
+      "noSpeechProb": 0.385114,
+      "compressionRatio": 1.466292,
+      "words": [
+        {
+          "index": 1,
+          "text": "cookies.",
+          "startMs": 60900,
+          "endMs": 61640,
+          "probability": 0.994687
+        },
+        {
+          "index": 2,
+          "text": "The",
+          "startMs": 62520,
+          "endMs": 62740,
+          "probability": 0.984415
+        },
+        {
+          "index": 3,
+          "text": "big",
+          "startMs": 62740,
+          "endMs": 62920,
+          "probability": 0.957233
+        },
+        {
+          "index": 4,
+          "text": "baking",
+          "startMs": 62920,
+          "endMs": 63400,
+          "probability": 0.909054
+        },
+        {
+          "index": 5,
+          "text": "contest",
+          "startMs": 63400,
+          "endMs": 63940,
+          "probability": 0.997382
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 63940,
+          "endMs": 64260,
+          "probability": 0.994996
+        },
+        {
+          "index": 7,
+          "text": "tomorrow.",
+          "startMs": 64260,
+          "endMs": 64760,
+          "probability": 0.986507
+        },
+        {
+          "index": 8,
+          "text": "With",
+          "startMs": 65480,
+          "endMs": 65720,
+          "probability": 0.990172
+        },
+        {
+          "index": 9,
+          "text": "that",
+          "startMs": 65720,
+          "endMs": 66100,
+          "probability": 0.994174
+        },
+        {
+          "index": 10,
+          "text": "recipe,",
+          "startMs": 66100,
+          "endMs": 66740,
+          "probability": 0.998582
+        },
+        {
+          "index": 11,
+          "text": "he'll",
+          "startMs": 67120,
+          "endMs": 67380,
+          "probability": 0.972893
+        },
+        {
+          "index": 12,
+          "text": "win",
+          "startMs": 67380,
+          "endMs": 67560,
+          "probability": 0.999565
+        },
+        {
+          "index": 13,
+          "text": "it",
+          "startMs": 67560,
+          "endMs": 67700,
+          "probability": 0.98307
+        },
+        {
+          "index": 14,
+          "text": "all.",
+          "startMs": 67700,
+          "endMs": 68140,
+          "probability": 0.997675
+        },
+        {
+          "index": 15,
+          "text": "Don't",
+          "startMs": 72760,
+          "endMs": 73560,
+          "probability": 0.995571
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Meow tracks agent Claw with the cat track 2000. Hmm, these lead to Gus's house. Agent Meow,",
+      "startMs": 74080,
+      "endMs": 85220,
+      "avgLogprob": -0.22663,
+      "noSpeechProb": 0.151713,
+      "compressionRatio": 1.435484,
+      "words": [
+        {
+          "index": 1,
+          "text": "Meow",
+          "startMs": 74080,
+          "endMs": 74760,
+          "probability": 0.390381
+        },
+        {
+          "index": 2,
+          "text": "tracks",
+          "startMs": 74760,
+          "endMs": 75340,
+          "probability": 0.338403
+        },
+        {
+          "index": 3,
+          "text": "agent",
+          "startMs": 75340,
+          "endMs": 75740,
+          "probability": 0.452147
+        },
+        {
+          "index": 4,
+          "text": "Claw",
+          "startMs": 75740,
+          "endMs": 76120,
+          "probability": 0.232094
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 76120,
+          "endMs": 76600,
+          "probability": 0.849543
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 76600,
+          "endMs": 76780,
+          "probability": 0.938518
+        },
+        {
+          "index": 7,
+          "text": "cat",
+          "startMs": 76780,
+          "endMs": 77120,
+          "probability": 0.853077
+        },
+        {
+          "index": 8,
+          "text": "track",
+          "startMs": 77120,
+          "endMs": 77540,
+          "probability": 0.944405
+        },
+        {
+          "index": 9,
+          "text": "2000.",
+          "startMs": 77540,
+          "endMs": 78300,
+          "probability": 0.540244
+        },
+        {
+          "index": 10,
+          "text": "Hmm,",
+          "startMs": 80040,
+          "endMs": 80540,
+          "probability": 0.532008
+        },
+        {
+          "index": 11,
+          "text": "these",
+          "startMs": 81080,
+          "endMs": 81440,
+          "probability": 0.949219
+        },
+        {
+          "index": 12,
+          "text": "lead",
+          "startMs": 81440,
+          "endMs": 81740,
+          "probability": 0.978843
+        },
+        {
+          "index": 13,
+          "text": "to",
+          "startMs": 81740,
+          "endMs": 82160,
+          "probability": 0.995576
+        },
+        {
+          "index": 14,
+          "text": "Gus's",
+          "startMs": 82160,
+          "endMs": 82580,
+          "probability": 0.777231
+        },
+        {
+          "index": 15,
+          "text": "house.",
+          "startMs": 82580,
+          "endMs": 83000,
+          "probability": 0.984855
+        },
+        {
+          "index": 16,
+          "text": "Agent",
+          "startMs": 84500,
+          "endMs": 84780,
+          "probability": 0.849962
+        },
+        {
+          "index": 17,
+          "text": "Meow,",
+          "startMs": 84780,
+          "endMs": 85220,
+          "probability": 0.836244
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "I'm making banana bread for the contest, but my sugar is gone. How strange, and the secret",
+      "startMs": 85840,
+      "endMs": 94020,
+      "avgLogprob": -0.22663,
+      "noSpeechProb": 0.151713,
+      "compressionRatio": 1.435484,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 85840,
+          "endMs": 86180,
+          "probability": 0.953647
+        },
+        {
+          "index": 2,
+          "text": "making",
+          "startMs": 86180,
+          "endMs": 86480,
+          "probability": 0.994245
+        },
+        {
+          "index": 3,
+          "text": "banana",
+          "startMs": 86480,
+          "endMs": 86920,
+          "probability": 0.963593
+        },
+        {
+          "index": 4,
+          "text": "bread",
+          "startMs": 86920,
+          "endMs": 87240,
+          "probability": 0.995285
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 87240,
+          "endMs": 87480,
+          "probability": 0.996055
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 87480,
+          "endMs": 87640,
+          "probability": 0.99678
+        },
+        {
+          "index": 7,
+          "text": "contest,",
+          "startMs": 87640,
+          "endMs": 88160,
+          "probability": 0.996214
+        },
+        {
+          "index": 8,
+          "text": "but",
+          "startMs": 88620,
+          "endMs": 88840,
+          "probability": 0.995618
+        },
+        {
+          "index": 9,
+          "text": "my",
+          "startMs": 88840,
+          "endMs": 89080,
+          "probability": 0.998074
+        },
+        {
+          "index": 10,
+          "text": "sugar",
+          "startMs": 89080,
+          "endMs": 89400,
+          "probability": 0.996584
+        },
+        {
+          "index": 11,
+          "text": "is",
+          "startMs": 89400,
+          "endMs": 89780,
+          "probability": 0.995994
+        },
+        {
+          "index": 12,
+          "text": "gone.",
+          "startMs": 89780,
+          "endMs": 90260,
+          "probability": 0.998045
+        },
+        {
+          "index": 13,
+          "text": "How",
+          "startMs": 91440,
+          "endMs": 91780,
+          "probability": 0.980919
+        },
+        {
+          "index": 14,
+          "text": "strange,",
+          "startMs": 91780,
+          "endMs": 92360,
+          "probability": 0.98953
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 93160,
+          "endMs": 93380,
+          "probability": 0.991373
+        },
+        {
+          "index": 16,
+          "text": "the",
+          "startMs": 93380,
+          "endMs": 93580,
+          "probability": 0.993173
+        },
+        {
+          "index": 17,
+          "text": "secret",
+          "startMs": 93580,
+          "endMs": 94020,
+          "probability": 0.994619
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "recipe isn't here either. Gus, you haven't seen agent Claw, have you? No, I haven't,",
+      "startMs": 94020,
+      "endMs": 102040,
+      "avgLogprob": -0.22663,
+      "noSpeechProb": 0.151713,
+      "compressionRatio": 1.435484,
+      "words": [
+        {
+          "index": 1,
+          "text": "recipe",
+          "startMs": 94020,
+          "endMs": 94560,
+          "probability": 0.995437
+        },
+        {
+          "index": 2,
+          "text": "isn't",
+          "startMs": 94560,
+          "endMs": 94840,
+          "probability": 0.996831
+        },
+        {
+          "index": 3,
+          "text": "here",
+          "startMs": 94840,
+          "endMs": 95180,
+          "probability": 0.994461
+        },
+        {
+          "index": 4,
+          "text": "either.",
+          "startMs": 95180,
+          "endMs": 95700,
+          "probability": 0.950302
+        },
+        {
+          "index": 5,
+          "text": "Gus,",
+          "startMs": 97000,
+          "endMs": 97140,
+          "probability": 0.990819
+        },
+        {
+          "index": 6,
+          "text": "you",
+          "startMs": 97760,
+          "endMs": 97980,
+          "probability": 0.992729
+        },
+        {
+          "index": 7,
+          "text": "haven't",
+          "startMs": 97980,
+          "endMs": 98360,
+          "probability": 0.997166
+        },
+        {
+          "index": 8,
+          "text": "seen",
+          "startMs": 98360,
+          "endMs": 98600,
+          "probability": 0.993221
+        },
+        {
+          "index": 9,
+          "text": "agent",
+          "startMs": 98600,
+          "endMs": 98980,
+          "probability": 0.452422
+        },
+        {
+          "index": 10,
+          "text": "Claw,",
+          "startMs": 98980,
+          "endMs": 99420,
+          "probability": 0.922897
+        },
+        {
+          "index": 11,
+          "text": "have",
+          "startMs": 99640,
+          "endMs": 99740,
+          "probability": 0.995981
+        },
+        {
+          "index": 12,
+          "text": "you?",
+          "startMs": 99740,
+          "endMs": 100020,
+          "probability": 0.999064
+        },
+        {
+          "index": 13,
+          "text": "No,",
+          "startMs": 100740,
+          "endMs": 101140,
+          "probability": 0.970442
+        },
+        {
+          "index": 14,
+          "text": "I",
+          "startMs": 101360,
+          "endMs": 101420,
+          "probability": 0.995551
+        },
+        {
+          "index": 15,
+          "text": "haven't,",
+          "startMs": 101420,
+          "endMs": 102040,
+          "probability": 0.999183
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "but I did find this. He pointed to a line of white crystals. Aha, a sugar trail. Don't",
+      "startMs": 102040,
+      "endMs": 114600,
+      "avgLogprob": -0.201428,
+      "noSpeechProb": 0.032599,
+      "compressionRatio": 1.260563,
+      "words": [
+        {
+          "index": 1,
+          "text": "but",
+          "startMs": 102040,
+          "endMs": 102800,
+          "probability": 0.037769
+        },
+        {
+          "index": 2,
+          "text": "I",
+          "startMs": 102800,
+          "endMs": 103060,
+          "probability": 0.958093
+        },
+        {
+          "index": 3,
+          "text": "did",
+          "startMs": 103060,
+          "endMs": 103640,
+          "probability": 0.91473
+        },
+        {
+          "index": 4,
+          "text": "find",
+          "startMs": 103640,
+          "endMs": 104300,
+          "probability": 0.996502
+        },
+        {
+          "index": 5,
+          "text": "this.",
+          "startMs": 104300,
+          "endMs": 104940,
+          "probability": 0.982213
+        },
+        {
+          "index": 6,
+          "text": "He",
+          "startMs": 106300,
+          "endMs": 106460,
+          "probability": 0.876799
+        },
+        {
+          "index": 7,
+          "text": "pointed",
+          "startMs": 106460,
+          "endMs": 106860,
+          "probability": 0.991221
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 106860,
+          "endMs": 107200,
+          "probability": 0.995048
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 107200,
+          "endMs": 107400,
+          "probability": 0.989346
+        },
+        {
+          "index": 10,
+          "text": "line",
+          "startMs": 107400,
+          "endMs": 107660,
+          "probability": 0.997002
+        },
+        {
+          "index": 11,
+          "text": "of",
+          "startMs": 107660,
+          "endMs": 107880,
+          "probability": 0.996893
+        },
+        {
+          "index": 12,
+          "text": "white",
+          "startMs": 107880,
+          "endMs": 108260,
+          "probability": 0.991267
+        },
+        {
+          "index": 13,
+          "text": "crystals.",
+          "startMs": 108260,
+          "endMs": 109220,
+          "probability": 0.993786
+        },
+        {
+          "index": 14,
+          "text": "Aha,",
+          "startMs": 110580,
+          "endMs": 111060,
+          "probability": 0.703534
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 111760,
+          "endMs": 112040,
+          "probability": 0.98845
+        },
+        {
+          "index": 16,
+          "text": "sugar",
+          "startMs": 112040,
+          "endMs": 112540,
+          "probability": 0.987894
+        },
+        {
+          "index": 17,
+          "text": "trail.",
+          "startMs": 112540,
+          "endMs": 113160,
+          "probability": 0.984935
+        },
+        {
+          "index": 18,
+          "text": "Don't",
+          "startMs": 114240,
+          "endMs": 114600,
+          "probability": 0.991188
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "worry, my ant bots can follow this no problem. Look, it leads to Callie's house. Agent Meow,",
+      "startMs": 114600,
+      "endMs": 124440,
+      "avgLogprob": -0.201428,
+      "noSpeechProb": 0.032599,
+      "compressionRatio": 1.260563,
+      "words": [
+        {
+          "index": 1,
+          "text": "worry,",
+          "startMs": 114600,
+          "endMs": 114960,
+          "probability": 0.999019
+        },
+        {
+          "index": 2,
+          "text": "my",
+          "startMs": 115340,
+          "endMs": 115500,
+          "probability": 0.991387
+        },
+        {
+          "index": 3,
+          "text": "ant",
+          "startMs": 115500,
+          "endMs": 115780,
+          "probability": 0.354746
+        },
+        {
+          "index": 4,
+          "text": "bots",
+          "startMs": 115780,
+          "endMs": 116120,
+          "probability": 0.449861
+        },
+        {
+          "index": 5,
+          "text": "can",
+          "startMs": 116120,
+          "endMs": 116460,
+          "probability": 0.993445
+        },
+        {
+          "index": 6,
+          "text": "follow",
+          "startMs": 116460,
+          "endMs": 116800,
+          "probability": 0.997538
+        },
+        {
+          "index": 7,
+          "text": "this",
+          "startMs": 116800,
+          "endMs": 117140,
+          "probability": 0.996998
+        },
+        {
+          "index": 8,
+          "text": "no",
+          "startMs": 117140,
+          "endMs": 117480,
+          "probability": 0.837339
+        },
+        {
+          "index": 9,
+          "text": "problem.",
+          "startMs": 117480,
+          "endMs": 118220,
+          "probability": 0.989951
+        },
+        {
+          "index": 10,
+          "text": "Look,",
+          "startMs": 119080,
+          "endMs": 119340,
+          "probability": 0.992613
+        },
+        {
+          "index": 11,
+          "text": "it",
+          "startMs": 120020,
+          "endMs": 120260,
+          "probability": 0.990298
+        },
+        {
+          "index": 12,
+          "text": "leads",
+          "startMs": 120260,
+          "endMs": 120600,
+          "probability": 0.992299
+        },
+        {
+          "index": 13,
+          "text": "to",
+          "startMs": 120600,
+          "endMs": 121020,
+          "probability": 0.998442
+        },
+        {
+          "index": 14,
+          "text": "Callie's",
+          "startMs": 121020,
+          "endMs": 121580,
+          "probability": 0.884335
+        },
+        {
+          "index": 15,
+          "text": "house.",
+          "startMs": 121580,
+          "endMs": 122040,
+          "probability": 0.984265
+        },
+        {
+          "index": 16,
+          "text": "Agent",
+          "startMs": 123600,
+          "endMs": 123960,
+          "probability": 0.940394
+        },
+        {
+          "index": 17,
+          "text": "Meow,",
+          "startMs": 123960,
+          "endMs": 124440,
+          "probability": 0.741872
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "I'm baking cupcakes for the contest, but my rainbow sprinkles are gone. And there's no secret",
+      "startMs": 124440,
+      "endMs": 132540,
+      "avgLogprob": -0.131907,
+      "noSpeechProb": 0.058498,
+      "compressionRatio": 1.513369,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 124440,
+          "endMs": 125480,
+          "probability": 0.415405
+        },
+        {
+          "index": 2,
+          "text": "baking",
+          "startMs": 125480,
+          "endMs": 125760,
+          "probability": 0.926962
+        },
+        {
+          "index": 3,
+          "text": "cupcakes",
+          "startMs": 125760,
+          "endMs": 126340,
+          "probability": 0.994303
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 126340,
+          "endMs": 126520,
+          "probability": 0.995136
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 126520,
+          "endMs": 126680,
+          "probability": 0.99635
+        },
+        {
+          "index": 6,
+          "text": "contest,",
+          "startMs": 126680,
+          "endMs": 127140,
+          "probability": 0.996067
+        },
+        {
+          "index": 7,
+          "text": "but",
+          "startMs": 127780,
+          "endMs": 127900,
+          "probability": 0.991775
+        },
+        {
+          "index": 8,
+          "text": "my",
+          "startMs": 127900,
+          "endMs": 128120,
+          "probability": 0.993867
+        },
+        {
+          "index": 9,
+          "text": "rainbow",
+          "startMs": 128120,
+          "endMs": 128600,
+          "probability": 0.944691
+        },
+        {
+          "index": 10,
+          "text": "sprinkles",
+          "startMs": 128600,
+          "endMs": 129400,
+          "probability": 0.993436
+        },
+        {
+          "index": 11,
+          "text": "are",
+          "startMs": 129400,
+          "endMs": 129600,
+          "probability": 0.996801
+        },
+        {
+          "index": 12,
+          "text": "gone.",
+          "startMs": 129600,
+          "endMs": 130140,
+          "probability": 0.992089
+        },
+        {
+          "index": 13,
+          "text": "And",
+          "startMs": 131360,
+          "endMs": 131540,
+          "probability": 0.967741
+        },
+        {
+          "index": 14,
+          "text": "there's",
+          "startMs": 131540,
+          "endMs": 131880,
+          "probability": 0.969976
+        },
+        {
+          "index": 15,
+          "text": "no",
+          "startMs": 131880,
+          "endMs": 132080,
+          "probability": 0.998012
+        },
+        {
+          "index": 16,
+          "text": "secret",
+          "startMs": 132080,
+          "endMs": 132540,
+          "probability": 0.997806
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "recipe hidden in here either. Gulp. Let me just finish this cupcake. Callie, have you seen agent",
+      "startMs": 132540,
+      "endMs": 141960,
+      "avgLogprob": -0.131907,
+      "noSpeechProb": 0.058498,
+      "compressionRatio": 1.513369,
+      "words": [
+        {
+          "index": 1,
+          "text": "recipe",
+          "startMs": 132540,
+          "endMs": 133100,
+          "probability": 0.995689
+        },
+        {
+          "index": 2,
+          "text": "hidden",
+          "startMs": 133100,
+          "endMs": 133400,
+          "probability": 0.997366
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 133400,
+          "endMs": 133640,
+          "probability": 0.991694
+        },
+        {
+          "index": 4,
+          "text": "here",
+          "startMs": 133640,
+          "endMs": 134180,
+          "probability": 0.996185
+        },
+        {
+          "index": 5,
+          "text": "either.",
+          "startMs": 134180,
+          "endMs": 134920,
+          "probability": 0.779472
+        },
+        {
+          "index": 6,
+          "text": "Gulp.",
+          "startMs": 135820,
+          "endMs": 136240,
+          "probability": 0.817991
+        },
+        {
+          "index": 7,
+          "text": "Let",
+          "startMs": 137180,
+          "endMs": 137460,
+          "probability": 0.981225
+        },
+        {
+          "index": 8,
+          "text": "me",
+          "startMs": 137460,
+          "endMs": 137620,
+          "probability": 0.998051
+        },
+        {
+          "index": 9,
+          "text": "just",
+          "startMs": 137620,
+          "endMs": 137820,
+          "probability": 0.994084
+        },
+        {
+          "index": 10,
+          "text": "finish",
+          "startMs": 137820,
+          "endMs": 138040,
+          "probability": 0.998108
+        },
+        {
+          "index": 11,
+          "text": "this",
+          "startMs": 138040,
+          "endMs": 138400,
+          "probability": 0.997835
+        },
+        {
+          "index": 12,
+          "text": "cupcake.",
+          "startMs": 138400,
+          "endMs": 139020,
+          "probability": 0.993502
+        },
+        {
+          "index": 13,
+          "text": "Callie,",
+          "startMs": 140600,
+          "endMs": 140740,
+          "probability": 0.733169
+        },
+        {
+          "index": 14,
+          "text": "have",
+          "startMs": 141100,
+          "endMs": 141260,
+          "probability": 0.994884
+        },
+        {
+          "index": 15,
+          "text": "you",
+          "startMs": 141260,
+          "endMs": 141440,
+          "probability": 0.997672
+        },
+        {
+          "index": 16,
+          "text": "seen",
+          "startMs": 141440,
+          "endMs": 141640,
+          "probability": 0.993607
+        },
+        {
+          "index": 17,
+          "text": "agent",
+          "startMs": 141640,
+          "endMs": 141960,
+          "probability": 0.177421
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Claw? No, I haven't, but look at this trail. Callie pointed to a trail of rainbow sprinkles.",
+      "startMs": 141960,
+      "endMs": 151580,
+      "avgLogprob": -0.131907,
+      "noSpeechProb": 0.058498,
+      "compressionRatio": 1.513369,
+      "words": [
+        {
+          "index": 1,
+          "text": "Claw?",
+          "startMs": 141960,
+          "endMs": 142320,
+          "probability": 0.566944
+        },
+        {
+          "index": 2,
+          "text": "No,",
+          "startMs": 143320,
+          "endMs": 143640,
+          "probability": 0.983397
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 143860,
+          "endMs": 144060,
+          "probability": 0.997715
+        },
+        {
+          "index": 4,
+          "text": "haven't,",
+          "startMs": 144060,
+          "endMs": 144620,
+          "probability": 0.999526
+        },
+        {
+          "index": 5,
+          "text": "but",
+          "startMs": 145020,
+          "endMs": 145260,
+          "probability": 0.998045
+        },
+        {
+          "index": 6,
+          "text": "look",
+          "startMs": 145260,
+          "endMs": 145460,
+          "probability": 0.998551
+        },
+        {
+          "index": 7,
+          "text": "at",
+          "startMs": 145460,
+          "endMs": 145600,
+          "probability": 0.998514
+        },
+        {
+          "index": 8,
+          "text": "this",
+          "startMs": 145600,
+          "endMs": 145820,
+          "probability": 0.997414
+        },
+        {
+          "index": 9,
+          "text": "trail.",
+          "startMs": 145820,
+          "endMs": 146360,
+          "probability": 0.995605
+        },
+        {
+          "index": 10,
+          "text": "Callie",
+          "startMs": 148060,
+          "endMs": 148280,
+          "probability": 0.979995
+        },
+        {
+          "index": 11,
+          "text": "pointed",
+          "startMs": 148280,
+          "endMs": 148660,
+          "probability": 0.996997
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 148660,
+          "endMs": 149040,
+          "probability": 0.998208
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 149040,
+          "endMs": 149200,
+          "probability": 0.991686
+        },
+        {
+          "index": 14,
+          "text": "trail",
+          "startMs": 149200,
+          "endMs": 149580,
+          "probability": 0.998217
+        },
+        {
+          "index": 15,
+          "text": "of",
+          "startMs": 149580,
+          "endMs": 149880,
+          "probability": 0.9983
+        },
+        {
+          "index": 16,
+          "text": "rainbow",
+          "startMs": 149880,
+          "endMs": 150520,
+          "probability": 0.987082
+        },
+        {
+          "index": 17,
+          "text": "sprinkles.",
+          "startMs": 150520,
+          "endMs": 151580,
+          "probability": 0.997711
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "I'll use the sprinkle scanner to see where they go. The sprinkle scanner detected the rainbow",
+      "startMs": 152540,
+      "endMs": 160360,
+      "avgLogprob": -0.111062,
+      "noSpeechProb": 0.108772,
+      "compressionRatio": 1.565934,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'll",
+          "startMs": 152540,
+          "endMs": 153340,
+          "probability": 0.801126
+        },
+        {
+          "index": 2,
+          "text": "use",
+          "startMs": 153340,
+          "endMs": 153580,
+          "probability": 0.996607
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 153580,
+          "endMs": 153800,
+          "probability": 0.994154
+        },
+        {
+          "index": 4,
+          "text": "sprinkle",
+          "startMs": 153800,
+          "endMs": 154180,
+          "probability": 0.58289
+        },
+        {
+          "index": 5,
+          "text": "scanner",
+          "startMs": 154180,
+          "endMs": 154680,
+          "probability": 0.968234
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 154680,
+          "endMs": 155100,
+          "probability": 0.97884
+        },
+        {
+          "index": 7,
+          "text": "see",
+          "startMs": 155100,
+          "endMs": 155360,
+          "probability": 0.998192
+        },
+        {
+          "index": 8,
+          "text": "where",
+          "startMs": 155360,
+          "endMs": 155540,
+          "probability": 0.996833
+        },
+        {
+          "index": 9,
+          "text": "they",
+          "startMs": 155540,
+          "endMs": 155740,
+          "probability": 0.997091
+        },
+        {
+          "index": 10,
+          "text": "go.",
+          "startMs": 155740,
+          "endMs": 156180,
+          "probability": 0.997382
+        },
+        {
+          "index": 11,
+          "text": "The",
+          "startMs": 157860,
+          "endMs": 157880,
+          "probability": 0.979895
+        },
+        {
+          "index": 12,
+          "text": "sprinkle",
+          "startMs": 157880,
+          "endMs": 158440,
+          "probability": 0.589418
+        },
+        {
+          "index": 13,
+          "text": "scanner",
+          "startMs": 158440,
+          "endMs": 158980,
+          "probability": 0.996211
+        },
+        {
+          "index": 14,
+          "text": "detected",
+          "startMs": 158980,
+          "endMs": 159560,
+          "probability": 0.995834
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 159560,
+          "endMs": 159920,
+          "probability": 0.997251
+        },
+        {
+          "index": 16,
+          "text": "rainbow",
+          "startMs": 159920,
+          "endMs": 160360,
+          "probability": 0.911387
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "sprinkles immediately. The sprinkles are leading me to Grumpy Toad's house. Why so grouchy, Grumpy",
+      "startMs": 160360,
+      "endMs": 169700,
+      "avgLogprob": -0.111062,
+      "noSpeechProb": 0.108772,
+      "compressionRatio": 1.565934,
+      "words": [
+        {
+          "index": 1,
+          "text": "sprinkles",
+          "startMs": 160360,
+          "endMs": 161200,
+          "probability": 0.967206
+        },
+        {
+          "index": 2,
+          "text": "immediately.",
+          "startMs": 161200,
+          "endMs": 161900,
+          "probability": 0.996059
+        },
+        {
+          "index": 3,
+          "text": "The",
+          "startMs": 163460,
+          "endMs": 163660,
+          "probability": 0.975891
+        },
+        {
+          "index": 4,
+          "text": "sprinkles",
+          "startMs": 163660,
+          "endMs": 164180,
+          "probability": 0.996437
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 164180,
+          "endMs": 164320,
+          "probability": 0.996078
+        },
+        {
+          "index": 6,
+          "text": "leading",
+          "startMs": 164320,
+          "endMs": 164560,
+          "probability": 0.996874
+        },
+        {
+          "index": 7,
+          "text": "me",
+          "startMs": 164560,
+          "endMs": 164820,
+          "probability": 0.995397
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 164820,
+          "endMs": 165080,
+          "probability": 0.996114
+        },
+        {
+          "index": 9,
+          "text": "Grumpy",
+          "startMs": 165080,
+          "endMs": 165500,
+          "probability": 0.972874
+        },
+        {
+          "index": 10,
+          "text": "Toad's",
+          "startMs": 165500,
+          "endMs": 165980,
+          "probability": 0.977048
+        },
+        {
+          "index": 11,
+          "text": "house.",
+          "startMs": 165980,
+          "endMs": 166220,
+          "probability": 0.977611
+        },
+        {
+          "index": 12,
+          "text": "Why",
+          "startMs": 167860,
+          "endMs": 168140,
+          "probability": 0.974313
+        },
+        {
+          "index": 13,
+          "text": "so",
+          "startMs": 168140,
+          "endMs": 168580,
+          "probability": 0.9081
+        },
+        {
+          "index": 14,
+          "text": "grouchy,",
+          "startMs": 168580,
+          "endMs": 169220,
+          "probability": 0.996337
+        },
+        {
+          "index": 15,
+          "text": "Grumpy",
+          "startMs": 169380,
+          "endMs": 169700,
+          "probability": 0.99121
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Toad? I'm baking brownies for the contest, but my chocolate chips are gone. All of a sudden,",
+      "startMs": 169700,
+      "endMs": 179380,
+      "avgLogprob": -0.111062,
+      "noSpeechProb": 0.108772,
+      "compressionRatio": 1.565934,
+      "words": [
+        {
+          "index": 1,
+          "text": "Toad?",
+          "startMs": 169700,
+          "endMs": 170100,
+          "probability": 0.998115
+        },
+        {
+          "index": 2,
+          "text": "I'm",
+          "startMs": 171020,
+          "endMs": 171800,
+          "probability": 0.928845
+        },
+        {
+          "index": 3,
+          "text": "baking",
+          "startMs": 171800,
+          "endMs": 172260,
+          "probability": 0.991135
+        },
+        {
+          "index": 4,
+          "text": "brownies",
+          "startMs": 172260,
+          "endMs": 172880,
+          "probability": 0.990228
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 172880,
+          "endMs": 173120,
+          "probability": 0.998564
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 173120,
+          "endMs": 173320,
+          "probability": 0.998122
+        },
+        {
+          "index": 7,
+          "text": "contest,",
+          "startMs": 173320,
+          "endMs": 173940,
+          "probability": 0.998093
+        },
+        {
+          "index": 8,
+          "text": "but",
+          "startMs": 174380,
+          "endMs": 174720,
+          "probability": 0.997485
+        },
+        {
+          "index": 9,
+          "text": "my",
+          "startMs": 174720,
+          "endMs": 174960,
+          "probability": 0.998079
+        },
+        {
+          "index": 10,
+          "text": "chocolate",
+          "startMs": 174960,
+          "endMs": 175540,
+          "probability": 0.994277
+        },
+        {
+          "index": 11,
+          "text": "chips",
+          "startMs": 175540,
+          "endMs": 175980,
+          "probability": 0.999321
+        },
+        {
+          "index": 12,
+          "text": "are",
+          "startMs": 175980,
+          "endMs": 176380,
+          "probability": 0.999058
+        },
+        {
+          "index": 13,
+          "text": "gone.",
+          "startMs": 176380,
+          "endMs": 176780,
+          "probability": 0.998603
+        },
+        {
+          "index": 14,
+          "text": "All",
+          "startMs": 178340,
+          "endMs": 178700,
+          "probability": 0.995247
+        },
+        {
+          "index": 15,
+          "text": "of",
+          "startMs": 178700,
+          "endMs": 178900,
+          "probability": 0.992785
+        },
+        {
+          "index": 16,
+          "text": "a",
+          "startMs": 178900,
+          "endMs": 179040,
+          "probability": 0.96547
+        },
+        {
+          "index": 17,
+          "text": "sudden,",
+          "startMs": 179040,
+          "endMs": 179380,
+          "probability": 0.997794
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "there was a loud beeping. Agent Meow, I detect chocolate chips nearby. There they are. I'll use",
+      "startMs": 179380,
+      "endMs": 189060,
+      "avgLogprob": -0.133966,
+      "noSpeechProb": 0.014896,
+      "compressionRatio": 1.449735,
+      "words": [
+        {
+          "index": 1,
+          "text": "there",
+          "startMs": 179380,
+          "endMs": 179900,
+          "probability": 0.038137
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 179900,
+          "endMs": 180140,
+          "probability": 0.965245
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 180140,
+          "endMs": 180380,
+          "probability": 0.990947
+        },
+        {
+          "index": 4,
+          "text": "loud",
+          "startMs": 180380,
+          "endMs": 180800,
+          "probability": 0.997543
+        },
+        {
+          "index": 5,
+          "text": "beeping.",
+          "startMs": 180800,
+          "endMs": 181560,
+          "probability": 0.990174
+        },
+        {
+          "index": 6,
+          "text": "Agent",
+          "startMs": 182660,
+          "endMs": 182860,
+          "probability": 0.136707
+        },
+        {
+          "index": 7,
+          "text": "Meow,",
+          "startMs": 182860,
+          "endMs": 183160,
+          "probability": 0.739145
+        },
+        {
+          "index": 8,
+          "text": "I",
+          "startMs": 183580,
+          "endMs": 183880,
+          "probability": 0.995779
+        },
+        {
+          "index": 9,
+          "text": "detect",
+          "startMs": 183880,
+          "endMs": 184260,
+          "probability": 0.989812
+        },
+        {
+          "index": 10,
+          "text": "chocolate",
+          "startMs": 184260,
+          "endMs": 184820,
+          "probability": 0.98912
+        },
+        {
+          "index": 11,
+          "text": "chips",
+          "startMs": 184820,
+          "endMs": 185200,
+          "probability": 0.999186
+        },
+        {
+          "index": 12,
+          "text": "nearby.",
+          "startMs": 185200,
+          "endMs": 185720,
+          "probability": 0.986303
+        },
+        {
+          "index": 13,
+          "text": "There",
+          "startMs": 187280,
+          "endMs": 187560,
+          "probability": 0.958572
+        },
+        {
+          "index": 14,
+          "text": "they",
+          "startMs": 187560,
+          "endMs": 187800,
+          "probability": 0.99233
+        },
+        {
+          "index": 15,
+          "text": "are.",
+          "startMs": 187800,
+          "endMs": 188080,
+          "probability": 0.99938
+        },
+        {
+          "index": 16,
+          "text": "I'll",
+          "startMs": 188580,
+          "endMs": 188820,
+          "probability": 0.984723
+        },
+        {
+          "index": 17,
+          "text": "use",
+          "startMs": 188820,
+          "endMs": 189060,
+          "probability": 0.997726
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "the chip-o-meter to follow their trail. Agent Meow, I'm baking apple pie for the baking contest,",
+      "startMs": 189060,
+      "endMs": 197580,
+      "avgLogprob": -0.133966,
+      "noSpeechProb": 0.014896,
+      "compressionRatio": 1.449735,
+      "words": [
+        {
+          "index": 1,
+          "text": "the",
+          "startMs": 189060,
+          "endMs": 189300,
+          "probability": 0.993178
+        },
+        {
+          "index": 2,
+          "text": "chip",
+          "startMs": 189300,
+          "endMs": 189700,
+          "probability": 0.427915
+        },
+        {
+          "index": 3,
+          "text": "-o",
+          "startMs": 189700,
+          "endMs": 189820,
+          "probability": 0.835591
+        },
+        {
+          "index": 4,
+          "text": "-meter",
+          "startMs": 189820,
+          "endMs": 190060,
+          "probability": 0.98906
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 190060,
+          "endMs": 190340,
+          "probability": 0.995316
+        },
+        {
+          "index": 6,
+          "text": "follow",
+          "startMs": 190340,
+          "endMs": 190700,
+          "probability": 0.999243
+        },
+        {
+          "index": 7,
+          "text": "their",
+          "startMs": 190700,
+          "endMs": 191040,
+          "probability": 0.990482
+        },
+        {
+          "index": 8,
+          "text": "trail.",
+          "startMs": 191040,
+          "endMs": 191580,
+          "probability": 0.995125
+        },
+        {
+          "index": 9,
+          "text": "Agent",
+          "startMs": 193220,
+          "endMs": 193560,
+          "probability": 0.944362
+        },
+        {
+          "index": 10,
+          "text": "Meow,",
+          "startMs": 193560,
+          "endMs": 193980,
+          "probability": 0.986265
+        },
+        {
+          "index": 11,
+          "text": "I'm",
+          "startMs": 194840,
+          "endMs": 195220,
+          "probability": 0.994958
+        },
+        {
+          "index": 12,
+          "text": "baking",
+          "startMs": 195220,
+          "endMs": 195540,
+          "probability": 0.994926
+        },
+        {
+          "index": 13,
+          "text": "apple",
+          "startMs": 195540,
+          "endMs": 195860,
+          "probability": 0.952042
+        },
+        {
+          "index": 14,
+          "text": "pie",
+          "startMs": 195860,
+          "endMs": 196200,
+          "probability": 0.992437
+        },
+        {
+          "index": 15,
+          "text": "for",
+          "startMs": 196200,
+          "endMs": 196440,
+          "probability": 0.997436
+        },
+        {
+          "index": 16,
+          "text": "the",
+          "startMs": 196440,
+          "endMs": 196600,
+          "probability": 0.99706
+        },
+        {
+          "index": 17,
+          "text": "baking",
+          "startMs": 196600,
+          "endMs": 196920,
+          "probability": 0.965552
+        },
+        {
+          "index": 18,
+          "text": "contest,",
+          "startMs": 196920,
+          "endMs": 197580,
+          "probability": 0.997947
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "but my butter is gone. Agent Claw strikes again. Squirrel, have you seen him? No,",
+      "startMs": 198240,
+      "endMs": 207020,
+      "avgLogprob": -0.133966,
+      "noSpeechProb": 0.014896,
+      "compressionRatio": 1.449735,
+      "words": [
+        {
+          "index": 1,
+          "text": "but",
+          "startMs": 198240,
+          "endMs": 198400,
+          "probability": 0.997926
+        },
+        {
+          "index": 2,
+          "text": "my",
+          "startMs": 198400,
+          "endMs": 198700,
+          "probability": 0.998012
+        },
+        {
+          "index": 3,
+          "text": "butter",
+          "startMs": 198700,
+          "endMs": 199200,
+          "probability": 0.992329
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 199200,
+          "endMs": 199580,
+          "probability": 0.995922
+        },
+        {
+          "index": 5,
+          "text": "gone.",
+          "startMs": 199580,
+          "endMs": 200060,
+          "probability": 0.999332
+        },
+        {
+          "index": 6,
+          "text": "Agent",
+          "startMs": 201180,
+          "endMs": 201520,
+          "probability": 0.98093
+        },
+        {
+          "index": 7,
+          "text": "Claw",
+          "startMs": 201520,
+          "endMs": 201920,
+          "probability": 0.637333
+        },
+        {
+          "index": 8,
+          "text": "strikes",
+          "startMs": 201920,
+          "endMs": 202440,
+          "probability": 0.997854
+        },
+        {
+          "index": 9,
+          "text": "again.",
+          "startMs": 202440,
+          "endMs": 203180,
+          "probability": 0.998823
+        },
+        {
+          "index": 10,
+          "text": "Squirrel,",
+          "startMs": 204000,
+          "endMs": 204260,
+          "probability": 0.968908
+        },
+        {
+          "index": 11,
+          "text": "have",
+          "startMs": 204780,
+          "endMs": 204960,
+          "probability": 0.996201
+        },
+        {
+          "index": 12,
+          "text": "you",
+          "startMs": 204960,
+          "endMs": 205120,
+          "probability": 0.999065
+        },
+        {
+          "index": 13,
+          "text": "seen",
+          "startMs": 205120,
+          "endMs": 205440,
+          "probability": 0.996381
+        },
+        {
+          "index": 14,
+          "text": "him?",
+          "startMs": 205440,
+          "endMs": 205740,
+          "probability": 0.999468
+        },
+        {
+          "index": 15,
+          "text": "No,",
+          "startMs": 206580,
+          "endMs": 207020,
+          "probability": 0.976032
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "but I did hear a strange beeping earlier. I'll see if I can hear the beeping with my Mega Meow. Beep,",
+      "startMs": 207020,
+      "endMs": 217740,
+      "avgLogprob": -0.156344,
+      "noSpeechProb": 0.013057,
+      "compressionRatio": 1.40411,
+      "words": [
+        {
+          "index": 1,
+          "text": "but",
+          "startMs": 207020,
+          "endMs": 207880,
+          "probability": 0.067256
+        },
+        {
+          "index": 2,
+          "text": "I",
+          "startMs": 207880,
+          "endMs": 208200,
+          "probability": 0.985056
+        },
+        {
+          "index": 3,
+          "text": "did",
+          "startMs": 208200,
+          "endMs": 208800,
+          "probability": 0.913189
+        },
+        {
+          "index": 4,
+          "text": "hear",
+          "startMs": 208800,
+          "endMs": 209300,
+          "probability": 0.989243
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 209300,
+          "endMs": 209520,
+          "probability": 0.993544
+        },
+        {
+          "index": 6,
+          "text": "strange",
+          "startMs": 209520,
+          "endMs": 210160,
+          "probability": 0.999056
+        },
+        {
+          "index": 7,
+          "text": "beeping",
+          "startMs": 210160,
+          "endMs": 210920,
+          "probability": 0.986177
+        },
+        {
+          "index": 8,
+          "text": "earlier.",
+          "startMs": 210920,
+          "endMs": 211660,
+          "probability": 0.992971
+        },
+        {
+          "index": 9,
+          "text": "I'll",
+          "startMs": 212860,
+          "endMs": 213160,
+          "probability": 0.987598
+        },
+        {
+          "index": 10,
+          "text": "see",
+          "startMs": 213160,
+          "endMs": 213340,
+          "probability": 0.997181
+        },
+        {
+          "index": 11,
+          "text": "if",
+          "startMs": 213340,
+          "endMs": 213500,
+          "probability": 0.995945
+        },
+        {
+          "index": 12,
+          "text": "I",
+          "startMs": 213500,
+          "endMs": 213640,
+          "probability": 0.993787
+        },
+        {
+          "index": 13,
+          "text": "can",
+          "startMs": 213640,
+          "endMs": 213840,
+          "probability": 0.994865
+        },
+        {
+          "index": 14,
+          "text": "hear",
+          "startMs": 213840,
+          "endMs": 214060,
+          "probability": 0.992337
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 214060,
+          "endMs": 214240,
+          "probability": 0.991863
+        },
+        {
+          "index": 16,
+          "text": "beeping",
+          "startMs": 214240,
+          "endMs": 214660,
+          "probability": 0.997734
+        },
+        {
+          "index": 17,
+          "text": "with",
+          "startMs": 214660,
+          "endMs": 214900,
+          "probability": 0.995063
+        },
+        {
+          "index": 18,
+          "text": "my",
+          "startMs": 214900,
+          "endMs": 215240,
+          "probability": 0.99558
+        },
+        {
+          "index": 19,
+          "text": "Mega",
+          "startMs": 215240,
+          "endMs": 215700,
+          "probability": 0.319917
+        },
+        {
+          "index": 20,
+          "text": "Meow.",
+          "startMs": 215700,
+          "endMs": 216020,
+          "probability": 0.730693
+        },
+        {
+          "index": 21,
+          "text": "Beep,",
+          "startMs": 217380,
+          "endMs": 217740,
+          "probability": 0.899711
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "beep, beep. I think I've got something. The Mega Meow led me straight to Agent Claw. Using his jetpack,",
+      "startMs": 218180,
+      "endMs": 230240,
+      "avgLogprob": -0.156344,
+      "noSpeechProb": 0.013057,
+      "compressionRatio": 1.40411,
+      "words": [
+        {
+          "index": 1,
+          "text": "beep,",
+          "startMs": 218180,
+          "endMs": 218880,
+          "probability": 0.98687
+        },
+        {
+          "index": 2,
+          "text": "beep.",
+          "startMs": 219380,
+          "endMs": 219840,
+          "probability": 0.997158
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 221060,
+          "endMs": 221400,
+          "probability": 0.993666
+        },
+        {
+          "index": 4,
+          "text": "think",
+          "startMs": 221400,
+          "endMs": 221680,
+          "probability": 0.997897
+        },
+        {
+          "index": 5,
+          "text": "I've",
+          "startMs": 221680,
+          "endMs": 222040,
+          "probability": 0.993864
+        },
+        {
+          "index": 6,
+          "text": "got",
+          "startMs": 222040,
+          "endMs": 222340,
+          "probability": 0.996958
+        },
+        {
+          "index": 7,
+          "text": "something.",
+          "startMs": 222340,
+          "endMs": 223000,
+          "probability": 0.99665
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 224200,
+          "endMs": 224460,
+          "probability": 0.993225
+        },
+        {
+          "index": 9,
+          "text": "Mega",
+          "startMs": 224460,
+          "endMs": 224840,
+          "probability": 0.988136
+        },
+        {
+          "index": 10,
+          "text": "Meow",
+          "startMs": 224840,
+          "endMs": 225180,
+          "probability": 0.984019
+        },
+        {
+          "index": 11,
+          "text": "led",
+          "startMs": 225180,
+          "endMs": 225460,
+          "probability": 0.970546
+        },
+        {
+          "index": 12,
+          "text": "me",
+          "startMs": 225460,
+          "endMs": 225700,
+          "probability": 0.998554
+        },
+        {
+          "index": 13,
+          "text": "straight",
+          "startMs": 225700,
+          "endMs": 226160,
+          "probability": 0.996496
+        },
+        {
+          "index": 14,
+          "text": "to",
+          "startMs": 226160,
+          "endMs": 226600,
+          "probability": 0.998664
+        },
+        {
+          "index": 15,
+          "text": "Agent",
+          "startMs": 226600,
+          "endMs": 226920,
+          "probability": 0.983869
+        },
+        {
+          "index": 16,
+          "text": "Claw.",
+          "startMs": 226920,
+          "endMs": 227400,
+          "probability": 0.899434
+        },
+        {
+          "index": 17,
+          "text": "Using",
+          "startMs": 228960,
+          "endMs": 229240,
+          "probability": 0.992171
+        },
+        {
+          "index": 18,
+          "text": "his",
+          "startMs": 229240,
+          "endMs": 229600,
+          "probability": 0.998856
+        },
+        {
+          "index": 19,
+          "text": "jetpack,",
+          "startMs": 229600,
+          "endMs": 230240,
+          "probability": 0.642319
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "secret Agent Meow followed Agent Claw from the air. Agent Claw pushes a button that opens a secret",
+      "startMs": 230240,
+      "endMs": 239100,
+      "avgLogprob": -0.206799,
+      "noSpeechProb": 0.041449,
+      "compressionRatio": 1.43609,
+      "words": [
+        {
+          "index": 1,
+          "text": "secret",
+          "startMs": 230240,
+          "endMs": 230840,
+          "probability": 0.006217
+        },
+        {
+          "index": 2,
+          "text": "Agent",
+          "startMs": 230840,
+          "endMs": 231500,
+          "probability": 0.334404
+        },
+        {
+          "index": 3,
+          "text": "Meow",
+          "startMs": 231500,
+          "endMs": 231820,
+          "probability": 0.796402
+        },
+        {
+          "index": 4,
+          "text": "followed",
+          "startMs": 231820,
+          "endMs": 232420,
+          "probability": 0.992166
+        },
+        {
+          "index": 5,
+          "text": "Agent",
+          "startMs": 232420,
+          "endMs": 232780,
+          "probability": 0.96473
+        },
+        {
+          "index": 6,
+          "text": "Claw",
+          "startMs": 232780,
+          "endMs": 233120,
+          "probability": 0.877246
+        },
+        {
+          "index": 7,
+          "text": "from",
+          "startMs": 233120,
+          "endMs": 233480,
+          "probability": 0.996723
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 233480,
+          "endMs": 233680,
+          "probability": 0.998351
+        },
+        {
+          "index": 9,
+          "text": "air.",
+          "startMs": 233680,
+          "endMs": 234100,
+          "probability": 0.995391
+        },
+        {
+          "index": 10,
+          "text": "Agent",
+          "startMs": 235580,
+          "endMs": 235820,
+          "probability": 0.933998
+        },
+        {
+          "index": 11,
+          "text": "Claw",
+          "startMs": 235820,
+          "endMs": 236320,
+          "probability": 0.98934
+        },
+        {
+          "index": 12,
+          "text": "pushes",
+          "startMs": 236320,
+          "endMs": 236760,
+          "probability": 0.997875
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 236760,
+          "endMs": 237040,
+          "probability": 0.994934
+        },
+        {
+          "index": 14,
+          "text": "button",
+          "startMs": 237040,
+          "endMs": 237320,
+          "probability": 0.999465
+        },
+        {
+          "index": 15,
+          "text": "that",
+          "startMs": 237320,
+          "endMs": 237860,
+          "probability": 0.986056
+        },
+        {
+          "index": 16,
+          "text": "opens",
+          "startMs": 237860,
+          "endMs": 238320,
+          "probability": 0.997624
+        },
+        {
+          "index": 17,
+          "text": "a",
+          "startMs": 238320,
+          "endMs": 238560,
+          "probability": 0.99305
+        },
+        {
+          "index": 18,
+          "text": "secret",
+          "startMs": 238560,
+          "endMs": 239100,
+          "probability": 0.998654
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "door. That must be Agent Claw's secret lair. Super seers activate. Snap, click, zoop. What's",
+      "startMs": 239100,
+      "endMs": 253240,
+      "avgLogprob": -0.206799,
+      "noSpeechProb": 0.041449,
+      "compressionRatio": 1.43609,
+      "words": [
+        {
+          "index": 1,
+          "text": "door.",
+          "startMs": 239100,
+          "endMs": 239660,
+          "probability": 0.999132
+        },
+        {
+          "index": 2,
+          "text": "That",
+          "startMs": 241240,
+          "endMs": 241380,
+          "probability": 0.80318
+        },
+        {
+          "index": 3,
+          "text": "must",
+          "startMs": 241380,
+          "endMs": 241620,
+          "probability": 0.99862
+        },
+        {
+          "index": 4,
+          "text": "be",
+          "startMs": 241620,
+          "endMs": 241900,
+          "probability": 0.995471
+        },
+        {
+          "index": 5,
+          "text": "Agent",
+          "startMs": 241900,
+          "endMs": 242260,
+          "probability": 0.974339
+        },
+        {
+          "index": 6,
+          "text": "Claw's",
+          "startMs": 242260,
+          "endMs": 242940,
+          "probability": 0.981333
+        },
+        {
+          "index": 7,
+          "text": "secret",
+          "startMs": 242940,
+          "endMs": 243300,
+          "probability": 0.98157
+        },
+        {
+          "index": 8,
+          "text": "lair.",
+          "startMs": 243300,
+          "endMs": 243760,
+          "probability": 0.961753
+        },
+        {
+          "index": 9,
+          "text": "Super",
+          "startMs": 245400,
+          "endMs": 245940,
+          "probability": 0.835836
+        },
+        {
+          "index": 10,
+          "text": "seers",
+          "startMs": 245940,
+          "endMs": 246620,
+          "probability": 0.331549
+        },
+        {
+          "index": 11,
+          "text": "activate.",
+          "startMs": 246620,
+          "endMs": 247620,
+          "probability": 0.628673
+        },
+        {
+          "index": 12,
+          "text": "Snap,",
+          "startMs": 248940,
+          "endMs": 249480,
+          "probability": 0.976078
+        },
+        {
+          "index": 13,
+          "text": "click,",
+          "startMs": 249940,
+          "endMs": 250400,
+          "probability": 0.99121
+        },
+        {
+          "index": 14,
+          "text": "zoop.",
+          "startMs": 250920,
+          "endMs": 251480,
+          "probability": 0.888922
+        },
+        {
+          "index": 15,
+          "text": "What's",
+          "startMs": 252980,
+          "endMs": 253240,
+          "probability": 0.983638
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "he up to now? Secret Agent Meow went into the lair and saw the secret recipe for the rainbow",
+      "startMs": 253240,
+      "endMs": 262420,
+      "avgLogprob": -0.136014,
+      "noSpeechProb": 0.080128,
+      "compressionRatio": 1.538462,
+      "words": [
+        {
+          "index": 1,
+          "text": "he",
+          "startMs": 253240,
+          "endMs": 253320,
+          "probability": 0.003175
+        },
+        {
+          "index": 2,
+          "text": "up",
+          "startMs": 253320,
+          "endMs": 253680,
+          "probability": 0.534614
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 253680,
+          "endMs": 254020,
+          "probability": 0.858953
+        },
+        {
+          "index": 4,
+          "text": "now?",
+          "startMs": 254020,
+          "endMs": 254780,
+          "probability": 0.986122
+        },
+        {
+          "index": 5,
+          "text": "Secret",
+          "startMs": 257060,
+          "endMs": 257080,
+          "probability": 0.745501
+        },
+        {
+          "index": 6,
+          "text": "Agent",
+          "startMs": 257080,
+          "endMs": 257500,
+          "probability": 0.79855
+        },
+        {
+          "index": 7,
+          "text": "Meow",
+          "startMs": 257500,
+          "endMs": 257840,
+          "probability": 0.791843
+        },
+        {
+          "index": 8,
+          "text": "went",
+          "startMs": 257840,
+          "endMs": 258240,
+          "probability": 0.989732
+        },
+        {
+          "index": 9,
+          "text": "into",
+          "startMs": 258240,
+          "endMs": 258660,
+          "probability": 0.975135
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 258660,
+          "endMs": 258820,
+          "probability": 0.996272
+        },
+        {
+          "index": 11,
+          "text": "lair",
+          "startMs": 258820,
+          "endMs": 259120,
+          "probability": 0.512745
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 259120,
+          "endMs": 259880,
+          "probability": 0.832719
+        },
+        {
+          "index": 13,
+          "text": "saw",
+          "startMs": 259880,
+          "endMs": 260200,
+          "probability": 0.997398
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 260200,
+          "endMs": 260460,
+          "probability": 0.993096
+        },
+        {
+          "index": 15,
+          "text": "secret",
+          "startMs": 260460,
+          "endMs": 260900,
+          "probability": 0.958932
+        },
+        {
+          "index": 16,
+          "text": "recipe",
+          "startMs": 260900,
+          "endMs": 261500,
+          "probability": 0.992502
+        },
+        {
+          "index": 17,
+          "text": "for",
+          "startMs": 261500,
+          "endMs": 261800,
+          "probability": 0.992637
+        },
+        {
+          "index": 18,
+          "text": "the",
+          "startMs": 261800,
+          "endMs": 261980,
+          "probability": 0.992289
+        },
+        {
+          "index": 19,
+          "text": "rainbow",
+          "startMs": 261980,
+          "endMs": 262420,
+          "probability": 0.624427
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "chocolate chip cookies on a device labeled to self-destruct. Look, there it is, the secret",
+      "startMs": 262420,
+      "endMs": 272100,
+      "avgLogprob": -0.136014,
+      "noSpeechProb": 0.080128,
+      "compressionRatio": 1.538462,
+      "words": [
+        {
+          "index": 1,
+          "text": "chocolate",
+          "startMs": 262420,
+          "endMs": 263040,
+          "probability": 0.979523
+        },
+        {
+          "index": 2,
+          "text": "chip",
+          "startMs": 263040,
+          "endMs": 263400,
+          "probability": 0.983312
+        },
+        {
+          "index": 3,
+          "text": "cookies",
+          "startMs": 263400,
+          "endMs": 263940,
+          "probability": 0.990863
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 263940,
+          "endMs": 264580,
+          "probability": 0.947285
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 264580,
+          "endMs": 264760,
+          "probability": 0.982039
+        },
+        {
+          "index": 6,
+          "text": "device",
+          "startMs": 264760,
+          "endMs": 265200,
+          "probability": 0.996372
+        },
+        {
+          "index": 7,
+          "text": "labeled",
+          "startMs": 265200,
+          "endMs": 265700,
+          "probability": 0.715304
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 265700,
+          "endMs": 266120,
+          "probability": 0.728339
+        },
+        {
+          "index": 9,
+          "text": "self",
+          "startMs": 266120,
+          "endMs": 266500,
+          "probability": 0.915751
+        },
+        {
+          "index": 10,
+          "text": "-destruct.",
+          "startMs": 266500,
+          "endMs": 267380,
+          "probability": 0.903493
+        },
+        {
+          "index": 11,
+          "text": "Look,",
+          "startMs": 269240,
+          "endMs": 269660,
+          "probability": 0.726138
+        },
+        {
+          "index": 12,
+          "text": "there",
+          "startMs": 270100,
+          "endMs": 270560,
+          "probability": 0.989769
+        },
+        {
+          "index": 13,
+          "text": "it",
+          "startMs": 270560,
+          "endMs": 270720,
+          "probability": 0.980652
+        },
+        {
+          "index": 14,
+          "text": "is,",
+          "startMs": 270720,
+          "endMs": 271140,
+          "probability": 0.998307
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 271440,
+          "endMs": 271640,
+          "probability": 0.992411
+        },
+        {
+          "index": 16,
+          "text": "secret",
+          "startMs": 271640,
+          "endMs": 272100,
+          "probability": 0.987849
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "recipe and all the ingredients too. Agent Claw was looking at screens that showed his evil plan,",
+      "startMs": 272100,
+      "endMs": 281200,
+      "avgLogprob": -0.136014,
+      "noSpeechProb": 0.080128,
+      "compressionRatio": 1.538462,
+      "words": [
+        {
+          "index": 1,
+          "text": "recipe",
+          "startMs": 272100,
+          "endMs": 272780,
+          "probability": 0.99702
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 272780,
+          "endMs": 273420,
+          "probability": 0.505559
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 273420,
+          "endMs": 273700,
+          "probability": 0.994892
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 273700,
+          "endMs": 273940,
+          "probability": 0.985972
+        },
+        {
+          "index": 5,
+          "text": "ingredients",
+          "startMs": 273940,
+          "endMs": 274600,
+          "probability": 0.99675
+        },
+        {
+          "index": 6,
+          "text": "too.",
+          "startMs": 274600,
+          "endMs": 275420,
+          "probability": 0.753714
+        },
+        {
+          "index": 7,
+          "text": "Agent",
+          "startMs": 276920,
+          "endMs": 277280,
+          "probability": 0.969297
+        },
+        {
+          "index": 8,
+          "text": "Claw",
+          "startMs": 277280,
+          "endMs": 277580,
+          "probability": 0.925296
+        },
+        {
+          "index": 9,
+          "text": "was",
+          "startMs": 277580,
+          "endMs": 277880,
+          "probability": 0.992453
+        },
+        {
+          "index": 10,
+          "text": "looking",
+          "startMs": 277880,
+          "endMs": 278240,
+          "probability": 0.998387
+        },
+        {
+          "index": 11,
+          "text": "at",
+          "startMs": 278240,
+          "endMs": 278460,
+          "probability": 0.997581
+        },
+        {
+          "index": 12,
+          "text": "screens",
+          "startMs": 278460,
+          "endMs": 278960,
+          "probability": 0.986089
+        },
+        {
+          "index": 13,
+          "text": "that",
+          "startMs": 278960,
+          "endMs": 279320,
+          "probability": 0.997096
+        },
+        {
+          "index": 14,
+          "text": "showed",
+          "startMs": 279320,
+          "endMs": 279780,
+          "probability": 0.991419
+        },
+        {
+          "index": 15,
+          "text": "his",
+          "startMs": 279780,
+          "endMs": 280080,
+          "probability": 0.996398
+        },
+        {
+          "index": 16,
+          "text": "evil",
+          "startMs": 280080,
+          "endMs": 280520,
+          "probability": 0.99583
+        },
+        {
+          "index": 17,
+          "text": "plan,",
+          "startMs": 280520,
+          "endMs": 281200,
+          "probability": 0.998126
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "steal formula, bake amazing cookies, win it all. Gotcha, Claw. Hand over the recipe. You're too late.",
+      "startMs": 281200,
+      "endMs": 294120,
+      "avgLogprob": -0.177025,
+      "noSpeechProb": 0.073154,
+      "compressionRatio": 1.342282,
+      "words": [
+        {
+          "index": 1,
+          "text": "steal",
+          "startMs": 281200,
+          "endMs": 282060,
+          "probability": 0.100641
+        },
+        {
+          "index": 2,
+          "text": "formula,",
+          "startMs": 282060,
+          "endMs": 282800,
+          "probability": 0.967191
+        },
+        {
+          "index": 3,
+          "text": "bake",
+          "startMs": 283300,
+          "endMs": 283520,
+          "probability": 0.996521
+        },
+        {
+          "index": 4,
+          "text": "amazing",
+          "startMs": 283520,
+          "endMs": 284100,
+          "probability": 0.986389
+        },
+        {
+          "index": 5,
+          "text": "cookies,",
+          "startMs": 284100,
+          "endMs": 284740,
+          "probability": 0.996698
+        },
+        {
+          "index": 6,
+          "text": "win",
+          "startMs": 285360,
+          "endMs": 285520,
+          "probability": 0.940928
+        },
+        {
+          "index": 7,
+          "text": "it",
+          "startMs": 285520,
+          "endMs": 286120,
+          "probability": 0.963911
+        },
+        {
+          "index": 8,
+          "text": "all.",
+          "startMs": 286120,
+          "endMs": 287020,
+          "probability": 0.946088
+        },
+        {
+          "index": 9,
+          "text": "Gotcha,",
+          "startMs": 288940,
+          "endMs": 289440,
+          "probability": 0.882908
+        },
+        {
+          "index": 10,
+          "text": "Claw.",
+          "startMs": 289740,
+          "endMs": 289740,
+          "probability": 0.838916
+        },
+        {
+          "index": 11,
+          "text": "Hand",
+          "startMs": 290380,
+          "endMs": 290700,
+          "probability": 0.99032
+        },
+        {
+          "index": 12,
+          "text": "over",
+          "startMs": 290700,
+          "endMs": 291020,
+          "probability": 0.978788
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 291020,
+          "endMs": 291280,
+          "probability": 0.998946
+        },
+        {
+          "index": 14,
+          "text": "recipe.",
+          "startMs": 291280,
+          "endMs": 291840,
+          "probability": 0.998114
+        },
+        {
+          "index": 15,
+          "text": "You're",
+          "startMs": 292920,
+          "endMs": 293320,
+          "probability": 0.948523
+        },
+        {
+          "index": 16,
+          "text": "too",
+          "startMs": 293320,
+          "endMs": 293640,
+          "probability": 0.994757
+        },
+        {
+          "index": 17,
+          "text": "late.",
+          "startMs": 293640,
+          "endMs": 294120,
+          "probability": 0.999456
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "I've already said it to self-destruct. If I can't have the recipe, no one can. Claw spilled flower",
+      "startMs": 294700,
+      "endMs": 307320,
+      "avgLogprob": -0.177025,
+      "noSpeechProb": 0.073154,
+      "compressionRatio": 1.342282,
+      "words": [
+        {
+          "index": 1,
+          "text": "I've",
+          "startMs": 294700,
+          "endMs": 295160,
+          "probability": 0.993302
+        },
+        {
+          "index": 2,
+          "text": "already",
+          "startMs": 295160,
+          "endMs": 295660,
+          "probability": 0.997847
+        },
+        {
+          "index": 3,
+          "text": "said",
+          "startMs": 295660,
+          "endMs": 296100,
+          "probability": 0.61237
+        },
+        {
+          "index": 4,
+          "text": "it",
+          "startMs": 296100,
+          "endMs": 296300,
+          "probability": 0.995042
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 296300,
+          "endMs": 296580,
+          "probability": 0.991745
+        },
+        {
+          "index": 6,
+          "text": "self",
+          "startMs": 296580,
+          "endMs": 297060,
+          "probability": 0.973462
+        },
+        {
+          "index": 7,
+          "text": "-destruct.",
+          "startMs": 297060,
+          "endMs": 297980,
+          "probability": 0.934913
+        },
+        {
+          "index": 8,
+          "text": "If",
+          "startMs": 299000,
+          "endMs": 299620,
+          "probability": 0.994777
+        },
+        {
+          "index": 9,
+          "text": "I",
+          "startMs": 299620,
+          "endMs": 300020,
+          "probability": 0.99535
+        },
+        {
+          "index": 10,
+          "text": "can't",
+          "startMs": 300020,
+          "endMs": 300560,
+          "probability": 0.998554
+        },
+        {
+          "index": 11,
+          "text": "have",
+          "startMs": 300560,
+          "endMs": 300760,
+          "probability": 0.999186
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 300760,
+          "endMs": 301020,
+          "probability": 0.998547
+        },
+        {
+          "index": 13,
+          "text": "recipe,",
+          "startMs": 301020,
+          "endMs": 301640,
+          "probability": 0.999164
+        },
+        {
+          "index": 14,
+          "text": "no",
+          "startMs": 302440,
+          "endMs": 302840,
+          "probability": 0.987157
+        },
+        {
+          "index": 15,
+          "text": "one",
+          "startMs": 302840,
+          "endMs": 303340,
+          "probability": 0.972425
+        },
+        {
+          "index": 16,
+          "text": "can.",
+          "startMs": 303340,
+          "endMs": 304160,
+          "probability": 0.997861
+        },
+        {
+          "index": 17,
+          "text": "Claw",
+          "startMs": 305660,
+          "endMs": 306200,
+          "probability": 0.961888
+        },
+        {
+          "index": 18,
+          "text": "spilled",
+          "startMs": 306200,
+          "endMs": 306820,
+          "probability": 0.997697
+        },
+        {
+          "index": 19,
+          "text": "flower",
+          "startMs": 306820,
+          "endMs": 307320,
+          "probability": 0.352515
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "everywhere, exiting in a giant white cloud of flower. Agent Meow springs into action. Five, four,",
+      "startMs": 307320,
+      "endMs": 318480,
+      "avgLogprob": -0.159534,
+      "noSpeechProb": 0.061419,
+      "compressionRatio": 1.372414,
+      "words": [
+        {
+          "index": 1,
+          "text": "everywhere,",
+          "startMs": 307320,
+          "endMs": 308100,
+          "probability": 0.086616
+        },
+        {
+          "index": 2,
+          "text": "exiting",
+          "startMs": 308640,
+          "endMs": 308960,
+          "probability": 0.978266
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 308960,
+          "endMs": 309240,
+          "probability": 0.98951
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 309240,
+          "endMs": 309500,
+          "probability": 0.994496
+        },
+        {
+          "index": 5,
+          "text": "giant",
+          "startMs": 309500,
+          "endMs": 309820,
+          "probability": 0.997977
+        },
+        {
+          "index": 6,
+          "text": "white",
+          "startMs": 309820,
+          "endMs": 310180,
+          "probability": 0.961374
+        },
+        {
+          "index": 7,
+          "text": "cloud",
+          "startMs": 310180,
+          "endMs": 310500,
+          "probability": 0.998235
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 310500,
+          "endMs": 310760,
+          "probability": 0.998806
+        },
+        {
+          "index": 9,
+          "text": "flower.",
+          "startMs": 310760,
+          "endMs": 311320,
+          "probability": 0.373288
+        },
+        {
+          "index": 10,
+          "text": "Agent",
+          "startMs": 313180,
+          "endMs": 313180,
+          "probability": 0.922602
+        },
+        {
+          "index": 11,
+          "text": "Meow",
+          "startMs": 313180,
+          "endMs": 313580,
+          "probability": 0.788819
+        },
+        {
+          "index": 12,
+          "text": "springs",
+          "startMs": 313580,
+          "endMs": 314200,
+          "probability": 0.942206
+        },
+        {
+          "index": 13,
+          "text": "into",
+          "startMs": 314200,
+          "endMs": 314740,
+          "probability": 0.988532
+        },
+        {
+          "index": 14,
+          "text": "action.",
+          "startMs": 314740,
+          "endMs": 315560,
+          "probability": 0.999352
+        },
+        {
+          "index": 15,
+          "text": "Five,",
+          "startMs": 316700,
+          "endMs": 317180,
+          "probability": 0.069011
+        },
+        {
+          "index": 16,
+          "text": "four,",
+          "startMs": 317800,
+          "endMs": 318480,
+          "probability": 0.964074
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "three, two, not on my watch. Agent Meow grabbed giant wire cutters and cut the self-destruct. Got it.",
+      "startMs": 319480,
+      "endMs": 331800,
+      "avgLogprob": -0.159534,
+      "noSpeechProb": 0.061419,
+      "compressionRatio": 1.372414,
+      "words": [
+        {
+          "index": 1,
+          "text": "three,",
+          "startMs": 319480,
+          "endMs": 319980,
+          "probability": 0.998985
+        },
+        {
+          "index": 2,
+          "text": "two,",
+          "startMs": 320920,
+          "endMs": 321480,
+          "probability": 0.998379
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 322200,
+          "endMs": 322660,
+          "probability": 0.486933
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 322660,
+          "endMs": 322940,
+          "probability": 0.997214
+        },
+        {
+          "index": 5,
+          "text": "my",
+          "startMs": 322940,
+          "endMs": 323240,
+          "probability": 0.997162
+        },
+        {
+          "index": 6,
+          "text": "watch.",
+          "startMs": 323240,
+          "endMs": 323720,
+          "probability": 0.999298
+        },
+        {
+          "index": 7,
+          "text": "Agent",
+          "startMs": 325080,
+          "endMs": 325360,
+          "probability": 0.98499
+        },
+        {
+          "index": 8,
+          "text": "Meow",
+          "startMs": 325360,
+          "endMs": 325700,
+          "probability": 0.983459
+        },
+        {
+          "index": 9,
+          "text": "grabbed",
+          "startMs": 325700,
+          "endMs": 326180,
+          "probability": 0.994437
+        },
+        {
+          "index": 10,
+          "text": "giant",
+          "startMs": 326180,
+          "endMs": 326620,
+          "probability": 0.982455
+        },
+        {
+          "index": 11,
+          "text": "wire",
+          "startMs": 326620,
+          "endMs": 327000,
+          "probability": 0.995578
+        },
+        {
+          "index": 12,
+          "text": "cutters",
+          "startMs": 327000,
+          "endMs": 327440,
+          "probability": 0.966556
+        },
+        {
+          "index": 13,
+          "text": "and",
+          "startMs": 327440,
+          "endMs": 328000,
+          "probability": 0.891192
+        },
+        {
+          "index": 14,
+          "text": "cut",
+          "startMs": 328000,
+          "endMs": 328380,
+          "probability": 0.998432
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 328380,
+          "endMs": 328700,
+          "probability": 0.99359
+        },
+        {
+          "index": 16,
+          "text": "self",
+          "startMs": 328700,
+          "endMs": 329100,
+          "probability": 0.996502
+        },
+        {
+          "index": 17,
+          "text": "-destruct.",
+          "startMs": 329100,
+          "endMs": 329680,
+          "probability": 0.859192
+        },
+        {
+          "index": 18,
+          "text": "Got",
+          "startMs": 331120,
+          "endMs": 331340,
+          "probability": 0.894959
+        },
+        {
+          "index": 19,
+          "text": "it.",
+          "startMs": 331340,
+          "endMs": 331800,
+          "probability": 0.992396
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Deactivated. Later, Claw got away, but I found the recipe and all your missing stuff. Yay!",
+      "startMs": 333060,
+      "endMs": 344160,
+      "avgLogprob": -0.205822,
+      "noSpeechProb": 0.028394,
+      "compressionRatio": 1.326241,
+      "words": [
+        {
+          "index": 1,
+          "text": "Deactivated.",
+          "startMs": 333060,
+          "endMs": 333860,
+          "probability": 0.836415
+        },
+        {
+          "index": 2,
+          "text": "Later,",
+          "startMs": 336180,
+          "endMs": 336560,
+          "probability": 0.876778
+        },
+        {
+          "index": 3,
+          "text": "Claw",
+          "startMs": 338280,
+          "endMs": 338360,
+          "probability": 0.185164
+        },
+        {
+          "index": 4,
+          "text": "got",
+          "startMs": 338360,
+          "endMs": 338720,
+          "probability": 0.989773
+        },
+        {
+          "index": 5,
+          "text": "away,",
+          "startMs": 338720,
+          "endMs": 339120,
+          "probability": 0.997261
+        },
+        {
+          "index": 6,
+          "text": "but",
+          "startMs": 339500,
+          "endMs": 339700,
+          "probability": 0.981909
+        },
+        {
+          "index": 7,
+          "text": "I",
+          "startMs": 339700,
+          "endMs": 339860,
+          "probability": 0.98621
+        },
+        {
+          "index": 8,
+          "text": "found",
+          "startMs": 339860,
+          "endMs": 340160,
+          "probability": 0.980788
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 340160,
+          "endMs": 340420,
+          "probability": 0.993391
+        },
+        {
+          "index": 10,
+          "text": "recipe",
+          "startMs": 340420,
+          "endMs": 340900,
+          "probability": 0.991107
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 340900,
+          "endMs": 341360,
+          "probability": 0.930545
+        },
+        {
+          "index": 12,
+          "text": "all",
+          "startMs": 341360,
+          "endMs": 341600,
+          "probability": 0.987999
+        },
+        {
+          "index": 13,
+          "text": "your",
+          "startMs": 341600,
+          "endMs": 341800,
+          "probability": 0.970413
+        },
+        {
+          "index": 14,
+          "text": "missing",
+          "startMs": 341800,
+          "endMs": 342100,
+          "probability": 0.997709
+        },
+        {
+          "index": 15,
+          "text": "stuff.",
+          "startMs": 342100,
+          "endMs": 342700,
+          "probability": 0.997503
+        },
+        {
+          "index": 16,
+          "text": "Yay!",
+          "startMs": 344020,
+          "endMs": 344420,
+          "probability": 0.893728
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Secret Agent Meow closes another case. Thank you, Secret Agent Meow. Solving this case was extra",
+      "startMs": 347240,
+      "endMs": 357540,
+      "avgLogprob": -0.205822,
+      "noSpeechProb": 0.028394,
+      "compressionRatio": 1.326241,
+      "words": [
+        {
+          "index": 1,
+          "text": "Secret",
+          "startMs": 347240,
+          "endMs": 347240,
+          "probability": 0.385325
+        },
+        {
+          "index": 2,
+          "text": "Agent",
+          "startMs": 347240,
+          "endMs": 347620,
+          "probability": 0.891323
+        },
+        {
+          "index": 3,
+          "text": "Meow",
+          "startMs": 347620,
+          "endMs": 347980,
+          "probability": 0.840667
+        },
+        {
+          "index": 4,
+          "text": "closes",
+          "startMs": 347980,
+          "endMs": 348720,
+          "probability": 0.977317
+        },
+        {
+          "index": 5,
+          "text": "another",
+          "startMs": 348720,
+          "endMs": 349280,
+          "probability": 0.996392
+        },
+        {
+          "index": 6,
+          "text": "case.",
+          "startMs": 349280,
+          "endMs": 349840,
+          "probability": 0.998423
+        },
+        {
+          "index": 7,
+          "text": "Thank",
+          "startMs": 351600,
+          "endMs": 351800,
+          "probability": 0.901013
+        },
+        {
+          "index": 8,
+          "text": "you,",
+          "startMs": 351800,
+          "endMs": 352120,
+          "probability": 0.884177
+        },
+        {
+          "index": 9,
+          "text": "Secret",
+          "startMs": 352300,
+          "endMs": 352460,
+          "probability": 0.969658
+        },
+        {
+          "index": 10,
+          "text": "Agent",
+          "startMs": 352460,
+          "endMs": 353000,
+          "probability": 0.994129
+        },
+        {
+          "index": 11,
+          "text": "Meow.",
+          "startMs": 353000,
+          "endMs": 353520,
+          "probability": 0.988567
+        },
+        {
+          "index": 12,
+          "text": "Solving",
+          "startMs": 354900,
+          "endMs": 355280,
+          "probability": 0.98148
+        },
+        {
+          "index": 13,
+          "text": "this",
+          "startMs": 355280,
+          "endMs": 355580,
+          "probability": 0.995425
+        },
+        {
+          "index": 14,
+          "text": "case",
+          "startMs": 355580,
+          "endMs": 356000,
+          "probability": 0.998697
+        },
+        {
+          "index": 15,
+          "text": "was",
+          "startMs": 356000,
+          "endMs": 356680,
+          "probability": 0.986039
+        },
+        {
+          "index": 16,
+          "text": "extra",
+          "startMs": 356680,
+          "endMs": 357540,
+          "probability": 0.981097
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "sweet. And now I'm going to take another bite of this rainbow cookie. Case closed.",
+      "startMs": 357540,
+      "endMs": 365760,
+      "avgLogprob": -0.220398,
+      "noSpeechProb": 0.082794,
+      "compressionRatio": 1.270073,
+      "words": [
+        {
+          "index": 1,
+          "text": "sweet.",
+          "startMs": 357540,
+          "endMs": 358060,
+          "probability": 0.140422
+        },
+        {
+          "index": 2,
+          "text": "And",
+          "startMs": 359380,
+          "endMs": 359520,
+          "probability": 0.896559
+        },
+        {
+          "index": 3,
+          "text": "now",
+          "startMs": 359520,
+          "endMs": 359860,
+          "probability": 0.977724
+        },
+        {
+          "index": 4,
+          "text": "I'm",
+          "startMs": 359860,
+          "endMs": 360360,
+          "probability": 0.824235
+        },
+        {
+          "index": 5,
+          "text": "going",
+          "startMs": 360360,
+          "endMs": 360480,
+          "probability": 0.993716
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 360480,
+          "endMs": 360660,
+          "probability": 0.995751
+        },
+        {
+          "index": 7,
+          "text": "take",
+          "startMs": 360660,
+          "endMs": 360880,
+          "probability": 0.996228
+        },
+        {
+          "index": 8,
+          "text": "another",
+          "startMs": 360880,
+          "endMs": 361280,
+          "probability": 0.992584
+        },
+        {
+          "index": 9,
+          "text": "bite",
+          "startMs": 361280,
+          "endMs": 361580,
+          "probability": 0.995654
+        },
+        {
+          "index": 10,
+          "text": "of",
+          "startMs": 361580,
+          "endMs": 361780,
+          "probability": 0.994184
+        },
+        {
+          "index": 11,
+          "text": "this",
+          "startMs": 361780,
+          "endMs": 362040,
+          "probability": 0.994711
+        },
+        {
+          "index": 12,
+          "text": "rainbow",
+          "startMs": 362040,
+          "endMs": 362680,
+          "probability": 0.911883
+        },
+        {
+          "index": 13,
+          "text": "cookie.",
+          "startMs": 362680,
+          "endMs": 363440,
+          "probability": 0.986331
+        },
+        {
+          "index": 14,
+          "text": "Case",
+          "startMs": 364500,
+          "endMs": 364680,
+          "probability": 0.961287
+        },
+        {
+          "index": 15,
+          "text": "closed.",
+          "startMs": 364680,
+          "endMs": 365760,
+          "probability": 0.878197
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "We hope you've enjoyed this unabridged production of Pete the Cat and the Sprinkle Stealer.",
+      "startMs": 379460,
+      "endMs": 386760,
+      "avgLogprob": -0.220398,
+      "noSpeechProb": 0.082794,
+      "compressionRatio": 1.270073,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 379460,
+          "endMs": 380240,
+          "probability": 0.848371
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 380240,
+          "endMs": 380460,
+          "probability": 0.995983
+        },
+        {
+          "index": 3,
+          "text": "you've",
+          "startMs": 380460,
+          "endMs": 380760,
+          "probability": 0.962972
+        },
+        {
+          "index": 4,
+          "text": "enjoyed",
+          "startMs": 380760,
+          "endMs": 381140,
+          "probability": 0.997084
+        },
+        {
+          "index": 5,
+          "text": "this",
+          "startMs": 381140,
+          "endMs": 381520,
+          "probability": 0.995566
+        },
+        {
+          "index": 6,
+          "text": "unabridged",
+          "startMs": 381520,
+          "endMs": 382280,
+          "probability": 0.977221
+        },
+        {
+          "index": 7,
+          "text": "production",
+          "startMs": 382280,
+          "endMs": 382860,
+          "probability": 0.986453
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 382860,
+          "endMs": 383260,
+          "probability": 0.991813
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 383260,
+          "endMs": 384460,
+          "probability": 0.896709
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 384460,
+          "endMs": 384760,
+          "probability": 0.916843
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 384760,
+          "endMs": 385040,
+          "probability": 0.830232
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 385040,
+          "endMs": 385360,
+          "probability": 0.93656
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 385360,
+          "endMs": 385580,
+          "probability": 0.965934
+        },
+        {
+          "index": 14,
+          "text": "Sprinkle",
+          "startMs": 385580,
+          "endMs": 386120,
+          "probability": 0.906173
+        },
+        {
+          "index": 15,
+          "text": "Stealer.",
+          "startMs": 386120,
+          "endMs": 386760,
+          "probability": 0.715344
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "By Kimberly and James Dean. Performed by James Fowey. And directed by Cynthia Lee.",
+      "startMs": 387540,
+      "endMs": 395980,
+      "avgLogprob": -0.253259,
+      "noSpeechProb": 0.791892,
+      "compressionRatio": 1.468208,
+      "words": [
+        {
+          "index": 1,
+          "text": "By",
+          "startMs": 387540,
+          "endMs": 388100,
+          "probability": 0.032735
+        },
+        {
+          "index": 2,
+          "text": "Kimberly",
+          "startMs": 388100,
+          "endMs": 388580,
+          "probability": 0.627706
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 388580,
+          "endMs": 389080,
+          "probability": 0.89819
+        },
+        {
+          "index": 4,
+          "text": "James",
+          "startMs": 389080,
+          "endMs": 389500,
+          "probability": 0.99506
+        },
+        {
+          "index": 5,
+          "text": "Dean.",
+          "startMs": 389500,
+          "endMs": 389880,
+          "probability": 0.876385
+        },
+        {
+          "index": 6,
+          "text": "Performed",
+          "startMs": 391240,
+          "endMs": 391680,
+          "probability": 0.764475
+        },
+        {
+          "index": 7,
+          "text": "by",
+          "startMs": 391680,
+          "endMs": 392000,
+          "probability": 0.996851
+        },
+        {
+          "index": 8,
+          "text": "James",
+          "startMs": 392000,
+          "endMs": 392480,
+          "probability": 0.996809
+        },
+        {
+          "index": 9,
+          "text": "Fowey.",
+          "startMs": 392480,
+          "endMs": 392940,
+          "probability": 0.495703
+        },
+        {
+          "index": 10,
+          "text": "And",
+          "startMs": 394240,
+          "endMs": 394320,
+          "probability": 0.955975
+        },
+        {
+          "index": 11,
+          "text": "directed",
+          "startMs": 394320,
+          "endMs": 394760,
+          "probability": 0.971357
+        },
+        {
+          "index": 12,
+          "text": "by",
+          "startMs": 394760,
+          "endMs": 395140,
+          "probability": 0.998181
+        },
+        {
+          "index": 13,
+          "text": "Cynthia",
+          "startMs": 395140,
+          "endMs": 395600,
+          "probability": 0.988633
+        },
+        {
+          "index": 14,
+          "text": "Lee.",
+          "startMs": 395600,
+          "endMs": 395980,
+          "probability": 0.953845
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Presented by Harper and Harper Audio. This program was produced by John Marshall Media.",
+      "startMs": 397260,
+      "endMs": 403780,
+      "avgLogprob": -0.253259,
+      "noSpeechProb": 0.791892,
+      "compressionRatio": 1.468208,
+      "words": [
+        {
+          "index": 1,
+          "text": "Presented",
+          "startMs": 397260,
+          "endMs": 397700,
+          "probability": 0.930622
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 397700,
+          "endMs": 398040,
+          "probability": 0.998477
+        },
+        {
+          "index": 3,
+          "text": "Harper",
+          "startMs": 398040,
+          "endMs": 398400,
+          "probability": 0.983546
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 398400,
+          "endMs": 398740,
+          "probability": 0.525844
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 398740,
+          "endMs": 399080,
+          "probability": 0.992207
+        },
+        {
+          "index": 6,
+          "text": "Audio.",
+          "startMs": 399080,
+          "endMs": 399540,
+          "probability": 0.912857
+        },
+        {
+          "index": 7,
+          "text": "This",
+          "startMs": 401000,
+          "endMs": 401160,
+          "probability": 0.978526
+        },
+        {
+          "index": 8,
+          "text": "program",
+          "startMs": 401160,
+          "endMs": 401420,
+          "probability": 0.953409
+        },
+        {
+          "index": 9,
+          "text": "was",
+          "startMs": 401420,
+          "endMs": 401800,
+          "probability": 0.994696
+        },
+        {
+          "index": 10,
+          "text": "produced",
+          "startMs": 401800,
+          "endMs": 402200,
+          "probability": 0.998492
+        },
+        {
+          "index": 11,
+          "text": "by",
+          "startMs": 402200,
+          "endMs": 402640,
+          "probability": 0.995187
+        },
+        {
+          "index": 12,
+          "text": "John",
+          "startMs": 402640,
+          "endMs": 402960,
+          "probability": 0.965473
+        },
+        {
+          "index": 13,
+          "text": "Marshall",
+          "startMs": 402960,
+          "endMs": 403280,
+          "probability": 0.962511
+        },
+        {
+          "index": 14,
+          "text": "Media.",
+          "startMs": 403280,
+          "endMs": 403780,
+          "probability": 0.966662
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Executive producer, Almeida Baynut. Text copyright 2022 by Kimberly and James Dean.",
+      "startMs": 405080,
+      "endMs": 412980,
+      "avgLogprob": -0.253259,
+      "noSpeechProb": 0.791892,
+      "compressionRatio": 1.468208,
+      "words": [
+        {
+          "index": 1,
+          "text": "Executive",
+          "startMs": 405080,
+          "endMs": 405560,
+          "probability": 0.962781
+        },
+        {
+          "index": 2,
+          "text": "producer,",
+          "startMs": 405560,
+          "endMs": 406200,
+          "probability": 0.461324
+        },
+        {
+          "index": 3,
+          "text": "Almeida",
+          "startMs": 406780,
+          "endMs": 407200,
+          "probability": 0.613147
+        },
+        {
+          "index": 4,
+          "text": "Baynut.",
+          "startMs": 407200,
+          "endMs": 407680,
+          "probability": 0.584117
+        },
+        {
+          "index": 5,
+          "text": "Text",
+          "startMs": 408980,
+          "endMs": 409160,
+          "probability": 0.958549
+        },
+        {
+          "index": 6,
+          "text": "copyright",
+          "startMs": 409160,
+          "endMs": 409700,
+          "probability": 0.933218
+        },
+        {
+          "index": 7,
+          "text": "2022",
+          "startMs": 409700,
+          "endMs": 410640,
+          "probability": 0.735885
+        },
+        {
+          "index": 8,
+          "text": "by",
+          "startMs": 410640,
+          "endMs": 411300,
+          "probability": 0.851267
+        },
+        {
+          "index": 9,
+          "text": "Kimberly",
+          "startMs": 411300,
+          "endMs": 411700,
+          "probability": 0.980927
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 411700,
+          "endMs": 412120,
+          "probability": 0.99453
+        },
+        {
+          "index": 11,
+          "text": "James",
+          "startMs": 412120,
+          "endMs": 412600,
+          "probability": 0.998473
+        },
+        {
+          "index": 12,
+          "text": "Dean.",
+          "startMs": 412600,
+          "endMs": 412980,
+          "probability": 0.990052
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "Production copyright 2022 by Harper Collins Publishers. All rights reserved. Thank you for listening.",
+      "startMs": 412980,
+      "endMs": 423860,
+      "avgLogprob": -0.258872,
+      "noSpeechProb": 0.019782,
+      "compressionRatio": 1.041237,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 412980,
+          "endMs": 414720,
+          "probability": 0.450076
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 414720,
+          "endMs": 415480,
+          "probability": 0.676283
+        },
+        {
+          "index": 3,
+          "text": "2022",
+          "startMs": 415480,
+          "endMs": 416400,
+          "probability": 0.936985
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 416400,
+          "endMs": 417200,
+          "probability": 0.849341
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 417200,
+          "endMs": 417580,
+          "probability": 0.978817
+        },
+        {
+          "index": 6,
+          "text": "Collins",
+          "startMs": 417580,
+          "endMs": 418080,
+          "probability": 0.557343
+        },
+        {
+          "index": 7,
+          "text": "Publishers.",
+          "startMs": 418080,
+          "endMs": 418720,
+          "probability": 0.684145
+        },
+        {
+          "index": 8,
+          "text": "All",
+          "startMs": 420120,
+          "endMs": 420320,
+          "probability": 0.964437
+        },
+        {
+          "index": 9,
+          "text": "rights",
+          "startMs": 420320,
+          "endMs": 420640,
+          "probability": 0.893968
+        },
+        {
+          "index": 10,
+          "text": "reserved.",
+          "startMs": 420640,
+          "endMs": 421400,
+          "probability": 0.978469
+        },
+        {
+          "index": 11,
+          "text": "Thank",
+          "startMs": 422700,
+          "endMs": 422800,
+          "probability": 0.987199
+        },
+        {
+          "index": 12,
+          "text": "you",
+          "startMs": 422800,
+          "endMs": 423120,
+          "probability": 0.998071
+        },
+        {
+          "index": 13,
+          "text": "for",
+          "startMs": 423120,
+          "endMs": 423380,
+          "probability": 0.996717
+        },
+        {
+          "index": 14,
+          "text": "listening.",
+          "startMs": 423380,
+          "endMs": 423860,
+          "probability": 0.997947
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3426 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 34.659,
+  "text": "Welcome to the wonderful world of reading. In this I can read story, Pete the Kitty and the Unicorn's missing colors, you will be going on a fun adventure. Are you ready to read? Here we go! What is the best way to read? Pete sees his friend Stevie the Unicorn at the playground. Stevie looks sad. Hi Stevie, says Pete. What's wrong? The magic unicorn dance party is tonight, says Stevie. But I lost all the colors in my rainbow tail. I can help, says Pete. We can use my magic paintbrush. Where did you last see your colors? Pete asks. Um, Stevie says, when I was playing in the park. The park is very big. Stevie looks worried. We'll never find my colors before the dance party, Stevie says. Which colors are you missing? asks Pete. Red, orange, yellow, green, blue and purple are gone, Stevie says. Look! Pete points his magic brush at a berry patch. Let's borrow some red. Pop! A magic red blaze appears in Stevie's tail. Wow! says Stevie. Now we know what to do, says Pete. Great! says Stevie. Do green next. Green is everywhere, says Pete. The grass is green. The trees are green. Pop! Stevie's tail gets a green blaze, Stevie prances. That butterfly is yellow, says Pete. Pop! Stevie's tail gets a yellow blaze. Hurry, Pete, says Stevie. Three more colors to go. This flower is orange, says Pete. Pop! Stevie's tail gets an orange blaze. Keep going, Pete, Stevie says. The party starts soon. The lake is blue, Pete says. Pop! Stevie's tail gets a blue blaze. One more left, says Stevie. The clouds are purple, shouts Pete. Pop! Stevie's tail gets a purple blaze. Yay! Pete and Stevie cheer. Stevie jumps for joy. Pete found all the missing colors. I love my rainbow tail, says Stevie. Come with me to the party. Stevie and Pete dance at the Magic Unicorn dance party. Stevie's rainbow tail is a big hit. Thanks, Pete, says Stevie. It's cool to help friends, says Pete. We hope you have enjoyed this recording of Pete the Kitty and the Unicorn's Missing Colors by Kimberly and James Dean. This program was produced by John Marshall Media. Text copyright 2020 by Kimberly and James Dean. Illustrations copyright 2020 by James Dean. Pete the Kitty copyright 2015 by Pete the Cat LLC. Production copyright 2020 by Harper Collins Publishers. All rights reserved.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Welcome to the wonderful world of reading.",
+      "startMs": 2500,
+      "endMs": 5740,
+      "avgLogprob": -0.230035,
+      "noSpeechProb": 0.37713,
+      "compressionRatio": 1.328671,
+      "words": [
+        {
+          "index": 1,
+          "text": "Welcome",
+          "startMs": 2500,
+          "endMs": 3180,
+          "probability": 0.452162
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 3180,
+          "endMs": 3660,
+          "probability": 0.989587
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 3660,
+          "endMs": 3820,
+          "probability": 0.993928
+        },
+        {
+          "index": 4,
+          "text": "wonderful",
+          "startMs": 3820,
+          "endMs": 4300,
+          "probability": 0.940819
+        },
+        {
+          "index": 5,
+          "text": "world",
+          "startMs": 4300,
+          "endMs": 4860,
+          "probability": 0.966978
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 4860,
+          "endMs": 5200,
+          "probability": 0.99495
+        },
+        {
+          "index": 7,
+          "text": "reading.",
+          "startMs": 5200,
+          "endMs": 5740,
+          "probability": 0.924707
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "In this I can read story,",
+      "startMs": 6780,
+      "endMs": 9000,
+      "avgLogprob": -0.230035,
+      "noSpeechProb": 0.37713,
+      "compressionRatio": 1.328671,
+      "words": [
+        {
+          "index": 1,
+          "text": "In",
+          "startMs": 6780,
+          "endMs": 6800,
+          "probability": 0.981701
+        },
+        {
+          "index": 2,
+          "text": "this",
+          "startMs": 6800,
+          "endMs": 7140,
+          "probability": 0.997335
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 7140,
+          "endMs": 7740,
+          "probability": 0.386044
+        },
+        {
+          "index": 4,
+          "text": "can",
+          "startMs": 7740,
+          "endMs": 8040,
+          "probability": 0.536256
+        },
+        {
+          "index": 5,
+          "text": "read",
+          "startMs": 8040,
+          "endMs": 8380,
+          "probability": 0.921667
+        },
+        {
+          "index": 6,
+          "text": "story,",
+          "startMs": 8380,
+          "endMs": 9000,
+          "probability": 0.978895
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Pete the Kitty and the Unicorn's missing colors,",
+      "startMs": 9840,
+      "endMs": 12720,
+      "avgLogprob": -0.230035,
+      "noSpeechProb": 0.37713,
+      "compressionRatio": 1.328671,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 9840,
+          "endMs": 9880,
+          "probability": 0.940048
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 9880,
+          "endMs": 10140,
+          "probability": 0.94549
+        },
+        {
+          "index": 3,
+          "text": "Kitty",
+          "startMs": 10140,
+          "endMs": 10420,
+          "probability": 0.567667
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 10420,
+          "endMs": 10920,
+          "probability": 0.91202
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 10920,
+          "endMs": 11160,
+          "probability": 0.965101
+        },
+        {
+          "index": 6,
+          "text": "Unicorn's",
+          "startMs": 11160,
+          "endMs": 12220,
+          "probability": 0.641768
+        },
+        {
+          "index": 7,
+          "text": "missing",
+          "startMs": 12220,
+          "endMs": 12220,
+          "probability": 0.473352
+        },
+        {
+          "index": 8,
+          "text": "colors,",
+          "startMs": 12220,
+          "endMs": 12720,
+          "probability": 0.905797
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "you will be going on a fun adventure.",
+      "startMs": 13560,
+      "endMs": 16120,
+      "avgLogprob": -0.230035,
+      "noSpeechProb": 0.37713,
+      "compressionRatio": 1.328671,
+      "words": [
+        {
+          "index": 1,
+          "text": "you",
+          "startMs": 13560,
+          "endMs": 13800,
+          "probability": 0.905266
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 13800,
+          "endMs": 14040,
+          "probability": 0.990668
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 14040,
+          "endMs": 14240,
+          "probability": 0.994752
+        },
+        {
+          "index": 4,
+          "text": "going",
+          "startMs": 14240,
+          "endMs": 14620,
+          "probability": 0.994769
+        },
+        {
+          "index": 5,
+          "text": "on",
+          "startMs": 14620,
+          "endMs": 14880,
+          "probability": 0.99702
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 14880,
+          "endMs": 15080,
+          "probability": 0.994646
+        },
+        {
+          "index": 7,
+          "text": "fun",
+          "startMs": 15080,
+          "endMs": 15400,
+          "probability": 0.997646
+        },
+        {
+          "index": 8,
+          "text": "adventure.",
+          "startMs": 15400,
+          "endMs": 16120,
+          "probability": 0.995192
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Are you ready to read?",
+      "startMs": 17060,
+      "endMs": 18280,
+      "avgLogprob": -0.230035,
+      "noSpeechProb": 0.37713,
+      "compressionRatio": 1.328671,
+      "words": [
+        {
+          "index": 1,
+          "text": "Are",
+          "startMs": 17060,
+          "endMs": 17220,
+          "probability": 0.994182
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 17220,
+          "endMs": 17440,
+          "probability": 0.999167
+        },
+        {
+          "index": 3,
+          "text": "ready",
+          "startMs": 17440,
+          "endMs": 17640,
+          "probability": 0.997775
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 17640,
+          "endMs": 17960,
+          "probability": 0.998826
+        },
+        {
+          "index": 5,
+          "text": "read?",
+          "startMs": 17960,
+          "endMs": 18280,
+          "probability": 0.998551
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Here we go!",
+      "startMs": 19240,
+      "endMs": 20560,
+      "avgLogprob": -0.230035,
+      "noSpeechProb": 0.37713,
+      "compressionRatio": 1.328671,
+      "words": [
+        {
+          "index": 1,
+          "text": "Here",
+          "startMs": 19240,
+          "endMs": 19580,
+          "probability": 0.990057
+        },
+        {
+          "index": 2,
+          "text": "we",
+          "startMs": 19580,
+          "endMs": 19920,
+          "probability": 0.995396
+        },
+        {
+          "index": 3,
+          "text": "go!",
+          "startMs": 19920,
+          "endMs": 20560,
+          "probability": 0.998166
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "What is the best way to read?",
+      "startMs": 27400,
+      "endMs": 28280,
+      "avgLogprob": -0.353682,
+      "noSpeechProb": 0.081096,
+      "compressionRatio": 1.576389,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 27400,
+          "endMs": 28280,
+          "probability": 0.0014
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 28280,
+          "endMs": 28280,
+          "probability": 0.073916
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 28280,
+          "endMs": 28280,
+          "probability": 0.138521
+        },
+        {
+          "index": 4,
+          "text": "best",
+          "startMs": 28280,
+          "endMs": 28280,
+          "probability": 0.053746
+        },
+        {
+          "index": 5,
+          "text": "way",
+          "startMs": 28280,
+          "endMs": 28280,
+          "probability": 0.208481
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 28280,
+          "endMs": 28280,
+          "probability": 0.861255
+        },
+        {
+          "index": 7,
+          "text": "read?",
+          "startMs": 28280,
+          "endMs": 28280,
+          "probability": 0.001054
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "",
+      "startMs": 28280,
+      "endMs": 28280,
+      "avgLogprob": -0.353682,
+      "noSpeechProb": 0.081096,
+      "compressionRatio": 1.576389,
+      "words": []
+    },
+    {
+      "index": 9,
+      "text": "Pete sees his friend Stevie the Unicorn at the playground.",
+      "startMs": 28280,
+      "endMs": 32020,
+      "avgLogprob": -0.353682,
+      "noSpeechProb": 0.081096,
+      "compressionRatio": 1.576389,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 28280,
+          "endMs": 28280,
+          "probability": 0.004067
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 28280,
+          "endMs": 28640,
+          "probability": 0.736974
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 28640,
+          "endMs": 28960,
+          "probability": 0.987639
+        },
+        {
+          "index": 4,
+          "text": "friend",
+          "startMs": 28960,
+          "endMs": 29320,
+          "probability": 0.982723
+        },
+        {
+          "index": 5,
+          "text": "Stevie",
+          "startMs": 29320,
+          "endMs": 30020,
+          "probability": 0.893196
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 30020,
+          "endMs": 30260,
+          "probability": 0.953862
+        },
+        {
+          "index": 7,
+          "text": "Unicorn",
+          "startMs": 30260,
+          "endMs": 30920,
+          "probability": 0.583978
+        },
+        {
+          "index": 8,
+          "text": "at",
+          "startMs": 30920,
+          "endMs": 31320,
+          "probability": 0.969099
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 31320,
+          "endMs": 31500,
+          "probability": 0.995314
+        },
+        {
+          "index": 10,
+          "text": "playground.",
+          "startMs": 31500,
+          "endMs": 32020,
+          "probability": 0.965672
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Stevie looks sad.",
+      "startMs": 34420,
+      "endMs": 36000,
+      "avgLogprob": -0.353682,
+      "noSpeechProb": 0.081096,
+      "compressionRatio": 1.576389,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie",
+          "startMs": 34420,
+          "endMs": 35200,
+          "probability": 0.685438
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 35200,
+          "endMs": 35440,
+          "probability": 0.95224
+        },
+        {
+          "index": 3,
+          "text": "sad.",
+          "startMs": 35440,
+          "endMs": 36000,
+          "probability": 0.997047
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Hi Stevie, says Pete. What's wrong?",
+      "startMs": 36960,
+      "endMs": 39840,
+      "avgLogprob": -0.353682,
+      "noSpeechProb": 0.081096,
+      "compressionRatio": 1.576389,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hi",
+          "startMs": 36960,
+          "endMs": 37140,
+          "probability": 0.169577
+        },
+        {
+          "index": 2,
+          "text": "Stevie,",
+          "startMs": 37140,
+          "endMs": 37980,
+          "probability": 0.756286
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 38060,
+          "endMs": 38420,
+          "probability": 0.97802
+        },
+        {
+          "index": 4,
+          "text": "Pete.",
+          "startMs": 38420,
+          "endMs": 38840,
+          "probability": 0.994554
+        },
+        {
+          "index": 5,
+          "text": "What's",
+          "startMs": 39340,
+          "endMs": 39580,
+          "probability": 0.954388
+        },
+        {
+          "index": 6,
+          "text": "wrong?",
+          "startMs": 39580,
+          "endMs": 39840,
+          "probability": 0.99855
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "The magic unicorn dance party is tonight, says Stevie.",
+      "startMs": 42120,
+      "endMs": 46900,
+      "avgLogprob": -0.353682,
+      "noSpeechProb": 0.081096,
+      "compressionRatio": 1.576389,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 42120,
+          "endMs": 42320,
+          "probability": 0.933091
+        },
+        {
+          "index": 2,
+          "text": "magic",
+          "startMs": 42320,
+          "endMs": 42760,
+          "probability": 0.775839
+        },
+        {
+          "index": 3,
+          "text": "unicorn",
+          "startMs": 42760,
+          "endMs": 43440,
+          "probability": 0.942334
+        },
+        {
+          "index": 4,
+          "text": "dance",
+          "startMs": 43440,
+          "endMs": 43880,
+          "probability": 0.994607
+        },
+        {
+          "index": 5,
+          "text": "party",
+          "startMs": 43880,
+          "endMs": 44260,
+          "probability": 0.985232
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 44260,
+          "endMs": 44540,
+          "probability": 0.996748
+        },
+        {
+          "index": 7,
+          "text": "tonight,",
+          "startMs": 44540,
+          "endMs": 45120,
+          "probability": 0.995509
+        },
+        {
+          "index": 8,
+          "text": "says",
+          "startMs": 45780,
+          "endMs": 46140,
+          "probability": 0.986972
+        },
+        {
+          "index": 9,
+          "text": "Stevie.",
+          "startMs": 46140,
+          "endMs": 46900,
+          "probability": 0.99632
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "But I lost all the colors in my rainbow tail.",
+      "startMs": 46900,
+      "endMs": 51220,
+      "avgLogprob": -0.118151,
+      "noSpeechProb": 0.03571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 46900,
+          "endMs": 47860,
+          "probability": 0.407769
+        },
+        {
+          "index": 2,
+          "text": "I",
+          "startMs": 47860,
+          "endMs": 48040,
+          "probability": 0.963595
+        },
+        {
+          "index": 3,
+          "text": "lost",
+          "startMs": 48040,
+          "endMs": 48360,
+          "probability": 0.994139
+        },
+        {
+          "index": 4,
+          "text": "all",
+          "startMs": 48360,
+          "endMs": 48740,
+          "probability": 0.996636
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 48740,
+          "endMs": 48940,
+          "probability": 0.964077
+        },
+        {
+          "index": 6,
+          "text": "colors",
+          "startMs": 48940,
+          "endMs": 49340,
+          "probability": 0.879228
+        },
+        {
+          "index": 7,
+          "text": "in",
+          "startMs": 49340,
+          "endMs": 49680,
+          "probability": 0.989858
+        },
+        {
+          "index": 8,
+          "text": "my",
+          "startMs": 49680,
+          "endMs": 49920,
+          "probability": 0.996407
+        },
+        {
+          "index": 9,
+          "text": "rainbow",
+          "startMs": 49920,
+          "endMs": 50580,
+          "probability": 0.976821
+        },
+        {
+          "index": 10,
+          "text": "tail.",
+          "startMs": 50580,
+          "endMs": 51220,
+          "probability": 0.930589
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "I can help, says Pete. We can use my magic paintbrush.",
+      "startMs": 53480,
+      "endMs": 59140,
+      "avgLogprob": -0.118151,
+      "noSpeechProb": 0.03571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 53480,
+          "endMs": 53700,
+          "probability": 0.214652
+        },
+        {
+          "index": 2,
+          "text": "can",
+          "startMs": 53700,
+          "endMs": 53960,
+          "probability": 0.989895
+        },
+        {
+          "index": 3,
+          "text": "help,",
+          "startMs": 53960,
+          "endMs": 54440,
+          "probability": 0.998101
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 54780,
+          "endMs": 55060,
+          "probability": 0.964449
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 55060,
+          "endMs": 55560,
+          "probability": 0.979584
+        },
+        {
+          "index": 6,
+          "text": "We",
+          "startMs": 56340,
+          "endMs": 56480,
+          "probability": 0.990421
+        },
+        {
+          "index": 7,
+          "text": "can",
+          "startMs": 56480,
+          "endMs": 56740,
+          "probability": 0.998485
+        },
+        {
+          "index": 8,
+          "text": "use",
+          "startMs": 56740,
+          "endMs": 57120,
+          "probability": 0.999039
+        },
+        {
+          "index": 9,
+          "text": "my",
+          "startMs": 57120,
+          "endMs": 57420,
+          "probability": 0.996305
+        },
+        {
+          "index": 10,
+          "text": "magic",
+          "startMs": 57420,
+          "endMs": 58120,
+          "probability": 0.97226
+        },
+        {
+          "index": 11,
+          "text": "paintbrush.",
+          "startMs": 58120,
+          "endMs": 59140,
+          "probability": 0.846506
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Where did you last see your colors? Pete asks.",
+      "startMs": 62020,
+      "endMs": 66440,
+      "avgLogprob": -0.118151,
+      "noSpeechProb": 0.03571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Where",
+          "startMs": 62020,
+          "endMs": 62800,
+          "probability": 0.878653
+        },
+        {
+          "index": 2,
+          "text": "did",
+          "startMs": 62800,
+          "endMs": 63000,
+          "probability": 0.996866
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 63000,
+          "endMs": 63180,
+          "probability": 0.997822
+        },
+        {
+          "index": 4,
+          "text": "last",
+          "startMs": 63180,
+          "endMs": 63500,
+          "probability": 0.997357
+        },
+        {
+          "index": 5,
+          "text": "see",
+          "startMs": 63500,
+          "endMs": 63940,
+          "probability": 0.998261
+        },
+        {
+          "index": 6,
+          "text": "your",
+          "startMs": 63940,
+          "endMs": 64200,
+          "probability": 0.995589
+        },
+        {
+          "index": 7,
+          "text": "colors?",
+          "startMs": 64200,
+          "endMs": 64840,
+          "probability": 0.994835
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 65580,
+          "endMs": 65800,
+          "probability": 0.996134
+        },
+        {
+          "index": 9,
+          "text": "asks.",
+          "startMs": 65800,
+          "endMs": 66440,
+          "probability": 0.979217
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Um, Stevie says, when I was playing in the park.",
+      "startMs": 69180,
+      "endMs": 73800,
+      "avgLogprob": -0.118151,
+      "noSpeechProb": 0.03571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Um,",
+          "startMs": 69180,
+          "endMs": 69180,
+          "probability": 0.668642
+        },
+        {
+          "index": 2,
+          "text": "Stevie",
+          "startMs": 69860,
+          "endMs": 70320,
+          "probability": 0.992552
+        },
+        {
+          "index": 3,
+          "text": "says,",
+          "startMs": 70320,
+          "endMs": 70660,
+          "probability": 0.992909
+        },
+        {
+          "index": 4,
+          "text": "when",
+          "startMs": 71660,
+          "endMs": 71940,
+          "probability": 0.906937
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 71940,
+          "endMs": 72120,
+          "probability": 0.998914
+        },
+        {
+          "index": 6,
+          "text": "was",
+          "startMs": 72120,
+          "endMs": 72320,
+          "probability": 0.999435
+        },
+        {
+          "index": 7,
+          "text": "playing",
+          "startMs": 72320,
+          "endMs": 72720,
+          "probability": 0.998823
+        },
+        {
+          "index": 8,
+          "text": "in",
+          "startMs": 72720,
+          "endMs": 73240,
+          "probability": 0.988674
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 73240,
+          "endMs": 73360,
+          "probability": 0.998803
+        },
+        {
+          "index": 10,
+          "text": "park.",
+          "startMs": 73360,
+          "endMs": 73800,
+          "probability": 0.99428
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "The park is very big. Stevie looks worried.",
+      "startMs": 75320,
+      "endMs": 80520,
+      "avgLogprob": -0.108816,
+      "noSpeechProb": 0.012465,
+      "compressionRatio": 1.254237,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 75320,
+          "endMs": 76240,
+          "probability": 0.544776
+        },
+        {
+          "index": 2,
+          "text": "park",
+          "startMs": 76240,
+          "endMs": 76720,
+          "probability": 0.969437
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 76720,
+          "endMs": 77020,
+          "probability": 0.986727
+        },
+        {
+          "index": 4,
+          "text": "very",
+          "startMs": 77020,
+          "endMs": 77520,
+          "probability": 0.995957
+        },
+        {
+          "index": 5,
+          "text": "big.",
+          "startMs": 77520,
+          "endMs": 78180,
+          "probability": 0.998176
+        },
+        {
+          "index": 6,
+          "text": "Stevie",
+          "startMs": 79400,
+          "endMs": 79680,
+          "probability": 0.973466
+        },
+        {
+          "index": 7,
+          "text": "looks",
+          "startMs": 79680,
+          "endMs": 79960,
+          "probability": 0.992108
+        },
+        {
+          "index": 8,
+          "text": "worried.",
+          "startMs": 79960,
+          "endMs": 80520,
+          "probability": 0.998909
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "We'll never find my colors before the dance party, Stevie says.",
+      "startMs": 82660,
+      "endMs": 87820,
+      "avgLogprob": -0.108816,
+      "noSpeechProb": 0.012465,
+      "compressionRatio": 1.254237,
+      "words": [
+        {
+          "index": 1,
+          "text": "We'll",
+          "startMs": 82660,
+          "endMs": 83040,
+          "probability": 0.834097
+        },
+        {
+          "index": 2,
+          "text": "never",
+          "startMs": 83040,
+          "endMs": 83380,
+          "probability": 0.999279
+        },
+        {
+          "index": 3,
+          "text": "find",
+          "startMs": 83380,
+          "endMs": 83780,
+          "probability": 0.998492
+        },
+        {
+          "index": 4,
+          "text": "my",
+          "startMs": 83780,
+          "endMs": 84100,
+          "probability": 0.993557
+        },
+        {
+          "index": 5,
+          "text": "colors",
+          "startMs": 84100,
+          "endMs": 84480,
+          "probability": 0.755338
+        },
+        {
+          "index": 6,
+          "text": "before",
+          "startMs": 84480,
+          "endMs": 84960,
+          "probability": 0.996867
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 84960,
+          "endMs": 85200,
+          "probability": 0.997071
+        },
+        {
+          "index": 8,
+          "text": "dance",
+          "startMs": 85200,
+          "endMs": 85560,
+          "probability": 0.997486
+        },
+        {
+          "index": 9,
+          "text": "party,",
+          "startMs": 85560,
+          "endMs": 86140,
+          "probability": 0.996865
+        },
+        {
+          "index": 10,
+          "text": "Stevie",
+          "startMs": 86940,
+          "endMs": 87420,
+          "probability": 0.993446
+        },
+        {
+          "index": 11,
+          "text": "says.",
+          "startMs": 87420,
+          "endMs": 87820,
+          "probability": 0.99681
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Which colors are you missing? asks Pete.",
+      "startMs": 90140,
+      "endMs": 93140,
+      "avgLogprob": -0.108816,
+      "noSpeechProb": 0.012465,
+      "compressionRatio": 1.254237,
+      "words": [
+        {
+          "index": 1,
+          "text": "Which",
+          "startMs": 90140,
+          "endMs": 90520,
+          "probability": 0.923673
+        },
+        {
+          "index": 2,
+          "text": "colors",
+          "startMs": 90520,
+          "endMs": 90920,
+          "probability": 0.952307
+        },
+        {
+          "index": 3,
+          "text": "are",
+          "startMs": 90920,
+          "endMs": 91220,
+          "probability": 0.998434
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 91220,
+          "endMs": 91380,
+          "probability": 0.998616
+        },
+        {
+          "index": 5,
+          "text": "missing?",
+          "startMs": 91380,
+          "endMs": 91860,
+          "probability": 0.998141
+        },
+        {
+          "index": 6,
+          "text": "asks",
+          "startMs": 92680,
+          "endMs": 92680,
+          "probability": 0.227771
+        },
+        {
+          "index": 7,
+          "text": "Pete.",
+          "startMs": 92680,
+          "endMs": 93140,
+          "probability": 0.98618
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Red, orange, yellow, green, blue and purple are gone, Stevie says.",
+      "startMs": 94740,
+      "endMs": 104620,
+      "avgLogprob": -0.11339,
+      "noSpeechProb": 0.12566,
+      "compressionRatio": 1.310345,
+      "words": [
+        {
+          "index": 1,
+          "text": "Red,",
+          "startMs": 94740,
+          "endMs": 95700,
+          "probability": 0.398558
+        },
+        {
+          "index": 2,
+          "text": "orange,",
+          "startMs": 96920,
+          "endMs": 96920,
+          "probability": 0.869266
+        },
+        {
+          "index": 3,
+          "text": "yellow,",
+          "startMs": 97560,
+          "endMs": 97920,
+          "probability": 0.997101
+        },
+        {
+          "index": 4,
+          "text": "green,",
+          "startMs": 98740,
+          "endMs": 99240,
+          "probability": 0.997842
+        },
+        {
+          "index": 5,
+          "text": "blue",
+          "startMs": 99900,
+          "endMs": 100380,
+          "probability": 0.994074
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 100380,
+          "endMs": 101260,
+          "probability": 0.416688
+        },
+        {
+          "index": 7,
+          "text": "purple",
+          "startMs": 101260,
+          "endMs": 101960,
+          "probability": 0.997657
+        },
+        {
+          "index": 8,
+          "text": "are",
+          "startMs": 101960,
+          "endMs": 102360,
+          "probability": 0.991943
+        },
+        {
+          "index": 9,
+          "text": "gone,",
+          "startMs": 102360,
+          "endMs": 103040,
+          "probability": 0.996818
+        },
+        {
+          "index": 10,
+          "text": "Stevie",
+          "startMs": 103860,
+          "endMs": 104260,
+          "probability": 0.978518
+        },
+        {
+          "index": 11,
+          "text": "says.",
+          "startMs": 104260,
+          "endMs": 104620,
+          "probability": 0.990125
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Look! Pete points his magic brush at a berry patch.",
+      "startMs": 106980,
+      "endMs": 111080,
+      "avgLogprob": -0.11339,
+      "noSpeechProb": 0.12566,
+      "compressionRatio": 1.310345,
+      "words": [
+        {
+          "index": 1,
+          "text": "Look!",
+          "startMs": 106980,
+          "endMs": 107400,
+          "probability": 0.735425
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 107980,
+          "endMs": 108260,
+          "probability": 0.987817
+        },
+        {
+          "index": 3,
+          "text": "points",
+          "startMs": 108260,
+          "endMs": 108640,
+          "probability": 0.993206
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 108640,
+          "endMs": 108940,
+          "probability": 0.994517
+        },
+        {
+          "index": 5,
+          "text": "magic",
+          "startMs": 108940,
+          "endMs": 109360,
+          "probability": 0.955962
+        },
+        {
+          "index": 6,
+          "text": "brush",
+          "startMs": 109360,
+          "endMs": 109720,
+          "probability": 0.997331
+        },
+        {
+          "index": 7,
+          "text": "at",
+          "startMs": 109720,
+          "endMs": 110020,
+          "probability": 0.996237
+        },
+        {
+          "index": 8,
+          "text": "a",
+          "startMs": 110020,
+          "endMs": 110240,
+          "probability": 0.991017
+        },
+        {
+          "index": 9,
+          "text": "berry",
+          "startMs": 110240,
+          "endMs": 110640,
+          "probability": 0.979931
+        },
+        {
+          "index": 10,
+          "text": "patch.",
+          "startMs": 110640,
+          "endMs": 111080,
+          "probability": 0.995562
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Let's borrow some red.",
+      "startMs": 111880,
+      "endMs": 113480,
+      "avgLogprob": -0.11339,
+      "noSpeechProb": 0.12566,
+      "compressionRatio": 1.310345,
+      "words": [
+        {
+          "index": 1,
+          "text": "Let's",
+          "startMs": 111880,
+          "endMs": 112240,
+          "probability": 0.978028
+        },
+        {
+          "index": 2,
+          "text": "borrow",
+          "startMs": 112240,
+          "endMs": 112520,
+          "probability": 0.996789
+        },
+        {
+          "index": 3,
+          "text": "some",
+          "startMs": 112520,
+          "endMs": 112940,
+          "probability": 0.998552
+        },
+        {
+          "index": 4,
+          "text": "red.",
+          "startMs": 112940,
+          "endMs": 113480,
+          "probability": 0.971676
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Pop!",
+      "startMs": 115700,
+      "endMs": 115960,
+      "avgLogprob": -0.11339,
+      "noSpeechProb": 0.12566,
+      "compressionRatio": 1.310345,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pop!",
+          "startMs": 115700,
+          "endMs": 115960,
+          "probability": 0.7184
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "A magic red blaze appears in Stevie's tail.",
+      "startMs": 116800,
+      "endMs": 121200,
+      "avgLogprob": -0.11339,
+      "noSpeechProb": 0.12566,
+      "compressionRatio": 1.310345,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 116800,
+          "endMs": 117760,
+          "probability": 0.88842
+        },
+        {
+          "index": 2,
+          "text": "magic",
+          "startMs": 117760,
+          "endMs": 118320,
+          "probability": 0.977073
+        },
+        {
+          "index": 3,
+          "text": "red",
+          "startMs": 118320,
+          "endMs": 118720,
+          "probability": 0.973219
+        },
+        {
+          "index": 4,
+          "text": "blaze",
+          "startMs": 118720,
+          "endMs": 119240,
+          "probability": 0.96879
+        },
+        {
+          "index": 5,
+          "text": "appears",
+          "startMs": 119240,
+          "endMs": 119720,
+          "probability": 0.990829
+        },
+        {
+          "index": 6,
+          "text": "in",
+          "startMs": 119720,
+          "endMs": 120080,
+          "probability": 0.986055
+        },
+        {
+          "index": 7,
+          "text": "Stevie's",
+          "startMs": 120080,
+          "endMs": 120780,
+          "probability": 0.992731
+        },
+        {
+          "index": 8,
+          "text": "tail.",
+          "startMs": 120780,
+          "endMs": 121200,
+          "probability": 0.915267
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Wow! says Stevie.",
+      "startMs": 122200,
+      "endMs": 124640,
+      "avgLogprob": -0.117155,
+      "noSpeechProb": 0.024412,
+      "compressionRatio": 1.473214,
+      "words": [
+        {
+          "index": 1,
+          "text": "Wow!",
+          "startMs": 122200,
+          "endMs": 122740,
+          "probability": 0.080999
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 123600,
+          "endMs": 123780,
+          "probability": 0.716528
+        },
+        {
+          "index": 3,
+          "text": "Stevie.",
+          "startMs": 123780,
+          "endMs": 124640,
+          "probability": 0.977653
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Now we know what to do, says Pete.",
+      "startMs": 126500,
+      "endMs": 129340,
+      "avgLogprob": -0.117155,
+      "noSpeechProb": 0.024412,
+      "compressionRatio": 1.473214,
+      "words": [
+        {
+          "index": 1,
+          "text": "Now",
+          "startMs": 126500,
+          "endMs": 126940,
+          "probability": 0.709686
+        },
+        {
+          "index": 2,
+          "text": "we",
+          "startMs": 126940,
+          "endMs": 127200,
+          "probability": 0.972608
+        },
+        {
+          "index": 3,
+          "text": "know",
+          "startMs": 127200,
+          "endMs": 127400,
+          "probability": 0.998135
+        },
+        {
+          "index": 4,
+          "text": "what",
+          "startMs": 127400,
+          "endMs": 127580,
+          "probability": 0.989958
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 127580,
+          "endMs": 127760,
+          "probability": 0.993024
+        },
+        {
+          "index": 6,
+          "text": "do,",
+          "startMs": 127760,
+          "endMs": 128380,
+          "probability": 0.999311
+        },
+        {
+          "index": 7,
+          "text": "says",
+          "startMs": 128760,
+          "endMs": 128900,
+          "probability": 0.989967
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 128900,
+          "endMs": 129340,
+          "probability": 0.976927
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Great! says Stevie. Do green next.",
+      "startMs": 130140,
+      "endMs": 134080,
+      "avgLogprob": -0.117155,
+      "noSpeechProb": 0.024412,
+      "compressionRatio": 1.473214,
+      "words": [
+        {
+          "index": 1,
+          "text": "Great!",
+          "startMs": 130140,
+          "endMs": 130460,
+          "probability": 0.899671
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 131140,
+          "endMs": 131280,
+          "probability": 0.968811
+        },
+        {
+          "index": 3,
+          "text": "Stevie.",
+          "startMs": 131280,
+          "endMs": 132000,
+          "probability": 0.998705
+        },
+        {
+          "index": 4,
+          "text": "Do",
+          "startMs": 132720,
+          "endMs": 132820,
+          "probability": 0.967429
+        },
+        {
+          "index": 5,
+          "text": "green",
+          "startMs": 132820,
+          "endMs": 133300,
+          "probability": 0.751834
+        },
+        {
+          "index": 6,
+          "text": "next.",
+          "startMs": 133300,
+          "endMs": 134080,
+          "probability": 0.987455
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Green is everywhere, says Pete. The grass is green. The trees are green.",
+      "startMs": 136260,
+      "endMs": 143260,
+      "avgLogprob": -0.117155,
+      "noSpeechProb": 0.024412,
+      "compressionRatio": 1.473214,
+      "words": [
+        {
+          "index": 1,
+          "text": "Green",
+          "startMs": 136260,
+          "endMs": 136600,
+          "probability": 0.946754
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 136600,
+          "endMs": 136840,
+          "probability": 0.996469
+        },
+        {
+          "index": 3,
+          "text": "everywhere,",
+          "startMs": 136840,
+          "endMs": 137860,
+          "probability": 0.994209
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 138540,
+          "endMs": 138680,
+          "probability": 0.9973
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 138680,
+          "endMs": 139200,
+          "probability": 0.997516
+        },
+        {
+          "index": 6,
+          "text": "The",
+          "startMs": 139720,
+          "endMs": 139880,
+          "probability": 0.992513
+        },
+        {
+          "index": 7,
+          "text": "grass",
+          "startMs": 139880,
+          "endMs": 140320,
+          "probability": 0.999545
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 140320,
+          "endMs": 140660,
+          "probability": 0.999105
+        },
+        {
+          "index": 9,
+          "text": "green.",
+          "startMs": 140660,
+          "endMs": 141120,
+          "probability": 0.999014
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 141740,
+          "endMs": 141860,
+          "probability": 0.991584
+        },
+        {
+          "index": 11,
+          "text": "trees",
+          "startMs": 141860,
+          "endMs": 142340,
+          "probability": 0.996608
+        },
+        {
+          "index": 12,
+          "text": "are",
+          "startMs": 142340,
+          "endMs": 142800,
+          "probability": 0.999438
+        },
+        {
+          "index": 13,
+          "text": "green.",
+          "startMs": 142800,
+          "endMs": 143260,
+          "probability": 0.999197
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Pop!",
+      "startMs": 145460,
+      "endMs": 145660,
+      "avgLogprob": -0.117155,
+      "noSpeechProb": 0.024412,
+      "compressionRatio": 1.473214,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pop!",
+          "startMs": 145460,
+          "endMs": 145660,
+          "probability": 0.895488
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Stevie's tail gets a green blaze, Stevie prances.",
+      "startMs": 147580,
+      "endMs": 152560,
+      "avgLogprob": -0.095572,
+      "noSpeechProb": 0.007925,
+      "compressionRatio": 1.439024,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie's",
+          "startMs": 147580,
+          "endMs": 148500,
+          "probability": 0.660503
+        },
+        {
+          "index": 2,
+          "text": "tail",
+          "startMs": 148500,
+          "endMs": 148860,
+          "probability": 0.976083
+        },
+        {
+          "index": 3,
+          "text": "gets",
+          "startMs": 148860,
+          "endMs": 149200,
+          "probability": 0.948961
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 149200,
+          "endMs": 149480,
+          "probability": 0.994077
+        },
+        {
+          "index": 5,
+          "text": "green",
+          "startMs": 149480,
+          "endMs": 149940,
+          "probability": 0.989484
+        },
+        {
+          "index": 6,
+          "text": "blaze,",
+          "startMs": 149940,
+          "endMs": 150600,
+          "probability": 0.846688
+        },
+        {
+          "index": 7,
+          "text": "Stevie",
+          "startMs": 151480,
+          "endMs": 151940,
+          "probability": 0.995854
+        },
+        {
+          "index": 8,
+          "text": "prances.",
+          "startMs": 151940,
+          "endMs": 152560,
+          "probability": 0.792005
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "That butterfly is yellow, says Pete. Pop!",
+      "startMs": 154960,
+      "endMs": 159060,
+      "avgLogprob": -0.095572,
+      "noSpeechProb": 0.007925,
+      "compressionRatio": 1.439024,
+      "words": [
+        {
+          "index": 1,
+          "text": "That",
+          "startMs": 154960,
+          "endMs": 155160,
+          "probability": 0.197512
+        },
+        {
+          "index": 2,
+          "text": "butterfly",
+          "startMs": 155160,
+          "endMs": 155820,
+          "probability": 0.986312
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 155820,
+          "endMs": 156180,
+          "probability": 0.998134
+        },
+        {
+          "index": 4,
+          "text": "yellow,",
+          "startMs": 156180,
+          "endMs": 156640,
+          "probability": 0.99829
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 157380,
+          "endMs": 157440,
+          "probability": 0.982789
+        },
+        {
+          "index": 6,
+          "text": "Pete.",
+          "startMs": 157440,
+          "endMs": 157980,
+          "probability": 0.969997
+        },
+        {
+          "index": 7,
+          "text": "Pop!",
+          "startMs": 158800,
+          "endMs": 159060,
+          "probability": 0.828274
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Stevie's tail gets a yellow blaze.",
+      "startMs": 160800,
+      "endMs": 163820,
+      "avgLogprob": -0.095572,
+      "noSpeechProb": 0.007925,
+      "compressionRatio": 1.439024,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie's",
+          "startMs": 160800,
+          "endMs": 161520,
+          "probability": 0.993965
+        },
+        {
+          "index": 2,
+          "text": "tail",
+          "startMs": 161520,
+          "endMs": 161880,
+          "probability": 0.998232
+        },
+        {
+          "index": 3,
+          "text": "gets",
+          "startMs": 161880,
+          "endMs": 162320,
+          "probability": 0.992909
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 162320,
+          "endMs": 162600,
+          "probability": 0.998748
+        },
+        {
+          "index": 5,
+          "text": "yellow",
+          "startMs": 162600,
+          "endMs": 163100,
+          "probability": 0.999376
+        },
+        {
+          "index": 6,
+          "text": "blaze.",
+          "startMs": 163100,
+          "endMs": 163820,
+          "probability": 0.99646
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Hurry, Pete, says Stevie. Three more colors to go.",
+      "startMs": 166160,
+      "endMs": 170940,
+      "avgLogprob": -0.095572,
+      "noSpeechProb": 0.007925,
+      "compressionRatio": 1.439024,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hurry,",
+          "startMs": 166160,
+          "endMs": 166560,
+          "probability": 0.735475
+        },
+        {
+          "index": 2,
+          "text": "Pete,",
+          "startMs": 166560,
+          "endMs": 166960,
+          "probability": 0.996861
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 167380,
+          "endMs": 167620,
+          "probability": 0.996673
+        },
+        {
+          "index": 4,
+          "text": "Stevie.",
+          "startMs": 167620,
+          "endMs": 168320,
+          "probability": 0.997222
+        },
+        {
+          "index": 5,
+          "text": "Three",
+          "startMs": 168980,
+          "endMs": 169200,
+          "probability": 0.9697
+        },
+        {
+          "index": 6,
+          "text": "more",
+          "startMs": 169200,
+          "endMs": 169600,
+          "probability": 0.999262
+        },
+        {
+          "index": 7,
+          "text": "colors",
+          "startMs": 169600,
+          "endMs": 170020,
+          "probability": 0.801578
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 170020,
+          "endMs": 170420,
+          "probability": 0.998305
+        },
+        {
+          "index": 9,
+          "text": "go.",
+          "startMs": 170420,
+          "endMs": 170940,
+          "probability": 0.999255
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "This flower is orange, says Pete. Pop!",
+      "startMs": 172440,
+      "endMs": 177260,
+      "avgLogprob": -0.082041,
+      "noSpeechProb": 0.006331,
+      "compressionRatio": 1.361345,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 172440,
+          "endMs": 173400,
+          "probability": 0.513475
+        },
+        {
+          "index": 2,
+          "text": "flower",
+          "startMs": 173400,
+          "endMs": 173940,
+          "probability": 0.993732
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 173940,
+          "endMs": 174400,
+          "probability": 0.996966
+        },
+        {
+          "index": 4,
+          "text": "orange,",
+          "startMs": 174400,
+          "endMs": 175020,
+          "probability": 0.979147
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 175720,
+          "endMs": 175760,
+          "probability": 0.986967
+        },
+        {
+          "index": 6,
+          "text": "Pete.",
+          "startMs": 175760,
+          "endMs": 176260,
+          "probability": 0.979575
+        },
+        {
+          "index": 7,
+          "text": "Pop!",
+          "startMs": 177060,
+          "endMs": 177260,
+          "probability": 0.839012
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Stevie's tail gets an orange blaze.",
+      "startMs": 179080,
+      "endMs": 182140,
+      "avgLogprob": -0.082041,
+      "noSpeechProb": 0.006331,
+      "compressionRatio": 1.361345,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie's",
+          "startMs": 179080,
+          "endMs": 179940,
+          "probability": 0.955001
+        },
+        {
+          "index": 2,
+          "text": "tail",
+          "startMs": 179940,
+          "endMs": 180260,
+          "probability": 0.981573
+        },
+        {
+          "index": 3,
+          "text": "gets",
+          "startMs": 180260,
+          "endMs": 180700,
+          "probability": 0.991622
+        },
+        {
+          "index": 4,
+          "text": "an",
+          "startMs": 180700,
+          "endMs": 180980,
+          "probability": 0.98527
+        },
+        {
+          "index": 5,
+          "text": "orange",
+          "startMs": 180980,
+          "endMs": 181680,
+          "probability": 0.990869
+        },
+        {
+          "index": 6,
+          "text": "blaze.",
+          "startMs": 181680,
+          "endMs": 182140,
+          "probability": 0.962093
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "Keep going, Pete, Stevie says. The party starts soon.",
+      "startMs": 184540,
+      "endMs": 189760,
+      "avgLogprob": -0.082041,
+      "noSpeechProb": 0.006331,
+      "compressionRatio": 1.361345,
+      "words": [
+        {
+          "index": 1,
+          "text": "Keep",
+          "startMs": 184540,
+          "endMs": 184880,
+          "probability": 0.196562
+        },
+        {
+          "index": 2,
+          "text": "going,",
+          "startMs": 184880,
+          "endMs": 185480,
+          "probability": 0.997407
+        },
+        {
+          "index": 3,
+          "text": "Pete,",
+          "startMs": 185780,
+          "endMs": 186000,
+          "probability": 0.997263
+        },
+        {
+          "index": 4,
+          "text": "Stevie",
+          "startMs": 186480,
+          "endMs": 186920,
+          "probability": 0.997895
+        },
+        {
+          "index": 5,
+          "text": "says.",
+          "startMs": 186920,
+          "endMs": 187300,
+          "probability": 0.991854
+        },
+        {
+          "index": 6,
+          "text": "The",
+          "startMs": 187920,
+          "endMs": 188100,
+          "probability": 0.995933
+        },
+        {
+          "index": 7,
+          "text": "party",
+          "startMs": 188100,
+          "endMs": 188580,
+          "probability": 0.994861
+        },
+        {
+          "index": 8,
+          "text": "starts",
+          "startMs": 188580,
+          "endMs": 189060,
+          "probability": 0.993117
+        },
+        {
+          "index": 9,
+          "text": "soon.",
+          "startMs": 189060,
+          "endMs": 189760,
+          "probability": 0.999538
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "The lake is blue, Pete says. Pop!",
+      "startMs": 191760,
+      "endMs": 195740,
+      "avgLogprob": -0.082041,
+      "noSpeechProb": 0.006331,
+      "compressionRatio": 1.361345,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 191760,
+          "endMs": 192200,
+          "probability": 0.899484
+        },
+        {
+          "index": 2,
+          "text": "lake",
+          "startMs": 192200,
+          "endMs": 192560,
+          "probability": 0.989292
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 192560,
+          "endMs": 192860,
+          "probability": 0.999471
+        },
+        {
+          "index": 4,
+          "text": "blue,",
+          "startMs": 192860,
+          "endMs": 193380,
+          "probability": 0.998605
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 193760,
+          "endMs": 194040,
+          "probability": 0.997279
+        },
+        {
+          "index": 6,
+          "text": "says.",
+          "startMs": 194040,
+          "endMs": 194580,
+          "probability": 0.996669
+        },
+        {
+          "index": 7,
+          "text": "Pop!",
+          "startMs": 195620,
+          "endMs": 195740,
+          "probability": 0.995414
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Stevie's tail gets a blue blaze.",
+      "startMs": 197380,
+      "endMs": 200760,
+      "avgLogprob": -0.070982,
+      "noSpeechProb": 0.009646,
+      "compressionRatio": 1.389831,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie's",
+          "startMs": 197380,
+          "endMs": 198400,
+          "probability": 0.661461
+        },
+        {
+          "index": 2,
+          "text": "tail",
+          "startMs": 198400,
+          "endMs": 198820,
+          "probability": 0.976855
+        },
+        {
+          "index": 3,
+          "text": "gets",
+          "startMs": 198820,
+          "endMs": 199280,
+          "probability": 0.974069
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 199280,
+          "endMs": 199580,
+          "probability": 0.997594
+        },
+        {
+          "index": 5,
+          "text": "blue",
+          "startMs": 199580,
+          "endMs": 200080,
+          "probability": 0.972126
+        },
+        {
+          "index": 6,
+          "text": "blaze.",
+          "startMs": 200080,
+          "endMs": 200760,
+          "probability": 0.980045
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "One more left, says Stevie.",
+      "startMs": 202960,
+      "endMs": 206200,
+      "avgLogprob": -0.070982,
+      "noSpeechProb": 0.009646,
+      "compressionRatio": 1.389831,
+      "words": [
+        {
+          "index": 1,
+          "text": "One",
+          "startMs": 202960,
+          "endMs": 203460,
+          "probability": 0.468988
+        },
+        {
+          "index": 2,
+          "text": "more",
+          "startMs": 203460,
+          "endMs": 203980,
+          "probability": 0.99838
+        },
+        {
+          "index": 3,
+          "text": "left,",
+          "startMs": 203980,
+          "endMs": 204720,
+          "probability": 0.994891
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 205200,
+          "endMs": 205400,
+          "probability": 0.991388
+        },
+        {
+          "index": 5,
+          "text": "Stevie.",
+          "startMs": 205400,
+          "endMs": 206200,
+          "probability": 0.998204
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "The clouds are purple, shouts Pete. Pop!",
+      "startMs": 208200,
+      "endMs": 213800,
+      "avgLogprob": -0.070982,
+      "noSpeechProb": 0.009646,
+      "compressionRatio": 1.389831,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 208200,
+          "endMs": 208420,
+          "probability": 0.322142
+        },
+        {
+          "index": 2,
+          "text": "clouds",
+          "startMs": 208420,
+          "endMs": 208940,
+          "probability": 0.998137
+        },
+        {
+          "index": 3,
+          "text": "are",
+          "startMs": 208940,
+          "endMs": 209360,
+          "probability": 0.999066
+        },
+        {
+          "index": 4,
+          "text": "purple,",
+          "startMs": 209360,
+          "endMs": 210000,
+          "probability": 0.99675
+        },
+        {
+          "index": 5,
+          "text": "shouts",
+          "startMs": 210380,
+          "endMs": 210880,
+          "probability": 0.979083
+        },
+        {
+          "index": 6,
+          "text": "Pete.",
+          "startMs": 210880,
+          "endMs": 211320,
+          "probability": 0.970006
+        },
+        {
+          "index": 7,
+          "text": "Pop!",
+          "startMs": 213460,
+          "endMs": 213800,
+          "probability": 0.851501
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "Stevie's tail gets a purple blaze. Yay! Pete and Stevie cheer.",
+      "startMs": 215420,
+      "endMs": 223280,
+      "avgLogprob": -0.070982,
+      "noSpeechProb": 0.009646,
+      "compressionRatio": 1.389831,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie's",
+          "startMs": 215420,
+          "endMs": 216440,
+          "probability": 0.991923
+        },
+        {
+          "index": 2,
+          "text": "tail",
+          "startMs": 216440,
+          "endMs": 216780,
+          "probability": 0.998886
+        },
+        {
+          "index": 3,
+          "text": "gets",
+          "startMs": 216780,
+          "endMs": 217240,
+          "probability": 0.992686
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 217240,
+          "endMs": 217780,
+          "probability": 0.998892
+        },
+        {
+          "index": 5,
+          "text": "purple",
+          "startMs": 217780,
+          "endMs": 218200,
+          "probability": 0.999314
+        },
+        {
+          "index": 6,
+          "text": "blaze.",
+          "startMs": 218200,
+          "endMs": 218920,
+          "probability": 0.995093
+        },
+        {
+          "index": 7,
+          "text": "Yay!",
+          "startMs": 219860,
+          "endMs": 220480,
+          "probability": 0.900607
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 221360,
+          "endMs": 221620,
+          "probability": 0.99056
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 221620,
+          "endMs": 221980,
+          "probability": 0.997826
+        },
+        {
+          "index": 10,
+          "text": "Stevie",
+          "startMs": 221980,
+          "endMs": 222900,
+          "probability": 0.998886
+        },
+        {
+          "index": 11,
+          "text": "cheer.",
+          "startMs": 222900,
+          "endMs": 223280,
+          "probability": 0.998433
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Stevie jumps for joy. Pete found all the missing colors.",
+      "startMs": 225300,
+      "endMs": 231600,
+      "avgLogprob": -0.084071,
+      "noSpeechProb": 0.006851,
+      "compressionRatio": 1.323308,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie",
+          "startMs": 225300,
+          "endMs": 226380,
+          "probability": 0.505706
+        },
+        {
+          "index": 2,
+          "text": "jumps",
+          "startMs": 226380,
+          "endMs": 226820,
+          "probability": 0.567781
+        },
+        {
+          "index": 3,
+          "text": "for",
+          "startMs": 226820,
+          "endMs": 227300,
+          "probability": 0.994848
+        },
+        {
+          "index": 4,
+          "text": "joy.",
+          "startMs": 227300,
+          "endMs": 227980,
+          "probability": 0.90299
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 228860,
+          "endMs": 229060,
+          "probability": 0.982994
+        },
+        {
+          "index": 6,
+          "text": "found",
+          "startMs": 229060,
+          "endMs": 229500,
+          "probability": 0.994682
+        },
+        {
+          "index": 7,
+          "text": "all",
+          "startMs": 229500,
+          "endMs": 230160,
+          "probability": 0.978671
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 230160,
+          "endMs": 230480,
+          "probability": 0.985002
+        },
+        {
+          "index": 9,
+          "text": "missing",
+          "startMs": 230480,
+          "endMs": 230920,
+          "probability": 0.997893
+        },
+        {
+          "index": 10,
+          "text": "colors.",
+          "startMs": 230920,
+          "endMs": 231600,
+          "probability": 0.910216
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "I love my rainbow tail, says Stevie. Come with me to the party.",
+      "startMs": 234080,
+      "endMs": 240780,
+      "avgLogprob": -0.084071,
+      "noSpeechProb": 0.006851,
+      "compressionRatio": 1.323308,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 234080,
+          "endMs": 234280,
+          "probability": 0.095099
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 234280,
+          "endMs": 234820,
+          "probability": 0.986477
+        },
+        {
+          "index": 3,
+          "text": "my",
+          "startMs": 234820,
+          "endMs": 235200,
+          "probability": 0.997045
+        },
+        {
+          "index": 4,
+          "text": "rainbow",
+          "startMs": 235200,
+          "endMs": 235860,
+          "probability": 0.975755
+        },
+        {
+          "index": 5,
+          "text": "tail,",
+          "startMs": 235860,
+          "endMs": 236640,
+          "probability": 0.98464
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 237360,
+          "endMs": 237420,
+          "probability": 0.971968
+        },
+        {
+          "index": 7,
+          "text": "Stevie.",
+          "startMs": 237420,
+          "endMs": 238340,
+          "probability": 0.992821
+        },
+        {
+          "index": 8,
+          "text": "Come",
+          "startMs": 239120,
+          "endMs": 239240,
+          "probability": 0.982445
+        },
+        {
+          "index": 9,
+          "text": "with",
+          "startMs": 239240,
+          "endMs": 239500,
+          "probability": 0.998808
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 239500,
+          "endMs": 239780,
+          "probability": 0.999176
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 239780,
+          "endMs": 240020,
+          "probability": 0.995962
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 240020,
+          "endMs": 240200,
+          "probability": 0.994562
+        },
+        {
+          "index": 13,
+          "text": "party.",
+          "startMs": 240200,
+          "endMs": 240780,
+          "probability": 0.995093
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "Stevie and Pete dance at the Magic Unicorn dance party.",
+      "startMs": 244040,
+      "endMs": 249580,
+      "avgLogprob": -0.084071,
+      "noSpeechProb": 0.006851,
+      "compressionRatio": 1.323308,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie",
+          "startMs": 244040,
+          "endMs": 245120,
+          "probability": 0.947533
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 245120,
+          "endMs": 245380,
+          "probability": 0.991117
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 245380,
+          "endMs": 245800,
+          "probability": 0.997406
+        },
+        {
+          "index": 4,
+          "text": "dance",
+          "startMs": 245800,
+          "endMs": 246340,
+          "probability": 0.995829
+        },
+        {
+          "index": 5,
+          "text": "at",
+          "startMs": 246340,
+          "endMs": 246660,
+          "probability": 0.997719
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 246660,
+          "endMs": 246880,
+          "probability": 0.978212
+        },
+        {
+          "index": 7,
+          "text": "Magic",
+          "startMs": 246880,
+          "endMs": 247460,
+          "probability": 0.496119
+        },
+        {
+          "index": 8,
+          "text": "Unicorn",
+          "startMs": 247460,
+          "endMs": 248360,
+          "probability": 0.987646
+        },
+        {
+          "index": 9,
+          "text": "dance",
+          "startMs": 248360,
+          "endMs": 248920,
+          "probability": 0.539784
+        },
+        {
+          "index": 10,
+          "text": "party.",
+          "startMs": 248920,
+          "endMs": 249580,
+          "probability": 0.997735
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "Stevie's rainbow tail is a big hit.",
+      "startMs": 252320,
+      "endMs": 255820,
+      "avgLogprob": -0.128921,
+      "noSpeechProb": 0.006109,
+      "compressionRatio": 1.123596,
+      "words": [
+        {
+          "index": 1,
+          "text": "Stevie's",
+          "startMs": 252320,
+          "endMs": 253400,
+          "probability": 0.685825
+        },
+        {
+          "index": 2,
+          "text": "rainbow",
+          "startMs": 253400,
+          "endMs": 253820,
+          "probability": 0.589378
+        },
+        {
+          "index": 3,
+          "text": "tail",
+          "startMs": 253820,
+          "endMs": 254380,
+          "probability": 0.980888
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 254380,
+          "endMs": 254620,
+          "probability": 0.991896
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 254620,
+          "endMs": 254800,
+          "probability": 0.989093
+        },
+        {
+          "index": 6,
+          "text": "big",
+          "startMs": 254800,
+          "endMs": 255260,
+          "probability": 0.910973
+        },
+        {
+          "index": 7,
+          "text": "hit.",
+          "startMs": 255260,
+          "endMs": 255820,
+          "probability": 0.961203
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Thanks, Pete, says Stevie. It's cool to help friends, says Pete.",
+      "startMs": 259280,
+      "endMs": 267420,
+      "avgLogprob": -0.128921,
+      "noSpeechProb": 0.006109,
+      "compressionRatio": 1.123596,
+      "words": [
+        {
+          "index": 1,
+          "text": "Thanks,",
+          "startMs": 259280,
+          "endMs": 259900,
+          "probability": 0.250259
+        },
+        {
+          "index": 2,
+          "text": "Pete,",
+          "startMs": 259960,
+          "endMs": 260420,
+          "probability": 0.984842
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 260860,
+          "endMs": 261160,
+          "probability": 0.979755
+        },
+        {
+          "index": 4,
+          "text": "Stevie.",
+          "startMs": 261160,
+          "endMs": 262080,
+          "probability": 0.990193
+        },
+        {
+          "index": 5,
+          "text": "It's",
+          "startMs": 262800,
+          "endMs": 263200,
+          "probability": 0.953768
+        },
+        {
+          "index": 6,
+          "text": "cool",
+          "startMs": 263200,
+          "endMs": 263600,
+          "probability": 0.992076
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 263600,
+          "endMs": 264160,
+          "probability": 0.989044
+        },
+        {
+          "index": 8,
+          "text": "help",
+          "startMs": 264160,
+          "endMs": 264640,
+          "probability": 0.995957
+        },
+        {
+          "index": 9,
+          "text": "friends,",
+          "startMs": 264640,
+          "endMs": 265520,
+          "probability": 0.966717
+        },
+        {
+          "index": 10,
+          "text": "says",
+          "startMs": 266140,
+          "endMs": 266660,
+          "probability": 0.991659
+        },
+        {
+          "index": 11,
+          "text": "Pete.",
+          "startMs": 266660,
+          "endMs": 267420,
+          "probability": 0.997046
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "We hope you have enjoyed this recording of Pete the Kitty and the Unicorn's Missing Colors by Kimberly and James Dean.",
+      "startMs": 272580,
+      "endMs": 281540,
+      "avgLogprob": -0.188749,
+      "noSpeechProb": 0.926608,
+      "compressionRatio": 1.566265,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 272580,
+          "endMs": 273420,
+          "probability": 0.180422
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 273420,
+          "endMs": 273640,
+          "probability": 0.988551
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 273640,
+          "endMs": 273880,
+          "probability": 0.993861
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 273880,
+          "endMs": 274020,
+          "probability": 0.984001
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 274020,
+          "endMs": 274380,
+          "probability": 0.996933
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 274380,
+          "endMs": 274660,
+          "probability": 0.99268
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 274660,
+          "endMs": 275200,
+          "probability": 0.993636
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 275200,
+          "endMs": 275760,
+          "probability": 0.983313
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 275760,
+          "endMs": 276100,
+          "probability": 0.836297
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 276100,
+          "endMs": 276340,
+          "probability": 0.947717
+        },
+        {
+          "index": 11,
+          "text": "Kitty",
+          "startMs": 276340,
+          "endMs": 276540,
+          "probability": 0.430314
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 276540,
+          "endMs": 276960,
+          "probability": 0.960324
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 276960,
+          "endMs": 277180,
+          "probability": 0.94037
+        },
+        {
+          "index": 14,
+          "text": "Unicorn's",
+          "startMs": 277180,
+          "endMs": 277980,
+          "probability": 0.629375
+        },
+        {
+          "index": 15,
+          "text": "Missing",
+          "startMs": 277980,
+          "endMs": 278280,
+          "probability": 0.794157
+        },
+        {
+          "index": 16,
+          "text": "Colors",
+          "startMs": 278280,
+          "endMs": 278680,
+          "probability": 0.91265
+        },
+        {
+          "index": 17,
+          "text": "by",
+          "startMs": 278680,
+          "endMs": 279500,
+          "probability": 0.803305
+        },
+        {
+          "index": 18,
+          "text": "Kimberly",
+          "startMs": 279500,
+          "endMs": 279980,
+          "probability": 0.902099
+        },
+        {
+          "index": 19,
+          "text": "and",
+          "startMs": 279980,
+          "endMs": 280560,
+          "probability": 0.94587
+        },
+        {
+          "index": 20,
+          "text": "James",
+          "startMs": 280560,
+          "endMs": 281220,
+          "probability": 0.994092
+        },
+        {
+          "index": 21,
+          "text": "Dean.",
+          "startMs": 281220,
+          "endMs": 281540,
+          "probability": 0.878562
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "This program was produced by John Marshall Media.",
+      "startMs": 282220,
+      "endMs": 285200,
+      "avgLogprob": -0.188749,
+      "noSpeechProb": 0.926608,
+      "compressionRatio": 1.566265,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 282220,
+          "endMs": 282460,
+          "probability": 0.974709
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 282460,
+          "endMs": 282760,
+          "probability": 0.980138
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 282760,
+          "endMs": 283160,
+          "probability": 0.987232
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 283160,
+          "endMs": 283540,
+          "probability": 0.996566
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 283540,
+          "endMs": 283940,
+          "probability": 0.996817
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 283940,
+          "endMs": 284300,
+          "probability": 0.977642
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 284300,
+          "endMs": 284660,
+          "probability": 0.978012
+        },
+        {
+          "index": 8,
+          "text": "Media.",
+          "startMs": 284660,
+          "endMs": 285200,
+          "probability": 0.908439
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "Text copyright 2020 by Kimberly and James Dean.",
+      "startMs": 286140,
+      "endMs": 290080,
+      "avgLogprob": -0.188749,
+      "noSpeechProb": 0.926608,
+      "compressionRatio": 1.566265,
+      "words": [
+        {
+          "index": 1,
+          "text": "Text",
+          "startMs": 286140,
+          "endMs": 286260,
+          "probability": 0.836917
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 286260,
+          "endMs": 286840,
+          "probability": 0.549583
+        },
+        {
+          "index": 3,
+          "text": "2020",
+          "startMs": 286840,
+          "endMs": 287880,
+          "probability": 0.829214
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 287880,
+          "endMs": 288320,
+          "probability": 0.97172
+        },
+        {
+          "index": 5,
+          "text": "Kimberly",
+          "startMs": 288320,
+          "endMs": 288740,
+          "probability": 0.9916
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 288740,
+          "endMs": 289240,
+          "probability": 0.989595
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 289240,
+          "endMs": 289680,
+          "probability": 0.99793
+        },
+        {
+          "index": 8,
+          "text": "Dean.",
+          "startMs": 289680,
+          "endMs": 290080,
+          "probability": 0.989365
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "Illustrations copyright 2020 by James Dean.",
+      "startMs": 290840,
+      "endMs": 294380,
+      "avgLogprob": -0.188749,
+      "noSpeechProb": 0.926608,
+      "compressionRatio": 1.566265,
+      "words": [
+        {
+          "index": 1,
+          "text": "Illustrations",
+          "startMs": 290840,
+          "endMs": 291340,
+          "probability": 0.88341
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 291340,
+          "endMs": 291680,
+          "probability": 0.956412
+        },
+        {
+          "index": 3,
+          "text": "2020",
+          "startMs": 291680,
+          "endMs": 292960,
+          "probability": 0.980772
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 292960,
+          "endMs": 293480,
+          "probability": 0.989567
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 293480,
+          "endMs": 294000,
+          "probability": 0.996185
+        },
+        {
+          "index": 6,
+          "text": "Dean.",
+          "startMs": 294000,
+          "endMs": 294380,
+          "probability": 0.991989
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Pete the Kitty copyright 2015 by Pete the Cat LLC.",
+      "startMs": 294380,
+      "endMs": 299240,
+      "avgLogprob": -0.144895,
+      "noSpeechProb": 0.24069,
+      "compressionRatio": 1.186916,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 294380,
+          "endMs": 295120,
+          "probability": 0.254317
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 295120,
+          "endMs": 295320,
+          "probability": 0.934805
+        },
+        {
+          "index": 3,
+          "text": "Kitty",
+          "startMs": 295320,
+          "endMs": 295560,
+          "probability": 0.7585
+        },
+        {
+          "index": 4,
+          "text": "copyright",
+          "startMs": 295560,
+          "endMs": 295960,
+          "probability": 0.689178
+        },
+        {
+          "index": 5,
+          "text": "2015",
+          "startMs": 295960,
+          "endMs": 297160,
+          "probability": 0.948847
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 297160,
+          "endMs": 297680,
+          "probability": 0.940414
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 297680,
+          "endMs": 298000,
+          "probability": 0.962109
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 298000,
+          "endMs": 298220,
+          "probability": 0.966869
+        },
+        {
+          "index": 9,
+          "text": "Cat",
+          "startMs": 298220,
+          "endMs": 298440,
+          "probability": 0.841699
+        },
+        {
+          "index": 10,
+          "text": "LLC.",
+          "startMs": 298440,
+          "endMs": 299240,
+          "probability": 0.814213
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Production copyright 2020 by Harper Collins Publishers.",
+      "startMs": 300120,
+      "endMs": 304280,
+      "avgLogprob": -0.144895,
+      "noSpeechProb": 0.24069,
+      "compressionRatio": 1.186916,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 300120,
+          "endMs": 300480,
+          "probability": 0.972466
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 300480,
+          "endMs": 301120,
+          "probability": 0.93761
+        },
+        {
+          "index": 3,
+          "text": "2020",
+          "startMs": 301120,
+          "endMs": 302120,
+          "probability": 0.988772
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 302120,
+          "endMs": 302700,
+          "probability": 0.9577
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 302700,
+          "endMs": 303140,
+          "probability": 0.989735
+        },
+        {
+          "index": 6,
+          "text": "Collins",
+          "startMs": 303140,
+          "endMs": 303660,
+          "probability": 0.623165
+        },
+        {
+          "index": 7,
+          "text": "Publishers.",
+          "startMs": 303660,
+          "endMs": 304280,
+          "probability": 0.884868
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "All rights reserved.",
+      "startMs": 305160,
+      "endMs": 306320,
+      "avgLogprob": -0.144895,
+      "noSpeechProb": 0.24069,
+      "compressionRatio": 1.186916,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 305160,
+          "endMs": 305340,
+          "probability": 0.983356
+        },
+        {
+          "index": 2,
+          "text": "rights",
+          "startMs": 305340,
+          "endMs": 305720,
+          "probability": 0.928365
+        },
+        {
+          "index": 3,
+          "text": "reserved.",
+          "startMs": 305720,
+          "endMs": 306320,
+          "probability": 0.984348
+        }
+      ]
+    }
+  ]
+}

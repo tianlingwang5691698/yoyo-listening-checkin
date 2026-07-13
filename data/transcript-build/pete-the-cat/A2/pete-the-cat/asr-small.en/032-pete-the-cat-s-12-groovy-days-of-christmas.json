@@ -1,0 +1,3354 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 56.636,
+  "text": "Pete the Cat's 12 Groovy Days of Christmas by Kimberly and James Dean, performed by James Foey. On the first day of Christmas, Pete gave to me a road trip to the sea. Groovy! On the second day of Christmas, Pete gave to me two fuzzy gloves and a road trip to the sea. Groovy! On the third day of Christmas, Pete gave to me three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the fourth day of Christmas, Pete gave to me four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the fifth day of Christmas, Pete gave to me five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the sixth day of Christmas, Pete gave to me six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the seventh day of Christmas, Pete gave to me seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the eighth day of Christmas, Pete gave to me eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the ninth day of Christmas, Pete gave to me nine ugly sweaters, eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the tenth day of Christmas, Pete gave to me ten sloths sleeping, nine ugly sweaters, eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the eleventh day of Christmas, Pete gave to me eleven balls of bouncing, ten sloths of sleeping, nine ugly sweaters, eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy! On the twelfth day of Christmas, Pete gave to me twelve friends a rockin', eleven balls of bouncing, ten sloths of sleeping, ten sloths of sleeping, nine ugly sweaters, eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy!",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat's 12 Groovy Days of Christmas by Kimberly and James Dean, performed by James Foey.",
+      "startMs": 0,
+      "endMs": 12000,
+      "avgLogprob": -0.2171,
+      "noSpeechProb": 0.058807,
+      "compressionRatio": 1.308271,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 880,
+          "probability": 0.439453
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 880,
+          "endMs": 1160,
+          "probability": 0.955652
+        },
+        {
+          "index": 3,
+          "text": "Cat's",
+          "startMs": 1160,
+          "endMs": 1840,
+          "probability": 0.925367
+        },
+        {
+          "index": 4,
+          "text": "12",
+          "startMs": 1840,
+          "endMs": 2260,
+          "probability": 0.558386
+        },
+        {
+          "index": 5,
+          "text": "Groovy",
+          "startMs": 2260,
+          "endMs": 2880,
+          "probability": 0.971078
+        },
+        {
+          "index": 6,
+          "text": "Days",
+          "startMs": 2880,
+          "endMs": 3160,
+          "probability": 0.971921
+        },
+        {
+          "index": 7,
+          "text": "of",
+          "startMs": 3160,
+          "endMs": 3520,
+          "probability": 0.98367
+        },
+        {
+          "index": 8,
+          "text": "Christmas",
+          "startMs": 3520,
+          "endMs": 4160,
+          "probability": 0.997887
+        },
+        {
+          "index": 9,
+          "text": "by",
+          "startMs": 4160,
+          "endMs": 5140,
+          "probability": 0.726402
+        },
+        {
+          "index": 10,
+          "text": "Kimberly",
+          "startMs": 5140,
+          "endMs": 5600,
+          "probability": 0.801438
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 5600,
+          "endMs": 6100,
+          "probability": 0.949856
+        },
+        {
+          "index": 12,
+          "text": "James",
+          "startMs": 6100,
+          "endMs": 6700,
+          "probability": 0.99864
+        },
+        {
+          "index": 13,
+          "text": "Dean,",
+          "startMs": 6700,
+          "endMs": 7140,
+          "probability": 0.843805
+        },
+        {
+          "index": 14,
+          "text": "performed",
+          "startMs": 7880,
+          "endMs": 8560,
+          "probability": 0.98581
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 8560,
+          "endMs": 9000,
+          "probability": 0.999425
+        },
+        {
+          "index": 16,
+          "text": "James",
+          "startMs": 9000,
+          "endMs": 9480,
+          "probability": 0.998568
+        },
+        {
+          "index": 17,
+          "text": "Foey.",
+          "startMs": 9480,
+          "endMs": 12000,
+          "probability": 0.693364
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "On the first day of Christmas, Pete gave to me a road trip to the sea. Groovy!",
+      "startMs": 12620,
+      "endMs": 21180,
+      "avgLogprob": -0.2171,
+      "noSpeechProb": 0.058807,
+      "compressionRatio": 1.308271,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 12620,
+          "endMs": 13180,
+          "probability": 0.936662
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 13180,
+          "endMs": 13380,
+          "probability": 0.999039
+        },
+        {
+          "index": 3,
+          "text": "first",
+          "startMs": 13380,
+          "endMs": 13680,
+          "probability": 0.992211
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 13680,
+          "endMs": 14040,
+          "probability": 0.98297
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 14040,
+          "endMs": 14200,
+          "probability": 0.999523
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 14200,
+          "endMs": 14720,
+          "probability": 0.998429
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 15260,
+          "endMs": 15380,
+          "probability": 0.997054
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 15380,
+          "endMs": 15700,
+          "probability": 0.998621
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 15700,
+          "endMs": 15960,
+          "probability": 0.996104
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 15960,
+          "endMs": 16580,
+          "probability": 0.999313
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 16580,
+          "endMs": 17520,
+          "probability": 0.81228
+        },
+        {
+          "index": 12,
+          "text": "road",
+          "startMs": 17520,
+          "endMs": 17960,
+          "probability": 0.981164
+        },
+        {
+          "index": 13,
+          "text": "trip",
+          "startMs": 17960,
+          "endMs": 18320,
+          "probability": 0.979428
+        },
+        {
+          "index": 14,
+          "text": "to",
+          "startMs": 18320,
+          "endMs": 18660,
+          "probability": 0.999099
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 18660,
+          "endMs": 18860,
+          "probability": 0.99625
+        },
+        {
+          "index": 16,
+          "text": "sea.",
+          "startMs": 18860,
+          "endMs": 19420,
+          "probability": 0.991646
+        },
+        {
+          "index": 17,
+          "text": "Groovy!",
+          "startMs": 20760,
+          "endMs": 21180,
+          "probability": 0.992339
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "On the second day of Christmas, Pete gave to me two fuzzy gloves and a road trip to the sea. Groovy!",
+      "startMs": 22660,
+      "endMs": 37080,
+      "avgLogprob": -0.099101,
+      "noSpeechProb": 0.075725,
+      "compressionRatio": 1.098901,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 22660,
+          "endMs": 23640,
+          "probability": 0.772549
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 23640,
+          "endMs": 23840,
+          "probability": 0.997637
+        },
+        {
+          "index": 3,
+          "text": "second",
+          "startMs": 23840,
+          "endMs": 24260,
+          "probability": 0.964909
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 24260,
+          "endMs": 24640,
+          "probability": 0.991325
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 24640,
+          "endMs": 24780,
+          "probability": 0.998577
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 24780,
+          "endMs": 25380,
+          "probability": 0.996893
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 26040,
+          "endMs": 26160,
+          "probability": 0.990906
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 26160,
+          "endMs": 26540,
+          "probability": 0.998367
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 26540,
+          "endMs": 26820,
+          "probability": 0.996526
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 26820,
+          "endMs": 28480,
+          "probability": 0.999596
+        },
+        {
+          "index": 11,
+          "text": "two",
+          "startMs": 28480,
+          "endMs": 29620,
+          "probability": 0.348643
+        },
+        {
+          "index": 12,
+          "text": "fuzzy",
+          "startMs": 29620,
+          "endMs": 30300,
+          "probability": 0.980376
+        },
+        {
+          "index": 13,
+          "text": "gloves",
+          "startMs": 30300,
+          "endMs": 31060,
+          "probability": 0.999078
+        },
+        {
+          "index": 14,
+          "text": "and",
+          "startMs": 31060,
+          "endMs": 33500,
+          "probability": 0.801833
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 33500,
+          "endMs": 33760,
+          "probability": 0.995786
+        },
+        {
+          "index": 16,
+          "text": "road",
+          "startMs": 33760,
+          "endMs": 34080,
+          "probability": 0.996642
+        },
+        {
+          "index": 17,
+          "text": "trip",
+          "startMs": 34080,
+          "endMs": 34420,
+          "probability": 0.982485
+        },
+        {
+          "index": 18,
+          "text": "to",
+          "startMs": 34420,
+          "endMs": 34780,
+          "probability": 0.999127
+        },
+        {
+          "index": 19,
+          "text": "the",
+          "startMs": 34780,
+          "endMs": 34940,
+          "probability": 0.998356
+        },
+        {
+          "index": 20,
+          "text": "sea.",
+          "startMs": 34940,
+          "endMs": 35500,
+          "probability": 0.99569
+        },
+        {
+          "index": 21,
+          "text": "Groovy!",
+          "startMs": 36460,
+          "endMs": 37080,
+          "probability": 0.974851
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "On the third day of Christmas, Pete gave to me three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy!",
+      "startMs": 38500,
+      "endMs": 55860,
+      "avgLogprob": -0.087746,
+      "noSpeechProb": 0.018353,
+      "compressionRatio": 1.141509,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 38500,
+          "endMs": 39520,
+          "probability": 0.829028
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 39520,
+          "endMs": 39760,
+          "probability": 0.997999
+        },
+        {
+          "index": 3,
+          "text": "third",
+          "startMs": 39760,
+          "endMs": 40120,
+          "probability": 0.965537
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 40120,
+          "endMs": 40460,
+          "probability": 0.994413
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 40460,
+          "endMs": 40640,
+          "probability": 0.99889
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 40640,
+          "endMs": 41260,
+          "probability": 0.99785
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 42060,
+          "endMs": 42140,
+          "probability": 0.985453
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 42140,
+          "endMs": 42500,
+          "probability": 0.998412
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 42500,
+          "endMs": 42800,
+          "probability": 0.997651
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 42800,
+          "endMs": 43640,
+          "probability": 0.999476
+        },
+        {
+          "index": 11,
+          "text": "three",
+          "startMs": 43640,
+          "endMs": 45700,
+          "probability": 0.590092
+        },
+        {
+          "index": 12,
+          "text": "yummy",
+          "startMs": 45700,
+          "endMs": 46360,
+          "probability": 0.987507
+        },
+        {
+          "index": 13,
+          "text": "cupcakes,",
+          "startMs": 46360,
+          "endMs": 47480,
+          "probability": 0.993991
+        },
+        {
+          "index": 14,
+          "text": "two",
+          "startMs": 49540,
+          "endMs": 50000,
+          "probability": 0.99316
+        },
+        {
+          "index": 15,
+          "text": "fuzzy",
+          "startMs": 50000,
+          "endMs": 50680,
+          "probability": 0.989492
+        },
+        {
+          "index": 16,
+          "text": "gloves",
+          "startMs": 50680,
+          "endMs": 51320,
+          "probability": 0.999326
+        },
+        {
+          "index": 17,
+          "text": "and",
+          "startMs": 51320,
+          "endMs": 52220,
+          "probability": 0.240688
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 52220,
+          "endMs": 52460,
+          "probability": 0.993918
+        },
+        {
+          "index": 19,
+          "text": "road",
+          "startMs": 52460,
+          "endMs": 52800,
+          "probability": 0.996686
+        },
+        {
+          "index": 20,
+          "text": "trip",
+          "startMs": 52800,
+          "endMs": 53140,
+          "probability": 0.989214
+        },
+        {
+          "index": 21,
+          "text": "to",
+          "startMs": 53140,
+          "endMs": 53480,
+          "probability": 0.999399
+        },
+        {
+          "index": 22,
+          "text": "the",
+          "startMs": 53480,
+          "endMs": 53640,
+          "probability": 0.998935
+        },
+        {
+          "index": 23,
+          "text": "sea.",
+          "startMs": 53640,
+          "endMs": 54140,
+          "probability": 0.994865
+        },
+        {
+          "index": 24,
+          "text": "Groovy!",
+          "startMs": 55340,
+          "endMs": 55860,
+          "probability": 0.986858
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "On the fourth day of Christmas, Pete gave to me four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy!",
+      "startMs": 57340,
+      "endMs": 77720,
+      "avgLogprob": -0.073925,
+      "noSpeechProb": 0.017458,
+      "compressionRatio": 1.235294,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 57340,
+          "endMs": 58300,
+          "probability": 0.694147
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 58300,
+          "endMs": 58480,
+          "probability": 0.997796
+        },
+        {
+          "index": 3,
+          "text": "fourth",
+          "startMs": 58480,
+          "endMs": 58820,
+          "probability": 0.837722
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 58820,
+          "endMs": 59200,
+          "probability": 0.997181
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 59200,
+          "endMs": 59360,
+          "probability": 0.998714
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 59360,
+          "endMs": 59920,
+          "probability": 0.997291
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 60620,
+          "endMs": 60660,
+          "probability": 0.989432
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 60660,
+          "endMs": 61020,
+          "probability": 0.998385
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 61020,
+          "endMs": 61260,
+          "probability": 0.995729
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 61260,
+          "endMs": 61680,
+          "probability": 0.999437
+        },
+        {
+          "index": 11,
+          "text": "four",
+          "startMs": 61680,
+          "endMs": 64160,
+          "probability": 0.496731
+        },
+        {
+          "index": 12,
+          "text": "far",
+          "startMs": 64160,
+          "endMs": 64840,
+          "probability": 0.893527
+        },
+        {
+          "index": 13,
+          "text": "out",
+          "startMs": 64840,
+          "endMs": 65240,
+          "probability": 0.496915
+        },
+        {
+          "index": 14,
+          "text": "surfboards,",
+          "startMs": 65240,
+          "endMs": 66540,
+          "probability": 0.847571
+        },
+        {
+          "index": 15,
+          "text": "three",
+          "startMs": 68680,
+          "endMs": 69100,
+          "probability": 0.989502
+        },
+        {
+          "index": 16,
+          "text": "yummy",
+          "startMs": 69100,
+          "endMs": 69820,
+          "probability": 0.99477
+        },
+        {
+          "index": 17,
+          "text": "cupcakes,",
+          "startMs": 69820,
+          "endMs": 70820,
+          "probability": 0.995636
+        },
+        {
+          "index": 18,
+          "text": "two",
+          "startMs": 71540,
+          "endMs": 71920,
+          "probability": 0.996862
+        },
+        {
+          "index": 19,
+          "text": "fuzzy",
+          "startMs": 71920,
+          "endMs": 72600,
+          "probability": 0.986752
+        },
+        {
+          "index": 20,
+          "text": "gloves",
+          "startMs": 72600,
+          "endMs": 73280,
+          "probability": 0.998916
+        },
+        {
+          "index": 21,
+          "text": "and",
+          "startMs": 73280,
+          "endMs": 74160,
+          "probability": 0.210887
+        },
+        {
+          "index": 22,
+          "text": "a",
+          "startMs": 74160,
+          "endMs": 74360,
+          "probability": 0.970807
+        },
+        {
+          "index": 23,
+          "text": "road",
+          "startMs": 74360,
+          "endMs": 74780,
+          "probability": 0.997425
+        },
+        {
+          "index": 24,
+          "text": "trip",
+          "startMs": 74780,
+          "endMs": 75140,
+          "probability": 0.992051
+        },
+        {
+          "index": 25,
+          "text": "to",
+          "startMs": 75140,
+          "endMs": 75480,
+          "probability": 0.999356
+        },
+        {
+          "index": 26,
+          "text": "the",
+          "startMs": 75480,
+          "endMs": 75680,
+          "probability": 0.998716
+        },
+        {
+          "index": 27,
+          "text": "sea.",
+          "startMs": 75680,
+          "endMs": 76220,
+          "probability": 0.993638
+        },
+        {
+          "index": 28,
+          "text": "Groovy!",
+          "startMs": 77240,
+          "endMs": 77720,
+          "probability": 0.98393
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "On the fifth day of Christmas, Pete gave to me five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy!",
+      "startMs": 79080,
+      "endMs": 101680,
+      "avgLogprob": -0.039896,
+      "noSpeechProb": 0.024914,
+      "compressionRatio": 1.261538,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 79080,
+          "endMs": 80280,
+          "probability": 0.33596
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 80280,
+          "endMs": 80480,
+          "probability": 0.996835
+        },
+        {
+          "index": 3,
+          "text": "fifth",
+          "startMs": 80480,
+          "endMs": 80780,
+          "probability": 0.823759
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 80780,
+          "endMs": 81200,
+          "probability": 0.991855
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 81200,
+          "endMs": 81360,
+          "probability": 0.99856
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 81360,
+          "endMs": 81980,
+          "probability": 0.997082
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 82620,
+          "endMs": 82740,
+          "probability": 0.990821
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 82740,
+          "endMs": 83080,
+          "probability": 0.998267
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 83080,
+          "endMs": 83360,
+          "probability": 0.998325
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 83360,
+          "endMs": 84140,
+          "probability": 0.999345
+        },
+        {
+          "index": 11,
+          "text": "five",
+          "startMs": 84140,
+          "endMs": 86300,
+          "probability": 0.131646
+        },
+        {
+          "index": 12,
+          "text": "onion",
+          "startMs": 86300,
+          "endMs": 87160,
+          "probability": 0.986383
+        },
+        {
+          "index": 13,
+          "text": "rings,",
+          "startMs": 87160,
+          "endMs": 87880,
+          "probability": 0.998403
+        },
+        {
+          "index": 14,
+          "text": "four",
+          "startMs": 90180,
+          "endMs": 90480,
+          "probability": 0.988614
+        },
+        {
+          "index": 15,
+          "text": "far",
+          "startMs": 90480,
+          "endMs": 91120,
+          "probability": 0.989583
+        },
+        {
+          "index": 16,
+          "text": "out",
+          "startMs": 91120,
+          "endMs": 91460,
+          "probability": 0.417225
+        },
+        {
+          "index": 17,
+          "text": "surfboards,",
+          "startMs": 91460,
+          "endMs": 92440,
+          "probability": 0.859941
+        },
+        {
+          "index": 18,
+          "text": "three",
+          "startMs": 93120,
+          "endMs": 93440,
+          "probability": 0.995368
+        },
+        {
+          "index": 19,
+          "text": "yummy",
+          "startMs": 93440,
+          "endMs": 94120,
+          "probability": 0.997255
+        },
+        {
+          "index": 20,
+          "text": "cupcakes,",
+          "startMs": 94120,
+          "endMs": 95100,
+          "probability": 0.996178
+        },
+        {
+          "index": 21,
+          "text": "two",
+          "startMs": 95700,
+          "endMs": 96040,
+          "probability": 0.997399
+        },
+        {
+          "index": 22,
+          "text": "fuzzy",
+          "startMs": 96040,
+          "endMs": 96740,
+          "probability": 0.980691
+        },
+        {
+          "index": 23,
+          "text": "gloves",
+          "startMs": 96740,
+          "endMs": 97420,
+          "probability": 0.998913
+        },
+        {
+          "index": 24,
+          "text": "and",
+          "startMs": 97420,
+          "endMs": 98260,
+          "probability": 0.187499
+        },
+        {
+          "index": 25,
+          "text": "a",
+          "startMs": 98260,
+          "endMs": 98480,
+          "probability": 0.991394
+        },
+        {
+          "index": 26,
+          "text": "road",
+          "startMs": 98480,
+          "endMs": 98840,
+          "probability": 0.997829
+        },
+        {
+          "index": 27,
+          "text": "trip",
+          "startMs": 98840,
+          "endMs": 99180,
+          "probability": 0.986431
+        },
+        {
+          "index": 28,
+          "text": "to",
+          "startMs": 99180,
+          "endMs": 99500,
+          "probability": 0.999141
+        },
+        {
+          "index": 29,
+          "text": "the",
+          "startMs": 99500,
+          "endMs": 99680,
+          "probability": 0.998575
+        },
+        {
+          "index": 30,
+          "text": "sea.",
+          "startMs": 99680,
+          "endMs": 100200,
+          "probability": 0.994301
+        },
+        {
+          "index": 31,
+          "text": "Groovy!",
+          "startMs": 101300,
+          "endMs": 101680,
+          "probability": 0.984596
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "On the sixth day of Christmas, Pete gave to me six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy!",
+      "startMs": 103080,
+      "endMs": 127360,
+      "avgLogprob": -0.045078,
+      "noSpeechProb": 0.113191,
+      "compressionRatio": 1.321678,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 103080,
+          "endMs": 104200,
+          "probability": 0.475083
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 104200,
+          "endMs": 104420,
+          "probability": 0.995272
+        },
+        {
+          "index": 3,
+          "text": "sixth",
+          "startMs": 104420,
+          "endMs": 104800,
+          "probability": 0.803264
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 104800,
+          "endMs": 105240,
+          "probability": 0.985155
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 105240,
+          "endMs": 105380,
+          "probability": 0.997539
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 105380,
+          "endMs": 105940,
+          "probability": 0.993276
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 106620,
+          "endMs": 106740,
+          "probability": 0.989728
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 106740,
+          "endMs": 107100,
+          "probability": 0.997512
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 107100,
+          "endMs": 107380,
+          "probability": 0.994912
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 107380,
+          "endMs": 108260,
+          "probability": 0.998752
+        },
+        {
+          "index": 11,
+          "text": "six",
+          "startMs": 108260,
+          "endMs": 110440,
+          "probability": 0.140403
+        },
+        {
+          "index": 12,
+          "text": "skateboards",
+          "startMs": 110440,
+          "endMs": 111420,
+          "probability": 0.984621
+        },
+        {
+          "index": 13,
+          "text": "rolling,",
+          "startMs": 111420,
+          "endMs": 112180,
+          "probability": 0.979437
+        },
+        {
+          "index": 14,
+          "text": "five",
+          "startMs": 112980,
+          "endMs": 113380,
+          "probability": 0.981507
+        },
+        {
+          "index": 15,
+          "text": "onion",
+          "startMs": 113380,
+          "endMs": 114060,
+          "probability": 0.995551
+        },
+        {
+          "index": 16,
+          "text": "rings,",
+          "startMs": 114060,
+          "endMs": 114620,
+          "probability": 0.99882
+        },
+        {
+          "index": 17,
+          "text": "four",
+          "startMs": 115360,
+          "endMs": 115700,
+          "probability": 0.989935
+        },
+        {
+          "index": 18,
+          "text": "far",
+          "startMs": 115700,
+          "endMs": 116240,
+          "probability": 0.987401
+        },
+        {
+          "index": 19,
+          "text": "out",
+          "startMs": 116240,
+          "endMs": 116580,
+          "probability": 0.619
+        },
+        {
+          "index": 20,
+          "text": "surfboards,",
+          "startMs": 116580,
+          "endMs": 117680,
+          "probability": 0.890296
+        },
+        {
+          "index": 21,
+          "text": "three",
+          "startMs": 118320,
+          "endMs": 118620,
+          "probability": 0.99451
+        },
+        {
+          "index": 22,
+          "text": "yummy",
+          "startMs": 118620,
+          "endMs": 119300,
+          "probability": 0.995693
+        },
+        {
+          "index": 23,
+          "text": "cupcakes,",
+          "startMs": 119300,
+          "endMs": 120320,
+          "probability": 0.995123
+        },
+        {
+          "index": 24,
+          "text": "two",
+          "startMs": 121140,
+          "endMs": 121480,
+          "probability": 0.995076
+        },
+        {
+          "index": 25,
+          "text": "fuzzy",
+          "startMs": 121480,
+          "endMs": 122240,
+          "probability": 0.977816
+        },
+        {
+          "index": 26,
+          "text": "gloves",
+          "startMs": 122240,
+          "endMs": 122920,
+          "probability": 0.998854
+        },
+        {
+          "index": 27,
+          "text": "and",
+          "startMs": 122920,
+          "endMs": 123860,
+          "probability": 0.232307
+        },
+        {
+          "index": 28,
+          "text": "a",
+          "startMs": 123860,
+          "endMs": 124080,
+          "probability": 0.995539
+        },
+        {
+          "index": 29,
+          "text": "road",
+          "startMs": 124080,
+          "endMs": 124500,
+          "probability": 0.996949
+        },
+        {
+          "index": 30,
+          "text": "trip",
+          "startMs": 124500,
+          "endMs": 124860,
+          "probability": 0.990516
+        },
+        {
+          "index": 31,
+          "text": "to",
+          "startMs": 124860,
+          "endMs": 125160,
+          "probability": 0.999149
+        },
+        {
+          "index": 32,
+          "text": "the",
+          "startMs": 125160,
+          "endMs": 125340,
+          "probability": 0.997984
+        },
+        {
+          "index": 33,
+          "text": "sea.",
+          "startMs": 125340,
+          "endMs": 125820,
+          "probability": 0.991752
+        },
+        {
+          "index": 34,
+          "text": "Groovy!",
+          "startMs": 126960,
+          "endMs": 127360,
+          "probability": 0.983286
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "On the seventh day of Christmas, Pete gave to me seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea. Groovy!",
+      "startMs": 127360,
+      "endMs": 156460,
+      "avgLogprob": -0.029232,
+      "noSpeechProb": 0.245834,
+      "compressionRatio": 1.371795,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 127360,
+          "endMs": 129880,
+          "probability": 0.823166
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 129880,
+          "endMs": 130080,
+          "probability": 0.996752
+        },
+        {
+          "index": 3,
+          "text": "seventh",
+          "startMs": 130080,
+          "endMs": 130500,
+          "probability": 0.812353
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 130500,
+          "endMs": 130860,
+          "probability": 0.996921
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 130860,
+          "endMs": 131000,
+          "probability": 0.997894
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 131000,
+          "endMs": 131520,
+          "probability": 0.996524
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 132260,
+          "endMs": 132380,
+          "probability": 0.993109
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 132380,
+          "endMs": 132740,
+          "probability": 0.997817
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 132740,
+          "endMs": 133020,
+          "probability": 0.995248
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 133020,
+          "endMs": 134060,
+          "probability": 0.998949
+        },
+        {
+          "index": 11,
+          "text": "seven",
+          "startMs": 134060,
+          "endMs": 136160,
+          "probability": 0.251799
+        },
+        {
+          "index": 12,
+          "text": "concert",
+          "startMs": 136160,
+          "endMs": 136920,
+          "probability": 0.997367
+        },
+        {
+          "index": 13,
+          "text": "tickets,",
+          "startMs": 136920,
+          "endMs": 137800,
+          "probability": 0.998625
+        },
+        {
+          "index": 14,
+          "text": "six",
+          "startMs": 138660,
+          "endMs": 138920,
+          "probability": 0.986045
+        },
+        {
+          "index": 15,
+          "text": "skateboards",
+          "startMs": 138920,
+          "endMs": 139900,
+          "probability": 0.955239
+        },
+        {
+          "index": 16,
+          "text": "rolling,",
+          "startMs": 139900,
+          "endMs": 140720,
+          "probability": 0.99365
+        },
+        {
+          "index": 17,
+          "text": "five",
+          "startMs": 141520,
+          "endMs": 141980,
+          "probability": 0.990554
+        },
+        {
+          "index": 18,
+          "text": "onion",
+          "startMs": 141980,
+          "endMs": 142640,
+          "probability": 0.996497
+        },
+        {
+          "index": 19,
+          "text": "rings,",
+          "startMs": 142640,
+          "endMs": 143220,
+          "probability": 0.997873
+        },
+        {
+          "index": 20,
+          "text": "four",
+          "startMs": 143940,
+          "endMs": 144320,
+          "probability": 0.995507
+        },
+        {
+          "index": 21,
+          "text": "far",
+          "startMs": 144320,
+          "endMs": 145020,
+          "probability": 0.806093
+        },
+        {
+          "index": 22,
+          "text": "out",
+          "startMs": 145020,
+          "endMs": 145380,
+          "probability": 0.541819
+        },
+        {
+          "index": 23,
+          "text": "surfboards,",
+          "startMs": 145380,
+          "endMs": 146440,
+          "probability": 0.916428
+        },
+        {
+          "index": 24,
+          "text": "three",
+          "startMs": 147080,
+          "endMs": 147400,
+          "probability": 0.996756
+        },
+        {
+          "index": 25,
+          "text": "yummy",
+          "startMs": 147400,
+          "endMs": 148140,
+          "probability": 0.996693
+        },
+        {
+          "index": 26,
+          "text": "cupcakes,",
+          "startMs": 148140,
+          "endMs": 149100,
+          "probability": 0.994267
+        },
+        {
+          "index": 27,
+          "text": "two",
+          "startMs": 149900,
+          "endMs": 150300,
+          "probability": 0.997004
+        },
+        {
+          "index": 28,
+          "text": "fuzzy",
+          "startMs": 150300,
+          "endMs": 151120,
+          "probability": 0.965734
+        },
+        {
+          "index": 29,
+          "text": "gloves",
+          "startMs": 151120,
+          "endMs": 151800,
+          "probability": 0.999095
+        },
+        {
+          "index": 30,
+          "text": "and",
+          "startMs": 151800,
+          "endMs": 152860,
+          "probability": 0.198574
+        },
+        {
+          "index": 31,
+          "text": "a",
+          "startMs": 152860,
+          "endMs": 153100,
+          "probability": 0.992612
+        },
+        {
+          "index": 32,
+          "text": "road",
+          "startMs": 153100,
+          "endMs": 153500,
+          "probability": 0.997503
+        },
+        {
+          "index": 33,
+          "text": "trip",
+          "startMs": 153500,
+          "endMs": 153860,
+          "probability": 0.992552
+        },
+        {
+          "index": 34,
+          "text": "to",
+          "startMs": 153860,
+          "endMs": 154200,
+          "probability": 0.999221
+        },
+        {
+          "index": 35,
+          "text": "the",
+          "startMs": 154200,
+          "endMs": 154380,
+          "probability": 0.997929
+        },
+        {
+          "index": 36,
+          "text": "sea.",
+          "startMs": 154380,
+          "endMs": 154880,
+          "probability": 0.993856
+        },
+        {
+          "index": 37,
+          "text": "Groovy!",
+          "startMs": 155780,
+          "endMs": 156460,
+          "probability": 0.990494
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "On the eighth day of Christmas, Pete gave to me eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea.",
+      "startMs": 157360,
+      "endMs": 187340,
+      "avgLogprob": -0.054434,
+      "noSpeechProb": 0.185398,
+      "compressionRatio": 1.419753,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 157360,
+          "endMs": 158820,
+          "probability": 0.740012
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 158820,
+          "endMs": 159000,
+          "probability": 0.996973
+        },
+        {
+          "index": 3,
+          "text": "eighth",
+          "startMs": 159000,
+          "endMs": 159380,
+          "probability": 0.800631
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 159380,
+          "endMs": 159740,
+          "probability": 0.997263
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 159740,
+          "endMs": 159940,
+          "probability": 0.997973
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 159940,
+          "endMs": 160520,
+          "probability": 0.994415
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 161360,
+          "endMs": 161460,
+          "probability": 0.990788
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 161460,
+          "endMs": 161860,
+          "probability": 0.997889
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 161860,
+          "endMs": 162180,
+          "probability": 0.996929
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 162180,
+          "endMs": 164320,
+          "probability": 0.999039
+        },
+        {
+          "index": 11,
+          "text": "eight",
+          "startMs": 164320,
+          "endMs": 164960,
+          "probability": 0.094279
+        },
+        {
+          "index": 12,
+          "text": "guitars",
+          "startMs": 164960,
+          "endMs": 165800,
+          "probability": 0.768502
+        },
+        {
+          "index": 13,
+          "text": "strumming,",
+          "startMs": 165800,
+          "endMs": 167520,
+          "probability": 0.960134
+        },
+        {
+          "index": 14,
+          "text": "seven",
+          "startMs": 168940,
+          "endMs": 169560,
+          "probability": 0.983231
+        },
+        {
+          "index": 15,
+          "text": "concert",
+          "startMs": 169560,
+          "endMs": 170300,
+          "probability": 0.998951
+        },
+        {
+          "index": 16,
+          "text": "tickets,",
+          "startMs": 170300,
+          "endMs": 171040,
+          "probability": 0.998678
+        },
+        {
+          "index": 17,
+          "text": "six",
+          "startMs": 171840,
+          "endMs": 172120,
+          "probability": 0.994232
+        },
+        {
+          "index": 18,
+          "text": "skateboards",
+          "startMs": 172120,
+          "endMs": 173060,
+          "probability": 0.985717
+        },
+        {
+          "index": 19,
+          "text": "rolling,",
+          "startMs": 173060,
+          "endMs": 173760,
+          "probability": 0.994544
+        },
+        {
+          "index": 20,
+          "text": "five",
+          "startMs": 174540,
+          "endMs": 175040,
+          "probability": 0.995274
+        },
+        {
+          "index": 21,
+          "text": "onion",
+          "startMs": 175040,
+          "endMs": 175680,
+          "probability": 0.995204
+        },
+        {
+          "index": 22,
+          "text": "rings,",
+          "startMs": 175680,
+          "endMs": 176180,
+          "probability": 0.999188
+        },
+        {
+          "index": 23,
+          "text": "four",
+          "startMs": 177000,
+          "endMs": 177360,
+          "probability": 0.9972
+        },
+        {
+          "index": 24,
+          "text": "far",
+          "startMs": 177360,
+          "endMs": 177980,
+          "probability": 0.987104
+        },
+        {
+          "index": 25,
+          "text": "out",
+          "startMs": 177980,
+          "endMs": 178360,
+          "probability": 0.61068
+        },
+        {
+          "index": 26,
+          "text": "surfboards,",
+          "startMs": 178360,
+          "endMs": 179440,
+          "probability": 0.891068
+        },
+        {
+          "index": 27,
+          "text": "three",
+          "startMs": 180180,
+          "endMs": 180480,
+          "probability": 0.997643
+        },
+        {
+          "index": 28,
+          "text": "yummy",
+          "startMs": 180480,
+          "endMs": 181260,
+          "probability": 0.993798
+        },
+        {
+          "index": 29,
+          "text": "cupcakes,",
+          "startMs": 181260,
+          "endMs": 182280,
+          "probability": 0.993522
+        },
+        {
+          "index": 30,
+          "text": "two",
+          "startMs": 183120,
+          "endMs": 183520,
+          "probability": 0.997485
+        },
+        {
+          "index": 31,
+          "text": "fuzzy",
+          "startMs": 183520,
+          "endMs": 184220,
+          "probability": 0.991102
+        },
+        {
+          "index": 32,
+          "text": "gloves",
+          "startMs": 184220,
+          "endMs": 184940,
+          "probability": 0.999323
+        },
+        {
+          "index": 33,
+          "text": "and",
+          "startMs": 184940,
+          "endMs": 186080,
+          "probability": 0.213983
+        },
+        {
+          "index": 34,
+          "text": "a",
+          "startMs": 186080,
+          "endMs": 186280,
+          "probability": 0.995452
+        },
+        {
+          "index": 35,
+          "text": "road",
+          "startMs": 186280,
+          "endMs": 186700,
+          "probability": 0.995699
+        },
+        {
+          "index": 36,
+          "text": "trip",
+          "startMs": 186700,
+          "endMs": 187120,
+          "probability": 0.984406
+        },
+        {
+          "index": 37,
+          "text": "to",
+          "startMs": 187120,
+          "endMs": 187340,
+          "probability": 0.990979
+        },
+        {
+          "index": 38,
+          "text": "the",
+          "startMs": 187340,
+          "endMs": 187340,
+          "probability": 0.142358
+        },
+        {
+          "index": 39,
+          "text": "sea.",
+          "startMs": 187340,
+          "endMs": 187340,
+          "probability": 0.010944
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Groovy!",
+      "startMs": 187360,
+      "endMs": 188360,
+      "avgLogprob": -0.150944,
+      "noSpeechProb": 0.118613,
+      "compressionRatio": 1.41989,
+      "words": [
+        {
+          "index": 1,
+          "text": "Groovy!",
+          "startMs": 187360,
+          "endMs": 188360,
+          "probability": 0.561657
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "On the ninth day of Christmas, Pete gave to me nine ugly sweaters, eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea.",
+      "startMs": 192100,
+      "endMs": 217340,
+      "avgLogprob": -0.150944,
+      "noSpeechProb": 0.118613,
+      "compressionRatio": 1.41989,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 192100,
+          "endMs": 192160,
+          "probability": 0.913088
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 192160,
+          "endMs": 192340,
+          "probability": 0.996318
+        },
+        {
+          "index": 3,
+          "text": "ninth",
+          "startMs": 192340,
+          "endMs": 192720,
+          "probability": 0.787456
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 192720,
+          "endMs": 193120,
+          "probability": 0.995336
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 193120,
+          "endMs": 193280,
+          "probability": 0.997502
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 193280,
+          "endMs": 193860,
+          "probability": 0.995609
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 194520,
+          "endMs": 194660,
+          "probability": 0.992784
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 194660,
+          "endMs": 195060,
+          "probability": 0.99674
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 195060,
+          "endMs": 195360,
+          "probability": 0.996432
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 195360,
+          "endMs": 196480,
+          "probability": 0.999166
+        },
+        {
+          "index": 11,
+          "text": "nine",
+          "startMs": 196480,
+          "endMs": 198500,
+          "probability": 0.038314
+        },
+        {
+          "index": 12,
+          "text": "ugly",
+          "startMs": 198500,
+          "endMs": 199380,
+          "probability": 0.98249
+        },
+        {
+          "index": 13,
+          "text": "sweaters,",
+          "startMs": 199380,
+          "endMs": 200240,
+          "probability": 0.997785
+        },
+        {
+          "index": 14,
+          "text": "eight",
+          "startMs": 201160,
+          "endMs": 201360,
+          "probability": 0.979501
+        },
+        {
+          "index": 15,
+          "text": "guitars",
+          "startMs": 201360,
+          "endMs": 202180,
+          "probability": 0.448936
+        },
+        {
+          "index": 16,
+          "text": "strumming,",
+          "startMs": 202180,
+          "endMs": 203540,
+          "probability": 0.992533
+        },
+        {
+          "index": 17,
+          "text": "seven",
+          "startMs": 203900,
+          "endMs": 204500,
+          "probability": 0.989145
+        },
+        {
+          "index": 18,
+          "text": "concert",
+          "startMs": 204500,
+          "endMs": 205320,
+          "probability": 0.998629
+        },
+        {
+          "index": 19,
+          "text": "tickets,",
+          "startMs": 205320,
+          "endMs": 206120,
+          "probability": 0.998184
+        },
+        {
+          "index": 20,
+          "text": "six",
+          "startMs": 207060,
+          "endMs": 207240,
+          "probability": 0.991694
+        },
+        {
+          "index": 21,
+          "text": "skateboards",
+          "startMs": 207240,
+          "endMs": 208260,
+          "probability": 0.976503
+        },
+        {
+          "index": 22,
+          "text": "rolling,",
+          "startMs": 208260,
+          "endMs": 209000,
+          "probability": 0.995868
+        },
+        {
+          "index": 23,
+          "text": "five",
+          "startMs": 209820,
+          "endMs": 210240,
+          "probability": 0.992028
+        },
+        {
+          "index": 24,
+          "text": "onion",
+          "startMs": 210240,
+          "endMs": 210900,
+          "probability": 0.994745
+        },
+        {
+          "index": 25,
+          "text": "rings,",
+          "startMs": 210900,
+          "endMs": 211580,
+          "probability": 0.998869
+        },
+        {
+          "index": 26,
+          "text": "four",
+          "startMs": 213320,
+          "endMs": 214140,
+          "probability": 0.990044
+        },
+        {
+          "index": 27,
+          "text": "far",
+          "startMs": 214140,
+          "endMs": 214840,
+          "probability": 0.97873
+        },
+        {
+          "index": 28,
+          "text": "out",
+          "startMs": 214840,
+          "endMs": 215200,
+          "probability": 0.550906
+        },
+        {
+          "index": 29,
+          "text": "surfboards,",
+          "startMs": 215200,
+          "endMs": 216220,
+          "probability": 0.921574
+        },
+        {
+          "index": 30,
+          "text": "three",
+          "startMs": 217100,
+          "endMs": 217340,
+          "probability": 0.990013
+        },
+        {
+          "index": 31,
+          "text": "yummy",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.008632
+        },
+        {
+          "index": 32,
+          "text": "cupcakes,",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.291332
+        },
+        {
+          "index": 33,
+          "text": "two",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.072627
+        },
+        {
+          "index": 34,
+          "text": "fuzzy",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 3.6e-05
+        },
+        {
+          "index": 35,
+          "text": "gloves",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.000243
+        },
+        {
+          "index": 36,
+          "text": "and",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.015885
+        },
+        {
+          "index": 37,
+          "text": "a",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.413928
+        },
+        {
+          "index": 38,
+          "text": "road",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 2.4e-05
+        },
+        {
+          "index": 39,
+          "text": "trip",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.017218
+        },
+        {
+          "index": 40,
+          "text": "to",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.03171
+        },
+        {
+          "index": 41,
+          "text": "the",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.304268
+        },
+        {
+          "index": 42,
+          "text": "sea.",
+          "startMs": 217340,
+          "endMs": 217340,
+          "probability": 0.30537
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Groovy!",
+      "startMs": 225100,
+      "endMs": 226500,
+      "avgLogprob": -0.34759,
+      "noSpeechProb": 0.139901,
+      "compressionRatio": 6.101911,
+      "words": [
+        {
+          "index": 1,
+          "text": "Groovy!",
+          "startMs": 225100,
+          "endMs": 226500,
+          "probability": 0.495964
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "On the tenth day of Christmas, Pete gave to me ten sloths sleeping, nine ugly sweaters, eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea.",
+      "startMs": 226500,
+      "endMs": 256480,
+      "avgLogprob": -0.129961,
+      "noSpeechProb": 0.339012,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 226500,
+          "endMs": 228640,
+          "probability": 0.781358
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 228640,
+          "endMs": 228860,
+          "probability": 0.996897
+        },
+        {
+          "index": 3,
+          "text": "tenth",
+          "startMs": 228860,
+          "endMs": 229220,
+          "probability": 0.482897
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 229220,
+          "endMs": 229660,
+          "probability": 0.992703
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 229660,
+          "endMs": 229840,
+          "probability": 0.997532
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 229840,
+          "endMs": 230400,
+          "probability": 0.990758
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 231100,
+          "endMs": 231240,
+          "probability": 0.991338
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 231240,
+          "endMs": 231620,
+          "probability": 0.997671
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 231620,
+          "endMs": 231920,
+          "probability": 0.996664
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 231920,
+          "endMs": 233740,
+          "probability": 0.999198
+        },
+        {
+          "index": 11,
+          "text": "ten",
+          "startMs": 233740,
+          "endMs": 234820,
+          "probability": 0.039869
+        },
+        {
+          "index": 12,
+          "text": "sloths",
+          "startMs": 234820,
+          "endMs": 235840,
+          "probability": 0.844716
+        },
+        {
+          "index": 13,
+          "text": "sleeping,",
+          "startMs": 235840,
+          "endMs": 237120,
+          "probability": 0.428199
+        },
+        {
+          "index": 14,
+          "text": "nine",
+          "startMs": 238440,
+          "endMs": 238700,
+          "probability": 0.951192
+        },
+        {
+          "index": 15,
+          "text": "ugly",
+          "startMs": 238700,
+          "endMs": 239520,
+          "probability": 0.983402
+        },
+        {
+          "index": 16,
+          "text": "sweaters,",
+          "startMs": 239520,
+          "endMs": 240320,
+          "probability": 0.996377
+        },
+        {
+          "index": 17,
+          "text": "eight",
+          "startMs": 241160,
+          "endMs": 241480,
+          "probability": 0.96682
+        },
+        {
+          "index": 18,
+          "text": "guitars",
+          "startMs": 241480,
+          "endMs": 242280,
+          "probability": 0.566321
+        },
+        {
+          "index": 19,
+          "text": "strumming,",
+          "startMs": 242280,
+          "endMs": 243580,
+          "probability": 0.994431
+        },
+        {
+          "index": 20,
+          "text": "seven",
+          "startMs": 244020,
+          "endMs": 244580,
+          "probability": 0.984966
+        },
+        {
+          "index": 21,
+          "text": "concert",
+          "startMs": 244580,
+          "endMs": 245380,
+          "probability": 0.995109
+        },
+        {
+          "index": 22,
+          "text": "tickets,",
+          "startMs": 245380,
+          "endMs": 246200,
+          "probability": 0.995008
+        },
+        {
+          "index": 23,
+          "text": "six",
+          "startMs": 247180,
+          "endMs": 247420,
+          "probability": 0.987394
+        },
+        {
+          "index": 24,
+          "text": "skateboards",
+          "startMs": 247420,
+          "endMs": 248500,
+          "probability": 0.96416
+        },
+        {
+          "index": 25,
+          "text": "rolling,",
+          "startMs": 248500,
+          "endMs": 249260,
+          "probability": 0.993228
+        },
+        {
+          "index": 26,
+          "text": "five",
+          "startMs": 250120,
+          "endMs": 250580,
+          "probability": 0.983519
+        },
+        {
+          "index": 27,
+          "text": "onion",
+          "startMs": 250580,
+          "endMs": 251280,
+          "probability": 0.993494
+        },
+        {
+          "index": 28,
+          "text": "rings,",
+          "startMs": 251280,
+          "endMs": 251940,
+          "probability": 0.998036
+        },
+        {
+          "index": 29,
+          "text": "four",
+          "startMs": 252700,
+          "endMs": 253200,
+          "probability": 0.991765
+        },
+        {
+          "index": 30,
+          "text": "far",
+          "startMs": 253200,
+          "endMs": 253920,
+          "probability": 0.441162
+        },
+        {
+          "index": 31,
+          "text": "out",
+          "startMs": 253920,
+          "endMs": 254340,
+          "probability": 0.695629
+        },
+        {
+          "index": 32,
+          "text": "surfboards,",
+          "startMs": 254340,
+          "endMs": 255420,
+          "probability": 0.889546
+        },
+        {
+          "index": 33,
+          "text": "three",
+          "startMs": 256120,
+          "endMs": 256480,
+          "probability": 0.986553
+        },
+        {
+          "index": 34,
+          "text": "yummy",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.002922
+        },
+        {
+          "index": 35,
+          "text": "cupcakes,",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.270462
+        },
+        {
+          "index": 36,
+          "text": "two",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.052225
+        },
+        {
+          "index": 37,
+          "text": "fuzzy",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 2.8e-05
+        },
+        {
+          "index": 38,
+          "text": "gloves",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.000332
+        },
+        {
+          "index": 39,
+          "text": "and",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.024239
+        },
+        {
+          "index": 40,
+          "text": "a",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.420354
+        },
+        {
+          "index": 41,
+          "text": "road",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 2.6e-05
+        },
+        {
+          "index": 42,
+          "text": "trip",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.01225
+        },
+        {
+          "index": 43,
+          "text": "to",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.034573
+        },
+        {
+          "index": 44,
+          "text": "the",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.243202
+        },
+        {
+          "index": 45,
+          "text": "sea.",
+          "startMs": 256480,
+          "endMs": 256480,
+          "probability": 0.032827
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Groovy!",
+      "startMs": 264720,
+      "endMs": 266120,
+      "avgLogprob": -0.206885,
+      "noSpeechProb": 0.135691,
+      "compressionRatio": 8.0,
+      "words": [
+        {
+          "index": 1,
+          "text": "Groovy!",
+          "startMs": 264720,
+          "endMs": 266120,
+          "probability": 0.494901
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "On the eleventh day of Christmas, Pete gave to me eleven balls of bouncing, ten sloths of sleeping, nine ugly sweaters, eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea.",
+      "startMs": 266120,
+      "endMs": 296100,
+      "avgLogprob": -0.207346,
+      "noSpeechProb": 0.421424,
+      "compressionRatio": 1.51,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 266120,
+          "endMs": 268360,
+          "probability": 0.787047
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 268360,
+          "endMs": 268560,
+          "probability": 0.997115
+        },
+        {
+          "index": 3,
+          "text": "eleventh",
+          "startMs": 268560,
+          "endMs": 269140,
+          "probability": 0.701341
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 269140,
+          "endMs": 269420,
+          "probability": 0.992207
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 269420,
+          "endMs": 269620,
+          "probability": 0.995557
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 269620,
+          "endMs": 270180,
+          "probability": 0.979265
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 270960,
+          "endMs": 271100,
+          "probability": 0.991454
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 271100,
+          "endMs": 271500,
+          "probability": 0.994181
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 271500,
+          "endMs": 271800,
+          "probability": 0.990287
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 271800,
+          "endMs": 272780,
+          "probability": 0.998241
+        },
+        {
+          "index": 11,
+          "text": "eleven",
+          "startMs": 272780,
+          "endMs": 274880,
+          "probability": 0.045506
+        },
+        {
+          "index": 12,
+          "text": "balls",
+          "startMs": 274880,
+          "endMs": 275740,
+          "probability": 0.937211
+        },
+        {
+          "index": 13,
+          "text": "of",
+          "startMs": 275740,
+          "endMs": 276020,
+          "probability": 0.789313
+        },
+        {
+          "index": 14,
+          "text": "bouncing,",
+          "startMs": 276020,
+          "endMs": 276860,
+          "probability": 0.96586
+        },
+        {
+          "index": 15,
+          "text": "ten",
+          "startMs": 278120,
+          "endMs": 278380,
+          "probability": 0.918362
+        },
+        {
+          "index": 16,
+          "text": "sloths",
+          "startMs": 278380,
+          "endMs": 279280,
+          "probability": 0.985095
+        },
+        {
+          "index": 17,
+          "text": "of",
+          "startMs": 279280,
+          "endMs": 279580,
+          "probability": 0.913287
+        },
+        {
+          "index": 18,
+          "text": "sleeping,",
+          "startMs": 279580,
+          "endMs": 280400,
+          "probability": 0.995957
+        },
+        {
+          "index": 19,
+          "text": "nine",
+          "startMs": 281220,
+          "endMs": 281720,
+          "probability": 0.964912
+        },
+        {
+          "index": 20,
+          "text": "ugly",
+          "startMs": 281720,
+          "endMs": 282600,
+          "probability": 0.990642
+        },
+        {
+          "index": 21,
+          "text": "sweaters,",
+          "startMs": 282600,
+          "endMs": 283400,
+          "probability": 0.998355
+        },
+        {
+          "index": 22,
+          "text": "eight",
+          "startMs": 284140,
+          "endMs": 284480,
+          "probability": 0.979197
+        },
+        {
+          "index": 23,
+          "text": "guitars",
+          "startMs": 284480,
+          "endMs": 285260,
+          "probability": 0.456708
+        },
+        {
+          "index": 24,
+          "text": "strumming,",
+          "startMs": 285260,
+          "endMs": 286320,
+          "probability": 0.992044
+        },
+        {
+          "index": 25,
+          "text": "seven",
+          "startMs": 287040,
+          "endMs": 287500,
+          "probability": 0.986742
+        },
+        {
+          "index": 26,
+          "text": "concert",
+          "startMs": 287500,
+          "endMs": 288300,
+          "probability": 0.99666
+        },
+        {
+          "index": 27,
+          "text": "tickets,",
+          "startMs": 288300,
+          "endMs": 289120,
+          "probability": 0.996749
+        },
+        {
+          "index": 28,
+          "text": "six",
+          "startMs": 289800,
+          "endMs": 290220,
+          "probability": 0.984632
+        },
+        {
+          "index": 29,
+          "text": "skateboards",
+          "startMs": 290220,
+          "endMs": 291300,
+          "probability": 0.966762
+        },
+        {
+          "index": 30,
+          "text": "rolling,",
+          "startMs": 291300,
+          "endMs": 292020,
+          "probability": 0.99366
+        },
+        {
+          "index": 31,
+          "text": "five",
+          "startMs": 292840,
+          "endMs": 293320,
+          "probability": 0.982623
+        },
+        {
+          "index": 32,
+          "text": "onion",
+          "startMs": 293320,
+          "endMs": 294060,
+          "probability": 0.991557
+        },
+        {
+          "index": 33,
+          "text": "rings,",
+          "startMs": 294060,
+          "endMs": 294680,
+          "probability": 0.998294
+        },
+        {
+          "index": 34,
+          "text": "four",
+          "startMs": 295460,
+          "endMs": 295880,
+          "probability": 0.98461
+        },
+        {
+          "index": 35,
+          "text": "far",
+          "startMs": 295880,
+          "endMs": 296100,
+          "probability": 5e-06
+        },
+        {
+          "index": 36,
+          "text": "out",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.002959
+        },
+        {
+          "index": 37,
+          "text": "surfboards,",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.030988
+        },
+        {
+          "index": 38,
+          "text": "three",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.033271
+        },
+        {
+          "index": 39,
+          "text": "yummy",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.011434
+        },
+        {
+          "index": 40,
+          "text": "cupcakes,",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.39585
+        },
+        {
+          "index": 41,
+          "text": "two",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.047711
+        },
+        {
+          "index": 42,
+          "text": "fuzzy",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 4.9e-05
+        },
+        {
+          "index": 43,
+          "text": "gloves",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.000331
+        },
+        {
+          "index": 44,
+          "text": "and",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.03254
+        },
+        {
+          "index": 45,
+          "text": "a",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.295257
+        },
+        {
+          "index": 46,
+          "text": "road",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 2.9e-05
+        },
+        {
+          "index": 47,
+          "text": "trip",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.011465
+        },
+        {
+          "index": 48,
+          "text": "to",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.042496
+        },
+        {
+          "index": 49,
+          "text": "the",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.252662
+        },
+        {
+          "index": 50,
+          "text": "sea.",
+          "startMs": 296100,
+          "endMs": 296100,
+          "probability": 0.067598
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Groovy!",
+      "startMs": 307700,
+      "endMs": 308840,
+      "avgLogprob": -0.276959,
+      "noSpeechProb": 0.261405,
+      "compressionRatio": 1.4,
+      "words": [
+        {
+          "index": 1,
+          "text": "Groovy!",
+          "startMs": 307700,
+          "endMs": 308840,
+          "probability": 0.490452
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "On the twelfth day of Christmas, Pete gave to me twelve friends a rockin', eleven balls of bouncing, ten sloths of sleeping, ten sloths of sleeping, nine",
+      "startMs": 311020,
+      "endMs": 326100,
+      "avgLogprob": -0.276959,
+      "noSpeechProb": 0.261405,
+      "compressionRatio": 1.4,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 311020,
+          "endMs": 311120,
+          "probability": 0.792295
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 311120,
+          "endMs": 311320,
+          "probability": 0.995845
+        },
+        {
+          "index": 3,
+          "text": "twelfth",
+          "startMs": 311320,
+          "endMs": 311900,
+          "probability": 0.709373
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 311900,
+          "endMs": 312240,
+          "probability": 0.994871
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 312240,
+          "endMs": 312400,
+          "probability": 0.996716
+        },
+        {
+          "index": 6,
+          "text": "Christmas,",
+          "startMs": 312400,
+          "endMs": 312960,
+          "probability": 0.994083
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 313640,
+          "endMs": 313860,
+          "probability": 0.98701
+        },
+        {
+          "index": 8,
+          "text": "gave",
+          "startMs": 313860,
+          "endMs": 314280,
+          "probability": 0.99698
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 314280,
+          "endMs": 314560,
+          "probability": 0.996844
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 314560,
+          "endMs": 315240,
+          "probability": 0.998608
+        },
+        {
+          "index": 11,
+          "text": "twelve",
+          "startMs": 315240,
+          "endMs": 317600,
+          "probability": 0.017066
+        },
+        {
+          "index": 12,
+          "text": "friends",
+          "startMs": 317600,
+          "endMs": 318480,
+          "probability": 0.946713
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 318480,
+          "endMs": 318800,
+          "probability": 0.257168
+        },
+        {
+          "index": 14,
+          "text": "rockin',",
+          "startMs": 318800,
+          "endMs": 320560,
+          "probability": 0.559579
+        },
+        {
+          "index": 15,
+          "text": "eleven",
+          "startMs": 320560,
+          "endMs": 320880,
+          "probability": 0.954301
+        },
+        {
+          "index": 16,
+          "text": "balls",
+          "startMs": 320880,
+          "endMs": 321600,
+          "probability": 0.971218
+        },
+        {
+          "index": 17,
+          "text": "of",
+          "startMs": 321600,
+          "endMs": 321920,
+          "probability": 0.041322
+        },
+        {
+          "index": 18,
+          "text": "bouncing,",
+          "startMs": 321920,
+          "endMs": 322760,
+          "probability": 0.960287
+        },
+        {
+          "index": 19,
+          "text": "ten",
+          "startMs": 323680,
+          "endMs": 324040,
+          "probability": 0.965444
+        },
+        {
+          "index": 20,
+          "text": "sloths",
+          "startMs": 324040,
+          "endMs": 325000,
+          "probability": 0.977512
+        },
+        {
+          "index": 21,
+          "text": "of",
+          "startMs": 325000,
+          "endMs": 325320,
+          "probability": 0.170602
+        },
+        {
+          "index": 22,
+          "text": "sleeping,",
+          "startMs": 325320,
+          "endMs": 326100,
+          "probability": 0.971127
+        },
+        {
+          "index": 23,
+          "text": "ten",
+          "startMs": 326100,
+          "endMs": 326100,
+          "probability": 0.172429
+        },
+        {
+          "index": 24,
+          "text": "sloths",
+          "startMs": 326100,
+          "endMs": 326100,
+          "probability": 0.565735
+        },
+        {
+          "index": 25,
+          "text": "of",
+          "startMs": 326100,
+          "endMs": 326100,
+          "probability": 0.807432
+        },
+        {
+          "index": 26,
+          "text": "sleeping,",
+          "startMs": 326100,
+          "endMs": 326100,
+          "probability": 0.149336
+        },
+        {
+          "index": 27,
+          "text": "nine",
+          "startMs": 326100,
+          "endMs": 326100,
+          "probability": 0.0043
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "ugly sweaters, eight guitars strumming, seven concert tickets, six skateboards rolling, five onion rings, four far out surfboards, three yummy cupcakes, two fuzzy gloves and a road trip to the sea.",
+      "startMs": 326100,
+      "endMs": 355380,
+      "avgLogprob": -0.058757,
+      "noSpeechProb": 0.907871,
+      "compressionRatio": 1.397163,
+      "words": [
+        {
+          "index": 1,
+          "text": "ugly",
+          "startMs": 326100,
+          "endMs": 327600,
+          "probability": 1.2e-05
+        },
+        {
+          "index": 2,
+          "text": "sweaters,",
+          "startMs": 327600,
+          "endMs": 329360,
+          "probability": 0.992334
+        },
+        {
+          "index": 3,
+          "text": "eight",
+          "startMs": 330060,
+          "endMs": 330260,
+          "probability": 0.683584
+        },
+        {
+          "index": 4,
+          "text": "guitars",
+          "startMs": 330260,
+          "endMs": 331120,
+          "probability": 0.420383
+        },
+        {
+          "index": 5,
+          "text": "strumming,",
+          "startMs": 331120,
+          "endMs": 332800,
+          "probability": 0.988182
+        },
+        {
+          "index": 6,
+          "text": "seven",
+          "startMs": 333460,
+          "endMs": 333960,
+          "probability": 0.980914
+        },
+        {
+          "index": 7,
+          "text": "concert",
+          "startMs": 333960,
+          "endMs": 334820,
+          "probability": 0.99794
+        },
+        {
+          "index": 8,
+          "text": "tickets,",
+          "startMs": 334820,
+          "endMs": 335700,
+          "probability": 0.996988
+        },
+        {
+          "index": 9,
+          "text": "six",
+          "startMs": 336740,
+          "endMs": 336920,
+          "probability": 0.99097
+        },
+        {
+          "index": 10,
+          "text": "skateboards",
+          "startMs": 336920,
+          "endMs": 338140,
+          "probability": 0.978833
+        },
+        {
+          "index": 11,
+          "text": "rolling,",
+          "startMs": 338140,
+          "endMs": 338900,
+          "probability": 0.994108
+        },
+        {
+          "index": 12,
+          "text": "five",
+          "startMs": 339760,
+          "endMs": 340220,
+          "probability": 0.989651
+        },
+        {
+          "index": 13,
+          "text": "onion",
+          "startMs": 340220,
+          "endMs": 340980,
+          "probability": 0.995508
+        },
+        {
+          "index": 14,
+          "text": "rings,",
+          "startMs": 340980,
+          "endMs": 341580,
+          "probability": 0.997731
+        },
+        {
+          "index": 15,
+          "text": "four",
+          "startMs": 342240,
+          "endMs": 342740,
+          "probability": 0.995341
+        },
+        {
+          "index": 16,
+          "text": "far",
+          "startMs": 342740,
+          "endMs": 343460,
+          "probability": 0.976485
+        },
+        {
+          "index": 17,
+          "text": "out",
+          "startMs": 343460,
+          "endMs": 343920,
+          "probability": 0.589098
+        },
+        {
+          "index": 18,
+          "text": "surfboards,",
+          "startMs": 343920,
+          "endMs": 345080,
+          "probability": 0.947484
+        },
+        {
+          "index": 19,
+          "text": "three",
+          "startMs": 345900,
+          "endMs": 346300,
+          "probability": 0.9956
+        },
+        {
+          "index": 20,
+          "text": "yummy",
+          "startMs": 346300,
+          "endMs": 346980,
+          "probability": 0.995604
+        },
+        {
+          "index": 21,
+          "text": "cupcakes,",
+          "startMs": 346980,
+          "endMs": 347940,
+          "probability": 0.990321
+        },
+        {
+          "index": 22,
+          "text": "two",
+          "startMs": 348760,
+          "endMs": 349120,
+          "probability": 0.995418
+        },
+        {
+          "index": 23,
+          "text": "fuzzy",
+          "startMs": 349120,
+          "endMs": 349960,
+          "probability": 0.985749
+        },
+        {
+          "index": 24,
+          "text": "gloves",
+          "startMs": 349960,
+          "endMs": 350700,
+          "probability": 0.998399
+        },
+        {
+          "index": 25,
+          "text": "and",
+          "startMs": 350700,
+          "endMs": 353080,
+          "probability": 0.171584
+        },
+        {
+          "index": 26,
+          "text": "a",
+          "startMs": 353080,
+          "endMs": 353340,
+          "probability": 0.989253
+        },
+        {
+          "index": 27,
+          "text": "road",
+          "startMs": 353340,
+          "endMs": 353800,
+          "probability": 0.996995
+        },
+        {
+          "index": 28,
+          "text": "trip",
+          "startMs": 353800,
+          "endMs": 354160,
+          "probability": 0.985022
+        },
+        {
+          "index": 29,
+          "text": "to",
+          "startMs": 354160,
+          "endMs": 354560,
+          "probability": 0.998038
+        },
+        {
+          "index": 30,
+          "text": "the",
+          "startMs": 354560,
+          "endMs": 354760,
+          "probability": 0.996115
+        },
+        {
+          "index": 31,
+          "text": "sea.",
+          "startMs": 354760,
+          "endMs": 355380,
+          "probability": 0.992992
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Groovy!",
+      "startMs": 383140,
+      "endMs": 384540,
+      "avgLogprob": -0.335285,
+      "noSpeechProb": 0.798924,
+      "compressionRatio": 0.466667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Groovy!",
+          "startMs": 383140,
+          "endMs": 384540,
+          "probability": 0.89344
+        }
+      ]
+    }
+  ]
+}

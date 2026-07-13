@@ -1,0 +1,3953 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 58.05,
+  "text": "Harper Alley and Harper Audio present Pete the Cat and the Space Chase by Kimberly and James Dean performed by James Foley Meet Pete the Cat also known as Secret Agent Meow. His beeper is going off with an urgent message. We need you Agent Meow. Agent Meow answers his beeper. Meow here what's the trouble? Reports of flashing lights and loud noises at the playground. Noises on the playground? At night? I'm on it. Pete pulled a pair of spy binoculars out of his spy stuff cabinet. At the playground, Agent Meow spots something out of this world. Wow! A spaceship! The spaceship landed in the middle of the playground. Ping, ping, ping, peep, peep, peep. Agent Meow scans the ship for alien life. Looks empty. Time to check things out. With a click, the spaceship opened. Agent Meow jumped into the spaceship and pushed buttons. This calls for bravery. This calls for stealth. This calls for launching ship in three, two, one. A seatbelt. Yow! And the spaceship launched as Agent Meow pulled on his seatbelt. Ping, ping, ping, something was on his radar screen. What's this? It's another spaceship hot on my tail. You're not catching me. See you later, alligator. Agent Meow zips past Mars. He zooms past Jupiter. Agent Meow dodges flying rocks and soars past Saturn, but he cannot get away from the spaceship. Then with a p-p-p-punk, Agent Meow has a problem. Oh no! Out of gas? All of a sudden, a bright light pulls Agent Meow's ship in. Hey, stop that! Agent Meow's ship docks. The door begins to open. He is surrounded by little space cats. Whoa! One jumps up to the ship. Agent Meow, welcome. Huh? I am Bloop of the planet Quackadoodle. Everyone is so excited to meet you. Meet me? How? We sent Agent Blorp to invite you to a party. And here you are with Blorp's ship. But where is Blorp? Oh my! I may have left Agent Blorp on Earth. That means we all get to go to Earth! The Quackadoodles cheer. One spaceship ride later. The large spaceship lands at the playground and Agent Meow and the Quackadoodles look around. There is no sign of Blorp anywhere. Have no fear. Agent Meow is on the case. Agent Meow takes out his magnifying glass and finds footprints. Look! Blorp made friends. Blorp is at a table with Agent Meow's friends. They have made him a cake saying, welcome to Earth. Agent Meow and the Quackadoodles join in the fun. The more the merrier. This is James Foley. This unabridged production of Pete the Cat and the Space Chase by Kimberly and James Dean. Presented by Harper Alley and Harper Audio was directed by Cynthia Lee and recorded at Skyline Studios in Oakland, California. This program was produced by John Marshall Media, engineered by Lupe Jimenez, executive producer Almeida Vainy, text copyright 2023 by Kimberly and James Dean, production copyright 2023 by Harper Collins Publishers, all rights reserved. Thank you for listening. Thank you.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Harper Alley and Harper Audio present Pete the Cat and the Space Chase by",
+      "startMs": 9440,
+      "endMs": 17020,
+      "avgLogprob": -0.367754,
+      "noSpeechProb": 0.085963,
+      "compressionRatio": 1.244898,
+      "words": [
+        {
+          "index": 1,
+          "text": "Harper",
+          "startMs": 9440,
+          "endMs": 10380,
+          "probability": 0.562151
+        },
+        {
+          "index": 2,
+          "text": "Alley",
+          "startMs": 10380,
+          "endMs": 10740,
+          "probability": 0.841245
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 10740,
+          "endMs": 11100,
+          "probability": 0.947011
+        },
+        {
+          "index": 4,
+          "text": "Harper",
+          "startMs": 11100,
+          "endMs": 11420,
+          "probability": 0.952918
+        },
+        {
+          "index": 5,
+          "text": "Audio",
+          "startMs": 11420,
+          "endMs": 11920,
+          "probability": 0.841174
+        },
+        {
+          "index": 6,
+          "text": "present",
+          "startMs": 11920,
+          "endMs": 12480,
+          "probability": 0.912098
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 12480,
+          "endMs": 13700,
+          "probability": 0.701837
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 13700,
+          "endMs": 14020,
+          "probability": 0.803338
+        },
+        {
+          "index": 9,
+          "text": "Cat",
+          "startMs": 14020,
+          "endMs": 14360,
+          "probability": 0.910207
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 14360,
+          "endMs": 14720,
+          "probability": 0.973394
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 14720,
+          "endMs": 14900,
+          "probability": 0.974695
+        },
+        {
+          "index": 12,
+          "text": "Space",
+          "startMs": 14900,
+          "endMs": 15440,
+          "probability": 0.987768
+        },
+        {
+          "index": 13,
+          "text": "Chase",
+          "startMs": 15440,
+          "endMs": 15860,
+          "probability": 0.896885
+        },
+        {
+          "index": 14,
+          "text": "by",
+          "startMs": 15860,
+          "endMs": 17020,
+          "probability": 0.869365
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "Kimberly and James Dean performed by James Foley",
+      "startMs": 17020,
+      "endMs": 21780,
+      "avgLogprob": -0.367754,
+      "noSpeechProb": 0.085963,
+      "compressionRatio": 1.244898,
+      "words": [
+        {
+          "index": 1,
+          "text": "Kimberly",
+          "startMs": 17020,
+          "endMs": 17480,
+          "probability": 0.760947
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 17480,
+          "endMs": 18020,
+          "probability": 0.980117
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 18020,
+          "endMs": 18580,
+          "probability": 0.991806
+        },
+        {
+          "index": 4,
+          "text": "Dean",
+          "startMs": 18580,
+          "endMs": 19000,
+          "probability": 0.952216
+        },
+        {
+          "index": 5,
+          "text": "performed",
+          "startMs": 19000,
+          "endMs": 20420,
+          "probability": 0.494671
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 20420,
+          "endMs": 20940,
+          "probability": 0.998206
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 20940,
+          "endMs": 21420,
+          "probability": 0.99442
+        },
+        {
+          "index": 8,
+          "text": "Foley",
+          "startMs": 21420,
+          "endMs": 21780,
+          "probability": 0.407295
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Meet Pete the Cat also known as Secret Agent Meow. His beeper is going off with",
+      "startMs": 30000,
+      "endMs": 40100,
+      "avgLogprob": -0.233642,
+      "noSpeechProb": 0.121004,
+      "compressionRatio": 1.458333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Meet",
+          "startMs": 30000,
+          "endMs": 30660,
+          "probability": 0.643978
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 30660,
+          "endMs": 31240,
+          "probability": 0.978077
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 31240,
+          "endMs": 31580,
+          "probability": 0.964363
+        },
+        {
+          "index": 4,
+          "text": "Cat",
+          "startMs": 31580,
+          "endMs": 32140,
+          "probability": 0.745506
+        },
+        {
+          "index": 5,
+          "text": "also",
+          "startMs": 32140,
+          "endMs": 33960,
+          "probability": 0.093537
+        },
+        {
+          "index": 6,
+          "text": "known",
+          "startMs": 33960,
+          "endMs": 34600,
+          "probability": 0.984593
+        },
+        {
+          "index": 7,
+          "text": "as",
+          "startMs": 34600,
+          "endMs": 35020,
+          "probability": 0.995718
+        },
+        {
+          "index": 8,
+          "text": "Secret",
+          "startMs": 35020,
+          "endMs": 35600,
+          "probability": 0.578353
+        },
+        {
+          "index": 9,
+          "text": "Agent",
+          "startMs": 35600,
+          "endMs": 36320,
+          "probability": 0.981242
+        },
+        {
+          "index": 10,
+          "text": "Meow.",
+          "startMs": 36320,
+          "endMs": 36880,
+          "probability": 0.869065
+        },
+        {
+          "index": 11,
+          "text": "His",
+          "startMs": 38480,
+          "endMs": 38700,
+          "probability": 0.98713
+        },
+        {
+          "index": 12,
+          "text": "beeper",
+          "startMs": 38700,
+          "endMs": 39120,
+          "probability": 0.987097
+        },
+        {
+          "index": 13,
+          "text": "is",
+          "startMs": 39120,
+          "endMs": 39300,
+          "probability": 0.991262
+        },
+        {
+          "index": 14,
+          "text": "going",
+          "startMs": 39300,
+          "endMs": 39540,
+          "probability": 0.997991
+        },
+        {
+          "index": 15,
+          "text": "off",
+          "startMs": 39540,
+          "endMs": 39860,
+          "probability": 0.994933
+        },
+        {
+          "index": 16,
+          "text": "with",
+          "startMs": 39860,
+          "endMs": 40100,
+          "probability": 0.997047
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "an urgent message. We need you Agent Meow. Agent Meow answers his beeper. Meow here",
+      "startMs": 40100,
+      "endMs": 50860,
+      "avgLogprob": -0.233642,
+      "noSpeechProb": 0.121004,
+      "compressionRatio": 1.458333,
+      "words": [
+        {
+          "index": 1,
+          "text": "an",
+          "startMs": 40100,
+          "endMs": 40300,
+          "probability": 0.99559
+        },
+        {
+          "index": 2,
+          "text": "urgent",
+          "startMs": 40300,
+          "endMs": 40840,
+          "probability": 0.996808
+        },
+        {
+          "index": 3,
+          "text": "message.",
+          "startMs": 40840,
+          "endMs": 41600,
+          "probability": 0.999209
+        },
+        {
+          "index": 4,
+          "text": "We",
+          "startMs": 42620,
+          "endMs": 42880,
+          "probability": 0.188835
+        },
+        {
+          "index": 5,
+          "text": "need",
+          "startMs": 42880,
+          "endMs": 43300,
+          "probability": 0.995266
+        },
+        {
+          "index": 6,
+          "text": "you",
+          "startMs": 43300,
+          "endMs": 43700,
+          "probability": 0.997233
+        },
+        {
+          "index": 7,
+          "text": "Agent",
+          "startMs": 43700,
+          "endMs": 44040,
+          "probability": 0.18811
+        },
+        {
+          "index": 8,
+          "text": "Meow.",
+          "startMs": 44040,
+          "endMs": 44540,
+          "probability": 0.987005
+        },
+        {
+          "index": 9,
+          "text": "Agent",
+          "startMs": 46620,
+          "endMs": 47200,
+          "probability": 0.973723
+        },
+        {
+          "index": 10,
+          "text": "Meow",
+          "startMs": 47200,
+          "endMs": 47580,
+          "probability": 0.984757
+        },
+        {
+          "index": 11,
+          "text": "answers",
+          "startMs": 47580,
+          "endMs": 48240,
+          "probability": 0.991432
+        },
+        {
+          "index": 12,
+          "text": "his",
+          "startMs": 48240,
+          "endMs": 48620,
+          "probability": 0.996419
+        },
+        {
+          "index": 13,
+          "text": "beeper.",
+          "startMs": 48620,
+          "endMs": 49240,
+          "probability": 0.997334
+        },
+        {
+          "index": 14,
+          "text": "Meow",
+          "startMs": 50340,
+          "endMs": 50340,
+          "probability": 0.829139
+        },
+        {
+          "index": 15,
+          "text": "here",
+          "startMs": 50340,
+          "endMs": 50860,
+          "probability": 0.815924
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "what's the trouble? Reports of flashing lights and loud noises at the playground.",
+      "startMs": 50860,
+      "endMs": 57660,
+      "avgLogprob": -0.233642,
+      "noSpeechProb": 0.121004,
+      "compressionRatio": 1.458333,
+      "words": [
+        {
+          "index": 1,
+          "text": "what's",
+          "startMs": 50860,
+          "endMs": 51520,
+          "probability": 0.520353
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 51520,
+          "endMs": 51700,
+          "probability": 0.993342
+        },
+        {
+          "index": 3,
+          "text": "trouble?",
+          "startMs": 51700,
+          "endMs": 52120,
+          "probability": 0.999566
+        },
+        {
+          "index": 4,
+          "text": "Reports",
+          "startMs": 53680,
+          "endMs": 53680,
+          "probability": 0.956325
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 53680,
+          "endMs": 54100,
+          "probability": 0.996747
+        },
+        {
+          "index": 6,
+          "text": "flashing",
+          "startMs": 54100,
+          "endMs": 54580,
+          "probability": 0.991025
+        },
+        {
+          "index": 7,
+          "text": "lights",
+          "startMs": 54580,
+          "endMs": 55080,
+          "probability": 0.995243
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 55080,
+          "endMs": 55400,
+          "probability": 0.992651
+        },
+        {
+          "index": 9,
+          "text": "loud",
+          "startMs": 55400,
+          "endMs": 55740,
+          "probability": 0.998587
+        },
+        {
+          "index": 10,
+          "text": "noises",
+          "startMs": 55740,
+          "endMs": 56400,
+          "probability": 0.986163
+        },
+        {
+          "index": 11,
+          "text": "at",
+          "startMs": 56400,
+          "endMs": 56740,
+          "probability": 0.996729
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 56740,
+          "endMs": 57000,
+          "probability": 0.99788
+        },
+        {
+          "index": 13,
+          "text": "playground.",
+          "startMs": 57000,
+          "endMs": 57660,
+          "probability": 0.983736
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Noises on the playground? At night? I'm on it. Pete pulled a pair of spy binoculars out of his spy",
+      "startMs": 58960,
+      "endMs": 69680,
+      "avgLogprob": -0.200655,
+      "noSpeechProb": 0.031178,
+      "compressionRatio": 1.351724,
+      "words": [
+        {
+          "index": 1,
+          "text": "Noises",
+          "startMs": 58960,
+          "endMs": 59960,
+          "probability": 0.749834
+        },
+        {
+          "index": 2,
+          "text": "on",
+          "startMs": 59960,
+          "endMs": 60200,
+          "probability": 0.99519
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 60200,
+          "endMs": 60380,
+          "probability": 0.997425
+        },
+        {
+          "index": 4,
+          "text": "playground?",
+          "startMs": 60380,
+          "endMs": 60920,
+          "probability": 0.989898
+        },
+        {
+          "index": 5,
+          "text": "At",
+          "startMs": 61680,
+          "endMs": 61980,
+          "probability": 0.852419
+        },
+        {
+          "index": 6,
+          "text": "night?",
+          "startMs": 61980,
+          "endMs": 62400,
+          "probability": 0.998754
+        },
+        {
+          "index": 7,
+          "text": "I'm",
+          "startMs": 63180,
+          "endMs": 63660,
+          "probability": 0.971266
+        },
+        {
+          "index": 8,
+          "text": "on",
+          "startMs": 63660,
+          "endMs": 64080,
+          "probability": 0.993814
+        },
+        {
+          "index": 9,
+          "text": "it.",
+          "startMs": 64080,
+          "endMs": 64880,
+          "probability": 0.998679
+        },
+        {
+          "index": 10,
+          "text": "Pete",
+          "startMs": 66040,
+          "endMs": 66200,
+          "probability": 0.545911
+        },
+        {
+          "index": 11,
+          "text": "pulled",
+          "startMs": 66200,
+          "endMs": 66640,
+          "probability": 0.996525
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 66640,
+          "endMs": 66860,
+          "probability": 0.99673
+        },
+        {
+          "index": 13,
+          "text": "pair",
+          "startMs": 66860,
+          "endMs": 67060,
+          "probability": 0.998
+        },
+        {
+          "index": 14,
+          "text": "of",
+          "startMs": 67060,
+          "endMs": 67300,
+          "probability": 0.998806
+        },
+        {
+          "index": 15,
+          "text": "spy",
+          "startMs": 67300,
+          "endMs": 67660,
+          "probability": 0.939473
+        },
+        {
+          "index": 16,
+          "text": "binoculars",
+          "startMs": 67660,
+          "endMs": 68560,
+          "probability": 0.998215
+        },
+        {
+          "index": 17,
+          "text": "out",
+          "startMs": 68560,
+          "endMs": 68740,
+          "probability": 0.995755
+        },
+        {
+          "index": 18,
+          "text": "of",
+          "startMs": 68740,
+          "endMs": 68900,
+          "probability": 0.996801
+        },
+        {
+          "index": 19,
+          "text": "his",
+          "startMs": 68900,
+          "endMs": 69120,
+          "probability": 0.981039
+        },
+        {
+          "index": 20,
+          "text": "spy",
+          "startMs": 69120,
+          "endMs": 69680,
+          "probability": 0.940513
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "stuff cabinet. At the playground, Agent Meow spots something out of this world. Wow! A spaceship!",
+      "startMs": 69680,
+      "endMs": 82520,
+      "avgLogprob": -0.200655,
+      "noSpeechProb": 0.031178,
+      "compressionRatio": 1.351724,
+      "words": [
+        {
+          "index": 1,
+          "text": "stuff",
+          "startMs": 69680,
+          "endMs": 70200,
+          "probability": 0.898435
+        },
+        {
+          "index": 2,
+          "text": "cabinet.",
+          "startMs": 70200,
+          "endMs": 70880,
+          "probability": 0.977037
+        },
+        {
+          "index": 3,
+          "text": "At",
+          "startMs": 72540,
+          "endMs": 72780,
+          "probability": 0.99385
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 72780,
+          "endMs": 72980,
+          "probability": 0.998767
+        },
+        {
+          "index": 5,
+          "text": "playground,",
+          "startMs": 72980,
+          "endMs": 73540,
+          "probability": 0.995392
+        },
+        {
+          "index": 6,
+          "text": "Agent",
+          "startMs": 74260,
+          "endMs": 74580,
+          "probability": 0.925756
+        },
+        {
+          "index": 7,
+          "text": "Meow",
+          "startMs": 74580,
+          "endMs": 74940,
+          "probability": 0.709561
+        },
+        {
+          "index": 8,
+          "text": "spots",
+          "startMs": 74940,
+          "endMs": 75460,
+          "probability": 0.511652
+        },
+        {
+          "index": 9,
+          "text": "something",
+          "startMs": 75460,
+          "endMs": 76160,
+          "probability": 0.99572
+        },
+        {
+          "index": 10,
+          "text": "out",
+          "startMs": 76160,
+          "endMs": 77020,
+          "probability": 0.982439
+        },
+        {
+          "index": 11,
+          "text": "of",
+          "startMs": 77020,
+          "endMs": 77260,
+          "probability": 0.996794
+        },
+        {
+          "index": 12,
+          "text": "this",
+          "startMs": 77260,
+          "endMs": 77540,
+          "probability": 0.986357
+        },
+        {
+          "index": 13,
+          "text": "world.",
+          "startMs": 77540,
+          "endMs": 78320,
+          "probability": 0.998334
+        },
+        {
+          "index": 14,
+          "text": "Wow!",
+          "startMs": 79500,
+          "endMs": 80140,
+          "probability": 0.650554
+        },
+        {
+          "index": 15,
+          "text": "A",
+          "startMs": 81260,
+          "endMs": 81540,
+          "probability": 0.989998
+        },
+        {
+          "index": 16,
+          "text": "spaceship!",
+          "startMs": 81540,
+          "endMs": 82520,
+          "probability": 0.788692
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "The spaceship landed in the middle of the playground. Ping, ping, ping, peep, peep, peep.",
+      "startMs": 83800,
+      "endMs": 93800,
+      "avgLogprob": -0.214755,
+      "noSpeechProb": 0.052252,
+      "compressionRatio": 1.383459,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 83800,
+          "endMs": 84560,
+          "probability": 0.255302
+        },
+        {
+          "index": 2,
+          "text": "spaceship",
+          "startMs": 84560,
+          "endMs": 85160,
+          "probability": 0.904388
+        },
+        {
+          "index": 3,
+          "text": "landed",
+          "startMs": 85160,
+          "endMs": 85840,
+          "probability": 0.996474
+        },
+        {
+          "index": 4,
+          "text": "in",
+          "startMs": 85840,
+          "endMs": 86220,
+          "probability": 0.995852
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 86220,
+          "endMs": 86360,
+          "probability": 0.997681
+        },
+        {
+          "index": 6,
+          "text": "middle",
+          "startMs": 86360,
+          "endMs": 86600,
+          "probability": 0.999035
+        },
+        {
+          "index": 7,
+          "text": "of",
+          "startMs": 86600,
+          "endMs": 86800,
+          "probability": 0.998331
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 86800,
+          "endMs": 86960,
+          "probability": 0.992915
+        },
+        {
+          "index": 9,
+          "text": "playground.",
+          "startMs": 86960,
+          "endMs": 87560,
+          "probability": 0.997274
+        },
+        {
+          "index": 10,
+          "text": "Ping,",
+          "startMs": 89180,
+          "endMs": 89200,
+          "probability": 0.606572
+        },
+        {
+          "index": 11,
+          "text": "ping,",
+          "startMs": 89880,
+          "endMs": 90380,
+          "probability": 0.982514
+        },
+        {
+          "index": 12,
+          "text": "ping,",
+          "startMs": 90960,
+          "endMs": 92260,
+          "probability": 0.992316
+        },
+        {
+          "index": 13,
+          "text": "peep,",
+          "startMs": 92420,
+          "endMs": 92920,
+          "probability": 0.787748
+        },
+        {
+          "index": 14,
+          "text": "peep,",
+          "startMs": 93080,
+          "endMs": 93320,
+          "probability": 0.995258
+        },
+        {
+          "index": 15,
+          "text": "peep.",
+          "startMs": 93440,
+          "endMs": 93800,
+          "probability": 0.99406
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Agent Meow scans the ship for alien life. Looks empty. Time to check things out. With a click,",
+      "startMs": 95300,
+      "endMs": 106080,
+      "avgLogprob": -0.214755,
+      "noSpeechProb": 0.052252,
+      "compressionRatio": 1.383459,
+      "words": [
+        {
+          "index": 1,
+          "text": "Agent",
+          "startMs": 95300,
+          "endMs": 95660,
+          "probability": 0.966944
+        },
+        {
+          "index": 2,
+          "text": "Meow",
+          "startMs": 95660,
+          "endMs": 96000,
+          "probability": 0.707638
+        },
+        {
+          "index": 3,
+          "text": "scans",
+          "startMs": 96000,
+          "endMs": 96600,
+          "probability": 0.978678
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 96600,
+          "endMs": 96940,
+          "probability": 0.996818
+        },
+        {
+          "index": 5,
+          "text": "ship",
+          "startMs": 96940,
+          "endMs": 97280,
+          "probability": 0.996566
+        },
+        {
+          "index": 6,
+          "text": "for",
+          "startMs": 97280,
+          "endMs": 97660,
+          "probability": 0.998687
+        },
+        {
+          "index": 7,
+          "text": "alien",
+          "startMs": 97660,
+          "endMs": 98280,
+          "probability": 0.982041
+        },
+        {
+          "index": 8,
+          "text": "life.",
+          "startMs": 98280,
+          "endMs": 98920,
+          "probability": 0.999176
+        },
+        {
+          "index": 9,
+          "text": "Looks",
+          "startMs": 100080,
+          "endMs": 100420,
+          "probability": 0.96243
+        },
+        {
+          "index": 10,
+          "text": "empty.",
+          "startMs": 100420,
+          "endMs": 101080,
+          "probability": 0.999172
+        },
+        {
+          "index": 11,
+          "text": "Time",
+          "startMs": 102120,
+          "endMs": 102380,
+          "probability": 0.995746
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 102380,
+          "endMs": 102740,
+          "probability": 0.999384
+        },
+        {
+          "index": 13,
+          "text": "check",
+          "startMs": 102740,
+          "endMs": 103100,
+          "probability": 0.99883
+        },
+        {
+          "index": 14,
+          "text": "things",
+          "startMs": 103100,
+          "endMs": 103580,
+          "probability": 0.997427
+        },
+        {
+          "index": 15,
+          "text": "out.",
+          "startMs": 103580,
+          "endMs": 104020,
+          "probability": 0.999451
+        },
+        {
+          "index": 16,
+          "text": "With",
+          "startMs": 105220,
+          "endMs": 105540,
+          "probability": 0.995055
+        },
+        {
+          "index": 17,
+          "text": "a",
+          "startMs": 105540,
+          "endMs": 105740,
+          "probability": 0.994812
+        },
+        {
+          "index": 18,
+          "text": "click,",
+          "startMs": 105740,
+          "endMs": 106080,
+          "probability": 0.99413
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "the spaceship opened. Agent Meow jumped into the spaceship and pushed buttons. This calls for",
+      "startMs": 106080,
+      "endMs": 116180,
+      "avgLogprob": -0.245507,
+      "noSpeechProb": 0.016603,
+      "compressionRatio": 1.504,
+      "words": [
+        {
+          "index": 1,
+          "text": "the",
+          "startMs": 106080,
+          "endMs": 106740,
+          "probability": 0.074392
+        },
+        {
+          "index": 2,
+          "text": "spaceship",
+          "startMs": 106740,
+          "endMs": 107360,
+          "probability": 0.799481
+        },
+        {
+          "index": 3,
+          "text": "opened.",
+          "startMs": 107360,
+          "endMs": 108500,
+          "probability": 0.992299
+        },
+        {
+          "index": 4,
+          "text": "Agent",
+          "startMs": 110220,
+          "endMs": 110220,
+          "probability": 0.967129
+        },
+        {
+          "index": 5,
+          "text": "Meow",
+          "startMs": 110220,
+          "endMs": 110620,
+          "probability": 0.698619
+        },
+        {
+          "index": 6,
+          "text": "jumped",
+          "startMs": 110620,
+          "endMs": 111160,
+          "probability": 0.971374
+        },
+        {
+          "index": 7,
+          "text": "into",
+          "startMs": 111160,
+          "endMs": 111560,
+          "probability": 0.988004
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 111560,
+          "endMs": 111740,
+          "probability": 0.997253
+        },
+        {
+          "index": 9,
+          "text": "spaceship",
+          "startMs": 111740,
+          "endMs": 112400,
+          "probability": 0.985994
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 112400,
+          "endMs": 112960,
+          "probability": 0.944887
+        },
+        {
+          "index": 11,
+          "text": "pushed",
+          "startMs": 112960,
+          "endMs": 113400,
+          "probability": 0.972576
+        },
+        {
+          "index": 12,
+          "text": "buttons.",
+          "startMs": 113400,
+          "endMs": 114200,
+          "probability": 0.996737
+        },
+        {
+          "index": 13,
+          "text": "This",
+          "startMs": 115240,
+          "endMs": 115360,
+          "probability": 0.960123
+        },
+        {
+          "index": 14,
+          "text": "calls",
+          "startMs": 115360,
+          "endMs": 115800,
+          "probability": 0.99254
+        },
+        {
+          "index": 15,
+          "text": "for",
+          "startMs": 115800,
+          "endMs": 116180,
+          "probability": 0.999123
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "bravery. This calls for stealth. This calls for launching ship in three, two, one. A seatbelt.",
+      "startMs": 116180,
+      "endMs": 128840,
+      "avgLogprob": -0.245507,
+      "noSpeechProb": 0.016603,
+      "compressionRatio": 1.504,
+      "words": [
+        {
+          "index": 1,
+          "text": "bravery.",
+          "startMs": 116180,
+          "endMs": 116720,
+          "probability": 0.990506
+        },
+        {
+          "index": 2,
+          "text": "This",
+          "startMs": 117420,
+          "endMs": 117520,
+          "probability": 0.993154
+        },
+        {
+          "index": 3,
+          "text": "calls",
+          "startMs": 117520,
+          "endMs": 117980,
+          "probability": 0.997904
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 117980,
+          "endMs": 118340,
+          "probability": 0.999586
+        },
+        {
+          "index": 5,
+          "text": "stealth.",
+          "startMs": 118340,
+          "endMs": 118940,
+          "probability": 0.996734
+        },
+        {
+          "index": 6,
+          "text": "This",
+          "startMs": 119680,
+          "endMs": 119860,
+          "probability": 0.997599
+        },
+        {
+          "index": 7,
+          "text": "calls",
+          "startMs": 119860,
+          "endMs": 120300,
+          "probability": 0.998225
+        },
+        {
+          "index": 8,
+          "text": "for",
+          "startMs": 120300,
+          "endMs": 121380,
+          "probability": 0.999259
+        },
+        {
+          "index": 9,
+          "text": "launching",
+          "startMs": 121380,
+          "endMs": 122320,
+          "probability": 0.156892
+        },
+        {
+          "index": 10,
+          "text": "ship",
+          "startMs": 122320,
+          "endMs": 122980,
+          "probability": 0.991907
+        },
+        {
+          "index": 11,
+          "text": "in",
+          "startMs": 122980,
+          "endMs": 123440,
+          "probability": 0.975129
+        },
+        {
+          "index": 12,
+          "text": "three,",
+          "startMs": 123440,
+          "endMs": 123940,
+          "probability": 0.743928
+        },
+        {
+          "index": 13,
+          "text": "two,",
+          "startMs": 124620,
+          "endMs": 125180,
+          "probability": 0.998648
+        },
+        {
+          "index": 14,
+          "text": "one.",
+          "startMs": 126220,
+          "endMs": 126480,
+          "probability": 0.999036
+        },
+        {
+          "index": 15,
+          "text": "A",
+          "startMs": 127460,
+          "endMs": 127700,
+          "probability": 0.98362
+        },
+        {
+          "index": 16,
+          "text": "seatbelt.",
+          "startMs": 127700,
+          "endMs": 128840,
+          "probability": 0.737221
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Yow! And the spaceship launched as Agent Meow pulled on his seatbelt. Ping, ping, ping,",
+      "startMs": 129440,
+      "endMs": 143380,
+      "avgLogprob": -0.200879,
+      "noSpeechProb": 0.038781,
+      "compressionRatio": 1.308271,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yow!",
+          "startMs": 129440,
+          "endMs": 130600,
+          "probability": 0.373897
+        },
+        {
+          "index": 2,
+          "text": "And",
+          "startMs": 133540,
+          "endMs": 133700,
+          "probability": 0.853611
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 133700,
+          "endMs": 133880,
+          "probability": 0.990249
+        },
+        {
+          "index": 4,
+          "text": "spaceship",
+          "startMs": 133880,
+          "endMs": 134440,
+          "probability": 0.918901
+        },
+        {
+          "index": 5,
+          "text": "launched",
+          "startMs": 134440,
+          "endMs": 135100,
+          "probability": 0.99046
+        },
+        {
+          "index": 6,
+          "text": "as",
+          "startMs": 135100,
+          "endMs": 135560,
+          "probability": 0.973909
+        },
+        {
+          "index": 7,
+          "text": "Agent",
+          "startMs": 135560,
+          "endMs": 135920,
+          "probability": 0.80198
+        },
+        {
+          "index": 8,
+          "text": "Meow",
+          "startMs": 135920,
+          "endMs": 136300,
+          "probability": 0.866324
+        },
+        {
+          "index": 9,
+          "text": "pulled",
+          "startMs": 136300,
+          "endMs": 136920,
+          "probability": 0.974803
+        },
+        {
+          "index": 10,
+          "text": "on",
+          "startMs": 136920,
+          "endMs": 137280,
+          "probability": 0.994357
+        },
+        {
+          "index": 11,
+          "text": "his",
+          "startMs": 137280,
+          "endMs": 137600,
+          "probability": 0.99686
+        },
+        {
+          "index": 12,
+          "text": "seatbelt.",
+          "startMs": 137600,
+          "endMs": 138400,
+          "probability": 0.779616
+        },
+        {
+          "index": 13,
+          "text": "Ping,",
+          "startMs": 140780,
+          "endMs": 140780,
+          "probability": 0.746613
+        },
+        {
+          "index": 14,
+          "text": "ping,",
+          "startMs": 141660,
+          "endMs": 142060,
+          "probability": 0.842953
+        },
+        {
+          "index": 15,
+          "text": "ping,",
+          "startMs": 142860,
+          "endMs": 143380,
+          "probability": 0.988062
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "something was on his radar screen. What's this? It's another spaceship hot on my tail.",
+      "startMs": 144140,
+      "endMs": 153660,
+      "avgLogprob": -0.200879,
+      "noSpeechProb": 0.038781,
+      "compressionRatio": 1.308271,
+      "words": [
+        {
+          "index": 1,
+          "text": "something",
+          "startMs": 144140,
+          "endMs": 144560,
+          "probability": 0.98385
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 144560,
+          "endMs": 145040,
+          "probability": 0.996219
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 145040,
+          "endMs": 145280,
+          "probability": 0.998684
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 145280,
+          "endMs": 145540,
+          "probability": 0.997714
+        },
+        {
+          "index": 5,
+          "text": "radar",
+          "startMs": 145540,
+          "endMs": 146000,
+          "probability": 0.998151
+        },
+        {
+          "index": 6,
+          "text": "screen.",
+          "startMs": 146000,
+          "endMs": 146680,
+          "probability": 0.995629
+        },
+        {
+          "index": 7,
+          "text": "What's",
+          "startMs": 148100,
+          "endMs": 148420,
+          "probability": 0.875514
+        },
+        {
+          "index": 8,
+          "text": "this?",
+          "startMs": 148420,
+          "endMs": 148940,
+          "probability": 0.999188
+        },
+        {
+          "index": 9,
+          "text": "It's",
+          "startMs": 150220,
+          "endMs": 150660,
+          "probability": 0.988075
+        },
+        {
+          "index": 10,
+          "text": "another",
+          "startMs": 150660,
+          "endMs": 151120,
+          "probability": 0.997148
+        },
+        {
+          "index": 11,
+          "text": "spaceship",
+          "startMs": 151120,
+          "endMs": 151860,
+          "probability": 0.977013
+        },
+        {
+          "index": 12,
+          "text": "hot",
+          "startMs": 151860,
+          "endMs": 152580,
+          "probability": 0.569458
+        },
+        {
+          "index": 13,
+          "text": "on",
+          "startMs": 152580,
+          "endMs": 152800,
+          "probability": 0.997836
+        },
+        {
+          "index": 14,
+          "text": "my",
+          "startMs": 152800,
+          "endMs": 153100,
+          "probability": 0.998825
+        },
+        {
+          "index": 15,
+          "text": "tail.",
+          "startMs": 153100,
+          "endMs": 153660,
+          "probability": 0.999483
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "You're not catching me. See you later, alligator. Agent Meow zips past Mars. He zooms past Jupiter.",
+      "startMs": 153660,
+      "endMs": 166240,
+      "avgLogprob": -0.162273,
+      "noSpeechProb": 0.053554,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "You're",
+          "startMs": 153660,
+          "endMs": 155500,
+          "probability": 0.581555
+        },
+        {
+          "index": 2,
+          "text": "not",
+          "startMs": 155500,
+          "endMs": 155740,
+          "probability": 0.995992
+        },
+        {
+          "index": 3,
+          "text": "catching",
+          "startMs": 155740,
+          "endMs": 156140,
+          "probability": 0.985833
+        },
+        {
+          "index": 4,
+          "text": "me.",
+          "startMs": 156140,
+          "endMs": 156680,
+          "probability": 0.998523
+        },
+        {
+          "index": 5,
+          "text": "See",
+          "startMs": 157240,
+          "endMs": 157560,
+          "probability": 0.995815
+        },
+        {
+          "index": 6,
+          "text": "you",
+          "startMs": 157560,
+          "endMs": 157740,
+          "probability": 0.80151
+        },
+        {
+          "index": 7,
+          "text": "later,",
+          "startMs": 157740,
+          "endMs": 158220,
+          "probability": 0.997527
+        },
+        {
+          "index": 8,
+          "text": "alligator.",
+          "startMs": 158420,
+          "endMs": 158900,
+          "probability": 0.846562
+        },
+        {
+          "index": 9,
+          "text": "Agent",
+          "startMs": 160900,
+          "endMs": 161200,
+          "probability": 0.958362
+        },
+        {
+          "index": 10,
+          "text": "Meow",
+          "startMs": 161200,
+          "endMs": 161540,
+          "probability": 0.793106
+        },
+        {
+          "index": 11,
+          "text": "zips",
+          "startMs": 161540,
+          "endMs": 162120,
+          "probability": 0.977134
+        },
+        {
+          "index": 12,
+          "text": "past",
+          "startMs": 162120,
+          "endMs": 162480,
+          "probability": 0.99725
+        },
+        {
+          "index": 13,
+          "text": "Mars.",
+          "startMs": 162480,
+          "endMs": 162980,
+          "probability": 0.990234
+        },
+        {
+          "index": 14,
+          "text": "He",
+          "startMs": 163980,
+          "endMs": 164260,
+          "probability": 0.994906
+        },
+        {
+          "index": 15,
+          "text": "zooms",
+          "startMs": 164260,
+          "endMs": 165020,
+          "probability": 0.990017
+        },
+        {
+          "index": 16,
+          "text": "past",
+          "startMs": 165020,
+          "endMs": 165520,
+          "probability": 0.995775
+        },
+        {
+          "index": 17,
+          "text": "Jupiter.",
+          "startMs": 165520,
+          "endMs": 166240,
+          "probability": 0.997362
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Agent Meow dodges flying rocks and soars past Saturn, but he cannot get away from the spaceship.",
+      "startMs": 167620,
+      "endMs": 175640,
+      "avgLogprob": -0.162273,
+      "noSpeechProb": 0.053554,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Agent",
+          "startMs": 167620,
+          "endMs": 167900,
+          "probability": 0.982538
+        },
+        {
+          "index": 2,
+          "text": "Meow",
+          "startMs": 167900,
+          "endMs": 168260,
+          "probability": 0.984658
+        },
+        {
+          "index": 3,
+          "text": "dodges",
+          "startMs": 168260,
+          "endMs": 168860,
+          "probability": 0.994115
+        },
+        {
+          "index": 4,
+          "text": "flying",
+          "startMs": 168860,
+          "endMs": 169340,
+          "probability": 0.994074
+        },
+        {
+          "index": 5,
+          "text": "rocks",
+          "startMs": 169340,
+          "endMs": 169960,
+          "probability": 0.998195
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 169960,
+          "endMs": 170380,
+          "probability": 0.924691
+        },
+        {
+          "index": 7,
+          "text": "soars",
+          "startMs": 170380,
+          "endMs": 170960,
+          "probability": 0.9325
+        },
+        {
+          "index": 8,
+          "text": "past",
+          "startMs": 170960,
+          "endMs": 171460,
+          "probability": 0.997003
+        },
+        {
+          "index": 9,
+          "text": "Saturn,",
+          "startMs": 171460,
+          "endMs": 172140,
+          "probability": 0.999657
+        },
+        {
+          "index": 10,
+          "text": "but",
+          "startMs": 172180,
+          "endMs": 173060,
+          "probability": 0.996779
+        },
+        {
+          "index": 11,
+          "text": "he",
+          "startMs": 173060,
+          "endMs": 173320,
+          "probability": 0.996243
+        },
+        {
+          "index": 12,
+          "text": "cannot",
+          "startMs": 173320,
+          "endMs": 173780,
+          "probability": 0.972528
+        },
+        {
+          "index": 13,
+          "text": "get",
+          "startMs": 173780,
+          "endMs": 174040,
+          "probability": 0.999189
+        },
+        {
+          "index": 14,
+          "text": "away",
+          "startMs": 174040,
+          "endMs": 174380,
+          "probability": 0.998916
+        },
+        {
+          "index": 15,
+          "text": "from",
+          "startMs": 174380,
+          "endMs": 174700,
+          "probability": 0.999178
+        },
+        {
+          "index": 16,
+          "text": "the",
+          "startMs": 174700,
+          "endMs": 174920,
+          "probability": 0.997526
+        },
+        {
+          "index": 17,
+          "text": "spaceship.",
+          "startMs": 174920,
+          "endMs": 175640,
+          "probability": 0.94092
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Then with a p-p-p-punk, Agent Meow has a problem. Oh no! Out of gas? All of a sudden,",
+      "startMs": 178200,
+      "endMs": 194180,
+      "avgLogprob": -0.24234,
+      "noSpeechProb": 0.047021,
+      "compressionRatio": 1.348485,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 178200,
+          "endMs": 179200,
+          "probability": 0.275945
+        },
+        {
+          "index": 2,
+          "text": "with",
+          "startMs": 179200,
+          "endMs": 180200,
+          "probability": 0.325391
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 180200,
+          "endMs": 180840,
+          "probability": 0.482206
+        },
+        {
+          "index": 4,
+          "text": "p",
+          "startMs": 180840,
+          "endMs": 181200,
+          "probability": 0.175481
+        },
+        {
+          "index": 5,
+          "text": "-p",
+          "startMs": 181200,
+          "endMs": 181700,
+          "probability": 0.848267
+        },
+        {
+          "index": 6,
+          "text": "-p",
+          "startMs": 181700,
+          "endMs": 182580,
+          "probability": 0.862152
+        },
+        {
+          "index": 7,
+          "text": "-punk,",
+          "startMs": 182580,
+          "endMs": 183480,
+          "probability": 0.28802
+        },
+        {
+          "index": 8,
+          "text": "Agent",
+          "startMs": 184920,
+          "endMs": 185280,
+          "probability": 0.909006
+        },
+        {
+          "index": 9,
+          "text": "Meow",
+          "startMs": 185280,
+          "endMs": 185620,
+          "probability": 0.766646
+        },
+        {
+          "index": 10,
+          "text": "has",
+          "startMs": 185620,
+          "endMs": 186140,
+          "probability": 0.989504
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 186140,
+          "endMs": 186560,
+          "probability": 0.997015
+        },
+        {
+          "index": 12,
+          "text": "problem.",
+          "startMs": 186560,
+          "endMs": 187080,
+          "probability": 0.997795
+        },
+        {
+          "index": 13,
+          "text": "Oh",
+          "startMs": 188440,
+          "endMs": 188920,
+          "probability": 0.563329
+        },
+        {
+          "index": 14,
+          "text": "no!",
+          "startMs": 188920,
+          "endMs": 189420,
+          "probability": 0.623465
+        },
+        {
+          "index": 15,
+          "text": "Out",
+          "startMs": 190200,
+          "endMs": 190460,
+          "probability": 0.932151
+        },
+        {
+          "index": 16,
+          "text": "of",
+          "startMs": 190460,
+          "endMs": 190680,
+          "probability": 0.99811
+        },
+        {
+          "index": 17,
+          "text": "gas?",
+          "startMs": 190680,
+          "endMs": 191220,
+          "probability": 0.993317
+        },
+        {
+          "index": 18,
+          "text": "All",
+          "startMs": 192660,
+          "endMs": 193440,
+          "probability": 0.993233
+        },
+        {
+          "index": 19,
+          "text": "of",
+          "startMs": 193440,
+          "endMs": 193640,
+          "probability": 0.995687
+        },
+        {
+          "index": 20,
+          "text": "a",
+          "startMs": 193640,
+          "endMs": 193800,
+          "probability": 0.973643
+        },
+        {
+          "index": 21,
+          "text": "sudden,",
+          "startMs": 193800,
+          "endMs": 194180,
+          "probability": 0.998974
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "a bright light pulls Agent Meow's ship in. Hey, stop that! Agent Meow's ship docks. The door",
+      "startMs": 194580,
+      "endMs": 205620,
+      "avgLogprob": -0.24234,
+      "noSpeechProb": 0.047021,
+      "compressionRatio": 1.348485,
+      "words": [
+        {
+          "index": 1,
+          "text": "a",
+          "startMs": 194580,
+          "endMs": 194800,
+          "probability": 0.992161
+        },
+        {
+          "index": 2,
+          "text": "bright",
+          "startMs": 194800,
+          "endMs": 195140,
+          "probability": 0.99251
+        },
+        {
+          "index": 3,
+          "text": "light",
+          "startMs": 195140,
+          "endMs": 195600,
+          "probability": 0.997459
+        },
+        {
+          "index": 4,
+          "text": "pulls",
+          "startMs": 195600,
+          "endMs": 196100,
+          "probability": 0.993766
+        },
+        {
+          "index": 5,
+          "text": "Agent",
+          "startMs": 196100,
+          "endMs": 196460,
+          "probability": 0.97633
+        },
+        {
+          "index": 6,
+          "text": "Meow's",
+          "startMs": 196460,
+          "endMs": 197020,
+          "probability": 0.992459
+        },
+        {
+          "index": 7,
+          "text": "ship",
+          "startMs": 197020,
+          "endMs": 197200,
+          "probability": 0.995147
+        },
+        {
+          "index": 8,
+          "text": "in.",
+          "startMs": 197200,
+          "endMs": 197560,
+          "probability": 0.998045
+        },
+        {
+          "index": 9,
+          "text": "Hey,",
+          "startMs": 198300,
+          "endMs": 198700,
+          "probability": 0.957653
+        },
+        {
+          "index": 10,
+          "text": "stop",
+          "startMs": 199160,
+          "endMs": 199620,
+          "probability": 0.994587
+        },
+        {
+          "index": 11,
+          "text": "that!",
+          "startMs": 199620,
+          "endMs": 200220,
+          "probability": 0.998383
+        },
+        {
+          "index": 12,
+          "text": "Agent",
+          "startMs": 201860,
+          "endMs": 202620,
+          "probability": 0.949529
+        },
+        {
+          "index": 13,
+          "text": "Meow's",
+          "startMs": 202620,
+          "endMs": 203340,
+          "probability": 0.987599
+        },
+        {
+          "index": 14,
+          "text": "ship",
+          "startMs": 203340,
+          "endMs": 203520,
+          "probability": 0.986329
+        },
+        {
+          "index": 15,
+          "text": "docks.",
+          "startMs": 203520,
+          "endMs": 204100,
+          "probability": 0.66764
+        },
+        {
+          "index": 16,
+          "text": "The",
+          "startMs": 204920,
+          "endMs": 205180,
+          "probability": 0.993344
+        },
+        {
+          "index": 17,
+          "text": "door",
+          "startMs": 205180,
+          "endMs": 205620,
+          "probability": 0.804094
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "begins to open. He is surrounded by little space cats. Whoa! One jumps up to the ship.",
+      "startMs": 205620,
+      "endMs": 218400,
+      "avgLogprob": -0.132191,
+      "noSpeechProb": 0.017353,
+      "compressionRatio": 1.263514,
+      "words": [
+        {
+          "index": 1,
+          "text": "begins",
+          "startMs": 205620,
+          "endMs": 206320,
+          "probability": 0.029428
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 206320,
+          "endMs": 206640,
+          "probability": 0.997826
+        },
+        {
+          "index": 3,
+          "text": "open.",
+          "startMs": 206640,
+          "endMs": 207320,
+          "probability": 0.998951
+        },
+        {
+          "index": 4,
+          "text": "He",
+          "startMs": 208780,
+          "endMs": 209040,
+          "probability": 0.989953
+        },
+        {
+          "index": 5,
+          "text": "is",
+          "startMs": 209040,
+          "endMs": 209240,
+          "probability": 0.989675
+        },
+        {
+          "index": 6,
+          "text": "surrounded",
+          "startMs": 209240,
+          "endMs": 209940,
+          "probability": 0.998515
+        },
+        {
+          "index": 7,
+          "text": "by",
+          "startMs": 209940,
+          "endMs": 210560,
+          "probability": 0.998403
+        },
+        {
+          "index": 8,
+          "text": "little",
+          "startMs": 210560,
+          "endMs": 211060,
+          "probability": 0.995917
+        },
+        {
+          "index": 9,
+          "text": "space",
+          "startMs": 211060,
+          "endMs": 211820,
+          "probability": 0.956131
+        },
+        {
+          "index": 10,
+          "text": "cats.",
+          "startMs": 211820,
+          "endMs": 212400,
+          "probability": 0.93188
+        },
+        {
+          "index": 11,
+          "text": "Whoa!",
+          "startMs": 214320,
+          "endMs": 215400,
+          "probability": 0.658308
+        },
+        {
+          "index": 12,
+          "text": "One",
+          "startMs": 216320,
+          "endMs": 216900,
+          "probability": 0.974621
+        },
+        {
+          "index": 13,
+          "text": "jumps",
+          "startMs": 216900,
+          "endMs": 217340,
+          "probability": 0.999008
+        },
+        {
+          "index": 14,
+          "text": "up",
+          "startMs": 217340,
+          "endMs": 217660,
+          "probability": 0.997221
+        },
+        {
+          "index": 15,
+          "text": "to",
+          "startMs": 217660,
+          "endMs": 217880,
+          "probability": 0.996121
+        },
+        {
+          "index": 16,
+          "text": "the",
+          "startMs": 217880,
+          "endMs": 218040,
+          "probability": 0.998117
+        },
+        {
+          "index": 17,
+          "text": "ship.",
+          "startMs": 218040,
+          "endMs": 218400,
+          "probability": 0.994492
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Agent Meow, welcome. Huh? I am Bloop of the planet Quackadoodle. Everyone is so excited to meet you.",
+      "startMs": 219840,
+      "endMs": 232540,
+      "avgLogprob": -0.132191,
+      "noSpeechProb": 0.017353,
+      "compressionRatio": 1.263514,
+      "words": [
+        {
+          "index": 1,
+          "text": "Agent",
+          "startMs": 219840,
+          "endMs": 220240,
+          "probability": 0.289183
+        },
+        {
+          "index": 2,
+          "text": "Meow,",
+          "startMs": 220240,
+          "endMs": 220640,
+          "probability": 0.767071
+        },
+        {
+          "index": 3,
+          "text": "welcome.",
+          "startMs": 221460,
+          "endMs": 222040,
+          "probability": 0.968836
+        },
+        {
+          "index": 4,
+          "text": "Huh?",
+          "startMs": 223360,
+          "endMs": 223880,
+          "probability": 0.897437
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 225180,
+          "endMs": 225640,
+          "probability": 0.991803
+        },
+        {
+          "index": 6,
+          "text": "am",
+          "startMs": 225640,
+          "endMs": 226000,
+          "probability": 0.985464
+        },
+        {
+          "index": 7,
+          "text": "Bloop",
+          "startMs": 226000,
+          "endMs": 226460,
+          "probability": 0.802356
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 226460,
+          "endMs": 226720,
+          "probability": 0.991629
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 226720,
+          "endMs": 226920,
+          "probability": 0.99264
+        },
+        {
+          "index": 10,
+          "text": "planet",
+          "startMs": 226920,
+          "endMs": 227360,
+          "probability": 0.925147
+        },
+        {
+          "index": 11,
+          "text": "Quackadoodle.",
+          "startMs": 227360,
+          "endMs": 228320,
+          "probability": 0.935477
+        },
+        {
+          "index": 12,
+          "text": "Everyone",
+          "startMs": 229160,
+          "endMs": 229580,
+          "probability": 0.992369
+        },
+        {
+          "index": 13,
+          "text": "is",
+          "startMs": 229580,
+          "endMs": 230180,
+          "probability": 0.998595
+        },
+        {
+          "index": 14,
+          "text": "so",
+          "startMs": 230180,
+          "endMs": 230520,
+          "probability": 0.998726
+        },
+        {
+          "index": 15,
+          "text": "excited",
+          "startMs": 230520,
+          "endMs": 231160,
+          "probability": 0.998377
+        },
+        {
+          "index": 16,
+          "text": "to",
+          "startMs": 231160,
+          "endMs": 231540,
+          "probability": 0.999589
+        },
+        {
+          "index": 17,
+          "text": "meet",
+          "startMs": 231540,
+          "endMs": 231860,
+          "probability": 0.999356
+        },
+        {
+          "index": 18,
+          "text": "you.",
+          "startMs": 231860,
+          "endMs": 232540,
+          "probability": 0.999395
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Meet me? How? We sent Agent Blorp to invite you to a party. And here you are with Blorp's ship.",
+      "startMs": 233260,
+      "endMs": 245100,
+      "avgLogprob": -0.15431,
+      "noSpeechProb": 0.005168,
+      "compressionRatio": 1.35461,
+      "words": [
+        {
+          "index": 1,
+          "text": "Meet",
+          "startMs": 233100,
+          "endMs": 233560,
+          "probability": 0.139288
+        },
+        {
+          "index": 2,
+          "text": "me?",
+          "startMs": 233560,
+          "endMs": 234600,
+          "probability": 0.868769
+        },
+        {
+          "index": 3,
+          "text": "How?",
+          "startMs": 235700,
+          "endMs": 236020,
+          "probability": 0.738313
+        },
+        {
+          "index": 4,
+          "text": "We",
+          "startMs": 237620,
+          "endMs": 237900,
+          "probability": 0.978172
+        },
+        {
+          "index": 5,
+          "text": "sent",
+          "startMs": 237900,
+          "endMs": 238320,
+          "probability": 0.976042
+        },
+        {
+          "index": 6,
+          "text": "Agent",
+          "startMs": 238320,
+          "endMs": 238860,
+          "probability": 0.858525
+        },
+        {
+          "index": 7,
+          "text": "Blorp",
+          "startMs": 238860,
+          "endMs": 239320,
+          "probability": 0.950776
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 239320,
+          "endMs": 239680,
+          "probability": 0.99568
+        },
+        {
+          "index": 9,
+          "text": "invite",
+          "startMs": 239680,
+          "endMs": 240020,
+          "probability": 0.998059
+        },
+        {
+          "index": 10,
+          "text": "you",
+          "startMs": 240020,
+          "endMs": 240260,
+          "probability": 0.998045
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 240260,
+          "endMs": 240420,
+          "probability": 0.996442
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 240420,
+          "endMs": 240580,
+          "probability": 0.996947
+        },
+        {
+          "index": 13,
+          "text": "party.",
+          "startMs": 240580,
+          "endMs": 241060,
+          "probability": 0.998318
+        },
+        {
+          "index": 14,
+          "text": "And",
+          "startMs": 241700,
+          "endMs": 241920,
+          "probability": 0.990356
+        },
+        {
+          "index": 15,
+          "text": "here",
+          "startMs": 241920,
+          "endMs": 242280,
+          "probability": 0.9934
+        },
+        {
+          "index": 16,
+          "text": "you",
+          "startMs": 242280,
+          "endMs": 242500,
+          "probability": 0.998551
+        },
+        {
+          "index": 17,
+          "text": "are",
+          "startMs": 242500,
+          "endMs": 242980,
+          "probability": 0.999411
+        },
+        {
+          "index": 18,
+          "text": "with",
+          "startMs": 242980,
+          "endMs": 243740,
+          "probability": 0.339037
+        },
+        {
+          "index": 19,
+          "text": "Blorp's",
+          "startMs": 243740,
+          "endMs": 244640,
+          "probability": 0.982192
+        },
+        {
+          "index": 20,
+          "text": "ship.",
+          "startMs": 244640,
+          "endMs": 245100,
+          "probability": 0.994504
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "But where is Blorp? Oh my! I may have left Agent Blorp on Earth. That means we all get to go to",
+      "startMs": 246040,
+      "endMs": 259720,
+      "avgLogprob": -0.15431,
+      "noSpeechProb": 0.005168,
+      "compressionRatio": 1.35461,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 246040,
+          "endMs": 246340,
+          "probability": 0.995237
+        },
+        {
+          "index": 2,
+          "text": "where",
+          "startMs": 246340,
+          "endMs": 246800,
+          "probability": 0.992006
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 246800,
+          "endMs": 247280,
+          "probability": 0.998293
+        },
+        {
+          "index": 4,
+          "text": "Blorp?",
+          "startMs": 247280,
+          "endMs": 247980,
+          "probability": 0.990482
+        },
+        {
+          "index": 5,
+          "text": "Oh",
+          "startMs": 249340,
+          "endMs": 249820,
+          "probability": 0.988158
+        },
+        {
+          "index": 6,
+          "text": "my!",
+          "startMs": 249820,
+          "endMs": 250400,
+          "probability": 0.509279
+        },
+        {
+          "index": 7,
+          "text": "I",
+          "startMs": 251260,
+          "endMs": 251500,
+          "probability": 0.997813
+        },
+        {
+          "index": 8,
+          "text": "may",
+          "startMs": 251500,
+          "endMs": 252100,
+          "probability": 0.990245
+        },
+        {
+          "index": 9,
+          "text": "have",
+          "startMs": 252100,
+          "endMs": 252540,
+          "probability": 0.998881
+        },
+        {
+          "index": 10,
+          "text": "left",
+          "startMs": 252540,
+          "endMs": 252860,
+          "probability": 0.998273
+        },
+        {
+          "index": 11,
+          "text": "Agent",
+          "startMs": 252860,
+          "endMs": 253360,
+          "probability": 0.993008
+        },
+        {
+          "index": 12,
+          "text": "Blorp",
+          "startMs": 253360,
+          "endMs": 253760,
+          "probability": 0.995811
+        },
+        {
+          "index": 13,
+          "text": "on",
+          "startMs": 253760,
+          "endMs": 254100,
+          "probability": 0.998786
+        },
+        {
+          "index": 14,
+          "text": "Earth.",
+          "startMs": 254100,
+          "endMs": 254420,
+          "probability": 0.850515
+        },
+        {
+          "index": 15,
+          "text": "That",
+          "startMs": 255200,
+          "endMs": 255600,
+          "probability": 0.995968
+        },
+        {
+          "index": 16,
+          "text": "means",
+          "startMs": 255600,
+          "endMs": 256240,
+          "probability": 0.998697
+        },
+        {
+          "index": 17,
+          "text": "we",
+          "startMs": 256240,
+          "endMs": 257660,
+          "probability": 0.527052
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 257660,
+          "endMs": 258240,
+          "probability": 0.993527
+        },
+        {
+          "index": 19,
+          "text": "get",
+          "startMs": 258240,
+          "endMs": 258580,
+          "probability": 0.9943
+        },
+        {
+          "index": 20,
+          "text": "to",
+          "startMs": 258580,
+          "endMs": 258860,
+          "probability": 0.997431
+        },
+        {
+          "index": 21,
+          "text": "go",
+          "startMs": 258860,
+          "endMs": 259180,
+          "probability": 0.996196
+        },
+        {
+          "index": 22,
+          "text": "to",
+          "startMs": 259180,
+          "endMs": 259720,
+          "probability": 0.992531
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Earth! The Quackadoodles cheer. One spaceship ride later. The large spaceship lands at the",
+      "startMs": 259720,
+      "endMs": 271840,
+      "avgLogprob": -0.087747,
+      "noSpeechProb": 0.016159,
+      "compressionRatio": 1.438462,
+      "words": [
+        {
+          "index": 1,
+          "text": "Earth!",
+          "startMs": 259720,
+          "endMs": 260360,
+          "probability": 0.579807
+        },
+        {
+          "index": 2,
+          "text": "The",
+          "startMs": 261440,
+          "endMs": 261440,
+          "probability": 0.932594
+        },
+        {
+          "index": 3,
+          "text": "Quackadoodles",
+          "startMs": 261440,
+          "endMs": 262720,
+          "probability": 0.894521
+        },
+        {
+          "index": 4,
+          "text": "cheer.",
+          "startMs": 262720,
+          "endMs": 263400,
+          "probability": 0.994602
+        },
+        {
+          "index": 5,
+          "text": "One",
+          "startMs": 265640,
+          "endMs": 265980,
+          "probability": 0.923059
+        },
+        {
+          "index": 6,
+          "text": "spaceship",
+          "startMs": 265980,
+          "endMs": 266740,
+          "probability": 0.903163
+        },
+        {
+          "index": 7,
+          "text": "ride",
+          "startMs": 266740,
+          "endMs": 267480,
+          "probability": 0.990776
+        },
+        {
+          "index": 8,
+          "text": "later.",
+          "startMs": 267480,
+          "endMs": 268240,
+          "probability": 0.99626
+        },
+        {
+          "index": 9,
+          "text": "The",
+          "startMs": 269660,
+          "endMs": 269740,
+          "probability": 0.989183
+        },
+        {
+          "index": 10,
+          "text": "large",
+          "startMs": 269740,
+          "endMs": 270120,
+          "probability": 0.98811
+        },
+        {
+          "index": 11,
+          "text": "spaceship",
+          "startMs": 270120,
+          "endMs": 270900,
+          "probability": 0.993874
+        },
+        {
+          "index": 12,
+          "text": "lands",
+          "startMs": 270900,
+          "endMs": 271360,
+          "probability": 0.997944
+        },
+        {
+          "index": 13,
+          "text": "at",
+          "startMs": 271360,
+          "endMs": 271640,
+          "probability": 0.994168
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 271640,
+          "endMs": 271840,
+          "probability": 0.997599
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "playground and Agent Meow and the Quackadoodles look around. There is no sign of Blorp anywhere.",
+      "startMs": 271840,
+      "endMs": 280380,
+      "avgLogprob": -0.087747,
+      "noSpeechProb": 0.016159,
+      "compressionRatio": 1.438462,
+      "words": [
+        {
+          "index": 1,
+          "text": "playground",
+          "startMs": 271840,
+          "endMs": 272380,
+          "probability": 0.992475
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 272380,
+          "endMs": 273200,
+          "probability": 0.487668
+        },
+        {
+          "index": 3,
+          "text": "Agent",
+          "startMs": 273200,
+          "endMs": 273620,
+          "probability": 0.968819
+        },
+        {
+          "index": 4,
+          "text": "Meow",
+          "startMs": 273620,
+          "endMs": 273900,
+          "probability": 0.825762
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 273900,
+          "endMs": 274180,
+          "probability": 0.981116
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 274180,
+          "endMs": 274380,
+          "probability": 0.979353
+        },
+        {
+          "index": 7,
+          "text": "Quackadoodles",
+          "startMs": 274380,
+          "endMs": 275320,
+          "probability": 0.993651
+        },
+        {
+          "index": 8,
+          "text": "look",
+          "startMs": 275320,
+          "endMs": 275640,
+          "probability": 0.996315
+        },
+        {
+          "index": 9,
+          "text": "around.",
+          "startMs": 275640,
+          "endMs": 276220,
+          "probability": 0.998466
+        },
+        {
+          "index": 10,
+          "text": "There",
+          "startMs": 277760,
+          "endMs": 277960,
+          "probability": 0.983048
+        },
+        {
+          "index": 11,
+          "text": "is",
+          "startMs": 277960,
+          "endMs": 278160,
+          "probability": 0.963291
+        },
+        {
+          "index": 12,
+          "text": "no",
+          "startMs": 278160,
+          "endMs": 278440,
+          "probability": 0.996792
+        },
+        {
+          "index": 13,
+          "text": "sign",
+          "startMs": 278440,
+          "endMs": 278840,
+          "probability": 0.998762
+        },
+        {
+          "index": 14,
+          "text": "of",
+          "startMs": 278840,
+          "endMs": 279220,
+          "probability": 0.998635
+        },
+        {
+          "index": 15,
+          "text": "Blorp",
+          "startMs": 279220,
+          "endMs": 279560,
+          "probability": 0.692784
+        },
+        {
+          "index": 16,
+          "text": "anywhere.",
+          "startMs": 279560,
+          "endMs": 280380,
+          "probability": 0.985098
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Have no fear. Agent Meow is on the case. Agent Meow takes out his magnifying glass and finds",
+      "startMs": 280380,
+      "endMs": 292140,
+      "avgLogprob": -0.221105,
+      "noSpeechProb": 0.00615,
+      "compressionRatio": 1.416,
+      "words": [
+        {
+          "index": 1,
+          "text": "Have",
+          "startMs": 280380,
+          "endMs": 280900,
+          "probability": 0.318571
+        },
+        {
+          "index": 2,
+          "text": "no",
+          "startMs": 280900,
+          "endMs": 282760,
+          "probability": 0.992741
+        },
+        {
+          "index": 3,
+          "text": "fear.",
+          "startMs": 282760,
+          "endMs": 283320,
+          "probability": 0.994235
+        },
+        {
+          "index": 4,
+          "text": "Agent",
+          "startMs": 284420,
+          "endMs": 284440,
+          "probability": 0.982297
+        },
+        {
+          "index": 5,
+          "text": "Meow",
+          "startMs": 284440,
+          "endMs": 284880,
+          "probability": 0.81761
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 284880,
+          "endMs": 285320,
+          "probability": 0.993824
+        },
+        {
+          "index": 7,
+          "text": "on",
+          "startMs": 285320,
+          "endMs": 285780,
+          "probability": 0.993982
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 285780,
+          "endMs": 286000,
+          "probability": 0.997304
+        },
+        {
+          "index": 9,
+          "text": "case.",
+          "startMs": 286000,
+          "endMs": 286460,
+          "probability": 0.995608
+        },
+        {
+          "index": 10,
+          "text": "Agent",
+          "startMs": 287860,
+          "endMs": 288180,
+          "probability": 0.978654
+        },
+        {
+          "index": 11,
+          "text": "Meow",
+          "startMs": 288180,
+          "endMs": 288580,
+          "probability": 0.990075
+        },
+        {
+          "index": 12,
+          "text": "takes",
+          "startMs": 288580,
+          "endMs": 289060,
+          "probability": 0.991363
+        },
+        {
+          "index": 13,
+          "text": "out",
+          "startMs": 289060,
+          "endMs": 289380,
+          "probability": 0.997224
+        },
+        {
+          "index": 14,
+          "text": "his",
+          "startMs": 289380,
+          "endMs": 289600,
+          "probability": 0.997007
+        },
+        {
+          "index": 15,
+          "text": "magnifying",
+          "startMs": 289600,
+          "endMs": 290280,
+          "probability": 0.996223
+        },
+        {
+          "index": 16,
+          "text": "glass",
+          "startMs": 290280,
+          "endMs": 290940,
+          "probability": 0.984178
+        },
+        {
+          "index": 17,
+          "text": "and",
+          "startMs": 290940,
+          "endMs": 291920,
+          "probability": 0.86745
+        },
+        {
+          "index": 18,
+          "text": "finds",
+          "startMs": 291920,
+          "endMs": 292390,
+          "probability": 0.988303
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "footprints. Look! Blorp made friends. Blorp is at a table with Agent Meow's friends.",
+      "startMs": 293660,
+      "endMs": 303760,
+      "avgLogprob": -0.221105,
+      "noSpeechProb": 0.00615,
+      "compressionRatio": 1.416,
+      "words": [
+        {
+          "index": 1,
+          "text": "footprints.",
+          "startMs": 293660,
+          "endMs": 294600,
+          "probability": 0.627373
+        },
+        {
+          "index": 2,
+          "text": "Look!",
+          "startMs": 296220,
+          "endMs": 296760,
+          "probability": 0.831739
+        },
+        {
+          "index": 3,
+          "text": "Blorp",
+          "startMs": 297620,
+          "endMs": 297740,
+          "probability": 0.921732
+        },
+        {
+          "index": 4,
+          "text": "made",
+          "startMs": 297740,
+          "endMs": 298140,
+          "probability": 0.977967
+        },
+        {
+          "index": 5,
+          "text": "friends.",
+          "startMs": 298140,
+          "endMs": 299060,
+          "probability": 0.997911
+        },
+        {
+          "index": 6,
+          "text": "Blorp",
+          "startMs": 300600,
+          "endMs": 301160,
+          "probability": 0.994859
+        },
+        {
+          "index": 7,
+          "text": "is",
+          "startMs": 301160,
+          "endMs": 301380,
+          "probability": 0.996417
+        },
+        {
+          "index": 8,
+          "text": "at",
+          "startMs": 301380,
+          "endMs": 301560,
+          "probability": 0.995848
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 301560,
+          "endMs": 301840,
+          "probability": 0.981659
+        },
+        {
+          "index": 10,
+          "text": "table",
+          "startMs": 301840,
+          "endMs": 302120,
+          "probability": 0.999474
+        },
+        {
+          "index": 11,
+          "text": "with",
+          "startMs": 302120,
+          "endMs": 302440,
+          "probability": 0.99829
+        },
+        {
+          "index": 12,
+          "text": "Agent",
+          "startMs": 302440,
+          "endMs": 302840,
+          "probability": 0.98342
+        },
+        {
+          "index": 13,
+          "text": "Meow's",
+          "startMs": 302840,
+          "endMs": 303360,
+          "probability": 0.988514
+        },
+        {
+          "index": 14,
+          "text": "friends.",
+          "startMs": 303360,
+          "endMs": 303760,
+          "probability": 0.997908
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "They have made him a cake saying, welcome to Earth.",
+      "startMs": 304320,
+      "endMs": 308120,
+      "avgLogprob": -0.17892,
+      "noSpeechProb": 0.016227,
+      "compressionRatio": 1.138889,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 304160,
+          "endMs": 304580,
+          "probability": 0.323668
+        },
+        {
+          "index": 2,
+          "text": "have",
+          "startMs": 304580,
+          "endMs": 304800,
+          "probability": 0.989553
+        },
+        {
+          "index": 3,
+          "text": "made",
+          "startMs": 304800,
+          "endMs": 305140,
+          "probability": 0.997534
+        },
+        {
+          "index": 4,
+          "text": "him",
+          "startMs": 305140,
+          "endMs": 305380,
+          "probability": 0.989646
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 305380,
+          "endMs": 305580,
+          "probability": 0.99692
+        },
+        {
+          "index": 6,
+          "text": "cake",
+          "startMs": 305580,
+          "endMs": 305920,
+          "probability": 0.991627
+        },
+        {
+          "index": 7,
+          "text": "saying,",
+          "startMs": 305920,
+          "endMs": 306520,
+          "probability": 0.466203
+        },
+        {
+          "index": 8,
+          "text": "welcome",
+          "startMs": 306940,
+          "endMs": 307040,
+          "probability": 0.05935
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 307040,
+          "endMs": 307580,
+          "probability": 0.996753
+        },
+        {
+          "index": 10,
+          "text": "Earth.",
+          "startMs": 307580,
+          "endMs": 308120,
+          "probability": 0.728752
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Agent Meow and the Quackadoodles join in the fun. The more the merrier.",
+      "startMs": 310480,
+      "endMs": 318360,
+      "avgLogprob": -0.17892,
+      "noSpeechProb": 0.016227,
+      "compressionRatio": 1.138889,
+      "words": [
+        {
+          "index": 1,
+          "text": "Agent",
+          "startMs": 310480,
+          "endMs": 310780,
+          "probability": 0.946936
+        },
+        {
+          "index": 2,
+          "text": "Meow",
+          "startMs": 310780,
+          "endMs": 311200,
+          "probability": 0.827562
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 311200,
+          "endMs": 311600,
+          "probability": 0.982822
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 311600,
+          "endMs": 311900,
+          "probability": 0.985737
+        },
+        {
+          "index": 5,
+          "text": "Quackadoodles",
+          "startMs": 311900,
+          "endMs": 312880,
+          "probability": 0.946606
+        },
+        {
+          "index": 6,
+          "text": "join",
+          "startMs": 312880,
+          "endMs": 313380,
+          "probability": 0.967773
+        },
+        {
+          "index": 7,
+          "text": "in",
+          "startMs": 313380,
+          "endMs": 313640,
+          "probability": 0.994066
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 313640,
+          "endMs": 313900,
+          "probability": 0.996796
+        },
+        {
+          "index": 9,
+          "text": "fun.",
+          "startMs": 313900,
+          "endMs": 314440,
+          "probability": 0.999161
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 315460,
+          "endMs": 315720,
+          "probability": 0.972981
+        },
+        {
+          "index": 11,
+          "text": "more",
+          "startMs": 315720,
+          "endMs": 316420,
+          "probability": 0.665241
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 316420,
+          "endMs": 317240,
+          "probability": 0.373049
+        },
+        {
+          "index": 13,
+          "text": "merrier.",
+          "startMs": 317240,
+          "endMs": 318360,
+          "probability": 0.997166
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "This is James Foley. This unabridged production of Pete the Cat and the Space Chase by Kimberly",
+      "startMs": 327300,
+      "endMs": 336440,
+      "avgLogprob": -0.142912,
+      "noSpeechProb": 0.116383,
+      "compressionRatio": 1.338129,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 327300,
+          "endMs": 328140,
+          "probability": 0.204328
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 328140,
+          "endMs": 328540,
+          "probability": 0.985381
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 328540,
+          "endMs": 329040,
+          "probability": 0.965338
+        },
+        {
+          "index": 4,
+          "text": "Foley.",
+          "startMs": 329040,
+          "endMs": 329360,
+          "probability": 0.896986
+        },
+        {
+          "index": 5,
+          "text": "This",
+          "startMs": 330320,
+          "endMs": 330360,
+          "probability": 0.964349
+        },
+        {
+          "index": 6,
+          "text": "unabridged",
+          "startMs": 330360,
+          "endMs": 331000,
+          "probability": 0.980728
+        },
+        {
+          "index": 7,
+          "text": "production",
+          "startMs": 331000,
+          "endMs": 331540,
+          "probability": 0.995941
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 331540,
+          "endMs": 331960,
+          "probability": 0.996855
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 331960,
+          "endMs": 332780,
+          "probability": 0.780733
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 332780,
+          "endMs": 333100,
+          "probability": 0.859655
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 333100,
+          "endMs": 333420,
+          "probability": 0.841147
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 333420,
+          "endMs": 333760,
+          "probability": 0.936893
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 333760,
+          "endMs": 333960,
+          "probability": 0.971001
+        },
+        {
+          "index": 14,
+          "text": "Space",
+          "startMs": 333960,
+          "endMs": 334460,
+          "probability": 0.987464
+        },
+        {
+          "index": 15,
+          "text": "Chase",
+          "startMs": 334460,
+          "endMs": 334860,
+          "probability": 0.910883
+        },
+        {
+          "index": 16,
+          "text": "by",
+          "startMs": 334860,
+          "endMs": 335980,
+          "probability": 0.760761
+        },
+        {
+          "index": 17,
+          "text": "Kimberly",
+          "startMs": 335980,
+          "endMs": 336440,
+          "probability": 0.600762
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "and James Dean. Presented by Harper Alley and Harper Audio was directed by Cynthia Lee and",
+      "startMs": 336440,
+      "endMs": 344520,
+      "avgLogprob": -0.142912,
+      "noSpeechProb": 0.116383,
+      "compressionRatio": 1.338129,
+      "words": [
+        {
+          "index": 1,
+          "text": "and",
+          "startMs": 336440,
+          "endMs": 336960,
+          "probability": 0.961346
+        },
+        {
+          "index": 2,
+          "text": "James",
+          "startMs": 336960,
+          "endMs": 337480,
+          "probability": 0.995324
+        },
+        {
+          "index": 3,
+          "text": "Dean.",
+          "startMs": 337480,
+          "endMs": 337820,
+          "probability": 0.881573
+        },
+        {
+          "index": 4,
+          "text": "Presented",
+          "startMs": 338960,
+          "endMs": 339460,
+          "probability": 0.976867
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 339460,
+          "endMs": 339740,
+          "probability": 0.998902
+        },
+        {
+          "index": 6,
+          "text": "Harper",
+          "startMs": 339740,
+          "endMs": 340120,
+          "probability": 0.962308
+        },
+        {
+          "index": 7,
+          "text": "Alley",
+          "startMs": 340120,
+          "endMs": 340460,
+          "probability": 0.930712
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 340460,
+          "endMs": 340800,
+          "probability": 0.914401
+        },
+        {
+          "index": 9,
+          "text": "Harper",
+          "startMs": 340800,
+          "endMs": 341160,
+          "probability": 0.990327
+        },
+        {
+          "index": 10,
+          "text": "Audio",
+          "startMs": 341160,
+          "endMs": 341620,
+          "probability": 0.935921
+        },
+        {
+          "index": 11,
+          "text": "was",
+          "startMs": 341620,
+          "endMs": 342260,
+          "probability": 0.7124
+        },
+        {
+          "index": 12,
+          "text": "directed",
+          "startMs": 342260,
+          "endMs": 342740,
+          "probability": 0.998164
+        },
+        {
+          "index": 13,
+          "text": "by",
+          "startMs": 342740,
+          "endMs": 343080,
+          "probability": 0.998448
+        },
+        {
+          "index": 14,
+          "text": "Cynthia",
+          "startMs": 343080,
+          "endMs": 343500,
+          "probability": 0.990933
+        },
+        {
+          "index": 15,
+          "text": "Lee",
+          "startMs": 343500,
+          "endMs": 343860,
+          "probability": 0.64115
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 343860,
+          "endMs": 344520,
+          "probability": 0.908703
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "recorded at Skyline Studios in Oakland, California. This program was produced by John",
+      "startMs": 344520,
+      "endMs": 350640,
+      "avgLogprob": -0.201148,
+      "noSpeechProb": 0.021026,
+      "compressionRatio": 1.43578,
+      "words": [
+        {
+          "index": 1,
+          "text": "recorded",
+          "startMs": 344520,
+          "endMs": 344980,
+          "probability": 0.023578
+        },
+        {
+          "index": 2,
+          "text": "at",
+          "startMs": 344980,
+          "endMs": 345360,
+          "probability": 0.994823
+        },
+        {
+          "index": 3,
+          "text": "Skyline",
+          "startMs": 345360,
+          "endMs": 345920,
+          "probability": 0.983623
+        },
+        {
+          "index": 4,
+          "text": "Studios",
+          "startMs": 345920,
+          "endMs": 346320,
+          "probability": 0.956548
+        },
+        {
+          "index": 5,
+          "text": "in",
+          "startMs": 346320,
+          "endMs": 346760,
+          "probability": 0.992124
+        },
+        {
+          "index": 6,
+          "text": "Oakland,",
+          "startMs": 346760,
+          "endMs": 347200,
+          "probability": 0.999588
+        },
+        {
+          "index": 7,
+          "text": "California.",
+          "startMs": 347440,
+          "endMs": 347780,
+          "probability": 0.979007
+        },
+        {
+          "index": 8,
+          "text": "This",
+          "startMs": 348780,
+          "endMs": 348840,
+          "probability": 0.988942
+        },
+        {
+          "index": 9,
+          "text": "program",
+          "startMs": 348840,
+          "endMs": 349260,
+          "probability": 0.995137
+        },
+        {
+          "index": 10,
+          "text": "was",
+          "startMs": 349260,
+          "endMs": 349520,
+          "probability": 0.996508
+        },
+        {
+          "index": 11,
+          "text": "produced",
+          "startMs": 349520,
+          "endMs": 349960,
+          "probability": 0.998569
+        },
+        {
+          "index": 12,
+          "text": "by",
+          "startMs": 349960,
+          "endMs": 350300,
+          "probability": 0.998073
+        },
+        {
+          "index": 13,
+          "text": "John",
+          "startMs": 350300,
+          "endMs": 350640,
+          "probability": 0.975915
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Marshall Media, engineered by Lupe Jimenez, executive producer Almeida Vainy, text copyright",
+      "startMs": 350640,
+      "endMs": 358520,
+      "avgLogprob": -0.201148,
+      "noSpeechProb": 0.021026,
+      "compressionRatio": 1.43578,
+      "words": [
+        {
+          "index": 1,
+          "text": "Marshall",
+          "startMs": 350640,
+          "endMs": 350940,
+          "probability": 0.987981
+        },
+        {
+          "index": 2,
+          "text": "Media,",
+          "startMs": 350940,
+          "endMs": 351480,
+          "probability": 0.984125
+        },
+        {
+          "index": 3,
+          "text": "engineered",
+          "startMs": 352160,
+          "endMs": 352540,
+          "probability": 0.976118
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 352540,
+          "endMs": 352940,
+          "probability": 0.999279
+        },
+        {
+          "index": 5,
+          "text": "Lupe",
+          "startMs": 352940,
+          "endMs": 353360,
+          "probability": 0.963013
+        },
+        {
+          "index": 6,
+          "text": "Jimenez,",
+          "startMs": 353360,
+          "endMs": 353740,
+          "probability": 0.739546
+        },
+        {
+          "index": 7,
+          "text": "executive",
+          "startMs": 354640,
+          "endMs": 355020,
+          "probability": 0.826456
+        },
+        {
+          "index": 8,
+          "text": "producer",
+          "startMs": 355020,
+          "endMs": 355720,
+          "probability": 0.999179
+        },
+        {
+          "index": 9,
+          "text": "Almeida",
+          "startMs": 355720,
+          "endMs": 356560,
+          "probability": 0.590815
+        },
+        {
+          "index": 10,
+          "text": "Vainy,",
+          "startMs": 356560,
+          "endMs": 356900,
+          "probability": 0.215434
+        },
+        {
+          "index": 11,
+          "text": "text",
+          "startMs": 357600,
+          "endMs": 357940,
+          "probability": 0.956722
+        },
+        {
+          "index": 12,
+          "text": "copyright",
+          "startMs": 357940,
+          "endMs": 358520,
+          "probability": 0.990747
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "2023 by Kimberly and James Dean, production copyright 2023 by Harper Collins Publishers,",
+      "startMs": 358520,
+      "endMs": 366500,
+      "avgLogprob": -0.201148,
+      "noSpeechProb": 0.021026,
+      "compressionRatio": 1.43578,
+      "words": [
+        {
+          "index": 1,
+          "text": "2023",
+          "startMs": 358520,
+          "endMs": 359600,
+          "probability": 0.980658
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 359600,
+          "endMs": 360000,
+          "probability": 0.969542
+        },
+        {
+          "index": 3,
+          "text": "Kimberly",
+          "startMs": 360000,
+          "endMs": 360420,
+          "probability": 0.70206
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 360420,
+          "endMs": 360900,
+          "probability": 0.956784
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 360900,
+          "endMs": 361320,
+          "probability": 0.929697
+        },
+        {
+          "index": 6,
+          "text": "Dean,",
+          "startMs": 361320,
+          "endMs": 361660,
+          "probability": 0.790083
+        },
+        {
+          "index": 7,
+          "text": "production",
+          "startMs": 362500,
+          "endMs": 363000,
+          "probability": 0.984432
+        },
+        {
+          "index": 8,
+          "text": "copyright",
+          "startMs": 363000,
+          "endMs": 363640,
+          "probability": 0.998056
+        },
+        {
+          "index": 9,
+          "text": "2023",
+          "startMs": 363640,
+          "endMs": 364720,
+          "probability": 0.996928
+        },
+        {
+          "index": 10,
+          "text": "by",
+          "startMs": 364720,
+          "endMs": 365120,
+          "probability": 0.992653
+        },
+        {
+          "index": 11,
+          "text": "Harper",
+          "startMs": 365120,
+          "endMs": 365480,
+          "probability": 0.996361
+        },
+        {
+          "index": 12,
+          "text": "Collins",
+          "startMs": 365480,
+          "endMs": 365920,
+          "probability": 0.563288
+        },
+        {
+          "index": 13,
+          "text": "Publishers,",
+          "startMs": 365920,
+          "endMs": 366500,
+          "probability": 0.863734
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "all rights reserved. Thank you for listening.",
+      "startMs": 367400,
+      "endMs": 371220,
+      "avgLogprob": -0.201148,
+      "noSpeechProb": 0.021026,
+      "compressionRatio": 1.43578,
+      "words": [
+        {
+          "index": 1,
+          "text": "all",
+          "startMs": 367400,
+          "endMs": 367660,
+          "probability": 0.924879
+        },
+        {
+          "index": 2,
+          "text": "rights",
+          "startMs": 367660,
+          "endMs": 368080,
+          "probability": 0.998321
+        },
+        {
+          "index": 3,
+          "text": "reserved.",
+          "startMs": 368080,
+          "endMs": 368600,
+          "probability": 0.997932
+        },
+        {
+          "index": 4,
+          "text": "Thank",
+          "startMs": 369940,
+          "endMs": 370360,
+          "probability": 0.98998
+        },
+        {
+          "index": 5,
+          "text": "you",
+          "startMs": 370360,
+          "endMs": 370620,
+          "probability": 0.997917
+        },
+        {
+          "index": 6,
+          "text": "for",
+          "startMs": 370620,
+          "endMs": 370840,
+          "probability": 0.995993
+        },
+        {
+          "index": 7,
+          "text": "listening.",
+          "startMs": 370840,
+          "endMs": 371220,
+          "probability": 0.992443
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Thank you.",
+      "startMs": 382420,
+      "endMs": 383820,
+      "avgLogprob": -0.971282,
+      "noSpeechProb": 0.865272,
+      "compressionRatio": 0.555556,
+      "words": [
+        {
+          "index": 1,
+          "text": "Thank",
+          "startMs": 382420,
+          "endMs": 383820,
+          "probability": 0.004723
+        },
+        {
+          "index": 2,
+          "text": "you.",
+          "startMs": 383820,
+          "endMs": 383820,
+          "probability": 0.939886
+        }
+      ]
+    }
+  ]
+}

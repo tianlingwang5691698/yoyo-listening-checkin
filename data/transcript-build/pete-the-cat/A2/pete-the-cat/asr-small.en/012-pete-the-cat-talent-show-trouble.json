@@ -1,0 +1,6240 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 81.19,
+  "text": "HarperCollins and Harper Audio present Pete the Cat Talent Show Trouble by Kimberly and James Dean performed by James Foey Pete is excited. His town is having a talent show. Pete loves shows. He loves performing for the crowd and making people happy. Pete can't wait to sign up. He knows just what he wants to do. He will play his guitar. Callie is going to dance. Alligator is doing magic. Gus is playing his drums. Pete sees a familiar name at the bottom of the sign-up list. It's Grumpy Toads! Grumpy Toad is playing his guitar. Just like Pete. Pete is worried. Grumpy Toad is his best friend. How can they compete against each other? On his way home, Pete hears music coming from Grumpy Toad's house. Grumpy Toad is practicing his guitar. Your song sounds super groovy, Pete says. Is that what you're playing in the talent show? Yup, says Grumpy Toad. I've been working on it all week. Neat, says Pete. I'm playing guitar in the talent show too. I hope I can be as good as you. Pete goes to his house. He takes out his guitar. What song should I play? He asks himself. Pete starts to play. Suddenly, Grumpy Toad's music gets very loud. Pete cannot hear himself play. Pete does not worry. He puts on headphones. Now Grumpy Toad can play as loud as he wants, and Pete can still hear his guitar. But Pete still does not know what song to play. Pete decides to write a new song. He will show the judges that he has two talents. Pete tries out some notes. They sound great, but he can't come up with the right words. Just then, Pete sees Grumpy Toad listening through his window. When Grumpy Toad sees Pete looking at him, he runs back to his house. Pete takes off his headphones. He goes to Grumpy Toad's house. Grumpy Toad is trying to write a new song too. Pete listens to Grumpy Toad's song. The lyrics are nifty. Pete pokes his head into Grumpy Toad's room. Your song is super cool, he says. Keep up the good work. Pete, Grumpy Toad says, you aren't supposed to be listening to me. We are competing against each other. Pete shrugs. I like listening to you play. Your songs are so good. Grumpy Toad smiles. Thanks Pete. I like listening to you play too. I don't understand. Don't you want to win? Shouldn't you be practicing? Winning would be super neat, Pete says. But it is not everything. I just want to have fun. Grumpy Toad asks. Yeah, fun! Pete says. The room will be full of cool cats. I just want my music to make them happy. That's what music is all about. You're right, he tells Pete. I got so caught up in the idea of winning, I forgot why I even play guitar. Grumpy Toad smiles at Pete. Thanks for reminding me. Just then, Pete has a cool idea. I wrote a new tune, and you wrote new words. What if we combine our songs? If we work together, our song will be the hippest thing ever. Yes! Grumpy Toad shouts. And we can be a team. Pete and Grumpy Toad get right to work. They put Grumpy Toad's words and Pete's tune together. Grumpy Toad and Pete practice playing their song together. They practice singing their song together. Pete was right. The song is super neat. Finally, the big day comes. Cali does ballet. Alligator pulls a rabbit from a hat. Gus plays a drum solo. Grumpy Toad and Pete are next. They rock out on their guitars. The crowd loves their new song. It is time to announce the winners. Cali gets first place. Grumpy Toad and Pete come in second. Sorry we didn't win, Grumpy Toad, Pete says. Grumpy Toad smiles. That's okay. We had fun. And we did it together. Pete agrees. Having his best friend by his side feels pretty neat. John Marshall Media. Executive producer Almeida Baynon. Text copyright 2021 by Kimberly and James Dean. Production copyright 2021 by Harper Collins Publishers. All rights reserved. Thank you for listening.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "HarperCollins and Harper Audio present",
+      "startMs": 0,
+      "endMs": 2840,
+      "avgLogprob": -0.208794,
+      "noSpeechProb": 0.076137,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "HarperCollins",
+          "startMs": 0,
+          "endMs": 1060,
+          "probability": 0.596222
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 1060,
+          "endMs": 1420,
+          "probability": 0.808712
+        },
+        {
+          "index": 3,
+          "text": "Harper",
+          "startMs": 1420,
+          "endMs": 1760,
+          "probability": 0.959474
+        },
+        {
+          "index": 4,
+          "text": "Audio",
+          "startMs": 1760,
+          "endMs": 2200,
+          "probability": 0.480384
+        },
+        {
+          "index": 5,
+          "text": "present",
+          "startMs": 2200,
+          "endMs": 2840,
+          "probability": 0.750653
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "Pete the Cat Talent Show Trouble",
+      "startMs": 4000,
+      "endMs": 7180,
+      "avgLogprob": -0.208794,
+      "noSpeechProb": 0.076137,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 3760,
+          "endMs": 4280,
+          "probability": 0.2855
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 4280,
+          "endMs": 4600,
+          "probability": 0.907974
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 4600,
+          "endMs": 5000,
+          "probability": 0.933263
+        },
+        {
+          "index": 4,
+          "text": "Talent",
+          "startMs": 5000,
+          "endMs": 6080,
+          "probability": 0.68554
+        },
+        {
+          "index": 5,
+          "text": "Show",
+          "startMs": 6080,
+          "endMs": 6500,
+          "probability": 0.977796
+        },
+        {
+          "index": 6,
+          "text": "Trouble",
+          "startMs": 6500,
+          "endMs": 7180,
+          "probability": 0.942537
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "by Kimberly and James Dean",
+      "startMs": 8000,
+      "endMs": 10480,
+      "avgLogprob": -0.208794,
+      "noSpeechProb": 0.076137,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "by",
+          "startMs": 7880,
+          "endMs": 8400,
+          "probability": 0.881648
+        },
+        {
+          "index": 2,
+          "text": "Kimberly",
+          "startMs": 8400,
+          "endMs": 8860,
+          "probability": 0.77219
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 8860,
+          "endMs": 9440,
+          "probability": 0.951512
+        },
+        {
+          "index": 4,
+          "text": "James",
+          "startMs": 9440,
+          "endMs": 10040,
+          "probability": 0.99553
+        },
+        {
+          "index": 5,
+          "text": "Dean",
+          "startMs": 10040,
+          "endMs": 10480,
+          "probability": 0.936142
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "performed by James Foey",
+      "startMs": 11000,
+      "endMs": 13000,
+      "avgLogprob": -0.208794,
+      "noSpeechProb": 0.076137,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "performed",
+          "startMs": 11000,
+          "endMs": 11760,
+          "probability": 0.750413
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 11760,
+          "endMs": 12280,
+          "probability": 0.998377
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 12280,
+          "endMs": 12780,
+          "probability": 0.996074
+        },
+        {
+          "index": 4,
+          "text": "Foey",
+          "startMs": 12780,
+          "endMs": 13300,
+          "probability": 0.752223
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Pete is excited.",
+      "startMs": 16640,
+      "endMs": 19320,
+      "avgLogprob": -0.208794,
+      "noSpeechProb": 0.076137,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 16640,
+          "endMs": 17680,
+          "probability": 0.391592
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 17680,
+          "endMs": 18200,
+          "probability": 0.995382
+        },
+        {
+          "index": 3,
+          "text": "excited.",
+          "startMs": 18200,
+          "endMs": 19320,
+          "probability": 0.978016
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "His town is having a talent show.",
+      "startMs": 19980,
+      "endMs": 22660,
+      "avgLogprob": -0.208794,
+      "noSpeechProb": 0.076137,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "His",
+          "startMs": 19980,
+          "endMs": 20180,
+          "probability": 0.992404
+        },
+        {
+          "index": 2,
+          "text": "town",
+          "startMs": 20180,
+          "endMs": 20580,
+          "probability": 0.967921
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 20580,
+          "endMs": 20800,
+          "probability": 0.998332
+        },
+        {
+          "index": 4,
+          "text": "having",
+          "startMs": 20800,
+          "endMs": 21180,
+          "probability": 0.998516
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 21180,
+          "endMs": 21500,
+          "probability": 0.997611
+        },
+        {
+          "index": 6,
+          "text": "talent",
+          "startMs": 21500,
+          "endMs": 22020,
+          "probability": 0.957995
+        },
+        {
+          "index": 7,
+          "text": "show.",
+          "startMs": 22020,
+          "endMs": 22660,
+          "probability": 0.994257
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Pete loves shows.",
+      "startMs": 23780,
+      "endMs": 25240,
+      "avgLogprob": -0.208794,
+      "noSpeechProb": 0.076137,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 23780,
+          "endMs": 23900,
+          "probability": 0.987628
+        },
+        {
+          "index": 2,
+          "text": "loves",
+          "startMs": 23900,
+          "endMs": 24620,
+          "probability": 0.991325
+        },
+        {
+          "index": 3,
+          "text": "shows.",
+          "startMs": 24620,
+          "endMs": 25240,
+          "probability": 0.996487
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "He loves performing for the crowd",
+      "startMs": 25940,
+      "endMs": 28040,
+      "avgLogprob": -0.208794,
+      "noSpeechProb": 0.076137,
+      "compressionRatio": 1.451613,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 25940,
+          "endMs": 26180,
+          "probability": 0.992595
+        },
+        {
+          "index": 2,
+          "text": "loves",
+          "startMs": 26180,
+          "endMs": 26420,
+          "probability": 0.997881
+        },
+        {
+          "index": 3,
+          "text": "performing",
+          "startMs": 26420,
+          "endMs": 27160,
+          "probability": 0.996841
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 27160,
+          "endMs": 27480,
+          "probability": 0.998367
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 27480,
+          "endMs": 27660,
+          "probability": 0.998365
+        },
+        {
+          "index": 6,
+          "text": "crowd",
+          "startMs": 27660,
+          "endMs": 28040,
+          "probability": 0.996687
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "and making people happy.",
+      "startMs": 28040,
+      "endMs": 30400,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "and",
+          "startMs": 28040,
+          "endMs": 28500,
+          "probability": 0.464867
+        },
+        {
+          "index": 2,
+          "text": "making",
+          "startMs": 28500,
+          "endMs": 29000,
+          "probability": 0.974117
+        },
+        {
+          "index": 3,
+          "text": "people",
+          "startMs": 29000,
+          "endMs": 29740,
+          "probability": 0.997659
+        },
+        {
+          "index": 4,
+          "text": "happy.",
+          "startMs": 29740,
+          "endMs": 30400,
+          "probability": 0.998385
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Pete can't wait to sign up.",
+      "startMs": 32400,
+      "endMs": 34080,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 32400,
+          "endMs": 32400,
+          "probability": 0.970932
+        },
+        {
+          "index": 2,
+          "text": "can't",
+          "startMs": 32400,
+          "endMs": 32840,
+          "probability": 0.996236
+        },
+        {
+          "index": 3,
+          "text": "wait",
+          "startMs": 32840,
+          "endMs": 33120,
+          "probability": 0.998993
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 33120,
+          "endMs": 33460,
+          "probability": 0.998404
+        },
+        {
+          "index": 5,
+          "text": "sign",
+          "startMs": 33460,
+          "endMs": 33760,
+          "probability": 0.998805
+        },
+        {
+          "index": 6,
+          "text": "up.",
+          "startMs": 33760,
+          "endMs": 34080,
+          "probability": 0.996086
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "He knows just what he wants to do.",
+      "startMs": 34780,
+      "endMs": 37040,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 34780,
+          "endMs": 35020,
+          "probability": 0.997332
+        },
+        {
+          "index": 2,
+          "text": "knows",
+          "startMs": 35020,
+          "endMs": 35320,
+          "probability": 0.992621
+        },
+        {
+          "index": 3,
+          "text": "just",
+          "startMs": 35320,
+          "endMs": 35800,
+          "probability": 0.993068
+        },
+        {
+          "index": 4,
+          "text": "what",
+          "startMs": 35800,
+          "endMs": 36160,
+          "probability": 0.998591
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 36160,
+          "endMs": 36380,
+          "probability": 0.99756
+        },
+        {
+          "index": 6,
+          "text": "wants",
+          "startMs": 36380,
+          "endMs": 36700,
+          "probability": 0.994273
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 36700,
+          "endMs": 37020,
+          "probability": 0.998912
+        },
+        {
+          "index": 8,
+          "text": "do.",
+          "startMs": 37020,
+          "endMs": 37400,
+          "probability": 0.99945
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "He will play his guitar.",
+      "startMs": 38140,
+      "endMs": 40000,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 38140,
+          "endMs": 38380,
+          "probability": 0.994985
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 38380,
+          "endMs": 38620,
+          "probability": 0.994767
+        },
+        {
+          "index": 3,
+          "text": "play",
+          "startMs": 38620,
+          "endMs": 39000,
+          "probability": 0.999092
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 39000,
+          "endMs": 39320,
+          "probability": 0.996833
+        },
+        {
+          "index": 5,
+          "text": "guitar.",
+          "startMs": 39320,
+          "endMs": 40000,
+          "probability": 0.997925
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Callie is going to dance.",
+      "startMs": 42600,
+      "endMs": 44040,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "Callie",
+          "startMs": 42600,
+          "endMs": 42860,
+          "probability": 0.768633
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 42860,
+          "endMs": 43360,
+          "probability": 0.996443
+        },
+        {
+          "index": 3,
+          "text": "going",
+          "startMs": 43360,
+          "endMs": 43640,
+          "probability": 0.998178
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 43640,
+          "endMs": 43880,
+          "probability": 0.998003
+        },
+        {
+          "index": 5,
+          "text": "dance.",
+          "startMs": 43880,
+          "endMs": 44260,
+          "probability": 0.998821
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Alligator is doing magic.",
+      "startMs": 45800,
+      "endMs": 47040,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "Alligator",
+          "startMs": 45800,
+          "endMs": 46220,
+          "probability": 0.95855
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 46220,
+          "endMs": 46620,
+          "probability": 0.998836
+        },
+        {
+          "index": 3,
+          "text": "doing",
+          "startMs": 46620,
+          "endMs": 46960,
+          "probability": 0.997215
+        },
+        {
+          "index": 4,
+          "text": "magic.",
+          "startMs": 46960,
+          "endMs": 47340,
+          "probability": 0.991006
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Gus is playing his drums.",
+      "startMs": 49160,
+      "endMs": 50840,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "Gus",
+          "startMs": 49160,
+          "endMs": 49180,
+          "probability": 0.981418
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 49180,
+          "endMs": 49520,
+          "probability": 0.998697
+        },
+        {
+          "index": 3,
+          "text": "playing",
+          "startMs": 49520,
+          "endMs": 49940,
+          "probability": 0.9989
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 49940,
+          "endMs": 50300,
+          "probability": 0.995163
+        },
+        {
+          "index": 5,
+          "text": "drums.",
+          "startMs": 50300,
+          "endMs": 50840,
+          "probability": 0.997962
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Pete sees a familiar name",
+      "startMs": 52580,
+      "endMs": 54540,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 52580,
+          "endMs": 52900,
+          "probability": 0.997573
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 52900,
+          "endMs": 53300,
+          "probability": 0.99339
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 53300,
+          "endMs": 53600,
+          "probability": 0.997278
+        },
+        {
+          "index": 4,
+          "text": "familiar",
+          "startMs": 53600,
+          "endMs": 54000,
+          "probability": 0.998135
+        },
+        {
+          "index": 5,
+          "text": "name",
+          "startMs": 54000,
+          "endMs": 54540,
+          "probability": 0.998998
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "at the bottom of the sign-up list.",
+      "startMs": 54540,
+      "endMs": 56760,
+      "avgLogprob": -0.070401,
+      "noSpeechProb": 0.014762,
+      "compressionRatio": 1.459302,
+      "words": [
+        {
+          "index": 1,
+          "text": "at",
+          "startMs": 54540,
+          "endMs": 54900,
+          "probability": 0.99364
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 54900,
+          "endMs": 55100,
+          "probability": 0.998717
+        },
+        {
+          "index": 3,
+          "text": "bottom",
+          "startMs": 55100,
+          "endMs": 55380,
+          "probability": 0.99949
+        },
+        {
+          "index": 4,
+          "text": "of",
+          "startMs": 55380,
+          "endMs": 55620,
+          "probability": 0.99844
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 55620,
+          "endMs": 55780,
+          "probability": 0.993694
+        },
+        {
+          "index": 6,
+          "text": "sign",
+          "startMs": 55780,
+          "endMs": 56160,
+          "probability": 0.975873
+        },
+        {
+          "index": 7,
+          "text": "-up",
+          "startMs": 56160,
+          "endMs": 56340,
+          "probability": 0.733823
+        },
+        {
+          "index": 8,
+          "text": "list.",
+          "startMs": 56340,
+          "endMs": 56760,
+          "probability": 0.998828
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "It's Grumpy Toads!",
+      "startMs": 56760,
+      "endMs": 58760,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 56760,
+          "endMs": 57780,
+          "probability": 0.609941
+        },
+        {
+          "index": 2,
+          "text": "Grumpy",
+          "startMs": 57780,
+          "endMs": 58280,
+          "probability": 0.94612
+        },
+        {
+          "index": 3,
+          "text": "Toads!",
+          "startMs": 58280,
+          "endMs": 58760,
+          "probability": 0.609836
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Grumpy Toad is playing his guitar.",
+      "startMs": 60300,
+      "endMs": 62660,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 60300,
+          "endMs": 60880,
+          "probability": 0.986719
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 60880,
+          "endMs": 61240,
+          "probability": 0.994024
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 61240,
+          "endMs": 61520,
+          "probability": 0.988501
+        },
+        {
+          "index": 4,
+          "text": "playing",
+          "startMs": 61520,
+          "endMs": 61840,
+          "probability": 0.996755
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 61840,
+          "endMs": 62160,
+          "probability": 0.995422
+        },
+        {
+          "index": 6,
+          "text": "guitar.",
+          "startMs": 62160,
+          "endMs": 62660,
+          "probability": 0.996696
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Just like Pete.",
+      "startMs": 63600,
+      "endMs": 64780,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 63600,
+          "endMs": 63840,
+          "probability": 0.979067
+        },
+        {
+          "index": 2,
+          "text": "like",
+          "startMs": 63840,
+          "endMs": 64420,
+          "probability": 0.997807
+        },
+        {
+          "index": 3,
+          "text": "Pete.",
+          "startMs": 64420,
+          "endMs": 64780,
+          "probability": 0.990867
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Pete is worried.",
+      "startMs": 66000,
+      "endMs": 67240,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 66000,
+          "endMs": 66260,
+          "probability": 0.993564
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 66260,
+          "endMs": 66600,
+          "probability": 0.997601
+        },
+        {
+          "index": 3,
+          "text": "worried.",
+          "startMs": 66600,
+          "endMs": 67240,
+          "probability": 0.998983
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Grumpy Toad is his best friend.",
+      "startMs": 68380,
+      "endMs": 70620,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 68380,
+          "endMs": 68600,
+          "probability": 0.997083
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 68600,
+          "endMs": 69000,
+          "probability": 0.995839
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 69000,
+          "endMs": 69380,
+          "probability": 0.994712
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 69380,
+          "endMs": 69640,
+          "probability": 0.996903
+        },
+        {
+          "index": 5,
+          "text": "best",
+          "startMs": 69640,
+          "endMs": 70120,
+          "probability": 0.998441
+        },
+        {
+          "index": 6,
+          "text": "friend.",
+          "startMs": 70120,
+          "endMs": 70620,
+          "probability": 0.999123
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "How can they compete against each other?",
+      "startMs": 71500,
+      "endMs": 74000,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "How",
+          "startMs": 71500,
+          "endMs": 71780,
+          "probability": 0.991635
+        },
+        {
+          "index": 2,
+          "text": "can",
+          "startMs": 71780,
+          "endMs": 72080,
+          "probability": 0.99368
+        },
+        {
+          "index": 3,
+          "text": "they",
+          "startMs": 72080,
+          "endMs": 72320,
+          "probability": 0.995087
+        },
+        {
+          "index": 4,
+          "text": "compete",
+          "startMs": 72320,
+          "endMs": 72840,
+          "probability": 0.998309
+        },
+        {
+          "index": 5,
+          "text": "against",
+          "startMs": 72840,
+          "endMs": 73260,
+          "probability": 0.998345
+        },
+        {
+          "index": 6,
+          "text": "each",
+          "startMs": 73260,
+          "endMs": 73660,
+          "probability": 0.99821
+        },
+        {
+          "index": 7,
+          "text": "other?",
+          "startMs": 73660,
+          "endMs": 74000,
+          "probability": 0.99415
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "On his way home,",
+      "startMs": 75860,
+      "endMs": 77200,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 75860,
+          "endMs": 76140,
+          "probability": 0.989392
+        },
+        {
+          "index": 2,
+          "text": "his",
+          "startMs": 76140,
+          "endMs": 76400,
+          "probability": 0.998756
+        },
+        {
+          "index": 3,
+          "text": "way",
+          "startMs": 76400,
+          "endMs": 76700,
+          "probability": 0.997287
+        },
+        {
+          "index": 4,
+          "text": "home,",
+          "startMs": 76700,
+          "endMs": 77200,
+          "probability": 0.999014
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Pete hears music coming from Grumpy Toad's house.",
+      "startMs": 78020,
+      "endMs": 81060,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 78020,
+          "endMs": 78100,
+          "probability": 0.996123
+        },
+        {
+          "index": 2,
+          "text": "hears",
+          "startMs": 78100,
+          "endMs": 78440,
+          "probability": 0.997252
+        },
+        {
+          "index": 3,
+          "text": "music",
+          "startMs": 78440,
+          "endMs": 79060,
+          "probability": 0.997404
+        },
+        {
+          "index": 4,
+          "text": "coming",
+          "startMs": 79060,
+          "endMs": 79520,
+          "probability": 0.916654
+        },
+        {
+          "index": 5,
+          "text": "from",
+          "startMs": 79520,
+          "endMs": 79860,
+          "probability": 0.997674
+        },
+        {
+          "index": 6,
+          "text": "Grumpy",
+          "startMs": 79860,
+          "endMs": 80300,
+          "probability": 0.993306
+        },
+        {
+          "index": 7,
+          "text": "Toad's",
+          "startMs": 80300,
+          "endMs": 80760,
+          "probability": 0.959592
+        },
+        {
+          "index": 8,
+          "text": "house.",
+          "startMs": 80760,
+          "endMs": 81060,
+          "probability": 0.997618
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Grumpy Toad is practicing his guitar.",
+      "startMs": 82120,
+      "endMs": 84760,
+      "avgLogprob": -0.090196,
+      "noSpeechProb": 0.020669,
+      "compressionRatio": 1.65,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 82120,
+          "endMs": 82420,
+          "probability": 0.998359
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 82420,
+          "endMs": 82820,
+          "probability": 0.997404
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 82820,
+          "endMs": 83240,
+          "probability": 0.997276
+        },
+        {
+          "index": 4,
+          "text": "practicing",
+          "startMs": 83240,
+          "endMs": 83760,
+          "probability": 0.904284
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 83760,
+          "endMs": 84260,
+          "probability": 0.998256
+        },
+        {
+          "index": 6,
+          "text": "guitar.",
+          "startMs": 84260,
+          "endMs": 84760,
+          "probability": 0.999297
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Your song sounds super groovy, Pete says.",
+      "startMs": 85780,
+      "endMs": 90580,
+      "avgLogprob": -0.083957,
+      "noSpeechProb": 0.017891,
+      "compressionRatio": 1.505747,
+      "words": [
+        {
+          "index": 1,
+          "text": "Your",
+          "startMs": 85780,
+          "endMs": 86460,
+          "probability": 0.072798
+        },
+        {
+          "index": 2,
+          "text": "song",
+          "startMs": 86460,
+          "endMs": 87060,
+          "probability": 0.732111
+        },
+        {
+          "index": 3,
+          "text": "sounds",
+          "startMs": 87060,
+          "endMs": 87680,
+          "probability": 0.980245
+        },
+        {
+          "index": 4,
+          "text": "super",
+          "startMs": 87680,
+          "endMs": 88540,
+          "probability": 0.984326
+        },
+        {
+          "index": 5,
+          "text": "groovy,",
+          "startMs": 88540,
+          "endMs": 89540,
+          "probability": 0.966658
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 89900,
+          "endMs": 90020,
+          "probability": 0.981457
+        },
+        {
+          "index": 7,
+          "text": "says.",
+          "startMs": 90020,
+          "endMs": 90580,
+          "probability": 0.994745
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Is that what you're playing in the talent show?",
+      "startMs": 91300,
+      "endMs": 93900,
+      "avgLogprob": -0.083957,
+      "noSpeechProb": 0.017891,
+      "compressionRatio": 1.505747,
+      "words": [
+        {
+          "index": 1,
+          "text": "Is",
+          "startMs": 91300,
+          "endMs": 91640,
+          "probability": 0.859552
+        },
+        {
+          "index": 2,
+          "text": "that",
+          "startMs": 91640,
+          "endMs": 91920,
+          "probability": 0.996961
+        },
+        {
+          "index": 3,
+          "text": "what",
+          "startMs": 91920,
+          "endMs": 92100,
+          "probability": 0.993559
+        },
+        {
+          "index": 4,
+          "text": "you're",
+          "startMs": 92100,
+          "endMs": 92340,
+          "probability": 0.93215
+        },
+        {
+          "index": 5,
+          "text": "playing",
+          "startMs": 92340,
+          "endMs": 92580,
+          "probability": 0.997275
+        },
+        {
+          "index": 6,
+          "text": "in",
+          "startMs": 92580,
+          "endMs": 92840,
+          "probability": 0.970452
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 92840,
+          "endMs": 93060,
+          "probability": 0.832934
+        },
+        {
+          "index": 8,
+          "text": "talent",
+          "startMs": 93060,
+          "endMs": 93360,
+          "probability": 0.937575
+        },
+        {
+          "index": 9,
+          "text": "show?",
+          "startMs": 93360,
+          "endMs": 93900,
+          "probability": 0.994187
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Yup, says Grumpy Toad.",
+      "startMs": 94980,
+      "endMs": 96920,
+      "avgLogprob": -0.083957,
+      "noSpeechProb": 0.017891,
+      "compressionRatio": 1.505747,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yup,",
+          "startMs": 94980,
+          "endMs": 95280,
+          "probability": 0.600508
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 95660,
+          "endMs": 95960,
+          "probability": 0.98708
+        },
+        {
+          "index": 3,
+          "text": "Grumpy",
+          "startMs": 95960,
+          "endMs": 96580,
+          "probability": 0.910425
+        },
+        {
+          "index": 4,
+          "text": "Toad.",
+          "startMs": 96580,
+          "endMs": 96920,
+          "probability": 0.988778
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "I've been working on it all week.",
+      "startMs": 97520,
+      "endMs": 99660,
+      "avgLogprob": -0.083957,
+      "noSpeechProb": 0.017891,
+      "compressionRatio": 1.505747,
+      "words": [
+        {
+          "index": 1,
+          "text": "I've",
+          "startMs": 97520,
+          "endMs": 97820,
+          "probability": 0.992007
+        },
+        {
+          "index": 2,
+          "text": "been",
+          "startMs": 97820,
+          "endMs": 97980,
+          "probability": 0.997889
+        },
+        {
+          "index": 3,
+          "text": "working",
+          "startMs": 97980,
+          "endMs": 98340,
+          "probability": 0.997855
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 98340,
+          "endMs": 98680,
+          "probability": 0.996245
+        },
+        {
+          "index": 5,
+          "text": "it",
+          "startMs": 98680,
+          "endMs": 98840,
+          "probability": 0.997237
+        },
+        {
+          "index": 6,
+          "text": "all",
+          "startMs": 98840,
+          "endMs": 99120,
+          "probability": 0.997084
+        },
+        {
+          "index": 7,
+          "text": "week.",
+          "startMs": 99120,
+          "endMs": 99660,
+          "probability": 0.997369
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Neat, says Pete.",
+      "startMs": 101140,
+      "endMs": 102960,
+      "avgLogprob": -0.083957,
+      "noSpeechProb": 0.017891,
+      "compressionRatio": 1.505747,
+      "words": [
+        {
+          "index": 1,
+          "text": "Neat,",
+          "startMs": 101140,
+          "endMs": 101720,
+          "probability": 0.957771
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 102000,
+          "endMs": 102440,
+          "probability": 0.991602
+        },
+        {
+          "index": 3,
+          "text": "Pete.",
+          "startMs": 102440,
+          "endMs": 102960,
+          "probability": 0.997516
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "I'm playing guitar in the talent show too.",
+      "startMs": 103900,
+      "endMs": 106580,
+      "avgLogprob": -0.083957,
+      "noSpeechProb": 0.017891,
+      "compressionRatio": 1.505747,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 103900,
+          "endMs": 104100,
+          "probability": 0.995482
+        },
+        {
+          "index": 2,
+          "text": "playing",
+          "startMs": 104100,
+          "endMs": 104400,
+          "probability": 0.996658
+        },
+        {
+          "index": 3,
+          "text": "guitar",
+          "startMs": 104400,
+          "endMs": 104900,
+          "probability": 0.986402
+        },
+        {
+          "index": 4,
+          "text": "in",
+          "startMs": 104900,
+          "endMs": 105180,
+          "probability": 0.975305
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 105180,
+          "endMs": 105340,
+          "probability": 0.995058
+        },
+        {
+          "index": 6,
+          "text": "talent",
+          "startMs": 105340,
+          "endMs": 105660,
+          "probability": 0.993597
+        },
+        {
+          "index": 7,
+          "text": "show",
+          "startMs": 105660,
+          "endMs": 106060,
+          "probability": 0.993237
+        },
+        {
+          "index": 8,
+          "text": "too.",
+          "startMs": 106060,
+          "endMs": 106580,
+          "probability": 0.703512
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "I hope I can be as good as you.",
+      "startMs": 107420,
+      "endMs": 109820,
+      "avgLogprob": -0.083957,
+      "noSpeechProb": 0.017891,
+      "compressionRatio": 1.505747,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 107420,
+          "endMs": 107740,
+          "probability": 0.997921
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 107740,
+          "endMs": 108060,
+          "probability": 0.998124
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 108060,
+          "endMs": 108300,
+          "probability": 0.993959
+        },
+        {
+          "index": 4,
+          "text": "can",
+          "startMs": 108300,
+          "endMs": 108500,
+          "probability": 0.996102
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 108500,
+          "endMs": 108760,
+          "probability": 0.998968
+        },
+        {
+          "index": 6,
+          "text": "as",
+          "startMs": 108760,
+          "endMs": 108920,
+          "probability": 0.995259
+        },
+        {
+          "index": 7,
+          "text": "good",
+          "startMs": 108920,
+          "endMs": 109160,
+          "probability": 0.99936
+        },
+        {
+          "index": 8,
+          "text": "as",
+          "startMs": 109160,
+          "endMs": 109380,
+          "probability": 0.998335
+        },
+        {
+          "index": 9,
+          "text": "you.",
+          "startMs": 109380,
+          "endMs": 109820,
+          "probability": 0.999109
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Pete goes to his house.",
+      "startMs": 111660,
+      "endMs": 113720,
+      "avgLogprob": -0.083957,
+      "noSpeechProb": 0.017891,
+      "compressionRatio": 1.505747,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 111660,
+          "endMs": 112140,
+          "probability": 0.994346
+        },
+        {
+          "index": 2,
+          "text": "goes",
+          "startMs": 112140,
+          "endMs": 112640,
+          "probability": 0.999179
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 112640,
+          "endMs": 112980,
+          "probability": 0.998993
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 112980,
+          "endMs": 113220,
+          "probability": 0.998959
+        },
+        {
+          "index": 5,
+          "text": "house.",
+          "startMs": 113220,
+          "endMs": 113720,
+          "probability": 0.99939
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "He takes out his guitar.",
+      "startMs": 113720,
+      "endMs": 116120,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 113720,
+          "endMs": 114740,
+          "probability": 0.330623
+        },
+        {
+          "index": 2,
+          "text": "takes",
+          "startMs": 114740,
+          "endMs": 115020,
+          "probability": 0.858795
+        },
+        {
+          "index": 3,
+          "text": "out",
+          "startMs": 115020,
+          "endMs": 115360,
+          "probability": 0.996573
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 115360,
+          "endMs": 115600,
+          "probability": 0.995997
+        },
+        {
+          "index": 5,
+          "text": "guitar.",
+          "startMs": 115600,
+          "endMs": 116120,
+          "probability": 0.993909
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "What song should I play?",
+      "startMs": 117360,
+      "endMs": 119080,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 117360,
+          "endMs": 117500,
+          "probability": 0.186391
+        },
+        {
+          "index": 2,
+          "text": "song",
+          "startMs": 117500,
+          "endMs": 118080,
+          "probability": 0.970848
+        },
+        {
+          "index": 3,
+          "text": "should",
+          "startMs": 118080,
+          "endMs": 118420,
+          "probability": 0.995226
+        },
+        {
+          "index": 4,
+          "text": "I",
+          "startMs": 118420,
+          "endMs": 118620,
+          "probability": 0.988472
+        },
+        {
+          "index": 5,
+          "text": "play?",
+          "startMs": 118620,
+          "endMs": 119080,
+          "probability": 0.998921
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "He asks himself.",
+      "startMs": 119800,
+      "endMs": 121140,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 119800,
+          "endMs": 119940,
+          "probability": 0.807114
+        },
+        {
+          "index": 2,
+          "text": "asks",
+          "startMs": 119940,
+          "endMs": 120340,
+          "probability": 0.982585
+        },
+        {
+          "index": 3,
+          "text": "himself.",
+          "startMs": 120340,
+          "endMs": 121140,
+          "probability": 0.973377
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Pete starts to play.",
+      "startMs": 122580,
+      "endMs": 124140,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 122580,
+          "endMs": 122700,
+          "probability": 0.979487
+        },
+        {
+          "index": 2,
+          "text": "starts",
+          "startMs": 122700,
+          "endMs": 123300,
+          "probability": 0.99668
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 123300,
+          "endMs": 123700,
+          "probability": 0.996053
+        },
+        {
+          "index": 4,
+          "text": "play.",
+          "startMs": 123700,
+          "endMs": 124140,
+          "probability": 0.998813
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "Suddenly, Grumpy Toad's music gets very loud.",
+      "startMs": 125120,
+      "endMs": 128720,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "Suddenly,",
+          "startMs": 125120,
+          "endMs": 125920,
+          "probability": 0.993591
+        },
+        {
+          "index": 2,
+          "text": "Grumpy",
+          "startMs": 126620,
+          "endMs": 126980,
+          "probability": 0.957979
+        },
+        {
+          "index": 3,
+          "text": "Toad's",
+          "startMs": 126980,
+          "endMs": 127400,
+          "probability": 0.965039
+        },
+        {
+          "index": 4,
+          "text": "music",
+          "startMs": 127400,
+          "endMs": 127740,
+          "probability": 0.996476
+        },
+        {
+          "index": 5,
+          "text": "gets",
+          "startMs": 127740,
+          "endMs": 128040,
+          "probability": 0.964388
+        },
+        {
+          "index": 6,
+          "text": "very",
+          "startMs": 128040,
+          "endMs": 128600,
+          "probability": 0.984298
+        },
+        {
+          "index": 7,
+          "text": "loud.",
+          "startMs": 128600,
+          "endMs": 129000,
+          "probability": 0.999018
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Pete cannot hear himself play.",
+      "startMs": 130020,
+      "endMs": 132100,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 130020,
+          "endMs": 130240,
+          "probability": 0.997577
+        },
+        {
+          "index": 2,
+          "text": "cannot",
+          "startMs": 130240,
+          "endMs": 130620,
+          "probability": 0.882845
+        },
+        {
+          "index": 3,
+          "text": "hear",
+          "startMs": 130620,
+          "endMs": 130940,
+          "probability": 0.994938
+        },
+        {
+          "index": 4,
+          "text": "himself",
+          "startMs": 130940,
+          "endMs": 131480,
+          "probability": 0.996125
+        },
+        {
+          "index": 5,
+          "text": "play.",
+          "startMs": 131480,
+          "endMs": 132100,
+          "probability": 0.992334
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "Pete does not worry.",
+      "startMs": 133440,
+      "endMs": 134960,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 133440,
+          "endMs": 133760,
+          "probability": 0.997267
+        },
+        {
+          "index": 2,
+          "text": "does",
+          "startMs": 133760,
+          "endMs": 134020,
+          "probability": 0.991394
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 134020,
+          "endMs": 134440,
+          "probability": 0.999378
+        },
+        {
+          "index": 4,
+          "text": "worry.",
+          "startMs": 134440,
+          "endMs": 134960,
+          "probability": 0.998658
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "He puts on headphones.",
+      "startMs": 135580,
+      "endMs": 137120,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 135580,
+          "endMs": 135860,
+          "probability": 0.994021
+        },
+        {
+          "index": 2,
+          "text": "puts",
+          "startMs": 135860,
+          "endMs": 136060,
+          "probability": 0.993352
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 136060,
+          "endMs": 136420,
+          "probability": 0.997107
+        },
+        {
+          "index": 4,
+          "text": "headphones.",
+          "startMs": 136420,
+          "endMs": 137120,
+          "probability": 0.990525
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Now Grumpy Toad can play as loud as he wants,",
+      "startMs": 138220,
+      "endMs": 141420,
+      "avgLogprob": -0.089796,
+      "noSpeechProb": 0.013559,
+      "compressionRatio": 1.45977,
+      "words": [
+        {
+          "index": 1,
+          "text": "Now",
+          "startMs": 138220,
+          "endMs": 138420,
+          "probability": 0.984972
+        },
+        {
+          "index": 2,
+          "text": "Grumpy",
+          "startMs": 138420,
+          "endMs": 139140,
+          "probability": 0.762485
+        },
+        {
+          "index": 3,
+          "text": "Toad",
+          "startMs": 139140,
+          "endMs": 139460,
+          "probability": 0.996726
+        },
+        {
+          "index": 4,
+          "text": "can",
+          "startMs": 139460,
+          "endMs": 139760,
+          "probability": 0.997405
+        },
+        {
+          "index": 5,
+          "text": "play",
+          "startMs": 139760,
+          "endMs": 140120,
+          "probability": 0.997221
+        },
+        {
+          "index": 6,
+          "text": "as",
+          "startMs": 140120,
+          "endMs": 140300,
+          "probability": 0.994246
+        },
+        {
+          "index": 7,
+          "text": "loud",
+          "startMs": 140300,
+          "endMs": 140640,
+          "probability": 0.998586
+        },
+        {
+          "index": 8,
+          "text": "as",
+          "startMs": 140640,
+          "endMs": 140840,
+          "probability": 0.99735
+        },
+        {
+          "index": 9,
+          "text": "he",
+          "startMs": 140840,
+          "endMs": 141000,
+          "probability": 0.99836
+        },
+        {
+          "index": 10,
+          "text": "wants,",
+          "startMs": 141000,
+          "endMs": 141420,
+          "probability": 0.996204
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "and Pete can still hear his guitar.",
+      "startMs": 141420,
+      "endMs": 144340,
+      "avgLogprob": -0.060709,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.502959,
+      "words": [
+        {
+          "index": 1,
+          "text": "and",
+          "startMs": 141420,
+          "endMs": 141960,
+          "probability": 0.467227
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 141960,
+          "endMs": 142240,
+          "probability": 0.970331
+        },
+        {
+          "index": 3,
+          "text": "can",
+          "startMs": 142240,
+          "endMs": 142620,
+          "probability": 0.985914
+        },
+        {
+          "index": 4,
+          "text": "still",
+          "startMs": 142620,
+          "endMs": 143020,
+          "probability": 0.98915
+        },
+        {
+          "index": 5,
+          "text": "hear",
+          "startMs": 143020,
+          "endMs": 143400,
+          "probability": 0.997178
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 143400,
+          "endMs": 143780,
+          "probability": 0.998516
+        },
+        {
+          "index": 7,
+          "text": "guitar.",
+          "startMs": 143780,
+          "endMs": 144340,
+          "probability": 0.998237
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "But Pete still does not know what song to play.",
+      "startMs": 145840,
+      "endMs": 149280,
+      "avgLogprob": -0.060709,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.502959,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 145840,
+          "endMs": 146040,
+          "probability": 0.956368
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 146040,
+          "endMs": 146520,
+          "probability": 0.979392
+        },
+        {
+          "index": 3,
+          "text": "still",
+          "startMs": 146520,
+          "endMs": 147020,
+          "probability": 0.985195
+        },
+        {
+          "index": 4,
+          "text": "does",
+          "startMs": 147020,
+          "endMs": 147260,
+          "probability": 0.950214
+        },
+        {
+          "index": 5,
+          "text": "not",
+          "startMs": 147260,
+          "endMs": 147560,
+          "probability": 0.997702
+        },
+        {
+          "index": 6,
+          "text": "know",
+          "startMs": 147560,
+          "endMs": 147860,
+          "probability": 0.998563
+        },
+        {
+          "index": 7,
+          "text": "what",
+          "startMs": 147860,
+          "endMs": 148140,
+          "probability": 0.980498
+        },
+        {
+          "index": 8,
+          "text": "song",
+          "startMs": 148140,
+          "endMs": 148540,
+          "probability": 0.998925
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 148540,
+          "endMs": 148860,
+          "probability": 0.999502
+        },
+        {
+          "index": 10,
+          "text": "play.",
+          "startMs": 148860,
+          "endMs": 149280,
+          "probability": 0.999609
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Pete decides to write a new song.",
+      "startMs": 151380,
+      "endMs": 153720,
+      "avgLogprob": -0.060709,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.502959,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 151380,
+          "endMs": 151560,
+          "probability": 0.99242
+        },
+        {
+          "index": 2,
+          "text": "decides",
+          "startMs": 151560,
+          "endMs": 152060,
+          "probability": 0.993967
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 152060,
+          "endMs": 152480,
+          "probability": 0.998835
+        },
+        {
+          "index": 4,
+          "text": "write",
+          "startMs": 152480,
+          "endMs": 152720,
+          "probability": 0.99844
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 152720,
+          "endMs": 152920,
+          "probability": 0.998488
+        },
+        {
+          "index": 6,
+          "text": "new",
+          "startMs": 152920,
+          "endMs": 153240,
+          "probability": 0.994107
+        },
+        {
+          "index": 7,
+          "text": "song.",
+          "startMs": 153240,
+          "endMs": 153720,
+          "probability": 0.999556
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "He will show the judges that he has two talents.",
+      "startMs": 154280,
+      "endMs": 157780,
+      "avgLogprob": -0.060709,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.502959,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 154280,
+          "endMs": 154620,
+          "probability": 0.99554
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 154620,
+          "endMs": 154820,
+          "probability": 0.994121
+        },
+        {
+          "index": 3,
+          "text": "show",
+          "startMs": 154820,
+          "endMs": 155120,
+          "probability": 0.998465
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 155120,
+          "endMs": 155400,
+          "probability": 0.992754
+        },
+        {
+          "index": 5,
+          "text": "judges",
+          "startMs": 155400,
+          "endMs": 155740,
+          "probability": 0.993432
+        },
+        {
+          "index": 6,
+          "text": "that",
+          "startMs": 155740,
+          "endMs": 156100,
+          "probability": 0.989181
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 156100,
+          "endMs": 156360,
+          "probability": 0.998036
+        },
+        {
+          "index": 8,
+          "text": "has",
+          "startMs": 156360,
+          "endMs": 156720,
+          "probability": 0.997854
+        },
+        {
+          "index": 9,
+          "text": "two",
+          "startMs": 156720,
+          "endMs": 157140,
+          "probability": 0.970249
+        },
+        {
+          "index": 10,
+          "text": "talents.",
+          "startMs": 157140,
+          "endMs": 157780,
+          "probability": 0.996793
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "Pete tries out some notes.",
+      "startMs": 158700,
+      "endMs": 160460,
+      "avgLogprob": -0.060709,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.502959,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 158700,
+          "endMs": 158920,
+          "probability": 0.997366
+        },
+        {
+          "index": 2,
+          "text": "tries",
+          "startMs": 158920,
+          "endMs": 159320,
+          "probability": 0.993241
+        },
+        {
+          "index": 3,
+          "text": "out",
+          "startMs": 159320,
+          "endMs": 159640,
+          "probability": 0.996669
+        },
+        {
+          "index": 4,
+          "text": "some",
+          "startMs": 159640,
+          "endMs": 159960,
+          "probability": 0.998359
+        },
+        {
+          "index": 5,
+          "text": "notes.",
+          "startMs": 159960,
+          "endMs": 160460,
+          "probability": 0.999654
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "They sound great, but he can't come up with the right words.",
+      "startMs": 161560,
+      "endMs": 165420,
+      "avgLogprob": -0.060709,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.502959,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 161560,
+          "endMs": 161780,
+          "probability": 0.956309
+        },
+        {
+          "index": 2,
+          "text": "sound",
+          "startMs": 161780,
+          "endMs": 162180,
+          "probability": 0.998429
+        },
+        {
+          "index": 3,
+          "text": "great,",
+          "startMs": 162180,
+          "endMs": 162720,
+          "probability": 0.999167
+        },
+        {
+          "index": 4,
+          "text": "but",
+          "startMs": 163320,
+          "endMs": 163640,
+          "probability": 0.996176
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 163640,
+          "endMs": 163880,
+          "probability": 0.997875
+        },
+        {
+          "index": 6,
+          "text": "can't",
+          "startMs": 163880,
+          "endMs": 164280,
+          "probability": 0.99299
+        },
+        {
+          "index": 7,
+          "text": "come",
+          "startMs": 164280,
+          "endMs": 164480,
+          "probability": 0.998219
+        },
+        {
+          "index": 8,
+          "text": "up",
+          "startMs": 164480,
+          "endMs": 164700,
+          "probability": 0.998058
+        },
+        {
+          "index": 9,
+          "text": "with",
+          "startMs": 164700,
+          "endMs": 164900,
+          "probability": 0.998862
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 164900,
+          "endMs": 165120,
+          "probability": 0.997071
+        },
+        {
+          "index": 11,
+          "text": "right",
+          "startMs": 165120,
+          "endMs": 165380,
+          "probability": 0.999256
+        },
+        {
+          "index": 12,
+          "text": "words.",
+          "startMs": 165380,
+          "endMs": 165740,
+          "probability": 0.999201
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "Just then, Pete sees Grumpy Toad listening through his window.",
+      "startMs": 165740,
+      "endMs": 172700,
+      "avgLogprob": -0.060795,
+      "noSpeechProb": 0.051189,
+      "compressionRatio": 1.716049,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 165740,
+          "endMs": 166720,
+          "probability": 0.462695
+        },
+        {
+          "index": 2,
+          "text": "then,",
+          "startMs": 166720,
+          "endMs": 168580,
+          "probability": 0.996811
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 169060,
+          "endMs": 169160,
+          "probability": 0.980042
+        },
+        {
+          "index": 4,
+          "text": "sees",
+          "startMs": 169160,
+          "endMs": 169580,
+          "probability": 0.990843
+        },
+        {
+          "index": 5,
+          "text": "Grumpy",
+          "startMs": 169580,
+          "endMs": 170180,
+          "probability": 0.939827
+        },
+        {
+          "index": 6,
+          "text": "Toad",
+          "startMs": 170180,
+          "endMs": 170560,
+          "probability": 0.992635
+        },
+        {
+          "index": 7,
+          "text": "listening",
+          "startMs": 170560,
+          "endMs": 171400,
+          "probability": 0.901213
+        },
+        {
+          "index": 8,
+          "text": "through",
+          "startMs": 171400,
+          "endMs": 171880,
+          "probability": 0.982916
+        },
+        {
+          "index": 9,
+          "text": "his",
+          "startMs": 171880,
+          "endMs": 172160,
+          "probability": 0.997729
+        },
+        {
+          "index": 10,
+          "text": "window.",
+          "startMs": 172160,
+          "endMs": 172700,
+          "probability": 0.999201
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "When Grumpy Toad sees Pete looking at him, he runs back to his house.",
+      "startMs": 173800,
+      "endMs": 179080,
+      "avgLogprob": -0.060795,
+      "noSpeechProb": 0.051189,
+      "compressionRatio": 1.716049,
+      "words": [
+        {
+          "index": 1,
+          "text": "When",
+          "startMs": 173800,
+          "endMs": 173940,
+          "probability": 0.993291
+        },
+        {
+          "index": 2,
+          "text": "Grumpy",
+          "startMs": 173940,
+          "endMs": 174380,
+          "probability": 0.995326
+        },
+        {
+          "index": 3,
+          "text": "Toad",
+          "startMs": 174380,
+          "endMs": 174680,
+          "probability": 0.997949
+        },
+        {
+          "index": 4,
+          "text": "sees",
+          "startMs": 174680,
+          "endMs": 175120,
+          "probability": 0.996417
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 175120,
+          "endMs": 175540,
+          "probability": 0.9966
+        },
+        {
+          "index": 6,
+          "text": "looking",
+          "startMs": 175540,
+          "endMs": 175940,
+          "probability": 0.990529
+        },
+        {
+          "index": 7,
+          "text": "at",
+          "startMs": 175940,
+          "endMs": 176260,
+          "probability": 0.998289
+        },
+        {
+          "index": 8,
+          "text": "him,",
+          "startMs": 176260,
+          "endMs": 176560,
+          "probability": 0.998824
+        },
+        {
+          "index": 9,
+          "text": "he",
+          "startMs": 177100,
+          "endMs": 177220,
+          "probability": 0.937523
+        },
+        {
+          "index": 10,
+          "text": "runs",
+          "startMs": 177220,
+          "endMs": 177660,
+          "probability": 0.995985
+        },
+        {
+          "index": 11,
+          "text": "back",
+          "startMs": 177660,
+          "endMs": 178160,
+          "probability": 0.998922
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 178160,
+          "endMs": 178420,
+          "probability": 0.998381
+        },
+        {
+          "index": 13,
+          "text": "his",
+          "startMs": 178420,
+          "endMs": 178620,
+          "probability": 0.998615
+        },
+        {
+          "index": 14,
+          "text": "house.",
+          "startMs": 178620,
+          "endMs": 179080,
+          "probability": 0.99903
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Pete takes off his headphones.",
+      "startMs": 181060,
+      "endMs": 182600,
+      "avgLogprob": -0.060795,
+      "noSpeechProb": 0.051189,
+      "compressionRatio": 1.716049,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 181060,
+          "endMs": 181260,
+          "probability": 0.978216
+        },
+        {
+          "index": 2,
+          "text": "takes",
+          "startMs": 181260,
+          "endMs": 181560,
+          "probability": 0.997691
+        },
+        {
+          "index": 3,
+          "text": "off",
+          "startMs": 181560,
+          "endMs": 181820,
+          "probability": 0.990675
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 181820,
+          "endMs": 182080,
+          "probability": 0.996518
+        },
+        {
+          "index": 5,
+          "text": "headphones.",
+          "startMs": 182080,
+          "endMs": 182600,
+          "probability": 0.996576
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "He goes to Grumpy Toad's house.",
+      "startMs": 183820,
+      "endMs": 185780,
+      "avgLogprob": -0.060795,
+      "noSpeechProb": 0.051189,
+      "compressionRatio": 1.716049,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 183820,
+          "endMs": 183960,
+          "probability": 0.994169
+        },
+        {
+          "index": 2,
+          "text": "goes",
+          "startMs": 183960,
+          "endMs": 184200,
+          "probability": 0.999408
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 184200,
+          "endMs": 184500,
+          "probability": 0.998938
+        },
+        {
+          "index": 4,
+          "text": "Grumpy",
+          "startMs": 184500,
+          "endMs": 184880,
+          "probability": 0.995664
+        },
+        {
+          "index": 5,
+          "text": "Toad's",
+          "startMs": 184880,
+          "endMs": 185380,
+          "probability": 0.996397
+        },
+        {
+          "index": 6,
+          "text": "house.",
+          "startMs": 185380,
+          "endMs": 185780,
+          "probability": 0.998622
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "Grumpy Toad is trying to write a new song too.",
+      "startMs": 186880,
+      "endMs": 189960,
+      "avgLogprob": -0.060795,
+      "noSpeechProb": 0.051189,
+      "compressionRatio": 1.716049,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 186880,
+          "endMs": 187220,
+          "probability": 0.779489
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 187220,
+          "endMs": 187600,
+          "probability": 0.996646
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 187600,
+          "endMs": 187840,
+          "probability": 0.995805
+        },
+        {
+          "index": 4,
+          "text": "trying",
+          "startMs": 187840,
+          "endMs": 188120,
+          "probability": 0.996895
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 188120,
+          "endMs": 188320,
+          "probability": 0.998646
+        },
+        {
+          "index": 6,
+          "text": "write",
+          "startMs": 188320,
+          "endMs": 188540,
+          "probability": 0.989238
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 188540,
+          "endMs": 188720,
+          "probability": 0.99796
+        },
+        {
+          "index": 8,
+          "text": "new",
+          "startMs": 188720,
+          "endMs": 189000,
+          "probability": 0.997811
+        },
+        {
+          "index": 9,
+          "text": "song",
+          "startMs": 189000,
+          "endMs": 189400,
+          "probability": 0.999231
+        },
+        {
+          "index": 10,
+          "text": "too.",
+          "startMs": 189400,
+          "endMs": 189960,
+          "probability": 0.674895
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "Pete listens to Grumpy Toad's song.",
+      "startMs": 191260,
+      "endMs": 193620,
+      "avgLogprob": -0.060795,
+      "noSpeechProb": 0.051189,
+      "compressionRatio": 1.716049,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 191260,
+          "endMs": 191520,
+          "probability": 0.99534
+        },
+        {
+          "index": 2,
+          "text": "listens",
+          "startMs": 191520,
+          "endMs": 191960,
+          "probability": 0.994318
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 191960,
+          "endMs": 192280,
+          "probability": 0.998696
+        },
+        {
+          "index": 4,
+          "text": "Grumpy",
+          "startMs": 192280,
+          "endMs": 192640,
+          "probability": 0.996569
+        },
+        {
+          "index": 5,
+          "text": "Toad's",
+          "startMs": 192640,
+          "endMs": 193160,
+          "probability": 0.994168
+        },
+        {
+          "index": 6,
+          "text": "song.",
+          "startMs": 193160,
+          "endMs": 193620,
+          "probability": 0.998156
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "The lyrics are nifty.",
+      "startMs": 193620,
+      "endMs": 195620,
+      "avgLogprob": -0.09624,
+      "noSpeechProb": 0.023412,
+      "compressionRatio": 1.411765,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 193620,
+          "endMs": 194600,
+          "probability": 0.525119
+        },
+        {
+          "index": 2,
+          "text": "lyrics",
+          "startMs": 194600,
+          "endMs": 195080,
+          "probability": 0.994252
+        },
+        {
+          "index": 3,
+          "text": "are",
+          "startMs": 195080,
+          "endMs": 195560,
+          "probability": 0.997092
+        },
+        {
+          "index": 4,
+          "text": "nifty.",
+          "startMs": 195560,
+          "endMs": 195980,
+          "probability": 0.906052
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "Pete pokes his head into Grumpy Toad's room.",
+      "startMs": 197620,
+      "endMs": 200100,
+      "avgLogprob": -0.09624,
+      "noSpeechProb": 0.023412,
+      "compressionRatio": 1.411765,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 197620,
+          "endMs": 197620,
+          "probability": 0.975579
+        },
+        {
+          "index": 2,
+          "text": "pokes",
+          "startMs": 197620,
+          "endMs": 198020,
+          "probability": 0.990156
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 198020,
+          "endMs": 198300,
+          "probability": 0.998899
+        },
+        {
+          "index": 4,
+          "text": "head",
+          "startMs": 198300,
+          "endMs": 198540,
+          "probability": 0.998191
+        },
+        {
+          "index": 5,
+          "text": "into",
+          "startMs": 198540,
+          "endMs": 198920,
+          "probability": 0.989882
+        },
+        {
+          "index": 6,
+          "text": "Grumpy",
+          "startMs": 198920,
+          "endMs": 199340,
+          "probability": 0.968524
+        },
+        {
+          "index": 7,
+          "text": "Toad's",
+          "startMs": 199340,
+          "endMs": 199820,
+          "probability": 0.992502
+        },
+        {
+          "index": 8,
+          "text": "room.",
+          "startMs": 199820,
+          "endMs": 200100,
+          "probability": 0.996872
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "Your song is super cool, he says.",
+      "startMs": 201080,
+      "endMs": 204420,
+      "avgLogprob": -0.09624,
+      "noSpeechProb": 0.023412,
+      "compressionRatio": 1.411765,
+      "words": [
+        {
+          "index": 1,
+          "text": "Your",
+          "startMs": 201080,
+          "endMs": 201280,
+          "probability": 0.245325
+        },
+        {
+          "index": 2,
+          "text": "song",
+          "startMs": 201280,
+          "endMs": 201780,
+          "probability": 0.997913
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 201780,
+          "endMs": 202020,
+          "probability": 0.998461
+        },
+        {
+          "index": 4,
+          "text": "super",
+          "startMs": 202020,
+          "endMs": 202580,
+          "probability": 0.997048
+        },
+        {
+          "index": 5,
+          "text": "cool,",
+          "startMs": 202580,
+          "endMs": 203320,
+          "probability": 0.987627
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 203680,
+          "endMs": 203960,
+          "probability": 0.976874
+        },
+        {
+          "index": 7,
+          "text": "says.",
+          "startMs": 203960,
+          "endMs": 204420,
+          "probability": 0.995487
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "Keep up the good work.",
+      "startMs": 205120,
+      "endMs": 206760,
+      "avgLogprob": -0.09624,
+      "noSpeechProb": 0.023412,
+      "compressionRatio": 1.411765,
+      "words": [
+        {
+          "index": 1,
+          "text": "Keep",
+          "startMs": 205120,
+          "endMs": 205300,
+          "probability": 0.983811
+        },
+        {
+          "index": 2,
+          "text": "up",
+          "startMs": 205300,
+          "endMs": 205580,
+          "probability": 0.998911
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 205580,
+          "endMs": 205840,
+          "probability": 0.998492
+        },
+        {
+          "index": 4,
+          "text": "good",
+          "startMs": 205840,
+          "endMs": 206080,
+          "probability": 0.997385
+        },
+        {
+          "index": 5,
+          "text": "work.",
+          "startMs": 206080,
+          "endMs": 206760,
+          "probability": 0.999077
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "Pete, Grumpy Toad says,",
+      "startMs": 208320,
+      "endMs": 211120,
+      "avgLogprob": -0.09624,
+      "noSpeechProb": 0.023412,
+      "compressionRatio": 1.411765,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete,",
+          "startMs": 208320,
+          "endMs": 209160,
+          "probability": 0.860637
+        },
+        {
+          "index": 2,
+          "text": "Grumpy",
+          "startMs": 209980,
+          "endMs": 210320,
+          "probability": 0.983892
+        },
+        {
+          "index": 3,
+          "text": "Toad",
+          "startMs": 210320,
+          "endMs": 210660,
+          "probability": 0.996642
+        },
+        {
+          "index": 4,
+          "text": "says,",
+          "startMs": 210660,
+          "endMs": 211120,
+          "probability": 0.965972
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "text": "you aren't supposed to be listening to me.",
+      "startMs": 211940,
+      "endMs": 214780,
+      "avgLogprob": -0.09624,
+      "noSpeechProb": 0.023412,
+      "compressionRatio": 1.411765,
+      "words": [
+        {
+          "index": 1,
+          "text": "you",
+          "startMs": 211940,
+          "endMs": 212400,
+          "probability": 0.874283
+        },
+        {
+          "index": 2,
+          "text": "aren't",
+          "startMs": 212400,
+          "endMs": 212720,
+          "probability": 0.972781
+        },
+        {
+          "index": 3,
+          "text": "supposed",
+          "startMs": 212720,
+          "endMs": 213100,
+          "probability": 0.976147
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 213100,
+          "endMs": 213380,
+          "probability": 0.999138
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 213380,
+          "endMs": 213520,
+          "probability": 0.997457
+        },
+        {
+          "index": 6,
+          "text": "listening",
+          "startMs": 213520,
+          "endMs": 214000,
+          "probability": 0.998706
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 214000,
+          "endMs": 214400,
+          "probability": 0.998403
+        },
+        {
+          "index": 8,
+          "text": "me.",
+          "startMs": 214400,
+          "endMs": 214780,
+          "probability": 0.999545
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "text": "We are competing against each other.",
+      "startMs": 215320,
+      "endMs": 217860,
+      "avgLogprob": -0.09624,
+      "noSpeechProb": 0.023412,
+      "compressionRatio": 1.411765,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 215320,
+          "endMs": 215560,
+          "probability": 0.996182
+        },
+        {
+          "index": 2,
+          "text": "are",
+          "startMs": 215560,
+          "endMs": 215760,
+          "probability": 0.972879
+        },
+        {
+          "index": 3,
+          "text": "competing",
+          "startMs": 215760,
+          "endMs": 216420,
+          "probability": 0.999407
+        },
+        {
+          "index": 4,
+          "text": "against",
+          "startMs": 216420,
+          "endMs": 217060,
+          "probability": 0.999384
+        },
+        {
+          "index": 5,
+          "text": "each",
+          "startMs": 217060,
+          "endMs": 217480,
+          "probability": 0.99938
+        },
+        {
+          "index": 6,
+          "text": "other.",
+          "startMs": 217480,
+          "endMs": 217860,
+          "probability": 0.996373
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "text": "Pete shrugs.",
+      "startMs": 219400,
+      "endMs": 220720,
+      "avgLogprob": -0.09624,
+      "noSpeechProb": 0.023412,
+      "compressionRatio": 1.411765,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 219400,
+          "endMs": 219700,
+          "probability": 0.95918
+        },
+        {
+          "index": 2,
+          "text": "shrugs.",
+          "startMs": 219700,
+          "endMs": 220720,
+          "probability": 0.968265
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "text": "I like listening to you play.",
+      "startMs": 220720,
+      "endMs": 223540,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 220720,
+          "endMs": 221780,
+          "probability": 0.212765
+        },
+        {
+          "index": 2,
+          "text": "like",
+          "startMs": 221780,
+          "endMs": 222100,
+          "probability": 0.980978
+        },
+        {
+          "index": 3,
+          "text": "listening",
+          "startMs": 222100,
+          "endMs": 222540,
+          "probability": 0.996876
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 222540,
+          "endMs": 222880,
+          "probability": 0.997619
+        },
+        {
+          "index": 5,
+          "text": "you",
+          "startMs": 222880,
+          "endMs": 223080,
+          "probability": 0.997056
+        },
+        {
+          "index": 6,
+          "text": "play.",
+          "startMs": 223080,
+          "endMs": 223540,
+          "probability": 0.995488
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "text": "Your songs are so good.",
+      "startMs": 224340,
+      "endMs": 226620,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "Your",
+          "startMs": 224340,
+          "endMs": 224540,
+          "probability": 0.982692
+        },
+        {
+          "index": 2,
+          "text": "songs",
+          "startMs": 224540,
+          "endMs": 224980,
+          "probability": 0.996882
+        },
+        {
+          "index": 3,
+          "text": "are",
+          "startMs": 224980,
+          "endMs": 225260,
+          "probability": 0.99713
+        },
+        {
+          "index": 4,
+          "text": "so",
+          "startMs": 225260,
+          "endMs": 225760,
+          "probability": 0.988968
+        },
+        {
+          "index": 5,
+          "text": "good.",
+          "startMs": 225760,
+          "endMs": 226620,
+          "probability": 0.980465
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "text": "Grumpy Toad smiles.",
+      "startMs": 227980,
+      "endMs": 229480,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 227980,
+          "endMs": 228360,
+          "probability": 0.943959
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 228360,
+          "endMs": 228760,
+          "probability": 0.988078
+        },
+        {
+          "index": 3,
+          "text": "smiles.",
+          "startMs": 228760,
+          "endMs": 229480,
+          "probability": 0.987046
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "text": "Thanks Pete.",
+      "startMs": 230640,
+      "endMs": 231480,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "Thanks",
+          "startMs": 230640,
+          "endMs": 231140,
+          "probability": 0.636021
+        },
+        {
+          "index": 2,
+          "text": "Pete.",
+          "startMs": 231140,
+          "endMs": 231480,
+          "probability": 0.778797
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "text": "I like listening to you play too.",
+      "startMs": 232360,
+      "endMs": 234440,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 232360,
+          "endMs": 232400,
+          "probability": 0.996371
+        },
+        {
+          "index": 2,
+          "text": "like",
+          "startMs": 232400,
+          "endMs": 232660,
+          "probability": 0.995557
+        },
+        {
+          "index": 3,
+          "text": "listening",
+          "startMs": 232660,
+          "endMs": 233100,
+          "probability": 0.997121
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 233100,
+          "endMs": 233400,
+          "probability": 0.996308
+        },
+        {
+          "index": 5,
+          "text": "you",
+          "startMs": 233400,
+          "endMs": 233620,
+          "probability": 0.995805
+        },
+        {
+          "index": 6,
+          "text": "play",
+          "startMs": 233620,
+          "endMs": 234040,
+          "probability": 0.994927
+        },
+        {
+          "index": 7,
+          "text": "too.",
+          "startMs": 234040,
+          "endMs": 234440,
+          "probability": 0.829095
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "text": "I don't understand.",
+      "startMs": 235340,
+      "endMs": 236720,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 235340,
+          "endMs": 235580,
+          "probability": 0.993702
+        },
+        {
+          "index": 2,
+          "text": "don't",
+          "startMs": 235580,
+          "endMs": 236020,
+          "probability": 0.994787
+        },
+        {
+          "index": 3,
+          "text": "understand.",
+          "startMs": 236020,
+          "endMs": 236720,
+          "probability": 0.997342
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "text": "Don't you want to win?",
+      "startMs": 237520,
+      "endMs": 239080,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "Don't",
+          "startMs": 237520,
+          "endMs": 237940,
+          "probability": 0.996499
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 237940,
+          "endMs": 238160,
+          "probability": 0.995783
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 238160,
+          "endMs": 238420,
+          "probability": 0.997285
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 238420,
+          "endMs": 238720,
+          "probability": 0.999083
+        },
+        {
+          "index": 5,
+          "text": "win?",
+          "startMs": 238720,
+          "endMs": 239080,
+          "probability": 0.996788
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "text": "Shouldn't you be practicing?",
+      "startMs": 239980,
+      "endMs": 241380,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "Shouldn't",
+          "startMs": 239980,
+          "endMs": 240260,
+          "probability": 0.985305
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 240260,
+          "endMs": 240480,
+          "probability": 0.997514
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 240480,
+          "endMs": 240740,
+          "probability": 0.997136
+        },
+        {
+          "index": 4,
+          "text": "practicing?",
+          "startMs": 240740,
+          "endMs": 241380,
+          "probability": 0.907176
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "text": "Winning would be super neat, Pete says.",
+      "startMs": 243460,
+      "endMs": 246800,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "Winning",
+          "startMs": 243460,
+          "endMs": 243860,
+          "probability": 0.922074
+        },
+        {
+          "index": 2,
+          "text": "would",
+          "startMs": 243860,
+          "endMs": 244180,
+          "probability": 0.99168
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 244180,
+          "endMs": 244500,
+          "probability": 0.998976
+        },
+        {
+          "index": 4,
+          "text": "super",
+          "startMs": 244500,
+          "endMs": 244860,
+          "probability": 0.995416
+        },
+        {
+          "index": 5,
+          "text": "neat,",
+          "startMs": 244860,
+          "endMs": 245420,
+          "probability": 0.983876
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 246040,
+          "endMs": 246240,
+          "probability": 0.994834
+        },
+        {
+          "index": 7,
+          "text": "says.",
+          "startMs": 246240,
+          "endMs": 246800,
+          "probability": 0.995044
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "text": "But it is not everything.",
+      "startMs": 247620,
+      "endMs": 249940,
+      "avgLogprob": -0.100819,
+      "noSpeechProb": 0.02751,
+      "compressionRatio": 1.508772,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 247620,
+          "endMs": 248100,
+          "probability": 0.990959
+        },
+        {
+          "index": 2,
+          "text": "it",
+          "startMs": 248100,
+          "endMs": 248640,
+          "probability": 0.897836
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 248640,
+          "endMs": 248800,
+          "probability": 0.961197
+        },
+        {
+          "index": 4,
+          "text": "not",
+          "startMs": 248800,
+          "endMs": 249100,
+          "probability": 0.998827
+        },
+        {
+          "index": 5,
+          "text": "everything.",
+          "startMs": 249100,
+          "endMs": 249940,
+          "probability": 0.992746
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "text": "I just want to have fun.",
+      "startMs": 250720,
+      "endMs": 252920,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 250720,
+          "endMs": 251080,
+          "probability": 0.198534
+        },
+        {
+          "index": 2,
+          "text": "just",
+          "startMs": 251080,
+          "endMs": 251320,
+          "probability": 0.971192
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 251320,
+          "endMs": 251720,
+          "probability": 0.994182
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 251720,
+          "endMs": 251940,
+          "probability": 0.997435
+        },
+        {
+          "index": 5,
+          "text": "have",
+          "startMs": 251940,
+          "endMs": 252280,
+          "probability": 0.99842
+        },
+        {
+          "index": 6,
+          "text": "fun.",
+          "startMs": 252280,
+          "endMs": 252920,
+          "probability": 0.983934
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "text": "",
+      "startMs": 254700,
+      "endMs": 254700,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": []
+    },
+    {
+      "index": 76,
+      "text": "Grumpy Toad asks.",
+      "startMs": 255560,
+      "endMs": 256740,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 255560,
+          "endMs": 255880,
+          "probability": 0.926812
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 255880,
+          "endMs": 256180,
+          "probability": 0.951899
+        },
+        {
+          "index": 3,
+          "text": "asks.",
+          "startMs": 256180,
+          "endMs": 256740,
+          "probability": 0.986111
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "text": "Yeah, fun!",
+      "startMs": 257700,
+      "endMs": 258820,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yeah,",
+          "startMs": 257700,
+          "endMs": 258060,
+          "probability": 0.866989
+        },
+        {
+          "index": 2,
+          "text": "fun!",
+          "startMs": 258460,
+          "endMs": 258820,
+          "probability": 0.982088
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "text": "Pete says.",
+      "startMs": 259640,
+      "endMs": 260300,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 259640,
+          "endMs": 259760,
+          "probability": 0.986998
+        },
+        {
+          "index": 2,
+          "text": "says.",
+          "startMs": 259760,
+          "endMs": 260300,
+          "probability": 0.993593
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "text": "The room will be full of cool cats.",
+      "startMs": 261020,
+      "endMs": 263440,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 261020,
+          "endMs": 261160,
+          "probability": 0.950441
+        },
+        {
+          "index": 2,
+          "text": "room",
+          "startMs": 261160,
+          "endMs": 261440,
+          "probability": 0.99569
+        },
+        {
+          "index": 3,
+          "text": "will",
+          "startMs": 261440,
+          "endMs": 261680,
+          "probability": 0.990824
+        },
+        {
+          "index": 4,
+          "text": "be",
+          "startMs": 261680,
+          "endMs": 261860,
+          "probability": 0.996853
+        },
+        {
+          "index": 5,
+          "text": "full",
+          "startMs": 261860,
+          "endMs": 262220,
+          "probability": 0.998362
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 262220,
+          "endMs": 262520,
+          "probability": 0.997858
+        },
+        {
+          "index": 7,
+          "text": "cool",
+          "startMs": 262520,
+          "endMs": 262900,
+          "probability": 0.995907
+        },
+        {
+          "index": 8,
+          "text": "cats.",
+          "startMs": 262900,
+          "endMs": 263440,
+          "probability": 0.9957
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "text": "I just want my music to make them happy.",
+      "startMs": 264200,
+      "endMs": 266840,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 264200,
+          "endMs": 264400,
+          "probability": 0.996947
+        },
+        {
+          "index": 2,
+          "text": "just",
+          "startMs": 264400,
+          "endMs": 264620,
+          "probability": 0.994782
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 264620,
+          "endMs": 264860,
+          "probability": 0.998968
+        },
+        {
+          "index": 4,
+          "text": "my",
+          "startMs": 264860,
+          "endMs": 265080,
+          "probability": 0.993662
+        },
+        {
+          "index": 5,
+          "text": "music",
+          "startMs": 265080,
+          "endMs": 265480,
+          "probability": 0.998067
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 265480,
+          "endMs": 265760,
+          "probability": 0.996887
+        },
+        {
+          "index": 7,
+          "text": "make",
+          "startMs": 265760,
+          "endMs": 266000,
+          "probability": 0.9976
+        },
+        {
+          "index": 8,
+          "text": "them",
+          "startMs": 266000,
+          "endMs": 266240,
+          "probability": 0.997828
+        },
+        {
+          "index": 9,
+          "text": "happy.",
+          "startMs": 266240,
+          "endMs": 266840,
+          "probability": 0.998473
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "text": "That's what music is all about.",
+      "startMs": 267600,
+      "endMs": 270120,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "That's",
+          "startMs": 267600,
+          "endMs": 268060,
+          "probability": 0.982821
+        },
+        {
+          "index": 2,
+          "text": "what",
+          "startMs": 268060,
+          "endMs": 268180,
+          "probability": 0.998444
+        },
+        {
+          "index": 3,
+          "text": "music",
+          "startMs": 268180,
+          "endMs": 268620,
+          "probability": 0.986857
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 268620,
+          "endMs": 268980,
+          "probability": 0.996277
+        },
+        {
+          "index": 5,
+          "text": "all",
+          "startMs": 268980,
+          "endMs": 269440,
+          "probability": 0.997514
+        },
+        {
+          "index": 6,
+          "text": "about.",
+          "startMs": 269440,
+          "endMs": 270120,
+          "probability": 0.999217
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "text": "You're right, he tells Pete.",
+      "startMs": 272340,
+      "endMs": 275240,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "You're",
+          "startMs": 272340,
+          "endMs": 272900,
+          "probability": 0.91739
+        },
+        {
+          "index": 2,
+          "text": "right,",
+          "startMs": 272900,
+          "endMs": 273460,
+          "probability": 0.998126
+        },
+        {
+          "index": 3,
+          "text": "he",
+          "startMs": 274100,
+          "endMs": 274340,
+          "probability": 0.960398
+        },
+        {
+          "index": 4,
+          "text": "tells",
+          "startMs": 274340,
+          "endMs": 274760,
+          "probability": 0.988304
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 274760,
+          "endMs": 275240,
+          "probability": 0.997923
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "text": "I got so caught up in the idea of winning,",
+      "startMs": 275780,
+      "endMs": 278940,
+      "avgLogprob": -0.091764,
+      "noSpeechProb": 0.003227,
+      "compressionRatio": 1.396648,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 275780,
+          "endMs": 276160,
+          "probability": 0.99621
+        },
+        {
+          "index": 2,
+          "text": "got",
+          "startMs": 276160,
+          "endMs": 276400,
+          "probability": 0.993548
+        },
+        {
+          "index": 3,
+          "text": "so",
+          "startMs": 276400,
+          "endMs": 276820,
+          "probability": 0.992
+        },
+        {
+          "index": 4,
+          "text": "caught",
+          "startMs": 276820,
+          "endMs": 277200,
+          "probability": 0.998507
+        },
+        {
+          "index": 5,
+          "text": "up",
+          "startMs": 277200,
+          "endMs": 277420,
+          "probability": 0.991716
+        },
+        {
+          "index": 6,
+          "text": "in",
+          "startMs": 277420,
+          "endMs": 277620,
+          "probability": 0.98326
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 277620,
+          "endMs": 277740,
+          "probability": 0.997815
+        },
+        {
+          "index": 8,
+          "text": "idea",
+          "startMs": 277740,
+          "endMs": 278260,
+          "probability": 0.998515
+        },
+        {
+          "index": 9,
+          "text": "of",
+          "startMs": 278260,
+          "endMs": 278580,
+          "probability": 0.998849
+        },
+        {
+          "index": 10,
+          "text": "winning,",
+          "startMs": 278580,
+          "endMs": 278940,
+          "probability": 0.997812
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "text": "I forgot why I even play guitar.",
+      "startMs": 278940,
+      "endMs": 282180,
+      "avgLogprob": -0.06218,
+      "noSpeechProb": 0.014159,
+      "compressionRatio": 1.424581,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 278940,
+          "endMs": 279720,
+          "probability": 0.352037
+        },
+        {
+          "index": 2,
+          "text": "forgot",
+          "startMs": 279720,
+          "endMs": 280140,
+          "probability": 0.987074
+        },
+        {
+          "index": 3,
+          "text": "why",
+          "startMs": 280140,
+          "endMs": 280540,
+          "probability": 0.991193
+        },
+        {
+          "index": 4,
+          "text": "I",
+          "startMs": 280540,
+          "endMs": 280760,
+          "probability": 0.987964
+        },
+        {
+          "index": 5,
+          "text": "even",
+          "startMs": 280760,
+          "endMs": 281120,
+          "probability": 0.990722
+        },
+        {
+          "index": 6,
+          "text": "play",
+          "startMs": 281120,
+          "endMs": 281540,
+          "probability": 0.986199
+        },
+        {
+          "index": 7,
+          "text": "guitar.",
+          "startMs": 281540,
+          "endMs": 282180,
+          "probability": 0.980986
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "text": "Grumpy Toad smiles at Pete.",
+      "startMs": 283620,
+      "endMs": 285680,
+      "avgLogprob": -0.06218,
+      "noSpeechProb": 0.014159,
+      "compressionRatio": 1.424581,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 283620,
+          "endMs": 283920,
+          "probability": 0.958852
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 283920,
+          "endMs": 284300,
+          "probability": 0.984176
+        },
+        {
+          "index": 3,
+          "text": "smiles",
+          "startMs": 284300,
+          "endMs": 284900,
+          "probability": 0.986903
+        },
+        {
+          "index": 4,
+          "text": "at",
+          "startMs": 284900,
+          "endMs": 285440,
+          "probability": 0.994532
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 285440,
+          "endMs": 285680,
+          "probability": 0.981122
+        }
+      ]
+    },
+    {
+      "index": 86,
+      "text": "Thanks for reminding me.",
+      "startMs": 286580,
+      "endMs": 287940,
+      "avgLogprob": -0.06218,
+      "noSpeechProb": 0.014159,
+      "compressionRatio": 1.424581,
+      "words": [
+        {
+          "index": 1,
+          "text": "Thanks",
+          "startMs": 286580,
+          "endMs": 286860,
+          "probability": 0.816824
+        },
+        {
+          "index": 2,
+          "text": "for",
+          "startMs": 286860,
+          "endMs": 287200,
+          "probability": 0.99835
+        },
+        {
+          "index": 3,
+          "text": "reminding",
+          "startMs": 287200,
+          "endMs": 287820,
+          "probability": 0.993766
+        },
+        {
+          "index": 4,
+          "text": "me.",
+          "startMs": 287820,
+          "endMs": 288220,
+          "probability": 0.998954
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "text": "Just then, Pete has a cool idea.",
+      "startMs": 289720,
+      "endMs": 292940,
+      "avgLogprob": -0.06218,
+      "noSpeechProb": 0.014159,
+      "compressionRatio": 1.424581,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 289720,
+          "endMs": 289920,
+          "probability": 0.959017
+        },
+        {
+          "index": 2,
+          "text": "then,",
+          "startMs": 289920,
+          "endMs": 290660,
+          "probability": 0.994069
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 291440,
+          "endMs": 291640,
+          "probability": 0.99552
+        },
+        {
+          "index": 4,
+          "text": "has",
+          "startMs": 291640,
+          "endMs": 292080,
+          "probability": 0.992868
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 292080,
+          "endMs": 292540,
+          "probability": 0.997033
+        },
+        {
+          "index": 6,
+          "text": "cool",
+          "startMs": 292540,
+          "endMs": 292820,
+          "probability": 0.995121
+        },
+        {
+          "index": 7,
+          "text": "idea.",
+          "startMs": 292820,
+          "endMs": 293220,
+          "probability": 0.9983
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "text": "I wrote a new tune, and you wrote new words.",
+      "startMs": 295000,
+      "endMs": 298660,
+      "avgLogprob": -0.06218,
+      "noSpeechProb": 0.014159,
+      "compressionRatio": 1.424581,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 295000,
+          "endMs": 295360,
+          "probability": 0.940619
+        },
+        {
+          "index": 2,
+          "text": "wrote",
+          "startMs": 295360,
+          "endMs": 295640,
+          "probability": 0.998424
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 295640,
+          "endMs": 295880,
+          "probability": 0.997876
+        },
+        {
+          "index": 4,
+          "text": "new",
+          "startMs": 295880,
+          "endMs": 296100,
+          "probability": 0.998471
+        },
+        {
+          "index": 5,
+          "text": "tune,",
+          "startMs": 296100,
+          "endMs": 296600,
+          "probability": 0.997788
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 297000,
+          "endMs": 297260,
+          "probability": 0.99017
+        },
+        {
+          "index": 7,
+          "text": "you",
+          "startMs": 297260,
+          "endMs": 297500,
+          "probability": 0.997623
+        },
+        {
+          "index": 8,
+          "text": "wrote",
+          "startMs": 297500,
+          "endMs": 297760,
+          "probability": 0.99525
+        },
+        {
+          "index": 9,
+          "text": "new",
+          "startMs": 297760,
+          "endMs": 298060,
+          "probability": 0.992455
+        },
+        {
+          "index": 10,
+          "text": "words.",
+          "startMs": 298060,
+          "endMs": 298660,
+          "probability": 0.999098
+        }
+      ]
+    },
+    {
+      "index": 89,
+      "text": "What if we combine our songs?",
+      "startMs": 299440,
+      "endMs": 301840,
+      "avgLogprob": -0.06218,
+      "noSpeechProb": 0.014159,
+      "compressionRatio": 1.424581,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 299440,
+          "endMs": 299700,
+          "probability": 0.995137
+        },
+        {
+          "index": 2,
+          "text": "if",
+          "startMs": 299700,
+          "endMs": 299880,
+          "probability": 0.996668
+        },
+        {
+          "index": 3,
+          "text": "we",
+          "startMs": 299880,
+          "endMs": 300140,
+          "probability": 0.9923
+        },
+        {
+          "index": 4,
+          "text": "combine",
+          "startMs": 300140,
+          "endMs": 300840,
+          "probability": 0.992613
+        },
+        {
+          "index": 5,
+          "text": "our",
+          "startMs": 300840,
+          "endMs": 301200,
+          "probability": 0.996929
+        },
+        {
+          "index": 6,
+          "text": "songs?",
+          "startMs": 301200,
+          "endMs": 301840,
+          "probability": 0.995279
+        }
+      ]
+    },
+    {
+      "index": 90,
+      "text": "If we work together,",
+      "startMs": 302620,
+      "endMs": 304100,
+      "avgLogprob": -0.06218,
+      "noSpeechProb": 0.014159,
+      "compressionRatio": 1.424581,
+      "words": [
+        {
+          "index": 1,
+          "text": "If",
+          "startMs": 302620,
+          "endMs": 302920,
+          "probability": 0.991621
+        },
+        {
+          "index": 2,
+          "text": "we",
+          "startMs": 302920,
+          "endMs": 303180,
+          "probability": 0.997781
+        },
+        {
+          "index": 3,
+          "text": "work",
+          "startMs": 303180,
+          "endMs": 303480,
+          "probability": 0.988421
+        },
+        {
+          "index": 4,
+          "text": "together,",
+          "startMs": 303480,
+          "endMs": 304100,
+          "probability": 0.999436
+        }
+      ]
+    },
+    {
+      "index": 91,
+      "text": "our song will be the hippest thing ever.",
+      "startMs": 304420,
+      "endMs": 307660,
+      "avgLogprob": -0.06218,
+      "noSpeechProb": 0.014159,
+      "compressionRatio": 1.424581,
+      "words": [
+        {
+          "index": 1,
+          "text": "our",
+          "startMs": 304420,
+          "endMs": 304800,
+          "probability": 0.992323
+        },
+        {
+          "index": 2,
+          "text": "song",
+          "startMs": 304800,
+          "endMs": 305280,
+          "probability": 0.969244
+        },
+        {
+          "index": 3,
+          "text": "will",
+          "startMs": 305280,
+          "endMs": 305560,
+          "probability": 0.995139
+        },
+        {
+          "index": 4,
+          "text": "be",
+          "startMs": 305560,
+          "endMs": 305760,
+          "probability": 0.998006
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 305760,
+          "endMs": 306000,
+          "probability": 0.997613
+        },
+        {
+          "index": 6,
+          "text": "hippest",
+          "startMs": 306000,
+          "endMs": 306540,
+          "probability": 0.968275
+        },
+        {
+          "index": 7,
+          "text": "thing",
+          "startMs": 306540,
+          "endMs": 306980,
+          "probability": 0.998511
+        },
+        {
+          "index": 8,
+          "text": "ever.",
+          "startMs": 306980,
+          "endMs": 307660,
+          "probability": 0.974134
+        }
+      ]
+    },
+    {
+      "index": 92,
+      "text": "Yes!",
+      "startMs": 308660,
+      "endMs": 309300,
+      "avgLogprob": -0.099424,
+      "noSpeechProb": 0.028077,
+      "compressionRatio": 1.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yes!",
+          "startMs": 308660,
+          "endMs": 309300,
+          "probability": 0.221059
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "text": "Grumpy Toad shouts.",
+      "startMs": 310340,
+      "endMs": 311560,
+      "avgLogprob": -0.099424,
+      "noSpeechProb": 0.028077,
+      "compressionRatio": 1.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 310340,
+          "endMs": 310680,
+          "probability": 0.958132
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 310680,
+          "endMs": 311020,
+          "probability": 0.991233
+        },
+        {
+          "index": 3,
+          "text": "shouts.",
+          "startMs": 311020,
+          "endMs": 311560,
+          "probability": 0.967225
+        }
+      ]
+    },
+    {
+      "index": 94,
+      "text": "And we can be a team.",
+      "startMs": 312460,
+      "endMs": 314440,
+      "avgLogprob": -0.099424,
+      "noSpeechProb": 0.028077,
+      "compressionRatio": 1.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "And",
+          "startMs": 312460,
+          "endMs": 312580,
+          "probability": 0.859235
+        },
+        {
+          "index": 2,
+          "text": "we",
+          "startMs": 312580,
+          "endMs": 312880,
+          "probability": 0.979937
+        },
+        {
+          "index": 3,
+          "text": "can",
+          "startMs": 312880,
+          "endMs": 313140,
+          "probability": 0.997458
+        },
+        {
+          "index": 4,
+          "text": "be",
+          "startMs": 313140,
+          "endMs": 313480,
+          "probability": 0.99805
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 313480,
+          "endMs": 313780,
+          "probability": 0.993479
+        },
+        {
+          "index": 6,
+          "text": "team.",
+          "startMs": 313780,
+          "endMs": 314440,
+          "probability": 0.994149
+        }
+      ]
+    },
+    {
+      "index": 95,
+      "text": "Pete and Grumpy Toad get right to work.",
+      "startMs": 316420,
+      "endMs": 319600,
+      "avgLogprob": -0.099424,
+      "noSpeechProb": 0.028077,
+      "compressionRatio": 1.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 316420,
+          "endMs": 316700,
+          "probability": 0.974531
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 316700,
+          "endMs": 317020,
+          "probability": 0.992614
+        },
+        {
+          "index": 3,
+          "text": "Grumpy",
+          "startMs": 317020,
+          "endMs": 317580,
+          "probability": 0.985956
+        },
+        {
+          "index": 4,
+          "text": "Toad",
+          "startMs": 317580,
+          "endMs": 318000,
+          "probability": 0.998412
+        },
+        {
+          "index": 5,
+          "text": "get",
+          "startMs": 318000,
+          "endMs": 318360,
+          "probability": 0.99003
+        },
+        {
+          "index": 6,
+          "text": "right",
+          "startMs": 318360,
+          "endMs": 318860,
+          "probability": 0.996389
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 318860,
+          "endMs": 319220,
+          "probability": 0.997712
+        },
+        {
+          "index": 8,
+          "text": "work.",
+          "startMs": 319220,
+          "endMs": 319600,
+          "probability": 0.999567
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "text": "They put Grumpy Toad's words and Pete's tune together.",
+      "startMs": 320300,
+      "endMs": 324660,
+      "avgLogprob": -0.099424,
+      "noSpeechProb": 0.028077,
+      "compressionRatio": 1.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 320300,
+          "endMs": 320480,
+          "probability": 0.991524
+        },
+        {
+          "index": 2,
+          "text": "put",
+          "startMs": 320480,
+          "endMs": 320720,
+          "probability": 0.998364
+        },
+        {
+          "index": 3,
+          "text": "Grumpy",
+          "startMs": 320720,
+          "endMs": 321200,
+          "probability": 0.991839
+        },
+        {
+          "index": 4,
+          "text": "Toad's",
+          "startMs": 321200,
+          "endMs": 321760,
+          "probability": 0.986535
+        },
+        {
+          "index": 5,
+          "text": "words",
+          "startMs": 321760,
+          "endMs": 322080,
+          "probability": 0.996772
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 322080,
+          "endMs": 322700,
+          "probability": 0.935723
+        },
+        {
+          "index": 7,
+          "text": "Pete's",
+          "startMs": 322700,
+          "endMs": 323260,
+          "probability": 0.993384
+        },
+        {
+          "index": 8,
+          "text": "tune",
+          "startMs": 323260,
+          "endMs": 323660,
+          "probability": 0.991175
+        },
+        {
+          "index": 9,
+          "text": "together.",
+          "startMs": 323660,
+          "endMs": 324660,
+          "probability": 0.977305
+        }
+      ]
+    },
+    {
+      "index": 97,
+      "text": "Grumpy Toad and Pete practice playing their song together.",
+      "startMs": 325940,
+      "endMs": 329880,
+      "avgLogprob": -0.099424,
+      "noSpeechProb": 0.028077,
+      "compressionRatio": 1.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 325940,
+          "endMs": 326420,
+          "probability": 0.995449
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 326420,
+          "endMs": 326800,
+          "probability": 0.996651
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 326800,
+          "endMs": 327100,
+          "probability": 0.998461
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 327100,
+          "endMs": 327460,
+          "probability": 0.998343
+        },
+        {
+          "index": 5,
+          "text": "practice",
+          "startMs": 327460,
+          "endMs": 328240,
+          "probability": 0.937164
+        },
+        {
+          "index": 6,
+          "text": "playing",
+          "startMs": 328240,
+          "endMs": 328680,
+          "probability": 0.997844
+        },
+        {
+          "index": 7,
+          "text": "their",
+          "startMs": 328680,
+          "endMs": 328920,
+          "probability": 0.997893
+        },
+        {
+          "index": 8,
+          "text": "song",
+          "startMs": 328920,
+          "endMs": 329320,
+          "probability": 0.991071
+        },
+        {
+          "index": 9,
+          "text": "together.",
+          "startMs": 329320,
+          "endMs": 329880,
+          "probability": 0.999558
+        }
+      ]
+    },
+    {
+      "index": 98,
+      "text": "They practice singing their song together.",
+      "startMs": 330760,
+      "endMs": 333540,
+      "avgLogprob": -0.099424,
+      "noSpeechProb": 0.028077,
+      "compressionRatio": 1.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 330760,
+          "endMs": 330940,
+          "probability": 0.977661
+        },
+        {
+          "index": 2,
+          "text": "practice",
+          "startMs": 330940,
+          "endMs": 331520,
+          "probability": 0.979436
+        },
+        {
+          "index": 3,
+          "text": "singing",
+          "startMs": 331520,
+          "endMs": 332080,
+          "probability": 0.996821
+        },
+        {
+          "index": 4,
+          "text": "their",
+          "startMs": 332080,
+          "endMs": 332460,
+          "probability": 0.998231
+        },
+        {
+          "index": 5,
+          "text": "song",
+          "startMs": 332460,
+          "endMs": 332880,
+          "probability": 0.996747
+        },
+        {
+          "index": 6,
+          "text": "together.",
+          "startMs": 332880,
+          "endMs": 333540,
+          "probability": 0.999438
+        }
+      ]
+    },
+    {
+      "index": 99,
+      "text": "Pete was right.",
+      "startMs": 334760,
+      "endMs": 335980,
+      "avgLogprob": -0.099424,
+      "noSpeechProb": 0.028077,
+      "compressionRatio": 1.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 334760,
+          "endMs": 335120,
+          "probability": 0.995521
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 335120,
+          "endMs": 335440,
+          "probability": 0.998988
+        },
+        {
+          "index": 3,
+          "text": "right.",
+          "startMs": 335440,
+          "endMs": 335980,
+          "probability": 0.999814
+        }
+      ]
+    },
+    {
+      "index": 100,
+      "text": "The song is super neat.",
+      "startMs": 335980,
+      "endMs": 338760,
+      "avgLogprob": -0.063488,
+      "noSpeechProb": 0.015694,
+      "compressionRatio": 1.365854,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 335980,
+          "endMs": 336640,
+          "probability": 0.481134
+        },
+        {
+          "index": 2,
+          "text": "song",
+          "startMs": 336640,
+          "endMs": 337080,
+          "probability": 0.990051
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 337080,
+          "endMs": 337460,
+          "probability": 0.997827
+        },
+        {
+          "index": 4,
+          "text": "super",
+          "startMs": 337460,
+          "endMs": 337920,
+          "probability": 0.987367
+        },
+        {
+          "index": 5,
+          "text": "neat.",
+          "startMs": 337920,
+          "endMs": 338760,
+          "probability": 0.98437
+        }
+      ]
+    },
+    {
+      "index": 101,
+      "text": "Finally, the big day comes.",
+      "startMs": 341440,
+      "endMs": 342980,
+      "avgLogprob": -0.063488,
+      "noSpeechProb": 0.015694,
+      "compressionRatio": 1.365854,
+      "words": [
+        {
+          "index": 1,
+          "text": "Finally,",
+          "startMs": 341440,
+          "endMs": 341440,
+          "probability": 0.985328
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 341900,
+          "endMs": 342120,
+          "probability": 0.986851
+        },
+        {
+          "index": 3,
+          "text": "big",
+          "startMs": 342120,
+          "endMs": 342540,
+          "probability": 0.98748
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 342540,
+          "endMs": 342960,
+          "probability": 0.99746
+        },
+        {
+          "index": 5,
+          "text": "comes.",
+          "startMs": 342960,
+          "endMs": 343380,
+          "probability": 0.996684
+        }
+      ]
+    },
+    {
+      "index": 102,
+      "text": "Cali does ballet.",
+      "startMs": 345020,
+      "endMs": 346300,
+      "avgLogprob": -0.063488,
+      "noSpeechProb": 0.015694,
+      "compressionRatio": 1.365854,
+      "words": [
+        {
+          "index": 1,
+          "text": "Cali",
+          "startMs": 345020,
+          "endMs": 345260,
+          "probability": 0.519355
+        },
+        {
+          "index": 2,
+          "text": "does",
+          "startMs": 345260,
+          "endMs": 345640,
+          "probability": 0.992701
+        },
+        {
+          "index": 3,
+          "text": "ballet.",
+          "startMs": 345640,
+          "endMs": 346300,
+          "probability": 0.993461
+        }
+      ]
+    },
+    {
+      "index": 103,
+      "text": "Alligator pulls a rabbit from a hat.",
+      "startMs": 347540,
+      "endMs": 350140,
+      "avgLogprob": -0.063488,
+      "noSpeechProb": 0.015694,
+      "compressionRatio": 1.365854,
+      "words": [
+        {
+          "index": 1,
+          "text": "Alligator",
+          "startMs": 347540,
+          "endMs": 348020,
+          "probability": 0.942072
+        },
+        {
+          "index": 2,
+          "text": "pulls",
+          "startMs": 348020,
+          "endMs": 348520,
+          "probability": 0.997941
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 348520,
+          "endMs": 348760,
+          "probability": 0.995236
+        },
+        {
+          "index": 4,
+          "text": "rabbit",
+          "startMs": 348760,
+          "endMs": 349120,
+          "probability": 0.990081
+        },
+        {
+          "index": 5,
+          "text": "from",
+          "startMs": 349120,
+          "endMs": 349520,
+          "probability": 0.996918
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 349520,
+          "endMs": 349760,
+          "probability": 0.99366
+        },
+        {
+          "index": 7,
+          "text": "hat.",
+          "startMs": 349760,
+          "endMs": 350140,
+          "probability": 0.999087
+        }
+      ]
+    },
+    {
+      "index": 104,
+      "text": "Gus plays a drum solo.",
+      "startMs": 351560,
+      "endMs": 352980,
+      "avgLogprob": -0.063488,
+      "noSpeechProb": 0.015694,
+      "compressionRatio": 1.365854,
+      "words": [
+        {
+          "index": 1,
+          "text": "Gus",
+          "startMs": 351560,
+          "endMs": 351560,
+          "probability": 0.964923
+        },
+        {
+          "index": 2,
+          "text": "plays",
+          "startMs": 351560,
+          "endMs": 352100,
+          "probability": 0.995385
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 352100,
+          "endMs": 352480,
+          "probability": 0.98727
+        },
+        {
+          "index": 4,
+          "text": "drum",
+          "startMs": 352480,
+          "endMs": 352820,
+          "probability": 0.985319
+        },
+        {
+          "index": 5,
+          "text": "solo.",
+          "startMs": 352820,
+          "endMs": 353240,
+          "probability": 0.998724
+        }
+      ]
+    },
+    {
+      "index": 105,
+      "text": "Grumpy Toad and Pete are next.",
+      "startMs": 354800,
+      "endMs": 357020,
+      "avgLogprob": -0.063488,
+      "noSpeechProb": 0.015694,
+      "compressionRatio": 1.365854,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 354800,
+          "endMs": 355120,
+          "probability": 0.981239
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 355120,
+          "endMs": 355520,
+          "probability": 0.975275
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 355520,
+          "endMs": 355900,
+          "probability": 0.995979
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 355900,
+          "endMs": 356200,
+          "probability": 0.980151
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 356200,
+          "endMs": 356420,
+          "probability": 0.998267
+        },
+        {
+          "index": 6,
+          "text": "next.",
+          "startMs": 356420,
+          "endMs": 357020,
+          "probability": 0.999418
+        }
+      ]
+    },
+    {
+      "index": 106,
+      "text": "They rock out on their guitars.",
+      "startMs": 357620,
+      "endMs": 360020,
+      "avgLogprob": -0.063488,
+      "noSpeechProb": 0.015694,
+      "compressionRatio": 1.365854,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 357620,
+          "endMs": 357960,
+          "probability": 0.992762
+        },
+        {
+          "index": 2,
+          "text": "rock",
+          "startMs": 357960,
+          "endMs": 358380,
+          "probability": 0.993856
+        },
+        {
+          "index": 3,
+          "text": "out",
+          "startMs": 358380,
+          "endMs": 358780,
+          "probability": 0.995173
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 358780,
+          "endMs": 359040,
+          "probability": 0.997352
+        },
+        {
+          "index": 5,
+          "text": "their",
+          "startMs": 359040,
+          "endMs": 359340,
+          "probability": 0.997412
+        },
+        {
+          "index": 6,
+          "text": "guitars.",
+          "startMs": 359340,
+          "endMs": 360020,
+          "probability": 0.997564
+        }
+      ]
+    },
+    {
+      "index": 107,
+      "text": "The crowd loves their new song.",
+      "startMs": 361300,
+      "endMs": 364040,
+      "avgLogprob": -0.063488,
+      "noSpeechProb": 0.015694,
+      "compressionRatio": 1.365854,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 361300,
+          "endMs": 361720,
+          "probability": 0.996397
+        },
+        {
+          "index": 2,
+          "text": "crowd",
+          "startMs": 361720,
+          "endMs": 362120,
+          "probability": 0.996403
+        },
+        {
+          "index": 3,
+          "text": "loves",
+          "startMs": 362120,
+          "endMs": 362720,
+          "probability": 0.991088
+        },
+        {
+          "index": 4,
+          "text": "their",
+          "startMs": 362720,
+          "endMs": 363060,
+          "probability": 0.997852
+        },
+        {
+          "index": 5,
+          "text": "new",
+          "startMs": 363060,
+          "endMs": 363380,
+          "probability": 0.99771
+        },
+        {
+          "index": 6,
+          "text": "song.",
+          "startMs": 363380,
+          "endMs": 364040,
+          "probability": 0.998641
+        }
+      ]
+    },
+    {
+      "index": 108,
+      "text": "It is time to announce the winners.",
+      "startMs": 365980,
+      "endMs": 368760,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 365980,
+          "endMs": 366280,
+          "probability": 0.538097
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 366280,
+          "endMs": 366520,
+          "probability": 0.934199
+        },
+        {
+          "index": 3,
+          "text": "time",
+          "startMs": 366520,
+          "endMs": 366960,
+          "probability": 0.99754
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 366960,
+          "endMs": 367340,
+          "probability": 0.996995
+        },
+        {
+          "index": 5,
+          "text": "announce",
+          "startMs": 367340,
+          "endMs": 367820,
+          "probability": 0.996005
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 367820,
+          "endMs": 368300,
+          "probability": 0.99565
+        },
+        {
+          "index": 7,
+          "text": "winners.",
+          "startMs": 368300,
+          "endMs": 368760,
+          "probability": 0.982839
+        }
+      ]
+    },
+    {
+      "index": 109,
+      "text": "Cali gets first place.",
+      "startMs": 370120,
+      "endMs": 371760,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "Cali",
+          "startMs": 370120,
+          "endMs": 370380,
+          "probability": 0.58654
+        },
+        {
+          "index": 2,
+          "text": "gets",
+          "startMs": 370380,
+          "endMs": 370700,
+          "probability": 0.984703
+        },
+        {
+          "index": 3,
+          "text": "first",
+          "startMs": 370700,
+          "endMs": 371120,
+          "probability": 0.900645
+        },
+        {
+          "index": 4,
+          "text": "place.",
+          "startMs": 371120,
+          "endMs": 371760,
+          "probability": 0.993224
+        }
+      ]
+    },
+    {
+      "index": 110,
+      "text": "Grumpy Toad and Pete come in second.",
+      "startMs": 372860,
+      "endMs": 375160,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 372860,
+          "endMs": 373140,
+          "probability": 0.983427
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 373140,
+          "endMs": 373400,
+          "probability": 0.969776
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 373400,
+          "endMs": 373780,
+          "probability": 0.991327
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 373780,
+          "endMs": 374060,
+          "probability": 0.964669
+        },
+        {
+          "index": 5,
+          "text": "come",
+          "startMs": 374060,
+          "endMs": 374440,
+          "probability": 0.993421
+        },
+        {
+          "index": 6,
+          "text": "in",
+          "startMs": 374440,
+          "endMs": 374680,
+          "probability": 0.99026
+        },
+        {
+          "index": 7,
+          "text": "second.",
+          "startMs": 374680,
+          "endMs": 375160,
+          "probability": 0.993314
+        }
+      ]
+    },
+    {
+      "index": 111,
+      "text": "Sorry we didn't win, Grumpy Toad, Pete says.",
+      "startMs": 376800,
+      "endMs": 380600,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sorry",
+          "startMs": 376800,
+          "endMs": 377240,
+          "probability": 0.26461
+        },
+        {
+          "index": 2,
+          "text": "we",
+          "startMs": 377240,
+          "endMs": 377580,
+          "probability": 0.848409
+        },
+        {
+          "index": 3,
+          "text": "didn't",
+          "startMs": 377580,
+          "endMs": 377880,
+          "probability": 0.988481
+        },
+        {
+          "index": 4,
+          "text": "win,",
+          "startMs": 377880,
+          "endMs": 378320,
+          "probability": 0.996996
+        },
+        {
+          "index": 5,
+          "text": "Grumpy",
+          "startMs": 378540,
+          "endMs": 378780,
+          "probability": 0.988436
+        },
+        {
+          "index": 6,
+          "text": "Toad,",
+          "startMs": 378780,
+          "endMs": 379200,
+          "probability": 0.997323
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 379840,
+          "endMs": 380080,
+          "probability": 0.993017
+        },
+        {
+          "index": 8,
+          "text": "says.",
+          "startMs": 380080,
+          "endMs": 380600,
+          "probability": 0.994273
+        }
+      ]
+    },
+    {
+      "index": 112,
+      "text": "Grumpy Toad smiles.",
+      "startMs": 381760,
+      "endMs": 382940,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 381760,
+          "endMs": 382020,
+          "probability": 0.996077
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 382020,
+          "endMs": 382360,
+          "probability": 0.996958
+        },
+        {
+          "index": 3,
+          "text": "smiles.",
+          "startMs": 382360,
+          "endMs": 382940,
+          "probability": 0.988437
+        }
+      ]
+    },
+    {
+      "index": 113,
+      "text": "That's okay.",
+      "startMs": 384100,
+      "endMs": 385020,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "That's",
+          "startMs": 384100,
+          "endMs": 384600,
+          "probability": 0.892907
+        },
+        {
+          "index": 2,
+          "text": "okay.",
+          "startMs": 384600,
+          "endMs": 385020,
+          "probability": 0.747414
+        }
+      ]
+    },
+    {
+      "index": 114,
+      "text": "We had fun.",
+      "startMs": 385820,
+      "endMs": 387080,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 385820,
+          "endMs": 386060,
+          "probability": 0.995175
+        },
+        {
+          "index": 2,
+          "text": "had",
+          "startMs": 386060,
+          "endMs": 386500,
+          "probability": 0.996682
+        },
+        {
+          "index": 3,
+          "text": "fun.",
+          "startMs": 386500,
+          "endMs": 387080,
+          "probability": 0.994442
+        }
+      ]
+    },
+    {
+      "index": 115,
+      "text": "And we did it together.",
+      "startMs": 387680,
+      "endMs": 389280,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "And",
+          "startMs": 387680,
+          "endMs": 387900,
+          "probability": 0.975762
+        },
+        {
+          "index": 2,
+          "text": "we",
+          "startMs": 387900,
+          "endMs": 388140,
+          "probability": 0.993028
+        },
+        {
+          "index": 3,
+          "text": "did",
+          "startMs": 388140,
+          "endMs": 388480,
+          "probability": 0.998528
+        },
+        {
+          "index": 4,
+          "text": "it",
+          "startMs": 388480,
+          "endMs": 388780,
+          "probability": 0.997643
+        },
+        {
+          "index": 5,
+          "text": "together.",
+          "startMs": 388780,
+          "endMs": 389280,
+          "probability": 0.991163
+        }
+      ]
+    },
+    {
+      "index": 116,
+      "text": "Pete agrees.",
+      "startMs": 390700,
+      "endMs": 391480,
+      "avgLogprob": -0.109469,
+      "noSpeechProb": 0.007547,
+      "compressionRatio": 1.432258,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 390700,
+          "endMs": 391000,
+          "probability": 0.985847
+        },
+        {
+          "index": 2,
+          "text": "agrees.",
+          "startMs": 391000,
+          "endMs": 391480,
+          "probability": 0.995903
+        }
+      ]
+    },
+    {
+      "index": 117,
+      "text": "Having his best friend by his side feels pretty neat.",
+      "startMs": 391480,
+      "endMs": 396480,
+      "avgLogprob": -0.1387,
+      "noSpeechProb": 0.25216,
+      "compressionRatio": 0.913793,
+      "words": [
+        {
+          "index": 1,
+          "text": "Having",
+          "startMs": 391480,
+          "endMs": 392600,
+          "probability": 0.308082
+        },
+        {
+          "index": 2,
+          "text": "his",
+          "startMs": 392600,
+          "endMs": 393060,
+          "probability": 0.992709
+        },
+        {
+          "index": 3,
+          "text": "best",
+          "startMs": 393060,
+          "endMs": 393460,
+          "probability": 0.994693
+        },
+        {
+          "index": 4,
+          "text": "friend",
+          "startMs": 393460,
+          "endMs": 393780,
+          "probability": 0.995643
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 393780,
+          "endMs": 394120,
+          "probability": 0.994447
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 394120,
+          "endMs": 394360,
+          "probability": 0.990414
+        },
+        {
+          "index": 7,
+          "text": "side",
+          "startMs": 394360,
+          "endMs": 394860,
+          "probability": 0.999272
+        },
+        {
+          "index": 8,
+          "text": "feels",
+          "startMs": 394860,
+          "endMs": 395500,
+          "probability": 0.893537
+        },
+        {
+          "index": 9,
+          "text": "pretty",
+          "startMs": 395500,
+          "endMs": 396200,
+          "probability": 0.982933
+        },
+        {
+          "index": 10,
+          "text": "neat.",
+          "startMs": 396200,
+          "endMs": 396700,
+          "probability": 0.958201
+        }
+      ]
+    },
+    {
+      "index": 118,
+      "text": "John Marshall Media.",
+      "startMs": 421480,
+      "endMs": 422640,
+      "avgLogprob": -0.214903,
+      "noSpeechProb": 0.742979,
+      "compressionRatio": 1.322581,
+      "words": [
+        {
+          "index": 1,
+          "text": "John",
+          "startMs": 421480,
+          "endMs": 421700,
+          "probability": 0.784502
+        },
+        {
+          "index": 2,
+          "text": "Marshall",
+          "startMs": 421700,
+          "endMs": 422100,
+          "probability": 0.971373
+        },
+        {
+          "index": 3,
+          "text": "Media.",
+          "startMs": 422100,
+          "endMs": 422640,
+          "probability": 0.968344
+        }
+      ]
+    },
+    {
+      "index": 119,
+      "text": "Executive producer Almeida Baynon.",
+      "startMs": 424140,
+      "endMs": 426360,
+      "avgLogprob": -0.214903,
+      "noSpeechProb": 0.742979,
+      "compressionRatio": 1.322581,
+      "words": [
+        {
+          "index": 1,
+          "text": "Executive",
+          "startMs": 424140,
+          "endMs": 424140,
+          "probability": 0.980026
+        },
+        {
+          "index": 2,
+          "text": "producer",
+          "startMs": 424140,
+          "endMs": 424760,
+          "probability": 0.490726
+        },
+        {
+          "index": 3,
+          "text": "Almeida",
+          "startMs": 424760,
+          "endMs": 425820,
+          "probability": 0.456124
+        },
+        {
+          "index": 4,
+          "text": "Baynon.",
+          "startMs": 425820,
+          "endMs": 426360,
+          "probability": 0.379626
+        }
+      ]
+    },
+    {
+      "index": 120,
+      "text": "Text copyright 2021 by Kimberly and James Dean.",
+      "startMs": 427420,
+      "endMs": 431600,
+      "avgLogprob": -0.214903,
+      "noSpeechProb": 0.742979,
+      "compressionRatio": 1.322581,
+      "words": [
+        {
+          "index": 1,
+          "text": "Text",
+          "startMs": 427420,
+          "endMs": 427600,
+          "probability": 0.943415
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 427600,
+          "endMs": 428200,
+          "probability": 0.901027
+        },
+        {
+          "index": 3,
+          "text": "2021",
+          "startMs": 428200,
+          "endMs": 429160,
+          "probability": 0.899974
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 429160,
+          "endMs": 429760,
+          "probability": 0.952853
+        },
+        {
+          "index": 5,
+          "text": "Kimberly",
+          "startMs": 429760,
+          "endMs": 430160,
+          "probability": 0.804514
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 430160,
+          "endMs": 430720,
+          "probability": 0.969292
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 430720,
+          "endMs": 431240,
+          "probability": 0.998115
+        },
+        {
+          "index": 8,
+          "text": "Dean.",
+          "startMs": 431240,
+          "endMs": 431600,
+          "probability": 0.91999
+        }
+      ]
+    },
+    {
+      "index": 121,
+      "text": "Production copyright 2021 by Harper Collins Publishers.",
+      "startMs": 432500,
+      "endMs": 436460,
+      "avgLogprob": -0.214903,
+      "noSpeechProb": 0.742979,
+      "compressionRatio": 1.322581,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 432500,
+          "endMs": 432860,
+          "probability": 0.990096
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 432860,
+          "endMs": 433520,
+          "probability": 0.990926
+        },
+        {
+          "index": 3,
+          "text": "2021",
+          "startMs": 433520,
+          "endMs": 434420,
+          "probability": 0.9966
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 434420,
+          "endMs": 434940,
+          "probability": 0.985132
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 434940,
+          "endMs": 435340,
+          "probability": 0.996318
+        },
+        {
+          "index": 6,
+          "text": "Collins",
+          "startMs": 435340,
+          "endMs": 435840,
+          "probability": 0.68569
+        },
+        {
+          "index": 7,
+          "text": "Publishers.",
+          "startMs": 435840,
+          "endMs": 436460,
+          "probability": 0.819242
+        }
+      ]
+    },
+    {
+      "index": 122,
+      "text": "All rights reserved.",
+      "startMs": 437440,
+      "endMs": 438920,
+      "avgLogprob": -0.214903,
+      "noSpeechProb": 0.742979,
+      "compressionRatio": 1.322581,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 437440,
+          "endMs": 437840,
+          "probability": 0.994388
+        },
+        {
+          "index": 2,
+          "text": "rights",
+          "startMs": 437840,
+          "endMs": 438200,
+          "probability": 0.997267
+        },
+        {
+          "index": 3,
+          "text": "reserved.",
+          "startMs": 438200,
+          "endMs": 438920,
+          "probability": 0.995156
+        }
+      ]
+    },
+    {
+      "index": 123,
+      "text": "Thank you for listening.",
+      "startMs": 439780,
+      "endMs": 440960,
+      "avgLogprob": -0.214903,
+      "noSpeechProb": 0.742979,
+      "compressionRatio": 1.322581,
+      "words": [
+        {
+          "index": 1,
+          "text": "Thank",
+          "startMs": 439780,
+          "endMs": 439960,
+          "probability": 0.996232
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 439960,
+          "endMs": 440260,
+          "probability": 0.997625
+        },
+        {
+          "index": 3,
+          "text": "for",
+          "startMs": 440260,
+          "endMs": 440520,
+          "probability": 0.997471
+        },
+        {
+          "index": 4,
+          "text": "listening.",
+          "startMs": 440520,
+          "endMs": 440960,
+          "probability": 0.997973
+        }
+      ]
+    }
+  ]
+}

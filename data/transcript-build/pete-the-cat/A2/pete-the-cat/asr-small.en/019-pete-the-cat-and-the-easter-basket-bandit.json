@@ -1,0 +1,4633 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 58.878,
+  "text": "Pete the Cat and the Easter Basket Bandit by Kimberly and James Dean. Performed by James Foey. One Easter morning, Pete the Cat discovers his Easter basket is missing! Where is my Easter basket? he asks. Pete looks everywhere. It's not here or there. It's not anywhere. Then Pete spots a bright blue dot on the floor. It's a jelly bean, Pete's favorite. Pete finds another, then another, and another. It's a whole trail of colorful jelly beans. Hmm, says Pete. I wonder if these will lead to my basket. Pete follows the jelly beans down the street and around the corner too. Callie's house! Callie, have you seen my Easter basket? Pete asks. No, says Callie, but I see a trail of candy eggs. Let's follow it, says Pete. Pete and Callie follow the candy eggs through the yard and across a field too. Alligator's house! Alligator, have you seen Pete's Easter basket? asks Callie. I haven't, says Alligator, but look at this trail of marshmallow chicks. We should see where it goes, says Pete. Pete and Callie and Alligator follow the marshmallow chicks around the pond too. Gus's house! Gus, have you seen Pete's Easter basket? asks Alligator. It's not here, says Gus, but there are all these lollipops on the ground. It's a lollipop trail, says Callie. Let's follow it. So Pete and Callie and Alligator and Gus follow the lollipops out the door and up the path too. Turtle's house! Turtle, have you seen Pete's Easter basket? asks Gus. No, says Turtle, but look! There are a bunch of chocolate bunnies leading that way. Let's go! everyone shouts. Pete and Callie and Alligator and Gus and Turtle follow the chocolate bunny trail to the playground. It goes under the swings and down the slide and around the monkey bars to a colorful little house in the garden. It looks like the trail ends here, says Turtle. But before Pete can knock, the door swings open and everyone gasps. It's the Easter bunny! Easter bunny, have you seen my Easter basket? asks Pete. The Easter bunny looks sad. Yes, he says, I have it. Every year I deliver all the Easter baskets, but I never get one of my own, so I borrowed yours. The Easter bunny sniffles. I was going to bring it back soon. I'm very sorry, Pete. Pete smiles and hugs the Easter bunny. That's okay, says Pete. I understand. Then Pete has a great idea. He puts some of his candy in an empty basket. He asks Callie and Alligator and Gus and Turtle to all add candy from their baskets too. Soon the new basket is bursting with treats. Pete hands the basket to the Easter bunny. Happy Easter, Pete says. This one is just for you. The Easter bunny is so happy. Thank you so much, everyone, he says, and gleefully eats a jelly bean from his first ever Easter basket. Pete and his friends promise to make the Easter bunny a basket every year from now on. Sharing is the sweetest gift of all. We hope you have enjoyed this recording of Pete the Cat and the Easter Basket Bandit. Text copyright 2023 by Kimberly and James Dean. Illustrations copyright 2023 by James Dean. Pete the Cat is a registered trademark of Pete the Cat LLC. Production copyright 2023 by Harper Collins Publishers. This program was produced by John Marshall Media.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat and the Easter Basket Bandit by Kimberly and James Dean.",
+      "startMs": 0,
+      "endMs": 7560,
+      "avgLogprob": -0.24151,
+      "noSpeechProb": 0.05525,
+      "compressionRatio": 1.492647,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 800,
+          "probability": 0.658474
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 800,
+          "endMs": 1100,
+          "probability": 0.967264
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 1100,
+          "endMs": 1500,
+          "probability": 0.925163
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 1500,
+          "endMs": 1940,
+          "probability": 0.965859
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 1940,
+          "endMs": 2220,
+          "probability": 0.980962
+        },
+        {
+          "index": 6,
+          "text": "Easter",
+          "startMs": 2220,
+          "endMs": 2900,
+          "probability": 0.991537
+        },
+        {
+          "index": 7,
+          "text": "Basket",
+          "startMs": 2900,
+          "endMs": 3560,
+          "probability": 0.98302
+        },
+        {
+          "index": 8,
+          "text": "Bandit",
+          "startMs": 3560,
+          "endMs": 4620,
+          "probability": 0.991631
+        },
+        {
+          "index": 9,
+          "text": "by",
+          "startMs": 4620,
+          "endMs": 5360,
+          "probability": 0.716109
+        },
+        {
+          "index": 10,
+          "text": "Kimberly",
+          "startMs": 5360,
+          "endMs": 5860,
+          "probability": 0.684476
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 5860,
+          "endMs": 6420,
+          "probability": 0.94145
+        },
+        {
+          "index": 12,
+          "text": "James",
+          "startMs": 6420,
+          "endMs": 7040,
+          "probability": 0.998468
+        },
+        {
+          "index": 13,
+          "text": "Dean.",
+          "startMs": 7040,
+          "endMs": 7560,
+          "probability": 0.856357
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "Performed by James Foey.",
+      "startMs": 8680,
+      "endMs": 12000,
+      "avgLogprob": -0.24151,
+      "noSpeechProb": 0.05525,
+      "compressionRatio": 1.492647,
+      "words": [
+        {
+          "index": 1,
+          "text": "Performed",
+          "startMs": 8680,
+          "endMs": 9220,
+          "probability": 0.700939
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 9220,
+          "endMs": 9680,
+          "probability": 0.998125
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 9680,
+          "endMs": 10260,
+          "probability": 0.99827
+        },
+        {
+          "index": 4,
+          "text": "Foey.",
+          "startMs": 10260,
+          "endMs": 12000,
+          "probability": 0.737923
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "One Easter morning, Pete the Cat discovers his Easter basket is missing!",
+      "startMs": 13700,
+      "endMs": 21520,
+      "avgLogprob": -0.24151,
+      "noSpeechProb": 0.05525,
+      "compressionRatio": 1.492647,
+      "words": [
+        {
+          "index": 1,
+          "text": "One",
+          "startMs": 13700,
+          "endMs": 14320,
+          "probability": 0.965405
+        },
+        {
+          "index": 2,
+          "text": "Easter",
+          "startMs": 14320,
+          "endMs": 15040,
+          "probability": 0.984531
+        },
+        {
+          "index": 3,
+          "text": "morning,",
+          "startMs": 15040,
+          "endMs": 15640,
+          "probability": 0.930601
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 16420,
+          "endMs": 16540,
+          "probability": 0.995032
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 16540,
+          "endMs": 16760,
+          "probability": 0.994899
+        },
+        {
+          "index": 6,
+          "text": "Cat",
+          "startMs": 16760,
+          "endMs": 17220,
+          "probability": 0.927436
+        },
+        {
+          "index": 7,
+          "text": "discovers",
+          "startMs": 17220,
+          "endMs": 18260,
+          "probability": 0.995283
+        },
+        {
+          "index": 8,
+          "text": "his",
+          "startMs": 18260,
+          "endMs": 18780,
+          "probability": 0.990383
+        },
+        {
+          "index": 9,
+          "text": "Easter",
+          "startMs": 18780,
+          "endMs": 19540,
+          "probability": 0.96694
+        },
+        {
+          "index": 10,
+          "text": "basket",
+          "startMs": 19540,
+          "endMs": 20180,
+          "probability": 0.894756
+        },
+        {
+          "index": 11,
+          "text": "is",
+          "startMs": 20180,
+          "endMs": 20780,
+          "probability": 0.993545
+        },
+        {
+          "index": 12,
+          "text": "missing!",
+          "startMs": 20780,
+          "endMs": 21520,
+          "probability": 0.998046
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Where is my Easter basket? he asks.",
+      "startMs": 22880,
+      "endMs": 26340,
+      "avgLogprob": -0.24151,
+      "noSpeechProb": 0.05525,
+      "compressionRatio": 1.492647,
+      "words": [
+        {
+          "index": 1,
+          "text": "Where",
+          "startMs": 22880,
+          "endMs": 23220,
+          "probability": 0.12881
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 23220,
+          "endMs": 23500,
+          "probability": 0.986452
+        },
+        {
+          "index": 3,
+          "text": "my",
+          "startMs": 23500,
+          "endMs": 23780,
+          "probability": 0.998943
+        },
+        {
+          "index": 4,
+          "text": "Easter",
+          "startMs": 23780,
+          "endMs": 24420,
+          "probability": 0.995041
+        },
+        {
+          "index": 5,
+          "text": "basket?",
+          "startMs": 24420,
+          "endMs": 25120,
+          "probability": 0.964867
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 25560,
+          "endMs": 25740,
+          "probability": 0.520963
+        },
+        {
+          "index": 7,
+          "text": "asks.",
+          "startMs": 25740,
+          "endMs": 26340,
+          "probability": 0.988919
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Pete looks everywhere. It's not here or there. It's not anywhere.",
+      "startMs": 27680,
+      "endMs": 36940,
+      "avgLogprob": -0.20581,
+      "noSpeechProb": 0.025737,
+      "compressionRatio": 1.255556,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 27680,
+          "endMs": 28880,
+          "probability": 0.761382
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 28880,
+          "endMs": 29480,
+          "probability": 0.962142
+        },
+        {
+          "index": 3,
+          "text": "everywhere.",
+          "startMs": 29480,
+          "endMs": 30580,
+          "probability": 0.987354
+        },
+        {
+          "index": 4,
+          "text": "It's",
+          "startMs": 31580,
+          "endMs": 31960,
+          "probability": 0.938819
+        },
+        {
+          "index": 5,
+          "text": "not",
+          "startMs": 31960,
+          "endMs": 32160,
+          "probability": 0.998917
+        },
+        {
+          "index": 6,
+          "text": "here",
+          "startMs": 32160,
+          "endMs": 32760,
+          "probability": 0.995023
+        },
+        {
+          "index": 7,
+          "text": "or",
+          "startMs": 32760,
+          "endMs": 33860,
+          "probability": 0.57824
+        },
+        {
+          "index": 8,
+          "text": "there.",
+          "startMs": 33860,
+          "endMs": 34400,
+          "probability": 0.997151
+        },
+        {
+          "index": 9,
+          "text": "It's",
+          "startMs": 35460,
+          "endMs": 35700,
+          "probability": 0.993544
+        },
+        {
+          "index": 10,
+          "text": "not",
+          "startMs": 35700,
+          "endMs": 35960,
+          "probability": 0.99876
+        },
+        {
+          "index": 11,
+          "text": "anywhere.",
+          "startMs": 35960,
+          "endMs": 36940,
+          "probability": 0.984044
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Then Pete spots a bright blue dot on the floor.",
+      "startMs": 42980,
+      "endMs": 48280,
+      "avgLogprob": -0.20581,
+      "noSpeechProb": 0.025737,
+      "compressionRatio": 1.255556,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 42980,
+          "endMs": 44180,
+          "probability": 0.930636
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 44180,
+          "endMs": 44940,
+          "probability": 0.647963
+        },
+        {
+          "index": 3,
+          "text": "spots",
+          "startMs": 44940,
+          "endMs": 45440,
+          "probability": 0.994578
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 45440,
+          "endMs": 45880,
+          "probability": 0.994971
+        },
+        {
+          "index": 5,
+          "text": "bright",
+          "startMs": 45880,
+          "endMs": 46260,
+          "probability": 0.99813
+        },
+        {
+          "index": 6,
+          "text": "blue",
+          "startMs": 46260,
+          "endMs": 46900,
+          "probability": 0.976849
+        },
+        {
+          "index": 7,
+          "text": "dot",
+          "startMs": 46900,
+          "endMs": 47440,
+          "probability": 0.997656
+        },
+        {
+          "index": 8,
+          "text": "on",
+          "startMs": 47440,
+          "endMs": 47720,
+          "probability": 0.996867
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 47720,
+          "endMs": 47900,
+          "probability": 0.998835
+        },
+        {
+          "index": 10,
+          "text": "floor.",
+          "startMs": 47900,
+          "endMs": 48280,
+          "probability": 0.99908
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "It's a jelly bean, Pete's favorite. Pete finds another, then another, and another.",
+      "startMs": 49640,
+      "endMs": 59120,
+      "avgLogprob": -0.153937,
+      "noSpeechProb": 0.014999,
+      "compressionRatio": 1.326316,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 49640,
+          "endMs": 50800,
+          "probability": 0.582867
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 50800,
+          "endMs": 50960,
+          "probability": 0.990746
+        },
+        {
+          "index": 3,
+          "text": "jelly",
+          "startMs": 50960,
+          "endMs": 51340,
+          "probability": 0.802189
+        },
+        {
+          "index": 4,
+          "text": "bean,",
+          "startMs": 51340,
+          "endMs": 51720,
+          "probability": 0.638803
+        },
+        {
+          "index": 5,
+          "text": "Pete's",
+          "startMs": 52360,
+          "endMs": 52780,
+          "probability": 0.988628
+        },
+        {
+          "index": 6,
+          "text": "favorite.",
+          "startMs": 52780,
+          "endMs": 53280,
+          "probability": 0.766378
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 54200,
+          "endMs": 54380,
+          "probability": 0.993603
+        },
+        {
+          "index": 8,
+          "text": "finds",
+          "startMs": 54380,
+          "endMs": 54900,
+          "probability": 0.991689
+        },
+        {
+          "index": 9,
+          "text": "another,",
+          "startMs": 54900,
+          "endMs": 55500,
+          "probability": 0.995688
+        },
+        {
+          "index": 10,
+          "text": "then",
+          "startMs": 56320,
+          "endMs": 56660,
+          "probability": 0.950062
+        },
+        {
+          "index": 11,
+          "text": "another,",
+          "startMs": 56660,
+          "endMs": 57260,
+          "probability": 0.998268
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 58160,
+          "endMs": 58380,
+          "probability": 0.98245
+        },
+        {
+          "index": 13,
+          "text": "another.",
+          "startMs": 58380,
+          "endMs": 59120,
+          "probability": 0.992995
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "It's a whole trail of colorful jelly beans.",
+      "startMs": 60080,
+      "endMs": 63900,
+      "avgLogprob": -0.153937,
+      "noSpeechProb": 0.014999,
+      "compressionRatio": 1.326316,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 60080,
+          "endMs": 60340,
+          "probability": 0.99036
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 60340,
+          "endMs": 60480,
+          "probability": 0.996567
+        },
+        {
+          "index": 3,
+          "text": "whole",
+          "startMs": 60480,
+          "endMs": 60920,
+          "probability": 0.99799
+        },
+        {
+          "index": 4,
+          "text": "trail",
+          "startMs": 60920,
+          "endMs": 61560,
+          "probability": 0.994411
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 61560,
+          "endMs": 62020,
+          "probability": 0.998066
+        },
+        {
+          "index": 6,
+          "text": "colorful",
+          "startMs": 62020,
+          "endMs": 62720,
+          "probability": 0.896502
+        },
+        {
+          "index": 7,
+          "text": "jelly",
+          "startMs": 62720,
+          "endMs": 63300,
+          "probability": 0.994546
+        },
+        {
+          "index": 8,
+          "text": "beans.",
+          "startMs": 63300,
+          "endMs": 63900,
+          "probability": 0.971123
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Hmm, says Pete. I wonder if these will lead to my basket.",
+      "startMs": 65720,
+      "endMs": 71760,
+      "avgLogprob": -0.198594,
+      "noSpeechProb": 0.033749,
+      "compressionRatio": 1.239316,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hmm,",
+          "startMs": 65720,
+          "endMs": 66580,
+          "probability": 0.081962
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 67120,
+          "endMs": 67320,
+          "probability": 0.981584
+        },
+        {
+          "index": 3,
+          "text": "Pete.",
+          "startMs": 67320,
+          "endMs": 67840,
+          "probability": 0.980385
+        },
+        {
+          "index": 4,
+          "text": "I",
+          "startMs": 68960,
+          "endMs": 68980,
+          "probability": 0.95993
+        },
+        {
+          "index": 5,
+          "text": "wonder",
+          "startMs": 68980,
+          "endMs": 69280,
+          "probability": 0.998664
+        },
+        {
+          "index": 6,
+          "text": "if",
+          "startMs": 69280,
+          "endMs": 69700,
+          "probability": 0.994048
+        },
+        {
+          "index": 7,
+          "text": "these",
+          "startMs": 69700,
+          "endMs": 70000,
+          "probability": 0.99301
+        },
+        {
+          "index": 8,
+          "text": "will",
+          "startMs": 70000,
+          "endMs": 70320,
+          "probability": 0.993539
+        },
+        {
+          "index": 9,
+          "text": "lead",
+          "startMs": 70320,
+          "endMs": 70560,
+          "probability": 0.996009
+        },
+        {
+          "index": 10,
+          "text": "to",
+          "startMs": 70560,
+          "endMs": 70800,
+          "probability": 0.998124
+        },
+        {
+          "index": 11,
+          "text": "my",
+          "startMs": 70800,
+          "endMs": 71000,
+          "probability": 0.99866
+        },
+        {
+          "index": 12,
+          "text": "basket.",
+          "startMs": 71000,
+          "endMs": 71760,
+          "probability": 0.991563
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Pete follows the jelly beans down the street and around the corner too.",
+      "startMs": 73300,
+      "endMs": 78900,
+      "avgLogprob": -0.198594,
+      "noSpeechProb": 0.033749,
+      "compressionRatio": 1.239316,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 73300,
+          "endMs": 73500,
+          "probability": 0.985319
+        },
+        {
+          "index": 2,
+          "text": "follows",
+          "startMs": 73500,
+          "endMs": 74080,
+          "probability": 0.994388
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 74080,
+          "endMs": 74380,
+          "probability": 0.997661
+        },
+        {
+          "index": 4,
+          "text": "jelly",
+          "startMs": 74380,
+          "endMs": 74720,
+          "probability": 0.934526
+        },
+        {
+          "index": 5,
+          "text": "beans",
+          "startMs": 74720,
+          "endMs": 75140,
+          "probability": 0.828375
+        },
+        {
+          "index": 6,
+          "text": "down",
+          "startMs": 75140,
+          "endMs": 75720,
+          "probability": 0.973697
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 75720,
+          "endMs": 76020,
+          "probability": 0.996957
+        },
+        {
+          "index": 8,
+          "text": "street",
+          "startMs": 76020,
+          "endMs": 76560,
+          "probability": 0.996713
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 76560,
+          "endMs": 77280,
+          "probability": 0.853698
+        },
+        {
+          "index": 10,
+          "text": "around",
+          "startMs": 77280,
+          "endMs": 77720,
+          "probability": 0.993778
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 77720,
+          "endMs": 78040,
+          "probability": 0.997131
+        },
+        {
+          "index": 12,
+          "text": "corner",
+          "startMs": 78040,
+          "endMs": 78520,
+          "probability": 0.999412
+        },
+        {
+          "index": 13,
+          "text": "too.",
+          "startMs": 78520,
+          "endMs": 78950,
+          "probability": 0.38153
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Callie's house!",
+      "startMs": 85500,
+      "endMs": 86560,
+      "avgLogprob": -0.198594,
+      "noSpeechProb": 0.033749,
+      "compressionRatio": 1.239316,
+      "words": [
+        {
+          "index": 1,
+          "text": "Callie's",
+          "startMs": 85500,
+          "endMs": 86200,
+          "probability": 0.776466
+        },
+        {
+          "index": 2,
+          "text": "house!",
+          "startMs": 86200,
+          "endMs": 86560,
+          "probability": 0.900469
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Callie, have you seen my Easter basket? Pete asks.",
+      "startMs": 87560,
+      "endMs": 91940,
+      "avgLogprob": -0.091598,
+      "noSpeechProb": 0.029302,
+      "compressionRatio": 1.447552,
+      "words": [
+        {
+          "index": 1,
+          "text": "Callie,",
+          "startMs": 87560,
+          "endMs": 88320,
+          "probability": 0.505821
+        },
+        {
+          "index": 2,
+          "text": "have",
+          "startMs": 88780,
+          "endMs": 88900,
+          "probability": 0.887366
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 88900,
+          "endMs": 89100,
+          "probability": 0.99785
+        },
+        {
+          "index": 4,
+          "text": "seen",
+          "startMs": 89100,
+          "endMs": 89400,
+          "probability": 0.994117
+        },
+        {
+          "index": 5,
+          "text": "my",
+          "startMs": 89400,
+          "endMs": 89640,
+          "probability": 0.997015
+        },
+        {
+          "index": 6,
+          "text": "Easter",
+          "startMs": 89640,
+          "endMs": 90140,
+          "probability": 0.88134
+        },
+        {
+          "index": 7,
+          "text": "basket?",
+          "startMs": 90140,
+          "endMs": 90740,
+          "probability": 0.921327
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 91320,
+          "endMs": 91400,
+          "probability": 0.981185
+        },
+        {
+          "index": 9,
+          "text": "asks.",
+          "startMs": 91400,
+          "endMs": 91940,
+          "probability": 0.985893
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "No, says Callie, but I see a trail of candy eggs.",
+      "startMs": 92980,
+      "endMs": 98000,
+      "avgLogprob": -0.091598,
+      "noSpeechProb": 0.029302,
+      "compressionRatio": 1.447552,
+      "words": [
+        {
+          "index": 1,
+          "text": "No,",
+          "startMs": 92980,
+          "endMs": 93240,
+          "probability": 0.529951
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 93740,
+          "endMs": 94040,
+          "probability": 0.989768
+        },
+        {
+          "index": 3,
+          "text": "Callie,",
+          "startMs": 94040,
+          "endMs": 94700,
+          "probability": 0.992128
+        },
+        {
+          "index": 4,
+          "text": "but",
+          "startMs": 95560,
+          "endMs": 95620,
+          "probability": 0.989118
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 95620,
+          "endMs": 95800,
+          "probability": 0.997133
+        },
+        {
+          "index": 6,
+          "text": "see",
+          "startMs": 95800,
+          "endMs": 96080,
+          "probability": 0.997365
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 96080,
+          "endMs": 96320,
+          "probability": 0.993124
+        },
+        {
+          "index": 8,
+          "text": "trail",
+          "startMs": 96320,
+          "endMs": 96560,
+          "probability": 0.995752
+        },
+        {
+          "index": 9,
+          "text": "of",
+          "startMs": 96560,
+          "endMs": 96820,
+          "probability": 0.998208
+        },
+        {
+          "index": 10,
+          "text": "candy",
+          "startMs": 96820,
+          "endMs": 97340,
+          "probability": 0.949499
+        },
+        {
+          "index": 11,
+          "text": "eggs.",
+          "startMs": 97340,
+          "endMs": 98000,
+          "probability": 0.98612
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Let's follow it, says Pete.",
+      "startMs": 100080,
+      "endMs": 103060,
+      "avgLogprob": -0.091598,
+      "noSpeechProb": 0.029302,
+      "compressionRatio": 1.447552,
+      "words": [
+        {
+          "index": 1,
+          "text": "Let's",
+          "startMs": 100080,
+          "endMs": 101000,
+          "probability": 0.946251
+        },
+        {
+          "index": 2,
+          "text": "follow",
+          "startMs": 101000,
+          "endMs": 101380,
+          "probability": 0.997684
+        },
+        {
+          "index": 3,
+          "text": "it,",
+          "startMs": 101380,
+          "endMs": 101920,
+          "probability": 0.996924
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 102160,
+          "endMs": 102500,
+          "probability": 0.994998
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 102500,
+          "endMs": 103060,
+          "probability": 0.995603
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Pete and Callie follow the candy eggs through the yard and across a field too.",
+      "startMs": 104380,
+      "endMs": 111260,
+      "avgLogprob": -0.091598,
+      "noSpeechProb": 0.029302,
+      "compressionRatio": 1.447552,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 104380,
+          "endMs": 104600,
+          "probability": 0.997922
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 104600,
+          "endMs": 104960,
+          "probability": 0.995486
+        },
+        {
+          "index": 3,
+          "text": "Callie",
+          "startMs": 104960,
+          "endMs": 105560,
+          "probability": 0.995015
+        },
+        {
+          "index": 4,
+          "text": "follow",
+          "startMs": 105560,
+          "endMs": 106040,
+          "probability": 0.748513
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 106040,
+          "endMs": 106360,
+          "probability": 0.996944
+        },
+        {
+          "index": 6,
+          "text": "candy",
+          "startMs": 106360,
+          "endMs": 106800,
+          "probability": 0.988424
+        },
+        {
+          "index": 7,
+          "text": "eggs",
+          "startMs": 106800,
+          "endMs": 107280,
+          "probability": 0.997704
+        },
+        {
+          "index": 8,
+          "text": "through",
+          "startMs": 107280,
+          "endMs": 107980,
+          "probability": 0.959297
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 107980,
+          "endMs": 108220,
+          "probability": 0.997734
+        },
+        {
+          "index": 10,
+          "text": "yard",
+          "startMs": 108220,
+          "endMs": 108640,
+          "probability": 0.998826
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 108640,
+          "endMs": 109240,
+          "probability": 0.92536
+        },
+        {
+          "index": 12,
+          "text": "across",
+          "startMs": 109240,
+          "endMs": 109640,
+          "probability": 0.995849
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 109640,
+          "endMs": 109960,
+          "probability": 0.889507
+        },
+        {
+          "index": 14,
+          "text": "field",
+          "startMs": 109960,
+          "endMs": 110520,
+          "probability": 0.998883
+        },
+        {
+          "index": 15,
+          "text": "too.",
+          "startMs": 110520,
+          "endMs": 111260,
+          "probability": 0.203366
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Alligator's house!",
+      "startMs": 118460,
+      "endMs": 119780,
+      "avgLogprob": -0.077187,
+      "noSpeechProb": 0.008605,
+      "compressionRatio": 1.34507,
+      "words": [
+        {
+          "index": 1,
+          "text": "Alligator's",
+          "startMs": 118460,
+          "endMs": 119420,
+          "probability": 0.69222
+        },
+        {
+          "index": 2,
+          "text": "house!",
+          "startMs": 119420,
+          "endMs": 119780,
+          "probability": 0.662129
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Alligator, have you seen Pete's Easter basket? asks Callie.",
+      "startMs": 121460,
+      "endMs": 126300,
+      "avgLogprob": -0.077187,
+      "noSpeechProb": 0.008605,
+      "compressionRatio": 1.34507,
+      "words": [
+        {
+          "index": 1,
+          "text": "Alligator,",
+          "startMs": 121460,
+          "endMs": 121880,
+          "probability": 0.692693
+        },
+        {
+          "index": 2,
+          "text": "have",
+          "startMs": 122540,
+          "endMs": 122660,
+          "probability": 0.967163
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 122660,
+          "endMs": 122940,
+          "probability": 0.998403
+        },
+        {
+          "index": 4,
+          "text": "seen",
+          "startMs": 122940,
+          "endMs": 123240,
+          "probability": 0.996836
+        },
+        {
+          "index": 5,
+          "text": "Pete's",
+          "startMs": 123240,
+          "endMs": 123740,
+          "probability": 0.990757
+        },
+        {
+          "index": 6,
+          "text": "Easter",
+          "startMs": 123740,
+          "endMs": 124220,
+          "probability": 0.955202
+        },
+        {
+          "index": 7,
+          "text": "basket?",
+          "startMs": 124220,
+          "endMs": 124800,
+          "probability": 0.907275
+        },
+        {
+          "index": 8,
+          "text": "asks",
+          "startMs": 125660,
+          "endMs": 125660,
+          "probability": 0.581459
+        },
+        {
+          "index": 9,
+          "text": "Callie.",
+          "startMs": 125660,
+          "endMs": 126300,
+          "probability": 0.781332
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "I haven't, says Alligator, but look at this trail of marshmallow chicks.",
+      "startMs": 127300,
+      "endMs": 134280,
+      "avgLogprob": -0.077187,
+      "noSpeechProb": 0.008605,
+      "compressionRatio": 1.34507,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 127300,
+          "endMs": 127680,
+          "probability": 0.627252
+        },
+        {
+          "index": 2,
+          "text": "haven't,",
+          "startMs": 127680,
+          "endMs": 128760,
+          "probability": 0.990703
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 128980,
+          "endMs": 129380,
+          "probability": 0.983078
+        },
+        {
+          "index": 4,
+          "text": "Alligator,",
+          "startMs": 129380,
+          "endMs": 130160,
+          "probability": 0.96341
+        },
+        {
+          "index": 5,
+          "text": "but",
+          "startMs": 130780,
+          "endMs": 131280,
+          "probability": 0.986306
+        },
+        {
+          "index": 6,
+          "text": "look",
+          "startMs": 131280,
+          "endMs": 131540,
+          "probability": 0.996832
+        },
+        {
+          "index": 7,
+          "text": "at",
+          "startMs": 131540,
+          "endMs": 131740,
+          "probability": 0.997478
+        },
+        {
+          "index": 8,
+          "text": "this",
+          "startMs": 131740,
+          "endMs": 132060,
+          "probability": 0.994371
+        },
+        {
+          "index": 9,
+          "text": "trail",
+          "startMs": 132060,
+          "endMs": 132500,
+          "probability": 0.995086
+        },
+        {
+          "index": 10,
+          "text": "of",
+          "startMs": 132500,
+          "endMs": 132960,
+          "probability": 0.993736
+        },
+        {
+          "index": 11,
+          "text": "marshmallow",
+          "startMs": 132960,
+          "endMs": 133660,
+          "probability": 0.937249
+        },
+        {
+          "index": 12,
+          "text": "chicks.",
+          "startMs": 133660,
+          "endMs": 134280,
+          "probability": 0.99734
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "We should see where it goes, says Pete.",
+      "startMs": 136560,
+      "endMs": 140060,
+      "avgLogprob": -0.077187,
+      "noSpeechProb": 0.008605,
+      "compressionRatio": 1.34507,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 136520,
+          "endMs": 137000,
+          "probability": 0.934339
+        },
+        {
+          "index": 2,
+          "text": "should",
+          "startMs": 137000,
+          "endMs": 137300,
+          "probability": 0.998897
+        },
+        {
+          "index": 3,
+          "text": "see",
+          "startMs": 137300,
+          "endMs": 137640,
+          "probability": 0.998076
+        },
+        {
+          "index": 4,
+          "text": "where",
+          "startMs": 137640,
+          "endMs": 137860,
+          "probability": 0.997626
+        },
+        {
+          "index": 5,
+          "text": "it",
+          "startMs": 137860,
+          "endMs": 138060,
+          "probability": 0.996979
+        },
+        {
+          "index": 6,
+          "text": "goes,",
+          "startMs": 138060,
+          "endMs": 138880,
+          "probability": 0.998256
+        },
+        {
+          "index": 7,
+          "text": "says",
+          "startMs": 139140,
+          "endMs": 139540,
+          "probability": 0.994182
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 139540,
+          "endMs": 140060,
+          "probability": 0.995817
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Pete and Callie and Alligator follow the marshmallow chicks around the pond too.",
+      "startMs": 141060,
+      "endMs": 149060,
+      "avgLogprob": -0.076278,
+      "noSpeechProb": 0.023681,
+      "compressionRatio": 1.260504,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 141020,
+          "endMs": 141620,
+          "probability": 0.251089
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 141620,
+          "endMs": 142020,
+          "probability": 0.913576
+        },
+        {
+          "index": 3,
+          "text": "Callie",
+          "startMs": 142020,
+          "endMs": 142660,
+          "probability": 0.743387
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 142660,
+          "endMs": 142980,
+          "probability": 0.974888
+        },
+        {
+          "index": 5,
+          "text": "Alligator",
+          "startMs": 142980,
+          "endMs": 143720,
+          "probability": 0.931732
+        },
+        {
+          "index": 6,
+          "text": "follow",
+          "startMs": 143720,
+          "endMs": 144640,
+          "probability": 0.882446
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 144640,
+          "endMs": 144920,
+          "probability": 0.995286
+        },
+        {
+          "index": 8,
+          "text": "marshmallow",
+          "startMs": 144920,
+          "endMs": 145540,
+          "probability": 0.841478
+        },
+        {
+          "index": 9,
+          "text": "chicks",
+          "startMs": 145540,
+          "endMs": 146060,
+          "probability": 0.99134
+        },
+        {
+          "index": 10,
+          "text": "around",
+          "startMs": 146060,
+          "endMs": 147240,
+          "probability": 0.949034
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 147240,
+          "endMs": 147580,
+          "probability": 0.990669
+        },
+        {
+          "index": 12,
+          "text": "pond",
+          "startMs": 147580,
+          "endMs": 148300,
+          "probability": 0.998276
+        },
+        {
+          "index": 13,
+          "text": "too.",
+          "startMs": 148300,
+          "endMs": 149060,
+          "probability": 0.099063
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Gus's house!",
+      "startMs": 155180,
+      "endMs": 156220,
+      "avgLogprob": -0.076278,
+      "noSpeechProb": 0.023681,
+      "compressionRatio": 1.260504,
+      "words": [
+        {
+          "index": 1,
+          "text": "Gus's",
+          "startMs": 155180,
+          "endMs": 155700,
+          "probability": 0.712206
+        },
+        {
+          "index": 2,
+          "text": "house!",
+          "startMs": 155700,
+          "endMs": 156220,
+          "probability": 0.594653
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Gus, have you seen Pete's Easter basket? asks Alligator.",
+      "startMs": 157980,
+      "endMs": 163420,
+      "avgLogprob": -0.076278,
+      "noSpeechProb": 0.023681,
+      "compressionRatio": 1.260504,
+      "words": [
+        {
+          "index": 1,
+          "text": "Gus,",
+          "startMs": 157980,
+          "endMs": 158080,
+          "probability": 0.108417
+        },
+        {
+          "index": 2,
+          "text": "have",
+          "startMs": 158640,
+          "endMs": 158860,
+          "probability": 0.990589
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 158860,
+          "endMs": 159120,
+          "probability": 0.998052
+        },
+        {
+          "index": 4,
+          "text": "seen",
+          "startMs": 159120,
+          "endMs": 159540,
+          "probability": 0.993807
+        },
+        {
+          "index": 5,
+          "text": "Pete's",
+          "startMs": 159540,
+          "endMs": 160140,
+          "probability": 0.99299
+        },
+        {
+          "index": 6,
+          "text": "Easter",
+          "startMs": 160140,
+          "endMs": 160680,
+          "probability": 0.957728
+        },
+        {
+          "index": 7,
+          "text": "basket?",
+          "startMs": 160680,
+          "endMs": 161340,
+          "probability": 0.928687
+        },
+        {
+          "index": 8,
+          "text": "asks",
+          "startMs": 162200,
+          "endMs": 162500,
+          "probability": 0.496857
+        },
+        {
+          "index": 9,
+          "text": "Alligator.",
+          "startMs": 162500,
+          "endMs": 163420,
+          "probability": 0.986862
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "It's not here, says Gus, but there are all these lollipops on the ground.",
+      "startMs": 164420,
+      "endMs": 170900,
+      "avgLogprob": -0.068427,
+      "noSpeechProb": 0.028567,
+      "compressionRatio": 1.56338,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 164420,
+          "endMs": 164940,
+          "probability": 0.603789
+        },
+        {
+          "index": 2,
+          "text": "not",
+          "startMs": 164940,
+          "endMs": 165140,
+          "probability": 0.965125
+        },
+        {
+          "index": 3,
+          "text": "here,",
+          "startMs": 165140,
+          "endMs": 165780,
+          "probability": 0.9923
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 166400,
+          "endMs": 166520,
+          "probability": 0.978613
+        },
+        {
+          "index": 5,
+          "text": "Gus,",
+          "startMs": 166520,
+          "endMs": 166980,
+          "probability": 0.925562
+        },
+        {
+          "index": 6,
+          "text": "but",
+          "startMs": 167680,
+          "endMs": 167960,
+          "probability": 0.987203
+        },
+        {
+          "index": 7,
+          "text": "there",
+          "startMs": 167960,
+          "endMs": 168260,
+          "probability": 0.987943
+        },
+        {
+          "index": 8,
+          "text": "are",
+          "startMs": 168260,
+          "endMs": 168500,
+          "probability": 0.969863
+        },
+        {
+          "index": 9,
+          "text": "all",
+          "startMs": 168500,
+          "endMs": 168760,
+          "probability": 0.965179
+        },
+        {
+          "index": 10,
+          "text": "these",
+          "startMs": 168760,
+          "endMs": 169220,
+          "probability": 0.978623
+        },
+        {
+          "index": 11,
+          "text": "lollipops",
+          "startMs": 169220,
+          "endMs": 169980,
+          "probability": 0.962819
+        },
+        {
+          "index": 12,
+          "text": "on",
+          "startMs": 169980,
+          "endMs": 170320,
+          "probability": 0.995048
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 170320,
+          "endMs": 170520,
+          "probability": 0.998386
+        },
+        {
+          "index": 14,
+          "text": "ground.",
+          "startMs": 170520,
+          "endMs": 170900,
+          "probability": 0.998134
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "It's a lollipop trail, says Callie. Let's follow it.",
+      "startMs": 173000,
+      "endMs": 178880,
+      "avgLogprob": -0.068427,
+      "noSpeechProb": 0.028567,
+      "compressionRatio": 1.56338,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 173000,
+          "endMs": 173480,
+          "probability": 0.79583
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 173480,
+          "endMs": 173760,
+          "probability": 0.990045
+        },
+        {
+          "index": 3,
+          "text": "lollipop",
+          "startMs": 173760,
+          "endMs": 174500,
+          "probability": 0.979708
+        },
+        {
+          "index": 4,
+          "text": "trail,",
+          "startMs": 174500,
+          "endMs": 175200,
+          "probability": 0.993156
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 175580,
+          "endMs": 176080,
+          "probability": 0.996303
+        },
+        {
+          "index": 6,
+          "text": "Callie.",
+          "startMs": 176080,
+          "endMs": 176660,
+          "probability": 0.803007
+        },
+        {
+          "index": 7,
+          "text": "Let's",
+          "startMs": 177340,
+          "endMs": 177780,
+          "probability": 0.993118
+        },
+        {
+          "index": 8,
+          "text": "follow",
+          "startMs": 177780,
+          "endMs": 178220,
+          "probability": 0.997498
+        },
+        {
+          "index": 9,
+          "text": "it.",
+          "startMs": 178220,
+          "endMs": 178880,
+          "probability": 0.99859
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "So Pete and Callie and Alligator and Gus follow the lollipops out the door and up the path too.",
+      "startMs": 180300,
+      "endMs": 191040,
+      "avgLogprob": -0.068427,
+      "noSpeechProb": 0.028567,
+      "compressionRatio": 1.56338,
+      "words": [
+        {
+          "index": 1,
+          "text": "So",
+          "startMs": 180300,
+          "endMs": 180460,
+          "probability": 0.980313
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 180460,
+          "endMs": 180960,
+          "probability": 0.924292
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 180960,
+          "endMs": 181660,
+          "probability": 0.731693
+        },
+        {
+          "index": 4,
+          "text": "Callie",
+          "startMs": 181660,
+          "endMs": 182360,
+          "probability": 0.995488
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 182360,
+          "endMs": 182840,
+          "probability": 0.772524
+        },
+        {
+          "index": 6,
+          "text": "Alligator",
+          "startMs": 182840,
+          "endMs": 183720,
+          "probability": 0.89352
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 183720,
+          "endMs": 184340,
+          "probability": 0.995976
+        },
+        {
+          "index": 8,
+          "text": "Gus",
+          "startMs": 184340,
+          "endMs": 184940,
+          "probability": 0.996524
+        },
+        {
+          "index": 9,
+          "text": "follow",
+          "startMs": 184940,
+          "endMs": 185980,
+          "probability": 0.784578
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 185980,
+          "endMs": 186300,
+          "probability": 0.989829
+        },
+        {
+          "index": 11,
+          "text": "lollipops",
+          "startMs": 186300,
+          "endMs": 187100,
+          "probability": 0.981042
+        },
+        {
+          "index": 12,
+          "text": "out",
+          "startMs": 187100,
+          "endMs": 187760,
+          "probability": 0.979466
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 187760,
+          "endMs": 188060,
+          "probability": 0.984389
+        },
+        {
+          "index": 14,
+          "text": "door",
+          "startMs": 188060,
+          "endMs": 188560,
+          "probability": 0.997736
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 188560,
+          "endMs": 189260,
+          "probability": 0.955798
+        },
+        {
+          "index": 16,
+          "text": "up",
+          "startMs": 189260,
+          "endMs": 189640,
+          "probability": 0.997162
+        },
+        {
+          "index": 17,
+          "text": "the",
+          "startMs": 189640,
+          "endMs": 189940,
+          "probability": 0.996544
+        },
+        {
+          "index": 18,
+          "text": "path",
+          "startMs": 189940,
+          "endMs": 190360,
+          "probability": 0.99403
+        },
+        {
+          "index": 19,
+          "text": "too.",
+          "startMs": 190360,
+          "endMs": 191040,
+          "probability": 0.015964
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Turtle's house!",
+      "startMs": 198160,
+      "endMs": 199740,
+      "avgLogprob": -0.129899,
+      "noSpeechProb": 0.006819,
+      "compressionRatio": 1.243902,
+      "words": [
+        {
+          "index": 1,
+          "text": "Turtle's",
+          "startMs": 198160,
+          "endMs": 199280,
+          "probability": 0.717691
+        },
+        {
+          "index": 2,
+          "text": "house!",
+          "startMs": 199280,
+          "endMs": 199740,
+          "probability": 0.82784
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Turtle, have you seen Pete's Easter basket? asks Gus.",
+      "startMs": 201460,
+      "endMs": 206240,
+      "avgLogprob": -0.129899,
+      "noSpeechProb": 0.006819,
+      "compressionRatio": 1.243902,
+      "words": [
+        {
+          "index": 1,
+          "text": "Turtle,",
+          "startMs": 201460,
+          "endMs": 201680,
+          "probability": 0.40501
+        },
+        {
+          "index": 2,
+          "text": "have",
+          "startMs": 202300,
+          "endMs": 202400,
+          "probability": 0.982204
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 202400,
+          "endMs": 202680,
+          "probability": 0.998003
+        },
+        {
+          "index": 4,
+          "text": "seen",
+          "startMs": 202680,
+          "endMs": 203080,
+          "probability": 0.992591
+        },
+        {
+          "index": 5,
+          "text": "Pete's",
+          "startMs": 203080,
+          "endMs": 203620,
+          "probability": 0.661829
+        },
+        {
+          "index": 6,
+          "text": "Easter",
+          "startMs": 203620,
+          "endMs": 204140,
+          "probability": 0.942123
+        },
+        {
+          "index": 7,
+          "text": "basket?",
+          "startMs": 204140,
+          "endMs": 204720,
+          "probability": 0.757757
+        },
+        {
+          "index": 8,
+          "text": "asks",
+          "startMs": 205760,
+          "endMs": 205760,
+          "probability": 0.54159
+        },
+        {
+          "index": 9,
+          "text": "Gus.",
+          "startMs": 205760,
+          "endMs": 206240,
+          "probability": 0.98517
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "No, says Turtle, but look! There are a bunch of chocolate bunnies leading that way.",
+      "startMs": 207840,
+      "endMs": 217840,
+      "avgLogprob": -0.129899,
+      "noSpeechProb": 0.006819,
+      "compressionRatio": 1.243902,
+      "words": [
+        {
+          "index": 1,
+          "text": "No,",
+          "startMs": 207840,
+          "endMs": 208260,
+          "probability": 0.752864
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 209220,
+          "endMs": 209520,
+          "probability": 0.97276
+        },
+        {
+          "index": 3,
+          "text": "Turtle,",
+          "startMs": 209520,
+          "endMs": 210200,
+          "probability": 0.906916
+        },
+        {
+          "index": 4,
+          "text": "but",
+          "startMs": 210860,
+          "endMs": 211360,
+          "probability": 0.956584
+        },
+        {
+          "index": 5,
+          "text": "look!",
+          "startMs": 211360,
+          "endMs": 212020,
+          "probability": 0.958883
+        },
+        {
+          "index": 6,
+          "text": "There",
+          "startMs": 213060,
+          "endMs": 213340,
+          "probability": 0.942376
+        },
+        {
+          "index": 7,
+          "text": "are",
+          "startMs": 213340,
+          "endMs": 213640,
+          "probability": 0.986914
+        },
+        {
+          "index": 8,
+          "text": "a",
+          "startMs": 213640,
+          "endMs": 213940,
+          "probability": 0.993528
+        },
+        {
+          "index": 9,
+          "text": "bunch",
+          "startMs": 213940,
+          "endMs": 214260,
+          "probability": 0.998294
+        },
+        {
+          "index": 10,
+          "text": "of",
+          "startMs": 214260,
+          "endMs": 215400,
+          "probability": 0.996182
+        },
+        {
+          "index": 11,
+          "text": "chocolate",
+          "startMs": 215400,
+          "endMs": 215400,
+          "probability": 0.95214
+        },
+        {
+          "index": 12,
+          "text": "bunnies",
+          "startMs": 215400,
+          "endMs": 216080,
+          "probability": 0.995855
+        },
+        {
+          "index": 13,
+          "text": "leading",
+          "startMs": 216080,
+          "endMs": 216600,
+          "probability": 0.995425
+        },
+        {
+          "index": 14,
+          "text": "that",
+          "startMs": 216600,
+          "endMs": 217220,
+          "probability": 0.995472
+        },
+        {
+          "index": 15,
+          "text": "way.",
+          "startMs": 217220,
+          "endMs": 217840,
+          "probability": 0.99934
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Let's go! everyone shouts.",
+      "startMs": 219780,
+      "endMs": 223800,
+      "avgLogprob": -0.111533,
+      "noSpeechProb": 0.022264,
+      "compressionRatio": 1.454545,
+      "words": [
+        {
+          "index": 1,
+          "text": "Let's",
+          "startMs": 219780,
+          "endMs": 220860,
+          "probability": 0.608017
+        },
+        {
+          "index": 2,
+          "text": "go!",
+          "startMs": 220860,
+          "endMs": 221500,
+          "probability": 0.943492
+        },
+        {
+          "index": 3,
+          "text": "everyone",
+          "startMs": 222300,
+          "endMs": 222980,
+          "probability": 0.381948
+        },
+        {
+          "index": 4,
+          "text": "shouts.",
+          "startMs": 222980,
+          "endMs": 223800,
+          "probability": 0.993064
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Pete and Callie and Alligator and Gus and Turtle follow the chocolate bunny trail to the playground.",
+      "startMs": 226340,
+      "endMs": 235580,
+      "avgLogprob": -0.111533,
+      "noSpeechProb": 0.022264,
+      "compressionRatio": 1.454545,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 226340,
+          "endMs": 226580,
+          "probability": 0.988644
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 226580,
+          "endMs": 227220,
+          "probability": 0.838868
+        },
+        {
+          "index": 3,
+          "text": "Callie",
+          "startMs": 227220,
+          "endMs": 227880,
+          "probability": 0.823939
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 227880,
+          "endMs": 228320,
+          "probability": 0.907706
+        },
+        {
+          "index": 5,
+          "text": "Alligator",
+          "startMs": 228320,
+          "endMs": 229220,
+          "probability": 0.908207
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 229220,
+          "endMs": 229860,
+          "probability": 0.982815
+        },
+        {
+          "index": 7,
+          "text": "Gus",
+          "startMs": 229860,
+          "endMs": 230340,
+          "probability": 0.974024
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 230340,
+          "endMs": 231000,
+          "probability": 0.995145
+        },
+        {
+          "index": 9,
+          "text": "Turtle",
+          "startMs": 231000,
+          "endMs": 231560,
+          "probability": 0.960452
+        },
+        {
+          "index": 10,
+          "text": "follow",
+          "startMs": 231560,
+          "endMs": 232420,
+          "probability": 0.972652
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 232420,
+          "endMs": 232780,
+          "probability": 0.992369
+        },
+        {
+          "index": 12,
+          "text": "chocolate",
+          "startMs": 232780,
+          "endMs": 233380,
+          "probability": 0.437903
+        },
+        {
+          "index": 13,
+          "text": "bunny",
+          "startMs": 233380,
+          "endMs": 233820,
+          "probability": 0.440145
+        },
+        {
+          "index": 14,
+          "text": "trail",
+          "startMs": 233820,
+          "endMs": 234240,
+          "probability": 0.978034
+        },
+        {
+          "index": 15,
+          "text": "to",
+          "startMs": 234240,
+          "endMs": 234620,
+          "probability": 0.996536
+        },
+        {
+          "index": 16,
+          "text": "the",
+          "startMs": 234620,
+          "endMs": 234900,
+          "probability": 0.997656
+        },
+        {
+          "index": 17,
+          "text": "playground.",
+          "startMs": 234900,
+          "endMs": 235580,
+          "probability": 0.982425
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "It goes under the swings and down the slide and around the monkey bars to a colorful little house in the garden.",
+      "startMs": 236560,
+      "endMs": 245780,
+      "avgLogprob": -0.111533,
+      "noSpeechProb": 0.022264,
+      "compressionRatio": 1.454545,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 236560,
+          "endMs": 236800,
+          "probability": 0.979544
+        },
+        {
+          "index": 2,
+          "text": "goes",
+          "startMs": 236800,
+          "endMs": 237020,
+          "probability": 0.999179
+        },
+        {
+          "index": 3,
+          "text": "under",
+          "startMs": 237020,
+          "endMs": 237520,
+          "probability": 0.998053
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 237520,
+          "endMs": 237840,
+          "probability": 0.998607
+        },
+        {
+          "index": 5,
+          "text": "swings",
+          "startMs": 237840,
+          "endMs": 238480,
+          "probability": 0.994088
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 238480,
+          "endMs": 239060,
+          "probability": 0.911278
+        },
+        {
+          "index": 7,
+          "text": "down",
+          "startMs": 239060,
+          "endMs": 239480,
+          "probability": 0.997808
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 239480,
+          "endMs": 239760,
+          "probability": 0.995822
+        },
+        {
+          "index": 9,
+          "text": "slide",
+          "startMs": 239760,
+          "endMs": 240300,
+          "probability": 0.997065
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 240300,
+          "endMs": 240800,
+          "probability": 0.957038
+        },
+        {
+          "index": 11,
+          "text": "around",
+          "startMs": 240800,
+          "endMs": 241220,
+          "probability": 0.995592
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 241220,
+          "endMs": 241540,
+          "probability": 0.994757
+        },
+        {
+          "index": 13,
+          "text": "monkey",
+          "startMs": 241540,
+          "endMs": 241980,
+          "probability": 0.99564
+        },
+        {
+          "index": 14,
+          "text": "bars",
+          "startMs": 241980,
+          "endMs": 242560,
+          "probability": 0.996641
+        },
+        {
+          "index": 15,
+          "text": "to",
+          "startMs": 242560,
+          "endMs": 243220,
+          "probability": 0.865559
+        },
+        {
+          "index": 16,
+          "text": "a",
+          "startMs": 243220,
+          "endMs": 243500,
+          "probability": 0.996232
+        },
+        {
+          "index": 17,
+          "text": "colorful",
+          "startMs": 243500,
+          "endMs": 243760,
+          "probability": 0.773871
+        },
+        {
+          "index": 18,
+          "text": "little",
+          "startMs": 243760,
+          "endMs": 244340,
+          "probability": 0.985384
+        },
+        {
+          "index": 19,
+          "text": "house",
+          "startMs": 244340,
+          "endMs": 244760,
+          "probability": 0.998413
+        },
+        {
+          "index": 20,
+          "text": "in",
+          "startMs": 244760,
+          "endMs": 245080,
+          "probability": 0.964177
+        },
+        {
+          "index": 21,
+          "text": "the",
+          "startMs": 245080,
+          "endMs": 245240,
+          "probability": 0.998047
+        },
+        {
+          "index": 22,
+          "text": "garden.",
+          "startMs": 245240,
+          "endMs": 245780,
+          "probability": 0.992658
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "It looks like the trail ends here, says Turtle.",
+      "startMs": 252340,
+      "endMs": 258820,
+      "avgLogprob": -0.16147,
+      "noSpeechProb": 0.007044,
+      "compressionRatio": 1.179487,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 252340,
+          "endMs": 253520,
+          "probability": 0.378704
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 253520,
+          "endMs": 254000,
+          "probability": 0.993203
+        },
+        {
+          "index": 3,
+          "text": "like",
+          "startMs": 254000,
+          "endMs": 254500,
+          "probability": 0.995016
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 254500,
+          "endMs": 254840,
+          "probability": 0.99521
+        },
+        {
+          "index": 5,
+          "text": "trail",
+          "startMs": 254840,
+          "endMs": 255360,
+          "probability": 0.990842
+        },
+        {
+          "index": 6,
+          "text": "ends",
+          "startMs": 255360,
+          "endMs": 256140,
+          "probability": 0.99802
+        },
+        {
+          "index": 7,
+          "text": "here,",
+          "startMs": 256140,
+          "endMs": 257140,
+          "probability": 0.987325
+        },
+        {
+          "index": 8,
+          "text": "says",
+          "startMs": 257700,
+          "endMs": 258100,
+          "probability": 0.987851
+        },
+        {
+          "index": 9,
+          "text": "Turtle.",
+          "startMs": 258100,
+          "endMs": 258820,
+          "probability": 0.806289
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "But before Pete can knock, the door swings open and everyone gasps.",
+      "startMs": 260240,
+      "endMs": 267560,
+      "avgLogprob": -0.16147,
+      "noSpeechProb": 0.007044,
+      "compressionRatio": 1.179487,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 260240,
+          "endMs": 260360,
+          "probability": 0.98791
+        },
+        {
+          "index": 2,
+          "text": "before",
+          "startMs": 260360,
+          "endMs": 261060,
+          "probability": 0.991522
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 261060,
+          "endMs": 261520,
+          "probability": 0.9861
+        },
+        {
+          "index": 4,
+          "text": "can",
+          "startMs": 261520,
+          "endMs": 261900,
+          "probability": 0.99633
+        },
+        {
+          "index": 5,
+          "text": "knock,",
+          "startMs": 261900,
+          "endMs": 262420,
+          "probability": 0.998861
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 263040,
+          "endMs": 263240,
+          "probability": 0.988846
+        },
+        {
+          "index": 7,
+          "text": "door",
+          "startMs": 263240,
+          "endMs": 263640,
+          "probability": 0.998326
+        },
+        {
+          "index": 8,
+          "text": "swings",
+          "startMs": 263640,
+          "endMs": 264100,
+          "probability": 0.998575
+        },
+        {
+          "index": 9,
+          "text": "open",
+          "startMs": 264100,
+          "endMs": 264720,
+          "probability": 0.999406
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 264720,
+          "endMs": 265520,
+          "probability": 0.658792
+        },
+        {
+          "index": 11,
+          "text": "everyone",
+          "startMs": 265520,
+          "endMs": 266380,
+          "probability": 0.99488
+        },
+        {
+          "index": 12,
+          "text": "gasps.",
+          "startMs": 266380,
+          "endMs": 267560,
+          "probability": 0.991085
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "It's the Easter bunny!",
+      "startMs": 271840,
+      "endMs": 274740,
+      "avgLogprob": -0.16147,
+      "noSpeechProb": 0.007044,
+      "compressionRatio": 1.179487,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 271840,
+          "endMs": 273020,
+          "probability": 0.656427
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 273020,
+          "endMs": 273340,
+          "probability": 0.994578
+        },
+        {
+          "index": 3,
+          "text": "Easter",
+          "startMs": 273340,
+          "endMs": 274280,
+          "probability": 0.977656
+        },
+        {
+          "index": 4,
+          "text": "bunny!",
+          "startMs": 274280,
+          "endMs": 274740,
+          "probability": 0.09914
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Easter bunny, have you seen my Easter basket? asks Pete.",
+      "startMs": 275860,
+      "endMs": 281400,
+      "avgLogprob": -0.105499,
+      "noSpeechProb": 0.029927,
+      "compressionRatio": 1.440559,
+      "words": [
+        {
+          "index": 1,
+          "text": "Easter",
+          "startMs": 275860,
+          "endMs": 276820,
+          "probability": 0.167512
+        },
+        {
+          "index": 2,
+          "text": "bunny,",
+          "startMs": 276820,
+          "endMs": 277140,
+          "probability": 0.042873
+        },
+        {
+          "index": 3,
+          "text": "have",
+          "startMs": 277780,
+          "endMs": 277880,
+          "probability": 0.939471
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 277880,
+          "endMs": 278140,
+          "probability": 0.997893
+        },
+        {
+          "index": 5,
+          "text": "seen",
+          "startMs": 278140,
+          "endMs": 278480,
+          "probability": 0.992296
+        },
+        {
+          "index": 6,
+          "text": "my",
+          "startMs": 278480,
+          "endMs": 278780,
+          "probability": 0.995572
+        },
+        {
+          "index": 7,
+          "text": "Easter",
+          "startMs": 278780,
+          "endMs": 279320,
+          "probability": 0.867781
+        },
+        {
+          "index": 8,
+          "text": "basket?",
+          "startMs": 279320,
+          "endMs": 279920,
+          "probability": 0.968458
+        },
+        {
+          "index": 9,
+          "text": "asks",
+          "startMs": 280640,
+          "endMs": 280920,
+          "probability": 0.171346
+        },
+        {
+          "index": 10,
+          "text": "Pete.",
+          "startMs": 280920,
+          "endMs": 281400,
+          "probability": 0.938658
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "The Easter bunny looks sad.",
+      "startMs": 282560,
+      "endMs": 285040,
+      "avgLogprob": -0.105499,
+      "noSpeechProb": 0.029927,
+      "compressionRatio": 1.440559,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 282560,
+          "endMs": 282760,
+          "probability": 0.974173
+        },
+        {
+          "index": 2,
+          "text": "Easter",
+          "startMs": 282760,
+          "endMs": 283400,
+          "probability": 0.986764
+        },
+        {
+          "index": 3,
+          "text": "bunny",
+          "startMs": 283400,
+          "endMs": 283780,
+          "probability": 0.604906
+        },
+        {
+          "index": 4,
+          "text": "looks",
+          "startMs": 283780,
+          "endMs": 284220,
+          "probability": 0.980476
+        },
+        {
+          "index": 5,
+          "text": "sad.",
+          "startMs": 284220,
+          "endMs": 285040,
+          "probability": 0.999392
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Yes, he says, I have it.",
+      "startMs": 287100,
+      "endMs": 291080,
+      "avgLogprob": -0.105499,
+      "noSpeechProb": 0.029927,
+      "compressionRatio": 1.440559,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yes,",
+          "startMs": 287100,
+          "endMs": 287840,
+          "probability": 0.787442
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 288580,
+          "endMs": 288780,
+          "probability": 0.988682
+        },
+        {
+          "index": 3,
+          "text": "says,",
+          "startMs": 288780,
+          "endMs": 289200,
+          "probability": 0.994194
+        },
+        {
+          "index": 4,
+          "text": "I",
+          "startMs": 289760,
+          "endMs": 290220,
+          "probability": 0.995918
+        },
+        {
+          "index": 5,
+          "text": "have",
+          "startMs": 290220,
+          "endMs": 290620,
+          "probability": 0.998644
+        },
+        {
+          "index": 6,
+          "text": "it.",
+          "startMs": 290620,
+          "endMs": 291080,
+          "probability": 0.998157
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Every year I deliver all the Easter baskets, but I never get one of my own, so I borrowed yours.",
+      "startMs": 291780,
+      "endMs": 300920,
+      "avgLogprob": -0.105499,
+      "noSpeechProb": 0.029927,
+      "compressionRatio": 1.440559,
+      "words": [
+        {
+          "index": 1,
+          "text": "Every",
+          "startMs": 291780,
+          "endMs": 292260,
+          "probability": 0.995215
+        },
+        {
+          "index": 2,
+          "text": "year",
+          "startMs": 292260,
+          "endMs": 292740,
+          "probability": 0.949611
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 292740,
+          "endMs": 293360,
+          "probability": 0.540312
+        },
+        {
+          "index": 4,
+          "text": "deliver",
+          "startMs": 293360,
+          "endMs": 293760,
+          "probability": 0.998425
+        },
+        {
+          "index": 5,
+          "text": "all",
+          "startMs": 293760,
+          "endMs": 294240,
+          "probability": 0.99401
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 294240,
+          "endMs": 294480,
+          "probability": 0.99203
+        },
+        {
+          "index": 7,
+          "text": "Easter",
+          "startMs": 294480,
+          "endMs": 295020,
+          "probability": 0.991377
+        },
+        {
+          "index": 8,
+          "text": "baskets,",
+          "startMs": 295020,
+          "endMs": 295640,
+          "probability": 0.991092
+        },
+        {
+          "index": 9,
+          "text": "but",
+          "startMs": 296120,
+          "endMs": 296500,
+          "probability": 0.995053
+        },
+        {
+          "index": 10,
+          "text": "I",
+          "startMs": 296500,
+          "endMs": 296660,
+          "probability": 0.996836
+        },
+        {
+          "index": 11,
+          "text": "never",
+          "startMs": 296660,
+          "endMs": 296980,
+          "probability": 0.99755
+        },
+        {
+          "index": 12,
+          "text": "get",
+          "startMs": 296980,
+          "endMs": 297280,
+          "probability": 0.998267
+        },
+        {
+          "index": 13,
+          "text": "one",
+          "startMs": 297280,
+          "endMs": 297580,
+          "probability": 0.997316
+        },
+        {
+          "index": 14,
+          "text": "of",
+          "startMs": 297580,
+          "endMs": 297740,
+          "probability": 0.996642
+        },
+        {
+          "index": 15,
+          "text": "my",
+          "startMs": 297740,
+          "endMs": 298020,
+          "probability": 0.996695
+        },
+        {
+          "index": 16,
+          "text": "own,",
+          "startMs": 298020,
+          "endMs": 298520,
+          "probability": 0.999678
+        },
+        {
+          "index": 17,
+          "text": "so",
+          "startMs": 299080,
+          "endMs": 299520,
+          "probability": 0.995867
+        },
+        {
+          "index": 18,
+          "text": "I",
+          "startMs": 299520,
+          "endMs": 299820,
+          "probability": 0.997068
+        },
+        {
+          "index": 19,
+          "text": "borrowed",
+          "startMs": 299820,
+          "endMs": 300300,
+          "probability": 0.973645
+        },
+        {
+          "index": 20,
+          "text": "yours.",
+          "startMs": 300300,
+          "endMs": 300920,
+          "probability": 0.996182
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "The Easter bunny sniffles.",
+      "startMs": 301920,
+      "endMs": 303920,
+      "avgLogprob": -0.116003,
+      "noSpeechProb": 0.02332,
+      "compressionRatio": 1.300813,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 301920,
+          "endMs": 302560,
+          "probability": 0.364475
+        },
+        {
+          "index": 2,
+          "text": "Easter",
+          "startMs": 302560,
+          "endMs": 303140,
+          "probability": 0.953152
+        },
+        {
+          "index": 3,
+          "text": "bunny",
+          "startMs": 303140,
+          "endMs": 303500,
+          "probability": 0.077886
+        },
+        {
+          "index": 4,
+          "text": "sniffles.",
+          "startMs": 303500,
+          "endMs": 303980,
+          "probability": 0.989439
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "I was going to bring it back soon. I'm very sorry, Pete.",
+      "startMs": 305580,
+      "endMs": 310780,
+      "avgLogprob": -0.116003,
+      "noSpeechProb": 0.02332,
+      "compressionRatio": 1.300813,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 305580,
+          "endMs": 305620,
+          "probability": 0.441905
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 305620,
+          "endMs": 305860,
+          "probability": 0.992001
+        },
+        {
+          "index": 3,
+          "text": "going",
+          "startMs": 305860,
+          "endMs": 306340,
+          "probability": 0.997755
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 306340,
+          "endMs": 306660,
+          "probability": 0.996419
+        },
+        {
+          "index": 5,
+          "text": "bring",
+          "startMs": 306660,
+          "endMs": 306880,
+          "probability": 0.996337
+        },
+        {
+          "index": 6,
+          "text": "it",
+          "startMs": 306880,
+          "endMs": 307080,
+          "probability": 0.996253
+        },
+        {
+          "index": 7,
+          "text": "back",
+          "startMs": 307080,
+          "endMs": 307400,
+          "probability": 0.998305
+        },
+        {
+          "index": 8,
+          "text": "soon.",
+          "startMs": 307400,
+          "endMs": 307940,
+          "probability": 0.997223
+        },
+        {
+          "index": 9,
+          "text": "I'm",
+          "startMs": 308920,
+          "endMs": 309240,
+          "probability": 0.958606
+        },
+        {
+          "index": 10,
+          "text": "very",
+          "startMs": 309240,
+          "endMs": 309640,
+          "probability": 0.986663
+        },
+        {
+          "index": 11,
+          "text": "sorry,",
+          "startMs": 309640,
+          "endMs": 310340,
+          "probability": 0.998837
+        },
+        {
+          "index": 12,
+          "text": "Pete.",
+          "startMs": 310700,
+          "endMs": 310780,
+          "probability": 0.990059
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "Pete smiles and hugs the Easter bunny.",
+      "startMs": 313060,
+      "endMs": 316540,
+      "avgLogprob": -0.116003,
+      "noSpeechProb": 0.02332,
+      "compressionRatio": 1.300813,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 313060,
+          "endMs": 313300,
+          "probability": 0.996949
+        },
+        {
+          "index": 2,
+          "text": "smiles",
+          "startMs": 313300,
+          "endMs": 313980,
+          "probability": 0.990385
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 313980,
+          "endMs": 315100,
+          "probability": 0.908441
+        },
+        {
+          "index": 4,
+          "text": "hugs",
+          "startMs": 315100,
+          "endMs": 315480,
+          "probability": 0.999187
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 315480,
+          "endMs": 315760,
+          "probability": 0.995048
+        },
+        {
+          "index": 6,
+          "text": "Easter",
+          "startMs": 315760,
+          "endMs": 316220,
+          "probability": 0.99476
+        },
+        {
+          "index": 7,
+          "text": "bunny.",
+          "startMs": 316220,
+          "endMs": 316540,
+          "probability": 0.877963
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "That's okay, says Pete. I understand.",
+      "startMs": 317500,
+      "endMs": 321720,
+      "avgLogprob": -0.116003,
+      "noSpeechProb": 0.02332,
+      "compressionRatio": 1.300813,
+      "words": [
+        {
+          "index": 1,
+          "text": "That's",
+          "startMs": 317500,
+          "endMs": 318120,
+          "probability": 0.806397
+        },
+        {
+          "index": 2,
+          "text": "okay,",
+          "startMs": 318120,
+          "endMs": 318700,
+          "probability": 0.81623
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 319180,
+          "endMs": 319520,
+          "probability": 0.990757
+        },
+        {
+          "index": 4,
+          "text": "Pete.",
+          "startMs": 319520,
+          "endMs": 320000,
+          "probability": 0.997306
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 320700,
+          "endMs": 320920,
+          "probability": 0.998055
+        },
+        {
+          "index": 6,
+          "text": "understand.",
+          "startMs": 320920,
+          "endMs": 321720,
+          "probability": 0.998719
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Then Pete has a great idea. He puts some of his candy in an empty basket.",
+      "startMs": 323620,
+      "endMs": 330720,
+      "avgLogprob": -0.098503,
+      "noSpeechProb": 0.023778,
+      "compressionRatio": 1.427586,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 323620,
+          "endMs": 324540,
+          "probability": 0.406417
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 324540,
+          "endMs": 325060,
+          "probability": 0.807813
+        },
+        {
+          "index": 3,
+          "text": "has",
+          "startMs": 325060,
+          "endMs": 325500,
+          "probability": 0.992936
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 325500,
+          "endMs": 325840,
+          "probability": 0.994859
+        },
+        {
+          "index": 5,
+          "text": "great",
+          "startMs": 325840,
+          "endMs": 326160,
+          "probability": 0.998706
+        },
+        {
+          "index": 6,
+          "text": "idea.",
+          "startMs": 326160,
+          "endMs": 326900,
+          "probability": 0.999075
+        },
+        {
+          "index": 7,
+          "text": "He",
+          "startMs": 327820,
+          "endMs": 327980,
+          "probability": 0.981948
+        },
+        {
+          "index": 8,
+          "text": "puts",
+          "startMs": 327980,
+          "endMs": 328160,
+          "probability": 0.76764
+        },
+        {
+          "index": 9,
+          "text": "some",
+          "startMs": 328160,
+          "endMs": 328520,
+          "probability": 0.993104
+        },
+        {
+          "index": 10,
+          "text": "of",
+          "startMs": 328520,
+          "endMs": 328700,
+          "probability": 0.997243
+        },
+        {
+          "index": 11,
+          "text": "his",
+          "startMs": 328700,
+          "endMs": 328900,
+          "probability": 0.995301
+        },
+        {
+          "index": 12,
+          "text": "candy",
+          "startMs": 328900,
+          "endMs": 329380,
+          "probability": 0.996724
+        },
+        {
+          "index": 13,
+          "text": "in",
+          "startMs": 329380,
+          "endMs": 329860,
+          "probability": 0.987313
+        },
+        {
+          "index": 14,
+          "text": "an",
+          "startMs": 329860,
+          "endMs": 330020,
+          "probability": 0.990398
+        },
+        {
+          "index": 15,
+          "text": "empty",
+          "startMs": 330020,
+          "endMs": 330620,
+          "probability": 0.99979
+        },
+        {
+          "index": 16,
+          "text": "basket.",
+          "startMs": 330620,
+          "endMs": 331080,
+          "probability": 0.998195
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "He asks Callie and Alligator and Gus and Turtle to all add candy from their baskets too.",
+      "startMs": 331980,
+      "endMs": 340000,
+      "avgLogprob": -0.098503,
+      "noSpeechProb": 0.023778,
+      "compressionRatio": 1.427586,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 331980,
+          "endMs": 332160,
+          "probability": 0.993978
+        },
+        {
+          "index": 2,
+          "text": "asks",
+          "startMs": 332160,
+          "endMs": 332580,
+          "probability": 0.986352
+        },
+        {
+          "index": 3,
+          "text": "Callie",
+          "startMs": 332580,
+          "endMs": 333260,
+          "probability": 0.781713
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 333260,
+          "endMs": 333680,
+          "probability": 0.63447
+        },
+        {
+          "index": 5,
+          "text": "Alligator",
+          "startMs": 333680,
+          "endMs": 334440,
+          "probability": 0.924111
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 334440,
+          "endMs": 334900,
+          "probability": 0.917325
+        },
+        {
+          "index": 7,
+          "text": "Gus",
+          "startMs": 334900,
+          "endMs": 335340,
+          "probability": 0.98685
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 335340,
+          "endMs": 335840,
+          "probability": 0.991833
+        },
+        {
+          "index": 9,
+          "text": "Turtle",
+          "startMs": 335840,
+          "endMs": 336320,
+          "probability": 0.944394
+        },
+        {
+          "index": 10,
+          "text": "to",
+          "startMs": 336320,
+          "endMs": 337020,
+          "probability": 0.954356
+        },
+        {
+          "index": 11,
+          "text": "all",
+          "startMs": 337020,
+          "endMs": 337400,
+          "probability": 0.987999
+        },
+        {
+          "index": 12,
+          "text": "add",
+          "startMs": 337400,
+          "endMs": 337800,
+          "probability": 0.992044
+        },
+        {
+          "index": 13,
+          "text": "candy",
+          "startMs": 337800,
+          "endMs": 338280,
+          "probability": 0.996665
+        },
+        {
+          "index": 14,
+          "text": "from",
+          "startMs": 338280,
+          "endMs": 338560,
+          "probability": 0.995765
+        },
+        {
+          "index": 15,
+          "text": "their",
+          "startMs": 338560,
+          "endMs": 338960,
+          "probability": 0.995464
+        },
+        {
+          "index": 16,
+          "text": "baskets",
+          "startMs": 338960,
+          "endMs": 339420,
+          "probability": 0.997715
+        },
+        {
+          "index": 17,
+          "text": "too.",
+          "startMs": 339420,
+          "endMs": 340000,
+          "probability": 0.741463
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "Soon the new basket is bursting with treats.",
+      "startMs": 340900,
+      "endMs": 344280,
+      "avgLogprob": -0.098503,
+      "noSpeechProb": 0.023778,
+      "compressionRatio": 1.427586,
+      "words": [
+        {
+          "index": 1,
+          "text": "Soon",
+          "startMs": 340900,
+          "endMs": 341160,
+          "probability": 0.993193
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 341160,
+          "endMs": 341700,
+          "probability": 0.616967
+        },
+        {
+          "index": 3,
+          "text": "new",
+          "startMs": 341700,
+          "endMs": 342040,
+          "probability": 0.998781
+        },
+        {
+          "index": 4,
+          "text": "basket",
+          "startMs": 342040,
+          "endMs": 342500,
+          "probability": 0.998198
+        },
+        {
+          "index": 5,
+          "text": "is",
+          "startMs": 342500,
+          "endMs": 342760,
+          "probability": 0.996264
+        },
+        {
+          "index": 6,
+          "text": "bursting",
+          "startMs": 342760,
+          "endMs": 343380,
+          "probability": 0.999392
+        },
+        {
+          "index": 7,
+          "text": "with",
+          "startMs": 343380,
+          "endMs": 343780,
+          "probability": 0.998966
+        },
+        {
+          "index": 8,
+          "text": "treats.",
+          "startMs": 343780,
+          "endMs": 344280,
+          "probability": 0.99709
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Pete hands the basket to the Easter bunny.",
+      "startMs": 348980,
+      "endMs": 352880,
+      "avgLogprob": -0.115346,
+      "noSpeechProb": 0.015367,
+      "compressionRatio": 1.294737,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 348980,
+          "endMs": 349980,
+          "probability": 0.850859
+        },
+        {
+          "index": 2,
+          "text": "hands",
+          "startMs": 349980,
+          "endMs": 350500,
+          "probability": 0.896009
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 350500,
+          "endMs": 350820,
+          "probability": 0.990702
+        },
+        {
+          "index": 4,
+          "text": "basket",
+          "startMs": 350820,
+          "endMs": 351360,
+          "probability": 0.978684
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 351360,
+          "endMs": 351720,
+          "probability": 0.992496
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 351720,
+          "endMs": 351920,
+          "probability": 0.993288
+        },
+        {
+          "index": 7,
+          "text": "Easter",
+          "startMs": 351920,
+          "endMs": 352540,
+          "probability": 0.952838
+        },
+        {
+          "index": 8,
+          "text": "bunny.",
+          "startMs": 352540,
+          "endMs": 352880,
+          "probability": 0.126875
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "Happy Easter, Pete says. This one is just for you.",
+      "startMs": 354060,
+      "endMs": 359160,
+      "avgLogprob": -0.115346,
+      "noSpeechProb": 0.015367,
+      "compressionRatio": 1.294737,
+      "words": [
+        {
+          "index": 1,
+          "text": "Happy",
+          "startMs": 354060,
+          "endMs": 354420,
+          "probability": 0.201545
+        },
+        {
+          "index": 2,
+          "text": "Easter,",
+          "startMs": 354420,
+          "endMs": 355220,
+          "probability": 0.986808
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 355800,
+          "endMs": 355920,
+          "probability": 0.995764
+        },
+        {
+          "index": 4,
+          "text": "says.",
+          "startMs": 355920,
+          "endMs": 356420,
+          "probability": 0.99521
+        },
+        {
+          "index": 5,
+          "text": "This",
+          "startMs": 357000,
+          "endMs": 357320,
+          "probability": 0.977727
+        },
+        {
+          "index": 6,
+          "text": "one",
+          "startMs": 357320,
+          "endMs": 357580,
+          "probability": 0.995813
+        },
+        {
+          "index": 7,
+          "text": "is",
+          "startMs": 357580,
+          "endMs": 357820,
+          "probability": 0.996292
+        },
+        {
+          "index": 8,
+          "text": "just",
+          "startMs": 357820,
+          "endMs": 358220,
+          "probability": 0.997168
+        },
+        {
+          "index": 9,
+          "text": "for",
+          "startMs": 358220,
+          "endMs": 358620,
+          "probability": 0.999295
+        },
+        {
+          "index": 10,
+          "text": "you.",
+          "startMs": 358620,
+          "endMs": 359160,
+          "probability": 0.998953
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "The Easter bunny is so happy.",
+      "startMs": 360960,
+      "endMs": 363280,
+      "avgLogprob": -0.115346,
+      "noSpeechProb": 0.015367,
+      "compressionRatio": 1.294737,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 360960,
+          "endMs": 361480,
+          "probability": 0.964083
+        },
+        {
+          "index": 2,
+          "text": "Easter",
+          "startMs": 361480,
+          "endMs": 362040,
+          "probability": 0.992367
+        },
+        {
+          "index": 3,
+          "text": "bunny",
+          "startMs": 362040,
+          "endMs": 362360,
+          "probability": 0.717049
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 362360,
+          "endMs": 362680,
+          "probability": 0.998278
+        },
+        {
+          "index": 5,
+          "text": "so",
+          "startMs": 362680,
+          "endMs": 363160,
+          "probability": 0.99775
+        },
+        {
+          "index": 6,
+          "text": "happy.",
+          "startMs": 363160,
+          "endMs": 363660,
+          "probability": 0.994538
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "Thank you so much, everyone, he says, and gleefully eats a jelly bean from his first ever Easter basket.",
+      "startMs": 363660,
+      "endMs": 374660,
+      "avgLogprob": -0.093716,
+      "noSpeechProb": 0.20537,
+      "compressionRatio": 1.461538,
+      "words": [
+        {
+          "index": 1,
+          "text": "Thank",
+          "startMs": 363660,
+          "endMs": 365040,
+          "probability": 0.142676
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 365040,
+          "endMs": 365400,
+          "probability": 0.985376
+        },
+        {
+          "index": 3,
+          "text": "so",
+          "startMs": 365400,
+          "endMs": 365860,
+          "probability": 0.974985
+        },
+        {
+          "index": 4,
+          "text": "much,",
+          "startMs": 365860,
+          "endMs": 366420,
+          "probability": 0.994564
+        },
+        {
+          "index": 5,
+          "text": "everyone,",
+          "startMs": 366640,
+          "endMs": 367260,
+          "probability": 0.980574
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 367580,
+          "endMs": 367920,
+          "probability": 0.9004
+        },
+        {
+          "index": 7,
+          "text": "says,",
+          "startMs": 367920,
+          "endMs": 368360,
+          "probability": 0.987672
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 369040,
+          "endMs": 369140,
+          "probability": 0.974081
+        },
+        {
+          "index": 9,
+          "text": "gleefully",
+          "startMs": 369140,
+          "endMs": 369780,
+          "probability": 0.997932
+        },
+        {
+          "index": 10,
+          "text": "eats",
+          "startMs": 369780,
+          "endMs": 370280,
+          "probability": 0.993301
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 370280,
+          "endMs": 370480,
+          "probability": 0.994405
+        },
+        {
+          "index": 12,
+          "text": "jelly",
+          "startMs": 370480,
+          "endMs": 370900,
+          "probability": 0.824722
+        },
+        {
+          "index": 13,
+          "text": "bean",
+          "startMs": 370900,
+          "endMs": 371220,
+          "probability": 0.66289
+        },
+        {
+          "index": 14,
+          "text": "from",
+          "startMs": 371220,
+          "endMs": 371720,
+          "probability": 0.962481
+        },
+        {
+          "index": 15,
+          "text": "his",
+          "startMs": 371720,
+          "endMs": 372040,
+          "probability": 0.99802
+        },
+        {
+          "index": 16,
+          "text": "first",
+          "startMs": 372040,
+          "endMs": 372640,
+          "probability": 0.992387
+        },
+        {
+          "index": 17,
+          "text": "ever",
+          "startMs": 372640,
+          "endMs": 373420,
+          "probability": 0.607549
+        },
+        {
+          "index": 18,
+          "text": "Easter",
+          "startMs": 373420,
+          "endMs": 374060,
+          "probability": 0.970344
+        },
+        {
+          "index": 19,
+          "text": "basket.",
+          "startMs": 374060,
+          "endMs": 374660,
+          "probability": 0.78162
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "Pete and his friends promise to make the Easter bunny a basket every year from now on.",
+      "startMs": 376960,
+      "endMs": 384080,
+      "avgLogprob": -0.093716,
+      "noSpeechProb": 0.20537,
+      "compressionRatio": 1.461538,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 376960,
+          "endMs": 376980,
+          "probability": 0.93313
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 376980,
+          "endMs": 377200,
+          "probability": 0.995744
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 377200,
+          "endMs": 377600,
+          "probability": 0.998295
+        },
+        {
+          "index": 4,
+          "text": "friends",
+          "startMs": 377600,
+          "endMs": 377980,
+          "probability": 0.997178
+        },
+        {
+          "index": 5,
+          "text": "promise",
+          "startMs": 377980,
+          "endMs": 378480,
+          "probability": 0.890932
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 378480,
+          "endMs": 378820,
+          "probability": 0.998065
+        },
+        {
+          "index": 7,
+          "text": "make",
+          "startMs": 378820,
+          "endMs": 379040,
+          "probability": 0.998982
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 379040,
+          "endMs": 379280,
+          "probability": 0.99267
+        },
+        {
+          "index": 9,
+          "text": "Easter",
+          "startMs": 379280,
+          "endMs": 379740,
+          "probability": 0.995987
+        },
+        {
+          "index": 10,
+          "text": "bunny",
+          "startMs": 379740,
+          "endMs": 379980,
+          "probability": 0.599664
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 379980,
+          "endMs": 380240,
+          "probability": 0.99673
+        },
+        {
+          "index": 12,
+          "text": "basket",
+          "startMs": 380240,
+          "endMs": 380820,
+          "probability": 0.996991
+        },
+        {
+          "index": 13,
+          "text": "every",
+          "startMs": 380820,
+          "endMs": 381780,
+          "probability": 0.951021
+        },
+        {
+          "index": 14,
+          "text": "year",
+          "startMs": 381780,
+          "endMs": 382220,
+          "probability": 0.999028
+        },
+        {
+          "index": 15,
+          "text": "from",
+          "startMs": 382220,
+          "endMs": 382580,
+          "probability": 0.979665
+        },
+        {
+          "index": 16,
+          "text": "now",
+          "startMs": 382580,
+          "endMs": 383020,
+          "probability": 0.999458
+        },
+        {
+          "index": 17,
+          "text": "on.",
+          "startMs": 383020,
+          "endMs": 384080,
+          "probability": 0.995295
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Sharing is the sweetest gift of all.",
+      "startMs": 384880,
+      "endMs": 388440,
+      "avgLogprob": -0.093716,
+      "noSpeechProb": 0.20537,
+      "compressionRatio": 1.461538,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sharing",
+          "startMs": 384880,
+          "endMs": 385440,
+          "probability": 0.989049
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 385440,
+          "endMs": 385920,
+          "probability": 0.996064
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 385920,
+          "endMs": 386180,
+          "probability": 0.998703
+        },
+        {
+          "index": 4,
+          "text": "sweetest",
+          "startMs": 386180,
+          "endMs": 387140,
+          "probability": 0.996024
+        },
+        {
+          "index": 5,
+          "text": "gift",
+          "startMs": 387140,
+          "endMs": 387460,
+          "probability": 0.999505
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 387460,
+          "endMs": 387920,
+          "probability": 0.997757
+        },
+        {
+          "index": 7,
+          "text": "all.",
+          "startMs": 387920,
+          "endMs": 388440,
+          "probability": 0.998504
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "We hope you have enjoyed this recording of Pete the Cat and the Easter Basket Bandit.",
+      "startMs": 390940,
+      "endMs": 398540,
+      "avgLogprob": -0.115884,
+      "noSpeechProb": 0.574133,
+      "compressionRatio": 1.509554,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 390940,
+          "endMs": 391820,
+          "probability": 0.485538
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 391820,
+          "endMs": 392100,
+          "probability": 0.994909
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 392100,
+          "endMs": 392340,
+          "probability": 0.995713
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 392340,
+          "endMs": 392520,
+          "probability": 0.98747
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 392520,
+          "endMs": 392960,
+          "probability": 0.99778
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 392960,
+          "endMs": 393320,
+          "probability": 0.994763
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 393320,
+          "endMs": 393920,
+          "probability": 0.990814
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 393920,
+          "endMs": 394660,
+          "probability": 0.984986
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 394660,
+          "endMs": 395180,
+          "probability": 0.909798
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 395180,
+          "endMs": 395480,
+          "probability": 0.942961
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 395480,
+          "endMs": 395840,
+          "probability": 0.764896
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 395840,
+          "endMs": 396240,
+          "probability": 0.930407
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 396240,
+          "endMs": 396480,
+          "probability": 0.959724
+        },
+        {
+          "index": 14,
+          "text": "Easter",
+          "startMs": 396480,
+          "endMs": 397060,
+          "probability": 0.979713
+        },
+        {
+          "index": 15,
+          "text": "Basket",
+          "startMs": 397060,
+          "endMs": 397660,
+          "probability": 0.975471
+        },
+        {
+          "index": 16,
+          "text": "Bandit.",
+          "startMs": 397660,
+          "endMs": 398540,
+          "probability": 0.991405
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "Text copyright 2023 by Kimberly and James Dean.",
+      "startMs": 399280,
+      "endMs": 403540,
+      "avgLogprob": -0.115884,
+      "noSpeechProb": 0.574133,
+      "compressionRatio": 1.509554,
+      "words": [
+        {
+          "index": 1,
+          "text": "Text",
+          "startMs": 399280,
+          "endMs": 399440,
+          "probability": 0.699403
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 399440,
+          "endMs": 400060,
+          "probability": 0.572242
+        },
+        {
+          "index": 3,
+          "text": "2023",
+          "startMs": 400060,
+          "endMs": 401280,
+          "probability": 0.906128
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 401280,
+          "endMs": 401720,
+          "probability": 0.943153
+        },
+        {
+          "index": 5,
+          "text": "Kimberly",
+          "startMs": 401720,
+          "endMs": 402200,
+          "probability": 0.826085
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 402200,
+          "endMs": 402700,
+          "probability": 0.928593
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 402700,
+          "endMs": 403120,
+          "probability": 0.989585
+        },
+        {
+          "index": 8,
+          "text": "Dean.",
+          "startMs": 403120,
+          "endMs": 403540,
+          "probability": 0.67303
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "Illustrations copyright 2023 by James Dean.",
+      "startMs": 404820,
+      "endMs": 408560,
+      "avgLogprob": -0.115884,
+      "noSpeechProb": 0.574133,
+      "compressionRatio": 1.509554,
+      "words": [
+        {
+          "index": 1,
+          "text": "Illustrations",
+          "startMs": 404820,
+          "endMs": 405380,
+          "probability": 0.93432
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 405380,
+          "endMs": 405820,
+          "probability": 0.954069
+        },
+        {
+          "index": 3,
+          "text": "2023",
+          "startMs": 405820,
+          "endMs": 407260,
+          "probability": 0.997768
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 407260,
+          "endMs": 407660,
+          "probability": 0.993258
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 407660,
+          "endMs": 408120,
+          "probability": 0.997407
+        },
+        {
+          "index": 6,
+          "text": "Dean.",
+          "startMs": 408120,
+          "endMs": 408560,
+          "probability": 0.985018
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "Pete the Cat is a registered trademark of Pete the Cat LLC.",
+      "startMs": 409560,
+      "endMs": 413920,
+      "avgLogprob": -0.115884,
+      "noSpeechProb": 0.574133,
+      "compressionRatio": 1.509554,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 409560,
+          "endMs": 409660,
+          "probability": 0.984799
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 409660,
+          "endMs": 409880,
+          "probability": 0.980061
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 409880,
+          "endMs": 410160,
+          "probability": 0.970475
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 410160,
+          "endMs": 410660,
+          "probability": 0.991168
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 410660,
+          "endMs": 410860,
+          "probability": 0.996556
+        },
+        {
+          "index": 6,
+          "text": "registered",
+          "startMs": 410860,
+          "endMs": 411260,
+          "probability": 0.987523
+        },
+        {
+          "index": 7,
+          "text": "trademark",
+          "startMs": 411260,
+          "endMs": 411880,
+          "probability": 0.98851
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 411880,
+          "endMs": 412280,
+          "probability": 0.99644
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 412280,
+          "endMs": 412560,
+          "probability": 0.965435
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 412560,
+          "endMs": 412780,
+          "probability": 0.976607
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 412780,
+          "endMs": 413100,
+          "probability": 0.989894
+        },
+        {
+          "index": 12,
+          "text": "LLC.",
+          "startMs": 413100,
+          "endMs": 413920,
+          "probability": 0.698396
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "Production copyright 2023 by Harper Collins Publishers.",
+      "startMs": 414920,
+      "endMs": 418920,
+      "avgLogprob": -0.10637,
+      "noSpeechProb": 0.39157,
+      "compressionRatio": 1.019417,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 414920,
+          "endMs": 415400,
+          "probability": 0.044189
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 415400,
+          "endMs": 416260,
+          "probability": 0.65013
+        },
+        {
+          "index": 3,
+          "text": "2023",
+          "startMs": 416260,
+          "endMs": 417460,
+          "probability": 0.976417
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 417460,
+          "endMs": 417980,
+          "probability": 0.905502
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 417980,
+          "endMs": 418400,
+          "probability": 0.986544
+        },
+        {
+          "index": 6,
+          "text": "Collins",
+          "startMs": 418400,
+          "endMs": 418900,
+          "probability": 0.596721
+        },
+        {
+          "index": 7,
+          "text": "Publishers.",
+          "startMs": 418900,
+          "endMs": 419360,
+          "probability": 0.78464
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "This program was produced by John Marshall Media.",
+      "startMs": 420580,
+      "endMs": 423500,
+      "avgLogprob": -0.10637,
+      "noSpeechProb": 0.39157,
+      "compressionRatio": 1.019417,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 420580,
+          "endMs": 420660,
+          "probability": 0.98192
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 420660,
+          "endMs": 421120,
+          "probability": 0.943494
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 421120,
+          "endMs": 421420,
+          "probability": 0.995509
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 421420,
+          "endMs": 421840,
+          "probability": 0.997677
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 421840,
+          "endMs": 422260,
+          "probability": 0.997365
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 422260,
+          "endMs": 422700,
+          "probability": 0.974438
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 422700,
+          "endMs": 423120,
+          "probability": 0.977041
+        },
+        {
+          "index": 8,
+          "text": "Media.",
+          "startMs": 423120,
+          "endMs": 423500,
+          "probability": 0.941551
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4873 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 51.605,
+  "text": "Pete the Cat, Firefighter Pete, by James Dean, performed by James Foe. We are going on a class trip today, says Principal Nancy. She leads the class to a bright yellow bus. Everyone climbs on board. I wonder where we are going, says Pete. They are going to visit the firehouse today. The bus parks next to the bright red firehouse. Pete and his classmates are excited. The firehouse is huge. It's so big, it can hold two long red fire trucks and all of the firefighters' equipment. The firefighters show the kids around. They give everyone a turn to ring the old brass fire bell outside the firehouse. Ring! Then all the kids take turns sliding down the firefighters' pole. Weee! Callie yells as she glides down. The firefighters allow the kids to try on their gear. Firefighters wear a lot of equipment. First, Pete puts on the heavy black overalls. Then he steps into the tall black boots. A firefighter helps Pete put on the heavy yellow jacket. Finally, they place a hard black helmet on Pete's head. All this gear is very heavy. Pete can barely move. The firefighters allow the kids to explore one of the fire trucks. Callie sits in the driver's seat. She presses the horn. Burt! It's so loud that all the kids cover their ears. Then Pete turns on the sirens and lights. The sirens blare. Woo-ee, woo-ee! The lights flash red and yellow. Suddenly, a loud bell rings in the firehouse. Uh-oh! It's the fire alarm. There's a fire in town. Gear up, Pete! The firefighters scramble into their gear very quickly. Pete puts on his gear too. They all climb aboard the fire truck and turn on the siren and lights. Firefighter Pete and the firefighters are on their way. Woo-ee, woo-ee! The fire engine races through town and the lights flash round and round. A firefighter presses the horn. Burt! All the other cars move out of the way. There's the fire! It's hot and loud, but the firefighters know exactly what to do. They work together as a team to connect the fire truck to the fire hydrant. Then the firefighters also attach a long, heavy hose to the truck. Firefighter Pete gives the signal and the firefighters turn on the water. Whoosh! The water gushes out very fast. Several firefighters must hold the hose to control it. Pete helps direct the hose as they spray the fire with water. The fire is starting to go out. There is smoke everywhere. Suddenly, Pete hears yelling from the roof. Oh no! It's Grumpy Toad! He needs to be rescued. The firefighters raise a long ladder from the truck. Crank, crank, crank. The ladder goes up and up and up. Firefighter Pete and another firefighter help Grumpy Toad climb down the ladder carefully. Yay! The fire is out and everyone is safe. The firefighters drive back to the firehouse. They take off all their gear. They pat Pete on the back and say, good job Pete! Firefighter Pete helps save the day. We hope you have enjoyed this recording of Pete the Cat Firefighter Pete by James Dean. This program was produced by John Marshall Media. Text copyright 2018 by James Dean and Kimberly Dean. Art copyright 2018 by James Dean. Pete the Cat is a registered trademark of Pete the Cat LLC. Production copyright 2018 by HarperCollins Publishers. All rights reserved.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat, Firefighter Pete, by James Dean, performed by James Foe.",
+      "startMs": 0,
+      "endMs": 8540,
+      "avgLogprob": -0.251072,
+      "noSpeechProb": 0.043078,
+      "compressionRatio": 1.416667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 900,
+          "probability": 0.359964
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 900,
+          "endMs": 1200,
+          "probability": 0.914769
+        },
+        {
+          "index": 3,
+          "text": "Cat,",
+          "startMs": 1200,
+          "endMs": 1680,
+          "probability": 0.918308
+        },
+        {
+          "index": 4,
+          "text": "Firefighter",
+          "startMs": 2380,
+          "endMs": 3320,
+          "probability": 0.799185
+        },
+        {
+          "index": 5,
+          "text": "Pete,",
+          "startMs": 3320,
+          "endMs": 3900,
+          "probability": 0.997012
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 4800,
+          "endMs": 4880,
+          "probability": 0.933038
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 4880,
+          "endMs": 5480,
+          "probability": 0.994333
+        },
+        {
+          "index": 8,
+          "text": "Dean,",
+          "startMs": 5480,
+          "endMs": 5940,
+          "probability": 0.877509
+        },
+        {
+          "index": 9,
+          "text": "performed",
+          "startMs": 7140,
+          "endMs": 7280,
+          "probability": 0.983114
+        },
+        {
+          "index": 10,
+          "text": "by",
+          "startMs": 7280,
+          "endMs": 7760,
+          "probability": 0.999149
+        },
+        {
+          "index": 11,
+          "text": "James",
+          "startMs": 7760,
+          "endMs": 8240,
+          "probability": 0.998262
+        },
+        {
+          "index": 12,
+          "text": "Foe.",
+          "startMs": 8240,
+          "endMs": 8540,
+          "probability": 0.872345
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "We are going on a class trip today, says Principal Nancy.",
+      "startMs": 11240,
+      "endMs": 16280,
+      "avgLogprob": -0.251072,
+      "noSpeechProb": 0.043078,
+      "compressionRatio": 1.416667,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 11240,
+          "endMs": 12080,
+          "probability": 0.0789
+        },
+        {
+          "index": 2,
+          "text": "are",
+          "startMs": 12080,
+          "endMs": 12260,
+          "probability": 0.988247
+        },
+        {
+          "index": 3,
+          "text": "going",
+          "startMs": 12260,
+          "endMs": 12700,
+          "probability": 0.998028
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 12700,
+          "endMs": 12940,
+          "probability": 0.997836
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 12940,
+          "endMs": 13120,
+          "probability": 0.996236
+        },
+        {
+          "index": 6,
+          "text": "class",
+          "startMs": 13120,
+          "endMs": 13480,
+          "probability": 0.998132
+        },
+        {
+          "index": 7,
+          "text": "trip",
+          "startMs": 13480,
+          "endMs": 13860,
+          "probability": 0.993993
+        },
+        {
+          "index": 8,
+          "text": "today,",
+          "startMs": 13860,
+          "endMs": 14420,
+          "probability": 0.996775
+        },
+        {
+          "index": 9,
+          "text": "says",
+          "startMs": 15020,
+          "endMs": 15200,
+          "probability": 0.990738
+        },
+        {
+          "index": 10,
+          "text": "Principal",
+          "startMs": 15200,
+          "endMs": 15800,
+          "probability": 0.949628
+        },
+        {
+          "index": 11,
+          "text": "Nancy.",
+          "startMs": 15800,
+          "endMs": 16280,
+          "probability": 0.996927
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "She leads the class to a bright yellow bus.",
+      "startMs": 17320,
+      "endMs": 20160,
+      "avgLogprob": -0.251072,
+      "noSpeechProb": 0.043078,
+      "compressionRatio": 1.416667,
+      "words": [
+        {
+          "index": 1,
+          "text": "She",
+          "startMs": 17320,
+          "endMs": 17520,
+          "probability": 0.998151
+        },
+        {
+          "index": 2,
+          "text": "leads",
+          "startMs": 17520,
+          "endMs": 17840,
+          "probability": 0.998471
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 17840,
+          "endMs": 18100,
+          "probability": 0.998724
+        },
+        {
+          "index": 4,
+          "text": "class",
+          "startMs": 18100,
+          "endMs": 18400,
+          "probability": 0.998691
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 18400,
+          "endMs": 18720,
+          "probability": 0.998295
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 18720,
+          "endMs": 18880,
+          "probability": 0.996257
+        },
+        {
+          "index": 7,
+          "text": "bright",
+          "startMs": 18880,
+          "endMs": 19260,
+          "probability": 0.999238
+        },
+        {
+          "index": 8,
+          "text": "yellow",
+          "startMs": 19260,
+          "endMs": 19600,
+          "probability": 0.97043
+        },
+        {
+          "index": 9,
+          "text": "bus.",
+          "startMs": 19600,
+          "endMs": 20160,
+          "probability": 0.998652
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Everyone climbs on board.",
+      "startMs": 20980,
+      "endMs": 22720,
+      "avgLogprob": -0.251072,
+      "noSpeechProb": 0.043078,
+      "compressionRatio": 1.416667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Everyone",
+          "startMs": 20980,
+          "endMs": 21420,
+          "probability": 0.993055
+        },
+        {
+          "index": 2,
+          "text": "climbs",
+          "startMs": 21420,
+          "endMs": 22000,
+          "probability": 0.992833
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 22000,
+          "endMs": 22320,
+          "probability": 0.925625
+        },
+        {
+          "index": 4,
+          "text": "board.",
+          "startMs": 22320,
+          "endMs": 22720,
+          "probability": 0.994708
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "I wonder where we are going, says Pete.",
+      "startMs": 23780,
+      "endMs": 26840,
+      "avgLogprob": -0.251072,
+      "noSpeechProb": 0.043078,
+      "compressionRatio": 1.416667,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 23780,
+          "endMs": 24040,
+          "probability": 0.729884
+        },
+        {
+          "index": 2,
+          "text": "wonder",
+          "startMs": 24040,
+          "endMs": 24400,
+          "probability": 0.998811
+        },
+        {
+          "index": 3,
+          "text": "where",
+          "startMs": 24400,
+          "endMs": 24740,
+          "probability": 0.998592
+        },
+        {
+          "index": 4,
+          "text": "we",
+          "startMs": 24740,
+          "endMs": 24920,
+          "probability": 0.99766
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 24920,
+          "endMs": 25120,
+          "probability": 0.994459
+        },
+        {
+          "index": 6,
+          "text": "going,",
+          "startMs": 25120,
+          "endMs": 25700,
+          "probability": 0.998881
+        },
+        {
+          "index": 7,
+          "text": "says",
+          "startMs": 26000,
+          "endMs": 26300,
+          "probability": 0.997282
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 26300,
+          "endMs": 26840,
+          "probability": 0.997553
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "They are going to visit the firehouse today.",
+      "startMs": 28440,
+      "endMs": 32240,
+      "avgLogprob": -0.221586,
+      "noSpeechProb": 0.011245,
+      "compressionRatio": 1.503106,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 28440,
+          "endMs": 29200,
+          "probability": 0.28363
+        },
+        {
+          "index": 2,
+          "text": "are",
+          "startMs": 29200,
+          "endMs": 29380,
+          "probability": 0.981602
+        },
+        {
+          "index": 3,
+          "text": "going",
+          "startMs": 29380,
+          "endMs": 29860,
+          "probability": 0.995375
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 29860,
+          "endMs": 30160,
+          "probability": 0.996131
+        },
+        {
+          "index": 5,
+          "text": "visit",
+          "startMs": 30160,
+          "endMs": 30500,
+          "probability": 0.994461
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 30500,
+          "endMs": 30760,
+          "probability": 0.979016
+        },
+        {
+          "index": 7,
+          "text": "firehouse",
+          "startMs": 30760,
+          "endMs": 31660,
+          "probability": 0.70332
+        },
+        {
+          "index": 8,
+          "text": "today.",
+          "startMs": 31660,
+          "endMs": 32240,
+          "probability": 0.984882
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "The bus parks next to the bright red firehouse.",
+      "startMs": 33580,
+      "endMs": 36920,
+      "avgLogprob": -0.221586,
+      "noSpeechProb": 0.011245,
+      "compressionRatio": 1.503106,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 33580,
+          "endMs": 33600,
+          "probability": 0.901897
+        },
+        {
+          "index": 2,
+          "text": "bus",
+          "startMs": 33600,
+          "endMs": 33960,
+          "probability": 0.997171
+        },
+        {
+          "index": 3,
+          "text": "parks",
+          "startMs": 33960,
+          "endMs": 34380,
+          "probability": 0.979495
+        },
+        {
+          "index": 4,
+          "text": "next",
+          "startMs": 34380,
+          "endMs": 34760,
+          "probability": 0.996699
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 34760,
+          "endMs": 35060,
+          "probability": 0.99589
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 35060,
+          "endMs": 35220,
+          "probability": 0.992795
+        },
+        {
+          "index": 7,
+          "text": "bright",
+          "startMs": 35220,
+          "endMs": 35540,
+          "probability": 0.983456
+        },
+        {
+          "index": 8,
+          "text": "red",
+          "startMs": 35540,
+          "endMs": 35900,
+          "probability": 0.951325
+        },
+        {
+          "index": 9,
+          "text": "firehouse.",
+          "startMs": 35900,
+          "endMs": 36920,
+          "probability": 0.957308
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Pete and his classmates are excited.",
+      "startMs": 37720,
+      "endMs": 40100,
+      "avgLogprob": -0.221586,
+      "noSpeechProb": 0.011245,
+      "compressionRatio": 1.503106,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 37720,
+          "endMs": 37840,
+          "probability": 0.984532
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 37840,
+          "endMs": 38100,
+          "probability": 0.995666
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 38100,
+          "endMs": 38360,
+          "probability": 0.998672
+        },
+        {
+          "index": 4,
+          "text": "classmates",
+          "startMs": 38360,
+          "endMs": 38920,
+          "probability": 0.979443
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 38920,
+          "endMs": 39320,
+          "probability": 0.998846
+        },
+        {
+          "index": 6,
+          "text": "excited.",
+          "startMs": 39320,
+          "endMs": 40100,
+          "probability": 0.998225
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "The firehouse is huge.",
+      "startMs": 42240,
+      "endMs": 43840,
+      "avgLogprob": -0.221586,
+      "noSpeechProb": 0.011245,
+      "compressionRatio": 1.503106,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 42240,
+          "endMs": 42420,
+          "probability": 0.99264
+        },
+        {
+          "index": 2,
+          "text": "firehouse",
+          "startMs": 42420,
+          "endMs": 43280,
+          "probability": 0.966357
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 43280,
+          "endMs": 43680,
+          "probability": 0.998756
+        },
+        {
+          "index": 4,
+          "text": "huge.",
+          "startMs": 43680,
+          "endMs": 44060,
+          "probability": 0.990254
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "It's so big, it can hold two long red fire trucks and all of the firefighters' equipment.",
+      "startMs": 45300,
+      "endMs": 52500,
+      "avgLogprob": -0.221586,
+      "noSpeechProb": 0.011245,
+      "compressionRatio": 1.503106,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 45300,
+          "endMs": 45620,
+          "probability": 0.978995
+        },
+        {
+          "index": 2,
+          "text": "so",
+          "startMs": 45620,
+          "endMs": 45940,
+          "probability": 0.999265
+        },
+        {
+          "index": 3,
+          "text": "big,",
+          "startMs": 45940,
+          "endMs": 46480,
+          "probability": 0.998928
+        },
+        {
+          "index": 4,
+          "text": "it",
+          "startMs": 47000,
+          "endMs": 47080,
+          "probability": 0.991453
+        },
+        {
+          "index": 5,
+          "text": "can",
+          "startMs": 47080,
+          "endMs": 47280,
+          "probability": 0.998516
+        },
+        {
+          "index": 6,
+          "text": "hold",
+          "startMs": 47280,
+          "endMs": 47660,
+          "probability": 0.999041
+        },
+        {
+          "index": 7,
+          "text": "two",
+          "startMs": 47660,
+          "endMs": 48040,
+          "probability": 0.903577
+        },
+        {
+          "index": 8,
+          "text": "long",
+          "startMs": 48040,
+          "endMs": 48440,
+          "probability": 0.99641
+        },
+        {
+          "index": 9,
+          "text": "red",
+          "startMs": 48440,
+          "endMs": 48780,
+          "probability": 0.961089
+        },
+        {
+          "index": 10,
+          "text": "fire",
+          "startMs": 48780,
+          "endMs": 49260,
+          "probability": 0.994734
+        },
+        {
+          "index": 11,
+          "text": "trucks",
+          "startMs": 49260,
+          "endMs": 49640,
+          "probability": 0.684614
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 49640,
+          "endMs": 50300,
+          "probability": 0.846834
+        },
+        {
+          "index": 13,
+          "text": "all",
+          "startMs": 50300,
+          "endMs": 50740,
+          "probability": 0.998578
+        },
+        {
+          "index": 14,
+          "text": "of",
+          "startMs": 50740,
+          "endMs": 50940,
+          "probability": 0.980062
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 50940,
+          "endMs": 51140,
+          "probability": 0.997137
+        },
+        {
+          "index": 16,
+          "text": "firefighters'",
+          "startMs": 51140,
+          "endMs": 51760,
+          "probability": 0.760513
+        },
+        {
+          "index": 17,
+          "text": "equipment.",
+          "startMs": 52100,
+          "endMs": 52500,
+          "probability": 0.998596
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "The firefighters show the kids around.",
+      "startMs": 54200,
+      "endMs": 57260,
+      "avgLogprob": -0.152466,
+      "noSpeechProb": 0.01652,
+      "compressionRatio": 1.503268,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 54200,
+          "endMs": 55000,
+          "probability": 0.226463
+        },
+        {
+          "index": 2,
+          "text": "firefighters",
+          "startMs": 55000,
+          "endMs": 55640,
+          "probability": 0.910869
+        },
+        {
+          "index": 3,
+          "text": "show",
+          "startMs": 55640,
+          "endMs": 56160,
+          "probability": 0.986065
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 56160,
+          "endMs": 56380,
+          "probability": 0.996687
+        },
+        {
+          "index": 5,
+          "text": "kids",
+          "startMs": 56380,
+          "endMs": 56680,
+          "probability": 0.998008
+        },
+        {
+          "index": 6,
+          "text": "around.",
+          "startMs": 56680,
+          "endMs": 57260,
+          "probability": 0.996363
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "They give everyone a turn to ring the old brass fire bell outside the firehouse.",
+      "startMs": 58120,
+      "endMs": 63640,
+      "avgLogprob": -0.152466,
+      "noSpeechProb": 0.01652,
+      "compressionRatio": 1.503268,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 58120,
+          "endMs": 58140,
+          "probability": 0.975883
+        },
+        {
+          "index": 2,
+          "text": "give",
+          "startMs": 58140,
+          "endMs": 58380,
+          "probability": 0.99806
+        },
+        {
+          "index": 3,
+          "text": "everyone",
+          "startMs": 58380,
+          "endMs": 58940,
+          "probability": 0.99437
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 58940,
+          "endMs": 59180,
+          "probability": 0.995949
+        },
+        {
+          "index": 5,
+          "text": "turn",
+          "startMs": 59180,
+          "endMs": 59500,
+          "probability": 0.99894
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 59500,
+          "endMs": 59800,
+          "probability": 0.984183
+        },
+        {
+          "index": 7,
+          "text": "ring",
+          "startMs": 59800,
+          "endMs": 60000,
+          "probability": 0.994184
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 60000,
+          "endMs": 60200,
+          "probability": 0.994076
+        },
+        {
+          "index": 9,
+          "text": "old",
+          "startMs": 60200,
+          "endMs": 60600,
+          "probability": 0.982997
+        },
+        {
+          "index": 10,
+          "text": "brass",
+          "startMs": 60600,
+          "endMs": 60960,
+          "probability": 0.963935
+        },
+        {
+          "index": 11,
+          "text": "fire",
+          "startMs": 60960,
+          "endMs": 61480,
+          "probability": 0.986764
+        },
+        {
+          "index": 12,
+          "text": "bell",
+          "startMs": 61480,
+          "endMs": 61860,
+          "probability": 0.905004
+        },
+        {
+          "index": 13,
+          "text": "outside",
+          "startMs": 61860,
+          "endMs": 62480,
+          "probability": 0.984978
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 62480,
+          "endMs": 62800,
+          "probability": 0.99017
+        },
+        {
+          "index": 15,
+          "text": "firehouse.",
+          "startMs": 62800,
+          "endMs": 63640,
+          "probability": 0.869137
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Ring!",
+      "startMs": 64580,
+      "endMs": 64740,
+      "avgLogprob": -0.152466,
+      "noSpeechProb": 0.01652,
+      "compressionRatio": 1.503268,
+      "words": [
+        {
+          "index": 1,
+          "text": "Ring!",
+          "startMs": 64580,
+          "endMs": 64740,
+          "probability": 0.348578
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Then all the kids take turns sliding down the firefighters' pole.",
+      "startMs": 67020,
+      "endMs": 71940,
+      "avgLogprob": -0.152466,
+      "noSpeechProb": 0.01652,
+      "compressionRatio": 1.503268,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 67020,
+          "endMs": 67560,
+          "probability": 0.98399
+        },
+        {
+          "index": 2,
+          "text": "all",
+          "startMs": 67560,
+          "endMs": 67820,
+          "probability": 0.964984
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 67820,
+          "endMs": 68020,
+          "probability": 0.993857
+        },
+        {
+          "index": 4,
+          "text": "kids",
+          "startMs": 68020,
+          "endMs": 68360,
+          "probability": 0.9979
+        },
+        {
+          "index": 5,
+          "text": "take",
+          "startMs": 68360,
+          "endMs": 68740,
+          "probability": 0.995506
+        },
+        {
+          "index": 6,
+          "text": "turns",
+          "startMs": 68740,
+          "endMs": 69260,
+          "probability": 0.980086
+        },
+        {
+          "index": 7,
+          "text": "sliding",
+          "startMs": 69260,
+          "endMs": 69820,
+          "probability": 0.836777
+        },
+        {
+          "index": 8,
+          "text": "down",
+          "startMs": 69820,
+          "endMs": 70320,
+          "probability": 0.998328
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 70320,
+          "endMs": 70580,
+          "probability": 0.997973
+        },
+        {
+          "index": 10,
+          "text": "firefighters'",
+          "startMs": 70580,
+          "endMs": 71360,
+          "probability": 0.811935
+        },
+        {
+          "index": 11,
+          "text": "pole.",
+          "startMs": 71760,
+          "endMs": 71940,
+          "probability": 0.896199
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Weee!",
+      "startMs": 73200,
+      "endMs": 74000,
+      "avgLogprob": -0.152466,
+      "noSpeechProb": 0.01652,
+      "compressionRatio": 1.503268,
+      "words": [
+        {
+          "index": 1,
+          "text": "Weee!",
+          "startMs": 73200,
+          "endMs": 74000,
+          "probability": 0.321269
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Callie yells as she glides down.",
+      "startMs": 74420,
+      "endMs": 76960,
+      "avgLogprob": -0.152466,
+      "noSpeechProb": 0.01652,
+      "compressionRatio": 1.503268,
+      "words": [
+        {
+          "index": 1,
+          "text": "Callie",
+          "startMs": 74420,
+          "endMs": 74940,
+          "probability": 0.604875
+        },
+        {
+          "index": 2,
+          "text": "yells",
+          "startMs": 74940,
+          "endMs": 75280,
+          "probability": 0.985348
+        },
+        {
+          "index": 3,
+          "text": "as",
+          "startMs": 75280,
+          "endMs": 75600,
+          "probability": 0.989496
+        },
+        {
+          "index": 4,
+          "text": "she",
+          "startMs": 75600,
+          "endMs": 75900,
+          "probability": 0.997249
+        },
+        {
+          "index": 5,
+          "text": "glides",
+          "startMs": 75900,
+          "endMs": 76460,
+          "probability": 0.997172
+        },
+        {
+          "index": 6,
+          "text": "down.",
+          "startMs": 76460,
+          "endMs": 76960,
+          "probability": 0.99949
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "The firefighters allow the kids to try on their gear.",
+      "startMs": 78520,
+      "endMs": 82880,
+      "avgLogprob": -0.069856,
+      "noSpeechProb": 0.010095,
+      "compressionRatio": 1.577181,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 78520,
+          "endMs": 79440,
+          "probability": 0.584151
+        },
+        {
+          "index": 2,
+          "text": "firefighters",
+          "startMs": 79440,
+          "endMs": 80160,
+          "probability": 0.911506
+        },
+        {
+          "index": 3,
+          "text": "allow",
+          "startMs": 80160,
+          "endMs": 80740,
+          "probability": 0.990699
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 80740,
+          "endMs": 80980,
+          "probability": 0.9867
+        },
+        {
+          "index": 5,
+          "text": "kids",
+          "startMs": 80980,
+          "endMs": 81260,
+          "probability": 0.996648
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 81260,
+          "endMs": 81540,
+          "probability": 0.989249
+        },
+        {
+          "index": 7,
+          "text": "try",
+          "startMs": 81540,
+          "endMs": 81900,
+          "probability": 0.996198
+        },
+        {
+          "index": 8,
+          "text": "on",
+          "startMs": 81900,
+          "endMs": 82180,
+          "probability": 0.996026
+        },
+        {
+          "index": 9,
+          "text": "their",
+          "startMs": 82180,
+          "endMs": 82420,
+          "probability": 0.99495
+        },
+        {
+          "index": 10,
+          "text": "gear.",
+          "startMs": 82420,
+          "endMs": 82880,
+          "probability": 0.998574
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Firefighters wear a lot of equipment.",
+      "startMs": 83900,
+      "endMs": 86340,
+      "avgLogprob": -0.069856,
+      "noSpeechProb": 0.010095,
+      "compressionRatio": 1.577181,
+      "words": [
+        {
+          "index": 1,
+          "text": "Firefighters",
+          "startMs": 83900,
+          "endMs": 84560,
+          "probability": 0.976905
+        },
+        {
+          "index": 2,
+          "text": "wear",
+          "startMs": 84560,
+          "endMs": 84900,
+          "probability": 0.986627
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 84900,
+          "endMs": 85100,
+          "probability": 0.989768
+        },
+        {
+          "index": 4,
+          "text": "lot",
+          "startMs": 85100,
+          "endMs": 85560,
+          "probability": 0.990693
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 85560,
+          "endMs": 85760,
+          "probability": 0.997997
+        },
+        {
+          "index": 6,
+          "text": "equipment.",
+          "startMs": 85760,
+          "endMs": 86340,
+          "probability": 0.997897
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "First, Pete puts on the heavy black overalls.",
+      "startMs": 88760,
+      "endMs": 92960,
+      "avgLogprob": -0.069856,
+      "noSpeechProb": 0.010095,
+      "compressionRatio": 1.577181,
+      "words": [
+        {
+          "index": 1,
+          "text": "First,",
+          "startMs": 88760,
+          "endMs": 89180,
+          "probability": 0.987403
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 89960,
+          "endMs": 89980,
+          "probability": 0.991384
+        },
+        {
+          "index": 3,
+          "text": "puts",
+          "startMs": 89980,
+          "endMs": 90400,
+          "probability": 0.991426
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 90400,
+          "endMs": 90740,
+          "probability": 0.998094
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 90740,
+          "endMs": 91040,
+          "probability": 0.996133
+        },
+        {
+          "index": 6,
+          "text": "heavy",
+          "startMs": 91040,
+          "endMs": 91540,
+          "probability": 0.982419
+        },
+        {
+          "index": 7,
+          "text": "black",
+          "startMs": 91540,
+          "endMs": 92020,
+          "probability": 0.941078
+        },
+        {
+          "index": 8,
+          "text": "overalls.",
+          "startMs": 92020,
+          "endMs": 92960,
+          "probability": 0.992708
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Then he steps into the tall black boots.",
+      "startMs": 93960,
+      "endMs": 97640,
+      "avgLogprob": -0.069856,
+      "noSpeechProb": 0.010095,
+      "compressionRatio": 1.577181,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 93960,
+          "endMs": 94440,
+          "probability": 0.994837
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 94440,
+          "endMs": 95060,
+          "probability": 0.514997
+        },
+        {
+          "index": 3,
+          "text": "steps",
+          "startMs": 95060,
+          "endMs": 95420,
+          "probability": 0.995973
+        },
+        {
+          "index": 4,
+          "text": "into",
+          "startMs": 95420,
+          "endMs": 95880,
+          "probability": 0.991475
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 95880,
+          "endMs": 96080,
+          "probability": 0.998539
+        },
+        {
+          "index": 6,
+          "text": "tall",
+          "startMs": 96080,
+          "endMs": 96560,
+          "probability": 0.999073
+        },
+        {
+          "index": 7,
+          "text": "black",
+          "startMs": 96560,
+          "endMs": 97020,
+          "probability": 0.947951
+        },
+        {
+          "index": 8,
+          "text": "boots.",
+          "startMs": 97020,
+          "endMs": 97640,
+          "probability": 0.999106
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "A firefighter helps Pete put on the heavy yellow jacket.",
+      "startMs": 99540,
+      "endMs": 104400,
+      "avgLogprob": -0.069856,
+      "noSpeechProb": 0.010095,
+      "compressionRatio": 1.577181,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 99540,
+          "endMs": 100180,
+          "probability": 0.995562
+        },
+        {
+          "index": 2,
+          "text": "firefighter",
+          "startMs": 100180,
+          "endMs": 100880,
+          "probability": 0.996844
+        },
+        {
+          "index": 3,
+          "text": "helps",
+          "startMs": 100880,
+          "endMs": 101420,
+          "probability": 0.993137
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 101420,
+          "endMs": 101760,
+          "probability": 0.995495
+        },
+        {
+          "index": 5,
+          "text": "put",
+          "startMs": 101760,
+          "endMs": 102060,
+          "probability": 0.996835
+        },
+        {
+          "index": 6,
+          "text": "on",
+          "startMs": 102060,
+          "endMs": 102400,
+          "probability": 0.998367
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 102400,
+          "endMs": 102720,
+          "probability": 0.997185
+        },
+        {
+          "index": 8,
+          "text": "heavy",
+          "startMs": 102720,
+          "endMs": 103260,
+          "probability": 0.996739
+        },
+        {
+          "index": 9,
+          "text": "yellow",
+          "startMs": 103260,
+          "endMs": 103760,
+          "probability": 0.98835
+        },
+        {
+          "index": 10,
+          "text": "jacket.",
+          "startMs": 103760,
+          "endMs": 104400,
+          "probability": 0.999191
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Finally, they place a hard black helmet on Pete's head.",
+      "startMs": 105300,
+      "endMs": 110380,
+      "avgLogprob": -0.063536,
+      "noSpeechProb": 0.007803,
+      "compressionRatio": 3.125714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Finally,",
+          "startMs": 105300,
+          "endMs": 106100,
+          "probability": 0.666602
+        },
+        {
+          "index": 2,
+          "text": "they",
+          "startMs": 107060,
+          "endMs": 107100,
+          "probability": 0.980353
+        },
+        {
+          "index": 3,
+          "text": "place",
+          "startMs": 107100,
+          "endMs": 107480,
+          "probability": 0.978411
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 107480,
+          "endMs": 107800,
+          "probability": 0.992741
+        },
+        {
+          "index": 5,
+          "text": "hard",
+          "startMs": 107800,
+          "endMs": 108240,
+          "probability": 0.996113
+        },
+        {
+          "index": 6,
+          "text": "black",
+          "startMs": 108240,
+          "endMs": 108640,
+          "probability": 0.784826
+        },
+        {
+          "index": 7,
+          "text": "helmet",
+          "startMs": 108640,
+          "endMs": 109180,
+          "probability": 0.998869
+        },
+        {
+          "index": 8,
+          "text": "on",
+          "startMs": 109180,
+          "endMs": 109580,
+          "probability": 0.99543
+        },
+        {
+          "index": 9,
+          "text": "Pete's",
+          "startMs": 109580,
+          "endMs": 110040,
+          "probability": 0.969928
+        },
+        {
+          "index": 10,
+          "text": "head.",
+          "startMs": 110040,
+          "endMs": 110380,
+          "probability": 0.994935
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "All this gear is very heavy.",
+      "startMs": 112560,
+      "endMs": 115020,
+      "avgLogprob": -0.063536,
+      "noSpeechProb": 0.007803,
+      "compressionRatio": 3.125714,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 112560,
+          "endMs": 112740,
+          "probability": 0.169008
+        },
+        {
+          "index": 2,
+          "text": "this",
+          "startMs": 112740,
+          "endMs": 113080,
+          "probability": 0.98761
+        },
+        {
+          "index": 3,
+          "text": "gear",
+          "startMs": 113080,
+          "endMs": 113460,
+          "probability": 0.998228
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 113460,
+          "endMs": 113760,
+          "probability": 0.997883
+        },
+        {
+          "index": 5,
+          "text": "very",
+          "startMs": 113760,
+          "endMs": 114340,
+          "probability": 0.994736
+        },
+        {
+          "index": 6,
+          "text": "heavy.",
+          "startMs": 114340,
+          "endMs": 115020,
+          "probability": 0.996879
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Pete can barely move.",
+      "startMs": 115860,
+      "endMs": 117660,
+      "avgLogprob": -0.063536,
+      "noSpeechProb": 0.007803,
+      "compressionRatio": 3.125714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 115860,
+          "endMs": 116020,
+          "probability": 0.997107
+        },
+        {
+          "index": 2,
+          "text": "can",
+          "startMs": 116020,
+          "endMs": 116380,
+          "probability": 0.998287
+        },
+        {
+          "index": 3,
+          "text": "barely",
+          "startMs": 116380,
+          "endMs": 116900,
+          "probability": 0.998544
+        },
+        {
+          "index": 4,
+          "text": "move.",
+          "startMs": 116900,
+          "endMs": 117660,
+          "probability": 0.998709
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "The firefighters allow the kids to explore one of the fire trucks.",
+      "startMs": 119500,
+      "endMs": 124620,
+      "avgLogprob": -0.063536,
+      "noSpeechProb": 0.007803,
+      "compressionRatio": 3.125714,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 119500,
+          "endMs": 120200,
+          "probability": 0.994705
+        },
+        {
+          "index": 2,
+          "text": "firefighters",
+          "startMs": 120200,
+          "endMs": 120860,
+          "probability": 0.90822
+        },
+        {
+          "index": 3,
+          "text": "allow",
+          "startMs": 120860,
+          "endMs": 121520,
+          "probability": 0.992964
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 121520,
+          "endMs": 121800,
+          "probability": 0.994521
+        },
+        {
+          "index": 5,
+          "text": "kids",
+          "startMs": 121800,
+          "endMs": 122100,
+          "probability": 0.998284
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 122100,
+          "endMs": 122400,
+          "probability": 0.997282
+        },
+        {
+          "index": 7,
+          "text": "explore",
+          "startMs": 122400,
+          "endMs": 123040,
+          "probability": 0.998509
+        },
+        {
+          "index": 8,
+          "text": "one",
+          "startMs": 123040,
+          "endMs": 123380,
+          "probability": 0.995961
+        },
+        {
+          "index": 9,
+          "text": "of",
+          "startMs": 123380,
+          "endMs": 123580,
+          "probability": 0.99815
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 123580,
+          "endMs": 123700,
+          "probability": 0.998747
+        },
+        {
+          "index": 11,
+          "text": "fire",
+          "startMs": 123700,
+          "endMs": 124120,
+          "probability": 0.995458
+        },
+        {
+          "index": 12,
+          "text": "trucks.",
+          "startMs": 124120,
+          "endMs": 124620,
+          "probability": 0.641819
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Callie sits in the driver's seat.",
+      "startMs": 125800,
+      "endMs": 127620,
+      "avgLogprob": -0.063536,
+      "noSpeechProb": 0.007803,
+      "compressionRatio": 3.125714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Callie",
+          "startMs": 125800,
+          "endMs": 125980,
+          "probability": 0.759249
+        },
+        {
+          "index": 2,
+          "text": "sits",
+          "startMs": 125980,
+          "endMs": 126280,
+          "probability": 0.993522
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 126280,
+          "endMs": 126540,
+          "probability": 0.994196
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 126540,
+          "endMs": 126680,
+          "probability": 0.996797
+        },
+        {
+          "index": 5,
+          "text": "driver's",
+          "startMs": 126680,
+          "endMs": 127340,
+          "probability": 0.971565
+        },
+        {
+          "index": 6,
+          "text": "seat.",
+          "startMs": 127340,
+          "endMs": 127620,
+          "probability": 0.998948
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "She presses the horn.",
+      "startMs": 128380,
+      "endMs": 129800,
+      "avgLogprob": -0.063536,
+      "noSpeechProb": 0.007803,
+      "compressionRatio": 3.125714,
+      "words": [
+        {
+          "index": 1,
+          "text": "She",
+          "startMs": 128380,
+          "endMs": 128520,
+          "probability": 0.996865
+        },
+        {
+          "index": 2,
+          "text": "presses",
+          "startMs": 128520,
+          "endMs": 128940,
+          "probability": 0.997838
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 128940,
+          "endMs": 129320,
+          "probability": 0.998597
+        },
+        {
+          "index": 4,
+          "text": "horn.",
+          "startMs": 129320,
+          "endMs": 129800,
+          "probability": 0.998447
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Burt!",
+      "startMs": 130880,
+      "endMs": 131720,
+      "avgLogprob": -0.196439,
+      "noSpeechProb": 0.039017,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Burt!",
+          "startMs": 130880,
+          "endMs": 131720,
+          "probability": 0.10247
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "It's so loud that all the kids cover their ears.",
+      "startMs": 133380,
+      "endMs": 137020,
+      "avgLogprob": -0.196439,
+      "noSpeechProb": 0.039017,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 133380,
+          "endMs": 133720,
+          "probability": 0.896241
+        },
+        {
+          "index": 2,
+          "text": "so",
+          "startMs": 133720,
+          "endMs": 133980,
+          "probability": 0.996905
+        },
+        {
+          "index": 3,
+          "text": "loud",
+          "startMs": 133980,
+          "endMs": 134440,
+          "probability": 0.999039
+        },
+        {
+          "index": 4,
+          "text": "that",
+          "startMs": 134440,
+          "endMs": 134700,
+          "probability": 0.936732
+        },
+        {
+          "index": 5,
+          "text": "all",
+          "startMs": 134700,
+          "endMs": 135120,
+          "probability": 0.990585
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 135120,
+          "endMs": 135340,
+          "probability": 0.960545
+        },
+        {
+          "index": 7,
+          "text": "kids",
+          "startMs": 135340,
+          "endMs": 135680,
+          "probability": 0.997279
+        },
+        {
+          "index": 8,
+          "text": "cover",
+          "startMs": 135680,
+          "endMs": 136140,
+          "probability": 0.994097
+        },
+        {
+          "index": 9,
+          "text": "their",
+          "startMs": 136140,
+          "endMs": 136480,
+          "probability": 0.995654
+        },
+        {
+          "index": 10,
+          "text": "ears.",
+          "startMs": 136480,
+          "endMs": 137020,
+          "probability": 0.99861
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Then Pete turns on the sirens and lights.",
+      "startMs": 139540,
+      "endMs": 142640,
+      "avgLogprob": -0.196439,
+      "noSpeechProb": 0.039017,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 139540,
+          "endMs": 139660,
+          "probability": 0.9728
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 139660,
+          "endMs": 140020,
+          "probability": 0.969279
+        },
+        {
+          "index": 3,
+          "text": "turns",
+          "startMs": 140020,
+          "endMs": 140440,
+          "probability": 0.997069
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 140440,
+          "endMs": 140820,
+          "probability": 0.996303
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 140820,
+          "endMs": 141140,
+          "probability": 0.979048
+        },
+        {
+          "index": 6,
+          "text": "sirens",
+          "startMs": 141140,
+          "endMs": 141740,
+          "probability": 0.964422
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 141740,
+          "endMs": 142100,
+          "probability": 0.991981
+        },
+        {
+          "index": 8,
+          "text": "lights.",
+          "startMs": 142100,
+          "endMs": 142640,
+          "probability": 0.994534
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "The sirens blare.",
+      "startMs": 143280,
+      "endMs": 144940,
+      "avgLogprob": -0.196439,
+      "noSpeechProb": 0.039017,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 143280,
+          "endMs": 143500,
+          "probability": 0.979761
+        },
+        {
+          "index": 2,
+          "text": "sirens",
+          "startMs": 143500,
+          "endMs": 144140,
+          "probability": 0.9896
+        },
+        {
+          "index": 3,
+          "text": "blare.",
+          "startMs": 144140,
+          "endMs": 144940,
+          "probability": 0.975529
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Woo-ee, woo-ee!",
+      "startMs": 145760,
+      "endMs": 148000,
+      "avgLogprob": -0.196439,
+      "noSpeechProb": 0.039017,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Woo",
+          "startMs": 145760,
+          "endMs": 145900,
+          "probability": 0.45303
+        },
+        {
+          "index": 2,
+          "text": "-ee,",
+          "startMs": 145900,
+          "endMs": 146540,
+          "probability": 0.388802
+        },
+        {
+          "index": 3,
+          "text": "woo",
+          "startMs": 146820,
+          "endMs": 147080,
+          "probability": 0.799598
+        },
+        {
+          "index": 4,
+          "text": "-ee!",
+          "startMs": 147080,
+          "endMs": 148000,
+          "probability": 0.993869
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "The lights flash red and yellow.",
+      "startMs": 149020,
+      "endMs": 151700,
+      "avgLogprob": -0.196439,
+      "noSpeechProb": 0.039017,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 149020,
+          "endMs": 149700,
+          "probability": 0.984902
+        },
+        {
+          "index": 2,
+          "text": "lights",
+          "startMs": 149700,
+          "endMs": 150100,
+          "probability": 0.994575
+        },
+        {
+          "index": 3,
+          "text": "flash",
+          "startMs": 150100,
+          "endMs": 150480,
+          "probability": 0.997571
+        },
+        {
+          "index": 4,
+          "text": "red",
+          "startMs": 150480,
+          "endMs": 150920,
+          "probability": 0.995619
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 150920,
+          "endMs": 151220,
+          "probability": 0.997114
+        },
+        {
+          "index": 6,
+          "text": "yellow.",
+          "startMs": 151220,
+          "endMs": 151700,
+          "probability": 0.998851
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Suddenly, a loud bell rings in the firehouse.",
+      "startMs": 153900,
+      "endMs": 157940,
+      "avgLogprob": -0.196439,
+      "noSpeechProb": 0.039017,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Suddenly,",
+          "startMs": 153900,
+          "endMs": 154640,
+          "probability": 0.997213
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 155300,
+          "endMs": 155520,
+          "probability": 0.991681
+        },
+        {
+          "index": 3,
+          "text": "loud",
+          "startMs": 155520,
+          "endMs": 155900,
+          "probability": 0.9995
+        },
+        {
+          "index": 4,
+          "text": "bell",
+          "startMs": 155900,
+          "endMs": 156320,
+          "probability": 0.997054
+        },
+        {
+          "index": 5,
+          "text": "rings",
+          "startMs": 156320,
+          "endMs": 156680,
+          "probability": 0.996552
+        },
+        {
+          "index": 6,
+          "text": "in",
+          "startMs": 156680,
+          "endMs": 156920,
+          "probability": 0.995952
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 156920,
+          "endMs": 157080,
+          "probability": 0.99701
+        },
+        {
+          "index": 8,
+          "text": "firehouse.",
+          "startMs": 157080,
+          "endMs": 157940,
+          "probability": 0.895127
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Uh-oh!",
+      "startMs": 158940,
+      "endMs": 159660,
+      "avgLogprob": -0.086813,
+      "noSpeechProb": 0.017402,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "Uh",
+          "startMs": 158850,
+          "endMs": 159280,
+          "probability": 0.465146
+        },
+        {
+          "index": 2,
+          "text": "-oh!",
+          "startMs": 159280,
+          "endMs": 159660,
+          "probability": 0.7449
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "It's the fire alarm.",
+      "startMs": 160200,
+      "endMs": 161700,
+      "avgLogprob": -0.086813,
+      "noSpeechProb": 0.017402,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 160200,
+          "endMs": 160560,
+          "probability": 0.97793
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 160560,
+          "endMs": 160740,
+          "probability": 0.993942
+        },
+        {
+          "index": 3,
+          "text": "fire",
+          "startMs": 160740,
+          "endMs": 161240,
+          "probability": 0.942264
+        },
+        {
+          "index": 4,
+          "text": "alarm.",
+          "startMs": 161240,
+          "endMs": 161700,
+          "probability": 0.996424
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "There's a fire in town.",
+      "startMs": 162520,
+      "endMs": 164440,
+      "avgLogprob": -0.086813,
+      "noSpeechProb": 0.017402,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "There's",
+          "startMs": 162520,
+          "endMs": 162880,
+          "probability": 0.983148
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 162880,
+          "endMs": 163080,
+          "probability": 0.996645
+        },
+        {
+          "index": 3,
+          "text": "fire",
+          "startMs": 163080,
+          "endMs": 163560,
+          "probability": 0.980009
+        },
+        {
+          "index": 4,
+          "text": "in",
+          "startMs": 163560,
+          "endMs": 163980,
+          "probability": 0.998235
+        },
+        {
+          "index": 5,
+          "text": "town.",
+          "startMs": 163980,
+          "endMs": 164440,
+          "probability": 0.992275
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Gear up, Pete!",
+      "startMs": 165640,
+      "endMs": 166580,
+      "avgLogprob": -0.086813,
+      "noSpeechProb": 0.017402,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "Gear",
+          "startMs": 165640,
+          "endMs": 165860,
+          "probability": 0.6918
+        },
+        {
+          "index": 2,
+          "text": "up,",
+          "startMs": 165860,
+          "endMs": 166320,
+          "probability": 0.985503
+        },
+        {
+          "index": 3,
+          "text": "Pete!",
+          "startMs": 166480,
+          "endMs": 166580,
+          "probability": 0.988052
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "The firefighters scramble into their gear very quickly.",
+      "startMs": 167360,
+      "endMs": 171120,
+      "avgLogprob": -0.086813,
+      "noSpeechProb": 0.017402,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 167360,
+          "endMs": 167640,
+          "probability": 0.981768
+        },
+        {
+          "index": 2,
+          "text": "firefighters",
+          "startMs": 167640,
+          "endMs": 168340,
+          "probability": 0.926677
+        },
+        {
+          "index": 3,
+          "text": "scramble",
+          "startMs": 168340,
+          "endMs": 169000,
+          "probability": 0.997142
+        },
+        {
+          "index": 4,
+          "text": "into",
+          "startMs": 169000,
+          "endMs": 169440,
+          "probability": 0.990043
+        },
+        {
+          "index": 5,
+          "text": "their",
+          "startMs": 169440,
+          "endMs": 169640,
+          "probability": 0.99177
+        },
+        {
+          "index": 6,
+          "text": "gear",
+          "startMs": 169640,
+          "endMs": 169940,
+          "probability": 0.998514
+        },
+        {
+          "index": 7,
+          "text": "very",
+          "startMs": 169940,
+          "endMs": 170480,
+          "probability": 0.992583
+        },
+        {
+          "index": 8,
+          "text": "quickly.",
+          "startMs": 170480,
+          "endMs": 171120,
+          "probability": 0.998976
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Pete puts on his gear too.",
+      "startMs": 171980,
+      "endMs": 173980,
+      "avgLogprob": -0.086813,
+      "noSpeechProb": 0.017402,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 171980,
+          "endMs": 172140,
+          "probability": 0.998066
+        },
+        {
+          "index": 2,
+          "text": "puts",
+          "startMs": 172140,
+          "endMs": 172440,
+          "probability": 0.994136
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 172440,
+          "endMs": 172760,
+          "probability": 0.995198
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 172760,
+          "endMs": 173120,
+          "probability": 0.998413
+        },
+        {
+          "index": 5,
+          "text": "gear",
+          "startMs": 173120,
+          "endMs": 173460,
+          "probability": 0.999241
+        },
+        {
+          "index": 6,
+          "text": "too.",
+          "startMs": 173460,
+          "endMs": 173980,
+          "probability": 0.609379
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "They all climb aboard the fire truck and turn on the siren and lights.",
+      "startMs": 175720,
+      "endMs": 181300,
+      "avgLogprob": -0.086813,
+      "noSpeechProb": 0.017402,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 175720,
+          "endMs": 176340,
+          "probability": 0.993677
+        },
+        {
+          "index": 2,
+          "text": "all",
+          "startMs": 176340,
+          "endMs": 176600,
+          "probability": 0.99769
+        },
+        {
+          "index": 3,
+          "text": "climb",
+          "startMs": 176600,
+          "endMs": 176920,
+          "probability": 0.998026
+        },
+        {
+          "index": 4,
+          "text": "aboard",
+          "startMs": 176920,
+          "endMs": 177320,
+          "probability": 0.993958
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 177320,
+          "endMs": 177560,
+          "probability": 0.996701
+        },
+        {
+          "index": 6,
+          "text": "fire",
+          "startMs": 177560,
+          "endMs": 177940,
+          "probability": 0.995574
+        },
+        {
+          "index": 7,
+          "text": "truck",
+          "startMs": 177940,
+          "endMs": 178320,
+          "probability": 0.742058
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 178320,
+          "endMs": 178940,
+          "probability": 0.894085
+        },
+        {
+          "index": 9,
+          "text": "turn",
+          "startMs": 178940,
+          "endMs": 179340,
+          "probability": 0.998347
+        },
+        {
+          "index": 10,
+          "text": "on",
+          "startMs": 179340,
+          "endMs": 179700,
+          "probability": 0.99682
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 179700,
+          "endMs": 179960,
+          "probability": 0.990024
+        },
+        {
+          "index": 12,
+          "text": "siren",
+          "startMs": 179960,
+          "endMs": 180560,
+          "probability": 0.975895
+        },
+        {
+          "index": 13,
+          "text": "and",
+          "startMs": 180560,
+          "endMs": 180840,
+          "probability": 0.995076
+        },
+        {
+          "index": 14,
+          "text": "lights.",
+          "startMs": 180840,
+          "endMs": 181300,
+          "probability": 0.997737
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Firefighter Pete and the firefighters are on their way.",
+      "startMs": 182380,
+      "endMs": 186500,
+      "avgLogprob": -0.086813,
+      "noSpeechProb": 0.017402,
+      "compressionRatio": 1.604651,
+      "words": [
+        {
+          "index": 1,
+          "text": "Firefighter",
+          "startMs": 182380,
+          "endMs": 183000,
+          "probability": 0.953964
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 183000,
+          "endMs": 183440,
+          "probability": 0.998016
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 183440,
+          "endMs": 183680,
+          "probability": 0.995543
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 183680,
+          "endMs": 183920,
+          "probability": 0.987759
+        },
+        {
+          "index": 5,
+          "text": "firefighters",
+          "startMs": 183920,
+          "endMs": 184560,
+          "probability": 0.977185
+        },
+        {
+          "index": 6,
+          "text": "are",
+          "startMs": 184560,
+          "endMs": 185120,
+          "probability": 0.996116
+        },
+        {
+          "index": 7,
+          "text": "on",
+          "startMs": 185120,
+          "endMs": 185560,
+          "probability": 0.996681
+        },
+        {
+          "index": 8,
+          "text": "their",
+          "startMs": 185560,
+          "endMs": 185960,
+          "probability": 0.996889
+        },
+        {
+          "index": 9,
+          "text": "way.",
+          "startMs": 185960,
+          "endMs": 186500,
+          "probability": 0.999205
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Woo-ee, woo-ee!",
+      "startMs": 188940,
+      "endMs": 192020,
+      "avgLogprob": -0.076991,
+      "noSpeechProb": 0.00966,
+      "compressionRatio": 1.383459,
+      "words": [
+        {
+          "index": 1,
+          "text": "Woo",
+          "startMs": 188740,
+          "endMs": 189260,
+          "probability": 0.28444
+        },
+        {
+          "index": 2,
+          "text": "-ee,",
+          "startMs": 189260,
+          "endMs": 190120,
+          "probability": 0.321149
+        },
+        {
+          "index": 3,
+          "text": "woo",
+          "startMs": 190600,
+          "endMs": 190900,
+          "probability": 0.809399
+        },
+        {
+          "index": 4,
+          "text": "-ee!",
+          "startMs": 190900,
+          "endMs": 192020,
+          "probability": 0.993988
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "The fire engine races through town and the lights flash round and round.",
+      "startMs": 192720,
+      "endMs": 198760,
+      "avgLogprob": -0.076991,
+      "noSpeechProb": 0.00966,
+      "compressionRatio": 1.383459,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 192720,
+          "endMs": 192740,
+          "probability": 0.829786
+        },
+        {
+          "index": 2,
+          "text": "fire",
+          "startMs": 192740,
+          "endMs": 193340,
+          "probability": 0.969167
+        },
+        {
+          "index": 3,
+          "text": "engine",
+          "startMs": 193340,
+          "endMs": 193880,
+          "probability": 0.979696
+        },
+        {
+          "index": 4,
+          "text": "races",
+          "startMs": 193880,
+          "endMs": 194380,
+          "probability": 0.990447
+        },
+        {
+          "index": 5,
+          "text": "through",
+          "startMs": 194380,
+          "endMs": 194840,
+          "probability": 0.985941
+        },
+        {
+          "index": 6,
+          "text": "town",
+          "startMs": 194840,
+          "endMs": 195340,
+          "probability": 0.99286
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 195340,
+          "endMs": 196000,
+          "probability": 0.541812
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 196000,
+          "endMs": 196200,
+          "probability": 0.993264
+        },
+        {
+          "index": 9,
+          "text": "lights",
+          "startMs": 196200,
+          "endMs": 196720,
+          "probability": 0.992598
+        },
+        {
+          "index": 10,
+          "text": "flash",
+          "startMs": 196720,
+          "endMs": 197220,
+          "probability": 0.996542
+        },
+        {
+          "index": 11,
+          "text": "round",
+          "startMs": 197220,
+          "endMs": 197820,
+          "probability": 0.979553
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 197820,
+          "endMs": 198200,
+          "probability": 0.994151
+        },
+        {
+          "index": 13,
+          "text": "round.",
+          "startMs": 198200,
+          "endMs": 198760,
+          "probability": 0.998032
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "A firefighter presses the horn.",
+      "startMs": 201000,
+      "endMs": 203280,
+      "avgLogprob": -0.076991,
+      "noSpeechProb": 0.00966,
+      "compressionRatio": 1.383459,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 201000,
+          "endMs": 201160,
+          "probability": 0.976363
+        },
+        {
+          "index": 2,
+          "text": "firefighter",
+          "startMs": 201160,
+          "endMs": 201860,
+          "probability": 0.891103
+        },
+        {
+          "index": 3,
+          "text": "presses",
+          "startMs": 201860,
+          "endMs": 202460,
+          "probability": 0.994827
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 202460,
+          "endMs": 202760,
+          "probability": 0.998135
+        },
+        {
+          "index": 5,
+          "text": "horn.",
+          "startMs": 202760,
+          "endMs": 203280,
+          "probability": 0.998416
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Burt!",
+      "startMs": 204700,
+      "endMs": 205740,
+      "avgLogprob": -0.076991,
+      "noSpeechProb": 0.00966,
+      "compressionRatio": 1.383459,
+      "words": [
+        {
+          "index": 1,
+          "text": "Burt!",
+          "startMs": 204700,
+          "endMs": 205740,
+          "probability": 0.490398
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "All the other cars move out of the way.",
+      "startMs": 206740,
+      "endMs": 209780,
+      "avgLogprob": -0.076991,
+      "noSpeechProb": 0.00966,
+      "compressionRatio": 1.383459,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 206740,
+          "endMs": 207460,
+          "probability": 0.992986
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 207460,
+          "endMs": 207680,
+          "probability": 0.987307
+        },
+        {
+          "index": 3,
+          "text": "other",
+          "startMs": 207680,
+          "endMs": 207960,
+          "probability": 0.994213
+        },
+        {
+          "index": 4,
+          "text": "cars",
+          "startMs": 207960,
+          "endMs": 208460,
+          "probability": 0.998184
+        },
+        {
+          "index": 5,
+          "text": "move",
+          "startMs": 208460,
+          "endMs": 208820,
+          "probability": 0.998163
+        },
+        {
+          "index": 6,
+          "text": "out",
+          "startMs": 208820,
+          "endMs": 209100,
+          "probability": 0.999197
+        },
+        {
+          "index": 7,
+          "text": "of",
+          "startMs": 209100,
+          "endMs": 209200,
+          "probability": 0.995835
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 209200,
+          "endMs": 209380,
+          "probability": 0.998645
+        },
+        {
+          "index": 9,
+          "text": "way.",
+          "startMs": 209380,
+          "endMs": 209780,
+          "probability": 0.999647
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "There's the fire!",
+      "startMs": 211800,
+      "endMs": 213240,
+      "avgLogprob": -0.076991,
+      "noSpeechProb": 0.00966,
+      "compressionRatio": 1.383459,
+      "words": [
+        {
+          "index": 1,
+          "text": "There's",
+          "startMs": 211800,
+          "endMs": 212460,
+          "probability": 0.920139
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 212460,
+          "endMs": 212620,
+          "probability": 0.998033
+        },
+        {
+          "index": 3,
+          "text": "fire!",
+          "startMs": 212620,
+          "endMs": 213240,
+          "probability": 0.997063
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "It's hot and loud, but the firefighters know exactly what to do.",
+      "startMs": 213240,
+      "endMs": 219660,
+      "avgLogprob": -0.063511,
+      "noSpeechProb": 0.043335,
+      "compressionRatio": 1.70303,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 213240,
+          "endMs": 214460,
+          "probability": 0.940836
+        },
+        {
+          "index": 2,
+          "text": "hot",
+          "startMs": 214460,
+          "endMs": 214820,
+          "probability": 0.990587
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 214820,
+          "endMs": 215320,
+          "probability": 0.992017
+        },
+        {
+          "index": 4,
+          "text": "loud,",
+          "startMs": 215320,
+          "endMs": 215860,
+          "probability": 0.999398
+        },
+        {
+          "index": 5,
+          "text": "but",
+          "startMs": 216040,
+          "endMs": 216460,
+          "probability": 0.995324
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 216460,
+          "endMs": 216720,
+          "probability": 0.972213
+        },
+        {
+          "index": 7,
+          "text": "firefighters",
+          "startMs": 216720,
+          "endMs": 217300,
+          "probability": 0.960168
+        },
+        {
+          "index": 8,
+          "text": "know",
+          "startMs": 217300,
+          "endMs": 217820,
+          "probability": 0.994982
+        },
+        {
+          "index": 9,
+          "text": "exactly",
+          "startMs": 217820,
+          "endMs": 218440,
+          "probability": 0.995398
+        },
+        {
+          "index": 10,
+          "text": "what",
+          "startMs": 218440,
+          "endMs": 218960,
+          "probability": 0.998875
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 218960,
+          "endMs": 219240,
+          "probability": 0.999169
+        },
+        {
+          "index": 12,
+          "text": "do.",
+          "startMs": 219240,
+          "endMs": 219660,
+          "probability": 0.999582
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "They work together as a team to connect the fire truck to the fire hydrant.",
+      "startMs": 220280,
+      "endMs": 225820,
+      "avgLogprob": -0.063511,
+      "noSpeechProb": 0.043335,
+      "compressionRatio": 1.70303,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 220280,
+          "endMs": 220560,
+          "probability": 0.995513
+        },
+        {
+          "index": 2,
+          "text": "work",
+          "startMs": 220560,
+          "endMs": 220860,
+          "probability": 0.97179
+        },
+        {
+          "index": 3,
+          "text": "together",
+          "startMs": 220860,
+          "endMs": 221380,
+          "probability": 0.998642
+        },
+        {
+          "index": 4,
+          "text": "as",
+          "startMs": 221380,
+          "endMs": 221760,
+          "probability": 0.983638
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 221760,
+          "endMs": 221960,
+          "probability": 0.996973
+        },
+        {
+          "index": 6,
+          "text": "team",
+          "startMs": 221960,
+          "endMs": 222380,
+          "probability": 0.999609
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 222380,
+          "endMs": 222940,
+          "probability": 0.945377
+        },
+        {
+          "index": 8,
+          "text": "connect",
+          "startMs": 222940,
+          "endMs": 223360,
+          "probability": 0.998343
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 223360,
+          "endMs": 223680,
+          "probability": 0.99668
+        },
+        {
+          "index": 10,
+          "text": "fire",
+          "startMs": 223680,
+          "endMs": 224000,
+          "probability": 0.995102
+        },
+        {
+          "index": 11,
+          "text": "truck",
+          "startMs": 224000,
+          "endMs": 224340,
+          "probability": 0.758574
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 224340,
+          "endMs": 224640,
+          "probability": 0.997733
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 224640,
+          "endMs": 224780,
+          "probability": 0.998459
+        },
+        {
+          "index": 14,
+          "text": "fire",
+          "startMs": 224780,
+          "endMs": 225240,
+          "probability": 0.996369
+        },
+        {
+          "index": 15,
+          "text": "hydrant.",
+          "startMs": 225240,
+          "endMs": 225820,
+          "probability": 0.995705
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Then the firefighters also attach a long, heavy hose to the truck.",
+      "startMs": 227780,
+      "endMs": 233500,
+      "avgLogprob": -0.063511,
+      "noSpeechProb": 0.043335,
+      "compressionRatio": 1.70303,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 227780,
+          "endMs": 228380,
+          "probability": 0.985622
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 228380,
+          "endMs": 228640,
+          "probability": 0.928042
+        },
+        {
+          "index": 3,
+          "text": "firefighters",
+          "startMs": 228640,
+          "endMs": 229320,
+          "probability": 0.980036
+        },
+        {
+          "index": 4,
+          "text": "also",
+          "startMs": 229320,
+          "endMs": 230140,
+          "probability": 0.993702
+        },
+        {
+          "index": 5,
+          "text": "attach",
+          "startMs": 230140,
+          "endMs": 230720,
+          "probability": 0.993684
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 230720,
+          "endMs": 231020,
+          "probability": 0.990067
+        },
+        {
+          "index": 7,
+          "text": "long,",
+          "startMs": 231020,
+          "endMs": 231640,
+          "probability": 0.998822
+        },
+        {
+          "index": 8,
+          "text": "heavy",
+          "startMs": 231880,
+          "endMs": 232140,
+          "probability": 0.997958
+        },
+        {
+          "index": 9,
+          "text": "hose",
+          "startMs": 232140,
+          "endMs": 232640,
+          "probability": 0.992167
+        },
+        {
+          "index": 10,
+          "text": "to",
+          "startMs": 232640,
+          "endMs": 232960,
+          "probability": 0.998604
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 232960,
+          "endMs": 233120,
+          "probability": 0.999316
+        },
+        {
+          "index": 12,
+          "text": "truck.",
+          "startMs": 233120,
+          "endMs": 233500,
+          "probability": 0.99928
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Firefighter Pete gives the signal and the firefighters turn on the water.",
+      "startMs": 234720,
+      "endMs": 240840,
+      "avgLogprob": -0.063511,
+      "noSpeechProb": 0.043335,
+      "compressionRatio": 1.70303,
+      "words": [
+        {
+          "index": 1,
+          "text": "Firefighter",
+          "startMs": 234720,
+          "endMs": 235360,
+          "probability": 0.965444
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 235360,
+          "endMs": 235780,
+          "probability": 0.988078
+        },
+        {
+          "index": 3,
+          "text": "gives",
+          "startMs": 235780,
+          "endMs": 236280,
+          "probability": 0.995092
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 236280,
+          "endMs": 236560,
+          "probability": 0.996188
+        },
+        {
+          "index": 5,
+          "text": "signal",
+          "startMs": 236560,
+          "endMs": 237080,
+          "probability": 0.999419
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 237080,
+          "endMs": 237920,
+          "probability": 0.524784
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 237920,
+          "endMs": 238220,
+          "probability": 0.988314
+        },
+        {
+          "index": 8,
+          "text": "firefighters",
+          "startMs": 238220,
+          "endMs": 238900,
+          "probability": 0.988694
+        },
+        {
+          "index": 9,
+          "text": "turn",
+          "startMs": 238900,
+          "endMs": 239640,
+          "probability": 0.997078
+        },
+        {
+          "index": 10,
+          "text": "on",
+          "startMs": 239640,
+          "endMs": 240060,
+          "probability": 0.99875
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 240060,
+          "endMs": 240300,
+          "probability": 0.998287
+        },
+        {
+          "index": 12,
+          "text": "water.",
+          "startMs": 240300,
+          "endMs": 240840,
+          "probability": 0.999519
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "Whoosh!",
+      "startMs": 240840,
+      "endMs": 242440,
+      "avgLogprob": -0.089705,
+      "noSpeechProb": 0.021409,
+      "compressionRatio": 1.550898,
+      "words": [
+        {
+          "index": 1,
+          "text": "Whoosh!",
+          "startMs": 240840,
+          "endMs": 242440,
+          "probability": 0.63507
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "The water gushes out very fast.",
+      "startMs": 244620,
+      "endMs": 247800,
+      "avgLogprob": -0.089705,
+      "noSpeechProb": 0.021409,
+      "compressionRatio": 1.550898,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 244620,
+          "endMs": 245180,
+          "probability": 0.969774
+        },
+        {
+          "index": 2,
+          "text": "water",
+          "startMs": 245180,
+          "endMs": 245600,
+          "probability": 0.998484
+        },
+        {
+          "index": 3,
+          "text": "gushes",
+          "startMs": 245600,
+          "endMs": 246040,
+          "probability": 0.984134
+        },
+        {
+          "index": 4,
+          "text": "out",
+          "startMs": 246040,
+          "endMs": 246520,
+          "probability": 0.997895
+        },
+        {
+          "index": 5,
+          "text": "very",
+          "startMs": 246520,
+          "endMs": 247000,
+          "probability": 0.995219
+        },
+        {
+          "index": 6,
+          "text": "fast.",
+          "startMs": 247000,
+          "endMs": 247800,
+          "probability": 0.999122
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "Several firefighters must hold the hose to control it.",
+      "startMs": 248660,
+      "endMs": 252620,
+      "avgLogprob": -0.089705,
+      "noSpeechProb": 0.021409,
+      "compressionRatio": 1.550898,
+      "words": [
+        {
+          "index": 1,
+          "text": "Several",
+          "startMs": 248660,
+          "endMs": 249000,
+          "probability": 0.995094
+        },
+        {
+          "index": 2,
+          "text": "firefighters",
+          "startMs": 249000,
+          "endMs": 249720,
+          "probability": 0.918044
+        },
+        {
+          "index": 3,
+          "text": "must",
+          "startMs": 249720,
+          "endMs": 250220,
+          "probability": 0.997981
+        },
+        {
+          "index": 4,
+          "text": "hold",
+          "startMs": 250220,
+          "endMs": 250700,
+          "probability": 0.998372
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 250700,
+          "endMs": 250960,
+          "probability": 0.998272
+        },
+        {
+          "index": 6,
+          "text": "hose",
+          "startMs": 250960,
+          "endMs": 251280,
+          "probability": 0.996227
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 251280,
+          "endMs": 251540,
+          "probability": 0.99723
+        },
+        {
+          "index": 8,
+          "text": "control",
+          "startMs": 251540,
+          "endMs": 252040,
+          "probability": 0.999126
+        },
+        {
+          "index": 9,
+          "text": "it.",
+          "startMs": 252040,
+          "endMs": 252620,
+          "probability": 0.998639
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "Pete helps direct the hose as they spray the fire with water.",
+      "startMs": 253300,
+      "endMs": 257700,
+      "avgLogprob": -0.089705,
+      "noSpeechProb": 0.021409,
+      "compressionRatio": 1.550898,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 253300,
+          "endMs": 253300,
+          "probability": 0.986617
+        },
+        {
+          "index": 2,
+          "text": "helps",
+          "startMs": 253300,
+          "endMs": 253760,
+          "probability": 0.989747
+        },
+        {
+          "index": 3,
+          "text": "direct",
+          "startMs": 253760,
+          "endMs": 254160,
+          "probability": 0.948987
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 254160,
+          "endMs": 254480,
+          "probability": 0.998264
+        },
+        {
+          "index": 5,
+          "text": "hose",
+          "startMs": 254480,
+          "endMs": 254800,
+          "probability": 0.99941
+        },
+        {
+          "index": 6,
+          "text": "as",
+          "startMs": 254800,
+          "endMs": 255300,
+          "probability": 0.841443
+        },
+        {
+          "index": 7,
+          "text": "they",
+          "startMs": 255300,
+          "endMs": 255580,
+          "probability": 0.996057
+        },
+        {
+          "index": 8,
+          "text": "spray",
+          "startMs": 255580,
+          "endMs": 256060,
+          "probability": 0.998313
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 256060,
+          "endMs": 256380,
+          "probability": 0.997093
+        },
+        {
+          "index": 10,
+          "text": "fire",
+          "startMs": 256380,
+          "endMs": 256840,
+          "probability": 0.998491
+        },
+        {
+          "index": 11,
+          "text": "with",
+          "startMs": 256840,
+          "endMs": 257180,
+          "probability": 0.998838
+        },
+        {
+          "index": 12,
+          "text": "water.",
+          "startMs": 257180,
+          "endMs": 257700,
+          "probability": 0.996336
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "The fire is starting to go out.",
+      "startMs": 258940,
+      "endMs": 261240,
+      "avgLogprob": -0.089705,
+      "noSpeechProb": 0.021409,
+      "compressionRatio": 1.550898,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 258940,
+          "endMs": 259240,
+          "probability": 0.99567
+        },
+        {
+          "index": 2,
+          "text": "fire",
+          "startMs": 259240,
+          "endMs": 259720,
+          "probability": 0.9975
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 259720,
+          "endMs": 259960,
+          "probability": 0.996604
+        },
+        {
+          "index": 4,
+          "text": "starting",
+          "startMs": 259960,
+          "endMs": 260300,
+          "probability": 0.998043
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 260300,
+          "endMs": 260620,
+          "probability": 0.998985
+        },
+        {
+          "index": 6,
+          "text": "go",
+          "startMs": 260620,
+          "endMs": 260800,
+          "probability": 0.998397
+        },
+        {
+          "index": 7,
+          "text": "out.",
+          "startMs": 260800,
+          "endMs": 261240,
+          "probability": 0.999281
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "There is smoke everywhere.",
+      "startMs": 262060,
+      "endMs": 264160,
+      "avgLogprob": -0.089705,
+      "noSpeechProb": 0.021409,
+      "compressionRatio": 1.550898,
+      "words": [
+        {
+          "index": 1,
+          "text": "There",
+          "startMs": 262060,
+          "endMs": 262260,
+          "probability": 0.996759
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 262260,
+          "endMs": 262560,
+          "probability": 0.995124
+        },
+        {
+          "index": 3,
+          "text": "smoke",
+          "startMs": 262560,
+          "endMs": 263140,
+          "probability": 0.999005
+        },
+        {
+          "index": 4,
+          "text": "everywhere.",
+          "startMs": 263140,
+          "endMs": 264160,
+          "probability": 0.996389
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "Suddenly, Pete hears yelling from the roof.",
+      "startMs": 266560,
+      "endMs": 269900,
+      "avgLogprob": -0.089705,
+      "noSpeechProb": 0.021409,
+      "compressionRatio": 1.550898,
+      "words": [
+        {
+          "index": 1,
+          "text": "Suddenly,",
+          "startMs": 266560,
+          "endMs": 267180,
+          "probability": 0.997281
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 267700,
+          "endMs": 268040,
+          "probability": 0.998419
+        },
+        {
+          "index": 3,
+          "text": "hears",
+          "startMs": 268040,
+          "endMs": 268440,
+          "probability": 0.993913
+        },
+        {
+          "index": 4,
+          "text": "yelling",
+          "startMs": 268440,
+          "endMs": 268900,
+          "probability": 0.992489
+        },
+        {
+          "index": 5,
+          "text": "from",
+          "startMs": 268900,
+          "endMs": 269260,
+          "probability": 0.998844
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 269260,
+          "endMs": 269500,
+          "probability": 0.998894
+        },
+        {
+          "index": 7,
+          "text": "roof.",
+          "startMs": 269500,
+          "endMs": 269900,
+          "probability": 0.999097
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "Oh no! It's Grumpy Toad! He needs to be rescued.",
+      "startMs": 271540,
+      "endMs": 277520,
+      "avgLogprob": -0.105447,
+      "noSpeechProb": 0.01984,
+      "compressionRatio": 1.573248,
+      "words": [
+        {
+          "index": 1,
+          "text": "Oh",
+          "startMs": 271540,
+          "endMs": 272380,
+          "probability": 0.32287
+        },
+        {
+          "index": 2,
+          "text": "no!",
+          "startMs": 272380,
+          "endMs": 272860,
+          "probability": 0.553965
+        },
+        {
+          "index": 3,
+          "text": "It's",
+          "startMs": 273700,
+          "endMs": 274200,
+          "probability": 0.962006
+        },
+        {
+          "index": 4,
+          "text": "Grumpy",
+          "startMs": 274200,
+          "endMs": 274600,
+          "probability": 0.95755
+        },
+        {
+          "index": 5,
+          "text": "Toad!",
+          "startMs": 274600,
+          "endMs": 275020,
+          "probability": 0.989345
+        },
+        {
+          "index": 6,
+          "text": "He",
+          "startMs": 275760,
+          "endMs": 275980,
+          "probability": 0.994299
+        },
+        {
+          "index": 7,
+          "text": "needs",
+          "startMs": 275980,
+          "endMs": 276320,
+          "probability": 0.996318
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 276320,
+          "endMs": 276600,
+          "probability": 0.998911
+        },
+        {
+          "index": 9,
+          "text": "be",
+          "startMs": 276600,
+          "endMs": 276820,
+          "probability": 0.997333
+        },
+        {
+          "index": 10,
+          "text": "rescued.",
+          "startMs": 276820,
+          "endMs": 277520,
+          "probability": 0.998164
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "text": "The firefighters raise a long ladder from the truck.",
+      "startMs": 278780,
+      "endMs": 282140,
+      "avgLogprob": -0.105447,
+      "noSpeechProb": 0.01984,
+      "compressionRatio": 1.573248,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 278780,
+          "endMs": 278860,
+          "probability": 0.979437
+        },
+        {
+          "index": 2,
+          "text": "firefighters",
+          "startMs": 278860,
+          "endMs": 279580,
+          "probability": 0.805062
+        },
+        {
+          "index": 3,
+          "text": "raise",
+          "startMs": 279580,
+          "endMs": 280140,
+          "probability": 0.976321
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 280140,
+          "endMs": 280400,
+          "probability": 0.994543
+        },
+        {
+          "index": 5,
+          "text": "long",
+          "startMs": 280400,
+          "endMs": 280760,
+          "probability": 0.998039
+        },
+        {
+          "index": 6,
+          "text": "ladder",
+          "startMs": 280760,
+          "endMs": 281220,
+          "probability": 0.998746
+        },
+        {
+          "index": 7,
+          "text": "from",
+          "startMs": 281220,
+          "endMs": 281540,
+          "probability": 0.997048
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 281540,
+          "endMs": 281740,
+          "probability": 0.997765
+        },
+        {
+          "index": 9,
+          "text": "truck.",
+          "startMs": 281740,
+          "endMs": 282140,
+          "probability": 0.998064
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "text": "Crank, crank, crank. The ladder goes up and up and up.",
+      "startMs": 283000,
+      "endMs": 287860,
+      "avgLogprob": -0.105447,
+      "noSpeechProb": 0.01984,
+      "compressionRatio": 1.573248,
+      "words": [
+        {
+          "index": 1,
+          "text": "Crank,",
+          "startMs": 283000,
+          "endMs": 283180,
+          "probability": 0.967113
+        },
+        {
+          "index": 2,
+          "text": "crank,",
+          "startMs": 283520,
+          "endMs": 283680,
+          "probability": 0.927717
+        },
+        {
+          "index": 3,
+          "text": "crank.",
+          "startMs": 284000,
+          "endMs": 284240,
+          "probability": 0.992894
+        },
+        {
+          "index": 4,
+          "text": "The",
+          "startMs": 284840,
+          "endMs": 285020,
+          "probability": 0.993131
+        },
+        {
+          "index": 5,
+          "text": "ladder",
+          "startMs": 285020,
+          "endMs": 285360,
+          "probability": 0.993043
+        },
+        {
+          "index": 6,
+          "text": "goes",
+          "startMs": 285360,
+          "endMs": 285760,
+          "probability": 0.998203
+        },
+        {
+          "index": 7,
+          "text": "up",
+          "startMs": 285760,
+          "endMs": 286300,
+          "probability": 0.996915
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 286300,
+          "endMs": 286640,
+          "probability": 0.856538
+        },
+        {
+          "index": 9,
+          "text": "up",
+          "startMs": 286640,
+          "endMs": 287040,
+          "probability": 0.997326
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 287040,
+          "endMs": 287320,
+          "probability": 0.973982
+        },
+        {
+          "index": 11,
+          "text": "up.",
+          "startMs": 287320,
+          "endMs": 287860,
+          "probability": 0.998883
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "text": "Firefighter Pete and another firefighter help Grumpy Toad climb down the ladder carefully.",
+      "startMs": 289840,
+      "endMs": 296980,
+      "avgLogprob": -0.105447,
+      "noSpeechProb": 0.01984,
+      "compressionRatio": 1.573248,
+      "words": [
+        {
+          "index": 1,
+          "text": "Firefighter",
+          "startMs": 289840,
+          "endMs": 290680,
+          "probability": 0.956928
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 290680,
+          "endMs": 291060,
+          "probability": 0.994735
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 291060,
+          "endMs": 291600,
+          "probability": 0.959704
+        },
+        {
+          "index": 4,
+          "text": "another",
+          "startMs": 291600,
+          "endMs": 292120,
+          "probability": 0.995639
+        },
+        {
+          "index": 5,
+          "text": "firefighter",
+          "startMs": 292120,
+          "endMs": 292880,
+          "probability": 0.900981
+        },
+        {
+          "index": 6,
+          "text": "help",
+          "startMs": 292880,
+          "endMs": 293780,
+          "probability": 0.925764
+        },
+        {
+          "index": 7,
+          "text": "Grumpy",
+          "startMs": 293780,
+          "endMs": 294300,
+          "probability": 0.991625
+        },
+        {
+          "index": 8,
+          "text": "Toad",
+          "startMs": 294300,
+          "endMs": 294780,
+          "probability": 0.997665
+        },
+        {
+          "index": 9,
+          "text": "climb",
+          "startMs": 294780,
+          "endMs": 295260,
+          "probability": 0.995814
+        },
+        {
+          "index": 10,
+          "text": "down",
+          "startMs": 295260,
+          "endMs": 295680,
+          "probability": 0.996788
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 295680,
+          "endMs": 295920,
+          "probability": 0.998521
+        },
+        {
+          "index": 12,
+          "text": "ladder",
+          "startMs": 295920,
+          "endMs": 296280,
+          "probability": 0.998651
+        },
+        {
+          "index": 13,
+          "text": "carefully.",
+          "startMs": 296280,
+          "endMs": 296980,
+          "probability": 0.996524
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "text": "Yay! The fire is out and everyone is safe.",
+      "startMs": 297980,
+      "endMs": 302740,
+      "avgLogprob": -0.122114,
+      "noSpeechProb": 0.039241,
+      "compressionRatio": 1.507353,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yay!",
+          "startMs": 297980,
+          "endMs": 298540,
+          "probability": 0.594266
+        },
+        {
+          "index": 2,
+          "text": "The",
+          "startMs": 299140,
+          "endMs": 299440,
+          "probability": 0.975193
+        },
+        {
+          "index": 3,
+          "text": "fire",
+          "startMs": 299440,
+          "endMs": 299860,
+          "probability": 0.899368
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 299860,
+          "endMs": 300240,
+          "probability": 0.997802
+        },
+        {
+          "index": 5,
+          "text": "out",
+          "startMs": 300240,
+          "endMs": 300660,
+          "probability": 0.997502
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 300660,
+          "endMs": 301040,
+          "probability": 0.840451
+        },
+        {
+          "index": 7,
+          "text": "everyone",
+          "startMs": 301040,
+          "endMs": 301640,
+          "probability": 0.988756
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 301640,
+          "endMs": 302180,
+          "probability": 0.996207
+        },
+        {
+          "index": 9,
+          "text": "safe.",
+          "startMs": 302180,
+          "endMs": 302740,
+          "probability": 0.991975
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "text": "The firefighters drive back to the firehouse.",
+      "startMs": 305140,
+      "endMs": 308260,
+      "avgLogprob": -0.122114,
+      "noSpeechProb": 0.039241,
+      "compressionRatio": 1.507353,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 305140,
+          "endMs": 305160,
+          "probability": 0.849117
+        },
+        {
+          "index": 2,
+          "text": "firefighters",
+          "startMs": 305160,
+          "endMs": 305940,
+          "probability": 0.873295
+        },
+        {
+          "index": 3,
+          "text": "drive",
+          "startMs": 305940,
+          "endMs": 306620,
+          "probability": 0.992518
+        },
+        {
+          "index": 4,
+          "text": "back",
+          "startMs": 306620,
+          "endMs": 307040,
+          "probability": 0.998232
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 307040,
+          "endMs": 307280,
+          "probability": 0.997366
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 307280,
+          "endMs": 307460,
+          "probability": 0.995631
+        },
+        {
+          "index": 7,
+          "text": "firehouse.",
+          "startMs": 307460,
+          "endMs": 308260,
+          "probability": 0.871551
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "text": "They take off all their gear.",
+      "startMs": 309200,
+      "endMs": 310860,
+      "avgLogprob": -0.122114,
+      "noSpeechProb": 0.039241,
+      "compressionRatio": 1.507353,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 309200,
+          "endMs": 309240,
+          "probability": 0.99255
+        },
+        {
+          "index": 2,
+          "text": "take",
+          "startMs": 309240,
+          "endMs": 309560,
+          "probability": 0.97814
+        },
+        {
+          "index": 3,
+          "text": "off",
+          "startMs": 309560,
+          "endMs": 309860,
+          "probability": 0.982591
+        },
+        {
+          "index": 4,
+          "text": "all",
+          "startMs": 309860,
+          "endMs": 310200,
+          "probability": 0.99491
+        },
+        {
+          "index": 5,
+          "text": "their",
+          "startMs": 310200,
+          "endMs": 310460,
+          "probability": 0.965742
+        },
+        {
+          "index": 6,
+          "text": "gear.",
+          "startMs": 310460,
+          "endMs": 310860,
+          "probability": 0.999346
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "text": "They pat Pete on the back and say, good job Pete!",
+      "startMs": 311560,
+      "endMs": 315360,
+      "avgLogprob": -0.122114,
+      "noSpeechProb": 0.039241,
+      "compressionRatio": 1.507353,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 311560,
+          "endMs": 311660,
+          "probability": 0.98252
+        },
+        {
+          "index": 2,
+          "text": "pat",
+          "startMs": 311660,
+          "endMs": 312040,
+          "probability": 0.967546
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 312040,
+          "endMs": 312320,
+          "probability": 0.987351
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 312320,
+          "endMs": 312520,
+          "probability": 0.997053
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 312520,
+          "endMs": 312720,
+          "probability": 0.99749
+        },
+        {
+          "index": 6,
+          "text": "back",
+          "startMs": 312720,
+          "endMs": 313080,
+          "probability": 0.999498
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 313080,
+          "endMs": 313340,
+          "probability": 0.951919
+        },
+        {
+          "index": 8,
+          "text": "say,",
+          "startMs": 313340,
+          "endMs": 313740,
+          "probability": 0.995581
+        },
+        {
+          "index": 9,
+          "text": "good",
+          "startMs": 314000,
+          "endMs": 314300,
+          "probability": 0.154624
+        },
+        {
+          "index": 10,
+          "text": "job",
+          "startMs": 314300,
+          "endMs": 314880,
+          "probability": 0.997219
+        },
+        {
+          "index": 11,
+          "text": "Pete!",
+          "startMs": 314880,
+          "endMs": 315360,
+          "probability": 0.535297
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "text": "Firefighter Pete helps save the day.",
+      "startMs": 316220,
+      "endMs": 319420,
+      "avgLogprob": -0.122114,
+      "noSpeechProb": 0.039241,
+      "compressionRatio": 1.507353,
+      "words": [
+        {
+          "index": 1,
+          "text": "Firefighter",
+          "startMs": 316220,
+          "endMs": 316900,
+          "probability": 0.957897
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 316900,
+          "endMs": 317460,
+          "probability": 0.992855
+        },
+        {
+          "index": 3,
+          "text": "helps",
+          "startMs": 317460,
+          "endMs": 318000,
+          "probability": 0.094419
+        },
+        {
+          "index": 4,
+          "text": "save",
+          "startMs": 318000,
+          "endMs": 318580,
+          "probability": 0.989783
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 318580,
+          "endMs": 318880,
+          "probability": 0.998697
+        },
+        {
+          "index": 6,
+          "text": "day.",
+          "startMs": 318880,
+          "endMs": 319420,
+          "probability": 0.999521
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "text": "We hope you have enjoyed this recording of Pete the Cat Firefighter Pete by James Dean.",
+      "startMs": 322020,
+      "endMs": 329940,
+      "avgLogprob": -0.124733,
+      "noSpeechProb": 0.679724,
+      "compressionRatio": 1.622857,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 322020,
+          "endMs": 322840,
+          "probability": 0.484328
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 322840,
+          "endMs": 323080,
+          "probability": 0.993815
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 323080,
+          "endMs": 323300,
+          "probability": 0.993118
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 323300,
+          "endMs": 323480,
+          "probability": 0.966315
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 323480,
+          "endMs": 323840,
+          "probability": 0.995709
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 323840,
+          "endMs": 324100,
+          "probability": 0.992589
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 324100,
+          "endMs": 324680,
+          "probability": 0.989078
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 324680,
+          "endMs": 325240,
+          "probability": 0.993021
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 325240,
+          "endMs": 325820,
+          "probability": 0.818015
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 325820,
+          "endMs": 326100,
+          "probability": 0.933919
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 326100,
+          "endMs": 326460,
+          "probability": 0.624917
+        },
+        {
+          "index": 12,
+          "text": "Firefighter",
+          "startMs": 326460,
+          "endMs": 327760,
+          "probability": 0.687503
+        },
+        {
+          "index": 13,
+          "text": "Pete",
+          "startMs": 327760,
+          "endMs": 328240,
+          "probability": 0.981013
+        },
+        {
+          "index": 14,
+          "text": "by",
+          "startMs": 328240,
+          "endMs": 329000,
+          "probability": 0.91806
+        },
+        {
+          "index": 15,
+          "text": "James",
+          "startMs": 329000,
+          "endMs": 329560,
+          "probability": 0.988035
+        },
+        {
+          "index": 16,
+          "text": "Dean.",
+          "startMs": 329560,
+          "endMs": 329940,
+          "probability": 0.93559
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "text": "This program was produced by John Marshall Media.",
+      "startMs": 330600,
+      "endMs": 333720,
+      "avgLogprob": -0.124733,
+      "noSpeechProb": 0.679724,
+      "compressionRatio": 1.622857,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 330600,
+          "endMs": 330900,
+          "probability": 0.97173
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 330900,
+          "endMs": 331320,
+          "probability": 0.982221
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 331320,
+          "endMs": 331640,
+          "probability": 0.994344
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 331640,
+          "endMs": 332040,
+          "probability": 0.996515
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 332040,
+          "endMs": 332440,
+          "probability": 0.995936
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 332440,
+          "endMs": 332800,
+          "probability": 0.978443
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 332800,
+          "endMs": 333160,
+          "probability": 0.9733
+        },
+        {
+          "index": 8,
+          "text": "Media.",
+          "startMs": 333160,
+          "endMs": 333720,
+          "probability": 0.910031
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "text": "Text copyright 2018 by James Dean and Kimberly Dean.",
+      "startMs": 334600,
+      "endMs": 339080,
+      "avgLogprob": -0.124733,
+      "noSpeechProb": 0.679724,
+      "compressionRatio": 1.622857,
+      "words": [
+        {
+          "index": 1,
+          "text": "Text",
+          "startMs": 334600,
+          "endMs": 334720,
+          "probability": 0.759133
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 334720,
+          "endMs": 335300,
+          "probability": 0.79446
+        },
+        {
+          "index": 3,
+          "text": "2018",
+          "startMs": 335300,
+          "endMs": 336340,
+          "probability": 0.868018
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 336340,
+          "endMs": 336920,
+          "probability": 0.974567
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 336920,
+          "endMs": 337400,
+          "probability": 0.99543
+        },
+        {
+          "index": 6,
+          "text": "Dean",
+          "startMs": 337400,
+          "endMs": 337720,
+          "probability": 0.9871
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 337720,
+          "endMs": 338140,
+          "probability": 0.950813
+        },
+        {
+          "index": 8,
+          "text": "Kimberly",
+          "startMs": 338140,
+          "endMs": 338600,
+          "probability": 0.828761
+        },
+        {
+          "index": 9,
+          "text": "Dean.",
+          "startMs": 338600,
+          "endMs": 339080,
+          "probability": 0.971682
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "text": "Art copyright 2018 by James Dean.",
+      "startMs": 339940,
+      "endMs": 343300,
+      "avgLogprob": -0.124733,
+      "noSpeechProb": 0.679724,
+      "compressionRatio": 1.622857,
+      "words": [
+        {
+          "index": 1,
+          "text": "Art",
+          "startMs": 339940,
+          "endMs": 340040,
+          "probability": 0.944317
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 340040,
+          "endMs": 340600,
+          "probability": 0.984743
+        },
+        {
+          "index": 3,
+          "text": "2018",
+          "startMs": 340600,
+          "endMs": 341840,
+          "probability": 0.988373
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 341840,
+          "endMs": 342340,
+          "probability": 0.989931
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 342340,
+          "endMs": 342900,
+          "probability": 0.998398
+        },
+        {
+          "index": 6,
+          "text": "Dean.",
+          "startMs": 342900,
+          "endMs": 343300,
+          "probability": 0.992771
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "text": "Pete the Cat is a registered trademark of Pete the Cat LLC.",
+      "startMs": 344140,
+      "endMs": 348220,
+      "avgLogprob": -0.124733,
+      "noSpeechProb": 0.679724,
+      "compressionRatio": 1.622857,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 344140,
+          "endMs": 344280,
+          "probability": 0.978859
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 344280,
+          "endMs": 344460,
+          "probability": 0.971165
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 344460,
+          "endMs": 344760,
+          "probability": 0.922341
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 344760,
+          "endMs": 345160,
+          "probability": 0.990039
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 345160,
+          "endMs": 345340,
+          "probability": 0.996646
+        },
+        {
+          "index": 6,
+          "text": "registered",
+          "startMs": 345340,
+          "endMs": 345700,
+          "probability": 0.985831
+        },
+        {
+          "index": 7,
+          "text": "trademark",
+          "startMs": 345700,
+          "endMs": 346320,
+          "probability": 0.990337
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 346320,
+          "endMs": 346640,
+          "probability": 0.996254
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 346640,
+          "endMs": 346960,
+          "probability": 0.951641
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 346960,
+          "endMs": 347180,
+          "probability": 0.964239
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 347180,
+          "endMs": 347480,
+          "probability": 0.973927
+        },
+        {
+          "index": 12,
+          "text": "LLC.",
+          "startMs": 347480,
+          "endMs": 348220,
+          "probability": 0.807197
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "text": "Production copyright 2018 by HarperCollins Publishers.",
+      "startMs": 349420,
+      "endMs": 353460,
+      "avgLogprob": -0.127738,
+      "noSpeechProb": 0.051382,
+      "compressionRatio": 0.9375,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 349420,
+          "endMs": 349780,
+          "probability": 0.326634
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 349780,
+          "endMs": 350380,
+          "probability": 0.595344
+        },
+        {
+          "index": 3,
+          "text": "2018",
+          "startMs": 350380,
+          "endMs": 351540,
+          "probability": 0.801953
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 351540,
+          "endMs": 351940,
+          "probability": 0.958831
+        },
+        {
+          "index": 5,
+          "text": "HarperCollins",
+          "startMs": 351940,
+          "endMs": 352860,
+          "probability": 0.815831
+        },
+        {
+          "index": 6,
+          "text": "Publishers.",
+          "startMs": 352860,
+          "endMs": 353460,
+          "probability": 0.806124
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "text": "All rights reserved.",
+      "startMs": 354220,
+      "endMs": 355500,
+      "avgLogprob": -0.127738,
+      "noSpeechProb": 0.051382,
+      "compressionRatio": 0.9375,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 354220,
+          "endMs": 354460,
+          "probability": 0.991338
+        },
+        {
+          "index": 2,
+          "text": "rights",
+          "startMs": 354460,
+          "endMs": 354820,
+          "probability": 0.996323
+        },
+        {
+          "index": 3,
+          "text": "reserved.",
+          "startMs": 354820,
+          "endMs": 355500,
+          "probability": 0.996451
+        }
+      ]
+    }
+  ]
+}

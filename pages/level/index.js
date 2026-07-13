@@ -38,6 +38,7 @@ const LEVEL_MATERIALS = {
   A2: [
     { category: 'peppa', title: 'Peppa' },
     { category: 'newconcept2', title: 'New Concept 2' },
+    { category: 'petethecat', title: 'Pete the Cat' },
     { category: 'unlock2', title: 'Unlock 2 课本' }
   ],
   B1: [

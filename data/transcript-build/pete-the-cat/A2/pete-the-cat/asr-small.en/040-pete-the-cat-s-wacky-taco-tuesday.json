@@ -1,0 +1,3660 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 41.95,
+  "text": "Harper Festival and Harper Audio present Pete the Cat's Wacky Taco Tuesday by Kimberly and James Dean performed by James Foey. Today is Pete the Cat's favorite day of the week. That's because today is Taco Tuesday. On the weight of the taqueria, Pete daydreams about all the tasty tacos he's going to eat. Should he have a pineapple taco, an avocado taco, or a fish taco, or all three? Pineapple, avocado, fish. He wants them all. Oh no, there is a problem. The taqueria is closed. This is not groovy at all, Bob says. Now what are we going to eat? Pete doesn't panic. He knows what to do. Let's make our own tacos. Dad makes rad taco shells. Bob is awesome at making salsa and Mom's fish is far out. Yeah, the family cheers. Back at home, Bob, Mom, Dad and Pete get right to work. When the dough is ready, Pete starts to roll it into small balls. Then he has a better idea. He gets a big rolling pin and rolls them into great big shells. Groovy, Bob says. Giant taco shells. Pete nods. Now we can fill them with even more tasty treats. Uh oh. Dad forgot to go to the store. They are all out of beans and cheese. No worries, Pete says. We can use these instead. Pete holds up a jar of marshmallow fluff and a bag of jelly beans. Bob fills his taco with pickles and bananas. Yum! Dad fills his with berries and cream. Mom makes a green taco. Cucumbers, peppers and broccoli. It's Pete's turn to fill his taco. He chooses jelly beans and marshmallow fluff. Then he adds some maple syrup. Sweet! Pete says. Too sweet! Mom says. Pete looks at his taco. Mom's right. It needs something else. But what? Pickles? No. Mustard? No. Then Pete sees what he wants. Anchovies! Pete takes a big bite. Now that is one groovy taco, he says. Pete hears a knock on the door. It was Pete's friends, Callie, Gus and Grumpy Toad. What smells so good? Callie asks. Can we try? Asks Gus. Even Grumpy Toad wants a taco. Wow! These tacos are out of sight, Callie shouts. Grumpy Toad agrees. Best tacos I've ever had. We should do this every Taco Tuesday, Mom says. Pete grins. Making tacos was fun. But I'd rather eat them. This program was produced by John Marshall Media. Directed by Cynthia Lee. Executive Producer, Almita Benan. Managing Editor, Pamela Libetta. Production Manager, Nate Hunter. Text Copyright 2024 by Kimberly and James Dean. Production Copyright 2024 by Harper Collins Publishers. All rights reserved. Thank you for listening.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Harper Festival and Harper Audio present Pete the Cat's Wacky Taco Tuesday by Kimberly",
+      "startMs": 8880,
+      "endMs": 17640,
+      "avgLogprob": -0.313847,
+      "noSpeechProb": 0.110345,
+      "compressionRatio": 1.011765,
+      "words": [
+        {
+          "index": 1,
+          "text": "Harper",
+          "startMs": 8880,
+          "endMs": 9900,
+          "probability": 0.067526
+        },
+        {
+          "index": 2,
+          "text": "Festival",
+          "startMs": 9900,
+          "endMs": 10620,
+          "probability": 0.887283
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 10620,
+          "endMs": 10960,
+          "probability": 0.918038
+        },
+        {
+          "index": 4,
+          "text": "Harper",
+          "startMs": 10960,
+          "endMs": 11340,
+          "probability": 0.991547
+        },
+        {
+          "index": 5,
+          "text": "Audio",
+          "startMs": 11340,
+          "endMs": 11820,
+          "probability": 0.874499
+        },
+        {
+          "index": 6,
+          "text": "present",
+          "startMs": 11820,
+          "endMs": 12360,
+          "probability": 0.913235
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 12360,
+          "endMs": 13620,
+          "probability": 0.474892
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 13620,
+          "endMs": 13900,
+          "probability": 0.924521
+        },
+        {
+          "index": 9,
+          "text": "Cat's",
+          "startMs": 13900,
+          "endMs": 14400,
+          "probability": 0.950259
+        },
+        {
+          "index": 10,
+          "text": "Wacky",
+          "startMs": 14400,
+          "endMs": 14920,
+          "probability": 0.896257
+        },
+        {
+          "index": 11,
+          "text": "Taco",
+          "startMs": 14920,
+          "endMs": 15380,
+          "probability": 0.967025
+        },
+        {
+          "index": 12,
+          "text": "Tuesday",
+          "startMs": 15380,
+          "endMs": 16200,
+          "probability": 0.998677
+        },
+        {
+          "index": 13,
+          "text": "by",
+          "startMs": 16200,
+          "endMs": 17200,
+          "probability": 0.812469
+        },
+        {
+          "index": 14,
+          "text": "Kimberly",
+          "startMs": 17200,
+          "endMs": 17640,
+          "probability": 0.689848
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "and James Dean performed by James Foey.",
+      "startMs": 17640,
+      "endMs": 23220,
+      "avgLogprob": -0.597078,
+      "noSpeechProb": 0.53722,
+      "compressionRatio": 0.928571,
+      "words": [
+        {
+          "index": 1,
+          "text": "and",
+          "startMs": 17640,
+          "endMs": 18060,
+          "probability": 0.384445
+        },
+        {
+          "index": 2,
+          "text": "James",
+          "startMs": 18060,
+          "endMs": 18640,
+          "probability": 0.988828
+        },
+        {
+          "index": 3,
+          "text": "Dean",
+          "startMs": 18640,
+          "endMs": 19100,
+          "probability": 0.971443
+        },
+        {
+          "index": 4,
+          "text": "performed",
+          "startMs": 19100,
+          "endMs": 20820,
+          "probability": 0.283671
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 20820,
+          "endMs": 21300,
+          "probability": 0.996735
+        },
+        {
+          "index": 6,
+          "text": "James",
+          "startMs": 21300,
+          "endMs": 21760,
+          "probability": 0.988406
+        },
+        {
+          "index": 7,
+          "text": "Foey.",
+          "startMs": 21760,
+          "endMs": 23220,
+          "probability": 0.485619
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Today is Pete the Cat's favorite day of the week.",
+      "startMs": 39080,
+      "endMs": 43480,
+      "avgLogprob": -0.273537,
+      "noSpeechProb": 0.075705,
+      "compressionRatio": 1.12987,
+      "words": [
+        {
+          "index": 1,
+          "text": "Today",
+          "startMs": 39080,
+          "endMs": 40080,
+          "probability": 0.489294
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 40080,
+          "endMs": 40900,
+          "probability": 0.989777
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 40900,
+          "endMs": 41200,
+          "probability": 0.978634
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 41200,
+          "endMs": 41420,
+          "probability": 0.965324
+        },
+        {
+          "index": 5,
+          "text": "Cat's",
+          "startMs": 41420,
+          "endMs": 42380,
+          "probability": 0.939701
+        },
+        {
+          "index": 6,
+          "text": "favorite",
+          "startMs": 42380,
+          "endMs": 42380,
+          "probability": 0.819944
+        },
+        {
+          "index": 7,
+          "text": "day",
+          "startMs": 42380,
+          "endMs": 42740,
+          "probability": 0.989711
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 42740,
+          "endMs": 42900,
+          "probability": 0.998002
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 42900,
+          "endMs": 43060,
+          "probability": 0.998748
+        },
+        {
+          "index": 10,
+          "text": "week.",
+          "startMs": 43060,
+          "endMs": 43480,
+          "probability": 0.994896
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "That's because today is Taco Tuesday.",
+      "startMs": 44160,
+      "endMs": 48460,
+      "avgLogprob": -0.273537,
+      "noSpeechProb": 0.075705,
+      "compressionRatio": 1.12987,
+      "words": [
+        {
+          "index": 1,
+          "text": "That's",
+          "startMs": 44160,
+          "endMs": 44480,
+          "probability": 0.984309
+        },
+        {
+          "index": 2,
+          "text": "because",
+          "startMs": 44480,
+          "endMs": 44840,
+          "probability": 0.997352
+        },
+        {
+          "index": 3,
+          "text": "today",
+          "startMs": 44840,
+          "endMs": 45340,
+          "probability": 0.97779
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 45340,
+          "endMs": 46340,
+          "probability": 0.995592
+        },
+        {
+          "index": 5,
+          "text": "Taco",
+          "startMs": 46340,
+          "endMs": 47320,
+          "probability": 0.710744
+        },
+        {
+          "index": 6,
+          "text": "Tuesday.",
+          "startMs": 47320,
+          "endMs": 48460,
+          "probability": 0.981856
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "On the weight of the taqueria, Pete daydreams about all the tasty tacos he's going to eat.",
+      "startMs": 48460,
+      "endMs": 57320,
+      "avgLogprob": -0.180778,
+      "noSpeechProb": 0.252532,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 48460,
+          "endMs": 49800,
+          "probability": 0.644841
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 49800,
+          "endMs": 51440,
+          "probability": 0.9966
+        },
+        {
+          "index": 3,
+          "text": "weight",
+          "startMs": 51440,
+          "endMs": 51640,
+          "probability": 0.350621
+        },
+        {
+          "index": 4,
+          "text": "of",
+          "startMs": 51640,
+          "endMs": 51800,
+          "probability": 0.997658
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 51800,
+          "endMs": 51960,
+          "probability": 0.995852
+        },
+        {
+          "index": 6,
+          "text": "taqueria,",
+          "startMs": 51960,
+          "endMs": 52560,
+          "probability": 0.855323
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 53200,
+          "endMs": 53320,
+          "probability": 0.976201
+        },
+        {
+          "index": 8,
+          "text": "daydreams",
+          "startMs": 53320,
+          "endMs": 54020,
+          "probability": 0.98051
+        },
+        {
+          "index": 9,
+          "text": "about",
+          "startMs": 54020,
+          "endMs": 54220,
+          "probability": 0.997177
+        },
+        {
+          "index": 10,
+          "text": "all",
+          "startMs": 54220,
+          "endMs": 54740,
+          "probability": 0.994969
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 54740,
+          "endMs": 55000,
+          "probability": 0.987316
+        },
+        {
+          "index": 12,
+          "text": "tasty",
+          "startMs": 55000,
+          "endMs": 55680,
+          "probability": 0.997313
+        },
+        {
+          "index": 13,
+          "text": "tacos",
+          "startMs": 55680,
+          "endMs": 56240,
+          "probability": 0.997526
+        },
+        {
+          "index": 14,
+          "text": "he's",
+          "startMs": 56240,
+          "endMs": 56620,
+          "probability": 0.985723
+        },
+        {
+          "index": 15,
+          "text": "going",
+          "startMs": 56620,
+          "endMs": 56820,
+          "probability": 0.994523
+        },
+        {
+          "index": 16,
+          "text": "to",
+          "startMs": 56820,
+          "endMs": 57060,
+          "probability": 0.998157
+        },
+        {
+          "index": 17,
+          "text": "eat.",
+          "startMs": 57060,
+          "endMs": 57320,
+          "probability": 0.999387
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Should he have a pineapple taco, an avocado taco, or a fish taco, or all three?",
+      "startMs": 58080,
+      "endMs": 66180,
+      "avgLogprob": -0.180778,
+      "noSpeechProb": 0.252532,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "Should",
+          "startMs": 58080,
+          "endMs": 58360,
+          "probability": 0.993905
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 58360,
+          "endMs": 58580,
+          "probability": 0.997897
+        },
+        {
+          "index": 3,
+          "text": "have",
+          "startMs": 58580,
+          "endMs": 58820,
+          "probability": 0.999252
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 58820,
+          "endMs": 59140,
+          "probability": 0.994062
+        },
+        {
+          "index": 5,
+          "text": "pineapple",
+          "startMs": 59140,
+          "endMs": 59620,
+          "probability": 0.993847
+        },
+        {
+          "index": 6,
+          "text": "taco,",
+          "startMs": 59620,
+          "endMs": 60320,
+          "probability": 0.996096
+        },
+        {
+          "index": 7,
+          "text": "an",
+          "startMs": 60960,
+          "endMs": 61120,
+          "probability": 0.985277
+        },
+        {
+          "index": 8,
+          "text": "avocado",
+          "startMs": 61120,
+          "endMs": 61900,
+          "probability": 0.994501
+        },
+        {
+          "index": 9,
+          "text": "taco,",
+          "startMs": 61900,
+          "endMs": 62700,
+          "probability": 0.997073
+        },
+        {
+          "index": 10,
+          "text": "or",
+          "startMs": 63140,
+          "endMs": 63400,
+          "probability": 0.99568
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 63400,
+          "endMs": 63580,
+          "probability": 0.994265
+        },
+        {
+          "index": 12,
+          "text": "fish",
+          "startMs": 63580,
+          "endMs": 63880,
+          "probability": 0.999479
+        },
+        {
+          "index": 13,
+          "text": "taco,",
+          "startMs": 63880,
+          "endMs": 64560,
+          "probability": 0.999227
+        },
+        {
+          "index": 14,
+          "text": "or",
+          "startMs": 64940,
+          "endMs": 65260,
+          "probability": 0.995343
+        },
+        {
+          "index": 15,
+          "text": "all",
+          "startMs": 65260,
+          "endMs": 65580,
+          "probability": 0.994897
+        },
+        {
+          "index": 16,
+          "text": "three?",
+          "startMs": 65580,
+          "endMs": 66180,
+          "probability": 0.997946
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Pineapple, avocado, fish. He wants them all.",
+      "startMs": 67660,
+      "endMs": 74980,
+      "avgLogprob": -0.180778,
+      "noSpeechProb": 0.252532,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pineapple,",
+          "startMs": 67660,
+          "endMs": 68580,
+          "probability": 0.990989
+        },
+        {
+          "index": 2,
+          "text": "avocado,",
+          "startMs": 69540,
+          "endMs": 70180,
+          "probability": 0.994637
+        },
+        {
+          "index": 3,
+          "text": "fish.",
+          "startMs": 71400,
+          "endMs": 71980,
+          "probability": 0.996005
+        },
+        {
+          "index": 4,
+          "text": "He",
+          "startMs": 73440,
+          "endMs": 73660,
+          "probability": 0.998511
+        },
+        {
+          "index": 5,
+          "text": "wants",
+          "startMs": 73660,
+          "endMs": 74000,
+          "probability": 0.996713
+        },
+        {
+          "index": 6,
+          "text": "them",
+          "startMs": 74000,
+          "endMs": 74340,
+          "probability": 0.999339
+        },
+        {
+          "index": 7,
+          "text": "all.",
+          "startMs": 74340,
+          "endMs": 74980,
+          "probability": 0.999389
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Oh no, there is a problem. The taqueria is closed.",
+      "startMs": 76560,
+      "endMs": 83580,
+      "avgLogprob": -0.154597,
+      "noSpeechProb": 0.179652,
+      "compressionRatio": 1.31875,
+      "words": [
+        {
+          "index": 1,
+          "text": "Oh",
+          "startMs": 76560,
+          "endMs": 77480,
+          "probability": 0.326356
+        },
+        {
+          "index": 2,
+          "text": "no,",
+          "startMs": 77480,
+          "endMs": 78120,
+          "probability": 0.660237
+        },
+        {
+          "index": 3,
+          "text": "there",
+          "startMs": 79500,
+          "endMs": 79720,
+          "probability": 0.934992
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 79720,
+          "endMs": 79980,
+          "probability": 0.978091
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 79980,
+          "endMs": 80240,
+          "probability": 0.995999
+        },
+        {
+          "index": 6,
+          "text": "problem.",
+          "startMs": 80240,
+          "endMs": 80900,
+          "probability": 0.997377
+        },
+        {
+          "index": 7,
+          "text": "The",
+          "startMs": 81700,
+          "endMs": 81780,
+          "probability": 0.981657
+        },
+        {
+          "index": 8,
+          "text": "taqueria",
+          "startMs": 81780,
+          "endMs": 82360,
+          "probability": 0.827943
+        },
+        {
+          "index": 9,
+          "text": "is",
+          "startMs": 82360,
+          "endMs": 82860,
+          "probability": 0.995726
+        },
+        {
+          "index": 10,
+          "text": "closed.",
+          "startMs": 82860,
+          "endMs": 83580,
+          "probability": 0.990144
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "This is not groovy at all, Bob says. Now what are we going to eat?",
+      "startMs": 85160,
+      "endMs": 90580,
+      "avgLogprob": -0.154597,
+      "noSpeechProb": 0.179652,
+      "compressionRatio": 1.31875,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 85160,
+          "endMs": 85440,
+          "probability": 0.673409
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 85440,
+          "endMs": 85640,
+          "probability": 0.995598
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 85640,
+          "endMs": 85920,
+          "probability": 0.996422
+        },
+        {
+          "index": 4,
+          "text": "groovy",
+          "startMs": 85920,
+          "endMs": 86400,
+          "probability": 0.990262
+        },
+        {
+          "index": 5,
+          "text": "at",
+          "startMs": 86400,
+          "endMs": 86580,
+          "probability": 0.988502
+        },
+        {
+          "index": 6,
+          "text": "all,",
+          "startMs": 86580,
+          "endMs": 87080,
+          "probability": 0.99927
+        },
+        {
+          "index": 7,
+          "text": "Bob",
+          "startMs": 87560,
+          "endMs": 87680,
+          "probability": 0.988367
+        },
+        {
+          "index": 8,
+          "text": "says.",
+          "startMs": 87680,
+          "endMs": 88160,
+          "probability": 0.993036
+        },
+        {
+          "index": 9,
+          "text": "Now",
+          "startMs": 89100,
+          "endMs": 89220,
+          "probability": 0.987769
+        },
+        {
+          "index": 10,
+          "text": "what",
+          "startMs": 89220,
+          "endMs": 89460,
+          "probability": 0.841092
+        },
+        {
+          "index": 11,
+          "text": "are",
+          "startMs": 89460,
+          "endMs": 89580,
+          "probability": 0.992243
+        },
+        {
+          "index": 12,
+          "text": "we",
+          "startMs": 89580,
+          "endMs": 89740,
+          "probability": 0.995959
+        },
+        {
+          "index": 13,
+          "text": "going",
+          "startMs": 89740,
+          "endMs": 89960,
+          "probability": 0.994188
+        },
+        {
+          "index": 14,
+          "text": "to",
+          "startMs": 89960,
+          "endMs": 90200,
+          "probability": 0.998076
+        },
+        {
+          "index": 15,
+          "text": "eat?",
+          "startMs": 90200,
+          "endMs": 90580,
+          "probability": 0.999363
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Pete doesn't panic. He knows what to do.",
+      "startMs": 91840,
+      "endMs": 95800,
+      "avgLogprob": -0.154597,
+      "noSpeechProb": 0.179652,
+      "compressionRatio": 1.31875,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 91840,
+          "endMs": 92080,
+          "probability": 0.89494
+        },
+        {
+          "index": 2,
+          "text": "doesn't",
+          "startMs": 92080,
+          "endMs": 92800,
+          "probability": 0.99537
+        },
+        {
+          "index": 3,
+          "text": "panic.",
+          "startMs": 92800,
+          "endMs": 93260,
+          "probability": 0.998436
+        },
+        {
+          "index": 4,
+          "text": "He",
+          "startMs": 94000,
+          "endMs": 94380,
+          "probability": 0.997499
+        },
+        {
+          "index": 5,
+          "text": "knows",
+          "startMs": 94380,
+          "endMs": 94640,
+          "probability": 0.997516
+        },
+        {
+          "index": 6,
+          "text": "what",
+          "startMs": 94640,
+          "endMs": 94980,
+          "probability": 0.999216
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 94980,
+          "endMs": 95240,
+          "probability": 0.999091
+        },
+        {
+          "index": 8,
+          "text": "do.",
+          "startMs": 95240,
+          "endMs": 95800,
+          "probability": 0.99965
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Let's make our own tacos. Dad makes rad taco shells.",
+      "startMs": 97500,
+      "endMs": 102780,
+      "avgLogprob": -0.154597,
+      "noSpeechProb": 0.179652,
+      "compressionRatio": 1.31875,
+      "words": [
+        {
+          "index": 1,
+          "text": "Let's",
+          "startMs": 97500,
+          "endMs": 98080,
+          "probability": 0.990156
+        },
+        {
+          "index": 2,
+          "text": "make",
+          "startMs": 98080,
+          "endMs": 98320,
+          "probability": 0.999346
+        },
+        {
+          "index": 3,
+          "text": "our",
+          "startMs": 98320,
+          "endMs": 98640,
+          "probability": 0.99723
+        },
+        {
+          "index": 4,
+          "text": "own",
+          "startMs": 98640,
+          "endMs": 99180,
+          "probability": 0.997545
+        },
+        {
+          "index": 5,
+          "text": "tacos.",
+          "startMs": 99180,
+          "endMs": 99820,
+          "probability": 0.991342
+        },
+        {
+          "index": 6,
+          "text": "Dad",
+          "startMs": 100880,
+          "endMs": 101120,
+          "probability": 0.991306
+        },
+        {
+          "index": 7,
+          "text": "makes",
+          "startMs": 101120,
+          "endMs": 101440,
+          "probability": 0.994867
+        },
+        {
+          "index": 8,
+          "text": "rad",
+          "startMs": 101440,
+          "endMs": 101740,
+          "probability": 0.989528
+        },
+        {
+          "index": 9,
+          "text": "taco",
+          "startMs": 101740,
+          "endMs": 102280,
+          "probability": 0.98457
+        },
+        {
+          "index": 10,
+          "text": "shells.",
+          "startMs": 102280,
+          "endMs": 102780,
+          "probability": 0.998761
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Bob is awesome at making salsa and Mom's fish is far out.",
+      "startMs": 102780,
+      "endMs": 108240,
+      "avgLogprob": -0.171304,
+      "noSpeechProb": 0.342156,
+      "compressionRatio": 1.350993,
+      "words": [
+        {
+          "index": 1,
+          "text": "Bob",
+          "startMs": 102780,
+          "endMs": 103520,
+          "probability": 0.432727
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 103520,
+          "endMs": 103740,
+          "probability": 0.899554
+        },
+        {
+          "index": 3,
+          "text": "awesome",
+          "startMs": 103740,
+          "endMs": 104080,
+          "probability": 0.975825
+        },
+        {
+          "index": 4,
+          "text": "at",
+          "startMs": 104080,
+          "endMs": 104300,
+          "probability": 0.979239
+        },
+        {
+          "index": 5,
+          "text": "making",
+          "startMs": 104300,
+          "endMs": 104620,
+          "probability": 0.997777
+        },
+        {
+          "index": 6,
+          "text": "salsa",
+          "startMs": 104620,
+          "endMs": 105040,
+          "probability": 0.960252
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 105040,
+          "endMs": 105920,
+          "probability": 0.325704
+        },
+        {
+          "index": 8,
+          "text": "Mom's",
+          "startMs": 105920,
+          "endMs": 106540,
+          "probability": 0.761331
+        },
+        {
+          "index": 9,
+          "text": "fish",
+          "startMs": 106540,
+          "endMs": 106840,
+          "probability": 0.927474
+        },
+        {
+          "index": 10,
+          "text": "is",
+          "startMs": 106840,
+          "endMs": 107160,
+          "probability": 0.994948
+        },
+        {
+          "index": 11,
+          "text": "far",
+          "startMs": 107160,
+          "endMs": 107660,
+          "probability": 0.947007
+        },
+        {
+          "index": 12,
+          "text": "out.",
+          "startMs": 107660,
+          "endMs": 108240,
+          "probability": 0.99047
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Yeah, the family cheers.",
+      "startMs": 109340,
+      "endMs": 112180,
+      "avgLogprob": -0.171304,
+      "noSpeechProb": 0.342156,
+      "compressionRatio": 1.350993,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yeah,",
+          "startMs": 109340,
+          "endMs": 109940,
+          "probability": 0.862416
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 110500,
+          "endMs": 110780,
+          "probability": 0.985634
+        },
+        {
+          "index": 3,
+          "text": "family",
+          "startMs": 110780,
+          "endMs": 111500,
+          "probability": 0.991498
+        },
+        {
+          "index": 4,
+          "text": "cheers.",
+          "startMs": 111500,
+          "endMs": 112180,
+          "probability": 0.960036
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Back at home, Bob, Mom, Dad and Pete get right to work.",
+      "startMs": 114420,
+      "endMs": 119480,
+      "avgLogprob": -0.171304,
+      "noSpeechProb": 0.342156,
+      "compressionRatio": 1.350993,
+      "words": [
+        {
+          "index": 1,
+          "text": "Back",
+          "startMs": 114420,
+          "endMs": 114820,
+          "probability": 0.979871
+        },
+        {
+          "index": 2,
+          "text": "at",
+          "startMs": 114820,
+          "endMs": 115020,
+          "probability": 0.995799
+        },
+        {
+          "index": 3,
+          "text": "home,",
+          "startMs": 115020,
+          "endMs": 115460,
+          "probability": 0.998526
+        },
+        {
+          "index": 4,
+          "text": "Bob,",
+          "startMs": 116020,
+          "endMs": 116180,
+          "probability": 0.99641
+        },
+        {
+          "index": 5,
+          "text": "Mom,",
+          "startMs": 116660,
+          "endMs": 116940,
+          "probability": 0.980858
+        },
+        {
+          "index": 6,
+          "text": "Dad",
+          "startMs": 117260,
+          "endMs": 117500,
+          "probability": 0.989808
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 117500,
+          "endMs": 117860,
+          "probability": 0.625123
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 117860,
+          "endMs": 118060,
+          "probability": 0.980094
+        },
+        {
+          "index": 9,
+          "text": "get",
+          "startMs": 118060,
+          "endMs": 118380,
+          "probability": 0.993082
+        },
+        {
+          "index": 10,
+          "text": "right",
+          "startMs": 118380,
+          "endMs": 118800,
+          "probability": 0.998039
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 118800,
+          "endMs": 119120,
+          "probability": 0.99877
+        },
+        {
+          "index": 12,
+          "text": "work.",
+          "startMs": 119120,
+          "endMs": 119480,
+          "probability": 0.999591
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "When the dough is ready, Pete starts to roll it into small balls.",
+      "startMs": 120360,
+      "endMs": 124720,
+      "avgLogprob": -0.171304,
+      "noSpeechProb": 0.342156,
+      "compressionRatio": 1.350993,
+      "words": [
+        {
+          "index": 1,
+          "text": "When",
+          "startMs": 120360,
+          "endMs": 120640,
+          "probability": 0.994375
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 120640,
+          "endMs": 120860,
+          "probability": 0.9975
+        },
+        {
+          "index": 3,
+          "text": "dough",
+          "startMs": 120860,
+          "endMs": 121100,
+          "probability": 0.987773
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 121100,
+          "endMs": 121320,
+          "probability": 0.998733
+        },
+        {
+          "index": 5,
+          "text": "ready,",
+          "startMs": 121320,
+          "endMs": 121680,
+          "probability": 0.999615
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 122300,
+          "endMs": 122440,
+          "probability": 0.99548
+        },
+        {
+          "index": 7,
+          "text": "starts",
+          "startMs": 122440,
+          "endMs": 122820,
+          "probability": 0.997377
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 122820,
+          "endMs": 123120,
+          "probability": 0.994619
+        },
+        {
+          "index": 9,
+          "text": "roll",
+          "startMs": 123120,
+          "endMs": 123400,
+          "probability": 0.9996
+        },
+        {
+          "index": 10,
+          "text": "it",
+          "startMs": 123400,
+          "endMs": 123560,
+          "probability": 0.99284
+        },
+        {
+          "index": 11,
+          "text": "into",
+          "startMs": 123560,
+          "endMs": 123760,
+          "probability": 0.986891
+        },
+        {
+          "index": 12,
+          "text": "small",
+          "startMs": 123760,
+          "endMs": 124220,
+          "probability": 0.997616
+        },
+        {
+          "index": 13,
+          "text": "balls.",
+          "startMs": 124220,
+          "endMs": 124720,
+          "probability": 0.997846
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Then he has a better idea. He gets a big rolling pin and rolls them into great big shells.",
+      "startMs": 124720,
+      "endMs": 133940,
+      "avgLogprob": -0.123184,
+      "noSpeechProb": 0.171427,
+      "compressionRatio": 1.4125,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 124720,
+          "endMs": 125880,
+          "probability": 0.458779
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 125880,
+          "endMs": 126640,
+          "probability": 0.558508
+        },
+        {
+          "index": 3,
+          "text": "has",
+          "startMs": 126640,
+          "endMs": 126880,
+          "probability": 0.979732
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 126880,
+          "endMs": 127080,
+          "probability": 0.993976
+        },
+        {
+          "index": 5,
+          "text": "better",
+          "startMs": 127080,
+          "endMs": 127420,
+          "probability": 0.995726
+        },
+        {
+          "index": 6,
+          "text": "idea.",
+          "startMs": 127420,
+          "endMs": 128140,
+          "probability": 0.998444
+        },
+        {
+          "index": 7,
+          "text": "He",
+          "startMs": 128940,
+          "endMs": 129160,
+          "probability": 0.993936
+        },
+        {
+          "index": 8,
+          "text": "gets",
+          "startMs": 129160,
+          "endMs": 129380,
+          "probability": 0.988722
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 129380,
+          "endMs": 129800,
+          "probability": 0.994853
+        },
+        {
+          "index": 10,
+          "text": "big",
+          "startMs": 129800,
+          "endMs": 130100,
+          "probability": 0.995603
+        },
+        {
+          "index": 11,
+          "text": "rolling",
+          "startMs": 130100,
+          "endMs": 130620,
+          "probability": 0.993445
+        },
+        {
+          "index": 12,
+          "text": "pin",
+          "startMs": 130620,
+          "endMs": 131000,
+          "probability": 0.967784
+        },
+        {
+          "index": 13,
+          "text": "and",
+          "startMs": 131000,
+          "endMs": 131400,
+          "probability": 0.896389
+        },
+        {
+          "index": 14,
+          "text": "rolls",
+          "startMs": 131400,
+          "endMs": 131820,
+          "probability": 0.995474
+        },
+        {
+          "index": 15,
+          "text": "them",
+          "startMs": 131820,
+          "endMs": 132080,
+          "probability": 0.996275
+        },
+        {
+          "index": 16,
+          "text": "into",
+          "startMs": 132080,
+          "endMs": 132420,
+          "probability": 0.983682
+        },
+        {
+          "index": 17,
+          "text": "great",
+          "startMs": 132420,
+          "endMs": 132860,
+          "probability": 0.975793
+        },
+        {
+          "index": 18,
+          "text": "big",
+          "startMs": 132860,
+          "endMs": 133260,
+          "probability": 0.968975
+        },
+        {
+          "index": 19,
+          "text": "shells.",
+          "startMs": 133260,
+          "endMs": 133940,
+          "probability": 0.987344
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Groovy, Bob says. Giant taco shells.",
+      "startMs": 135400,
+      "endMs": 140340,
+      "avgLogprob": -0.123184,
+      "noSpeechProb": 0.171427,
+      "compressionRatio": 1.4125,
+      "words": [
+        {
+          "index": 1,
+          "text": "Groovy,",
+          "startMs": 135400,
+          "endMs": 136200,
+          "probability": 0.723324
+        },
+        {
+          "index": 2,
+          "text": "Bob",
+          "startMs": 136780,
+          "endMs": 136960,
+          "probability": 0.98673
+        },
+        {
+          "index": 3,
+          "text": "says.",
+          "startMs": 136960,
+          "endMs": 137520,
+          "probability": 0.991149
+        },
+        {
+          "index": 4,
+          "text": "Giant",
+          "startMs": 138920,
+          "endMs": 138920,
+          "probability": 0.976644
+        },
+        {
+          "index": 5,
+          "text": "taco",
+          "startMs": 138920,
+          "endMs": 139520,
+          "probability": 0.912104
+        },
+        {
+          "index": 6,
+          "text": "shells.",
+          "startMs": 139520,
+          "endMs": 140340,
+          "probability": 0.996732
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Pete nods. Now we can fill them with even more tasty treats.",
+      "startMs": 141440,
+      "endMs": 146360,
+      "avgLogprob": -0.123184,
+      "noSpeechProb": 0.171427,
+      "compressionRatio": 1.4125,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 141440,
+          "endMs": 141540,
+          "probability": 0.99028
+        },
+        {
+          "index": 2,
+          "text": "nods.",
+          "startMs": 141540,
+          "endMs": 142060,
+          "probability": 0.996756
+        },
+        {
+          "index": 3,
+          "text": "Now",
+          "startMs": 143060,
+          "endMs": 143220,
+          "probability": 0.991207
+        },
+        {
+          "index": 4,
+          "text": "we",
+          "startMs": 143220,
+          "endMs": 143480,
+          "probability": 0.898423
+        },
+        {
+          "index": 5,
+          "text": "can",
+          "startMs": 143480,
+          "endMs": 143660,
+          "probability": 0.995666
+        },
+        {
+          "index": 6,
+          "text": "fill",
+          "startMs": 143660,
+          "endMs": 143960,
+          "probability": 0.973081
+        },
+        {
+          "index": 7,
+          "text": "them",
+          "startMs": 143960,
+          "endMs": 144200,
+          "probability": 0.995378
+        },
+        {
+          "index": 8,
+          "text": "with",
+          "startMs": 144200,
+          "endMs": 144380,
+          "probability": 0.982096
+        },
+        {
+          "index": 9,
+          "text": "even",
+          "startMs": 144380,
+          "endMs": 144680,
+          "probability": 0.993832
+        },
+        {
+          "index": 10,
+          "text": "more",
+          "startMs": 144680,
+          "endMs": 145040,
+          "probability": 0.998145
+        },
+        {
+          "index": 11,
+          "text": "tasty",
+          "startMs": 145040,
+          "endMs": 145560,
+          "probability": 0.997868
+        },
+        {
+          "index": 12,
+          "text": "treats.",
+          "startMs": 145560,
+          "endMs": 146360,
+          "probability": 0.999283
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Uh oh. Dad forgot to go to the store.",
+      "startMs": 148600,
+      "endMs": 152860,
+      "avgLogprob": -0.123184,
+      "noSpeechProb": 0.171427,
+      "compressionRatio": 1.4125,
+      "words": [
+        {
+          "index": 1,
+          "text": "Uh",
+          "startMs": 148600,
+          "endMs": 148860,
+          "probability": 0.907483
+        },
+        {
+          "index": 2,
+          "text": "oh.",
+          "startMs": 148860,
+          "endMs": 149440,
+          "probability": 0.509392
+        },
+        {
+          "index": 3,
+          "text": "Dad",
+          "startMs": 150500,
+          "endMs": 150840,
+          "probability": 0.994808
+        },
+        {
+          "index": 4,
+          "text": "forgot",
+          "startMs": 150840,
+          "endMs": 151180,
+          "probability": 0.997629
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 151180,
+          "endMs": 151600,
+          "probability": 0.998452
+        },
+        {
+          "index": 6,
+          "text": "go",
+          "startMs": 151600,
+          "endMs": 151780,
+          "probability": 0.996645
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 151780,
+          "endMs": 151920,
+          "probability": 0.993234
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 151920,
+          "endMs": 152100,
+          "probability": 0.997651
+        },
+        {
+          "index": 9,
+          "text": "store.",
+          "startMs": 152100,
+          "endMs": 152860,
+          "probability": 0.998495
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "They are all out of beans and cheese.",
+      "startMs": 152860,
+      "endMs": 156520,
+      "avgLogprob": -0.063818,
+      "noSpeechProb": 0.060833,
+      "compressionRatio": 1.451807,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 152860,
+          "endMs": 154120,
+          "probability": 0.295992
+        },
+        {
+          "index": 2,
+          "text": "are",
+          "startMs": 154120,
+          "endMs": 154300,
+          "probability": 0.949811
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 154300,
+          "endMs": 154640,
+          "probability": 0.989983
+        },
+        {
+          "index": 4,
+          "text": "out",
+          "startMs": 154640,
+          "endMs": 154980,
+          "probability": 0.989754
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 154980,
+          "endMs": 155360,
+          "probability": 0.997208
+        },
+        {
+          "index": 6,
+          "text": "beans",
+          "startMs": 155360,
+          "endMs": 155680,
+          "probability": 0.974782
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 155680,
+          "endMs": 156000,
+          "probability": 0.994641
+        },
+        {
+          "index": 8,
+          "text": "cheese.",
+          "startMs": 156000,
+          "endMs": 156520,
+          "probability": 0.997477
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "No worries, Pete says. We can use these instead.",
+      "startMs": 157980,
+      "endMs": 162920,
+      "avgLogprob": -0.063818,
+      "noSpeechProb": 0.060833,
+      "compressionRatio": 1.451807,
+      "words": [
+        {
+          "index": 1,
+          "text": "No",
+          "startMs": 157980,
+          "endMs": 158340,
+          "probability": 0.074816
+        },
+        {
+          "index": 2,
+          "text": "worries,",
+          "startMs": 158340,
+          "endMs": 158980,
+          "probability": 0.991679
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 159520,
+          "endMs": 159660,
+          "probability": 0.987497
+        },
+        {
+          "index": 4,
+          "text": "says.",
+          "startMs": 159660,
+          "endMs": 160120,
+          "probability": 0.995157
+        },
+        {
+          "index": 5,
+          "text": "We",
+          "startMs": 160860,
+          "endMs": 161080,
+          "probability": 0.985921
+        },
+        {
+          "index": 6,
+          "text": "can",
+          "startMs": 161080,
+          "endMs": 161320,
+          "probability": 0.997258
+        },
+        {
+          "index": 7,
+          "text": "use",
+          "startMs": 161320,
+          "endMs": 161640,
+          "probability": 0.997214
+        },
+        {
+          "index": 8,
+          "text": "these",
+          "startMs": 161640,
+          "endMs": 162100,
+          "probability": 0.993773
+        },
+        {
+          "index": 9,
+          "text": "instead.",
+          "startMs": 162100,
+          "endMs": 162920,
+          "probability": 0.976867
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Pete holds up a jar of marshmallow fluff and a bag of jelly beans.",
+      "startMs": 164280,
+      "endMs": 169200,
+      "avgLogprob": -0.063818,
+      "noSpeechProb": 0.060833,
+      "compressionRatio": 1.451807,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 164280,
+          "endMs": 164480,
+          "probability": 0.976292
+        },
+        {
+          "index": 2,
+          "text": "holds",
+          "startMs": 164480,
+          "endMs": 164840,
+          "probability": 0.99138
+        },
+        {
+          "index": 3,
+          "text": "up",
+          "startMs": 164840,
+          "endMs": 165140,
+          "probability": 0.990561
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 165140,
+          "endMs": 165340,
+          "probability": 0.997444
+        },
+        {
+          "index": 5,
+          "text": "jar",
+          "startMs": 165340,
+          "endMs": 165640,
+          "probability": 0.99716
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 165640,
+          "endMs": 165920,
+          "probability": 0.997005
+        },
+        {
+          "index": 7,
+          "text": "marshmallow",
+          "startMs": 165920,
+          "endMs": 166560,
+          "probability": 0.963081
+        },
+        {
+          "index": 8,
+          "text": "fluff",
+          "startMs": 166560,
+          "endMs": 167040,
+          "probability": 0.99838
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 167040,
+          "endMs": 167540,
+          "probability": 0.901629
+        },
+        {
+          "index": 10,
+          "text": "a",
+          "startMs": 167540,
+          "endMs": 167720,
+          "probability": 0.996472
+        },
+        {
+          "index": 11,
+          "text": "bag",
+          "startMs": 167720,
+          "endMs": 167980,
+          "probability": 0.998377
+        },
+        {
+          "index": 12,
+          "text": "of",
+          "startMs": 167980,
+          "endMs": 168240,
+          "probability": 0.999202
+        },
+        {
+          "index": 13,
+          "text": "jelly",
+          "startMs": 168240,
+          "endMs": 168600,
+          "probability": 0.99448
+        },
+        {
+          "index": 14,
+          "text": "beans.",
+          "startMs": 168600,
+          "endMs": 169200,
+          "probability": 0.924696
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Bob fills his taco with pickles and bananas. Yum!",
+      "startMs": 171620,
+      "endMs": 176420,
+      "avgLogprob": -0.063818,
+      "noSpeechProb": 0.060833,
+      "compressionRatio": 1.451807,
+      "words": [
+        {
+          "index": 1,
+          "text": "Bob",
+          "startMs": 171620,
+          "endMs": 171740,
+          "probability": 0.982267
+        },
+        {
+          "index": 2,
+          "text": "fills",
+          "startMs": 171740,
+          "endMs": 172200,
+          "probability": 0.995093
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 172200,
+          "endMs": 172520,
+          "probability": 0.998315
+        },
+        {
+          "index": 4,
+          "text": "taco",
+          "startMs": 172520,
+          "endMs": 173040,
+          "probability": 0.984045
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 173040,
+          "endMs": 173680,
+          "probability": 0.983685
+        },
+        {
+          "index": 6,
+          "text": "pickles",
+          "startMs": 173680,
+          "endMs": 174320,
+          "probability": 0.990349
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 174320,
+          "endMs": 174560,
+          "probability": 0.998203
+        },
+        {
+          "index": 8,
+          "text": "bananas.",
+          "startMs": 174560,
+          "endMs": 175340,
+          "probability": 0.982183
+        },
+        {
+          "index": 9,
+          "text": "Yum!",
+          "startMs": 176020,
+          "endMs": 176420,
+          "probability": 0.927285
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Dad fills his with berries and cream.",
+      "startMs": 177540,
+      "endMs": 180840,
+      "avgLogprob": -0.063818,
+      "noSpeechProb": 0.060833,
+      "compressionRatio": 1.451807,
+      "words": [
+        {
+          "index": 1,
+          "text": "Dad",
+          "startMs": 177540,
+          "endMs": 177900,
+          "probability": 0.993127
+        },
+        {
+          "index": 2,
+          "text": "fills",
+          "startMs": 177900,
+          "endMs": 178360,
+          "probability": 0.996615
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 178360,
+          "endMs": 178760,
+          "probability": 0.998576
+        },
+        {
+          "index": 4,
+          "text": "with",
+          "startMs": 178760,
+          "endMs": 179340,
+          "probability": 0.967352
+        },
+        {
+          "index": 5,
+          "text": "berries",
+          "startMs": 179340,
+          "endMs": 179940,
+          "probability": 0.999155
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 179940,
+          "endMs": 180340,
+          "probability": 0.999414
+        },
+        {
+          "index": 7,
+          "text": "cream.",
+          "startMs": 180340,
+          "endMs": 180840,
+          "probability": 0.994619
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Mom makes a green taco. Cucumbers, peppers and broccoli.",
+      "startMs": 180840,
+      "endMs": 187300,
+      "avgLogprob": -0.102174,
+      "noSpeechProb": 0.039359,
+      "compressionRatio": 1.326923,
+      "words": [
+        {
+          "index": 1,
+          "text": "Mom",
+          "startMs": 180840,
+          "endMs": 182400,
+          "probability": 0.558613
+        },
+        {
+          "index": 2,
+          "text": "makes",
+          "startMs": 182400,
+          "endMs": 182780,
+          "probability": 0.992725
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 182780,
+          "endMs": 183060,
+          "probability": 0.996943
+        },
+        {
+          "index": 4,
+          "text": "green",
+          "startMs": 183060,
+          "endMs": 183420,
+          "probability": 0.992985
+        },
+        {
+          "index": 5,
+          "text": "taco.",
+          "startMs": 183420,
+          "endMs": 184020,
+          "probability": 0.981571
+        },
+        {
+          "index": 6,
+          "text": "Cucumbers,",
+          "startMs": 184720,
+          "endMs": 185300,
+          "probability": 0.991376
+        },
+        {
+          "index": 7,
+          "text": "peppers",
+          "startMs": 185680,
+          "endMs": 185960,
+          "probability": 0.978526
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 185960,
+          "endMs": 186600,
+          "probability": 0.421276
+        },
+        {
+          "index": 9,
+          "text": "broccoli.",
+          "startMs": 186600,
+          "endMs": 187300,
+          "probability": 0.99755
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "It's Pete's turn to fill his taco. He chooses jelly beans and marshmallow fluff.",
+      "startMs": 189360,
+      "endMs": 196480,
+      "avgLogprob": -0.102174,
+      "noSpeechProb": 0.039359,
+      "compressionRatio": 1.326923,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 189360,
+          "endMs": 190040,
+          "probability": 0.982416
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 190040,
+          "endMs": 190320,
+          "probability": 0.982942
+        },
+        {
+          "index": 3,
+          "text": "turn",
+          "startMs": 190320,
+          "endMs": 190480,
+          "probability": 0.999343
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 190480,
+          "endMs": 190760,
+          "probability": 0.998458
+        },
+        {
+          "index": 5,
+          "text": "fill",
+          "startMs": 190760,
+          "endMs": 191020,
+          "probability": 0.995591
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 191020,
+          "endMs": 191420,
+          "probability": 0.994602
+        },
+        {
+          "index": 7,
+          "text": "taco.",
+          "startMs": 191420,
+          "endMs": 192000,
+          "probability": 0.995819
+        },
+        {
+          "index": 8,
+          "text": "He",
+          "startMs": 192780,
+          "endMs": 192980,
+          "probability": 0.987917
+        },
+        {
+          "index": 9,
+          "text": "chooses",
+          "startMs": 192980,
+          "endMs": 193380,
+          "probability": 0.982512
+        },
+        {
+          "index": 10,
+          "text": "jelly",
+          "startMs": 193380,
+          "endMs": 193960,
+          "probability": 0.89958
+        },
+        {
+          "index": 11,
+          "text": "beans",
+          "startMs": 193960,
+          "endMs": 194480,
+          "probability": 0.920409
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 194480,
+          "endMs": 194980,
+          "probability": 0.983088
+        },
+        {
+          "index": 13,
+          "text": "marshmallow",
+          "startMs": 194980,
+          "endMs": 195900,
+          "probability": 0.985167
+        },
+        {
+          "index": 14,
+          "text": "fluff.",
+          "startMs": 195900,
+          "endMs": 196480,
+          "probability": 0.997537
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Then he adds some maple syrup. Sweet! Pete says.",
+      "startMs": 197200,
+      "endMs": 202460,
+      "avgLogprob": -0.102174,
+      "noSpeechProb": 0.039359,
+      "compressionRatio": 1.326923,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 197200,
+          "endMs": 197420,
+          "probability": 0.990469
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 197420,
+          "endMs": 197640,
+          "probability": 0.96135
+        },
+        {
+          "index": 3,
+          "text": "adds",
+          "startMs": 197640,
+          "endMs": 197880,
+          "probability": 0.982718
+        },
+        {
+          "index": 4,
+          "text": "some",
+          "startMs": 197880,
+          "endMs": 198160,
+          "probability": 0.939123
+        },
+        {
+          "index": 5,
+          "text": "maple",
+          "startMs": 198160,
+          "endMs": 198500,
+          "probability": 0.993301
+        },
+        {
+          "index": 6,
+          "text": "syrup.",
+          "startMs": 198500,
+          "endMs": 199040,
+          "probability": 0.998083
+        },
+        {
+          "index": 7,
+          "text": "Sweet!",
+          "startMs": 200300,
+          "endMs": 201000,
+          "probability": 0.204131
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 201720,
+          "endMs": 201940,
+          "probability": 0.996418
+        },
+        {
+          "index": 9,
+          "text": "says.",
+          "startMs": 201940,
+          "endMs": 202460,
+          "probability": 0.996054
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Too sweet! Mom says.",
+      "startMs": 203640,
+      "endMs": 206200,
+      "avgLogprob": -0.102174,
+      "noSpeechProb": 0.039359,
+      "compressionRatio": 1.326923,
+      "words": [
+        {
+          "index": 1,
+          "text": "Too",
+          "startMs": 203640,
+          "endMs": 203940,
+          "probability": 0.932169
+        },
+        {
+          "index": 2,
+          "text": "sweet!",
+          "startMs": 203940,
+          "endMs": 204680,
+          "probability": 0.99045
+        },
+        {
+          "index": 3,
+          "text": "Mom",
+          "startMs": 205380,
+          "endMs": 205540,
+          "probability": 0.972547
+        },
+        {
+          "index": 4,
+          "text": "says.",
+          "startMs": 205540,
+          "endMs": 206200,
+          "probability": 0.997612
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Pete looks at his taco. Mom's right. It needs something else.",
+      "startMs": 207640,
+      "endMs": 214400,
+      "avgLogprob": -0.106464,
+      "noSpeechProb": 0.027508,
+      "compressionRatio": 1.2,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 207640,
+          "endMs": 208680,
+          "probability": 0.614275
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 208680,
+          "endMs": 208980,
+          "probability": 0.964983
+        },
+        {
+          "index": 3,
+          "text": "at",
+          "startMs": 208980,
+          "endMs": 209200,
+          "probability": 0.996486
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 209200,
+          "endMs": 209380,
+          "probability": 0.990031
+        },
+        {
+          "index": 5,
+          "text": "taco.",
+          "startMs": 209380,
+          "endMs": 209920,
+          "probability": 0.902569
+        },
+        {
+          "index": 6,
+          "text": "Mom's",
+          "startMs": 211040,
+          "endMs": 211660,
+          "probability": 0.817855
+        },
+        {
+          "index": 7,
+          "text": "right.",
+          "startMs": 211660,
+          "endMs": 212080,
+          "probability": 0.997894
+        },
+        {
+          "index": 8,
+          "text": "It",
+          "startMs": 212860,
+          "endMs": 213000,
+          "probability": 0.991201
+        },
+        {
+          "index": 9,
+          "text": "needs",
+          "startMs": 213000,
+          "endMs": 213380,
+          "probability": 0.977541
+        },
+        {
+          "index": 10,
+          "text": "something",
+          "startMs": 213380,
+          "endMs": 213880,
+          "probability": 0.998041
+        },
+        {
+          "index": 11,
+          "text": "else.",
+          "startMs": 213880,
+          "endMs": 214400,
+          "probability": 0.998523
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "But what? Pickles? No.",
+      "startMs": 215280,
+      "endMs": 219100,
+      "avgLogprob": -0.106464,
+      "noSpeechProb": 0.027508,
+      "compressionRatio": 1.2,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 215280,
+          "endMs": 215440,
+          "probability": 0.965408
+        },
+        {
+          "index": 2,
+          "text": "what?",
+          "startMs": 215440,
+          "endMs": 215940,
+          "probability": 0.989188
+        },
+        {
+          "index": 3,
+          "text": "Pickles?",
+          "startMs": 217420,
+          "endMs": 218040,
+          "probability": 0.969652
+        },
+        {
+          "index": 4,
+          "text": "No.",
+          "startMs": 218560,
+          "endMs": 219100,
+          "probability": 0.989616
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Mustard? No.",
+      "startMs": 220560,
+      "endMs": 222260,
+      "avgLogprob": -0.106464,
+      "noSpeechProb": 0.027508,
+      "compressionRatio": 1.2,
+      "words": [
+        {
+          "index": 1,
+          "text": "Mustard?",
+          "startMs": 220560,
+          "endMs": 221080,
+          "probability": 0.986842
+        },
+        {
+          "index": 2,
+          "text": "No.",
+          "startMs": 221600,
+          "endMs": 222260,
+          "probability": 0.992537
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Then Pete sees what he wants. Anchovies!",
+      "startMs": 223500,
+      "endMs": 227700,
+      "avgLogprob": -0.106464,
+      "noSpeechProb": 0.027508,
+      "compressionRatio": 1.2,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 223500,
+          "endMs": 223800,
+          "probability": 0.979927
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 223800,
+          "endMs": 224240,
+          "probability": 0.955384
+        },
+        {
+          "index": 3,
+          "text": "sees",
+          "startMs": 224240,
+          "endMs": 224680,
+          "probability": 0.977181
+        },
+        {
+          "index": 4,
+          "text": "what",
+          "startMs": 224680,
+          "endMs": 225020,
+          "probability": 0.998533
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 225020,
+          "endMs": 225240,
+          "probability": 0.998863
+        },
+        {
+          "index": 6,
+          "text": "wants.",
+          "startMs": 225240,
+          "endMs": 225820,
+          "probability": 0.997154
+        },
+        {
+          "index": 7,
+          "text": "Anchovies!",
+          "startMs": 227060,
+          "endMs": 227700,
+          "probability": 0.804157
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Pete takes a big bite. Now that is one groovy taco, he says.",
+      "startMs": 228700,
+      "endMs": 236640,
+      "avgLogprob": -0.119694,
+      "noSpeechProb": 0.049385,
+      "compressionRatio": 1.298701,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 228700,
+          "endMs": 229360,
+          "probability": 0.422363
+        },
+        {
+          "index": 2,
+          "text": "takes",
+          "startMs": 229360,
+          "endMs": 229800,
+          "probability": 0.960419
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 229800,
+          "endMs": 230180,
+          "probability": 0.99359
+        },
+        {
+          "index": 4,
+          "text": "big",
+          "startMs": 230180,
+          "endMs": 230600,
+          "probability": 0.994257
+        },
+        {
+          "index": 5,
+          "text": "bite.",
+          "startMs": 230600,
+          "endMs": 231100,
+          "probability": 0.998015
+        },
+        {
+          "index": 6,
+          "text": "Now",
+          "startMs": 232200,
+          "endMs": 232320,
+          "probability": 0.11057
+        },
+        {
+          "index": 7,
+          "text": "that",
+          "startMs": 232320,
+          "endMs": 232740,
+          "probability": 0.880246
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 232740,
+          "endMs": 233000,
+          "probability": 0.943323
+        },
+        {
+          "index": 9,
+          "text": "one",
+          "startMs": 233000,
+          "endMs": 233520,
+          "probability": 0.989934
+        },
+        {
+          "index": 10,
+          "text": "groovy",
+          "startMs": 233520,
+          "endMs": 234860,
+          "probability": 0.92317
+        },
+        {
+          "index": 11,
+          "text": "taco,",
+          "startMs": 234860,
+          "endMs": 235600,
+          "probability": 0.92423
+        },
+        {
+          "index": 12,
+          "text": "he",
+          "startMs": 235840,
+          "endMs": 236120,
+          "probability": 0.985914
+        },
+        {
+          "index": 13,
+          "text": "says.",
+          "startMs": 236120,
+          "endMs": 236640,
+          "probability": 0.990641
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Pete hears a knock on the door. It was Pete's friends, Callie, Gus and Grumpy Toad.",
+      "startMs": 238580,
+      "endMs": 245300,
+      "avgLogprob": -0.119694,
+      "noSpeechProb": 0.049385,
+      "compressionRatio": 1.298701,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 238580,
+          "endMs": 239140,
+          "probability": 0.996537
+        },
+        {
+          "index": 2,
+          "text": "hears",
+          "startMs": 239140,
+          "endMs": 239460,
+          "probability": 0.997448
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 239460,
+          "endMs": 239700,
+          "probability": 0.996516
+        },
+        {
+          "index": 4,
+          "text": "knock",
+          "startMs": 239700,
+          "endMs": 239880,
+          "probability": 0.99799
+        },
+        {
+          "index": 5,
+          "text": "on",
+          "startMs": 239880,
+          "endMs": 240140,
+          "probability": 0.995053
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 240140,
+          "endMs": 240300,
+          "probability": 0.996666
+        },
+        {
+          "index": 7,
+          "text": "door.",
+          "startMs": 240300,
+          "endMs": 240620,
+          "probability": 0.999056
+        },
+        {
+          "index": 8,
+          "text": "It",
+          "startMs": 241580,
+          "endMs": 241760,
+          "probability": 0.989563
+        },
+        {
+          "index": 9,
+          "text": "was",
+          "startMs": 241760,
+          "endMs": 241960,
+          "probability": 0.996383
+        },
+        {
+          "index": 10,
+          "text": "Pete's",
+          "startMs": 241960,
+          "endMs": 242380,
+          "probability": 0.991465
+        },
+        {
+          "index": 11,
+          "text": "friends,",
+          "startMs": 242380,
+          "endMs": 242860,
+          "probability": 0.96058
+        },
+        {
+          "index": 12,
+          "text": "Callie,",
+          "startMs": 243480,
+          "endMs": 243700,
+          "probability": 0.776911
+        },
+        {
+          "index": 13,
+          "text": "Gus",
+          "startMs": 244080,
+          "endMs": 244120,
+          "probability": 0.982379
+        },
+        {
+          "index": 14,
+          "text": "and",
+          "startMs": 244120,
+          "endMs": 244500,
+          "probability": 0.510177
+        },
+        {
+          "index": 15,
+          "text": "Grumpy",
+          "startMs": 244500,
+          "endMs": 244920,
+          "probability": 0.971596
+        },
+        {
+          "index": 16,
+          "text": "Toad.",
+          "startMs": 244920,
+          "endMs": 245300,
+          "probability": 0.987655
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "What smells so good? Callie asks. Can we try? Asks Gus.",
+      "startMs": 246560,
+      "endMs": 253840,
+      "avgLogprob": -0.119694,
+      "noSpeechProb": 0.049385,
+      "compressionRatio": 1.298701,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 246560,
+          "endMs": 247040,
+          "probability": 0.196107
+        },
+        {
+          "index": 2,
+          "text": "smells",
+          "startMs": 247040,
+          "endMs": 247640,
+          "probability": 0.988678
+        },
+        {
+          "index": 3,
+          "text": "so",
+          "startMs": 247640,
+          "endMs": 248220,
+          "probability": 0.997312
+        },
+        {
+          "index": 4,
+          "text": "good?",
+          "startMs": 248220,
+          "endMs": 248820,
+          "probability": 0.998459
+        },
+        {
+          "index": 5,
+          "text": "Callie",
+          "startMs": 249460,
+          "endMs": 249700,
+          "probability": 0.992929
+        },
+        {
+          "index": 6,
+          "text": "asks.",
+          "startMs": 249700,
+          "endMs": 250220,
+          "probability": 0.994573
+        },
+        {
+          "index": 7,
+          "text": "Can",
+          "startMs": 251460,
+          "endMs": 251600,
+          "probability": 0.953737
+        },
+        {
+          "index": 8,
+          "text": "we",
+          "startMs": 251600,
+          "endMs": 251920,
+          "probability": 0.997183
+        },
+        {
+          "index": 9,
+          "text": "try?",
+          "startMs": 251920,
+          "endMs": 252360,
+          "probability": 0.998483
+        },
+        {
+          "index": 10,
+          "text": "Asks",
+          "startMs": 252980,
+          "endMs": 253440,
+          "probability": 0.905014
+        },
+        {
+          "index": 11,
+          "text": "Gus.",
+          "startMs": 253440,
+          "endMs": 253840,
+          "probability": 0.995712
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "Even Grumpy Toad wants a taco.",
+      "startMs": 254840,
+      "endMs": 257240,
+      "avgLogprob": -0.106012,
+      "noSpeechProb": 0.026024,
+      "compressionRatio": 1.377483,
+      "words": [
+        {
+          "index": 1,
+          "text": "Even",
+          "startMs": 254810,
+          "endMs": 255320,
+          "probability": 0.115989
+        },
+        {
+          "index": 2,
+          "text": "Grumpy",
+          "startMs": 255320,
+          "endMs": 255820,
+          "probability": 0.95188
+        },
+        {
+          "index": 3,
+          "text": "Toad",
+          "startMs": 255820,
+          "endMs": 256160,
+          "probability": 0.989341
+        },
+        {
+          "index": 4,
+          "text": "wants",
+          "startMs": 256160,
+          "endMs": 256500,
+          "probability": 0.969289
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 256500,
+          "endMs": 256780,
+          "probability": 0.995459
+        },
+        {
+          "index": 6,
+          "text": "taco.",
+          "startMs": 256780,
+          "endMs": 257240,
+          "probability": 0.847617
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Wow! These tacos are out of sight, Callie shouts. Grumpy Toad agrees.",
+      "startMs": 259420,
+      "endMs": 266280,
+      "avgLogprob": -0.106012,
+      "noSpeechProb": 0.026024,
+      "compressionRatio": 1.377483,
+      "words": [
+        {
+          "index": 1,
+          "text": "Wow!",
+          "startMs": 259420,
+          "endMs": 259940,
+          "probability": 0.084603
+        },
+        {
+          "index": 2,
+          "text": "These",
+          "startMs": 260580,
+          "endMs": 260880,
+          "probability": 0.96126
+        },
+        {
+          "index": 3,
+          "text": "tacos",
+          "startMs": 260880,
+          "endMs": 261340,
+          "probability": 0.986816
+        },
+        {
+          "index": 4,
+          "text": "are",
+          "startMs": 261340,
+          "endMs": 261640,
+          "probability": 0.99799
+        },
+        {
+          "index": 5,
+          "text": "out",
+          "startMs": 261640,
+          "endMs": 261980,
+          "probability": 0.995165
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 261980,
+          "endMs": 262160,
+          "probability": 0.977956
+        },
+        {
+          "index": 7,
+          "text": "sight,",
+          "startMs": 262160,
+          "endMs": 262920,
+          "probability": 0.995182
+        },
+        {
+          "index": 8,
+          "text": "Callie",
+          "startMs": 263500,
+          "endMs": 263820,
+          "probability": 0.715561
+        },
+        {
+          "index": 9,
+          "text": "shouts.",
+          "startMs": 263820,
+          "endMs": 264260,
+          "probability": 0.992945
+        },
+        {
+          "index": 10,
+          "text": "Grumpy",
+          "startMs": 265140,
+          "endMs": 265400,
+          "probability": 0.995277
+        },
+        {
+          "index": 11,
+          "text": "Toad",
+          "startMs": 265400,
+          "endMs": 265740,
+          "probability": 0.994998
+        },
+        {
+          "index": 12,
+          "text": "agrees.",
+          "startMs": 265740,
+          "endMs": 266280,
+          "probability": 0.993909
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Best tacos I've ever had.",
+      "startMs": 267220,
+      "endMs": 269460,
+      "avgLogprob": -0.106012,
+      "noSpeechProb": 0.026024,
+      "compressionRatio": 1.377483,
+      "words": [
+        {
+          "index": 1,
+          "text": "Best",
+          "startMs": 267220,
+          "endMs": 267500,
+          "probability": 0.822468
+        },
+        {
+          "index": 2,
+          "text": "tacos",
+          "startMs": 267500,
+          "endMs": 268080,
+          "probability": 0.966848
+        },
+        {
+          "index": 3,
+          "text": "I've",
+          "startMs": 268080,
+          "endMs": 268600,
+          "probability": 0.966164
+        },
+        {
+          "index": 4,
+          "text": "ever",
+          "startMs": 268600,
+          "endMs": 268880,
+          "probability": 0.996285
+        },
+        {
+          "index": 5,
+          "text": "had.",
+          "startMs": 268880,
+          "endMs": 269460,
+          "probability": 0.999319
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "We should do this every Taco Tuesday, Mom says.",
+      "startMs": 270820,
+      "endMs": 275280,
+      "avgLogprob": -0.106012,
+      "noSpeechProb": 0.026024,
+      "compressionRatio": 1.377483,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 270820,
+          "endMs": 271040,
+          "probability": 0.865213
+        },
+        {
+          "index": 2,
+          "text": "should",
+          "startMs": 271040,
+          "endMs": 271300,
+          "probability": 0.998181
+        },
+        {
+          "index": 3,
+          "text": "do",
+          "startMs": 271300,
+          "endMs": 271560,
+          "probability": 0.997174
+        },
+        {
+          "index": 4,
+          "text": "this",
+          "startMs": 271560,
+          "endMs": 271860,
+          "probability": 0.997489
+        },
+        {
+          "index": 5,
+          "text": "every",
+          "startMs": 271860,
+          "endMs": 272460,
+          "probability": 0.991999
+        },
+        {
+          "index": 6,
+          "text": "Taco",
+          "startMs": 272460,
+          "endMs": 272980,
+          "probability": 0.918116
+        },
+        {
+          "index": 7,
+          "text": "Tuesday,",
+          "startMs": 272980,
+          "endMs": 273660,
+          "probability": 0.995218
+        },
+        {
+          "index": 8,
+          "text": "Mom",
+          "startMs": 274300,
+          "endMs": 274620,
+          "probability": 0.68412
+        },
+        {
+          "index": 9,
+          "text": "says.",
+          "startMs": 274620,
+          "endMs": 275280,
+          "probability": 0.996707
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Pete grins. Making tacos was fun.",
+      "startMs": 276640,
+      "endMs": 280620,
+      "avgLogprob": -0.106012,
+      "noSpeechProb": 0.026024,
+      "compressionRatio": 1.377483,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 276640,
+          "endMs": 276860,
+          "probability": 0.966147
+        },
+        {
+          "index": 2,
+          "text": "grins.",
+          "startMs": 276860,
+          "endMs": 277540,
+          "probability": 0.736408
+        },
+        {
+          "index": 3,
+          "text": "Making",
+          "startMs": 278700,
+          "endMs": 279060,
+          "probability": 0.991825
+        },
+        {
+          "index": 4,
+          "text": "tacos",
+          "startMs": 279060,
+          "endMs": 279620,
+          "probability": 0.993632
+        },
+        {
+          "index": 5,
+          "text": "was",
+          "startMs": 279620,
+          "endMs": 280020,
+          "probability": 0.998785
+        },
+        {
+          "index": 6,
+          "text": "fun.",
+          "startMs": 280020,
+          "endMs": 280620,
+          "probability": 0.999565
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "But I'd rather eat them.",
+      "startMs": 280620,
+      "endMs": 284340,
+      "avgLogprob": -0.171277,
+      "noSpeechProb": 0.041179,
+      "compressionRatio": 0.8,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 280620,
+          "endMs": 282180,
+          "probability": 0.632782
+        },
+        {
+          "index": 2,
+          "text": "I'd",
+          "startMs": 282180,
+          "endMs": 282640,
+          "probability": 0.95576
+        },
+        {
+          "index": 3,
+          "text": "rather",
+          "startMs": 282640,
+          "endMs": 283040,
+          "probability": 0.991834
+        },
+        {
+          "index": 4,
+          "text": "eat",
+          "startMs": 283040,
+          "endMs": 283600,
+          "probability": 0.963579
+        },
+        {
+          "index": 5,
+          "text": "them.",
+          "startMs": 283600,
+          "endMs": 284340,
+          "probability": 0.995915
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "This program was produced by John Marshall Media.",
+      "startMs": 311120,
+      "endMs": 314960,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 311120,
+          "endMs": 312000,
+          "probability": 0.067916
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 312000,
+          "endMs": 312880,
+          "probability": 0.973947
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 312880,
+          "endMs": 313100,
+          "probability": 0.981605
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 313100,
+          "endMs": 313480,
+          "probability": 0.988811
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 313480,
+          "endMs": 313840,
+          "probability": 0.986471
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 313840,
+          "endMs": 314180,
+          "probability": 0.958224
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 314180,
+          "endMs": 314500,
+          "probability": 0.979219
+        },
+        {
+          "index": 8,
+          "text": "Media.",
+          "startMs": 314500,
+          "endMs": 314960,
+          "probability": 0.957625
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Directed by Cynthia Lee.",
+      "startMs": 315840,
+      "endMs": 317220,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "Directed",
+          "startMs": 315840,
+          "endMs": 316180,
+          "probability": 0.83371
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 316180,
+          "endMs": 316340,
+          "probability": 0.99782
+        },
+        {
+          "index": 3,
+          "text": "Cynthia",
+          "startMs": 316340,
+          "endMs": 316820,
+          "probability": 0.990363
+        },
+        {
+          "index": 4,
+          "text": "Lee.",
+          "startMs": 316820,
+          "endMs": 317220,
+          "probability": 0.920368
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "Executive Producer, Almita Benan.",
+      "startMs": 318460,
+      "endMs": 320380,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "Executive",
+          "startMs": 318460,
+          "endMs": 318460,
+          "probability": 0.911103
+        },
+        {
+          "index": 2,
+          "text": "Producer,",
+          "startMs": 318460,
+          "endMs": 319000,
+          "probability": 0.48752
+        },
+        {
+          "index": 3,
+          "text": "Almita",
+          "startMs": 319520,
+          "endMs": 319960,
+          "probability": 0.726968
+        },
+        {
+          "index": 4,
+          "text": "Benan.",
+          "startMs": 319960,
+          "endMs": 320380,
+          "probability": 0.364522
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "Managing Editor, Pamela Libetta.",
+      "startMs": 321180,
+      "endMs": 323380,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "Managing",
+          "startMs": 321180,
+          "endMs": 321500,
+          "probability": 0.99137
+        },
+        {
+          "index": 2,
+          "text": "Editor,",
+          "startMs": 321500,
+          "endMs": 321940,
+          "probability": 0.952103
+        },
+        {
+          "index": 3,
+          "text": "Pamela",
+          "startMs": 322500,
+          "endMs": 322740,
+          "probability": 0.972306
+        },
+        {
+          "index": 4,
+          "text": "Libetta.",
+          "startMs": 322740,
+          "endMs": 323380,
+          "probability": 0.340109
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Production Manager, Nate Hunter.",
+      "startMs": 324020,
+      "endMs": 325820,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 324020,
+          "endMs": 324300,
+          "probability": 0.98082
+        },
+        {
+          "index": 2,
+          "text": "Manager,",
+          "startMs": 324300,
+          "endMs": 324900,
+          "probability": 0.980902
+        },
+        {
+          "index": 3,
+          "text": "Nate",
+          "startMs": 325380,
+          "endMs": 325440,
+          "probability": 0.991467
+        },
+        {
+          "index": 4,
+          "text": "Hunter.",
+          "startMs": 325440,
+          "endMs": 325820,
+          "probability": 0.995135
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "Text Copyright 2024 by Kimberly and James Dean.",
+      "startMs": 326820,
+      "endMs": 330440,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "Text",
+          "startMs": 326820,
+          "endMs": 326980,
+          "probability": 0.958644
+        },
+        {
+          "index": 2,
+          "text": "Copyright",
+          "startMs": 326980,
+          "endMs": 327460,
+          "probability": 0.732454
+        },
+        {
+          "index": 3,
+          "text": "2024",
+          "startMs": 327460,
+          "endMs": 328480,
+          "probability": 0.48114
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 328480,
+          "endMs": 328980,
+          "probability": 0.897629
+        },
+        {
+          "index": 5,
+          "text": "Kimberly",
+          "startMs": 328980,
+          "endMs": 329340,
+          "probability": 0.740255
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 329340,
+          "endMs": 329760,
+          "probability": 0.921741
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 329760,
+          "endMs": 330140,
+          "probability": 0.995812
+        },
+        {
+          "index": 8,
+          "text": "Dean.",
+          "startMs": 330140,
+          "endMs": 330440,
+          "probability": 0.926028
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "Production Copyright 2024 by Harper Collins Publishers.",
+      "startMs": 331180,
+      "endMs": 334920,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 331180,
+          "endMs": 331460,
+          "probability": 0.982907
+        },
+        {
+          "index": 2,
+          "text": "Copyright",
+          "startMs": 331460,
+          "endMs": 332100,
+          "probability": 0.926371
+        },
+        {
+          "index": 3,
+          "text": "2024",
+          "startMs": 332100,
+          "endMs": 333040,
+          "probability": 0.98536
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 333040,
+          "endMs": 333520,
+          "probability": 0.983395
+        },
+        {
+          "index": 5,
+          "text": "Harper",
+          "startMs": 333520,
+          "endMs": 333900,
+          "probability": 0.995225
+        },
+        {
+          "index": 6,
+          "text": "Collins",
+          "startMs": 333900,
+          "endMs": 334340,
+          "probability": 0.640205
+        },
+        {
+          "index": 7,
+          "text": "Publishers.",
+          "startMs": 334340,
+          "endMs": 334920,
+          "probability": 0.962441
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "All rights reserved.",
+      "startMs": 335700,
+      "endMs": 336860,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 335700,
+          "endMs": 335920,
+          "probability": 0.981963
+        },
+        {
+          "index": 2,
+          "text": "rights",
+          "startMs": 335920,
+          "endMs": 336260,
+          "probability": 0.960558
+        },
+        {
+          "index": 3,
+          "text": "reserved.",
+          "startMs": 336260,
+          "endMs": 336860,
+          "probability": 0.991189
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "Thank you for listening.",
+      "startMs": 337720,
+      "endMs": 338800,
+      "avgLogprob": -0.199856,
+      "noSpeechProb": 0.97751,
+      "compressionRatio": 1.472727,
+      "words": [
+        {
+          "index": 1,
+          "text": "Thank",
+          "startMs": 337720,
+          "endMs": 337920,
+          "probability": 0.990279
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 337920,
+          "endMs": 338180,
+          "probability": 0.996125
+        },
+        {
+          "index": 3,
+          "text": "for",
+          "startMs": 338180,
+          "endMs": 338420,
+          "probability": 0.995421
+        },
+        {
+          "index": 4,
+          "text": "listening.",
+          "startMs": 338420,
+          "endMs": 338800,
+          "probability": 0.995611
+        }
+      ]
+    }
+  ]
+}

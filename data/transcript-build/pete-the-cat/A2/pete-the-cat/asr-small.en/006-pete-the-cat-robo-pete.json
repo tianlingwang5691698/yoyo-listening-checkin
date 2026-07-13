@@ -1,0 +1,5051 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 61.217,
+  "text": "Pete the Cat Robo Pete by James Dean performed by Luis Grosso What a great sunny morning Pete can't wait to play baseball with his friends Do you want to play catch Pete asked Larry I Can't says Larry. I'm going to the library Do you want to play catch Pete asked Callie? Was about to go for a bike ride says Callie Do you want to play catch Pete asked John I? Can't right now says John I have to paint the fence Pete wishes his friends would do what he wants to do. It's no fun playing catch all by himself if only I knew another me Pete thinks and Like that Pete has a great idea Pete builds a robot he programs it to be just like him Welcome to the world Robo Pete Pete says to the robot You're my new best friend. We'll do everything together and I want to play catch says Pete great idea says Robo Pete Pete and Robo Pete play catch Wow says Pete running after the ball you sure can throw far Robo Pete throws farther and farther until Time out says Pete as he tries to catch his breath Let's play something else. I Want to play whatever you want to play Robo Pete says proudly How about we play hide-and-seek says Pete that will be fun says Robo Pete Pete finds the best hiding place ever he's sure Robo Pete will never find him 10 9 8 7 6 5 4 3 2 1 shouts Robo Pete ready or not here I come Gotcha shouts Robo Pete tagging Pete Hey, how did you find me says Pete? With my homing device says Robo Pete I can find anyone anywhere Okay enough hide-and-seek says Pete. Let's play some guitar Pete teaches Robo Pete how to play a song he made up You have to feel the music Pete explains Okay, says Robo Pete To feel it I need to play loud Explains Robo Pete Pete tries to stop Robo Pete, but Robo Pete can't hear him over the noise This is fun says Robo Pete this is awful says Pete the cat Okay, says Robo Pete. Let's ride our skateboards instead Before Pete can answer Robo Pete's feet transform into a motorized skateboard with super speedy wheels Let's go Robo Pete shouts wait calls Pete Pete chases after Robo Pete he has no idea where Robo Pete is going Robo Pete crashes into the sandbox at the playground Are you okay Pete asks his robot? I am a robot. I am Indestructible says Robo Pete What is this strange place? It's a playground says Pete he waves to his friends This is Robo Pete Pete says to Callie Larry and John I made him myself Cool says Larry We are going to help John finish painting says Callie and then we are going bike riding I Want to go on the slide interrupts Robo Pete? Robo Pete I want to help my friends paint the fence Pete tells his robot Paint the fence that would be great Robo Pete says I am programmed to paint faster than anyone Pete and his friends try to help but Robo Pete paints too fast So instead they ride bikes and they read books and After Robo Pete is done painting they help him clean the brushes Pete realizes that it doesn't matter what they do just being with his friends is what makes it fun? We hope you have enjoyed this recording of Pete the cat Robo Pete by James Dean This program was produced by John Marshall Media copyright 2015 by James Dean production copyright 2015 by Harper Collins publishers all rights reserved",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat Robo Pete by James Dean performed by Luis Grosso",
+      "startMs": 0,
+      "endMs": 6400,
+      "avgLogprob": -0.265374,
+      "noSpeechProb": 0.054305,
+      "compressionRatio": 1.566474,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 520,
+          "probability": 0.886645
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 520,
+          "endMs": 720,
+          "probability": 0.964527
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 720,
+          "endMs": 1040,
+          "probability": 0.620434
+        },
+        {
+          "index": 4,
+          "text": "Robo",
+          "startMs": 1040,
+          "endMs": 1920,
+          "probability": 0.598442
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 1920,
+          "endMs": 2520,
+          "probability": 0.948893
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 2520,
+          "endMs": 3100,
+          "probability": 0.965288
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 3100,
+          "endMs": 3560,
+          "probability": 0.962536
+        },
+        {
+          "index": 8,
+          "text": "Dean",
+          "startMs": 3560,
+          "endMs": 4120,
+          "probability": 0.974505
+        },
+        {
+          "index": 9,
+          "text": "performed",
+          "startMs": 4120,
+          "endMs": 5140,
+          "probability": 0.963515
+        },
+        {
+          "index": 10,
+          "text": "by",
+          "startMs": 5140,
+          "endMs": 5480,
+          "probability": 0.997708
+        },
+        {
+          "index": 11,
+          "text": "Luis",
+          "startMs": 5480,
+          "endMs": 5820,
+          "probability": 0.334168
+        },
+        {
+          "index": 12,
+          "text": "Grosso",
+          "startMs": 5820,
+          "endMs": 6400,
+          "probability": 0.633628
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "What a great sunny morning Pete can't wait to play baseball with his friends",
+      "startMs": 9240,
+      "endMs": 14980,
+      "avgLogprob": -0.265374,
+      "noSpeechProb": 0.054305,
+      "compressionRatio": 1.566474,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 9240,
+          "endMs": 10080,
+          "probability": 0.969677
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 10080,
+          "endMs": 10260,
+          "probability": 0.997885
+        },
+        {
+          "index": 3,
+          "text": "great",
+          "startMs": 10260,
+          "endMs": 10660,
+          "probability": 0.989892
+        },
+        {
+          "index": 4,
+          "text": "sunny",
+          "startMs": 10660,
+          "endMs": 11140,
+          "probability": 0.81702
+        },
+        {
+          "index": 5,
+          "text": "morning",
+          "startMs": 11140,
+          "endMs": 11800,
+          "probability": 0.98863
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 11800,
+          "endMs": 12480,
+          "probability": 0.846186
+        },
+        {
+          "index": 7,
+          "text": "can't",
+          "startMs": 12480,
+          "endMs": 12980,
+          "probability": 0.981967
+        },
+        {
+          "index": 8,
+          "text": "wait",
+          "startMs": 12980,
+          "endMs": 13120,
+          "probability": 0.998214
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 13120,
+          "endMs": 13320,
+          "probability": 0.999494
+        },
+        {
+          "index": 10,
+          "text": "play",
+          "startMs": 13320,
+          "endMs": 13580,
+          "probability": 0.998373
+        },
+        {
+          "index": 11,
+          "text": "baseball",
+          "startMs": 13580,
+          "endMs": 14060,
+          "probability": 0.995627
+        },
+        {
+          "index": 12,
+          "text": "with",
+          "startMs": 14060,
+          "endMs": 14340,
+          "probability": 0.998239
+        },
+        {
+          "index": 13,
+          "text": "his",
+          "startMs": 14340,
+          "endMs": 14540,
+          "probability": 0.998882
+        },
+        {
+          "index": 14,
+          "text": "friends",
+          "startMs": 14540,
+          "endMs": 14980,
+          "probability": 0.997049
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Do you want to play catch Pete asked Larry I",
+      "startMs": 16480,
+      "endMs": 19960,
+      "avgLogprob": -0.265374,
+      "noSpeechProb": 0.054305,
+      "compressionRatio": 1.566474,
+      "words": [
+        {
+          "index": 1,
+          "text": "Do",
+          "startMs": 16480,
+          "endMs": 17320,
+          "probability": 0.917536
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 17320,
+          "endMs": 17440,
+          "probability": 0.999224
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 17440,
+          "endMs": 17560,
+          "probability": 0.998632
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 17560,
+          "endMs": 17720,
+          "probability": 0.999825
+        },
+        {
+          "index": 5,
+          "text": "play",
+          "startMs": 17720,
+          "endMs": 17940,
+          "probability": 0.99915
+        },
+        {
+          "index": 6,
+          "text": "catch",
+          "startMs": 17940,
+          "endMs": 18360,
+          "probability": 0.98341
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 18360,
+          "endMs": 18980,
+          "probability": 0.904155
+        },
+        {
+          "index": 8,
+          "text": "asked",
+          "startMs": 18980,
+          "endMs": 19300,
+          "probability": 0.436517
+        },
+        {
+          "index": 9,
+          "text": "Larry",
+          "startMs": 19300,
+          "endMs": 19660,
+          "probability": 0.982284
+        },
+        {
+          "index": 10,
+          "text": "I",
+          "startMs": 19660,
+          "endMs": 20080,
+          "probability": 0.729131
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Can't says Larry. I'm going to the library",
+      "startMs": 21060,
+      "endMs": 24460,
+      "avgLogprob": -0.265374,
+      "noSpeechProb": 0.054305,
+      "compressionRatio": 1.566474,
+      "words": [
+        {
+          "index": 1,
+          "text": "Can't",
+          "startMs": 21060,
+          "endMs": 21900,
+          "probability": 0.6375
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 21900,
+          "endMs": 22080,
+          "probability": 0.816065
+        },
+        {
+          "index": 3,
+          "text": "Larry.",
+          "startMs": 22080,
+          "endMs": 22540,
+          "probability": 0.993083
+        },
+        {
+          "index": 4,
+          "text": "I'm",
+          "startMs": 22540,
+          "endMs": 23340,
+          "probability": 0.999479
+        },
+        {
+          "index": 5,
+          "text": "going",
+          "startMs": 23340,
+          "endMs": 23520,
+          "probability": 0.998992
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 23520,
+          "endMs": 23760,
+          "probability": 0.999569
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 23760,
+          "endMs": 23920,
+          "probability": 0.999474
+        },
+        {
+          "index": 8,
+          "text": "library",
+          "startMs": 23920,
+          "endMs": 24460,
+          "probability": 0.991158
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Do you want to play catch Pete asked Callie?",
+      "startMs": 25680,
+      "endMs": 29560,
+      "avgLogprob": -0.265374,
+      "noSpeechProb": 0.054305,
+      "compressionRatio": 1.566474,
+      "words": [
+        {
+          "index": 1,
+          "text": "Do",
+          "startMs": 25680,
+          "endMs": 26520,
+          "probability": 0.973351
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 26520,
+          "endMs": 26860,
+          "probability": 0.999247
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 26860,
+          "endMs": 27180,
+          "probability": 0.998134
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 27180,
+          "endMs": 27360,
+          "probability": 0.999744
+        },
+        {
+          "index": 5,
+          "text": "play",
+          "startMs": 27360,
+          "endMs": 27580,
+          "probability": 0.999548
+        },
+        {
+          "index": 6,
+          "text": "catch",
+          "startMs": 27580,
+          "endMs": 28040,
+          "probability": 0.986294
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 28040,
+          "endMs": 28760,
+          "probability": 0.955413
+        },
+        {
+          "index": 8,
+          "text": "asked",
+          "startMs": 28760,
+          "endMs": 29100,
+          "probability": 0.567025
+        },
+        {
+          "index": 9,
+          "text": "Callie?",
+          "startMs": 29100,
+          "endMs": 29560,
+          "probability": 0.817884
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Was about to go for a bike ride says Callie",
+      "startMs": 30000,
+      "endMs": 33940,
+      "avgLogprob": -0.229364,
+      "noSpeechProb": 0.005812,
+      "compressionRatio": 1.489247,
+      "words": [
+        {
+          "index": 1,
+          "text": "Was",
+          "startMs": 30000,
+          "endMs": 30880,
+          "probability": 0.01161
+        },
+        {
+          "index": 2,
+          "text": "about",
+          "startMs": 30880,
+          "endMs": 31280,
+          "probability": 0.991644
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 31280,
+          "endMs": 31520,
+          "probability": 0.996389
+        },
+        {
+          "index": 4,
+          "text": "go",
+          "startMs": 31520,
+          "endMs": 31640,
+          "probability": 0.996035
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 31640,
+          "endMs": 31880,
+          "probability": 0.99644
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 31880,
+          "endMs": 32020,
+          "probability": 0.997298
+        },
+        {
+          "index": 7,
+          "text": "bike",
+          "startMs": 32020,
+          "endMs": 32260,
+          "probability": 0.994371
+        },
+        {
+          "index": 8,
+          "text": "ride",
+          "startMs": 32260,
+          "endMs": 32800,
+          "probability": 0.988379
+        },
+        {
+          "index": 9,
+          "text": "says",
+          "startMs": 32800,
+          "endMs": 33280,
+          "probability": 0.812572
+        },
+        {
+          "index": 10,
+          "text": "Callie",
+          "startMs": 33280,
+          "endMs": 33940,
+          "probability": 0.74261
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Do you want to play catch Pete asked John I?",
+      "startMs": 35380,
+      "endMs": 39000,
+      "avgLogprob": -0.229364,
+      "noSpeechProb": 0.005812,
+      "compressionRatio": 1.489247,
+      "words": [
+        {
+          "index": 1,
+          "text": "Do",
+          "startMs": 35380,
+          "endMs": 36100,
+          "probability": 0.863354
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 36100,
+          "endMs": 36440,
+          "probability": 0.998159
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 36440,
+          "endMs": 36720,
+          "probability": 0.992897
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 36720,
+          "endMs": 36900,
+          "probability": 0.999231
+        },
+        {
+          "index": 5,
+          "text": "play",
+          "startMs": 36900,
+          "endMs": 37100,
+          "probability": 0.998529
+        },
+        {
+          "index": 6,
+          "text": "catch",
+          "startMs": 37100,
+          "endMs": 37520,
+          "probability": 0.972174
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 37520,
+          "endMs": 38100,
+          "probability": 0.943083
+        },
+        {
+          "index": 8,
+          "text": "asked",
+          "startMs": 38100,
+          "endMs": 38420,
+          "probability": 0.749526
+        },
+        {
+          "index": 9,
+          "text": "John",
+          "startMs": 38420,
+          "endMs": 38820,
+          "probability": 0.912298
+        },
+        {
+          "index": 10,
+          "text": "I?",
+          "startMs": 38820,
+          "endMs": 39180,
+          "probability": 0.792776
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Can't right now says John I have to paint the fence",
+      "startMs": 40180,
+      "endMs": 44060,
+      "avgLogprob": -0.229364,
+      "noSpeechProb": 0.005812,
+      "compressionRatio": 1.489247,
+      "words": [
+        {
+          "index": 1,
+          "text": "Can't",
+          "startMs": 40180,
+          "endMs": 40440,
+          "probability": 0.984681
+        },
+        {
+          "index": 2,
+          "text": "right",
+          "startMs": 40440,
+          "endMs": 40580,
+          "probability": 0.887888
+        },
+        {
+          "index": 3,
+          "text": "now",
+          "startMs": 40580,
+          "endMs": 40980,
+          "probability": 0.992658
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 40980,
+          "endMs": 41440,
+          "probability": 0.967799
+        },
+        {
+          "index": 5,
+          "text": "John",
+          "startMs": 41440,
+          "endMs": 41860,
+          "probability": 0.945055
+        },
+        {
+          "index": 6,
+          "text": "I",
+          "startMs": 41860,
+          "endMs": 42820,
+          "probability": 0.511787
+        },
+        {
+          "index": 7,
+          "text": "have",
+          "startMs": 42820,
+          "endMs": 43040,
+          "probability": 0.964397
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 43040,
+          "endMs": 43220,
+          "probability": 0.999023
+        },
+        {
+          "index": 9,
+          "text": "paint",
+          "startMs": 43220,
+          "endMs": 43440,
+          "probability": 0.996666
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 43440,
+          "endMs": 43660,
+          "probability": 0.99751
+        },
+        {
+          "index": 11,
+          "text": "fence",
+          "startMs": 43660,
+          "endMs": 44060,
+          "probability": 0.988515
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Pete wishes his friends would do what he wants to do. It's no fun playing catch all by himself",
+      "startMs": 44920,
+      "endMs": 51320,
+      "avgLogprob": -0.229364,
+      "noSpeechProb": 0.005812,
+      "compressionRatio": 1.489247,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 44920,
+          "endMs": 45500,
+          "probability": 0.967234
+        },
+        {
+          "index": 2,
+          "text": "wishes",
+          "startMs": 45500,
+          "endMs": 45860,
+          "probability": 0.930346
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 45860,
+          "endMs": 46160,
+          "probability": 0.994266
+        },
+        {
+          "index": 4,
+          "text": "friends",
+          "startMs": 46160,
+          "endMs": 46480,
+          "probability": 0.997593
+        },
+        {
+          "index": 5,
+          "text": "would",
+          "startMs": 46480,
+          "endMs": 46720,
+          "probability": 0.978712
+        },
+        {
+          "index": 6,
+          "text": "do",
+          "startMs": 46720,
+          "endMs": 46900,
+          "probability": 0.998422
+        },
+        {
+          "index": 7,
+          "text": "what",
+          "startMs": 46900,
+          "endMs": 47060,
+          "probability": 0.996068
+        },
+        {
+          "index": 8,
+          "text": "he",
+          "startMs": 47060,
+          "endMs": 47300,
+          "probability": 0.997998
+        },
+        {
+          "index": 9,
+          "text": "wants",
+          "startMs": 47300,
+          "endMs": 47600,
+          "probability": 0.998488
+        },
+        {
+          "index": 10,
+          "text": "to",
+          "startMs": 47600,
+          "endMs": 47800,
+          "probability": 0.999151
+        },
+        {
+          "index": 11,
+          "text": "do.",
+          "startMs": 47800,
+          "endMs": 48220,
+          "probability": 0.998949
+        },
+        {
+          "index": 12,
+          "text": "It's",
+          "startMs": 48220,
+          "endMs": 48860,
+          "probability": 0.998957
+        },
+        {
+          "index": 13,
+          "text": "no",
+          "startMs": 48860,
+          "endMs": 49020,
+          "probability": 0.995806
+        },
+        {
+          "index": 14,
+          "text": "fun",
+          "startMs": 49020,
+          "endMs": 49380,
+          "probability": 0.999198
+        },
+        {
+          "index": 15,
+          "text": "playing",
+          "startMs": 49380,
+          "endMs": 49800,
+          "probability": 0.991869
+        },
+        {
+          "index": 16,
+          "text": "catch",
+          "startMs": 49800,
+          "endMs": 50160,
+          "probability": 0.991131
+        },
+        {
+          "index": 17,
+          "text": "all",
+          "startMs": 50160,
+          "endMs": 50560,
+          "probability": 0.995691
+        },
+        {
+          "index": 18,
+          "text": "by",
+          "startMs": 50560,
+          "endMs": 50820,
+          "probability": 0.998085
+        },
+        {
+          "index": 19,
+          "text": "himself",
+          "startMs": 50820,
+          "endMs": 51320,
+          "probability": 0.996374
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "if only I knew another me Pete thinks and",
+      "startMs": 51960,
+      "endMs": 56200,
+      "avgLogprob": -0.229364,
+      "noSpeechProb": 0.005812,
+      "compressionRatio": 1.489247,
+      "words": [
+        {
+          "index": 1,
+          "text": "if",
+          "startMs": 51960,
+          "endMs": 52640,
+          "probability": 0.63948
+        },
+        {
+          "index": 2,
+          "text": "only",
+          "startMs": 52640,
+          "endMs": 53040,
+          "probability": 0.975951
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 53040,
+          "endMs": 53380,
+          "probability": 0.989482
+        },
+        {
+          "index": 4,
+          "text": "knew",
+          "startMs": 53380,
+          "endMs": 53660,
+          "probability": 0.993076
+        },
+        {
+          "index": 5,
+          "text": "another",
+          "startMs": 53660,
+          "endMs": 54140,
+          "probability": 0.996248
+        },
+        {
+          "index": 6,
+          "text": "me",
+          "startMs": 54140,
+          "endMs": 54820,
+          "probability": 0.993037
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 54820,
+          "endMs": 55600,
+          "probability": 0.921242
+        },
+        {
+          "index": 8,
+          "text": "thinks",
+          "startMs": 55600,
+          "endMs": 56020,
+          "probability": 0.956044
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 56020,
+          "endMs": 56380,
+          "probability": 0.986494
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Like that Pete has a great idea",
+      "startMs": 56900,
+      "endMs": 60040,
+      "avgLogprob": -0.198571,
+      "noSpeechProb": 0.007128,
+      "compressionRatio": 1.529762,
+      "words": [
+        {
+          "index": 1,
+          "text": "Like",
+          "startMs": 56880,
+          "endMs": 57320,
+          "probability": 0.015055
+        },
+        {
+          "index": 2,
+          "text": "that",
+          "startMs": 57320,
+          "endMs": 57820,
+          "probability": 0.917202
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 57820,
+          "endMs": 58420,
+          "probability": 0.696186
+        },
+        {
+          "index": 4,
+          "text": "has",
+          "startMs": 58420,
+          "endMs": 58800,
+          "probability": 0.987326
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 58800,
+          "endMs": 59080,
+          "probability": 0.992387
+        },
+        {
+          "index": 6,
+          "text": "great",
+          "startMs": 59080,
+          "endMs": 59420,
+          "probability": 0.995897
+        },
+        {
+          "index": 7,
+          "text": "idea",
+          "startMs": 59420,
+          "endMs": 60040,
+          "probability": 0.988384
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Pete builds a robot he programs it to be just like him",
+      "startMs": 61620,
+      "endMs": 66980,
+      "avgLogprob": -0.198571,
+      "noSpeechProb": 0.007128,
+      "compressionRatio": 1.529762,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 61620,
+          "endMs": 62500,
+          "probability": 0.835359
+        },
+        {
+          "index": 2,
+          "text": "builds",
+          "startMs": 62500,
+          "endMs": 62880,
+          "probability": 0.894136
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 62880,
+          "endMs": 63040,
+          "probability": 0.997293
+        },
+        {
+          "index": 4,
+          "text": "robot",
+          "startMs": 63040,
+          "endMs": 63600,
+          "probability": 0.987885
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 63600,
+          "endMs": 64440,
+          "probability": 0.767489
+        },
+        {
+          "index": 6,
+          "text": "programs",
+          "startMs": 64440,
+          "endMs": 65000,
+          "probability": 0.971553
+        },
+        {
+          "index": 7,
+          "text": "it",
+          "startMs": 65000,
+          "endMs": 65280,
+          "probability": 0.991514
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 65280,
+          "endMs": 65420,
+          "probability": 0.998309
+        },
+        {
+          "index": 9,
+          "text": "be",
+          "startMs": 65420,
+          "endMs": 65580,
+          "probability": 0.997627
+        },
+        {
+          "index": 10,
+          "text": "just",
+          "startMs": 65580,
+          "endMs": 66020,
+          "probability": 0.995842
+        },
+        {
+          "index": 11,
+          "text": "like",
+          "startMs": 66020,
+          "endMs": 66460,
+          "probability": 0.999247
+        },
+        {
+          "index": 12,
+          "text": "him",
+          "startMs": 66460,
+          "endMs": 66980,
+          "probability": 0.996692
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Welcome to the world Robo Pete Pete says to the robot",
+      "startMs": 68460,
+      "endMs": 72640,
+      "avgLogprob": -0.198571,
+      "noSpeechProb": 0.007128,
+      "compressionRatio": 1.529762,
+      "words": [
+        {
+          "index": 1,
+          "text": "Welcome",
+          "startMs": 68460,
+          "endMs": 69340,
+          "probability": 0.912681
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 69340,
+          "endMs": 69600,
+          "probability": 0.998201
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 69600,
+          "endMs": 69740,
+          "probability": 0.999164
+        },
+        {
+          "index": 4,
+          "text": "world",
+          "startMs": 69740,
+          "endMs": 70020,
+          "probability": 0.957526
+        },
+        {
+          "index": 5,
+          "text": "Robo",
+          "startMs": 70020,
+          "endMs": 70500,
+          "probability": 0.674247
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 70500,
+          "endMs": 70880,
+          "probability": 0.91621
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 70880,
+          "endMs": 71580,
+          "probability": 0.913626
+        },
+        {
+          "index": 8,
+          "text": "says",
+          "startMs": 71580,
+          "endMs": 71860,
+          "probability": 0.99267
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 71860,
+          "endMs": 72080,
+          "probability": 0.999054
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 72080,
+          "endMs": 72200,
+          "probability": 0.999034
+        },
+        {
+          "index": 11,
+          "text": "robot",
+          "startMs": 72200,
+          "endMs": 72640,
+          "probability": 0.981832
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "You're my new best friend. We'll do everything together and",
+      "startMs": 72640,
+      "endMs": 77100,
+      "avgLogprob": -0.198571,
+      "noSpeechProb": 0.007128,
+      "compressionRatio": 1.529762,
+      "words": [
+        {
+          "index": 1,
+          "text": "You're",
+          "startMs": 72640,
+          "endMs": 73660,
+          "probability": 0.62761
+        },
+        {
+          "index": 2,
+          "text": "my",
+          "startMs": 73660,
+          "endMs": 73820,
+          "probability": 0.978162
+        },
+        {
+          "index": 3,
+          "text": "new",
+          "startMs": 73820,
+          "endMs": 74160,
+          "probability": 0.995823
+        },
+        {
+          "index": 4,
+          "text": "best",
+          "startMs": 74160,
+          "endMs": 74520,
+          "probability": 0.995014
+        },
+        {
+          "index": 5,
+          "text": "friend.",
+          "startMs": 74520,
+          "endMs": 75020,
+          "probability": 0.994881
+        },
+        {
+          "index": 6,
+          "text": "We'll",
+          "startMs": 75020,
+          "endMs": 75700,
+          "probability": 0.994118
+        },
+        {
+          "index": 7,
+          "text": "do",
+          "startMs": 75700,
+          "endMs": 75840,
+          "probability": 0.999294
+        },
+        {
+          "index": 8,
+          "text": "everything",
+          "startMs": 75840,
+          "endMs": 76360,
+          "probability": 0.99915
+        },
+        {
+          "index": 9,
+          "text": "together",
+          "startMs": 76360,
+          "endMs": 76900,
+          "probability": 0.998808
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 76900,
+          "endMs": 77340,
+          "probability": 0.88543
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "I want to play catch says Pete great idea says Robo Pete",
+      "startMs": 78260,
+      "endMs": 83740,
+      "avgLogprob": -0.198571,
+      "noSpeechProb": 0.007128,
+      "compressionRatio": 1.529762,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 78260,
+          "endMs": 78500,
+          "probability": 0.996142
+        },
+        {
+          "index": 2,
+          "text": "want",
+          "startMs": 78500,
+          "endMs": 78700,
+          "probability": 0.94831
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 78700,
+          "endMs": 78880,
+          "probability": 0.998898
+        },
+        {
+          "index": 4,
+          "text": "play",
+          "startMs": 78880,
+          "endMs": 79100,
+          "probability": 0.995021
+        },
+        {
+          "index": 5,
+          "text": "catch",
+          "startMs": 79100,
+          "endMs": 79540,
+          "probability": 0.986457
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 79540,
+          "endMs": 80100,
+          "probability": 0.943099
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 80100,
+          "endMs": 80560,
+          "probability": 0.958055
+        },
+        {
+          "index": 8,
+          "text": "great",
+          "startMs": 80560,
+          "endMs": 81500,
+          "probability": 0.759672
+        },
+        {
+          "index": 9,
+          "text": "idea",
+          "startMs": 81500,
+          "endMs": 82140,
+          "probability": 0.956772
+        },
+        {
+          "index": 10,
+          "text": "says",
+          "startMs": 82140,
+          "endMs": 82760,
+          "probability": 0.962125
+        },
+        {
+          "index": 11,
+          "text": "Robo",
+          "startMs": 82760,
+          "endMs": 83160,
+          "probability": 0.950709
+        },
+        {
+          "index": 12,
+          "text": "Pete",
+          "startMs": 83160,
+          "endMs": 83740,
+          "probability": 0.967631
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Pete and Robo Pete play catch",
+      "startMs": 85180,
+      "endMs": 87480,
+      "avgLogprob": -0.246972,
+      "noSpeechProb": 0.000541,
+      "compressionRatio": 1.650602,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 85180,
+          "endMs": 85860,
+          "probability": 0.85339
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 85860,
+          "endMs": 86140,
+          "probability": 0.989307
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 86140,
+          "endMs": 86540,
+          "probability": 0.871123
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 86540,
+          "endMs": 86820,
+          "probability": 0.884771
+        },
+        {
+          "index": 5,
+          "text": "play",
+          "startMs": 86820,
+          "endMs": 87160,
+          "probability": 0.98868
+        },
+        {
+          "index": 6,
+          "text": "catch",
+          "startMs": 87160,
+          "endMs": 87480,
+          "probability": 0.98006
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Wow says Pete running after the ball you sure can throw far",
+      "startMs": 88540,
+      "endMs": 93600,
+      "avgLogprob": -0.246972,
+      "noSpeechProb": 0.000541,
+      "compressionRatio": 1.650602,
+      "words": [
+        {
+          "index": 1,
+          "text": "Wow",
+          "startMs": 88540,
+          "endMs": 89220,
+          "probability": 0.008523
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 89220,
+          "endMs": 89800,
+          "probability": 0.238108
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 89800,
+          "endMs": 90180,
+          "probability": 0.939007
+        },
+        {
+          "index": 4,
+          "text": "running",
+          "startMs": 90180,
+          "endMs": 90520,
+          "probability": 0.949619
+        },
+        {
+          "index": 5,
+          "text": "after",
+          "startMs": 90520,
+          "endMs": 90860,
+          "probability": 0.99818
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 90860,
+          "endMs": 91040,
+          "probability": 0.998045
+        },
+        {
+          "index": 7,
+          "text": "ball",
+          "startMs": 91040,
+          "endMs": 91340,
+          "probability": 0.996188
+        },
+        {
+          "index": 8,
+          "text": "you",
+          "startMs": 91340,
+          "endMs": 92100,
+          "probability": 0.38379
+        },
+        {
+          "index": 9,
+          "text": "sure",
+          "startMs": 92100,
+          "endMs": 92400,
+          "probability": 0.992204
+        },
+        {
+          "index": 10,
+          "text": "can",
+          "startMs": 92400,
+          "endMs": 92680,
+          "probability": 0.997437
+        },
+        {
+          "index": 11,
+          "text": "throw",
+          "startMs": 92680,
+          "endMs": 93000,
+          "probability": 0.985711
+        },
+        {
+          "index": 12,
+          "text": "far",
+          "startMs": 93000,
+          "endMs": 93600,
+          "probability": 0.95256
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Robo Pete throws farther and farther until",
+      "startMs": 94320,
+      "endMs": 97600,
+      "avgLogprob": -0.246972,
+      "noSpeechProb": 0.000541,
+      "compressionRatio": 1.650602,
+      "words": [
+        {
+          "index": 1,
+          "text": "Robo",
+          "startMs": 94320,
+          "endMs": 95000,
+          "probability": 0.834216
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 95000,
+          "endMs": 95340,
+          "probability": 0.978979
+        },
+        {
+          "index": 3,
+          "text": "throws",
+          "startMs": 95340,
+          "endMs": 95620,
+          "probability": 0.98344
+        },
+        {
+          "index": 4,
+          "text": "farther",
+          "startMs": 95620,
+          "endMs": 96160,
+          "probability": 0.931169
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 96160,
+          "endMs": 96420,
+          "probability": 0.995656
+        },
+        {
+          "index": 6,
+          "text": "farther",
+          "startMs": 96420,
+          "endMs": 96880,
+          "probability": 0.988162
+        },
+        {
+          "index": 7,
+          "text": "until",
+          "startMs": 96880,
+          "endMs": 97600,
+          "probability": 0.847579
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Time out says Pete as he tries to catch his breath",
+      "startMs": 99580,
+      "endMs": 103400,
+      "avgLogprob": -0.246972,
+      "noSpeechProb": 0.000541,
+      "compressionRatio": 1.650602,
+      "words": [
+        {
+          "index": 1,
+          "text": "Time",
+          "startMs": 99580,
+          "endMs": 100260,
+          "probability": 0.724133
+        },
+        {
+          "index": 2,
+          "text": "out",
+          "startMs": 100260,
+          "endMs": 100780,
+          "probability": 0.807972
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 100780,
+          "endMs": 101480,
+          "probability": 0.917779
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 101480,
+          "endMs": 101860,
+          "probability": 0.978625
+        },
+        {
+          "index": 5,
+          "text": "as",
+          "startMs": 101860,
+          "endMs": 102140,
+          "probability": 0.993284
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 102140,
+          "endMs": 102300,
+          "probability": 0.998402
+        },
+        {
+          "index": 7,
+          "text": "tries",
+          "startMs": 102300,
+          "endMs": 102540,
+          "probability": 0.998984
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 102540,
+          "endMs": 102720,
+          "probability": 0.99934
+        },
+        {
+          "index": 9,
+          "text": "catch",
+          "startMs": 102720,
+          "endMs": 102900,
+          "probability": 0.997595
+        },
+        {
+          "index": 10,
+          "text": "his",
+          "startMs": 102900,
+          "endMs": 103100,
+          "probability": 0.997537
+        },
+        {
+          "index": 11,
+          "text": "breath",
+          "startMs": 103100,
+          "endMs": 103400,
+          "probability": 0.995279
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Let's play something else. I",
+      "startMs": 103400,
+      "endMs": 106640,
+      "avgLogprob": -0.246972,
+      "noSpeechProb": 0.000541,
+      "compressionRatio": 1.650602,
+      "words": [
+        {
+          "index": 1,
+          "text": "Let's",
+          "startMs": 103400,
+          "endMs": 104500,
+          "probability": 0.624978
+        },
+        {
+          "index": 2,
+          "text": "play",
+          "startMs": 104500,
+          "endMs": 104720,
+          "probability": 0.996753
+        },
+        {
+          "index": 3,
+          "text": "something",
+          "startMs": 104720,
+          "endMs": 105080,
+          "probability": 0.99665
+        },
+        {
+          "index": 4,
+          "text": "else.",
+          "startMs": 105080,
+          "endMs": 105500,
+          "probability": 0.997015
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 105960,
+          "endMs": 106640,
+          "probability": 0.977378
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Want to play whatever you want to play Robo Pete says proudly",
+      "startMs": 106640,
+      "endMs": 110320,
+      "avgLogprob": -0.246972,
+      "noSpeechProb": 0.000541,
+      "compressionRatio": 1.650602,
+      "words": [
+        {
+          "index": 1,
+          "text": "Want",
+          "startMs": 106640,
+          "endMs": 106800,
+          "probability": 0.550021
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 106800,
+          "endMs": 106980,
+          "probability": 0.999604
+        },
+        {
+          "index": 3,
+          "text": "play",
+          "startMs": 106980,
+          "endMs": 107180,
+          "probability": 0.999366
+        },
+        {
+          "index": 4,
+          "text": "whatever",
+          "startMs": 107180,
+          "endMs": 107440,
+          "probability": 0.984938
+        },
+        {
+          "index": 5,
+          "text": "you",
+          "startMs": 107440,
+          "endMs": 107780,
+          "probability": 0.996252
+        },
+        {
+          "index": 6,
+          "text": "want",
+          "startMs": 107780,
+          "endMs": 108000,
+          "probability": 0.999107
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 108000,
+          "endMs": 108180,
+          "probability": 0.998573
+        },
+        {
+          "index": 8,
+          "text": "play",
+          "startMs": 108180,
+          "endMs": 108520,
+          "probability": 0.999622
+        },
+        {
+          "index": 9,
+          "text": "Robo",
+          "startMs": 108520,
+          "endMs": 109120,
+          "probability": 0.859811
+        },
+        {
+          "index": 10,
+          "text": "Pete",
+          "startMs": 109120,
+          "endMs": 109440,
+          "probability": 0.971319
+        },
+        {
+          "index": 11,
+          "text": "says",
+          "startMs": 109440,
+          "endMs": 109720,
+          "probability": 0.992854
+        },
+        {
+          "index": 12,
+          "text": "proudly",
+          "startMs": 109720,
+          "endMs": 110320,
+          "probability": 0.975413
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "How about we play hide-and-seek says Pete that will be fun says Robo Pete",
+      "startMs": 111160,
+      "endMs": 117420,
+      "avgLogprob": -0.245844,
+      "noSpeechProb": 0.008455,
+      "compressionRatio": 1.436242,
+      "words": [
+        {
+          "index": 1,
+          "text": "How",
+          "startMs": 111160,
+          "endMs": 111700,
+          "probability": 0.734367
+        },
+        {
+          "index": 2,
+          "text": "about",
+          "startMs": 111700,
+          "endMs": 112020,
+          "probability": 0.987325
+        },
+        {
+          "index": 3,
+          "text": "we",
+          "startMs": 112020,
+          "endMs": 112260,
+          "probability": 0.992619
+        },
+        {
+          "index": 4,
+          "text": "play",
+          "startMs": 112260,
+          "endMs": 112580,
+          "probability": 0.996759
+        },
+        {
+          "index": 5,
+          "text": "hide",
+          "startMs": 112580,
+          "endMs": 112840,
+          "probability": 0.958454
+        },
+        {
+          "index": 6,
+          "text": "-and",
+          "startMs": 112840,
+          "endMs": 113360,
+          "probability": 0.51224
+        },
+        {
+          "index": 7,
+          "text": "-seek",
+          "startMs": 113360,
+          "endMs": 113400,
+          "probability": 0.996819
+        },
+        {
+          "index": 8,
+          "text": "says",
+          "startMs": 113400,
+          "endMs": 114020,
+          "probability": 0.095839
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 114020,
+          "endMs": 114380,
+          "probability": 0.938144
+        },
+        {
+          "index": 10,
+          "text": "that",
+          "startMs": 114380,
+          "endMs": 115180,
+          "probability": 0.567618
+        },
+        {
+          "index": 11,
+          "text": "will",
+          "startMs": 115180,
+          "endMs": 115380,
+          "probability": 0.993047
+        },
+        {
+          "index": 12,
+          "text": "be",
+          "startMs": 115380,
+          "endMs": 115560,
+          "probability": 0.999058
+        },
+        {
+          "index": 13,
+          "text": "fun",
+          "startMs": 115560,
+          "endMs": 116040,
+          "probability": 0.998085
+        },
+        {
+          "index": 14,
+          "text": "says",
+          "startMs": 116040,
+          "endMs": 116620,
+          "probability": 0.914016
+        },
+        {
+          "index": 15,
+          "text": "Robo",
+          "startMs": 116620,
+          "endMs": 117020,
+          "probability": 0.68426
+        },
+        {
+          "index": 16,
+          "text": "Pete",
+          "startMs": 117020,
+          "endMs": 117420,
+          "probability": 0.881997
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Pete finds the best hiding place ever he's sure Robo Pete will never find him",
+      "startMs": 118700,
+      "endMs": 125040,
+      "avgLogprob": -0.245844,
+      "noSpeechProb": 0.008455,
+      "compressionRatio": 1.436242,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 118700,
+          "endMs": 119620,
+          "probability": 0.760892
+        },
+        {
+          "index": 2,
+          "text": "finds",
+          "startMs": 119620,
+          "endMs": 119960,
+          "probability": 0.906641
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 119960,
+          "endMs": 120180,
+          "probability": 0.996438
+        },
+        {
+          "index": 4,
+          "text": "best",
+          "startMs": 120180,
+          "endMs": 120580,
+          "probability": 0.998588
+        },
+        {
+          "index": 5,
+          "text": "hiding",
+          "startMs": 120580,
+          "endMs": 121020,
+          "probability": 0.992739
+        },
+        {
+          "index": 6,
+          "text": "place",
+          "startMs": 121020,
+          "endMs": 121320,
+          "probability": 0.983587
+        },
+        {
+          "index": 7,
+          "text": "ever",
+          "startMs": 121320,
+          "endMs": 121860,
+          "probability": 0.995704
+        },
+        {
+          "index": 8,
+          "text": "he's",
+          "startMs": 121860,
+          "endMs": 122860,
+          "probability": 0.563853
+        },
+        {
+          "index": 9,
+          "text": "sure",
+          "startMs": 122860,
+          "endMs": 123120,
+          "probability": 0.990695
+        },
+        {
+          "index": 10,
+          "text": "Robo",
+          "startMs": 123120,
+          "endMs": 123480,
+          "probability": 0.797086
+        },
+        {
+          "index": 11,
+          "text": "Pete",
+          "startMs": 123480,
+          "endMs": 123760,
+          "probability": 0.977908
+        },
+        {
+          "index": 12,
+          "text": "will",
+          "startMs": 123760,
+          "endMs": 124000,
+          "probability": 0.988774
+        },
+        {
+          "index": 13,
+          "text": "never",
+          "startMs": 124000,
+          "endMs": 124380,
+          "probability": 0.996536
+        },
+        {
+          "index": 14,
+          "text": "find",
+          "startMs": 124380,
+          "endMs": 124780,
+          "probability": 0.996731
+        },
+        {
+          "index": 15,
+          "text": "him",
+          "startMs": 124780,
+          "endMs": 125240,
+          "probability": 0.992729
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "10 9 8 7 6 5 4 3 2",
+      "startMs": 125760,
+      "endMs": 133800,
+      "avgLogprob": -0.245844,
+      "noSpeechProb": 0.008455,
+      "compressionRatio": 1.436242,
+      "words": [
+        {
+          "index": 1,
+          "text": "10",
+          "startMs": 125760,
+          "endMs": 126800,
+          "probability": 0.294142
+        },
+        {
+          "index": 2,
+          "text": "9",
+          "startMs": 126800,
+          "endMs": 127640,
+          "probability": 0.934247
+        },
+        {
+          "index": 3,
+          "text": "8",
+          "startMs": 127640,
+          "endMs": 128380,
+          "probability": 0.974845
+        },
+        {
+          "index": 4,
+          "text": "7",
+          "startMs": 128380,
+          "endMs": 129400,
+          "probability": 0.967443
+        },
+        {
+          "index": 5,
+          "text": "6",
+          "startMs": 129400,
+          "endMs": 130340,
+          "probability": 0.995014
+        },
+        {
+          "index": 6,
+          "text": "5",
+          "startMs": 130340,
+          "endMs": 131300,
+          "probability": 0.990903
+        },
+        {
+          "index": 7,
+          "text": "4",
+          "startMs": 131300,
+          "endMs": 132140,
+          "probability": 0.991686
+        },
+        {
+          "index": 8,
+          "text": "3",
+          "startMs": 132140,
+          "endMs": 133000,
+          "probability": 0.994036
+        },
+        {
+          "index": 9,
+          "text": "2",
+          "startMs": 133000,
+          "endMs": 133800,
+          "probability": 0.988291
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "1 shouts Robo Pete ready or not here I come",
+      "startMs": 133800,
+      "endMs": 139060,
+      "avgLogprob": -0.245844,
+      "noSpeechProb": 0.008455,
+      "compressionRatio": 1.436242,
+      "words": [
+        {
+          "index": 1,
+          "text": "1",
+          "startMs": 133800,
+          "endMs": 134840,
+          "probability": 0.988347
+        },
+        {
+          "index": 2,
+          "text": "shouts",
+          "startMs": 134840,
+          "endMs": 135520,
+          "probability": 0.167945
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 135520,
+          "endMs": 135940,
+          "probability": 0.947495
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 135940,
+          "endMs": 136460,
+          "probability": 0.986977
+        },
+        {
+          "index": 5,
+          "text": "ready",
+          "startMs": 136460,
+          "endMs": 137180,
+          "probability": 0.836551
+        },
+        {
+          "index": 6,
+          "text": "or",
+          "startMs": 137180,
+          "endMs": 137420,
+          "probability": 0.962723
+        },
+        {
+          "index": 7,
+          "text": "not",
+          "startMs": 137420,
+          "endMs": 137700,
+          "probability": 0.993518
+        },
+        {
+          "index": 8,
+          "text": "here",
+          "startMs": 137700,
+          "endMs": 138280,
+          "probability": 0.924635
+        },
+        {
+          "index": 9,
+          "text": "I",
+          "startMs": 138280,
+          "endMs": 138580,
+          "probability": 0.840085
+        },
+        {
+          "index": 10,
+          "text": "come",
+          "startMs": 138580,
+          "endMs": 139060,
+          "probability": 0.997808
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Gotcha shouts Robo Pete tagging Pete",
+      "startMs": 141100,
+      "endMs": 144100,
+      "avgLogprob": -0.201155,
+      "noSpeechProb": 0.001845,
+      "compressionRatio": 1.542553,
+      "words": [
+        {
+          "index": 1,
+          "text": "Gotcha",
+          "startMs": 141100,
+          "endMs": 141860,
+          "probability": 0.710331
+        },
+        {
+          "index": 2,
+          "text": "shouts",
+          "startMs": 141860,
+          "endMs": 142480,
+          "probability": 0.090186
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 142480,
+          "endMs": 142900,
+          "probability": 0.66552
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 142900,
+          "endMs": 143200,
+          "probability": 0.925755
+        },
+        {
+          "index": 5,
+          "text": "tagging",
+          "startMs": 143200,
+          "endMs": 143740,
+          "probability": 0.960158
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 143740,
+          "endMs": 144100,
+          "probability": 0.985072
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Hey, how did you find me says Pete?",
+      "startMs": 144760,
+      "endMs": 148000,
+      "avgLogprob": -0.201155,
+      "noSpeechProb": 0.001845,
+      "compressionRatio": 1.542553,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hey,",
+          "startMs": 144760,
+          "endMs": 145480,
+          "probability": 0.6135
+        },
+        {
+          "index": 2,
+          "text": "how",
+          "startMs": 145660,
+          "endMs": 146080,
+          "probability": 0.991131
+        },
+        {
+          "index": 3,
+          "text": "did",
+          "startMs": 146080,
+          "endMs": 146220,
+          "probability": 0.997034
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 146220,
+          "endMs": 146420,
+          "probability": 0.999771
+        },
+        {
+          "index": 5,
+          "text": "find",
+          "startMs": 146420,
+          "endMs": 146700,
+          "probability": 0.998047
+        },
+        {
+          "index": 6,
+          "text": "me",
+          "startMs": 146700,
+          "endMs": 147120,
+          "probability": 0.994522
+        },
+        {
+          "index": 7,
+          "text": "says",
+          "startMs": 147120,
+          "endMs": 147620,
+          "probability": 0.556283
+        },
+        {
+          "index": 8,
+          "text": "Pete?",
+          "startMs": 147620,
+          "endMs": 148000,
+          "probability": 0.964807
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "With my homing device says Robo Pete I can find anyone anywhere",
+      "startMs": 148840,
+      "endMs": 154460,
+      "avgLogprob": -0.201155,
+      "noSpeechProb": 0.001845,
+      "compressionRatio": 1.542553,
+      "words": [
+        {
+          "index": 1,
+          "text": "With",
+          "startMs": 148840,
+          "endMs": 149160,
+          "probability": 0.820323
+        },
+        {
+          "index": 2,
+          "text": "my",
+          "startMs": 149160,
+          "endMs": 149400,
+          "probability": 0.99521
+        },
+        {
+          "index": 3,
+          "text": "homing",
+          "startMs": 149400,
+          "endMs": 149700,
+          "probability": 0.956125
+        },
+        {
+          "index": 4,
+          "text": "device",
+          "startMs": 149700,
+          "endMs": 150300,
+          "probability": 0.993669
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 150300,
+          "endMs": 150860,
+          "probability": 0.978625
+        },
+        {
+          "index": 6,
+          "text": "Robo",
+          "startMs": 150860,
+          "endMs": 151260,
+          "probability": 0.891689
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 151260,
+          "endMs": 151680,
+          "probability": 0.979961
+        },
+        {
+          "index": 8,
+          "text": "I",
+          "startMs": 151680,
+          "endMs": 152660,
+          "probability": 0.561799
+        },
+        {
+          "index": 9,
+          "text": "can",
+          "startMs": 152660,
+          "endMs": 152860,
+          "probability": 0.956844
+        },
+        {
+          "index": 10,
+          "text": "find",
+          "startMs": 152860,
+          "endMs": 153140,
+          "probability": 0.994968
+        },
+        {
+          "index": 11,
+          "text": "anyone",
+          "startMs": 153140,
+          "endMs": 153760,
+          "probability": 0.994646
+        },
+        {
+          "index": 12,
+          "text": "anywhere",
+          "startMs": 153760,
+          "endMs": 154460,
+          "probability": 0.99462
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Okay enough hide-and-seek says Pete. Let's play some guitar",
+      "startMs": 155560,
+      "endMs": 160360,
+      "avgLogprob": -0.201155,
+      "noSpeechProb": 0.001845,
+      "compressionRatio": 1.542553,
+      "words": [
+        {
+          "index": 1,
+          "text": "Okay",
+          "startMs": 155560,
+          "endMs": 156320,
+          "probability": 0.878116
+        },
+        {
+          "index": 2,
+          "text": "enough",
+          "startMs": 156320,
+          "endMs": 156940,
+          "probability": 0.37126
+        },
+        {
+          "index": 3,
+          "text": "hide",
+          "startMs": 156940,
+          "endMs": 157200,
+          "probability": 0.987147
+        },
+        {
+          "index": 4,
+          "text": "-and",
+          "startMs": 157200,
+          "endMs": 157360,
+          "probability": 0.770167
+        },
+        {
+          "index": 5,
+          "text": "-seek",
+          "startMs": 157360,
+          "endMs": 157640,
+          "probability": 0.996461
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 157640,
+          "endMs": 158140,
+          "probability": 0.960747
+        },
+        {
+          "index": 7,
+          "text": "Pete.",
+          "startMs": 158140,
+          "endMs": 158520,
+          "probability": 0.983258
+        },
+        {
+          "index": 8,
+          "text": "Let's",
+          "startMs": 158680,
+          "endMs": 159440,
+          "probability": 0.999487
+        },
+        {
+          "index": 9,
+          "text": "play",
+          "startMs": 159440,
+          "endMs": 159640,
+          "probability": 0.995438
+        },
+        {
+          "index": 10,
+          "text": "some",
+          "startMs": 159640,
+          "endMs": 159860,
+          "probability": 0.998818
+        },
+        {
+          "index": 11,
+          "text": "guitar",
+          "startMs": 159860,
+          "endMs": 160360,
+          "probability": 0.993611
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Pete teaches Robo Pete how to play a song he made up",
+      "startMs": 162040,
+      "endMs": 165860,
+      "avgLogprob": -0.201155,
+      "noSpeechProb": 0.001845,
+      "compressionRatio": 1.542553,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 162040,
+          "endMs": 162800,
+          "probability": 0.964819
+        },
+        {
+          "index": 2,
+          "text": "teaches",
+          "startMs": 162800,
+          "endMs": 163280,
+          "probability": 0.937445
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 163280,
+          "endMs": 163680,
+          "probability": 0.962301
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 163680,
+          "endMs": 164060,
+          "probability": 0.991803
+        },
+        {
+          "index": 5,
+          "text": "how",
+          "startMs": 164060,
+          "endMs": 164280,
+          "probability": 0.989698
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 164280,
+          "endMs": 164420,
+          "probability": 0.999747
+        },
+        {
+          "index": 7,
+          "text": "play",
+          "startMs": 164420,
+          "endMs": 164640,
+          "probability": 0.999624
+        },
+        {
+          "index": 8,
+          "text": "a",
+          "startMs": 164640,
+          "endMs": 164760,
+          "probability": 0.998265
+        },
+        {
+          "index": 9,
+          "text": "song",
+          "startMs": 164760,
+          "endMs": 165020,
+          "probability": 0.999625
+        },
+        {
+          "index": 10,
+          "text": "he",
+          "startMs": 165020,
+          "endMs": 165240,
+          "probability": 0.938139
+        },
+        {
+          "index": 11,
+          "text": "made",
+          "startMs": 165240,
+          "endMs": 165440,
+          "probability": 0.99937
+        },
+        {
+          "index": 12,
+          "text": "up",
+          "startMs": 165440,
+          "endMs": 165860,
+          "probability": 0.998087
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "You have to feel the music Pete explains",
+      "startMs": 166440,
+      "endMs": 169700,
+      "avgLogprob": -0.201155,
+      "noSpeechProb": 0.001845,
+      "compressionRatio": 1.542553,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 166440,
+          "endMs": 167000,
+          "probability": 0.824441
+        },
+        {
+          "index": 2,
+          "text": "have",
+          "startMs": 167000,
+          "endMs": 167220,
+          "probability": 0.998443
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 167220,
+          "endMs": 167400,
+          "probability": 0.999636
+        },
+        {
+          "index": 4,
+          "text": "feel",
+          "startMs": 167400,
+          "endMs": 167780,
+          "probability": 0.998315
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 167780,
+          "endMs": 168040,
+          "probability": 0.999022
+        },
+        {
+          "index": 6,
+          "text": "music",
+          "startMs": 168040,
+          "endMs": 168560,
+          "probability": 0.999031
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 168560,
+          "endMs": 169160,
+          "probability": 0.97989
+        },
+        {
+          "index": 8,
+          "text": "explains",
+          "startMs": 169160,
+          "endMs": 169700,
+          "probability": 0.992067
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Okay, says Robo Pete",
+      "startMs": 170320,
+      "endMs": 172160,
+      "avgLogprob": -0.155496,
+      "noSpeechProb": 0.002572,
+      "compressionRatio": 1.64557,
+      "words": [
+        {
+          "index": 1,
+          "text": "Okay,",
+          "startMs": 170320,
+          "endMs": 170860,
+          "probability": 0.143213
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 171180,
+          "endMs": 171500,
+          "probability": 0.892368
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 171500,
+          "endMs": 171880,
+          "probability": 0.801757
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 171880,
+          "endMs": 172160,
+          "probability": 0.82464
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "To feel it I need to play loud",
+      "startMs": 173680,
+      "endMs": 176620,
+      "avgLogprob": -0.155496,
+      "noSpeechProb": 0.002572,
+      "compressionRatio": 1.64557,
+      "words": [
+        {
+          "index": 1,
+          "text": "To",
+          "startMs": 173680,
+          "endMs": 174360,
+          "probability": 0.20636
+        },
+        {
+          "index": 2,
+          "text": "feel",
+          "startMs": 174360,
+          "endMs": 174700,
+          "probability": 0.972099
+        },
+        {
+          "index": 3,
+          "text": "it",
+          "startMs": 174700,
+          "endMs": 174940,
+          "probability": 0.993433
+        },
+        {
+          "index": 4,
+          "text": "I",
+          "startMs": 174940,
+          "endMs": 175320,
+          "probability": 0.552163
+        },
+        {
+          "index": 5,
+          "text": "need",
+          "startMs": 175320,
+          "endMs": 175540,
+          "probability": 0.994808
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 175540,
+          "endMs": 175720,
+          "probability": 0.99769
+        },
+        {
+          "index": 7,
+          "text": "play",
+          "startMs": 175720,
+          "endMs": 175980,
+          "probability": 0.993669
+        },
+        {
+          "index": 8,
+          "text": "loud",
+          "startMs": 175980,
+          "endMs": 176620,
+          "probability": 0.970055
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Explains Robo Pete",
+      "startMs": 176620,
+      "endMs": 178440,
+      "avgLogprob": -0.155496,
+      "noSpeechProb": 0.002572,
+      "compressionRatio": 1.64557,
+      "words": [
+        {
+          "index": 1,
+          "text": "Explains",
+          "startMs": 176620,
+          "endMs": 177640,
+          "probability": 0.663329
+        },
+        {
+          "index": 2,
+          "text": "Robo",
+          "startMs": 177640,
+          "endMs": 177940,
+          "probability": 0.902823
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 177940,
+          "endMs": 178440,
+          "probability": 0.967906
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Pete tries to stop Robo Pete, but Robo Pete can't hear him over the noise",
+      "startMs": 179200,
+      "endMs": 183840,
+      "avgLogprob": -0.155496,
+      "noSpeechProb": 0.002572,
+      "compressionRatio": 1.64557,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 179200,
+          "endMs": 179700,
+          "probability": 0.903578
+        },
+        {
+          "index": 2,
+          "text": "tries",
+          "startMs": 179700,
+          "endMs": 180000,
+          "probability": 0.969379
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 180000,
+          "endMs": 180220,
+          "probability": 0.997766
+        },
+        {
+          "index": 4,
+          "text": "stop",
+          "startMs": 180220,
+          "endMs": 180520,
+          "probability": 0.994108
+        },
+        {
+          "index": 5,
+          "text": "Robo",
+          "startMs": 180520,
+          "endMs": 180960,
+          "probability": 0.963361
+        },
+        {
+          "index": 6,
+          "text": "Pete,",
+          "startMs": 180960,
+          "endMs": 181300,
+          "probability": 0.986654
+        },
+        {
+          "index": 7,
+          "text": "but",
+          "startMs": 181380,
+          "endMs": 181580,
+          "probability": 0.990681
+        },
+        {
+          "index": 8,
+          "text": "Robo",
+          "startMs": 181580,
+          "endMs": 181880,
+          "probability": 0.971458
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 181880,
+          "endMs": 182240,
+          "probability": 0.989849
+        },
+        {
+          "index": 10,
+          "text": "can't",
+          "startMs": 182240,
+          "endMs": 182640,
+          "probability": 0.975807
+        },
+        {
+          "index": 11,
+          "text": "hear",
+          "startMs": 182640,
+          "endMs": 182800,
+          "probability": 0.998811
+        },
+        {
+          "index": 12,
+          "text": "him",
+          "startMs": 182800,
+          "endMs": 183000,
+          "probability": 0.997964
+        },
+        {
+          "index": 13,
+          "text": "over",
+          "startMs": 183000,
+          "endMs": 183200,
+          "probability": 0.998533
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 183200,
+          "endMs": 183380,
+          "probability": 0.998479
+        },
+        {
+          "index": 15,
+          "text": "noise",
+          "startMs": 183380,
+          "endMs": 183840,
+          "probability": 0.994098
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "This is fun says Robo Pete this is awful says Pete the cat",
+      "startMs": 185600,
+      "endMs": 191800,
+      "avgLogprob": -0.155496,
+      "noSpeechProb": 0.002572,
+      "compressionRatio": 1.64557,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 185600,
+          "endMs": 186280,
+          "probability": 0.864682
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 186280,
+          "endMs": 186500,
+          "probability": 0.993774
+        },
+        {
+          "index": 3,
+          "text": "fun",
+          "startMs": 186500,
+          "endMs": 186960,
+          "probability": 0.99526
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 186960,
+          "endMs": 187440,
+          "probability": 0.822821
+        },
+        {
+          "index": 5,
+          "text": "Robo",
+          "startMs": 187440,
+          "endMs": 187820,
+          "probability": 0.967897
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 187820,
+          "endMs": 188320,
+          "probability": 0.985991
+        },
+        {
+          "index": 7,
+          "text": "this",
+          "startMs": 188320,
+          "endMs": 189300,
+          "probability": 0.377622
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 189300,
+          "endMs": 189560,
+          "probability": 0.997419
+        },
+        {
+          "index": 9,
+          "text": "awful",
+          "startMs": 189560,
+          "endMs": 190240,
+          "probability": 0.949831
+        },
+        {
+          "index": 10,
+          "text": "says",
+          "startMs": 190240,
+          "endMs": 191080,
+          "probability": 0.70797
+        },
+        {
+          "index": 11,
+          "text": "Pete",
+          "startMs": 191080,
+          "endMs": 191360,
+          "probability": 0.971306
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 191360,
+          "endMs": 191520,
+          "probability": 0.984011
+        },
+        {
+          "index": 13,
+          "text": "cat",
+          "startMs": 191520,
+          "endMs": 191800,
+          "probability": 0.865531
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Okay, says Robo Pete. Let's ride our skateboards instead",
+      "startMs": 192600,
+      "endMs": 196920,
+      "avgLogprob": -0.155496,
+      "noSpeechProb": 0.002572,
+      "compressionRatio": 1.64557,
+      "words": [
+        {
+          "index": 1,
+          "text": "Okay,",
+          "startMs": 192600,
+          "endMs": 193280,
+          "probability": 0.840539
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 193280,
+          "endMs": 193860,
+          "probability": 0.994081
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 193860,
+          "endMs": 194180,
+          "probability": 0.968798
+        },
+        {
+          "index": 4,
+          "text": "Pete.",
+          "startMs": 194180,
+          "endMs": 194660,
+          "probability": 0.987145
+        },
+        {
+          "index": 5,
+          "text": "Let's",
+          "startMs": 194740,
+          "endMs": 195420,
+          "probability": 0.997517
+        },
+        {
+          "index": 6,
+          "text": "ride",
+          "startMs": 195420,
+          "endMs": 195580,
+          "probability": 0.910134
+        },
+        {
+          "index": 7,
+          "text": "our",
+          "startMs": 195580,
+          "endMs": 195740,
+          "probability": 0.991337
+        },
+        {
+          "index": 8,
+          "text": "skateboards",
+          "startMs": 195740,
+          "endMs": 196240,
+          "probability": 0.992494
+        },
+        {
+          "index": 9,
+          "text": "instead",
+          "startMs": 196240,
+          "endMs": 196920,
+          "probability": 0.994593
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Before Pete can answer Robo Pete's feet transform into a motorized skateboard with super speedy wheels",
+      "startMs": 198500,
+      "endMs": 205980,
+      "avgLogprob": -0.237686,
+      "noSpeechProb": 0.007836,
+      "compressionRatio": 1.606061,
+      "words": [
+        {
+          "index": 1,
+          "text": "Before",
+          "startMs": 198500,
+          "endMs": 199340,
+          "probability": 0.064299
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 199340,
+          "endMs": 199600,
+          "probability": 0.9588
+        },
+        {
+          "index": 3,
+          "text": "can",
+          "startMs": 199600,
+          "endMs": 199820,
+          "probability": 0.995214
+        },
+        {
+          "index": 4,
+          "text": "answer",
+          "startMs": 199820,
+          "endMs": 200320,
+          "probability": 0.996893
+        },
+        {
+          "index": 5,
+          "text": "Robo",
+          "startMs": 200320,
+          "endMs": 200980,
+          "probability": 0.072875
+        },
+        {
+          "index": 6,
+          "text": "Pete's",
+          "startMs": 200980,
+          "endMs": 201500,
+          "probability": 0.928171
+        },
+        {
+          "index": 7,
+          "text": "feet",
+          "startMs": 201500,
+          "endMs": 201720,
+          "probability": 0.946582
+        },
+        {
+          "index": 8,
+          "text": "transform",
+          "startMs": 201720,
+          "endMs": 202300,
+          "probability": 0.959799
+        },
+        {
+          "index": 9,
+          "text": "into",
+          "startMs": 202300,
+          "endMs": 202620,
+          "probability": 0.992563
+        },
+        {
+          "index": 10,
+          "text": "a",
+          "startMs": 202620,
+          "endMs": 202820,
+          "probability": 0.981765
+        },
+        {
+          "index": 11,
+          "text": "motorized",
+          "startMs": 202820,
+          "endMs": 203380,
+          "probability": 0.976863
+        },
+        {
+          "index": 12,
+          "text": "skateboard",
+          "startMs": 203380,
+          "endMs": 203940,
+          "probability": 0.98243
+        },
+        {
+          "index": 13,
+          "text": "with",
+          "startMs": 203940,
+          "endMs": 204360,
+          "probability": 0.962404
+        },
+        {
+          "index": 14,
+          "text": "super",
+          "startMs": 204360,
+          "endMs": 204900,
+          "probability": 0.972437
+        },
+        {
+          "index": 15,
+          "text": "speedy",
+          "startMs": 204900,
+          "endMs": 205360,
+          "probability": 0.9758
+        },
+        {
+          "index": 16,
+          "text": "wheels",
+          "startMs": 205360,
+          "endMs": 205980,
+          "probability": 0.988091
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "Let's go Robo Pete shouts wait calls Pete",
+      "startMs": 206840,
+      "endMs": 211960,
+      "avgLogprob": -0.237686,
+      "noSpeechProb": 0.007836,
+      "compressionRatio": 1.606061,
+      "words": [
+        {
+          "index": 1,
+          "text": "Let's",
+          "startMs": 206840,
+          "endMs": 207520,
+          "probability": 0.588378
+        },
+        {
+          "index": 2,
+          "text": "go",
+          "startMs": 207520,
+          "endMs": 207900,
+          "probability": 0.987138
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 207900,
+          "endMs": 208700,
+          "probability": 0.781084
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 208700,
+          "endMs": 209120,
+          "probability": 0.976792
+        },
+        {
+          "index": 5,
+          "text": "shouts",
+          "startMs": 209120,
+          "endMs": 209540,
+          "probability": 0.933963
+        },
+        {
+          "index": 6,
+          "text": "wait",
+          "startMs": 209540,
+          "endMs": 210660,
+          "probability": 0.559388
+        },
+        {
+          "index": 7,
+          "text": "calls",
+          "startMs": 210660,
+          "endMs": 211500,
+          "probability": 0.919047
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 211500,
+          "endMs": 211960,
+          "probability": 0.977437
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Pete chases after Robo Pete he has no idea where Robo Pete is going",
+      "startMs": 213400,
+      "endMs": 218860,
+      "avgLogprob": -0.237686,
+      "noSpeechProb": 0.007836,
+      "compressionRatio": 1.606061,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 213400,
+          "endMs": 214240,
+          "probability": 0.965203
+        },
+        {
+          "index": 2,
+          "text": "chases",
+          "startMs": 214240,
+          "endMs": 214700,
+          "probability": 0.874727
+        },
+        {
+          "index": 3,
+          "text": "after",
+          "startMs": 214700,
+          "endMs": 215060,
+          "probability": 0.996963
+        },
+        {
+          "index": 4,
+          "text": "Robo",
+          "startMs": 215060,
+          "endMs": 215360,
+          "probability": 0.932739
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 215360,
+          "endMs": 215780,
+          "probability": 0.985618
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 215780,
+          "endMs": 216320,
+          "probability": 0.459824
+        },
+        {
+          "index": 7,
+          "text": "has",
+          "startMs": 216320,
+          "endMs": 216560,
+          "probability": 0.998317
+        },
+        {
+          "index": 8,
+          "text": "no",
+          "startMs": 216560,
+          "endMs": 216920,
+          "probability": 0.997715
+        },
+        {
+          "index": 9,
+          "text": "idea",
+          "startMs": 216920,
+          "endMs": 217260,
+          "probability": 0.999526
+        },
+        {
+          "index": 10,
+          "text": "where",
+          "startMs": 217260,
+          "endMs": 217540,
+          "probability": 0.981302
+        },
+        {
+          "index": 11,
+          "text": "Robo",
+          "startMs": 217540,
+          "endMs": 217860,
+          "probability": 0.967317
+        },
+        {
+          "index": 12,
+          "text": "Pete",
+          "startMs": 217860,
+          "endMs": 218200,
+          "probability": 0.988096
+        },
+        {
+          "index": 13,
+          "text": "is",
+          "startMs": 218200,
+          "endMs": 218360,
+          "probability": 0.998687
+        },
+        {
+          "index": 14,
+          "text": "going",
+          "startMs": 218360,
+          "endMs": 218860,
+          "probability": 0.997479
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "Robo Pete crashes into the sandbox at the playground",
+      "startMs": 220500,
+      "endMs": 224080,
+      "avgLogprob": -0.237686,
+      "noSpeechProb": 0.007836,
+      "compressionRatio": 1.606061,
+      "words": [
+        {
+          "index": 1,
+          "text": "Robo",
+          "startMs": 220500,
+          "endMs": 221340,
+          "probability": 0.904335
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 221340,
+          "endMs": 221680,
+          "probability": 0.981456
+        },
+        {
+          "index": 3,
+          "text": "crashes",
+          "startMs": 221680,
+          "endMs": 222160,
+          "probability": 0.973689
+        },
+        {
+          "index": 4,
+          "text": "into",
+          "startMs": 222160,
+          "endMs": 222520,
+          "probability": 0.997965
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 222520,
+          "endMs": 222700,
+          "probability": 0.999511
+        },
+        {
+          "index": 6,
+          "text": "sandbox",
+          "startMs": 222700,
+          "endMs": 223160,
+          "probability": 0.915748
+        },
+        {
+          "index": 7,
+          "text": "at",
+          "startMs": 223160,
+          "endMs": 223420,
+          "probability": 0.99775
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 223420,
+          "endMs": 223560,
+          "probability": 0.999515
+        },
+        {
+          "index": 9,
+          "text": "playground",
+          "startMs": 223560,
+          "endMs": 224080,
+          "probability": 0.993195
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Are you okay Pete asks his robot? I am a robot. I am",
+      "startMs": 224720,
+      "endMs": 230140,
+      "avgLogprob": -0.233027,
+      "noSpeechProb": 0.013285,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "Are",
+          "startMs": 224720,
+          "endMs": 225280,
+          "probability": 0.606274
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 225280,
+          "endMs": 225520,
+          "probability": 0.995313
+        },
+        {
+          "index": 3,
+          "text": "okay",
+          "startMs": 225520,
+          "endMs": 225980,
+          "probability": 0.884183
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 225980,
+          "endMs": 226660,
+          "probability": 0.027451
+        },
+        {
+          "index": 5,
+          "text": "asks",
+          "startMs": 226660,
+          "endMs": 226940,
+          "probability": 0.319755
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 226940,
+          "endMs": 227180,
+          "probability": 0.858249
+        },
+        {
+          "index": 7,
+          "text": "robot?",
+          "startMs": 227180,
+          "endMs": 227520,
+          "probability": 0.985115
+        },
+        {
+          "index": 8,
+          "text": "I",
+          "startMs": 228720,
+          "endMs": 228760,
+          "probability": 0.95305
+        },
+        {
+          "index": 9,
+          "text": "am",
+          "startMs": 228760,
+          "endMs": 228900,
+          "probability": 0.88137
+        },
+        {
+          "index": 10,
+          "text": "a",
+          "startMs": 228900,
+          "endMs": 229060,
+          "probability": 0.995016
+        },
+        {
+          "index": 11,
+          "text": "robot.",
+          "startMs": 229060,
+          "endMs": 229460,
+          "probability": 0.993516
+        },
+        {
+          "index": 12,
+          "text": "I",
+          "startMs": 229920,
+          "endMs": 229940,
+          "probability": 0.996109
+        },
+        {
+          "index": 13,
+          "text": "am",
+          "startMs": 229940,
+          "endMs": 230140,
+          "probability": 0.997049
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Indestructible says Robo Pete",
+      "startMs": 230880,
+      "endMs": 232900,
+      "avgLogprob": -0.233027,
+      "noSpeechProb": 0.013285,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "Indestructible",
+          "startMs": 230880,
+          "endMs": 231480,
+          "probability": 0.795203
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 231480,
+          "endMs": 232140,
+          "probability": 0.746688
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 232140,
+          "endMs": 232520,
+          "probability": 0.670263
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 232520,
+          "endMs": 232900,
+          "probability": 0.899764
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "What is this strange place?",
+      "startMs": 233800,
+      "endMs": 235500,
+      "avgLogprob": -0.233027,
+      "noSpeechProb": 0.013285,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 233800,
+          "endMs": 234280,
+          "probability": 0.938722
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 234280,
+          "endMs": 234500,
+          "probability": 0.997724
+        },
+        {
+          "index": 3,
+          "text": "this",
+          "startMs": 234500,
+          "endMs": 234720,
+          "probability": 0.956029
+        },
+        {
+          "index": 4,
+          "text": "strange",
+          "startMs": 234720,
+          "endMs": 235040,
+          "probability": 0.991902
+        },
+        {
+          "index": 5,
+          "text": "place?",
+          "startMs": 235040,
+          "endMs": 235500,
+          "probability": 0.995676
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "It's a playground says Pete he waves to his friends",
+      "startMs": 236260,
+      "endMs": 240200,
+      "avgLogprob": -0.233027,
+      "noSpeechProb": 0.013285,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 236260,
+          "endMs": 236720,
+          "probability": 0.994064
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 236720,
+          "endMs": 236800,
+          "probability": 0.998068
+        },
+        {
+          "index": 3,
+          "text": "playground",
+          "startMs": 236800,
+          "endMs": 237280,
+          "probability": 0.992442
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 237280,
+          "endMs": 237980,
+          "probability": 0.947554
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 237980,
+          "endMs": 238520,
+          "probability": 0.966928
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 238520,
+          "endMs": 239120,
+          "probability": 0.771889
+        },
+        {
+          "index": 7,
+          "text": "waves",
+          "startMs": 239120,
+          "endMs": 239380,
+          "probability": 0.95562
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 239380,
+          "endMs": 239620,
+          "probability": 0.999286
+        },
+        {
+          "index": 9,
+          "text": "his",
+          "startMs": 239620,
+          "endMs": 239760,
+          "probability": 0.998398
+        },
+        {
+          "index": 10,
+          "text": "friends",
+          "startMs": 239760,
+          "endMs": 240200,
+          "probability": 0.988388
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "This is Robo Pete Pete says to Callie Larry and John I made him myself",
+      "startMs": 241860,
+      "endMs": 248040,
+      "avgLogprob": -0.233027,
+      "noSpeechProb": 0.013285,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 241860,
+          "endMs": 242660,
+          "probability": 0.825839
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 242660,
+          "endMs": 242940,
+          "probability": 0.996833
+        },
+        {
+          "index": 3,
+          "text": "Robo",
+          "startMs": 242940,
+          "endMs": 243380,
+          "probability": 0.943178
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 243380,
+          "endMs": 243900,
+          "probability": 0.953052
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 243900,
+          "endMs": 244420,
+          "probability": 0.981045
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 244420,
+          "endMs": 244700,
+          "probability": 0.991354
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 244700,
+          "endMs": 244920,
+          "probability": 0.964804
+        },
+        {
+          "index": 8,
+          "text": "Callie",
+          "startMs": 244920,
+          "endMs": 245380,
+          "probability": 0.626372
+        },
+        {
+          "index": 9,
+          "text": "Larry",
+          "startMs": 245380,
+          "endMs": 245660,
+          "probability": 0.960189
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 245660,
+          "endMs": 245960,
+          "probability": 0.955861
+        },
+        {
+          "index": 11,
+          "text": "John",
+          "startMs": 245960,
+          "endMs": 246280,
+          "probability": 0.973752
+        },
+        {
+          "index": 12,
+          "text": "I",
+          "startMs": 246280,
+          "endMs": 247060,
+          "probability": 0.68481
+        },
+        {
+          "index": 13,
+          "text": "made",
+          "startMs": 247060,
+          "endMs": 247340,
+          "probability": 0.980144
+        },
+        {
+          "index": 14,
+          "text": "him",
+          "startMs": 247340,
+          "endMs": 247520,
+          "probability": 0.994403
+        },
+        {
+          "index": 15,
+          "text": "myself",
+          "startMs": 247520,
+          "endMs": 248040,
+          "probability": 0.996591
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "Cool says Larry",
+      "startMs": 248840,
+      "endMs": 250420,
+      "avgLogprob": -0.233027,
+      "noSpeechProb": 0.013285,
+      "compressionRatio": 1.5,
+      "words": [
+        {
+          "index": 1,
+          "text": "Cool",
+          "startMs": 248840,
+          "endMs": 249480,
+          "probability": 0.726041
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 249480,
+          "endMs": 249940,
+          "probability": 0.9077
+        },
+        {
+          "index": 3,
+          "text": "Larry",
+          "startMs": 249940,
+          "endMs": 250420,
+          "probability": 0.983885
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "We are going to help John finish painting says Callie and then we are going bike riding I",
+      "startMs": 250420,
+      "endMs": 257380,
+      "avgLogprob": -0.148277,
+      "noSpeechProb": 0.009746,
+      "compressionRatio": 1.646739,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 250420,
+          "endMs": 250800,
+          "probability": 0.379136
+        },
+        {
+          "index": 2,
+          "text": "are",
+          "startMs": 250800,
+          "endMs": 251960,
+          "probability": 0.861884
+        },
+        {
+          "index": 3,
+          "text": "going",
+          "startMs": 251960,
+          "endMs": 252200,
+          "probability": 0.995844
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 252200,
+          "endMs": 252360,
+          "probability": 0.996568
+        },
+        {
+          "index": 5,
+          "text": "help",
+          "startMs": 252360,
+          "endMs": 252560,
+          "probability": 0.995505
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 252560,
+          "endMs": 252920,
+          "probability": 0.890685
+        },
+        {
+          "index": 7,
+          "text": "finish",
+          "startMs": 252920,
+          "endMs": 253280,
+          "probability": 0.99031
+        },
+        {
+          "index": 8,
+          "text": "painting",
+          "startMs": 253280,
+          "endMs": 253880,
+          "probability": 0.982449
+        },
+        {
+          "index": 9,
+          "text": "says",
+          "startMs": 253880,
+          "endMs": 254360,
+          "probability": 0.138003
+        },
+        {
+          "index": 10,
+          "text": "Callie",
+          "startMs": 254360,
+          "endMs": 254920,
+          "probability": 0.738519
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 254920,
+          "endMs": 255540,
+          "probability": 0.401719
+        },
+        {
+          "index": 12,
+          "text": "then",
+          "startMs": 255540,
+          "endMs": 255760,
+          "probability": 0.988141
+        },
+        {
+          "index": 13,
+          "text": "we",
+          "startMs": 255760,
+          "endMs": 255960,
+          "probability": 0.995697
+        },
+        {
+          "index": 14,
+          "text": "are",
+          "startMs": 255960,
+          "endMs": 256080,
+          "probability": 0.964905
+        },
+        {
+          "index": 15,
+          "text": "going",
+          "startMs": 256080,
+          "endMs": 256360,
+          "probability": 0.998732
+        },
+        {
+          "index": 16,
+          "text": "bike",
+          "startMs": 256360,
+          "endMs": 256700,
+          "probability": 0.973158
+        },
+        {
+          "index": 17,
+          "text": "riding",
+          "startMs": 256700,
+          "endMs": 257140,
+          "probability": 0.982758
+        },
+        {
+          "index": 18,
+          "text": "I",
+          "startMs": 257140,
+          "endMs": 257500,
+          "probability": 0.58448
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "Want to go on the slide interrupts Robo Pete?",
+      "startMs": 258440,
+      "endMs": 261380,
+      "avgLogprob": -0.148277,
+      "noSpeechProb": 0.009746,
+      "compressionRatio": 1.646739,
+      "words": [
+        {
+          "index": 1,
+          "text": "Want",
+          "startMs": 258440,
+          "endMs": 258620,
+          "probability": 0.767828
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 258620,
+          "endMs": 258780,
+          "probability": 0.998636
+        },
+        {
+          "index": 3,
+          "text": "go",
+          "startMs": 258780,
+          "endMs": 258880,
+          "probability": 0.998534
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 258880,
+          "endMs": 259020,
+          "probability": 0.994186
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 259020,
+          "endMs": 259160,
+          "probability": 0.994853
+        },
+        {
+          "index": 6,
+          "text": "slide",
+          "startMs": 259160,
+          "endMs": 259680,
+          "probability": 0.981626
+        },
+        {
+          "index": 7,
+          "text": "interrupts",
+          "startMs": 259680,
+          "endMs": 260500,
+          "probability": 0.784545
+        },
+        {
+          "index": 8,
+          "text": "Robo",
+          "startMs": 260500,
+          "endMs": 260980,
+          "probability": 0.703986
+        },
+        {
+          "index": 9,
+          "text": "Pete?",
+          "startMs": 260980,
+          "endMs": 261380,
+          "probability": 0.856799
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "Robo Pete I want to help my friends paint the fence Pete tells his robot",
+      "startMs": 262960,
+      "endMs": 268280,
+      "avgLogprob": -0.148277,
+      "noSpeechProb": 0.009746,
+      "compressionRatio": 1.646739,
+      "words": [
+        {
+          "index": 1,
+          "text": "Robo",
+          "startMs": 262960,
+          "endMs": 263680,
+          "probability": 0.938697
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 263680,
+          "endMs": 264100,
+          "probability": 0.901003
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 264100,
+          "endMs": 264560,
+          "probability": 0.679918
+        },
+        {
+          "index": 4,
+          "text": "want",
+          "startMs": 264560,
+          "endMs": 264800,
+          "probability": 0.982534
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 264800,
+          "endMs": 264960,
+          "probability": 0.999321
+        },
+        {
+          "index": 6,
+          "text": "help",
+          "startMs": 264960,
+          "endMs": 265100,
+          "probability": 0.999003
+        },
+        {
+          "index": 7,
+          "text": "my",
+          "startMs": 265100,
+          "endMs": 265280,
+          "probability": 0.99638
+        },
+        {
+          "index": 8,
+          "text": "friends",
+          "startMs": 265280,
+          "endMs": 265660,
+          "probability": 0.985854
+        },
+        {
+          "index": 9,
+          "text": "paint",
+          "startMs": 265660,
+          "endMs": 265960,
+          "probability": 0.991076
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 265960,
+          "endMs": 266140,
+          "probability": 0.984377
+        },
+        {
+          "index": 11,
+          "text": "fence",
+          "startMs": 266140,
+          "endMs": 266560,
+          "probability": 0.977878
+        },
+        {
+          "index": 12,
+          "text": "Pete",
+          "startMs": 266560,
+          "endMs": 267300,
+          "probability": 0.963966
+        },
+        {
+          "index": 13,
+          "text": "tells",
+          "startMs": 267300,
+          "endMs": 267580,
+          "probability": 0.967373
+        },
+        {
+          "index": 14,
+          "text": "his",
+          "startMs": 267580,
+          "endMs": 267820,
+          "probability": 0.982222
+        },
+        {
+          "index": 15,
+          "text": "robot",
+          "startMs": 267820,
+          "endMs": 268280,
+          "probability": 0.993075
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Paint the fence that would be great Robo Pete says I am programmed to paint faster than anyone",
+      "startMs": 269840,
+      "endMs": 277440,
+      "avgLogprob": -0.148277,
+      "noSpeechProb": 0.009746,
+      "compressionRatio": 1.646739,
+      "words": [
+        {
+          "index": 1,
+          "text": "Paint",
+          "startMs": 269840,
+          "endMs": 270560,
+          "probability": 0.955941
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 270560,
+          "endMs": 270760,
+          "probability": 0.983462
+        },
+        {
+          "index": 3,
+          "text": "fence",
+          "startMs": 270760,
+          "endMs": 271160,
+          "probability": 0.992124
+        },
+        {
+          "index": 4,
+          "text": "that",
+          "startMs": 271160,
+          "endMs": 271820,
+          "probability": 0.917931
+        },
+        {
+          "index": 5,
+          "text": "would",
+          "startMs": 271820,
+          "endMs": 271960,
+          "probability": 0.997221
+        },
+        {
+          "index": 6,
+          "text": "be",
+          "startMs": 271960,
+          "endMs": 272200,
+          "probability": 0.998511
+        },
+        {
+          "index": 7,
+          "text": "great",
+          "startMs": 272200,
+          "endMs": 272720,
+          "probability": 0.997472
+        },
+        {
+          "index": 8,
+          "text": "Robo",
+          "startMs": 272720,
+          "endMs": 273460,
+          "probability": 0.960223
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 273460,
+          "endMs": 273840,
+          "probability": 0.939609
+        },
+        {
+          "index": 10,
+          "text": "says",
+          "startMs": 273840,
+          "endMs": 274180,
+          "probability": 0.99461
+        },
+        {
+          "index": 11,
+          "text": "I",
+          "startMs": 274180,
+          "endMs": 275000,
+          "probability": 0.980063
+        },
+        {
+          "index": 12,
+          "text": "am",
+          "startMs": 275000,
+          "endMs": 275180,
+          "probability": 0.997683
+        },
+        {
+          "index": 13,
+          "text": "programmed",
+          "startMs": 275180,
+          "endMs": 275560,
+          "probability": 0.980865
+        },
+        {
+          "index": 14,
+          "text": "to",
+          "startMs": 275560,
+          "endMs": 275800,
+          "probability": 0.998474
+        },
+        {
+          "index": 15,
+          "text": "paint",
+          "startMs": 275800,
+          "endMs": 276020,
+          "probability": 0.998635
+        },
+        {
+          "index": 16,
+          "text": "faster",
+          "startMs": 276020,
+          "endMs": 276460,
+          "probability": 0.996886
+        },
+        {
+          "index": 17,
+          "text": "than",
+          "startMs": 276460,
+          "endMs": 276700,
+          "probability": 0.998468
+        },
+        {
+          "index": 18,
+          "text": "anyone",
+          "startMs": 276700,
+          "endMs": 277440,
+          "probability": 0.995585
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Pete and his friends try to help but Robo Pete paints too fast",
+      "startMs": 278280,
+      "endMs": 282660,
+      "avgLogprob": -0.169507,
+      "noSpeechProb": 0.002634,
+      "compressionRatio": 1.616279,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 278280,
+          "endMs": 278780,
+          "probability": 0.507568
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 278780,
+          "endMs": 278940,
+          "probability": 0.981134
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 278940,
+          "endMs": 279140,
+          "probability": 0.994934
+        },
+        {
+          "index": 4,
+          "text": "friends",
+          "startMs": 279140,
+          "endMs": 279420,
+          "probability": 0.993029
+        },
+        {
+          "index": 5,
+          "text": "try",
+          "startMs": 279420,
+          "endMs": 279740,
+          "probability": 0.983436
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 279740,
+          "endMs": 279880,
+          "probability": 0.994249
+        },
+        {
+          "index": 7,
+          "text": "help",
+          "startMs": 279880,
+          "endMs": 280220,
+          "probability": 0.999193
+        },
+        {
+          "index": 8,
+          "text": "but",
+          "startMs": 280220,
+          "endMs": 280720,
+          "probability": 0.267993
+        },
+        {
+          "index": 9,
+          "text": "Robo",
+          "startMs": 280720,
+          "endMs": 281060,
+          "probability": 0.852079
+        },
+        {
+          "index": 10,
+          "text": "Pete",
+          "startMs": 281060,
+          "endMs": 281360,
+          "probability": 0.78587
+        },
+        {
+          "index": 11,
+          "text": "paints",
+          "startMs": 281360,
+          "endMs": 281720,
+          "probability": 0.994803
+        },
+        {
+          "index": 12,
+          "text": "too",
+          "startMs": 281720,
+          "endMs": 282080,
+          "probability": 0.985935
+        },
+        {
+          "index": 13,
+          "text": "fast",
+          "startMs": 282080,
+          "endMs": 282660,
+          "probability": 0.998562
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "So instead they ride bikes and they read books and",
+      "startMs": 284520,
+      "endMs": 288800,
+      "avgLogprob": -0.169507,
+      "noSpeechProb": 0.002634,
+      "compressionRatio": 1.616279,
+      "words": [
+        {
+          "index": 1,
+          "text": "So",
+          "startMs": 284520,
+          "endMs": 285200,
+          "probability": 0.113183
+        },
+        {
+          "index": 2,
+          "text": "instead",
+          "startMs": 285200,
+          "endMs": 285640,
+          "probability": 0.972158
+        },
+        {
+          "index": 3,
+          "text": "they",
+          "startMs": 285640,
+          "endMs": 286120,
+          "probability": 0.791178
+        },
+        {
+          "index": 4,
+          "text": "ride",
+          "startMs": 286120,
+          "endMs": 286380,
+          "probability": 0.994788
+        },
+        {
+          "index": 5,
+          "text": "bikes",
+          "startMs": 286380,
+          "endMs": 286840,
+          "probability": 0.990696
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 286840,
+          "endMs": 287740,
+          "probability": 0.633176
+        },
+        {
+          "index": 7,
+          "text": "they",
+          "startMs": 287740,
+          "endMs": 287940,
+          "probability": 0.985106
+        },
+        {
+          "index": 8,
+          "text": "read",
+          "startMs": 287940,
+          "endMs": 288200,
+          "probability": 0.997476
+        },
+        {
+          "index": 9,
+          "text": "books",
+          "startMs": 288200,
+          "endMs": 288700,
+          "probability": 0.997673
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 288700,
+          "endMs": 289040,
+          "probability": 0.406719
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "After Robo Pete is done painting they help him clean the brushes",
+      "startMs": 289980,
+      "endMs": 293760,
+      "avgLogprob": -0.169507,
+      "noSpeechProb": 0.002634,
+      "compressionRatio": 1.616279,
+      "words": [
+        {
+          "index": 1,
+          "text": "After",
+          "startMs": 289980,
+          "endMs": 290500,
+          "probability": 0.605067
+        },
+        {
+          "index": 2,
+          "text": "Robo",
+          "startMs": 290500,
+          "endMs": 290840,
+          "probability": 0.886819
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 290840,
+          "endMs": 291180,
+          "probability": 0.973035
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 291180,
+          "endMs": 291360,
+          "probability": 0.912451
+        },
+        {
+          "index": 5,
+          "text": "done",
+          "startMs": 291360,
+          "endMs": 291580,
+          "probability": 0.999687
+        },
+        {
+          "index": 6,
+          "text": "painting",
+          "startMs": 291580,
+          "endMs": 292060,
+          "probability": 0.99412
+        },
+        {
+          "index": 7,
+          "text": "they",
+          "startMs": 292060,
+          "endMs": 292480,
+          "probability": 0.64645
+        },
+        {
+          "index": 8,
+          "text": "help",
+          "startMs": 292480,
+          "endMs": 292700,
+          "probability": 0.892233
+        },
+        {
+          "index": 9,
+          "text": "him",
+          "startMs": 292700,
+          "endMs": 292920,
+          "probability": 0.997528
+        },
+        {
+          "index": 10,
+          "text": "clean",
+          "startMs": 292920,
+          "endMs": 293180,
+          "probability": 0.997467
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 293180,
+          "endMs": 293340,
+          "probability": 0.997349
+        },
+        {
+          "index": 12,
+          "text": "brushes",
+          "startMs": 293340,
+          "endMs": 293760,
+          "probability": 0.996893
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "Pete realizes that it doesn't matter what they do just being with his friends is what makes it fun?",
+      "startMs": 295600,
+      "endMs": 302900,
+      "avgLogprob": -0.169507,
+      "noSpeechProb": 0.002634,
+      "compressionRatio": 1.616279,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 295600,
+          "endMs": 296280,
+          "probability": 0.961638
+        },
+        {
+          "index": 2,
+          "text": "realizes",
+          "startMs": 296280,
+          "endMs": 296800,
+          "probability": 0.864089
+        },
+        {
+          "index": 3,
+          "text": "that",
+          "startMs": 296800,
+          "endMs": 297260,
+          "probability": 0.993139
+        },
+        {
+          "index": 4,
+          "text": "it",
+          "startMs": 297260,
+          "endMs": 297420,
+          "probability": 0.994127
+        },
+        {
+          "index": 5,
+          "text": "doesn't",
+          "startMs": 297420,
+          "endMs": 297800,
+          "probability": 0.999054
+        },
+        {
+          "index": 6,
+          "text": "matter",
+          "startMs": 297800,
+          "endMs": 298100,
+          "probability": 0.998817
+        },
+        {
+          "index": 7,
+          "text": "what",
+          "startMs": 298100,
+          "endMs": 298400,
+          "probability": 0.97457
+        },
+        {
+          "index": 8,
+          "text": "they",
+          "startMs": 298400,
+          "endMs": 298640,
+          "probability": 0.996442
+        },
+        {
+          "index": 9,
+          "text": "do",
+          "startMs": 298640,
+          "endMs": 299160,
+          "probability": 0.99743
+        },
+        {
+          "index": 10,
+          "text": "just",
+          "startMs": 299160,
+          "endMs": 299840,
+          "probability": 0.520408
+        },
+        {
+          "index": 11,
+          "text": "being",
+          "startMs": 299840,
+          "endMs": 300140,
+          "probability": 0.991754
+        },
+        {
+          "index": 12,
+          "text": "with",
+          "startMs": 300140,
+          "endMs": 300380,
+          "probability": 0.999199
+        },
+        {
+          "index": 13,
+          "text": "his",
+          "startMs": 300380,
+          "endMs": 300600,
+          "probability": 0.997792
+        },
+        {
+          "index": 14,
+          "text": "friends",
+          "startMs": 300600,
+          "endMs": 301000,
+          "probability": 0.998473
+        },
+        {
+          "index": 15,
+          "text": "is",
+          "startMs": 301000,
+          "endMs": 301560,
+          "probability": 0.966994
+        },
+        {
+          "index": 16,
+          "text": "what",
+          "startMs": 301560,
+          "endMs": 301780,
+          "probability": 0.97722
+        },
+        {
+          "index": 17,
+          "text": "makes",
+          "startMs": 301780,
+          "endMs": 302160,
+          "probability": 0.998128
+        },
+        {
+          "index": 18,
+          "text": "it",
+          "startMs": 302160,
+          "endMs": 302420,
+          "probability": 0.997281
+        },
+        {
+          "index": 19,
+          "text": "fun?",
+          "startMs": 302420,
+          "endMs": 302900,
+          "probability": 0.998737
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "We hope you have enjoyed this recording of Pete the cat Robo Pete by James Dean",
+      "startMs": 305300,
+      "endMs": 312660,
+      "avgLogprob": -0.469048,
+      "noSpeechProb": 0.002231,
+      "compressionRatio": 1.468354,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 305300,
+          "endMs": 306300,
+          "probability": 0.569021
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 306300,
+          "endMs": 306540,
+          "probability": 0.989028
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 306540,
+          "endMs": 306740,
+          "probability": 0.995129
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 306740,
+          "endMs": 306960,
+          "probability": 0.976923
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 306960,
+          "endMs": 307300,
+          "probability": 0.996682
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 307300,
+          "endMs": 307540,
+          "probability": 0.991816
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 307540,
+          "endMs": 308000,
+          "probability": 0.9937
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 308000,
+          "endMs": 308420,
+          "probability": 0.99485
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 308420,
+          "endMs": 309300,
+          "probability": 0.838653
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 309300,
+          "endMs": 309520,
+          "probability": 0.947025
+        },
+        {
+          "index": 11,
+          "text": "cat",
+          "startMs": 309520,
+          "endMs": 309780,
+          "probability": 0.332316
+        },
+        {
+          "index": 12,
+          "text": "Robo",
+          "startMs": 309780,
+          "endMs": 310560,
+          "probability": 0.59997
+        },
+        {
+          "index": 13,
+          "text": "Pete",
+          "startMs": 310560,
+          "endMs": 311120,
+          "probability": 0.89033
+        },
+        {
+          "index": 14,
+          "text": "by",
+          "startMs": 311120,
+          "endMs": 311760,
+          "probability": 0.974007
+        },
+        {
+          "index": 15,
+          "text": "James",
+          "startMs": 311760,
+          "endMs": 312280,
+          "probability": 0.968487
+        },
+        {
+          "index": 16,
+          "text": "Dean",
+          "startMs": 312280,
+          "endMs": 312660,
+          "probability": 0.970058
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "This program was produced by John Marshall Media",
+      "startMs": 312660,
+      "endMs": 317120,
+      "avgLogprob": -0.469048,
+      "noSpeechProb": 0.002231,
+      "compressionRatio": 1.468354,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 312660,
+          "endMs": 314040,
+          "probability": 0.676821
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 314040,
+          "endMs": 314500,
+          "probability": 0.99428
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 314500,
+          "endMs": 314740,
+          "probability": 0.995404
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 314740,
+          "endMs": 315140,
+          "probability": 0.9972
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 315140,
+          "endMs": 315640,
+          "probability": 0.996969
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 315640,
+          "endMs": 316080,
+          "probability": 0.965476
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 316080,
+          "endMs": 316560,
+          "probability": 0.922232
+        },
+        {
+          "index": 8,
+          "text": "Media",
+          "startMs": 316560,
+          "endMs": 317120,
+          "probability": 0.691272
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "copyright",
+      "startMs": 317120,
+      "endMs": 318160,
+      "avgLogprob": -0.469048,
+      "noSpeechProb": 0.002231,
+      "compressionRatio": 1.468354,
+      "words": [
+        {
+          "index": 1,
+          "text": "copyright",
+          "startMs": 317120,
+          "endMs": 318160,
+          "probability": 0.819969
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "2015 by James Dean production copyright",
+      "startMs": 318860,
+      "endMs": 322280,
+      "avgLogprob": -0.469048,
+      "noSpeechProb": 0.002231,
+      "compressionRatio": 1.468354,
+      "words": [
+        {
+          "index": 1,
+          "text": "2015",
+          "startMs": 318640,
+          "endMs": 319140,
+          "probability": 0.986137
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 319140,
+          "endMs": 319860,
+          "probability": 0.993602
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 319860,
+          "endMs": 320300,
+          "probability": 0.98196
+        },
+        {
+          "index": 4,
+          "text": "Dean",
+          "startMs": 320300,
+          "endMs": 320700,
+          "probability": 0.987115
+        },
+        {
+          "index": 5,
+          "text": "production",
+          "startMs": 320700,
+          "endMs": 321720,
+          "probability": 0.77003
+        },
+        {
+          "index": 6,
+          "text": "copyright",
+          "startMs": 321720,
+          "endMs": 322280,
+          "probability": 0.9442
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "2015 by Harper Collins publishers all rights reserved",
+      "startMs": 322280,
+      "endMs": 327380,
+      "avgLogprob": -0.469048,
+      "noSpeechProb": 0.002231,
+      "compressionRatio": 1.468354,
+      "words": [
+        {
+          "index": 1,
+          "text": "2015",
+          "startMs": 322280,
+          "endMs": 323240,
+          "probability": 0.996104
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 323240,
+          "endMs": 324100,
+          "probability": 0.884523
+        },
+        {
+          "index": 3,
+          "text": "Harper",
+          "startMs": 324100,
+          "endMs": 324520,
+          "probability": 0.959919
+        },
+        {
+          "index": 4,
+          "text": "Collins",
+          "startMs": 324520,
+          "endMs": 325040,
+          "probability": 0.528099
+        },
+        {
+          "index": 5,
+          "text": "publishers",
+          "startMs": 325040,
+          "endMs": 325640,
+          "probability": 0.683722
+        },
+        {
+          "index": 6,
+          "text": "all",
+          "startMs": 325640,
+          "endMs": 326480,
+          "probability": 0.772789
+        },
+        {
+          "index": 7,
+          "text": "rights",
+          "startMs": 326480,
+          "endMs": 326840,
+          "probability": 0.979661
+        },
+        {
+          "index": 8,
+          "text": "reserved",
+          "startMs": 326840,
+          "endMs": 327380,
+          "probability": 0.994885
+        }
+      ]
+    }
+  ]
+}

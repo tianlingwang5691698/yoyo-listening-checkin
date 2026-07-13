@@ -14,6 +14,9 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'peppa') {
     return 'Peppa';
   }
+  if (category === 'petethecat') {
+    return 'Pete the Cat';
+  }
   if (category === 'unlock1') {
     return 'Unlock 1 听口 第二版';
   }

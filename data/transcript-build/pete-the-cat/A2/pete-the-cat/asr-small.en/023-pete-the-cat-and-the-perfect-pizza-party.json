@@ -1,0 +1,4040 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 39.863,
+  "text": "Pete the Cat and the Perfect Pizza Party by Kimberly and James Dean performed by James Foe Pete the Cat loves pizza Pete the Cat loves parties, too Pete had an idea of what he could do He would have the perfect pizza party You are invited to Pete's pizza party fun music games bring your swimsuit Pete's friends all arrived it was time to build the perfect pizza together That would make the pizza even better Pete thought the perfect pizza would be pepperoni with extra cheese It's a party a party a pepperoni pizza party But everyone did not agree Callie said pepperoni would be just fine, but I really love pretzels on mine Pete and the gang were puzzled pretzels Well, that's something new But maybe pretzels could be groovy, too It's a party a party a pepperoni pretzel pizza party Squirrel said pepperoni and pretzels would be just fine, but I really love pistachios on mine Pete and the gang were puzzled pistachios Well, that's something new But maybe pistachios could be groovy, too It's a party a party a pepperoni pretzel pistachio pizza party Grumpy Toad said Pepperoni pretzels and pistachios would be just fine, but I really love pickles on mine Pete and the gang were puzzled Pickles Well, that's something new But maybe pickles could be groovy, too It's a party a party a pepperoni pretzel pistachio pizza party Gus said Pepperoni pretzels pistachios and pickles would be just fine, but I really love popcorn on mine Pete and the gang were puzzled Popcorn well, that's something new But maybe popcorn could be groovy, too It's a party a party a pepperoni pretzel pistachio pickle popcorn pizza party Alligators said Pepperoni pretzels pistachios pickles and popcorn would be just fine But I really love papaya on mine Now Pete and the gang were really puzzled Papaya Well, that's something new But maybe papaya could be groovy, too It's a party a party a pepperoni pretzel pistachio pickle popcorn papaya pizza party Pete and the gang piled the pepperoni pretzels pistachios pickles popcorn and papaya on top The pizza was so high they had to stop Ding The pizza was done Trying something new might be fun they all built up the courage to take a first bite and The pepperoni pretzel pistachio pickle popcorn papaya pizza was Out of sight Dynamite just right in The end the perfect pizza is a pizza shared with friends Pete the cat and the perfect pizza party by Kimberly and James Dean This program was produced by John Marshall Media text copyright 2019 by Kimberly and James Dean art copyright 2019 by James Dean Pete the cat is a registered trademark of Pete the cat LLC production copyright 2019 by Harper Collins publishers all rights reserved",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat and the Perfect Pizza Party by Kimberly and James Dean",
+      "startMs": 0,
+      "endMs": 6160,
+      "avgLogprob": -0.258663,
+      "noSpeechProb": 0.018686,
+      "compressionRatio": 1.574468,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 500,
+          "probability": 0.663512
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 500,
+          "endMs": 760,
+          "probability": 0.970715
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 760,
+          "endMs": 1080,
+          "probability": 0.87683
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 1080,
+          "endMs": 1380,
+          "probability": 0.981411
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 1380,
+          "endMs": 1580,
+          "probability": 0.970089
+        },
+        {
+          "index": 6,
+          "text": "Perfect",
+          "startMs": 1580,
+          "endMs": 2160,
+          "probability": 0.965617
+        },
+        {
+          "index": 7,
+          "text": "Pizza",
+          "startMs": 2160,
+          "endMs": 2780,
+          "probability": 0.983058
+        },
+        {
+          "index": 8,
+          "text": "Party",
+          "startMs": 2780,
+          "endMs": 3300,
+          "probability": 0.987501
+        },
+        {
+          "index": 9,
+          "text": "by",
+          "startMs": 3300,
+          "endMs": 4160,
+          "probability": 0.806103
+        },
+        {
+          "index": 10,
+          "text": "Kimberly",
+          "startMs": 4160,
+          "endMs": 4640,
+          "probability": 0.822142
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 4640,
+          "endMs": 5160,
+          "probability": 0.974686
+        },
+        {
+          "index": 12,
+          "text": "James",
+          "startMs": 5160,
+          "endMs": 5720,
+          "probability": 0.998053
+        },
+        {
+          "index": 13,
+          "text": "Dean",
+          "startMs": 5720,
+          "endMs": 6160,
+          "probability": 0.938473
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "performed by James Foe",
+      "startMs": 7240,
+      "endMs": 8840,
+      "avgLogprob": -0.258663,
+      "noSpeechProb": 0.018686,
+      "compressionRatio": 1.574468,
+      "words": [
+        {
+          "index": 1,
+          "text": "performed",
+          "startMs": 7020,
+          "endMs": 7540,
+          "probability": 0.570694
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 7540,
+          "endMs": 8040,
+          "probability": 0.998913
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 8040,
+          "endMs": 8520,
+          "probability": 0.997789
+        },
+        {
+          "index": 4,
+          "text": "Foe",
+          "startMs": 8520,
+          "endMs": 8840,
+          "probability": 0.723805
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Pete the Cat loves pizza Pete the Cat loves parties, too",
+      "startMs": 11920,
+      "endMs": 18400,
+      "avgLogprob": -0.258663,
+      "noSpeechProb": 0.018686,
+      "compressionRatio": 1.574468,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 11920,
+          "endMs": 12440,
+          "probability": 0.002632
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 12440,
+          "endMs": 12720,
+          "probability": 0.986379
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 12720,
+          "endMs": 13160,
+          "probability": 0.613539
+        },
+        {
+          "index": 4,
+          "text": "loves",
+          "startMs": 13160,
+          "endMs": 13900,
+          "probability": 0.93284
+        },
+        {
+          "index": 5,
+          "text": "pizza",
+          "startMs": 13900,
+          "endMs": 14680,
+          "probability": 0.931981
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 14680,
+          "endMs": 15800,
+          "probability": 0.578976
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 15800,
+          "endMs": 15980,
+          "probability": 0.992945
+        },
+        {
+          "index": 8,
+          "text": "Cat",
+          "startMs": 15980,
+          "endMs": 16360,
+          "probability": 0.741653
+        },
+        {
+          "index": 9,
+          "text": "loves",
+          "startMs": 16360,
+          "endMs": 16960,
+          "probability": 0.992309
+        },
+        {
+          "index": 10,
+          "text": "parties,",
+          "startMs": 16960,
+          "endMs": 17600,
+          "probability": 0.996508
+        },
+        {
+          "index": 11,
+          "text": "too",
+          "startMs": 17640,
+          "endMs": 18400,
+          "probability": 0.997763
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Pete had an idea of what he could do",
+      "startMs": 19280,
+      "endMs": 23120,
+      "avgLogprob": -0.258663,
+      "noSpeechProb": 0.018686,
+      "compressionRatio": 1.574468,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 19280,
+          "endMs": 19880,
+          "probability": 0.92918
+        },
+        {
+          "index": 2,
+          "text": "had",
+          "startMs": 19880,
+          "endMs": 20280,
+          "probability": 0.995959
+        },
+        {
+          "index": 3,
+          "text": "an",
+          "startMs": 20280,
+          "endMs": 20520,
+          "probability": 0.999185
+        },
+        {
+          "index": 4,
+          "text": "idea",
+          "startMs": 20520,
+          "endMs": 21100,
+          "probability": 0.999762
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 21100,
+          "endMs": 21540,
+          "probability": 0.998033
+        },
+        {
+          "index": 6,
+          "text": "what",
+          "startMs": 21540,
+          "endMs": 21980,
+          "probability": 0.998279
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 21980,
+          "endMs": 22400,
+          "probability": 0.998603
+        },
+        {
+          "index": 8,
+          "text": "could",
+          "startMs": 22400,
+          "endMs": 22700,
+          "probability": 0.999012
+        },
+        {
+          "index": 9,
+          "text": "do",
+          "startMs": 22700,
+          "endMs": 23220,
+          "probability": 0.998439
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "He would have the perfect pizza party",
+      "startMs": 24820,
+      "endMs": 29880,
+      "avgLogprob": -0.258663,
+      "noSpeechProb": 0.018686,
+      "compressionRatio": 1.574468,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 24820,
+          "endMs": 25860,
+          "probability": 0.891416
+        },
+        {
+          "index": 2,
+          "text": "would",
+          "startMs": 25860,
+          "endMs": 26120,
+          "probability": 0.996694
+        },
+        {
+          "index": 3,
+          "text": "have",
+          "startMs": 26120,
+          "endMs": 26640,
+          "probability": 0.998796
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 26640,
+          "endMs": 27160,
+          "probability": 0.981033
+        },
+        {
+          "index": 5,
+          "text": "perfect",
+          "startMs": 27160,
+          "endMs": 28100,
+          "probability": 0.947378
+        },
+        {
+          "index": 6,
+          "text": "pizza",
+          "startMs": 28100,
+          "endMs": 29140,
+          "probability": 0.907734
+        },
+        {
+          "index": 7,
+          "text": "party",
+          "startMs": 29140,
+          "endMs": 29880,
+          "probability": 0.991969
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "You are invited to Pete's pizza party fun music games bring your swimsuit",
+      "startMs": 30960,
+      "endMs": 38760,
+      "avgLogprob": -0.216392,
+      "noSpeechProb": 0.004975,
+      "compressionRatio": 1.558282,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 30960,
+          "endMs": 31520,
+          "probability": 0.472385
+        },
+        {
+          "index": 2,
+          "text": "are",
+          "startMs": 31520,
+          "endMs": 31760,
+          "probability": 0.88402
+        },
+        {
+          "index": 3,
+          "text": "invited",
+          "startMs": 31760,
+          "endMs": 32260,
+          "probability": 0.998162
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 32260,
+          "endMs": 32740,
+          "probability": 0.997479
+        },
+        {
+          "index": 5,
+          "text": "Pete's",
+          "startMs": 32740,
+          "endMs": 33720,
+          "probability": 0.983362
+        },
+        {
+          "index": 6,
+          "text": "pizza",
+          "startMs": 33720,
+          "endMs": 33720,
+          "probability": 0.472454
+        },
+        {
+          "index": 7,
+          "text": "party",
+          "startMs": 33720,
+          "endMs": 34240,
+          "probability": 0.995506
+        },
+        {
+          "index": 8,
+          "text": "fun",
+          "startMs": 34240,
+          "endMs": 35100,
+          "probability": 0.060517
+        },
+        {
+          "index": 9,
+          "text": "music",
+          "startMs": 35100,
+          "endMs": 36040,
+          "probability": 0.742374
+        },
+        {
+          "index": 10,
+          "text": "games",
+          "startMs": 36040,
+          "endMs": 36920,
+          "probability": 0.975851
+        },
+        {
+          "index": 11,
+          "text": "bring",
+          "startMs": 36920,
+          "endMs": 37640,
+          "probability": 0.712891
+        },
+        {
+          "index": 12,
+          "text": "your",
+          "startMs": 37640,
+          "endMs": 37880,
+          "probability": 0.996136
+        },
+        {
+          "index": 13,
+          "text": "swimsuit",
+          "startMs": 37880,
+          "endMs": 38760,
+          "probability": 0.987051
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Pete's friends all arrived it was time to build the perfect pizza together",
+      "startMs": 40280,
+      "endMs": 47420,
+      "avgLogprob": -0.216392,
+      "noSpeechProb": 0.004975,
+      "compressionRatio": 1.558282,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete's",
+          "startMs": 40280,
+          "endMs": 41360,
+          "probability": 0.920011
+        },
+        {
+          "index": 2,
+          "text": "friends",
+          "startMs": 41360,
+          "endMs": 41600,
+          "probability": 0.985482
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 41600,
+          "endMs": 42160,
+          "probability": 0.987577
+        },
+        {
+          "index": 4,
+          "text": "arrived",
+          "startMs": 42160,
+          "endMs": 42720,
+          "probability": 0.997639
+        },
+        {
+          "index": 5,
+          "text": "it",
+          "startMs": 42720,
+          "endMs": 43840,
+          "probability": 0.490019
+        },
+        {
+          "index": 6,
+          "text": "was",
+          "startMs": 43840,
+          "endMs": 44060,
+          "probability": 0.89361
+        },
+        {
+          "index": 7,
+          "text": "time",
+          "startMs": 44060,
+          "endMs": 44460,
+          "probability": 0.998379
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 44460,
+          "endMs": 44720,
+          "probability": 0.998803
+        },
+        {
+          "index": 9,
+          "text": "build",
+          "startMs": 44720,
+          "endMs": 45000,
+          "probability": 0.998006
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 45000,
+          "endMs": 45240,
+          "probability": 0.965798
+        },
+        {
+          "index": 11,
+          "text": "perfect",
+          "startMs": 45240,
+          "endMs": 45960,
+          "probability": 0.988447
+        },
+        {
+          "index": 12,
+          "text": "pizza",
+          "startMs": 45960,
+          "endMs": 46760,
+          "probability": 0.880388
+        },
+        {
+          "index": 13,
+          "text": "together",
+          "startMs": 46760,
+          "endMs": 47420,
+          "probability": 0.985603
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "That would make the pizza even better",
+      "startMs": 47420,
+      "endMs": 50720,
+      "avgLogprob": -0.216392,
+      "noSpeechProb": 0.004975,
+      "compressionRatio": 1.558282,
+      "words": [
+        {
+          "index": 1,
+          "text": "That",
+          "startMs": 47420,
+          "endMs": 48460,
+          "probability": 0.459367
+        },
+        {
+          "index": 2,
+          "text": "would",
+          "startMs": 48460,
+          "endMs": 48640,
+          "probability": 0.998238
+        },
+        {
+          "index": 3,
+          "text": "make",
+          "startMs": 48640,
+          "endMs": 48860,
+          "probability": 0.998575
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 48860,
+          "endMs": 49080,
+          "probability": 0.99915
+        },
+        {
+          "index": 5,
+          "text": "pizza",
+          "startMs": 49080,
+          "endMs": 49460,
+          "probability": 0.984389
+        },
+        {
+          "index": 6,
+          "text": "even",
+          "startMs": 49460,
+          "endMs": 50000,
+          "probability": 0.982541
+        },
+        {
+          "index": 7,
+          "text": "better",
+          "startMs": 50000,
+          "endMs": 50720,
+          "probability": 0.998421
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Pete thought the perfect pizza would be pepperoni with extra cheese",
+      "startMs": 52600,
+      "endMs": 58160,
+      "avgLogprob": -0.216392,
+      "noSpeechProb": 0.004975,
+      "compressionRatio": 1.558282,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 52600,
+          "endMs": 53160,
+          "probability": 0.945945
+        },
+        {
+          "index": 2,
+          "text": "thought",
+          "startMs": 53160,
+          "endMs": 53560,
+          "probability": 0.987272
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 53560,
+          "endMs": 53980,
+          "probability": 0.997202
+        },
+        {
+          "index": 4,
+          "text": "perfect",
+          "startMs": 53980,
+          "endMs": 54480,
+          "probability": 0.999046
+        },
+        {
+          "index": 5,
+          "text": "pizza",
+          "startMs": 54480,
+          "endMs": 55040,
+          "probability": 0.987931
+        },
+        {
+          "index": 6,
+          "text": "would",
+          "startMs": 55040,
+          "endMs": 55480,
+          "probability": 0.992489
+        },
+        {
+          "index": 7,
+          "text": "be",
+          "startMs": 55480,
+          "endMs": 55700,
+          "probability": 0.998693
+        },
+        {
+          "index": 8,
+          "text": "pepperoni",
+          "startMs": 55700,
+          "endMs": 56560,
+          "probability": 0.987891
+        },
+        {
+          "index": 9,
+          "text": "with",
+          "startMs": 56560,
+          "endMs": 56860,
+          "probability": 0.998439
+        },
+        {
+          "index": 10,
+          "text": "extra",
+          "startMs": 56860,
+          "endMs": 57500,
+          "probability": 0.999421
+        },
+        {
+          "index": 11,
+          "text": "cheese",
+          "startMs": 57500,
+          "endMs": 58160,
+          "probability": 0.995238
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "It's a party a party a pepperoni pizza party",
+      "startMs": 60000,
+      "endMs": 65120,
+      "avgLogprob": -0.223104,
+      "noSpeechProb": 0.003523,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 60000,
+          "endMs": 60780,
+          "probability": 0.71106
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 60780,
+          "endMs": 61060,
+          "probability": 0.987051
+        },
+        {
+          "index": 3,
+          "text": "party",
+          "startMs": 61060,
+          "endMs": 61520,
+          "probability": 0.988372
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 61520,
+          "endMs": 62000,
+          "probability": 0.05705
+        },
+        {
+          "index": 5,
+          "text": "party",
+          "startMs": 62000,
+          "endMs": 62580,
+          "probability": 0.986949
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 62580,
+          "endMs": 63020,
+          "probability": 0.542067
+        },
+        {
+          "index": 7,
+          "text": "pepperoni",
+          "startMs": 63020,
+          "endMs": 63960,
+          "probability": 0.918484
+        },
+        {
+          "index": 8,
+          "text": "pizza",
+          "startMs": 63960,
+          "endMs": 64480,
+          "probability": 0.906721
+        },
+        {
+          "index": 9,
+          "text": "party",
+          "startMs": 64480,
+          "endMs": 65120,
+          "probability": 0.97991
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "But everyone did not agree",
+      "startMs": 66440,
+      "endMs": 69160,
+      "avgLogprob": -0.223104,
+      "noSpeechProb": 0.003523,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 66440,
+          "endMs": 67400,
+          "probability": 0.779693
+        },
+        {
+          "index": 2,
+          "text": "everyone",
+          "startMs": 67400,
+          "endMs": 67860,
+          "probability": 0.996421
+        },
+        {
+          "index": 3,
+          "text": "did",
+          "startMs": 67860,
+          "endMs": 68180,
+          "probability": 0.998129
+        },
+        {
+          "index": 4,
+          "text": "not",
+          "startMs": 68180,
+          "endMs": 68460,
+          "probability": 0.999137
+        },
+        {
+          "index": 5,
+          "text": "agree",
+          "startMs": 68460,
+          "endMs": 69160,
+          "probability": 0.996027
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Callie said pepperoni would be just fine, but I really love pretzels on mine",
+      "startMs": 70740,
+      "endMs": 78420,
+      "avgLogprob": -0.223104,
+      "noSpeechProb": 0.003523,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "Callie",
+          "startMs": 70740,
+          "endMs": 71700,
+          "probability": 0.747429
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 71700,
+          "endMs": 72200,
+          "probability": 0.962734
+        },
+        {
+          "index": 3,
+          "text": "pepperoni",
+          "startMs": 72200,
+          "endMs": 73900,
+          "probability": 0.727941
+        },
+        {
+          "index": 4,
+          "text": "would",
+          "startMs": 73900,
+          "endMs": 74160,
+          "probability": 0.981759
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 74160,
+          "endMs": 74380,
+          "probability": 0.99948
+        },
+        {
+          "index": 6,
+          "text": "just",
+          "startMs": 74380,
+          "endMs": 74680,
+          "probability": 0.999316
+        },
+        {
+          "index": 7,
+          "text": "fine,",
+          "startMs": 74680,
+          "endMs": 75100,
+          "probability": 0.999474
+        },
+        {
+          "index": 8,
+          "text": "but",
+          "startMs": 75100,
+          "endMs": 75940,
+          "probability": 0.999831
+        },
+        {
+          "index": 9,
+          "text": "I",
+          "startMs": 75940,
+          "endMs": 76120,
+          "probability": 0.998859
+        },
+        {
+          "index": 10,
+          "text": "really",
+          "startMs": 76120,
+          "endMs": 76460,
+          "probability": 0.999189
+        },
+        {
+          "index": 11,
+          "text": "love",
+          "startMs": 76460,
+          "endMs": 76800,
+          "probability": 0.815193
+        },
+        {
+          "index": 12,
+          "text": "pretzels",
+          "startMs": 76800,
+          "endMs": 77580,
+          "probability": 0.996008
+        },
+        {
+          "index": 13,
+          "text": "on",
+          "startMs": 77580,
+          "endMs": 77880,
+          "probability": 0.994943
+        },
+        {
+          "index": 14,
+          "text": "mine",
+          "startMs": 77880,
+          "endMs": 78420,
+          "probability": 0.994219
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Pete and the gang were puzzled",
+      "startMs": 79860,
+      "endMs": 82580,
+      "avgLogprob": -0.223104,
+      "noSpeechProb": 0.003523,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 79860,
+          "endMs": 80820,
+          "probability": 0.974102
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 80820,
+          "endMs": 80980,
+          "probability": 0.993236
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 80980,
+          "endMs": 81140,
+          "probability": 0.995043
+        },
+        {
+          "index": 4,
+          "text": "gang",
+          "startMs": 81140,
+          "endMs": 81420,
+          "probability": 0.985595
+        },
+        {
+          "index": 5,
+          "text": "were",
+          "startMs": 81420,
+          "endMs": 81700,
+          "probability": 0.996614
+        },
+        {
+          "index": 6,
+          "text": "puzzled",
+          "startMs": 81700,
+          "endMs": 82580,
+          "probability": 0.998373
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "pretzels",
+      "startMs": 83720,
+      "endMs": 84460,
+      "avgLogprob": -0.223104,
+      "noSpeechProb": 0.003523,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "pretzels",
+          "startMs": 83720,
+          "endMs": 84460,
+          "probability": 0.739178
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Well, that's something new",
+      "startMs": 85480,
+      "endMs": 87780,
+      "avgLogprob": -0.223104,
+      "noSpeechProb": 0.003523,
+      "compressionRatio": 1.462585,
+      "words": [
+        {
+          "index": 1,
+          "text": "Well,",
+          "startMs": 85480,
+          "endMs": 86020,
+          "probability": 0.831266
+        },
+        {
+          "index": 2,
+          "text": "that's",
+          "startMs": 86020,
+          "endMs": 86780,
+          "probability": 0.998198
+        },
+        {
+          "index": 3,
+          "text": "something",
+          "startMs": 86780,
+          "endMs": 87240,
+          "probability": 0.999433
+        },
+        {
+          "index": 4,
+          "text": "new",
+          "startMs": 87240,
+          "endMs": 87780,
+          "probability": 0.998544
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "But maybe pretzels could be groovy, too",
+      "startMs": 88420,
+      "endMs": 91840,
+      "avgLogprob": -0.199841,
+      "noSpeechProb": 0.002052,
+      "compressionRatio": 1.55102,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 88420,
+          "endMs": 88960,
+          "probability": 0.505272
+        },
+        {
+          "index": 2,
+          "text": "maybe",
+          "startMs": 88960,
+          "endMs": 89540,
+          "probability": 0.984757
+        },
+        {
+          "index": 3,
+          "text": "pretzels",
+          "startMs": 89540,
+          "endMs": 90320,
+          "probability": 0.964969
+        },
+        {
+          "index": 4,
+          "text": "could",
+          "startMs": 90320,
+          "endMs": 90580,
+          "probability": 0.994883
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 90580,
+          "endMs": 90820,
+          "probability": 0.998826
+        },
+        {
+          "index": 6,
+          "text": "groovy,",
+          "startMs": 90820,
+          "endMs": 91340,
+          "probability": 0.993735
+        },
+        {
+          "index": 7,
+          "text": "too",
+          "startMs": 91340,
+          "endMs": 91840,
+          "probability": 0.999365
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "It's a party a party a pepperoni pretzel pizza party",
+      "startMs": 93360,
+      "endMs": 100080,
+      "avgLogprob": -0.199841,
+      "noSpeechProb": 0.002052,
+      "compressionRatio": 1.55102,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 93360,
+          "endMs": 94400,
+          "probability": 0.50621
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 94400,
+          "endMs": 94540,
+          "probability": 0.989464
+        },
+        {
+          "index": 3,
+          "text": "party",
+          "startMs": 94540,
+          "endMs": 95100,
+          "probability": 0.990536
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 95100,
+          "endMs": 95600,
+          "probability": 0.392404
+        },
+        {
+          "index": 5,
+          "text": "party",
+          "startMs": 95600,
+          "endMs": 96200,
+          "probability": 0.994795
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 96200,
+          "endMs": 96680,
+          "probability": 0.681283
+        },
+        {
+          "index": 7,
+          "text": "pepperoni",
+          "startMs": 96680,
+          "endMs": 97720,
+          "probability": 0.920935
+        },
+        {
+          "index": 8,
+          "text": "pretzel",
+          "startMs": 97720,
+          "endMs": 98560,
+          "probability": 0.953362
+        },
+        {
+          "index": 9,
+          "text": "pizza",
+          "startMs": 98560,
+          "endMs": 99160,
+          "probability": 0.929871
+        },
+        {
+          "index": 10,
+          "text": "party",
+          "startMs": 99160,
+          "endMs": 100080,
+          "probability": 0.976627
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Squirrel said pepperoni and pretzels would be just fine, but I really love pistachios on mine",
+      "startMs": 102060,
+      "endMs": 110880,
+      "avgLogprob": -0.199841,
+      "noSpeechProb": 0.002052,
+      "compressionRatio": 1.55102,
+      "words": [
+        {
+          "index": 1,
+          "text": "Squirrel",
+          "startMs": 101980,
+          "endMs": 102500,
+          "probability": 0.939254
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 102500,
+          "endMs": 103180,
+          "probability": 0.942671
+        },
+        {
+          "index": 3,
+          "text": "pepperoni",
+          "startMs": 103180,
+          "endMs": 104660,
+          "probability": 0.793036
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 104660,
+          "endMs": 104920,
+          "probability": 0.977291
+        },
+        {
+          "index": 5,
+          "text": "pretzels",
+          "startMs": 104920,
+          "endMs": 105440,
+          "probability": 0.993388
+        },
+        {
+          "index": 6,
+          "text": "would",
+          "startMs": 105440,
+          "endMs": 105640,
+          "probability": 0.994416
+        },
+        {
+          "index": 7,
+          "text": "be",
+          "startMs": 105640,
+          "endMs": 105840,
+          "probability": 0.999318
+        },
+        {
+          "index": 8,
+          "text": "just",
+          "startMs": 105840,
+          "endMs": 106160,
+          "probability": 0.999134
+        },
+        {
+          "index": 9,
+          "text": "fine,",
+          "startMs": 106160,
+          "endMs": 106660,
+          "probability": 0.999551
+        },
+        {
+          "index": 10,
+          "text": "but",
+          "startMs": 106660,
+          "endMs": 107400,
+          "probability": 0.999763
+        },
+        {
+          "index": 11,
+          "text": "I",
+          "startMs": 107400,
+          "endMs": 107660,
+          "probability": 0.997597
+        },
+        {
+          "index": 12,
+          "text": "really",
+          "startMs": 107660,
+          "endMs": 108080,
+          "probability": 0.998921
+        },
+        {
+          "index": 13,
+          "text": "love",
+          "startMs": 108080,
+          "endMs": 108500,
+          "probability": 0.971074
+        },
+        {
+          "index": 14,
+          "text": "pistachios",
+          "startMs": 108500,
+          "endMs": 109840,
+          "probability": 0.9639
+        },
+        {
+          "index": 15,
+          "text": "on",
+          "startMs": 109840,
+          "endMs": 110220,
+          "probability": 0.99129
+        },
+        {
+          "index": 16,
+          "text": "mine",
+          "startMs": 110220,
+          "endMs": 110880,
+          "probability": 0.993002
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Pete and the gang were puzzled pistachios",
+      "startMs": 112700,
+      "endMs": 117360,
+      "avgLogprob": -0.199841,
+      "noSpeechProb": 0.002052,
+      "compressionRatio": 1.55102,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 112700,
+          "endMs": 113240,
+          "probability": 0.95447
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 113240,
+          "endMs": 113420,
+          "probability": 0.991919
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 113420,
+          "endMs": 113580,
+          "probability": 0.995035
+        },
+        {
+          "index": 4,
+          "text": "gang",
+          "startMs": 113580,
+          "endMs": 113860,
+          "probability": 0.983466
+        },
+        {
+          "index": 5,
+          "text": "were",
+          "startMs": 113860,
+          "endMs": 114160,
+          "probability": 0.995002
+        },
+        {
+          "index": 6,
+          "text": "puzzled",
+          "startMs": 114160,
+          "endMs": 114940,
+          "probability": 0.998867
+        },
+        {
+          "index": 7,
+          "text": "pistachios",
+          "startMs": 114940,
+          "endMs": 117360,
+          "probability": 0.979149
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Well, that's something new",
+      "startMs": 118300,
+      "endMs": 120480,
+      "avgLogprob": -0.170836,
+      "noSpeechProb": 0.014524,
+      "compressionRatio": 1.532468,
+      "words": [
+        {
+          "index": 1,
+          "text": "Well,",
+          "startMs": 118300,
+          "endMs": 118860,
+          "probability": 0.698135
+        },
+        {
+          "index": 2,
+          "text": "that's",
+          "startMs": 119060,
+          "endMs": 119600,
+          "probability": 0.97727
+        },
+        {
+          "index": 3,
+          "text": "something",
+          "startMs": 119600,
+          "endMs": 120000,
+          "probability": 0.998283
+        },
+        {
+          "index": 4,
+          "text": "new",
+          "startMs": 120000,
+          "endMs": 120480,
+          "probability": 0.998811
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "But maybe pistachios could be groovy, too",
+      "startMs": 121100,
+      "endMs": 125080,
+      "avgLogprob": -0.170836,
+      "noSpeechProb": 0.014524,
+      "compressionRatio": 1.532468,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 121100,
+          "endMs": 121640,
+          "probability": 0.015907
+        },
+        {
+          "index": 2,
+          "text": "maybe",
+          "startMs": 121640,
+          "endMs": 122120,
+          "probability": 0.960158
+        },
+        {
+          "index": 3,
+          "text": "pistachios",
+          "startMs": 122120,
+          "endMs": 123280,
+          "probability": 0.956257
+        },
+        {
+          "index": 4,
+          "text": "could",
+          "startMs": 123280,
+          "endMs": 123620,
+          "probability": 0.986499
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 123620,
+          "endMs": 123900,
+          "probability": 0.998418
+        },
+        {
+          "index": 6,
+          "text": "groovy,",
+          "startMs": 123900,
+          "endMs": 124440,
+          "probability": 0.993186
+        },
+        {
+          "index": 7,
+          "text": "too",
+          "startMs": 124620,
+          "endMs": 125080,
+          "probability": 0.998772
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "It's a party a party a pepperoni pretzel pistachio pizza party",
+      "startMs": 126480,
+      "endMs": 134020,
+      "avgLogprob": -0.170836,
+      "noSpeechProb": 0.014524,
+      "compressionRatio": 1.532468,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 126480,
+          "endMs": 127500,
+          "probability": 0.738359
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 127500,
+          "endMs": 127700,
+          "probability": 0.990401
+        },
+        {
+          "index": 3,
+          "text": "party",
+          "startMs": 127700,
+          "endMs": 128200,
+          "probability": 0.982427
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 128200,
+          "endMs": 128700,
+          "probability": 0.077819
+        },
+        {
+          "index": 5,
+          "text": "party",
+          "startMs": 128700,
+          "endMs": 129320,
+          "probability": 0.990769
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 129320,
+          "endMs": 129820,
+          "probability": 0.736756
+        },
+        {
+          "index": 7,
+          "text": "pepperoni",
+          "startMs": 129820,
+          "endMs": 130860,
+          "probability": 0.908776
+        },
+        {
+          "index": 8,
+          "text": "pretzel",
+          "startMs": 130860,
+          "endMs": 131480,
+          "probability": 0.947227
+        },
+        {
+          "index": 9,
+          "text": "pistachio",
+          "startMs": 131480,
+          "endMs": 132520,
+          "probability": 0.993353
+        },
+        {
+          "index": 10,
+          "text": "pizza",
+          "startMs": 132520,
+          "endMs": 133180,
+          "probability": 0.957146
+        },
+        {
+          "index": 11,
+          "text": "party",
+          "startMs": 133180,
+          "endMs": 134020,
+          "probability": 0.983306
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Grumpy Toad said",
+      "startMs": 135980,
+      "endMs": 137380,
+      "avgLogprob": -0.170836,
+      "noSpeechProb": 0.014524,
+      "compressionRatio": 1.532468,
+      "words": [
+        {
+          "index": 1,
+          "text": "Grumpy",
+          "startMs": 135970,
+          "endMs": 136480,
+          "probability": 0.957913
+        },
+        {
+          "index": 2,
+          "text": "Toad",
+          "startMs": 136480,
+          "endMs": 136780,
+          "probability": 0.508416
+        },
+        {
+          "index": 3,
+          "text": "said",
+          "startMs": 136780,
+          "endMs": 137380,
+          "probability": 0.952826
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Pepperoni pretzels and pistachios would be just fine, but I really love pickles on mine",
+      "startMs": 138260,
+      "endMs": 145960,
+      "avgLogprob": -0.170836,
+      "noSpeechProb": 0.014524,
+      "compressionRatio": 1.532468,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pepperoni",
+          "startMs": 138260,
+          "endMs": 138900,
+          "probability": 0.816973
+        },
+        {
+          "index": 2,
+          "text": "pretzels",
+          "startMs": 138900,
+          "endMs": 139680,
+          "probability": 0.960888
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 139680,
+          "endMs": 139920,
+          "probability": 0.979331
+        },
+        {
+          "index": 4,
+          "text": "pistachios",
+          "startMs": 139920,
+          "endMs": 140820,
+          "probability": 0.9974
+        },
+        {
+          "index": 5,
+          "text": "would",
+          "startMs": 140820,
+          "endMs": 141100,
+          "probability": 0.991649
+        },
+        {
+          "index": 6,
+          "text": "be",
+          "startMs": 141100,
+          "endMs": 141340,
+          "probability": 0.999016
+        },
+        {
+          "index": 7,
+          "text": "just",
+          "startMs": 141340,
+          "endMs": 141680,
+          "probability": 0.999283
+        },
+        {
+          "index": 8,
+          "text": "fine,",
+          "startMs": 141680,
+          "endMs": 142200,
+          "probability": 0.999329
+        },
+        {
+          "index": 9,
+          "text": "but",
+          "startMs": 142200,
+          "endMs": 142980,
+          "probability": 0.996879
+        },
+        {
+          "index": 10,
+          "text": "I",
+          "startMs": 142980,
+          "endMs": 143260,
+          "probability": 0.996188
+        },
+        {
+          "index": 11,
+          "text": "really",
+          "startMs": 143260,
+          "endMs": 143740,
+          "probability": 0.997474
+        },
+        {
+          "index": 12,
+          "text": "love",
+          "startMs": 143740,
+          "endMs": 144220,
+          "probability": 0.986297
+        },
+        {
+          "index": 13,
+          "text": "pickles",
+          "startMs": 144220,
+          "endMs": 145060,
+          "probability": 0.96198
+        },
+        {
+          "index": 14,
+          "text": "on",
+          "startMs": 145060,
+          "endMs": 145380,
+          "probability": 0.994308
+        },
+        {
+          "index": 15,
+          "text": "mine",
+          "startMs": 145380,
+          "endMs": 145960,
+          "probability": 0.996491
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Pete and the gang were puzzled",
+      "startMs": 147780,
+      "endMs": 149900,
+      "avgLogprob": -0.373383,
+      "noSpeechProb": 0.02571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 147780,
+          "endMs": 148400,
+          "probability": 0.972493
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 148400,
+          "endMs": 148580,
+          "probability": 0.996462
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 148580,
+          "endMs": 148760,
+          "probability": 0.982178
+        },
+        {
+          "index": 4,
+          "text": "gang",
+          "startMs": 148760,
+          "endMs": 149060,
+          "probability": 0.989022
+        },
+        {
+          "index": 5,
+          "text": "were",
+          "startMs": 149060,
+          "endMs": 149340,
+          "probability": 0.996229
+        },
+        {
+          "index": 6,
+          "text": "puzzled",
+          "startMs": 149340,
+          "endMs": 149900,
+          "probability": 0.997547
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Pickles",
+      "startMs": 151300,
+      "endMs": 152140,
+      "avgLogprob": -0.373383,
+      "noSpeechProb": 0.02571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pickles",
+          "startMs": 151300,
+          "endMs": 152140,
+          "probability": 0.509305
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Well, that's something new",
+      "startMs": 152980,
+      "endMs": 155160,
+      "avgLogprob": -0.373383,
+      "noSpeechProb": 0.02571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Well,",
+          "startMs": 152960,
+          "endMs": 153560,
+          "probability": 0.285392
+        },
+        {
+          "index": 2,
+          "text": "that's",
+          "startMs": 153560,
+          "endMs": 154160,
+          "probability": 0.995121
+        },
+        {
+          "index": 3,
+          "text": "something",
+          "startMs": 154160,
+          "endMs": 154560,
+          "probability": 0.999259
+        },
+        {
+          "index": 4,
+          "text": "new",
+          "startMs": 154560,
+          "endMs": 155160,
+          "probability": 0.998912
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "But maybe pickles could be groovy, too",
+      "startMs": 155740,
+      "endMs": 159480,
+      "avgLogprob": -0.373383,
+      "noSpeechProb": 0.02571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 155740,
+          "endMs": 156340,
+          "probability": 0.443998
+        },
+        {
+          "index": 2,
+          "text": "maybe",
+          "startMs": 156340,
+          "endMs": 156860,
+          "probability": 0.984611
+        },
+        {
+          "index": 3,
+          "text": "pickles",
+          "startMs": 156860,
+          "endMs": 157640,
+          "probability": 0.787859
+        },
+        {
+          "index": 4,
+          "text": "could",
+          "startMs": 157640,
+          "endMs": 157920,
+          "probability": 0.992636
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 157920,
+          "endMs": 158220,
+          "probability": 0.998669
+        },
+        {
+          "index": 6,
+          "text": "groovy,",
+          "startMs": 158220,
+          "endMs": 158820,
+          "probability": 0.992689
+        },
+        {
+          "index": 7,
+          "text": "too",
+          "startMs": 158820,
+          "endMs": 159480,
+          "probability": 0.998179
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "It's a party a party a pepperoni pretzel pistachio",
+      "startMs": 160700,
+      "endMs": 166800,
+      "avgLogprob": -0.373383,
+      "noSpeechProb": 0.02571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 160700,
+          "endMs": 161900,
+          "probability": 0.916565
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 161900,
+          "endMs": 162040,
+          "probability": 0.994589
+        },
+        {
+          "index": 3,
+          "text": "party",
+          "startMs": 162040,
+          "endMs": 162620,
+          "probability": 0.992652
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 162620,
+          "endMs": 163120,
+          "probability": 0.371556
+        },
+        {
+          "index": 5,
+          "text": "party",
+          "startMs": 163120,
+          "endMs": 163720,
+          "probability": 0.99404
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 163720,
+          "endMs": 164220,
+          "probability": 0.466126
+        },
+        {
+          "index": 7,
+          "text": "pepperoni",
+          "startMs": 164220,
+          "endMs": 165220,
+          "probability": 0.917109
+        },
+        {
+          "index": 8,
+          "text": "pretzel",
+          "startMs": 165220,
+          "endMs": 165820,
+          "probability": 0.961122
+        },
+        {
+          "index": 9,
+          "text": "pistachio",
+          "startMs": 165820,
+          "endMs": 166800,
+          "probability": 0.993486
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "pizza party",
+      "startMs": 166800,
+      "endMs": 168800,
+      "avgLogprob": -0.373383,
+      "noSpeechProb": 0.02571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "pizza",
+          "startMs": 166800,
+          "endMs": 167720,
+          "probability": 0.000801
+        },
+        {
+          "index": 2,
+          "text": "party",
+          "startMs": 167720,
+          "endMs": 168800,
+          "probability": 0.983564
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Gus said",
+      "startMs": 170620,
+      "endMs": 171800,
+      "avgLogprob": -0.373383,
+      "noSpeechProb": 0.02571,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Gus",
+          "startMs": 170580,
+          "endMs": 171180,
+          "probability": 0.971205
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 171180,
+          "endMs": 171800,
+          "probability": 0.995929
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Pepperoni pretzels pistachios and pickles would be just fine, but I really love popcorn on mine",
+      "startMs": 172520,
+      "endMs": 181140,
+      "avgLogprob": -0.243906,
+      "noSpeechProb": 0.018144,
+      "compressionRatio": 1.369863,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pepperoni",
+          "startMs": 172520,
+          "endMs": 173480,
+          "probability": 0.572255
+        },
+        {
+          "index": 2,
+          "text": "pretzels",
+          "startMs": 173480,
+          "endMs": 174180,
+          "probability": 0.899619
+        },
+        {
+          "index": 3,
+          "text": "pistachios",
+          "startMs": 174180,
+          "endMs": 175140,
+          "probability": 0.732342
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 175140,
+          "endMs": 175400,
+          "probability": 0.966119
+        },
+        {
+          "index": 5,
+          "text": "pickles",
+          "startMs": 175400,
+          "endMs": 175940,
+          "probability": 0.997169
+        },
+        {
+          "index": 6,
+          "text": "would",
+          "startMs": 175940,
+          "endMs": 176120,
+          "probability": 0.991632
+        },
+        {
+          "index": 7,
+          "text": "be",
+          "startMs": 176120,
+          "endMs": 176380,
+          "probability": 0.994706
+        },
+        {
+          "index": 8,
+          "text": "just",
+          "startMs": 176380,
+          "endMs": 176680,
+          "probability": 0.993881
+        },
+        {
+          "index": 9,
+          "text": "fine,",
+          "startMs": 176680,
+          "endMs": 177120,
+          "probability": 0.998992
+        },
+        {
+          "index": 10,
+          "text": "but",
+          "startMs": 178040,
+          "endMs": 178220,
+          "probability": 0.97925
+        },
+        {
+          "index": 11,
+          "text": "I",
+          "startMs": 178220,
+          "endMs": 178460,
+          "probability": 0.985822
+        },
+        {
+          "index": 12,
+          "text": "really",
+          "startMs": 178460,
+          "endMs": 178920,
+          "probability": 0.995236
+        },
+        {
+          "index": 13,
+          "text": "love",
+          "startMs": 178920,
+          "endMs": 179360,
+          "probability": 0.970381
+        },
+        {
+          "index": 14,
+          "text": "popcorn",
+          "startMs": 179360,
+          "endMs": 180140,
+          "probability": 0.990362
+        },
+        {
+          "index": 15,
+          "text": "on",
+          "startMs": 180140,
+          "endMs": 180520,
+          "probability": 0.992974
+        },
+        {
+          "index": 16,
+          "text": "mine",
+          "startMs": 180520,
+          "endMs": 181140,
+          "probability": 0.99596
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Pete and the gang were puzzled",
+      "startMs": 182960,
+      "endMs": 185120,
+      "avgLogprob": -0.243906,
+      "noSpeechProb": 0.018144,
+      "compressionRatio": 1.369863,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 182960,
+          "endMs": 183500,
+          "probability": 0.041573
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 183500,
+          "endMs": 183680,
+          "probability": 0.993171
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 183680,
+          "endMs": 183840,
+          "probability": 0.986134
+        },
+        {
+          "index": 4,
+          "text": "gang",
+          "startMs": 183840,
+          "endMs": 184100,
+          "probability": 0.985963
+        },
+        {
+          "index": 5,
+          "text": "were",
+          "startMs": 184100,
+          "endMs": 184360,
+          "probability": 0.991145
+        },
+        {
+          "index": 6,
+          "text": "puzzled",
+          "startMs": 184360,
+          "endMs": 185120,
+          "probability": 0.99861
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Popcorn well, that's something new",
+      "startMs": 186400,
+      "endMs": 190240,
+      "avgLogprob": -0.243906,
+      "noSpeechProb": 0.018144,
+      "compressionRatio": 1.369863,
+      "words": [
+        {
+          "index": 1,
+          "text": "Popcorn",
+          "startMs": 186400,
+          "endMs": 187480,
+          "probability": 0.778176
+        },
+        {
+          "index": 2,
+          "text": "well,",
+          "startMs": 187480,
+          "endMs": 188560,
+          "probability": 0.236453
+        },
+        {
+          "index": 3,
+          "text": "that's",
+          "startMs": 188560,
+          "endMs": 189260,
+          "probability": 0.999279
+        },
+        {
+          "index": 4,
+          "text": "something",
+          "startMs": 189260,
+          "endMs": 189700,
+          "probability": 0.999456
+        },
+        {
+          "index": 5,
+          "text": "new",
+          "startMs": 189700,
+          "endMs": 190240,
+          "probability": 0.998279
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "But maybe popcorn could be groovy, too",
+      "startMs": 191120,
+      "endMs": 194760,
+      "avgLogprob": -0.243906,
+      "noSpeechProb": 0.018144,
+      "compressionRatio": 1.369863,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 191120,
+          "endMs": 191660,
+          "probability": 0.475079
+        },
+        {
+          "index": 2,
+          "text": "maybe",
+          "startMs": 191660,
+          "endMs": 192200,
+          "probability": 0.997307
+        },
+        {
+          "index": 3,
+          "text": "popcorn",
+          "startMs": 192200,
+          "endMs": 193100,
+          "probability": 0.97811
+        },
+        {
+          "index": 4,
+          "text": "could",
+          "startMs": 193100,
+          "endMs": 193460,
+          "probability": 0.99733
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 193460,
+          "endMs": 193780,
+          "probability": 0.99866
+        },
+        {
+          "index": 6,
+          "text": "groovy,",
+          "startMs": 193780,
+          "endMs": 194340,
+          "probability": 0.979527
+        },
+        {
+          "index": 7,
+          "text": "too",
+          "startMs": 194340,
+          "endMs": 194880,
+          "probability": 0.998395
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "It's a party a party a pepperoni pretzel pistachio pickle popcorn pizza party",
+      "startMs": 196320,
+      "endMs": 205240,
+      "avgLogprob": -0.237785,
+      "noSpeechProb": 0.014134,
+      "compressionRatio": 1.601351,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 196320,
+          "endMs": 197480,
+          "probability": 0.756302
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 197480,
+          "endMs": 197640,
+          "probability": 0.988393
+        },
+        {
+          "index": 3,
+          "text": "party",
+          "startMs": 197640,
+          "endMs": 198160,
+          "probability": 0.982077
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 198160,
+          "endMs": 198700,
+          "probability": 0.148317
+        },
+        {
+          "index": 5,
+          "text": "party",
+          "startMs": 198700,
+          "endMs": 199280,
+          "probability": 0.988987
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 199280,
+          "endMs": 199740,
+          "probability": 0.218502
+        },
+        {
+          "index": 7,
+          "text": "pepperoni",
+          "startMs": 199740,
+          "endMs": 200740,
+          "probability": 0.930162
+        },
+        {
+          "index": 8,
+          "text": "pretzel",
+          "startMs": 200740,
+          "endMs": 201320,
+          "probability": 0.973531
+        },
+        {
+          "index": 9,
+          "text": "pistachio",
+          "startMs": 201320,
+          "endMs": 202280,
+          "probability": 0.97456
+        },
+        {
+          "index": 10,
+          "text": "pickle",
+          "startMs": 202280,
+          "endMs": 202960,
+          "probability": 0.914877
+        },
+        {
+          "index": 11,
+          "text": "popcorn",
+          "startMs": 202960,
+          "endMs": 203720,
+          "probability": 0.981963
+        },
+        {
+          "index": 12,
+          "text": "pizza",
+          "startMs": 203720,
+          "endMs": 204400,
+          "probability": 0.929109
+        },
+        {
+          "index": 13,
+          "text": "party",
+          "startMs": 204400,
+          "endMs": 205240,
+          "probability": 0.972249
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Alligators said",
+      "startMs": 207440,
+      "endMs": 208580,
+      "avgLogprob": -0.237785,
+      "noSpeechProb": 0.014134,
+      "compressionRatio": 1.601351,
+      "words": [
+        {
+          "index": 1,
+          "text": "Alligators",
+          "startMs": 207400,
+          "endMs": 207980,
+          "probability": 0.913782
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 207980,
+          "endMs": 208580,
+          "probability": 0.996291
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Pepperoni pretzels pistachios pickles and popcorn would be just fine",
+      "startMs": 209320,
+      "endMs": 214920,
+      "avgLogprob": -0.237785,
+      "noSpeechProb": 0.014134,
+      "compressionRatio": 1.601351,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pepperoni",
+          "startMs": 209320,
+          "endMs": 210060,
+          "probability": 0.741786
+        },
+        {
+          "index": 2,
+          "text": "pretzels",
+          "startMs": 210060,
+          "endMs": 210920,
+          "probability": 0.976544
+        },
+        {
+          "index": 3,
+          "text": "pistachios",
+          "startMs": 210920,
+          "endMs": 211940,
+          "probability": 0.969257
+        },
+        {
+          "index": 4,
+          "text": "pickles",
+          "startMs": 211940,
+          "endMs": 212620,
+          "probability": 0.961093
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 212620,
+          "endMs": 212840,
+          "probability": 0.974103
+        },
+        {
+          "index": 6,
+          "text": "popcorn",
+          "startMs": 212840,
+          "endMs": 213440,
+          "probability": 0.991676
+        },
+        {
+          "index": 7,
+          "text": "would",
+          "startMs": 213440,
+          "endMs": 213740,
+          "probability": 0.993738
+        },
+        {
+          "index": 8,
+          "text": "be",
+          "startMs": 213740,
+          "endMs": 214020,
+          "probability": 0.99934
+        },
+        {
+          "index": 9,
+          "text": "just",
+          "startMs": 214020,
+          "endMs": 214360,
+          "probability": 0.999467
+        },
+        {
+          "index": 10,
+          "text": "fine",
+          "startMs": 214360,
+          "endMs": 214920,
+          "probability": 0.999495
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "But I really love papaya on mine",
+      "startMs": 215440,
+      "endMs": 219480,
+      "avgLogprob": -0.237785,
+      "noSpeechProb": 0.014134,
+      "compressionRatio": 1.601351,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 215440,
+          "endMs": 216020,
+          "probability": 0.7144
+        },
+        {
+          "index": 2,
+          "text": "I",
+          "startMs": 216020,
+          "endMs": 216340,
+          "probability": 0.998834
+        },
+        {
+          "index": 3,
+          "text": "really",
+          "startMs": 216340,
+          "endMs": 216760,
+          "probability": 0.99946
+        },
+        {
+          "index": 4,
+          "text": "love",
+          "startMs": 216760,
+          "endMs": 217260,
+          "probability": 0.961454
+        },
+        {
+          "index": 5,
+          "text": "papaya",
+          "startMs": 217260,
+          "endMs": 218320,
+          "probability": 0.889209
+        },
+        {
+          "index": 6,
+          "text": "on",
+          "startMs": 218320,
+          "endMs": 218800,
+          "probability": 0.991734
+        },
+        {
+          "index": 7,
+          "text": "mine",
+          "startMs": 218800,
+          "endMs": 219480,
+          "probability": 0.994311
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Now Pete and the gang were really puzzled",
+      "startMs": 221480,
+      "endMs": 224540,
+      "avgLogprob": -0.237785,
+      "noSpeechProb": 0.014134,
+      "compressionRatio": 1.601351,
+      "words": [
+        {
+          "index": 1,
+          "text": "Now",
+          "startMs": 221480,
+          "endMs": 222120,
+          "probability": 0.940263
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 222120,
+          "endMs": 222420,
+          "probability": 0.932367
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 222420,
+          "endMs": 222560,
+          "probability": 0.974786
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 222560,
+          "endMs": 222760,
+          "probability": 0.994982
+        },
+        {
+          "index": 5,
+          "text": "gang",
+          "startMs": 222760,
+          "endMs": 223060,
+          "probability": 0.983297
+        },
+        {
+          "index": 6,
+          "text": "were",
+          "startMs": 223060,
+          "endMs": 223340,
+          "probability": 0.95131
+        },
+        {
+          "index": 7,
+          "text": "really",
+          "startMs": 223340,
+          "endMs": 224000,
+          "probability": 0.996702
+        },
+        {
+          "index": 8,
+          "text": "puzzled",
+          "startMs": 224000,
+          "endMs": 224540,
+          "probability": 0.999173
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "Papaya",
+      "startMs": 225880,
+      "endMs": 226820,
+      "avgLogprob": -0.224374,
+      "noSpeechProb": 0.007903,
+      "compressionRatio": 1.539568,
+      "words": [
+        {
+          "index": 1,
+          "text": "Papaya",
+          "startMs": 225880,
+          "endMs": 226820,
+          "probability": 0.603274
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Well, that's something new",
+      "startMs": 227520,
+      "endMs": 229780,
+      "avgLogprob": -0.224374,
+      "noSpeechProb": 0.007903,
+      "compressionRatio": 1.539568,
+      "words": [
+        {
+          "index": 1,
+          "text": "Well,",
+          "startMs": 227480,
+          "endMs": 228100,
+          "probability": 0.027505
+        },
+        {
+          "index": 2,
+          "text": "that's",
+          "startMs": 228240,
+          "endMs": 228780,
+          "probability": 0.986719
+        },
+        {
+          "index": 3,
+          "text": "something",
+          "startMs": 228780,
+          "endMs": 229160,
+          "probability": 0.997969
+        },
+        {
+          "index": 4,
+          "text": "new",
+          "startMs": 229160,
+          "endMs": 229780,
+          "probability": 0.998721
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "But maybe papaya could be groovy, too",
+      "startMs": 230400,
+      "endMs": 234440,
+      "avgLogprob": -0.224374,
+      "noSpeechProb": 0.007903,
+      "compressionRatio": 1.539568,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 230340,
+          "endMs": 230960,
+          "probability": 0.391087
+        },
+        {
+          "index": 2,
+          "text": "maybe",
+          "startMs": 230960,
+          "endMs": 231500,
+          "probability": 0.979973
+        },
+        {
+          "index": 3,
+          "text": "papaya",
+          "startMs": 231500,
+          "endMs": 232460,
+          "probability": 0.737065
+        },
+        {
+          "index": 4,
+          "text": "could",
+          "startMs": 232460,
+          "endMs": 232800,
+          "probability": 0.970483
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 232800,
+          "endMs": 233080,
+          "probability": 0.997963
+        },
+        {
+          "index": 6,
+          "text": "groovy,",
+          "startMs": 233080,
+          "endMs": 233680,
+          "probability": 0.986422
+        },
+        {
+          "index": 7,
+          "text": "too",
+          "startMs": 233720,
+          "endMs": 234440,
+          "probability": 0.998085
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "It's a party a party a pepperoni pretzel pistachio pickle popcorn",
+      "startMs": 236040,
+      "endMs": 243200,
+      "avgLogprob": -0.224374,
+      "noSpeechProb": 0.007903,
+      "compressionRatio": 1.539568,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 236040,
+          "endMs": 236800,
+          "probability": 0.82981
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 236800,
+          "endMs": 236980,
+          "probability": 0.990515
+        },
+        {
+          "index": 3,
+          "text": "party",
+          "startMs": 236980,
+          "endMs": 237540,
+          "probability": 0.980852
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 237540,
+          "endMs": 238040,
+          "probability": 0.248498
+        },
+        {
+          "index": 5,
+          "text": "party",
+          "startMs": 238040,
+          "endMs": 238640,
+          "probability": 0.991349
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 238640,
+          "endMs": 239120,
+          "probability": 0.575959
+        },
+        {
+          "index": 7,
+          "text": "pepperoni",
+          "startMs": 239120,
+          "endMs": 240160,
+          "probability": 0.926523
+        },
+        {
+          "index": 8,
+          "text": "pretzel",
+          "startMs": 240160,
+          "endMs": 240800,
+          "probability": 0.973712
+        },
+        {
+          "index": 9,
+          "text": "pistachio",
+          "startMs": 240800,
+          "endMs": 241780,
+          "probability": 0.992613
+        },
+        {
+          "index": 10,
+          "text": "pickle",
+          "startMs": 241780,
+          "endMs": 242440,
+          "probability": 0.885991
+        },
+        {
+          "index": 11,
+          "text": "popcorn",
+          "startMs": 242440,
+          "endMs": 243200,
+          "probability": 0.899166
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "papaya pizza party",
+      "startMs": 243200,
+      "endMs": 245720,
+      "avgLogprob": -0.224374,
+      "noSpeechProb": 0.007903,
+      "compressionRatio": 1.539568,
+      "words": [
+        {
+          "index": 1,
+          "text": "papaya",
+          "startMs": 243200,
+          "endMs": 244200,
+          "probability": 0.905506
+        },
+        {
+          "index": 2,
+          "text": "pizza",
+          "startMs": 244200,
+          "endMs": 244820,
+          "probability": 0.826476
+        },
+        {
+          "index": 3,
+          "text": "party",
+          "startMs": 244820,
+          "endMs": 245720,
+          "probability": 0.977618
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Pete and the gang piled the pepperoni",
+      "startMs": 247360,
+      "endMs": 250520,
+      "avgLogprob": -0.224374,
+      "noSpeechProb": 0.007903,
+      "compressionRatio": 1.539568,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 247320,
+          "endMs": 247940,
+          "probability": 0.956056
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 247940,
+          "endMs": 248240,
+          "probability": 0.993647
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 248240,
+          "endMs": 248420,
+          "probability": 0.991162
+        },
+        {
+          "index": 4,
+          "text": "gang",
+          "startMs": 248420,
+          "endMs": 248740,
+          "probability": 0.959573
+        },
+        {
+          "index": 5,
+          "text": "piled",
+          "startMs": 248740,
+          "endMs": 249280,
+          "probability": 0.975046
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 249280,
+          "endMs": 249560,
+          "probability": 0.997446
+        },
+        {
+          "index": 7,
+          "text": "pepperoni",
+          "startMs": 249560,
+          "endMs": 250520,
+          "probability": 0.983679
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "pretzels pistachios",
+      "startMs": 251120,
+      "endMs": 253220,
+      "avgLogprob": -0.224374,
+      "noSpeechProb": 0.007903,
+      "compressionRatio": 1.539568,
+      "words": [
+        {
+          "index": 1,
+          "text": "pretzels",
+          "startMs": 251120,
+          "endMs": 251740,
+          "probability": 0.97693
+        },
+        {
+          "index": 2,
+          "text": "pistachios",
+          "startMs": 251740,
+          "endMs": 253220,
+          "probability": 0.987457
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "pickles",
+      "startMs": 253220,
+      "endMs": 254300,
+      "avgLogprob": -0.241883,
+      "noSpeechProb": 0.002882,
+      "compressionRatio": 1.434109,
+      "words": [
+        {
+          "index": 1,
+          "text": "pickles",
+          "startMs": 253220,
+          "endMs": 254300,
+          "probability": 0.572555
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "popcorn and papaya on top",
+      "startMs": 254940,
+      "endMs": 257560,
+      "avgLogprob": -0.241883,
+      "noSpeechProb": 0.002882,
+      "compressionRatio": 1.434109,
+      "words": [
+        {
+          "index": 1,
+          "text": "popcorn",
+          "startMs": 254800,
+          "endMs": 255320,
+          "probability": 0.120386
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 255320,
+          "endMs": 255780,
+          "probability": 0.856684
+        },
+        {
+          "index": 3,
+          "text": "papaya",
+          "startMs": 255780,
+          "endMs": 256560,
+          "probability": 0.959999
+        },
+        {
+          "index": 4,
+          "text": "on",
+          "startMs": 256560,
+          "endMs": 257000,
+          "probability": 0.989114
+        },
+        {
+          "index": 5,
+          "text": "top",
+          "startMs": 257000,
+          "endMs": 257560,
+          "probability": 0.99715
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "The pizza was so high they had to stop",
+      "startMs": 257560,
+      "endMs": 262300,
+      "avgLogprob": -0.241883,
+      "noSpeechProb": 0.002882,
+      "compressionRatio": 1.434109,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 257560,
+          "endMs": 258600,
+          "probability": 0.136196
+        },
+        {
+          "index": 2,
+          "text": "pizza",
+          "startMs": 258600,
+          "endMs": 259100,
+          "probability": 0.959059
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 259100,
+          "endMs": 259380,
+          "probability": 0.997307
+        },
+        {
+          "index": 4,
+          "text": "so",
+          "startMs": 259380,
+          "endMs": 259840,
+          "probability": 0.997715
+        },
+        {
+          "index": 5,
+          "text": "high",
+          "startMs": 259840,
+          "endMs": 260440,
+          "probability": 0.995288
+        },
+        {
+          "index": 6,
+          "text": "they",
+          "startMs": 260440,
+          "endMs": 260940,
+          "probability": 0.667634
+        },
+        {
+          "index": 7,
+          "text": "had",
+          "startMs": 260940,
+          "endMs": 261220,
+          "probability": 0.996882
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 261220,
+          "endMs": 261460,
+          "probability": 0.997834
+        },
+        {
+          "index": 9,
+          "text": "stop",
+          "startMs": 261460,
+          "endMs": 262300,
+          "probability": 0.988411
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Ding",
+      "startMs": 263840,
+      "endMs": 264880,
+      "avgLogprob": -0.241883,
+      "noSpeechProb": 0.002882,
+      "compressionRatio": 1.434109,
+      "words": [
+        {
+          "index": 1,
+          "text": "Ding",
+          "startMs": 263840,
+          "endMs": 264880,
+          "probability": 0.490875
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "The pizza was done",
+      "startMs": 264880,
+      "endMs": 267820,
+      "avgLogprob": -0.241883,
+      "noSpeechProb": 0.002882,
+      "compressionRatio": 1.434109,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 264880,
+          "endMs": 265900,
+          "probability": 0.060704
+        },
+        {
+          "index": 2,
+          "text": "pizza",
+          "startMs": 265900,
+          "endMs": 266520,
+          "probability": 0.981225
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 266520,
+          "endMs": 267060,
+          "probability": 0.999169
+        },
+        {
+          "index": 4,
+          "text": "done",
+          "startMs": 267060,
+          "endMs": 267820,
+          "probability": 0.997156
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "Trying something new might be fun",
+      "startMs": 268620,
+      "endMs": 271200,
+      "avgLogprob": -0.241883,
+      "noSpeechProb": 0.002882,
+      "compressionRatio": 1.434109,
+      "words": [
+        {
+          "index": 1,
+          "text": "Trying",
+          "startMs": 268600,
+          "endMs": 269120,
+          "probability": 0.595488
+        },
+        {
+          "index": 2,
+          "text": "something",
+          "startMs": 269120,
+          "endMs": 269540,
+          "probability": 0.997925
+        },
+        {
+          "index": 3,
+          "text": "new",
+          "startMs": 269540,
+          "endMs": 270040,
+          "probability": 0.994373
+        },
+        {
+          "index": 4,
+          "text": "might",
+          "startMs": 270040,
+          "endMs": 270280,
+          "probability": 0.99433
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 270280,
+          "endMs": 270560,
+          "probability": 0.998516
+        },
+        {
+          "index": 6,
+          "text": "fun",
+          "startMs": 270560,
+          "endMs": 271200,
+          "probability": 0.995683
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "they all built up the courage to take a first bite and",
+      "startMs": 271200,
+      "endMs": 276940,
+      "avgLogprob": -0.241883,
+      "noSpeechProb": 0.002882,
+      "compressionRatio": 1.434109,
+      "words": [
+        {
+          "index": 1,
+          "text": "they",
+          "startMs": 271200,
+          "endMs": 272180,
+          "probability": 0.463956
+        },
+        {
+          "index": 2,
+          "text": "all",
+          "startMs": 272180,
+          "endMs": 272620,
+          "probability": 0.997556
+        },
+        {
+          "index": 3,
+          "text": "built",
+          "startMs": 272620,
+          "endMs": 273060,
+          "probability": 0.995001
+        },
+        {
+          "index": 4,
+          "text": "up",
+          "startMs": 273060,
+          "endMs": 273320,
+          "probability": 0.998321
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 273320,
+          "endMs": 273560,
+          "probability": 0.998486
+        },
+        {
+          "index": 6,
+          "text": "courage",
+          "startMs": 273560,
+          "endMs": 274080,
+          "probability": 0.999162
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 274080,
+          "endMs": 274600,
+          "probability": 0.995787
+        },
+        {
+          "index": 8,
+          "text": "take",
+          "startMs": 274600,
+          "endMs": 274960,
+          "probability": 0.997916
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 274960,
+          "endMs": 275240,
+          "probability": 0.993379
+        },
+        {
+          "index": 10,
+          "text": "first",
+          "startMs": 275240,
+          "endMs": 275840,
+          "probability": 0.991156
+        },
+        {
+          "index": 11,
+          "text": "bite",
+          "startMs": 275840,
+          "endMs": 276640,
+          "probability": 0.984281
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 276640,
+          "endMs": 277160,
+          "probability": 0.685318
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "The pepperoni pretzel pistachio pickle popcorn papaya pizza was",
+      "startMs": 277920,
+      "endMs": 284440,
+      "avgLogprob": -0.321063,
+      "noSpeechProb": 0.003339,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 277760,
+          "endMs": 278460,
+          "probability": 0.049667
+        },
+        {
+          "index": 2,
+          "text": "pepperoni",
+          "startMs": 278460,
+          "endMs": 279480,
+          "probability": 0.607986
+        },
+        {
+          "index": 3,
+          "text": "pretzel",
+          "startMs": 279480,
+          "endMs": 280120,
+          "probability": 0.93254
+        },
+        {
+          "index": 4,
+          "text": "pistachio",
+          "startMs": 280120,
+          "endMs": 281140,
+          "probability": 0.981349
+        },
+        {
+          "index": 5,
+          "text": "pickle",
+          "startMs": 281140,
+          "endMs": 281740,
+          "probability": 0.915266
+        },
+        {
+          "index": 6,
+          "text": "popcorn",
+          "startMs": 281740,
+          "endMs": 282400,
+          "probability": 0.959092
+        },
+        {
+          "index": 7,
+          "text": "papaya",
+          "startMs": 282400,
+          "endMs": 283180,
+          "probability": 0.871062
+        },
+        {
+          "index": 8,
+          "text": "pizza",
+          "startMs": 283180,
+          "endMs": 283720,
+          "probability": 0.910581
+        },
+        {
+          "index": 9,
+          "text": "was",
+          "startMs": 283720,
+          "endMs": 284440,
+          "probability": 0.989091
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "Out of sight",
+      "startMs": 286040,
+      "endMs": 288380,
+      "avgLogprob": -0.321063,
+      "noSpeechProb": 0.003339,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Out",
+          "startMs": 286040,
+          "endMs": 286960,
+          "probability": 0.3221
+        },
+        {
+          "index": 2,
+          "text": "of",
+          "startMs": 286960,
+          "endMs": 287480,
+          "probability": 0.947097
+        },
+        {
+          "index": 3,
+          "text": "sight",
+          "startMs": 287480,
+          "endMs": 288380,
+          "probability": 0.957554
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "Dynamite just right",
+      "startMs": 289920,
+      "endMs": 292520,
+      "avgLogprob": -0.321063,
+      "noSpeechProb": 0.003339,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Dynamite",
+          "startMs": 289920,
+          "endMs": 290720,
+          "probability": 0.565259
+        },
+        {
+          "index": 2,
+          "text": "just",
+          "startMs": 290720,
+          "endMs": 291660,
+          "probability": 0.950631
+        },
+        {
+          "index": 3,
+          "text": "right",
+          "startMs": 291660,
+          "endMs": 292520,
+          "probability": 0.965632
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "in",
+      "startMs": 293400,
+      "endMs": 294980,
+      "avgLogprob": -0.321063,
+      "noSpeechProb": 0.003339,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "in",
+          "startMs": 293400,
+          "endMs": 294980,
+          "probability": 0.517088
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "The end the perfect pizza is a pizza shared with friends",
+      "startMs": 294980,
+      "endMs": 301520,
+      "avgLogprob": -0.321063,
+      "noSpeechProb": 0.003339,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 294980,
+          "endMs": 295180,
+          "probability": 0.711327
+        },
+        {
+          "index": 2,
+          "text": "end",
+          "startMs": 295180,
+          "endMs": 295620,
+          "probability": 0.981682
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 295620,
+          "endMs": 296340,
+          "probability": 0.984197
+        },
+        {
+          "index": 4,
+          "text": "perfect",
+          "startMs": 296340,
+          "endMs": 296840,
+          "probability": 0.99646
+        },
+        {
+          "index": 5,
+          "text": "pizza",
+          "startMs": 296840,
+          "endMs": 297480,
+          "probability": 0.959366
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 297480,
+          "endMs": 298420,
+          "probability": 0.991338
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 298420,
+          "endMs": 298660,
+          "probability": 0.99178
+        },
+        {
+          "index": 8,
+          "text": "pizza",
+          "startMs": 298660,
+          "endMs": 299260,
+          "probability": 0.988779
+        },
+        {
+          "index": 9,
+          "text": "shared",
+          "startMs": 299260,
+          "endMs": 299880,
+          "probability": 0.998232
+        },
+        {
+          "index": 10,
+          "text": "with",
+          "startMs": 299880,
+          "endMs": 300320,
+          "probability": 0.999157
+        },
+        {
+          "index": 11,
+          "text": "friends",
+          "startMs": 300320,
+          "endMs": 301520,
+          "probability": 0.971209
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "Pete the cat and the perfect pizza party by Kimberly and James Dean",
+      "startMs": 303820,
+      "endMs": 309700,
+      "avgLogprob": -0.542733,
+      "noSpeechProb": 0.000662,
+      "compressionRatio": 1.677632,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 303820,
+          "endMs": 304740,
+          "probability": 0.334789
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 304740,
+          "endMs": 304960,
+          "probability": 0.935186
+        },
+        {
+          "index": 3,
+          "text": "cat",
+          "startMs": 304960,
+          "endMs": 305220,
+          "probability": 0.106929
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 305220,
+          "endMs": 305540,
+          "probability": 0.939812
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 305540,
+          "endMs": 305700,
+          "probability": 0.97781
+        },
+        {
+          "index": 6,
+          "text": "perfect",
+          "startMs": 305700,
+          "endMs": 306200,
+          "probability": 0.95381
+        },
+        {
+          "index": 7,
+          "text": "pizza",
+          "startMs": 306200,
+          "endMs": 306780,
+          "probability": 0.953536
+        },
+        {
+          "index": 8,
+          "text": "party",
+          "startMs": 306780,
+          "endMs": 307260,
+          "probability": 0.965335
+        },
+        {
+          "index": 9,
+          "text": "by",
+          "startMs": 307260,
+          "endMs": 307900,
+          "probability": 0.8802
+        },
+        {
+          "index": 10,
+          "text": "Kimberly",
+          "startMs": 307900,
+          "endMs": 308360,
+          "probability": 0.905753
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 308360,
+          "endMs": 308840,
+          "probability": 0.972909
+        },
+        {
+          "index": 12,
+          "text": "James",
+          "startMs": 308840,
+          "endMs": 309280,
+          "probability": 0.994042
+        },
+        {
+          "index": 13,
+          "text": "Dean",
+          "startMs": 309280,
+          "endMs": 309700,
+          "probability": 0.968246
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "text": "This program was produced by John Marshall Media",
+      "startMs": 309700,
+      "endMs": 314020,
+      "avgLogprob": -0.542733,
+      "noSpeechProb": 0.000662,
+      "compressionRatio": 1.677632,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 309700,
+          "endMs": 310980,
+          "probability": 0.127386
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 310980,
+          "endMs": 311440,
+          "probability": 0.984523
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 311440,
+          "endMs": 311700,
+          "probability": 0.99591
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 311700,
+          "endMs": 312160,
+          "probability": 0.995914
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 312160,
+          "endMs": 312520,
+          "probability": 0.996294
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 312520,
+          "endMs": 312900,
+          "probability": 0.941924
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 312900,
+          "endMs": 313280,
+          "probability": 0.893117
+        },
+        {
+          "index": 8,
+          "text": "Media",
+          "startMs": 313280,
+          "endMs": 314020,
+          "probability": 0.314872
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "text": "text copyright",
+      "startMs": 314020,
+      "endMs": 315940,
+      "avgLogprob": -0.542733,
+      "noSpeechProb": 0.000662,
+      "compressionRatio": 1.677632,
+      "words": [
+        {
+          "index": 1,
+          "text": "text",
+          "startMs": 314020,
+          "endMs": 315340,
+          "probability": 0.735711
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 315340,
+          "endMs": 315940,
+          "probability": 0.915918
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "text": "2019 by Kimberly and James Dean",
+      "startMs": 315940,
+      "endMs": 319440,
+      "avgLogprob": -0.542733,
+      "noSpeechProb": 0.000662,
+      "compressionRatio": 1.677632,
+      "words": [
+        {
+          "index": 1,
+          "text": "2019",
+          "startMs": 315940,
+          "endMs": 317100,
+          "probability": 0.914212
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 317100,
+          "endMs": 317680,
+          "probability": 0.986699
+        },
+        {
+          "index": 3,
+          "text": "Kimberly",
+          "startMs": 317680,
+          "endMs": 318100,
+          "probability": 0.977401
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 318100,
+          "endMs": 318520,
+          "probability": 0.990616
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 318520,
+          "endMs": 319000,
+          "probability": 0.995304
+        },
+        {
+          "index": 6,
+          "text": "Dean",
+          "startMs": 319000,
+          "endMs": 319440,
+          "probability": 0.973126
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "text": "art copyright",
+      "startMs": 319440,
+      "endMs": 321500,
+      "avgLogprob": -0.542733,
+      "noSpeechProb": 0.000662,
+      "compressionRatio": 1.677632,
+      "words": [
+        {
+          "index": 1,
+          "text": "art",
+          "startMs": 319440,
+          "endMs": 320880,
+          "probability": 0.831873
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 320880,
+          "endMs": 321500,
+          "probability": 0.969265
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "text": "2019 by James Dean",
+      "startMs": 321500,
+      "endMs": 324300,
+      "avgLogprob": -0.542733,
+      "noSpeechProb": 0.000662,
+      "compressionRatio": 1.677632,
+      "words": [
+        {
+          "index": 1,
+          "text": "2019",
+          "startMs": 321500,
+          "endMs": 322580,
+          "probability": 0.970571
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 322580,
+          "endMs": 323200,
+          "probability": 0.988078
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 323200,
+          "endMs": 323720,
+          "probability": 0.996475
+        },
+        {
+          "index": 4,
+          "text": "Dean",
+          "startMs": 323720,
+          "endMs": 324300,
+          "probability": 0.981559
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "text": "Pete the cat is a registered trademark of Pete the cat LLC",
+      "startMs": 324300,
+      "endMs": 329520,
+      "avgLogprob": -0.542733,
+      "noSpeechProb": 0.000662,
+      "compressionRatio": 1.677632,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 324300,
+          "endMs": 325560,
+          "probability": 0.944658
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 325560,
+          "endMs": 325760,
+          "probability": 0.969593
+        },
+        {
+          "index": 3,
+          "text": "cat",
+          "startMs": 325760,
+          "endMs": 326000,
+          "probability": 0.900776
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 326000,
+          "endMs": 326240,
+          "probability": 0.996321
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 326240,
+          "endMs": 326440,
+          "probability": 0.998782
+        },
+        {
+          "index": 6,
+          "text": "registered",
+          "startMs": 326440,
+          "endMs": 326900,
+          "probability": 0.9876
+        },
+        {
+          "index": 7,
+          "text": "trademark",
+          "startMs": 326900,
+          "endMs": 327500,
+          "probability": 0.98701
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 327500,
+          "endMs": 327880,
+          "probability": 0.996583
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 327880,
+          "endMs": 328140,
+          "probability": 0.878604
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 328140,
+          "endMs": 328340,
+          "probability": 0.955329
+        },
+        {
+          "index": 11,
+          "text": "cat",
+          "startMs": 328340,
+          "endMs": 328660,
+          "probability": 0.926552
+        },
+        {
+          "index": 12,
+          "text": "LLC",
+          "startMs": 328660,
+          "endMs": 329520,
+          "probability": 0.790429
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "text": "production copyright",
+      "startMs": 330480,
+      "endMs": 331860,
+      "avgLogprob": -0.303719,
+      "noSpeechProb": 0.004875,
+      "compressionRatio": 0.973684,
+      "words": [
+        {
+          "index": 1,
+          "text": "production",
+          "startMs": 330280,
+          "endMs": 330980,
+          "probability": 0.00907
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 330980,
+          "endMs": 331860,
+          "probability": 0.96321
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "text": "2019 by Harper Collins publishers all rights reserved",
+      "startMs": 332680,
+      "endMs": 337520,
+      "avgLogprob": -0.303719,
+      "noSpeechProb": 0.004875,
+      "compressionRatio": 0.973684,
+      "words": [
+        {
+          "index": 1,
+          "text": "2019",
+          "startMs": 332240,
+          "endMs": 332940,
+          "probability": 0.86567
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 332940,
+          "endMs": 333720,
+          "probability": 0.978554
+        },
+        {
+          "index": 3,
+          "text": "Harper",
+          "startMs": 333720,
+          "endMs": 334060,
+          "probability": 0.736887
+        },
+        {
+          "index": 4,
+          "text": "Collins",
+          "startMs": 334060,
+          "endMs": 334560,
+          "probability": 0.573662
+        },
+        {
+          "index": 5,
+          "text": "publishers",
+          "startMs": 334560,
+          "endMs": 335200,
+          "probability": 0.580657
+        },
+        {
+          "index": 6,
+          "text": "all",
+          "startMs": 335200,
+          "endMs": 336440,
+          "probability": 0.841336
+        },
+        {
+          "index": 7,
+          "text": "rights",
+          "startMs": 336440,
+          "endMs": 336840,
+          "probability": 0.981704
+        },
+        {
+          "index": 8,
+          "text": "reserved",
+          "startMs": 336840,
+          "endMs": 337520,
+          "probability": 0.994656
+        }
+      ]
+    }
+  ]
+}

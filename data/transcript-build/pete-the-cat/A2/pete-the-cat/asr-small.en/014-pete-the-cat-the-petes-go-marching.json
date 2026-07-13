@@ -1,0 +1,4316 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 46.478,
+  "text": "Pete the Cat, The Pete's Go Marching by James Dean, performed by James Foey. The Pete's Go Marching One by One, Hurrah! Hurrah! The Pete's Go Marching One by One, Hurrah! Hurrah! The Pete's Go Marching One by One, The Groovy One stops to have some fun, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Two by Two, Hurrah! Hurrah! The Pete's Go Marching Two by Two, Hurrah! Hurrah! The Pete's Go Marching Two by Two, The Groovy One stops to meet the crew, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Three by Three, Hurrah! Hurrah! The Pete's Go Marching Three by Three, Hurrah! Hurrah! The Pete's Go Marching Three by Three, The Groovy One stops for a tambourine, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Four by Four, Hurrah! Hurrah! The Pete's Go Marching Four by Four, Hurrah! Hurrah! The Pete's Go Marching Four by Four, The Groovy One stops by at the store, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Five by Five, Hurrah! Hurrah! The Pete's Go Marching Five by Five, Hurrah! Hurrah! The Pete's Go Marching Five by Five, The Groovy One stops to take a drive, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Six by Six, Hurrah! Hurrah! The Pete's Go Marching Six by Six, Hurrah! Hurrah! The Pete's Go Marching Six by Six, The Groovy One stops to pick up sticks, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Seven by Seven, Hurrah! Hurrah! The Pete's Go Marching Seven by Seven, Hurrah! Hurrah! The Pete's Go Marching Seven by Seven, The Groovy One stops to play Rock and Roll Heaven, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Eight by Eight, Hurrah! Hurrah! The Pete's Go Marching Eight by Eight, Hurrah! Hurrah! The Pete's Go Marching Eight by Eight, The Groovy One stops for his bandmates, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Nine by Nine, Hurrah! Hurrah! The Pete's Go Marching Nine by Nine, Hurrah! Hurrah! The Pete's Go Marching Nine by Nine, The Groovy One stops to check the time, and they all go marching down to town to get out of the rain. Boom! Boom! Boom! The Pete's Go Marching Ten by Ten, Hurrah! Hurrah! The Pete's Go Marching Ten by Ten, Hurrah! Hurrah! The Pete's Go Marching Ten by Ten, The Groovy One stops to shout, The End! And they all cheer for Pete the Cat to rock out in the rain. We hope you have enjoyed this recording of Pete the Cat, The Pete's Go Marching by James Dean. This program was produced by John Marshall Media. Art copyright 2018 by James Dean. Pete the Cat is a registered trademark of Pete the Cat LLC. Production copyright 2018 by Harper Collins Publishers. All rights reserved.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat, The Pete's Go Marching by James Dean, performed by James Foey.",
+      "startMs": 0,
+      "endMs": 8000,
+      "avgLogprob": -0.274286,
+      "noSpeechProb": 0.023139,
+      "compressionRatio": 1.873684,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 920,
+          "probability": 0.401146
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 920,
+          "endMs": 1180,
+          "probability": 0.970244
+        },
+        {
+          "index": 3,
+          "text": "Cat,",
+          "startMs": 1180,
+          "endMs": 1580,
+          "probability": 0.893164
+        },
+        {
+          "index": 4,
+          "text": "The",
+          "startMs": 2100,
+          "endMs": 2200,
+          "probability": 0.674818
+        },
+        {
+          "index": 5,
+          "text": "Pete's",
+          "startMs": 2200,
+          "endMs": 2760,
+          "probability": 0.809536
+        },
+        {
+          "index": 6,
+          "text": "Go",
+          "startMs": 2760,
+          "endMs": 3000,
+          "probability": 0.9599
+        },
+        {
+          "index": 7,
+          "text": "Marching",
+          "startMs": 3000,
+          "endMs": 3980,
+          "probability": 0.908009
+        },
+        {
+          "index": 8,
+          "text": "by",
+          "startMs": 3980,
+          "endMs": 4340,
+          "probability": 0.628709
+        },
+        {
+          "index": 9,
+          "text": "James",
+          "startMs": 4340,
+          "endMs": 4900,
+          "probability": 0.997828
+        },
+        {
+          "index": 10,
+          "text": "Dean,",
+          "startMs": 4900,
+          "endMs": 5340,
+          "probability": 0.775189
+        },
+        {
+          "index": 11,
+          "text": "performed",
+          "startMs": 6240,
+          "endMs": 6620,
+          "probability": 0.973477
+        },
+        {
+          "index": 12,
+          "text": "by",
+          "startMs": 6620,
+          "endMs": 7080,
+          "probability": 0.999488
+        },
+        {
+          "index": 13,
+          "text": "James",
+          "startMs": 7080,
+          "endMs": 7540,
+          "probability": 0.997993
+        },
+        {
+          "index": 14,
+          "text": "Foey.",
+          "startMs": 7540,
+          "endMs": 8030,
+          "probability": 0.732553
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "The Pete's Go Marching One by One, Hurrah! Hurrah! The Pete's Go Marching One by One, Hurrah! Hurrah!",
+      "startMs": 10500,
+      "endMs": 21440,
+      "avgLogprob": -0.274286,
+      "noSpeechProb": 0.023139,
+      "compressionRatio": 1.873684,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 10500,
+          "endMs": 11260,
+          "probability": 0.872757
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 11260,
+          "endMs": 11780,
+          "probability": 0.95029
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 11780,
+          "endMs": 12020,
+          "probability": 0.937145
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 12020,
+          "endMs": 12640,
+          "probability": 0.966547
+        },
+        {
+          "index": 5,
+          "text": "One",
+          "startMs": 12640,
+          "endMs": 12960,
+          "probability": 0.629181
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 12960,
+          "endMs": 13260,
+          "probability": 0.713819
+        },
+        {
+          "index": 7,
+          "text": "One,",
+          "startMs": 13260,
+          "endMs": 13780,
+          "probability": 0.980835
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 13940,
+          "endMs": 14560,
+          "probability": 0.581603
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 15360,
+          "endMs": 15820,
+          "probability": 0.960657
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 16580,
+          "endMs": 16720,
+          "probability": 0.989812
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 16720,
+          "endMs": 17280,
+          "probability": 0.996131
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 17280,
+          "endMs": 17520,
+          "probability": 0.992227
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 17520,
+          "endMs": 18160,
+          "probability": 0.984772
+        },
+        {
+          "index": 14,
+          "text": "One",
+          "startMs": 18160,
+          "endMs": 18480,
+          "probability": 0.995374
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 18480,
+          "endMs": 18820,
+          "probability": 0.978201
+        },
+        {
+          "index": 16,
+          "text": "One,",
+          "startMs": 18820,
+          "endMs": 19260,
+          "probability": 0.996892
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 19380,
+          "endMs": 20060,
+          "probability": 0.97693
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 20880,
+          "endMs": 21440,
+          "probability": 0.943767
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "The Pete's Go Marching One by One, The Groovy One stops to have some fun, and they all go marching down to town to get out of the rain.",
+      "startMs": 21440,
+      "endMs": 33040,
+      "avgLogprob": -0.080392,
+      "noSpeechProb": 0.299915,
+      "compressionRatio": 1.834532,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 21440,
+          "endMs": 22360,
+          "probability": 0.615603
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 22360,
+          "endMs": 22860,
+          "probability": 0.619041
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 22860,
+          "endMs": 23080,
+          "probability": 0.024736
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 23080,
+          "endMs": 23780,
+          "probability": 0.684191
+        },
+        {
+          "index": 5,
+          "text": "One",
+          "startMs": 23780,
+          "endMs": 24100,
+          "probability": 0.425182
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 24100,
+          "endMs": 24400,
+          "probability": 0.575544
+        },
+        {
+          "index": 7,
+          "text": "One,",
+          "startMs": 24400,
+          "endMs": 24860,
+          "probability": 0.919491
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 25040,
+          "endMs": 25400,
+          "probability": 0.319872
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 25400,
+          "endMs": 25920,
+          "probability": 0.932036
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 25920,
+          "endMs": 26220,
+          "probability": 0.973368
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 26220,
+          "endMs": 26640,
+          "probability": 0.345871
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 26640,
+          "endMs": 27080,
+          "probability": 0.979483
+        },
+        {
+          "index": 13,
+          "text": "have",
+          "startMs": 27080,
+          "endMs": 27340,
+          "probability": 0.993819
+        },
+        {
+          "index": 14,
+          "text": "some",
+          "startMs": 27340,
+          "endMs": 27680,
+          "probability": 0.992842
+        },
+        {
+          "index": 15,
+          "text": "fun,",
+          "startMs": 27680,
+          "endMs": 28140,
+          "probability": 0.995312
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 28660,
+          "endMs": 28900,
+          "probability": 0.511449
+        },
+        {
+          "index": 17,
+          "text": "they",
+          "startMs": 28900,
+          "endMs": 29060,
+          "probability": 0.982451
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 29060,
+          "endMs": 29480,
+          "probability": 0.994835
+        },
+        {
+          "index": 19,
+          "text": "go",
+          "startMs": 29480,
+          "endMs": 29680,
+          "probability": 0.991481
+        },
+        {
+          "index": 20,
+          "text": "marching",
+          "startMs": 29680,
+          "endMs": 30180,
+          "probability": 0.994299
+        },
+        {
+          "index": 21,
+          "text": "down",
+          "startMs": 30180,
+          "endMs": 30640,
+          "probability": 0.985972
+        },
+        {
+          "index": 22,
+          "text": "to",
+          "startMs": 30640,
+          "endMs": 30920,
+          "probability": 0.986154
+        },
+        {
+          "index": 23,
+          "text": "town",
+          "startMs": 30920,
+          "endMs": 31220,
+          "probability": 0.977531
+        },
+        {
+          "index": 24,
+          "text": "to",
+          "startMs": 31220,
+          "endMs": 31520,
+          "probability": 0.954547
+        },
+        {
+          "index": 25,
+          "text": "get",
+          "startMs": 31520,
+          "endMs": 31760,
+          "probability": 0.997702
+        },
+        {
+          "index": 26,
+          "text": "out",
+          "startMs": 31760,
+          "endMs": 32100,
+          "probability": 0.996973
+        },
+        {
+          "index": 27,
+          "text": "of",
+          "startMs": 32100,
+          "endMs": 32340,
+          "probability": 0.994373
+        },
+        {
+          "index": 28,
+          "text": "the",
+          "startMs": 32340,
+          "endMs": 32620,
+          "probability": 0.998326
+        },
+        {
+          "index": 29,
+          "text": "rain.",
+          "startMs": 32620,
+          "endMs": 33040,
+          "probability": 0.994796
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 34160,
+      "endMs": 35520,
+      "avgLogprob": -0.080392,
+      "noSpeechProb": 0.299915,
+      "compressionRatio": 1.834532,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 34160,
+          "endMs": 34280,
+          "probability": 0.623351
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 34740,
+          "endMs": 34860,
+          "probability": 0.982051
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 35240,
+          "endMs": 35520,
+          "probability": 0.995021
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "The Pete's Go Marching Two by Two, Hurrah! Hurrah! The Pete's Go Marching Two by Two, Hurrah! Hurrah!",
+      "startMs": 37400,
+      "endMs": 47540,
+      "avgLogprob": -0.080392,
+      "noSpeechProb": 0.299915,
+      "compressionRatio": 1.834532,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 37400,
+          "endMs": 38200,
+          "probability": 0.983515
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 38200,
+          "endMs": 38660,
+          "probability": 0.987978
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 38660,
+          "endMs": 38860,
+          "probability": 0.982767
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 38860,
+          "endMs": 39440,
+          "probability": 0.978182
+        },
+        {
+          "index": 5,
+          "text": "Two",
+          "startMs": 39440,
+          "endMs": 39780,
+          "probability": 0.912936
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 39780,
+          "endMs": 40060,
+          "probability": 0.927081
+        },
+        {
+          "index": 7,
+          "text": "Two,",
+          "startMs": 40060,
+          "endMs": 40540,
+          "probability": 0.990578
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 40680,
+          "endMs": 41200,
+          "probability": 0.679808
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 41960,
+          "endMs": 42400,
+          "probability": 0.980731
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 43100,
+          "endMs": 43240,
+          "probability": 0.991892
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 43240,
+          "endMs": 43680,
+          "probability": 0.993501
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 43680,
+          "endMs": 43900,
+          "probability": 0.988579
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 43900,
+          "endMs": 44480,
+          "probability": 0.983215
+        },
+        {
+          "index": 14,
+          "text": "Two",
+          "startMs": 44480,
+          "endMs": 44840,
+          "probability": 0.99564
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 44840,
+          "endMs": 45120,
+          "probability": 0.984295
+        },
+        {
+          "index": 16,
+          "text": "Two,",
+          "startMs": 45120,
+          "endMs": 45600,
+          "probability": 0.993941
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 45820,
+          "endMs": 46340,
+          "probability": 0.98598
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 47100,
+          "endMs": 47540,
+          "probability": 0.993873
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "The Pete's Go Marching Two by Two, The Groovy One stops to meet the crew, and they all go marching down to town to get out of the rain.",
+      "startMs": 49140,
+      "endMs": 60100,
+      "avgLogprob": -0.03664,
+      "noSpeechProb": 0.020333,
+      "compressionRatio": 1.892086,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 49140,
+          "endMs": 49900,
+          "probability": 0.522747
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 49900,
+          "endMs": 50380,
+          "probability": 0.572926
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 50380,
+          "endMs": 50560,
+          "probability": 0.020158
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 50560,
+          "endMs": 51240,
+          "probability": 0.668432
+        },
+        {
+          "index": 5,
+          "text": "Two",
+          "startMs": 51240,
+          "endMs": 51520,
+          "probability": 0.229173
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 51520,
+          "endMs": 51800,
+          "probability": 0.349412
+        },
+        {
+          "index": 7,
+          "text": "Two,",
+          "startMs": 51800,
+          "endMs": 52240,
+          "probability": 0.957765
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 52520,
+          "endMs": 52780,
+          "probability": 0.262569
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 52780,
+          "endMs": 53320,
+          "probability": 0.950631
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 53320,
+          "endMs": 53580,
+          "probability": 0.965265
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 53580,
+          "endMs": 53960,
+          "probability": 0.364135
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 53960,
+          "endMs": 54380,
+          "probability": 0.973016
+        },
+        {
+          "index": 13,
+          "text": "meet",
+          "startMs": 54380,
+          "endMs": 54600,
+          "probability": 0.98666
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 54600,
+          "endMs": 54880,
+          "probability": 0.944121
+        },
+        {
+          "index": 15,
+          "text": "crew,",
+          "startMs": 54880,
+          "endMs": 55260,
+          "probability": 0.904711
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 55700,
+          "endMs": 55940,
+          "probability": 0.464474
+        },
+        {
+          "index": 17,
+          "text": "they",
+          "startMs": 55940,
+          "endMs": 56100,
+          "probability": 0.978705
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 56100,
+          "endMs": 56520,
+          "probability": 0.992921
+        },
+        {
+          "index": 19,
+          "text": "go",
+          "startMs": 56520,
+          "endMs": 56740,
+          "probability": 0.988284
+        },
+        {
+          "index": 20,
+          "text": "marching",
+          "startMs": 56740,
+          "endMs": 57260,
+          "probability": 0.994064
+        },
+        {
+          "index": 21,
+          "text": "down",
+          "startMs": 57260,
+          "endMs": 57720,
+          "probability": 0.982614
+        },
+        {
+          "index": 22,
+          "text": "to",
+          "startMs": 57720,
+          "endMs": 57980,
+          "probability": 0.981813
+        },
+        {
+          "index": 23,
+          "text": "town",
+          "startMs": 57980,
+          "endMs": 58340,
+          "probability": 0.968869
+        },
+        {
+          "index": 24,
+          "text": "to",
+          "startMs": 58340,
+          "endMs": 58620,
+          "probability": 0.927148
+        },
+        {
+          "index": 25,
+          "text": "get",
+          "startMs": 58620,
+          "endMs": 58840,
+          "probability": 0.995041
+        },
+        {
+          "index": 26,
+          "text": "out",
+          "startMs": 58840,
+          "endMs": 59180,
+          "probability": 0.99543
+        },
+        {
+          "index": 27,
+          "text": "of",
+          "startMs": 59180,
+          "endMs": 59440,
+          "probability": 0.99288
+        },
+        {
+          "index": 28,
+          "text": "the",
+          "startMs": 59440,
+          "endMs": 59700,
+          "probability": 0.996966
+        },
+        {
+          "index": 29,
+          "text": "rain.",
+          "startMs": 59700,
+          "endMs": 60100,
+          "probability": 0.991696
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 61280,
+      "endMs": 62600,
+      "avgLogprob": -0.03664,
+      "noSpeechProb": 0.020333,
+      "compressionRatio": 1.892086,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 61280,
+          "endMs": 61340,
+          "probability": 0.582311
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 61840,
+          "endMs": 61920,
+          "probability": 0.984531
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 62360,
+          "endMs": 62600,
+          "probability": 0.994989
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "The Pete's Go Marching Three by Three, Hurrah! Hurrah! The Pete's Go Marching Three by Three, Hurrah! Hurrah!",
+      "startMs": 64480,
+      "endMs": 74560,
+      "avgLogprob": -0.03664,
+      "noSpeechProb": 0.020333,
+      "compressionRatio": 1.892086,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 64480,
+          "endMs": 65240,
+          "probability": 0.986246
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 65240,
+          "endMs": 65620,
+          "probability": 0.984462
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 65620,
+          "endMs": 65840,
+          "probability": 0.984842
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 65840,
+          "endMs": 66440,
+          "probability": 0.976613
+        },
+        {
+          "index": 5,
+          "text": "Three",
+          "startMs": 66440,
+          "endMs": 66800,
+          "probability": 0.967293
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 66800,
+          "endMs": 67080,
+          "probability": 0.97133
+        },
+        {
+          "index": 7,
+          "text": "Three,",
+          "startMs": 67080,
+          "endMs": 67600,
+          "probability": 0.993669
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 67800,
+          "endMs": 68320,
+          "probability": 0.738617
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 68900,
+          "endMs": 69480,
+          "probability": 0.983072
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 70120,
+          "endMs": 70260,
+          "probability": 0.991627
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 70260,
+          "endMs": 70720,
+          "probability": 0.992387
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 70720,
+          "endMs": 70920,
+          "probability": 0.992841
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 70920,
+          "endMs": 71520,
+          "probability": 0.980712
+        },
+        {
+          "index": 14,
+          "text": "Three",
+          "startMs": 71520,
+          "endMs": 71900,
+          "probability": 0.995833
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 71900,
+          "endMs": 72140,
+          "probability": 0.985165
+        },
+        {
+          "index": 16,
+          "text": "Three,",
+          "startMs": 72140,
+          "endMs": 72620,
+          "probability": 0.994484
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 72820,
+          "endMs": 73380,
+          "probability": 0.977853
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 74020,
+          "endMs": 74560,
+          "probability": 0.993144
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "The Pete's Go Marching Three by Three, The Groovy One stops for a tambourine, and they all go marching down to town to get out of the rain.",
+      "startMs": 76180,
+      "endMs": 87120,
+      "avgLogprob": -0.027794,
+      "noSpeechProb": 0.011322,
+      "compressionRatio": 1.826389,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 76180,
+          "endMs": 76980,
+          "probability": 0.74605
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 76980,
+          "endMs": 77400,
+          "probability": 0.580231
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 77400,
+          "endMs": 77600,
+          "probability": 0.019879
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 77600,
+          "endMs": 78220,
+          "probability": 0.705931
+        },
+        {
+          "index": 5,
+          "text": "Three",
+          "startMs": 78220,
+          "endMs": 78560,
+          "probability": 0.150905
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 78560,
+          "endMs": 78820,
+          "probability": 0.410353
+        },
+        {
+          "index": 7,
+          "text": "Three,",
+          "startMs": 78820,
+          "endMs": 79280,
+          "probability": 0.96359
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 79540,
+          "endMs": 79760,
+          "probability": 0.32885
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 79760,
+          "endMs": 80200,
+          "probability": 0.963191
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 80200,
+          "endMs": 80440,
+          "probability": 0.966226
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 80440,
+          "endMs": 80780,
+          "probability": 0.157645
+        },
+        {
+          "index": 12,
+          "text": "for",
+          "startMs": 80780,
+          "endMs": 81160,
+          "probability": 0.975068
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 81160,
+          "endMs": 81320,
+          "probability": 0.989514
+        },
+        {
+          "index": 14,
+          "text": "tambourine,",
+          "startMs": 81320,
+          "endMs": 82260,
+          "probability": 0.91867
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 82800,
+          "endMs": 82920,
+          "probability": 0.673345
+        },
+        {
+          "index": 16,
+          "text": "they",
+          "startMs": 82920,
+          "endMs": 83080,
+          "probability": 0.983384
+        },
+        {
+          "index": 17,
+          "text": "all",
+          "startMs": 83080,
+          "endMs": 83500,
+          "probability": 0.994801
+        },
+        {
+          "index": 18,
+          "text": "go",
+          "startMs": 83500,
+          "endMs": 83740,
+          "probability": 0.98966
+        },
+        {
+          "index": 19,
+          "text": "marching",
+          "startMs": 83740,
+          "endMs": 84260,
+          "probability": 0.995577
+        },
+        {
+          "index": 20,
+          "text": "down",
+          "startMs": 84260,
+          "endMs": 84720,
+          "probability": 0.986744
+        },
+        {
+          "index": 21,
+          "text": "to",
+          "startMs": 84720,
+          "endMs": 84980,
+          "probability": 0.984147
+        },
+        {
+          "index": 22,
+          "text": "town",
+          "startMs": 84980,
+          "endMs": 85340,
+          "probability": 0.980294
+        },
+        {
+          "index": 23,
+          "text": "to",
+          "startMs": 85340,
+          "endMs": 85640,
+          "probability": 0.951255
+        },
+        {
+          "index": 24,
+          "text": "get",
+          "startMs": 85640,
+          "endMs": 85900,
+          "probability": 0.996108
+        },
+        {
+          "index": 25,
+          "text": "out",
+          "startMs": 85900,
+          "endMs": 86240,
+          "probability": 0.996808
+        },
+        {
+          "index": 26,
+          "text": "of",
+          "startMs": 86240,
+          "endMs": 86480,
+          "probability": 0.994017
+        },
+        {
+          "index": 27,
+          "text": "the",
+          "startMs": 86480,
+          "endMs": 86720,
+          "probability": 0.997159
+        },
+        {
+          "index": 28,
+          "text": "rain.",
+          "startMs": 86720,
+          "endMs": 87120,
+          "probability": 0.995317
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 88300,
+      "endMs": 89620,
+      "avgLogprob": -0.027794,
+      "noSpeechProb": 0.011322,
+      "compressionRatio": 1.826389,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 88300,
+          "endMs": 88340,
+          "probability": 0.744102
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 88760,
+          "endMs": 88920,
+          "probability": 0.988454
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 89300,
+          "endMs": 89620,
+          "probability": 0.996141
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "The Pete's Go Marching Four by Four, Hurrah! Hurrah! The Pete's Go Marching Four by Four, Hurrah! Hurrah!",
+      "startMs": 91460,
+      "endMs": 102180,
+      "avgLogprob": -0.027794,
+      "noSpeechProb": 0.011322,
+      "compressionRatio": 1.826389,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 91460,
+          "endMs": 92260,
+          "probability": 0.990884
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 92260,
+          "endMs": 92760,
+          "probability": 0.986503
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 92760,
+          "endMs": 92980,
+          "probability": 0.978444
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 92980,
+          "endMs": 93600,
+          "probability": 0.976865
+        },
+        {
+          "index": 5,
+          "text": "Four",
+          "startMs": 93600,
+          "endMs": 94000,
+          "probability": 0.952735
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 94000,
+          "endMs": 94260,
+          "probability": 0.970911
+        },
+        {
+          "index": 7,
+          "text": "Four,",
+          "startMs": 94260,
+          "endMs": 94820,
+          "probability": 0.98391
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 95020,
+          "endMs": 95560,
+          "probability": 0.659508
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 96300,
+          "endMs": 96780,
+          "probability": 0.98554
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 97480,
+          "endMs": 97620,
+          "probability": 0.99257
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 97620,
+          "endMs": 98100,
+          "probability": 0.994406
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 98100,
+          "endMs": 98320,
+          "probability": 0.991528
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 98320,
+          "endMs": 98940,
+          "probability": 0.986745
+        },
+        {
+          "index": 14,
+          "text": "Four",
+          "startMs": 98940,
+          "endMs": 99360,
+          "probability": 0.991554
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 99360,
+          "endMs": 99640,
+          "probability": 0.977293
+        },
+        {
+          "index": 16,
+          "text": "Four,",
+          "startMs": 99640,
+          "endMs": 100140,
+          "probability": 0.990641
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 100420,
+          "endMs": 100880,
+          "probability": 0.989372
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 101700,
+          "endMs": 102180,
+          "probability": 0.994134
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "The Pete's Go Marching Four by Four, The Groovy One stops by at the store, and they all go marching down to town to get out of the rain.",
+      "startMs": 103740,
+      "endMs": 115020,
+      "avgLogprob": -0.03322,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.870504,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 103740,
+          "endMs": 104580,
+          "probability": 0.89904
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 104580,
+          "endMs": 105080,
+          "probability": 0.670551
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 105080,
+          "endMs": 105300,
+          "probability": 0.019563
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 105300,
+          "endMs": 105900,
+          "probability": 0.677721
+        },
+        {
+          "index": 5,
+          "text": "Four",
+          "startMs": 105900,
+          "endMs": 106280,
+          "probability": 0.210298
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 106280,
+          "endMs": 106600,
+          "probability": 0.457112
+        },
+        {
+          "index": 7,
+          "text": "Four,",
+          "startMs": 106600,
+          "endMs": 107060,
+          "probability": 0.926172
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 107540,
+          "endMs": 107740,
+          "probability": 0.312939
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 107740,
+          "endMs": 108200,
+          "probability": 0.969971
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 108200,
+          "endMs": 108440,
+          "probability": 0.936257
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 108440,
+          "endMs": 108740,
+          "probability": 0.116571
+        },
+        {
+          "index": 12,
+          "text": "by",
+          "startMs": 108740,
+          "endMs": 109160,
+          "probability": 0.949792
+        },
+        {
+          "index": 13,
+          "text": "at",
+          "startMs": 109160,
+          "endMs": 109360,
+          "probability": 0.975253
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 109360,
+          "endMs": 109560,
+          "probability": 0.970982
+        },
+        {
+          "index": 15,
+          "text": "store,",
+          "startMs": 109560,
+          "endMs": 110080,
+          "probability": 0.916277
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 110560,
+          "endMs": 110800,
+          "probability": 0.398674
+        },
+        {
+          "index": 17,
+          "text": "they",
+          "startMs": 110800,
+          "endMs": 110940,
+          "probability": 0.965995
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 110940,
+          "endMs": 111360,
+          "probability": 0.991208
+        },
+        {
+          "index": 19,
+          "text": "go",
+          "startMs": 111360,
+          "endMs": 111580,
+          "probability": 0.986117
+        },
+        {
+          "index": 20,
+          "text": "marching",
+          "startMs": 111580,
+          "endMs": 112100,
+          "probability": 0.990095
+        },
+        {
+          "index": 21,
+          "text": "down",
+          "startMs": 112100,
+          "endMs": 112600,
+          "probability": 0.983866
+        },
+        {
+          "index": 22,
+          "text": "to",
+          "startMs": 112600,
+          "endMs": 112860,
+          "probability": 0.984258
+        },
+        {
+          "index": 23,
+          "text": "town",
+          "startMs": 112860,
+          "endMs": 113200,
+          "probability": 0.971965
+        },
+        {
+          "index": 24,
+          "text": "to",
+          "startMs": 113200,
+          "endMs": 113540,
+          "probability": 0.924387
+        },
+        {
+          "index": 25,
+          "text": "get",
+          "startMs": 113540,
+          "endMs": 113780,
+          "probability": 0.993072
+        },
+        {
+          "index": 26,
+          "text": "out",
+          "startMs": 113780,
+          "endMs": 114120,
+          "probability": 0.996904
+        },
+        {
+          "index": 27,
+          "text": "of",
+          "startMs": 114120,
+          "endMs": 114360,
+          "probability": 0.991142
+        },
+        {
+          "index": 28,
+          "text": "the",
+          "startMs": 114360,
+          "endMs": 114560,
+          "probability": 0.997331
+        },
+        {
+          "index": 29,
+          "text": "rain.",
+          "startMs": 114560,
+          "endMs": 115020,
+          "probability": 0.992426
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 116260,
+      "endMs": 117500,
+      "avgLogprob": -0.03322,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.870504,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 116260,
+          "endMs": 116260,
+          "probability": 0.848406
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 116740,
+          "endMs": 116860,
+          "probability": 0.989896
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 117240,
+          "endMs": 117500,
+          "probability": 0.996048
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "The Pete's Go Marching Five by Five, Hurrah! Hurrah! The Pete's Go Marching Five by Five, Hurrah! Hurrah!",
+      "startMs": 119300,
+      "endMs": 130000,
+      "avgLogprob": -0.03322,
+      "noSpeechProb": 0.010263,
+      "compressionRatio": 1.870504,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 119300,
+          "endMs": 120140,
+          "probability": 0.990151
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 120140,
+          "endMs": 120600,
+          "probability": 0.991214
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 120600,
+          "endMs": 120820,
+          "probability": 0.965938
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 120820,
+          "endMs": 121460,
+          "probability": 0.979764
+        },
+        {
+          "index": 5,
+          "text": "Five",
+          "startMs": 121460,
+          "endMs": 121840,
+          "probability": 0.953424
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 121840,
+          "endMs": 122140,
+          "probability": 0.964892
+        },
+        {
+          "index": 7,
+          "text": "Five,",
+          "startMs": 122140,
+          "endMs": 122700,
+          "probability": 0.983046
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 122840,
+          "endMs": 123400,
+          "probability": 0.707565
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 124120,
+          "endMs": 124600,
+          "probability": 0.989298
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 125320,
+          "endMs": 125460,
+          "probability": 0.992069
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 125460,
+          "endMs": 125880,
+          "probability": 0.993594
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 125880,
+          "endMs": 126120,
+          "probability": 0.99049
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 126120,
+          "endMs": 126760,
+          "probability": 0.988972
+        },
+        {
+          "index": 14,
+          "text": "Five",
+          "startMs": 126760,
+          "endMs": 127180,
+          "probability": 0.993625
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 127180,
+          "endMs": 127440,
+          "probability": 0.971715
+        },
+        {
+          "index": 16,
+          "text": "Five,",
+          "startMs": 127440,
+          "endMs": 128000,
+          "probability": 0.990344
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 128160,
+          "endMs": 128700,
+          "probability": 0.98767
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 129340,
+          "endMs": 130000,
+          "probability": 0.993611
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "The Pete's Go Marching Five by Five, The Groovy One stops to take a drive, and they all go marching down to town to get out of the rain.",
+      "startMs": 132180,
+      "endMs": 143240,
+      "avgLogprob": -0.019162,
+      "noSpeechProb": 0.01596,
+      "compressionRatio": 1.828571,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 132180,
+          "endMs": 132480,
+          "probability": 0.754486
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 132480,
+          "endMs": 132960,
+          "probability": 0.610761
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 132960,
+          "endMs": 133180,
+          "probability": 0.036073
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 133180,
+          "endMs": 133840,
+          "probability": 0.708298
+        },
+        {
+          "index": 5,
+          "text": "Five",
+          "startMs": 133840,
+          "endMs": 134220,
+          "probability": 0.190868
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 134220,
+          "endMs": 134500,
+          "probability": 0.459557
+        },
+        {
+          "index": 7,
+          "text": "Five,",
+          "startMs": 134500,
+          "endMs": 135040,
+          "probability": 0.919224
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 135520,
+          "endMs": 135780,
+          "probability": 0.304688
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 135780,
+          "endMs": 136260,
+          "probability": 0.920355
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 136260,
+          "endMs": 136480,
+          "probability": 0.926337
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 136480,
+          "endMs": 136780,
+          "probability": 0.12948
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 136780,
+          "endMs": 137160,
+          "probability": 0.976008
+        },
+        {
+          "index": 13,
+          "text": "take",
+          "startMs": 137160,
+          "endMs": 137420,
+          "probability": 0.989603
+        },
+        {
+          "index": 14,
+          "text": "a",
+          "startMs": 137420,
+          "endMs": 137620,
+          "probability": 0.993218
+        },
+        {
+          "index": 15,
+          "text": "drive,",
+          "startMs": 137620,
+          "endMs": 138120,
+          "probability": 0.97307
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 138620,
+          "endMs": 138860,
+          "probability": 0.308799
+        },
+        {
+          "index": 17,
+          "text": "they",
+          "startMs": 138860,
+          "endMs": 139020,
+          "probability": 0.977482
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 139020,
+          "endMs": 139440,
+          "probability": 0.993376
+        },
+        {
+          "index": 19,
+          "text": "go",
+          "startMs": 139440,
+          "endMs": 139680,
+          "probability": 0.990666
+        },
+        {
+          "index": 20,
+          "text": "marching",
+          "startMs": 139680,
+          "endMs": 140220,
+          "probability": 0.993564
+        },
+        {
+          "index": 21,
+          "text": "down",
+          "startMs": 140220,
+          "endMs": 140700,
+          "probability": 0.985318
+        },
+        {
+          "index": 22,
+          "text": "to",
+          "startMs": 140700,
+          "endMs": 141000,
+          "probability": 0.98359
+        },
+        {
+          "index": 23,
+          "text": "town",
+          "startMs": 141000,
+          "endMs": 141320,
+          "probability": 0.98051
+        },
+        {
+          "index": 24,
+          "text": "to",
+          "startMs": 141320,
+          "endMs": 141640,
+          "probability": 0.940033
+        },
+        {
+          "index": 25,
+          "text": "get",
+          "startMs": 141640,
+          "endMs": 141880,
+          "probability": 0.993247
+        },
+        {
+          "index": 26,
+          "text": "out",
+          "startMs": 141880,
+          "endMs": 142240,
+          "probability": 0.996792
+        },
+        {
+          "index": 27,
+          "text": "of",
+          "startMs": 142240,
+          "endMs": 142500,
+          "probability": 0.993724
+        },
+        {
+          "index": 28,
+          "text": "the",
+          "startMs": 142500,
+          "endMs": 142740,
+          "probability": 0.997909
+        },
+        {
+          "index": 29,
+          "text": "rain.",
+          "startMs": 142740,
+          "endMs": 143240,
+          "probability": 0.994841
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 144500,
+      "endMs": 145800,
+      "avgLogprob": -0.019162,
+      "noSpeechProb": 0.01596,
+      "compressionRatio": 1.828571,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 144500,
+          "endMs": 144500,
+          "probability": 0.575095
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 144920,
+          "endMs": 145100,
+          "probability": 0.986608
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 145520,
+          "endMs": 145800,
+          "probability": 0.995449
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "The Pete's Go Marching Six by Six, Hurrah! Hurrah! The Pete's Go Marching Six by Six, Hurrah! Hurrah!",
+      "startMs": 147680,
+      "endMs": 158200,
+      "avgLogprob": -0.019162,
+      "noSpeechProb": 0.01596,
+      "compressionRatio": 1.828571,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 147680,
+          "endMs": 148440,
+          "probability": 0.983517
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 148440,
+          "endMs": 148920,
+          "probability": 0.989879
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 148920,
+          "endMs": 149140,
+          "probability": 0.98975
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 149140,
+          "endMs": 149740,
+          "probability": 0.985327
+        },
+        {
+          "index": 5,
+          "text": "Six",
+          "startMs": 149740,
+          "endMs": 150060,
+          "probability": 0.947842
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 150060,
+          "endMs": 150400,
+          "probability": 0.941739
+        },
+        {
+          "index": 7,
+          "text": "Six,",
+          "startMs": 150400,
+          "endMs": 150900,
+          "probability": 0.990751
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 151120,
+          "endMs": 151700,
+          "probability": 0.720457
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 152400,
+          "endMs": 152920,
+          "probability": 0.977627
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 153600,
+          "endMs": 153760,
+          "probability": 0.992565
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 153760,
+          "endMs": 154240,
+          "probability": 0.994121
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 154240,
+          "endMs": 154440,
+          "probability": 0.993803
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 154440,
+          "endMs": 155020,
+          "probability": 0.988246
+        },
+        {
+          "index": 14,
+          "text": "Six",
+          "startMs": 155020,
+          "endMs": 155380,
+          "probability": 0.996595
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 155380,
+          "endMs": 155760,
+          "probability": 0.975768
+        },
+        {
+          "index": 16,
+          "text": "Six,",
+          "startMs": 155760,
+          "endMs": 156220,
+          "probability": 0.99424
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 156480,
+          "endMs": 157060,
+          "probability": 0.991315
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 157700,
+          "endMs": 158200,
+          "probability": 0.993483
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "The Pete's Go Marching Six by Six, The Groovy One stops to pick up sticks, and they all go marching down to town to get out of the rain.",
+      "startMs": 159820,
+      "endMs": 171480,
+      "avgLogprob": -0.039474,
+      "noSpeechProb": 0.016833,
+      "compressionRatio": 1.833333,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 159820,
+          "endMs": 160660,
+          "probability": 0.913191
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 160660,
+          "endMs": 161160,
+          "probability": 0.635473
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 161160,
+          "endMs": 161380,
+          "probability": 0.02119
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 161380,
+          "endMs": 162000,
+          "probability": 0.696921
+        },
+        {
+          "index": 5,
+          "text": "Six",
+          "startMs": 162000,
+          "endMs": 162320,
+          "probability": 0.215666
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 162320,
+          "endMs": 162660,
+          "probability": 0.325056
+        },
+        {
+          "index": 7,
+          "text": "Six,",
+          "startMs": 162660,
+          "endMs": 163040,
+          "probability": 0.960201
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 163720,
+          "endMs": 163880,
+          "probability": 0.285774
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 163880,
+          "endMs": 164360,
+          "probability": 0.954034
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 164360,
+          "endMs": 164600,
+          "probability": 0.932708
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 164600,
+          "endMs": 164900,
+          "probability": 0.104329
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 164900,
+          "endMs": 165300,
+          "probability": 0.959986
+        },
+        {
+          "index": 13,
+          "text": "pick",
+          "startMs": 165300,
+          "endMs": 165500,
+          "probability": 0.953859
+        },
+        {
+          "index": 14,
+          "text": "up",
+          "startMs": 165500,
+          "endMs": 165720,
+          "probability": 0.995046
+        },
+        {
+          "index": 15,
+          "text": "sticks,",
+          "startMs": 165720,
+          "endMs": 166200,
+          "probability": 0.842072
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 166940,
+          "endMs": 167160,
+          "probability": 0.397417
+        },
+        {
+          "index": 17,
+          "text": "they",
+          "startMs": 167160,
+          "endMs": 167320,
+          "probability": 0.97657
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 167320,
+          "endMs": 167760,
+          "probability": 0.991525
+        },
+        {
+          "index": 19,
+          "text": "go",
+          "startMs": 167760,
+          "endMs": 167980,
+          "probability": 0.987793
+        },
+        {
+          "index": 20,
+          "text": "marching",
+          "startMs": 167980,
+          "endMs": 168500,
+          "probability": 0.991092
+        },
+        {
+          "index": 21,
+          "text": "down",
+          "startMs": 168500,
+          "endMs": 169000,
+          "probability": 0.9864
+        },
+        {
+          "index": 22,
+          "text": "to",
+          "startMs": 169000,
+          "endMs": 169280,
+          "probability": 0.979721
+        },
+        {
+          "index": 23,
+          "text": "town",
+          "startMs": 169280,
+          "endMs": 169580,
+          "probability": 0.976151
+        },
+        {
+          "index": 24,
+          "text": "to",
+          "startMs": 169580,
+          "endMs": 169920,
+          "probability": 0.942977
+        },
+        {
+          "index": 25,
+          "text": "get",
+          "startMs": 169920,
+          "endMs": 170200,
+          "probability": 0.99369
+        },
+        {
+          "index": 26,
+          "text": "out",
+          "startMs": 170200,
+          "endMs": 170540,
+          "probability": 0.996376
+        },
+        {
+          "index": 27,
+          "text": "of",
+          "startMs": 170540,
+          "endMs": 170780,
+          "probability": 0.991955
+        },
+        {
+          "index": 28,
+          "text": "the",
+          "startMs": 170780,
+          "endMs": 171060,
+          "probability": 0.997375
+        },
+        {
+          "index": 29,
+          "text": "rain.",
+          "startMs": 171060,
+          "endMs": 171480,
+          "probability": 0.993517
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 172680,
+      "endMs": 174000,
+      "avgLogprob": -0.039474,
+      "noSpeechProb": 0.016833,
+      "compressionRatio": 1.833333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 172680,
+          "endMs": 172740,
+          "probability": 0.773568
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 173220,
+          "endMs": 173320,
+          "probability": 0.988137
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 173740,
+          "endMs": 174000,
+          "probability": 0.996417
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "The Pete's Go Marching Seven by Seven, Hurrah! Hurrah! The Pete's Go Marching Seven by Seven, Hurrah! Hurrah!",
+      "startMs": 175760,
+      "endMs": 186460,
+      "avgLogprob": -0.039474,
+      "noSpeechProb": 0.016833,
+      "compressionRatio": 1.833333,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 175760,
+          "endMs": 176600,
+          "probability": 0.989423
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 176600,
+          "endMs": 177020,
+          "probability": 0.987467
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 177020,
+          "endMs": 177260,
+          "probability": 0.97856
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 177260,
+          "endMs": 177860,
+          "probability": 0.982269
+        },
+        {
+          "index": 5,
+          "text": "Seven",
+          "startMs": 177860,
+          "endMs": 178300,
+          "probability": 0.942163
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 178300,
+          "endMs": 178560,
+          "probability": 0.937167
+        },
+        {
+          "index": 7,
+          "text": "Seven,",
+          "startMs": 178560,
+          "endMs": 179100,
+          "probability": 0.971352
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 179220,
+          "endMs": 179840,
+          "probability": 0.732075
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 180600,
+          "endMs": 181020,
+          "probability": 0.991106
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 181800,
+          "endMs": 181920,
+          "probability": 0.992256
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 181920,
+          "endMs": 182400,
+          "probability": 0.993424
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 182400,
+          "endMs": 182620,
+          "probability": 0.992225
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 182620,
+          "endMs": 183220,
+          "probability": 0.989262
+        },
+        {
+          "index": 14,
+          "text": "Seven",
+          "startMs": 183220,
+          "endMs": 183660,
+          "probability": 0.993847
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 183660,
+          "endMs": 183920,
+          "probability": 0.974396
+        },
+        {
+          "index": 16,
+          "text": "Seven,",
+          "startMs": 183920,
+          "endMs": 184440,
+          "probability": 0.982074
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 184600,
+          "endMs": 185100,
+          "probability": 0.974549
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 185840,
+          "endMs": 186460,
+          "probability": 0.99355
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "The Pete's Go Marching Seven by Seven, The Groovy One stops to play Rock and Roll Heaven, and they all go marching down to town to get out of the rain.",
+      "startMs": 188200,
+      "endMs": 201460,
+      "avgLogprob": -0.042148,
+      "noSpeechProb": 0.022016,
+      "compressionRatio": 1.847682,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 188200,
+          "endMs": 188960,
+          "probability": 0.934226
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 188960,
+          "endMs": 189420,
+          "probability": 0.588466
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 189420,
+          "endMs": 189660,
+          "probability": 0.034893
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 189660,
+          "endMs": 190260,
+          "probability": 0.758933
+        },
+        {
+          "index": 5,
+          "text": "Seven",
+          "startMs": 190260,
+          "endMs": 190720,
+          "probability": 0.141258
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 190720,
+          "endMs": 191000,
+          "probability": 0.484757
+        },
+        {
+          "index": 7,
+          "text": "Seven,",
+          "startMs": 191000,
+          "endMs": 191500,
+          "probability": 0.877166
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 191960,
+          "endMs": 192040,
+          "probability": 0.252555
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 192040,
+          "endMs": 192640,
+          "probability": 0.943556
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 192640,
+          "endMs": 192860,
+          "probability": 0.952468
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 192860,
+          "endMs": 193160,
+          "probability": 0.369028
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 193160,
+          "endMs": 193580,
+          "probability": 0.987333
+        },
+        {
+          "index": 13,
+          "text": "play",
+          "startMs": 193580,
+          "endMs": 193940,
+          "probability": 0.977242
+        },
+        {
+          "index": 14,
+          "text": "Rock",
+          "startMs": 193940,
+          "endMs": 194720,
+          "probability": 0.601861
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 194720,
+          "endMs": 195000,
+          "probability": 0.465968
+        },
+        {
+          "index": 16,
+          "text": "Roll",
+          "startMs": 195000,
+          "endMs": 195320,
+          "probability": 0.979663
+        },
+        {
+          "index": 17,
+          "text": "Heaven,",
+          "startMs": 195320,
+          "endMs": 195940,
+          "probability": 0.976998
+        },
+        {
+          "index": 18,
+          "text": "and",
+          "startMs": 197000,
+          "endMs": 197220,
+          "probability": 0.462365
+        },
+        {
+          "index": 19,
+          "text": "they",
+          "startMs": 197220,
+          "endMs": 197380,
+          "probability": 0.966436
+        },
+        {
+          "index": 20,
+          "text": "all",
+          "startMs": 197380,
+          "endMs": 197780,
+          "probability": 0.993481
+        },
+        {
+          "index": 21,
+          "text": "go",
+          "startMs": 197780,
+          "endMs": 198020,
+          "probability": 0.990986
+        },
+        {
+          "index": 22,
+          "text": "marching",
+          "startMs": 198020,
+          "endMs": 198560,
+          "probability": 0.992478
+        },
+        {
+          "index": 23,
+          "text": "down",
+          "startMs": 198560,
+          "endMs": 199020,
+          "probability": 0.977674
+        },
+        {
+          "index": 24,
+          "text": "to",
+          "startMs": 199020,
+          "endMs": 199300,
+          "probability": 0.982822
+        },
+        {
+          "index": 25,
+          "text": "town",
+          "startMs": 199300,
+          "endMs": 199640,
+          "probability": 0.970698
+        },
+        {
+          "index": 26,
+          "text": "to",
+          "startMs": 199640,
+          "endMs": 199920,
+          "probability": 0.945989
+        },
+        {
+          "index": 27,
+          "text": "get",
+          "startMs": 199920,
+          "endMs": 200180,
+          "probability": 0.995729
+        },
+        {
+          "index": 28,
+          "text": "out",
+          "startMs": 200180,
+          "endMs": 200520,
+          "probability": 0.996588
+        },
+        {
+          "index": 29,
+          "text": "of",
+          "startMs": 200520,
+          "endMs": 200780,
+          "probability": 0.993199
+        },
+        {
+          "index": 30,
+          "text": "the",
+          "startMs": 200780,
+          "endMs": 201060,
+          "probability": 0.997898
+        },
+        {
+          "index": 31,
+          "text": "rain.",
+          "startMs": 201060,
+          "endMs": 201460,
+          "probability": 0.991289
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 202700,
+      "endMs": 204020,
+      "avgLogprob": -0.042148,
+      "noSpeechProb": 0.022016,
+      "compressionRatio": 1.847682,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 202700,
+          "endMs": 202780,
+          "probability": 0.894526
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 203220,
+          "endMs": 203340,
+          "probability": 0.990342
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 203740,
+          "endMs": 204020,
+          "probability": 0.996938
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "The Pete's Go Marching Eight by Eight, Hurrah! Hurrah! The Pete's Go Marching Eight by Eight, Hurrah! Hurrah!",
+      "startMs": 205880,
+      "endMs": 216140,
+      "avgLogprob": -0.042148,
+      "noSpeechProb": 0.022016,
+      "compressionRatio": 1.847682,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 205880,
+          "endMs": 206680,
+          "probability": 0.988226
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 206680,
+          "endMs": 207160,
+          "probability": 0.982478
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 207160,
+          "endMs": 207360,
+          "probability": 0.968041
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 207360,
+          "endMs": 207980,
+          "probability": 0.980422
+        },
+        {
+          "index": 5,
+          "text": "Eight",
+          "startMs": 207980,
+          "endMs": 208320,
+          "probability": 0.951147
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 208320,
+          "endMs": 208640,
+          "probability": 0.947302
+        },
+        {
+          "index": 7,
+          "text": "Eight,",
+          "startMs": 208640,
+          "endMs": 209120,
+          "probability": 0.984678
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 209300,
+          "endMs": 209920,
+          "probability": 0.746834
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 210580,
+          "endMs": 211060,
+          "probability": 0.991547
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 211740,
+          "endMs": 211900,
+          "probability": 0.993318
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 211900,
+          "endMs": 212320,
+          "probability": 0.993966
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 212320,
+          "endMs": 212580,
+          "probability": 0.99367
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 212580,
+          "endMs": 213180,
+          "probability": 0.989921
+        },
+        {
+          "index": 14,
+          "text": "Eight",
+          "startMs": 213180,
+          "endMs": 213520,
+          "probability": 0.996741
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 213520,
+          "endMs": 213820,
+          "probability": 0.979048
+        },
+        {
+          "index": 16,
+          "text": "Eight,",
+          "startMs": 213820,
+          "endMs": 214240,
+          "probability": 0.994392
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 214480,
+          "endMs": 214960,
+          "probability": 0.98619
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 215680,
+          "endMs": 216140,
+          "probability": 0.994983
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "The Pete's Go Marching Eight by Eight, The Groovy One stops for his bandmates, and they all go marching down to town to get out of the rain.",
+      "startMs": 218200,
+      "endMs": 229580,
+      "avgLogprob": -0.027435,
+      "noSpeechProb": 0.027839,
+      "compressionRatio": 1.808219,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 218200,
+          "endMs": 218640,
+          "probability": 0.851746
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 218640,
+          "endMs": 219100,
+          "probability": 0.610416
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 219100,
+          "endMs": 219300,
+          "probability": 0.013508
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 219300,
+          "endMs": 219960,
+          "probability": 0.769281
+        },
+        {
+          "index": 5,
+          "text": "Eight",
+          "startMs": 219960,
+          "endMs": 220280,
+          "probability": 0.218652
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 220280,
+          "endMs": 220580,
+          "probability": 0.617104
+        },
+        {
+          "index": 7,
+          "text": "Eight,",
+          "startMs": 220580,
+          "endMs": 221060,
+          "probability": 0.970779
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 221560,
+          "endMs": 221740,
+          "probability": 0.18298
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 221740,
+          "endMs": 222220,
+          "probability": 0.881463
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 222220,
+          "endMs": 222480,
+          "probability": 0.926767
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 222480,
+          "endMs": 222740,
+          "probability": 0.219296
+        },
+        {
+          "index": 12,
+          "text": "for",
+          "startMs": 222740,
+          "endMs": 223120,
+          "probability": 0.987161
+        },
+        {
+          "index": 13,
+          "text": "his",
+          "startMs": 223120,
+          "endMs": 223400,
+          "probability": 0.987831
+        },
+        {
+          "index": 14,
+          "text": "bandmates,",
+          "startMs": 223400,
+          "endMs": 224180,
+          "probability": 0.724803
+        },
+        {
+          "index": 15,
+          "text": "and",
+          "startMs": 224900,
+          "endMs": 225200,
+          "probability": 0.467109
+        },
+        {
+          "index": 16,
+          "text": "they",
+          "startMs": 225200,
+          "endMs": 225360,
+          "probability": 0.988635
+        },
+        {
+          "index": 17,
+          "text": "all",
+          "startMs": 225360,
+          "endMs": 225760,
+          "probability": 0.995046
+        },
+        {
+          "index": 18,
+          "text": "go",
+          "startMs": 225760,
+          "endMs": 226020,
+          "probability": 0.989777
+        },
+        {
+          "index": 19,
+          "text": "marching",
+          "startMs": 226020,
+          "endMs": 226560,
+          "probability": 0.995248
+        },
+        {
+          "index": 20,
+          "text": "down",
+          "startMs": 226560,
+          "endMs": 227000,
+          "probability": 0.991508
+        },
+        {
+          "index": 21,
+          "text": "to",
+          "startMs": 227000,
+          "endMs": 227300,
+          "probability": 0.988437
+        },
+        {
+          "index": 22,
+          "text": "town",
+          "startMs": 227300,
+          "endMs": 227660,
+          "probability": 0.978551
+        },
+        {
+          "index": 23,
+          "text": "to",
+          "startMs": 227660,
+          "endMs": 227980,
+          "probability": 0.97237
+        },
+        {
+          "index": 24,
+          "text": "get",
+          "startMs": 227980,
+          "endMs": 228200,
+          "probability": 0.994076
+        },
+        {
+          "index": 25,
+          "text": "out",
+          "startMs": 228200,
+          "endMs": 228560,
+          "probability": 0.996779
+        },
+        {
+          "index": 26,
+          "text": "of",
+          "startMs": 228560,
+          "endMs": 228840,
+          "probability": 0.992939
+        },
+        {
+          "index": 27,
+          "text": "the",
+          "startMs": 228840,
+          "endMs": 229100,
+          "probability": 0.998143
+        },
+        {
+          "index": 28,
+          "text": "rain.",
+          "startMs": 229100,
+          "endMs": 229580,
+          "probability": 0.994575
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 230720,
+      "endMs": 232160,
+      "avgLogprob": -0.027435,
+      "noSpeechProb": 0.027839,
+      "compressionRatio": 1.808219,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 230720,
+          "endMs": 230840,
+          "probability": 0.794721
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 231340,
+          "endMs": 231420,
+          "probability": 0.988846
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 231860,
+          "endMs": 232160,
+          "probability": 0.99581
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "The Pete's Go Marching Nine by Nine, Hurrah! Hurrah! The Pete's Go Marching Nine by Nine, Hurrah! Hurrah!",
+      "startMs": 234140,
+      "endMs": 244460,
+      "avgLogprob": -0.027435,
+      "noSpeechProb": 0.027839,
+      "compressionRatio": 1.808219,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 234140,
+          "endMs": 234820,
+          "probability": 0.976066
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 234820,
+          "endMs": 235300,
+          "probability": 0.98622
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 235300,
+          "endMs": 235540,
+          "probability": 0.989469
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 235540,
+          "endMs": 236140,
+          "probability": 0.97851
+        },
+        {
+          "index": 5,
+          "text": "Nine",
+          "startMs": 236140,
+          "endMs": 236480,
+          "probability": 0.969112
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 236480,
+          "endMs": 236780,
+          "probability": 0.945886
+        },
+        {
+          "index": 7,
+          "text": "Nine,",
+          "startMs": 236780,
+          "endMs": 237320,
+          "probability": 0.98874
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 237440,
+          "endMs": 238020,
+          "probability": 0.723682
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 238720,
+          "endMs": 239260,
+          "probability": 0.986051
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 239960,
+          "endMs": 240120,
+          "probability": 0.991224
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 240120,
+          "endMs": 240560,
+          "probability": 0.995468
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 240560,
+          "endMs": 240780,
+          "probability": 0.994022
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 240780,
+          "endMs": 241400,
+          "probability": 0.985206
+        },
+        {
+          "index": 14,
+          "text": "Nine",
+          "startMs": 241400,
+          "endMs": 241740,
+          "probability": 0.997444
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 241740,
+          "endMs": 242060,
+          "probability": 0.986189
+        },
+        {
+          "index": 16,
+          "text": "Nine,",
+          "startMs": 242060,
+          "endMs": 242540,
+          "probability": 0.993342
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 242720,
+          "endMs": 243280,
+          "probability": 0.988981
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 243980,
+          "endMs": 244460,
+          "probability": 0.993942
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "The Pete's Go Marching Nine by Nine, The Groovy One stops to check the time, and they all go marching down to town to get out of the rain.",
+      "startMs": 246160,
+      "endMs": 258040,
+      "avgLogprob": -0.034159,
+      "noSpeechProb": 0.029898,
+      "compressionRatio": 1.289256,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 246160,
+          "endMs": 246920,
+          "probability": 0.692264
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 246920,
+          "endMs": 247360,
+          "probability": 0.591997
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 247360,
+          "endMs": 247560,
+          "probability": 0.083761
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 247560,
+          "endMs": 248200,
+          "probability": 0.681474
+        },
+        {
+          "index": 5,
+          "text": "Nine",
+          "startMs": 248200,
+          "endMs": 248500,
+          "probability": 0.128146
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 248500,
+          "endMs": 248840,
+          "probability": 0.611254
+        },
+        {
+          "index": 7,
+          "text": "Nine,",
+          "startMs": 248840,
+          "endMs": 249280,
+          "probability": 0.969126
+        },
+        {
+          "index": 8,
+          "text": "The",
+          "startMs": 249680,
+          "endMs": 249900,
+          "probability": 0.314169
+        },
+        {
+          "index": 9,
+          "text": "Groovy",
+          "startMs": 249900,
+          "endMs": 250360,
+          "probability": 0.938148
+        },
+        {
+          "index": 10,
+          "text": "One",
+          "startMs": 250360,
+          "endMs": 250620,
+          "probability": 0.952141
+        },
+        {
+          "index": 11,
+          "text": "stops",
+          "startMs": 250620,
+          "endMs": 251000,
+          "probability": 0.14543
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 251000,
+          "endMs": 251400,
+          "probability": 0.978135
+        },
+        {
+          "index": 13,
+          "text": "check",
+          "startMs": 251400,
+          "endMs": 251640,
+          "probability": 0.980318
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 251640,
+          "endMs": 251940,
+          "probability": 0.988367
+        },
+        {
+          "index": 15,
+          "text": "time,",
+          "startMs": 251940,
+          "endMs": 252440,
+          "probability": 0.981774
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 253260,
+          "endMs": 253660,
+          "probability": 0.377405
+        },
+        {
+          "index": 17,
+          "text": "they",
+          "startMs": 253660,
+          "endMs": 253820,
+          "probability": 0.973719
+        },
+        {
+          "index": 18,
+          "text": "all",
+          "startMs": 253820,
+          "endMs": 254200,
+          "probability": 0.99253
+        },
+        {
+          "index": 19,
+          "text": "go",
+          "startMs": 254200,
+          "endMs": 254440,
+          "probability": 0.987678
+        },
+        {
+          "index": 20,
+          "text": "marching",
+          "startMs": 254440,
+          "endMs": 255000,
+          "probability": 0.990058
+        },
+        {
+          "index": 21,
+          "text": "down",
+          "startMs": 255000,
+          "endMs": 255460,
+          "probability": 0.988081
+        },
+        {
+          "index": 22,
+          "text": "to",
+          "startMs": 255460,
+          "endMs": 255760,
+          "probability": 0.980439
+        },
+        {
+          "index": 23,
+          "text": "town",
+          "startMs": 255760,
+          "endMs": 256100,
+          "probability": 0.970472
+        },
+        {
+          "index": 24,
+          "text": "to",
+          "startMs": 256100,
+          "endMs": 256440,
+          "probability": 0.943746
+        },
+        {
+          "index": 25,
+          "text": "get",
+          "startMs": 256440,
+          "endMs": 256680,
+          "probability": 0.994563
+        },
+        {
+          "index": 26,
+          "text": "out",
+          "startMs": 256680,
+          "endMs": 257060,
+          "probability": 0.996341
+        },
+        {
+          "index": 27,
+          "text": "of",
+          "startMs": 257060,
+          "endMs": 257320,
+          "probability": 0.992764
+        },
+        {
+          "index": 28,
+          "text": "the",
+          "startMs": 257320,
+          "endMs": 257580,
+          "probability": 0.997442
+        },
+        {
+          "index": 29,
+          "text": "rain.",
+          "startMs": 257580,
+          "endMs": 258040,
+          "probability": 0.99401
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Boom! Boom! Boom!",
+      "startMs": 259300,
+      "endMs": 260620,
+      "avgLogprob": -0.034159,
+      "noSpeechProb": 0.029898,
+      "compressionRatio": 1.289256,
+      "words": [
+        {
+          "index": 1,
+          "text": "Boom!",
+          "startMs": 259300,
+          "endMs": 259300,
+          "probability": 0.578011
+        },
+        {
+          "index": 2,
+          "text": "Boom!",
+          "startMs": 259820,
+          "endMs": 259920,
+          "probability": 0.983203
+        },
+        {
+          "index": 3,
+          "text": "Boom!",
+          "startMs": 260320,
+          "endMs": 260620,
+          "probability": 0.995172
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "The Pete's Go Marching Ten by Ten, Hurrah! Hurrah! The Pete's Go Marching Ten by Ten, Hurrah! Hurrah! The Pete's Go Marching Ten by Ten, The Groovy One stops to shout, The End!",
+      "startMs": 262500,
+      "endMs": 281540,
+      "avgLogprob": -0.059863,
+      "noSpeechProb": 0.043658,
+      "compressionRatio": 1.880952,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 262500,
+          "endMs": 263340,
+          "probability": 0.806327
+        },
+        {
+          "index": 2,
+          "text": "Pete's",
+          "startMs": 263340,
+          "endMs": 263800,
+          "probability": 0.614182
+        },
+        {
+          "index": 3,
+          "text": "Go",
+          "startMs": 263800,
+          "endMs": 264020,
+          "probability": 0.059245
+        },
+        {
+          "index": 4,
+          "text": "Marching",
+          "startMs": 264020,
+          "endMs": 264680,
+          "probability": 0.731758
+        },
+        {
+          "index": 5,
+          "text": "Ten",
+          "startMs": 264680,
+          "endMs": 265000,
+          "probability": 0.700215
+        },
+        {
+          "index": 6,
+          "text": "by",
+          "startMs": 265000,
+          "endMs": 265300,
+          "probability": 0.469193
+        },
+        {
+          "index": 7,
+          "text": "Ten,",
+          "startMs": 265300,
+          "endMs": 265780,
+          "probability": 0.977789
+        },
+        {
+          "index": 8,
+          "text": "Hurrah!",
+          "startMs": 266000,
+          "endMs": 266640,
+          "probability": 0.706444
+        },
+        {
+          "index": 9,
+          "text": "Hurrah!",
+          "startMs": 267320,
+          "endMs": 267780,
+          "probability": 0.974997
+        },
+        {
+          "index": 10,
+          "text": "The",
+          "startMs": 268440,
+          "endMs": 268560,
+          "probability": 0.982863
+        },
+        {
+          "index": 11,
+          "text": "Pete's",
+          "startMs": 268560,
+          "endMs": 269020,
+          "probability": 0.99503
+        },
+        {
+          "index": 12,
+          "text": "Go",
+          "startMs": 269020,
+          "endMs": 269260,
+          "probability": 0.987879
+        },
+        {
+          "index": 13,
+          "text": "Marching",
+          "startMs": 269260,
+          "endMs": 269860,
+          "probability": 0.983349
+        },
+        {
+          "index": 14,
+          "text": "Ten",
+          "startMs": 269860,
+          "endMs": 270220,
+          "probability": 0.98989
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 270220,
+          "endMs": 270540,
+          "probability": 0.966833
+        },
+        {
+          "index": 16,
+          "text": "Ten,",
+          "startMs": 270540,
+          "endMs": 271000,
+          "probability": 0.993902
+        },
+        {
+          "index": 17,
+          "text": "Hurrah!",
+          "startMs": 271220,
+          "endMs": 271820,
+          "probability": 0.993627
+        },
+        {
+          "index": 18,
+          "text": "Hurrah!",
+          "startMs": 272560,
+          "endMs": 272960,
+          "probability": 0.962562
+        },
+        {
+          "index": 19,
+          "text": "The",
+          "startMs": 273700,
+          "endMs": 273820,
+          "probability": 0.987576
+        },
+        {
+          "index": 20,
+          "text": "Pete's",
+          "startMs": 273820,
+          "endMs": 274280,
+          "probability": 0.996759
+        },
+        {
+          "index": 21,
+          "text": "Go",
+          "startMs": 274280,
+          "endMs": 274520,
+          "probability": 0.992351
+        },
+        {
+          "index": 22,
+          "text": "Marching",
+          "startMs": 274520,
+          "endMs": 275160,
+          "probability": 0.99085
+        },
+        {
+          "index": 23,
+          "text": "Ten",
+          "startMs": 275160,
+          "endMs": 275520,
+          "probability": 0.994134
+        },
+        {
+          "index": 24,
+          "text": "by",
+          "startMs": 275520,
+          "endMs": 275820,
+          "probability": 0.981867
+        },
+        {
+          "index": 25,
+          "text": "Ten,",
+          "startMs": 275820,
+          "endMs": 276240,
+          "probability": 0.99441
+        },
+        {
+          "index": 26,
+          "text": "The",
+          "startMs": 276820,
+          "endMs": 278540,
+          "probability": 0.746427
+        },
+        {
+          "index": 27,
+          "text": "Groovy",
+          "startMs": 278540,
+          "endMs": 279020,
+          "probability": 0.782957
+        },
+        {
+          "index": 28,
+          "text": "One",
+          "startMs": 279020,
+          "endMs": 279260,
+          "probability": 0.91342
+        },
+        {
+          "index": 29,
+          "text": "stops",
+          "startMs": 279260,
+          "endMs": 279580,
+          "probability": 0.133498
+        },
+        {
+          "index": 30,
+          "text": "to",
+          "startMs": 279580,
+          "endMs": 280020,
+          "probability": 0.99174
+        },
+        {
+          "index": 31,
+          "text": "shout,",
+          "startMs": 280020,
+          "endMs": 280300,
+          "probability": 0.974993
+        },
+        {
+          "index": 32,
+          "text": "The",
+          "startMs": 280900,
+          "endMs": 281000,
+          "probability": 0.136707
+        },
+        {
+          "index": 33,
+          "text": "End!",
+          "startMs": 281000,
+          "endMs": 281540,
+          "probability": 0.897647
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "And they all cheer for Pete the Cat to rock out in the rain.",
+      "startMs": 282720,
+      "endMs": 287260,
+      "avgLogprob": -0.059863,
+      "noSpeechProb": 0.043658,
+      "compressionRatio": 1.880952,
+      "words": [
+        {
+          "index": 1,
+          "text": "And",
+          "startMs": 282720,
+          "endMs": 283000,
+          "probability": 0.807042
+        },
+        {
+          "index": 2,
+          "text": "they",
+          "startMs": 283000,
+          "endMs": 283180,
+          "probability": 0.972442
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 283180,
+          "endMs": 283580,
+          "probability": 0.995652
+        },
+        {
+          "index": 4,
+          "text": "cheer",
+          "startMs": 283580,
+          "endMs": 284000,
+          "probability": 0.989438
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 284000,
+          "endMs": 284360,
+          "probability": 0.934166
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 284360,
+          "endMs": 284680,
+          "probability": 0.991984
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 284680,
+          "endMs": 285100,
+          "probability": 0.944515
+        },
+        {
+          "index": 8,
+          "text": "Cat",
+          "startMs": 285100,
+          "endMs": 285280,
+          "probability": 0.946732
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 285280,
+          "endMs": 285700,
+          "probability": 0.873082
+        },
+        {
+          "index": 10,
+          "text": "rock",
+          "startMs": 285700,
+          "endMs": 285920,
+          "probability": 0.941781
+        },
+        {
+          "index": 11,
+          "text": "out",
+          "startMs": 285920,
+          "endMs": 286260,
+          "probability": 0.994054
+        },
+        {
+          "index": 12,
+          "text": "in",
+          "startMs": 286260,
+          "endMs": 286560,
+          "probability": 0.994453
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 286560,
+          "endMs": 286840,
+          "probability": 0.997703
+        },
+        {
+          "index": 14,
+          "text": "rain.",
+          "startMs": 286840,
+          "endMs": 287260,
+          "probability": 0.989656
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "We hope you have enjoyed this recording of Pete the Cat, The Pete's Go Marching by James Dean. This program was produced by John Marshall Media.",
+      "startMs": 290620,
+      "endMs": 301520,
+      "avgLogprob": -0.108237,
+      "noSpeechProb": 0.286154,
+      "compressionRatio": 1.551724,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 290620,
+          "endMs": 290840,
+          "probability": 0.900691
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 290840,
+          "endMs": 291080,
+          "probability": 0.997936
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 291080,
+          "endMs": 291300,
+          "probability": 0.99788
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 291300,
+          "endMs": 291460,
+          "probability": 0.994211
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 291460,
+          "endMs": 291800,
+          "probability": 0.998811
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 291800,
+          "endMs": 292060,
+          "probability": 0.997372
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 292060,
+          "endMs": 292580,
+          "probability": 0.996512
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 292580,
+          "endMs": 293160,
+          "probability": 0.996327
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 293160,
+          "endMs": 293680,
+          "probability": 0.835805
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 293680,
+          "endMs": 294000,
+          "probability": 0.907422
+        },
+        {
+          "index": 11,
+          "text": "Cat,",
+          "startMs": 294000,
+          "endMs": 294320,
+          "probability": 0.788024
+        },
+        {
+          "index": 12,
+          "text": "The",
+          "startMs": 294760,
+          "endMs": 294900,
+          "probability": 0.528556
+        },
+        {
+          "index": 13,
+          "text": "Pete's",
+          "startMs": 294900,
+          "endMs": 295380,
+          "probability": 0.916515
+        },
+        {
+          "index": 14,
+          "text": "Go",
+          "startMs": 295380,
+          "endMs": 295580,
+          "probability": 0.892767
+        },
+        {
+          "index": 15,
+          "text": "Marching",
+          "startMs": 295580,
+          "endMs": 296300,
+          "probability": 0.909164
+        },
+        {
+          "index": 16,
+          "text": "by",
+          "startMs": 296300,
+          "endMs": 296720,
+          "probability": 0.794481
+        },
+        {
+          "index": 17,
+          "text": "James",
+          "startMs": 296720,
+          "endMs": 297260,
+          "probability": 0.996933
+        },
+        {
+          "index": 18,
+          "text": "Dean.",
+          "startMs": 297260,
+          "endMs": 297600,
+          "probability": 0.810915
+        },
+        {
+          "index": 19,
+          "text": "This",
+          "startMs": 298740,
+          "endMs": 298780,
+          "probability": 0.992347
+        },
+        {
+          "index": 20,
+          "text": "program",
+          "startMs": 298780,
+          "endMs": 299220,
+          "probability": 0.974337
+        },
+        {
+          "index": 21,
+          "text": "was",
+          "startMs": 299220,
+          "endMs": 299500,
+          "probability": 0.997864
+        },
+        {
+          "index": 22,
+          "text": "produced",
+          "startMs": 299500,
+          "endMs": 299920,
+          "probability": 0.999213
+        },
+        {
+          "index": 23,
+          "text": "by",
+          "startMs": 299920,
+          "endMs": 300260,
+          "probability": 0.998829
+        },
+        {
+          "index": 24,
+          "text": "John",
+          "startMs": 300260,
+          "endMs": 300600,
+          "probability": 0.973196
+        },
+        {
+          "index": 25,
+          "text": "Marshall",
+          "startMs": 300600,
+          "endMs": 300920,
+          "probability": 0.978366
+        },
+        {
+          "index": 26,
+          "text": "Media.",
+          "startMs": 300920,
+          "endMs": 301520,
+          "probability": 0.930792
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Art copyright 2018 by James Dean. Pete the Cat is a registered trademark of Pete the Cat LLC. Production copyright 2018 by Harper Collins Publishers. All rights reserved.",
+      "startMs": 302680,
+      "endMs": 317480,
+      "avgLogprob": -0.108237,
+      "noSpeechProb": 0.286154,
+      "compressionRatio": 1.551724,
+      "words": [
+        {
+          "index": 1,
+          "text": "Art",
+          "startMs": 302680,
+          "endMs": 302720,
+          "probability": 0.841552
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 302720,
+          "endMs": 303280,
+          "probability": 0.75444
+        },
+        {
+          "index": 3,
+          "text": "2018",
+          "startMs": 303280,
+          "endMs": 304040,
+          "probability": 0.729007
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 304040,
+          "endMs": 304840,
+          "probability": 0.95897
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 304840,
+          "endMs": 305280,
+          "probability": 0.996984
+        },
+        {
+          "index": 6,
+          "text": "Dean.",
+          "startMs": 305280,
+          "endMs": 305700,
+          "probability": 0.989824
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 306660,
+          "endMs": 306760,
+          "probability": 0.983118
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 306760,
+          "endMs": 306940,
+          "probability": 0.955482
+        },
+        {
+          "index": 9,
+          "text": "Cat",
+          "startMs": 306940,
+          "endMs": 307180,
+          "probability": 0.962373
+        },
+        {
+          "index": 10,
+          "text": "is",
+          "startMs": 307180,
+          "endMs": 307400,
+          "probability": 0.990892
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 307400,
+          "endMs": 307580,
+          "probability": 0.998213
+        },
+        {
+          "index": 12,
+          "text": "registered",
+          "startMs": 307580,
+          "endMs": 307940,
+          "probability": 0.991006
+        },
+        {
+          "index": 13,
+          "text": "trademark",
+          "startMs": 307940,
+          "endMs": 308580,
+          "probability": 0.996092
+        },
+        {
+          "index": 14,
+          "text": "of",
+          "startMs": 308580,
+          "endMs": 308940,
+          "probability": 0.996977
+        },
+        {
+          "index": 15,
+          "text": "Pete",
+          "startMs": 308940,
+          "endMs": 309220,
+          "probability": 0.939812
+        },
+        {
+          "index": 16,
+          "text": "the",
+          "startMs": 309220,
+          "endMs": 309420,
+          "probability": 0.956497
+        },
+        {
+          "index": 17,
+          "text": "Cat",
+          "startMs": 309420,
+          "endMs": 309720,
+          "probability": 0.978842
+        },
+        {
+          "index": 18,
+          "text": "LLC.",
+          "startMs": 309720,
+          "endMs": 310460,
+          "probability": 0.722098
+        },
+        {
+          "index": 19,
+          "text": "Production",
+          "startMs": 311480,
+          "endMs": 311740,
+          "probability": 0.981137
+        },
+        {
+          "index": 20,
+          "text": "copyright",
+          "startMs": 311740,
+          "endMs": 312400,
+          "probability": 0.978329
+        },
+        {
+          "index": 21,
+          "text": "2018",
+          "startMs": 312400,
+          "endMs": 313440,
+          "probability": 0.964732
+        },
+        {
+          "index": 22,
+          "text": "by",
+          "startMs": 313440,
+          "endMs": 313980,
+          "probability": 0.974134
+        },
+        {
+          "index": 23,
+          "text": "Harper",
+          "startMs": 313980,
+          "endMs": 314320,
+          "probability": 0.996079
+        },
+        {
+          "index": 24,
+          "text": "Collins",
+          "startMs": 314320,
+          "endMs": 314780,
+          "probability": 0.518687
+        },
+        {
+          "index": 25,
+          "text": "Publishers.",
+          "startMs": 314780,
+          "endMs": 315380,
+          "probability": 0.860484
+        },
+        {
+          "index": 26,
+          "text": "All",
+          "startMs": 316200,
+          "endMs": 316540,
+          "probability": 0.99641
+        },
+        {
+          "index": 27,
+          "text": "rights",
+          "startMs": 316540,
+          "endMs": 316840,
+          "probability": 0.994894
+        },
+        {
+          "index": 28,
+          "text": "reserved.",
+          "startMs": 316840,
+          "endMs": 317480,
+          "probability": 0.994466
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5273 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 81.221,
+  "text": "Welcome to the wonderful... Pete the Cat wakes up and gets ready for school. He has show and tell today. There is no school today, says Pete's mom. It's a snow day. Hooray! Yells Pete. Let's go sledding, says Pete. Great idea, says his brother Bob. Pete puts on his hat, boots and mittens. I'm ready to go, he says. On the way, Pete makes snowballs. He throws one at Bob. Bob throws one back. Pete makes a snow cat. Snow days are way more fun than school days, he says. Sledding hill, here we come, says Pete. He can't wait to get there. Pete waves to Callie. Come sledding with us, he says. The hill is big. Trey and Emma look small at the top. Crunch crunch goes the snow. As Pete, Bob and Callie go up up up. Weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee Pete wakes up to more snow. It's not a school day. It's another snow day. Pete makes a snow fort. He throws snowballs. He makes a snow dog. Then he has fun sledding. He can't wait to tell his kids about snow. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He is a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He tells everyone about the fun he had in the snow. I love snow days, says Pete, but I love school best. We hope you have enjoyed this recording of Pete the Cat Snow Days by James Dean. This program was produced by John Marshall Media. Copyright 2016 by James Dean. Production copyright 2016 by Harper Collins Publishers. All rights reserved.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Welcome to the wonderful...",
+      "startMs": 3040,
+      "endMs": 5000,
+      "avgLogprob": -0.265553,
+      "noSpeechProb": 0.104529,
+      "compressionRatio": 1.343066,
+      "words": [
+        {
+          "index": 1,
+          "text": "Welcome",
+          "startMs": 3040,
+          "endMs": 3760,
+          "probability": 0.594555
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 3760,
+          "endMs": 4200,
+          "probability": 0.990646
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 4200,
+          "endMs": 4380,
+          "probability": 0.97497
+        },
+        {
+          "index": 4,
+          "text": "wonderful...",
+          "startMs": 4380,
+          "endMs": 5000,
+          "probability": 0.570243
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "Pete the Cat wakes up and gets ready for school.",
+      "startMs": 8980,
+      "endMs": 12960,
+      "avgLogprob": -0.265553,
+      "noSpeechProb": 0.104529,
+      "compressionRatio": 1.343066,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 8980,
+          "endMs": 9700,
+          "probability": 0.976796
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 9700,
+          "endMs": 9980,
+          "probability": 0.938568
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 9980,
+          "endMs": 10320,
+          "probability": 0.622517
+        },
+        {
+          "index": 4,
+          "text": "wakes",
+          "startMs": 10320,
+          "endMs": 10640,
+          "probability": 0.893808
+        },
+        {
+          "index": 5,
+          "text": "up",
+          "startMs": 10640,
+          "endMs": 11080,
+          "probability": 0.998343
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 11080,
+          "endMs": 11500,
+          "probability": 0.932066
+        },
+        {
+          "index": 7,
+          "text": "gets",
+          "startMs": 11500,
+          "endMs": 11840,
+          "probability": 0.976101
+        },
+        {
+          "index": 8,
+          "text": "ready",
+          "startMs": 11840,
+          "endMs": 12160,
+          "probability": 0.999347
+        },
+        {
+          "index": 9,
+          "text": "for",
+          "startMs": 12160,
+          "endMs": 12500,
+          "probability": 0.998788
+        },
+        {
+          "index": 10,
+          "text": "school.",
+          "startMs": 12500,
+          "endMs": 12960,
+          "probability": 0.992764
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "He has show and tell today.",
+      "startMs": 13920,
+      "endMs": 15800,
+      "avgLogprob": -0.265553,
+      "noSpeechProb": 0.104529,
+      "compressionRatio": 1.343066,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 13920,
+          "endMs": 14180,
+          "probability": 0.917422
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 14180,
+          "endMs": 14480,
+          "probability": 0.997465
+        },
+        {
+          "index": 3,
+          "text": "show",
+          "startMs": 14480,
+          "endMs": 14820,
+          "probability": 0.927085
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 14820,
+          "endMs": 15020,
+          "probability": 0.818798
+        },
+        {
+          "index": 5,
+          "text": "tell",
+          "startMs": 15020,
+          "endMs": 15340,
+          "probability": 0.997033
+        },
+        {
+          "index": 6,
+          "text": "today.",
+          "startMs": 15340,
+          "endMs": 15800,
+          "probability": 0.996564
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "There is no school today, says Pete's mom.",
+      "startMs": 17800,
+      "endMs": 21040,
+      "avgLogprob": -0.265553,
+      "noSpeechProb": 0.104529,
+      "compressionRatio": 1.343066,
+      "words": [
+        {
+          "index": 1,
+          "text": "There",
+          "startMs": 17800,
+          "endMs": 18180,
+          "probability": 0.520021
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 18180,
+          "endMs": 18380,
+          "probability": 0.992462
+        },
+        {
+          "index": 3,
+          "text": "no",
+          "startMs": 18380,
+          "endMs": 18640,
+          "probability": 0.998524
+        },
+        {
+          "index": 4,
+          "text": "school",
+          "startMs": 18640,
+          "endMs": 18960,
+          "probability": 0.998112
+        },
+        {
+          "index": 5,
+          "text": "today,",
+          "startMs": 18960,
+          "endMs": 19700,
+          "probability": 0.998161
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 19960,
+          "endMs": 20280,
+          "probability": 0.981501
+        },
+        {
+          "index": 7,
+          "text": "Pete's",
+          "startMs": 20280,
+          "endMs": 20820,
+          "probability": 0.983962
+        },
+        {
+          "index": 8,
+          "text": "mom.",
+          "startMs": 20820,
+          "endMs": 21040,
+          "probability": 0.907504
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "It's a snow day.",
+      "startMs": 21980,
+      "endMs": 23160,
+      "avgLogprob": -0.265553,
+      "noSpeechProb": 0.104529,
+      "compressionRatio": 1.343066,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 21980,
+          "endMs": 22160,
+          "probability": 0.978406
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 22160,
+          "endMs": 22300,
+          "probability": 0.994235
+        },
+        {
+          "index": 3,
+          "text": "snow",
+          "startMs": 22300,
+          "endMs": 22700,
+          "probability": 0.991743
+        },
+        {
+          "index": 4,
+          "text": "day.",
+          "startMs": 22700,
+          "endMs": 23160,
+          "probability": 0.990652
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Hooray!",
+      "startMs": 24920,
+      "endMs": 25640,
+      "avgLogprob": -0.265553,
+      "noSpeechProb": 0.104529,
+      "compressionRatio": 1.343066,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hooray!",
+          "startMs": 24920,
+          "endMs": 25640,
+          "probability": 0.925039
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Yells Pete.",
+      "startMs": 26560,
+      "endMs": 27140,
+      "avgLogprob": -0.265553,
+      "noSpeechProb": 0.104529,
+      "compressionRatio": 1.343066,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yells",
+          "startMs": 26560,
+          "endMs": 26720,
+          "probability": 0.661327
+        },
+        {
+          "index": 2,
+          "text": "Pete.",
+          "startMs": 26720,
+          "endMs": 27140,
+          "probability": 0.995876
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Let's go sledding, says Pete.",
+      "startMs": 27880,
+      "endMs": 30700,
+      "avgLogprob": -0.087756,
+      "noSpeechProb": 0.060575,
+      "compressionRatio": 1.493506,
+      "words": [
+        {
+          "index": 1,
+          "text": "Let's",
+          "startMs": 27880,
+          "endMs": 28620,
+          "probability": 0.616497
+        },
+        {
+          "index": 2,
+          "text": "go",
+          "startMs": 28620,
+          "endMs": 28840,
+          "probability": 0.989012
+        },
+        {
+          "index": 3,
+          "text": "sledding,",
+          "startMs": 28840,
+          "endMs": 29880,
+          "probability": 0.997078
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 29900,
+          "endMs": 30280,
+          "probability": 0.973125
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 30280,
+          "endMs": 30700,
+          "probability": 0.990573
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Great idea, says his brother Bob.",
+      "startMs": 31580,
+      "endMs": 34100,
+      "avgLogprob": -0.087756,
+      "noSpeechProb": 0.060575,
+      "compressionRatio": 1.493506,
+      "words": [
+        {
+          "index": 1,
+          "text": "Great",
+          "startMs": 31580,
+          "endMs": 31780,
+          "probability": 0.945051
+        },
+        {
+          "index": 2,
+          "text": "idea,",
+          "startMs": 31780,
+          "endMs": 32480,
+          "probability": 0.985583
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 32860,
+          "endMs": 33060,
+          "probability": 0.996416
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 33060,
+          "endMs": 33320,
+          "probability": 0.997071
+        },
+        {
+          "index": 5,
+          "text": "brother",
+          "startMs": 33320,
+          "endMs": 33700,
+          "probability": 0.995839
+        },
+        {
+          "index": 6,
+          "text": "Bob.",
+          "startMs": 33700,
+          "endMs": 34100,
+          "probability": 0.644312
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Pete puts on his hat, boots and mittens.",
+      "startMs": 36360,
+      "endMs": 39100,
+      "avgLogprob": -0.087756,
+      "noSpeechProb": 0.060575,
+      "compressionRatio": 1.493506,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 36360,
+          "endMs": 36580,
+          "probability": 0.994136
+        },
+        {
+          "index": 2,
+          "text": "puts",
+          "startMs": 36580,
+          "endMs": 36980,
+          "probability": 0.98768
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 36980,
+          "endMs": 37260,
+          "probability": 0.998544
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 37260,
+          "endMs": 37480,
+          "probability": 0.998333
+        },
+        {
+          "index": 5,
+          "text": "hat,",
+          "startMs": 37480,
+          "endMs": 37860,
+          "probability": 0.994632
+        },
+        {
+          "index": 6,
+          "text": "boots",
+          "startMs": 38300,
+          "endMs": 38460,
+          "probability": 0.996704
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 38460,
+          "endMs": 38780,
+          "probability": 0.450271
+        },
+        {
+          "index": 8,
+          "text": "mittens.",
+          "startMs": 38780,
+          "endMs": 39100,
+          "probability": 0.968694
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "I'm ready to go, he says.",
+      "startMs": 40200,
+      "endMs": 42760,
+      "avgLogprob": -0.087756,
+      "noSpeechProb": 0.060575,
+      "compressionRatio": 1.493506,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 40200,
+          "endMs": 40720,
+          "probability": 0.985177
+        },
+        {
+          "index": 2,
+          "text": "ready",
+          "startMs": 40720,
+          "endMs": 40920,
+          "probability": 0.998741
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 40920,
+          "endMs": 41240,
+          "probability": 0.999381
+        },
+        {
+          "index": 4,
+          "text": "go,",
+          "startMs": 41240,
+          "endMs": 41700,
+          "probability": 0.999504
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 42140,
+          "endMs": 42360,
+          "probability": 0.995754
+        },
+        {
+          "index": 6,
+          "text": "says.",
+          "startMs": 42360,
+          "endMs": 42760,
+          "probability": 0.997705
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "On the way, Pete makes snowballs.",
+      "startMs": 44920,
+      "endMs": 47420,
+      "avgLogprob": -0.087756,
+      "noSpeechProb": 0.060575,
+      "compressionRatio": 1.493506,
+      "words": [
+        {
+          "index": 1,
+          "text": "On",
+          "startMs": 44920,
+          "endMs": 45280,
+          "probability": 0.989877
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 45280,
+          "endMs": 45440,
+          "probability": 0.999309
+        },
+        {
+          "index": 3,
+          "text": "way,",
+          "startMs": 45440,
+          "endMs": 45800,
+          "probability": 0.999409
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 46260,
+          "endMs": 46380,
+          "probability": 0.997545
+        },
+        {
+          "index": 5,
+          "text": "makes",
+          "startMs": 46380,
+          "endMs": 46700,
+          "probability": 0.991011
+        },
+        {
+          "index": 6,
+          "text": "snowballs.",
+          "startMs": 46700,
+          "endMs": 47420,
+          "probability": 0.922209
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "He throws one at Bob.",
+      "startMs": 48260,
+      "endMs": 49460,
+      "avgLogprob": -0.087756,
+      "noSpeechProb": 0.060575,
+      "compressionRatio": 1.493506,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 48260,
+          "endMs": 48400,
+          "probability": 0.996295
+        },
+        {
+          "index": 2,
+          "text": "throws",
+          "startMs": 48400,
+          "endMs": 48660,
+          "probability": 0.999122
+        },
+        {
+          "index": 3,
+          "text": "one",
+          "startMs": 48660,
+          "endMs": 48920,
+          "probability": 0.996534
+        },
+        {
+          "index": 4,
+          "text": "at",
+          "startMs": 48920,
+          "endMs": 49100,
+          "probability": 0.997813
+        },
+        {
+          "index": 5,
+          "text": "Bob.",
+          "startMs": 49100,
+          "endMs": 49460,
+          "probability": 0.996716
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Bob throws one back.",
+      "startMs": 50260,
+      "endMs": 51720,
+      "avgLogprob": -0.087756,
+      "noSpeechProb": 0.060575,
+      "compressionRatio": 1.493506,
+      "words": [
+        {
+          "index": 1,
+          "text": "Bob",
+          "startMs": 50260,
+          "endMs": 50520,
+          "probability": 0.997987
+        },
+        {
+          "index": 2,
+          "text": "throws",
+          "startMs": 50520,
+          "endMs": 50900,
+          "probability": 0.997556
+        },
+        {
+          "index": 3,
+          "text": "one",
+          "startMs": 50900,
+          "endMs": 51280,
+          "probability": 0.99853
+        },
+        {
+          "index": 4,
+          "text": "back.",
+          "startMs": 51280,
+          "endMs": 51720,
+          "probability": 0.999023
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Pete makes a snow cat.",
+      "startMs": 53860,
+      "endMs": 55540,
+      "avgLogprob": -0.087756,
+      "noSpeechProb": 0.060575,
+      "compressionRatio": 1.493506,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 53860,
+          "endMs": 54160,
+          "probability": 0.997076
+        },
+        {
+          "index": 2,
+          "text": "makes",
+          "startMs": 54160,
+          "endMs": 54520,
+          "probability": 0.997045
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 54520,
+          "endMs": 54780,
+          "probability": 0.990395
+        },
+        {
+          "index": 4,
+          "text": "snow",
+          "startMs": 54780,
+          "endMs": 55140,
+          "probability": 0.980273
+        },
+        {
+          "index": 5,
+          "text": "cat.",
+          "startMs": 55140,
+          "endMs": 55540,
+          "probability": 0.739761
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Snow days are way more fun than school days, he says.",
+      "startMs": 56380,
+      "endMs": 61220,
+      "avgLogprob": -0.082395,
+      "noSpeechProb": 0.014325,
+      "compressionRatio": 1.467949,
+      "words": [
+        {
+          "index": 1,
+          "text": "Snow",
+          "startMs": 56380,
+          "endMs": 57120,
+          "probability": 0.805506
+        },
+        {
+          "index": 2,
+          "text": "days",
+          "startMs": 57120,
+          "endMs": 57480,
+          "probability": 0.979278
+        },
+        {
+          "index": 3,
+          "text": "are",
+          "startMs": 57480,
+          "endMs": 57740,
+          "probability": 0.997579
+        },
+        {
+          "index": 4,
+          "text": "way",
+          "startMs": 57740,
+          "endMs": 58080,
+          "probability": 0.988941
+        },
+        {
+          "index": 5,
+          "text": "more",
+          "startMs": 58080,
+          "endMs": 58340,
+          "probability": 0.998934
+        },
+        {
+          "index": 6,
+          "text": "fun",
+          "startMs": 58340,
+          "endMs": 58660,
+          "probability": 0.998413
+        },
+        {
+          "index": 7,
+          "text": "than",
+          "startMs": 58660,
+          "endMs": 58900,
+          "probability": 0.981945
+        },
+        {
+          "index": 8,
+          "text": "school",
+          "startMs": 58900,
+          "endMs": 59440,
+          "probability": 0.99163
+        },
+        {
+          "index": 9,
+          "text": "days,",
+          "startMs": 59440,
+          "endMs": 60020,
+          "probability": 0.997636
+        },
+        {
+          "index": 10,
+          "text": "he",
+          "startMs": 60620,
+          "endMs": 60780,
+          "probability": 0.983547
+        },
+        {
+          "index": 11,
+          "text": "says.",
+          "startMs": 60780,
+          "endMs": 61220,
+          "probability": 0.994299
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Sledding hill, here we come, says Pete.",
+      "startMs": 63520,
+      "endMs": 67380,
+      "avgLogprob": -0.082395,
+      "noSpeechProb": 0.014325,
+      "compressionRatio": 1.467949,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sledding",
+          "startMs": 63520,
+          "endMs": 64260,
+          "probability": 0.887268
+        },
+        {
+          "index": 2,
+          "text": "hill,",
+          "startMs": 64260,
+          "endMs": 64600,
+          "probability": 0.752594
+        },
+        {
+          "index": 3,
+          "text": "here",
+          "startMs": 65020,
+          "endMs": 65380,
+          "probability": 0.990594
+        },
+        {
+          "index": 4,
+          "text": "we",
+          "startMs": 65380,
+          "endMs": 65640,
+          "probability": 0.998353
+        },
+        {
+          "index": 5,
+          "text": "come,",
+          "startMs": 65640,
+          "endMs": 66220,
+          "probability": 0.999032
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 66700,
+          "endMs": 67000,
+          "probability": 0.989132
+        },
+        {
+          "index": 7,
+          "text": "Pete.",
+          "startMs": 67000,
+          "endMs": 67380,
+          "probability": 0.982636
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "He can't wait to get there.",
+      "startMs": 68040,
+      "endMs": 70100,
+      "avgLogprob": -0.082395,
+      "noSpeechProb": 0.014325,
+      "compressionRatio": 1.467949,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 68040,
+          "endMs": 68260,
+          "probability": 0.996406
+        },
+        {
+          "index": 2,
+          "text": "can't",
+          "startMs": 68260,
+          "endMs": 68760,
+          "probability": 0.991771
+        },
+        {
+          "index": 3,
+          "text": "wait",
+          "startMs": 68760,
+          "endMs": 69100,
+          "probability": 0.999581
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 69100,
+          "endMs": 69380,
+          "probability": 0.99961
+        },
+        {
+          "index": 5,
+          "text": "get",
+          "startMs": 69380,
+          "endMs": 69660,
+          "probability": 0.999458
+        },
+        {
+          "index": 6,
+          "text": "there.",
+          "startMs": 69660,
+          "endMs": 70100,
+          "probability": 0.998915
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Pete waves to Callie.",
+      "startMs": 72240,
+      "endMs": 73560,
+      "avgLogprob": -0.082395,
+      "noSpeechProb": 0.014325,
+      "compressionRatio": 1.467949,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 72240,
+          "endMs": 72520,
+          "probability": 0.99628
+        },
+        {
+          "index": 2,
+          "text": "waves",
+          "startMs": 72520,
+          "endMs": 72840,
+          "probability": 0.987067
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 72840,
+          "endMs": 73100,
+          "probability": 0.99855
+        },
+        {
+          "index": 4,
+          "text": "Callie.",
+          "startMs": 73100,
+          "endMs": 73560,
+          "probability": 0.678639
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Come sledding with us, he says.",
+      "startMs": 74560,
+      "endMs": 76840,
+      "avgLogprob": -0.082395,
+      "noSpeechProb": 0.014325,
+      "compressionRatio": 1.467949,
+      "words": [
+        {
+          "index": 1,
+          "text": "Come",
+          "startMs": 74560,
+          "endMs": 74740,
+          "probability": 0.992808
+        },
+        {
+          "index": 2,
+          "text": "sledding",
+          "startMs": 74740,
+          "endMs": 75260,
+          "probability": 0.996201
+        },
+        {
+          "index": 3,
+          "text": "with",
+          "startMs": 75260,
+          "endMs": 75440,
+          "probability": 0.999464
+        },
+        {
+          "index": 4,
+          "text": "us,",
+          "startMs": 75440,
+          "endMs": 75980,
+          "probability": 0.999293
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 76220,
+          "endMs": 76460,
+          "probability": 0.993525
+        },
+        {
+          "index": 6,
+          "text": "says.",
+          "startMs": 76460,
+          "endMs": 76840,
+          "probability": 0.997102
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "The hill is big.",
+      "startMs": 78480,
+      "endMs": 80640,
+      "avgLogprob": -0.082395,
+      "noSpeechProb": 0.014325,
+      "compressionRatio": 1.467949,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 78480,
+          "endMs": 79220,
+          "probability": 0.994966
+        },
+        {
+          "index": 2,
+          "text": "hill",
+          "startMs": 79220,
+          "endMs": 79540,
+          "probability": 0.993495
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 79540,
+          "endMs": 80000,
+          "probability": 0.998903
+        },
+        {
+          "index": 4,
+          "text": "big.",
+          "startMs": 80000,
+          "endMs": 80640,
+          "probability": 0.998634
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Trey and Emma look small at the top.",
+      "startMs": 82000,
+      "endMs": 84320,
+      "avgLogprob": -0.082395,
+      "noSpeechProb": 0.014325,
+      "compressionRatio": 1.467949,
+      "words": [
+        {
+          "index": 1,
+          "text": "Trey",
+          "startMs": 82000,
+          "endMs": 82000,
+          "probability": 0.823989
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 82000,
+          "endMs": 82280,
+          "probability": 0.998452
+        },
+        {
+          "index": 3,
+          "text": "Emma",
+          "startMs": 82280,
+          "endMs": 82700,
+          "probability": 0.994577
+        },
+        {
+          "index": 4,
+          "text": "look",
+          "startMs": 82700,
+          "endMs": 82960,
+          "probability": 0.96737
+        },
+        {
+          "index": 5,
+          "text": "small",
+          "startMs": 82960,
+          "endMs": 83540,
+          "probability": 0.997763
+        },
+        {
+          "index": 6,
+          "text": "at",
+          "startMs": 83540,
+          "endMs": 83780,
+          "probability": 0.997093
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 83780,
+          "endMs": 83960,
+          "probability": 0.999213
+        },
+        {
+          "index": 8,
+          "text": "top.",
+          "startMs": 83960,
+          "endMs": 84320,
+          "probability": 0.999767
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Crunch crunch goes the snow.",
+      "startMs": 89500,
+      "endMs": 92400,
+      "avgLogprob": -0.103403,
+      "noSpeechProb": 0.007121,
+      "compressionRatio": 12.055556,
+      "words": [
+        {
+          "index": 1,
+          "text": "Crunch",
+          "startMs": 89500,
+          "endMs": 90500,
+          "probability": 0.679292
+        },
+        {
+          "index": 2,
+          "text": "crunch",
+          "startMs": 90500,
+          "endMs": 91140,
+          "probability": 0.560058
+        },
+        {
+          "index": 3,
+          "text": "goes",
+          "startMs": 91140,
+          "endMs": 91620,
+          "probability": 0.960749
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 91620,
+          "endMs": 91940,
+          "probability": 0.974354
+        },
+        {
+          "index": 5,
+          "text": "snow.",
+          "startMs": 91940,
+          "endMs": 92400,
+          "probability": 0.983426
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "As Pete, Bob and Callie go up up up.",
+      "startMs": 92900,
+      "endMs": 97680,
+      "avgLogprob": -0.103403,
+      "noSpeechProb": 0.007121,
+      "compressionRatio": 12.055556,
+      "words": [
+        {
+          "index": 1,
+          "text": "As",
+          "startMs": 92900,
+          "endMs": 93080,
+          "probability": 0.968342
+        },
+        {
+          "index": 2,
+          "text": "Pete,",
+          "startMs": 93080,
+          "endMs": 93480,
+          "probability": 0.977837
+        },
+        {
+          "index": 3,
+          "text": "Bob",
+          "startMs": 94120,
+          "endMs": 94120,
+          "probability": 0.995245
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 94120,
+          "endMs": 94440,
+          "probability": 0.601445
+        },
+        {
+          "index": 5,
+          "text": "Callie",
+          "startMs": 94440,
+          "endMs": 94980,
+          "probability": 0.691929
+        },
+        {
+          "index": 6,
+          "text": "go",
+          "startMs": 94980,
+          "endMs": 95360,
+          "probability": 0.983327
+        },
+        {
+          "index": 7,
+          "text": "up",
+          "startMs": 95360,
+          "endMs": 95860,
+          "probability": 0.952123
+        },
+        {
+          "index": 8,
+          "text": "up",
+          "startMs": 95860,
+          "endMs": 96580,
+          "probability": 0.465408
+        },
+        {
+          "index": 9,
+          "text": "up.",
+          "startMs": 96580,
+          "endMs": 97680,
+          "probability": 0.976422
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "startMs": 123000,
+      "endMs": 124400,
+      "avgLogprob": -0.087266,
+      "noSpeechProb": 0.00993,
+      "compressionRatio": 52.352941,
+      "words": [
+        {
+          "index": 1,
+          "text": "Weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "startMs": 123000,
+          "endMs": 124400,
+          "probability": 0.829848
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Pete wakes up to more snow. It's not a school day. It's another snow day. Pete makes a snow fort. He throws snowballs. He makes a snow dog. Then he has fun sledding. He can't wait to tell his kids about snow. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog.",
+      "startMs": 131320,
+      "endMs": 154380,
+      "avgLogprob": -0.137984,
+      "noSpeechProb": 0.494605,
+      "compressionRatio": 4.621622,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 131320,
+          "endMs": 132040,
+          "probability": 0.194829
+        },
+        {
+          "index": 2,
+          "text": "wakes",
+          "startMs": 132040,
+          "endMs": 132360,
+          "probability": 0.492108
+        },
+        {
+          "index": 3,
+          "text": "up",
+          "startMs": 132360,
+          "endMs": 132700,
+          "probability": 0.99711
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 132700,
+          "endMs": 132920,
+          "probability": 0.989697
+        },
+        {
+          "index": 5,
+          "text": "more",
+          "startMs": 132920,
+          "endMs": 133140,
+          "probability": 0.992767
+        },
+        {
+          "index": 6,
+          "text": "snow.",
+          "startMs": 133140,
+          "endMs": 133640,
+          "probability": 0.996613
+        },
+        {
+          "index": 7,
+          "text": "It's",
+          "startMs": 134540,
+          "endMs": 134720,
+          "probability": 0.913967
+        },
+        {
+          "index": 8,
+          "text": "not",
+          "startMs": 134720,
+          "endMs": 134920,
+          "probability": 0.951722
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 134920,
+          "endMs": 135140,
+          "probability": 0.997011
+        },
+        {
+          "index": 10,
+          "text": "school",
+          "startMs": 135140,
+          "endMs": 135420,
+          "probability": 0.993771
+        },
+        {
+          "index": 11,
+          "text": "day.",
+          "startMs": 135420,
+          "endMs": 135780,
+          "probability": 0.996626
+        },
+        {
+          "index": 12,
+          "text": "It's",
+          "startMs": 136500,
+          "endMs": 136700,
+          "probability": 0.982052
+        },
+        {
+          "index": 13,
+          "text": "another",
+          "startMs": 136700,
+          "endMs": 137100,
+          "probability": 0.996269
+        },
+        {
+          "index": 14,
+          "text": "snow",
+          "startMs": 137100,
+          "endMs": 137620,
+          "probability": 0.980252
+        },
+        {
+          "index": 15,
+          "text": "day.",
+          "startMs": 137620,
+          "endMs": 138200,
+          "probability": 0.984831
+        },
+        {
+          "index": 16,
+          "text": "Pete",
+          "startMs": 140320,
+          "endMs": 140440,
+          "probability": 0.877416
+        },
+        {
+          "index": 17,
+          "text": "makes",
+          "startMs": 140440,
+          "endMs": 140900,
+          "probability": 0.994288
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 140900,
+          "endMs": 141140,
+          "probability": 0.978114
+        },
+        {
+          "index": 19,
+          "text": "snow",
+          "startMs": 141140,
+          "endMs": 141500,
+          "probability": 0.998078
+        },
+        {
+          "index": 20,
+          "text": "fort.",
+          "startMs": 141500,
+          "endMs": 141920,
+          "probability": 0.965817
+        },
+        {
+          "index": 21,
+          "text": "He",
+          "startMs": 143100,
+          "endMs": 143220,
+          "probability": 0.9878
+        },
+        {
+          "index": 22,
+          "text": "throws",
+          "startMs": 143220,
+          "endMs": 143560,
+          "probability": 0.997129
+        },
+        {
+          "index": 23,
+          "text": "snowballs.",
+          "startMs": 143560,
+          "endMs": 144540,
+          "probability": 0.766176
+        },
+        {
+          "index": 24,
+          "text": "He",
+          "startMs": 145580,
+          "endMs": 145780,
+          "probability": 0.992273
+        },
+        {
+          "index": 25,
+          "text": "makes",
+          "startMs": 145780,
+          "endMs": 146100,
+          "probability": 0.996434
+        },
+        {
+          "index": 26,
+          "text": "a",
+          "startMs": 146100,
+          "endMs": 146400,
+          "probability": 0.996941
+        },
+        {
+          "index": 27,
+          "text": "snow",
+          "startMs": 146400,
+          "endMs": 146780,
+          "probability": 0.972599
+        },
+        {
+          "index": 28,
+          "text": "dog.",
+          "startMs": 146780,
+          "endMs": 147220,
+          "probability": 0.931529
+        },
+        {
+          "index": 29,
+          "text": "Then",
+          "startMs": 150080,
+          "endMs": 150680,
+          "probability": 0.61949
+        },
+        {
+          "index": 30,
+          "text": "he",
+          "startMs": 150680,
+          "endMs": 150980,
+          "probability": 0.95248
+        },
+        {
+          "index": 31,
+          "text": "has",
+          "startMs": 150980,
+          "endMs": 151300,
+          "probability": 0.997846
+        },
+        {
+          "index": 32,
+          "text": "fun",
+          "startMs": 151300,
+          "endMs": 151660,
+          "probability": 0.998363
+        },
+        {
+          "index": 33,
+          "text": "sledding.",
+          "startMs": 151660,
+          "endMs": 152340,
+          "probability": 0.998225
+        },
+        {
+          "index": 34,
+          "text": "He",
+          "startMs": 153020,
+          "endMs": 153140,
+          "probability": 0.989781
+        },
+        {
+          "index": 35,
+          "text": "can't",
+          "startMs": 153140,
+          "endMs": 153540,
+          "probability": 0.996428
+        },
+        {
+          "index": 36,
+          "text": "wait",
+          "startMs": 153540,
+          "endMs": 153820,
+          "probability": 0.999558
+        },
+        {
+          "index": 37,
+          "text": "to",
+          "startMs": 153820,
+          "endMs": 154080,
+          "probability": 0.994904
+        },
+        {
+          "index": 38,
+          "text": "tell",
+          "startMs": 154080,
+          "endMs": 154380,
+          "probability": 0.998674
+        },
+        {
+          "index": 39,
+          "text": "his",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.769481
+        },
+        {
+          "index": 40,
+          "text": "kids",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.118792
+        },
+        {
+          "index": 41,
+          "text": "about",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.325967
+        },
+        {
+          "index": 42,
+          "text": "snow.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.632088
+        },
+        {
+          "index": 43,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.151221
+        },
+        {
+          "index": 44,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.149689
+        },
+        {
+          "index": 45,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.48439
+        },
+        {
+          "index": 46,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.540401
+        },
+        {
+          "index": 47,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.290043
+        },
+        {
+          "index": 48,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.402642
+        },
+        {
+          "index": 49,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.967294
+        },
+        {
+          "index": 50,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.537295
+        },
+        {
+          "index": 51,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.501603
+        },
+        {
+          "index": 52,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.600254
+        },
+        {
+          "index": 53,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.988334
+        },
+        {
+          "index": 54,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.726828
+        },
+        {
+          "index": 55,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.697139
+        },
+        {
+          "index": 56,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.736876
+        },
+        {
+          "index": 57,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.992984
+        },
+        {
+          "index": 58,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.848041
+        },
+        {
+          "index": 59,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.801723
+        },
+        {
+          "index": 60,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.803683
+        },
+        {
+          "index": 61,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.99469
+        },
+        {
+          "index": 62,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.899772
+        },
+        {
+          "index": 63,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.847931
+        },
+        {
+          "index": 64,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.837194
+        },
+        {
+          "index": 65,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.995622
+        },
+        {
+          "index": 66,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.925526
+        },
+        {
+          "index": 67,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.875028
+        },
+        {
+          "index": 68,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.862207
+        },
+        {
+          "index": 69,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.99619
+        },
+        {
+          "index": 70,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.940708
+        },
+        {
+          "index": 71,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.892706
+        },
+        {
+          "index": 72,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.886886
+        },
+        {
+          "index": 73,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.996697
+        },
+        {
+          "index": 74,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.952322
+        },
+        {
+          "index": 75,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.903968
+        },
+        {
+          "index": 76,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.903464
+        },
+        {
+          "index": 77,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.997027
+        },
+        {
+          "index": 78,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.959955
+        },
+        {
+          "index": 79,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.913923
+        },
+        {
+          "index": 80,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.917162
+        },
+        {
+          "index": 81,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.997303
+        },
+        {
+          "index": 82,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.965717
+        },
+        {
+          "index": 83,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.920597
+        },
+        {
+          "index": 84,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.927844
+        },
+        {
+          "index": 85,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.997507
+        },
+        {
+          "index": 86,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.970049
+        },
+        {
+          "index": 87,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.927641
+        },
+        {
+          "index": 88,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.934115
+        },
+        {
+          "index": 89,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.997733
+        },
+        {
+          "index": 90,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.973712
+        },
+        {
+          "index": 91,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.93341
+        },
+        {
+          "index": 92,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.944895
+        },
+        {
+          "index": 93,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.997904
+        },
+        {
+          "index": 94,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.977037
+        },
+        {
+          "index": 95,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.937863
+        },
+        {
+          "index": 96,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.949099
+        },
+        {
+          "index": 97,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998041
+        },
+        {
+          "index": 98,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.979615
+        },
+        {
+          "index": 99,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.941678
+        },
+        {
+          "index": 100,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.952174
+        },
+        {
+          "index": 101,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998147
+        },
+        {
+          "index": 102,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.981374
+        },
+        {
+          "index": 103,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.946429
+        },
+        {
+          "index": 104,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.958065
+        },
+        {
+          "index": 105,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998257
+        },
+        {
+          "index": 106,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.983693
+        },
+        {
+          "index": 107,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.950073
+        },
+        {
+          "index": 108,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.961815
+        },
+        {
+          "index": 109,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998374
+        },
+        {
+          "index": 110,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.984886
+        },
+        {
+          "index": 111,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.954117
+        },
+        {
+          "index": 112,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.963819
+        },
+        {
+          "index": 113,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998454
+        },
+        {
+          "index": 114,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.986129
+        },
+        {
+          "index": 115,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.956711
+        },
+        {
+          "index": 116,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.968241
+        },
+        {
+          "index": 117,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998528
+        },
+        {
+          "index": 118,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.987127
+        },
+        {
+          "index": 119,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.959947
+        },
+        {
+          "index": 120,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.969324
+        },
+        {
+          "index": 121,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998574
+        },
+        {
+          "index": 122,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.987898
+        },
+        {
+          "index": 123,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.962699
+        },
+        {
+          "index": 124,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.973104
+        },
+        {
+          "index": 125,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998638
+        },
+        {
+          "index": 126,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.98869
+        },
+        {
+          "index": 127,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.965648
+        },
+        {
+          "index": 128,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.97442
+        },
+        {
+          "index": 129,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998693
+        },
+        {
+          "index": 130,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.989179
+        },
+        {
+          "index": 131,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.967526
+        },
+        {
+          "index": 132,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.976945
+        },
+        {
+          "index": 133,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998742
+        },
+        {
+          "index": 134,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.989537
+        },
+        {
+          "index": 135,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.969231
+        },
+        {
+          "index": 136,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.978216
+        },
+        {
+          "index": 137,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998785
+        },
+        {
+          "index": 138,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.989772
+        },
+        {
+          "index": 139,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.970497
+        },
+        {
+          "index": 140,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.980389
+        },
+        {
+          "index": 141,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998831
+        },
+        {
+          "index": 142,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.989942
+        },
+        {
+          "index": 143,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.971993
+        },
+        {
+          "index": 144,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.982592
+        },
+        {
+          "index": 145,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998859
+        },
+        {
+          "index": 146,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.990051
+        },
+        {
+          "index": 147,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.973465
+        },
+        {
+          "index": 148,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.984535
+        },
+        {
+          "index": 149,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998882
+        },
+        {
+          "index": 150,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.989724
+        },
+        {
+          "index": 151,
+          "text": "He's",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.974265
+        },
+        {
+          "index": 152,
+          "text": "a",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.987066
+        },
+        {
+          "index": 153,
+          "text": "snow",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.998912
+        },
+        {
+          "index": 154,
+          "text": "dog.",
+          "startMs": 154380,
+          "endMs": 154380,
+          "probability": 0.99072
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He",
+      "startMs": 157540,
+      "endMs": 184360,
+      "avgLogprob": -0.028135,
+      "noSpeechProb": 0.068903,
+      "compressionRatio": 19.71875,
+      "words": [
+        {
+          "index": 1,
+          "text": "He's",
+          "startMs": 157540,
+          "endMs": 158140,
+          "probability": 0.101639
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 158140,
+          "endMs": 158140,
+          "probability": 0.122245
+        },
+        {
+          "index": 3,
+          "text": "snow",
+          "startMs": 158140,
+          "endMs": 158500,
+          "probability": 0.000326
+        },
+        {
+          "index": 4,
+          "text": "dog.",
+          "startMs": 158500,
+          "endMs": 160040,
+          "probability": 0.000362
+        },
+        {
+          "index": 5,
+          "text": "He's",
+          "startMs": 162440,
+          "endMs": 163040,
+          "probability": 0.294395
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 163040,
+          "endMs": 163040,
+          "probability": 0.245924
+        },
+        {
+          "index": 7,
+          "text": "snow",
+          "startMs": 163040,
+          "endMs": 163040,
+          "probability": 0.330226
+        },
+        {
+          "index": 8,
+          "text": "dog.",
+          "startMs": 163040,
+          "endMs": 163040,
+          "probability": 0.088158
+        },
+        {
+          "index": 9,
+          "text": "He's",
+          "startMs": 163040,
+          "endMs": 163040,
+          "probability": 0.374302
+        },
+        {
+          "index": 10,
+          "text": "a",
+          "startMs": 163040,
+          "endMs": 163040,
+          "probability": 0.43672
+        },
+        {
+          "index": 11,
+          "text": "snow",
+          "startMs": 163040,
+          "endMs": 163040,
+          "probability": 0.956643
+        },
+        {
+          "index": 12,
+          "text": "dog.",
+          "startMs": 163040,
+          "endMs": 163040,
+          "probability": 0.595585
+        },
+        {
+          "index": 13,
+          "text": "He's",
+          "startMs": 163040,
+          "endMs": 163060,
+          "probability": 0.506936
+        },
+        {
+          "index": 14,
+          "text": "a",
+          "startMs": 163060,
+          "endMs": 163060,
+          "probability": 0.678441
+        },
+        {
+          "index": 15,
+          "text": "snow",
+          "startMs": 163060,
+          "endMs": 163060,
+          "probability": 0.988325
+        },
+        {
+          "index": 16,
+          "text": "dog.",
+          "startMs": 163060,
+          "endMs": 163060,
+          "probability": 0.881616
+        },
+        {
+          "index": 17,
+          "text": "He's",
+          "startMs": 163060,
+          "endMs": 163080,
+          "probability": 0.633145
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 163080,
+          "endMs": 163420,
+          "probability": 0.812154
+        },
+        {
+          "index": 19,
+          "text": "snow",
+          "startMs": 163420,
+          "endMs": 163420,
+          "probability": 0.99414
+        },
+        {
+          "index": 20,
+          "text": "dog.",
+          "startMs": 163420,
+          "endMs": 163420,
+          "probability": 0.932128
+        },
+        {
+          "index": 21,
+          "text": "He's",
+          "startMs": 163420,
+          "endMs": 163420,
+          "probability": 0.721032
+        },
+        {
+          "index": 22,
+          "text": "a",
+          "startMs": 163420,
+          "endMs": 163500,
+          "probability": 0.868001
+        },
+        {
+          "index": 23,
+          "text": "snow",
+          "startMs": 163500,
+          "endMs": 163600,
+          "probability": 0.996083
+        },
+        {
+          "index": 24,
+          "text": "dog.",
+          "startMs": 163600,
+          "endMs": 164020,
+          "probability": 0.950381
+        },
+        {
+          "index": 25,
+          "text": "He's",
+          "startMs": 164020,
+          "endMs": 164020,
+          "probability": 0.771191
+        },
+        {
+          "index": 26,
+          "text": "a",
+          "startMs": 164020,
+          "endMs": 164020,
+          "probability": 0.886607
+        },
+        {
+          "index": 27,
+          "text": "snow",
+          "startMs": 164020,
+          "endMs": 164240,
+          "probability": 0.99703
+        },
+        {
+          "index": 28,
+          "text": "dog.",
+          "startMs": 164240,
+          "endMs": 164720,
+          "probability": 0.959744
+        },
+        {
+          "index": 29,
+          "text": "He's",
+          "startMs": 166660,
+          "endMs": 167260,
+          "probability": 0.804399
+        },
+        {
+          "index": 30,
+          "text": "a",
+          "startMs": 167260,
+          "endMs": 167260,
+          "probability": 0.891952
+        },
+        {
+          "index": 31,
+          "text": "snow",
+          "startMs": 167260,
+          "endMs": 167260,
+          "probability": 0.997571
+        },
+        {
+          "index": 32,
+          "text": "dog.",
+          "startMs": 167260,
+          "endMs": 167260,
+          "probability": 0.965131
+        },
+        {
+          "index": 33,
+          "text": "He's",
+          "startMs": 168360,
+          "endMs": 168960,
+          "probability": 0.825614
+        },
+        {
+          "index": 34,
+          "text": "a",
+          "startMs": 168960,
+          "endMs": 168960,
+          "probability": 0.889616
+        },
+        {
+          "index": 35,
+          "text": "snow",
+          "startMs": 168960,
+          "endMs": 168960,
+          "probability": 0.997896
+        },
+        {
+          "index": 36,
+          "text": "dog.",
+          "startMs": 168960,
+          "endMs": 168960,
+          "probability": 0.968913
+        },
+        {
+          "index": 37,
+          "text": "He's",
+          "startMs": 169000,
+          "endMs": 169180,
+          "probability": 0.84422
+        },
+        {
+          "index": 38,
+          "text": "a",
+          "startMs": 169180,
+          "endMs": 169180,
+          "probability": 0.885344
+        },
+        {
+          "index": 39,
+          "text": "snow",
+          "startMs": 169180,
+          "endMs": 169620,
+          "probability": 0.99816
+        },
+        {
+          "index": 40,
+          "text": "dog.",
+          "startMs": 169620,
+          "endMs": 169620,
+          "probability": 0.97154
+        },
+        {
+          "index": 41,
+          "text": "He's",
+          "startMs": 169620,
+          "endMs": 169620,
+          "probability": 0.858272
+        },
+        {
+          "index": 42,
+          "text": "a",
+          "startMs": 169620,
+          "endMs": 169620,
+          "probability": 0.876337
+        },
+        {
+          "index": 43,
+          "text": "snow",
+          "startMs": 169620,
+          "endMs": 169620,
+          "probability": 0.99833
+        },
+        {
+          "index": 44,
+          "text": "dog.",
+          "startMs": 169620,
+          "endMs": 169620,
+          "probability": 0.973238
+        },
+        {
+          "index": 45,
+          "text": "He's",
+          "startMs": 169620,
+          "endMs": 169620,
+          "probability": 0.871436
+        },
+        {
+          "index": 46,
+          "text": "a",
+          "startMs": 169620,
+          "endMs": 169620,
+          "probability": 0.869897
+        },
+        {
+          "index": 47,
+          "text": "snow",
+          "startMs": 169620,
+          "endMs": 169660,
+          "probability": 0.998464
+        },
+        {
+          "index": 48,
+          "text": "dog.",
+          "startMs": 169660,
+          "endMs": 170000,
+          "probability": 0.974706
+        },
+        {
+          "index": 49,
+          "text": "He's",
+          "startMs": 170000,
+          "endMs": 170000,
+          "probability": 0.879783
+        },
+        {
+          "index": 50,
+          "text": "a",
+          "startMs": 170000,
+          "endMs": 170000,
+          "probability": 0.862929
+        },
+        {
+          "index": 51,
+          "text": "snow",
+          "startMs": 170000,
+          "endMs": 170000,
+          "probability": 0.998578
+        },
+        {
+          "index": 52,
+          "text": "dog.",
+          "startMs": 170000,
+          "endMs": 170020,
+          "probability": 0.976315
+        },
+        {
+          "index": 53,
+          "text": "He's",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.891138
+        },
+        {
+          "index": 54,
+          "text": "a",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.860594
+        },
+        {
+          "index": 55,
+          "text": "snow",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.998664
+        },
+        {
+          "index": 56,
+          "text": "dog.",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.977374
+        },
+        {
+          "index": 57,
+          "text": "He's",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.900968
+        },
+        {
+          "index": 58,
+          "text": "a",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.85414
+        },
+        {
+          "index": 59,
+          "text": "snow",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.998748
+        },
+        {
+          "index": 60,
+          "text": "dog.",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.978606
+        },
+        {
+          "index": 61,
+          "text": "He's",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.910968
+        },
+        {
+          "index": 62,
+          "text": "a",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.852141
+        },
+        {
+          "index": 63,
+          "text": "snow",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.998809
+        },
+        {
+          "index": 64,
+          "text": "dog.",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.979468
+        },
+        {
+          "index": 65,
+          "text": "He's",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.919743
+        },
+        {
+          "index": 66,
+          "text": "a",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.847486
+        },
+        {
+          "index": 67,
+          "text": "snow",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.998874
+        },
+        {
+          "index": 68,
+          "text": "dog.",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.980016
+        },
+        {
+          "index": 69,
+          "text": "He's",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.926738
+        },
+        {
+          "index": 70,
+          "text": "a",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.849752
+        },
+        {
+          "index": 71,
+          "text": "snow",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.99892
+        },
+        {
+          "index": 72,
+          "text": "dog.",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.980866
+        },
+        {
+          "index": 73,
+          "text": "He's",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.933929
+        },
+        {
+          "index": 74,
+          "text": "a",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.849288
+        },
+        {
+          "index": 75,
+          "text": "snow",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.99897
+        },
+        {
+          "index": 76,
+          "text": "dog.",
+          "startMs": 170660,
+          "endMs": 170660,
+          "probability": 0.981789
+        },
+        {
+          "index": 77,
+          "text": "He's",
+          "startMs": 171080,
+          "endMs": 171680,
+          "probability": 0.938441
+        },
+        {
+          "index": 78,
+          "text": "a",
+          "startMs": 171680,
+          "endMs": 171980,
+          "probability": 0.85876
+        },
+        {
+          "index": 79,
+          "text": "snow",
+          "startMs": 171980,
+          "endMs": 172140,
+          "probability": 0.999019
+        },
+        {
+          "index": 80,
+          "text": "dog.",
+          "startMs": 172140,
+          "endMs": 172540,
+          "probability": 0.982634
+        },
+        {
+          "index": 81,
+          "text": "He's",
+          "startMs": 172600,
+          "endMs": 173180,
+          "probability": 0.942528
+        },
+        {
+          "index": 82,
+          "text": "a",
+          "startMs": 173180,
+          "endMs": 173480,
+          "probability": 0.864643
+        },
+        {
+          "index": 83,
+          "text": "snow",
+          "startMs": 173480,
+          "endMs": 173480,
+          "probability": 0.999056
+        },
+        {
+          "index": 84,
+          "text": "dog.",
+          "startMs": 173480,
+          "endMs": 174340,
+          "probability": 0.983071
+        },
+        {
+          "index": 85,
+          "text": "He's",
+          "startMs": 174420,
+          "endMs": 174960,
+          "probability": 0.944967
+        },
+        {
+          "index": 86,
+          "text": "a",
+          "startMs": 174960,
+          "endMs": 175180,
+          "probability": 0.869447
+        },
+        {
+          "index": 87,
+          "text": "snow",
+          "startMs": 175180,
+          "endMs": 175180,
+          "probability": 0.999081
+        },
+        {
+          "index": 88,
+          "text": "dog.",
+          "startMs": 175180,
+          "endMs": 175180,
+          "probability": 0.983962
+        },
+        {
+          "index": 89,
+          "text": "He's",
+          "startMs": 175300,
+          "endMs": 175340,
+          "probability": 0.948895
+        },
+        {
+          "index": 90,
+          "text": "a",
+          "startMs": 175340,
+          "endMs": 175340,
+          "probability": 0.877747
+        },
+        {
+          "index": 91,
+          "text": "snow",
+          "startMs": 175340,
+          "endMs": 175340,
+          "probability": 0.999107
+        },
+        {
+          "index": 92,
+          "text": "dog.",
+          "startMs": 175340,
+          "endMs": 175420,
+          "probability": 0.984743
+        },
+        {
+          "index": 93,
+          "text": "He's",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.950966
+        },
+        {
+          "index": 94,
+          "text": "a",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.88499
+        },
+        {
+          "index": 95,
+          "text": "snow",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.999122
+        },
+        {
+          "index": 96,
+          "text": "dog.",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.985099
+        },
+        {
+          "index": 97,
+          "text": "He's",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.954611
+        },
+        {
+          "index": 98,
+          "text": "a",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.893297
+        },
+        {
+          "index": 99,
+          "text": "snow",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.999131
+        },
+        {
+          "index": 100,
+          "text": "dog.",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.985921
+        },
+        {
+          "index": 101,
+          "text": "He's",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.956591
+        },
+        {
+          "index": 102,
+          "text": "a",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.900465
+        },
+        {
+          "index": 103,
+          "text": "snow",
+          "startMs": 175420,
+          "endMs": 175420,
+          "probability": 0.999138
+        },
+        {
+          "index": 104,
+          "text": "dog.",
+          "startMs": 175420,
+          "endMs": 175440,
+          "probability": 0.986529
+        },
+        {
+          "index": 105,
+          "text": "He's",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.959203
+        },
+        {
+          "index": 106,
+          "text": "a",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.908561
+        },
+        {
+          "index": 107,
+          "text": "snow",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.999145
+        },
+        {
+          "index": 108,
+          "text": "dog.",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.986824
+        },
+        {
+          "index": 109,
+          "text": "He's",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.960896
+        },
+        {
+          "index": 110,
+          "text": "a",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.913846
+        },
+        {
+          "index": 111,
+          "text": "snow",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.99914
+        },
+        {
+          "index": 112,
+          "text": "dog.",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.987378
+        },
+        {
+          "index": 113,
+          "text": "He's",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.961837
+        },
+        {
+          "index": 114,
+          "text": "a",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.923129
+        },
+        {
+          "index": 115,
+          "text": "snow",
+          "startMs": 175440,
+          "endMs": 175440,
+          "probability": 0.999151
+        },
+        {
+          "index": 116,
+          "text": "dog.",
+          "startMs": 175440,
+          "endMs": 175540,
+          "probability": 0.987441
+        },
+        {
+          "index": 117,
+          "text": "He's",
+          "startMs": 176160,
+          "endMs": 176160,
+          "probability": 0.963282
+        },
+        {
+          "index": 118,
+          "text": "a",
+          "startMs": 176160,
+          "endMs": 176160,
+          "probability": 0.930636
+        },
+        {
+          "index": 119,
+          "text": "snow",
+          "startMs": 176160,
+          "endMs": 176160,
+          "probability": 0.999134
+        },
+        {
+          "index": 120,
+          "text": "dog.",
+          "startMs": 176160,
+          "endMs": 176160,
+          "probability": 0.987937
+        },
+        {
+          "index": 121,
+          "text": "He's",
+          "startMs": 176160,
+          "endMs": 176160,
+          "probability": 0.965502
+        },
+        {
+          "index": 122,
+          "text": "a",
+          "startMs": 176160,
+          "endMs": 176160,
+          "probability": 0.935412
+        },
+        {
+          "index": 123,
+          "text": "snow",
+          "startMs": 176160,
+          "endMs": 177380,
+          "probability": 0.999136
+        },
+        {
+          "index": 124,
+          "text": "dog.",
+          "startMs": 177380,
+          "endMs": 177380,
+          "probability": 0.988238
+        },
+        {
+          "index": 125,
+          "text": "He's",
+          "startMs": 177380,
+          "endMs": 177880,
+          "probability": 0.966974
+        },
+        {
+          "index": 126,
+          "text": "a",
+          "startMs": 177880,
+          "endMs": 177880,
+          "probability": 0.941055
+        },
+        {
+          "index": 127,
+          "text": "snow",
+          "startMs": 177880,
+          "endMs": 178340,
+          "probability": 0.999135
+        },
+        {
+          "index": 128,
+          "text": "dog.",
+          "startMs": 178340,
+          "endMs": 178640,
+          "probability": 0.988156
+        },
+        {
+          "index": 129,
+          "text": "He's",
+          "startMs": 178760,
+          "endMs": 178760,
+          "probability": 0.96774
+        },
+        {
+          "index": 130,
+          "text": "a",
+          "startMs": 178760,
+          "endMs": 178760,
+          "probability": 0.943249
+        },
+        {
+          "index": 131,
+          "text": "snow",
+          "startMs": 178760,
+          "endMs": 179180,
+          "probability": 0.999131
+        },
+        {
+          "index": 132,
+          "text": "dog.",
+          "startMs": 179180,
+          "endMs": 179400,
+          "probability": 0.988628
+        },
+        {
+          "index": 133,
+          "text": "He's",
+          "startMs": 180220,
+          "endMs": 180600,
+          "probability": 0.96926
+        },
+        {
+          "index": 134,
+          "text": "a",
+          "startMs": 180600,
+          "endMs": 180600,
+          "probability": 0.951586
+        },
+        {
+          "index": 135,
+          "text": "snow",
+          "startMs": 180600,
+          "endMs": 180860,
+          "probability": 0.999141
+        },
+        {
+          "index": 136,
+          "text": "dog.",
+          "startMs": 180860,
+          "endMs": 180860,
+          "probability": 0.988807
+        },
+        {
+          "index": 137,
+          "text": "He's",
+          "startMs": 180860,
+          "endMs": 181020,
+          "probability": 0.970692
+        },
+        {
+          "index": 138,
+          "text": "a",
+          "startMs": 181020,
+          "endMs": 181940,
+          "probability": 0.954381
+        },
+        {
+          "index": 139,
+          "text": "snow",
+          "startMs": 181940,
+          "endMs": 181940,
+          "probability": 0.999131
+        },
+        {
+          "index": 140,
+          "text": "dog.",
+          "startMs": 181940,
+          "endMs": 181940,
+          "probability": 0.989063
+        },
+        {
+          "index": 141,
+          "text": "He's",
+          "startMs": 181940,
+          "endMs": 182180,
+          "probability": 0.971842
+        },
+        {
+          "index": 142,
+          "text": "a",
+          "startMs": 182180,
+          "endMs": 182360,
+          "probability": 0.962707
+        },
+        {
+          "index": 143,
+          "text": "snow",
+          "startMs": 182360,
+          "endMs": 182880,
+          "probability": 0.999122
+        },
+        {
+          "index": 144,
+          "text": "dog.",
+          "startMs": 182880,
+          "endMs": 183080,
+          "probability": 0.989043
+        },
+        {
+          "index": 145,
+          "text": "He's",
+          "startMs": 183180,
+          "endMs": 183180,
+          "probability": 0.973879
+        },
+        {
+          "index": 146,
+          "text": "a",
+          "startMs": 183180,
+          "endMs": 183180,
+          "probability": 0.965414
+        },
+        {
+          "index": 147,
+          "text": "snow",
+          "startMs": 183180,
+          "endMs": 183420,
+          "probability": 0.999119
+        },
+        {
+          "index": 148,
+          "text": "dog.",
+          "startMs": 183420,
+          "endMs": 183960,
+          "probability": 0.989295
+        },
+        {
+          "index": 149,
+          "text": "He",
+          "startMs": 184360,
+          "endMs": 184360,
+          "probability": 0.960045
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "is a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's",
+      "startMs": 199420,
+      "endMs": 214340,
+      "avgLogprob": -0.032775,
+      "noSpeechProb": 0.205636,
+      "compressionRatio": 19.71875,
+      "words": [
+        {
+          "index": 1,
+          "text": "is",
+          "startMs": 199420,
+          "endMs": 199860,
+          "probability": 0.000693
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 199860,
+          "endMs": 200300,
+          "probability": 0.038714
+        },
+        {
+          "index": 3,
+          "text": "snow",
+          "startMs": 200300,
+          "endMs": 200300,
+          "probability": 0.044928
+        },
+        {
+          "index": 4,
+          "text": "dog.",
+          "startMs": 200300,
+          "endMs": 209180,
+          "probability": 0.00132
+        },
+        {
+          "index": 5,
+          "text": "He's",
+          "startMs": 209560,
+          "endMs": 210000,
+          "probability": 0.146959
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.212981
+        },
+        {
+          "index": 7,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.61969
+        },
+        {
+          "index": 8,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.411917
+        },
+        {
+          "index": 9,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.364562
+        },
+        {
+          "index": 10,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.572171
+        },
+        {
+          "index": 11,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.968821
+        },
+        {
+          "index": 12,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.661588
+        },
+        {
+          "index": 13,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.515269
+        },
+        {
+          "index": 14,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.760489
+        },
+        {
+          "index": 15,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.988298
+        },
+        {
+          "index": 16,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.856482
+        },
+        {
+          "index": 17,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.609734
+        },
+        {
+          "index": 18,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.848608
+        },
+        {
+          "index": 19,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.992647
+        },
+        {
+          "index": 20,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.918487
+        },
+        {
+          "index": 21,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.669613
+        },
+        {
+          "index": 22,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.879643
+        },
+        {
+          "index": 23,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.994572
+        },
+        {
+          "index": 24,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.943056
+        },
+        {
+          "index": 25,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.70699
+        },
+        {
+          "index": 26,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.893051
+        },
+        {
+          "index": 27,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.995551
+        },
+        {
+          "index": 28,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.956135
+        },
+        {
+          "index": 29,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.736575
+        },
+        {
+          "index": 30,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.897853
+        },
+        {
+          "index": 31,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.996212
+        },
+        {
+          "index": 32,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.963958
+        },
+        {
+          "index": 33,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.760299
+        },
+        {
+          "index": 34,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.89877
+        },
+        {
+          "index": 35,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.99667
+        },
+        {
+          "index": 36,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.968082
+        },
+        {
+          "index": 37,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.779517
+        },
+        {
+          "index": 38,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.89977
+        },
+        {
+          "index": 39,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.997035
+        },
+        {
+          "index": 40,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.971603
+        },
+        {
+          "index": 41,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.797287
+        },
+        {
+          "index": 42,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.900521
+        },
+        {
+          "index": 43,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.997289
+        },
+        {
+          "index": 44,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.97412
+        },
+        {
+          "index": 45,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.814645
+        },
+        {
+          "index": 46,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.898565
+        },
+        {
+          "index": 47,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.997506
+        },
+        {
+          "index": 48,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.975817
+        },
+        {
+          "index": 49,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.830311
+        },
+        {
+          "index": 50,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.898465
+        },
+        {
+          "index": 51,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.99762
+        },
+        {
+          "index": 52,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.977045
+        },
+        {
+          "index": 53,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.844581
+        },
+        {
+          "index": 54,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.89986
+        },
+        {
+          "index": 55,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.997743
+        },
+        {
+          "index": 56,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.977931
+        },
+        {
+          "index": 57,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.857318
+        },
+        {
+          "index": 58,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.900096
+        },
+        {
+          "index": 59,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.99784
+        },
+        {
+          "index": 60,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.97846
+        },
+        {
+          "index": 61,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.869623
+        },
+        {
+          "index": 62,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.904026
+        },
+        {
+          "index": 63,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.997928
+        },
+        {
+          "index": 64,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.979306
+        },
+        {
+          "index": 65,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.87921
+        },
+        {
+          "index": 66,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.903935
+        },
+        {
+          "index": 67,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.99805
+        },
+        {
+          "index": 68,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.979681
+        },
+        {
+          "index": 69,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.888767
+        },
+        {
+          "index": 70,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.903582
+        },
+        {
+          "index": 71,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.998134
+        },
+        {
+          "index": 72,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.980248
+        },
+        {
+          "index": 73,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.897688
+        },
+        {
+          "index": 74,
+          "text": "a",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.906694
+        },
+        {
+          "index": 75,
+          "text": "snow",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.998209
+        },
+        {
+          "index": 76,
+          "text": "dog.",
+          "startMs": 210000,
+          "endMs": 210000,
+          "probability": 0.980701
+        },
+        {
+          "index": 77,
+          "text": "He's",
+          "startMs": 210000,
+          "endMs": 210020,
+          "probability": 0.904063
+        },
+        {
+          "index": 78,
+          "text": "a",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.911526
+        },
+        {
+          "index": 79,
+          "text": "snow",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.998302
+        },
+        {
+          "index": 80,
+          "text": "dog.",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.981116
+        },
+        {
+          "index": 81,
+          "text": "He's",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.909782
+        },
+        {
+          "index": 82,
+          "text": "a",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.9165
+        },
+        {
+          "index": 83,
+          "text": "snow",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.998367
+        },
+        {
+          "index": 84,
+          "text": "dog.",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.981616
+        },
+        {
+          "index": 85,
+          "text": "He's",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.91711
+        },
+        {
+          "index": 86,
+          "text": "a",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.917022
+        },
+        {
+          "index": 87,
+          "text": "snow",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.998424
+        },
+        {
+          "index": 88,
+          "text": "dog.",
+          "startMs": 210020,
+          "endMs": 210020,
+          "probability": 0.981976
+        },
+        {
+          "index": 89,
+          "text": "He's",
+          "startMs": 210020,
+          "endMs": 210040,
+          "probability": 0.922127
+        },
+        {
+          "index": 90,
+          "text": "a",
+          "startMs": 210040,
+          "endMs": 210100,
+          "probability": 0.924024
+        },
+        {
+          "index": 91,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998471
+        },
+        {
+          "index": 92,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.982624
+        },
+        {
+          "index": 93,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.926488
+        },
+        {
+          "index": 94,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.928393
+        },
+        {
+          "index": 95,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998508
+        },
+        {
+          "index": 96,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.982764
+        },
+        {
+          "index": 97,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.931446
+        },
+        {
+          "index": 98,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.933083
+        },
+        {
+          "index": 99,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.99855
+        },
+        {
+          "index": 100,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.983769
+        },
+        {
+          "index": 101,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.93474
+        },
+        {
+          "index": 102,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.932401
+        },
+        {
+          "index": 103,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998553
+        },
+        {
+          "index": 104,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.984488
+        },
+        {
+          "index": 105,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.937592
+        },
+        {
+          "index": 106,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.93869
+        },
+        {
+          "index": 107,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998577
+        },
+        {
+          "index": 108,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.984548
+        },
+        {
+          "index": 109,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.940598
+        },
+        {
+          "index": 110,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.940727
+        },
+        {
+          "index": 111,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998593
+        },
+        {
+          "index": 112,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.98512
+        },
+        {
+          "index": 113,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.942335
+        },
+        {
+          "index": 114,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.945303
+        },
+        {
+          "index": 115,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998582
+        },
+        {
+          "index": 116,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.985001
+        },
+        {
+          "index": 117,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.944643
+        },
+        {
+          "index": 118,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.946936
+        },
+        {
+          "index": 119,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.99859
+        },
+        {
+          "index": 120,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.985781
+        },
+        {
+          "index": 121,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.946659
+        },
+        {
+          "index": 122,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.950776
+        },
+        {
+          "index": 123,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998595
+        },
+        {
+          "index": 124,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.985833
+        },
+        {
+          "index": 125,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.948396
+        },
+        {
+          "index": 126,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.953106
+        },
+        {
+          "index": 127,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998601
+        },
+        {
+          "index": 128,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.986525
+        },
+        {
+          "index": 129,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.950545
+        },
+        {
+          "index": 130,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.956623
+        },
+        {
+          "index": 131,
+          "text": "snow",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.998581
+        },
+        {
+          "index": 132,
+          "text": "dog.",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.986481
+        },
+        {
+          "index": 133,
+          "text": "He's",
+          "startMs": 210100,
+          "endMs": 210100,
+          "probability": 0.951751
+        },
+        {
+          "index": 134,
+          "text": "a",
+          "startMs": 210100,
+          "endMs": 210280,
+          "probability": 0.956005
+        },
+        {
+          "index": 135,
+          "text": "snow",
+          "startMs": 210280,
+          "endMs": 210440,
+          "probability": 0.998587
+        },
+        {
+          "index": 136,
+          "text": "dog.",
+          "startMs": 210440,
+          "endMs": 210520,
+          "probability": 0.986849
+        },
+        {
+          "index": 137,
+          "text": "He's",
+          "startMs": 210600,
+          "endMs": 210600,
+          "probability": 0.954278
+        },
+        {
+          "index": 138,
+          "text": "a",
+          "startMs": 210600,
+          "endMs": 210600,
+          "probability": 0.961916
+        },
+        {
+          "index": 139,
+          "text": "snow",
+          "startMs": 210600,
+          "endMs": 210960,
+          "probability": 0.998586
+        },
+        {
+          "index": 140,
+          "text": "dog.",
+          "startMs": 210960,
+          "endMs": 211180,
+          "probability": 0.986933
+        },
+        {
+          "index": 141,
+          "text": "He's",
+          "startMs": 211920,
+          "endMs": 211940,
+          "probability": 0.955049
+        },
+        {
+          "index": 142,
+          "text": "a",
+          "startMs": 211940,
+          "endMs": 211940,
+          "probability": 0.966099
+        },
+        {
+          "index": 143,
+          "text": "snow",
+          "startMs": 211940,
+          "endMs": 212360,
+          "probability": 0.998587
+        },
+        {
+          "index": 144,
+          "text": "dog.",
+          "startMs": 212360,
+          "endMs": 212360,
+          "probability": 0.987031
+        },
+        {
+          "index": 145,
+          "text": "He's",
+          "startMs": 212500,
+          "endMs": 212940,
+          "probability": 0.957849
+        },
+        {
+          "index": 146,
+          "text": "a",
+          "startMs": 212940,
+          "endMs": 213080,
+          "probability": 0.96918
+        },
+        {
+          "index": 147,
+          "text": "snow",
+          "startMs": 213080,
+          "endMs": 213520,
+          "probability": 0.998588
+        },
+        {
+          "index": 148,
+          "text": "dog.",
+          "startMs": 213520,
+          "endMs": 213680,
+          "probability": 0.987059
+        },
+        {
+          "index": 149,
+          "text": "He's",
+          "startMs": 214340,
+          "endMs": 214340,
+          "probability": 0.956526
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow",
+      "startMs": 235860,
+      "endMs": 242060,
+      "avgLogprob": -0.182896,
+      "noSpeechProb": 0.02998,
+      "compressionRatio": 6.464286,
+      "words": [
+        {
+          "index": 1,
+          "text": "a",
+          "startMs": 235860,
+          "endMs": 236600,
+          "probability": 0.000592
+        },
+        {
+          "index": 2,
+          "text": "snow",
+          "startMs": 236600,
+          "endMs": 237340,
+          "probability": 0.016937
+        },
+        {
+          "index": 3,
+          "text": "dog.",
+          "startMs": 237340,
+          "endMs": 238440,
+          "probability": 0.000735
+        },
+        {
+          "index": 4,
+          "text": "He's",
+          "startMs": 238440,
+          "endMs": 238780,
+          "probability": 0.146434
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 238780,
+          "endMs": 238780,
+          "probability": 0.169523
+        },
+        {
+          "index": 6,
+          "text": "snow",
+          "startMs": 238780,
+          "endMs": 239360,
+          "probability": 0.202028
+        },
+        {
+          "index": 7,
+          "text": "dog.",
+          "startMs": 239360,
+          "endMs": 239680,
+          "probability": 0.147604
+        },
+        {
+          "index": 8,
+          "text": "He's",
+          "startMs": 240000,
+          "endMs": 240000,
+          "probability": 0.374606
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 240000,
+          "endMs": 240000,
+          "probability": 0.465604
+        },
+        {
+          "index": 10,
+          "text": "snow",
+          "startMs": 240000,
+          "endMs": 240020,
+          "probability": 0.911623
+        },
+        {
+          "index": 11,
+          "text": "dog.",
+          "startMs": 240020,
+          "endMs": 240920,
+          "probability": 0.615814
+        },
+        {
+          "index": 12,
+          "text": "He's",
+          "startMs": 240940,
+          "endMs": 240940,
+          "probability": 0.576186
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 240940,
+          "endMs": 240940,
+          "probability": 0.809893
+        },
+        {
+          "index": 14,
+          "text": "snow",
+          "startMs": 240940,
+          "endMs": 241640,
+          "probability": 0.969657
+        },
+        {
+          "index": 15,
+          "text": "dog.",
+          "startMs": 241640,
+          "endMs": 241640,
+          "probability": 0.867873
+        },
+        {
+          "index": 16,
+          "text": "He's",
+          "startMs": 241640,
+          "endMs": 241640,
+          "probability": 0.664107
+        },
+        {
+          "index": 17,
+          "text": "a",
+          "startMs": 241640,
+          "endMs": 241640,
+          "probability": 0.902802
+        },
+        {
+          "index": 18,
+          "text": "snow",
+          "startMs": 241640,
+          "endMs": 241640,
+          "probability": 0.984015
+        },
+        {
+          "index": 19,
+          "text": "dog.",
+          "startMs": 241640,
+          "endMs": 241640,
+          "probability": 0.92267
+        },
+        {
+          "index": 20,
+          "text": "He's",
+          "startMs": 241640,
+          "endMs": 241640,
+          "probability": 0.711563
+        },
+        {
+          "index": 21,
+          "text": "a",
+          "startMs": 241640,
+          "endMs": 242060,
+          "probability": 0.926446
+        },
+        {
+          "index": 22,
+          "text": "snow",
+          "startMs": 242060,
+          "endMs": 242060,
+          "probability": 0.98913
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog. He's a snow dog.",
+      "startMs": 242060,
+      "endMs": 244320,
+      "avgLogprob": -0.182896,
+      "noSpeechProb": 0.02998,
+      "compressionRatio": 6.464286,
+      "words": [
+        {
+          "index": 1,
+          "text": "dog.",
+          "startMs": 242060,
+          "endMs": 242060,
+          "probability": 0.944161
+        },
+        {
+          "index": 2,
+          "text": "He's",
+          "startMs": 242060,
+          "endMs": 242060,
+          "probability": 0.741639
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 242060,
+          "endMs": 242520,
+          "probability": 0.935994
+        },
+        {
+          "index": 4,
+          "text": "snow",
+          "startMs": 242520,
+          "endMs": 242520,
+          "probability": 0.991538
+        },
+        {
+          "index": 5,
+          "text": "dog.",
+          "startMs": 242520,
+          "endMs": 242520,
+          "probability": 0.955449
+        },
+        {
+          "index": 6,
+          "text": "He's",
+          "startMs": 242520,
+          "endMs": 242520,
+          "probability": 0.768271
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 242520,
+          "endMs": 242560,
+          "probability": 0.941864
+        },
+        {
+          "index": 8,
+          "text": "snow",
+          "startMs": 242560,
+          "endMs": 242560,
+          "probability": 0.992992
+        },
+        {
+          "index": 9,
+          "text": "dog.",
+          "startMs": 242560,
+          "endMs": 242560,
+          "probability": 0.962678
+        },
+        {
+          "index": 10,
+          "text": "He's",
+          "startMs": 242560,
+          "endMs": 242560,
+          "probability": 0.789674
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 242560,
+          "endMs": 242620,
+          "probability": 0.946233
+        },
+        {
+          "index": 12,
+          "text": "snow",
+          "startMs": 242620,
+          "endMs": 242620,
+          "probability": 0.993923
+        },
+        {
+          "index": 13,
+          "text": "dog.",
+          "startMs": 242620,
+          "endMs": 242620,
+          "probability": 0.967578
+        },
+        {
+          "index": 14,
+          "text": "He's",
+          "startMs": 242620,
+          "endMs": 242940,
+          "probability": 0.807623
+        },
+        {
+          "index": 15,
+          "text": "a",
+          "startMs": 242940,
+          "endMs": 242960,
+          "probability": 0.949356
+        },
+        {
+          "index": 16,
+          "text": "snow",
+          "startMs": 242960,
+          "endMs": 243360,
+          "probability": 0.994563
+        },
+        {
+          "index": 17,
+          "text": "dog.",
+          "startMs": 243360,
+          "endMs": 243580,
+          "probability": 0.970968
+        },
+        {
+          "index": 18,
+          "text": "He's",
+          "startMs": 243580,
+          "endMs": 243580,
+          "probability": 0.823293
+        },
+        {
+          "index": 19,
+          "text": "a",
+          "startMs": 243580,
+          "endMs": 244320,
+          "probability": 0.951425
+        },
+        {
+          "index": 20,
+          "text": "snow",
+          "startMs": 244320,
+          "endMs": 244320,
+          "probability": 0.994989
+        },
+        {
+          "index": 21,
+          "text": "dog.",
+          "startMs": 244320,
+          "endMs": 244320,
+          "probability": 0.973996
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "He tells everyone about the fun he had in the snow.",
+      "startMs": 244320,
+      "endMs": 247340,
+      "avgLogprob": -0.204906,
+      "noSpeechProb": 0.460464,
+      "compressionRatio": 1.330935,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 244320,
+          "endMs": 244520,
+          "probability": 0.853654
+        },
+        {
+          "index": 2,
+          "text": "tells",
+          "startMs": 244520,
+          "endMs": 244760,
+          "probability": 0.99365
+        },
+        {
+          "index": 3,
+          "text": "everyone",
+          "startMs": 244760,
+          "endMs": 245180,
+          "probability": 0.9868
+        },
+        {
+          "index": 4,
+          "text": "about",
+          "startMs": 245180,
+          "endMs": 245580,
+          "probability": 0.993922
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 245580,
+          "endMs": 245840,
+          "probability": 0.995681
+        },
+        {
+          "index": 6,
+          "text": "fun",
+          "startMs": 245840,
+          "endMs": 246100,
+          "probability": 0.997407
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 246100,
+          "endMs": 246380,
+          "probability": 0.98597
+        },
+        {
+          "index": 8,
+          "text": "had",
+          "startMs": 246380,
+          "endMs": 246640,
+          "probability": 0.994732
+        },
+        {
+          "index": 9,
+          "text": "in",
+          "startMs": 246640,
+          "endMs": 246820,
+          "probability": 0.997369
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 246820,
+          "endMs": 246940,
+          "probability": 0.99485
+        },
+        {
+          "index": 11,
+          "text": "snow.",
+          "startMs": 246940,
+          "endMs": 247340,
+          "probability": 0.992571
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "I love snow days, says Pete, but I love school best.",
+      "startMs": 249420,
+      "endMs": 255580,
+      "avgLogprob": -0.204906,
+      "noSpeechProb": 0.460464,
+      "compressionRatio": 1.330935,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 249420,
+          "endMs": 249460,
+          "probability": 0.157278
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 249460,
+          "endMs": 249760,
+          "probability": 0.972435
+        },
+        {
+          "index": 3,
+          "text": "snow",
+          "startMs": 249760,
+          "endMs": 250200,
+          "probability": 0.941248
+        },
+        {
+          "index": 4,
+          "text": "days,",
+          "startMs": 250200,
+          "endMs": 250760,
+          "probability": 0.992885
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 251240,
+          "endMs": 251540,
+          "probability": 0.979618
+        },
+        {
+          "index": 6,
+          "text": "Pete,",
+          "startMs": 251540,
+          "endMs": 251980,
+          "probability": 0.990634
+        },
+        {
+          "index": 7,
+          "text": "but",
+          "startMs": 252580,
+          "endMs": 253220,
+          "probability": 0.856175
+        },
+        {
+          "index": 8,
+          "text": "I",
+          "startMs": 253220,
+          "endMs": 253460,
+          "probability": 0.987927
+        },
+        {
+          "index": 9,
+          "text": "love",
+          "startMs": 253460,
+          "endMs": 253960,
+          "probability": 0.991646
+        },
+        {
+          "index": 10,
+          "text": "school",
+          "startMs": 253960,
+          "endMs": 254680,
+          "probability": 0.975159
+        },
+        {
+          "index": 11,
+          "text": "best.",
+          "startMs": 254680,
+          "endMs": 255580,
+          "probability": 0.978952
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "We hope you have enjoyed this recording of Pete the Cat Snow Days by James Dean.",
+      "startMs": 261760,
+      "endMs": 268960,
+      "avgLogprob": -0.204906,
+      "noSpeechProb": 0.460464,
+      "compressionRatio": 1.330935,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 261580,
+          "endMs": 262000,
+          "probability": 0.492457
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 262000,
+          "endMs": 262220,
+          "probability": 0.998072
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 262220,
+          "endMs": 262460,
+          "probability": 0.996925
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 262460,
+          "endMs": 262660,
+          "probability": 0.985493
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 262660,
+          "endMs": 263100,
+          "probability": 0.997132
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 263100,
+          "endMs": 263420,
+          "probability": 0.997009
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 263420,
+          "endMs": 263980,
+          "probability": 0.995923
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 263980,
+          "endMs": 264680,
+          "probability": 0.975911
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 264680,
+          "endMs": 265100,
+          "probability": 0.970916
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 265100,
+          "endMs": 265380,
+          "probability": 0.946159
+        },
+        {
+          "index": 11,
+          "text": "Cat",
+          "startMs": 265380,
+          "endMs": 265740,
+          "probability": 0.832859
+        },
+        {
+          "index": 12,
+          "text": "Snow",
+          "startMs": 265740,
+          "endMs": 266520,
+          "probability": 0.467269
+        },
+        {
+          "index": 13,
+          "text": "Days",
+          "startMs": 266520,
+          "endMs": 266980,
+          "probability": 0.960996
+        },
+        {
+          "index": 14,
+          "text": "by",
+          "startMs": 266980,
+          "endMs": 267920,
+          "probability": 0.874183
+        },
+        {
+          "index": 15,
+          "text": "James",
+          "startMs": 267920,
+          "endMs": 268580,
+          "probability": 0.989168
+        },
+        {
+          "index": 16,
+          "text": "Dean.",
+          "startMs": 268580,
+          "endMs": 268960,
+          "probability": 0.923697
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "This program was produced by John Marshall Media.",
+      "startMs": 269920,
+      "endMs": 273140,
+      "avgLogprob": -0.287306,
+      "noSpeechProb": 0.544818,
+      "compressionRatio": 1.248,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 269640,
+          "endMs": 270160,
+          "probability": 0.270497
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 270160,
+          "endMs": 270700,
+          "probability": 0.960801
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 270700,
+          "endMs": 271020,
+          "probability": 0.9882
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 271020,
+          "endMs": 271440,
+          "probability": 0.996212
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 271440,
+          "endMs": 271840,
+          "probability": 0.992195
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 271840,
+          "endMs": 272240,
+          "probability": 0.975607
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 272240,
+          "endMs": 272640,
+          "probability": 0.985636
+        },
+        {
+          "index": 8,
+          "text": "Media.",
+          "startMs": 272640,
+          "endMs": 273140,
+          "probability": 0.507911
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Copyright 2016 by James Dean. Production copyright 2016 by Harper Collins Publishers. All rights reserved.",
+      "startMs": 274740,
+      "endMs": 284800,
+      "avgLogprob": -0.287306,
+      "noSpeechProb": 0.544818,
+      "compressionRatio": 1.248,
+      "words": [
+        {
+          "index": 1,
+          "text": "Copyright",
+          "startMs": 274740,
+          "endMs": 274740,
+          "probability": 0.918128
+        },
+        {
+          "index": 2,
+          "text": "2016",
+          "startMs": 274740,
+          "endMs": 276020,
+          "probability": 0.984507
+        },
+        {
+          "index": 3,
+          "text": "by",
+          "startMs": 276020,
+          "endMs": 276400,
+          "probability": 0.892608
+        },
+        {
+          "index": 4,
+          "text": "James",
+          "startMs": 276400,
+          "endMs": 276880,
+          "probability": 0.992709
+        },
+        {
+          "index": 5,
+          "text": "Dean.",
+          "startMs": 276880,
+          "endMs": 277320,
+          "probability": 0.780517
+        },
+        {
+          "index": 6,
+          "text": "Production",
+          "startMs": 278400,
+          "endMs": 278540,
+          "probability": 0.961282
+        },
+        {
+          "index": 7,
+          "text": "copyright",
+          "startMs": 278540,
+          "endMs": 279160,
+          "probability": 0.757283
+        },
+        {
+          "index": 8,
+          "text": "2016",
+          "startMs": 279160,
+          "endMs": 280340,
+          "probability": 0.816367
+        },
+        {
+          "index": 9,
+          "text": "by",
+          "startMs": 280340,
+          "endMs": 281280,
+          "probability": 0.94866
+        },
+        {
+          "index": 10,
+          "text": "Harper",
+          "startMs": 281280,
+          "endMs": 281660,
+          "probability": 0.981749
+        },
+        {
+          "index": 11,
+          "text": "Collins",
+          "startMs": 281660,
+          "endMs": 282200,
+          "probability": 0.536808
+        },
+        {
+          "index": 12,
+          "text": "Publishers.",
+          "startMs": 282200,
+          "endMs": 282780,
+          "probability": 0.875495
+        },
+        {
+          "index": 13,
+          "text": "All",
+          "startMs": 283640,
+          "endMs": 283900,
+          "probability": 0.986162
+        },
+        {
+          "index": 14,
+          "text": "rights",
+          "startMs": 283900,
+          "endMs": 284220,
+          "probability": 0.955394
+        },
+        {
+          "index": 15,
+          "text": "reserved.",
+          "startMs": 284220,
+          "endMs": 284800,
+          "probability": 0.991203
+        }
+      ]
+    }
+  ]
+}

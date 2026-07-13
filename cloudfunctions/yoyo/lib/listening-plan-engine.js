@@ -8,6 +8,7 @@ const MATERIALS = [
   { category: 'unlock1workbook', levelIds: ['A1'], title: 'Unlock 1 听口 练习册 第二版' },
   { category: 'peppa', levelIds: ['A1', 'A2'], title: 'Peppa' },
   { category: 'newconcept2', levelIds: ['A2'], title: 'New Concept 2' },
+  { category: 'petethecat', levelIds: ['A2'], title: 'Pete the Cat' },
   { category: 'unlock2', levelIds: ['A2'], title: 'Unlock 2 课本' },
   { category: 'unlock2thirdedition', levelIds: ['A2'], title: 'Unlock 2 听口 第三版' },
   { category: 'unlock2workbook', levelIds: ['A2'], title: 'Unlock 2 练习册' },

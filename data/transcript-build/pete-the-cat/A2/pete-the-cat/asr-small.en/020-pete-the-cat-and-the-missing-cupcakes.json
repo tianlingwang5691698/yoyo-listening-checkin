@@ -1,0 +1,3966 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 42.844,
+  "text": "Pete the Cat and the Missing Cupcakes by Kimberly and James Dean performed by James Foeing Pete and Gus were as busy as could be they were getting ready for the cupcake party it started at three They were making cupcakes for everyone Pete and Gus counted them just for fun They had ten when they were done oh No hang on some of the cupcakes were gone. They were sure there had been ten Pete said maybe we need to count again They counted the cupcakes lined up straight now there were only eight It Looked like someone had taken two, but who Pete and Gus did not know what to do Just then they found a clue Gus said look what I have found Sprinkles on the ground I bet it was squirrel. She loves sprinkles Squirrel said it wasn't me it couldn't be I've been at the spelling bee Uh-oh more cupcakes are missing come and see This was too weird there were only six Someone must be playing tricks But who? Pete and Gus did not know what to do Just then they found another clue Pete said I bet it was alligator he loves to eat Alligator said it wasn't me it couldn't be I've been learning my ABCs Uh-oh more cupcakes are missing come and see Now there were only four someone had taken two more, but who? Pete and Gus did not know what to do Just then they found another clue I bet it was turtle said Pete I know turtle loves sweets Turtle said it wasn't me it couldn't be I've been swimming in the sea Uh-oh more cupcakes are missing come and see What on earth was going on all the cupcakes were now gone Pete and Gus did not know what to do They started looking for another clue They found grumpy toad with icing on his face Pete and Gus have solved the case I Am so sorry it was me I Could not stop with just one I ate and ate till there were none I Everyone agreed grumpy toad would have to miss the fun He could not come after what he had done Pete said But wait grumpy toad made a mistake This is true. Let's give him a second chance That's what friends do Pete told grumpy toad they would give him another chance He was so excited. He did a happy dance The night of the party was so much fun grumpy toad brought more than enough cupcakes for everyone We hope you have enjoyed this recording of Pete the cat and the missing cupcakes by Kimberly and James Dean This program was produced by John Marshall Media text copyright 2016 by Kimberly and James Dean illustrations copyright 2016 by James Dean production copyright 2016 by Harper Collins publishers all rights reserved",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat and the Missing Cupcakes by Kimberly and James Dean",
+      "startMs": 0,
+      "endMs": 5440,
+      "avgLogprob": -0.180502,
+      "noSpeechProb": 0.011698,
+      "compressionRatio": 1.6,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 540,
+          "probability": 0.313317
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 540,
+          "endMs": 760,
+          "probability": 0.93228
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 760,
+          "endMs": 1080,
+          "probability": 0.890557
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 1080,
+          "endMs": 1460,
+          "probability": 0.955728
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 1460,
+          "endMs": 1640,
+          "probability": 0.963169
+        },
+        {
+          "index": 6,
+          "text": "Missing",
+          "startMs": 1640,
+          "endMs": 2060,
+          "probability": 0.967788
+        },
+        {
+          "index": 7,
+          "text": "Cupcakes",
+          "startMs": 2060,
+          "endMs": 2800,
+          "probability": 0.975527
+        },
+        {
+          "index": 8,
+          "text": "by",
+          "startMs": 2800,
+          "endMs": 3540,
+          "probability": 0.772108
+        },
+        {
+          "index": 9,
+          "text": "Kimberly",
+          "startMs": 3540,
+          "endMs": 3980,
+          "probability": 0.678965
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 3980,
+          "endMs": 4500,
+          "probability": 0.962757
+        },
+        {
+          "index": 11,
+          "text": "James",
+          "startMs": 4500,
+          "endMs": 5060,
+          "probability": 0.997363
+        },
+        {
+          "index": 12,
+          "text": "Dean",
+          "startMs": 5060,
+          "endMs": 5440,
+          "probability": 0.925182
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "performed by James Foeing",
+      "startMs": 6440,
+      "endMs": 8940,
+      "avgLogprob": -0.180502,
+      "noSpeechProb": 0.011698,
+      "compressionRatio": 1.6,
+      "words": [
+        {
+          "index": 1,
+          "text": "performed",
+          "startMs": 6440,
+          "endMs": 6840,
+          "probability": 0.61603
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 6840,
+          "endMs": 7300,
+          "probability": 0.998135
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 7300,
+          "endMs": 7740,
+          "probability": 0.993394
+        },
+        {
+          "index": 4,
+          "text": "Foeing",
+          "startMs": 7740,
+          "endMs": 8940,
+          "probability": 0.784651
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Pete and Gus were as busy as could be they were getting ready for the cupcake party it started at three",
+      "startMs": 11160,
+      "endMs": 19460,
+      "avgLogprob": -0.180502,
+      "noSpeechProb": 0.011698,
+      "compressionRatio": 1.6,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 11160,
+          "endMs": 11920,
+          "probability": 0.579074
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 11920,
+          "endMs": 12240,
+          "probability": 0.992602
+        },
+        {
+          "index": 3,
+          "text": "Gus",
+          "startMs": 12240,
+          "endMs": 12540,
+          "probability": 0.991476
+        },
+        {
+          "index": 4,
+          "text": "were",
+          "startMs": 12540,
+          "endMs": 12820,
+          "probability": 0.992208
+        },
+        {
+          "index": 5,
+          "text": "as",
+          "startMs": 12820,
+          "endMs": 13060,
+          "probability": 0.986853
+        },
+        {
+          "index": 6,
+          "text": "busy",
+          "startMs": 13060,
+          "endMs": 13380,
+          "probability": 0.998409
+        },
+        {
+          "index": 7,
+          "text": "as",
+          "startMs": 13380,
+          "endMs": 13720,
+          "probability": 0.997086
+        },
+        {
+          "index": 8,
+          "text": "could",
+          "startMs": 13720,
+          "endMs": 13960,
+          "probability": 0.99406
+        },
+        {
+          "index": 9,
+          "text": "be",
+          "startMs": 13960,
+          "endMs": 14460,
+          "probability": 0.998675
+        },
+        {
+          "index": 10,
+          "text": "they",
+          "startMs": 14460,
+          "endMs": 15240,
+          "probability": 0.298292
+        },
+        {
+          "index": 11,
+          "text": "were",
+          "startMs": 15240,
+          "endMs": 15380,
+          "probability": 0.997437
+        },
+        {
+          "index": 12,
+          "text": "getting",
+          "startMs": 15380,
+          "endMs": 15640,
+          "probability": 0.998984
+        },
+        {
+          "index": 13,
+          "text": "ready",
+          "startMs": 15640,
+          "endMs": 15900,
+          "probability": 0.999813
+        },
+        {
+          "index": 14,
+          "text": "for",
+          "startMs": 15900,
+          "endMs": 16160,
+          "probability": 0.999081
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 16160,
+          "endMs": 16320,
+          "probability": 0.997852
+        },
+        {
+          "index": 16,
+          "text": "cupcake",
+          "startMs": 16320,
+          "endMs": 16860,
+          "probability": 0.974234
+        },
+        {
+          "index": 17,
+          "text": "party",
+          "startMs": 16860,
+          "endMs": 17320,
+          "probability": 0.993461
+        },
+        {
+          "index": 18,
+          "text": "it",
+          "startMs": 17320,
+          "endMs": 18280,
+          "probability": 0.571559
+        },
+        {
+          "index": 19,
+          "text": "started",
+          "startMs": 18280,
+          "endMs": 18660,
+          "probability": 0.980328
+        },
+        {
+          "index": 20,
+          "text": "at",
+          "startMs": 18660,
+          "endMs": 19000,
+          "probability": 0.976681
+        },
+        {
+          "index": 21,
+          "text": "three",
+          "startMs": 19000,
+          "endMs": 19460,
+          "probability": 0.538842
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "They were making cupcakes for everyone Pete and Gus counted them just for fun",
+      "startMs": 20880,
+      "endMs": 26400,
+      "avgLogprob": -0.180502,
+      "noSpeechProb": 0.011698,
+      "compressionRatio": 1.6,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 20880,
+          "endMs": 21640,
+          "probability": 0.206128
+        },
+        {
+          "index": 2,
+          "text": "were",
+          "startMs": 21640,
+          "endMs": 21780,
+          "probability": 0.9981
+        },
+        {
+          "index": 3,
+          "text": "making",
+          "startMs": 21780,
+          "endMs": 22100,
+          "probability": 0.999028
+        },
+        {
+          "index": 4,
+          "text": "cupcakes",
+          "startMs": 22100,
+          "endMs": 22620,
+          "probability": 0.996631
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 22620,
+          "endMs": 22880,
+          "probability": 0.999501
+        },
+        {
+          "index": 6,
+          "text": "everyone",
+          "startMs": 22880,
+          "endMs": 23500,
+          "probability": 0.997567
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 23500,
+          "endMs": 24280,
+          "probability": 0.899577
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 24280,
+          "endMs": 24500,
+          "probability": 0.994346
+        },
+        {
+          "index": 9,
+          "text": "Gus",
+          "startMs": 24500,
+          "endMs": 24760,
+          "probability": 0.993584
+        },
+        {
+          "index": 10,
+          "text": "counted",
+          "startMs": 24760,
+          "endMs": 25160,
+          "probability": 0.997711
+        },
+        {
+          "index": 11,
+          "text": "them",
+          "startMs": 25160,
+          "endMs": 25440,
+          "probability": 0.99929
+        },
+        {
+          "index": 12,
+          "text": "just",
+          "startMs": 25440,
+          "endMs": 25700,
+          "probability": 0.990338
+        },
+        {
+          "index": 13,
+          "text": "for",
+          "startMs": 25700,
+          "endMs": 26000,
+          "probability": 0.999313
+        },
+        {
+          "index": 14,
+          "text": "fun",
+          "startMs": 26000,
+          "endMs": 26400,
+          "probability": 0.999498
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "They had ten when they were done oh",
+      "startMs": 27980,
+      "endMs": 30560,
+      "avgLogprob": -0.293664,
+      "noSpeechProb": 0.002428,
+      "compressionRatio": 1.567376,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 27980,
+          "endMs": 28700,
+          "probability": 0.81006
+        },
+        {
+          "index": 2,
+          "text": "had",
+          "startMs": 28700,
+          "endMs": 29000,
+          "probability": 0.97225
+        },
+        {
+          "index": 3,
+          "text": "ten",
+          "startMs": 29000,
+          "endMs": 29420,
+          "probability": 0.821442
+        },
+        {
+          "index": 4,
+          "text": "when",
+          "startMs": 29420,
+          "endMs": 29700,
+          "probability": 0.975259
+        },
+        {
+          "index": 5,
+          "text": "they",
+          "startMs": 29700,
+          "endMs": 29860,
+          "probability": 0.9964
+        },
+        {
+          "index": 6,
+          "text": "were",
+          "startMs": 29860,
+          "endMs": 30000,
+          "probability": 0.997048
+        },
+        {
+          "index": 7,
+          "text": "done",
+          "startMs": 30000,
+          "endMs": 30360,
+          "probability": 0.99793
+        },
+        {
+          "index": 8,
+          "text": "oh",
+          "startMs": 30360,
+          "endMs": 30720,
+          "probability": 0.000604
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "No hang on some of the cupcakes were gone. They were sure there had been ten",
+      "startMs": 32880,
+      "endMs": 40700,
+      "avgLogprob": -0.293664,
+      "noSpeechProb": 0.002428,
+      "compressionRatio": 1.567376,
+      "words": [
+        {
+          "index": 1,
+          "text": "No",
+          "startMs": 32880,
+          "endMs": 33600,
+          "probability": 0.257755
+        },
+        {
+          "index": 2,
+          "text": "hang",
+          "startMs": 33600,
+          "endMs": 34320,
+          "probability": 0.563972
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 34320,
+          "endMs": 34980,
+          "probability": 0.989963
+        },
+        {
+          "index": 4,
+          "text": "some",
+          "startMs": 34980,
+          "endMs": 36040,
+          "probability": 0.598519
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 36040,
+          "endMs": 36240,
+          "probability": 0.995993
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 36240,
+          "endMs": 36440,
+          "probability": 0.998537
+        },
+        {
+          "index": 7,
+          "text": "cupcakes",
+          "startMs": 36440,
+          "endMs": 37000,
+          "probability": 0.981546
+        },
+        {
+          "index": 8,
+          "text": "were",
+          "startMs": 37000,
+          "endMs": 37260,
+          "probability": 0.994029
+        },
+        {
+          "index": 9,
+          "text": "gone.",
+          "startMs": 37260,
+          "endMs": 37800,
+          "probability": 0.996447
+        },
+        {
+          "index": 10,
+          "text": "They",
+          "startMs": 38200,
+          "endMs": 38920,
+          "probability": 0.991543
+        },
+        {
+          "index": 11,
+          "text": "were",
+          "startMs": 38920,
+          "endMs": 39120,
+          "probability": 0.996006
+        },
+        {
+          "index": 12,
+          "text": "sure",
+          "startMs": 39120,
+          "endMs": 39480,
+          "probability": 0.995923
+        },
+        {
+          "index": 13,
+          "text": "there",
+          "startMs": 39480,
+          "endMs": 39720,
+          "probability": 0.995424
+        },
+        {
+          "index": 14,
+          "text": "had",
+          "startMs": 39720,
+          "endMs": 39880,
+          "probability": 0.9905
+        },
+        {
+          "index": 15,
+          "text": "been",
+          "startMs": 39880,
+          "endMs": 40140,
+          "probability": 0.998296
+        },
+        {
+          "index": 16,
+          "text": "ten",
+          "startMs": 40140,
+          "endMs": 40700,
+          "probability": 0.869792
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Pete said maybe we need to count again",
+      "startMs": 42300,
+      "endMs": 46080,
+      "avgLogprob": -0.293664,
+      "noSpeechProb": 0.002428,
+      "compressionRatio": 1.567376,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 42300,
+          "endMs": 43020,
+          "probability": 0.958695
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 43020,
+          "endMs": 43480,
+          "probability": 0.976608
+        },
+        {
+          "index": 3,
+          "text": "maybe",
+          "startMs": 43480,
+          "endMs": 44280,
+          "probability": 0.940826
+        },
+        {
+          "index": 4,
+          "text": "we",
+          "startMs": 44280,
+          "endMs": 44600,
+          "probability": 0.998512
+        },
+        {
+          "index": 5,
+          "text": "need",
+          "startMs": 44600,
+          "endMs": 44860,
+          "probability": 0.998672
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 44860,
+          "endMs": 45080,
+          "probability": 0.998997
+        },
+        {
+          "index": 7,
+          "text": "count",
+          "startMs": 45080,
+          "endMs": 45440,
+          "probability": 0.997361
+        },
+        {
+          "index": 8,
+          "text": "again",
+          "startMs": 45440,
+          "endMs": 46080,
+          "probability": 0.984568
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "They counted the cupcakes lined up straight now there were only eight",
+      "startMs": 47820,
+      "endMs": 53600,
+      "avgLogprob": -0.293664,
+      "noSpeechProb": 0.002428,
+      "compressionRatio": 1.567376,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 47820,
+          "endMs": 48540,
+          "probability": 0.933269
+        },
+        {
+          "index": 2,
+          "text": "counted",
+          "startMs": 48540,
+          "endMs": 48900,
+          "probability": 0.996154
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 48900,
+          "endMs": 49160,
+          "probability": 0.996852
+        },
+        {
+          "index": 4,
+          "text": "cupcakes",
+          "startMs": 49160,
+          "endMs": 49800,
+          "probability": 0.98918
+        },
+        {
+          "index": 5,
+          "text": "lined",
+          "startMs": 49800,
+          "endMs": 50300,
+          "probability": 0.993434
+        },
+        {
+          "index": 6,
+          "text": "up",
+          "startMs": 50300,
+          "endMs": 50620,
+          "probability": 0.993682
+        },
+        {
+          "index": 7,
+          "text": "straight",
+          "startMs": 50620,
+          "endMs": 51100,
+          "probability": 0.990456
+        },
+        {
+          "index": 8,
+          "text": "now",
+          "startMs": 51100,
+          "endMs": 52380,
+          "probability": 0.851277
+        },
+        {
+          "index": 9,
+          "text": "there",
+          "startMs": 52380,
+          "endMs": 52720,
+          "probability": 0.792605
+        },
+        {
+          "index": 10,
+          "text": "were",
+          "startMs": 52720,
+          "endMs": 52920,
+          "probability": 0.996838
+        },
+        {
+          "index": 11,
+          "text": "only",
+          "startMs": 52920,
+          "endMs": 53480,
+          "probability": 0.998733
+        },
+        {
+          "index": 12,
+          "text": "eight",
+          "startMs": 53480,
+          "endMs": 53840,
+          "probability": 0.971865
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "It",
+      "startMs": 53840,
+      "endMs": 54860,
+      "avgLogprob": -0.311729,
+      "noSpeechProb": 0.001607,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 53840,
+          "endMs": 54860,
+          "probability": 0.517415
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Looked like someone had taken two, but who Pete and Gus did not know what to do",
+      "startMs": 56080,
+      "endMs": 64920,
+      "avgLogprob": -0.311729,
+      "noSpeechProb": 0.001607,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Looked",
+          "startMs": 56080,
+          "endMs": 56920,
+          "probability": 0.496013
+        },
+        {
+          "index": 2,
+          "text": "like",
+          "startMs": 56920,
+          "endMs": 57100,
+          "probability": 0.411428
+        },
+        {
+          "index": 3,
+          "text": "someone",
+          "startMs": 57100,
+          "endMs": 57500,
+          "probability": 0.506058
+        },
+        {
+          "index": 4,
+          "text": "had",
+          "startMs": 57500,
+          "endMs": 57820,
+          "probability": 0.712146
+        },
+        {
+          "index": 5,
+          "text": "taken",
+          "startMs": 57820,
+          "endMs": 58280,
+          "probability": 0.74546
+        },
+        {
+          "index": 6,
+          "text": "two,",
+          "startMs": 58280,
+          "endMs": 59120,
+          "probability": 0.65362
+        },
+        {
+          "index": 7,
+          "text": "but",
+          "startMs": 59220,
+          "endMs": 60260,
+          "probability": 0.978677
+        },
+        {
+          "index": 8,
+          "text": "who",
+          "startMs": 60260,
+          "endMs": 60980,
+          "probability": 0.832585
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 60980,
+          "endMs": 62180,
+          "probability": 0.178223
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 62180,
+          "endMs": 62460,
+          "probability": 0.978266
+        },
+        {
+          "index": 11,
+          "text": "Gus",
+          "startMs": 62460,
+          "endMs": 62780,
+          "probability": 0.903757
+        },
+        {
+          "index": 12,
+          "text": "did",
+          "startMs": 62780,
+          "endMs": 63020,
+          "probability": 0.811784
+        },
+        {
+          "index": 13,
+          "text": "not",
+          "startMs": 63020,
+          "endMs": 63340,
+          "probability": 0.959751
+        },
+        {
+          "index": 14,
+          "text": "know",
+          "startMs": 63340,
+          "endMs": 63580,
+          "probability": 0.952351
+        },
+        {
+          "index": 15,
+          "text": "what",
+          "startMs": 63580,
+          "endMs": 63840,
+          "probability": 0.951052
+        },
+        {
+          "index": 16,
+          "text": "to",
+          "startMs": 63840,
+          "endMs": 64100,
+          "probability": 0.997802
+        },
+        {
+          "index": 17,
+          "text": "do",
+          "startMs": 64100,
+          "endMs": 64920,
+          "probability": 0.996114
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Just then they found a clue",
+      "startMs": 66180,
+      "endMs": 69660,
+      "avgLogprob": -0.311729,
+      "noSpeechProb": 0.001607,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 66180,
+          "endMs": 67020,
+          "probability": 0.899953
+        },
+        {
+          "index": 2,
+          "text": "then",
+          "startMs": 67020,
+          "endMs": 67720,
+          "probability": 0.827995
+        },
+        {
+          "index": 3,
+          "text": "they",
+          "startMs": 67720,
+          "endMs": 68500,
+          "probability": 0.917296
+        },
+        {
+          "index": 4,
+          "text": "found",
+          "startMs": 68500,
+          "endMs": 68920,
+          "probability": 0.941792
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 68920,
+          "endMs": 69180,
+          "probability": 0.967902
+        },
+        {
+          "index": 6,
+          "text": "clue",
+          "startMs": 69180,
+          "endMs": 69660,
+          "probability": 0.986309
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Gus said look what I have found",
+      "startMs": 70560,
+      "endMs": 73680,
+      "avgLogprob": -0.311729,
+      "noSpeechProb": 0.001607,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Gus",
+          "startMs": 70560,
+          "endMs": 71080,
+          "probability": 0.976425
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 71080,
+          "endMs": 71540,
+          "probability": 0.909505
+        },
+        {
+          "index": 3,
+          "text": "look",
+          "startMs": 71540,
+          "endMs": 72460,
+          "probability": 0.832853
+        },
+        {
+          "index": 4,
+          "text": "what",
+          "startMs": 72460,
+          "endMs": 72660,
+          "probability": 0.970565
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 72660,
+          "endMs": 72880,
+          "probability": 0.969603
+        },
+        {
+          "index": 6,
+          "text": "have",
+          "startMs": 72880,
+          "endMs": 73120,
+          "probability": 0.993729
+        },
+        {
+          "index": 7,
+          "text": "found",
+          "startMs": 73120,
+          "endMs": 73680,
+          "probability": 0.996784
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Sprinkles on the ground I bet it was squirrel. She loves sprinkles",
+      "startMs": 74240,
+      "endMs": 80280,
+      "avgLogprob": -0.311729,
+      "noSpeechProb": 0.001607,
+      "compressionRatio": 1.421769,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sprinkles",
+          "startMs": 74240,
+          "endMs": 74760,
+          "probability": 0.924871
+        },
+        {
+          "index": 2,
+          "text": "on",
+          "startMs": 74760,
+          "endMs": 75020,
+          "probability": 0.988294
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 75020,
+          "endMs": 75200,
+          "probability": 0.997089
+        },
+        {
+          "index": 4,
+          "text": "ground",
+          "startMs": 75200,
+          "endMs": 75780,
+          "probability": 0.991389
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 75780,
+          "endMs": 76700,
+          "probability": 0.364294
+        },
+        {
+          "index": 6,
+          "text": "bet",
+          "startMs": 76700,
+          "endMs": 77040,
+          "probability": 0.944831
+        },
+        {
+          "index": 7,
+          "text": "it",
+          "startMs": 77040,
+          "endMs": 77200,
+          "probability": 0.982905
+        },
+        {
+          "index": 8,
+          "text": "was",
+          "startMs": 77200,
+          "endMs": 77460,
+          "probability": 0.969213
+        },
+        {
+          "index": 9,
+          "text": "squirrel.",
+          "startMs": 77460,
+          "endMs": 78220,
+          "probability": 0.934791
+        },
+        {
+          "index": 10,
+          "text": "She",
+          "startMs": 78600,
+          "endMs": 79040,
+          "probability": 0.998783
+        },
+        {
+          "index": 11,
+          "text": "loves",
+          "startMs": 79040,
+          "endMs": 79440,
+          "probability": 0.910739
+        },
+        {
+          "index": 12,
+          "text": "sprinkles",
+          "startMs": 79440,
+          "endMs": 80280,
+          "probability": 0.743185
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Squirrel said it wasn't me it couldn't be I've been at the spelling bee",
+      "startMs": 82140,
+      "endMs": 90440,
+      "avgLogprob": -0.226496,
+      "noSpeechProb": 0.000719,
+      "compressionRatio": 1.389222,
+      "words": [
+        {
+          "index": 1,
+          "text": "Squirrel",
+          "startMs": 82140,
+          "endMs": 83140,
+          "probability": 0.922505
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 83140,
+          "endMs": 83740,
+          "probability": 0.7631
+        },
+        {
+          "index": 3,
+          "text": "it",
+          "startMs": 83740,
+          "endMs": 84520,
+          "probability": 0.075551
+        },
+        {
+          "index": 4,
+          "text": "wasn't",
+          "startMs": 84520,
+          "endMs": 85060,
+          "probability": 0.982672
+        },
+        {
+          "index": 5,
+          "text": "me",
+          "startMs": 85060,
+          "endMs": 85540,
+          "probability": 0.9925
+        },
+        {
+          "index": 6,
+          "text": "it",
+          "startMs": 85540,
+          "endMs": 86300,
+          "probability": 0.530683
+        },
+        {
+          "index": 7,
+          "text": "couldn't",
+          "startMs": 86300,
+          "endMs": 86940,
+          "probability": 0.98368
+        },
+        {
+          "index": 8,
+          "text": "be",
+          "startMs": 86940,
+          "endMs": 87360,
+          "probability": 0.994327
+        },
+        {
+          "index": 9,
+          "text": "I've",
+          "startMs": 87360,
+          "endMs": 88400,
+          "probability": 0.974562
+        },
+        {
+          "index": 10,
+          "text": "been",
+          "startMs": 88400,
+          "endMs": 88520,
+          "probability": 0.9968
+        },
+        {
+          "index": 11,
+          "text": "at",
+          "startMs": 88520,
+          "endMs": 88720,
+          "probability": 0.996421
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 88720,
+          "endMs": 88960,
+          "probability": 0.985444
+        },
+        {
+          "index": 13,
+          "text": "spelling",
+          "startMs": 88960,
+          "endMs": 89600,
+          "probability": 0.849368
+        },
+        {
+          "index": 14,
+          "text": "bee",
+          "startMs": 89600,
+          "endMs": 90440,
+          "probability": 0.720776
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Uh-oh more cupcakes are missing come and see",
+      "startMs": 91440,
+      "endMs": 96020,
+      "avgLogprob": -0.226496,
+      "noSpeechProb": 0.000719,
+      "compressionRatio": 1.389222,
+      "words": [
+        {
+          "index": 1,
+          "text": "Uh",
+          "startMs": 91440,
+          "endMs": 92140,
+          "probability": 0.261865
+        },
+        {
+          "index": 2,
+          "text": "-oh",
+          "startMs": 92140,
+          "endMs": 92520,
+          "probability": 0.911932
+        },
+        {
+          "index": 3,
+          "text": "more",
+          "startMs": 92520,
+          "endMs": 93180,
+          "probability": 0.888767
+        },
+        {
+          "index": 4,
+          "text": "cupcakes",
+          "startMs": 93180,
+          "endMs": 93840,
+          "probability": 0.988187
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 93840,
+          "endMs": 94060,
+          "probability": 0.987591
+        },
+        {
+          "index": 6,
+          "text": "missing",
+          "startMs": 94060,
+          "endMs": 94600,
+          "probability": 0.998995
+        },
+        {
+          "index": 7,
+          "text": "come",
+          "startMs": 94600,
+          "endMs": 95320,
+          "probability": 0.871022
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 95320,
+          "endMs": 95540,
+          "probability": 0.990563
+        },
+        {
+          "index": 9,
+          "text": "see",
+          "startMs": 95540,
+          "endMs": 96020,
+          "probability": 0.998544
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "This was too weird there were only six",
+      "startMs": 97600,
+      "endMs": 101700,
+      "avgLogprob": -0.226496,
+      "noSpeechProb": 0.000719,
+      "compressionRatio": 1.389222,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 97600,
+          "endMs": 98600,
+          "probability": 0.974893
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 98600,
+          "endMs": 98880,
+          "probability": 0.996449
+        },
+        {
+          "index": 3,
+          "text": "too",
+          "startMs": 98880,
+          "endMs": 99400,
+          "probability": 0.947694
+        },
+        {
+          "index": 4,
+          "text": "weird",
+          "startMs": 99400,
+          "endMs": 100160,
+          "probability": 0.978705
+        },
+        {
+          "index": 5,
+          "text": "there",
+          "startMs": 100160,
+          "endMs": 100460,
+          "probability": 0.886992
+        },
+        {
+          "index": 6,
+          "text": "were",
+          "startMs": 100460,
+          "endMs": 100620,
+          "probability": 0.994216
+        },
+        {
+          "index": 7,
+          "text": "only",
+          "startMs": 100620,
+          "endMs": 101060,
+          "probability": 0.999092
+        },
+        {
+          "index": 8,
+          "text": "six",
+          "startMs": 101060,
+          "endMs": 101700,
+          "probability": 0.982575
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Someone must be playing tricks",
+      "startMs": 102480,
+      "endMs": 104680,
+      "avgLogprob": -0.226496,
+      "noSpeechProb": 0.000719,
+      "compressionRatio": 1.389222,
+      "words": [
+        {
+          "index": 1,
+          "text": "Someone",
+          "startMs": 102420,
+          "endMs": 102920,
+          "probability": 0.821344
+        },
+        {
+          "index": 2,
+          "text": "must",
+          "startMs": 102920,
+          "endMs": 103220,
+          "probability": 0.995993
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 103220,
+          "endMs": 103540,
+          "probability": 0.998547
+        },
+        {
+          "index": 4,
+          "text": "playing",
+          "startMs": 103540,
+          "endMs": 103960,
+          "probability": 0.999004
+        },
+        {
+          "index": 5,
+          "text": "tricks",
+          "startMs": 103960,
+          "endMs": 104680,
+          "probability": 0.994312
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "But who?",
+      "startMs": 104680,
+      "endMs": 106300,
+      "avgLogprob": -0.226496,
+      "noSpeechProb": 0.000719,
+      "compressionRatio": 1.389222,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 104680,
+          "endMs": 105700,
+          "probability": 0.598663
+        },
+        {
+          "index": 2,
+          "text": "who?",
+          "startMs": 105700,
+          "endMs": 106300,
+          "probability": 0.991863
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Pete and Gus did not know what to do",
+      "startMs": 107140,
+      "endMs": 110040,
+      "avgLogprob": -0.226496,
+      "noSpeechProb": 0.000719,
+      "compressionRatio": 1.389222,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 107140,
+          "endMs": 107400,
+          "probability": 0.986761
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 107400,
+          "endMs": 107780,
+          "probability": 0.994704
+        },
+        {
+          "index": 3,
+          "text": "Gus",
+          "startMs": 107780,
+          "endMs": 108120,
+          "probability": 0.964706
+        },
+        {
+          "index": 4,
+          "text": "did",
+          "startMs": 108120,
+          "endMs": 108380,
+          "probability": 0.994468
+        },
+        {
+          "index": 5,
+          "text": "not",
+          "startMs": 108380,
+          "endMs": 108660,
+          "probability": 0.999627
+        },
+        {
+          "index": 6,
+          "text": "know",
+          "startMs": 108660,
+          "endMs": 108880,
+          "probability": 0.999711
+        },
+        {
+          "index": 7,
+          "text": "what",
+          "startMs": 108880,
+          "endMs": 109120,
+          "probability": 0.998468
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 109120,
+          "endMs": 109400,
+          "probability": 0.999699
+        },
+        {
+          "index": 9,
+          "text": "do",
+          "startMs": 109400,
+          "endMs": 110040,
+          "probability": 0.999623
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Just then they found another clue",
+      "startMs": 111440,
+      "endMs": 115780,
+      "avgLogprob": -0.261755,
+      "noSpeechProb": 0.00069,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 111440,
+          "endMs": 112560,
+          "probability": 0.815295
+        },
+        {
+          "index": 2,
+          "text": "then",
+          "startMs": 112560,
+          "endMs": 113260,
+          "probability": 0.995337
+        },
+        {
+          "index": 3,
+          "text": "they",
+          "startMs": 113260,
+          "endMs": 113880,
+          "probability": 0.411015
+        },
+        {
+          "index": 4,
+          "text": "found",
+          "startMs": 113880,
+          "endMs": 114420,
+          "probability": 0.994675
+        },
+        {
+          "index": 5,
+          "text": "another",
+          "startMs": 114420,
+          "endMs": 115020,
+          "probability": 0.994135
+        },
+        {
+          "index": 6,
+          "text": "clue",
+          "startMs": 115020,
+          "endMs": 115780,
+          "probability": 0.994755
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Pete said I bet it was alligator he loves to eat",
+      "startMs": 117760,
+      "endMs": 123000,
+      "avgLogprob": -0.261755,
+      "noSpeechProb": 0.00069,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 117700,
+          "endMs": 118260,
+          "probability": 0.176257
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 118260,
+          "endMs": 118680,
+          "probability": 0.988755
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 118680,
+          "endMs": 119740,
+          "probability": 0.45876
+        },
+        {
+          "index": 4,
+          "text": "bet",
+          "startMs": 119740,
+          "endMs": 119960,
+          "probability": 0.979145
+        },
+        {
+          "index": 5,
+          "text": "it",
+          "startMs": 119960,
+          "endMs": 120080,
+          "probability": 0.987679
+        },
+        {
+          "index": 6,
+          "text": "was",
+          "startMs": 120080,
+          "endMs": 120300,
+          "probability": 0.998252
+        },
+        {
+          "index": 7,
+          "text": "alligator",
+          "startMs": 120300,
+          "endMs": 120880,
+          "probability": 0.900611
+        },
+        {
+          "index": 8,
+          "text": "he",
+          "startMs": 120880,
+          "endMs": 121560,
+          "probability": 0.357512
+        },
+        {
+          "index": 9,
+          "text": "loves",
+          "startMs": 121560,
+          "endMs": 122040,
+          "probability": 0.9937
+        },
+        {
+          "index": 10,
+          "text": "to",
+          "startMs": 122040,
+          "endMs": 122380,
+          "probability": 0.997863
+        },
+        {
+          "index": 11,
+          "text": "eat",
+          "startMs": 122380,
+          "endMs": 123000,
+          "probability": 0.999092
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Alligator said it wasn't me it couldn't be I've been learning my ABCs",
+      "startMs": 125040,
+      "endMs": 131080,
+      "avgLogprob": -0.261755,
+      "noSpeechProb": 0.00069,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "Alligator",
+          "startMs": 124940,
+          "endMs": 125500,
+          "probability": 0.826959
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 125500,
+          "endMs": 125980,
+          "probability": 0.983686
+        },
+        {
+          "index": 3,
+          "text": "it",
+          "startMs": 125980,
+          "endMs": 126820,
+          "probability": 0.880976
+        },
+        {
+          "index": 4,
+          "text": "wasn't",
+          "startMs": 126820,
+          "endMs": 127200,
+          "probability": 0.994057
+        },
+        {
+          "index": 5,
+          "text": "me",
+          "startMs": 127200,
+          "endMs": 127560,
+          "probability": 0.997956
+        },
+        {
+          "index": 6,
+          "text": "it",
+          "startMs": 127560,
+          "endMs": 128220,
+          "probability": 0.586893
+        },
+        {
+          "index": 7,
+          "text": "couldn't",
+          "startMs": 128220,
+          "endMs": 128580,
+          "probability": 0.987991
+        },
+        {
+          "index": 8,
+          "text": "be",
+          "startMs": 128580,
+          "endMs": 128960,
+          "probability": 0.997707
+        },
+        {
+          "index": 9,
+          "text": "I've",
+          "startMs": 128960,
+          "endMs": 129780,
+          "probability": 0.980502
+        },
+        {
+          "index": 10,
+          "text": "been",
+          "startMs": 129780,
+          "endMs": 129900,
+          "probability": 0.99873
+        },
+        {
+          "index": 11,
+          "text": "learning",
+          "startMs": 129900,
+          "endMs": 130160,
+          "probability": 0.997587
+        },
+        {
+          "index": 12,
+          "text": "my",
+          "startMs": 130160,
+          "endMs": 130420,
+          "probability": 0.98254
+        },
+        {
+          "index": 13,
+          "text": "ABCs",
+          "startMs": 130420,
+          "endMs": 131080,
+          "probability": 0.647506
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Uh-oh more cupcakes are missing come and see",
+      "startMs": 132840,
+      "endMs": 137180,
+      "avgLogprob": -0.261755,
+      "noSpeechProb": 0.00069,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "Uh",
+          "startMs": 132620,
+          "endMs": 133180,
+          "probability": 0.522937
+        },
+        {
+          "index": 2,
+          "text": "-oh",
+          "startMs": 133180,
+          "endMs": 133600,
+          "probability": 0.898604
+        },
+        {
+          "index": 3,
+          "text": "more",
+          "startMs": 133600,
+          "endMs": 134300,
+          "probability": 0.856562
+        },
+        {
+          "index": 4,
+          "text": "cupcakes",
+          "startMs": 134300,
+          "endMs": 134920,
+          "probability": 0.989883
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 134920,
+          "endMs": 135180,
+          "probability": 0.995399
+        },
+        {
+          "index": 6,
+          "text": "missing",
+          "startMs": 135180,
+          "endMs": 135740,
+          "probability": 0.999037
+        },
+        {
+          "index": 7,
+          "text": "come",
+          "startMs": 135740,
+          "endMs": 136480,
+          "probability": 0.850519
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 136480,
+          "endMs": 136680,
+          "probability": 0.996553
+        },
+        {
+          "index": 9,
+          "text": "see",
+          "startMs": 136680,
+          "endMs": 137180,
+          "probability": 0.998694
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Now there were only four someone had taken two more, but who?",
+      "startMs": 138640,
+      "endMs": 145920,
+      "avgLogprob": -0.577638,
+      "noSpeechProb": 0.000401,
+      "compressionRatio": 1.389706,
+      "words": [
+        {
+          "index": 1,
+          "text": "Now",
+          "startMs": 138640,
+          "endMs": 139760,
+          "probability": 0.652551
+        },
+        {
+          "index": 2,
+          "text": "there",
+          "startMs": 139760,
+          "endMs": 140000,
+          "probability": 0.888249
+        },
+        {
+          "index": 3,
+          "text": "were",
+          "startMs": 140000,
+          "endMs": 140220,
+          "probability": 0.992502
+        },
+        {
+          "index": 4,
+          "text": "only",
+          "startMs": 140220,
+          "endMs": 140720,
+          "probability": 0.996916
+        },
+        {
+          "index": 5,
+          "text": "four",
+          "startMs": 140720,
+          "endMs": 141320,
+          "probability": 0.923219
+        },
+        {
+          "index": 6,
+          "text": "someone",
+          "startMs": 141320,
+          "endMs": 142440,
+          "probability": 0.018933
+        },
+        {
+          "index": 7,
+          "text": "had",
+          "startMs": 142440,
+          "endMs": 142720,
+          "probability": 0.992085
+        },
+        {
+          "index": 8,
+          "text": "taken",
+          "startMs": 142720,
+          "endMs": 143140,
+          "probability": 0.997525
+        },
+        {
+          "index": 9,
+          "text": "two",
+          "startMs": 143140,
+          "endMs": 143560,
+          "probability": 0.943707
+        },
+        {
+          "index": 10,
+          "text": "more,",
+          "startMs": 143560,
+          "endMs": 144300,
+          "probability": 0.99505
+        },
+        {
+          "index": 11,
+          "text": "but",
+          "startMs": 144300,
+          "endMs": 145240,
+          "probability": 0.987341
+        },
+        {
+          "index": 12,
+          "text": "who?",
+          "startMs": 145240,
+          "endMs": 145920,
+          "probability": 0.977791
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Pete and Gus did not know what to do",
+      "startMs": 148380,
+      "endMs": 151460,
+      "avgLogprob": -0.577638,
+      "noSpeechProb": 0.000401,
+      "compressionRatio": 1.389706,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 148380,
+          "endMs": 148520,
+          "probability": 0.976001
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 148520,
+          "endMs": 148820,
+          "probability": 0.99468
+        },
+        {
+          "index": 3,
+          "text": "Gus",
+          "startMs": 148820,
+          "endMs": 149220,
+          "probability": 0.974103
+        },
+        {
+          "index": 4,
+          "text": "did",
+          "startMs": 149220,
+          "endMs": 149520,
+          "probability": 0.991822
+        },
+        {
+          "index": 5,
+          "text": "not",
+          "startMs": 149520,
+          "endMs": 149860,
+          "probability": 0.998667
+        },
+        {
+          "index": 6,
+          "text": "know",
+          "startMs": 149860,
+          "endMs": 150120,
+          "probability": 0.99885
+        },
+        {
+          "index": 7,
+          "text": "what",
+          "startMs": 150120,
+          "endMs": 150340,
+          "probability": 0.998183
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 150340,
+          "endMs": 150580,
+          "probability": 0.998776
+        },
+        {
+          "index": 9,
+          "text": "do",
+          "startMs": 150580,
+          "endMs": 151460,
+          "probability": 0.998649
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Just then they found another clue",
+      "startMs": 151460,
+      "endMs": 156200,
+      "avgLogprob": -0.577638,
+      "noSpeechProb": 0.000401,
+      "compressionRatio": 1.389706,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 151460,
+          "endMs": 152720,
+          "probability": 0.107123
+        },
+        {
+          "index": 2,
+          "text": "then",
+          "startMs": 152720,
+          "endMs": 153360,
+          "probability": 0.986263
+        },
+        {
+          "index": 3,
+          "text": "they",
+          "startMs": 153360,
+          "endMs": 154300,
+          "probability": 0.933016
+        },
+        {
+          "index": 4,
+          "text": "found",
+          "startMs": 154300,
+          "endMs": 154860,
+          "probability": 0.998101
+        },
+        {
+          "index": 5,
+          "text": "another",
+          "startMs": 154860,
+          "endMs": 155520,
+          "probability": 0.994305
+        },
+        {
+          "index": 6,
+          "text": "clue",
+          "startMs": 155520,
+          "endMs": 156200,
+          "probability": 0.987868
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "I bet it was turtle said Pete I know turtle loves sweets",
+      "startMs": 157840,
+      "endMs": 165080,
+      "avgLogprob": -0.577638,
+      "noSpeechProb": 0.000401,
+      "compressionRatio": 1.389706,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 157840,
+          "endMs": 158960,
+          "probability": 0.576667
+        },
+        {
+          "index": 2,
+          "text": "bet",
+          "startMs": 158960,
+          "endMs": 159160,
+          "probability": 0.739175
+        },
+        {
+          "index": 3,
+          "text": "it",
+          "startMs": 159160,
+          "endMs": 159340,
+          "probability": 0.990873
+        },
+        {
+          "index": 4,
+          "text": "was",
+          "startMs": 159340,
+          "endMs": 159640,
+          "probability": 0.99929
+        },
+        {
+          "index": 5,
+          "text": "turtle",
+          "startMs": 159640,
+          "endMs": 160400,
+          "probability": 0.770633
+        },
+        {
+          "index": 6,
+          "text": "said",
+          "startMs": 160400,
+          "endMs": 161160,
+          "probability": 0.909191
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 161160,
+          "endMs": 161680,
+          "probability": 0.940017
+        },
+        {
+          "index": 8,
+          "text": "I",
+          "startMs": 161680,
+          "endMs": 162780,
+          "probability": 0.608613
+        },
+        {
+          "index": 9,
+          "text": "know",
+          "startMs": 162780,
+          "endMs": 163180,
+          "probability": 0.902828
+        },
+        {
+          "index": 10,
+          "text": "turtle",
+          "startMs": 163180,
+          "endMs": 163780,
+          "probability": 0.973079
+        },
+        {
+          "index": 11,
+          "text": "loves",
+          "startMs": 163780,
+          "endMs": 164340,
+          "probability": 0.444792
+        },
+        {
+          "index": 12,
+          "text": "sweets",
+          "startMs": 164340,
+          "endMs": 165080,
+          "probability": 0.988017
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Turtle said it wasn't me it couldn't be I've been swimming in the sea",
+      "startMs": 166740,
+      "endMs": 176140,
+      "avgLogprob": -0.401411,
+      "noSpeechProb": 0.000357,
+      "compressionRatio": 1.431507,
+      "words": [
+        {
+          "index": 1,
+          "text": "Turtle",
+          "startMs": 166740,
+          "endMs": 167780,
+          "probability": 0.424927
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 167780,
+          "endMs": 168400,
+          "probability": 0.994492
+        },
+        {
+          "index": 3,
+          "text": "it",
+          "startMs": 168400,
+          "endMs": 169440,
+          "probability": 0.111498
+        },
+        {
+          "index": 4,
+          "text": "wasn't",
+          "startMs": 169440,
+          "endMs": 170080,
+          "probability": 0.990164
+        },
+        {
+          "index": 5,
+          "text": "me",
+          "startMs": 170080,
+          "endMs": 170580,
+          "probability": 0.996748
+        },
+        {
+          "index": 6,
+          "text": "it",
+          "startMs": 170580,
+          "endMs": 171620,
+          "probability": 0.304861
+        },
+        {
+          "index": 7,
+          "text": "couldn't",
+          "startMs": 171620,
+          "endMs": 172320,
+          "probability": 0.914405
+        },
+        {
+          "index": 8,
+          "text": "be",
+          "startMs": 172320,
+          "endMs": 172860,
+          "probability": 0.995006
+        },
+        {
+          "index": 9,
+          "text": "I've",
+          "startMs": 172860,
+          "endMs": 174060,
+          "probability": 0.935774
+        },
+        {
+          "index": 10,
+          "text": "been",
+          "startMs": 174060,
+          "endMs": 174240,
+          "probability": 0.996858
+        },
+        {
+          "index": 11,
+          "text": "swimming",
+          "startMs": 174240,
+          "endMs": 174780,
+          "probability": 0.997831
+        },
+        {
+          "index": 12,
+          "text": "in",
+          "startMs": 174780,
+          "endMs": 175160,
+          "probability": 0.997934
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 175160,
+          "endMs": 175380,
+          "probability": 0.997507
+        },
+        {
+          "index": 14,
+          "text": "sea",
+          "startMs": 175380,
+          "endMs": 176140,
+          "probability": 0.986691
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Uh-oh more cupcakes are missing come and see",
+      "startMs": 176140,
+      "endMs": 181800,
+      "avgLogprob": -0.401411,
+      "noSpeechProb": 0.000357,
+      "compressionRatio": 1.431507,
+      "words": [
+        {
+          "index": 1,
+          "text": "Uh",
+          "startMs": 176140,
+          "endMs": 177660,
+          "probability": 0.177544
+        },
+        {
+          "index": 2,
+          "text": "-oh",
+          "startMs": 177660,
+          "endMs": 178200,
+          "probability": 0.912349
+        },
+        {
+          "index": 3,
+          "text": "more",
+          "startMs": 178200,
+          "endMs": 178960,
+          "probability": 0.769223
+        },
+        {
+          "index": 4,
+          "text": "cupcakes",
+          "startMs": 178960,
+          "endMs": 179580,
+          "probability": 0.985076
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 179580,
+          "endMs": 179840,
+          "probability": 0.991949
+        },
+        {
+          "index": 6,
+          "text": "missing",
+          "startMs": 179840,
+          "endMs": 180340,
+          "probability": 0.999151
+        },
+        {
+          "index": 7,
+          "text": "come",
+          "startMs": 180340,
+          "endMs": 181140,
+          "probability": 0.79305
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 181140,
+          "endMs": 181340,
+          "probability": 0.995322
+        },
+        {
+          "index": 9,
+          "text": "see",
+          "startMs": 181340,
+          "endMs": 181800,
+          "probability": 0.998626
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "What on earth was going on all the cupcakes were now gone",
+      "startMs": 183200,
+      "endMs": 189640,
+      "avgLogprob": -0.401411,
+      "noSpeechProb": 0.000357,
+      "compressionRatio": 1.431507,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 183200,
+          "endMs": 184240,
+          "probability": 0.982452
+        },
+        {
+          "index": 2,
+          "text": "on",
+          "startMs": 184240,
+          "endMs": 184500,
+          "probability": 0.999043
+        },
+        {
+          "index": 3,
+          "text": "earth",
+          "startMs": 184500,
+          "endMs": 184780,
+          "probability": 0.787925
+        },
+        {
+          "index": 4,
+          "text": "was",
+          "startMs": 184780,
+          "endMs": 185080,
+          "probability": 0.995952
+        },
+        {
+          "index": 5,
+          "text": "going",
+          "startMs": 185080,
+          "endMs": 185480,
+          "probability": 0.998811
+        },
+        {
+          "index": 6,
+          "text": "on",
+          "startMs": 185480,
+          "endMs": 186140,
+          "probability": 0.998569
+        },
+        {
+          "index": 7,
+          "text": "all",
+          "startMs": 186140,
+          "endMs": 187000,
+          "probability": 0.958867
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 187000,
+          "endMs": 187240,
+          "probability": 0.998187
+        },
+        {
+          "index": 9,
+          "text": "cupcakes",
+          "startMs": 187240,
+          "endMs": 187820,
+          "probability": 0.994691
+        },
+        {
+          "index": 10,
+          "text": "were",
+          "startMs": 187820,
+          "endMs": 188140,
+          "probability": 0.992292
+        },
+        {
+          "index": 11,
+          "text": "now",
+          "startMs": 188140,
+          "endMs": 188640,
+          "probability": 0.998732
+        },
+        {
+          "index": 12,
+          "text": "gone",
+          "startMs": 188640,
+          "endMs": 189640,
+          "probability": 0.994459
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Pete and Gus did not know what to do",
+      "startMs": 191200,
+      "endMs": 194960,
+      "avgLogprob": -0.401411,
+      "noSpeechProb": 0.000357,
+      "compressionRatio": 1.431507,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 191200,
+          "endMs": 192240,
+          "probability": 0.901416
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 192240,
+          "endMs": 192640,
+          "probability": 0.996765
+        },
+        {
+          "index": 3,
+          "text": "Gus",
+          "startMs": 192640,
+          "endMs": 193020,
+          "probability": 0.920969
+        },
+        {
+          "index": 4,
+          "text": "did",
+          "startMs": 193020,
+          "endMs": 193300,
+          "probability": 0.994698
+        },
+        {
+          "index": 5,
+          "text": "not",
+          "startMs": 193300,
+          "endMs": 193620,
+          "probability": 0.999619
+        },
+        {
+          "index": 6,
+          "text": "know",
+          "startMs": 193620,
+          "endMs": 193860,
+          "probability": 0.999731
+        },
+        {
+          "index": 7,
+          "text": "what",
+          "startMs": 193860,
+          "endMs": 194100,
+          "probability": 0.999202
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 194100,
+          "endMs": 194360,
+          "probability": 0.99985
+        },
+        {
+          "index": 9,
+          "text": "do",
+          "startMs": 194360,
+          "endMs": 194960,
+          "probability": 0.999735
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "They started looking for another clue",
+      "startMs": 195600,
+      "endMs": 199040,
+      "avgLogprob": -0.255891,
+      "noSpeechProb": 0.001301,
+      "compressionRatio": 1.402685,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 195600,
+          "endMs": 196180,
+          "probability": 0.921449
+        },
+        {
+          "index": 2,
+          "text": "started",
+          "startMs": 196180,
+          "endMs": 196700,
+          "probability": 0.985705
+        },
+        {
+          "index": 3,
+          "text": "looking",
+          "startMs": 196700,
+          "endMs": 197240,
+          "probability": 0.997223
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 197240,
+          "endMs": 197740,
+          "probability": 0.998144
+        },
+        {
+          "index": 5,
+          "text": "another",
+          "startMs": 197740,
+          "endMs": 198320,
+          "probability": 0.992559
+        },
+        {
+          "index": 6,
+          "text": "clue",
+          "startMs": 198320,
+          "endMs": 199040,
+          "probability": 0.994193
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "They found grumpy toad with icing on his face",
+      "startMs": 200480,
+      "endMs": 205860,
+      "avgLogprob": -0.255891,
+      "noSpeechProb": 0.001301,
+      "compressionRatio": 1.402685,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 200480,
+          "endMs": 201520,
+          "probability": 0.084409
+        },
+        {
+          "index": 2,
+          "text": "found",
+          "startMs": 201520,
+          "endMs": 202100,
+          "probability": 0.995088
+        },
+        {
+          "index": 3,
+          "text": "grumpy",
+          "startMs": 202100,
+          "endMs": 202760,
+          "probability": 0.668655
+        },
+        {
+          "index": 4,
+          "text": "toad",
+          "startMs": 202760,
+          "endMs": 203360,
+          "probability": 0.711508
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 203360,
+          "endMs": 203660,
+          "probability": 0.984517
+        },
+        {
+          "index": 6,
+          "text": "icing",
+          "startMs": 203660,
+          "endMs": 204360,
+          "probability": 0.976637
+        },
+        {
+          "index": 7,
+          "text": "on",
+          "startMs": 204360,
+          "endMs": 204720,
+          "probability": 0.997835
+        },
+        {
+          "index": 8,
+          "text": "his",
+          "startMs": 204720,
+          "endMs": 205020,
+          "probability": 0.998157
+        },
+        {
+          "index": 9,
+          "text": "face",
+          "startMs": 205020,
+          "endMs": 205860,
+          "probability": 0.998905
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Pete and Gus have solved the case I",
+      "startMs": 205860,
+      "endMs": 209840,
+      "avgLogprob": -0.255891,
+      "noSpeechProb": 0.001301,
+      "compressionRatio": 1.402685,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 205860,
+          "endMs": 206960,
+          "probability": 0.914357
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 206960,
+          "endMs": 207340,
+          "probability": 0.995527
+        },
+        {
+          "index": 3,
+          "text": "Gus",
+          "startMs": 207340,
+          "endMs": 207740,
+          "probability": 0.981197
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 207740,
+          "endMs": 208020,
+          "probability": 0.982555
+        },
+        {
+          "index": 5,
+          "text": "solved",
+          "startMs": 208020,
+          "endMs": 208680,
+          "probability": 0.996154
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 208680,
+          "endMs": 209060,
+          "probability": 0.996874
+        },
+        {
+          "index": 7,
+          "text": "case",
+          "startMs": 209060,
+          "endMs": 209620,
+          "probability": 0.995493
+        },
+        {
+          "index": 8,
+          "text": "I",
+          "startMs": 209620,
+          "endMs": 210140,
+          "probability": 0.758681
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Am so sorry it was me I",
+      "startMs": 212120,
+      "endMs": 215920,
+      "avgLogprob": -0.255891,
+      "noSpeechProb": 0.001301,
+      "compressionRatio": 1.402685,
+      "words": [
+        {
+          "index": 1,
+          "text": "Am",
+          "startMs": 212120,
+          "endMs": 212340,
+          "probability": 0.517044
+        },
+        {
+          "index": 2,
+          "text": "so",
+          "startMs": 212340,
+          "endMs": 212860,
+          "probability": 0.981912
+        },
+        {
+          "index": 3,
+          "text": "sorry",
+          "startMs": 212860,
+          "endMs": 213700,
+          "probability": 0.99402
+        },
+        {
+          "index": 4,
+          "text": "it",
+          "startMs": 213700,
+          "endMs": 214580,
+          "probability": 0.326867
+        },
+        {
+          "index": 5,
+          "text": "was",
+          "startMs": 214580,
+          "endMs": 214900,
+          "probability": 0.993022
+        },
+        {
+          "index": 6,
+          "text": "me",
+          "startMs": 214900,
+          "endMs": 215660,
+          "probability": 0.994558
+        },
+        {
+          "index": 7,
+          "text": "I",
+          "startMs": 215660,
+          "endMs": 216180,
+          "probability": 0.845566
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "Could not stop with just one I",
+      "startMs": 216700,
+      "endMs": 219280,
+      "avgLogprob": -0.255891,
+      "noSpeechProb": 0.001301,
+      "compressionRatio": 1.402685,
+      "words": [
+        {
+          "index": 1,
+          "text": "Could",
+          "startMs": 216700,
+          "endMs": 216980,
+          "probability": 0.646082
+        },
+        {
+          "index": 2,
+          "text": "not",
+          "startMs": 216980,
+          "endMs": 217260,
+          "probability": 0.988946
+        },
+        {
+          "index": 3,
+          "text": "stop",
+          "startMs": 217260,
+          "endMs": 217740,
+          "probability": 0.999075
+        },
+        {
+          "index": 4,
+          "text": "with",
+          "startMs": 217740,
+          "endMs": 218060,
+          "probability": 0.998988
+        },
+        {
+          "index": 5,
+          "text": "just",
+          "startMs": 218060,
+          "endMs": 218460,
+          "probability": 0.995227
+        },
+        {
+          "index": 6,
+          "text": "one",
+          "startMs": 218460,
+          "endMs": 219080,
+          "probability": 0.992917
+        },
+        {
+          "index": 7,
+          "text": "I",
+          "startMs": 219080,
+          "endMs": 219600,
+          "probability": 0.730165
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "ate and ate till there were none I",
+      "startMs": 220060,
+      "endMs": 223160,
+      "avgLogprob": -0.255891,
+      "noSpeechProb": 0.001301,
+      "compressionRatio": 1.402685,
+      "words": [
+        {
+          "index": 1,
+          "text": "ate",
+          "startMs": 220060,
+          "endMs": 220500,
+          "probability": 0.839757
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 220500,
+          "endMs": 220900,
+          "probability": 0.984773
+        },
+        {
+          "index": 3,
+          "text": "ate",
+          "startMs": 220900,
+          "endMs": 221400,
+          "probability": 0.988142
+        },
+        {
+          "index": 4,
+          "text": "till",
+          "startMs": 221400,
+          "endMs": 221700,
+          "probability": 0.962519
+        },
+        {
+          "index": 5,
+          "text": "there",
+          "startMs": 221700,
+          "endMs": 221980,
+          "probability": 0.995977
+        },
+        {
+          "index": 6,
+          "text": "were",
+          "startMs": 221980,
+          "endMs": 222260,
+          "probability": 0.99736
+        },
+        {
+          "index": 7,
+          "text": "none",
+          "startMs": 222260,
+          "endMs": 222860,
+          "probability": 0.994467
+        },
+        {
+          "index": 8,
+          "text": "I",
+          "startMs": 222860,
+          "endMs": 223380,
+          "probability": 0.654627
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Everyone agreed grumpy toad would have to miss the fun",
+      "startMs": 224960,
+      "endMs": 230000,
+      "avgLogprob": -0.211523,
+      "noSpeechProb": 0.002932,
+      "compressionRatio": 1.546512,
+      "words": [
+        {
+          "index": 1,
+          "text": "Everyone",
+          "startMs": 224960,
+          "endMs": 225760,
+          "probability": 0.736392
+        },
+        {
+          "index": 2,
+          "text": "agreed",
+          "startMs": 225760,
+          "endMs": 226380,
+          "probability": 0.985283
+        },
+        {
+          "index": 3,
+          "text": "grumpy",
+          "startMs": 226380,
+          "endMs": 227560,
+          "probability": 0.513038
+        },
+        {
+          "index": 4,
+          "text": "toad",
+          "startMs": 227560,
+          "endMs": 228200,
+          "probability": 0.885974
+        },
+        {
+          "index": 5,
+          "text": "would",
+          "startMs": 228200,
+          "endMs": 228420,
+          "probability": 0.981489
+        },
+        {
+          "index": 6,
+          "text": "have",
+          "startMs": 228420,
+          "endMs": 228720,
+          "probability": 0.997192
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 228720,
+          "endMs": 229000,
+          "probability": 0.997271
+        },
+        {
+          "index": 8,
+          "text": "miss",
+          "startMs": 229000,
+          "endMs": 229200,
+          "probability": 0.993625
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 229200,
+          "endMs": 229520,
+          "probability": 0.991203
+        },
+        {
+          "index": 10,
+          "text": "fun",
+          "startMs": 229520,
+          "endMs": 230000,
+          "probability": 0.987044
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "He could not come after what he had done",
+      "startMs": 230520,
+      "endMs": 233320,
+      "avgLogprob": -0.211523,
+      "noSpeechProb": 0.002932,
+      "compressionRatio": 1.546512,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 230520,
+          "endMs": 231080,
+          "probability": 0.450286
+        },
+        {
+          "index": 2,
+          "text": "could",
+          "startMs": 231080,
+          "endMs": 231280,
+          "probability": 0.99811
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 231280,
+          "endMs": 231520,
+          "probability": 0.999234
+        },
+        {
+          "index": 4,
+          "text": "come",
+          "startMs": 231520,
+          "endMs": 231920,
+          "probability": 0.96805
+        },
+        {
+          "index": 5,
+          "text": "after",
+          "startMs": 231920,
+          "endMs": 232280,
+          "probability": 0.997015
+        },
+        {
+          "index": 6,
+          "text": "what",
+          "startMs": 232280,
+          "endMs": 232540,
+          "probability": 0.995916
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 232540,
+          "endMs": 232780,
+          "probability": 0.995898
+        },
+        {
+          "index": 8,
+          "text": "had",
+          "startMs": 232780,
+          "endMs": 233020,
+          "probability": 0.996655
+        },
+        {
+          "index": 9,
+          "text": "done",
+          "startMs": 233020,
+          "endMs": 233420,
+          "probability": 0.999054
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Pete said",
+      "startMs": 234460,
+      "endMs": 235720,
+      "avgLogprob": -0.211523,
+      "noSpeechProb": 0.002932,
+      "compressionRatio": 1.546512,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 234460,
+          "endMs": 235260,
+          "probability": 0.974193
+        },
+        {
+          "index": 2,
+          "text": "said",
+          "startMs": 235260,
+          "endMs": 235720,
+          "probability": 0.985663
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "But wait grumpy toad made a mistake",
+      "startMs": 236400,
+      "endMs": 239940,
+      "avgLogprob": -0.211523,
+      "noSpeechProb": 0.002932,
+      "compressionRatio": 1.546512,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 236400,
+          "endMs": 236940,
+          "probability": 0.567574
+        },
+        {
+          "index": 2,
+          "text": "wait",
+          "startMs": 236940,
+          "endMs": 237440,
+          "probability": 0.90782
+        },
+        {
+          "index": 3,
+          "text": "grumpy",
+          "startMs": 237440,
+          "endMs": 238440,
+          "probability": 0.91382
+        },
+        {
+          "index": 4,
+          "text": "toad",
+          "startMs": 238440,
+          "endMs": 238960,
+          "probability": 0.932356
+        },
+        {
+          "index": 5,
+          "text": "made",
+          "startMs": 238960,
+          "endMs": 239180,
+          "probability": 0.996507
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 239180,
+          "endMs": 239360,
+          "probability": 0.998265
+        },
+        {
+          "index": 7,
+          "text": "mistake",
+          "startMs": 239360,
+          "endMs": 239940,
+          "probability": 0.999107
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "This is true. Let's give him a second chance",
+      "startMs": 240520,
+      "endMs": 244580,
+      "avgLogprob": -0.211523,
+      "noSpeechProb": 0.002932,
+      "compressionRatio": 1.546512,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 240520,
+          "endMs": 241040,
+          "probability": 0.601014
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 241040,
+          "endMs": 241260,
+          "probability": 0.9982
+        },
+        {
+          "index": 3,
+          "text": "true.",
+          "startMs": 241260,
+          "endMs": 241760,
+          "probability": 0.998249
+        },
+        {
+          "index": 4,
+          "text": "Let's",
+          "startMs": 242100,
+          "endMs": 242900,
+          "probability": 0.999095
+        },
+        {
+          "index": 5,
+          "text": "give",
+          "startMs": 242900,
+          "endMs": 243060,
+          "probability": 0.998731
+        },
+        {
+          "index": 6,
+          "text": "him",
+          "startMs": 243060,
+          "endMs": 243220,
+          "probability": 0.998145
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 243220,
+          "endMs": 243420,
+          "probability": 0.999319
+        },
+        {
+          "index": 8,
+          "text": "second",
+          "startMs": 243420,
+          "endMs": 243800,
+          "probability": 0.999525
+        },
+        {
+          "index": 9,
+          "text": "chance",
+          "startMs": 243800,
+          "endMs": 244580,
+          "probability": 0.996993
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "That's what friends do",
+      "startMs": 245120,
+      "endMs": 247500,
+      "avgLogprob": -0.211523,
+      "noSpeechProb": 0.002932,
+      "compressionRatio": 1.546512,
+      "words": [
+        {
+          "index": 1,
+          "text": "That's",
+          "startMs": 245120,
+          "endMs": 245940,
+          "probability": 0.953642
+        },
+        {
+          "index": 2,
+          "text": "what",
+          "startMs": 245940,
+          "endMs": 246100,
+          "probability": 0.997636
+        },
+        {
+          "index": 3,
+          "text": "friends",
+          "startMs": 246100,
+          "endMs": 246720,
+          "probability": 0.991033
+        },
+        {
+          "index": 4,
+          "text": "do",
+          "startMs": 246720,
+          "endMs": 247500,
+          "probability": 0.964668
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "Pete told grumpy toad they would give him another chance",
+      "startMs": 249080,
+      "endMs": 253420,
+      "avgLogprob": -0.211523,
+      "noSpeechProb": 0.002932,
+      "compressionRatio": 1.546512,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 249080,
+          "endMs": 249880,
+          "probability": 0.973073
+        },
+        {
+          "index": 2,
+          "text": "told",
+          "startMs": 249880,
+          "endMs": 250240,
+          "probability": 0.984167
+        },
+        {
+          "index": 3,
+          "text": "grumpy",
+          "startMs": 250240,
+          "endMs": 250680,
+          "probability": 0.977194
+        },
+        {
+          "index": 4,
+          "text": "toad",
+          "startMs": 250680,
+          "endMs": 251280,
+          "probability": 0.980275
+        },
+        {
+          "index": 5,
+          "text": "they",
+          "startMs": 251280,
+          "endMs": 251480,
+          "probability": 0.680628
+        },
+        {
+          "index": 6,
+          "text": "would",
+          "startMs": 251480,
+          "endMs": 251680,
+          "probability": 0.998425
+        },
+        {
+          "index": 7,
+          "text": "give",
+          "startMs": 251680,
+          "endMs": 251980,
+          "probability": 0.999039
+        },
+        {
+          "index": 8,
+          "text": "him",
+          "startMs": 251980,
+          "endMs": 252220,
+          "probability": 0.999419
+        },
+        {
+          "index": 9,
+          "text": "another",
+          "startMs": 252220,
+          "endMs": 252620,
+          "probability": 0.998195
+        },
+        {
+          "index": 10,
+          "text": "chance",
+          "startMs": 252620,
+          "endMs": 253420,
+          "probability": 0.998357
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "He was so excited. He did a happy dance",
+      "startMs": 253420,
+      "endMs": 257580,
+      "avgLogprob": -0.162074,
+      "noSpeechProb": 0.00265,
+      "compressionRatio": 1.47,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 253420,
+          "endMs": 254400,
+          "probability": 0.842525
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 254400,
+          "endMs": 254580,
+          "probability": 0.989022
+        },
+        {
+          "index": 3,
+          "text": "so",
+          "startMs": 254580,
+          "endMs": 254920,
+          "probability": 0.997021
+        },
+        {
+          "index": 4,
+          "text": "excited.",
+          "startMs": 254920,
+          "endMs": 255580,
+          "probability": 0.992457
+        },
+        {
+          "index": 5,
+          "text": "He",
+          "startMs": 256060,
+          "endMs": 256180,
+          "probability": 0.989917
+        },
+        {
+          "index": 6,
+          "text": "did",
+          "startMs": 256180,
+          "endMs": 256360,
+          "probability": 0.998433
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 256360,
+          "endMs": 256620,
+          "probability": 0.996966
+        },
+        {
+          "index": 8,
+          "text": "happy",
+          "startMs": 256620,
+          "endMs": 256960,
+          "probability": 0.940676
+        },
+        {
+          "index": 9,
+          "text": "dance",
+          "startMs": 256960,
+          "endMs": 257580,
+          "probability": 0.998707
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "The night of the party was so much fun grumpy toad brought more than enough cupcakes for everyone",
+      "startMs": 259320,
+      "endMs": 268880,
+      "avgLogprob": -0.162074,
+      "noSpeechProb": 0.00265,
+      "compressionRatio": 1.47,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 259320,
+          "endMs": 260100,
+          "probability": 0.026993
+        },
+        {
+          "index": 2,
+          "text": "night",
+          "startMs": 260100,
+          "endMs": 260480,
+          "probability": 0.984576
+        },
+        {
+          "index": 3,
+          "text": "of",
+          "startMs": 260480,
+          "endMs": 260660,
+          "probability": 0.997841
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 260660,
+          "endMs": 260840,
+          "probability": 0.998074
+        },
+        {
+          "index": 5,
+          "text": "party",
+          "startMs": 260840,
+          "endMs": 261300,
+          "probability": 0.993983
+        },
+        {
+          "index": 6,
+          "text": "was",
+          "startMs": 261300,
+          "endMs": 261660,
+          "probability": 0.996305
+        },
+        {
+          "index": 7,
+          "text": "so",
+          "startMs": 261660,
+          "endMs": 262140,
+          "probability": 0.997243
+        },
+        {
+          "index": 8,
+          "text": "much",
+          "startMs": 262140,
+          "endMs": 262540,
+          "probability": 0.997908
+        },
+        {
+          "index": 9,
+          "text": "fun",
+          "startMs": 262540,
+          "endMs": 263240,
+          "probability": 0.997802
+        },
+        {
+          "index": 10,
+          "text": "grumpy",
+          "startMs": 263240,
+          "endMs": 264340,
+          "probability": 0.539172
+        },
+        {
+          "index": 11,
+          "text": "toad",
+          "startMs": 264340,
+          "endMs": 264760,
+          "probability": 0.840288
+        },
+        {
+          "index": 12,
+          "text": "brought",
+          "startMs": 264760,
+          "endMs": 264940,
+          "probability": 0.915373
+        },
+        {
+          "index": 13,
+          "text": "more",
+          "startMs": 264940,
+          "endMs": 265300,
+          "probability": 0.995928
+        },
+        {
+          "index": 14,
+          "text": "than",
+          "startMs": 265300,
+          "endMs": 265520,
+          "probability": 0.996454
+        },
+        {
+          "index": 15,
+          "text": "enough",
+          "startMs": 265520,
+          "endMs": 265840,
+          "probability": 0.998288
+        },
+        {
+          "index": 16,
+          "text": "cupcakes",
+          "startMs": 265840,
+          "endMs": 266640,
+          "probability": 0.987193
+        },
+        {
+          "index": 17,
+          "text": "for",
+          "startMs": 266640,
+          "endMs": 267640,
+          "probability": 0.976254
+        },
+        {
+          "index": 18,
+          "text": "everyone",
+          "startMs": 267640,
+          "endMs": 268880,
+          "probability": 0.819387
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "We hope you have enjoyed this recording of Pete the cat and the missing cupcakes by Kimberly and James Dean",
+      "startMs": 270700,
+      "endMs": 278600,
+      "avgLogprob": -0.162074,
+      "noSpeechProb": 0.00265,
+      "compressionRatio": 1.47,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 270700,
+          "endMs": 271480,
+          "probability": 0.731294
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 271480,
+          "endMs": 271680,
+          "probability": 0.996962
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 271680,
+          "endMs": 271860,
+          "probability": 0.998906
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 271860,
+          "endMs": 272060,
+          "probability": 0.998213
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 272060,
+          "endMs": 272480,
+          "probability": 0.998894
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 272480,
+          "endMs": 272800,
+          "probability": 0.991429
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 272800,
+          "endMs": 273340,
+          "probability": 0.996493
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 273340,
+          "endMs": 273760,
+          "probability": 0.997465
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 273760,
+          "endMs": 274060,
+          "probability": 0.928022
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 274060,
+          "endMs": 274300,
+          "probability": 0.982493
+        },
+        {
+          "index": 11,
+          "text": "cat",
+          "startMs": 274300,
+          "endMs": 274580,
+          "probability": 0.809453
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 274580,
+          "endMs": 274960,
+          "probability": 0.990646
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 274960,
+          "endMs": 275140,
+          "probability": 0.989734
+        },
+        {
+          "index": 14,
+          "text": "missing",
+          "startMs": 275140,
+          "endMs": 275520,
+          "probability": 0.972302
+        },
+        {
+          "index": 15,
+          "text": "cupcakes",
+          "startMs": 275520,
+          "endMs": 276320,
+          "probability": 0.976795
+        },
+        {
+          "index": 16,
+          "text": "by",
+          "startMs": 276320,
+          "endMs": 277000,
+          "probability": 0.824788
+        },
+        {
+          "index": 17,
+          "text": "Kimberly",
+          "startMs": 277000,
+          "endMs": 277400,
+          "probability": 0.861295
+        },
+        {
+          "index": 18,
+          "text": "and",
+          "startMs": 277400,
+          "endMs": 277820,
+          "probability": 0.992467
+        },
+        {
+          "index": 19,
+          "text": "James",
+          "startMs": 277820,
+          "endMs": 278280,
+          "probability": 0.989917
+        },
+        {
+          "index": 20,
+          "text": "Dean",
+          "startMs": 278280,
+          "endMs": 278600,
+          "probability": 0.980378
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "This program was produced by John Marshall Media",
+      "startMs": 278600,
+      "endMs": 282420,
+      "avgLogprob": -0.162074,
+      "noSpeechProb": 0.00265,
+      "compressionRatio": 1.47,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 278600,
+          "endMs": 279640,
+          "probability": 0.691082
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 279640,
+          "endMs": 280120,
+          "probability": 0.99718
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 280120,
+          "endMs": 280380,
+          "probability": 0.997863
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 280380,
+          "endMs": 280800,
+          "probability": 0.99591
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 280800,
+          "endMs": 281180,
+          "probability": 0.998106
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 281180,
+          "endMs": 281600,
+          "probability": 0.95843
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 281600,
+          "endMs": 281980,
+          "probability": 0.938153
+        },
+        {
+          "index": 8,
+          "text": "Media",
+          "startMs": 281980,
+          "endMs": 282420,
+          "probability": 0.641422
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "text copyright 2016 by Kimberly and James Dean",
+      "startMs": 283420,
+      "endMs": 287840,
+      "avgLogprob": -0.271311,
+      "noSpeechProb": 0.019905,
+      "compressionRatio": 1.464286,
+      "words": [
+        {
+          "index": 1,
+          "text": "text",
+          "startMs": 283420,
+          "endMs": 283960,
+          "probability": 0.097476
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 283960,
+          "endMs": 284500,
+          "probability": 0.969643
+        },
+        {
+          "index": 3,
+          "text": "2016",
+          "startMs": 284500,
+          "endMs": 285660,
+          "probability": 0.965747
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 285660,
+          "endMs": 286100,
+          "probability": 0.959194
+        },
+        {
+          "index": 5,
+          "text": "Kimberly",
+          "startMs": 286100,
+          "endMs": 286500,
+          "probability": 0.734095
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 286500,
+          "endMs": 287020,
+          "probability": 0.94045
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 287020,
+          "endMs": 287480,
+          "probability": 0.992869
+        },
+        {
+          "index": 8,
+          "text": "Dean",
+          "startMs": 287480,
+          "endMs": 287840,
+          "probability": 0.958482
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "illustrations copyright",
+      "startMs": 289020,
+      "endMs": 290100,
+      "avgLogprob": -0.271311,
+      "noSpeechProb": 0.019905,
+      "compressionRatio": 1.464286,
+      "words": [
+        {
+          "index": 1,
+          "text": "illustrations",
+          "startMs": 288730,
+          "endMs": 289300,
+          "probability": 0.81388
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 289300,
+          "endMs": 290100,
+          "probability": 0.989387
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "2016 by James Dean",
+      "startMs": 290940,
+      "endMs": 292860,
+      "avgLogprob": -0.271311,
+      "noSpeechProb": 0.019905,
+      "compressionRatio": 1.464286,
+      "words": [
+        {
+          "index": 1,
+          "text": "2016",
+          "startMs": 290570,
+          "endMs": 291140,
+          "probability": 0.983615
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 291140,
+          "endMs": 291880,
+          "probability": 0.985832
+        },
+        {
+          "index": 3,
+          "text": "James",
+          "startMs": 291880,
+          "endMs": 292260,
+          "probability": 0.994308
+        },
+        {
+          "index": 4,
+          "text": "Dean",
+          "startMs": 292260,
+          "endMs": 292860,
+          "probability": 0.986926
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "production copyright",
+      "startMs": 293660,
+      "endMs": 294680,
+      "avgLogprob": -0.271311,
+      "noSpeechProb": 0.019905,
+      "compressionRatio": 1.464286,
+      "words": [
+        {
+          "index": 1,
+          "text": "production",
+          "startMs": 293470,
+          "endMs": 294040,
+          "probability": 0.80485
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 294040,
+          "endMs": 294680,
+          "probability": 0.997363
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "2016 by Harper Collins publishers all rights reserved",
+      "startMs": 295420,
+      "endMs": 299800,
+      "avgLogprob": -0.271311,
+      "noSpeechProb": 0.019905,
+      "compressionRatio": 1.464286,
+      "words": [
+        {
+          "index": 1,
+          "text": "2016",
+          "startMs": 295150,
+          "endMs": 295720,
+          "probability": 0.998486
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 295720,
+          "endMs": 296260,
+          "probability": 0.995894
+        },
+        {
+          "index": 3,
+          "text": "Harper",
+          "startMs": 296260,
+          "endMs": 296680,
+          "probability": 0.987311
+        },
+        {
+          "index": 4,
+          "text": "Collins",
+          "startMs": 296680,
+          "endMs": 297240,
+          "probability": 0.760461
+        },
+        {
+          "index": 5,
+          "text": "publishers",
+          "startMs": 297240,
+          "endMs": 297820,
+          "probability": 0.384876
+        },
+        {
+          "index": 6,
+          "text": "all",
+          "startMs": 297820,
+          "endMs": 298820,
+          "probability": 0.70515
+        },
+        {
+          "index": 7,
+          "text": "rights",
+          "startMs": 298820,
+          "endMs": 299200,
+          "probability": 0.98927
+        },
+        {
+          "index": 8,
+          "text": "reserved",
+          "startMs": 299200,
+          "endMs": 299800,
+          "probability": 0.994072
+        }
+      ]
+    }
+  ]
+}

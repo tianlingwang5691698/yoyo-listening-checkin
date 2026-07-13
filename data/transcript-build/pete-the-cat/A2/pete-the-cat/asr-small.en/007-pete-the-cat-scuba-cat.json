@@ -1,0 +1,3273 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 51.812,
+  "text": "Welcome! Pete the Cat is excited. He is going scuba diving. Pete puts on a mask and fins. He has a tank full of air. He hopes to see lots of fish. If you are lucky, you might see a seahorse, says Captain Joe. A seahorse, says Pete. I can't wait. I never saw one before. Their ridges look like a horse's mane, says Captain Joe. Groovy, says Pete. Pete jumps into the water. Splash! Down, down, down he goes. Up, up, up go the bubbles. Pete looks for a seahorse. He sees a swordfish. Pete swims out of its way. Pete waves to a stingray. It has a long, skinny tail. That's not a seahorse, thinks Pete. Pete looks high and low for the seahorse. Then he feels a tickle. Pete sees a school of fish. They all look alike, except for one. It puffs up. It is a blowfish. It is not a seahorse. Where could one be? Pete looks in the rocks. What is that? It is an octopus. It has eight legs. It is not a seahorse. Pete feels a tickle. What could it be? Pete turns. He sees a cave. Is there a seahorse inside? Pete sees a crab with claws. A seahorse does not have claws, Pete thinks. The cave is getting darker. Pete feels a tickle. Then he sees an eel. Pete swims past it. It is too long to be a seahorse. Oh no! It is too dark to see. How will Pete get out? Pete sees a jellyfish. It glows in the dark. Pete is almost out of the cave. He sees an angelfish. It is very colorful. Pete is out of the cave. So why is it so dark? Pete is in a shadow. He is in the shadow of a whale. Yikes! Pete wishes he could jump on a seahorse and ride away. Pete hops on a sea turtle instead. It takes him to the boat. I did not see a seahorse, thinks Pete. He feels a tickle on his tail. A seahorse, cries Pete. What a surprise! You were with me all along, says Pete. What a cool adventure!",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Welcome!",
+      "startMs": 4100,
+      "endMs": 4980,
+      "avgLogprob": -0.258189,
+      "noSpeechProb": 0.04573,
+      "compressionRatio": 1.16,
+      "words": [
+        {
+          "index": 1,
+          "text": "Welcome!",
+          "startMs": 4100,
+          "endMs": 4980,
+          "probability": 0.398735
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "Pete the Cat is excited.",
+      "startMs": 13940,
+      "endMs": 15640,
+      "avgLogprob": -0.258189,
+      "noSpeechProb": 0.04573,
+      "compressionRatio": 1.16,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 13940,
+          "endMs": 13940,
+          "probability": 0.955173
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 13940,
+          "endMs": 14240,
+          "probability": 0.954077
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 14240,
+          "endMs": 14620,
+          "probability": 0.571242
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 14620,
+          "endMs": 15040,
+          "probability": 0.945231
+        },
+        {
+          "index": 5,
+          "text": "excited.",
+          "startMs": 15040,
+          "endMs": 15640,
+          "probability": 0.978352
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "He is going scuba diving.",
+      "startMs": 16720,
+      "endMs": 18600,
+      "avgLogprob": -0.258189,
+      "noSpeechProb": 0.04573,
+      "compressionRatio": 1.16,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 16720,
+          "endMs": 16960,
+          "probability": 0.988837
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 16960,
+          "endMs": 17120,
+          "probability": 0.979146
+        },
+        {
+          "index": 3,
+          "text": "going",
+          "startMs": 17120,
+          "endMs": 17480,
+          "probability": 0.99867
+        },
+        {
+          "index": 4,
+          "text": "scuba",
+          "startMs": 17480,
+          "endMs": 18120,
+          "probability": 0.981464
+        },
+        {
+          "index": 5,
+          "text": "diving.",
+          "startMs": 18120,
+          "endMs": 18600,
+          "probability": 0.967869
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Pete puts on a mask and fins.",
+      "startMs": 20820,
+      "endMs": 23500,
+      "avgLogprob": -0.258189,
+      "noSpeechProb": 0.04573,
+      "compressionRatio": 1.16,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 20820,
+          "endMs": 21120,
+          "probability": 0.996904
+        },
+        {
+          "index": 2,
+          "text": "puts",
+          "startMs": 21120,
+          "endMs": 21480,
+          "probability": 0.987759
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 21480,
+          "endMs": 21940,
+          "probability": 0.997703
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 21940,
+          "endMs": 22120,
+          "probability": 0.994329
+        },
+        {
+          "index": 5,
+          "text": "mask",
+          "startMs": 22120,
+          "endMs": 22580,
+          "probability": 0.995964
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 22580,
+          "endMs": 23060,
+          "probability": 0.991923
+        },
+        {
+          "index": 7,
+          "text": "fins.",
+          "startMs": 23060,
+          "endMs": 23500,
+          "probability": 0.998483
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "He has a tank full of air.",
+      "startMs": 24540,
+      "endMs": 26880,
+      "avgLogprob": -0.258189,
+      "noSpeechProb": 0.04573,
+      "compressionRatio": 1.16,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 24540,
+          "endMs": 24740,
+          "probability": 0.99583
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 24740,
+          "endMs": 24960,
+          "probability": 0.998254
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 24960,
+          "endMs": 25180,
+          "probability": 0.994155
+        },
+        {
+          "index": 4,
+          "text": "tank",
+          "startMs": 25180,
+          "endMs": 25600,
+          "probability": 0.999258
+        },
+        {
+          "index": 5,
+          "text": "full",
+          "startMs": 25600,
+          "endMs": 26060,
+          "probability": 0.99667
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 26060,
+          "endMs": 26380,
+          "probability": 0.998944
+        },
+        {
+          "index": 7,
+          "text": "air.",
+          "startMs": 26380,
+          "endMs": 26880,
+          "probability": 0.998502
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "He hopes to see lots of fish.",
+      "startMs": 26880,
+      "endMs": 30000,
+      "avgLogprob": -0.078044,
+      "noSpeechProb": 0.064108,
+      "compressionRatio": 1.461538,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 26880,
+          "endMs": 27960,
+          "probability": 0.790085
+        },
+        {
+          "index": 2,
+          "text": "hopes",
+          "startMs": 27960,
+          "endMs": 28220,
+          "probability": 0.995482
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 28220,
+          "endMs": 28540,
+          "probability": 0.999236
+        },
+        {
+          "index": 4,
+          "text": "see",
+          "startMs": 28540,
+          "endMs": 28760,
+          "probability": 0.996396
+        },
+        {
+          "index": 5,
+          "text": "lots",
+          "startMs": 28760,
+          "endMs": 29180,
+          "probability": 0.989123
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 29180,
+          "endMs": 29560,
+          "probability": 0.998463
+        },
+        {
+          "index": 7,
+          "text": "fish.",
+          "startMs": 29560,
+          "endMs": 30000,
+          "probability": 0.997707
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "If you are lucky, you might see a seahorse, says Captain Joe.",
+      "startMs": 32160,
+      "endMs": 37420,
+      "avgLogprob": -0.078044,
+      "noSpeechProb": 0.064108,
+      "compressionRatio": 1.461538,
+      "words": [
+        {
+          "index": 1,
+          "text": "If",
+          "startMs": 32160,
+          "endMs": 32420,
+          "probability": 0.263395
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 32420,
+          "endMs": 32600,
+          "probability": 0.999105
+        },
+        {
+          "index": 3,
+          "text": "are",
+          "startMs": 32600,
+          "endMs": 32780,
+          "probability": 0.980567
+        },
+        {
+          "index": 4,
+          "text": "lucky,",
+          "startMs": 32780,
+          "endMs": 33200,
+          "probability": 0.996968
+        },
+        {
+          "index": 5,
+          "text": "you",
+          "startMs": 34060,
+          "endMs": 34140,
+          "probability": 0.971278
+        },
+        {
+          "index": 6,
+          "text": "might",
+          "startMs": 34140,
+          "endMs": 34420,
+          "probability": 0.998118
+        },
+        {
+          "index": 7,
+          "text": "see",
+          "startMs": 34420,
+          "endMs": 34720,
+          "probability": 0.996
+        },
+        {
+          "index": 8,
+          "text": "a",
+          "startMs": 34720,
+          "endMs": 34900,
+          "probability": 0.997882
+        },
+        {
+          "index": 9,
+          "text": "seahorse,",
+          "startMs": 34900,
+          "endMs": 35640,
+          "probability": 0.946105
+        },
+        {
+          "index": 10,
+          "text": "says",
+          "startMs": 36240,
+          "endMs": 36460,
+          "probability": 0.978597
+        },
+        {
+          "index": 11,
+          "text": "Captain",
+          "startMs": 36460,
+          "endMs": 37020,
+          "probability": 0.968027
+        },
+        {
+          "index": 12,
+          "text": "Joe.",
+          "startMs": 37020,
+          "endMs": 37420,
+          "probability": 0.966778
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "A seahorse, says Pete.",
+      "startMs": 39200,
+      "endMs": 42000,
+      "avgLogprob": -0.078044,
+      "noSpeechProb": 0.064108,
+      "compressionRatio": 1.461538,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 39200,
+          "endMs": 39820,
+          "probability": 0.938141
+        },
+        {
+          "index": 2,
+          "text": "seahorse,",
+          "startMs": 39820,
+          "endMs": 40640,
+          "probability": 0.951481
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 41300,
+          "endMs": 41580,
+          "probability": 0.99552
+        },
+        {
+          "index": 4,
+          "text": "Pete.",
+          "startMs": 41580,
+          "endMs": 42000,
+          "probability": 0.986363
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "I can't wait. I never saw one before.",
+      "startMs": 42900,
+      "endMs": 46480,
+      "avgLogprob": -0.078044,
+      "noSpeechProb": 0.064108,
+      "compressionRatio": 1.461538,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 42900,
+          "endMs": 43220,
+          "probability": 0.997373
+        },
+        {
+          "index": 2,
+          "text": "can't",
+          "startMs": 43220,
+          "endMs": 43640,
+          "probability": 0.991003
+        },
+        {
+          "index": 3,
+          "text": "wait.",
+          "startMs": 43640,
+          "endMs": 43980,
+          "probability": 0.995384
+        },
+        {
+          "index": 4,
+          "text": "I",
+          "startMs": 44720,
+          "endMs": 44980,
+          "probability": 0.998228
+        },
+        {
+          "index": 5,
+          "text": "never",
+          "startMs": 44980,
+          "endMs": 45260,
+          "probability": 0.996623
+        },
+        {
+          "index": 6,
+          "text": "saw",
+          "startMs": 45260,
+          "endMs": 45660,
+          "probability": 0.998889
+        },
+        {
+          "index": 7,
+          "text": "one",
+          "startMs": 45660,
+          "endMs": 45940,
+          "probability": 0.998978
+        },
+        {
+          "index": 8,
+          "text": "before.",
+          "startMs": 45940,
+          "endMs": 46480,
+          "probability": 0.999264
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Their ridges look like a horse's mane, says Captain Joe.",
+      "startMs": 48540,
+      "endMs": 53180,
+      "avgLogprob": -0.078044,
+      "noSpeechProb": 0.064108,
+      "compressionRatio": 1.461538,
+      "words": [
+        {
+          "index": 1,
+          "text": "Their",
+          "startMs": 48540,
+          "endMs": 48840,
+          "probability": 0.916017
+        },
+        {
+          "index": 2,
+          "text": "ridges",
+          "startMs": 48840,
+          "endMs": 49340,
+          "probability": 0.997622
+        },
+        {
+          "index": 3,
+          "text": "look",
+          "startMs": 49340,
+          "endMs": 49600,
+          "probability": 0.967174
+        },
+        {
+          "index": 4,
+          "text": "like",
+          "startMs": 49600,
+          "endMs": 50000,
+          "probability": 0.998516
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 50000,
+          "endMs": 50300,
+          "probability": 0.990136
+        },
+        {
+          "index": 6,
+          "text": "horse's",
+          "startMs": 50300,
+          "endMs": 50800,
+          "probability": 0.983909
+        },
+        {
+          "index": 7,
+          "text": "mane,",
+          "startMs": 50800,
+          "endMs": 52040,
+          "probability": 0.947445
+        },
+        {
+          "index": 8,
+          "text": "says",
+          "startMs": 52040,
+          "endMs": 52200,
+          "probability": 0.992831
+        },
+        {
+          "index": 9,
+          "text": "Captain",
+          "startMs": 52200,
+          "endMs": 52720,
+          "probability": 0.992496
+        },
+        {
+          "index": 10,
+          "text": "Joe.",
+          "startMs": 52720,
+          "endMs": 53180,
+          "probability": 0.994937
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Groovy, says Pete.",
+      "startMs": 54740,
+      "endMs": 56800,
+      "avgLogprob": -0.107286,
+      "noSpeechProb": 0.099686,
+      "compressionRatio": 1.262295,
+      "words": [
+        {
+          "index": 1,
+          "text": "Groovy,",
+          "startMs": 54740,
+          "endMs": 55500,
+          "probability": 0.765967
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 56120,
+          "endMs": 56280,
+          "probability": 0.976245
+        },
+        {
+          "index": 3,
+          "text": "Pete.",
+          "startMs": 56280,
+          "endMs": 56800,
+          "probability": 0.987323
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Pete jumps into the water. Splash!",
+      "startMs": 59000,
+      "endMs": 62260,
+      "avgLogprob": -0.107286,
+      "noSpeechProb": 0.099686,
+      "compressionRatio": 1.262295,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 59000,
+          "endMs": 59200,
+          "probability": 0.985322
+        },
+        {
+          "index": 2,
+          "text": "jumps",
+          "startMs": 59200,
+          "endMs": 59720,
+          "probability": 0.996585
+        },
+        {
+          "index": 3,
+          "text": "into",
+          "startMs": 59720,
+          "endMs": 60200,
+          "probability": 0.981371
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 60200,
+          "endMs": 60360,
+          "probability": 0.996607
+        },
+        {
+          "index": 5,
+          "text": "water.",
+          "startMs": 60360,
+          "endMs": 60860,
+          "probability": 0.999388
+        },
+        {
+          "index": 6,
+          "text": "Splash!",
+          "startMs": 62060,
+          "endMs": 62260,
+          "probability": 0.95732
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Down, down, down he goes.",
+      "startMs": 67420,
+      "endMs": 70360,
+      "avgLogprob": -0.107286,
+      "noSpeechProb": 0.099686,
+      "compressionRatio": 1.262295,
+      "words": [
+        {
+          "index": 1,
+          "text": "Down,",
+          "startMs": 67420,
+          "endMs": 68180,
+          "probability": 0.966291
+        },
+        {
+          "index": 2,
+          "text": "down,",
+          "startMs": 68680,
+          "endMs": 68920,
+          "probability": 0.994547
+        },
+        {
+          "index": 3,
+          "text": "down",
+          "startMs": 69340,
+          "endMs": 69640,
+          "probability": 0.997274
+        },
+        {
+          "index": 4,
+          "text": "he",
+          "startMs": 69640,
+          "endMs": 69960,
+          "probability": 0.990222
+        },
+        {
+          "index": 5,
+          "text": "goes.",
+          "startMs": 69960,
+          "endMs": 70360,
+          "probability": 0.99948
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Up, up, up go the bubbles.",
+      "startMs": 71420,
+      "endMs": 73740,
+      "avgLogprob": -0.107286,
+      "noSpeechProb": 0.099686,
+      "compressionRatio": 1.262295,
+      "words": [
+        {
+          "index": 1,
+          "text": "Up,",
+          "startMs": 71420,
+          "endMs": 71680,
+          "probability": 0.994451
+        },
+        {
+          "index": 2,
+          "text": "up,",
+          "startMs": 72000,
+          "endMs": 72240,
+          "probability": 0.99812
+        },
+        {
+          "index": 3,
+          "text": "up",
+          "startMs": 72600,
+          "endMs": 72820,
+          "probability": 0.996481
+        },
+        {
+          "index": 4,
+          "text": "go",
+          "startMs": 72820,
+          "endMs": 73160,
+          "probability": 0.982519
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 73160,
+          "endMs": 73380,
+          "probability": 0.998407
+        },
+        {
+          "index": 6,
+          "text": "bubbles.",
+          "startMs": 73380,
+          "endMs": 73740,
+          "probability": 0.979642
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Pete looks for a seahorse.",
+      "startMs": 75580,
+      "endMs": 77360,
+      "avgLogprob": -0.107286,
+      "noSpeechProb": 0.099686,
+      "compressionRatio": 1.262295,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 75580,
+          "endMs": 75820,
+          "probability": 0.994947
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 75820,
+          "endMs": 76200,
+          "probability": 0.998349
+        },
+        {
+          "index": 3,
+          "text": "for",
+          "startMs": 76200,
+          "endMs": 76600,
+          "probability": 0.999449
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 76600,
+          "endMs": 76820,
+          "probability": 0.993618
+        },
+        {
+          "index": 5,
+          "text": "seahorse.",
+          "startMs": 76820,
+          "endMs": 77360,
+          "probability": 0.953358
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "He sees a swordfish.",
+      "startMs": 79940,
+      "endMs": 81660,
+      "avgLogprob": -0.107286,
+      "noSpeechProb": 0.099686,
+      "compressionRatio": 1.262295,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 79940,
+          "endMs": 80240,
+          "probability": 0.998611
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 80240,
+          "endMs": 80580,
+          "probability": 0.996476
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 80580,
+          "endMs": 80820,
+          "probability": 0.999125
+        },
+        {
+          "index": 4,
+          "text": "swordfish.",
+          "startMs": 80820,
+          "endMs": 81660,
+          "probability": 0.946549
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Pete swims out of its way.",
+      "startMs": 81660,
+      "endMs": 84380,
+      "avgLogprob": -0.056332,
+      "noSpeechProb": 0.019364,
+      "compressionRatio": 1.468531,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 81660,
+          "endMs": 82820,
+          "probability": 0.794822
+        },
+        {
+          "index": 2,
+          "text": "swims",
+          "startMs": 82820,
+          "endMs": 83580,
+          "probability": 0.970631
+        },
+        {
+          "index": 3,
+          "text": "out",
+          "startMs": 83580,
+          "endMs": 83700,
+          "probability": 0.994895
+        },
+        {
+          "index": 4,
+          "text": "of",
+          "startMs": 83700,
+          "endMs": 83860,
+          "probability": 0.991245
+        },
+        {
+          "index": 5,
+          "text": "its",
+          "startMs": 83860,
+          "endMs": 84020,
+          "probability": 0.948595
+        },
+        {
+          "index": 6,
+          "text": "way.",
+          "startMs": 84020,
+          "endMs": 84380,
+          "probability": 0.995848
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Pete waves to a stingray.",
+      "startMs": 86820,
+      "endMs": 88700,
+      "avgLogprob": -0.056332,
+      "noSpeechProb": 0.019364,
+      "compressionRatio": 1.468531,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 86820,
+          "endMs": 86840,
+          "probability": 0.984614
+        },
+        {
+          "index": 2,
+          "text": "waves",
+          "startMs": 86840,
+          "endMs": 87360,
+          "probability": 0.984016
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 87360,
+          "endMs": 87800,
+          "probability": 0.995723
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 87800,
+          "endMs": 87960,
+          "probability": 0.975551
+        },
+        {
+          "index": 5,
+          "text": "stingray.",
+          "startMs": 87960,
+          "endMs": 88700,
+          "probability": 0.949513
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "It has a long, skinny tail.",
+      "startMs": 89600,
+      "endMs": 91880,
+      "avgLogprob": -0.056332,
+      "noSpeechProb": 0.019364,
+      "compressionRatio": 1.468531,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 89600,
+          "endMs": 89620,
+          "probability": 0.969996
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 89620,
+          "endMs": 89840,
+          "probability": 0.997765
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 89840,
+          "endMs": 90120,
+          "probability": 0.993961
+        },
+        {
+          "index": 4,
+          "text": "long,",
+          "startMs": 90120,
+          "endMs": 90520,
+          "probability": 0.999155
+        },
+        {
+          "index": 5,
+          "text": "skinny",
+          "startMs": 90700,
+          "endMs": 91240,
+          "probability": 0.995324
+        },
+        {
+          "index": 6,
+          "text": "tail.",
+          "startMs": 91240,
+          "endMs": 91880,
+          "probability": 0.996418
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "That's not a seahorse, thinks Pete.",
+      "startMs": 93060,
+      "endMs": 95600,
+      "avgLogprob": -0.056332,
+      "noSpeechProb": 0.019364,
+      "compressionRatio": 1.468531,
+      "words": [
+        {
+          "index": 1,
+          "text": "That's",
+          "startMs": 93060,
+          "endMs": 93420,
+          "probability": 0.67106
+        },
+        {
+          "index": 2,
+          "text": "not",
+          "startMs": 93420,
+          "endMs": 93600,
+          "probability": 0.998949
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 93600,
+          "endMs": 93840,
+          "probability": 0.997148
+        },
+        {
+          "index": 4,
+          "text": "seahorse,",
+          "startMs": 93840,
+          "endMs": 94520,
+          "probability": 0.950215
+        },
+        {
+          "index": 5,
+          "text": "thinks",
+          "startMs": 94880,
+          "endMs": 95220,
+          "probability": 0.812289
+        },
+        {
+          "index": 6,
+          "text": "Pete.",
+          "startMs": 95220,
+          "endMs": 95600,
+          "probability": 0.99855
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Pete looks high and low for the seahorse.",
+      "startMs": 97780,
+      "endMs": 101020,
+      "avgLogprob": -0.056332,
+      "noSpeechProb": 0.019364,
+      "compressionRatio": 1.468531,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 97780,
+          "endMs": 98120,
+          "probability": 0.998176
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 98120,
+          "endMs": 98520,
+          "probability": 0.997719
+        },
+        {
+          "index": 3,
+          "text": "high",
+          "startMs": 98520,
+          "endMs": 99040,
+          "probability": 0.998139
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 99040,
+          "endMs": 99400,
+          "probability": 0.998074
+        },
+        {
+          "index": 5,
+          "text": "low",
+          "startMs": 99400,
+          "endMs": 99820,
+          "probability": 0.999461
+        },
+        {
+          "index": 6,
+          "text": "for",
+          "startMs": 99820,
+          "endMs": 100180,
+          "probability": 0.996612
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 100180,
+          "endMs": 100340,
+          "probability": 0.997756
+        },
+        {
+          "index": 8,
+          "text": "seahorse.",
+          "startMs": 100340,
+          "endMs": 101020,
+          "probability": 0.995114
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Then he feels a tickle.",
+      "startMs": 102260,
+      "endMs": 103960,
+      "avgLogprob": -0.056332,
+      "noSpeechProb": 0.019364,
+      "compressionRatio": 1.468531,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 102260,
+          "endMs": 102420,
+          "probability": 0.993007
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 102420,
+          "endMs": 102660,
+          "probability": 0.962742
+        },
+        {
+          "index": 3,
+          "text": "feels",
+          "startMs": 102660,
+          "endMs": 103040,
+          "probability": 0.994703
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 103040,
+          "endMs": 103280,
+          "probability": 0.998143
+        },
+        {
+          "index": 5,
+          "text": "tickle.",
+          "startMs": 103280,
+          "endMs": 103960,
+          "probability": 0.994105
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Pete sees a school of fish.",
+      "startMs": 105900,
+      "endMs": 108140,
+      "avgLogprob": -0.056332,
+      "noSpeechProb": 0.019364,
+      "compressionRatio": 1.468531,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 105900,
+          "endMs": 106240,
+          "probability": 0.998236
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 106240,
+          "endMs": 106680,
+          "probability": 0.995682
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 106680,
+          "endMs": 107040,
+          "probability": 0.995394
+        },
+        {
+          "index": 4,
+          "text": "school",
+          "startMs": 107040,
+          "endMs": 107360,
+          "probability": 0.989978
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 107360,
+          "endMs": 107620,
+          "probability": 0.998295
+        },
+        {
+          "index": 6,
+          "text": "fish.",
+          "startMs": 107620,
+          "endMs": 108140,
+          "probability": 0.999406
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "They all look alike, except for one.",
+      "startMs": 108140,
+      "endMs": 112860,
+      "avgLogprob": -0.107141,
+      "noSpeechProb": 0.017537,
+      "compressionRatio": 1.286957,
+      "words": [
+        {
+          "index": 1,
+          "text": "They",
+          "startMs": 108140,
+          "endMs": 109300,
+          "probability": 0.921093
+        },
+        {
+          "index": 2,
+          "text": "all",
+          "startMs": 109300,
+          "endMs": 109760,
+          "probability": 0.997777
+        },
+        {
+          "index": 3,
+          "text": "look",
+          "startMs": 109760,
+          "endMs": 110060,
+          "probability": 0.997157
+        },
+        {
+          "index": 4,
+          "text": "alike,",
+          "startMs": 110060,
+          "endMs": 110580,
+          "probability": 0.996805
+        },
+        {
+          "index": 5,
+          "text": "except",
+          "startMs": 111400,
+          "endMs": 111920,
+          "probability": 0.980844
+        },
+        {
+          "index": 6,
+          "text": "for",
+          "startMs": 111920,
+          "endMs": 112380,
+          "probability": 0.994983
+        },
+        {
+          "index": 7,
+          "text": "one.",
+          "startMs": 112380,
+          "endMs": 112860,
+          "probability": 0.985499
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "It puffs up.",
+      "startMs": 114880,
+      "endMs": 116640,
+      "avgLogprob": -0.107141,
+      "noSpeechProb": 0.017537,
+      "compressionRatio": 1.286957,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 114880,
+          "endMs": 115340,
+          "probability": 0.881285
+        },
+        {
+          "index": 2,
+          "text": "puffs",
+          "startMs": 115340,
+          "endMs": 115940,
+          "probability": 0.994373
+        },
+        {
+          "index": 3,
+          "text": "up.",
+          "startMs": 115940,
+          "endMs": 116640,
+          "probability": 0.998271
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "It is a blowfish.",
+      "startMs": 117840,
+      "endMs": 120280,
+      "avgLogprob": -0.107141,
+      "noSpeechProb": 0.017537,
+      "compressionRatio": 1.286957,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 117840,
+          "endMs": 118800,
+          "probability": 0.912905
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 118800,
+          "endMs": 119020,
+          "probability": 0.977428
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 119020,
+          "endMs": 119340,
+          "probability": 0.998072
+        },
+        {
+          "index": 4,
+          "text": "blowfish.",
+          "startMs": 119340,
+          "endMs": 120280,
+          "probability": 0.861598
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "It is not a seahorse.",
+      "startMs": 121700,
+      "endMs": 123460,
+      "avgLogprob": -0.107141,
+      "noSpeechProb": 0.017537,
+      "compressionRatio": 1.286957,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 121700,
+          "endMs": 122000,
+          "probability": 0.996173
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 122000,
+          "endMs": 122200,
+          "probability": 0.995538
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 122200,
+          "endMs": 122620,
+          "probability": 0.998598
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 122620,
+          "endMs": 122920,
+          "probability": 0.997653
+        },
+        {
+          "index": 5,
+          "text": "seahorse.",
+          "startMs": 122920,
+          "endMs": 123460,
+          "probability": 0.965253
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Where could one be?",
+      "startMs": 126020,
+      "endMs": 127880,
+      "avgLogprob": -0.107141,
+      "noSpeechProb": 0.017537,
+      "compressionRatio": 1.286957,
+      "words": [
+        {
+          "index": 1,
+          "text": "Where",
+          "startMs": 126020,
+          "endMs": 126280,
+          "probability": 0.93136
+        },
+        {
+          "index": 2,
+          "text": "could",
+          "startMs": 126280,
+          "endMs": 126760,
+          "probability": 0.998413
+        },
+        {
+          "index": 3,
+          "text": "one",
+          "startMs": 126760,
+          "endMs": 127120,
+          "probability": 0.998223
+        },
+        {
+          "index": 4,
+          "text": "be?",
+          "startMs": 127120,
+          "endMs": 127880,
+          "probability": 0.999554
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Pete looks in the rocks.",
+      "startMs": 129260,
+      "endMs": 131140,
+      "avgLogprob": -0.107141,
+      "noSpeechProb": 0.017537,
+      "compressionRatio": 1.286957,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 129260,
+          "endMs": 129600,
+          "probability": 0.979422
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 129600,
+          "endMs": 130060,
+          "probability": 0.997992
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 130060,
+          "endMs": 130480,
+          "probability": 0.995265
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 130480,
+          "endMs": 130720,
+          "probability": 0.998731
+        },
+        {
+          "index": 5,
+          "text": "rocks.",
+          "startMs": 130720,
+          "endMs": 131140,
+          "probability": 0.998122
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "What is that?",
+      "startMs": 132660,
+      "endMs": 133620,
+      "avgLogprob": -0.107141,
+      "noSpeechProb": 0.017537,
+      "compressionRatio": 1.286957,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 132660,
+          "endMs": 132920,
+          "probability": 0.937829
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 132920,
+          "endMs": 133140,
+          "probability": 0.991651
+        },
+        {
+          "index": 3,
+          "text": "that?",
+          "startMs": 133140,
+          "endMs": 133620,
+          "probability": 0.999245
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "It is an octopus.",
+      "startMs": 134980,
+      "endMs": 137580,
+      "avgLogprob": -0.072959,
+      "noSpeechProb": 0.012853,
+      "compressionRatio": 1.353982,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 134980,
+          "endMs": 136020,
+          "probability": 0.567594
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 136020,
+          "endMs": 136220,
+          "probability": 0.947494
+        },
+        {
+          "index": 3,
+          "text": "an",
+          "startMs": 136220,
+          "endMs": 136400,
+          "probability": 0.964306
+        },
+        {
+          "index": 4,
+          "text": "octopus.",
+          "startMs": 136400,
+          "endMs": 137580,
+          "probability": 0.971333
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "It has eight legs.",
+      "startMs": 138960,
+      "endMs": 140660,
+      "avgLogprob": -0.072959,
+      "noSpeechProb": 0.012853,
+      "compressionRatio": 1.353982,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 138960,
+          "endMs": 138980,
+          "probability": 0.987951
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 138980,
+          "endMs": 139360,
+          "probability": 0.997497
+        },
+        {
+          "index": 3,
+          "text": "eight",
+          "startMs": 139360,
+          "endMs": 140040,
+          "probability": 0.945433
+        },
+        {
+          "index": 4,
+          "text": "legs.",
+          "startMs": 140040,
+          "endMs": 140660,
+          "probability": 0.999548
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "It is not a seahorse.",
+      "startMs": 142160,
+      "endMs": 143720,
+      "avgLogprob": -0.072959,
+      "noSpeechProb": 0.012853,
+      "compressionRatio": 1.353982,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 142160,
+          "endMs": 142200,
+          "probability": 0.990455
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 142200,
+          "endMs": 142400,
+          "probability": 0.99695
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 142400,
+          "endMs": 142780,
+          "probability": 0.998925
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 142780,
+          "endMs": 143100,
+          "probability": 0.998534
+        },
+        {
+          "index": 5,
+          "text": "seahorse.",
+          "startMs": 143100,
+          "endMs": 143720,
+          "probability": 0.955812
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Pete feels a tickle.",
+      "startMs": 146360,
+      "endMs": 147880,
+      "avgLogprob": -0.072959,
+      "noSpeechProb": 0.012853,
+      "compressionRatio": 1.353982,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 146360,
+          "endMs": 146360,
+          "probability": 0.985627
+        },
+        {
+          "index": 2,
+          "text": "feels",
+          "startMs": 146360,
+          "endMs": 146900,
+          "probability": 0.995649
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 146900,
+          "endMs": 147220,
+          "probability": 0.997875
+        },
+        {
+          "index": 4,
+          "text": "tickle.",
+          "startMs": 147220,
+          "endMs": 147880,
+          "probability": 0.991255
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "What could it be?",
+      "startMs": 149040,
+      "endMs": 150280,
+      "avgLogprob": -0.072959,
+      "noSpeechProb": 0.012853,
+      "compressionRatio": 1.353982,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 149040,
+          "endMs": 149220,
+          "probability": 0.991075
+        },
+        {
+          "index": 2,
+          "text": "could",
+          "startMs": 149220,
+          "endMs": 149480,
+          "probability": 0.996583
+        },
+        {
+          "index": 3,
+          "text": "it",
+          "startMs": 149480,
+          "endMs": 149620,
+          "probability": 0.997599
+        },
+        {
+          "index": 4,
+          "text": "be?",
+          "startMs": 149620,
+          "endMs": 150280,
+          "probability": 0.999676
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "Pete turns.",
+      "startMs": 152120,
+      "endMs": 153060,
+      "avgLogprob": -0.072959,
+      "noSpeechProb": 0.012853,
+      "compressionRatio": 1.353982,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 152120,
+          "endMs": 152520,
+          "probability": 0.99596
+        },
+        {
+          "index": 2,
+          "text": "turns.",
+          "startMs": 152520,
+          "endMs": 153060,
+          "probability": 0.999307
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "He sees a cave.",
+      "startMs": 154300,
+      "endMs": 155740,
+      "avgLogprob": -0.072959,
+      "noSpeechProb": 0.012853,
+      "compressionRatio": 1.353982,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 154300,
+          "endMs": 154520,
+          "probability": 0.998255
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 154520,
+          "endMs": 154900,
+          "probability": 0.997501
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 154900,
+          "endMs": 155180,
+          "probability": 0.999368
+        },
+        {
+          "index": 4,
+          "text": "cave.",
+          "startMs": 155180,
+          "endMs": 155740,
+          "probability": 0.998073
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Is there a seahorse inside?",
+      "startMs": 156900,
+      "endMs": 159000,
+      "avgLogprob": -0.072959,
+      "noSpeechProb": 0.012853,
+      "compressionRatio": 1.353982,
+      "words": [
+        {
+          "index": 1,
+          "text": "Is",
+          "startMs": 156900,
+          "endMs": 157240,
+          "probability": 0.97965
+        },
+        {
+          "index": 2,
+          "text": "there",
+          "startMs": 157240,
+          "endMs": 157560,
+          "probability": 0.999116
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 157560,
+          "endMs": 157820,
+          "probability": 0.996425
+        },
+        {
+          "index": 4,
+          "text": "seahorse",
+          "startMs": 157820,
+          "endMs": 158340,
+          "probability": 0.993929
+        },
+        {
+          "index": 5,
+          "text": "inside?",
+          "startMs": 158340,
+          "endMs": 159000,
+          "probability": 0.996078
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "Pete sees a crab with claws.",
+      "startMs": 160580,
+      "endMs": 163700,
+      "avgLogprob": -0.067177,
+      "noSpeechProb": 0.009828,
+      "compressionRatio": 1.462687,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 160580,
+          "endMs": 161520,
+          "probability": 0.927519
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 161520,
+          "endMs": 161880,
+          "probability": 0.994198
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 161880,
+          "endMs": 162140,
+          "probability": 0.990028
+        },
+        {
+          "index": 4,
+          "text": "crab",
+          "startMs": 162140,
+          "endMs": 162680,
+          "probability": 0.996457
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 162680,
+          "endMs": 163080,
+          "probability": 0.994661
+        },
+        {
+          "index": 6,
+          "text": "claws.",
+          "startMs": 163080,
+          "endMs": 163700,
+          "probability": 0.996597
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "A seahorse does not have claws, Pete thinks.",
+      "startMs": 165080,
+      "endMs": 169380,
+      "avgLogprob": -0.067177,
+      "noSpeechProb": 0.009828,
+      "compressionRatio": 1.462687,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 165080,
+          "endMs": 165920,
+          "probability": 0.471001
+        },
+        {
+          "index": 2,
+          "text": "seahorse",
+          "startMs": 165920,
+          "endMs": 166480,
+          "probability": 0.923783
+        },
+        {
+          "index": 3,
+          "text": "does",
+          "startMs": 166480,
+          "endMs": 166760,
+          "probability": 0.992489
+        },
+        {
+          "index": 4,
+          "text": "not",
+          "startMs": 166760,
+          "endMs": 167080,
+          "probability": 0.998959
+        },
+        {
+          "index": 5,
+          "text": "have",
+          "startMs": 167080,
+          "endMs": 167380,
+          "probability": 0.998645
+        },
+        {
+          "index": 6,
+          "text": "claws,",
+          "startMs": 167380,
+          "endMs": 168120,
+          "probability": 0.995646
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 168780,
+          "endMs": 168860,
+          "probability": 0.997431
+        },
+        {
+          "index": 8,
+          "text": "thinks.",
+          "startMs": 168860,
+          "endMs": 169380,
+          "probability": 0.998101
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "The cave is getting darker.",
+      "startMs": 171500,
+      "endMs": 173620,
+      "avgLogprob": -0.067177,
+      "noSpeechProb": 0.009828,
+      "compressionRatio": 1.462687,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 171500,
+          "endMs": 171800,
+          "probability": 0.994014
+        },
+        {
+          "index": 2,
+          "text": "cave",
+          "startMs": 171800,
+          "endMs": 172260,
+          "probability": 0.997114
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 172260,
+          "endMs": 172600,
+          "probability": 0.998348
+        },
+        {
+          "index": 4,
+          "text": "getting",
+          "startMs": 172600,
+          "endMs": 172920,
+          "probability": 0.998075
+        },
+        {
+          "index": 5,
+          "text": "darker.",
+          "startMs": 172920,
+          "endMs": 173620,
+          "probability": 0.997786
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Pete feels a tickle.",
+      "startMs": 175120,
+      "endMs": 176900,
+      "avgLogprob": -0.067177,
+      "noSpeechProb": 0.009828,
+      "compressionRatio": 1.462687,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 175120,
+          "endMs": 175360,
+          "probability": 0.997773
+        },
+        {
+          "index": 2,
+          "text": "feels",
+          "startMs": 175360,
+          "endMs": 175920,
+          "probability": 0.997136
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 175920,
+          "endMs": 176240,
+          "probability": 0.998159
+        },
+        {
+          "index": 4,
+          "text": "tickle.",
+          "startMs": 176240,
+          "endMs": 176900,
+          "probability": 0.993333
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Then he sees an eel.",
+      "startMs": 178860,
+      "endMs": 180880,
+      "avgLogprob": -0.067177,
+      "noSpeechProb": 0.009828,
+      "compressionRatio": 1.462687,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 178860,
+          "endMs": 179340,
+          "probability": 0.594352
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 179340,
+          "endMs": 179580,
+          "probability": 0.974014
+        },
+        {
+          "index": 3,
+          "text": "sees",
+          "startMs": 179580,
+          "endMs": 179940,
+          "probability": 0.997226
+        },
+        {
+          "index": 4,
+          "text": "an",
+          "startMs": 179940,
+          "endMs": 180220,
+          "probability": 0.993878
+        },
+        {
+          "index": 5,
+          "text": "eel.",
+          "startMs": 180220,
+          "endMs": 180880,
+          "probability": 0.990525
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "Pete swims past it.",
+      "startMs": 182000,
+      "endMs": 183760,
+      "avgLogprob": -0.067177,
+      "noSpeechProb": 0.009828,
+      "compressionRatio": 1.462687,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 182000,
+          "endMs": 182280,
+          "probability": 0.998138
+        },
+        {
+          "index": 2,
+          "text": "swims",
+          "startMs": 182280,
+          "endMs": 182920,
+          "probability": 0.997282
+        },
+        {
+          "index": 3,
+          "text": "past",
+          "startMs": 182920,
+          "endMs": 183160,
+          "probability": 0.99803
+        },
+        {
+          "index": 4,
+          "text": "it.",
+          "startMs": 183160,
+          "endMs": 183760,
+          "probability": 0.994593
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "It is too long to be a seahorse.",
+      "startMs": 184300,
+      "endMs": 187200,
+      "avgLogprob": -0.067177,
+      "noSpeechProb": 0.009828,
+      "compressionRatio": 1.462687,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 184300,
+          "endMs": 184580,
+          "probability": 0.993499
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 184580,
+          "endMs": 184780,
+          "probability": 0.981236
+        },
+        {
+          "index": 3,
+          "text": "too",
+          "startMs": 184780,
+          "endMs": 185160,
+          "probability": 0.993912
+        },
+        {
+          "index": 4,
+          "text": "long",
+          "startMs": 185160,
+          "endMs": 185740,
+          "probability": 0.99916
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 185740,
+          "endMs": 186060,
+          "probability": 0.998554
+        },
+        {
+          "index": 6,
+          "text": "be",
+          "startMs": 186060,
+          "endMs": 186320,
+          "probability": 0.998642
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 186320,
+          "endMs": 186600,
+          "probability": 0.997967
+        },
+        {
+          "index": 8,
+          "text": "seahorse.",
+          "startMs": 186600,
+          "endMs": 187200,
+          "probability": 0.990358
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Oh no!",
+      "startMs": 189040,
+      "endMs": 190500,
+      "avgLogprob": -0.059972,
+      "noSpeechProb": 0.008049,
+      "compressionRatio": 1.387097,
+      "words": [
+        {
+          "index": 1,
+          "text": "Oh",
+          "startMs": 189040,
+          "endMs": 189920,
+          "probability": 0.427861
+        },
+        {
+          "index": 2,
+          "text": "no!",
+          "startMs": 189920,
+          "endMs": 190500,
+          "probability": 0.545396
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "It is too dark to see.",
+      "startMs": 191360,
+      "endMs": 193720,
+      "avgLogprob": -0.059972,
+      "noSpeechProb": 0.008049,
+      "compressionRatio": 1.387097,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 191360,
+          "endMs": 191620,
+          "probability": 0.969333
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 191620,
+          "endMs": 191820,
+          "probability": 0.955667
+        },
+        {
+          "index": 3,
+          "text": "too",
+          "startMs": 191820,
+          "endMs": 192260,
+          "probability": 0.991368
+        },
+        {
+          "index": 4,
+          "text": "dark",
+          "startMs": 192260,
+          "endMs": 192920,
+          "probability": 0.998468
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 192920,
+          "endMs": 193220,
+          "probability": 0.997701
+        },
+        {
+          "index": 6,
+          "text": "see.",
+          "startMs": 193220,
+          "endMs": 193720,
+          "probability": 0.999246
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "How will Pete get out?",
+      "startMs": 195000,
+      "endMs": 196760,
+      "avgLogprob": -0.059972,
+      "noSpeechProb": 0.008049,
+      "compressionRatio": 1.387097,
+      "words": [
+        {
+          "index": 1,
+          "text": "How",
+          "startMs": 195000,
+          "endMs": 195260,
+          "probability": 0.993014
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 195260,
+          "endMs": 195620,
+          "probability": 0.997425
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 195620,
+          "endMs": 195840,
+          "probability": 0.97645
+        },
+        {
+          "index": 4,
+          "text": "get",
+          "startMs": 195840,
+          "endMs": 196180,
+          "probability": 0.99672
+        },
+        {
+          "index": 5,
+          "text": "out?",
+          "startMs": 196180,
+          "endMs": 196760,
+          "probability": 0.999232
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "Pete sees a jellyfish.",
+      "startMs": 198900,
+      "endMs": 201400,
+      "avgLogprob": -0.059972,
+      "noSpeechProb": 0.008049,
+      "compressionRatio": 1.387097,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 198900,
+          "endMs": 199300,
+          "probability": 0.99056
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 199300,
+          "endMs": 199780,
+          "probability": 0.993806
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 199780,
+          "endMs": 200200,
+          "probability": 0.997832
+        },
+        {
+          "index": 4,
+          "text": "jellyfish.",
+          "startMs": 200200,
+          "endMs": 201400,
+          "probability": 0.850361
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "It glows in the dark.",
+      "startMs": 202480,
+      "endMs": 204460,
+      "avgLogprob": -0.059972,
+      "noSpeechProb": 0.008049,
+      "compressionRatio": 1.387097,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 202480,
+          "endMs": 202640,
+          "probability": 0.994114
+        },
+        {
+          "index": 2,
+          "text": "glows",
+          "startMs": 202640,
+          "endMs": 203360,
+          "probability": 0.999251
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 203360,
+          "endMs": 203720,
+          "probability": 0.999079
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 203720,
+          "endMs": 203880,
+          "probability": 0.998831
+        },
+        {
+          "index": 5,
+          "text": "dark.",
+          "startMs": 203880,
+          "endMs": 204460,
+          "probability": 0.99964
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Pete is almost out of the cave.",
+      "startMs": 206600,
+      "endMs": 209560,
+      "avgLogprob": -0.059972,
+      "noSpeechProb": 0.008049,
+      "compressionRatio": 1.387097,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 206600,
+          "endMs": 206980,
+          "probability": 0.995099
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 206980,
+          "endMs": 207340,
+          "probability": 0.998703
+        },
+        {
+          "index": 3,
+          "text": "almost",
+          "startMs": 207340,
+          "endMs": 208200,
+          "probability": 0.997246
+        },
+        {
+          "index": 4,
+          "text": "out",
+          "startMs": 208200,
+          "endMs": 208780,
+          "probability": 0.998767
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 208780,
+          "endMs": 208980,
+          "probability": 0.998609
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 208980,
+          "endMs": 209180,
+          "probability": 0.997883
+        },
+        {
+          "index": 7,
+          "text": "cave.",
+          "startMs": 209180,
+          "endMs": 209560,
+          "probability": 0.997934
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "He sees an angelfish.",
+      "startMs": 210860,
+      "endMs": 212660,
+      "avgLogprob": -0.059972,
+      "noSpeechProb": 0.008049,
+      "compressionRatio": 1.387097,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 210860,
+          "endMs": 211100,
+          "probability": 0.998264
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 211100,
+          "endMs": 211440,
+          "probability": 0.99868
+        },
+        {
+          "index": 3,
+          "text": "an",
+          "startMs": 211440,
+          "endMs": 211700,
+          "probability": 0.996692
+        },
+        {
+          "index": 4,
+          "text": "angelfish.",
+          "startMs": 211700,
+          "endMs": 212660,
+          "probability": 0.798078
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "It is very colorful.",
+      "startMs": 213540,
+      "endMs": 215140,
+      "avgLogprob": -0.059972,
+      "noSpeechProb": 0.008049,
+      "compressionRatio": 1.387097,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 213540,
+          "endMs": 213760,
+          "probability": 0.994915
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 213760,
+          "endMs": 213940,
+          "probability": 0.997273
+        },
+        {
+          "index": 3,
+          "text": "very",
+          "startMs": 213940,
+          "endMs": 214480,
+          "probability": 0.998738
+        },
+        {
+          "index": 4,
+          "text": "colorful.",
+          "startMs": 214480,
+          "endMs": 215140,
+          "probability": 0.901721
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "Pete is out of the cave.",
+      "startMs": 216780,
+      "endMs": 219460,
+      "avgLogprob": -0.069989,
+      "noSpeechProb": 0.015657,
+      "compressionRatio": 1.341667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 216780,
+          "endMs": 217700,
+          "probability": 0.550947
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 217700,
+          "endMs": 218140,
+          "probability": 0.966279
+        },
+        {
+          "index": 3,
+          "text": "out",
+          "startMs": 218140,
+          "endMs": 218600,
+          "probability": 0.530018
+        },
+        {
+          "index": 4,
+          "text": "of",
+          "startMs": 218600,
+          "endMs": 218840,
+          "probability": 0.996447
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 218840,
+          "endMs": 219000,
+          "probability": 0.987178
+        },
+        {
+          "index": 6,
+          "text": "cave.",
+          "startMs": 219000,
+          "endMs": 219460,
+          "probability": 0.99444
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "So why is it so dark?",
+      "startMs": 220560,
+      "endMs": 222760,
+      "avgLogprob": -0.069989,
+      "noSpeechProb": 0.015657,
+      "compressionRatio": 1.341667,
+      "words": [
+        {
+          "index": 1,
+          "text": "So",
+          "startMs": 220560,
+          "endMs": 220880,
+          "probability": 0.942179
+        },
+        {
+          "index": 2,
+          "text": "why",
+          "startMs": 220880,
+          "endMs": 221340,
+          "probability": 0.859144
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 221340,
+          "endMs": 221620,
+          "probability": 0.99355
+        },
+        {
+          "index": 4,
+          "text": "it",
+          "startMs": 221620,
+          "endMs": 221820,
+          "probability": 0.989016
+        },
+        {
+          "index": 5,
+          "text": "so",
+          "startMs": 221820,
+          "endMs": 222140,
+          "probability": 0.994407
+        },
+        {
+          "index": 6,
+          "text": "dark?",
+          "startMs": 222140,
+          "endMs": 222760,
+          "probability": 0.998776
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "Pete is in a shadow.",
+      "startMs": 224400,
+      "endMs": 225860,
+      "avgLogprob": -0.069989,
+      "noSpeechProb": 0.015657,
+      "compressionRatio": 1.341667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 224400,
+          "endMs": 224580,
+          "probability": 0.989551
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 224580,
+          "endMs": 224920,
+          "probability": 0.995489
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 224920,
+          "endMs": 225160,
+          "probability": 0.997345
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 225160,
+          "endMs": 225360,
+          "probability": 0.916614
+        },
+        {
+          "index": 5,
+          "text": "shadow.",
+          "startMs": 225360,
+          "endMs": 225860,
+          "probability": 0.995434
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "He is in the shadow of a whale.",
+      "startMs": 227940,
+      "endMs": 231080,
+      "avgLogprob": -0.069989,
+      "noSpeechProb": 0.015657,
+      "compressionRatio": 1.341667,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 227940,
+          "endMs": 228340,
+          "probability": 0.979858
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 228340,
+          "endMs": 228540,
+          "probability": 0.993448
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 228540,
+          "endMs": 228740,
+          "probability": 0.995011
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 228740,
+          "endMs": 228940,
+          "probability": 0.968712
+        },
+        {
+          "index": 5,
+          "text": "shadow",
+          "startMs": 228940,
+          "endMs": 229500,
+          "probability": 0.998169
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 229500,
+          "endMs": 230060,
+          "probability": 0.997084
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 230060,
+          "endMs": 230400,
+          "probability": 0.989581
+        },
+        {
+          "index": 8,
+          "text": "whale.",
+          "startMs": 230400,
+          "endMs": 231080,
+          "probability": 0.99551
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "Yikes!",
+      "startMs": 234860,
+      "endMs": 235780,
+      "avgLogprob": -0.069989,
+      "noSpeechProb": 0.015657,
+      "compressionRatio": 1.341667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yikes!",
+          "startMs": 234860,
+          "endMs": 235780,
+          "probability": 0.97476
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "Pete wishes he could jump on a seahorse and ride away.",
+      "startMs": 237780,
+      "endMs": 242700,
+      "avgLogprob": -0.069989,
+      "noSpeechProb": 0.015657,
+      "compressionRatio": 1.341667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 237780,
+          "endMs": 238480,
+          "probability": 0.995573
+        },
+        {
+          "index": 2,
+          "text": "wishes",
+          "startMs": 238480,
+          "endMs": 238920,
+          "probability": 0.983742
+        },
+        {
+          "index": 3,
+          "text": "he",
+          "startMs": 238920,
+          "endMs": 239460,
+          "probability": 0.988267
+        },
+        {
+          "index": 4,
+          "text": "could",
+          "startMs": 239460,
+          "endMs": 239660,
+          "probability": 0.99629
+        },
+        {
+          "index": 5,
+          "text": "jump",
+          "startMs": 239660,
+          "endMs": 240120,
+          "probability": 0.997905
+        },
+        {
+          "index": 6,
+          "text": "on",
+          "startMs": 240120,
+          "endMs": 240420,
+          "probability": 0.997
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 240420,
+          "endMs": 240600,
+          "probability": 0.992275
+        },
+        {
+          "index": 8,
+          "text": "seahorse",
+          "startMs": 240600,
+          "endMs": 241240,
+          "probability": 0.942699
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 241240,
+          "endMs": 241860,
+          "probability": 0.955414
+        },
+        {
+          "index": 10,
+          "text": "ride",
+          "startMs": 241860,
+          "endMs": 242180,
+          "probability": 0.995806
+        },
+        {
+          "index": 11,
+          "text": "away.",
+          "startMs": 242180,
+          "endMs": 242700,
+          "probability": 0.99801
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "Pete hops on a sea turtle instead.",
+      "startMs": 244360,
+      "endMs": 247400,
+      "avgLogprob": -0.08374,
+      "noSpeechProb": 0.006632,
+      "compressionRatio": 1.438356,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 244360,
+          "endMs": 245120,
+          "probability": 0.882253
+        },
+        {
+          "index": 2,
+          "text": "hops",
+          "startMs": 245120,
+          "endMs": 245460,
+          "probability": 0.974652
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 245460,
+          "endMs": 245820,
+          "probability": 0.994092
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 245820,
+          "endMs": 246020,
+          "probability": 0.988802
+        },
+        {
+          "index": 5,
+          "text": "sea",
+          "startMs": 246020,
+          "endMs": 246300,
+          "probability": 0.995948
+        },
+        {
+          "index": 6,
+          "text": "turtle",
+          "startMs": 246300,
+          "endMs": 246700,
+          "probability": 0.989485
+        },
+        {
+          "index": 7,
+          "text": "instead.",
+          "startMs": 246700,
+          "endMs": 247400,
+          "probability": 0.983019
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "text": "It takes him to the boat.",
+      "startMs": 248480,
+      "endMs": 250040,
+      "avgLogprob": -0.08374,
+      "noSpeechProb": 0.006632,
+      "compressionRatio": 1.438356,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 248480,
+          "endMs": 248740,
+          "probability": 0.991931
+        },
+        {
+          "index": 2,
+          "text": "takes",
+          "startMs": 248740,
+          "endMs": 249020,
+          "probability": 0.995315
+        },
+        {
+          "index": 3,
+          "text": "him",
+          "startMs": 249020,
+          "endMs": 249340,
+          "probability": 0.99803
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 249340,
+          "endMs": 249540,
+          "probability": 0.997961
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 249540,
+          "endMs": 249700,
+          "probability": 0.994279
+        },
+        {
+          "index": 6,
+          "text": "boat.",
+          "startMs": 249700,
+          "endMs": 250040,
+          "probability": 0.999162
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "text": "I did not see a seahorse, thinks Pete.",
+      "startMs": 252060,
+      "endMs": 255480,
+      "avgLogprob": -0.08374,
+      "noSpeechProb": 0.006632,
+      "compressionRatio": 1.438356,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 252060,
+          "endMs": 252420,
+          "probability": 0.567762
+        },
+        {
+          "index": 2,
+          "text": "did",
+          "startMs": 252420,
+          "endMs": 252560,
+          "probability": 0.990176
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 252560,
+          "endMs": 252900,
+          "probability": 0.999199
+        },
+        {
+          "index": 4,
+          "text": "see",
+          "startMs": 252900,
+          "endMs": 253260,
+          "probability": 0.997775
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 253260,
+          "endMs": 253420,
+          "probability": 0.996078
+        },
+        {
+          "index": 6,
+          "text": "seahorse,",
+          "startMs": 253420,
+          "endMs": 254180,
+          "probability": 0.922947
+        },
+        {
+          "index": 7,
+          "text": "thinks",
+          "startMs": 254700,
+          "endMs": 255060,
+          "probability": 0.830942
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 255060,
+          "endMs": 255480,
+          "probability": 0.994232
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "text": "He feels a tickle on his tail.",
+      "startMs": 256840,
+      "endMs": 259200,
+      "avgLogprob": -0.08374,
+      "noSpeechProb": 0.006632,
+      "compressionRatio": 1.438356,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 256840,
+          "endMs": 257100,
+          "probability": 0.996645
+        },
+        {
+          "index": 2,
+          "text": "feels",
+          "startMs": 257100,
+          "endMs": 257480,
+          "probability": 0.994641
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 257480,
+          "endMs": 257860,
+          "probability": 0.998081
+        },
+        {
+          "index": 4,
+          "text": "tickle",
+          "startMs": 257860,
+          "endMs": 258320,
+          "probability": 0.99132
+        },
+        {
+          "index": 5,
+          "text": "on",
+          "startMs": 258320,
+          "endMs": 258520,
+          "probability": 0.997701
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 258520,
+          "endMs": 258760,
+          "probability": 0.998766
+        },
+        {
+          "index": 7,
+          "text": "tail.",
+          "startMs": 258760,
+          "endMs": 259200,
+          "probability": 0.998522
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "text": "A seahorse, cries Pete.",
+      "startMs": 261220,
+      "endMs": 264100,
+      "avgLogprob": -0.08374,
+      "noSpeechProb": 0.006632,
+      "compressionRatio": 1.438356,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 261220,
+          "endMs": 261580,
+          "probability": 0.96331
+        },
+        {
+          "index": 2,
+          "text": "seahorse,",
+          "startMs": 261580,
+          "endMs": 262620,
+          "probability": 0.896577
+        },
+        {
+          "index": 3,
+          "text": "cries",
+          "startMs": 263200,
+          "endMs": 263580,
+          "probability": 0.950239
+        },
+        {
+          "index": 4,
+          "text": "Pete.",
+          "startMs": 263580,
+          "endMs": 264100,
+          "probability": 0.995613
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "text": "What a surprise!",
+      "startMs": 264840,
+      "endMs": 265760,
+      "avgLogprob": -0.08374,
+      "noSpeechProb": 0.006632,
+      "compressionRatio": 1.438356,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 264840,
+          "endMs": 264960,
+          "probability": 0.996985
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 264960,
+          "endMs": 265160,
+          "probability": 0.999279
+        },
+        {
+          "index": 3,
+          "text": "surprise!",
+          "startMs": 265160,
+          "endMs": 265760,
+          "probability": 0.991704
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "text": "You were with me all along, says Pete.",
+      "startMs": 268280,
+      "endMs": 272420,
+      "avgLogprob": -0.08374,
+      "noSpeechProb": 0.006632,
+      "compressionRatio": 1.438356,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 268280,
+          "endMs": 268580,
+          "probability": 0.994466
+        },
+        {
+          "index": 2,
+          "text": "were",
+          "startMs": 268580,
+          "endMs": 268820,
+          "probability": 0.995164
+        },
+        {
+          "index": 3,
+          "text": "with",
+          "startMs": 268820,
+          "endMs": 269200,
+          "probability": 0.999016
+        },
+        {
+          "index": 4,
+          "text": "me",
+          "startMs": 269200,
+          "endMs": 269560,
+          "probability": 0.998101
+        },
+        {
+          "index": 5,
+          "text": "all",
+          "startMs": 269560,
+          "endMs": 269980,
+          "probability": 0.996753
+        },
+        {
+          "index": 6,
+          "text": "along,",
+          "startMs": 269980,
+          "endMs": 271040,
+          "probability": 0.998516
+        },
+        {
+          "index": 7,
+          "text": "says",
+          "startMs": 271520,
+          "endMs": 271900,
+          "probability": 0.989202
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 271900,
+          "endMs": 272420,
+          "probability": 0.995766
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "text": "What a cool adventure!",
+      "startMs": 272700,
+      "endMs": 275720,
+      "avgLogprob": -0.152425,
+      "noSpeechProb": 0.181329,
+      "compressionRatio": 0.733333,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 272700,
+          "endMs": 273840,
+          "probability": 0.806492
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 273840,
+          "endMs": 274280,
+          "probability": 0.988151
+        },
+        {
+          "index": 3,
+          "text": "cool",
+          "startMs": 274280,
+          "endMs": 274740,
+          "probability": 0.940946
+        },
+        {
+          "index": 4,
+          "text": "adventure!",
+          "startMs": 274740,
+          "endMs": 275720,
+          "probability": 0.958986
+        }
+      ]
+    }
+  ]
+}

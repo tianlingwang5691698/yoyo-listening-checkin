@@ -1,0 +1,4436 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 47.478,
+  "text": "Pete the Cat's Groovy Guide to Love. Tips from a Cool Cat on how to spread the love by Kimberly and James Dean, performed by James Foe. Love is a friendship set to music. Joseph Campbell, rock on, Pete. A loving heart was better and stronger than wisdom. Charles Dickens, loving school is cool. Pete, love is space and time measured by the heart. Marcel Proust, far out, love is out of this world. Pete, love yourself and everything else falls into line. Lucille Ball, I'm awesome, I'm groovy. Pete, love is the greatest refreshment in life. Pablo Picasso, cheers, here's to love. Pete, at the touch of love, everyone becomes a poet. Plato, roses are red, Pete is blue, day and night, I love you. Pete, love conquers all, Virgil. Love makes anything possible, Pete. Where love is concerned, too much is not even enough. Pierre Beaumarchais, love big, Pete. Love is the master key which opens the gates of happiness. Oliver Wendell Holmes, come on in, Pete. All you need is love, John Lennon and Paul McCartney. Morning, noon and night, love is all right, Pete. The best thing to hold on to in life is each other, Audrey Hepburn. Better together, Pete. Let the beauty of what you love be what you do, Rumi. Do more of what makes you happy, Pete. Friends show their love in times of trouble, Euripides. Always stop to help your turtle friends, Pete. Spread love everywhere you go, let no one ever come to you without leaving happier. Mother Teresa, be the reason someone smiles today, Pete. Choose a job you love and you will never have to work, Confucius. Do what you love, Pete. Keep love in your heart, a life without it is like a sunless garden when the flowers are dead. Oscar Wilde, love starts with me, Pete. Where there is love, there is life, Mahatma Gandhi. Love makes life groovy, Pete. Love is patient, love is kind. It does not envy, it does not boast, it is not proud. 1 Corinthians chapter 13 verse 4 to 8. Love forgives, Pete. Being deeply loved by someone gives you strength, while loving someone deeply gives you courage. Laozi. Love makes you brave, Pete. How do I love thee? Let me count the ways. Elizabeth Barrett Browning. I love you to infinity, Pete. The way to know life is to love many things, Vincent van Gogh. A fun day is a good day, Pete. If you want to be loved, be lovable. Avid. Sometimes the most unlikely friend is the coolest friend, Pete. The first duty of love is to listen, Paul Tillich. A cool friend is a good listener, Pete. May the sun shine all day long, everything go right and nothing wrong. May those you love bring love back to you, and may all the wishes you wish come true. Irish blessing. We hope you have enjoyed this recording of Pete the Cat's Groovy Guide to Love by Kimberly and James Dean. This program was produced by John Marshall Media. Text copyright 2015 by Kimberly and James Dean. Illustrations copyright 2015 by James Dean. Production copyright 2015 by HarperCollins Publishers. All rights reserved.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat's Groovy Guide to Love.",
+      "startMs": 0,
+      "endMs": 3260,
+      "avgLogprob": -0.459609,
+      "noSpeechProb": 0.004879,
+      "compressionRatio": 1.303226,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 460,
+          "probability": 0.618407
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 460,
+          "endMs": 740,
+          "probability": 0.921437
+        },
+        {
+          "index": 3,
+          "text": "Cat's",
+          "startMs": 740,
+          "endMs": 1460,
+          "probability": 0.80525
+        },
+        {
+          "index": 4,
+          "text": "Groovy",
+          "startMs": 1460,
+          "endMs": 1980,
+          "probability": 0.880365
+        },
+        {
+          "index": 5,
+          "text": "Guide",
+          "startMs": 1980,
+          "endMs": 2300,
+          "probability": 0.994762
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 2300,
+          "endMs": 2620,
+          "probability": 0.938006
+        },
+        {
+          "index": 7,
+          "text": "Love.",
+          "startMs": 2620,
+          "endMs": 3260,
+          "probability": 0.983636
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "Tips from a Cool Cat on how to spread the love by Kimberly and",
+      "startMs": 4260,
+      "endMs": 9780,
+      "avgLogprob": -0.459609,
+      "noSpeechProb": 0.004879,
+      "compressionRatio": 1.303226,
+      "words": [
+        {
+          "index": 1,
+          "text": "Tips",
+          "startMs": 4260,
+          "endMs": 4260,
+          "probability": 0.948917
+        },
+        {
+          "index": 2,
+          "text": "from",
+          "startMs": 4260,
+          "endMs": 4560,
+          "probability": 0.913362
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 4560,
+          "endMs": 4740,
+          "probability": 0.955967
+        },
+        {
+          "index": 4,
+          "text": "Cool",
+          "startMs": 4740,
+          "endMs": 5020,
+          "probability": 0.855364
+        },
+        {
+          "index": 5,
+          "text": "Cat",
+          "startMs": 5020,
+          "endMs": 5420,
+          "probability": 0.996477
+        },
+        {
+          "index": 6,
+          "text": "on",
+          "startMs": 5420,
+          "endMs": 6080,
+          "probability": 0.932431
+        },
+        {
+          "index": 7,
+          "text": "how",
+          "startMs": 6080,
+          "endMs": 6340,
+          "probability": 0.529556
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 6340,
+          "endMs": 6660,
+          "probability": 0.996351
+        },
+        {
+          "index": 9,
+          "text": "spread",
+          "startMs": 6660,
+          "endMs": 6980,
+          "probability": 0.907407
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 6980,
+          "endMs": 7220,
+          "probability": 0.994078
+        },
+        {
+          "index": 11,
+          "text": "love",
+          "startMs": 7220,
+          "endMs": 7680,
+          "probability": 0.994476
+        },
+        {
+          "index": 12,
+          "text": "by",
+          "startMs": 7680,
+          "endMs": 8760,
+          "probability": 0.518456
+        },
+        {
+          "index": 13,
+          "text": "Kimberly",
+          "startMs": 8760,
+          "endMs": 9200,
+          "probability": 0.7043
+        },
+        {
+          "index": 14,
+          "text": "and",
+          "startMs": 9200,
+          "endMs": 9780,
+          "probability": 0.979053
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "James Dean, performed by James Foe.",
+      "startMs": 9780,
+      "endMs": 13620,
+      "avgLogprob": -0.459609,
+      "noSpeechProb": 0.004879,
+      "compressionRatio": 1.303226,
+      "words": [
+        {
+          "index": 1,
+          "text": "James",
+          "startMs": 9780,
+          "endMs": 10340,
+          "probability": 0.995965
+        },
+        {
+          "index": 2,
+          "text": "Dean,",
+          "startMs": 10340,
+          "endMs": 10740,
+          "probability": 0.892659
+        },
+        {
+          "index": 3,
+          "text": "performed",
+          "startMs": 12020,
+          "endMs": 12520,
+          "probability": 0.99228
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 12520,
+          "endMs": 12920,
+          "probability": 0.999033
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 12920,
+          "endMs": 13340,
+          "probability": 0.998241
+        },
+        {
+          "index": 6,
+          "text": "Foe.",
+          "startMs": 13340,
+          "endMs": 13620,
+          "probability": 0.817532
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Love is a friendship set to music.",
+      "startMs": 16420,
+      "endMs": 19580,
+      "avgLogprob": -0.459609,
+      "noSpeechProb": 0.004879,
+      "compressionRatio": 1.303226,
+      "words": [
+        {
+          "index": 1,
+          "text": "Love",
+          "startMs": 16420,
+          "endMs": 17160,
+          "probability": 0.789798
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 17160,
+          "endMs": 17480,
+          "probability": 0.977699
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 17480,
+          "endMs": 17780,
+          "probability": 0.997571
+        },
+        {
+          "index": 4,
+          "text": "friendship",
+          "startMs": 17780,
+          "endMs": 18100,
+          "probability": 0.987345
+        },
+        {
+          "index": 5,
+          "text": "set",
+          "startMs": 18100,
+          "endMs": 18680,
+          "probability": 0.994573
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 18680,
+          "endMs": 18960,
+          "probability": 0.999025
+        },
+        {
+          "index": 7,
+          "text": "music.",
+          "startMs": 18960,
+          "endMs": 19580,
+          "probability": 0.997855
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Joseph Campbell, rock on, Pete.",
+      "startMs": 20880,
+      "endMs": 26380,
+      "avgLogprob": -0.459609,
+      "noSpeechProb": 0.004879,
+      "compressionRatio": 1.303226,
+      "words": [
+        {
+          "index": 1,
+          "text": "Joseph",
+          "startMs": 20880,
+          "endMs": 21220,
+          "probability": 0.981289
+        },
+        {
+          "index": 2,
+          "text": "Campbell,",
+          "startMs": 21220,
+          "endMs": 21820,
+          "probability": 0.991765
+        },
+        {
+          "index": 3,
+          "text": "rock",
+          "startMs": 23960,
+          "endMs": 24300,
+          "probability": 0.779633
+        },
+        {
+          "index": 4,
+          "text": "on,",
+          "startMs": 24300,
+          "endMs": 25000,
+          "probability": 0.969806
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 25880,
+          "endMs": 26380,
+          "probability": 0.996154
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "A loving heart was better and stronger than wisdom.",
+      "startMs": 27840,
+      "endMs": 32220,
+      "avgLogprob": -0.244356,
+      "noSpeechProb": 0.009257,
+      "compressionRatio": 1.385714,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 27840,
+          "endMs": 28800,
+          "probability": 0.583357
+        },
+        {
+          "index": 2,
+          "text": "loving",
+          "startMs": 28800,
+          "endMs": 29200,
+          "probability": 0.993089
+        },
+        {
+          "index": 3,
+          "text": "heart",
+          "startMs": 29200,
+          "endMs": 29600,
+          "probability": 0.997059
+        },
+        {
+          "index": 4,
+          "text": "was",
+          "startMs": 29600,
+          "endMs": 29900,
+          "probability": 0.995129
+        },
+        {
+          "index": 5,
+          "text": "better",
+          "startMs": 29900,
+          "endMs": 30280,
+          "probability": 0.996283
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 30280,
+          "endMs": 30680,
+          "probability": 0.991875
+        },
+        {
+          "index": 7,
+          "text": "stronger",
+          "startMs": 30680,
+          "endMs": 31160,
+          "probability": 0.998391
+        },
+        {
+          "index": 8,
+          "text": "than",
+          "startMs": 31160,
+          "endMs": 31620,
+          "probability": 0.997557
+        },
+        {
+          "index": 9,
+          "text": "wisdom.",
+          "startMs": 31620,
+          "endMs": 32220,
+          "probability": 0.990457
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Charles Dickens, loving school is cool.",
+      "startMs": 33540,
+      "endMs": 38040,
+      "avgLogprob": -0.244356,
+      "noSpeechProb": 0.009257,
+      "compressionRatio": 1.385714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Charles",
+          "startMs": 33540,
+          "endMs": 33880,
+          "probability": 0.965679
+        },
+        {
+          "index": 2,
+          "text": "Dickens,",
+          "startMs": 33880,
+          "endMs": 34360,
+          "probability": 0.992416
+        },
+        {
+          "index": 3,
+          "text": "loving",
+          "startMs": 36100,
+          "endMs": 36320,
+          "probability": 0.690608
+        },
+        {
+          "index": 4,
+          "text": "school",
+          "startMs": 36320,
+          "endMs": 36880,
+          "probability": 0.984074
+        },
+        {
+          "index": 5,
+          "text": "is",
+          "startMs": 36880,
+          "endMs": 37440,
+          "probability": 0.996025
+        },
+        {
+          "index": 6,
+          "text": "cool.",
+          "startMs": 37440,
+          "endMs": 38040,
+          "probability": 0.995475
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Pete, love is space and time measured by the heart.",
+      "startMs": 39160,
+      "endMs": 45320,
+      "avgLogprob": -0.244356,
+      "noSpeechProb": 0.009257,
+      "compressionRatio": 1.385714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete,",
+          "startMs": 39160,
+          "endMs": 39600,
+          "probability": 0.982376
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 41620,
+          "endMs": 41980,
+          "probability": 0.960102
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 41980,
+          "endMs": 42360,
+          "probability": 0.998444
+        },
+        {
+          "index": 4,
+          "text": "space",
+          "startMs": 42360,
+          "endMs": 42800,
+          "probability": 0.997464
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 42800,
+          "endMs": 43160,
+          "probability": 0.993466
+        },
+        {
+          "index": 6,
+          "text": "time",
+          "startMs": 43160,
+          "endMs": 43760,
+          "probability": 0.999189
+        },
+        {
+          "index": 7,
+          "text": "measured",
+          "startMs": 43760,
+          "endMs": 44440,
+          "probability": 0.977289
+        },
+        {
+          "index": 8,
+          "text": "by",
+          "startMs": 44440,
+          "endMs": 44760,
+          "probability": 0.999278
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 44760,
+          "endMs": 44920,
+          "probability": 0.996619
+        },
+        {
+          "index": 10,
+          "text": "heart.",
+          "startMs": 44920,
+          "endMs": 45320,
+          "probability": 0.995257
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Marcel Proust, far out, love is out of this world.",
+      "startMs": 46460,
+      "endMs": 53260,
+      "avgLogprob": -0.244356,
+      "noSpeechProb": 0.009257,
+      "compressionRatio": 1.385714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Marcel",
+          "startMs": 46460,
+          "endMs": 46800,
+          "probability": 0.882338
+        },
+        {
+          "index": 2,
+          "text": "Proust,",
+          "startMs": 46800,
+          "endMs": 47580,
+          "probability": 0.98125
+        },
+        {
+          "index": 3,
+          "text": "far",
+          "startMs": 49180,
+          "endMs": 49660,
+          "probability": 0.816603
+        },
+        {
+          "index": 4,
+          "text": "out,",
+          "startMs": 49660,
+          "endMs": 50260,
+          "probability": 0.743556
+        },
+        {
+          "index": 5,
+          "text": "love",
+          "startMs": 50740,
+          "endMs": 51180,
+          "probability": 0.99392
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 51180,
+          "endMs": 51700,
+          "probability": 0.998501
+        },
+        {
+          "index": 7,
+          "text": "out",
+          "startMs": 51700,
+          "endMs": 52160,
+          "probability": 0.998749
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 52160,
+          "endMs": 52340,
+          "probability": 0.998642
+        },
+        {
+          "index": 9,
+          "text": "this",
+          "startMs": 52340,
+          "endMs": 52640,
+          "probability": 0.999053
+        },
+        {
+          "index": 10,
+          "text": "world.",
+          "startMs": 52640,
+          "endMs": 53260,
+          "probability": 0.999073
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Pete, love yourself and everything else falls into line.",
+      "startMs": 54260,
+      "endMs": 61300,
+      "avgLogprob": -0.158234,
+      "noSpeechProb": 0.026958,
+      "compressionRatio": 1.338235,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete,",
+          "startMs": 54240,
+          "endMs": 54760,
+          "probability": 0.518989
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 57080,
+          "endMs": 57340,
+          "probability": 0.682299
+        },
+        {
+          "index": 3,
+          "text": "yourself",
+          "startMs": 57340,
+          "endMs": 57920,
+          "probability": 0.99505
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 57920,
+          "endMs": 58680,
+          "probability": 0.891396
+        },
+        {
+          "index": 5,
+          "text": "everything",
+          "startMs": 58680,
+          "endMs": 59200,
+          "probability": 0.993034
+        },
+        {
+          "index": 6,
+          "text": "else",
+          "startMs": 59200,
+          "endMs": 59780,
+          "probability": 0.996855
+        },
+        {
+          "index": 7,
+          "text": "falls",
+          "startMs": 59780,
+          "endMs": 60160,
+          "probability": 0.986522
+        },
+        {
+          "index": 8,
+          "text": "into",
+          "startMs": 60160,
+          "endMs": 60580,
+          "probability": 0.994759
+        },
+        {
+          "index": 9,
+          "text": "line.",
+          "startMs": 60580,
+          "endMs": 61300,
+          "probability": 0.988118
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Lucille Ball, I'm awesome, I'm groovy.",
+      "startMs": 62120,
+      "endMs": 68000,
+      "avgLogprob": -0.158234,
+      "noSpeechProb": 0.026958,
+      "compressionRatio": 1.338235,
+      "words": [
+        {
+          "index": 1,
+          "text": "Lucille",
+          "startMs": 62120,
+          "endMs": 62580,
+          "probability": 0.926828
+        },
+        {
+          "index": 2,
+          "text": "Ball,",
+          "startMs": 62580,
+          "endMs": 62960,
+          "probability": 0.505204
+        },
+        {
+          "index": 3,
+          "text": "I'm",
+          "startMs": 65400,
+          "endMs": 65540,
+          "probability": 0.91659
+        },
+        {
+          "index": 4,
+          "text": "awesome,",
+          "startMs": 65540,
+          "endMs": 66020,
+          "probability": 0.967191
+        },
+        {
+          "index": 5,
+          "text": "I'm",
+          "startMs": 66780,
+          "endMs": 67260,
+          "probability": 0.994623
+        },
+        {
+          "index": 6,
+          "text": "groovy.",
+          "startMs": 67260,
+          "endMs": 68000,
+          "probability": 0.947126
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "Pete, love is the greatest refreshment in life.",
+      "startMs": 68980,
+      "endMs": 74400,
+      "avgLogprob": -0.158234,
+      "noSpeechProb": 0.026958,
+      "compressionRatio": 1.338235,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete,",
+          "startMs": 68980,
+          "endMs": 69400,
+          "probability": 0.996093
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 71720,
+          "endMs": 71960,
+          "probability": 0.966399
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 71960,
+          "endMs": 72320,
+          "probability": 0.998796
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 72320,
+          "endMs": 72520,
+          "probability": 0.99879
+        },
+        {
+          "index": 5,
+          "text": "greatest",
+          "startMs": 72520,
+          "endMs": 72880,
+          "probability": 0.99897
+        },
+        {
+          "index": 6,
+          "text": "refreshment",
+          "startMs": 72880,
+          "endMs": 73720,
+          "probability": 0.994256
+        },
+        {
+          "index": 7,
+          "text": "in",
+          "startMs": 73720,
+          "endMs": 73940,
+          "probability": 0.997074
+        },
+        {
+          "index": 8,
+          "text": "life.",
+          "startMs": 73940,
+          "endMs": 74400,
+          "probability": 0.998152
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Pablo Picasso, cheers, here's to love.",
+      "startMs": 75660,
+      "endMs": 81200,
+      "avgLogprob": -0.158234,
+      "noSpeechProb": 0.026958,
+      "compressionRatio": 1.338235,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pablo",
+          "startMs": 75660,
+          "endMs": 75880,
+          "probability": 0.990879
+        },
+        {
+          "index": 2,
+          "text": "Picasso,",
+          "startMs": 75880,
+          "endMs": 76540,
+          "probability": 0.99548
+        },
+        {
+          "index": 3,
+          "text": "cheers,",
+          "startMs": 79320,
+          "endMs": 79320,
+          "probability": 0.762972
+        },
+        {
+          "index": 4,
+          "text": "here's",
+          "startMs": 80240,
+          "endMs": 80520,
+          "probability": 0.939686
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 80520,
+          "endMs": 80680,
+          "probability": 0.994419
+        },
+        {
+          "index": 6,
+          "text": "love.",
+          "startMs": 80680,
+          "endMs": 81200,
+          "probability": 0.988068
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Pete, at the touch of love, everyone becomes a poet.",
+      "startMs": 82200,
+      "endMs": 88480,
+      "avgLogprob": -0.163087,
+      "noSpeechProb": 0.031352,
+      "compressionRatio": 1.275862,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete,",
+          "startMs": 82100,
+          "endMs": 82600,
+          "probability": 0.815562
+        },
+        {
+          "index": 2,
+          "text": "at",
+          "startMs": 84820,
+          "endMs": 84920,
+          "probability": 0.828923
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 84920,
+          "endMs": 85140,
+          "probability": 0.996437
+        },
+        {
+          "index": 4,
+          "text": "touch",
+          "startMs": 85140,
+          "endMs": 85420,
+          "probability": 0.998892
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 85420,
+          "endMs": 85660,
+          "probability": 0.999176
+        },
+        {
+          "index": 6,
+          "text": "love,",
+          "startMs": 85660,
+          "endMs": 86040,
+          "probability": 0.986354
+        },
+        {
+          "index": 7,
+          "text": "everyone",
+          "startMs": 86720,
+          "endMs": 86920,
+          "probability": 0.978681
+        },
+        {
+          "index": 8,
+          "text": "becomes",
+          "startMs": 86920,
+          "endMs": 87700,
+          "probability": 0.996046
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 87700,
+          "endMs": 87940,
+          "probability": 0.998632
+        },
+        {
+          "index": 10,
+          "text": "poet.",
+          "startMs": 87940,
+          "endMs": 88480,
+          "probability": 0.990672
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Plato, roses are red, Pete is blue, day and night, I love you.",
+      "startMs": 89960,
+      "endMs": 99080,
+      "avgLogprob": -0.163087,
+      "noSpeechProb": 0.031352,
+      "compressionRatio": 1.275862,
+      "words": [
+        {
+          "index": 1,
+          "text": "Plato,",
+          "startMs": 89960,
+          "endMs": 90140,
+          "probability": 0.616618
+        },
+        {
+          "index": 2,
+          "text": "roses",
+          "startMs": 92900,
+          "endMs": 92900,
+          "probability": 0.886493
+        },
+        {
+          "index": 3,
+          "text": "are",
+          "startMs": 92900,
+          "endMs": 93240,
+          "probability": 0.997263
+        },
+        {
+          "index": 4,
+          "text": "red,",
+          "startMs": 93240,
+          "endMs": 93700,
+          "probability": 0.986657
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 94320,
+          "endMs": 94540,
+          "probability": 0.955562
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 94540,
+          "endMs": 95040,
+          "probability": 0.993722
+        },
+        {
+          "index": 7,
+          "text": "blue,",
+          "startMs": 95040,
+          "endMs": 95540,
+          "probability": 0.991847
+        },
+        {
+          "index": 8,
+          "text": "day",
+          "startMs": 96120,
+          "endMs": 96540,
+          "probability": 0.991491
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 96540,
+          "endMs": 96880,
+          "probability": 0.995827
+        },
+        {
+          "index": 10,
+          "text": "night,",
+          "startMs": 96880,
+          "endMs": 97320,
+          "probability": 0.999459
+        },
+        {
+          "index": 11,
+          "text": "I",
+          "startMs": 97860,
+          "endMs": 98200,
+          "probability": 0.99353
+        },
+        {
+          "index": 12,
+          "text": "love",
+          "startMs": 98200,
+          "endMs": 98580,
+          "probability": 0.997478
+        },
+        {
+          "index": 13,
+          "text": "you.",
+          "startMs": 98580,
+          "endMs": 99080,
+          "probability": 0.998846
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Pete, love conquers all, Virgil.",
+      "startMs": 100140,
+      "endMs": 106240,
+      "avgLogprob": -0.163087,
+      "noSpeechProb": 0.031352,
+      "compressionRatio": 1.275862,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete,",
+          "startMs": 100140,
+          "endMs": 100660,
+          "probability": 0.99466
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 103340,
+          "endMs": 103340,
+          "probability": 0.973971
+        },
+        {
+          "index": 3,
+          "text": "conquers",
+          "startMs": 103340,
+          "endMs": 104080,
+          "probability": 0.975977
+        },
+        {
+          "index": 4,
+          "text": "all,",
+          "startMs": 104080,
+          "endMs": 104620,
+          "probability": 0.99464
+        },
+        {
+          "index": 5,
+          "text": "Virgil.",
+          "startMs": 105580,
+          "endMs": 106240,
+          "probability": 0.96481
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "Love makes anything possible, Pete.",
+      "startMs": 107240,
+      "endMs": 112240,
+      "avgLogprob": -0.199064,
+      "noSpeechProb": 0.008423,
+      "compressionRatio": 1.188679,
+      "words": [
+        {
+          "index": 1,
+          "text": "Love",
+          "startMs": 107240,
+          "endMs": 108660,
+          "probability": 0.555054
+        },
+        {
+          "index": 2,
+          "text": "makes",
+          "startMs": 108660,
+          "endMs": 109040,
+          "probability": 0.962357
+        },
+        {
+          "index": 3,
+          "text": "anything",
+          "startMs": 109040,
+          "endMs": 109900,
+          "probability": 0.991255
+        },
+        {
+          "index": 4,
+          "text": "possible,",
+          "startMs": 109900,
+          "endMs": 110800,
+          "probability": 0.995487
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 112060,
+          "endMs": 112240,
+          "probability": 0.981862
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Where love is concerned, too much is not even enough.",
+      "startMs": 113680,
+      "endMs": 118960,
+      "avgLogprob": -0.199064,
+      "noSpeechProb": 0.008423,
+      "compressionRatio": 1.188679,
+      "words": [
+        {
+          "index": 1,
+          "text": "Where",
+          "startMs": 113680,
+          "endMs": 114740,
+          "probability": 0.981024
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 114740,
+          "endMs": 115060,
+          "probability": 0.987699
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 115060,
+          "endMs": 115300,
+          "probability": 0.99929
+        },
+        {
+          "index": 4,
+          "text": "concerned,",
+          "startMs": 115300,
+          "endMs": 115940,
+          "probability": 0.997832
+        },
+        {
+          "index": 5,
+          "text": "too",
+          "startMs": 116560,
+          "endMs": 116780,
+          "probability": 0.986046
+        },
+        {
+          "index": 6,
+          "text": "much",
+          "startMs": 116780,
+          "endMs": 117140,
+          "probability": 0.998857
+        },
+        {
+          "index": 7,
+          "text": "is",
+          "startMs": 117140,
+          "endMs": 117600,
+          "probability": 0.996171
+        },
+        {
+          "index": 8,
+          "text": "not",
+          "startMs": 117600,
+          "endMs": 117940,
+          "probability": 0.999279
+        },
+        {
+          "index": 9,
+          "text": "even",
+          "startMs": 117940,
+          "endMs": 118420,
+          "probability": 0.994967
+        },
+        {
+          "index": 10,
+          "text": "enough.",
+          "startMs": 118420,
+          "endMs": 118960,
+          "probability": 0.999776
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Pierre Beaumarchais, love big, Pete.",
+      "startMs": 120260,
+      "endMs": 126900,
+      "avgLogprob": -0.199064,
+      "noSpeechProb": 0.008423,
+      "compressionRatio": 1.188679,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pierre",
+          "startMs": 120260,
+          "endMs": 120600,
+          "probability": 0.935871
+        },
+        {
+          "index": 2,
+          "text": "Beaumarchais,",
+          "startMs": 120600,
+          "endMs": 121700,
+          "probability": 0.556806
+        },
+        {
+          "index": 3,
+          "text": "love",
+          "startMs": 123760,
+          "endMs": 124120,
+          "probability": 0.649114
+        },
+        {
+          "index": 4,
+          "text": "big,",
+          "startMs": 124120,
+          "endMs": 124980,
+          "probability": 0.963049
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 126400,
+          "endMs": 126900,
+          "probability": 0.997205
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Love is the master key which opens the gates of happiness.",
+      "startMs": 128460,
+      "endMs": 133520,
+      "avgLogprob": -0.12353,
+      "noSpeechProb": 0.007419,
+      "compressionRatio": 1.214286,
+      "words": [
+        {
+          "index": 1,
+          "text": "Love",
+          "startMs": 128460,
+          "endMs": 129360,
+          "probability": 0.630933
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 129360,
+          "endMs": 129820,
+          "probability": 0.993115
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 129820,
+          "endMs": 130040,
+          "probability": 0.99534
+        },
+        {
+          "index": 4,
+          "text": "master",
+          "startMs": 130040,
+          "endMs": 130560,
+          "probability": 0.852055
+        },
+        {
+          "index": 5,
+          "text": "key",
+          "startMs": 130560,
+          "endMs": 130940,
+          "probability": 0.979019
+        },
+        {
+          "index": 6,
+          "text": "which",
+          "startMs": 130940,
+          "endMs": 131240,
+          "probability": 0.892223
+        },
+        {
+          "index": 7,
+          "text": "opens",
+          "startMs": 131240,
+          "endMs": 131820,
+          "probability": 0.989902
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 131820,
+          "endMs": 132100,
+          "probability": 0.994032
+        },
+        {
+          "index": 9,
+          "text": "gates",
+          "startMs": 132100,
+          "endMs": 132480,
+          "probability": 0.956865
+        },
+        {
+          "index": 10,
+          "text": "of",
+          "startMs": 132480,
+          "endMs": 132860,
+          "probability": 0.998871
+        },
+        {
+          "index": 11,
+          "text": "happiness.",
+          "startMs": 132860,
+          "endMs": 133520,
+          "probability": 0.97784
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Oliver Wendell Holmes, come on in, Pete.",
+      "startMs": 135020,
+      "endMs": 141220,
+      "avgLogprob": -0.12353,
+      "noSpeechProb": 0.007419,
+      "compressionRatio": 1.214286,
+      "words": [
+        {
+          "index": 1,
+          "text": "Oliver",
+          "startMs": 135020,
+          "endMs": 135300,
+          "probability": 0.979685
+        },
+        {
+          "index": 2,
+          "text": "Wendell",
+          "startMs": 135300,
+          "endMs": 135860,
+          "probability": 0.98137
+        },
+        {
+          "index": 3,
+          "text": "Holmes,",
+          "startMs": 135860,
+          "endMs": 136400,
+          "probability": 0.825563
+        },
+        {
+          "index": 4,
+          "text": "come",
+          "startMs": 138880,
+          "endMs": 139000,
+          "probability": 0.269751
+        },
+        {
+          "index": 5,
+          "text": "on",
+          "startMs": 139000,
+          "endMs": 139400,
+          "probability": 0.989116
+        },
+        {
+          "index": 6,
+          "text": "in,",
+          "startMs": 139400,
+          "endMs": 140640,
+          "probability": 0.992066
+        },
+        {
+          "index": 7,
+          "text": "Pete.",
+          "startMs": 140780,
+          "endMs": 141220,
+          "probability": 0.980229
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "All you need is love, John Lennon and Paul McCartney.",
+      "startMs": 143140,
+      "endMs": 148280,
+      "avgLogprob": -0.12353,
+      "noSpeechProb": 0.007419,
+      "compressionRatio": 1.214286,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 143140,
+          "endMs": 143800,
+          "probability": 0.977668
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 143800,
+          "endMs": 144080,
+          "probability": 0.993399
+        },
+        {
+          "index": 3,
+          "text": "need",
+          "startMs": 144080,
+          "endMs": 144520,
+          "probability": 0.999418
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 144520,
+          "endMs": 144780,
+          "probability": 0.998033
+        },
+        {
+          "index": 5,
+          "text": "love,",
+          "startMs": 144780,
+          "endMs": 145420,
+          "probability": 0.982771
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 146520,
+          "endMs": 146660,
+          "probability": 0.978234
+        },
+        {
+          "index": 7,
+          "text": "Lennon",
+          "startMs": 146660,
+          "endMs": 146980,
+          "probability": 0.99611
+        },
+        {
+          "index": 8,
+          "text": "and",
+          "startMs": 146980,
+          "endMs": 147440,
+          "probability": 0.952486
+        },
+        {
+          "index": 9,
+          "text": "Paul",
+          "startMs": 147440,
+          "endMs": 147760,
+          "probability": 0.991627
+        },
+        {
+          "index": 10,
+          "text": "McCartney.",
+          "startMs": 147760,
+          "endMs": 148280,
+          "probability": 0.99532
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Morning, noon and night, love is all right, Pete.",
+      "startMs": 150260,
+      "endMs": 156140,
+      "avgLogprob": -0.109504,
+      "noSpeechProb": 0.019925,
+      "compressionRatio": 1.385714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Morning,",
+          "startMs": 150260,
+          "endMs": 151020,
+          "probability": 0.80725
+        },
+        {
+          "index": 2,
+          "text": "noon",
+          "startMs": 151680,
+          "endMs": 151720,
+          "probability": 0.99806
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 151720,
+          "endMs": 152160,
+          "probability": 0.405996
+        },
+        {
+          "index": 4,
+          "text": "night,",
+          "startMs": 152160,
+          "endMs": 152620,
+          "probability": 0.998321
+        },
+        {
+          "index": 5,
+          "text": "love",
+          "startMs": 153200,
+          "endMs": 153280,
+          "probability": 0.967274
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 153280,
+          "endMs": 153620,
+          "probability": 0.99833
+        },
+        {
+          "index": 7,
+          "text": "all",
+          "startMs": 153620,
+          "endMs": 154240,
+          "probability": 0.813796
+        },
+        {
+          "index": 8,
+          "text": "right,",
+          "startMs": 154240,
+          "endMs": 154860,
+          "probability": 0.996935
+        },
+        {
+          "index": 9,
+          "text": "Pete.",
+          "startMs": 156040,
+          "endMs": 156140,
+          "probability": 0.971734
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "The best thing to hold on to in life is each other, Audrey Hepburn.",
+      "startMs": 157900,
+      "endMs": 164380,
+      "avgLogprob": -0.109504,
+      "noSpeechProb": 0.019925,
+      "compressionRatio": 1.385714,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 157900,
+          "endMs": 158660,
+          "probability": 0.947617
+        },
+        {
+          "index": 2,
+          "text": "best",
+          "startMs": 158660,
+          "endMs": 159060,
+          "probability": 0.998946
+        },
+        {
+          "index": 3,
+          "text": "thing",
+          "startMs": 159060,
+          "endMs": 159420,
+          "probability": 0.998839
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 159420,
+          "endMs": 159640,
+          "probability": 0.999335
+        },
+        {
+          "index": 5,
+          "text": "hold",
+          "startMs": 159640,
+          "endMs": 159920,
+          "probability": 0.999735
+        },
+        {
+          "index": 6,
+          "text": "on",
+          "startMs": 159920,
+          "endMs": 160140,
+          "probability": 0.569488
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 160140,
+          "endMs": 160400,
+          "probability": 0.996374
+        },
+        {
+          "index": 8,
+          "text": "in",
+          "startMs": 160400,
+          "endMs": 160600,
+          "probability": 0.996695
+        },
+        {
+          "index": 9,
+          "text": "life",
+          "startMs": 160600,
+          "endMs": 160940,
+          "probability": 0.998865
+        },
+        {
+          "index": 10,
+          "text": "is",
+          "startMs": 160940,
+          "endMs": 161680,
+          "probability": 0.915478
+        },
+        {
+          "index": 11,
+          "text": "each",
+          "startMs": 161680,
+          "endMs": 161920,
+          "probability": 0.99894
+        },
+        {
+          "index": 12,
+          "text": "other,",
+          "startMs": 161920,
+          "endMs": 162340,
+          "probability": 0.998675
+        },
+        {
+          "index": 13,
+          "text": "Audrey",
+          "startMs": 163620,
+          "endMs": 163840,
+          "probability": 0.97728
+        },
+        {
+          "index": 14,
+          "text": "Hepburn.",
+          "startMs": 163840,
+          "endMs": 164380,
+          "probability": 0.998232
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Better together, Pete.",
+      "startMs": 166560,
+      "endMs": 169180,
+      "avgLogprob": -0.109504,
+      "noSpeechProb": 0.019925,
+      "compressionRatio": 1.385714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Better",
+          "startMs": 166560,
+          "endMs": 166900,
+          "probability": 0.933973
+        },
+        {
+          "index": 2,
+          "text": "together,",
+          "startMs": 166900,
+          "endMs": 167660,
+          "probability": 0.889909
+        },
+        {
+          "index": 3,
+          "text": "Pete.",
+          "startMs": 168740,
+          "endMs": 169180,
+          "probability": 0.998319
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Let the beauty of what you love be what you do, Rumi.",
+      "startMs": 171180,
+      "endMs": 176380,
+      "avgLogprob": -0.109504,
+      "noSpeechProb": 0.019925,
+      "compressionRatio": 1.385714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Let",
+          "startMs": 171180,
+          "endMs": 171720,
+          "probability": 0.991123
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 171720,
+          "endMs": 171980,
+          "probability": 0.998613
+        },
+        {
+          "index": 3,
+          "text": "beauty",
+          "startMs": 171980,
+          "endMs": 172300,
+          "probability": 0.999518
+        },
+        {
+          "index": 4,
+          "text": "of",
+          "startMs": 172300,
+          "endMs": 172560,
+          "probability": 0.999253
+        },
+        {
+          "index": 5,
+          "text": "what",
+          "startMs": 172560,
+          "endMs": 172780,
+          "probability": 0.998969
+        },
+        {
+          "index": 6,
+          "text": "you",
+          "startMs": 172780,
+          "endMs": 173040,
+          "probability": 0.998975
+        },
+        {
+          "index": 7,
+          "text": "love",
+          "startMs": 173040,
+          "endMs": 173400,
+          "probability": 0.999026
+        },
+        {
+          "index": 8,
+          "text": "be",
+          "startMs": 173400,
+          "endMs": 173740,
+          "probability": 0.978863
+        },
+        {
+          "index": 9,
+          "text": "what",
+          "startMs": 173740,
+          "endMs": 174020,
+          "probability": 0.991915
+        },
+        {
+          "index": 10,
+          "text": "you",
+          "startMs": 174020,
+          "endMs": 174320,
+          "probability": 0.998506
+        },
+        {
+          "index": 11,
+          "text": "do,",
+          "startMs": 174320,
+          "endMs": 175500,
+          "probability": 0.999406
+        },
+        {
+          "index": 12,
+          "text": "Rumi.",
+          "startMs": 176060,
+          "endMs": 176380,
+          "probability": 0.79061
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Do more of what makes you happy, Pete.",
+      "startMs": 178280,
+      "endMs": 182580,
+      "avgLogprob": -0.089532,
+      "noSpeechProb": 0.010925,
+      "compressionRatio": 1.433121,
+      "words": [
+        {
+          "index": 1,
+          "text": "Do",
+          "startMs": 178280,
+          "endMs": 178900,
+          "probability": 0.675273
+        },
+        {
+          "index": 2,
+          "text": "more",
+          "startMs": 178900,
+          "endMs": 179320,
+          "probability": 0.994817
+        },
+        {
+          "index": 3,
+          "text": "of",
+          "startMs": 179320,
+          "endMs": 179540,
+          "probability": 0.996043
+        },
+        {
+          "index": 4,
+          "text": "what",
+          "startMs": 179540,
+          "endMs": 179780,
+          "probability": 0.998974
+        },
+        {
+          "index": 5,
+          "text": "makes",
+          "startMs": 179780,
+          "endMs": 180120,
+          "probability": 0.99793
+        },
+        {
+          "index": 6,
+          "text": "you",
+          "startMs": 180120,
+          "endMs": 180520,
+          "probability": 0.998992
+        },
+        {
+          "index": 7,
+          "text": "happy,",
+          "startMs": 180520,
+          "endMs": 181100,
+          "probability": 0.993741
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 182520,
+          "endMs": 182580,
+          "probability": 0.974369
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Friends show their love in times of trouble, Euripides.",
+      "startMs": 184280,
+      "endMs": 189540,
+      "avgLogprob": -0.089532,
+      "noSpeechProb": 0.010925,
+      "compressionRatio": 1.433121,
+      "words": [
+        {
+          "index": 1,
+          "text": "Friends",
+          "startMs": 184280,
+          "endMs": 185120,
+          "probability": 0.992626
+        },
+        {
+          "index": 2,
+          "text": "show",
+          "startMs": 185120,
+          "endMs": 185520,
+          "probability": 0.889912
+        },
+        {
+          "index": 3,
+          "text": "their",
+          "startMs": 185520,
+          "endMs": 185760,
+          "probability": 0.998009
+        },
+        {
+          "index": 4,
+          "text": "love",
+          "startMs": 185760,
+          "endMs": 186120,
+          "probability": 0.999121
+        },
+        {
+          "index": 5,
+          "text": "in",
+          "startMs": 186120,
+          "endMs": 186420,
+          "probability": 0.997864
+        },
+        {
+          "index": 6,
+          "text": "times",
+          "startMs": 186420,
+          "endMs": 186900,
+          "probability": 0.996363
+        },
+        {
+          "index": 7,
+          "text": "of",
+          "startMs": 186900,
+          "endMs": 187180,
+          "probability": 0.999499
+        },
+        {
+          "index": 8,
+          "text": "trouble,",
+          "startMs": 187180,
+          "endMs": 187800,
+          "probability": 0.999052
+        },
+        {
+          "index": 9,
+          "text": "Euripides.",
+          "startMs": 189060,
+          "endMs": 189540,
+          "probability": 0.905411
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Always stop to help your turtle friends, Pete.",
+      "startMs": 191220,
+      "endMs": 195680,
+      "avgLogprob": -0.089532,
+      "noSpeechProb": 0.010925,
+      "compressionRatio": 1.433121,
+      "words": [
+        {
+          "index": 1,
+          "text": "Always",
+          "startMs": 191220,
+          "endMs": 191840,
+          "probability": 0.990755
+        },
+        {
+          "index": 2,
+          "text": "stop",
+          "startMs": 191840,
+          "endMs": 192240,
+          "probability": 0.991846
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 192240,
+          "endMs": 192540,
+          "probability": 0.998497
+        },
+        {
+          "index": 4,
+          "text": "help",
+          "startMs": 192540,
+          "endMs": 192760,
+          "probability": 0.99964
+        },
+        {
+          "index": 5,
+          "text": "your",
+          "startMs": 192760,
+          "endMs": 193100,
+          "probability": 0.998183
+        },
+        {
+          "index": 6,
+          "text": "turtle",
+          "startMs": 193100,
+          "endMs": 193540,
+          "probability": 0.973799
+        },
+        {
+          "index": 7,
+          "text": "friends,",
+          "startMs": 193540,
+          "endMs": 194200,
+          "probability": 0.9909
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 195260,
+          "endMs": 195680,
+          "probability": 0.999008
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Spread love everywhere you go, let no one ever come to you without leaving happier.",
+      "startMs": 197460,
+      "endMs": 204420,
+      "avgLogprob": -0.089532,
+      "noSpeechProb": 0.010925,
+      "compressionRatio": 1.433121,
+      "words": [
+        {
+          "index": 1,
+          "text": "Spread",
+          "startMs": 197460,
+          "endMs": 198300,
+          "probability": 0.984021
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 198300,
+          "endMs": 198680,
+          "probability": 0.996438
+        },
+        {
+          "index": 3,
+          "text": "everywhere",
+          "startMs": 198680,
+          "endMs": 199320,
+          "probability": 0.997271
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 199320,
+          "endMs": 199800,
+          "probability": 0.998552
+        },
+        {
+          "index": 5,
+          "text": "go,",
+          "startMs": 199800,
+          "endMs": 200320,
+          "probability": 0.999563
+        },
+        {
+          "index": 6,
+          "text": "let",
+          "startMs": 200820,
+          "endMs": 201100,
+          "probability": 0.9888
+        },
+        {
+          "index": 7,
+          "text": "no",
+          "startMs": 201100,
+          "endMs": 201460,
+          "probability": 0.996566
+        },
+        {
+          "index": 8,
+          "text": "one",
+          "startMs": 201460,
+          "endMs": 201680,
+          "probability": 0.996944
+        },
+        {
+          "index": 9,
+          "text": "ever",
+          "startMs": 201680,
+          "endMs": 201980,
+          "probability": 0.993015
+        },
+        {
+          "index": 10,
+          "text": "come",
+          "startMs": 201980,
+          "endMs": 202280,
+          "probability": 0.9993
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 202280,
+          "endMs": 202500,
+          "probability": 0.999062
+        },
+        {
+          "index": 12,
+          "text": "you",
+          "startMs": 202500,
+          "endMs": 202760,
+          "probability": 0.997622
+        },
+        {
+          "index": 13,
+          "text": "without",
+          "startMs": 202760,
+          "endMs": 203100,
+          "probability": 0.997436
+        },
+        {
+          "index": 14,
+          "text": "leaving",
+          "startMs": 203100,
+          "endMs": 203720,
+          "probability": 0.997385
+        },
+        {
+          "index": 15,
+          "text": "happier.",
+          "startMs": 203720,
+          "endMs": 204420,
+          "probability": 0.991572
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Mother Teresa, be the reason someone smiles today, Pete.",
+      "startMs": 205420,
+      "endMs": 213440,
+      "avgLogprob": -0.089124,
+      "noSpeechProb": 0.047942,
+      "compressionRatio": 1.280702,
+      "words": [
+        {
+          "index": 1,
+          "text": "Mother",
+          "startMs": 205420,
+          "endMs": 206060,
+          "probability": 0.787146
+        },
+        {
+          "index": 2,
+          "text": "Teresa,",
+          "startMs": 206060,
+          "endMs": 206740,
+          "probability": 0.835982
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 209160,
+          "endMs": 209220,
+          "probability": 0.46196
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 209220,
+          "endMs": 209480,
+          "probability": 0.997002
+        },
+        {
+          "index": 5,
+          "text": "reason",
+          "startMs": 209480,
+          "endMs": 209880,
+          "probability": 0.995939
+        },
+        {
+          "index": 6,
+          "text": "someone",
+          "startMs": 209880,
+          "endMs": 210560,
+          "probability": 0.99304
+        },
+        {
+          "index": 7,
+          "text": "smiles",
+          "startMs": 210560,
+          "endMs": 211180,
+          "probability": 0.99204
+        },
+        {
+          "index": 8,
+          "text": "today,",
+          "startMs": 211180,
+          "endMs": 212000,
+          "probability": 0.995555
+        },
+        {
+          "index": 9,
+          "text": "Pete.",
+          "startMs": 213240,
+          "endMs": 213440,
+          "probability": 0.959154
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Choose a job you love and you will never have to work, Confucius.",
+      "startMs": 214920,
+      "endMs": 221460,
+      "avgLogprob": -0.089124,
+      "noSpeechProb": 0.047942,
+      "compressionRatio": 1.280702,
+      "words": [
+        {
+          "index": 1,
+          "text": "Choose",
+          "startMs": 214920,
+          "endMs": 215880,
+          "probability": 0.964395
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 215880,
+          "endMs": 216140,
+          "probability": 0.993957
+        },
+        {
+          "index": 3,
+          "text": "job",
+          "startMs": 216140,
+          "endMs": 216420,
+          "probability": 0.999018
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 216420,
+          "endMs": 216680,
+          "probability": 0.995522
+        },
+        {
+          "index": 5,
+          "text": "love",
+          "startMs": 216680,
+          "endMs": 217080,
+          "probability": 0.998696
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 217080,
+          "endMs": 217840,
+          "probability": 0.717178
+        },
+        {
+          "index": 7,
+          "text": "you",
+          "startMs": 217840,
+          "endMs": 218040,
+          "probability": 0.998358
+        },
+        {
+          "index": 8,
+          "text": "will",
+          "startMs": 218040,
+          "endMs": 218200,
+          "probability": 0.995291
+        },
+        {
+          "index": 9,
+          "text": "never",
+          "startMs": 218200,
+          "endMs": 218620,
+          "probability": 0.999377
+        },
+        {
+          "index": 10,
+          "text": "have",
+          "startMs": 218620,
+          "endMs": 218980,
+          "probability": 0.999102
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 218980,
+          "endMs": 219300,
+          "probability": 0.999179
+        },
+        {
+          "index": 12,
+          "text": "work,",
+          "startMs": 219300,
+          "endMs": 219780,
+          "probability": 0.99822
+        },
+        {
+          "index": 13,
+          "text": "Confucius.",
+          "startMs": 220900,
+          "endMs": 221460,
+          "probability": 0.990531
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Do what you love, Pete.",
+      "startMs": 223080,
+      "endMs": 225940,
+      "avgLogprob": -0.089124,
+      "noSpeechProb": 0.047942,
+      "compressionRatio": 1.280702,
+      "words": [
+        {
+          "index": 1,
+          "text": "Do",
+          "startMs": 223080,
+          "endMs": 223580,
+          "probability": 0.98373
+        },
+        {
+          "index": 2,
+          "text": "what",
+          "startMs": 223580,
+          "endMs": 223840,
+          "probability": 0.997558
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 223840,
+          "endMs": 224020,
+          "probability": 0.999022
+        },
+        {
+          "index": 4,
+          "text": "love,",
+          "startMs": 224020,
+          "endMs": 224620,
+          "probability": 0.998952
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 225540,
+          "endMs": 225940,
+          "probability": 0.995973
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Keep love in your heart, a life without it is like a sunless garden when the flowers are dead.",
+      "startMs": 227700,
+      "endMs": 236060,
+      "avgLogprob": -0.101727,
+      "noSpeechProb": 0.016336,
+      "compressionRatio": 1.367647,
+      "words": [
+        {
+          "index": 1,
+          "text": "Keep",
+          "startMs": 227700,
+          "endMs": 228620,
+          "probability": 0.703159
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 228620,
+          "endMs": 229040,
+          "probability": 0.964222
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 229040,
+          "endMs": 229400,
+          "probability": 0.997006
+        },
+        {
+          "index": 4,
+          "text": "your",
+          "startMs": 229400,
+          "endMs": 229600,
+          "probability": 0.997683
+        },
+        {
+          "index": 5,
+          "text": "heart,",
+          "startMs": 229600,
+          "endMs": 230100,
+          "probability": 0.997845
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 230740,
+          "endMs": 230920,
+          "probability": 0.94502
+        },
+        {
+          "index": 7,
+          "text": "life",
+          "startMs": 230920,
+          "endMs": 231260,
+          "probability": 0.998379
+        },
+        {
+          "index": 8,
+          "text": "without",
+          "startMs": 231260,
+          "endMs": 231680,
+          "probability": 0.99942
+        },
+        {
+          "index": 9,
+          "text": "it",
+          "startMs": 231680,
+          "endMs": 232260,
+          "probability": 0.992181
+        },
+        {
+          "index": 10,
+          "text": "is",
+          "startMs": 232260,
+          "endMs": 232660,
+          "probability": 0.750252
+        },
+        {
+          "index": 11,
+          "text": "like",
+          "startMs": 232660,
+          "endMs": 232920,
+          "probability": 0.996796
+        },
+        {
+          "index": 12,
+          "text": "a",
+          "startMs": 232920,
+          "endMs": 233120,
+          "probability": 0.996322
+        },
+        {
+          "index": 13,
+          "text": "sunless",
+          "startMs": 233120,
+          "endMs": 233740,
+          "probability": 0.976062
+        },
+        {
+          "index": 14,
+          "text": "garden",
+          "startMs": 233740,
+          "endMs": 234140,
+          "probability": 0.998425
+        },
+        {
+          "index": 15,
+          "text": "when",
+          "startMs": 234140,
+          "endMs": 234480,
+          "probability": 0.967989
+        },
+        {
+          "index": 16,
+          "text": "the",
+          "startMs": 234480,
+          "endMs": 234680,
+          "probability": 0.995973
+        },
+        {
+          "index": 17,
+          "text": "flowers",
+          "startMs": 234680,
+          "endMs": 235140,
+          "probability": 0.999077
+        },
+        {
+          "index": 18,
+          "text": "are",
+          "startMs": 235140,
+          "endMs": 235440,
+          "probability": 0.999281
+        },
+        {
+          "index": 19,
+          "text": "dead.",
+          "startMs": 235440,
+          "endMs": 236060,
+          "probability": 0.998584
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Oscar Wilde, love starts with me, Pete.",
+      "startMs": 237440,
+      "endMs": 243620,
+      "avgLogprob": -0.101727,
+      "noSpeechProb": 0.016336,
+      "compressionRatio": 1.367647,
+      "words": [
+        {
+          "index": 1,
+          "text": "Oscar",
+          "startMs": 237440,
+          "endMs": 237660,
+          "probability": 0.881133
+        },
+        {
+          "index": 2,
+          "text": "Wilde,",
+          "startMs": 237660,
+          "endMs": 238240,
+          "probability": 0.948085
+        },
+        {
+          "index": 3,
+          "text": "love",
+          "startMs": 240540,
+          "endMs": 240760,
+          "probability": 0.736777
+        },
+        {
+          "index": 4,
+          "text": "starts",
+          "startMs": 240760,
+          "endMs": 241260,
+          "probability": 0.996256
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 241260,
+          "endMs": 241640,
+          "probability": 0.998823
+        },
+        {
+          "index": 6,
+          "text": "me,",
+          "startMs": 241640,
+          "endMs": 242100,
+          "probability": 0.993
+        },
+        {
+          "index": 7,
+          "text": "Pete.",
+          "startMs": 243460,
+          "endMs": 243620,
+          "probability": 0.971667
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "Where there is love, there is life, Mahatma Gandhi.",
+      "startMs": 245320,
+      "endMs": 251040,
+      "avgLogprob": -0.101727,
+      "noSpeechProb": 0.016336,
+      "compressionRatio": 1.367647,
+      "words": [
+        {
+          "index": 1,
+          "text": "Where",
+          "startMs": 245320,
+          "endMs": 246160,
+          "probability": 0.987472
+        },
+        {
+          "index": 2,
+          "text": "there",
+          "startMs": 246160,
+          "endMs": 246440,
+          "probability": 0.997077
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 246440,
+          "endMs": 246680,
+          "probability": 0.996754
+        },
+        {
+          "index": 4,
+          "text": "love,",
+          "startMs": 246680,
+          "endMs": 247140,
+          "probability": 0.997666
+        },
+        {
+          "index": 5,
+          "text": "there",
+          "startMs": 247860,
+          "endMs": 247900,
+          "probability": 0.994368
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 247900,
+          "endMs": 248140,
+          "probability": 0.998248
+        },
+        {
+          "index": 7,
+          "text": "life,",
+          "startMs": 248140,
+          "endMs": 248680,
+          "probability": 0.998167
+        },
+        {
+          "index": 8,
+          "text": "Mahatma",
+          "startMs": 250060,
+          "endMs": 250560,
+          "probability": 0.987491
+        },
+        {
+          "index": 9,
+          "text": "Gandhi.",
+          "startMs": 250560,
+          "endMs": 251040,
+          "probability": 0.988354
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Love makes life groovy, Pete.",
+      "startMs": 252760,
+      "endMs": 257740,
+      "avgLogprob": -0.117269,
+      "noSpeechProb": 0.018923,
+      "compressionRatio": 1.285714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Love",
+          "startMs": 252760,
+          "endMs": 253800,
+          "probability": 0.786497
+        },
+        {
+          "index": 2,
+          "text": "makes",
+          "startMs": 253800,
+          "endMs": 254300,
+          "probability": 0.908591
+        },
+        {
+          "index": 3,
+          "text": "life",
+          "startMs": 254300,
+          "endMs": 254900,
+          "probability": 0.99136
+        },
+        {
+          "index": 4,
+          "text": "groovy,",
+          "startMs": 254900,
+          "endMs": 256260,
+          "probability": 0.948913
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 257580,
+          "endMs": 257740,
+          "probability": 0.981782
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Love is patient, love is kind.",
+      "startMs": 259260,
+      "endMs": 263420,
+      "avgLogprob": -0.117269,
+      "noSpeechProb": 0.018923,
+      "compressionRatio": 1.285714,
+      "words": [
+        {
+          "index": 1,
+          "text": "Love",
+          "startMs": 259260,
+          "endMs": 260300,
+          "probability": 0.977235
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 260300,
+          "endMs": 260680,
+          "probability": 0.997396
+        },
+        {
+          "index": 3,
+          "text": "patient,",
+          "startMs": 260680,
+          "endMs": 261320,
+          "probability": 0.997493
+        },
+        {
+          "index": 4,
+          "text": "love",
+          "startMs": 262180,
+          "endMs": 262400,
+          "probability": 0.984474
+        },
+        {
+          "index": 5,
+          "text": "is",
+          "startMs": 262400,
+          "endMs": 262860,
+          "probability": 0.999051
+        },
+        {
+          "index": 6,
+          "text": "kind.",
+          "startMs": 262860,
+          "endMs": 263420,
+          "probability": 0.998333
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "It does not envy, it does not boast, it is not proud.",
+      "startMs": 264180,
+      "endMs": 269320,
+      "avgLogprob": -0.117269,
+      "noSpeechProb": 0.018923,
+      "compressionRatio": 1.285714,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 264180,
+          "endMs": 264400,
+          "probability": 0.995831
+        },
+        {
+          "index": 2,
+          "text": "does",
+          "startMs": 264400,
+          "endMs": 264680,
+          "probability": 0.997575
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 264680,
+          "endMs": 264980,
+          "probability": 0.999514
+        },
+        {
+          "index": 4,
+          "text": "envy,",
+          "startMs": 264980,
+          "endMs": 265380,
+          "probability": 0.999269
+        },
+        {
+          "index": 5,
+          "text": "it",
+          "startMs": 266000,
+          "endMs": 266200,
+          "probability": 0.982608
+        },
+        {
+          "index": 6,
+          "text": "does",
+          "startMs": 266200,
+          "endMs": 266560,
+          "probability": 0.999166
+        },
+        {
+          "index": 7,
+          "text": "not",
+          "startMs": 266560,
+          "endMs": 266920,
+          "probability": 0.99938
+        },
+        {
+          "index": 8,
+          "text": "boast,",
+          "startMs": 266920,
+          "endMs": 267440,
+          "probability": 0.999754
+        },
+        {
+          "index": 9,
+          "text": "it",
+          "startMs": 268020,
+          "endMs": 268220,
+          "probability": 0.990757
+        },
+        {
+          "index": 10,
+          "text": "is",
+          "startMs": 268220,
+          "endMs": 268420,
+          "probability": 0.998416
+        },
+        {
+          "index": 11,
+          "text": "not",
+          "startMs": 268420,
+          "endMs": 268720,
+          "probability": 0.999256
+        },
+        {
+          "index": 12,
+          "text": "proud.",
+          "startMs": 268720,
+          "endMs": 269320,
+          "probability": 0.999487
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "1 Corinthians chapter 13 verse 4 to 8.",
+      "startMs": 270680,
+      "endMs": 275140,
+      "avgLogprob": -0.117269,
+      "noSpeechProb": 0.018923,
+      "compressionRatio": 1.285714,
+      "words": [
+        {
+          "index": 1,
+          "text": "1",
+          "startMs": 270680,
+          "endMs": 270960,
+          "probability": 0.719645
+        },
+        {
+          "index": 2,
+          "text": "Corinthians",
+          "startMs": 270960,
+          "endMs": 271940,
+          "probability": 0.80472
+        },
+        {
+          "index": 3,
+          "text": "chapter",
+          "startMs": 271940,
+          "endMs": 272340,
+          "probability": 0.584707
+        },
+        {
+          "index": 4,
+          "text": "13",
+          "startMs": 272340,
+          "endMs": 273260,
+          "probability": 0.976685
+        },
+        {
+          "index": 5,
+          "text": "verse",
+          "startMs": 273260,
+          "endMs": 274080,
+          "probability": 0.764559
+        },
+        {
+          "index": 6,
+          "text": "4",
+          "startMs": 274080,
+          "endMs": 274600,
+          "probability": 0.854959
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 274600,
+          "endMs": 274800,
+          "probability": 0.786254
+        },
+        {
+          "index": 8,
+          "text": "8.",
+          "startMs": 274800,
+          "endMs": 275140,
+          "probability": 0.995596
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "Love forgives, Pete.",
+      "startMs": 276580,
+      "endMs": 280180,
+      "avgLogprob": -0.121687,
+      "noSpeechProb": 0.019106,
+      "compressionRatio": 1.423358,
+      "words": [
+        {
+          "index": 1,
+          "text": "Love",
+          "startMs": 276580,
+          "endMs": 277700,
+          "probability": 0.49834
+        },
+        {
+          "index": 2,
+          "text": "forgives,",
+          "startMs": 277700,
+          "endMs": 278820,
+          "probability": 0.959375
+        },
+        {
+          "index": 3,
+          "text": "Pete.",
+          "startMs": 279780,
+          "endMs": 280180,
+          "probability": 0.936935
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.",
+      "startMs": 281780,
+      "endMs": 290140,
+      "avgLogprob": -0.121687,
+      "noSpeechProb": 0.019106,
+      "compressionRatio": 1.423358,
+      "words": [
+        {
+          "index": 1,
+          "text": "Being",
+          "startMs": 281780,
+          "endMs": 282900,
+          "probability": 0.981446
+        },
+        {
+          "index": 2,
+          "text": "deeply",
+          "startMs": 282900,
+          "endMs": 283480,
+          "probability": 0.999324
+        },
+        {
+          "index": 3,
+          "text": "loved",
+          "startMs": 283480,
+          "endMs": 283840,
+          "probability": 0.996889
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 283840,
+          "endMs": 284160,
+          "probability": 0.997964
+        },
+        {
+          "index": 5,
+          "text": "someone",
+          "startMs": 284160,
+          "endMs": 284720,
+          "probability": 0.998349
+        },
+        {
+          "index": 6,
+          "text": "gives",
+          "startMs": 284720,
+          "endMs": 285100,
+          "probability": 0.976128
+        },
+        {
+          "index": 7,
+          "text": "you",
+          "startMs": 285100,
+          "endMs": 285480,
+          "probability": 0.999102
+        },
+        {
+          "index": 8,
+          "text": "strength,",
+          "startMs": 285480,
+          "endMs": 286080,
+          "probability": 0.997327
+        },
+        {
+          "index": 9,
+          "text": "while",
+          "startMs": 286920,
+          "endMs": 287280,
+          "probability": 0.949657
+        },
+        {
+          "index": 10,
+          "text": "loving",
+          "startMs": 287280,
+          "endMs": 287720,
+          "probability": 0.998566
+        },
+        {
+          "index": 11,
+          "text": "someone",
+          "startMs": 287720,
+          "endMs": 288300,
+          "probability": 0.997363
+        },
+        {
+          "index": 12,
+          "text": "deeply",
+          "startMs": 288300,
+          "endMs": 288920,
+          "probability": 0.994369
+        },
+        {
+          "index": 13,
+          "text": "gives",
+          "startMs": 288920,
+          "endMs": 289760,
+          "probability": 0.985405
+        },
+        {
+          "index": 14,
+          "text": "you",
+          "startMs": 289760,
+          "endMs": 290100,
+          "probability": 0.998704
+        },
+        {
+          "index": 15,
+          "text": "courage.",
+          "startMs": 290100,
+          "endMs": 290660,
+          "probability": 0.99928
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Laozi.",
+      "startMs": 292640,
+      "endMs": 293000,
+      "avgLogprob": -0.121687,
+      "noSpeechProb": 0.019106,
+      "compressionRatio": 1.423358,
+      "words": [
+        {
+          "index": 1,
+          "text": "Laozi.",
+          "startMs": 292640,
+          "endMs": 293000,
+          "probability": 0.531685
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "Love makes you brave, Pete.",
+      "startMs": 294660,
+      "endMs": 298140,
+      "avgLogprob": -0.121687,
+      "noSpeechProb": 0.019106,
+      "compressionRatio": 1.423358,
+      "words": [
+        {
+          "index": 1,
+          "text": "Love",
+          "startMs": 294660,
+          "endMs": 295300,
+          "probability": 0.967194
+        },
+        {
+          "index": 2,
+          "text": "makes",
+          "startMs": 295300,
+          "endMs": 295620,
+          "probability": 0.995704
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 295620,
+          "endMs": 295900,
+          "probability": 0.999068
+        },
+        {
+          "index": 4,
+          "text": "brave,",
+          "startMs": 295900,
+          "endMs": 296580,
+          "probability": 0.996092
+        },
+        {
+          "index": 5,
+          "text": "Pete.",
+          "startMs": 297780,
+          "endMs": 298140,
+          "probability": 0.99793
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "How do I love thee? Let me count the ways.",
+      "startMs": 299720,
+      "endMs": 304380,
+      "avgLogprob": -0.121687,
+      "noSpeechProb": 0.019106,
+      "compressionRatio": 1.423358,
+      "words": [
+        {
+          "index": 1,
+          "text": "How",
+          "startMs": 299720,
+          "endMs": 300840,
+          "probability": 0.962865
+        },
+        {
+          "index": 2,
+          "text": "do",
+          "startMs": 300840,
+          "endMs": 301080,
+          "probability": 0.997167
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 301080,
+          "endMs": 301320,
+          "probability": 0.994744
+        },
+        {
+          "index": 4,
+          "text": "love",
+          "startMs": 301320,
+          "endMs": 301640,
+          "probability": 0.997488
+        },
+        {
+          "index": 5,
+          "text": "thee?",
+          "startMs": 301640,
+          "endMs": 302000,
+          "probability": 0.951724
+        },
+        {
+          "index": 6,
+          "text": "Let",
+          "startMs": 302780,
+          "endMs": 303040,
+          "probability": 0.956864
+        },
+        {
+          "index": 7,
+          "text": "me",
+          "startMs": 303040,
+          "endMs": 303280,
+          "probability": 0.998714
+        },
+        {
+          "index": 8,
+          "text": "count",
+          "startMs": 303280,
+          "endMs": 303700,
+          "probability": 0.998985
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 303700,
+          "endMs": 303980,
+          "probability": 0.998815
+        },
+        {
+          "index": 10,
+          "text": "ways.",
+          "startMs": 303980,
+          "endMs": 304380,
+          "probability": 0.996914
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Elizabeth Barrett Browning.",
+      "startMs": 305380,
+      "endMs": 308100,
+      "avgLogprob": -0.091946,
+      "noSpeechProb": 0.066994,
+      "compressionRatio": 1.237705,
+      "words": [
+        {
+          "index": 1,
+          "text": "Elizabeth",
+          "startMs": 305380,
+          "endMs": 306340,
+          "probability": 0.932921
+        },
+        {
+          "index": 2,
+          "text": "Barrett",
+          "startMs": 306340,
+          "endMs": 306920,
+          "probability": 0.982582
+        },
+        {
+          "index": 3,
+          "text": "Browning.",
+          "startMs": 306920,
+          "endMs": 308100,
+          "probability": 0.979355
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "I love you to infinity, Pete.",
+      "startMs": 309440,
+      "endMs": 313020,
+      "avgLogprob": -0.091946,
+      "noSpeechProb": 0.066994,
+      "compressionRatio": 1.237705,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 309440,
+          "endMs": 309480,
+          "probability": 0.252796
+        },
+        {
+          "index": 2,
+          "text": "love",
+          "startMs": 309480,
+          "endMs": 309720,
+          "probability": 0.91786
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 309720,
+          "endMs": 310140,
+          "probability": 0.997892
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 310140,
+          "endMs": 310440,
+          "probability": 0.989654
+        },
+        {
+          "index": 5,
+          "text": "infinity,",
+          "startMs": 310440,
+          "endMs": 311440,
+          "probability": 0.993558
+        },
+        {
+          "index": 6,
+          "text": "Pete.",
+          "startMs": 312880,
+          "endMs": 313020,
+          "probability": 0.988709
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "The way to know life is to love many things, Vincent van Gogh.",
+      "startMs": 315140,
+      "endMs": 322000,
+      "avgLogprob": -0.091946,
+      "noSpeechProb": 0.066994,
+      "compressionRatio": 1.237705,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 315040,
+          "endMs": 315520,
+          "probability": 0.980098
+        },
+        {
+          "index": 2,
+          "text": "way",
+          "startMs": 315520,
+          "endMs": 315760,
+          "probability": 0.997041
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 315760,
+          "endMs": 315960,
+          "probability": 0.999234
+        },
+        {
+          "index": 4,
+          "text": "know",
+          "startMs": 315960,
+          "endMs": 316260,
+          "probability": 0.998273
+        },
+        {
+          "index": 5,
+          "text": "life",
+          "startMs": 316260,
+          "endMs": 316680,
+          "probability": 0.997655
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 316680,
+          "endMs": 317360,
+          "probability": 0.97025
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 317360,
+          "endMs": 317660,
+          "probability": 0.998754
+        },
+        {
+          "index": 8,
+          "text": "love",
+          "startMs": 317660,
+          "endMs": 318180,
+          "probability": 0.998592
+        },
+        {
+          "index": 9,
+          "text": "many",
+          "startMs": 318180,
+          "endMs": 318660,
+          "probability": 0.999054
+        },
+        {
+          "index": 10,
+          "text": "things,",
+          "startMs": 318660,
+          "endMs": 319460,
+          "probability": 0.999066
+        },
+        {
+          "index": 11,
+          "text": "Vincent",
+          "startMs": 320660,
+          "endMs": 320980,
+          "probability": 0.985478
+        },
+        {
+          "index": 12,
+          "text": "van",
+          "startMs": 320980,
+          "endMs": 321360,
+          "probability": 0.709681
+        },
+        {
+          "index": 13,
+          "text": "Gogh.",
+          "startMs": 321360,
+          "endMs": 322000,
+          "probability": 0.992256
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "A fun day is a good day, Pete.",
+      "startMs": 323400,
+      "endMs": 328180,
+      "avgLogprob": -0.091946,
+      "noSpeechProb": 0.066994,
+      "compressionRatio": 1.237705,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 323400,
+          "endMs": 324240,
+          "probability": 0.981315
+        },
+        {
+          "index": 2,
+          "text": "fun",
+          "startMs": 324240,
+          "endMs": 324700,
+          "probability": 0.998758
+        },
+        {
+          "index": 3,
+          "text": "day",
+          "startMs": 324700,
+          "endMs": 325160,
+          "probability": 0.998615
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 325160,
+          "endMs": 325640,
+          "probability": 0.99464
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 325640,
+          "endMs": 325980,
+          "probability": 0.997748
+        },
+        {
+          "index": 6,
+          "text": "good",
+          "startMs": 325980,
+          "endMs": 326340,
+          "probability": 0.999384
+        },
+        {
+          "index": 7,
+          "text": "day,",
+          "startMs": 326340,
+          "endMs": 327060,
+          "probability": 0.999616
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 327760,
+          "endMs": 328180,
+          "probability": 0.998331
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "If you want to be loved, be lovable.",
+      "startMs": 329680,
+      "endMs": 333600,
+      "avgLogprob": -0.10326,
+      "noSpeechProb": 0.020956,
+      "compressionRatio": 1.459259,
+      "words": [
+        {
+          "index": 1,
+          "text": "If",
+          "startMs": 329680,
+          "endMs": 330640,
+          "probability": 0.531913
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 330640,
+          "endMs": 330900,
+          "probability": 0.997769
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 330900,
+          "endMs": 331200,
+          "probability": 0.998262
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 331200,
+          "endMs": 331420,
+          "probability": 0.998474
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 331420,
+          "endMs": 331620,
+          "probability": 0.998805
+        },
+        {
+          "index": 6,
+          "text": "loved,",
+          "startMs": 331620,
+          "endMs": 332140,
+          "probability": 0.99295
+        },
+        {
+          "index": 7,
+          "text": "be",
+          "startMs": 332800,
+          "endMs": 332900,
+          "probability": 0.992636
+        },
+        {
+          "index": 8,
+          "text": "lovable.",
+          "startMs": 332900,
+          "endMs": 333600,
+          "probability": 0.933839
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Avid.",
+      "startMs": 335260,
+      "endMs": 335600,
+      "avgLogprob": -0.10326,
+      "noSpeechProb": 0.020956,
+      "compressionRatio": 1.459259,
+      "words": [
+        {
+          "index": 1,
+          "text": "Avid.",
+          "startMs": 335260,
+          "endMs": 335600,
+          "probability": 0.585873
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Sometimes the most unlikely friend is the coolest friend, Pete.",
+      "startMs": 337880,
+      "endMs": 344220,
+      "avgLogprob": -0.10326,
+      "noSpeechProb": 0.020956,
+      "compressionRatio": 1.459259,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sometimes",
+          "startMs": 337880,
+          "endMs": 338300,
+          "probability": 0.967529
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 338300,
+          "endMs": 338720,
+          "probability": 0.798217
+        },
+        {
+          "index": 3,
+          "text": "most",
+          "startMs": 338720,
+          "endMs": 338960,
+          "probability": 0.997844
+        },
+        {
+          "index": 4,
+          "text": "unlikely",
+          "startMs": 338960,
+          "endMs": 339620,
+          "probability": 0.997005
+        },
+        {
+          "index": 5,
+          "text": "friend",
+          "startMs": 339620,
+          "endMs": 340200,
+          "probability": 0.999058
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 340200,
+          "endMs": 340880,
+          "probability": 0.977787
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 340880,
+          "endMs": 341100,
+          "probability": 0.997457
+        },
+        {
+          "index": 8,
+          "text": "coolest",
+          "startMs": 341100,
+          "endMs": 341780,
+          "probability": 0.982028
+        },
+        {
+          "index": 9,
+          "text": "friend,",
+          "startMs": 341780,
+          "endMs": 342480,
+          "probability": 0.99873
+        },
+        {
+          "index": 10,
+          "text": "Pete.",
+          "startMs": 344140,
+          "endMs": 344220,
+          "probability": 0.953891
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "The first duty of love is to listen, Paul Tillich.",
+      "startMs": 345780,
+      "endMs": 351880,
+      "avgLogprob": -0.10326,
+      "noSpeechProb": 0.020956,
+      "compressionRatio": 1.459259,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 345780,
+          "endMs": 346740,
+          "probability": 0.990963
+        },
+        {
+          "index": 2,
+          "text": "first",
+          "startMs": 346740,
+          "endMs": 347160,
+          "probability": 0.996706
+        },
+        {
+          "index": 3,
+          "text": "duty",
+          "startMs": 347160,
+          "endMs": 347640,
+          "probability": 0.994706
+        },
+        {
+          "index": 4,
+          "text": "of",
+          "startMs": 347640,
+          "endMs": 347940,
+          "probability": 0.998987
+        },
+        {
+          "index": 5,
+          "text": "love",
+          "startMs": 347940,
+          "endMs": 348320,
+          "probability": 0.994672
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 348320,
+          "endMs": 349020,
+          "probability": 0.993434
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 349020,
+          "endMs": 349280,
+          "probability": 0.999142
+        },
+        {
+          "index": 8,
+          "text": "listen,",
+          "startMs": 349280,
+          "endMs": 349840,
+          "probability": 0.996613
+        },
+        {
+          "index": 9,
+          "text": "Paul",
+          "startMs": 351180,
+          "endMs": 351380,
+          "probability": 0.988473
+        },
+        {
+          "index": 10,
+          "text": "Tillich.",
+          "startMs": 351380,
+          "endMs": 351880,
+          "probability": 0.826359
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "A cool friend is a good listener, Pete.",
+      "startMs": 353240,
+      "endMs": 357840,
+      "avgLogprob": -0.10326,
+      "noSpeechProb": 0.020956,
+      "compressionRatio": 1.459259,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 353240,
+          "endMs": 353760,
+          "probability": 0.975036
+        },
+        {
+          "index": 2,
+          "text": "cool",
+          "startMs": 353760,
+          "endMs": 354140,
+          "probability": 0.997471
+        },
+        {
+          "index": 3,
+          "text": "friend",
+          "startMs": 354140,
+          "endMs": 354540,
+          "probability": 0.999192
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 354540,
+          "endMs": 355020,
+          "probability": 0.997706
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 355020,
+          "endMs": 355400,
+          "probability": 0.997911
+        },
+        {
+          "index": 6,
+          "text": "good",
+          "startMs": 355400,
+          "endMs": 355660,
+          "probability": 0.998521
+        },
+        {
+          "index": 7,
+          "text": "listener,",
+          "startMs": 355660,
+          "endMs": 356280,
+          "probability": 0.99892
+        },
+        {
+          "index": 8,
+          "text": "Pete.",
+          "startMs": 357480,
+          "endMs": 357840,
+          "probability": 0.997124
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "May the sun shine all day long, everything go right and nothing wrong.",
+      "startMs": 359580,
+      "endMs": 366780,
+      "avgLogprob": -0.120067,
+      "noSpeechProb": 0.016056,
+      "compressionRatio": 1.421488,
+      "words": [
+        {
+          "index": 1,
+          "text": "May",
+          "startMs": 359580,
+          "endMs": 360360,
+          "probability": 0.769048
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 360360,
+          "endMs": 360620,
+          "probability": 0.991351
+        },
+        {
+          "index": 3,
+          "text": "sun",
+          "startMs": 360620,
+          "endMs": 360980,
+          "probability": 0.753997
+        },
+        {
+          "index": 4,
+          "text": "shine",
+          "startMs": 360980,
+          "endMs": 361520,
+          "probability": 0.973212
+        },
+        {
+          "index": 5,
+          "text": "all",
+          "startMs": 361520,
+          "endMs": 361980,
+          "probability": 0.987019
+        },
+        {
+          "index": 6,
+          "text": "day",
+          "startMs": 361980,
+          "endMs": 362300,
+          "probability": 0.997617
+        },
+        {
+          "index": 7,
+          "text": "long,",
+          "startMs": 362300,
+          "endMs": 363020,
+          "probability": 0.997794
+        },
+        {
+          "index": 8,
+          "text": "everything",
+          "startMs": 364120,
+          "endMs": 364440,
+          "probability": 0.886715
+        },
+        {
+          "index": 9,
+          "text": "go",
+          "startMs": 364440,
+          "endMs": 364920,
+          "probability": 0.99429
+        },
+        {
+          "index": 10,
+          "text": "right",
+          "startMs": 364920,
+          "endMs": 365300,
+          "probability": 0.995646
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 365300,
+          "endMs": 365720,
+          "probability": 0.912291
+        },
+        {
+          "index": 12,
+          "text": "nothing",
+          "startMs": 365720,
+          "endMs": 366100,
+          "probability": 0.998476
+        },
+        {
+          "index": 13,
+          "text": "wrong.",
+          "startMs": 366100,
+          "endMs": 366780,
+          "probability": 0.995125
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "May those you love bring love back to you, and may all the wishes you wish come true.",
+      "startMs": 368120,
+      "endMs": 375080,
+      "avgLogprob": -0.120067,
+      "noSpeechProb": 0.016056,
+      "compressionRatio": 1.421488,
+      "words": [
+        {
+          "index": 1,
+          "text": "May",
+          "startMs": 368120,
+          "endMs": 368280,
+          "probability": 0.991474
+        },
+        {
+          "index": 2,
+          "text": "those",
+          "startMs": 368280,
+          "endMs": 368660,
+          "probability": 0.995672
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 368660,
+          "endMs": 368880,
+          "probability": 0.989756
+        },
+        {
+          "index": 4,
+          "text": "love",
+          "startMs": 368880,
+          "endMs": 369260,
+          "probability": 0.997946
+        },
+        {
+          "index": 5,
+          "text": "bring",
+          "startMs": 369260,
+          "endMs": 369580,
+          "probability": 0.940027
+        },
+        {
+          "index": 6,
+          "text": "love",
+          "startMs": 369580,
+          "endMs": 369980,
+          "probability": 0.993683
+        },
+        {
+          "index": 7,
+          "text": "back",
+          "startMs": 369980,
+          "endMs": 370340,
+          "probability": 0.998705
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 370340,
+          "endMs": 370620,
+          "probability": 0.998534
+        },
+        {
+          "index": 9,
+          "text": "you,",
+          "startMs": 370620,
+          "endMs": 371120,
+          "probability": 0.998798
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 371840,
+          "endMs": 371980,
+          "probability": 0.985927
+        },
+        {
+          "index": 11,
+          "text": "may",
+          "startMs": 371980,
+          "endMs": 372200,
+          "probability": 0.974593
+        },
+        {
+          "index": 12,
+          "text": "all",
+          "startMs": 372200,
+          "endMs": 372600,
+          "probability": 0.997125
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 372600,
+          "endMs": 372820,
+          "probability": 0.997291
+        },
+        {
+          "index": 14,
+          "text": "wishes",
+          "startMs": 372820,
+          "endMs": 373160,
+          "probability": 0.997707
+        },
+        {
+          "index": 15,
+          "text": "you",
+          "startMs": 373160,
+          "endMs": 373540,
+          "probability": 0.99552
+        },
+        {
+          "index": 16,
+          "text": "wish",
+          "startMs": 373540,
+          "endMs": 373900,
+          "probability": 0.993217
+        },
+        {
+          "index": 17,
+          "text": "come",
+          "startMs": 373900,
+          "endMs": 374400,
+          "probability": 0.992499
+        },
+        {
+          "index": 18,
+          "text": "true.",
+          "startMs": 374400,
+          "endMs": 375080,
+          "probability": 0.99913
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "Irish blessing.",
+      "startMs": 376700,
+      "endMs": 377800,
+      "avgLogprob": -0.120067,
+      "noSpeechProb": 0.016056,
+      "compressionRatio": 1.421488,
+      "words": [
+        {
+          "index": 1,
+          "text": "Irish",
+          "startMs": 376700,
+          "endMs": 377200,
+          "probability": 0.90449
+        },
+        {
+          "index": 2,
+          "text": "blessing.",
+          "startMs": 377200,
+          "endMs": 377800,
+          "probability": 0.478307
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "We hope you have enjoyed this recording of Pete the Cat's Groovy Guide to Love by Kimberly and James Dean.",
+      "startMs": 380220,
+      "endMs": 389220,
+      "avgLogprob": -0.119914,
+      "noSpeechProb": 0.640322,
+      "compressionRatio": 1.512195,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 380220,
+          "endMs": 381120,
+          "probability": 0.416327
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 381120,
+          "endMs": 381380,
+          "probability": 0.993548
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 381380,
+          "endMs": 381600,
+          "probability": 0.994428
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 381600,
+          "endMs": 381760,
+          "probability": 0.984866
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 381760,
+          "endMs": 382180,
+          "probability": 0.99643
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 382180,
+          "endMs": 382460,
+          "probability": 0.993728
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 382460,
+          "endMs": 383020,
+          "probability": 0.989155
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 383020,
+          "endMs": 383660,
+          "probability": 0.983117
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 383660,
+          "endMs": 384000,
+          "probability": 0.949936
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 384000,
+          "endMs": 384260,
+          "probability": 0.926826
+        },
+        {
+          "index": 11,
+          "text": "Cat's",
+          "startMs": 384260,
+          "endMs": 384900,
+          "probability": 0.841878
+        },
+        {
+          "index": 12,
+          "text": "Groovy",
+          "startMs": 384900,
+          "endMs": 385500,
+          "probability": 0.936725
+        },
+        {
+          "index": 13,
+          "text": "Guide",
+          "startMs": 385500,
+          "endMs": 385760,
+          "probability": 0.992801
+        },
+        {
+          "index": 14,
+          "text": "to",
+          "startMs": 385760,
+          "endMs": 386060,
+          "probability": 0.936614
+        },
+        {
+          "index": 15,
+          "text": "Love",
+          "startMs": 386060,
+          "endMs": 386500,
+          "probability": 0.975524
+        },
+        {
+          "index": 16,
+          "text": "by",
+          "startMs": 386500,
+          "endMs": 387340,
+          "probability": 0.818305
+        },
+        {
+          "index": 17,
+          "text": "Kimberly",
+          "startMs": 387340,
+          "endMs": 387780,
+          "probability": 0.882829
+        },
+        {
+          "index": 18,
+          "text": "and",
+          "startMs": 387780,
+          "endMs": 388280,
+          "probability": 0.958532
+        },
+        {
+          "index": 19,
+          "text": "James",
+          "startMs": 388280,
+          "endMs": 388900,
+          "probability": 0.996981
+        },
+        {
+          "index": 20,
+          "text": "Dean.",
+          "startMs": 388900,
+          "endMs": 389220,
+          "probability": 0.920645
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "This program was produced by John Marshall Media.",
+      "startMs": 390400,
+      "endMs": 393660,
+      "avgLogprob": -0.119914,
+      "noSpeechProb": 0.640322,
+      "compressionRatio": 1.512195,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 390400,
+          "endMs": 390740,
+          "probability": 0.980576
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 390740,
+          "endMs": 391200,
+          "probability": 0.973941
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 391200,
+          "endMs": 391520,
+          "probability": 0.997243
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 391520,
+          "endMs": 391940,
+          "probability": 0.99792
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 391940,
+          "endMs": 392320,
+          "probability": 0.995782
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 392320,
+          "endMs": 392720,
+          "probability": 0.980661
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 392720,
+          "endMs": 393120,
+          "probability": 0.977705
+        },
+        {
+          "index": 8,
+          "text": "Media.",
+          "startMs": 393120,
+          "endMs": 393660,
+          "probability": 0.946007
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "Text copyright 2015 by Kimberly and James Dean.",
+      "startMs": 395100,
+      "endMs": 399340,
+      "avgLogprob": -0.119914,
+      "noSpeechProb": 0.640322,
+      "compressionRatio": 1.512195,
+      "words": [
+        {
+          "index": 1,
+          "text": "Text",
+          "startMs": 395100,
+          "endMs": 395160,
+          "probability": 0.868197
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 395160,
+          "endMs": 395700,
+          "probability": 0.678131
+        },
+        {
+          "index": 3,
+          "text": "2015",
+          "startMs": 395700,
+          "endMs": 396980,
+          "probability": 0.844713
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 396980,
+          "endMs": 397400,
+          "probability": 0.966862
+        },
+        {
+          "index": 5,
+          "text": "Kimberly",
+          "startMs": 397400,
+          "endMs": 397880,
+          "probability": 0.98835
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 397880,
+          "endMs": 398400,
+          "probability": 0.991384
+        },
+        {
+          "index": 7,
+          "text": "James",
+          "startMs": 398400,
+          "endMs": 398940,
+          "probability": 0.998858
+        },
+        {
+          "index": 8,
+          "text": "Dean.",
+          "startMs": 398940,
+          "endMs": 399340,
+          "probability": 0.992044
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "text": "Illustrations copyright 2015 by James Dean.",
+      "startMs": 400680,
+      "endMs": 404480,
+      "avgLogprob": -0.119914,
+      "noSpeechProb": 0.640322,
+      "compressionRatio": 1.512195,
+      "words": [
+        {
+          "index": 1,
+          "text": "Illustrations",
+          "startMs": 400680,
+          "endMs": 401200,
+          "probability": 0.901656
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 401200,
+          "endMs": 401740,
+          "probability": 0.953674
+        },
+        {
+          "index": 3,
+          "text": "2015",
+          "startMs": 401740,
+          "endMs": 402940,
+          "probability": 0.949763
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 402940,
+          "endMs": 403620,
+          "probability": 0.98261
+        },
+        {
+          "index": 5,
+          "text": "James",
+          "startMs": 403620,
+          "endMs": 404060,
+          "probability": 0.998388
+        },
+        {
+          "index": 6,
+          "text": "Dean.",
+          "startMs": 404060,
+          "endMs": 404480,
+          "probability": 0.992725
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "text": "Production copyright 2015 by HarperCollins Publishers. All rights reserved.",
+      "startMs": 404480,
+      "endMs": 412020,
+      "avgLogprob": -0.165184,
+      "noSpeechProb": 0.11078,
+      "compressionRatio": 0.9375,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 404480,
+          "endMs": 405960,
+          "probability": 0.545499
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 405960,
+          "endMs": 406660,
+          "probability": 0.763446
+        },
+        {
+          "index": 3,
+          "text": "2015",
+          "startMs": 406660,
+          "endMs": 407620,
+          "probability": 0.945928
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 407620,
+          "endMs": 408540,
+          "probability": 0.879094
+        },
+        {
+          "index": 5,
+          "text": "HarperCollins",
+          "startMs": 408540,
+          "endMs": 409440,
+          "probability": 0.799555
+        },
+        {
+          "index": 6,
+          "text": "Publishers.",
+          "startMs": 409440,
+          "endMs": 410040,
+          "probability": 0.856737
+        },
+        {
+          "index": 7,
+          "text": "All",
+          "startMs": 411020,
+          "endMs": 411200,
+          "probability": 0.994446
+        },
+        {
+          "index": 8,
+          "text": "rights",
+          "startMs": 411200,
+          "endMs": 411460,
+          "probability": 0.995817
+        },
+        {
+          "index": 9,
+          "text": "reserved.",
+          "startMs": 411460,
+          "endMs": 412020,
+          "probability": 0.994829
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2708 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 23.607,
+  "text": "Pete the Cat Valentine's Day is Cool by Kimberly and James Dean performed by Teddy Walsh It was the day before Valentine's Day and Pete was riding his skateboard home when he saw his friend Callie She was holding a big red heart that said love Have you finished your Valentine's Day cards? asked Callie No, Valentine's Day is not cool, Pete said Oh Pete, Valentine's Day is my favorite holiday It's a day to tell people how special they are to you, Callie insisted Pete skated on, but something in the back of his mind told him that Callie might be right By the time Pete got home, he had decided that Callie was right about Valentine's Day So he got out his pencils, paper, crayons and markers and sat down at the kitchen table First, Pete started to work on a card for his friend Larry Pete made several cards with big red hearts, but he was not happy with his work Pete wanted to make the perfect cards for every cat in his class I'll never get all these cards done in time, Pete told his mom Pete's mom smiled Just do your best, she said Just tell Larry why he is cool There is something cool about every cat Pete got back to work He thought hard about what was cool about Larry To Larry, Happy Valentine's Day From Pete Perfect, Pete said After that, it didn't take Pete long to make cards for all the boys Then Pete made special cards for all the girls And wrote Love Pete on each one And of course, he made the biggest heart shaped card for his mom The next day, Pete and Callie waited for the bus together I decided you were right, Valentine's Day is cool That's awesome, Callie said By the way, I am having a Valentine's Day party at my house after school If you want to come The bus pulled up then",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat Valentine's Day is Cool by Kimberly and James Dean",
+      "startMs": 0,
+      "endMs": 6800,
+      "avgLogprob": -0.164003,
+      "noSpeechProb": 0.153687,
+      "compressionRatio": 1.481707,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 660,
+          "probability": 0.29208
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 660,
+          "endMs": 920,
+          "probability": 0.93974
+        },
+        {
+          "index": 3,
+          "text": "Cat",
+          "startMs": 920,
+          "endMs": 1320,
+          "probability": 0.928398
+        },
+        {
+          "index": 4,
+          "text": "Valentine's",
+          "startMs": 1320,
+          "endMs": 2920,
+          "probability": 0.696945
+        },
+        {
+          "index": 5,
+          "text": "Day",
+          "startMs": 2920,
+          "endMs": 3060,
+          "probability": 0.951782
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 3060,
+          "endMs": 3480,
+          "probability": 0.892992
+        },
+        {
+          "index": 7,
+          "text": "Cool",
+          "startMs": 3480,
+          "endMs": 3980,
+          "probability": 0.614936
+        },
+        {
+          "index": 8,
+          "text": "by",
+          "startMs": 3980,
+          "endMs": 4980,
+          "probability": 0.550578
+        },
+        {
+          "index": 9,
+          "text": "Kimberly",
+          "startMs": 4980,
+          "endMs": 5400,
+          "probability": 0.887884
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 5400,
+          "endMs": 5900,
+          "probability": 0.86971
+        },
+        {
+          "index": 11,
+          "text": "James",
+          "startMs": 5900,
+          "endMs": 6400,
+          "probability": 0.996869
+        },
+        {
+          "index": 12,
+          "text": "Dean",
+          "startMs": 6400,
+          "endMs": 6800,
+          "probability": 0.906585
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "performed by Teddy Walsh",
+      "startMs": 6800,
+      "endMs": 9680,
+      "avgLogprob": -0.164003,
+      "noSpeechProb": 0.153687,
+      "compressionRatio": 1.481707,
+      "words": [
+        {
+          "index": 1,
+          "text": "performed",
+          "startMs": 6800,
+          "endMs": 7920,
+          "probability": 0.362594
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 7920,
+          "endMs": 8540,
+          "probability": 0.998579
+        },
+        {
+          "index": 3,
+          "text": "Teddy",
+          "startMs": 8540,
+          "endMs": 9240,
+          "probability": 0.959732
+        },
+        {
+          "index": 4,
+          "text": "Walsh",
+          "startMs": 9240,
+          "endMs": 9680,
+          "probability": 0.995734
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "It was the day before Valentine's Day",
+      "startMs": 12580,
+      "endMs": 15900,
+      "avgLogprob": -0.164003,
+      "noSpeechProb": 0.153687,
+      "compressionRatio": 1.481707,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 12580,
+          "endMs": 13420,
+          "probability": 0.692715
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 13420,
+          "endMs": 13620,
+          "probability": 0.999202
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 13620,
+          "endMs": 13880,
+          "probability": 0.9947
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 13880,
+          "endMs": 14140,
+          "probability": 0.996863
+        },
+        {
+          "index": 5,
+          "text": "before",
+          "startMs": 14140,
+          "endMs": 14660,
+          "probability": 0.997804
+        },
+        {
+          "index": 6,
+          "text": "Valentine's",
+          "startMs": 14660,
+          "endMs": 15640,
+          "probability": 0.968375
+        },
+        {
+          "index": 7,
+          "text": "Day",
+          "startMs": 15640,
+          "endMs": 15900,
+          "probability": 0.932707
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "and Pete was riding his skateboard home when he saw his friend Callie",
+      "startMs": 15900,
+      "endMs": 21780,
+      "avgLogprob": -0.164003,
+      "noSpeechProb": 0.153687,
+      "compressionRatio": 1.481707,
+      "words": [
+        {
+          "index": 1,
+          "text": "and",
+          "startMs": 15900,
+          "endMs": 16720,
+          "probability": 0.775984
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 16720,
+          "endMs": 17140,
+          "probability": 0.989777
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 17140,
+          "endMs": 17480,
+          "probability": 0.993721
+        },
+        {
+          "index": 4,
+          "text": "riding",
+          "startMs": 17480,
+          "endMs": 17920,
+          "probability": 0.997899
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 17920,
+          "endMs": 18280,
+          "probability": 0.997819
+        },
+        {
+          "index": 6,
+          "text": "skateboard",
+          "startMs": 18280,
+          "endMs": 18940,
+          "probability": 0.949493
+        },
+        {
+          "index": 7,
+          "text": "home",
+          "startMs": 18940,
+          "endMs": 19380,
+          "probability": 0.995179
+        },
+        {
+          "index": 8,
+          "text": "when",
+          "startMs": 19380,
+          "endMs": 20040,
+          "probability": 0.90055
+        },
+        {
+          "index": 9,
+          "text": "he",
+          "startMs": 20040,
+          "endMs": 20200,
+          "probability": 0.997385
+        },
+        {
+          "index": 10,
+          "text": "saw",
+          "startMs": 20200,
+          "endMs": 20520,
+          "probability": 0.997971
+        },
+        {
+          "index": 11,
+          "text": "his",
+          "startMs": 20520,
+          "endMs": 20740,
+          "probability": 0.997908
+        },
+        {
+          "index": 12,
+          "text": "friend",
+          "startMs": 20740,
+          "endMs": 21080,
+          "probability": 0.99346
+        },
+        {
+          "index": 13,
+          "text": "Callie",
+          "startMs": 21080,
+          "endMs": 21780,
+          "probability": 0.683679
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "She was holding a big red heart that said love",
+      "startMs": 21780,
+      "endMs": 25880,
+      "avgLogprob": -0.164003,
+      "noSpeechProb": 0.153687,
+      "compressionRatio": 1.481707,
+      "words": [
+        {
+          "index": 1,
+          "text": "She",
+          "startMs": 21780,
+          "endMs": 22920,
+          "probability": 0.658006
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 22920,
+          "endMs": 23100,
+          "probability": 0.999183
+        },
+        {
+          "index": 3,
+          "text": "holding",
+          "startMs": 23100,
+          "endMs": 23400,
+          "probability": 0.9993
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 23400,
+          "endMs": 23620,
+          "probability": 0.978491
+        },
+        {
+          "index": 5,
+          "text": "big",
+          "startMs": 23620,
+          "endMs": 23900,
+          "probability": 0.986765
+        },
+        {
+          "index": 6,
+          "text": "red",
+          "startMs": 23900,
+          "endMs": 24240,
+          "probability": 0.984014
+        },
+        {
+          "index": 7,
+          "text": "heart",
+          "startMs": 24240,
+          "endMs": 24640,
+          "probability": 0.992459
+        },
+        {
+          "index": 8,
+          "text": "that",
+          "startMs": 24640,
+          "endMs": 24980,
+          "probability": 0.979322
+        },
+        {
+          "index": 9,
+          "text": "said",
+          "startMs": 24980,
+          "endMs": 25360,
+          "probability": 0.9971
+        },
+        {
+          "index": 10,
+          "text": "love",
+          "startMs": 25360,
+          "endMs": 25880,
+          "probability": 0.273912
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Have you finished your Valentine's Day cards? asked Callie",
+      "startMs": 26880,
+      "endMs": 32280,
+      "avgLogprob": -0.100166,
+      "noSpeechProb": 0.012527,
+      "compressionRatio": 1.612022,
+      "words": [
+        {
+          "index": 1,
+          "text": "Have",
+          "startMs": 26560,
+          "endMs": 26940,
+          "probability": 0.534803
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 26940,
+          "endMs": 28880,
+          "probability": 0.997183
+        },
+        {
+          "index": 3,
+          "text": "finished",
+          "startMs": 28880,
+          "endMs": 29240,
+          "probability": 0.992433
+        },
+        {
+          "index": 4,
+          "text": "your",
+          "startMs": 29240,
+          "endMs": 29480,
+          "probability": 0.993295
+        },
+        {
+          "index": 5,
+          "text": "Valentine's",
+          "startMs": 29480,
+          "endMs": 30280,
+          "probability": 0.893734
+        },
+        {
+          "index": 6,
+          "text": "Day",
+          "startMs": 30280,
+          "endMs": 30380,
+          "probability": 0.861905
+        },
+        {
+          "index": 7,
+          "text": "cards?",
+          "startMs": 30380,
+          "endMs": 30860,
+          "probability": 0.79763
+        },
+        {
+          "index": 8,
+          "text": "asked",
+          "startMs": 31740,
+          "endMs": 31740,
+          "probability": 0.46486
+        },
+        {
+          "index": 9,
+          "text": "Callie",
+          "startMs": 31740,
+          "endMs": 32280,
+          "probability": 0.797173
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "No, Valentine's Day is not cool, Pete said",
+      "startMs": 32280,
+      "endMs": 37060,
+      "avgLogprob": -0.100166,
+      "noSpeechProb": 0.012527,
+      "compressionRatio": 1.612022,
+      "words": [
+        {
+          "index": 1,
+          "text": "No,",
+          "startMs": 32280,
+          "endMs": 33340,
+          "probability": 0.238764
+        },
+        {
+          "index": 2,
+          "text": "Valentine's",
+          "startMs": 33880,
+          "endMs": 34660,
+          "probability": 0.968023
+        },
+        {
+          "index": 3,
+          "text": "Day",
+          "startMs": 34660,
+          "endMs": 34740,
+          "probability": 0.913494
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 34740,
+          "endMs": 34920,
+          "probability": 0.900239
+        },
+        {
+          "index": 5,
+          "text": "not",
+          "startMs": 34920,
+          "endMs": 35280,
+          "probability": 0.987127
+        },
+        {
+          "index": 6,
+          "text": "cool,",
+          "startMs": 35280,
+          "endMs": 35860,
+          "probability": 0.996442
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 36520,
+          "endMs": 36660,
+          "probability": 0.981953
+        },
+        {
+          "index": 8,
+          "text": "said",
+          "startMs": 36660,
+          "endMs": 37060,
+          "probability": 0.993569
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Oh Pete, Valentine's Day is my favorite holiday",
+      "startMs": 38680,
+      "endMs": 43180,
+      "avgLogprob": -0.100166,
+      "noSpeechProb": 0.012527,
+      "compressionRatio": 1.612022,
+      "words": [
+        {
+          "index": 1,
+          "text": "Oh",
+          "startMs": 38680,
+          "endMs": 39440,
+          "probability": 0.363658
+        },
+        {
+          "index": 2,
+          "text": "Pete,",
+          "startMs": 39440,
+          "endMs": 39900,
+          "probability": 0.917543
+        },
+        {
+          "index": 3,
+          "text": "Valentine's",
+          "startMs": 40860,
+          "endMs": 41560,
+          "probability": 0.986011
+        },
+        {
+          "index": 4,
+          "text": "Day",
+          "startMs": 41560,
+          "endMs": 41660,
+          "probability": 0.957662
+        },
+        {
+          "index": 5,
+          "text": "is",
+          "startMs": 41660,
+          "endMs": 41840,
+          "probability": 0.996523
+        },
+        {
+          "index": 6,
+          "text": "my",
+          "startMs": 41840,
+          "endMs": 42040,
+          "probability": 0.998428
+        },
+        {
+          "index": 7,
+          "text": "favorite",
+          "startMs": 42040,
+          "endMs": 42560,
+          "probability": 0.952203
+        },
+        {
+          "index": 8,
+          "text": "holiday",
+          "startMs": 42560,
+          "endMs": 43180,
+          "probability": 0.990418
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "It's a day to tell people how special they are to you, Callie insisted",
+      "startMs": 43180,
+      "endMs": 48880,
+      "avgLogprob": -0.100166,
+      "noSpeechProb": 0.012527,
+      "compressionRatio": 1.612022,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 43180,
+          "endMs": 44280,
+          "probability": 0.817916
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 44280,
+          "endMs": 44420,
+          "probability": 0.978571
+        },
+        {
+          "index": 3,
+          "text": "day",
+          "startMs": 44420,
+          "endMs": 44620,
+          "probability": 0.993906
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 44620,
+          "endMs": 44780,
+          "probability": 0.994873
+        },
+        {
+          "index": 5,
+          "text": "tell",
+          "startMs": 44780,
+          "endMs": 45080,
+          "probability": 0.998634
+        },
+        {
+          "index": 6,
+          "text": "people",
+          "startMs": 45080,
+          "endMs": 45440,
+          "probability": 0.995575
+        },
+        {
+          "index": 7,
+          "text": "how",
+          "startMs": 45440,
+          "endMs": 45740,
+          "probability": 0.98239
+        },
+        {
+          "index": 8,
+          "text": "special",
+          "startMs": 45740,
+          "endMs": 46300,
+          "probability": 0.99827
+        },
+        {
+          "index": 9,
+          "text": "they",
+          "startMs": 46300,
+          "endMs": 46580,
+          "probability": 0.994246
+        },
+        {
+          "index": 10,
+          "text": "are",
+          "startMs": 46580,
+          "endMs": 46800,
+          "probability": 0.999004
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 46800,
+          "endMs": 47000,
+          "probability": 0.997398
+        },
+        {
+          "index": 12,
+          "text": "you,",
+          "startMs": 47000,
+          "endMs": 47540,
+          "probability": 0.998771
+        },
+        {
+          "index": 13,
+          "text": "Callie",
+          "startMs": 48160,
+          "endMs": 48360,
+          "probability": 0.983264
+        },
+        {
+          "index": 14,
+          "text": "insisted",
+          "startMs": 48360,
+          "endMs": 48880,
+          "probability": 0.99565
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Pete skated on, but something in the back of his mind told him that Callie",
+      "startMs": 48880,
+      "endMs": 55080,
+      "avgLogprob": -0.100166,
+      "noSpeechProb": 0.012527,
+      "compressionRatio": 1.612022,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 48880,
+          "endMs": 50180,
+          "probability": 0.917732
+        },
+        {
+          "index": 2,
+          "text": "skated",
+          "startMs": 50180,
+          "endMs": 50680,
+          "probability": 0.971801
+        },
+        {
+          "index": 3,
+          "text": "on,",
+          "startMs": 50680,
+          "endMs": 51060,
+          "probability": 0.997053
+        },
+        {
+          "index": 4,
+          "text": "but",
+          "startMs": 51560,
+          "endMs": 51940,
+          "probability": 0.985078
+        },
+        {
+          "index": 5,
+          "text": "something",
+          "startMs": 51940,
+          "endMs": 52260,
+          "probability": 0.992531
+        },
+        {
+          "index": 6,
+          "text": "in",
+          "startMs": 52260,
+          "endMs": 52560,
+          "probability": 0.994713
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 52560,
+          "endMs": 52680,
+          "probability": 0.998154
+        },
+        {
+          "index": 8,
+          "text": "back",
+          "startMs": 52680,
+          "endMs": 52920,
+          "probability": 0.999387
+        },
+        {
+          "index": 9,
+          "text": "of",
+          "startMs": 52920,
+          "endMs": 53100,
+          "probability": 0.997753
+        },
+        {
+          "index": 10,
+          "text": "his",
+          "startMs": 53100,
+          "endMs": 53280,
+          "probability": 0.998322
+        },
+        {
+          "index": 11,
+          "text": "mind",
+          "startMs": 53280,
+          "endMs": 53680,
+          "probability": 0.997704
+        },
+        {
+          "index": 12,
+          "text": "told",
+          "startMs": 53680,
+          "endMs": 54020,
+          "probability": 0.969361
+        },
+        {
+          "index": 13,
+          "text": "him",
+          "startMs": 54020,
+          "endMs": 54380,
+          "probability": 0.997702
+        },
+        {
+          "index": 14,
+          "text": "that",
+          "startMs": 54380,
+          "endMs": 54580,
+          "probability": 0.987731
+        },
+        {
+          "index": 15,
+          "text": "Callie",
+          "startMs": 54580,
+          "endMs": 55080,
+          "probability": 0.988284
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "might be right",
+      "startMs": 55080,
+      "endMs": 55960,
+      "avgLogprob": -0.105899,
+      "noSpeechProb": 0.025381,
+      "compressionRatio": 1.542453,
+      "words": [
+        {
+          "index": 1,
+          "text": "might",
+          "startMs": 55080,
+          "endMs": 55340,
+          "probability": 0.136445
+        },
+        {
+          "index": 2,
+          "text": "be",
+          "startMs": 55340,
+          "endMs": 55640,
+          "probability": 0.997937
+        },
+        {
+          "index": 3,
+          "text": "right",
+          "startMs": 55640,
+          "endMs": 55960,
+          "probability": 0.997815
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "By the time Pete got home, he had decided that Callie was right about Valentine's Day",
+      "startMs": 57660,
+      "endMs": 63460,
+      "avgLogprob": -0.105899,
+      "noSpeechProb": 0.025381,
+      "compressionRatio": 1.542453,
+      "words": [
+        {
+          "index": 1,
+          "text": "By",
+          "startMs": 57660,
+          "endMs": 58300,
+          "probability": 0.019594
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 58300,
+          "endMs": 58460,
+          "probability": 0.996302
+        },
+        {
+          "index": 3,
+          "text": "time",
+          "startMs": 58460,
+          "endMs": 58800,
+          "probability": 0.995847
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 58800,
+          "endMs": 59040,
+          "probability": 0.92788
+        },
+        {
+          "index": 5,
+          "text": "got",
+          "startMs": 59040,
+          "endMs": 59320,
+          "probability": 0.996175
+        },
+        {
+          "index": 6,
+          "text": "home,",
+          "startMs": 59320,
+          "endMs": 59700,
+          "probability": 0.995881
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 59960,
+          "endMs": 60280,
+          "probability": 0.954025
+        },
+        {
+          "index": 8,
+          "text": "had",
+          "startMs": 60280,
+          "endMs": 60460,
+          "probability": 0.992801
+        },
+        {
+          "index": 9,
+          "text": "decided",
+          "startMs": 60460,
+          "endMs": 60900,
+          "probability": 0.998581
+        },
+        {
+          "index": 10,
+          "text": "that",
+          "startMs": 60900,
+          "endMs": 61280,
+          "probability": 0.993722
+        },
+        {
+          "index": 11,
+          "text": "Callie",
+          "startMs": 61280,
+          "endMs": 61660,
+          "probability": 0.713129
+        },
+        {
+          "index": 12,
+          "text": "was",
+          "startMs": 61660,
+          "endMs": 61880,
+          "probability": 0.996108
+        },
+        {
+          "index": 13,
+          "text": "right",
+          "startMs": 61880,
+          "endMs": 62200,
+          "probability": 0.998385
+        },
+        {
+          "index": 14,
+          "text": "about",
+          "startMs": 62200,
+          "endMs": 62500,
+          "probability": 0.99612
+        },
+        {
+          "index": 15,
+          "text": "Valentine's",
+          "startMs": 62500,
+          "endMs": 63300,
+          "probability": 0.952779
+        },
+        {
+          "index": 16,
+          "text": "Day",
+          "startMs": 63300,
+          "endMs": 63460,
+          "probability": 0.860595
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "So he got out his pencils, paper, crayons and markers and sat down at the kitchen table",
+      "startMs": 63460,
+      "endMs": 71280,
+      "avgLogprob": -0.105899,
+      "noSpeechProb": 0.025381,
+      "compressionRatio": 1.542453,
+      "words": [
+        {
+          "index": 1,
+          "text": "So",
+          "startMs": 63460,
+          "endMs": 64380,
+          "probability": 0.548058
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 64380,
+          "endMs": 64920,
+          "probability": 0.486653
+        },
+        {
+          "index": 3,
+          "text": "got",
+          "startMs": 64920,
+          "endMs": 65140,
+          "probability": 0.998966
+        },
+        {
+          "index": 4,
+          "text": "out",
+          "startMs": 65140,
+          "endMs": 65340,
+          "probability": 0.994418
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 65340,
+          "endMs": 65560,
+          "probability": 0.996979
+        },
+        {
+          "index": 6,
+          "text": "pencils,",
+          "startMs": 65560,
+          "endMs": 66380,
+          "probability": 0.996039
+        },
+        {
+          "index": 7,
+          "text": "paper,",
+          "startMs": 66420,
+          "endMs": 66820,
+          "probability": 0.994639
+        },
+        {
+          "index": 8,
+          "text": "crayons",
+          "startMs": 67420,
+          "endMs": 67700,
+          "probability": 0.996947
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 67700,
+          "endMs": 68340,
+          "probability": 0.455857
+        },
+        {
+          "index": 10,
+          "text": "markers",
+          "startMs": 68340,
+          "endMs": 68740,
+          "probability": 0.994733
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 68740,
+          "endMs": 69420,
+          "probability": 0.769658
+        },
+        {
+          "index": 12,
+          "text": "sat",
+          "startMs": 69420,
+          "endMs": 69680,
+          "probability": 0.996409
+        },
+        {
+          "index": 13,
+          "text": "down",
+          "startMs": 69680,
+          "endMs": 70020,
+          "probability": 0.998565
+        },
+        {
+          "index": 14,
+          "text": "at",
+          "startMs": 70020,
+          "endMs": 70280,
+          "probability": 0.997619
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 70280,
+          "endMs": 70440,
+          "probability": 0.997651
+        },
+        {
+          "index": 16,
+          "text": "kitchen",
+          "startMs": 70440,
+          "endMs": 70800,
+          "probability": 0.997275
+        },
+        {
+          "index": 17,
+          "text": "table",
+          "startMs": 70800,
+          "endMs": 71280,
+          "probability": 0.998046
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "First, Pete started to work on a card for his friend Larry",
+      "startMs": 73320,
+      "endMs": 77220,
+      "avgLogprob": -0.105899,
+      "noSpeechProb": 0.025381,
+      "compressionRatio": 1.542453,
+      "words": [
+        {
+          "index": 1,
+          "text": "First,",
+          "startMs": 73320,
+          "endMs": 73960,
+          "probability": 0.94727
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 74280,
+          "endMs": 74500,
+          "probability": 0.9954
+        },
+        {
+          "index": 3,
+          "text": "started",
+          "startMs": 74500,
+          "endMs": 74840,
+          "probability": 0.996794
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 74840,
+          "endMs": 75100,
+          "probability": 0.99796
+        },
+        {
+          "index": 5,
+          "text": "work",
+          "startMs": 75100,
+          "endMs": 75300,
+          "probability": 0.999457
+        },
+        {
+          "index": 6,
+          "text": "on",
+          "startMs": 75300,
+          "endMs": 75500,
+          "probability": 0.99768
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 75500,
+          "endMs": 75700,
+          "probability": 0.996286
+        },
+        {
+          "index": 8,
+          "text": "card",
+          "startMs": 75700,
+          "endMs": 75900,
+          "probability": 0.998356
+        },
+        {
+          "index": 9,
+          "text": "for",
+          "startMs": 75900,
+          "endMs": 76160,
+          "probability": 0.996331
+        },
+        {
+          "index": 10,
+          "text": "his",
+          "startMs": 76160,
+          "endMs": 76340,
+          "probability": 0.99906
+        },
+        {
+          "index": 11,
+          "text": "friend",
+          "startMs": 76340,
+          "endMs": 76720,
+          "probability": 0.801138
+        },
+        {
+          "index": 12,
+          "text": "Larry",
+          "startMs": 76720,
+          "endMs": 77220,
+          "probability": 0.486667
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Pete made several cards with big red hearts, but he was not happy with his work",
+      "startMs": 77220,
+      "endMs": 84420,
+      "avgLogprob": -0.105899,
+      "noSpeechProb": 0.025381,
+      "compressionRatio": 1.542453,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 77220,
+          "endMs": 78440,
+          "probability": 0.915575
+        },
+        {
+          "index": 2,
+          "text": "made",
+          "startMs": 78440,
+          "endMs": 78720,
+          "probability": 0.996393
+        },
+        {
+          "index": 3,
+          "text": "several",
+          "startMs": 78720,
+          "endMs": 79240,
+          "probability": 0.996459
+        },
+        {
+          "index": 4,
+          "text": "cards",
+          "startMs": 79240,
+          "endMs": 79820,
+          "probability": 0.997147
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 79820,
+          "endMs": 80240,
+          "probability": 0.972228
+        },
+        {
+          "index": 6,
+          "text": "big",
+          "startMs": 80240,
+          "endMs": 80680,
+          "probability": 0.993326
+        },
+        {
+          "index": 7,
+          "text": "red",
+          "startMs": 80680,
+          "endMs": 81100,
+          "probability": 0.965076
+        },
+        {
+          "index": 8,
+          "text": "hearts,",
+          "startMs": 81100,
+          "endMs": 81680,
+          "probability": 0.996252
+        },
+        {
+          "index": 9,
+          "text": "but",
+          "startMs": 81680,
+          "endMs": 82560,
+          "probability": 0.996543
+        },
+        {
+          "index": 10,
+          "text": "he",
+          "startMs": 82560,
+          "endMs": 82740,
+          "probability": 0.99913
+        },
+        {
+          "index": 11,
+          "text": "was",
+          "startMs": 82740,
+          "endMs": 82880,
+          "probability": 0.998731
+        },
+        {
+          "index": 12,
+          "text": "not",
+          "startMs": 82880,
+          "endMs": 83160,
+          "probability": 0.999412
+        },
+        {
+          "index": 13,
+          "text": "happy",
+          "startMs": 83160,
+          "endMs": 83620,
+          "probability": 0.999054
+        },
+        {
+          "index": 14,
+          "text": "with",
+          "startMs": 83620,
+          "endMs": 83860,
+          "probability": 0.99957
+        },
+        {
+          "index": 15,
+          "text": "his",
+          "startMs": 83860,
+          "endMs": 84060,
+          "probability": 0.999117
+        },
+        {
+          "index": 16,
+          "text": "work",
+          "startMs": 84060,
+          "endMs": 84420,
+          "probability": 0.999584
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Pete wanted to make the perfect cards for every cat in his class",
+      "startMs": 86220,
+      "endMs": 90800,
+      "avgLogprob": -0.050298,
+      "noSpeechProb": 0.010845,
+      "compressionRatio": 1.52,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 86220,
+          "endMs": 86860,
+          "probability": 0.953598
+        },
+        {
+          "index": 2,
+          "text": "wanted",
+          "startMs": 86860,
+          "endMs": 87180,
+          "probability": 0.991054
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 87180,
+          "endMs": 87480,
+          "probability": 0.998227
+        },
+        {
+          "index": 4,
+          "text": "make",
+          "startMs": 87480,
+          "endMs": 87680,
+          "probability": 0.998835
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 87680,
+          "endMs": 87940,
+          "probability": 0.994296
+        },
+        {
+          "index": 6,
+          "text": "perfect",
+          "startMs": 87940,
+          "endMs": 88320,
+          "probability": 0.998135
+        },
+        {
+          "index": 7,
+          "text": "cards",
+          "startMs": 88320,
+          "endMs": 88920,
+          "probability": 0.992847
+        },
+        {
+          "index": 8,
+          "text": "for",
+          "startMs": 88920,
+          "endMs": 89160,
+          "probability": 0.995538
+        },
+        {
+          "index": 9,
+          "text": "every",
+          "startMs": 89160,
+          "endMs": 89660,
+          "probability": 0.996978
+        },
+        {
+          "index": 10,
+          "text": "cat",
+          "startMs": 89660,
+          "endMs": 89960,
+          "probability": 0.973757
+        },
+        {
+          "index": 11,
+          "text": "in",
+          "startMs": 89960,
+          "endMs": 90160,
+          "probability": 0.998007
+        },
+        {
+          "index": 12,
+          "text": "his",
+          "startMs": 90160,
+          "endMs": 90360,
+          "probability": 0.997401
+        },
+        {
+          "index": 13,
+          "text": "class",
+          "startMs": 90360,
+          "endMs": 90800,
+          "probability": 0.998189
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "I'll never get all these cards done in time, Pete told his mom",
+      "startMs": 91540,
+      "endMs": 96200,
+      "avgLogprob": -0.050298,
+      "noSpeechProb": 0.010845,
+      "compressionRatio": 1.52,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'll",
+          "startMs": 91540,
+          "endMs": 92180,
+          "probability": 0.494412
+        },
+        {
+          "index": 2,
+          "text": "never",
+          "startMs": 92180,
+          "endMs": 92460,
+          "probability": 0.995238
+        },
+        {
+          "index": 3,
+          "text": "get",
+          "startMs": 92460,
+          "endMs": 92740,
+          "probability": 0.998294
+        },
+        {
+          "index": 4,
+          "text": "all",
+          "startMs": 92740,
+          "endMs": 92940,
+          "probability": 0.997462
+        },
+        {
+          "index": 5,
+          "text": "these",
+          "startMs": 92940,
+          "endMs": 93160,
+          "probability": 0.985024
+        },
+        {
+          "index": 6,
+          "text": "cards",
+          "startMs": 93160,
+          "endMs": 93540,
+          "probability": 0.990953
+        },
+        {
+          "index": 7,
+          "text": "done",
+          "startMs": 93540,
+          "endMs": 93860,
+          "probability": 0.996757
+        },
+        {
+          "index": 8,
+          "text": "in",
+          "startMs": 93860,
+          "endMs": 94040,
+          "probability": 0.991483
+        },
+        {
+          "index": 9,
+          "text": "time,",
+          "startMs": 94040,
+          "endMs": 94460,
+          "probability": 0.996589
+        },
+        {
+          "index": 10,
+          "text": "Pete",
+          "startMs": 95220,
+          "endMs": 95380,
+          "probability": 0.994515
+        },
+        {
+          "index": 11,
+          "text": "told",
+          "startMs": 95380,
+          "endMs": 95640,
+          "probability": 0.993278
+        },
+        {
+          "index": 12,
+          "text": "his",
+          "startMs": 95640,
+          "endMs": 95880,
+          "probability": 0.997653
+        },
+        {
+          "index": 13,
+          "text": "mom",
+          "startMs": 95880,
+          "endMs": 96200,
+          "probability": 0.924329
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Pete's mom smiled",
+      "startMs": 97220,
+      "endMs": 98680,
+      "avgLogprob": -0.050298,
+      "noSpeechProb": 0.010845,
+      "compressionRatio": 1.52,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete's",
+          "startMs": 97220,
+          "endMs": 97860,
+          "probability": 0.925697
+        },
+        {
+          "index": 2,
+          "text": "mom",
+          "startMs": 97860,
+          "endMs": 98060,
+          "probability": 0.947769
+        },
+        {
+          "index": 3,
+          "text": "smiled",
+          "startMs": 98060,
+          "endMs": 98680,
+          "probability": 0.982477
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Just do your best, she said",
+      "startMs": 98680,
+      "endMs": 101560,
+      "avgLogprob": -0.050298,
+      "noSpeechProb": 0.010845,
+      "compressionRatio": 1.52,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 98680,
+          "endMs": 99600,
+          "probability": 0.250231
+        },
+        {
+          "index": 2,
+          "text": "do",
+          "startMs": 99600,
+          "endMs": 99880,
+          "probability": 0.99603
+        },
+        {
+          "index": 3,
+          "text": "your",
+          "startMs": 99880,
+          "endMs": 100100,
+          "probability": 0.993271
+        },
+        {
+          "index": 4,
+          "text": "best,",
+          "startMs": 100100,
+          "endMs": 100620,
+          "probability": 0.999002
+        },
+        {
+          "index": 5,
+          "text": "she",
+          "startMs": 100800,
+          "endMs": 101220,
+          "probability": 0.939181
+        },
+        {
+          "index": 6,
+          "text": "said",
+          "startMs": 101220,
+          "endMs": 101560,
+          "probability": 0.99866
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Just tell Larry why he is cool",
+      "startMs": 102080,
+      "endMs": 104640,
+      "avgLogprob": -0.050298,
+      "noSpeechProb": 0.010845,
+      "compressionRatio": 1.52,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 102080,
+          "endMs": 102520,
+          "probability": 0.603019
+        },
+        {
+          "index": 2,
+          "text": "tell",
+          "startMs": 102520,
+          "endMs": 102920,
+          "probability": 0.998996
+        },
+        {
+          "index": 3,
+          "text": "Larry",
+          "startMs": 102920,
+          "endMs": 103220,
+          "probability": 0.987487
+        },
+        {
+          "index": 4,
+          "text": "why",
+          "startMs": 103220,
+          "endMs": 103660,
+          "probability": 0.990783
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 103660,
+          "endMs": 104040,
+          "probability": 0.996947
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 104040,
+          "endMs": 104220,
+          "probability": 0.982534
+        },
+        {
+          "index": 7,
+          "text": "cool",
+          "startMs": 104220,
+          "endMs": 104640,
+          "probability": 0.985573
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "There is something cool about every cat",
+      "startMs": 104640,
+      "endMs": 107980,
+      "avgLogprob": -0.050298,
+      "noSpeechProb": 0.010845,
+      "compressionRatio": 1.52,
+      "words": [
+        {
+          "index": 1,
+          "text": "There",
+          "startMs": 104640,
+          "endMs": 105720,
+          "probability": 0.816786
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 105720,
+          "endMs": 105900,
+          "probability": 0.905315
+        },
+        {
+          "index": 3,
+          "text": "something",
+          "startMs": 105900,
+          "endMs": 106200,
+          "probability": 0.99559
+        },
+        {
+          "index": 4,
+          "text": "cool",
+          "startMs": 106200,
+          "endMs": 106660,
+          "probability": 0.997153
+        },
+        {
+          "index": 5,
+          "text": "about",
+          "startMs": 106660,
+          "endMs": 107000,
+          "probability": 0.997926
+        },
+        {
+          "index": 6,
+          "text": "every",
+          "startMs": 107000,
+          "endMs": 107520,
+          "probability": 0.993729
+        },
+        {
+          "index": 7,
+          "text": "cat",
+          "startMs": 107520,
+          "endMs": 107980,
+          "probability": 0.996594
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Pete got back to work",
+      "startMs": 109840,
+      "endMs": 111560,
+      "avgLogprob": -0.050298,
+      "noSpeechProb": 0.010845,
+      "compressionRatio": 1.52,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 109840,
+          "endMs": 110480,
+          "probability": 0.914138
+        },
+        {
+          "index": 2,
+          "text": "got",
+          "startMs": 110480,
+          "endMs": 110720,
+          "probability": 0.996719
+        },
+        {
+          "index": 3,
+          "text": "back",
+          "startMs": 110720,
+          "endMs": 111000,
+          "probability": 0.999305
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 111000,
+          "endMs": 111240,
+          "probability": 0.999352
+        },
+        {
+          "index": 5,
+          "text": "work",
+          "startMs": 111240,
+          "endMs": 111560,
+          "probability": 0.999604
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "He thought hard about what was cool about Larry",
+      "startMs": 111560,
+      "endMs": 114920,
+      "avgLogprob": -0.111757,
+      "noSpeechProb": 0.036123,
+      "compressionRatio": 1.448052,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 111560,
+          "endMs": 112400,
+          "probability": 0.219287
+        },
+        {
+          "index": 2,
+          "text": "thought",
+          "startMs": 112400,
+          "endMs": 112720,
+          "probability": 0.983315
+        },
+        {
+          "index": 3,
+          "text": "hard",
+          "startMs": 112720,
+          "endMs": 113100,
+          "probability": 0.989768
+        },
+        {
+          "index": 4,
+          "text": "about",
+          "startMs": 113100,
+          "endMs": 113420,
+          "probability": 0.990759
+        },
+        {
+          "index": 5,
+          "text": "what",
+          "startMs": 113420,
+          "endMs": 113640,
+          "probability": 0.988021
+        },
+        {
+          "index": 6,
+          "text": "was",
+          "startMs": 113640,
+          "endMs": 113820,
+          "probability": 0.991142
+        },
+        {
+          "index": 7,
+          "text": "cool",
+          "startMs": 113820,
+          "endMs": 114140,
+          "probability": 0.996042
+        },
+        {
+          "index": 8,
+          "text": "about",
+          "startMs": 114140,
+          "endMs": 114560,
+          "probability": 0.992658
+        },
+        {
+          "index": 9,
+          "text": "Larry",
+          "startMs": 114560,
+          "endMs": 114920,
+          "probability": 0.973148
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "To Larry, Happy Valentine's Day",
+      "startMs": 115900,
+      "endMs": 119400,
+      "avgLogprob": -0.111757,
+      "noSpeechProb": 0.036123,
+      "compressionRatio": 1.448052,
+      "words": [
+        {
+          "index": 1,
+          "text": "To",
+          "startMs": 115900,
+          "endMs": 116660,
+          "probability": 0.069955
+        },
+        {
+          "index": 2,
+          "text": "Larry,",
+          "startMs": 116660,
+          "endMs": 117220,
+          "probability": 0.986003
+        },
+        {
+          "index": 3,
+          "text": "Happy",
+          "startMs": 117780,
+          "endMs": 118160,
+          "probability": 0.624714
+        },
+        {
+          "index": 4,
+          "text": "Valentine's",
+          "startMs": 118160,
+          "endMs": 119180,
+          "probability": 0.870248
+        },
+        {
+          "index": 5,
+          "text": "Day",
+          "startMs": 119180,
+          "endMs": 119400,
+          "probability": 0.951482
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "From Pete",
+      "startMs": 119400,
+      "endMs": 120920,
+      "avgLogprob": -0.111757,
+      "noSpeechProb": 0.036123,
+      "compressionRatio": 1.448052,
+      "words": [
+        {
+          "index": 1,
+          "text": "From",
+          "startMs": 119400,
+          "endMs": 120360,
+          "probability": 0.490964
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 120360,
+          "endMs": 120920,
+          "probability": 0.976752
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Perfect, Pete said",
+      "startMs": 122000,
+      "endMs": 124100,
+      "avgLogprob": -0.111757,
+      "noSpeechProb": 0.036123,
+      "compressionRatio": 1.448052,
+      "words": [
+        {
+          "index": 1,
+          "text": "Perfect,",
+          "startMs": 122000,
+          "endMs": 122760,
+          "probability": 0.377006
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 123540,
+          "endMs": 123700,
+          "probability": 0.995836
+        },
+        {
+          "index": 3,
+          "text": "said",
+          "startMs": 123700,
+          "endMs": 124100,
+          "probability": 0.982025
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "After that, it didn't take Pete long to make cards for all the boys",
+      "startMs": 125900,
+      "endMs": 131240,
+      "avgLogprob": -0.111757,
+      "noSpeechProb": 0.036123,
+      "compressionRatio": 1.448052,
+      "words": [
+        {
+          "index": 1,
+          "text": "After",
+          "startMs": 125900,
+          "endMs": 126660,
+          "probability": 0.878683
+        },
+        {
+          "index": 2,
+          "text": "that,",
+          "startMs": 126660,
+          "endMs": 127020,
+          "probability": 0.994865
+        },
+        {
+          "index": 3,
+          "text": "it",
+          "startMs": 127440,
+          "endMs": 127520,
+          "probability": 0.936778
+        },
+        {
+          "index": 4,
+          "text": "didn't",
+          "startMs": 127520,
+          "endMs": 127900,
+          "probability": 0.992626
+        },
+        {
+          "index": 5,
+          "text": "take",
+          "startMs": 127900,
+          "endMs": 128180,
+          "probability": 0.995833
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 128180,
+          "endMs": 128540,
+          "probability": 0.990706
+        },
+        {
+          "index": 7,
+          "text": "long",
+          "startMs": 128540,
+          "endMs": 128920,
+          "probability": 0.921939
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 128920,
+          "endMs": 129220,
+          "probability": 0.862291
+        },
+        {
+          "index": 9,
+          "text": "make",
+          "startMs": 129220,
+          "endMs": 129480,
+          "probability": 0.990893
+        },
+        {
+          "index": 10,
+          "text": "cards",
+          "startMs": 129480,
+          "endMs": 129900,
+          "probability": 0.990063
+        },
+        {
+          "index": 11,
+          "text": "for",
+          "startMs": 129900,
+          "endMs": 130200,
+          "probability": 0.989179
+        },
+        {
+          "index": 12,
+          "text": "all",
+          "startMs": 130200,
+          "endMs": 130580,
+          "probability": 0.994975
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 130580,
+          "endMs": 130800,
+          "probability": 0.990475
+        },
+        {
+          "index": 14,
+          "text": "boys",
+          "startMs": 130800,
+          "endMs": 131240,
+          "probability": 0.996774
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Then Pete made special cards for all the girls",
+      "startMs": 133180,
+      "endMs": 137040,
+      "avgLogprob": -0.111757,
+      "noSpeechProb": 0.036123,
+      "compressionRatio": 1.448052,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 133180,
+          "endMs": 133940,
+          "probability": 0.9416
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 133940,
+          "endMs": 134440,
+          "probability": 0.745313
+        },
+        {
+          "index": 3,
+          "text": "made",
+          "startMs": 134440,
+          "endMs": 134760,
+          "probability": 0.99718
+        },
+        {
+          "index": 4,
+          "text": "special",
+          "startMs": 134760,
+          "endMs": 135240,
+          "probability": 0.996051
+        },
+        {
+          "index": 5,
+          "text": "cards",
+          "startMs": 135240,
+          "endMs": 135720,
+          "probability": 0.997649
+        },
+        {
+          "index": 6,
+          "text": "for",
+          "startMs": 135720,
+          "endMs": 136040,
+          "probability": 0.993718
+        },
+        {
+          "index": 7,
+          "text": "all",
+          "startMs": 136040,
+          "endMs": 136420,
+          "probability": 0.997123
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 136420,
+          "endMs": 136640,
+          "probability": 0.993738
+        },
+        {
+          "index": 9,
+          "text": "girls",
+          "startMs": 136640,
+          "endMs": 137040,
+          "probability": 0.997493
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "And wrote Love Pete on each one",
+      "startMs": 137040,
+      "endMs": 140720,
+      "avgLogprob": -0.094741,
+      "noSpeechProb": 0.069403,
+      "compressionRatio": 1.502463,
+      "words": [
+        {
+          "index": 1,
+          "text": "And",
+          "startMs": 137040,
+          "endMs": 137820,
+          "probability": 0.419094
+        },
+        {
+          "index": 2,
+          "text": "wrote",
+          "startMs": 137820,
+          "endMs": 138140,
+          "probability": 0.61248
+        },
+        {
+          "index": 3,
+          "text": "Love",
+          "startMs": 138140,
+          "endMs": 138780,
+          "probability": 0.080438
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 138780,
+          "endMs": 139280,
+          "probability": 0.935918
+        },
+        {
+          "index": 5,
+          "text": "on",
+          "startMs": 139280,
+          "endMs": 139900,
+          "probability": 0.900903
+        },
+        {
+          "index": 6,
+          "text": "each",
+          "startMs": 139900,
+          "endMs": 140200,
+          "probability": 0.997386
+        },
+        {
+          "index": 7,
+          "text": "one",
+          "startMs": 140200,
+          "endMs": 140720,
+          "probability": 0.994557
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "And of course, he made the biggest heart shaped card for his mom",
+      "startMs": 140720,
+      "endMs": 145520,
+      "avgLogprob": -0.094741,
+      "noSpeechProb": 0.069403,
+      "compressionRatio": 1.502463,
+      "words": [
+        {
+          "index": 1,
+          "text": "And",
+          "startMs": 140720,
+          "endMs": 141340,
+          "probability": 0.280991
+        },
+        {
+          "index": 2,
+          "text": "of",
+          "startMs": 141340,
+          "endMs": 141500,
+          "probability": 0.964186
+        },
+        {
+          "index": 3,
+          "text": "course,",
+          "startMs": 141500,
+          "endMs": 141800,
+          "probability": 0.982856
+        },
+        {
+          "index": 4,
+          "text": "he",
+          "startMs": 142160,
+          "endMs": 142420,
+          "probability": 0.946152
+        },
+        {
+          "index": 5,
+          "text": "made",
+          "startMs": 142420,
+          "endMs": 142640,
+          "probability": 0.996063
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 142640,
+          "endMs": 143000,
+          "probability": 0.98214
+        },
+        {
+          "index": 7,
+          "text": "biggest",
+          "startMs": 143000,
+          "endMs": 143380,
+          "probability": 0.989778
+        },
+        {
+          "index": 8,
+          "text": "heart",
+          "startMs": 143380,
+          "endMs": 143820,
+          "probability": 0.947263
+        },
+        {
+          "index": 9,
+          "text": "shaped",
+          "startMs": 143820,
+          "endMs": 144180,
+          "probability": 0.592497
+        },
+        {
+          "index": 10,
+          "text": "card",
+          "startMs": 144180,
+          "endMs": 144660,
+          "probability": 0.962552
+        },
+        {
+          "index": 11,
+          "text": "for",
+          "startMs": 144660,
+          "endMs": 144940,
+          "probability": 0.953651
+        },
+        {
+          "index": 12,
+          "text": "his",
+          "startMs": 144940,
+          "endMs": 145160,
+          "probability": 0.996132
+        },
+        {
+          "index": 13,
+          "text": "mom",
+          "startMs": 145160,
+          "endMs": 145520,
+          "probability": 0.934988
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "The next day, Pete and Callie waited for the bus together",
+      "startMs": 147060,
+      "endMs": 151360,
+      "avgLogprob": -0.094741,
+      "noSpeechProb": 0.069403,
+      "compressionRatio": 1.502463,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 147060,
+          "endMs": 147780,
+          "probability": 0.569927
+        },
+        {
+          "index": 2,
+          "text": "next",
+          "startMs": 147780,
+          "endMs": 148060,
+          "probability": 0.997686
+        },
+        {
+          "index": 3,
+          "text": "day,",
+          "startMs": 148060,
+          "endMs": 148480,
+          "probability": 0.997428
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 149000,
+          "endMs": 149100,
+          "probability": 0.996306
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 149100,
+          "endMs": 149440,
+          "probability": 0.987788
+        },
+        {
+          "index": 6,
+          "text": "Callie",
+          "startMs": 149440,
+          "endMs": 149760,
+          "probability": 0.73436
+        },
+        {
+          "index": 7,
+          "text": "waited",
+          "startMs": 149760,
+          "endMs": 150120,
+          "probability": 0.962555
+        },
+        {
+          "index": 8,
+          "text": "for",
+          "startMs": 150120,
+          "endMs": 150460,
+          "probability": 0.997001
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 150460,
+          "endMs": 150600,
+          "probability": 0.996734
+        },
+        {
+          "index": 10,
+          "text": "bus",
+          "startMs": 150600,
+          "endMs": 150900,
+          "probability": 0.995994
+        },
+        {
+          "index": 11,
+          "text": "together",
+          "startMs": 150900,
+          "endMs": 151360,
+          "probability": 0.986136
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "I decided you were right, Valentine's Day is cool",
+      "startMs": 152040,
+      "endMs": 156420,
+      "avgLogprob": -0.094741,
+      "noSpeechProb": 0.069403,
+      "compressionRatio": 1.502463,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 152040,
+          "endMs": 152620,
+          "probability": 0.747346
+        },
+        {
+          "index": 2,
+          "text": "decided",
+          "startMs": 152620,
+          "endMs": 153020,
+          "probability": 0.987532
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 153020,
+          "endMs": 153340,
+          "probability": 0.985833
+        },
+        {
+          "index": 4,
+          "text": "were",
+          "startMs": 153340,
+          "endMs": 153500,
+          "probability": 0.992902
+        },
+        {
+          "index": 5,
+          "text": "right,",
+          "startMs": 153500,
+          "endMs": 153900,
+          "probability": 0.99945
+        },
+        {
+          "index": 6,
+          "text": "Valentine's",
+          "startMs": 154640,
+          "endMs": 155380,
+          "probability": 0.953815
+        },
+        {
+          "index": 7,
+          "text": "Day",
+          "startMs": 155380,
+          "endMs": 155540,
+          "probability": 0.798644
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 155540,
+          "endMs": 155980,
+          "probability": 0.958063
+        },
+        {
+          "index": 9,
+          "text": "cool",
+          "startMs": 155980,
+          "endMs": 156420,
+          "probability": 0.990829
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "That's awesome, Callie said",
+      "startMs": 157040,
+      "endMs": 159600,
+      "avgLogprob": -0.094741,
+      "noSpeechProb": 0.069403,
+      "compressionRatio": 1.502463,
+      "words": [
+        {
+          "index": 1,
+          "text": "That's",
+          "startMs": 157040,
+          "endMs": 157840,
+          "probability": 0.734385
+        },
+        {
+          "index": 2,
+          "text": "awesome,",
+          "startMs": 157840,
+          "endMs": 158420,
+          "probability": 0.988874
+        },
+        {
+          "index": 3,
+          "text": "Callie",
+          "startMs": 159000,
+          "endMs": 159220,
+          "probability": 0.991427
+        },
+        {
+          "index": 4,
+          "text": "said",
+          "startMs": 159220,
+          "endMs": 159600,
+          "probability": 0.998484
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "By the way, I am having a Valentine's Day party at my house after school",
+      "startMs": 159600,
+      "endMs": 165320,
+      "avgLogprob": -0.094741,
+      "noSpeechProb": 0.069403,
+      "compressionRatio": 1.502463,
+      "words": [
+        {
+          "index": 1,
+          "text": "By",
+          "startMs": 159600,
+          "endMs": 160500,
+          "probability": 0.840819
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 160500,
+          "endMs": 160680,
+          "probability": 0.998507
+        },
+        {
+          "index": 3,
+          "text": "way,",
+          "startMs": 160680,
+          "endMs": 160960,
+          "probability": 0.9995
+        },
+        {
+          "index": 4,
+          "text": "I",
+          "startMs": 161300,
+          "endMs": 161780,
+          "probability": 0.995781
+        },
+        {
+          "index": 5,
+          "text": "am",
+          "startMs": 161780,
+          "endMs": 161960,
+          "probability": 0.93683
+        },
+        {
+          "index": 6,
+          "text": "having",
+          "startMs": 161960,
+          "endMs": 162320,
+          "probability": 0.998115
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 162320,
+          "endMs": 162540,
+          "probability": 0.996717
+        },
+        {
+          "index": 8,
+          "text": "Valentine's",
+          "startMs": 162540,
+          "endMs": 163340,
+          "probability": 0.974896
+        },
+        {
+          "index": 9,
+          "text": "Day",
+          "startMs": 163340,
+          "endMs": 163440,
+          "probability": 0.93043
+        },
+        {
+          "index": 10,
+          "text": "party",
+          "startMs": 163440,
+          "endMs": 163720,
+          "probability": 0.954637
+        },
+        {
+          "index": 11,
+          "text": "at",
+          "startMs": 163720,
+          "endMs": 163920,
+          "probability": 0.985825
+        },
+        {
+          "index": 12,
+          "text": "my",
+          "startMs": 163920,
+          "endMs": 164180,
+          "probability": 0.994251
+        },
+        {
+          "index": 13,
+          "text": "house",
+          "startMs": 164180,
+          "endMs": 164540,
+          "probability": 0.998974
+        },
+        {
+          "index": 14,
+          "text": "after",
+          "startMs": 164540,
+          "endMs": 164860,
+          "probability": 0.983645
+        },
+        {
+          "index": 15,
+          "text": "school",
+          "startMs": 164860,
+          "endMs": 165320,
+          "probability": 0.996351
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "If you want to come",
+      "startMs": 165320,
+      "endMs": 166980,
+      "avgLogprob": -0.125056,
+      "noSpeechProb": 0.051315,
+      "compressionRatio": 0.84,
+      "words": [
+        {
+          "index": 1,
+          "text": "If",
+          "startMs": 165320,
+          "endMs": 166140,
+          "probability": 0.307174
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 166140,
+          "endMs": 166320,
+          "probability": 0.978371
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 166320,
+          "endMs": 166560,
+          "probability": 0.99233
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 166560,
+          "endMs": 166700,
+          "probability": 0.956272
+        },
+        {
+          "index": 5,
+          "text": "come",
+          "startMs": 166700,
+          "endMs": 166980,
+          "probability": 0.835409
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "The bus pulled up then",
+      "startMs": 168700,
+      "endMs": 170460,
+      "avgLogprob": -0.125056,
+      "noSpeechProb": 0.051315,
+      "compressionRatio": 0.84,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 168700,
+          "endMs": 169240,
+          "probability": 0.322476
+        },
+        {
+          "index": 2,
+          "text": "bus",
+          "startMs": 169240,
+          "endMs": 169500,
+          "probability": 0.653452
+        },
+        {
+          "index": 3,
+          "text": "pulled",
+          "startMs": 169500,
+          "endMs": 169860,
+          "probability": 0.991048
+        },
+        {
+          "index": 4,
+          "text": "up",
+          "startMs": 169860,
+          "endMs": 170100,
+          "probability": 0.996013
+        },
+        {
+          "index": 5,
+          "text": "then",
+          "startMs": 170100,
+          "endMs": 170460,
+          "probability": 0.91749
+        }
+      ]
+    }
+  ]
+}

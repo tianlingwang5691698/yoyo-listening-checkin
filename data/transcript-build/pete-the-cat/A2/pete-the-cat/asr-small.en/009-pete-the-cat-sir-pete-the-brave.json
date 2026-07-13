@@ -1,0 +1,3629 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 62.762,
+  "text": "Welcome to the wonderful world of reading. In this I can read story, Pete the Cat, Sir Pete the Brave, you will be going on a fun adventure. Are you ready to read? Here we go. Meet Sir Pete, the bravest knight in the land. Sir Pete rides a horse and climbs towers. At dinner, Sir Pete listens to Lady Callie play the harp. Lady Callie is awesome. Bravo! Sir Pete yells at the end of each song. He claps louder than anyone. One night, while Lady Callie plays beautifully, someone casts a spell, and everyone falls asleep. Even Sir Pete! The next morning, Lady Callie is gone. Oh no! says Sir Pete the Brave. I will find Lady Callie and save her. Giddy up! Sir Pete falls in a hole. The hole is a dragon's footprint. Follow the footprints, Sir Pete says to his horse. The footprints stop. Where did the dragon go? Sir Pete looks up, and sees the dragon flying across the lake with Lady Callie and her harp. Sir Pete can't fly, but he can row across the lake he goes. Sir Pete sees a dragon cave. He has to go inside, but it is very dark. Then he hears music. He must save Lady Callie. He won't be scared. He finds a harp, but no Lady Callie. Sir Pete will not give up. He climbs the highest hill. He looks around for Lady Callie. Then he hears a loud growl. Sir Pete is scared. The hill starts the dragon's back. Sir Pete knows what to do. He slides down, down, down the dragon's back. The dragon sees Pete and roars. Sir Pete says Lady Callie, I will save you. Save me, says Sir Pete, but I came to save you. Sir Pete and Lady Callie start to argue. The dragon starts to cry. I just wanted to sing along. The dragon sobs. I did not want to hurt anyone. I have an idea, says Sir Pete. Will you give us a lift? The dragon flies Sir Pete and Lady Callie home. Everyone is happy to see them. You don't need a great voice to make music, says Sir Pete. Just good friends. The dragon joins the song. Three cheers for Lady Callie and for Sir Pete the Brave. Hooray! Hooray! Hooray! We hope you have enjoyed this recording of Pete the Cat, Sir Pete the Brave by James Dean. This program was produced by John Marshall Media. Copyright 2016 by James Dean. Production Copyright 2016 by HarperCollins Publishers. All rights reserved.",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Welcome to the wonderful world of reading.",
+      "startMs": 1340,
+      "endMs": 4540,
+      "avgLogprob": -0.180781,
+      "noSpeechProb": 0.067677,
+      "compressionRatio": 1.414013,
+      "words": [
+        {
+          "index": 1,
+          "text": "Welcome",
+          "startMs": 1340,
+          "endMs": 2020,
+          "probability": 0.858343
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 2020,
+          "endMs": 2520,
+          "probability": 0.988127
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 2520,
+          "endMs": 2680,
+          "probability": 0.988707
+        },
+        {
+          "index": 4,
+          "text": "wonderful",
+          "startMs": 2680,
+          "endMs": 3140,
+          "probability": 0.905428
+        },
+        {
+          "index": 5,
+          "text": "world",
+          "startMs": 3140,
+          "endMs": 3760,
+          "probability": 0.951953
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 3760,
+          "endMs": 4060,
+          "probability": 0.994929
+        },
+        {
+          "index": 7,
+          "text": "reading.",
+          "startMs": 4060,
+          "endMs": 4540,
+          "probability": 0.910412
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "In this I can read story, Pete the Cat, Sir Pete the Brave,",
+      "startMs": 5760,
+      "endMs": 11000,
+      "avgLogprob": -0.180781,
+      "noSpeechProb": 0.067677,
+      "compressionRatio": 1.414013,
+      "words": [
+        {
+          "index": 1,
+          "text": "In",
+          "startMs": 5760,
+          "endMs": 5760,
+          "probability": 0.988091
+        },
+        {
+          "index": 2,
+          "text": "this",
+          "startMs": 5760,
+          "endMs": 6100,
+          "probability": 0.996362
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 6100,
+          "endMs": 6520,
+          "probability": 0.519871
+        },
+        {
+          "index": 4,
+          "text": "can",
+          "startMs": 6520,
+          "endMs": 6760,
+          "probability": 0.504155
+        },
+        {
+          "index": 5,
+          "text": "read",
+          "startMs": 6760,
+          "endMs": 7080,
+          "probability": 0.92028
+        },
+        {
+          "index": 6,
+          "text": "story,",
+          "startMs": 7080,
+          "endMs": 7700,
+          "probability": 0.967144
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 8540,
+          "endMs": 8640,
+          "probability": 0.861398
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 8640,
+          "endMs": 8920,
+          "probability": 0.965142
+        },
+        {
+          "index": 9,
+          "text": "Cat,",
+          "startMs": 8920,
+          "endMs": 9200,
+          "probability": 0.91689
+        },
+        {
+          "index": 10,
+          "text": "Sir",
+          "startMs": 9780,
+          "endMs": 9920,
+          "probability": 0.97415
+        },
+        {
+          "index": 11,
+          "text": "Pete",
+          "startMs": 9920,
+          "endMs": 10320,
+          "probability": 0.990698
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 10320,
+          "endMs": 10660,
+          "probability": 0.971089
+        },
+        {
+          "index": 13,
+          "text": "Brave,",
+          "startMs": 10660,
+          "endMs": 11000,
+          "probability": 0.980694
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "you will be going on a fun adventure.",
+      "startMs": 11660,
+      "endMs": 14120,
+      "avgLogprob": -0.180781,
+      "noSpeechProb": 0.067677,
+      "compressionRatio": 1.414013,
+      "words": [
+        {
+          "index": 1,
+          "text": "you",
+          "startMs": 11660,
+          "endMs": 12060,
+          "probability": 0.909694
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 12060,
+          "endMs": 12260,
+          "probability": 0.994308
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 12260,
+          "endMs": 12440,
+          "probability": 0.993803
+        },
+        {
+          "index": 4,
+          "text": "going",
+          "startMs": 12440,
+          "endMs": 12720,
+          "probability": 0.994701
+        },
+        {
+          "index": 5,
+          "text": "on",
+          "startMs": 12720,
+          "endMs": 12980,
+          "probability": 0.996704
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 12980,
+          "endMs": 13120,
+          "probability": 0.991572
+        },
+        {
+          "index": 7,
+          "text": "fun",
+          "startMs": 13120,
+          "endMs": 13460,
+          "probability": 0.996969
+        },
+        {
+          "index": 8,
+          "text": "adventure.",
+          "startMs": 13460,
+          "endMs": 14120,
+          "probability": 0.99348
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Are you ready to read? Here we go.",
+      "startMs": 14900,
+      "endMs": 18000,
+      "avgLogprob": -0.180781,
+      "noSpeechProb": 0.067677,
+      "compressionRatio": 1.414013,
+      "words": [
+        {
+          "index": 1,
+          "text": "Are",
+          "startMs": 14900,
+          "endMs": 15000,
+          "probability": 0.994641
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 15000,
+          "endMs": 15200,
+          "probability": 0.998641
+        },
+        {
+          "index": 3,
+          "text": "ready",
+          "startMs": 15200,
+          "endMs": 15360,
+          "probability": 0.997005
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 15360,
+          "endMs": 15640,
+          "probability": 0.998846
+        },
+        {
+          "index": 5,
+          "text": "read?",
+          "startMs": 15640,
+          "endMs": 15920,
+          "probability": 0.998193
+        },
+        {
+          "index": 6,
+          "text": "Here",
+          "startMs": 16780,
+          "endMs": 16920,
+          "probability": 0.989227
+        },
+        {
+          "index": 7,
+          "text": "we",
+          "startMs": 16920,
+          "endMs": 17140,
+          "probability": 0.997526
+        },
+        {
+          "index": 8,
+          "text": "go.",
+          "startMs": 17140,
+          "endMs": 18000,
+          "probability": 0.999032
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Meet Sir Pete, the bravest knight in the land.",
+      "startMs": 23460,
+      "endMs": 27880,
+      "avgLogprob": -0.180781,
+      "noSpeechProb": 0.067677,
+      "compressionRatio": 1.414013,
+      "words": [
+        {
+          "index": 1,
+          "text": "Meet",
+          "startMs": 23460,
+          "endMs": 24140,
+          "probability": 0.9745
+        },
+        {
+          "index": 2,
+          "text": "Sir",
+          "startMs": 24140,
+          "endMs": 24560,
+          "probability": 0.987009
+        },
+        {
+          "index": 3,
+          "text": "Pete,",
+          "startMs": 24560,
+          "endMs": 25100,
+          "probability": 0.989435
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 25700,
+          "endMs": 25980,
+          "probability": 0.964845
+        },
+        {
+          "index": 5,
+          "text": "bravest",
+          "startMs": 25980,
+          "endMs": 26740,
+          "probability": 0.995375
+        },
+        {
+          "index": 6,
+          "text": "knight",
+          "startMs": 26740,
+          "endMs": 27060,
+          "probability": 0.697409
+        },
+        {
+          "index": 7,
+          "text": "in",
+          "startMs": 27060,
+          "endMs": 27300,
+          "probability": 0.99718
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 27300,
+          "endMs": 27440,
+          "probability": 0.998952
+        },
+        {
+          "index": 9,
+          "text": "land.",
+          "startMs": 27440,
+          "endMs": 27880,
+          "probability": 0.979545
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Sir Pete rides a horse and climbs towers.",
+      "startMs": 30000,
+      "endMs": 33580,
+      "avgLogprob": -0.122649,
+      "noSpeechProb": 0.007599,
+      "compressionRatio": 1.36,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 30000,
+          "endMs": 30240,
+          "probability": 0.506544
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 30240,
+          "endMs": 30480,
+          "probability": 0.958976
+        },
+        {
+          "index": 3,
+          "text": "rides",
+          "startMs": 30480,
+          "endMs": 30940,
+          "probability": 0.997686
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 30940,
+          "endMs": 31200,
+          "probability": 0.996697
+        },
+        {
+          "index": 5,
+          "text": "horse",
+          "startMs": 31200,
+          "endMs": 31540,
+          "probability": 0.999035
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 31540,
+          "endMs": 32520,
+          "probability": 0.843461
+        },
+        {
+          "index": 7,
+          "text": "climbs",
+          "startMs": 32520,
+          "endMs": 32980,
+          "probability": 0.995513
+        },
+        {
+          "index": 8,
+          "text": "towers.",
+          "startMs": 32980,
+          "endMs": 33580,
+          "probability": 0.975796
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "At dinner, Sir Pete listens to Lady Callie play the harp.",
+      "startMs": 35620,
+      "endMs": 40860,
+      "avgLogprob": -0.122649,
+      "noSpeechProb": 0.007599,
+      "compressionRatio": 1.36,
+      "words": [
+        {
+          "index": 1,
+          "text": "At",
+          "startMs": 35620,
+          "endMs": 36200,
+          "probability": 0.994694
+        },
+        {
+          "index": 2,
+          "text": "dinner,",
+          "startMs": 36200,
+          "endMs": 36600,
+          "probability": 0.998319
+        },
+        {
+          "index": 3,
+          "text": "Sir",
+          "startMs": 37520,
+          "endMs": 37580,
+          "probability": 0.990252
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 37580,
+          "endMs": 37920,
+          "probability": 0.997053
+        },
+        {
+          "index": 5,
+          "text": "listens",
+          "startMs": 37920,
+          "endMs": 38340,
+          "probability": 0.994179
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 38340,
+          "endMs": 38720,
+          "probability": 0.998951
+        },
+        {
+          "index": 7,
+          "text": "Lady",
+          "startMs": 38720,
+          "endMs": 39040,
+          "probability": 0.986664
+        },
+        {
+          "index": 8,
+          "text": "Callie",
+          "startMs": 39040,
+          "endMs": 39620,
+          "probability": 0.725396
+        },
+        {
+          "index": 9,
+          "text": "play",
+          "startMs": 39620,
+          "endMs": 40040,
+          "probability": 0.993593
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 40040,
+          "endMs": 40340,
+          "probability": 0.903185
+        },
+        {
+          "index": 11,
+          "text": "harp.",
+          "startMs": 40340,
+          "endMs": 40860,
+          "probability": 0.998307
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Lady Callie is awesome.",
+      "startMs": 47520,
+      "endMs": 50020,
+      "avgLogprob": -0.122649,
+      "noSpeechProb": 0.007599,
+      "compressionRatio": 1.36,
+      "words": [
+        {
+          "index": 1,
+          "text": "Lady",
+          "startMs": 47520,
+          "endMs": 48360,
+          "probability": 0.490557
+        },
+        {
+          "index": 2,
+          "text": "Callie",
+          "startMs": 48360,
+          "endMs": 48960,
+          "probability": 0.99484
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 48960,
+          "endMs": 49240,
+          "probability": 0.97964
+        },
+        {
+          "index": 4,
+          "text": "awesome.",
+          "startMs": 49240,
+          "endMs": 50020,
+          "probability": 0.956325
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "Bravo! Sir Pete yells at the end of each song.",
+      "startMs": 52160,
+      "endMs": 56000,
+      "avgLogprob": -0.122649,
+      "noSpeechProb": 0.007599,
+      "compressionRatio": 1.36,
+      "words": [
+        {
+          "index": 1,
+          "text": "Bravo!",
+          "startMs": 52160,
+          "endMs": 52580,
+          "probability": 0.596274
+        },
+        {
+          "index": 2,
+          "text": "Sir",
+          "startMs": 53500,
+          "endMs": 53820,
+          "probability": 0.989217
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 53820,
+          "endMs": 54140,
+          "probability": 0.996764
+        },
+        {
+          "index": 4,
+          "text": "yells",
+          "startMs": 54140,
+          "endMs": 54420,
+          "probability": 0.985671
+        },
+        {
+          "index": 5,
+          "text": "at",
+          "startMs": 54420,
+          "endMs": 54760,
+          "probability": 0.992294
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 54760,
+          "endMs": 54920,
+          "probability": 0.996393
+        },
+        {
+          "index": 7,
+          "text": "end",
+          "startMs": 54920,
+          "endMs": 55160,
+          "probability": 0.999093
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 55160,
+          "endMs": 55340,
+          "probability": 0.998101
+        },
+        {
+          "index": 9,
+          "text": "each",
+          "startMs": 55340,
+          "endMs": 55520,
+          "probability": 0.997882
+        },
+        {
+          "index": 10,
+          "text": "song.",
+          "startMs": 55520,
+          "endMs": 56000,
+          "probability": 0.998034
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "He claps louder than anyone.",
+      "startMs": 56000,
+      "endMs": 59120,
+      "avgLogprob": -0.128965,
+      "noSpeechProb": 0.031825,
+      "compressionRatio": 1.184874,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 56000,
+          "endMs": 57080,
+          "probability": 0.311472
+        },
+        {
+          "index": 2,
+          "text": "claps",
+          "startMs": 57080,
+          "endMs": 57620,
+          "probability": 0.981095
+        },
+        {
+          "index": 3,
+          "text": "louder",
+          "startMs": 57620,
+          "endMs": 58080,
+          "probability": 0.995193
+        },
+        {
+          "index": 4,
+          "text": "than",
+          "startMs": 58080,
+          "endMs": 58460,
+          "probability": 0.995928
+        },
+        {
+          "index": 5,
+          "text": "anyone.",
+          "startMs": 58460,
+          "endMs": 59120,
+          "probability": 0.993458
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "One night, while Lady Callie plays beautifully,",
+      "startMs": 61360,
+      "endMs": 64600,
+      "avgLogprob": -0.128965,
+      "noSpeechProb": 0.031825,
+      "compressionRatio": 1.184874,
+      "words": [
+        {
+          "index": 1,
+          "text": "One",
+          "startMs": 61360,
+          "endMs": 61540,
+          "probability": 0.992207
+        },
+        {
+          "index": 2,
+          "text": "night,",
+          "startMs": 61540,
+          "endMs": 61880,
+          "probability": 0.99874
+        },
+        {
+          "index": 3,
+          "text": "while",
+          "startMs": 62460,
+          "endMs": 62620,
+          "probability": 0.986238
+        },
+        {
+          "index": 4,
+          "text": "Lady",
+          "startMs": 62620,
+          "endMs": 62960,
+          "probability": 0.965156
+        },
+        {
+          "index": 5,
+          "text": "Callie",
+          "startMs": 62960,
+          "endMs": 63480,
+          "probability": 0.69679
+        },
+        {
+          "index": 6,
+          "text": "plays",
+          "startMs": 63480,
+          "endMs": 63880,
+          "probability": 0.994525
+        },
+        {
+          "index": 7,
+          "text": "beautifully,",
+          "startMs": 63880,
+          "endMs": 64600,
+          "probability": 0.99403
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "someone casts a spell,",
+      "startMs": 65840,
+      "endMs": 67640,
+      "avgLogprob": -0.128965,
+      "noSpeechProb": 0.031825,
+      "compressionRatio": 1.184874,
+      "words": [
+        {
+          "index": 1,
+          "text": "someone",
+          "startMs": 65840,
+          "endMs": 66200,
+          "probability": 0.867773
+        },
+        {
+          "index": 2,
+          "text": "casts",
+          "startMs": 66200,
+          "endMs": 66740,
+          "probability": 0.99647
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 66740,
+          "endMs": 67080,
+          "probability": 0.998527
+        },
+        {
+          "index": 4,
+          "text": "spell,",
+          "startMs": 67080,
+          "endMs": 67640,
+          "probability": 0.998352
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "and everyone falls asleep.",
+      "startMs": 68880,
+      "endMs": 71780,
+      "avgLogprob": -0.128965,
+      "noSpeechProb": 0.031825,
+      "compressionRatio": 1.184874,
+      "words": [
+        {
+          "index": 1,
+          "text": "and",
+          "startMs": 68880,
+          "endMs": 69960,
+          "probability": 0.967614
+        },
+        {
+          "index": 2,
+          "text": "everyone",
+          "startMs": 69960,
+          "endMs": 70660,
+          "probability": 0.989678
+        },
+        {
+          "index": 3,
+          "text": "falls",
+          "startMs": 70660,
+          "endMs": 71180,
+          "probability": 0.997257
+        },
+        {
+          "index": 4,
+          "text": "asleep.",
+          "startMs": 71180,
+          "endMs": 71780,
+          "probability": 0.99773
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Even Sir Pete!",
+      "startMs": 77000,
+      "endMs": 78260,
+      "avgLogprob": -0.128965,
+      "noSpeechProb": 0.031825,
+      "compressionRatio": 1.184874,
+      "words": [
+        {
+          "index": 1,
+          "text": "Even",
+          "startMs": 76900,
+          "endMs": 77440,
+          "probability": 0.630681
+        },
+        {
+          "index": 2,
+          "text": "Sir",
+          "startMs": 77440,
+          "endMs": 77820,
+          "probability": 0.941424
+        },
+        {
+          "index": 3,
+          "text": "Pete!",
+          "startMs": 77820,
+          "endMs": 78260,
+          "probability": 0.945366
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "The next morning, Lady Callie is gone.",
+      "startMs": 82740,
+      "endMs": 86940,
+      "avgLogprob": -0.222234,
+      "noSpeechProb": 0.032577,
+      "compressionRatio": 1.263158,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 82740,
+          "endMs": 83660,
+          "probability": 0.636439
+        },
+        {
+          "index": 2,
+          "text": "next",
+          "startMs": 83660,
+          "endMs": 83980,
+          "probability": 0.990672
+        },
+        {
+          "index": 3,
+          "text": "morning,",
+          "startMs": 83980,
+          "endMs": 84540,
+          "probability": 0.990169
+        },
+        {
+          "index": 4,
+          "text": "Lady",
+          "startMs": 85620,
+          "endMs": 85820,
+          "probability": 0.924235
+        },
+        {
+          "index": 5,
+          "text": "Callie",
+          "startMs": 85820,
+          "endMs": 86300,
+          "probability": 0.702995
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 86300,
+          "endMs": 86540,
+          "probability": 0.993146
+        },
+        {
+          "index": 7,
+          "text": "gone.",
+          "startMs": 86540,
+          "endMs": 86940,
+          "probability": 0.997721
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Oh no! says Sir Pete the Brave.",
+      "startMs": 88160,
+      "endMs": 90900,
+      "avgLogprob": -0.222234,
+      "noSpeechProb": 0.032577,
+      "compressionRatio": 1.263158,
+      "words": [
+        {
+          "index": 1,
+          "text": "Oh",
+          "startMs": 88160,
+          "endMs": 88420,
+          "probability": 0.146409
+        },
+        {
+          "index": 2,
+          "text": "no!",
+          "startMs": 88420,
+          "endMs": 88900,
+          "probability": 0.643511
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 89560,
+          "endMs": 89720,
+          "probability": 0.774353
+        },
+        {
+          "index": 4,
+          "text": "Sir",
+          "startMs": 89720,
+          "endMs": 90040,
+          "probability": 0.609068
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 90040,
+          "endMs": 90300,
+          "probability": 0.950618
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 90300,
+          "endMs": 90560,
+          "probability": 0.960725
+        },
+        {
+          "index": 7,
+          "text": "Brave.",
+          "startMs": 90560,
+          "endMs": 90900,
+          "probability": 0.782362
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "I will find Lady Callie and save her.",
+      "startMs": 92880,
+      "endMs": 96820,
+      "avgLogprob": -0.222234,
+      "noSpeechProb": 0.032577,
+      "compressionRatio": 1.263158,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 92880,
+          "endMs": 93500,
+          "probability": 0.989812
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 93500,
+          "endMs": 93760,
+          "probability": 0.993358
+        },
+        {
+          "index": 3,
+          "text": "find",
+          "startMs": 93760,
+          "endMs": 94180,
+          "probability": 0.99691
+        },
+        {
+          "index": 4,
+          "text": "Lady",
+          "startMs": 94180,
+          "endMs": 94540,
+          "probability": 0.993242
+        },
+        {
+          "index": 5,
+          "text": "Callie",
+          "startMs": 94540,
+          "endMs": 95100,
+          "probability": 0.995493
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 95100,
+          "endMs": 95580,
+          "probability": 0.92689
+        },
+        {
+          "index": 7,
+          "text": "save",
+          "startMs": 95580,
+          "endMs": 96040,
+          "probability": 0.995464
+        },
+        {
+          "index": 8,
+          "text": "her.",
+          "startMs": 96040,
+          "endMs": 96820,
+          "probability": 0.998149
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Giddy up!",
+      "startMs": 97700,
+      "endMs": 98500,
+      "avgLogprob": -0.222234,
+      "noSpeechProb": 0.032577,
+      "compressionRatio": 1.263158,
+      "words": [
+        {
+          "index": 1,
+          "text": "Giddy",
+          "startMs": 97700,
+          "endMs": 97940,
+          "probability": 0.96779
+        },
+        {
+          "index": 2,
+          "text": "up!",
+          "startMs": 97940,
+          "endMs": 98500,
+          "probability": 0.660164
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Sir Pete falls in a hole.",
+      "startMs": 105100,
+      "endMs": 107860,
+      "avgLogprob": -0.222234,
+      "noSpeechProb": 0.032577,
+      "compressionRatio": 1.263158,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 105100,
+          "endMs": 106020,
+          "probability": 0.963111
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 106020,
+          "endMs": 106480,
+          "probability": 0.993631
+        },
+        {
+          "index": 3,
+          "text": "falls",
+          "startMs": 106480,
+          "endMs": 107020,
+          "probability": 0.97916
+        },
+        {
+          "index": 4,
+          "text": "in",
+          "startMs": 107020,
+          "endMs": 107300,
+          "probability": 0.994851
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 107300,
+          "endMs": 107480,
+          "probability": 0.993141
+        },
+        {
+          "index": 6,
+          "text": "hole.",
+          "startMs": 107480,
+          "endMs": 107860,
+          "probability": 0.999627
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "The hole is a dragon's footprint.",
+      "startMs": 108860,
+      "endMs": 113000,
+      "avgLogprob": -0.077269,
+      "noSpeechProb": 0.073193,
+      "compressionRatio": 1.496644,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 108860,
+          "endMs": 109340,
+          "probability": 0.8831
+        },
+        {
+          "index": 2,
+          "text": "hole",
+          "startMs": 109340,
+          "endMs": 109820,
+          "probability": 0.822944
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 109820,
+          "endMs": 111060,
+          "probability": 0.871212
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 111060,
+          "endMs": 111400,
+          "probability": 0.990991
+        },
+        {
+          "index": 5,
+          "text": "dragon's",
+          "startMs": 111400,
+          "endMs": 112260,
+          "probability": 0.989277
+        },
+        {
+          "index": 6,
+          "text": "footprint.",
+          "startMs": 112260,
+          "endMs": 113000,
+          "probability": 0.959199
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Follow the footprints, Sir Pete says to his horse.",
+      "startMs": 115280,
+      "endMs": 118940,
+      "avgLogprob": -0.077269,
+      "noSpeechProb": 0.073193,
+      "compressionRatio": 1.496644,
+      "words": [
+        {
+          "index": 1,
+          "text": "Follow",
+          "startMs": 115280,
+          "endMs": 115720,
+          "probability": 0.763529
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 115720,
+          "endMs": 116020,
+          "probability": 0.998514
+        },
+        {
+          "index": 3,
+          "text": "footprints,",
+          "startMs": 116020,
+          "endMs": 116620,
+          "probability": 0.96988
+        },
+        {
+          "index": 4,
+          "text": "Sir",
+          "startMs": 117520,
+          "endMs": 117560,
+          "probability": 0.846454
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 117560,
+          "endMs": 117840,
+          "probability": 0.98208
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 117840,
+          "endMs": 118160,
+          "probability": 0.996393
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 118160,
+          "endMs": 118440,
+          "probability": 0.995602
+        },
+        {
+          "index": 8,
+          "text": "his",
+          "startMs": 118440,
+          "endMs": 118640,
+          "probability": 0.998308
+        },
+        {
+          "index": 9,
+          "text": "horse.",
+          "startMs": 118640,
+          "endMs": 118940,
+          "probability": 0.995472
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "The footprints stop. Where did the dragon go?",
+      "startMs": 120880,
+      "endMs": 124760,
+      "avgLogprob": -0.077269,
+      "noSpeechProb": 0.073193,
+      "compressionRatio": 1.496644,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 120880,
+          "endMs": 121360,
+          "probability": 0.99184
+        },
+        {
+          "index": 2,
+          "text": "footprints",
+          "startMs": 121360,
+          "endMs": 121820,
+          "probability": 0.875618
+        },
+        {
+          "index": 3,
+          "text": "stop.",
+          "startMs": 121820,
+          "endMs": 122340,
+          "probability": 0.992541
+        },
+        {
+          "index": 4,
+          "text": "Where",
+          "startMs": 123440,
+          "endMs": 123560,
+          "probability": 0.996566
+        },
+        {
+          "index": 5,
+          "text": "did",
+          "startMs": 123560,
+          "endMs": 123740,
+          "probability": 0.998121
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 123740,
+          "endMs": 123900,
+          "probability": 0.998978
+        },
+        {
+          "index": 7,
+          "text": "dragon",
+          "startMs": 123900,
+          "endMs": 124240,
+          "probability": 0.992445
+        },
+        {
+          "index": 8,
+          "text": "go?",
+          "startMs": 124240,
+          "endMs": 124760,
+          "probability": 0.999201
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Sir Pete looks up,",
+      "startMs": 126000,
+      "endMs": 127620,
+      "avgLogprob": -0.077269,
+      "noSpeechProb": 0.073193,
+      "compressionRatio": 1.496644,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 126000,
+          "endMs": 126340,
+          "probability": 0.982194
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 126340,
+          "endMs": 126760,
+          "probability": 0.996112
+        },
+        {
+          "index": 3,
+          "text": "looks",
+          "startMs": 126760,
+          "endMs": 127080,
+          "probability": 0.997015
+        },
+        {
+          "index": 4,
+          "text": "up,",
+          "startMs": 127080,
+          "endMs": 127620,
+          "probability": 0.999504
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "and sees the dragon flying across the lake with Lady Callie and her harp.",
+      "startMs": 129100,
+      "endMs": 136040,
+      "avgLogprob": -0.077269,
+      "noSpeechProb": 0.073193,
+      "compressionRatio": 1.496644,
+      "words": [
+        {
+          "index": 1,
+          "text": "and",
+          "startMs": 129100,
+          "endMs": 130040,
+          "probability": 0.888767
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 130040,
+          "endMs": 130360,
+          "probability": 0.996893
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 130360,
+          "endMs": 130680,
+          "probability": 0.997091
+        },
+        {
+          "index": 4,
+          "text": "dragon",
+          "startMs": 130680,
+          "endMs": 131220,
+          "probability": 0.99573
+        },
+        {
+          "index": 5,
+          "text": "flying",
+          "startMs": 131220,
+          "endMs": 132220,
+          "probability": 0.893011
+        },
+        {
+          "index": 6,
+          "text": "across",
+          "startMs": 132220,
+          "endMs": 132700,
+          "probability": 0.997578
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 132700,
+          "endMs": 133020,
+          "probability": 0.998288
+        },
+        {
+          "index": 8,
+          "text": "lake",
+          "startMs": 133020,
+          "endMs": 133380,
+          "probability": 0.994679
+        },
+        {
+          "index": 9,
+          "text": "with",
+          "startMs": 133380,
+          "endMs": 133960,
+          "probability": 0.946293
+        },
+        {
+          "index": 10,
+          "text": "Lady",
+          "startMs": 133960,
+          "endMs": 134380,
+          "probability": 0.969904
+        },
+        {
+          "index": 11,
+          "text": "Callie",
+          "startMs": 134380,
+          "endMs": 134940,
+          "probability": 0.678854
+        },
+        {
+          "index": 12,
+          "text": "and",
+          "startMs": 134940,
+          "endMs": 135260,
+          "probability": 0.989839
+        },
+        {
+          "index": 13,
+          "text": "her",
+          "startMs": 135260,
+          "endMs": 135540,
+          "probability": 0.995513
+        },
+        {
+          "index": 14,
+          "text": "harp.",
+          "startMs": 135540,
+          "endMs": 136040,
+          "probability": 0.984081
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Sir Pete can't fly, but he can row across the lake he goes.",
+      "startMs": 137860,
+      "endMs": 144760,
+      "avgLogprob": -0.061899,
+      "noSpeechProb": 0.006454,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 137860,
+          "endMs": 138360,
+          "probability": 0.71572
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 138360,
+          "endMs": 138660,
+          "probability": 0.939714
+        },
+        {
+          "index": 3,
+          "text": "can't",
+          "startMs": 138660,
+          "endMs": 139140,
+          "probability": 0.98608
+        },
+        {
+          "index": 4,
+          "text": "fly,",
+          "startMs": 139140,
+          "endMs": 139520,
+          "probability": 0.99741
+        },
+        {
+          "index": 5,
+          "text": "but",
+          "startMs": 140640,
+          "endMs": 140700,
+          "probability": 0.979343
+        },
+        {
+          "index": 6,
+          "text": "he",
+          "startMs": 140700,
+          "endMs": 140920,
+          "probability": 0.997246
+        },
+        {
+          "index": 7,
+          "text": "can",
+          "startMs": 140920,
+          "endMs": 141380,
+          "probability": 0.987319
+        },
+        {
+          "index": 8,
+          "text": "row",
+          "startMs": 141380,
+          "endMs": 141840,
+          "probability": 0.912336
+        },
+        {
+          "index": 9,
+          "text": "across",
+          "startMs": 141840,
+          "endMs": 143300,
+          "probability": 0.115337
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 143300,
+          "endMs": 143680,
+          "probability": 0.993017
+        },
+        {
+          "index": 11,
+          "text": "lake",
+          "startMs": 143680,
+          "endMs": 143960,
+          "probability": 0.982479
+        },
+        {
+          "index": 12,
+          "text": "he",
+          "startMs": 143960,
+          "endMs": 144240,
+          "probability": 0.989649
+        },
+        {
+          "index": 13,
+          "text": "goes.",
+          "startMs": 144240,
+          "endMs": 144760,
+          "probability": 0.998474
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Sir Pete sees a dragon cave.",
+      "startMs": 147080,
+      "endMs": 149740,
+      "avgLogprob": -0.061899,
+      "noSpeechProb": 0.006454,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 147080,
+          "endMs": 147280,
+          "probability": 0.987899
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 147280,
+          "endMs": 147700,
+          "probability": 0.998183
+        },
+        {
+          "index": 3,
+          "text": "sees",
+          "startMs": 147700,
+          "endMs": 148420,
+          "probability": 0.990575
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 148420,
+          "endMs": 148700,
+          "probability": 0.997308
+        },
+        {
+          "index": 5,
+          "text": "dragon",
+          "startMs": 148700,
+          "endMs": 149140,
+          "probability": 0.904445
+        },
+        {
+          "index": 6,
+          "text": "cave.",
+          "startMs": 149140,
+          "endMs": 149740,
+          "probability": 0.994003
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "He has to go inside, but it is very dark.",
+      "startMs": 150880,
+      "endMs": 154840,
+      "avgLogprob": -0.061899,
+      "noSpeechProb": 0.006454,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 150880,
+          "endMs": 151060,
+          "probability": 0.995157
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 151060,
+          "endMs": 151320,
+          "probability": 0.997154
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 151320,
+          "endMs": 151560,
+          "probability": 0.998611
+        },
+        {
+          "index": 4,
+          "text": "go",
+          "startMs": 151560,
+          "endMs": 151760,
+          "probability": 0.997295
+        },
+        {
+          "index": 5,
+          "text": "inside,",
+          "startMs": 151760,
+          "endMs": 152380,
+          "probability": 0.999178
+        },
+        {
+          "index": 6,
+          "text": "but",
+          "startMs": 153000,
+          "endMs": 153480,
+          "probability": 0.997597
+        },
+        {
+          "index": 7,
+          "text": "it",
+          "startMs": 153480,
+          "endMs": 153600,
+          "probability": 0.991659
+        },
+        {
+          "index": 8,
+          "text": "is",
+          "startMs": 153600,
+          "endMs": 153780,
+          "probability": 0.989438
+        },
+        {
+          "index": 9,
+          "text": "very",
+          "startMs": 153780,
+          "endMs": 154280,
+          "probability": 0.998746
+        },
+        {
+          "index": 10,
+          "text": "dark.",
+          "startMs": 154280,
+          "endMs": 154840,
+          "probability": 0.99948
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Then he hears music.",
+      "startMs": 157040,
+      "endMs": 159460,
+      "avgLogprob": -0.061899,
+      "noSpeechProb": 0.006454,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 157040,
+          "endMs": 157420,
+          "probability": 0.991591
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 157420,
+          "endMs": 158500,
+          "probability": 0.566651
+        },
+        {
+          "index": 3,
+          "text": "hears",
+          "startMs": 158500,
+          "endMs": 158840,
+          "probability": 0.999517
+        },
+        {
+          "index": 4,
+          "text": "music.",
+          "startMs": 158840,
+          "endMs": 159460,
+          "probability": 0.997146
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "He must save Lady Callie. He won't be scared.",
+      "startMs": 160740,
+      "endMs": 164880,
+      "avgLogprob": -0.061899,
+      "noSpeechProb": 0.006454,
+      "compressionRatio": 1.358621,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 160740,
+          "endMs": 160940,
+          "probability": 0.996011
+        },
+        {
+          "index": 2,
+          "text": "must",
+          "startMs": 160940,
+          "endMs": 161260,
+          "probability": 0.99901
+        },
+        {
+          "index": 3,
+          "text": "save",
+          "startMs": 161260,
+          "endMs": 161840,
+          "probability": 0.997399
+        },
+        {
+          "index": 4,
+          "text": "Lady",
+          "startMs": 161840,
+          "endMs": 162160,
+          "probability": 0.983056
+        },
+        {
+          "index": 5,
+          "text": "Callie.",
+          "startMs": 162160,
+          "endMs": 162760,
+          "probability": 0.737136
+        },
+        {
+          "index": 6,
+          "text": "He",
+          "startMs": 163480,
+          "endMs": 163740,
+          "probability": 0.997312
+        },
+        {
+          "index": 7,
+          "text": "won't",
+          "startMs": 163740,
+          "endMs": 164180,
+          "probability": 0.997281
+        },
+        {
+          "index": 8,
+          "text": "be",
+          "startMs": 164180,
+          "endMs": 164380,
+          "probability": 0.999492
+        },
+        {
+          "index": 9,
+          "text": "scared.",
+          "startMs": 164380,
+          "endMs": 164880,
+          "probability": 0.998831
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "He finds a harp, but no Lady Callie.",
+      "startMs": 166440,
+      "endMs": 170960,
+      "avgLogprob": -0.084368,
+      "noSpeechProb": 0.005258,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 166440,
+          "endMs": 167240,
+          "probability": 0.27997
+        },
+        {
+          "index": 2,
+          "text": "finds",
+          "startMs": 167240,
+          "endMs": 167580,
+          "probability": 0.307726
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 167580,
+          "endMs": 167860,
+          "probability": 0.987431
+        },
+        {
+          "index": 4,
+          "text": "harp,",
+          "startMs": 167860,
+          "endMs": 168740,
+          "probability": 0.987867
+        },
+        {
+          "index": 5,
+          "text": "but",
+          "startMs": 169160,
+          "endMs": 169580,
+          "probability": 0.963248
+        },
+        {
+          "index": 6,
+          "text": "no",
+          "startMs": 169580,
+          "endMs": 169960,
+          "probability": 0.994789
+        },
+        {
+          "index": 7,
+          "text": "Lady",
+          "startMs": 169960,
+          "endMs": 170320,
+          "probability": 0.954988
+        },
+        {
+          "index": 8,
+          "text": "Callie.",
+          "startMs": 170320,
+          "endMs": 170960,
+          "probability": 0.770186
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Sir Pete will not give up. He climbs the highest hill.",
+      "startMs": 173140,
+      "endMs": 177420,
+      "avgLogprob": -0.084368,
+      "noSpeechProb": 0.005258,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 173140,
+          "endMs": 173220,
+          "probability": 0.352581
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 173220,
+          "endMs": 173540,
+          "probability": 0.884629
+        },
+        {
+          "index": 3,
+          "text": "will",
+          "startMs": 173540,
+          "endMs": 173900,
+          "probability": 0.992311
+        },
+        {
+          "index": 4,
+          "text": "not",
+          "startMs": 173900,
+          "endMs": 174300,
+          "probability": 0.995808
+        },
+        {
+          "index": 5,
+          "text": "give",
+          "startMs": 174300,
+          "endMs": 174600,
+          "probability": 0.999171
+        },
+        {
+          "index": 6,
+          "text": "up.",
+          "startMs": 174600,
+          "endMs": 174980,
+          "probability": 0.999622
+        },
+        {
+          "index": 7,
+          "text": "He",
+          "startMs": 175680,
+          "endMs": 175860,
+          "probability": 0.996431
+        },
+        {
+          "index": 8,
+          "text": "climbs",
+          "startMs": 175860,
+          "endMs": 176260,
+          "probability": 0.99832
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 176260,
+          "endMs": 176620,
+          "probability": 0.996736
+        },
+        {
+          "index": 10,
+          "text": "highest",
+          "startMs": 176620,
+          "endMs": 177020,
+          "probability": 0.995308
+        },
+        {
+          "index": 11,
+          "text": "hill.",
+          "startMs": 177020,
+          "endMs": 177420,
+          "probability": 0.993375
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "He looks around for Lady Callie.",
+      "startMs": 178300,
+      "endMs": 180320,
+      "avgLogprob": -0.084368,
+      "noSpeechProb": 0.005258,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 178300,
+          "endMs": 178420,
+          "probability": 0.997517
+        },
+        {
+          "index": 2,
+          "text": "looks",
+          "startMs": 178420,
+          "endMs": 178640,
+          "probability": 0.997467
+        },
+        {
+          "index": 3,
+          "text": "around",
+          "startMs": 178640,
+          "endMs": 179060,
+          "probability": 0.996356
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 179060,
+          "endMs": 179420,
+          "probability": 0.997981
+        },
+        {
+          "index": 5,
+          "text": "Lady",
+          "startMs": 179420,
+          "endMs": 179720,
+          "probability": 0.995132
+        },
+        {
+          "index": 6,
+          "text": "Callie.",
+          "startMs": 179720,
+          "endMs": 180320,
+          "probability": 0.996907
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Then he hears a loud growl.",
+      "startMs": 182320,
+      "endMs": 185240,
+      "avgLogprob": -0.084368,
+      "noSpeechProb": 0.005258,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 182320,
+          "endMs": 182600,
+          "probability": 0.988262
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 182600,
+          "endMs": 182900,
+          "probability": 0.96548
+        },
+        {
+          "index": 3,
+          "text": "hears",
+          "startMs": 182900,
+          "endMs": 183260,
+          "probability": 0.99892
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 183260,
+          "endMs": 183600,
+          "probability": 0.997644
+        },
+        {
+          "index": 5,
+          "text": "loud",
+          "startMs": 183600,
+          "endMs": 184200,
+          "probability": 0.999573
+        },
+        {
+          "index": 6,
+          "text": "growl.",
+          "startMs": 184200,
+          "endMs": 185240,
+          "probability": 0.996215
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Sir Pete is scared.",
+      "startMs": 190200,
+      "endMs": 192020,
+      "avgLogprob": -0.084368,
+      "noSpeechProb": 0.005258,
+      "compressionRatio": 1.333333,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 190200,
+          "endMs": 191000,
+          "probability": 0.001103
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 191000,
+          "endMs": 191400,
+          "probability": 0.99611
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 191400,
+          "endMs": 191540,
+          "probability": 0.9964
+        },
+        {
+          "index": 4,
+          "text": "scared.",
+          "startMs": 191540,
+          "endMs": 192020,
+          "probability": 0.998637
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "The hill starts the dragon's back.",
+      "startMs": 193720,
+      "endMs": 197340,
+      "avgLogprob": -0.141428,
+      "noSpeechProb": 0.00647,
+      "compressionRatio": 1.452381,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 193720,
+          "endMs": 194680,
+          "probability": 0.74656
+        },
+        {
+          "index": 2,
+          "text": "hill",
+          "startMs": 194680,
+          "endMs": 195040,
+          "probability": 0.809026
+        },
+        {
+          "index": 3,
+          "text": "starts",
+          "startMs": 195040,
+          "endMs": 195520,
+          "probability": 0.249587
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 195520,
+          "endMs": 195820,
+          "probability": 0.600784
+        },
+        {
+          "index": 5,
+          "text": "dragon's",
+          "startMs": 195820,
+          "endMs": 196680,
+          "probability": 0.811911
+        },
+        {
+          "index": 6,
+          "text": "back.",
+          "startMs": 196680,
+          "endMs": 197340,
+          "probability": 0.984808
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "Sir Pete knows what to do. He slides down, down, down the dragon's back.",
+      "startMs": 199840,
+      "endMs": 207020,
+      "avgLogprob": -0.141428,
+      "noSpeechProb": 0.00647,
+      "compressionRatio": 1.452381,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 199840,
+          "endMs": 199940,
+          "probability": 0.799307
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 199940,
+          "endMs": 200280,
+          "probability": 0.959739
+        },
+        {
+          "index": 3,
+          "text": "knows",
+          "startMs": 200280,
+          "endMs": 200760,
+          "probability": 0.975823
+        },
+        {
+          "index": 4,
+          "text": "what",
+          "startMs": 200760,
+          "endMs": 201100,
+          "probability": 0.997649
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 201100,
+          "endMs": 201360,
+          "probability": 0.997778
+        },
+        {
+          "index": 6,
+          "text": "do.",
+          "startMs": 201360,
+          "endMs": 201880,
+          "probability": 0.998893
+        },
+        {
+          "index": 7,
+          "text": "He",
+          "startMs": 202500,
+          "endMs": 202640,
+          "probability": 0.988352
+        },
+        {
+          "index": 8,
+          "text": "slides",
+          "startMs": 202640,
+          "endMs": 203280,
+          "probability": 0.960062
+        },
+        {
+          "index": 9,
+          "text": "down,",
+          "startMs": 203280,
+          "endMs": 204220,
+          "probability": 0.988947
+        },
+        {
+          "index": 10,
+          "text": "down,",
+          "startMs": 204640,
+          "endMs": 204820,
+          "probability": 0.995446
+        },
+        {
+          "index": 11,
+          "text": "down",
+          "startMs": 205420,
+          "endMs": 205460,
+          "probability": 0.997732
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 205460,
+          "endMs": 205880,
+          "probability": 0.921999
+        },
+        {
+          "index": 13,
+          "text": "dragon's",
+          "startMs": 205880,
+          "endMs": 206620,
+          "probability": 0.978926
+        },
+        {
+          "index": 14,
+          "text": "back.",
+          "startMs": 206620,
+          "endMs": 207020,
+          "probability": 0.998492
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "The dragon sees Pete and roars.",
+      "startMs": 209160,
+      "endMs": 212480,
+      "avgLogprob": -0.141428,
+      "noSpeechProb": 0.00647,
+      "compressionRatio": 1.452381,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 209160,
+          "endMs": 209380,
+          "probability": 0.993977
+        },
+        {
+          "index": 2,
+          "text": "dragon",
+          "startMs": 209380,
+          "endMs": 209760,
+          "probability": 0.976686
+        },
+        {
+          "index": 3,
+          "text": "sees",
+          "startMs": 209760,
+          "endMs": 210340,
+          "probability": 0.962328
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 210340,
+          "endMs": 210800,
+          "probability": 0.985105
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 210800,
+          "endMs": 211600,
+          "probability": 0.906483
+        },
+        {
+          "index": 6,
+          "text": "roars.",
+          "startMs": 211600,
+          "endMs": 212480,
+          "probability": 0.98506
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Sir Pete says Lady Callie, I will save you.",
+      "startMs": 213920,
+      "endMs": 219100,
+      "avgLogprob": -0.141428,
+      "noSpeechProb": 0.00647,
+      "compressionRatio": 1.452381,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 213920,
+          "endMs": 214280,
+          "probability": 0.875289
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 214280,
+          "endMs": 214840,
+          "probability": 0.995915
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 214840,
+          "endMs": 215740,
+          "probability": 0.449757
+        },
+        {
+          "index": 4,
+          "text": "Lady",
+          "startMs": 215740,
+          "endMs": 216140,
+          "probability": 0.750377
+        },
+        {
+          "index": 5,
+          "text": "Callie,",
+          "startMs": 216140,
+          "endMs": 216680,
+          "probability": 0.69784
+        },
+        {
+          "index": 6,
+          "text": "I",
+          "startMs": 217500,
+          "endMs": 217940,
+          "probability": 0.97566
+        },
+        {
+          "index": 7,
+          "text": "will",
+          "startMs": 217940,
+          "endMs": 218160,
+          "probability": 0.996236
+        },
+        {
+          "index": 8,
+          "text": "save",
+          "startMs": 218160,
+          "endMs": 218600,
+          "probability": 0.998716
+        },
+        {
+          "index": 9,
+          "text": "you.",
+          "startMs": 218600,
+          "endMs": 219100,
+          "probability": 0.998987
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "Save me, says Sir Pete, but I came to save you.",
+      "startMs": 220780,
+      "endMs": 226480,
+      "avgLogprob": -0.070659,
+      "noSpeechProb": 0.005723,
+      "compressionRatio": 1.414815,
+      "words": [
+        {
+          "index": 1,
+          "text": "Save",
+          "startMs": 220780,
+          "endMs": 221640,
+          "probability": 0.042062
+        },
+        {
+          "index": 2,
+          "text": "me,",
+          "startMs": 221640,
+          "endMs": 222200,
+          "probability": 0.982039
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 222780,
+          "endMs": 223060,
+          "probability": 0.934173
+        },
+        {
+          "index": 4,
+          "text": "Sir",
+          "startMs": 223060,
+          "endMs": 223360,
+          "probability": 0.445997
+        },
+        {
+          "index": 5,
+          "text": "Pete,",
+          "startMs": 223360,
+          "endMs": 223660,
+          "probability": 0.899598
+        },
+        {
+          "index": 6,
+          "text": "but",
+          "startMs": 224320,
+          "endMs": 224860,
+          "probability": 0.971624
+        },
+        {
+          "index": 7,
+          "text": "I",
+          "startMs": 224860,
+          "endMs": 225080,
+          "probability": 0.988025
+        },
+        {
+          "index": 8,
+          "text": "came",
+          "startMs": 225080,
+          "endMs": 225360,
+          "probability": 0.997063
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 225360,
+          "endMs": 225620,
+          "probability": 0.998368
+        },
+        {
+          "index": 10,
+          "text": "save",
+          "startMs": 225620,
+          "endMs": 225880,
+          "probability": 0.998715
+        },
+        {
+          "index": 11,
+          "text": "you.",
+          "startMs": 225880,
+          "endMs": 226480,
+          "probability": 0.986665
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "Sir Pete and Lady Callie start to argue.",
+      "startMs": 228200,
+      "endMs": 231320,
+      "avgLogprob": -0.070659,
+      "noSpeechProb": 0.005723,
+      "compressionRatio": 1.414815,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sir",
+          "startMs": 228200,
+          "endMs": 228860,
+          "probability": 0.933231
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 228860,
+          "endMs": 229180,
+          "probability": 0.996492
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 229180,
+          "endMs": 229420,
+          "probability": 0.994916
+        },
+        {
+          "index": 4,
+          "text": "Lady",
+          "startMs": 229420,
+          "endMs": 229720,
+          "probability": 0.988819
+        },
+        {
+          "index": 5,
+          "text": "Callie",
+          "startMs": 229720,
+          "endMs": 230260,
+          "probability": 0.653657
+        },
+        {
+          "index": 6,
+          "text": "start",
+          "startMs": 230260,
+          "endMs": 230600,
+          "probability": 0.992836
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 230600,
+          "endMs": 230840,
+          "probability": 0.998544
+        },
+        {
+          "index": 8,
+          "text": "argue.",
+          "startMs": 230840,
+          "endMs": 231320,
+          "probability": 0.999445
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "The dragon starts to cry.",
+      "startMs": 232600,
+      "endMs": 234660,
+      "avgLogprob": -0.070659,
+      "noSpeechProb": 0.005723,
+      "compressionRatio": 1.414815,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 232600,
+          "endMs": 232780,
+          "probability": 0.995026
+        },
+        {
+          "index": 2,
+          "text": "dragon",
+          "startMs": 232780,
+          "endMs": 233100,
+          "probability": 0.878268
+        },
+        {
+          "index": 3,
+          "text": "starts",
+          "startMs": 233100,
+          "endMs": 233840,
+          "probability": 0.996356
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 233840,
+          "endMs": 234200,
+          "probability": 0.998992
+        },
+        {
+          "index": 5,
+          "text": "cry.",
+          "startMs": 234200,
+          "endMs": 234660,
+          "probability": 0.999378
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "I just wanted to sing along.",
+      "startMs": 236480,
+      "endMs": 239820,
+      "avgLogprob": -0.070659,
+      "noSpeechProb": 0.005723,
+      "compressionRatio": 1.414815,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 236480,
+          "endMs": 237180,
+          "probability": 0.658273
+        },
+        {
+          "index": 2,
+          "text": "just",
+          "startMs": 237180,
+          "endMs": 237660,
+          "probability": 0.990033
+        },
+        {
+          "index": 3,
+          "text": "wanted",
+          "startMs": 237660,
+          "endMs": 238340,
+          "probability": 0.994056
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 238340,
+          "endMs": 238680,
+          "probability": 0.998671
+        },
+        {
+          "index": 5,
+          "text": "sing",
+          "startMs": 238680,
+          "endMs": 239100,
+          "probability": 0.999132
+        },
+        {
+          "index": 6,
+          "text": "along.",
+          "startMs": 239100,
+          "endMs": 239820,
+          "probability": 0.995669
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "The dragon sobs.",
+      "startMs": 240960,
+      "endMs": 242380,
+      "avgLogprob": -0.070659,
+      "noSpeechProb": 0.005723,
+      "compressionRatio": 1.414815,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 240960,
+          "endMs": 241200,
+          "probability": 0.980848
+        },
+        {
+          "index": 2,
+          "text": "dragon",
+          "startMs": 241200,
+          "endMs": 241640,
+          "probability": 0.968425
+        },
+        {
+          "index": 3,
+          "text": "sobs.",
+          "startMs": 241640,
+          "endMs": 242380,
+          "probability": 0.949016
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "I did not want to hurt anyone.",
+      "startMs": 243340,
+      "endMs": 245760,
+      "avgLogprob": -0.070659,
+      "noSpeechProb": 0.005723,
+      "compressionRatio": 1.414815,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 243340,
+          "endMs": 243620,
+          "probability": 0.995967
+        },
+        {
+          "index": 2,
+          "text": "did",
+          "startMs": 243620,
+          "endMs": 243800,
+          "probability": 0.984639
+        },
+        {
+          "index": 3,
+          "text": "not",
+          "startMs": 243800,
+          "endMs": 244160,
+          "probability": 0.998753
+        },
+        {
+          "index": 4,
+          "text": "want",
+          "startMs": 244160,
+          "endMs": 244500,
+          "probability": 0.998208
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 244500,
+          "endMs": 244780,
+          "probability": 0.997292
+        },
+        {
+          "index": 6,
+          "text": "hurt",
+          "startMs": 244780,
+          "endMs": 245160,
+          "probability": 0.985266
+        },
+        {
+          "index": 7,
+          "text": "anyone.",
+          "startMs": 245160,
+          "endMs": 245760,
+          "probability": 0.997764
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "I have an idea, says Sir Pete.",
+      "startMs": 247780,
+      "endMs": 251260,
+      "avgLogprob": -0.047607,
+      "noSpeechProb": 0.005703,
+      "compressionRatio": 1.367742,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 247780,
+          "endMs": 248460,
+          "probability": 0.206961
+        },
+        {
+          "index": 2,
+          "text": "have",
+          "startMs": 248460,
+          "endMs": 248780,
+          "probability": 0.954366
+        },
+        {
+          "index": 3,
+          "text": "an",
+          "startMs": 248780,
+          "endMs": 248980,
+          "probability": 0.993011
+        },
+        {
+          "index": 4,
+          "text": "idea,",
+          "startMs": 248980,
+          "endMs": 249600,
+          "probability": 0.987554
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 250480,
+          "endMs": 250560,
+          "probability": 0.966949
+        },
+        {
+          "index": 6,
+          "text": "Sir",
+          "startMs": 250560,
+          "endMs": 250900,
+          "probability": 0.916057
+        },
+        {
+          "index": 7,
+          "text": "Pete.",
+          "startMs": 250900,
+          "endMs": 251260,
+          "probability": 0.959915
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Will you give us a lift?",
+      "startMs": 252680,
+      "endMs": 254240,
+      "avgLogprob": -0.047607,
+      "noSpeechProb": 0.005703,
+      "compressionRatio": 1.367742,
+      "words": [
+        {
+          "index": 1,
+          "text": "Will",
+          "startMs": 252680,
+          "endMs": 252880,
+          "probability": 0.973741
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 252880,
+          "endMs": 253160,
+          "probability": 0.996866
+        },
+        {
+          "index": 3,
+          "text": "give",
+          "startMs": 253160,
+          "endMs": 253360,
+          "probability": 0.99876
+        },
+        {
+          "index": 4,
+          "text": "us",
+          "startMs": 253360,
+          "endMs": 253600,
+          "probability": 0.998314
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 253600,
+          "endMs": 253820,
+          "probability": 0.995781
+        },
+        {
+          "index": 6,
+          "text": "lift?",
+          "startMs": 253820,
+          "endMs": 254240,
+          "probability": 0.995746
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "The dragon flies Sir Pete and Lady Callie home.",
+      "startMs": 256480,
+      "endMs": 259900,
+      "avgLogprob": -0.047607,
+      "noSpeechProb": 0.005703,
+      "compressionRatio": 1.367742,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 256480,
+          "endMs": 256580,
+          "probability": 0.784926
+        },
+        {
+          "index": 2,
+          "text": "dragon",
+          "startMs": 256580,
+          "endMs": 257060,
+          "probability": 0.83495
+        },
+        {
+          "index": 3,
+          "text": "flies",
+          "startMs": 257060,
+          "endMs": 257600,
+          "probability": 0.921063
+        },
+        {
+          "index": 4,
+          "text": "Sir",
+          "startMs": 257600,
+          "endMs": 257920,
+          "probability": 0.961153
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 257920,
+          "endMs": 258280,
+          "probability": 0.997115
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 258280,
+          "endMs": 258560,
+          "probability": 0.991744
+        },
+        {
+          "index": 7,
+          "text": "Lady",
+          "startMs": 258560,
+          "endMs": 258900,
+          "probability": 0.989119
+        },
+        {
+          "index": 8,
+          "text": "Callie",
+          "startMs": 258900,
+          "endMs": 259440,
+          "probability": 0.742265
+        },
+        {
+          "index": 9,
+          "text": "home.",
+          "startMs": 259440,
+          "endMs": 259900,
+          "probability": 0.997869
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "Everyone is happy to see them.",
+      "startMs": 260960,
+      "endMs": 262840,
+      "avgLogprob": -0.047607,
+      "noSpeechProb": 0.005703,
+      "compressionRatio": 1.367742,
+      "words": [
+        {
+          "index": 1,
+          "text": "Everyone",
+          "startMs": 260960,
+          "endMs": 261240,
+          "probability": 0.994496
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 261240,
+          "endMs": 261640,
+          "probability": 0.997415
+        },
+        {
+          "index": 3,
+          "text": "happy",
+          "startMs": 261640,
+          "endMs": 261980,
+          "probability": 0.998853
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 261980,
+          "endMs": 262280,
+          "probability": 0.99957
+        },
+        {
+          "index": 5,
+          "text": "see",
+          "startMs": 262280,
+          "endMs": 262540,
+          "probability": 0.999295
+        },
+        {
+          "index": 6,
+          "text": "them.",
+          "startMs": 262540,
+          "endMs": 262840,
+          "probability": 0.99813
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "You don't need a great voice to make music, says Sir Pete.",
+      "startMs": 264740,
+      "endMs": 269240,
+      "avgLogprob": -0.047607,
+      "noSpeechProb": 0.005703,
+      "compressionRatio": 1.367742,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 264740,
+          "endMs": 265040,
+          "probability": 0.978029
+        },
+        {
+          "index": 2,
+          "text": "don't",
+          "startMs": 265040,
+          "endMs": 265320,
+          "probability": 0.996539
+        },
+        {
+          "index": 3,
+          "text": "need",
+          "startMs": 265320,
+          "endMs": 265640,
+          "probability": 0.999417
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 265640,
+          "endMs": 265800,
+          "probability": 0.997134
+        },
+        {
+          "index": 5,
+          "text": "great",
+          "startMs": 265800,
+          "endMs": 266040,
+          "probability": 0.998518
+        },
+        {
+          "index": 6,
+          "text": "voice",
+          "startMs": 266040,
+          "endMs": 266460,
+          "probability": 0.999345
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 266460,
+          "endMs": 266720,
+          "probability": 0.998269
+        },
+        {
+          "index": 8,
+          "text": "make",
+          "startMs": 266720,
+          "endMs": 266960,
+          "probability": 0.999622
+        },
+        {
+          "index": 9,
+          "text": "music,",
+          "startMs": 266960,
+          "endMs": 267680,
+          "probability": 0.998309
+        },
+        {
+          "index": 10,
+          "text": "says",
+          "startMs": 268280,
+          "endMs": 268560,
+          "probability": 0.990191
+        },
+        {
+          "index": 11,
+          "text": "Sir",
+          "startMs": 268560,
+          "endMs": 268880,
+          "probability": 0.988323
+        },
+        {
+          "index": 12,
+          "text": "Pete.",
+          "startMs": 268880,
+          "endMs": 269240,
+          "probability": 0.997253
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "Just good friends.",
+      "startMs": 270200,
+      "endMs": 271740,
+      "avgLogprob": -0.047607,
+      "noSpeechProb": 0.005703,
+      "compressionRatio": 1.367742,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 270200,
+          "endMs": 270660,
+          "probability": 0.992405
+        },
+        {
+          "index": 2,
+          "text": "good",
+          "startMs": 270660,
+          "endMs": 271080,
+          "probability": 0.996966
+        },
+        {
+          "index": 3,
+          "text": "friends.",
+          "startMs": 271080,
+          "endMs": 271740,
+          "probability": 0.998618
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "The dragon joins the song.",
+      "startMs": 273400,
+      "endMs": 275740,
+      "avgLogprob": -0.099047,
+      "noSpeechProb": 0.03387,
+      "compressionRatio": 1.466667,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 273400,
+          "endMs": 274280,
+          "probability": 0.638563
+        },
+        {
+          "index": 2,
+          "text": "dragon",
+          "startMs": 274280,
+          "endMs": 274740,
+          "probability": 0.145297
+        },
+        {
+          "index": 3,
+          "text": "joins",
+          "startMs": 274740,
+          "endMs": 275380,
+          "probability": 0.95647
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 275380,
+          "endMs": 275680,
+          "probability": 0.990625
+        },
+        {
+          "index": 5,
+          "text": "song.",
+          "startMs": 275680,
+          "endMs": 276120,
+          "probability": 0.979921
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Three cheers for Lady Callie and for Sir Pete the Brave.",
+      "startMs": 277480,
+      "endMs": 281660,
+      "avgLogprob": -0.099047,
+      "noSpeechProb": 0.03387,
+      "compressionRatio": 1.466667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Three",
+          "startMs": 277480,
+          "endMs": 277560,
+          "probability": 0.75165
+        },
+        {
+          "index": 2,
+          "text": "cheers",
+          "startMs": 277560,
+          "endMs": 278020,
+          "probability": 0.927517
+        },
+        {
+          "index": 3,
+          "text": "for",
+          "startMs": 278020,
+          "endMs": 278440,
+          "probability": 0.991718
+        },
+        {
+          "index": 4,
+          "text": "Lady",
+          "startMs": 278440,
+          "endMs": 278840,
+          "probability": 0.980231
+        },
+        {
+          "index": 5,
+          "text": "Callie",
+          "startMs": 278840,
+          "endMs": 279500,
+          "probability": 0.718703
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 279500,
+          "endMs": 279960,
+          "probability": 0.81995
+        },
+        {
+          "index": 7,
+          "text": "for",
+          "startMs": 279960,
+          "endMs": 280360,
+          "probability": 0.934659
+        },
+        {
+          "index": 8,
+          "text": "Sir",
+          "startMs": 280360,
+          "endMs": 280540,
+          "probability": 0.966982
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 280540,
+          "endMs": 280880,
+          "probability": 0.948578
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 280880,
+          "endMs": 281240,
+          "probability": 0.899294
+        },
+        {
+          "index": 11,
+          "text": "Brave.",
+          "startMs": 281240,
+          "endMs": 281660,
+          "probability": 0.915018
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "Hooray! Hooray! Hooray!",
+      "startMs": 282580,
+      "endMs": 285860,
+      "avgLogprob": -0.099047,
+      "noSpeechProb": 0.03387,
+      "compressionRatio": 1.466667,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hooray!",
+          "startMs": 282580,
+          "endMs": 283460,
+          "probability": 0.888783
+        },
+        {
+          "index": 2,
+          "text": "Hooray!",
+          "startMs": 284040,
+          "endMs": 284560,
+          "probability": 0.927478
+        },
+        {
+          "index": 3,
+          "text": "Hooray!",
+          "startMs": 284980,
+          "endMs": 285860,
+          "probability": 0.965908
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "We hope you have enjoyed this recording of Pete the Cat, Sir Pete the Brave by James Dean.",
+      "startMs": 288260,
+      "endMs": 298300,
+      "avgLogprob": -0.099047,
+      "noSpeechProb": 0.03387,
+      "compressionRatio": 1.466667,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 288260,
+          "endMs": 289020,
+          "probability": 0.648809
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 289020,
+          "endMs": 289160,
+          "probability": 0.997045
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 289160,
+          "endMs": 291740,
+          "probability": 0.99415
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 291740,
+          "endMs": 291900,
+          "probability": 0.974465
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 291900,
+          "endMs": 292300,
+          "probability": 0.99659
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 292300,
+          "endMs": 292600,
+          "probability": 0.994589
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 292600,
+          "endMs": 293140,
+          "probability": 0.995526
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 293140,
+          "endMs": 293560,
+          "probability": 0.990914
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 293560,
+          "endMs": 293940,
+          "probability": 0.953902
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 293940,
+          "endMs": 294220,
+          "probability": 0.967379
+        },
+        {
+          "index": 11,
+          "text": "Cat,",
+          "startMs": 294220,
+          "endMs": 294520,
+          "probability": 0.897033
+        },
+        {
+          "index": 12,
+          "text": "Sir",
+          "startMs": 295140,
+          "endMs": 295280,
+          "probability": 0.982983
+        },
+        {
+          "index": 13,
+          "text": "Pete",
+          "startMs": 295280,
+          "endMs": 295660,
+          "probability": 0.992271
+        },
+        {
+          "index": 14,
+          "text": "the",
+          "startMs": 295660,
+          "endMs": 296000,
+          "probability": 0.980676
+        },
+        {
+          "index": 15,
+          "text": "Brave",
+          "startMs": 296000,
+          "endMs": 296460,
+          "probability": 0.984533
+        },
+        {
+          "index": 16,
+          "text": "by",
+          "startMs": 296460,
+          "endMs": 297320,
+          "probability": 0.687501
+        },
+        {
+          "index": 17,
+          "text": "James",
+          "startMs": 297320,
+          "endMs": 297940,
+          "probability": 0.995768
+        },
+        {
+          "index": 18,
+          "text": "Dean.",
+          "startMs": 297940,
+          "endMs": 298300,
+          "probability": 0.871368
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "This program was produced by John Marshall Media.",
+      "startMs": 299300,
+      "endMs": 302380,
+      "avgLogprob": -0.127051,
+      "noSpeechProb": 0.670738,
+      "compressionRatio": 1.260163,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 298960,
+          "endMs": 299460,
+          "probability": 0.257086
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 299460,
+          "endMs": 299940,
+          "probability": 0.957226
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 299940,
+          "endMs": 300240,
+          "probability": 0.993973
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 300240,
+          "endMs": 300680,
+          "probability": 0.996068
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 300680,
+          "endMs": 301060,
+          "probability": 0.992261
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 301060,
+          "endMs": 301440,
+          "probability": 0.975909
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 301440,
+          "endMs": 301860,
+          "probability": 0.97772
+        },
+        {
+          "index": 8,
+          "text": "Media.",
+          "startMs": 301860,
+          "endMs": 302380,
+          "probability": 0.904488
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "Copyright 2016 by James Dean.",
+      "startMs": 303440,
+      "endMs": 306260,
+      "avgLogprob": -0.127051,
+      "noSpeechProb": 0.670738,
+      "compressionRatio": 1.260163,
+      "words": [
+        {
+          "index": 1,
+          "text": "Copyright",
+          "startMs": 303440,
+          "endMs": 303660,
+          "probability": 0.94385
+        },
+        {
+          "index": 2,
+          "text": "2016",
+          "startMs": 303660,
+          "endMs": 304960,
+          "probability": 0.986788
+        },
+        {
+          "index": 3,
+          "text": "by",
+          "startMs": 304960,
+          "endMs": 305380,
+          "probability": 0.912071
+        },
+        {
+          "index": 4,
+          "text": "James",
+          "startMs": 305380,
+          "endMs": 305840,
+          "probability": 0.997075
+        },
+        {
+          "index": 5,
+          "text": "Dean.",
+          "startMs": 305840,
+          "endMs": 306260,
+          "probability": 0.86234
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "Production Copyright 2016 by HarperCollins Publishers.",
+      "startMs": 307460,
+      "endMs": 311760,
+      "avgLogprob": -0.127051,
+      "noSpeechProb": 0.670738,
+      "compressionRatio": 1.260163,
+      "words": [
+        {
+          "index": 1,
+          "text": "Production",
+          "startMs": 307460,
+          "endMs": 307640,
+          "probability": 0.974612
+        },
+        {
+          "index": 2,
+          "text": "Copyright",
+          "startMs": 307640,
+          "endMs": 308240,
+          "probability": 0.326581
+        },
+        {
+          "index": 3,
+          "text": "2016",
+          "startMs": 308240,
+          "endMs": 309480,
+          "probability": 0.996037
+        },
+        {
+          "index": 4,
+          "text": "by",
+          "startMs": 309480,
+          "endMs": 310260,
+          "probability": 0.944485
+        },
+        {
+          "index": 5,
+          "text": "HarperCollins",
+          "startMs": 310260,
+          "endMs": 311180,
+          "probability": 0.683712
+        },
+        {
+          "index": 6,
+          "text": "Publishers.",
+          "startMs": 311180,
+          "endMs": 311760,
+          "probability": 0.938734
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "All rights reserved.",
+      "startMs": 312680,
+      "endMs": 313820,
+      "avgLogprob": -0.127051,
+      "noSpeechProb": 0.670738,
+      "compressionRatio": 1.260163,
+      "words": [
+        {
+          "index": 1,
+          "text": "All",
+          "startMs": 312680,
+          "endMs": 312920,
+          "probability": 0.99163
+        },
+        {
+          "index": 2,
+          "text": "rights",
+          "startMs": 312920,
+          "endMs": 313220,
+          "probability": 0.977354
+        },
+        {
+          "index": 3,
+          "text": "reserved.",
+          "startMs": 313220,
+          "endMs": 313820,
+          "probability": 0.995967
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5514 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 42.289,
+  "text": "Pete the Cat, Cave Cat Pete by James Dean performed by Luis Grasso Cave Cat Pete wakes up early the sun is shining the birds are singing Today is going to be a great day Pete thinks but then Pete's bed starts to shake His friend Vinnie the Velociraptor is coming to visit It's a perfect day for a picnic says Vinnie What a great idea says Pete who should we invite? Everyone Vinnie yells right on says Pete Pete loves picnics he heads out to invite all his friends First Pete finds his good friend Ethel the Apatosaurus To get her attention Pete climbs all the way up to the top of the tallest tree Would you like to come to a picnic Pete asks I'd love to says Ethel What can I bring? How about a really big salad Pete suggests? What a great idea says Ethel. I'm on it Pete Wanders along the river he sees T-Rex T-Rex plays guitar T-Rex is awesome Hey T-Rex Pete yells want to come to a picnic Sweet says T-Rex Can I bring my guitar? Definitely says Pete we can jam Count me in says T-Rex Okay, if I bring out the Allosaurus. He's a whiz on the drums The more the merrier says Pete Pete sees his friend Terry the pterosaur in the sky Hi Pete she calls Pete invites Terry to the picnic too. Would you mind giving me a lift Pete asks? Sure says Terry climb aboard Pete sees the spike tail of his main man Skip the Stegosaurus How are you feeling today Skip Pete asks? Skip has been sick with the sniffles Better says Skip. Thanks for asking You up for a picnic? I think so says Skip. I'd hate to miss the fun It's almost time for the picnic cave cat Pete rushes through the forest He doesn't want to be late Whoops Pete trips over Trini the triceratops We're playing hide-and-seek she says before Pete can ask what she was doing I Think I hit a little too. Well How long have you been there asks Pete? What's today asks Trini? Well, all the dinosaurs are going to be at the picnic grounds want to come Pete asks. What a great idea Maybe somebody there will play hide-and-seek with me It's time for the picnic Vinnie and Ethel are setting up the picnic tables T-Rex and all are warming up to play some tunes Terry and Trini are playing hide-and-seek even Skip seems to be enjoying himself It doesn't get any better than this Pete says T-Rex comes over then hey Pete he asks Is there anything else to eat? I'm a carnivore. I don't eat salad Trini comes over Terry is cheating at hide-and-seek. She's flying around and peeking Skip comes over. I don't feel so good. He says and he sneezes The dinosaurs all start to argue the picnic will be ruined if Pete doesn't do something He leans over to Alan says can you give me a beat? Pete takes out his guitar and he starts to sing Before long everyone is having a great time You know t-rex tells Ethel I've never actually tried salad before Try it says Pete. I bet you'll like it T-Rex tastes the salad crunch crunch crunch Yum says t-rex this salad is delicious Everyone grabs a plate and digs in Everyone decides to play hide-and-seek Pete is happy that everyone is getting along he feels lucky to have such great friends This was the best picnic ever everyone agrees It was the best picnic because you guys are the best friends ever Pete says and no one can argue with that We hope you have enjoyed this recording of Pete the cat cave cat Pete by James Dean This program was produced by John Marshall Media copyright 2015 by James Dean production copyright 2015 by Harper Collins publishers all rights reserved",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat, Cave Cat Pete by James Dean performed by Luis Grasso",
+      "startMs": 0,
+      "endMs": 7680,
+      "avgLogprob": -0.272706,
+      "noSpeechProb": 0.031579,
+      "compressionRatio": 1.522472,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 540,
+          "probability": 0.683741
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 540,
+          "endMs": 740,
+          "probability": 0.958949
+        },
+        {
+          "index": 3,
+          "text": "Cat,",
+          "startMs": 740,
+          "endMs": 1120,
+          "probability": 0.7599
+        },
+        {
+          "index": 4,
+          "text": "Cave",
+          "startMs": 2020,
+          "endMs": 2080,
+          "probability": 0.974027
+        },
+        {
+          "index": 5,
+          "text": "Cat",
+          "startMs": 2080,
+          "endMs": 2420,
+          "probability": 0.957278
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 2420,
+          "endMs": 2840,
+          "probability": 0.995601
+        },
+        {
+          "index": 7,
+          "text": "by",
+          "startMs": 2840,
+          "endMs": 3880,
+          "probability": 0.731325
+        },
+        {
+          "index": 8,
+          "text": "James",
+          "startMs": 3880,
+          "endMs": 4320,
+          "probability": 0.992983
+        },
+        {
+          "index": 9,
+          "text": "Dean",
+          "startMs": 4320,
+          "endMs": 4780,
+          "probability": 0.925993
+        },
+        {
+          "index": 10,
+          "text": "performed",
+          "startMs": 4780,
+          "endMs": 6280,
+          "probability": 0.604813
+        },
+        {
+          "index": 11,
+          "text": "by",
+          "startMs": 6280,
+          "endMs": 6680,
+          "probability": 0.998887
+        },
+        {
+          "index": 12,
+          "text": "Luis",
+          "startMs": 6680,
+          "endMs": 7040,
+          "probability": 0.41913
+        },
+        {
+          "index": 13,
+          "text": "Grasso",
+          "startMs": 7040,
+          "endMs": 7680,
+          "probability": 0.67242
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "Cave Cat Pete wakes up early the sun is shining the birds are singing",
+      "startMs": 10520,
+      "endMs": 17300,
+      "avgLogprob": -0.272706,
+      "noSpeechProb": 0.031579,
+      "compressionRatio": 1.522472,
+      "words": [
+        {
+          "index": 1,
+          "text": "Cave",
+          "startMs": 10520,
+          "endMs": 11280,
+          "probability": 0.799166
+        },
+        {
+          "index": 2,
+          "text": "Cat",
+          "startMs": 11280,
+          "endMs": 11640,
+          "probability": 0.978479
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 11640,
+          "endMs": 12020,
+          "probability": 0.989864
+        },
+        {
+          "index": 4,
+          "text": "wakes",
+          "startMs": 12020,
+          "endMs": 12460,
+          "probability": 0.917626
+        },
+        {
+          "index": 5,
+          "text": "up",
+          "startMs": 12460,
+          "endMs": 12760,
+          "probability": 0.999451
+        },
+        {
+          "index": 6,
+          "text": "early",
+          "startMs": 12760,
+          "endMs": 13300,
+          "probability": 0.999179
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 13300,
+          "endMs": 14120,
+          "probability": 0.229347
+        },
+        {
+          "index": 8,
+          "text": "sun",
+          "startMs": 14120,
+          "endMs": 14440,
+          "probability": 0.603268
+        },
+        {
+          "index": 9,
+          "text": "is",
+          "startMs": 14440,
+          "endMs": 14700,
+          "probability": 0.996758
+        },
+        {
+          "index": 10,
+          "text": "shining",
+          "startMs": 14700,
+          "endMs": 15300,
+          "probability": 0.989261
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 15300,
+          "endMs": 16000,
+          "probability": 0.829181
+        },
+        {
+          "index": 12,
+          "text": "birds",
+          "startMs": 16000,
+          "endMs": 16380,
+          "probability": 0.981584
+        },
+        {
+          "index": 13,
+          "text": "are",
+          "startMs": 16380,
+          "endMs": 16640,
+          "probability": 0.998941
+        },
+        {
+          "index": 14,
+          "text": "singing",
+          "startMs": 16640,
+          "endMs": 17300,
+          "probability": 0.995912
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "Today is going to be a great day Pete thinks but then Pete's bed starts to shake",
+      "startMs": 18040,
+      "endMs": 24880,
+      "avgLogprob": -0.272706,
+      "noSpeechProb": 0.031579,
+      "compressionRatio": 1.522472,
+      "words": [
+        {
+          "index": 1,
+          "text": "Today",
+          "startMs": 18040,
+          "endMs": 18540,
+          "probability": 0.856209
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 18540,
+          "endMs": 18820,
+          "probability": 0.994871
+        },
+        {
+          "index": 3,
+          "text": "going",
+          "startMs": 18820,
+          "endMs": 19020,
+          "probability": 0.999183
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 19020,
+          "endMs": 19260,
+          "probability": 0.999504
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 19260,
+          "endMs": 19460,
+          "probability": 0.996782
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 19460,
+          "endMs": 19660,
+          "probability": 0.998866
+        },
+        {
+          "index": 7,
+          "text": "great",
+          "startMs": 19660,
+          "endMs": 20000,
+          "probability": 0.99909
+        },
+        {
+          "index": 8,
+          "text": "day",
+          "startMs": 20000,
+          "endMs": 20380,
+          "probability": 0.99555
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 20380,
+          "endMs": 20720,
+          "probability": 0.826998
+        },
+        {
+          "index": 10,
+          "text": "thinks",
+          "startMs": 20720,
+          "endMs": 21240,
+          "probability": 0.976916
+        },
+        {
+          "index": 11,
+          "text": "but",
+          "startMs": 21240,
+          "endMs": 22160,
+          "probability": 0.402705
+        },
+        {
+          "index": 12,
+          "text": "then",
+          "startMs": 22160,
+          "endMs": 22660,
+          "probability": 0.991844
+        },
+        {
+          "index": 13,
+          "text": "Pete's",
+          "startMs": 22660,
+          "endMs": 23520,
+          "probability": 0.980264
+        },
+        {
+          "index": 14,
+          "text": "bed",
+          "startMs": 23520,
+          "endMs": 23760,
+          "probability": 0.996965
+        },
+        {
+          "index": 15,
+          "text": "starts",
+          "startMs": 23760,
+          "endMs": 24100,
+          "probability": 0.997559
+        },
+        {
+          "index": 16,
+          "text": "to",
+          "startMs": 24100,
+          "endMs": 24420,
+          "probability": 0.99922
+        },
+        {
+          "index": 17,
+          "text": "shake",
+          "startMs": 24420,
+          "endMs": 24880,
+          "probability": 0.988589
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "His friend Vinnie the Velociraptor is coming to visit",
+      "startMs": 25440,
+      "endMs": 28880,
+      "avgLogprob": -0.272706,
+      "noSpeechProb": 0.031579,
+      "compressionRatio": 1.522472,
+      "words": [
+        {
+          "index": 1,
+          "text": "His",
+          "startMs": 25440,
+          "endMs": 25960,
+          "probability": 0.590987
+        },
+        {
+          "index": 2,
+          "text": "friend",
+          "startMs": 25960,
+          "endMs": 26320,
+          "probability": 0.976717
+        },
+        {
+          "index": 3,
+          "text": "Vinnie",
+          "startMs": 26320,
+          "endMs": 26660,
+          "probability": 0.781614
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 26660,
+          "endMs": 26900,
+          "probability": 0.863567
+        },
+        {
+          "index": 5,
+          "text": "Velociraptor",
+          "startMs": 26900,
+          "endMs": 27840,
+          "probability": 0.922807
+        },
+        {
+          "index": 6,
+          "text": "is",
+          "startMs": 27840,
+          "endMs": 28020,
+          "probability": 0.990171
+        },
+        {
+          "index": 7,
+          "text": "coming",
+          "startMs": 28020,
+          "endMs": 28280,
+          "probability": 0.999495
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 28280,
+          "endMs": 28560,
+          "probability": 0.999573
+        },
+        {
+          "index": 9,
+          "text": "visit",
+          "startMs": 28560,
+          "endMs": 28880,
+          "probability": 0.999429
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "It's a perfect day for a picnic says Vinnie",
+      "startMs": 30480,
+      "endMs": 34240,
+      "avgLogprob": -0.247894,
+      "noSpeechProb": 0.003038,
+      "compressionRatio": 1.534161,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 30480,
+          "endMs": 31400,
+          "probability": 0.796192
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 31400,
+          "endMs": 31540,
+          "probability": 0.989194
+        },
+        {
+          "index": 3,
+          "text": "perfect",
+          "startMs": 31540,
+          "endMs": 31880,
+          "probability": 0.998345
+        },
+        {
+          "index": 4,
+          "text": "day",
+          "startMs": 31880,
+          "endMs": 32260,
+          "probability": 0.998237
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 32260,
+          "endMs": 32500,
+          "probability": 0.998441
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 32500,
+          "endMs": 32660,
+          "probability": 0.995671
+        },
+        {
+          "index": 7,
+          "text": "picnic",
+          "startMs": 32660,
+          "endMs": 33120,
+          "probability": 0.99653
+        },
+        {
+          "index": 8,
+          "text": "says",
+          "startMs": 33120,
+          "endMs": 33820,
+          "probability": 0.07902
+        },
+        {
+          "index": 9,
+          "text": "Vinnie",
+          "startMs": 33820,
+          "endMs": 34240,
+          "probability": 0.813865
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "What a great idea says Pete who should we invite?",
+      "startMs": 35000,
+      "endMs": 39380,
+      "avgLogprob": -0.247894,
+      "noSpeechProb": 0.003038,
+      "compressionRatio": 1.534161,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 35000,
+          "endMs": 35500,
+          "probability": 0.25792
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 35500,
+          "endMs": 35700,
+          "probability": 0.998935
+        },
+        {
+          "index": 3,
+          "text": "great",
+          "startMs": 35700,
+          "endMs": 35960,
+          "probability": 0.999184
+        },
+        {
+          "index": 4,
+          "text": "idea",
+          "startMs": 35960,
+          "endMs": 36540,
+          "probability": 0.996464
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 36540,
+          "endMs": 37080,
+          "probability": 0.907293
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 37080,
+          "endMs": 37520,
+          "probability": 0.969428
+        },
+        {
+          "index": 7,
+          "text": "who",
+          "startMs": 37520,
+          "endMs": 38440,
+          "probability": 0.506154
+        },
+        {
+          "index": 8,
+          "text": "should",
+          "startMs": 38440,
+          "endMs": 38680,
+          "probability": 0.993993
+        },
+        {
+          "index": 9,
+          "text": "we",
+          "startMs": 38680,
+          "endMs": 38880,
+          "probability": 0.998754
+        },
+        {
+          "index": 10,
+          "text": "invite?",
+          "startMs": 38880,
+          "endMs": 39380,
+          "probability": 0.998267
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "Everyone Vinnie yells right on says Pete",
+      "startMs": 40440,
+      "endMs": 45260,
+      "avgLogprob": -0.247894,
+      "noSpeechProb": 0.003038,
+      "compressionRatio": 1.534161,
+      "words": [
+        {
+          "index": 1,
+          "text": "Everyone",
+          "startMs": 40440,
+          "endMs": 41300,
+          "probability": 0.799331
+        },
+        {
+          "index": 2,
+          "text": "Vinnie",
+          "startMs": 41300,
+          "endMs": 42060,
+          "probability": 0.898032
+        },
+        {
+          "index": 3,
+          "text": "yells",
+          "startMs": 42060,
+          "endMs": 42540,
+          "probability": 0.839767
+        },
+        {
+          "index": 4,
+          "text": "right",
+          "startMs": 42540,
+          "endMs": 43540,
+          "probability": 0.823197
+        },
+        {
+          "index": 5,
+          "text": "on",
+          "startMs": 43540,
+          "endMs": 44180,
+          "probability": 0.99774
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 44180,
+          "endMs": 44800,
+          "probability": 0.933957
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 44800,
+          "endMs": 45260,
+          "probability": 0.986681
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Pete loves picnics he heads out to invite all his friends",
+      "startMs": 46700,
+      "endMs": 52040,
+      "avgLogprob": -0.247894,
+      "noSpeechProb": 0.003038,
+      "compressionRatio": 1.534161,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 46700,
+          "endMs": 47620,
+          "probability": 0.961912
+        },
+        {
+          "index": 2,
+          "text": "loves",
+          "startMs": 47620,
+          "endMs": 48280,
+          "probability": 0.962622
+        },
+        {
+          "index": 3,
+          "text": "picnics",
+          "startMs": 48280,
+          "endMs": 49060,
+          "probability": 0.981894
+        },
+        {
+          "index": 4,
+          "text": "he",
+          "startMs": 49060,
+          "endMs": 49740,
+          "probability": 0.395014
+        },
+        {
+          "index": 5,
+          "text": "heads",
+          "startMs": 49740,
+          "endMs": 50020,
+          "probability": 0.998132
+        },
+        {
+          "index": 6,
+          "text": "out",
+          "startMs": 50020,
+          "endMs": 50300,
+          "probability": 0.999613
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 50300,
+          "endMs": 50500,
+          "probability": 0.999396
+        },
+        {
+          "index": 8,
+          "text": "invite",
+          "startMs": 50500,
+          "endMs": 50860,
+          "probability": 0.997483
+        },
+        {
+          "index": 9,
+          "text": "all",
+          "startMs": 50860,
+          "endMs": 51200,
+          "probability": 0.998977
+        },
+        {
+          "index": 10,
+          "text": "his",
+          "startMs": 51200,
+          "endMs": 51440,
+          "probability": 0.999382
+        },
+        {
+          "index": 11,
+          "text": "friends",
+          "startMs": 51440,
+          "endMs": 52040,
+          "probability": 0.998334
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "First Pete finds his good friend Ethel the Apatosaurus",
+      "startMs": 53800,
+      "endMs": 57200,
+      "avgLogprob": -0.247894,
+      "noSpeechProb": 0.003038,
+      "compressionRatio": 1.534161,
+      "words": [
+        {
+          "index": 1,
+          "text": "First",
+          "startMs": 53800,
+          "endMs": 54720,
+          "probability": 0.945063
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 54720,
+          "endMs": 55200,
+          "probability": 0.962644
+        },
+        {
+          "index": 3,
+          "text": "finds",
+          "startMs": 55200,
+          "endMs": 55520,
+          "probability": 0.994249
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 55520,
+          "endMs": 55740,
+          "probability": 0.988792
+        },
+        {
+          "index": 5,
+          "text": "good",
+          "startMs": 55740,
+          "endMs": 55980,
+          "probability": 0.998069
+        },
+        {
+          "index": 6,
+          "text": "friend",
+          "startMs": 55980,
+          "endMs": 56340,
+          "probability": 0.992471
+        },
+        {
+          "index": 7,
+          "text": "Ethel",
+          "startMs": 56340,
+          "endMs": 56740,
+          "probability": 0.808941
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 56740,
+          "endMs": 56960,
+          "probability": 0.955875
+        },
+        {
+          "index": 9,
+          "text": "Apatosaurus",
+          "startMs": 56960,
+          "endMs": 57420,
+          "probability": 0.922395
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "To get her attention Pete climbs all the way up to the top of the tallest tree",
+      "startMs": 58180,
+      "endMs": 63720,
+      "avgLogprob": -0.164515,
+      "noSpeechProb": 0.005652,
+      "compressionRatio": 1.458824,
+      "words": [
+        {
+          "index": 1,
+          "text": "To",
+          "startMs": 58180,
+          "endMs": 58680,
+          "probability": 0.145628
+        },
+        {
+          "index": 2,
+          "text": "get",
+          "startMs": 58680,
+          "endMs": 58900,
+          "probability": 0.988419
+        },
+        {
+          "index": 3,
+          "text": "her",
+          "startMs": 58900,
+          "endMs": 59140,
+          "probability": 0.992445
+        },
+        {
+          "index": 4,
+          "text": "attention",
+          "startMs": 59140,
+          "endMs": 59760,
+          "probability": 0.997939
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 59760,
+          "endMs": 60460,
+          "probability": 0.10403
+        },
+        {
+          "index": 6,
+          "text": "climbs",
+          "startMs": 60460,
+          "endMs": 60900,
+          "probability": 0.98775
+        },
+        {
+          "index": 7,
+          "text": "all",
+          "startMs": 60900,
+          "endMs": 61340,
+          "probability": 0.964599
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 61340,
+          "endMs": 61480,
+          "probability": 0.996516
+        },
+        {
+          "index": 9,
+          "text": "way",
+          "startMs": 61480,
+          "endMs": 61660,
+          "probability": 0.996441
+        },
+        {
+          "index": 10,
+          "text": "up",
+          "startMs": 61660,
+          "endMs": 61860,
+          "probability": 0.987523
+        },
+        {
+          "index": 11,
+          "text": "to",
+          "startMs": 61860,
+          "endMs": 62060,
+          "probability": 0.97462
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 62060,
+          "endMs": 62200,
+          "probability": 0.965616
+        },
+        {
+          "index": 13,
+          "text": "top",
+          "startMs": 62200,
+          "endMs": 62420,
+          "probability": 0.995761
+        },
+        {
+          "index": 14,
+          "text": "of",
+          "startMs": 62420,
+          "endMs": 62620,
+          "probability": 0.99123
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 62620,
+          "endMs": 62800,
+          "probability": 0.989373
+        },
+        {
+          "index": 16,
+          "text": "tallest",
+          "startMs": 62800,
+          "endMs": 63200,
+          "probability": 0.995953
+        },
+        {
+          "index": 17,
+          "text": "tree",
+          "startMs": 63200,
+          "endMs": 63720,
+          "probability": 0.994741
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "Would you like to come to a picnic Pete asks I'd love to says Ethel",
+      "startMs": 65160,
+      "endMs": 71820,
+      "avgLogprob": -0.164515,
+      "noSpeechProb": 0.005652,
+      "compressionRatio": 1.458824,
+      "words": [
+        {
+          "index": 1,
+          "text": "Would",
+          "startMs": 65160,
+          "endMs": 66000,
+          "probability": 0.004815
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 66000,
+          "endMs": 66240,
+          "probability": 0.997824
+        },
+        {
+          "index": 3,
+          "text": "like",
+          "startMs": 66240,
+          "endMs": 66480,
+          "probability": 0.998572
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 66480,
+          "endMs": 66680,
+          "probability": 0.998211
+        },
+        {
+          "index": 5,
+          "text": "come",
+          "startMs": 66680,
+          "endMs": 66920,
+          "probability": 0.998937
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 66920,
+          "endMs": 67120,
+          "probability": 0.997011
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 67120,
+          "endMs": 67240,
+          "probability": 0.993676
+        },
+        {
+          "index": 8,
+          "text": "picnic",
+          "startMs": 67240,
+          "endMs": 67680,
+          "probability": 0.997605
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 67680,
+          "endMs": 68300,
+          "probability": 0.560302
+        },
+        {
+          "index": 10,
+          "text": "asks",
+          "startMs": 68300,
+          "endMs": 68860,
+          "probability": 0.959288
+        },
+        {
+          "index": 11,
+          "text": "I'd",
+          "startMs": 68860,
+          "endMs": 70000,
+          "probability": 0.711127
+        },
+        {
+          "index": 12,
+          "text": "love",
+          "startMs": 70000,
+          "endMs": 70360,
+          "probability": 0.991723
+        },
+        {
+          "index": 13,
+          "text": "to",
+          "startMs": 70360,
+          "endMs": 70840,
+          "probability": 0.986585
+        },
+        {
+          "index": 14,
+          "text": "says",
+          "startMs": 70840,
+          "endMs": 71320,
+          "probability": 0.900111
+        },
+        {
+          "index": 15,
+          "text": "Ethel",
+          "startMs": 71320,
+          "endMs": 71820,
+          "probability": 0.85816
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "What can I bring?",
+      "startMs": 71820,
+      "endMs": 73540,
+      "avgLogprob": -0.164515,
+      "noSpeechProb": 0.005652,
+      "compressionRatio": 1.458824,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 71820,
+          "endMs": 72740,
+          "probability": 0.281562
+        },
+        {
+          "index": 2,
+          "text": "can",
+          "startMs": 72740,
+          "endMs": 72960,
+          "probability": 0.998609
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 72960,
+          "endMs": 73120,
+          "probability": 0.995831
+        },
+        {
+          "index": 4,
+          "text": "bring?",
+          "startMs": 73120,
+          "endMs": 73540,
+          "probability": 0.998631
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "How about a really big salad Pete suggests?",
+      "startMs": 74300,
+      "endMs": 78160,
+      "avgLogprob": -0.164515,
+      "noSpeechProb": 0.005652,
+      "compressionRatio": 1.458824,
+      "words": [
+        {
+          "index": 1,
+          "text": "How",
+          "startMs": 74300,
+          "endMs": 74720,
+          "probability": 0.960552
+        },
+        {
+          "index": 2,
+          "text": "about",
+          "startMs": 74720,
+          "endMs": 75140,
+          "probability": 0.996344
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 75140,
+          "endMs": 75540,
+          "probability": 0.993425
+        },
+        {
+          "index": 4,
+          "text": "really",
+          "startMs": 75540,
+          "endMs": 75940,
+          "probability": 0.994246
+        },
+        {
+          "index": 5,
+          "text": "big",
+          "startMs": 75940,
+          "endMs": 76360,
+          "probability": 0.99405
+        },
+        {
+          "index": 6,
+          "text": "salad",
+          "startMs": 76360,
+          "endMs": 76960,
+          "probability": 0.980919
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 76960,
+          "endMs": 77560,
+          "probability": 0.75489
+        },
+        {
+          "index": 8,
+          "text": "suggests?",
+          "startMs": 77560,
+          "endMs": 78160,
+          "probability": 0.96839
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "What a great idea says Ethel. I'm on it",
+      "startMs": 78940,
+      "endMs": 82660,
+      "avgLogprob": -0.164515,
+      "noSpeechProb": 0.005652,
+      "compressionRatio": 1.458824,
+      "words": [
+        {
+          "index": 1,
+          "text": "What",
+          "startMs": 78940,
+          "endMs": 79340,
+          "probability": 0.975661
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 79340,
+          "endMs": 79500,
+          "probability": 0.998387
+        },
+        {
+          "index": 3,
+          "text": "great",
+          "startMs": 79500,
+          "endMs": 79740,
+          "probability": 0.99948
+        },
+        {
+          "index": 4,
+          "text": "idea",
+          "startMs": 79740,
+          "endMs": 80340,
+          "probability": 0.994042
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 80340,
+          "endMs": 80860,
+          "probability": 0.811935
+        },
+        {
+          "index": 6,
+          "text": "Ethel.",
+          "startMs": 80860,
+          "endMs": 81340,
+          "probability": 0.973721
+        },
+        {
+          "index": 7,
+          "text": "I'm",
+          "startMs": 81480,
+          "endMs": 82320,
+          "probability": 0.992402
+        },
+        {
+          "index": 8,
+          "text": "on",
+          "startMs": 82320,
+          "endMs": 82500,
+          "probability": 0.998001
+        },
+        {
+          "index": 9,
+          "text": "it",
+          "startMs": 82500,
+          "endMs": 82920,
+          "probability": 0.998662
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "Pete",
+      "startMs": 84240,
+      "endMs": 85080,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 84240,
+          "endMs": 85080,
+          "probability": 0.650928
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Wanders along the river he sees T-Rex",
+      "startMs": 85080,
+      "endMs": 88600,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "Wanders",
+          "startMs": 85080,
+          "endMs": 85740,
+          "probability": 0.500541
+        },
+        {
+          "index": 2,
+          "text": "along",
+          "startMs": 85740,
+          "endMs": 86060,
+          "probability": 0.735934
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 86060,
+          "endMs": 86340,
+          "probability": 0.973169
+        },
+        {
+          "index": 4,
+          "text": "river",
+          "startMs": 86340,
+          "endMs": 86660,
+          "probability": 0.691281
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 86660,
+          "endMs": 87420,
+          "probability": 0.352897
+        },
+        {
+          "index": 6,
+          "text": "sees",
+          "startMs": 87420,
+          "endMs": 87760,
+          "probability": 0.932885
+        },
+        {
+          "index": 7,
+          "text": "T",
+          "startMs": 87760,
+          "endMs": 88140,
+          "probability": 0.544313
+        },
+        {
+          "index": 8,
+          "text": "-Rex",
+          "startMs": 88140,
+          "endMs": 88600,
+          "probability": 0.647444
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "T-Rex plays guitar",
+      "startMs": 88600,
+      "endMs": 90720,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "T",
+          "startMs": 88600,
+          "endMs": 89520,
+          "probability": 0.632012
+        },
+        {
+          "index": 2,
+          "text": "-Rex",
+          "startMs": 89520,
+          "endMs": 89840,
+          "probability": 0.954156
+        },
+        {
+          "index": 3,
+          "text": "plays",
+          "startMs": 89840,
+          "endMs": 90180,
+          "probability": 0.787739
+        },
+        {
+          "index": 4,
+          "text": "guitar",
+          "startMs": 90180,
+          "endMs": 90720,
+          "probability": 0.855604
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "T-Rex is awesome",
+      "startMs": 91480,
+      "endMs": 93060,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "T",
+          "startMs": 91220,
+          "endMs": 91640,
+          "probability": 0.805214
+        },
+        {
+          "index": 2,
+          "text": "-Rex",
+          "startMs": 91640,
+          "endMs": 92020,
+          "probability": 0.962827
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 92020,
+          "endMs": 92340,
+          "probability": 0.971469
+        },
+        {
+          "index": 4,
+          "text": "awesome",
+          "startMs": 92340,
+          "endMs": 93060,
+          "probability": 0.950251
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Hey T-Rex Pete yells want to come to a picnic",
+      "startMs": 93680,
+      "endMs": 98000,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hey",
+          "startMs": 93680,
+          "endMs": 94300,
+          "probability": 0.72975
+        },
+        {
+          "index": 2,
+          "text": "T",
+          "startMs": 94300,
+          "endMs": 94640,
+          "probability": 0.445108
+        },
+        {
+          "index": 3,
+          "text": "-Rex",
+          "startMs": 94640,
+          "endMs": 95100,
+          "probability": 0.973522
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 95100,
+          "endMs": 95740,
+          "probability": 0.873294
+        },
+        {
+          "index": 5,
+          "text": "yells",
+          "startMs": 95740,
+          "endMs": 96200,
+          "probability": 0.793752
+        },
+        {
+          "index": 6,
+          "text": "want",
+          "startMs": 96200,
+          "endMs": 96900,
+          "probability": 0.747298
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 96900,
+          "endMs": 97100,
+          "probability": 0.998491
+        },
+        {
+          "index": 8,
+          "text": "come",
+          "startMs": 97100,
+          "endMs": 97260,
+          "probability": 0.998385
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 97260,
+          "endMs": 97440,
+          "probability": 0.998704
+        },
+        {
+          "index": 10,
+          "text": "a",
+          "startMs": 97440,
+          "endMs": 97580,
+          "probability": 0.997341
+        },
+        {
+          "index": 11,
+          "text": "picnic",
+          "startMs": 97580,
+          "endMs": 98000,
+          "probability": 0.998882
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "Sweet says T-Rex",
+      "startMs": 98800,
+      "endMs": 100560,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sweet",
+          "startMs": 98800,
+          "endMs": 99340,
+          "probability": 0.279801
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 99340,
+          "endMs": 99900,
+          "probability": 0.870047
+        },
+        {
+          "index": 3,
+          "text": "T",
+          "startMs": 99900,
+          "endMs": 100220,
+          "probability": 0.830791
+        },
+        {
+          "index": 4,
+          "text": "-Rex",
+          "startMs": 100220,
+          "endMs": 100560,
+          "probability": 0.980666
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Can I bring my guitar?",
+      "startMs": 101080,
+      "endMs": 102500,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "Can",
+          "startMs": 101080,
+          "endMs": 101540,
+          "probability": 0.523503
+        },
+        {
+          "index": 2,
+          "text": "I",
+          "startMs": 101540,
+          "endMs": 101720,
+          "probability": 0.994516
+        },
+        {
+          "index": 3,
+          "text": "bring",
+          "startMs": 101720,
+          "endMs": 101920,
+          "probability": 0.996731
+        },
+        {
+          "index": 4,
+          "text": "my",
+          "startMs": 101920,
+          "endMs": 102120,
+          "probability": 0.998886
+        },
+        {
+          "index": 5,
+          "text": "guitar?",
+          "startMs": 102120,
+          "endMs": 102500,
+          "probability": 0.981563
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Definitely says Pete we can jam",
+      "startMs": 103340,
+      "endMs": 106620,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "Definitely",
+          "startMs": 103340,
+          "endMs": 104180,
+          "probability": 0.925135
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 104180,
+          "endMs": 104700,
+          "probability": 0.916295
+        },
+        {
+          "index": 3,
+          "text": "Pete",
+          "startMs": 104700,
+          "endMs": 105120,
+          "probability": 0.948785
+        },
+        {
+          "index": 4,
+          "text": "we",
+          "startMs": 105120,
+          "endMs": 105820,
+          "probability": 0.865311
+        },
+        {
+          "index": 5,
+          "text": "can",
+          "startMs": 105820,
+          "endMs": 106060,
+          "probability": 0.997785
+        },
+        {
+          "index": 6,
+          "text": "jam",
+          "startMs": 106060,
+          "endMs": 106620,
+          "probability": 0.547007
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Count me in says T-Rex",
+      "startMs": 107360,
+      "endMs": 109940,
+      "avgLogprob": -0.291711,
+      "noSpeechProb": 0.000408,
+      "compressionRatio": 1.46,
+      "words": [
+        {
+          "index": 1,
+          "text": "Count",
+          "startMs": 107360,
+          "endMs": 107840,
+          "probability": 0.755624
+        },
+        {
+          "index": 2,
+          "text": "me",
+          "startMs": 107840,
+          "endMs": 108180,
+          "probability": 0.98871
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 108180,
+          "endMs": 108740,
+          "probability": 0.995129
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 108740,
+          "endMs": 109220,
+          "probability": 0.949837
+        },
+        {
+          "index": 5,
+          "text": "T",
+          "startMs": 109220,
+          "endMs": 109520,
+          "probability": 0.867477
+        },
+        {
+          "index": 6,
+          "text": "-Rex",
+          "startMs": 109520,
+          "endMs": 109940,
+          "probability": 0.979324
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Okay, if I bring out the Allosaurus. He's a whiz on the drums",
+      "startMs": 110820,
+      "endMs": 115740,
+      "avgLogprob": -0.25528,
+      "noSpeechProb": 0.019358,
+      "compressionRatio": 1.486339,
+      "words": [
+        {
+          "index": 1,
+          "text": "Okay,",
+          "startMs": 110620,
+          "endMs": 111000,
+          "probability": 0.20596
+        },
+        {
+          "index": 2,
+          "text": "if",
+          "startMs": 111320,
+          "endMs": 111580,
+          "probability": 0.974671
+        },
+        {
+          "index": 3,
+          "text": "I",
+          "startMs": 111580,
+          "endMs": 111740,
+          "probability": 0.993734
+        },
+        {
+          "index": 4,
+          "text": "bring",
+          "startMs": 111740,
+          "endMs": 112100,
+          "probability": 0.9943
+        },
+        {
+          "index": 5,
+          "text": "out",
+          "startMs": 112100,
+          "endMs": 112440,
+          "probability": 0.024988
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 112440,
+          "endMs": 112680,
+          "probability": 0.951983
+        },
+        {
+          "index": 7,
+          "text": "Allosaurus.",
+          "startMs": 112680,
+          "endMs": 113260,
+          "probability": 0.606091
+        },
+        {
+          "index": 8,
+          "text": "He's",
+          "startMs": 114020,
+          "endMs": 114400,
+          "probability": 0.985222
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 114400,
+          "endMs": 114520,
+          "probability": 0.966776
+        },
+        {
+          "index": 10,
+          "text": "whiz",
+          "startMs": 114520,
+          "endMs": 114940,
+          "probability": 0.839078
+        },
+        {
+          "index": 11,
+          "text": "on",
+          "startMs": 114940,
+          "endMs": 115180,
+          "probability": 0.995253
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 115180,
+          "endMs": 115360,
+          "probability": 0.998353
+        },
+        {
+          "index": 13,
+          "text": "drums",
+          "startMs": 115360,
+          "endMs": 115740,
+          "probability": 0.968934
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "The more the merrier says Pete",
+      "startMs": 116380,
+      "endMs": 119220,
+      "avgLogprob": -0.25528,
+      "noSpeechProb": 0.019358,
+      "compressionRatio": 1.486339,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 116380,
+          "endMs": 116920,
+          "probability": 0.019885
+        },
+        {
+          "index": 2,
+          "text": "more",
+          "startMs": 116920,
+          "endMs": 117300,
+          "probability": 0.9629
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 117300,
+          "endMs": 117580,
+          "probability": 0.892292
+        },
+        {
+          "index": 4,
+          "text": "merrier",
+          "startMs": 117580,
+          "endMs": 118300,
+          "probability": 0.995278
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 118300,
+          "endMs": 118740,
+          "probability": 0.476527
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 118740,
+          "endMs": 119220,
+          "probability": 0.91968
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Pete sees his friend Terry the pterosaur in the sky",
+      "startMs": 120740,
+      "endMs": 124500,
+      "avgLogprob": -0.25528,
+      "noSpeechProb": 0.019358,
+      "compressionRatio": 1.486339,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 120740,
+          "endMs": 121500,
+          "probability": 0.723367
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 121500,
+          "endMs": 121800,
+          "probability": 0.926123
+        },
+        {
+          "index": 3,
+          "text": "his",
+          "startMs": 121800,
+          "endMs": 122040,
+          "probability": 0.978146
+        },
+        {
+          "index": 4,
+          "text": "friend",
+          "startMs": 122040,
+          "endMs": 122320,
+          "probability": 0.991043
+        },
+        {
+          "index": 5,
+          "text": "Terry",
+          "startMs": 122320,
+          "endMs": 122660,
+          "probability": 0.768034
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 122660,
+          "endMs": 122980,
+          "probability": 0.938214
+        },
+        {
+          "index": 7,
+          "text": "pterosaur",
+          "startMs": 122980,
+          "endMs": 123580,
+          "probability": 0.822583
+        },
+        {
+          "index": 8,
+          "text": "in",
+          "startMs": 123580,
+          "endMs": 123880,
+          "probability": 0.991193
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 123880,
+          "endMs": 124020,
+          "probability": 0.998815
+        },
+        {
+          "index": 10,
+          "text": "sky",
+          "startMs": 124020,
+          "endMs": 124500,
+          "probability": 0.959699
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "Hi Pete she calls",
+      "startMs": 125100,
+      "endMs": 127160,
+      "avgLogprob": -0.25528,
+      "noSpeechProb": 0.019358,
+      "compressionRatio": 1.486339,
+      "words": [
+        {
+          "index": 1,
+          "text": "Hi",
+          "startMs": 125100,
+          "endMs": 125720,
+          "probability": 0.426464
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 125720,
+          "endMs": 126140,
+          "probability": 0.60842
+        },
+        {
+          "index": 3,
+          "text": "she",
+          "startMs": 126140,
+          "endMs": 126700,
+          "probability": 0.481858
+        },
+        {
+          "index": 4,
+          "text": "calls",
+          "startMs": 126700,
+          "endMs": 127160,
+          "probability": 0.992368
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Pete invites Terry to the picnic too. Would you mind giving me a lift Pete asks?",
+      "startMs": 127980,
+      "endMs": 134120,
+      "avgLogprob": -0.25528,
+      "noSpeechProb": 0.019358,
+      "compressionRatio": 1.486339,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 127980,
+          "endMs": 128520,
+          "probability": 0.980008
+        },
+        {
+          "index": 2,
+          "text": "invites",
+          "startMs": 128520,
+          "endMs": 129040,
+          "probability": 0.924517
+        },
+        {
+          "index": 3,
+          "text": "Terry",
+          "startMs": 129040,
+          "endMs": 129360,
+          "probability": 0.887479
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 129360,
+          "endMs": 129600,
+          "probability": 0.998523
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 129600,
+          "endMs": 129740,
+          "probability": 0.998481
+        },
+        {
+          "index": 6,
+          "text": "picnic",
+          "startMs": 129740,
+          "endMs": 130060,
+          "probability": 0.997823
+        },
+        {
+          "index": 7,
+          "text": "too.",
+          "startMs": 130060,
+          "endMs": 130520,
+          "probability": 0.36683
+        },
+        {
+          "index": 8,
+          "text": "Would",
+          "startMs": 130800,
+          "endMs": 131440,
+          "probability": 0.968991
+        },
+        {
+          "index": 9,
+          "text": "you",
+          "startMs": 131440,
+          "endMs": 131640,
+          "probability": 0.999604
+        },
+        {
+          "index": 10,
+          "text": "mind",
+          "startMs": 131640,
+          "endMs": 131900,
+          "probability": 0.999051
+        },
+        {
+          "index": 11,
+          "text": "giving",
+          "startMs": 131900,
+          "endMs": 132180,
+          "probability": 0.997199
+        },
+        {
+          "index": 12,
+          "text": "me",
+          "startMs": 132180,
+          "endMs": 132460,
+          "probability": 0.998801
+        },
+        {
+          "index": 13,
+          "text": "a",
+          "startMs": 132460,
+          "endMs": 132580,
+          "probability": 0.996665
+        },
+        {
+          "index": 14,
+          "text": "lift",
+          "startMs": 132580,
+          "endMs": 132960,
+          "probability": 0.99229
+        },
+        {
+          "index": 15,
+          "text": "Pete",
+          "startMs": 132960,
+          "endMs": 133640,
+          "probability": 0.586085
+        },
+        {
+          "index": 16,
+          "text": "asks?",
+          "startMs": 133640,
+          "endMs": 134120,
+          "probability": 0.821267
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "Sure says Terry climb aboard",
+      "startMs": 134700,
+      "endMs": 137260,
+      "avgLogprob": -0.25528,
+      "noSpeechProb": 0.019358,
+      "compressionRatio": 1.486339,
+      "words": [
+        {
+          "index": 1,
+          "text": "Sure",
+          "startMs": 134700,
+          "endMs": 135160,
+          "probability": 0.822705
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 135160,
+          "endMs": 135580,
+          "probability": 0.595227
+        },
+        {
+          "index": 3,
+          "text": "Terry",
+          "startMs": 135580,
+          "endMs": 136040,
+          "probability": 0.958079
+        },
+        {
+          "index": 4,
+          "text": "climb",
+          "startMs": 136040,
+          "endMs": 136720,
+          "probability": 0.970416
+        },
+        {
+          "index": 5,
+          "text": "aboard",
+          "startMs": 136720,
+          "endMs": 137260,
+          "probability": 0.930494
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Pete sees the spike tail of his main man Skip the Stegosaurus",
+      "startMs": 138920,
+      "endMs": 143240,
+      "avgLogprob": -0.441899,
+      "noSpeechProb": 0.001836,
+      "compressionRatio": 1.55665,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 138920,
+          "endMs": 139600,
+          "probability": 0.691948
+        },
+        {
+          "index": 2,
+          "text": "sees",
+          "startMs": 139600,
+          "endMs": 139980,
+          "probability": 0.980477
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 139980,
+          "endMs": 140200,
+          "probability": 0.990802
+        },
+        {
+          "index": 4,
+          "text": "spike",
+          "startMs": 140200,
+          "endMs": 140560,
+          "probability": 0.261704
+        },
+        {
+          "index": 5,
+          "text": "tail",
+          "startMs": 140560,
+          "endMs": 140900,
+          "probability": 0.927763
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 140900,
+          "endMs": 141100,
+          "probability": 0.982239
+        },
+        {
+          "index": 7,
+          "text": "his",
+          "startMs": 141100,
+          "endMs": 141200,
+          "probability": 0.99382
+        },
+        {
+          "index": 8,
+          "text": "main",
+          "startMs": 141200,
+          "endMs": 141480,
+          "probability": 0.979715
+        },
+        {
+          "index": 9,
+          "text": "man",
+          "startMs": 141480,
+          "endMs": 141880,
+          "probability": 0.991197
+        },
+        {
+          "index": 10,
+          "text": "Skip",
+          "startMs": 141880,
+          "endMs": 142240,
+          "probability": 0.311158
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 142240,
+          "endMs": 142500,
+          "probability": 0.954945
+        },
+        {
+          "index": 12,
+          "text": "Stegosaurus",
+          "startMs": 142500,
+          "endMs": 143240,
+          "probability": 0.967792
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "How are you feeling today Skip Pete asks?",
+      "startMs": 144020,
+      "endMs": 147340,
+      "avgLogprob": -0.441899,
+      "noSpeechProb": 0.001836,
+      "compressionRatio": 1.55665,
+      "words": [
+        {
+          "index": 1,
+          "text": "How",
+          "startMs": 144020,
+          "endMs": 144700,
+          "probability": 0.014867
+        },
+        {
+          "index": 2,
+          "text": "are",
+          "startMs": 144700,
+          "endMs": 144840,
+          "probability": 0.991027
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 144840,
+          "endMs": 144980,
+          "probability": 0.999
+        },
+        {
+          "index": 4,
+          "text": "feeling",
+          "startMs": 144980,
+          "endMs": 145280,
+          "probability": 0.998296
+        },
+        {
+          "index": 5,
+          "text": "today",
+          "startMs": 145280,
+          "endMs": 145680,
+          "probability": 0.995602
+        },
+        {
+          "index": 6,
+          "text": "Skip",
+          "startMs": 145680,
+          "endMs": 146080,
+          "probability": 0.558217
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 146080,
+          "endMs": 146820,
+          "probability": 0.203099
+        },
+        {
+          "index": 8,
+          "text": "asks?",
+          "startMs": 146820,
+          "endMs": 147340,
+          "probability": 0.906962
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "Skip has been sick with the sniffles",
+      "startMs": 148240,
+      "endMs": 150080,
+      "avgLogprob": -0.441899,
+      "noSpeechProb": 0.001836,
+      "compressionRatio": 1.55665,
+      "words": [
+        {
+          "index": 1,
+          "text": "Skip",
+          "startMs": 148240,
+          "endMs": 148320,
+          "probability": 0.960809
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 148320,
+          "endMs": 148600,
+          "probability": 0.99309
+        },
+        {
+          "index": 3,
+          "text": "been",
+          "startMs": 148600,
+          "endMs": 148800,
+          "probability": 0.999001
+        },
+        {
+          "index": 4,
+          "text": "sick",
+          "startMs": 148800,
+          "endMs": 149080,
+          "probability": 0.998658
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 149080,
+          "endMs": 149280,
+          "probability": 0.99743
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 149280,
+          "endMs": 149440,
+          "probability": 0.996295
+        },
+        {
+          "index": 7,
+          "text": "sniffles",
+          "startMs": 149440,
+          "endMs": 150080,
+          "probability": 0.997654
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Better says Skip. Thanks for asking",
+      "startMs": 150080,
+      "endMs": 153460,
+      "avgLogprob": -0.441899,
+      "noSpeechProb": 0.001836,
+      "compressionRatio": 1.55665,
+      "words": [
+        {
+          "index": 1,
+          "text": "Better",
+          "startMs": 150080,
+          "endMs": 151140,
+          "probability": 0.635273
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 151140,
+          "endMs": 151700,
+          "probability": 0.861292
+        },
+        {
+          "index": 3,
+          "text": "Skip.",
+          "startMs": 151700,
+          "endMs": 152080,
+          "probability": 0.508019
+        },
+        {
+          "index": 4,
+          "text": "Thanks",
+          "startMs": 152260,
+          "endMs": 152720,
+          "probability": 0.986187
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 152720,
+          "endMs": 152960,
+          "probability": 0.999314
+        },
+        {
+          "index": 6,
+          "text": "asking",
+          "startMs": 152960,
+          "endMs": 153460,
+          "probability": 0.999335
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "You up for a picnic? I think so says Skip. I'd hate to miss the fun",
+      "startMs": 153460,
+      "endMs": 160080,
+      "avgLogprob": -0.441899,
+      "noSpeechProb": 0.001836,
+      "compressionRatio": 1.55665,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 153460,
+          "endMs": 154500,
+          "probability": 0.853203
+        },
+        {
+          "index": 2,
+          "text": "up",
+          "startMs": 154500,
+          "endMs": 154640,
+          "probability": 0.99154
+        },
+        {
+          "index": 3,
+          "text": "for",
+          "startMs": 154640,
+          "endMs": 154880,
+          "probability": 0.998821
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 154880,
+          "endMs": 155020,
+          "probability": 0.998162
+        },
+        {
+          "index": 5,
+          "text": "picnic?",
+          "startMs": 155020,
+          "endMs": 155360,
+          "probability": 0.99915
+        },
+        {
+          "index": 6,
+          "text": "I",
+          "startMs": 156020,
+          "endMs": 156340,
+          "probability": 0.973179
+        },
+        {
+          "index": 7,
+          "text": "think",
+          "startMs": 156340,
+          "endMs": 156600,
+          "probability": 0.963089
+        },
+        {
+          "index": 8,
+          "text": "so",
+          "startMs": 156600,
+          "endMs": 157120,
+          "probability": 0.995694
+        },
+        {
+          "index": 9,
+          "text": "says",
+          "startMs": 157120,
+          "endMs": 157680,
+          "probability": 0.606329
+        },
+        {
+          "index": 10,
+          "text": "Skip.",
+          "startMs": 157680,
+          "endMs": 158060,
+          "probability": 0.528005
+        },
+        {
+          "index": 11,
+          "text": "I'd",
+          "startMs": 158180,
+          "endMs": 158860,
+          "probability": 0.977958
+        },
+        {
+          "index": 12,
+          "text": "hate",
+          "startMs": 158860,
+          "endMs": 159100,
+          "probability": 0.99742
+        },
+        {
+          "index": 13,
+          "text": "to",
+          "startMs": 159100,
+          "endMs": 159340,
+          "probability": 0.999693
+        },
+        {
+          "index": 14,
+          "text": "miss",
+          "startMs": 159340,
+          "endMs": 159500,
+          "probability": 0.997757
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 159500,
+          "endMs": 159740,
+          "probability": 0.999319
+        },
+        {
+          "index": 16,
+          "text": "fun",
+          "startMs": 159740,
+          "endMs": 160080,
+          "probability": 0.998372
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "It's almost time for the picnic cave cat Pete rushes through the forest",
+      "startMs": 161840,
+      "endMs": 166900,
+      "avgLogprob": -0.441899,
+      "noSpeechProb": 0.001836,
+      "compressionRatio": 1.55665,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 161840,
+          "endMs": 162520,
+          "probability": 0.978945
+        },
+        {
+          "index": 2,
+          "text": "almost",
+          "startMs": 162520,
+          "endMs": 162900,
+          "probability": 0.997826
+        },
+        {
+          "index": 3,
+          "text": "time",
+          "startMs": 162900,
+          "endMs": 163200,
+          "probability": 0.999361
+        },
+        {
+          "index": 4,
+          "text": "for",
+          "startMs": 163200,
+          "endMs": 163400,
+          "probability": 0.999524
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 163400,
+          "endMs": 163540,
+          "probability": 0.998865
+        },
+        {
+          "index": 6,
+          "text": "picnic",
+          "startMs": 163540,
+          "endMs": 164080,
+          "probability": 0.997662
+        },
+        {
+          "index": 7,
+          "text": "cave",
+          "startMs": 164080,
+          "endMs": 164840,
+          "probability": 0.799261
+        },
+        {
+          "index": 8,
+          "text": "cat",
+          "startMs": 164840,
+          "endMs": 165200,
+          "probability": 0.54996
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 165200,
+          "endMs": 165500,
+          "probability": 0.982325
+        },
+        {
+          "index": 10,
+          "text": "rushes",
+          "startMs": 165500,
+          "endMs": 166020,
+          "probability": 0.995253
+        },
+        {
+          "index": 11,
+          "text": "through",
+          "startMs": 166020,
+          "endMs": 166320,
+          "probability": 0.998595
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 166320,
+          "endMs": 166500,
+          "probability": 0.999483
+        },
+        {
+          "index": 13,
+          "text": "forest",
+          "startMs": 166500,
+          "endMs": 166900,
+          "probability": 0.993758
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "He doesn't want to be late",
+      "startMs": 166900,
+      "endMs": 168880,
+      "avgLogprob": -0.162002,
+      "noSpeechProb": 0.002765,
+      "compressionRatio": 1.565022,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 166900,
+          "endMs": 167620,
+          "probability": 0.638087
+        },
+        {
+          "index": 2,
+          "text": "doesn't",
+          "startMs": 167620,
+          "endMs": 168060,
+          "probability": 0.989189
+        },
+        {
+          "index": 3,
+          "text": "want",
+          "startMs": 168060,
+          "endMs": 168200,
+          "probability": 0.982871
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 168200,
+          "endMs": 168340,
+          "probability": 0.998938
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 168340,
+          "endMs": 168460,
+          "probability": 0.998536
+        },
+        {
+          "index": 6,
+          "text": "late",
+          "startMs": 168460,
+          "endMs": 168880,
+          "probability": 0.997381
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Whoops Pete trips over Trini the triceratops",
+      "startMs": 168880,
+      "endMs": 173080,
+      "avgLogprob": -0.162002,
+      "noSpeechProb": 0.002765,
+      "compressionRatio": 1.565022,
+      "words": [
+        {
+          "index": 1,
+          "text": "Whoops",
+          "startMs": 168880,
+          "endMs": 170160,
+          "probability": 0.497398
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 170160,
+          "endMs": 170820,
+          "probability": 0.362601
+        },
+        {
+          "index": 3,
+          "text": "trips",
+          "startMs": 170820,
+          "endMs": 171120,
+          "probability": 0.982224
+        },
+        {
+          "index": 4,
+          "text": "over",
+          "startMs": 171120,
+          "endMs": 171480,
+          "probability": 0.980601
+        },
+        {
+          "index": 5,
+          "text": "Trini",
+          "startMs": 171480,
+          "endMs": 171900,
+          "probability": 0.716929
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 171900,
+          "endMs": 172080,
+          "probability": 0.915146
+        },
+        {
+          "index": 7,
+          "text": "triceratops",
+          "startMs": 172080,
+          "endMs": 173080,
+          "probability": 0.914677
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "We're playing hide-and-seek she says before Pete can ask what she was doing I",
+      "startMs": 174960,
+      "endMs": 179940,
+      "avgLogprob": -0.162002,
+      "noSpeechProb": 0.002765,
+      "compressionRatio": 1.565022,
+      "words": [
+        {
+          "index": 1,
+          "text": "We're",
+          "startMs": 174960,
+          "endMs": 175600,
+          "probability": 0.91763
+        },
+        {
+          "index": 2,
+          "text": "playing",
+          "startMs": 175600,
+          "endMs": 175900,
+          "probability": 0.994555
+        },
+        {
+          "index": 3,
+          "text": "hide",
+          "startMs": 175900,
+          "endMs": 176240,
+          "probability": 0.995045
+        },
+        {
+          "index": 4,
+          "text": "-and",
+          "startMs": 176240,
+          "endMs": 176420,
+          "probability": 0.638729
+        },
+        {
+          "index": 5,
+          "text": "-seek",
+          "startMs": 176420,
+          "endMs": 176860,
+          "probability": 0.997248
+        },
+        {
+          "index": 6,
+          "text": "she",
+          "startMs": 176860,
+          "endMs": 177360,
+          "probability": 0.528061
+        },
+        {
+          "index": 7,
+          "text": "says",
+          "startMs": 177360,
+          "endMs": 177640,
+          "probability": 0.997193
+        },
+        {
+          "index": 8,
+          "text": "before",
+          "startMs": 177640,
+          "endMs": 178060,
+          "probability": 0.994023
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 178060,
+          "endMs": 178340,
+          "probability": 0.964394
+        },
+        {
+          "index": 10,
+          "text": "can",
+          "startMs": 178340,
+          "endMs": 178520,
+          "probability": 0.989804
+        },
+        {
+          "index": 11,
+          "text": "ask",
+          "startMs": 178520,
+          "endMs": 178860,
+          "probability": 0.978367
+        },
+        {
+          "index": 12,
+          "text": "what",
+          "startMs": 178860,
+          "endMs": 179060,
+          "probability": 0.994308
+        },
+        {
+          "index": 13,
+          "text": "she",
+          "startMs": 179060,
+          "endMs": 179240,
+          "probability": 0.996921
+        },
+        {
+          "index": 14,
+          "text": "was",
+          "startMs": 179240,
+          "endMs": 179400,
+          "probability": 0.99884
+        },
+        {
+          "index": 15,
+          "text": "doing",
+          "startMs": 179400,
+          "endMs": 179780,
+          "probability": 0.999278
+        },
+        {
+          "index": 16,
+          "text": "I",
+          "startMs": 179780,
+          "endMs": 180100,
+          "probability": 0.731929
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "Think I hit a little too. Well",
+      "startMs": 180940,
+      "endMs": 183000,
+      "avgLogprob": -0.162002,
+      "noSpeechProb": 0.002765,
+      "compressionRatio": 1.565022,
+      "words": [
+        {
+          "index": 1,
+          "text": "Think",
+          "startMs": 180940,
+          "endMs": 181240,
+          "probability": 0.720582
+        },
+        {
+          "index": 2,
+          "text": "I",
+          "startMs": 181240,
+          "endMs": 181480,
+          "probability": 0.995773
+        },
+        {
+          "index": 3,
+          "text": "hit",
+          "startMs": 181480,
+          "endMs": 181680,
+          "probability": 0.736737
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 181680,
+          "endMs": 181820,
+          "probability": 0.999011
+        },
+        {
+          "index": 5,
+          "text": "little",
+          "startMs": 181820,
+          "endMs": 182080,
+          "probability": 0.999182
+        },
+        {
+          "index": 6,
+          "text": "too.",
+          "startMs": 182080,
+          "endMs": 182380,
+          "probability": 0.987357
+        },
+        {
+          "index": 7,
+          "text": "Well",
+          "startMs": 182620,
+          "endMs": 183000,
+          "probability": 0.998802
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "How long have you been there asks Pete?",
+      "startMs": 183000,
+      "endMs": 186060,
+      "avgLogprob": -0.162002,
+      "noSpeechProb": 0.002765,
+      "compressionRatio": 1.565022,
+      "words": [
+        {
+          "index": 1,
+          "text": "How",
+          "startMs": 183000,
+          "endMs": 184020,
+          "probability": 0.966777
+        },
+        {
+          "index": 2,
+          "text": "long",
+          "startMs": 184020,
+          "endMs": 184260,
+          "probability": 0.997154
+        },
+        {
+          "index": 3,
+          "text": "have",
+          "startMs": 184260,
+          "endMs": 184460,
+          "probability": 0.998079
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 184460,
+          "endMs": 184620,
+          "probability": 0.999698
+        },
+        {
+          "index": 5,
+          "text": "been",
+          "startMs": 184620,
+          "endMs": 184800,
+          "probability": 0.999594
+        },
+        {
+          "index": 6,
+          "text": "there",
+          "startMs": 184800,
+          "endMs": 185180,
+          "probability": 0.993557
+        },
+        {
+          "index": 7,
+          "text": "asks",
+          "startMs": 185180,
+          "endMs": 185640,
+          "probability": 0.602468
+        },
+        {
+          "index": 8,
+          "text": "Pete?",
+          "startMs": 185640,
+          "endMs": 186060,
+          "probability": 0.954816
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "What's today asks Trini?",
+      "startMs": 186660,
+      "endMs": 188700,
+      "avgLogprob": -0.162002,
+      "noSpeechProb": 0.002765,
+      "compressionRatio": 1.565022,
+      "words": [
+        {
+          "index": 1,
+          "text": "What's",
+          "startMs": 186660,
+          "endMs": 187280,
+          "probability": 0.983092
+        },
+        {
+          "index": 2,
+          "text": "today",
+          "startMs": 187280,
+          "endMs": 187620,
+          "probability": 0.998584
+        },
+        {
+          "index": 3,
+          "text": "asks",
+          "startMs": 187620,
+          "endMs": 188180,
+          "probability": 0.831558
+        },
+        {
+          "index": 4,
+          "text": "Trini?",
+          "startMs": 188180,
+          "endMs": 188700,
+          "probability": 0.862329
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "Well, all the dinosaurs are going to be at the picnic grounds want to come Pete asks. What a great idea",
+      "startMs": 189620,
+      "endMs": 196700,
+      "avgLogprob": -0.162002,
+      "noSpeechProb": 0.002765,
+      "compressionRatio": 1.565022,
+      "words": [
+        {
+          "index": 1,
+          "text": "Well,",
+          "startMs": 189620,
+          "endMs": 190060,
+          "probability": 0.940223
+        },
+        {
+          "index": 2,
+          "text": "all",
+          "startMs": 190060,
+          "endMs": 190360,
+          "probability": 0.998192
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 190360,
+          "endMs": 190520,
+          "probability": 0.999394
+        },
+        {
+          "index": 4,
+          "text": "dinosaurs",
+          "startMs": 190520,
+          "endMs": 190920,
+          "probability": 0.988713
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 190920,
+          "endMs": 191140,
+          "probability": 0.999259
+        },
+        {
+          "index": 6,
+          "text": "going",
+          "startMs": 191140,
+          "endMs": 191320,
+          "probability": 0.999624
+        },
+        {
+          "index": 7,
+          "text": "to",
+          "startMs": 191320,
+          "endMs": 191500,
+          "probability": 0.999589
+        },
+        {
+          "index": 8,
+          "text": "be",
+          "startMs": 191500,
+          "endMs": 191640,
+          "probability": 0.999498
+        },
+        {
+          "index": 9,
+          "text": "at",
+          "startMs": 191640,
+          "endMs": 191760,
+          "probability": 0.999502
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 191760,
+          "endMs": 191900,
+          "probability": 0.999047
+        },
+        {
+          "index": 11,
+          "text": "picnic",
+          "startMs": 191900,
+          "endMs": 192180,
+          "probability": 0.99685
+        },
+        {
+          "index": 12,
+          "text": "grounds",
+          "startMs": 192180,
+          "endMs": 192660,
+          "probability": 0.960207
+        },
+        {
+          "index": 13,
+          "text": "want",
+          "startMs": 192660,
+          "endMs": 193180,
+          "probability": 0.884645
+        },
+        {
+          "index": 14,
+          "text": "to",
+          "startMs": 193180,
+          "endMs": 193320,
+          "probability": 0.999456
+        },
+        {
+          "index": 15,
+          "text": "come",
+          "startMs": 193320,
+          "endMs": 193740,
+          "probability": 0.991315
+        },
+        {
+          "index": 16,
+          "text": "Pete",
+          "startMs": 193740,
+          "endMs": 194280,
+          "probability": 0.924637
+        },
+        {
+          "index": 17,
+          "text": "asks.",
+          "startMs": 194280,
+          "endMs": 194800,
+          "probability": 0.976126
+        },
+        {
+          "index": 18,
+          "text": "What",
+          "startMs": 195060,
+          "endMs": 195700,
+          "probability": 0.998516
+        },
+        {
+          "index": 19,
+          "text": "a",
+          "startMs": 195700,
+          "endMs": 195940,
+          "probability": 0.997289
+        },
+        {
+          "index": 20,
+          "text": "great",
+          "startMs": 195940,
+          "endMs": 196220,
+          "probability": 0.999602
+        },
+        {
+          "index": 21,
+          "text": "idea",
+          "startMs": 196220,
+          "endMs": 196700,
+          "probability": 0.998284
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "Maybe somebody there will play hide-and-seek with me",
+      "startMs": 196900,
+      "endMs": 200020,
+      "avgLogprob": -0.197195,
+      "noSpeechProb": 0.002252,
+      "compressionRatio": 1.62381,
+      "words": [
+        {
+          "index": 1,
+          "text": "Maybe",
+          "startMs": 196900,
+          "endMs": 197700,
+          "probability": 0.714769
+        },
+        {
+          "index": 2,
+          "text": "somebody",
+          "startMs": 197700,
+          "endMs": 198080,
+          "probability": 0.975154
+        },
+        {
+          "index": 3,
+          "text": "there",
+          "startMs": 198080,
+          "endMs": 198460,
+          "probability": 0.994167
+        },
+        {
+          "index": 4,
+          "text": "will",
+          "startMs": 198460,
+          "endMs": 198680,
+          "probability": 0.994407
+        },
+        {
+          "index": 5,
+          "text": "play",
+          "startMs": 198680,
+          "endMs": 198900,
+          "probability": 0.997817
+        },
+        {
+          "index": 6,
+          "text": "hide",
+          "startMs": 198900,
+          "endMs": 199100,
+          "probability": 0.940347
+        },
+        {
+          "index": 7,
+          "text": "-and",
+          "startMs": 199100,
+          "endMs": 199340,
+          "probability": 0.615975
+        },
+        {
+          "index": 8,
+          "text": "-seek",
+          "startMs": 199340,
+          "endMs": 199460,
+          "probability": 0.99623
+        },
+        {
+          "index": 9,
+          "text": "with",
+          "startMs": 199460,
+          "endMs": 199700,
+          "probability": 0.997598
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 199700,
+          "endMs": 200020,
+          "probability": 0.999582
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "It's time for the picnic Vinnie and Ethel are setting up the picnic tables",
+      "startMs": 201720,
+      "endMs": 206640,
+      "avgLogprob": -0.197195,
+      "noSpeechProb": 0.002252,
+      "compressionRatio": 1.62381,
+      "words": [
+        {
+          "index": 1,
+          "text": "It's",
+          "startMs": 201720,
+          "endMs": 202320,
+          "probability": 0.525326
+        },
+        {
+          "index": 2,
+          "text": "time",
+          "startMs": 202320,
+          "endMs": 202580,
+          "probability": 0.997404
+        },
+        {
+          "index": 3,
+          "text": "for",
+          "startMs": 202580,
+          "endMs": 202860,
+          "probability": 0.998473
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 202860,
+          "endMs": 203000,
+          "probability": 0.995905
+        },
+        {
+          "index": 5,
+          "text": "picnic",
+          "startMs": 203000,
+          "endMs": 203440,
+          "probability": 0.988569
+        },
+        {
+          "index": 6,
+          "text": "Vinnie",
+          "startMs": 203440,
+          "endMs": 204240,
+          "probability": 0.680066
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 204240,
+          "endMs": 204520,
+          "probability": 0.992745
+        },
+        {
+          "index": 8,
+          "text": "Ethel",
+          "startMs": 204520,
+          "endMs": 204820,
+          "probability": 0.865456
+        },
+        {
+          "index": 9,
+          "text": "are",
+          "startMs": 204820,
+          "endMs": 205080,
+          "probability": 0.99621
+        },
+        {
+          "index": 10,
+          "text": "setting",
+          "startMs": 205080,
+          "endMs": 205360,
+          "probability": 0.992877
+        },
+        {
+          "index": 11,
+          "text": "up",
+          "startMs": 205360,
+          "endMs": 205580,
+          "probability": 0.998587
+        },
+        {
+          "index": 12,
+          "text": "the",
+          "startMs": 205580,
+          "endMs": 205760,
+          "probability": 0.994779
+        },
+        {
+          "index": 13,
+          "text": "picnic",
+          "startMs": 205760,
+          "endMs": 206080,
+          "probability": 0.997987
+        },
+        {
+          "index": 14,
+          "text": "tables",
+          "startMs": 206080,
+          "endMs": 206640,
+          "probability": 0.990541
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "T-Rex and all are warming up to play some tunes",
+      "startMs": 207220,
+      "endMs": 210080,
+      "avgLogprob": -0.197195,
+      "noSpeechProb": 0.002252,
+      "compressionRatio": 1.62381,
+      "words": [
+        {
+          "index": 1,
+          "text": "T",
+          "startMs": 207200,
+          "endMs": 207500,
+          "probability": 0.854413
+        },
+        {
+          "index": 2,
+          "text": "-Rex",
+          "startMs": 207500,
+          "endMs": 207720,
+          "probability": 0.661047
+        },
+        {
+          "index": 3,
+          "text": "and",
+          "startMs": 207720,
+          "endMs": 207940,
+          "probability": 0.98692
+        },
+        {
+          "index": 4,
+          "text": "all",
+          "startMs": 207940,
+          "endMs": 208200,
+          "probability": 0.025462
+        },
+        {
+          "index": 5,
+          "text": "are",
+          "startMs": 208200,
+          "endMs": 208360,
+          "probability": 0.585432
+        },
+        {
+          "index": 6,
+          "text": "warming",
+          "startMs": 208360,
+          "endMs": 208740,
+          "probability": 0.997205
+        },
+        {
+          "index": 7,
+          "text": "up",
+          "startMs": 208740,
+          "endMs": 208980,
+          "probability": 0.99926
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 208980,
+          "endMs": 209140,
+          "probability": 0.998338
+        },
+        {
+          "index": 9,
+          "text": "play",
+          "startMs": 209140,
+          "endMs": 209360,
+          "probability": 0.995907
+        },
+        {
+          "index": 10,
+          "text": "some",
+          "startMs": 209360,
+          "endMs": 209580,
+          "probability": 0.998583
+        },
+        {
+          "index": 11,
+          "text": "tunes",
+          "startMs": 209580,
+          "endMs": 210080,
+          "probability": 0.964444
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "Terry and Trini are playing hide-and-seek even Skip seems to be enjoying himself",
+      "startMs": 210080,
+      "endMs": 215840,
+      "avgLogprob": -0.197195,
+      "noSpeechProb": 0.002252,
+      "compressionRatio": 1.62381,
+      "words": [
+        {
+          "index": 1,
+          "text": "Terry",
+          "startMs": 210080,
+          "endMs": 211000,
+          "probability": 0.750867
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 211000,
+          "endMs": 211300,
+          "probability": 0.994232
+        },
+        {
+          "index": 3,
+          "text": "Trini",
+          "startMs": 211300,
+          "endMs": 211600,
+          "probability": 0.80465
+        },
+        {
+          "index": 4,
+          "text": "are",
+          "startMs": 211600,
+          "endMs": 211840,
+          "probability": 0.991948
+        },
+        {
+          "index": 5,
+          "text": "playing",
+          "startMs": 211840,
+          "endMs": 212160,
+          "probability": 0.998961
+        },
+        {
+          "index": 6,
+          "text": "hide",
+          "startMs": 212160,
+          "endMs": 212460,
+          "probability": 0.992443
+        },
+        {
+          "index": 7,
+          "text": "-and",
+          "startMs": 212460,
+          "endMs": 212640,
+          "probability": 0.881888
+        },
+        {
+          "index": 8,
+          "text": "-seek",
+          "startMs": 212640,
+          "endMs": 213020,
+          "probability": 0.994249
+        },
+        {
+          "index": 9,
+          "text": "even",
+          "startMs": 213020,
+          "endMs": 213880,
+          "probability": 0.544462
+        },
+        {
+          "index": 10,
+          "text": "Skip",
+          "startMs": 213880,
+          "endMs": 214220,
+          "probability": 0.594856
+        },
+        {
+          "index": 11,
+          "text": "seems",
+          "startMs": 214220,
+          "endMs": 214540,
+          "probability": 0.994621
+        },
+        {
+          "index": 12,
+          "text": "to",
+          "startMs": 214540,
+          "endMs": 214760,
+          "probability": 0.999646
+        },
+        {
+          "index": 13,
+          "text": "be",
+          "startMs": 214760,
+          "endMs": 214920,
+          "probability": 0.999684
+        },
+        {
+          "index": 14,
+          "text": "enjoying",
+          "startMs": 214920,
+          "endMs": 215260,
+          "probability": 0.999245
+        },
+        {
+          "index": 15,
+          "text": "himself",
+          "startMs": 215260,
+          "endMs": 215840,
+          "probability": 0.997473
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "It doesn't get any better than this Pete says",
+      "startMs": 217520,
+      "endMs": 220680,
+      "avgLogprob": -0.197195,
+      "noSpeechProb": 0.002252,
+      "compressionRatio": 1.62381,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 217520,
+          "endMs": 218120,
+          "probability": 0.902217
+        },
+        {
+          "index": 2,
+          "text": "doesn't",
+          "startMs": 218120,
+          "endMs": 218440,
+          "probability": 0.999316
+        },
+        {
+          "index": 3,
+          "text": "get",
+          "startMs": 218440,
+          "endMs": 218640,
+          "probability": 0.999663
+        },
+        {
+          "index": 4,
+          "text": "any",
+          "startMs": 218640,
+          "endMs": 218920,
+          "probability": 0.999221
+        },
+        {
+          "index": 5,
+          "text": "better",
+          "startMs": 218920,
+          "endMs": 219120,
+          "probability": 0.999692
+        },
+        {
+          "index": 6,
+          "text": "than",
+          "startMs": 219120,
+          "endMs": 219380,
+          "probability": 0.99868
+        },
+        {
+          "index": 7,
+          "text": "this",
+          "startMs": 219380,
+          "endMs": 219780,
+          "probability": 0.998296
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 219780,
+          "endMs": 220200,
+          "probability": 0.846366
+        },
+        {
+          "index": 9,
+          "text": "says",
+          "startMs": 220200,
+          "endMs": 220680,
+          "probability": 0.9925
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "T-Rex comes over then hey Pete he asks",
+      "startMs": 222340,
+      "endMs": 226420,
+      "avgLogprob": -0.197195,
+      "noSpeechProb": 0.002252,
+      "compressionRatio": 1.62381,
+      "words": [
+        {
+          "index": 1,
+          "text": "T",
+          "startMs": 222340,
+          "endMs": 222940,
+          "probability": 0.949858
+        },
+        {
+          "index": 2,
+          "text": "-Rex",
+          "startMs": 222940,
+          "endMs": 223220,
+          "probability": 0.938146
+        },
+        {
+          "index": 3,
+          "text": "comes",
+          "startMs": 223220,
+          "endMs": 223520,
+          "probability": 0.995623
+        },
+        {
+          "index": 4,
+          "text": "over",
+          "startMs": 223520,
+          "endMs": 223860,
+          "probability": 0.999701
+        },
+        {
+          "index": 5,
+          "text": "then",
+          "startMs": 223860,
+          "endMs": 224320,
+          "probability": 0.944417
+        },
+        {
+          "index": 6,
+          "text": "hey",
+          "startMs": 224320,
+          "endMs": 225120,
+          "probability": 0.400459
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 225120,
+          "endMs": 225540,
+          "probability": 0.944413
+        },
+        {
+          "index": 8,
+          "text": "he",
+          "startMs": 225540,
+          "endMs": 226060,
+          "probability": 0.844013
+        },
+        {
+          "index": 9,
+          "text": "asks",
+          "startMs": 226060,
+          "endMs": 226420,
+          "probability": 0.988777
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "Is there anything else to eat? I'm a carnivore. I don't eat salad",
+      "startMs": 226900,
+      "endMs": 232140,
+      "avgLogprob": -0.159266,
+      "noSpeechProb": 0.006544,
+      "compressionRatio": 1.485149,
+      "words": [
+        {
+          "index": 1,
+          "text": "Is",
+          "startMs": 226900,
+          "endMs": 227360,
+          "probability": 0.163581
+        },
+        {
+          "index": 2,
+          "text": "there",
+          "startMs": 227360,
+          "endMs": 227600,
+          "probability": 0.9929
+        },
+        {
+          "index": 3,
+          "text": "anything",
+          "startMs": 227600,
+          "endMs": 228100,
+          "probability": 0.997236
+        },
+        {
+          "index": 4,
+          "text": "else",
+          "startMs": 228100,
+          "endMs": 228340,
+          "probability": 0.995939
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 228340,
+          "endMs": 228560,
+          "probability": 0.996587
+        },
+        {
+          "index": 6,
+          "text": "eat?",
+          "startMs": 228560,
+          "endMs": 228860,
+          "probability": 0.999749
+        },
+        {
+          "index": 7,
+          "text": "I'm",
+          "startMs": 229440,
+          "endMs": 229580,
+          "probability": 0.979759
+        },
+        {
+          "index": 8,
+          "text": "a",
+          "startMs": 229580,
+          "endMs": 229820,
+          "probability": 0.99722
+        },
+        {
+          "index": 9,
+          "text": "carnivore.",
+          "startMs": 229820,
+          "endMs": 230460,
+          "probability": 0.995376
+        },
+        {
+          "index": 10,
+          "text": "I",
+          "startMs": 230940,
+          "endMs": 230940,
+          "probability": 0.996174
+        },
+        {
+          "index": 11,
+          "text": "don't",
+          "startMs": 230940,
+          "endMs": 231320,
+          "probability": 0.999181
+        },
+        {
+          "index": 12,
+          "text": "eat",
+          "startMs": 231320,
+          "endMs": 231580,
+          "probability": 0.997728
+        },
+        {
+          "index": 13,
+          "text": "salad",
+          "startMs": 231580,
+          "endMs": 232140,
+          "probability": 0.997564
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "Trini comes over",
+      "startMs": 232960,
+      "endMs": 234700,
+      "avgLogprob": -0.159266,
+      "noSpeechProb": 0.006544,
+      "compressionRatio": 1.485149,
+      "words": [
+        {
+          "index": 1,
+          "text": "Trini",
+          "startMs": 232960,
+          "endMs": 233720,
+          "probability": 0.462945
+        },
+        {
+          "index": 2,
+          "text": "comes",
+          "startMs": 233720,
+          "endMs": 234000,
+          "probability": 0.990276
+        },
+        {
+          "index": 3,
+          "text": "over",
+          "startMs": 234000,
+          "endMs": 234700,
+          "probability": 0.998678
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Terry is cheating at hide-and-seek. She's flying around and peeking",
+      "startMs": 234700,
+      "endMs": 239940,
+      "avgLogprob": -0.159266,
+      "noSpeechProb": 0.006544,
+      "compressionRatio": 1.485149,
+      "words": [
+        {
+          "index": 1,
+          "text": "Terry",
+          "startMs": 234700,
+          "endMs": 235480,
+          "probability": 0.593818
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 235480,
+          "endMs": 235840,
+          "probability": 0.990582
+        },
+        {
+          "index": 3,
+          "text": "cheating",
+          "startMs": 235840,
+          "endMs": 236200,
+          "probability": 0.993082
+        },
+        {
+          "index": 4,
+          "text": "at",
+          "startMs": 236200,
+          "endMs": 236500,
+          "probability": 0.988449
+        },
+        {
+          "index": 5,
+          "text": "hide",
+          "startMs": 236500,
+          "endMs": 236720,
+          "probability": 0.788269
+        },
+        {
+          "index": 6,
+          "text": "-and",
+          "startMs": 236720,
+          "endMs": 236880,
+          "probability": 0.688056
+        },
+        {
+          "index": 7,
+          "text": "-seek.",
+          "startMs": 236880,
+          "endMs": 237220,
+          "probability": 0.644127
+        },
+        {
+          "index": 8,
+          "text": "She's",
+          "startMs": 237380,
+          "endMs": 238000,
+          "probability": 0.997195
+        },
+        {
+          "index": 9,
+          "text": "flying",
+          "startMs": 238000,
+          "endMs": 238380,
+          "probability": 0.998041
+        },
+        {
+          "index": 10,
+          "text": "around",
+          "startMs": 238380,
+          "endMs": 238820,
+          "probability": 0.999052
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 238820,
+          "endMs": 239120,
+          "probability": 0.968698
+        },
+        {
+          "index": 12,
+          "text": "peeking",
+          "startMs": 239120,
+          "endMs": 239940,
+          "probability": 0.975119
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Skip comes over. I don't feel so good. He says and he sneezes",
+      "startMs": 240500,
+      "endMs": 246340,
+      "avgLogprob": -0.159266,
+      "noSpeechProb": 0.006544,
+      "compressionRatio": 1.485149,
+      "words": [
+        {
+          "index": 1,
+          "text": "Skip",
+          "startMs": 240500,
+          "endMs": 240940,
+          "probability": 0.857777
+        },
+        {
+          "index": 2,
+          "text": "comes",
+          "startMs": 240940,
+          "endMs": 241300,
+          "probability": 0.996072
+        },
+        {
+          "index": 3,
+          "text": "over.",
+          "startMs": 241300,
+          "endMs": 241820,
+          "probability": 0.999346
+        },
+        {
+          "index": 4,
+          "text": "I",
+          "startMs": 242180,
+          "endMs": 242940,
+          "probability": 0.947505
+        },
+        {
+          "index": 5,
+          "text": "don't",
+          "startMs": 242940,
+          "endMs": 243280,
+          "probability": 0.961789
+        },
+        {
+          "index": 6,
+          "text": "feel",
+          "startMs": 243280,
+          "endMs": 243460,
+          "probability": 0.999407
+        },
+        {
+          "index": 7,
+          "text": "so",
+          "startMs": 243460,
+          "endMs": 243760,
+          "probability": 0.99765
+        },
+        {
+          "index": 8,
+          "text": "good.",
+          "startMs": 243760,
+          "endMs": 244200,
+          "probability": 0.998345
+        },
+        {
+          "index": 9,
+          "text": "He",
+          "startMs": 244200,
+          "endMs": 244780,
+          "probability": 0.997293
+        },
+        {
+          "index": 10,
+          "text": "says",
+          "startMs": 244780,
+          "endMs": 245200,
+          "probability": 0.99812
+        },
+        {
+          "index": 11,
+          "text": "and",
+          "startMs": 245200,
+          "endMs": 245800,
+          "probability": 0.982714
+        },
+        {
+          "index": 12,
+          "text": "he",
+          "startMs": 245800,
+          "endMs": 245960,
+          "probability": 0.99816
+        },
+        {
+          "index": 13,
+          "text": "sneezes",
+          "startMs": 245960,
+          "endMs": 246340,
+          "probability": 0.995168
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "The dinosaurs all start to argue the picnic will be ruined if Pete doesn't do something",
+      "startMs": 248220,
+      "endMs": 254380,
+      "avgLogprob": -0.159266,
+      "noSpeechProb": 0.006544,
+      "compressionRatio": 1.485149,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 248220,
+          "endMs": 248980,
+          "probability": 0.922683
+        },
+        {
+          "index": 2,
+          "text": "dinosaurs",
+          "startMs": 248980,
+          "endMs": 249520,
+          "probability": 0.968647
+        },
+        {
+          "index": 3,
+          "text": "all",
+          "startMs": 249520,
+          "endMs": 250020,
+          "probability": 0.996232
+        },
+        {
+          "index": 4,
+          "text": "start",
+          "startMs": 250020,
+          "endMs": 250300,
+          "probability": 0.98987
+        },
+        {
+          "index": 5,
+          "text": "to",
+          "startMs": 250300,
+          "endMs": 250500,
+          "probability": 0.995239
+        },
+        {
+          "index": 6,
+          "text": "argue",
+          "startMs": 250500,
+          "endMs": 250960,
+          "probability": 0.998823
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 250960,
+          "endMs": 251580,
+          "probability": 0.886757
+        },
+        {
+          "index": 8,
+          "text": "picnic",
+          "startMs": 251580,
+          "endMs": 251920,
+          "probability": 0.997154
+        },
+        {
+          "index": 9,
+          "text": "will",
+          "startMs": 251920,
+          "endMs": 252160,
+          "probability": 0.996235
+        },
+        {
+          "index": 10,
+          "text": "be",
+          "startMs": 252160,
+          "endMs": 252360,
+          "probability": 0.999724
+        },
+        {
+          "index": 11,
+          "text": "ruined",
+          "startMs": 252360,
+          "endMs": 252760,
+          "probability": 0.997768
+        },
+        {
+          "index": 12,
+          "text": "if",
+          "startMs": 252760,
+          "endMs": 253000,
+          "probability": 0.937071
+        },
+        {
+          "index": 13,
+          "text": "Pete",
+          "startMs": 253000,
+          "endMs": 253220,
+          "probability": 0.950356
+        },
+        {
+          "index": 14,
+          "text": "doesn't",
+          "startMs": 253220,
+          "endMs": 253640,
+          "probability": 0.998773
+        },
+        {
+          "index": 15,
+          "text": "do",
+          "startMs": 253640,
+          "endMs": 253820,
+          "probability": 0.999395
+        },
+        {
+          "index": 16,
+          "text": "something",
+          "startMs": 253820,
+          "endMs": 254380,
+          "probability": 0.999254
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "He leans over to Alan says can you give me a beat?",
+      "startMs": 255060,
+      "endMs": 258800,
+      "avgLogprob": -0.258007,
+      "noSpeechProb": 0.00206,
+      "compressionRatio": 1.477157,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 255060,
+          "endMs": 255600,
+          "probability": 0.600072
+        },
+        {
+          "index": 2,
+          "text": "leans",
+          "startMs": 255600,
+          "endMs": 255920,
+          "probability": 0.994373
+        },
+        {
+          "index": 3,
+          "text": "over",
+          "startMs": 255920,
+          "endMs": 256220,
+          "probability": 0.995299
+        },
+        {
+          "index": 4,
+          "text": "to",
+          "startMs": 256220,
+          "endMs": 256420,
+          "probability": 0.998069
+        },
+        {
+          "index": 5,
+          "text": "Alan",
+          "startMs": 256420,
+          "endMs": 256720,
+          "probability": 0.352054
+        },
+        {
+          "index": 6,
+          "text": "says",
+          "startMs": 256720,
+          "endMs": 257080,
+          "probability": 0.231129
+        },
+        {
+          "index": 7,
+          "text": "can",
+          "startMs": 257080,
+          "endMs": 258000,
+          "probability": 0.079351
+        },
+        {
+          "index": 8,
+          "text": "you",
+          "startMs": 258000,
+          "endMs": 258120,
+          "probability": 0.993282
+        },
+        {
+          "index": 9,
+          "text": "give",
+          "startMs": 258120,
+          "endMs": 258260,
+          "probability": 0.943891
+        },
+        {
+          "index": 10,
+          "text": "me",
+          "startMs": 258260,
+          "endMs": 258400,
+          "probability": 0.994908
+        },
+        {
+          "index": 11,
+          "text": "a",
+          "startMs": 258400,
+          "endMs": 258500,
+          "probability": 0.979486
+        },
+        {
+          "index": 12,
+          "text": "beat?",
+          "startMs": 258500,
+          "endMs": 258800,
+          "probability": 0.982244
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "Pete takes out his guitar and he starts to sing",
+      "startMs": 259640,
+      "endMs": 262320,
+      "avgLogprob": -0.258007,
+      "noSpeechProb": 0.00206,
+      "compressionRatio": 1.477157,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 259640,
+          "endMs": 259780,
+          "probability": 0.970456
+        },
+        {
+          "index": 2,
+          "text": "takes",
+          "startMs": 259780,
+          "endMs": 260000,
+          "probability": 0.987526
+        },
+        {
+          "index": 3,
+          "text": "out",
+          "startMs": 260000,
+          "endMs": 260220,
+          "probability": 0.997335
+        },
+        {
+          "index": 4,
+          "text": "his",
+          "startMs": 260220,
+          "endMs": 260400,
+          "probability": 0.997031
+        },
+        {
+          "index": 5,
+          "text": "guitar",
+          "startMs": 260400,
+          "endMs": 260780,
+          "probability": 0.995918
+        },
+        {
+          "index": 6,
+          "text": "and",
+          "startMs": 260780,
+          "endMs": 261260,
+          "probability": 0.643166
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 261260,
+          "endMs": 261380,
+          "probability": 0.978712
+        },
+        {
+          "index": 8,
+          "text": "starts",
+          "startMs": 261380,
+          "endMs": 261680,
+          "probability": 0.998139
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 261680,
+          "endMs": 261980,
+          "probability": 0.980491
+        },
+        {
+          "index": 10,
+          "text": "sing",
+          "startMs": 261980,
+          "endMs": 262320,
+          "probability": 0.999044
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "Before long everyone is having a great time",
+      "startMs": 264040,
+      "endMs": 267620,
+      "avgLogprob": -0.258007,
+      "noSpeechProb": 0.00206,
+      "compressionRatio": 1.477157,
+      "words": [
+        {
+          "index": 1,
+          "text": "Before",
+          "startMs": 264040,
+          "endMs": 264720,
+          "probability": 0.175973
+        },
+        {
+          "index": 2,
+          "text": "long",
+          "startMs": 264720,
+          "endMs": 265180,
+          "probability": 0.970843
+        },
+        {
+          "index": 3,
+          "text": "everyone",
+          "startMs": 265180,
+          "endMs": 265980,
+          "probability": 0.675376
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 265980,
+          "endMs": 266320,
+          "probability": 0.990339
+        },
+        {
+          "index": 5,
+          "text": "having",
+          "startMs": 266320,
+          "endMs": 266600,
+          "probability": 0.997794
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 266600,
+          "endMs": 266820,
+          "probability": 0.998846
+        },
+        {
+          "index": 7,
+          "text": "great",
+          "startMs": 266820,
+          "endMs": 267100,
+          "probability": 0.999087
+        },
+        {
+          "index": 8,
+          "text": "time",
+          "startMs": 267100,
+          "endMs": 267620,
+          "probability": 0.996463
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "You know t-rex tells Ethel I've never actually tried salad before",
+      "startMs": 267620,
+      "endMs": 273400,
+      "avgLogprob": -0.258007,
+      "noSpeechProb": 0.00206,
+      "compressionRatio": 1.477157,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 267620,
+          "endMs": 268540,
+          "probability": 0.708967
+        },
+        {
+          "index": 2,
+          "text": "know",
+          "startMs": 268540,
+          "endMs": 268800,
+          "probability": 0.996748
+        },
+        {
+          "index": 3,
+          "text": "t",
+          "startMs": 268800,
+          "endMs": 269200,
+          "probability": 0.574519
+        },
+        {
+          "index": 4,
+          "text": "-rex",
+          "startMs": 269200,
+          "endMs": 269400,
+          "probability": 0.848424
+        },
+        {
+          "index": 5,
+          "text": "tells",
+          "startMs": 269400,
+          "endMs": 269820,
+          "probability": 0.95753
+        },
+        {
+          "index": 6,
+          "text": "Ethel",
+          "startMs": 269820,
+          "endMs": 270200,
+          "probability": 0.69947
+        },
+        {
+          "index": 7,
+          "text": "I've",
+          "startMs": 270200,
+          "endMs": 271200,
+          "probability": 0.803614
+        },
+        {
+          "index": 8,
+          "text": "never",
+          "startMs": 271200,
+          "endMs": 271500,
+          "probability": 0.998338
+        },
+        {
+          "index": 9,
+          "text": "actually",
+          "startMs": 271500,
+          "endMs": 272100,
+          "probability": 0.995427
+        },
+        {
+          "index": 10,
+          "text": "tried",
+          "startMs": 272100,
+          "endMs": 272540,
+          "probability": 0.996027
+        },
+        {
+          "index": 11,
+          "text": "salad",
+          "startMs": 272540,
+          "endMs": 272920,
+          "probability": 0.983952
+        },
+        {
+          "index": 12,
+          "text": "before",
+          "startMs": 272920,
+          "endMs": 273400,
+          "probability": 0.998897
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "Try it says Pete. I bet you'll like it",
+      "startMs": 273980,
+      "endMs": 277020,
+      "avgLogprob": -0.258007,
+      "noSpeechProb": 0.00206,
+      "compressionRatio": 1.477157,
+      "words": [
+        {
+          "index": 1,
+          "text": "Try",
+          "startMs": 273980,
+          "endMs": 274520,
+          "probability": 0.885473
+        },
+        {
+          "index": 2,
+          "text": "it",
+          "startMs": 274520,
+          "endMs": 274900,
+          "probability": 0.973468
+        },
+        {
+          "index": 3,
+          "text": "says",
+          "startMs": 274900,
+          "endMs": 275240,
+          "probability": 0.938992
+        },
+        {
+          "index": 4,
+          "text": "Pete.",
+          "startMs": 275240,
+          "endMs": 275620,
+          "probability": 0.958457
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 275620,
+          "endMs": 276200,
+          "probability": 0.998213
+        },
+        {
+          "index": 6,
+          "text": "bet",
+          "startMs": 276200,
+          "endMs": 276380,
+          "probability": 0.995421
+        },
+        {
+          "index": 7,
+          "text": "you'll",
+          "startMs": 276380,
+          "endMs": 276680,
+          "probability": 0.974369
+        },
+        {
+          "index": 8,
+          "text": "like",
+          "startMs": 276680,
+          "endMs": 276860,
+          "probability": 0.998973
+        },
+        {
+          "index": 9,
+          "text": "it",
+          "startMs": 276860,
+          "endMs": 277200,
+          "probability": 0.998545
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "T-Rex tastes the salad crunch crunch crunch",
+      "startMs": 278640,
+      "endMs": 282300,
+      "avgLogprob": -0.258007,
+      "noSpeechProb": 0.00206,
+      "compressionRatio": 1.477157,
+      "words": [
+        {
+          "index": 1,
+          "text": "T",
+          "startMs": 278640,
+          "endMs": 279320,
+          "probability": 0.811787
+        },
+        {
+          "index": 2,
+          "text": "-Rex",
+          "startMs": 279320,
+          "endMs": 279560,
+          "probability": 0.56422
+        },
+        {
+          "index": 3,
+          "text": "tastes",
+          "startMs": 279560,
+          "endMs": 279880,
+          "probability": 0.755207
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 279880,
+          "endMs": 280080,
+          "probability": 0.994446
+        },
+        {
+          "index": 5,
+          "text": "salad",
+          "startMs": 280080,
+          "endMs": 280520,
+          "probability": 0.991886
+        },
+        {
+          "index": 6,
+          "text": "crunch",
+          "startMs": 280520,
+          "endMs": 281420,
+          "probability": 0.943594
+        },
+        {
+          "index": 7,
+          "text": "crunch",
+          "startMs": 281420,
+          "endMs": 281820,
+          "probability": 0.978172
+        },
+        {
+          "index": 8,
+          "text": "crunch",
+          "startMs": 281820,
+          "endMs": 282300,
+          "probability": 0.996229
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "Yum says t-rex this salad is delicious",
+      "startMs": 283160,
+      "endMs": 286980,
+      "avgLogprob": -0.214639,
+      "noSpeechProb": 0.009251,
+      "compressionRatio": 1.493902,
+      "words": [
+        {
+          "index": 1,
+          "text": "Yum",
+          "startMs": 283160,
+          "endMs": 283840,
+          "probability": 0.503756
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 283840,
+          "endMs": 284520,
+          "probability": 0.03542
+        },
+        {
+          "index": 3,
+          "text": "t",
+          "startMs": 284520,
+          "endMs": 284840,
+          "probability": 0.348863
+        },
+        {
+          "index": 4,
+          "text": "-rex",
+          "startMs": 284840,
+          "endMs": 285100,
+          "probability": 0.795323
+        },
+        {
+          "index": 5,
+          "text": "this",
+          "startMs": 285100,
+          "endMs": 285980,
+          "probability": 0.726312
+        },
+        {
+          "index": 6,
+          "text": "salad",
+          "startMs": 285980,
+          "endMs": 286460,
+          "probability": 0.988883
+        },
+        {
+          "index": 7,
+          "text": "is",
+          "startMs": 286460,
+          "endMs": 286760,
+          "probability": 0.997529
+        },
+        {
+          "index": 8,
+          "text": "delicious",
+          "startMs": 286760,
+          "endMs": 287100,
+          "probability": 0.975161
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "text": "Everyone grabs a plate and digs in",
+      "startMs": 288080,
+      "endMs": 290680,
+      "avgLogprob": -0.214639,
+      "noSpeechProb": 0.009251,
+      "compressionRatio": 1.493902,
+      "words": [
+        {
+          "index": 1,
+          "text": "Everyone",
+          "startMs": 288080,
+          "endMs": 288760,
+          "probability": 0.496865
+        },
+        {
+          "index": 2,
+          "text": "grabs",
+          "startMs": 288760,
+          "endMs": 289140,
+          "probability": 0.979669
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 289140,
+          "endMs": 289360,
+          "probability": 0.993111
+        },
+        {
+          "index": 4,
+          "text": "plate",
+          "startMs": 289360,
+          "endMs": 289660,
+          "probability": 0.998069
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 289660,
+          "endMs": 289900,
+          "probability": 0.99741
+        },
+        {
+          "index": 6,
+          "text": "digs",
+          "startMs": 289900,
+          "endMs": 290220,
+          "probability": 0.806369
+        },
+        {
+          "index": 7,
+          "text": "in",
+          "startMs": 290220,
+          "endMs": 290680,
+          "probability": 0.995238
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "text": "Everyone decides to play hide-and-seek Pete is happy that everyone is getting along he feels lucky to have such great friends",
+      "startMs": 292340,
+      "endMs": 300660,
+      "avgLogprob": -0.214639,
+      "noSpeechProb": 0.009251,
+      "compressionRatio": 1.493902,
+      "words": [
+        {
+          "index": 1,
+          "text": "Everyone",
+          "startMs": 292340,
+          "endMs": 293020,
+          "probability": 0.97476
+        },
+        {
+          "index": 2,
+          "text": "decides",
+          "startMs": 293020,
+          "endMs": 293480,
+          "probability": 0.995738
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 293480,
+          "endMs": 293760,
+          "probability": 0.99937
+        },
+        {
+          "index": 4,
+          "text": "play",
+          "startMs": 293760,
+          "endMs": 293980,
+          "probability": 0.999374
+        },
+        {
+          "index": 5,
+          "text": "hide",
+          "startMs": 293980,
+          "endMs": 294200,
+          "probability": 0.997177
+        },
+        {
+          "index": 6,
+          "text": "-and",
+          "startMs": 294200,
+          "endMs": 294400,
+          "probability": 0.729773
+        },
+        {
+          "index": 7,
+          "text": "-seek",
+          "startMs": 294400,
+          "endMs": 294640,
+          "probability": 0.996141
+        },
+        {
+          "index": 8,
+          "text": "Pete",
+          "startMs": 294640,
+          "endMs": 295400,
+          "probability": 0.918658
+        },
+        {
+          "index": 9,
+          "text": "is",
+          "startMs": 295400,
+          "endMs": 295620,
+          "probability": 0.997657
+        },
+        {
+          "index": 10,
+          "text": "happy",
+          "startMs": 295620,
+          "endMs": 295960,
+          "probability": 0.997366
+        },
+        {
+          "index": 11,
+          "text": "that",
+          "startMs": 295960,
+          "endMs": 296220,
+          "probability": 0.99727
+        },
+        {
+          "index": 12,
+          "text": "everyone",
+          "startMs": 296220,
+          "endMs": 296560,
+          "probability": 0.997608
+        },
+        {
+          "index": 13,
+          "text": "is",
+          "startMs": 296560,
+          "endMs": 296840,
+          "probability": 0.999233
+        },
+        {
+          "index": 14,
+          "text": "getting",
+          "startMs": 296840,
+          "endMs": 297080,
+          "probability": 0.999229
+        },
+        {
+          "index": 15,
+          "text": "along",
+          "startMs": 297080,
+          "endMs": 297520,
+          "probability": 0.997838
+        },
+        {
+          "index": 16,
+          "text": "he",
+          "startMs": 297520,
+          "endMs": 298340,
+          "probability": 0.382529
+        },
+        {
+          "index": 17,
+          "text": "feels",
+          "startMs": 298340,
+          "endMs": 298660,
+          "probability": 0.998078
+        },
+        {
+          "index": 18,
+          "text": "lucky",
+          "startMs": 298660,
+          "endMs": 299060,
+          "probability": 0.994723
+        },
+        {
+          "index": 19,
+          "text": "to",
+          "startMs": 299060,
+          "endMs": 299280,
+          "probability": 0.999033
+        },
+        {
+          "index": 20,
+          "text": "have",
+          "startMs": 299280,
+          "endMs": 299460,
+          "probability": 0.998667
+        },
+        {
+          "index": 21,
+          "text": "such",
+          "startMs": 299460,
+          "endMs": 299800,
+          "probability": 0.999084
+        },
+        {
+          "index": 22,
+          "text": "great",
+          "startMs": 299800,
+          "endMs": 300140,
+          "probability": 0.998999
+        },
+        {
+          "index": 23,
+          "text": "friends",
+          "startMs": 300140,
+          "endMs": 300660,
+          "probability": 0.993862
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "text": "This was the best picnic ever everyone agrees",
+      "startMs": 302400,
+      "endMs": 306240,
+      "avgLogprob": -0.214639,
+      "noSpeechProb": 0.009251,
+      "compressionRatio": 1.493902,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 302400,
+          "endMs": 303080,
+          "probability": 0.978617
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 303080,
+          "endMs": 303400,
+          "probability": 0.997251
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 303400,
+          "endMs": 303620,
+          "probability": 0.999614
+        },
+        {
+          "index": 4,
+          "text": "best",
+          "startMs": 303620,
+          "endMs": 304040,
+          "probability": 0.997648
+        },
+        {
+          "index": 5,
+          "text": "picnic",
+          "startMs": 304040,
+          "endMs": 304540,
+          "probability": 0.997661
+        },
+        {
+          "index": 6,
+          "text": "ever",
+          "startMs": 304540,
+          "endMs": 305100,
+          "probability": 0.997407
+        },
+        {
+          "index": 7,
+          "text": "everyone",
+          "startMs": 305100,
+          "endMs": 305740,
+          "probability": 0.894626
+        },
+        {
+          "index": 8,
+          "text": "agrees",
+          "startMs": 305740,
+          "endMs": 306240,
+          "probability": 0.996734
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "text": "It was the best picnic because you guys are the best friends ever Pete says and no one can argue with that",
+      "startMs": 307040,
+      "endMs": 315420,
+      "avgLogprob": -0.212901,
+      "noSpeechProb": 0.012452,
+      "compressionRatio": 1.553763,
+      "words": [
+        {
+          "index": 1,
+          "text": "It",
+          "startMs": 307040,
+          "endMs": 307620,
+          "probability": 0.271665
+        },
+        {
+          "index": 2,
+          "text": "was",
+          "startMs": 307620,
+          "endMs": 307780,
+          "probability": 0.995078
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 307780,
+          "endMs": 307960,
+          "probability": 0.992136
+        },
+        {
+          "index": 4,
+          "text": "best",
+          "startMs": 307960,
+          "endMs": 308220,
+          "probability": 0.990665
+        },
+        {
+          "index": 5,
+          "text": "picnic",
+          "startMs": 308220,
+          "endMs": 308720,
+          "probability": 0.995782
+        },
+        {
+          "index": 6,
+          "text": "because",
+          "startMs": 308720,
+          "endMs": 309100,
+          "probability": 0.851084
+        },
+        {
+          "index": 7,
+          "text": "you",
+          "startMs": 309100,
+          "endMs": 309340,
+          "probability": 0.994713
+        },
+        {
+          "index": 8,
+          "text": "guys",
+          "startMs": 309340,
+          "endMs": 309580,
+          "probability": 0.997358
+        },
+        {
+          "index": 9,
+          "text": "are",
+          "startMs": 309580,
+          "endMs": 309780,
+          "probability": 0.991675
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 309780,
+          "endMs": 309940,
+          "probability": 0.99204
+        },
+        {
+          "index": 11,
+          "text": "best",
+          "startMs": 309940,
+          "endMs": 310160,
+          "probability": 0.997349
+        },
+        {
+          "index": 12,
+          "text": "friends",
+          "startMs": 310160,
+          "endMs": 310540,
+          "probability": 0.997634
+        },
+        {
+          "index": 13,
+          "text": "ever",
+          "startMs": 310540,
+          "endMs": 311060,
+          "probability": 0.953235
+        },
+        {
+          "index": 14,
+          "text": "Pete",
+          "startMs": 311060,
+          "endMs": 311700,
+          "probability": 0.027026
+        },
+        {
+          "index": 15,
+          "text": "says",
+          "startMs": 311700,
+          "endMs": 312120,
+          "probability": 0.989836
+        },
+        {
+          "index": 16,
+          "text": "and",
+          "startMs": 312120,
+          "endMs": 313340,
+          "probability": 0.559591
+        },
+        {
+          "index": 17,
+          "text": "no",
+          "startMs": 313340,
+          "endMs": 313620,
+          "probability": 0.712588
+        },
+        {
+          "index": 18,
+          "text": "one",
+          "startMs": 313620,
+          "endMs": 313840,
+          "probability": 0.988869
+        },
+        {
+          "index": 19,
+          "text": "can",
+          "startMs": 313840,
+          "endMs": 314080,
+          "probability": 0.996971
+        },
+        {
+          "index": 20,
+          "text": "argue",
+          "startMs": 314080,
+          "endMs": 314500,
+          "probability": 0.995428
+        },
+        {
+          "index": 21,
+          "text": "with",
+          "startMs": 314500,
+          "endMs": 314760,
+          "probability": 0.99454
+        },
+        {
+          "index": 22,
+          "text": "that",
+          "startMs": 314760,
+          "endMs": 315420,
+          "probability": 0.995453
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "text": "We hope you have enjoyed this recording of Pete the cat cave cat Pete by James Dean",
+      "startMs": 318200,
+      "endMs": 325140,
+      "avgLogprob": -0.212901,
+      "noSpeechProb": 0.012452,
+      "compressionRatio": 1.553763,
+      "words": [
+        {
+          "index": 1,
+          "text": "We",
+          "startMs": 318200,
+          "endMs": 319000,
+          "probability": 0.575508
+        },
+        {
+          "index": 2,
+          "text": "hope",
+          "startMs": 319000,
+          "endMs": 319260,
+          "probability": 0.995701
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 319260,
+          "endMs": 319460,
+          "probability": 0.998798
+        },
+        {
+          "index": 4,
+          "text": "have",
+          "startMs": 319460,
+          "endMs": 319640,
+          "probability": 0.985206
+        },
+        {
+          "index": 5,
+          "text": "enjoyed",
+          "startMs": 319640,
+          "endMs": 320000,
+          "probability": 0.999334
+        },
+        {
+          "index": 6,
+          "text": "this",
+          "startMs": 320000,
+          "endMs": 320260,
+          "probability": 0.997935
+        },
+        {
+          "index": 7,
+          "text": "recording",
+          "startMs": 320260,
+          "endMs": 320760,
+          "probability": 0.998126
+        },
+        {
+          "index": 8,
+          "text": "of",
+          "startMs": 320760,
+          "endMs": 321160,
+          "probability": 0.996034
+        },
+        {
+          "index": 9,
+          "text": "Pete",
+          "startMs": 321160,
+          "endMs": 321780,
+          "probability": 0.919463
+        },
+        {
+          "index": 10,
+          "text": "the",
+          "startMs": 321780,
+          "endMs": 321980,
+          "probability": 0.978362
+        },
+        {
+          "index": 11,
+          "text": "cat",
+          "startMs": 321980,
+          "endMs": 322340,
+          "probability": 0.864551
+        },
+        {
+          "index": 12,
+          "text": "cave",
+          "startMs": 322340,
+          "endMs": 322940,
+          "probability": 0.940884
+        },
+        {
+          "index": 13,
+          "text": "cat",
+          "startMs": 322940,
+          "endMs": 323340,
+          "probability": 0.64131
+        },
+        {
+          "index": 14,
+          "text": "Pete",
+          "startMs": 323340,
+          "endMs": 323760,
+          "probability": 0.963808
+        },
+        {
+          "index": 15,
+          "text": "by",
+          "startMs": 323760,
+          "endMs": 324340,
+          "probability": 0.992329
+        },
+        {
+          "index": 16,
+          "text": "James",
+          "startMs": 324340,
+          "endMs": 324800,
+          "probability": 0.985711
+        },
+        {
+          "index": 17,
+          "text": "Dean",
+          "startMs": 324800,
+          "endMs": 325140,
+          "probability": 0.977865
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "text": "This program was produced by John Marshall Media",
+      "startMs": 325920,
+      "endMs": 329380,
+      "avgLogprob": -0.212901,
+      "noSpeechProb": 0.012452,
+      "compressionRatio": 1.553763,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 325920,
+          "endMs": 326500,
+          "probability": 0.780299
+        },
+        {
+          "index": 2,
+          "text": "program",
+          "startMs": 326500,
+          "endMs": 327020,
+          "probability": 0.998009
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 327020,
+          "endMs": 327260,
+          "probability": 0.994462
+        },
+        {
+          "index": 4,
+          "text": "produced",
+          "startMs": 327260,
+          "endMs": 327660,
+          "probability": 0.996553
+        },
+        {
+          "index": 5,
+          "text": "by",
+          "startMs": 327660,
+          "endMs": 327960,
+          "probability": 0.996613
+        },
+        {
+          "index": 6,
+          "text": "John",
+          "startMs": 327960,
+          "endMs": 328360,
+          "probability": 0.967423
+        },
+        {
+          "index": 7,
+          "text": "Marshall",
+          "startMs": 328360,
+          "endMs": 328760,
+          "probability": 0.908332
+        },
+        {
+          "index": 8,
+          "text": "Media",
+          "startMs": 328760,
+          "endMs": 329380,
+          "probability": 0.686666
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "text": "copyright 2015 by James Dean",
+      "startMs": 330000,
+      "endMs": 332720,
+      "avgLogprob": -0.212901,
+      "noSpeechProb": 0.012452,
+      "compressionRatio": 1.553763,
+      "words": [
+        {
+          "index": 1,
+          "text": "copyright",
+          "startMs": 330000,
+          "endMs": 330400,
+          "probability": 0.863908
+        },
+        {
+          "index": 2,
+          "text": "2015",
+          "startMs": 330400,
+          "endMs": 331340,
+          "probability": 0.989571
+        },
+        {
+          "index": 3,
+          "text": "by",
+          "startMs": 331340,
+          "endMs": 331900,
+          "probability": 0.996061
+        },
+        {
+          "index": 4,
+          "text": "James",
+          "startMs": 331900,
+          "endMs": 332300,
+          "probability": 0.990673
+        },
+        {
+          "index": 5,
+          "text": "Dean",
+          "startMs": 332300,
+          "endMs": 332720,
+          "probability": 0.985453
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "text": "production copyright",
+      "startMs": 333320,
+      "endMs": 334380,
+      "avgLogprob": -0.212901,
+      "noSpeechProb": 0.012452,
+      "compressionRatio": 1.553763,
+      "words": [
+        {
+          "index": 1,
+          "text": "production",
+          "startMs": 333260,
+          "endMs": 333660,
+          "probability": 0.855208
+        },
+        {
+          "index": 2,
+          "text": "copyright",
+          "startMs": 333660,
+          "endMs": 334380,
+          "probability": 0.964692
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "text": "2015 by Harper Collins publishers all rights reserved",
+      "startMs": 334380,
+      "endMs": 339240,
+      "avgLogprob": -0.378305,
+      "noSpeechProb": 0.006232,
+      "compressionRatio": 0.868852,
+      "words": [
+        {
+          "index": 1,
+          "text": "2015",
+          "startMs": 334380,
+          "endMs": 335360,
+          "probability": 0.387248
+        },
+        {
+          "index": 2,
+          "text": "by",
+          "startMs": 335360,
+          "endMs": 335980,
+          "probability": 0.945624
+        },
+        {
+          "index": 3,
+          "text": "Harper",
+          "startMs": 335980,
+          "endMs": 336340,
+          "probability": 0.988858
+        },
+        {
+          "index": 4,
+          "text": "Collins",
+          "startMs": 336340,
+          "endMs": 336860,
+          "probability": 0.151762
+        },
+        {
+          "index": 5,
+          "text": "publishers",
+          "startMs": 336860,
+          "endMs": 337460,
+          "probability": 0.112332
+        },
+        {
+          "index": 6,
+          "text": "all",
+          "startMs": 337460,
+          "endMs": 338340,
+          "probability": 0.377181
+        },
+        {
+          "index": 7,
+          "text": "rights",
+          "startMs": 338340,
+          "endMs": 338740,
+          "probability": 0.97547
+        },
+        {
+          "index": 8,
+          "text": "reserved",
+          "startMs": 338740,
+          "endMs": 339240,
+          "probability": 0.995214
+        }
+      ]
+    }
+  ]
+}

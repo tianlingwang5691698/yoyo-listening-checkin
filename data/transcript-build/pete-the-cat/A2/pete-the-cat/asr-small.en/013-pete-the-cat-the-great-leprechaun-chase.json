@@ -1,0 +1,5143 @@
+{
+  "model": "small.en",
+  "device": "cpu",
+  "language": "en",
+  "elapsedSec": 60.569,
+  "text": "Pete the Cat, the great leprechaun Chase. By jingly time you can catch one, he's on St. Patrick's Day. A leprechaun will bring you good luck, Mr. G says. Now everyone in class wants a leprechaun. Pete gets a great idea. He will open a leprechaun catching business. St. Patrick's Day comes and Pete gathers some supplies. He hangs a sign above his stand. This will be easy, Pete thinks. Squirrel is Pete's first customer. I want a leprechaun, Squirrel says. I need good luck for my test. Cool, I'm on it, says Pete. Pete has a plan. He will follow a rainbow until he finds a leprechaun. Finally, Pete arrives at the end of the rainbow and finds Clover the leprechaun next to a pot of gold. Pete sneaks up behind Clover. Swoosh! But Clover is too fast. Did you think you could catch me so easily? He asks. Once there was a cat named Pete who thought nabbing some luck would be neat. Then he happened upon a smart leprechaun who he'll find quite tricky to beat. Clover disappears in a puff of green smoke. Pete will need a new plan. That afternoon, Gus visits Pete's lucky leprechaun catchers. I want a leprechaun, Gus says. I need good luck for my band recital. Pete says, I'll see what I can do. Pete plans to lure Clover out with his music. He plays a jaunty song on his guitar. Before long, Clover dances over to Pete. Just a little closer, Pete thinks. Suddenly, Clover starts spinning around Pete. Round and round, Clover goes faster and faster. Oh no! Clover wraps up Pete with the rope. Pete has finally met his match, a crafty leprechaun he just can't catch. He'll never win. He better give in or find something else to snatch. That evening, Callie visits Pete's lucky leprechaun catchers. I want a leprechaun, Callie says. I need good luck for my tennis match. Mmm, says Pete. St. Patrick's Day is almost over. There isn't much time left to catch a leprechaun. But Pete won't give up yet. Pete sets a trap for Clover. Before long, Clover tiptoes up to the trap and sniffs the air. Mmm, I love candy, he whispers, peering under the box. Pete waits very quietly. Crash! Pete rushes over and checks underneath the trap. But it is empty! Clover skips away. Pete has tried many a plot, but still I haven't been caught. And isn't it dandy, I even got candy while Pete ends up with squat. Pete has an idea. He follows the trail of spilled candy to Clover's secret hideout. Pete sneaks up behind Clover. Swoosh! Pete finally catches Clover. Why do you want me? Clover asks. I'm helping my friends who need some extra luck. Pete says. Luck doesn't come from having a leprechaun, says Clover. You and your friends have each other. That already makes you as lucky as can be. Could Clover be right? Pete is one very lucky cat. A lucky cat doesn't need a lucky leprechaun. He lets Clover go. Pete decides he will be the good luck his friends need by helping them out himself. Pete helps squirrels study for his test. Squirrel aces it. Pete helps Gus rehearse for the recital. Gus rocks it. Pete helps Callie practice for her match. Callie wins it. Clover magically appears. Good job, Pete, says Clover. I have one more poem for you. While Clover played hide and seek, Pete learned something unique. The luck that you make beats luck that you take any old day of the week. Happy St. Patrick's Day!",
+  "segments": [
+    {
+      "index": 1,
+      "text": "Pete the Cat, the great leprechaun Chase.",
+      "startMs": 0,
+      "endMs": 3580,
+      "avgLogprob": -0.23827,
+      "noSpeechProb": 0.032073,
+      "compressionRatio": 1.491525,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 0,
+          "endMs": 320,
+          "probability": 0.389639
+        },
+        {
+          "index": 2,
+          "text": "the",
+          "startMs": 320,
+          "endMs": 560,
+          "probability": 0.952695
+        },
+        {
+          "index": 3,
+          "text": "Cat,",
+          "startMs": 560,
+          "endMs": 1000,
+          "probability": 0.752466
+        },
+        {
+          "index": 4,
+          "text": "the",
+          "startMs": 1760,
+          "endMs": 1840,
+          "probability": 0.86592
+        },
+        {
+          "index": 5,
+          "text": "great",
+          "startMs": 1840,
+          "endMs": 2320,
+          "probability": 0.6976
+        },
+        {
+          "index": 6,
+          "text": "leprechaun",
+          "startMs": 2320,
+          "endMs": 3180,
+          "probability": 0.904276
+        },
+        {
+          "index": 7,
+          "text": "Chase.",
+          "startMs": 3180,
+          "endMs": 3580,
+          "probability": 0.501199
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "By jingly time you can catch one, he's on St. Patrick's Day.",
+      "startMs": 4580,
+      "endMs": 8980,
+      "avgLogprob": -0.23827,
+      "noSpeechProb": 0.032073,
+      "compressionRatio": 1.491525,
+      "words": [
+        {
+          "index": 1,
+          "text": "By",
+          "startMs": 4580,
+          "endMs": 4740,
+          "probability": 0.925923
+        },
+        {
+          "index": 2,
+          "text": "jingly",
+          "startMs": 4740,
+          "endMs": 5120,
+          "probability": 0.613022
+        },
+        {
+          "index": 3,
+          "text": "time",
+          "startMs": 5120,
+          "endMs": 5540,
+          "probability": 0.9403
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 5540,
+          "endMs": 5760,
+          "probability": 0.537753
+        },
+        {
+          "index": 5,
+          "text": "can",
+          "startMs": 5760,
+          "endMs": 5960,
+          "probability": 0.995929
+        },
+        {
+          "index": 6,
+          "text": "catch",
+          "startMs": 5960,
+          "endMs": 6260,
+          "probability": 0.996557
+        },
+        {
+          "index": 7,
+          "text": "one,",
+          "startMs": 6260,
+          "endMs": 6680,
+          "probability": 0.995559
+        },
+        {
+          "index": 8,
+          "text": "he's",
+          "startMs": 7060,
+          "endMs": 7260,
+          "probability": 0.738091
+        },
+        {
+          "index": 9,
+          "text": "on",
+          "startMs": 7260,
+          "endMs": 7500,
+          "probability": 0.995757
+        },
+        {
+          "index": 10,
+          "text": "St.",
+          "startMs": 7500,
+          "endMs": 7880,
+          "probability": 0.58146
+        },
+        {
+          "index": 11,
+          "text": "Patrick's",
+          "startMs": 8200,
+          "endMs": 8720,
+          "probability": 0.988347
+        },
+        {
+          "index": 12,
+          "text": "Day.",
+          "startMs": 8720,
+          "endMs": 8980,
+          "probability": 0.899039
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "A leprechaun will bring you good luck, Mr. G says.",
+      "startMs": 9940,
+      "endMs": 13720,
+      "avgLogprob": -0.23827,
+      "noSpeechProb": 0.032073,
+      "compressionRatio": 1.491525,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 9940,
+          "endMs": 10040,
+          "probability": 0.470228
+        },
+        {
+          "index": 2,
+          "text": "leprechaun",
+          "startMs": 10040,
+          "endMs": 10680,
+          "probability": 0.986998
+        },
+        {
+          "index": 3,
+          "text": "will",
+          "startMs": 10680,
+          "endMs": 10920,
+          "probability": 0.991918
+        },
+        {
+          "index": 4,
+          "text": "bring",
+          "startMs": 10920,
+          "endMs": 11180,
+          "probability": 0.997563
+        },
+        {
+          "index": 5,
+          "text": "you",
+          "startMs": 11180,
+          "endMs": 11420,
+          "probability": 0.997064
+        },
+        {
+          "index": 6,
+          "text": "good",
+          "startMs": 11420,
+          "endMs": 11680,
+          "probability": 0.994292
+        },
+        {
+          "index": 7,
+          "text": "luck,",
+          "startMs": 11680,
+          "endMs": 12160,
+          "probability": 0.999087
+        },
+        {
+          "index": 8,
+          "text": "Mr.",
+          "startMs": 12740,
+          "endMs": 13000,
+          "probability": 0.970289
+        },
+        {
+          "index": 9,
+          "text": "G",
+          "startMs": 13320,
+          "endMs": 13320,
+          "probability": 0.931983
+        },
+        {
+          "index": 10,
+          "text": "says.",
+          "startMs": 13320,
+          "endMs": 13720,
+          "probability": 0.864215
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "Now everyone in class wants a leprechaun.",
+      "startMs": 15100,
+      "endMs": 17640,
+      "avgLogprob": -0.23827,
+      "noSpeechProb": 0.032073,
+      "compressionRatio": 1.491525,
+      "words": [
+        {
+          "index": 1,
+          "text": "Now",
+          "startMs": 15100,
+          "endMs": 15200,
+          "probability": 0.981935
+        },
+        {
+          "index": 2,
+          "text": "everyone",
+          "startMs": 15200,
+          "endMs": 15640,
+          "probability": 0.918366
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 15640,
+          "endMs": 16020,
+          "probability": 0.998521
+        },
+        {
+          "index": 4,
+          "text": "class",
+          "startMs": 16020,
+          "endMs": 16320,
+          "probability": 0.993435
+        },
+        {
+          "index": 5,
+          "text": "wants",
+          "startMs": 16320,
+          "endMs": 16740,
+          "probability": 0.993362
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 16740,
+          "endMs": 16960,
+          "probability": 0.996682
+        },
+        {
+          "index": 7,
+          "text": "leprechaun.",
+          "startMs": 16960,
+          "endMs": 17640,
+          "probability": 0.995004
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Pete gets a great idea.",
+      "startMs": 18880,
+      "endMs": 20700,
+      "avgLogprob": -0.23827,
+      "noSpeechProb": 0.032073,
+      "compressionRatio": 1.491525,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 18880,
+          "endMs": 19120,
+          "probability": 0.99506
+        },
+        {
+          "index": 2,
+          "text": "gets",
+          "startMs": 19120,
+          "endMs": 19440,
+          "probability": 0.994304
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 19440,
+          "endMs": 19680,
+          "probability": 0.99832
+        },
+        {
+          "index": 4,
+          "text": "great",
+          "startMs": 19680,
+          "endMs": 20060,
+          "probability": 0.998827
+        },
+        {
+          "index": 5,
+          "text": "idea.",
+          "startMs": 20060,
+          "endMs": 20700,
+          "probability": 0.999653
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "He will open a leprechaun catching business.",
+      "startMs": 21460,
+      "endMs": 24540,
+      "avgLogprob": -0.23827,
+      "noSpeechProb": 0.032073,
+      "compressionRatio": 1.491525,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 21460,
+          "endMs": 21920,
+          "probability": 0.996685
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 21920,
+          "endMs": 22120,
+          "probability": 0.998412
+        },
+        {
+          "index": 3,
+          "text": "open",
+          "startMs": 22120,
+          "endMs": 22560,
+          "probability": 0.998887
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 22560,
+          "endMs": 22760,
+          "probability": 0.995409
+        },
+        {
+          "index": 5,
+          "text": "leprechaun",
+          "startMs": 22760,
+          "endMs": 23500,
+          "probability": 0.996005
+        },
+        {
+          "index": 6,
+          "text": "catching",
+          "startMs": 23500,
+          "endMs": 23980,
+          "probability": 0.888704
+        },
+        {
+          "index": 7,
+          "text": "business.",
+          "startMs": 23980,
+          "endMs": 24540,
+          "probability": 0.985783
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "St. Patrick's Day comes and Pete gathers some supplies.",
+      "startMs": 26360,
+      "endMs": 30580,
+      "avgLogprob": -0.314109,
+      "noSpeechProb": 0.012417,
+      "compressionRatio": 1.414894,
+      "words": [
+        {
+          "index": 1,
+          "text": "St.",
+          "startMs": 26360,
+          "endMs": 27020,
+          "probability": 0.48909
+        },
+        {
+          "index": 2,
+          "text": "Patrick's",
+          "startMs": 27540,
+          "endMs": 27800,
+          "probability": 0.985742
+        },
+        {
+          "index": 3,
+          "text": "Day",
+          "startMs": 27800,
+          "endMs": 27900,
+          "probability": 0.92289
+        },
+        {
+          "index": 4,
+          "text": "comes",
+          "startMs": 27900,
+          "endMs": 28320,
+          "probability": 0.982285
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 28320,
+          "endMs": 29100,
+          "probability": 0.449771
+        },
+        {
+          "index": 6,
+          "text": "Pete",
+          "startMs": 29100,
+          "endMs": 29340,
+          "probability": 0.982574
+        },
+        {
+          "index": 7,
+          "text": "gathers",
+          "startMs": 29340,
+          "endMs": 29740,
+          "probability": 0.982891
+        },
+        {
+          "index": 8,
+          "text": "some",
+          "startMs": 29740,
+          "endMs": 30020,
+          "probability": 0.993674
+        },
+        {
+          "index": 9,
+          "text": "supplies.",
+          "startMs": 30020,
+          "endMs": 30580,
+          "probability": 0.999242
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "He hangs a sign above his stand.",
+      "startMs": 31440,
+      "endMs": 33320,
+      "avgLogprob": -0.314109,
+      "noSpeechProb": 0.012417,
+      "compressionRatio": 1.414894,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 31440,
+          "endMs": 31460,
+          "probability": 0.978363
+        },
+        {
+          "index": 2,
+          "text": "hangs",
+          "startMs": 31460,
+          "endMs": 31760,
+          "probability": 0.996363
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 31760,
+          "endMs": 32020,
+          "probability": 0.987553
+        },
+        {
+          "index": 4,
+          "text": "sign",
+          "startMs": 32020,
+          "endMs": 32300,
+          "probability": 0.997885
+        },
+        {
+          "index": 5,
+          "text": "above",
+          "startMs": 32300,
+          "endMs": 32580,
+          "probability": 0.995521
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 32580,
+          "endMs": 32820,
+          "probability": 0.997107
+        },
+        {
+          "index": 7,
+          "text": "stand.",
+          "startMs": 32820,
+          "endMs": 33320,
+          "probability": 0.996643
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "This will be easy, Pete thinks.",
+      "startMs": 34240,
+      "endMs": 36460,
+      "avgLogprob": -0.314109,
+      "noSpeechProb": 0.012417,
+      "compressionRatio": 1.414894,
+      "words": [
+        {
+          "index": 1,
+          "text": "This",
+          "startMs": 34240,
+          "endMs": 34300,
+          "probability": 0.55659
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 34300,
+          "endMs": 34580,
+          "probability": 0.996689
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 34580,
+          "endMs": 34860,
+          "probability": 0.998341
+        },
+        {
+          "index": 4,
+          "text": "easy,",
+          "startMs": 34860,
+          "endMs": 35560,
+          "probability": 0.988995
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 35820,
+          "endMs": 35980,
+          "probability": 0.996713
+        },
+        {
+          "index": 6,
+          "text": "thinks.",
+          "startMs": 35980,
+          "endMs": 36460,
+          "probability": 0.885857
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "Squirrel is Pete's first customer.",
+      "startMs": 39140,
+      "endMs": 40820,
+      "avgLogprob": -0.314109,
+      "noSpeechProb": 0.012417,
+      "compressionRatio": 1.414894,
+      "words": [
+        {
+          "index": 1,
+          "text": "Squirrel",
+          "startMs": 39140,
+          "endMs": 39140,
+          "probability": 0.898626
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 39140,
+          "endMs": 39480,
+          "probability": 0.987287
+        },
+        {
+          "index": 3,
+          "text": "Pete's",
+          "startMs": 39480,
+          "endMs": 39880,
+          "probability": 0.995062
+        },
+        {
+          "index": 4,
+          "text": "first",
+          "startMs": 39880,
+          "endMs": 40220,
+          "probability": 0.997759
+        },
+        {
+          "index": 5,
+          "text": "customer.",
+          "startMs": 40220,
+          "endMs": 40820,
+          "probability": 0.998413
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "I want a leprechaun, Squirrel says.",
+      "startMs": 41820,
+      "endMs": 44160,
+      "avgLogprob": -0.314109,
+      "noSpeechProb": 0.012417,
+      "compressionRatio": 1.414894,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 41820,
+          "endMs": 41940,
+          "probability": 0.194223
+        },
+        {
+          "index": 2,
+          "text": "want",
+          "startMs": 41940,
+          "endMs": 42180,
+          "probability": 0.996195
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 42180,
+          "endMs": 42340,
+          "probability": 0.662049
+        },
+        {
+          "index": 4,
+          "text": "leprechaun,",
+          "startMs": 42340,
+          "endMs": 42900,
+          "probability": 0.821081
+        },
+        {
+          "index": 5,
+          "text": "Squirrel",
+          "startMs": 43460,
+          "endMs": 43660,
+          "probability": 0.89572
+        },
+        {
+          "index": 6,
+          "text": "says.",
+          "startMs": 43660,
+          "endMs": 44160,
+          "probability": 0.994248
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "I need good luck for my test.",
+      "startMs": 44680,
+      "endMs": 46220,
+      "avgLogprob": -0.314109,
+      "noSpeechProb": 0.012417,
+      "compressionRatio": 1.414894,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 44680,
+          "endMs": 44860,
+          "probability": 0.995865
+        },
+        {
+          "index": 2,
+          "text": "need",
+          "startMs": 44860,
+          "endMs": 45020,
+          "probability": 0.999187
+        },
+        {
+          "index": 3,
+          "text": "good",
+          "startMs": 45020,
+          "endMs": 45280,
+          "probability": 0.997314
+        },
+        {
+          "index": 4,
+          "text": "luck",
+          "startMs": 45280,
+          "endMs": 45460,
+          "probability": 0.997113
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 45460,
+          "endMs": 45660,
+          "probability": 0.998063
+        },
+        {
+          "index": 6,
+          "text": "my",
+          "startMs": 45660,
+          "endMs": 45860,
+          "probability": 0.999482
+        },
+        {
+          "index": 7,
+          "text": "test.",
+          "startMs": 45860,
+          "endMs": 46220,
+          "probability": 0.995307
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "Cool, I'm on it, says Pete.",
+      "startMs": 47540,
+      "endMs": 50220,
+      "avgLogprob": -0.314109,
+      "noSpeechProb": 0.012417,
+      "compressionRatio": 1.414894,
+      "words": [
+        {
+          "index": 1,
+          "text": "Cool,",
+          "startMs": 47540,
+          "endMs": 47800,
+          "probability": 0.94861
+        },
+        {
+          "index": 2,
+          "text": "I'm",
+          "startMs": 48340,
+          "endMs": 48660,
+          "probability": 0.997384
+        },
+        {
+          "index": 3,
+          "text": "on",
+          "startMs": 48660,
+          "endMs": 48840,
+          "probability": 0.99935
+        },
+        {
+          "index": 4,
+          "text": "it,",
+          "startMs": 48840,
+          "endMs": 49200,
+          "probability": 0.999197
+        },
+        {
+          "index": 5,
+          "text": "says",
+          "startMs": 49600,
+          "endMs": 49760,
+          "probability": 0.994399
+        },
+        {
+          "index": 6,
+          "text": "Pete.",
+          "startMs": 49760,
+          "endMs": 50220,
+          "probability": 0.994607
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Pete has a plan.",
+      "startMs": 51920,
+      "endMs": 53440,
+      "avgLogprob": -0.314109,
+      "noSpeechProb": 0.012417,
+      "compressionRatio": 1.414894,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 51920,
+          "endMs": 52580,
+          "probability": 0.99607
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 52580,
+          "endMs": 52840,
+          "probability": 0.998565
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 52840,
+          "endMs": 53040,
+          "probability": 0.997975
+        },
+        {
+          "index": 4,
+          "text": "plan.",
+          "startMs": 53040,
+          "endMs": 53440,
+          "probability": 0.999636
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "He will follow a rainbow until he finds a leprechaun.",
+      "startMs": 53440,
+      "endMs": 57820,
+      "avgLogprob": -0.221164,
+      "noSpeechProb": 0.015323,
+      "compressionRatio": 1.489011,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 53440,
+          "endMs": 54400,
+          "probability": 0.186303
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 54400,
+          "endMs": 54580,
+          "probability": 0.844557
+        },
+        {
+          "index": 3,
+          "text": "follow",
+          "startMs": 54580,
+          "endMs": 55080,
+          "probability": 0.994968
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 55080,
+          "endMs": 55420,
+          "probability": 0.996794
+        },
+        {
+          "index": 5,
+          "text": "rainbow",
+          "startMs": 55420,
+          "endMs": 55940,
+          "probability": 0.989302
+        },
+        {
+          "index": 6,
+          "text": "until",
+          "startMs": 55940,
+          "endMs": 56400,
+          "probability": 0.964154
+        },
+        {
+          "index": 7,
+          "text": "he",
+          "startMs": 56400,
+          "endMs": 56620,
+          "probability": 0.998451
+        },
+        {
+          "index": 8,
+          "text": "finds",
+          "startMs": 56620,
+          "endMs": 56980,
+          "probability": 0.995053
+        },
+        {
+          "index": 9,
+          "text": "a",
+          "startMs": 56980,
+          "endMs": 57160,
+          "probability": 0.994014
+        },
+        {
+          "index": 10,
+          "text": "leprechaun.",
+          "startMs": 57160,
+          "endMs": 57820,
+          "probability": 0.977512
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "Finally, Pete arrives at the end of the rainbow and finds Clover the leprechaun",
+      "startMs": 60040,
+      "endMs": 65900,
+      "avgLogprob": -0.221164,
+      "noSpeechProb": 0.015323,
+      "compressionRatio": 1.489011,
+      "words": [
+        {
+          "index": 1,
+          "text": "Finally,",
+          "startMs": 60040,
+          "endMs": 60480,
+          "probability": 0.993016
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 61080,
+          "endMs": 61120,
+          "probability": 0.971521
+        },
+        {
+          "index": 3,
+          "text": "arrives",
+          "startMs": 61120,
+          "endMs": 61480,
+          "probability": 0.996673
+        },
+        {
+          "index": 4,
+          "text": "at",
+          "startMs": 61480,
+          "endMs": 61780,
+          "probability": 0.997638
+        },
+        {
+          "index": 5,
+          "text": "the",
+          "startMs": 61780,
+          "endMs": 61920,
+          "probability": 0.998748
+        },
+        {
+          "index": 6,
+          "text": "end",
+          "startMs": 61920,
+          "endMs": 62200,
+          "probability": 0.999504
+        },
+        {
+          "index": 7,
+          "text": "of",
+          "startMs": 62200,
+          "endMs": 62340,
+          "probability": 0.999093
+        },
+        {
+          "index": 8,
+          "text": "the",
+          "startMs": 62340,
+          "endMs": 62500,
+          "probability": 0.99824
+        },
+        {
+          "index": 9,
+          "text": "rainbow",
+          "startMs": 62500,
+          "endMs": 63000,
+          "probability": 0.997916
+        },
+        {
+          "index": 10,
+          "text": "and",
+          "startMs": 63000,
+          "endMs": 63800,
+          "probability": 0.709154
+        },
+        {
+          "index": 11,
+          "text": "finds",
+          "startMs": 63800,
+          "endMs": 64320,
+          "probability": 0.988543
+        },
+        {
+          "index": 12,
+          "text": "Clover",
+          "startMs": 64320,
+          "endMs": 64820,
+          "probability": 0.849486
+        },
+        {
+          "index": 13,
+          "text": "the",
+          "startMs": 64820,
+          "endMs": 65140,
+          "probability": 0.756653
+        },
+        {
+          "index": 14,
+          "text": "leprechaun",
+          "startMs": 65140,
+          "endMs": 65900,
+          "probability": 0.986627
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "next to a pot of gold.",
+      "startMs": 65900,
+      "endMs": 67820,
+      "avgLogprob": -0.221164,
+      "noSpeechProb": 0.015323,
+      "compressionRatio": 1.489011,
+      "words": [
+        {
+          "index": 1,
+          "text": "next",
+          "startMs": 65900,
+          "endMs": 66580,
+          "probability": 0.814808
+        },
+        {
+          "index": 2,
+          "text": "to",
+          "startMs": 66580,
+          "endMs": 66900,
+          "probability": 0.998291
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 66900,
+          "endMs": 67040,
+          "probability": 0.997299
+        },
+        {
+          "index": 4,
+          "text": "pot",
+          "startMs": 67040,
+          "endMs": 67240,
+          "probability": 0.99489
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 67240,
+          "endMs": 67460,
+          "probability": 0.999314
+        },
+        {
+          "index": 6,
+          "text": "gold.",
+          "startMs": 67460,
+          "endMs": 67820,
+          "probability": 0.996314
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "Pete sneaks up behind Clover.",
+      "startMs": 68880,
+      "endMs": 71140,
+      "avgLogprob": -0.221164,
+      "noSpeechProb": 0.015323,
+      "compressionRatio": 1.489011,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 68880,
+          "endMs": 69160,
+          "probability": 0.994595
+        },
+        {
+          "index": 2,
+          "text": "sneaks",
+          "startMs": 69160,
+          "endMs": 69800,
+          "probability": 0.991309
+        },
+        {
+          "index": 3,
+          "text": "up",
+          "startMs": 69800,
+          "endMs": 70060,
+          "probability": 0.997677
+        },
+        {
+          "index": 4,
+          "text": "behind",
+          "startMs": 70060,
+          "endMs": 70560,
+          "probability": 0.997903
+        },
+        {
+          "index": 5,
+          "text": "Clover.",
+          "startMs": 70560,
+          "endMs": 71140,
+          "probability": 0.98844
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "Swoosh!",
+      "startMs": 72360,
+      "endMs": 73000,
+      "avgLogprob": -0.221164,
+      "noSpeechProb": 0.015323,
+      "compressionRatio": 1.489011,
+      "words": [
+        {
+          "index": 1,
+          "text": "Swoosh!",
+          "startMs": 72360,
+          "endMs": 73000,
+          "probability": 0.928889
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "But Clover is too fast.",
+      "startMs": 75120,
+      "endMs": 77300,
+      "avgLogprob": -0.221164,
+      "noSpeechProb": 0.015323,
+      "compressionRatio": 1.489011,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 75120,
+          "endMs": 75840,
+          "probability": 0.785868
+        },
+        {
+          "index": 2,
+          "text": "Clover",
+          "startMs": 75840,
+          "endMs": 76220,
+          "probability": 0.963306
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 76220,
+          "endMs": 76500,
+          "probability": 0.995622
+        },
+        {
+          "index": 4,
+          "text": "too",
+          "startMs": 76500,
+          "endMs": 76700,
+          "probability": 0.994936
+        },
+        {
+          "index": 5,
+          "text": "fast.",
+          "startMs": 76700,
+          "endMs": 77300,
+          "probability": 0.999613
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "Did you think you could catch me so easily?",
+      "startMs": 78260,
+      "endMs": 80800,
+      "avgLogprob": -0.221164,
+      "noSpeechProb": 0.015323,
+      "compressionRatio": 1.489011,
+      "words": [
+        {
+          "index": 1,
+          "text": "Did",
+          "startMs": 78260,
+          "endMs": 78440,
+          "probability": 0.713109
+        },
+        {
+          "index": 2,
+          "text": "you",
+          "startMs": 78440,
+          "endMs": 78620,
+          "probability": 0.998848
+        },
+        {
+          "index": 3,
+          "text": "think",
+          "startMs": 78620,
+          "endMs": 78860,
+          "probability": 0.998606
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 78860,
+          "endMs": 79080,
+          "probability": 0.996496
+        },
+        {
+          "index": 5,
+          "text": "could",
+          "startMs": 79080,
+          "endMs": 79300,
+          "probability": 0.996662
+        },
+        {
+          "index": 6,
+          "text": "catch",
+          "startMs": 79300,
+          "endMs": 79580,
+          "probability": 0.998667
+        },
+        {
+          "index": 7,
+          "text": "me",
+          "startMs": 79580,
+          "endMs": 79860,
+          "probability": 0.996853
+        },
+        {
+          "index": 8,
+          "text": "so",
+          "startMs": 79860,
+          "endMs": 80120,
+          "probability": 0.997791
+        },
+        {
+          "index": 9,
+          "text": "easily?",
+          "startMs": 80120,
+          "endMs": 80800,
+          "probability": 0.997972
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "He asks.",
+      "startMs": 81320,
+      "endMs": 81860,
+      "avgLogprob": -0.221164,
+      "noSpeechProb": 0.015323,
+      "compressionRatio": 1.489011,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 81320,
+          "endMs": 81460,
+          "probability": 0.584689
+        },
+        {
+          "index": 2,
+          "text": "asks.",
+          "startMs": 81460,
+          "endMs": 81860,
+          "probability": 0.987907
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Once there was a cat named Pete who thought nabbing some luck would be neat.",
+      "startMs": 82560,
+      "endMs": 87380,
+      "avgLogprob": -0.116694,
+      "noSpeechProb": 0.013079,
+      "compressionRatio": 1.451777,
+      "words": [
+        {
+          "index": 1,
+          "text": "Once",
+          "startMs": 82560,
+          "endMs": 83180,
+          "probability": 0.362776
+        },
+        {
+          "index": 2,
+          "text": "there",
+          "startMs": 83180,
+          "endMs": 83440,
+          "probability": 0.708728
+        },
+        {
+          "index": 3,
+          "text": "was",
+          "startMs": 83440,
+          "endMs": 83600,
+          "probability": 0.983834
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 83600,
+          "endMs": 83780,
+          "probability": 0.996773
+        },
+        {
+          "index": 5,
+          "text": "cat",
+          "startMs": 83780,
+          "endMs": 83980,
+          "probability": 0.986853
+        },
+        {
+          "index": 6,
+          "text": "named",
+          "startMs": 83980,
+          "endMs": 84440,
+          "probability": 0.992691
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 84440,
+          "endMs": 84780,
+          "probability": 0.988937
+        },
+        {
+          "index": 8,
+          "text": "who",
+          "startMs": 84780,
+          "endMs": 85420,
+          "probability": 0.427098
+        },
+        {
+          "index": 9,
+          "text": "thought",
+          "startMs": 85420,
+          "endMs": 85660,
+          "probability": 0.992592
+        },
+        {
+          "index": 10,
+          "text": "nabbing",
+          "startMs": 85660,
+          "endMs": 86140,
+          "probability": 0.980571
+        },
+        {
+          "index": 11,
+          "text": "some",
+          "startMs": 86140,
+          "endMs": 86380,
+          "probability": 0.997328
+        },
+        {
+          "index": 12,
+          "text": "luck",
+          "startMs": 86380,
+          "endMs": 86660,
+          "probability": 0.997207
+        },
+        {
+          "index": 13,
+          "text": "would",
+          "startMs": 86660,
+          "endMs": 86860,
+          "probability": 0.994349
+        },
+        {
+          "index": 14,
+          "text": "be",
+          "startMs": 86860,
+          "endMs": 87040,
+          "probability": 0.997922
+        },
+        {
+          "index": 15,
+          "text": "neat.",
+          "startMs": 87040,
+          "endMs": 87380,
+          "probability": 0.998163
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Then he happened upon a smart leprechaun who he'll find quite tricky to beat.",
+      "startMs": 87860,
+      "endMs": 92980,
+      "avgLogprob": -0.116694,
+      "noSpeechProb": 0.013079,
+      "compressionRatio": 1.451777,
+      "words": [
+        {
+          "index": 1,
+          "text": "Then",
+          "startMs": 87860,
+          "endMs": 88040,
+          "probability": 0.991661
+        },
+        {
+          "index": 2,
+          "text": "he",
+          "startMs": 88040,
+          "endMs": 88240,
+          "probability": 0.969936
+        },
+        {
+          "index": 3,
+          "text": "happened",
+          "startMs": 88240,
+          "endMs": 88560,
+          "probability": 0.994194
+        },
+        {
+          "index": 4,
+          "text": "upon",
+          "startMs": 88560,
+          "endMs": 89060,
+          "probability": 0.992862
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 89060,
+          "endMs": 89480,
+          "probability": 0.968307
+        },
+        {
+          "index": 6,
+          "text": "smart",
+          "startMs": 89480,
+          "endMs": 89840,
+          "probability": 0.981446
+        },
+        {
+          "index": 7,
+          "text": "leprechaun",
+          "startMs": 89840,
+          "endMs": 90700,
+          "probability": 0.974839
+        },
+        {
+          "index": 8,
+          "text": "who",
+          "startMs": 90700,
+          "endMs": 91140,
+          "probability": 0.698794
+        },
+        {
+          "index": 9,
+          "text": "he'll",
+          "startMs": 91140,
+          "endMs": 91480,
+          "probability": 0.984264
+        },
+        {
+          "index": 10,
+          "text": "find",
+          "startMs": 91480,
+          "endMs": 91740,
+          "probability": 0.998736
+        },
+        {
+          "index": 11,
+          "text": "quite",
+          "startMs": 91740,
+          "endMs": 92040,
+          "probability": 0.974679
+        },
+        {
+          "index": 12,
+          "text": "tricky",
+          "startMs": 92040,
+          "endMs": 92400,
+          "probability": 0.999153
+        },
+        {
+          "index": 13,
+          "text": "to",
+          "startMs": 92400,
+          "endMs": 92680,
+          "probability": 0.999037
+        },
+        {
+          "index": 14,
+          "text": "beat.",
+          "startMs": 92680,
+          "endMs": 92980,
+          "probability": 0.980293
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "Clover disappears in a puff of green smoke.",
+      "startMs": 95620,
+      "endMs": 98080,
+      "avgLogprob": -0.116694,
+      "noSpeechProb": 0.013079,
+      "compressionRatio": 1.451777,
+      "words": [
+        {
+          "index": 1,
+          "text": "Clover",
+          "startMs": 95620,
+          "endMs": 95620,
+          "probability": 0.724625
+        },
+        {
+          "index": 2,
+          "text": "disappears",
+          "startMs": 95620,
+          "endMs": 96420,
+          "probability": 0.996232
+        },
+        {
+          "index": 3,
+          "text": "in",
+          "startMs": 96420,
+          "endMs": 96680,
+          "probability": 0.994175
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 96680,
+          "endMs": 96820,
+          "probability": 0.995879
+        },
+        {
+          "index": 5,
+          "text": "puff",
+          "startMs": 96820,
+          "endMs": 97040,
+          "probability": 0.99372
+        },
+        {
+          "index": 6,
+          "text": "of",
+          "startMs": 97040,
+          "endMs": 97300,
+          "probability": 0.998868
+        },
+        {
+          "index": 7,
+          "text": "green",
+          "startMs": 97300,
+          "endMs": 97560,
+          "probability": 0.995172
+        },
+        {
+          "index": 8,
+          "text": "smoke.",
+          "startMs": 97560,
+          "endMs": 98080,
+          "probability": 0.998807
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "Pete will need a new plan.",
+      "startMs": 99180,
+      "endMs": 100800,
+      "avgLogprob": -0.116694,
+      "noSpeechProb": 0.013079,
+      "compressionRatio": 1.451777,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 99180,
+          "endMs": 99340,
+          "probability": 0.992014
+        },
+        {
+          "index": 2,
+          "text": "will",
+          "startMs": 99340,
+          "endMs": 99580,
+          "probability": 0.997737
+        },
+        {
+          "index": 3,
+          "text": "need",
+          "startMs": 99580,
+          "endMs": 99860,
+          "probability": 0.998746
+        },
+        {
+          "index": 4,
+          "text": "a",
+          "startMs": 99860,
+          "endMs": 100040,
+          "probability": 0.999238
+        },
+        {
+          "index": 5,
+          "text": "new",
+          "startMs": 100040,
+          "endMs": 100280,
+          "probability": 0.999473
+        },
+        {
+          "index": 6,
+          "text": "plan.",
+          "startMs": 100280,
+          "endMs": 100800,
+          "probability": 0.99909
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "That afternoon, Gus visits Pete's lucky leprechaun catchers.",
+      "startMs": 103200,
+      "endMs": 107500,
+      "avgLogprob": -0.116694,
+      "noSpeechProb": 0.013079,
+      "compressionRatio": 1.451777,
+      "words": [
+        {
+          "index": 1,
+          "text": "That",
+          "startMs": 103200,
+          "endMs": 103360,
+          "probability": 0.991293
+        },
+        {
+          "index": 2,
+          "text": "afternoon,",
+          "startMs": 103360,
+          "endMs": 104060,
+          "probability": 0.997923
+        },
+        {
+          "index": 3,
+          "text": "Gus",
+          "startMs": 105060,
+          "endMs": 105120,
+          "probability": 0.986904
+        },
+        {
+          "index": 4,
+          "text": "visits",
+          "startMs": 105120,
+          "endMs": 105600,
+          "probability": 0.997012
+        },
+        {
+          "index": 5,
+          "text": "Pete's",
+          "startMs": 105600,
+          "endMs": 106080,
+          "probability": 0.995127
+        },
+        {
+          "index": 6,
+          "text": "lucky",
+          "startMs": 106080,
+          "endMs": 106340,
+          "probability": 0.972227
+        },
+        {
+          "index": 7,
+          "text": "leprechaun",
+          "startMs": 106340,
+          "endMs": 106940,
+          "probability": 0.994064
+        },
+        {
+          "index": 8,
+          "text": "catchers.",
+          "startMs": 106940,
+          "endMs": 107500,
+          "probability": 0.976412
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "I want a leprechaun, Gus says.",
+      "startMs": 108500,
+      "endMs": 110940,
+      "avgLogprob": -0.120965,
+      "noSpeechProb": 0.061657,
+      "compressionRatio": 1.445055,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 108400,
+          "endMs": 108740,
+          "probability": 0.246229
+        },
+        {
+          "index": 2,
+          "text": "want",
+          "startMs": 108740,
+          "endMs": 109000,
+          "probability": 0.717535
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 109000,
+          "endMs": 109160,
+          "probability": 0.941367
+        },
+        {
+          "index": 4,
+          "text": "leprechaun,",
+          "startMs": 109160,
+          "endMs": 109860,
+          "probability": 0.960395
+        },
+        {
+          "index": 5,
+          "text": "Gus",
+          "startMs": 110400,
+          "endMs": 110540,
+          "probability": 0.986357
+        },
+        {
+          "index": 6,
+          "text": "says.",
+          "startMs": 110540,
+          "endMs": 110940,
+          "probability": 0.995543
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "text": "I need good luck for my band recital.",
+      "startMs": 111540,
+      "endMs": 113560,
+      "avgLogprob": -0.120965,
+      "noSpeechProb": 0.061657,
+      "compressionRatio": 1.445055,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 111540,
+          "endMs": 111560,
+          "probability": 0.982589
+        },
+        {
+          "index": 2,
+          "text": "need",
+          "startMs": 111560,
+          "endMs": 111760,
+          "probability": 0.999085
+        },
+        {
+          "index": 3,
+          "text": "good",
+          "startMs": 111760,
+          "endMs": 112020,
+          "probability": 0.997193
+        },
+        {
+          "index": 4,
+          "text": "luck",
+          "startMs": 112020,
+          "endMs": 112260,
+          "probability": 0.998758
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 112260,
+          "endMs": 112460,
+          "probability": 0.996096
+        },
+        {
+          "index": 6,
+          "text": "my",
+          "startMs": 112460,
+          "endMs": 112640,
+          "probability": 0.99864
+        },
+        {
+          "index": 7,
+          "text": "band",
+          "startMs": 112640,
+          "endMs": 112960,
+          "probability": 0.997304
+        },
+        {
+          "index": 8,
+          "text": "recital.",
+          "startMs": 112960,
+          "endMs": 113560,
+          "probability": 0.99686
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "Pete says, I'll see what I can do.",
+      "startMs": 114820,
+      "endMs": 117700,
+      "avgLogprob": -0.120965,
+      "noSpeechProb": 0.061657,
+      "compressionRatio": 1.445055,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 114820,
+          "endMs": 114880,
+          "probability": 0.993795
+        },
+        {
+          "index": 2,
+          "text": "says,",
+          "startMs": 114880,
+          "endMs": 115300,
+          "probability": 0.99748
+        },
+        {
+          "index": 3,
+          "text": "I'll",
+          "startMs": 116040,
+          "endMs": 116120,
+          "probability": 0.965648
+        },
+        {
+          "index": 4,
+          "text": "see",
+          "startMs": 116120,
+          "endMs": 116400,
+          "probability": 0.999567
+        },
+        {
+          "index": 5,
+          "text": "what",
+          "startMs": 116400,
+          "endMs": 116580,
+          "probability": 0.999308
+        },
+        {
+          "index": 6,
+          "text": "I",
+          "startMs": 116580,
+          "endMs": 116740,
+          "probability": 0.998654
+        },
+        {
+          "index": 7,
+          "text": "can",
+          "startMs": 116740,
+          "endMs": 116980,
+          "probability": 0.999598
+        },
+        {
+          "index": 8,
+          "text": "do.",
+          "startMs": 116980,
+          "endMs": 117700,
+          "probability": 0.999487
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "Pete plans to lure Clover out with his music.",
+      "startMs": 119580,
+      "endMs": 122740,
+      "avgLogprob": -0.120965,
+      "noSpeechProb": 0.061657,
+      "compressionRatio": 1.445055,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 119580,
+          "endMs": 119720,
+          "probability": 0.987171
+        },
+        {
+          "index": 2,
+          "text": "plans",
+          "startMs": 119720,
+          "endMs": 120140,
+          "probability": 0.996291
+        },
+        {
+          "index": 3,
+          "text": "to",
+          "startMs": 120140,
+          "endMs": 120460,
+          "probability": 0.999244
+        },
+        {
+          "index": 4,
+          "text": "lure",
+          "startMs": 120460,
+          "endMs": 120860,
+          "probability": 0.999781
+        },
+        {
+          "index": 5,
+          "text": "Clover",
+          "startMs": 120860,
+          "endMs": 121180,
+          "probability": 0.973551
+        },
+        {
+          "index": 6,
+          "text": "out",
+          "startMs": 121180,
+          "endMs": 121640,
+          "probability": 0.998988
+        },
+        {
+          "index": 7,
+          "text": "with",
+          "startMs": 121640,
+          "endMs": 121980,
+          "probability": 0.993489
+        },
+        {
+          "index": 8,
+          "text": "his",
+          "startMs": 121980,
+          "endMs": 122160,
+          "probability": 0.998687
+        },
+        {
+          "index": 9,
+          "text": "music.",
+          "startMs": 122160,
+          "endMs": 122740,
+          "probability": 0.999569
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "He plays a jaunty song on his guitar.",
+      "startMs": 123380,
+      "endMs": 125880,
+      "avgLogprob": -0.120965,
+      "noSpeechProb": 0.061657,
+      "compressionRatio": 1.445055,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 123380,
+          "endMs": 123560,
+          "probability": 0.997694
+        },
+        {
+          "index": 2,
+          "text": "plays",
+          "startMs": 123560,
+          "endMs": 123840,
+          "probability": 0.99877
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 123840,
+          "endMs": 124100,
+          "probability": 0.995393
+        },
+        {
+          "index": 4,
+          "text": "jaunty",
+          "startMs": 124100,
+          "endMs": 124600,
+          "probability": 0.966933
+        },
+        {
+          "index": 5,
+          "text": "song",
+          "startMs": 124600,
+          "endMs": 125000,
+          "probability": 0.998127
+        },
+        {
+          "index": 6,
+          "text": "on",
+          "startMs": 125000,
+          "endMs": 125220,
+          "probability": 0.999481
+        },
+        {
+          "index": 7,
+          "text": "his",
+          "startMs": 125220,
+          "endMs": 125420,
+          "probability": 0.999069
+        },
+        {
+          "index": 8,
+          "text": "guitar.",
+          "startMs": 125420,
+          "endMs": 125880,
+          "probability": 0.999687
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Before long, Clover dances over to Pete.",
+      "startMs": 126920,
+      "endMs": 130360,
+      "avgLogprob": -0.120965,
+      "noSpeechProb": 0.061657,
+      "compressionRatio": 1.445055,
+      "words": [
+        {
+          "index": 1,
+          "text": "Before",
+          "startMs": 126920,
+          "endMs": 127220,
+          "probability": 0.992143
+        },
+        {
+          "index": 2,
+          "text": "long,",
+          "startMs": 127220,
+          "endMs": 127840,
+          "probability": 0.992326
+        },
+        {
+          "index": 3,
+          "text": "Clover",
+          "startMs": 128440,
+          "endMs": 128600,
+          "probability": 0.994745
+        },
+        {
+          "index": 4,
+          "text": "dances",
+          "startMs": 128600,
+          "endMs": 129380,
+          "probability": 0.996894
+        },
+        {
+          "index": 5,
+          "text": "over",
+          "startMs": 129380,
+          "endMs": 129800,
+          "probability": 0.999505
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 129800,
+          "endMs": 130040,
+          "probability": 0.99866
+        },
+        {
+          "index": 7,
+          "text": "Pete.",
+          "startMs": 130040,
+          "endMs": 130360,
+          "probability": 0.998981
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "text": "Just a little closer, Pete thinks.",
+      "startMs": 131360,
+      "endMs": 134720,
+      "avgLogprob": -0.120965,
+      "noSpeechProb": 0.061657,
+      "compressionRatio": 1.445055,
+      "words": [
+        {
+          "index": 1,
+          "text": "Just",
+          "startMs": 131360,
+          "endMs": 131680,
+          "probability": 0.943624
+        },
+        {
+          "index": 2,
+          "text": "a",
+          "startMs": 131680,
+          "endMs": 132080,
+          "probability": 0.999157
+        },
+        {
+          "index": 3,
+          "text": "little",
+          "startMs": 132080,
+          "endMs": 132560,
+          "probability": 0.998982
+        },
+        {
+          "index": 4,
+          "text": "closer,",
+          "startMs": 132560,
+          "endMs": 133540,
+          "probability": 0.998786
+        },
+        {
+          "index": 5,
+          "text": "Pete",
+          "startMs": 134060,
+          "endMs": 134240,
+          "probability": 0.995649
+        },
+        {
+          "index": 6,
+          "text": "thinks.",
+          "startMs": 134240,
+          "endMs": 134720,
+          "probability": 0.992636
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "text": "Suddenly, Clover starts spinning around Pete.",
+      "startMs": 135840,
+      "endMs": 139280,
+      "avgLogprob": -0.169409,
+      "noSpeechProb": 0.01187,
+      "compressionRatio": 1.51087,
+      "words": [
+        {
+          "index": 1,
+          "text": "Suddenly,",
+          "startMs": 135840,
+          "endMs": 136580,
+          "probability": 0.220651
+        },
+        {
+          "index": 2,
+          "text": "Clover",
+          "startMs": 137360,
+          "endMs": 137380,
+          "probability": 0.89268
+        },
+        {
+          "index": 3,
+          "text": "starts",
+          "startMs": 137380,
+          "endMs": 137920,
+          "probability": 0.980877
+        },
+        {
+          "index": 4,
+          "text": "spinning",
+          "startMs": 137920,
+          "endMs": 138440,
+          "probability": 0.995387
+        },
+        {
+          "index": 5,
+          "text": "around",
+          "startMs": 138440,
+          "endMs": 138900,
+          "probability": 0.996983
+        },
+        {
+          "index": 6,
+          "text": "Pete.",
+          "startMs": 138900,
+          "endMs": 139280,
+          "probability": 0.972765
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "Round and round, Clover goes faster and faster.",
+      "startMs": 140180,
+      "endMs": 143460,
+      "avgLogprob": -0.169409,
+      "noSpeechProb": 0.01187,
+      "compressionRatio": 1.51087,
+      "words": [
+        {
+          "index": 1,
+          "text": "Round",
+          "startMs": 140180,
+          "endMs": 140300,
+          "probability": 0.970411
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 140300,
+          "endMs": 140600,
+          "probability": 0.993029
+        },
+        {
+          "index": 3,
+          "text": "round,",
+          "startMs": 140600,
+          "endMs": 141060,
+          "probability": 0.99004
+        },
+        {
+          "index": 4,
+          "text": "Clover",
+          "startMs": 141520,
+          "endMs": 141640,
+          "probability": 0.991748
+        },
+        {
+          "index": 5,
+          "text": "goes",
+          "startMs": 141640,
+          "endMs": 142060,
+          "probability": 0.997887
+        },
+        {
+          "index": 6,
+          "text": "faster",
+          "startMs": 142060,
+          "endMs": 142620,
+          "probability": 0.998809
+        },
+        {
+          "index": 7,
+          "text": "and",
+          "startMs": 142620,
+          "endMs": 142860,
+          "probability": 0.99716
+        },
+        {
+          "index": 8,
+          "text": "faster.",
+          "startMs": 142860,
+          "endMs": 143460,
+          "probability": 0.998707
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Oh no!",
+      "startMs": 145760,
+      "endMs": 146540,
+      "avgLogprob": -0.169409,
+      "noSpeechProb": 0.01187,
+      "compressionRatio": 1.51087,
+      "words": [
+        {
+          "index": 1,
+          "text": "Oh",
+          "startMs": 145760,
+          "endMs": 146140,
+          "probability": 0.85434
+        },
+        {
+          "index": 2,
+          "text": "no!",
+          "startMs": 146140,
+          "endMs": 146540,
+          "probability": 0.589129
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "text": "Clover wraps up Pete with the rope.",
+      "startMs": 147700,
+      "endMs": 149280,
+      "avgLogprob": -0.169409,
+      "noSpeechProb": 0.01187,
+      "compressionRatio": 1.51087,
+      "words": [
+        {
+          "index": 1,
+          "text": "Clover",
+          "startMs": 147700,
+          "endMs": 147700,
+          "probability": 0.994146
+        },
+        {
+          "index": 2,
+          "text": "wraps",
+          "startMs": 147700,
+          "endMs": 148120,
+          "probability": 0.998894
+        },
+        {
+          "index": 3,
+          "text": "up",
+          "startMs": 148120,
+          "endMs": 148340,
+          "probability": 0.992724
+        },
+        {
+          "index": 4,
+          "text": "Pete",
+          "startMs": 148340,
+          "endMs": 148580,
+          "probability": 0.995472
+        },
+        {
+          "index": 5,
+          "text": "with",
+          "startMs": 148580,
+          "endMs": 148800,
+          "probability": 0.998314
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 148800,
+          "endMs": 148960,
+          "probability": 0.981792
+        },
+        {
+          "index": 7,
+          "text": "rope.",
+          "startMs": 148960,
+          "endMs": 149280,
+          "probability": 0.997118
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "text": "Pete has finally met his match, a crafty leprechaun he just can't catch.",
+      "startMs": 150520,
+      "endMs": 155140,
+      "avgLogprob": -0.169409,
+      "noSpeechProb": 0.01187,
+      "compressionRatio": 1.51087,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 150520,
+          "endMs": 150740,
+          "probability": 0.992738
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 150740,
+          "endMs": 151000,
+          "probability": 0.996932
+        },
+        {
+          "index": 3,
+          "text": "finally",
+          "startMs": 151000,
+          "endMs": 151380,
+          "probability": 0.998729
+        },
+        {
+          "index": 4,
+          "text": "met",
+          "startMs": 151380,
+          "endMs": 151740,
+          "probability": 0.99425
+        },
+        {
+          "index": 5,
+          "text": "his",
+          "startMs": 151740,
+          "endMs": 151940,
+          "probability": 0.998968
+        },
+        {
+          "index": 6,
+          "text": "match,",
+          "startMs": 151940,
+          "endMs": 152360,
+          "probability": 0.998349
+        },
+        {
+          "index": 7,
+          "text": "a",
+          "startMs": 152640,
+          "endMs": 152780,
+          "probability": 0.990054
+        },
+        {
+          "index": 8,
+          "text": "crafty",
+          "startMs": 152780,
+          "endMs": 153280,
+          "probability": 0.983973
+        },
+        {
+          "index": 9,
+          "text": "leprechaun",
+          "startMs": 153280,
+          "endMs": 153860,
+          "probability": 0.927474
+        },
+        {
+          "index": 10,
+          "text": "he",
+          "startMs": 153860,
+          "endMs": 154060,
+          "probability": 0.989215
+        },
+        {
+          "index": 11,
+          "text": "just",
+          "startMs": 154060,
+          "endMs": 154340,
+          "probability": 0.994582
+        },
+        {
+          "index": 12,
+          "text": "can't",
+          "startMs": 154340,
+          "endMs": 154740,
+          "probability": 0.998925
+        },
+        {
+          "index": 13,
+          "text": "catch.",
+          "startMs": 154740,
+          "endMs": 155140,
+          "probability": 0.998938
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "He'll never win.",
+      "startMs": 155540,
+      "endMs": 156460,
+      "avgLogprob": -0.169409,
+      "noSpeechProb": 0.01187,
+      "compressionRatio": 1.51087,
+      "words": [
+        {
+          "index": 1,
+          "text": "He'll",
+          "startMs": 155540,
+          "endMs": 155780,
+          "probability": 0.995821
+        },
+        {
+          "index": 2,
+          "text": "never",
+          "startMs": 155780,
+          "endMs": 156100,
+          "probability": 0.999455
+        },
+        {
+          "index": 3,
+          "text": "win.",
+          "startMs": 156100,
+          "endMs": 156460,
+          "probability": 0.999326
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "text": "He better give in or find something else to snatch.",
+      "startMs": 156760,
+      "endMs": 159980,
+      "avgLogprob": -0.169409,
+      "noSpeechProb": 0.01187,
+      "compressionRatio": 1.51087,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 156760,
+          "endMs": 156940,
+          "probability": 0.997205
+        },
+        {
+          "index": 2,
+          "text": "better",
+          "startMs": 156940,
+          "endMs": 157140,
+          "probability": 0.899843
+        },
+        {
+          "index": 3,
+          "text": "give",
+          "startMs": 157140,
+          "endMs": 157480,
+          "probability": 0.994322
+        },
+        {
+          "index": 4,
+          "text": "in",
+          "startMs": 157480,
+          "endMs": 157900,
+          "probability": 0.999003
+        },
+        {
+          "index": 5,
+          "text": "or",
+          "startMs": 157900,
+          "endMs": 158300,
+          "probability": 0.682859
+        },
+        {
+          "index": 6,
+          "text": "find",
+          "startMs": 158300,
+          "endMs": 158620,
+          "probability": 0.997651
+        },
+        {
+          "index": 7,
+          "text": "something",
+          "startMs": 158620,
+          "endMs": 159040,
+          "probability": 0.999013
+        },
+        {
+          "index": 8,
+          "text": "else",
+          "startMs": 159040,
+          "endMs": 159300,
+          "probability": 0.99835
+        },
+        {
+          "index": 9,
+          "text": "to",
+          "startMs": 159300,
+          "endMs": 159620,
+          "probability": 0.999447
+        },
+        {
+          "index": 10,
+          "text": "snatch.",
+          "startMs": 159620,
+          "endMs": 159980,
+          "probability": 0.997104
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "That evening, Callie visits Pete's lucky leprechaun catchers.",
+      "startMs": 162120,
+      "endMs": 167100,
+      "avgLogprob": -0.213908,
+      "noSpeechProb": 0.00493,
+      "compressionRatio": 1.491429,
+      "words": [
+        {
+          "index": 1,
+          "text": "That",
+          "startMs": 162120,
+          "endMs": 162800,
+          "probability": 0.202777
+        },
+        {
+          "index": 2,
+          "text": "evening,",
+          "startMs": 162800,
+          "endMs": 163340,
+          "probability": 0.994602
+        },
+        {
+          "index": 3,
+          "text": "Callie",
+          "startMs": 164240,
+          "endMs": 164460,
+          "probability": 0.783193
+        },
+        {
+          "index": 4,
+          "text": "visits",
+          "startMs": 164460,
+          "endMs": 164860,
+          "probability": 0.996735
+        },
+        {
+          "index": 5,
+          "text": "Pete's",
+          "startMs": 164860,
+          "endMs": 165380,
+          "probability": 0.98772
+        },
+        {
+          "index": 6,
+          "text": "lucky",
+          "startMs": 165380,
+          "endMs": 165680,
+          "probability": 0.913654
+        },
+        {
+          "index": 7,
+          "text": "leprechaun",
+          "startMs": 165680,
+          "endMs": 166340,
+          "probability": 0.94677
+        },
+        {
+          "index": 8,
+          "text": "catchers.",
+          "startMs": 166340,
+          "endMs": 167100,
+          "probability": 0.963908
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "I want a leprechaun, Callie says.",
+      "startMs": 168160,
+      "endMs": 170500,
+      "avgLogprob": -0.213908,
+      "noSpeechProb": 0.00493,
+      "compressionRatio": 1.491429,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 168160,
+          "endMs": 168160,
+          "probability": 0.074802
+        },
+        {
+          "index": 2,
+          "text": "want",
+          "startMs": 168160,
+          "endMs": 168420,
+          "probability": 0.994496
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 168420,
+          "endMs": 168600,
+          "probability": 0.97164
+        },
+        {
+          "index": 4,
+          "text": "leprechaun,",
+          "startMs": 168600,
+          "endMs": 169280,
+          "probability": 0.997333
+        },
+        {
+          "index": 5,
+          "text": "Callie",
+          "startMs": 169880,
+          "endMs": 170120,
+          "probability": 0.97957
+        },
+        {
+          "index": 6,
+          "text": "says.",
+          "startMs": 170120,
+          "endMs": 170500,
+          "probability": 0.997071
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "I need good luck for my tennis match.",
+      "startMs": 171220,
+      "endMs": 173180,
+      "avgLogprob": -0.213908,
+      "noSpeechProb": 0.00493,
+      "compressionRatio": 1.491429,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 171220,
+          "endMs": 171260,
+          "probability": 0.985241
+        },
+        {
+          "index": 2,
+          "text": "need",
+          "startMs": 171260,
+          "endMs": 171480,
+          "probability": 0.999213
+        },
+        {
+          "index": 3,
+          "text": "good",
+          "startMs": 171480,
+          "endMs": 171720,
+          "probability": 0.995963
+        },
+        {
+          "index": 4,
+          "text": "luck",
+          "startMs": 171720,
+          "endMs": 171900,
+          "probability": 0.998259
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 171900,
+          "endMs": 172100,
+          "probability": 0.996953
+        },
+        {
+          "index": 6,
+          "text": "my",
+          "startMs": 172100,
+          "endMs": 172280,
+          "probability": 0.999076
+        },
+        {
+          "index": 7,
+          "text": "tennis",
+          "startMs": 172280,
+          "endMs": 172620,
+          "probability": 0.999136
+        },
+        {
+          "index": 8,
+          "text": "match.",
+          "startMs": 172620,
+          "endMs": 173180,
+          "probability": 0.999137
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "text": "Mmm, says Pete.",
+      "startMs": 175000,
+      "endMs": 176780,
+      "avgLogprob": -0.213908,
+      "noSpeechProb": 0.00493,
+      "compressionRatio": 1.491429,
+      "words": [
+        {
+          "index": 1,
+          "text": "Mmm,",
+          "startMs": 175000,
+          "endMs": 175280,
+          "probability": 0.253385
+        },
+        {
+          "index": 2,
+          "text": "says",
+          "startMs": 175900,
+          "endMs": 176220,
+          "probability": 0.989667
+        },
+        {
+          "index": 3,
+          "text": "Pete.",
+          "startMs": 176220,
+          "endMs": 176780,
+          "probability": 0.989744
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "St. Patrick's Day is almost over.",
+      "startMs": 178120,
+      "endMs": 180300,
+      "avgLogprob": -0.213908,
+      "noSpeechProb": 0.00493,
+      "compressionRatio": 1.491429,
+      "words": [
+        {
+          "index": 1,
+          "text": "St.",
+          "startMs": 178120,
+          "endMs": 178120,
+          "probability": 0.863427
+        },
+        {
+          "index": 2,
+          "text": "Patrick's",
+          "startMs": 178420,
+          "endMs": 178840,
+          "probability": 0.98897
+        },
+        {
+          "index": 3,
+          "text": "Day",
+          "startMs": 178840,
+          "endMs": 178940,
+          "probability": 0.856482
+        },
+        {
+          "index": 4,
+          "text": "is",
+          "startMs": 178940,
+          "endMs": 179160,
+          "probability": 0.991312
+        },
+        {
+          "index": 5,
+          "text": "almost",
+          "startMs": 179160,
+          "endMs": 179700,
+          "probability": 0.998484
+        },
+        {
+          "index": 6,
+          "text": "over.",
+          "startMs": 179700,
+          "endMs": 180300,
+          "probability": 0.999077
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "There isn't much time left to catch a leprechaun.",
+      "startMs": 181180,
+      "endMs": 183720,
+      "avgLogprob": -0.213908,
+      "noSpeechProb": 0.00493,
+      "compressionRatio": 1.491429,
+      "words": [
+        {
+          "index": 1,
+          "text": "There",
+          "startMs": 181180,
+          "endMs": 181380,
+          "probability": 0.99611
+        },
+        {
+          "index": 2,
+          "text": "isn't",
+          "startMs": 181380,
+          "endMs": 181680,
+          "probability": 0.997823
+        },
+        {
+          "index": 3,
+          "text": "much",
+          "startMs": 181680,
+          "endMs": 181900,
+          "probability": 0.997765
+        },
+        {
+          "index": 4,
+          "text": "time",
+          "startMs": 181900,
+          "endMs": 182280,
+          "probability": 0.998787
+        },
+        {
+          "index": 5,
+          "text": "left",
+          "startMs": 182280,
+          "endMs": 182540,
+          "probability": 0.998174
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 182540,
+          "endMs": 182700,
+          "probability": 0.998964
+        },
+        {
+          "index": 7,
+          "text": "catch",
+          "startMs": 182700,
+          "endMs": 182920,
+          "probability": 0.99918
+        },
+        {
+          "index": 8,
+          "text": "a",
+          "startMs": 182920,
+          "endMs": 183080,
+          "probability": 0.99571
+        },
+        {
+          "index": 9,
+          "text": "leprechaun.",
+          "startMs": 183080,
+          "endMs": 183720,
+          "probability": 0.998506
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "text": "But Pete won't give up yet.",
+      "startMs": 184860,
+      "endMs": 186800,
+      "avgLogprob": -0.213908,
+      "noSpeechProb": 0.00493,
+      "compressionRatio": 1.491429,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 184860,
+          "endMs": 185060,
+          "probability": 0.991017
+        },
+        {
+          "index": 2,
+          "text": "Pete",
+          "startMs": 185060,
+          "endMs": 185420,
+          "probability": 0.98761
+        },
+        {
+          "index": 3,
+          "text": "won't",
+          "startMs": 185420,
+          "endMs": 185960,
+          "probability": 0.99683
+        },
+        {
+          "index": 4,
+          "text": "give",
+          "startMs": 185960,
+          "endMs": 186180,
+          "probability": 0.999085
+        },
+        {
+          "index": 5,
+          "text": "up",
+          "startMs": 186180,
+          "endMs": 186460,
+          "probability": 0.999636
+        },
+        {
+          "index": 6,
+          "text": "yet.",
+          "startMs": 186460,
+          "endMs": 186800,
+          "probability": 0.989105
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "text": "Pete sets a trap for Clover.",
+      "startMs": 188460,
+      "endMs": 190800,
+      "avgLogprob": -0.210566,
+      "noSpeechProb": 0.011529,
+      "compressionRatio": 1.443787,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 188460,
+          "endMs": 189260,
+          "probability": 0.528929
+        },
+        {
+          "index": 2,
+          "text": "sets",
+          "startMs": 189260,
+          "endMs": 189600,
+          "probability": 0.937479
+        },
+        {
+          "index": 3,
+          "text": "a",
+          "startMs": 189600,
+          "endMs": 189820,
+          "probability": 0.991109
+        },
+        {
+          "index": 4,
+          "text": "trap",
+          "startMs": 189820,
+          "endMs": 190120,
+          "probability": 0.998599
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 190120,
+          "endMs": 190440,
+          "probability": 0.997746
+        },
+        {
+          "index": 6,
+          "text": "Clover.",
+          "startMs": 190440,
+          "endMs": 190800,
+          "probability": 0.97389
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "Before long, Clover tiptoes up to the trap and sniffs the air.",
+      "startMs": 191820,
+      "endMs": 196920,
+      "avgLogprob": -0.210566,
+      "noSpeechProb": 0.011529,
+      "compressionRatio": 1.443787,
+      "words": [
+        {
+          "index": 1,
+          "text": "Before",
+          "startMs": 191820,
+          "endMs": 192120,
+          "probability": 0.988004
+        },
+        {
+          "index": 2,
+          "text": "long,",
+          "startMs": 192120,
+          "endMs": 192720,
+          "probability": 0.995253
+        },
+        {
+          "index": 3,
+          "text": "Clover",
+          "startMs": 193340,
+          "endMs": 193580,
+          "probability": 0.987882
+        },
+        {
+          "index": 4,
+          "text": "tiptoes",
+          "startMs": 193580,
+          "endMs": 194360,
+          "probability": 0.882142
+        },
+        {
+          "index": 5,
+          "text": "up",
+          "startMs": 194360,
+          "endMs": 194660,
+          "probability": 0.996918
+        },
+        {
+          "index": 6,
+          "text": "to",
+          "startMs": 194660,
+          "endMs": 194860,
+          "probability": 0.995682
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 194860,
+          "endMs": 195000,
+          "probability": 0.998292
+        },
+        {
+          "index": 8,
+          "text": "trap",
+          "startMs": 195000,
+          "endMs": 195360,
+          "probability": 0.998394
+        },
+        {
+          "index": 9,
+          "text": "and",
+          "startMs": 195360,
+          "endMs": 195900,
+          "probability": 0.907872
+        },
+        {
+          "index": 10,
+          "text": "sniffs",
+          "startMs": 195900,
+          "endMs": 196300,
+          "probability": 0.959585
+        },
+        {
+          "index": 11,
+          "text": "the",
+          "startMs": 196300,
+          "endMs": 196580,
+          "probability": 0.997986
+        },
+        {
+          "index": 12,
+          "text": "air.",
+          "startMs": 196580,
+          "endMs": 196920,
+          "probability": 0.999811
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "Mmm, I love candy, he whispers, peering under the box.",
+      "startMs": 198260,
+      "endMs": 203460,
+      "avgLogprob": -0.210566,
+      "noSpeechProb": 0.011529,
+      "compressionRatio": 1.443787,
+      "words": [
+        {
+          "index": 1,
+          "text": "Mmm,",
+          "startMs": 198260,
+          "endMs": 198680,
+          "probability": 0.225531
+        },
+        {
+          "index": 2,
+          "text": "I",
+          "startMs": 198840,
+          "endMs": 199180,
+          "probability": 0.998187
+        },
+        {
+          "index": 3,
+          "text": "love",
+          "startMs": 199180,
+          "endMs": 199640,
+          "probability": 0.998359
+        },
+        {
+          "index": 4,
+          "text": "candy,",
+          "startMs": 199640,
+          "endMs": 200400,
+          "probability": 0.994075
+        },
+        {
+          "index": 5,
+          "text": "he",
+          "startMs": 200840,
+          "endMs": 201020,
+          "probability": 0.990499
+        },
+        {
+          "index": 6,
+          "text": "whispers,",
+          "startMs": 201020,
+          "endMs": 201480,
+          "probability": 0.99522
+        },
+        {
+          "index": 7,
+          "text": "peering",
+          "startMs": 202060,
+          "endMs": 202420,
+          "probability": 0.99803
+        },
+        {
+          "index": 8,
+          "text": "under",
+          "startMs": 202420,
+          "endMs": 202820,
+          "probability": 0.998021
+        },
+        {
+          "index": 9,
+          "text": "the",
+          "startMs": 202820,
+          "endMs": 203020,
+          "probability": 0.999244
+        },
+        {
+          "index": 10,
+          "text": "box.",
+          "startMs": 203020,
+          "endMs": 203460,
+          "probability": 0.998637
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "Pete waits very quietly.",
+      "startMs": 204500,
+      "endMs": 206540,
+      "avgLogprob": -0.210566,
+      "noSpeechProb": 0.011529,
+      "compressionRatio": 1.443787,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 204500,
+          "endMs": 204720,
+          "probability": 0.99489
+        },
+        {
+          "index": 2,
+          "text": "waits",
+          "startMs": 204720,
+          "endMs": 205080,
+          "probability": 0.999047
+        },
+        {
+          "index": 3,
+          "text": "very",
+          "startMs": 205080,
+          "endMs": 205800,
+          "probability": 0.998142
+        },
+        {
+          "index": 4,
+          "text": "quietly.",
+          "startMs": 205800,
+          "endMs": 206540,
+          "probability": 0.9988
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "Crash!",
+      "startMs": 208700,
+      "endMs": 208800,
+      "avgLogprob": -0.210566,
+      "noSpeechProb": 0.011529,
+      "compressionRatio": 1.443787,
+      "words": [
+        {
+          "index": 1,
+          "text": "Crash!",
+          "startMs": 208700,
+          "endMs": 209100,
+          "probability": 0.952066
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "Pete rushes over and checks underneath the trap.",
+      "startMs": 210420,
+      "endMs": 213100,
+      "avgLogprob": -0.210566,
+      "noSpeechProb": 0.011529,
+      "compressionRatio": 1.443787,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 210420,
+          "endMs": 210620,
+          "probability": 0.996837
+        },
+        {
+          "index": 2,
+          "text": "rushes",
+          "startMs": 210620,
+          "endMs": 211080,
+          "probability": 0.998365
+        },
+        {
+          "index": 3,
+          "text": "over",
+          "startMs": 211080,
+          "endMs": 211520,
+          "probability": 0.99806
+        },
+        {
+          "index": 4,
+          "text": "and",
+          "startMs": 211520,
+          "endMs": 211760,
+          "probability": 0.976539
+        },
+        {
+          "index": 5,
+          "text": "checks",
+          "startMs": 211760,
+          "endMs": 212020,
+          "probability": 0.998019
+        },
+        {
+          "index": 6,
+          "text": "underneath",
+          "startMs": 212020,
+          "endMs": 212460,
+          "probability": 0.995737
+        },
+        {
+          "index": 7,
+          "text": "the",
+          "startMs": 212460,
+          "endMs": 212700,
+          "probability": 0.999147
+        },
+        {
+          "index": 8,
+          "text": "trap.",
+          "startMs": 212700,
+          "endMs": 213100,
+          "probability": 0.998694
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "But it is empty!",
+      "startMs": 214100,
+      "endMs": 215260,
+      "avgLogprob": -0.210566,
+      "noSpeechProb": 0.011529,
+      "compressionRatio": 1.443787,
+      "words": [
+        {
+          "index": 1,
+          "text": "But",
+          "startMs": 214100,
+          "endMs": 214340,
+          "probability": 0.994228
+        },
+        {
+          "index": 2,
+          "text": "it",
+          "startMs": 214340,
+          "endMs": 214520,
+          "probability": 0.992738
+        },
+        {
+          "index": 3,
+          "text": "is",
+          "startMs": 214520,
+          "endMs": 214720,
+          "probability": 0.995581
+        },
+        {
+          "index": 4,
+          "text": "empty!",
+          "startMs": 214720,
+          "endMs": 215260,
+          "probability": 0.999599
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "Clover skips away.",
+      "startMs": 216260,
+      "endMs": 218120,
+      "avgLogprob": -0.1238,
+      "noSpeechProb": 0.020098,
+      "compressionRatio": 1.469945,
+      "words": [
+        {
+          "index": 1,
+          "text": "Clover",
+          "startMs": 216240,
+          "endMs": 216640,
+          "probability": 0.000595
+        },
+        {
+          "index": 2,
+          "text": "skips",
+          "startMs": 216640,
+          "endMs": 217520,
+          "probability": 0.961726
+        },
+        {
+          "index": 3,
+          "text": "away.",
+          "startMs": 217520,
+          "endMs": 218120,
+          "probability": 0.998636
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "Pete has tried many a plot, but still I haven't been caught.",
+      "startMs": 219380,
+      "endMs": 223380,
+      "avgLogprob": -0.1238,
+      "noSpeechProb": 0.020098,
+      "compressionRatio": 1.469945,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 219380,
+          "endMs": 219380,
+          "probability": 0.9441
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 219380,
+          "endMs": 219640,
+          "probability": 0.992071
+        },
+        {
+          "index": 3,
+          "text": "tried",
+          "startMs": 219640,
+          "endMs": 220020,
+          "probability": 0.996136
+        },
+        {
+          "index": 4,
+          "text": "many",
+          "startMs": 220020,
+          "endMs": 220440,
+          "probability": 0.997615
+        },
+        {
+          "index": 5,
+          "text": "a",
+          "startMs": 220440,
+          "endMs": 220600,
+          "probability": 0.992883
+        },
+        {
+          "index": 6,
+          "text": "plot,",
+          "startMs": 220600,
+          "endMs": 220940,
+          "probability": 0.850653
+        },
+        {
+          "index": 7,
+          "text": "but",
+          "startMs": 221320,
+          "endMs": 221400,
+          "probability": 0.988615
+        },
+        {
+          "index": 8,
+          "text": "still",
+          "startMs": 221400,
+          "endMs": 221780,
+          "probability": 0.985759
+        },
+        {
+          "index": 9,
+          "text": "I",
+          "startMs": 221780,
+          "endMs": 222180,
+          "probability": 0.928779
+        },
+        {
+          "index": 10,
+          "text": "haven't",
+          "startMs": 222180,
+          "endMs": 222700,
+          "probability": 0.997817
+        },
+        {
+          "index": 11,
+          "text": "been",
+          "startMs": 222700,
+          "endMs": 222920,
+          "probability": 0.998024
+        },
+        {
+          "index": 12,
+          "text": "caught.",
+          "startMs": 222920,
+          "endMs": 223380,
+          "probability": 0.999103
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "text": "And isn't it dandy, I even got candy while Pete ends up with squat.",
+      "startMs": 223780,
+      "endMs": 228520,
+      "avgLogprob": -0.1238,
+      "noSpeechProb": 0.020098,
+      "compressionRatio": 1.469945,
+      "words": [
+        {
+          "index": 1,
+          "text": "And",
+          "startMs": 223780,
+          "endMs": 223900,
+          "probability": 0.978769
+        },
+        {
+          "index": 2,
+          "text": "isn't",
+          "startMs": 223900,
+          "endMs": 224200,
+          "probability": 0.992092
+        },
+        {
+          "index": 3,
+          "text": "it",
+          "startMs": 224200,
+          "endMs": 224380,
+          "probability": 0.996994
+        },
+        {
+          "index": 4,
+          "text": "dandy,",
+          "startMs": 224380,
+          "endMs": 224800,
+          "probability": 0.948896
+        },
+        {
+          "index": 5,
+          "text": "I",
+          "startMs": 225100,
+          "endMs": 225180,
+          "probability": 0.997977
+        },
+        {
+          "index": 6,
+          "text": "even",
+          "startMs": 225180,
+          "endMs": 225480,
+          "probability": 0.991339
+        },
+        {
+          "index": 7,
+          "text": "got",
+          "startMs": 225480,
+          "endMs": 225800,
+          "probability": 0.990895
+        },
+        {
+          "index": 8,
+          "text": "candy",
+          "startMs": 225800,
+          "endMs": 226380,
+          "probability": 0.981188
+        },
+        {
+          "index": 9,
+          "text": "while",
+          "startMs": 226380,
+          "endMs": 226880,
+          "probability": 0.469925
+        },
+        {
+          "index": 10,
+          "text": "Pete",
+          "startMs": 226880,
+          "endMs": 227200,
+          "probability": 0.99786
+        },
+        {
+          "index": 11,
+          "text": "ends",
+          "startMs": 227200,
+          "endMs": 227480,
+          "probability": 0.99709
+        },
+        {
+          "index": 12,
+          "text": "up",
+          "startMs": 227480,
+          "endMs": 227740,
+          "probability": 0.997426
+        },
+        {
+          "index": 13,
+          "text": "with",
+          "startMs": 227740,
+          "endMs": 228000,
+          "probability": 0.998474
+        },
+        {
+          "index": 14,
+          "text": "squat.",
+          "startMs": 228000,
+          "endMs": 228520,
+          "probability": 0.790755
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "Pete has an idea.",
+      "startMs": 230500,
+      "endMs": 231860,
+      "avgLogprob": -0.1238,
+      "noSpeechProb": 0.020098,
+      "compressionRatio": 1.469945,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 230500,
+          "endMs": 230840,
+          "probability": 0.992247
+        },
+        {
+          "index": 2,
+          "text": "has",
+          "startMs": 230840,
+          "endMs": 231140,
+          "probability": 0.997191
+        },
+        {
+          "index": 3,
+          "text": "an",
+          "startMs": 231140,
+          "endMs": 231340,
+          "probability": 0.997612
+        },
+        {
+          "index": 4,
+          "text": "idea.",
+          "startMs": 231340,
+          "endMs": 231860,
+          "probability": 0.999644
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "He follows the trail of spilled candy to Clover's secret hideout.",
+      "startMs": 232660,
+      "endMs": 237740,
+      "avgLogprob": -0.1238,
+      "noSpeechProb": 0.020098,
+      "compressionRatio": 1.469945,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 232660,
+          "endMs": 232920,
+          "probability": 0.997637
+        },
+        {
+          "index": 2,
+          "text": "follows",
+          "startMs": 232920,
+          "endMs": 233360,
+          "probability": 0.997579
+        },
+        {
+          "index": 3,
+          "text": "the",
+          "startMs": 233360,
+          "endMs": 233660,
+          "probability": 0.996944
+        },
+        {
+          "index": 4,
+          "text": "trail",
+          "startMs": 233660,
+          "endMs": 233960,
+          "probability": 0.977514
+        },
+        {
+          "index": 5,
+          "text": "of",
+          "startMs": 233960,
+          "endMs": 234200,
+          "probability": 0.997402
+        },
+        {
+          "index": 6,
+          "text": "spilled",
+          "startMs": 234200,
+          "endMs": 234540,
+          "probability": 0.99441
+        },
+        {
+          "index": 7,
+          "text": "candy",
+          "startMs": 234540,
+          "endMs": 235140,
+          "probability": 0.998935
+        },
+        {
+          "index": 8,
+          "text": "to",
+          "startMs": 235140,
+          "endMs": 235860,
+          "probability": 0.963043
+        },
+        {
+          "index": 9,
+          "text": "Clover's",
+          "startMs": 235860,
+          "endMs": 236620,
+          "probability": 0.94387
+        },
+        {
+          "index": 10,
+          "text": "secret",
+          "startMs": 236620,
+          "endMs": 237100,
+          "probability": 0.997357
+        },
+        {
+          "index": 11,
+          "text": "hideout.",
+          "startMs": 237100,
+          "endMs": 237740,
+          "probability": 0.949361
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "text": "Pete sneaks up behind Clover.",
+      "startMs": 239680,
+      "endMs": 242200,
+      "avgLogprob": -0.1238,
+      "noSpeechProb": 0.020098,
+      "compressionRatio": 1.469945,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 239680,
+          "endMs": 240120,
+          "probability": 0.994156
+        },
+        {
+          "index": 2,
+          "text": "sneaks",
+          "startMs": 240120,
+          "endMs": 240780,
+          "probability": 0.989637
+        },
+        {
+          "index": 3,
+          "text": "up",
+          "startMs": 240780,
+          "endMs": 241040,
+          "probability": 0.996374
+        },
+        {
+          "index": 4,
+          "text": "behind",
+          "startMs": 241040,
+          "endMs": 241600,
+          "probability": 0.998553
+        },
+        {
+          "index": 5,
+          "text": "Clover.",
+          "startMs": 241600,
+          "endMs": 242200,
+          "probability": 0.995128
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "text": "Swoosh!",
+      "startMs": 243460,
+      "endMs": 244260,
+      "avgLogprob": -0.1238,
+      "noSpeechProb": 0.020098,
+      "compressionRatio": 1.469945,
+      "words": [
+        {
+          "index": 1,
+          "text": "Swoosh!",
+          "startMs": 243460,
+          "endMs": 244260,
+          "probability": 0.925727
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "text": "Pete finally catches Clover.",
+      "startMs": 244260,
+      "endMs": 247480,
+      "avgLogprob": -0.09042,
+      "noSpeechProb": 0.011298,
+      "compressionRatio": 1.46114,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 244260,
+          "endMs": 245420,
+          "probability": 0.650067
+        },
+        {
+          "index": 2,
+          "text": "finally",
+          "startMs": 245420,
+          "endMs": 246200,
+          "probability": 0.971363
+        },
+        {
+          "index": 3,
+          "text": "catches",
+          "startMs": 246200,
+          "endMs": 246960,
+          "probability": 0.997466
+        },
+        {
+          "index": 4,
+          "text": "Clover.",
+          "startMs": 246960,
+          "endMs": 247480,
+          "probability": 0.966587
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "text": "Why do you want me? Clover asks.",
+      "startMs": 250060,
+      "endMs": 252620,
+      "avgLogprob": -0.09042,
+      "noSpeechProb": 0.011298,
+      "compressionRatio": 1.46114,
+      "words": [
+        {
+          "index": 1,
+          "text": "Why",
+          "startMs": 250060,
+          "endMs": 250300,
+          "probability": 0.225503
+        },
+        {
+          "index": 2,
+          "text": "do",
+          "startMs": 250300,
+          "endMs": 250500,
+          "probability": 0.996459
+        },
+        {
+          "index": 3,
+          "text": "you",
+          "startMs": 250500,
+          "endMs": 250640,
+          "probability": 0.998053
+        },
+        {
+          "index": 4,
+          "text": "want",
+          "startMs": 250640,
+          "endMs": 250900,
+          "probability": 0.999028
+        },
+        {
+          "index": 5,
+          "text": "me?",
+          "startMs": 250900,
+          "endMs": 251340,
+          "probability": 0.998916
+        },
+        {
+          "index": 6,
+          "text": "Clover",
+          "startMs": 251940,
+          "endMs": 252020,
+          "probability": 0.950878
+        },
+        {
+          "index": 7,
+          "text": "asks.",
+          "startMs": 252020,
+          "endMs": 252620,
+          "probability": 0.99369
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "text": "I'm helping my friends who need some extra luck. Pete says.",
+      "startMs": 253520,
+      "endMs": 256920,
+      "avgLogprob": -0.09042,
+      "noSpeechProb": 0.011298,
+      "compressionRatio": 1.46114,
+      "words": [
+        {
+          "index": 1,
+          "text": "I'm",
+          "startMs": 253520,
+          "endMs": 253620,
+          "probability": 0.965464
+        },
+        {
+          "index": 2,
+          "text": "helping",
+          "startMs": 253620,
+          "endMs": 253900,
+          "probability": 0.997145
+        },
+        {
+          "index": 3,
+          "text": "my",
+          "startMs": 253900,
+          "endMs": 254180,
+          "probability": 0.996641
+        },
+        {
+          "index": 4,
+          "text": "friends",
+          "startMs": 254180,
+          "endMs": 254460,
+          "probability": 0.996254
+        },
+        {
+          "index": 5,
+          "text": "who",
+          "startMs": 254460,
+          "endMs": 254680,
+          "probability": 0.946515
+        },
+        {
+          "index": 6,
+          "text": "need",
+          "startMs": 254680,
+          "endMs": 254820,
+          "probability": 0.976059
+        },
+        {
+          "index": 7,
+          "text": "some",
+          "startMs": 254820,
+          "endMs": 255020,
+          "probability": 0.991144
+        },
+        {
+          "index": 8,
+          "text": "extra",
+          "startMs": 255020,
+          "endMs": 255380,
+          "probability": 0.999681
+        },
+        {
+          "index": 9,
+          "text": "luck.",
+          "startMs": 255380,
+          "endMs": 255780,
+          "probability": 0.997293
+        },
+        {
+          "index": 10,
+          "text": "Pete",
+          "startMs": 256380,
+          "endMs": 256460,
+          "probability": 0.996169
+        },
+        {
+          "index": 11,
+          "text": "says.",
+          "startMs": 256460,
+          "endMs": 256920,
+          "probability": 0.997964
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "text": "Luck doesn't come from having a leprechaun, says Clover.",
+      "startMs": 258080,
+      "endMs": 261740,
+      "avgLogprob": -0.09042,
+      "noSpeechProb": 0.011298,
+      "compressionRatio": 1.46114,
+      "words": [
+        {
+          "index": 1,
+          "text": "Luck",
+          "startMs": 258080,
+          "endMs": 258200,
+          "probability": 0.963521
+        },
+        {
+          "index": 2,
+          "text": "doesn't",
+          "startMs": 258200,
+          "endMs": 258640,
+          "probability": 0.997906
+        },
+        {
+          "index": 3,
+          "text": "come",
+          "startMs": 258640,
+          "endMs": 258940,
+          "probability": 0.997663
+        },
+        {
+          "index": 4,
+          "text": "from",
+          "startMs": 258940,
+          "endMs": 259160,
+          "probability": 0.998199
+        },
+        {
+          "index": 5,
+          "text": "having",
+          "startMs": 259160,
+          "endMs": 259540,
+          "probability": 0.997633
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 259540,
+          "endMs": 259740,
+          "probability": 0.995945
+        },
+        {
+          "index": 7,
+          "text": "leprechaun,",
+          "startMs": 259740,
+          "endMs": 260620,
+          "probability": 0.970477
+        },
+        {
+          "index": 8,
+          "text": "says",
+          "startMs": 261160,
+          "endMs": 261280,
+          "probability": 0.993035
+        },
+        {
+          "index": 9,
+          "text": "Clover.",
+          "startMs": 261280,
+          "endMs": 261740,
+          "probability": 0.983661
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "text": "You and your friends have each other.",
+      "startMs": 262620,
+      "endMs": 264400,
+      "avgLogprob": -0.09042,
+      "noSpeechProb": 0.011298,
+      "compressionRatio": 1.46114,
+      "words": [
+        {
+          "index": 1,
+          "text": "You",
+          "startMs": 262620,
+          "endMs": 262740,
+          "probability": 0.997989
+        },
+        {
+          "index": 2,
+          "text": "and",
+          "startMs": 262740,
+          "endMs": 262920,
+          "probability": 0.998755
+        },
+        {
+          "index": 3,
+          "text": "your",
+          "startMs": 262920,
+          "endMs": 263160,
+          "probability": 0.996229
+        },
+        {
+          "index": 4,
+          "text": "friends",
+          "startMs": 263160,
+          "endMs": 263420,
+          "probability": 0.998787
+        },
+        {
+          "index": 5,
+          "text": "have",
+          "startMs": 263420,
+          "endMs": 263740,
+          "probability": 0.998839
+        },
+        {
+          "index": 6,
+          "text": "each",
+          "startMs": 263740,
+          "endMs": 264000,
+          "probability": 0.99877
+        },
+        {
+          "index": 7,
+          "text": "other.",
+          "startMs": 264000,
+          "endMs": 264400,
+          "probability": 0.998598
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "text": "That already makes you as lucky as can be.",
+      "startMs": 265040,
+      "endMs": 268180,
+      "avgLogprob": -0.09042,
+      "noSpeechProb": 0.011298,
+      "compressionRatio": 1.46114,
+      "words": [
+        {
+          "index": 1,
+          "text": "That",
+          "startMs": 265040,
+          "endMs": 265300,
+          "probability": 0.996124
+        },
+        {
+          "index": 2,
+          "text": "already",
+          "startMs": 265300,
+          "endMs": 265680,
+          "probability": 0.995674
+        },
+        {
+          "index": 3,
+          "text": "makes",
+          "startMs": 265680,
+          "endMs": 266080,
+          "probability": 0.99762
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 266080,
+          "endMs": 266360,
+          "probability": 0.999067
+        },
+        {
+          "index": 5,
+          "text": "as",
+          "startMs": 266360,
+          "endMs": 266580,
+          "probability": 0.993529
+        },
+        {
+          "index": 6,
+          "text": "lucky",
+          "startMs": 266580,
+          "endMs": 266980,
+          "probability": 0.991942
+        },
+        {
+          "index": 7,
+          "text": "as",
+          "startMs": 266980,
+          "endMs": 267300,
+          "probability": 0.998566
+        },
+        {
+          "index": 8,
+          "text": "can",
+          "startMs": 267300,
+          "endMs": 267620,
+          "probability": 0.993897
+        },
+        {
+          "index": 9,
+          "text": "be.",
+          "startMs": 267620,
+          "endMs": 268180,
+          "probability": 0.999186
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "text": "Could Clover be right?",
+      "startMs": 270020,
+      "endMs": 271940,
+      "avgLogprob": -0.09042,
+      "noSpeechProb": 0.011298,
+      "compressionRatio": 1.46114,
+      "words": [
+        {
+          "index": 1,
+          "text": "Could",
+          "startMs": 270020,
+          "endMs": 270600,
+          "probability": 0.98859
+        },
+        {
+          "index": 2,
+          "text": "Clover",
+          "startMs": 270600,
+          "endMs": 271080,
+          "probability": 0.990905
+        },
+        {
+          "index": 3,
+          "text": "be",
+          "startMs": 271080,
+          "endMs": 271480,
+          "probability": 0.998892
+        },
+        {
+          "index": 4,
+          "text": "right?",
+          "startMs": 271480,
+          "endMs": 271940,
+          "probability": 0.999552
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "text": "Pete is one very lucky cat.",
+      "startMs": 272780,
+      "endMs": 275740,
+      "avgLogprob": -0.081987,
+      "noSpeechProb": 0.01997,
+      "compressionRatio": 1.570652,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 272780,
+          "endMs": 273500,
+          "probability": 0.846436
+        },
+        {
+          "index": 2,
+          "text": "is",
+          "startMs": 273500,
+          "endMs": 273820,
+          "probability": 0.966383
+        },
+        {
+          "index": 3,
+          "text": "one",
+          "startMs": 273820,
+          "endMs": 274160,
+          "probability": 0.993585
+        },
+        {
+          "index": 4,
+          "text": "very",
+          "startMs": 274160,
+          "endMs": 274780,
+          "probability": 0.990422
+        },
+        {
+          "index": 5,
+          "text": "lucky",
+          "startMs": 274780,
+          "endMs": 275220,
+          "probability": 0.994964
+        },
+        {
+          "index": 6,
+          "text": "cat.",
+          "startMs": 275220,
+          "endMs": 275740,
+          "probability": 0.987006
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "text": "A lucky cat doesn't need a lucky leprechaun.",
+      "startMs": 276580,
+      "endMs": 279400,
+      "avgLogprob": -0.081987,
+      "noSpeechProb": 0.01997,
+      "compressionRatio": 1.570652,
+      "words": [
+        {
+          "index": 1,
+          "text": "A",
+          "startMs": 276580,
+          "endMs": 276820,
+          "probability": 0.989117
+        },
+        {
+          "index": 2,
+          "text": "lucky",
+          "startMs": 276820,
+          "endMs": 277140,
+          "probability": 0.997351
+        },
+        {
+          "index": 3,
+          "text": "cat",
+          "startMs": 277140,
+          "endMs": 277480,
+          "probability": 0.996243
+        },
+        {
+          "index": 4,
+          "text": "doesn't",
+          "startMs": 277480,
+          "endMs": 277840,
+          "probability": 0.995427
+        },
+        {
+          "index": 5,
+          "text": "need",
+          "startMs": 277840,
+          "endMs": 278080,
+          "probability": 0.997841
+        },
+        {
+          "index": 6,
+          "text": "a",
+          "startMs": 278080,
+          "endMs": 278260,
+          "probability": 0.993499
+        },
+        {
+          "index": 7,
+          "text": "lucky",
+          "startMs": 278260,
+          "endMs": 278580,
+          "probability": 0.948292
+        },
+        {
+          "index": 8,
+          "text": "leprechaun.",
+          "startMs": 278580,
+          "endMs": 279400,
+          "probability": 0.966316
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "text": "He lets Clover go.",
+      "startMs": 280580,
+      "endMs": 282240,
+      "avgLogprob": -0.081987,
+      "noSpeechProb": 0.01997,
+      "compressionRatio": 1.570652,
+      "words": [
+        {
+          "index": 1,
+          "text": "He",
+          "startMs": 280580,
+          "endMs": 280680,
+          "probability": 0.98386
+        },
+        {
+          "index": 2,
+          "text": "lets",
+          "startMs": 280680,
+          "endMs": 281160,
+          "probability": 0.907755
+        },
+        {
+          "index": 3,
+          "text": "Clover",
+          "startMs": 281160,
+          "endMs": 281600,
+          "probability": 0.781488
+        },
+        {
+          "index": 4,
+          "text": "go.",
+          "startMs": 281600,
+          "endMs": 282240,
+          "probability": 0.998145
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "text": "Pete decides he will be the good luck his friends need by helping them out himself.",
+      "startMs": 284440,
+      "endMs": 289740,
+      "avgLogprob": -0.081987,
+      "noSpeechProb": 0.01997,
+      "compressionRatio": 1.570652,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 284440,
+          "endMs": 284620,
+          "probability": 0.995684
+        },
+        {
+          "index": 2,
+          "text": "decides",
+          "startMs": 284620,
+          "endMs": 285140,
+          "probability": 0.997581
+        },
+        {
+          "index": 3,
+          "text": "he",
+          "startMs": 285140,
+          "endMs": 285500,
+          "probability": 0.989643
+        },
+        {
+          "index": 4,
+          "text": "will",
+          "startMs": 285500,
+          "endMs": 285680,
+          "probability": 0.993471
+        },
+        {
+          "index": 5,
+          "text": "be",
+          "startMs": 285680,
+          "endMs": 285860,
+          "probability": 0.997376
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 285860,
+          "endMs": 286040,
+          "probability": 0.996682
+        },
+        {
+          "index": 7,
+          "text": "good",
+          "startMs": 286040,
+          "endMs": 286260,
+          "probability": 0.995237
+        },
+        {
+          "index": 8,
+          "text": "luck",
+          "startMs": 286260,
+          "endMs": 286480,
+          "probability": 0.998351
+        },
+        {
+          "index": 9,
+          "text": "his",
+          "startMs": 286480,
+          "endMs": 286740,
+          "probability": 0.994553
+        },
+        {
+          "index": 10,
+          "text": "friends",
+          "startMs": 286740,
+          "endMs": 287000,
+          "probability": 0.989993
+        },
+        {
+          "index": 11,
+          "text": "need",
+          "startMs": 287000,
+          "endMs": 287500,
+          "probability": 0.996099
+        },
+        {
+          "index": 12,
+          "text": "by",
+          "startMs": 287500,
+          "endMs": 288200,
+          "probability": 0.906186
+        },
+        {
+          "index": 13,
+          "text": "helping",
+          "startMs": 288200,
+          "endMs": 288640,
+          "probability": 0.99953
+        },
+        {
+          "index": 14,
+          "text": "them",
+          "startMs": 288640,
+          "endMs": 288900,
+          "probability": 0.996429
+        },
+        {
+          "index": 15,
+          "text": "out",
+          "startMs": 288900,
+          "endMs": 289160,
+          "probability": 0.99888
+        },
+        {
+          "index": 16,
+          "text": "himself.",
+          "startMs": 289160,
+          "endMs": 289740,
+          "probability": 0.98864
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "text": "Pete helps squirrels study for his test. Squirrel aces it.",
+      "startMs": 291040,
+      "endMs": 295280,
+      "avgLogprob": -0.081987,
+      "noSpeechProb": 0.01997,
+      "compressionRatio": 1.570652,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 291040,
+          "endMs": 291140,
+          "probability": 0.99753
+        },
+        {
+          "index": 2,
+          "text": "helps",
+          "startMs": 291140,
+          "endMs": 291500,
+          "probability": 0.913324
+        },
+        {
+          "index": 3,
+          "text": "squirrels",
+          "startMs": 291500,
+          "endMs": 292020,
+          "probability": 0.616212
+        },
+        {
+          "index": 4,
+          "text": "study",
+          "startMs": 292020,
+          "endMs": 292200,
+          "probability": 0.995278
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 292200,
+          "endMs": 292440,
+          "probability": 0.998363
+        },
+        {
+          "index": 6,
+          "text": "his",
+          "startMs": 292440,
+          "endMs": 292620,
+          "probability": 0.9984
+        },
+        {
+          "index": 7,
+          "text": "test.",
+          "startMs": 292620,
+          "endMs": 293080,
+          "probability": 0.98827
+        },
+        {
+          "index": 8,
+          "text": "Squirrel",
+          "startMs": 294240,
+          "endMs": 294240,
+          "probability": 0.986783
+        },
+        {
+          "index": 9,
+          "text": "aces",
+          "startMs": 294240,
+          "endMs": 294940,
+          "probability": 0.988228
+        },
+        {
+          "index": 10,
+          "text": "it.",
+          "startMs": 294940,
+          "endMs": 295280,
+          "probability": 0.998503
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "text": "Pete helps Gus rehearse for the recital. Gus rocks it.",
+      "startMs": 296380,
+      "endMs": 300840,
+      "avgLogprob": -0.081987,
+      "noSpeechProb": 0.01997,
+      "compressionRatio": 1.570652,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 296380,
+          "endMs": 296620,
+          "probability": 0.998232
+        },
+        {
+          "index": 2,
+          "text": "helps",
+          "startMs": 296620,
+          "endMs": 297020,
+          "probability": 0.995083
+        },
+        {
+          "index": 3,
+          "text": "Gus",
+          "startMs": 297020,
+          "endMs": 297260,
+          "probability": 0.986094
+        },
+        {
+          "index": 4,
+          "text": "rehearse",
+          "startMs": 297260,
+          "endMs": 297780,
+          "probability": 0.995808
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 297780,
+          "endMs": 297960,
+          "probability": 0.99858
+        },
+        {
+          "index": 6,
+          "text": "the",
+          "startMs": 297960,
+          "endMs": 298080,
+          "probability": 0.996827
+        },
+        {
+          "index": 7,
+          "text": "recital.",
+          "startMs": 298080,
+          "endMs": 298560,
+          "probability": 0.996381
+        },
+        {
+          "index": 8,
+          "text": "Gus",
+          "startMs": 299620,
+          "endMs": 299840,
+          "probability": 0.994933
+        },
+        {
+          "index": 9,
+          "text": "rocks",
+          "startMs": 299840,
+          "endMs": 300360,
+          "probability": 0.989598
+        },
+        {
+          "index": 10,
+          "text": "it.",
+          "startMs": 300360,
+          "endMs": 300840,
+          "probability": 0.998922
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "text": "Pete helps Callie practice for her match.",
+      "startMs": 302420,
+      "endMs": 305460,
+      "avgLogprob": -0.10195,
+      "noSpeechProb": 0.012093,
+      "compressionRatio": 1.510753,
+      "words": [
+        {
+          "index": 1,
+          "text": "Pete",
+          "startMs": 302420,
+          "endMs": 303200,
+          "probability": 0.865186
+        },
+        {
+          "index": 2,
+          "text": "helps",
+          "startMs": 303200,
+          "endMs": 303600,
+          "probability": 0.984787
+        },
+        {
+          "index": 3,
+          "text": "Callie",
+          "startMs": 303600,
+          "endMs": 304100,
+          "probability": 0.714598
+        },
+        {
+          "index": 4,
+          "text": "practice",
+          "startMs": 304100,
+          "endMs": 304520,
+          "probability": 0.935192
+        },
+        {
+          "index": 5,
+          "text": "for",
+          "startMs": 304520,
+          "endMs": 304820,
+          "probability": 0.995562
+        },
+        {
+          "index": 6,
+          "text": "her",
+          "startMs": 304820,
+          "endMs": 304980,
+          "probability": 0.997188
+        },
+        {
+          "index": 7,
+          "text": "match.",
+          "startMs": 304980,
+          "endMs": 305460,
+          "probability": 0.997466
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "text": "Callie wins it.",
+      "startMs": 306620,
+      "endMs": 307920,
+      "avgLogprob": -0.10195,
+      "noSpeechProb": 0.012093,
+      "compressionRatio": 1.510753,
+      "words": [
+        {
+          "index": 1,
+          "text": "Callie",
+          "startMs": 306620,
+          "endMs": 306860,
+          "probability": 0.979763
+        },
+        {
+          "index": 2,
+          "text": "wins",
+          "startMs": 306860,
+          "endMs": 307280,
+          "probability": 0.998364
+        },
+        {
+          "index": 3,
+          "text": "it.",
+          "startMs": 307280,
+          "endMs": 307920,
+          "probability": 0.99866
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "text": "Clover magically appears.",
+      "startMs": 309160,
+      "endMs": 310420,
+      "avgLogprob": -0.10195,
+      "noSpeechProb": 0.012093,
+      "compressionRatio": 1.510753,
+      "words": [
+        {
+          "index": 1,
+          "text": "Clover",
+          "startMs": 309160,
+          "endMs": 309160,
+          "probability": 0.955912
+        },
+        {
+          "index": 2,
+          "text": "magically",
+          "startMs": 309160,
+          "endMs": 309760,
+          "probability": 0.99396
+        },
+        {
+          "index": 3,
+          "text": "appears.",
+          "startMs": 309760,
+          "endMs": 310420,
+          "probability": 0.99856
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "text": "Good job, Pete, says Clover.",
+      "startMs": 311400,
+      "endMs": 313820,
+      "avgLogprob": -0.10195,
+      "noSpeechProb": 0.012093,
+      "compressionRatio": 1.510753,
+      "words": [
+        {
+          "index": 1,
+          "text": "Good",
+          "startMs": 311400,
+          "endMs": 311620,
+          "probability": 0.311999
+        },
+        {
+          "index": 2,
+          "text": "job,",
+          "startMs": 311620,
+          "endMs": 312140,
+          "probability": 0.995867
+        },
+        {
+          "index": 3,
+          "text": "Pete,",
+          "startMs": 312440,
+          "endMs": 312680,
+          "probability": 0.99783
+        },
+        {
+          "index": 4,
+          "text": "says",
+          "startMs": 313140,
+          "endMs": 313400,
+          "probability": 0.996353
+        },
+        {
+          "index": 5,
+          "text": "Clover.",
+          "startMs": 313400,
+          "endMs": 313820,
+          "probability": 0.978424
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "text": "I have one more poem for you.",
+      "startMs": 314900,
+      "endMs": 317620,
+      "avgLogprob": -0.10195,
+      "noSpeechProb": 0.012093,
+      "compressionRatio": 1.510753,
+      "words": [
+        {
+          "index": 1,
+          "text": "I",
+          "startMs": 314900,
+          "endMs": 315040,
+          "probability": 0.95873
+        },
+        {
+          "index": 2,
+          "text": "have",
+          "startMs": 315040,
+          "endMs": 315340,
+          "probability": 0.998957
+        },
+        {
+          "index": 3,
+          "text": "one",
+          "startMs": 315340,
+          "endMs": 315760,
+          "probability": 0.998486
+        },
+        {
+          "index": 4,
+          "text": "more",
+          "startMs": 315760,
+          "endMs": 316100,
+          "probability": 0.999672
+        },
+        {
+          "index": 5,
+          "text": "poem",
+          "startMs": 316100,
+          "endMs": 316500,
+          "probability": 0.997214
+        },
+        {
+          "index": 6,
+          "text": "for",
+          "startMs": 316500,
+          "endMs": 316940,
+          "probability": 0.999532
+        },
+        {
+          "index": 7,
+          "text": "you.",
+          "startMs": 316940,
+          "endMs": 317620,
+          "probability": 0.999413
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "text": "While Clover played hide and seek, Pete learned something unique.",
+      "startMs": 319400,
+      "endMs": 323560,
+      "avgLogprob": -0.10195,
+      "noSpeechProb": 0.012093,
+      "compressionRatio": 1.510753,
+      "words": [
+        {
+          "index": 1,
+          "text": "While",
+          "startMs": 319400,
+          "endMs": 319580,
+          "probability": 0.976605
+        },
+        {
+          "index": 2,
+          "text": "Clover",
+          "startMs": 319580,
+          "endMs": 320000,
+          "probability": 0.994212
+        },
+        {
+          "index": 3,
+          "text": "played",
+          "startMs": 320000,
+          "endMs": 320340,
+          "probability": 0.998118
+        },
+        {
+          "index": 4,
+          "text": "hide",
+          "startMs": 320340,
+          "endMs": 320620,
+          "probability": 0.974376
+        },
+        {
+          "index": 5,
+          "text": "and",
+          "startMs": 320620,
+          "endMs": 320840,
+          "probability": 0.920276
+        },
+        {
+          "index": 6,
+          "text": "seek,",
+          "startMs": 320840,
+          "endMs": 321300,
+          "probability": 0.999433
+        },
+        {
+          "index": 7,
+          "text": "Pete",
+          "startMs": 322100,
+          "endMs": 322140,
+          "probability": 0.996471
+        },
+        {
+          "index": 8,
+          "text": "learned",
+          "startMs": 322140,
+          "endMs": 322460,
+          "probability": 0.98838
+        },
+        {
+          "index": 9,
+          "text": "something",
+          "startMs": 322460,
+          "endMs": 322940,
+          "probability": 0.999641
+        },
+        {
+          "index": 10,
+          "text": "unique.",
+          "startMs": 322940,
+          "endMs": 323560,
+          "probability": 0.998885
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "text": "The luck that you make beats luck that you take any old day of the week.",
+      "startMs": 324300,
+      "endMs": 329200,
+      "avgLogprob": -0.10195,
+      "noSpeechProb": 0.012093,
+      "compressionRatio": 1.510753,
+      "words": [
+        {
+          "index": 1,
+          "text": "The",
+          "startMs": 324300,
+          "endMs": 324360,
+          "probability": 0.906095
+        },
+        {
+          "index": 2,
+          "text": "luck",
+          "startMs": 324360,
+          "endMs": 324580,
+          "probability": 0.993489
+        },
+        {
+          "index": 3,
+          "text": "that",
+          "startMs": 324580,
+          "endMs": 324800,
+          "probability": 0.99723
+        },
+        {
+          "index": 4,
+          "text": "you",
+          "startMs": 324800,
+          "endMs": 325000,
+          "probability": 0.999313
+        },
+        {
+          "index": 5,
+          "text": "make",
+          "startMs": 325000,
+          "endMs": 325360,
+          "probability": 0.998651
+        },
+        {
+          "index": 6,
+          "text": "beats",
+          "startMs": 325360,
+          "endMs": 325740,
+          "probability": 0.631699
+        },
+        {
+          "index": 7,
+          "text": "luck",
+          "startMs": 325740,
+          "endMs": 326040,
+          "probability": 0.991018
+        },
+        {
+          "index": 8,
+          "text": "that",
+          "startMs": 326040,
+          "endMs": 326260,
+          "probability": 0.995959
+        },
+        {
+          "index": 9,
+          "text": "you",
+          "startMs": 326260,
+          "endMs": 326460,
+          "probability": 0.998905
+        },
+        {
+          "index": 10,
+          "text": "take",
+          "startMs": 326460,
+          "endMs": 326840,
+          "probability": 0.997751
+        },
+        {
+          "index": 11,
+          "text": "any",
+          "startMs": 326840,
+          "endMs": 327600,
+          "probability": 0.86568
+        },
+        {
+          "index": 12,
+          "text": "old",
+          "startMs": 327600,
+          "endMs": 327960,
+          "probability": 0.981423
+        },
+        {
+          "index": 13,
+          "text": "day",
+          "startMs": 327960,
+          "endMs": 328300,
+          "probability": 0.994699
+        },
+        {
+          "index": 14,
+          "text": "of",
+          "startMs": 328300,
+          "endMs": 328480,
+          "probability": 0.999405
+        },
+        {
+          "index": 15,
+          "text": "the",
+          "startMs": 328480,
+          "endMs": 328700,
+          "probability": 0.999657
+        },
+        {
+          "index": 16,
+          "text": "week.",
+          "startMs": 328700,
+          "endMs": 329200,
+          "probability": 0.999191
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "text": "Happy St. Patrick's Day!",
+      "startMs": 329200,
+      "endMs": 332220,
+      "avgLogprob": -0.144547,
+      "noSpeechProb": 0.326337,
+      "compressionRatio": 0.75,
+      "words": [
+        {
+          "index": 1,
+          "text": "Happy",
+          "startMs": 329200,
+          "endMs": 330240,
+          "probability": 0.570956
+        },
+        {
+          "index": 2,
+          "text": "St.",
+          "startMs": 330240,
+          "endMs": 330760,
+          "probability": 0.819807
+        },
+        {
+          "index": 3,
+          "text": "Patrick's",
+          "startMs": 331560,
+          "endMs": 331960,
+          "probability": 0.984983
+        },
+        {
+          "index": 4,
+          "text": "Day!",
+          "startMs": 331960,
+          "endMs": 332220,
+          "probability": 0.973697
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ const CATEGORY_LABELS = {
   newconcept3: 'New Concept 3',
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
+  petethecat: 'Pete the Cat',
   unlock1: 'Unlock 1 听口 第二版',
   unlock1thirdedition: 'Unlock 1 听口 第三版',
   unlock1workbook: 'Unlock 1 听口 练习册 第二版',
@@ -39,6 +40,18 @@ function getTaskPresentation(task) {
       displaySubtitle: task.isReviewTask ? 'Peppa 旧集裸听' : (match ? `${Number(match[1])}-${Number(match[2])}` : 'Peppa Pig'),
       coverVariant: 'peppa',
       coverBadge: 'Peppa'
+    };
+  }
+  if (task.category === 'petethecat') {
+    const storyTitle = title
+      .replace(/^Pete the (?:Cat|Kitty)(?:['’]s)?\s*/i, '')
+      .replace(/^and\s+/i, '')
+      .trim();
+    return {
+      displayTitle: storyTitle || title,
+      displaySubtitle: 'Pete the Cat',
+      coverVariant: 'peppa',
+      coverBadge: 'Pete the Cat'
     };
   }
   if (NEW_CONCEPT_CATEGORIES.includes(task.category)) {
@@ -92,6 +105,13 @@ function getTaskReward(category, progress, task) {
       rewardCopy: progress && progress.completedToday ? '这一集今天已经顺利通关。' : '前两遍盲听，最后一遍带文本高亮。'
     };
   }
+  if (category === 'petethecat') {
+    return {
+      rewardBadge: progress && progress.completedToday ? 'GROOVY' : `PETE ${nextStep}`,
+      rewardTitle: progress && progress.completedToday ? '今日听力已完成' : 'Pete the Cat 听力',
+      rewardCopy: progress && progress.completedToday ? '这一条今天已经完成。' : '按设定遍数听完，文本可随时查看。'
+    };
+  }
   if (NEW_CONCEPT_CATEGORIES.includes(category)) {
     return {
       rewardBadge: category === 'newconcept1' ? 'NCE 1' : 'NCE 2',
@@ -121,7 +141,7 @@ function decorateTask(task, progress, category, deps) {
     getMediaDisplayName
   } = deps;
   if (!task) {
-    const isAudioCourse = UNLOCK_CATEGORIES.includes(category) || NEW_CONCEPT_CATEGORIES.includes(category);
+    const isAudioCourse = UNLOCK_CATEGORIES.includes(category) || NEW_CONCEPT_CATEGORIES.includes(category) || category === 'petethecat';
     const emptyTask = isAudioCourse
       ? {
         taskId: `${category}-pending`,
@@ -182,7 +202,7 @@ function decorateTask(task, progress, category, deps) {
     transcriptTrackId,
     syncGranularity: task.syncGranularity || 'word',
     audioDisplayName: getMediaDisplayName(task.audioUrl),
-    audioCompactTitle: category === 'peppa'
+    audioCompactTitle: category === 'peppa' || category === 'petethecat'
       ? [base.displaySubtitle, base.displayTitle].filter(Boolean).join(' · ')
       : UNLOCK_CATEGORIES.includes(category)
         ? [base.coverBadge, base.displayTitle].filter(Boolean).join(' · ')
