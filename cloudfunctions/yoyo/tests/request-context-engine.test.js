@@ -240,6 +240,10 @@ test('resolveCatalogCategories 听力计划首屏不刷新素材目录', () => {
     ['unlock1thirdedition']
   );
   assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'littlebear', {}),
+    ['littlebear']
+  );
+  assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock2thirdedition', {}),
     ['unlock2thirdedition']
   );

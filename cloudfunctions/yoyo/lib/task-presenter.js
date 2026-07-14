@@ -4,6 +4,7 @@ const CATEGORY_LABELS = {
   newconcept3: 'New Concept 3',
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
+  littlebear: 'Little Bear',
   petethecat: 'Pete the Cat',
   unlock1: 'Unlock 1 听口 第二版',
   unlock1thirdedition: 'Unlock 1 听口 第三版',
@@ -52,6 +53,14 @@ function getTaskPresentation(task) {
       displaySubtitle: 'Pete the Cat',
       coverVariant: 'peppa',
       coverBadge: 'Pete the Cat'
+    };
+  }
+  if (task.category === 'littlebear') {
+    return {
+      displayTitle: title.replace(/^Little Bear(?:['’]s)?\s*/i, '').trim() || title,
+      displaySubtitle: 'Little Bear',
+      coverVariant: 'peppa',
+      coverBadge: 'Little Bear'
     };
   }
   if (NEW_CONCEPT_CATEGORIES.includes(task.category)) {
@@ -112,6 +121,13 @@ function getTaskReward(category, progress, task) {
       rewardCopy: progress && progress.completedToday ? '这一条今天已经完成。' : '按设定遍数听完，文本可随时查看。'
     };
   }
+  if (category === 'littlebear') {
+    return {
+      rewardBadge: progress && progress.completedToday ? 'LITTLE BEAR' : `BEAR ${nextStep}`,
+      rewardTitle: progress && progress.completedToday ? '今日听力已完成' : 'Little Bear 听力',
+      rewardCopy: progress && progress.completedToday ? '这一集今天已经完成。' : '按设定遍数听完，文本可随时查看。'
+    };
+  }
   if (NEW_CONCEPT_CATEGORIES.includes(category)) {
     return {
       rewardBadge: category === 'newconcept1' ? 'NCE 1' : 'NCE 2',
@@ -141,7 +157,7 @@ function decorateTask(task, progress, category, deps) {
     getMediaDisplayName
   } = deps;
   if (!task) {
-    const isAudioCourse = UNLOCK_CATEGORIES.includes(category) || NEW_CONCEPT_CATEGORIES.includes(category) || category === 'petethecat';
+    const isAudioCourse = UNLOCK_CATEGORIES.includes(category) || NEW_CONCEPT_CATEGORIES.includes(category) || category === 'littlebear' || category === 'petethecat';
     const emptyTask = isAudioCourse
       ? {
         taskId: `${category}-pending`,
@@ -188,7 +204,7 @@ function decorateTask(task, progress, category, deps) {
   const planPhase = task.planPhase || '';
   const isRound2 = planPhase === 'round-2';
   const isNewConcept = NEW_CONCEPT_CATEGORIES.includes(category);
-  const supportsQuestionAnswer = isRound2 && isNewConcept;
+  const supportsQuestionAnswer = isNewConcept;
   const speakingMode = supportsQuestionAnswer
     ? 'nce-question-answer'
     : '';
@@ -202,7 +218,7 @@ function decorateTask(task, progress, category, deps) {
     transcriptTrackId,
     syncGranularity: task.syncGranularity || 'word',
     audioDisplayName: getMediaDisplayName(task.audioUrl),
-    audioCompactTitle: category === 'peppa' || category === 'petethecat'
+    audioCompactTitle: category === 'peppa' || category === 'littlebear' || category === 'petethecat'
       ? [base.displaySubtitle, base.displayTitle].filter(Boolean).join(' · ')
       : UNLOCK_CATEGORIES.includes(category)
         ? [base.coverBadge, base.displayTitle].filter(Boolean).join(' · ')

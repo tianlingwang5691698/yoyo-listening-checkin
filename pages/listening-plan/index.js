@@ -3,7 +3,7 @@ const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 
-const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV4';
+const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV5';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function t(key, variables) {
@@ -27,7 +27,8 @@ const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((
 }));
 const FALLBACK_MATERIALS = {
   'Pre A1': [
-    { category: 'song', title: 'Songs' }
+    { category: 'song', title: 'Songs' },
+    { category: 'littlebear', title: 'Little Bear' }
   ],
   A1: [
     { category: 'newconcept1', title: 'New Concept 1' },

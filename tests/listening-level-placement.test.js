@@ -17,9 +17,12 @@ test('听力页与计划页 fallback 只在 A1 放置 Peppa', () => {
     const a2Block = source.match(/\bA2:\s*\[([\s\S]*?)\],\s*B1:/)[1];
 
     assert.doesNotMatch(preA1Block, /category: 'peppa'/);
+    assert.match(preA1Block, /category: 'littlebear'/);
+    assert.doesNotMatch(a1Block, /category: 'littlebear'/);
+    assert.doesNotMatch(a2Block, /category: 'littlebear'/);
     assert.match(a1Block, /category: 'peppa'/);
     assert.doesNotMatch(a2Block, /category: 'peppa'/);
-    assert.match(source, /listeningPlanOverviewSnapshotV4/);
+    assert.match(source, /listeningPlanOverviewSnapshotV5/);
   });
 });
 

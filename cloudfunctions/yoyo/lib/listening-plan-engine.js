@@ -2,6 +2,7 @@ const LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 const MATERIALS = [
   { category: 'song', levelIds: ['Pre A1'], title: 'Songs' },
+  { category: 'littlebear', levelIds: ['Pre A1'], title: 'Little Bear' },
   { category: 'peppa', levelIds: ['A1'], title: 'Peppa' },
   { category: 'newconcept1', levelIds: ['A1'], title: 'New Concept 1' },
   { category: 'unlock1', levelIds: ['A1'], title: 'Unlock 1 听口 第二版' },
@@ -29,6 +30,14 @@ function normalizeLevelId(value) {
 
 function getMaterial(category) {
   return MATERIALS.find((item) => item.category === category) || null;
+}
+
+function normalizeMaterialLevelId(category, value) {
+  const requestedLevel = normalizeLevelId(value);
+  const material = getMaterial(category);
+  return material && !material.levelIds.includes(requestedLevel)
+    ? material.levelIds[0]
+    : requestedLevel;
 }
 
 function buildLevelTabs(selectedLevel) {
@@ -304,6 +313,7 @@ module.exports = {
   LEVEL_TABS,
   MATERIALS,
   normalizeLevelId,
+  normalizeMaterialLevelId,
   buildLevelTabs,
   buildMaterialEntries,
   normalizePlanMaterial,

@@ -22,6 +22,25 @@ test('resolveStandaloneCategoryTasks 优先使用已刷新的目录', async () =
   assert.equal(tasks[0].planRunType, 'level');
 });
 
+test('resolveStandaloneCategoryTasks 支持 Pre A1 Little Bear 静态目录', async () => {
+  const tasks = await levelEngine.resolveStandaloneCategoryTasks('littlebear', 'child-1', '2026-07-14', {
+    getCatalog: (category) => category === 'littlebear' ? [{
+      taskId: 'little-bear-010',
+      category: 'littlebear',
+      title: 'Up All Night'
+    }] : [],
+    storageRootCandidates: {},
+    storageRoots: {},
+    listDirectoryFiles: async () => {
+      throw new Error('should not scan storage');
+    }
+  });
+
+  assert.equal(tasks.length, 1);
+  assert.equal(tasks[0].category, 'littlebear');
+  assert.equal(tasks[0].planRunType, 'level');
+});
+
 test('resolveStandaloneCategoryTasks 支持 Unlock4 练习册独立目录', async () => {
   const tasks = await levelEngine.resolveStandaloneCategoryTasks('unlock4workbook', 'child-1', '2026-07-09', {
     getCatalog: (category) => category === 'unlock4workbook' ? [{

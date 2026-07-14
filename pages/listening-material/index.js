@@ -5,7 +5,7 @@ const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
-const MATERIAL_DETAIL_SNAPSHOT_KEY = 'listeningMaterialDetailSnapshotV1';
+const MATERIAL_DETAIL_SNAPSHOT_KEY = 'listeningMaterialDetailSnapshotV2';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function t(key, variables) {
@@ -212,12 +212,17 @@ Page({
     this.listeningMaterialPerf = page.startPagePerf('listening-material');
     page.syncTheme(this);
     const category = query.category || '';
-    const levelId = query.levelId || 'A1';
+    const levelId = category === 'littlebear' ? 'Pre A1' : (query.levelId || 'A1');
+    const detailRequest = {
+      category,
+      levelId,
+      catalogVersion: category === 'littlebear' ? 'littlebear-v1' : ''
+    };
     this.setData({ category, levelId });
     const snapshotId = getDetailSnapshotId(levelId, category);
     const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
     const cachedDetail = store.getCachedReadResult
-      ? store.getCachedReadResult('getListeningMaterialDetail', Object.assign({ category, levelId }, target))
+      ? store.getCachedReadResult('getListeningMaterialDetail', Object.assign({}, detailRequest, target))
       : null;
     const snapshot = snapshotStore.read(MATERIAL_DETAIL_SNAPSHOT_KEY, {
       id: snapshotId,
@@ -248,7 +253,7 @@ Page({
         tasks: 0
       });
     }
-    const data = await store.getListeningMaterialDetail({ category, levelId }, (fresh) => {
+    const data = await store.getListeningMaterialDetail(detailRequest, (fresh) => {
       rememberDetailSnapshot(snapshotId, fresh, 'listening-material-refresh');
       this.applyDetail(fresh);
       if (this.listeningMaterialPerf) {

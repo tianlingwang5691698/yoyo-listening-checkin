@@ -1,0 +1,3296 @@
+{
+  "model": "base",
+  "language": "en",
+  "elapsedSec": 27.327,
+  "segments": [
+    {
+      "text": "I remember when you wanted to fly south for the winter.",
+      "startMs": 22800,
+      "endMs": 27100,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 22800,
+          "endMs": 23540,
+          "probability": 0.017901
+        },
+        {
+          "text": "remember",
+          "startMs": 23540,
+          "endMs": 24280,
+          "probability": 0.641931
+        },
+        {
+          "text": "when",
+          "startMs": 24280,
+          "endMs": 24720,
+          "probability": 0.956531
+        },
+        {
+          "text": "you",
+          "startMs": 24720,
+          "endMs": 25080,
+          "probability": 0.978493
+        },
+        {
+          "text": "wanted",
+          "startMs": 25080,
+          "endMs": 25580,
+          "probability": 0.902897
+        },
+        {
+          "text": "to",
+          "startMs": 25580,
+          "endMs": 25780,
+          "probability": 0.989819
+        },
+        {
+          "text": "fly",
+          "startMs": 25780,
+          "endMs": 25940,
+          "probability": 0.99226
+        },
+        {
+          "text": "south",
+          "startMs": 25940,
+          "endMs": 26320,
+          "probability": 0.862639
+        },
+        {
+          "text": "for",
+          "startMs": 26320,
+          "endMs": 26600,
+          "probability": 0.934051
+        },
+        {
+          "text": "the",
+          "startMs": 26600,
+          "endMs": 26760,
+          "probability": 0.99511
+        },
+        {
+          "text": "winter.",
+          "startMs": 26760,
+          "endMs": 27100,
+          "probability": 0.969141
+        }
+      ]
+    },
+    {
+      "text": "Oh I remember and you just wanted to fly.",
+      "startMs": 27100,
+      "endMs": 32560,
+      "words": [
+        {
+          "text": "Oh",
+          "startMs": 27100,
+          "endMs": 28100,
+          "probability": 0.351499
+        },
+        {
+          "text": "I",
+          "startMs": 28100,
+          "endMs": 30000,
+          "probability": 0.29324
+        },
+        {
+          "text": "remember",
+          "startMs": 30000,
+          "endMs": 30580,
+          "probability": 0.922954
+        },
+        {
+          "text": "and",
+          "startMs": 30580,
+          "endMs": 31280,
+          "probability": 0.638417
+        },
+        {
+          "text": "you",
+          "startMs": 31280,
+          "endMs": 31460,
+          "probability": 0.997741
+        },
+        {
+          "text": "just",
+          "startMs": 31460,
+          "endMs": 31700,
+          "probability": 0.994639
+        },
+        {
+          "text": "wanted",
+          "startMs": 31700,
+          "endMs": 31940,
+          "probability": 0.73597
+        },
+        {
+          "text": "to",
+          "startMs": 31940,
+          "endMs": 32120,
+          "probability": 0.990158
+        },
+        {
+          "text": "fly.",
+          "startMs": 32120,
+          "endMs": 32560,
+          "probability": 0.99746
+        }
+      ]
+    },
+    {
+      "text": "Yeah.",
+      "startMs": 34880,
+      "endMs": 35720,
+      "words": [
+        {
+          "text": "Yeah.",
+          "startMs": 34880,
+          "endMs": 35720,
+          "probability": 0.720167
+        }
+      ]
+    },
+    {
+      "text": "Wait for me.",
+      "startMs": 43720,
+      "endMs": 45140,
+      "words": [
+        {
+          "text": "Wait",
+          "startMs": 43720,
+          "endMs": 44560,
+          "probability": 0.827323
+        },
+        {
+          "text": "for",
+          "startMs": 44560,
+          "endMs": 44840,
+          "probability": 0.988817
+        },
+        {
+          "text": "me.",
+          "startMs": 44840,
+          "endMs": 45140,
+          "probability": 0.998126
+        }
+      ]
+    },
+    {
+      "text": "Wait for me ducks.",
+      "startMs": 46020,
+      "endMs": 47700,
+      "words": [
+        {
+          "text": "Wait",
+          "startMs": 46020,
+          "endMs": 46860,
+          "probability": 0.741025
+        },
+        {
+          "text": "for",
+          "startMs": 46860,
+          "endMs": 47100,
+          "probability": 0.990253
+        },
+        {
+          "text": "me",
+          "startMs": 47100,
+          "endMs": 47380,
+          "probability": 0.995385
+        },
+        {
+          "text": "ducks.",
+          "startMs": 47380,
+          "endMs": 47700,
+          "probability": 0.212822
+        }
+      ]
+    },
+    {
+      "text": "I'm going too.",
+      "startMs": 48320,
+      "endMs": 49380,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 48320,
+          "endMs": 48740,
+          "probability": 0.980621
+        },
+        {
+          "text": "going",
+          "startMs": 48740,
+          "endMs": 48960,
+          "probability": 0.994318
+        },
+        {
+          "text": "too.",
+          "startMs": 48960,
+          "endMs": 49380,
+          "probability": 0.295226
+        }
+      ]
+    },
+    {
+      "text": "I can fly.",
+      "startMs": 55160,
+      "endMs": 56860,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 55160,
+          "endMs": 56160,
+          "probability": 0.54269
+        },
+        {
+          "text": "can",
+          "startMs": 56160,
+          "endMs": 56340,
+          "probability": 0.852546
+        },
+        {
+          "text": "fly.",
+          "startMs": 56340,
+          "endMs": 56860,
+          "probability": 0.996554
+        }
+      ]
+    },
+    {
+      "text": "Look at me.",
+      "startMs": 58060,
+      "endMs": 59480,
+      "words": [
+        {
+          "text": "Look",
+          "startMs": 58060,
+          "endMs": 59060,
+          "probability": 0.918993
+        },
+        {
+          "text": "at",
+          "startMs": 59060,
+          "endMs": 59180,
+          "probability": 0.998212
+        },
+        {
+          "text": "me.",
+          "startMs": 59180,
+          "endMs": 59480,
+          "probability": 0.998577
+        }
+      ]
+    },
+    {
+      "text": "I can be a duck.",
+      "startMs": 60280,
+      "endMs": 62000,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 60280,
+          "endMs": 61240,
+          "probability": 0.986371
+        },
+        {
+          "text": "can",
+          "startMs": 61240,
+          "endMs": 61400,
+          "probability": 0.960965
+        },
+        {
+          "text": "be",
+          "startMs": 61400,
+          "endMs": 61560,
+          "probability": 0.988286
+        },
+        {
+          "text": "a",
+          "startMs": 61560,
+          "endMs": 61720,
+          "probability": 0.958989
+        },
+        {
+          "text": "duck.",
+          "startMs": 61720,
+          "endMs": 62000,
+          "probability": 0.925284
+        }
+      ]
+    },
+    {
+      "text": "I'm flying south.",
+      "startMs": 65000,
+      "endMs": 66740,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 65000,
+          "endMs": 66000,
+          "probability": 0.956086
+        },
+        {
+          "text": "flying",
+          "startMs": 66000,
+          "endMs": 66300,
+          "probability": 0.99002
+        },
+        {
+          "text": "south.",
+          "startMs": 66300,
+          "endMs": 66740,
+          "probability": 0.339431
+        }
+      ]
+    },
+    {
+      "text": "I'm flying.",
+      "startMs": 67600,
+      "endMs": 68740,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 67600,
+          "endMs": 68120,
+          "probability": 0.994347
+        },
+        {
+          "text": "flying.",
+          "startMs": 68120,
+          "endMs": 68740,
+          "probability": 0.995718
+        }
+      ]
+    },
+    {
+      "text": "I'm flying.",
+      "startMs": 70240,
+      "endMs": 71040,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 70240,
+          "endMs": 70720,
+          "probability": 0.945836
+        },
+        {
+          "text": "flying.",
+          "startMs": 70720,
+          "endMs": 71040,
+          "probability": 0.971819
+        }
+      ]
+    },
+    {
+      "text": "What are you doing?",
+      "startMs": 77120,
+      "endMs": 79060,
+      "words": [
+        {
+          "text": "What",
+          "startMs": 77120,
+          "endMs": 77800,
+          "probability": 0.509024
+        },
+        {
+          "text": "are",
+          "startMs": 77800,
+          "endMs": 78480,
+          "probability": 0.935774
+        },
+        {
+          "text": "you",
+          "startMs": 78480,
+          "endMs": 78600,
+          "probability": 0.987101
+        },
+        {
+          "text": "doing?",
+          "startMs": 78600,
+          "endMs": 79060,
+          "probability": 0.991169
+        }
+      ]
+    },
+    {
+      "text": "I'm flying south.",
+      "startMs": 79560,
+      "endMs": 80320,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 79560,
+          "endMs": 79740,
+          "probability": 0.952538
+        },
+        {
+          "text": "flying",
+          "startMs": 79740,
+          "endMs": 79960,
+          "probability": 0.982469
+        },
+        {
+          "text": "south.",
+          "startMs": 79960,
+          "endMs": 80320,
+          "probability": 0.706817
+        }
+      ]
+    },
+    {
+      "text": "You are?",
+      "startMs": 81200,
+      "endMs": 82000,
+      "words": [
+        {
+          "text": "You",
+          "startMs": 81200,
+          "endMs": 81700,
+          "probability": 0.962928
+        },
+        {
+          "text": "are?",
+          "startMs": 81700,
+          "endMs": 82000,
+          "probability": 0.949059
+        }
+      ]
+    },
+    {
+      "text": "I wish I could fly.",
+      "startMs": 82760,
+      "endMs": 84500,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 82760,
+          "endMs": 83440,
+          "probability": 0.959068
+        },
+        {
+          "text": "wish",
+          "startMs": 83440,
+          "endMs": 83700,
+          "probability": 0.997149
+        },
+        {
+          "text": "I",
+          "startMs": 83700,
+          "endMs": 83920,
+          "probability": 0.994554
+        },
+        {
+          "text": "could",
+          "startMs": 83920,
+          "endMs": 84060,
+          "probability": 0.994463
+        },
+        {
+          "text": "fly.",
+          "startMs": 84060,
+          "endMs": 84500,
+          "probability": 0.998502
+        }
+      ]
+    },
+    {
+      "text": "Why can't you?",
+      "startMs": 85200,
+      "endMs": 85940,
+      "words": [
+        {
+          "text": "Why",
+          "startMs": 85200,
+          "endMs": 85340,
+          "probability": 0.973301
+        },
+        {
+          "text": "can't",
+          "startMs": 85340,
+          "endMs": 85680,
+          "probability": 0.968324
+        },
+        {
+          "text": "you?",
+          "startMs": 85680,
+          "endMs": 85940,
+          "probability": 0.997536
+        }
+      ]
+    },
+    {
+      "text": "You're a duck.",
+      "startMs": 86340,
+      "endMs": 86960,
+      "words": [
+        {
+          "text": "You're",
+          "startMs": 86340,
+          "endMs": 86520,
+          "probability": 0.975137
+        },
+        {
+          "text": "a",
+          "startMs": 86520,
+          "endMs": 86600,
+          "probability": 0.944964
+        },
+        {
+          "text": "duck.",
+          "startMs": 86600,
+          "endMs": 86960,
+          "probability": 0.948003
+        }
+      ]
+    },
+    {
+      "text": "My mother never taught me.",
+      "startMs": 87560,
+      "endMs": 89120,
+      "words": [
+        {
+          "text": "My",
+          "startMs": 87560,
+          "endMs": 87780,
+          "probability": 0.987655
+        },
+        {
+          "text": "mother",
+          "startMs": 87780,
+          "endMs": 88080,
+          "probability": 0.994621
+        },
+        {
+          "text": "never",
+          "startMs": 88080,
+          "endMs": 88400,
+          "probability": 0.996862
+        },
+        {
+          "text": "taught",
+          "startMs": 88400,
+          "endMs": 88700,
+          "probability": 0.99606
+        },
+        {
+          "text": "me.",
+          "startMs": 88700,
+          "endMs": 89120,
+          "probability": 0.999439
+        }
+      ]
+    },
+    {
+      "text": "Your mother is a chicken.",
+      "startMs": 92540,
+      "endMs": 94120,
+      "words": [
+        {
+          "text": "Your",
+          "startMs": 92540,
+          "endMs": 93220,
+          "probability": 0.967028
+        },
+        {
+          "text": "mother",
+          "startMs": 93220,
+          "endMs": 93480,
+          "probability": 0.991022
+        },
+        {
+          "text": "is",
+          "startMs": 93480,
+          "endMs": 93680,
+          "probability": 0.430627
+        },
+        {
+          "text": "a",
+          "startMs": 93680,
+          "endMs": 93760,
+          "probability": 0.985961
+        },
+        {
+          "text": "chicken.",
+          "startMs": 93760,
+          "endMs": 94120,
+          "probability": 0.977125
+        }
+      ]
+    },
+    {
+      "text": "Some eggs got mixed up.",
+      "startMs": 95440,
+      "endMs": 97120,
+      "words": [
+        {
+          "text": "Some",
+          "startMs": 95440,
+          "endMs": 95880,
+          "probability": 0.882493
+        },
+        {
+          "text": "eggs",
+          "startMs": 95880,
+          "endMs": 96200,
+          "probability": 0.989331
+        },
+        {
+          "text": "got",
+          "startMs": 96200,
+          "endMs": 96440,
+          "probability": 0.973847
+        },
+        {
+          "text": "mixed",
+          "startMs": 96440,
+          "endMs": 96780,
+          "probability": 0.978368
+        },
+        {
+          "text": "up.",
+          "startMs": 96780,
+          "endMs": 97120,
+          "probability": 0.996414
+        }
+      ]
+    },
+    {
+      "text": "She's very nice but she can't teach me how to fly.",
+      "startMs": 97800,
+      "endMs": 100860,
+      "words": [
+        {
+          "text": "She's",
+          "startMs": 97800,
+          "endMs": 98340,
+          "probability": 0.743434
+        },
+        {
+          "text": "very",
+          "startMs": 98340,
+          "endMs": 98540,
+          "probability": 0.982932
+        },
+        {
+          "text": "nice",
+          "startMs": 98540,
+          "endMs": 99000,
+          "probability": 0.996928
+        },
+        {
+          "text": "but",
+          "startMs": 99000,
+          "endMs": 99260,
+          "probability": 0.43452
+        },
+        {
+          "text": "she",
+          "startMs": 99260,
+          "endMs": 99440,
+          "probability": 0.789623
+        },
+        {
+          "text": "can't",
+          "startMs": 99440,
+          "endMs": 99840,
+          "probability": 0.985153
+        },
+        {
+          "text": "teach",
+          "startMs": 99840,
+          "endMs": 100000,
+          "probability": 0.996577
+        },
+        {
+          "text": "me",
+          "startMs": 100000,
+          "endMs": 100220,
+          "probability": 0.997381
+        },
+        {
+          "text": "how",
+          "startMs": 100220,
+          "endMs": 100380,
+          "probability": 0.998939
+        },
+        {
+          "text": "to",
+          "startMs": 100380,
+          "endMs": 100480,
+          "probability": 0.999324
+        },
+        {
+          "text": "fly.",
+          "startMs": 100480,
+          "endMs": 100860,
+          "probability": 0.995227
+        }
+      ]
+    },
+    {
+      "text": "I can teach you.",
+      "startMs": 103000,
+      "endMs": 104380,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 103000,
+          "endMs": 103540,
+          "probability": 0.564627
+        },
+        {
+          "text": "can",
+          "startMs": 103540,
+          "endMs": 103740,
+          "probability": 0.981124
+        },
+        {
+          "text": "teach",
+          "startMs": 103740,
+          "endMs": 104000,
+          "probability": 0.985303
+        },
+        {
+          "text": "you.",
+          "startMs": 104000,
+          "endMs": 104380,
+          "probability": 0.993622
+        }
+      ]
+    },
+    {
+      "text": "You can?",
+      "startMs": 104880,
+      "endMs": 105540,
+      "words": [
+        {
+          "text": "You",
+          "startMs": 104880,
+          "endMs": 105260,
+          "probability": 0.919165
+        },
+        {
+          "text": "can?",
+          "startMs": 105260,
+          "endMs": 105540,
+          "probability": 0.995752
+        }
+      ]
+    },
+    {
+      "text": "Sure.",
+      "startMs": 106040,
+      "endMs": 106580,
+      "words": [
+        {
+          "text": "Sure.",
+          "startMs": 106040,
+          "endMs": 106580,
+          "probability": 0.988722
+        }
+      ]
+    },
+    {
+      "text": "I'm going to fly.",
+      "startMs": 109160,
+      "endMs": 110340,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 109160,
+          "endMs": 109700,
+          "probability": 0.683739
+        },
+        {
+          "text": "going",
+          "startMs": 109700,
+          "endMs": 109820,
+          "probability": 0.846276
+        },
+        {
+          "text": "to",
+          "startMs": 109820,
+          "endMs": 110040,
+          "probability": 0.956829
+        },
+        {
+          "text": "fly.",
+          "startMs": 110040,
+          "endMs": 110340,
+          "probability": 0.993602
+        }
+      ]
+    },
+    {
+      "text": "First I better teach you how to crack.",
+      "startMs": 113060,
+      "endMs": 115020,
+      "words": [
+        {
+          "text": "First",
+          "startMs": 113060,
+          "endMs": 113600,
+          "probability": 0.897657
+        },
+        {
+          "text": "I",
+          "startMs": 113600,
+          "endMs": 113760,
+          "probability": 0.304308
+        },
+        {
+          "text": "better",
+          "startMs": 113760,
+          "endMs": 113940,
+          "probability": 0.703771
+        },
+        {
+          "text": "teach",
+          "startMs": 113940,
+          "endMs": 114240,
+          "probability": 0.984133
+        },
+        {
+          "text": "you",
+          "startMs": 114240,
+          "endMs": 114440,
+          "probability": 0.986551
+        },
+        {
+          "text": "how",
+          "startMs": 114440,
+          "endMs": 114600,
+          "probability": 0.995911
+        },
+        {
+          "text": "to",
+          "startMs": 114600,
+          "endMs": 114720,
+          "probability": 0.997401
+        },
+        {
+          "text": "crack.",
+          "startMs": 114720,
+          "endMs": 115020,
+          "probability": 0.808248
+        }
+      ]
+    },
+    {
+      "text": "You pluck like a chicken.",
+      "startMs": 115860,
+      "endMs": 116980,
+      "words": [
+        {
+          "text": "You",
+          "startMs": 115860,
+          "endMs": 116100,
+          "probability": 0.982316
+        },
+        {
+          "text": "pluck",
+          "startMs": 116100,
+          "endMs": 116300,
+          "probability": 0.440569
+        },
+        {
+          "text": "like",
+          "startMs": 116300,
+          "endMs": 116540,
+          "probability": 0.820771
+        },
+        {
+          "text": "a",
+          "startMs": 116540,
+          "endMs": 116700,
+          "probability": 0.991768
+        },
+        {
+          "text": "chicken.",
+          "startMs": 116700,
+          "endMs": 116980,
+          "probability": 0.980517
+        }
+      ]
+    },
+    {
+      "text": "I can move like a cow too.",
+      "startMs": 117740,
+      "endMs": 119500,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 117740,
+          "endMs": 117860,
+          "probability": 0.98212
+        },
+        {
+          "text": "can",
+          "startMs": 117860,
+          "endMs": 118040,
+          "probability": 0.994201
+        },
+        {
+          "text": "move",
+          "startMs": 118040,
+          "endMs": 118200,
+          "probability": 0.918142
+        },
+        {
+          "text": "like",
+          "startMs": 118200,
+          "endMs": 118480,
+          "probability": 0.996423
+        },
+        {
+          "text": "a",
+          "startMs": 118480,
+          "endMs": 118720,
+          "probability": 0.996349
+        },
+        {
+          "text": "cow",
+          "startMs": 118720,
+          "endMs": 118920,
+          "probability": 0.98537
+        },
+        {
+          "text": "too.",
+          "startMs": 118920,
+          "endMs": 119500,
+          "probability": 0.744533
+        }
+      ]
+    },
+    {
+      "text": "I can be like a sheep.",
+      "startMs": 122000,
+      "endMs": 124400,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 122000,
+          "endMs": 122920,
+          "probability": 0.424258
+        },
+        {
+          "text": "can",
+          "startMs": 122920,
+          "endMs": 123100,
+          "probability": 0.894118
+        },
+        {
+          "text": "be",
+          "startMs": 123100,
+          "endMs": 123280,
+          "probability": 0.073522
+        },
+        {
+          "text": "like",
+          "startMs": 123280,
+          "endMs": 123520,
+          "probability": 0.908826
+        },
+        {
+          "text": "a",
+          "startMs": 123520,
+          "endMs": 123720,
+          "probability": 0.956131
+        },
+        {
+          "text": "sheep.",
+          "startMs": 123720,
+          "endMs": 124400,
+          "probability": 0.975249
+        }
+      ]
+    },
+    {
+      "text": "I'm a mouse.",
+      "startMs": 129560,
+      "endMs": 131080,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 129560,
+          "endMs": 130480,
+          "probability": 0.797488
+        },
+        {
+          "text": "a",
+          "startMs": 130480,
+          "endMs": 130620,
+          "probability": 0.975415
+        },
+        {
+          "text": "mouse.",
+          "startMs": 130620,
+          "endMs": 131080,
+          "probability": 0.974742
+        }
+      ]
+    },
+    {
+      "text": "I'm a cow.",
+      "startMs": 133320,
+      "endMs": 134700,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 133320,
+          "endMs": 134240,
+          "probability": 0.772128
+        },
+        {
+          "text": "a",
+          "startMs": 134240,
+          "endMs": 134520,
+          "probability": 0.973049
+        },
+        {
+          "text": "cow.",
+          "startMs": 134520,
+          "endMs": 134700,
+          "probability": 0.661736
+        }
+      ]
+    },
+    {
+      "text": "No!",
+      "startMs": 134700,
+      "endMs": 135580,
+      "words": [
+        {
+          "text": "No!",
+          "startMs": 134700,
+          "endMs": 135580,
+          "probability": 0.05284
+        }
+      ]
+    },
+    {
+      "text": "No!",
+      "startMs": 137540,
+      "endMs": 138120,
+      "words": [
+        {
+          "text": "No!",
+          "startMs": 137540,
+          "endMs": 138120,
+          "probability": 0.444098
+        }
+      ]
+    },
+    {
+      "text": "No!",
+      "startMs": 139860,
+      "endMs": 140200,
+      "words": [
+        {
+          "text": "No!",
+          "startMs": 139860,
+          "endMs": 140200,
+          "probability": 0.447681
+        }
+      ]
+    },
+    {
+      "text": "Ouch!",
+      "startMs": 149940,
+      "endMs": 151340,
+      "words": [
+        {
+          "text": "Ouch!",
+          "startMs": 149940,
+          "endMs": 151340,
+          "probability": 0.013523
+        }
+      ]
+    },
+    {
+      "text": "Now try a duck.",
+      "startMs": 158700,
+      "endMs": 160340,
+      "words": [
+        {
+          "text": "Now",
+          "startMs": 158700,
+          "endMs": 159420,
+          "probability": 0.836505
+        },
+        {
+          "text": "try",
+          "startMs": 159420,
+          "endMs": 159780,
+          "probability": 0.926585
+        },
+        {
+          "text": "a",
+          "startMs": 159780,
+          "endMs": 160040,
+          "probability": 0.95873
+        },
+        {
+          "text": "duck.",
+          "startMs": 160040,
+          "endMs": 160340,
+          "probability": 0.984194
+        }
+      ]
+    },
+    {
+      "text": "Black.",
+      "startMs": 160340,
+      "endMs": 160480,
+      "words": [
+        {
+          "text": "Black.",
+          "startMs": 160340,
+          "endMs": 160480,
+          "probability": 0.016557
+        }
+      ]
+    },
+    {
+      "text": "Black.",
+      "startMs": 160880,
+      "endMs": 161760,
+      "words": [
+        {
+          "text": "Black.",
+          "startMs": 160880,
+          "endMs": 161760,
+          "probability": 0.314106
+        }
+      ]
+    },
+    {
+      "text": "Perfect.",
+      "startMs": 172840,
+      "endMs": 173720,
+      "words": [
+        {
+          "text": "Perfect.",
+          "startMs": 172840,
+          "endMs": 173720,
+          "probability": 0.00668
+        }
+      ]
+    },
+    {
+      "text": "Now let's fly.",
+      "startMs": 175340,
+      "endMs": 176300,
+      "words": [
+        {
+          "text": "Now",
+          "startMs": 175340,
+          "endMs": 175500,
+          "probability": 0.965323
+        },
+        {
+          "text": "let's",
+          "startMs": 175500,
+          "endMs": 175840,
+          "probability": 0.87
+        },
+        {
+          "text": "fly.",
+          "startMs": 175840,
+          "endMs": 176300,
+          "probability": 0.99736
+        }
+      ]
+    },
+    {
+      "text": "How do I do it?",
+      "startMs": 177340,
+      "endMs": 178360,
+      "words": [
+        {
+          "text": "How",
+          "startMs": 177220,
+          "endMs": 177660,
+          "probability": 0.873909
+        },
+        {
+          "text": "do",
+          "startMs": 177660,
+          "endMs": 177780,
+          "probability": 0.966909
+        },
+        {
+          "text": "I",
+          "startMs": 177780,
+          "endMs": 177940,
+          "probability": 0.981247
+        },
+        {
+          "text": "do",
+          "startMs": 177940,
+          "endMs": 178180,
+          "probability": 0.9941
+        },
+        {
+          "text": "it?",
+          "startMs": 178180,
+          "endMs": 178360,
+          "probability": 0.995483
+        }
+      ]
+    },
+    {
+      "text": "Just flap your wings like this and run.",
+      "startMs": 178700,
+      "endMs": 182660,
+      "words": [
+        {
+          "text": "Just",
+          "startMs": 178700,
+          "endMs": 179000,
+          "probability": 0.947585
+        },
+        {
+          "text": "flap",
+          "startMs": 179000,
+          "endMs": 179340,
+          "probability": 0.960242
+        },
+        {
+          "text": "your",
+          "startMs": 179340,
+          "endMs": 179660,
+          "probability": 0.997378
+        },
+        {
+          "text": "wings",
+          "startMs": 179660,
+          "endMs": 180220,
+          "probability": 0.998659
+        },
+        {
+          "text": "like",
+          "startMs": 180220,
+          "endMs": 180940,
+          "probability": 0.671764
+        },
+        {
+          "text": "this",
+          "startMs": 180940,
+          "endMs": 181420,
+          "probability": 0.998969
+        },
+        {
+          "text": "and",
+          "startMs": 181420,
+          "endMs": 182220,
+          "probability": 0.823714
+        },
+        {
+          "text": "run.",
+          "startMs": 182220,
+          "endMs": 182660,
+          "probability": 0.994849
+        }
+      ]
+    },
+    {
+      "text": "Okay.",
+      "startMs": 186240,
+      "endMs": 187300,
+      "words": [
+        {
+          "text": "Okay.",
+          "startMs": 186240,
+          "endMs": 187300,
+          "probability": 0.137384
+        }
+      ]
+    },
+    {
+      "text": "Let me try.",
+      "startMs": 187500,
+      "endMs": 189180,
+      "words": [
+        {
+          "text": "Let",
+          "startMs": 187500,
+          "endMs": 188460,
+          "probability": 0.964218
+        },
+        {
+          "text": "me",
+          "startMs": 188460,
+          "endMs": 188700,
+          "probability": 0.994675
+        },
+        {
+          "text": "try.",
+          "startMs": 188700,
+          "endMs": 189180,
+          "probability": 0.982896
+        }
+      ]
+    },
+    {
+      "text": "Flap my wings.",
+      "startMs": 189720,
+      "endMs": 190880,
+      "words": [
+        {
+          "text": "Flap",
+          "startMs": 189720,
+          "endMs": 190120,
+          "probability": 0.70013
+        },
+        {
+          "text": "my",
+          "startMs": 190120,
+          "endMs": 190400,
+          "probability": 0.988805
+        },
+        {
+          "text": "wings.",
+          "startMs": 190400,
+          "endMs": 190880,
+          "probability": 0.983891
+        }
+      ]
+    },
+    {
+      "text": "And run.",
+      "startMs": 192700,
+      "endMs": 194180,
+      "words": [
+        {
+          "text": "And",
+          "startMs": 192700,
+          "endMs": 193560,
+          "probability": 0.344985
+        },
+        {
+          "text": "run.",
+          "startMs": 193560,
+          "endMs": 194180,
+          "probability": 0.728205
+        }
+      ]
+    },
+    {
+      "text": "Was it flying?",
+      "startMs": 198820,
+      "endMs": 200620,
+      "words": [
+        {
+          "text": "Was",
+          "startMs": 198820,
+          "endMs": 199880,
+          "probability": 0.745724
+        },
+        {
+          "text": "it",
+          "startMs": 199880,
+          "endMs": 200080,
+          "probability": 0.732614
+        },
+        {
+          "text": "flying?",
+          "startMs": 200080,
+          "endMs": 200620,
+          "probability": 0.930374
+        }
+      ]
+    },
+    {
+      "text": "Almost.",
+      "startMs": 201380,
+      "endMs": 202000,
+      "words": [
+        {
+          "text": "Almost.",
+          "startMs": 201380,
+          "endMs": 202000,
+          "probability": 0.824752
+        }
+      ]
+    },
+    {
+      "text": "Flying hard work.",
+      "startMs": 202960,
+      "endMs": 204700,
+      "words": [
+        {
+          "text": "Flying",
+          "startMs": 202960,
+          "endMs": 203640,
+          "probability": 0.848503
+        },
+        {
+          "text": "hard",
+          "startMs": 203640,
+          "endMs": 204120,
+          "probability": 0.254098
+        },
+        {
+          "text": "work.",
+          "startMs": 204120,
+          "endMs": 204700,
+          "probability": 0.955768
+        }
+      ]
+    },
+    {
+      "text": "Here climb up on me.",
+      "startMs": 205320,
+      "endMs": 206660,
+      "words": [
+        {
+          "text": "Here",
+          "startMs": 205320,
+          "endMs": 205660,
+          "probability": 0.934838
+        },
+        {
+          "text": "climb",
+          "startMs": 205660,
+          "endMs": 206060,
+          "probability": 0.433139
+        },
+        {
+          "text": "up",
+          "startMs": 206060,
+          "endMs": 206280,
+          "probability": 0.976124
+        },
+        {
+          "text": "on",
+          "startMs": 206280,
+          "endMs": 206440,
+          "probability": 0.944365
+        },
+        {
+          "text": "me.",
+          "startMs": 206440,
+          "endMs": 206660,
+          "probability": 0.982421
+        }
+      ]
+    },
+    {
+      "text": "Why?",
+      "startMs": 207620,
+      "endMs": 208080,
+      "words": [
+        {
+          "text": "Why?",
+          "startMs": 207620,
+          "endMs": 208080,
+          "probability": 0.714297
+        }
+      ]
+    },
+    {
+      "text": "Maybe you need to start higher.",
+      "startMs": 208920,
+      "endMs": 210860,
+      "words": [
+        {
+          "text": "Maybe",
+          "startMs": 208920,
+          "endMs": 209540,
+          "probability": 0.988103
+        },
+        {
+          "text": "you",
+          "startMs": 209540,
+          "endMs": 209720,
+          "probability": 0.992604
+        },
+        {
+          "text": "need",
+          "startMs": 209720,
+          "endMs": 209900,
+          "probability": 0.993157
+        },
+        {
+          "text": "to",
+          "startMs": 209900,
+          "endMs": 210060,
+          "probability": 0.997409
+        },
+        {
+          "text": "start",
+          "startMs": 210060,
+          "endMs": 210340,
+          "probability": 0.997606
+        },
+        {
+          "text": "higher.",
+          "startMs": 210340,
+          "endMs": 210860,
+          "probability": 0.995756
+        }
+      ]
+    },
+    {
+      "text": "Okay.",
+      "startMs": 210860,
+      "endMs": 212660,
+      "words": [
+        {
+          "text": "Okay.",
+          "startMs": 210860,
+          "endMs": 212660,
+          "probability": 0.238856
+        }
+      ]
+    },
+    {
+      "text": "Here we go.",
+      "startMs": 215860,
+      "endMs": 217300,
+      "words": [
+        {
+          "text": "Here",
+          "startMs": 215660,
+          "endMs": 216360,
+          "probability": 0.968813
+        },
+        {
+          "text": "we",
+          "startMs": 216360,
+          "endMs": 216640,
+          "probability": 0.99795
+        },
+        {
+          "text": "go.",
+          "startMs": 216640,
+          "endMs": 217300,
+          "probability": 0.998371
+        }
+      ]
+    },
+    {
+      "text": "Start flapping.",
+      "startMs": 218960,
+      "endMs": 221060,
+      "words": [
+        {
+          "text": "Start",
+          "startMs": 218960,
+          "endMs": 220360,
+          "probability": 0.333816
+        },
+        {
+          "text": "flapping.",
+          "startMs": 220360,
+          "endMs": 221060,
+          "probability": 0.25337
+        }
+      ]
+    },
+    {
+      "text": "Flap.",
+      "startMs": 222460,
+      "endMs": 223860,
+      "words": [
+        {
+          "text": "Flap.",
+          "startMs": 222460,
+          "endMs": 223860,
+          "probability": 0.530648
+        }
+      ]
+    },
+    {
+      "text": "Flap.",
+      "startMs": 224720,
+      "endMs": 225160,
+      "words": [
+        {
+          "text": "Flap.",
+          "startMs": 224720,
+          "endMs": 225160,
+          "probability": 0.931037
+        }
+      ]
+    },
+    {
+      "text": "Let's go.",
+      "startMs": 227860,
+      "endMs": 228480,
+      "words": [
+        {
+          "text": "Let's",
+          "startMs": 227600,
+          "endMs": 228300,
+          "probability": 0.428799
+        },
+        {
+          "text": "go.",
+          "startMs": 228300,
+          "endMs": 228480,
+          "probability": 0.972328
+        }
+      ]
+    },
+    {
+      "text": "I can't see.",
+      "startMs": 228760,
+      "endMs": 229520,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 228760,
+          "endMs": 228840,
+          "probability": 0.60336
+        },
+        {
+          "text": "can't",
+          "startMs": 228840,
+          "endMs": 229300,
+          "probability": 0.990918
+        },
+        {
+          "text": "see.",
+          "startMs": 229300,
+          "endMs": 229520,
+          "probability": 0.994821
+        }
+      ]
+    },
+    {
+      "text": "Ouch!",
+      "startMs": 234860,
+      "endMs": 235300,
+      "words": [
+        {
+          "text": "Ouch!",
+          "startMs": 234600,
+          "endMs": 235300,
+          "probability": 0.028457
+        }
+      ]
+    },
+    {
+      "text": "Hey!",
+      "startMs": 241120,
+      "endMs": 241800,
+      "words": [
+        {
+          "text": "Hey!",
+          "startMs": 241120,
+          "endMs": 241800,
+          "probability": 0.429735
+        }
+      ]
+    },
+    {
+      "text": "Are you sure this is how you do it?",
+      "startMs": 242500,
+      "endMs": 244900,
+      "words": [
+        {
+          "text": "Are",
+          "startMs": 242500,
+          "endMs": 242600,
+          "probability": 0.939682
+        },
+        {
+          "text": "you",
+          "startMs": 242600,
+          "endMs": 242800,
+          "probability": 0.996775
+        },
+        {
+          "text": "sure",
+          "startMs": 242800,
+          "endMs": 243320,
+          "probability": 0.9992
+        },
+        {
+          "text": "this",
+          "startMs": 243320,
+          "endMs": 243640,
+          "probability": 0.985931
+        },
+        {
+          "text": "is",
+          "startMs": 243640,
+          "endMs": 243820,
+          "probability": 0.992455
+        },
+        {
+          "text": "how",
+          "startMs": 243820,
+          "endMs": 244060,
+          "probability": 0.991373
+        },
+        {
+          "text": "you",
+          "startMs": 244060,
+          "endMs": 244260,
+          "probability": 0.990774
+        },
+        {
+          "text": "do",
+          "startMs": 244260,
+          "endMs": 244560,
+          "probability": 0.983707
+        },
+        {
+          "text": "it?",
+          "startMs": 244560,
+          "endMs": 244900,
+          "probability": 0.954574
+        }
+      ]
+    },
+    {
+      "text": "Hmm.",
+      "startMs": 246660,
+      "endMs": 246920,
+      "words": [
+        {
+          "text": "Hmm.",
+          "startMs": 246660,
+          "endMs": 246920,
+          "probability": 0.425874
+        }
+      ]
+    },
+    {
+      "text": "I've got an idea.",
+      "startMs": 250660,
+      "endMs": 251740,
+      "words": [
+        {
+          "text": "I've",
+          "startMs": 250660,
+          "endMs": 251000,
+          "probability": 0.946142
+        },
+        {
+          "text": "got",
+          "startMs": 251000,
+          "endMs": 251100,
+          "probability": 0.976635
+        },
+        {
+          "text": "an",
+          "startMs": 251100,
+          "endMs": 251260,
+          "probability": 0.993731
+        },
+        {
+          "text": "idea.",
+          "startMs": 251260,
+          "endMs": 251740,
+          "probability": 0.999473
+        }
+      ]
+    },
+    {
+      "text": "I love balloons.",
+      "startMs": 255800,
+      "endMs": 257620,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 255800,
+          "endMs": 256480,
+          "probability": 0.87787
+        },
+        {
+          "text": "love",
+          "startMs": 256480,
+          "endMs": 257060,
+          "probability": 0.765881
+        },
+        {
+          "text": "balloons.",
+          "startMs": 257060,
+          "endMs": 257620,
+          "probability": 0.962608
+        }
+      ]
+    },
+    {
+      "text": "Here's another one.",
+      "startMs": 258980,
+      "endMs": 260060,
+      "words": [
+        {
+          "text": "Here's",
+          "startMs": 258980,
+          "endMs": 259440,
+          "probability": 0.983321
+        },
+        {
+          "text": "another",
+          "startMs": 259440,
+          "endMs": 259720,
+          "probability": 0.996867
+        },
+        {
+          "text": "one.",
+          "startMs": 259720,
+          "endMs": 260060,
+          "probability": 0.999504
+        }
+      ]
+    },
+    {
+      "text": "Sorry.",
+      "startMs": 273380,
+      "endMs": 274300,
+      "words": [
+        {
+          "text": "Sorry.",
+          "startMs": 273380,
+          "endMs": 274300,
+          "probability": 0.616436
+        }
+      ]
+    },
+    {
+      "text": "Now what?",
+      "startMs": 280060,
+      "endMs": 281360,
+      "words": [
+        {
+          "text": "Now",
+          "startMs": 280060,
+          "endMs": 280980,
+          "probability": 0.872299
+        },
+        {
+          "text": "what?",
+          "startMs": 280980,
+          "endMs": 281360,
+          "probability": 0.933521
+        }
+      ]
+    },
+    {
+      "text": "Just like before.",
+      "startMs": 281720,
+      "endMs": 282640,
+      "words": [
+        {
+          "text": "Just",
+          "startMs": 281720,
+          "endMs": 281960,
+          "probability": 0.982487
+        },
+        {
+          "text": "like",
+          "startMs": 281960,
+          "endMs": 282180,
+          "probability": 0.987283
+        },
+        {
+          "text": "before.",
+          "startMs": 282180,
+          "endMs": 282640,
+          "probability": 0.999053
+        }
+      ]
+    },
+    {
+      "text": "Flap your wings and run.",
+      "startMs": 283240,
+      "endMs": 284820,
+      "words": [
+        {
+          "text": "Flap",
+          "startMs": 283240,
+          "endMs": 283440,
+          "probability": 0.784804
+        },
+        {
+          "text": "your",
+          "startMs": 283440,
+          "endMs": 283660,
+          "probability": 0.995845
+        },
+        {
+          "text": "wings",
+          "startMs": 283660,
+          "endMs": 283940,
+          "probability": 0.997773
+        },
+        {
+          "text": "and",
+          "startMs": 283940,
+          "endMs": 284500,
+          "probability": 0.852596
+        },
+        {
+          "text": "run.",
+          "startMs": 284500,
+          "endMs": 284820,
+          "probability": 0.985154
+        }
+      ]
+    },
+    {
+      "text": "Okay.",
+      "startMs": 285760,
+      "endMs": 286680,
+      "words": [
+        {
+          "text": "Okay.",
+          "startMs": 285760,
+          "endMs": 286680,
+          "probability": 0.56538
+        }
+      ]
+    },
+    {
+      "text": "Flap harder.",
+      "startMs": 291580,
+      "endMs": 293420,
+      "words": [
+        {
+          "text": "Flap",
+          "startMs": 291580,
+          "endMs": 292820,
+          "probability": 0.327552
+        },
+        {
+          "text": "harder.",
+          "startMs": 292820,
+          "endMs": 293420,
+          "probability": 0.925152
+        }
+      ]
+    },
+    {
+      "text": "You're flying.",
+      "startMs": 295860,
+      "endMs": 297640,
+      "words": [
+        {
+          "text": "You're",
+          "startMs": 295860,
+          "endMs": 297100,
+          "probability": 0.868348
+        },
+        {
+          "text": "flying.",
+          "startMs": 297100,
+          "endMs": 297640,
+          "probability": 0.980068
+        }
+      ]
+    },
+    {
+      "text": "I'm flying.",
+      "startMs": 299940,
+      "endMs": 300740,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 299940,
+          "endMs": 300260,
+          "probability": 0.641683
+        },
+        {
+          "text": "flying.",
+          "startMs": 300260,
+          "endMs": 300740,
+          "probability": 0.978906
+        }
+      ]
+    },
+    {
+      "text": "I'm not flying.",
+      "startMs": 303680,
+      "endMs": 304740,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 303160,
+          "endMs": 303780,
+          "probability": 0.877864
+        },
+        {
+          "text": "not",
+          "startMs": 303780,
+          "endMs": 304020,
+          "probability": 0.9906
+        },
+        {
+          "text": "flying.",
+          "startMs": 304020,
+          "endMs": 304740,
+          "probability": 0.992116
+        }
+      ]
+    },
+    {
+      "text": "Maybe I should forget about flying.",
+      "startMs": 311680,
+      "endMs": 314080,
+      "words": [
+        {
+          "text": "Maybe",
+          "startMs": 311500,
+          "endMs": 312120,
+          "probability": 0.888817
+        },
+        {
+          "text": "I",
+          "startMs": 312120,
+          "endMs": 312420,
+          "probability": 0.982111
+        },
+        {
+          "text": "should",
+          "startMs": 312420,
+          "endMs": 312580,
+          "probability": 0.995042
+        },
+        {
+          "text": "forget",
+          "startMs": 312580,
+          "endMs": 313000,
+          "probability": 0.997295
+        },
+        {
+          "text": "about",
+          "startMs": 313000,
+          "endMs": 313440,
+          "probability": 0.997554
+        },
+        {
+          "text": "flying.",
+          "startMs": 313440,
+          "endMs": 314080,
+          "probability": 0.998157
+        }
+      ]
+    },
+    {
+      "text": "This should work.",
+      "startMs": 315600,
+      "endMs": 317200,
+      "words": [
+        {
+          "text": "This",
+          "startMs": 315600,
+          "endMs": 316400,
+          "probability": 0.632821
+        },
+        {
+          "text": "should",
+          "startMs": 316400,
+          "endMs": 316700,
+          "probability": 0.996453
+        },
+        {
+          "text": "work.",
+          "startMs": 316700,
+          "endMs": 317200,
+          "probability": 0.998464
+        }
+      ]
+    },
+    {
+      "text": "For what?",
+      "startMs": 317620,
+      "endMs": 318720,
+      "words": [
+        {
+          "text": "For",
+          "startMs": 317620,
+          "endMs": 318360,
+          "probability": 0.851495
+        },
+        {
+          "text": "what?",
+          "startMs": 318360,
+          "endMs": 318720,
+          "probability": 0.988987
+        }
+      ]
+    },
+    {
+      "text": "Helping you fly.",
+      "startMs": 319400,
+      "endMs": 320160,
+      "words": [
+        {
+          "text": "Helping",
+          "startMs": 319400,
+          "endMs": 319680,
+          "probability": 0.938909
+        },
+        {
+          "text": "you",
+          "startMs": 319680,
+          "endMs": 319860,
+          "probability": 0.985328
+        },
+        {
+          "text": "fly.",
+          "startMs": 319860,
+          "endMs": 320160,
+          "probability": 0.997484
+        }
+      ]
+    },
+    {
+      "text": "How can a tree help me fly?",
+      "startMs": 320820,
+      "endMs": 322700,
+      "words": [
+        {
+          "text": "How",
+          "startMs": 320820,
+          "endMs": 321040,
+          "probability": 0.962041
+        },
+        {
+          "text": "can",
+          "startMs": 321040,
+          "endMs": 321280,
+          "probability": 0.987475
+        },
+        {
+          "text": "a",
+          "startMs": 321280,
+          "endMs": 321500,
+          "probability": 0.967596
+        },
+        {
+          "text": "tree",
+          "startMs": 321500,
+          "endMs": 321780,
+          "probability": 0.995475
+        },
+        {
+          "text": "help",
+          "startMs": 321780,
+          "endMs": 322120,
+          "probability": 0.998116
+        },
+        {
+          "text": "me",
+          "startMs": 322120,
+          "endMs": 322320,
+          "probability": 0.994388
+        },
+        {
+          "text": "fly?",
+          "startMs": 322320,
+          "endMs": 322700,
+          "probability": 0.99876
+        }
+      ]
+    },
+    {
+      "text": "First, we bend it over.",
+      "startMs": 323680,
+      "endMs": 326420,
+      "words": [
+        {
+          "text": "First,",
+          "startMs": 323680,
+          "endMs": 324380,
+          "probability": 0.967946
+        },
+        {
+          "text": "we",
+          "startMs": 324920,
+          "endMs": 325100,
+          "probability": 0.948881
+        },
+        {
+          "text": "bend",
+          "startMs": 325100,
+          "endMs": 325780,
+          "probability": 0.954094
+        },
+        {
+          "text": "it",
+          "startMs": 325780,
+          "endMs": 326000,
+          "probability": 0.994887
+        },
+        {
+          "text": "over.",
+          "startMs": 326000,
+          "endMs": 326420,
+          "probability": 0.979716
+        }
+      ]
+    },
+    {
+      "text": "We do.",
+      "startMs": 327220,
+      "endMs": 327960,
+      "words": [
+        {
+          "text": "We",
+          "startMs": 327220,
+          "endMs": 327620,
+          "probability": 0.938945
+        },
+        {
+          "text": "do.",
+          "startMs": 327620,
+          "endMs": 327960,
+          "probability": 0.969346
+        }
+      ]
+    },
+    {
+      "text": "Then you climb on.",
+      "startMs": 328660,
+      "endMs": 330800,
+      "words": [
+        {
+          "text": "Then",
+          "startMs": 328660,
+          "endMs": 329300,
+          "probability": 0.892462
+        },
+        {
+          "text": "you",
+          "startMs": 329300,
+          "endMs": 330060,
+          "probability": 0.655448
+        },
+        {
+          "text": "climb",
+          "startMs": 330060,
+          "endMs": 330400,
+          "probability": 0.995944
+        },
+        {
+          "text": "on.",
+          "startMs": 330400,
+          "endMs": 330800,
+          "probability": 0.996347
+        }
+      ]
+    },
+    {
+      "text": "I do.",
+      "startMs": 332200,
+      "endMs": 333120,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 332200,
+          "endMs": 332780,
+          "probability": 0.959225
+        },
+        {
+          "text": "do.",
+          "startMs": 332780,
+          "endMs": 333120,
+          "probability": 0.998235
+        }
+      ]
+    },
+    {
+      "text": "Then I let go.",
+      "startMs": 334820,
+      "endMs": 336500,
+      "words": [
+        {
+          "text": "Then",
+          "startMs": 334820,
+          "endMs": 335620,
+          "probability": 0.85739
+        },
+        {
+          "text": "I",
+          "startMs": 335620,
+          "endMs": 335920,
+          "probability": 0.977085
+        },
+        {
+          "text": "let",
+          "startMs": 335920,
+          "endMs": 336140,
+          "probability": 0.996514
+        },
+        {
+          "text": "go.",
+          "startMs": 336140,
+          "endMs": 336500,
+          "probability": 0.995937
+        }
+      ]
+    },
+    {
+      "text": "You do?",
+      "startMs": 337540,
+      "endMs": 338120,
+      "words": [
+        {
+          "text": "You",
+          "startMs": 337540,
+          "endMs": 337820,
+          "probability": 0.982308
+        },
+        {
+          "text": "do?",
+          "startMs": 337820,
+          "endMs": 338120,
+          "probability": 0.999224
+        }
+      ]
+    },
+    {
+      "text": "Yes.",
+      "startMs": 338720,
+      "endMs": 339200,
+      "words": [
+        {
+          "text": "Yes.",
+          "startMs": 338720,
+          "endMs": 339200,
+          "probability": 0.986475
+        }
+      ]
+    },
+    {
+      "text": "And you fly.",
+      "startMs": 339200,
+      "endMs": 340740,
+      "words": [
+        {
+          "text": "And",
+          "startMs": 339200,
+          "endMs": 339960,
+          "probability": 0.159581
+        },
+        {
+          "text": "you",
+          "startMs": 339960,
+          "endMs": 340160,
+          "probability": 0.950024
+        },
+        {
+          "text": "fly.",
+          "startMs": 340160,
+          "endMs": 340740,
+          "probability": 0.9949
+        }
+      ]
+    },
+    {
+      "text": "I don't see.",
+      "startMs": 341680,
+      "endMs": 342680,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 341680,
+          "endMs": 342080,
+          "probability": 0.821435
+        },
+        {
+          "text": "don't",
+          "startMs": 342080,
+          "endMs": 342500,
+          "probability": 0.970287
+        },
+        {
+          "text": "see.",
+          "startMs": 342500,
+          "endMs": 342680,
+          "probability": 0.591417
+        }
+      ]
+    },
+    {
+      "text": "Flap your wings.",
+      "startMs": 344060,
+      "endMs": 347120,
+      "words": [
+        {
+          "text": "Flap",
+          "startMs": 344060,
+          "endMs": 345180,
+          "probability": 0.410141
+        },
+        {
+          "text": "your",
+          "startMs": 345180,
+          "endMs": 346460,
+          "probability": 0.990038
+        },
+        {
+          "text": "wings.",
+          "startMs": 346460,
+          "endMs": 347120,
+          "probability": 0.996986
+        }
+      ]
+    },
+    {
+      "text": "Hey!",
+      "startMs": 350200,
+      "endMs": 350720,
+      "words": [
+        {
+          "text": "Hey!",
+          "startMs": 350080,
+          "endMs": 350720,
+          "probability": 0.595937
+        }
+      ]
+    },
+    {
+      "text": "I'm flying.",
+      "startMs": 351540,
+      "endMs": 352180,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 351540,
+          "endMs": 351900,
+          "probability": 0.982288
+        },
+        {
+          "text": "flying.",
+          "startMs": 351900,
+          "endMs": 352180,
+          "probability": 0.978275
+        }
+      ]
+    },
+    {
+      "text": "I'm flying.",
+      "startMs": 353200,
+      "endMs": 353880,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 353200,
+          "endMs": 353440,
+          "probability": 0.982055
+        },
+        {
+          "text": "flying.",
+          "startMs": 353440,
+          "endMs": 353880,
+          "probability": 0.984393
+        }
+      ]
+    },
+    {
+      "text": "I'm flying.",
+      "startMs": 356420,
+      "endMs": 358340,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 356420,
+          "endMs": 357700,
+          "probability": 0.865949
+        },
+        {
+          "text": "flying.",
+          "startMs": 357700,
+          "endMs": 358340,
+          "probability": 0.443759
+        }
+      ]
+    },
+    {
+      "text": "I'll catch you.",
+      "startMs": 360260,
+      "endMs": 364800,
+      "words": [
+        {
+          "text": "I'll",
+          "startMs": 360260,
+          "endMs": 360660,
+          "probability": 0.317441
+        },
+        {
+          "text": "catch",
+          "startMs": 360660,
+          "endMs": 364280,
+          "probability": 0.961702
+        },
+        {
+          "text": "you.",
+          "startMs": 364280,
+          "endMs": 364800,
+          "probability": 0.995028
+        }
+      ]
+    },
+    {
+      "text": "Hey!",
+      "startMs": 368920,
+      "endMs": 369540,
+      "words": [
+        {
+          "text": "Hey!",
+          "startMs": 368920,
+          "endMs": 369540,
+          "probability": 0.375897
+        }
+      ]
+    },
+    {
+      "text": "You did it.",
+      "startMs": 369840,
+      "endMs": 370700,
+      "words": [
+        {
+          "text": "You",
+          "startMs": 369840,
+          "endMs": 369960,
+          "probability": 0.953121
+        },
+        {
+          "text": "did",
+          "startMs": 369960,
+          "endMs": 370260,
+          "probability": 0.989179
+        },
+        {
+          "text": "it.",
+          "startMs": 370260,
+          "endMs": 370700,
+          "probability": 0.925375
+        }
+      ]
+    },
+    {
+      "text": "You're flying.",
+      "startMs": 370820,
+      "endMs": 371620,
+      "words": [
+        {
+          "text": "You're",
+          "startMs": 370820,
+          "endMs": 371020,
+          "probability": 0.972547
+        },
+        {
+          "text": "flying.",
+          "startMs": 371020,
+          "endMs": 371620,
+          "probability": 0.966636
+        }
+      ]
+    },
+    {
+      "text": "Wow.",
+      "startMs": 372420,
+      "endMs": 372940,
+      "words": [
+        {
+          "text": "Wow.",
+          "startMs": 372420,
+          "endMs": 372940,
+          "probability": 0.132013
+        }
+      ]
+    },
+    {
+      "text": "Wait a minute.",
+      "startMs": 377860,
+      "endMs": 381560,
+      "words": [
+        {
+          "text": "Wait",
+          "startMs": 377860,
+          "endMs": 378480,
+          "probability": 0.804585
+        },
+        {
+          "text": "a",
+          "startMs": 378480,
+          "endMs": 378480,
+          "probability": 0.992983
+        },
+        {
+          "text": "minute.",
+          "startMs": 378480,
+          "endMs": 381560,
+          "probability": 0.985658
+        }
+      ]
+    },
+    {
+      "text": "How do you stop?",
+      "startMs": 382180,
+      "endMs": 383100,
+      "words": [
+        {
+          "text": "How",
+          "startMs": 382180,
+          "endMs": 382400,
+          "probability": 0.943641
+        },
+        {
+          "text": "do",
+          "startMs": 382400,
+          "endMs": 382520,
+          "probability": 0.935572
+        },
+        {
+          "text": "you",
+          "startMs": 382520,
+          "endMs": 382680,
+          "probability": 0.992693
+        },
+        {
+          "text": "stop?",
+          "startMs": 382680,
+          "endMs": 383100,
+          "probability": 0.862069
+        }
+      ]
+    },
+    {
+      "text": "I don't know.",
+      "startMs": 384160,
+      "endMs": 385020,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 384160,
+          "endMs": 384440,
+          "probability": 0.993554
+        },
+        {
+          "text": "don't",
+          "startMs": 384440,
+          "endMs": 384700,
+          "probability": 0.997813
+        },
+        {
+          "text": "know.",
+          "startMs": 384700,
+          "endMs": 385020,
+          "probability": 0.999347
+        }
+      ]
+    },
+    {
+      "text": "I think I'm still too young to fly.",
+      "startMs": 390860,
+      "endMs": 393720,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 390860,
+          "endMs": 391480,
+          "probability": 0.859504
+        },
+        {
+          "text": "think",
+          "startMs": 391480,
+          "endMs": 392100,
+          "probability": 0.988916
+        },
+        {
+          "text": "I'm",
+          "startMs": 392100,
+          "endMs": 392360,
+          "probability": 0.992656
+        },
+        {
+          "text": "still",
+          "startMs": 392360,
+          "endMs": 392620,
+          "probability": 0.998926
+        },
+        {
+          "text": "too",
+          "startMs": 392620,
+          "endMs": 392860,
+          "probability": 0.997505
+        },
+        {
+          "text": "young",
+          "startMs": 392860,
+          "endMs": 393140,
+          "probability": 0.996888
+        },
+        {
+          "text": "to",
+          "startMs": 393140,
+          "endMs": 393440,
+          "probability": 0.997558
+        },
+        {
+          "text": "fly.",
+          "startMs": 393440,
+          "endMs": 393720,
+          "probability": 0.995938
+        }
+      ]
+    },
+    {
+      "text": "I'm sorry.",
+      "startMs": 393720,
+      "endMs": 395220,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 393720,
+          "endMs": 394820,
+          "probability": 0.724093
+        },
+        {
+          "text": "sorry.",
+          "startMs": 394820,
+          "endMs": 395220,
+          "probability": 0.965212
+        }
+      ]
+    },
+    {
+      "text": "I'm not.",
+      "startMs": 395800,
+      "endMs": 396640,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 395800,
+          "endMs": 396440,
+          "probability": 0.940758
+        },
+        {
+          "text": "not.",
+          "startMs": 396440,
+          "endMs": 396640,
+          "probability": 0.96155
+        }
+      ]
+    },
+    {
+      "text": "I'd rather stay here and play with you.",
+      "startMs": 397020,
+      "endMs": 399180,
+      "words": [
+        {
+          "text": "I'd",
+          "startMs": 397020,
+          "endMs": 397360,
+          "probability": 0.996155
+        },
+        {
+          "text": "rather",
+          "startMs": 397360,
+          "endMs": 397460,
+          "probability": 0.998749
+        },
+        {
+          "text": "stay",
+          "startMs": 397460,
+          "endMs": 397920,
+          "probability": 0.995187
+        },
+        {
+          "text": "here",
+          "startMs": 397920,
+          "endMs": 398240,
+          "probability": 0.996046
+        },
+        {
+          "text": "and",
+          "startMs": 398240,
+          "endMs": 398420,
+          "probability": 0.993778
+        },
+        {
+          "text": "play",
+          "startMs": 398420,
+          "endMs": 398640,
+          "probability": 0.997869
+        },
+        {
+          "text": "with",
+          "startMs": 398640,
+          "endMs": 398880,
+          "probability": 0.997768
+        },
+        {
+          "text": "you.",
+          "startMs": 398880,
+          "endMs": 399180,
+          "probability": 0.994507
+        }
+      ]
+    },
+    {
+      "text": "Really?",
+      "startMs": 399640,
+      "endMs": 400240,
+      "words": [
+        {
+          "text": "Really?",
+          "startMs": 399640,
+          "endMs": 400240,
+          "probability": 0.974259
+        }
+      ]
+    },
+    {
+      "text": "Yes.",
+      "startMs": 400840,
+      "endMs": 401060,
+      "words": [
+        {
+          "text": "Yes.",
+          "startMs": 400840,
+          "endMs": 401060,
+          "probability": 0.950978
+        }
+      ]
+    },
+    {
+      "text": "What's your name?",
+      "startMs": 401560,
+      "endMs": 402460,
+      "words": [
+        {
+          "text": "What's",
+          "startMs": 401560,
+          "endMs": 402080,
+          "probability": 0.989146
+        },
+        {
+          "text": "your",
+          "startMs": 402080,
+          "endMs": 402200,
+          "probability": 0.99781
+        },
+        {
+          "text": "name?",
+          "startMs": 402200,
+          "endMs": 402460,
+          "probability": 0.999279
+        }
+      ]
+    },
+    {
+      "text": "I'm Little Bear.",
+      "startMs": 403000,
+      "endMs": 403700,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 403000,
+          "endMs": 403260,
+          "probability": 0.989017
+        },
+        {
+          "text": "Little",
+          "startMs": 403260,
+          "endMs": 403500,
+          "probability": 0.797191
+        },
+        {
+          "text": "Bear.",
+          "startMs": 403500,
+          "endMs": 403700,
+          "probability": 0.973687
+        }
+      ]
+    },
+    {
+      "text": "What's your name?",
+      "startMs": 404100,
+      "endMs": 404900,
+      "words": [
+        {
+          "text": "What's",
+          "startMs": 404100,
+          "endMs": 404520,
+          "probability": 0.991591
+        },
+        {
+          "text": "your",
+          "startMs": 404520,
+          "endMs": 404640,
+          "probability": 0.997145
+        },
+        {
+          "text": "name?",
+          "startMs": 404640,
+          "endMs": 404900,
+          "probability": 0.998946
+        }
+      ]
+    },
+    {
+      "text": "I'm Duck.",
+      "startMs": 405900,
+      "endMs": 406760,
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 405900,
+          "endMs": 406540,
+          "probability": 0.992651
+        },
+        {
+          "text": "Duck.",
+          "startMs": 406540,
+          "endMs": 406760,
+          "probability": 0.470155
+        }
+      ]
+    },
+    {
+      "text": "Hi, Duck.",
+      "startMs": 408720,
+      "endMs": 409660,
+      "words": [
+        {
+          "text": "Hi,",
+          "startMs": 408720,
+          "endMs": 409360,
+          "probability": 0.957698
+        },
+        {
+          "text": "Duck.",
+          "startMs": 409520,
+          "endMs": 409660,
+          "probability": 0.81594
+        }
+      ]
+    },
+    {
+      "text": "Hi, Little Bear.",
+      "startMs": 410840,
+      "endMs": 412140,
+      "words": [
+        {
+          "text": "Hi,",
+          "startMs": 410840,
+          "endMs": 411480,
+          "probability": 0.912953
+        },
+        {
+          "text": "Little",
+          "startMs": 411600,
+          "endMs": 411780,
+          "probability": 0.949096
+        },
+        {
+          "text": "Bear.",
+          "startMs": 411780,
+          "endMs": 412140,
+          "probability": 0.990985
+        }
+      ]
+    },
+    {
+      "text": "You think that you'll ever fly soak for the winter duck?",
+      "startMs": 414500,
+      "endMs": 417660,
+      "words": [
+        {
+          "text": "You",
+          "startMs": 414500,
+          "endMs": 415140,
+          "probability": 0.551693
+        },
+        {
+          "text": "think",
+          "startMs": 415140,
+          "endMs": 415420,
+          "probability": 0.984749
+        },
+        {
+          "text": "that",
+          "startMs": 415420,
+          "endMs": 415700,
+          "probability": 0.864845
+        },
+        {
+          "text": "you'll",
+          "startMs": 415700,
+          "endMs": 415940,
+          "probability": 0.974873
+        },
+        {
+          "text": "ever",
+          "startMs": 415940,
+          "endMs": 416120,
+          "probability": 0.984263
+        },
+        {
+          "text": "fly",
+          "startMs": 416120,
+          "endMs": 416420,
+          "probability": 0.992733
+        },
+        {
+          "text": "soak",
+          "startMs": 416420,
+          "endMs": 416960,
+          "probability": 0.171192
+        },
+        {
+          "text": "for",
+          "startMs": 416960,
+          "endMs": 417040,
+          "probability": 0.993738
+        },
+        {
+          "text": "the",
+          "startMs": 417040,
+          "endMs": 417160,
+          "probability": 0.961956
+        },
+        {
+          "text": "winter",
+          "startMs": 417160,
+          "endMs": 417400,
+          "probability": 0.656888
+        },
+        {
+          "text": "duck?",
+          "startMs": 417400,
+          "endMs": 417660,
+          "probability": 0.895559
+        }
+      ]
+    },
+    {
+      "text": "You?",
+      "startMs": 418180,
+      "endMs": 418380,
+      "words": [
+        {
+          "text": "You?",
+          "startMs": 418180,
+          "endMs": 418380,
+          "probability": 0.555058
+        }
+      ]
+    },
+    {
+      "text": "I don't think so.",
+      "startMs": 419080,
+      "endMs": 420540,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 419080,
+          "endMs": 419720,
+          "probability": 0.988333
+        },
+        {
+          "text": "don't",
+          "startMs": 419720,
+          "endMs": 419960,
+          "probability": 0.998166
+        },
+        {
+          "text": "think",
+          "startMs": 419960,
+          "endMs": 420160,
+          "probability": 0.999003
+        },
+        {
+          "text": "so.",
+          "startMs": 420160,
+          "endMs": 420540,
+          "probability": 0.999228
+        }
+      ]
+    },
+    {
+      "text": "Me neither.",
+      "startMs": 421320,
+      "endMs": 422620,
+      "words": [
+        {
+          "text": "Me",
+          "startMs": 421320,
+          "endMs": 421580,
+          "probability": 0.95634
+        },
+        {
+          "text": "neither.",
+          "startMs": 421580,
+          "endMs": 422620,
+          "probability": 0.96933
+        }
+      ]
+    },
+    {
+      "text": "Good.",
+      "startMs": 424380,
+      "endMs": 425780,
+      "words": [
+        {
+          "text": "Good.",
+          "startMs": 424380,
+          "endMs": 425780,
+          "probability": 0.540256
+        }
+      ]
+    },
+    {
+      "text": "What?",
+      "startMs": 427140,
+      "endMs": 427840,
+      "words": [
+        {
+          "text": "What?",
+          "startMs": 427140,
+          "endMs": 427840,
+          "probability": 0.07272
+        }
+      ]
+    },
+    {
+      "text": "What?",
+      "startMs": 428060,
+      "endMs": 428160,
+      "words": [
+        {
+          "text": "What?",
+          "startMs": 428060,
+          "endMs": 428160,
+          "probability": 0.662704
+        }
+      ]
+    },
+    {
+      "text": "What?",
+      "startMs": 428700,
+      "endMs": 428780,
+      "words": [
+        {
+          "text": "What?",
+          "startMs": 428700,
+          "endMs": 428780,
+          "probability": 0.822205
+        }
+      ]
+    },
+    {
+      "text": "What?",
+      "startMs": 429080,
+      "endMs": 429240,
+      "words": [
+        {
+          "text": "What?",
+          "startMs": 429080,
+          "endMs": 429240,
+          "probability": 0.781054
+        }
+      ]
+    },
+    {
+      "text": "What?",
+      "startMs": 429720,
+      "endMs": 429920,
+      "words": [
+        {
+          "text": "What?",
+          "startMs": 429720,
+          "endMs": 429920,
+          "probability": 0.697872
+        }
+      ]
+    },
+    {
+      "text": "",
+      "startMs": 430340,
+      "endMs": 430340,
+      "words": []
+    },
+    {
+      "text": "",
+      "startMs": 430740,
+      "endMs": 430740,
+      "words": []
+    },
+    {
+      "text": "",
+      "startMs": 430800,
+      "endMs": 430800,
+      "words": []
+    },
+    {
+      "text": "",
+      "startMs": 431240,
+      "endMs": 431240,
+      "words": []
+    },
+    {
+      "text": "What?",
+      "startMs": 473540,
+      "endMs": 474940,
+      "words": [
+        {
+          "text": "What?",
+          "startMs": 473540,
+          "endMs": 474940,
+          "probability": 0.003143
+        }
+      ]
+    },
+    {
+      "text": "What?",
+      "startMs": 478820,
+      "endMs": 479260,
+      "words": [
+        {
+          "text": "What?",
+          "startMs": 478820,
+          "endMs": 479260,
+          "probability": 0.148293
+        }
+      ]
+    },
+    {
+      "text": "",
+      "startMs": 479260,
+      "endMs": 479260,
+      "words": []
+    },
+    {
+      "text": "",
+      "startMs": 479260,
+      "endMs": 479260,
+      "words": []
+    },
+    {
+      "text": "",
+      "startMs": 479260,
+      "endMs": 479260,
+      "words": []
+    },
+    {
+      "text": "",
+      "startMs": 479260,
+      "endMs": 479260,
+      "words": []
+    },
+    {
+      "text": "",
+      "startMs": 479260,
+      "endMs": 479260,
+      "words": []
+    },
+    {
+      "text": "",
+      "startMs": 479260,
+      "endMs": 479260,
+      "words": []
+    }
+  ]
+}

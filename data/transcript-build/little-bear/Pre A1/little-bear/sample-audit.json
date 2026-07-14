@@ -1,0 +1,80 @@
+[
+  {
+    "trackId": "track-little-bear-010",
+    "title": "Up all night",
+    "firstLine": {
+      "lineId": "track-little-bear-010-line-1",
+      "text": "Can Father Bear see the sunset at the see?",
+      "startMs": 67460,
+      "endMs": 69760,
+      "sourceLineIndex": 1
+    },
+    "middleLine": {
+      "lineId": "track-little-bear-010-line-52",
+      "text": "Don't you get scared?",
+      "startMs": 310980,
+      "endMs": 312260,
+      "sourceLineIndex": 52
+    },
+    "lastLine": {
+      "lineId": "track-little-bear-010-line-103",
+      "text": "Yes, I am.",
+      "startMs": 500460,
+      "endMs": 509597,
+      "sourceLineIndex": 103
+    },
+    "lastLineEndsAtDuration": true
+  },
+  {
+    "trackId": "track-little-bear-070",
+    "title": "Between friends",
+    "firstLine": {
+      "lineId": "track-little-bear-070-line-1",
+      "text": "How are you feeling, little bear?",
+      "startMs": 72880,
+      "endMs": 77960,
+      "sourceLineIndex": 1
+    },
+    "middleLine": {
+      "lineId": "track-little-bear-070-line-54",
+      "text": "Oh Lucy, and what a good doctor little bear turned out to be.",
+      "startMs": 298980,
+      "endMs": 302920,
+      "sourceLineIndex": 54
+    },
+    "lastLine": {
+      "lineId": "track-little-bear-070-line-107",
+      "text": "Perfect, now the book really belongs to both of us.",
+      "startMs": 501400,
+      "endMs": 510407,
+      "sourceLineIndex": 108
+    },
+    "lastLineEndsAtDuration": true
+  },
+  {
+    "trackId": "track-little-bear-135",
+    "title": "Detective Little Bear",
+    "firstLine": {
+      "lineId": "track-little-bear-135-line-1",
+      "text": "Hmm, interesting.",
+      "startMs": 16060,
+      "endMs": 17820,
+      "sourceLineIndex": 1
+    },
+    "middleLine": {
+      "lineId": "track-little-bear-135-line-50",
+      "text": "Why?",
+      "startMs": 219260,
+      "endMs": 219900,
+      "sourceLineIndex": 56
+    },
+    "lastLine": {
+      "lineId": "track-little-bear-135-line-99",
+      "text": "Goblin are very mysterious, aren't they?",
+      "startMs": 436220,
+      "endMs": 479869,
+      "sourceLineIndex": 116
+    },
+    "lastLineEndsAtDuration": true
+  }
+]

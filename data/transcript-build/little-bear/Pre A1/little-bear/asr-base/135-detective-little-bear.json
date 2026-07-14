@@ -1,0 +1,4198 @@
+{
+  "model": "base",
+  "language": "en",
+  "elapsedSec": 14.342,
+  "segments": [
+    {
+      "text": "Hmm, interesting.",
+      "startMs": 16060,
+      "endMs": 17820,
+      "words": [
+        {
+          "text": "Hmm,",
+          "startMs": 16060,
+          "endMs": 16940,
+          "probability": 0.183205
+        },
+        {
+          "text": "interesting.",
+          "startMs": 16940,
+          "endMs": 17820,
+          "probability": 0.955455
+        }
+      ]
+    },
+    {
+      "text": "What do you think this is, grandfather bear?",
+      "startMs": 20200,
+      "endMs": 21840,
+      "words": [
+        {
+          "text": "What",
+          "startMs": 19780,
+          "endMs": 20220,
+          "probability": 0.956811
+        },
+        {
+          "text": "do",
+          "startMs": 20220,
+          "endMs": 20340,
+          "probability": 0.989232
+        },
+        {
+          "text": "you",
+          "startMs": 20340,
+          "endMs": 20420,
+          "probability": 0.996463
+        },
+        {
+          "text": "think",
+          "startMs": 20420,
+          "endMs": 20620,
+          "probability": 0.996324
+        },
+        {
+          "text": "this",
+          "startMs": 20620,
+          "endMs": 20820,
+          "probability": 0.929319
+        },
+        {
+          "text": "is,",
+          "startMs": 20820,
+          "endMs": 21020,
+          "probability": 0.984675
+        },
+        {
+          "text": "grandfather",
+          "startMs": 21160,
+          "endMs": 21580,
+          "probability": 0.415108
+        },
+        {
+          "text": "bear?",
+          "startMs": 21580,
+          "endMs": 21840,
+          "probability": 0.704888
+        }
+      ]
+    },
+    {
+      "text": "A six-legged monster?",
+      "startMs": 23120,
+      "endMs": 25020,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 23120,
+          "endMs": 23580,
+          "probability": 0.892916
+        },
+        {
+          "text": "six",
+          "startMs": 23580,
+          "endMs": 23920,
+          "probability": 0.665183
+        },
+        {
+          "text": "-legged",
+          "startMs": 23920,
+          "endMs": 24300,
+          "probability": 0.786223
+        },
+        {
+          "text": "monster?",
+          "startMs": 24300,
+          "endMs": 25020,
+          "probability": 0.982887
+        }
+      ]
+    },
+    {
+      "text": "No.",
+      "startMs": 25600,
+      "endMs": 26080,
+      "words": [
+        {
+          "text": "No.",
+          "startMs": 25600,
+          "endMs": 26080,
+          "probability": 0.964247
+        }
+      ]
+    },
+    {
+      "text": "It's just an ant.",
+      "startMs": 26820,
+      "endMs": 28240,
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 26820,
+          "endMs": 27340,
+          "probability": 0.990784
+        },
+        {
+          "text": "just",
+          "startMs": 27340,
+          "endMs": 27540,
+          "probability": 0.998313
+        },
+        {
+          "text": "an",
+          "startMs": 27540,
+          "endMs": 27960,
+          "probability": 0.981805
+        },
+        {
+          "text": "ant.",
+          "startMs": 27960,
+          "endMs": 28240,
+          "probability": 0.841788
+        }
+      ]
+    },
+    {
+      "text": "Why, of course.",
+      "startMs": 28240,
+      "endMs": 29800,
+      "words": [
+        {
+          "text": "Why,",
+          "startMs": 28240,
+          "endMs": 29240,
+          "probability": 0.756919
+        },
+        {
+          "text": "of",
+          "startMs": 29380,
+          "endMs": 29460,
+          "probability": 0.993958
+        },
+        {
+          "text": "course.",
+          "startMs": 29460,
+          "endMs": 29800,
+          "probability": 0.994592
+        }
+      ]
+    },
+    {
+      "text": "How elementary?",
+      "startMs": 30520,
+      "endMs": 31700,
+      "words": [
+        {
+          "text": "How",
+          "startMs": 30520,
+          "endMs": 30780,
+          "probability": 0.983439
+        },
+        {
+          "text": "elementary?",
+          "startMs": 30780,
+          "endMs": 31700,
+          "probability": 0.979076
+        }
+      ]
+    },
+    {
+      "text": "Hmm, elementary.",
+      "startMs": 33320,
+      "endMs": 35060,
+      "words": [
+        {
+          "text": "Hmm,",
+          "startMs": 33100,
+          "endMs": 33460,
+          "probability": 0.590211
+        },
+        {
+          "text": "elementary.",
+          "startMs": 35060,
+          "endMs": 35060,
+          "probability": 0.949016
+        }
+      ]
+    },
+    {
+      "text": "Why?",
+      "startMs": 36100,
+      "endMs": 36700,
+      "words": [
+        {
+          "text": "Why?",
+          "startMs": 36100,
+          "endMs": 36700,
+          "probability": 0.888635
+        }
+      ]
+    },
+    {
+      "text": "What big eyes you have?",
+      "startMs": 37260,
+      "endMs": 39580,
+      "words": [
+        {
+          "text": "What",
+          "startMs": 37260,
+          "endMs": 37760,
+          "probability": 0.989386
+        },
+        {
+          "text": "big",
+          "startMs": 37760,
+          "endMs": 38200,
+          "probability": 0.994942
+        },
+        {
+          "text": "eyes",
+          "startMs": 38200,
+          "endMs": 38840,
+          "probability": 0.977244
+        },
+        {
+          "text": "you",
+          "startMs": 38840,
+          "endMs": 39220,
+          "probability": 0.972535
+        },
+        {
+          "text": "have?",
+          "startMs": 39220,
+          "endMs": 39580,
+          "probability": 0.999493
+        }
+      ]
+    },
+    {
+      "text": "The better to see you with.",
+      "startMs": 40300,
+      "endMs": 41580,
+      "words": [
+        {
+          "text": "The",
+          "startMs": 40300,
+          "endMs": 40520,
+          "probability": 0.944978
+        },
+        {
+          "text": "better",
+          "startMs": 40520,
+          "endMs": 40720,
+          "probability": 0.986337
+        },
+        {
+          "text": "to",
+          "startMs": 40720,
+          "endMs": 40960,
+          "probability": 0.984062
+        },
+        {
+          "text": "see",
+          "startMs": 40960,
+          "endMs": 41220,
+          "probability": 0.99747
+        },
+        {
+          "text": "you",
+          "startMs": 41220,
+          "endMs": 41440,
+          "probability": 0.907128
+        },
+        {
+          "text": "with.",
+          "startMs": 41440,
+          "endMs": 41580,
+          "probability": 0.966187
+        }
+      ]
+    },
+    {
+      "text": "Let's go look at more things.",
+      "startMs": 44940,
+      "endMs": 46740,
+      "words": [
+        {
+          "text": "Let's",
+          "startMs": 44940,
+          "endMs": 45660,
+          "probability": 0.848269
+        },
+        {
+          "text": "go",
+          "startMs": 45660,
+          "endMs": 45780,
+          "probability": 0.979965
+        },
+        {
+          "text": "look",
+          "startMs": 45780,
+          "endMs": 45960,
+          "probability": 0.956374
+        },
+        {
+          "text": "at",
+          "startMs": 45960,
+          "endMs": 46020,
+          "probability": 0.965792
+        },
+        {
+          "text": "more",
+          "startMs": 46020,
+          "endMs": 46260,
+          "probability": 0.997392
+        },
+        {
+          "text": "things.",
+          "startMs": 46260,
+          "endMs": 46740,
+          "probability": 0.996744
+        }
+      ]
+    },
+    {
+      "text": "Good idea, but first, we'd want to stray too far from the house and be late for lunch.",
+      "startMs": 47520,
+      "endMs": 55120,
+      "words": [
+        {
+          "text": "Good",
+          "startMs": 47520,
+          "endMs": 47800,
+          "probability": 0.989667
+        },
+        {
+          "text": "idea,",
+          "startMs": 47800,
+          "endMs": 48340,
+          "probability": 0.999166
+        },
+        {
+          "text": "but",
+          "startMs": 48860,
+          "endMs": 48960,
+          "probability": 0.994647
+        },
+        {
+          "text": "first,",
+          "startMs": 48960,
+          "endMs": 49440,
+          "probability": 0.98032
+        },
+        {
+          "text": "we'd",
+          "startMs": 50960,
+          "endMs": 51180,
+          "probability": 0.652927
+        },
+        {
+          "text": "want",
+          "startMs": 51180,
+          "endMs": 51320,
+          "probability": 0.789128
+        },
+        {
+          "text": "to",
+          "startMs": 51320,
+          "endMs": 51460,
+          "probability": 0.982054
+        },
+        {
+          "text": "stray",
+          "startMs": 51460,
+          "endMs": 51800,
+          "probability": 0.982015
+        },
+        {
+          "text": "too",
+          "startMs": 51800,
+          "endMs": 52340,
+          "probability": 0.988115
+        },
+        {
+          "text": "far",
+          "startMs": 52340,
+          "endMs": 52700,
+          "probability": 0.999695
+        },
+        {
+          "text": "from",
+          "startMs": 52700,
+          "endMs": 52960,
+          "probability": 0.998327
+        },
+        {
+          "text": "the",
+          "startMs": 52960,
+          "endMs": 53200,
+          "probability": 0.997287
+        },
+        {
+          "text": "house",
+          "startMs": 53200,
+          "endMs": 53500,
+          "probability": 0.995346
+        },
+        {
+          "text": "and",
+          "startMs": 53500,
+          "endMs": 53920,
+          "probability": 0.943179
+        },
+        {
+          "text": "be",
+          "startMs": 53920,
+          "endMs": 54120,
+          "probability": 0.993413
+        },
+        {
+          "text": "late",
+          "startMs": 54120,
+          "endMs": 54340,
+          "probability": 0.99568
+        },
+        {
+          "text": "for",
+          "startMs": 54340,
+          "endMs": 54640,
+          "probability": 0.997489
+        },
+        {
+          "text": "lunch.",
+          "startMs": 54640,
+          "endMs": 55120,
+          "probability": 0.977481
+        }
+      ]
+    },
+    {
+      "text": "Hmm, that's strange.",
+      "startMs": 57060,
+      "endMs": 59500,
+      "words": [
+        {
+          "text": "Hmm,",
+          "startMs": 57060,
+          "endMs": 57900,
+          "probability": 0.215082
+        },
+        {
+          "text": "that's",
+          "startMs": 58500,
+          "endMs": 59020,
+          "probability": 0.961855
+        },
+        {
+          "text": "strange.",
+          "startMs": 59020,
+          "endMs": 59500,
+          "probability": 0.955028
+        }
+      ]
+    },
+    {
+      "text": "What strange?",
+      "startMs": 60400,
+      "endMs": 60980,
+      "words": [
+        {
+          "text": "What",
+          "startMs": 60400,
+          "endMs": 60540,
+          "probability": 0.871922
+        },
+        {
+          "text": "strange?",
+          "startMs": 60540,
+          "endMs": 60980,
+          "probability": 0.631525
+        }
+      ]
+    },
+    {
+      "text": "My pocket watch is missing.",
+      "startMs": 61740,
+      "endMs": 63580,
+      "words": [
+        {
+          "text": "My",
+          "startMs": 61740,
+          "endMs": 61820,
+          "probability": 0.539943
+        },
+        {
+          "text": "pocket",
+          "startMs": 61820,
+          "endMs": 62340,
+          "probability": 0.981049
+        },
+        {
+          "text": "watch",
+          "startMs": 62340,
+          "endMs": 62680,
+          "probability": 0.937225
+        },
+        {
+          "text": "is",
+          "startMs": 62680,
+          "endMs": 63100,
+          "probability": 0.996766
+        },
+        {
+          "text": "missing.",
+          "startMs": 63100,
+          "endMs": 63580,
+          "probability": 0.997627
+        }
+      ]
+    },
+    {
+      "text": "Now where can it be?",
+      "startMs": 64180,
+      "endMs": 65460,
+      "words": [
+        {
+          "text": "Now",
+          "startMs": 64180,
+          "endMs": 64560,
+          "probability": 0.974227
+        },
+        {
+          "text": "where",
+          "startMs": 64560,
+          "endMs": 64820,
+          "probability": 0.745933
+        },
+        {
+          "text": "can",
+          "startMs": 64820,
+          "endMs": 65040,
+          "probability": 0.972404
+        },
+        {
+          "text": "it",
+          "startMs": 65040,
+          "endMs": 65240,
+          "probability": 0.959702
+        },
+        {
+          "text": "be?",
+          "startMs": 65240,
+          "endMs": 65460,
+          "probability": 0.999509
+        }
+      ]
+    },
+    {
+      "text": "A missing pocket watch.",
+      "startMs": 66120,
+      "endMs": 67940,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 66120,
+          "endMs": 66260,
+          "probability": 0.984967
+        },
+        {
+          "text": "missing",
+          "startMs": 66260,
+          "endMs": 66620,
+          "probability": 0.98701
+        },
+        {
+          "text": "pocket",
+          "startMs": 66620,
+          "endMs": 67260,
+          "probability": 0.992139
+        },
+        {
+          "text": "watch.",
+          "startMs": 67260,
+          "endMs": 67940,
+          "probability": 0.991914
+        }
+      ]
+    },
+    {
+      "text": "How mysterious.",
+      "startMs": 68360,
+      "endMs": 69580,
+      "words": [
+        {
+          "text": "How",
+          "startMs": 68360,
+          "endMs": 68760,
+          "probability": 0.99202
+        },
+        {
+          "text": "mysterious.",
+          "startMs": 68760,
+          "endMs": 69580,
+          "probability": 0.99748
+        }
+      ]
+    },
+    {
+      "text": "It's a mystery, all right.",
+      "startMs": 70760,
+      "endMs": 72340,
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 70760,
+          "endMs": 71220,
+          "probability": 0.993333
+        },
+        {
+          "text": "a",
+          "startMs": 71220,
+          "endMs": 71280,
+          "probability": 0.993359
+        },
+        {
+          "text": "mystery,",
+          "startMs": 71280,
+          "endMs": 71680,
+          "probability": 0.998738
+        },
+        {
+          "text": "all",
+          "startMs": 71680,
+          "endMs": 72100,
+          "probability": 0.642875
+        },
+        {
+          "text": "right.",
+          "startMs": 72100,
+          "endMs": 72340,
+          "probability": 0.998447
+        }
+      ]
+    },
+    {
+      "text": "A mystery for detective little bear.",
+      "startMs": 77080,
+      "endMs": 79880,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 77080,
+          "endMs": 77460,
+          "probability": 0.867526
+        },
+        {
+          "text": "mystery",
+          "startMs": 77460,
+          "endMs": 77940,
+          "probability": 0.997034
+        },
+        {
+          "text": "for",
+          "startMs": 77940,
+          "endMs": 78320,
+          "probability": 0.996172
+        },
+        {
+          "text": "detective",
+          "startMs": 78320,
+          "endMs": 78960,
+          "probability": 0.381245
+        },
+        {
+          "text": "little",
+          "startMs": 78960,
+          "endMs": 79560,
+          "probability": 0.181423
+        },
+        {
+          "text": "bear.",
+          "startMs": 79560,
+          "endMs": 79880,
+          "probability": 0.907816
+        }
+      ]
+    },
+    {
+      "text": "You're the best little bear for the job.",
+      "startMs": 81640,
+      "endMs": 83320,
+      "words": [
+        {
+          "text": "You're",
+          "startMs": 81240,
+          "endMs": 81660,
+          "probability": 0.957299
+        },
+        {
+          "text": "the",
+          "startMs": 81660,
+          "endMs": 81780,
+          "probability": 0.996289
+        },
+        {
+          "text": "best",
+          "startMs": 81780,
+          "endMs": 82060,
+          "probability": 0.998828
+        },
+        {
+          "text": "little",
+          "startMs": 82060,
+          "endMs": 82320,
+          "probability": 0.990453
+        },
+        {
+          "text": "bear",
+          "startMs": 82320,
+          "endMs": 82580,
+          "probability": 0.99542
+        },
+        {
+          "text": "for",
+          "startMs": 82580,
+          "endMs": 82820,
+          "probability": 0.996064
+        },
+        {
+          "text": "the",
+          "startMs": 82820,
+          "endMs": 82960,
+          "probability": 0.939957
+        },
+        {
+          "text": "job.",
+          "startMs": 82960,
+          "endMs": 83320,
+          "probability": 0.997104
+        }
+      ]
+    },
+    {
+      "text": "Now what should we do?",
+      "startMs": 83320,
+      "endMs": 85200,
+      "words": [
+        {
+          "text": "Now",
+          "startMs": 83320,
+          "endMs": 84080,
+          "probability": 0.490102
+        },
+        {
+          "text": "what",
+          "startMs": 84080,
+          "endMs": 84360,
+          "probability": 0.711866
+        },
+        {
+          "text": "should",
+          "startMs": 84360,
+          "endMs": 84700,
+          "probability": 0.996739
+        },
+        {
+          "text": "we",
+          "startMs": 84700,
+          "endMs": 84920,
+          "probability": 0.997747
+        },
+        {
+          "text": "do?",
+          "startMs": 84920,
+          "endMs": 85200,
+          "probability": 0.999054
+        }
+      ]
+    },
+    {
+      "text": "Look for clues.",
+      "startMs": 85940,
+      "endMs": 86920,
+      "words": [
+        {
+          "text": "Look",
+          "startMs": 85940,
+          "endMs": 86200,
+          "probability": 0.837422
+        },
+        {
+          "text": "for",
+          "startMs": 86200,
+          "endMs": 86440,
+          "probability": 0.993856
+        },
+        {
+          "text": "clues.",
+          "startMs": 86440,
+          "endMs": 86920,
+          "probability": 0.992539
+        }
+      ]
+    },
+    {
+      "text": "Well, let's think.",
+      "startMs": 87680,
+      "endMs": 88680,
+      "words": [
+        {
+          "text": "Well,",
+          "startMs": 87680,
+          "endMs": 87960,
+          "probability": 0.880638
+        },
+        {
+          "text": "let's",
+          "startMs": 88080,
+          "endMs": 88340,
+          "probability": 0.98906
+        },
+        {
+          "text": "think.",
+          "startMs": 88340,
+          "endMs": 88680,
+          "probability": 0.994826
+        }
+      ]
+    },
+    {
+      "text": "I remember I had my watch when I went to the mailbox.",
+      "startMs": 89440,
+      "endMs": 91980,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 89440,
+          "endMs": 89520,
+          "probability": 0.985847
+        },
+        {
+          "text": "remember",
+          "startMs": 89520,
+          "endMs": 89920,
+          "probability": 0.996695
+        },
+        {
+          "text": "I",
+          "startMs": 89920,
+          "endMs": 90120,
+          "probability": 0.983016
+        },
+        {
+          "text": "had",
+          "startMs": 90120,
+          "endMs": 90280,
+          "probability": 0.992234
+        },
+        {
+          "text": "my",
+          "startMs": 90280,
+          "endMs": 90460,
+          "probability": 0.997413
+        },
+        {
+          "text": "watch",
+          "startMs": 90460,
+          "endMs": 90920,
+          "probability": 0.996361
+        },
+        {
+          "text": "when",
+          "startMs": 90920,
+          "endMs": 91160,
+          "probability": 0.967878
+        },
+        {
+          "text": "I",
+          "startMs": 91160,
+          "endMs": 91280,
+          "probability": 0.995505
+        },
+        {
+          "text": "went",
+          "startMs": 91280,
+          "endMs": 91400,
+          "probability": 0.998385
+        },
+        {
+          "text": "to",
+          "startMs": 91400,
+          "endMs": 91560,
+          "probability": 0.997558
+        },
+        {
+          "text": "the",
+          "startMs": 91560,
+          "endMs": 91680,
+          "probability": 0.992745
+        },
+        {
+          "text": "mailbox.",
+          "startMs": 91680,
+          "endMs": 91980,
+          "probability": 0.961883
+        }
+      ]
+    },
+    {
+      "text": "Hmm, interesting.",
+      "startMs": 93380,
+      "endMs": 94740,
+      "words": [
+        {
+          "text": "Hmm,",
+          "startMs": 93380,
+          "endMs": 94060,
+          "probability": 0.575532
+        },
+        {
+          "text": "interesting.",
+          "startMs": 94060,
+          "endMs": 94740,
+          "probability": 0.985478
+        }
+      ]
+    },
+    {
+      "text": "Come on.",
+      "startMs": 96520,
+      "endMs": 97520,
+      "words": [
+        {
+          "text": "Come",
+          "startMs": 96520,
+          "endMs": 97200,
+          "probability": 0.856368
+        },
+        {
+          "text": "on.",
+          "startMs": 97200,
+          "endMs": 97520,
+          "probability": 0.998171
+        }
+      ]
+    },
+    {
+      "text": "Where are we going?",
+      "startMs": 98260,
+      "endMs": 99200,
+      "words": [
+        {
+          "text": "Where",
+          "startMs": 98260,
+          "endMs": 98640,
+          "probability": 0.9793
+        },
+        {
+          "text": "are",
+          "startMs": 98640,
+          "endMs": 98800,
+          "probability": 0.961183
+        },
+        {
+          "text": "we",
+          "startMs": 98800,
+          "endMs": 98900,
+          "probability": 0.999134
+        },
+        {
+          "text": "going?",
+          "startMs": 98900,
+          "endMs": 99200,
+          "probability": 0.996816
+        }
+      ]
+    },
+    {
+      "text": "It's elementary.",
+      "startMs": 99760,
+      "endMs": 100520,
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 99760,
+          "endMs": 100060,
+          "probability": 0.990357
+        },
+        {
+          "text": "elementary.",
+          "startMs": 100060,
+          "endMs": 100520,
+          "probability": 0.972518
+        }
+      ]
+    },
+    {
+      "text": "We're going to the mailbox.",
+      "startMs": 101100,
+      "endMs": 102420,
+      "words": [
+        {
+          "text": "We're",
+          "startMs": 101100,
+          "endMs": 101200,
+          "probability": 0.991368
+        },
+        {
+          "text": "going",
+          "startMs": 101200,
+          "endMs": 101540,
+          "probability": 0.999249
+        },
+        {
+          "text": "to",
+          "startMs": 101540,
+          "endMs": 101820,
+          "probability": 0.997971
+        },
+        {
+          "text": "the",
+          "startMs": 101820,
+          "endMs": 101960,
+          "probability": 0.9973
+        },
+        {
+          "text": "mailbox.",
+          "startMs": 101960,
+          "endMs": 102420,
+          "probability": 0.998393
+        }
+      ]
+    },
+    {
+      "text": "Hmm, how mysterious.",
+      "startMs": 105560,
+      "endMs": 108300,
+      "words": [
+        {
+          "text": "Hmm,",
+          "startMs": 105560,
+          "endMs": 106240,
+          "probability": 0.825887
+        },
+        {
+          "text": "how",
+          "startMs": 107280,
+          "endMs": 107520,
+          "probability": 0.972882
+        },
+        {
+          "text": "mysterious.",
+          "startMs": 107520,
+          "endMs": 108300,
+          "probability": 0.996584
+        }
+      ]
+    },
+    {
+      "text": "Find anything detective little bear?",
+      "startMs": 109140,
+      "endMs": 111180,
+      "words": [
+        {
+          "text": "Find",
+          "startMs": 109140,
+          "endMs": 109520,
+          "probability": 0.983264
+        },
+        {
+          "text": "anything",
+          "startMs": 109520,
+          "endMs": 109980,
+          "probability": 0.996196
+        },
+        {
+          "text": "detective",
+          "startMs": 109980,
+          "endMs": 110580,
+          "probability": 0.616908
+        },
+        {
+          "text": "little",
+          "startMs": 110580,
+          "endMs": 110940,
+          "probability": 0.394894
+        },
+        {
+          "text": "bear?",
+          "startMs": 110940,
+          "endMs": 111180,
+          "probability": 0.838627
+        }
+      ]
+    },
+    {
+      "text": "Yes.",
+      "startMs": 112180,
+      "endMs": 112540,
+      "words": [
+        {
+          "text": "Yes.",
+          "startMs": 112180,
+          "endMs": 112540,
+          "probability": 0.352052
+        }
+      ]
+    },
+    {
+      "text": "A clue.",
+      "startMs": 114700,
+      "endMs": 115080,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 114440,
+          "endMs": 114780,
+          "probability": 0.864577
+        },
+        {
+          "text": "clue.",
+          "startMs": 114780,
+          "endMs": 115080,
+          "probability": 0.932195
+        }
+      ]
+    },
+    {
+      "text": "Two clues.",
+      "startMs": 115640,
+      "endMs": 116120,
+      "words": [
+        {
+          "text": "Two",
+          "startMs": 115640,
+          "endMs": 115820,
+          "probability": 0.948853
+        },
+        {
+          "text": "clues.",
+          "startMs": 115820,
+          "endMs": 116120,
+          "probability": 0.995085
+        }
+      ]
+    },
+    {
+      "text": "Ah, but what are they?",
+      "startMs": 117840,
+      "endMs": 120300,
+      "words": [
+        {
+          "text": "Ah,",
+          "startMs": 117840,
+          "endMs": 118520,
+          "probability": 0.304393
+        },
+        {
+          "text": "but",
+          "startMs": 119100,
+          "endMs": 119580,
+          "probability": 0.986846
+        },
+        {
+          "text": "what",
+          "startMs": 119580,
+          "endMs": 119840,
+          "probability": 0.994616
+        },
+        {
+          "text": "are",
+          "startMs": 119840,
+          "endMs": 120040,
+          "probability": 0.974943
+        },
+        {
+          "text": "they?",
+          "startMs": 120040,
+          "endMs": 120300,
+          "probability": 0.9708
+        }
+      ]
+    },
+    {
+      "text": "Goblin shoes.",
+      "startMs": 121040,
+      "endMs": 122040,
+      "words": [
+        {
+          "text": "Goblin",
+          "startMs": 121040,
+          "endMs": 121560,
+          "probability": 0.741157
+        },
+        {
+          "text": "shoes.",
+          "startMs": 121560,
+          "endMs": 122040,
+          "probability": 0.7181
+        }
+      ]
+    },
+    {
+      "text": "How mysterious.",
+      "startMs": 122980,
+      "endMs": 124320,
+      "words": [
+        {
+          "text": "How",
+          "startMs": 122980,
+          "endMs": 123280,
+          "probability": 0.954426
+        },
+        {
+          "text": "mysterious.",
+          "startMs": 123280,
+          "endMs": 124320,
+          "probability": 0.997486
+        }
+      ]
+    },
+    {
+      "text": "Hmm, but we still haven't found your pocket watch.",
+      "startMs": 125200,
+      "endMs": 129480,
+      "words": [
+        {
+          "text": "Hmm,",
+          "startMs": 125200,
+          "endMs": 125520,
+          "probability": 0.061495
+        },
+        {
+          "text": "but",
+          "startMs": 125720,
+          "endMs": 127100,
+          "probability": 0.471249
+        },
+        {
+          "text": "we",
+          "startMs": 127100,
+          "endMs": 127640,
+          "probability": 0.958974
+        },
+        {
+          "text": "still",
+          "startMs": 127640,
+          "endMs": 128040,
+          "probability": 0.998444
+        },
+        {
+          "text": "haven't",
+          "startMs": 128040,
+          "endMs": 128400,
+          "probability": 0.996231
+        },
+        {
+          "text": "found",
+          "startMs": 128400,
+          "endMs": 128660,
+          "probability": 0.999338
+        },
+        {
+          "text": "your",
+          "startMs": 128660,
+          "endMs": 128840,
+          "probability": 0.988775
+        },
+        {
+          "text": "pocket",
+          "startMs": 128840,
+          "endMs": 129180,
+          "probability": 0.972413
+        },
+        {
+          "text": "watch.",
+          "startMs": 129180,
+          "endMs": 129480,
+          "probability": 0.922552
+        }
+      ]
+    },
+    {
+      "text": "Well, maybe I dropped it when I was working in the garden.",
+      "startMs": 130240,
+      "endMs": 133500,
+      "words": [
+        {
+          "text": "Well,",
+          "startMs": 130240,
+          "endMs": 130500,
+          "probability": 0.986895
+        },
+        {
+          "text": "maybe",
+          "startMs": 131100,
+          "endMs": 131440,
+          "probability": 0.995453
+        },
+        {
+          "text": "I",
+          "startMs": 131440,
+          "endMs": 131640,
+          "probability": 0.995742
+        },
+        {
+          "text": "dropped",
+          "startMs": 131640,
+          "endMs": 131880,
+          "probability": 0.986818
+        },
+        {
+          "text": "it",
+          "startMs": 131880,
+          "endMs": 132080,
+          "probability": 0.986113
+        },
+        {
+          "text": "when",
+          "startMs": 132080,
+          "endMs": 132240,
+          "probability": 0.996341
+        },
+        {
+          "text": "I",
+          "startMs": 132240,
+          "endMs": 132360,
+          "probability": 0.99347
+        },
+        {
+          "text": "was",
+          "startMs": 132360,
+          "endMs": 132540,
+          "probability": 0.999104
+        },
+        {
+          "text": "working",
+          "startMs": 132540,
+          "endMs": 132800,
+          "probability": 0.997435
+        },
+        {
+          "text": "in",
+          "startMs": 132800,
+          "endMs": 133020,
+          "probability": 0.985018
+        },
+        {
+          "text": "the",
+          "startMs": 133020,
+          "endMs": 133120,
+          "probability": 0.987489
+        },
+        {
+          "text": "garden.",
+          "startMs": 133120,
+          "endMs": 133500,
+          "probability": 0.989836
+        }
+      ]
+    },
+    {
+      "text": "I stood right here and gave my tomatoes a good, long drink of water.",
+      "startMs": 135000,
+      "endMs": 140440,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 135000,
+          "endMs": 135800,
+          "probability": 0.744218
+        },
+        {
+          "text": "stood",
+          "startMs": 135800,
+          "endMs": 136040,
+          "probability": 0.980388
+        },
+        {
+          "text": "right",
+          "startMs": 136040,
+          "endMs": 136420,
+          "probability": 0.992589
+        },
+        {
+          "text": "here",
+          "startMs": 136420,
+          "endMs": 136760,
+          "probability": 0.996182
+        },
+        {
+          "text": "and",
+          "startMs": 136760,
+          "endMs": 137200,
+          "probability": 0.91253
+        },
+        {
+          "text": "gave",
+          "startMs": 137200,
+          "endMs": 137360,
+          "probability": 0.986791
+        },
+        {
+          "text": "my",
+          "startMs": 137360,
+          "endMs": 137580,
+          "probability": 0.994763
+        },
+        {
+          "text": "tomatoes",
+          "startMs": 137580,
+          "endMs": 138020,
+          "probability": 0.982534
+        },
+        {
+          "text": "a",
+          "startMs": 138020,
+          "endMs": 138300,
+          "probability": 0.996245
+        },
+        {
+          "text": "good,",
+          "startMs": 138300,
+          "endMs": 138640,
+          "probability": 0.99486
+        },
+        {
+          "text": "long",
+          "startMs": 138840,
+          "endMs": 139260,
+          "probability": 0.9985
+        },
+        {
+          "text": "drink",
+          "startMs": 139260,
+          "endMs": 139620,
+          "probability": 0.918203
+        },
+        {
+          "text": "of",
+          "startMs": 139620,
+          "endMs": 139840,
+          "probability": 0.997092
+        },
+        {
+          "text": "water.",
+          "startMs": 139840,
+          "endMs": 140440,
+          "probability": 0.999079
+        }
+      ]
+    },
+    {
+      "text": "Ah-ha.",
+      "startMs": 144920,
+      "endMs": 145860,
+      "words": [
+        {
+          "text": "Ah",
+          "startMs": 144920,
+          "endMs": 145720,
+          "probability": 0.298879
+        },
+        {
+          "text": "-ha.",
+          "startMs": 145720,
+          "endMs": 145860,
+          "probability": 0.724026
+        }
+      ]
+    },
+    {
+      "text": "Another clue.",
+      "startMs": 148680,
+      "endMs": 149860,
+      "words": [
+        {
+          "text": "Another",
+          "startMs": 148680,
+          "endMs": 149480,
+          "probability": 0.963258
+        },
+        {
+          "text": "clue.",
+          "startMs": 149480,
+          "endMs": 149860,
+          "probability": 0.995733
+        }
+      ]
+    },
+    {
+      "text": "Look, grandfather bear.",
+      "startMs": 151740,
+      "endMs": 153320,
+      "words": [
+        {
+          "text": "Look,",
+          "startMs": 151740,
+          "endMs": 152520,
+          "probability": 0.893542
+        },
+        {
+          "text": "grandfather",
+          "startMs": 152700,
+          "endMs": 153060,
+          "probability": 0.630025
+        },
+        {
+          "text": "bear.",
+          "startMs": 153060,
+          "endMs": 153320,
+          "probability": 0.72181
+        }
+      ]
+    },
+    {
+      "text": "What is it?",
+      "startMs": 154140,
+      "endMs": 154960,
+      "words": [
+        {
+          "text": "What",
+          "startMs": 154140,
+          "endMs": 154560,
+          "probability": 0.921766
+        },
+        {
+          "text": "is",
+          "startMs": 154560,
+          "endMs": 154740,
+          "probability": 0.994358
+        },
+        {
+          "text": "it?",
+          "startMs": 154740,
+          "endMs": 154960,
+          "probability": 0.973775
+        }
+      ]
+    },
+    {
+      "text": "It looks like a little walking stick.",
+      "startMs": 155680,
+      "endMs": 158720,
+      "words": [
+        {
+          "text": "It",
+          "startMs": 155680,
+          "endMs": 155940,
+          "probability": 0.986462
+        },
+        {
+          "text": "looks",
+          "startMs": 155940,
+          "endMs": 156300,
+          "probability": 0.99722
+        },
+        {
+          "text": "like",
+          "startMs": 156300,
+          "endMs": 156840,
+          "probability": 0.996389
+        },
+        {
+          "text": "a",
+          "startMs": 156840,
+          "endMs": 157280,
+          "probability": 0.991247
+        },
+        {
+          "text": "little",
+          "startMs": 157280,
+          "endMs": 157660,
+          "probability": 0.986925
+        },
+        {
+          "text": "walking",
+          "startMs": 157660,
+          "endMs": 158200,
+          "probability": 0.986423
+        },
+        {
+          "text": "stick.",
+          "startMs": 158200,
+          "endMs": 158720,
+          "probability": 0.995108
+        }
+      ]
+    },
+    {
+      "text": "Hmm, a little walking stick for the goblin.",
+      "startMs": 159440,
+      "endMs": 162940,
+      "words": [
+        {
+          "text": "Hmm,",
+          "startMs": 159440,
+          "endMs": 159780,
+          "probability": 0.608402
+        },
+        {
+          "text": "a",
+          "startMs": 160400,
+          "endMs": 160800,
+          "probability": 0.964342
+        },
+        {
+          "text": "little",
+          "startMs": 160800,
+          "endMs": 161100,
+          "probability": 0.99309
+        },
+        {
+          "text": "walking",
+          "startMs": 161100,
+          "endMs": 161620,
+          "probability": 0.993081
+        },
+        {
+          "text": "stick",
+          "startMs": 161620,
+          "endMs": 162080,
+          "probability": 0.995753
+        },
+        {
+          "text": "for",
+          "startMs": 162080,
+          "endMs": 162340,
+          "probability": 0.996027
+        },
+        {
+          "text": "the",
+          "startMs": 162340,
+          "endMs": 162540,
+          "probability": 0.995545
+        },
+        {
+          "text": "goblin.",
+          "startMs": 162540,
+          "endMs": 162940,
+          "probability": 0.807099
+        }
+      ]
+    },
+    {
+      "text": "Of course.",
+      "startMs": 162940,
+      "endMs": 164120,
+      "words": [
+        {
+          "text": "Of",
+          "startMs": 162940,
+          "endMs": 163820,
+          "probability": 0.83637
+        },
+        {
+          "text": "course.",
+          "startMs": 163820,
+          "endMs": 164120,
+          "probability": 0.993791
+        }
+      ]
+    },
+    {
+      "text": "It's elementary.",
+      "startMs": 164580,
+      "endMs": 165380,
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 164580,
+          "endMs": 164900,
+          "probability": 0.990473
+        },
+        {
+          "text": "elementary.",
+          "startMs": 164900,
+          "endMs": 165380,
+          "probability": 0.951116
+        }
+      ]
+    },
+    {
+      "text": "A pair of shoes and a little walking stick.",
+      "startMs": 166780,
+      "endMs": 169960,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 166780,
+          "endMs": 167120,
+          "probability": 0.974027
+        },
+        {
+          "text": "pair",
+          "startMs": 167120,
+          "endMs": 167380,
+          "probability": 0.998995
+        },
+        {
+          "text": "of",
+          "startMs": 167380,
+          "endMs": 167800,
+          "probability": 0.99916
+        },
+        {
+          "text": "shoes",
+          "startMs": 167800,
+          "endMs": 168000,
+          "probability": 0.991564
+        },
+        {
+          "text": "and",
+          "startMs": 168000,
+          "endMs": 168520,
+          "probability": 0.833257
+        },
+        {
+          "text": "a",
+          "startMs": 168520,
+          "endMs": 168660,
+          "probability": 0.992872
+        },
+        {
+          "text": "little",
+          "startMs": 168660,
+          "endMs": 168980,
+          "probability": 0.994799
+        },
+        {
+          "text": "walking",
+          "startMs": 168980,
+          "endMs": 169480,
+          "probability": 0.985331
+        },
+        {
+          "text": "stick.",
+          "startMs": 169480,
+          "endMs": 169960,
+          "probability": 0.99497
+        }
+      ]
+    },
+    {
+      "text": "Where else could your watch be grandfather bear?",
+      "startMs": 171580,
+      "endMs": 173480,
+      "words": [
+        {
+          "text": "Where",
+          "startMs": 171290,
+          "endMs": 171640,
+          "probability": 0.950725
+        },
+        {
+          "text": "else",
+          "startMs": 171640,
+          "endMs": 171880,
+          "probability": 0.999791
+        },
+        {
+          "text": "could",
+          "startMs": 171880,
+          "endMs": 172060,
+          "probability": 0.993921
+        },
+        {
+          "text": "your",
+          "startMs": 172060,
+          "endMs": 172260,
+          "probability": 0.95729
+        },
+        {
+          "text": "watch",
+          "startMs": 172260,
+          "endMs": 172500,
+          "probability": 0.964036
+        },
+        {
+          "text": "be",
+          "startMs": 172500,
+          "endMs": 172700,
+          "probability": 0.966003
+        },
+        {
+          "text": "grandfather",
+          "startMs": 172700,
+          "endMs": 173200,
+          "probability": 0.460526
+        },
+        {
+          "text": "bear?",
+          "startMs": 173200,
+          "endMs": 173480,
+          "probability": 0.797982
+        }
+      ]
+    },
+    {
+      "text": "Well, I took a nap in the hammock.",
+      "startMs": 174360,
+      "endMs": 177580,
+      "words": [
+        {
+          "text": "Well,",
+          "startMs": 174360,
+          "endMs": 175060,
+          "probability": 0.98244
+        },
+        {
+          "text": "I",
+          "startMs": 175860,
+          "endMs": 176320,
+          "probability": 0.989931
+        },
+        {
+          "text": "took",
+          "startMs": 176320,
+          "endMs": 176500,
+          "probability": 0.99754
+        },
+        {
+          "text": "a",
+          "startMs": 176500,
+          "endMs": 176680,
+          "probability": 0.882218
+        },
+        {
+          "text": "nap",
+          "startMs": 176680,
+          "endMs": 176880,
+          "probability": 0.999207
+        },
+        {
+          "text": "in",
+          "startMs": 176880,
+          "endMs": 177100,
+          "probability": 0.797457
+        },
+        {
+          "text": "the",
+          "startMs": 177100,
+          "endMs": 177220,
+          "probability": 0.989775
+        },
+        {
+          "text": "hammock.",
+          "startMs": 177220,
+          "endMs": 177580,
+          "probability": 0.992125
+        }
+      ]
+    },
+    {
+      "text": "Let's go.",
+      "startMs": 178320,
+      "endMs": 179080,
+      "words": [
+        {
+          "text": "Let's",
+          "startMs": 178320,
+          "endMs": 178820,
+          "probability": 0.993028
+        },
+        {
+          "text": "go.",
+          "startMs": 178820,
+          "endMs": 179080,
+          "probability": 0.998021
+        }
+      ]
+    },
+    {
+      "text": "Hmm, very mysterious.",
+      "startMs": 213580,
+      "endMs": 215780,
+      "words": [
+        {
+          "text": "Hmm,",
+          "startMs": 213580,
+          "endMs": 214220,
+          "probability": 0.168501
+        },
+        {
+          "text": "very",
+          "startMs": 214220,
+          "endMs": 214860,
+          "probability": 0.691611
+        },
+        {
+          "text": "mysterious.",
+          "startMs": 214860,
+          "endMs": 215780,
+          "probability": 0.997289
+        }
+      ]
+    },
+    {
+      "text": "Why that looks like a hat.",
+      "startMs": 219260,
+      "endMs": 221140,
+      "words": [
+        {
+          "text": "Why",
+          "startMs": 219260,
+          "endMs": 219900,
+          "probability": 0.711512
+        },
+        {
+          "text": "that",
+          "startMs": 219900,
+          "endMs": 220080,
+          "probability": 0.843314
+        },
+        {
+          "text": "looks",
+          "startMs": 220080,
+          "endMs": 220360,
+          "probability": 0.986723
+        },
+        {
+          "text": "like",
+          "startMs": 220360,
+          "endMs": 220600,
+          "probability": 0.997556
+        },
+        {
+          "text": "a",
+          "startMs": 220600,
+          "endMs": 220800,
+          "probability": 0.99513
+        },
+        {
+          "text": "hat.",
+          "startMs": 220800,
+          "endMs": 221140,
+          "probability": 0.989824
+        }
+      ]
+    },
+    {
+      "text": "A hat or a goblin?",
+      "startMs": 221880,
+      "endMs": 223520,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 221880,
+          "endMs": 222000,
+          "probability": 0.724012
+        },
+        {
+          "text": "hat",
+          "startMs": 222000,
+          "endMs": 222300,
+          "probability": 0.995901
+        },
+        {
+          "text": "or",
+          "startMs": 222300,
+          "endMs": 222660,
+          "probability": 0.838655
+        },
+        {
+          "text": "a",
+          "startMs": 222660,
+          "endMs": 222980,
+          "probability": 0.987223
+        },
+        {
+          "text": "goblin?",
+          "startMs": 222980,
+          "endMs": 223520,
+          "probability": 0.991724
+        }
+      ]
+    },
+    {
+      "text": "Grandfather bear?",
+      "startMs": 224420,
+      "endMs": 225300,
+      "words": [
+        {
+          "text": "Grandfather",
+          "startMs": 224420,
+          "endMs": 225000,
+          "probability": 0.875402
+        },
+        {
+          "text": "bear?",
+          "startMs": 225000,
+          "endMs": 225300,
+          "probability": 0.140548
+        }
+      ]
+    },
+    {
+      "text": "I think a goblin took your pocket watch.",
+      "startMs": 225740,
+      "endMs": 228160,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 225740,
+          "endMs": 226000,
+          "probability": 0.993032
+        },
+        {
+          "text": "think",
+          "startMs": 226000,
+          "endMs": 226260,
+          "probability": 0.998893
+        },
+        {
+          "text": "a",
+          "startMs": 226260,
+          "endMs": 226560,
+          "probability": 0.989759
+        },
+        {
+          "text": "goblin",
+          "startMs": 226560,
+          "endMs": 227120,
+          "probability": 0.988604
+        },
+        {
+          "text": "took",
+          "startMs": 227120,
+          "endMs": 227340,
+          "probability": 0.997684
+        },
+        {
+          "text": "your",
+          "startMs": 227340,
+          "endMs": 227520,
+          "probability": 0.978025
+        },
+        {
+          "text": "pocket",
+          "startMs": 227520,
+          "endMs": 227860,
+          "probability": 0.98256
+        },
+        {
+          "text": "watch.",
+          "startMs": 227860,
+          "endMs": 228160,
+          "probability": 0.986429
+        }
+      ]
+    },
+    {
+      "text": "Elementary.",
+      "startMs": 228800,
+      "endMs": 229360,
+      "words": [
+        {
+          "text": "Elementary.",
+          "startMs": 228800,
+          "endMs": 229360,
+          "probability": 0.334933
+        }
+      ]
+    },
+    {
+      "text": "But why would a goblin want a watch?",
+      "startMs": 230260,
+      "endMs": 232520,
+      "words": [
+        {
+          "text": "But",
+          "startMs": 230260,
+          "endMs": 230420,
+          "probability": 0.977591
+        },
+        {
+          "text": "why",
+          "startMs": 230420,
+          "endMs": 230780,
+          "probability": 0.983227
+        },
+        {
+          "text": "would",
+          "startMs": 230780,
+          "endMs": 230940,
+          "probability": 0.998593
+        },
+        {
+          "text": "a",
+          "startMs": 230940,
+          "endMs": 231100,
+          "probability": 0.998369
+        },
+        {
+          "text": "goblin",
+          "startMs": 231100,
+          "endMs": 231580,
+          "probability": 0.995254
+        },
+        {
+          "text": "want",
+          "startMs": 231580,
+          "endMs": 231840,
+          "probability": 0.996451
+        },
+        {
+          "text": "a",
+          "startMs": 231840,
+          "endMs": 232020,
+          "probability": 0.905283
+        },
+        {
+          "text": "watch?",
+          "startMs": 232020,
+          "endMs": 232520,
+          "probability": 0.998109
+        }
+      ]
+    },
+    {
+      "text": "Oh, a goblin would find a watch very handy.",
+      "startMs": 233240,
+      "endMs": 236060,
+      "words": [
+        {
+          "text": "Oh,",
+          "startMs": 233240,
+          "endMs": 233720,
+          "probability": 0.674086
+        },
+        {
+          "text": "a",
+          "startMs": 234020,
+          "endMs": 234020,
+          "probability": 0.992773
+        },
+        {
+          "text": "goblin",
+          "startMs": 234020,
+          "endMs": 234460,
+          "probability": 0.993375
+        },
+        {
+          "text": "would",
+          "startMs": 234460,
+          "endMs": 234660,
+          "probability": 0.995948
+        },
+        {
+          "text": "find",
+          "startMs": 234660,
+          "endMs": 234940,
+          "probability": 0.990234
+        },
+        {
+          "text": "a",
+          "startMs": 234940,
+          "endMs": 235100,
+          "probability": 0.97267
+        },
+        {
+          "text": "watch",
+          "startMs": 235100,
+          "endMs": 235320,
+          "probability": 0.993865
+        },
+        {
+          "text": "very",
+          "startMs": 235320,
+          "endMs": 235620,
+          "probability": 0.991182
+        },
+        {
+          "text": "handy.",
+          "startMs": 235620,
+          "endMs": 236060,
+          "probability": 0.996823
+        }
+      ]
+    },
+    {
+      "text": "He'll know of it's time to read a book or take an app or have a snack.",
+      "startMs": 236060,
+      "endMs": 240300,
+      "words": [
+        {
+          "text": "He'll",
+          "startMs": 236060,
+          "endMs": 236480,
+          "probability": 0.796068
+        },
+        {
+          "text": "know",
+          "startMs": 236480,
+          "endMs": 236640,
+          "probability": 0.955642
+        },
+        {
+          "text": "of",
+          "startMs": 236640,
+          "endMs": 236820,
+          "probability": 0.359165
+        },
+        {
+          "text": "it's",
+          "startMs": 236820,
+          "endMs": 237060,
+          "probability": 0.66015
+        },
+        {
+          "text": "time",
+          "startMs": 237060,
+          "endMs": 237220,
+          "probability": 0.99801
+        },
+        {
+          "text": "to",
+          "startMs": 237220,
+          "endMs": 237460,
+          "probability": 0.997066
+        },
+        {
+          "text": "read",
+          "startMs": 237460,
+          "endMs": 237660,
+          "probability": 0.97646
+        },
+        {
+          "text": "a",
+          "startMs": 237660,
+          "endMs": 237800,
+          "probability": 0.948821
+        },
+        {
+          "text": "book",
+          "startMs": 237800,
+          "endMs": 237980,
+          "probability": 0.785745
+        },
+        {
+          "text": "or",
+          "startMs": 237980,
+          "endMs": 238260,
+          "probability": 0.39919
+        },
+        {
+          "text": "take",
+          "startMs": 238260,
+          "endMs": 238660,
+          "probability": 0.981588
+        },
+        {
+          "text": "an",
+          "startMs": 238660,
+          "endMs": 238920,
+          "probability": 0.962945
+        },
+        {
+          "text": "app",
+          "startMs": 238920,
+          "endMs": 239080,
+          "probability": 0.648866
+        },
+        {
+          "text": "or",
+          "startMs": 239080,
+          "endMs": 239380,
+          "probability": 0.899148
+        },
+        {
+          "text": "have",
+          "startMs": 239380,
+          "endMs": 239680,
+          "probability": 0.992153
+        },
+        {
+          "text": "a",
+          "startMs": 239680,
+          "endMs": 239840,
+          "probability": 0.998286
+        },
+        {
+          "text": "snack.",
+          "startMs": 239840,
+          "endMs": 240300,
+          "probability": 0.996956
+        }
+      ]
+    },
+    {
+      "text": "You never can tell with goblins.",
+      "startMs": 240700,
+      "endMs": 242840,
+      "words": [
+        {
+          "text": "You",
+          "startMs": 240700,
+          "endMs": 241100,
+          "probability": 0.757192
+        },
+        {
+          "text": "never",
+          "startMs": 241100,
+          "endMs": 241360,
+          "probability": 0.995318
+        },
+        {
+          "text": "can",
+          "startMs": 241360,
+          "endMs": 241640,
+          "probability": 0.998338
+        },
+        {
+          "text": "tell",
+          "startMs": 241640,
+          "endMs": 241980,
+          "probability": 0.852035
+        },
+        {
+          "text": "with",
+          "startMs": 241980,
+          "endMs": 242300,
+          "probability": 0.992129
+        },
+        {
+          "text": "goblins.",
+          "startMs": 242300,
+          "endMs": 242840,
+          "probability": 0.881644
+        }
+      ]
+    },
+    {
+      "text": "Ha, that's true.",
+      "startMs": 243080,
+      "endMs": 245160,
+      "words": [
+        {
+          "text": "Ha,",
+          "startMs": 243080,
+          "endMs": 243760,
+          "probability": 0.072104
+        },
+        {
+          "text": "that's",
+          "startMs": 244120,
+          "endMs": 244840,
+          "probability": 0.942021
+        },
+        {
+          "text": "true.",
+          "startMs": 244840,
+          "endMs": 245160,
+          "probability": 0.997473
+        }
+      ]
+    },
+    {
+      "text": "What should we do detective little bear?",
+      "startMs": 247460,
+      "endMs": 250520,
+      "words": [
+        {
+          "text": "What",
+          "startMs": 247460,
+          "endMs": 248140,
+          "probability": 0.694334
+        },
+        {
+          "text": "should",
+          "startMs": 248140,
+          "endMs": 248820,
+          "probability": 0.985869
+        },
+        {
+          "text": "we",
+          "startMs": 248820,
+          "endMs": 249060,
+          "probability": 0.998019
+        },
+        {
+          "text": "do",
+          "startMs": 249060,
+          "endMs": 249300,
+          "probability": 0.999543
+        },
+        {
+          "text": "detective",
+          "startMs": 249300,
+          "endMs": 249800,
+          "probability": 0.210807
+        },
+        {
+          "text": "little",
+          "startMs": 249800,
+          "endMs": 250260,
+          "probability": 0.311976
+        },
+        {
+          "text": "bear?",
+          "startMs": 250260,
+          "endMs": 250520,
+          "probability": 0.964167
+        }
+      ]
+    },
+    {
+      "text": "Well, if we return the goblin's things, maybe he'll return your pocket watch.",
+      "startMs": 251180,
+      "endMs": 257400,
+      "words": [
+        {
+          "text": "Well,",
+          "startMs": 251180,
+          "endMs": 251640,
+          "probability": 0.989211
+        },
+        {
+          "text": "if",
+          "startMs": 252200,
+          "endMs": 252660,
+          "probability": 0.988358
+        },
+        {
+          "text": "we",
+          "startMs": 252660,
+          "endMs": 252920,
+          "probability": 0.997772
+        },
+        {
+          "text": "return",
+          "startMs": 252920,
+          "endMs": 253260,
+          "probability": 0.990597
+        },
+        {
+          "text": "the",
+          "startMs": 253260,
+          "endMs": 253460,
+          "probability": 0.964934
+        },
+        {
+          "text": "goblin's",
+          "startMs": 253460,
+          "endMs": 254200,
+          "probability": 0.658246
+        },
+        {
+          "text": "things,",
+          "startMs": 254200,
+          "endMs": 254520,
+          "probability": 0.970335
+        },
+        {
+          "text": "maybe",
+          "startMs": 255080,
+          "endMs": 255440,
+          "probability": 0.977476
+        },
+        {
+          "text": "he'll",
+          "startMs": 255440,
+          "endMs": 255960,
+          "probability": 0.994499
+        },
+        {
+          "text": "return",
+          "startMs": 255960,
+          "endMs": 256260,
+          "probability": 0.996938
+        },
+        {
+          "text": "your",
+          "startMs": 256260,
+          "endMs": 256480,
+          "probability": 0.987399
+        },
+        {
+          "text": "pocket",
+          "startMs": 256480,
+          "endMs": 256840,
+          "probability": 0.977462
+        },
+        {
+          "text": "watch.",
+          "startMs": 256840,
+          "endMs": 257400,
+          "probability": 0.93919
+        }
+      ]
+    },
+    {
+      "text": "Brilliant detective little bear.",
+      "startMs": 258040,
+      "endMs": 260160,
+      "words": [
+        {
+          "text": "Brilliant",
+          "startMs": 258040,
+          "endMs": 258680,
+          "probability": 0.96642
+        },
+        {
+          "text": "detective",
+          "startMs": 258680,
+          "endMs": 259440,
+          "probability": 0.856697
+        },
+        {
+          "text": "little",
+          "startMs": 259440,
+          "endMs": 259780,
+          "probability": 0.971531
+        },
+        {
+          "text": "bear.",
+          "startMs": 259780,
+          "endMs": 260160,
+          "probability": 0.995472
+        }
+      ]
+    },
+    {
+      "text": "It's the goblin's cave.",
+      "startMs": 263160,
+      "endMs": 265460,
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 263160,
+          "endMs": 264180,
+          "probability": 0.485378
+        },
+        {
+          "text": "the",
+          "startMs": 264180,
+          "endMs": 264320,
+          "probability": 0.907561
+        },
+        {
+          "text": "goblin's",
+          "startMs": 264320,
+          "endMs": 265100,
+          "probability": 0.706834
+        },
+        {
+          "text": "cave.",
+          "startMs": 265100,
+          "endMs": 265460,
+          "probability": 0.989573
+        }
+      ]
+    },
+    {
+      "text": "It looks old.",
+      "startMs": 266060,
+      "endMs": 267280,
+      "words": [
+        {
+          "text": "It",
+          "startMs": 266060,
+          "endMs": 266460,
+          "probability": 0.968761
+        },
+        {
+          "text": "looks",
+          "startMs": 266460,
+          "endMs": 266700,
+          "probability": 0.983854
+        },
+        {
+          "text": "old.",
+          "startMs": 266700,
+          "endMs": 267280,
+          "probability": 0.974454
+        }
+      ]
+    },
+    {
+      "text": "It looks cold.",
+      "startMs": 267860,
+      "endMs": 269120,
+      "words": [
+        {
+          "text": "It",
+          "startMs": 267860,
+          "endMs": 268220,
+          "probability": 0.923499
+        },
+        {
+          "text": "looks",
+          "startMs": 268220,
+          "endMs": 268600,
+          "probability": 0.988498
+        },
+        {
+          "text": "cold.",
+          "startMs": 268600,
+          "endMs": 269120,
+          "probability": 0.97128
+        }
+      ]
+    },
+    {
+      "text": "It looks dark.",
+      "startMs": 270220,
+      "endMs": 271340,
+      "words": [
+        {
+          "text": "It",
+          "startMs": 270220,
+          "endMs": 270380,
+          "probability": 0.920598
+        },
+        {
+          "text": "looks",
+          "startMs": 270380,
+          "endMs": 270620,
+          "probability": 0.986008
+        },
+        {
+          "text": "dark.",
+          "startMs": 270620,
+          "endMs": 271340,
+          "probability": 0.990495
+        }
+      ]
+    },
+    {
+      "text": "Hello goblin.",
+      "startMs": 272700,
+      "endMs": 274460,
+      "words": [
+        {
+          "text": "Hello",
+          "startMs": 272700,
+          "endMs": 273220,
+          "probability": 0.694769
+        },
+        {
+          "text": "goblin.",
+          "startMs": 273220,
+          "endMs": 274460,
+          "probability": 0.636054
+        }
+      ]
+    },
+    {
+      "text": "Goblin, do you have grandfather bear's pocket watch?",
+      "startMs": 277760,
+      "endMs": 282760,
+      "words": [
+        {
+          "text": "Goblin,",
+          "startMs": 277760,
+          "endMs": 278780,
+          "probability": 0.960478
+        },
+        {
+          "text": "do",
+          "startMs": 278780,
+          "endMs": 279800,
+          "probability": 0.924681
+        },
+        {
+          "text": "you",
+          "startMs": 279800,
+          "endMs": 280140,
+          "probability": 0.998131
+        },
+        {
+          "text": "have",
+          "startMs": 280140,
+          "endMs": 280560,
+          "probability": 0.996838
+        },
+        {
+          "text": "grandfather",
+          "startMs": 280560,
+          "endMs": 281120,
+          "probability": 0.752065
+        },
+        {
+          "text": "bear's",
+          "startMs": 281120,
+          "endMs": 281740,
+          "probability": 0.591565
+        },
+        {
+          "text": "pocket",
+          "startMs": 281740,
+          "endMs": 282240,
+          "probability": 0.989631
+        },
+        {
+          "text": "watch?",
+          "startMs": 282240,
+          "endMs": 282760,
+          "probability": 0.975649
+        }
+      ]
+    },
+    {
+      "text": "We found your shoes and your hat and your walking stick.",
+      "startMs": 284400,
+      "endMs": 288680,
+      "words": [
+        {
+          "text": "We",
+          "startMs": 283950,
+          "endMs": 284460,
+          "probability": 0.984356
+        },
+        {
+          "text": "found",
+          "startMs": 284460,
+          "endMs": 284740,
+          "probability": 0.976366
+        },
+        {
+          "text": "your",
+          "startMs": 284740,
+          "endMs": 284980,
+          "probability": 0.968905
+        },
+        {
+          "text": "shoes",
+          "startMs": 284980,
+          "endMs": 285460,
+          "probability": 0.995605
+        },
+        {
+          "text": "and",
+          "startMs": 285460,
+          "endMs": 286200,
+          "probability": 0.84482
+        },
+        {
+          "text": "your",
+          "startMs": 286200,
+          "endMs": 286460,
+          "probability": 0.982573
+        },
+        {
+          "text": "hat",
+          "startMs": 286460,
+          "endMs": 286740,
+          "probability": 0.998085
+        },
+        {
+          "text": "and",
+          "startMs": 286740,
+          "endMs": 287540,
+          "probability": 0.886456
+        },
+        {
+          "text": "your",
+          "startMs": 287540,
+          "endMs": 287780,
+          "probability": 0.968218
+        },
+        {
+          "text": "walking",
+          "startMs": 287780,
+          "endMs": 288180,
+          "probability": 0.986778
+        },
+        {
+          "text": "stick.",
+          "startMs": 288180,
+          "endMs": 288680,
+          "probability": 0.996491
+        }
+      ]
+    },
+    {
+      "text": "We thought you might want them back.",
+      "startMs": 289680,
+      "endMs": 291380,
+      "words": [
+        {
+          "text": "We",
+          "startMs": 289440,
+          "endMs": 289740,
+          "probability": 0.528165
+        },
+        {
+          "text": "thought",
+          "startMs": 289740,
+          "endMs": 290020,
+          "probability": 0.977898
+        },
+        {
+          "text": "you",
+          "startMs": 290020,
+          "endMs": 290260,
+          "probability": 0.995356
+        },
+        {
+          "text": "might",
+          "startMs": 290260,
+          "endMs": 290460,
+          "probability": 0.98863
+        },
+        {
+          "text": "want",
+          "startMs": 290460,
+          "endMs": 290740,
+          "probability": 0.994237
+        },
+        {
+          "text": "them",
+          "startMs": 290740,
+          "endMs": 290980,
+          "probability": 0.991574
+        },
+        {
+          "text": "back.",
+          "startMs": 290980,
+          "endMs": 291380,
+          "probability": 0.997339
+        }
+      ]
+    },
+    {
+      "text": "I know grandfather bear would really like his pocket watch back.",
+      "startMs": 291820,
+      "endMs": 295620,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 291820,
+          "endMs": 292100,
+          "probability": 0.988787
+        },
+        {
+          "text": "know",
+          "startMs": 292100,
+          "endMs": 292280,
+          "probability": 0.992692
+        },
+        {
+          "text": "grandfather",
+          "startMs": 292280,
+          "endMs": 292900,
+          "probability": 0.618177
+        },
+        {
+          "text": "bear",
+          "startMs": 292900,
+          "endMs": 293220,
+          "probability": 0.831999
+        },
+        {
+          "text": "would",
+          "startMs": 293220,
+          "endMs": 293480,
+          "probability": 0.989695
+        },
+        {
+          "text": "really",
+          "startMs": 293480,
+          "endMs": 293980,
+          "probability": 0.953409
+        },
+        {
+          "text": "like",
+          "startMs": 293980,
+          "endMs": 294280,
+          "probability": 0.99849
+        },
+        {
+          "text": "his",
+          "startMs": 294280,
+          "endMs": 294500,
+          "probability": 0.994012
+        },
+        {
+          "text": "pocket",
+          "startMs": 294500,
+          "endMs": 294860,
+          "probability": 0.981378
+        },
+        {
+          "text": "watch",
+          "startMs": 294860,
+          "endMs": 295140,
+          "probability": 0.964021
+        },
+        {
+          "text": "back.",
+          "startMs": 295140,
+          "endMs": 295620,
+          "probability": 0.936787
+        }
+      ]
+    },
+    {
+      "text": "Maybe he isn't home.",
+      "startMs": 297480,
+      "endMs": 298720,
+      "words": [
+        {
+          "text": "Maybe",
+          "startMs": 297480,
+          "endMs": 298080,
+          "probability": 0.975382
+        },
+        {
+          "text": "he",
+          "startMs": 298080,
+          "endMs": 298300,
+          "probability": 0.991472
+        },
+        {
+          "text": "isn't",
+          "startMs": 298300,
+          "endMs": 298540,
+          "probability": 0.949967
+        },
+        {
+          "text": "home.",
+          "startMs": 298540,
+          "endMs": 298720,
+          "probability": 0.953616
+        }
+      ]
+    },
+    {
+      "text": "Let's come back after lunch.",
+      "startMs": 300180,
+      "endMs": 302120,
+      "words": [
+        {
+          "text": "Let's",
+          "startMs": 300180,
+          "endMs": 300780,
+          "probability": 0.967764
+        },
+        {
+          "text": "come",
+          "startMs": 300780,
+          "endMs": 301180,
+          "probability": 0.740018
+        },
+        {
+          "text": "back",
+          "startMs": 301180,
+          "endMs": 301400,
+          "probability": 0.998389
+        },
+        {
+          "text": "after",
+          "startMs": 301400,
+          "endMs": 301840,
+          "probability": 0.997189
+        },
+        {
+          "text": "lunch.",
+          "startMs": 301840,
+          "endMs": 302120,
+          "probability": 0.997268
+        }
+      ]
+    },
+    {
+      "text": "Maybe then we'll find my pocket watch.",
+      "startMs": 304120,
+      "endMs": 306100,
+      "words": [
+        {
+          "text": "Maybe",
+          "startMs": 303840,
+          "endMs": 304140,
+          "probability": 0.980101
+        },
+        {
+          "text": "then",
+          "startMs": 304140,
+          "endMs": 304420,
+          "probability": 0.703005
+        },
+        {
+          "text": "we'll",
+          "startMs": 304420,
+          "endMs": 304640,
+          "probability": 0.965936
+        },
+        {
+          "text": "find",
+          "startMs": 304640,
+          "endMs": 304920,
+          "probability": 0.997539
+        },
+        {
+          "text": "my",
+          "startMs": 304920,
+          "endMs": 305140,
+          "probability": 0.997575
+        },
+        {
+          "text": "pocket",
+          "startMs": 305140,
+          "endMs": 305500,
+          "probability": 0.998716
+        },
+        {
+          "text": "watch.",
+          "startMs": 305500,
+          "endMs": 306100,
+          "probability": 0.992762
+        }
+      ]
+    },
+    {
+      "text": "Our first clue?",
+      "startMs": 313800,
+      "endMs": 315240,
+      "words": [
+        {
+          "text": "Our",
+          "startMs": 313800,
+          "endMs": 314560,
+          "probability": 0.080142
+        },
+        {
+          "text": "first",
+          "startMs": 314560,
+          "endMs": 314940,
+          "probability": 0.992461
+        },
+        {
+          "text": "clue?",
+          "startMs": 314940,
+          "endMs": 315240,
+          "probability": 0.99636
+        }
+      ]
+    },
+    {
+      "text": "Goblin shoes.",
+      "startMs": 315960,
+      "endMs": 316860,
+      "words": [
+        {
+          "text": "Goblin",
+          "startMs": 315960,
+          "endMs": 316420,
+          "probability": 0.973401
+        },
+        {
+          "text": "shoes.",
+          "startMs": 316420,
+          "endMs": 316860,
+          "probability": 0.373791
+        }
+      ]
+    },
+    {
+      "text": "It's elementary.",
+      "startMs": 317540,
+      "endMs": 318440,
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 317540,
+          "endMs": 317940,
+          "probability": 0.96643
+        },
+        {
+          "text": "elementary.",
+          "startMs": 317940,
+          "endMs": 318440,
+          "probability": 0.96519
+        }
+      ]
+    },
+    {
+      "text": "A goblin trick and a walking stick.",
+      "startMs": 319000,
+      "endMs": 321340,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 319000,
+          "endMs": 319220,
+          "probability": 0.982804
+        },
+        {
+          "text": "goblin",
+          "startMs": 319220,
+          "endMs": 319680,
+          "probability": 0.873047
+        },
+        {
+          "text": "trick",
+          "startMs": 319680,
+          "endMs": 319960,
+          "probability": 0.922263
+        },
+        {
+          "text": "and",
+          "startMs": 319960,
+          "endMs": 320460,
+          "probability": 0.888228
+        },
+        {
+          "text": "a",
+          "startMs": 320460,
+          "endMs": 320640,
+          "probability": 0.963884
+        },
+        {
+          "text": "walking",
+          "startMs": 320640,
+          "endMs": 320920,
+          "probability": 0.981674
+        },
+        {
+          "text": "stick.",
+          "startMs": 320920,
+          "endMs": 321340,
+          "probability": 0.996129
+        }
+      ]
+    },
+    {
+      "text": "It's elementary.",
+      "startMs": 321900,
+      "endMs": 322700,
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 321900,
+          "endMs": 322160,
+          "probability": 0.992873
+        },
+        {
+          "text": "elementary.",
+          "startMs": 322160,
+          "endMs": 322700,
+          "probability": 0.99631
+        }
+      ]
+    },
+    {
+      "text": "A small green hat.",
+      "startMs": 323120,
+      "endMs": 324220,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 323120,
+          "endMs": 323240,
+          "probability": 0.994083
+        },
+        {
+          "text": "small",
+          "startMs": 323240,
+          "endMs": 323520,
+          "probability": 0.9962
+        },
+        {
+          "text": "green",
+          "startMs": 323520,
+          "endMs": 323960,
+          "probability": 0.976328
+        },
+        {
+          "text": "hat.",
+          "startMs": 323960,
+          "endMs": 324220,
+          "probability": 0.99147
+        }
+      ]
+    },
+    {
+      "text": "We gave it back.",
+      "startMs": 324580,
+      "endMs": 325400,
+      "words": [
+        {
+          "text": "We",
+          "startMs": 324580,
+          "endMs": 324700,
+          "probability": 0.994424
+        },
+        {
+          "text": "gave",
+          "startMs": 324700,
+          "endMs": 324900,
+          "probability": 0.930994
+        },
+        {
+          "text": "it",
+          "startMs": 324900,
+          "endMs": 325120,
+          "probability": 0.998717
+        },
+        {
+          "text": "back.",
+          "startMs": 325120,
+          "endMs": 325400,
+          "probability": 0.998202
+        }
+      ]
+    },
+    {
+      "text": "It's elementary.",
+      "startMs": 325760,
+      "endMs": 326680,
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 325760,
+          "endMs": 326140,
+          "probability": 0.996462
+        },
+        {
+          "text": "elementary.",
+          "startMs": 326140,
+          "endMs": 326680,
+          "probability": 0.999
+        }
+      ]
+    },
+    {
+      "text": "Detective little bear.",
+      "startMs": 327180,
+      "endMs": 328280,
+      "words": [
+        {
+          "text": "Detective",
+          "startMs": 327180,
+          "endMs": 327620,
+          "probability": 0.61849
+        },
+        {
+          "text": "little",
+          "startMs": 327620,
+          "endMs": 327980,
+          "probability": 0.074313
+        },
+        {
+          "text": "bear.",
+          "startMs": 327980,
+          "endMs": 328280,
+          "probability": 0.971824
+        }
+      ]
+    },
+    {
+      "text": "We'll find out where my pocket watch is gone.",
+      "startMs": 328700,
+      "endMs": 331800,
+      "words": [
+        {
+          "text": "We'll",
+          "startMs": 328700,
+          "endMs": 328940,
+          "probability": 0.979493
+        },
+        {
+          "text": "find",
+          "startMs": 328940,
+          "endMs": 329260,
+          "probability": 0.998877
+        },
+        {
+          "text": "out",
+          "startMs": 329260,
+          "endMs": 329520,
+          "probability": 0.997825
+        },
+        {
+          "text": "where",
+          "startMs": 329520,
+          "endMs": 329880,
+          "probability": 0.993378
+        },
+        {
+          "text": "my",
+          "startMs": 329880,
+          "endMs": 330180,
+          "probability": 0.996613
+        },
+        {
+          "text": "pocket",
+          "startMs": 330180,
+          "endMs": 330660,
+          "probability": 0.536194
+        },
+        {
+          "text": "watch",
+          "startMs": 330660,
+          "endMs": 331000,
+          "probability": 0.946675
+        },
+        {
+          "text": "is",
+          "startMs": 331000,
+          "endMs": 331380,
+          "probability": 0.526287
+        },
+        {
+          "text": "gone.",
+          "startMs": 331380,
+          "endMs": 331800,
+          "probability": 0.996261
+        }
+      ]
+    },
+    {
+      "text": "Elementary.",
+      "startMs": 334340,
+      "endMs": 335020,
+      "words": [
+        {
+          "text": "Elementary.",
+          "startMs": 334340,
+          "endMs": 335020,
+          "probability": 0.002021
+        }
+      ]
+    },
+    {
+      "text": "Hello.",
+      "startMs": 345600,
+      "endMs": 346280,
+      "words": [
+        {
+          "text": "Hello.",
+          "startMs": 345600,
+          "endMs": 346280,
+          "probability": 0.660455
+        }
+      ]
+    },
+    {
+      "text": "Hello, grandmother bear.",
+      "startMs": 346840,
+      "endMs": 347920,
+      "words": [
+        {
+          "text": "Hello,",
+          "startMs": 346840,
+          "endMs": 347100,
+          "probability": 0.801532
+        },
+        {
+          "text": "grandmother",
+          "startMs": 347240,
+          "endMs": 347580,
+          "probability": 0.304727
+        },
+        {
+          "text": "bear.",
+          "startMs": 347580,
+          "endMs": 347920,
+          "probability": 0.785269
+        }
+      ]
+    },
+    {
+      "text": "So what have you two been up to all morning?",
+      "startMs": 348640,
+      "endMs": 351540,
+      "words": [
+        {
+          "text": "So",
+          "startMs": 348640,
+          "endMs": 348800,
+          "probability": 0.683183
+        },
+        {
+          "text": "what",
+          "startMs": 348800,
+          "endMs": 349580,
+          "probability": 0.415583
+        },
+        {
+          "text": "have",
+          "startMs": 349580,
+          "endMs": 349800,
+          "probability": 0.885947
+        },
+        {
+          "text": "you",
+          "startMs": 349800,
+          "endMs": 349960,
+          "probability": 0.985435
+        },
+        {
+          "text": "two",
+          "startMs": 349960,
+          "endMs": 350200,
+          "probability": 0.849163
+        },
+        {
+          "text": "been",
+          "startMs": 350200,
+          "endMs": 350460,
+          "probability": 0.999264
+        },
+        {
+          "text": "up",
+          "startMs": 350460,
+          "endMs": 350620,
+          "probability": 0.998971
+        },
+        {
+          "text": "to",
+          "startMs": 350620,
+          "endMs": 350820,
+          "probability": 0.984853
+        },
+        {
+          "text": "all",
+          "startMs": 350820,
+          "endMs": 351120,
+          "probability": 0.845728
+        },
+        {
+          "text": "morning?",
+          "startMs": 351120,
+          "endMs": 351540,
+          "probability": 0.990676
+        }
+      ]
+    },
+    {
+      "text": "We've been trying to solve a mystery.",
+      "startMs": 352120,
+      "endMs": 353920,
+      "words": [
+        {
+          "text": "We've",
+          "startMs": 352120,
+          "endMs": 352380,
+          "probability": 0.980068
+        },
+        {
+          "text": "been",
+          "startMs": 352380,
+          "endMs": 352540,
+          "probability": 0.997834
+        },
+        {
+          "text": "trying",
+          "startMs": 352540,
+          "endMs": 352960,
+          "probability": 0.998402
+        },
+        {
+          "text": "to",
+          "startMs": 352960,
+          "endMs": 353180,
+          "probability": 0.999249
+        },
+        {
+          "text": "solve",
+          "startMs": 353180,
+          "endMs": 353380,
+          "probability": 0.998349
+        },
+        {
+          "text": "a",
+          "startMs": 353380,
+          "endMs": 353520,
+          "probability": 0.995145
+        },
+        {
+          "text": "mystery.",
+          "startMs": 353520,
+          "endMs": 353920,
+          "probability": 0.997808
+        }
+      ]
+    },
+    {
+      "text": "The mystery of grandfather bear's missing pocket watch.",
+      "startMs": 355560,
+      "endMs": 359940,
+      "words": [
+        {
+          "text": "The",
+          "startMs": 355560,
+          "endMs": 356240,
+          "probability": 0.638918
+        },
+        {
+          "text": "mystery",
+          "startMs": 356240,
+          "endMs": 356800,
+          "probability": 0.961305
+        },
+        {
+          "text": "of",
+          "startMs": 356800,
+          "endMs": 357500,
+          "probability": 0.987768
+        },
+        {
+          "text": "grandfather",
+          "startMs": 357500,
+          "endMs": 358060,
+          "probability": 0.845087
+        },
+        {
+          "text": "bear's",
+          "startMs": 358060,
+          "endMs": 358680,
+          "probability": 0.628281
+        },
+        {
+          "text": "missing",
+          "startMs": 358680,
+          "endMs": 358980,
+          "probability": 0.98001
+        },
+        {
+          "text": "pocket",
+          "startMs": 358980,
+          "endMs": 359460,
+          "probability": 0.977968
+        },
+        {
+          "text": "watch.",
+          "startMs": 359460,
+          "endMs": 359940,
+          "probability": 0.941389
+        }
+      ]
+    },
+    {
+      "text": "Luckily, Detective little bear is on the case.",
+      "startMs": 360940,
+      "endMs": 363780,
+      "words": [
+        {
+          "text": "Luckily,",
+          "startMs": 360800,
+          "endMs": 361100,
+          "probability": 0.922509
+        },
+        {
+          "text": "Detective",
+          "startMs": 361420,
+          "endMs": 362000,
+          "probability": 0.779562
+        },
+        {
+          "text": "little",
+          "startMs": 362000,
+          "endMs": 362380,
+          "probability": 0.013512
+        },
+        {
+          "text": "bear",
+          "startMs": 362380,
+          "endMs": 362580,
+          "probability": 0.751542
+        },
+        {
+          "text": "is",
+          "startMs": 362580,
+          "endMs": 362900,
+          "probability": 0.97299
+        },
+        {
+          "text": "on",
+          "startMs": 362900,
+          "endMs": 363080,
+          "probability": 0.992116
+        },
+        {
+          "text": "the",
+          "startMs": 363080,
+          "endMs": 363280,
+          "probability": 0.995665
+        },
+        {
+          "text": "case.",
+          "startMs": 363280,
+          "endMs": 363780,
+          "probability": 0.961969
+        }
+      ]
+    },
+    {
+      "text": "Well, you are the best little bear for the job.",
+      "startMs": 365060,
+      "endMs": 368500,
+      "words": [
+        {
+          "text": "Well,",
+          "startMs": 365060,
+          "endMs": 365660,
+          "probability": 0.140976
+        },
+        {
+          "text": "you",
+          "startMs": 366320,
+          "endMs": 366580,
+          "probability": 0.990475
+        },
+        {
+          "text": "are",
+          "startMs": 366580,
+          "endMs": 366780,
+          "probability": 0.949598
+        },
+        {
+          "text": "the",
+          "startMs": 366780,
+          "endMs": 366980,
+          "probability": 0.993106
+        },
+        {
+          "text": "best",
+          "startMs": 366980,
+          "endMs": 367280,
+          "probability": 0.996879
+        },
+        {
+          "text": "little",
+          "startMs": 367280,
+          "endMs": 367500,
+          "probability": 0.972271
+        },
+        {
+          "text": "bear",
+          "startMs": 367500,
+          "endMs": 367780,
+          "probability": 0.992713
+        },
+        {
+          "text": "for",
+          "startMs": 367780,
+          "endMs": 368040,
+          "probability": 0.99667
+        },
+        {
+          "text": "the",
+          "startMs": 368040,
+          "endMs": 368180,
+          "probability": 0.996344
+        },
+        {
+          "text": "job.",
+          "startMs": 368180,
+          "endMs": 368500,
+          "probability": 0.998472
+        }
+      ]
+    },
+    {
+      "text": "We haven't found the watch yet, but we almost found a goblin.",
+      "startMs": 369020,
+      "endMs": 372460,
+      "words": [
+        {
+          "text": "We",
+          "startMs": 369020,
+          "endMs": 369280,
+          "probability": 0.978586
+        },
+        {
+          "text": "haven't",
+          "startMs": 369280,
+          "endMs": 369580,
+          "probability": 0.996224
+        },
+        {
+          "text": "found",
+          "startMs": 369580,
+          "endMs": 369880,
+          "probability": 0.997292
+        },
+        {
+          "text": "the",
+          "startMs": 369880,
+          "endMs": 370120,
+          "probability": 0.97387
+        },
+        {
+          "text": "watch",
+          "startMs": 370120,
+          "endMs": 370300,
+          "probability": 0.994738
+        },
+        {
+          "text": "yet,",
+          "startMs": 370300,
+          "endMs": 370640,
+          "probability": 0.997458
+        },
+        {
+          "text": "but",
+          "startMs": 370960,
+          "endMs": 371060,
+          "probability": 0.993811
+        },
+        {
+          "text": "we",
+          "startMs": 371060,
+          "endMs": 371220,
+          "probability": 0.997287
+        },
+        {
+          "text": "almost",
+          "startMs": 371220,
+          "endMs": 371640,
+          "probability": 0.971289
+        },
+        {
+          "text": "found",
+          "startMs": 371640,
+          "endMs": 371920,
+          "probability": 0.99763
+        },
+        {
+          "text": "a",
+          "startMs": 371920,
+          "endMs": 372080,
+          "probability": 0.963637
+        },
+        {
+          "text": "goblin.",
+          "startMs": 372080,
+          "endMs": 372460,
+          "probability": 0.984488
+        }
+      ]
+    },
+    {
+      "text": "What is it little bear?",
+      "startMs": 379940,
+      "endMs": 380960,
+      "words": [
+        {
+          "text": "What",
+          "startMs": 379660,
+          "endMs": 379960,
+          "probability": 0.968013
+        },
+        {
+          "text": "is",
+          "startMs": 379960,
+          "endMs": 380220,
+          "probability": 0.988251
+        },
+        {
+          "text": "it",
+          "startMs": 380220,
+          "endMs": 380380,
+          "probability": 0.896701
+        },
+        {
+          "text": "little",
+          "startMs": 380380,
+          "endMs": 380680,
+          "probability": 0.207563
+        },
+        {
+          "text": "bear?",
+          "startMs": 380680,
+          "endMs": 380960,
+          "probability": 0.986296
+        }
+      ]
+    },
+    {
+      "text": "Grandfather bear, I think we need some more bread.",
+      "startMs": 405680,
+      "endMs": 408200,
+      "words": [
+        {
+          "text": "Grandfather",
+          "startMs": 405680,
+          "endMs": 406120,
+          "probability": 0.541861
+        },
+        {
+          "text": "bear,",
+          "startMs": 406120,
+          "endMs": 406340,
+          "probability": 0.208609
+        },
+        {
+          "text": "I",
+          "startMs": 406700,
+          "endMs": 406880,
+          "probability": 0.976801
+        },
+        {
+          "text": "think",
+          "startMs": 406880,
+          "endMs": 407100,
+          "probability": 0.998195
+        },
+        {
+          "text": "we",
+          "startMs": 407100,
+          "endMs": 407300,
+          "probability": 0.994909
+        },
+        {
+          "text": "need",
+          "startMs": 407300,
+          "endMs": 407460,
+          "probability": 0.996453
+        },
+        {
+          "text": "some",
+          "startMs": 407460,
+          "endMs": 407680,
+          "probability": 0.991304
+        },
+        {
+          "text": "more",
+          "startMs": 407680,
+          "endMs": 407860,
+          "probability": 0.974301
+        },
+        {
+          "text": "bread.",
+          "startMs": 407860,
+          "endMs": 408200,
+          "probability": 0.997623
+        }
+      ]
+    },
+    {
+      "text": "Bread?",
+      "startMs": 408660,
+      "endMs": 409040,
+      "words": [
+        {
+          "text": "Bread?",
+          "startMs": 408660,
+          "endMs": 409040,
+          "probability": 0.983971
+        }
+      ]
+    },
+    {
+      "text": "Well, yes.",
+      "startMs": 409040,
+      "endMs": 411140,
+      "words": [
+        {
+          "text": "Well,",
+          "startMs": 409040,
+          "endMs": 410040,
+          "probability": 0.183418
+        },
+        {
+          "text": "yes.",
+          "startMs": 410600,
+          "endMs": 411140,
+          "probability": 0.924748
+        }
+      ]
+    },
+    {
+      "text": "All right.",
+      "startMs": 411720,
+      "endMs": 414980,
+      "words": [
+        {
+          "text": "All",
+          "startMs": 411720,
+          "endMs": 412000,
+          "probability": 0.512691
+        },
+        {
+          "text": "right.",
+          "startMs": 412000,
+          "endMs": 414980,
+          "probability": 0.993389
+        }
+      ]
+    },
+    {
+      "text": "My watch.",
+      "startMs": 415540,
+      "endMs": 419960,
+      "words": [
+        {
+          "text": "My",
+          "startMs": 415540,
+          "endMs": 416520,
+          "probability": 0.112626
+        },
+        {
+          "text": "watch.",
+          "startMs": 416520,
+          "endMs": 419960,
+          "probability": 0.945555
+        }
+      ]
+    },
+    {
+      "text": "Good detective work.",
+      "startMs": 420720,
+      "endMs": 422440,
+      "words": [
+        {
+          "text": "Good",
+          "startMs": 420720,
+          "endMs": 421120,
+          "probability": 0.971735
+        },
+        {
+          "text": "detective",
+          "startMs": 421120,
+          "endMs": 421880,
+          "probability": 0.880563
+        },
+        {
+          "text": "work.",
+          "startMs": 421880,
+          "endMs": 422440,
+          "probability": 0.996189
+        }
+      ]
+    },
+    {
+      "text": "I must have dropped it in the dough when I was helping grandmother bear make bread.",
+      "startMs": 422940,
+      "endMs": 428300,
+      "words": [
+        {
+          "text": "I",
+          "startMs": 422940,
+          "endMs": 423500,
+          "probability": 0.679132
+        },
+        {
+          "text": "must",
+          "startMs": 423500,
+          "endMs": 423740,
+          "probability": 0.996586
+        },
+        {
+          "text": "have",
+          "startMs": 423740,
+          "endMs": 423980,
+          "probability": 0.895294
+        },
+        {
+          "text": "dropped",
+          "startMs": 423980,
+          "endMs": 424280,
+          "probability": 0.984906
+        },
+        {
+          "text": "it",
+          "startMs": 424280,
+          "endMs": 424540,
+          "probability": 0.997986
+        },
+        {
+          "text": "in",
+          "startMs": 424540,
+          "endMs": 424680,
+          "probability": 0.992604
+        },
+        {
+          "text": "the",
+          "startMs": 424680,
+          "endMs": 424840,
+          "probability": 0.991185
+        },
+        {
+          "text": "dough",
+          "startMs": 424840,
+          "endMs": 425180,
+          "probability": 0.901753
+        },
+        {
+          "text": "when",
+          "startMs": 425180,
+          "endMs": 425540,
+          "probability": 0.951551
+        },
+        {
+          "text": "I",
+          "startMs": 425540,
+          "endMs": 425660,
+          "probability": 0.994706
+        },
+        {
+          "text": "was",
+          "startMs": 425660,
+          "endMs": 425880,
+          "probability": 0.999545
+        },
+        {
+          "text": "helping",
+          "startMs": 425880,
+          "endMs": 426160,
+          "probability": 0.995801
+        },
+        {
+          "text": "grandmother",
+          "startMs": 426160,
+          "endMs": 426860,
+          "probability": 0.7386
+        },
+        {
+          "text": "bear",
+          "startMs": 426860,
+          "endMs": 427380,
+          "probability": 0.95701
+        },
+        {
+          "text": "make",
+          "startMs": 427380,
+          "endMs": 427660,
+          "probability": 0.625309
+        },
+        {
+          "text": "bread.",
+          "startMs": 427660,
+          "endMs": 428300,
+          "probability": 0.992346
+        }
+      ]
+    },
+    {
+      "text": "Or maybe the goblin put it there.",
+      "startMs": 430040,
+      "endMs": 431940,
+      "words": [
+        {
+          "text": "Or",
+          "startMs": 429670,
+          "endMs": 430160,
+          "probability": 0.798261
+        },
+        {
+          "text": "maybe",
+          "startMs": 430160,
+          "endMs": 430560,
+          "probability": 0.982201
+        },
+        {
+          "text": "the",
+          "startMs": 430560,
+          "endMs": 430780,
+          "probability": 0.981162
+        },
+        {
+          "text": "goblin",
+          "startMs": 430780,
+          "endMs": 431260,
+          "probability": 0.944268
+        },
+        {
+          "text": "put",
+          "startMs": 431260,
+          "endMs": 431500,
+          "probability": 0.988526
+        },
+        {
+          "text": "it",
+          "startMs": 431500,
+          "endMs": 431660,
+          "probability": 0.999077
+        },
+        {
+          "text": "there.",
+          "startMs": 431660,
+          "endMs": 431940,
+          "probability": 0.998765
+        }
+      ]
+    },
+    {
+      "text": "You never know about goblins.",
+      "startMs": 432620,
+      "endMs": 434680,
+      "words": [
+        {
+          "text": "You",
+          "startMs": 432620,
+          "endMs": 432800,
+          "probability": 0.885702
+        },
+        {
+          "text": "never",
+          "startMs": 432800,
+          "endMs": 433180,
+          "probability": 0.992377
+        },
+        {
+          "text": "know",
+          "startMs": 433180,
+          "endMs": 433500,
+          "probability": 0.998475
+        },
+        {
+          "text": "about",
+          "startMs": 433500,
+          "endMs": 434060,
+          "probability": 0.997567
+        },
+        {
+          "text": "goblins.",
+          "startMs": 434060,
+          "endMs": 434680,
+          "probability": 0.83246
+        }
+      ]
+    },
+    {
+      "text": "Goblins are very mysterious.",
+      "startMs": 435540,
+      "endMs": 437880,
+      "words": [
+        {
+          "text": "Goblins",
+          "startMs": 435540,
+          "endMs": 436220,
+          "probability": 0.782848
+        },
+        {
+          "text": "are",
+          "startMs": 436220,
+          "endMs": 436680,
+          "probability": 0.980722
+        },
+        {
+          "text": "very",
+          "startMs": 436680,
+          "endMs": 437220,
+          "probability": 0.994614
+        },
+        {
+          "text": "mysterious.",
+          "startMs": 437220,
+          "endMs": 437880,
+          "probability": 0.997894
+        }
+      ]
+    },
+    {
+      "text": "Aren't they?",
+      "startMs": 437880,
+      "endMs": 439140,
+      "words": [
+        {
+          "text": "Aren't",
+          "startMs": 437880,
+          "endMs": 439000,
+          "probability": 0.535564
+        },
+        {
+          "text": "they?",
+          "startMs": 439000,
+          "endMs": 439140,
+          "probability": 0.960659
+        }
+      ]
+    }
+  ]
+}

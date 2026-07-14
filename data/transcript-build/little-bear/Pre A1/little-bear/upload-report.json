@@ -1,0 +1,36 @@
+{
+  "mode": "applied",
+  "envId": "youshengenglish-6glk12rd6c6e719b",
+  "uploadedCount": 18,
+  "reusedSameContentCount": 0,
+  "verifiedCount": 18,
+  "sampleHashVerifiedCount": 4,
+  "oldReferenceUnchanged": true,
+  "transcriptUrl": "https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_transcripts/Pre%20A1/little-bear/bundle-sentence-v1.json",
+  "hashVerify": [
+    {
+      "cloudPath": "Pre A1/Little Bear/Audio/010-up-all-night-b69448b308.mp3",
+      "localSha1": "b69448b3081e37bb771f79781b26435d8c284a83",
+      "remoteSha1": "b69448b3081e37bb771f79781b26435d8c284a83",
+      "matched": true
+    },
+    {
+      "cloudPath": "Pre A1/Little Bear/Audio/070-between-friends-ac9e5589c3.mp3",
+      "localSha1": "ac9e5589c3f8fb2757eee329ff45bda7ce04466f",
+      "remoteSha1": "ac9e5589c3f8fb2757eee329ff45bda7ce04466f",
+      "matched": true
+    },
+    {
+      "cloudPath": "Pre A1/Little Bear/Audio/135-detective-little-bear-0d710ccf59.mp3",
+      "localSha1": "0d710ccf59b1f11bbd2883de7b5573001ff5182f",
+      "remoteSha1": "0d710ccf59b1f11bbd2883de7b5573001ff5182f",
+      "matched": true
+    },
+    {
+      "cloudPath": "_transcripts/Pre A1/little-bear/bundle-sentence-v1.json",
+      "localSha1": "21b47da04b83cf35739ed9bbaf33c83fb8dd0232",
+      "remoteSha1": "21b47da04b83cf35739ed9bbaf33c83fb8dd0232",
+      "matched": true
+    }
+  ]
+}

@@ -121,6 +121,34 @@ test('New Concept 2-4 摘要有兜底数量', () => {
   });
 });
 
+test('New Concept 1-4 在所有计划阶段保留回答评分', () => {
+  const categories = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
+  const phases = ['round-1', 'round-2', 'custom', 'level'];
+  categories.forEach((category) => {
+    phases.forEach((planPhase) => {
+      const task = taskPresenter.decorateTask({
+        taskId: `${category}-${planPhase}`,
+        category,
+        title: `${category} lesson`,
+        repeatTarget: 3,
+        planPhase,
+        transcriptTrackId: `track-${category}`
+      }, {
+        playCount: 0,
+        playMoments: [],
+        completedToday: false
+      }, category, {
+        songPlaceholder: {},
+        getMediaDisplayName: () => ''
+      });
+
+      assert.equal(task.speakingMode, 'nce-question-answer');
+      assert.equal(task.speakingRequired, true);
+      assert.equal(task.questionAnswerRequired, true);
+    });
+  });
+});
+
 test('Pre A1 Songs 与其他 Level 使用同一静态目录加载', async () => {
   const startedAt = Date.now();
   await catalogEngine.refreshRuntimeCatalogs(true, ['song']);
@@ -141,6 +169,25 @@ test('Pre A1 Songs 与其他 Level 使用同一静态目录加载', async () => 
   });
   assert.equal(Object.prototype.hasOwnProperty.call(material, 'tasks'), false);
   assert.ok(Date.now() - startedAt < 100, 'Songs 静态目录不应触发云存储扫描');
+});
+
+test('Peppa 只归入 A1 且首屏保持轻量', () => {
+  const startedAt = performance.now();
+  const build = (levelId) => listeningPlanEngine.buildMaterialEntries(levelId, {
+    getCatalogSummary: catalogEngine.getCatalogSummary
+  });
+  const preA1 = build('Pre A1');
+  const a1 = build('A1');
+  const a2 = build('A2');
+  const elapsedMs = performance.now() - startedAt;
+
+  assert.deepEqual(preA1.map((item) => item.category), ['song', 'littlebear']);
+  assert.equal(preA1.find((item) => item.category === 'littlebear').totalCount, 17);
+  assert.equal(a1.find((item) => item.category === 'peppa').totalCount, 157);
+  assert.equal(a1.filter((item) => item.category === 'peppa').length, 1);
+  assert.equal(a2.some((item) => item.category === 'peppa'), false);
+  assert.equal(JSON.stringify(a1).includes('audioUrl'), false);
+  assert.ok(elapsedMs < 10, `三级摘要构建耗时 ${elapsedMs}ms`);
 });
 
 test('Unlock 1 听口 第三版使用静态 manifest 快速目录', async () => {
