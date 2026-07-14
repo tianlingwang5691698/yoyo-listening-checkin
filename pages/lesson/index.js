@@ -21,6 +21,10 @@ const text = (key, fallback) => i18n.getPageText('lesson', key, undefined, fallb
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
 const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+const LISTENING_RESUME_SNAPSHOT_PREFIX = 'lessonListeningResumeV1';
+const LISTENING_RESUME_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
+const LISTENING_RESUME_SAVE_INTERVAL_SEC = 5;
+const LISTENING_RESUME_REWIND_SEC = 5;
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const NEW_CONCEPT_AUDIO_ROOTS = {
   newconcept1: 'A1/NewConcept1-US',
@@ -561,10 +565,14 @@ Page({
   },
   isLessonStudyCompletedForTask(task) {
     const target = task || {};
-    return !!this.studyPackDone
-      || !!target.lessonStudyCompleted
-      || !!this.data.lessonStudyCompleted
-      || !!wx.getStorageSync(lessonStudyDoneKey(target.category || this.category, target.taskId || this.taskId));
+    const category = target.category || this.category;
+    const taskId = target.taskId || this.taskId;
+    const currentTask = this.data.task || {};
+    const isCurrentTask = String(currentTask.category || this.category || '') === String(category || '')
+      && String(currentTask.taskId || this.taskId || '') === String(taskId || '');
+    return !!target.lessonStudyCompleted
+      || !!wx.getStorageSync(lessonStudyDoneKey(category, taskId))
+      || (isCurrentTask && (!!this.studyPackDone || !!this.data.lessonStudyCompleted));
   },
   applyTaskSnapshot(task) {
     const normalizedTask = labels.normalizeTask(task);
@@ -691,6 +699,8 @@ Page({
     this.checkinConfirmShowing = false;
     this.audioPlayRequested = false;
     this.pendingSpeakingAfterListen = null;
+    this.listeningResumeAppliedKey = '';
+    this.listeningResumeLastSaved = { key: '', bucket: -1 };
     const localMember = buildLocalMemberFromLastRole();
     this.setData({
       currentMember: localMember,
@@ -768,6 +778,7 @@ Page({
       this.markLessonRoute('audioCanplay', {
         duration: Math.floor(durationFromContext || taskDuration || 0)
       });
+      this.restoreListeningResumeCheckpoint();
       if (this.pendingAutoPlay) {
         this.pendingAutoPlay = false;
         this.audioPlayRequested = true;
@@ -785,6 +796,7 @@ Page({
         progressPercent: player.getProgressPercent(currentSeconds, durationSeconds),
         canRewind: currentSeconds > 1
       });
+      this.saveListeningResumeCheckpoint();
     });
     this.innerAudioContext.onPlay(() => {
       this.setData({
@@ -799,6 +811,7 @@ Page({
       this.markLessonRoute('audioPlay');
     });
     this.innerAudioContext.onPause(() => {
+      this.saveListeningResumeCheckpoint({ force: true });
       this.continuousPlaybackActive = false;
       this.setData({ isPlaying: false });
     });
@@ -817,6 +830,7 @@ Page({
       });
     });
     this.innerAudioContext.onEnded(() => {
+      this.clearListeningResumeCheckpoint();
       this.setData({
         isPlaying: false,
         currentTimeMs: 0,
@@ -827,6 +841,7 @@ Page({
       this.handleAudioEnded();
     });
     this.innerAudioContext.onError((error) => {
+      this.saveListeningResumeCheckpoint({ force: true });
       this.pendingAutoPlay = false;
       this.continuousPlaybackActive = false;
       this.setData({
@@ -889,6 +904,7 @@ Page({
     }
   },
   onHide() {
+    this.saveListeningResumeCheckpoint({ force: true });
     this.continuousPlaybackActive = false;
     this.completionResumeToken += 1;
     if (this.innerAudioContext) {
@@ -901,6 +917,7 @@ Page({
     this.clearTranscriptState();
   },
   onUnload() {
+    this.saveListeningResumeCheckpoint({ force: true });
     this.continuousPlaybackActive = false;
     this.completionResumeToken += 1;
     if (this.completionCardTimer) {
@@ -942,6 +959,91 @@ Page({
   },
   formatTime(totalSeconds) {
     return player.formatTime(totalSeconds);
+  },
+  getListeningResumeStorageKey(task) {
+    const target = task || this.data.task || {};
+    const selectedTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const ownerId = String(selectedTarget.targetChildId || 'self').trim() || 'self';
+    const category = String(target.category || this.category || '').trim();
+    const taskId = String(target.taskId || this.taskId || '').trim();
+    return category && taskId ? `${LISTENING_RESUME_SNAPSHOT_PREFIX}:${ownerId}:${category}:${taskId}` : '';
+  },
+  canPersistListeningResume(task) {
+    const target = task || this.data.task;
+    return ['normal', 'catchup'].includes(String(this.planRunType || 'normal'))
+      && !!target
+      && !target.isPendingAsset;
+  },
+  clearListeningResumeCheckpoint(task) {
+    const key = this.getListeningResumeStorageKey(task);
+    if (!key) return;
+    try {
+      wx.removeStorageSync(key);
+    } catch (error) {}
+    if (this.listeningResumeLastSaved.key === key) {
+      this.listeningResumeLastSaved = { key: '', bucket: -1 };
+    }
+  },
+  saveListeningResumeCheckpoint(options = {}) {
+    const task = this.data.task;
+    if (!this.canPersistListeningResume(task) || !this.innerAudioContext) return;
+    const key = this.getListeningResumeStorageKey(task);
+    if (!key) return;
+    const currentSeconds = Number(this.innerAudioContext.currentTime || 0);
+    const durationSeconds = Number((this.data.currentAudio && this.data.currentAudio.durationSec)
+      || task.durationSec
+      || this.innerAudioContext.duration
+      || 0);
+    if (currentSeconds < 2 || (durationSeconds > 0 && currentSeconds >= durationSeconds - 2)) {
+      if (options.force) this.clearListeningResumeCheckpoint(task);
+      return;
+    }
+    const bucket = Math.floor(currentSeconds / LISTENING_RESUME_SAVE_INTERVAL_SEC);
+    if (!options.force
+      && this.listeningResumeLastSaved.key === key
+      && this.listeningResumeLastSaved.bucket === bucket) return;
+    const saved = snapshotStore.write(key, key, {
+      positionSec: Math.round(currentSeconds * 10) / 10,
+      durationSec: Math.round(durationSeconds * 10) / 10,
+      category: task.category || this.category,
+      taskId: task.taskId || this.taskId
+    }, { source: options.force ? 'lesson-resume-exit' : 'lesson-resume-tick' });
+    if (saved) this.listeningResumeLastSaved = { key, bucket };
+  },
+  restoreListeningResumeCheckpoint() {
+    const task = this.data.task;
+    if (!this.canPersistListeningResume(task) || !this.innerAudioContext) return;
+    const key = this.getListeningResumeStorageKey(task);
+    if (!key || this.listeningResumeAppliedKey === key) return;
+    this.listeningResumeAppliedKey = key;
+    const checkpoint = snapshotStore.read(key, {
+      id: key,
+      maxAgeMs: LISTENING_RESUME_MAX_AGE_MS
+    });
+    if (!checkpoint) return;
+    const positionSec = Number(checkpoint.positionSec || 0);
+    const durationSec = Number((this.data.currentAudio && this.data.currentAudio.durationSec)
+      || task.durationSec
+      || this.innerAudioContext.duration
+      || checkpoint.durationSec
+      || 0);
+    if (positionSec < 2 || (durationSec > 0 && positionSec >= durationSec - 2)) {
+      this.clearListeningResumeCheckpoint(task);
+      return;
+    }
+    const resumePositionSec = Math.max(0, positionSec - LISTENING_RESUME_REWIND_SEC);
+    this.innerAudioContext.seek(resumePositionSec);
+    this.setData({
+      currentTimeMs: Math.floor(resumePositionSec * 1000),
+      currentTimeLabel: this.formatTime(resumePositionSec),
+      progressPercent: player.getProgressPercent(resumePositionSec, durationSec),
+      canRewind: resumePositionSec > 1
+    });
+    this.updateTranscriptByTime(Math.floor(resumePositionSec * 1000));
+    this.listeningResumeLastSaved = {
+      key,
+      bucket: Math.floor(resumePositionSec / LISTENING_RESUME_SAVE_INTERVAL_SEC)
+    };
   },
   clearAudioErrorTimer() {
     if (this.audioErrorTimer) {
@@ -1403,6 +1505,7 @@ Page({
       transcriptVisible: !!normalizedTask.transcriptVisible,
       completedToday: !!normalizedTask.completedToday
     };
+    const lessonStudyCompleted = this.isLessonStudyCompletedForTask(normalizedTask);
     this.setData(page.buildCloudPageData(this.data, {
       task: normalizedTask,
       progress,
@@ -1410,19 +1513,25 @@ Page({
       scriptSource: null,
       transcriptTrack: null,
       transcriptLines: [],
-      transcriptPendingLoad: false,
+      transcriptPendingLoad: !normalizedTask.isPendingAsset,
+      transcriptLoadFailed: false,
       transcriptManualVisible: false,
       transcriptExpanded: false,
       lessonStudyPack: null,
       lessonStudyExpanded: false,
       lessonStudyLoading: false,
       lessonStudyError: '',
-      lessonStudyCompleted: false,
+      lessonStudyCompleted,
+      lessonStudyTab: 'vocabulary',
+      lessonVocabularyCards: [],
+      lessonPhraseCards: [],
+      lessonPatternCards: [],
       speakingPanelVisible: false,
       passQuestionVisible: false,
       playbackRate: 1,
       playbackRateText: '1.0'
     }));
+    await this.updatePassQuestion(normalizedTask, progress);
     this.pendingAutoPlay = true;
     await this.syncPlayer(normalizedTask);
     if (this.continuousPlaybackActive && this.innerAudioContext && this.innerAudioContext.src) {

@@ -57,3 +57,30 @@ test('听力计划数量单位使用集与每集遍数', () => {
   assert.match(catalog, /dailyItems: '每天 \{count\} 集'/);
   assert.doesNotMatch(catalog, /dailyCount: '每天几条'|repeatCount: '每条几遍'/);
 });
+
+test('连续播放切换下一集后保留文本与学习包入口', () => {
+  const js = read('pages/lesson/index.js');
+  const switchTask = js.match(/async switchContinuousQueueTask[\s\S]*?\n  },\n  async handleContinuousAudioEnded/)[0];
+
+  assert.match(switchTask, /transcriptPendingLoad:\s*!normalizedTask\.isPendingAsset/);
+  assert.match(switchTask, /lessonStudyCompleted,/);
+  assert.match(switchTask, /lessonStudyExpanded:\s*false/);
+  assert.match(switchTask, /transcriptExpanded:\s*false/);
+  assert.match(switchTask, /await this\.updatePassQuestion\(normalizedTask, progress\)/);
+  assert.doesNotMatch(switchTask, /transcriptPendingLoad:\s*false/);
+});
+
+test('计划音频支持同设备断点续播', () => {
+  const js = read('pages/lesson/index.js');
+
+  assert.match(js, /LISTENING_RESUME_SAVE_INTERVAL_SEC\s*=\s*5/);
+  assert.match(js, /LISTENING_RESUME_REWIND_SEC\s*=\s*5/);
+  assert.match(js, /innerAudioContext\.onTimeUpdate[\s\S]*?saveListeningResumeCheckpoint\(\)/);
+  assert.match(js, /innerAudioContext\.onCanplay[\s\S]*?restoreListeningResumeCheckpoint\(\)/);
+  assert.match(js, /innerAudioContext\.onPause[\s\S]*?saveListeningResumeCheckpoint\(\{ force: true \}\)/);
+  assert.match(js, /innerAudioContext\.onError[\s\S]*?saveListeningResumeCheckpoint\(\{ force: true \}\)/);
+  assert.match(js, /onHide\(\)[\s\S]*?saveListeningResumeCheckpoint\(\{ force: true \}\)/);
+  assert.match(js, /innerAudioContext\.onEnded[\s\S]*?clearListeningResumeCheckpoint\(\)/);
+  assert.match(js, /Math\.max\(0, positionSec - LISTENING_RESUME_REWIND_SEC\)/);
+  assert.match(js, /\['normal', 'catchup'\]\.includes/);
+});
