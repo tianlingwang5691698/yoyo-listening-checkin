@@ -50,10 +50,10 @@ async function upsertDailyReport(scope, date, deps) {
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, scope.childId, date)
     : {};
   const planDayIndex = useCustomListeningPlan
-    ? deps.getCustomPlanDayIndex(checkins, date, activeListeningPlan)
+    ? deps.getCustomPlanDayIndex(progressRecords, date, activeListeningPlan)
     : deps.getPlanDayIndexForDate(checkins, date);
   const todayPlan = useCustomListeningPlan
-    ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex)
+    ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex, { date, progressRecords })
     : deps.buildPlanForDay(planDayIndex, planOptions);
   const checkin = checkins.find((item) => item.date === date) || null;
   const categoryOrder = useCustomListeningPlan

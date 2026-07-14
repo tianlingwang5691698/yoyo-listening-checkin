@@ -331,7 +331,8 @@ async function markTaskListened(event, context) {
   const todayPlan = useCustomListeningPlan
     ? study.buildListeningPlanForDay(
       activeListeningPlan,
-      study.getCustomPlanDayIndex(checkins, targetDate, activeListeningPlan)
+      study.getCustomPlanDayIndex(progressRecords, targetDate, activeListeningPlan),
+      { date: targetDate, progressRecords }
     )
     : study.buildPlanForDay(
       planRunType === 'catchup'
@@ -471,10 +472,10 @@ async function completeTodayCheckin(event, context) {
   const activeListeningPlan = await study.getActiveListeningPlan(ctx);
   const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
   const planDayIndex = useCustomListeningPlan
-    ? study.getCustomPlanDayIndex(checkins, today, activeListeningPlan)
+    ? study.getCustomPlanDayIndex(progressRecords, today, activeListeningPlan)
     : study.getNextPlanDayIndexForDate(checkins, today);
   const todayPlan = useCustomListeningPlan
-    ? study.buildListeningPlanForDay(activeListeningPlan, planDayIndex)
+    ? study.buildListeningPlanForDay(activeListeningPlan, planDayIndex, { date: today, progressRecords })
     : undefined;
   const checkin = await study.maybeCreateCheckin(scope, progressRecords, today, {
     planRunType: 'normal',

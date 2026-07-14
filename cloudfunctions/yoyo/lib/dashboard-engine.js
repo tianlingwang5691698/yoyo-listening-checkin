@@ -260,7 +260,7 @@ async function getDashboardData(ctx, deps, options = {}) {
   }
   const getActivePlanDayIndex = deps.getNextPlanDayIndexForDate || deps.getPlanDayIndexForDate;
   const planDayIndex = useCustomListeningPlan
-    ? deps.getCustomPlanDayIndex(checkins, today, activeListeningPlan)
+    ? deps.getCustomPlanDayIndex(progressRecords, today, activeListeningPlan)
     : useFixedYoyoPlan
       ? getActivePlanDayIndex(checkins, today)
       : 1;
@@ -268,7 +268,7 @@ async function getDashboardData(ctx, deps, options = {}) {
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, today)
     : {};
   const todayPlan = useCustomListeningPlan
-    ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex)
+    ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex, { date: today, progressRecords })
     : useFixedYoyoPlan
       ? deps.buildPlanForDay(
         planDayIndex,

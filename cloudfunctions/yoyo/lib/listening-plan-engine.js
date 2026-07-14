@@ -85,7 +85,8 @@ function normalizePlanMaterialSummary(input, deps) {
     knownDurationCount: Number(input.knownDurationCount || 0),
     durationReady: !!input.durationReady,
     rangeDurationSec: Number(input.rangeDurationSec || 0),
-    estimatedDailyDurationSec: Number(input.estimatedDailyDurationSec || 0)
+    estimatedDailyDurationSec: Number(input.estimatedDailyDurationSec || 0),
+    progressStartedAt: String(input.progressStartedAt || '')
   };
 }
 
@@ -132,7 +133,8 @@ function normalizePlanMaterial(input, deps) {
     dailyCount,
     repeatTarget,
     totalCount,
-    enabled: true
+    enabled: true,
+    progressStartedAt: String(input.progressStartedAt || '')
   }, getPlanMaterialDuration(catalog, startNo, endNo, dailyCount, repeatTarget));
 }
 
@@ -169,14 +171,34 @@ function removePlanMaterial(plan, category) {
   return existing.filter((item) => item && item.category !== targetCategory);
 }
 
-function getCustomPlanDayIndex(checkins, date) {
-  const completedDates = new Set((Array.isArray(checkins) ? checkins : [])
-    .map((item) => String((item && item.date) || ''))
-    .filter((itemDate) => itemDate && itemDate < date));
+function isCompletedPlanProgress(item) {
+  return !!(item && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 1)));
+}
+
+function isCurrentPlanProgress(item, date, plan, material) {
+  const planId = String(plan.planId || plan._id || '').trim();
+  const progressStartedAt = String(material.progressStartedAt || plan.progressStartedAt || plan.createdAt || '').trim();
+  const updatedAt = String((item && (item.updatedAt || item.completedAt)) || '').trim();
+  return !!planId
+    && String((item && item.planSource) || '') === 'custom-listening'
+    && String((item && item.planRunType) || 'normal') === 'normal'
+    && String((item && item.listeningPlanId) || '') === planId
+    && String((item && item.category) || '') === material.category
+    && String((item && item.date) || '') < date
+    && (!progressStartedAt || updatedAt >= progressStartedAt);
+}
+
+function getCustomPlanDayIndex(progressRecords, date, plan = {}) {
+  const materials = (Array.isArray(plan.materials) ? plan.materials : []).filter(Boolean);
+  const completedDates = new Set((Array.isArray(progressRecords) ? progressRecords : [])
+    .filter((item) => materials.some((material) => isCurrentPlanProgress(item, date, plan, material)))
+    .filter(isCompletedPlanProgress)
+    .map((item) => String(item.date || ''))
+    .filter(Boolean));
   return completedDates.size + 1;
 }
 
-function buildPlanForDay(plan, dayIndex, deps) {
+function buildPlanWithIndices(plan, dayIndex, deps, resolveIndices) {
   const byCategory = {};
   const flatTasks = [];
   const categoryOrder = [];
@@ -187,23 +209,19 @@ function buildPlanForDay(plan, dayIndex, deps) {
       return;
     }
     const catalog = deps.getCatalog(normalized.category) || [];
-    const startIndex = normalized.startNo - 1 + (Math.max(1, Number(dayIndex || 1)) - 1) * normalized.dailyCount;
-    const tasks = [];
-    for (let offset = 0; offset < normalized.dailyCount; offset += 1) {
-      const index = startIndex + offset;
-      if (index > normalized.endNo - 1 || index >= catalog.length) {
-        break;
-      }
+    const tasks = resolveIndices(normalized, catalog).map((index) => {
       const source = catalog[index];
       if (source) {
-        tasks.push(Object.assign({}, source, {
+        return Object.assign({}, source, {
           category: normalized.category,
           repeatTarget: normalized.repeatTarget,
           planSource: 'custom-listening',
-          listeningPlanId: plan.planId || plan._id || ''
-        }));
+          listeningPlanId: plan.planId || plan._id || '',
+          progressStartedAt: normalized.progressStartedAt || plan.progressStartedAt || plan.createdAt || ''
+        });
       }
-    }
+      return null;
+    }).filter(Boolean);
     if (!tasks.length) {
       return;
     }
@@ -229,16 +247,57 @@ function buildPlanForDay(plan, dayIndex, deps) {
   };
 }
 
+function buildPlanForDay(plan, dayIndex, deps) {
+  return buildPlanWithIndices(plan, dayIndex, deps, (normalized) => {
+    const startIndex = normalized.startNo - 1 + (Math.max(1, Number(dayIndex || 1)) - 1) * normalized.dailyCount;
+    return Array.from({ length: normalized.dailyCount }, (_, offset) => startIndex + offset)
+      .filter((index) => index <= normalized.endNo - 1);
+  });
+}
+
+function buildPlanForDate(plan, date, progressRecords, deps) {
+  const dayIndex = getCustomPlanDayIndex(progressRecords, date, plan);
+  return buildPlanWithIndices(plan, dayIndex, deps, (normalized, catalog) => {
+    const slotCount = Math.min(normalized.dailyCount, normalized.endNo - normalized.startNo + 1);
+    const completedTaskIds = new Set((Array.isArray(progressRecords) ? progressRecords : [])
+      .filter((item) => isCurrentPlanProgress(item, date, plan, normalized))
+      .filter(isCompletedPlanProgress)
+      .map((item) => String(item.taskId || ''))
+      .filter(Boolean));
+    return Array.from({ length: slotCount }, (_, slotIndex) => {
+      let index = normalized.startNo - 1 + slotIndex;
+      while (index <= normalized.endNo - 1 && catalog[index] && completedTaskIds.has(String(catalog[index].taskId || ''))) {
+        index += slotCount;
+      }
+      return index;
+    }).filter((index) => index <= normalized.endNo - 1);
+  });
+}
+
 function decoratePlanTasks(progressRecords, childId, date, plan, options = {}, deps) {
-  return (plan.categoryOrder || Object.keys(plan.byCategory || {})).flatMap((category) => (
-    deps.decoratePlannedTasks(progressRecords, childId, category, date, plan.byCategory[category] || [], {
+  return (plan.categoryOrder || Object.keys(plan.byCategory || {})).flatMap((category) => {
+    const tasks = plan.byCategory[category] || [];
+    const carriedProgress = tasks.reduce((records, task) => {
+      const hasTodayRecord = records.some((item) => item.childId === childId
+        && item.category === category && item.taskId === task.taskId && item.date === date);
+      if (hasTodayRecord) return records;
+      const latest = (progressRecords || []).filter((item) => item.childId === childId
+        && item.category === category
+        && item.taskId === task.taskId
+        && String(item.planSource || '') === 'custom-listening'
+        && String(item.listeningPlanId || '') === String(options.listeningPlanId || '')
+        && String(item.updatedAt || '') >= String(task.progressStartedAt || ''))
+        .sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || '')))[0];
+      return latest ? records.concat([Object.assign({}, latest, { date })]) : records;
+    }, (progressRecords || []).slice());
+    return deps.decoratePlannedTasks(carriedProgress, childId, category, date, tasks, {
       planRunType: options.planRunType || 'normal',
       targetDate: date,
       planDayIndex: plan.dayIndex,
       planSource: 'custom-listening',
       listeningPlanId: options.listeningPlanId || ''
-    })
-  ));
+    });
+  });
 }
 
 module.exports = {
@@ -254,5 +313,6 @@ module.exports = {
   removePlanMaterial,
   getCustomPlanDayIndex,
   buildPlanForDay,
+  buildPlanForDate,
   decoratePlanTasks
 };

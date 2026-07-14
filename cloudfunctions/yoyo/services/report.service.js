@@ -53,8 +53,8 @@ async function getTodayListeningCompletion(ctx, today, records, progressRecords,
     : prefetchedActivePlan;
   const useCustomListeningPlan = !!(activePlan && activePlan.active !== false);
   if (useCustomListeningPlan) {
-    const planDayIndex = study.getCustomPlanDayIndex(records, today, activePlan);
-    const todayPlan = study.buildListeningPlanForDay(activePlan, planDayIndex);
+    const planDayIndex = study.getCustomPlanDayIndex(progressRecords, today, activePlan);
+    const todayPlan = study.buildListeningPlanForDay(activePlan, planDayIndex, { date: today, progressRecords });
     const tasks = study.decorateListeningPlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
       planRunType: 'normal',
       listeningPlanId: activePlan.planId || activePlan._id || ''

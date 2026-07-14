@@ -421,11 +421,16 @@ function buildPlanForDay(dayIndex, options = {}) {
   }, options);
 }
 
-function getCustomPlanDayIndex(checkins, date, plan) {
-  return listeningPlanEngine.getCustomPlanDayIndex(checkins, date);
+function getCustomPlanDayIndex(progressRecords, date, plan) {
+  return listeningPlanEngine.getCustomPlanDayIndex(progressRecords, date, plan);
 }
 
-function buildListeningPlanForDay(plan, dayIndex) {
+function buildListeningPlanForDay(plan, dayIndex, options = {}) {
+  if (options.date && Array.isArray(options.progressRecords)) {
+    return listeningPlanEngine.buildPlanForDate(plan, options.date, options.progressRecords, {
+      getCatalog
+    });
+  }
   return listeningPlanEngine.buildPlanForDay(plan, dayIndex, {
     getCatalog
   });
@@ -453,13 +458,22 @@ function buildListeningPlanMaterials(levelId) {
 async function saveListeningPlanMaterial(ctx, payload) {
   const scope = getUserScope(ctx);
   const current = await getActiveListeningPlanByScope(scope);
-  const material = listeningPlanEngine.normalizePlanMaterial(payload, {
+  const normalizedMaterial = listeningPlanEngine.normalizePlanMaterial(payload, {
     getCatalog
   });
-  if (!material) {
+  if (!normalizedMaterial) {
     throw new Error('请选择有效听力素材');
   }
   const now = new Date().toISOString();
+  const currentMaterial = ((current && current.materials) || [])
+    .find((item) => item && item.category === normalizedMaterial.category);
+  const configChanged = !currentMaterial || ['startNo', 'endNo', 'dailyCount', 'repeatTarget']
+    .some((field) => Number(currentMaterial[field] || 0) !== Number(normalizedMaterial[field] || 0));
+  const material = Object.assign({}, normalizedMaterial, {
+    progressStartedAt: configChanged
+      ? now
+      : String((currentMaterial && currentMaterial.progressStartedAt) || now)
+  });
   const planId = current && current.planId
     ? current.planId
     : `${scope.familyId}_${scope.childId}_custom_listening`;

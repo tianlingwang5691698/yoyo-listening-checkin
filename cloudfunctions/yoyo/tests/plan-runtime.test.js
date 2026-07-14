@@ -74,15 +74,64 @@ test('自定义听力计划支持多个素材混合生成任务', () => {
   assert.equal(plan.byCategory.unlock3[0].taskId, 'unlock3-1');
 });
 
-test('自定义计划 Day 只按历史打卡日期累计', () => {
-  const checkins = [
-    { date: '2026-07-06', completedAt: '2026-07-06T12:00:00.000Z', planSource: 'custom-listening', listeningPlanId: 'plan-1', planDayIndex: 1 },
-    { date: '2026-07-09', completedAt: '2026-07-09T12:00:00.000Z', planSource: 'fixed-yoyo', listeningPlanId: '', planDayIndex: 2 },
-    { date: '2026-07-09', completedAt: '2026-07-09T13:00:00.000Z', planRunType: 'catchup' }
+test('自定义计划只按本计划启动后的完成记录推进', () => {
+  const progressRecords = [
+    { date: '2026-07-06', updatedAt: '2026-07-06T12:00:00.000Z', category: 'newconcept3', taskId: 'nce3-1', completedToday: true, planSource: 'fixed-yoyo', listeningPlanId: '' },
+    { date: '2026-07-07', updatedAt: '2026-07-07T12:00:00.000Z', category: 'newconcept3', taskId: 'nce3-1', completedToday: true, planSource: 'custom-listening', listeningPlanId: 'old-plan' },
+    { date: '2026-07-08', updatedAt: '2026-07-08T12:00:00.000Z', category: 'newconcept3', taskId: 'nce3-1', completedToday: true, planSource: 'custom-listening', listeningPlanId: 'plan-1' },
+    { date: '2026-07-09', updatedAt: '2026-07-09T12:00:00.000Z', category: 'newconcept3', taskId: 'nce3-1', completedToday: true, planSource: 'custom-listening', listeningPlanId: 'plan-1' },
+    { date: '2026-07-10', updatedAt: '2026-07-10T12:00:00.000Z', category: 'newconcept3', taskId: 'nce3-2', completedToday: true, planSource: 'custom-listening', listeningPlanId: 'plan-1' },
+    { date: '2026-07-10', updatedAt: '2026-07-10T13:00:00.000Z', category: 'newconcept3', taskId: 'nce3-3', completedToday: true, planSource: 'custom-listening', listeningPlanId: 'plan-1', planRunType: 'catchup' }
   ];
+  const plan = {
+    planId: 'plan-1',
+    materials: [{ category: 'newconcept3', progressStartedAt: '2026-07-09T00:00:00.000Z' }]
+  };
 
-  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(checkins, '2026-07-11'), 3);
-  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(checkins, '2026-07-20'), 3);
+  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(progressRecords, '2026-07-09', plan), 1);
+  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(progressRecords, '2026-07-10', plan), 2);
+  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(progressRecords, '2026-07-11', plan), 3);
+  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(progressRecords, '2026-07-20', plan), 3);
+  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(progressRecords, '2026-07-20'), 1);
+});
+
+test('自定义计划每个槽位独立推进并跨日保留未完成遍数', () => {
+  const catalog = Array.from({ length: 6 }, (_, index) => ({
+    taskId: `nce3-${index + 1}`,
+    category: 'newconcept3'
+  }));
+  const plan = {
+    planId: 'plan-1',
+    materials: [{
+      category: 'newconcept3',
+      startNo: 1,
+      endNo: 6,
+      dailyCount: 3,
+      repeatTarget: 3,
+      progressStartedAt: '2026-07-09T00:00:00.000Z'
+    }]
+  };
+  const progressRecords = [
+    { childId: 'child-1', date: '2026-07-10', updatedAt: '2026-07-10T10:00:00.000Z', category: 'newconcept3', taskId: 'nce3-1', playCount: 3, repeatTarget: 3, completedToday: true, planSource: 'custom-listening', listeningPlanId: 'plan-1' },
+    { childId: 'child-1', date: '2026-07-10', updatedAt: '2026-07-10T10:10:00.000Z', category: 'newconcept3', taskId: 'nce3-2', playCount: 1, repeatTarget: 3, completedToday: false, planSource: 'custom-listening', listeningPlanId: 'plan-1' },
+    { childId: 'child-1', date: '2026-07-11', updatedAt: '2026-07-11T10:20:00.000Z', category: 'newconcept3', taskId: 'nce3-3', playCount: 3, repeatTarget: 3, completedToday: true, planSource: 'custom-listening', listeningPlanId: 'plan-1' }
+  ];
+  const dayPlan = listeningPlanEngine.buildPlanForDate(plan, '2026-07-11', progressRecords, {
+    getCatalog: () => catalog
+  });
+
+  assert.deepEqual(dayPlan.byCategory.newconcept3.map((item) => item.taskId), ['nce3-4', 'nce3-2', 'nce3-3']);
+
+  const decorated = listeningPlanEngine.decoratePlanTasks(progressRecords, 'child-1', '2026-07-11', dayPlan, {
+    listeningPlanId: 'plan-1'
+  }, {
+    decoratePlannedTasks: (records, childId, category, date, tasks) => tasks.map((task) => {
+      const progress = records.find((item) => item.childId === childId && item.category === category && item.taskId === task.taskId && item.date === date) || {};
+      return Object.assign({}, task, { playCount: Number(progress.playCount || 0), completedToday: !!progress.completedToday });
+    })
+  });
+  assert.equal(decorated.find((item) => item.taskId === 'nce3-2').playCount, 1);
+  assert.equal(decorated.find((item) => item.taskId === 'nce3-3').completedToday, true);
 });
 
 test('自定义听力计划支持取消单个素材', () => {
