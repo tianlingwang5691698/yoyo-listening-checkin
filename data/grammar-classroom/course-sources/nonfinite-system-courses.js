@@ -422,6 +422,16 @@ function buildNonfiniteSystemCourse(english) {
   const assigned = sectionSpecs.flatMap((item) => item[5]);
   if (ids.length !== assigned.length || new Set(assigned).size !== assigned.length || ids.some((id) => !assigned.includes(id)) || assigned.some((id) => !ids.includes(id))) throw new Error('Invalid non-finite section coverage');
   const sections = sectionSpecs.map((item) => ({ id: item[0], title: pick(english, item[1], item[2]), copy: pick(english, item[3], item[4]), lessonIds: item[5].slice(), lessonCount: item[5].length }));
+  course[0].narration = {
+    id: 'nonfinite-system:finite-nonfinite-boundary',
+    version: 'v1',
+    text: `非谓语保留动作或状态的意义，却不独立承担时态、情态和主谓一致，所以不能单独充当分句的限定谓语。它可以组成短语，整体进入主语、宾语、定语等位置。<#0.6#>
+She wants to leave。<#0.7#>先找限定谓语 wants，它随主语 She 使用第三人称单数形式。to leave 没有时态和一致变化，是不定式，补充说明她想做什么。句中有两个动词形式，但只有 wants 是限定谓语。<#0.8#>
+Reading books helps me。<#0.7#>helps 是限定谓语。Reading books 整体表示“读书这件事”，放在 helps 前作主语。Reading 有动作意义，还带宾语 books，却不承担本句的时态和一致。<#0.8#>
+再看 The boy standing by the door is Tom。<#0.7#>先找 is，它是限定谓语。standing by the door 放在 boy 后面，说明是哪一个男孩，整体作后置定语。可以思考：standing 的动作执行者是谁？是 boy，这就是非谓语的逻辑主语。<#0.8#>
+判断非谓语，先找每个分句的限定谓语；再检查其他动词是 to do、doing 还是 done；然后判断它整体占据什么句法位置，并找清逻辑主语、主动被动和时间关系。不要看到多个动词形式，就机械地判断为多个谓语。`,
+    lengthText: '500 字 · 约 2 分钟'
+  };
   const core = course.filter((item) => item.level === 'core');
   const advanced = course.filter((item) => item.level === 'advanced');
   return {

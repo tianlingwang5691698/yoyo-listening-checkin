@@ -398,6 +398,16 @@ function validateSections(course) {
 function buildBasicSentencePatternsCourse(english) {
   const course = lessonSpecs.map((spec, index) => makeLesson(english, spec, index));
   validateSections(course);
+  course[0].narration = {
+    id: 'basic-sentence-patterns:find-predicate-skeleton',
+    version: 'v1',
+    text: `基本句型的本质，是一个分句的核心骨架，也就是限定谓语与它必需成分的组合。判句型不是数单词，也不是看中文翻译，而是先找谓语，再看这个谓语需要哪些核心槽位才能表达完整。<#0.6#>
+Birds fly。<#0.7#>限定谓语是 fly，谁在飞是 Birds。fly 表示的动作不需要宾语就完整，所以骨架只有主语和谓语，是主谓结构，也就是 SV。<#0.8#>
+She can sing。<#0.7#>不要因为 can 和 sing 是两个单词，就算成两个谓语。can 是情态动词，sing 是主要动词，它们共同组成一个谓语动词组 can sing；主语是 She，骨架仍然是 SV。<#0.8#>
+再看 The boy in blue is running。<#0.7#>先暂时移开 in blue，剩下 The boy is running，主干仍完整。in blue 修饰 boy，是主语内部的后置定语，不会改变外层句型。<#0.8#>
+判断基本句型，先划分分句；找到限定谓语或谓语动词组；再问谓语后是否必须有表语、一个宾语、两个宾语或宾语补足语；最后排除可选的定语和状语。句型只描述分句骨架，长修饰语和从句内部结构需要另行分析。`,
+    lengthText: '431 字 · 约 2 分钟'
+  };
   const sections = sectionSpecs.map((item) => ({
     id: item[0],
     title: pick(english, item[1], item[2]),

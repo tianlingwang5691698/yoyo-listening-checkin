@@ -422,6 +422,16 @@ function buildInterjectionCourse(english) {
   ];
 
   const lessons = specs.map((spec) => lesson(english, spec));
+  lessons[0].narration = {
+    id: 'interjection:interj-essence',
+    version: 'v1',
+    text: `感叹词的本质，是把说话人的即时反应直接放进话语中，但通常不进入句子的主谓骨架。它可以表达惊喜、疼痛、犹豫、赞同或提醒，具体态度还要结合语调和语境判断。<#0.6#>
+Wow! That view is amazing。<#0.7#>先看句子主干 That view is amazing，主语、系动词和表语都完整。Wow 不充当主语、谓语或宾语，只在主干外直接表达看到景色时的惊叹。去掉 Wow，句子仍然成立；保留它，说话人的即时情绪更鲜明。<#0.8#>
+再看 Ouch! That hurt。<#0.7#>Ouch 是疼痛发生时的直接反应，That hurt 才是说明情况的完整句子。即使不补出主语和谓语，Ouch 也能单独成为一次完整回应。<#0.8#>
+感叹词和感叹句不是一回事。Wow 是一个词类，而 What a beautiful view! 是一种句型。可以想一想：一个普通陈述句前加 Oh，句子主干改变了吗？没有，变化的是说话人的态度和交际效果。<#0.8#>
+判断感叹词，可以先把它暂时移开。如果剩下部分仍有完整主干，它通常是主干外的独立成分。再结合停顿、标点和语调，判断它表达哪一种即时反应。`,
+    lengthText: '437 字 · 约 2 分钟'
+  };
   return grouped(english, lessons, ['interj-register-politeness', 'interj-wordclass-sounds'], [
     ['interj-foundation', '定义、本质与边界', 'Definition, essence and boundaries', '理解感叹词为何位于句子主干之外，并区分感叹词与感叹句。', 'Understand why interjections stand outside the clause core and distinguish them from exclamative sentences.', ['interj-essence', 'interj-independence-position', 'interj-vs-exclamative']],
     ['interj-meaning-system', '即时情绪与语境意义', 'Emotion and contextual meaning', '认识高频情绪表达，并依据上下文、语调和标点判断具体态度。', 'Recognize frequent emotional reactions and interpret attitude through context, intonation and punctuation.', ['interj-emotions', 'interj-context-tone']],

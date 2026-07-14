@@ -6,9 +6,20 @@ const hidden=()=>({visible:false,mode:'',title:'',body:'',detail:''});
 const note=(english,x)=>x?{visible:true,mode:'structure',title:pick(english,'例句说明','Example focus'),body:pick(english,x[0],x[1]),detail:''}:hidden();
 const question=(english,x)=>({question:pick(english,x[0],x[1]),options:[{key:'A',text:pick(english,x[2],x[3])},{key:'B',text:pick(english,x[4],x[5])}],answer:x[6],correct:pick(english,x[7],x[8]),wrong:pick(english,`再看规则：${x[7]}`,`Check the rule: ${x[8]}`)});
 const A=(zh,en,parts,q,n)=>({zh,en,parts,q,n}); const Q=(...x)=>x; const N=(zh,en)=>[zh,en];
+const COORDINATION_ESSENCE_NARRATION={
+ id:'coordination:coordination-boundary',version:'v1',
+ text:`并列结构的本质，是把语法层级相同的单位连接起来。连接的可以是词、短语，也可以是完整分句。判断时不能只看 and、but 或 or，要看连词两边究竟是什么。<#0.7#>
+Mia smiled, and Tom laughed。<#0.5#>先看 and 两边。Mia smiled 有主语 Mia 和谓语 smiled；Tom laughed 也有主语 Tom 和谓语 laughed。两边都能独立成句，所以 and 连接的是两个并列分句。<#0.8#>
+再看 Mia bought tea and coffee。这里只有一套主干 Mia bought，tea 和 coffee 共享同一个主语和谓语，所以它们是并列宾语，不是两个并列句。<#0.7#>
+She wants to sing and to dance。可以先思考：and 是连接 She 和 dance，还是连接 to sing 和 to dance？<#0.5#>两边都是不定式短语，形式平行，功能也相同。<#0.7#>
+判断并列结构：先找并列连词；再框出两边最大的平行单位；最后检查两边的语法层级和句中功能是否一致。先判断连接层级，再讨论添加、转折、选择或结果等逻辑。`,
+ lengthText:'421 字 · 约 2 分钟'
+};
 function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){
   if(atoms.length<3)throw new Error(`Too few coordination atoms: ${id}`);
-  return{id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses:atoms.map(a=>a.parts.map(x=>p(english,x))),exampleNotes:atoms.map(a=>note(english,a.n||N(`${a.q[7]} ${a.zh}`,`${a.q[8]} ${a.en}`))),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};
+  const result={id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses:atoms.map(a=>a.parts.map(x=>p(english,x))),exampleNotes:atoms.map(a=>note(english,a.n||N(`${a.q[7]} ${a.zh}`,`${a.q[8]} ${a.en}`))),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};
+  if(id==='coordination-boundary')result.narration=COORDINATION_ESSENCE_NARRATION;
+  return result;
 }
 function buildCoordinationCourse(english){
  const L=(...x)=>lesson(english,...x);

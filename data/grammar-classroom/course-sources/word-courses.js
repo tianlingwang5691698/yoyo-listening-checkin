@@ -2,6 +2,19 @@ const pick = (english, zh, en) => english ? en : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
 const NOUN_ONLY = typeof GRAMMAR_NOUN_ONLY !== 'undefined' && GRAMMAR_NOUN_ONLY;
 const PRONOUN_ONLY = typeof GRAMMAR_PRONOUN_ONLY !== 'undefined' && GRAMMAR_PRONOUN_ONLY;
+const NOUN_FIRST_LESSON_NARRATION = {
+    id: 'noun:noun-job', version: 'v1', lengthText: '400 字 · 约 2 分钟',
+    text: `名词的本质，是给人、事物、地点或抽象概念命名。Tom 是人名，books 给一类事物命名，Shanghai 是地名，happiness 则给看不见的“幸福”命名。因此，判断名词不能只看它能不能用手摸到。<#0.7#>\n看句子：Tom reads books。先找谓语核心 reads，它表示“阅读”这个动作。Tom 告诉我们谁在读，所以作主语；books 告诉我们读什么，所以作宾语。这里有两个名词，但它们在句中的任务不同。名词是词性，主语和宾语是句子成分，两者不能混为一谈。<#0.8#>\n再看 Shanghai is a city。Shanghai 作主语，a city 在系动词 is 后说明 Shanghai 属于哪一类，整个名词短语作表语。思考 Happiness matters：happiness 虽然是抽象概念，但它独立回答“什么很重要”，因此作主语。<#0.7#>\n判断时分两步：先找出给谁或什么命名的中心词；再根据它与谓语的关系，判断整个名词短语作主语、宾语还是表语。`
+};
+const PRONOUN_FIRST_LESSON_NARRATION = {
+    id: 'pronoun:pronoun-essence', version: 'v1', lengthText: '432 字 · 约 2 分钟',
+    text: `代词的本质，是指向语境中已经出现或现场可以确定的人、事物或内容，避免一遍遍重复名称。代词不是没有意义，而是把意义指回另一个对象。<#0.7#>\n看两句话：Amy is reading。She looks happy。第二句的谓语核心是 looks，She 在谓语前作主语。She 没有重新给人命名，而是指回前一句的 Amy。Amy 叫先行词，它让我们知道 She 具体指谁。如果只说 She looks happy，却没有前文或现场信息，听者就可能不知道 She 是谁。<#0.8#>\n再看 I saw a dog。It was wet。It 指回 a dog，并在第二句作主语。这说明代词也要与指向对象的数量和语义相配。这里是一只狗，所以用 It，不用 They。<#0.7#>\n思考这组对比：This is my seat和 This book is mine。第一句中 This 独立占据主语位置，是代词；第二句中 this 后面直接带 book，它是限定词，不是独立代替名词。<#0.7#>\n判断代词，先问它指向谁或什么，再看它是否独立占据名词短语的位置，最后判断它在句中作主语、宾语还是其他成分。`
+};
+const FIRST_LESSON_NARRATIONS = NOUN_ONLY
+  ? { Nouns: NOUN_FIRST_LESSON_NARRATION }
+  : PRONOUN_ONLY
+    ? { Pronouns: PRONOUN_FIRST_LESSON_NARRATION }
+    : { Nouns: NOUN_FIRST_LESSON_NARRATION, Pronouns: PRONOUN_FIRST_LESSON_NARRATION };
 const part = (english, text, role, zh, en) => ({ text, role, label: pick(english, zh, en) });
 const example = (english, parts, mode, zhNote, enNote) => ({
   text: parts.map((item) => item[0]).join(' '),
@@ -73,6 +86,7 @@ function buildSections(english, enTitle, course) {
 }
 function groupCourse(english, lessons, zhTitle, enTitle, coreCount = 6) {
   const course = lessons.map((item, index) => Object.assign({}, item, { no: String(index + 1).padStart(2, '0'), level: index < coreCount ? 'core' : 'advanced' }));
+  if (FIRST_LESSON_NARRATIONS[enTitle] && course.length) course[0].narration = Object.assign({}, FIRST_LESSON_NARRATIONS[enTitle]);
   return {
     title: pick(english, `${zhTitle} · ${course.length} 节微课`, `${enTitle} · ${course.length} lessons`),
     copy: pick(english, '先掌握核心规则，再处理复杂语境。', 'Master the core rules, then handle complex contexts.'),

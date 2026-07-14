@@ -1,6 +1,25 @@
 const pick = (en, zh, english) => en ? english : zh;
-const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
 const BUILD_TARGET = typeof GRAMMAR_TARGET === 'undefined' ? 'all' : GRAMMAR_TARGET;
+const VERB_FIRST_LESSON_NARRATION = {
+    id: 'verb:verb-jobs', version: 'v1', lengthText: '443 字 · 约 2 分钟',
+    text: `动词的本质，是构成谓语的核心，说明主语做什么、处于什么状态，或发生什么变化。判断动词时，不能只找表示明显动作的词，还要找出真正支撑句子的限定谓语核心。<#0.7#>\n看 Birds fly。这个句子的主干就是 Birds fly。Birds 是主语，fly 是谓语核心，直接说明鸟做什么。把主语换成单数 A bird，句子变成 A bird flies。fly 变为 flies，说明它会随主语和时态变化，这是限定谓语的重要线索。<#0.8#>\n再看 I know the answer。谓语核心是 know，the answer 是 know 指向的宾语，补全“知道什么”。动词不仅表示跑、写、飞这类动作，know 这类思维和状态也由动词表达。<#0.7#>\n思考 The soup tastes good。tastes 在这里不是“品尝汤”的动作，而是系动词，把主语 the soup 和描写它的 good 连接起来。可以先判断这句是在写动作，还是在说明主语的状态。<#0.7#>\n判断步骤是：先找随时态或主语变化的限定谓语核心；再看它表示动作、状态还是变化；最后检查它后面需要宾语、表语还是不需要其他核心成分。`
+};
+const NUMERAL_FIRST_LESSON_NARRATION = {
+    id: 'numeral:numeral-essence', version: 'v1', lengthText: '462 字 · 约 2 分钟',
+    text: `数词的本质，是为人或事物建立数量、顺序或编号关系。看到数字时，先不要急着读，要先问：它在这个语境中回答“多少”、“第几”，还是“哪一个”？<#0.7#>\n看 Three students arrived。谓语核心是 arrived，整个 Three students 是主语。three 放在 students 前，直接回答“到了多少名学生”，所以它表示数量，并限定名词 students。数词是词性，主语是整个短语在句中的作用，不能说 three 自己就是完整主语。<#0.8#>\n再看 Mia came second。主干是 Mia came，second 不表示来了两次，而是补充 Mia 到达时的名次，表示顺序。同样的数字也可以用作编号。Take Bus 18 中的 18 不是十八辆公交车，而是帮我们识别哪一条线路。<#0.7#>\n思考这三个表达：four books，the fourth book，Room 4。four 是数量，fourth 是顺序，4 是房间编号。它们都与数有关，但功能不同，读法和周围结构也可能不同。<#0.7#>\n判断时，先确定数字表示数量、顺序还是标签；再看它是放在名词前作限定，还是独立占据主语、宾语或表语位置。`
+};
+const ARTICLE_FIRST_LESSON_NARRATION = {
+    id: 'article:article-essence', version: 'v1', lengthText: '428 字 · 约 2 分钟',
+    text: `冠词不是给事物命名的词，它放在名词短语前，帮听者判断说话人指的是“某一个”、“可以认出的那一个”，还是在谈整个类别。学冠词的核心，不是把 a 译成“一个”、把 the 译成“这个”，而是判断听者能否识别对象。<#0.7#>\n看这个小语境：I saw a dog。The dog followed me。第一句的谓语核心是 saw，a dog 是宾语。a 从“狗”这一类中引入一只，此时听者还不知道具体是哪只。到第二句，这只狗已经在前文出现，双方都能对上号，所以用 The dog。the 的核心不是“前面提过”这一条死规则，而是说话人预期听者现在可以认出对象。<#0.8#>\n再看 Dogs need care。这里 Dogs 前没有写出冠词，叫零冠词。它不锁定某几只狗，而是把复数名词 Dogs 当作一类事物来谈。思考：如果改成 The dogs need care，听者通常会寻找语境中能识别的那几只狗，意思就变了。<#0.7#>\n选冠词时，先看名词是否可数以及单复数；再问对象是新引入、已可识别，还是作为一类来谈；最后再在 a、an、the 和零冠词中选择。`
+};
+const FIRST_LESSON_NARRATIONS = BUILD_TARGET === 'verb'
+  ? { Verbs: VERB_FIRST_LESSON_NARRATION }
+  : BUILD_TARGET === 'numeral'
+    ? { Numerals: NUMERAL_FIRST_LESSON_NARRATION }
+    : BUILD_TARGET === 'article'
+      ? { Articles: ARTICLE_FIRST_LESSON_NARRATION }
+      : { Verbs: VERB_FIRST_LESSON_NARRATION, Numerals: NUMERAL_FIRST_LESSON_NARRATION, Articles: ARTICLE_FIRST_LESSON_NARRATION };
+const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
 const labels = {
   subject: ['主语', 'Subject'], predicate: ['谓语动词', 'Predicate verb'], object: ['宾语', 'Object'],
   complement: ['表语', 'Subject complement'], predicative: ['表语', 'Subject complement'], objectComplement: ['宾语补足语', 'Object complement'],
@@ -152,6 +171,7 @@ function grouped(en, zhTitle, enTitle, lessons, coreCount) {
   const leveled = lessons.map((x, i) => Object.assign({}, x, { level: advancedIds ? (advancedIds.includes(x.id) ? 'advanced' : 'core') : (i < coreCount ? 'core' : 'advanced') }));
   const ordered = advancedIds ? leveled.filter(x => x.level === 'core').concat(leveled.filter(x => x.level === 'advanced')) : leveled;
   const course = ordered.map((x, i) => Object.assign({}, x, { no: String(i + 1).padStart(2, '0') }));
+  if (FIRST_LESSON_NARRATIONS[enTitle] && course.length) course[0].narration = Object.assign({}, FIRST_LESSON_NARRATIONS[enTitle]);
   const coreLessons = course.filter(x => x.level === 'core');
   const advancedLessons = course.filter(x => x.level === 'advanced');
   return { title: pick(en, `${zhTitle} · ${course.length} 节微课`, `${enTitle} · ${course.length} lessons`), copy: pick(en, '核心规则优先，进阶处理特殊与综合语境。', 'Core rules first; advanced lessons handle special and mixed contexts.'), course, sections: buildSections(en, enTitle, course), groups: [

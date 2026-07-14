@@ -58,6 +58,16 @@ function buildConjunctionCourse(english){
  const section={}; specs.forEach(s=>s[5].forEach(id=>section[id]=s[0]));
  const course=ls.map((v,i)=>Object.assign({},v,{no:String(i+1).padStart(2,'0'),level:advanced.includes(v.id)?'advanced':'core',sectionId:section[v.id]}));
  const byId=Object.fromEntries(course.map(v=>[v.id,v]));
+ byId['conj-essence'].narration={
+  id:'conjunction:conj-essence',
+  version:'v1',
+  text:`连词的本质，是把词、短语或分句连接起来，并告诉我们这些单位之间是什么逻辑关系。分析连词时，先看连接层级，再看意义，不能只背“和、但是、因为”。<#0.6#>
+Tea and coffee are available。<#0.7#>先看主干，Tea and coffee 是主语，are available 是谓语部分。and 连接 Tea 和 coffee 两个地位相同的名词，让它们共同占据主语位置，表示两者并列加入。因此整个并列主语按复数理解。<#0.8#>
+再看 We left because it was late。<#0.7#>We left 是主句，it was late 本身也有主语和谓语。because 把后一个分句变成原因从句，让它依附主句，说明离开的原因。这里连接的不是两个同等成分，而是主句和从属分句。<#0.8#>
+可以思考：Tea or coffee is available 中，or 与 and 连接的层级相同，为什么意义不同？因为连词不仅负责连接，还标明并列、选择、转折、因果等关系。<#0.8#>
+判断连词分三步：找出连词两边的完整单位；判断它连接的是词、短语还是分句；最后判断两边是同等并列，还是一边依附另一边。先确定结构层级，再选择符合逻辑的连词。`,
+  lengthText:'465 字 · 约 2 分钟'
+ };
  byId['conj-essence'].analyses[0][0].role='subject';
  byId['conj-essence'].analyses[0][2].role='subject';
  course.forEach(lesson=>lesson.analyses.forEach(analysis=>analysis.forEach(unit=>{

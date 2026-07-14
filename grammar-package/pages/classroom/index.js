@@ -467,8 +467,8 @@ Page({
       if (this.narrationAudioContext) this.narrationAudioContext.pause();
       return;
     }
-    const language = this.data.language === 'en' ? 'en' : 'zh-CN';
-    const requestKey = `${narration.id}:${narration.version}:${language}`;
+    const language = 'zh-CN';
+    const requestKey = `${narration.id}:${narration.version}:shared-zh-CN`;
     this.narrationRequestKey = requestKey;
     this.narrationAudioCache = this.narrationAudioCache || {};
     const playUrl = (url) => {

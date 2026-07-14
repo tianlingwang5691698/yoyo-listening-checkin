@@ -1,6 +1,7 @@
 const storageAdapter = require('../adapters/storage.adapter');
 const dbAdapter = require('../adapters/db.adapter');
 const study = require('../facades/study.facade');
+const narrationManifest = require('../data/grammar-narration-manifest.json');
 const https = require('https');
 const crypto = require('crypto');
 
@@ -21,15 +22,7 @@ const PROGRESS_COLLECTION = 'grammarTopicProgress';
 const EXPLANATION_COLLECTION = 'grammarQuestionExplanations';
 const NARRATION_AUDIO_COLLECTION = 'grammarLessonNarrationAudios';
 const NARRATION_JOB_STALE_MS = 4 * 60 * 1000;
-const NARRATION_HASHES = {
-  'preposition:prep-essence:v1:zh-CN': '18e438f2df994dbe73bc048cd2d926401ae92aaf007df233f036f773b3a14792',
-  'preposition:prep-essence:v2:zh-CN': '566b67c46c72910e8b679307cc234c5b83145b223be268ada98981bbba36c18a',
-  'preposition:prep-essence:v3:zh-CN': '5b9548bef9b62f64838d0ef9e5dd91caae3a797cc427d715501861404619eba2',
-  'preposition:prep-essence:v4:zh-CN': 'ad55bc1889020d139e8355348e5deff8e7cdd556ba988453db2ee72a9041ed58',
-  'preposition:prep-essence:v5:zh-CN': '2e69f034eb6c4722a10844586aa4b90ce4b40c48d1b7e16f17ba4d91bbf202c8',
-  'preposition:prep-essence:v6:zh-CN': '20ea797dd0980665800ff6fae80bc82924b7ae41cc7674966fd274a335fc99aa',
-  'preposition:prep-essence:v1:en': '7742c616aaf5bd88bb8d2df644226a9e63e85f40321f3122944388dfa511655f'
-};
+const NARRATION_HASHES = narrationManifest.hashes || {};
 
 function topicFileName(topicId) {
   return `${crypto.createHash('sha1').update(String(topicId || '')).digest('hex')}.json`;
@@ -581,13 +574,16 @@ async function getGrammarNarrationAudio(event) {
   const payload = (event && event.payload) || {};
   const narrationId = String(payload.narrationId || '').trim();
   const version = String(payload.version || '').trim();
-  const language = String(payload.language || '') === 'en' ? 'en' : 'zh-CN';
+  const requestedLanguage = String(payload.language || '') === 'en' ? 'en' : 'zh-CN';
   const text = String(payload.text || '').trim();
-  const approvalKey = `${narrationId}:${version}:${language}`;
   const textHash = narrationHash(text);
+  const sharedApprovalKey = `${narrationId}:${version}:zh-CN`;
+  const requestedApprovalKey = `${narrationId}:${version}:${requestedLanguage}`;
+  const approvalKey = NARRATION_HASHES[sharedApprovalKey] === textHash ? sharedApprovalKey : requestedApprovalKey;
   if (!narrationId || !version || !text || NARRATION_HASHES[approvalKey] !== textHash) {
     throw new Error('grammar-narration-not-approved');
   }
+  const language = approvalKey.endsWith(':en') ? 'en' : 'zh-CN';
 
   const endpoint = String(process.env.GRAMMAR_TTS_ENDPOINT || '').trim();
   const apiKey = String(process.env.GRAMMAR_TTS_API_KEY || '').trim();

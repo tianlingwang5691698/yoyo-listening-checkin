@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "adjective:adjective-essence",
+      "version": "v1",
+      "lessonId": "adjective-essence",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverb-essence",
+      "version": "v1",
+      "lessonId": "adverb-essence",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverbial-clauses:adverbial-function-position",
+      "version": "v1",
+      "lessonId": "adverbial-function-position",
+      "source": "adverbial-clauses-courses.js"
+    },
+    {
+      "id": "article:article-essence",
+      "version": "v1",
+      "lessonId": "article-essence",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:find-predicate-skeleton",
+      "version": "v1",
+      "lessonId": "find-predicate-skeleton",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "cohesion-reference:cohesion-reference-essence",
+      "version": "v1",
+      "lessonId": "cohesion-reference-essence",
+      "source": "cohesion-reference-courses.js"
+    },
+    {
+      "id": "common-expression:common-expression-essence",
+      "version": "v1",
+      "lessonId": "common-expression-essence",
+      "source": "common-expression-courses.js"
+    },
+    {
+      "id": "conjunction:conj-essence",
+      "version": "v1",
+      "lessonId": "conj-essence",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "coordination:coordination-boundary",
+      "version": "v1",
+      "lessonId": "coordination-boundary",
+      "source": "coordination-courses.js"
+    },
+    {
+      "id": "information-order:information-order-essence",
+      "version": "v1",
+      "lessonId": "information-order-essence",
+      "source": "information-order-courses.js"
+    },
+    {
+      "id": "interjection:interj-essence",
+      "version": "v1",
+      "lessonId": "interj-essence",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "nonfinite-system:finite-nonfinite-boundary",
+      "version": "v1",
+      "lessonId": "finite-nonfinite-boundary",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "noun-clauses:clause-as-noun-slot",
+      "version": "v1",
+      "lessonId": "clause-as-noun-slot",
+      "source": "noun-clauses-courses.js"
+    },
+    {
+      "id": "noun:noun-job",
+      "version": "v1",
+      "lessonId": "noun-job",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "numeral:numeral-essence",
+      "version": "v1",
+      "lessonId": "numeral-essence",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "predicate-system:finite-boundary",
+      "version": "v1",
+      "lessonId": "finite-boundary",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "preposition:prep-essence",
+      "version": "v7",
+      "lessonId": "prep-essence",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "pronoun:pronoun-essence",
+      "version": "v1",
+      "lessonId": "pronoun-essence",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "punctuation:punctuation-capitalization-essence",
+      "version": "v1",
+      "lessonId": "punctuation-capitalization-essence",
+      "source": "punctuation-courses.js"
+    },
+    {
+      "id": "relative-clauses:relative-boundary",
+      "version": "v1",
+      "lessonId": "relative-boundary",
+      "source": "relative-clauses-courses.js"
+    },
+    {
+      "id": "reported-speech:reported-speech-essence",
+      "version": "v1",
+      "lessonId": "reported-speech-essence",
+      "source": "reported-speech-courses.js"
+    },
+    {
+      "id": "sentence-elements:element-levels",
+      "version": "v1",
+      "lessonId": "element-levels",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "special-structures:special-structure-essence",
+      "version": "v1",
+      "lessonId": "special-structure-essence",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "verb:verb-jobs",
+      "version": "v1",
+      "lessonId": "verb-jobs",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "word-formation:word-parts",
+      "version": "v1",
+      "lessonId": "word-parts",
+      "source": "word-formation-courses.js"
+    }
+  ],
+  "hashes": {
+    "adjective:adjective-essence:v1:zh-CN": "ebea87fc5e1136899bef053f308a3ecd01fba9959b20fa3bb8baee22dc8ce5fb",
+    "adverb:adverb-essence:v1:zh-CN": "f611b6e5e99c88512a9b30f99362d43c45af29df8bcd68099d4c738847f0392d",
+    "adverbial-clauses:adverbial-function-position:v1:zh-CN": "ed9a6a93eac25ab637afeeeafd44598f68386a2195cf45af20c1fb391fe44c80",
+    "article:article-essence:v1:zh-CN": "5792477203d3dc83f1bca492d70cff53e7dacb922bbb21daad49fc1bc1c54472",
+    "basic-sentence-patterns:find-predicate-skeleton:v1:zh-CN": "acfe08db46cd16233897e29d45373a6b87dd982ee625ec4741a5d817508bb340",
+    "cohesion-reference:cohesion-reference-essence:v1:zh-CN": "b12fa1f751c7f016dd23c44a9c0dd53c54fd5bb2c3de59f0cfa2e3eb69ccccd9",
+    "common-expression:common-expression-essence:v1:zh-CN": "aa418b5ade179cb6f446b1492d8e879807badf22ee0e0c53da565c7d534082ea",
+    "conjunction:conj-essence:v1:zh-CN": "a555c0dfdf6c263e3c3c771a8c3bee3dc5b5a39ab33d49afee672e2a44773da4",
+    "coordination:coordination-boundary:v1:zh-CN": "153fdd1159fc41764cff75cc7b18e718f84a1ae047188fa02d6777da52451484",
+    "information-order:information-order-essence:v1:zh-CN": "12477236df3a027dabda0985c0e76439ee6746b834dcb97b832f73154121ab7c",
+    "interjection:interj-essence:v1:zh-CN": "2b0505ec6d5066ea6a293696be8859b6b65559de948331b8cc16b23635690faa",
+    "nonfinite-system:finite-nonfinite-boundary:v1:zh-CN": "dca7d8b193c56be054d432313fd95ae2cfe196fa66ebe3253aa0e032b09026c1",
+    "noun-clauses:clause-as-noun-slot:v1:zh-CN": "315704a3c2a3af5af44e5c0e58d7ef1720c8f4a181f1c41a83182bdf7bac59ae",
+    "noun:noun-job:v1:zh-CN": "877895d3a2ca121575903f447a6c2bdf5585e0348f91cbb392adfb31c0a75e94",
+    "numeral:numeral-essence:v1:zh-CN": "036f695fa1fd50852e82726f4a7c5d5071651a4323a2c540b703c00e40792a80",
+    "predicate-system:finite-boundary:v1:zh-CN": "fdc97a13af90aa719661a5890baf87b32ea122a54f153cbf78d953dac28088cb",
+    "preposition:prep-essence:v1:en": "7742c616aaf5bd88bb8d2df644226a9e63e85f40321f3122944388dfa511655f",
+    "preposition:prep-essence:v1:zh-CN": "18e438f2df994dbe73bc048cd2d926401ae92aaf007df233f036f773b3a14792",
+    "preposition:prep-essence:v2:zh-CN": "566b67c46c72910e8b679307cc234c5b83145b223be268ada98981bbba36c18a",
+    "preposition:prep-essence:v3:zh-CN": "5b9548bef9b62f64838d0ef9e5dd91caae3a797cc427d715501861404619eba2",
+    "preposition:prep-essence:v4:zh-CN": "ad55bc1889020d139e8355348e5deff8e7cdd556ba988453db2ee72a9041ed58",
+    "preposition:prep-essence:v5:zh-CN": "2e69f034eb6c4722a10844586aa4b90ce4b40c48d1b7e16f17ba4d91bbf202c8",
+    "preposition:prep-essence:v6:zh-CN": "20ea797dd0980665800ff6fae80bc82924b7ae41cc7674966fd274a335fc99aa",
+    "preposition:prep-essence:v7:zh-CN": "7d20df69ff9189c44c09ac854e0c32471333fc1e6e97ab0ca5c3aab55e041683",
+    "pronoun:pronoun-essence:v1:zh-CN": "8bc789f566922acd2f8dbf1c5f812d44f9faa8d2b16949bfaae111d1c729f5c1",
+    "punctuation:punctuation-capitalization-essence:v1:zh-CN": "b3854d820e41a086cd2c45e9a7c766b101c338d7c5a70cf5c09669cce3da5bc0",
+    "relative-clauses:relative-boundary:v1:zh-CN": "6c2445e0123d6622279547630f06de62ddf09e42435338cf3419aafd1fb1742b",
+    "reported-speech:reported-speech-essence:v1:zh-CN": "ac2d979d719f033cd8091a91b68943b236ce9568d71398f55702928e71662e98",
+    "sentence-elements:element-levels:v1:zh-CN": "ad3fb5412ab939000d11ef2ddd44e7afefc51fec23bf53510b162df0ef0ecdcb",
+    "special-structures:special-structure-essence:v1:zh-CN": "de4eb65457856b4d88c204954f2f838d3a232a8b46338790e851eddc947a9231",
+    "verb:verb-jobs:v1:zh-CN": "26a5badb499b5752da4efcdc2163b0e33c14a7ccafb674b85d5d03138fc0bba4",
+    "word-formation:word-parts:v1:zh-CN": "07aeec401ca79cc6989b54aacdfba108745eedceb4f00ae5249342c19051410b"
+  }
+}

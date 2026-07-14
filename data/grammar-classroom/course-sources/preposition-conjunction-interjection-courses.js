@@ -71,20 +71,13 @@ function buildPrepositionCourse(english) {
   ];
   essence.narration = {
     id: 'preposition:prep-essence',
-    version: pick(english, 'v6', 'v1'),
-    text: pick(english,
-      `介词的本质，是在两个成分之间建立关系。它通常带着后面的名词或代词，组成介词短语。介词后面的成分，就是参照对象。<#0.7#>
-The cup is on the table。先看主干 the cup is。<#0.5#>介词是 on，后面是 the table。on 把 cup 和 table 连接起来，说明杯子接触桌面，建立表面位置关系。所以 on 在这里可以理解为“在什么上面”，但真正需要记住的是位置关系。<#0.8#>
-We met after lunch。主干是 We met。<#0.5#>介词是 after，lunch 是时间参照。after 把见面的动作放在午饭之后，建立时间先后关系。<#0.8#>
-She spoke with her teacher。主干是 She spoke，也就是“她说话”。<#0.6#>介词是 with，后面是 her teacher。with 把说话动作和老师连接起来，表示老师共同参与交谈。<#0.8#>
-判断介词分三步：先找介词；再找介词后面的参照对象；最后判断它连接哪两个成分，建立的是位置、时间、方向、方式还是其他关系。选择介词时，中文翻译可以帮助理解，但不能只靠翻译。核心始终是：介词连接两个成分，并说明它们之间的关系。`,
-      `In this lesson, we will answer one question: what does a preposition really do? You may have learned that on means “on,” after means “later than,” and with means “together with.” Those translations can help, but they are not the core idea. A preposition acts like a bridge. It connects two elements and tells us the relation between them.
-Look at the first sentence: The cup is on the table. The cup is the thing being described, and the table is the reference point. On connects them and shows a surface relation: the cup touches the table’s surface.
-Now look at: We met after lunch. The sentence skeleton is We met. Lunch is the time reference. After places the meeting later than lunch, so it creates a time relation.
-In the third sentence, She spoke with her teacher, the skeleton is She spoke. Her teacher is another participant in the conversation. With connects the speaking event to that participant and expresses accompaniment or shared participation.
-The prepositions are different, but the method is the same. First, find the preposition. Second, find the reference after it. Third, ask: which two elements does it connect, and what relation does it create? The relation may involve time, place, direction, means, reason, or another abstract idea.
-When you choose a preposition, do not begin with one Chinese translation. Begin with the two elements in the sentence and decide what relation they need. Remember: a preposition is not an isolated translation word. It is a bridge that connects an action or thing to a reference and explains their relation.`),
-    lengthText: pick(english, '451 字 · 约 2 分钟', '264 words · about 2 minutes')
+    version: 'v7',
+    text: `介词的本质，是把动作或事物与一个参照对象连接起来，说明两者之间的关系。介词通常带着后面的名词或代词组成介词短语，后面的成分就是参照对象。<#0.6#>
+The cup is on the table。<#0.7#>先看主干 The cup is，杯子是被说明的对象。介词 on 后面是 the table，桌子提供参照。on 把 cup 和 table 连接起来，说明杯子接触桌面，建立表面位置关系。这里可以理解为“在什么上面”，但真正需要记住的是两个成分之间的关系。<#0.8#>
+We met after lunch。<#0.7#>主干是 We met。after 用 lunch 作时间参照，把见面的动作放在午饭之后，建立时间先后关系。<#0.8#>
+再听 She spoke with her teacher。<#0.7#>先不要急着逐词翻译。想一想 with 连接了什么。它把 spoke 和 her teacher 连接起来，表示老师共同参与交谈。<#0.8#>
+判断介词分三步：先找介词；再找介词后的参照对象；最后判断它把哪个动作或事物与参照对象连接起来，建立的是位置、时间、方向、方式还是其他关系。中文意思可以帮助理解，但介词的核心不是一条孤立翻译，而是一座表示关系的桥。`,
+    lengthText: '454 字 · 约 2 分钟'
   };
   essence.ruleCoverage = INCLUDE_RULE_COVERAGE ? [
     { exampleIndexes: [1], questionIndexes: [1] },

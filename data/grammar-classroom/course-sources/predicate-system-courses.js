@@ -269,6 +269,16 @@ function buildPredicateSystemCourse(english) {
   const ids=course.map(l=>l.id), assigned=sections.flatMap(s=>s.lessonIds);
   if(assigned.length!==ids.length||new Set(assigned).size!==assigned.length||ids.some(id=>!assigned.includes(id))||assigned.some(id=>!ids.includes(id))) throw new Error('Invalid predicate-system section coverage');
   course.forEach(l=>{ if(l.rules.length<3||l.examples.length!==l.rules.length||l.questions.length!==l.rules.length||l.analyses.length!==l.examples.length) throw new Error(`Invalid predicate lesson: ${l.id}`); if(INCLUDE_RULE_COVERAGE)l.ruleCoverage.forEach((c,i)=>{if(c.exampleIndexes[0]!==i||c.questionIndexes[0]!==i)throw new Error(`Invalid predicate coverage: ${l.id}:${i}`);}); });
+  course[0].narration={
+    id:'predicate-system:finite-boundary',
+    version:'v1',
+    text:`谓语的核心，是分句中的限定部分。它与主语建立关系，并承载时态、情态或主谓一致。一个句子里出现多个动词形式，不等于有多个限定谓语；要先找真正能让分句成立的限定核心。<#0.6#>
+Mia works here。<#0.7#>主语是 Mia，works 是限定谓语。它用一般现在时，并通过词尾 s 与第三人称单数主语保持一致。here 只补充地点，不属于谓语核心。<#0.8#>
+Mia wants to leave。<#0.7#>wants 有时态和一致变化，是主句限定谓语；to leave 没有随主语和时间变化，是非谓语结构，补充 wants 的内容。因此这里仍然只有一个分句核心，不能把 wants 和 to leave 算成两个并列谓语。<#0.8#>
+再看 I know that she agrees。<#0.7#>主句的限定谓语是 know，从句的限定谓语是 agrees。因为句中有两个分句，所以各有自己的限定核心。<#0.8#>
+判断谓语，先划分分句；再找每个分句中体现时态、情态或一致的动词形式；如果有助动词链，先找最前面的限定操作词，再把后面的主要动词一起看作完整谓语。最后区分非谓语和从句谓语。谓语不是所有动词的集合，而是围绕限定核心组织起来的系统。`,
+    lengthText:'456 字 · 约 2 分钟'
+  };
   const core=course.filter(l=>l.level==='core'), advanced=course.filter(l=>l.level==='advanced');
   return { title:pick(english,`谓语系统 · ${course.length} 节微课`,`Predicate system · ${course.length} lessons`), copy:pick(english,'从限定谓语出发，系统理解一致、时体、语态、情态和句子操作。','Start with finiteness, then build agreement, tense-aspect, voice, modality and clause operations.'), course,sections,groups:[
     {id:'core',title:pick(english,`核心必学 · ${core.length} 节`,`Core · ${core.length} essential lessons`),copy:pick(english,'建立所有句子分析都依赖的谓语框架。','Build the predicate framework required for sentence analysis.'),lessons:core},

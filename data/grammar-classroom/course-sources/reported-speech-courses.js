@@ -27,10 +27,19 @@ const question = (english, q, index) => {
 };
 const A = (ruleZh, ruleEn, pieces, q, noteZh, noteEn) => ({ ruleZh, ruleEn, pieces, q, noteZh, noteEn });
 const Q = (zh, en, aZh, aEn, bZh, bEn, answer, whyZh, whyEn) => [zh, en, aZh, aEn, bZh, bEn, answer, whyZh, whyEn];
+const REPORTED_SPEECH_ESSENCE_NARRATION={
+  id:'reported-speech:reported-speech-essence',version:'v1',
+  text:`直接引语和间接引语的核心区别，在于转述者是否声称保留原话。直接引语用引号保留说话人当时的措辞和视点；间接引语则从新的报告视点重建原意。所以转述不是把每个词机械替换，而是先确定谁说、对谁说、何时何地再报告。<#0.7#>
+Mia said, "I will call you tomorrow."。<#0.5#>引号里的 I、you 和 tomorrow，都以 Mia 说话的现场为中心。如果第二天由原听话人转述，可以说 Mia said that she would call me the next day。主干是 Mia said，that 从句整体是所说的内容。she、me、would 和 the next day 都随新的说话视点调整。<#0.8#>
+但这些变化不是见到过去时就全部后移。如果时间、人物或事实还没有改变，就要根据实际报告语境决定。<#0.7#>
+Leo said, "No, I won't leave."。这句还可以按交际功能概括为 Leo refused to leave。refused 清楚保留了“拒绝离开”的意思，但没有冒充逐字原话。<#0.7#>
+转述前先判断原话的交际类型。陈述通常用 that 内容从句；一般疑问用 if 或 whether；特殊疑问保留疑问词；命令、请求和建议则要选择合适的报告动词和结构。先选对句子骨架，再调整人称、时间和地点。`,
+  lengthText:'465 字 · 约 2 分钟'
+};
 
 function makeLesson(english, spec, index) {
   if (!spec.atoms || spec.atoms.length < 3) throw new Error(`Reported-speech lesson needs at least three atomic rules: ${spec.id}`);
-  return {
+  const result={
     id: spec.id, no: String(index + 1).padStart(2, '0'), level: spec.level,
     title: pick(english, spec.title[0], spec.title[1]), meta: pick(english, spec.meta[0], spec.meta[1]),
     examples: spec.atoms.map((atom) => atom.pieces.map((piece) => piece[0]).join(' ')),
@@ -40,6 +49,8 @@ function makeLesson(english, spec, index) {
     ruleCoverage: INCLUDE_RULE_COVERAGE ? spec.atoms.map((_, i) => ({ exampleIndexes: [i], questionIndexes: [i] })) : [],
     questions: spec.atoms.map((atom, atomIndex) => question(english, atom.q, atomIndex))
   };
+  if(spec.id==='reported-speech-essence')result.narration=REPORTED_SPEECH_ESSENCE_NARRATION;
+  return result;
 }
 
 const lessons = [

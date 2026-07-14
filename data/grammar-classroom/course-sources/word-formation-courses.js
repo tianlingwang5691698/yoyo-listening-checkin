@@ -1,5 +1,9 @@
 const pick = (en, zh, english) => en ? english : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
+const FIRST_LESSON_NARRATION = {
+  id: 'word-formation:word-parts', version: 'v1', lengthText: '493 字 · 约 2 分钟',
+  text: `构词法的本质，是观察一个词由哪些部分组成，这些部分怎样保留核心意义，又怎样改变词义或词性。它能帮我们理解词族和推测生词，但不是把每个单词都强行拆开。<#0.7#>\n先看 help、helpful 和 helpless。三个词共有的部分是 help，它能独立使用，并承载“帮助”这个核心意义，所以可以叫基词。helpful 在 help 后加 -ful，形成表示“有帮助的”的形容词；helpless 在后面加 -less，形成“无助的”。这两个后缀不仅提供意义方向，也提示新词的词性。<#0.8#>\n再看 unhappy 和 teacher。un- 放在 happy 前面，是前缀，它把意义推向否定；-er 放在 teach 后面，是后缀，它把动作词 teach 变成表示人的名词 teacher。前缀和后缀的名称首先由它们在基词前还是后的位置决定。<#0.7#>\n思考 act、action、active 和 actively。它们共享核心形式和意义，但分别可以是动词、名词、形容词和副词。这就是词族：不同成员有联系，却不能在句中随意互换。<#0.7#>\n分析时，先找承载核心意义的基词或词根；再看前后是否有词缀；最后把推测出的意义和词性放回句子检查。如果拆分后的意义不通，必须结合语境和词典确认。`
+};
 
 const example = (en, text, mode, zh, english) => ({
   text,
@@ -312,6 +316,8 @@ function buildWordFormationCourse(en) {
       q('遇到看似可拆但意义不确定的词，最好？', 'What should you do when a possible split gives an uncertain meaning?', ['结合语境并查词典', 'check context and a dictionary'], ['只按字面词缀猜到底', 'trust a literal affix guess only'], 'A', '构词推断必须由语境和词典校验。', 'Word-building inference must be checked by context and a dictionary.')
     ])
   ];
+
+  if (lessons.length) lessons[0].narration = Object.assign({}, FIRST_LESSON_NARRATION);
 
   const coreCount = 13;
   const course = lessons.map((item, index) => Object.assign({}, item, {

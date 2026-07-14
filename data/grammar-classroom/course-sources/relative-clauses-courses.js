@@ -56,7 +56,16 @@ const note=(english,x,fallback,parts)=>{
 };
 const question=(english,x)=>({question:pick(english,x[0],x[1]),options:[{key:'A',text:pick(english,x[2],x[3])},{key:'B',text:pick(english,x[4],x[5])}],answer:x[6],correct:pick(english,x[7],x[8]),wrong:pick(english,`再看规则：${x[7]}`,`Check the rule: ${x[8]}`)});
 const A=(zh,en,parts,q,n)=>({zh,en,parts,q,n}); const Q=(...x)=>x; const T=(zh,en)=>['translation',zh,en]; const S=(zh,en)=>['structure',zh,en];
-function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){if(atoms.length<3)throw new Error(`Too few relative atoms: ${id}`);const analyses=atoms.map(a=>analysis(english,a.parts));return{id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses,exampleNotes:atoms.map((a,i)=>note(english,a.n,pick(english,a.q[7],a.q[8]),analyses[i])),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};}
+const RELATIVE_ESSENCE_NARRATION={
+ id:'relative-clauses:relative-boundary',version:'v1',
+ text:`定语从句的本质，是用一个从句去修饰前面的名词或代词。被修饰的词叫先行词。英语中，定语从句通常放在先行词后面，关系词一边把从句挂到先行词上，一边填补从句内部的成分位置。<#0.7#>
+The girl who is singing is Mia。<#0.5#>先看主句骨架，The girl is Mia。girl 是先行词，who is singing 整体后置修饰 girl，说明是哪个女孩。进入从句内部，who 是 is singing 的主语。所以 who 不只是连接词，它还代表 girl，填上从句的主语位置。<#0.8#>
+再看 The book that you lent me is useful。book 是先行词，that you lent me 修饰 book。从句内部可以理解为 you lent me the book，that 填补的是 lent 的直接宾语位置。<#0.7#>
+I met the teacher who taught us last year yesterday。这句可以先思考：yesterday 属于定语从句，还是主句？<#0.5#>who taught us last year 内部已经完整，yesterday 更自然地说明主句 met 的时间。<#0.7#>
+判断定语从句：先找先行词；再划出从关系词到内部结构完整处的边界；接着判断关系词在从句内作什么成分；最后把“先行词＋定语从句”作为完整名词短语放回主句。`,
+ lengthText:'472 字 · 约 2 分钟'
+};
+function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){if(atoms.length<3)throw new Error(`Too few relative atoms: ${id}`);const analyses=atoms.map(a=>analysis(english,a.parts));const result={id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses,exampleNotes:atoms.map((a,i)=>note(english,a.n,pick(english,a.q[7],a.q[8]),analyses[i])),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};if(id==='relative-boundary')result.narration=RELATIVE_ESSENCE_NARRATION;return result;}
 
 function buildRelativeClausesCourse(english){
  const L=(...x)=>lesson(english,...x);

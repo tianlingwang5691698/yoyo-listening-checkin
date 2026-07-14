@@ -386,6 +386,16 @@ function buildAdjectiveCourse(english) {
       item.exampleNotes[index] = { visible: true, mode: 'structure', title: pick(english, '例句说明', 'Example focus'), body: pick(english, pair[0], pair[1]), detail: '' };
     });
   });
+  bundle.course[0].narration = {
+    id: 'adjective:adjective-essence',
+    version: 'v1',
+    text: `形容词的本质，是给人或事物添加性质、状态或类别特征。判断时不要只看单词位置，要先问：它在说明谁，说明了什么。<#0.6#>
+The red ball rolled away。<#0.7#>先看句子主干，ball 是主语中心词，rolled away 是谓语。red 放在 ball 前面，给球增加“红色”特征，帮助我们确定是哪一种球。这里 red 是形容词，在名词短语中作定语。<#0.8#>
+再看 The ball is red。<#0.7#>主干已经是完整的主系表结构。red 通过系动词 is 说明主语 ball 的性质，所以作表语。位置变了，说明对象没有变，仍然是 ball。<#0.8#>
+They painted the ball red。<#0.7#>可以先想：red 说明的是 They，还是 the ball？它表示球被刷成红色，补充宾语形成的结果状态，所以作宾语补足语。<#0.8#>
+三个句子里的 red 都给 ball 添加特征，但进入句子的方式不同。判断形容词分三步：找到形容词；确定它说明哪个人或事物；再看它是放在名词旁作定语，通过系动词作表语，还是补充宾语的状态。核心不是背位置，而是找清形容词的说明对象。`,
+    lengthText: '431 字 · 约 2 分钟'
+  };
   return bundle;
 }
 
@@ -727,6 +737,16 @@ function buildAdverbCourse(english) {
       item.exampleNotes[index] = { visible: true, mode: 'structure', title: pick(english, '例句说明', 'Example focus'), body: pick(english, pair[0], pair[1]), detail: '' };
     });
   });
+  bundle.course[0].narration = {
+    id: 'adverb:adverb-essence',
+    version: 'v1',
+    text: `副词的本质，是给动作、性质、另一个副词或整句话增加背景、程度和作用范围。判断副词，关键不是看到词尾有 ly，而是找它在修饰谁、补充了什么信息。<#0.6#>
+Mia answered calmly。<#0.7#>先看主干 Mia answered，表示米娅回答了。calmly 不改变“回答”这个动作，而是回答“怎样回答”，给 answered 增加平静这一方式。因此 calmly 是副词，在句中作方式状语。<#0.8#>
+The water is very cold。<#0.7#>这里 very 不直接说明 water，也不修饰 is，而是提高形容词 cold 的程度，表示“非常冷”。副词不只修饰动词，也能修饰形容词。<#0.8#>
+再听 Probably, the train will arrive soon。<#0.7#>Probably 表示说话人对整件事可能性的判断，作用范围是全句；soon 只说明 arrive 的时间。你可以思考：如果去掉 probably，事件内容有没有改变？火车仍会到达，只是说话人的把握程度不再表达。<#0.8#>
+判断副词分三步：先找可能的副词；再问它修饰动作、性质还是整句话；最后判断它增加的是时间、地点、方式、程度、频率、态度还是范围。副词的位置会提示作用范围，但最终要用句意验证。`,
+    lengthText: '483 字 · 约 2 分钟'
+  };
   return bundle;
 }
 

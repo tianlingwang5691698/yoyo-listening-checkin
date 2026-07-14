@@ -9,10 +9,21 @@ function note(english, mode, zh, en) {
 }
 const opt = (english, value) => Array.isArray(value) ? pick(english, value[0], value[1]) : value;
 function question(english, item) { return { question:pick(english,item[0],item[1]), options:item[2].map((v,i)=>({key:String.fromCharCode(65+i),text:opt(english,v)})), answer:item[3], correct:pick(english,item[4],item[5]), wrong:pick(english,`再看规则：${item[4]}`,`Check the rule: ${item[5]}`) }; }
+const NOUN_CLAUSE_ESSENCE_NARRATION={
+ id:'noun-clauses:clause-as-noun-slot',version:'v1',
+ text:`名词性从句的本质，是一整个从句填进原本可以放名词的位置。它在外层当一个名词单位使用，内部却仍然有自己的主语和谓语。分析时要分清外层功能和从句内部结构。<#0.7#>
+What she said surprised me。<#0.5#>先看外层主干。What she said 整体是主语，surprised 是主句谓语，me 是宾语。再进入从句内部，可以理解为 she said what：she 是主语，said 是谓语，what 是 said 的宾语。同一个 what 既引出从句，又填上内部缺失的宾语位置。<#0.8#>
+再看 I know that she is honest。主句主干是 I know，that she is honest 整体填入 know 的内容宾语位置。that 只标出从句起点，不在内部作主语或宾语。<#0.7#>
+The question is whether we should leave。可以思考：whether 从句整体在 is 后面说明什么？<#0.5#>它说明 question 的具体内容，所以整体作表语。<#0.7#>
+判断名词性从句：先找主句主干和空缺的名词槽位；再把从句整体放入主语、宾语、表语或同位说明的位置；最后进入从句内部，检查连接词、主语、谓语和语序。`,
+ lengthText:'443 字 · 约 2 分钟'
+};
 function lesson(english, spec, index) {
   if (spec.rules.length !== spec.examples.length || spec.rules.length !== spec.questions.length) throw new Error(`Noun-clause coverage mismatch: ${spec.id}`);
   const examples = spec.examples.map((item)=>({text:item[0].map((c)=>c[0]).join(' '),analysis:analysis(english,item[0]),note:note(english,item[1],item[2],item[3])}));
-  return { id:spec.id, no:String(index+1).padStart(2,'0'), level:spec.level, title:pick(english,...spec.title), meta:pick(english,...spec.meta), examples:examples.map(x=>x.text), analyses:examples.map(x=>x.analysis), exampleNotes:examples.map(x=>x.note), rules:spec.rules.map(x=>pick(english,...x)), ruleCoverage:INCLUDE_RULE_COVERAGE?spec.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[], questions:spec.questions.map(x=>question(english,x)) };
+  const result={ id:spec.id, no:String(index+1).padStart(2,'0'), level:spec.level, title:pick(english,...spec.title), meta:pick(english,...spec.meta), examples:examples.map(x=>x.text), analyses:examples.map(x=>x.analysis), exampleNotes:examples.map(x=>x.note), rules:spec.rules.map(x=>pick(english,...x)), ruleCoverage:INCLUDE_RULE_COVERAGE?spec.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[], questions:spec.questions.map(x=>question(english,x)) };
+  if(spec.id==='clause-as-noun-slot')result.narration=NOUN_CLAUSE_ESSENCE_NARRATION;
+  return result;
 }
 
 const specs = [

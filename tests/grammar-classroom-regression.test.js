@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const crypto = require('node:crypto');
 const nounCourses = require('../grammar-package/domain/grammar-classroom/noun-courses');
 const pronounCourses = require('../grammar-package/domain/grammar-classroom/pronoun-courses');
 const wordCourses = Object.assign({}, nounCourses, pronounCourses);
@@ -43,6 +44,7 @@ const sourceCommonExpressionCourses = require('../data/grammar-classroom/course-
 const allBuilders = Object.assign({}, sourceWordCourses, sourceVnaCourses, sourceModifierCourses, sourceRelationCourses);
 const allSectionBuilders = Object.assign({}, allBuilders, sourceWordFormationCourses, sourceSentenceElementsCourses, sourceBasicSentencePatternsCourses, sourcePredicateSystemCourses, sourceNonfiniteSystemCourses, sourceSpecialStructuresCourses, sourceCoordinationCourses, sourceNounClausesCourses, sourceRelativeClausesCourses, sourceAdverbialClausesCourses, sourceReportedSpeechCourses, sourceCohesionReferenceCourses, sourceInformationOrderCourses, sourcePunctuationCourses, sourceCommonExpressionCourses);
 const withoutCoverage = (value) => JSON.parse(JSON.stringify(value, (key, item) => key === 'ruleCoverage' ? undefined : item));
+const narrationHash = (text) => crypto.createHash('sha256').update(String(text || '')).digest('hex');
 
 function loadBuilders(language = 'zh-CN') {
   const source = fs.readFileSync('data/grammar-classroom/page-source/index.js', 'utf8');
@@ -181,6 +183,42 @@ test('课程可读源文件与打包运行时文件保持一致', () => {
     const runtime = require(`../grammar-package/domain/grammar-classroom/${file}`);
     Object.keys(source).forEach((name) => [false, true].forEach((english) => assert.deepEqual(withoutCoverage(runtime[name](english)), withoutCoverage(source[name](english)))));
   });
+});
+
+test('所有专题只在第一节提供中文共享微课讲解', () => {
+  const narrations = [];
+  Object.entries(allSectionBuilders).forEach(([builderName, builder]) => {
+    const zhBundle = builder(false);
+    const enBundle = builder(true);
+    const zhLessons = zhBundle.course.filter((lesson) => lesson.narration);
+    const enLessons = enBundle.course.filter((lesson) => lesson.narration);
+    assert.equal(zhLessons.length, 1, `${builderName} should have one narration`);
+    assert.equal(enLessons.length, 1, `${builderName} English UI should have one narration`);
+    assert.equal(zhLessons[0].id, zhBundle.course[0].id, `${builderName} narration must be on first lesson`);
+    assert.equal(enLessons[0].id, enBundle.course[0].id, `${builderName} English narration must be on first lesson`);
+    assert.deepEqual(enLessons[0].narration, zhLessons[0].narration, `${builderName} must share Chinese narration across languages`);
+    const narration = zhLessons[0].narration;
+    const spokenText = narration.text.replace(/<#\d+(?:\.\d+)?#>/g, '').replace(/\s/g, '');
+    assert.match(narration.text, /[\u4e00-\u9fff]/, `${builderName} narration must be Chinese`);
+    assert.doesNotMatch(narration.text, /同学们|这节课|今天我们/, `${builderName} narration contains filler`);
+    assert.ok(Array.from(spokenText).length >= 300 && Array.from(spokenText).length <= 650, `${builderName} narration length out of range`);
+    assert.ok((narration.text.match(/<#\d+(?:\.\d+)?#>/g) || []).length >= 2, `${builderName} narration needs explicit pauses`);
+    assert.match(narration.lengthText, /约\s*2\s*分钟/, `${builderName} narration duration label missing`);
+    narrations.push(narration);
+  });
+  assert.equal(narrations.length, 25);
+  assert.equal(new Set(narrations.map((item) => item.id)).size, 25);
+
+  const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, '../cloudfunctions/yoyo/data/grammar-narration-manifest.json'), 'utf8'));
+  assert.equal(manifest.lessons.length, 25);
+  narrations.forEach((narration) => {
+    const key = `${narration.id}:${narration.version}:zh-CN`;
+    assert.equal(manifest.hashes[key], narrationHash(narration.text), `manifest mismatch: ${key}`);
+  });
+
+  const classroomPage = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(classroomPage, /const language = 'zh-CN'/);
+  assert.match(classroomPage, /shared-zh-CN/);
 });
 
 test('名词与代词使用独立运行时和独立懒加载组件', () => {
@@ -755,14 +793,13 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   assert.deepEqual(enEssence.exampleNotes.map((note) => note.visible), [true, true, true]);
   assert.deepEqual(sourceRelationCourses.buildPrepositionCourse(false).course.filter((lesson) => lesson.narration).map((lesson) => lesson.id), ['prep-essence']);
   assert.equal(zhEssence.narration.id, 'preposition:prep-essence');
-  assert.equal(zhEssence.narration.version, 'v6');
-  assert.equal(enEssence.narration.version, 'v1');
-  assert.equal(Array.from(zhEssence.narration.text.replace(/\s/g, '')).length, 500);
+  assert.equal(zhEssence.narration.version, 'v7');
+  assert.deepEqual(enEssence.narration, zhEssence.narration);
+  assert.equal(Array.from(zhEssence.narration.text.replace(/<#\d+(?:\.\d+)?#>/g, '').replace(/\s/g, '')).length, 454);
   assert.doesNotMatch(zhEssence.narration.text, /同学们|这节课|先看第一句|再看第二句/);
-  assert.equal((zhEssence.narration.text.match(/<#0\.[78]#>/g) || []).length, 4);
-  assert.match(zhEssence.narration.text, /主干是 She spoke，也就是“她说话”。<#0\.6#>介词是 with/);
+  assert.ok((zhEssence.narration.text.match(/<#\d+(?:\.\d+)?#>/g) || []).length >= 2);
+  assert.match(zhEssence.narration.text, /在什么上面/);
   assert.doesNotMatch(zhEssence.narration.text, /在……上|在……之后|和……一起/);
-  assert.equal(enEssence.narration.text.trim().split(/\s+/).length, 264);
   assert.equal(prepositionCourses.buildPrepositionCourse(false).course[0].narration.text, zhEssence.narration.text);
   const zhRelationChoice = sourceRelationCourses.buildPrepositionCourse(false).course.find((lesson) => lesson.id === 'prep-collocation');
   assert.ok(zhRelationChoice.rules.some((rule) => rule.includes('to 常把动作或事物指向目标')));
@@ -793,6 +830,9 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   assert.match(cloudClient, /gradeWritingAttempt' \|\| action === 'getGrammarNarrationAudio'\)[\s\S]*timeoutMs = 180000/);
   assert.match(grammarService, /grammarLessonNarrationAudios/);
   assert.match(grammarService, /getCachedNarrationAudio/);
+  assert.match(grammarService, /grammar-narration-manifest\.json/);
+  assert.match(grammarService, /sharedApprovalKey = `\$\{narrationId\}:\$\{version\}:zh-CN`/);
+  assert.match(grammarService, /approvalKey, textHash, model, voice, speed, emotion/);
   assert.match(grammarService, /runTransaction/);
   assert.match(grammarService, /status: 'generating'/);
   assert.match(grammarService, /status: 'ready'/);

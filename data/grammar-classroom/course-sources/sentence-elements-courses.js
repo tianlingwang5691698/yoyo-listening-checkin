@@ -331,6 +331,16 @@ function buildSentenceElementsCourse(english) {
       if (!coverage.exampleIndexes.length || !coverage.questionIndexes.length || coverage.exampleIndexes.some((i) => i < 0 || i >= item.examples.length) || coverage.questionIndexes.some((i) => i < 0 || i >= item.questions.length)) throw new Error(`Invalid rule coverage: ${item.id}:${index}`);
     });
   }
+  course[0].narration = {
+    id: 'sentence-elements:element-levels',
+    version: 'v1',
+    text: `句子成分不是单词的固定身份，而是词、短语或从句在具体句子中承担的任务。名词、动词、形容词属于词性；主语、谓语、宾语、定语和状语属于句中功能。分析时必须先看完整边界，再看内部结构。<#0.6#>
+Birds fly。<#0.7#>先找限定谓语 fly，它说明主语的动作；再问谁在飞，答案是 Birds。所以 Birds 是主语，fly 是谓语。这个最短主干让我们看到，成分由句中关系决定。<#0.8#>
+The tall boy smiled。<#0.7#>限定谓语是 smiled，完整主语不是只有 boy，而是 The tall boy。这个名词短语整体作主语，内部 boy 是中心词，tall 修饰 boy，作定语。先划整体，再分析内部，不能把 tall 单独误当成句子的主语。<#0.8#>
+再看 What he said surprised me。<#0.7#>可以先想：是谁使我惊讶？不是 he，而是 What he said 这件事。整个从句作主语，surprised 是主句谓语，me 是宾语。<#0.8#>
+分析句子成分，先找限定谓语和分句边界；再找主语以及谓语要求的宾语、表语或补足语；然后把定语和状语挂回对应成分；最后再分析短语或从句内部。词性告诉你材料是什么，句子成分告诉你这份材料在当前句子里做什么。`,
+    lengthText: '477 字 · 约 2 分钟'
+  };
   const core = course.filter((item) => item.level === 'core');
   const advanced = course.filter((item) => item.level === 'advanced');
   return {
