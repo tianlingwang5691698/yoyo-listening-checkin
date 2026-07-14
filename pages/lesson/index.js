@@ -11,6 +11,10 @@ const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../u
 const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-player');
 const { getTaskAudioDisplayTitle } = require('../../utils/audio-title');
 const {
+  getListeningOwnerId,
+  getActiveListeningLessonKey
+} = require('../../utils/listening-resume');
+const {
   getTaskQueueKey,
   buildListeningQueue,
   mergeListeningQueue,
@@ -611,6 +615,7 @@ Page({
         hasAudio: hasTaskAudioSource(normalizedTask)
       });
     }
+    this.writeActiveListeningLessonSnapshot(normalizedTask);
     this.prefetchTaskAudio(normalizedTask);
   },
   noop() {},
@@ -774,16 +779,20 @@ Page({
         audioErrorDetail: '',
         audioPlaybackMode: 'ready',
         durationLabel: this.formatTime(Math.floor(durationFromContext || taskDuration))
+      }, () => {
+        setTimeout(() => {
+          if (!this.innerAudioContext) return;
+          this.markLessonRoute('audioCanplay', {
+            duration: Math.floor(durationFromContext || taskDuration || 0)
+          });
+          this.restoreListeningResumeCheckpoint();
+          if (this.pendingAutoPlay) {
+            this.pendingAutoPlay = false;
+            this.audioPlayRequested = true;
+            this.innerAudioContext.play();
+          }
+        }, 0);
       });
-      this.markLessonRoute('audioCanplay', {
-        duration: Math.floor(durationFromContext || taskDuration || 0)
-      });
-      this.restoreListeningResumeCheckpoint();
-      if (this.pendingAutoPlay) {
-        this.pendingAutoPlay = false;
-        this.audioPlayRequested = true;
-        this.innerAudioContext.play();
-      }
     });
     this.innerAudioContext.onTimeUpdate(() => {
       const currentSeconds = this.innerAudioContext.currentTime || 0;
@@ -893,6 +902,10 @@ Page({
       });
     }
     const detail = await this.refreshPage();
+    if (this.data.audioReady && this.innerAudioContext && this.innerAudioContext.src) {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.restoreListeningResumeCheckpoint({ force: true });
+    }
     if (this.lessonPerf) {
       this.lessonPerf.mark('cloudRefresh', {
         source: detail && detail.__cacheHit ? 'cache' : (detail && detail.syncMode === 'cloud-error' ? 'error' : 'cloud'),
@@ -963,7 +976,7 @@ Page({
   getListeningResumeStorageKey(task) {
     const target = task || this.data.task || {};
     const selectedTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
-    const ownerId = String(selectedTarget.targetChildId || 'self').trim() || 'self';
+    const ownerId = getListeningOwnerId(selectedTarget);
     const category = String(target.category || this.category || '').trim();
     const taskId = String(target.taskId || this.taskId || '').trim();
     return category && taskId ? `${LISTENING_RESUME_SNAPSHOT_PREFIX}:${ownerId}:${category}:${taskId}` : '';
@@ -973,6 +986,19 @@ Page({
     return ['normal', 'catchup'].includes(String(this.planRunType || 'normal'))
       && !!target
       && !target.isPendingAsset;
+  },
+  writeActiveListeningLessonSnapshot(task) {
+    const target = task || this.data.task;
+    if (!this.canPersistListeningResume(target)) return;
+    const selectedTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const ownerId = getListeningOwnerId(selectedTarget);
+    snapshotStore.write(getActiveListeningLessonKey(selectedTarget), ownerId, {
+      category: target.category || this.category,
+      taskId: target.taskId || this.taskId,
+      planRunType: this.planRunType || 'normal',
+      targetDate: this.targetDate || '',
+      planDayIndex: this.planDayIndex || ''
+    }, { source: 'lesson-active-route' });
   },
   clearListeningResumeCheckpoint(task) {
     const key = this.getListeningResumeStorageKey(task);
@@ -995,13 +1021,17 @@ Page({
       || this.innerAudioContext.duration
       || 0);
     if (currentSeconds < 2 || (durationSeconds > 0 && currentSeconds >= durationSeconds - 2)) {
-      if (options.force) this.clearListeningResumeCheckpoint(task);
+      if (options.force) {
+        this.writeActiveListeningLessonSnapshot(task);
+        this.clearListeningResumeCheckpoint(task);
+      }
       return;
     }
     const bucket = Math.floor(currentSeconds / LISTENING_RESUME_SAVE_INTERVAL_SEC);
     if (!options.force
       && this.listeningResumeLastSaved.key === key
       && this.listeningResumeLastSaved.bucket === bucket) return;
+    this.writeActiveListeningLessonSnapshot(task);
     const saved = snapshotStore.write(key, key, {
       positionSec: Math.round(currentSeconds * 10) / 10,
       durationSec: Math.round(durationSeconds * 10) / 10,
@@ -1010,12 +1040,11 @@ Page({
     }, { source: options.force ? 'lesson-resume-exit' : 'lesson-resume-tick' });
     if (saved) this.listeningResumeLastSaved = { key, bucket };
   },
-  restoreListeningResumeCheckpoint() {
+  restoreListeningResumeCheckpoint(options = {}) {
     const task = this.data.task;
     if (!this.canPersistListeningResume(task) || !this.innerAudioContext) return;
     const key = this.getListeningResumeStorageKey(task);
-    if (!key || this.listeningResumeAppliedKey === key) return;
-    this.listeningResumeAppliedKey = key;
+    if (!key || (!options.force && this.listeningResumeAppliedKey === key)) return;
     const checkpoint = snapshotStore.read(key, {
       id: key,
       maxAgeMs: LISTENING_RESUME_MAX_AGE_MS
@@ -1033,6 +1062,7 @@ Page({
     }
     const resumePositionSec = Math.max(0, positionSec - LISTENING_RESUME_REWIND_SEC);
     this.innerAudioContext.seek(resumePositionSec);
+    this.listeningResumeAppliedKey = key;
     this.setData({
       currentTimeMs: Math.floor(resumePositionSec * 1000),
       currentTimeLabel: this.formatTime(resumePositionSec),
@@ -1356,6 +1386,14 @@ Page({
     const normalizedTask = labels.normalizeTask(detail.task);
     this.updateDailyListeningQueue(detail.dailyQueueTasks || detail.categoryTasks, normalizedTask);
     const previewAudio = buildCurrentAudio(normalizedTask, '', 'idle');
+    const currentTask = this.data.task || {};
+    const preservePreparedPlayer = !!(
+      normalizedTask
+      && this.innerAudioContext
+      && this.innerAudioContext.src
+      && String(currentTask.category || this.category || '') === String(normalizedTask.category || this.category || '')
+      && String(currentTask.taskId || this.taskId || '') === String(normalizedTask.taskId || this.taskId || '')
+    );
     const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     const studyWriteAllowed = isLessonTrainingMode(detail.currentMember, this.planRunType, detail.studyWriteAllowed);
     this.setData(page.buildCloudPageData(this.data, {
@@ -1381,12 +1419,12 @@ Page({
       studyWriteAllowed,
       isPreviewMode: this.planRunType === 'preview',
       studyModeLabel: this.planRunType === 'preview' ? text('previewModeLabel', '预览模式') : (detail.currentMember && detail.currentMember.studyRole === 'student' ? text('studentDevice', '学生设备') : text('parentModeLabel', '家长模式')),
-      currentTimeMs: 0,
-      currentTimeLabel: '00:00',
-      progressPercent: 0,
+      currentTimeMs: preservePreparedPlayer ? this.data.currentTimeMs : 0,
+      currentTimeLabel: preservePreparedPlayer ? this.data.currentTimeLabel : '00:00',
+      progressPercent: preservePreparedPlayer ? this.data.progressPercent : 0,
       playbackRate: 1,
       playbackRateText: '1.0',
-      canRewind: false,
+      canRewind: preservePreparedPlayer ? this.data.canRewind : false,
       activeLineId: '',
       activeLineIndex: -1,
       activeWordIndex: -1,
@@ -1395,14 +1433,14 @@ Page({
       activeLine: null,
       activeWord: null,
       nextLine: null,
-      currentAudio: previewAudio,
-      audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
-      audioReady: false,
-      audioResolving: false,
+      currentAudio: preservePreparedPlayer && this.data.currentAudio ? this.data.currentAudio : previewAudio,
+      audioSource: preservePreparedPlayer ? this.data.audioSource : (normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none'),
+      audioReady: preservePreparedPlayer ? this.data.audioReady : false,
+      audioResolving: preservePreparedPlayer ? this.data.audioResolving : false,
       audioError: '',
       audioErrorText: '',
       audioErrorDetail: '',
-      audioPlaybackMode: 'idle',
+      audioPlaybackMode: preservePreparedPlayer ? this.data.audioPlaybackMode : 'idle',
       lessonStudyPack: null,
       lessonStudyExpanded: false,
       lessonStudyLoading: false,
@@ -1414,6 +1452,7 @@ Page({
       lessonPatternCards: []
     }));
     if (normalizedTask) {
+      this.writeActiveListeningLessonSnapshot(normalizedTask);
       this.prefetchTaskAudio(normalizedTask);
       this.loadLessonSecondaryData(normalizedTask, detail.progress);
       monitor.logPerf('lesson', 'refreshPage', Date.now() - startedAt, {
@@ -1531,6 +1570,7 @@ Page({
       playbackRate: 1,
       playbackRateText: '1.0'
     }));
+    this.writeActiveListeningLessonSnapshot(normalizedTask);
     await this.updatePassQuestion(normalizedTask, progress);
     this.pendingAutoPlay = true;
     await this.syncPlayer(normalizedTask);

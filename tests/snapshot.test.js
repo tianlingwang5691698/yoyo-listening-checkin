@@ -27,3 +27,12 @@ test('snapshot expires by age', () => {
   });
   assert.equal(snapshot.read('old-key', { id: 'old', maxAgeMs: 10 }), null);
 });
+
+test('同一学生的最新课程覆盖上一次继续目标', () => {
+  snapshot.write('activeListeningLessonV1:self', 'self', { taskId: 'lesson-a' }, { source: 'lesson-a' });
+  snapshot.write('activeListeningLessonV1:self', 'self', { taskId: 'lesson-b' }, { source: 'lesson-b' });
+  assert.deepEqual(
+    snapshot.read('activeListeningLessonV1:self', { id: 'self' }),
+    { taskId: 'lesson-b' }
+  );
+});

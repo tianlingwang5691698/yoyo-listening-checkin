@@ -4,6 +4,12 @@ const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
+const {
+  ACTIVE_LISTENING_LESSON_MAX_AGE_MS,
+  getListeningOwnerId,
+  getActiveListeningLessonKey,
+  findListeningContinueTask
+} = require('../../utils/listening-resume');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
@@ -275,6 +281,34 @@ function findNextListeningGroupKey(groupedDailyTasks) {
   }
   const firstGroup = (groupedDailyTasks || []).find((item) => item && item.category);
   return firstGroup ? firstGroup.category : '';
+}
+
+function readActiveListeningLesson() {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const ownerId = getListeningOwnerId(target);
+  return snapshotStore.read(getActiveListeningLessonKey(target), {
+    id: ownerId,
+    maxAgeMs: ACTIVE_LISTENING_LESSON_MAX_AGE_MS
+  });
+}
+
+function buildListeningResumeQuery(task, activeLesson) {
+  if (!task) return '';
+  const parts = [
+    `resumeCategory=${encodeURIComponent(task.category || '')}`,
+    `resumeTaskId=${encodeURIComponent(task.taskId || '')}`
+  ];
+  const activeMatches = activeLesson
+    && String(activeLesson.category || '') === String(task.category || '')
+    && String(activeLesson.taskId || '') === String(task.taskId || '');
+  if (!activeMatches) return `&${parts.join('&')}`;
+  const planRunType = ['normal', 'catchup'].includes(activeLesson.planRunType) ? activeLesson.planRunType : 'normal';
+  parts.push(`resumePlanRunType=${planRunType}`);
+  if (activeLesson.targetDate) parts.push(`resumeTargetDate=${encodeURIComponent(activeLesson.targetDate)}`);
+  if (activeLesson.planDayIndex !== undefined && activeLesson.planDayIndex !== '') {
+    parts.push(`resumePlanDayIndex=${encodeURIComponent(activeLesson.planDayIndex)}`);
+  }
+  return `&${parts.join('&')}`;
 }
 
 function buildStageSnapshotId(child, phase) {
@@ -1051,6 +1085,8 @@ Page({
       return;
     }
     if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.pending) {
+      const activeLesson = readActiveListeningLesson();
+      const continueTask = findListeningContinueTask(this.data.groupedDailyTasks, activeLesson);
       const phase = this.data.planSource === 'custom-listening'
         ? 'custom'
         : getCurrentPhaseKey(this.data.planPhaseLabel);
@@ -1071,7 +1107,7 @@ Page({
         expandedGroupKey
       }, { source: 'home-stage-legacy' });
       wx.navigateTo({
-        url: `/pages/level-stage/index?levelId=${phase === 'custom' ? 'custom' : 'A1'}&phase=${phase}&fast=1&snapshotId=${encodeURIComponent(snapshotId)}${expandedGroupKey ? `&expand=${encodeURIComponent(expandedGroupKey)}` : ''}`
+        url: `/pages/level-stage/index?levelId=${phase === 'custom' ? 'custom' : 'A1'}&phase=${phase}&fast=1&snapshotId=${encodeURIComponent(snapshotId)}${expandedGroupKey ? `&expand=${encodeURIComponent(expandedGroupKey)}` : ''}${buildListeningResumeQuery(continueTask, activeLesson)}`
       });
       return;
     }

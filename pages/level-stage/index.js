@@ -196,6 +196,7 @@ Page({
     };
     this.setData(page.buildCloudPageData(this.data, nextData));
     writeStageSnapshot(snapshotId || displayPhase, displayPhase, nextData);
+    this.tryOpenResumeTask();
   },
   async onLoad(query) {
     this.levelStagePerf = page.startPagePerf('level-stage');
@@ -205,6 +206,15 @@ Page({
     const preferredExpandedGroupKey = query.expand || '';
     const snapshotId = query.snapshotId || phase;
     const fastMode = query.fast === '1';
+    this.resumeOpenToken = 0;
+    this.resumeTaskOpened = false;
+    this.resumeTaskRequest = query.resumeCategory && query.resumeTaskId ? {
+      category: query.resumeCategory,
+      taskId: query.resumeTaskId,
+      planRunType: query.resumePlanRunType || 'normal',
+      targetDate: query.resumeTargetDate || '',
+      planDayIndex: query.resumePlanDayIndex || ''
+    } : null;
     this.setData(page.buildCloudPageData(this.data, {
       levelId,
       phase,
@@ -230,6 +240,7 @@ Page({
         phase,
         groups: (snapshot.taskGroups || []).length
       });
+      this.tryOpenResumeTask();
     }
     const refresh = async () => {
       const data = await store.getLevelOverview({ phase }, (fresh) => {
@@ -282,7 +293,27 @@ Page({
       [`taskGroups[${groupIndex}].expanded`]: taskGroup.expanded === false
     });
   },
-  openTaskByIndex(groupIndex, taskIndex) {
+  tryOpenResumeTask() {
+    if (this.resumeTaskOpened || !this.resumeTaskRequest) return false;
+    const request = this.resumeTaskRequest;
+    const groupIndex = (this.data.taskGroups || []).findIndex((group) => (
+      String(group.category || '') === String(request.category || '')
+    ));
+    const taskGroup = (this.data.taskGroups || [])[groupIndex];
+    const taskIndex = taskGroup ? (taskGroup.tasks || []).findIndex((task) => (
+      String(task.taskId || '') === String(request.taskId || '')
+    )) : -1;
+    if (groupIndex < 0 || taskIndex < 0) return false;
+    const resumeOpenToken = ++this.resumeOpenToken;
+    this.resumeTaskOpened = true;
+    this.resumeTaskRequest = null;
+    wx.nextTick(() => {
+      if (resumeOpenToken !== this.resumeOpenToken) return;
+      this.openTaskByIndex(groupIndex, taskIndex, request);
+    });
+    return true;
+  },
+  openTaskByIndex(groupIndex, taskIndex, routeOptions = {}) {
     const taskGroup = (this.data.taskGroups || [])[groupIndex];
     const taskRow = taskGroup && (taskGroup.tasks || [])[taskIndex];
     if (!taskGroup || !taskRow || taskGroup.disabled || taskRow.disabled) {
@@ -290,8 +321,13 @@ Page({
     }
     const category = taskGroup.category;
     const taskId = taskRow.taskId;
-    const planRunType = taskGroup.planRunType || 'normal';
-    const planDayIndex = taskGroup.planDayIndex || '';
+    const planRunType = ['normal', 'catchup', 'preview'].includes(routeOptions.planRunType)
+      ? routeOptions.planRunType
+      : (taskGroup.planRunType || 'normal');
+    const planDayIndex = routeOptions.planDayIndex !== undefined && routeOptions.planDayIndex !== ''
+      ? routeOptions.planDayIndex
+      : (taskGroup.planDayIndex || '');
+    const targetDate = routeOptions.targetDate || '';
     if (taskRow.taskSnapshot) {
       snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${taskId}`, {
         category,
@@ -299,18 +335,23 @@ Page({
         task: taskRow.taskSnapshot
       }, { source: 'level-stage' });
     }
-    const previewQuery = planRunType === 'preview'
-      ? `&planRunType=preview&planDayIndex=${planDayIndex}`
-      : '';
+    const routeQuery = [
+      planRunType !== 'normal' ? `planRunType=${encodeURIComponent(planRunType)}` : '',
+      targetDate ? `targetDate=${encodeURIComponent(targetDate)}` : '',
+      planDayIndex !== '' ? `planDayIndex=${encodeURIComponent(planDayIndex)}` : ''
+    ].filter(Boolean).map((item) => `&${item}`).join('');
     wx.navigateTo({
       url: taskId
-        ? `/pages/lesson/index?category=${category}&taskId=${taskId}${previewQuery}`
-        : `/pages/lesson/index?category=${category}${previewQuery}`
+        ? `/pages/lesson/index?category=${encodeURIComponent(category)}&taskId=${encodeURIComponent(taskId)}${routeQuery}`
+        : `/pages/lesson/index?category=${encodeURIComponent(category)}${routeQuery}`
     });
   },
   openTask(event) {
     const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);
     const taskIndex = Number(event.currentTarget.dataset.taskIndex || 0);
+    this.resumeOpenToken += 1;
+    this.resumeTaskOpened = true;
+    this.resumeTaskRequest = null;
     this.openTaskByIndex(groupIndex, taskIndex);
   }
 });
