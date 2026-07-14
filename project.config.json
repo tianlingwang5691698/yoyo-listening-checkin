@@ -36,6 +36,18 @@
       },
       {
         "type": "folder",
+        "value": ".playwright-cli"
+      },
+      {
+        "type": "folder",
+        "value": ".vscode"
+      },
+      {
+        "type": "folder",
+        "value": "web"
+      },
+      {
+        "type": "folder",
         "value": "data"
       },
       {
@@ -73,6 +85,10 @@
       {
         "type": "file",
         "value": "assets/README.md"
+      },
+      {
+        "type": "folder",
+        "value": "assets/brand"
       },
       {
         "type": "folder",

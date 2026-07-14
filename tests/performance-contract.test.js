@@ -53,3 +53,13 @@ test('首页快照首显后使用唯一请求刷新当前计划', () => {
   assert.match(source, /HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV2'/);
   assert.match(source, /getDashboard\(\{ view: 'home', forceRefresh: true, requestNonce: Date\.now\(\) \}/);
 });
+
+test('小程序上传包排除非运行时工程目录', () => {
+  const projectConfig = JSON.parse(fs.readFileSync(path.join(root, 'project.config.json'), 'utf8'));
+  const ignoredFolders = new Set((projectConfig.packOptions.ignore || [])
+    .filter((item) => item.type === 'folder')
+    .map((item) => item.value));
+  ['web', '.playwright-cli', '.vscode', 'assets/brand'].forEach((folder) => {
+    assert.ok(ignoredFolders.has(folder), `上传包必须排除 ${folder}`);
+  });
+});
