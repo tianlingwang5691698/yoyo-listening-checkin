@@ -9,6 +9,15 @@ function getActiveListeningLessonKey(target) {
   return `${ACTIVE_LISTENING_LESSON_SNAPSHOT_PREFIX}:${getListeningOwnerId(target)}`;
 }
 
+function resolveListeningCheckpointSeconds(contextSeconds, key, lastKnown = {}) {
+  const currentSeconds = Math.max(0, Number(contextSeconds || 0));
+  if (currentSeconds >= 2) return currentSeconds;
+  const fallbackSeconds = Math.max(0, Number(lastKnown.positionSec || 0));
+  return String(lastKnown.key || '') === String(key || '') && fallbackSeconds >= 2
+    ? fallbackSeconds
+    : currentSeconds;
+}
+
 function findListeningContinueTask(groups, activeLesson) {
   const availableTasks = (groups || []).flatMap((group) => (group.tasks || [])
     .filter((task) => task && !task.isPendingAsset)
@@ -29,5 +38,6 @@ module.exports = {
   ACTIVE_LISTENING_LESSON_MAX_AGE_MS,
   getListeningOwnerId,
   getActiveListeningLessonKey,
+  resolveListeningCheckpointSeconds,
   findListeningContinueTask
 };

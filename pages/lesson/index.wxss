@@ -711,6 +711,10 @@
   background: var(--accent);
 }
 
+.player-progress-slider {
+  margin: 0 -22rpx -10rpx;
+}
+
 .player-actions {
   display: flex;
   align-items: center;
@@ -1897,6 +1901,10 @@
   height: 100%;
   border-radius: 999rpx;
   background: linear-gradient(90deg, var(--audio-moss), var(--audio-brass));
+}
+
+.audio-progress-slider {
+  margin: 0 -20rpx -10rpx;
 }
 
 .audio-switch-row,

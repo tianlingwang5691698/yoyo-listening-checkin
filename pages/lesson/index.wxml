@@ -68,9 +68,7 @@
       <view class="audio-time-meta is-time-only">
         <view>{{currentTimeLabel}} / {{durationLabel}}</view>
       </view>
-      <view class="audio-progress-rail">
-        <view class="audio-progress-fill" style="width: {{progressPercent}}%;"></view>
-      </view>
+      <slider class="audio-progress-slider" min="0" max="{{audioProgressSliderMax}}" value="{{progressPercent * 10}}" disabled="{{!audioReady}}" activeColor="#B89562" backgroundColor="rgba(43,33,27,.18)" block-color="#F3E8D4" block-size="16" bindchanging="changingAudioProgress" bindchange="changeAudioProgress" />
     </view>
     <view class="audio-switch-row" wx:if="{{!task.isPendingAsset}}">
       <button class="audio-switch {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">{{texts.seconds5}}</button>
@@ -348,9 +346,7 @@
             <view class="player-progress-label">{{isPlaying ? texts.playing : audioReady ? texts.paused : texts.waiting}}</view>
             <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
           </view>
-          <view class="progress-rail player-progress-track">
-            <view class="progress-rail-fill player-progress-fill quest-fill-{{task.category}}" style="width: {{progressPercent}}%;"></view>
-          </view>
+          <slider class="player-progress-slider" min="0" max="{{audioProgressSliderMax}}" value="{{progressPercent * 10}}" disabled="{{!audioReady}}" activeColor="#86AAA1" backgroundColor="rgba(191,215,232,.56)" block-color="#F7FBFD" block-size="16" bindchanging="changingAudioProgress" bindchange="changeAudioProgress" />
         </view>
         <view class="player-actions action-row">
           <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">{{texts.seconds5}}</button>

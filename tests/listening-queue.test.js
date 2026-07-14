@@ -10,8 +10,14 @@ const {
 } = require('../utils/listening-queue');
 const {
   getActiveListeningLessonKey,
+  resolveListeningCheckpointSeconds,
   findListeningContinueTask
 } = require('../utils/listening-resume');
+const {
+  addEffectiveListeningSeconds,
+  getRequiredListeningSeconds,
+  hasEffectiveListeningCompleted
+} = require('../utils/effective-listening');
 
 const tasks = [1, 2, 3].map((index) => ({
   category: 'unlock1thirdedition',
@@ -55,7 +61,7 @@ test('继续学习优先返回上次退出的未完成课程', () => {
   assert.equal(getActiveListeningLessonKey({ targetChildId: 'child-1' }), 'activeListeningLessonV1:child-1');
 });
 
-test('最新退出课程即使已完成也优先继续，播放器就绪后恢复 5 秒断点', () => {
+test('最新退出课程即使已完成也优先继续，播放器就绪后精确恢复断点', () => {
   const groups = [{ category: 'peppa', tasks: [
     { category: 'peppa', taskId: 'peppa-1', completedToday: true },
     { category: 'peppa', taskId: 'peppa-2', completedToday: false }
@@ -68,6 +74,8 @@ test('最新退出课程即使已完成也优先继续，播放器就绪后恢�
   assert.match(source, /const preservePreparedPlayer = !!\(/);
   assert.match(source, /if \(this\.data\.audioReady && this\.innerAudioContext && this\.innerAudioContext\.src\) \{\s*await new Promise\(\(resolve\) => wx\.nextTick\(resolve\)\);\s*this\.restoreListeningResumeCheckpoint\(\{ force: true \}\)/);
   assert.match(source, /resumePositionSec = Math\.max\(0, positionSec - LISTENING_RESUME_REWIND_SEC\)/);
+  assert.match(source, /LISTENING_RESUME_REWIND_SEC = 0/);
+  assert.doesNotMatch(source, /currentSeconds >= durationSeconds - 2/);
 });
 
 test('最新退出课程不在今日任务时才回到下一条未完成课程', () => {
@@ -79,6 +87,13 @@ test('最新退出课程不在今日任务时才回到下一条未完成课程',
     category: 'unlock1',
     taskId: 'missing-task'
   }).taskId, 'peppa-2');
+});
+
+test('真机销毁播放器后 currentTime 归零仍使用最后有效断点', () => {
+  const lastKnown = { key: 'lesson-a', positionSec: 83.4 };
+  assert.equal(resolveListeningCheckpointSeconds(0, 'lesson-a', lastKnown), 83.4);
+  assert.equal(resolveListeningCheckpointSeconds(0, 'lesson-b', lastKnown), 0);
+  assert.equal(resolveListeningCheckpointSeconds(91.2, 'lesson-a', lastKnown), 91.2);
 });
 
 test('继续学习保留今日任务表为课程页上一层', () => {
@@ -114,4 +129,42 @@ test('音频就绪后等待页面渲染完成再恢复断点', () => {
   const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
   assert.match(lessonSource, /this\.setData\(\{[\s\S]*audioReady: true[\s\S]*\}, \(\) => \{\s*setTimeout\(\(\) => \{[\s\S]*this\.restoreListeningResumeCheckpoint\(\)/);
   assert.match(lessonSource, /await new Promise\(\(resolve\) => wx\.nextTick\(resolve\)\);\s*this\.restoreListeningResumeCheckpoint\(\{ force: true \}\)/);
+});
+
+test('所有带进度条的长音频播放器均支持拖拽定位', () => {
+  const lessonWxml = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.wxml'), 'utf8');
+  const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
+  const materialWxml = fs.readFileSync(path.join(__dirname, '../pages/material/detail/index.wxml'), 'utf8');
+  const grammarWxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  assert.equal((lessonWxml.match(/bindchanging="changingAudioProgress"/g) || []).length, 2);
+  assert.equal((lessonWxml.match(/bindchange="changeAudioProgress"/g) || []).length, 2);
+  assert.match(lessonSource, /changingAudioProgress\(event\)[\s\S]*changeAudioProgress\(event\)/);
+  assert.match(lessonSource, /saveListeningResumeCheckpoint\(\{ force: true, positionSec: currentSeconds \}\)/);
+  assert.match(materialWxml, /bindchanging="changingAudioProgress"[\s\S]*bindchange="changeAudioProgress"/);
+  assert.match(grammarWxml, /bindchanging="previewNarrationSeek" bindchange="seekNarration"/);
+});
+
+test('拖拽不计有效听力，实际播放达到九成才完成一遍', () => {
+  const afterSeek = addEffectiveListeningSeconds(0, {
+    previousAudioSec: 10,
+    currentAudioSec: 290,
+    elapsedMs: 300,
+    durationSec: 300,
+    isPlaying: true
+  });
+  const afterNaturalPlay = addEffectiveListeningSeconds(afterSeek, {
+    previousAudioSec: 10,
+    currentAudioSec: 11,
+    elapsedMs: 1000,
+    durationSec: 300,
+    isPlaying: true
+  });
+  assert.equal(afterSeek, 0);
+  assert.equal(afterNaturalPlay, 1);
+  assert.equal(getRequiredListeningSeconds(300), 270);
+  assert.equal(hasEffectiveListeningCompleted(269.9, 300), false);
+  assert.equal(hasEffectiveListeningCompleted(270, 300), true);
+  const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
+  assert.match(lessonSource, /effectiveListeningSec:[\s\S]*effectiveListeningPassKey:/);
+  assert.match(lessonSource, /if \(!hasEffectiveListeningCompleted\(this\.effectiveListeningSeconds, durationSeconds\)\)/);
 });

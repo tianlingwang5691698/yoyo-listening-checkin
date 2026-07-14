@@ -11,8 +11,14 @@ const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../u
 const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-player');
 const { getTaskAudioDisplayTitle } = require('../../utils/audio-title');
 const {
+  addEffectiveListeningSeconds,
+  getRequiredListeningSeconds,
+  hasEffectiveListeningCompleted
+} = require('../../utils/effective-listening');
+const {
   getListeningOwnerId,
-  getActiveListeningLessonKey
+  getActiveListeningLessonKey,
+  resolveListeningCheckpointSeconds
 } = require('../../utils/listening-resume');
 const {
   getTaskQueueKey,
@@ -28,7 +34,8 @@ const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const LISTENING_RESUME_SNAPSHOT_PREFIX = 'lessonListeningResumeV1';
 const LISTENING_RESUME_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
 const LISTENING_RESUME_SAVE_INTERVAL_SEC = 5;
-const LISTENING_RESUME_REWIND_SEC = 5;
+const LISTENING_RESUME_REWIND_SEC = 0;
+const AUDIO_PROGRESS_SLIDER_MAX = 1000;
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const NEW_CONCEPT_AUDIO_ROOTS = {
   newconcept1: 'A1/NewConcept1-US',
@@ -444,6 +451,7 @@ Page({
     currentTimeLabel: '00:00',
     durationLabel: '00:00',
     progressPercent: 0,
+    audioProgressSliderMax: AUDIO_PROGRESS_SLIDER_MAX,
     syncMode: 'cloud-error',
     isReviewBuild: false,
     showCloudDebug: false,
@@ -706,6 +714,11 @@ Page({
     this.pendingSpeakingAfterListen = null;
     this.listeningResumeAppliedKey = '';
     this.listeningResumeLastSaved = { key: '', bucket: -1 };
+    this.listeningResumeLastKnown = { key: '', positionSec: 0 };
+    this.audioProgressDragging = false;
+    this.effectiveListeningSeconds = 0;
+    this.effectiveListeningPassKey = '';
+    this.effectiveListeningTracker = { audioSec: 0, wallMs: 0 };
     const localMember = buildLocalMemberFromLastRole();
     this.setData({
       currentMember: localMember,
@@ -798,16 +811,20 @@ Page({
       const currentSeconds = this.innerAudioContext.currentTime || 0;
       const durationSeconds = (this.data.currentAudio && this.data.currentAudio.durationSec)
         || ((this.data.task && this.data.task.durationSec) || 0);
+      this.trackEffectiveListening(currentSeconds, durationSeconds);
       const currentTimeMs = Math.floor(currentSeconds * 1000);
       this.updateTranscriptByTime(currentTimeMs);
-      this.setData({
-        currentTimeLabel: this.formatTime(Math.floor(currentSeconds)),
-        progressPercent: player.getProgressPercent(currentSeconds, durationSeconds),
-        canRewind: currentSeconds > 1
-      });
+      if (!this.audioProgressDragging) {
+        this.setData({
+          currentTimeLabel: this.formatTime(Math.floor(currentSeconds)),
+          progressPercent: player.getProgressPercent(currentSeconds, durationSeconds),
+          canRewind: currentSeconds > 1
+        });
+      }
       this.saveListeningResumeCheckpoint();
     });
     this.innerAudioContext.onPlay(() => {
+      this.resetEffectiveListeningTracker(this.innerAudioContext.currentTime || 0);
       this.setData({
         isPlaying: true,
         audioReady: true,
@@ -821,10 +838,12 @@ Page({
     });
     this.innerAudioContext.onPause(() => {
       this.saveListeningResumeCheckpoint({ force: true });
+      this.resetEffectiveListeningTracker(this.innerAudioContext.currentTime || 0, false);
       this.continuousPlaybackActive = false;
       this.setData({ isPlaying: false });
     });
     this.innerAudioContext.onStop(() => {
+      this.resetEffectiveListeningTracker(0, false);
       this.setData({
         isPlaying: false,
         currentTimeMs: 0,
@@ -839,7 +858,8 @@ Page({
       });
     });
     this.innerAudioContext.onEnded(() => {
-      this.clearListeningResumeCheckpoint();
+      const durationSeconds = this.getAudioDurationSeconds();
+      this.trackEffectiveListening(durationSeconds || this.innerAudioContext.currentTime || 0, durationSeconds);
       this.setData({
         isPlaying: false,
         currentTimeMs: 0,
@@ -981,6 +1001,54 @@ Page({
     const taskId = String(target.taskId || this.taskId || '').trim();
     return category && taskId ? `${LISTENING_RESUME_SNAPSHOT_PREFIX}:${ownerId}:${category}:${taskId}` : '';
   },
+  getEffectiveListeningPassKey(task) {
+    const target = task || this.data.task || {};
+    const taskKey = getTaskQueueKey(target);
+    if (!target.taskId) return '';
+    const passIndex = Object.prototype.hasOwnProperty.call(this.queueSessionPassMap, taskKey)
+      ? Number(this.queueSessionPassMap[taskKey] || 0)
+      : getInitialQueuePass(target);
+    return `${taskKey}:${passIndex}`;
+  },
+  ensureEffectiveListeningPass(task) {
+    const passKey = this.getEffectiveListeningPassKey(task);
+    if (passKey && this.effectiveListeningPassKey !== passKey) {
+      this.effectiveListeningPassKey = passKey;
+      this.effectiveListeningSeconds = 0;
+      this.effectiveListeningTracker = { audioSec: 0, wallMs: 0 };
+    }
+    return passKey;
+  },
+  resetEffectiveListeningTracker(audioSec = 0, active = true) {
+    this.effectiveListeningTracker = {
+      audioSec: Math.max(0, Number(audioSec || 0)),
+      wallMs: active ? Date.now() : 0
+    };
+  },
+  trackEffectiveListening(currentSeconds, durationSeconds) {
+    if (!this.canPersistListeningResume(this.data.task)) return;
+    this.ensureEffectiveListeningPass(this.data.task);
+    const now = Date.now();
+    const previous = this.effectiveListeningTracker || { audioSec: currentSeconds, wallMs: 0 };
+    this.effectiveListeningSeconds = addEffectiveListeningSeconds(this.effectiveListeningSeconds, {
+      previousAudioSec: previous.audioSec,
+      currentAudioSec: currentSeconds,
+      elapsedMs: previous.wallMs ? now - previous.wallMs : 0,
+      durationSec: durationSeconds,
+      isPlaying: !!this.data.isPlaying,
+      isSeeking: !!this.audioProgressDragging
+    });
+    this.effectiveListeningTracker = {
+      audioSec: Math.max(0, Number(currentSeconds || 0)),
+      wallMs: now
+    };
+  },
+  resetEffectiveListening(task) {
+    this.effectiveListeningSeconds = 0;
+    this.effectiveListeningPassKey = '';
+    this.resetEffectiveListeningTracker(0, false);
+    if (task) this.ensureEffectiveListeningPass(task);
+  },
   canPersistListeningResume(task) {
     const target = task || this.data.task;
     return ['normal', 'catchup'].includes(String(this.planRunType || 'normal'))
@@ -1015,18 +1083,25 @@ Page({
     if (!this.canPersistListeningResume(task) || !this.innerAudioContext) return;
     const key = this.getListeningResumeStorageKey(task);
     if (!key) return;
-    const currentSeconds = Number(this.innerAudioContext.currentTime || 0);
+    const requestedSeconds = Number(options.positionSec);
+    const hasPositionOverride = Number.isFinite(requestedSeconds) && requestedSeconds >= 0;
+    const contextSeconds = Number(this.innerAudioContext.currentTime || 0);
+    const currentSeconds = hasPositionOverride
+      ? requestedSeconds
+      : resolveListeningCheckpointSeconds(contextSeconds, key, this.listeningResumeLastKnown);
     const durationSeconds = Number((this.data.currentAudio && this.data.currentAudio.durationSec)
       || task.durationSec
       || this.innerAudioContext.duration
       || 0);
-    if (currentSeconds < 2 || (durationSeconds > 0 && currentSeconds >= durationSeconds - 2)) {
+    const effectivePassKey = this.ensureEffectiveListeningPass(task);
+    const effectiveListeningSec = Math.max(0, Number(this.effectiveListeningSeconds || 0));
+    if (currentSeconds < 2) {
       if (options.force) {
         this.writeActiveListeningLessonSnapshot(task);
-        this.clearListeningResumeCheckpoint(task);
       }
-      return;
+      if (effectiveListeningSec <= 0) return;
     }
+    this.listeningResumeLastKnown = { key, positionSec: currentSeconds };
     const bucket = Math.floor(currentSeconds / LISTENING_RESUME_SAVE_INTERVAL_SEC);
     if (!options.force
       && this.listeningResumeLastSaved.key === key
@@ -1036,7 +1111,9 @@ Page({
       positionSec: Math.round(currentSeconds * 10) / 10,
       durationSec: Math.round(durationSeconds * 10) / 10,
       category: task.category || this.category,
-      taskId: task.taskId || this.taskId
+      taskId: task.taskId || this.taskId,
+      effectiveListeningSec: Math.round(effectiveListeningSec * 10) / 10,
+      effectiveListeningPassKey: effectivePassKey
     }, { source: options.force ? 'lesson-resume-exit' : 'lesson-resume-tick' });
     if (saved) this.listeningResumeLastSaved = { key, bucket };
   },
@@ -1050,18 +1127,30 @@ Page({
       maxAgeMs: LISTENING_RESUME_MAX_AGE_MS
     });
     if (!checkpoint) return;
+    const effectivePassKey = this.ensureEffectiveListeningPass(task);
+    this.effectiveListeningSeconds = String(checkpoint.effectiveListeningPassKey || '') === effectivePassKey
+      ? Math.max(0, Number(checkpoint.effectiveListeningSec || 0))
+      : 0;
     const positionSec = Number(checkpoint.positionSec || 0);
     const durationSec = Number((this.data.currentAudio && this.data.currentAudio.durationSec)
       || task.durationSec
       || this.innerAudioContext.duration
       || checkpoint.durationSec
       || 0);
-    if (positionSec < 2 || (durationSec > 0 && positionSec >= durationSec - 2)) {
-      this.clearListeningResumeCheckpoint(task);
+    if (positionSec < 2) {
+      if (this.effectiveListeningSeconds <= 0) {
+        this.clearListeningResumeCheckpoint(task);
+      } else {
+        this.listeningResumeAppliedKey = key;
+        this.listeningResumeLastKnown = { key, positionSec: 0 };
+        this.resetEffectiveListeningTracker(0, false);
+      }
       return;
     }
     const resumePositionSec = Math.max(0, positionSec - LISTENING_RESUME_REWIND_SEC);
     this.innerAudioContext.seek(resumePositionSec);
+    this.listeningResumeLastKnown = { key, positionSec: resumePositionSec };
+    this.resetEffectiveListeningTracker(resumePositionSec, false);
     this.listeningResumeAppliedKey = key;
     this.setData({
       currentTimeMs: Math.floor(resumePositionSec * 1000),
@@ -1595,6 +1684,9 @@ Page({
         this.continuousPlaybackActive = false;
         return;
       }
+    } else {
+      this.clearListeningResumeCheckpoint(taskBeforeSave);
+      this.resetEffectiveListening(taskBeforeSave);
     }
     if (!wasDailyPlanCompleted && this.isDailyListeningQueueCompleted()) {
       const resumeToken = ++this.completionResumeToken;
@@ -2357,6 +2449,7 @@ Page({
     }
     const seconds = Math.floor(line.startMs / 1000);
     this.innerAudioContext.seek(seconds);
+    this.resetEffectiveListeningTracker(seconds, true);
     this.innerAudioContext.play();
     this.updateTranscriptByTime(line.startMs);
   },
@@ -2404,6 +2497,54 @@ Page({
       }
     }
   },
+  getAudioDurationSeconds() {
+    return Number((this.data.currentAudio && this.data.currentAudio.durationSec)
+      || (this.data.task && this.data.task.durationSec)
+      || (this.innerAudioContext && this.innerAudioContext.duration)
+      || 0);
+  },
+  changingAudioProgress(event) {
+    if (!this.innerAudioContext || !this.innerAudioContext.src) return;
+    const durationSeconds = this.getAudioDurationSeconds();
+    if (!durationSeconds) return;
+    const sliderValue = Math.max(0, Math.min(AUDIO_PROGRESS_SLIDER_MAX, Number(event.detail.value || 0)));
+    const currentSeconds = durationSeconds * sliderValue / AUDIO_PROGRESS_SLIDER_MAX;
+    this.audioProgressDragging = true;
+    this.setData({
+      currentTimeMs: Math.floor(currentSeconds * 1000),
+      currentTimeLabel: this.formatTime(Math.floor(currentSeconds)),
+      progressPercent: player.getProgressPercent(currentSeconds, durationSeconds),
+      canRewind: currentSeconds > 1
+    });
+  },
+  changeAudioProgress(event) {
+    if (!this.innerAudioContext || !this.innerAudioContext.src) return;
+    const durationSeconds = this.getAudioDurationSeconds();
+    if (!durationSeconds) return;
+    const sliderValue = Math.max(0, Math.min(AUDIO_PROGRESS_SLIDER_MAX, Number(event.detail.value || 0)));
+    const currentSeconds = durationSeconds * sliderValue / AUDIO_PROGRESS_SLIDER_MAX;
+    const key = this.getListeningResumeStorageKey();
+    this.audioProgressDragging = false;
+    this.innerAudioContext.seek(currentSeconds);
+    this.resetEffectiveListeningTracker(currentSeconds, !!this.data.isPlaying);
+    this.listeningResumeLastKnown = { key, positionSec: currentSeconds };
+    this.updateTranscriptByTime(Math.floor(currentSeconds * 1000));
+    this.setData({
+      currentTimeMs: Math.floor(currentSeconds * 1000),
+      currentTimeLabel: this.formatTime(Math.floor(currentSeconds)),
+      progressPercent: player.getProgressPercent(currentSeconds, durationSeconds),
+      canRewind: currentSeconds > 1
+    });
+    if (currentSeconds < 2) {
+      if (this.effectiveListeningSeconds > 0) {
+        this.saveListeningResumeCheckpoint({ force: true, positionSec: 0 });
+      } else {
+        this.clearListeningResumeCheckpoint();
+      }
+    } else {
+      this.saveListeningResumeCheckpoint({ force: true, positionSec: currentSeconds });
+    }
+  },
   rewindAudio() {
     if (!this.innerAudioContext) {
       return;
@@ -2411,6 +2552,7 @@ Page({
     const current = this.innerAudioContext.currentTime || 0;
     const nextValue = Math.max(0, current - 5);
     this.innerAudioContext.seek(nextValue);
+    this.resetEffectiveListeningTracker(nextValue, !!this.data.isPlaying);
     this.setData({
       currentTimeLabel: this.formatTime(nextValue),
       progressPercent: player.getProgressPercent(nextValue, (this.data.currentAudio && this.data.currentAudio.durationSec) || (this.data.task && this.data.task.durationSec)),
@@ -2689,6 +2831,32 @@ Page({
       });
       return;
     }
+    if (this.canPersistListeningResume(this.data.task)) {
+      const durationSeconds = this.getAudioDurationSeconds();
+      if (!hasEffectiveListeningCompleted(this.effectiveListeningSeconds, durationSeconds)) {
+        const requiredSeconds = getRequiredListeningSeconds(durationSeconds);
+        const remainingSeconds = Math.max(1, Math.ceil(requiredSeconds - this.effectiveListeningSeconds));
+        this.continuousPlaybackActive = false;
+        this.pendingAutoPlay = false;
+        const key = this.getListeningResumeStorageKey();
+        if (this.innerAudioContext) this.innerAudioContext.seek(0);
+        this.listeningResumeLastKnown = { key, positionSec: 0 };
+        this.resetEffectiveListeningTracker(0, false);
+        this.setData({
+          isPlaying: false,
+          currentTimeMs: 0,
+          currentTimeLabel: '00:00',
+          progressPercent: 0,
+          canRewind: false
+        });
+        this.saveListeningResumeCheckpoint({ force: true, positionSec: 0 });
+        wx.showToast({
+          title: text('effectiveListeningInsufficient', `本遍还需实际收听 ${remainingSeconds} 秒`),
+          icon: 'none'
+        });
+        return;
+      }
+    }
     if (this.continuousPlaybackActive) {
       await this.handleContinuousAudioEnded();
       return;
@@ -2725,6 +2893,9 @@ Page({
       });
       return;
     }
+    const completedTask = this.data.task;
+    this.clearListeningResumeCheckpoint(completedTask);
+    this.resetEffectiveListening();
     this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
     this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
