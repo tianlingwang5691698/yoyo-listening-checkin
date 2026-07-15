@@ -45,7 +45,7 @@ function getTaskPresentation(task) {
   if (task.category === 'grammar') {
     return {
       displayTitle: title,
-      displaySubtitle: `${task.topicLabel || '十大词性'} · 第 ${Number(task.lessonNumber || 1)} 节`,
+      displaySubtitle: task.meta || `${task.topicLabel || '十大词性'} · 第 ${Number(task.lessonNumber || 1)} 节`,
       coverVariant: 'grammar',
       coverBadge: '词法'
     };

@@ -118,6 +118,18 @@ async function getLevelOverview(event) {
   const overviewCategoryIds = isA1PhaseOverview
     ? Object.keys(todayPlan.byCategory || {})
     : ['newconcept1', 'peppa', 'unlock1', 'song'];
+  const fixedPlanOutline = dashboard.planSource === 'fixed-yoyo' && requestedPhase === 'round-2'
+    ? {
+      cycleDays: 72,
+      progression: 'independent-slots',
+      items: [
+        { category: 'grammar', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('grammar').length, totalCount: study.getPlanCatalog('grammar').length },
+        { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
+        { category: 'peppa', slotCount: 5, startNo: 73, endNo: study.getPlanCatalog('peppa').length, totalCount: Math.max(0, study.getPlanCatalog('peppa').length - 72) },
+        { category: 'unlock1', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('unlock1').length, totalCount: study.getPlanCatalog('unlock1').length }
+      ]
+    }
+    : null;
   return {
     user: ctx.user,
     currentUser: ctx.user,
@@ -186,6 +198,7 @@ async function getLevelOverview(event) {
       unlock4WorkbookDirectCount: standaloneOverviews.unlock4workbook.directTasks.length,
       resourceDebug: study.getResourceDebugSnapshot()
     },
+    fixedPlanOutline,
     planDayIndex: dashboard.planDayIndex,
     planPhase: todayPlan.phase.key,
     planPhaseLabel: todayPlan.phase.label || dashboard.planPhaseLabel

@@ -26,6 +26,8 @@ function decorateHomeTask(task) {
     topic: task.topic || '',
     topicLabel: task.topicLabel || '',
     lessonNumber: Number(task.lessonNumber || 0),
+    lessonId: task.lessonId || '',
+    meta: task.meta || '',
     title: task.title || '',
     displayTitle: task.displayTitle || '',
     isPendingAsset: !!task.isPendingAsset,

@@ -1,0 +1,1514 @@
+[
+  {
+    "taskId": "grammar-noun-1",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "noun-job",
+    "lessonNumber": 1,
+    "title": "名词的定义与本质",
+    "meta": "给人、事物、地点和概念命名"
+  },
+  {
+    "taskId": "grammar-noun-2",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "noun-functions",
+    "lessonNumber": 2,
+    "title": "名词在句中做什么",
+    "meta": "主语 · 宾语 · 表语 · 补足语"
+  },
+  {
+    "taskId": "grammar-noun-3",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "countability",
+    "lessonNumber": 3,
+    "title": "可数与不可数",
+    "meta": "能否直接计数"
+  },
+  {
+    "taskId": "grammar-noun-4",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "regular-plural",
+    "lessonNumber": 4,
+    "title": "规则复数",
+    "meta": "s · es · y→ies · f→ves"
+  },
+  {
+    "taskId": "grammar-noun-5",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "irregular-plural",
+    "lessonNumber": 5,
+    "title": "不规则复数",
+    "meta": "特殊变化与单复数同形"
+  },
+  {
+    "taskId": "grammar-noun-6",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "possessive",
+    "lessonNumber": 6,
+    "title": "名词所有格",
+    "meta": "'s · s' · of"
+  },
+  {
+    "taskId": "grammar-noun-7",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "noun-modifier",
+    "lessonNumber": 7,
+    "title": "名词作定语与复合名词",
+    "meta": "先找中心名词"
+  },
+  {
+    "taskId": "grammar-noun-8",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "noun-types",
+    "lessonNumber": 8,
+    "title": "名词类别辨析",
+    "meta": "专有、普通、物质、抽象、集体"
+  },
+  {
+    "taskId": "grammar-noun-9",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "collective-noun",
+    "lessonNumber": 9,
+    "title": "集体名词与主谓一致",
+    "meta": "整体、成员与地区差异"
+  },
+  {
+    "taskId": "grammar-noun-10",
+    "topic": "noun",
+    "topicLabel": "名词",
+    "lessonId": "noun-boss",
+    "lessonNumber": 10,
+    "title": "名词综合挑战",
+    "meta": "数量、所有格、中心词综合判断"
+  },
+  {
+    "taskId": "grammar-pronoun-1",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "pronoun-essence",
+    "lessonNumber": 1,
+    "title": "代词的定义与本质",
+    "meta": "用指向代替重复命名"
+  },
+  {
+    "taskId": "grammar-pronoun-2",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "personal-pronoun",
+    "lessonNumber": 2,
+    "title": "人称代词与格",
+    "meta": "谁参与，以及在句中做什么"
+  },
+  {
+    "taskId": "grammar-pronoun-3",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "possessive-pronoun",
+    "lessonNumber": 3,
+    "title": "物主限定词与物主代词",
+    "meta": "表达所属，但占据的位置不同"
+  },
+  {
+    "taskId": "grammar-pronoun-4",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "reflexive",
+    "lessonNumber": 4,
+    "title": "反身代词",
+    "meta": "动作回到主语，或突出亲自完成"
+  },
+  {
+    "taskId": "grammar-pronoun-5",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "demonstrative",
+    "lessonNumber": 5,
+    "title": "指示代词",
+    "meta": "把注意力指向近处、远处或前文内容"
+  },
+  {
+    "taskId": "grammar-pronoun-6",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "interrogative",
+    "lessonNumber": 6,
+    "title": "疑问代词",
+    "meta": "用未知项占据句中位置"
+  },
+  {
+    "taskId": "grammar-pronoun-7",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "indefinite-some-any",
+    "lessonNumber": 7,
+    "title": "不定代词：未知人和事物",
+    "meta": "some · any · no · every 系列"
+  },
+  {
+    "taskId": "grammar-pronoun-8",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "indefinite-quantity",
+    "lessonNumber": 8,
+    "title": "不定代词：数量与范围",
+    "meta": "all · both · each · either · neither · none"
+  },
+  {
+    "taskId": "grammar-pronoun-9",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "it-reference",
+    "lessonNumber": 9,
+    "title": "it 的指代与形式作用",
+    "meta": "有时指具体事物，有时只撑起结构"
+  },
+  {
+    "taskId": "grammar-pronoun-10",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "relative-pronoun",
+    "lessonNumber": 10,
+    "title": "关系代词的双重任务",
+    "meta": "连接从句，同时在从句内代替先行词"
+  },
+  {
+    "taskId": "grammar-pronoun-11",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "reciprocal",
+    "lessonNumber": 11,
+    "title": "相互代词",
+    "meta": "多个参与者彼此施加动作"
+  },
+  {
+    "taskId": "grammar-pronoun-12",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "substitute-pronoun",
+    "lessonNumber": 12,
+    "title": "one、ones 与 other 系列",
+    "meta": "代替同类名词，不等于指回同一个事物"
+  },
+  {
+    "taskId": "grammar-pronoun-13",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "pronoun-agreement",
+    "lessonNumber": 13,
+    "title": "代词与先行词一致",
+    "meta": "人称、数量与所知信息相配"
+  },
+  {
+    "taskId": "grammar-pronoun-14",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "pronoun-ambiguity",
+    "lessonNumber": 14,
+    "title": "指代清晰与歧义",
+    "meta": "读者应能立刻知道代词指谁"
+  },
+  {
+    "taskId": "grammar-pronoun-15",
+    "topic": "pronoun",
+    "topicLabel": "代词",
+    "lessonId": "pronoun-boss",
+    "lessonNumber": 15,
+    "title": "代词综合判断",
+    "meta": "先找指向，再看句中位置和范围"
+  },
+  {
+    "taskId": "grammar-numeral-1",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "numeral-essence",
+    "lessonNumber": 1,
+    "title": "数词是什么",
+    "meta": "数量、顺序还是编号"
+  },
+  {
+    "taskId": "grammar-numeral-2",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "numeral-functions",
+    "lessonNumber": 2,
+    "title": "数词在句中做什么",
+    "meta": "限定名词，也可独立使用"
+  },
+  {
+    "taskId": "grammar-numeral-3",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "cardinals",
+    "lessonNumber": 3,
+    "title": "基数词表示数量",
+    "meta": "回答“多少”"
+  },
+  {
+    "taskId": "grammar-numeral-4",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "ordinals",
+    "lessonNumber": 4,
+    "title": "序数词表示顺序",
+    "meta": "回答“第几”"
+  },
+  {
+    "taskId": "grammar-numeral-5",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "large-numbers",
+    "lessonNumber": 5,
+    "title": "读写大数",
+    "meta": "三位分级，单位定位"
+  },
+  {
+    "taskId": "grammar-numeral-6",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "fractions",
+    "lessonNumber": 6,
+    "title": "分数表示整体中的部分",
+    "meta": "分子计数，分母分份"
+  },
+  {
+    "taskId": "grammar-numeral-7",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "decimals-percent",
+    "lessonNumber": 7,
+    "title": "小数与百分数",
+    "meta": "一个逐位读，一个表示每百份"
+  },
+  {
+    "taskId": "grammar-numeral-8",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "date-time",
+    "lessonNumber": 8,
+    "title": "日期与时间",
+    "meta": "数字进入时间坐标"
+  },
+  {
+    "taskId": "grammar-numeral-9",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "labels-years",
+    "lessonNumber": 9,
+    "title": "编号与年份",
+    "meta": "数字用于识别，不一定表示数量"
+  },
+  {
+    "taskId": "grammar-numeral-10",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "approximate",
+    "lessonNumber": 10,
+    "title": "概数与计量单位",
+    "meta": "精确数量与范围数量"
+  },
+  {
+    "taskId": "grammar-numeral-11",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "multiples-ratios",
+    "lessonNumber": 11,
+    "title": "倍数、比例与算式",
+    "meta": "比较两个数量之间的关系"
+  },
+  {
+    "taskId": "grammar-numeral-12",
+    "topic": "numeral",
+    "topicLabel": "数词",
+    "lessonId": "number-agreement",
+    "lessonNumber": 12,
+    "title": "数量短语与主谓一致",
+    "meta": "看整体还是看 of 后对象"
+  },
+  {
+    "taskId": "grammar-article-1",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "article-essence",
+    "lessonNumber": 1,
+    "title": "冠词是什么",
+    "meta": "帮助听者识别名词"
+  },
+  {
+    "taskId": "grammar-article-2",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "article-determiner-boundary",
+    "lessonNumber": 2,
+    "title": "冠词与其他限定词",
+    "meta": "限定位置不能机械叠加"
+  },
+  {
+    "taskId": "grammar-article-3",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "indefinite-reference",
+    "lessonNumber": 3,
+    "title": "a/an 的指称本质",
+    "meta": "从一类中引入一个"
+  },
+  {
+    "taskId": "grammar-article-4",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "a-an",
+    "lessonNumber": 4,
+    "title": "a 还是 an",
+    "meta": "看紧随成分的首个音素"
+  },
+  {
+    "taskId": "grammar-article-5",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "the-known",
+    "lessonNumber": 5,
+    "title": "the：现场与共享知识",
+    "meta": "听者能认出是哪一个"
+  },
+  {
+    "taskId": "grammar-article-6",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "the-context-chain",
+    "lessonNumber": 6,
+    "title": "the：前文、关联与限定",
+    "meta": "信息逐步锁定对象"
+  },
+  {
+    "taskId": "grammar-article-7",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "unique-superlative",
+    "lessonNumber": 7,
+    "title": "唯一性、最高级与序数词",
+    "meta": "唯一性来自当前范围"
+  },
+  {
+    "taskId": "grammar-article-8",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "zero-basic",
+    "lessonNumber": 8,
+    "title": "零冠词表示泛指",
+    "meta": "谈一类，不锁定对象"
+  },
+  {
+    "taskId": "grammar-article-9",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "institutions-meals",
+    "lessonNumber": 9,
+    "title": "机构功能与具体地点",
+    "meta": "看人在使用制度还是指向地点"
+  },
+  {
+    "taskId": "grammar-article-10",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "activity-conventions",
+    "lessonNumber": 10,
+    "title": "活动与日常名称的冠词",
+    "meta": "先看名称系统，再看具体限定"
+  },
+  {
+    "taskId": "grammar-article-11",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "names-places",
+    "lessonNumber": 11,
+    "title": "专有名称中的冠词",
+    "meta": "按名称类别与实际惯用法判断"
+  },
+  {
+    "taskId": "grammar-article-12",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "generic-contrast",
+    "lessonNumber": 12,
+    "title": "三种泛指方式",
+    "meta": "形式相近，适用范围不同"
+  },
+  {
+    "taskId": "grammar-article-13",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "article-countability-shift",
+    "lessonNumber": 13,
+    "title": "冠词与可数性变化",
+    "meta": "同一名词可换观察单位"
+  },
+  {
+    "taskId": "grammar-article-14",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "article-meaning",
+    "lessonNumber": 14,
+    "title": "有无冠词怎样改变意义",
+    "meta": "功能、地点与具体对象"
+  },
+  {
+    "taskId": "grammar-article-15",
+    "topic": "article",
+    "topicLabel": "冠词",
+    "lessonId": "article-groups",
+    "lessonNumber": 15,
+    "title": "the 表示一类人",
+    "meta": "形容词、民族名与姓氏复数"
+  },
+  {
+    "taskId": "grammar-verb-1",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "verb-jobs",
+    "lessonNumber": 1,
+    "title": "动词的定义与本质",
+    "meta": "句子的谓语核心"
+  },
+  {
+    "taskId": "grammar-verb-2",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "transitivity",
+    "lessonNumber": 2,
+    "title": "及物与不及物",
+    "meta": "谓语后是否需要宾语"
+  },
+  {
+    "taskId": "grammar-verb-3",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "linking",
+    "lessonNumber": 3,
+    "title": "系动词与表语",
+    "meta": "be、感官与变化"
+  },
+  {
+    "taskId": "grammar-verb-4",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "aux-modal",
+    "lessonNumber": 4,
+    "title": "助动词与情态动词",
+    "meta": "构成结构，不抢实义"
+  },
+  {
+    "taskId": "grammar-verb-5",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "finite-forms",
+    "lessonNumber": 5,
+    "title": "谓语动词随什么变化",
+    "meta": "时态、人称与数"
+  },
+  {
+    "taskId": "grammar-verb-6",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "double-object-complement",
+    "lessonNumber": 6,
+    "title": "双宾语与宾语补足语",
+    "meta": "谁收到什么；宾语变得怎样"
+  },
+  {
+    "taskId": "grammar-verb-7",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "verb-five-forms",
+    "lessonNumber": 7,
+    "title": "动词五种基本形式",
+    "meta": "原形、三单、过去式、过去分词、-ing"
+  },
+  {
+    "taskId": "grammar-verb-8",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "third-person-form",
+    "lessonNumber": 8,
+    "title": "第三人称单数的拼写与发音",
+    "meta": "-s、-es、y→ies · /s/、/z/、/ɪz/"
+  },
+  {
+    "taskId": "grammar-verb-9",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "past-forms",
+    "lessonNumber": 9,
+    "title": "过去式与过去分词拼写",
+    "meta": "规则变化与不规则变化"
+  },
+  {
+    "taskId": "grammar-verb-10",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "subject-verb-agreement",
+    "lessonNumber": 10,
+    "title": "主谓一致",
+    "meta": "找中心主语再定单复数"
+  },
+  {
+    "taskId": "grammar-verb-11",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "present-simple",
+    "lessonNumber": 11,
+    "title": "一般现在时",
+    "meta": "事实、习惯、时刻表与结构转换"
+  },
+  {
+    "taskId": "grammar-verb-12",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "present-progressive",
+    "lessonNumber": 12,
+    "title": "现在进行时",
+    "meta": "此刻进行与阶段性变化"
+  },
+  {
+    "taskId": "grammar-verb-13",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "past-simple",
+    "lessonNumber": 13,
+    "title": "一般过去时",
+    "meta": "过去完成且与现在分开"
+  },
+  {
+    "taskId": "grammar-verb-14",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "future-forms",
+    "lessonNumber": 14,
+    "title": "一般将来表达",
+    "meta": "will、be going to 与进行时表安排"
+  },
+  {
+    "taskId": "grammar-verb-15",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "five-sentence-patterns",
+    "lessonNumber": 15,
+    "title": "动词决定五大基本句型",
+    "meta": "SV、SVC、SVO、SVOO、SVOC"
+  },
+  {
+    "taskId": "grammar-verb-16",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "auxiliary-system",
+    "lessonNumber": 16,
+    "title": "be、do、have 作助动词",
+    "meta": "进行/被动、疑问否定、完成"
+  },
+  {
+    "taskId": "grammar-verb-17",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "modal-meanings",
+    "lessonNumber": 17,
+    "title": "情态动词的核心意义",
+    "meta": "能力许可、义务建议、推测"
+  },
+  {
+    "taskId": "grammar-verb-18",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "perfect-vs-past",
+    "lessonNumber": 18,
+    "title": "现在完成时与一般过去时",
+    "meta": "经历、延续、明确过去"
+  },
+  {
+    "taskId": "grammar-verb-19",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "passive-tenses",
+    "lessonNumber": 19,
+    "title": "跨时态被动语态",
+    "meta": "一般、进行与完成被动"
+  },
+  {
+    "taskId": "grammar-verb-20",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "future-in-clauses",
+    "lessonNumber": 20,
+    "title": "主将从现",
+    "meta": "条件、时间与让步从句"
+  },
+  {
+    "taskId": "grammar-verb-21",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "infinitive",
+    "lessonNumber": 21,
+    "title": "不定式 to do",
+    "meta": "名词功能、定语、状语"
+  },
+  {
+    "taskId": "grammar-verb-22",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "gerund",
+    "lessonNumber": 22,
+    "title": "动名词 doing",
+    "meta": "主语、动词宾语、介词宾语"
+  },
+  {
+    "taskId": "grammar-verb-23",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "ing-forms",
+    "lessonNumber": 23,
+    "title": "-ing 形式拼写",
+    "meta": "直接加、去 e、双写与 ie→y"
+  },
+  {
+    "taskId": "grammar-verb-24",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "phrasal",
+    "lessonNumber": 24,
+    "title": "短语动词与宾语位置",
+    "meta": "动词＋副词/介词"
+  },
+  {
+    "taskId": "grammar-verb-25",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "voice",
+    "lessonNumber": 25,
+    "title": "主动与被动",
+    "meta": "关注施事还是承受者"
+  },
+  {
+    "taskId": "grammar-verb-26",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "tense-aspect",
+    "lessonNumber": 26,
+    "title": "时态表达什么",
+    "meta": "时间与动作状态"
+  },
+  {
+    "taskId": "grammar-verb-27",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "nonfinite",
+    "lessonNumber": 27,
+    "title": "非谓语动词基础",
+    "meta": "to do、doing、done"
+  },
+  {
+    "taskId": "grammar-verb-28",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "past-progressive",
+    "lessonNumber": 28,
+    "title": "过去进行时",
+    "meta": "过去某刻正在进行"
+  },
+  {
+    "taskId": "grammar-verb-29",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "past-time-sequence",
+    "lessonNumber": 29,
+    "title": "过去完成、过去将来与时态呼应",
+    "meta": "过去之前与过去视角"
+  },
+  {
+    "taskId": "grammar-verb-30",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "participles",
+    "lessonNumber": 30,
+    "title": "现在分词与过去分词",
+    "meta": "主动进行与被动完成"
+  },
+  {
+    "taskId": "grammar-verb-31",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "causative-perception",
+    "lessonNumber": 31,
+    "title": "使役与感官动词",
+    "meta": "宾语＋原形或 doing"
+  },
+  {
+    "taskId": "grammar-verb-32",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "gerund-infinitive-meaning",
+    "lessonNumber": 32,
+    "title": "doing 与 to do 的意义变化",
+    "meta": "remember、stop、try"
+  },
+  {
+    "taskId": "grammar-verb-33",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "nonfinite-advanced",
+    "lessonNumber": 33,
+    "title": "非谓语被动式与完成式",
+    "meta": "to be done、being done、having done"
+  },
+  {
+    "taskId": "grammar-verb-34",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "agreement-complex",
+    "lessonNumber": 34,
+    "title": "复杂主谓一致",
+    "meta": "就近、中心词、不定代词与主语结构"
+  },
+  {
+    "taskId": "grammar-verb-35",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "special-verb-patterns",
+    "lessonNumber": 35,
+    "title": "高频特殊动词结构",
+    "meta": "used to、had better、would rather"
+  },
+  {
+    "taskId": "grammar-verb-36",
+    "topic": "verb",
+    "topicLabel": "动词",
+    "lessonId": "verb-complements",
+    "lessonNumber": 36,
+    "title": "动词后的补足结构",
+    "meta": "doing、to do 与双宾语"
+  },
+  {
+    "taskId": "grammar-adjective-1",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-essence",
+    "lessonNumber": 1,
+    "title": "形容词的定义与本质",
+    "meta": "给人或事物添加性质与状态"
+  },
+  {
+    "taskId": "grammar-adjective-2",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-jobs",
+    "lessonNumber": 2,
+    "title": "形容词在句中做什么",
+    "meta": "定语 · 表语 · 宾语补足语"
+  },
+  {
+    "taskId": "grammar-adjective-3",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-position",
+    "lessonNumber": 3,
+    "title": "形容词放在哪里",
+    "meta": "前置定语与后置定语"
+  },
+  {
+    "taskId": "grammar-adjective-4",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-restrictions",
+    "lessonNumber": 4,
+    "title": "只作定语或只作表语的形容词",
+    "meta": "位置可能改变可用性或词义"
+  },
+  {
+    "taskId": "grammar-adjective-5",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-complements",
+    "lessonNumber": 5,
+    "title": "形容词后面怎样补全意义",
+    "meta": "介词短语、不定式与从句"
+  },
+  {
+    "taskId": "grammar-adjective-6",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-degree",
+    "lessonNumber": 6,
+    "title": "形容词有程度差别吗",
+    "meta": "可分级与不可分级形容词"
+  },
+  {
+    "taskId": "grammar-adjective-7",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-comparative-form",
+    "lessonNumber": 7,
+    "title": "比较级和最高级怎样变",
+    "meta": "规则拼写与不规则变化"
+  },
+  {
+    "taskId": "grammar-adjective-8",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-comparison",
+    "lessonNumber": 8,
+    "title": "怎样比较两个对象",
+    "meta": "than · as...as · less"
+  },
+  {
+    "taskId": "grammar-adjective-9",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "comparative-modifiers",
+    "lessonNumber": 9,
+    "title": "比较差距怎样说清楚",
+    "meta": "much、a little、具体数量与渐变"
+  },
+  {
+    "taskId": "grammar-adjective-10",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-superlative",
+    "lessonNumber": 10,
+    "title": "怎样在三者以上选最高",
+    "meta": "最高级 · 范围 · 序数词"
+  },
+  {
+    "taskId": "grammar-adjective-11",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "comparison-boundaries",
+    "lessonNumber": 11,
+    "title": "比较范围与特殊结构",
+    "meta": "两者选一、排除自身、倍数与最高级转述"
+  },
+  {
+    "taskId": "grammar-adjective-12",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "participle-adjectives",
+    "lessonNumber": 12,
+    "title": "-ing 与 -ed 形容词",
+    "meta": "引起感受与产生感受"
+  },
+  {
+    "taskId": "grammar-adjective-13",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "compound-adjectives",
+    "lessonNumber": 13,
+    "title": "复合形容词怎样构成",
+    "meta": "连字符、单位单数与整体修饰"
+  },
+  {
+    "taskId": "grammar-adjective-14",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-order",
+    "lessonNumber": 14,
+    "title": "多个形容词怎样排序",
+    "meta": "限定、评价、大小、年龄、颜色、来源、材料、用途"
+  },
+  {
+    "taskId": "grammar-adjective-15",
+    "topic": "adjective",
+    "topicLabel": "形容词",
+    "lessonId": "adjective-nominal",
+    "lessonNumber": 15,
+    "title": "形容词的特殊用法",
+    "meta": "the + 形容词 · 数量表达 · 平行比较"
+  },
+  {
+    "taskId": "grammar-adverb-1",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverb-essence",
+    "lessonNumber": 1,
+    "title": "副词的定义与本质",
+    "meta": "给动作、性质或整句增加背景与范围"
+  },
+  {
+    "taskId": "grammar-adverb-2",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverb-jobs",
+    "lessonNumber": 2,
+    "title": "副词在句中做什么",
+    "meta": "修饰动词、形容词、副词或全句"
+  },
+  {
+    "taskId": "grammar-adverb-3",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverbial-boundary",
+    "lessonNumber": 3,
+    "title": "副词与状语有什么区别",
+    "meta": "词类不等于句子成分"
+  },
+  {
+    "taskId": "grammar-adverb-4",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverb-types",
+    "lessonNumber": 4,
+    "title": "副词有哪些类别",
+    "meta": "时间、地点、方式、频率、程度"
+  },
+  {
+    "taskId": "grammar-adverb-5",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverb-formation",
+    "lessonNumber": 5,
+    "title": "副词怎样构成",
+    "meta": "-ly 拼写、同形副词与意义变化"
+  },
+  {
+    "taskId": "grammar-adverb-6",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverb-position",
+    "lessonNumber": 6,
+    "title": "副词放在哪里",
+    "meta": "中位、句尾与句首"
+  },
+  {
+    "taskId": "grammar-adverb-7",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "multiple-adverb-order",
+    "lessonNumber": 7,
+    "title": "多个状语怎样排列",
+    "meta": "方式、地点、时间与强调位置"
+  },
+  {
+    "taskId": "grammar-adverb-8",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adjective-or-adverb",
+    "lessonNumber": 8,
+    "title": "形容词还是副词",
+    "meta": "系动词、行为动词与同形词"
+  },
+  {
+    "taskId": "grammar-adverb-9",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverb-comparison",
+    "lessonNumber": 9,
+    "title": "副词也能比较吗",
+    "meta": "比较级、最高级与同级比较"
+  },
+  {
+    "taskId": "grammar-adverb-10",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "degree-patterns",
+    "lessonNumber": 10,
+    "title": "程度副词怎样搭配",
+    "meta": "enough · too · so · such"
+  },
+  {
+    "taskId": "grammar-adverb-11",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverb-scope",
+    "lessonNumber": 11,
+    "title": "副词修饰范围会改变意思",
+    "meta": "only · even · almost · 句子副词"
+  },
+  {
+    "taskId": "grammar-adverb-12",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "sentence-adverbs",
+    "lessonNumber": 12,
+    "title": "句子副词表达什么态度",
+    "meta": "把握程度、评价与说话方式"
+  },
+  {
+    "taskId": "grammar-adverb-13",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "interrogative-relative-adverbs",
+    "lessonNumber": 13,
+    "title": "疑问副词与关系副词",
+    "meta": "询问或连接时间、地点、原因与方式"
+  },
+  {
+    "taskId": "grammar-adverb-14",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "negative-limiting-adverbs",
+    "lessonNumber": 14,
+    "title": "否定与限制副词",
+    "meta": "否定强度、范围与倒装"
+  },
+  {
+    "taskId": "grammar-adverb-15",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "conjunctive-adverbs",
+    "lessonNumber": 15,
+    "title": "连接副词怎样连接分句",
+    "meta": "逻辑关系与标点边界"
+  },
+  {
+    "taskId": "grammar-adverb-16",
+    "topic": "adverb",
+    "topicLabel": "副词",
+    "lessonId": "adverb-traps",
+    "lessonNumber": 16,
+    "title": "易混副词",
+    "meta": "hard/hardly · late/lately"
+  },
+  {
+    "taskId": "grammar-preposition-1",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-essence",
+    "lessonNumber": 1,
+    "title": "介词的定义与本质",
+    "meta": "用一个关系连接两个成分"
+  },
+  {
+    "taskId": "grammar-preposition-2",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-forms",
+    "lessonNumber": 2,
+    "title": "介词是什么：形式与作用",
+    "meta": "简单介词 · 复合介词 · 介词短语"
+  },
+  {
+    "taskId": "grammar-preposition-3",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-object",
+    "lessonNumber": 3,
+    "title": "介词和介词宾语",
+    "meta": "介词不能单独完成关系"
+  },
+  {
+    "taskId": "grammar-preposition-4",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-form-contrast",
+    "lessonNumber": 4,
+    "title": "介词、连词与小品词辨析",
+    "meta": "看后接成分和句中作用"
+  },
+  {
+    "taskId": "grammar-preposition-5",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-time",
+    "lessonNumber": 5,
+    "title": "时间介词",
+    "meta": "at · on · in 及起止范围"
+  },
+  {
+    "taskId": "grammar-preposition-6",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-time-deadline",
+    "lessonNumber": 6,
+    "title": "时间终点、期间与期限",
+    "meta": "by · until · during · within"
+  },
+  {
+    "taskId": "grammar-preposition-7",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-time-contrast",
+    "lessonNumber": 7,
+    "title": "容易混淆的时间表达",
+    "meta": "in · after · on time · in time"
+  },
+  {
+    "taskId": "grammar-preposition-8",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-place",
+    "lessonNumber": 8,
+    "title": "地点与位置介词",
+    "meta": "点、内部、表面与相对位置"
+  },
+  {
+    "taskId": "grammar-preposition-9",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-relative-place",
+    "lessonNumber": 9,
+    "title": "相对位置精细辨析",
+    "meta": "between · among · beside · besides"
+  },
+  {
+    "taskId": "grammar-preposition-10",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-direction",
+    "lessonNumber": 10,
+    "title": "方向与运动介词",
+    "meta": "to · into · onto · through · across"
+  },
+  {
+    "taskId": "grammar-preposition-11",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-movement-path",
+    "lessonNumber": 11,
+    "title": "运动路径与经过",
+    "meta": "along · past · across · through"
+  },
+  {
+    "taskId": "grammar-preposition-12",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-source-separation",
+    "lessonNumber": 12,
+    "title": "起点、离开与脱离",
+    "meta": "from · out of · off"
+  },
+  {
+    "taskId": "grammar-preposition-13",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-means",
+    "lessonNumber": 13,
+    "title": "方式、工具与施事",
+    "meta": "by · with · in"
+  },
+  {
+    "taskId": "grammar-preposition-14",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-medium-language",
+    "lessonNumber": 14,
+    "title": "媒介、语言与呈现方式",
+    "meta": "by · on · in"
+  },
+  {
+    "taskId": "grammar-preposition-15",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-cause-purpose",
+    "lessonNumber": 15,
+    "title": "原因、目的与让步",
+    "meta": "because of · for · despite"
+  },
+  {
+    "taskId": "grammar-preposition-16",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-material-comparison",
+    "lessonNumber": 16,
+    "title": "材料、身份与排除关系",
+    "meta": "of · from · like · as · except · besides"
+  },
+  {
+    "taskId": "grammar-preposition-17",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-topic-content",
+    "lessonNumber": 17,
+    "title": "话题、内容与特征关系",
+    "meta": "about · on · of · with"
+  },
+  {
+    "taskId": "grammar-preposition-18",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-adverbial-functions",
+    "lessonNumber": 18,
+    "title": "介词短语作状语",
+    "meta": "修饰动作、状态或整句"
+  },
+  {
+    "taskId": "grammar-preposition-19",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-postmodifier",
+    "lessonNumber": 19,
+    "title": "介词短语作后置定语",
+    "meta": "英语后置，中文通常前移"
+  },
+  {
+    "taskId": "grammar-preposition-20",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-predicative",
+    "lessonNumber": 20,
+    "title": "介词短语作表语",
+    "meta": "位于系动词后说明主语"
+  },
+  {
+    "taskId": "grammar-preposition-21",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-complements",
+    "lessonNumber": 21,
+    "title": "介词短语作补足成分",
+    "meta": "补足动词 · 形容词 · 名词意义"
+  },
+  {
+    "taskId": "grammar-preposition-22",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-collocation",
+    "lessonNumber": 22,
+    "title": "中心词与介词关系",
+    "meta": "指向 · 领域 · 对应"
+  },
+  {
+    "taskId": "grammar-preposition-23",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-collocation-meaning",
+    "lessonNumber": 23,
+    "title": "介词改变关系意义",
+    "meta": "同一中心词后的关系变化"
+  },
+  {
+    "taskId": "grammar-preposition-24",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-complex-objects",
+    "lessonNumber": 24,
+    "title": "复杂介词宾语与介词后置",
+    "meta": "wh-从句 · 疑问句 · 定语从句"
+  },
+  {
+    "taskId": "grammar-preposition-25",
+    "topic": "preposition",
+    "topicLabel": "介词",
+    "lessonId": "prep-integration",
+    "lessonNumber": 25,
+    "title": "介词综合分析方法",
+    "meta": "关系、边界、功能三步判断"
+  },
+  {
+    "taskId": "grammar-conjunction-1",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-essence",
+    "lessonNumber": 1,
+    "title": "连词的定义与本质",
+    "meta": "给成分建立逻辑连接"
+  },
+  {
+    "taskId": "grammar-conjunction-2",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-and-or",
+    "lessonNumber": 2,
+    "title": "and 与 or",
+    "meta": "添加、选择与否则"
+  },
+  {
+    "taskId": "grammar-conjunction-3",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-but-so",
+    "lessonNumber": 3,
+    "title": "but 与 so",
+    "meta": "转折与结果"
+  },
+  {
+    "taskId": "grammar-conjunction-4",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-for-nor-yet",
+    "lessonNumber": 4,
+    "title": "for、nor 与 yet",
+    "meta": "补充原因、否定并列与出乎预期"
+  },
+  {
+    "taskId": "grammar-conjunction-5",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-time",
+    "lessonNumber": 5,
+    "title": "时间从属连词",
+    "meta": "when、while、until"
+  },
+  {
+    "taskId": "grammar-conjunction-6",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-reason-condition",
+    "lessonNumber": 6,
+    "title": "原因与条件",
+    "meta": "because、if、unless"
+  },
+  {
+    "taskId": "grammar-conjunction-7",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-concession-purpose",
+    "lessonNumber": 7,
+    "title": "让步、目的与结果",
+    "meta": "although、so that、so...that"
+  },
+  {
+    "taskId": "grammar-conjunction-8",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-place-manner-comparison",
+    "lessonNumber": 8,
+    "title": "地点、方式与比较从属关系",
+    "meta": "where、as if、than"
+  },
+  {
+    "taskId": "grammar-conjunction-9",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-correlative",
+    "lessonNumber": 9,
+    "title": "成对连词",
+    "meta": "两端成对且结构平行"
+  },
+  {
+    "taskId": "grammar-conjunction-10",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-near-agreement",
+    "lessonNumber": 10,
+    "title": "成对主语与主谓一致",
+    "meta": "either...or 与 neither...nor"
+  },
+  {
+    "taskId": "grammar-conjunction-11",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-boundary",
+    "lessonNumber": 11,
+    "title": "连词、介词与连接副词",
+    "meta": "看后接结构和句法位置"
+  },
+  {
+    "taskId": "grammar-conjunction-12",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-punctuation",
+    "lessonNumber": 12,
+    "title": "并列分句的标点边界",
+    "meta": "逗号、分号与句界"
+  },
+  {
+    "taskId": "grammar-conjunction-13",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-parallel",
+    "lessonNumber": 13,
+    "title": "并列结构与共享成分",
+    "meta": "同层连接、形式一致"
+  },
+  {
+    "taskId": "grammar-conjunction-14",
+    "topic": "conjunction",
+    "topicLabel": "连词",
+    "lessonId": "conj-integration",
+    "lessonNumber": 14,
+    "title": "连词综合辨析",
+    "meta": "先看层级，再判逻辑"
+  },
+  {
+    "taskId": "grammar-interjection-1",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-essence",
+    "lessonNumber": 1,
+    "title": "感叹词的定义与本质",
+    "meta": "把即时反应放在句子主干之外"
+  },
+  {
+    "taskId": "grammar-interjection-2",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-independence-position",
+    "lessonNumber": 2,
+    "title": "独立性与位置",
+    "meta": "句首最常见，也可单独出现或插入句中"
+  },
+  {
+    "taskId": "grammar-interjection-3",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-vs-exclamative",
+    "lessonNumber": 3,
+    "title": "感叹词与感叹句",
+    "meta": "一种是词类，一种是句型"
+  },
+  {
+    "taskId": "grammar-interjection-4",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-emotions",
+    "lessonNumber": 4,
+    "title": "表达不同即时情绪",
+    "meta": "惊喜、遗憾、厌恶与疼痛"
+  },
+  {
+    "taskId": "grammar-interjection-5",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-context-tone",
+    "lessonNumber": 5,
+    "title": "语境和语调决定具体态度",
+    "meta": "同一个词不等于固定的一句中文"
+  },
+  {
+    "taskId": "grammar-interjection-6",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-interaction",
+    "lessonNumber": 6,
+    "title": "管理交际与回应",
+    "meta": "招呼、提醒、赞赏与安静请求"
+  },
+  {
+    "taskId": "grammar-interjection-7",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-discourse-markers",
+    "lessonNumber": 7,
+    "title": "感叹词与话语标记",
+    "meta": "表达反应，也能组织接下来的话"
+  },
+  {
+    "taskId": "grammar-interjection-8",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-punctuation",
+    "lessonNumber": 8,
+    "title": "标点、大小写与位置",
+    "meta": "用标点表示独立程度和语气强弱"
+  },
+  {
+    "taskId": "grammar-interjection-9",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-register-politeness",
+    "lessonNumber": 9,
+    "title": "语域、礼貌与使用分寸",
+    "meta": "自然不只取决于语法正确"
+  },
+  {
+    "taskId": "grammar-interjection-10",
+    "topic": "interjection",
+    "topicLabel": "感叹词",
+    "lessonId": "interj-wordclass-sounds",
+    "lessonNumber": 10,
+    "title": "感叹词、其他词类与拟声表达",
+    "meta": "不要只看单词外形，要看句中功能"
+  }
+]

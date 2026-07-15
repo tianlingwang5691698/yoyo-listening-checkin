@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
+const { performance } = require('node:perf_hooks');
 
 const root = path.resolve(__dirname, '..');
 
@@ -62,4 +63,20 @@ test('小程序上传包排除非运行时工程目录', () => {
   ['web', '.playwright-cli', '.vscode', 'assets/brand'].forEach((folder) => {
     assert.ok(ignoredFolders.has(folder), `上传包必须排除 ${folder}`);
   });
+});
+
+test('阶段详情只加载轻量语法目录', () => {
+  const catalogPath = path.join(root, 'cloudfunctions/yoyo/data/grammar-plan-catalog.json');
+  const raw = fs.readFileSync(catalogPath, 'utf8');
+  assert.ok(Buffer.byteLength(raw) < 60 * 1024, '语法计划目录必须小于 60KB');
+  const samples = [];
+  let catalog = null;
+  for (let index = 0; index < 50; index += 1) {
+    const startedAt = performance.now();
+    catalog = JSON.parse(raw);
+    samples.push(performance.now() - startedAt);
+  }
+  assert.equal(catalog.length, 168);
+  assert.ok(Math.max(...samples) < 10, '语法计划目录解析必须小于 10ms');
+  assert.equal(catalog.some((item) => item.examples || item.questions || item.narration), false);
 });

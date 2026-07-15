@@ -378,7 +378,7 @@ Page({
     const fixedPlan = this.data.fixedPlan || {};
     const phase = fixedPlan.planPhase || 'round-2';
     wx.navigateTo({
-      url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
+      url: `/pages/level-stage/index?levelId=A1&phase=${phase}&fixed=1`
     });
   }
 });

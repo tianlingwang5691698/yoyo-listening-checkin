@@ -1,5 +1,6 @@
 const store = require('../../../utils/store');
 const page = require('../../../utils/page');
+const { getActiveGrammarTaskKey } = require('../../../utils/grammar-resume');
 
 const THEME_KEY = 'uiTheme';
 const LANGUAGE_KEY = 'yoyoLanguageV1';
@@ -204,8 +205,9 @@ Page({
     this.plannedNarrationListenedSec = Number(this.plannedResume.listenedSec || 0);
     this.plannedNarrationResumePosition = Number(this.plannedResume.audioPosition || 0);
     this.plannedNarrationLastTime = null;
+    this.rememberActivePlannedTask();
     this.syncPreferences();
-    if (this.plannedEntry.topic && this.plannedEntry.taskId) {
+    if (this.plannedEntry.topic) {
       this.loadCourse(this.plannedEntry.topic);
     }
   },
@@ -245,6 +247,16 @@ Page({
     return this.plannedEntry && this.plannedEntry.taskId
       ? `${PLANNED_RESUME_PREFIX}${this.plannedEntry.taskId}`
       : '';
+  },
+
+  rememberActivePlannedTask() {
+    if (!this.plannedEntry || !this.plannedEntry.taskId) return;
+    try {
+      const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+      wx.setStorageSync(getActiveGrammarTaskKey(target), Object.assign({}, this.plannedEntry, {
+        updatedAt: Date.now()
+      }));
+    } catch (error) {}
   },
 
   readPlannedResume() {

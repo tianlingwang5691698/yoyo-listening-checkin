@@ -1,4 +1,5 @@
 const { addDays, formatChinaDateFromDate } = require('./date');
+const grammarPlanCatalog = require('../data/grammar-plan-catalog.json');
 
 const PLAN_SLOT_COUNT = 24;
 const GRAMMAR_PLAN_START_DAY = 86;
@@ -37,18 +38,11 @@ function getPlanCategoryOrder(dayIndex = 1) {
 }
 
 function buildGrammarCatalog() {
-  return GRAMMAR_TOPICS.flatMap(([topic, topicLabel, count]) => (
-    Array.from({ length: count }, (_, index) => ({
-      taskId: `grammar-${topic}-${index + 1}`,
-      category: 'grammar',
-      topic,
-      topicLabel,
-      lessonNumber: index + 1,
-      title: `${topicLabel}第 ${index + 1} 节`,
-      repeatTarget: 1,
-      durationSec: 0
-    }))
-  ));
+  return grammarPlanCatalog.map((item) => Object.assign({}, item, {
+    category: 'grammar',
+    repeatTarget: 1,
+    durationSec: 0
+  }));
 }
 
 function getGrammarIndicesForDay(dayIndex, catalogLength = 168) {

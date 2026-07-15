@@ -336,7 +336,8 @@ function buildCatchupState(checkins, today, planStartDate, todayDone) {
 function getPlanCatalog(category) {
   return planEngine.getPlanCatalog(category, {
     getCatalog,
-    planSlotCount: PLAN_SLOT_COUNT
+    planSlotCount: PLAN_SLOT_COUNT,
+    planLib
   });
 }
 

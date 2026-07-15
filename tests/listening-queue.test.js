@@ -209,3 +209,16 @@ test('拖拽不计有效听力，实际播放达到九成才完成一遍', () =>
   assert.match(lessonSource, /effectiveListeningSec:[\s\S]*effectiveListeningPassKey:/);
   assert.match(lessonSource, /if \(!hasEffectiveListeningCompleted\(this\.effectiveListeningSeconds, durationSeconds\)\)/);
 });
+
+test('阶段详情页词法任务直达语法微课', () => {
+  const stageSource = fs.readFileSync(path.join(__dirname, '../pages/level-stage/index.js'), 'utf8');
+  assert.match(stageSource, /category === 'grammar'[\s\S]*grammar-package\/pages\/classroom\/index/);
+});
+
+test('佑佑固定计划页不回退显示日任务快照', () => {
+  const levelSource = fs.readFileSync(path.join(__dirname, '../pages/level/index.js'), 'utf8');
+  const stageSource = fs.readFileSync(path.join(__dirname, '../pages/level-stage/index.js'), 'utf8');
+  assert.match(levelSource, /level-stage\/index\?levelId=A1&phase=\$\{phase\}&fixed=1/);
+  assert.match(stageSource, /data\.fixedPlanOutline \|\| \(this\.fixedPlanMode \? YOYO_FIXED_PLAN_OUTLINE : null\)/);
+  assert.match(stageSource, /snapshot && !this\.fixedPlanMode/);
+});

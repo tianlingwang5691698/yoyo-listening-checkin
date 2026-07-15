@@ -6,6 +6,15 @@ const i18n = require('../../utils/i18n');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LEVEL_STAGE_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+const YOYO_FIXED_PLAN_OUTLINE = {
+  cycleDays: 72,
+  items: [
+    { category: 'grammar', slotCount: 3, startNo: 1, endNo: 168, totalCount: 168 },
+    { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
+    { category: 'peppa', slotCount: 5, startNo: 73, endNo: 157, totalCount: 85 },
+    { category: 'unlock1', slotCount: 3, startNo: 1, endNo: 24, totalCount: 24 }
+  ]
+};
 
 function t(key, variables) {
   const template = i18n.getPageText('levelStage', key);
@@ -41,6 +50,9 @@ function getStage(phase) {
 function getTextType(task) {
   if (!task || task.isPendingAsset) {
     return t('waiting');
+  }
+  if (task.category === 'grammar') {
+    return task.meta || task.displaySubtitle || task.topicLabel || '语法微课';
   }
   if (task.transcriptTrackId) {
     return task.syncGranularity === 'line' ? t('sentenceSync') : t('wordSync');
@@ -79,10 +91,13 @@ function buildTaskRows(category) {
     : (fallbackTask && fallbackTask.taskId ? [fallbackTask] : []);
   return sourceTasks.map((source, index) => {
     const task = labels.normalizeTask(source || {});
+    const taskMeta = task.category === 'grammar'
+      ? (task.meta || task.displaySubtitle || task.topicLabel || '语法微课')
+      : [getTextType(task), task.playStepText ? t('progress', { progress: task.playStepText }) : ''].filter(Boolean).join(' · ');
     return {
       taskId: task.taskId || '',
       title: getTaskTitle(task),
-      meta: [getTextType(task), task.playStepText ? t('progress', { progress: task.playStepText }) : ''].filter(Boolean).join(' · '),
+      meta: taskMeta,
       orderText: task.planSlotIndex ? `${task.planSlotIndex}` : `${index + 1}`,
       completedToday: !!task.completedToday,
       stateText: task.completedToday ? t('completed') : t('start'),
@@ -128,6 +143,37 @@ function normalizeStageTaskGroups(taskGroups) {
   }));
 }
 
+function buildFixedPlanOutline(outline) {
+  if (!outline || !Array.isArray(outline.items)) return null;
+  const categoryTitles = {
+    grammar: '词法微课',
+    newconcept1: 'New Concept 1',
+    peppa: 'Peppa',
+    unlock1: 'Unlock 1 听口 第二版'
+  };
+  return {
+    cycleDays: Number(outline.cycleDays || 72),
+    items: outline.items.map((item) => {
+      const startNo = Number(item.startNo || 1);
+      const endNo = item.category === 'newconcept1' ? 76 : Number(item.endNo || 0);
+      const totalCount = item.category === 'newconcept1' ? 76 : Number(item.totalCount || 0);
+      const unit = item.category === 'grammar' ? t('microLessonUnit') : item.category === 'newconcept1' ? t('lessonUnit') : t('episodeUnit');
+      const dailyUnit = item.category === 'grammar'
+        ? t('dailyMicroLessonUnit')
+        : item.category === 'newconcept1'
+          ? t('dailyLessonUnit')
+          : item.category === 'peppa'
+            ? t('dailyEpisodeUnit')
+            : t('dailyAudioUnit');
+      return Object.assign({}, item, {
+        title: categoryTitles[item.category] || item.category,
+        rangeText: t('rangeSummary', { start: startNo, end: endNo, total: totalCount, unit }),
+        dailyText: t('dailyStudy', { count: Number(item.slotCount || 0), unit: dailyUnit })
+      });
+    })
+  };
+}
+
 function shouldShowTaskGroups(phase) {
   return phase === 'round-1' || phase === 'round-2' || phase === 'custom';
 }
@@ -160,6 +206,7 @@ Page({
     expandedGroupKey: '',
     totalMinutesText: t('pending'),
     hasTaskGroups: false,
+    fixedPlanOutline: null,
     hydrated: false,
     language: i18n.getLanguage(),
     texts: i18n.getPageTexts('levelStage')
@@ -167,7 +214,8 @@ Page({
   applyOverview(data, phase, levelId, preferredExpandedGroupKey, snapshotId) {
     const categories = (data.categories || []).map(labels.normalizeCategory);
     const displayPhase = data.planPhase || phase;
-    const hasTaskGroups = shouldShowTaskGroups(displayPhase) && categories.length > 0;
+    const fixedPlanOutline = buildFixedPlanOutline(data.fixedPlanOutline || (this.fixedPlanMode ? YOYO_FIXED_PLAN_OUTLINE : null));
+    const hasTaskGroups = !fixedPlanOutline && shouldShowTaskGroups(displayPhase) && categories.length > 0;
     const expandedState = {};
     (this.data.taskGroups || []).forEach((item) => {
       if (item && item.groupKey) {
@@ -192,6 +240,7 @@ Page({
       expandedGroupKey,
       totalMinutesText: totalMinutes ? t('minutes', { minutes: totalMinutes }) : t('pending'),
       hasTaskGroups,
+      fixedPlanOutline,
       hydrated: true
     };
     this.setData(page.buildCloudPageData(this.data, nextData));
@@ -206,6 +255,7 @@ Page({
     const preferredExpandedGroupKey = query.expand || '';
     const snapshotId = query.snapshotId || phase;
     const fastMode = query.fast === '1';
+    this.fixedPlanMode = query.fixed === '1';
     this.resumeOpenToken = 0;
     this.resumeTaskOpened = false;
     this.resumeTaskRequest = query.resumeCategory && query.resumeTaskId ? {
@@ -220,10 +270,11 @@ Page({
       phase,
       stage: getStage(phase),
       expandedGroupKey: preferredExpandedGroupKey,
+      fixedPlanOutline: this.fixedPlanMode ? buildFixedPlanOutline(YOYO_FIXED_PLAN_OUTLINE) : null,
       hydrated: false
     }));
     const snapshot = getStageSnapshot(snapshotId) || getStageSnapshot(phase);
-    if (snapshot) {
+    if (snapshot && !this.fixedPlanMode) {
       this.setData(page.buildCloudPageData(this.data, {
         levelId,
         phase,
@@ -232,6 +283,7 @@ Page({
         expandedGroupKey: preferredExpandedGroupKey || snapshot.expandedGroupKey || '',
         totalMinutesText: snapshot.totalMinutesText || t('pending'),
         hasTaskGroups: true,
+        fixedPlanOutline: snapshot.fixedPlanOutline || null,
         hydrated: true
       }));
       this.levelStagePerf.ready('pageReady', {
@@ -252,10 +304,10 @@ Page({
       this.applyOverview(data, phase, levelId, preferredExpandedGroupKey, snapshotId);
       return data;
     };
-    if (snapshot && fastMode) {
+    if (snapshot && fastMode && !this.fixedPlanMode) {
       return;
     }
-    if (snapshot) {
+    if (snapshot && !this.fixedPlanMode) {
       setTimeout(() => {
         refresh().catch(() => {});
       }, 1200);
@@ -335,6 +387,13 @@ Page({
         task: taskRow.taskSnapshot
       }, { source: 'level-stage' });
     }
+    if (category === 'grammar') {
+      const task = taskRow.taskSnapshot || {};
+      wx.navigateTo({
+        url: `/grammar-package/pages/classroom/index?topic=${encodeURIComponent(task.topic || '')}&lessonNumber=${Number(task.lessonNumber || 1)}&taskId=${encodeURIComponent(task.taskId || taskId || '')}`
+      });
+      return;
+    }
     const routeQuery = [
       planRunType !== 'normal' ? `planRunType=${encodeURIComponent(planRunType)}` : '',
       targetDate ? `targetDate=${encodeURIComponent(targetDate)}` : '',
@@ -345,6 +404,18 @@ Page({
         ? `/pages/lesson/index?category=${encodeURIComponent(category)}&taskId=${encodeURIComponent(taskId)}${routeQuery}`
         : `/pages/lesson/index?category=${encodeURIComponent(category)}${routeQuery}`
     });
+  },
+  openFixedPlanItem(event) {
+    const category = String(event.currentTarget.dataset.category || '');
+    if (category === 'grammar') {
+      wx.navigateTo({ url: '/grammar-package/pages/classroom/index?topic=noun' });
+      return;
+    }
+    if (category) {
+      wx.navigateTo({
+        url: `/pages/listening-material/index?levelId=A1&category=${encodeURIComponent(category)}`
+      });
+    }
   },
   openTask(event) {
     const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);

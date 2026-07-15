@@ -220,6 +220,8 @@ test('阶段二 Peppa 不额外叠加旧集复听', () => {
 test('佑佑第 86 天从名词前 3 节开始词法计划', () => {
   const catalog = planRuntime.buildGrammarCatalog();
   assert.equal(catalog.length, 168);
+  assert.equal(catalog[0].title, '名词的定义与本质');
+  assert.equal(catalog[0].meta, '给人、事物、地点和概念命名');
   assert.deepEqual(
     planRuntime.getPlanIndicesForCategory(86, 'grammar', catalog.length),
     [0, 1, 2]

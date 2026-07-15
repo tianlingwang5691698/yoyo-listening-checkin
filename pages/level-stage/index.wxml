@@ -6,7 +6,7 @@
         <view class="audio-index-title">{{stage.title}}</view>
         <view class="audio-index-hint">{{stage.hint}}</view>
       </view>
-      <view class="audio-index-stamp">
+      <view class="audio-index-stamp" wx:if="{{!fixedPlanOutline}}">
         <view>{{texts.estimatedTotal}}</view>
         <text>{{totalMinutesText}}</text>
       </view>
@@ -14,7 +14,23 @@
 
     <view class="audio-index-note" wx:if="{{syncMode === 'cloud-error' && hasTaskGroups}}">{{texts.usingRecent}}</view>
 
-    <block wx:if="{{!hydrated && !hasTaskGroups}}">
+    <view class="fixed-plan-outline" wx:if="{{fixedPlanOutline}}">
+      <view class="fixed-plan-cycle">
+        <view class="fixed-plan-cycle-label">{{texts.planCycle}}</view>
+        <view class="fixed-plan-cycle-value">{{fixedPlanOutline.cycleDays}} {{texts.checkinDayUnit}}</view>
+        <view class="fixed-plan-cycle-copy">{{texts.fixedPlanRule}}</view>
+      </view>
+      <view class="fixed-plan-item" wx:for="{{fixedPlanOutline.items}}" wx:key="category" data-category="{{item.category}}" bindtap="openFixedPlanItem">
+        <view class="fixed-plan-item-main">
+          <view class="fixed-plan-item-title">{{item.title}}</view>
+          <view class="fixed-plan-item-range">{{item.rangeText}}</view>
+          <view class="fixed-plan-item-daily">{{item.dailyText}}</view>
+        </view>
+        <view class="fixed-plan-item-action">{{texts.viewContent}}</view>
+      </view>
+    </view>
+
+    <block wx:elif="{{!hydrated && !hasTaskGroups}}">
       <view class="audio-index-loading">
         <view class="audio-index-loading-title"></view>
         <view class="audio-index-loading-line"></view>
@@ -70,12 +86,28 @@
       <view class="stage-hint type-caption">{{stage.hint}}</view>
     </view>
 
-    <view class="stage-total card">
+    <view class="stage-total card" wx:if="{{!fixedPlanOutline}}">
       <view class="total-label type-caption">{{texts.estimatedTotal}}</view>
       <view class="total-value">{{totalMinutesText}}</view>
     </view>
 
-    <block wx:if="{{hasTaskGroups}}">
+    <view class="fixed-plan-outline card" wx:if="{{fixedPlanOutline}}">
+      <view class="fixed-plan-cycle">
+        <view class="fixed-plan-cycle-label type-caption">{{texts.planCycle}}</view>
+        <view class="fixed-plan-cycle-value">{{fixedPlanOutline.cycleDays}} {{texts.checkinDayUnit}}</view>
+        <view class="fixed-plan-cycle-copy type-caption">{{texts.fixedPlanRule}}</view>
+      </view>
+      <view class="fixed-plan-item" wx:for="{{fixedPlanOutline.items}}" wx:key="category" data-category="{{item.category}}" bindtap="openFixedPlanItem">
+        <view class="fixed-plan-item-main">
+          <view class="fixed-plan-item-title">{{item.title}}</view>
+          <view class="fixed-plan-item-range type-caption">{{item.rangeText}}</view>
+          <view class="fixed-plan-item-daily type-caption">{{item.dailyText}}</view>
+        </view>
+        <view class="fixed-plan-item-action">{{texts.viewContent}}</view>
+      </view>
+    </view>
+
+    <block wx:elif="{{hasTaskGroups}}">
       <block wx:for="{{taskGroups}}" wx:for-index="groupIndex" wx:key="groupKey">
       <view class="task-group-card card {{item.disabled ? 'is-disabled' : ''}}">
         <view class="task-group-row" data-group-index="{{groupIndex}}" bindtap="toggleTaskGroup">
