@@ -86,6 +86,33 @@
 
 ## 已知案例
 
+### 2026-07-15 Magic Tree House 每集进入加载缓慢
+
+1. 现象：从任务表进入任意 Magic Tree House 单集时，真机课程页等待时间明显长于其他音频。
+2. 账号：不限账号；A2/B1 Magic Tree House 均受影响。
+3. 查询：`pages/lesson.refreshPage -> store.getTaskDetail -> request-context.resolveCatalogCategories -> refreshRuntimeCatalogs -> buildCloudCatalogForCategory/listDirectoryFiles`。
+4. 结论：课程详情仍把 Magic Tree House 当作动态云目录刷新，重复扫描大音频目录；带音频快照时还使用完整身份上下文。
+5. 修复：A2/B1 强制静态 manifest 目录；带音频快照的课程详情使用轻量身份上下文，单集文本继续按需读取。
+6. 是否需要发版：需部署 `yoyo` 云函数；轻量上下文和静态目录立即影响线上调用，前端无需为本项单独发布。
+
+### 2026-07-15 Magic Tree House 第一集真机跳过短句
+
+1. 现象：开发者工具逐句切换正常，真机播放时部分短句未显示或切换偏晚。
+2. 账号：不限账号；第一集 `tracks-v6` 可复现。
+3. 查询：`pages/lesson.innerAudioContext.onTimeUpdate -> updateTranscriptByTime -> transcriptLines.startMs`；v6 有 113 句短于 1 秒、17 句短于 500ms。
+4. 结论：真机 `onTimeUpdate` 回调较稀，可能跨过短句的完整时间窗口；云端 v6 文件与路由正常。
+5. 修复：第一集播放期间增加 80ms 音频时钟检查，仅跨句时更新；暂停、退出、拖拽和结束时停止。
+6. 是否需要发版：前端改动，需要重新编译并真机验证后发布。
+
+### 2026-07-15 课程文本在句间静音显示占位文案
+
+1. 现象：一句结束而下一句尚未开始时，文本卡片显示“音频开始后，这一句会在这里突出显示”。
+2. 账号：不限账号；长音频句间静音更容易出现。
+3. 查询：`pages/lesson.updateTranscriptByTime -> transcriptLines.startMs/endMs -> activeLine`。
+4. 结论：页面按 `endMs` 立即清空当前句，句间静音被当成无文本状态。
+5. 修复：按下一句 `startMs` 切换，静音期间保留上一句并取消末词高亮；拖拽预览和 seek 落点共用该逻辑。
+6. 是否需要发版：前端改动，需要重新发布小程序。
+
 ### 2026-07-15 Magic Tree House 拖拽后文本仍错位
 
 1. 现象：课程播放器拖拽已正确 seek，但 Magic Tree House 部分集数仍显示旧句或跨越数分钟不切换。
@@ -306,3 +333,19 @@
 4. 结论：拖动时未主动更新文本，且播放中的旧 `currentTime` 持续覆盖拖动预览位置。
 5. 修复：拖动期间按目标时间更新文本；拖动时暂停接受旧时间回调；`onSeeked` 按实际落点再校正。
 6. 是否需要发版：前端改动，需重新发布小程序；不需要部署云函数。
+
+### 2026-07-15 Magic Tree House 点击播放首缓慢
+
+1. 现象：课程页已快速进入，但点击播放后长时间等待。
+2. 查询：`pages/lesson.resolveTaskAudio -> task.audioUrl/buildCloudAssetUrl -> innerAudioContext.src`；单集约 32–35MB。
+3. 结论：公开地址分支提前返回，已有 `audioFileId` 未进入 CloudBase 临时 COS 地址链路。
+4. 修复：仅 `magictreehouse/magictreehouseb1` 优先获取临时 COS 地址，失败回退公开地址；其他分类不变。
+5. 是否需要发版：前端改动，需要重新编译并真机验证后发布；不需要部署云函数。
+
+### 2026-07-15 Magic Tree House 真机拖拽后文本错位
+
+1. 现象：开发者工具拖拽后音频与句子对齐，真机调试仍可能停在旧句或跳过短句。
+2. 查询：线上 52 个 JSON 全部 HTTP 200、与本地哈希一致、时间戳有序无重叠；线上 manifest 与本地一致。
+3. 结论：真机 `onSeeked` 可能先于 `currentTime` 更新触发；同时此前只有第一集启用 80ms 精确同步。
+4. 修复：保留 seek 目标直到真机时钟进入 0.5 秒容差；超时只重试一次；精确同步扩展到全部 Magic Tree House。
+5. 是否需要发版：纯前端改动，需要重新编译并真机验证后发布；不需要上传 JSON 或云函数。

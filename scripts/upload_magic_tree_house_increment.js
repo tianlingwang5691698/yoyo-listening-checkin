@@ -17,15 +17,15 @@ const ROOT = path.join(__dirname, '..');
 const levelArg = process.argv.find((item) => item.startsWith('--level='));
 const LEVEL = String(levelArg ? levelArg.split('=')[1] : 'A2').toUpperCase();
 const CONFIGS = {
-  A2: { category: 'magictreehouse', count: 28, asrPrimaryCount: 28, referencePath: '_transcripts/A2/pete-the-cat/bundle-sentence-v1.json' },
-  B1: { category: 'magictreehouseb1', count: 24, asrPrimaryCount: 24, referencePath: '_transcripts/B1/new-concept-3-us-line/bundle.json' }
+  A2: { category: 'magictreehouse', start: 1, count: 28, referencePath: '_transcripts/A2/pete-the-cat/bundle-sentence-v1.json' },
+  B1: { category: 'magictreehouseb1', start: 29, count: 24, referencePath: '_transcripts/B1/new-concept-3-us-line/bundle.json' }
 };
 const CONFIG = CONFIGS[LEVEL];
 if (!CONFIG) throw new Error(`unsupported level: ${LEVEL}`);
 const BUILD_ROOT = path.join(ROOT, 'data', 'transcript-build', 'magic-tree-house', LEVEL, 'magic-tree-house');
 const MANIFEST_PATH = path.join(BUILD_ROOT, 'manifest.json');
-const BUNDLE_PATH = path.join(BUILD_ROOT, 'bundle-sentence-v3.json');
-const REPORT_PATH = path.join(BUILD_ROOT, 'clean-report.json');
+const BUNDLE_PATH = path.join(BUILD_ROOT, 'bundle-sentence-v4.json');
+const PROGRESS_PATH = path.join(ROOT, 'data', 'transcript-build', 'magic-tree-house', 'whisperx-v4-progress.json');
 const CREDENTIAL_PATH = path.join(ROOT, 'SecretKey.csv');
 const REFERENCE_PATH = CONFIG.referencePath;
 
@@ -119,14 +119,17 @@ async function main() {
   const apply = process.argv.includes('--apply');
   const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
   const bundle = JSON.parse(fs.readFileSync(BUNDLE_PATH, 'utf8'));
-  const cleanReport = JSON.parse(fs.readFileSync(REPORT_PATH, 'utf8'));
+  const progress = JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf8'));
+  const expectedIndexes = Array.from({ length: CONFIG.count }, (_, offset) => CONFIG.start + offset);
+  const levelReports = (progress.tracks || []).filter((item) => expectedIndexes.includes(Number(item.index)));
   if (manifest.meta.level !== LEVEL || manifest.meta.category !== CONFIG.category
     || manifest.tracks.length !== CONFIG.count || Object.keys(bundle).length !== CONFIG.count) {
     throw new Error(`expected ${CONFIG.count} Magic Tree House ${LEVEL} tracks`);
   }
-  if (cleanReport.validationErrorCount !== 0 || cleanReport.builtTrackCount !== CONFIG.count
-    || cleanReport.asrPrimaryTrackCount !== CONFIG.asrPrimaryCount) {
-    throw new Error(`local Magic Tree House ${LEVEL} validation report is not safe to upload`);
+  if (progress.completedCount !== 52 || (progress.failures || []).length !== 0
+    || levelReports.length !== CONFIG.count
+    || levelReports.some((item) => (item.validationErrors || []).length !== 0 || item.meanWordScore < 0.78)) {
+    throw new Error(`local Magic Tree House ${LEVEL} WhisperX report is not safe to upload`);
   }
 
   const audioItems = manifest.tracks.map((track) => ({
@@ -140,20 +143,20 @@ async function main() {
     type: 'transcript',
     title: `Magic Tree House ${LEVEL} sentence bundle`,
     localPath: BUNDLE_PATH,
-    cloudPath: manifest.meta.transcriptCloudPath,
+    cloudPath: `_transcripts/${LEVEL}/magic-tree-house/bundle-sentence-v4.json`,
     sha1: sha1File(BUNDLE_PATH)
   };
   const transcriptTrackItems = manifest.tracks.map((track) => {
-    const localPath = path.join(BUILD_ROOT, 'tracks-v3', `${track.trackId}.json`);
+    const localPath = path.join(BUILD_ROOT, 'tracks-v4', `${track.trackId}.json`);
     return {
       type: 'transcript-track',
       title: `${track.title} transcript`,
       localPath,
-      cloudPath: track.transcriptTrackCloudPath,
+      cloudPath: `_transcripts/${LEVEL}/magic-tree-house/tracks-v4/${track.trackId}.json`,
       sha1: sha1File(localPath)
     };
   });
-  // v3 uses new immutable paths; v1/v2 remain available to old catalog
+  // v4 uses new immutable paths; v1-v3 remain available to old catalog
   // releases and are never overwritten.
   const items = audioItems.concat(transcriptTrackItems, [transcriptItem]);
   if (items.some((item) => !fs.existsSync(item.localPath))) throw new Error('local upload file missing');
@@ -192,7 +195,7 @@ async function main() {
     transcriptPath: transcriptItem.cloudPath,
     transcriptSha1: transcriptItem.sha1
   };
-  fs.writeFileSync(path.join(BUILD_ROOT, 'upload-preflight.json'), `${JSON.stringify(preflight, null, 2)}\n`);
+  fs.writeFileSync(path.join(BUILD_ROOT, 'upload-preflight-v4.json'), `${JSON.stringify(preflight, null, 2)}\n`);
   if (!apply) {
     console.log(JSON.stringify(preflight, null, 2));
     return;
@@ -241,7 +244,7 @@ async function main() {
     transcriptUrl: assetUrl(transcriptItem.cloudPath),
     hashVerify
   };
-  fs.writeFileSync(path.join(BUILD_ROOT, 'upload-report.json'), `${JSON.stringify(report, null, 2)}\n`);
+  fs.writeFileSync(path.join(BUILD_ROOT, 'upload-report-v4.json'), `${JSON.stringify(report, null, 2)}\n`);
   console.log(JSON.stringify(report, null, 2));
 }
 

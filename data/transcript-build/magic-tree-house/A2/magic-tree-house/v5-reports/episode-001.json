@@ -1,0 +1,100 @@
+{
+  "version": "sentence-v5-whisperx-direct-segment-alignment",
+  "index": 1,
+  "level": "A2",
+  "trackId": "track-magic-tree-house-001",
+  "title": "Dinosaurs Before Dark",
+  "durationSec": 2461.597,
+  "elapsedSec": 64.258,
+  "speedX": 38.308,
+  "lineCount": 778,
+  "wordCount": 4843,
+  "meanWordScore": 0.8223,
+  "lowScoreWordCount": 115,
+  "maxGapSec": 12.878,
+  "maxLineDurationSec": 10.197,
+  "nonSpeechFallbackSegmentIndexes": [],
+  "validationErrors": [],
+  "v4Comparison": {
+    "available": true,
+    "v4LineCount": 778,
+    "v5LineCount": 778,
+    "comparedLineCount": 778,
+    "medianStartDeltaMs": -13.0,
+    "maxAbsStartDeltaMs": 4316,
+    "over500msCount": 58,
+    "over1000msCount": 28,
+    "largestStartDeltas": [
+      {
+        "line": 771,
+        "deltaMs": -4316,
+        "text": "[music]"
+      },
+      {
+        "line": 739,
+        "deltaMs": -1554,
+        "text": "\"No one's going to believe our story,\" said Jack."
+      },
+      {
+        "line": 692,
+        "deltaMs": -1491,
+        "text": "\"Jack!"
+      },
+      {
+        "line": 708,
+        "deltaMs": -1377,
+        "text": "\"And how did it take us so far away?\" said Jack."
+      },
+      {
+        "line": 381,
+        "deltaMs": 1321,
+        "text": "A letter was engraved on the medallion, a fancy M."
+      },
+      {
+        "line": 87,
+        "deltaMs": -1299,
+        "text": "Hi, Henry, shouted Annie."
+      },
+      {
+        "line": 699,
+        "deltaMs": -1281,
+        "text": "\"Annie!"
+      },
+      {
+        "line": 763,
+        "deltaMs": -1279,
+        "text": "\"Tomorrow,\" Jack said softly, \"we'll go back to the woods.\""
+      },
+      {
+        "line": 717,
+        "deltaMs": -1226,
+        "text": "\"Oh, look,\" said Jack."
+      },
+      {
+        "line": 688,
+        "deltaMs": -1196,
+        "text": "\"We're home,\" whispered Annie."
+      }
+    ]
+  },
+  "samples": [
+    {
+      "lineId": "track-magic-tree-house-001-line-1",
+      "text": "This audio program is presented by audible.com.",
+      "startMs": 241,
+      "endMs": 3619
+    },
+    {
+      "lineId": "track-magic-tree-house-001-line-390",
+      "text": "She was staring at something on the other side of the hill.",
+      "startMs": 1215201,
+      "endMs": 1217899
+    },
+    {
+      "lineId": "track-magic-tree-house-001-line-778",
+      "text": "All rights reserved.",
+      "startMs": 2451400,
+      "endMs": 2461597
+    }
+  ]
+}

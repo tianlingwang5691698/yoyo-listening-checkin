@@ -251,6 +251,45 @@ test('resolveCatalogCategories 听力计划首屏不刷新素材目录', () => {
     requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock3thirdedition', {}),
     ['unlock3thirdedition']
   );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'magictreehouse', {}),
+    []
+  );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getTaskDetail', 'magictreehouseb1', { view: 'lesson' }),
+    []
+  );
+});
+
+test('Magic Tree House 带音频快照的课程详情使用轻量上下文', async () => {
+  const calls = [];
+  const result = await requestContextEngine.prepareRequestContext({
+    action: 'getTaskDetail',
+    payload: {
+      category: 'magictreehouse',
+      view: 'lesson',
+      taskSnapshot: {
+        category: 'magictreehouse',
+        taskId: 'magic-tree-house-001',
+        audioCloudPath: 'A2/Magic Tree House/Audio/001.mp3'
+      }
+    }
+  }, {
+    refreshRuntimeCatalogs: async (force, categories) => calls.push(['refresh', force, categories]),
+    getWXContext: () => ({ OPENID: 'open-1' }),
+    getLightweightContext: async (openId) => {
+      calls.push(['lightweight', openId]);
+      return { member: { studyRole: 'student' }, child: { childId: 'child-yoyo' } };
+    },
+    ensureBootstrap: async () => {
+      calls.push(['bootstrap']);
+      return {};
+    },
+    getTodayString: () => '2026-07-15'
+  });
+
+  assert.deepEqual(calls, [['lightweight', 'open-1']]);
+  assert.equal(result.ctx.child.childId, 'child-yoyo');
 });
 
 test('resolveCatalogCategories 首页和成长热力图不刷新素材目录', () => {

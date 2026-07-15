@@ -1,5 +1,5 @@
 const { peppaTranscriptBuildStatus } = require('../transcripts/peppa_build_status');
-const { TRANSCRIPT_BUNDLE_PATHS } = require('./constants');
+const { TRANSCRIPT_BUNDLE_PATHS, STATIC_MANIFEST_ONLY_CATEGORIES } = require('./constants');
 const unlockSeriesManifests = require('../data/unlock-series-manifests.json');
 const staticCatalogManifests = require('../data/static-catalog-manifests.json');
 const peppaSeason1Sizes = require('../data/peppa-season-1-sizes');
@@ -1351,7 +1351,17 @@ function mergeCatalogDebug(...debugEntries) {
 async function refreshRuntimeCatalogs(force, categories) {
   const startedAt = Date.now();
   const now = Date.now();
-  const targetCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'song']).filter(Boolean)));
+  const requestedCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'song']).filter(Boolean)));
+  const staticMap = getStaticCatalogMap();
+  if (!runtimeCatalogs) runtimeCatalogs = staticMap;
+  const targetCategories = requestedCategories.filter((category) => !STATIC_MANIFEST_ONLY_CATEGORIES.includes(category));
+  if (!targetCategories.length) {
+    monitor.logPerf('cloudfn', 'refreshRuntimeCatalogs', Date.now() - startedAt, {
+      categories: requestedCategories.join(','),
+      mode: 'static-manifest'
+    });
+    return runtimeCatalogs;
+  }
   const hasAllRequested = runtimeCatalogs && targetCategories.every((category) => {
     const catalog = runtimeCatalogs[category];
     if (!Array.isArray(catalog)) {
@@ -1362,7 +1372,6 @@ async function refreshRuntimeCatalogs(force, categories) {
   if (!force && hasAllRequested && runtimeCatalogExpiresAt > now) {
     return runtimeCatalogs;
   }
-  const staticMap = getStaticCatalogMap();
   const entries = await Promise.all(targetCategories.map(async (category) => {
     const result = await buildCloudCatalogForCategory(category, staticMap[category] || []);
     return { category, result };

@@ -15,7 +15,17 @@ const configs = [
 
 for (const config of configs) {
   const sourcePath = path.join(ROOT, 'data', 'transcript-build', 'magic-tree-house', config.level, 'magic-tree-house', 'catalog-items.json');
-  const source = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
+  const source = JSON.parse(fs.readFileSync(sourcePath, 'utf8')).map((item) => {
+    const isV6Pilot = config.level === 'A2' && item.taskId === 'magic-tree-house-001';
+    return Object.assign({}, item, {
+      validationStatus: isV6Pilot
+        ? 'whisperx-word-stream-sentence-resegmented-asr-primary'
+        : 'whisperx-forced-aligned-asr-primary',
+      textSource: Object.assign({}, item.textSource, {
+        filePath: `_transcripts/${config.level}/magic-tree-house/${isV6Pilot ? 'tracks-v6' : 'tracks-v4'}/${item.transcriptTrackId}.json`
+      })
+    });
+  });
   if (!Array.isArray(source) || source.length !== config.count) {
     throw new Error(`expected ${config.count} Magic Tree House ${config.level} items`);
   }

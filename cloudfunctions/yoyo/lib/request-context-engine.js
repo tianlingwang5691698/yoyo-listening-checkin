@@ -1,3 +1,5 @@
+const { STATIC_MANIFEST_ONLY_CATEGORIES } = require('./constants');
+
 function hasTaskAudioSource(task) {
   return !!(task && (
     task.isPendingAsset
@@ -11,6 +13,7 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
   const knownAudioCategories = ['newconcept1', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook', 'peppa', 'song', 'unlock1', 'unlock1thirdedition', 'unlock1workbook'];
   const view = String((payload && payload.view) || '').trim();
+  const staticManifestOnly = STATIC_MANIFEST_ONLY_CATEGORIES.includes(requestedCategory);
   if (action === 'getDashboard' || action === 'getMonthHeatmap') {
     return [];
   }
@@ -25,9 +28,11 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
     return [];
   }
   if (action === 'getListeningMaterialDetail') {
+    if (staticManifestOnly) return [];
     return knownAudioCategories.includes(requestedCategory) ? [requestedCategory] : [];
   }
   if (action === 'getTaskDetail' || action === 'markTaskListened') {
+    if (staticManifestOnly) return [];
     if (action === 'getTaskDetail' && view === 'lesson' && payload && hasTaskAudioSource(payload.taskSnapshot)) {
       return [];
     }
@@ -64,6 +69,10 @@ async function prepareRequestContext(event, deps) {
     (action === 'getDashboard' && (view === 'home' || view === 'record'))
     || action === 'getListeningPlanOverview'
     || action === 'getListeningMaterialDetail'
+    || (action === 'getTaskDetail'
+      && view === 'lesson'
+      && STATIC_MANIFEST_ONLY_CATEGORIES.includes(requestedCategory)
+      && hasTaskAudioSource(payload.taskSnapshot))
     || action === 'getMonthHeatmap'
     || action === 'getFlashcardReview'
     || action === 'getDictionaryBook'

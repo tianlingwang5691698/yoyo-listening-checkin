@@ -1,6 +1,7 @@
 const CLOUD_ASSET_BASE_URL = 'https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la';
 const CLOUD_BUCKET = '796f-youshengenglish-6glk12rd6c6e719b-1419984942';
 const TRANSCRIPT_BUNDLE_TTL_MS = 5 * 60 * 1000;
+const STATIC_MANIFEST_ONLY_CATEGORIES = ['magictreehouse', 'magictreehouseb1'];
 const TRANSCRIPT_BUNDLE_PATHS = {
   newconcept1: ['_transcripts/A1/new-concept-1-us-line/bundle.json', '_transcripts/A1/new-concept-1-us/bundle.json', '_transcripts/A1/newconcept1-us/bundle.json'],
   newconcept2: ['_transcripts/A2/new-concept-2-us-line/bundle.json', '_transcripts/A2/new-concept-2-us/bundle.json', '_transcripts/A2/new-concept-2/bundle.json', '_transcripts/A2/newconcept2/bundle.json'],
@@ -64,6 +65,7 @@ module.exports = {
   CLOUD_ASSET_BASE_URL,
   CLOUD_BUCKET,
   TRANSCRIPT_BUNDLE_TTL_MS,
+  STATIC_MANIFEST_ONLY_CATEGORIES,
   TRANSCRIPT_BUNDLE_PATHS,
   STORAGE_ROOTS,
   REQUIRED_COLLECTIONS

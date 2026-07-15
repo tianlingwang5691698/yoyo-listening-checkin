@@ -1,0 +1,32 @@
+{
+  "version": "sentence-v6-whisperx-word-stream-resegmented",
+  "index": 1,
+  "trackId": "track-magic-tree-house-001",
+  "lineCount": 759,
+  "wordCount": 4843,
+  "meanWordScore": 0.8223,
+  "lowScoreWordCount": 115,
+  "validationErrors": [],
+  "v5LineCount": 778,
+  "mergedFragmentCount": 21,
+  "samples": [
+    {
+      "lineId": "track-magic-tree-house-001-line-1",
+      "text": "This audio program is presented by audible.com.",
+      "startMs": 241,
+      "endMs": 3619
+    },
+    {
+      "lineId": "track-magic-tree-house-001-line-380",
+      "text": "Annie had gone up to the hilltop.",
+      "startMs": 1203580,
+      "endMs": 1205195
+    },
+    {
+      "lineId": "track-magic-tree-house-001-line-759",
+      "text": "All rights reserved.",
+      "startMs": 2451400,
+      "endMs": 2461597
+    }
+  ]
+}

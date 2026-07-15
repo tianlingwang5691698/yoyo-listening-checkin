@@ -44,6 +44,9 @@ test('静谧图书馆听力学习包限制三栏和单按钮宽度', () => {
   assert.match(wxml, /wx:else[^>]*bindtap="loadLessonStudyPack">生成<\/button>/);
   assert.equal((wxml.match(/bindtap="toggleTranscript">展开文本/g) || []).length, 2);
   assert.equal((wxml.match(/bindtap="toggleTranscript">收起/g) || []).length, 2);
+  assert.doesNotMatch(wxml, /bindtouchstart="pauseTranscriptAutoFollow"|回到当前句|transcript-scroll|audio-transcript-scroll/);
+  assert.equal((wxml.match(/{{prevLine\.text}}/g) || []).length, 2);
+  assert.equal((wxml.match(/{{nextLine\.text}}/g) || []).length, 2);
   assert.doesNotMatch(wxml, /progress && \(progress\.transcriptVisible \|\| transcriptManualVisible\)/);
   assert.equal((wxml.match(/\? '播放' : '发音'/g) || []).length, 2);
   assert.doesNotMatch(js.match(/async loadLessonSecondaryData[\s\S]*?\n  },/)[0], /loadCachedLessonStudyPack/);

@@ -1,0 +1,31 @@
+{
+  "mode": "applied",
+  "envId": "youshengenglish-6glk12rd6c6e719b",
+  "level": "A2",
+  "uploadedCount": 29,
+  "reusedSameContentCount": 28,
+  "verifiedCount": 57,
+  "sampleHashVerifiedCount": 3,
+  "oldReferenceUnchanged": true,
+  "transcriptUrl": "https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_transcripts/A2/magic-tree-house/bundle-sentence-v4.json",
+  "hashVerify": [
+    {
+      "cloudPath": "_transcripts/A2/magic-tree-house/tracks-v4/track-magic-tree-house-001.json",
+      "localSha1": "5d9c2f8e31c3aa00b681767315531a52cbf60743",
+      "remoteSha1": "5d9c2f8e31c3aa00b681767315531a52cbf60743",
+      "matched": true
+    },
+    {
+      "cloudPath": "_transcripts/A2/magic-tree-house/tracks-v4/track-magic-tree-house-028.json",
+      "localSha1": "dcac7bb689c2627b8cd7ecfbe395a2ccbc2b4714",
+      "remoteSha1": "dcac7bb689c2627b8cd7ecfbe395a2ccbc2b4714",
+      "matched": true
+    },
+    {
+      "cloudPath": "_transcripts/A2/magic-tree-house/bundle-sentence-v4.json",
+      "localSha1": "a1144180f78a33945ef7087cec196fdf243a53ac",
+      "remoteSha1": "a1144180f78a33945ef7087cec196fdf243a53ac",
+      "matched": true
+    }
+  ]
+}
