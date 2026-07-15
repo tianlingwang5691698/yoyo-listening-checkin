@@ -2,47 +2,29 @@
   "mode": "applied",
   "envId": "youshengenglish-6glk12rd6c6e719b",
   "level": "B1",
-  "uploadedCount": 49,
-  "reusedSameContentCount": 0,
+  "uploadedCount": 25,
+  "reusedSameContentCount": 24,
   "verifiedCount": 49,
-  "sampleHashVerifiedCount": 6,
+  "sampleHashVerifiedCount": 3,
   "oldReferenceUnchanged": true,
-  "transcriptUrl": "https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_transcripts/B1/magic-tree-house/bundle-sentence-v1.json",
+  "transcriptUrl": "https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_transcripts/B1/magic-tree-house/bundle-sentence-v2.json",
   "hashVerify": [
     {
-      "cloudPath": "B1/Magic Tree House/Audio/029-christmas-in-camelot-31b48114d3.mp3",
-      "localSha1": "31b48114d35fe91a3f7c3a85b69d544e1a6ac99d",
-      "remoteSha1": "31b48114d35fe91a3f7c3a85b69d544e1a6ac99d",
+      "cloudPath": "_transcripts/B1/magic-tree-house/tracks-v2/track-magic-tree-house-029.json",
+      "localSha1": "7857ad1ec109386c653b95a881937ffd93433c85",
+      "remoteSha1": "7857ad1ec109386c653b95a881937ffd93433c85",
       "matched": true
     },
     {
-      "cloudPath": "B1/Magic Tree House/Audio/041-moonlight-on-the-magic-flute-8fa2e99caf.mp3",
-      "localSha1": "8fa2e99cafeefd0f9834e665fde5c222214085e0",
-      "remoteSha1": "8fa2e99cafeefd0f9834e665fde5c222214085e0",
+      "cloudPath": "_transcripts/B1/magic-tree-house/tracks-v2/track-magic-tree-house-052.json",
+      "localSha1": "942e10e02af2dabf09fc6c7b22a56e82a40fcb8a",
+      "remoteSha1": "942e10e02af2dabf09fc6c7b22a56e82a40fcb8a",
       "matched": true
     },
     {
-      "cloudPath": "B1/Magic Tree House/Audio/052-soccer-on-sunday-7a0fff2a05.mp3",
-      "localSha1": "7a0fff2a059921f3448e75d66dd5e79ef743935d",
-      "remoteSha1": "7a0fff2a059921f3448e75d66dd5e79ef743935d",
-      "matched": true
-    },
-    {
-      "cloudPath": "_transcripts/B1/magic-tree-house/tracks/track-magic-tree-house-029.json",
-      "localSha1": "70a773d08917466b842cc271672537c973d1b486",
-      "remoteSha1": "70a773d08917466b842cc271672537c973d1b486",
-      "matched": true
-    },
-    {
-      "cloudPath": "_transcripts/B1/magic-tree-house/tracks/track-magic-tree-house-052.json",
-      "localSha1": "43b2b4a1cf799916a861f6187e6ad82b1778cfbe",
-      "remoteSha1": "43b2b4a1cf799916a861f6187e6ad82b1778cfbe",
-      "matched": true
-    },
-    {
-      "cloudPath": "_transcripts/B1/magic-tree-house/bundle-sentence-v1.json",
-      "localSha1": "06faf9fb8d501b611276433c2104160a0f4ee78b",
-      "remoteSha1": "06faf9fb8d501b611276433c2104160a0f4ee78b",
+      "cloudPath": "_transcripts/B1/magic-tree-house/bundle-sentence-v2.json",
+      "localSha1": "1f52ac76d5647313d96f45327ccc4de836a7dc28",
+      "remoteSha1": "1f52ac76d5647313d96f45327ccc4de836a7dc28",
       "matched": true
     }
   ]

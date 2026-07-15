@@ -14,10 +14,11 @@ function readJson(fileName) {
 
 test('Magic Tree House A2 本地 28 集与真实句级时间轴完整', () => {
   const manifest = readJson('manifest.json');
-  const bundle = readJson('bundle-sentence-v1.json');
+  const bundle = readJson('bundle-sentence-v2.json');
   const report = readJson('clean-report.json');
   assert.equal(manifest.meta.level, 'A2');
   assert.equal(manifest.meta.category, 'magictreehouse');
+  assert.equal(manifest.meta.transcriptVersion, 'sentence-v2');
   assert.equal(manifest.tracks.length, 28);
   assert.equal(Object.keys(bundle).length, 28);
   assert.equal(report.validationErrorCount, 0);
@@ -38,6 +39,8 @@ test('Magic Tree House A2 本地 28 集与真实句级时间轴完整', () => {
       assert.ok(line.text.trim());
       assert.ok(line.startMs >= previousEnd);
       assert.ok(line.endMs > line.startMs);
+      assert.ok(line.endMs - line.startMs <= 45 * 1000);
+      if (previousEnd >= 0) assert.ok(line.startMs - previousEnd <= 30 * 1000);
       previousEnd = line.endMs;
     });
     assert.equal(track.lines.at(-1).endMs, Math.round(track.durationSec * 1000));
@@ -49,14 +52,15 @@ test('Magic Tree House B1 本地 24 集与真实句级时间轴完整', () => {
   const report = JSON.parse(fs.readFileSync(path.join(B1_BUILD_ROOT, 'clean-report.json'), 'utf8'));
   assert.equal(manifest.meta.level, 'B1');
   assert.equal(manifest.meta.category, 'magictreehouseb1');
+  assert.equal(manifest.meta.transcriptVersion, 'sentence-v2');
   assert.equal(manifest.tracks.length, 24);
   assert.equal(report.validationErrorCount, 0);
   assert.equal(report.officialPdfTrackCount, 24);
   manifest.tracks.forEach((item, offset) => {
     assert.equal(item.index, offset + 29);
     assert.match(item.audioCloudPath, /^B1\/Magic Tree House\/Audio\/\d{3}-[a-z0-9-]+-[a-f0-9]{10}\.mp3$/);
-    assert.match(item.transcriptTrackCloudPath, /^_transcripts\/B1\/magic-tree-house\/tracks\/track-magic-tree-house-\d{3}\.json$/);
-    const trackPath = path.join(B1_BUILD_ROOT, 'tracks', `${item.trackId}.json`);
+    assert.match(item.transcriptTrackCloudPath, /^_transcripts\/B1\/magic-tree-house\/tracks-v2\/track-magic-tree-house-\d{3}\.json$/);
+    const trackPath = path.join(B1_BUILD_ROOT, 'tracks-v2', `${item.trackId}.json`);
     const track = JSON.parse(fs.readFileSync(trackPath, 'utf8'));
     assert.ok(track.lines.length > 900);
     assert.equal(track.lines.at(-1).endMs, Math.round(track.durationSec * 1000));
@@ -97,18 +101,18 @@ test('Magic Tree House 分别在 A2、B1 显示且首屏为轻量摘要', () => 
 });
 
 test('Magic Tree House 单集文本按需加载，避免下载 B1 整包', () => {
-  const filePath = path.join(B1_BUILD_ROOT, 'tracks', 'track-magic-tree-house-050.json');
+  const filePath = path.join(B1_BUILD_ROOT, 'tracks-v2', 'track-magic-tree-house-050.json');
   const text = fs.readFileSync(filePath, 'utf8');
   const startedAt = performance.now();
   const track = JSON.parse(text);
   const parseMs = performance.now() - startedAt;
-  assert.ok(Buffer.byteLength(text) < 450 * 1024);
+  assert.ok(Buffer.byteLength(text) < 550 * 1024);
   assert.ok(parseMs < 30, `single track parse took ${parseMs}ms`);
   assert.ok(track.lines.length > 1500);
 });
 
 test('Magic Tree House bundle 解析与单集读取性能稳定', () => {
-  const bundleText = fs.readFileSync(path.join(BUILD_ROOT, 'bundle-sentence-v1.json'), 'utf8');
+  const bundleText = fs.readFileSync(path.join(BUILD_ROOT, 'bundle-sentence-v2.json'), 'utf8');
   const startedAt = performance.now();
   const bundle = JSON.parse(bundleText);
   const parseMs = performance.now() - startedAt;
@@ -116,7 +120,7 @@ test('Magic Tree House bundle 解析与单集读取性能稳定', () => {
   const track = bundle['track-magic-tree-house-014'];
   const serialized = JSON.stringify(track);
   const readMs = performance.now() - readStartedAt;
-  assert.ok(Buffer.byteLength(bundleText) < 6 * 1024 * 1024);
+  assert.ok(Buffer.byteLength(bundleText) < 7 * 1024 * 1024);
   assert.ok(parseMs < 100, `bundle parse took ${parseMs}ms`);
   assert.ok(readMs < 30, `single track read took ${readMs}ms`);
   assert.ok(Buffer.byteLength(serialized) < 300 * 1024);

@@ -2,41 +2,29 @@
   "mode": "applied",
   "envId": "youshengenglish-6glk12rd6c6e719b",
   "level": "A2",
-  "uploadedCount": 28,
-  "reusedSameContentCount": 28,
-  "verifiedCount": 56,
-  "sampleHashVerifiedCount": 5,
+  "uploadedCount": 0,
+  "reusedSameContentCount": 57,
+  "verifiedCount": 57,
+  "sampleHashVerifiedCount": 3,
   "oldReferenceUnchanged": true,
-  "transcriptUrl": "https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_transcripts/A2/magic-tree-house/bundle-sentence-v1.json",
+  "transcriptUrl": "https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_transcripts/A2/magic-tree-house/bundle-sentence-v2.json",
   "hashVerify": [
     {
-      "cloudPath": "A2/Magic Tree House/Audio/001-dinosaurs-before-dark-91c4a0bfa9.mp3",
-      "localSha1": "91c4a0bfa932788554309aec104c5be5ea4d015e",
-      "remoteSha1": "91c4a0bfa932788554309aec104c5be5ea4d015e",
+      "cloudPath": "_transcripts/A2/magic-tree-house/tracks-v2/track-magic-tree-house-001.json",
+      "localSha1": "2e77f21aadf368be0fdfbf3adab309eea811f729",
+      "remoteSha1": "2e77f21aadf368be0fdfbf3adab309eea811f729",
       "matched": true
     },
     {
-      "cloudPath": "A2/Magic Tree House/Audio/015-viking-ships-at-sunrise-8c782293c1.mp3",
-      "localSha1": "8c782293c15367a14a0e0baeac2215795b276b2c",
-      "remoteSha1": "8c782293c15367a14a0e0baeac2215795b276b2c",
+      "cloudPath": "_transcripts/A2/magic-tree-house/tracks-v2/track-magic-tree-house-028.json",
+      "localSha1": "16f99ba3809df2a85e323af91d047cd8a590b65f",
+      "remoteSha1": "16f99ba3809df2a85e323af91d047cd8a590b65f",
       "matched": true
     },
     {
-      "cloudPath": "A2/Magic Tree House/Audio/028-high-tide-in-hawaii-cb59e18359.mp3",
-      "localSha1": "cb59e183598f323765ca18d3337d81f305f79f8f",
-      "remoteSha1": "cb59e183598f323765ca18d3337d81f305f79f8f",
-      "matched": true
-    },
-    {
-      "cloudPath": "_transcripts/A2/magic-tree-house/tracks/track-magic-tree-house-001.json",
-      "localSha1": "e0907b12b3d73dfd026c69c3ba2f33fe3f3d99ea",
-      "remoteSha1": "e0907b12b3d73dfd026c69c3ba2f33fe3f3d99ea",
-      "matched": true
-    },
-    {
-      "cloudPath": "_transcripts/A2/magic-tree-house/tracks/track-magic-tree-house-028.json",
-      "localSha1": "a2e84482bda8664a5347f351334690d1364e9b9e",
-      "remoteSha1": "a2e84482bda8664a5347f351334690d1364e9b9e",
+      "cloudPath": "_transcripts/A2/magic-tree-house/bundle-sentence-v2.json",
+      "localSha1": "e8024d0c2628c0ce87a5138738da563e328ac86f",
+      "remoteSha1": "e8024d0c2628c0ce87a5138738da563e328ac86f",
       "matched": true
     }
   ]

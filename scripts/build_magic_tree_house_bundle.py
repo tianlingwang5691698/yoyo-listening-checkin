@@ -257,7 +257,7 @@ def run_whisper(audio_path, output_path, model_path, force=False):
 
 def whisper_words(asr):
     words = []
-    for segment in asr.get("transcription") or []:
+    for segment_index, segment in enumerate(asr.get("transcription") or []):
         current = None
         for item in segment.get("tokens") or []:
             raw = str(item.get("text") or "")
@@ -271,7 +271,7 @@ def whisper_words(asr):
             if starts_word and current:
                 token = clean_token(current["text"])
                 if token and current["endMs"] > current["startMs"]:
-                    words.append({"token": token, **current})
+                    words.append({"token": token, "segmentIndex": segment_index, **current})
                 current = None
             if current is None and has_alnum:
                 current = {"text": raw.strip(), "startMs": start_ms, "endMs": end_ms}
@@ -281,15 +281,57 @@ def whisper_words(asr):
         if current:
             token = clean_token(current["text"])
             if token and current["endMs"] > current["startMs"]:
-                words.append({"token": token, **current})
+                words.append({"token": token, "segmentIndex": segment_index, **current})
     return words
+
+
+def asr_segment_lines(track_id, asr, duration_ms):
+    lines = []
+    previous_end = 0
+    for segment_index, segment in enumerate(asr.get("transcription") or []):
+        text = re.sub(r"\s+", " ", str(segment.get("text") or "")).strip()
+        offsets = segment.get("offsets") or {}
+        start_ms = max(previous_end, int(offsets.get("from") or 0))
+        end_ms = min(duration_ms, max(start_ms + 1, int(offsets.get("to") or start_ms + 1)))
+        if not text_tokens(text) or start_ms >= duration_ms:
+            continue
+        lines.append({
+            "lineId": f"{track_id}-asr-{segment_index + 1}",
+            "text": text,
+            "startMs": start_ms,
+            "endMs": end_ms,
+        })
+        previous_end = end_ms
+    return lines
+
+
+def compact_match_cluster(indexes, words):
+    clusters = []
+    current = []
+    for word_index in sorted(set(indexes)):
+        if current:
+            previous_index = current[-1]
+            word_gap = word_index - previous_index
+            time_gap = int(words[word_index]["startMs"]) - int(words[previous_index]["endMs"])
+            if word_gap > 12 or time_gap > 8000:
+                clusters.append(current)
+                current = []
+        current.append(word_index)
+    if current:
+        clusters.append(current)
+    return max(clusters, key=lambda item: (len(item), -item[0]), default=[])
+
+
+def clean_official_sentence(value):
+    text = re.sub(r"(?:Demo version limitation\s*)+", "", str(value), flags=re.I)
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def align_official_sentences(track_id, sentences, asr, duration_ms):
     official = []
     line_token_counts = defaultdict(int)
     for line_index, sentence in enumerate(sentences):
-        for token in text_tokens(sentence):
+        for token in text_tokens(clean_official_sentence(sentence)):
             official.append({"token": token, "lineIndex": line_index})
             line_token_counts[line_index] += 1
     words = whisper_words(asr)
@@ -303,27 +345,69 @@ def align_official_sentences(track_id, sentences, asr, duration_ms):
     for block in matcher.get_matching_blocks():
         for offset in range(block.size):
             matched[official[block.a + offset]["lineIndex"]].append(block.b + offset)
-    lines = []
+    official_lines = []
     matched_word_indexes = set()
     previous_end = 0
     for source_index, sentence in enumerate(sentences):
-        indexes = sorted(set(matched.get(source_index) or []))
+        sentence = clean_official_sentence(sentence)
+        indexes = compact_match_cluster(matched.get(source_index) or [], words)
         expected = line_token_counts[source_index]
         minimum = 1 if expected <= 2 else max(2, math.ceil(expected * 0.35))
         if len(indexes) < minimum:
             continue
         start_ms = max(previous_end, int(words[indexes[0]]["startMs"]))
         end_ms = min(duration_ms, max(start_ms + 1, int(words[indexes[-1]]["endMs"])))
-        if start_ms >= duration_ms:
+        if not sentence or start_ms >= duration_ms or end_ms - start_ms > 45000:
             continue
-        lines.append({
-            "lineId": f"{track_id}-line-{len(lines) + 1}",
+        official_lines.append({
+            "lineId": "",
             "text": sentence,
             "startMs": start_ms,
             "endMs": end_ms,
             "sourceLineIndex": source_index + 1,
         })
         matched_word_indexes.update(indexes)
+        previous_end = end_ms
+
+    # Official PDFs in this source set contain demo-watermark gaps and some
+    # missing pages. Fill those uncovered time ranges with the original
+    # Whisper segments instead of stretching a neighbouring PDF sentence.
+    fallback_lines = []
+    official_cursor = 0
+    for segment in asr_segment_lines(track_id, asr, duration_ms):
+        midpoint = (segment["startMs"] + segment["endMs"]) // 2
+        while official_cursor < len(official_lines) and official_lines[official_cursor]["endMs"] <= midpoint:
+            official_cursor += 1
+        if official_cursor < len(official_lines):
+            active = official_lines[official_cursor]
+            if active["startMs"] <= midpoint < active["endMs"]:
+                continue
+        previous_official_end = official_lines[official_cursor - 1]["endMs"] if official_cursor else 0
+        next_official_start = official_lines[official_cursor]["startMs"] if official_cursor < len(official_lines) else duration_ms
+        start_ms = max(segment["startMs"], previous_official_end)
+        end_ms = min(segment["endMs"], next_official_start)
+        if end_ms <= start_ms:
+            continue
+        fallback_lines.append({
+            **segment,
+            "startMs": start_ms,
+            "endMs": end_ms,
+        })
+
+    lines = []
+    previous_end = 0
+    for line in sorted(official_lines + fallback_lines, key=lambda item: (item["startMs"], item["endMs"])):
+        start_ms = max(previous_end, int(line["startMs"]))
+        end_ms = min(duration_ms, max(start_ms + 1, int(line["endMs"])))
+        if start_ms >= duration_ms or end_ms <= start_ms:
+            continue
+        normalized = dict(line)
+        normalized.update({
+            "lineId": f"{track_id}-line-{len(lines) + 1}",
+            "startMs": start_ms,
+            "endMs": end_ms,
+        })
+        lines.append(normalized)
         previous_end = end_ms
     if lines:
         lines[-1]["endMs"] = duration_ms
@@ -335,26 +419,15 @@ def align_official_sentences(track_id, sentences, asr, duration_ms):
         "matchedAsrWordCount": len(matched_word_indexes),
         "asrWordCoverage": round(len(matched_word_indexes) / max(1, len(words)), 4),
         "officialTokenCoverage": round(len(matched_word_indexes) / max(1, len(official)), 4),
+        "officialLineCount": sum(1 for line in lines if line.get("sourceLineIndex")),
+        "asrPatchLineCount": sum(1 for line in lines if not line.get("sourceLineIndex")),
     }
 
 
 def asr_sentence_lines(track_id, asr, duration_ms):
-    lines = []
-    previous_end = 0
-    for segment in asr.get("transcription") or []:
-        text = re.sub(r"\s+", " ", str(segment.get("text") or "")).strip()
-        offsets = segment.get("offsets") or {}
-        start_ms = max(previous_end, int(offsets.get("from") or 0))
-        end_ms = min(duration_ms, max(start_ms + 1, int(offsets.get("to") or start_ms + 1)))
-        if not text or start_ms >= duration_ms:
-            continue
-        lines.append({
-            "lineId": f"{track_id}-line-{len(lines) + 1}",
-            "text": text,
-            "startMs": start_ms,
-            "endMs": end_ms,
-        })
-        previous_end = end_ms
+    lines = asr_segment_lines(track_id, asr, duration_ms)
+    for index, line in enumerate(lines):
+        line["lineId"] = f"{track_id}-line-{index + 1}"
     if lines:
         lines[-1]["endMs"] = duration_ms
     return lines
@@ -372,8 +445,12 @@ def validate_lines(lines, duration_ms):
             errors.append(f"line {index}: empty text")
         if start_ms < previous_end:
             errors.append(f"line {index}: overlaps previous line")
+        if previous_end >= 0 and start_ms - previous_end > 30000:
+            errors.append(f"line {index}: uncovered gap exceeds 30s ({start_ms - previous_end}ms)")
         if start_ms < 0 or end_ms <= start_ms or end_ms > duration_ms:
             errors.append(f"line {index}: invalid range {start_ms}-{end_ms}/{duration_ms}")
+        if end_ms - start_ms > 45000:
+            errors.append(f"line {index}: duration exceeds 45s ({end_ms - start_ms}ms)")
         previous_end = end_ms
     if int(lines[-1]["endMs"]) != duration_ms:
         errors.append("last line does not end at audio duration")
@@ -424,19 +501,21 @@ def build_one(meta, model_path, force_asr=False):
         pdf_pages = pdf_page_count(meta["pdfPath"])
         alignment = align_official_sentences(meta["trackId"], official_sentences(pdf_text), asr, meta["durationMs"])
         lines = alignment["lines"]
-        source = "official-pdf-plus-whisper-small.en-word-timestamps"
+        source = "official-pdf-plus-whisper-small.en-segment-backbone"
         text_source = str(meta["pdfPath"])
         validation_status = "official-pdf-aligned-candidate"
     else:
+        lines = asr_sentence_lines(meta["trackId"], asr, meta["durationMs"])
         alignment = {
             "officialTokenCount": 0,
             "asrWordCount": len(whisper_words(asr)),
             "matchedAsrWordCount": 0,
             "asrWordCoverage": 0,
             "officialTokenCoverage": 0,
+            "officialLineCount": 0,
+            "asrPatchLineCount": len(lines),
         }
-        lines = asr_sentence_lines(meta["trackId"], asr, meta["durationMs"])
-        source = "whisper-small.en-word-timestamps"
+        source = "whisper-small.en-segment-timestamps"
         text_source = "ASR fallback: supplied #17 PDF is Sea Monsters and was rejected"
         validation_status = "asr-only-missing-correct-pdf-candidate"
     errors = validate_lines(lines, meta["durationMs"])
@@ -453,7 +532,14 @@ def build_one(meta, model_path, force_asr=False):
         "textSource": text_source,
         "durationSec": round(meta["durationSec"], 3),
         "lines": lines,
+        "scriptPatches": ([{
+            "source": "whisper.cpp-small.en",
+            "reason": "official PDF has unmatched or missing audio ranges",
+            "lineCount": alignment["asrPatchLineCount"],
+        }] if alignment["asrPatchLineCount"] else []),
     }
+    durations = [(line["endMs"] - line["startMs"]) / 1000 for line in lines]
+    gaps = [(lines[index]["startMs"] - lines[index - 1]["endMs"]) / 1000 for index in range(1, len(lines))]
     manifest_item = {
         "index": index,
         "level": meta["level"],
@@ -474,6 +560,10 @@ def build_one(meta, model_path, force_asr=False):
         "matchedAsrWordCount": alignment["matchedAsrWordCount"],
         "asrWordCoverage": alignment["asrWordCoverage"],
         "officialTokenCoverage": alignment["officialTokenCoverage"],
+        "officialLineCount": alignment["officialLineCount"],
+        "asrPatchLineCount": alignment["asrPatchLineCount"],
+        "maxLineDurationSec": round(max(durations, default=0), 3),
+        "maxGapSec": round(max(gaps, default=0), 3),
         "validationStatus": validation_status,
         "validationErrors": errors,
         "asrPath": str(asr_path),
@@ -486,7 +576,7 @@ def build_one(meta, model_path, force_asr=False):
 
 def load_existing_level(level):
     root = OUT_ROOT / level / "magic-tree-house"
-    bundle_path = root / "bundle-sentence-v1.json"
+    bundle_path = root / "bundle-sentence-v2.json"
     manifest_path = root / "manifest.json"
     bundle = json.loads(bundle_path.read_text(encoding="utf-8")) if bundle_path.exists() else {}
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {"meta": {}, "tracks": []}
@@ -497,8 +587,8 @@ def write_level_outputs(level, bundle, items):
     root = OUT_ROOT / level / "magic-tree-house"
     tracks = [items[index] for index in sorted(items)]
     expected = list(range(1, 29)) if level == "A2" else list(range(29, 53))
-    transcript_cloud_path = f"_transcripts/{level}/magic-tree-house/bundle-sentence-v1.json"
-    transcript_track_root = f"_transcripts/{level}/magic-tree-house/tracks"
+    transcript_cloud_path = f"_transcripts/{level}/magic-tree-house/bundle-sentence-v2.json"
+    transcript_track_root = f"_transcripts/{level}/magic-tree-house/tracks-v2"
     manifest = {
         "meta": {
             "level": level,
@@ -512,7 +602,8 @@ def write_level_outputs(level, bundle, items):
             "expectedIndexes": expected,
             "expectedTrackCount": len(expected),
             "asrModel": "whisper.cpp-small.en",
-            "timing": "real-whisper-token-timestamps-no-duration-proportional-allocation",
+            "transcriptVersion": "sentence-v2",
+            "timing": "whisper-segment-backbone-with-official-pdf-text-no-duration-proportional-allocation",
         },
         "tracks": tracks,
     }
@@ -551,9 +642,13 @@ def write_level_outputs(level, bundle, items):
         "lineCount": sum(item["lineCount"] for item in tracks),
         "durationSec": round(sum(item["durationSec"] for item in tracks), 3),
         "audioBytes": sum(item["size"] for item in tracks),
+        "officialLineCount": sum(item.get("officialLineCount", 0) for item in tracks),
+        "asrPatchLineCount": sum(item.get("asrPatchLineCount", 0) for item in tracks),
+        "maxLineDurationSec": max((item.get("maxLineDurationSec", 0) for item in tracks), default=0),
+        "maxGapSec": max((item.get("maxGapSec", 0) for item in tracks), default=0),
         "validationErrorCount": len(errors),
         "validationErrors": errors,
-        "timing": "real-whisper-token-timestamps-no-duration-proportional-allocation",
+        "timing": "whisper-segment-backbone-with-official-pdf-text-no-duration-proportional-allocation",
     }
     samples = []
     if tracks:
@@ -569,9 +664,9 @@ def write_level_outputs(level, bundle, items):
                 "lastLine": lines[-1] if lines else None,
                 "lastLineEndsAtDuration": bool(lines) and lines[-1]["endMs"] == round(item["durationSec"] * 1000),
             })
-    write_json(root / "bundle-sentence-v1.json", bundle)
+    write_json(root / "bundle-sentence-v2.json", bundle)
     for item in tracks:
-        write_json(root / "tracks" / f"{item['trackId']}.json", bundle[item["trackId"]])
+        write_json(root / "tracks-v2" / f"{item['trackId']}.json", bundle[item["trackId"]])
     write_json(root / "manifest.json", manifest)
     write_json(root / "catalog-items.json", catalog)
     write_json(root / "clean-report.json", report)
@@ -645,7 +740,8 @@ def main():
         state = level_state[meta["level"]]
         state["bundle"][meta["trackId"]] = track
         state["items"][meta["index"]] = manifest_item
-        write_level_outputs(meta["level"], state["bundle"], state["items"])
+        if all(item["trackId"] in state["bundle"] for item in state["items"].values()):
+            write_level_outputs(meta["level"], state["bundle"], state["items"])
         status = "PASS" if not manifest_item["validationErrors"] else "REVIEW"
         print(
             f"{status} {position}/{len(selected)} episode={meta['index']:02d} level={meta['level']} "

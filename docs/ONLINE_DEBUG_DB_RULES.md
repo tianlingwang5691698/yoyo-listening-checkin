@@ -86,6 +86,15 @@
 
 ## 已知案例
 
+### 2026-07-15 Magic Tree House 拖拽后文本仍错位
+
+1. 现象：课程播放器拖拽已正确 seek，但 Magic Tree House 部分集数仍显示旧句或跨越数分钟不切换。
+2. 账号：不限账号。
+3. 查询：`pages/lesson.changeAudioProgress -> getTaskTranscript -> _transcripts/<level>/magic-tree-house/tracks/*`；旧 v1 第 36 集存在 745.9 秒空档，第 48 集单行覆盖 639.3 秒。
+4. 结论：PDF 缺页及 `Demo version limitation` 水印使全局文本匹配跳过大段音频；页面又按下一句开始时间延续上一句，拖拽逻辑正常但时间轴数据错误。
+5. 修复：以 Whisper 原始分段时间为骨架重建 52 集 v2，PDF 只替换成功匹配正文，缺失区记录为 ASR patch；页面按 `endMs` 结束当前句。v2 使用新路径增量上传，v1 保留。
+6. 是否需要发版：v2 目录已部署云函数并立即生效；页面空档显示修复需重新发布小程序。
+
 ### 2026-07-13 Pre A1 Songs 同时显示可进入和未开放
 
 1. 现象：音频页 Pre A1 的 Songs 左侧显示“可进入”，右侧显示“未开放”，点击不能进入。

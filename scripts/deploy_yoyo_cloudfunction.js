@@ -7,6 +7,10 @@ const appConfig = require('../app-config');
 
 const ROOT = path.join(__dirname, '..');
 const credentialPath = path.join(ROOT, 'SecretKey.csv');
+const sourceRootArg = process.argv.find((item) => item.startsWith('--source-root='));
+const sourceRoot = sourceRootArg ? path.resolve(sourceRootArg.slice('--source-root='.length)) : ROOT;
+const functionRootPath = path.join(sourceRoot, 'cloudfunctions');
+const functionPath = path.join(functionRootPath, 'yoyo');
 
 function readCredential() {
   if (!fs.existsSync(credentialPath)) return {};
@@ -33,7 +37,7 @@ async function main() {
     statusBefore: before.Status || '',
     runtime: before.Runtime || 'Nodejs16.13',
     modifiedBefore: before.ModTime || '',
-    functionPath: path.join(ROOT, 'cloudfunctions', 'yoyo')
+    functionPath
   };
   if (!apply) {
     console.log(JSON.stringify(preflight, null, 2));
@@ -47,8 +51,8 @@ async function main() {
       installDependency: true,
       isWaitInstall: true
     },
-    functionRootPath: path.join(ROOT, 'cloudfunctions'),
-    functionPath: path.join(ROOT, 'cloudfunctions', 'yoyo')
+    functionRootPath,
+    functionPath
   });
   const after = await manager.functions.getFunctionDetail('yoyo');
   console.log(JSON.stringify({

@@ -2405,12 +2405,28 @@ Page({
       return;
     }
     let activeIndex = lines.findIndex((line, index) => {
-      const next = lines[index + 1];
-      const nextStart = next ? next.startMs : Number.POSITIVE_INFINITY;
-      return timeMs >= line.startMs && timeMs < nextStart;
+      const endMs = Math.max(Number(line.endMs || 0), Number(line.startMs || 0) + 1);
+      return timeMs >= line.startMs && timeMs < endMs;
     });
     if (activeIndex < 0) {
-      activeIndex = timeMs < lines[0].startMs ? 0 : lines.length - 1;
+      if (timeMs < lines[0].startMs) {
+        activeIndex = 0;
+      } else if (timeMs >= lines[lines.length - 1].endMs) {
+        activeIndex = lines.length - 1;
+      } else {
+        this.setData({
+          currentTimeMs: timeMs,
+          activeLineIndex: -1,
+          activeLineId: '',
+          activeWordIndex: -1,
+          transcriptScrollIntoView: '',
+          prevLine: null,
+          activeLine: null,
+          activeWord: null,
+          nextLine: null
+        });
+        return;
+      }
     }
     const activeLine = activeIndex >= 0 ? lines[activeIndex] : null;
     const prevLine = activeIndex > 0 ? lines[activeIndex - 1] : null;

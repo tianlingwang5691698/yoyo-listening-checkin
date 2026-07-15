@@ -5,10 +5,14 @@
   "missingIndexes": [],
   "officialPdfTrackCount": 27,
   "asrFallbackTrackCount": 1,
-  "lineCount": 23073,
+  "lineCount": 24565,
   "durationSec": 69004.665,
   "audioBytes": 940007917,
+  "officialLineCount": 22311,
+  "asrPatchLineCount": 2254,
+  "maxLineDurationSec": 29.17,
+  "maxGapSec": 28.0,
   "validationErrorCount": 0,
   "validationErrors": [],
-  "timing": "real-whisper-token-timestamps-no-duration-proportional-allocation"
+  "timing": "whisper-segment-backbone-with-official-pdf-text-no-duration-proportional-allocation"
 }

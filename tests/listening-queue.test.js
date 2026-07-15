@@ -156,6 +156,8 @@ test('Magic Tree House 拖拽期间预览文本并在 seek 落点重新同步', 
   assert.match(lessonSource, /onSeeked\(\(\) => \{[\s\S]*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
   assert.match(lessonSource, /changingAudioProgress\(event\)[\s\S]*this\.audioProgressDragging = true;\s*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
   assert.match(lessonSource, /changeAudioProgress\(event\)[\s\S]*this\.innerAudioContext\.seek\(currentSeconds\)[\s\S]*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
+  assert.match(lessonSource, /const endMs = Math\.max\(Number\(line\.endMs/);
+  assert.match(lessonSource, /activeLineIndex: -1,[\s\S]*activeLine: null/);
 });
 
 test('拖拽不计有效听力，实际播放达到九成才完成一遍', () => {

@@ -22,7 +22,7 @@ test('听力页与计划页 fallback 只在 A1 放置 Peppa', () => {
     assert.doesNotMatch(a2Block, /category: 'littlebear'/);
     assert.match(a1Block, /category: 'peppa'/);
     assert.doesNotMatch(a2Block, /category: 'peppa'/);
-    assert.match(source, /listeningPlanOverviewSnapshotV5/);
+    assert.match(source, /listeningPlanOverviewSnapshotV6/);
   });
 });
 

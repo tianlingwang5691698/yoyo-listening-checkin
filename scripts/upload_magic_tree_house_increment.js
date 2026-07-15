@@ -24,7 +24,7 @@ const CONFIG = CONFIGS[LEVEL];
 if (!CONFIG) throw new Error(`unsupported level: ${LEVEL}`);
 const BUILD_ROOT = path.join(ROOT, 'data', 'transcript-build', 'magic-tree-house', LEVEL, 'magic-tree-house');
 const MANIFEST_PATH = path.join(BUILD_ROOT, 'manifest.json');
-const BUNDLE_PATH = path.join(BUILD_ROOT, 'bundle-sentence-v1.json');
+const BUNDLE_PATH = path.join(BUILD_ROOT, 'bundle-sentence-v2.json');
 const REPORT_PATH = path.join(BUILD_ROOT, 'clean-report.json');
 const CREDENTIAL_PATH = path.join(ROOT, 'SecretKey.csv');
 const REFERENCE_PATH = CONFIG.referencePath;
@@ -63,6 +63,16 @@ async function requestStatus(cloudPath) {
   } catch (error) {
     return 0;
   }
+}
+
+async function waitForAvailable(cloudPath, attempts = 10) {
+  let status = 0;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    status = await requestStatus(cloudPath);
+    if (status >= 200 && status < 400) return status;
+    if (attempt < attempts) await wait(attempt * 500);
+  }
+  return status;
 }
 
 function readCredential() {
@@ -135,7 +145,7 @@ async function main() {
     sha1: sha1File(BUNDLE_PATH)
   };
   const transcriptTrackItems = manifest.tracks.map((track) => {
-    const localPath = path.join(BUILD_ROOT, 'tracks', `${track.trackId}.json`);
+    const localPath = path.join(BUILD_ROOT, 'tracks-v2', `${track.trackId}.json`);
     return {
       type: 'transcript-track',
       title: `${track.title} transcript`,
@@ -144,9 +154,9 @@ async function main() {
       sha1: sha1File(localPath)
     };
   });
-  // A2's first immutable bundle has already shipped; direct track files are a
-  // new additive performance path and must not replace that legacy object.
-  const items = audioItems.concat(transcriptTrackItems, LEVEL === 'A2' ? [] : [transcriptItem]);
+  // v2 uses new immutable paths for both levels; v1 remains available to old
+  // catalog releases and is never overwritten.
+  const items = audioItems.concat(transcriptTrackItems, [transcriptItem]);
   if (items.some((item) => !fs.existsSync(item.localPath))) throw new Error('local upload file missing');
   if (new Set(items.map((item) => item.cloudPath)).size !== items.length) throw new Error('duplicate cloud path');
 
@@ -157,6 +167,10 @@ async function main() {
   const existingSame = [];
   const existingDifferent = [];
   for (const item of checks.filter((entry) => entry.status >= 200 && entry.status < 400)) {
+    if (item.type === 'audio' && item.cloudPath.includes(item.sha1.slice(0, 10))) {
+      existingSame.push(item);
+      continue;
+    }
     const remote = await requestBuffer(item.cloudPath);
     const remoteSha1 = sha1Buffer(remote.body);
     if (remoteSha1 === item.sha1) existingSame.push(item);
@@ -170,7 +184,7 @@ async function main() {
     level: LEVEL,
     totalCount: items.length,
     audioCount: audioItems.length,
-    transcriptCount: transcriptTrackItems.length + (LEVEL === 'A2' ? 0 : 1),
+    transcriptCount: transcriptTrackItems.length + 1,
     uploadCount: uploadItems.length,
     existingSameContentCount: existingSame.length,
     existingDifferentContentCount: existingDifferent.length,
@@ -195,16 +209,16 @@ async function main() {
     console.log(`${completed}/${uploadItems.length} ${item.cloudPath}`);
     return result;
   });
-  const verify = await mapLimit(items, 8, async (item) => ({ cloudPath: item.cloudPath, status: await requestStatus(item.cloudPath) }));
+  const verify = await mapLimit(items, 8, async (item) => ({ cloudPath: item.cloudPath, status: await waitForAvailable(item.cloudPath) }));
   const failed = verify.filter((item) => item.status < 200 || item.status >= 400);
   if (failed.length) throw new Error(`post-upload HEAD failed: ${failed.map((item) => item.cloudPath).join(' | ')}`);
+  const uploadedAudioItems = uploadItems.filter((item) => item.type === 'audio');
   const sampleItems = [
-    audioItems[0],
-    audioItems[Math.floor(audioItems.length / 2)],
-    audioItems[audioItems.length - 1],
+    uploadedAudioItems[0],
+    uploadedAudioItems[uploadedAudioItems.length - 1],
     transcriptTrackItems[0],
     transcriptTrackItems[transcriptTrackItems.length - 1]
-  ].concat(LEVEL === 'A2' ? [] : [transcriptItem]);
+  ].filter(Boolean).concat([transcriptItem]);
   const hashVerify = [];
   for (const item of sampleItems) {
     const remote = await requestBuffer(item.cloudPath);
