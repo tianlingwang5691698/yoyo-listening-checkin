@@ -2,199 +2,214 @@
   <view class="library-speaking-header">
     <view>
       <view class="library-speaking-kicker">{{texts.corner}}</view>
-      <view class="library-speaking-title">{{texts.title}}</view>
-      <view class="library-speaking-copy">{{texts.copy}}</view>
+      <view class="library-speaking-title">{{viewMode === 'home' ? texts.homeTitle : texts.practiceTitle}}</view>
+      <view class="library-speaking-copy">{{viewMode === 'home' ? texts.homeCopy : texts.copy}}</view>
     </view>
     <view class="library-speaking-seal"><view>VOICE</view><text>ROOM</text></view>
   </view>
 
-  <block wx:if="{{activeExercise && exercises.length}}">
-    <view class="library-prompt-sheet {{recording ? 'is-muted' : ''}}">
-      <view class="library-sheet-rule"></view>
-      <view class="library-prompt-head">
+  <block wx:if="{{viewMode === 'home'}}">
+    <view class="library-speaking-entry-sheet">
+      <view class="library-entry-rule"></view>
+      <view class="library-entry-top">
         <view>
-          <view class="library-prompt-label">{{texts.today}}</view>
-          <view class="library-prompt-text">{{activeExercise.prompt}}</view>
+          <view class="library-entry-label">{{texts.mainPractice}}</view>
+          <view class="library-entry-title">{{texts.gradedRepeat}}</view>
         </view>
-        <button class="library-listen-button {{questionPlaying ? 'is-playing' : ''}} {{questionLoading ? 'is-loading' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? texts.preparing : (questionPlaying ? texts.stopPlay : texts.listen)}}</button>
+        <view class="library-entry-index">{{selectedLevel}}</view>
       </view>
-      <view class="library-prompt-meta">{{activeExercise.title}} · {{activeExercise.meta}}</view>
-      <view class="library-playback-slot {{questionPlaying || questionLoading ? 'is-active' : ''}}">
-        <view class="library-slot-bar is-one"></view>
-        <view class="library-slot-bar is-two"></view>
-        <view class="library-slot-bar is-three"></view>
-        <view class="library-slot-bar is-four"></view>
-        <view class="library-slot-bar is-five"></view>
+
+      <view class="library-level-tabs">
+        <view class="library-level-tab {{selectedLevel === item.id ? 'is-active' : ''}}" wx:for="{{levels}}" wx:key="id" data-level="{{item.id}}" bindtap="selectSpeakingLevel">{{item.label}}</view>
       </view>
+
+      <view class="library-entry-desk">
+        <view class="library-entry-grain"></view>
+        <view class="library-entry-scale">
+          <view class="library-entry-tick tick-a"></view>
+          <view class="library-entry-tick tick-b"></view>
+          <view class="library-entry-tick tick-c"></view>
+          <view class="library-entry-tick tick-d"></view>
+          <view class="library-entry-tick tick-e"></view>
+          <view class="library-entry-tick tick-f"></view>
+        </view>
+        <view class="library-entry-mic">
+          <view class="library-entry-mic-head"></view>
+          <view class="library-entry-mic-yoke"></view>
+          <view class="library-entry-mic-stem"></view>
+        </view>
+        <view class="library-entry-wave">
+          <view></view><view></view><view></view><view></view><view></view>
+        </view>
+      </view>
+
+      <view class="library-entry-meta">{{texts.selectedLevel}} · {{selectedLevel}}</view>
+      <button class="library-entry-button" hover-class="is-pressed" bindtap="openRepeatPractice">{{texts.startRepeat}}</button>
     </view>
 
-    <view class="library-task-tabs {{recording ? 'is-muted' : ''}}">
-      <view class="library-task-tab {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
-        <view class="library-tab-title">{{item.title}}</view>
-        <view class="library-tab-meta">{{item.meta}}</view>
+    <view class="library-more-label">{{texts.morePractice}}</view>
+    <view class="library-ielts-row" hover-class="is-pressed" bindtap="openIeltsSpeaking">
+      <view class="library-ielts-spine"></view>
+      <view class="library-ielts-copy">
+        <view class="library-ielts-title">{{texts.ieltsSpeaking}}</view>
+        <view class="library-ielts-meta">Part 1 · Part 2 · Part 3</view>
       </view>
-    </view>
-
-    <view class="library-record-desk {{recording ? 'is-recording' : ''}} {{submitting ? 'is-submitting' : ''}} {{tempFilePath ? 'is-ready' : ''}}">
-      <view class="library-desk-grain"></view>
-      <view class="library-breath-scale">
-        <view class="library-tick tick-1"></view>
-        <view class="library-tick tick-2"></view>
-        <view class="library-tick tick-3"></view>
-        <view class="library-tick tick-4"></view>
-        <view class="library-tick tick-5"></view>
-        <view class="library-tick tick-6"></view>
-        <view class="library-tick tick-7"></view>
-        <view class="library-tick tick-8"></view>
-        <view class="library-tick tick-9"></view>
-        <view class="library-tick tick-10"></view>
-        <view class="library-tick tick-11"></view>
-        <view class="library-tick tick-12"></view>
-      </view>
-      <view class="library-brass-mic">
-        <view class="library-mic-head"></view>
-        <view class="library-mic-yoke"></view>
-        <view class="library-mic-stem"></view>
-        <view class="library-mic-foot"></view>
-      </view>
-      <view class="library-voice-slot">
-        <view class="library-voice-line is-a"></view>
-        <view class="library-voice-line is-b"></view>
-        <view class="library-voice-line is-c"></view>
-        <view class="library-voice-line is-d"></view>
-        <view class="library-voice-line is-e"></view>
-      </view>
-      <view class="library-proof-ruler" wx:if="{{submitting}}"></view>
-      <button class="library-hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">
-        {{recording ? texts.release : (submitting ? texts.scoring : texts.hold)}}
-      </button>
-    </view>
-
-    <view class="library-record-note {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">
-      {{submitting ? texts.scoring : (recording ? texts.recording : (tempFilePath ? (texts.recorded + recordDurationText) : texts.start))}}
-    </view>
-    <view class="library-error-note" wx:if="{{errorText}}">{{errorText}}</view>
-
-    <view class="library-score-sheet {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
-      <view class="library-score-top">
-        <view>
-          <view class="library-score-label">{{texts.result}}</view>
-          <view class="library-score-value">{{result.score || 0}}{{texts.scoreUnit}}</view>
-        </view>
-        <view class="library-score-stamp">{{texts.note}}</view>
-      </view>
-      <view class="library-score-rulers">
-        <view class="library-score-ruler">
-          <view class="library-ruler-head">
-            <view class="library-ruler-label">{{texts.accuracy}}</view>
-            <view class="library-ruler-value">{{result.accuracy || 0}}</view>
-          </view>
-          <view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.accuracy || 0}}%;"></view></view>
-        </view>
-        <view class="library-score-ruler">
-          <view class="library-ruler-head">
-            <view class="library-ruler-label">{{texts.fluency}}</view>
-            <view class="library-ruler-value">{{result.fluency || 0}}</view>
-          </view>
-          <view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.fluency || 0}}%;"></view></view>
-        </view>
-        <view class="library-score-ruler">
-          <view class="library-ruler-head">
-            <view class="library-ruler-label">{{texts.completeness}}</view>
-            <view class="library-ruler-value">{{result.completion || 0}}</view>
-          </view>
-          <view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.completion || 0}}%;"></view></view>
-        </view>
-      </view>
+      <view class="library-ielts-state">{{texts.comingSoon}}</view>
+      <view class="library-ielts-arrow">›</view>
     </view>
   </block>
 
-  <view class="library-speaking-empty" wx:else>
-    <view class="library-empty-box">
-      <view class="library-empty-mic"></view>
+  <block wx:else>
+    <view class="library-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
+
+    <block wx:if="{{activeExercise && exercises.length}}">
+      <view class="library-prompt-sheet {{recording ? 'is-muted' : ''}}">
+        <view class="library-sheet-rule"></view>
+        <view class="library-prompt-head">
+          <view>
+            <view class="library-prompt-label">{{texts.today}}</view>
+            <view class="library-prompt-text">{{activeExercise.prompt}}</view>
+          </view>
+          <button class="library-listen-button {{questionPlaying ? 'is-playing' : ''}} {{questionLoading ? 'is-loading' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? texts.preparing : (questionPlaying ? texts.stopPlay : texts.listen)}}</button>
+        </view>
+        <view class="library-prompt-meta">{{selectedLevel}} · {{activeExercise.title}} · {{activeExercise.meta}}</view>
+        <view class="library-playback-slot {{questionPlaying || questionLoading ? 'is-active' : ''}}">
+          <view class="library-slot-bar is-one"></view>
+          <view class="library-slot-bar is-two"></view>
+          <view class="library-slot-bar is-three"></view>
+          <view class="library-slot-bar is-four"></view>
+          <view class="library-slot-bar is-five"></view>
+        </view>
+      </view>
+
+      <view class="library-task-tabs {{recording ? 'is-muted' : ''}}">
+        <view class="library-task-tab {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
+          <view class="library-tab-title">{{item.title}}</view>
+          <view class="library-tab-meta">{{item.meta}}</view>
+        </view>
+      </view>
+
+      <view class="library-record-desk {{recording ? 'is-recording' : ''}} {{submitting ? 'is-submitting' : ''}} {{tempFilePath ? 'is-ready' : ''}}">
+        <view class="library-desk-grain"></view>
+        <view class="library-breath-scale">
+          <view class="library-tick tick-1"></view><view class="library-tick tick-2"></view><view class="library-tick tick-3"></view><view class="library-tick tick-4"></view><view class="library-tick tick-5"></view><view class="library-tick tick-6"></view><view class="library-tick tick-7"></view><view class="library-tick tick-8"></view><view class="library-tick tick-9"></view><view class="library-tick tick-10"></view><view class="library-tick tick-11"></view><view class="library-tick tick-12"></view>
+        </view>
+        <view class="library-brass-mic">
+          <view class="library-mic-head"></view><view class="library-mic-yoke"></view><view class="library-mic-stem"></view><view class="library-mic-foot"></view>
+        </view>
+        <view class="library-voice-slot">
+          <view class="library-voice-line is-a"></view><view class="library-voice-line is-b"></view><view class="library-voice-line is-c"></view><view class="library-voice-line is-d"></view><view class="library-voice-line is-e"></view>
+        </view>
+        <view class="library-proof-ruler" wx:if="{{submitting}}"></view>
+        <button class="library-hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">{{recording ? texts.release : (submitting ? texts.scoring : texts.hold)}}</button>
+      </view>
+
+      <view class="library-record-note {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">{{submitting ? texts.scoring : (recording ? texts.recording : (tempFilePath ? (texts.recorded + recordDurationText) : texts.start))}}</view>
+      <view class="library-error-note" wx:if="{{errorText}}">{{errorText}}</view>
+
+      <view class="library-score-sheet {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
+        <view class="library-score-top">
+          <view><view class="library-score-label">{{texts.result}}</view><view class="library-score-value">{{result.score || 0}}{{texts.scoreUnit}}</view></view>
+          <view class="library-score-stamp">{{texts.note}}</view>
+        </view>
+        <view class="library-score-rulers">
+          <view class="library-score-ruler"><view class="library-ruler-head"><view class="library-ruler-label">{{texts.accuracy}}</view><view class="library-ruler-value">{{result.accuracy || 0}}</view></view><view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.accuracy || 0}}%;"></view></view></view>
+          <view class="library-score-ruler"><view class="library-ruler-head"><view class="library-ruler-label">{{texts.fluency}}</view><view class="library-ruler-value">{{result.fluency || 0}}</view></view><view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.fluency || 0}}%;"></view></view></view>
+          <view class="library-score-ruler"><view class="library-ruler-head"><view class="library-ruler-label">{{texts.completeness}}</view><view class="library-ruler-value">{{result.completion || 0}}</view></view><view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.completion || 0}}%;"></view></view></view>
+        </view>
+      </view>
+    </block>
+
+    <view class="library-speaking-empty" wx:else>
+      <view class="library-empty-box"><view class="library-empty-mic"></view></view>
+      <view class="library-empty-title">{{texts.empty}}</view>
     </view>
-    <view class="library-empty-title">{{texts.empty}}</view>
-  </view>
+  </block>
 </view>
 
 <view class="theme-{{theme}} language-{{language}} page-shell speaking-page" wx:else>
   <view class="speaking-header">
-    <view class="speaking-title">{{texts.title}}</view>
-    <view class="speaking-copy">{{texts.copy}}</view>
+    <view class="speaking-title">{{viewMode === 'home' ? texts.homeTitle : texts.practiceTitle}}</view>
+    <view class="speaking-copy">{{viewMode === 'home' ? texts.homeCopy : texts.copy}}</view>
   </view>
 
-  <view class="voice-cabin card">
-    <view class="cabin-glow"></view>
-    <view class="prompt-panel">
-      <view class="prompt-label">{{texts.today}}</view>
-      <view class="prompt-text">{{activeExercise.prompt}}</view>
-      <view class="prompt-actions">
-        <view class="prompt-tag">{{activeExercise.title}}</view>
-        <button class="listen-button" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? texts.preparing : (questionPlaying ? texts.stopPlay : texts.listen)}}</button>
+  <block wx:if="{{viewMode === 'home'}}">
+    <view class="speaking-entry-card">
+      <view class="entry-card-glow"></view>
+      <view class="entry-card-top">
+        <view>
+          <view class="entry-card-label">{{texts.mainPractice}}</view>
+          <view class="entry-card-title">{{texts.gradedRepeat}}</view>
+        </view>
+        <view class="entry-level-readout">{{selectedLevel}}</view>
       </view>
+
+      <view class="speaking-level-tabs">
+        <view class="speaking-level-tab {{selectedLevel === item.id ? 'is-active' : ''}}" wx:for="{{levels}}" wx:key="id" data-level="{{item.id}}" bindtap="selectSpeakingLevel">{{item.label}}</view>
+      </view>
+
+      <view class="speaking-entry-visual">
+        <view class="entry-orbit orbit-outer"></view>
+        <view class="entry-orbit orbit-inner"></view>
+        <view class="entry-mic"><view class="entry-mic-stem"></view></view>
+        <view class="entry-wave"><view></view><view></view><view></view><view></view><view></view></view>
+      </view>
+
+      <view class="entry-selected-level">{{texts.selectedLevel}} · {{selectedLevel}}</view>
+      <button class="speaking-entry-button" hover-class="is-pressed" bindtap="openRepeatPractice">{{texts.startRepeat}}</button>
     </view>
 
-    <view class="task-dial">
-      <view class="task-node {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
-        <view class="node-pulse"></view>
-        <view class="node-copy">
-          <view class="exercise-title">{{item.title}}</view>
-          <view class="exercise-meta">{{item.meta}}</view>
+    <view class="speaking-more-label">{{texts.morePractice}}</view>
+    <view class="speaking-ielts-row" hover-class="is-pressed" bindtap="openIeltsSpeaking">
+      <view class="speaking-ielts-mark"><view></view></view>
+      <view class="speaking-ielts-copy">
+        <view class="speaking-ielts-title">{{texts.ieltsSpeaking}}</view>
+        <view class="speaking-ielts-meta">Part 1 · Part 2 · Part 3</view>
+      </view>
+      <view class="speaking-ielts-state">{{texts.comingSoon}}</view>
+      <view class="speaking-ielts-arrow">›</view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="speaking-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
+
+    <view class="voice-cabin card">
+      <view class="cabin-glow"></view>
+      <view class="prompt-panel">
+        <view class="prompt-label">{{texts.today}}</view>
+        <view class="prompt-text">{{activeExercise.prompt}}</view>
+        <view class="prompt-actions">
+          <view class="prompt-tag">{{selectedLevel}} · {{activeExercise.title}}</view>
+          <button class="listen-button" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? texts.preparing : (questionPlaying ? texts.stopPlay : texts.listen)}}</button>
         </view>
       </view>
+
+      <view class="task-dial">
+        <view class="task-node {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
+          <view class="node-pulse"></view>
+          <view class="node-copy"><view class="exercise-title">{{item.title}}</view><view class="exercise-meta">{{item.meta}}</view></view>
+        </view>
+      </view>
+
+      <view class="record-orbit {{recording ? 'is-recording' : (submitting ? 'is-submitting' : '')}}">
+        <view class="breath-ring ring-outer"></view><view class="breath-ring ring-mid"></view>
+        <view class="mic-sound-circle"><view class="mic-stem"></view></view>
+        <view class="wave-field"><view class="wave-bar bar-one"></view><view class="wave-bar bar-two"></view><view class="wave-bar bar-three"></view><view class="wave-bar bar-four"></view><view class="wave-bar bar-five"></view></view>
+        <button class="hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">{{recording ? texts.release : (submitting ? texts.scoring : texts.hold)}}</button>
+      </view>
+
+      <view class="record-line {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">{{submitting ? texts.scoring : (recording ? texts.recording : (tempFilePath ? (texts.recorded + recordDurationText) : texts.start))}}</view>
+      <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
     </view>
 
-    <view class="record-orbit {{recording ? 'is-recording' : (submitting ? 'is-submitting' : '')}}">
-      <view class="breath-ring ring-outer"></view>
-      <view class="breath-ring ring-mid"></view>
-      <view class="mic-sound-circle">
-        <view class="mic-stem"></view>
-      </view>
-      <view class="wave-field">
-        <view class="wave-bar bar-one"></view>
-        <view class="wave-bar bar-two"></view>
-        <view class="wave-bar bar-three"></view>
-        <view class="wave-bar bar-four"></view>
-        <view class="wave-bar bar-five"></view>
-      </view>
-      <button class="hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">
-        {{recording ? texts.release : (submitting ? texts.scoring : texts.hold)}}
-      </button>
-    </view>
-
-    <view class="record-line {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">
-      {{submitting ? texts.scoring : (recording ? texts.recording : (tempFilePath ? (texts.recorded + recordDurationText) : texts.start))}}
-    </view>
-    <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
-  </view>
-
-  <view class="score-card card {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
-    <view class="speaking-card-top">
-      <view class="speaking-card-label">{{texts.result}}</view>
-      <view class="speaking-card-state">{{result.score || 0}}{{texts.scoreUnit}}</view>
-    </view>
-    <view class="score-meters">
-      <view class="score-item">
-        <view class="score-row">
-          <view class="score-label">{{texts.accuracy}}</view>
-          <view class="score-value">{{result.accuracy || 0}}</view>
-        </view>
-        <view class="meter-track"><view class="meter-fill" style="width: {{result.accuracy || 0}}%;"></view></view>
-      </view>
-      <view class="score-item">
-        <view class="score-row">
-          <view class="score-label">{{texts.fluency}}</view>
-          <view class="score-value">{{result.fluency || 0}}</view>
-        </view>
-        <view class="meter-track"><view class="meter-fill" style="width: {{result.fluency || 0}}%;"></view></view>
-      </view>
-      <view class="score-item">
-        <view class="score-row">
-          <view class="score-label">{{texts.completeness}}</view>
-          <view class="score-value">{{result.completion || 0}}</view>
-        </view>
-        <view class="meter-track"><view class="meter-fill" style="width: {{result.completion || 0}}%;"></view></view>
+    <view class="score-card card {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
+      <view class="speaking-card-top"><view class="speaking-card-label">{{texts.result}}</view><view class="speaking-card-state">{{result.score || 0}}{{texts.scoreUnit}}</view></view>
+      <view class="score-meters">
+        <view class="score-item"><view class="score-row"><view class="score-label">{{texts.accuracy}}</view><view class="score-value">{{result.accuracy || 0}}</view></view><view class="meter-track"><view class="meter-fill" style="width: {{result.accuracy || 0}}%;"></view></view></view>
+        <view class="score-item"><view class="score-row"><view class="score-label">{{texts.fluency}}</view><view class="score-value">{{result.fluency || 0}}</view></view><view class="meter-track"><view class="meter-fill" style="width: {{result.fluency || 0}}%;"></view></view></view>
+        <view class="score-item"><view class="score-row"><view class="score-label">{{texts.completeness}}</view><view class="score-value">{{result.completion || 0}}</view></view><view class="meter-track"><view class="meter-fill" style="width: {{result.completion || 0}}%;"></view></view></view>
       </view>
     </view>
-  </view>
+  </block>
 </view>

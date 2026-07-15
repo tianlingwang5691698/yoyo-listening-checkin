@@ -4,6 +4,11 @@ const effects = require('../../utils/effects');
 const i18n = require('../../utils/i18n');
 
 const text = (key, fallback) => i18n.getPageText('speaking', key, undefined, fallback);
+const SPEAKING_LEVEL_KEY = 'speakingSelectedLevelV1';
+const SPEAKING_LEVELS = ['Pre A1', 'A1', 'A2', 'B1', 'B2'].map((level) => ({
+  id: level,
+  label: level
+}));
 
 const EXERCISES = [
   {
@@ -41,6 +46,9 @@ function localizeExercises() {
 
 Page({
   data: page.createCloudPageData({
+    viewMode: 'home',
+    levels: SPEAKING_LEVELS,
+    selectedLevel: 'A2',
     exercises: localizeExercises(),
     activeId: EXERCISES[0].id,
     activeExercise: localizeExercises()[0],
@@ -61,7 +69,14 @@ Page({
     this.speakingPerf = page.startPagePerf('speaking');
     page.syncTheme(this);
     const exercises = localizeExercises();
-    this.setData({ exercises, activeExercise: exercises[0] });
+    let selectedLevel = 'A2';
+    try {
+      const storedLevel = String(wx.getStorageSync(SPEAKING_LEVEL_KEY) || '');
+      if (SPEAKING_LEVELS.some((item) => item.id === storedLevel)) {
+        selectedLevel = storedLevel;
+      }
+    } catch (error) {}
+    this.setData({ exercises, activeExercise: exercises[0], selectedLevel });
     this.recorderManager = wx.getRecorderManager();
     this.recorderManager.onStop((res) => {
       const durationMs = Number(res.duration || 0) || (this.data.recordStartedAt ? Date.now() - this.data.recordStartedAt : 0);
@@ -131,9 +146,66 @@ Page({
     }
   },
 
+  selectSpeakingLevel(event) {
+    const selectedLevel = String(event.currentTarget.dataset.level || 'A2');
+    if (!SPEAKING_LEVELS.some((item) => item.id === selectedLevel)) {
+      return;
+    }
+    this.setData({ selectedLevel });
+    try {
+      wx.setStorageSync(SPEAKING_LEVEL_KEY, selectedLevel);
+    } catch (error) {}
+  },
+
+  openRepeatPractice() {
+    const exercises = localizeExercises();
+    this.setData({
+      viewMode: 'practice',
+      exercises,
+      activeId: exercises[0].id,
+      activeExercise: exercises[0],
+      tempFilePath: '',
+      recordDurationMs: 0,
+      recordDurationText: '',
+      result: null,
+      errorText: ''
+    });
+  },
+
+  backToSpeakingHome() {
+    if (this.data.recording || this.data.submitting) {
+      wx.showToast({
+        title: text('finishCurrent', '请先完成本次录音'),
+        icon: 'none'
+      });
+      return;
+    }
+    if (this.questionAudioContext) {
+      this.questionAudioContext.stop();
+    }
+    this.setData({
+      viewMode: 'home',
+      questionPlaying: false,
+      questionLoading: false,
+      tempFilePath: '',
+      recordDurationMs: 0,
+      recordDurationText: '',
+      result: null,
+      errorText: ''
+    });
+  },
+
+  openIeltsSpeaking() {
+    wx.showToast({
+      title: text('ieltsComingSoon', '雅思口语即将开放'),
+      icon: 'none'
+    });
+  },
+
   selectExercise(event) {
     const id = event.currentTarget.dataset.id;
-    const activeExercise = EXERCISES.find((item) => item.id === id) || EXERCISES[0];
+    const exercises = this.data.exercises || localizeExercises();
+    const activeExercise = exercises.find((item) => item.id === id) || exercises[0];
     this.setData({
       activeId: activeExercise.id,
       activeExercise,
