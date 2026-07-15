@@ -612,7 +612,7 @@
 
 .library-home-page {
   min-height: 100vh;
-  padding: 0 44rpx 190rpx;
+  padding: 0 44rpx calc(190rpx + env(safe-area-inset-bottom));
   overflow: hidden;
   background: #1c140f;
 }
@@ -1678,7 +1678,7 @@
 .home-page {
   position: relative;
   min-height: 100vh;
-  padding: 76rpx 32rpx 176rpx;
+  padding: 76rpx 32rpx calc(190rpx + env(safe-area-inset-bottom));
   overflow: hidden;
   background:
     radial-gradient(circle at 76% 8%, rgba(255, 255, 255, 0.96) 0, rgba(255, 255, 255, 0) 31%),
