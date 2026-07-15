@@ -1,0 +1,13 @@
+{
+  "name": "yousheng-english-miniprogram",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "wechat:smoke": "node scripts/wechat-automator.js smoke",
+    "wechat:page": "node scripts/wechat-automator.js page",
+    "wechat:screenshot": "node scripts/wechat-automator.js screenshot"
+  },
+  "devDependencies": {
+    "miniprogram-automator": "0.12.1"
+  }
+}

@@ -109,6 +109,7 @@
 
 ## 开发与部署
 
+- 微信开发者工具自动化：`npm run wechat:smoke`、`npm run wechat:page -- /pages/home/index`、`npm run wechat:screenshot -- /pages/home/index output/home.png`
 - 文档总入口见 [docs/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/README.md)
 - 工程演进规则见 [docs/ENGINEERING_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/ENGINEERING_RULES.md)
 - 数据契约见 [docs/DATA_CONTRACTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DATA_CONTRACTS.md)
