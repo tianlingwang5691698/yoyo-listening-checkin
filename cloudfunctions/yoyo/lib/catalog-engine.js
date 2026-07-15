@@ -16,15 +16,19 @@ const NEW_CONCEPT4_AUDIO_ROOT = 'B2/NewConcept4-US';
 const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频Class Audio';
 const UNLOCK1_THIRD_EDITION_AUDIO_ROOT = 'A1/unlock1 第三版/Audio';
 const UNLOCK1_WORKBOOK_AUDIO_ROOT = 'A1/unlock1 练习册/Audio';
+const UNLOCK1_WORKBOOK_THIRD_EDITION_AUDIO_ROOT = 'A1/unlock1 练习册 第三版/Audio';
 const UNLOCK2_AUDIO_ROOT = 'A2/Unlock2/Class Audio';
 const UNLOCK2_THIRD_EDITION_AUDIO_ROOT = 'A2/unlock2 第三版/Audio';
 const UNLOCK2_WORKBOOK_AUDIO_ROOT = 'A2/unlock2 练习册/Audio';
+const UNLOCK2_WORKBOOK_THIRD_EDITION_AUDIO_ROOT = 'A2/unlock2 练习册 第三版/Audio';
 const UNLOCK3_TEXTBOOK_AUDIO_ROOT = 'B1/Unlock3/Textbook Audio';
 const UNLOCK3_THIRD_EDITION_AUDIO_ROOT = 'B1/unlock3 第三版/Audio';
 const UNLOCK3_AUDIO_ROOT = 'B1/Unlock3/Class Audio';
+const UNLOCK3_WORKBOOK_THIRD_EDITION_AUDIO_ROOT = 'B1/unlock3 练习册 第三版/Audio';
 const UNLOCK4_AUDIO_ROOT = 'B2/Unlock4/Class Audio';
 const UNLOCK4_THIRD_EDITION_AUDIO_ROOT = 'B2/unlock4 第三版/Audio';
 const UNLOCK4_WORKBOOK_AUDIO_ROOT = 'B2/unlock4 练习册/Audio';
+const UNLOCK4_WORKBOOK_THIRD_EDITION_AUDIO_ROOT = 'B2/unlock4 练习册 第三版/Audio';
 const UNLOCK1_SCRIPT_PATH = `${UNLOCK1_AUDIO_ROOT}/Unlock 2e Listening and Speaking 1 Scripts.pdf`;
 const UNLOCK1_TRAINING_POOL_COLLECTION = 'unlock1AudioTrainingPool';
 const UNLOCK1_MIN_DURATION_SEC = 60;
@@ -41,15 +45,19 @@ const STORAGE_ROOTS = {
   unlock1: UNLOCK1_AUDIO_ROOT,
   unlock1thirdedition: UNLOCK1_THIRD_EDITION_AUDIO_ROOT,
   unlock1workbook: UNLOCK1_WORKBOOK_AUDIO_ROOT,
+  unlock1workbookthirdedition: UNLOCK1_WORKBOOK_THIRD_EDITION_AUDIO_ROOT,
   unlock2: UNLOCK2_AUDIO_ROOT,
   unlock2thirdedition: UNLOCK2_THIRD_EDITION_AUDIO_ROOT,
   unlock2workbook: UNLOCK2_WORKBOOK_AUDIO_ROOT,
+  unlock2workbookthirdedition: UNLOCK2_WORKBOOK_THIRD_EDITION_AUDIO_ROOT,
   unlock3textbook: UNLOCK3_TEXTBOOK_AUDIO_ROOT,
   unlock3thirdedition: UNLOCK3_THIRD_EDITION_AUDIO_ROOT,
   unlock3: UNLOCK3_AUDIO_ROOT,
+  unlock3workbookthirdedition: UNLOCK3_WORKBOOK_THIRD_EDITION_AUDIO_ROOT,
   unlock4: UNLOCK4_AUDIO_ROOT,
   unlock4thirdedition: UNLOCK4_THIRD_EDITION_AUDIO_ROOT,
   unlock4workbook: UNLOCK4_WORKBOOK_AUDIO_ROOT,
+  unlock4workbookthirdedition: UNLOCK4_WORKBOOK_THIRD_EDITION_AUDIO_ROOT,
   song: 'A1/Super simple songs'
 };
 const STORAGE_ROOT_CANDIDATES = {
@@ -65,15 +73,19 @@ const STORAGE_ROOT_CANDIDATES = {
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
   unlock1thirdedition: [UNLOCK1_THIRD_EDITION_AUDIO_ROOT, 'A1/unlock1 第三版'],
   unlock1workbook: [UNLOCK1_WORKBOOK_AUDIO_ROOT, 'A1/unlock1 练习册'],
+  unlock1workbookthirdedition: [UNLOCK1_WORKBOOK_THIRD_EDITION_AUDIO_ROOT, 'A1/unlock1 练习册 第三版'],
   unlock2: [UNLOCK2_AUDIO_ROOT, 'A2/Unlock2', 'A2/Unlock 2'],
   unlock2thirdedition: [UNLOCK2_THIRD_EDITION_AUDIO_ROOT, 'A2/unlock2 第三版'],
   unlock2workbook: [UNLOCK2_WORKBOOK_AUDIO_ROOT, 'A2/unlock2 练习册'],
+  unlock2workbookthirdedition: [UNLOCK2_WORKBOOK_THIRD_EDITION_AUDIO_ROOT, 'A2/unlock2 练习册 第三版'],
   unlock3textbook: [UNLOCK3_TEXTBOOK_AUDIO_ROOT, 'B1/Unlock3/Textbook Audio'],
   unlock3thirdedition: [UNLOCK3_THIRD_EDITION_AUDIO_ROOT, 'B1/unlock3 第三版'],
   unlock3: [UNLOCK3_AUDIO_ROOT, 'B1/Unlock3', 'B1/Unlock 3'],
+  unlock3workbookthirdedition: [UNLOCK3_WORKBOOK_THIRD_EDITION_AUDIO_ROOT, 'B1/unlock3 练习册 第三版'],
   unlock4: [UNLOCK4_AUDIO_ROOT, 'B2/Unlock4', 'B2/Unlock 4'],
   unlock4thirdedition: [UNLOCK4_THIRD_EDITION_AUDIO_ROOT, 'B2/unlock4 第三版'],
   unlock4workbook: [UNLOCK4_WORKBOOK_AUDIO_ROOT, 'B2/unlock4 练习册'],
+  unlock4workbookthirdedition: [UNLOCK4_WORKBOOK_THIRD_EDITION_AUDIO_ROOT, 'B2/unlock4 练习册 第三版'],
   song: [STORAGE_ROOTS.song, 'A1/Super simple song']
 };
 const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
@@ -281,11 +293,11 @@ const songPlaceholder = {
   textSource: null
 };
 
-const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
+const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
-const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
-const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock2workbook', 'unlock3', 'unlock4workbook'];
-const MANIFEST_ONLY_CATEGORIES = ['peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition', 'song'];
+const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
+const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbookthirdedition', 'unlock1workbook', 'unlock2workbookthirdedition', 'unlock2workbook', 'unlock3workbookthirdedition', 'unlock3', 'unlock4workbookthirdedition', 'unlock4workbook'];
+const MANIFEST_ONLY_CATEGORIES = ['peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition', 'unlock1workbookthirdedition', 'unlock2workbookthirdedition', 'unlock3workbookthirdedition', 'unlock4workbookthirdedition', 'song'];
 
 function slugifyTrackIdPart(value) {
   return String(value || '')
@@ -353,32 +365,34 @@ function inferNewConceptTaskMeta(category, audioBaseName, index) {
 function getUnlockSeriesLevel(category) {
   if (category === 'unlock1') return 'A1';
   if (category === 'unlock1thirdedition') return 'A1';
-  if (category === 'unlock1workbook') return 'A1';
+  if (category === 'unlock1workbook' || category === 'unlock1workbookthirdedition') return 'A1';
   if (category === 'unlock2') return 'A2';
   if (category === 'unlock2thirdedition') return 'A2';
-  if (category === 'unlock2workbook') return 'A2';
+  if (category === 'unlock2workbook' || category === 'unlock2workbookthirdedition') return 'A2';
   if (category === 'unlock3textbook') return 'B1';
   if (category === 'unlock3thirdedition') return 'B1';
   if (category === 'unlock3') return 'B1';
   if (category === 'unlock4') return 'B2';
   if (category === 'unlock4thirdedition') return 'B2';
-  if (category === 'unlock4workbook') return 'B2';
+  if (category === 'unlock3workbookthirdedition') return 'B1';
+  if (category === 'unlock4workbook' || category === 'unlock4workbookthirdedition') return 'B2';
   return '';
 }
 
 function getUnlockSeriesNumber(category) {
   if (category === 'unlock1') return 1;
   if (category === 'unlock1thirdedition') return 1;
-  if (category === 'unlock1workbook') return 1;
+  if (category === 'unlock1workbook' || category === 'unlock1workbookthirdedition') return 1;
   if (category === 'unlock2') return 2;
   if (category === 'unlock2thirdedition') return 2;
-  if (category === 'unlock2workbook') return 2;
+  if (category === 'unlock2workbook' || category === 'unlock2workbookthirdedition') return 2;
   if (category === 'unlock3textbook') return 3;
   if (category === 'unlock3thirdedition') return 3;
   if (category === 'unlock3') return 3;
   if (category === 'unlock4') return 4;
   if (category === 'unlock4thirdedition') return 4;
-  if (category === 'unlock4workbook') return 4;
+  if (category === 'unlock3workbookthirdedition') return 3;
+  if (category === 'unlock4workbook' || category === 'unlock4workbookthirdedition') return 4;
   return 0;
 }
 
@@ -388,6 +402,7 @@ function isUnlockWorkbookCategory(category) {
 
 function getUnlockMaterialType(category) {
   if (category === 'unlock1thirdedition' || category === 'unlock2thirdedition' || category === 'unlock3thirdedition' || category === 'unlock4thirdedition') return '第三版';
+  if (category.includes('workbookthirdedition')) return '练习册 第三版';
   return isUnlockWorkbookCategory(category) ? '练习册' : '课本';
 }
 
@@ -572,7 +587,7 @@ function findTranscriptTrack(transcriptTrackMap, task) {
 }
 
 function shouldLazyTranscriptCategory(category) {
-  return NEW_CONCEPT_CATEGORIES.includes(category) || ['unlock1thirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'].includes(category);
+  return NEW_CONCEPT_CATEGORIES.includes(category) || UNLOCK_SERIES_CATEGORIES.includes(category);
 }
 
 async function getTranscriptBundle(task) {
@@ -598,15 +613,19 @@ function getStaticCatalogMap() {
     unlock1: unlockTasks,
     unlock1thirdedition: buildUnlockSeriesTasks('unlock1thirdedition'),
     unlock1workbook: buildUnlockSeriesTasks('unlock1workbook'),
+    unlock1workbookthirdedition: buildUnlockSeriesTasks('unlock1workbookthirdedition'),
     unlock2: buildUnlockSeriesTasks('unlock2'),
     unlock2thirdedition: buildUnlockSeriesTasks('unlock2thirdedition'),
     unlock2workbook: buildUnlockSeriesTasks('unlock2workbook'),
+    unlock2workbookthirdedition: buildUnlockSeriesTasks('unlock2workbookthirdedition'),
     unlock3textbook: buildUnlockSeriesTasks('unlock3textbook'),
     unlock3thirdedition: buildUnlockSeriesTasks('unlock3thirdedition'),
     unlock3: buildUnlockSeriesTasks('unlock3'),
+    unlock3workbookthirdedition: buildUnlockSeriesTasks('unlock3workbookthirdedition'),
     unlock4: buildUnlockSeriesTasks('unlock4'),
     unlock4thirdedition: buildUnlockSeriesTasks('unlock4thirdedition'),
     unlock4workbook: buildUnlockSeriesTasks('unlock4workbook'),
+    unlock4workbookthirdedition: buildUnlockSeriesTasks('unlock4workbookthirdedition'),
     song: songTasks
   };
 }
@@ -1410,7 +1429,7 @@ function getResourceDebugSnapshot() {
   return Object.assign({}, runtimeCatalogDebug || summarizeRuntimeCatalogDebug({}));
 }
 
-const CATEGORY_ORDER = ['littlebear', 'song', 'newconcept1', 'peppa', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'magictreehouseb1'];
+const CATEGORY_ORDER = ['littlebear', 'song', 'newconcept1', 'peppa', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'magictreehouseb1', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const CATEGORY_LABELS = {
   newconcept1: 'New Concept 1',
   newconcept2: 'New Concept 2',
@@ -1424,15 +1443,19 @@ const CATEGORY_LABELS = {
   unlock1: 'Unlock 1 听口 第二版',
   unlock1thirdedition: 'Unlock 1 听口 第三版',
   unlock1workbook: 'Unlock 1 听口 练习册 第二版',
+  unlock1workbookthirdedition: 'Unlock 1 听口练习册 第三版',
   unlock2: 'Unlock 2 课本',
   unlock2thirdedition: 'Unlock 2 听口 第三版',
   unlock2workbook: 'Unlock 2 练习册',
+  unlock2workbookthirdedition: 'Unlock 2 听口练习册 第三版',
   unlock3textbook: 'Unlock3 听口 第二版',
   unlock3thirdedition: 'Unlock3 听口 第三版',
   unlock3: 'Unlock3 听口练习册 第二版',
+  unlock3workbookthirdedition: 'Unlock3 听口练习册 第三版',
   unlock4: 'Unlock 4 课本',
   unlock4thirdedition: 'Unlock 4 听口 第三版',
   unlock4workbook: 'Unlock 4 练习册',
+  unlock4workbookthirdedition: 'Unlock 4 听口练习册 第三版',
   song: 'Songs'
 };
 

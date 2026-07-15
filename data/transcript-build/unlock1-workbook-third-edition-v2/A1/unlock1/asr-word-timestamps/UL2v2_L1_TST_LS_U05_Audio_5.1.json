@@ -1,0 +1,2024 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 5.1 Good afternoon everyone. Thank you for coming. My name is Karen Smith and I'm here from the Future Advice Centre. Next year, you finish school, so it's time to think about what you want to do next. There are some important things for you to think about, and today we're going to talk about jobs and for those of you who want to go to university, choosing a subject to study. The first thing you need to ask yourself is, do I want to leave school next year or do I want to go to university? You don't have to go to university. If you want to work in a restaurant, I think it's better to work and learn at the same time. A chef can teach you how to cook and you get good experience. Another thing to remember is that the job doesn't have to pay very well. Choose a job you enjoy. Many creative people like musicians don't earn much, but they often have fun. Do you want a job where you help people, for example as a doctor or nurse? They work long hours, but their jobs are interesting. Whatever job you do, you should have time to relax and enjoy your life. It's good to see friends and watch TV. You should talk to your parents too. They can also give you advice about jobs, but remember, it's your life and your future.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Track 5.1",
+      "tokens": [
+        50364,
+        31903,
+        1025,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3659821079201894,
+      "compression_ratio": 1.398936170212766,
+      "no_speech_prob": 0.19700409471988678,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.5,
+          "probability": 0.2936675250530243
+        },
+        {
+          "word": " 5",
+          "start": 0.5,
+          "end": 1.1,
+          "probability": 0.9500821828842163
+        },
+        {
+          "word": ".1",
+          "start": 1.1,
+          "end": 2.0,
+          "probability": 0.9969709515571594
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.520000000000003,
+      "end": 7.12,
+      "text": " Good afternoon everyone. Thank you for coming.",
+      "tokens": [
+        50560,
+        2205,
+        6499,
+        1518,
+        13,
+        1044,
+        291,
+        337,
+        1348,
+        13,
+        50742
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3659821079201894,
+      "compression_ratio": 1.398936170212766,
+      "no_speech_prob": 0.19700409471988678,
+      "words": [
+        {
+          "word": " Good",
+          "start": 3.520000000000003,
+          "end": 4.32,
+          "probability": 0.519670307636261
+        },
+        {
+          "word": " afternoon",
+          "start": 4.32,
+          "end": 4.9,
+          "probability": 0.9932698607444763
+        },
+        {
+          "word": " everyone.",
+          "start": 4.9,
+          "end": 5.6,
+          "probability": 0.5843114852905273
+        },
+        {
+          "word": " Thank",
+          "start": 5.94,
+          "end": 6.12,
+          "probability": 0.9947073459625244
+        },
+        {
+          "word": " you",
+          "start": 6.12,
+          "end": 6.44,
+          "probability": 0.982828676700592
+        },
+        {
+          "word": " for",
+          "start": 6.44,
+          "end": 6.7,
+          "probability": 0.9984807372093201
+        },
+        {
+          "word": " coming.",
+          "start": 6.7,
+          "end": 7.12,
+          "probability": 0.9970865845680237
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 7.6,
+      "end": 14.06,
+      "text": " My name is Karen Smith and I'm here from the Future Advice Centre.",
+      "tokens": [
+        50742,
+        1222,
+        1315,
+        307,
+        14834,
+        8538,
+        293,
+        286,
+        478,
+        510,
+        490,
+        264,
+        20805,
+        13634,
+        573,
+        20764,
+        13,
+        51094
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3659821079201894,
+      "compression_ratio": 1.398936170212766,
+      "no_speech_prob": 0.19700409471988678,
+      "words": [
+        {
+          "word": " My",
+          "start": 7.6,
+          "end": 8.26,
+          "probability": 0.9903227686882019
+        },
+        {
+          "word": " name",
+          "start": 8.26,
+          "end": 8.62,
+          "probability": 0.9989933371543884
+        },
+        {
+          "word": " is",
+          "start": 8.62,
+          "end": 9.14,
+          "probability": 0.9967161417007446
+        },
+        {
+          "word": " Karen",
+          "start": 9.14,
+          "end": 9.48,
+          "probability": 0.6659494042396545
+        },
+        {
+          "word": " Smith",
+          "start": 9.48,
+          "end": 9.94,
+          "probability": 0.9782406091690063
+        },
+        {
+          "word": " and",
+          "start": 9.94,
+          "end": 10.72,
+          "probability": 0.7556386590003967
+        },
+        {
+          "word": " I'm",
+          "start": 10.72,
+          "end": 11.2,
+          "probability": 0.9368638098239899
+        },
+        {
+          "word": " here",
+          "start": 11.2,
+          "end": 11.48,
+          "probability": 0.9981033802032471
+        },
+        {
+          "word": " from",
+          "start": 11.48,
+          "end": 11.86,
+          "probability": 0.9907664060592651
+        },
+        {
+          "word": " the",
+          "start": 11.86,
+          "end": 12.14,
+          "probability": 0.9782237410545349
+        },
+        {
+          "word": " Future",
+          "start": 12.14,
+          "end": 12.68,
+          "probability": 0.6862073540687561
+        },
+        {
+          "word": " Advice",
+          "start": 12.68,
+          "end": 13.52,
+          "probability": 0.9397177696228027
+        },
+        {
+          "word": " Centre.",
+          "start": 13.52,
+          "end": 14.06,
+          "probability": 0.8099974989891052
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 14.940000000000003,
+      "end": 21.7,
+      "text": " Next year, you finish school, so it's time to think about what you want to do next.",
+      "tokens": [
+        51120,
+        3087,
+        1064,
+        11,
+        291,
+        2413,
+        1395,
+        11,
+        370,
+        309,
+        311,
+        565,
+        281,
+        519,
+        466,
+        437,
+        291,
+        528,
+        281,
+        360,
+        958,
+        13,
+        51484
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3659821079201894,
+      "compression_ratio": 1.398936170212766,
+      "no_speech_prob": 0.19700409471988678,
+      "words": [
+        {
+          "word": " Next",
+          "start": 14.940000000000003,
+          "end": 15.74,
+          "probability": 0.9869644045829773
+        },
+        {
+          "word": " year,",
+          "start": 15.74,
+          "end": 16.2,
+          "probability": 0.9970659613609314
+        },
+        {
+          "word": " you",
+          "start": 16.66,
+          "end": 16.88,
+          "probability": 0.9951372742652893
+        },
+        {
+          "word": " finish",
+          "start": 16.88,
+          "end": 17.32,
+          "probability": 0.8908084034919739
+        },
+        {
+          "word": " school,",
+          "start": 17.32,
+          "end": 17.86,
+          "probability": 0.9978419542312622
+        },
+        {
+          "word": " so",
+          "start": 18.24,
+          "end": 18.58,
+          "probability": 0.9956346154212952
+        },
+        {
+          "word": " it's",
+          "start": 18.58,
+          "end": 18.98,
+          "probability": 0.9923533499240875
+        },
+        {
+          "word": " time",
+          "start": 18.98,
+          "end": 19.26,
+          "probability": 0.9996106028556824
+        },
+        {
+          "word": " to",
+          "start": 19.26,
+          "end": 19.48,
+          "probability": 0.9992212057113647
+        },
+        {
+          "word": " think",
+          "start": 19.48,
+          "end": 19.76,
+          "probability": 0.9983841180801392
+        },
+        {
+          "word": " about",
+          "start": 19.76,
+          "end": 20.02,
+          "probability": 0.9993008375167847
+        },
+        {
+          "word": " what",
+          "start": 20.02,
+          "end": 20.34,
+          "probability": 0.9991694688796997
+        },
+        {
+          "word": " you",
+          "start": 20.34,
+          "end": 20.56,
+          "probability": 0.9977160692214966
+        },
+        {
+          "word": " want",
+          "start": 20.56,
+          "end": 20.76,
+          "probability": 0.9981988072395325
+        },
+        {
+          "word": " to",
+          "start": 20.76,
+          "end": 21.0,
+          "probability": 0.9993011951446533
+        },
+        {
+          "word": " do",
+          "start": 21.0,
+          "end": 21.18,
+          "probability": 0.9991751313209534
+        },
+        {
+          "word": " next.",
+          "start": 21.18,
+          "end": 21.7,
+          "probability": 0.9973449110984802
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 22.76,
+      "end": 25.96,
+      "text": " There are some important things for you to think about,",
+      "tokens": [
+        51484,
+        821,
+        366,
+        512,
+        1021,
+        721,
+        337,
+        291,
+        281,
+        519,
+        466,
+        11,
+        51680
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3659821079201894,
+      "compression_ratio": 1.398936170212766,
+      "no_speech_prob": 0.19700409471988678,
+      "words": [
+        {
+          "word": " There",
+          "start": 22.76,
+          "end": 23.08,
+          "probability": 0.9971517324447632
+        },
+        {
+          "word": " are",
+          "start": 23.08,
+          "end": 23.26,
+          "probability": 0.9970635771751404
+        },
+        {
+          "word": " some",
+          "start": 23.26,
+          "end": 23.52,
+          "probability": 0.9978383183479309
+        },
+        {
+          "word": " important",
+          "start": 23.52,
+          "end": 24.1,
+          "probability": 0.9986819624900818
+        },
+        {
+          "word": " things",
+          "start": 24.1,
+          "end": 24.52,
+          "probability": 0.9988245368003845
+        },
+        {
+          "word": " for",
+          "start": 24.52,
+          "end": 24.92,
+          "probability": 0.9973613619804382
+        },
+        {
+          "word": " you",
+          "start": 24.92,
+          "end": 25.1,
+          "probability": 0.9994624257087708
+        },
+        {
+          "word": " to",
+          "start": 25.1,
+          "end": 25.3,
+          "probability": 0.9981598258018494
+        },
+        {
+          "word": " think",
+          "start": 25.3,
+          "end": 25.6,
+          "probability": 0.9976221919059753
+        },
+        {
+          "word": " about,",
+          "start": 25.6,
+          "end": 25.96,
+          "probability": 0.9996304512023926
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2596,
+      "start": 25.96,
+      "end": 33.9,
+      "text": " and today we're going to talk about jobs and for those of you who want to go to university,",
+      "tokens": [
+        50388,
+        293,
+        965,
+        321,
+        434,
+        516,
+        281,
+        751,
+        466,
+        4782,
+        293,
+        337,
+        729,
+        295,
+        291,
+        567,
+        528,
+        281,
+        352,
+        281,
+        5454,
+        11,
+        50792
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11913931079027129,
+      "compression_ratio": 1.6470588235294117,
+      "no_speech_prob": 0.042603448033332825,
+      "words": [
+        {
+          "word": " and",
+          "start": 25.96,
+          "end": 26.74,
+          "probability": 0.1849006563425064
+        },
+        {
+          "word": " today",
+          "start": 26.74,
+          "end": 27.2,
+          "probability": 0.8834618330001831
+        },
+        {
+          "word": " we're",
+          "start": 27.2,
+          "end": 28.08,
+          "probability": 0.8413729965686798
+        },
+        {
+          "word": " going",
+          "start": 28.08,
+          "end": 28.32,
+          "probability": 0.9975316524505615
+        },
+        {
+          "word": " to",
+          "start": 28.32,
+          "end": 28.54,
+          "probability": 0.9952249526977539
+        },
+        {
+          "word": " talk",
+          "start": 28.54,
+          "end": 28.88,
+          "probability": 0.9983494281768799
+        },
+        {
+          "word": " about",
+          "start": 28.88,
+          "end": 29.36,
+          "probability": 0.9987579584121704
+        },
+        {
+          "word": " jobs",
+          "start": 29.36,
+          "end": 29.9,
+          "probability": 0.9764413833618164
+        },
+        {
+          "word": " and",
+          "start": 29.9,
+          "end": 30.88,
+          "probability": 0.7639474272727966
+        },
+        {
+          "word": " for",
+          "start": 30.88,
+          "end": 31.32,
+          "probability": 0.9289399981498718
+        },
+        {
+          "word": " those",
+          "start": 31.32,
+          "end": 31.6,
+          "probability": 0.9981939196586609
+        },
+        {
+          "word": " of",
+          "start": 31.6,
+          "end": 31.9,
+          "probability": 0.9961099028587341
+        },
+        {
+          "word": " you",
+          "start": 31.9,
+          "end": 32.06,
+          "probability": 0.9956904053688049
+        },
+        {
+          "word": " who",
+          "start": 32.06,
+          "end": 32.26,
+          "probability": 0.988754391670227
+        },
+        {
+          "word": " want",
+          "start": 32.26,
+          "end": 32.46,
+          "probability": 0.9961961507797241
+        },
+        {
+          "word": " to",
+          "start": 32.46,
+          "end": 32.68,
+          "probability": 0.997623860836029
+        },
+        {
+          "word": " go",
+          "start": 32.68,
+          "end": 32.84,
+          "probability": 0.9983360171318054
+        },
+        {
+          "word": " to",
+          "start": 32.84,
+          "end": 33.06,
+          "probability": 0.9981587529182434
+        },
+        {
+          "word": " university,",
+          "start": 33.06,
+          "end": 33.9,
+          "probability": 0.8627810478210449
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2596,
+      "start": 34.7,
+      "end": 41.24,
+      "text": " choosing a subject to study. The first thing you need to ask yourself is,",
+      "tokens": [
+        50792,
+        10875,
+        257,
+        3983,
+        281,
+        2979,
+        13,
+        440,
+        700,
+        551,
+        291,
+        643,
+        281,
+        1029,
+        1803,
+        307,
+        11,
+        51120
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11913931079027129,
+      "compression_ratio": 1.6470588235294117,
+      "no_speech_prob": 0.042603448033332825,
+      "words": [
+        {
+          "word": " choosing",
+          "start": 34.7,
+          "end": 34.96,
+          "probability": 0.9744045734405518
+        },
+        {
+          "word": " a",
+          "start": 34.96,
+          "end": 35.16,
+          "probability": 0.9964704513549805
+        },
+        {
+          "word": " subject",
+          "start": 35.16,
+          "end": 35.56,
+          "probability": 0.9958426356315613
+        },
+        {
+          "word": " to",
+          "start": 35.56,
+          "end": 35.86,
+          "probability": 0.9535260200500488
+        },
+        {
+          "word": " study.",
+          "start": 35.86,
+          "end": 36.42,
+          "probability": 0.9988118410110474
+        },
+        {
+          "word": " The",
+          "start": 37.52,
+          "end": 38.12,
+          "probability": 0.9222186803817749
+        },
+        {
+          "word": " first",
+          "start": 38.12,
+          "end": 38.58,
+          "probability": 0.9935506582260132
+        },
+        {
+          "word": " thing",
+          "start": 38.58,
+          "end": 38.9,
+          "probability": 0.9968193769454956
+        },
+        {
+          "word": " you",
+          "start": 38.9,
+          "end": 39.24,
+          "probability": 0.9920316934585571
+        },
+        {
+          "word": " need",
+          "start": 39.24,
+          "end": 39.68,
+          "probability": 0.9970732927322388
+        },
+        {
+          "word": " to",
+          "start": 39.68,
+          "end": 39.94,
+          "probability": 0.9994064569473267
+        },
+        {
+          "word": " ask",
+          "start": 39.94,
+          "end": 40.26,
+          "probability": 0.998775064945221
+        },
+        {
+          "word": " yourself",
+          "start": 40.26,
+          "end": 40.68,
+          "probability": 0.9967470169067383
+        },
+        {
+          "word": " is,",
+          "start": 40.68,
+          "end": 41.24,
+          "probability": 0.9918069243431091
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2596,
+      "start": 41.96,
+      "end": 47.38,
+      "text": " do I want to leave school next year or do I want to go to university?",
+      "tokens": [
+        51156,
+        360,
+        286,
+        528,
+        281,
+        1856,
+        1395,
+        958,
+        1064,
+        420,
+        360,
+        286,
+        528,
+        281,
+        352,
+        281,
+        5454,
+        30,
+        51440
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11913931079027129,
+      "compression_ratio": 1.6470588235294117,
+      "no_speech_prob": 0.042603448033332825,
+      "words": [
+        {
+          "word": " do",
+          "start": 41.96,
+          "end": 42.06,
+          "probability": 0.8288581371307373
+        },
+        {
+          "word": " I",
+          "start": 42.06,
+          "end": 42.24,
+          "probability": 0.9902282953262329
+        },
+        {
+          "word": " want",
+          "start": 42.24,
+          "end": 42.5,
+          "probability": 0.9973044395446777
+        },
+        {
+          "word": " to",
+          "start": 42.5,
+          "end": 42.74,
+          "probability": 0.9983671307563782
+        },
+        {
+          "word": " leave",
+          "start": 42.74,
+          "end": 42.94,
+          "probability": 0.9933362007141113
+        },
+        {
+          "word": " school",
+          "start": 42.94,
+          "end": 43.34,
+          "probability": 0.9985052347183228
+        },
+        {
+          "word": " next",
+          "start": 43.34,
+          "end": 43.72,
+          "probability": 0.9970429539680481
+        },
+        {
+          "word": " year",
+          "start": 43.72,
+          "end": 44.14,
+          "probability": 0.9992424249649048
+        },
+        {
+          "word": " or",
+          "start": 44.14,
+          "end": 44.84,
+          "probability": 0.7565447688102722
+        },
+        {
+          "word": " do",
+          "start": 44.84,
+          "end": 45.48,
+          "probability": 0.9883136749267578
+        },
+        {
+          "word": " I",
+          "start": 45.48,
+          "end": 45.74,
+          "probability": 0.9983861446380615
+        },
+        {
+          "word": " want",
+          "start": 45.74,
+          "end": 45.96,
+          "probability": 0.9969287514686584
+        },
+        {
+          "word": " to",
+          "start": 45.96,
+          "end": 46.18,
+          "probability": 0.996971607208252
+        },
+        {
+          "word": " go",
+          "start": 46.18,
+          "end": 46.34,
+          "probability": 0.9980674386024475
+        },
+        {
+          "word": " to",
+          "start": 46.34,
+          "end": 46.56,
+          "probability": 0.9970645308494568
+        },
+        {
+          "word": " university?",
+          "start": 46.56,
+          "end": 47.38,
+          "probability": 0.9687505960464478
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2596,
+      "start": 48.6,
+      "end": 53.98,
+      "text": " You don't have to go to university. If you want to work in a restaurant,",
+      "tokens": [
+        51496,
+        509,
+        500,
+        380,
+        362,
+        281,
+        352,
+        281,
+        5454,
+        13,
+        759,
+        291,
+        528,
+        281,
+        589,
+        294,
+        257,
+        6383,
+        11,
+        51796
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11913931079027129,
+      "compression_ratio": 1.6470588235294117,
+      "no_speech_prob": 0.042603448033332825,
+      "words": [
+        {
+          "word": " You",
+          "start": 48.6,
+          "end": 48.84,
+          "probability": 0.9636076092720032
+        },
+        {
+          "word": " don't",
+          "start": 48.84,
+          "end": 49.06,
+          "probability": 0.9978749454021454
+        },
+        {
+          "word": " have",
+          "start": 49.06,
+          "end": 49.32,
+          "probability": 0.9961028099060059
+        },
+        {
+          "word": " to",
+          "start": 49.32,
+          "end": 49.54,
+          "probability": 0.9988564252853394
+        },
+        {
+          "word": " go",
+          "start": 49.54,
+          "end": 49.74,
+          "probability": 0.9988672733306885
+        },
+        {
+          "word": " to",
+          "start": 49.74,
+          "end": 49.96,
+          "probability": 0.9962762594223022
+        },
+        {
+          "word": " university.",
+          "start": 49.96,
+          "end": 50.78,
+          "probability": 0.9691344499588013
+        },
+        {
+          "word": " If",
+          "start": 51.52,
+          "end": 52.08,
+          "probability": 0.992371678352356
+        },
+        {
+          "word": " you",
+          "start": 52.08,
+          "end": 52.26,
+          "probability": 0.998723566532135
+        },
+        {
+          "word": " want",
+          "start": 52.26,
+          "end": 52.5,
+          "probability": 0.9975795149803162
+        },
+        {
+          "word": " to",
+          "start": 52.5,
+          "end": 52.74,
+          "probability": 0.9985798597335815
+        },
+        {
+          "word": " work",
+          "start": 52.74,
+          "end": 53.02,
+          "probability": 0.9985509514808655
+        },
+        {
+          "word": " in",
+          "start": 53.02,
+          "end": 53.28,
+          "probability": 0.9950553178787231
+        },
+        {
+          "word": " a",
+          "start": 53.28,
+          "end": 53.38,
+          "probability": 0.9990845918655396
+        },
+        {
+          "word": " restaurant,",
+          "start": 53.38,
+          "end": 53.98,
+          "probability": 0.9990226030349731
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 5398,
+      "start": 54.54,
+      "end": 61.42,
+      "text": " I think it's better to work and learn at the same time. A chef can teach you how to cook",
+      "tokens": [
+        50392,
+        286,
+        519,
+        309,
+        311,
+        1101,
+        281,
+        589,
+        293,
+        1466,
+        412,
+        264,
+        912,
+        565,
+        13,
+        316,
+        10530,
+        393,
+        2924,
+        291,
+        577,
+        281,
+        2543,
+        50760
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10539890624381401,
+      "compression_ratio": 1.5129533678756477,
+      "no_speech_prob": 0.04649116098880768,
+      "words": [
+        {
+          "word": " I",
+          "start": 54.480000000000004,
+          "end": 54.82,
+          "probability": 0.11224950104951859
+        },
+        {
+          "word": " think",
+          "start": 54.82,
+          "end": 55.1,
+          "probability": 0.8819466233253479
+        },
+        {
+          "word": " it's",
+          "start": 55.1,
+          "end": 55.48,
+          "probability": 0.9459487199783325
+        },
+        {
+          "word": " better",
+          "start": 55.48,
+          "end": 55.78,
+          "probability": 0.9957210421562195
+        },
+        {
+          "word": " to",
+          "start": 55.78,
+          "end": 56.02,
+          "probability": 0.9982045888900757
+        },
+        {
+          "word": " work",
+          "start": 56.02,
+          "end": 56.28,
+          "probability": 0.9892163276672363
+        },
+        {
+          "word": " and",
+          "start": 56.28,
+          "end": 56.58,
+          "probability": 0.9854527115821838
+        },
+        {
+          "word": " learn",
+          "start": 56.58,
+          "end": 56.84,
+          "probability": 0.9945358037948608
+        },
+        {
+          "word": " at",
+          "start": 56.84,
+          "end": 57.0,
+          "probability": 0.936690628528595
+        },
+        {
+          "word": " the",
+          "start": 57.0,
+          "end": 57.12,
+          "probability": 0.9974068999290466
+        },
+        {
+          "word": " same",
+          "start": 57.12,
+          "end": 57.38,
+          "probability": 0.9995028972625732
+        },
+        {
+          "word": " time.",
+          "start": 57.38,
+          "end": 58.42,
+          "probability": 0.9977754950523376
+        },
+        {
+          "word": " A",
+          "start": 58.82,
+          "end": 59.16,
+          "probability": 0.23870253562927246
+        },
+        {
+          "word": " chef",
+          "start": 59.16,
+          "end": 59.6,
+          "probability": 0.9802794456481934
+        },
+        {
+          "word": " can",
+          "start": 59.6,
+          "end": 59.98,
+          "probability": 0.997911274433136
+        },
+        {
+          "word": " teach",
+          "start": 59.98,
+          "end": 60.32,
+          "probability": 0.9987583160400391
+        },
+        {
+          "word": " you",
+          "start": 60.32,
+          "end": 60.64,
+          "probability": 0.9986239671707153
+        },
+        {
+          "word": " how",
+          "start": 60.64,
+          "end": 60.86,
+          "probability": 0.9982165694236755
+        },
+        {
+          "word": " to",
+          "start": 60.86,
+          "end": 61.1,
+          "probability": 0.9986525774002075
+        },
+        {
+          "word": " cook",
+          "start": 61.1,
+          "end": 61.42,
+          "probability": 0.9986439347267151
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5398,
+      "start": 61.42,
+      "end": 70.62,
+      "text": " and you get good experience. Another thing to remember is that the job doesn't have to pay very well.",
+      "tokens": [
+        50760,
+        293,
+        291,
+        483,
+        665,
+        1752,
+        13,
+        3996,
+        551,
+        281,
+        1604,
+        307,
+        300,
+        264,
+        1691,
+        1177,
+        380,
+        362,
+        281,
+        1689,
+        588,
+        731,
+        13,
+        51184
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10539890624381401,
+      "compression_ratio": 1.5129533678756477,
+      "no_speech_prob": 0.04649116098880768,
+      "words": [
+        {
+          "word": " and",
+          "start": 61.42,
+          "end": 62.2,
+          "probability": 0.7474586367607117
+        },
+        {
+          "word": " you",
+          "start": 62.2,
+          "end": 62.58,
+          "probability": 0.9919406771659851
+        },
+        {
+          "word": " get",
+          "start": 62.58,
+          "end": 62.8,
+          "probability": 0.99859219789505
+        },
+        {
+          "word": " good",
+          "start": 62.8,
+          "end": 63.14,
+          "probability": 0.9921312928199768
+        },
+        {
+          "word": " experience.",
+          "start": 63.14,
+          "end": 64.22,
+          "probability": 0.992967963218689
+        },
+        {
+          "word": " Another",
+          "start": 65.04,
+          "end": 65.72,
+          "probability": 0.9764535427093506
+        },
+        {
+          "word": " thing",
+          "start": 65.72,
+          "end": 66.08,
+          "probability": 0.9976848363876343
+        },
+        {
+          "word": " to",
+          "start": 66.08,
+          "end": 66.38,
+          "probability": 0.9557033777236938
+        },
+        {
+          "word": " remember",
+          "start": 66.38,
+          "end": 66.84,
+          "probability": 0.9942640662193298
+        },
+        {
+          "word": " is",
+          "start": 66.84,
+          "end": 67.3,
+          "probability": 0.995259702205658
+        },
+        {
+          "word": " that",
+          "start": 67.3,
+          "end": 67.82,
+          "probability": 0.9390704035758972
+        },
+        {
+          "word": " the",
+          "start": 67.82,
+          "end": 68.02,
+          "probability": 0.9917987585067749
+        },
+        {
+          "word": " job",
+          "start": 68.02,
+          "end": 68.32,
+          "probability": 0.9978874325752258
+        },
+        {
+          "word": " doesn't",
+          "start": 68.32,
+          "end": 68.96,
+          "probability": 0.9931444227695465
+        },
+        {
+          "word": " have",
+          "start": 68.96,
+          "end": 69.16,
+          "probability": 0.9968852400779724
+        },
+        {
+          "word": " to",
+          "start": 69.16,
+          "end": 69.38,
+          "probability": 0.9991918206214905
+        },
+        {
+          "word": " pay",
+          "start": 69.38,
+          "end": 69.68,
+          "probability": 0.9947898387908936
+        },
+        {
+          "word": " very",
+          "start": 69.68,
+          "end": 70.08,
+          "probability": 0.9969594478607178
+        },
+        {
+          "word": " well.",
+          "start": 70.08,
+          "end": 70.62,
+          "probability": 0.9994352459907532
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5398,
+      "start": 71.48,
+      "end": 80.58,
+      "text": " Choose a job you enjoy. Many creative people like musicians don't earn much, but they often have fun.",
+      "tokens": [
+        51232,
+        21661,
+        257,
+        1691,
+        291,
+        2103,
+        13,
+        5126,
+        5880,
+        561,
+        411,
+        16916,
+        500,
+        380,
+        6012,
+        709,
+        11,
+        457,
+        436,
+        2049,
+        362,
+        1019,
+        13,
+        51692
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10539890624381401,
+      "compression_ratio": 1.5129533678756477,
+      "no_speech_prob": 0.04649116098880768,
+      "words": [
+        {
+          "word": " Choose",
+          "start": 71.48,
+          "end": 71.72,
+          "probability": 0.8435488939285278
+        },
+        {
+          "word": " a",
+          "start": 71.72,
+          "end": 71.98,
+          "probability": 0.9965029954910278
+        },
+        {
+          "word": " job",
+          "start": 71.98,
+          "end": 72.26,
+          "probability": 0.998789370059967
+        },
+        {
+          "word": " you",
+          "start": 72.26,
+          "end": 72.52,
+          "probability": 0.9988290667533875
+        },
+        {
+          "word": " enjoy.",
+          "start": 72.52,
+          "end": 73.12,
+          "probability": 0.9976048469543457
+        },
+        {
+          "word": " Many",
+          "start": 74.42,
+          "end": 74.74,
+          "probability": 0.9922283291816711
+        },
+        {
+          "word": " creative",
+          "start": 74.74,
+          "end": 75.54,
+          "probability": 0.9947955012321472
+        },
+        {
+          "word": " people",
+          "start": 75.54,
+          "end": 76.0,
+          "probability": 0.9990424513816833
+        },
+        {
+          "word": " like",
+          "start": 76.0,
+          "end": 76.38,
+          "probability": 0.9310837388038635
+        },
+        {
+          "word": " musicians",
+          "start": 76.38,
+          "end": 77.1,
+          "probability": 0.9925214648246765
+        },
+        {
+          "word": " don't",
+          "start": 77.1,
+          "end": 78.06,
+          "probability": 0.9925382137298584
+        },
+        {
+          "word": " earn",
+          "start": 78.06,
+          "end": 78.34,
+          "probability": 0.9985669255256653
+        },
+        {
+          "word": " much,",
+          "start": 78.34,
+          "end": 78.96,
+          "probability": 0.999466598033905
+        },
+        {
+          "word": " but",
+          "start": 79.2,
+          "end": 79.38,
+          "probability": 0.9984564781188965
+        },
+        {
+          "word": " they",
+          "start": 79.38,
+          "end": 79.6,
+          "probability": 0.9989901185035706
+        },
+        {
+          "word": " often",
+          "start": 79.6,
+          "end": 79.98,
+          "probability": 0.9992757439613342
+        },
+        {
+          "word": " have",
+          "start": 79.98,
+          "end": 80.22,
+          "probability": 0.9979169964790344
+        },
+        {
+          "word": " fun.",
+          "start": 80.22,
+          "end": 80.58,
+          "probability": 0.9992150068283081
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 8058,
+      "start": 81.82,
+      "end": 87.8,
+      "text": " Do you want a job where you help people, for example as a doctor or nurse?",
+      "tokens": [
+        50400,
+        1144,
+        291,
+        528,
+        257,
+        1691,
+        689,
+        291,
+        854,
+        561,
+        11,
+        337,
+        1365,
+        382,
+        257,
+        4631,
+        420,
+        14012,
+        30,
+        50728
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1228457411674604,
+      "compression_ratio": 1.4526315789473685,
+      "no_speech_prob": 0.04137454181909561,
+      "words": [
+        {
+          "word": " Do",
+          "start": 81.82,
+          "end": 82.5,
+          "probability": 0.8536848425865173
+        },
+        {
+          "word": " you",
+          "start": 82.5,
+          "end": 82.68,
+          "probability": 0.9853652119636536
+        },
+        {
+          "word": " want",
+          "start": 82.68,
+          "end": 82.88,
+          "probability": 0.9970320463180542
+        },
+        {
+          "word": " a",
+          "start": 82.88,
+          "end": 83.08,
+          "probability": 0.9574015736579895
+        },
+        {
+          "word": " job",
+          "start": 83.08,
+          "end": 83.26,
+          "probability": 0.9993540644645691
+        },
+        {
+          "word": " where",
+          "start": 83.26,
+          "end": 83.54,
+          "probability": 0.9950927495956421
+        },
+        {
+          "word": " you",
+          "start": 83.54,
+          "end": 83.8,
+          "probability": 0.9982898831367493
+        },
+        {
+          "word": " help",
+          "start": 83.8,
+          "end": 84.12,
+          "probability": 0.9584457874298096
+        },
+        {
+          "word": " people,",
+          "start": 84.12,
+          "end": 84.72,
+          "probability": 0.9978299736976624
+        },
+        {
+          "word": " for",
+          "start": 85.28,
+          "end": 85.38,
+          "probability": 0.9846188426017761
+        },
+        {
+          "word": " example",
+          "start": 85.38,
+          "end": 85.76,
+          "probability": 0.9979574680328369
+        },
+        {
+          "word": " as",
+          "start": 85.76,
+          "end": 86.22,
+          "probability": 0.8625645041465759
+        },
+        {
+          "word": " a",
+          "start": 86.22,
+          "end": 86.32,
+          "probability": 0.9874333739280701
+        },
+        {
+          "word": " doctor",
+          "start": 86.32,
+          "end": 86.86,
+          "probability": 0.9533830881118774
+        },
+        {
+          "word": " or",
+          "start": 86.86,
+          "end": 87.38,
+          "probability": 0.9559351205825806
+        },
+        {
+          "word": " nurse?",
+          "start": 87.38,
+          "end": 87.8,
+          "probability": 0.9894592761993408
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 8058,
+      "start": 88.8,
+      "end": 92.68,
+      "text": " They work long hours, but their jobs are interesting.",
+      "tokens": [
+        50780,
+        814,
+        589,
+        938,
+        2496,
+        11,
+        457,
+        641,
+        4782,
+        366,
+        1880,
+        13,
+        50972
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1228457411674604,
+      "compression_ratio": 1.4526315789473685,
+      "no_speech_prob": 0.04137454181909561,
+      "words": [
+        {
+          "word": " They",
+          "start": 88.8,
+          "end": 89.2,
+          "probability": 0.9944818019866943
+        },
+        {
+          "word": " work",
+          "start": 89.2,
+          "end": 89.48,
+          "probability": 0.9968697428703308
+        },
+        {
+          "word": " long",
+          "start": 89.48,
+          "end": 89.88,
+          "probability": 0.9885956645011902
+        },
+        {
+          "word": " hours,",
+          "start": 89.88,
+          "end": 90.36,
+          "probability": 0.9985653758049011
+        },
+        {
+          "word": " but",
+          "start": 90.9,
+          "end": 91.16,
+          "probability": 0.9983921647071838
+        },
+        {
+          "word": " their",
+          "start": 91.16,
+          "end": 91.42,
+          "probability": 0.9945037364959717
+        },
+        {
+          "word": " jobs",
+          "start": 91.42,
+          "end": 91.72,
+          "probability": 0.9984362721443176
+        },
+        {
+          "word": " are",
+          "start": 91.72,
+          "end": 92.0,
+          "probability": 0.9994854927062988
+        },
+        {
+          "word": " interesting.",
+          "start": 92.0,
+          "end": 92.68,
+          "probability": 0.9953963160514832
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 8058,
+      "start": 94.24,
+      "end": 99.58,
+      "text": " Whatever job you do, you should have time to relax and enjoy your life.",
+      "tokens": [
+        51040,
+        8541,
+        1691,
+        291,
+        360,
+        11,
+        291,
+        820,
+        362,
+        565,
+        281,
+        5789,
+        293,
+        2103,
+        428,
+        993,
+        13,
+        51308
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1228457411674604,
+      "compression_ratio": 1.4526315789473685,
+      "no_speech_prob": 0.04137454181909561,
+      "words": [
+        {
+          "word": " Whatever",
+          "start": 94.24,
+          "end": 94.54,
+          "probability": 0.9597181081771851
+        },
+        {
+          "word": " job",
+          "start": 94.54,
+          "end": 94.96,
+          "probability": 0.9921423196792603
+        },
+        {
+          "word": " you",
+          "start": 94.96,
+          "end": 95.28,
+          "probability": 0.9933282136917114
+        },
+        {
+          "word": " do,",
+          "start": 95.28,
+          "end": 95.54,
+          "probability": 0.9989481568336487
+        },
+        {
+          "word": " you",
+          "start": 96.08,
+          "end": 96.18,
+          "probability": 0.9982519745826721
+        },
+        {
+          "word": " should",
+          "start": 96.18,
+          "end": 96.44,
+          "probability": 0.9972917437553406
+        },
+        {
+          "word": " have",
+          "start": 96.44,
+          "end": 96.7,
+          "probability": 0.9985061287879944
+        },
+        {
+          "word": " time",
+          "start": 96.7,
+          "end": 97.02,
+          "probability": 0.996464729309082
+        },
+        {
+          "word": " to",
+          "start": 97.02,
+          "end": 97.24,
+          "probability": 0.9990736246109009
+        },
+        {
+          "word": " relax",
+          "start": 97.24,
+          "end": 97.66,
+          "probability": 0.9987156391143799
+        },
+        {
+          "word": " and",
+          "start": 97.66,
+          "end": 98.12,
+          "probability": 0.9912152290344238
+        },
+        {
+          "word": " enjoy",
+          "start": 98.12,
+          "end": 98.58,
+          "probability": 0.9980219602584839
+        },
+        {
+          "word": " your",
+          "start": 98.58,
+          "end": 98.98,
+          "probability": 0.9975071549415588
+        },
+        {
+          "word": " life.",
+          "start": 98.98,
+          "end": 99.58,
+          "probability": 0.9976715445518494
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 8058,
+      "start": 100.46,
+      "end": 106.52,
+      "text": " It's good to see friends and watch TV. You should talk to your parents too.",
+      "tokens": [
+        51360,
+        467,
+        311,
+        665,
+        281,
+        536,
+        1855,
+        293,
+        1159,
+        3558,
+        13,
+        509,
+        820,
+        751,
+        281,
+        428,
+        3152,
+        886,
+        13,
+        51656
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1228457411674604,
+      "compression_ratio": 1.4526315789473685,
+      "no_speech_prob": 0.04137454181909561,
+      "words": [
+        {
+          "word": " It's",
+          "start": 100.46,
+          "end": 100.92,
+          "probability": 0.9724636673927307
+        },
+        {
+          "word": " good",
+          "start": 100.92,
+          "end": 101.1,
+          "probability": 0.997053861618042
+        },
+        {
+          "word": " to",
+          "start": 101.1,
+          "end": 101.34,
+          "probability": 0.9994072914123535
+        },
+        {
+          "word": " see",
+          "start": 101.34,
+          "end": 101.54,
+          "probability": 0.9991775155067444
+        },
+        {
+          "word": " friends",
+          "start": 101.54,
+          "end": 102.0,
+          "probability": 0.9941064119338989
+        },
+        {
+          "word": " and",
+          "start": 102.0,
+          "end": 102.26,
+          "probability": 0.9923505187034607
+        },
+        {
+          "word": " watch",
+          "start": 102.26,
+          "end": 102.58,
+          "probability": 0.9986490607261658
+        },
+        {
+          "word": " TV.",
+          "start": 102.58,
+          "end": 103.1,
+          "probability": 0.9816442131996155
+        },
+        {
+          "word": " You",
+          "start": 104.1,
+          "end": 104.36,
+          "probability": 0.9967643022537231
+        },
+        {
+          "word": " should",
+          "start": 104.36,
+          "end": 104.6,
+          "probability": 0.9993807077407837
+        },
+        {
+          "word": " talk",
+          "start": 104.6,
+          "end": 104.96,
+          "probability": 0.9984744191169739
+        },
+        {
+          "word": " to",
+          "start": 104.96,
+          "end": 105.22,
+          "probability": 0.9993969202041626
+        },
+        {
+          "word": " your",
+          "start": 105.22,
+          "end": 105.44,
+          "probability": 0.9986428618431091
+        },
+        {
+          "word": " parents",
+          "start": 105.44,
+          "end": 106.04,
+          "probability": 0.9953327775001526
+        },
+        {
+          "word": " too.",
+          "start": 106.04,
+          "end": 106.52,
+          "probability": 0.8300571441650391
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 10652,
+      "start": 106.52,
+      "end": 114.94,
+      "text": " They can also give you advice about jobs, but remember, it's your life and your future.",
+      "tokens": [
+        50408,
+        814,
+        393,
+        611,
+        976,
+        291,
+        5192,
+        466,
+        4782,
+        11,
+        457,
+        1604,
+        11,
+        309,
+        311,
+        428,
+        993,
+        293,
+        428,
+        2027,
+        13,
+        50820
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2504761944646421,
+      "compression_ratio": 1.0481927710843373,
+      "no_speech_prob": 0.07904668897390366,
+      "words": [
+        {
+          "word": " They",
+          "start": 106.52,
+          "end": 107.7,
+          "probability": 0.692484438419342
+        },
+        {
+          "word": " can",
+          "start": 107.7,
+          "end": 107.98,
+          "probability": 0.9841611981391907
+        },
+        {
+          "word": " also",
+          "start": 107.98,
+          "end": 108.38,
+          "probability": 0.996859073638916
+        },
+        {
+          "word": " give",
+          "start": 108.38,
+          "end": 108.68,
+          "probability": 0.9956151247024536
+        },
+        {
+          "word": " you",
+          "start": 108.68,
+          "end": 108.86,
+          "probability": 0.9964259266853333
+        },
+        {
+          "word": " advice",
+          "start": 108.86,
+          "end": 109.26,
+          "probability": 0.9970327615737915
+        },
+        {
+          "word": " about",
+          "start": 109.26,
+          "end": 109.6,
+          "probability": 0.9948031306266785
+        },
+        {
+          "word": " jobs,",
+          "start": 109.6,
+          "end": 110.12,
+          "probability": 0.9937574863433838
+        },
+        {
+          "word": " but",
+          "start": 110.7,
+          "end": 110.96,
+          "probability": 0.9902554154396057
+        },
+        {
+          "word": " remember,",
+          "start": 110.96,
+          "end": 111.62,
+          "probability": 0.9902347326278687
+        },
+        {
+          "word": " it's",
+          "start": 112.3,
+          "end": 112.56,
+          "probability": 0.9433950781822205
+        },
+        {
+          "word": " your",
+          "start": 112.56,
+          "end": 112.8,
+          "probability": 0.8766987919807434
+        },
+        {
+          "word": " life",
+          "start": 112.8,
+          "end": 113.26,
+          "probability": 0.9951303005218506
+        },
+        {
+          "word": " and",
+          "start": 113.26,
+          "end": 113.96,
+          "probability": 0.9587963223457336
+        },
+        {
+          "word": " your",
+          "start": 113.96,
+          "end": 114.3,
+          "probability": 0.9810614585876465
+        },
+        {
+          "word": " future.",
+          "start": 114.3,
+          "end": 114.94,
+          "probability": 0.998715877532959
+        }
+      ]
+    }
+  ]
+}

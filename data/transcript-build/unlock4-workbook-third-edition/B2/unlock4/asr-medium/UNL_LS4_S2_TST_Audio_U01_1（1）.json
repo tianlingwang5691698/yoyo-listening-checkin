@@ -1,0 +1,1190 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 1.2 1 GM foods have been changed by scientists. But despite what some people claim, there's no evidence that they are actually bad for us to eat. So I wouldn't avoid them. 2 People have been trying to find a way to end world hunger for many years. And GM foods may be part of the solution. They could feed millions of people around the world. And that's the reason for my interest. Not particularly because I want to see red bananas. 3 As farming conditions are expected to get worse in many areas, due to the effects of rising temperatures and climate change. And of all the issues facing agricultural industries, climate change is, in my personal opinion, the number one challenge.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.92,
+      "text": " Track 1.2",
+      "tokens": [
+        50364,
+        31903,
+        502,
+        13,
+        17,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24057114751715408,
+      "compression_ratio": 1.3602150537634408,
+      "no_speech_prob": 0.35703667998313904,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.42,
+          "probability": 0.28846028447151184
+        },
+        {
+          "word": " 1",
+          "start": 0.42,
+          "end": 0.96,
+          "probability": 0.955580472946167
+        },
+        {
+          "word": ".2",
+          "start": 0.96,
+          "end": 1.92,
+          "probability": 0.9959148466587067
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.899999999999997,
+      "end": 4.58,
+      "text": " 1",
+      "tokens": [
+        50564,
+        502,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24057114751715408,
+      "compression_ratio": 1.3602150537634408,
+      "no_speech_prob": 0.35703667998313904,
+      "words": [
+        {
+          "word": " 1",
+          "start": 3.899999999999997,
+          "end": 4.58,
+          "probability": 0.1928209513425827
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.219999999999997,
+      "end": 9.76,
+      "text": " GM foods have been changed by scientists.",
+      "tokens": [
+        50689,
+        16609,
+        8656,
+        362,
+        668,
+        3105,
+        538,
+        7708,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24057114751715408,
+      "compression_ratio": 1.3602150537634408,
+      "no_speech_prob": 0.35703667998313904,
+      "words": [
+        {
+          "word": " GM",
+          "start": 6.219999999999997,
+          "end": 6.9,
+          "probability": 0.04451606795191765
+        },
+        {
+          "word": " foods",
+          "start": 6.9,
+          "end": 7.4,
+          "probability": 0.7808369398117065
+        },
+        {
+          "word": " have",
+          "start": 7.4,
+          "end": 7.78,
+          "probability": 0.9974608421325684
+        },
+        {
+          "word": " been",
+          "start": 7.78,
+          "end": 8.1,
+          "probability": 0.9953814744949341
+        },
+        {
+          "word": " changed",
+          "start": 8.1,
+          "end": 8.78,
+          "probability": 0.9933040738105774
+        },
+        {
+          "word": " by",
+          "start": 8.78,
+          "end": 9.02,
+          "probability": 0.9961749315261841
+        },
+        {
+          "word": " scientists.",
+          "start": 9.02,
+          "end": 9.76,
+          "probability": 0.99506676197052
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 10.44,
+      "end": 12.68,
+      "text": " But despite what some people claim,",
+      "tokens": [
+        50889,
+        583,
+        7228,
+        437,
+        512,
+        561,
+        3932,
+        11,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24057114751715408,
+      "compression_ratio": 1.3602150537634408,
+      "no_speech_prob": 0.35703667998313904,
+      "words": [
+        {
+          "word": " But",
+          "start": 10.44,
+          "end": 10.74,
+          "probability": 0.9805465340614319
+        },
+        {
+          "word": " despite",
+          "start": 10.74,
+          "end": 11.28,
+          "probability": 0.6513826251029968
+        },
+        {
+          "word": " what",
+          "start": 11.28,
+          "end": 11.58,
+          "probability": 0.9929931163787842
+        },
+        {
+          "word": " some",
+          "start": 11.58,
+          "end": 11.88,
+          "probability": 0.9978386759757996
+        },
+        {
+          "word": " people",
+          "start": 11.88,
+          "end": 12.18,
+          "probability": 0.9991494417190552
+        },
+        {
+          "word": " claim,",
+          "start": 12.18,
+          "end": 12.68,
+          "probability": 0.9972599744796753
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 13.1,
+      "end": 16.7,
+      "text": " there's no evidence that they are actually bad for us to eat.",
+      "tokens": [
+        51014,
+        456,
+        311,
+        572,
+        4467,
+        300,
+        436,
+        366,
+        767,
+        1578,
+        337,
+        505,
+        281,
+        1862,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24057114751715408,
+      "compression_ratio": 1.3602150537634408,
+      "no_speech_prob": 0.35703667998313904,
+      "words": [
+        {
+          "word": " there's",
+          "start": 13.1,
+          "end": 13.48,
+          "probability": 0.9449429512023926
+        },
+        {
+          "word": " no",
+          "start": 13.48,
+          "end": 13.66,
+          "probability": 0.998678982257843
+        },
+        {
+          "word": " evidence",
+          "start": 13.66,
+          "end": 14.12,
+          "probability": 0.9996615648269653
+        },
+        {
+          "word": " that",
+          "start": 14.12,
+          "end": 14.46,
+          "probability": 0.9569965600967407
+        },
+        {
+          "word": " they",
+          "start": 14.46,
+          "end": 14.64,
+          "probability": 0.9975560903549194
+        },
+        {
+          "word": " are",
+          "start": 14.64,
+          "end": 14.74,
+          "probability": 0.8199115991592407
+        },
+        {
+          "word": " actually",
+          "start": 14.74,
+          "end": 15.28,
+          "probability": 0.9978843331336975
+        },
+        {
+          "word": " bad",
+          "start": 15.28,
+          "end": 15.62,
+          "probability": 0.9857777953147888
+        },
+        {
+          "word": " for",
+          "start": 15.62,
+          "end": 15.96,
+          "probability": 0.9993705153465271
+        },
+        {
+          "word": " us",
+          "start": 15.96,
+          "end": 16.22,
+          "probability": 0.9989763498306274
+        },
+        {
+          "word": " to",
+          "start": 16.22,
+          "end": 16.36,
+          "probability": 0.9985742568969727
+        },
+        {
+          "word": " eat.",
+          "start": 16.36,
+          "end": 16.7,
+          "probability": 0.9991341233253479
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 17.3,
+      "end": 18.98,
+      "text": " So I wouldn't avoid them.",
+      "tokens": [
+        51214,
+        407,
+        286,
+        2759,
+        380,
+        5042,
+        552,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24057114751715408,
+      "compression_ratio": 1.3602150537634408,
+      "no_speech_prob": 0.35703667998313904,
+      "words": [
+        {
+          "word": " So",
+          "start": 17.3,
+          "end": 17.56,
+          "probability": 0.9935842156410217
+        },
+        {
+          "word": " I",
+          "start": 17.56,
+          "end": 17.98,
+          "probability": 0.568393886089325
+        },
+        {
+          "word": " wouldn't",
+          "start": 17.98,
+          "end": 18.26,
+          "probability": 0.9977818429470062
+        },
+        {
+          "word": " avoid",
+          "start": 18.26,
+          "end": 18.62,
+          "probability": 0.9942163228988647
+        },
+        {
+          "word": " them.",
+          "start": 18.62,
+          "end": 18.98,
+          "probability": 0.9982410669326782
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 20.88,
+      "end": 21.56,
+      "text": " 2",
+      "tokens": [
+        51414,
+        568,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24057114751715408,
+      "compression_ratio": 1.3602150537634408,
+      "no_speech_prob": 0.35703667998313904,
+      "words": [
+        {
+          "word": " 2",
+          "start": 20.88,
+          "end": 21.56,
+          "probability": 0.860689103603363
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 23.199999999999996,
+      "end": 27.94,
+      "text": " People have been trying to find a way to end world hunger for many years.",
+      "tokens": [
+        51539,
+        3432,
+        362,
+        668,
+        1382,
+        281,
+        915,
+        257,
+        636,
+        281,
+        917,
+        1002,
+        19229,
+        337,
+        867,
+        924,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24057114751715408,
+      "compression_ratio": 1.3602150537634408,
+      "no_speech_prob": 0.35703667998313904,
+      "words": [
+        {
+          "word": " People",
+          "start": 23.199999999999996,
+          "end": 23.88,
+          "probability": 0.0677599161863327
+        },
+        {
+          "word": " have",
+          "start": 23.88,
+          "end": 24.08,
+          "probability": 0.9981992840766907
+        },
+        {
+          "word": " been",
+          "start": 24.08,
+          "end": 24.26,
+          "probability": 0.9988124370574951
+        },
+        {
+          "word": " trying",
+          "start": 24.26,
+          "end": 24.56,
+          "probability": 0.998621940612793
+        },
+        {
+          "word": " to",
+          "start": 24.56,
+          "end": 24.76,
+          "probability": 0.999349057674408
+        },
+        {
+          "word": " find",
+          "start": 24.76,
+          "end": 25.02,
+          "probability": 0.9994669556617737
+        },
+        {
+          "word": " a",
+          "start": 25.02,
+          "end": 25.26,
+          "probability": 0.9973324537277222
+        },
+        {
+          "word": " way",
+          "start": 25.26,
+          "end": 25.42,
+          "probability": 0.9995872378349304
+        },
+        {
+          "word": " to",
+          "start": 25.42,
+          "end": 25.6,
+          "probability": 0.9984357953071594
+        },
+        {
+          "word": " end",
+          "start": 25.6,
+          "end": 25.94,
+          "probability": 0.9878586530685425
+        },
+        {
+          "word": " world",
+          "start": 25.94,
+          "end": 26.32,
+          "probability": 0.7268217206001282
+        },
+        {
+          "word": " hunger",
+          "start": 26.32,
+          "end": 26.78,
+          "probability": 0.9957748055458069
+        },
+        {
+          "word": " for",
+          "start": 26.78,
+          "end": 27.08,
+          "probability": 0.9927922487258911
+        },
+        {
+          "word": " many",
+          "start": 27.08,
+          "end": 27.38,
+          "probability": 0.9993426203727722
+        },
+        {
+          "word": " years.",
+          "start": 27.38,
+          "end": 27.94,
+          "probability": 0.998754620552063
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2794,
+      "start": 27.94,
+      "end": 31.54,
+      "text": " And GM foods may be part of the solution.",
+      "tokens": [
+        50389,
+        400,
+        16609,
+        8656,
+        815,
+        312,
+        644,
+        295,
+        264,
+        3827,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11728086350839349,
+      "compression_ratio": 1.4786729857819905,
+      "no_speech_prob": 0.14085084199905396,
+      "words": [
+        {
+          "word": " And",
+          "start": 27.94,
+          "end": 28.72,
+          "probability": 0.13807444274425507
+        },
+        {
+          "word": " GM",
+          "start": 28.72,
+          "end": 29.12,
+          "probability": 0.8493032455444336
+        },
+        {
+          "word": " foods",
+          "start": 29.12,
+          "end": 29.68,
+          "probability": 0.8635920882225037
+        },
+        {
+          "word": " may",
+          "start": 29.68,
+          "end": 30.06,
+          "probability": 0.9882026314735413
+        },
+        {
+          "word": " be",
+          "start": 30.06,
+          "end": 30.3,
+          "probability": 0.9989674091339111
+        },
+        {
+          "word": " part",
+          "start": 30.3,
+          "end": 30.64,
+          "probability": 0.9859902858734131
+        },
+        {
+          "word": " of",
+          "start": 30.64,
+          "end": 30.82,
+          "probability": 0.9989824891090393
+        },
+        {
+          "word": " the",
+          "start": 30.82,
+          "end": 30.94,
+          "probability": 0.9952261447906494
+        },
+        {
+          "word": " solution.",
+          "start": 30.94,
+          "end": 31.54,
+          "probability": 0.9926146268844604
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2794,
+      "start": 32.14,
+      "end": 34.82,
+      "text": " They could feed millions of people around the world.",
+      "tokens": [
+        50564,
+        814,
+        727,
+        3154,
+        6803,
+        295,
+        561,
+        926,
+        264,
+        1002,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11728086350839349,
+      "compression_ratio": 1.4786729857819905,
+      "no_speech_prob": 0.14085084199905396,
+      "words": [
+        {
+          "word": " They",
+          "start": 32.14,
+          "end": 32.26,
+          "probability": 0.9391763806343079
+        },
+        {
+          "word": " could",
+          "start": 32.26,
+          "end": 32.48,
+          "probability": 0.9929203391075134
+        },
+        {
+          "word": " feed",
+          "start": 32.48,
+          "end": 32.8,
+          "probability": 0.9984164237976074
+        },
+        {
+          "word": " millions",
+          "start": 32.8,
+          "end": 33.3,
+          "probability": 0.9980912804603577
+        },
+        {
+          "word": " of",
+          "start": 33.3,
+          "end": 33.56,
+          "probability": 0.9974353909492493
+        },
+        {
+          "word": " people",
+          "start": 33.56,
+          "end": 33.9,
+          "probability": 0.9993529915809631
+        },
+        {
+          "word": " around",
+          "start": 33.9,
+          "end": 34.2,
+          "probability": 0.9973784685134888
+        },
+        {
+          "word": " the",
+          "start": 34.2,
+          "end": 34.42,
+          "probability": 0.9995130300521851
+        },
+        {
+          "word": " world.",
+          "start": 34.42,
+          "end": 34.82,
+          "probability": 0.9994470477104187
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2794,
+      "start": 35.42,
+      "end": 37.42,
+      "text": " And that's the reason for my interest.",
+      "tokens": [
+        50739,
+        400,
+        300,
+        311,
+        264,
+        1778,
+        337,
+        452,
+        1179,
+        13,
+        50839
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11728086350839349,
+      "compression_ratio": 1.4786729857819905,
+      "no_speech_prob": 0.14085084199905396,
+      "words": [
+        {
+          "word": " And",
+          "start": 35.42,
+          "end": 35.68,
+          "probability": 0.9909778833389282
+        },
+        {
+          "word": " that's",
+          "start": 35.68,
+          "end": 36.04,
+          "probability": 0.9902132749557495
+        },
+        {
+          "word": " the",
+          "start": 36.04,
+          "end": 36.14,
+          "probability": 0.9978302121162415
+        },
+        {
+          "word": " reason",
+          "start": 36.14,
+          "end": 36.46,
+          "probability": 0.9994408488273621
+        },
+        {
+          "word": " for",
+          "start": 36.46,
+          "end": 36.68,
+          "probability": 0.989177405834198
+        },
+        {
+          "word": " my",
+          "start": 36.68,
+          "end": 36.88,
+          "probability": 0.9991744160652161
+        },
+        {
+          "word": " interest.",
+          "start": 36.88,
+          "end": 37.42,
+          "probability": 0.9958919286727905
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2794,
+      "start": 37.94,
+      "end": 40.84,
+      "text": " Not particularly because I want to see red bananas.",
+      "tokens": [
+        50864,
+        1726,
+        4098,
+        570,
+        286,
+        528,
+        281,
+        536,
+        2182,
+        22742,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11728086350839349,
+      "compression_ratio": 1.4786729857819905,
+      "no_speech_prob": 0.14085084199905396,
+      "words": [
+        {
+          "word": " Not",
+          "start": 37.94,
+          "end": 38.18,
+          "probability": 0.9779753684997559
+        },
+        {
+          "word": " particularly",
+          "start": 38.18,
+          "end": 38.9,
+          "probability": 0.9846013784408569
+        },
+        {
+          "word": " because",
+          "start": 38.9,
+          "end": 39.32,
+          "probability": 0.8320903182029724
+        },
+        {
+          "word": " I",
+          "start": 39.32,
+          "end": 39.5,
+          "probability": 0.9977304339408875
+        },
+        {
+          "word": " want",
+          "start": 39.5,
+          "end": 39.7,
+          "probability": 0.9973465204238892
+        },
+        {
+          "word": " to",
+          "start": 39.7,
+          "end": 39.88,
+          "probability": 0.9991645812988281
+        },
+        {
+          "word": " see",
+          "start": 39.88,
+          "end": 40.06,
+          "probability": 0.9988204836845398
+        },
+        {
+          "word": " red",
+          "start": 40.06,
+          "end": 40.36,
+          "probability": 0.9609073996543884
+        },
+        {
+          "word": " bananas.",
+          "start": 40.36,
+          "end": 40.84,
+          "probability": 0.9881201982498169
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2794,
+      "start": 43.26,
+      "end": 43.9,
+      "text": " 3",
+      "tokens": [
+        51139,
+        805,
+        51189
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11728086350839349,
+      "compression_ratio": 1.4786729857819905,
+      "no_speech_prob": 0.14085084199905396,
+      "words": [
+        {
+          "word": " 3",
+          "start": 43.26,
+          "end": 43.9,
+          "probability": 0.06951585412025452
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2794,
+      "start": 45.52,
+      "end": 49.82,
+      "text": " As farming conditions are expected to get worse in many areas,",
+      "tokens": [
+        51264,
+        1018,
+        16557,
+        4487,
+        366,
+        5176,
+        281,
+        483,
+        5324,
+        294,
+        867,
+        3179,
+        11,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11728086350839349,
+      "compression_ratio": 1.4786729857819905,
+      "no_speech_prob": 0.14085084199905396,
+      "words": [
+        {
+          "word": " As",
+          "start": 45.52,
+          "end": 46.2,
+          "probability": 0.010225540958344936
+        },
+        {
+          "word": " farming",
+          "start": 46.2,
+          "end": 46.6,
+          "probability": 0.9843649864196777
+        },
+        {
+          "word": " conditions",
+          "start": 46.6,
+          "end": 47.08,
+          "probability": 0.9984059929847717
+        },
+        {
+          "word": " are",
+          "start": 47.08,
+          "end": 47.4,
+          "probability": 0.9994137287139893
+        },
+        {
+          "word": " expected",
+          "start": 47.4,
+          "end": 47.9,
+          "probability": 0.9995561242103577
+        },
+        {
+          "word": " to",
+          "start": 47.9,
+          "end": 48.08,
+          "probability": 0.9989610910415649
+        },
+        {
+          "word": " get",
+          "start": 48.08,
+          "end": 48.24,
+          "probability": 0.9978671073913574
+        },
+        {
+          "word": " worse",
+          "start": 48.24,
+          "end": 48.58,
+          "probability": 0.9993423819541931
+        },
+        {
+          "word": " in",
+          "start": 48.58,
+          "end": 48.96,
+          "probability": 0.9839854836463928
+        },
+        {
+          "word": " many",
+          "start": 48.96,
+          "end": 49.22,
+          "probability": 0.9995419979095459
+        },
+        {
+          "word": " areas,",
+          "start": 49.22,
+          "end": 49.82,
+          "probability": 0.9994988441467285
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 2794,
+      "start": 50.24,
+      "end": 54.06,
+      "text": " due to the effects of rising temperatures and climate change.",
+      "tokens": [
+        51464,
+        3462,
+        281,
+        264,
+        5065,
+        295,
+        11636,
+        12633,
+        293,
+        5659,
+        1319,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11728086350839349,
+      "compression_ratio": 1.4786729857819905,
+      "no_speech_prob": 0.14085084199905396,
+      "words": [
+        {
+          "word": " due",
+          "start": 50.24,
+          "end": 50.52,
+          "probability": 0.9715763926506042
+        },
+        {
+          "word": " to",
+          "start": 50.52,
+          "end": 50.62,
+          "probability": 0.9987518787384033
+        },
+        {
+          "word": " the",
+          "start": 50.62,
+          "end": 50.76,
+          "probability": 0.9963878393173218
+        },
+        {
+          "word": " effects",
+          "start": 50.76,
+          "end": 51.1,
+          "probability": 0.9540854096412659
+        },
+        {
+          "word": " of",
+          "start": 51.1,
+          "end": 51.38,
+          "probability": 0.9987490177154541
+        },
+        {
+          "word": " rising",
+          "start": 51.38,
+          "end": 51.72,
+          "probability": 0.996711015701294
+        },
+        {
+          "word": " temperatures",
+          "start": 51.72,
+          "end": 52.36,
+          "probability": 0.9971994161605835
+        },
+        {
+          "word": " and",
+          "start": 52.36,
+          "end": 53.12,
+          "probability": 0.8805670142173767
+        },
+        {
+          "word": " climate",
+          "start": 53.12,
+          "end": 53.48,
+          "probability": 0.999583899974823
+        },
+        {
+          "word": " change.",
+          "start": 53.48,
+          "end": 54.06,
+          "probability": 0.9993746876716614
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5406,
+      "start": 54.06,
+      "end": 58.12,
+      "text": " And of all the issues facing agricultural industries,",
+      "tokens": [
+        50389,
+        400,
+        295,
+        439,
+        264,
+        2663,
+        7170,
+        19587,
+        13284,
+        11,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10361731903893608,
+      "compression_ratio": 1.22,
+      "no_speech_prob": 0.05298193544149399,
+      "words": [
+        {
+          "word": " And",
+          "start": 54.06,
+          "end": 54.96,
+          "probability": 0.7381143569946289
+        },
+        {
+          "word": " of",
+          "start": 54.96,
+          "end": 55.24,
+          "probability": 0.9171623587608337
+        },
+        {
+          "word": " all",
+          "start": 55.24,
+          "end": 55.5,
+          "probability": 0.9964403510093689
+        },
+        {
+          "word": " the",
+          "start": 55.5,
+          "end": 55.68,
+          "probability": 0.9864062666893005
+        },
+        {
+          "word": " issues",
+          "start": 55.68,
+          "end": 56.0,
+          "probability": 0.9972237348556519
+        },
+        {
+          "word": " facing",
+          "start": 56.0,
+          "end": 56.58,
+          "probability": 0.9962432384490967
+        },
+        {
+          "word": " agricultural",
+          "start": 56.58,
+          "end": 57.2,
+          "probability": 0.981094241142273
+        },
+        {
+          "word": " industries,",
+          "start": 57.2,
+          "end": 58.12,
+          "probability": 0.9785895943641663
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5406,
+      "start": 58.48,
+      "end": 62.84,
+      "text": " climate change is, in my personal opinion, the number one challenge.",
+      "tokens": [
+        50564,
+        5659,
+        1319,
+        307,
+        11,
+        294,
+        452,
+        2973,
+        4800,
+        11,
+        264,
+        1230,
+        472,
+        3430,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10361731903893608,
+      "compression_ratio": 1.22,
+      "no_speech_prob": 0.05298193544149399,
+      "words": [
+        {
+          "word": " climate",
+          "start": 58.48,
+          "end": 58.78,
+          "probability": 0.9645504951477051
+        },
+        {
+          "word": " change",
+          "start": 58.78,
+          "end": 59.34,
+          "probability": 0.9987892508506775
+        },
+        {
+          "word": " is,",
+          "start": 59.34,
+          "end": 59.66,
+          "probability": 0.9077363610267639
+        },
+        {
+          "word": " in",
+          "start": 59.88,
+          "end": 60.12,
+          "probability": 0.9984865188598633
+        },
+        {
+          "word": " my",
+          "start": 60.12,
+          "end": 60.32,
+          "probability": 0.9985488057136536
+        },
+        {
+          "word": " personal",
+          "start": 60.32,
+          "end": 60.78,
+          "probability": 0.9981595873832703
+        },
+        {
+          "word": " opinion,",
+          "start": 60.78,
+          "end": 61.18,
+          "probability": 0.9997894167900085
+        },
+        {
+          "word": " the",
+          "start": 61.46,
+          "end": 61.54,
+          "probability": 0.9907433390617371
+        },
+        {
+          "word": " number",
+          "start": 61.54,
+          "end": 61.96,
+          "probability": 0.5893746018409729
+        },
+        {
+          "word": " one",
+          "start": 61.96,
+          "end": 62.32,
+          "probability": 0.8886942267417908
+        },
+        {
+          "word": " challenge.",
+          "start": 62.32,
+          "end": 62.84,
+          "probability": 0.997744083404541
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5201 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Mid-course test, Track 1. Good afternoon. Today we're joined by Dr Adam Pearson, Professor of Education. Recent research has revealed several issues around employing and becoming a qualified early years teacher or EYT. That's a teacher for children up to the age of five, isn't it? Hello, Simona. Yes, children who attend nursery school. There are some barriers to becoming an EYT. There is a lack of interest among high school graduates to obtain a qualification in this field because it has limited career prospects. And it takes around four years to obtain the early years initial teacher training qualification. This qualification allows graduates to teach children from zero to five years old only. So if they want to teach in schools with older students as their career develops, they will need a further academic qualification. Most importantly, however, once you obtain a qualification in the field, the job is poorly paid, especially when compared to primary or secondary school teachers. A recent survey found that many early years teachers don't receive graduate level pay with some earning as little as £18,000 per year. What is the reason for that? Mainly it's because early years teachers don't get the qualified teacher status called QTS. Government says both qualifications, the QTS and the EYT are equal and should therefore receive the same pay. However, employers don't see it that way. Many graduate trainees who go on to acquire EYT status find that whilst they end up with more teaching responsibility, they don't receive the pay and recognition they deserve. The EYT is wrongly viewed as a lesser qualification. Do you think the government is doing enough to increase the number of EYTs? Well, the number of EYTs is declining year after year. From its highest point in 2013 to 2014, the number of new participants in early years initial teacher training has plummeted by 77%. In 2013 to 2014, there were 2,327 entrants to early years initial teacher training. But by 2022 to 23, this number had fallen to 534. What's your view of the EYT role? Is it easier to teach the under-fives, bansay, primary or secondary-aged children? That's a complex question to answer. There are a lot of considerations. How the school is run and managed must be considered together with the student behaviour, whether colleagues are professional, etc. I've visited some nursery schools in, for example, poor areas where the EYT has taken on the role of care and mentor. Others have needed more specific skills in teaching very young children with learning difficulties, for example dyslexia or autism. Often the schools are underfunded. Although their EYT does not need to specialise in one subject, they need to be skilled in many. We briefly talked about employers. What should they be doing differently? Well, the nursery schools are under pressure and I'll explain why. I mentioned that often they don't have much funding. Obviously many of the children attending nursery are fee-paying. It's not a legal requirement for a child to attend school until the age of 4, as you know. In 2010 the UK government introduced 15 hours free child care per week and from 2025 all children can get 33 hours. That works out at around £7,000 free nursery care per child. This is great news for parents on lower incomes, but leaves the school with very little to pay its teachers. This is why many are earning little above the minimum wage. Well, unfortunately we've come to the end of the podcast. I'd like to thank Dr Pearson for sharing the results of the research and highlighting just how important early years teachers are. Join me next time for Science in the City.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.6,
+      "text": " Mid-course test, Track 1.",
+      "tokens": [
+        50364,
+        7033,
+        12,
+        31913,
+        1500,
+        11,
+        31903,
+        502,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26119131512112087,
+      "compression_ratio": 1.3640776699029127,
+      "no_speech_prob": 0.11795485019683838,
+      "words": [
+        {
+          "word": " Mid",
+          "start": 0.0,
+          "end": 0.48,
+          "probability": 0.6900063157081604
+        },
+        {
+          "word": "-course",
+          "start": 0.48,
+          "end": 0.82,
+          "probability": 0.5854746997356415
+        },
+        {
+          "word": " test,",
+          "start": 0.82,
+          "end": 1.36,
+          "probability": 0.853177547454834
+        },
+        {
+          "word": " Track",
+          "start": 1.78,
+          "end": 2.16,
+          "probability": 0.47839197516441345
+        },
+        {
+          "word": " 1.",
+          "start": 2.16,
+          "end": 2.6,
+          "probability": 0.7423195242881775
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.0,
+      "end": 10.72,
+      "text": " Good afternoon. Today we're joined by Dr Adam Pearson, Professor of Education.",
+      "tokens": [
+        50564,
+        2205,
+        6499,
+        13,
+        2692,
+        321,
+        434,
+        6869,
+        538,
+        2491,
+        7938,
+        39041,
+        11,
+        8419,
+        295,
+        10680,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26119131512112087,
+      "compression_ratio": 1.3640776699029127,
+      "no_speech_prob": 0.11795485019683838,
+      "words": [
+        {
+          "word": " Good",
+          "start": 3.8200000000000003,
+          "end": 4.28,
+          "probability": 0.33870768547058105
+        },
+        {
+          "word": " afternoon.",
+          "start": 4.28,
+          "end": 4.9,
+          "probability": 0.88619065284729
+        },
+        {
+          "word": " Today",
+          "start": 5.48,
+          "end": 5.92,
+          "probability": 0.9957708716392517
+        },
+        {
+          "word": " we're",
+          "start": 5.92,
+          "end": 6.6,
+          "probability": 0.6531395614147186
+        },
+        {
+          "word": " joined",
+          "start": 6.6,
+          "end": 6.92,
+          "probability": 0.9979512095451355
+        },
+        {
+          "word": " by",
+          "start": 6.92,
+          "end": 7.24,
+          "probability": 0.9988685846328735
+        },
+        {
+          "word": " Dr",
+          "start": 7.24,
+          "end": 7.7,
+          "probability": 0.7925246357917786
+        },
+        {
+          "word": " Adam",
+          "start": 7.7,
+          "end": 8.1,
+          "probability": 0.7581747174263
+        },
+        {
+          "word": " Pearson,",
+          "start": 8.1,
+          "end": 8.58,
+          "probability": 0.9466962218284607
+        },
+        {
+          "word": " Professor",
+          "start": 9.26,
+          "end": 9.72,
+          "probability": 0.7237648963928223
+        },
+        {
+          "word": " of",
+          "start": 9.72,
+          "end": 10.08,
+          "probability": 0.9961846470832825
+        },
+        {
+          "word": " Education.",
+          "start": 10.08,
+          "end": 10.72,
+          "probability": 0.9495174884796143
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 11.64,
+      "end": 21.24,
+      "text": " Recent research has revealed several issues around employing and becoming a qualified early years teacher or EYT.",
+      "tokens": [
+        50914,
+        17553,
+        2132,
+        575,
+        9599,
+        2940,
+        2663,
+        926,
+        3188,
+        278,
+        293,
+        5617,
+        257,
+        15904,
+        2440,
+        924,
+        5027,
+        420,
+        462,
+        56,
+        51,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26119131512112087,
+      "compression_ratio": 1.3640776699029127,
+      "no_speech_prob": 0.11795485019683838,
+      "words": [
+        {
+          "word": " Recent",
+          "start": 11.64,
+          "end": 12.08,
+          "probability": 0.9200774431228638
+        },
+        {
+          "word": " research",
+          "start": 12.08,
+          "end": 12.54,
+          "probability": 0.9991587400436401
+        },
+        {
+          "word": " has",
+          "start": 12.54,
+          "end": 12.88,
+          "probability": 0.998375415802002
+        },
+        {
+          "word": " revealed",
+          "start": 12.88,
+          "end": 13.3,
+          "probability": 0.9987379908561707
+        },
+        {
+          "word": " several",
+          "start": 13.3,
+          "end": 13.92,
+          "probability": 0.9983931183815002
+        },
+        {
+          "word": " issues",
+          "start": 13.92,
+          "end": 14.66,
+          "probability": 0.9969454407691956
+        },
+        {
+          "word": " around",
+          "start": 14.66,
+          "end": 15.28,
+          "probability": 0.9892396926879883
+        },
+        {
+          "word": " employing",
+          "start": 15.28,
+          "end": 16.14,
+          "probability": 0.83254075050354
+        },
+        {
+          "word": " and",
+          "start": 16.14,
+          "end": 16.4,
+          "probability": 0.9877803325653076
+        },
+        {
+          "word": " becoming",
+          "start": 16.4,
+          "end": 16.94,
+          "probability": 0.9971718192100525
+        },
+        {
+          "word": " a",
+          "start": 16.94,
+          "end": 17.4,
+          "probability": 0.9941131472587585
+        },
+        {
+          "word": " qualified",
+          "start": 17.4,
+          "end": 18.0,
+          "probability": 0.9441817998886108
+        },
+        {
+          "word": " early",
+          "start": 18.0,
+          "end": 18.66,
+          "probability": 0.7772152423858643
+        },
+        {
+          "word": " years",
+          "start": 18.66,
+          "end": 19.12,
+          "probability": 0.6274141669273376
+        },
+        {
+          "word": " teacher",
+          "start": 19.12,
+          "end": 19.62,
+          "probability": 0.9884677529335022
+        },
+        {
+          "word": " or",
+          "start": 19.62,
+          "end": 20.28,
+          "probability": 0.5339968204498291
+        },
+        {
+          "word": " EYT.",
+          "start": 20.28,
+          "end": 21.24,
+          "probability": 0.909207284450531
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 21.98,
+      "end": 26.54,
+      "text": " That's a teacher for children up to the age of five, isn't it?",
+      "tokens": [
+        51464,
+        663,
+        311,
+        257,
+        5027,
+        337,
+        2227,
+        493,
+        281,
+        264,
+        3205,
+        295,
+        1732,
+        11,
+        1943,
+        380,
+        309,
+        30,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26119131512112087,
+      "compression_ratio": 1.3640776699029127,
+      "no_speech_prob": 0.11795485019683838,
+      "words": [
+        {
+          "word": " That's",
+          "start": 21.98,
+          "end": 22.48,
+          "probability": 0.9925056993961334
+        },
+        {
+          "word": " a",
+          "start": 22.48,
+          "end": 22.56,
+          "probability": 0.9931142926216125
+        },
+        {
+          "word": " teacher",
+          "start": 22.56,
+          "end": 22.96,
+          "probability": 0.993739128112793
+        },
+        {
+          "word": " for",
+          "start": 22.96,
+          "end": 23.18,
+          "probability": 0.9979428648948669
+        },
+        {
+          "word": " children",
+          "start": 23.18,
+          "end": 23.64,
+          "probability": 0.9827106595039368
+        },
+        {
+          "word": " up",
+          "start": 23.64,
+          "end": 24.08,
+          "probability": 0.9840874075889587
+        },
+        {
+          "word": " to",
+          "start": 24.08,
+          "end": 24.44,
+          "probability": 0.9959489107131958
+        },
+        {
+          "word": " the",
+          "start": 24.44,
+          "end": 24.68,
+          "probability": 0.9928051829338074
+        },
+        {
+          "word": " age",
+          "start": 24.68,
+          "end": 25.0,
+          "probability": 0.9966925382614136
+        },
+        {
+          "word": " of",
+          "start": 25.0,
+          "end": 25.2,
+          "probability": 0.9983071088790894
+        },
+        {
+          "word": " five,",
+          "start": 25.2,
+          "end": 25.66,
+          "probability": 0.6717242002487183
+        },
+        {
+          "word": " isn't",
+          "start": 26.06,
+          "end": 26.32,
+          "probability": 0.9965515434741974
+        },
+        {
+          "word": " it?",
+          "start": 26.32,
+          "end": 26.54,
+          "probability": 0.9992863535881042
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 2654,
+      "start": 27.54,
+      "end": 31.74,
+      "text": " Hello, Simona. Yes, children who attend nursery school.",
+      "tokens": [
+        50414,
+        2425,
+        11,
+        3998,
+        4037,
+        13,
+        1079,
+        11,
+        2227,
+        567,
+        6888,
+        37538,
+        1395,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.093004948384053,
+      "compression_ratio": 1.570754716981132,
+      "no_speech_prob": 0.058620430529117584,
+      "words": [
+        {
+          "word": " Hello,",
+          "start": 27.54,
+          "end": 27.98,
+          "probability": 0.5398871302604675
+        },
+        {
+          "word": " Simona.",
+          "start": 28.2,
+          "end": 28.48,
+          "probability": 0.7578452527523041
+        },
+        {
+          "word": " Yes,",
+          "start": 29.16,
+          "end": 29.34,
+          "probability": 0.9660606384277344
+        },
+        {
+          "word": " children",
+          "start": 29.86,
+          "end": 30.16,
+          "probability": 0.8815433382987976
+        },
+        {
+          "word": " who",
+          "start": 30.16,
+          "end": 30.44,
+          "probability": 0.9951561689376831
+        },
+        {
+          "word": " attend",
+          "start": 30.44,
+          "end": 30.72,
+          "probability": 0.9956725835800171
+        },
+        {
+          "word": " nursery",
+          "start": 30.72,
+          "end": 31.24,
+          "probability": 0.9679058790206909
+        },
+        {
+          "word": " school.",
+          "start": 31.24,
+          "end": 31.74,
+          "probability": 0.9962499737739563
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2654,
+      "start": 32.36,
+      "end": 35.32,
+      "text": " There are some barriers to becoming an EYT.",
+      "tokens": [
+        50614,
+        821,
+        366,
+        512,
+        13565,
+        281,
+        5617,
+        364,
+        462,
+        56,
+        51,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.093004948384053,
+      "compression_ratio": 1.570754716981132,
+      "no_speech_prob": 0.058620430529117584,
+      "words": [
+        {
+          "word": " There",
+          "start": 32.36,
+          "end": 32.7,
+          "probability": 0.9861243963241577
+        },
+        {
+          "word": " are",
+          "start": 32.7,
+          "end": 32.88,
+          "probability": 0.9961161613464355
+        },
+        {
+          "word": " some",
+          "start": 32.88,
+          "end": 33.1,
+          "probability": 0.983453094959259
+        },
+        {
+          "word": " barriers",
+          "start": 33.1,
+          "end": 33.66,
+          "probability": 0.9910179376602173
+        },
+        {
+          "word": " to",
+          "start": 33.66,
+          "end": 33.94,
+          "probability": 0.9969577789306641
+        },
+        {
+          "word": " becoming",
+          "start": 33.94,
+          "end": 34.28,
+          "probability": 0.9933317303657532
+        },
+        {
+          "word": " an",
+          "start": 34.28,
+          "end": 34.56,
+          "probability": 0.9913438558578491
+        },
+        {
+          "word": " EYT.",
+          "start": 34.56,
+          "end": 35.32,
+          "probability": 0.8986073533693949
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2654,
+      "start": 35.88,
+      "end": 43.76,
+      "text": " There is a lack of interest among high school graduates to obtain a qualification in this field because it has limited career prospects.",
+      "tokens": [
+        50814,
+        821,
+        307,
+        257,
+        5011,
+        295,
+        1179,
+        3654,
+        1090,
+        1395,
+        13577,
+        281,
+        12701,
+        257,
+        37425,
+        294,
+        341,
+        2519,
+        570,
+        309,
+        575,
+        5567,
+        3988,
+        32933,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.093004948384053,
+      "compression_ratio": 1.570754716981132,
+      "no_speech_prob": 0.058620430529117584,
+      "words": [
+        {
+          "word": " There",
+          "start": 35.88,
+          "end": 36.14,
+          "probability": 0.9946850538253784
+        },
+        {
+          "word": " is",
+          "start": 36.14,
+          "end": 36.32,
+          "probability": 0.995053768157959
+        },
+        {
+          "word": " a",
+          "start": 36.32,
+          "end": 36.42,
+          "probability": 0.9843519330024719
+        },
+        {
+          "word": " lack",
+          "start": 36.42,
+          "end": 36.7,
+          "probability": 0.9992971420288086
+        },
+        {
+          "word": " of",
+          "start": 36.7,
+          "end": 36.9,
+          "probability": 0.9985907673835754
+        },
+        {
+          "word": " interest",
+          "start": 36.9,
+          "end": 37.28,
+          "probability": 0.9956045150756836
+        },
+        {
+          "word": " among",
+          "start": 37.28,
+          "end": 37.6,
+          "probability": 0.9783012270927429
+        },
+        {
+          "word": " high",
+          "start": 37.6,
+          "end": 38.0,
+          "probability": 0.9849126935005188
+        },
+        {
+          "word": " school",
+          "start": 38.0,
+          "end": 38.26,
+          "probability": 0.9064892530441284
+        },
+        {
+          "word": " graduates",
+          "start": 38.26,
+          "end": 38.78,
+          "probability": 0.9963680505752563
+        },
+        {
+          "word": " to",
+          "start": 38.78,
+          "end": 39.2,
+          "probability": 0.995499312877655
+        },
+        {
+          "word": " obtain",
+          "start": 39.2,
+          "end": 39.58,
+          "probability": 0.9965180158615112
+        },
+        {
+          "word": " a",
+          "start": 39.58,
+          "end": 39.76,
+          "probability": 0.9733656048774719
+        },
+        {
+          "word": " qualification",
+          "start": 39.76,
+          "end": 40.3,
+          "probability": 0.9983007311820984
+        },
+        {
+          "word": " in",
+          "start": 40.3,
+          "end": 40.68,
+          "probability": 0.9980205297470093
+        },
+        {
+          "word": " this",
+          "start": 40.68,
+          "end": 40.86,
+          "probability": 0.9962222576141357
+        },
+        {
+          "word": " field",
+          "start": 40.86,
+          "end": 41.24,
+          "probability": 0.9994848966598511
+        },
+        {
+          "word": " because",
+          "start": 41.24,
+          "end": 41.96,
+          "probability": 0.6911232471466064
+        },
+        {
+          "word": " it",
+          "start": 41.96,
+          "end": 42.14,
+          "probability": 0.9976685643196106
+        },
+        {
+          "word": " has",
+          "start": 42.14,
+          "end": 42.26,
+          "probability": 0.9981854557991028
+        },
+        {
+          "word": " limited",
+          "start": 42.26,
+          "end": 42.7,
+          "probability": 0.9973286390304565
+        },
+        {
+          "word": " career",
+          "start": 42.7,
+          "end": 43.2,
+          "probability": 0.9965496063232422
+        },
+        {
+          "word": " prospects.",
+          "start": 43.2,
+          "end": 43.76,
+          "probability": 0.9947955012321472
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2654,
+      "start": 44.5,
+      "end": 50.44,
+      "text": " And it takes around four years to obtain the early years initial teacher training qualification.",
+      "tokens": [
+        51214,
+        400,
+        309,
+        2516,
+        926,
+        1451,
+        924,
+        281,
+        12701,
+        264,
+        2440,
+        924,
+        5883,
+        5027,
+        3097,
+        37425,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.093004948384053,
+      "compression_ratio": 1.570754716981132,
+      "no_speech_prob": 0.058620430529117584,
+      "words": [
+        {
+          "word": " And",
+          "start": 44.5,
+          "end": 44.88,
+          "probability": 0.9799903035163879
+        },
+        {
+          "word": " it",
+          "start": 44.88,
+          "end": 45.12,
+          "probability": 0.9330866932868958
+        },
+        {
+          "word": " takes",
+          "start": 45.12,
+          "end": 45.38,
+          "probability": 0.99751877784729
+        },
+        {
+          "word": " around",
+          "start": 45.38,
+          "end": 45.72,
+          "probability": 0.9951657056808472
+        },
+        {
+          "word": " four",
+          "start": 45.72,
+          "end": 46.12,
+          "probability": 0.7481735348701477
+        },
+        {
+          "word": " years",
+          "start": 46.12,
+          "end": 46.5,
+          "probability": 0.999062716960907
+        },
+        {
+          "word": " to",
+          "start": 46.5,
+          "end": 46.78,
+          "probability": 0.9990041851997375
+        },
+        {
+          "word": " obtain",
+          "start": 46.78,
+          "end": 47.12,
+          "probability": 0.9972895383834839
+        },
+        {
+          "word": " the",
+          "start": 47.12,
+          "end": 47.38,
+          "probability": 0.9952951073646545
+        },
+        {
+          "word": " early",
+          "start": 47.38,
+          "end": 47.74,
+          "probability": 0.9777851104736328
+        },
+        {
+          "word": " years",
+          "start": 47.74,
+          "end": 48.16,
+          "probability": 0.8651208281517029
+        },
+        {
+          "word": " initial",
+          "start": 48.16,
+          "end": 48.66,
+          "probability": 0.8285266160964966
+        },
+        {
+          "word": " teacher",
+          "start": 48.66,
+          "end": 49.12,
+          "probability": 0.9208595752716064
+        },
+        {
+          "word": " training",
+          "start": 49.12,
+          "end": 49.6,
+          "probability": 0.9151062369346619
+        },
+        {
+          "word": " qualification.",
+          "start": 49.6,
+          "end": 50.44,
+          "probability": 0.9981803894042969
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 5044,
+      "start": 51.44,
+      "end": 57.3,
+      "text": " This qualification allows graduates to teach children from zero to five years old only.",
+      "tokens": [
+        50414,
+        639,
+        37425,
+        4045,
+        13577,
+        281,
+        2924,
+        2227,
+        490,
+        4018,
+        281,
+        1732,
+        924,
+        1331,
+        787,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04965727050583084,
+      "compression_ratio": 1.6282051282051282,
+      "no_speech_prob": 0.2808748781681061,
+      "words": [
+        {
+          "word": " This",
+          "start": 51.34,
+          "end": 51.74,
+          "probability": 0.3732738196849823
+        },
+        {
+          "word": " qualification",
+          "start": 51.74,
+          "end": 52.3,
+          "probability": 0.9902550578117371
+        },
+        {
+          "word": " allows",
+          "start": 52.3,
+          "end": 52.76,
+          "probability": 0.9432727098464966
+        },
+        {
+          "word": " graduates",
+          "start": 52.76,
+          "end": 53.32,
+          "probability": 0.983688473701477
+        },
+        {
+          "word": " to",
+          "start": 53.32,
+          "end": 53.94,
+          "probability": 0.9933744072914124
+        },
+        {
+          "word": " teach",
+          "start": 53.94,
+          "end": 54.22,
+          "probability": 0.9934291243553162
+        },
+        {
+          "word": " children",
+          "start": 54.22,
+          "end": 54.78,
+          "probability": 0.9959573149681091
+        },
+        {
+          "word": " from",
+          "start": 54.78,
+          "end": 55.14,
+          "probability": 0.993752658367157
+        },
+        {
+          "word": " zero",
+          "start": 55.14,
+          "end": 55.48,
+          "probability": 0.4961602985858917
+        },
+        {
+          "word": " to",
+          "start": 55.48,
+          "end": 55.74,
+          "probability": 0.9935795068740845
+        },
+        {
+          "word": " five",
+          "start": 55.74,
+          "end": 56.08,
+          "probability": 0.9401994347572327
+        },
+        {
+          "word": " years",
+          "start": 56.08,
+          "end": 56.4,
+          "probability": 0.9923940896987915
+        },
+        {
+          "word": " old",
+          "start": 56.4,
+          "end": 56.76,
+          "probability": 0.9615325331687927
+        },
+        {
+          "word": " only.",
+          "start": 56.76,
+          "end": 57.3,
+          "probability": 0.960507869720459
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 5044,
+      "start": 57.86,
+      "end": 66.82,
+      "text": " So if they want to teach in schools with older students as their career develops, they will need a further academic qualification.",
+      "tokens": [
+        50714,
+        407,
+        498,
+        436,
+        528,
+        281,
+        2924,
+        294,
+        4656,
+        365,
+        4906,
+        1731,
+        382,
+        641,
+        3988,
+        25453,
+        11,
+        436,
+        486,
+        643,
+        257,
+        3052,
+        7778,
+        37425,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04965727050583084,
+      "compression_ratio": 1.6282051282051282,
+      "no_speech_prob": 0.2808748781681061,
+      "words": [
+        {
+          "word": " So",
+          "start": 57.86,
+          "end": 58.16,
+          "probability": 0.9695804119110107
+        },
+        {
+          "word": " if",
+          "start": 58.16,
+          "end": 58.68,
+          "probability": 0.6372427940368652
+        },
+        {
+          "word": " they",
+          "start": 58.68,
+          "end": 58.96,
+          "probability": 0.9965840578079224
+        },
+        {
+          "word": " want",
+          "start": 58.96,
+          "end": 59.22,
+          "probability": 0.9975222945213318
+        },
+        {
+          "word": " to",
+          "start": 59.22,
+          "end": 59.42,
+          "probability": 0.9989233613014221
+        },
+        {
+          "word": " teach",
+          "start": 59.42,
+          "end": 59.66,
+          "probability": 0.9936280250549316
+        },
+        {
+          "word": " in",
+          "start": 59.66,
+          "end": 59.9,
+          "probability": 0.9788197875022888
+        },
+        {
+          "word": " schools",
+          "start": 59.9,
+          "end": 60.3,
+          "probability": 0.9939393997192383
+        },
+        {
+          "word": " with",
+          "start": 60.3,
+          "end": 60.76,
+          "probability": 0.9954936504364014
+        },
+        {
+          "word": " older",
+          "start": 60.76,
+          "end": 61.14,
+          "probability": 0.9949159622192383
+        },
+        {
+          "word": " students",
+          "start": 61.14,
+          "end": 61.66,
+          "probability": 0.998123824596405
+        },
+        {
+          "word": " as",
+          "start": 61.66,
+          "end": 62.28,
+          "probability": 0.7013916373252869
+        },
+        {
+          "word": " their",
+          "start": 62.28,
+          "end": 62.48,
+          "probability": 0.9902315735816956
+        },
+        {
+          "word": " career",
+          "start": 62.48,
+          "end": 62.8,
+          "probability": 0.9949737787246704
+        },
+        {
+          "word": " develops,",
+          "start": 62.8,
+          "end": 63.24,
+          "probability": 0.9974602460861206
+        },
+        {
+          "word": " they",
+          "start": 63.86,
+          "end": 64.1,
+          "probability": 0.9962118864059448
+        },
+        {
+          "word": " will",
+          "start": 64.1,
+          "end": 64.28,
+          "probability": 0.9948397278785706
+        },
+        {
+          "word": " need",
+          "start": 64.28,
+          "end": 64.5,
+          "probability": 0.9981791973114014
+        },
+        {
+          "word": " a",
+          "start": 64.5,
+          "end": 64.7,
+          "probability": 0.9924682974815369
+        },
+        {
+          "word": " further",
+          "start": 64.7,
+          "end": 65.14,
+          "probability": 0.9962453246116638
+        },
+        {
+          "word": " academic",
+          "start": 65.14,
+          "end": 65.8,
+          "probability": 0.9983976483345032
+        },
+        {
+          "word": " qualification.",
+          "start": 65.8,
+          "end": 66.82,
+          "probability": 0.9970908164978027
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5044,
+      "start": 67.4,
+      "end": 79.24,
+      "text": " Most importantly, however, once you obtain a qualification in the field, the job is poorly paid, especially when compared to primary or secondary school teachers.",
+      "tokens": [
+        51214,
+        4534,
+        8906,
+        11,
+        4461,
+        11,
+        1564,
+        291,
+        12701,
+        257,
+        37425,
+        294,
+        264,
+        2519,
+        11,
+        264,
+        1691,
+        307,
+        22271,
+        4835,
+        11,
+        2318,
+        562,
+        5347,
+        281,
+        6194,
+        420,
+        11396,
+        1395,
+        6023,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04965727050583084,
+      "compression_ratio": 1.6282051282051282,
+      "no_speech_prob": 0.2808748781681061,
+      "words": [
+        {
+          "word": " Most",
+          "start": 67.4,
+          "end": 68.14,
+          "probability": 0.9833971858024597
+        },
+        {
+          "word": " importantly,",
+          "start": 68.14,
+          "end": 68.86,
+          "probability": 0.9939349293708801
+        },
+        {
+          "word": " however,",
+          "start": 69.24,
+          "end": 69.52,
+          "probability": 0.9975213408470154
+        },
+        {
+          "word": " once",
+          "start": 70.0,
+          "end": 70.28,
+          "probability": 0.9933991432189941
+        },
+        {
+          "word": " you",
+          "start": 70.28,
+          "end": 70.44,
+          "probability": 0.9992967844009399
+        },
+        {
+          "word": " obtain",
+          "start": 70.44,
+          "end": 70.78,
+          "probability": 0.9952493906021118
+        },
+        {
+          "word": " a",
+          "start": 70.78,
+          "end": 71.02,
+          "probability": 0.9900795221328735
+        },
+        {
+          "word": " qualification",
+          "start": 71.02,
+          "end": 71.56,
+          "probability": 0.9995620846748352
+        },
+        {
+          "word": " in",
+          "start": 71.56,
+          "end": 71.94,
+          "probability": 0.9984789490699768
+        },
+        {
+          "word": " the",
+          "start": 71.94,
+          "end": 72.08,
+          "probability": 0.9979391694068909
+        },
+        {
+          "word": " field,",
+          "start": 72.08,
+          "end": 72.56,
+          "probability": 0.9992380142211914
+        },
+        {
+          "word": " the",
+          "start": 73.1,
+          "end": 73.18,
+          "probability": 0.9961530566215515
+        },
+        {
+          "word": " job",
+          "start": 73.18,
+          "end": 73.48,
+          "probability": 0.9994413256645203
+        },
+        {
+          "word": " is",
+          "start": 73.48,
+          "end": 73.9,
+          "probability": 0.9990608096122742
+        },
+        {
+          "word": " poorly",
+          "start": 73.9,
+          "end": 74.4,
+          "probability": 0.9972431659698486
+        },
+        {
+          "word": " paid,",
+          "start": 74.4,
+          "end": 75.0,
+          "probability": 0.9940372705459595
+        },
+        {
+          "word": " especially",
+          "start": 75.5,
+          "end": 76.1,
+          "probability": 0.9971174001693726
+        },
+        {
+          "word": " when",
+          "start": 76.1,
+          "end": 76.38,
+          "probability": 0.9982253909111023
+        },
+        {
+          "word": " compared",
+          "start": 76.38,
+          "end": 76.78,
+          "probability": 0.9974556565284729
+        },
+        {
+          "word": " to",
+          "start": 76.78,
+          "end": 76.98,
+          "probability": 0.9988129138946533
+        },
+        {
+          "word": " primary",
+          "start": 76.98,
+          "end": 77.52,
+          "probability": 0.9951838850975037
+        },
+        {
+          "word": " or",
+          "start": 77.52,
+          "end": 77.88,
+          "probability": 0.9916898012161255
+        },
+        {
+          "word": " secondary",
+          "start": 77.88,
+          "end": 78.46,
+          "probability": 0.9988319277763367
+        },
+        {
+          "word": " school",
+          "start": 78.46,
+          "end": 78.74,
+          "probability": 0.9945774078369141
+        },
+        {
+          "word": " teachers.",
+          "start": 78.74,
+          "end": 79.24,
+          "probability": 0.9123069047927856
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 7924,
+      "start": 79.24,
+      "end": 90.16,
+      "text": " A recent survey found that many early years teachers don't receive graduate level pay with some earning as little as £18,000 per year.",
+      "tokens": [
+        50364,
+        316,
+        5162,
+        8984,
+        1352,
+        300,
+        867,
+        2440,
+        924,
+        6023,
+        500,
+        380,
+        4774,
+        8080,
+        1496,
+        1689,
+        365,
+        512,
+        12353,
+        382,
+        707,
+        382,
+        14378,
+        6494,
+        11,
+        1360,
+        680,
+        1064,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0747095483248351,
+      "compression_ratio": 1.4301675977653632,
+      "no_speech_prob": 0.04244784265756607,
+      "words": [
+        {
+          "word": " A",
+          "start": 79.24,
+          "end": 80.22,
+          "probability": 0.13219097256660461
+        },
+        {
+          "word": " recent",
+          "start": 80.22,
+          "end": 80.54,
+          "probability": 0.9888207912445068
+        },
+        {
+          "word": " survey",
+          "start": 80.54,
+          "end": 81.08,
+          "probability": 0.9995532631874084
+        },
+        {
+          "word": " found",
+          "start": 81.08,
+          "end": 81.48,
+          "probability": 0.9964510202407837
+        },
+        {
+          "word": " that",
+          "start": 81.48,
+          "end": 81.76,
+          "probability": 0.9903268218040466
+        },
+        {
+          "word": " many",
+          "start": 81.76,
+          "end": 81.94,
+          "probability": 0.9626084566116333
+        },
+        {
+          "word": " early",
+          "start": 81.94,
+          "end": 82.38,
+          "probability": 0.978046715259552
+        },
+        {
+          "word": " years",
+          "start": 82.38,
+          "end": 82.66,
+          "probability": 0.385470986366272
+        },
+        {
+          "word": " teachers",
+          "start": 82.66,
+          "end": 83.14,
+          "probability": 0.8959845900535583
+        },
+        {
+          "word": " don't",
+          "start": 83.14,
+          "end": 83.8,
+          "probability": 0.9895647168159485
+        },
+        {
+          "word": " receive",
+          "start": 83.8,
+          "end": 84.14,
+          "probability": 0.9949878454208374
+        },
+        {
+          "word": " graduate",
+          "start": 84.14,
+          "end": 84.66,
+          "probability": 0.9754658341407776
+        },
+        {
+          "word": " level",
+          "start": 84.66,
+          "end": 85.12,
+          "probability": 0.753088653087616
+        },
+        {
+          "word": " pay",
+          "start": 85.12,
+          "end": 85.54,
+          "probability": 0.9750317931175232
+        },
+        {
+          "word": " with",
+          "start": 85.54,
+          "end": 86.16,
+          "probability": 0.5137264132499695
+        },
+        {
+          "word": " some",
+          "start": 86.16,
+          "end": 86.46,
+          "probability": 0.98948073387146
+        },
+        {
+          "word": " earning",
+          "start": 86.46,
+          "end": 86.92,
+          "probability": 0.9663864970207214
+        },
+        {
+          "word": " as",
+          "start": 86.92,
+          "end": 87.2,
+          "probability": 0.9952487349510193
+        },
+        {
+          "word": " little",
+          "start": 87.2,
+          "end": 87.58,
+          "probability": 0.9945599436759949
+        },
+        {
+          "word": " as",
+          "start": 87.58,
+          "end": 87.9,
+          "probability": 0.991902768611908
+        },
+        {
+          "word": " £18",
+          "start": 87.9,
+          "end": 88.32,
+          "probability": 0.9356269240379333
+        },
+        {
+          "word": ",000",
+          "start": 88.32,
+          "end": 89.12,
+          "probability": 0.9811228215694427
+        },
+        {
+          "word": " per",
+          "start": 89.12,
+          "end": 89.72,
+          "probability": 0.9021333456039429
+        },
+        {
+          "word": " year.",
+          "start": 89.72,
+          "end": 90.16,
+          "probability": 0.9979636669158936
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 7924,
+      "start": 90.88,
+      "end": 92.84,
+      "text": " What is the reason for that?",
+      "tokens": [
+        50914,
+        708,
+        307,
+        264,
+        1778,
+        337,
+        300,
+        30,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0747095483248351,
+      "compression_ratio": 1.4301675977653632,
+      "no_speech_prob": 0.04244784265756607,
+      "words": [
+        {
+          "word": " What",
+          "start": 90.88,
+          "end": 91.4,
+          "probability": 0.5292066931724548
+        },
+        {
+          "word": " is",
+          "start": 91.4,
+          "end": 91.6,
+          "probability": 0.9891738891601562
+        },
+        {
+          "word": " the",
+          "start": 91.6,
+          "end": 91.78,
+          "probability": 0.9959347248077393
+        },
+        {
+          "word": " reason",
+          "start": 91.78,
+          "end": 92.24,
+          "probability": 0.9946634769439697
+        },
+        {
+          "word": " for",
+          "start": 92.24,
+          "end": 92.54,
+          "probability": 0.9971140623092651
+        },
+        {
+          "word": " that?",
+          "start": 92.54,
+          "end": 92.84,
+          "probability": 0.9986109733581543
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 7924,
+      "start": 93.62,
+      "end": 100.32,
+      "text": " Mainly it's because early years teachers don't get the qualified teacher status called QTS.",
+      "tokens": [
+        51064,
+        47468,
+        309,
+        311,
+        570,
+        2440,
+        924,
+        6023,
+        500,
+        380,
+        483,
+        264,
+        15904,
+        5027,
+        6558,
+        1219,
+        1249,
+        7327,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0747095483248351,
+      "compression_ratio": 1.4301675977653632,
+      "no_speech_prob": 0.04244784265756607,
+      "words": [
+        {
+          "word": " Mainly",
+          "start": 93.62,
+          "end": 94.02,
+          "probability": 0.9701941609382629
+        },
+        {
+          "word": " it's",
+          "start": 94.02,
+          "end": 94.46,
+          "probability": 0.8400126695632935
+        },
+        {
+          "word": " because",
+          "start": 94.46,
+          "end": 94.76,
+          "probability": 0.9930593967437744
+        },
+        {
+          "word": " early",
+          "start": 94.76,
+          "end": 95.2,
+          "probability": 0.9968994855880737
+        },
+        {
+          "word": " years",
+          "start": 95.2,
+          "end": 95.54,
+          "probability": 0.9760897159576416
+        },
+        {
+          "word": " teachers",
+          "start": 95.54,
+          "end": 95.92,
+          "probability": 0.9755756258964539
+        },
+        {
+          "word": " don't",
+          "start": 95.92,
+          "end": 96.66,
+          "probability": 0.9971027076244354
+        },
+        {
+          "word": " get",
+          "start": 96.66,
+          "end": 96.86,
+          "probability": 0.9975408315658569
+        },
+        {
+          "word": " the",
+          "start": 96.86,
+          "end": 97.1,
+          "probability": 0.9778584837913513
+        },
+        {
+          "word": " qualified",
+          "start": 97.1,
+          "end": 97.64,
+          "probability": 0.9278777837753296
+        },
+        {
+          "word": " teacher",
+          "start": 97.64,
+          "end": 98.22,
+          "probability": 0.9234264492988586
+        },
+        {
+          "word": " status",
+          "start": 98.22,
+          "end": 98.86,
+          "probability": 0.9733774662017822
+        },
+        {
+          "word": " called",
+          "start": 98.86,
+          "end": 99.54,
+          "probability": 0.8107767701148987
+        },
+        {
+          "word": " QTS.",
+          "start": 99.54,
+          "end": 100.32,
+          "probability": 0.9494132995605469
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 10032,
+      "start": 101.32,
+      "end": 110.38,
+      "text": " Government says both qualifications, the QTS and the EYT are equal and should therefore receive the same pay.",
+      "tokens": [
+        50414,
+        7321,
+        1619,
+        1293,
+        33223,
+        11,
+        264,
+        1249,
+        7327,
+        293,
+        264,
+        462,
+        56,
+        51,
+        366,
+        2681,
+        293,
+        820,
+        4412,
+        4774,
+        264,
+        912,
+        1689,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06300994873046875,
+      "compression_ratio": 1.52803738317757,
+      "no_speech_prob": 0.5049749612808228,
+      "words": [
+        {
+          "word": " Government",
+          "start": 101.17999999999999,
+          "end": 101.6,
+          "probability": 0.3228030800819397
+        },
+        {
+          "word": " says",
+          "start": 101.6,
+          "end": 102.02,
+          "probability": 0.8819472789764404
+        },
+        {
+          "word": " both",
+          "start": 102.02,
+          "end": 102.48,
+          "probability": 0.8668506145477295
+        },
+        {
+          "word": " qualifications,",
+          "start": 102.48,
+          "end": 103.36,
+          "probability": 0.9924382567405701
+        },
+        {
+          "word": " the",
+          "start": 103.8,
+          "end": 103.86,
+          "probability": 0.9664669036865234
+        },
+        {
+          "word": " QTS",
+          "start": 103.86,
+          "end": 104.54,
+          "probability": 0.9517861306667328
+        },
+        {
+          "word": " and",
+          "start": 104.54,
+          "end": 105.2,
+          "probability": 0.9450204372406006
+        },
+        {
+          "word": " the",
+          "start": 105.2,
+          "end": 105.4,
+          "probability": 0.9520048499107361
+        },
+        {
+          "word": " EYT",
+          "start": 105.4,
+          "end": 106.26,
+          "probability": 0.9043275515238444
+        },
+        {
+          "word": " are",
+          "start": 106.26,
+          "end": 107.06,
+          "probability": 0.41043949127197266
+        },
+        {
+          "word": " equal",
+          "start": 107.06,
+          "end": 107.5,
+          "probability": 0.993411123752594
+        },
+        {
+          "word": " and",
+          "start": 107.5,
+          "end": 108.24,
+          "probability": 0.730854868888855
+        },
+        {
+          "word": " should",
+          "start": 108.24,
+          "end": 108.48,
+          "probability": 0.9937140345573425
+        },
+        {
+          "word": " therefore",
+          "start": 108.48,
+          "end": 108.94,
+          "probability": 0.954537034034729
+        },
+        {
+          "word": " receive",
+          "start": 108.94,
+          "end": 109.36,
+          "probability": 0.9810060262680054
+        },
+        {
+          "word": " the",
+          "start": 109.36,
+          "end": 109.6,
+          "probability": 0.997785210609436
+        },
+        {
+          "word": " same",
+          "start": 109.6,
+          "end": 110.0,
+          "probability": 0.9991600513458252
+        },
+        {
+          "word": " pay.",
+          "start": 110.0,
+          "end": 110.38,
+          "probability": 0.985194742679596
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 10032,
+      "start": 111.14,
+      "end": 114.26,
+      "text": " However, employers don't see it that way.",
+      "tokens": [
+        50914,
+        2908,
+        11,
+        16744,
+        500,
+        380,
+        536,
+        309,
+        300,
+        636,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06300994873046875,
+      "compression_ratio": 1.52803738317757,
+      "no_speech_prob": 0.5049749612808228,
+      "words": [
+        {
+          "word": " However,",
+          "start": 111.14,
+          "end": 111.52,
+          "probability": 0.9953331351280212
+        },
+        {
+          "word": " employers",
+          "start": 111.96,
+          "end": 112.7,
+          "probability": 0.9934379458427429
+        },
+        {
+          "word": " don't",
+          "start": 112.7,
+          "end": 113.28,
+          "probability": 0.9812717437744141
+        },
+        {
+          "word": " see",
+          "start": 113.28,
+          "end": 113.54,
+          "probability": 0.9968875050544739
+        },
+        {
+          "word": " it",
+          "start": 113.54,
+          "end": 113.68,
+          "probability": 0.9972729086875916
+        },
+        {
+          "word": " that",
+          "start": 113.68,
+          "end": 113.84,
+          "probability": 0.9994794726371765
+        },
+        {
+          "word": " way.",
+          "start": 113.84,
+          "end": 114.26,
+          "probability": 0.9990230798721313
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 10032,
+      "start": 115.04,
+      "end": 127.98,
+      "text": " Many graduate trainees who go on to acquire EYT status find that whilst they end up with more teaching responsibility, they don't receive the pay and recognition they deserve.",
+      "tokens": [
+        51114,
+        5126,
+        8080,
+        41316,
+        567,
+        352,
+        322,
+        281,
+        20001,
+        462,
+        56,
+        51,
+        6558,
+        915,
+        300,
+        18534,
+        436,
+        917,
+        493,
+        365,
+        544,
+        4571,
+        6357,
+        11,
+        436,
+        500,
+        380,
+        4774,
+        264,
+        1689,
+        293,
+        11150,
+        436,
+        9948,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06300994873046875,
+      "compression_ratio": 1.52803738317757,
+      "no_speech_prob": 0.5049749612808228,
+      "words": [
+        {
+          "word": " Many",
+          "start": 115.04,
+          "end": 115.4,
+          "probability": 0.9906758069992065
+        },
+        {
+          "word": " graduate",
+          "start": 115.4,
+          "end": 115.94,
+          "probability": 0.9960387945175171
+        },
+        {
+          "word": " trainees",
+          "start": 115.94,
+          "end": 116.44,
+          "probability": 0.899763822555542
+        },
+        {
+          "word": " who",
+          "start": 116.44,
+          "end": 116.92,
+          "probability": 0.9708397388458252
+        },
+        {
+          "word": " go",
+          "start": 116.92,
+          "end": 117.18,
+          "probability": 0.9965349435806274
+        },
+        {
+          "word": " on",
+          "start": 117.18,
+          "end": 117.44,
+          "probability": 0.9797064065933228
+        },
+        {
+          "word": " to",
+          "start": 117.44,
+          "end": 117.7,
+          "probability": 0.9990977048873901
+        },
+        {
+          "word": " acquire",
+          "start": 117.7,
+          "end": 118.14,
+          "probability": 0.9935844540596008
+        },
+        {
+          "word": " EYT",
+          "start": 118.14,
+          "end": 119.16,
+          "probability": 0.9927778442700704
+        },
+        {
+          "word": " status",
+          "start": 119.16,
+          "end": 119.86,
+          "probability": 0.8785220384597778
+        },
+        {
+          "word": " find",
+          "start": 119.86,
+          "end": 120.58,
+          "probability": 0.8305448293685913
+        },
+        {
+          "word": " that",
+          "start": 120.58,
+          "end": 120.86,
+          "probability": 0.9972532391548157
+        },
+        {
+          "word": " whilst",
+          "start": 120.86,
+          "end": 121.28,
+          "probability": 0.7976685762405396
+        },
+        {
+          "word": " they",
+          "start": 121.28,
+          "end": 121.6,
+          "probability": 0.9988577365875244
+        },
+        {
+          "word": " end",
+          "start": 121.6,
+          "end": 121.84,
+          "probability": 0.9989435076713562
+        },
+        {
+          "word": " up",
+          "start": 121.84,
+          "end": 122.06,
+          "probability": 0.9959415793418884
+        },
+        {
+          "word": " with",
+          "start": 122.06,
+          "end": 122.38,
+          "probability": 0.9950350522994995
+        },
+        {
+          "word": " more",
+          "start": 122.38,
+          "end": 122.68,
+          "probability": 0.9971981048583984
+        },
+        {
+          "word": " teaching",
+          "start": 122.68,
+          "end": 123.08,
+          "probability": 0.9964028596878052
+        },
+        {
+          "word": " responsibility,",
+          "start": 123.08,
+          "end": 123.96,
+          "probability": 0.9707819223403931
+        },
+        {
+          "word": " they",
+          "start": 124.66,
+          "end": 124.9,
+          "probability": 0.9970908164978027
+        },
+        {
+          "word": " don't",
+          "start": 124.9,
+          "end": 125.28,
+          "probability": 0.9971248805522919
+        },
+        {
+          "word": " receive",
+          "start": 125.28,
+          "end": 125.58,
+          "probability": 0.9973171353340149
+        },
+        {
+          "word": " the",
+          "start": 125.58,
+          "end": 125.82,
+          "probability": 0.9964371919631958
+        },
+        {
+          "word": " pay",
+          "start": 125.82,
+          "end": 126.14,
+          "probability": 0.9860321283340454
+        },
+        {
+          "word": " and",
+          "start": 126.14,
+          "end": 126.44,
+          "probability": 0.9925814867019653
+        },
+        {
+          "word": " recognition",
+          "start": 126.44,
+          "end": 127.04,
+          "probability": 0.9807219505310059
+        },
+        {
+          "word": " they",
+          "start": 127.04,
+          "end": 127.5,
+          "probability": 0.9939925074577332
+        },
+        {
+          "word": " deserve.",
+          "start": 127.5,
+          "end": 127.98,
+          "probability": 0.9977735877037048
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 12798,
+      "start": 127.98,
+      "end": 133.02,
+      "text": " The EYT is wrongly viewed as a lesser qualification.",
+      "tokens": [
+        50364,
+        440,
+        462,
+        56,
+        51,
+        307,
+        2085,
+        356,
+        19174,
+        382,
+        257,
+        22043,
+        37425,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.058571956775806566,
+      "compression_ratio": 1.5047619047619047,
+      "no_speech_prob": 0.07404033094644547,
+      "words": [
+        {
+          "word": " The",
+          "start": 127.98,
+          "end": 129.06,
+          "probability": 0.12528714537620544
+        },
+        {
+          "word": " EYT",
+          "start": 129.06,
+          "end": 129.78,
+          "probability": 0.8186602393786112
+        },
+        {
+          "word": " is",
+          "start": 129.78,
+          "end": 130.24,
+          "probability": 0.9851847887039185
+        },
+        {
+          "word": " wrongly",
+          "start": 130.24,
+          "end": 130.82,
+          "probability": 0.9199023842811584
+        },
+        {
+          "word": " viewed",
+          "start": 130.82,
+          "end": 131.16,
+          "probability": 0.9963387250900269
+        },
+        {
+          "word": " as",
+          "start": 131.16,
+          "end": 131.64,
+          "probability": 0.9850837588310242
+        },
+        {
+          "word": " a",
+          "start": 131.64,
+          "end": 131.76,
+          "probability": 0.9922621250152588
+        },
+        {
+          "word": " lesser",
+          "start": 131.76,
+          "end": 132.14,
+          "probability": 0.9614020586013794
+        },
+        {
+          "word": " qualification.",
+          "start": 132.14,
+          "end": 133.02,
+          "probability": 0.9952638149261475
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 12798,
+      "start": 133.78,
+      "end": 139.7,
+      "text": " Do you think the government is doing enough to increase the number of EYTs?",
+      "tokens": [
+        50664,
+        1144,
+        291,
+        519,
+        264,
+        2463,
+        307,
+        884,
+        1547,
+        281,
+        3488,
+        264,
+        1230,
+        295,
+        462,
+        56,
+        33424,
+        30,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.058571956775806566,
+      "compression_ratio": 1.5047619047619047,
+      "no_speech_prob": 0.07404033094644547,
+      "words": [
+        {
+          "word": " Do",
+          "start": 133.78,
+          "end": 134.32,
+          "probability": 0.4952196478843689
+        },
+        {
+          "word": " you",
+          "start": 134.32,
+          "end": 134.48,
+          "probability": 0.9960745573043823
+        },
+        {
+          "word": " think",
+          "start": 134.48,
+          "end": 134.84,
+          "probability": 0.9981757402420044
+        },
+        {
+          "word": " the",
+          "start": 134.84,
+          "end": 135.04,
+          "probability": 0.9752985239028931
+        },
+        {
+          "word": " government",
+          "start": 135.04,
+          "end": 135.52,
+          "probability": 0.8580307364463806
+        },
+        {
+          "word": " is",
+          "start": 135.52,
+          "end": 135.92,
+          "probability": 0.9923230409622192
+        },
+        {
+          "word": " doing",
+          "start": 135.92,
+          "end": 136.28,
+          "probability": 0.9902785420417786
+        },
+        {
+          "word": " enough",
+          "start": 136.28,
+          "end": 136.68,
+          "probability": 0.9979137778282166
+        },
+        {
+          "word": " to",
+          "start": 136.68,
+          "end": 137.08,
+          "probability": 0.994670569896698
+        },
+        {
+          "word": " increase",
+          "start": 137.08,
+          "end": 137.6,
+          "probability": 0.9942968487739563
+        },
+        {
+          "word": " the",
+          "start": 137.6,
+          "end": 137.92,
+          "probability": 0.9959101676940918
+        },
+        {
+          "word": " number",
+          "start": 137.92,
+          "end": 138.34,
+          "probability": 0.996657133102417
+        },
+        {
+          "word": " of",
+          "start": 138.34,
+          "end": 138.7,
+          "probability": 0.9986557960510254
+        },
+        {
+          "word": " EYTs?",
+          "start": 138.7,
+          "end": 139.7,
+          "probability": 0.9286620616912842
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 12798,
+      "start": 140.7,
+      "end": 144.8,
+      "text": " Well, the number of EYTs is declining year after year.",
+      "tokens": [
+        50964,
+        1042,
+        11,
+        264,
+        1230,
+        295,
+        462,
+        56,
+        33424,
+        307,
+        34298,
+        1064,
+        934,
+        1064,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.058571956775806566,
+      "compression_ratio": 1.5047619047619047,
+      "no_speech_prob": 0.07404033094644547,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 140.7,
+          "end": 141.08,
+          "probability": 0.9542931318283081
+        },
+        {
+          "word": " the",
+          "start": 141.38,
+          "end": 141.48,
+          "probability": 0.9954842329025269
+        },
+        {
+          "word": " number",
+          "start": 141.48,
+          "end": 141.86,
+          "probability": 0.9961052536964417
+        },
+        {
+          "word": " of",
+          "start": 141.86,
+          "end": 142.08,
+          "probability": 0.9988402724266052
+        },
+        {
+          "word": " EYTs",
+          "start": 142.08,
+          "end": 142.82,
+          "probability": 0.9955342411994934
+        },
+        {
+          "word": " is",
+          "start": 142.82,
+          "end": 143.04,
+          "probability": 0.9953048229217529
+        },
+        {
+          "word": " declining",
+          "start": 143.04,
+          "end": 143.54,
+          "probability": 0.9993855953216553
+        },
+        {
+          "word": " year",
+          "start": 143.54,
+          "end": 144.04,
+          "probability": 0.9834080338478088
+        },
+        {
+          "word": " after",
+          "start": 144.04,
+          "end": 144.4,
+          "probability": 0.9813175797462463
+        },
+        {
+          "word": " year.",
+          "start": 144.4,
+          "end": 144.8,
+          "probability": 0.9985560774803162
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 12798,
+      "start": 145.44,
+      "end": 156.9,
+      "text": " From its highest point in 2013 to 2014, the number of new participants in early years initial teacher training has plummeted by 77%.",
+      "tokens": [
+        51214,
+        3358,
+        1080,
+        6343,
+        935,
+        294,
+        9012,
+        281,
+        8227,
+        11,
+        264,
+        1230,
+        295,
+        777,
+        10503,
+        294,
+        2440,
+        924,
+        5883,
+        5027,
+        3097,
+        575,
+        25854,
+        5537,
+        292,
+        538,
+        25546,
+        6856,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.058571956775806566,
+      "compression_ratio": 1.5047619047619047,
+      "no_speech_prob": 0.07404033094644547,
+      "words": [
+        {
+          "word": " From",
+          "start": 145.44,
+          "end": 145.74,
+          "probability": 0.9977019429206848
+        },
+        {
+          "word": " its",
+          "start": 145.74,
+          "end": 145.94,
+          "probability": 0.978065550327301
+        },
+        {
+          "word": " highest",
+          "start": 145.94,
+          "end": 146.26,
+          "probability": 0.9869045615196228
+        },
+        {
+          "word": " point",
+          "start": 146.26,
+          "end": 146.6,
+          "probability": 0.9972835779190063
+        },
+        {
+          "word": " in",
+          "start": 146.6,
+          "end": 147.06,
+          "probability": 0.9415029883384705
+        },
+        {
+          "word": " 2013",
+          "start": 147.06,
+          "end": 147.76,
+          "probability": 0.9953774213790894
+        },
+        {
+          "word": " to",
+          "start": 147.76,
+          "end": 148.54,
+          "probability": 0.8528217673301697
+        },
+        {
+          "word": " 2014,",
+          "start": 148.54,
+          "end": 149.12,
+          "probability": 0.7956733703613281
+        },
+        {
+          "word": " the",
+          "start": 149.68,
+          "end": 149.72,
+          "probability": 0.9938967823982239
+        },
+        {
+          "word": " number",
+          "start": 149.72,
+          "end": 150.1,
+          "probability": 0.9959648847579956
+        },
+        {
+          "word": " of",
+          "start": 150.1,
+          "end": 150.28,
+          "probability": 0.9982486963272095
+        },
+        {
+          "word": " new",
+          "start": 150.28,
+          "end": 150.44,
+          "probability": 0.9716444611549377
+        },
+        {
+          "word": " participants",
+          "start": 150.44,
+          "end": 151.22,
+          "probability": 0.9985802173614502
+        },
+        {
+          "word": " in",
+          "start": 151.22,
+          "end": 151.68,
+          "probability": 0.9952184557914734
+        },
+        {
+          "word": " early",
+          "start": 151.68,
+          "end": 152.14,
+          "probability": 0.9817001223564148
+        },
+        {
+          "word": " years",
+          "start": 152.14,
+          "end": 152.58,
+          "probability": 0.8801484704017639
+        },
+        {
+          "word": " initial",
+          "start": 152.58,
+          "end": 153.06,
+          "probability": 0.49630841612815857
+        },
+        {
+          "word": " teacher",
+          "start": 153.06,
+          "end": 153.42,
+          "probability": 0.9475732445716858
+        },
+        {
+          "word": " training",
+          "start": 153.42,
+          "end": 153.88,
+          "probability": 0.9913427829742432
+        },
+        {
+          "word": " has",
+          "start": 153.88,
+          "end": 154.38,
+          "probability": 0.9785314798355103
+        },
+        {
+          "word": " plummeted",
+          "start": 154.38,
+          "end": 155.14,
+          "probability": 0.9925961097081503
+        },
+        {
+          "word": " by",
+          "start": 155.14,
+          "end": 155.32,
+          "probability": 0.9987180233001709
+        },
+        {
+          "word": " 77%.",
+          "start": 155.32,
+          "end": 156.9,
+          "probability": 0.8460822999477386
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 15690,
+      "start": 156.9,
+      "end": 165.84,
+      "text": " In 2013 to 2014, there were 2,327 entrants to early years initial teacher training.",
+      "tokens": [
+        50414,
+        682,
+        9012,
+        281,
+        8227,
+        11,
+        456,
+        645,
+        568,
+        11,
+        18,
+        10076,
+        8041,
+        1719,
+        281,
+        2440,
+        924,
+        5883,
+        5027,
+        3097,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1115924072265625,
+      "compression_ratio": 1.3227513227513228,
+      "no_speech_prob": 0.024069560691714287,
+      "words": [
+        {
+          "word": " In",
+          "start": 156.9,
+          "end": 157.76,
+          "probability": 0.3752496540546417
+        },
+        {
+          "word": " 2013",
+          "start": 157.76,
+          "end": 158.5,
+          "probability": 0.9966878294944763
+        },
+        {
+          "word": " to",
+          "start": 158.5,
+          "end": 158.84,
+          "probability": 0.6235121488571167
+        },
+        {
+          "word": " 2014,",
+          "start": 158.84,
+          "end": 159.32,
+          "probability": 0.7137182354927063
+        },
+        {
+          "word": " there",
+          "start": 159.32,
+          "end": 160.0,
+          "probability": 0.9962129592895508
+        },
+        {
+          "word": " were",
+          "start": 160.0,
+          "end": 160.14,
+          "probability": 0.9897854924201965
+        },
+        {
+          "word": " 2",
+          "start": 160.14,
+          "end": 160.54,
+          "probability": 0.8633891940116882
+        },
+        {
+          "word": ",327",
+          "start": 160.54,
+          "end": 162.52,
+          "probability": 0.9515851934750875
+        },
+        {
+          "word": " entrants",
+          "start": 162.52,
+          "end": 163.3,
+          "probability": 0.9227802753448486
+        },
+        {
+          "word": " to",
+          "start": 163.3,
+          "end": 163.68,
+          "probability": 0.9790112376213074
+        },
+        {
+          "word": " early",
+          "start": 163.68,
+          "end": 164.0,
+          "probability": 0.97288978099823
+        },
+        {
+          "word": " years",
+          "start": 164.0,
+          "end": 164.44,
+          "probability": 0.6511404514312744
+        },
+        {
+          "word": " initial",
+          "start": 164.44,
+          "end": 164.92,
+          "probability": 0.8081068992614746
+        },
+        {
+          "word": " teacher",
+          "start": 164.92,
+          "end": 165.38,
+          "probability": 0.9668845534324646
+        },
+        {
+          "word": " training.",
+          "start": 165.38,
+          "end": 165.84,
+          "probability": 0.9941062927246094
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 15690,
+      "start": 166.58,
+      "end": 172.52,
+      "text": " But by 2022 to 23, this number had fallen to 534.",
+      "tokens": [
+        50864,
+        583,
+        538,
+        20229,
+        281,
+        6673,
+        11,
+        341,
+        1230,
+        632,
+        11547,
+        281,
+        1025,
+        12249,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1115924072265625,
+      "compression_ratio": 1.3227513227513228,
+      "no_speech_prob": 0.024069560691714287,
+      "words": [
+        {
+          "word": " But",
+          "start": 166.58,
+          "end": 166.96,
+          "probability": 0.9889638423919678
+        },
+        {
+          "word": " by",
+          "start": 166.96,
+          "end": 167.2,
+          "probability": 0.9584591388702393
+        },
+        {
+          "word": " 2022",
+          "start": 167.2,
+          "end": 167.94,
+          "probability": 0.9920651316642761
+        },
+        {
+          "word": " to",
+          "start": 167.94,
+          "end": 168.54,
+          "probability": 0.8558844327926636
+        },
+        {
+          "word": " 23,",
+          "start": 168.54,
+          "end": 169.18,
+          "probability": 0.8347194790840149
+        },
+        {
+          "word": " this",
+          "start": 169.52,
+          "end": 169.68,
+          "probability": 0.9968218803405762
+        },
+        {
+          "word": " number",
+          "start": 169.68,
+          "end": 170.0,
+          "probability": 0.9924841523170471
+        },
+        {
+          "word": " had",
+          "start": 170.0,
+          "end": 170.22,
+          "probability": 0.9829943180084229
+        },
+        {
+          "word": " fallen",
+          "start": 170.22,
+          "end": 170.66,
+          "probability": 0.9969195127487183
+        },
+        {
+          "word": " to",
+          "start": 170.66,
+          "end": 171.04,
+          "probability": 0.9963396787643433
+        },
+        {
+          "word": " 534.",
+          "start": 171.04,
+          "end": 172.52,
+          "probability": 0.9641878008842468
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 15690,
+      "start": 173.54,
+      "end": 183.96,
+      "text": " What's your view of the EYT role? Is it easier to teach the under-fives, bansay, primary or secondary-aged children?",
+      "tokens": [
+        51214,
+        708,
+        311,
+        428,
+        1910,
+        295,
+        264,
+        462,
+        56,
+        51,
+        3090,
+        30,
+        1119,
+        309,
+        3571,
+        281,
+        2924,
+        264,
+        833,
+        12,
+        69,
+        1539,
+        11,
+        272,
+        599,
+        320,
+        11,
+        6194,
+        420,
+        11396,
+        12,
+        2980,
+        2227,
+        30,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1115924072265625,
+      "compression_ratio": 1.3227513227513228,
+      "no_speech_prob": 0.024069560691714287,
+      "words": [
+        {
+          "word": " What's",
+          "start": 173.54,
+          "end": 174.12,
+          "probability": 0.928595244884491
+        },
+        {
+          "word": " your",
+          "start": 174.12,
+          "end": 174.3,
+          "probability": 0.9977237582206726
+        },
+        {
+          "word": " view",
+          "start": 174.3,
+          "end": 174.8,
+          "probability": 0.99671471118927
+        },
+        {
+          "word": " of",
+          "start": 174.8,
+          "end": 175.18,
+          "probability": 0.9976760745048523
+        },
+        {
+          "word": " the",
+          "start": 175.18,
+          "end": 175.36,
+          "probability": 0.9961656332015991
+        },
+        {
+          "word": " EYT",
+          "start": 175.36,
+          "end": 176.1,
+          "probability": 0.9095067183176676
+        },
+        {
+          "word": " role?",
+          "start": 176.1,
+          "end": 176.46,
+          "probability": 0.9303288459777832
+        },
+        {
+          "word": " Is",
+          "start": 177.46,
+          "end": 177.56,
+          "probability": 0.9943945407867432
+        },
+        {
+          "word": " it",
+          "start": 177.56,
+          "end": 177.7,
+          "probability": 0.9989608526229858
+        },
+        {
+          "word": " easier",
+          "start": 177.7,
+          "end": 178.3,
+          "probability": 0.9949535727500916
+        },
+        {
+          "word": " to",
+          "start": 178.3,
+          "end": 178.66,
+          "probability": 0.9987496137619019
+        },
+        {
+          "word": " teach",
+          "start": 178.66,
+          "end": 179.02,
+          "probability": 0.9947277903556824
+        },
+        {
+          "word": " the",
+          "start": 179.02,
+          "end": 179.2,
+          "probability": 0.9841797351837158
+        },
+        {
+          "word": " under",
+          "start": 179.2,
+          "end": 179.46,
+          "probability": 0.9220183491706848
+        },
+        {
+          "word": "-fives,",
+          "start": 179.46,
+          "end": 180.16,
+          "probability": 0.7454478939374288
+        },
+        {
+          "word": " bansay,",
+          "start": 180.4,
+          "end": 180.9,
+          "probability": 0.6048693259557089
+        },
+        {
+          "word": " primary",
+          "start": 181.46,
+          "end": 181.8,
+          "probability": 0.9607784748077393
+        },
+        {
+          "word": " or",
+          "start": 181.8,
+          "end": 182.26,
+          "probability": 0.8671950101852417
+        },
+        {
+          "word": " secondary",
+          "start": 182.26,
+          "end": 182.94,
+          "probability": 0.9834526181221008
+        },
+        {
+          "word": "-aged",
+          "start": 182.94,
+          "end": 183.44,
+          "probability": 0.6041607558727264
+        },
+        {
+          "word": " children?",
+          "start": 183.44,
+          "end": 183.96,
+          "probability": 0.9960728883743286
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 18396,
+      "start": 184.7,
+      "end": 189.36,
+      "text": " That's a complex question to answer. There are a lot of considerations.",
+      "tokens": [
+        50414,
+        663,
+        311,
+        257,
+        3997,
+        1168,
+        281,
+        1867,
+        13,
+        821,
+        366,
+        257,
+        688,
+        295,
+        24070,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09313455787864891,
+      "compression_ratio": 1.5213270142180095,
+      "no_speech_prob": 0.14990125596523285,
+      "words": [
+        {
+          "word": " That's",
+          "start": 184.7,
+          "end": 185.32,
+          "probability": 0.7518200278282166
+        },
+        {
+          "word": " a",
+          "start": 185.32,
+          "end": 185.4,
+          "probability": 0.9969590902328491
+        },
+        {
+          "word": " complex",
+          "start": 185.4,
+          "end": 185.76,
+          "probability": 0.9958288073539734
+        },
+        {
+          "word": " question",
+          "start": 185.76,
+          "end": 186.34,
+          "probability": 0.9978552460670471
+        },
+        {
+          "word": " to",
+          "start": 186.34,
+          "end": 186.56,
+          "probability": 0.9871463775634766
+        },
+        {
+          "word": " answer.",
+          "start": 186.56,
+          "end": 186.9,
+          "probability": 0.9985301494598389
+        },
+        {
+          "word": " There",
+          "start": 187.6,
+          "end": 187.88,
+          "probability": 0.9929798245429993
+        },
+        {
+          "word": " are",
+          "start": 187.88,
+          "end": 188.06,
+          "probability": 0.9912964105606079
+        },
+        {
+          "word": " a",
+          "start": 188.06,
+          "end": 188.2,
+          "probability": 0.9839778542518616
+        },
+        {
+          "word": " lot",
+          "start": 188.2,
+          "end": 188.4,
+          "probability": 0.998805046081543
+        },
+        {
+          "word": " of",
+          "start": 188.4,
+          "end": 188.6,
+          "probability": 0.9982979893684387
+        },
+        {
+          "word": " considerations.",
+          "start": 188.6,
+          "end": 189.36,
+          "probability": 0.9979286193847656
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 18396,
+      "start": 190.32,
+      "end": 197.7,
+      "text": " How the school is run and managed must be considered together with the student behaviour, whether colleagues are professional, etc.",
+      "tokens": [
+        50664,
+        1012,
+        264,
+        1395,
+        307,
+        1190,
+        293,
+        6453,
+        1633,
+        312,
+        4888,
+        1214,
+        365,
+        264,
+        3107,
+        17229,
+        11,
+        1968,
+        7734,
+        366,
+        4843,
+        11,
+        5183,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09313455787864891,
+      "compression_ratio": 1.5213270142180095,
+      "no_speech_prob": 0.14990125596523285,
+      "words": [
+        {
+          "word": " How",
+          "start": 190.32,
+          "end": 190.54,
+          "probability": 0.9294437170028687
+        },
+        {
+          "word": " the",
+          "start": 190.54,
+          "end": 190.7,
+          "probability": 0.9656921029090881
+        },
+        {
+          "word": " school",
+          "start": 190.7,
+          "end": 190.96,
+          "probability": 0.8143173456192017
+        },
+        {
+          "word": " is",
+          "start": 190.96,
+          "end": 191.2,
+          "probability": 0.9335120916366577
+        },
+        {
+          "word": " run",
+          "start": 191.2,
+          "end": 191.46,
+          "probability": 0.9970920085906982
+        },
+        {
+          "word": " and",
+          "start": 191.46,
+          "end": 191.68,
+          "probability": 0.9830864667892456
+        },
+        {
+          "word": " managed",
+          "start": 191.68,
+          "end": 192.24,
+          "probability": 0.9912294149398804
+        },
+        {
+          "word": " must",
+          "start": 192.24,
+          "end": 192.52,
+          "probability": 0.9931526184082031
+        },
+        {
+          "word": " be",
+          "start": 192.52,
+          "end": 192.76,
+          "probability": 0.9980822801589966
+        },
+        {
+          "word": " considered",
+          "start": 192.76,
+          "end": 193.28,
+          "probability": 0.9968110918998718
+        },
+        {
+          "word": " together",
+          "start": 193.28,
+          "end": 193.78,
+          "probability": 0.9821956753730774
+        },
+        {
+          "word": " with",
+          "start": 193.78,
+          "end": 194.12,
+          "probability": 0.981817901134491
+        },
+        {
+          "word": " the",
+          "start": 194.12,
+          "end": 194.28,
+          "probability": 0.9785874485969543
+        },
+        {
+          "word": " student",
+          "start": 194.28,
+          "end": 194.6,
+          "probability": 0.9895502924919128
+        },
+        {
+          "word": " behaviour,",
+          "start": 194.6,
+          "end": 195.14,
+          "probability": 0.76454758644104
+        },
+        {
+          "word": " whether",
+          "start": 195.68,
+          "end": 195.88,
+          "probability": 0.5846472978591919
+        },
+        {
+          "word": " colleagues",
+          "start": 195.88,
+          "end": 196.36,
+          "probability": 0.9882088899612427
+        },
+        {
+          "word": " are",
+          "start": 196.36,
+          "end": 196.58,
+          "probability": 0.9987910389900208
+        },
+        {
+          "word": " professional,",
+          "start": 196.58,
+          "end": 197.2,
+          "probability": 0.9805148839950562
+        },
+        {
+          "word": " etc.",
+          "start": 197.4,
+          "end": 197.7,
+          "probability": 0.8255499601364136
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 18396,
+      "start": 198.58,
+      "end": 207.12,
+      "text": " I've visited some nursery schools in, for example, poor areas where the EYT has taken on the role of care and mentor.",
+      "tokens": [
+        51064,
+        286,
+        600,
+        11220,
+        512,
+        37538,
+        4656,
+        294,
+        11,
+        337,
+        1365,
+        11,
+        4716,
+        3179,
+        689,
+        264,
+        462,
+        56,
+        51,
+        575,
+        2726,
+        322,
+        264,
+        3090,
+        295,
+        1127,
+        293,
+        14478,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09313455787864891,
+      "compression_ratio": 1.5213270142180095,
+      "no_speech_prob": 0.14990125596523285,
+      "words": [
+        {
+          "word": " I've",
+          "start": 198.58,
+          "end": 198.96,
+          "probability": 0.8201695680618286
+        },
+        {
+          "word": " visited",
+          "start": 198.96,
+          "end": 199.22,
+          "probability": 0.9894843697547913
+        },
+        {
+          "word": " some",
+          "start": 199.22,
+          "end": 199.7,
+          "probability": 0.9980588555335999
+        },
+        {
+          "word": " nursery",
+          "start": 199.7,
+          "end": 199.98,
+          "probability": 0.9895926713943481
+        },
+        {
+          "word": " schools",
+          "start": 199.98,
+          "end": 200.56,
+          "probability": 0.9897005558013916
+        },
+        {
+          "word": " in,",
+          "start": 200.56,
+          "end": 201.02,
+          "probability": 0.7971156239509583
+        },
+        {
+          "word": " for",
+          "start": 201.2,
+          "end": 201.36,
+          "probability": 0.9968581199645996
+        },
+        {
+          "word": " example,",
+          "start": 201.36,
+          "end": 201.76,
+          "probability": 0.9982819557189941
+        },
+        {
+          "word": " poor",
+          "start": 202.18,
+          "end": 202.32,
+          "probability": 0.9346891641616821
+        },
+        {
+          "word": " areas",
+          "start": 202.32,
+          "end": 202.82,
+          "probability": 0.996898889541626
+        },
+        {
+          "word": " where",
+          "start": 202.82,
+          "end": 203.4,
+          "probability": 0.7628379464149475
+        },
+        {
+          "word": " the",
+          "start": 203.4,
+          "end": 203.58,
+          "probability": 0.994329035282135
+        },
+        {
+          "word": " EYT",
+          "start": 203.58,
+          "end": 204.36,
+          "probability": 0.9148818254470825
+        },
+        {
+          "word": " has",
+          "start": 204.36,
+          "end": 204.9,
+          "probability": 0.9823756814002991
+        },
+        {
+          "word": " taken",
+          "start": 204.9,
+          "end": 205.24,
+          "probability": 0.9984110593795776
+        },
+        {
+          "word": " on",
+          "start": 205.24,
+          "end": 205.38,
+          "probability": 0.9970378875732422
+        },
+        {
+          "word": " the",
+          "start": 205.38,
+          "end": 205.52,
+          "probability": 0.9970452189445496
+        },
+        {
+          "word": " role",
+          "start": 205.52,
+          "end": 205.74,
+          "probability": 0.9935266971588135
+        },
+        {
+          "word": " of",
+          "start": 205.74,
+          "end": 205.94,
+          "probability": 0.9987688660621643
+        },
+        {
+          "word": " care",
+          "start": 205.94,
+          "end": 206.2,
+          "probability": 0.2394418567419052
+        },
+        {
+          "word": " and",
+          "start": 206.2,
+          "end": 206.64,
+          "probability": 0.8476760387420654
+        },
+        {
+          "word": " mentor.",
+          "start": 206.64,
+          "end": 207.12,
+          "probability": 0.9325422048568726
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 20712,
+      "start": 207.89999999999998,
+      "end": 216.6,
+      "text": " Others have needed more specific skills in teaching very young children with learning difficulties, for example dyslexia or autism.",
+      "tokens": [
+        50414,
+        20277,
+        362,
+        2978,
+        544,
+        2685,
+        3942,
+        294,
+        4571,
+        588,
+        2037,
+        2227,
+        365,
+        2539,
+        14399,
+        11,
+        337,
+        1365,
+        15243,
+        2021,
+        654,
+        420,
+        21471,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05555538873414736,
+      "compression_ratio": 1.4933333333333334,
+      "no_speech_prob": 0.31849589943885803,
+      "words": [
+        {
+          "word": " Others",
+          "start": 207.89999999999998,
+          "end": 208.64,
+          "probability": 0.03253927454352379
+        },
+        {
+          "word": " have",
+          "start": 208.64,
+          "end": 208.86,
+          "probability": 0.9792914986610413
+        },
+        {
+          "word": " needed",
+          "start": 208.86,
+          "end": 209.1,
+          "probability": 0.941909670829773
+        },
+        {
+          "word": " more",
+          "start": 209.1,
+          "end": 209.44,
+          "probability": 0.9816617369651794
+        },
+        {
+          "word": " specific",
+          "start": 209.44,
+          "end": 210.0,
+          "probability": 0.9962235689163208
+        },
+        {
+          "word": " skills",
+          "start": 210.0,
+          "end": 210.56,
+          "probability": 0.997026264667511
+        },
+        {
+          "word": " in",
+          "start": 210.56,
+          "end": 210.82,
+          "probability": 0.9915771484375
+        },
+        {
+          "word": " teaching",
+          "start": 210.82,
+          "end": 211.24,
+          "probability": 0.996724545955658
+        },
+        {
+          "word": " very",
+          "start": 211.24,
+          "end": 211.64,
+          "probability": 0.9900055527687073
+        },
+        {
+          "word": " young",
+          "start": 211.64,
+          "end": 211.94,
+          "probability": 0.9974052309989929
+        },
+        {
+          "word": " children",
+          "start": 211.94,
+          "end": 212.46,
+          "probability": 0.9981356859207153
+        },
+        {
+          "word": " with",
+          "start": 212.46,
+          "end": 212.76,
+          "probability": 0.9889780879020691
+        },
+        {
+          "word": " learning",
+          "start": 212.76,
+          "end": 213.12,
+          "probability": 0.9966086149215698
+        },
+        {
+          "word": " difficulties,",
+          "start": 213.12,
+          "end": 213.8,
+          "probability": 0.9965614676475525
+        },
+        {
+          "word": " for",
+          "start": 214.14,
+          "end": 214.38,
+          "probability": 0.982082188129425
+        },
+        {
+          "word": " example",
+          "start": 214.38,
+          "end": 214.76,
+          "probability": 0.9972530007362366
+        },
+        {
+          "word": " dyslexia",
+          "start": 214.76,
+          "end": 215.58,
+          "probability": 0.9543113907178243
+        },
+        {
+          "word": " or",
+          "start": 215.58,
+          "end": 216.04,
+          "probability": 0.9089326858520508
+        },
+        {
+          "word": " autism.",
+          "start": 216.04,
+          "end": 216.6,
+          "probability": 0.9767202734947205
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 20712,
+      "start": 217.46,
+      "end": 226.28,
+      "text": " Often the schools are underfunded. Although their EYT does not need to specialise in one subject, they need to be skilled in many.",
+      "tokens": [
+        50864,
+        20043,
+        264,
+        4656,
+        366,
+        833,
+        43589,
+        13,
+        5780,
+        641,
+        462,
+        56,
+        51,
+        775,
+        406,
+        643,
+        281,
+        2121,
+        908,
+        294,
+        472,
+        3983,
+        11,
+        436,
+        643,
+        281,
+        312,
+        19690,
+        294,
+        867,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05555538873414736,
+      "compression_ratio": 1.4933333333333334,
+      "no_speech_prob": 0.31849589943885803,
+      "words": [
+        {
+          "word": " Often",
+          "start": 217.46,
+          "end": 217.84,
+          "probability": 0.9949203133583069
+        },
+        {
+          "word": " the",
+          "start": 217.84,
+          "end": 218.0,
+          "probability": 0.9482513666152954
+        },
+        {
+          "word": " schools",
+          "start": 218.0,
+          "end": 218.3,
+          "probability": 0.9900715351104736
+        },
+        {
+          "word": " are",
+          "start": 218.3,
+          "end": 218.62,
+          "probability": 0.9990655779838562
+        },
+        {
+          "word": " underfunded.",
+          "start": 218.62,
+          "end": 219.5,
+          "probability": 0.9827122688293457
+        },
+        {
+          "word": " Although",
+          "start": 220.22,
+          "end": 220.64,
+          "probability": 0.9917114973068237
+        },
+        {
+          "word": " their",
+          "start": 220.64,
+          "end": 220.9,
+          "probability": 0.5905144810676575
+        },
+        {
+          "word": " EYT",
+          "start": 220.9,
+          "end": 221.54,
+          "probability": 0.9181910554567972
+        },
+        {
+          "word": " does",
+          "start": 221.54,
+          "end": 221.8,
+          "probability": 0.9891006350517273
+        },
+        {
+          "word": " not",
+          "start": 221.8,
+          "end": 222.02,
+          "probability": 0.9942584037780762
+        },
+        {
+          "word": " need",
+          "start": 222.02,
+          "end": 222.32,
+          "probability": 0.9965019226074219
+        },
+        {
+          "word": " to",
+          "start": 222.32,
+          "end": 222.5,
+          "probability": 0.9793456792831421
+        },
+        {
+          "word": " specialise",
+          "start": 222.5,
+          "end": 223.08,
+          "probability": 0.7971361577510834
+        },
+        {
+          "word": " in",
+          "start": 223.08,
+          "end": 223.26,
+          "probability": 0.9992408752441406
+        },
+        {
+          "word": " one",
+          "start": 223.26,
+          "end": 223.44,
+          "probability": 0.9907914400100708
+        },
+        {
+          "word": " subject,",
+          "start": 223.44,
+          "end": 223.98,
+          "probability": 0.9917327165603638
+        },
+        {
+          "word": " they",
+          "start": 224.54,
+          "end": 224.74,
+          "probability": 0.9962128400802612
+        },
+        {
+          "word": " need",
+          "start": 224.74,
+          "end": 224.92,
+          "probability": 0.9978846907615662
+        },
+        {
+          "word": " to",
+          "start": 224.92,
+          "end": 225.08,
+          "probability": 0.9988970756530762
+        },
+        {
+          "word": " be",
+          "start": 225.08,
+          "end": 225.18,
+          "probability": 0.999159574508667
+        },
+        {
+          "word": " skilled",
+          "start": 225.18,
+          "end": 225.6,
+          "probability": 0.9514464139938354
+        },
+        {
+          "word": " in",
+          "start": 225.6,
+          "end": 225.88,
+          "probability": 0.9977923631668091
+        },
+        {
+          "word": " many.",
+          "start": 225.88,
+          "end": 226.28,
+          "probability": 0.9981731176376343
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 20712,
+      "start": 227.14,
+      "end": 232.18,
+      "text": " We briefly talked about employers. What should they be doing differently?",
+      "tokens": [
+        51364,
+        492,
+        10515,
+        2825,
+        466,
+        16744,
+        13,
+        708,
+        820,
+        436,
+        312,
+        884,
+        7614,
+        30,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05555538873414736,
+      "compression_ratio": 1.4933333333333334,
+      "no_speech_prob": 0.31849589943885803,
+      "words": [
+        {
+          "word": " We",
+          "start": 227.14,
+          "end": 227.4,
+          "probability": 0.3341284692287445
+        },
+        {
+          "word": " briefly",
+          "start": 227.4,
+          "end": 227.84,
+          "probability": 0.9949387311935425
+        },
+        {
+          "word": " talked",
+          "start": 227.84,
+          "end": 228.22,
+          "probability": 0.9839906692504883
+        },
+        {
+          "word": " about",
+          "start": 228.22,
+          "end": 228.68,
+          "probability": 0.9992740750312805
+        },
+        {
+          "word": " employers.",
+          "start": 228.68,
+          "end": 229.4,
+          "probability": 0.9162896871566772
+        },
+        {
+          "word": " What",
+          "start": 230.14,
+          "end": 230.4,
+          "probability": 0.9946897029876709
+        },
+        {
+          "word": " should",
+          "start": 230.4,
+          "end": 230.66,
+          "probability": 0.9982444047927856
+        },
+        {
+          "word": " they",
+          "start": 230.66,
+          "end": 230.92,
+          "probability": 0.9989443421363831
+        },
+        {
+          "word": " be",
+          "start": 230.92,
+          "end": 231.1,
+          "probability": 0.9924161434173584
+        },
+        {
+          "word": " doing",
+          "start": 231.1,
+          "end": 231.44,
+          "probability": 0.9987344145774841
+        },
+        {
+          "word": " differently?",
+          "start": 231.44,
+          "end": 232.18,
+          "probability": 0.9948247671127319
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 23218,
+      "start": 232.88,
+      "end": 237.3,
+      "text": " Well, the nursery schools are under pressure and I'll explain why.",
+      "tokens": [
+        50414,
+        1042,
+        11,
+        264,
+        37538,
+        4656,
+        366,
+        833,
+        3321,
+        293,
+        286,
+        603,
+        2903,
+        983,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0846876677344827,
+      "compression_ratio": 1.4705882352941178,
+      "no_speech_prob": 0.3503466248512268,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 232.88,
+          "end": 233.52,
+          "probability": 0.5955021381378174
+        },
+        {
+          "word": " the",
+          "start": 233.84,
+          "end": 234.0,
+          "probability": 0.983548104763031
+        },
+        {
+          "word": " nursery",
+          "start": 234.0,
+          "end": 234.26,
+          "probability": 0.9822632670402527
+        },
+        {
+          "word": " schools",
+          "start": 234.26,
+          "end": 234.72,
+          "probability": 0.9909569621086121
+        },
+        {
+          "word": " are",
+          "start": 234.72,
+          "end": 234.98,
+          "probability": 0.9973044395446777
+        },
+        {
+          "word": " under",
+          "start": 234.98,
+          "end": 235.18,
+          "probability": 0.9988607168197632
+        },
+        {
+          "word": " pressure",
+          "start": 235.18,
+          "end": 235.66,
+          "probability": 0.9953651428222656
+        },
+        {
+          "word": " and",
+          "start": 235.66,
+          "end": 236.3,
+          "probability": 0.5210734605789185
+        },
+        {
+          "word": " I'll",
+          "start": 236.3,
+          "end": 236.48,
+          "probability": 0.9751507639884949
+        },
+        {
+          "word": " explain",
+          "start": 236.48,
+          "end": 236.82,
+          "probability": 0.9988545179367065
+        },
+        {
+          "word": " why.",
+          "start": 236.82,
+          "end": 237.3,
+          "probability": 0.9907738566398621
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 23218,
+      "start": 237.84,
+      "end": 241.12,
+      "text": " I mentioned that often they don't have much funding.",
+      "tokens": [
+        50664,
+        286,
+        2835,
+        300,
+        2049,
+        436,
+        500,
+        380,
+        362,
+        709,
+        6137,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0846876677344827,
+      "compression_ratio": 1.4705882352941178,
+      "no_speech_prob": 0.3503466248512268,
+      "words": [
+        {
+          "word": " I",
+          "start": 237.84,
+          "end": 238.48,
+          "probability": 0.9809485673904419
+        },
+        {
+          "word": " mentioned",
+          "start": 238.48,
+          "end": 238.84,
+          "probability": 0.8873352408409119
+        },
+        {
+          "word": " that",
+          "start": 238.84,
+          "end": 239.18,
+          "probability": 0.9943506121635437
+        },
+        {
+          "word": " often",
+          "start": 239.18,
+          "end": 239.58,
+          "probability": 0.8564304113388062
+        },
+        {
+          "word": " they",
+          "start": 239.58,
+          "end": 239.84,
+          "probability": 0.9524393677711487
+        },
+        {
+          "word": " don't",
+          "start": 239.84,
+          "end": 240.14,
+          "probability": 0.9910914897918701
+        },
+        {
+          "word": " have",
+          "start": 240.14,
+          "end": 240.28,
+          "probability": 0.9975993037223816
+        },
+        {
+          "word": " much",
+          "start": 240.28,
+          "end": 240.5,
+          "probability": 0.9982511401176453
+        },
+        {
+          "word": " funding.",
+          "start": 240.5,
+          "end": 241.12,
+          "probability": 0.9947599768638611
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 23218,
+      "start": 242.12,
+      "end": 251.96,
+      "text": " Obviously many of the children attending nursery are fee-paying. It's not a legal requirement for a child to attend school until the age of 4, as you know.",
+      "tokens": [
+        50864,
+        7580,
+        867,
+        295,
+        264,
+        2227,
+        15862,
+        37538,
+        366,
+        12054,
+        12,
+        22038,
+        278,
+        13,
+        467,
+        311,
+        406,
+        257,
+        5089,
+        11695,
+        337,
+        257,
+        1440,
+        281,
+        6888,
+        1395,
+        1826,
+        264,
+        3205,
+        295,
+        1017,
+        11,
+        382,
+        291,
+        458,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0846876677344827,
+      "compression_ratio": 1.4705882352941178,
+      "no_speech_prob": 0.3503466248512268,
+      "words": [
+        {
+          "word": " Obviously",
+          "start": 242.12,
+          "end": 242.76,
+          "probability": 0.9916965961456299
+        },
+        {
+          "word": " many",
+          "start": 242.76,
+          "end": 243.16,
+          "probability": 0.6049908995628357
+        },
+        {
+          "word": " of",
+          "start": 243.16,
+          "end": 243.34,
+          "probability": 0.9938033819198608
+        },
+        {
+          "word": " the",
+          "start": 243.34,
+          "end": 243.48,
+          "probability": 0.9894730448722839
+        },
+        {
+          "word": " children",
+          "start": 243.48,
+          "end": 243.86,
+          "probability": 0.9785091280937195
+        },
+        {
+          "word": " attending",
+          "start": 243.86,
+          "end": 244.4,
+          "probability": 0.9918253421783447
+        },
+        {
+          "word": " nursery",
+          "start": 244.4,
+          "end": 244.98,
+          "probability": 0.990515947341919
+        },
+        {
+          "word": " are",
+          "start": 244.98,
+          "end": 245.36,
+          "probability": 0.9973801970481873
+        },
+        {
+          "word": " fee",
+          "start": 245.36,
+          "end": 245.68,
+          "probability": 0.9748570919036865
+        },
+        {
+          "word": "-paying.",
+          "start": 245.68,
+          "end": 246.22,
+          "probability": 0.8859912554423014
+        },
+        {
+          "word": " It's",
+          "start": 246.54,
+          "end": 246.86,
+          "probability": 0.9800449013710022
+        },
+        {
+          "word": " not",
+          "start": 246.86,
+          "end": 247.0,
+          "probability": 0.9969615340232849
+        },
+        {
+          "word": " a",
+          "start": 247.0,
+          "end": 247.16,
+          "probability": 0.9152926802635193
+        },
+        {
+          "word": " legal",
+          "start": 247.16,
+          "end": 247.44,
+          "probability": 0.9977622032165527
+        },
+        {
+          "word": " requirement",
+          "start": 247.44,
+          "end": 248.0,
+          "probability": 0.9973068237304688
+        },
+        {
+          "word": " for",
+          "start": 248.0,
+          "end": 248.32,
+          "probability": 0.9977446794509888
+        },
+        {
+          "word": " a",
+          "start": 248.32,
+          "end": 248.42,
+          "probability": 0.9966956377029419
+        },
+        {
+          "word": " child",
+          "start": 248.42,
+          "end": 248.72,
+          "probability": 0.998073935508728
+        },
+        {
+          "word": " to",
+          "start": 248.72,
+          "end": 248.94,
+          "probability": 0.9946659803390503
+        },
+        {
+          "word": " attend",
+          "start": 248.94,
+          "end": 249.2,
+          "probability": 0.999326229095459
+        },
+        {
+          "word": " school",
+          "start": 249.2,
+          "end": 249.68,
+          "probability": 0.992133617401123
+        },
+        {
+          "word": " until",
+          "start": 249.68,
+          "end": 250.3,
+          "probability": 0.9498143196105957
+        },
+        {
+          "word": " the",
+          "start": 250.3,
+          "end": 250.48,
+          "probability": 0.9963815212249756
+        },
+        {
+          "word": " age",
+          "start": 250.48,
+          "end": 250.64,
+          "probability": 0.9953157901763916
+        },
+        {
+          "word": " of",
+          "start": 250.64,
+          "end": 250.8,
+          "probability": 0.9933938384056091
+        },
+        {
+          "word": " 4,",
+          "start": 250.8,
+          "end": 251.06,
+          "probability": 0.2418532371520996
+        },
+        {
+          "word": " as",
+          "start": 251.36,
+          "end": 251.58,
+          "probability": 0.9976794123649597
+        },
+        {
+          "word": " you",
+          "start": 251.58,
+          "end": 251.72,
+          "probability": 0.9989191293716431
+        },
+        {
+          "word": " know.",
+          "start": 251.72,
+          "end": 251.96,
+          "probability": 0.9973769187927246
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 25196,
+      "start": 252.96,
+      "end": 264.08,
+      "text": " In 2010 the UK government introduced 15 hours free child care per week and from 2025 all children can get 33 hours.",
+      "tokens": [
+        50414,
+        682,
+        9657,
+        264,
+        7051,
+        2463,
+        7268,
+        2119,
+        2496,
+        1737,
+        1440,
+        1127,
+        680,
+        1243,
+        293,
+        490,
+        39209,
+        439,
+        2227,
+        393,
+        483,
+        11816,
+        2496,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10950510642107796,
+      "compression_ratio": 1.4228855721393034,
+      "no_speech_prob": 0.4420396387577057,
+      "words": [
+        {
+          "word": " In",
+          "start": 252.65,
+          "end": 253.04,
+          "probability": 0.4876813590526581
+        },
+        {
+          "word": " 2010",
+          "start": 253.04,
+          "end": 253.68,
+          "probability": 0.9977084398269653
+        },
+        {
+          "word": " the",
+          "start": 253.68,
+          "end": 254.06,
+          "probability": 0.4482560455799103
+        },
+        {
+          "word": " UK",
+          "start": 254.06,
+          "end": 254.3,
+          "probability": 0.9845527410507202
+        },
+        {
+          "word": " government",
+          "start": 254.3,
+          "end": 254.82,
+          "probability": 0.5612969994544983
+        },
+        {
+          "word": " introduced",
+          "start": 254.82,
+          "end": 255.44,
+          "probability": 0.9933912754058838
+        },
+        {
+          "word": " 15",
+          "start": 255.44,
+          "end": 256.42,
+          "probability": 0.9142332077026367
+        },
+        {
+          "word": " hours",
+          "start": 256.42,
+          "end": 256.94,
+          "probability": 0.9361186623573303
+        },
+        {
+          "word": " free",
+          "start": 256.94,
+          "end": 257.28,
+          "probability": 0.8568158745765686
+        },
+        {
+          "word": " child",
+          "start": 257.28,
+          "end": 257.76,
+          "probability": 0.6984729170799255
+        },
+        {
+          "word": " care",
+          "start": 257.76,
+          "end": 258.08,
+          "probability": 0.9373944401741028
+        },
+        {
+          "word": " per",
+          "start": 258.08,
+          "end": 258.32,
+          "probability": 0.9984386563301086
+        },
+        {
+          "word": " week",
+          "start": 258.32,
+          "end": 258.68,
+          "probability": 0.9981120824813843
+        },
+        {
+          "word": " and",
+          "start": 258.68,
+          "end": 259.34,
+          "probability": 0.5488558411598206
+        },
+        {
+          "word": " from",
+          "start": 259.34,
+          "end": 259.58,
+          "probability": 0.9334200024604797
+        },
+        {
+          "word": " 2025",
+          "start": 259.58,
+          "end": 260.7,
+          "probability": 0.7064936757087708
+        },
+        {
+          "word": " all",
+          "start": 260.7,
+          "end": 261.58,
+          "probability": 0.9257662892341614
+        },
+        {
+          "word": " children",
+          "start": 261.58,
+          "end": 262.04,
+          "probability": 0.995665967464447
+        },
+        {
+          "word": " can",
+          "start": 262.04,
+          "end": 262.38,
+          "probability": 0.982613742351532
+        },
+        {
+          "word": " get",
+          "start": 262.38,
+          "end": 262.58,
+          "probability": 0.9967582821846008
+        },
+        {
+          "word": " 33",
+          "start": 262.58,
+          "end": 263.34,
+          "probability": 0.7754003405570984
+        },
+        {
+          "word": " hours.",
+          "start": 263.34,
+          "end": 264.08,
+          "probability": 0.9982543587684631
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 25196,
+      "start": 264.72,
+      "end": 270.04,
+      "text": " That works out at around £7,000 free nursery care per child.",
+      "tokens": [
+        50964,
+        663,
+        1985,
+        484,
+        412,
+        926,
+        14378,
+        22,
+        11,
+        1360,
+        1737,
+        37538,
+        1127,
+        680,
+        1440,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10950510642107796,
+      "compression_ratio": 1.4228855721393034,
+      "no_speech_prob": 0.4420396387577057,
+      "words": [
+        {
+          "word": " That",
+          "start": 264.72,
+          "end": 265.14,
+          "probability": 0.9885403513908386
+        },
+        {
+          "word": " works",
+          "start": 265.14,
+          "end": 265.5,
+          "probability": 0.9862743020057678
+        },
+        {
+          "word": " out",
+          "start": 265.5,
+          "end": 265.8,
+          "probability": 0.9738225936889648
+        },
+        {
+          "word": " at",
+          "start": 265.8,
+          "end": 266.04,
+          "probability": 0.9808536767959595
+        },
+        {
+          "word": " around",
+          "start": 266.04,
+          "end": 266.34,
+          "probability": 0.9925336837768555
+        },
+        {
+          "word": " £7",
+          "start": 266.34,
+          "end": 266.86,
+          "probability": 0.6970573961734772
+        },
+        {
+          "word": ",000",
+          "start": 266.86,
+          "end": 267.62,
+          "probability": 0.8670715689659119
+        },
+        {
+          "word": " free",
+          "start": 267.62,
+          "end": 268.3,
+          "probability": 0.9023306369781494
+        },
+        {
+          "word": " nursery",
+          "start": 268.3,
+          "end": 268.72,
+          "probability": 0.988882839679718
+        },
+        {
+          "word": " care",
+          "start": 268.72,
+          "end": 269.22,
+          "probability": 0.9965060949325562
+        },
+        {
+          "word": " per",
+          "start": 269.22,
+          "end": 269.46,
+          "probability": 0.9978164434432983
+        },
+        {
+          "word": " child.",
+          "start": 269.46,
+          "end": 270.04,
+          "probability": 0.9991083741188049
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 25196,
+      "start": 270.36,
+      "end": 277.64,
+      "text": " This is great news for parents on lower incomes, but leaves the school with very little to pay its teachers.",
+      "tokens": [
+        51264,
+        639,
+        307,
+        869,
+        2583,
+        337,
+        3152,
+        322,
+        3126,
+        42458,
+        11,
+        457,
+        5510,
+        264,
+        1395,
+        365,
+        588,
+        707,
+        281,
+        1689,
+        1080,
+        6023,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10950510642107796,
+      "compression_ratio": 1.4228855721393034,
+      "no_speech_prob": 0.4420396387577057,
+      "words": [
+        {
+          "word": " This",
+          "start": 270.36,
+          "end": 271.1,
+          "probability": 0.9926747679710388
+        },
+        {
+          "word": " is",
+          "start": 271.1,
+          "end": 271.24,
+          "probability": 0.9939695596694946
+        },
+        {
+          "word": " great",
+          "start": 271.24,
+          "end": 271.54,
+          "probability": 0.9912480115890503
+        },
+        {
+          "word": " news",
+          "start": 271.54,
+          "end": 271.98,
+          "probability": 0.9996601343154907
+        },
+        {
+          "word": " for",
+          "start": 271.98,
+          "end": 272.2,
+          "probability": 0.9931265115737915
+        },
+        {
+          "word": " parents",
+          "start": 272.2,
+          "end": 272.52,
+          "probability": 0.996461808681488
+        },
+        {
+          "word": " on",
+          "start": 272.52,
+          "end": 272.84,
+          "probability": 0.9887400269508362
+        },
+        {
+          "word": " lower",
+          "start": 272.84,
+          "end": 273.14,
+          "probability": 0.9879971742630005
+        },
+        {
+          "word": " incomes,",
+          "start": 273.14,
+          "end": 273.56,
+          "probability": 0.9960787892341614
+        },
+        {
+          "word": " but",
+          "start": 274.24,
+          "end": 274.44,
+          "probability": 0.9974251985549927
+        },
+        {
+          "word": " leaves",
+          "start": 274.44,
+          "end": 274.84,
+          "probability": 0.9854846596717834
+        },
+        {
+          "word": " the",
+          "start": 274.84,
+          "end": 275.08,
+          "probability": 0.9858903884887695
+        },
+        {
+          "word": " school",
+          "start": 275.08,
+          "end": 275.46,
+          "probability": 0.9948415160179138
+        },
+        {
+          "word": " with",
+          "start": 275.46,
+          "end": 275.94,
+          "probability": 0.9896073937416077
+        },
+        {
+          "word": " very",
+          "start": 275.94,
+          "end": 276.26,
+          "probability": 0.9924256801605225
+        },
+        {
+          "word": " little",
+          "start": 276.26,
+          "end": 276.56,
+          "probability": 0.9995220899581909
+        },
+        {
+          "word": " to",
+          "start": 276.56,
+          "end": 276.74,
+          "probability": 0.9945217370986938
+        },
+        {
+          "word": " pay",
+          "start": 276.74,
+          "end": 276.94,
+          "probability": 0.9920879006385803
+        },
+        {
+          "word": " its",
+          "start": 276.94,
+          "end": 277.16,
+          "probability": 0.9417601227760315
+        },
+        {
+          "word": " teachers.",
+          "start": 277.16,
+          "end": 277.64,
+          "probability": 0.9865784049034119
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 27764,
+      "start": 277.64,
+      "end": 282.1,
+      "text": " This is why many are earning little above the minimum wage.",
+      "tokens": [
+        50414,
+        639,
+        307,
+        983,
+        867,
+        366,
+        12353,
+        707,
+        3673,
+        264,
+        7285,
+        15444,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0721821013618918,
+      "compression_ratio": 1.4623115577889447,
+      "no_speech_prob": 0.07969164848327637,
+      "words": [
+        {
+          "word": " This",
+          "start": 277.64,
+          "end": 278.64,
+          "probability": 0.5480502843856812
+        },
+        {
+          "word": " is",
+          "start": 278.64,
+          "end": 278.8,
+          "probability": 0.9966936111450195
+        },
+        {
+          "word": " why",
+          "start": 278.8,
+          "end": 279.06,
+          "probability": 0.9983238577842712
+        },
+        {
+          "word": " many",
+          "start": 279.06,
+          "end": 279.5,
+          "probability": 0.9938544034957886
+        },
+        {
+          "word": " are",
+          "start": 279.5,
+          "end": 279.88,
+          "probability": 0.9975882768630981
+        },
+        {
+          "word": " earning",
+          "start": 279.88,
+          "end": 280.26,
+          "probability": 0.7930189371109009
+        },
+        {
+          "word": " little",
+          "start": 280.26,
+          "end": 280.58,
+          "probability": 0.9870566129684448
+        },
+        {
+          "word": " above",
+          "start": 280.58,
+          "end": 280.96,
+          "probability": 0.9950567483901978
+        },
+        {
+          "word": " the",
+          "start": 280.96,
+          "end": 281.22,
+          "probability": 0.9911137223243713
+        },
+        {
+          "word": " minimum",
+          "start": 281.22,
+          "end": 281.5,
+          "probability": 0.998174786567688
+        },
+        {
+          "word": " wage.",
+          "start": 281.5,
+          "end": 282.1,
+          "probability": 0.999576985836029
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 27764,
+      "start": 283.08,
+      "end": 286.96,
+      "text": " Well, unfortunately we've come to the end of the podcast.",
+      "tokens": [
+        50614,
+        1042,
+        11,
+        7015,
+        321,
+        600,
+        808,
+        281,
+        264,
+        917,
+        295,
+        264,
+        7367,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0721821013618918,
+      "compression_ratio": 1.4623115577889447,
+      "no_speech_prob": 0.07969164848327637,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 283.08,
+          "end": 283.54,
+          "probability": 0.9647485017776489
+        },
+        {
+          "word": " unfortunately",
+          "start": 283.74,
+          "end": 284.36,
+          "probability": 0.9906337261199951
+        },
+        {
+          "word": " we've",
+          "start": 284.36,
+          "end": 285.26,
+          "probability": 0.6558577865362167
+        },
+        {
+          "word": " come",
+          "start": 285.26,
+          "end": 285.48,
+          "probability": 0.9980022311210632
+        },
+        {
+          "word": " to",
+          "start": 285.48,
+          "end": 285.76,
+          "probability": 0.998023509979248
+        },
+        {
+          "word": " the",
+          "start": 285.76,
+          "end": 285.88,
+          "probability": 0.9988903403282166
+        },
+        {
+          "word": " end",
+          "start": 285.88,
+          "end": 286.22,
+          "probability": 0.9974282383918762
+        },
+        {
+          "word": " of",
+          "start": 286.22,
+          "end": 286.38,
+          "probability": 0.9982010126113892
+        },
+        {
+          "word": " the",
+          "start": 286.38,
+          "end": 286.48,
+          "probability": 0.9964565634727478
+        },
+        {
+          "word": " podcast.",
+          "start": 286.48,
+          "end": 286.96,
+          "probability": 0.9863148927688599
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 27764,
+      "start": 287.8,
+      "end": 297.2,
+      "text": " I'd like to thank Dr Pearson for sharing the results of the research and highlighting just how important early years teachers are.",
+      "tokens": [
+        50864,
+        286,
+        1116,
+        411,
+        281,
+        1309,
+        2491,
+        39041,
+        337,
+        5414,
+        264,
+        3542,
+        295,
+        264,
+        2132,
+        293,
+        26551,
+        445,
+        577,
+        1021,
+        2440,
+        924,
+        6023,
+        366,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0721821013618918,
+      "compression_ratio": 1.4623115577889447,
+      "no_speech_prob": 0.07969164848327637,
+      "words": [
+        {
+          "word": " I'd",
+          "start": 287.8,
+          "end": 288.16,
+          "probability": 0.9919906258583069
+        },
+        {
+          "word": " like",
+          "start": 288.16,
+          "end": 288.26,
+          "probability": 0.9987339377403259
+        },
+        {
+          "word": " to",
+          "start": 288.26,
+          "end": 288.5,
+          "probability": 0.9985933899879456
+        },
+        {
+          "word": " thank",
+          "start": 288.5,
+          "end": 288.76,
+          "probability": 0.9969504475593567
+        },
+        {
+          "word": " Dr",
+          "start": 288.76,
+          "end": 289.2,
+          "probability": 0.8513070940971375
+        },
+        {
+          "word": " Pearson",
+          "start": 289.2,
+          "end": 289.58,
+          "probability": 0.8033641576766968
+        },
+        {
+          "word": " for",
+          "start": 289.58,
+          "end": 290.14,
+          "probability": 0.9957346320152283
+        },
+        {
+          "word": " sharing",
+          "start": 290.14,
+          "end": 290.54,
+          "probability": 0.9959709048271179
+        },
+        {
+          "word": " the",
+          "start": 290.54,
+          "end": 290.74,
+          "probability": 0.9981056451797485
+        },
+        {
+          "word": " results",
+          "start": 290.74,
+          "end": 291.08,
+          "probability": 0.998783528804779
+        },
+        {
+          "word": " of",
+          "start": 291.08,
+          "end": 291.38,
+          "probability": 0.9976420402526855
+        },
+        {
+          "word": " the",
+          "start": 291.38,
+          "end": 291.48,
+          "probability": 0.9911134839057922
+        },
+        {
+          "word": " research",
+          "start": 291.48,
+          "end": 291.88,
+          "probability": 0.9981258511543274
+        },
+        {
+          "word": " and",
+          "start": 291.88,
+          "end": 292.82,
+          "probability": 0.7588968873023987
+        },
+        {
+          "word": " highlighting",
+          "start": 292.82,
+          "end": 293.26,
+          "probability": 0.9985823631286621
+        },
+        {
+          "word": " just",
+          "start": 293.26,
+          "end": 293.9,
+          "probability": 0.9946499466896057
+        },
+        {
+          "word": " how",
+          "start": 293.9,
+          "end": 294.3,
+          "probability": 0.998971700668335
+        },
+        {
+          "word": " important",
+          "start": 294.3,
+          "end": 295.14,
+          "probability": 0.996746301651001
+        },
+        {
+          "word": " early",
+          "start": 295.14,
+          "end": 295.88,
+          "probability": 0.9846842885017395
+        },
+        {
+          "word": " years",
+          "start": 295.88,
+          "end": 296.28,
+          "probability": 0.8966565728187561
+        },
+        {
+          "word": " teachers",
+          "start": 296.28,
+          "end": 296.76,
+          "probability": 0.9660392999649048
+        },
+        {
+          "word": " are.",
+          "start": 296.76,
+          "end": 297.2,
+          "probability": 0.9993910789489746
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 27764,
+      "start": 298.02,
+      "end": 300.98,
+      "text": " Join me next time for Science in the City.",
+      "tokens": [
+        51364,
+        19642,
+        385,
+        958,
+        565,
+        337,
+        8976,
+        294,
+        264,
+        4392,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0721821013618918,
+      "compression_ratio": 1.4623115577889447,
+      "no_speech_prob": 0.07969164848327637,
+      "words": [
+        {
+          "word": " Join",
+          "start": 298.02,
+          "end": 298.26,
+          "probability": 0.9990119934082031
+        },
+        {
+          "word": " me",
+          "start": 298.26,
+          "end": 298.44,
+          "probability": 0.9980629086494446
+        },
+        {
+          "word": " next",
+          "start": 298.44,
+          "end": 298.72,
+          "probability": 0.9972460269927979
+        },
+        {
+          "word": " time",
+          "start": 298.72,
+          "end": 299.06,
+          "probability": 0.9994645714759827
+        },
+        {
+          "word": " for",
+          "start": 299.06,
+          "end": 299.54,
+          "probability": 0.9882282614707947
+        },
+        {
+          "word": " Science",
+          "start": 299.54,
+          "end": 299.98,
+          "probability": 0.8506835103034973
+        },
+        {
+          "word": " in",
+          "start": 299.98,
+          "end": 300.42,
+          "probability": 0.8372166752815247
+        },
+        {
+          "word": " the",
+          "start": 300.42,
+          "end": 300.62,
+          "probability": 0.9761992692947388
+        },
+        {
+          "word": " City.",
+          "start": 300.62,
+          "end": 300.98,
+          "probability": 0.9132822751998901
+        }
+      ]
+    }
+  ]
+}

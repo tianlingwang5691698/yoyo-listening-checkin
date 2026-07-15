@@ -1,0 +1,3421 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 6.1 Hey, Carl! Professor Garcia says another group has chosen our topic for their project. We have to find a different one. Oh no! That was a great topic and we had good ideas about it. What can we look at instead? Well, how about the advantages and disadvantages for businesses of letting their employees work from home? Great idea! Have you got any information about it? Yes, I do. The numbers are really interesting. More people are working from home than before. A recent survey showed that 63% of people work from home at least part of the time. Working from home increased from 20% in 2020 to 28% in 2023. And the technology industry had the most employees working from home – 67%. All this can help businesses save up to 40% on office space costs. Wow! That is amazing! But I don't think I would want to work at home all the time. I like having people to talk to. But how do companies know that their employees are not taking long breaks and wasting time during the day instead of working? Well, they can ask employees to write down the hours they work. Or they can focus on whether the employee is reaching their business goals. In another survey, 48.3% of businesses said that they were in favor of home working because it increased productivity. Really? That surprises me. Well, think about it. The employer sets the goals for what they want the employees to achieve. But the employees can choose how they spend their time during the day. Homeworkers don't waste time traveling. I read that home workers in the U.S. save an average of 55 minutes every day because they don't have to travel to work. So they have more time to exercise more, eat more healthily, and organize their day. One study said that if workers can work from home, they are up to 20% happier. Wow! That's a lot! Great research, Suzy! But I'd also like to find out how much your personality helps you to be successful at home working. For example, you need good skills in how to manage your time. If your home is also where you work, your job could take over your whole life. Yes, you're right. We need to do some research on that.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.32,
+      "text": " Track 6.1",
+      "tokens": [
+        50364,
+        31903,
+        1386,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.42032600171638257,
+      "compression_ratio": 1.3496932515337423,
+      "no_speech_prob": 0.056004349142313004,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.64,
+          "probability": 0.5661301612854004
+        },
+        {
+          "word": " 6",
+          "start": 0.64,
+          "end": 1.14,
+          "probability": 0.8613608479499817
+        },
+        {
+          "word": ".1",
+          "start": 1.14,
+          "end": 2.32,
+          "probability": 0.9952136278152466
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.24,
+      "end": 4.7,
+      "text": " Hey, Carl!",
+      "tokens": [
+        50526,
+        1911,
+        11,
+        14256,
+        0,
+        50612
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.42032600171638257,
+      "compression_ratio": 1.3496932515337423,
+      "no_speech_prob": 0.056004349142313004,
+      "words": [
+        {
+          "word": " Hey,",
+          "start": 3.24,
+          "end": 4.0,
+          "probability": 0.6404483318328857
+        },
+        {
+          "word": " Carl!",
+          "start": 4.06,
+          "end": 4.7,
+          "probability": 0.7010316848754883
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.3,
+      "end": 11.4,
+      "text": " Professor Garcia says another group has chosen our topic for their project.",
+      "tokens": [
+        50612,
+        8419,
+        33738,
+        1619,
+        1071,
+        1594,
+        575,
+        8614,
+        527,
+        4829,
+        337,
+        641,
+        1716,
+        13,
+        50952
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.42032600171638257,
+      "compression_ratio": 1.3496932515337423,
+      "no_speech_prob": 0.056004349142313004,
+      "words": [
+        {
+          "word": " Professor",
+          "start": 5.3,
+          "end": 5.86,
+          "probability": 0.853163480758667
+        },
+        {
+          "word": " Garcia",
+          "start": 5.86,
+          "end": 6.66,
+          "probability": 0.985541045665741
+        },
+        {
+          "word": " says",
+          "start": 6.66,
+          "end": 7.0,
+          "probability": 0.9910229444503784
+        },
+        {
+          "word": " another",
+          "start": 7.0,
+          "end": 7.56,
+          "probability": 0.9911660552024841
+        },
+        {
+          "word": " group",
+          "start": 7.56,
+          "end": 8.16,
+          "probability": 0.9931394457817078
+        },
+        {
+          "word": " has",
+          "start": 8.16,
+          "end": 8.6,
+          "probability": 0.9973741769790649
+        },
+        {
+          "word": " chosen",
+          "start": 8.6,
+          "end": 9.04,
+          "probability": 0.9988253712654114
+        },
+        {
+          "word": " our",
+          "start": 9.04,
+          "end": 9.66,
+          "probability": 0.9945717453956604
+        },
+        {
+          "word": " topic",
+          "start": 9.66,
+          "end": 10.18,
+          "probability": 0.9955829977989197
+        },
+        {
+          "word": " for",
+          "start": 10.18,
+          "end": 10.44,
+          "probability": 0.9992347955703735
+        },
+        {
+          "word": " their",
+          "start": 10.44,
+          "end": 10.76,
+          "probability": 0.9983823299407959
+        },
+        {
+          "word": " project.",
+          "start": 10.76,
+          "end": 11.4,
+          "probability": 0.9968440532684326
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 12.0,
+      "end": 14.2,
+      "text": " We have to find a different one.",
+      "tokens": [
+        50952,
+        492,
+        362,
+        281,
+        915,
+        257,
+        819,
+        472,
+        13,
+        51082
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.42032600171638257,
+      "compression_ratio": 1.3496932515337423,
+      "no_speech_prob": 0.056004349142313004,
+      "words": [
+        {
+          "word": " We",
+          "start": 12.0,
+          "end": 12.3,
+          "probability": 0.9966273903846741
+        },
+        {
+          "word": " have",
+          "start": 12.3,
+          "end": 12.58,
+          "probability": 0.9968109726905823
+        },
+        {
+          "word": " to",
+          "start": 12.58,
+          "end": 12.8,
+          "probability": 0.999211311340332
+        },
+        {
+          "word": " find",
+          "start": 12.8,
+          "end": 13.0,
+          "probability": 0.9994248151779175
+        },
+        {
+          "word": " a",
+          "start": 13.0,
+          "end": 13.3,
+          "probability": 0.9985826015472412
+        },
+        {
+          "word": " different",
+          "start": 13.3,
+          "end": 13.7,
+          "probability": 0.9991262555122375
+        },
+        {
+          "word": " one.",
+          "start": 13.7,
+          "end": 14.2,
+          "probability": 0.9991180300712585
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 15.12,
+      "end": 20.42,
+      "text": " Oh no! That was a great topic and we had good ideas about it.",
+      "tokens": [
+        51082,
+        876,
+        572,
+        0,
+        663,
+        390,
+        257,
+        869,
+        4829,
+        293,
+        321,
+        632,
+        665,
+        3487,
+        466,
+        309,
+        13,
+        51390
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.42032600171638257,
+      "compression_ratio": 1.3496932515337423,
+      "no_speech_prob": 0.056004349142313004,
+      "words": [
+        {
+          "word": " Oh",
+          "start": 15.12,
+          "end": 15.68,
+          "probability": 0.9882275462150574
+        },
+        {
+          "word": " no!",
+          "start": 15.68,
+          "end": 16.22,
+          "probability": 0.5233187079429626
+        },
+        {
+          "word": " That",
+          "start": 16.54,
+          "end": 16.82,
+          "probability": 0.988093912601471
+        },
+        {
+          "word": " was",
+          "start": 16.82,
+          "end": 17.08,
+          "probability": 0.9962612986564636
+        },
+        {
+          "word": " a",
+          "start": 17.08,
+          "end": 17.32,
+          "probability": 0.9949185252189636
+        },
+        {
+          "word": " great",
+          "start": 17.32,
+          "end": 17.52,
+          "probability": 0.9985582232475281
+        },
+        {
+          "word": " topic",
+          "start": 17.52,
+          "end": 18.18,
+          "probability": 0.9985540509223938
+        },
+        {
+          "word": " and",
+          "start": 18.18,
+          "end": 18.36,
+          "probability": 0.6489425897598267
+        },
+        {
+          "word": " we",
+          "start": 18.36,
+          "end": 18.56,
+          "probability": 0.9986133575439453
+        },
+        {
+          "word": " had",
+          "start": 18.56,
+          "end": 18.7,
+          "probability": 0.9909687638282776
+        },
+        {
+          "word": " good",
+          "start": 18.7,
+          "end": 19.0,
+          "probability": 0.9941284656524658
+        },
+        {
+          "word": " ideas",
+          "start": 19.0,
+          "end": 19.5,
+          "probability": 0.9956436157226562
+        },
+        {
+          "word": " about",
+          "start": 19.5,
+          "end": 19.96,
+          "probability": 0.9992210865020752
+        },
+        {
+          "word": " it.",
+          "start": 19.96,
+          "end": 20.42,
+          "probability": 0.9989369511604309
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 20.72,
+      "end": 22.44,
+      "text": " What can we look at instead?",
+      "tokens": [
+        51390,
+        708,
+        393,
+        321,
+        574,
+        412,
+        2602,
+        30,
+        51504
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.42032600171638257,
+      "compression_ratio": 1.3496932515337423,
+      "no_speech_prob": 0.056004349142313004,
+      "words": [
+        {
+          "word": " What",
+          "start": 20.72,
+          "end": 21.0,
+          "probability": 0.9975698590278625
+        },
+        {
+          "word": " can",
+          "start": 21.0,
+          "end": 21.22,
+          "probability": 0.9976089000701904
+        },
+        {
+          "word": " we",
+          "start": 21.22,
+          "end": 21.36,
+          "probability": 0.9985710382461548
+        },
+        {
+          "word": " look",
+          "start": 21.36,
+          "end": 21.64,
+          "probability": 0.998939573764801
+        },
+        {
+          "word": " at",
+          "start": 21.64,
+          "end": 21.88,
+          "probability": 0.9956918358802795
+        },
+        {
+          "word": " instead?",
+          "start": 21.88,
+          "end": 22.44,
+          "probability": 0.9845660328865051
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2244,
+      "start": 23.400000000000002,
+      "end": 33.46,
+      "text": " Well, how about the advantages and disadvantages for businesses of letting their employees work from home?",
+      "tokens": [
+        50412,
+        1042,
+        11,
+        577,
+        466,
+        264,
+        14906,
+        293,
+        37431,
+        337,
+        6011,
+        295,
+        8295,
+        641,
+        6619,
+        589,
+        490,
+        1280,
+        30,
+        50922
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2560840542033567,
+      "compression_ratio": 1.4342857142857144,
+      "no_speech_prob": 0.31084808707237244,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 23.400000000000002,
+          "end": 24.22,
+          "probability": 0.5452995300292969
+        },
+        {
+          "word": " how",
+          "start": 25.18,
+          "end": 25.4,
+          "probability": 0.972679853439331
+        },
+        {
+          "word": " about",
+          "start": 25.4,
+          "end": 25.88,
+          "probability": 0.9985747337341309
+        },
+        {
+          "word": " the",
+          "start": 25.88,
+          "end": 26.22,
+          "probability": 0.9874605536460876
+        },
+        {
+          "word": " advantages",
+          "start": 26.22,
+          "end": 26.88,
+          "probability": 0.9901622533798218
+        },
+        {
+          "word": " and",
+          "start": 26.88,
+          "end": 27.46,
+          "probability": 0.9830043315887451
+        },
+        {
+          "word": " disadvantages",
+          "start": 27.46,
+          "end": 28.44,
+          "probability": 0.9897814989089966
+        },
+        {
+          "word": " for",
+          "start": 28.44,
+          "end": 29.06,
+          "probability": 0.9547070264816284
+        },
+        {
+          "word": " businesses",
+          "start": 29.06,
+          "end": 29.78,
+          "probability": 0.982925295829773
+        },
+        {
+          "word": " of",
+          "start": 29.78,
+          "end": 30.68,
+          "probability": 0.9444634318351746
+        },
+        {
+          "word": " letting",
+          "start": 30.68,
+          "end": 30.96,
+          "probability": 0.994306743144989
+        },
+        {
+          "word": " their",
+          "start": 30.96,
+          "end": 31.38,
+          "probability": 0.9947488903999329
+        },
+        {
+          "word": " employees",
+          "start": 31.38,
+          "end": 32.04,
+          "probability": 0.9980935454368591
+        },
+        {
+          "word": " work",
+          "start": 32.04,
+          "end": 32.54,
+          "probability": 0.9895496368408203
+        },
+        {
+          "word": " from",
+          "start": 32.54,
+          "end": 32.82,
+          "probability": 0.9985709190368652
+        },
+        {
+          "word": " home?",
+          "start": 32.82,
+          "end": 33.46,
+          "probability": 0.9989782571792603
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2244,
+      "start": 34.42,
+      "end": 37.88,
+      "text": " Great idea! Have you got any information about it?",
+      "tokens": [
+        50922,
+        3769,
+        1558,
+        0,
+        3560,
+        291,
+        658,
+        604,
+        1589,
+        466,
+        309,
+        30,
+        51142
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2560840542033567,
+      "compression_ratio": 1.4342857142857144,
+      "no_speech_prob": 0.31084808707237244,
+      "words": [
+        {
+          "word": " Great",
+          "start": 34.42,
+          "end": 34.6,
+          "probability": 0.9722062945365906
+        },
+        {
+          "word": " idea!",
+          "start": 34.6,
+          "end": 35.22,
+          "probability": 0.9901955723762512
+        },
+        {
+          "word": " Have",
+          "start": 35.76,
+          "end": 35.92,
+          "probability": 0.9883068203926086
+        },
+        {
+          "word": " you",
+          "start": 35.92,
+          "end": 36.1,
+          "probability": 0.9985378980636597
+        },
+        {
+          "word": " got",
+          "start": 36.1,
+          "end": 36.36,
+          "probability": 0.9972081780433655
+        },
+        {
+          "word": " any",
+          "start": 36.36,
+          "end": 36.68,
+          "probability": 0.9968823194503784
+        },
+        {
+          "word": " information",
+          "start": 36.68,
+          "end": 37.2,
+          "probability": 0.9959253072738647
+        },
+        {
+          "word": " about",
+          "start": 37.2,
+          "end": 37.54,
+          "probability": 0.9964757561683655
+        },
+        {
+          "word": " it?",
+          "start": 37.54,
+          "end": 37.88,
+          "probability": 0.9976325035095215
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2244,
+      "start": 38.58,
+      "end": 42.72,
+      "text": " Yes, I do. The numbers are really interesting.",
+      "tokens": [
+        51142,
+        1079,
+        11,
+        286,
+        360,
+        13,
+        440,
+        3547,
+        366,
+        534,
+        1880,
+        13,
+        51394
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2560840542033567,
+      "compression_ratio": 1.4342857142857144,
+      "no_speech_prob": 0.31084808707237244,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 38.58,
+          "end": 39.04,
+          "probability": 0.9924218058586121
+        },
+        {
+          "word": " I",
+          "start": 39.04,
+          "end": 39.38,
+          "probability": 0.9979793429374695
+        },
+        {
+          "word": " do.",
+          "start": 39.38,
+          "end": 39.7,
+          "probability": 0.9982210993766785
+        },
+        {
+          "word": " The",
+          "start": 40.34,
+          "end": 40.62,
+          "probability": 0.9931325316429138
+        },
+        {
+          "word": " numbers",
+          "start": 40.62,
+          "end": 41.04,
+          "probability": 0.9984297156333923
+        },
+        {
+          "word": " are",
+          "start": 41.04,
+          "end": 41.4,
+          "probability": 0.9991289973258972
+        },
+        {
+          "word": " really",
+          "start": 41.4,
+          "end": 41.96,
+          "probability": 0.997333288192749
+        },
+        {
+          "word": " interesting.",
+          "start": 41.96,
+          "end": 42.72,
+          "probability": 0.9985207915306091
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2244,
+      "start": 43.52,
+      "end": 46.58,
+      "text": " More people are working from home than before.",
+      "tokens": [
+        51394,
+        5048,
+        561,
+        366,
+        1364,
+        490,
+        1280,
+        813,
+        949,
+        13,
+        51590
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2560840542033567,
+      "compression_ratio": 1.4342857142857144,
+      "no_speech_prob": 0.31084808707237244,
+      "words": [
+        {
+          "word": " More",
+          "start": 43.52,
+          "end": 43.86,
+          "probability": 0.9959949254989624
+        },
+        {
+          "word": " people",
+          "start": 43.86,
+          "end": 44.34,
+          "probability": 0.9990897178649902
+        },
+        {
+          "word": " are",
+          "start": 44.34,
+          "end": 44.7,
+          "probability": 0.9984824061393738
+        },
+        {
+          "word": " working",
+          "start": 44.7,
+          "end": 45.0,
+          "probability": 0.9984164237976074
+        },
+        {
+          "word": " from",
+          "start": 45.0,
+          "end": 45.42,
+          "probability": 0.9986183643341064
+        },
+        {
+          "word": " home",
+          "start": 45.42,
+          "end": 45.78,
+          "probability": 0.9992602467536926
+        },
+        {
+          "word": " than",
+          "start": 45.78,
+          "end": 46.0,
+          "probability": 0.9965768456459045
+        },
+        {
+          "word": " before.",
+          "start": 46.0,
+          "end": 46.58,
+          "probability": 0.9985862970352173
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 4658,
+      "start": 47.379999999999995,
+      "end": 55.2,
+      "text": " A recent survey showed that 63% of people work from home at least part of the time.",
+      "tokens": [
+        50404,
+        316,
+        5162,
+        8984,
+        4712,
+        300,
+        25082,
+        4,
+        295,
+        561,
+        589,
+        490,
+        1280,
+        412,
+        1935,
+        644,
+        295,
+        264,
+        565,
+        13,
+        50832
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14721107482910156,
+      "compression_ratio": 1.3962264150943395,
+      "no_speech_prob": 0.10254926234483719,
+      "words": [
+        {
+          "word": " A",
+          "start": 47.18,
+          "end": 47.62,
+          "probability": 0.6276057362556458
+        },
+        {
+          "word": " recent",
+          "start": 47.62,
+          "end": 48.14,
+          "probability": 0.9951954483985901
+        },
+        {
+          "word": " survey",
+          "start": 48.14,
+          "end": 48.8,
+          "probability": 0.9988860487937927
+        },
+        {
+          "word": " showed",
+          "start": 48.8,
+          "end": 49.22,
+          "probability": 0.9826781153678894
+        },
+        {
+          "word": " that",
+          "start": 49.22,
+          "end": 49.62,
+          "probability": 0.9940457344055176
+        },
+        {
+          "word": " 63",
+          "start": 49.62,
+          "end": 50.32,
+          "probability": 0.9495984315872192
+        },
+        {
+          "word": "%",
+          "start": 50.32,
+          "end": 50.98,
+          "probability": 0.7699313163757324
+        },
+        {
+          "word": " of",
+          "start": 50.98,
+          "end": 51.28,
+          "probability": 0.9937185049057007
+        },
+        {
+          "word": " people",
+          "start": 51.28,
+          "end": 51.74,
+          "probability": 0.9956855773925781
+        },
+        {
+          "word": " work",
+          "start": 51.74,
+          "end": 52.1,
+          "probability": 0.9880819320678711
+        },
+        {
+          "word": " from",
+          "start": 52.1,
+          "end": 52.44,
+          "probability": 0.9972817897796631
+        },
+        {
+          "word": " home",
+          "start": 52.44,
+          "end": 52.82,
+          "probability": 0.9982130527496338
+        },
+        {
+          "word": " at",
+          "start": 52.82,
+          "end": 53.36,
+          "probability": 0.9115416407585144
+        },
+        {
+          "word": " least",
+          "start": 53.36,
+          "end": 53.8,
+          "probability": 0.9981864094734192
+        },
+        {
+          "word": " part",
+          "start": 53.8,
+          "end": 54.2,
+          "probability": 0.9930844306945801
+        },
+        {
+          "word": " of",
+          "start": 54.2,
+          "end": 54.38,
+          "probability": 0.9989952445030212
+        },
+        {
+          "word": " the",
+          "start": 54.38,
+          "end": 54.6,
+          "probability": 0.9975233674049377
+        },
+        {
+          "word": " time.",
+          "start": 54.6,
+          "end": 55.2,
+          "probability": 0.9992877840995789
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 4658,
+      "start": 56.4,
+      "end": 63.64,
+      "text": " Working from home increased from 20% in 2020 to 28% in 2023.",
+      "tokens": [
+        50832,
+        18337,
+        490,
+        1280,
+        6505,
+        490,
+        945,
+        4,
+        294,
+        4808,
+        281,
+        7562,
+        4,
+        294,
+        44377,
+        13,
+        51266
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14721107482910156,
+      "compression_ratio": 1.3962264150943395,
+      "no_speech_prob": 0.10254926234483719,
+      "words": [
+        {
+          "word": " Working",
+          "start": 56.4,
+          "end": 56.4,
+          "probability": 0.9716132879257202
+        },
+        {
+          "word": " from",
+          "start": 56.4,
+          "end": 56.78,
+          "probability": 0.9928682446479797
+        },
+        {
+          "word": " home",
+          "start": 56.78,
+          "end": 57.0,
+          "probability": 0.9991249442100525
+        },
+        {
+          "word": " increased",
+          "start": 57.0,
+          "end": 57.6,
+          "probability": 0.9967623949050903
+        },
+        {
+          "word": " from",
+          "start": 57.6,
+          "end": 58.08,
+          "probability": 0.9962664246559143
+        },
+        {
+          "word": " 20",
+          "start": 58.08,
+          "end": 58.5,
+          "probability": 0.9778590798377991
+        },
+        {
+          "word": "%",
+          "start": 58.5,
+          "end": 59.18,
+          "probability": 0.9697494506835938
+        },
+        {
+          "word": " in",
+          "start": 59.18,
+          "end": 59.44,
+          "probability": 0.997776210308075
+        },
+        {
+          "word": " 2020",
+          "start": 59.44,
+          "end": 60.24,
+          "probability": 0.9974373579025269
+        },
+        {
+          "word": " to",
+          "start": 60.24,
+          "end": 61.06,
+          "probability": 0.9214107394218445
+        },
+        {
+          "word": " 28",
+          "start": 61.06,
+          "end": 61.74,
+          "probability": 0.9981426000595093
+        },
+        {
+          "word": "%",
+          "start": 61.74,
+          "end": 62.3,
+          "probability": 0.9961498975753784
+        },
+        {
+          "word": " in",
+          "start": 62.3,
+          "end": 62.74,
+          "probability": 0.9990217685699463
+        },
+        {
+          "word": " 2023.",
+          "start": 62.74,
+          "end": 63.64,
+          "probability": 0.9986703395843506
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 4658,
+      "start": 64.66,
+      "end": 71.84,
+      "text": " And the technology industry had the most employees working from home – 67%.",
+      "tokens": [
+        51266,
+        400,
+        264,
+        2899,
+        3518,
+        632,
+        264,
+        881,
+        6619,
+        1364,
+        490,
+        1280,
+        1662,
+        23879,
+        6856,
+        51636
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14721107482910156,
+      "compression_ratio": 1.3962264150943395,
+      "no_speech_prob": 0.10254926234483719,
+      "words": [
+        {
+          "word": " And",
+          "start": 64.66,
+          "end": 64.98,
+          "probability": 0.9856719970703125
+        },
+        {
+          "word": " the",
+          "start": 64.98,
+          "end": 65.3,
+          "probability": 0.9867609739303589
+        },
+        {
+          "word": " technology",
+          "start": 65.3,
+          "end": 65.88,
+          "probability": 0.993857204914093
+        },
+        {
+          "word": " industry",
+          "start": 65.88,
+          "end": 66.42,
+          "probability": 0.9992986917495728
+        },
+        {
+          "word": " had",
+          "start": 66.42,
+          "end": 66.7,
+          "probability": 0.9967688322067261
+        },
+        {
+          "word": " the",
+          "start": 66.7,
+          "end": 67.0,
+          "probability": 0.9981691837310791
+        },
+        {
+          "word": " most",
+          "start": 67.0,
+          "end": 67.36,
+          "probability": 0.9992619156837463
+        },
+        {
+          "word": " employees",
+          "start": 67.36,
+          "end": 67.98,
+          "probability": 0.9994090795516968
+        },
+        {
+          "word": " working",
+          "start": 67.98,
+          "end": 68.38,
+          "probability": 0.9984461665153503
+        },
+        {
+          "word": " from",
+          "start": 68.38,
+          "end": 68.72,
+          "probability": 0.9993044137954712
+        },
+        {
+          "word": " home",
+          "start": 68.72,
+          "end": 69.1,
+          "probability": 0.9995419979095459
+        },
+        {
+          "word": " –",
+          "start": 69.1,
+          "end": 69.52,
+          "probability": 0.042012181133031845
+        },
+        {
+          "word": " 67%.",
+          "start": 69.52,
+          "end": 71.84,
+          "probability": 0.8991912305355072
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 7184,
+      "start": 71.84,
+      "end": 78.06,
+      "text": " All this can help businesses save up to 40% on office space costs.",
+      "tokens": [
+        50364,
+        1057,
+        341,
+        393,
+        854,
+        6011,
+        3155,
+        493,
+        281,
+        3356,
+        4,
+        322,
+        3398,
+        1901,
+        5497,
+        13,
+        50720
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1635596813299717,
+      "compression_ratio": 1.4597156398104265,
+      "no_speech_prob": 0.004977203905582428,
+      "words": [
+        {
+          "word": " All",
+          "start": 71.84,
+          "end": 72.4,
+          "probability": 0.763321578502655
+        },
+        {
+          "word": " this",
+          "start": 72.4,
+          "end": 72.78,
+          "probability": 0.9782654047012329
+        },
+        {
+          "word": " can",
+          "start": 72.78,
+          "end": 73.06,
+          "probability": 0.9930933713912964
+        },
+        {
+          "word": " help",
+          "start": 73.06,
+          "end": 73.36,
+          "probability": 0.9988462924957275
+        },
+        {
+          "word": " businesses",
+          "start": 73.36,
+          "end": 74.04,
+          "probability": 0.986728847026825
+        },
+        {
+          "word": " save",
+          "start": 74.04,
+          "end": 74.42,
+          "probability": 0.994252622127533
+        },
+        {
+          "word": " up",
+          "start": 74.42,
+          "end": 74.66,
+          "probability": 0.9977479577064514
+        },
+        {
+          "word": " to",
+          "start": 74.66,
+          "end": 74.92,
+          "probability": 0.9933037161827087
+        },
+        {
+          "word": " 40",
+          "start": 74.92,
+          "end": 75.36,
+          "probability": 0.9030738472938538
+        },
+        {
+          "word": "%",
+          "start": 75.36,
+          "end": 76.1,
+          "probability": 0.8246095776557922
+        },
+        {
+          "word": " on",
+          "start": 76.1,
+          "end": 76.52,
+          "probability": 0.9940707087516785
+        },
+        {
+          "word": " office",
+          "start": 76.52,
+          "end": 77.0,
+          "probability": 0.9800728559494019
+        },
+        {
+          "word": " space",
+          "start": 77.0,
+          "end": 77.36,
+          "probability": 0.986078143119812
+        },
+        {
+          "word": " costs.",
+          "start": 77.36,
+          "end": 78.06,
+          "probability": 0.995578944683075
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 7184,
+      "start": 79.36,
+      "end": 85.36,
+      "text": " Wow! That is amazing! But I don't think I would want to work at home all the time.",
+      "tokens": [
+        50720,
+        3153,
+        0,
+        663,
+        307,
+        2243,
+        0,
+        583,
+        286,
+        500,
+        380,
+        519,
+        286,
+        576,
+        528,
+        281,
+        589,
+        412,
+        1280,
+        439,
+        264,
+        565,
+        13,
+        51050
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1635596813299717,
+      "compression_ratio": 1.4597156398104265,
+      "no_speech_prob": 0.004977203905582428,
+      "words": [
+        {
+          "word": " Wow!",
+          "start": 79.36,
+          "end": 79.76,
+          "probability": 0.8238781094551086
+        },
+        {
+          "word": " That",
+          "start": 80.1,
+          "end": 80.28,
+          "probability": 0.9753313064575195
+        },
+        {
+          "word": " is",
+          "start": 80.28,
+          "end": 80.58,
+          "probability": 0.9630224108695984
+        },
+        {
+          "word": " amazing!",
+          "start": 80.58,
+          "end": 81.28,
+          "probability": 0.9952012300491333
+        },
+        {
+          "word": " But",
+          "start": 81.92,
+          "end": 82.12,
+          "probability": 0.9808562397956848
+        },
+        {
+          "word": " I",
+          "start": 82.12,
+          "end": 82.18,
+          "probability": 0.9645962119102478
+        },
+        {
+          "word": " don't",
+          "start": 82.18,
+          "end": 82.56,
+          "probability": 0.9958814382553101
+        },
+        {
+          "word": " think",
+          "start": 82.56,
+          "end": 82.84,
+          "probability": 0.9985260367393494
+        },
+        {
+          "word": " I",
+          "start": 82.84,
+          "end": 83.08,
+          "probability": 0.9906490445137024
+        },
+        {
+          "word": " would",
+          "start": 83.08,
+          "end": 83.3,
+          "probability": 0.9749981164932251
+        },
+        {
+          "word": " want",
+          "start": 83.3,
+          "end": 83.52,
+          "probability": 0.9976212382316589
+        },
+        {
+          "word": " to",
+          "start": 83.52,
+          "end": 83.84,
+          "probability": 0.9984397292137146
+        },
+        {
+          "word": " work",
+          "start": 83.84,
+          "end": 84.04,
+          "probability": 0.9960467219352722
+        },
+        {
+          "word": " at",
+          "start": 84.04,
+          "end": 84.3,
+          "probability": 0.9855301380157471
+        },
+        {
+          "word": " home",
+          "start": 84.3,
+          "end": 84.56,
+          "probability": 0.999455988407135
+        },
+        {
+          "word": " all",
+          "start": 84.56,
+          "end": 84.86,
+          "probability": 0.9982008934020996
+        },
+        {
+          "word": " the",
+          "start": 84.86,
+          "end": 85.04,
+          "probability": 0.9975197911262512
+        },
+        {
+          "word": " time.",
+          "start": 85.04,
+          "end": 85.36,
+          "probability": 0.9998288154602051
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 7184,
+      "start": 85.8,
+      "end": 88.1,
+      "text": " I like having people to talk to.",
+      "tokens": [
+        51050,
+        286,
+        411,
+        1419,
+        561,
+        281,
+        751,
+        281,
+        13,
+        51200
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1635596813299717,
+      "compression_ratio": 1.4597156398104265,
+      "no_speech_prob": 0.004977203905582428,
+      "words": [
+        {
+          "word": " I",
+          "start": 85.8,
+          "end": 86.14,
+          "probability": 0.996364176273346
+        },
+        {
+          "word": " like",
+          "start": 86.14,
+          "end": 86.46,
+          "probability": 0.9967838525772095
+        },
+        {
+          "word": " having",
+          "start": 86.46,
+          "end": 86.82,
+          "probability": 0.9981117248535156
+        },
+        {
+          "word": " people",
+          "start": 86.82,
+          "end": 87.18,
+          "probability": 0.9992581009864807
+        },
+        {
+          "word": " to",
+          "start": 87.18,
+          "end": 87.44,
+          "probability": 0.9979537725448608
+        },
+        {
+          "word": " talk",
+          "start": 87.44,
+          "end": 87.72,
+          "probability": 0.9996359348297119
+        },
+        {
+          "word": " to.",
+          "start": 87.72,
+          "end": 88.1,
+          "probability": 0.997171938419342
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 7184,
+      "start": 88.86,
+      "end": 98.26,
+      "text": " But how do companies know that their employees are not taking long breaks and wasting time during the day instead of working?",
+      "tokens": [
+        51200,
+        583,
+        577,
+        360,
+        3431,
+        458,
+        300,
+        641,
+        6619,
+        366,
+        406,
+        1940,
+        938,
+        9857,
+        293,
+        20457,
+        565,
+        1830,
+        264,
+        786,
+        2602,
+        295,
+        1364,
+        30,
+        51726
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1635596813299717,
+      "compression_ratio": 1.4597156398104265,
+      "no_speech_prob": 0.004977203905582428,
+      "words": [
+        {
+          "word": " But",
+          "start": 88.86,
+          "end": 89.14,
+          "probability": 0.9869381189346313
+        },
+        {
+          "word": " how",
+          "start": 89.14,
+          "end": 89.7,
+          "probability": 0.9399490356445312
+        },
+        {
+          "word": " do",
+          "start": 89.7,
+          "end": 89.96,
+          "probability": 0.9978863596916199
+        },
+        {
+          "word": " companies",
+          "start": 89.96,
+          "end": 90.58,
+          "probability": 0.9949800372123718
+        },
+        {
+          "word": " know",
+          "start": 90.58,
+          "end": 91.14,
+          "probability": 0.9989185333251953
+        },
+        {
+          "word": " that",
+          "start": 91.14,
+          "end": 91.46,
+          "probability": 0.9896638989448547
+        },
+        {
+          "word": " their",
+          "start": 91.46,
+          "end": 91.78,
+          "probability": 0.9956470131874084
+        },
+        {
+          "word": " employees",
+          "start": 91.78,
+          "end": 92.5,
+          "probability": 0.998895525932312
+        },
+        {
+          "word": " are",
+          "start": 92.5,
+          "end": 92.88,
+          "probability": 0.987811267375946
+        },
+        {
+          "word": " not",
+          "start": 92.88,
+          "end": 93.16,
+          "probability": 0.9990843534469604
+        },
+        {
+          "word": " taking",
+          "start": 93.16,
+          "end": 93.52,
+          "probability": 0.9983435869216919
+        },
+        {
+          "word": " long",
+          "start": 93.52,
+          "end": 94.08,
+          "probability": 0.998117208480835
+        },
+        {
+          "word": " breaks",
+          "start": 94.08,
+          "end": 94.66,
+          "probability": 0.9970093369483948
+        },
+        {
+          "word": " and",
+          "start": 94.66,
+          "end": 95.02,
+          "probability": 0.9556456804275513
+        },
+        {
+          "word": " wasting",
+          "start": 95.02,
+          "end": 95.48,
+          "probability": 0.9952335953712463
+        },
+        {
+          "word": " time",
+          "start": 95.48,
+          "end": 96.16,
+          "probability": 0.9985072016716003
+        },
+        {
+          "word": " during",
+          "start": 96.16,
+          "end": 96.54,
+          "probability": 0.9985780715942383
+        },
+        {
+          "word": " the",
+          "start": 96.54,
+          "end": 96.8,
+          "probability": 0.9989252686500549
+        },
+        {
+          "word": " day",
+          "start": 96.8,
+          "end": 97.2,
+          "probability": 0.9995844960212708
+        },
+        {
+          "word": " instead",
+          "start": 97.2,
+          "end": 97.68,
+          "probability": 0.9695461392402649
+        },
+        {
+          "word": " of",
+          "start": 97.68,
+          "end": 97.96,
+          "probability": 0.9993879795074463
+        },
+        {
+          "word": " working?",
+          "start": 97.96,
+          "end": 98.26,
+          "probability": 0.9989765882492065
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 9826,
+      "start": 99.05999999999999,
+      "end": 103.86,
+      "text": " Well, they can ask employees to write down the hours they work.",
+      "tokens": [
+        50412,
+        1042,
+        11,
+        436,
+        393,
+        1029,
+        6619,
+        281,
+        2464,
+        760,
+        264,
+        2496,
+        436,
+        589,
+        13,
+        50660
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18726253509521484,
+      "compression_ratio": 1.4921465968586387,
+      "no_speech_prob": 0.009275875054299831,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 99.05999999999999,
+          "end": 99.82,
+          "probability": 0.45042330026626587
+        },
+        {
+          "word": " they",
+          "start": 100.22,
+          "end": 100.4,
+          "probability": 0.9944283962249756
+        },
+        {
+          "word": " can",
+          "start": 100.4,
+          "end": 100.62,
+          "probability": 0.9963693618774414
+        },
+        {
+          "word": " ask",
+          "start": 100.62,
+          "end": 100.88,
+          "probability": 0.9963311553001404
+        },
+        {
+          "word": " employees",
+          "start": 100.88,
+          "end": 101.56,
+          "probability": 0.9953705668449402
+        },
+        {
+          "word": " to",
+          "start": 101.56,
+          "end": 101.94,
+          "probability": 0.9951843619346619
+        },
+        {
+          "word": " write",
+          "start": 101.94,
+          "end": 102.24,
+          "probability": 0.9902405738830566
+        },
+        {
+          "word": " down",
+          "start": 102.24,
+          "end": 102.6,
+          "probability": 0.9971725940704346
+        },
+        {
+          "word": " the",
+          "start": 102.6,
+          "end": 102.94,
+          "probability": 0.9980695843696594
+        },
+        {
+          "word": " hours",
+          "start": 102.94,
+          "end": 103.14,
+          "probability": 0.9989029169082642
+        },
+        {
+          "word": " they",
+          "start": 103.14,
+          "end": 103.52,
+          "probability": 0.994644284248352
+        },
+        {
+          "word": " work.",
+          "start": 103.52,
+          "end": 103.86,
+          "probability": 0.9989463686943054
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 9826,
+      "start": 104.52,
+      "end": 109.6,
+      "text": " Or they can focus on whether the employee is reaching their business goals.",
+      "tokens": [
+        50660,
+        1610,
+        436,
+        393,
+        1879,
+        322,
+        1968,
+        264,
+        10738,
+        307,
+        9906,
+        641,
+        1606,
+        5493,
+        13,
+        50970
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18726253509521484,
+      "compression_ratio": 1.4921465968586387,
+      "no_speech_prob": 0.009275875054299831,
+      "words": [
+        {
+          "word": " Or",
+          "start": 104.52,
+          "end": 104.82,
+          "probability": 0.954438328742981
+        },
+        {
+          "word": " they",
+          "start": 104.82,
+          "end": 105.34,
+          "probability": 0.6498386859893799
+        },
+        {
+          "word": " can",
+          "start": 105.34,
+          "end": 105.6,
+          "probability": 0.9981505274772644
+        },
+        {
+          "word": " focus",
+          "start": 105.6,
+          "end": 106.0,
+          "probability": 0.9987069368362427
+        },
+        {
+          "word": " on",
+          "start": 106.0,
+          "end": 106.32,
+          "probability": 0.9990202188491821
+        },
+        {
+          "word": " whether",
+          "start": 106.32,
+          "end": 106.64,
+          "probability": 0.9970648884773254
+        },
+        {
+          "word": " the",
+          "start": 106.64,
+          "end": 107.06,
+          "probability": 0.9963107705116272
+        },
+        {
+          "word": " employee",
+          "start": 107.06,
+          "end": 107.54,
+          "probability": 0.9978001713752747
+        },
+        {
+          "word": " is",
+          "start": 107.54,
+          "end": 107.94,
+          "probability": 0.9978665709495544
+        },
+        {
+          "word": " reaching",
+          "start": 107.94,
+          "end": 108.26,
+          "probability": 0.9983311295509338
+        },
+        {
+          "word": " their",
+          "start": 108.26,
+          "end": 108.62,
+          "probability": 0.9984530210494995
+        },
+        {
+          "word": " business",
+          "start": 108.62,
+          "end": 109.04,
+          "probability": 0.9960867166519165
+        },
+        {
+          "word": " goals.",
+          "start": 109.04,
+          "end": 109.6,
+          "probability": 0.9981354475021362
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 9826,
+      "start": 110.68,
+      "end": 120.7,
+      "text": " In another survey, 48.3% of businesses said that they were in favor of home working because it increased productivity.",
+      "tokens": [
+        50970,
+        682,
+        1071,
+        8984,
+        11,
+        11174,
+        13,
+        18,
+        4,
+        295,
+        6011,
+        848,
+        300,
+        436,
+        645,
+        294,
+        2294,
+        295,
+        1280,
+        1364,
+        570,
+        309,
+        6505,
+        15604,
+        13,
+        51524
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18726253509521484,
+      "compression_ratio": 1.4921465968586387,
+      "no_speech_prob": 0.009275875054299831,
+      "words": [
+        {
+          "word": " In",
+          "start": 110.68,
+          "end": 110.8,
+          "probability": 0.9655249118804932
+        },
+        {
+          "word": " another",
+          "start": 110.8,
+          "end": 111.3,
+          "probability": 0.9960224032402039
+        },
+        {
+          "word": " survey,",
+          "start": 111.3,
+          "end": 111.92,
+          "probability": 0.9992625117301941
+        },
+        {
+          "word": " 48",
+          "start": 112.56,
+          "end": 112.86,
+          "probability": 0.9577080607414246
+        },
+        {
+          "word": ".3",
+          "start": 112.86,
+          "end": 113.94,
+          "probability": 0.9968314170837402
+        },
+        {
+          "word": "%",
+          "start": 113.94,
+          "end": 114.24,
+          "probability": 0.8415319919586182
+        },
+        {
+          "word": " of",
+          "start": 114.24,
+          "end": 114.46,
+          "probability": 0.9923850297927856
+        },
+        {
+          "word": " businesses",
+          "start": 114.46,
+          "end": 115.12,
+          "probability": 0.9877269864082336
+        },
+        {
+          "word": " said",
+          "start": 115.12,
+          "end": 115.7,
+          "probability": 0.9900738000869751
+        },
+        {
+          "word": " that",
+          "start": 115.7,
+          "end": 115.96,
+          "probability": 0.9702898859977722
+        },
+        {
+          "word": " they",
+          "start": 115.96,
+          "end": 116.22,
+          "probability": 0.9981056451797485
+        },
+        {
+          "word": " were",
+          "start": 116.22,
+          "end": 116.52,
+          "probability": 0.9971092343330383
+        },
+        {
+          "word": " in",
+          "start": 116.52,
+          "end": 116.8,
+          "probability": 0.9972991347312927
+        },
+        {
+          "word": " favor",
+          "start": 116.8,
+          "end": 117.12,
+          "probability": 0.973737359046936
+        },
+        {
+          "word": " of",
+          "start": 117.12,
+          "end": 117.5,
+          "probability": 0.9991469383239746
+        },
+        {
+          "word": " home",
+          "start": 117.5,
+          "end": 117.8,
+          "probability": 0.6897797584533691
+        },
+        {
+          "word": " working",
+          "start": 117.8,
+          "end": 118.24,
+          "probability": 0.7052303552627563
+        },
+        {
+          "word": " because",
+          "start": 118.24,
+          "end": 118.96,
+          "probability": 0.8914629817008972
+        },
+        {
+          "word": " it",
+          "start": 118.96,
+          "end": 119.26,
+          "probability": 0.9949374198913574
+        },
+        {
+          "word": " increased",
+          "start": 119.26,
+          "end": 119.76,
+          "probability": 0.9902149438858032
+        },
+        {
+          "word": " productivity.",
+          "start": 119.76,
+          "end": 120.7,
+          "probability": 0.9981299042701721
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 9826,
+      "start": 121.72,
+      "end": 124.34,
+      "text": " Really? That surprises me.",
+      "tokens": [
+        51524,
+        4083,
+        30,
+        663,
+        22655,
+        385,
+        13,
+        51698
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18726253509521484,
+      "compression_ratio": 1.4921465968586387,
+      "no_speech_prob": 0.009275875054299831,
+      "words": [
+        {
+          "word": " Really?",
+          "start": 121.72,
+          "end": 122.28,
+          "probability": 0.8364849090576172
+        },
+        {
+          "word": " That",
+          "start": 122.8,
+          "end": 123.1,
+          "probability": 0.9935837388038635
+        },
+        {
+          "word": " surprises",
+          "start": 123.1,
+          "end": 123.74,
+          "probability": 0.9785343408584595
+        },
+        {
+          "word": " me.",
+          "start": 123.74,
+          "end": 124.34,
+          "probability": 0.999603807926178
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 12434,
+      "start": 125.02000000000001,
+      "end": 127.16,
+      "text": " Well, think about it.",
+      "tokens": [
+        50398,
+        1042,
+        11,
+        519,
+        466,
+        309,
+        13,
+        50516
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1348764465515872,
+      "compression_ratio": 1.5931372549019607,
+      "no_speech_prob": 0.005156984087079763,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 125.02000000000001,
+          "end": 125.56,
+          "probability": 0.7141873836517334
+        },
+        {
+          "word": " think",
+          "start": 125.98,
+          "end": 126.28,
+          "probability": 0.9931373596191406
+        },
+        {
+          "word": " about",
+          "start": 126.28,
+          "end": 126.62,
+          "probability": 0.9992764592170715
+        },
+        {
+          "word": " it.",
+          "start": 126.62,
+          "end": 127.16,
+          "probability": 0.9982481002807617
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 12434,
+      "start": 127.5,
+      "end": 132.22,
+      "text": " The employer sets the goals for what they want the employees to achieve.",
+      "tokens": [
+        50516,
+        440,
+        16205,
+        6352,
+        264,
+        5493,
+        337,
+        437,
+        436,
+        528,
+        264,
+        6619,
+        281,
+        4584,
+        13,
+        50786
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1348764465515872,
+      "compression_ratio": 1.5931372549019607,
+      "no_speech_prob": 0.005156984087079763,
+      "words": [
+        {
+          "word": " The",
+          "start": 127.5,
+          "end": 127.78,
+          "probability": 0.990035355091095
+        },
+        {
+          "word": " employer",
+          "start": 127.78,
+          "end": 128.26,
+          "probability": 0.9974570870399475
+        },
+        {
+          "word": " sets",
+          "start": 128.26,
+          "end": 128.68,
+          "probability": 0.9944856762886047
+        },
+        {
+          "word": " the",
+          "start": 128.68,
+          "end": 129.02,
+          "probability": 0.9981991648674011
+        },
+        {
+          "word": " goals",
+          "start": 129.02,
+          "end": 129.44,
+          "probability": 0.9910468459129333
+        },
+        {
+          "word": " for",
+          "start": 129.44,
+          "end": 129.86,
+          "probability": 0.9914119243621826
+        },
+        {
+          "word": " what",
+          "start": 129.86,
+          "end": 130.1,
+          "probability": 0.9991661310195923
+        },
+        {
+          "word": " they",
+          "start": 130.1,
+          "end": 130.36,
+          "probability": 0.9958822727203369
+        },
+        {
+          "word": " want",
+          "start": 130.36,
+          "end": 130.6,
+          "probability": 0.9990383386611938
+        },
+        {
+          "word": " the",
+          "start": 130.6,
+          "end": 131.02,
+          "probability": 0.9917850494384766
+        },
+        {
+          "word": " employees",
+          "start": 131.02,
+          "end": 131.38,
+          "probability": 0.998591959476471
+        },
+        {
+          "word": " to",
+          "start": 131.38,
+          "end": 131.78,
+          "probability": 0.9989928603172302
+        },
+        {
+          "word": " achieve.",
+          "start": 131.78,
+          "end": 132.22,
+          "probability": 0.9989456534385681
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 12434,
+      "start": 133.04,
+      "end": 137.46,
+      "text": " But the employees can choose how they spend their time during the day.",
+      "tokens": [
+        50786,
+        583,
+        264,
+        6619,
+        393,
+        2826,
+        577,
+        436,
+        3496,
+        641,
+        565,
+        1830,
+        264,
+        786,
+        13,
+        51052
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1348764465515872,
+      "compression_ratio": 1.5931372549019607,
+      "no_speech_prob": 0.005156984087079763,
+      "words": [
+        {
+          "word": " But",
+          "start": 133.04,
+          "end": 133.12,
+          "probability": 0.9748075604438782
+        },
+        {
+          "word": " the",
+          "start": 133.12,
+          "end": 133.52,
+          "probability": 0.9705668091773987
+        },
+        {
+          "word": " employees",
+          "start": 133.52,
+          "end": 133.94,
+          "probability": 0.9989193677902222
+        },
+        {
+          "word": " can",
+          "start": 133.94,
+          "end": 134.38,
+          "probability": 0.9981315732002258
+        },
+        {
+          "word": " choose",
+          "start": 134.38,
+          "end": 134.76,
+          "probability": 0.992921769618988
+        },
+        {
+          "word": " how",
+          "start": 134.76,
+          "end": 135.12,
+          "probability": 0.9984558820724487
+        },
+        {
+          "word": " they",
+          "start": 135.12,
+          "end": 135.44,
+          "probability": 0.9976345300674438
+        },
+        {
+          "word": " spend",
+          "start": 135.44,
+          "end": 135.68,
+          "probability": 0.9978145360946655
+        },
+        {
+          "word": " their",
+          "start": 135.68,
+          "end": 136.12,
+          "probability": 0.9986205101013184
+        },
+        {
+          "word": " time",
+          "start": 136.12,
+          "end": 136.46,
+          "probability": 0.9995763897895813
+        },
+        {
+          "word": " during",
+          "start": 136.46,
+          "end": 136.82,
+          "probability": 0.997195839881897
+        },
+        {
+          "word": " the",
+          "start": 136.82,
+          "end": 137.12,
+          "probability": 0.9992788434028625
+        },
+        {
+          "word": " day.",
+          "start": 137.12,
+          "end": 137.46,
+          "probability": 0.9997476935386658
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 12434,
+      "start": 138.38,
+      "end": 140.92,
+      "text": " Homeworkers don't waste time traveling.",
+      "tokens": [
+        51052,
+        8719,
+        37101,
+        500,
+        380,
+        5964,
+        565,
+        9712,
+        13,
+        51234
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1348764465515872,
+      "compression_ratio": 1.5931372549019607,
+      "no_speech_prob": 0.005156984087079763,
+      "words": [
+        {
+          "word": " Homeworkers",
+          "start": 138.38,
+          "end": 139.08,
+          "probability": 0.7509654760360718
+        },
+        {
+          "word": " don't",
+          "start": 139.08,
+          "end": 139.52,
+          "probability": 0.9977740943431854
+        },
+        {
+          "word": " waste",
+          "start": 139.52,
+          "end": 139.92,
+          "probability": 0.9982170462608337
+        },
+        {
+          "word": " time",
+          "start": 139.92,
+          "end": 140.4,
+          "probability": 0.9995566010475159
+        },
+        {
+          "word": " traveling.",
+          "start": 140.4,
+          "end": 140.92,
+          "probability": 0.9081182479858398
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 12434,
+      "start": 141.88,
+      "end": 151.6,
+      "text": " I read that home workers in the U.S. save an average of 55 minutes every day because they don't have to travel to work.",
+      "tokens": [
+        51234,
+        286,
+        1401,
+        300,
+        1280,
+        5600,
+        294,
+        264,
+        624,
+        13,
+        50,
+        13,
+        3155,
+        364,
+        4274,
+        295,
+        12330,
+        2077,
+        633,
+        786,
+        570,
+        436,
+        500,
+        380,
+        362,
+        281,
+        3147,
+        281,
+        589,
+        13,
+        51756
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1348764465515872,
+      "compression_ratio": 1.5931372549019607,
+      "no_speech_prob": 0.005156984087079763,
+      "words": [
+        {
+          "word": " I",
+          "start": 141.88,
+          "end": 142.16,
+          "probability": 0.9974687099456787
+        },
+        {
+          "word": " read",
+          "start": 142.16,
+          "end": 142.46,
+          "probability": 0.9978072047233582
+        },
+        {
+          "word": " that",
+          "start": 142.46,
+          "end": 142.94,
+          "probability": 0.9943154454231262
+        },
+        {
+          "word": " home",
+          "start": 142.94,
+          "end": 143.32,
+          "probability": 0.7330865859985352
+        },
+        {
+          "word": " workers",
+          "start": 143.32,
+          "end": 143.7,
+          "probability": 0.9603584408760071
+        },
+        {
+          "word": " in",
+          "start": 143.7,
+          "end": 143.94,
+          "probability": 0.9974651336669922
+        },
+        {
+          "word": " the",
+          "start": 143.94,
+          "end": 144.32,
+          "probability": 0.998857855796814
+        },
+        {
+          "word": " U",
+          "start": 144.32,
+          "end": 144.48,
+          "probability": 0.46005091071128845
+        },
+        {
+          "word": ".S.",
+          "start": 144.48,
+          "end": 144.9,
+          "probability": 0.9894885420799255
+        },
+        {
+          "word": " save",
+          "start": 145.22,
+          "end": 145.24,
+          "probability": 0.9506984949111938
+        },
+        {
+          "word": " an",
+          "start": 145.24,
+          "end": 145.58,
+          "probability": 0.9929019808769226
+        },
+        {
+          "word": " average",
+          "start": 145.58,
+          "end": 145.96,
+          "probability": 0.9993911981582642
+        },
+        {
+          "word": " of",
+          "start": 145.96,
+          "end": 146.38,
+          "probability": 0.9976365566253662
+        },
+        {
+          "word": " 55",
+          "start": 146.38,
+          "end": 147.0,
+          "probability": 0.9798142313957214
+        },
+        {
+          "word": " minutes",
+          "start": 147.0,
+          "end": 147.74,
+          "probability": 0.9968646168708801
+        },
+        {
+          "word": " every",
+          "start": 147.74,
+          "end": 148.2,
+          "probability": 0.9798881411552429
+        },
+        {
+          "word": " day",
+          "start": 148.2,
+          "end": 148.58,
+          "probability": 0.9996519088745117
+        },
+        {
+          "word": " because",
+          "start": 148.58,
+          "end": 149.24,
+          "probability": 0.8107065558433533
+        },
+        {
+          "word": " they",
+          "start": 149.24,
+          "end": 149.6,
+          "probability": 0.9992350339889526
+        },
+        {
+          "word": " don't",
+          "start": 149.6,
+          "end": 149.9,
+          "probability": 0.9991806149482727
+        },
+        {
+          "word": " have",
+          "start": 149.9,
+          "end": 150.24,
+          "probability": 0.9994730353355408
+        },
+        {
+          "word": " to",
+          "start": 150.24,
+          "end": 150.56,
+          "probability": 0.9992915391921997
+        },
+        {
+          "word": " travel",
+          "start": 150.56,
+          "end": 150.88,
+          "probability": 0.9993636012077332
+        },
+        {
+          "word": " to",
+          "start": 150.88,
+          "end": 151.18,
+          "probability": 0.9991912245750427
+        },
+        {
+          "word": " work.",
+          "start": 151.18,
+          "end": 151.6,
+          "probability": 0.9998338222503662
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 15160,
+      "start": 151.6,
+      "end": 158.38,
+      "text": " So they have more time to exercise more, eat more healthily, and organize their day.",
+      "tokens": [
+        50386,
+        407,
+        436,
+        362,
+        544,
+        565,
+        281,
+        5380,
+        544,
+        11,
+        1862,
+        544,
+        1585,
+        953,
+        11,
+        293,
+        13859,
+        641,
+        786,
+        13,
+        50726
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17612170010078243,
+      "compression_ratio": 1.413953488372093,
+      "no_speech_prob": 0.0009319449891336262,
+      "words": [
+        {
+          "word": " So",
+          "start": 151.6,
+          "end": 152.58,
+          "probability": 0.4646592140197754
+        },
+        {
+          "word": " they",
+          "start": 152.58,
+          "end": 152.82,
+          "probability": 0.8309617042541504
+        },
+        {
+          "word": " have",
+          "start": 152.82,
+          "end": 153.04,
+          "probability": 0.9960158467292786
+        },
+        {
+          "word": " more",
+          "start": 153.04,
+          "end": 153.36,
+          "probability": 0.9909511804580688
+        },
+        {
+          "word": " time",
+          "start": 153.36,
+          "end": 153.66,
+          "probability": 0.9987922310829163
+        },
+        {
+          "word": " to",
+          "start": 153.66,
+          "end": 153.96,
+          "probability": 0.9981854557991028
+        },
+        {
+          "word": " exercise",
+          "start": 153.96,
+          "end": 154.56,
+          "probability": 0.9911680221557617
+        },
+        {
+          "word": " more,",
+          "start": 154.56,
+          "end": 155.18,
+          "probability": 0.9897416830062866
+        },
+        {
+          "word": " eat",
+          "start": 155.46,
+          "end": 155.68,
+          "probability": 0.9925923347473145
+        },
+        {
+          "word": " more",
+          "start": 155.68,
+          "end": 156.08,
+          "probability": 0.996049702167511
+        },
+        {
+          "word": " healthily,",
+          "start": 156.08,
+          "end": 156.64,
+          "probability": 0.9599401354789734
+        },
+        {
+          "word": " and",
+          "start": 157.0,
+          "end": 157.26,
+          "probability": 0.9965247511863708
+        },
+        {
+          "word": " organize",
+          "start": 157.26,
+          "end": 157.68,
+          "probability": 0.9705914258956909
+        },
+        {
+          "word": " their",
+          "start": 157.68,
+          "end": 157.98,
+          "probability": 0.9989652633666992
+        },
+        {
+          "word": " day.",
+          "start": 157.98,
+          "end": 158.38,
+          "probability": 0.9989985823631287
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 15160,
+      "start": 159.18,
+      "end": 165.48,
+      "text": " One study said that if workers can work from home, they are up to 20% happier.",
+      "tokens": [
+        50726,
+        1485,
+        2979,
+        848,
+        300,
+        498,
+        5600,
+        393,
+        589,
+        490,
+        1280,
+        11,
+        436,
+        366,
+        493,
+        281,
+        945,
+        4,
+        20423,
+        13,
+        51084
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17612170010078243,
+      "compression_ratio": 1.413953488372093,
+      "no_speech_prob": 0.0009319449891336262,
+      "words": [
+        {
+          "word": " One",
+          "start": 159.18,
+          "end": 159.44,
+          "probability": 0.9701756238937378
+        },
+        {
+          "word": " study",
+          "start": 159.44,
+          "end": 159.8,
+          "probability": 0.9992496371269226
+        },
+        {
+          "word": " said",
+          "start": 159.8,
+          "end": 160.22,
+          "probability": 0.9948776960372925
+        },
+        {
+          "word": " that",
+          "start": 160.22,
+          "end": 160.7,
+          "probability": 0.9290848970413208
+        },
+        {
+          "word": " if",
+          "start": 160.7,
+          "end": 160.88,
+          "probability": 0.9480025172233582
+        },
+        {
+          "word": " workers",
+          "start": 160.88,
+          "end": 161.38,
+          "probability": 0.9944332242012024
+        },
+        {
+          "word": " can",
+          "start": 161.38,
+          "end": 161.7,
+          "probability": 0.9968649744987488
+        },
+        {
+          "word": " work",
+          "start": 161.7,
+          "end": 161.98,
+          "probability": 0.9966877102851868
+        },
+        {
+          "word": " from",
+          "start": 161.98,
+          "end": 162.24,
+          "probability": 0.9987720847129822
+        },
+        {
+          "word": " home,",
+          "start": 162.24,
+          "end": 162.68,
+          "probability": 0.9995997548103333
+        },
+        {
+          "word": " they",
+          "start": 163.06,
+          "end": 163.2,
+          "probability": 0.9917826652526855
+        },
+        {
+          "word": " are",
+          "start": 163.2,
+          "end": 163.4,
+          "probability": 0.9918125867843628
+        },
+        {
+          "word": " up",
+          "start": 163.4,
+          "end": 163.58,
+          "probability": 0.99623042345047
+        },
+        {
+          "word": " to",
+          "start": 163.58,
+          "end": 163.98,
+          "probability": 0.9965872764587402
+        },
+        {
+          "word": " 20",
+          "start": 163.98,
+          "end": 164.4,
+          "probability": 0.89342200756073
+        },
+        {
+          "word": "%",
+          "start": 164.4,
+          "end": 165.02,
+          "probability": 0.7350581884384155
+        },
+        {
+          "word": " happier.",
+          "start": 165.02,
+          "end": 165.48,
+          "probability": 0.998847484588623
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 15160,
+      "start": 166.3,
+      "end": 170.18,
+      "text": " Wow! That's a lot! Great research, Suzy!",
+      "tokens": [
+        51084,
+        3153,
+        0,
+        663,
+        311,
+        257,
+        688,
+        0,
+        3769,
+        2132,
+        11,
+        2746,
+        1229,
+        0,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17612170010078243,
+      "compression_ratio": 1.413953488372093,
+      "no_speech_prob": 0.0009319449891336262,
+      "words": [
+        {
+          "word": " Wow!",
+          "start": 166.3,
+          "end": 166.74,
+          "probability": 0.7953452467918396
+        },
+        {
+          "word": " That's",
+          "start": 167.02,
+          "end": 167.42,
+          "probability": 0.9868469536304474
+        },
+        {
+          "word": " a",
+          "start": 167.42,
+          "end": 167.64,
+          "probability": 0.9977647066116333
+        },
+        {
+          "word": " lot!",
+          "start": 167.64,
+          "end": 168.0,
+          "probability": 0.9988701939582825
+        },
+        {
+          "word": " Great",
+          "start": 168.6,
+          "end": 169.0,
+          "probability": 0.9941955208778381
+        },
+        {
+          "word": " research,",
+          "start": 169.0,
+          "end": 169.64,
+          "probability": 0.9964237809181213
+        },
+        {
+          "word": " Suzy!",
+          "start": 169.94,
+          "end": 170.18,
+          "probability": 0.5398685038089752
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 15160,
+      "start": 170.8,
+      "end": 177.72,
+      "text": " But I'd also like to find out how much your personality helps you to be successful at home working.",
+      "tokens": [
+        51314,
+        583,
+        286,
+        1116,
+        611,
+        411,
+        281,
+        915,
+        484,
+        577,
+        709,
+        428,
+        9033,
+        3665,
+        291,
+        281,
+        312,
+        4406,
+        412,
+        1280,
+        1364,
+        13,
+        51688
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17612170010078243,
+      "compression_ratio": 1.413953488372093,
+      "no_speech_prob": 0.0009319449891336262,
+      "words": [
+        {
+          "word": " But",
+          "start": 170.8,
+          "end": 171.02,
+          "probability": 0.9873148202896118
+        },
+        {
+          "word": " I'd",
+          "start": 171.02,
+          "end": 171.28,
+          "probability": 0.972856342792511
+        },
+        {
+          "word": " also",
+          "start": 171.28,
+          "end": 171.68,
+          "probability": 0.9961338043212891
+        },
+        {
+          "word": " like",
+          "start": 171.68,
+          "end": 171.96,
+          "probability": 0.9984177350997925
+        },
+        {
+          "word": " to",
+          "start": 171.96,
+          "end": 172.28,
+          "probability": 0.9985700845718384
+        },
+        {
+          "word": " find",
+          "start": 172.28,
+          "end": 172.58,
+          "probability": 0.9969684481620789
+        },
+        {
+          "word": " out",
+          "start": 172.58,
+          "end": 172.9,
+          "probability": 0.9949610233306885
+        },
+        {
+          "word": " how",
+          "start": 172.9,
+          "end": 173.14,
+          "probability": 0.992404043674469
+        },
+        {
+          "word": " much",
+          "start": 173.14,
+          "end": 173.42,
+          "probability": 0.998536229133606
+        },
+        {
+          "word": " your",
+          "start": 173.42,
+          "end": 173.84,
+          "probability": 0.9954150915145874
+        },
+        {
+          "word": " personality",
+          "start": 173.84,
+          "end": 174.56,
+          "probability": 0.9981979727745056
+        },
+        {
+          "word": " helps",
+          "start": 174.56,
+          "end": 175.02,
+          "probability": 0.9984813332557678
+        },
+        {
+          "word": " you",
+          "start": 175.02,
+          "end": 175.34,
+          "probability": 0.9981380701065063
+        },
+        {
+          "word": " to",
+          "start": 175.34,
+          "end": 175.52,
+          "probability": 0.9424474835395813
+        },
+        {
+          "word": " be",
+          "start": 175.52,
+          "end": 175.72,
+          "probability": 0.9992758631706238
+        },
+        {
+          "word": " successful",
+          "start": 175.72,
+          "end": 176.52,
+          "probability": 0.9966964721679688
+        },
+        {
+          "word": " at",
+          "start": 176.52,
+          "end": 176.78,
+          "probability": 0.9961727261543274
+        },
+        {
+          "word": " home",
+          "start": 176.78,
+          "end": 177.24,
+          "probability": 0.9976160526275635
+        },
+        {
+          "word": " working.",
+          "start": 177.24,
+          "end": 177.72,
+          "probability": 0.3910622298717499
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 17772,
+      "start": 177.72,
+      "end": 183.02,
+      "text": " For example, you need good skills in how to manage your time.",
+      "tokens": [
+        50388,
+        1171,
+        1365,
+        11,
+        291,
+        643,
+        665,
+        3942,
+        294,
+        577,
+        281,
+        3067,
+        428,
+        565,
+        13,
+        50644
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17740823604442454,
+      "compression_ratio": 1.3900709219858156,
+      "no_speech_prob": 0.01933233253657818,
+      "words": [
+        {
+          "word": " For",
+          "start": 177.72,
+          "end": 178.62,
+          "probability": 0.9485121369361877
+        },
+        {
+          "word": " example,",
+          "start": 178.62,
+          "end": 179.2,
+          "probability": 0.9986578226089478
+        },
+        {
+          "word": " you",
+          "start": 179.78,
+          "end": 179.94,
+          "probability": 0.9949581027030945
+        },
+        {
+          "word": " need",
+          "start": 179.94,
+          "end": 180.2,
+          "probability": 0.9958068132400513
+        },
+        {
+          "word": " good",
+          "start": 180.2,
+          "end": 180.58,
+          "probability": 0.9948006868362427
+        },
+        {
+          "word": " skills",
+          "start": 180.58,
+          "end": 181.14,
+          "probability": 0.9974332451820374
+        },
+        {
+          "word": " in",
+          "start": 181.14,
+          "end": 181.54,
+          "probability": 0.6792230606079102
+        },
+        {
+          "word": " how",
+          "start": 181.54,
+          "end": 181.78,
+          "probability": 0.9947163462638855
+        },
+        {
+          "word": " to",
+          "start": 181.78,
+          "end": 182.08,
+          "probability": 0.9977408647537231
+        },
+        {
+          "word": " manage",
+          "start": 182.08,
+          "end": 182.34,
+          "probability": 0.9989684820175171
+        },
+        {
+          "word": " your",
+          "start": 182.34,
+          "end": 182.66,
+          "probability": 0.9969428181648254
+        },
+        {
+          "word": " time.",
+          "start": 182.66,
+          "end": 183.02,
+          "probability": 0.9994903802871704
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 17772,
+      "start": 183.56,
+      "end": 189.5,
+      "text": " If your home is also where you work, your job could take over your whole life.",
+      "tokens": [
+        50644,
+        759,
+        428,
+        1280,
+        307,
+        611,
+        689,
+        291,
+        589,
+        11,
+        428,
+        1691,
+        727,
+        747,
+        670,
+        428,
+        1379,
+        993,
+        13,
+        50974
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17740823604442454,
+      "compression_ratio": 1.3900709219858156,
+      "no_speech_prob": 0.01933233253657818,
+      "words": [
+        {
+          "word": " If",
+          "start": 183.56,
+          "end": 183.8,
+          "probability": 0.9948998093605042
+        },
+        {
+          "word": " your",
+          "start": 183.8,
+          "end": 184.06,
+          "probability": 0.9819390177726746
+        },
+        {
+          "word": " home",
+          "start": 184.06,
+          "end": 184.5,
+          "probability": 0.997611403465271
+        },
+        {
+          "word": " is",
+          "start": 184.5,
+          "end": 184.96,
+          "probability": 0.9949616193771362
+        },
+        {
+          "word": " also",
+          "start": 184.96,
+          "end": 185.4,
+          "probability": 0.9984220266342163
+        },
+        {
+          "word": " where",
+          "start": 185.4,
+          "end": 185.72,
+          "probability": 0.9971153736114502
+        },
+        {
+          "word": " you",
+          "start": 185.72,
+          "end": 186.04,
+          "probability": 0.9983919262886047
+        },
+        {
+          "word": " work,",
+          "start": 186.04,
+          "end": 186.28,
+          "probability": 0.9992934465408325
+        },
+        {
+          "word": " your",
+          "start": 186.84,
+          "end": 187.06,
+          "probability": 0.991097092628479
+        },
+        {
+          "word": " job",
+          "start": 187.06,
+          "end": 187.56,
+          "probability": 0.9991254210472107
+        },
+        {
+          "word": " could",
+          "start": 187.56,
+          "end": 187.9,
+          "probability": 0.9950096607208252
+        },
+        {
+          "word": " take",
+          "start": 187.9,
+          "end": 188.26,
+          "probability": 0.9985225796699524
+        },
+        {
+          "word": " over",
+          "start": 188.26,
+          "end": 188.56,
+          "probability": 0.9981484413146973
+        },
+        {
+          "word": " your",
+          "start": 188.56,
+          "end": 188.82,
+          "probability": 0.9984219074249268
+        },
+        {
+          "word": " whole",
+          "start": 188.82,
+          "end": 189.06,
+          "probability": 0.9970515966415405
+        },
+        {
+          "word": " life.",
+          "start": 189.06,
+          "end": 189.5,
+          "probability": 0.9996441602706909
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 17772,
+      "start": 190.34,
+      "end": 194.1,
+      "text": " Yes, you're right. We need to do some research on that.",
+      "tokens": [
+        50974,
+        1079,
+        11,
+        291,
+        434,
+        558,
+        13,
+        492,
+        643,
+        281,
+        360,
+        512,
+        2132,
+        322,
+        300,
+        13,
+        51206
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17740823604442454,
+      "compression_ratio": 1.3900709219858156,
+      "no_speech_prob": 0.01933233253657818,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 190.34,
+          "end": 190.62,
+          "probability": 0.946649432182312
+        },
+        {
+          "word": " you're",
+          "start": 190.84,
+          "end": 191.06,
+          "probability": 0.9826706051826477
+        },
+        {
+          "word": " right.",
+          "start": 191.06,
+          "end": 191.32,
+          "probability": 0.9994200468063354
+        },
+        {
+          "word": " We",
+          "start": 191.9,
+          "end": 192.14,
+          "probability": 0.9973378777503967
+        },
+        {
+          "word": " need",
+          "start": 192.14,
+          "end": 192.34,
+          "probability": 0.9963409304618835
+        },
+        {
+          "word": " to",
+          "start": 192.34,
+          "end": 192.6,
+          "probability": 0.9981957077980042
+        },
+        {
+          "word": " do",
+          "start": 192.6,
+          "end": 192.72,
+          "probability": 0.9988059997558594
+        },
+        {
+          "word": " some",
+          "start": 192.72,
+          "end": 193.0,
+          "probability": 0.9986239671707153
+        },
+        {
+          "word": " research",
+          "start": 193.0,
+          "end": 193.5,
+          "probability": 0.9965672492980957
+        },
+        {
+          "word": " on",
+          "start": 193.5,
+          "end": 193.84,
+          "probability": 0.998746395111084
+        },
+        {
+          "word": " that.",
+          "start": 193.84,
+          "end": 194.1,
+          "probability": 0.9989194869995117
+        }
+      ]
+    }
+  ]
+}

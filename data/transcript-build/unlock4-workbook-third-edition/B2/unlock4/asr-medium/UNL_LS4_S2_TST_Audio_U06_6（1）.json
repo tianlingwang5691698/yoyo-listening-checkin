@@ -1,0 +1,4767 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 6.1 Well, we all know non-renewable energy sources are declining, and most of us have heard about solar, wind and hydro energy. But what about the power of algae? I'm joined today by Dr. Tandy Millen, researcher at Readman University. Dr. Tandy, what is algae and how do we get energy from it? Hello, Kyle. Algae are a group of very small plants found in water. These simple plants use a process called photosynthesis. Basically, photosynthesis is how plants generate energy from sunlight. This process allows algae to make carbohydrates, proteins and oils, which in turn can be changed to plant-based fuel, biofuel. By the way, this is almost the same process that humans and animals get energy from the sun, too. That's very interesting. Algae are marine plants that are a food source for fish and other marine animals like whales, I believe. But don't you think it would be easier to leave them as a food source? As you've just said, algae are consumed by marine animals, especially whales in huge quantities. What's more, in 2013, researchers also found algae in the stomachs of sharks. It's often thought that sharks only eat meat, but this data shows that sharks consume algae because of its high mineral content. However, algae have so many other uses beyond being a food source. Let's go back to fuel. You mentioned algae can be turned into plant-based fuel, biofuel. What is that exactly? Well, biofuel is any fuel that comes from a plant or algae material or from animal waste, which can be a very efficient energy source. I would imagine you'd need a lot of algae to, say, power a city. For this reason, I think that an energy project like this would be too ambitious. Well, I agree it might not be straightforward. However, converting algae into energy through biofuel is an increasingly popular form of renewable energy. Some argue that it is one of the best solutions for the decline of our natural resources. This is due to the speed at which algae grow. They are one of the fastest growing plants on the planet. That sounds great. You also need to consider where and how algae could be grown. I expect farmed algae would need a lot of maintenance. Yes, that's right. There are a number of elements to consider. For example, there are massive costs involved in farming, harvesting and converting the algae into fuel. So although algae are fast growing and large volumes can be farmed at once, there are cost drawbacks. Another interesting point is that algae can help to clean water by absorbing and removing poisonous substances that are harmful for humans to consume. I never knew that. By and large, I see what you're saying, but other sources of energy, like solar panels, just seem more efficient. I'm not sure algae as an energy source are a viable option for future generations. Well, it's going to be a challenge, I won't deny it. We need to overcome the drawbacks around expense for one thing. But trust me when I say, even with limitations, it has huge potential. Thank you, Dr. Tandy. I'm afraid that's all we have time for. Join me next week for a discussion on a further interesting sort.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.84,
+      "text": " Track 6.1",
+      "tokens": [
+        50364,
+        31903,
+        1386,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23039266337519107,
+      "compression_ratio": 1.3259668508287292,
+      "no_speech_prob": 0.08052555471658707,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.4,
+          "probability": 0.4237630367279053
+        },
+        {
+          "word": " 6",
+          "start": 0.4,
+          "end": 0.96,
+          "probability": 0.9589877128601074
+        },
+        {
+          "word": ".1",
+          "start": 0.96,
+          "end": 1.84,
+          "probability": 0.9934328496456146
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.0,
+      "end": 13.38,
+      "text": " Well, we all know non-renewable energy sources are declining, and most of us have heard about solar, wind and hydro energy.",
+      "tokens": [
+        50564,
+        1042,
+        11,
+        321,
+        439,
+        458,
+        2107,
+        12,
+        265,
+        7686,
+        712,
+        2281,
+        7139,
+        366,
+        34298,
+        11,
+        293,
+        881,
+        295,
+        505,
+        362,
+        2198,
+        466,
+        7936,
+        11,
+        2468,
+        293,
+        15435,
+        2281,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23039266337519107,
+      "compression_ratio": 1.3259668508287292,
+      "no_speech_prob": 0.08052555471658707,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 3.9000000000000004,
+          "end": 4.32,
+          "probability": 0.7132086753845215
+        },
+        {
+          "word": " we",
+          "start": 4.68,
+          "end": 4.96,
+          "probability": 0.9934805631637573
+        },
+        {
+          "word": " all",
+          "start": 4.96,
+          "end": 5.34,
+          "probability": 0.9968010187149048
+        },
+        {
+          "word": " know",
+          "start": 5.34,
+          "end": 5.6,
+          "probability": 0.9955832362174988
+        },
+        {
+          "word": " non",
+          "start": 5.6,
+          "end": 6.04,
+          "probability": 0.9760790467262268
+        },
+        {
+          "word": "-renewable",
+          "start": 6.04,
+          "end": 6.64,
+          "probability": 0.9204865545034409
+        },
+        {
+          "word": " energy",
+          "start": 6.64,
+          "end": 7.02,
+          "probability": 0.9970184564590454
+        },
+        {
+          "word": " sources",
+          "start": 7.02,
+          "end": 7.44,
+          "probability": 0.9986955523490906
+        },
+        {
+          "word": " are",
+          "start": 7.44,
+          "end": 7.84,
+          "probability": 0.999049961566925
+        },
+        {
+          "word": " declining,",
+          "start": 7.84,
+          "end": 8.34,
+          "probability": 0.9986371397972107
+        },
+        {
+          "word": " and",
+          "start": 8.84,
+          "end": 9.14,
+          "probability": 0.9956594109535217
+        },
+        {
+          "word": " most",
+          "start": 9.14,
+          "end": 9.44,
+          "probability": 0.9968434572219849
+        },
+        {
+          "word": " of",
+          "start": 9.44,
+          "end": 9.64,
+          "probability": 0.9769514203071594
+        },
+        {
+          "word": " us",
+          "start": 9.64,
+          "end": 9.88,
+          "probability": 0.9987420439720154
+        },
+        {
+          "word": " have",
+          "start": 9.88,
+          "end": 10.04,
+          "probability": 0.9971515536308289
+        },
+        {
+          "word": " heard",
+          "start": 10.04,
+          "end": 10.32,
+          "probability": 0.9951777458190918
+        },
+        {
+          "word": " about",
+          "start": 10.32,
+          "end": 10.56,
+          "probability": 0.997921884059906
+        },
+        {
+          "word": " solar,",
+          "start": 10.56,
+          "end": 11.04,
+          "probability": 0.9747782349586487
+        },
+        {
+          "word": " wind",
+          "start": 11.58,
+          "end": 11.76,
+          "probability": 0.9987187385559082
+        },
+        {
+          "word": " and",
+          "start": 11.76,
+          "end": 12.42,
+          "probability": 0.6643807291984558
+        },
+        {
+          "word": " hydro",
+          "start": 12.42,
+          "end": 12.96,
+          "probability": 0.9562864899635315
+        },
+        {
+          "word": " energy.",
+          "start": 12.96,
+          "end": 13.38,
+          "probability": 0.5396777987480164
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.04,
+      "end": 16.8,
+      "text": " But what about the power of algae?",
+      "tokens": [
+        51064,
+        583,
+        437,
+        466,
+        264,
+        1347,
+        295,
+        32658,
+        30,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23039266337519107,
+      "compression_ratio": 1.3259668508287292,
+      "no_speech_prob": 0.08052555471658707,
+      "words": [
+        {
+          "word": " But",
+          "start": 14.04,
+          "end": 14.32,
+          "probability": 0.988155722618103
+        },
+        {
+          "word": " what",
+          "start": 14.32,
+          "end": 14.88,
+          "probability": 0.8839632868766785
+        },
+        {
+          "word": " about",
+          "start": 14.88,
+          "end": 15.22,
+          "probability": 0.9995850920677185
+        },
+        {
+          "word": " the",
+          "start": 15.22,
+          "end": 15.46,
+          "probability": 0.9931604862213135
+        },
+        {
+          "word": " power",
+          "start": 15.46,
+          "end": 15.94,
+          "probability": 0.9728997349739075
+        },
+        {
+          "word": " of",
+          "start": 15.94,
+          "end": 16.4,
+          "probability": 0.9990587830543518
+        },
+        {
+          "word": " algae?",
+          "start": 16.4,
+          "end": 16.8,
+          "probability": 0.9278849363327026
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 17.9,
+      "end": 23.38,
+      "text": " I'm joined today by Dr. Tandy Millen, researcher at Readman University.",
+      "tokens": [
+        51264,
+        286,
+        478,
+        6869,
+        965,
+        538,
+        2491,
+        13,
+        314,
+        11425,
+        7190,
+        268,
+        11,
+        21751,
+        412,
+        17604,
+        1601,
+        3535,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23039266337519107,
+      "compression_ratio": 1.3259668508287292,
+      "no_speech_prob": 0.08052555471658707,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 17.9,
+          "end": 18.3,
+          "probability": 0.9076877236366272
+        },
+        {
+          "word": " joined",
+          "start": 18.3,
+          "end": 18.5,
+          "probability": 0.9973902106285095
+        },
+        {
+          "word": " today",
+          "start": 18.5,
+          "end": 18.98,
+          "probability": 0.9975938200950623
+        },
+        {
+          "word": " by",
+          "start": 18.98,
+          "end": 19.32,
+          "probability": 0.9936627149581909
+        },
+        {
+          "word": " Dr.",
+          "start": 19.32,
+          "end": 19.84,
+          "probability": 0.8712244629859924
+        },
+        {
+          "word": " Tandy",
+          "start": 19.86,
+          "end": 20.44,
+          "probability": 0.738575667142868
+        },
+        {
+          "word": " Millen,",
+          "start": 20.44,
+          "end": 20.84,
+          "probability": 0.6958192884922028
+        },
+        {
+          "word": " researcher",
+          "start": 21.16,
+          "end": 21.66,
+          "probability": 0.9285009503364563
+        },
+        {
+          "word": " at",
+          "start": 21.66,
+          "end": 22.16,
+          "probability": 0.9964306950569153
+        },
+        {
+          "word": " Readman",
+          "start": 22.16,
+          "end": 22.68,
+          "probability": 0.6316050142049789
+        },
+        {
+          "word": " University.",
+          "start": 22.68,
+          "end": 23.38,
+          "probability": 0.9851855635643005
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 2338,
+      "start": 23.38,
+      "end": 29.42,
+      "text": " Dr. Tandy, what is algae and how do we get energy from it?",
+      "tokens": [
+        50364,
+        2491,
+        13,
+        314,
+        11425,
+        11,
+        437,
+        307,
+        32658,
+        293,
+        577,
+        360,
+        321,
+        483,
+        2281,
+        490,
+        309,
+        30,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044718293582692,
+      "compression_ratio": 1.5119047619047619,
+      "no_speech_prob": 0.10284839570522308,
+      "words": [
+        {
+          "word": " Dr.",
+          "start": 23.38,
+          "end": 24.56,
+          "probability": 0.010302976705133915
+        },
+        {
+          "word": " Tandy,",
+          "start": 24.84,
+          "end": 25.12,
+          "probability": 0.8188848793506622
+        },
+        {
+          "word": " what",
+          "start": 25.86,
+          "end": 26.02,
+          "probability": 0.9463357925415039
+        },
+        {
+          "word": " is",
+          "start": 26.02,
+          "end": 26.52,
+          "probability": 0.9888033270835876
+        },
+        {
+          "word": " algae",
+          "start": 26.52,
+          "end": 26.86,
+          "probability": 0.818984866142273
+        },
+        {
+          "word": " and",
+          "start": 26.86,
+          "end": 27.48,
+          "probability": 0.7728263735771179
+        },
+        {
+          "word": " how",
+          "start": 27.48,
+          "end": 27.82,
+          "probability": 0.9919663667678833
+        },
+        {
+          "word": " do",
+          "start": 27.82,
+          "end": 28.06,
+          "probability": 0.9974506497383118
+        },
+        {
+          "word": " we",
+          "start": 28.06,
+          "end": 28.2,
+          "probability": 0.9951339364051819
+        },
+        {
+          "word": " get",
+          "start": 28.2,
+          "end": 28.38,
+          "probability": 0.9989757537841797
+        },
+        {
+          "word": " energy",
+          "start": 28.38,
+          "end": 28.8,
+          "probability": 0.9920237064361572
+        },
+        {
+          "word": " from",
+          "start": 28.8,
+          "end": 29.1,
+          "probability": 0.9976014494895935
+        },
+        {
+          "word": " it?",
+          "start": 29.1,
+          "end": 29.42,
+          "probability": 0.9981999397277832
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2338,
+      "start": 30.18,
+      "end": 31.02,
+      "text": " Hello, Kyle.",
+      "tokens": [
+        50664,
+        2425,
+        11,
+        18023,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044718293582692,
+      "compression_ratio": 1.5119047619047619,
+      "no_speech_prob": 0.10284839570522308,
+      "words": [
+        {
+          "word": " Hello,",
+          "start": 30.18,
+          "end": 30.52,
+          "probability": 0.863336980342865
+        },
+        {
+          "word": " Kyle.",
+          "start": 30.8,
+          "end": 31.02,
+          "probability": 0.9187824726104736
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2338,
+      "start": 31.9,
+      "end": 36.42,
+      "text": " Algae are a group of very small plants found in water.",
+      "tokens": [
+        50764,
+        967,
+        45534,
+        366,
+        257,
+        1594,
+        295,
+        588,
+        1359,
+        5972,
+        1352,
+        294,
+        1281,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044718293582692,
+      "compression_ratio": 1.5119047619047619,
+      "no_speech_prob": 0.10284839570522308,
+      "words": [
+        {
+          "word": " Algae",
+          "start": 31.9,
+          "end": 32.34,
+          "probability": 0.7915472984313965
+        },
+        {
+          "word": " are",
+          "start": 32.34,
+          "end": 33.04,
+          "probability": 0.9104544520378113
+        },
+        {
+          "word": " a",
+          "start": 33.04,
+          "end": 33.34,
+          "probability": 0.9932502508163452
+        },
+        {
+          "word": " group",
+          "start": 33.34,
+          "end": 33.6,
+          "probability": 0.997901201248169
+        },
+        {
+          "word": " of",
+          "start": 33.6,
+          "end": 33.8,
+          "probability": 0.9973384737968445
+        },
+        {
+          "word": " very",
+          "start": 33.8,
+          "end": 34.2,
+          "probability": 0.9938726425170898
+        },
+        {
+          "word": " small",
+          "start": 34.2,
+          "end": 34.62,
+          "probability": 0.9975958466529846
+        },
+        {
+          "word": " plants",
+          "start": 34.62,
+          "end": 35.16,
+          "probability": 0.9985833168029785
+        },
+        {
+          "word": " found",
+          "start": 35.16,
+          "end": 35.66,
+          "probability": 0.9962299466133118
+        },
+        {
+          "word": " in",
+          "start": 35.66,
+          "end": 35.98,
+          "probability": 0.9988051652908325
+        },
+        {
+          "word": " water.",
+          "start": 35.98,
+          "end": 36.42,
+          "probability": 0.9974019527435303
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2338,
+      "start": 37.26,
+      "end": 41.08,
+      "text": " These simple plants use a process called photosynthesis.",
+      "tokens": [
+        51014,
+        1981,
+        2199,
+        5972,
+        764,
+        257,
+        1399,
+        1219,
+        5787,
+        45601,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044718293582692,
+      "compression_ratio": 1.5119047619047619,
+      "no_speech_prob": 0.10284839570522308,
+      "words": [
+        {
+          "word": " These",
+          "start": 37.26,
+          "end": 37.54,
+          "probability": 0.9292228817939758
+        },
+        {
+          "word": " simple",
+          "start": 37.54,
+          "end": 38.08,
+          "probability": 0.9967342615127563
+        },
+        {
+          "word": " plants",
+          "start": 38.08,
+          "end": 38.58,
+          "probability": 0.9986782670021057
+        },
+        {
+          "word": " use",
+          "start": 38.58,
+          "end": 39.04,
+          "probability": 0.9873179793357849
+        },
+        {
+          "word": " a",
+          "start": 39.04,
+          "end": 39.28,
+          "probability": 0.9959481358528137
+        },
+        {
+          "word": " process",
+          "start": 39.28,
+          "end": 39.68,
+          "probability": 0.9953468441963196
+        },
+        {
+          "word": " called",
+          "start": 39.68,
+          "end": 40.1,
+          "probability": 0.9920516014099121
+        },
+        {
+          "word": " photosynthesis.",
+          "start": 40.1,
+          "end": 41.08,
+          "probability": 0.7541589438915253
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2338,
+      "start": 41.86,
+      "end": 46.96,
+      "text": " Basically, photosynthesis is how plants generate energy from sunlight.",
+      "tokens": [
+        51264,
+        8537,
+        11,
+        5787,
+        45601,
+        307,
+        577,
+        5972,
+        8460,
+        2281,
+        490,
+        18379,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044718293582692,
+      "compression_ratio": 1.5119047619047619,
+      "no_speech_prob": 0.10284839570522308,
+      "words": [
+        {
+          "word": " Basically,",
+          "start": 41.86,
+          "end": 42.24,
+          "probability": 0.9803404808044434
+        },
+        {
+          "word": " photosynthesis",
+          "start": 42.6,
+          "end": 43.6,
+          "probability": 0.9635371267795563
+        },
+        {
+          "word": " is",
+          "start": 43.6,
+          "end": 44.22,
+          "probability": 0.9888489246368408
+        },
+        {
+          "word": " how",
+          "start": 44.22,
+          "end": 44.44,
+          "probability": 0.9965243935585022
+        },
+        {
+          "word": " plants",
+          "start": 44.44,
+          "end": 45.04,
+          "probability": 0.9914686679840088
+        },
+        {
+          "word": " generate",
+          "start": 45.04,
+          "end": 45.52,
+          "probability": 0.9965057373046875
+        },
+        {
+          "word": " energy",
+          "start": 45.52,
+          "end": 46.06,
+          "probability": 0.9991586208343506
+        },
+        {
+          "word": " from",
+          "start": 46.06,
+          "end": 46.4,
+          "probability": 0.9985117316246033
+        },
+        {
+          "word": " sunlight.",
+          "start": 46.4,
+          "end": 46.96,
+          "probability": 0.990920901298523
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 4696,
+      "start": 47.96,
+      "end": 57.92,
+      "text": " This process allows algae to make carbohydrates, proteins and oils, which in turn can be changed to plant-based fuel, biofuel.",
+      "tokens": [
+        50414,
+        639,
+        1399,
+        4045,
+        32658,
+        281,
+        652,
+        36817,
+        11,
+        15577,
+        293,
+        22177,
+        11,
+        597,
+        294,
+        1261,
+        393,
+        312,
+        3105,
+        281,
+        3709,
+        12,
+        6032,
+        6616,
+        11,
+        12198,
+        69,
+        3483,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10153191430228097,
+      "compression_ratio": 1.456140350877193,
+      "no_speech_prob": 0.019541185349225998,
+      "words": [
+        {
+          "word": " This",
+          "start": 47.74,
+          "end": 48.14,
+          "probability": 0.3567988872528076
+        },
+        {
+          "word": " process",
+          "start": 48.14,
+          "end": 48.72,
+          "probability": 0.9893691539764404
+        },
+        {
+          "word": " allows",
+          "start": 48.72,
+          "end": 49.26,
+          "probability": 0.9886681437492371
+        },
+        {
+          "word": " algae",
+          "start": 49.26,
+          "end": 49.86,
+          "probability": 0.9327515959739685
+        },
+        {
+          "word": " to",
+          "start": 49.86,
+          "end": 50.14,
+          "probability": 0.9977645874023438
+        },
+        {
+          "word": " make",
+          "start": 50.14,
+          "end": 50.38,
+          "probability": 0.991754412651062
+        },
+        {
+          "word": " carbohydrates,",
+          "start": 50.38,
+          "end": 51.14,
+          "probability": 0.9702937602996826
+        },
+        {
+          "word": " proteins",
+          "start": 51.8,
+          "end": 52.1,
+          "probability": 0.9962026476860046
+        },
+        {
+          "word": " and",
+          "start": 52.1,
+          "end": 52.6,
+          "probability": 0.7131571173667908
+        },
+        {
+          "word": " oils,",
+          "start": 52.6,
+          "end": 53.02,
+          "probability": 0.9911003708839417
+        },
+        {
+          "word": " which",
+          "start": 53.52,
+          "end": 53.76,
+          "probability": 0.9961681962013245
+        },
+        {
+          "word": " in",
+          "start": 53.76,
+          "end": 54.04,
+          "probability": 0.8873841166496277
+        },
+        {
+          "word": " turn",
+          "start": 54.04,
+          "end": 54.32,
+          "probability": 0.9979584217071533
+        },
+        {
+          "word": " can",
+          "start": 54.32,
+          "end": 54.86,
+          "probability": 0.8457744717597961
+        },
+        {
+          "word": " be",
+          "start": 54.86,
+          "end": 55.06,
+          "probability": 0.9940821528434753
+        },
+        {
+          "word": " changed",
+          "start": 55.06,
+          "end": 55.5,
+          "probability": 0.9616852402687073
+        },
+        {
+          "word": " to",
+          "start": 55.5,
+          "end": 55.7,
+          "probability": 0.997947633266449
+        },
+        {
+          "word": " plant",
+          "start": 55.7,
+          "end": 55.98,
+          "probability": 0.9980823993682861
+        },
+        {
+          "word": "-based",
+          "start": 55.98,
+          "end": 56.38,
+          "probability": 0.8899304270744324
+        },
+        {
+          "word": " fuel,",
+          "start": 56.38,
+          "end": 56.84,
+          "probability": 0.9971433281898499
+        },
+        {
+          "word": " biofuel.",
+          "start": 57.42,
+          "end": 57.92,
+          "probability": 0.915225605169932
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 4696,
+      "start": 58.86,
+      "end": 65.54,
+      "text": " By the way, this is almost the same process that humans and animals get energy from the sun, too.",
+      "tokens": [
+        50964,
+        3146,
+        264,
+        636,
+        11,
+        341,
+        307,
+        1920,
+        264,
+        912,
+        1399,
+        300,
+        6255,
+        293,
+        4882,
+        483,
+        2281,
+        490,
+        264,
+        3295,
+        11,
+        886,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10153191430228097,
+      "compression_ratio": 1.456140350877193,
+      "no_speech_prob": 0.019541185349225998,
+      "words": [
+        {
+          "word": " By",
+          "start": 58.86,
+          "end": 59.12,
+          "probability": 0.9693619012832642
+        },
+        {
+          "word": " the",
+          "start": 59.12,
+          "end": 59.3,
+          "probability": 0.9986273050308228
+        },
+        {
+          "word": " way,",
+          "start": 59.3,
+          "end": 59.52,
+          "probability": 0.9989998936653137
+        },
+        {
+          "word": " this",
+          "start": 59.96,
+          "end": 60.1,
+          "probability": 0.9959734082221985
+        },
+        {
+          "word": " is",
+          "start": 60.1,
+          "end": 60.3,
+          "probability": 0.9967202544212341
+        },
+        {
+          "word": " almost",
+          "start": 60.3,
+          "end": 60.68,
+          "probability": 0.9926515221595764
+        },
+        {
+          "word": " the",
+          "start": 60.68,
+          "end": 61.02,
+          "probability": 0.9971373081207275
+        },
+        {
+          "word": " same",
+          "start": 61.02,
+          "end": 61.28,
+          "probability": 0.999222993850708
+        },
+        {
+          "word": " process",
+          "start": 61.28,
+          "end": 61.86,
+          "probability": 0.9970322847366333
+        },
+        {
+          "word": " that",
+          "start": 61.86,
+          "end": 62.2,
+          "probability": 0.9691641330718994
+        },
+        {
+          "word": " humans",
+          "start": 62.2,
+          "end": 62.66,
+          "probability": 0.9941999912261963
+        },
+        {
+          "word": " and",
+          "start": 62.66,
+          "end": 63.24,
+          "probability": 0.9910355806350708
+        },
+        {
+          "word": " animals",
+          "start": 63.24,
+          "end": 63.7,
+          "probability": 0.9985226988792419
+        },
+        {
+          "word": " get",
+          "start": 63.7,
+          "end": 64.12,
+          "probability": 0.997295081615448
+        },
+        {
+          "word": " energy",
+          "start": 64.12,
+          "end": 64.48,
+          "probability": 0.9878600239753723
+        },
+        {
+          "word": " from",
+          "start": 64.48,
+          "end": 64.76,
+          "probability": 0.9987030029296875
+        },
+        {
+          "word": " the",
+          "start": 64.76,
+          "end": 64.94,
+          "probability": 0.9892010688781738
+        },
+        {
+          "word": " sun,",
+          "start": 64.94,
+          "end": 65.16,
+          "probability": 0.7467349767684937
+        },
+        {
+          "word": " too.",
+          "start": 65.38,
+          "end": 65.54,
+          "probability": 0.9976492524147034
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 4696,
+      "start": 66.42,
+      "end": 67.8,
+      "text": " That's very interesting.",
+      "tokens": [
+        51314,
+        663,
+        311,
+        588,
+        1880,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10153191430228097,
+      "compression_ratio": 1.456140350877193,
+      "no_speech_prob": 0.019541185349225998,
+      "words": [
+        {
+          "word": " That's",
+          "start": 66.42,
+          "end": 66.82,
+          "probability": 0.7982687652111053
+        },
+        {
+          "word": " very",
+          "start": 66.82,
+          "end": 67.14,
+          "probability": 0.9841305613517761
+        },
+        {
+          "word": " interesting.",
+          "start": 67.14,
+          "end": 67.8,
+          "probability": 0.9982855916023254
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 6780,
+      "start": 67.8,
+      "end": 75.7,
+      "text": " Algae are marine plants that are a food source for fish and other marine animals like whales, I believe.",
+      "tokens": [
+        50364,
+        967,
+        45534,
+        366,
+        20246,
+        5972,
+        300,
+        366,
+        257,
+        1755,
+        4009,
+        337,
+        3506,
+        293,
+        661,
+        20246,
+        4882,
+        411,
+        32403,
+        11,
+        286,
+        1697,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0477390650546912,
+      "compression_ratio": 1.536723163841808,
+      "no_speech_prob": 0.03515670821070671,
+      "words": [
+        {
+          "word": " Algae",
+          "start": 67.8,
+          "end": 69.2,
+          "probability": 0.49007759988307953
+        },
+        {
+          "word": " are",
+          "start": 69.2,
+          "end": 69.58,
+          "probability": 0.9805415868759155
+        },
+        {
+          "word": " marine",
+          "start": 69.58,
+          "end": 69.96,
+          "probability": 0.9945898056030273
+        },
+        {
+          "word": " plants",
+          "start": 69.96,
+          "end": 70.38,
+          "probability": 0.9990178346633911
+        },
+        {
+          "word": " that",
+          "start": 70.38,
+          "end": 70.78,
+          "probability": 0.9901660084724426
+        },
+        {
+          "word": " are",
+          "start": 70.78,
+          "end": 71.06,
+          "probability": 0.9967206120491028
+        },
+        {
+          "word": " a",
+          "start": 71.06,
+          "end": 71.22,
+          "probability": 0.98857182264328
+        },
+        {
+          "word": " food",
+          "start": 71.22,
+          "end": 71.5,
+          "probability": 0.9953745007514954
+        },
+        {
+          "word": " source",
+          "start": 71.5,
+          "end": 71.76,
+          "probability": 0.9922103881835938
+        },
+        {
+          "word": " for",
+          "start": 71.76,
+          "end": 72.16,
+          "probability": 0.9990594983100891
+        },
+        {
+          "word": " fish",
+          "start": 72.16,
+          "end": 72.5,
+          "probability": 0.9977836012840271
+        },
+        {
+          "word": " and",
+          "start": 72.5,
+          "end": 73.06,
+          "probability": 0.964804470539093
+        },
+        {
+          "word": " other",
+          "start": 73.06,
+          "end": 73.38,
+          "probability": 0.9959003329277039
+        },
+        {
+          "word": " marine",
+          "start": 73.38,
+          "end": 73.66,
+          "probability": 0.9983214735984802
+        },
+        {
+          "word": " animals",
+          "start": 73.66,
+          "end": 74.08,
+          "probability": 0.99793541431427
+        },
+        {
+          "word": " like",
+          "start": 74.08,
+          "end": 74.5,
+          "probability": 0.9508941173553467
+        },
+        {
+          "word": " whales,",
+          "start": 74.5,
+          "end": 74.9,
+          "probability": 0.9435742497444153
+        },
+        {
+          "word": " I",
+          "start": 75.32,
+          "end": 75.4,
+          "probability": 0.9685307145118713
+        },
+        {
+          "word": " believe.",
+          "start": 75.4,
+          "end": 75.7,
+          "probability": 0.998171329498291
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 6780,
+      "start": 76.56,
+      "end": 81.24,
+      "text": " But don't you think it would be easier to leave them as a food source?",
+      "tokens": [
+        50764,
+        583,
+        500,
+        380,
+        291,
+        519,
+        309,
+        576,
+        312,
+        3571,
+        281,
+        1856,
+        552,
+        382,
+        257,
+        1755,
+        4009,
+        30,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0477390650546912,
+      "compression_ratio": 1.536723163841808,
+      "no_speech_prob": 0.03515670821070671,
+      "words": [
+        {
+          "word": " But",
+          "start": 76.56,
+          "end": 76.82,
+          "probability": 0.9929338693618774
+        },
+        {
+          "word": " don't",
+          "start": 76.82,
+          "end": 77.3,
+          "probability": 0.9528324604034424
+        },
+        {
+          "word": " you",
+          "start": 77.3,
+          "end": 77.52,
+          "probability": 0.9834677577018738
+        },
+        {
+          "word": " think",
+          "start": 77.52,
+          "end": 77.84,
+          "probability": 0.9976449608802795
+        },
+        {
+          "word": " it",
+          "start": 77.84,
+          "end": 78.06,
+          "probability": 0.9841623306274414
+        },
+        {
+          "word": " would",
+          "start": 78.06,
+          "end": 78.24,
+          "probability": 0.9740731716156006
+        },
+        {
+          "word": " be",
+          "start": 78.24,
+          "end": 78.42,
+          "probability": 0.9980286955833435
+        },
+        {
+          "word": " easier",
+          "start": 78.42,
+          "end": 78.98,
+          "probability": 0.9924334287643433
+        },
+        {
+          "word": " to",
+          "start": 78.98,
+          "end": 79.28,
+          "probability": 0.9982280135154724
+        },
+        {
+          "word": " leave",
+          "start": 79.28,
+          "end": 79.7,
+          "probability": 0.9467072486877441
+        },
+        {
+          "word": " them",
+          "start": 79.7,
+          "end": 79.96,
+          "probability": 0.9926618337631226
+        },
+        {
+          "word": " as",
+          "start": 79.96,
+          "end": 80.28,
+          "probability": 0.9900667667388916
+        },
+        {
+          "word": " a",
+          "start": 80.28,
+          "end": 80.4,
+          "probability": 0.9868118166923523
+        },
+        {
+          "word": " food",
+          "start": 80.4,
+          "end": 80.68,
+          "probability": 0.9933848977088928
+        },
+        {
+          "word": " source?",
+          "start": 80.68,
+          "end": 81.24,
+          "probability": 0.9987152814865112
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 6780,
+      "start": 82.04,
+      "end": 89.46,
+      "text": " As you've just said, algae are consumed by marine animals, especially whales in huge quantities.",
+      "tokens": [
+        51064,
+        1018,
+        291,
+        600,
+        445,
+        848,
+        11,
+        32658,
+        366,
+        21226,
+        538,
+        20246,
+        4882,
+        11,
+        2318,
+        32403,
+        294,
+        2603,
+        22927,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0477390650546912,
+      "compression_ratio": 1.536723163841808,
+      "no_speech_prob": 0.03515670821070671,
+      "words": [
+        {
+          "word": " As",
+          "start": 82.04,
+          "end": 82.3,
+          "probability": 0.8474440574645996
+        },
+        {
+          "word": " you've",
+          "start": 82.3,
+          "end": 82.74,
+          "probability": 0.9631997644901276
+        },
+        {
+          "word": " just",
+          "start": 82.74,
+          "end": 82.94,
+          "probability": 0.9966465830802917
+        },
+        {
+          "word": " said,",
+          "start": 82.94,
+          "end": 83.52,
+          "probability": 0.9975306391716003
+        },
+        {
+          "word": " algae",
+          "start": 84.04,
+          "end": 84.42,
+          "probability": 0.9715364575386047
+        },
+        {
+          "word": " are",
+          "start": 84.42,
+          "end": 84.8,
+          "probability": 0.9977567791938782
+        },
+        {
+          "word": " consumed",
+          "start": 84.8,
+          "end": 85.38,
+          "probability": 0.9976516366004944
+        },
+        {
+          "word": " by",
+          "start": 85.38,
+          "end": 85.7,
+          "probability": 0.9988986253738403
+        },
+        {
+          "word": " marine",
+          "start": 85.7,
+          "end": 86.14,
+          "probability": 0.9986912608146667
+        },
+        {
+          "word": " animals,",
+          "start": 86.14,
+          "end": 86.7,
+          "probability": 0.9971837401390076
+        },
+        {
+          "word": " especially",
+          "start": 86.82,
+          "end": 87.34,
+          "probability": 0.9953691363334656
+        },
+        {
+          "word": " whales",
+          "start": 87.34,
+          "end": 87.82,
+          "probability": 0.9925278425216675
+        },
+        {
+          "word": " in",
+          "start": 87.82,
+          "end": 88.26,
+          "probability": 0.8296017646789551
+        },
+        {
+          "word": " huge",
+          "start": 88.26,
+          "end": 88.88,
+          "probability": 0.9861751794815063
+        },
+        {
+          "word": " quantities.",
+          "start": 88.88,
+          "end": 89.46,
+          "probability": 0.998508632183075
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 8946,
+      "start": 90.46,
+      "end": 96.82,
+      "text": " What's more, in 2013, researchers also found algae in the stomachs of sharks.",
+      "tokens": [
+        50414,
+        708,
+        311,
+        544,
+        11,
+        294,
+        9012,
+        11,
+        10309,
+        611,
+        1352,
+        32658,
+        294,
+        264,
+        9665,
+        82,
+        295,
+        26312,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05321304862563674,
+      "compression_ratio": 1.494949494949495,
+      "no_speech_prob": 0.15085704624652863,
+      "words": [
+        {
+          "word": " What's",
+          "start": 90.44,
+          "end": 90.82,
+          "probability": 0.5767333135008812
+        },
+        {
+          "word": " more,",
+          "start": 90.82,
+          "end": 91.04,
+          "probability": 0.9934787750244141
+        },
+        {
+          "word": " in",
+          "start": 91.5,
+          "end": 91.62,
+          "probability": 0.9873569011688232
+        },
+        {
+          "word": " 2013,",
+          "start": 91.62,
+          "end": 92.5,
+          "probability": 0.9964115023612976
+        },
+        {
+          "word": " researchers",
+          "start": 93.26,
+          "end": 93.82,
+          "probability": 0.9826865196228027
+        },
+        {
+          "word": " also",
+          "start": 93.82,
+          "end": 94.42,
+          "probability": 0.9944332242012024
+        },
+        {
+          "word": " found",
+          "start": 94.42,
+          "end": 95.1,
+          "probability": 0.9979133009910583
+        },
+        {
+          "word": " algae",
+          "start": 95.1,
+          "end": 95.5,
+          "probability": 0.9343667030334473
+        },
+        {
+          "word": " in",
+          "start": 95.5,
+          "end": 95.88,
+          "probability": 0.9986758828163147
+        },
+        {
+          "word": " the",
+          "start": 95.88,
+          "end": 96.02,
+          "probability": 0.9950838685035706
+        },
+        {
+          "word": " stomachs",
+          "start": 96.02,
+          "end": 96.44,
+          "probability": 0.9689840376377106
+        },
+        {
+          "word": " of",
+          "start": 96.44,
+          "end": 96.54,
+          "probability": 0.9965695142745972
+        },
+        {
+          "word": " sharks.",
+          "start": 96.54,
+          "end": 96.82,
+          "probability": 0.988640546798706
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 8946,
+      "start": 97.68,
+      "end": 106.44,
+      "text": " It's often thought that sharks only eat meat, but this data shows that sharks consume algae because of its high mineral content.",
+      "tokens": [
+        50764,
+        467,
+        311,
+        2049,
+        1194,
+        300,
+        26312,
+        787,
+        1862,
+        4615,
+        11,
+        457,
+        341,
+        1412,
+        3110,
+        300,
+        26312,
+        14732,
+        32658,
+        570,
+        295,
+        1080,
+        1090,
+        21630,
+        2701,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05321304862563674,
+      "compression_ratio": 1.494949494949495,
+      "no_speech_prob": 0.15085704624652863,
+      "words": [
+        {
+          "word": " It's",
+          "start": 97.68,
+          "end": 98.18,
+          "probability": 0.9840742647647858
+        },
+        {
+          "word": " often",
+          "start": 98.18,
+          "end": 98.42,
+          "probability": 0.9992121458053589
+        },
+        {
+          "word": " thought",
+          "start": 98.42,
+          "end": 98.78,
+          "probability": 0.9943948984146118
+        },
+        {
+          "word": " that",
+          "start": 98.78,
+          "end": 99.0,
+          "probability": 0.9759441614151001
+        },
+        {
+          "word": " sharks",
+          "start": 99.0,
+          "end": 99.32,
+          "probability": 0.994085431098938
+        },
+        {
+          "word": " only",
+          "start": 99.32,
+          "end": 99.94,
+          "probability": 0.9967784285545349
+        },
+        {
+          "word": " eat",
+          "start": 99.94,
+          "end": 100.32,
+          "probability": 0.9982677698135376
+        },
+        {
+          "word": " meat,",
+          "start": 100.32,
+          "end": 100.68,
+          "probability": 0.9989396929740906
+        },
+        {
+          "word": " but",
+          "start": 101.2,
+          "end": 101.36,
+          "probability": 0.9945825934410095
+        },
+        {
+          "word": " this",
+          "start": 101.36,
+          "end": 101.66,
+          "probability": 0.9969921112060547
+        },
+        {
+          "word": " data",
+          "start": 101.66,
+          "end": 102.06,
+          "probability": 0.9903643727302551
+        },
+        {
+          "word": " shows",
+          "start": 102.06,
+          "end": 102.48,
+          "probability": 0.997149646282196
+        },
+        {
+          "word": " that",
+          "start": 102.48,
+          "end": 102.78,
+          "probability": 0.9946322441101074
+        },
+        {
+          "word": " sharks",
+          "start": 102.78,
+          "end": 103.26,
+          "probability": 0.9988334774971008
+        },
+        {
+          "word": " consume",
+          "start": 103.26,
+          "end": 103.78,
+          "probability": 0.9832260012626648
+        },
+        {
+          "word": " algae",
+          "start": 103.78,
+          "end": 104.42,
+          "probability": 0.9950245022773743
+        },
+        {
+          "word": " because",
+          "start": 104.42,
+          "end": 104.86,
+          "probability": 0.9886371493339539
+        },
+        {
+          "word": " of",
+          "start": 104.86,
+          "end": 105.0,
+          "probability": 0.9988973140716553
+        },
+        {
+          "word": " its",
+          "start": 105.0,
+          "end": 105.18,
+          "probability": 0.9666995406150818
+        },
+        {
+          "word": " high",
+          "start": 105.18,
+          "end": 105.44,
+          "probability": 0.994490385055542
+        },
+        {
+          "word": " mineral",
+          "start": 105.44,
+          "end": 105.82,
+          "probability": 0.9943835735321045
+        },
+        {
+          "word": " content.",
+          "start": 105.82,
+          "end": 106.44,
+          "probability": 0.9985111355781555
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 8946,
+      "start": 107.28,
+      "end": 111.92,
+      "text": " However, algae have so many other uses beyond being a food source.",
+      "tokens": [
+        51214,
+        2908,
+        11,
+        32658,
+        362,
+        370,
+        867,
+        661,
+        4960,
+        4399,
+        885,
+        257,
+        1755,
+        4009,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05321304862563674,
+      "compression_ratio": 1.494949494949495,
+      "no_speech_prob": 0.15085704624652863,
+      "words": [
+        {
+          "word": " However,",
+          "start": 107.28,
+          "end": 107.68,
+          "probability": 0.9979873895645142
+        },
+        {
+          "word": " algae",
+          "start": 108.26,
+          "end": 108.6,
+          "probability": 0.998245120048523
+        },
+        {
+          "word": " have",
+          "start": 108.6,
+          "end": 109.12,
+          "probability": 0.9559454917907715
+        },
+        {
+          "word": " so",
+          "start": 109.12,
+          "end": 109.36,
+          "probability": 0.998141884803772
+        },
+        {
+          "word": " many",
+          "start": 109.36,
+          "end": 109.58,
+          "probability": 0.9955920577049255
+        },
+        {
+          "word": " other",
+          "start": 109.58,
+          "end": 109.94,
+          "probability": 0.995943009853363
+        },
+        {
+          "word": " uses",
+          "start": 109.94,
+          "end": 110.3,
+          "probability": 0.9895716905593872
+        },
+        {
+          "word": " beyond",
+          "start": 110.3,
+          "end": 110.78,
+          "probability": 0.9685819149017334
+        },
+        {
+          "word": " being",
+          "start": 110.78,
+          "end": 111.18,
+          "probability": 0.9949051141738892
+        },
+        {
+          "word": " a",
+          "start": 111.18,
+          "end": 111.34,
+          "probability": 0.9952902793884277
+        },
+        {
+          "word": " food",
+          "start": 111.34,
+          "end": 111.58,
+          "probability": 0.9955980181694031
+        },
+        {
+          "word": " source.",
+          "start": 111.58,
+          "end": 111.92,
+          "probability": 0.9963021278381348
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8946,
+      "start": 112.9,
+      "end": 114.74,
+      "text": " Let's go back to fuel.",
+      "tokens": [
+        51514,
+        961,
+        311,
+        352,
+        646,
+        281,
+        6616,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05321304862563674,
+      "compression_ratio": 1.494949494949495,
+      "no_speech_prob": 0.15085704624652863,
+      "words": [
+        {
+          "word": " Let's",
+          "start": 112.9,
+          "end": 113.66,
+          "probability": 0.9626946747303009
+        },
+        {
+          "word": " go",
+          "start": 113.66,
+          "end": 113.82,
+          "probability": 0.9950487017631531
+        },
+        {
+          "word": " back",
+          "start": 113.82,
+          "end": 114.1,
+          "probability": 0.9983083009719849
+        },
+        {
+          "word": " to",
+          "start": 114.1,
+          "end": 114.4,
+          "probability": 0.9991645812988281
+        },
+        {
+          "word": " fuel.",
+          "start": 114.4,
+          "end": 114.74,
+          "probability": 0.8936942219734192
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 11474,
+      "start": 114.74,
+      "end": 120.58,
+      "text": " You mentioned algae can be turned into plant-based fuel, biofuel.",
+      "tokens": [
+        50414,
+        509,
+        2835,
+        32658,
+        393,
+        312,
+        3574,
+        666,
+        3709,
+        12,
+        6032,
+        6616,
+        11,
+        12198,
+        69,
+        3483,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0605227192745933,
+      "compression_ratio": 1.53475935828877,
+      "no_speech_prob": 0.16642165184020996,
+      "words": [
+        {
+          "word": " You",
+          "start": 114.74,
+          "end": 115.72,
+          "probability": 0.10171224921941757
+        },
+        {
+          "word": " mentioned",
+          "start": 115.72,
+          "end": 116.18,
+          "probability": 0.9059911370277405
+        },
+        {
+          "word": " algae",
+          "start": 116.18,
+          "end": 116.86,
+          "probability": 0.9667860269546509
+        },
+        {
+          "word": " can",
+          "start": 116.86,
+          "end": 117.18,
+          "probability": 0.9960760474205017
+        },
+        {
+          "word": " be",
+          "start": 117.18,
+          "end": 117.36,
+          "probability": 0.9958552718162537
+        },
+        {
+          "word": " turned",
+          "start": 117.36,
+          "end": 117.72,
+          "probability": 0.9945942759513855
+        },
+        {
+          "word": " into",
+          "start": 117.72,
+          "end": 118.08,
+          "probability": 0.9951704144477844
+        },
+        {
+          "word": " plant",
+          "start": 118.08,
+          "end": 118.5,
+          "probability": 0.9957402944564819
+        },
+        {
+          "word": "-based",
+          "start": 118.5,
+          "end": 118.86,
+          "probability": 0.8927911520004272
+        },
+        {
+          "word": " fuel,",
+          "start": 118.86,
+          "end": 119.32,
+          "probability": 0.9976449608802795
+        },
+        {
+          "word": " biofuel.",
+          "start": 119.9,
+          "end": 120.58,
+          "probability": 0.8064867456754049
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 11474,
+      "start": 121.2,
+      "end": 122.94,
+      "text": " What is that exactly?",
+      "tokens": [
+        50664,
+        708,
+        307,
+        300,
+        2293,
+        30,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0605227192745933,
+      "compression_ratio": 1.53475935828877,
+      "no_speech_prob": 0.16642165184020996,
+      "words": [
+        {
+          "word": " What",
+          "start": 121.2,
+          "end": 121.8,
+          "probability": 0.9687041640281677
+        },
+        {
+          "word": " is",
+          "start": 121.8,
+          "end": 122.02,
+          "probability": 0.9932045936584473
+        },
+        {
+          "word": " that",
+          "start": 122.02,
+          "end": 122.22,
+          "probability": 0.996870219707489
+        },
+        {
+          "word": " exactly?",
+          "start": 122.22,
+          "end": 122.94,
+          "probability": 0.9582897424697876
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 11474,
+      "start": 123.88,
+      "end": 134.64,
+      "text": " Well, biofuel is any fuel that comes from a plant or algae material or from animal waste, which can be a very efficient energy source.",
+      "tokens": [
+        50814,
+        1042,
+        11,
+        12198,
+        69,
+        3483,
+        307,
+        604,
+        6616,
+        300,
+        1487,
+        490,
+        257,
+        3709,
+        420,
+        32658,
+        2527,
+        420,
+        490,
+        5496,
+        5964,
+        11,
+        597,
+        393,
+        312,
+        257,
+        588,
+        7148,
+        2281,
+        4009,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0605227192745933,
+      "compression_ratio": 1.53475935828877,
+      "no_speech_prob": 0.16642165184020996,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 123.88,
+          "end": 124.1,
+          "probability": 0.6262516975402832
+        },
+        {
+          "word": " biofuel",
+          "start": 124.56,
+          "end": 125.4,
+          "probability": 0.9797687729199728
+        },
+        {
+          "word": " is",
+          "start": 125.4,
+          "end": 125.8,
+          "probability": 0.9885623455047607
+        },
+        {
+          "word": " any",
+          "start": 125.8,
+          "end": 126.26,
+          "probability": 0.9655501246452332
+        },
+        {
+          "word": " fuel",
+          "start": 126.26,
+          "end": 126.66,
+          "probability": 0.9958078861236572
+        },
+        {
+          "word": " that",
+          "start": 126.66,
+          "end": 126.9,
+          "probability": 0.9935047626495361
+        },
+        {
+          "word": " comes",
+          "start": 126.9,
+          "end": 127.16,
+          "probability": 0.9968861937522888
+        },
+        {
+          "word": " from",
+          "start": 127.16,
+          "end": 127.44,
+          "probability": 0.9983242154121399
+        },
+        {
+          "word": " a",
+          "start": 127.44,
+          "end": 127.6,
+          "probability": 0.9898702502250671
+        },
+        {
+          "word": " plant",
+          "start": 127.6,
+          "end": 128.04,
+          "probability": 0.9979795813560486
+        },
+        {
+          "word": " or",
+          "start": 128.04,
+          "end": 128.36,
+          "probability": 0.7255299091339111
+        },
+        {
+          "word": " algae",
+          "start": 128.36,
+          "end": 128.96,
+          "probability": 0.9659359455108643
+        },
+        {
+          "word": " material",
+          "start": 128.96,
+          "end": 129.7,
+          "probability": 0.9851115345954895
+        },
+        {
+          "word": " or",
+          "start": 129.7,
+          "end": 130.26,
+          "probability": 0.7789192795753479
+        },
+        {
+          "word": " from",
+          "start": 130.26,
+          "end": 130.52,
+          "probability": 0.9328249096870422
+        },
+        {
+          "word": " animal",
+          "start": 130.52,
+          "end": 130.9,
+          "probability": 0.9925442934036255
+        },
+        {
+          "word": " waste,",
+          "start": 130.9,
+          "end": 131.48,
+          "probability": 0.9980069994926453
+        },
+        {
+          "word": " which",
+          "start": 131.8,
+          "end": 132.24,
+          "probability": 0.9972341656684875
+        },
+        {
+          "word": " can",
+          "start": 132.24,
+          "end": 132.52,
+          "probability": 0.9963281750679016
+        },
+        {
+          "word": " be",
+          "start": 132.52,
+          "end": 132.78,
+          "probability": 0.9955002665519714
+        },
+        {
+          "word": " a",
+          "start": 132.78,
+          "end": 132.9,
+          "probability": 0.9958305954933167
+        },
+        {
+          "word": " very",
+          "start": 132.9,
+          "end": 133.22,
+          "probability": 0.9984935522079468
+        },
+        {
+          "word": " efficient",
+          "start": 133.22,
+          "end": 133.72,
+          "probability": 0.9959139227867126
+        },
+        {
+          "word": " energy",
+          "start": 133.72,
+          "end": 134.2,
+          "probability": 0.9972407817840576
+        },
+        {
+          "word": " source.",
+          "start": 134.2,
+          "end": 134.64,
+          "probability": 0.9975267052650452
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 11474,
+      "start": 135.56,
+      "end": 141.06,
+      "text": " I would imagine you'd need a lot of algae to, say, power a city.",
+      "tokens": [
+        51414,
+        286,
+        576,
+        3811,
+        291,
+        1116,
+        643,
+        257,
+        688,
+        295,
+        32658,
+        281,
+        11,
+        584,
+        11,
+        1347,
+        257,
+        2307,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0605227192745933,
+      "compression_ratio": 1.53475935828877,
+      "no_speech_prob": 0.16642165184020996,
+      "words": [
+        {
+          "word": " I",
+          "start": 135.56,
+          "end": 135.9,
+          "probability": 0.9766735434532166
+        },
+        {
+          "word": " would",
+          "start": 135.9,
+          "end": 136.06,
+          "probability": 0.9946192502975464
+        },
+        {
+          "word": " imagine",
+          "start": 136.06,
+          "end": 136.52,
+          "probability": 0.9969593286514282
+        },
+        {
+          "word": " you'd",
+          "start": 136.52,
+          "end": 137.02,
+          "probability": 0.9914428293704987
+        },
+        {
+          "word": " need",
+          "start": 137.02,
+          "end": 137.22,
+          "probability": 0.9976898431777954
+        },
+        {
+          "word": " a",
+          "start": 137.22,
+          "end": 137.44,
+          "probability": 0.9938422441482544
+        },
+        {
+          "word": " lot",
+          "start": 137.44,
+          "end": 137.74,
+          "probability": 0.9963065385818481
+        },
+        {
+          "word": " of",
+          "start": 137.74,
+          "end": 138.06,
+          "probability": 0.9992271661758423
+        },
+        {
+          "word": " algae",
+          "start": 138.06,
+          "end": 138.44,
+          "probability": 0.9981335997581482
+        },
+        {
+          "word": " to,",
+          "start": 138.44,
+          "end": 138.86,
+          "probability": 0.9937191009521484
+        },
+        {
+          "word": " say,",
+          "start": 139.12,
+          "end": 139.56,
+          "probability": 0.9938603639602661
+        },
+        {
+          "word": " power",
+          "start": 139.96,
+          "end": 140.4,
+          "probability": 0.9223400354385376
+        },
+        {
+          "word": " a",
+          "start": 140.4,
+          "end": 140.68,
+          "probability": 0.989730954170227
+        },
+        {
+          "word": " city.",
+          "start": 140.68,
+          "end": 141.06,
+          "probability": 0.9930676221847534
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 14106,
+      "start": 142.06,
+      "end": 147.64,
+      "text": " For this reason, I think that an energy project like this would be too ambitious.",
+      "tokens": [
+        50414,
+        1171,
+        341,
+        1778,
+        11,
+        286,
+        519,
+        300,
+        364,
+        2281,
+        1716,
+        411,
+        341,
+        576,
+        312,
+        886,
+        20239,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03183091653359903,
+      "compression_ratio": 1.555023923444976,
+      "no_speech_prob": 0.05342422053217888,
+      "words": [
+        {
+          "word": " For",
+          "start": 141.98000000000002,
+          "end": 142.36,
+          "probability": 0.18053117394447327
+        },
+        {
+          "word": " this",
+          "start": 142.36,
+          "end": 142.64,
+          "probability": 0.9853364825248718
+        },
+        {
+          "word": " reason,",
+          "start": 142.64,
+          "end": 143.08,
+          "probability": 0.9874082803726196
+        },
+        {
+          "word": " I",
+          "start": 143.52,
+          "end": 143.64,
+          "probability": 0.9936215281486511
+        },
+        {
+          "word": " think",
+          "start": 143.64,
+          "end": 143.96,
+          "probability": 0.9971305727958679
+        },
+        {
+          "word": " that",
+          "start": 143.96,
+          "end": 144.2,
+          "probability": 0.977445662021637
+        },
+        {
+          "word": " an",
+          "start": 144.2,
+          "end": 144.44,
+          "probability": 0.9704930186271667
+        },
+        {
+          "word": " energy",
+          "start": 144.44,
+          "end": 144.78,
+          "probability": 0.9727171063423157
+        },
+        {
+          "word": " project",
+          "start": 144.78,
+          "end": 145.22,
+          "probability": 0.9937703013420105
+        },
+        {
+          "word": " like",
+          "start": 145.22,
+          "end": 145.58,
+          "probability": 0.9907793998718262
+        },
+        {
+          "word": " this",
+          "start": 145.58,
+          "end": 145.96,
+          "probability": 0.9728244543075562
+        },
+        {
+          "word": " would",
+          "start": 145.96,
+          "end": 146.38,
+          "probability": 0.9873821139335632
+        },
+        {
+          "word": " be",
+          "start": 146.38,
+          "end": 146.66,
+          "probability": 0.9959725737571716
+        },
+        {
+          "word": " too",
+          "start": 146.66,
+          "end": 147.06,
+          "probability": 0.9691635966300964
+        },
+        {
+          "word": " ambitious.",
+          "start": 147.06,
+          "end": 147.64,
+          "probability": 0.985194981098175
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 14106,
+      "start": 148.34,
+      "end": 151.5,
+      "text": " Well, I agree it might not be straightforward.",
+      "tokens": [
+        50714,
+        1042,
+        11,
+        286,
+        3986,
+        309,
+        1062,
+        406,
+        312,
+        15325,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03183091653359903,
+      "compression_ratio": 1.555023923444976,
+      "no_speech_prob": 0.05342422053217888,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 148.34,
+          "end": 149.02,
+          "probability": 0.9117293357849121
+        },
+        {
+          "word": " I",
+          "start": 149.24,
+          "end": 149.38,
+          "probability": 0.9942996501922607
+        },
+        {
+          "word": " agree",
+          "start": 149.38,
+          "end": 149.8,
+          "probability": 0.999000608921051
+        },
+        {
+          "word": " it",
+          "start": 149.8,
+          "end": 150.08,
+          "probability": 0.9191383719444275
+        },
+        {
+          "word": " might",
+          "start": 150.08,
+          "end": 150.26,
+          "probability": 0.9850003719329834
+        },
+        {
+          "word": " not",
+          "start": 150.26,
+          "end": 150.56,
+          "probability": 0.9830541014671326
+        },
+        {
+          "word": " be",
+          "start": 150.56,
+          "end": 150.82,
+          "probability": 0.9982788562774658
+        },
+        {
+          "word": " straightforward.",
+          "start": 150.82,
+          "end": 151.5,
+          "probability": 0.6370448470115662
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 14106,
+      "start": 152.3,
+      "end": 160.22,
+      "text": " However, converting algae into energy through biofuel is an increasingly popular form of renewable energy.",
+      "tokens": [
+        50914,
+        2908,
+        11,
+        29942,
+        32658,
+        666,
+        2281,
+        807,
+        12198,
+        69,
+        3483,
+        307,
+        364,
+        12980,
+        3743,
+        1254,
+        295,
+        20938,
+        2281,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03183091653359903,
+      "compression_ratio": 1.555023923444976,
+      "no_speech_prob": 0.05342422053217888,
+      "words": [
+        {
+          "word": " However,",
+          "start": 152.3,
+          "end": 152.74,
+          "probability": 0.9964279532432556
+        },
+        {
+          "word": " converting",
+          "start": 153.38,
+          "end": 153.92,
+          "probability": 0.9604390263557434
+        },
+        {
+          "word": " algae",
+          "start": 153.92,
+          "end": 154.44,
+          "probability": 0.9218353033065796
+        },
+        {
+          "word": " into",
+          "start": 154.44,
+          "end": 155.0,
+          "probability": 0.9977002739906311
+        },
+        {
+          "word": " energy",
+          "start": 155.0,
+          "end": 155.48,
+          "probability": 0.9825682640075684
+        },
+        {
+          "word": " through",
+          "start": 155.48,
+          "end": 155.9,
+          "probability": 0.9872455596923828
+        },
+        {
+          "word": " biofuel",
+          "start": 155.9,
+          "end": 156.72,
+          "probability": 0.929252028465271
+        },
+        {
+          "word": " is",
+          "start": 156.72,
+          "end": 157.04,
+          "probability": 0.9884905815124512
+        },
+        {
+          "word": " an",
+          "start": 157.04,
+          "end": 157.22,
+          "probability": 0.9938021898269653
+        },
+        {
+          "word": " increasingly",
+          "start": 157.22,
+          "end": 157.92,
+          "probability": 0.994670569896698
+        },
+        {
+          "word": " popular",
+          "start": 157.92,
+          "end": 158.4,
+          "probability": 0.9901856184005737
+        },
+        {
+          "word": " form",
+          "start": 158.4,
+          "end": 158.96,
+          "probability": 0.9971306920051575
+        },
+        {
+          "word": " of",
+          "start": 158.96,
+          "end": 159.12,
+          "probability": 0.9986024498939514
+        },
+        {
+          "word": " renewable",
+          "start": 159.12,
+          "end": 159.48,
+          "probability": 0.9938862919807434
+        },
+        {
+          "word": " energy.",
+          "start": 159.48,
+          "end": 160.22,
+          "probability": 0.9994144439697266
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 14106,
+      "start": 160.68,
+      "end": 165.74,
+      "text": " Some argue that it is one of the best solutions for the decline of our natural resources.",
+      "tokens": [
+        51314,
+        2188,
+        9695,
+        300,
+        309,
+        307,
+        472,
+        295,
+        264,
+        1151,
+        6547,
+        337,
+        264,
+        15635,
+        295,
+        527,
+        3303,
+        3593,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03183091653359903,
+      "compression_ratio": 1.555023923444976,
+      "no_speech_prob": 0.05342422053217888,
+      "words": [
+        {
+          "word": " Some",
+          "start": 160.68,
+          "end": 161.06,
+          "probability": 0.9849978089332581
+        },
+        {
+          "word": " argue",
+          "start": 161.06,
+          "end": 161.48,
+          "probability": 0.999406099319458
+        },
+        {
+          "word": " that",
+          "start": 161.48,
+          "end": 161.82,
+          "probability": 0.9893536567687988
+        },
+        {
+          "word": " it",
+          "start": 161.82,
+          "end": 162.0,
+          "probability": 0.9886201620101929
+        },
+        {
+          "word": " is",
+          "start": 162.0,
+          "end": 162.18,
+          "probability": 0.9937408566474915
+        },
+        {
+          "word": " one",
+          "start": 162.18,
+          "end": 162.36,
+          "probability": 0.9967392086982727
+        },
+        {
+          "word": " of",
+          "start": 162.36,
+          "end": 162.48,
+          "probability": 0.9966821074485779
+        },
+        {
+          "word": " the",
+          "start": 162.48,
+          "end": 162.56,
+          "probability": 0.9971976280212402
+        },
+        {
+          "word": " best",
+          "start": 162.56,
+          "end": 162.84,
+          "probability": 0.9974178075790405
+        },
+        {
+          "word": " solutions",
+          "start": 162.84,
+          "end": 163.38,
+          "probability": 0.9891942739486694
+        },
+        {
+          "word": " for",
+          "start": 163.38,
+          "end": 163.72,
+          "probability": 0.9963208436965942
+        },
+        {
+          "word": " the",
+          "start": 163.72,
+          "end": 163.82,
+          "probability": 0.9896156787872314
+        },
+        {
+          "word": " decline",
+          "start": 163.82,
+          "end": 164.16,
+          "probability": 0.9994921684265137
+        },
+        {
+          "word": " of",
+          "start": 164.16,
+          "end": 164.46,
+          "probability": 0.9918034076690674
+        },
+        {
+          "word": " our",
+          "start": 164.46,
+          "end": 164.6,
+          "probability": 0.9837741851806641
+        },
+        {
+          "word": " natural",
+          "start": 164.6,
+          "end": 165.04,
+          "probability": 0.9963636994361877
+        },
+        {
+          "word": " resources.",
+          "start": 165.04,
+          "end": 165.74,
+          "probability": 0.9986384510993958
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 16574,
+      "start": 166.74,
+      "end": 172.62,
+      "text": " This is due to the speed at which algae grow. They are one of the fastest growing plants on the planet.",
+      "tokens": [
+        50414,
+        639,
+        307,
+        3462,
+        281,
+        264,
+        3073,
+        412,
+        597,
+        32658,
+        1852,
+        13,
+        814,
+        366,
+        472,
+        295,
+        264,
+        14573,
+        4194,
+        5972,
+        322,
+        264,
+        5054,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05599512288599839,
+      "compression_ratio": 1.5894736842105264,
+      "no_speech_prob": 0.11961006373167038,
+      "words": [
+        {
+          "word": " This",
+          "start": 166.54000000000002,
+          "end": 166.86,
+          "probability": 0.2107829451560974
+        },
+        {
+          "word": " is",
+          "start": 166.86,
+          "end": 167.1,
+          "probability": 0.9795150756835938
+        },
+        {
+          "word": " due",
+          "start": 167.1,
+          "end": 167.44,
+          "probability": 0.9933422207832336
+        },
+        {
+          "word": " to",
+          "start": 167.44,
+          "end": 167.58,
+          "probability": 0.9984666109085083
+        },
+        {
+          "word": " the",
+          "start": 167.58,
+          "end": 167.7,
+          "probability": 0.9872522354125977
+        },
+        {
+          "word": " speed",
+          "start": 167.7,
+          "end": 168.04,
+          "probability": 0.9964597821235657
+        },
+        {
+          "word": " at",
+          "start": 168.04,
+          "end": 168.26,
+          "probability": 0.9894341826438904
+        },
+        {
+          "word": " which",
+          "start": 168.26,
+          "end": 168.6,
+          "probability": 0.9990403056144714
+        },
+        {
+          "word": " algae",
+          "start": 168.6,
+          "end": 168.96,
+          "probability": 0.974604070186615
+        },
+        {
+          "word": " grow.",
+          "start": 168.96,
+          "end": 169.36,
+          "probability": 0.996457040309906
+        },
+        {
+          "word": " They",
+          "start": 169.92,
+          "end": 170.2,
+          "probability": 0.9942240118980408
+        },
+        {
+          "word": " are",
+          "start": 170.2,
+          "end": 170.32,
+          "probability": 0.9950041174888611
+        },
+        {
+          "word": " one",
+          "start": 170.32,
+          "end": 170.5,
+          "probability": 0.9938284754753113
+        },
+        {
+          "word": " of",
+          "start": 170.5,
+          "end": 170.58,
+          "probability": 0.9929210543632507
+        },
+        {
+          "word": " the",
+          "start": 170.58,
+          "end": 170.72,
+          "probability": 0.9991100430488586
+        },
+        {
+          "word": " fastest",
+          "start": 170.72,
+          "end": 171.14,
+          "probability": 0.997442364692688
+        },
+        {
+          "word": " growing",
+          "start": 171.14,
+          "end": 171.54,
+          "probability": 0.8864983916282654
+        },
+        {
+          "word": " plants",
+          "start": 171.54,
+          "end": 171.88,
+          "probability": 0.9992929697036743
+        },
+        {
+          "word": " on",
+          "start": 171.88,
+          "end": 172.16,
+          "probability": 0.9977241158485413
+        },
+        {
+          "word": " the",
+          "start": 172.16,
+          "end": 172.28,
+          "probability": 0.9920589923858643
+        },
+        {
+          "word": " planet.",
+          "start": 172.28,
+          "end": 172.62,
+          "probability": 0.9988011121749878
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 16574,
+      "start": 173.56,
+      "end": 174.82,
+      "text": " That sounds great.",
+      "tokens": [
+        50714,
+        663,
+        3263,
+        869,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05599512288599839,
+      "compression_ratio": 1.5894736842105264,
+      "no_speech_prob": 0.11961006373167038,
+      "words": [
+        {
+          "word": " That",
+          "start": 173.56,
+          "end": 173.82,
+          "probability": 0.5733012557029724
+        },
+        {
+          "word": " sounds",
+          "start": 173.82,
+          "end": 174.26,
+          "probability": 0.9927501678466797
+        },
+        {
+          "word": " great.",
+          "start": 174.26,
+          "end": 174.82,
+          "probability": 0.9810425043106079
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 16574,
+      "start": 176.0,
+      "end": 180.4,
+      "text": " You also need to consider where and how algae could be grown.",
+      "tokens": [
+        50864,
+        509,
+        611,
+        643,
+        281,
+        1949,
+        689,
+        293,
+        577,
+        32658,
+        727,
+        312,
+        7709,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05599512288599839,
+      "compression_ratio": 1.5894736842105264,
+      "no_speech_prob": 0.11961006373167038,
+      "words": [
+        {
+          "word": " You",
+          "start": 176.0,
+          "end": 176.1,
+          "probability": 0.9430281519889832
+        },
+        {
+          "word": " also",
+          "start": 176.1,
+          "end": 176.5,
+          "probability": 0.9794323444366455
+        },
+        {
+          "word": " need",
+          "start": 176.5,
+          "end": 176.78,
+          "probability": 0.9989290833473206
+        },
+        {
+          "word": " to",
+          "start": 176.78,
+          "end": 176.96,
+          "probability": 0.9991974234580994
+        },
+        {
+          "word": " consider",
+          "start": 176.96,
+          "end": 177.42,
+          "probability": 0.9978289008140564
+        },
+        {
+          "word": " where",
+          "start": 177.42,
+          "end": 177.88,
+          "probability": 0.9824503660202026
+        },
+        {
+          "word": " and",
+          "start": 177.88,
+          "end": 178.44,
+          "probability": 0.9675440788269043
+        },
+        {
+          "word": " how",
+          "start": 178.44,
+          "end": 178.84,
+          "probability": 0.9923037886619568
+        },
+        {
+          "word": " algae",
+          "start": 178.84,
+          "end": 179.52,
+          "probability": 0.9949821829795837
+        },
+        {
+          "word": " could",
+          "start": 179.52,
+          "end": 179.82,
+          "probability": 0.9909313917160034
+        },
+        {
+          "word": " be",
+          "start": 179.82,
+          "end": 180.06,
+          "probability": 0.997126042842865
+        },
+        {
+          "word": " grown.",
+          "start": 180.06,
+          "end": 180.4,
+          "probability": 0.9966320395469666
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 16574,
+      "start": 181.22,
+      "end": 184.84,
+      "text": " I expect farmed algae would need a lot of maintenance.",
+      "tokens": [
+        51114,
+        286,
+        2066,
+        1400,
+        1912,
+        32658,
+        576,
+        643,
+        257,
+        688,
+        295,
+        11258,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05599512288599839,
+      "compression_ratio": 1.5894736842105264,
+      "no_speech_prob": 0.11961006373167038,
+      "words": [
+        {
+          "word": " I",
+          "start": 181.22,
+          "end": 181.4,
+          "probability": 0.9932230710983276
+        },
+        {
+          "word": " expect",
+          "start": 181.4,
+          "end": 181.74,
+          "probability": 0.9892520308494568
+        },
+        {
+          "word": " farmed",
+          "start": 181.74,
+          "end": 182.54,
+          "probability": 0.876440703868866
+        },
+        {
+          "word": " algae",
+          "start": 182.54,
+          "end": 183.02,
+          "probability": 0.9965413212776184
+        },
+        {
+          "word": " would",
+          "start": 183.02,
+          "end": 183.3,
+          "probability": 0.994300127029419
+        },
+        {
+          "word": " need",
+          "start": 183.3,
+          "end": 183.56,
+          "probability": 0.9943215847015381
+        },
+        {
+          "word": " a",
+          "start": 183.56,
+          "end": 183.86,
+          "probability": 0.9964883327484131
+        },
+        {
+          "word": " lot",
+          "start": 183.86,
+          "end": 184.14,
+          "probability": 0.9952691197395325
+        },
+        {
+          "word": " of",
+          "start": 184.14,
+          "end": 184.38,
+          "probability": 0.9969706535339355
+        },
+        {
+          "word": " maintenance.",
+          "start": 184.38,
+          "end": 184.84,
+          "probability": 0.9967060685157776
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 16574,
+      "start": 185.62,
+      "end": 186.82,
+      "text": " Yes, that's right.",
+      "tokens": [
+        51314,
+        1079,
+        11,
+        300,
+        311,
+        558,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05599512288599839,
+      "compression_ratio": 1.5894736842105264,
+      "no_speech_prob": 0.11961006373167038,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 185.62,
+          "end": 185.9,
+          "probability": 0.9733114242553711
+        },
+        {
+          "word": " that's",
+          "start": 186.2,
+          "end": 186.52,
+          "probability": 0.9926311373710632
+        },
+        {
+          "word": " right.",
+          "start": 186.52,
+          "end": 186.82,
+          "probability": 0.9986876845359802
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 16574,
+      "start": 187.72,
+      "end": 189.9,
+      "text": " There are a number of elements to consider.",
+      "tokens": [
+        51414,
+        821,
+        366,
+        257,
+        1230,
+        295,
+        4959,
+        281,
+        1949,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05599512288599839,
+      "compression_ratio": 1.5894736842105264,
+      "no_speech_prob": 0.11961006373167038,
+      "words": [
+        {
+          "word": " There",
+          "start": 187.72,
+          "end": 187.88,
+          "probability": 0.9942463040351868
+        },
+        {
+          "word": " are",
+          "start": 187.88,
+          "end": 188.08,
+          "probability": 0.9962375164031982
+        },
+        {
+          "word": " a",
+          "start": 188.08,
+          "end": 188.22,
+          "probability": 0.9985547661781311
+        },
+        {
+          "word": " number",
+          "start": 188.22,
+          "end": 188.62,
+          "probability": 0.9989319443702698
+        },
+        {
+          "word": " of",
+          "start": 188.62,
+          "end": 188.84,
+          "probability": 0.9990836381912231
+        },
+        {
+          "word": " elements",
+          "start": 188.84,
+          "end": 189.14,
+          "probability": 0.9844244122505188
+        },
+        {
+          "word": " to",
+          "start": 189.14,
+          "end": 189.44,
+          "probability": 0.9991852641105652
+        },
+        {
+          "word": " consider.",
+          "start": 189.44,
+          "end": 189.9,
+          "probability": 0.9984110593795776
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 18990,
+      "start": 189.9,
+      "end": 197.74,
+      "text": " For example, there are massive costs involved in farming, harvesting and converting the algae into fuel.",
+      "tokens": [
+        50414,
+        1171,
+        1365,
+        11,
+        456,
+        366,
+        5994,
+        5497,
+        3288,
+        294,
+        16557,
+        11,
+        35679,
+        293,
+        29942,
+        264,
+        32658,
+        666,
+        6616,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.055690410974863415,
+      "compression_ratio": 1.6376146788990826,
+      "no_speech_prob": 0.11678335070610046,
+      "words": [
+        {
+          "word": " For",
+          "start": 189.9,
+          "end": 190.88,
+          "probability": 0.5588774681091309
+        },
+        {
+          "word": " example,",
+          "start": 190.88,
+          "end": 191.42,
+          "probability": 0.9980515241622925
+        },
+        {
+          "word": " there",
+          "start": 191.98,
+          "end": 192.18,
+          "probability": 0.9831288456916809
+        },
+        {
+          "word": " are",
+          "start": 192.18,
+          "end": 192.34,
+          "probability": 0.9987447261810303
+        },
+        {
+          "word": " massive",
+          "start": 192.34,
+          "end": 192.82,
+          "probability": 0.9845097661018372
+        },
+        {
+          "word": " costs",
+          "start": 192.82,
+          "end": 193.18,
+          "probability": 0.9696618914604187
+        },
+        {
+          "word": " involved",
+          "start": 193.18,
+          "end": 193.88,
+          "probability": 0.994954526424408
+        },
+        {
+          "word": " in",
+          "start": 193.88,
+          "end": 194.2,
+          "probability": 0.9966728687286377
+        },
+        {
+          "word": " farming,",
+          "start": 194.2,
+          "end": 194.78,
+          "probability": 0.9730552434921265
+        },
+        {
+          "word": " harvesting",
+          "start": 195.2,
+          "end": 195.46,
+          "probability": 0.9725971817970276
+        },
+        {
+          "word": " and",
+          "start": 195.46,
+          "end": 195.84,
+          "probability": 0.8424683213233948
+        },
+        {
+          "word": " converting",
+          "start": 195.84,
+          "end": 196.38,
+          "probability": 0.31445810198783875
+        },
+        {
+          "word": " the",
+          "start": 196.38,
+          "end": 196.76,
+          "probability": 0.9907003045082092
+        },
+        {
+          "word": " algae",
+          "start": 196.76,
+          "end": 196.9,
+          "probability": 0.5332162976264954
+        },
+        {
+          "word": " into",
+          "start": 196.9,
+          "end": 197.42,
+          "probability": 0.9901813864707947
+        },
+        {
+          "word": " fuel.",
+          "start": 197.42,
+          "end": 197.74,
+          "probability": 0.9980636239051819
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 18990,
+      "start": 198.3,
+      "end": 206.1,
+      "text": " So although algae are fast growing and large volumes can be farmed at once, there are cost drawbacks.",
+      "tokens": [
+        50764,
+        407,
+        4878,
+        32658,
+        366,
+        2370,
+        4194,
+        293,
+        2416,
+        22219,
+        393,
+        312,
+        1400,
+        1912,
+        412,
+        1564,
+        11,
+        456,
+        366,
+        2063,
+        2642,
+        17758,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.055690410974863415,
+      "compression_ratio": 1.6376146788990826,
+      "no_speech_prob": 0.11678335070610046,
+      "words": [
+        {
+          "word": " So",
+          "start": 198.3,
+          "end": 198.54,
+          "probability": 0.984130322933197
+        },
+        {
+          "word": " although",
+          "start": 198.54,
+          "end": 199.0,
+          "probability": 0.7606297731399536
+        },
+        {
+          "word": " algae",
+          "start": 199.0,
+          "end": 199.56,
+          "probability": 0.9923728108406067
+        },
+        {
+          "word": " are",
+          "start": 199.56,
+          "end": 199.84,
+          "probability": 0.9988565444946289
+        },
+        {
+          "word": " fast",
+          "start": 199.84,
+          "end": 200.34,
+          "probability": 0.9963393211364746
+        },
+        {
+          "word": " growing",
+          "start": 200.34,
+          "end": 200.92,
+          "probability": 0.7610986828804016
+        },
+        {
+          "word": " and",
+          "start": 200.92,
+          "end": 201.62,
+          "probability": 0.49119043350219727
+        },
+        {
+          "word": " large",
+          "start": 201.62,
+          "end": 202.16,
+          "probability": 0.9982426166534424
+        },
+        {
+          "word": " volumes",
+          "start": 202.16,
+          "end": 202.58,
+          "probability": 0.9948123693466187
+        },
+        {
+          "word": " can",
+          "start": 202.58,
+          "end": 203.0,
+          "probability": 0.9969161748886108
+        },
+        {
+          "word": " be",
+          "start": 203.0,
+          "end": 203.28,
+          "probability": 0.9995527863502502
+        },
+        {
+          "word": " farmed",
+          "start": 203.28,
+          "end": 203.7,
+          "probability": 0.9399946630001068
+        },
+        {
+          "word": " at",
+          "start": 203.7,
+          "end": 203.8,
+          "probability": 0.9992954730987549
+        },
+        {
+          "word": " once,",
+          "start": 203.8,
+          "end": 204.16,
+          "probability": 0.9983667731285095
+        },
+        {
+          "word": " there",
+          "start": 204.7,
+          "end": 204.8,
+          "probability": 0.996347963809967
+        },
+        {
+          "word": " are",
+          "start": 204.8,
+          "end": 204.98,
+          "probability": 0.9972158670425415
+        },
+        {
+          "word": " cost",
+          "start": 204.98,
+          "end": 205.44,
+          "probability": 0.951779305934906
+        },
+        {
+          "word": " drawbacks.",
+          "start": 205.44,
+          "end": 206.1,
+          "probability": 0.9778761863708496
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 18990,
+      "start": 207.2,
+      "end": 217.04,
+      "text": " Another interesting point is that algae can help to clean water by absorbing and removing poisonous substances that are harmful for humans to consume.",
+      "tokens": [
+        51214,
+        3996,
+        1880,
+        935,
+        307,
+        300,
+        32658,
+        393,
+        854,
+        281,
+        2541,
+        1281,
+        538,
+        38720,
+        293,
+        12720,
+        37376,
+        25455,
+        300,
+        366,
+        19727,
+        337,
+        6255,
+        281,
+        14732,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.055690410974863415,
+      "compression_ratio": 1.6376146788990826,
+      "no_speech_prob": 0.11678335070610046,
+      "words": [
+        {
+          "word": " Another",
+          "start": 207.2,
+          "end": 207.72,
+          "probability": 0.9908169507980347
+        },
+        {
+          "word": " interesting",
+          "start": 207.72,
+          "end": 208.46,
+          "probability": 0.9973180890083313
+        },
+        {
+          "word": " point",
+          "start": 208.46,
+          "end": 208.82,
+          "probability": 0.9988210797309875
+        },
+        {
+          "word": " is",
+          "start": 208.82,
+          "end": 209.1,
+          "probability": 0.9986722469329834
+        },
+        {
+          "word": " that",
+          "start": 209.1,
+          "end": 209.32,
+          "probability": 0.9988105297088623
+        },
+        {
+          "word": " algae",
+          "start": 209.32,
+          "end": 209.8,
+          "probability": 0.9979119896888733
+        },
+        {
+          "word": " can",
+          "start": 209.8,
+          "end": 210.18,
+          "probability": 0.998840868473053
+        },
+        {
+          "word": " help",
+          "start": 210.18,
+          "end": 210.46,
+          "probability": 0.9988920092582703
+        },
+        {
+          "word": " to",
+          "start": 210.46,
+          "end": 210.66,
+          "probability": 0.9961400628089905
+        },
+        {
+          "word": " clean",
+          "start": 210.66,
+          "end": 210.9,
+          "probability": 0.9955511093139648
+        },
+        {
+          "word": " water",
+          "start": 210.9,
+          "end": 211.48,
+          "probability": 0.9993600249290466
+        },
+        {
+          "word": " by",
+          "start": 211.48,
+          "end": 211.96,
+          "probability": 0.9601438641548157
+        },
+        {
+          "word": " absorbing",
+          "start": 211.96,
+          "end": 212.46,
+          "probability": 0.9965510368347168
+        },
+        {
+          "word": " and",
+          "start": 212.46,
+          "end": 212.92,
+          "probability": 0.9976698756217957
+        },
+        {
+          "word": " removing",
+          "start": 212.92,
+          "end": 213.52,
+          "probability": 0.995337724685669
+        },
+        {
+          "word": " poisonous",
+          "start": 213.52,
+          "end": 214.16,
+          "probability": 0.9853413701057434
+        },
+        {
+          "word": " substances",
+          "start": 214.16,
+          "end": 214.64,
+          "probability": 0.9986019730567932
+        },
+        {
+          "word": " that",
+          "start": 214.64,
+          "end": 215.14,
+          "probability": 0.9980338215827942
+        },
+        {
+          "word": " are",
+          "start": 215.14,
+          "end": 215.24,
+          "probability": 0.9966233968734741
+        },
+        {
+          "word": " harmful",
+          "start": 215.24,
+          "end": 215.62,
+          "probability": 0.9991965889930725
+        },
+        {
+          "word": " for",
+          "start": 215.62,
+          "end": 215.94,
+          "probability": 0.9832688570022583
+        },
+        {
+          "word": " humans",
+          "start": 215.94,
+          "end": 216.3,
+          "probability": 0.9968591928482056
+        },
+        {
+          "word": " to",
+          "start": 216.3,
+          "end": 216.6,
+          "probability": 0.9984209537506104
+        },
+        {
+          "word": " consume.",
+          "start": 216.6,
+          "end": 217.04,
+          "probability": 0.9991616010665894
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 21704,
+      "start": 218.04,
+      "end": 219.46,
+      "text": " I never knew that.",
+      "tokens": [
+        50414,
+        286,
+        1128,
+        2586,
+        300,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.042368749554237625,
+      "compression_ratio": 1.537037037037037,
+      "no_speech_prob": 0.05652696266770363,
+      "words": [
+        {
+          "word": " I",
+          "start": 217.95999999999998,
+          "end": 218.32,
+          "probability": 0.2581685185432434
+        },
+        {
+          "word": " never",
+          "start": 218.32,
+          "end": 218.7,
+          "probability": 0.7745048403739929
+        },
+        {
+          "word": " knew",
+          "start": 218.7,
+          "end": 219.02,
+          "probability": 0.9952308535575867
+        },
+        {
+          "word": " that.",
+          "start": 219.02,
+          "end": 219.46,
+          "probability": 0.996493399143219
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 21704,
+      "start": 220.1,
+      "end": 228.08,
+      "text": " By and large, I see what you're saying, but other sources of energy, like solar panels, just seem more efficient.",
+      "tokens": [
+        50514,
+        3146,
+        293,
+        2416,
+        11,
+        286,
+        536,
+        437,
+        291,
+        434,
+        1566,
+        11,
+        457,
+        661,
+        7139,
+        295,
+        2281,
+        11,
+        411,
+        7936,
+        13419,
+        11,
+        445,
+        1643,
+        544,
+        7148,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.042368749554237625,
+      "compression_ratio": 1.537037037037037,
+      "no_speech_prob": 0.05652696266770363,
+      "words": [
+        {
+          "word": " By",
+          "start": 220.1,
+          "end": 220.54,
+          "probability": 0.9684279561042786
+        },
+        {
+          "word": " and",
+          "start": 220.54,
+          "end": 220.74,
+          "probability": 0.797410249710083
+        },
+        {
+          "word": " large,",
+          "start": 220.74,
+          "end": 221.02,
+          "probability": 0.9951183795928955
+        },
+        {
+          "word": " I",
+          "start": 221.44,
+          "end": 221.52,
+          "probability": 0.9966754913330078
+        },
+        {
+          "word": " see",
+          "start": 221.52,
+          "end": 221.88,
+          "probability": 0.993505597114563
+        },
+        {
+          "word": " what",
+          "start": 221.88,
+          "end": 222.08,
+          "probability": 0.9991917014122009
+        },
+        {
+          "word": " you're",
+          "start": 222.08,
+          "end": 222.32,
+          "probability": 0.9669700860977173
+        },
+        {
+          "word": " saying,",
+          "start": 222.32,
+          "end": 222.68,
+          "probability": 0.9944989085197449
+        },
+        {
+          "word": " but",
+          "start": 223.16,
+          "end": 223.36,
+          "probability": 0.992567777633667
+        },
+        {
+          "word": " other",
+          "start": 223.36,
+          "end": 223.92,
+          "probability": 0.982465386390686
+        },
+        {
+          "word": " sources",
+          "start": 223.92,
+          "end": 224.34,
+          "probability": 0.9888166189193726
+        },
+        {
+          "word": " of",
+          "start": 224.34,
+          "end": 224.56,
+          "probability": 0.9957536458969116
+        },
+        {
+          "word": " energy,",
+          "start": 224.56,
+          "end": 224.98,
+          "probability": 0.9950409531593323
+        },
+        {
+          "word": " like",
+          "start": 225.3,
+          "end": 225.58,
+          "probability": 0.9972322583198547
+        },
+        {
+          "word": " solar",
+          "start": 225.58,
+          "end": 225.94,
+          "probability": 0.9941452741622925
+        },
+        {
+          "word": " panels,",
+          "start": 225.94,
+          "end": 226.3,
+          "probability": 0.999303936958313
+        },
+        {
+          "word": " just",
+          "start": 226.64,
+          "end": 226.86,
+          "probability": 0.9947993755340576
+        },
+        {
+          "word": " seem",
+          "start": 226.86,
+          "end": 227.3,
+          "probability": 0.8500059247016907
+        },
+        {
+          "word": " more",
+          "start": 227.3,
+          "end": 227.6,
+          "probability": 0.9982975125312805
+        },
+        {
+          "word": " efficient.",
+          "start": 227.6,
+          "end": 228.08,
+          "probability": 0.9977599382400513
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 21704,
+      "start": 229.0,
+      "end": 234.22,
+      "text": " I'm not sure algae as an energy source are a viable option for future generations.",
+      "tokens": [
+        50964,
+        286,
+        478,
+        406,
+        988,
+        32658,
+        382,
+        364,
+        2281,
+        4009,
+        366,
+        257,
+        22024,
+        3614,
+        337,
+        2027,
+        10593,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.042368749554237625,
+      "compression_ratio": 1.537037037037037,
+      "no_speech_prob": 0.05652696266770363,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 229.0,
+          "end": 229.36,
+          "probability": 0.9875210821628571
+        },
+        {
+          "word": " not",
+          "start": 229.36,
+          "end": 229.52,
+          "probability": 0.9967768788337708
+        },
+        {
+          "word": " sure",
+          "start": 229.52,
+          "end": 229.9,
+          "probability": 0.9961115717887878
+        },
+        {
+          "word": " algae",
+          "start": 229.9,
+          "end": 230.34,
+          "probability": 0.7530742883682251
+        },
+        {
+          "word": " as",
+          "start": 230.34,
+          "end": 230.6,
+          "probability": 0.8738202452659607
+        },
+        {
+          "word": " an",
+          "start": 230.6,
+          "end": 230.74,
+          "probability": 0.9905956983566284
+        },
+        {
+          "word": " energy",
+          "start": 230.74,
+          "end": 231.06,
+          "probability": 0.9939391613006592
+        },
+        {
+          "word": " source",
+          "start": 231.06,
+          "end": 231.44,
+          "probability": 0.9966453909873962
+        },
+        {
+          "word": " are",
+          "start": 231.44,
+          "end": 231.8,
+          "probability": 0.8721333146095276
+        },
+        {
+          "word": " a",
+          "start": 231.8,
+          "end": 232.02,
+          "probability": 0.9845376014709473
+        },
+        {
+          "word": " viable",
+          "start": 232.02,
+          "end": 232.46,
+          "probability": 0.9955428242683411
+        },
+        {
+          "word": " option",
+          "start": 232.46,
+          "end": 232.9,
+          "probability": 0.9984368681907654
+        },
+        {
+          "word": " for",
+          "start": 232.9,
+          "end": 233.18,
+          "probability": 0.9975724816322327
+        },
+        {
+          "word": " future",
+          "start": 233.18,
+          "end": 233.54,
+          "probability": 0.9990066885948181
+        },
+        {
+          "word": " generations.",
+          "start": 233.54,
+          "end": 234.22,
+          "probability": 0.9976714253425598
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 21704,
+      "start": 235.12,
+      "end": 238.54,
+      "text": " Well, it's going to be a challenge, I won't deny it.",
+      "tokens": [
+        51264,
+        1042,
+        11,
+        309,
+        311,
+        516,
+        281,
+        312,
+        257,
+        3430,
+        11,
+        286,
+        1582,
+        380,
+        15744,
+        309,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.042368749554237625,
+      "compression_ratio": 1.537037037037037,
+      "no_speech_prob": 0.05652696266770363,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 235.12,
+          "end": 235.52,
+          "probability": 0.9142465591430664
+        },
+        {
+          "word": " it's",
+          "start": 235.72,
+          "end": 235.96,
+          "probability": 0.9908556640148163
+        },
+        {
+          "word": " going",
+          "start": 235.96,
+          "end": 236.14,
+          "probability": 0.9860895872116089
+        },
+        {
+          "word": " to",
+          "start": 236.14,
+          "end": 236.32,
+          "probability": 0.9987831711769104
+        },
+        {
+          "word": " be",
+          "start": 236.32,
+          "end": 236.5,
+          "probability": 0.9987753033638
+        },
+        {
+          "word": " a",
+          "start": 236.5,
+          "end": 236.6,
+          "probability": 0.9977622032165527
+        },
+        {
+          "word": " challenge,",
+          "start": 236.6,
+          "end": 237.04,
+          "probability": 0.998547375202179
+        },
+        {
+          "word": " I",
+          "start": 237.04,
+          "end": 237.42,
+          "probability": 0.9721499681472778
+        },
+        {
+          "word": " won't",
+          "start": 237.42,
+          "end": 237.78,
+          "probability": 0.9962393939495087
+        },
+        {
+          "word": " deny",
+          "start": 237.78,
+          "end": 238.18,
+          "probability": 0.9990172386169434
+        },
+        {
+          "word": " it.",
+          "start": 238.18,
+          "end": 238.54,
+          "probability": 0.9991154074668884
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 21704,
+      "start": 239.18,
+      "end": 243.42,
+      "text": " We need to overcome the drawbacks around expense for one thing.",
+      "tokens": [
+        51464,
+        492,
+        643,
+        281,
+        10473,
+        264,
+        2642,
+        17758,
+        926,
+        18406,
+        337,
+        472,
+        551,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.042368749554237625,
+      "compression_ratio": 1.537037037037037,
+      "no_speech_prob": 0.05652696266770363,
+      "words": [
+        {
+          "word": " We",
+          "start": 239.18,
+          "end": 239.48,
+          "probability": 0.9962397813796997
+        },
+        {
+          "word": " need",
+          "start": 239.48,
+          "end": 239.76,
+          "probability": 0.9969543218612671
+        },
+        {
+          "word": " to",
+          "start": 239.76,
+          "end": 240.04,
+          "probability": 0.9983999133110046
+        },
+        {
+          "word": " overcome",
+          "start": 240.04,
+          "end": 240.48,
+          "probability": 0.9968746900558472
+        },
+        {
+          "word": " the",
+          "start": 240.48,
+          "end": 240.74,
+          "probability": 0.9974875450134277
+        },
+        {
+          "word": " drawbacks",
+          "start": 240.74,
+          "end": 241.28,
+          "probability": 0.9801014363765717
+        },
+        {
+          "word": " around",
+          "start": 241.28,
+          "end": 241.72,
+          "probability": 0.9949647188186646
+        },
+        {
+          "word": " expense",
+          "start": 241.72,
+          "end": 242.34,
+          "probability": 0.9851928949356079
+        },
+        {
+          "word": " for",
+          "start": 242.34,
+          "end": 242.78,
+          "probability": 0.9926284551620483
+        },
+        {
+          "word": " one",
+          "start": 242.78,
+          "end": 243.0,
+          "probability": 0.9969859719276428
+        },
+        {
+          "word": " thing.",
+          "start": 243.0,
+          "end": 243.42,
+          "probability": 0.9986603260040283
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 24342,
+      "start": 243.42,
+      "end": 249.74,
+      "text": " But trust me when I say, even with limitations, it has huge potential.",
+      "tokens": [
+        50414,
+        583,
+        3361,
+        385,
+        562,
+        286,
+        584,
+        11,
+        754,
+        365,
+        15705,
+        11,
+        309,
+        575,
+        2603,
+        3995,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1024471918741862,
+      "compression_ratio": 1.3288590604026846,
+      "no_speech_prob": 0.057306546717882156,
+      "words": [
+        {
+          "word": " But",
+          "start": 243.42,
+          "end": 244.32,
+          "probability": 0.695681095123291
+        },
+        {
+          "word": " trust",
+          "start": 244.32,
+          "end": 244.62,
+          "probability": 0.9727133512496948
+        },
+        {
+          "word": " me",
+          "start": 244.62,
+          "end": 245.02,
+          "probability": 0.9957526922225952
+        },
+        {
+          "word": " when",
+          "start": 245.02,
+          "end": 245.22,
+          "probability": 0.8418651819229126
+        },
+        {
+          "word": " I",
+          "start": 245.22,
+          "end": 245.38,
+          "probability": 0.9885846376419067
+        },
+        {
+          "word": " say,",
+          "start": 245.38,
+          "end": 245.66,
+          "probability": 0.9992591738700867
+        },
+        {
+          "word": " even",
+          "start": 246.18,
+          "end": 246.5,
+          "probability": 0.9631454944610596
+        },
+        {
+          "word": " with",
+          "start": 246.5,
+          "end": 246.84,
+          "probability": 0.9955933690071106
+        },
+        {
+          "word": " limitations,",
+          "start": 246.84,
+          "end": 247.56,
+          "probability": 0.9948429465293884
+        },
+        {
+          "word": " it",
+          "start": 248.14,
+          "end": 248.28,
+          "probability": 0.9923664927482605
+        },
+        {
+          "word": " has",
+          "start": 248.28,
+          "end": 248.5,
+          "probability": 0.9946979284286499
+        },
+        {
+          "word": " huge",
+          "start": 248.5,
+          "end": 249.06,
+          "probability": 0.9409676194190979
+        },
+        {
+          "word": " potential.",
+          "start": 249.06,
+          "end": 249.74,
+          "probability": 0.9995707869529724
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 24342,
+      "start": 250.52,
+      "end": 251.96,
+      "text": " Thank you, Dr. Tandy.",
+      "tokens": [
+        50714,
+        1044,
+        291,
+        11,
+        2491,
+        13,
+        314,
+        11425,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1024471918741862,
+      "compression_ratio": 1.3288590604026846,
+      "no_speech_prob": 0.057306546717882156,
+      "words": [
+        {
+          "word": " Thank",
+          "start": 250.52,
+          "end": 250.88,
+          "probability": 0.8419754505157471
+        },
+        {
+          "word": " you,",
+          "start": 250.88,
+          "end": 251.22,
+          "probability": 0.958913266658783
+        },
+        {
+          "word": " Dr.",
+          "start": 251.36,
+          "end": 251.56,
+          "probability": 0.7761132717132568
+        },
+        {
+          "word": " Tandy.",
+          "start": 251.72,
+          "end": 251.96,
+          "probability": 0.8312184512615204
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 24342,
+      "start": 253.02,
+      "end": 255.22,
+      "text": " I'm afraid that's all we have time for.",
+      "tokens": [
+        50814,
+        286,
+        478,
+        4638,
+        300,
+        311,
+        439,
+        321,
+        362,
+        565,
+        337,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1024471918741862,
+      "compression_ratio": 1.3288590604026846,
+      "no_speech_prob": 0.057306546717882156,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 253.02,
+          "end": 253.2,
+          "probability": 0.9609746932983398
+        },
+        {
+          "word": " afraid",
+          "start": 253.2,
+          "end": 253.46,
+          "probability": 0.9940038323402405
+        },
+        {
+          "word": " that's",
+          "start": 253.46,
+          "end": 253.98,
+          "probability": 0.9764530956745148
+        },
+        {
+          "word": " all",
+          "start": 253.98,
+          "end": 254.18,
+          "probability": 0.993730902671814
+        },
+        {
+          "word": " we",
+          "start": 254.18,
+          "end": 254.36,
+          "probability": 0.9971899390220642
+        },
+        {
+          "word": " have",
+          "start": 254.36,
+          "end": 254.56,
+          "probability": 0.9968953132629395
+        },
+        {
+          "word": " time",
+          "start": 254.56,
+          "end": 254.92,
+          "probability": 0.9966590404510498
+        },
+        {
+          "word": " for.",
+          "start": 254.92,
+          "end": 255.22,
+          "probability": 0.999168872833252
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 24342,
+      "start": 256.16,
+      "end": 260.04,
+      "text": " Join me next week for a discussion on a further interesting sort.",
+      "tokens": [
+        50964,
+        19642,
+        385,
+        958,
+        1243,
+        337,
+        257,
+        5017,
+        322,
+        257,
+        3052,
+        1880,
+        1333,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1024471918741862,
+      "compression_ratio": 1.3288590604026846,
+      "no_speech_prob": 0.057306546717882156,
+      "words": [
+        {
+          "word": " Join",
+          "start": 256.16,
+          "end": 256.34,
+          "probability": 0.9961508512496948
+        },
+        {
+          "word": " me",
+          "start": 256.34,
+          "end": 256.52,
+          "probability": 0.9987291693687439
+        },
+        {
+          "word": " next",
+          "start": 256.52,
+          "end": 256.9,
+          "probability": 0.9964612126350403
+        },
+        {
+          "word": " week",
+          "start": 256.9,
+          "end": 257.2,
+          "probability": 0.9990819692611694
+        },
+        {
+          "word": " for",
+          "start": 257.2,
+          "end": 257.64,
+          "probability": 0.9242163300514221
+        },
+        {
+          "word": " a",
+          "start": 257.64,
+          "end": 257.82,
+          "probability": 0.9880956411361694
+        },
+        {
+          "word": " discussion",
+          "start": 257.82,
+          "end": 258.3,
+          "probability": 0.9947134852409363
+        },
+        {
+          "word": " on",
+          "start": 258.3,
+          "end": 258.62,
+          "probability": 0.9912095069885254
+        },
+        {
+          "word": " a",
+          "start": 258.62,
+          "end": 258.74,
+          "probability": 0.9931291341781616
+        },
+        {
+          "word": " further",
+          "start": 258.74,
+          "end": 259.12,
+          "probability": 0.9834659099578857
+        },
+        {
+          "word": " interesting",
+          "start": 259.12,
+          "end": 259.72,
+          "probability": 0.9068374037742615
+        },
+        {
+          "word": " sort.",
+          "start": 259.72,
+          "end": 260.04,
+          "probability": 0.33722636103630066
+        }
+      ]
+    }
+  ]
+}

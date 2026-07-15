@@ -1,0 +1,1886 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 2.1 In the winter, this country is very cold and there is a lot of snow. There are high mountains and in winter they are beautiful. The snow is white and the sky is blue because it is very sunny. The forest is green all year. This is an island near the equator and the climate is hot all year. There are two seasons, rainy and dry. In the rainy season, it rains every day and there are a lot of black clouds. In the dry season, the sky is blue and it is very sunny. My country has four seasons. My favorite is spring because there are flowers everywhere and it is very green. In the summer, it is hot and dry. There are storms and autumn and it is rainy and windy but the trees are beautiful. The leaves are red, yellow and orange and the sky is blue. Winter is cold and there is snow. This country is hot all year and it rains about one week a year. It is very dry and sunny. In the summer, the temperature can reach 50 degrees centigrade. There is a big desert with a lot of sand but no trees. People live by the sea and there are big parks in the towns.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.98,
+      "text": " Track 2.1",
+      "tokens": [
+        50364,
+        31903,
+        568,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.271067966114391,
+      "compression_ratio": 1.5298013245033113,
+      "no_speech_prob": 0.07620931416749954,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.5,
+          "probability": 0.3245998024940491
+        },
+        {
+          "word": " 2",
+          "start": 0.5,
+          "end": 1.1,
+          "probability": 0.9607187509536743
+        },
+        {
+          "word": ".1",
+          "start": 1.1,
+          "end": 1.98,
+          "probability": 0.9968585968017578
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.3600000000000003,
+      "end": 9.58,
+      "text": " In the winter, this country is very cold and there is a lot of snow.",
+      "tokens": [
+        50554,
+        682,
+        264,
+        6355,
+        11,
+        341,
+        1941,
+        307,
+        588,
+        3554,
+        293,
+        456,
+        307,
+        257,
+        688,
+        295,
+        5756,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.271067966114391,
+      "compression_ratio": 1.5298013245033113,
+      "no_speech_prob": 0.07620931416749954,
+      "words": [
+        {
+          "word": " In",
+          "start": 3.3600000000000003,
+          "end": 4.2,
+          "probability": 0.5713824033737183
+        },
+        {
+          "word": " the",
+          "start": 4.2,
+          "end": 4.4,
+          "probability": 0.9755939841270447
+        },
+        {
+          "word": " winter,",
+          "start": 4.4,
+          "end": 4.78,
+          "probability": 0.9892168045043945
+        },
+        {
+          "word": " this",
+          "start": 5.2,
+          "end": 5.5,
+          "probability": 0.9948596954345703
+        },
+        {
+          "word": " country",
+          "start": 5.5,
+          "end": 6.0,
+          "probability": 0.9912296533584595
+        },
+        {
+          "word": " is",
+          "start": 6.0,
+          "end": 6.28,
+          "probability": 0.9983248114585876
+        },
+        {
+          "word": " very",
+          "start": 6.28,
+          "end": 6.7,
+          "probability": 0.9969899654388428
+        },
+        {
+          "word": " cold",
+          "start": 6.7,
+          "end": 7.22,
+          "probability": 0.9996840953826904
+        },
+        {
+          "word": " and",
+          "start": 7.22,
+          "end": 7.96,
+          "probability": 0.7356376051902771
+        },
+        {
+          "word": " there",
+          "start": 7.96,
+          "end": 8.22,
+          "probability": 0.9979953765869141
+        },
+        {
+          "word": " is",
+          "start": 8.22,
+          "end": 8.38,
+          "probability": 0.9872562885284424
+        },
+        {
+          "word": " a",
+          "start": 8.38,
+          "end": 8.5,
+          "probability": 0.9904847145080566
+        },
+        {
+          "word": " lot",
+          "start": 8.5,
+          "end": 8.78,
+          "probability": 0.9972087740898132
+        },
+        {
+          "word": " of",
+          "start": 8.78,
+          "end": 9.16,
+          "probability": 0.998649537563324
+        },
+        {
+          "word": " snow.",
+          "start": 9.16,
+          "end": 9.58,
+          "probability": 0.9995291233062744
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 10.08,
+      "end": 14.48,
+      "text": " There are high mountains and in winter they are beautiful.",
+      "tokens": [
+        50889,
+        821,
+        366,
+        1090,
+        10233,
+        293,
+        294,
+        6355,
+        436,
+        366,
+        2238,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.271067966114391,
+      "compression_ratio": 1.5298013245033113,
+      "no_speech_prob": 0.07620931416749954,
+      "words": [
+        {
+          "word": " There",
+          "start": 10.08,
+          "end": 10.92,
+          "probability": 0.9892125129699707
+        },
+        {
+          "word": " are",
+          "start": 10.92,
+          "end": 11.08,
+          "probability": 0.998066246509552
+        },
+        {
+          "word": " high",
+          "start": 11.08,
+          "end": 11.5,
+          "probability": 0.9925098419189453
+        },
+        {
+          "word": " mountains",
+          "start": 11.5,
+          "end": 12.0,
+          "probability": 0.9976872205734253
+        },
+        {
+          "word": " and",
+          "start": 12.0,
+          "end": 12.66,
+          "probability": 0.8652737736701965
+        },
+        {
+          "word": " in",
+          "start": 12.66,
+          "end": 12.78,
+          "probability": 0.9690829515457153
+        },
+        {
+          "word": " winter",
+          "start": 12.78,
+          "end": 13.18,
+          "probability": 0.9941760301589966
+        },
+        {
+          "word": " they",
+          "start": 13.18,
+          "end": 13.66,
+          "probability": 0.6175012588500977
+        },
+        {
+          "word": " are",
+          "start": 13.66,
+          "end": 13.82,
+          "probability": 0.996006429195404
+        },
+        {
+          "word": " beautiful.",
+          "start": 13.82,
+          "end": 14.48,
+          "probability": 0.9951123595237732
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 15.34,
+      "end": 20.54,
+      "text": " The snow is white and the sky is blue because it is very sunny.",
+      "tokens": [
+        51129,
+        440,
+        5756,
+        307,
+        2418,
+        293,
+        264,
+        5443,
+        307,
+        3344,
+        570,
+        309,
+        307,
+        588,
+        20412,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.271067966114391,
+      "compression_ratio": 1.5298013245033113,
+      "no_speech_prob": 0.07620931416749954,
+      "words": [
+        {
+          "word": " The",
+          "start": 15.34,
+          "end": 15.58,
+          "probability": 0.9959402084350586
+        },
+        {
+          "word": " snow",
+          "start": 15.58,
+          "end": 16.04,
+          "probability": 0.9990367889404297
+        },
+        {
+          "word": " is",
+          "start": 16.04,
+          "end": 16.5,
+          "probability": 0.9990717172622681
+        },
+        {
+          "word": " white",
+          "start": 16.5,
+          "end": 16.9,
+          "probability": 0.9856843948364258
+        },
+        {
+          "word": " and",
+          "start": 16.9,
+          "end": 17.48,
+          "probability": 0.9305245280265808
+        },
+        {
+          "word": " the",
+          "start": 17.48,
+          "end": 17.64,
+          "probability": 0.9978359341621399
+        },
+        {
+          "word": " sky",
+          "start": 17.64,
+          "end": 18.02,
+          "probability": 0.9995099306106567
+        },
+        {
+          "word": " is",
+          "start": 18.02,
+          "end": 18.32,
+          "probability": 0.9981772899627686
+        },
+        {
+          "word": " blue",
+          "start": 18.32,
+          "end": 18.68,
+          "probability": 0.9976145029067993
+        },
+        {
+          "word": " because",
+          "start": 18.68,
+          "end": 19.3,
+          "probability": 0.9442819356918335
+        },
+        {
+          "word": " it",
+          "start": 19.3,
+          "end": 19.48,
+          "probability": 0.9957950115203857
+        },
+        {
+          "word": " is",
+          "start": 19.48,
+          "end": 19.62,
+          "probability": 0.9931290149688721
+        },
+        {
+          "word": " very",
+          "start": 19.62,
+          "end": 20.0,
+          "probability": 0.9967051148414612
+        },
+        {
+          "word": " sunny.",
+          "start": 20.0,
+          "end": 20.54,
+          "probability": 0.994491457939148
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 21.18,
+      "end": 24.02,
+      "text": " The forest is green all year.",
+      "tokens": [
+        51439,
+        440,
+        6719,
+        307,
+        3092,
+        439,
+        1064,
+        13,
+        51589
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.271067966114391,
+      "compression_ratio": 1.5298013245033113,
+      "no_speech_prob": 0.07620931416749954,
+      "words": [
+        {
+          "word": " The",
+          "start": 21.18,
+          "end": 21.86,
+          "probability": 0.9942217469215393
+        },
+        {
+          "word": " forest",
+          "start": 21.86,
+          "end": 22.3,
+          "probability": 0.9939462542533875
+        },
+        {
+          "word": " is",
+          "start": 22.3,
+          "end": 22.64,
+          "probability": 0.9990136623382568
+        },
+        {
+          "word": " green",
+          "start": 22.64,
+          "end": 23.0,
+          "probability": 0.9948599338531494
+        },
+        {
+          "word": " all",
+          "start": 23.0,
+          "end": 23.56,
+          "probability": 0.9925629496574402
+        },
+        {
+          "word": " year.",
+          "start": 23.56,
+          "end": 24.02,
+          "probability": 0.9981257319450378
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2402,
+      "start": 28.839999999999996,
+      "end": 35.38,
+      "text": " This is an island near the equator and the climate is hot all year.",
+      "tokens": [
+        50364,
+        639,
+        307,
+        364,
+        6077,
+        2651,
+        264,
+        45544,
+        293,
+        264,
+        5659,
+        307,
+        2368,
+        439,
+        1064,
+        13,
+        50939
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17855804443359374,
+      "compression_ratio": 1.4330708661417322,
+      "no_speech_prob": 0.11789175868034363,
+      "words": [
+        {
+          "word": " This",
+          "start": 28.839999999999996,
+          "end": 29.72,
+          "probability": 0.8235157132148743
+        },
+        {
+          "word": " is",
+          "start": 29.72,
+          "end": 30.16,
+          "probability": 0.9938094019889832
+        },
+        {
+          "word": " an",
+          "start": 30.16,
+          "end": 30.44,
+          "probability": 0.9851993322372437
+        },
+        {
+          "word": " island",
+          "start": 30.44,
+          "end": 30.74,
+          "probability": 0.9643701910972595
+        },
+        {
+          "word": " near",
+          "start": 30.74,
+          "end": 31.26,
+          "probability": 0.9976608753204346
+        },
+        {
+          "word": " the",
+          "start": 31.26,
+          "end": 31.54,
+          "probability": 0.9966797828674316
+        },
+        {
+          "word": " equator",
+          "start": 31.54,
+          "end": 32.12,
+          "probability": 0.976720929145813
+        },
+        {
+          "word": " and",
+          "start": 32.12,
+          "end": 32.94,
+          "probability": 0.6428938508033752
+        },
+        {
+          "word": " the",
+          "start": 32.94,
+          "end": 33.18,
+          "probability": 0.9939005374908447
+        },
+        {
+          "word": " climate",
+          "start": 33.18,
+          "end": 33.64,
+          "probability": 0.9928507804870605
+        },
+        {
+          "word": " is",
+          "start": 33.64,
+          "end": 34.08,
+          "probability": 0.997672975063324
+        },
+        {
+          "word": " hot",
+          "start": 34.08,
+          "end": 34.4,
+          "probability": 0.9980528354644775
+        },
+        {
+          "word": " all",
+          "start": 34.4,
+          "end": 34.94,
+          "probability": 0.9923553466796875
+        },
+        {
+          "word": " year.",
+          "start": 34.94,
+          "end": 35.38,
+          "probability": 0.9949561953544617
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2402,
+      "start": 36.3,
+      "end": 40.48,
+      "text": " There are two seasons, rainy and dry.",
+      "tokens": [
+        50964,
+        821,
+        366,
+        732,
+        15050,
+        11,
+        27181,
+        293,
+        4016,
+        13,
+        51189
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17855804443359374,
+      "compression_ratio": 1.4330708661417322,
+      "no_speech_prob": 0.11789175868034363,
+      "words": [
+        {
+          "word": " There",
+          "start": 36.3,
+          "end": 36.88,
+          "probability": 0.994976282119751
+        },
+        {
+          "word": " are",
+          "start": 36.88,
+          "end": 37.06,
+          "probability": 0.9983300566673279
+        },
+        {
+          "word": " two",
+          "start": 37.06,
+          "end": 37.48,
+          "probability": 0.9053650498390198
+        },
+        {
+          "word": " seasons,",
+          "start": 37.48,
+          "end": 38.04,
+          "probability": 0.9928104281425476
+        },
+        {
+          "word": " rainy",
+          "start": 39.04,
+          "end": 39.22,
+          "probability": 0.9110658764839172
+        },
+        {
+          "word": " and",
+          "start": 39.22,
+          "end": 40.0,
+          "probability": 0.9787324070930481
+        },
+        {
+          "word": " dry.",
+          "start": 40.0,
+          "end": 40.48,
+          "probability": 0.9952810406684875
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2402,
+      "start": 41.16,
+      "end": 48.82,
+      "text": " In the rainy season, it rains every day and there are a lot of black clouds.",
+      "tokens": [
+        51214,
+        682,
+        264,
+        27181,
+        3196,
+        11,
+        309,
+        27805,
+        633,
+        786,
+        293,
+        456,
+        366,
+        257,
+        688,
+        295,
+        2211,
+        12193,
+        13,
+        51589
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17855804443359374,
+      "compression_ratio": 1.4330708661417322,
+      "no_speech_prob": 0.11789175868034363,
+      "words": [
+        {
+          "word": " In",
+          "start": 41.16,
+          "end": 41.98,
+          "probability": 0.9942057728767395
+        },
+        {
+          "word": " the",
+          "start": 41.98,
+          "end": 42.16,
+          "probability": 0.9905266761779785
+        },
+        {
+          "word": " rainy",
+          "start": 42.16,
+          "end": 42.54,
+          "probability": 0.9978010058403015
+        },
+        {
+          "word": " season,",
+          "start": 42.54,
+          "end": 43.12,
+          "probability": 0.9968427419662476
+        },
+        {
+          "word": " it",
+          "start": 43.36,
+          "end": 43.8,
+          "probability": 0.9897224307060242
+        },
+        {
+          "word": " rains",
+          "start": 43.8,
+          "end": 44.16,
+          "probability": 0.9965201616287231
+        },
+        {
+          "word": " every",
+          "start": 44.16,
+          "end": 44.84,
+          "probability": 0.8318606019020081
+        },
+        {
+          "word": " day",
+          "start": 44.84,
+          "end": 45.26,
+          "probability": 0.9995254278182983
+        },
+        {
+          "word": " and",
+          "start": 45.26,
+          "end": 46.0,
+          "probability": 0.8089185953140259
+        },
+        {
+          "word": " there",
+          "start": 46.0,
+          "end": 46.28,
+          "probability": 0.9985583424568176
+        },
+        {
+          "word": " are",
+          "start": 46.28,
+          "end": 46.54,
+          "probability": 0.9917102456092834
+        },
+        {
+          "word": " a",
+          "start": 46.54,
+          "end": 46.78,
+          "probability": 0.9308804869651794
+        },
+        {
+          "word": " lot",
+          "start": 46.78,
+          "end": 47.18,
+          "probability": 0.9936929941177368
+        },
+        {
+          "word": " of",
+          "start": 47.18,
+          "end": 47.62,
+          "probability": 0.9979469180107117
+        },
+        {
+          "word": " black",
+          "start": 47.62,
+          "end": 47.98,
+          "probability": 0.9675928354263306
+        },
+        {
+          "word": " clouds.",
+          "start": 47.98,
+          "end": 48.82,
+          "probability": 0.9977332353591919
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 4882,
+      "start": 48.82,
+      "end": 55.7,
+      "text": " In the dry season, the sky is blue and it is very sunny.",
+      "tokens": [
+        50364,
+        682,
+        264,
+        4016,
+        3196,
+        11,
+        264,
+        5443,
+        307,
+        3344,
+        293,
+        309,
+        307,
+        588,
+        20412,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20006837163652694,
+      "compression_ratio": 1.5037593984962405,
+      "no_speech_prob": 0.2199961096048355,
+      "words": [
+        {
+          "word": " In",
+          "start": 48.82,
+          "end": 50.36,
+          "probability": 0.25559836626052856
+        },
+        {
+          "word": " the",
+          "start": 50.36,
+          "end": 50.56,
+          "probability": 0.9760033488273621
+        },
+        {
+          "word": " dry",
+          "start": 50.56,
+          "end": 50.88,
+          "probability": 0.9823653101921082
+        },
+        {
+          "word": " season,",
+          "start": 50.88,
+          "end": 51.46,
+          "probability": 0.9961767196655273
+        },
+        {
+          "word": " the",
+          "start": 51.88,
+          "end": 52.08,
+          "probability": 0.9941798448562622
+        },
+        {
+          "word": " sky",
+          "start": 52.08,
+          "end": 52.54,
+          "probability": 0.9976490139961243
+        },
+        {
+          "word": " is",
+          "start": 52.54,
+          "end": 53.0,
+          "probability": 0.9978263974189758
+        },
+        {
+          "word": " blue",
+          "start": 53.0,
+          "end": 53.36,
+          "probability": 0.996822714805603
+        },
+        {
+          "word": " and",
+          "start": 53.36,
+          "end": 54.3,
+          "probability": 0.6098508834838867
+        },
+        {
+          "word": " it",
+          "start": 54.3,
+          "end": 54.52,
+          "probability": 0.9684480428695679
+        },
+        {
+          "word": " is",
+          "start": 54.52,
+          "end": 54.62,
+          "probability": 0.18794840574264526
+        },
+        {
+          "word": " very",
+          "start": 54.62,
+          "end": 55.08,
+          "probability": 0.9892762899398804
+        },
+        {
+          "word": " sunny.",
+          "start": 55.08,
+          "end": 55.7,
+          "probability": 0.9953151941299438
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 4882,
+      "start": 60.38,
+      "end": 63.8,
+      "text": " My country has four seasons.",
+      "tokens": [
+        50964,
+        1222,
+        1941,
+        575,
+        1451,
+        15050,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20006837163652694,
+      "compression_ratio": 1.5037593984962405,
+      "no_speech_prob": 0.2199961096048355,
+      "words": [
+        {
+          "word": " My",
+          "start": 60.38,
+          "end": 61.3,
+          "probability": 0.7917622923851013
+        },
+        {
+          "word": " country",
+          "start": 61.3,
+          "end": 61.92,
+          "probability": 0.9798572659492493
+        },
+        {
+          "word": " has",
+          "start": 61.92,
+          "end": 62.6,
+          "probability": 0.9929834604263306
+        },
+        {
+          "word": " four",
+          "start": 62.6,
+          "end": 63.06,
+          "probability": 0.8137500286102295
+        },
+        {
+          "word": " seasons.",
+          "start": 63.06,
+          "end": 63.8,
+          "probability": 0.9965819716453552
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 4882,
+      "start": 64.5,
+      "end": 72.12,
+      "text": " My favorite is spring because there are flowers everywhere and it is very green.",
+      "tokens": [
+        51139,
+        1222,
+        2954,
+        307,
+        5587,
+        570,
+        456,
+        366,
+        8085,
+        5315,
+        293,
+        309,
+        307,
+        588,
+        3092,
+        13,
+        51539
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20006837163652694,
+      "compression_ratio": 1.5037593984962405,
+      "no_speech_prob": 0.2199961096048355,
+      "words": [
+        {
+          "word": " My",
+          "start": 64.5,
+          "end": 65.26,
+          "probability": 0.9906113743782043
+        },
+        {
+          "word": " favorite",
+          "start": 65.26,
+          "end": 65.86,
+          "probability": 0.8148982524871826
+        },
+        {
+          "word": " is",
+          "start": 65.86,
+          "end": 66.26,
+          "probability": 0.9982049465179443
+        },
+        {
+          "word": " spring",
+          "start": 66.26,
+          "end": 66.66,
+          "probability": 0.9603097438812256
+        },
+        {
+          "word": " because",
+          "start": 66.66,
+          "end": 67.82,
+          "probability": 0.4277346134185791
+        },
+        {
+          "word": " there",
+          "start": 67.82,
+          "end": 68.18,
+          "probability": 0.9970057606697083
+        },
+        {
+          "word": " are",
+          "start": 68.18,
+          "end": 68.38,
+          "probability": 0.9910176992416382
+        },
+        {
+          "word": " flowers",
+          "start": 68.38,
+          "end": 69.0,
+          "probability": 0.9910396933555603
+        },
+        {
+          "word": " everywhere",
+          "start": 69.0,
+          "end": 69.88,
+          "probability": 0.9974617958068848
+        },
+        {
+          "word": " and",
+          "start": 69.88,
+          "end": 70.86,
+          "probability": 0.8065310716629028
+        },
+        {
+          "word": " it",
+          "start": 70.86,
+          "end": 71.08,
+          "probability": 0.9885324239730835
+        },
+        {
+          "word": " is",
+          "start": 71.08,
+          "end": 71.24,
+          "probability": 0.6028358340263367
+        },
+        {
+          "word": " very",
+          "start": 71.24,
+          "end": 71.54,
+          "probability": 0.9954623579978943
+        },
+        {
+          "word": " green.",
+          "start": 71.54,
+          "end": 72.12,
+          "probability": 0.9983854293823242
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 4882,
+      "start": 72.92,
+      "end": 76.46,
+      "text": " In the summer, it is hot and dry.",
+      "tokens": [
+        51564,
+        682,
+        264,
+        4266,
+        11,
+        309,
+        307,
+        2368,
+        293,
+        4016,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20006837163652694,
+      "compression_ratio": 1.5037593984962405,
+      "no_speech_prob": 0.2199961096048355,
+      "words": [
+        {
+          "word": " In",
+          "start": 72.92,
+          "end": 73.82,
+          "probability": 0.9930583238601685
+        },
+        {
+          "word": " the",
+          "start": 73.82,
+          "end": 73.96,
+          "probability": 0.9877699613571167
+        },
+        {
+          "word": " summer,",
+          "start": 73.96,
+          "end": 74.34,
+          "probability": 0.9956707954406738
+        },
+        {
+          "word": " it",
+          "start": 74.72,
+          "end": 75.14,
+          "probability": 0.9956511855125427
+        },
+        {
+          "word": " is",
+          "start": 75.14,
+          "end": 75.32,
+          "probability": 0.9964951872825623
+        },
+        {
+          "word": " hot",
+          "start": 75.32,
+          "end": 75.62,
+          "probability": 0.9989513158798218
+        },
+        {
+          "word": " and",
+          "start": 75.62,
+          "end": 76.04,
+          "probability": 0.9980167150497437
+        },
+        {
+          "word": " dry.",
+          "start": 76.04,
+          "end": 76.46,
+          "probability": 0.9965386390686035
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 7646,
+      "start": 76.46,
+      "end": 84.44,
+      "text": " There are storms and autumn and it is rainy and windy but the trees are beautiful.",
+      "tokens": [
+        50364,
+        821,
+        366,
+        23288,
+        293,
+        24604,
+        293,
+        309,
+        307,
+        27181,
+        293,
+        30330,
+        457,
+        264,
+        5852,
+        366,
+        2238,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14877208750298682,
+      "compression_ratio": 1.4112903225806452,
+      "no_speech_prob": 0.029714146628975868,
+      "words": [
+        {
+          "word": " There",
+          "start": 76.46,
+          "end": 77.94,
+          "probability": 0.18707789480686188
+        },
+        {
+          "word": " are",
+          "start": 77.94,
+          "end": 78.12,
+          "probability": 0.9836723208427429
+        },
+        {
+          "word": " storms",
+          "start": 78.12,
+          "end": 78.72,
+          "probability": 0.9893173575401306
+        },
+        {
+          "word": " and",
+          "start": 78.72,
+          "end": 79.0,
+          "probability": 0.8763572573661804
+        },
+        {
+          "word": " autumn",
+          "start": 79.0,
+          "end": 79.48,
+          "probability": 0.9827885031700134
+        },
+        {
+          "word": " and",
+          "start": 79.48,
+          "end": 80.3,
+          "probability": 0.5389318466186523
+        },
+        {
+          "word": " it",
+          "start": 80.3,
+          "end": 80.54,
+          "probability": 0.8069337606430054
+        },
+        {
+          "word": " is",
+          "start": 80.54,
+          "end": 80.6,
+          "probability": 0.13879427313804626
+        },
+        {
+          "word": " rainy",
+          "start": 80.6,
+          "end": 80.92,
+          "probability": 0.9639976024627686
+        },
+        {
+          "word": " and",
+          "start": 80.92,
+          "end": 81.38,
+          "probability": 0.992923378944397
+        },
+        {
+          "word": " windy",
+          "start": 81.38,
+          "end": 81.8,
+          "probability": 0.995171844959259
+        },
+        {
+          "word": " but",
+          "start": 81.8,
+          "end": 82.84,
+          "probability": 0.2772590219974518
+        },
+        {
+          "word": " the",
+          "start": 82.84,
+          "end": 83.02,
+          "probability": 0.9860203862190247
+        },
+        {
+          "word": " trees",
+          "start": 83.02,
+          "end": 83.44,
+          "probability": 0.9971840977668762
+        },
+        {
+          "word": " are",
+          "start": 83.44,
+          "end": 83.78,
+          "probability": 0.9980459213256836
+        },
+        {
+          "word": " beautiful.",
+          "start": 83.78,
+          "end": 84.44,
+          "probability": 0.9983338713645935
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 7646,
+      "start": 85.34,
+      "end": 91.64,
+      "text": " The leaves are red, yellow and orange and the sky is blue.",
+      "tokens": [
+        50814,
+        440,
+        5510,
+        366,
+        2182,
+        11,
+        5566,
+        293,
+        7671,
+        293,
+        264,
+        5443,
+        307,
+        3344,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14877208750298682,
+      "compression_ratio": 1.4112903225806452,
+      "no_speech_prob": 0.029714146628975868,
+      "words": [
+        {
+          "word": " The",
+          "start": 85.34,
+          "end": 85.84,
+          "probability": 0.9778934717178345
+        },
+        {
+          "word": " leaves",
+          "start": 85.84,
+          "end": 86.2,
+          "probability": 0.9913541674613953
+        },
+        {
+          "word": " are",
+          "start": 86.2,
+          "end": 86.56,
+          "probability": 0.9988081455230713
+        },
+        {
+          "word": " red,",
+          "start": 86.56,
+          "end": 86.98,
+          "probability": 0.995555579662323
+        },
+        {
+          "word": " yellow",
+          "start": 87.52,
+          "end": 87.8,
+          "probability": 0.9968584775924683
+        },
+        {
+          "word": " and",
+          "start": 87.8,
+          "end": 88.58,
+          "probability": 0.8525828719139099
+        },
+        {
+          "word": " orange",
+          "start": 88.58,
+          "end": 89.26,
+          "probability": 0.9987530708312988
+        },
+        {
+          "word": " and",
+          "start": 89.26,
+          "end": 90.18,
+          "probability": 0.8100602626800537
+        },
+        {
+          "word": " the",
+          "start": 90.18,
+          "end": 90.32,
+          "probability": 0.9969498515129089
+        },
+        {
+          "word": " sky",
+          "start": 90.32,
+          "end": 90.7,
+          "probability": 0.9990105628967285
+        },
+        {
+          "word": " is",
+          "start": 90.7,
+          "end": 91.26,
+          "probability": 0.9978963136672974
+        },
+        {
+          "word": " blue.",
+          "start": 91.26,
+          "end": 91.64,
+          "probability": 0.9982948899269104
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 7646,
+      "start": 92.94,
+      "end": 96.08,
+      "text": " Winter is cold and there is snow.",
+      "tokens": [
+        51164,
+        16444,
+        307,
+        3554,
+        293,
+        456,
+        307,
+        5756,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14877208750298682,
+      "compression_ratio": 1.4112903225806452,
+      "no_speech_prob": 0.029714146628975868,
+      "words": [
+        {
+          "word": " Winter",
+          "start": 92.94,
+          "end": 93.46,
+          "probability": 0.9792791604995728
+        },
+        {
+          "word": " is",
+          "start": 93.46,
+          "end": 93.98,
+          "probability": 0.9974678754806519
+        },
+        {
+          "word": " cold",
+          "start": 93.98,
+          "end": 94.46,
+          "probability": 0.9993755221366882
+        },
+        {
+          "word": " and",
+          "start": 94.46,
+          "end": 95.18,
+          "probability": 0.9550524950027466
+        },
+        {
+          "word": " there",
+          "start": 95.18,
+          "end": 95.44,
+          "probability": 0.9936661124229431
+        },
+        {
+          "word": " is",
+          "start": 95.44,
+          "end": 95.64,
+          "probability": 0.9951181411743164
+        },
+        {
+          "word": " snow.",
+          "start": 95.64,
+          "end": 96.08,
+          "probability": 0.9991508722305298
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 9608,
+      "start": 100.72,
+      "end": 107.46,
+      "text": " This country is hot all year and it rains about one week a year.",
+      "tokens": [
+        50364,
+        639,
+        1941,
+        307,
+        2368,
+        439,
+        1064,
+        293,
+        309,
+        27805,
+        466,
+        472,
+        1243,
+        257,
+        1064,
+        13,
+        50939
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11267254270356276,
+      "compression_ratio": 1.4026845637583893,
+      "no_speech_prob": 0.19733795523643494,
+      "words": [
+        {
+          "word": " This",
+          "start": 100.72,
+          "end": 101.6,
+          "probability": 0.45894259214401245
+        },
+        {
+          "word": " country",
+          "start": 101.6,
+          "end": 102.14,
+          "probability": 0.9844992756843567
+        },
+        {
+          "word": " is",
+          "start": 102.14,
+          "end": 102.64,
+          "probability": 0.9948509335517883
+        },
+        {
+          "word": " hot",
+          "start": 102.64,
+          "end": 103.1,
+          "probability": 0.9937142729759216
+        },
+        {
+          "word": " all",
+          "start": 103.1,
+          "end": 103.54,
+          "probability": 0.9881319403648376
+        },
+        {
+          "word": " year",
+          "start": 103.54,
+          "end": 103.9,
+          "probability": 0.9966868758201599
+        },
+        {
+          "word": " and",
+          "start": 103.9,
+          "end": 104.58,
+          "probability": 0.7669612765312195
+        },
+        {
+          "word": " it",
+          "start": 104.58,
+          "end": 104.8,
+          "probability": 0.9927815794944763
+        },
+        {
+          "word": " rains",
+          "start": 104.8,
+          "end": 105.18,
+          "probability": 0.9640721678733826
+        },
+        {
+          "word": " about",
+          "start": 105.18,
+          "end": 105.74,
+          "probability": 0.9902151823043823
+        },
+        {
+          "word": " one",
+          "start": 105.74,
+          "end": 106.44,
+          "probability": 0.824186384677887
+        },
+        {
+          "word": " week",
+          "start": 106.44,
+          "end": 106.82,
+          "probability": 0.9949106574058533
+        },
+        {
+          "word": " a",
+          "start": 106.82,
+          "end": 107.06,
+          "probability": 0.9954200983047485
+        },
+        {
+          "word": " year.",
+          "start": 107.06,
+          "end": 107.46,
+          "probability": 0.9994702935218811
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 9608,
+      "start": 108.04,
+      "end": 110.72,
+      "text": " It is very dry and sunny.",
+      "tokens": [
+        50964,
+        467,
+        307,
+        588,
+        4016,
+        293,
+        20412,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11267254270356276,
+      "compression_ratio": 1.4026845637583893,
+      "no_speech_prob": 0.19733795523643494,
+      "words": [
+        {
+          "word": " It",
+          "start": 108.04,
+          "end": 108.58,
+          "probability": 0.9749500751495361
+        },
+        {
+          "word": " is",
+          "start": 108.58,
+          "end": 108.82,
+          "probability": 0.10532833635807037
+        },
+        {
+          "word": " very",
+          "start": 108.82,
+          "end": 109.12,
+          "probability": 0.9799472093582153
+        },
+        {
+          "word": " dry",
+          "start": 109.12,
+          "end": 109.56,
+          "probability": 0.9985742568969727
+        },
+        {
+          "word": " and",
+          "start": 109.56,
+          "end": 110.2,
+          "probability": 0.9914423823356628
+        },
+        {
+          "word": " sunny.",
+          "start": 110.2,
+          "end": 110.72,
+          "probability": 0.9874039888381958
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 9608,
+      "start": 111.42,
+      "end": 116.22,
+      "text": " In the summer, the temperature can reach 50 degrees centigrade.",
+      "tokens": [
+        51139,
+        682,
+        264,
+        4266,
+        11,
+        264,
+        4292,
+        393,
+        2524,
+        2625,
+        5310,
+        44731,
+        13,
+        51389
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11267254270356276,
+      "compression_ratio": 1.4026845637583893,
+      "no_speech_prob": 0.19733795523643494,
+      "words": [
+        {
+          "word": " In",
+          "start": 111.42,
+          "end": 111.82,
+          "probability": 0.9915677905082703
+        },
+        {
+          "word": " the",
+          "start": 111.82,
+          "end": 111.94,
+          "probability": 0.9800405502319336
+        },
+        {
+          "word": " summer,",
+          "start": 111.94,
+          "end": 112.36,
+          "probability": 0.9950742125511169
+        },
+        {
+          "word": " the",
+          "start": 112.86,
+          "end": 112.92,
+          "probability": 0.9868962168693542
+        },
+        {
+          "word": " temperature",
+          "start": 112.92,
+          "end": 113.5,
+          "probability": 0.9892174005508423
+        },
+        {
+          "word": " can",
+          "start": 113.5,
+          "end": 113.86,
+          "probability": 0.9953793287277222
+        },
+        {
+          "word": " reach",
+          "start": 113.86,
+          "end": 114.2,
+          "probability": 0.9986061453819275
+        },
+        {
+          "word": " 50",
+          "start": 114.2,
+          "end": 114.98,
+          "probability": 0.951435387134552
+        },
+        {
+          "word": " degrees",
+          "start": 114.98,
+          "end": 115.4,
+          "probability": 0.7543506622314453
+        },
+        {
+          "word": " centigrade.",
+          "start": 115.4,
+          "end": 116.22,
+          "probability": 0.9490219354629517
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 9608,
+      "start": 116.78,
+      "end": 122.44,
+      "text": " There is a big desert with a lot of sand but no trees.",
+      "tokens": [
+        51414,
+        821,
+        307,
+        257,
+        955,
+        11029,
+        365,
+        257,
+        688,
+        295,
+        4932,
+        457,
+        572,
+        5852,
+        13,
+        51689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11267254270356276,
+      "compression_ratio": 1.4026845637583893,
+      "no_speech_prob": 0.19733795523643494,
+      "words": [
+        {
+          "word": " There",
+          "start": 116.78,
+          "end": 117.66,
+          "probability": 0.9958314299583435
+        },
+        {
+          "word": " is",
+          "start": 117.66,
+          "end": 118.14,
+          "probability": 0.992034375667572
+        },
+        {
+          "word": " a",
+          "start": 118.14,
+          "end": 118.3,
+          "probability": 0.9889205098152161
+        },
+        {
+          "word": " big",
+          "start": 118.3,
+          "end": 118.54,
+          "probability": 0.9942175149917603
+        },
+        {
+          "word": " desert",
+          "start": 118.54,
+          "end": 118.94,
+          "probability": 0.9949257373809814
+        },
+        {
+          "word": " with",
+          "start": 118.94,
+          "end": 119.62,
+          "probability": 0.9426089525222778
+        },
+        {
+          "word": " a",
+          "start": 119.62,
+          "end": 119.86,
+          "probability": 0.9867770075798035
+        },
+        {
+          "word": " lot",
+          "start": 119.86,
+          "end": 120.02,
+          "probability": 0.9990311861038208
+        },
+        {
+          "word": " of",
+          "start": 120.02,
+          "end": 120.26,
+          "probability": 0.9978197813034058
+        },
+        {
+          "word": " sand",
+          "start": 120.26,
+          "end": 120.64,
+          "probability": 0.9939612150192261
+        },
+        {
+          "word": " but",
+          "start": 120.64,
+          "end": 121.42,
+          "probability": 0.47496137022972107
+        },
+        {
+          "word": " no",
+          "start": 121.42,
+          "end": 122.02,
+          "probability": 0.9870709776878357
+        },
+        {
+          "word": " trees.",
+          "start": 122.02,
+          "end": 122.44,
+          "probability": 0.9979466795921326
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 12244,
+      "start": 122.44,
+      "end": 128.56,
+      "text": " People live by the sea and there are big parks in the towns.",
+      "tokens": [
+        50364,
+        3432,
+        1621,
+        538,
+        264,
+        4158,
+        293,
+        456,
+        366,
+        955,
+        16213,
+        294,
+        264,
+        18104,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12548152138205135,
+      "compression_ratio": 0.9836065573770492,
+      "no_speech_prob": 0.40355440974235535,
+      "words": [
+        {
+          "word": " People",
+          "start": 122.44,
+          "end": 123.76,
+          "probability": 0.32807087898254395
+        },
+        {
+          "word": " live",
+          "start": 123.76,
+          "end": 124.18,
+          "probability": 0.9704290628433228
+        },
+        {
+          "word": " by",
+          "start": 124.18,
+          "end": 124.62,
+          "probability": 0.9961699843406677
+        },
+        {
+          "word": " the",
+          "start": 124.62,
+          "end": 124.82,
+          "probability": 0.9930972456932068
+        },
+        {
+          "word": " sea",
+          "start": 124.82,
+          "end": 125.14,
+          "probability": 0.99199378490448
+        },
+        {
+          "word": " and",
+          "start": 125.14,
+          "end": 126.04,
+          "probability": 0.5161716341972351
+        },
+        {
+          "word": " there",
+          "start": 126.04,
+          "end": 126.38,
+          "probability": 0.9940525889396667
+        },
+        {
+          "word": " are",
+          "start": 126.38,
+          "end": 126.58,
+          "probability": 0.9986372590065002
+        },
+        {
+          "word": " big",
+          "start": 126.58,
+          "end": 126.94,
+          "probability": 0.9947180151939392
+        },
+        {
+          "word": " parks",
+          "start": 126.94,
+          "end": 127.36,
+          "probability": 0.9876058101654053
+        },
+        {
+          "word": " in",
+          "start": 127.36,
+          "end": 127.88,
+          "probability": 0.9973424077033997
+        },
+        {
+          "word": " the",
+          "start": 127.88,
+          "end": 128.04,
+          "probability": 0.9987340569496155
+        },
+        {
+          "word": " towns.",
+          "start": 128.04,
+          "end": 128.56,
+          "probability": 0.9331918358802795
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 1.1 1 In fact, some very ancient cities, like the cities of Derinkuyu and Kaymakli in Turkey, were built more than 2,000 years ago, in caves under the mountains of Anatolia. 2 As we know, the weather is very hot and dry, and the caves were the most comfortable place to live. 3 I think that will be a very difficult thing to do. 4 Also, I personally feel that people are happier if they can see plants and trees.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Track 1.1",
+      "tokens": [
+        50364,
+        31903,
+        502,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34733284125893804,
+      "compression_ratio": 1.2836879432624113,
+      "no_speech_prob": 0.25099411606788635,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.68,
+          "probability": 0.6915223598480225
+        },
+        {
+          "word": " 1",
+          "start": 0.68,
+          "end": 1.3,
+          "probability": 0.94716876745224
+        },
+        {
+          "word": ".1",
+          "start": 1.3,
+          "end": 2.0,
+          "probability": 0.9947434663772583
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.940000000000001,
+      "end": 6.84,
+      "text": " 1",
+      "tokens": [
+        50560,
+        502,
+        50660
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34733284125893804,
+      "compression_ratio": 1.2836879432624113,
+      "no_speech_prob": 0.25099411606788635,
+      "words": [
+        {
+          "word": " 1",
+          "start": 5.940000000000001,
+          "end": 6.84,
+          "probability": 0.16937704384326935
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.84,
+      "end": 14.66,
+      "text": " In fact, some very ancient cities, like the cities of Derinkuyu and Kaymakli in Turkey,",
+      "tokens": [
+        50696,
+        682,
+        1186,
+        11,
+        512,
+        588,
+        7832,
+        6486,
+        11,
+        411,
+        264,
+        6486,
+        295,
+        5618,
+        475,
+        42694,
+        293,
+        14179,
+        8520,
+        2081,
+        294,
+        12647,
+        11,
+        51108
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34733284125893804,
+      "compression_ratio": 1.2836879432624113,
+      "no_speech_prob": 0.25099411606788635,
+      "words": [
+        {
+          "word": " In",
+          "start": 6.84,
+          "end": 7.0,
+          "probability": 0.3780003786087036
+        },
+        {
+          "word": " fact,",
+          "start": 7.0,
+          "end": 7.5,
+          "probability": 0.9990422129631042
+        },
+        {
+          "word": " some",
+          "start": 7.88,
+          "end": 8.3,
+          "probability": 0.9953556060791016
+        },
+        {
+          "word": " very",
+          "start": 8.3,
+          "end": 8.82,
+          "probability": 0.9958894848823547
+        },
+        {
+          "word": " ancient",
+          "start": 8.82,
+          "end": 9.34,
+          "probability": 0.9970206618309021
+        },
+        {
+          "word": " cities,",
+          "start": 9.34,
+          "end": 9.92,
+          "probability": 0.9979637861251831
+        },
+        {
+          "word": " like",
+          "start": 10.26,
+          "end": 10.6,
+          "probability": 0.9868946075439453
+        },
+        {
+          "word": " the",
+          "start": 10.6,
+          "end": 10.72,
+          "probability": 0.9936605095863342
+        },
+        {
+          "word": " cities",
+          "start": 10.72,
+          "end": 11.22,
+          "probability": 0.9960783123970032
+        },
+        {
+          "word": " of",
+          "start": 11.22,
+          "end": 11.6,
+          "probability": 0.9960805773735046
+        },
+        {
+          "word": " Derinkuyu",
+          "start": 11.6,
+          "end": 12.42,
+          "probability": 0.9332423210144043
+        },
+        {
+          "word": " and",
+          "start": 12.42,
+          "end": 13.06,
+          "probability": 0.9378671050071716
+        },
+        {
+          "word": " Kaymakli",
+          "start": 13.06,
+          "end": 13.9,
+          "probability": 0.819701353708903
+        },
+        {
+          "word": " in",
+          "start": 13.9,
+          "end": 14.18,
+          "probability": 0.9843452572822571
+        },
+        {
+          "word": " Turkey,",
+          "start": 14.18,
+          "end": 14.66,
+          "probability": 0.99814772605896
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 15.1,
+      "end": 21.84,
+      "text": " were built more than 2,000 years ago, in caves under the mountains of Anatolia.",
+      "tokens": [
+        51108,
+        645,
+        3094,
+        544,
+        813,
+        568,
+        11,
+        1360,
+        924,
+        2057,
+        11,
+        294,
+        32288,
+        833,
+        264,
+        10233,
+        295,
+        42628,
+        29760,
+        13,
+        51444
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34733284125893804,
+      "compression_ratio": 1.2836879432624113,
+      "no_speech_prob": 0.25099411606788635,
+      "words": [
+        {
+          "word": " were",
+          "start": 15.1,
+          "end": 15.3,
+          "probability": 0.989985466003418
+        },
+        {
+          "word": " built",
+          "start": 15.3,
+          "end": 15.68,
+          "probability": 0.9939516186714172
+        },
+        {
+          "word": " more",
+          "start": 15.68,
+          "end": 16.14,
+          "probability": 0.9974082112312317
+        },
+        {
+          "word": " than",
+          "start": 16.14,
+          "end": 16.5,
+          "probability": 0.9978781938552856
+        },
+        {
+          "word": " 2",
+          "start": 16.5,
+          "end": 16.94,
+          "probability": 0.4188583195209503
+        },
+        {
+          "word": ",000",
+          "start": 16.94,
+          "end": 17.38,
+          "probability": 0.9666921496391296
+        },
+        {
+          "word": " years",
+          "start": 17.38,
+          "end": 17.76,
+          "probability": 0.9970061182975769
+        },
+        {
+          "word": " ago,",
+          "start": 17.76,
+          "end": 18.16,
+          "probability": 0.9995414018630981
+        },
+        {
+          "word": " in",
+          "start": 18.48,
+          "end": 18.78,
+          "probability": 0.9976593255996704
+        },
+        {
+          "word": " caves",
+          "start": 18.78,
+          "end": 19.24,
+          "probability": 0.9979453682899475
+        },
+        {
+          "word": " under",
+          "start": 19.24,
+          "end": 19.82,
+          "probability": 0.793505072593689
+        },
+        {
+          "word": " the",
+          "start": 19.82,
+          "end": 20.0,
+          "probability": 0.9993994235992432
+        },
+        {
+          "word": " mountains",
+          "start": 20.0,
+          "end": 20.58,
+          "probability": 0.9754466414451599
+        },
+        {
+          "word": " of",
+          "start": 20.58,
+          "end": 21.0,
+          "probability": 0.9984446167945862
+        },
+        {
+          "word": " Anatolia.",
+          "start": 21.0,
+          "end": 21.84,
+          "probability": 0.9989393055438995
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 23.76,
+      "end": 24.52,
+      "text": " 2",
+      "tokens": [
+        51552,
+        568,
+        51652
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34733284125893804,
+      "compression_ratio": 1.2836879432624113,
+      "no_speech_prob": 0.25099411606788635,
+      "words": [
+        {
+          "word": " 2",
+          "start": 23.76,
+          "end": 24.52,
+          "probability": 0.9892996549606323
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2452,
+      "start": 26.02,
+      "end": 34.92,
+      "text": " As we know, the weather is very hot and dry, and the caves were the most comfortable place to live.",
+      "tokens": [
+        50412,
+        1018,
+        321,
+        458,
+        11,
+        264,
+        5503,
+        307,
+        588,
+        2368,
+        293,
+        4016,
+        11,
+        293,
+        264,
+        32288,
+        645,
+        264,
+        881,
+        4619,
+        1081,
+        281,
+        1621,
+        13,
+        50884
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3380731420314058,
+      "compression_ratio": 1.2833333333333334,
+      "no_speech_prob": 0.007212992757558823,
+      "words": [
+        {
+          "word": " As",
+          "start": 26.02,
+          "end": 26.82,
+          "probability": 0.8202568888664246
+        },
+        {
+          "word": " we",
+          "start": 26.82,
+          "end": 27.1,
+          "probability": 0.9963384866714478
+        },
+        {
+          "word": " know,",
+          "start": 27.1,
+          "end": 27.48,
+          "probability": 0.9969985485076904
+        },
+        {
+          "word": " the",
+          "start": 27.88,
+          "end": 28.04,
+          "probability": 0.9939263463020325
+        },
+        {
+          "word": " weather",
+          "start": 28.04,
+          "end": 28.38,
+          "probability": 0.9970115423202515
+        },
+        {
+          "word": " is",
+          "start": 28.38,
+          "end": 28.94,
+          "probability": 0.9955711960792542
+        },
+        {
+          "word": " very",
+          "start": 28.94,
+          "end": 29.46,
+          "probability": 0.9969086050987244
+        },
+        {
+          "word": " hot",
+          "start": 29.46,
+          "end": 29.86,
+          "probability": 0.9970806241035461
+        },
+        {
+          "word": " and",
+          "start": 29.86,
+          "end": 30.46,
+          "probability": 0.9901519417762756
+        },
+        {
+          "word": " dry,",
+          "start": 30.46,
+          "end": 30.84,
+          "probability": 0.9988434314727783
+        },
+        {
+          "word": " and",
+          "start": 31.52,
+          "end": 31.86,
+          "probability": 0.9851495027542114
+        },
+        {
+          "word": " the",
+          "start": 31.86,
+          "end": 32.14,
+          "probability": 0.9959503412246704
+        },
+        {
+          "word": " caves",
+          "start": 32.14,
+          "end": 32.58,
+          "probability": 0.9859341979026794
+        },
+        {
+          "word": " were",
+          "start": 32.58,
+          "end": 32.96,
+          "probability": 0.9662908911705017
+        },
+        {
+          "word": " the",
+          "start": 32.96,
+          "end": 33.02,
+          "probability": 0.9927769899368286
+        },
+        {
+          "word": " most",
+          "start": 33.02,
+          "end": 33.56,
+          "probability": 0.9995038509368896
+        },
+        {
+          "word": " comfortable",
+          "start": 33.56,
+          "end": 34.04,
+          "probability": 0.9979107975959778
+        },
+        {
+          "word": " place",
+          "start": 34.04,
+          "end": 34.46,
+          "probability": 0.9963539838790894
+        },
+        {
+          "word": " to",
+          "start": 34.46,
+          "end": 34.8,
+          "probability": 0.9989894032478333
+        },
+        {
+          "word": " live.",
+          "start": 34.8,
+          "end": 35.199999999999996,
+          "probability": 0.999011754989624
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2452,
+      "start": 37.44,
+      "end": 37.9,
+      "text": " 3",
+      "tokens": [
+        50972,
+        805,
+        51072
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3380731420314058,
+      "compression_ratio": 1.2833333333333334,
+      "no_speech_prob": 0.007212992757558823,
+      "words": [
+        {
+          "word": " 3",
+          "start": 37.44,
+          "end": 37.9,
+          "probability": 0.1652769148349762
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2452,
+      "start": 39.34,
+      "end": 43.480000000000004,
+      "text": " I think that will be a very difficult thing to do.",
+      "tokens": [
+        51072,
+        286,
+        519,
+        300,
+        486,
+        312,
+        257,
+        588,
+        2252,
+        551,
+        281,
+        360,
+        13,
+        51312
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3380731420314058,
+      "compression_ratio": 1.2833333333333334,
+      "no_speech_prob": 0.007212992757558823,
+      "words": [
+        {
+          "word": " I",
+          "start": 39.34,
+          "end": 40.14,
+          "probability": 0.36685582995414734
+        },
+        {
+          "word": " think",
+          "start": 40.14,
+          "end": 40.5,
+          "probability": 0.9971852898597717
+        },
+        {
+          "word": " that",
+          "start": 40.5,
+          "end": 40.9,
+          "probability": 0.9889917373657227
+        },
+        {
+          "word": " will",
+          "start": 40.9,
+          "end": 41.12,
+          "probability": 0.9740440845489502
+        },
+        {
+          "word": " be",
+          "start": 41.12,
+          "end": 41.52,
+          "probability": 0.9989946484565735
+        },
+        {
+          "word": " a",
+          "start": 41.52,
+          "end": 41.76,
+          "probability": 0.9917888045310974
+        },
+        {
+          "word": " very",
+          "start": 41.76,
+          "end": 42.24,
+          "probability": 0.9977160692214966
+        },
+        {
+          "word": " difficult",
+          "start": 42.24,
+          "end": 42.76,
+          "probability": 0.9980958104133606
+        },
+        {
+          "word": " thing",
+          "start": 42.76,
+          "end": 43.14,
+          "probability": 0.9976615905761719
+        },
+        {
+          "word": " to",
+          "start": 43.14,
+          "end": 43.46,
+          "probability": 0.9992345571517944
+        },
+        {
+          "word": " do.",
+          "start": 43.46,
+          "end": 43.86,
+          "probability": 0.9994480013847351
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2452,
+      "start": 45.940000000000005,
+      "end": 46.74,
+      "text": " 4",
+      "tokens": [
+        51392,
+        1017,
+        51492
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3380731420314058,
+      "compression_ratio": 1.2833333333333334,
+      "no_speech_prob": 0.007212992757558823,
+      "words": [
+        {
+          "word": " 4",
+          "start": 45.940000000000005,
+          "end": 46.74,
+          "probability": 0.9926437735557556
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 4674,
+      "start": 48.04,
+      "end": 55.42,
+      "text": " Also, I personally feel that people are happier if they can see plants and trees.",
+      "tokens": [
+        50384,
+        2743,
+        11,
+        286,
+        5665,
+        841,
+        300,
+        561,
+        366,
+        20423,
+        498,
+        436,
+        393,
+        536,
+        5972,
+        293,
+        5852,
+        13,
+        50832
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29856348037719727,
+      "compression_ratio": 1.08,
+      "no_speech_prob": 0.010678843595087528,
+      "words": [
+        {
+          "word": " Also,",
+          "start": 48.04,
+          "end": 48.96,
+          "probability": 0.9561394453048706
+        },
+        {
+          "word": " I",
+          "start": 49.56,
+          "end": 49.84,
+          "probability": 0.9890323877334595
+        },
+        {
+          "word": " personally",
+          "start": 49.84,
+          "end": 50.4,
+          "probability": 0.991380512714386
+        },
+        {
+          "word": " feel",
+          "start": 50.4,
+          "end": 50.94,
+          "probability": 0.9961012601852417
+        },
+        {
+          "word": " that",
+          "start": 50.94,
+          "end": 51.44,
+          "probability": 0.9855080246925354
+        },
+        {
+          "word": " people",
+          "start": 51.44,
+          "end": 51.86,
+          "probability": 0.9937745332717896
+        },
+        {
+          "word": " are",
+          "start": 51.86,
+          "end": 52.28,
+          "probability": 0.9990314245223999
+        },
+        {
+          "word": " happier",
+          "start": 52.28,
+          "end": 52.7,
+          "probability": 0.9949256181716919
+        },
+        {
+          "word": " if",
+          "start": 52.7,
+          "end": 53.16,
+          "probability": 0.9803487658500671
+        },
+        {
+          "word": " they",
+          "start": 53.16,
+          "end": 53.38,
+          "probability": 0.9980364441871643
+        },
+        {
+          "word": " can",
+          "start": 53.38,
+          "end": 53.66,
+          "probability": 0.9949319958686829
+        },
+        {
+          "word": " see",
+          "start": 53.66,
+          "end": 53.92,
+          "probability": 0.9979845285415649
+        },
+        {
+          "word": " plants",
+          "start": 53.92,
+          "end": 54.44,
+          "probability": 0.9977867603302002
+        },
+        {
+          "word": " and",
+          "start": 54.44,
+          "end": 54.98,
+          "probability": 0.9815565347671509
+        },
+        {
+          "word": " trees.",
+          "start": 54.98,
+          "end": 55.42,
+          "probability": 0.9975645542144775
+        }
+      ]
+    }
+  ]
+}

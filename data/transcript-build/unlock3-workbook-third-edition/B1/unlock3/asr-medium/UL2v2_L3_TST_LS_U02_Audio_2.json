@@ -1,0 +1,4277 @@
+{
+  "model": "small.en",
+  "language": "en",
+  "text": "Track 2.1 Good morning! Today I'm going to talk to you about the option of using our oceans to provide us with the energy we need for the future. For a long time, we've used the ocean for two things, travel and food. But now, people are thinking of using the ocean to provide another resource. Energy. This makes a lot of sense, because oceans cover 70% of the Earth. Oceans can give us clean energy forever, not like fossil fuels which are limited and will soon run out. Could this be a solution to the climate crisis? We'll have to wait and see. Now, how do we get energy from the ocean? Firstly, we can use waves, which are the rise and fall of the ocean, to run a generator. That's a machine that makes electricity. As the wave moves, it makes energy. The bigger the wave, the more energy it has. We can also use energy from waves to make air go through another type of machine, a turbine, to make electricity too. But some people correctly say that waves are not a good alternative energy source because they aren't always the same size and they travel at different speeds. Also, we can only use some areas of the ocean, because most areas don't get big waves, not big enough to produce the energy people need anyway. However, we can also use tides. Tides are when the ocean moves towards and away from the land, caused by the pull of the moon and the sun, and they are another source of energy. We can make electricity from their movement by using power plants called barrages. Barages are like big walls built across rivers where they join the sea. The barrage catches water at high tide, and then lets it out at low tides through turbines to make electricity. One of the benefits of using tides is that we know when they are going to happen, which is twice a day. Yet we can't predict how they will move, and barrages are only useful in places where there is a big difference between high and low tides. Very few places have this big difference, which means that energy production is not reliable. Barages also cause environmental issues. They can damage wildlife in the area, like birds. They are also not very nice to look at, and are not a benefit to people who live far from the ocean. To sum up, the ocean's mechanical energy, which is how the water in the ocean moves, can provide a lot of power. In fact, scientists believe that the world's waves and tides can make twice the amount of energy we produce now. However, using the ocean's mechanical energy also has a lot of disadvantages. It is expensive, not very efficient, and it can cause environmental problems.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.1,
+      "text": " Track 2.1",
+      "tokens": [
+        50363,
+        17762,
+        362,
+        13,
+        16,
+        50463
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3124920606613159,
+      "compression_ratio": 1.5181347150259068,
+      "no_speech_prob": 0.029353821650147438,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.58,
+          "probability": 0.3864259123802185
+        },
+        {
+          "word": " 2",
+          "start": 0.58,
+          "end": 1.02,
+          "probability": 0.9620542526245117
+        },
+        {
+          "word": ".1",
+          "start": 1.02,
+          "end": 2.1,
+          "probability": 0.9936419427394867
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.5400000000000027,
+      "end": 4.86,
+      "text": " Good morning!",
+      "tokens": [
+        50551,
+        4599,
+        3329,
+        0,
+        50643
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3124920606613159,
+      "compression_ratio": 1.5181347150259068,
+      "no_speech_prob": 0.029353821650147438,
+      "words": [
+        {
+          "word": " Good",
+          "start": 3.5400000000000027,
+          "end": 4.34,
+          "probability": 0.49383604526519775
+        },
+        {
+          "word": " morning!",
+          "start": 4.34,
+          "end": 4.86,
+          "probability": 0.9060133099555969
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.82,
+      "end": 11.2,
+      "text": " Today I'm going to talk to you about the option of using our oceans",
+      "tokens": [
+        50643,
+        6288,
+        314,
+        1101,
+        1016,
+        284,
+        1561,
+        284,
+        345,
+        546,
+        262,
+        3038,
+        286,
+        1262,
+        674,
+        23744,
+        50941
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3124920606613159,
+      "compression_ratio": 1.5181347150259068,
+      "no_speech_prob": 0.029353821650147438,
+      "words": [
+        {
+          "word": " Today",
+          "start": 5.82,
+          "end": 6.22,
+          "probability": 0.9928697943687439
+        },
+        {
+          "word": " I'm",
+          "start": 6.22,
+          "end": 6.88,
+          "probability": 0.8006386160850525
+        },
+        {
+          "word": " going",
+          "start": 6.88,
+          "end": 7.08,
+          "probability": 0.9969021081924438
+        },
+        {
+          "word": " to",
+          "start": 7.08,
+          "end": 7.34,
+          "probability": 0.9956010580062866
+        },
+        {
+          "word": " talk",
+          "start": 7.34,
+          "end": 7.54,
+          "probability": 0.9980757236480713
+        },
+        {
+          "word": " to",
+          "start": 7.54,
+          "end": 7.8,
+          "probability": 0.990730345249176
+        },
+        {
+          "word": " you",
+          "start": 7.8,
+          "end": 8.02,
+          "probability": 0.9981480836868286
+        },
+        {
+          "word": " about",
+          "start": 8.02,
+          "end": 8.38,
+          "probability": 0.9982653260231018
+        },
+        {
+          "word": " the",
+          "start": 8.38,
+          "end": 8.72,
+          "probability": 0.9967926144599915
+        },
+        {
+          "word": " option",
+          "start": 8.72,
+          "end": 9.26,
+          "probability": 0.9927547574043274
+        },
+        {
+          "word": " of",
+          "start": 9.26,
+          "end": 9.72,
+          "probability": 0.9966995120048523
+        },
+        {
+          "word": " using",
+          "start": 9.72,
+          "end": 10.12,
+          "probability": 0.9973599314689636
+        },
+        {
+          "word": " our",
+          "start": 10.12,
+          "end": 10.66,
+          "probability": 0.9980046153068542
+        },
+        {
+          "word": " oceans",
+          "start": 10.66,
+          "end": 11.2,
+          "probability": 0.8248132467269897
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.2,
+      "end": 15.06,
+      "text": " to provide us with the energy we need for the future.",
+      "tokens": [
+        50941,
+        284,
+        2148,
+        514,
+        351,
+        262,
+        2568,
+        356,
+        761,
+        329,
+        262,
+        2003,
+        13,
+        51131
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3124920606613159,
+      "compression_ratio": 1.5181347150259068,
+      "no_speech_prob": 0.029353821650147438,
+      "words": [
+        {
+          "word": " to",
+          "start": 11.2,
+          "end": 11.8,
+          "probability": 0.9853809475898743
+        },
+        {
+          "word": " provide",
+          "start": 11.8,
+          "end": 12.16,
+          "probability": 0.9992567896842957
+        },
+        {
+          "word": " us",
+          "start": 12.16,
+          "end": 12.46,
+          "probability": 0.9976522326469421
+        },
+        {
+          "word": " with",
+          "start": 12.46,
+          "end": 12.78,
+          "probability": 0.9964120984077454
+        },
+        {
+          "word": " the",
+          "start": 12.78,
+          "end": 12.96,
+          "probability": 0.9977502226829529
+        },
+        {
+          "word": " energy",
+          "start": 12.96,
+          "end": 13.34,
+          "probability": 0.9970755577087402
+        },
+        {
+          "word": " we",
+          "start": 13.34,
+          "end": 13.7,
+          "probability": 0.9960615038871765
+        },
+        {
+          "word": " need",
+          "start": 13.7,
+          "end": 14.08,
+          "probability": 0.9995887875556946
+        },
+        {
+          "word": " for",
+          "start": 14.08,
+          "end": 14.5,
+          "probability": 0.9952711462974548
+        },
+        {
+          "word": " the",
+          "start": 14.5,
+          "end": 14.64,
+          "probability": 0.9985685348510742
+        },
+        {
+          "word": " future.",
+          "start": 14.64,
+          "end": 15.06,
+          "probability": 0.9994884729385376
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 16.32,
+      "end": 22.66,
+      "text": " For a long time, we've used the ocean for two things, travel and food.",
+      "tokens": [
+        51181,
+        1114,
+        257,
+        890,
+        640,
+        11,
+        356,
+        1053,
+        973,
+        262,
+        9151,
+        329,
+        734,
+        1243,
+        11,
+        3067,
+        290,
+        2057,
+        13,
+        51511
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3124920606613159,
+      "compression_ratio": 1.5181347150259068,
+      "no_speech_prob": 0.029353821650147438,
+      "words": [
+        {
+          "word": " For",
+          "start": 16.32,
+          "end": 16.74,
+          "probability": 0.9978179931640625
+        },
+        {
+          "word": " a",
+          "start": 16.74,
+          "end": 16.94,
+          "probability": 0.9987953901290894
+        },
+        {
+          "word": " long",
+          "start": 16.94,
+          "end": 17.12,
+          "probability": 0.9993058443069458
+        },
+        {
+          "word": " time,",
+          "start": 17.12,
+          "end": 17.6,
+          "probability": 0.9993502497673035
+        },
+        {
+          "word": " we've",
+          "start": 17.84,
+          "end": 18.34,
+          "probability": 0.9870332479476929
+        },
+        {
+          "word": " used",
+          "start": 18.34,
+          "end": 18.58,
+          "probability": 0.9982163310050964
+        },
+        {
+          "word": " the",
+          "start": 18.58,
+          "end": 18.84,
+          "probability": 0.9988334774971008
+        },
+        {
+          "word": " ocean",
+          "start": 18.84,
+          "end": 19.14,
+          "probability": 0.9932889342308044
+        },
+        {
+          "word": " for",
+          "start": 19.14,
+          "end": 19.54,
+          "probability": 0.9991725087165833
+        },
+        {
+          "word": " two",
+          "start": 19.54,
+          "end": 19.92,
+          "probability": 0.9648945331573486
+        },
+        {
+          "word": " things,",
+          "start": 19.92,
+          "end": 20.54,
+          "probability": 0.9994193315505981
+        },
+        {
+          "word": " travel",
+          "start": 21.32,
+          "end": 21.48,
+          "probability": 0.9498149752616882
+        },
+        {
+          "word": " and",
+          "start": 21.48,
+          "end": 22.26,
+          "probability": 0.9690704345703125
+        },
+        {
+          "word": " food.",
+          "start": 22.26,
+          "end": 22.66,
+          "probability": 0.9995113611221313
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 23.84,
+      "end": 29.44,
+      "text": " But now, people are thinking of using the ocean to provide another resource.",
+      "tokens": [
+        51551,
+        887,
+        783,
+        11,
+        661,
+        389,
+        3612,
+        286,
+        1262,
+        262,
+        9151,
+        284,
+        2148,
+        1194,
+        8271,
+        13,
+        51857
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3124920606613159,
+      "compression_ratio": 1.5181347150259068,
+      "no_speech_prob": 0.029353821650147438,
+      "words": [
+        {
+          "word": " But",
+          "start": 23.84,
+          "end": 24.14,
+          "probability": 0.9955238103866577
+        },
+        {
+          "word": " now,",
+          "start": 24.14,
+          "end": 24.54,
+          "probability": 0.9884830117225647
+        },
+        {
+          "word": " people",
+          "start": 24.88,
+          "end": 25.18,
+          "probability": 0.9991094470024109
+        },
+        {
+          "word": " are",
+          "start": 25.18,
+          "end": 25.5,
+          "probability": 0.999377965927124
+        },
+        {
+          "word": " thinking",
+          "start": 25.5,
+          "end": 25.8,
+          "probability": 0.9984400868415833
+        },
+        {
+          "word": " of",
+          "start": 25.8,
+          "end": 26.32,
+          "probability": 0.9970128536224365
+        },
+        {
+          "word": " using",
+          "start": 26.32,
+          "end": 26.66,
+          "probability": 0.998820960521698
+        },
+        {
+          "word": " the",
+          "start": 26.66,
+          "end": 26.96,
+          "probability": 0.9991084933280945
+        },
+        {
+          "word": " ocean",
+          "start": 26.96,
+          "end": 27.44,
+          "probability": 0.9979933500289917
+        },
+        {
+          "word": " to",
+          "start": 27.44,
+          "end": 27.84,
+          "probability": 0.998339056968689
+        },
+        {
+          "word": " provide",
+          "start": 27.84,
+          "end": 28.28,
+          "probability": 0.9997221827507019
+        },
+        {
+          "word": " another",
+          "start": 28.28,
+          "end": 28.88,
+          "probability": 0.9991979002952576
+        },
+        {
+          "word": " resource.",
+          "start": 28.88,
+          "end": 29.44,
+          "probability": 0.9979762434959412
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 30.74,
+      "text": " Energy.",
+      "tokens": [
+        50363,
+        6682,
+        13,
+        50463
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2959229861988741,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.025347217917442322,
+      "words": [
+        {
+          "word": " Energy.",
+          "start": 30.0,
+          "end": 30.74,
+          "probability": 0.4792617857456207
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 3000,
+      "start": 32.46,
+      "end": 37.86,
+      "text": " This makes a lot of sense, because oceans cover 70% of the Earth.",
+      "tokens": [
+        50463,
+        770,
+        1838,
+        257,
+        1256,
+        286,
+        2565,
+        11,
+        780,
+        23744,
+        3002,
+        4317,
+        4,
+        286,
+        262,
+        3668,
+        13,
+        50771
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2959229861988741,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.025347217917442322,
+      "words": [
+        {
+          "word": " This",
+          "start": 32.46,
+          "end": 32.46,
+          "probability": 0.9909065961837769
+        },
+        {
+          "word": " makes",
+          "start": 32.46,
+          "end": 32.8,
+          "probability": 0.9976227879524231
+        },
+        {
+          "word": " a",
+          "start": 32.8,
+          "end": 33.14,
+          "probability": 0.9929704070091248
+        },
+        {
+          "word": " lot",
+          "start": 33.14,
+          "end": 33.4,
+          "probability": 0.9977915287017822
+        },
+        {
+          "word": " of",
+          "start": 33.4,
+          "end": 33.6,
+          "probability": 0.9990662932395935
+        },
+        {
+          "word": " sense,",
+          "start": 33.6,
+          "end": 34.0,
+          "probability": 0.998589813709259
+        },
+        {
+          "word": " because",
+          "start": 34.36,
+          "end": 34.74,
+          "probability": 0.9948192238807678
+        },
+        {
+          "word": " oceans",
+          "start": 34.74,
+          "end": 35.24,
+          "probability": 0.9917478561401367
+        },
+        {
+          "word": " cover",
+          "start": 35.24,
+          "end": 35.84,
+          "probability": 0.9969733953475952
+        },
+        {
+          "word": " 70",
+          "start": 35.84,
+          "end": 36.48,
+          "probability": 0.9191206097602844
+        },
+        {
+          "word": "%",
+          "start": 36.48,
+          "end": 36.8,
+          "probability": 0.9049625396728516
+        },
+        {
+          "word": " of",
+          "start": 36.8,
+          "end": 37.28,
+          "probability": 0.9970481991767883
+        },
+        {
+          "word": " the",
+          "start": 37.28,
+          "end": 37.46,
+          "probability": 0.9952270984649658
+        },
+        {
+          "word": " Earth.",
+          "start": 37.46,
+          "end": 37.86,
+          "probability": 0.7749876379966736
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 3000,
+      "start": 39.48,
+      "end": 42.24,
+      "text": " Oceans can give us clean energy forever,",
+      "tokens": [
+        50821,
+        440,
+        19961,
+        460,
+        1577,
+        514,
+        3424,
+        2568,
+        8097,
+        11,
+        50995
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2959229861988741,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.025347217917442322,
+      "words": [
+        {
+          "word": " Oceans",
+          "start": 39.48,
+          "end": 39.9,
+          "probability": 0.9662987887859344
+        },
+        {
+          "word": " can",
+          "start": 39.9,
+          "end": 40.2,
+          "probability": 0.9977626800537109
+        },
+        {
+          "word": " give",
+          "start": 40.2,
+          "end": 40.46,
+          "probability": 0.9967641830444336
+        },
+        {
+          "word": " us",
+          "start": 40.46,
+          "end": 40.68,
+          "probability": 0.9963896870613098
+        },
+        {
+          "word": " clean",
+          "start": 40.68,
+          "end": 41.08,
+          "probability": 0.9946174025535583
+        },
+        {
+          "word": " energy",
+          "start": 41.08,
+          "end": 41.66,
+          "probability": 0.9991980195045471
+        },
+        {
+          "word": " forever,",
+          "start": 41.66,
+          "end": 42.24,
+          "probability": 0.9864434003829956
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 3000,
+      "start": 42.78,
+      "end": 47.02,
+      "text": " not like fossil fuels which are limited and will soon run out.",
+      "tokens": [
+        50995,
+        407,
+        588,
+        12584,
+        18017,
+        543,
+        389,
+        3614,
+        290,
+        481,
+        2582,
+        1057,
+        503,
+        13,
+        51227
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2959229861988741,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.025347217917442322,
+      "words": [
+        {
+          "word": " not",
+          "start": 42.78,
+          "end": 43.14,
+          "probability": 0.9971795082092285
+        },
+        {
+          "word": " like",
+          "start": 43.14,
+          "end": 43.5,
+          "probability": 0.9972538352012634
+        },
+        {
+          "word": " fossil",
+          "start": 43.5,
+          "end": 43.86,
+          "probability": 0.9997071623802185
+        },
+        {
+          "word": " fuels",
+          "start": 43.86,
+          "end": 44.22,
+          "probability": 0.9981620907783508
+        },
+        {
+          "word": " which",
+          "start": 44.22,
+          "end": 44.58,
+          "probability": 0.843745231628418
+        },
+        {
+          "word": " are",
+          "start": 44.58,
+          "end": 44.84,
+          "probability": 0.999405026435852
+        },
+        {
+          "word": " limited",
+          "start": 44.84,
+          "end": 45.26,
+          "probability": 0.9991260170936584
+        },
+        {
+          "word": " and",
+          "start": 45.26,
+          "end": 45.9,
+          "probability": 0.9463055729866028
+        },
+        {
+          "word": " will",
+          "start": 45.9,
+          "end": 46.1,
+          "probability": 0.9887294173240662
+        },
+        {
+          "word": " soon",
+          "start": 46.1,
+          "end": 46.38,
+          "probability": 0.9953826069831848
+        },
+        {
+          "word": " run",
+          "start": 46.38,
+          "end": 46.62,
+          "probability": 0.9994885921478271
+        },
+        {
+          "word": " out.",
+          "start": 46.62,
+          "end": 47.02,
+          "probability": 0.9975259900093079
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 3000,
+      "start": 48.24,
+      "end": 50.88,
+      "text": " Could this be a solution to the climate crisis?",
+      "tokens": [
+        51263,
+        10347,
+        428,
+        307,
+        257,
+        4610,
+        284,
+        262,
+        4258,
+        4902,
+        30,
+        51443
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2959229861988741,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.025347217917442322,
+      "words": [
+        {
+          "word": " Could",
+          "start": 48.24,
+          "end": 48.36,
+          "probability": 0.9815704226493835
+        },
+        {
+          "word": " this",
+          "start": 48.36,
+          "end": 48.58,
+          "probability": 0.9987431168556213
+        },
+        {
+          "word": " be",
+          "start": 48.58,
+          "end": 48.86,
+          "probability": 0.9978122711181641
+        },
+        {
+          "word": " a",
+          "start": 48.86,
+          "end": 49.08,
+          "probability": 0.9969164133071899
+        },
+        {
+          "word": " solution",
+          "start": 49.08,
+          "end": 49.44,
+          "probability": 0.9992089867591858
+        },
+        {
+          "word": " to",
+          "start": 49.44,
+          "end": 49.82,
+          "probability": 0.998999297618866
+        },
+        {
+          "word": " the",
+          "start": 49.82,
+          "end": 49.96,
+          "probability": 0.9979767203330994
+        },
+        {
+          "word": " climate",
+          "start": 49.96,
+          "end": 50.32,
+          "probability": 0.9878305792808533
+        },
+        {
+          "word": " crisis?",
+          "start": 50.32,
+          "end": 50.88,
+          "probability": 0.9961400628089905
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 3000,
+      "start": 51.72,
+      "end": 53.62,
+      "text": " We'll have to wait and see.",
+      "tokens": [
+        51443,
+        775,
+        1183,
+        423,
+        284,
+        4043,
+        290,
+        766,
+        13,
+        51563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2959229861988741,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.025347217917442322,
+      "words": [
+        {
+          "word": " We'll",
+          "start": 51.72,
+          "end": 52.12,
+          "probability": 0.9861647486686707
+        },
+        {
+          "word": " have",
+          "start": 52.12,
+          "end": 52.32,
+          "probability": 0.9994440674781799
+        },
+        {
+          "word": " to",
+          "start": 52.32,
+          "end": 52.6,
+          "probability": 0.9993921518325806
+        },
+        {
+          "word": " wait",
+          "start": 52.6,
+          "end": 52.84,
+          "probability": 0.9995344877243042
+        },
+        {
+          "word": " and",
+          "start": 52.84,
+          "end": 53.22,
+          "probability": 0.9945058226585388
+        },
+        {
+          "word": " see.",
+          "start": 53.22,
+          "end": 53.62,
+          "probability": 0.9993785619735718
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 3000,
+      "start": 55.22,
+      "end": 58.38,
+      "text": " Now, how do we get energy from the ocean?",
+      "tokens": [
+        51613,
+        2735,
+        11,
+        703,
+        466,
+        356,
+        651,
+        2568,
+        422,
+        262,
+        9151,
+        30,
+        51803
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2959229861988741,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.025347217917442322,
+      "words": [
+        {
+          "word": " Now,",
+          "start": 55.22,
+          "end": 55.5,
+          "probability": 0.9845795631408691
+        },
+        {
+          "word": " how",
+          "start": 56.0,
+          "end": 56.32,
+          "probability": 0.991517961025238
+        },
+        {
+          "word": " do",
+          "start": 56.32,
+          "end": 56.5,
+          "probability": 0.9955139756202698
+        },
+        {
+          "word": " we",
+          "start": 56.5,
+          "end": 56.66,
+          "probability": 0.9991790652275085
+        },
+        {
+          "word": " get",
+          "start": 56.66,
+          "end": 56.96,
+          "probability": 0.9673192501068115
+        },
+        {
+          "word": " energy",
+          "start": 56.96,
+          "end": 57.46,
+          "probability": 0.996455729007721
+        },
+        {
+          "word": " from",
+          "start": 57.46,
+          "end": 57.86,
+          "probability": 0.9991191029548645
+        },
+        {
+          "word": " the",
+          "start": 57.86,
+          "end": 58.04,
+          "probability": 0.9993663430213928
+        },
+        {
+          "word": " ocean?",
+          "start": 58.04,
+          "end": 58.38,
+          "probability": 0.981903076171875
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5838,
+      "start": 59.48,
+      "end": 64.86,
+      "text": " Firstly, we can use waves, which are the rise and fall of the ocean,",
+      "tokens": [
+        50413,
+        41039,
+        11,
+        356,
+        460,
+        779,
+        9813,
+        11,
+        543,
+        389,
+        262,
+        4485,
+        290,
+        2121,
+        286,
+        262,
+        9151,
+        11,
+        50697
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25265915011182244,
+      "compression_ratio": 1.5956284153005464,
+      "no_speech_prob": 0.02238631248474121,
+      "words": [
+        {
+          "word": " Firstly,",
+          "start": 59.48,
+          "end": 60.16,
+          "probability": 0.840094804763794
+        },
+        {
+          "word": " we",
+          "start": 60.88,
+          "end": 61.1,
+          "probability": 0.996049702167511
+        },
+        {
+          "word": " can",
+          "start": 61.1,
+          "end": 61.3,
+          "probability": 0.9969069361686707
+        },
+        {
+          "word": " use",
+          "start": 61.3,
+          "end": 61.64,
+          "probability": 0.9976208806037903
+        },
+        {
+          "word": " waves,",
+          "start": 61.64,
+          "end": 62.12,
+          "probability": 0.9753800630569458
+        },
+        {
+          "word": " which",
+          "start": 62.56,
+          "end": 62.76,
+          "probability": 0.9971058964729309
+        },
+        {
+          "word": " are",
+          "start": 62.76,
+          "end": 62.98,
+          "probability": 0.9984332919120789
+        },
+        {
+          "word": " the",
+          "start": 62.98,
+          "end": 63.16,
+          "probability": 0.9957324862480164
+        },
+        {
+          "word": " rise",
+          "start": 63.16,
+          "end": 63.46,
+          "probability": 0.9951223731040955
+        },
+        {
+          "word": " and",
+          "start": 63.46,
+          "end": 63.74,
+          "probability": 0.9945759773254395
+        },
+        {
+          "word": " fall",
+          "start": 63.74,
+          "end": 64.1,
+          "probability": 0.9872637391090393
+        },
+        {
+          "word": " of",
+          "start": 64.1,
+          "end": 64.32,
+          "probability": 0.9977503418922424
+        },
+        {
+          "word": " the",
+          "start": 64.32,
+          "end": 64.46,
+          "probability": 0.9970487952232361
+        },
+        {
+          "word": " ocean,",
+          "start": 64.46,
+          "end": 64.86,
+          "probability": 0.9948215484619141
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5838,
+      "start": 65.28,
+      "end": 66.46,
+      "text": " to run a generator.",
+      "tokens": [
+        50697,
+        284,
+        1057,
+        257,
+        17301,
+        13,
+        50797
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25265915011182244,
+      "compression_ratio": 1.5956284153005464,
+      "no_speech_prob": 0.02238631248474121,
+      "words": [
+        {
+          "word": " to",
+          "start": 65.28,
+          "end": 65.48,
+          "probability": 0.9983077049255371
+        },
+        {
+          "word": " run",
+          "start": 65.48,
+          "end": 65.7,
+          "probability": 0.9995939135551453
+        },
+        {
+          "word": " a",
+          "start": 65.7,
+          "end": 66.46,
+          "probability": 0.9976381063461304
+        },
+        {
+          "word": " generator.",
+          "start": 66.46,
+          "end": 66.46,
+          "probability": 0.9988721013069153
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5838,
+      "start": 67.2,
+      "end": 69.5,
+      "text": " That's a machine that makes electricity.",
+      "tokens": [
+        50797,
+        1320,
+        338,
+        257,
+        4572,
+        326,
+        1838,
+        8744,
+        13,
+        50947
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25265915011182244,
+      "compression_ratio": 1.5956284153005464,
+      "no_speech_prob": 0.02238631248474121,
+      "words": [
+        {
+          "word": " That's",
+          "start": 67.2,
+          "end": 67.72,
+          "probability": 0.9736444354057312
+        },
+        {
+          "word": " a",
+          "start": 67.72,
+          "end": 67.82,
+          "probability": 0.9962992072105408
+        },
+        {
+          "word": " machine",
+          "start": 67.82,
+          "end": 68.14,
+          "probability": 0.9982538819313049
+        },
+        {
+          "word": " that",
+          "start": 68.14,
+          "end": 68.46,
+          "probability": 0.9976829290390015
+        },
+        {
+          "word": " makes",
+          "start": 68.46,
+          "end": 68.84,
+          "probability": 0.9972319006919861
+        },
+        {
+          "word": " electricity.",
+          "start": 68.84,
+          "end": 69.5,
+          "probability": 0.9979261159896851
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5838,
+      "start": 71.38,
+      "end": 73.96,
+      "text": " As the wave moves, it makes energy.",
+      "tokens": [
+        50997,
+        1081,
+        262,
+        6769,
+        6100,
+        11,
+        340,
+        1838,
+        2568,
+        13,
+        51147
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25265915011182244,
+      "compression_ratio": 1.5956284153005464,
+      "no_speech_prob": 0.02238631248474121,
+      "words": [
+        {
+          "word": " As",
+          "start": 71.38,
+          "end": 71.68,
+          "probability": 0.9952526092529297
+        },
+        {
+          "word": " the",
+          "start": 71.68,
+          "end": 71.86,
+          "probability": 0.9992432594299316
+        },
+        {
+          "word": " wave",
+          "start": 71.86,
+          "end": 72.12,
+          "probability": 0.9778445959091187
+        },
+        {
+          "word": " moves,",
+          "start": 72.12,
+          "end": 72.44,
+          "probability": 0.9980030655860901
+        },
+        {
+          "word": " it",
+          "start": 72.84,
+          "end": 73.04,
+          "probability": 0.9979614019393921
+        },
+        {
+          "word": " makes",
+          "start": 73.04,
+          "end": 73.4,
+          "probability": 0.9974315762519836
+        },
+        {
+          "word": " energy.",
+          "start": 73.4,
+          "end": 73.96,
+          "probability": 0.9978758096694946
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5838,
+      "start": 74.94,
+      "end": 77.76,
+      "text": " The bigger the wave, the more energy it has.",
+      "tokens": [
+        51183,
+        383,
+        5749,
+        262,
+        6769,
+        11,
+        262,
+        517,
+        2568,
+        340,
+        468,
+        13,
+        51343
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25265915011182244,
+      "compression_ratio": 1.5956284153005464,
+      "no_speech_prob": 0.02238631248474121,
+      "words": [
+        {
+          "word": " The",
+          "start": 74.94,
+          "end": 75.22,
+          "probability": 0.9964691400527954
+        },
+        {
+          "word": " bigger",
+          "start": 75.22,
+          "end": 75.44,
+          "probability": 0.9983757734298706
+        },
+        {
+          "word": " the",
+          "start": 75.44,
+          "end": 75.66,
+          "probability": 0.9985753297805786
+        },
+        {
+          "word": " wave,",
+          "start": 75.66,
+          "end": 75.98,
+          "probability": 0.99842369556427
+        },
+        {
+          "word": " the",
+          "start": 76.36,
+          "end": 76.48,
+          "probability": 0.9986751675605774
+        },
+        {
+          "word": " more",
+          "start": 76.48,
+          "end": 76.74,
+          "probability": 0.9992167949676514
+        },
+        {
+          "word": " energy",
+          "start": 76.74,
+          "end": 77.08,
+          "probability": 0.9994414448738098
+        },
+        {
+          "word": " it",
+          "start": 77.08,
+          "end": 77.36,
+          "probability": 0.9988927245140076
+        },
+        {
+          "word": " has.",
+          "start": 77.36,
+          "end": 77.76,
+          "probability": 0.9989526271820068
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5838,
+      "start": 78.8,
+      "end": 84.62,
+      "text": " We can also use energy from waves to make air go through another type of machine,",
+      "tokens": [
+        51383,
+        775,
+        460,
+        635,
+        779,
+        2568,
+        422,
+        9813,
+        284,
+        787,
+        1633,
+        467,
+        832,
+        1194,
+        2099,
+        286,
+        4572,
+        11,
+        51683
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25265915011182244,
+      "compression_ratio": 1.5956284153005464,
+      "no_speech_prob": 0.02238631248474121,
+      "words": [
+        {
+          "word": " We",
+          "start": 78.8,
+          "end": 79.18,
+          "probability": 0.9979010820388794
+        },
+        {
+          "word": " can",
+          "start": 79.18,
+          "end": 79.36,
+          "probability": 0.9977066516876221
+        },
+        {
+          "word": " also",
+          "start": 79.36,
+          "end": 79.78,
+          "probability": 0.9982964396476746
+        },
+        {
+          "word": " use",
+          "start": 79.78,
+          "end": 80.18,
+          "probability": 0.9980008006095886
+        },
+        {
+          "word": " energy",
+          "start": 80.18,
+          "end": 80.58,
+          "probability": 0.9979844093322754
+        },
+        {
+          "word": " from",
+          "start": 80.58,
+          "end": 80.88,
+          "probability": 0.9987164735794067
+        },
+        {
+          "word": " waves",
+          "start": 80.88,
+          "end": 81.32,
+          "probability": 0.9966322779655457
+        },
+        {
+          "word": " to",
+          "start": 81.32,
+          "end": 81.6,
+          "probability": 0.9621205925941467
+        },
+        {
+          "word": " make",
+          "start": 81.6,
+          "end": 81.88,
+          "probability": 0.9991136193275452
+        },
+        {
+          "word": " air",
+          "start": 81.88,
+          "end": 82.42,
+          "probability": 0.9912667870521545
+        },
+        {
+          "word": " go",
+          "start": 82.42,
+          "end": 82.78,
+          "probability": 0.9930092096328735
+        },
+        {
+          "word": " through",
+          "start": 82.78,
+          "end": 83.16,
+          "probability": 0.9954900145530701
+        },
+        {
+          "word": " another",
+          "start": 83.16,
+          "end": 83.68,
+          "probability": 0.9963422417640686
+        },
+        {
+          "word": " type",
+          "start": 83.68,
+          "end": 84.02,
+          "probability": 0.9971453547477722
+        },
+        {
+          "word": " of",
+          "start": 84.02,
+          "end": 84.24,
+          "probability": 0.9991832375526428
+        },
+        {
+          "word": " machine,",
+          "start": 84.24,
+          "end": 84.62,
+          "probability": 0.9969598054885864
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8462,
+      "start": 84.62,
+      "end": 88.24,
+      "text": " a turbine, to make electricity too.",
+      "tokens": [
+        50383,
+        257,
+        36489,
+        11,
+        284,
+        787,
+        8744,
+        1165,
+        13,
+        50557
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2193468838203244,
+      "compression_ratio": 1.599056603773585,
+      "no_speech_prob": 0.010770521126687527,
+      "words": [
+        {
+          "word": " a",
+          "start": 84.62,
+          "end": 85.34,
+          "probability": 0.468377023935318
+        },
+        {
+          "word": " turbine,",
+          "start": 85.34,
+          "end": 85.94,
+          "probability": 0.9893537759780884
+        },
+        {
+          "word": " to",
+          "start": 86.4,
+          "end": 86.64,
+          "probability": 0.9971981048583984
+        },
+        {
+          "word": " make",
+          "start": 86.64,
+          "end": 86.88,
+          "probability": 0.9985513091087341
+        },
+        {
+          "word": " electricity",
+          "start": 86.88,
+          "end": 87.58,
+          "probability": 0.9973179697990417
+        },
+        {
+          "word": " too.",
+          "start": 87.58,
+          "end": 88.24,
+          "probability": 0.8000392317771912
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 8462,
+      "start": 89.36,
+      "end": 94.92,
+      "text": " But some people correctly say that waves are not a good alternative energy source",
+      "tokens": [
+        50597,
+        887,
+        617,
+        661,
+        9380,
+        910,
+        326,
+        9813,
+        389,
+        407,
+        257,
+        922,
+        5559,
+        2568,
+        2723,
+        50887
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2193468838203244,
+      "compression_ratio": 1.599056603773585,
+      "no_speech_prob": 0.010770521126687527,
+      "words": [
+        {
+          "word": " But",
+          "start": 89.36,
+          "end": 89.62,
+          "probability": 0.9917235970497131
+        },
+        {
+          "word": " some",
+          "start": 89.62,
+          "end": 89.96,
+          "probability": 0.9831385612487793
+        },
+        {
+          "word": " people",
+          "start": 89.96,
+          "end": 90.4,
+          "probability": 0.9974575638771057
+        },
+        {
+          "word": " correctly",
+          "start": 90.4,
+          "end": 90.96,
+          "probability": 0.9959350824356079
+        },
+        {
+          "word": " say",
+          "start": 90.96,
+          "end": 91.5,
+          "probability": 0.996616542339325
+        },
+        {
+          "word": " that",
+          "start": 91.5,
+          "end": 91.84,
+          "probability": 0.9962916374206543
+        },
+        {
+          "word": " waves",
+          "start": 91.84,
+          "end": 92.3,
+          "probability": 0.9868576526641846
+        },
+        {
+          "word": " are",
+          "start": 92.3,
+          "end": 92.62,
+          "probability": 0.9861739873886108
+        },
+        {
+          "word": " not",
+          "start": 92.62,
+          "end": 92.92,
+          "probability": 0.9920452833175659
+        },
+        {
+          "word": " a",
+          "start": 92.92,
+          "end": 93.2,
+          "probability": 0.994729220867157
+        },
+        {
+          "word": " good",
+          "start": 93.2,
+          "end": 93.44,
+          "probability": 0.9993908405303955
+        },
+        {
+          "word": " alternative",
+          "start": 93.44,
+          "end": 93.9,
+          "probability": 0.9968377351760864
+        },
+        {
+          "word": " energy",
+          "start": 93.9,
+          "end": 94.48,
+          "probability": 0.9985812902450562
+        },
+        {
+          "word": " source",
+          "start": 94.48,
+          "end": 94.92,
+          "probability": 0.9995081424713135
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 8462,
+      "start": 94.92,
+      "end": 100.14,
+      "text": " because they aren't always the same size and they travel at different speeds.",
+      "tokens": [
+        50887,
+        780,
+        484,
+        3588,
+        470,
+        1464,
+        262,
+        976,
+        2546,
+        290,
+        484,
+        3067,
+        379,
+        1180,
+        12055,
+        13,
+        51157
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2193468838203244,
+      "compression_ratio": 1.599056603773585,
+      "no_speech_prob": 0.010770521126687527,
+      "words": [
+        {
+          "word": " because",
+          "start": 94.92,
+          "end": 95.5,
+          "probability": 0.9089134931564331
+        },
+        {
+          "word": " they",
+          "start": 95.5,
+          "end": 95.7,
+          "probability": 0.9975761771202087
+        },
+        {
+          "word": " aren't",
+          "start": 95.7,
+          "end": 96.06,
+          "probability": 0.9939056634902954
+        },
+        {
+          "word": " always",
+          "start": 96.06,
+          "end": 96.52,
+          "probability": 0.9990178346633911
+        },
+        {
+          "word": " the",
+          "start": 96.52,
+          "end": 96.74,
+          "probability": 0.9985939860343933
+        },
+        {
+          "word": " same",
+          "start": 96.74,
+          "end": 97.04,
+          "probability": 0.9992037415504456
+        },
+        {
+          "word": " size",
+          "start": 97.04,
+          "end": 97.5,
+          "probability": 0.9982596039772034
+        },
+        {
+          "word": " and",
+          "start": 97.5,
+          "end": 98.18,
+          "probability": 0.711927592754364
+        },
+        {
+          "word": " they",
+          "start": 98.18,
+          "end": 98.38,
+          "probability": 0.9640587568283081
+        },
+        {
+          "word": " travel",
+          "start": 98.38,
+          "end": 98.76,
+          "probability": 0.9983060359954834
+        },
+        {
+          "word": " at",
+          "start": 98.76,
+          "end": 99.12,
+          "probability": 0.9982060194015503
+        },
+        {
+          "word": " different",
+          "start": 99.12,
+          "end": 99.54,
+          "probability": 0.9987592697143555
+        },
+        {
+          "word": " speeds.",
+          "start": 99.54,
+          "end": 100.14,
+          "probability": 0.9989401698112488
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 8462,
+      "start": 101.36,
+      "end": 105.5,
+      "text": " Also, we can only use some areas of the ocean,",
+      "tokens": [
+        51199,
+        4418,
+        11,
+        356,
+        460,
+        691,
+        779,
+        617,
+        3006,
+        286,
+        262,
+        9151,
+        11,
+        51429
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2193468838203244,
+      "compression_ratio": 1.599056603773585,
+      "no_speech_prob": 0.010770521126687527,
+      "words": [
+        {
+          "word": " Also,",
+          "start": 101.36,
+          "end": 101.88,
+          "probability": 0.9947073459625244
+        },
+        {
+          "word": " we",
+          "start": 102.18,
+          "end": 102.54,
+          "probability": 0.9983552098274231
+        },
+        {
+          "word": " can",
+          "start": 102.54,
+          "end": 102.72,
+          "probability": 0.9965474009513855
+        },
+        {
+          "word": " only",
+          "start": 102.72,
+          "end": 103.1,
+          "probability": 0.9966720342636108
+        },
+        {
+          "word": " use",
+          "start": 103.1,
+          "end": 103.56,
+          "probability": 0.9981107711791992
+        },
+        {
+          "word": " some",
+          "start": 103.56,
+          "end": 104.02,
+          "probability": 0.993925154209137
+        },
+        {
+          "word": " areas",
+          "start": 104.02,
+          "end": 104.58,
+          "probability": 0.9963513612747192
+        },
+        {
+          "word": " of",
+          "start": 104.58,
+          "end": 104.88,
+          "probability": 0.9982798099517822
+        },
+        {
+          "word": " the",
+          "start": 104.88,
+          "end": 105.02,
+          "probability": 0.9985458850860596
+        },
+        {
+          "word": " ocean,",
+          "start": 105.02,
+          "end": 105.5,
+          "probability": 0.9970477223396301
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 8462,
+      "start": 106.02,
+      "end": 109.24,
+      "text": " because most areas don't get big waves,",
+      "tokens": [
+        51429,
+        780,
+        749,
+        3006,
+        836,
+        470,
+        651,
+        1263,
+        9813,
+        11,
+        51617
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2193468838203244,
+      "compression_ratio": 1.599056603773585,
+      "no_speech_prob": 0.010770521126687527,
+      "words": [
+        {
+          "word": " because",
+          "start": 106.02,
+          "end": 106.34,
+          "probability": 0.9966758489608765
+        },
+        {
+          "word": " most",
+          "start": 106.34,
+          "end": 106.7,
+          "probability": 0.9991592168807983
+        },
+        {
+          "word": " areas",
+          "start": 106.7,
+          "end": 107.36,
+          "probability": 0.9960247278213501
+        },
+        {
+          "word": " don't",
+          "start": 107.36,
+          "end": 107.92,
+          "probability": 0.9977461993694305
+        },
+        {
+          "word": " get",
+          "start": 107.92,
+          "end": 108.24,
+          "probability": 0.9986165761947632
+        },
+        {
+          "word": " big",
+          "start": 108.24,
+          "end": 108.62,
+          "probability": 0.9892346858978271
+        },
+        {
+          "word": " waves,",
+          "start": 108.62,
+          "end": 109.24,
+          "probability": 0.9989925026893616
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 8462,
+      "start": 109.8,
+      "end": 113.64,
+      "text": " not big enough to produce the energy people need anyway.",
+      "tokens": [
+        51617,
+        407,
+        1263,
+        1576,
+        284,
+        4439,
+        262,
+        2568,
+        661,
+        761,
+        6949,
+        13,
+        51827
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2193468838203244,
+      "compression_ratio": 1.599056603773585,
+      "no_speech_prob": 0.010770521126687527,
+      "words": [
+        {
+          "word": " not",
+          "start": 109.8,
+          "end": 110.14,
+          "probability": 0.9966498017311096
+        },
+        {
+          "word": " big",
+          "start": 110.14,
+          "end": 110.4,
+          "probability": 0.9983289837837219
+        },
+        {
+          "word": " enough",
+          "start": 110.4,
+          "end": 110.68,
+          "probability": 0.9996702671051025
+        },
+        {
+          "word": " to",
+          "start": 110.68,
+          "end": 110.96,
+          "probability": 0.9988417029380798
+        },
+        {
+          "word": " produce",
+          "start": 110.96,
+          "end": 111.28,
+          "probability": 0.9978391528129578
+        },
+        {
+          "word": " the",
+          "start": 111.28,
+          "end": 111.58,
+          "probability": 0.998281717300415
+        },
+        {
+          "word": " energy",
+          "start": 111.58,
+          "end": 112.02,
+          "probability": 0.9987700581550598
+        },
+        {
+          "word": " people",
+          "start": 112.02,
+          "end": 112.42,
+          "probability": 0.9969287514686584
+        },
+        {
+          "word": " need",
+          "start": 112.42,
+          "end": 113.0,
+          "probability": 0.9947282671928406
+        },
+        {
+          "word": " anyway.",
+          "start": 113.0,
+          "end": 113.64,
+          "probability": 0.9170046448707581
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 11462,
+      "start": 114.78,
+      "end": 118.38,
+      "text": " However, we can also use tides.",
+      "tokens": [
+        50387,
+        2102,
+        11,
+        356,
+        460,
+        635,
+        779,
+        46128,
+        13,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20394579102011287,
+      "compression_ratio": 1.5476190476190477,
+      "no_speech_prob": 0.005223224870860577,
+      "words": [
+        {
+          "word": " However,",
+          "start": 114.78,
+          "end": 115.58,
+          "probability": 0.8880332708358765
+        },
+        {
+          "word": " we",
+          "start": 116.18,
+          "end": 116.4,
+          "probability": 0.9959779381752014
+        },
+        {
+          "word": " can",
+          "start": 116.4,
+          "end": 116.6,
+          "probability": 0.9933825731277466
+        },
+        {
+          "word": " also",
+          "start": 116.6,
+          "end": 117.14,
+          "probability": 0.9950575828552246
+        },
+        {
+          "word": " use",
+          "start": 117.14,
+          "end": 117.7,
+          "probability": 0.9979337453842163
+        },
+        {
+          "word": " tides.",
+          "start": 117.7,
+          "end": 118.38,
+          "probability": 0.9522169828414917
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 11462,
+      "start": 119.84,
+      "end": 124.34,
+      "text": " Tides are when the ocean moves towards and away from the land,",
+      "tokens": [
+        50605,
+        309,
+        1460,
+        389,
+        618,
+        262,
+        9151,
+        6100,
+        3371,
+        290,
+        1497,
+        422,
+        262,
+        1956,
+        11,
+        50875
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20394579102011287,
+      "compression_ratio": 1.5476190476190477,
+      "no_speech_prob": 0.005223224870860577,
+      "words": [
+        {
+          "word": " Tides",
+          "start": 119.84,
+          "end": 119.96,
+          "probability": 0.9898678958415985
+        },
+        {
+          "word": " are",
+          "start": 119.96,
+          "end": 120.28,
+          "probability": 0.9981985688209534
+        },
+        {
+          "word": " when",
+          "start": 120.28,
+          "end": 120.52,
+          "probability": 0.9983676075935364
+        },
+        {
+          "word": " the",
+          "start": 120.52,
+          "end": 120.7,
+          "probability": 0.9973881840705872
+        },
+        {
+          "word": " ocean",
+          "start": 120.7,
+          "end": 121.08,
+          "probability": 0.9933264255523682
+        },
+        {
+          "word": " moves",
+          "start": 121.08,
+          "end": 121.58,
+          "probability": 0.9880896210670471
+        },
+        {
+          "word": " towards",
+          "start": 121.58,
+          "end": 122.18,
+          "probability": 0.9648184180259705
+        },
+        {
+          "word": " and",
+          "start": 122.18,
+          "end": 122.8,
+          "probability": 0.9934262037277222
+        },
+        {
+          "word": " away",
+          "start": 122.8,
+          "end": 123.32,
+          "probability": 0.9987807869911194
+        },
+        {
+          "word": " from",
+          "start": 123.32,
+          "end": 123.7,
+          "probability": 0.9981420040130615
+        },
+        {
+          "word": " the",
+          "start": 123.7,
+          "end": 123.88,
+          "probability": 0.9858394861221313
+        },
+        {
+          "word": " land,",
+          "start": 123.88,
+          "end": 124.34,
+          "probability": 0.9983758926391602
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 11462,
+      "start": 124.98,
+      "end": 127.54,
+      "text": " caused by the pull of the moon and the sun,",
+      "tokens": [
+        50875,
+        4073,
+        416,
+        262,
+        2834,
+        286,
+        262,
+        8824,
+        290,
+        262,
+        4252,
+        11,
+        51035
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20394579102011287,
+      "compression_ratio": 1.5476190476190477,
+      "no_speech_prob": 0.005223224870860577,
+      "words": [
+        {
+          "word": " caused",
+          "start": 124.98,
+          "end": 125.24,
+          "probability": 0.9904548525810242
+        },
+        {
+          "word": " by",
+          "start": 125.24,
+          "end": 125.56,
+          "probability": 0.9984672665596008
+        },
+        {
+          "word": " the",
+          "start": 125.56,
+          "end": 125.74,
+          "probability": 0.9959021210670471
+        },
+        {
+          "word": " pull",
+          "start": 125.74,
+          "end": 125.98,
+          "probability": 0.9965206384658813
+        },
+        {
+          "word": " of",
+          "start": 125.98,
+          "end": 126.18,
+          "probability": 0.9970424771308899
+        },
+        {
+          "word": " the",
+          "start": 126.18,
+          "end": 126.36,
+          "probability": 0.9946468472480774
+        },
+        {
+          "word": " moon",
+          "start": 126.36,
+          "end": 126.62,
+          "probability": 0.8303389549255371
+        },
+        {
+          "word": " and",
+          "start": 126.62,
+          "end": 127.06,
+          "probability": 0.9954557418823242
+        },
+        {
+          "word": " the",
+          "start": 127.06,
+          "end": 127.26,
+          "probability": 0.9856970310211182
+        },
+        {
+          "word": " sun,",
+          "start": 127.26,
+          "end": 127.54,
+          "probability": 0.9423012733459473
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 11462,
+      "start": 128.12,
+      "end": 130.42,
+      "text": " and they are another source of energy.",
+      "tokens": [
+        51035,
+        290,
+        484,
+        389,
+        1194,
+        2723,
+        286,
+        2568,
+        13,
+        51157
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20394579102011287,
+      "compression_ratio": 1.5476190476190477,
+      "no_speech_prob": 0.005223224870860577,
+      "words": [
+        {
+          "word": " and",
+          "start": 128.12,
+          "end": 128.36,
+          "probability": 0.9966328740119934
+        },
+        {
+          "word": " they",
+          "start": 128.36,
+          "end": 128.64,
+          "probability": 0.9955949187278748
+        },
+        {
+          "word": " are",
+          "start": 128.64,
+          "end": 128.92,
+          "probability": 0.9958187937736511
+        },
+        {
+          "word": " another",
+          "start": 128.92,
+          "end": 129.4,
+          "probability": 0.9977685213088989
+        },
+        {
+          "word": " source",
+          "start": 129.4,
+          "end": 129.76,
+          "probability": 0.9975000023841858
+        },
+        {
+          "word": " of",
+          "start": 129.76,
+          "end": 130.0,
+          "probability": 0.9991210103034973
+        },
+        {
+          "word": " energy.",
+          "start": 130.0,
+          "end": 130.42,
+          "probability": 0.9990370273590088
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 11462,
+      "start": 132.04,
+      "end": 138.12,
+      "text": " We can make electricity from their movement by using power plants called barrages.",
+      "tokens": [
+        51231,
+        775,
+        460,
+        787,
+        8744,
+        422,
+        511,
+        3356,
+        416,
+        1262,
+        1176,
+        6134,
+        1444,
+        29069,
+        1095,
+        13,
+        51553
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20394579102011287,
+      "compression_ratio": 1.5476190476190477,
+      "no_speech_prob": 0.005223224870860577,
+      "words": [
+        {
+          "word": " We",
+          "start": 132.04,
+          "end": 132.28,
+          "probability": 0.9906614422798157
+        },
+        {
+          "word": " can",
+          "start": 132.28,
+          "end": 132.5,
+          "probability": 0.9983006119728088
+        },
+        {
+          "word": " make",
+          "start": 132.5,
+          "end": 132.76,
+          "probability": 0.9951251149177551
+        },
+        {
+          "word": " electricity",
+          "start": 132.76,
+          "end": 133.42,
+          "probability": 0.998525083065033
+        },
+        {
+          "word": " from",
+          "start": 133.42,
+          "end": 133.98,
+          "probability": 0.9965000152587891
+        },
+        {
+          "word": " their",
+          "start": 133.98,
+          "end": 134.24,
+          "probability": 0.9972503781318665
+        },
+        {
+          "word": " movement",
+          "start": 134.24,
+          "end": 134.8,
+          "probability": 0.998675525188446
+        },
+        {
+          "word": " by",
+          "start": 134.8,
+          "end": 135.32,
+          "probability": 0.9717122316360474
+        },
+        {
+          "word": " using",
+          "start": 135.32,
+          "end": 135.74,
+          "probability": 0.9992282390594482
+        },
+        {
+          "word": " power",
+          "start": 135.74,
+          "end": 136.18,
+          "probability": 0.9977774024009705
+        },
+        {
+          "word": " plants",
+          "start": 136.18,
+          "end": 136.66,
+          "probability": 0.9670904278755188
+        },
+        {
+          "word": " called",
+          "start": 136.66,
+          "end": 137.28,
+          "probability": 0.9336453080177307
+        },
+        {
+          "word": " barrages.",
+          "start": 137.28,
+          "end": 138.12,
+          "probability": 0.7406615167856216
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 13812,
+      "start": 139.3,
+      "end": 144.98,
+      "text": " Barages are like big walls built across rivers where they join the sea.",
+      "tokens": [
+        50413,
+        2409,
+        1095,
+        389,
+        588,
+        1263,
+        7714,
+        3170,
+        1973,
+        18180,
+        810,
+        484,
+        4654,
+        262,
+        5417,
+        13,
+        50713
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2877411113065832,
+      "compression_ratio": 1.5471698113207548,
+      "no_speech_prob": 0.02202361263334751,
+      "words": [
+        {
+          "word": " Barages",
+          "start": 139.3,
+          "end": 140.06,
+          "probability": 0.5381931811571121
+        },
+        {
+          "word": " are",
+          "start": 140.06,
+          "end": 140.64,
+          "probability": 0.9662166833877563
+        },
+        {
+          "word": " like",
+          "start": 140.64,
+          "end": 140.92,
+          "probability": 0.9916245341300964
+        },
+        {
+          "word": " big",
+          "start": 140.92,
+          "end": 141.32,
+          "probability": 0.9925561547279358
+        },
+        {
+          "word": " walls",
+          "start": 141.32,
+          "end": 141.84,
+          "probability": 0.9892537593841553
+        },
+        {
+          "word": " built",
+          "start": 141.84,
+          "end": 142.36,
+          "probability": 0.9429888129234314
+        },
+        {
+          "word": " across",
+          "start": 142.36,
+          "end": 142.82,
+          "probability": 0.9957970380783081
+        },
+        {
+          "word": " rivers",
+          "start": 142.82,
+          "end": 143.36,
+          "probability": 0.9913023710250854
+        },
+        {
+          "word": " where",
+          "start": 143.36,
+          "end": 143.88,
+          "probability": 0.9607201814651489
+        },
+        {
+          "word": " they",
+          "start": 143.88,
+          "end": 144.12,
+          "probability": 0.9967727065086365
+        },
+        {
+          "word": " join",
+          "start": 144.12,
+          "end": 144.42,
+          "probability": 0.9957892298698425
+        },
+        {
+          "word": " the",
+          "start": 144.42,
+          "end": 144.62,
+          "probability": 0.9956804513931274
+        },
+        {
+          "word": " sea.",
+          "start": 144.62,
+          "end": 144.98,
+          "probability": 0.9956684112548828
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 13812,
+      "start": 146.52,
+      "end": 149.46,
+      "text": " The barrage catches water at high tide,",
+      "tokens": [
+        50763,
+        383,
+        33633,
+        17591,
+        1660,
+        379,
+        1029,
+        20013,
+        11,
+        50945
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2877411113065832,
+      "compression_ratio": 1.5471698113207548,
+      "no_speech_prob": 0.02202361263334751,
+      "words": [
+        {
+          "word": " The",
+          "start": 146.52,
+          "end": 146.72,
+          "probability": 0.9832292199134827
+        },
+        {
+          "word": " barrage",
+          "start": 146.72,
+          "end": 147.26,
+          "probability": 0.9914251565933228
+        },
+        {
+          "word": " catches",
+          "start": 147.26,
+          "end": 147.84,
+          "probability": 0.9938173890113831
+        },
+        {
+          "word": " water",
+          "start": 147.84,
+          "end": 148.22,
+          "probability": 0.9971304535865784
+        },
+        {
+          "word": " at",
+          "start": 148.22,
+          "end": 148.7,
+          "probability": 0.9976277947425842
+        },
+        {
+          "word": " high",
+          "start": 148.7,
+          "end": 149.12,
+          "probability": 0.9762187600135803
+        },
+        {
+          "word": " tide,",
+          "start": 149.12,
+          "end": 149.46,
+          "probability": 0.9884229302406311
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 13812,
+      "start": 150.26,
+      "end": 155.24,
+      "text": " and then lets it out at low tides through turbines to make electricity.",
+      "tokens": [
+        50945,
+        290,
+        788,
+        8781,
+        340,
+        503,
+        379,
+        1877,
+        46128,
+        832,
+        35658,
+        284,
+        787,
+        8744,
+        13,
+        51245
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2877411113065832,
+      "compression_ratio": 1.5471698113207548,
+      "no_speech_prob": 0.02202361263334751,
+      "words": [
+        {
+          "word": " and",
+          "start": 150.26,
+          "end": 150.3,
+          "probability": 0.9542099833488464
+        },
+        {
+          "word": " then",
+          "start": 150.3,
+          "end": 150.5,
+          "probability": 0.9697559475898743
+        },
+        {
+          "word": " lets",
+          "start": 150.5,
+          "end": 150.76,
+          "probability": 0.946607768535614
+        },
+        {
+          "word": " it",
+          "start": 150.76,
+          "end": 151.0,
+          "probability": 0.9929773211479187
+        },
+        {
+          "word": " out",
+          "start": 151.0,
+          "end": 151.34,
+          "probability": 0.996841311454773
+        },
+        {
+          "word": " at",
+          "start": 151.34,
+          "end": 151.76,
+          "probability": 0.9930389523506165
+        },
+        {
+          "word": " low",
+          "start": 151.76,
+          "end": 152.14,
+          "probability": 0.993058443069458
+        },
+        {
+          "word": " tides",
+          "start": 152.14,
+          "end": 152.68,
+          "probability": 0.962573230266571
+        },
+        {
+          "word": " through",
+          "start": 152.68,
+          "end": 153.06,
+          "probability": 0.932896614074707
+        },
+        {
+          "word": " turbines",
+          "start": 153.06,
+          "end": 153.76,
+          "probability": 0.9946356415748596
+        },
+        {
+          "word": " to",
+          "start": 153.76,
+          "end": 154.26,
+          "probability": 0.9769152402877808
+        },
+        {
+          "word": " make",
+          "start": 154.26,
+          "end": 154.5,
+          "probability": 0.9987435936927795
+        },
+        {
+          "word": " electricity.",
+          "start": 154.5,
+          "end": 155.24,
+          "probability": 0.998786985874176
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 13812,
+      "start": 156.76,
+      "end": 161.98,
+      "text": " One of the benefits of using tides is that we know when they are going to happen,",
+      "tokens": [
+        51275,
+        1881,
+        286,
+        262,
+        4034,
+        286,
+        1262,
+        46128,
+        318,
+        326,
+        356,
+        760,
+        618,
+        484,
+        389,
+        1016,
+        284,
+        1645,
+        11,
+        51563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2877411113065832,
+      "compression_ratio": 1.5471698113207548,
+      "no_speech_prob": 0.02202361263334751,
+      "words": [
+        {
+          "word": " One",
+          "start": 156.76,
+          "end": 156.92,
+          "probability": 0.9896816611289978
+        },
+        {
+          "word": " of",
+          "start": 156.92,
+          "end": 157.06,
+          "probability": 0.9978770017623901
+        },
+        {
+          "word": " the",
+          "start": 157.06,
+          "end": 157.22,
+          "probability": 0.9986901879310608
+        },
+        {
+          "word": " benefits",
+          "start": 157.22,
+          "end": 157.68,
+          "probability": 0.9939858317375183
+        },
+        {
+          "word": " of",
+          "start": 157.68,
+          "end": 158.04,
+          "probability": 0.9955576062202454
+        },
+        {
+          "word": " using",
+          "start": 158.04,
+          "end": 158.44,
+          "probability": 0.9970510005950928
+        },
+        {
+          "word": " tides",
+          "start": 158.44,
+          "end": 158.94,
+          "probability": 0.9945529103279114
+        },
+        {
+          "word": " is",
+          "start": 158.94,
+          "end": 159.52,
+          "probability": 0.9627270102500916
+        },
+        {
+          "word": " that",
+          "start": 159.52,
+          "end": 159.74,
+          "probability": 0.9964182376861572
+        },
+        {
+          "word": " we",
+          "start": 159.74,
+          "end": 160.0,
+          "probability": 0.9961810111999512
+        },
+        {
+          "word": " know",
+          "start": 160.0,
+          "end": 160.32,
+          "probability": 0.9969615340232849
+        },
+        {
+          "word": " when",
+          "start": 160.32,
+          "end": 160.76,
+          "probability": 0.9927531480789185
+        },
+        {
+          "word": " they",
+          "start": 160.76,
+          "end": 161.02,
+          "probability": 0.996536374092102
+        },
+        {
+          "word": " are",
+          "start": 161.02,
+          "end": 161.16,
+          "probability": 0.970649003982544
+        },
+        {
+          "word": " going",
+          "start": 161.16,
+          "end": 161.36,
+          "probability": 0.9984217882156372
+        },
+        {
+          "word": " to",
+          "start": 161.36,
+          "end": 161.6,
+          "probability": 0.998528003692627
+        },
+        {
+          "word": " happen,",
+          "start": 161.6,
+          "end": 161.98,
+          "probability": 0.9986951947212219
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 13812,
+      "start": 162.46,
+      "end": 163.68,
+      "text": " which is twice a day.",
+      "tokens": [
+        51563,
+        543,
+        318,
+        5403,
+        257,
+        1110,
+        13,
+        51663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2877411113065832,
+      "compression_ratio": 1.5471698113207548,
+      "no_speech_prob": 0.02202361263334751,
+      "words": [
+        {
+          "word": " which",
+          "start": 162.46,
+          "end": 162.66,
+          "probability": 0.9972386360168457
+        },
+        {
+          "word": " is",
+          "start": 162.66,
+          "end": 162.9,
+          "probability": 0.9991554021835327
+        },
+        {
+          "word": " twice",
+          "start": 162.9,
+          "end": 163.2,
+          "probability": 0.9979731440544128
+        },
+        {
+          "word": " a",
+          "start": 163.2,
+          "end": 163.44,
+          "probability": 0.9977657794952393
+        },
+        {
+          "word": " day.",
+          "start": 163.44,
+          "end": 163.68,
+          "probability": 0.9996242523193359
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 13812,
+      "start": 164.78,
+      "end": 167.24,
+      "text": " Yet we can't predict how they will move,",
+      "tokens": [
+        51663,
+        6430,
+        356,
+        460,
+        470,
+        4331,
+        703,
+        484,
+        481,
+        1445,
+        11,
+        51813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2877411113065832,
+      "compression_ratio": 1.5471698113207548,
+      "no_speech_prob": 0.02202361263334751,
+      "words": [
+        {
+          "word": " Yet",
+          "start": 164.78,
+          "end": 165.02,
+          "probability": 0.9875768423080444
+        },
+        {
+          "word": " we",
+          "start": 165.02,
+          "end": 165.26,
+          "probability": 0.8547375202178955
+        },
+        {
+          "word": " can't",
+          "start": 165.26,
+          "end": 165.64,
+          "probability": 0.9868433177471161
+        },
+        {
+          "word": " predict",
+          "start": 165.64,
+          "end": 165.98,
+          "probability": 0.9991674423217773
+        },
+        {
+          "word": " how",
+          "start": 165.98,
+          "end": 166.4,
+          "probability": 0.9974218606948853
+        },
+        {
+          "word": " they",
+          "start": 166.4,
+          "end": 166.66,
+          "probability": 0.9957410097122192
+        },
+        {
+          "word": " will",
+          "start": 166.66,
+          "end": 166.84,
+          "probability": 0.9924992918968201
+        },
+        {
+          "word": " move,",
+          "start": 166.84,
+          "end": 167.24,
+          "probability": 0.9989408850669861
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 16724,
+      "start": 167.24,
+      "end": 175.04,
+      "text": " and barrages are only useful in places where there is a big difference between high and low tides.",
+      "tokens": [
+        50387,
+        290,
+        29069,
+        1095,
+        389,
+        691,
+        4465,
+        287,
+        4113,
+        810,
+        612,
+        318,
+        257,
+        1263,
+        3580,
+        1022,
+        1029,
+        290,
+        1877,
+        46128,
+        13,
+        50763
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25772168743076607,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.011519152671098709,
+      "words": [
+        {
+          "word": " and",
+          "start": 167.24,
+          "end": 168.02,
+          "probability": 0.3780871629714966
+        },
+        {
+          "word": " barrages",
+          "start": 168.02,
+          "end": 168.7,
+          "probability": 0.8091913759708405
+        },
+        {
+          "word": " are",
+          "start": 168.7,
+          "end": 169.14,
+          "probability": 0.9919354915618896
+        },
+        {
+          "word": " only",
+          "start": 169.14,
+          "end": 169.52,
+          "probability": 0.9823257327079773
+        },
+        {
+          "word": " useful",
+          "start": 169.52,
+          "end": 169.98,
+          "probability": 0.9967023730278015
+        },
+        {
+          "word": " in",
+          "start": 169.98,
+          "end": 170.32,
+          "probability": 0.9952195286750793
+        },
+        {
+          "word": " places",
+          "start": 170.32,
+          "end": 170.7,
+          "probability": 0.9940565824508667
+        },
+        {
+          "word": " where",
+          "start": 170.7,
+          "end": 171.24,
+          "probability": 0.9807277917861938
+        },
+        {
+          "word": " there",
+          "start": 171.24,
+          "end": 171.5,
+          "probability": 0.9947161078453064
+        },
+        {
+          "word": " is",
+          "start": 171.5,
+          "end": 171.68,
+          "probability": 0.9893403649330139
+        },
+        {
+          "word": " a",
+          "start": 171.68,
+          "end": 171.86,
+          "probability": 0.9917412996292114
+        },
+        {
+          "word": " big",
+          "start": 171.86,
+          "end": 172.14,
+          "probability": 0.9933712482452393
+        },
+        {
+          "word": " difference",
+          "start": 172.14,
+          "end": 172.62,
+          "probability": 0.9965749382972717
+        },
+        {
+          "word": " between",
+          "start": 172.62,
+          "end": 173.14,
+          "probability": 0.9968955516815186
+        },
+        {
+          "word": " high",
+          "start": 173.14,
+          "end": 173.64,
+          "probability": 0.9892271757125854
+        },
+        {
+          "word": " and",
+          "start": 173.64,
+          "end": 174.08,
+          "probability": 0.9855374693870544
+        },
+        {
+          "word": " low",
+          "start": 174.08,
+          "end": 174.42,
+          "probability": 0.9988371729850769
+        },
+        {
+          "word": " tides.",
+          "start": 174.42,
+          "end": 175.04,
+          "probability": 0.994843602180481
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 16724,
+      "start": 176.44,
+      "end": 179.04,
+      "text": " Very few places have this big difference,",
+      "tokens": [
+        50819,
+        9576,
+        1178,
+        4113,
+        423,
+        428,
+        1263,
+        3580,
+        11,
+        50977
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25772168743076607,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.011519152671098709,
+      "words": [
+        {
+          "word": " Very",
+          "start": 176.44,
+          "end": 176.76,
+          "probability": 0.9892160892486572
+        },
+        {
+          "word": " few",
+          "start": 176.76,
+          "end": 177.08,
+          "probability": 0.9990354776382446
+        },
+        {
+          "word": " places",
+          "start": 177.08,
+          "end": 177.54,
+          "probability": 0.9976062774658203
+        },
+        {
+          "word": " have",
+          "start": 177.54,
+          "end": 177.94,
+          "probability": 0.9968438148498535
+        },
+        {
+          "word": " this",
+          "start": 177.94,
+          "end": 178.24,
+          "probability": 0.9962947964668274
+        },
+        {
+          "word": " big",
+          "start": 178.24,
+          "end": 178.5,
+          "probability": 0.9933711290359497
+        },
+        {
+          "word": " difference,",
+          "start": 178.5,
+          "end": 179.04,
+          "probability": 0.9985712766647339
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 16724,
+      "start": 179.56,
+      "end": 182.96,
+      "text": " which means that energy production is not reliable.",
+      "tokens": [
+        50977,
+        543,
+        1724,
+        326,
+        2568,
+        3227,
+        318,
+        407,
+        9314,
+        13,
+        51163
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25772168743076607,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.011519152671098709,
+      "words": [
+        {
+          "word": " which",
+          "start": 179.56,
+          "end": 179.76,
+          "probability": 0.9968670010566711
+        },
+        {
+          "word": " means",
+          "start": 179.76,
+          "end": 180.04,
+          "probability": 0.9979331493377686
+        },
+        {
+          "word": " that",
+          "start": 180.04,
+          "end": 180.38,
+          "probability": 0.9853664636611938
+        },
+        {
+          "word": " energy",
+          "start": 180.38,
+          "end": 180.8,
+          "probability": 0.9981560111045837
+        },
+        {
+          "word": " production",
+          "start": 180.8,
+          "end": 181.32,
+          "probability": 0.997802197933197
+        },
+        {
+          "word": " is",
+          "start": 181.32,
+          "end": 181.8,
+          "probability": 0.9970051646232605
+        },
+        {
+          "word": " not",
+          "start": 181.8,
+          "end": 182.2,
+          "probability": 0.9847168922424316
+        },
+        {
+          "word": " reliable.",
+          "start": 182.2,
+          "end": 182.96,
+          "probability": 0.9971553087234497
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 16724,
+      "start": 184.92,
+      "end": 187.78,
+      "text": " Barages also cause environmental issues.",
+      "tokens": [
+        51235,
+        2409,
+        1095,
+        635,
+        2728,
+        6142,
+        2428,
+        13,
+        51399
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25772168743076607,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.011519152671098709,
+      "words": [
+        {
+          "word": " Barages",
+          "start": 184.92,
+          "end": 185.24,
+          "probability": 0.28016456961631775
+        },
+        {
+          "word": " also",
+          "start": 185.24,
+          "end": 185.8,
+          "probability": 0.9946500658988953
+        },
+        {
+          "word": " cause",
+          "start": 185.8,
+          "end": 186.42,
+          "probability": 0.9979038238525391
+        },
+        {
+          "word": " environmental",
+          "start": 186.42,
+          "end": 187.02,
+          "probability": 0.9946933388710022
+        },
+        {
+          "word": " issues.",
+          "start": 187.02,
+          "end": 187.78,
+          "probability": 0.9981347322463989
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 16724,
+      "start": 188.74,
+      "end": 192.04,
+      "text": " They can damage wildlife in the area, like birds.",
+      "tokens": [
+        51437,
+        1119,
+        460,
+        2465,
+        15599,
+        287,
+        262,
+        1989,
+        11,
+        588,
+        10087,
+        13,
+        51617
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25772168743076607,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.011519152671098709,
+      "words": [
+        {
+          "word": " They",
+          "start": 188.74,
+          "end": 189.0,
+          "probability": 0.9934271574020386
+        },
+        {
+          "word": " can",
+          "start": 189.0,
+          "end": 189.24,
+          "probability": 0.9976508021354675
+        },
+        {
+          "word": " damage",
+          "start": 189.24,
+          "end": 189.6,
+          "probability": 0.9973958730697632
+        },
+        {
+          "word": " wildlife",
+          "start": 189.6,
+          "end": 190.08,
+          "probability": 0.9944995641708374
+        },
+        {
+          "word": " in",
+          "start": 190.08,
+          "end": 190.38,
+          "probability": 0.9986752867698669
+        },
+        {
+          "word": " the",
+          "start": 190.38,
+          "end": 190.52,
+          "probability": 0.9966340661048889
+        },
+        {
+          "word": " area,",
+          "start": 190.52,
+          "end": 190.9,
+          "probability": 0.9986679553985596
+        },
+        {
+          "word": " like",
+          "start": 191.32,
+          "end": 191.52,
+          "probability": 0.9987603425979614
+        },
+        {
+          "word": " birds.",
+          "start": 191.52,
+          "end": 192.04,
+          "probability": 0.9990412592887878
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 19204,
+      "start": 193.04,
+      "end": 195.68,
+      "text": " They are also not very nice to look at,",
+      "tokens": [
+        50413,
+        1119,
+        389,
+        635,
+        407,
+        845,
+        3621,
+        284,
+        804,
+        379,
+        11,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22099507649739583,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.029026422649621964,
+      "words": [
+        {
+          "word": " They",
+          "start": 193.01999999999998,
+          "end": 193.38,
+          "probability": 0.6019320487976074
+        },
+        {
+          "word": " are",
+          "start": 193.38,
+          "end": 193.54,
+          "probability": 0.9898635745048523
+        },
+        {
+          "word": " also",
+          "start": 193.54,
+          "end": 193.94,
+          "probability": 0.9681665897369385
+        },
+        {
+          "word": " not",
+          "start": 193.94,
+          "end": 194.34,
+          "probability": 0.9865878224372864
+        },
+        {
+          "word": " very",
+          "start": 194.34,
+          "end": 194.68,
+          "probability": 0.996508777141571
+        },
+        {
+          "word": " nice",
+          "start": 194.68,
+          "end": 194.96,
+          "probability": 0.997345507144928
+        },
+        {
+          "word": " to",
+          "start": 194.96,
+          "end": 195.18,
+          "probability": 0.9986887574195862
+        },
+        {
+          "word": " look",
+          "start": 195.18,
+          "end": 195.38,
+          "probability": 0.9988484382629395
+        },
+        {
+          "word": " at,",
+          "start": 195.38,
+          "end": 195.68,
+          "probability": 0.995438277721405
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 19204,
+      "start": 196.08,
+      "end": 200.4,
+      "text": " and are not a benefit to people who live far from the ocean.",
+      "tokens": [
+        50563,
+        290,
+        389,
+        407,
+        257,
+        4414,
+        284,
+        661,
+        508,
+        2107,
+        1290,
+        422,
+        262,
+        9151,
+        13,
+        50795
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22099507649739583,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.029026422649621964,
+      "words": [
+        {
+          "word": " and",
+          "start": 196.08,
+          "end": 196.34,
+          "probability": 0.9877182245254517
+        },
+        {
+          "word": " are",
+          "start": 196.34,
+          "end": 196.58,
+          "probability": 0.9906867146492004
+        },
+        {
+          "word": " not",
+          "start": 196.58,
+          "end": 196.94,
+          "probability": 0.9859834313392639
+        },
+        {
+          "word": " a",
+          "start": 196.94,
+          "end": 197.22,
+          "probability": 0.9184796810150146
+        },
+        {
+          "word": " benefit",
+          "start": 197.22,
+          "end": 197.64,
+          "probability": 0.9979627132415771
+        },
+        {
+          "word": " to",
+          "start": 197.64,
+          "end": 198.04,
+          "probability": 0.9954735636711121
+        },
+        {
+          "word": " people",
+          "start": 198.04,
+          "end": 198.44,
+          "probability": 0.9887063503265381
+        },
+        {
+          "word": " who",
+          "start": 198.44,
+          "end": 198.82,
+          "probability": 0.991608202457428
+        },
+        {
+          "word": " live",
+          "start": 198.82,
+          "end": 199.06,
+          "probability": 0.9974005222320557
+        },
+        {
+          "word": " far",
+          "start": 199.06,
+          "end": 199.56,
+          "probability": 0.9967414736747742
+        },
+        {
+          "word": " from",
+          "start": 199.56,
+          "end": 199.86,
+          "probability": 0.9977974891662598
+        },
+        {
+          "word": " the",
+          "start": 199.86,
+          "end": 200.0,
+          "probability": 0.9990070462226868
+        },
+        {
+          "word": " ocean.",
+          "start": 200.0,
+          "end": 200.4,
+          "probability": 0.9845773577690125
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 19204,
+      "start": 202.28,
+      "end": 205.28,
+      "text": " To sum up, the ocean's mechanical energy,",
+      "tokens": [
+        50871,
+        1675,
+        2160,
+        510,
+        11,
+        262,
+        9151,
+        338,
+        12370,
+        2568,
+        11,
+        51039
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22099507649739583,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.029026422649621964,
+      "words": [
+        {
+          "word": " To",
+          "start": 202.28,
+          "end": 202.46,
+          "probability": 0.9846241474151611
+        },
+        {
+          "word": " sum",
+          "start": 202.46,
+          "end": 202.72,
+          "probability": 0.9986807703971863
+        },
+        {
+          "word": " up,",
+          "start": 202.72,
+          "end": 203.04,
+          "probability": 0.9920113682746887
+        },
+        {
+          "word": " the",
+          "start": 203.56,
+          "end": 203.68,
+          "probability": 0.9849889278411865
+        },
+        {
+          "word": " ocean's",
+          "start": 203.68,
+          "end": 204.26,
+          "probability": 0.8431257009506226
+        },
+        {
+          "word": " mechanical",
+          "start": 204.26,
+          "end": 204.68,
+          "probability": 0.9964727759361267
+        },
+        {
+          "word": " energy,",
+          "start": 204.68,
+          "end": 205.28,
+          "probability": 0.9989981055259705
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 19204,
+      "start": 205.7,
+      "end": 207.86,
+      "text": " which is how the water in the ocean moves,",
+      "tokens": [
+        51039,
+        543,
+        318,
+        703,
+        262,
+        1660,
+        287,
+        262,
+        9151,
+        6100,
+        11,
+        51175
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22099507649739583,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.029026422649621964,
+      "words": [
+        {
+          "word": " which",
+          "start": 205.7,
+          "end": 205.86,
+          "probability": 0.996302604675293
+        },
+        {
+          "word": " is",
+          "start": 205.86,
+          "end": 206.04,
+          "probability": 0.9986839890480042
+        },
+        {
+          "word": " how",
+          "start": 206.04,
+          "end": 206.26,
+          "probability": 0.9983287453651428
+        },
+        {
+          "word": " the",
+          "start": 206.26,
+          "end": 206.46,
+          "probability": 0.973491907119751
+        },
+        {
+          "word": " water",
+          "start": 206.46,
+          "end": 206.76,
+          "probability": 0.9985301494598389
+        },
+        {
+          "word": " in",
+          "start": 206.76,
+          "end": 206.98,
+          "probability": 0.9958255290985107
+        },
+        {
+          "word": " the",
+          "start": 206.98,
+          "end": 207.1,
+          "probability": 0.996915340423584
+        },
+        {
+          "word": " ocean",
+          "start": 207.1,
+          "end": 207.4,
+          "probability": 0.9973441958427429
+        },
+        {
+          "word": " moves,",
+          "start": 207.4,
+          "end": 207.86,
+          "probability": 0.9958783388137817
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "seek": 19204,
+      "start": 208.44,
+      "end": 210.28,
+      "text": " can provide a lot of power.",
+      "tokens": [
+        51175,
+        460,
+        2148,
+        257,
+        1256,
+        286,
+        1176,
+        13,
+        51285
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22099507649739583,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.029026422649621964,
+      "words": [
+        {
+          "word": " can",
+          "start": 208.44,
+          "end": 208.64,
+          "probability": 0.9941152334213257
+        },
+        {
+          "word": " provide",
+          "start": 208.64,
+          "end": 209.1,
+          "probability": 0.9979506134986877
+        },
+        {
+          "word": " a",
+          "start": 209.1,
+          "end": 209.48,
+          "probability": 0.9979395270347595
+        },
+        {
+          "word": " lot",
+          "start": 209.48,
+          "end": 209.66,
+          "probability": 0.9993680119514465
+        },
+        {
+          "word": " of",
+          "start": 209.66,
+          "end": 209.9,
+          "probability": 0.9989132881164551
+        },
+        {
+          "word": " power.",
+          "start": 209.9,
+          "end": 210.28,
+          "probability": 0.9993738532066345
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "seek": 19204,
+      "start": 211.4,
+      "end": 215.92,
+      "text": " In fact, scientists believe that the world's waves and tides",
+      "tokens": [
+        51329,
+        554,
+        1109,
+        11,
+        5519,
+        1975,
+        326,
+        262,
+        995,
+        338,
+        9813,
+        290,
+        46128,
+        51561
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22099507649739583,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.029026422649621964,
+      "words": [
+        {
+          "word": " In",
+          "start": 211.4,
+          "end": 211.64,
+          "probability": 0.9963388442993164
+        },
+        {
+          "word": " fact,",
+          "start": 211.64,
+          "end": 212.0,
+          "probability": 0.9995331764221191
+        },
+        {
+          "word": " scientists",
+          "start": 212.58,
+          "end": 213.0,
+          "probability": 0.9856436252593994
+        },
+        {
+          "word": " believe",
+          "start": 213.0,
+          "end": 213.52,
+          "probability": 0.9971659779548645
+        },
+        {
+          "word": " that",
+          "start": 213.52,
+          "end": 213.88,
+          "probability": 0.9923945665359497
+        },
+        {
+          "word": " the",
+          "start": 213.88,
+          "end": 214.06,
+          "probability": 0.9957692623138428
+        },
+        {
+          "word": " world's",
+          "start": 214.06,
+          "end": 214.6,
+          "probability": 0.9895259439945221
+        },
+        {
+          "word": " waves",
+          "start": 214.6,
+          "end": 214.96,
+          "probability": 0.9963079690933228
+        },
+        {
+          "word": " and",
+          "start": 214.96,
+          "end": 215.42,
+          "probability": 0.9961062073707581
+        },
+        {
+          "word": " tides",
+          "start": 215.42,
+          "end": 215.92,
+          "probability": 0.9994992017745972
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "seek": 19204,
+      "start": 215.92,
+      "end": 219.3,
+      "text": " can make twice the amount of energy we produce now.",
+      "tokens": [
+        51561,
+        460,
+        787,
+        5403,
+        262,
+        2033,
+        286,
+        2568,
+        356,
+        4439,
+        783,
+        13,
+        51735
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22099507649739583,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.029026422649621964,
+      "words": [
+        {
+          "word": " can",
+          "start": 215.92,
+          "end": 216.24,
+          "probability": 0.9972500205039978
+        },
+        {
+          "word": " make",
+          "start": 216.24,
+          "end": 216.56,
+          "probability": 0.9980993866920471
+        },
+        {
+          "word": " twice",
+          "start": 216.56,
+          "end": 216.94,
+          "probability": 0.9979575872421265
+        },
+        {
+          "word": " the",
+          "start": 216.94,
+          "end": 217.26,
+          "probability": 0.9987271428108215
+        },
+        {
+          "word": " amount",
+          "start": 217.26,
+          "end": 217.46,
+          "probability": 0.9937213659286499
+        },
+        {
+          "word": " of",
+          "start": 217.46,
+          "end": 217.68,
+          "probability": 0.9989475607872009
+        },
+        {
+          "word": " energy",
+          "start": 217.68,
+          "end": 218.04,
+          "probability": 0.9977127313613892
+        },
+        {
+          "word": " we",
+          "start": 218.04,
+          "end": 218.4,
+          "probability": 0.9933289289474487
+        },
+        {
+          "word": " produce",
+          "start": 218.4,
+          "end": 218.8,
+          "probability": 0.9987816214561462
+        },
+        {
+          "word": " now.",
+          "start": 218.8,
+          "end": 219.3,
+          "probability": 0.994084894657135
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "seek": 21930,
+      "start": 220.3,
+      "end": 226.3,
+      "text": " However, using the ocean's mechanical energy also has a lot of disadvantages.",
+      "tokens": [
+        50413,
+        2102,
+        11,
+        1262,
+        262,
+        9151,
+        338,
+        12370,
+        2568,
+        635,
+        468,
+        257,
+        1256,
+        286,
+        38457,
+        13,
+        50741
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28630616324288505,
+      "compression_ratio": 1.2704918032786885,
+      "no_speech_prob": 0.01963990181684494,
+      "words": [
+        {
+          "word": " However,",
+          "start": 220.3,
+          "end": 220.82,
+          "probability": 0.8474711179733276
+        },
+        {
+          "word": " using",
+          "start": 221.42,
+          "end": 221.86,
+          "probability": 0.9967232346534729
+        },
+        {
+          "word": " the",
+          "start": 221.86,
+          "end": 222.22,
+          "probability": 0.9982611536979675
+        },
+        {
+          "word": " ocean's",
+          "start": 222.22,
+          "end": 222.78,
+          "probability": 0.8371607661247253
+        },
+        {
+          "word": " mechanical",
+          "start": 222.78,
+          "end": 223.16,
+          "probability": 0.9976546764373779
+        },
+        {
+          "word": " energy",
+          "start": 223.16,
+          "end": 223.88,
+          "probability": 0.9981960654258728
+        },
+        {
+          "word": " also",
+          "start": 223.88,
+          "end": 224.46,
+          "probability": 0.9786093235015869
+        },
+        {
+          "word": " has",
+          "start": 224.46,
+          "end": 224.98,
+          "probability": 0.9959108829498291
+        },
+        {
+          "word": " a",
+          "start": 224.98,
+          "end": 225.12,
+          "probability": 0.9925844073295593
+        },
+        {
+          "word": " lot",
+          "start": 225.12,
+          "end": 225.36,
+          "probability": 0.9990391731262207
+        },
+        {
+          "word": " of",
+          "start": 225.36,
+          "end": 225.58,
+          "probability": 0.9970807433128357
+        },
+        {
+          "word": " disadvantages.",
+          "start": 225.58,
+          "end": 226.3,
+          "probability": 0.9969664216041565
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "seek": 21930,
+      "start": 227.48,
+      "end": 233.4,
+      "text": " It is expensive, not very efficient, and it can cause environmental problems.",
+      "tokens": [
+        50771,
+        632,
+        318,
+        5789,
+        11,
+        407,
+        845,
+        6942,
+        11,
+        290,
+        340,
+        460,
+        2728,
+        6142,
+        2761,
+        13,
+        51085
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28630616324288505,
+      "compression_ratio": 1.2704918032786885,
+      "no_speech_prob": 0.01963990181684494,
+      "words": [
+        {
+          "word": " It",
+          "start": 227.48,
+          "end": 227.76,
+          "probability": 0.9938104748725891
+        },
+        {
+          "word": " is",
+          "start": 227.76,
+          "end": 227.92,
+          "probability": 0.9829815030097961
+        },
+        {
+          "word": " expensive,",
+          "start": 227.92,
+          "end": 228.52,
+          "probability": 0.9983376264572144
+        },
+        {
+          "word": " not",
+          "start": 229.2,
+          "end": 229.46,
+          "probability": 0.9968793392181396
+        },
+        {
+          "word": " very",
+          "start": 229.46,
+          "end": 229.78,
+          "probability": 0.9978665709495544
+        },
+        {
+          "word": " efficient,",
+          "start": 229.78,
+          "end": 230.24,
+          "probability": 0.9975783228874207
+        },
+        {
+          "word": " and",
+          "start": 230.88,
+          "end": 231.24,
+          "probability": 0.9909549355506897
+        },
+        {
+          "word": " it",
+          "start": 231.24,
+          "end": 231.5,
+          "probability": 0.9519472718238831
+        },
+        {
+          "word": " can",
+          "start": 231.5,
+          "end": 231.7,
+          "probability": 0.9981709718704224
+        },
+        {
+          "word": " cause",
+          "start": 231.7,
+          "end": 232.06,
+          "probability": 0.9986733198165894
+        },
+        {
+          "word": " environmental",
+          "start": 232.06,
+          "end": 232.7,
+          "probability": 0.9977511763572693
+        },
+        {
+          "word": " problems.",
+          "start": 232.7,
+          "end": 233.4,
+          "probability": 0.9983491897583008
+        }
+      ]
+    }
+  ]
+}

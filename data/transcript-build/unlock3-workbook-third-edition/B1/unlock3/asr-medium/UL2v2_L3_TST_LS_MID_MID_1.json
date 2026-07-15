@@ -1,0 +1,4480 @@
+{
+  "model": "small.en",
+  "language": "en",
+  "text": "Midcourse test track one Hi everyone My presentation today is about two alternative and quite strange food festivals that take place around the world But not in the way you might think I'm interested in these types of festivals because they are a strange way to celebrate food and are very popular Have you ever heard of the night of the radishes? It's a festival that takes place in my hometown Oaxaca in southern Mexico and it is over a century old for the festival we decorate radishes a vegetable that's red on the outside and white on the inside But we don't eat them The festival takes place on the 23rd of December and seems to get more and more popular every year So how did it begin? Well people working in markets wanted to attract shoppers to the town square So they cut radishes into the shape of people or animals They were very popular and in 1897 they decided to make it a festival and that tradition lives on to this day The radishes are larger than normal and they are picked around the 18th of December Artists only have a few days to get their radishes ready and the person who has the best radish wins a 12,000 peso prize The most amazing thing about this event is how popular it is People wait hours just to see the radishes The second festival I want to talk about is called La Tomatina This takes place in Spain in this small town of Búñol about 9,000 people live in the town but during La Tomatina thousands of tourists visit the region just to be part of the occasion So what is it? Well, it's a huge food fight with tomatoes people believe La Tomatina started around 1945 when a large public food fight took place A celebration was taking place in the village with people dressed in giant heads Some young people made the big head of someone fall off and he got very angry He tried to run after the young people but fell into a market stall selling tomatoes So the man started throwing tomatoes at the young people Then more people started to join in and he turned into a huge tomato fight The people of Búñol enjoyed it so much that they did it again the next year It became a big festival in 1952 What does the festival consist of? On the day big lorries filled with tomatoes arrive in the main square of the town How much tomato do you think they use for the fight? 120 thousand kilos The fight starts at 11 a.m. and it ends when someone fires a large gun called a cannon These are just two of the many strange food festivals around the world They are strange because people don't eat the food at these festivals They use it to make things or throw it at each other But these festivals are enormous fun for all generations and are a great alternative for people looking for something different",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.44,
+      "text": " Midcourse test track one",
+      "tokens": [
+        50363,
+        7215,
+        17319,
+        1332,
+        2610,
+        530,
+        50485
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24675912568063446,
+      "compression_ratio": 1.5549738219895288,
+      "no_speech_prob": 0.07870557904243469,
+      "words": [
+        {
+          "word": " Midcourse",
+          "start": 0.0,
+          "end": 0.88,
+          "probability": 0.6757034659385681
+        },
+        {
+          "word": " test",
+          "start": 0.88,
+          "end": 1.4,
+          "probability": 0.6062390804290771
+        },
+        {
+          "word": " track",
+          "start": 1.4,
+          "end": 2.14,
+          "probability": 0.4846089482307434
+        },
+        {
+          "word": " one",
+          "start": 2.14,
+          "end": 2.6200000000000006,
+          "probability": 0.6014783978462219
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.119999999999999,
+      "end": 5.64,
+      "text": " Hi everyone",
+      "tokens": [
+        50585,
+        15902,
+        2506,
+        50675
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24675912568063446,
+      "compression_ratio": 1.5549738219895288,
+      "no_speech_prob": 0.07870557904243469,
+      "words": [
+        {
+          "word": " Hi",
+          "start": 4.119999999999999,
+          "end": 5.08,
+          "probability": 0.3145763576030731
+        },
+        {
+          "word": " everyone",
+          "start": 5.08,
+          "end": 5.64,
+          "probability": 0.7557497620582581
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.24,
+      "end": 15.3,
+      "text": " My presentation today is about two alternative and quite strange food festivals that take place around the world",
+      "tokens": [
+        50675,
+        2011,
+        10470,
+        1909,
+        318,
+        546,
+        734,
+        5559,
+        290,
+        2407,
+        6283,
+        2057,
+        25575,
+        326,
+        1011,
+        1295,
+        1088,
+        262,
+        995,
+        51115
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24675912568063446,
+      "compression_ratio": 1.5549738219895288,
+      "no_speech_prob": 0.07870557904243469,
+      "words": [
+        {
+          "word": " My",
+          "start": 6.24,
+          "end": 6.82,
+          "probability": 0.28994593024253845
+        },
+        {
+          "word": " presentation",
+          "start": 6.82,
+          "end": 7.46,
+          "probability": 0.9869261980056763
+        },
+        {
+          "word": " today",
+          "start": 7.46,
+          "end": 8.1,
+          "probability": 0.9944762587547302
+        },
+        {
+          "word": " is",
+          "start": 8.1,
+          "end": 8.48,
+          "probability": 0.9900563955307007
+        },
+        {
+          "word": " about",
+          "start": 8.48,
+          "end": 8.82,
+          "probability": 0.9993384480476379
+        },
+        {
+          "word": " two",
+          "start": 8.82,
+          "end": 9.34,
+          "probability": 0.9574887752532959
+        },
+        {
+          "word": " alternative",
+          "start": 9.34,
+          "end": 10.02,
+          "probability": 0.9182654023170471
+        },
+        {
+          "word": " and",
+          "start": 10.02,
+          "end": 10.66,
+          "probability": 0.9795160889625549
+        },
+        {
+          "word": " quite",
+          "start": 10.66,
+          "end": 11.04,
+          "probability": 0.9958515167236328
+        },
+        {
+          "word": " strange",
+          "start": 11.04,
+          "end": 11.72,
+          "probability": 0.9953731894493103
+        },
+        {
+          "word": " food",
+          "start": 11.72,
+          "end": 12.18,
+          "probability": 0.9752095341682434
+        },
+        {
+          "word": " festivals",
+          "start": 12.18,
+          "end": 12.74,
+          "probability": 0.9777400493621826
+        },
+        {
+          "word": " that",
+          "start": 12.74,
+          "end": 13.28,
+          "probability": 0.9698856472969055
+        },
+        {
+          "word": " take",
+          "start": 13.28,
+          "end": 13.6,
+          "probability": 0.9888699054718018
+        },
+        {
+          "word": " place",
+          "start": 13.6,
+          "end": 14.04,
+          "probability": 0.998833954334259
+        },
+        {
+          "word": " around",
+          "start": 14.04,
+          "end": 14.56,
+          "probability": 0.9972994923591614
+        },
+        {
+          "word": " the",
+          "start": 14.56,
+          "end": 14.84,
+          "probability": 0.9984005093574524
+        },
+        {
+          "word": " world",
+          "start": 14.84,
+          "end": 15.3,
+          "probability": 0.9963377714157104
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 15.3,
+      "end": 18.42,
+      "text": " But not in the way you might think",
+      "tokens": [
+        51151,
+        887,
+        407,
+        287,
+        262,
+        835,
+        345,
+        1244,
+        892,
+        51273
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24675912568063446,
+      "compression_ratio": 1.5549738219895288,
+      "no_speech_prob": 0.07870557904243469,
+      "words": [
+        {
+          "word": " But",
+          "start": 15.3,
+          "end": 16.34,
+          "probability": 0.5845165252685547
+        },
+        {
+          "word": " not",
+          "start": 16.34,
+          "end": 16.76,
+          "probability": 0.9906424880027771
+        },
+        {
+          "word": " in",
+          "start": 16.76,
+          "end": 17.0,
+          "probability": 0.997534990310669
+        },
+        {
+          "word": " the",
+          "start": 17.0,
+          "end": 17.16,
+          "probability": 0.7952749729156494
+        },
+        {
+          "word": " way",
+          "start": 17.16,
+          "end": 17.36,
+          "probability": 0.9994263648986816
+        },
+        {
+          "word": " you",
+          "start": 17.36,
+          "end": 17.58,
+          "probability": 0.9131251573562622
+        },
+        {
+          "word": " might",
+          "start": 17.58,
+          "end": 17.88,
+          "probability": 0.9987077713012695
+        },
+        {
+          "word": " think",
+          "start": 17.88,
+          "end": 18.42,
+          "probability": 0.9990873336791992
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 19.32,
+      "end": 27.68,
+      "text": " I'm interested in these types of festivals because they are a strange way to celebrate food and are very popular",
+      "tokens": [
+        51329,
+        314,
+        1101,
+        4609,
+        287,
+        777,
+        3858,
+        286,
+        25575,
+        780,
+        484,
+        389,
+        257,
+        6283,
+        835,
+        284,
+        10648,
+        2057,
+        290,
+        389,
+        845,
+        2968,
+        51729
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24675912568063446,
+      "compression_ratio": 1.5549738219895288,
+      "no_speech_prob": 0.07870557904243469,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 19.32,
+          "end": 20.08,
+          "probability": 0.9726749360561371
+        },
+        {
+          "word": " interested",
+          "start": 20.08,
+          "end": 20.52,
+          "probability": 0.9819974303245544
+        },
+        {
+          "word": " in",
+          "start": 20.52,
+          "end": 21.02,
+          "probability": 0.9987702965736389
+        },
+        {
+          "word": " these",
+          "start": 21.02,
+          "end": 21.3,
+          "probability": 0.9988458156585693
+        },
+        {
+          "word": " types",
+          "start": 21.3,
+          "end": 21.66,
+          "probability": 0.9985539317131042
+        },
+        {
+          "word": " of",
+          "start": 21.66,
+          "end": 21.92,
+          "probability": 0.9998013377189636
+        },
+        {
+          "word": " festivals",
+          "start": 21.92,
+          "end": 22.44,
+          "probability": 0.9941017031669617
+        },
+        {
+          "word": " because",
+          "start": 22.44,
+          "end": 23.18,
+          "probability": 0.9409424066543579
+        },
+        {
+          "word": " they",
+          "start": 23.18,
+          "end": 23.42,
+          "probability": 0.9981058835983276
+        },
+        {
+          "word": " are",
+          "start": 23.42,
+          "end": 23.62,
+          "probability": 0.9993934631347656
+        },
+        {
+          "word": " a",
+          "start": 23.62,
+          "end": 23.78,
+          "probability": 0.998375654220581
+        },
+        {
+          "word": " strange",
+          "start": 23.78,
+          "end": 24.18,
+          "probability": 0.9996623992919922
+        },
+        {
+          "word": " way",
+          "start": 24.18,
+          "end": 24.54,
+          "probability": 0.9989736080169678
+        },
+        {
+          "word": " to",
+          "start": 24.54,
+          "end": 24.8,
+          "probability": 0.9988406300544739
+        },
+        {
+          "word": " celebrate",
+          "start": 24.8,
+          "end": 25.3,
+          "probability": 0.9502359628677368
+        },
+        {
+          "word": " food",
+          "start": 25.3,
+          "end": 25.8,
+          "probability": 0.9981574416160583
+        },
+        {
+          "word": " and",
+          "start": 25.8,
+          "end": 26.4,
+          "probability": 0.9637964963912964
+        },
+        {
+          "word": " are",
+          "start": 26.4,
+          "end": 26.6,
+          "probability": 0.9870666861534119
+        },
+        {
+          "word": " very",
+          "start": 26.6,
+          "end": 27.0,
+          "probability": 0.9992365837097168
+        },
+        {
+          "word": " popular",
+          "start": 27.0,
+          "end": 27.68,
+          "probability": 0.9992819428443909
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2768,
+      "start": 28.68,
+      "end": 32.3,
+      "text": " Have you ever heard of the night of the radishes?",
+      "tokens": [
+        50413,
+        8192,
+        345,
+        1683,
+        2982,
+        286,
+        262,
+        1755,
+        286,
+        262,
+        2511,
+        5614,
+        30,
+        50597
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23245495244076378,
+      "compression_ratio": 1.5393258426966292,
+      "no_speech_prob": 0.07659848779439926,
+      "words": [
+        {
+          "word": " Have",
+          "start": 28.68,
+          "end": 29.22,
+          "probability": 0.45724451541900635
+        },
+        {
+          "word": " you",
+          "start": 29.22,
+          "end": 29.48,
+          "probability": 0.9934671521186829
+        },
+        {
+          "word": " ever",
+          "start": 29.48,
+          "end": 29.76,
+          "probability": 0.9822965264320374
+        },
+        {
+          "word": " heard",
+          "start": 29.76,
+          "end": 30.12,
+          "probability": 0.994853675365448
+        },
+        {
+          "word": " of",
+          "start": 30.12,
+          "end": 30.66,
+          "probability": 0.975315511226654
+        },
+        {
+          "word": " the",
+          "start": 30.66,
+          "end": 30.82,
+          "probability": 0.8766149282455444
+        },
+        {
+          "word": " night",
+          "start": 30.82,
+          "end": 31.18,
+          "probability": 0.2360214740037918
+        },
+        {
+          "word": " of",
+          "start": 31.18,
+          "end": 31.58,
+          "probability": 0.9913057684898376
+        },
+        {
+          "word": " the",
+          "start": 31.58,
+          "end": 31.86,
+          "probability": 0.9485498666763306
+        },
+        {
+          "word": " radishes?",
+          "start": 31.86,
+          "end": 32.3,
+          "probability": 0.9741432964801788
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2768,
+      "start": 34.06,
+      "end": 37.2,
+      "text": " It's a festival that takes place in my hometown",
+      "tokens": [
+        50669,
+        632,
+        338,
+        257,
+        10876,
+        326,
+        2753,
+        1295,
+        287,
+        616,
+        20994,
+        50827
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23245495244076378,
+      "compression_ratio": 1.5393258426966292,
+      "no_speech_prob": 0.07659848779439926,
+      "words": [
+        {
+          "word": " It's",
+          "start": 34.06,
+          "end": 34.46,
+          "probability": 0.9214853346347809
+        },
+        {
+          "word": " a",
+          "start": 34.46,
+          "end": 34.62,
+          "probability": 0.9938515424728394
+        },
+        {
+          "word": " festival",
+          "start": 34.62,
+          "end": 35.12,
+          "probability": 0.9943146109580994
+        },
+        {
+          "word": " that",
+          "start": 35.12,
+          "end": 35.48,
+          "probability": 0.9943232536315918
+        },
+        {
+          "word": " takes",
+          "start": 35.48,
+          "end": 35.78,
+          "probability": 0.993089497089386
+        },
+        {
+          "word": " place",
+          "start": 35.78,
+          "end": 36.12,
+          "probability": 0.9967137575149536
+        },
+        {
+          "word": " in",
+          "start": 36.12,
+          "end": 36.4,
+          "probability": 0.994958221912384
+        },
+        {
+          "word": " my",
+          "start": 36.4,
+          "end": 36.66,
+          "probability": 0.9979918003082275
+        },
+        {
+          "word": " hometown",
+          "start": 36.66,
+          "end": 37.2,
+          "probability": 0.9129130244255066
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2768,
+      "start": 37.2,
+      "end": 42.76,
+      "text": " Oaxaca in southern Mexico and it is over a century old",
+      "tokens": [
+        50859,
+        440,
+        897,
+        22260,
+        287,
+        8372,
+        5828,
+        290,
+        340,
+        318,
+        625,
+        257,
+        4289,
+        1468,
+        51103
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23245495244076378,
+      "compression_ratio": 1.5393258426966292,
+      "no_speech_prob": 0.07659848779439926,
+      "words": [
+        {
+          "word": " Oaxaca",
+          "start": 37.2,
+          "end": 38.04,
+          "probability": 0.8027779360612234
+        },
+        {
+          "word": " in",
+          "start": 38.04,
+          "end": 38.72,
+          "probability": 0.8260722756385803
+        },
+        {
+          "word": " southern",
+          "start": 38.72,
+          "end": 39.14,
+          "probability": 0.8552085161209106
+        },
+        {
+          "word": " Mexico",
+          "start": 39.14,
+          "end": 39.7,
+          "probability": 0.9845800399780273
+        },
+        {
+          "word": " and",
+          "start": 39.7,
+          "end": 40.74,
+          "probability": 0.7064734697341919
+        },
+        {
+          "word": " it",
+          "start": 40.74,
+          "end": 40.94,
+          "probability": 0.9651823043823242
+        },
+        {
+          "word": " is",
+          "start": 40.94,
+          "end": 41.12,
+          "probability": 0.9701641798019409
+        },
+        {
+          "word": " over",
+          "start": 41.12,
+          "end": 41.42,
+          "probability": 0.9954728484153748
+        },
+        {
+          "word": " a",
+          "start": 41.42,
+          "end": 41.74,
+          "probability": 0.9904404878616333
+        },
+        {
+          "word": " century",
+          "start": 41.74,
+          "end": 42.06,
+          "probability": 0.9921590089797974
+        },
+        {
+          "word": " old",
+          "start": 42.06,
+          "end": 42.76,
+          "probability": 0.9957483410835266
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2768,
+      "start": 43.72,
+      "end": 47.2,
+      "text": " for the festival we decorate radishes a",
+      "tokens": [
+        51165,
+        329,
+        262,
+        10876,
+        356,
+        11705,
+        378,
+        2511,
+        5614,
+        257,
+        51339
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23245495244076378,
+      "compression_ratio": 1.5393258426966292,
+      "no_speech_prob": 0.07659848779439926,
+      "words": [
+        {
+          "word": " for",
+          "start": 43.72,
+          "end": 44.22,
+          "probability": 0.01481780968606472
+        },
+        {
+          "word": " the",
+          "start": 44.22,
+          "end": 44.44,
+          "probability": 0.9818907380104065
+        },
+        {
+          "word": " festival",
+          "start": 44.44,
+          "end": 45.02,
+          "probability": 0.9809190630912781
+        },
+        {
+          "word": " we",
+          "start": 45.02,
+          "end": 45.6,
+          "probability": 0.7554891109466553
+        },
+        {
+          "word": " decorate",
+          "start": 45.6,
+          "end": 46.3,
+          "probability": 0.9945584833621979
+        },
+        {
+          "word": " radishes",
+          "start": 46.3,
+          "end": 46.98,
+          "probability": 0.962165892124176
+        },
+        {
+          "word": " a",
+          "start": 46.98,
+          "end": 47.379999999999995,
+          "probability": 0.6970111727714539
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2768,
+      "start": 47.78,
+      "end": 51.9,
+      "text": " vegetable that's red on the outside and white on the inside",
+      "tokens": [
+        51371,
+        20236,
+        326,
+        338,
+        2266,
+        319,
+        262,
+        2354,
+        290,
+        2330,
+        319,
+        262,
+        2641,
+        51567
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23245495244076378,
+      "compression_ratio": 1.5393258426966292,
+      "no_speech_prob": 0.07659848779439926,
+      "words": [
+        {
+          "word": " vegetable",
+          "start": 47.78,
+          "end": 48.26,
+          "probability": 0.9039866924285889
+        },
+        {
+          "word": " that's",
+          "start": 48.26,
+          "end": 48.74,
+          "probability": 0.9323614835739136
+        },
+        {
+          "word": " red",
+          "start": 48.74,
+          "end": 48.96,
+          "probability": 0.8873640298843384
+        },
+        {
+          "word": " on",
+          "start": 48.96,
+          "end": 49.18,
+          "probability": 0.9965680837631226
+        },
+        {
+          "word": " the",
+          "start": 49.18,
+          "end": 49.36,
+          "probability": 0.9985902905464172
+        },
+        {
+          "word": " outside",
+          "start": 49.36,
+          "end": 49.88,
+          "probability": 0.9984630346298218
+        },
+        {
+          "word": " and",
+          "start": 49.88,
+          "end": 50.54,
+          "probability": 0.9814054369926453
+        },
+        {
+          "word": " white",
+          "start": 50.54,
+          "end": 50.92,
+          "probability": 0.9645044803619385
+        },
+        {
+          "word": " on",
+          "start": 50.92,
+          "end": 51.2,
+          "probability": 0.9954067468643188
+        },
+        {
+          "word": " the",
+          "start": 51.2,
+          "end": 51.38,
+          "probability": 0.997676432132721
+        },
+        {
+          "word": " inside",
+          "start": 51.38,
+          "end": 51.9,
+          "probability": 0.9956262111663818
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2768,
+      "start": 51.9,
+      "end": 54.62,
+      "text": " But we don't eat them",
+      "tokens": [
+        51595,
+        887,
+        356,
+        836,
+        470,
+        4483,
+        606,
+        51695
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23245495244076378,
+      "compression_ratio": 1.5393258426966292,
+      "no_speech_prob": 0.07659848779439926,
+      "words": [
+        {
+          "word": " But",
+          "start": 51.9,
+          "end": 52.88,
+          "probability": 0.14745715260505676
+        },
+        {
+          "word": " we",
+          "start": 52.88,
+          "end": 53.18,
+          "probability": 0.9959623217582703
+        },
+        {
+          "word": " don't",
+          "start": 53.18,
+          "end": 53.74,
+          "probability": 0.9992787539958954
+        },
+        {
+          "word": " eat",
+          "start": 53.74,
+          "end": 54.02,
+          "probability": 0.9975320100784302
+        },
+        {
+          "word": " them",
+          "start": 54.02,
+          "end": 54.62,
+          "probability": 0.9981772899627686
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5462,
+      "start": 55.339999999999996,
+      "end": 63.24,
+      "text": " The festival takes place on the 23rd of December and seems to get more and more popular every year",
+      "tokens": [
+        50399,
+        383,
+        10876,
+        2753,
+        1295,
+        319,
+        262,
+        2242,
+        4372,
+        286,
+        3426,
+        290,
+        2331,
+        284,
+        651,
+        517,
+        290,
+        517,
+        2968,
+        790,
+        614,
+        50793
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18182891348133917,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.0029326595831662416,
+      "words": [
+        {
+          "word": " The",
+          "start": 55.339999999999996,
+          "end": 55.88,
+          "probability": 0.9096787571907043
+        },
+        {
+          "word": " festival",
+          "start": 55.88,
+          "end": 56.4,
+          "probability": 0.9648346304893494
+        },
+        {
+          "word": " takes",
+          "start": 56.4,
+          "end": 56.86,
+          "probability": 0.9945321083068848
+        },
+        {
+          "word": " place",
+          "start": 56.86,
+          "end": 57.22,
+          "probability": 0.9962283372879028
+        },
+        {
+          "word": " on",
+          "start": 57.22,
+          "end": 57.52,
+          "probability": 0.9960328936576843
+        },
+        {
+          "word": " the",
+          "start": 57.52,
+          "end": 57.66,
+          "probability": 0.82659912109375
+        },
+        {
+          "word": " 23rd",
+          "start": 57.66,
+          "end": 58.5,
+          "probability": 0.9744154810905457
+        },
+        {
+          "word": " of",
+          "start": 58.5,
+          "end": 58.7,
+          "probability": 0.8977634310722351
+        },
+        {
+          "word": " December",
+          "start": 58.7,
+          "end": 59.12,
+          "probability": 0.975604236125946
+        },
+        {
+          "word": " and",
+          "start": 59.12,
+          "end": 59.76,
+          "probability": 0.9568015336990356
+        },
+        {
+          "word": " seems",
+          "start": 59.76,
+          "end": 60.06,
+          "probability": 0.9914780259132385
+        },
+        {
+          "word": " to",
+          "start": 60.06,
+          "end": 60.28,
+          "probability": 0.9980837106704712
+        },
+        {
+          "word": " get",
+          "start": 60.28,
+          "end": 60.5,
+          "probability": 0.9967783093452454
+        },
+        {
+          "word": " more",
+          "start": 60.5,
+          "end": 60.96,
+          "probability": 0.9987674951553345
+        },
+        {
+          "word": " and",
+          "start": 60.96,
+          "end": 61.14,
+          "probability": 0.987409234046936
+        },
+        {
+          "word": " more",
+          "start": 61.14,
+          "end": 61.44,
+          "probability": 0.9989396929740906
+        },
+        {
+          "word": " popular",
+          "start": 61.44,
+          "end": 62.08,
+          "probability": 0.9985311031341553
+        },
+        {
+          "word": " every",
+          "start": 62.08,
+          "end": 62.78,
+          "probability": 0.9945612549781799
+        },
+        {
+          "word": " year",
+          "start": 62.78,
+          "end": 63.24,
+          "probability": 0.9988486766815186
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5462,
+      "start": 64.41999999999999,
+      "end": 66.98,
+      "text": " So how did it begin?",
+      "tokens": [
+        50863,
+        1406,
+        703,
+        750,
+        340,
+        2221,
+        30,
+        50979
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18182891348133917,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.0029326595831662416,
+      "words": [
+        {
+          "word": " So",
+          "start": 64.41999999999999,
+          "end": 65.25999999999999,
+          "probability": 0.05146864801645279
+        },
+        {
+          "word": " how",
+          "start": 65.25999999999999,
+          "end": 66.1,
+          "probability": 0.3862832486629486
+        },
+        {
+          "word": " did",
+          "start": 66.1,
+          "end": 66.3,
+          "probability": 0.9958227872848511
+        },
+        {
+          "word": " it",
+          "start": 66.3,
+          "end": 66.5,
+          "probability": 0.9967940449714661
+        },
+        {
+          "word": " begin?",
+          "start": 66.5,
+          "end": 66.98,
+          "probability": 0.9881982207298279
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5462,
+      "start": 68.3,
+      "end": 73.96,
+      "text": " Well people working in markets wanted to attract shoppers to the town square",
+      "tokens": [
+        51033,
+        3894,
+        661,
+        1762,
+        287,
+        5939,
+        2227,
+        284,
+        4729,
+        30303,
+        284,
+        262,
+        3240,
+        6616,
+        51325
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18182891348133917,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.0029326595831662416,
+      "words": [
+        {
+          "word": " Well",
+          "start": 68.3,
+          "end": 68.6,
+          "probability": 0.8908075094223022
+        },
+        {
+          "word": " people",
+          "start": 68.6,
+          "end": 69.6,
+          "probability": 0.27401503920555115
+        },
+        {
+          "word": " working",
+          "start": 69.6,
+          "end": 70.08,
+          "probability": 0.9969933032989502
+        },
+        {
+          "word": " in",
+          "start": 70.08,
+          "end": 70.3,
+          "probability": 0.9977524876594543
+        },
+        {
+          "word": " markets",
+          "start": 70.3,
+          "end": 70.72,
+          "probability": 0.9770020246505737
+        },
+        {
+          "word": " wanted",
+          "start": 70.72,
+          "end": 71.32,
+          "probability": 0.954541802406311
+        },
+        {
+          "word": " to",
+          "start": 71.32,
+          "end": 71.64,
+          "probability": 0.9980296492576599
+        },
+        {
+          "word": " attract",
+          "start": 71.64,
+          "end": 72.04,
+          "probability": 0.9960277080535889
+        },
+        {
+          "word": " shoppers",
+          "start": 72.04,
+          "end": 72.58,
+          "probability": 0.9780275821685791
+        },
+        {
+          "word": " to",
+          "start": 72.58,
+          "end": 72.88,
+          "probability": 0.9948139190673828
+        },
+        {
+          "word": " the",
+          "start": 72.88,
+          "end": 73.06,
+          "probability": 0.9914225935935974
+        },
+        {
+          "word": " town",
+          "start": 73.06,
+          "end": 73.4,
+          "probability": 0.9269847869873047
+        },
+        {
+          "word": " square",
+          "start": 73.4,
+          "end": 73.96,
+          "probability": 0.9344074130058289
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5462,
+      "start": 73.96,
+      "end": 78.94,
+      "text": " So they cut radishes into the shape of people or animals",
+      "tokens": [
+        51349,
+        1406,
+        484,
+        2005,
+        2511,
+        5614,
+        656,
+        262,
+        5485,
+        286,
+        661,
+        393,
+        4695,
+        51579
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18182891348133917,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.0029326595831662416,
+      "words": [
+        {
+          "word": " So",
+          "start": 73.96,
+          "end": 74.88,
+          "probability": 0.29873430728912354
+        },
+        {
+          "word": " they",
+          "start": 74.88,
+          "end": 75.06,
+          "probability": 0.9899711608886719
+        },
+        {
+          "word": " cut",
+          "start": 75.06,
+          "end": 75.46,
+          "probability": 0.8901829719543457
+        },
+        {
+          "word": " radishes",
+          "start": 75.46,
+          "end": 76.06,
+          "probability": 0.9872663617134094
+        },
+        {
+          "word": " into",
+          "start": 76.06,
+          "end": 76.44,
+          "probability": 0.9779793620109558
+        },
+        {
+          "word": " the",
+          "start": 76.44,
+          "end": 76.72,
+          "probability": 0.9973350167274475
+        },
+        {
+          "word": " shape",
+          "start": 76.72,
+          "end": 77.0,
+          "probability": 0.9961490631103516
+        },
+        {
+          "word": " of",
+          "start": 77.0,
+          "end": 77.34,
+          "probability": 0.9979617595672607
+        },
+        {
+          "word": " people",
+          "start": 77.34,
+          "end": 77.82,
+          "probability": 0.9933860898017883
+        },
+        {
+          "word": " or",
+          "start": 77.82,
+          "end": 78.32,
+          "probability": 0.9887531995773315
+        },
+        {
+          "word": " animals",
+          "start": 78.32,
+          "end": 78.94,
+          "probability": 0.9948871731758118
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5462,
+      "start": 79.89999999999999,
+      "end": 83.16,
+      "text": " They were very popular and in",
+      "tokens": [
+        51641,
+        1119,
+        547,
+        845,
+        2968,
+        290,
+        287,
+        51787
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18182891348133917,
+      "compression_ratio": 1.5053191489361701,
+      "no_speech_prob": 0.0029326595831662416,
+      "words": [
+        {
+          "word": " They",
+          "start": 79.89999999999999,
+          "end": 80.74,
+          "probability": 0.6956498622894287
+        },
+        {
+          "word": " were",
+          "start": 80.74,
+          "end": 80.94,
+          "probability": 0.9965338706970215
+        },
+        {
+          "word": " very",
+          "start": 80.94,
+          "end": 81.38,
+          "probability": 0.9990915060043335
+        },
+        {
+          "word": " popular",
+          "start": 81.38,
+          "end": 82.08,
+          "probability": 0.9992745518684387
+        },
+        {
+          "word": " and",
+          "start": 82.08,
+          "end": 82.96,
+          "probability": 0.9566264152526855
+        },
+        {
+          "word": " in",
+          "start": 82.96,
+          "end": 83.16,
+          "probability": 0.9965391159057617
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 8316,
+      "start": 83.16,
+      "end": 91.38,
+      "text": " 1897 they decided to make it a festival and that tradition lives on to this day",
+      "tokens": [
+        50411,
+        49429,
+        484,
+        3066,
+        284,
+        787,
+        340,
+        257,
+        10876,
+        290,
+        326,
+        6761,
+        3160,
+        319,
+        284,
+        428,
+        1110,
+        50765
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1259854899512397,
+      "compression_ratio": 1.5026455026455026,
+      "no_speech_prob": 0.0077474345453083515,
+      "words": [
+        {
+          "word": " 1897",
+          "start": 83.16,
+          "end": 83.96,
+          "probability": 0.0002266701339976862
+        },
+        {
+          "word": " they",
+          "start": 83.96,
+          "end": 85.34,
+          "probability": 0.8456823229789734
+        },
+        {
+          "word": " decided",
+          "start": 85.34,
+          "end": 85.82,
+          "probability": 0.9688681960105896
+        },
+        {
+          "word": " to",
+          "start": 85.82,
+          "end": 86.24,
+          "probability": 0.9969838261604309
+        },
+        {
+          "word": " make",
+          "start": 86.24,
+          "end": 86.5,
+          "probability": 0.997570812702179
+        },
+        {
+          "word": " it",
+          "start": 86.5,
+          "end": 86.78,
+          "probability": 0.9935424327850342
+        },
+        {
+          "word": " a",
+          "start": 86.78,
+          "end": 87.02,
+          "probability": 0.9717179536819458
+        },
+        {
+          "word": " festival",
+          "start": 87.02,
+          "end": 87.54,
+          "probability": 0.9872074723243713
+        },
+        {
+          "word": " and",
+          "start": 87.54,
+          "end": 88.42,
+          "probability": 0.8544063568115234
+        },
+        {
+          "word": " that",
+          "start": 88.42,
+          "end": 88.74,
+          "probability": 0.9938336610794067
+        },
+        {
+          "word": " tradition",
+          "start": 88.74,
+          "end": 89.42,
+          "probability": 0.983691930770874
+        },
+        {
+          "word": " lives",
+          "start": 89.42,
+          "end": 90.02,
+          "probability": 0.9262689352035522
+        },
+        {
+          "word": " on",
+          "start": 90.02,
+          "end": 90.44,
+          "probability": 0.9891693592071533
+        },
+        {
+          "word": " to",
+          "start": 90.44,
+          "end": 90.7,
+          "probability": 0.93840092420578
+        },
+        {
+          "word": " this",
+          "start": 90.7,
+          "end": 90.96,
+          "probability": 0.9955255389213562
+        },
+        {
+          "word": " day",
+          "start": 90.96,
+          "end": 91.38,
+          "probability": 0.9981510043144226
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 8316,
+      "start": 92.44,
+      "end": 99.12,
+      "text": " The radishes are larger than normal and they are picked around the 18th of December",
+      "tokens": [
+        50827,
+        383,
+        2511,
+        5614,
+        389,
+        4025,
+        621,
+        3487,
+        290,
+        484,
+        389,
+        6497,
+        1088,
+        262,
+        1248,
+        400,
+        286,
+        3426,
+        51159
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1259854899512397,
+      "compression_ratio": 1.5026455026455026,
+      "no_speech_prob": 0.0077474345453083515,
+      "words": [
+        {
+          "word": " The",
+          "start": 92.44,
+          "end": 93.0,
+          "probability": 0.08049184828996658
+        },
+        {
+          "word": " radishes",
+          "start": 93.0,
+          "end": 93.52,
+          "probability": 0.9859715104103088
+        },
+        {
+          "word": " are",
+          "start": 93.52,
+          "end": 93.94,
+          "probability": 0.9978717565536499
+        },
+        {
+          "word": " larger",
+          "start": 93.94,
+          "end": 94.36,
+          "probability": 0.9929080009460449
+        },
+        {
+          "word": " than",
+          "start": 94.36,
+          "end": 94.7,
+          "probability": 0.9933692812919617
+        },
+        {
+          "word": " normal",
+          "start": 94.7,
+          "end": 95.14,
+          "probability": 0.9988100528717041
+        },
+        {
+          "word": " and",
+          "start": 95.14,
+          "end": 95.8,
+          "probability": 0.9034172892570496
+        },
+        {
+          "word": " they",
+          "start": 95.8,
+          "end": 96.02,
+          "probability": 0.9918004870414734
+        },
+        {
+          "word": " are",
+          "start": 96.02,
+          "end": 96.18,
+          "probability": 0.9971296191215515
+        },
+        {
+          "word": " picked",
+          "start": 96.18,
+          "end": 96.56,
+          "probability": 0.48736074566841125
+        },
+        {
+          "word": " around",
+          "start": 96.56,
+          "end": 97.14,
+          "probability": 0.9973282814025879
+        },
+        {
+          "word": " the",
+          "start": 97.14,
+          "end": 97.48,
+          "probability": 0.9436805844306946
+        },
+        {
+          "word": " 18th",
+          "start": 97.48,
+          "end": 98.32,
+          "probability": 0.9876798093318939
+        },
+        {
+          "word": " of",
+          "start": 98.32,
+          "end": 98.52,
+          "probability": 0.9798933267593384
+        },
+        {
+          "word": " December",
+          "start": 98.52,
+          "end": 99.12,
+          "probability": 0.9284754991531372
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8316,
+      "start": 100.22,
+      "end": 108.86,
+      "text": " Artists only have a few days to get their radishes ready and the person who has the best radish wins a",
+      "tokens": [
+        51241,
+        37599,
+        691,
+        423,
+        257,
+        1178,
+        1528,
+        284,
+        651,
+        511,
+        2511,
+        5614,
+        3492,
+        290,
+        262,
+        1048,
+        508,
+        468,
+        262,
+        1266,
+        2511,
+        680,
+        7864,
+        257,
+        51639
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1259854899512397,
+      "compression_ratio": 1.5026455026455026,
+      "no_speech_prob": 0.0077474345453083515,
+      "words": [
+        {
+          "word": " Artists",
+          "start": 100.22,
+          "end": 101.08,
+          "probability": 0.6206092238426208
+        },
+        {
+          "word": " only",
+          "start": 101.08,
+          "end": 101.74,
+          "probability": 0.9917565584182739
+        },
+        {
+          "word": " have",
+          "start": 101.74,
+          "end": 102.02,
+          "probability": 0.9977124929428101
+        },
+        {
+          "word": " a",
+          "start": 102.02,
+          "end": 102.24,
+          "probability": 0.9977983236312866
+        },
+        {
+          "word": " few",
+          "start": 102.24,
+          "end": 102.56,
+          "probability": 0.9985198378562927
+        },
+        {
+          "word": " days",
+          "start": 102.56,
+          "end": 102.94,
+          "probability": 0.9986572265625
+        },
+        {
+          "word": " to",
+          "start": 102.94,
+          "end": 103.22,
+          "probability": 0.9978945851325989
+        },
+        {
+          "word": " get",
+          "start": 103.22,
+          "end": 103.4,
+          "probability": 0.9990737438201904
+        },
+        {
+          "word": " their",
+          "start": 103.4,
+          "end": 103.64,
+          "probability": 0.9871822595596313
+        },
+        {
+          "word": " radishes",
+          "start": 103.64,
+          "end": 104.12,
+          "probability": 0.9908392131328583
+        },
+        {
+          "word": " ready",
+          "start": 104.12,
+          "end": 104.56,
+          "probability": 0.9964001178741455
+        },
+        {
+          "word": " and",
+          "start": 104.56,
+          "end": 105.42,
+          "probability": 0.8698623180389404
+        },
+        {
+          "word": " the",
+          "start": 105.42,
+          "end": 105.66,
+          "probability": 0.9689999222755432
+        },
+        {
+          "word": " person",
+          "start": 105.66,
+          "end": 106.12,
+          "probability": 0.9961146116256714
+        },
+        {
+          "word": " who",
+          "start": 106.12,
+          "end": 106.4,
+          "probability": 0.9851009249687195
+        },
+        {
+          "word": " has",
+          "start": 106.4,
+          "end": 106.62,
+          "probability": 0.9977668523788452
+        },
+        {
+          "word": " the",
+          "start": 106.62,
+          "end": 106.86,
+          "probability": 0.9974563717842102
+        },
+        {
+          "word": " best",
+          "start": 106.86,
+          "end": 107.32,
+          "probability": 0.9931007623672485
+        },
+        {
+          "word": " radish",
+          "start": 107.32,
+          "end": 107.9,
+          "probability": 0.9862489700317383
+        },
+        {
+          "word": " wins",
+          "start": 107.9,
+          "end": 108.42,
+          "probability": 0.9491327404975891
+        },
+        {
+          "word": " a",
+          "start": 108.42,
+          "end": 108.86,
+          "probability": 0.985401451587677
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8316,
+      "start": 108.86,
+      "end": 111.06,
+      "text": " 12,000 peso prize",
+      "tokens": [
+        51675,
+        1105,
+        11,
+        830,
+        32317,
+        78,
+        11596,
+        51775
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1259854899512397,
+      "compression_ratio": 1.5026455026455026,
+      "no_speech_prob": 0.0077474345453083515,
+      "words": [
+        {
+          "word": " 12",
+          "start": 108.86,
+          "end": 109.36,
+          "probability": 0.8270023465156555
+        },
+        {
+          "word": ",000",
+          "start": 109.36,
+          "end": 110.02,
+          "probability": 0.846678227186203
+        },
+        {
+          "word": " peso",
+          "start": 110.02,
+          "end": 110.56,
+          "probability": 0.9581618010997772
+        },
+        {
+          "word": " prize",
+          "start": 110.56,
+          "end": 111.06,
+          "probability": 0.9856119155883789
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 11106,
+      "start": 112.0,
+      "end": 117.26,
+      "text": " The most amazing thing about this event is how popular it is",
+      "tokens": [
+        50411,
+        383,
+        749,
+        4998,
+        1517,
+        546,
+        428,
+        1785,
+        318,
+        703,
+        2968,
+        340,
+        318,
+        50673
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3043649846857244,
+      "compression_ratio": 1.455958549222798,
+      "no_speech_prob": 0.0023604261223226786,
+      "words": [
+        {
+          "word": " The",
+          "start": 112.0,
+          "end": 112.84,
+          "probability": 0.8826985359191895
+        },
+        {
+          "word": " most",
+          "start": 112.84,
+          "end": 113.14,
+          "probability": 0.9879943132400513
+        },
+        {
+          "word": " amazing",
+          "start": 113.14,
+          "end": 113.88,
+          "probability": 0.9959976673126221
+        },
+        {
+          "word": " thing",
+          "start": 113.88,
+          "end": 114.28,
+          "probability": 0.9862073659896851
+        },
+        {
+          "word": " about",
+          "start": 114.28,
+          "end": 114.7,
+          "probability": 0.9961679577827454
+        },
+        {
+          "word": " this",
+          "start": 114.7,
+          "end": 115.02,
+          "probability": 0.9878727197647095
+        },
+        {
+          "word": " event",
+          "start": 115.02,
+          "end": 115.44,
+          "probability": 0.9959397315979004
+        },
+        {
+          "word": " is",
+          "start": 115.44,
+          "end": 115.98,
+          "probability": 0.9811516404151917
+        },
+        {
+          "word": " how",
+          "start": 115.98,
+          "end": 116.28,
+          "probability": 0.992673933506012
+        },
+        {
+          "word": " popular",
+          "start": 116.28,
+          "end": 116.84,
+          "probability": 0.9992450475692749
+        },
+        {
+          "word": " it",
+          "start": 116.84,
+          "end": 117.2,
+          "probability": 0.9924909472465515
+        },
+        {
+          "word": " is",
+          "start": 117.2,
+          "end": 117.62,
+          "probability": 0.9992208480834961
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 11106,
+      "start": 118.38,
+      "end": 121.98,
+      "text": " People wait hours just to see the radishes",
+      "tokens": [
+        50729,
+        4380,
+        4043,
+        2250,
+        655,
+        284,
+        766,
+        262,
+        2511,
+        5614,
+        50909
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3043649846857244,
+      "compression_ratio": 1.455958549222798,
+      "no_speech_prob": 0.0023604261223226786,
+      "words": [
+        {
+          "word": " People",
+          "start": 118.3,
+          "end": 118.72,
+          "probability": 0.04155923053622246
+        },
+        {
+          "word": " wait",
+          "start": 118.72,
+          "end": 119.16,
+          "probability": 0.9925082325935364
+        },
+        {
+          "word": " hours",
+          "start": 119.16,
+          "end": 119.8,
+          "probability": 0.9796878099441528
+        },
+        {
+          "word": " just",
+          "start": 119.8,
+          "end": 120.38,
+          "probability": 0.9551143646240234
+        },
+        {
+          "word": " to",
+          "start": 120.38,
+          "end": 120.86,
+          "probability": 0.9974518418312073
+        },
+        {
+          "word": " see",
+          "start": 120.86,
+          "end": 121.22,
+          "probability": 0.9944173097610474
+        },
+        {
+          "word": " the",
+          "start": 121.22,
+          "end": 121.44,
+          "probability": 0.9867576360702515
+        },
+        {
+          "word": " radishes",
+          "start": 121.44,
+          "end": 121.98,
+          "probability": 0.9946164786815643
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 11106,
+      "start": 123.3,
+      "end": 128.7,
+      "text": " The second festival I want to talk about is called La Tomatina",
+      "tokens": [
+        50989,
+        383,
+        1218,
+        10876,
+        314,
+        765,
+        284,
+        1561,
+        546,
+        318,
+        1444,
+        4689,
+        4186,
+        265,
+        1437,
+        51237
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3043649846857244,
+      "compression_ratio": 1.455958549222798,
+      "no_speech_prob": 0.0023604261223226786,
+      "words": [
+        {
+          "word": " The",
+          "start": 123.3,
+          "end": 124.14,
+          "probability": 0.6562482118606567
+        },
+        {
+          "word": " second",
+          "start": 124.14,
+          "end": 124.52,
+          "probability": 0.9905871748924255
+        },
+        {
+          "word": " festival",
+          "start": 124.52,
+          "end": 125.04,
+          "probability": 0.9940643906593323
+        },
+        {
+          "word": " I",
+          "start": 125.04,
+          "end": 125.36,
+          "probability": 0.9316927790641785
+        },
+        {
+          "word": " want",
+          "start": 125.36,
+          "end": 125.56,
+          "probability": 0.9957962036132812
+        },
+        {
+          "word": " to",
+          "start": 125.56,
+          "end": 125.74,
+          "probability": 0.9985623955726624
+        },
+        {
+          "word": " talk",
+          "start": 125.74,
+          "end": 126.0,
+          "probability": 0.9987432360649109
+        },
+        {
+          "word": " about",
+          "start": 126.0,
+          "end": 126.38,
+          "probability": 0.9981229901313782
+        },
+        {
+          "word": " is",
+          "start": 126.38,
+          "end": 127.0,
+          "probability": 0.9681362509727478
+        },
+        {
+          "word": " called",
+          "start": 127.0,
+          "end": 127.38,
+          "probability": 0.995335042476654
+        },
+        {
+          "word": " La",
+          "start": 127.38,
+          "end": 127.82,
+          "probability": 0.690528392791748
+        },
+        {
+          "word": " Tomatina",
+          "start": 127.82,
+          "end": 128.7,
+          "probability": 0.9110430081685384
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 11106,
+      "start": 129.62,
+      "end": 134.18,
+      "text": " This takes place in Spain in this small town of Búñol",
+      "tokens": [
+        51291,
+        770,
+        2753,
+        1295,
+        287,
+        8602,
+        287,
+        428,
+        1402,
+        3240,
+        286,
+        347,
+        21356,
+        12654,
+        349,
+        51509
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3043649846857244,
+      "compression_ratio": 1.455958549222798,
+      "no_speech_prob": 0.0023604261223226786,
+      "words": [
+        {
+          "word": " This",
+          "start": 129.62,
+          "end": 130.22,
+          "probability": 0.7526382803916931
+        },
+        {
+          "word": " takes",
+          "start": 130.22,
+          "end": 130.54,
+          "probability": 0.9926149845123291
+        },
+        {
+          "word": " place",
+          "start": 130.54,
+          "end": 130.88,
+          "probability": 0.9979912042617798
+        },
+        {
+          "word": " in",
+          "start": 130.88,
+          "end": 131.16,
+          "probability": 0.9974173307418823
+        },
+        {
+          "word": " Spain",
+          "start": 131.16,
+          "end": 131.54,
+          "probability": 0.9591831564903259
+        },
+        {
+          "word": " in",
+          "start": 131.54,
+          "end": 132.2,
+          "probability": 0.8360081911087036
+        },
+        {
+          "word": " this",
+          "start": 132.2,
+          "end": 132.38,
+          "probability": 0.3758954107761383
+        },
+        {
+          "word": " small",
+          "start": 132.38,
+          "end": 132.74,
+          "probability": 0.9938854575157166
+        },
+        {
+          "word": " town",
+          "start": 132.74,
+          "end": 133.16,
+          "probability": 0.9971597194671631
+        },
+        {
+          "word": " of",
+          "start": 133.16,
+          "end": 133.48,
+          "probability": 0.993269145488739
+        },
+        {
+          "word": " Búñol",
+          "start": 133.48,
+          "end": 134.18,
+          "probability": 0.47242359071969986
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 11106,
+      "start": 135.18,
+      "end": 135.76,
+      "text": " about",
+      "tokens": [
+        51569,
+        546,
+        51631
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3043649846857244,
+      "compression_ratio": 1.455958549222798,
+      "no_speech_prob": 0.0023604261223226786,
+      "words": [
+        {
+          "word": " about",
+          "start": 135.18,
+          "end": 135.76,
+          "probability": 0.2078048586845398
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 11106,
+      "start": 135.76,
+      "end": 140.56,
+      "text": " 9,000 people live in the town but during La Tomatina",
+      "tokens": [
+        51631,
+        860,
+        11,
+        830,
+        661,
+        2107,
+        287,
+        262,
+        3240,
+        475,
+        1141,
+        4689,
+        4186,
+        265,
+        1437,
+        51829
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3043649846857244,
+      "compression_ratio": 1.455958549222798,
+      "no_speech_prob": 0.0023604261223226786,
+      "words": [
+        {
+          "word": " 9",
+          "start": 135.76,
+          "end": 136.4,
+          "probability": 0.6150821447372437
+        },
+        {
+          "word": ",000",
+          "start": 136.4,
+          "end": 136.86,
+          "probability": 0.8770296275615692
+        },
+        {
+          "word": " people",
+          "start": 136.86,
+          "end": 137.36,
+          "probability": 0.9976886510848999
+        },
+        {
+          "word": " live",
+          "start": 137.36,
+          "end": 137.66,
+          "probability": 0.9920749664306641
+        },
+        {
+          "word": " in",
+          "start": 137.66,
+          "end": 137.86,
+          "probability": 0.9983518123626709
+        },
+        {
+          "word": " the",
+          "start": 137.86,
+          "end": 138.0,
+          "probability": 0.9811781644821167
+        },
+        {
+          "word": " town",
+          "start": 138.0,
+          "end": 138.36,
+          "probability": 0.9981389045715332
+        },
+        {
+          "word": " but",
+          "start": 138.36,
+          "end": 139.16,
+          "probability": 0.6236390471458435
+        },
+        {
+          "word": " during",
+          "start": 139.16,
+          "end": 139.6,
+          "probability": 0.9719051718711853
+        },
+        {
+          "word": " La",
+          "start": 139.6,
+          "end": 139.86,
+          "probability": 0.9621579647064209
+        },
+        {
+          "word": " Tomatina",
+          "start": 139.86,
+          "end": 140.56,
+          "probability": 0.9908819595972697
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 14106,
+      "start": 141.06,
+      "end": 145.7,
+      "text": " thousands of tourists visit the region just to be part of the occasion",
+      "tokens": [
+        50375,
+        4138,
+        286,
+        15930,
+        3187,
+        262,
+        3814,
+        655,
+        284,
+        307,
+        636,
+        286,
+        262,
+        6695,
+        50599
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2439655408467332,
+      "compression_ratio": 1.49,
+      "no_speech_prob": 0.000865965208504349,
+      "words": [
+        {
+          "word": " thousands",
+          "start": 141.06,
+          "end": 141.52,
+          "probability": 0.3950570821762085
+        },
+        {
+          "word": " of",
+          "start": 141.52,
+          "end": 141.96,
+          "probability": 0.9984865188598633
+        },
+        {
+          "word": " tourists",
+          "start": 141.96,
+          "end": 142.4,
+          "probability": 0.9932196736335754
+        },
+        {
+          "word": " visit",
+          "start": 142.4,
+          "end": 142.92,
+          "probability": 0.8356459140777588
+        },
+        {
+          "word": " the",
+          "start": 142.92,
+          "end": 143.3,
+          "probability": 0.9908555746078491
+        },
+        {
+          "word": " region",
+          "start": 143.3,
+          "end": 143.7,
+          "probability": 0.9958283305168152
+        },
+        {
+          "word": " just",
+          "start": 143.7,
+          "end": 144.2,
+          "probability": 0.9764758348464966
+        },
+        {
+          "word": " to",
+          "start": 144.2,
+          "end": 144.46,
+          "probability": 0.9953116774559021
+        },
+        {
+          "word": " be",
+          "start": 144.46,
+          "end": 144.64,
+          "probability": 0.9973994493484497
+        },
+        {
+          "word": " part",
+          "start": 144.64,
+          "end": 144.88,
+          "probability": 0.9289073348045349
+        },
+        {
+          "word": " of",
+          "start": 144.88,
+          "end": 145.12,
+          "probability": 0.9974083304405212
+        },
+        {
+          "word": " the",
+          "start": 145.12,
+          "end": 145.22,
+          "probability": 0.9922795295715332
+        },
+        {
+          "word": " occasion",
+          "start": 145.22,
+          "end": 145.7,
+          "probability": 0.9787771105766296
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 14106,
+      "start": 146.72,
+      "end": 149.02,
+      "text": " So what is it?",
+      "tokens": [
+        50661,
+        1406,
+        644,
+        318,
+        340,
+        30,
+        50761
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2439655408467332,
+      "compression_ratio": 1.49,
+      "no_speech_prob": 0.000865965208504349,
+      "words": [
+        {
+          "word": " So",
+          "start": 146.72,
+          "end": 147.6,
+          "probability": 0.0467127300798893
+        },
+        {
+          "word": " what",
+          "start": 147.6,
+          "end": 148.4,
+          "probability": 0.4441263675689697
+        },
+        {
+          "word": " is",
+          "start": 148.4,
+          "end": 148.84,
+          "probability": 0.9935809373855591
+        },
+        {
+          "word": " it?",
+          "start": 148.84,
+          "end": 149.28,
+          "probability": 0.9966764450073242
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 14106,
+      "start": 150.14,
+      "end": 153.86,
+      "text": " Well, it's a huge food fight with tomatoes",
+      "tokens": [
+        50803,
+        3894,
+        11,
+        340,
+        338,
+        257,
+        3236,
+        2057,
+        1907,
+        351,
+        23972,
+        51005
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2439655408467332,
+      "compression_ratio": 1.49,
+      "no_speech_prob": 0.000865965208504349,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 150.14,
+          "end": 150.5,
+          "probability": 0.9236148595809937
+        },
+        {
+          "word": " it's",
+          "start": 151.02,
+          "end": 151.24,
+          "probability": 0.9357278645038605
+        },
+        {
+          "word": " a",
+          "start": 151.24,
+          "end": 151.44,
+          "probability": 0.9927226901054382
+        },
+        {
+          "word": " huge",
+          "start": 151.44,
+          "end": 151.96,
+          "probability": 0.9686533808708191
+        },
+        {
+          "word": " food",
+          "start": 151.96,
+          "end": 152.44,
+          "probability": 0.9878153800964355
+        },
+        {
+          "word": " fight",
+          "start": 152.44,
+          "end": 152.82,
+          "probability": 0.9809622168540955
+        },
+        {
+          "word": " with",
+          "start": 152.82,
+          "end": 153.24,
+          "probability": 0.9944663643836975
+        },
+        {
+          "word": " tomatoes",
+          "start": 153.24,
+          "end": 153.86,
+          "probability": 0.9327021837234497
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 14106,
+      "start": 155.1,
+      "end": 158.38,
+      "text": " people believe La Tomatina started around",
+      "tokens": [
+        51065,
+        661,
+        1975,
+        4689,
+        4186,
+        265,
+        1437,
+        2067,
+        1088,
+        51222
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2439655408467332,
+      "compression_ratio": 1.49,
+      "no_speech_prob": 0.000865965208504349,
+      "words": [
+        {
+          "word": " people",
+          "start": 155.02,
+          "end": 155.46,
+          "probability": 0.022371772676706314
+        },
+        {
+          "word": " believe",
+          "start": 155.46,
+          "end": 156.04,
+          "probability": 0.9169108867645264
+        },
+        {
+          "word": " La",
+          "start": 156.04,
+          "end": 156.36,
+          "probability": 0.7973592877388
+        },
+        {
+          "word": " Tomatina",
+          "start": 156.36,
+          "end": 157.02,
+          "probability": 0.9027333458264669
+        },
+        {
+          "word": " started",
+          "start": 157.02,
+          "end": 157.66,
+          "probability": 0.9903597831726074
+        },
+        {
+          "word": " around",
+          "start": 157.66,
+          "end": 158.38,
+          "probability": 0.9871661067008972
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 14106,
+      "start": 159.14000000000001,
+      "end": 163.44,
+      "text": " 1945 when a large public food fight took place",
+      "tokens": [
+        51267,
+        15761,
+        618,
+        257,
+        1588,
+        1171,
+        2057,
+        1907,
+        1718,
+        1295,
+        51475
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2439655408467332,
+      "compression_ratio": 1.49,
+      "no_speech_prob": 0.000865965208504349,
+      "words": [
+        {
+          "word": " 1945",
+          "start": 159.0,
+          "end": 159.44,
+          "probability": 0.987114429473877
+        },
+        {
+          "word": " when",
+          "start": 159.44,
+          "end": 160.38,
+          "probability": 0.8808444142341614
+        },
+        {
+          "word": " a",
+          "start": 160.38,
+          "end": 160.54,
+          "probability": 0.9958437085151672
+        },
+        {
+          "word": " large",
+          "start": 160.54,
+          "end": 160.92,
+          "probability": 0.9955311417579651
+        },
+        {
+          "word": " public",
+          "start": 160.92,
+          "end": 161.5,
+          "probability": 0.9868434071540833
+        },
+        {
+          "word": " food",
+          "start": 161.5,
+          "end": 161.92,
+          "probability": 0.9931859970092773
+        },
+        {
+          "word": " fight",
+          "start": 161.92,
+          "end": 162.28,
+          "probability": 0.9885580539703369
+        },
+        {
+          "word": " took",
+          "start": 162.28,
+          "end": 162.62,
+          "probability": 0.9975520968437195
+        },
+        {
+          "word": " place",
+          "start": 162.62,
+          "end": 163.44,
+          "probability": 0.9992465972900391
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 14106,
+      "start": 163.44,
+      "end": 169.68,
+      "text": " A celebration was taking place in the village with people dressed in giant heads",
+      "tokens": [
+        51547,
+        317,
+        14395,
+        373,
+        2263,
+        1295,
+        287,
+        262,
+        7404,
+        351,
+        661,
+        12049,
+        287,
+        6175,
+        6665,
+        51783
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2439655408467332,
+      "compression_ratio": 1.49,
+      "no_speech_prob": 0.000865965208504349,
+      "words": [
+        {
+          "word": " A",
+          "start": 163.44,
+          "end": 164.52,
+          "probability": 0.2724708616733551
+        },
+        {
+          "word": " celebration",
+          "start": 164.52,
+          "end": 165.04,
+          "probability": 0.9929651021957397
+        },
+        {
+          "word": " was",
+          "start": 165.04,
+          "end": 165.46,
+          "probability": 0.9956738352775574
+        },
+        {
+          "word": " taking",
+          "start": 165.46,
+          "end": 165.76,
+          "probability": 0.9961112141609192
+        },
+        {
+          "word": " place",
+          "start": 165.76,
+          "end": 166.14,
+          "probability": 0.998513400554657
+        },
+        {
+          "word": " in",
+          "start": 166.14,
+          "end": 166.36,
+          "probability": 0.9977733492851257
+        },
+        {
+          "word": " the",
+          "start": 166.36,
+          "end": 166.48,
+          "probability": 0.8485887050628662
+        },
+        {
+          "word": " village",
+          "start": 166.48,
+          "end": 166.82,
+          "probability": 0.9926153421401978
+        },
+        {
+          "word": " with",
+          "start": 166.82,
+          "end": 167.42,
+          "probability": 0.9134818315505981
+        },
+        {
+          "word": " people",
+          "start": 167.42,
+          "end": 167.9,
+          "probability": 0.9975861310958862
+        },
+        {
+          "word": " dressed",
+          "start": 167.9,
+          "end": 168.28,
+          "probability": 0.9940496683120728
+        },
+        {
+          "word": " in",
+          "start": 168.28,
+          "end": 168.74,
+          "probability": 0.9971331357955933
+        },
+        {
+          "word": " giant",
+          "start": 168.74,
+          "end": 169.08,
+          "probability": 0.9926531314849854
+        },
+        {
+          "word": " heads",
+          "start": 169.08,
+          "end": 169.68,
+          "probability": 0.9892551898956299
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 16968,
+      "start": 170.68,
+      "end": 177.2,
+      "text": " Some young people made the big head of someone fall off and he got very angry",
+      "tokens": [
+        50413,
+        2773,
+        1862,
+        661,
+        925,
+        262,
+        1263,
+        1182,
+        286,
+        2130,
+        2121,
+        572,
+        290,
+        339,
+        1392,
+        845,
+        7954,
+        50721
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16205760614195866,
+      "compression_ratio": 1.7710843373493976,
+      "no_speech_prob": 0.004254820290952921,
+      "words": [
+        {
+          "word": " Some",
+          "start": 170.68,
+          "end": 171.3,
+          "probability": 0.8612709641456604
+        },
+        {
+          "word": " young",
+          "start": 171.3,
+          "end": 171.64,
+          "probability": 0.9943424463272095
+        },
+        {
+          "word": " people",
+          "start": 171.64,
+          "end": 172.1,
+          "probability": 0.9943187832832336
+        },
+        {
+          "word": " made",
+          "start": 172.1,
+          "end": 172.58,
+          "probability": 0.9922701120376587
+        },
+        {
+          "word": " the",
+          "start": 172.58,
+          "end": 172.92,
+          "probability": 0.9926276803016663
+        },
+        {
+          "word": " big",
+          "start": 172.92,
+          "end": 173.24,
+          "probability": 0.8265678286552429
+        },
+        {
+          "word": " head",
+          "start": 173.24,
+          "end": 173.58,
+          "probability": 0.9934852719306946
+        },
+        {
+          "word": " of",
+          "start": 173.58,
+          "end": 173.8,
+          "probability": 0.9898689985275269
+        },
+        {
+          "word": " someone",
+          "start": 173.8,
+          "end": 174.28,
+          "probability": 0.9920652508735657
+        },
+        {
+          "word": " fall",
+          "start": 174.28,
+          "end": 174.7,
+          "probability": 0.9862713813781738
+        },
+        {
+          "word": " off",
+          "start": 174.7,
+          "end": 175.08,
+          "probability": 0.9806368947029114
+        },
+        {
+          "word": " and",
+          "start": 175.08,
+          "end": 175.66,
+          "probability": 0.8485851883888245
+        },
+        {
+          "word": " he",
+          "start": 175.66,
+          "end": 175.86,
+          "probability": 0.9885695576667786
+        },
+        {
+          "word": " got",
+          "start": 175.86,
+          "end": 176.04,
+          "probability": 0.9955713152885437
+        },
+        {
+          "word": " very",
+          "start": 176.04,
+          "end": 176.56,
+          "probability": 0.9967346787452698
+        },
+        {
+          "word": " angry",
+          "start": 176.56,
+          "end": 177.2,
+          "probability": 0.9984619617462158
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 16968,
+      "start": 178.24,
+      "end": 184.62,
+      "text": " He tried to run after the young people but fell into a market stall selling tomatoes",
+      "tokens": [
+        50791,
+        679,
+        3088,
+        284,
+        1057,
+        706,
+        262,
+        1862,
+        661,
+        475,
+        3214,
+        656,
+        257,
+        1910,
+        22549,
+        6301,
+        23972,
+        51113
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16205760614195866,
+      "compression_ratio": 1.7710843373493976,
+      "no_speech_prob": 0.004254820290952921,
+      "words": [
+        {
+          "word": " He",
+          "start": 178.24,
+          "end": 178.84,
+          "probability": 0.05603132024407387
+        },
+        {
+          "word": " tried",
+          "start": 178.84,
+          "end": 179.14,
+          "probability": 0.9940495491027832
+        },
+        {
+          "word": " to",
+          "start": 179.14,
+          "end": 179.36,
+          "probability": 0.9977444410324097
+        },
+        {
+          "word": " run",
+          "start": 179.36,
+          "end": 179.68,
+          "probability": 0.9974958300590515
+        },
+        {
+          "word": " after",
+          "start": 179.68,
+          "end": 180.04,
+          "probability": 0.9975209832191467
+        },
+        {
+          "word": " the",
+          "start": 180.04,
+          "end": 180.32,
+          "probability": 0.9907279014587402
+        },
+        {
+          "word": " young",
+          "start": 180.32,
+          "end": 180.56,
+          "probability": 0.9969956874847412
+        },
+        {
+          "word": " people",
+          "start": 180.56,
+          "end": 181.04,
+          "probability": 0.9949209094047546
+        },
+        {
+          "word": " but",
+          "start": 181.04,
+          "end": 181.72,
+          "probability": 0.7933769226074219
+        },
+        {
+          "word": " fell",
+          "start": 181.72,
+          "end": 182.14,
+          "probability": 0.9942202568054199
+        },
+        {
+          "word": " into",
+          "start": 182.14,
+          "end": 182.52,
+          "probability": 0.9796521067619324
+        },
+        {
+          "word": " a",
+          "start": 182.52,
+          "end": 182.74,
+          "probability": 0.9895093441009521
+        },
+        {
+          "word": " market",
+          "start": 182.74,
+          "end": 183.08,
+          "probability": 0.9830701947212219
+        },
+        {
+          "word": " stall",
+          "start": 183.08,
+          "end": 183.54,
+          "probability": 0.9807657599449158
+        },
+        {
+          "word": " selling",
+          "start": 183.54,
+          "end": 184.08,
+          "probability": 0.9847499132156372
+        },
+        {
+          "word": " tomatoes",
+          "start": 184.08,
+          "end": 184.62,
+          "probability": 0.9848145246505737
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 16968,
+      "start": 185.48000000000002,
+      "end": 190.5,
+      "text": " So the man started throwing tomatoes at the young people",
+      "tokens": [
+        51153,
+        1406,
+        262,
+        582,
+        2067,
+        9644,
+        23972,
+        379,
+        262,
+        1862,
+        661,
+        51399
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16205760614195866,
+      "compression_ratio": 1.7710843373493976,
+      "no_speech_prob": 0.004254820290952921,
+      "words": [
+        {
+          "word": " So",
+          "start": 185.48000000000002,
+          "end": 186.14,
+          "probability": 0.46371766924858093
+        },
+        {
+          "word": " the",
+          "start": 186.14,
+          "end": 186.8,
+          "probability": 0.6701843738555908
+        },
+        {
+          "word": " man",
+          "start": 186.8,
+          "end": 187.1,
+          "probability": 0.9818059802055359
+        },
+        {
+          "word": " started",
+          "start": 187.1,
+          "end": 187.72,
+          "probability": 0.991806149482727
+        },
+        {
+          "word": " throwing",
+          "start": 187.72,
+          "end": 188.32,
+          "probability": 0.9923642873764038
+        },
+        {
+          "word": " tomatoes",
+          "start": 188.32,
+          "end": 188.98,
+          "probability": 0.984219491481781
+        },
+        {
+          "word": " at",
+          "start": 188.98,
+          "end": 189.5,
+          "probability": 0.9962235689163208
+        },
+        {
+          "word": " the",
+          "start": 189.5,
+          "end": 189.68,
+          "probability": 0.992122232913971
+        },
+        {
+          "word": " young",
+          "start": 189.68,
+          "end": 189.94,
+          "probability": 0.9983813762664795
+        },
+        {
+          "word": " people",
+          "start": 189.94,
+          "end": 190.5,
+          "probability": 0.9973344802856445
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 16968,
+      "start": 191.16,
+      "end": 198.02,
+      "text": " Then more people started to join in and he turned into a huge tomato fight",
+      "tokens": [
+        51437,
+        3244,
+        517,
+        661,
+        2067,
+        284,
+        4654,
+        287,
+        290,
+        339,
+        2900,
+        656,
+        257,
+        3236,
+        24240,
+        1907,
+        51773
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16205760614195866,
+      "compression_ratio": 1.7710843373493976,
+      "no_speech_prob": 0.004254820290952921,
+      "words": [
+        {
+          "word": " Then",
+          "start": 191.16,
+          "end": 191.9,
+          "probability": 0.48778146505355835
+        },
+        {
+          "word": " more",
+          "start": 191.9,
+          "end": 192.64,
+          "probability": 0.928539514541626
+        },
+        {
+          "word": " people",
+          "start": 192.64,
+          "end": 193.08,
+          "probability": 0.9969719648361206
+        },
+        {
+          "word": " started",
+          "start": 193.08,
+          "end": 193.5,
+          "probability": 0.9883434772491455
+        },
+        {
+          "word": " to",
+          "start": 193.5,
+          "end": 193.88,
+          "probability": 0.9971292614936829
+        },
+        {
+          "word": " join",
+          "start": 193.88,
+          "end": 194.1,
+          "probability": 0.9962056875228882
+        },
+        {
+          "word": " in",
+          "start": 194.1,
+          "end": 194.58,
+          "probability": 0.9882315993309021
+        },
+        {
+          "word": " and",
+          "start": 194.58,
+          "end": 195.12,
+          "probability": 0.9201784133911133
+        },
+        {
+          "word": " he",
+          "start": 195.12,
+          "end": 195.32,
+          "probability": 0.723645806312561
+        },
+        {
+          "word": " turned",
+          "start": 195.32,
+          "end": 195.62,
+          "probability": 0.9944537281990051
+        },
+        {
+          "word": " into",
+          "start": 195.62,
+          "end": 196.16,
+          "probability": 0.9946054816246033
+        },
+        {
+          "word": " a",
+          "start": 196.16,
+          "end": 196.34,
+          "probability": 0.9930475354194641
+        },
+        {
+          "word": " huge",
+          "start": 196.34,
+          "end": 196.92,
+          "probability": 0.9853622913360596
+        },
+        {
+          "word": " tomato",
+          "start": 196.92,
+          "end": 197.52,
+          "probability": 0.9111919403076172
+        },
+        {
+          "word": " fight",
+          "start": 197.52,
+          "end": 198.02,
+          "probability": 0.9958513975143433
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 19802,
+      "start": 199.02,
+      "end": 205.12,
+      "text": " The people of Búñol enjoyed it so much that they did it again the next year",
+      "tokens": [
+        50413,
+        383,
+        661,
+        286,
+        347,
+        21356,
+        12654,
+        349,
+        8359,
+        340,
+        523,
+        881,
+        326,
+        484,
+        750,
+        340,
+        757,
+        262,
+        1306,
+        614,
+        50717
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1823124132658306,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.004143788479268551,
+      "words": [
+        {
+          "word": " The",
+          "start": 199.02,
+          "end": 199.6,
+          "probability": 0.8690475821495056
+        },
+        {
+          "word": " people",
+          "start": 199.6,
+          "end": 200.0,
+          "probability": 0.9884254932403564
+        },
+        {
+          "word": " of",
+          "start": 200.0,
+          "end": 200.22,
+          "probability": 0.9969069361686707
+        },
+        {
+          "word": " Búñol",
+          "start": 200.22,
+          "end": 200.74,
+          "probability": 0.3265124950557947
+        },
+        {
+          "word": " enjoyed",
+          "start": 200.74,
+          "end": 201.34,
+          "probability": 0.9964991807937622
+        },
+        {
+          "word": " it",
+          "start": 201.34,
+          "end": 201.6,
+          "probability": 0.992319643497467
+        },
+        {
+          "word": " so",
+          "start": 201.6,
+          "end": 201.96,
+          "probability": 0.9920048117637634
+        },
+        {
+          "word": " much",
+          "start": 201.96,
+          "end": 202.42,
+          "probability": 0.998391330242157
+        },
+        {
+          "word": " that",
+          "start": 202.42,
+          "end": 202.88,
+          "probability": 0.8683134913444519
+        },
+        {
+          "word": " they",
+          "start": 202.88,
+          "end": 203.1,
+          "probability": 0.9960694313049316
+        },
+        {
+          "word": " did",
+          "start": 203.1,
+          "end": 203.4,
+          "probability": 0.9975408315658569
+        },
+        {
+          "word": " it",
+          "start": 203.4,
+          "end": 203.6,
+          "probability": 0.9856461882591248
+        },
+        {
+          "word": " again",
+          "start": 203.6,
+          "end": 204.0,
+          "probability": 0.9979811310768127
+        },
+        {
+          "word": " the",
+          "start": 204.0,
+          "end": 204.42,
+          "probability": 0.9748201370239258
+        },
+        {
+          "word": " next",
+          "start": 204.42,
+          "end": 204.76,
+          "probability": 0.9984896183013916
+        },
+        {
+          "word": " year",
+          "start": 204.76,
+          "end": 205.12,
+          "probability": 0.999200165271759
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 19802,
+      "start": 205.70000000000002,
+      "end": 208.68,
+      "text": " It became a big festival in",
+      "tokens": [
+        50747,
+        632,
+        2627,
+        257,
+        1263,
+        10876,
+        287,
+        50889
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1823124132658306,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.004143788479268551,
+      "words": [
+        {
+          "word": " It",
+          "start": 205.70000000000002,
+          "end": 206.36,
+          "probability": 0.04247386381030083
+        },
+        {
+          "word": " became",
+          "start": 206.36,
+          "end": 206.84,
+          "probability": 0.9868209958076477
+        },
+        {
+          "word": " a",
+          "start": 206.84,
+          "end": 207.16,
+          "probability": 0.9959924817085266
+        },
+        {
+          "word": " big",
+          "start": 207.16,
+          "end": 207.52,
+          "probability": 0.9415920972824097
+        },
+        {
+          "word": " festival",
+          "start": 207.52,
+          "end": 208.02,
+          "probability": 0.9909440279006958
+        },
+        {
+          "word": " in",
+          "start": 208.02,
+          "end": 208.68,
+          "probability": 0.9935923218727112
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 19802,
+      "start": 209.38,
+      "end": 209.82,
+      "text": " 1952",
+      "tokens": [
+        50931,
+        26352,
+        51031
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1823124132658306,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.004143788479268551,
+      "words": [
+        {
+          "word": " 1952",
+          "start": 209.38,
+          "end": 209.82,
+          "probability": 0.9901789426803589
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 19802,
+      "start": 211.26,
+      "end": 214.4,
+      "text": " What does the festival consist of?",
+      "tokens": [
+        51039,
+        1867,
+        857,
+        262,
+        10876,
+        3473,
+        286,
+        30,
+        51169
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1823124132658306,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.004143788479268551,
+      "words": [
+        {
+          "word": " What",
+          "start": 211.26,
+          "end": 212.06,
+          "probability": 0.7067967653274536
+        },
+        {
+          "word": " does",
+          "start": 212.06,
+          "end": 212.34,
+          "probability": 0.9971644282341003
+        },
+        {
+          "word": " the",
+          "start": 212.34,
+          "end": 212.58,
+          "probability": 0.973053514957428
+        },
+        {
+          "word": " festival",
+          "start": 212.58,
+          "end": 213.1,
+          "probability": 0.9874851107597351
+        },
+        {
+          "word": " consist",
+          "start": 213.1,
+          "end": 213.62,
+          "probability": 0.9768202304840088
+        },
+        {
+          "word": " of?",
+          "start": 213.62,
+          "end": 214.4,
+          "probability": 0.9963233470916748
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 19802,
+      "start": 215.08,
+      "end": 221.22,
+      "text": " On the day big lorries filled with tomatoes arrive in the main square of the town",
+      "tokens": [
+        51215,
+        1550,
+        262,
+        1110,
+        1263,
+        300,
+        273,
+        1678,
+        5901,
+        351,
+        23972,
+        9240,
+        287,
+        262,
+        1388,
+        6616,
+        286,
+        262,
+        3240,
+        51513
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1823124132658306,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.004143788479268551,
+      "words": [
+        {
+          "word": " On",
+          "start": 215.08,
+          "end": 215.42,
+          "probability": 0.9809319376945496
+        },
+        {
+          "word": " the",
+          "start": 215.42,
+          "end": 215.6,
+          "probability": 0.9946578145027161
+        },
+        {
+          "word": " day",
+          "start": 215.6,
+          "end": 215.88,
+          "probability": 0.996291995048523
+        },
+        {
+          "word": " big",
+          "start": 215.88,
+          "end": 216.6,
+          "probability": 0.33979424834251404
+        },
+        {
+          "word": " lorries",
+          "start": 216.6,
+          "end": 217.12,
+          "probability": 0.9271573026974996
+        },
+        {
+          "word": " filled",
+          "start": 217.12,
+          "end": 217.56,
+          "probability": 0.9909728765487671
+        },
+        {
+          "word": " with",
+          "start": 217.56,
+          "end": 217.88,
+          "probability": 0.9953711628913879
+        },
+        {
+          "word": " tomatoes",
+          "start": 217.88,
+          "end": 218.34,
+          "probability": 0.9776729345321655
+        },
+        {
+          "word": " arrive",
+          "start": 218.34,
+          "end": 219.08,
+          "probability": 0.9611397981643677
+        },
+        {
+          "word": " in",
+          "start": 219.08,
+          "end": 219.44,
+          "probability": 0.9934971332550049
+        },
+        {
+          "word": " the",
+          "start": 219.44,
+          "end": 219.58,
+          "probability": 0.9960513710975647
+        },
+        {
+          "word": " main",
+          "start": 219.58,
+          "end": 219.88,
+          "probability": 0.9940491914749146
+        },
+        {
+          "word": " square",
+          "start": 219.88,
+          "end": 220.24,
+          "probability": 0.9916886687278748
+        },
+        {
+          "word": " of",
+          "start": 220.24,
+          "end": 220.64,
+          "probability": 0.9958665370941162
+        },
+        {
+          "word": " the",
+          "start": 220.64,
+          "end": 220.82,
+          "probability": 0.9883537292480469
+        },
+        {
+          "word": " town",
+          "start": 220.82,
+          "end": 221.22,
+          "probability": 0.9963347911834717
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 19802,
+      "start": 222.10000000000002,
+      "end": 226.2,
+      "text": " How much tomato do you think they use for the fight?",
+      "tokens": [
+        51577,
+        1374,
+        881,
+        24240,
+        466,
+        345,
+        892,
+        484,
+        779,
+        329,
+        262,
+        1907,
+        30,
+        51765
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1823124132658306,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.004143788479268551,
+      "words": [
+        {
+          "word": " How",
+          "start": 222.10000000000002,
+          "end": 222.9,
+          "probability": 0.783679723739624
+        },
+        {
+          "word": " much",
+          "start": 222.9,
+          "end": 223.22,
+          "probability": 0.9982921481132507
+        },
+        {
+          "word": " tomato",
+          "start": 223.22,
+          "end": 223.66,
+          "probability": 0.8349895477294922
+        },
+        {
+          "word": " do",
+          "start": 223.66,
+          "end": 224.14,
+          "probability": 0.9937176704406738
+        },
+        {
+          "word": " you",
+          "start": 224.14,
+          "end": 224.42,
+          "probability": 0.9948497414588928
+        },
+        {
+          "word": " think",
+          "start": 224.42,
+          "end": 224.72,
+          "probability": 0.994184672832489
+        },
+        {
+          "word": " they",
+          "start": 224.72,
+          "end": 225.02,
+          "probability": 0.9922237396240234
+        },
+        {
+          "word": " use",
+          "start": 225.02,
+          "end": 225.42,
+          "probability": 0.93828946352005
+        },
+        {
+          "word": " for",
+          "start": 225.42,
+          "end": 225.68,
+          "probability": 0.9947729706764221
+        },
+        {
+          "word": " the",
+          "start": 225.68,
+          "end": 225.86,
+          "probability": 0.9950531125068665
+        },
+        {
+          "word": " fight?",
+          "start": 225.86,
+          "end": 226.2,
+          "probability": 0.9983227849006653
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 22802,
+      "start": 229.57999999999998,
+      "end": 232.1,
+      "text": " 120 thousand kilos",
+      "tokens": [
+        50399,
+        7982,
+        7319,
+        8769,
+        418,
+        50549
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20931130486565666,
+      "compression_ratio": 1.5654450261780104,
+      "no_speech_prob": 0.004394834395498037,
+      "words": [
+        {
+          "word": " 120",
+          "start": 229.57999999999998,
+          "end": 230.35999999999999,
+          "probability": 0.8080238699913025
+        },
+        {
+          "word": " thousand",
+          "start": 230.35999999999999,
+          "end": 231.14,
+          "probability": 0.2533484101295471
+        },
+        {
+          "word": " kilos",
+          "start": 231.14,
+          "end": 232.1,
+          "probability": 0.9769467711448669
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 22802,
+      "start": 232.98000000000002,
+      "end": 241.02,
+      "text": " The fight starts at 11 a.m. and it ends when someone fires a large gun called a cannon",
+      "tokens": [
+        50611,
+        383,
+        1907,
+        4940,
+        379,
+        1367,
+        257,
+        13,
+        76,
+        13,
+        290,
+        340,
+        5645,
+        618,
+        2130,
+        12252,
+        257,
+        1588,
+        2485,
+        1444,
+        257,
+        21202,
+        51015
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20931130486565666,
+      "compression_ratio": 1.5654450261780104,
+      "no_speech_prob": 0.004394834395498037,
+      "words": [
+        {
+          "word": " The",
+          "start": 232.98000000000002,
+          "end": 233.54,
+          "probability": 0.23002786934375763
+        },
+        {
+          "word": " fight",
+          "start": 233.54,
+          "end": 233.9,
+          "probability": 0.9673649668693542
+        },
+        {
+          "word": " starts",
+          "start": 233.9,
+          "end": 234.34,
+          "probability": 0.9916356801986694
+        },
+        {
+          "word": " at",
+          "start": 234.34,
+          "end": 234.68,
+          "probability": 0.9975224137306213
+        },
+        {
+          "word": " 11",
+          "start": 234.68,
+          "end": 235.2,
+          "probability": 0.9390788078308105
+        },
+        {
+          "word": " a",
+          "start": 235.2,
+          "end": 235.4,
+          "probability": 0.1007070243358612
+        },
+        {
+          "word": ".m.",
+          "start": 235.4,
+          "end": 235.64,
+          "probability": 0.9959300756454468
+        },
+        {
+          "word": " and",
+          "start": 235.92,
+          "end": 236.3,
+          "probability": 0.8470807075500488
+        },
+        {
+          "word": " it",
+          "start": 236.3,
+          "end": 236.5,
+          "probability": 0.9853038787841797
+        },
+        {
+          "word": " ends",
+          "start": 236.5,
+          "end": 236.94,
+          "probability": 0.9973606467247009
+        },
+        {
+          "word": " when",
+          "start": 236.94,
+          "end": 237.26,
+          "probability": 0.9919929504394531
+        },
+        {
+          "word": " someone",
+          "start": 237.26,
+          "end": 237.76,
+          "probability": 0.9873647093772888
+        },
+        {
+          "word": " fires",
+          "start": 237.76,
+          "end": 238.2,
+          "probability": 0.9954776167869568
+        },
+        {
+          "word": " a",
+          "start": 238.2,
+          "end": 238.6,
+          "probability": 0.9970263838768005
+        },
+        {
+          "word": " large",
+          "start": 238.6,
+          "end": 238.98,
+          "probability": 0.9938179850578308
+        },
+        {
+          "word": " gun",
+          "start": 238.98,
+          "end": 239.52,
+          "probability": 0.9952183365821838
+        },
+        {
+          "word": " called",
+          "start": 239.52,
+          "end": 240.24,
+          "probability": 0.7754696607589722
+        },
+        {
+          "word": " a",
+          "start": 240.24,
+          "end": 240.6,
+          "probability": 0.9381495714187622
+        },
+        {
+          "word": " cannon",
+          "start": 240.6,
+          "end": 241.02,
+          "probability": 0.7989330291748047
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 22802,
+      "start": 242.72,
+      "end": 248.18,
+      "text": " These are just two of the many strange food festivals around the world",
+      "tokens": [
+        51103,
+        2312,
+        389,
+        655,
+        734,
+        286,
+        262,
+        867,
+        6283,
+        2057,
+        25575,
+        1088,
+        262,
+        995,
+        51357
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20931130486565666,
+      "compression_ratio": 1.5654450261780104,
+      "no_speech_prob": 0.004394834395498037,
+      "words": [
+        {
+          "word": " These",
+          "start": 242.72,
+          "end": 243.5,
+          "probability": 0.43997809290885925
+        },
+        {
+          "word": " are",
+          "start": 243.5,
+          "end": 243.7,
+          "probability": 0.9987010955810547
+        },
+        {
+          "word": " just",
+          "start": 243.7,
+          "end": 243.92,
+          "probability": 0.9927352666854858
+        },
+        {
+          "word": " two",
+          "start": 243.92,
+          "end": 244.32,
+          "probability": 0.8019641041755676
+        },
+        {
+          "word": " of",
+          "start": 244.32,
+          "end": 244.54,
+          "probability": 0.9953123331069946
+        },
+        {
+          "word": " the",
+          "start": 244.54,
+          "end": 244.68,
+          "probability": 0.9719030261039734
+        },
+        {
+          "word": " many",
+          "start": 244.68,
+          "end": 245.26,
+          "probability": 0.9924203753471375
+        },
+        {
+          "word": " strange",
+          "start": 245.26,
+          "end": 245.82,
+          "probability": 0.9639485478401184
+        },
+        {
+          "word": " food",
+          "start": 245.82,
+          "end": 246.36,
+          "probability": 0.9930302500724792
+        },
+        {
+          "word": " festivals",
+          "start": 246.36,
+          "end": 246.9,
+          "probability": 0.9886907339096069
+        },
+        {
+          "word": " around",
+          "start": 246.9,
+          "end": 247.5,
+          "probability": 0.9969897270202637
+        },
+        {
+          "word": " the",
+          "start": 247.5,
+          "end": 247.76,
+          "probability": 0.9982641339302063
+        },
+        {
+          "word": " world",
+          "start": 247.76,
+          "end": 248.18,
+          "probability": 0.9961392283439636
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "seek": 22802,
+      "start": 248.9,
+      "end": 253.36,
+      "text": " They are strange because people don't eat the food at these festivals",
+      "tokens": [
+        51407,
+        1119,
+        389,
+        6283,
+        780,
+        661,
+        836,
+        470,
+        4483,
+        262,
+        2057,
+        379,
+        777,
+        25575,
+        51631
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20931130486565666,
+      "compression_ratio": 1.5654450261780104,
+      "no_speech_prob": 0.004394834395498037,
+      "words": [
+        {
+          "word": " They",
+          "start": 248.9,
+          "end": 249.52,
+          "probability": 0.6795129776000977
+        },
+        {
+          "word": " are",
+          "start": 249.52,
+          "end": 249.68,
+          "probability": 0.9827641844749451
+        },
+        {
+          "word": " strange",
+          "start": 249.68,
+          "end": 250.1,
+          "probability": 0.9978112578392029
+        },
+        {
+          "word": " because",
+          "start": 250.1,
+          "end": 250.66,
+          "probability": 0.9647781252861023
+        },
+        {
+          "word": " people",
+          "start": 250.66,
+          "end": 251.1,
+          "probability": 0.9957205653190613
+        },
+        {
+          "word": " don't",
+          "start": 251.1,
+          "end": 251.5,
+          "probability": 0.9927687346935272
+        },
+        {
+          "word": " eat",
+          "start": 251.5,
+          "end": 251.84,
+          "probability": 0.997840404510498
+        },
+        {
+          "word": " the",
+          "start": 251.84,
+          "end": 252.1,
+          "probability": 0.9935075044631958
+        },
+        {
+          "word": " food",
+          "start": 252.1,
+          "end": 252.38,
+          "probability": 0.997767448425293
+        },
+        {
+          "word": " at",
+          "start": 252.38,
+          "end": 252.58,
+          "probability": 0.9938141107559204
+        },
+        {
+          "word": " these",
+          "start": 252.58,
+          "end": 252.86,
+          "probability": 0.993202805519104
+        },
+        {
+          "word": " festivals",
+          "start": 252.86,
+          "end": 253.36,
+          "probability": 0.9873871207237244
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "seek": 22802,
+      "start": 253.36,
+      "end": 257.44,
+      "text": " They use it to make things or throw it at each other",
+      "tokens": [
+        51647,
+        1119,
+        779,
+        340,
+        284,
+        787,
+        1243,
+        393,
+        3714,
+        340,
+        379,
+        1123,
+        584,
+        51825
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20931130486565666,
+      "compression_ratio": 1.5654450261780104,
+      "no_speech_prob": 0.004394834395498037,
+      "words": [
+        {
+          "word": " They",
+          "start": 253.36,
+          "end": 254.32,
+          "probability": 0.5273237824440002
+        },
+        {
+          "word": " use",
+          "start": 254.32,
+          "end": 254.6,
+          "probability": 0.9978371262550354
+        },
+        {
+          "word": " it",
+          "start": 254.6,
+          "end": 254.78,
+          "probability": 0.9929009675979614
+        },
+        {
+          "word": " to",
+          "start": 254.78,
+          "end": 254.94,
+          "probability": 0.9981878399848938
+        },
+        {
+          "word": " make",
+          "start": 254.94,
+          "end": 255.22,
+          "probability": 0.9989926218986511
+        },
+        {
+          "word": " things",
+          "start": 255.22,
+          "end": 255.66,
+          "probability": 0.9978888630867004
+        },
+        {
+          "word": " or",
+          "start": 255.66,
+          "end": 256.2,
+          "probability": 0.9161240458488464
+        },
+        {
+          "word": " throw",
+          "start": 256.2,
+          "end": 256.56,
+          "probability": 0.9951378703117371
+        },
+        {
+          "word": " it",
+          "start": 256.56,
+          "end": 256.76,
+          "probability": 0.9855347871780396
+        },
+        {
+          "word": " at",
+          "start": 256.76,
+          "end": 256.94,
+          "probability": 0.9967631101608276
+        },
+        {
+          "word": " each",
+          "start": 256.94,
+          "end": 257.14,
+          "probability": 0.9985215067863464
+        },
+        {
+          "word": " other",
+          "start": 257.14,
+          "end": 257.44,
+          "probability": 0.9959660768508911
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "seek": 25802,
+      "start": 258.02,
+      "end": 267.4,
+      "text": " But these festivals are enormous fun for all generations and are a great alternative for people looking for something different",
+      "tokens": [
+        50367,
+        887,
+        777,
+        25575,
+        389,
+        9812,
+        1257,
+        329,
+        477,
+        10439,
+        290,
+        389,
+        257,
+        1049,
+        5559,
+        329,
+        661,
+        2045,
+        329,
+        1223,
+        1180,
+        50833
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22422904553620712,
+      "compression_ratio": 1.3368421052631578,
+      "no_speech_prob": 0.0018457508413121104,
+      "words": [
+        {
+          "word": " But",
+          "start": 258.02,
+          "end": 258.74,
+          "probability": 0.8570499420166016
+        },
+        {
+          "word": " these",
+          "start": 258.74,
+          "end": 259.28,
+          "probability": 0.849435567855835
+        },
+        {
+          "word": " festivals",
+          "start": 259.28,
+          "end": 259.74,
+          "probability": 0.9837452173233032
+        },
+        {
+          "word": " are",
+          "start": 259.74,
+          "end": 260.18,
+          "probability": 0.9980311989784241
+        },
+        {
+          "word": " enormous",
+          "start": 260.18,
+          "end": 260.84,
+          "probability": 0.9877781271934509
+        },
+        {
+          "word": " fun",
+          "start": 260.84,
+          "end": 261.3,
+          "probability": 0.9955475330352783
+        },
+        {
+          "word": " for",
+          "start": 261.3,
+          "end": 261.62,
+          "probability": 0.9958087205886841
+        },
+        {
+          "word": " all",
+          "start": 261.62,
+          "end": 262.02,
+          "probability": 0.9963101744651794
+        },
+        {
+          "word": " generations",
+          "start": 262.02,
+          "end": 262.7,
+          "probability": 0.9815384149551392
+        },
+        {
+          "word": " and",
+          "start": 262.7,
+          "end": 263.46,
+          "probability": 0.8510016202926636
+        },
+        {
+          "word": " are",
+          "start": 263.46,
+          "end": 263.66,
+          "probability": 0.9724770188331604
+        },
+        {
+          "word": " a",
+          "start": 263.66,
+          "end": 263.96,
+          "probability": 0.980083703994751
+        },
+        {
+          "word": " great",
+          "start": 263.96,
+          "end": 264.18,
+          "probability": 0.9982932209968567
+        },
+        {
+          "word": " alternative",
+          "start": 264.18,
+          "end": 264.68,
+          "probability": 0.993966817855835
+        },
+        {
+          "word": " for",
+          "start": 264.68,
+          "end": 265.2,
+          "probability": 0.9849580526351929
+        },
+        {
+          "word": " people",
+          "start": 265.2,
+          "end": 265.64,
+          "probability": 0.9952338337898254
+        },
+        {
+          "word": " looking",
+          "start": 265.64,
+          "end": 266.18,
+          "probability": 0.996091902256012
+        },
+        {
+          "word": " for",
+          "start": 266.18,
+          "end": 266.44,
+          "probability": 0.9975415468215942
+        },
+        {
+          "word": " something",
+          "start": 266.44,
+          "end": 266.9,
+          "probability": 0.9985106587409973
+        },
+        {
+          "word": " different",
+          "start": 266.9,
+          "end": 267.4,
+          "probability": 0.9984538555145264
+        }
+      ]
+    }
+  ]
+}

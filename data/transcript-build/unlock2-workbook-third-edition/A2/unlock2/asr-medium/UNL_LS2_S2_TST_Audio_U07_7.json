@@ -1,0 +1,3077 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 7.2 Bicram! Kim! I have found the person and the invention I want to talk about for the invention seminar! His name is Alfredo Moser and he's from Brazil. At last! Well, hurry up and tell us about him! Okay, well, Alfredo Moser invented the bottle lamp which makes light out of old plastic bottles. This is the best invention ever because the design is so simple and it helps some of the poorest people in the world. And it's also a great achievement because it uses materials that we usually throw away and are a problem for the environment. That does sound quite interesting. Tell us more. The lamp is made by filling a plastic bottle with water and chlorine, you know, the chemical that we use in swimming pools, and then you put it in a sunny place. It takes energy from the sun during the day and at night it lights up so you can use it as a lamp. People who live in places with no electricity can use these bottle lamps. They make it possible for children to do their homework in the evenings and families can spend time together. It's amazing! But surely it must be more complicated than that. You can't make a lamp out of a bottle of water. Yes, you can! Although you do need some sort of battery as well as the bottle and a few other simple things. They are cheap and easy to make. Alfredo Moser's life is remarkable in other ways too. The surprising thing about him is that he never tried to get rich from his invention. He wasn't interested in being an entrepreneur and starting a business. His purpose was to help people. The lamp was a big success all over the world but he didn't try to make money from it. Okay, that's not a bad story. Do you have any examples of situations in which the lamps are used? Lots of places where many people are poor and electricity is unusually expensive. In the Philippines, India, Bangladesh, Tanzania, Argentina, Fiji, all over the world really. People are even starting to grow food in small indoor farms using light from the bottle lamps.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Track 7.2",
+      "tokens": [
+        50364,
+        31903,
+        1614,
+        13,
+        17,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3491409245659323,
+      "compression_ratio": 1.344155844155844,
+      "no_speech_prob": 0.4395333230495453,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.6,
+          "probability": 0.6012013554573059
+        },
+        {
+          "word": " 7",
+          "start": 0.6,
+          "end": 1.1,
+          "probability": 0.8786143064498901
+        },
+        {
+          "word": ".2",
+          "start": 1.1,
+          "end": 2.0,
+          "probability": 0.9953622817993164
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.6399999999999997,
+      "end": 5.34,
+      "text": " Bicram! Kim!",
+      "tokens": [
+        50548,
+        363,
+        299,
+        2356,
+        0,
+        5652,
+        0,
+        50648
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3491409245659323,
+      "compression_ratio": 1.344155844155844,
+      "no_speech_prob": 0.4395333230495453,
+      "words": [
+        {
+          "word": " Bicram!",
+          "start": 3.6399999999999997,
+          "end": 4.54,
+          "probability": 0.437065693239371
+        },
+        {
+          "word": " Kim!",
+          "start": 4.88,
+          "end": 5.34,
+          "probability": 0.9872692823410034
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.92,
+      "end": 12.96,
+      "text": " I have found the person and the invention I want to talk about for the invention seminar!",
+      "tokens": [
+        50648,
+        286,
+        362,
+        1352,
+        264,
+        954,
+        293,
+        264,
+        22265,
+        286,
+        528,
+        281,
+        751,
+        466,
+        337,
+        264,
+        22265,
+        29235,
+        0,
+        51024
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3491409245659323,
+      "compression_ratio": 1.344155844155844,
+      "no_speech_prob": 0.4395333230495453,
+      "words": [
+        {
+          "word": " I",
+          "start": 5.92,
+          "end": 6.14,
+          "probability": 0.9939695596694946
+        },
+        {
+          "word": " have",
+          "start": 6.14,
+          "end": 6.5,
+          "probability": 0.9810764789581299
+        },
+        {
+          "word": " found",
+          "start": 6.5,
+          "end": 6.94,
+          "probability": 0.9949679970741272
+        },
+        {
+          "word": " the",
+          "start": 6.94,
+          "end": 7.28,
+          "probability": 0.9941548705101013
+        },
+        {
+          "word": " person",
+          "start": 7.28,
+          "end": 7.94,
+          "probability": 0.9955241680145264
+        },
+        {
+          "word": " and",
+          "start": 7.94,
+          "end": 8.62,
+          "probability": 0.7994769811630249
+        },
+        {
+          "word": " the",
+          "start": 8.62,
+          "end": 9.0,
+          "probability": 0.9950467348098755
+        },
+        {
+          "word": " invention",
+          "start": 9.0,
+          "end": 9.56,
+          "probability": 0.9871915578842163
+        },
+        {
+          "word": " I",
+          "start": 9.56,
+          "end": 9.84,
+          "probability": 0.972129225730896
+        },
+        {
+          "word": " want",
+          "start": 9.84,
+          "end": 10.14,
+          "probability": 0.9984277486801147
+        },
+        {
+          "word": " to",
+          "start": 10.14,
+          "end": 10.48,
+          "probability": 0.9983600974082947
+        },
+        {
+          "word": " talk",
+          "start": 10.48,
+          "end": 10.72,
+          "probability": 0.9991223216056824
+        },
+        {
+          "word": " about",
+          "start": 10.72,
+          "end": 11.12,
+          "probability": 0.9989075660705566
+        },
+        {
+          "word": " for",
+          "start": 11.12,
+          "end": 11.36,
+          "probability": 0.9678031206130981
+        },
+        {
+          "word": " the",
+          "start": 11.36,
+          "end": 11.6,
+          "probability": 0.9959177374839783
+        },
+        {
+          "word": " invention",
+          "start": 11.6,
+          "end": 12.24,
+          "probability": 0.8127338290214539
+        },
+        {
+          "word": " seminar!",
+          "start": 12.24,
+          "end": 12.96,
+          "probability": 0.9974097609519958
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 13.8,
+      "end": 18.08,
+      "text": " His name is Alfredo Moser and he's from Brazil.",
+      "tokens": [
+        51024,
+        2812,
+        1315,
+        307,
+        28327,
+        78,
+        19430,
+        260,
+        293,
+        415,
+        311,
+        490,
+        9435,
+        13,
+        51284
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3491409245659323,
+      "compression_ratio": 1.344155844155844,
+      "no_speech_prob": 0.4395333230495453,
+      "words": [
+        {
+          "word": " His",
+          "start": 13.8,
+          "end": 13.94,
+          "probability": 0.9782096147537231
+        },
+        {
+          "word": " name",
+          "start": 13.94,
+          "end": 14.6,
+          "probability": 0.9961679577827454
+        },
+        {
+          "word": " is",
+          "start": 14.6,
+          "end": 15.08,
+          "probability": 0.9972538352012634
+        },
+        {
+          "word": " Alfredo",
+          "start": 15.08,
+          "end": 16.04,
+          "probability": 0.9927905201911926
+        },
+        {
+          "word": " Moser",
+          "start": 16.04,
+          "end": 16.56,
+          "probability": 0.7758724391460419
+        },
+        {
+          "word": " and",
+          "start": 16.56,
+          "end": 16.9,
+          "probability": 0.6904894113540649
+        },
+        {
+          "word": " he's",
+          "start": 16.9,
+          "end": 17.2,
+          "probability": 0.9431584477424622
+        },
+        {
+          "word": " from",
+          "start": 17.2,
+          "end": 17.54,
+          "probability": 0.9989094734191895
+        },
+        {
+          "word": " Brazil.",
+          "start": 17.54,
+          "end": 18.08,
+          "probability": 0.9900054335594177
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 18.86,
+      "end": 20.04,
+      "text": " At last!",
+      "tokens": [
+        51284,
+        1711,
+        1036,
+        0,
+        51384
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3491409245659323,
+      "compression_ratio": 1.344155844155844,
+      "no_speech_prob": 0.4395333230495453,
+      "words": [
+        {
+          "word": " At",
+          "start": 18.86,
+          "end": 19.32,
+          "probability": 0.9881320595741272
+        },
+        {
+          "word": " last!",
+          "start": 19.32,
+          "end": 20.04,
+          "probability": 0.9958602786064148
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 20.62,
+      "end": 23.52,
+      "text": " Well, hurry up and tell us about him!",
+      "tokens": [
+        51384,
+        1042,
+        11,
+        11025,
+        493,
+        293,
+        980,
+        505,
+        466,
+        796,
+        0,
+        51548
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3491409245659323,
+      "compression_ratio": 1.344155844155844,
+      "no_speech_prob": 0.4395333230495453,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 20.62,
+          "end": 21.16,
+          "probability": 0.9902841448783875
+        },
+        {
+          "word": " hurry",
+          "start": 21.36,
+          "end": 21.72,
+          "probability": 0.9955551028251648
+        },
+        {
+          "word": " up",
+          "start": 21.72,
+          "end": 22.0,
+          "probability": 0.9950680732727051
+        },
+        {
+          "word": " and",
+          "start": 22.0,
+          "end": 22.2,
+          "probability": 0.9947097301483154
+        },
+        {
+          "word": " tell",
+          "start": 22.2,
+          "end": 22.44,
+          "probability": 0.9983296990394592
+        },
+        {
+          "word": " us",
+          "start": 22.44,
+          "end": 22.66,
+          "probability": 0.9985318183898926
+        },
+        {
+          "word": " about",
+          "start": 22.66,
+          "end": 22.98,
+          "probability": 0.9981938004493713
+        },
+        {
+          "word": " him!",
+          "start": 22.98,
+          "end": 23.52,
+          "probability": 0.9992448091506958
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2352,
+      "start": 23.52,
+      "end": 32.36,
+      "text": " Okay, well, Alfredo Moser invented the bottle lamp which makes light out of old plastic bottles.",
+      "tokens": [
+        50384,
+        1033,
+        11,
+        731,
+        11,
+        28327,
+        78,
+        19430,
+        260,
+        14479,
+        264,
+        7817,
+        12684,
+        597,
+        1669,
+        1442,
+        484,
+        295,
+        1331,
+        5900,
+        15923,
+        13,
+        50840
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14975629534040177,
+      "compression_ratio": 1.5596330275229358,
+      "no_speech_prob": 0.24868865311145782,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 23.52,
+          "end": 24.46,
+          "probability": 0.2719895541667938
+        },
+        {
+          "word": " well,",
+          "start": 25.22,
+          "end": 25.98,
+          "probability": 0.9814811944961548
+        },
+        {
+          "word": " Alfredo",
+          "start": 26.24,
+          "end": 26.92,
+          "probability": 0.9907364547252655
+        },
+        {
+          "word": " Moser",
+          "start": 26.92,
+          "end": 27.4,
+          "probability": 0.9653153121471405
+        },
+        {
+          "word": " invented",
+          "start": 27.4,
+          "end": 28.12,
+          "probability": 0.972280740737915
+        },
+        {
+          "word": " the",
+          "start": 28.12,
+          "end": 28.5,
+          "probability": 0.99310302734375
+        },
+        {
+          "word": " bottle",
+          "start": 28.5,
+          "end": 28.82,
+          "probability": 0.8702243566513062
+        },
+        {
+          "word": " lamp",
+          "start": 28.82,
+          "end": 29.18,
+          "probability": 0.9824321866035461
+        },
+        {
+          "word": " which",
+          "start": 29.18,
+          "end": 29.66,
+          "probability": 0.5927084684371948
+        },
+        {
+          "word": " makes",
+          "start": 29.66,
+          "end": 30.04,
+          "probability": 0.9964048862457275
+        },
+        {
+          "word": " light",
+          "start": 30.04,
+          "end": 30.44,
+          "probability": 0.9960502982139587
+        },
+        {
+          "word": " out",
+          "start": 30.44,
+          "end": 30.78,
+          "probability": 0.9953005313873291
+        },
+        {
+          "word": " of",
+          "start": 30.78,
+          "end": 30.96,
+          "probability": 0.997668445110321
+        },
+        {
+          "word": " old",
+          "start": 30.96,
+          "end": 31.26,
+          "probability": 0.9961289167404175
+        },
+        {
+          "word": " plastic",
+          "start": 31.26,
+          "end": 31.8,
+          "probability": 0.9919671416282654
+        },
+        {
+          "word": " bottles.",
+          "start": 31.8,
+          "end": 32.36,
+          "probability": 0.9974256157875061
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2352,
+      "start": 33.16,
+      "end": 42.52,
+      "text": " This is the best invention ever because the design is so simple and it helps some of the poorest people in the world.",
+      "tokens": [
+        50840,
+        639,
+        307,
+        264,
+        1151,
+        22265,
+        1562,
+        570,
+        264,
+        1715,
+        307,
+        370,
+        2199,
+        293,
+        309,
+        3665,
+        512,
+        295,
+        264,
+        44925,
+        561,
+        294,
+        264,
+        1002,
+        13,
+        51360
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14975629534040177,
+      "compression_ratio": 1.5596330275229358,
+      "no_speech_prob": 0.24868865311145782,
+      "words": [
+        {
+          "word": " This",
+          "start": 33.16,
+          "end": 33.46,
+          "probability": 0.9842560887336731
+        },
+        {
+          "word": " is",
+          "start": 33.46,
+          "end": 33.78,
+          "probability": 0.9974608421325684
+        },
+        {
+          "word": " the",
+          "start": 33.78,
+          "end": 34.06,
+          "probability": 0.9974585175514221
+        },
+        {
+          "word": " best",
+          "start": 34.06,
+          "end": 34.46,
+          "probability": 0.9950758814811707
+        },
+        {
+          "word": " invention",
+          "start": 34.46,
+          "end": 35.12,
+          "probability": 0.9987320303916931
+        },
+        {
+          "word": " ever",
+          "start": 35.12,
+          "end": 35.82,
+          "probability": 0.9816552400588989
+        },
+        {
+          "word": " because",
+          "start": 35.82,
+          "end": 36.44,
+          "probability": 0.7895026803016663
+        },
+        {
+          "word": " the",
+          "start": 36.44,
+          "end": 36.76,
+          "probability": 0.9953516721725464
+        },
+        {
+          "word": " design",
+          "start": 36.76,
+          "end": 37.26,
+          "probability": 0.9982646107673645
+        },
+        {
+          "word": " is",
+          "start": 37.26,
+          "end": 37.66,
+          "probability": 0.9977570176124573
+        },
+        {
+          "word": " so",
+          "start": 37.66,
+          "end": 38.12,
+          "probability": 0.9937440752983093
+        },
+        {
+          "word": " simple",
+          "start": 38.12,
+          "end": 38.78,
+          "probability": 0.9973767995834351
+        },
+        {
+          "word": " and",
+          "start": 38.78,
+          "end": 39.46,
+          "probability": 0.8647586703300476
+        },
+        {
+          "word": " it",
+          "start": 39.46,
+          "end": 39.82,
+          "probability": 0.990032970905304
+        },
+        {
+          "word": " helps",
+          "start": 39.82,
+          "end": 40.08,
+          "probability": 0.998001754283905
+        },
+        {
+          "word": " some",
+          "start": 40.08,
+          "end": 40.44,
+          "probability": 0.995594322681427
+        },
+        {
+          "word": " of",
+          "start": 40.44,
+          "end": 40.62,
+          "probability": 0.998379111289978
+        },
+        {
+          "word": " the",
+          "start": 40.62,
+          "end": 40.8,
+          "probability": 0.9984558820724487
+        },
+        {
+          "word": " poorest",
+          "start": 40.8,
+          "end": 41.18,
+          "probability": 0.9985039234161377
+        },
+        {
+          "word": " people",
+          "start": 41.18,
+          "end": 41.68,
+          "probability": 0.9982829093933105
+        },
+        {
+          "word": " in",
+          "start": 41.68,
+          "end": 41.9,
+          "probability": 0.9979032278060913
+        },
+        {
+          "word": " the",
+          "start": 41.9,
+          "end": 42.1,
+          "probability": 0.9992554783821106
+        },
+        {
+          "word": " world.",
+          "start": 42.1,
+          "end": 42.52,
+          "probability": 0.996268630027771
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2352,
+      "start": 43.54,
+      "end": 52.48,
+      "text": " And it's also a great achievement because it uses materials that we usually throw away and are a problem for the environment.",
+      "tokens": [
+        51360,
+        400,
+        309,
+        311,
+        611,
+        257,
+        869,
+        15838,
+        570,
+        309,
+        4960,
+        5319,
+        300,
+        321,
+        2673,
+        3507,
+        1314,
+        293,
+        366,
+        257,
+        1154,
+        337,
+        264,
+        2823,
+        13,
+        51848
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14975629534040177,
+      "compression_ratio": 1.5596330275229358,
+      "no_speech_prob": 0.24868865311145782,
+      "words": [
+        {
+          "word": " And",
+          "start": 43.54,
+          "end": 43.8,
+          "probability": 0.9577372670173645
+        },
+        {
+          "word": " it's",
+          "start": 43.8,
+          "end": 44.04,
+          "probability": 0.9629084169864655
+        },
+        {
+          "word": " also",
+          "start": 44.04,
+          "end": 44.62,
+          "probability": 0.9962643980979919
+        },
+        {
+          "word": " a",
+          "start": 44.62,
+          "end": 45.0,
+          "probability": 0.9966980218887329
+        },
+        {
+          "word": " great",
+          "start": 45.0,
+          "end": 45.24,
+          "probability": 0.9990228414535522
+        },
+        {
+          "word": " achievement",
+          "start": 45.24,
+          "end": 45.94,
+          "probability": 0.996107280254364
+        },
+        {
+          "word": " because",
+          "start": 45.94,
+          "end": 46.62,
+          "probability": 0.935084879398346
+        },
+        {
+          "word": " it",
+          "start": 46.62,
+          "end": 46.98,
+          "probability": 0.9978074431419373
+        },
+        {
+          "word": " uses",
+          "start": 46.98,
+          "end": 47.28,
+          "probability": 0.9980820417404175
+        },
+        {
+          "word": " materials",
+          "start": 47.28,
+          "end": 48.1,
+          "probability": 0.9894106984138489
+        },
+        {
+          "word": " that",
+          "start": 48.1,
+          "end": 48.44,
+          "probability": 0.9933904409408569
+        },
+        {
+          "word": " we",
+          "start": 48.44,
+          "end": 48.76,
+          "probability": 0.9979962706565857
+        },
+        {
+          "word": " usually",
+          "start": 48.76,
+          "end": 49.14,
+          "probability": 0.9930777549743652
+        },
+        {
+          "word": " throw",
+          "start": 49.14,
+          "end": 49.5,
+          "probability": 0.9936394095420837
+        },
+        {
+          "word": " away",
+          "start": 49.5,
+          "end": 50.06,
+          "probability": 0.9989251494407654
+        },
+        {
+          "word": " and",
+          "start": 50.06,
+          "end": 50.44,
+          "probability": 0.9711781740188599
+        },
+        {
+          "word": " are",
+          "start": 50.44,
+          "end": 50.74,
+          "probability": 0.9945348501205444
+        },
+        {
+          "word": " a",
+          "start": 50.74,
+          "end": 50.82,
+          "probability": 0.9965057373046875
+        },
+        {
+          "word": " problem",
+          "start": 50.82,
+          "end": 51.24,
+          "probability": 0.9992892742156982
+        },
+        {
+          "word": " for",
+          "start": 51.24,
+          "end": 51.48,
+          "probability": 0.9963473677635193
+        },
+        {
+          "word": " the",
+          "start": 51.48,
+          "end": 51.68,
+          "probability": 0.9990328550338745
+        },
+        {
+          "word": " environment.",
+          "start": 51.68,
+          "end": 52.48,
+          "probability": 0.9965617060661316
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 5248,
+      "start": 53.199999999999996,
+      "end": 57.38,
+      "text": " That does sound quite interesting. Tell us more.",
+      "tokens": [
+        50400,
+        663,
+        775,
+        1626,
+        1596,
+        1880,
+        13,
+        5115,
+        505,
+        544,
+        13,
+        50640
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1433116961748172,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.016454685479402542,
+      "words": [
+        {
+          "word": " That",
+          "start": 53.199999999999996,
+          "end": 53.6,
+          "probability": 0.5121097564697266
+        },
+        {
+          "word": " does",
+          "start": 53.6,
+          "end": 54.04,
+          "probability": 0.9435073733329773
+        },
+        {
+          "word": " sound",
+          "start": 54.04,
+          "end": 54.5,
+          "probability": 0.9877305626869202
+        },
+        {
+          "word": " quite",
+          "start": 54.5,
+          "end": 54.86,
+          "probability": 0.9524166584014893
+        },
+        {
+          "word": " interesting.",
+          "start": 54.86,
+          "end": 55.58,
+          "probability": 0.9971242547035217
+        },
+        {
+          "word": " Tell",
+          "start": 56.36,
+          "end": 56.58,
+          "probability": 0.9901750087738037
+        },
+        {
+          "word": " us",
+          "start": 56.58,
+          "end": 56.82,
+          "probability": 0.9986074566841125
+        },
+        {
+          "word": " more.",
+          "start": 56.82,
+          "end": 57.38,
+          "probability": 0.9982187151908875
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5248,
+      "start": 58.18,
+      "end": 69.64,
+      "text": " The lamp is made by filling a plastic bottle with water and chlorine, you know, the chemical that we use in swimming pools, and then you put it in a sunny place.",
+      "tokens": [
+        50640,
+        440,
+        12684,
+        307,
+        1027,
+        538,
+        10623,
+        257,
+        5900,
+        7817,
+        365,
+        1281,
+        293,
+        39888,
+        11,
+        291,
+        458,
+        11,
+        264,
+        7313,
+        300,
+        321,
+        764,
+        294,
+        11989,
+        28688,
+        11,
+        293,
+        550,
+        291,
+        829,
+        309,
+        294,
+        257,
+        20412,
+        1081,
+        13,
+        51268
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1433116961748172,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.016454685479402542,
+      "words": [
+        {
+          "word": " The",
+          "start": 58.18,
+          "end": 58.4,
+          "probability": 0.9292742609977722
+        },
+        {
+          "word": " lamp",
+          "start": 58.4,
+          "end": 58.72,
+          "probability": 0.9854554533958435
+        },
+        {
+          "word": " is",
+          "start": 58.72,
+          "end": 58.96,
+          "probability": 0.9981179237365723
+        },
+        {
+          "word": " made",
+          "start": 58.96,
+          "end": 59.32,
+          "probability": 0.9986621141433716
+        },
+        {
+          "word": " by",
+          "start": 59.32,
+          "end": 59.72,
+          "probability": 0.996915340423584
+        },
+        {
+          "word": " filling",
+          "start": 59.72,
+          "end": 60.0,
+          "probability": 0.9919277429580688
+        },
+        {
+          "word": " a",
+          "start": 60.0,
+          "end": 60.34,
+          "probability": 0.9963173866271973
+        },
+        {
+          "word": " plastic",
+          "start": 60.34,
+          "end": 60.84,
+          "probability": 0.9988510608673096
+        },
+        {
+          "word": " bottle",
+          "start": 60.84,
+          "end": 61.24,
+          "probability": 0.9977647066116333
+        },
+        {
+          "word": " with",
+          "start": 61.24,
+          "end": 61.56,
+          "probability": 0.993681788444519
+        },
+        {
+          "word": " water",
+          "start": 61.56,
+          "end": 62.08,
+          "probability": 0.9978806972503662
+        },
+        {
+          "word": " and",
+          "start": 62.08,
+          "end": 62.42,
+          "probability": 0.9949947595596313
+        },
+        {
+          "word": " chlorine,",
+          "start": 62.42,
+          "end": 62.9,
+          "probability": 0.9876312613487244
+        },
+        {
+          "word": " you",
+          "start": 63.42,
+          "end": 63.52,
+          "probability": 0.9334109425544739
+        },
+        {
+          "word": " know,",
+          "start": 63.52,
+          "end": 63.8,
+          "probability": 0.9990130662918091
+        },
+        {
+          "word": " the",
+          "start": 64.08,
+          "end": 64.3,
+          "probability": 0.9938010573387146
+        },
+        {
+          "word": " chemical",
+          "start": 64.3,
+          "end": 64.8,
+          "probability": 0.9826769232749939
+        },
+        {
+          "word": " that",
+          "start": 64.8,
+          "end": 65.16,
+          "probability": 0.9662825465202332
+        },
+        {
+          "word": " we",
+          "start": 65.16,
+          "end": 65.46,
+          "probability": 0.9979844093322754
+        },
+        {
+          "word": " use",
+          "start": 65.46,
+          "end": 65.66,
+          "probability": 0.9986497759819031
+        },
+        {
+          "word": " in",
+          "start": 65.66,
+          "end": 65.94,
+          "probability": 0.9987309575080872
+        },
+        {
+          "word": " swimming",
+          "start": 65.94,
+          "end": 66.22,
+          "probability": 0.9946876764297485
+        },
+        {
+          "word": " pools,",
+          "start": 66.22,
+          "end": 66.72,
+          "probability": 0.9938840270042419
+        },
+        {
+          "word": " and",
+          "start": 67.08,
+          "end": 67.32,
+          "probability": 0.9909918308258057
+        },
+        {
+          "word": " then",
+          "start": 67.32,
+          "end": 67.58,
+          "probability": 0.9943777918815613
+        },
+        {
+          "word": " you",
+          "start": 67.58,
+          "end": 67.82,
+          "probability": 0.9909676909446716
+        },
+        {
+          "word": " put",
+          "start": 67.82,
+          "end": 68.02,
+          "probability": 0.9979670643806458
+        },
+        {
+          "word": " it",
+          "start": 68.02,
+          "end": 68.3,
+          "probability": 0.99064701795578
+        },
+        {
+          "word": " in",
+          "start": 68.3,
+          "end": 68.5,
+          "probability": 0.9969189167022705
+        },
+        {
+          "word": " a",
+          "start": 68.5,
+          "end": 68.64,
+          "probability": 0.9962350726127625
+        },
+        {
+          "word": " sunny",
+          "start": 68.64,
+          "end": 69.0,
+          "probability": 0.9957336783409119
+        },
+        {
+          "word": " place.",
+          "start": 69.0,
+          "end": 69.64,
+          "probability": 0.9990677237510681
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5248,
+      "start": 70.78,
+      "end": 78.56,
+      "text": " It takes energy from the sun during the day and at night it lights up so you can use it as a lamp.",
+      "tokens": [
+        51268,
+        467,
+        2516,
+        2281,
+        490,
+        264,
+        3295,
+        1830,
+        264,
+        786,
+        293,
+        412,
+        1818,
+        309,
+        5811,
+        493,
+        370,
+        291,
+        393,
+        764,
+        309,
+        382,
+        257,
+        12684,
+        13,
+        51712
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1433116961748172,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.016454685479402542,
+      "words": [
+        {
+          "word": " It",
+          "start": 70.78,
+          "end": 70.9,
+          "probability": 0.9937082529067993
+        },
+        {
+          "word": " takes",
+          "start": 70.9,
+          "end": 71.26,
+          "probability": 0.9975760579109192
+        },
+        {
+          "word": " energy",
+          "start": 71.26,
+          "end": 71.86,
+          "probability": 0.9979588985443115
+        },
+        {
+          "word": " from",
+          "start": 71.86,
+          "end": 72.18,
+          "probability": 0.9988884329795837
+        },
+        {
+          "word": " the",
+          "start": 72.18,
+          "end": 72.44,
+          "probability": 0.9991937279701233
+        },
+        {
+          "word": " sun",
+          "start": 72.44,
+          "end": 72.78,
+          "probability": 0.8942463994026184
+        },
+        {
+          "word": " during",
+          "start": 72.78,
+          "end": 73.24,
+          "probability": 0.9969340562820435
+        },
+        {
+          "word": " the",
+          "start": 73.24,
+          "end": 73.5,
+          "probability": 0.9991570711135864
+        },
+        {
+          "word": " day",
+          "start": 73.5,
+          "end": 73.82,
+          "probability": 0.9994557499885559
+        },
+        {
+          "word": " and",
+          "start": 73.82,
+          "end": 74.42,
+          "probability": 0.5660417079925537
+        },
+        {
+          "word": " at",
+          "start": 74.42,
+          "end": 74.76,
+          "probability": 0.9598264694213867
+        },
+        {
+          "word": " night",
+          "start": 74.76,
+          "end": 75.14,
+          "probability": 0.9994497895240784
+        },
+        {
+          "word": " it",
+          "start": 75.14,
+          "end": 75.46,
+          "probability": 0.9078347086906433
+        },
+        {
+          "word": " lights",
+          "start": 75.46,
+          "end": 75.8,
+          "probability": 0.9971816539764404
+        },
+        {
+          "word": " up",
+          "start": 75.8,
+          "end": 76.24,
+          "probability": 0.9982530474662781
+        },
+        {
+          "word": " so",
+          "start": 76.24,
+          "end": 76.6,
+          "probability": 0.6877132654190063
+        },
+        {
+          "word": " you",
+          "start": 76.6,
+          "end": 76.82,
+          "probability": 0.9898380041122437
+        },
+        {
+          "word": " can",
+          "start": 76.82,
+          "end": 77.14,
+          "probability": 0.9989198446273804
+        },
+        {
+          "word": " use",
+          "start": 77.14,
+          "end": 77.44,
+          "probability": 0.9992461204528809
+        },
+        {
+          "word": " it",
+          "start": 77.44,
+          "end": 77.72,
+          "probability": 0.9980169534683228
+        },
+        {
+          "word": " as",
+          "start": 77.72,
+          "end": 77.96,
+          "probability": 0.9984343647956848
+        },
+        {
+          "word": " a",
+          "start": 77.96,
+          "end": 78.16,
+          "probability": 0.9987809062004089
+        },
+        {
+          "word": " lamp.",
+          "start": 78.16,
+          "end": 78.56,
+          "probability": 0.9957391023635864
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 7856,
+      "start": 79.52,
+      "end": 84.94,
+      "text": " People who live in places with no electricity can use these bottle lamps.",
+      "tokens": [
+        50412,
+        3432,
+        567,
+        1621,
+        294,
+        3190,
+        365,
+        572,
+        10356,
+        393,
+        764,
+        613,
+        7817,
+        34887,
+        13,
+        50716
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11533601733221524,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.005383570212870836,
+      "words": [
+        {
+          "word": " People",
+          "start": 79.52,
+          "end": 80.02,
+          "probability": 0.4026941955089569
+        },
+        {
+          "word": " who",
+          "start": 80.02,
+          "end": 80.36,
+          "probability": 0.9882693290710449
+        },
+        {
+          "word": " live",
+          "start": 80.36,
+          "end": 80.6,
+          "probability": 0.9944052696228027
+        },
+        {
+          "word": " in",
+          "start": 80.6,
+          "end": 80.88,
+          "probability": 0.9965164661407471
+        },
+        {
+          "word": " places",
+          "start": 80.88,
+          "end": 81.3,
+          "probability": 0.9944247007369995
+        },
+        {
+          "word": " with",
+          "start": 81.3,
+          "end": 81.64,
+          "probability": 0.9906008243560791
+        },
+        {
+          "word": " no",
+          "start": 81.64,
+          "end": 81.98,
+          "probability": 0.9962815642356873
+        },
+        {
+          "word": " electricity",
+          "start": 81.98,
+          "end": 82.76,
+          "probability": 0.9980043768882751
+        },
+        {
+          "word": " can",
+          "start": 82.76,
+          "end": 83.42,
+          "probability": 0.9522566795349121
+        },
+        {
+          "word": " use",
+          "start": 83.42,
+          "end": 83.72,
+          "probability": 0.9981979727745056
+        },
+        {
+          "word": " these",
+          "start": 83.72,
+          "end": 84.08,
+          "probability": 0.9919954538345337
+        },
+        {
+          "word": " bottle",
+          "start": 84.08,
+          "end": 84.42,
+          "probability": 0.9716250896453857
+        },
+        {
+          "word": " lamps.",
+          "start": 84.42,
+          "end": 84.94,
+          "probability": 0.9754320383071899
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 7856,
+      "start": 85.82,
+      "end": 95.16,
+      "text": " They make it possible for children to do their homework in the evenings and families can spend time together. It's amazing!",
+      "tokens": [
+        50716,
+        814,
+        652,
+        309,
+        1944,
+        337,
+        2227,
+        281,
+        360,
+        641,
+        14578,
+        294,
+        264,
+        42835,
+        293,
+        4466,
+        393,
+        3496,
+        565,
+        1214,
+        13,
+        467,
+        311,
+        2243,
+        0,
+        51216
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11533601733221524,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.005383570212870836,
+      "words": [
+        {
+          "word": " They",
+          "start": 85.82,
+          "end": 85.92,
+          "probability": 0.9792085886001587
+        },
+        {
+          "word": " make",
+          "start": 85.92,
+          "end": 86.24,
+          "probability": 0.9953030347824097
+        },
+        {
+          "word": " it",
+          "start": 86.24,
+          "end": 86.52,
+          "probability": 0.9986516833305359
+        },
+        {
+          "word": " possible",
+          "start": 86.52,
+          "end": 87.08,
+          "probability": 0.9990399479866028
+        },
+        {
+          "word": " for",
+          "start": 87.08,
+          "end": 87.44,
+          "probability": 0.9975469708442688
+        },
+        {
+          "word": " children",
+          "start": 87.44,
+          "end": 87.96,
+          "probability": 0.9954090714454651
+        },
+        {
+          "word": " to",
+          "start": 87.96,
+          "end": 88.34,
+          "probability": 0.9976058006286621
+        },
+        {
+          "word": " do",
+          "start": 88.34,
+          "end": 88.48,
+          "probability": 0.9985159039497375
+        },
+        {
+          "word": " their",
+          "start": 88.48,
+          "end": 88.8,
+          "probability": 0.9943747520446777
+        },
+        {
+          "word": " homework",
+          "start": 88.8,
+          "end": 89.3,
+          "probability": 0.9935896396636963
+        },
+        {
+          "word": " in",
+          "start": 89.3,
+          "end": 89.6,
+          "probability": 0.9968307614326477
+        },
+        {
+          "word": " the",
+          "start": 89.6,
+          "end": 89.82,
+          "probability": 0.9965881109237671
+        },
+        {
+          "word": " evenings",
+          "start": 89.82,
+          "end": 90.38,
+          "probability": 0.9905688762664795
+        },
+        {
+          "word": " and",
+          "start": 90.38,
+          "end": 90.98,
+          "probability": 0.5996842980384827
+        },
+        {
+          "word": " families",
+          "start": 90.98,
+          "end": 91.58,
+          "probability": 0.9936311841011047
+        },
+        {
+          "word": " can",
+          "start": 91.58,
+          "end": 91.96,
+          "probability": 0.9979944229125977
+        },
+        {
+          "word": " spend",
+          "start": 91.96,
+          "end": 92.22,
+          "probability": 0.9963819980621338
+        },
+        {
+          "word": " time",
+          "start": 92.22,
+          "end": 92.66,
+          "probability": 0.9976488947868347
+        },
+        {
+          "word": " together.",
+          "start": 92.66,
+          "end": 93.24,
+          "probability": 0.9992200136184692
+        },
+        {
+          "word": " It's",
+          "start": 93.78,
+          "end": 94.26,
+          "probability": 0.9904808402061462
+        },
+        {
+          "word": " amazing!",
+          "start": 94.26,
+          "end": 95.16,
+          "probability": 0.9938679337501526
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 7856,
+      "start": 95.76,
+      "end": 104.1,
+      "text": " But surely it must be more complicated than that. You can't make a lamp out of a bottle of water.",
+      "tokens": [
+        51216,
+        583,
+        11468,
+        309,
+        1633,
+        312,
+        544,
+        6179,
+        813,
+        300,
+        13,
+        509,
+        393,
+        380,
+        652,
+        257,
+        12684,
+        484,
+        295,
+        257,
+        7817,
+        295,
+        1281,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11533601733221524,
+      "compression_ratio": 1.4532019704433496,
+      "no_speech_prob": 0.005383570212870836,
+      "words": [
+        {
+          "word": " But",
+          "start": 95.76,
+          "end": 96.04,
+          "probability": 0.9656392931938171
+        },
+        {
+          "word": " surely",
+          "start": 96.04,
+          "end": 96.7,
+          "probability": 0.9506031274795532
+        },
+        {
+          "word": " it",
+          "start": 96.7,
+          "end": 97.14,
+          "probability": 0.9287641644477844
+        },
+        {
+          "word": " must",
+          "start": 97.14,
+          "end": 97.54,
+          "probability": 0.9879443645477295
+        },
+        {
+          "word": " be",
+          "start": 97.54,
+          "end": 97.82,
+          "probability": 0.9984303116798401
+        },
+        {
+          "word": " more",
+          "start": 97.82,
+          "end": 98.18,
+          "probability": 0.9961561560630798
+        },
+        {
+          "word": " complicated",
+          "start": 98.18,
+          "end": 99.0,
+          "probability": 0.999404788017273
+        },
+        {
+          "word": " than",
+          "start": 99.0,
+          "end": 99.32,
+          "probability": 0.9947603344917297
+        },
+        {
+          "word": " that.",
+          "start": 99.32,
+          "end": 99.8,
+          "probability": 0.9990167617797852
+        },
+        {
+          "word": " You",
+          "start": 100.5,
+          "end": 100.72,
+          "probability": 0.9923794269561768
+        },
+        {
+          "word": " can't",
+          "start": 100.72,
+          "end": 101.22,
+          "probability": 0.9960194826126099
+        },
+        {
+          "word": " make",
+          "start": 101.22,
+          "end": 101.5,
+          "probability": 0.9977466464042664
+        },
+        {
+          "word": " a",
+          "start": 101.5,
+          "end": 101.78,
+          "probability": 0.9977207779884338
+        },
+        {
+          "word": " lamp",
+          "start": 101.78,
+          "end": 102.1,
+          "probability": 0.9970182180404663
+        },
+        {
+          "word": " out",
+          "start": 102.1,
+          "end": 102.52,
+          "probability": 0.9951226115226746
+        },
+        {
+          "word": " of",
+          "start": 102.52,
+          "end": 102.72,
+          "probability": 0.9946387410163879
+        },
+        {
+          "word": " a",
+          "start": 102.72,
+          "end": 102.9,
+          "probability": 0.9947029948234558
+        },
+        {
+          "word": " bottle",
+          "start": 102.9,
+          "end": 103.26,
+          "probability": 0.9936747550964355
+        },
+        {
+          "word": " of",
+          "start": 103.26,
+          "end": 103.64,
+          "probability": 0.9987762570381165
+        },
+        {
+          "word": " water.",
+          "start": 103.64,
+          "end": 104.1,
+          "probability": 0.9995654225349426
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 10410,
+      "start": 104.1,
+      "end": 114.02,
+      "text": " Yes, you can! Although you do need some sort of battery as well as the bottle and a few other simple things.",
+      "tokens": [
+        50388,
+        1079,
+        11,
+        291,
+        393,
+        0,
+        5780,
+        291,
+        360,
+        643,
+        512,
+        1333,
+        295,
+        5809,
+        382,
+        731,
+        382,
+        264,
+        7817,
+        293,
+        257,
+        1326,
+        661,
+        2199,
+        721,
+        13,
+        50876
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13029896373480138,
+      "compression_ratio": 1.4635416666666667,
+      "no_speech_prob": 0.036257050931453705,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 104.1,
+          "end": 105.18,
+          "probability": 0.9245066046714783
+        },
+        {
+          "word": " you",
+          "start": 105.18,
+          "end": 105.58,
+          "probability": 0.994672954082489
+        },
+        {
+          "word": " can!",
+          "start": 105.58,
+          "end": 106.38,
+          "probability": 0.9939875602722168
+        },
+        {
+          "word": " Although",
+          "start": 107.08,
+          "end": 107.48,
+          "probability": 0.9781472086906433
+        },
+        {
+          "word": " you",
+          "start": 107.48,
+          "end": 108.02,
+          "probability": 0.6135750412940979
+        },
+        {
+          "word": " do",
+          "start": 108.02,
+          "end": 108.34,
+          "probability": 0.9828404188156128
+        },
+        {
+          "word": " need",
+          "start": 108.34,
+          "end": 108.58,
+          "probability": 0.9972568154335022
+        },
+        {
+          "word": " some",
+          "start": 108.58,
+          "end": 108.92,
+          "probability": 0.9979422688484192
+        },
+        {
+          "word": " sort",
+          "start": 108.92,
+          "end": 109.2,
+          "probability": 0.9925768971443176
+        },
+        {
+          "word": " of",
+          "start": 109.2,
+          "end": 109.42,
+          "probability": 0.9987938404083252
+        },
+        {
+          "word": " battery",
+          "start": 109.42,
+          "end": 109.9,
+          "probability": 0.9837464690208435
+        },
+        {
+          "word": " as",
+          "start": 109.9,
+          "end": 110.26,
+          "probability": 0.8496642112731934
+        },
+        {
+          "word": " well",
+          "start": 110.26,
+          "end": 110.5,
+          "probability": 0.9988778233528137
+        },
+        {
+          "word": " as",
+          "start": 110.5,
+          "end": 110.66,
+          "probability": 0.9975675344467163
+        },
+        {
+          "word": " the",
+          "start": 110.66,
+          "end": 110.86,
+          "probability": 0.9868367910385132
+        },
+        {
+          "word": " bottle",
+          "start": 110.86,
+          "end": 111.24,
+          "probability": 0.9985077977180481
+        },
+        {
+          "word": " and",
+          "start": 111.24,
+          "end": 112.0,
+          "probability": 0.5870962738990784
+        },
+        {
+          "word": " a",
+          "start": 112.0,
+          "end": 112.28,
+          "probability": 0.9899879097938538
+        },
+        {
+          "word": " few",
+          "start": 112.28,
+          "end": 112.56,
+          "probability": 0.9995887875556946
+        },
+        {
+          "word": " other",
+          "start": 112.56,
+          "end": 112.96,
+          "probability": 0.9923723936080933
+        },
+        {
+          "word": " simple",
+          "start": 112.96,
+          "end": 113.48,
+          "probability": 0.9501689076423645
+        },
+        {
+          "word": " things.",
+          "start": 113.48,
+          "end": 114.02,
+          "probability": 0.9992296695709229
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 10410,
+      "start": 114.46,
+      "end": 122.56,
+      "text": " They are cheap and easy to make. Alfredo Moser's life is remarkable in other ways too.",
+      "tokens": [
+        50876,
+        814,
+        366,
+        7084,
+        293,
+        1858,
+        281,
+        652,
+        13,
+        28327,
+        78,
+        19430,
+        260,
+        311,
+        993,
+        307,
+        12802,
+        294,
+        661,
+        2098,
+        886,
+        13,
+        51316
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13029896373480138,
+      "compression_ratio": 1.4635416666666667,
+      "no_speech_prob": 0.036257050931453705,
+      "words": [
+        {
+          "word": " They",
+          "start": 114.46,
+          "end": 114.68,
+          "probability": 0.9797894954681396
+        },
+        {
+          "word": " are",
+          "start": 114.68,
+          "end": 114.94,
+          "probability": 0.9957277774810791
+        },
+        {
+          "word": " cheap",
+          "start": 114.94,
+          "end": 115.4,
+          "probability": 0.999171257019043
+        },
+        {
+          "word": " and",
+          "start": 115.4,
+          "end": 115.74,
+          "probability": 0.9850106835365295
+        },
+        {
+          "word": " easy",
+          "start": 115.74,
+          "end": 116.14,
+          "probability": 0.9992469549179077
+        },
+        {
+          "word": " to",
+          "start": 116.14,
+          "end": 116.44,
+          "probability": 0.9992761015892029
+        },
+        {
+          "word": " make.",
+          "start": 116.44,
+          "end": 117.6,
+          "probability": 0.999377965927124
+        },
+        {
+          "word": " Alfredo",
+          "start": 118.08,
+          "end": 118.8,
+          "probability": 0.9872388541698456
+        },
+        {
+          "word": " Moser's",
+          "start": 118.8,
+          "end": 119.36,
+          "probability": 0.4815433969100316
+        },
+        {
+          "word": " life",
+          "start": 119.36,
+          "end": 119.66,
+          "probability": 0.9951509237289429
+        },
+        {
+          "word": " is",
+          "start": 119.66,
+          "end": 119.98,
+          "probability": 0.997583270072937
+        },
+        {
+          "word": " remarkable",
+          "start": 119.98,
+          "end": 120.78,
+          "probability": 0.9951463341712952
+        },
+        {
+          "word": " in",
+          "start": 120.78,
+          "end": 121.2,
+          "probability": 0.9974170923233032
+        },
+        {
+          "word": " other",
+          "start": 121.2,
+          "end": 121.48,
+          "probability": 0.9978196620941162
+        },
+        {
+          "word": " ways",
+          "start": 121.48,
+          "end": 121.92,
+          "probability": 0.9988788962364197
+        },
+        {
+          "word": " too.",
+          "start": 121.92,
+          "end": 122.56,
+          "probability": 0.7637224197387695
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 10410,
+      "start": 123.4,
+      "end": 128.92,
+      "text": " The surprising thing about him is that he never tried to get rich from his invention.",
+      "tokens": [
+        51316,
+        440,
+        8830,
+        551,
+        466,
+        796,
+        307,
+        300,
+        415,
+        1128,
+        3031,
+        281,
+        483,
+        4593,
+        490,
+        702,
+        22265,
+        13,
+        51636
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13029896373480138,
+      "compression_ratio": 1.4635416666666667,
+      "no_speech_prob": 0.036257050931453705,
+      "words": [
+        {
+          "word": " The",
+          "start": 123.4,
+          "end": 123.72,
+          "probability": 0.9970104694366455
+        },
+        {
+          "word": " surprising",
+          "start": 123.72,
+          "end": 124.26,
+          "probability": 0.9963551759719849
+        },
+        {
+          "word": " thing",
+          "start": 124.26,
+          "end": 124.64,
+          "probability": 0.9977655410766602
+        },
+        {
+          "word": " about",
+          "start": 124.64,
+          "end": 125.02,
+          "probability": 0.9987547397613525
+        },
+        {
+          "word": " him",
+          "start": 125.02,
+          "end": 125.4,
+          "probability": 0.9985135197639465
+        },
+        {
+          "word": " is",
+          "start": 125.4,
+          "end": 125.74,
+          "probability": 0.9347507953643799
+        },
+        {
+          "word": " that",
+          "start": 125.74,
+          "end": 125.92,
+          "probability": 0.9961416125297546
+        },
+        {
+          "word": " he",
+          "start": 125.92,
+          "end": 126.16,
+          "probability": 0.9963392019271851
+        },
+        {
+          "word": " never",
+          "start": 126.16,
+          "end": 126.56,
+          "probability": 0.9980596899986267
+        },
+        {
+          "word": " tried",
+          "start": 126.56,
+          "end": 126.96,
+          "probability": 0.9977374076843262
+        },
+        {
+          "word": " to",
+          "start": 126.96,
+          "end": 127.18,
+          "probability": 0.9992398023605347
+        },
+        {
+          "word": " get",
+          "start": 127.18,
+          "end": 127.42,
+          "probability": 0.9984563589096069
+        },
+        {
+          "word": " rich",
+          "start": 127.42,
+          "end": 127.78,
+          "probability": 0.9968072175979614
+        },
+        {
+          "word": " from",
+          "start": 127.78,
+          "end": 128.06,
+          "probability": 0.9983652234077454
+        },
+        {
+          "word": " his",
+          "start": 128.06,
+          "end": 128.36,
+          "probability": 0.9988763928413391
+        },
+        {
+          "word": " invention.",
+          "start": 128.36,
+          "end": 128.92,
+          "probability": 0.9937238097190857
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 12892,
+      "start": 129.48,
+      "end": 137.06,
+      "text": " He wasn't interested in being an entrepreneur and starting a business. His purpose was to help people.",
+      "tokens": [
+        50392,
+        634,
+        2067,
+        380,
+        3102,
+        294,
+        885,
+        364,
+        14307,
+        293,
+        2891,
+        257,
+        1606,
+        13,
+        2812,
+        4334,
+        390,
+        281,
+        854,
+        561,
+        13,
+        50792
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13382424248589408,
+      "compression_ratio": 1.4494949494949494,
+      "no_speech_prob": 0.14023427665233612,
+      "words": [
+        {
+          "word": " He",
+          "start": 129.42,
+          "end": 129.78,
+          "probability": 0.5555348992347717
+        },
+        {
+          "word": " wasn't",
+          "start": 129.78,
+          "end": 130.3,
+          "probability": 0.9816401600837708
+        },
+        {
+          "word": " interested",
+          "start": 130.3,
+          "end": 130.94,
+          "probability": 0.9967998266220093
+        },
+        {
+          "word": " in",
+          "start": 130.94,
+          "end": 131.18,
+          "probability": 0.9964858293533325
+        },
+        {
+          "word": " being",
+          "start": 131.18,
+          "end": 131.44,
+          "probability": 0.993482768535614
+        },
+        {
+          "word": " an",
+          "start": 131.44,
+          "end": 131.86,
+          "probability": 0.9933320879936218
+        },
+        {
+          "word": " entrepreneur",
+          "start": 131.86,
+          "end": 132.38,
+          "probability": 0.9831913113594055
+        },
+        {
+          "word": " and",
+          "start": 132.38,
+          "end": 132.82,
+          "probability": 0.9677557945251465
+        },
+        {
+          "word": " starting",
+          "start": 132.82,
+          "end": 133.2,
+          "probability": 0.9922153353691101
+        },
+        {
+          "word": " a",
+          "start": 133.2,
+          "end": 133.44,
+          "probability": 0.9971033930778503
+        },
+        {
+          "word": " business.",
+          "start": 133.44,
+          "end": 134.0,
+          "probability": 0.9965307116508484
+        },
+        {
+          "word": " His",
+          "start": 134.64,
+          "end": 134.94,
+          "probability": 0.9810417294502258
+        },
+        {
+          "word": " purpose",
+          "start": 134.94,
+          "end": 135.58,
+          "probability": 0.9974029660224915
+        },
+        {
+          "word": " was",
+          "start": 135.58,
+          "end": 135.86,
+          "probability": 0.9969608187675476
+        },
+        {
+          "word": " to",
+          "start": 135.86,
+          "end": 136.14,
+          "probability": 0.9981219172477722
+        },
+        {
+          "word": " help",
+          "start": 136.14,
+          "end": 136.42,
+          "probability": 0.9963372945785522
+        },
+        {
+          "word": " people.",
+          "start": 136.42,
+          "end": 137.06,
+          "probability": 0.9974677562713623
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 12892,
+      "start": 137.68,
+      "end": 144.48,
+      "text": " The lamp was a big success all over the world but he didn't try to make money from it.",
+      "tokens": [
+        50792,
+        440,
+        12684,
+        390,
+        257,
+        955,
+        2245,
+        439,
+        670,
+        264,
+        1002,
+        457,
+        415,
+        994,
+        380,
+        853,
+        281,
+        652,
+        1460,
+        490,
+        309,
+        13,
+        51120
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13382424248589408,
+      "compression_ratio": 1.4494949494949494,
+      "no_speech_prob": 0.14023427665233612,
+      "words": [
+        {
+          "word": " The",
+          "start": 137.68,
+          "end": 137.9,
+          "probability": 0.9801501035690308
+        },
+        {
+          "word": " lamp",
+          "start": 137.9,
+          "end": 138.18,
+          "probability": 0.9725034832954407
+        },
+        {
+          "word": " was",
+          "start": 138.18,
+          "end": 138.52,
+          "probability": 0.997968852519989
+        },
+        {
+          "word": " a",
+          "start": 138.52,
+          "end": 138.72,
+          "probability": 0.9979578256607056
+        },
+        {
+          "word": " big",
+          "start": 138.72,
+          "end": 139.06,
+          "probability": 0.9905620217323303
+        },
+        {
+          "word": " success",
+          "start": 139.06,
+          "end": 139.68,
+          "probability": 0.9951370358467102
+        },
+        {
+          "word": " all",
+          "start": 139.68,
+          "end": 140.2,
+          "probability": 0.966324508190155
+        },
+        {
+          "word": " over",
+          "start": 140.2,
+          "end": 140.62,
+          "probability": 0.9979519248008728
+        },
+        {
+          "word": " the",
+          "start": 140.62,
+          "end": 140.84,
+          "probability": 0.9990924596786499
+        },
+        {
+          "word": " world",
+          "start": 140.84,
+          "end": 141.22,
+          "probability": 0.9942681789398193
+        },
+        {
+          "word": " but",
+          "start": 141.22,
+          "end": 141.9,
+          "probability": 0.32049626111984253
+        },
+        {
+          "word": " he",
+          "start": 141.9,
+          "end": 142.14,
+          "probability": 0.9921445250511169
+        },
+        {
+          "word": " didn't",
+          "start": 142.14,
+          "end": 142.52,
+          "probability": 0.9960684180259705
+        },
+        {
+          "word": " try",
+          "start": 142.52,
+          "end": 142.88,
+          "probability": 0.9948943853378296
+        },
+        {
+          "word": " to",
+          "start": 142.88,
+          "end": 143.16,
+          "probability": 0.9930551648139954
+        },
+        {
+          "word": " make",
+          "start": 143.16,
+          "end": 143.34,
+          "probability": 0.998609185218811
+        },
+        {
+          "word": " money",
+          "start": 143.34,
+          "end": 143.68,
+          "probability": 0.9974168539047241
+        },
+        {
+          "word": " from",
+          "start": 143.68,
+          "end": 143.92,
+          "probability": 0.9953765869140625
+        },
+        {
+          "word": " it.",
+          "start": 143.92,
+          "end": 144.48,
+          "probability": 0.9989945292472839
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 12892,
+      "start": 145.48,
+      "end": 153.38,
+      "text": " Okay, that's not a bad story. Do you have any examples of situations in which the lamps are used?",
+      "tokens": [
+        51172,
+        1033,
+        11,
+        300,
+        311,
+        406,
+        257,
+        1578,
+        1657,
+        13,
+        1144,
+        291,
+        362,
+        604,
+        5110,
+        295,
+        6851,
+        294,
+        597,
+        264,
+        34887,
+        366,
+        1143,
+        30,
+        51576
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13382424248589408,
+      "compression_ratio": 1.4494949494949494,
+      "no_speech_prob": 0.14023427665233612,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 145.48,
+          "end": 145.84,
+          "probability": 0.3769192695617676
+        },
+        {
+          "word": " that's",
+          "start": 146.46,
+          "end": 146.9,
+          "probability": 0.9909064173698425
+        },
+        {
+          "word": " not",
+          "start": 146.9,
+          "end": 147.14,
+          "probability": 0.998506486415863
+        },
+        {
+          "word": " a",
+          "start": 147.14,
+          "end": 147.3,
+          "probability": 0.997307538986206
+        },
+        {
+          "word": " bad",
+          "start": 147.3,
+          "end": 147.58,
+          "probability": 0.999451220035553
+        },
+        {
+          "word": " story.",
+          "start": 147.58,
+          "end": 148.16,
+          "probability": 0.9992788434028625
+        },
+        {
+          "word": " Do",
+          "start": 149.18,
+          "end": 149.3,
+          "probability": 0.9872456789016724
+        },
+        {
+          "word": " you",
+          "start": 149.3,
+          "end": 149.58,
+          "probability": 0.9990202188491821
+        },
+        {
+          "word": " have",
+          "start": 149.58,
+          "end": 149.82,
+          "probability": 0.9988896250724792
+        },
+        {
+          "word": " any",
+          "start": 149.82,
+          "end": 150.2,
+          "probability": 0.9901575446128845
+        },
+        {
+          "word": " examples",
+          "start": 150.2,
+          "end": 150.64,
+          "probability": 0.9927611351013184
+        },
+        {
+          "word": " of",
+          "start": 150.64,
+          "end": 150.96,
+          "probability": 0.99607914686203
+        },
+        {
+          "word": " situations",
+          "start": 150.96,
+          "end": 151.6,
+          "probability": 0.98894202709198
+        },
+        {
+          "word": " in",
+          "start": 151.6,
+          "end": 151.88,
+          "probability": 0.9890402555465698
+        },
+        {
+          "word": " which",
+          "start": 151.88,
+          "end": 152.14,
+          "probability": 0.9993143081665039
+        },
+        {
+          "word": " the",
+          "start": 152.14,
+          "end": 152.38,
+          "probability": 0.9699887037277222
+        },
+        {
+          "word": " lamps",
+          "start": 152.38,
+          "end": 152.6,
+          "probability": 0.9924939870834351
+        },
+        {
+          "word": " are",
+          "start": 152.6,
+          "end": 152.92,
+          "probability": 0.9954719543457031
+        },
+        {
+          "word": " used?",
+          "start": 152.92,
+          "end": 153.38,
+          "probability": 0.9993345141410828
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 15338,
+      "start": 153.94,
+      "end": 160.3,
+      "text": " Lots of places where many people are poor and electricity is unusually expensive.",
+      "tokens": [
+        50392,
+        15908,
+        295,
+        3190,
+        689,
+        867,
+        561,
+        366,
+        4716,
+        293,
+        10356,
+        307,
+        10054,
+        671,
+        5124,
+        13,
+        50700
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1162310569517074,
+      "compression_ratio": 1.4083769633507854,
+      "no_speech_prob": 0.19058124721050262,
+      "words": [
+        {
+          "word": " Lots",
+          "start": 153.92000000000002,
+          "end": 154.4,
+          "probability": 0.6617586612701416
+        },
+        {
+          "word": " of",
+          "start": 154.4,
+          "end": 154.62,
+          "probability": 0.9985848665237427
+        },
+        {
+          "word": " places",
+          "start": 154.62,
+          "end": 155.18,
+          "probability": 0.9955704808235168
+        },
+        {
+          "word": " where",
+          "start": 155.18,
+          "end": 155.58,
+          "probability": 0.9746500253677368
+        },
+        {
+          "word": " many",
+          "start": 155.58,
+          "end": 155.96,
+          "probability": 0.9938790798187256
+        },
+        {
+          "word": " people",
+          "start": 155.96,
+          "end": 156.4,
+          "probability": 0.9986544847488403
+        },
+        {
+          "word": " are",
+          "start": 156.4,
+          "end": 156.76,
+          "probability": 0.9992536902427673
+        },
+        {
+          "word": " poor",
+          "start": 156.76,
+          "end": 157.12,
+          "probability": 0.9990971088409424
+        },
+        {
+          "word": " and",
+          "start": 157.12,
+          "end": 157.64,
+          "probability": 0.8093476295471191
+        },
+        {
+          "word": " electricity",
+          "start": 157.64,
+          "end": 158.36,
+          "probability": 0.9966670870780945
+        },
+        {
+          "word": " is",
+          "start": 158.36,
+          "end": 158.84,
+          "probability": 0.9949828386306763
+        },
+        {
+          "word": " unusually",
+          "start": 158.84,
+          "end": 159.48,
+          "probability": 0.9955823123455048
+        },
+        {
+          "word": " expensive.",
+          "start": 159.48,
+          "end": 160.3,
+          "probability": 0.9987801909446716
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 15338,
+      "start": 161.46,
+      "end": 170.88,
+      "text": " In the Philippines, India, Bangladesh, Tanzania, Argentina, Fiji, all over the world really.",
+      "tokens": [
+        50748,
+        682,
+        264,
+        20153,
+        11,
+        5282,
+        11,
+        35260,
+        11,
+        42420,
+        5609,
+        11,
+        18336,
+        11,
+        479,
+        26539,
+        11,
+        439,
+        670,
+        264,
+        1002,
+        534,
+        13,
+        51228
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1162310569517074,
+      "compression_ratio": 1.4083769633507854,
+      "no_speech_prob": 0.19058124721050262,
+      "words": [
+        {
+          "word": " In",
+          "start": 161.46,
+          "end": 161.52,
+          "probability": 0.9753985404968262
+        },
+        {
+          "word": " the",
+          "start": 161.52,
+          "end": 161.84,
+          "probability": 0.9857859015464783
+        },
+        {
+          "word": " Philippines,",
+          "start": 161.84,
+          "end": 162.46,
+          "probability": 0.9913733601570129
+        },
+        {
+          "word": " India,",
+          "start": 163.04,
+          "end": 163.6,
+          "probability": 0.9958993792533875
+        },
+        {
+          "word": " Bangladesh,",
+          "start": 164.12,
+          "end": 164.78,
+          "probability": 0.9914284348487854
+        },
+        {
+          "word": " Tanzania,",
+          "start": 165.46,
+          "end": 166.1,
+          "probability": 0.9984121024608612
+        },
+        {
+          "word": " Argentina,",
+          "start": 166.58,
+          "end": 167.18,
+          "probability": 0.9983550906181335
+        },
+        {
+          "word": " Fiji,",
+          "start": 167.9,
+          "end": 168.4,
+          "probability": 0.9917629361152649
+        },
+        {
+          "word": " all",
+          "start": 168.86,
+          "end": 169.16,
+          "probability": 0.9630395770072937
+        },
+        {
+          "word": " over",
+          "start": 169.16,
+          "end": 169.48,
+          "probability": 0.9973850846290588
+        },
+        {
+          "word": " the",
+          "start": 169.48,
+          "end": 169.76,
+          "probability": 0.9987884163856506
+        },
+        {
+          "word": " world",
+          "start": 169.76,
+          "end": 170.2,
+          "probability": 0.9917212128639221
+        },
+        {
+          "word": " really.",
+          "start": 170.2,
+          "end": 170.88,
+          "probability": 0.6468143463134766
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 15338,
+      "start": 171.56,
+      "end": 178.94,
+      "text": " People are even starting to grow food in small indoor farms using light from the bottle lamps.",
+      "tokens": [
+        51268,
+        3432,
+        366,
+        754,
+        2891,
+        281,
+        1852,
+        1755,
+        294,
+        1359,
+        24029,
+        20366,
+        1228,
+        1442,
+        490,
+        264,
+        7817,
+        34887,
+        13,
+        51636
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1162310569517074,
+      "compression_ratio": 1.4083769633507854,
+      "no_speech_prob": 0.19058124721050262,
+      "words": [
+        {
+          "word": " People",
+          "start": 171.56,
+          "end": 171.98,
+          "probability": 0.9943004846572876
+        },
+        {
+          "word": " are",
+          "start": 171.98,
+          "end": 172.34,
+          "probability": 0.9985061287879944
+        },
+        {
+          "word": " even",
+          "start": 172.34,
+          "end": 172.82,
+          "probability": 0.9963513612747192
+        },
+        {
+          "word": " starting",
+          "start": 172.82,
+          "end": 173.22,
+          "probability": 0.9977492690086365
+        },
+        {
+          "word": " to",
+          "start": 173.22,
+          "end": 173.58,
+          "probability": 0.9990646243095398
+        },
+        {
+          "word": " grow",
+          "start": 173.58,
+          "end": 173.78,
+          "probability": 0.9990230798721313
+        },
+        {
+          "word": " food",
+          "start": 173.78,
+          "end": 174.24,
+          "probability": 0.9979608058929443
+        },
+        {
+          "word": " in",
+          "start": 174.24,
+          "end": 174.66,
+          "probability": 0.9918738007545471
+        },
+        {
+          "word": " small",
+          "start": 174.66,
+          "end": 175.1,
+          "probability": 0.9955092668533325
+        },
+        {
+          "word": " indoor",
+          "start": 175.1,
+          "end": 175.76,
+          "probability": 0.9531277418136597
+        },
+        {
+          "word": " farms",
+          "start": 175.76,
+          "end": 176.36,
+          "probability": 0.9974647760391235
+        },
+        {
+          "word": " using",
+          "start": 176.36,
+          "end": 177.12,
+          "probability": 0.9180203080177307
+        },
+        {
+          "word": " light",
+          "start": 177.12,
+          "end": 177.6,
+          "probability": 0.99169921875
+        },
+        {
+          "word": " from",
+          "start": 177.6,
+          "end": 177.92,
+          "probability": 0.9984985589981079
+        },
+        {
+          "word": " the",
+          "start": 177.92,
+          "end": 178.22,
+          "probability": 0.9891998767852783
+        },
+        {
+          "word": " bottle",
+          "start": 178.22,
+          "end": 178.5,
+          "probability": 0.9869159460067749
+        },
+        {
+          "word": " lamps.",
+          "start": 178.5,
+          "end": 178.94,
+          "probability": 0.9797908663749695
+        }
+      ]
+    }
+  ]
+}

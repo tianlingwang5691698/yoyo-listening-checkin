@@ -232,6 +232,10 @@ test('resolveCatalogCategories 听力计划首屏不刷新素材目录', () => {
     ['unlock4workbook']
   );
   assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock4workbookthirdedition', {}),
+    []
+  );
+  assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock4thirdedition', {}),
     ['unlock4thirdedition']
   );

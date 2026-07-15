@@ -1,0 +1,3536 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "End of course test, track one. Good afternoon everyone and welcome to Transit. Hello sports scientists, my name is Jez Barton and today I'm going to talk to you about being a personal trainer. Let me tell you a bit about myself. After studying sports science at university, I worked on cruise ships for four years as a sports trainer. Then I got married and wanted to stop travelling, so I got a job with a gym in Dubai. For the last five years I have had my own personal training business. I'm sure you understand what personal training is, but I'll start by giving you more information about the business. Last year the personal training industry was worth 13.1 billion dollars in the USA and 768 million pounds in the UK. Our industry is growing by 6.1% each year. These days more people understand how important exercise is, so it's not a luxury to have a personal trainer anymore. There are about 340,000 personal trainers in the US and there will be another 47,500 over the next 10 years. So what does a personal trainer do and how much do we earn? The average salary of a personal trainer in the US is $46,000 per year or around $22 an hour. But if you work for yourself, you can charge much more. In Dubai the best trainers can earn over $100,000 a year because there are lots of rich people in the city. But this takes time. You need to work on your own strengths and weaknesses first and develop your skills. If you want to work with champion athletes, this isn't a job for you. Only a few of my customers play in sports teams or compete in events. Most of them are ordinary people. My job is to support them and help them to achieve their personal fitness goals. I get up early, usually at 4.30am, since some of my clients come to me before work. Sometimes I work for 6 hours with only a 10 minute break. I don't spend time with my children as much as I would like because I have customers who want to train after work too. But I love my job because it makes a difference to people's lives. Around 80% of personal trainers leave their jobs after the first year. But those who stay, stay for the same reason. It's a great feeling when you see positive changes in a person's life thanks to your personal training program.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.98,
+      "text": " End of course test, track one.",
+      "tokens": [
+        50364,
+        6967,
+        295,
+        1164,
+        1500,
+        11,
+        2837,
+        472,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22019556702160445,
+      "compression_ratio": 1.3818181818181818,
+      "no_speech_prob": 0.04454527422785759,
+      "words": [
+        {
+          "word": " End",
+          "start": 0.0,
+          "end": 0.58,
+          "probability": 0.7296996712684631
+        },
+        {
+          "word": " of",
+          "start": 0.58,
+          "end": 0.84,
+          "probability": 0.879726767539978
+        },
+        {
+          "word": " course",
+          "start": 0.84,
+          "end": 1.12,
+          "probability": 0.7360045909881592
+        },
+        {
+          "word": " test,",
+          "start": 1.12,
+          "end": 1.64,
+          "probability": 0.965069591999054
+        },
+        {
+          "word": " track",
+          "start": 2.14,
+          "end": 2.32,
+          "probability": 0.7145659923553467
+        },
+        {
+          "word": " one.",
+          "start": 2.32,
+          "end": 2.98,
+          "probability": 0.5927202701568604
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.32,
+      "end": 8.02,
+      "text": " Good afternoon everyone and welcome to Transit.",
+      "tokens": [
+        50564,
+        2205,
+        6499,
+        1518,
+        293,
+        2928,
+        281,
+        48870,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22019556702160445,
+      "compression_ratio": 1.3818181818181818,
+      "no_speech_prob": 0.04454527422785759,
+      "words": [
+        {
+          "word": " Good",
+          "start": 4.32,
+          "end": 4.46,
+          "probability": 0.8789530396461487
+        },
+        {
+          "word": " afternoon",
+          "start": 4.46,
+          "end": 5.14,
+          "probability": 0.9662653803825378
+        },
+        {
+          "word": " everyone",
+          "start": 5.14,
+          "end": 5.78,
+          "probability": 0.5190282464027405
+        },
+        {
+          "word": " and",
+          "start": 5.78,
+          "end": 6.54,
+          "probability": 0.6235754489898682
+        },
+        {
+          "word": " welcome",
+          "start": 6.54,
+          "end": 7.08,
+          "probability": 0.9944590330123901
+        },
+        {
+          "word": " to",
+          "start": 7.08,
+          "end": 7.44,
+          "probability": 0.9992014765739441
+        },
+        {
+          "word": " Transit.",
+          "start": 7.44,
+          "end": 8.02,
+          "probability": 0.8406036496162415
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.94,
+      "end": 18.78,
+      "text": " Hello sports scientists, my name is Jez Barton and today I'm going to talk to you about being a personal trainer.",
+      "tokens": [
+        50814,
+        2425,
+        6573,
+        7708,
+        11,
+        452,
+        1315,
+        307,
+        2588,
+        89,
+        22338,
+        266,
+        293,
+        965,
+        286,
+        478,
+        516,
+        281,
+        751,
+        281,
+        291,
+        466,
+        885,
+        257,
+        2973,
+        21110,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22019556702160445,
+      "compression_ratio": 1.3818181818181818,
+      "no_speech_prob": 0.04454527422785759,
+      "words": [
+        {
+          "word": " Hello",
+          "start": 8.94,
+          "end": 9.34,
+          "probability": 0.991060197353363
+        },
+        {
+          "word": " sports",
+          "start": 9.34,
+          "end": 10.0,
+          "probability": 0.484963983297348
+        },
+        {
+          "word": " scientists,",
+          "start": 10.0,
+          "end": 10.74,
+          "probability": 0.9845933318138123
+        },
+        {
+          "word": " my",
+          "start": 11.62,
+          "end": 11.82,
+          "probability": 0.9487184882164001
+        },
+        {
+          "word": " name",
+          "start": 11.82,
+          "end": 12.22,
+          "probability": 0.9988600015640259
+        },
+        {
+          "word": " is",
+          "start": 12.22,
+          "end": 12.6,
+          "probability": 0.9978844523429871
+        },
+        {
+          "word": " Jez",
+          "start": 12.6,
+          "end": 13.1,
+          "probability": 0.9359682202339172
+        },
+        {
+          "word": " Barton",
+          "start": 13.1,
+          "end": 13.6,
+          "probability": 0.9843261539936066
+        },
+        {
+          "word": " and",
+          "start": 13.6,
+          "end": 14.2,
+          "probability": 0.7861721515655518
+        },
+        {
+          "word": " today",
+          "start": 14.2,
+          "end": 14.8,
+          "probability": 0.9944433569908142
+        },
+        {
+          "word": " I'm",
+          "start": 14.8,
+          "end": 15.54,
+          "probability": 0.9034900963306427
+        },
+        {
+          "word": " going",
+          "start": 15.54,
+          "end": 15.72,
+          "probability": 0.9986936450004578
+        },
+        {
+          "word": " to",
+          "start": 15.72,
+          "end": 15.94,
+          "probability": 0.9974421262741089
+        },
+        {
+          "word": " talk",
+          "start": 15.94,
+          "end": 16.2,
+          "probability": 0.9987230896949768
+        },
+        {
+          "word": " to",
+          "start": 16.2,
+          "end": 16.36,
+          "probability": 0.99354088306427
+        },
+        {
+          "word": " you",
+          "start": 16.36,
+          "end": 16.72,
+          "probability": 0.9994365572929382
+        },
+        {
+          "word": " about",
+          "start": 16.72,
+          "end": 17.12,
+          "probability": 0.9984769225120544
+        },
+        {
+          "word": " being",
+          "start": 17.12,
+          "end": 17.52,
+          "probability": 0.995730459690094
+        },
+        {
+          "word": " a",
+          "start": 17.52,
+          "end": 17.82,
+          "probability": 0.9990007281303406
+        },
+        {
+          "word": " personal",
+          "start": 17.82,
+          "end": 18.36,
+          "probability": 0.9804351329803467
+        },
+        {
+          "word": " trainer.",
+          "start": 18.36,
+          "end": 18.78,
+          "probability": 0.9963361024856567
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 19.9,
+      "end": 22.06,
+      "text": " Let me tell you a bit about myself.",
+      "tokens": [
+        51364,
+        961,
+        385,
+        980,
+        291,
+        257,
+        857,
+        466,
+        2059,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22019556702160445,
+      "compression_ratio": 1.3818181818181818,
+      "no_speech_prob": 0.04454527422785759,
+      "words": [
+        {
+          "word": " Let",
+          "start": 19.9,
+          "end": 20.16,
+          "probability": 0.9941102862358093
+        },
+        {
+          "word": " me",
+          "start": 20.16,
+          "end": 20.38,
+          "probability": 0.9996910095214844
+        },
+        {
+          "word": " tell",
+          "start": 20.38,
+          "end": 20.6,
+          "probability": 0.9993732571601868
+        },
+        {
+          "word": " you",
+          "start": 20.6,
+          "end": 20.78,
+          "probability": 0.9993083477020264
+        },
+        {
+          "word": " a",
+          "start": 20.78,
+          "end": 20.9,
+          "probability": 0.9918495416641235
+        },
+        {
+          "word": " bit",
+          "start": 20.9,
+          "end": 21.06,
+          "probability": 0.9976276755332947
+        },
+        {
+          "word": " about",
+          "start": 21.06,
+          "end": 21.36,
+          "probability": 0.9994425177574158
+        },
+        {
+          "word": " myself.",
+          "start": 21.36,
+          "end": 22.06,
+          "probability": 0.9990090131759644
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 2206,
+      "start": 22.06,
+      "end": 31.66,
+      "text": " After studying sports science at university, I worked on cruise ships for four years as a sports trainer.",
+      "tokens": [
+        50364,
+        2381,
+        7601,
+        6573,
+        3497,
+        412,
+        5454,
+        11,
+        286,
+        2732,
+        322,
+        17754,
+        11434,
+        337,
+        1451,
+        924,
+        382,
+        257,
+        6573,
+        21110,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08813206354777019,
+      "compression_ratio": 1.441988950276243,
+      "no_speech_prob": 0.2638688385486603,
+      "words": [
+        {
+          "word": " After",
+          "start": 22.06,
+          "end": 23.48,
+          "probability": 0.7177596688270569
+        },
+        {
+          "word": " studying",
+          "start": 23.48,
+          "end": 24.04,
+          "probability": 0.9962678551673889
+        },
+        {
+          "word": " sports",
+          "start": 24.04,
+          "end": 24.68,
+          "probability": 0.6233662366867065
+        },
+        {
+          "word": " science",
+          "start": 24.68,
+          "end": 25.16,
+          "probability": 0.9903192520141602
+        },
+        {
+          "word": " at",
+          "start": 25.16,
+          "end": 25.56,
+          "probability": 0.9847288727760315
+        },
+        {
+          "word": " university,",
+          "start": 25.56,
+          "end": 26.28,
+          "probability": 0.7937484383583069
+        },
+        {
+          "word": " I",
+          "start": 26.92,
+          "end": 27.1,
+          "probability": 0.9946564435958862
+        },
+        {
+          "word": " worked",
+          "start": 27.1,
+          "end": 27.5,
+          "probability": 0.994568943977356
+        },
+        {
+          "word": " on",
+          "start": 27.5,
+          "end": 28.06,
+          "probability": 0.996625542640686
+        },
+        {
+          "word": " cruise",
+          "start": 28.06,
+          "end": 28.42,
+          "probability": 0.9940564632415771
+        },
+        {
+          "word": " ships",
+          "start": 28.42,
+          "end": 28.8,
+          "probability": 0.9981057643890381
+        },
+        {
+          "word": " for",
+          "start": 28.8,
+          "end": 29.14,
+          "probability": 0.9941536784172058
+        },
+        {
+          "word": " four",
+          "start": 29.14,
+          "end": 29.58,
+          "probability": 0.7256816029548645
+        },
+        {
+          "word": " years",
+          "start": 29.58,
+          "end": 30.12,
+          "probability": 0.9981063604354858
+        },
+        {
+          "word": " as",
+          "start": 30.12,
+          "end": 30.56,
+          "probability": 0.9830840229988098
+        },
+        {
+          "word": " a",
+          "start": 30.56,
+          "end": 30.88,
+          "probability": 0.9927664995193481
+        },
+        {
+          "word": " sports",
+          "start": 30.88,
+          "end": 31.3,
+          "probability": 0.9841559529304504
+        },
+        {
+          "word": " trainer.",
+          "start": 31.3,
+          "end": 31.66,
+          "probability": 0.9981809854507446
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2206,
+      "start": 32.42,
+      "end": 39.86,
+      "text": " Then I got married and wanted to stop travelling, so I got a job with a gym in Dubai.",
+      "tokens": [
+        50864,
+        1396,
+        286,
+        658,
+        5259,
+        293,
+        1415,
+        281,
+        1590,
+        20515,
+        11,
+        370,
+        286,
+        658,
+        257,
+        1691,
+        365,
+        257,
+        9222,
+        294,
+        29100,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08813206354777019,
+      "compression_ratio": 1.441988950276243,
+      "no_speech_prob": 0.2638688385486603,
+      "words": [
+        {
+          "word": " Then",
+          "start": 32.42,
+          "end": 32.82,
+          "probability": 0.9913856983184814
+        },
+        {
+          "word": " I",
+          "start": 32.82,
+          "end": 33.3,
+          "probability": 0.8210095763206482
+        },
+        {
+          "word": " got",
+          "start": 33.3,
+          "end": 33.56,
+          "probability": 0.9992395639419556
+        },
+        {
+          "word": " married",
+          "start": 33.56,
+          "end": 34.08,
+          "probability": 0.9993284940719604
+        },
+        {
+          "word": " and",
+          "start": 34.08,
+          "end": 34.7,
+          "probability": 0.9272663593292236
+        },
+        {
+          "word": " wanted",
+          "start": 34.7,
+          "end": 34.94,
+          "probability": 0.9941397905349731
+        },
+        {
+          "word": " to",
+          "start": 34.94,
+          "end": 35.36,
+          "probability": 0.9990907907485962
+        },
+        {
+          "word": " stop",
+          "start": 35.36,
+          "end": 35.62,
+          "probability": 0.9990293979644775
+        },
+        {
+          "word": " travelling,",
+          "start": 35.62,
+          "end": 36.08,
+          "probability": 0.32815542817115784
+        },
+        {
+          "word": " so",
+          "start": 36.72,
+          "end": 37.16,
+          "probability": 0.9928817749023438
+        },
+        {
+          "word": " I",
+          "start": 37.16,
+          "end": 37.6,
+          "probability": 0.9765102863311768
+        },
+        {
+          "word": " got",
+          "start": 37.6,
+          "end": 37.82,
+          "probability": 0.998863697052002
+        },
+        {
+          "word": " a",
+          "start": 37.82,
+          "end": 37.98,
+          "probability": 0.9975131750106812
+        },
+        {
+          "word": " job",
+          "start": 37.98,
+          "end": 38.2,
+          "probability": 0.9995347261428833
+        },
+        {
+          "word": " with",
+          "start": 38.2,
+          "end": 38.44,
+          "probability": 0.9816546440124512
+        },
+        {
+          "word": " a",
+          "start": 38.44,
+          "end": 38.68,
+          "probability": 0.9605134725570679
+        },
+        {
+          "word": " gym",
+          "start": 38.68,
+          "end": 38.94,
+          "probability": 0.9943428039550781
+        },
+        {
+          "word": " in",
+          "start": 38.94,
+          "end": 39.4,
+          "probability": 0.9979637861251831
+        },
+        {
+          "word": " Dubai.",
+          "start": 39.4,
+          "end": 39.86,
+          "probability": 0.9971586465835571
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2206,
+      "start": 40.92,
+      "end": 45.84,
+      "text": " For the last five years I have had my own personal training business.",
+      "tokens": [
+        51264,
+        1171,
+        264,
+        1036,
+        1732,
+        924,
+        286,
+        362,
+        632,
+        452,
+        1065,
+        2973,
+        3097,
+        1606,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08813206354777019,
+      "compression_ratio": 1.441988950276243,
+      "no_speech_prob": 0.2638688385486603,
+      "words": [
+        {
+          "word": " For",
+          "start": 40.92,
+          "end": 41.14,
+          "probability": 0.9941043257713318
+        },
+        {
+          "word": " the",
+          "start": 41.14,
+          "end": 41.28,
+          "probability": 0.998136043548584
+        },
+        {
+          "word": " last",
+          "start": 41.28,
+          "end": 41.66,
+          "probability": 0.9970108270645142
+        },
+        {
+          "word": " five",
+          "start": 41.66,
+          "end": 42.06,
+          "probability": 0.9455459713935852
+        },
+        {
+          "word": " years",
+          "start": 42.06,
+          "end": 42.46,
+          "probability": 0.9986535310745239
+        },
+        {
+          "word": " I",
+          "start": 42.46,
+          "end": 43.02,
+          "probability": 0.2857435345649719
+        },
+        {
+          "word": " have",
+          "start": 43.02,
+          "end": 43.24,
+          "probability": 0.9826777577400208
+        },
+        {
+          "word": " had",
+          "start": 43.24,
+          "end": 43.46,
+          "probability": 0.9967747330665588
+        },
+        {
+          "word": " my",
+          "start": 43.46,
+          "end": 43.82,
+          "probability": 0.9991165995597839
+        },
+        {
+          "word": " own",
+          "start": 43.82,
+          "end": 44.24,
+          "probability": 0.9965409636497498
+        },
+        {
+          "word": " personal",
+          "start": 44.24,
+          "end": 44.86,
+          "probability": 0.9962834715843201
+        },
+        {
+          "word": " training",
+          "start": 44.86,
+          "end": 45.28,
+          "probability": 0.9937111139297485
+        },
+        {
+          "word": " business.",
+          "start": 45.28,
+          "end": 45.84,
+          "probability": 0.9978557229042053
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 4584,
+      "start": 46.84,
+      "end": 54.84,
+      "text": " I'm sure you understand what personal training is, but I'll start by giving you more information about the business.",
+      "tokens": [
+        50414,
+        286,
+        478,
+        988,
+        291,
+        1223,
+        437,
+        2973,
+        3097,
+        307,
+        11,
+        457,
+        286,
+        603,
+        722,
+        538,
+        2902,
+        291,
+        544,
+        1589,
+        466,
+        264,
+        1606,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06547840877815529,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.28412455320358276,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 46.84,
+          "end": 47.68,
+          "probability": 0.9440841376781464
+        },
+        {
+          "word": " sure",
+          "start": 47.68,
+          "end": 48.06,
+          "probability": 0.9989500641822815
+        },
+        {
+          "word": " you",
+          "start": 48.06,
+          "end": 48.4,
+          "probability": 0.9929595589637756
+        },
+        {
+          "word": " understand",
+          "start": 48.4,
+          "end": 49.04,
+          "probability": 0.9946786165237427
+        },
+        {
+          "word": " what",
+          "start": 49.04,
+          "end": 49.42,
+          "probability": 0.9955148100852966
+        },
+        {
+          "word": " personal",
+          "start": 49.42,
+          "end": 49.94,
+          "probability": 0.856752872467041
+        },
+        {
+          "word": " training",
+          "start": 49.94,
+          "end": 50.3,
+          "probability": 0.995201826095581
+        },
+        {
+          "word": " is,",
+          "start": 50.3,
+          "end": 51.0,
+          "probability": 0.9975242018699646
+        },
+        {
+          "word": " but",
+          "start": 51.18,
+          "end": 51.58,
+          "probability": 0.9920240640640259
+        },
+        {
+          "word": " I'll",
+          "start": 51.58,
+          "end": 52.18,
+          "probability": 0.9751824140548706
+        },
+        {
+          "word": " start",
+          "start": 52.18,
+          "end": 52.5,
+          "probability": 0.9976929426193237
+        },
+        {
+          "word": " by",
+          "start": 52.5,
+          "end": 52.76,
+          "probability": 0.994391143321991
+        },
+        {
+          "word": " giving",
+          "start": 52.76,
+          "end": 53.02,
+          "probability": 0.9984760880470276
+        },
+        {
+          "word": " you",
+          "start": 53.02,
+          "end": 53.28,
+          "probability": 0.9946706891059875
+        },
+        {
+          "word": " more",
+          "start": 53.28,
+          "end": 53.6,
+          "probability": 0.9972864389419556
+        },
+        {
+          "word": " information",
+          "start": 53.6,
+          "end": 54.2,
+          "probability": 0.998344898223877
+        },
+        {
+          "word": " about",
+          "start": 54.2,
+          "end": 54.58,
+          "probability": 0.9981566071510315
+        },
+        {
+          "word": " the",
+          "start": 54.58,
+          "end": 54.8,
+          "probability": 0.9969624876976013
+        },
+        {
+          "word": " business.",
+          "start": 54.8,
+          "end": 55.279999999999994,
+          "probability": 0.9962766766548157
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 4584,
+      "start": 56.34,
+      "end": 69.46,
+      "text": " Last year the personal training industry was worth 13.1 billion dollars in the USA and 768 million pounds in the UK.",
+      "tokens": [
+        50864,
+        5264,
+        1064,
+        264,
+        2973,
+        3097,
+        3518,
+        390,
+        3163,
+        3705,
+        13,
+        16,
+        5218,
+        3808,
+        294,
+        264,
+        10827,
+        293,
+        24733,
+        23,
+        2459,
+        8319,
+        294,
+        264,
+        7051,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06547840877815529,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.28412455320358276,
+      "words": [
+        {
+          "word": " Last",
+          "start": 56.34,
+          "end": 56.66,
+          "probability": 0.9937465190887451
+        },
+        {
+          "word": " year",
+          "start": 56.66,
+          "end": 57.02,
+          "probability": 0.9963973164558411
+        },
+        {
+          "word": " the",
+          "start": 57.02,
+          "end": 57.42,
+          "probability": 0.40919092297554016
+        },
+        {
+          "word": " personal",
+          "start": 57.42,
+          "end": 57.98,
+          "probability": 0.9677248597145081
+        },
+        {
+          "word": " training",
+          "start": 57.98,
+          "end": 58.42,
+          "probability": 0.9935259819030762
+        },
+        {
+          "word": " industry",
+          "start": 58.42,
+          "end": 59.04,
+          "probability": 0.9974343180656433
+        },
+        {
+          "word": " was",
+          "start": 59.04,
+          "end": 59.66,
+          "probability": 0.9928026795387268
+        },
+        {
+          "word": " worth",
+          "start": 59.66,
+          "end": 60.26,
+          "probability": 0.998177170753479
+        },
+        {
+          "word": " 13",
+          "start": 60.26,
+          "end": 61.1,
+          "probability": 0.523198127746582
+        },
+        {
+          "word": ".1",
+          "start": 61.1,
+          "end": 62.02,
+          "probability": 0.9940062463283539
+        },
+        {
+          "word": " billion",
+          "start": 62.02,
+          "end": 62.54,
+          "probability": 0.9552496671676636
+        },
+        {
+          "word": " dollars",
+          "start": 62.54,
+          "end": 63.06,
+          "probability": 0.9644080996513367
+        },
+        {
+          "word": " in",
+          "start": 63.06,
+          "end": 63.4,
+          "probability": 0.9957872033119202
+        },
+        {
+          "word": " the",
+          "start": 63.4,
+          "end": 63.66,
+          "probability": 0.9962855577468872
+        },
+        {
+          "word": " USA",
+          "start": 63.66,
+          "end": 64.22,
+          "probability": 0.9587373733520508
+        },
+        {
+          "word": " and",
+          "start": 64.22,
+          "end": 65.86,
+          "probability": 0.5909610986709595
+        },
+        {
+          "word": " 768",
+          "start": 65.86,
+          "end": 67.3,
+          "probability": 0.9549381136894226
+        },
+        {
+          "word": " million",
+          "start": 67.3,
+          "end": 67.64,
+          "probability": 0.9893614649772644
+        },
+        {
+          "word": " pounds",
+          "start": 67.64,
+          "end": 68.24,
+          "probability": 0.9957129955291748
+        },
+        {
+          "word": " in",
+          "start": 68.24,
+          "end": 68.62,
+          "probability": 0.9979875087738037
+        },
+        {
+          "word": " the",
+          "start": 68.62,
+          "end": 68.86,
+          "probability": 0.9982098340988159
+        },
+        {
+          "word": " UK.",
+          "start": 68.86,
+          "end": 69.46,
+          "probability": 0.9551311135292053
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 6946,
+      "start": 69.46,
+      "end": 75.8,
+      "text": " Our industry is growing by 6.1% each year.",
+      "tokens": [
+        50364,
+        2621,
+        3518,
+        307,
+        4194,
+        538,
+        1386,
+        13,
+        16,
+        4,
+        1184,
+        1064,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06778335571289062,
+      "compression_ratio": 1.4232804232804233,
+      "no_speech_prob": 0.27921196818351746,
+      "words": [
+        {
+          "word": " Our",
+          "start": 69.46,
+          "end": 70.94,
+          "probability": 0.8953106999397278
+        },
+        {
+          "word": " industry",
+          "start": 70.94,
+          "end": 71.52,
+          "probability": 0.9923011064529419
+        },
+        {
+          "word": " is",
+          "start": 71.52,
+          "end": 71.84,
+          "probability": 0.9981805086135864
+        },
+        {
+          "word": " growing",
+          "start": 71.84,
+          "end": 72.24,
+          "probability": 0.9985421895980835
+        },
+        {
+          "word": " by",
+          "start": 72.24,
+          "end": 73.02,
+          "probability": 0.9872640371322632
+        },
+        {
+          "word": " 6",
+          "start": 73.02,
+          "end": 73.52,
+          "probability": 0.9856853485107422
+        },
+        {
+          "word": ".1",
+          "start": 73.52,
+          "end": 74.3,
+          "probability": 0.9951120018959045
+        },
+        {
+          "word": "%",
+          "start": 74.3,
+          "end": 74.92,
+          "probability": 0.7787448763847351
+        },
+        {
+          "word": " each",
+          "start": 74.92,
+          "end": 75.36,
+          "probability": 0.9837300181388855
+        },
+        {
+          "word": " year.",
+          "start": 75.36,
+          "end": 75.8,
+          "probability": 0.9985706806182861
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 6946,
+      "start": 76.78,
+      "end": 85.94,
+      "text": " These days more people understand how important exercise is, so it's not a luxury to have a personal trainer anymore.",
+      "tokens": [
+        50714,
+        1981,
+        1708,
+        544,
+        561,
+        1223,
+        577,
+        1021,
+        5380,
+        307,
+        11,
+        370,
+        309,
+        311,
+        406,
+        257,
+        15558,
+        281,
+        362,
+        257,
+        2973,
+        21110,
+        3602,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06778335571289062,
+      "compression_ratio": 1.4232804232804233,
+      "no_speech_prob": 0.27921196818351746,
+      "words": [
+        {
+          "word": " These",
+          "start": 76.78,
+          "end": 77.08,
+          "probability": 0.9888293147087097
+        },
+        {
+          "word": " days",
+          "start": 77.08,
+          "end": 77.5,
+          "probability": 0.9986634254455566
+        },
+        {
+          "word": " more",
+          "start": 77.5,
+          "end": 78.02,
+          "probability": 0.594810962677002
+        },
+        {
+          "word": " people",
+          "start": 78.02,
+          "end": 78.46,
+          "probability": 0.9992172718048096
+        },
+        {
+          "word": " understand",
+          "start": 78.46,
+          "end": 79.14,
+          "probability": 0.9983637928962708
+        },
+        {
+          "word": " how",
+          "start": 79.14,
+          "end": 79.54,
+          "probability": 0.9975168704986572
+        },
+        {
+          "word": " important",
+          "start": 79.54,
+          "end": 80.18,
+          "probability": 0.9987877011299133
+        },
+        {
+          "word": " exercise",
+          "start": 80.18,
+          "end": 80.82,
+          "probability": 0.9880494475364685
+        },
+        {
+          "word": " is,",
+          "start": 80.82,
+          "end": 81.38,
+          "probability": 0.9976342916488647
+        },
+        {
+          "word": " so",
+          "start": 81.68,
+          "end": 82.12,
+          "probability": 0.9933207035064697
+        },
+        {
+          "word": " it's",
+          "start": 82.12,
+          "end": 82.76,
+          "probability": 0.9474998116493225
+        },
+        {
+          "word": " not",
+          "start": 82.76,
+          "end": 83.1,
+          "probability": 0.9945616126060486
+        },
+        {
+          "word": " a",
+          "start": 83.1,
+          "end": 83.24,
+          "probability": 0.9962071180343628
+        },
+        {
+          "word": " luxury",
+          "start": 83.24,
+          "end": 83.72,
+          "probability": 0.99892657995224
+        },
+        {
+          "word": " to",
+          "start": 83.72,
+          "end": 84.0,
+          "probability": 0.9987863898277283
+        },
+        {
+          "word": " have",
+          "start": 84.0,
+          "end": 84.18,
+          "probability": 0.9993858337402344
+        },
+        {
+          "word": " a",
+          "start": 84.18,
+          "end": 84.5,
+          "probability": 0.9957258701324463
+        },
+        {
+          "word": " personal",
+          "start": 84.5,
+          "end": 84.8,
+          "probability": 0.9913371801376343
+        },
+        {
+          "word": " trainer",
+          "start": 84.8,
+          "end": 85.28,
+          "probability": 0.9991160035133362
+        },
+        {
+          "word": " anymore.",
+          "start": 85.28,
+          "end": 85.94,
+          "probability": 0.7642755508422852
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 6946,
+      "start": 87.16,
+      "end": 98.64,
+      "text": " There are about 340,000 personal trainers in the US and there will be another 47,500 over the next 10 years.",
+      "tokens": [
+        51214,
+        821,
+        366,
+        466,
+        805,
+        5254,
+        11,
+        1360,
+        2973,
+        35393,
+        294,
+        264,
+        2546,
+        293,
+        456,
+        486,
+        312,
+        1071,
+        16953,
+        11,
+        7526,
+        670,
+        264,
+        958,
+        1266,
+        924,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06778335571289062,
+      "compression_ratio": 1.4232804232804233,
+      "no_speech_prob": 0.27921196818351746,
+      "words": [
+        {
+          "word": " There",
+          "start": 87.16,
+          "end": 87.4,
+          "probability": 0.9940804839134216
+        },
+        {
+          "word": " are",
+          "start": 87.4,
+          "end": 87.82,
+          "probability": 0.9976661205291748
+        },
+        {
+          "word": " about",
+          "start": 87.82,
+          "end": 88.64,
+          "probability": 0.9850456118583679
+        },
+        {
+          "word": " 340",
+          "start": 88.64,
+          "end": 89.86,
+          "probability": 0.9908227324485779
+        },
+        {
+          "word": ",000",
+          "start": 89.86,
+          "end": 90.56,
+          "probability": 0.9594921171665192
+        },
+        {
+          "word": " personal",
+          "start": 90.56,
+          "end": 91.16,
+          "probability": 0.9726316928863525
+        },
+        {
+          "word": " trainers",
+          "start": 91.16,
+          "end": 91.48,
+          "probability": 0.9990750551223755
+        },
+        {
+          "word": " in",
+          "start": 91.48,
+          "end": 91.72,
+          "probability": 0.9985842704772949
+        },
+        {
+          "word": " the",
+          "start": 91.72,
+          "end": 91.9,
+          "probability": 0.9979225993156433
+        },
+        {
+          "word": " US",
+          "start": 91.9,
+          "end": 92.32,
+          "probability": 0.730902910232544
+        },
+        {
+          "word": " and",
+          "start": 92.32,
+          "end": 93.0,
+          "probability": 0.5917453169822693
+        },
+        {
+          "word": " there",
+          "start": 93.0,
+          "end": 93.2,
+          "probability": 0.9963470101356506
+        },
+        {
+          "word": " will",
+          "start": 93.2,
+          "end": 93.42,
+          "probability": 0.9963616728782654
+        },
+        {
+          "word": " be",
+          "start": 93.42,
+          "end": 93.68,
+          "probability": 0.9970724582672119
+        },
+        {
+          "word": " another",
+          "start": 93.68,
+          "end": 94.12,
+          "probability": 0.9792413115501404
+        },
+        {
+          "word": " 47",
+          "start": 94.12,
+          "end": 95.04,
+          "probability": 0.9914997220039368
+        },
+        {
+          "word": ",500",
+          "start": 95.04,
+          "end": 96.28,
+          "probability": 0.9828486442565918
+        },
+        {
+          "word": " over",
+          "start": 96.28,
+          "end": 97.04,
+          "probability": 0.9927531480789185
+        },
+        {
+          "word": " the",
+          "start": 97.04,
+          "end": 97.18,
+          "probability": 0.9969679713249207
+        },
+        {
+          "word": " next",
+          "start": 97.18,
+          "end": 97.58,
+          "probability": 0.9994574189186096
+        },
+        {
+          "word": " 10",
+          "start": 97.58,
+          "end": 98.02,
+          "probability": 0.801418125629425
+        },
+        {
+          "word": " years.",
+          "start": 98.02,
+          "end": 98.64,
+          "probability": 0.9980225563049316
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 9946,
+      "start": 99.60000000000001,
+      "end": 105.08,
+      "text": " So what does a personal trainer do and how much do we earn?",
+      "tokens": [
+        50364,
+        407,
+        437,
+        775,
+        257,
+        2973,
+        21110,
+        360,
+        293,
+        577,
+        709,
+        360,
+        321,
+        6012,
+        30,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07801266039832164,
+      "compression_ratio": 1.3933333333333333,
+      "no_speech_prob": 0.0013397735310718417,
+      "words": [
+        {
+          "word": " So",
+          "start": 99.60000000000001,
+          "end": 100.4,
+          "probability": 0.9669833779335022
+        },
+        {
+          "word": " what",
+          "start": 100.4,
+          "end": 100.84,
+          "probability": 0.5006197094917297
+        },
+        {
+          "word": " does",
+          "start": 100.84,
+          "end": 101.24,
+          "probability": 0.997347354888916
+        },
+        {
+          "word": " a",
+          "start": 101.24,
+          "end": 101.58,
+          "probability": 0.9967337846755981
+        },
+        {
+          "word": " personal",
+          "start": 101.58,
+          "end": 101.92,
+          "probability": 0.9794852137565613
+        },
+        {
+          "word": " trainer",
+          "start": 101.92,
+          "end": 102.28,
+          "probability": 0.9982323050498962
+        },
+        {
+          "word": " do",
+          "start": 102.28,
+          "end": 102.72,
+          "probability": 0.9893900752067566
+        },
+        {
+          "word": " and",
+          "start": 102.72,
+          "end": 103.46,
+          "probability": 0.8103974461555481
+        },
+        {
+          "word": " how",
+          "start": 103.46,
+          "end": 103.86,
+          "probability": 0.9935247898101807
+        },
+        {
+          "word": " much",
+          "start": 103.86,
+          "end": 104.16,
+          "probability": 0.9993575215339661
+        },
+        {
+          "word": " do",
+          "start": 104.16,
+          "end": 104.46,
+          "probability": 0.9767405390739441
+        },
+        {
+          "word": " we",
+          "start": 104.46,
+          "end": 104.7,
+          "probability": 0.9988176226615906
+        },
+        {
+          "word": " earn?",
+          "start": 104.7,
+          "end": 105.08,
+          "probability": 0.995262861251831
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 9946,
+      "start": 106.16,
+      "end": 116.66,
+      "text": " The average salary of a personal trainer in the US is $46,000 per year or around $22 an hour.",
+      "tokens": [
+        50664,
+        440,
+        4274,
+        15360,
+        295,
+        257,
+        2973,
+        21110,
+        294,
+        264,
+        2546,
+        307,
+        1848,
+        16169,
+        11,
+        1360,
+        680,
+        1064,
+        420,
+        926,
+        1848,
+        7490,
+        364,
+        1773,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07801266039832164,
+      "compression_ratio": 1.3933333333333333,
+      "no_speech_prob": 0.0013397735310718417,
+      "words": [
+        {
+          "word": " The",
+          "start": 106.16,
+          "end": 106.4,
+          "probability": 0.7257561087608337
+        },
+        {
+          "word": " average",
+          "start": 106.4,
+          "end": 106.8,
+          "probability": 0.9972314238548279
+        },
+        {
+          "word": " salary",
+          "start": 106.8,
+          "end": 107.26,
+          "probability": 0.99741530418396
+        },
+        {
+          "word": " of",
+          "start": 107.26,
+          "end": 107.48,
+          "probability": 0.9983159303665161
+        },
+        {
+          "word": " a",
+          "start": 107.48,
+          "end": 107.78,
+          "probability": 0.9992905855178833
+        },
+        {
+          "word": " personal",
+          "start": 107.78,
+          "end": 108.1,
+          "probability": 0.9972033500671387
+        },
+        {
+          "word": " trainer",
+          "start": 108.1,
+          "end": 108.42,
+          "probability": 0.9991724491119385
+        },
+        {
+          "word": " in",
+          "start": 108.42,
+          "end": 108.72,
+          "probability": 0.99671870470047
+        },
+        {
+          "word": " the",
+          "start": 108.72,
+          "end": 109.02,
+          "probability": 0.9989244341850281
+        },
+        {
+          "word": " US",
+          "start": 109.02,
+          "end": 109.4,
+          "probability": 0.709837794303894
+        },
+        {
+          "word": " is",
+          "start": 109.4,
+          "end": 110.5,
+          "probability": 0.9866173267364502
+        },
+        {
+          "word": " $46",
+          "start": 110.5,
+          "end": 111.26,
+          "probability": 0.8652461767196655
+        },
+        {
+          "word": ",000",
+          "start": 111.26,
+          "end": 112.28,
+          "probability": 0.9793983697891235
+        },
+        {
+          "word": " per",
+          "start": 112.28,
+          "end": 112.66,
+          "probability": 0.9450188279151917
+        },
+        {
+          "word": " year",
+          "start": 112.66,
+          "end": 113.08,
+          "probability": 0.9970115423202515
+        },
+        {
+          "word": " or",
+          "start": 113.08,
+          "end": 114.0,
+          "probability": 0.8634677529335022
+        },
+        {
+          "word": " around",
+          "start": 114.0,
+          "end": 114.56,
+          "probability": 0.9849106669425964
+        },
+        {
+          "word": " $22",
+          "start": 114.56,
+          "end": 115.54,
+          "probability": 0.9762406945228577
+        },
+        {
+          "word": " an",
+          "start": 115.54,
+          "end": 116.24,
+          "probability": 0.9321364164352417
+        },
+        {
+          "word": " hour.",
+          "start": 116.24,
+          "end": 116.66,
+          "probability": 0.9988794922828674
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 9946,
+      "start": 117.64,
+      "end": 122.44,
+      "text": " But if you work for yourself, you can charge much more.",
+      "tokens": [
+        51264,
+        583,
+        498,
+        291,
+        589,
+        337,
+        1803,
+        11,
+        291,
+        393,
+        4602,
+        709,
+        544,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07801266039832164,
+      "compression_ratio": 1.3933333333333333,
+      "no_speech_prob": 0.0013397735310718417,
+      "words": [
+        {
+          "word": " But",
+          "start": 117.64,
+          "end": 118.04,
+          "probability": 0.9816032648086548
+        },
+        {
+          "word": " if",
+          "start": 118.04,
+          "end": 118.54,
+          "probability": 0.9179429411888123
+        },
+        {
+          "word": " you",
+          "start": 118.54,
+          "end": 118.78,
+          "probability": 0.9996054768562317
+        },
+        {
+          "word": " work",
+          "start": 118.78,
+          "end": 119.04,
+          "probability": 0.999427855014801
+        },
+        {
+          "word": " for",
+          "start": 119.04,
+          "end": 119.28,
+          "probability": 0.998529314994812
+        },
+        {
+          "word": " yourself,",
+          "start": 119.28,
+          "end": 119.96,
+          "probability": 0.9974664449691772
+        },
+        {
+          "word": " you",
+          "start": 120.42,
+          "end": 120.64,
+          "probability": 0.9915788173675537
+        },
+        {
+          "word": " can",
+          "start": 120.64,
+          "end": 120.94,
+          "probability": 0.999555766582489
+        },
+        {
+          "word": " charge",
+          "start": 120.94,
+          "end": 121.36,
+          "probability": 0.9985685348510742
+        },
+        {
+          "word": " much",
+          "start": 121.36,
+          "end": 121.88,
+          "probability": 0.9981846213340759
+        },
+        {
+          "word": " more.",
+          "start": 121.88,
+          "end": 122.44,
+          "probability": 0.9996626377105713
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 12244,
+      "start": 122.44,
+      "end": 132.88,
+      "text": " In Dubai the best trainers can earn over $100,000 a year because there are lots of rich people in the city.",
+      "tokens": [
+        50364,
+        682,
+        29100,
+        264,
+        1151,
+        35393,
+        393,
+        6012,
+        670,
+        1848,
+        6879,
+        11,
+        1360,
+        257,
+        1064,
+        570,
+        456,
+        366,
+        3195,
+        295,
+        4593,
+        561,
+        294,
+        264,
+        2307,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.050400787675884406,
+      "compression_ratio": 1.4365482233502538,
+      "no_speech_prob": 0.16165854036808014,
+      "words": [
+        {
+          "word": " In",
+          "start": 122.44,
+          "end": 123.56,
+          "probability": 0.647205650806427
+        },
+        {
+          "word": " Dubai",
+          "start": 123.56,
+          "end": 124.12,
+          "probability": 0.9980364441871643
+        },
+        {
+          "word": " the",
+          "start": 124.12,
+          "end": 124.72,
+          "probability": 0.2824130356311798
+        },
+        {
+          "word": " best",
+          "start": 124.72,
+          "end": 125.14,
+          "probability": 0.9976104497909546
+        },
+        {
+          "word": " trainers",
+          "start": 125.14,
+          "end": 125.58,
+          "probability": 0.9819419384002686
+        },
+        {
+          "word": " can",
+          "start": 125.58,
+          "end": 125.96,
+          "probability": 0.9913625121116638
+        },
+        {
+          "word": " earn",
+          "start": 125.96,
+          "end": 126.24,
+          "probability": 0.9985859394073486
+        },
+        {
+          "word": " over",
+          "start": 126.24,
+          "end": 126.84,
+          "probability": 0.9942508935928345
+        },
+        {
+          "word": " $100",
+          "start": 126.84,
+          "end": 127.5,
+          "probability": 0.8406277000904083
+        },
+        {
+          "word": ",000",
+          "start": 127.5,
+          "end": 128.48,
+          "probability": 0.9694974720478058
+        },
+        {
+          "word": " a",
+          "start": 128.48,
+          "end": 128.76,
+          "probability": 0.909740686416626
+        },
+        {
+          "word": " year",
+          "start": 128.76,
+          "end": 129.16,
+          "probability": 0.998362123966217
+        },
+        {
+          "word": " because",
+          "start": 129.16,
+          "end": 129.82,
+          "probability": 0.86775803565979
+        },
+        {
+          "word": " there",
+          "start": 129.82,
+          "end": 130.1,
+          "probability": 0.9928794503211975
+        },
+        {
+          "word": " are",
+          "start": 130.1,
+          "end": 130.3,
+          "probability": 0.9930651187896729
+        },
+        {
+          "word": " lots",
+          "start": 130.3,
+          "end": 130.68,
+          "probability": 0.9789624810218811
+        },
+        {
+          "word": " of",
+          "start": 130.68,
+          "end": 131.12,
+          "probability": 0.9983391761779785
+        },
+        {
+          "word": " rich",
+          "start": 131.12,
+          "end": 131.42,
+          "probability": 0.9922453761100769
+        },
+        {
+          "word": " people",
+          "start": 131.42,
+          "end": 131.98,
+          "probability": 0.9985795021057129
+        },
+        {
+          "word": " in",
+          "start": 131.98,
+          "end": 132.18,
+          "probability": 0.9941993951797485
+        },
+        {
+          "word": " the",
+          "start": 132.18,
+          "end": 132.34,
+          "probability": 0.9928781390190125
+        },
+        {
+          "word": " city.",
+          "start": 132.34,
+          "end": 132.88,
+          "probability": 0.9941834807395935
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 12244,
+      "start": 133.72,
+      "end": 142.4,
+      "text": " But this takes time. You need to work on your own strengths and weaknesses first and develop your skills.",
+      "tokens": [
+        50914,
+        583,
+        341,
+        2516,
+        565,
+        13,
+        509,
+        643,
+        281,
+        589,
+        322,
+        428,
+        1065,
+        16986,
+        293,
+        24381,
+        700,
+        293,
+        1499,
+        428,
+        3942,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.050400787675884406,
+      "compression_ratio": 1.4365482233502538,
+      "no_speech_prob": 0.16165854036808014,
+      "words": [
+        {
+          "word": " But",
+          "start": 133.72,
+          "end": 134.08,
+          "probability": 0.9787130355834961
+        },
+        {
+          "word": " this",
+          "start": 134.08,
+          "end": 134.4,
+          "probability": 0.9610315561294556
+        },
+        {
+          "word": " takes",
+          "start": 134.4,
+          "end": 134.76,
+          "probability": 0.9939163327217102
+        },
+        {
+          "word": " time.",
+          "start": 134.76,
+          "end": 135.38,
+          "probability": 0.9989401698112488
+        },
+        {
+          "word": " You",
+          "start": 136.14,
+          "end": 136.32,
+          "probability": 0.990451455116272
+        },
+        {
+          "word": " need",
+          "start": 136.32,
+          "end": 136.58,
+          "probability": 0.9940959215164185
+        },
+        {
+          "word": " to",
+          "start": 136.58,
+          "end": 136.94,
+          "probability": 0.9966866374015808
+        },
+        {
+          "word": " work",
+          "start": 136.94,
+          "end": 137.24,
+          "probability": 0.9982957243919373
+        },
+        {
+          "word": " on",
+          "start": 137.24,
+          "end": 137.44,
+          "probability": 0.9980171918869019
+        },
+        {
+          "word": " your",
+          "start": 137.44,
+          "end": 137.74,
+          "probability": 0.997626006603241
+        },
+        {
+          "word": " own",
+          "start": 137.74,
+          "end": 138.12,
+          "probability": 0.9747461676597595
+        },
+        {
+          "word": " strengths",
+          "start": 138.12,
+          "end": 138.62,
+          "probability": 0.9939272403717041
+        },
+        {
+          "word": " and",
+          "start": 138.62,
+          "end": 138.92,
+          "probability": 0.9885375499725342
+        },
+        {
+          "word": " weaknesses",
+          "start": 138.92,
+          "end": 139.44,
+          "probability": 0.9896894693374634
+        },
+        {
+          "word": " first",
+          "start": 139.44,
+          "end": 140.06,
+          "probability": 0.9928376078605652
+        },
+        {
+          "word": " and",
+          "start": 140.06,
+          "end": 141.0,
+          "probability": 0.6576237678527832
+        },
+        {
+          "word": " develop",
+          "start": 141.0,
+          "end": 141.5,
+          "probability": 0.995690643787384
+        },
+        {
+          "word": " your",
+          "start": 141.5,
+          "end": 141.86,
+          "probability": 0.9978029131889343
+        },
+        {
+          "word": " skills.",
+          "start": 141.86,
+          "end": 142.4,
+          "probability": 0.9990481734275818
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 12244,
+      "start": 143.78,
+      "end": 149.4,
+      "text": " If you want to work with champion athletes, this isn't a job for you.",
+      "tokens": [
+        51414,
+        759,
+        291,
+        528,
+        281,
+        589,
+        365,
+        10971,
+        13820,
+        11,
+        341,
+        1943,
+        380,
+        257,
+        1691,
+        337,
+        291,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.050400787675884406,
+      "compression_ratio": 1.4365482233502538,
+      "no_speech_prob": 0.16165854036808014,
+      "words": [
+        {
+          "word": " If",
+          "start": 143.78,
+          "end": 143.98,
+          "probability": 0.9860872626304626
+        },
+        {
+          "word": " you",
+          "start": 143.98,
+          "end": 144.2,
+          "probability": 0.9991710186004639
+        },
+        {
+          "word": " want",
+          "start": 144.2,
+          "end": 144.38,
+          "probability": 0.997784435749054
+        },
+        {
+          "word": " to",
+          "start": 144.38,
+          "end": 144.66,
+          "probability": 0.9988453388214111
+        },
+        {
+          "word": " work",
+          "start": 144.66,
+          "end": 144.92,
+          "probability": 0.9982544779777527
+        },
+        {
+          "word": " with",
+          "start": 144.92,
+          "end": 145.28,
+          "probability": 0.9978826642036438
+        },
+        {
+          "word": " champion",
+          "start": 145.28,
+          "end": 145.94,
+          "probability": 0.9449859261512756
+        },
+        {
+          "word": " athletes,",
+          "start": 145.94,
+          "end": 146.68,
+          "probability": 0.9964421391487122
+        },
+        {
+          "word": " this",
+          "start": 147.18,
+          "end": 147.5,
+          "probability": 0.9962825179100037
+        },
+        {
+          "word": " isn't",
+          "start": 147.5,
+          "end": 148.0,
+          "probability": 0.9952287971973419
+        },
+        {
+          "word": " a",
+          "start": 148.0,
+          "end": 148.18,
+          "probability": 0.9374417066574097
+        },
+        {
+          "word": " job",
+          "start": 148.18,
+          "end": 148.54,
+          "probability": 0.9989156723022461
+        },
+        {
+          "word": " for",
+          "start": 148.54,
+          "end": 148.82,
+          "probability": 0.9990712404251099
+        },
+        {
+          "word": " you.",
+          "start": 148.82,
+          "end": 149.4,
+          "probability": 0.9995933175086975
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 14940,
+      "start": 149.4,
+      "end": 155.96,
+      "text": " Only a few of my customers play in sports teams or compete in events.",
+      "tokens": [
+        50364,
+        5686,
+        257,
+        1326,
+        295,
+        452,
+        4581,
+        862,
+        294,
+        6573,
+        5491,
+        420,
+        11831,
+        294,
+        3931,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03919326755362497,
+      "compression_ratio": 1.46448087431694,
+      "no_speech_prob": 0.6414003372192383,
+      "words": [
+        {
+          "word": " Only",
+          "start": 149.4,
+          "end": 150.42,
+          "probability": 0.857374370098114
+        },
+        {
+          "word": " a",
+          "start": 150.42,
+          "end": 150.76,
+          "probability": 0.9952221512794495
+        },
+        {
+          "word": " few",
+          "start": 150.76,
+          "end": 150.92,
+          "probability": 0.9992591738700867
+        },
+        {
+          "word": " of",
+          "start": 150.92,
+          "end": 151.18,
+          "probability": 0.9979274272918701
+        },
+        {
+          "word": " my",
+          "start": 151.18,
+          "end": 151.4,
+          "probability": 0.998738706111908
+        },
+        {
+          "word": " customers",
+          "start": 151.4,
+          "end": 151.96,
+          "probability": 0.9961451292037964
+        },
+        {
+          "word": " play",
+          "start": 151.96,
+          "end": 152.48,
+          "probability": 0.9962388277053833
+        },
+        {
+          "word": " in",
+          "start": 152.48,
+          "end": 152.86,
+          "probability": 0.9969255328178406
+        },
+        {
+          "word": " sports",
+          "start": 152.86,
+          "end": 153.3,
+          "probability": 0.9790714979171753
+        },
+        {
+          "word": " teams",
+          "start": 153.3,
+          "end": 153.7,
+          "probability": 0.9959653615951538
+        },
+        {
+          "word": " or",
+          "start": 153.7,
+          "end": 154.64,
+          "probability": 0.8785696029663086
+        },
+        {
+          "word": " compete",
+          "start": 154.64,
+          "end": 155.16,
+          "probability": 0.9957801103591919
+        },
+        {
+          "word": " in",
+          "start": 155.16,
+          "end": 155.48,
+          "probability": 0.9986925721168518
+        },
+        {
+          "word": " events.",
+          "start": 155.48,
+          "end": 155.96,
+          "probability": 0.9973475933074951
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 14940,
+      "start": 157.32,
+      "end": 159.84,
+      "text": " Most of them are ordinary people.",
+      "tokens": [
+        50714,
+        4534,
+        295,
+        552,
+        366,
+        10547,
+        561,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03919326755362497,
+      "compression_ratio": 1.46448087431694,
+      "no_speech_prob": 0.6414003372192383,
+      "words": [
+        {
+          "word": " Most",
+          "start": 157.32,
+          "end": 157.66,
+          "probability": 0.9944970011711121
+        },
+        {
+          "word": " of",
+          "start": 157.66,
+          "end": 157.9,
+          "probability": 0.9990823268890381
+        },
+        {
+          "word": " them",
+          "start": 157.9,
+          "end": 158.12,
+          "probability": 0.9991123080253601
+        },
+        {
+          "word": " are",
+          "start": 158.12,
+          "end": 158.66,
+          "probability": 0.9983686804771423
+        },
+        {
+          "word": " ordinary",
+          "start": 158.66,
+          "end": 159.26,
+          "probability": 0.9933410286903381
+        },
+        {
+          "word": " people.",
+          "start": 159.26,
+          "end": 159.84,
+          "probability": 0.9992145299911499
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 14940,
+      "start": 161.06,
+      "end": 166.94,
+      "text": " My job is to support them and help them to achieve their personal fitness goals.",
+      "tokens": [
+        50914,
+        1222,
+        1691,
+        307,
+        281,
+        1406,
+        552,
+        293,
+        854,
+        552,
+        281,
+        4584,
+        641,
+        2973,
+        15303,
+        5493,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03919326755362497,
+      "compression_ratio": 1.46448087431694,
+      "no_speech_prob": 0.6414003372192383,
+      "words": [
+        {
+          "word": " My",
+          "start": 161.06,
+          "end": 161.34,
+          "probability": 0.9977338314056396
+        },
+        {
+          "word": " job",
+          "start": 161.34,
+          "end": 161.66,
+          "probability": 0.9993715882301331
+        },
+        {
+          "word": " is",
+          "start": 161.66,
+          "end": 161.96,
+          "probability": 0.9989608526229858
+        },
+        {
+          "word": " to",
+          "start": 161.96,
+          "end": 162.24,
+          "probability": 0.9991481304168701
+        },
+        {
+          "word": " support",
+          "start": 162.24,
+          "end": 162.6,
+          "probability": 0.9987442493438721
+        },
+        {
+          "word": " them",
+          "start": 162.6,
+          "end": 163.02,
+          "probability": 0.9988844990730286
+        },
+        {
+          "word": " and",
+          "start": 163.02,
+          "end": 163.64,
+          "probability": 0.9731859564781189
+        },
+        {
+          "word": " help",
+          "start": 163.64,
+          "end": 163.92,
+          "probability": 0.9973192811012268
+        },
+        {
+          "word": " them",
+          "start": 163.92,
+          "end": 164.22,
+          "probability": 0.9992535710334778
+        },
+        {
+          "word": " to",
+          "start": 164.22,
+          "end": 164.6,
+          "probability": 0.9653478264808655
+        },
+        {
+          "word": " achieve",
+          "start": 164.6,
+          "end": 164.94,
+          "probability": 0.9978500604629517
+        },
+        {
+          "word": " their",
+          "start": 164.94,
+          "end": 165.26,
+          "probability": 0.998799204826355
+        },
+        {
+          "word": " personal",
+          "start": 165.26,
+          "end": 165.9,
+          "probability": 0.9936070442199707
+        },
+        {
+          "word": " fitness",
+          "start": 165.9,
+          "end": 166.4,
+          "probability": 0.9982848763465881
+        },
+        {
+          "word": " goals.",
+          "start": 166.4,
+          "end": 166.94,
+          "probability": 0.9982765913009644
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 14940,
+      "start": 168.1,
+      "end": 175.56,
+      "text": " I get up early, usually at 4.30am, since some of my clients come to me before work.",
+      "tokens": [
+        51264,
+        286,
+        483,
+        493,
+        2440,
+        11,
+        2673,
+        412,
+        1017,
+        13,
+        3446,
+        335,
+        11,
+        1670,
+        512,
+        295,
+        452,
+        6982,
+        808,
+        281,
+        385,
+        949,
+        589,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03919326755362497,
+      "compression_ratio": 1.46448087431694,
+      "no_speech_prob": 0.6414003372192383,
+      "words": [
+        {
+          "word": " I",
+          "start": 168.1,
+          "end": 168.28,
+          "probability": 0.9975377321243286
+        },
+        {
+          "word": " get",
+          "start": 168.28,
+          "end": 168.5,
+          "probability": 0.9979119896888733
+        },
+        {
+          "word": " up",
+          "start": 168.5,
+          "end": 168.74,
+          "probability": 0.9995027780532837
+        },
+        {
+          "word": " early,",
+          "start": 168.74,
+          "end": 169.34,
+          "probability": 0.9989944100379944
+        },
+        {
+          "word": " usually",
+          "start": 169.48,
+          "end": 170.14,
+          "probability": 0.9964073300361633
+        },
+        {
+          "word": " at",
+          "start": 170.14,
+          "end": 170.56,
+          "probability": 0.9315478801727295
+        },
+        {
+          "word": " 4",
+          "start": 170.56,
+          "end": 170.92,
+          "probability": 0.9343849420547485
+        },
+        {
+          "word": ".30am,",
+          "start": 170.92,
+          "end": 171.74,
+          "probability": 0.8472589254379272
+        },
+        {
+          "word": " since",
+          "start": 172.2,
+          "end": 172.56,
+          "probability": 0.9960681200027466
+        },
+        {
+          "word": " some",
+          "start": 172.56,
+          "end": 172.88,
+          "probability": 0.9980210065841675
+        },
+        {
+          "word": " of",
+          "start": 172.88,
+          "end": 173.12,
+          "probability": 0.9963675737380981
+        },
+        {
+          "word": " my",
+          "start": 173.12,
+          "end": 173.36,
+          "probability": 0.9965267777442932
+        },
+        {
+          "word": " clients",
+          "start": 173.36,
+          "end": 173.76,
+          "probability": 0.9975142478942871
+        },
+        {
+          "word": " come",
+          "start": 173.76,
+          "end": 174.12,
+          "probability": 0.9977608919143677
+        },
+        {
+          "word": " to",
+          "start": 174.12,
+          "end": 174.32,
+          "probability": 0.9967254400253296
+        },
+        {
+          "word": " me",
+          "start": 174.32,
+          "end": 174.52,
+          "probability": 0.9977061748504639
+        },
+        {
+          "word": " before",
+          "start": 174.52,
+          "end": 175.0,
+          "probability": 0.9986463189125061
+        },
+        {
+          "word": " work.",
+          "start": 175.0,
+          "end": 175.56,
+          "probability": 0.9989206790924072
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 17556,
+      "start": 176.72,
+      "end": 181.42,
+      "text": " Sometimes I work for 6 hours with only a 10 minute break.",
+      "tokens": [
+        50414,
+        4803,
+        286,
+        589,
+        337,
+        1386,
+        2496,
+        365,
+        787,
+        257,
+        1266,
+        3456,
+        1821,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.057372258259699896,
+      "compression_ratio": 1.4881516587677726,
+      "no_speech_prob": 0.010812169872224331,
+      "words": [
+        {
+          "word": " Sometimes",
+          "start": 176.72,
+          "end": 177.48,
+          "probability": 0.49865347146987915
+        },
+        {
+          "word": " I",
+          "start": 177.48,
+          "end": 177.74,
+          "probability": 0.8266134262084961
+        },
+        {
+          "word": " work",
+          "start": 177.74,
+          "end": 178.06,
+          "probability": 0.9968166947364807
+        },
+        {
+          "word": " for",
+          "start": 178.06,
+          "end": 178.4,
+          "probability": 0.9818143248558044
+        },
+        {
+          "word": " 6",
+          "start": 178.4,
+          "end": 178.8,
+          "probability": 0.4722568988800049
+        },
+        {
+          "word": " hours",
+          "start": 178.8,
+          "end": 179.36,
+          "probability": 0.9895422458648682
+        },
+        {
+          "word": " with",
+          "start": 179.36,
+          "end": 179.68,
+          "probability": 0.9631099700927734
+        },
+        {
+          "word": " only",
+          "start": 179.68,
+          "end": 180.1,
+          "probability": 0.992483913898468
+        },
+        {
+          "word": " a",
+          "start": 180.1,
+          "end": 180.24,
+          "probability": 0.987287163734436
+        },
+        {
+          "word": " 10",
+          "start": 180.24,
+          "end": 180.58,
+          "probability": 0.9640238881111145
+        },
+        {
+          "word": " minute",
+          "start": 180.58,
+          "end": 180.96,
+          "probability": 0.6637988686561584
+        },
+        {
+          "word": " break.",
+          "start": 180.96,
+          "end": 181.42,
+          "probability": 0.9921169877052307
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 17556,
+      "start": 182.46,
+      "end": 190.16,
+      "text": " I don't spend time with my children as much as I would like because I have customers who want to train after work too.",
+      "tokens": [
+        50714,
+        286,
+        500,
+        380,
+        3496,
+        565,
+        365,
+        452,
+        2227,
+        382,
+        709,
+        382,
+        286,
+        576,
+        411,
+        570,
+        286,
+        362,
+        4581,
+        567,
+        528,
+        281,
+        3847,
+        934,
+        589,
+        886,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.057372258259699896,
+      "compression_ratio": 1.4881516587677726,
+      "no_speech_prob": 0.010812169872224331,
+      "words": [
+        {
+          "word": " I",
+          "start": 182.46,
+          "end": 182.6,
+          "probability": 0.9932752847671509
+        },
+        {
+          "word": " don't",
+          "start": 182.6,
+          "end": 182.92,
+          "probability": 0.9928983747959137
+        },
+        {
+          "word": " spend",
+          "start": 182.92,
+          "end": 183.24,
+          "probability": 0.9968522191047668
+        },
+        {
+          "word": " time",
+          "start": 183.24,
+          "end": 183.66,
+          "probability": 0.9925918579101562
+        },
+        {
+          "word": " with",
+          "start": 183.66,
+          "end": 183.86,
+          "probability": 0.9990854263305664
+        },
+        {
+          "word": " my",
+          "start": 183.86,
+          "end": 184.1,
+          "probability": 0.9974685907363892
+        },
+        {
+          "word": " children",
+          "start": 184.1,
+          "end": 184.6,
+          "probability": 0.9956845045089722
+        },
+        {
+          "word": " as",
+          "start": 184.6,
+          "end": 184.92,
+          "probability": 0.9924893379211426
+        },
+        {
+          "word": " much",
+          "start": 184.92,
+          "end": 185.14,
+          "probability": 0.9985137581825256
+        },
+        {
+          "word": " as",
+          "start": 185.14,
+          "end": 185.32,
+          "probability": 0.9952783584594727
+        },
+        {
+          "word": " I",
+          "start": 185.32,
+          "end": 185.4,
+          "probability": 0.9935373663902283
+        },
+        {
+          "word": " would",
+          "start": 185.4,
+          "end": 185.66,
+          "probability": 0.9945175051689148
+        },
+        {
+          "word": " like",
+          "start": 185.66,
+          "end": 186.04,
+          "probability": 0.9974433183670044
+        },
+        {
+          "word": " because",
+          "start": 186.04,
+          "end": 186.7,
+          "probability": 0.760402262210846
+        },
+        {
+          "word": " I",
+          "start": 186.7,
+          "end": 186.96,
+          "probability": 0.9921672940254211
+        },
+        {
+          "word": " have",
+          "start": 186.96,
+          "end": 187.18,
+          "probability": 0.9984520673751831
+        },
+        {
+          "word": " customers",
+          "start": 187.18,
+          "end": 187.7,
+          "probability": 0.9957725405693054
+        },
+        {
+          "word": " who",
+          "start": 187.7,
+          "end": 188.0,
+          "probability": 0.9942441582679749
+        },
+        {
+          "word": " want",
+          "start": 188.0,
+          "end": 188.16,
+          "probability": 0.9968392848968506
+        },
+        {
+          "word": " to",
+          "start": 188.16,
+          "end": 188.46,
+          "probability": 0.9985260367393494
+        },
+        {
+          "word": " train",
+          "start": 188.46,
+          "end": 188.68,
+          "probability": 0.9947962164878845
+        },
+        {
+          "word": " after",
+          "start": 188.68,
+          "end": 189.22,
+          "probability": 0.993388295173645
+        },
+        {
+          "word": " work",
+          "start": 189.22,
+          "end": 189.6,
+          "probability": 0.9881386160850525
+        },
+        {
+          "word": " too.",
+          "start": 189.6,
+          "end": 190.16,
+          "probability": 0.9148191213607788
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 17556,
+      "start": 191.06,
+      "end": 196.48,
+      "text": " But I love my job because it makes a difference to people's lives.",
+      "tokens": [
+        51114,
+        583,
+        286,
+        959,
+        452,
+        1691,
+        570,
+        309,
+        1669,
+        257,
+        2649,
+        281,
+        561,
+        311,
+        2909,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.057372258259699896,
+      "compression_ratio": 1.4881516587677726,
+      "no_speech_prob": 0.010812169872224331,
+      "words": [
+        {
+          "word": " But",
+          "start": 191.06,
+          "end": 191.46,
+          "probability": 0.984616756439209
+        },
+        {
+          "word": " I",
+          "start": 191.46,
+          "end": 192.14,
+          "probability": 0.8913866281509399
+        },
+        {
+          "word": " love",
+          "start": 192.14,
+          "end": 192.52,
+          "probability": 0.9853324294090271
+        },
+        {
+          "word": " my",
+          "start": 192.52,
+          "end": 192.82,
+          "probability": 0.9989833235740662
+        },
+        {
+          "word": " job",
+          "start": 192.82,
+          "end": 193.1,
+          "probability": 0.9991337656974792
+        },
+        {
+          "word": " because",
+          "start": 193.1,
+          "end": 193.84,
+          "probability": 0.895716667175293
+        },
+        {
+          "word": " it",
+          "start": 193.84,
+          "end": 194.12,
+          "probability": 0.9964505434036255
+        },
+        {
+          "word": " makes",
+          "start": 194.12,
+          "end": 194.36,
+          "probability": 0.9971176385879517
+        },
+        {
+          "word": " a",
+          "start": 194.36,
+          "end": 194.6,
+          "probability": 0.998301088809967
+        },
+        {
+          "word": " difference",
+          "start": 194.6,
+          "end": 195.04,
+          "probability": 0.9977970123291016
+        },
+        {
+          "word": " to",
+          "start": 195.04,
+          "end": 195.3,
+          "probability": 0.9973294734954834
+        },
+        {
+          "word": " people's",
+          "start": 195.3,
+          "end": 195.96,
+          "probability": 0.8994406759738922
+        },
+        {
+          "word": " lives.",
+          "start": 195.96,
+          "end": 196.48,
+          "probability": 0.9978531002998352
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 17556,
+      "start": 197.46,
+      "end": 202.78,
+      "text": " Around 80% of personal trainers leave their jobs after the first year.",
+      "tokens": [
+        51464,
+        17633,
+        4688,
+        4,
+        295,
+        2973,
+        35393,
+        1856,
+        641,
+        4782,
+        934,
+        264,
+        700,
+        1064,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.057372258259699896,
+      "compression_ratio": 1.4881516587677726,
+      "no_speech_prob": 0.010812169872224331,
+      "words": [
+        {
+          "word": " Around",
+          "start": 197.46,
+          "end": 197.84,
+          "probability": 0.9864729642868042
+        },
+        {
+          "word": " 80",
+          "start": 197.84,
+          "end": 198.4,
+          "probability": 0.9763721823692322
+        },
+        {
+          "word": "%",
+          "start": 198.4,
+          "end": 198.88,
+          "probability": 0.8456302285194397
+        },
+        {
+          "word": " of",
+          "start": 198.88,
+          "end": 199.12,
+          "probability": 0.9950209856033325
+        },
+        {
+          "word": " personal",
+          "start": 199.12,
+          "end": 199.64,
+          "probability": 0.9860183000564575
+        },
+        {
+          "word": " trainers",
+          "start": 199.64,
+          "end": 200.08,
+          "probability": 0.997539758682251
+        },
+        {
+          "word": " leave",
+          "start": 200.08,
+          "end": 200.72,
+          "probability": 0.9967185854911804
+        },
+        {
+          "word": " their",
+          "start": 200.72,
+          "end": 201.0,
+          "probability": 0.9960035681724548
+        },
+        {
+          "word": " jobs",
+          "start": 201.0,
+          "end": 201.34,
+          "probability": 0.9877656698226929
+        },
+        {
+          "word": " after",
+          "start": 201.34,
+          "end": 201.78,
+          "probability": 0.9971998929977417
+        },
+        {
+          "word": " the",
+          "start": 201.78,
+          "end": 201.94,
+          "probability": 0.9894241690635681
+        },
+        {
+          "word": " first",
+          "start": 201.94,
+          "end": 202.36,
+          "probability": 0.9768309593200684
+        },
+        {
+          "word": " year.",
+          "start": 202.36,
+          "end": 202.78,
+          "probability": 0.9980200529098511
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 20278,
+      "start": 202.78,
+      "end": 207.52,
+      "text": " But those who stay, stay for the same reason.",
+      "tokens": [
+        50364,
+        583,
+        729,
+        567,
+        1754,
+        11,
+        1754,
+        337,
+        264,
+        912,
+        1778,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05732329268204538,
+      "compression_ratio": 1.319327731092437,
+      "no_speech_prob": 0.015076803043484688,
+      "words": [
+        {
+          "word": " But",
+          "start": 202.78,
+          "end": 203.86,
+          "probability": 0.8017318248748779
+        },
+        {
+          "word": " those",
+          "start": 203.86,
+          "end": 204.28,
+          "probability": 0.9768635630607605
+        },
+        {
+          "word": " who",
+          "start": 204.28,
+          "end": 204.68,
+          "probability": 0.9962892532348633
+        },
+        {
+          "word": " stay,",
+          "start": 204.68,
+          "end": 205.26,
+          "probability": 0.9813359379768372
+        },
+        {
+          "word": " stay",
+          "start": 205.62,
+          "end": 205.94,
+          "probability": 0.9866662621498108
+        },
+        {
+          "word": " for",
+          "start": 205.94,
+          "end": 206.22,
+          "probability": 0.9968282580375671
+        },
+        {
+          "word": " the",
+          "start": 206.22,
+          "end": 206.5,
+          "probability": 0.9979615211486816
+        },
+        {
+          "word": " same",
+          "start": 206.5,
+          "end": 206.96,
+          "probability": 0.9968258142471313
+        },
+        {
+          "word": " reason.",
+          "start": 206.96,
+          "end": 207.52,
+          "probability": 0.9975687861442566
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 20278,
+      "start": 208.26,
+      "end": 215.96,
+      "text": " It's a great feeling when you see positive changes in a person's life thanks to your personal training program.",
+      "tokens": [
+        50614,
+        467,
+        311,
+        257,
+        869,
+        2633,
+        562,
+        291,
+        536,
+        3353,
+        2962,
+        294,
+        257,
+        954,
+        311,
+        993,
+        3231,
+        281,
+        428,
+        2973,
+        3097,
+        1461,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05732329268204538,
+      "compression_ratio": 1.319327731092437,
+      "no_speech_prob": 0.015076803043484688,
+      "words": [
+        {
+          "word": " It's",
+          "start": 208.26,
+          "end": 208.64,
+          "probability": 0.9735022187232971
+        },
+        {
+          "word": " a",
+          "start": 208.64,
+          "end": 208.88,
+          "probability": 0.9970574378967285
+        },
+        {
+          "word": " great",
+          "start": 208.88,
+          "end": 209.24,
+          "probability": 0.9972209930419922
+        },
+        {
+          "word": " feeling",
+          "start": 209.24,
+          "end": 209.74,
+          "probability": 0.9989355206489563
+        },
+        {
+          "word": " when",
+          "start": 209.74,
+          "end": 210.0,
+          "probability": 0.9896900653839111
+        },
+        {
+          "word": " you",
+          "start": 210.0,
+          "end": 210.3,
+          "probability": 0.9986843466758728
+        },
+        {
+          "word": " see",
+          "start": 210.3,
+          "end": 210.6,
+          "probability": 0.9987980127334595
+        },
+        {
+          "word": " positive",
+          "start": 210.6,
+          "end": 211.14,
+          "probability": 0.9945293068885803
+        },
+        {
+          "word": " changes",
+          "start": 211.14,
+          "end": 211.68,
+          "probability": 0.997847318649292
+        },
+        {
+          "word": " in",
+          "start": 211.68,
+          "end": 212.04,
+          "probability": 0.9975298047065735
+        },
+        {
+          "word": " a",
+          "start": 212.04,
+          "end": 212.2,
+          "probability": 0.9948145747184753
+        },
+        {
+          "word": " person's",
+          "start": 212.2,
+          "end": 212.76,
+          "probability": 0.9793106913566589
+        },
+        {
+          "word": " life",
+          "start": 212.76,
+          "end": 213.14,
+          "probability": 0.9983166456222534
+        },
+        {
+          "word": " thanks",
+          "start": 213.14,
+          "end": 213.82,
+          "probability": 0.5808228254318237
+        },
+        {
+          "word": " to",
+          "start": 213.82,
+          "end": 214.06,
+          "probability": 0.9992789626121521
+        },
+        {
+          "word": " your",
+          "start": 214.06,
+          "end": 214.3,
+          "probability": 0.9969863295555115
+        },
+        {
+          "word": " personal",
+          "start": 214.3,
+          "end": 214.86,
+          "probability": 0.9262294173240662
+        },
+        {
+          "word": " training",
+          "start": 214.86,
+          "end": 215.38,
+          "probability": 0.9888010025024414
+        },
+        {
+          "word": " program.",
+          "start": 215.38,
+          "end": 215.96,
+          "probability": 0.6066287755966187
+        }
+      ]
+    }
+  ]
+}

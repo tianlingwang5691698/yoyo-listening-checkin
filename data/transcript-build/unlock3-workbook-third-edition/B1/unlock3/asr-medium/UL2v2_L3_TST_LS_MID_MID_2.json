@@ -1,0 +1,4125 @@
+{
+  "model": "small.en",
+  "language": "en",
+  "text": "Midcourse test track 2 Hello Today I'm going to talk about an animal that has a great environmental impact the beaver The beaver is similar to a rat, but it's much bigger with brown fur Sharp teeth and a long flat tail You probably know them They're famous for building dams which are like walls across rivers that stop the water from moving I'm going to talk today about the benefits of working with these animals rather than against them Many people don't realize that some wild animals can actually help us, but it's true We depend on some animals as much as they depend on us Many people see beavers as a threat to our environment They make trouble wherever they go. They cut down trees and make rivers flood But personally I don't think that beavers are a problem at all It seems to me that we are just starting to realize how important they are When humans first met beavers hundreds of years ago Humans didn't want to protect them. They wanted to kill them as a result beavers almost died out a Long time ago. They were very valuable The reason for this was that everyone wanted their fur in Europe and Asia and later in North America, too People used beaver fur to make clothes especially hats There were between 100 and 400 million beavers in North America before the Europeans arrived In the late 1800s, however, there were only 100,000 The beaver had become endangered The result of this was that lots of animal habitats were lost Beavers build dams which create wetlands large areas of land covered in water These wetlands provide food and a home for the beaver, but they also provide homes for other animals, too Frogs for example live in wetlands created by beavers Fish also use these wetlands to take care of their young and ducks make their homes near them, too Wetlands keep carbon dioxide a gas which makes the world's temperature rise out of the atmosphere And this is good because it stops the rise in temperature around the world The other way that beavers are helping with the climate crisis is by stopping forest fires Which create a lot of pollution and a lot of damage Wetlands made by beavers stop fires from getting bigger and they also provide protection for animals trying to escape the fires In England and Scotland beavers have recently returned Britain is a very wet place and every year floods cause millions of pounds of damage Due to the dams that beavers make, flood damage is reduced Because the water from floods goes to the wetlands instead Beavers help reduce flood water by up to 30% To sum up, beavers are helping us to solve some serious environmental problems We just have to let nature's engineers get on with their job",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.5,
+      "text": " Midcourse test track 2",
+      "tokens": [
+        50363,
+        7215,
+        17319,
+        1332,
+        2610,
+        362,
+        50488
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27675481276078656,
+      "compression_ratio": 1.3771428571428572,
+      "no_speech_prob": 0.15700459480285645,
+      "words": [
+        {
+          "word": " Midcourse",
+          "start": 0.0,
+          "end": 0.86,
+          "probability": 0.59995898604393
+        },
+        {
+          "word": " test",
+          "start": 0.86,
+          "end": 1.36,
+          "probability": 0.8360350131988525
+        },
+        {
+          "word": " track",
+          "start": 1.36,
+          "end": 2.16,
+          "probability": 0.3444884419441223
+        },
+        {
+          "word": " 2",
+          "start": 2.16,
+          "end": 2.630000000000001,
+          "probability": 0.541677713394165
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.219999999999999,
+      "end": 5.16,
+      "text": " Hello",
+      "tokens": [
+        50595,
+        18435,
+        50657
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27675481276078656,
+      "compression_ratio": 1.3771428571428572,
+      "no_speech_prob": 0.15700459480285645,
+      "words": [
+        {
+          "word": " Hello",
+          "start": 4.219999999999999,
+          "end": 5.16,
+          "probability": 0.656219482421875
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.88,
+      "end": 12.64,
+      "text": " Today I'm going to talk about an animal that has a great environmental impact the beaver",
+      "tokens": [
+        50657,
+        6288,
+        314,
+        1101,
+        1016,
+        284,
+        1561,
+        546,
+        281,
+        5044,
+        326,
+        468,
+        257,
+        1049,
+        6142,
+        2928,
+        262,
+        307,
+        8770,
+        50993
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27675481276078656,
+      "compression_ratio": 1.3771428571428572,
+      "no_speech_prob": 0.15700459480285645,
+      "words": [
+        {
+          "word": " Today",
+          "start": 5.88,
+          "end": 6.44,
+          "probability": 0.16253161430358887
+        },
+        {
+          "word": " I'm",
+          "start": 6.44,
+          "end": 7.14,
+          "probability": 0.7809840142726898
+        },
+        {
+          "word": " going",
+          "start": 7.14,
+          "end": 7.32,
+          "probability": 0.9978952407836914
+        },
+        {
+          "word": " to",
+          "start": 7.32,
+          "end": 7.52,
+          "probability": 0.9990484118461609
+        },
+        {
+          "word": " talk",
+          "start": 7.52,
+          "end": 7.76,
+          "probability": 0.9987260699272156
+        },
+        {
+          "word": " about",
+          "start": 7.76,
+          "end": 8.06,
+          "probability": 0.9988834261894226
+        },
+        {
+          "word": " an",
+          "start": 8.06,
+          "end": 8.28,
+          "probability": 0.9934961795806885
+        },
+        {
+          "word": " animal",
+          "start": 8.28,
+          "end": 8.7,
+          "probability": 0.9976139068603516
+        },
+        {
+          "word": " that",
+          "start": 8.7,
+          "end": 8.96,
+          "probability": 0.9819387197494507
+        },
+        {
+          "word": " has",
+          "start": 8.96,
+          "end": 9.26,
+          "probability": 0.9986231327056885
+        },
+        {
+          "word": " a",
+          "start": 9.26,
+          "end": 9.46,
+          "probability": 0.9957988858222961
+        },
+        {
+          "word": " great",
+          "start": 9.46,
+          "end": 9.82,
+          "probability": 0.9976015686988831
+        },
+        {
+          "word": " environmental",
+          "start": 9.82,
+          "end": 10.56,
+          "probability": 0.9716960191726685
+        },
+        {
+          "word": " impact",
+          "start": 10.56,
+          "end": 11.3,
+          "probability": 0.9895592927932739
+        },
+        {
+          "word": " the",
+          "start": 11.3,
+          "end": 12.16,
+          "probability": 0.5590101480484009
+        },
+        {
+          "word": " beaver",
+          "start": 12.16,
+          "end": 12.64,
+          "probability": 0.9370826780796051
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 13.64,
+      "end": 20.06,
+      "text": " The beaver is similar to a rat, but it's much bigger with brown fur",
+      "tokens": [
+        51045,
+        383,
+        307,
+        8770,
+        318,
+        2092,
+        284,
+        257,
+        4227,
+        11,
+        475,
+        340,
+        338,
+        881,
+        5749,
+        351,
+        7586,
+        9230,
+        51359
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27675481276078656,
+      "compression_ratio": 1.3771428571428572,
+      "no_speech_prob": 0.15700459480285645,
+      "words": [
+        {
+          "word": " The",
+          "start": 13.64,
+          "end": 14.2,
+          "probability": 0.8426414132118225
+        },
+        {
+          "word": " beaver",
+          "start": 14.2,
+          "end": 14.64,
+          "probability": 0.9586719274520874
+        },
+        {
+          "word": " is",
+          "start": 14.64,
+          "end": 15.16,
+          "probability": 0.9967268705368042
+        },
+        {
+          "word": " similar",
+          "start": 15.16,
+          "end": 15.5,
+          "probability": 0.98600834608078
+        },
+        {
+          "word": " to",
+          "start": 15.5,
+          "end": 15.92,
+          "probability": 0.9987732768058777
+        },
+        {
+          "word": " a",
+          "start": 15.92,
+          "end": 16.1,
+          "probability": 0.9983853101730347
+        },
+        {
+          "word": " rat,",
+          "start": 16.1,
+          "end": 16.48,
+          "probability": 0.9958915710449219
+        },
+        {
+          "word": " but",
+          "start": 16.48,
+          "end": 17.18,
+          "probability": 0.9988150596618652
+        },
+        {
+          "word": " it's",
+          "start": 17.18,
+          "end": 17.62,
+          "probability": 0.9989058375358582
+        },
+        {
+          "word": " much",
+          "start": 17.62,
+          "end": 17.9,
+          "probability": 0.9994995594024658
+        },
+        {
+          "word": " bigger",
+          "start": 17.9,
+          "end": 18.42,
+          "probability": 0.9974740147590637
+        },
+        {
+          "word": " with",
+          "start": 18.42,
+          "end": 19.14,
+          "probability": 0.9238424897193909
+        },
+        {
+          "word": " brown",
+          "start": 19.14,
+          "end": 19.56,
+          "probability": 0.963893711566925
+        },
+        {
+          "word": " fur",
+          "start": 19.56,
+          "end": 20.06,
+          "probability": 0.9613853096961975
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 20.06,
+      "end": 23.32,
+      "text": " Sharp teeth and a long flat tail",
+      "tokens": [
+        51375,
+        22835,
+        9941,
+        290,
+        257,
+        890,
+        6228,
+        7894,
+        51525
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27675481276078656,
+      "compression_ratio": 1.3771428571428572,
+      "no_speech_prob": 0.15700459480285645,
+      "words": [
+        {
+          "word": " Sharp",
+          "start": 20.06,
+          "end": 20.82,
+          "probability": 0.25076696276664734
+        },
+        {
+          "word": " teeth",
+          "start": 20.82,
+          "end": 21.34,
+          "probability": 0.9806001782417297
+        },
+        {
+          "word": " and",
+          "start": 21.34,
+          "end": 21.88,
+          "probability": 0.9898174405097961
+        },
+        {
+          "word": " a",
+          "start": 21.88,
+          "end": 22.02,
+          "probability": 0.9796484112739563
+        },
+        {
+          "word": " long",
+          "start": 22.02,
+          "end": 22.36,
+          "probability": 0.9984900951385498
+        },
+        {
+          "word": " flat",
+          "start": 22.36,
+          "end": 22.82,
+          "probability": 0.992890477180481
+        },
+        {
+          "word": " tail",
+          "start": 22.82,
+          "end": 23.32,
+          "probability": 0.9943546056747437
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 24.16,
+      "end": 26.26,
+      "text": " You probably know them",
+      "tokens": [
+        51571,
+        921,
+        2192,
+        760,
+        606,
+        51671
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27675481276078656,
+      "compression_ratio": 1.3771428571428572,
+      "no_speech_prob": 0.15700459480285645,
+      "words": [
+        {
+          "word": " You",
+          "start": 24.16,
+          "end": 24.78,
+          "probability": 0.8700389862060547
+        },
+        {
+          "word": " probably",
+          "start": 24.78,
+          "end": 25.16,
+          "probability": 0.9940213561058044
+        },
+        {
+          "word": " know",
+          "start": 25.16,
+          "end": 25.62,
+          "probability": 0.9990363121032715
+        },
+        {
+          "word": " them",
+          "start": 25.62,
+          "end": 26.26,
+          "probability": 0.9976240992546082
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2626,
+      "start": 26.26,
+      "end": 34.24,
+      "text": " They're famous for building dams which are like walls across rivers that stop the water from moving",
+      "tokens": [
+        50385,
+        1119,
+        821,
+        5863,
+        329,
+        2615,
+        40907,
+        543,
+        389,
+        588,
+        7714,
+        1973,
+        18180,
+        326,
+        2245,
+        262,
+        1660,
+        422,
+        3867,
+        50761
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13113897959391277,
+      "compression_ratio": 1.5674418604651164,
+      "no_speech_prob": 0.002894784091040492,
+      "words": [
+        {
+          "word": " They're",
+          "start": 26.26,
+          "end": 27.32,
+          "probability": 0.9103216826915741
+        },
+        {
+          "word": " famous",
+          "start": 27.32,
+          "end": 27.58,
+          "probability": 0.9988922476768494
+        },
+        {
+          "word": " for",
+          "start": 27.58,
+          "end": 28.2,
+          "probability": 0.9982287287712097
+        },
+        {
+          "word": " building",
+          "start": 28.2,
+          "end": 28.62,
+          "probability": 0.9958341121673584
+        },
+        {
+          "word": " dams",
+          "start": 28.62,
+          "end": 29.12,
+          "probability": 0.9858714938163757
+        },
+        {
+          "word": " which",
+          "start": 29.12,
+          "end": 30.02,
+          "probability": 0.2999943196773529
+        },
+        {
+          "word": " are",
+          "start": 30.02,
+          "end": 30.38,
+          "probability": 0.9922782182693481
+        },
+        {
+          "word": " like",
+          "start": 30.38,
+          "end": 30.62,
+          "probability": 0.9982715845108032
+        },
+        {
+          "word": " walls",
+          "start": 30.62,
+          "end": 31.22,
+          "probability": 0.9885590672492981
+        },
+        {
+          "word": " across",
+          "start": 31.22,
+          "end": 31.58,
+          "probability": 0.9943378567695618
+        },
+        {
+          "word": " rivers",
+          "start": 31.58,
+          "end": 32.04,
+          "probability": 0.9977688789367676
+        },
+        {
+          "word": " that",
+          "start": 32.04,
+          "end": 32.66,
+          "probability": 0.9818606376647949
+        },
+        {
+          "word": " stop",
+          "start": 32.66,
+          "end": 32.94,
+          "probability": 0.9925425052642822
+        },
+        {
+          "word": " the",
+          "start": 32.94,
+          "end": 33.18,
+          "probability": 0.9969366788864136
+        },
+        {
+          "word": " water",
+          "start": 33.18,
+          "end": 33.42,
+          "probability": 0.9995899796485901
+        },
+        {
+          "word": " from",
+          "start": 33.42,
+          "end": 33.76,
+          "probability": 0.9979792237281799
+        },
+        {
+          "word": " moving",
+          "start": 33.76,
+          "end": 34.24,
+          "probability": 0.9992291927337646
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2626,
+      "start": 35.18,
+      "end": 41.42,
+      "text": " I'm going to talk today about the benefits of working with these animals rather than against them",
+      "tokens": [
+        50813,
+        314,
+        1101,
+        1016,
+        284,
+        1561,
+        1909,
+        546,
+        262,
+        4034,
+        286,
+        1762,
+        351,
+        777,
+        4695,
+        2138,
+        621,
+        1028,
+        606,
+        51121
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13113897959391277,
+      "compression_ratio": 1.5674418604651164,
+      "no_speech_prob": 0.002894784091040492,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 35.18,
+          "end": 35.98,
+          "probability": 0.5082745291292667
+        },
+        {
+          "word": " going",
+          "start": 35.98,
+          "end": 36.14,
+          "probability": 0.9975142478942871
+        },
+        {
+          "word": " to",
+          "start": 36.14,
+          "end": 36.36,
+          "probability": 0.9977960586547852
+        },
+        {
+          "word": " talk",
+          "start": 36.36,
+          "end": 36.58,
+          "probability": 0.9984664916992188
+        },
+        {
+          "word": " today",
+          "start": 36.58,
+          "end": 36.88,
+          "probability": 0.9900464415550232
+        },
+        {
+          "word": " about",
+          "start": 36.88,
+          "end": 37.16,
+          "probability": 0.9986481070518494
+        },
+        {
+          "word": " the",
+          "start": 37.16,
+          "end": 37.34,
+          "probability": 0.9990757703781128
+        },
+        {
+          "word": " benefits",
+          "start": 37.34,
+          "end": 37.66,
+          "probability": 0.9966424703598022
+        },
+        {
+          "word": " of",
+          "start": 37.66,
+          "end": 38.04,
+          "probability": 0.9979221224784851
+        },
+        {
+          "word": " working",
+          "start": 38.04,
+          "end": 38.42,
+          "probability": 0.9979540109634399
+        },
+        {
+          "word": " with",
+          "start": 38.42,
+          "end": 38.88,
+          "probability": 0.9701724648475647
+        },
+        {
+          "word": " these",
+          "start": 38.88,
+          "end": 39.24,
+          "probability": 0.9978285431861877
+        },
+        {
+          "word": " animals",
+          "start": 39.24,
+          "end": 39.76,
+          "probability": 0.9995030164718628
+        },
+        {
+          "word": " rather",
+          "start": 39.76,
+          "end": 40.48,
+          "probability": 0.7677194476127625
+        },
+        {
+          "word": " than",
+          "start": 40.48,
+          "end": 40.82,
+          "probability": 0.9977091550827026
+        },
+        {
+          "word": " against",
+          "start": 40.82,
+          "end": 41.14,
+          "probability": 0.9995135068893433
+        },
+        {
+          "word": " them",
+          "start": 41.14,
+          "end": 41.54,
+          "probability": 0.9994943141937256
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2626,
+      "start": 42.1,
+      "end": 49.04,
+      "text": " Many people don't realize that some wild animals can actually help us, but it's true",
+      "tokens": [
+        51173,
+        4650,
+        661,
+        836,
+        470,
+        6537,
+        326,
+        617,
+        4295,
+        4695,
+        460,
+        1682,
+        1037,
+        514,
+        11,
+        475,
+        340,
+        338,
+        2081,
+        51497
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13113897959391277,
+      "compression_ratio": 1.5674418604651164,
+      "no_speech_prob": 0.002894784091040492,
+      "words": [
+        {
+          "word": " Many",
+          "start": 42.1,
+          "end": 42.96,
+          "probability": 0.7264933586120605
+        },
+        {
+          "word": " people",
+          "start": 42.96,
+          "end": 43.36,
+          "probability": 0.9988747239112854
+        },
+        {
+          "word": " don't",
+          "start": 43.36,
+          "end": 43.74,
+          "probability": 0.9988717436790466
+        },
+        {
+          "word": " realize",
+          "start": 43.74,
+          "end": 44.22,
+          "probability": 0.5506540536880493
+        },
+        {
+          "word": " that",
+          "start": 44.22,
+          "end": 44.8,
+          "probability": 0.9944382905960083
+        },
+        {
+          "word": " some",
+          "start": 44.8,
+          "end": 45.14,
+          "probability": 0.9971238970756531
+        },
+        {
+          "word": " wild",
+          "start": 45.14,
+          "end": 45.56,
+          "probability": 0.9948840737342834
+        },
+        {
+          "word": " animals",
+          "start": 45.56,
+          "end": 46.02,
+          "probability": 0.9991341233253479
+        },
+        {
+          "word": " can",
+          "start": 46.02,
+          "end": 46.5,
+          "probability": 0.9955357313156128
+        },
+        {
+          "word": " actually",
+          "start": 46.5,
+          "end": 47.04,
+          "probability": 0.9980950951576233
+        },
+        {
+          "word": " help",
+          "start": 47.04,
+          "end": 47.44,
+          "probability": 0.9964784979820251
+        },
+        {
+          "word": " us,",
+          "start": 47.44,
+          "end": 47.92,
+          "probability": 0.9993209838867188
+        },
+        {
+          "word": " but",
+          "start": 47.92,
+          "end": 48.4,
+          "probability": 0.9975322484970093
+        },
+        {
+          "word": " it's",
+          "start": 48.4,
+          "end": 48.72,
+          "probability": 0.9959120750427246
+        },
+        {
+          "word": " true",
+          "start": 48.72,
+          "end": 49.04,
+          "probability": 0.9996562004089355
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2626,
+      "start": 49.94,
+      "end": 54.44,
+      "text": " We depend on some animals as much as they depend on us",
+      "tokens": [
+        51547,
+        775,
+        4745,
+        319,
+        617,
+        4695,
+        355,
+        881,
+        355,
+        484,
+        4745,
+        319,
+        514,
+        51757
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13113897959391277,
+      "compression_ratio": 1.5674418604651164,
+      "no_speech_prob": 0.002894784091040492,
+      "words": [
+        {
+          "word": " We",
+          "start": 49.94,
+          "end": 50.48,
+          "probability": 0.8664131760597229
+        },
+        {
+          "word": " depend",
+          "start": 50.48,
+          "end": 50.96,
+          "probability": 0.9975425004959106
+        },
+        {
+          "word": " on",
+          "start": 50.96,
+          "end": 51.24,
+          "probability": 0.9997280240058899
+        },
+        {
+          "word": " some",
+          "start": 51.24,
+          "end": 51.54,
+          "probability": 0.9992935657501221
+        },
+        {
+          "word": " animals",
+          "start": 51.54,
+          "end": 51.98,
+          "probability": 0.9996618032455444
+        },
+        {
+          "word": " as",
+          "start": 51.98,
+          "end": 52.52,
+          "probability": 0.9877287149429321
+        },
+        {
+          "word": " much",
+          "start": 52.52,
+          "end": 52.72,
+          "probability": 0.9995224475860596
+        },
+        {
+          "word": " as",
+          "start": 52.72,
+          "end": 52.96,
+          "probability": 0.9993583559989929
+        },
+        {
+          "word": " they",
+          "start": 52.96,
+          "end": 53.24,
+          "probability": 0.9994699358940125
+        },
+        {
+          "word": " depend",
+          "start": 53.24,
+          "end": 53.68,
+          "probability": 0.9981420040130615
+        },
+        {
+          "word": " on",
+          "start": 53.68,
+          "end": 53.96,
+          "probability": 0.9995911717414856
+        },
+        {
+          "word": " us",
+          "start": 53.96,
+          "end": 54.44,
+          "probability": 0.9993902444839478
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5626,
+      "start": 56.26,
+      "end": 59.86,
+      "text": " Many people see beavers as a threat to our environment",
+      "tokens": [
+        50363,
+        4650,
+        661,
+        766,
+        307,
+        30400,
+        355,
+        257,
+        2372,
+        284,
+        674,
+        2858,
+        50547
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1885802900636351,
+      "compression_ratio": 1.5631067961165048,
+      "no_speech_prob": 0.021888425573706627,
+      "words": [
+        {
+          "word": " Many",
+          "start": 56.26,
+          "end": 56.56,
+          "probability": 0.8545024394989014
+        },
+        {
+          "word": " people",
+          "start": 56.56,
+          "end": 57.04,
+          "probability": 0.9951077699661255
+        },
+        {
+          "word": " see",
+          "start": 57.04,
+          "end": 57.4,
+          "probability": 0.996807336807251
+        },
+        {
+          "word": " beavers",
+          "start": 57.4,
+          "end": 57.88,
+          "probability": 0.9803832471370697
+        },
+        {
+          "word": " as",
+          "start": 57.88,
+          "end": 58.28,
+          "probability": 0.9905701875686646
+        },
+        {
+          "word": " a",
+          "start": 58.28,
+          "end": 58.44,
+          "probability": 0.9914900660514832
+        },
+        {
+          "word": " threat",
+          "start": 58.44,
+          "end": 58.72,
+          "probability": 0.9988914132118225
+        },
+        {
+          "word": " to",
+          "start": 58.72,
+          "end": 59.06,
+          "probability": 0.9987459182739258
+        },
+        {
+          "word": " our",
+          "start": 59.06,
+          "end": 59.26,
+          "probability": 0.9990744590759277
+        },
+        {
+          "word": " environment",
+          "start": 59.26,
+          "end": 59.86,
+          "probability": 0.9963865280151367
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5626,
+      "start": 60.46,
+      "end": 66.12,
+      "text": " They make trouble wherever they go. They cut down trees and make rivers flood",
+      "tokens": [
+        50573,
+        1119,
+        787,
+        5876,
+        14530,
+        484,
+        467,
+        13,
+        1119,
+        2005,
+        866,
+        7150,
+        290,
+        787,
+        18180,
+        6947,
+        50853
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1885802900636351,
+      "compression_ratio": 1.5631067961165048,
+      "no_speech_prob": 0.021888425573706627,
+      "words": [
+        {
+          "word": " They",
+          "start": 60.46,
+          "end": 61.0,
+          "probability": 0.03505081683397293
+        },
+        {
+          "word": " make",
+          "start": 61.0,
+          "end": 61.28,
+          "probability": 0.9967625141143799
+        },
+        {
+          "word": " trouble",
+          "start": 61.28,
+          "end": 61.74,
+          "probability": 0.9981683492660522
+        },
+        {
+          "word": " wherever",
+          "start": 61.74,
+          "end": 62.1,
+          "probability": 0.9760311245918274
+        },
+        {
+          "word": " they",
+          "start": 62.1,
+          "end": 62.4,
+          "probability": 0.9989919066429138
+        },
+        {
+          "word": " go.",
+          "start": 62.4,
+          "end": 62.78,
+          "probability": 0.9992276430130005
+        },
+        {
+          "word": " They",
+          "start": 63.32,
+          "end": 63.56,
+          "probability": 0.984074592590332
+        },
+        {
+          "word": " cut",
+          "start": 63.56,
+          "end": 63.84,
+          "probability": 0.998178243637085
+        },
+        {
+          "word": " down",
+          "start": 63.84,
+          "end": 64.2,
+          "probability": 0.9966663718223572
+        },
+        {
+          "word": " trees",
+          "start": 64.2,
+          "end": 64.58,
+          "probability": 0.9986165761947632
+        },
+        {
+          "word": " and",
+          "start": 64.58,
+          "end": 64.96,
+          "probability": 0.963394820690155
+        },
+        {
+          "word": " make",
+          "start": 64.96,
+          "end": 65.24,
+          "probability": 0.9989558458328247
+        },
+        {
+          "word": " rivers",
+          "start": 65.24,
+          "end": 65.74,
+          "probability": 0.9961899518966675
+        },
+        {
+          "word": " flood",
+          "start": 65.74,
+          "end": 66.12,
+          "probability": 0.9988551139831543
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5626,
+      "start": 66.9,
+      "end": 71.48,
+      "text": " But personally I don't think that beavers are a problem at all",
+      "tokens": [
+        50905,
+        887,
+        7620,
+        314,
+        836,
+        470,
+        892,
+        326,
+        307,
+        30400,
+        389,
+        257,
+        1917,
+        379,
+        477,
+        51115
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1885802900636351,
+      "compression_ratio": 1.5631067961165048,
+      "no_speech_prob": 0.021888425573706627,
+      "words": [
+        {
+          "word": " But",
+          "start": 66.9,
+          "end": 67.66,
+          "probability": 0.3954806625843048
+        },
+        {
+          "word": " personally",
+          "start": 67.66,
+          "end": 68.22,
+          "probability": 0.9363536834716797
+        },
+        {
+          "word": " I",
+          "start": 68.22,
+          "end": 68.92,
+          "probability": 0.2665533721446991
+        },
+        {
+          "word": " don't",
+          "start": 68.92,
+          "end": 69.22,
+          "probability": 0.9946766197681427
+        },
+        {
+          "word": " think",
+          "start": 69.22,
+          "end": 69.44,
+          "probability": 0.9983006119728088
+        },
+        {
+          "word": " that",
+          "start": 69.44,
+          "end": 69.72,
+          "probability": 0.9162437319755554
+        },
+        {
+          "word": " beavers",
+          "start": 69.72,
+          "end": 70.16,
+          "probability": 0.995754063129425
+        },
+        {
+          "word": " are",
+          "start": 70.16,
+          "end": 70.48,
+          "probability": 0.9981361627578735
+        },
+        {
+          "word": " a",
+          "start": 70.48,
+          "end": 70.66,
+          "probability": 0.9955540299415588
+        },
+        {
+          "word": " problem",
+          "start": 70.66,
+          "end": 70.94,
+          "probability": 0.9991870522499084
+        },
+        {
+          "word": " at",
+          "start": 70.94,
+          "end": 71.14,
+          "probability": 0.9956015348434448
+        },
+        {
+          "word": " all",
+          "start": 71.14,
+          "end": 71.48,
+          "probability": 0.9994256496429443
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5626,
+      "start": 71.48,
+      "end": 77.22,
+      "text": " It seems to me that we are just starting to realize how important they are",
+      "tokens": [
+        51145,
+        632,
+        2331,
+        284,
+        502,
+        326,
+        356,
+        389,
+        655,
+        3599,
+        284,
+        6537,
+        703,
+        1593,
+        484,
+        389,
+        51411
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1885802900636351,
+      "compression_ratio": 1.5631067961165048,
+      "no_speech_prob": 0.021888425573706627,
+      "words": [
+        {
+          "word": " It",
+          "start": 71.48,
+          "end": 72.54,
+          "probability": 0.5721657872200012
+        },
+        {
+          "word": " seems",
+          "start": 72.54,
+          "end": 72.86,
+          "probability": 0.996381402015686
+        },
+        {
+          "word": " to",
+          "start": 72.86,
+          "end": 73.12,
+          "probability": 0.9950010180473328
+        },
+        {
+          "word": " me",
+          "start": 73.12,
+          "end": 73.48,
+          "probability": 0.9993618130683899
+        },
+        {
+          "word": " that",
+          "start": 73.48,
+          "end": 73.94,
+          "probability": 0.9380870461463928
+        },
+        {
+          "word": " we",
+          "start": 73.94,
+          "end": 74.14,
+          "probability": 0.9979202151298523
+        },
+        {
+          "word": " are",
+          "start": 74.14,
+          "end": 74.24,
+          "probability": 0.8546541929244995
+        },
+        {
+          "word": " just",
+          "start": 74.24,
+          "end": 74.52,
+          "probability": 0.9936667084693909
+        },
+        {
+          "word": " starting",
+          "start": 74.52,
+          "end": 75.06,
+          "probability": 0.9983265995979309
+        },
+        {
+          "word": " to",
+          "start": 75.06,
+          "end": 75.28,
+          "probability": 0.9991909861564636
+        },
+        {
+          "word": " realize",
+          "start": 75.28,
+          "end": 75.72,
+          "probability": 0.3506567180156708
+        },
+        {
+          "word": " how",
+          "start": 75.72,
+          "end": 76.04,
+          "probability": 0.9926602244377136
+        },
+        {
+          "word": " important",
+          "start": 76.04,
+          "end": 76.62,
+          "probability": 0.9969745874404907
+        },
+        {
+          "word": " they",
+          "start": 76.62,
+          "end": 77.04,
+          "probability": 0.9973227381706238
+        },
+        {
+          "word": " are",
+          "start": 77.04,
+          "end": 77.42,
+          "probability": 0.999263346195221
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5626,
+      "start": 78.82,
+      "end": 83.14,
+      "text": " When humans first met beavers hundreds of years ago",
+      "tokens": [
+        51501,
+        1649,
+        5384,
+        717,
+        1138,
+        307,
+        30400,
+        5179,
+        286,
+        812,
+        2084,
+        51685
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1885802900636351,
+      "compression_ratio": 1.5631067961165048,
+      "no_speech_prob": 0.021888425573706627,
+      "words": [
+        {
+          "word": " When",
+          "start": 78.82,
+          "end": 79.58,
+          "probability": 0.8421555757522583
+        },
+        {
+          "word": " humans",
+          "start": 79.58,
+          "end": 80.06,
+          "probability": 0.990741491317749
+        },
+        {
+          "word": " first",
+          "start": 80.06,
+          "end": 80.52,
+          "probability": 0.998775064945221
+        },
+        {
+          "word": " met",
+          "start": 80.52,
+          "end": 80.92,
+          "probability": 0.9966058731079102
+        },
+        {
+          "word": " beavers",
+          "start": 80.92,
+          "end": 81.42,
+          "probability": 0.9976679682731628
+        },
+        {
+          "word": " hundreds",
+          "start": 81.42,
+          "end": 81.98,
+          "probability": 0.4902462661266327
+        },
+        {
+          "word": " of",
+          "start": 81.98,
+          "end": 82.36,
+          "probability": 0.9993746876716614
+        },
+        {
+          "word": " years",
+          "start": 82.36,
+          "end": 82.6,
+          "probability": 0.9986144304275513
+        },
+        {
+          "word": " ago",
+          "start": 82.6,
+          "end": 83.14,
+          "probability": 0.9992281198501587
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 8314,
+      "start": 83.14,
+      "end": 87.42,
+      "text": " Humans didn't want to protect them. They wanted to kill them",
+      "tokens": [
+        50381,
+        27411,
+        1422,
+        470,
+        765,
+        284,
+        1805,
+        606,
+        13,
+        1119,
+        2227,
+        284,
+        1494,
+        606,
+        50567
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23130693827589896,
+      "compression_ratio": 1.4974874371859297,
+      "no_speech_prob": 0.001780982594937086,
+      "words": [
+        {
+          "word": " Humans",
+          "start": 83.14,
+          "end": 83.96,
+          "probability": 0.6252879500389099
+        },
+        {
+          "word": " didn't",
+          "start": 83.96,
+          "end": 84.4,
+          "probability": 0.9893402755260468
+        },
+        {
+          "word": " want",
+          "start": 84.4,
+          "end": 84.66,
+          "probability": 0.9988503456115723
+        },
+        {
+          "word": " to",
+          "start": 84.66,
+          "end": 84.86,
+          "probability": 0.9988271594047546
+        },
+        {
+          "word": " protect",
+          "start": 84.86,
+          "end": 85.16,
+          "probability": 0.9991046786308289
+        },
+        {
+          "word": " them.",
+          "start": 85.16,
+          "end": 85.5,
+          "probability": 0.9985528588294983
+        },
+        {
+          "word": " They",
+          "start": 86.14,
+          "end": 86.16,
+          "probability": 0.9823175668716431
+        },
+        {
+          "word": " wanted",
+          "start": 86.16,
+          "end": 86.44,
+          "probability": 0.9980754852294922
+        },
+        {
+          "word": " to",
+          "start": 86.44,
+          "end": 86.74,
+          "probability": 0.999336302280426
+        },
+        {
+          "word": " kill",
+          "start": 86.74,
+          "end": 86.96,
+          "probability": 0.9951667785644531
+        },
+        {
+          "word": " them",
+          "start": 86.96,
+          "end": 87.42,
+          "probability": 0.9994370341300964
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 8314,
+      "start": 88.18,
+      "end": 91.9,
+      "text": " as a result beavers almost died out a",
+      "tokens": [
+        50615,
+        355,
+        257,
+        1255,
+        307,
+        30400,
+        2048,
+        3724,
+        503,
+        257,
+        50801
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23130693827589896,
+      "compression_ratio": 1.4974874371859297,
+      "no_speech_prob": 0.001780982594937086,
+      "words": [
+        {
+          "word": " as",
+          "start": 88.18,
+          "end": 88.78,
+          "probability": 0.0029120638500899076
+        },
+        {
+          "word": " a",
+          "start": 88.78,
+          "end": 88.9,
+          "probability": 0.9733981490135193
+        },
+        {
+          "word": " result",
+          "start": 88.9,
+          "end": 89.34,
+          "probability": 0.9954311847686768
+        },
+        {
+          "word": " beavers",
+          "start": 89.34,
+          "end": 90.28,
+          "probability": 0.628717228770256
+        },
+        {
+          "word": " almost",
+          "start": 90.28,
+          "end": 90.86,
+          "probability": 0.9718947410583496
+        },
+        {
+          "word": " died",
+          "start": 90.86,
+          "end": 91.32,
+          "probability": 0.9937871694564819
+        },
+        {
+          "word": " out",
+          "start": 91.32,
+          "end": 91.88,
+          "probability": 0.9941715598106384
+        },
+        {
+          "word": " a",
+          "start": 91.88,
+          "end": 92.3,
+          "probability": 0.7016544938087463
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 8314,
+      "start": 93.44,
+      "end": 96.2,
+      "text": " Long time ago. They were very valuable",
+      "tokens": [
+        50863,
+        5882,
+        640,
+        2084,
+        13,
+        1119,
+        547,
+        845,
+        8119,
+        50997
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23130693827589896,
+      "compression_ratio": 1.4974874371859297,
+      "no_speech_prob": 0.001780982594937086,
+      "words": [
+        {
+          "word": " Long",
+          "start": 93.44,
+          "end": 93.66,
+          "probability": 0.6722362041473389
+        },
+        {
+          "word": " time",
+          "start": 93.66,
+          "end": 94.04,
+          "probability": 0.9888023734092712
+        },
+        {
+          "word": " ago.",
+          "start": 94.04,
+          "end": 94.4,
+          "probability": 0.9953932762145996
+        },
+        {
+          "word": " They",
+          "start": 94.4,
+          "end": 95.12,
+          "probability": 0.9992170333862305
+        },
+        {
+          "word": " were",
+          "start": 95.12,
+          "end": 95.3,
+          "probability": 0.9995176792144775
+        },
+        {
+          "word": " very",
+          "start": 95.3,
+          "end": 95.64,
+          "probability": 0.9993811845779419
+        },
+        {
+          "word": " valuable",
+          "start": 95.64,
+          "end": 96.2,
+          "probability": 0.9978514909744263
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8314,
+      "start": 96.9,
+      "end": 105.28,
+      "text": " The reason for this was that everyone wanted their fur in Europe and Asia and later in North America, too",
+      "tokens": [
+        51051,
+        383,
+        1738,
+        329,
+        428,
+        373,
+        326,
+        2506,
+        2227,
+        511,
+        9230,
+        287,
+        2031,
+        290,
+        7229,
+        290,
+        1568,
+        287,
+        2258,
+        2253,
+        11,
+        1165,
+        51445
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23130693827589896,
+      "compression_ratio": 1.4974874371859297,
+      "no_speech_prob": 0.001780982594937086,
+      "words": [
+        {
+          "word": " The",
+          "start": 96.9,
+          "end": 97.42,
+          "probability": 0.740557849407196
+        },
+        {
+          "word": " reason",
+          "start": 97.42,
+          "end": 97.74,
+          "probability": 0.9985806941986084
+        },
+        {
+          "word": " for",
+          "start": 97.74,
+          "end": 98.04,
+          "probability": 0.9984065890312195
+        },
+        {
+          "word": " this",
+          "start": 98.04,
+          "end": 98.44,
+          "probability": 0.9989799857139587
+        },
+        {
+          "word": " was",
+          "start": 98.44,
+          "end": 98.9,
+          "probability": 0.9980731010437012
+        },
+        {
+          "word": " that",
+          "start": 98.9,
+          "end": 99.08,
+          "probability": 0.9634350538253784
+        },
+        {
+          "word": " everyone",
+          "start": 99.08,
+          "end": 99.5,
+          "probability": 0.9976627826690674
+        },
+        {
+          "word": " wanted",
+          "start": 99.5,
+          "end": 100.0,
+          "probability": 0.9986166954040527
+        },
+        {
+          "word": " their",
+          "start": 100.0,
+          "end": 100.22,
+          "probability": 0.9595266580581665
+        },
+        {
+          "word": " fur",
+          "start": 100.22,
+          "end": 100.56,
+          "probability": 0.9703693389892578
+        },
+        {
+          "word": " in",
+          "start": 100.56,
+          "end": 101.0,
+          "probability": 0.9972378015518188
+        },
+        {
+          "word": " Europe",
+          "start": 101.0,
+          "end": 101.42,
+          "probability": 0.9935653805732727
+        },
+        {
+          "word": " and",
+          "start": 101.42,
+          "end": 101.86,
+          "probability": 0.9948803186416626
+        },
+        {
+          "word": " Asia",
+          "start": 101.86,
+          "end": 102.34,
+          "probability": 0.9919805526733398
+        },
+        {
+          "word": " and",
+          "start": 102.34,
+          "end": 102.98,
+          "probability": 0.9892666339874268
+        },
+        {
+          "word": " later",
+          "start": 102.98,
+          "end": 103.34,
+          "probability": 0.9898360371589661
+        },
+        {
+          "word": " in",
+          "start": 103.34,
+          "end": 103.66,
+          "probability": 0.9985678195953369
+        },
+        {
+          "word": " North",
+          "start": 103.66,
+          "end": 103.92,
+          "probability": 0.9905515909194946
+        },
+        {
+          "word": " America,",
+          "start": 103.92,
+          "end": 104.32,
+          "probability": 0.9967922568321228
+        },
+        {
+          "word": " too",
+          "start": 104.32,
+          "end": 105.28,
+          "probability": 0.9844018816947937
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8314,
+      "start": 106.22,
+      "end": 110.86,
+      "text": " People used beaver fur to make clothes especially hats",
+      "tokens": [
+        51517,
+        4380,
+        973,
+        307,
+        8770,
+        9230,
+        284,
+        787,
+        8242,
+        2592,
+        23910,
+        51739
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23130693827589896,
+      "compression_ratio": 1.4974874371859297,
+      "no_speech_prob": 0.001780982594937086,
+      "words": [
+        {
+          "word": " People",
+          "start": 106.22,
+          "end": 106.64,
+          "probability": 0.77646404504776
+        },
+        {
+          "word": " used",
+          "start": 106.64,
+          "end": 107.26,
+          "probability": 0.9956120252609253
+        },
+        {
+          "word": " beaver",
+          "start": 107.26,
+          "end": 107.66,
+          "probability": 0.7730000019073486
+        },
+        {
+          "word": " fur",
+          "start": 107.66,
+          "end": 107.98,
+          "probability": 0.7800360321998596
+        },
+        {
+          "word": " to",
+          "start": 107.98,
+          "end": 108.48,
+          "probability": 0.997696578502655
+        },
+        {
+          "word": " make",
+          "start": 108.48,
+          "end": 108.7,
+          "probability": 0.9996435642242432
+        },
+        {
+          "word": " clothes",
+          "start": 108.7,
+          "end": 109.4,
+          "probability": 0.9957221746444702
+        },
+        {
+          "word": " especially",
+          "start": 109.4,
+          "end": 110.22,
+          "probability": 0.8423236608505249
+        },
+        {
+          "word": " hats",
+          "start": 110.22,
+          "end": 110.86,
+          "probability": 0.9935775995254517
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 11086,
+      "start": 111.82,
+      "end": 119.48,
+      "text": " There were between 100 and 400 million beavers in North America before the Europeans arrived",
+      "tokens": [
+        50411,
+        1318,
+        547,
+        1022,
+        1802,
+        290,
+        7337,
+        1510,
+        307,
+        30400,
+        287,
+        2258,
+        2253,
+        878,
+        262,
+        20006,
+        5284,
+        50785
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21795279184977215,
+      "compression_ratio": 1.4058823529411764,
+      "no_speech_prob": 0.002937382087111473,
+      "words": [
+        {
+          "word": " There",
+          "start": 111.82,
+          "end": 112.34,
+          "probability": 0.32247644662857056
+        },
+        {
+          "word": " were",
+          "start": 112.34,
+          "end": 112.52,
+          "probability": 0.9883480668067932
+        },
+        {
+          "word": " between",
+          "start": 112.52,
+          "end": 112.98,
+          "probability": 0.9584083557128906
+        },
+        {
+          "word": " 100",
+          "start": 112.98,
+          "end": 113.86,
+          "probability": 0.8990138173103333
+        },
+        {
+          "word": " and",
+          "start": 113.86,
+          "end": 114.5,
+          "probability": 0.9468407034873962
+        },
+        {
+          "word": " 400",
+          "start": 114.5,
+          "end": 115.1,
+          "probability": 0.9925367832183838
+        },
+        {
+          "word": " million",
+          "start": 115.1,
+          "end": 115.86,
+          "probability": 0.947754442691803
+        },
+        {
+          "word": " beavers",
+          "start": 115.86,
+          "end": 116.26,
+          "probability": 0.9579454064369202
+        },
+        {
+          "word": " in",
+          "start": 116.26,
+          "end": 116.46,
+          "probability": 0.9913691878318787
+        },
+        {
+          "word": " North",
+          "start": 116.46,
+          "end": 116.68,
+          "probability": 0.978471577167511
+        },
+        {
+          "word": " America",
+          "start": 116.68,
+          "end": 117.24,
+          "probability": 0.9971784353256226
+        },
+        {
+          "word": " before",
+          "start": 117.24,
+          "end": 118.08,
+          "probability": 0.5525437593460083
+        },
+        {
+          "word": " the",
+          "start": 118.08,
+          "end": 118.32,
+          "probability": 0.9956952333450317
+        },
+        {
+          "word": " Europeans",
+          "start": 118.32,
+          "end": 118.82,
+          "probability": 0.9959904551506042
+        },
+        {
+          "word": " arrived",
+          "start": 118.82,
+          "end": 119.48,
+          "probability": 0.9977200627326965
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 11086,
+      "start": 120.38,
+      "end": 124.14,
+      "text": " In the late 1800s, however, there were only",
+      "tokens": [
+        50839,
+        554,
+        262,
+        2739,
+        21431,
+        82,
+        11,
+        2158,
+        11,
+        612,
+        547,
+        691,
+        51015
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21795279184977215,
+      "compression_ratio": 1.4058823529411764,
+      "no_speech_prob": 0.002937382087111473,
+      "words": [
+        {
+          "word": " In",
+          "start": 120.38,
+          "end": 121.02,
+          "probability": 0.05108676478266716
+        },
+        {
+          "word": " the",
+          "start": 121.02,
+          "end": 121.22,
+          "probability": 0.9972004890441895
+        },
+        {
+          "word": " late",
+          "start": 121.22,
+          "end": 121.48,
+          "probability": 0.9971745014190674
+        },
+        {
+          "word": " 1800s,",
+          "start": 121.48,
+          "end": 122.56,
+          "probability": 0.9035117030143738
+        },
+        {
+          "word": " however,",
+          "start": 122.56,
+          "end": 122.86,
+          "probability": 0.9927661418914795
+        },
+        {
+          "word": " there",
+          "start": 123.5,
+          "end": 123.6,
+          "probability": 0.9850118160247803
+        },
+        {
+          "word": " were",
+          "start": 123.6,
+          "end": 123.76,
+          "probability": 0.9969313144683838
+        },
+        {
+          "word": " only",
+          "start": 123.76,
+          "end": 124.14,
+          "probability": 0.9967477321624756
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 11086,
+      "start": 124.14,
+      "end": 125.8,
+      "text": " 100,000",
+      "tokens": [
+        51069,
+        1802,
+        11,
+        830,
+        51169
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21795279184977215,
+      "compression_ratio": 1.4058823529411764,
+      "no_speech_prob": 0.002937382087111473,
+      "words": [
+        {
+          "word": " 100",
+          "start": 124.14,
+          "end": 124.88,
+          "probability": 0.857517659664154
+        },
+        {
+          "word": ",000",
+          "start": 124.88,
+          "end": 125.8,
+          "probability": 0.9757069051265717
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 11086,
+      "start": 126.98,
+      "end": 129.68,
+      "text": " The beaver had become endangered",
+      "tokens": [
+        51169,
+        383,
+        307,
+        8770,
+        550,
+        1716,
+        22700,
+        51303
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21795279184977215,
+      "compression_ratio": 1.4058823529411764,
+      "no_speech_prob": 0.002937382087111473,
+      "words": [
+        {
+          "word": " The",
+          "start": 126.98,
+          "end": 127.5,
+          "probability": 0.585020124912262
+        },
+        {
+          "word": " beaver",
+          "start": 127.5,
+          "end": 127.94,
+          "probability": 0.9411967098712921
+        },
+        {
+          "word": " had",
+          "start": 127.94,
+          "end": 128.42,
+          "probability": 0.9921191930770874
+        },
+        {
+          "word": " become",
+          "start": 128.42,
+          "end": 128.84,
+          "probability": 0.9976962208747864
+        },
+        {
+          "word": " endangered",
+          "start": 128.84,
+          "end": 129.68,
+          "probability": 0.9961367249488831
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 11086,
+      "start": 130.54,
+      "end": 134.7,
+      "text": " The result of this was that lots of animal habitats were lost",
+      "tokens": [
+        51347,
+        383,
+        1255,
+        286,
+        428,
+        373,
+        326,
+        6041,
+        286,
+        5044,
+        35308,
+        547,
+        2626,
+        51555
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21795279184977215,
+      "compression_ratio": 1.4058823529411764,
+      "no_speech_prob": 0.002937382087111473,
+      "words": [
+        {
+          "word": " The",
+          "start": 130.54,
+          "end": 131.08,
+          "probability": 0.8275660872459412
+        },
+        {
+          "word": " result",
+          "start": 131.08,
+          "end": 131.38,
+          "probability": 0.9974589943885803
+        },
+        {
+          "word": " of",
+          "start": 131.38,
+          "end": 131.62,
+          "probability": 0.9985643029212952
+        },
+        {
+          "word": " this",
+          "start": 131.62,
+          "end": 131.96,
+          "probability": 0.9989854693412781
+        },
+        {
+          "word": " was",
+          "start": 131.96,
+          "end": 132.46,
+          "probability": 0.9893515706062317
+        },
+        {
+          "word": " that",
+          "start": 132.46,
+          "end": 132.62,
+          "probability": 0.997593104839325
+        },
+        {
+          "word": " lots",
+          "start": 132.62,
+          "end": 132.94,
+          "probability": 0.9954614043235779
+        },
+        {
+          "word": " of",
+          "start": 132.94,
+          "end": 133.2,
+          "probability": 0.9995550513267517
+        },
+        {
+          "word": " animal",
+          "start": 133.2,
+          "end": 133.64,
+          "probability": 0.9979775547981262
+        },
+        {
+          "word": " habitats",
+          "start": 133.64,
+          "end": 134.14,
+          "probability": 0.9948322772979736
+        },
+        {
+          "word": " were",
+          "start": 134.14,
+          "end": 134.5,
+          "probability": 0.9982702732086182
+        },
+        {
+          "word": " lost",
+          "start": 134.5,
+          "end": 134.96,
+          "probability": 0.9991472959518433
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 13496,
+      "start": 135.68,
+      "end": 141.94,
+      "text": " Beavers build dams which create wetlands large areas of land covered in water",
+      "tokens": [
+        50399,
+        1355,
+        30400,
+        1382,
+        40907,
+        543,
+        2251,
+        49297,
+        1588,
+        3006,
+        286,
+        1956,
+        5017,
+        287,
+        1660,
+        50697
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12670035111276726,
+      "compression_ratio": 1.7230769230769232,
+      "no_speech_prob": 0.03640253096818924,
+      "words": [
+        {
+          "word": " Beavers",
+          "start": 135.68,
+          "end": 136.28,
+          "probability": 0.8872504830360413
+        },
+        {
+          "word": " build",
+          "start": 136.28,
+          "end": 136.66,
+          "probability": 0.9959229230880737
+        },
+        {
+          "word": " dams",
+          "start": 136.66,
+          "end": 137.12,
+          "probability": 0.9851614236831665
+        },
+        {
+          "word": " which",
+          "start": 137.12,
+          "end": 137.72,
+          "probability": 0.5939294695854187
+        },
+        {
+          "word": " create",
+          "start": 137.72,
+          "end": 138.2,
+          "probability": 0.9886481165885925
+        },
+        {
+          "word": " wetlands",
+          "start": 138.2,
+          "end": 138.78,
+          "probability": 0.9984174966812134
+        },
+        {
+          "word": " large",
+          "start": 138.78,
+          "end": 139.72,
+          "probability": 0.12918919324874878
+        },
+        {
+          "word": " areas",
+          "start": 139.72,
+          "end": 140.2,
+          "probability": 0.9931440353393555
+        },
+        {
+          "word": " of",
+          "start": 140.2,
+          "end": 140.42,
+          "probability": 0.9985522627830505
+        },
+        {
+          "word": " land",
+          "start": 140.42,
+          "end": 140.76,
+          "probability": 0.9968212842941284
+        },
+        {
+          "word": " covered",
+          "start": 140.76,
+          "end": 141.18,
+          "probability": 0.9906660914421082
+        },
+        {
+          "word": " in",
+          "start": 141.18,
+          "end": 141.44,
+          "probability": 0.9989063739776611
+        },
+        {
+          "word": " water",
+          "start": 141.44,
+          "end": 141.94,
+          "probability": 0.9986157417297363
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 13496,
+      "start": 142.88,
+      "end": 150.96,
+      "text": " These wetlands provide food and a home for the beaver, but they also provide homes for other animals, too",
+      "tokens": [
+        50759,
+        2312,
+        49297,
+        2148,
+        2057,
+        290,
+        257,
+        1363,
+        329,
+        262,
+        307,
+        8770,
+        11,
+        475,
+        484,
+        635,
+        2148,
+        5682,
+        329,
+        584,
+        4695,
+        11,
+        1165,
+        51163
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12670035111276726,
+      "compression_ratio": 1.7230769230769232,
+      "no_speech_prob": 0.03640253096818924,
+      "words": [
+        {
+          "word": " These",
+          "start": 142.88,
+          "end": 143.54,
+          "probability": 0.32812952995300293
+        },
+        {
+          "word": " wetlands",
+          "start": 143.54,
+          "end": 144.08,
+          "probability": 0.9850999712944031
+        },
+        {
+          "word": " provide",
+          "start": 144.08,
+          "end": 144.78,
+          "probability": 0.9960250854492188
+        },
+        {
+          "word": " food",
+          "start": 144.78,
+          "end": 145.32,
+          "probability": 0.9972946047782898
+        },
+        {
+          "word": " and",
+          "start": 145.32,
+          "end": 145.92,
+          "probability": 0.9779146909713745
+        },
+        {
+          "word": " a",
+          "start": 145.92,
+          "end": 146.06,
+          "probability": 0.9376660585403442
+        },
+        {
+          "word": " home",
+          "start": 146.06,
+          "end": 146.32,
+          "probability": 0.9983053207397461
+        },
+        {
+          "word": " for",
+          "start": 146.32,
+          "end": 146.6,
+          "probability": 0.9980636239051819
+        },
+        {
+          "word": " the",
+          "start": 146.6,
+          "end": 146.72,
+          "probability": 0.9983541965484619
+        },
+        {
+          "word": " beaver,",
+          "start": 146.72,
+          "end": 147.1,
+          "probability": 0.9755269289016724
+        },
+        {
+          "word": " but",
+          "start": 147.1,
+          "end": 147.9,
+          "probability": 0.9935594797134399
+        },
+        {
+          "word": " they",
+          "start": 147.9,
+          "end": 148.1,
+          "probability": 0.9975857734680176
+        },
+        {
+          "word": " also",
+          "start": 148.1,
+          "end": 148.52,
+          "probability": 0.9993115663528442
+        },
+        {
+          "word": " provide",
+          "start": 148.52,
+          "end": 149.06,
+          "probability": 0.9983943104743958
+        },
+        {
+          "word": " homes",
+          "start": 149.06,
+          "end": 149.5,
+          "probability": 0.9977933168411255
+        },
+        {
+          "word": " for",
+          "start": 149.5,
+          "end": 149.82,
+          "probability": 0.9988813996315002
+        },
+        {
+          "word": " other",
+          "start": 149.82,
+          "end": 150.18,
+          "probability": 0.9994416832923889
+        },
+        {
+          "word": " animals,",
+          "start": 150.18,
+          "end": 150.56,
+          "probability": 0.9990077614784241
+        },
+        {
+          "word": " too",
+          "start": 150.56,
+          "end": 150.97,
+          "probability": 0.9967509508132935
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 13496,
+      "start": 152.02,
+      "end": 156.2,
+      "text": " Frogs for example live in wetlands created by beavers",
+      "tokens": [
+        51221,
+        28328,
+        82,
+        329,
+        1672,
+        2107,
+        287,
+        49297,
+        2727,
+        416,
+        307,
+        30400,
+        51419
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12670035111276726,
+      "compression_ratio": 1.7230769230769232,
+      "no_speech_prob": 0.03640253096818924,
+      "words": [
+        {
+          "word": " Frogs",
+          "start": 152.02,
+          "end": 152.84,
+          "probability": 0.8848717510700226
+        },
+        {
+          "word": " for",
+          "start": 152.84,
+          "end": 152.96,
+          "probability": 0.43874427676200867
+        },
+        {
+          "word": " example",
+          "start": 152.96,
+          "end": 153.34,
+          "probability": 0.9988924860954285
+        },
+        {
+          "word": " live",
+          "start": 153.34,
+          "end": 153.94,
+          "probability": 0.8485612273216248
+        },
+        {
+          "word": " in",
+          "start": 153.94,
+          "end": 154.18,
+          "probability": 0.9988918900489807
+        },
+        {
+          "word": " wetlands",
+          "start": 154.18,
+          "end": 154.62,
+          "probability": 0.9865889549255371
+        },
+        {
+          "word": " created",
+          "start": 154.62,
+          "end": 155.24,
+          "probability": 0.993995726108551
+        },
+        {
+          "word": " by",
+          "start": 155.24,
+          "end": 155.64,
+          "probability": 0.9993720650672913
+        },
+        {
+          "word": " beavers",
+          "start": 155.64,
+          "end": 156.2,
+          "probability": 0.9653043746948242
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 13496,
+      "start": 157.14000000000001,
+      "end": 164.3,
+      "text": " Fish also use these wetlands to take care of their young and ducks make their homes near them, too",
+      "tokens": [
+        51485,
+        13388,
+        635,
+        779,
+        777,
+        49297,
+        284,
+        1011,
+        1337,
+        286,
+        511,
+        1862,
+        290,
+        39694,
+        787,
+        511,
+        5682,
+        1474,
+        606,
+        11,
+        1165,
+        51819
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12670035111276726,
+      "compression_ratio": 1.7230769230769232,
+      "no_speech_prob": 0.03640253096818924,
+      "words": [
+        {
+          "word": " Fish",
+          "start": 157.14000000000001,
+          "end": 157.96,
+          "probability": 0.903842568397522
+        },
+        {
+          "word": " also",
+          "start": 157.96,
+          "end": 158.64,
+          "probability": 0.9901002049446106
+        },
+        {
+          "word": " use",
+          "start": 158.64,
+          "end": 159.1,
+          "probability": 0.9974174499511719
+        },
+        {
+          "word": " these",
+          "start": 159.1,
+          "end": 159.36,
+          "probability": 0.9976517558097839
+        },
+        {
+          "word": " wetlands",
+          "start": 159.36,
+          "end": 159.78,
+          "probability": 0.9932339787483215
+        },
+        {
+          "word": " to",
+          "start": 159.78,
+          "end": 160.12,
+          "probability": 0.9989516735076904
+        },
+        {
+          "word": " take",
+          "start": 160.12,
+          "end": 160.32,
+          "probability": 0.9991241097450256
+        },
+        {
+          "word": " care",
+          "start": 160.32,
+          "end": 160.58,
+          "probability": 0.9994999170303345
+        },
+        {
+          "word": " of",
+          "start": 160.58,
+          "end": 160.76,
+          "probability": 0.9968137145042419
+        },
+        {
+          "word": " their",
+          "start": 160.76,
+          "end": 160.96,
+          "probability": 0.9896388053894043
+        },
+        {
+          "word": " young",
+          "start": 160.96,
+          "end": 161.32,
+          "probability": 0.9989314675331116
+        },
+        {
+          "word": " and",
+          "start": 161.32,
+          "end": 161.96,
+          "probability": 0.9075153470039368
+        },
+        {
+          "word": " ducks",
+          "start": 161.96,
+          "end": 162.36,
+          "probability": 0.9767150282859802
+        },
+        {
+          "word": " make",
+          "start": 162.36,
+          "end": 162.68,
+          "probability": 0.9957979321479797
+        },
+        {
+          "word": " their",
+          "start": 162.68,
+          "end": 162.94,
+          "probability": 0.9992660880088806
+        },
+        {
+          "word": " homes",
+          "start": 162.94,
+          "end": 163.34,
+          "probability": 0.9959048628807068
+        },
+        {
+          "word": " near",
+          "start": 163.34,
+          "end": 163.6,
+          "probability": 0.9992184638977051
+        },
+        {
+          "word": " them,",
+          "start": 163.6,
+          "end": 163.86,
+          "probability": 0.9988352656364441
+        },
+        {
+          "word": " too",
+          "start": 163.86,
+          "end": 164.3,
+          "probability": 0.9981836676597595
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 16496,
+      "start": 165.85999999999999,
+      "end": 173.28,
+      "text": " Wetlands keep carbon dioxide a gas which makes the world's temperature rise out of the atmosphere",
+      "tokens": [
+        50399,
+        32930,
+        4447,
+        1394,
+        6588,
+        17556,
+        257,
+        3623,
+        543,
+        1838,
+        262,
+        995,
+        338,
+        5951,
+        4485,
+        503,
+        286,
+        262,
+        8137,
+        50755
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20131340026855468,
+      "compression_ratio": 1.6153846153846154,
+      "no_speech_prob": 0.005431509576737881,
+      "words": [
+        {
+          "word": " Wetlands",
+          "start": 165.85999999999999,
+          "end": 166.54,
+          "probability": 0.9765588641166687
+        },
+        {
+          "word": " keep",
+          "start": 166.54,
+          "end": 167.06,
+          "probability": 0.9711676239967346
+        },
+        {
+          "word": " carbon",
+          "start": 167.06,
+          "end": 167.58,
+          "probability": 0.9777163863182068
+        },
+        {
+          "word": " dioxide",
+          "start": 167.58,
+          "end": 168.2,
+          "probability": 0.9912607073783875
+        },
+        {
+          "word": " a",
+          "start": 168.2,
+          "end": 169.02,
+          "probability": 0.055986788123846054
+        },
+        {
+          "word": " gas",
+          "start": 169.02,
+          "end": 169.36,
+          "probability": 0.9966058731079102
+        },
+        {
+          "word": " which",
+          "start": 169.36,
+          "end": 169.74,
+          "probability": 0.876091718673706
+        },
+        {
+          "word": " makes",
+          "start": 169.74,
+          "end": 170.08,
+          "probability": 0.9966942071914673
+        },
+        {
+          "word": " the",
+          "start": 170.08,
+          "end": 170.34,
+          "probability": 0.99750816822052
+        },
+        {
+          "word": " world's",
+          "start": 170.34,
+          "end": 170.8,
+          "probability": 0.9793777763843536
+        },
+        {
+          "word": " temperature",
+          "start": 170.8,
+          "end": 171.14,
+          "probability": 0.9956525564193726
+        },
+        {
+          "word": " rise",
+          "start": 171.14,
+          "end": 171.76,
+          "probability": 0.9951773881912231
+        },
+        {
+          "word": " out",
+          "start": 171.76,
+          "end": 172.42,
+          "probability": 0.8235526084899902
+        },
+        {
+          "word": " of",
+          "start": 172.42,
+          "end": 172.62,
+          "probability": 0.9970820546150208
+        },
+        {
+          "word": " the",
+          "start": 172.62,
+          "end": 172.74,
+          "probability": 0.9989091157913208
+        },
+        {
+          "word": " atmosphere",
+          "start": 172.74,
+          "end": 173.28,
+          "probability": 0.9975142478942871
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 16496,
+      "start": 173.28,
+      "end": 178.28,
+      "text": " And this is good because it stops the rise in temperature around the world",
+      "tokens": [
+        50755,
+        843,
+        428,
+        318,
+        922,
+        780,
+        340,
+        9911,
+        262,
+        4485,
+        287,
+        5951,
+        1088,
+        262,
+        995,
+        51019
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20131340026855468,
+      "compression_ratio": 1.6153846153846154,
+      "no_speech_prob": 0.005431509576737881,
+      "words": [
+        {
+          "word": " And",
+          "start": 173.28,
+          "end": 174.16,
+          "probability": 0.084902323782444
+        },
+        {
+          "word": " this",
+          "start": 174.16,
+          "end": 174.36,
+          "probability": 0.9963791966438293
+        },
+        {
+          "word": " is",
+          "start": 174.36,
+          "end": 174.58,
+          "probability": 0.9983170032501221
+        },
+        {
+          "word": " good",
+          "start": 174.58,
+          "end": 174.9,
+          "probability": 0.9982979893684387
+        },
+        {
+          "word": " because",
+          "start": 174.9,
+          "end": 175.58,
+          "probability": 0.893880307674408
+        },
+        {
+          "word": " it",
+          "start": 175.58,
+          "end": 175.78,
+          "probability": 0.9979279041290283
+        },
+        {
+          "word": " stops",
+          "start": 175.78,
+          "end": 176.1,
+          "probability": 0.9974689483642578
+        },
+        {
+          "word": " the",
+          "start": 176.1,
+          "end": 176.36,
+          "probability": 0.998017430305481
+        },
+        {
+          "word": " rise",
+          "start": 176.36,
+          "end": 176.58,
+          "probability": 0.9933903217315674
+        },
+        {
+          "word": " in",
+          "start": 176.58,
+          "end": 176.84,
+          "probability": 0.9865797162055969
+        },
+        {
+          "word": " temperature",
+          "start": 176.84,
+          "end": 177.16,
+          "probability": 0.9971534013748169
+        },
+        {
+          "word": " around",
+          "start": 177.16,
+          "end": 177.66,
+          "probability": 0.9967288970947266
+        },
+        {
+          "word": " the",
+          "start": 177.66,
+          "end": 177.86,
+          "probability": 0.9990919828414917
+        },
+        {
+          "word": " world",
+          "start": 177.86,
+          "end": 178.28,
+          "probability": 0.9978500604629517
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 16496,
+      "start": 179.44,
+      "end": 185.28,
+      "text": " The other way that beavers are helping with the climate crisis is by stopping forest fires",
+      "tokens": [
+        51095,
+        383,
+        584,
+        835,
+        326,
+        307,
+        30400,
+        389,
+        5742,
+        351,
+        262,
+        4258,
+        4902,
+        318,
+        416,
+        12225,
+        8222,
+        12252,
+        51371
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20131340026855468,
+      "compression_ratio": 1.6153846153846154,
+      "no_speech_prob": 0.005431509576737881,
+      "words": [
+        {
+          "word": " The",
+          "start": 179.44,
+          "end": 180.12,
+          "probability": 0.6990928649902344
+        },
+        {
+          "word": " other",
+          "start": 180.12,
+          "end": 180.3,
+          "probability": 0.9990980625152588
+        },
+        {
+          "word": " way",
+          "start": 180.3,
+          "end": 180.64,
+          "probability": 0.9991694688796997
+        },
+        {
+          "word": " that",
+          "start": 180.64,
+          "end": 180.9,
+          "probability": 0.9938057661056519
+        },
+        {
+          "word": " beavers",
+          "start": 180.9,
+          "end": 181.28,
+          "probability": 0.9078037738800049
+        },
+        {
+          "word": " are",
+          "start": 181.28,
+          "end": 181.44,
+          "probability": 0.9952627420425415
+        },
+        {
+          "word": " helping",
+          "start": 181.44,
+          "end": 181.72,
+          "probability": 0.9993564486503601
+        },
+        {
+          "word": " with",
+          "start": 181.72,
+          "end": 181.96,
+          "probability": 0.9986608028411865
+        },
+        {
+          "word": " the",
+          "start": 181.96,
+          "end": 182.1,
+          "probability": 0.9986178874969482
+        },
+        {
+          "word": " climate",
+          "start": 182.1,
+          "end": 182.46,
+          "probability": 0.9984757304191589
+        },
+        {
+          "word": " crisis",
+          "start": 182.46,
+          "end": 182.98,
+          "probability": 0.9922624826431274
+        },
+        {
+          "word": " is",
+          "start": 182.98,
+          "end": 183.62,
+          "probability": 0.9725014567375183
+        },
+        {
+          "word": " by",
+          "start": 183.62,
+          "end": 183.86,
+          "probability": 0.9987859129905701
+        },
+        {
+          "word": " stopping",
+          "start": 183.86,
+          "end": 184.3,
+          "probability": 0.9976108074188232
+        },
+        {
+          "word": " forest",
+          "start": 184.3,
+          "end": 184.74,
+          "probability": 0.9803596138954163
+        },
+        {
+          "word": " fires",
+          "start": 184.74,
+          "end": 185.28,
+          "probability": 0.9966985583305359
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 16496,
+      "start": 185.28,
+      "end": 189.44,
+      "text": " Which create a lot of pollution and a lot of damage",
+      "tokens": [
+        51399,
+        9022,
+        2251,
+        257,
+        1256,
+        286,
+        12231,
+        290,
+        257,
+        1256,
+        286,
+        2465,
+        51579
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20131340026855468,
+      "compression_ratio": 1.6153846153846154,
+      "no_speech_prob": 0.005431509576737881,
+      "words": [
+        {
+          "word": " Which",
+          "start": 185.28,
+          "end": 186.2,
+          "probability": 0.5919339656829834
+        },
+        {
+          "word": " create",
+          "start": 186.2,
+          "end": 186.58,
+          "probability": 0.9861921668052673
+        },
+        {
+          "word": " a",
+          "start": 186.58,
+          "end": 186.86,
+          "probability": 0.999187171459198
+        },
+        {
+          "word": " lot",
+          "start": 186.86,
+          "end": 187.08,
+          "probability": 0.9995067119598389
+        },
+        {
+          "word": " of",
+          "start": 187.08,
+          "end": 187.26,
+          "probability": 0.999642014503479
+        },
+        {
+          "word": " pollution",
+          "start": 187.26,
+          "end": 187.78,
+          "probability": 0.9987284541130066
+        },
+        {
+          "word": " and",
+          "start": 187.78,
+          "end": 188.3,
+          "probability": 0.9906488060951233
+        },
+        {
+          "word": " a",
+          "start": 188.3,
+          "end": 188.42,
+          "probability": 0.9990671277046204
+        },
+        {
+          "word": " lot",
+          "start": 188.42,
+          "end": 188.68,
+          "probability": 0.999701201915741
+        },
+        {
+          "word": " of",
+          "start": 188.68,
+          "end": 188.9,
+          "probability": 0.9995412826538086
+        },
+        {
+          "word": " damage",
+          "start": 188.9,
+          "end": 189.44,
+          "probability": 0.99842369556427
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 18944,
+      "start": 190.74,
+      "end": 199.74,
+      "text": " Wetlands made by beavers stop fires from getting bigger and they also provide protection for animals trying to escape the fires",
+      "tokens": [
+        50411,
+        32930,
+        4447,
+        925,
+        416,
+        307,
+        30400,
+        2245,
+        12252,
+        422,
+        1972,
+        5749,
+        290,
+        484,
+        635,
+        2148,
+        4800,
+        329,
+        4695,
+        2111,
+        284,
+        6654,
+        262,
+        12252,
+        50855
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27826690673828125,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.01359646301716566,
+      "words": [
+        {
+          "word": " Wetlands",
+          "start": 190.74,
+          "end": 191.62,
+          "probability": 0.8389155864715576
+        },
+        {
+          "word": " made",
+          "start": 191.62,
+          "end": 192.0,
+          "probability": 0.9729414582252502
+        },
+        {
+          "word": " by",
+          "start": 192.0,
+          "end": 192.34,
+          "probability": 0.9977103471755981
+        },
+        {
+          "word": " beavers",
+          "start": 192.34,
+          "end": 192.8,
+          "probability": 0.9783713519573212
+        },
+        {
+          "word": " stop",
+          "start": 192.8,
+          "end": 193.5,
+          "probability": 0.9578089714050293
+        },
+        {
+          "word": " fires",
+          "start": 193.5,
+          "end": 193.96,
+          "probability": 0.9983110427856445
+        },
+        {
+          "word": " from",
+          "start": 193.96,
+          "end": 194.22,
+          "probability": 0.9962185025215149
+        },
+        {
+          "word": " getting",
+          "start": 194.22,
+          "end": 194.52,
+          "probability": 0.9986246824264526
+        },
+        {
+          "word": " bigger",
+          "start": 194.52,
+          "end": 194.96,
+          "probability": 0.9979121088981628
+        },
+        {
+          "word": " and",
+          "start": 194.96,
+          "end": 195.74,
+          "probability": 0.5284026861190796
+        },
+        {
+          "word": " they",
+          "start": 195.74,
+          "end": 195.9,
+          "probability": 0.975641667842865
+        },
+        {
+          "word": " also",
+          "start": 195.9,
+          "end": 196.2,
+          "probability": 0.9966740608215332
+        },
+        {
+          "word": " provide",
+          "start": 196.2,
+          "end": 196.7,
+          "probability": 0.9973004460334778
+        },
+        {
+          "word": " protection",
+          "start": 196.7,
+          "end": 197.24,
+          "probability": 0.9975482821464539
+        },
+        {
+          "word": " for",
+          "start": 197.24,
+          "end": 197.52,
+          "probability": 0.9821557402610779
+        },
+        {
+          "word": " animals",
+          "start": 197.52,
+          "end": 197.94,
+          "probability": 0.9987863898277283
+        },
+        {
+          "word": " trying",
+          "start": 197.94,
+          "end": 198.32,
+          "probability": 0.995246946811676
+        },
+        {
+          "word": " to",
+          "start": 198.32,
+          "end": 198.54,
+          "probability": 0.9992716908454895
+        },
+        {
+          "word": " escape",
+          "start": 198.54,
+          "end": 198.94,
+          "probability": 0.9982625842094421
+        },
+        {
+          "word": " the",
+          "start": 198.94,
+          "end": 199.28,
+          "probability": 0.9955678582191467
+        },
+        {
+          "word": " fires",
+          "start": 199.28,
+          "end": 199.74,
+          "probability": 0.9976564645767212
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 18944,
+      "start": 201.12,
+      "end": 206.02,
+      "text": " In England and Scotland beavers have recently returned",
+      "tokens": [
+        50951,
+        554,
+        4492,
+        290,
+        8838,
+        307,
+        30400,
+        423,
+        2904,
+        4504,
+        51167
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27826690673828125,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.01359646301716566,
+      "words": [
+        {
+          "word": " In",
+          "start": 201.12,
+          "end": 202.0,
+          "probability": 0.05951935797929764
+        },
+        {
+          "word": " England",
+          "start": 202.0,
+          "end": 202.52,
+          "probability": 0.9956434965133667
+        },
+        {
+          "word": " and",
+          "start": 202.52,
+          "end": 203.0,
+          "probability": 0.9945381283760071
+        },
+        {
+          "word": " Scotland",
+          "start": 203.0,
+          "end": 203.6,
+          "probability": 0.9952903985977173
+        },
+        {
+          "word": " beavers",
+          "start": 203.6,
+          "end": 204.5,
+          "probability": 0.7954777777194977
+        },
+        {
+          "word": " have",
+          "start": 204.5,
+          "end": 204.76,
+          "probability": 0.9982326030731201
+        },
+        {
+          "word": " recently",
+          "start": 204.76,
+          "end": 205.24,
+          "probability": 0.9991280436515808
+        },
+        {
+          "word": " returned",
+          "start": 205.24,
+          "end": 206.02,
+          "probability": 0.9980747699737549
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 18944,
+      "start": 206.96,
+      "end": 213.74,
+      "text": " Britain is a very wet place and every year floods cause millions of pounds of damage",
+      "tokens": [
+        51239,
+        5491,
+        318,
+        257,
+        845,
+        9583,
+        1295,
+        290,
+        790,
+        614,
+        27283,
+        2728,
+        5242,
+        286,
+        8059,
+        286,
+        2465,
+        51555
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27826690673828125,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.01359646301716566,
+      "words": [
+        {
+          "word": " Britain",
+          "start": 206.96,
+          "end": 207.56,
+          "probability": 0.9134256839752197
+        },
+        {
+          "word": " is",
+          "start": 207.56,
+          "end": 208.04,
+          "probability": 0.9986042380332947
+        },
+        {
+          "word": " a",
+          "start": 208.04,
+          "end": 208.22,
+          "probability": 0.9989901185035706
+        },
+        {
+          "word": " very",
+          "start": 208.22,
+          "end": 208.5,
+          "probability": 0.9995375871658325
+        },
+        {
+          "word": " wet",
+          "start": 208.5,
+          "end": 208.82,
+          "probability": 0.9976840019226074
+        },
+        {
+          "word": " place",
+          "start": 208.82,
+          "end": 209.28,
+          "probability": 0.9991557598114014
+        },
+        {
+          "word": " and",
+          "start": 209.28,
+          "end": 209.96,
+          "probability": 0.9443320035934448
+        },
+        {
+          "word": " every",
+          "start": 209.96,
+          "end": 210.36,
+          "probability": 0.9726073145866394
+        },
+        {
+          "word": " year",
+          "start": 210.36,
+          "end": 210.8,
+          "probability": 0.997648298740387
+        },
+        {
+          "word": " floods",
+          "start": 210.8,
+          "end": 211.48,
+          "probability": 0.9338751435279846
+        },
+        {
+          "word": " cause",
+          "start": 211.48,
+          "end": 211.86,
+          "probability": 0.5979731678962708
+        },
+        {
+          "word": " millions",
+          "start": 211.86,
+          "end": 212.32,
+          "probability": 0.9931396842002869
+        },
+        {
+          "word": " of",
+          "start": 212.32,
+          "end": 212.68,
+          "probability": 0.9996994733810425
+        },
+        {
+          "word": " pounds",
+          "start": 212.68,
+          "end": 212.96,
+          "probability": 0.9982668161392212
+        },
+        {
+          "word": " of",
+          "start": 212.96,
+          "end": 213.24,
+          "probability": 0.9990123510360718
+        },
+        {
+          "word": " damage",
+          "start": 213.24,
+          "end": 213.74,
+          "probability": 0.9948520064353943
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 18944,
+      "start": 214.72,
+      "end": 219.26,
+      "text": " Due to the dams that beavers make, flood damage is reduced",
+      "tokens": [
+        51627,
+        14444,
+        284,
+        262,
+        40907,
+        326,
+        307,
+        30400,
+        787,
+        11,
+        6947,
+        2465,
+        318,
+        5322,
+        51851
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27826690673828125,
+      "compression_ratio": 1.5902439024390245,
+      "no_speech_prob": 0.01359646301716566,
+      "words": [
+        {
+          "word": " Due",
+          "start": 214.72,
+          "end": 215.38,
+          "probability": 0.84795081615448
+        },
+        {
+          "word": " to",
+          "start": 215.38,
+          "end": 215.58,
+          "probability": 0.9989612102508545
+        },
+        {
+          "word": " the",
+          "start": 215.58,
+          "end": 215.74,
+          "probability": 0.9995773434638977
+        },
+        {
+          "word": " dams",
+          "start": 215.74,
+          "end": 216.06,
+          "probability": 0.9568497538566589
+        },
+        {
+          "word": " that",
+          "start": 216.06,
+          "end": 216.28,
+          "probability": 0.9754119515419006
+        },
+        {
+          "word": " beavers",
+          "start": 216.28,
+          "end": 216.72,
+          "probability": 0.9809708595275879
+        },
+        {
+          "word": " make,",
+          "start": 216.72,
+          "end": 217.2,
+          "probability": 0.9932767152786255
+        },
+        {
+          "word": " flood",
+          "start": 217.92,
+          "end": 218.04,
+          "probability": 0.9965561628341675
+        },
+        {
+          "word": " damage",
+          "start": 218.04,
+          "end": 218.46,
+          "probability": 0.9949331879615784
+        },
+        {
+          "word": " is",
+          "start": 218.46,
+          "end": 218.72,
+          "probability": 0.9996294975280762
+        },
+        {
+          "word": " reduced",
+          "start": 218.72,
+          "end": 219.26,
+          "probability": 0.9994696974754333
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 21944,
+      "start": 219.44,
+      "end": 223.44,
+      "text": " Because the water from floods goes to the wetlands instead",
+      "tokens": [
+        50383,
+        4362,
+        262,
+        1660,
+        422,
+        27283,
+        2925,
+        284,
+        262,
+        49297,
+        2427,
+        50559
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12798883997160812,
+      "compression_ratio": 1.4464285714285714,
+      "no_speech_prob": 0.001972260419279337,
+      "words": [
+        {
+          "word": " Because",
+          "start": 219.44,
+          "end": 220.16,
+          "probability": 0.056024979799985886
+        },
+        {
+          "word": " the",
+          "start": 220.16,
+          "end": 220.42,
+          "probability": 0.9903087019920349
+        },
+        {
+          "word": " water",
+          "start": 220.42,
+          "end": 220.74,
+          "probability": 0.9978598952293396
+        },
+        {
+          "word": " from",
+          "start": 220.74,
+          "end": 221.06,
+          "probability": 0.9987269043922424
+        },
+        {
+          "word": " floods",
+          "start": 221.06,
+          "end": 221.48,
+          "probability": 0.9942779541015625
+        },
+        {
+          "word": " goes",
+          "start": 221.48,
+          "end": 222.02,
+          "probability": 0.9725455641746521
+        },
+        {
+          "word": " to",
+          "start": 222.02,
+          "end": 222.24,
+          "probability": 0.9970843195915222
+        },
+        {
+          "word": " the",
+          "start": 222.24,
+          "end": 222.36,
+          "probability": 0.992909848690033
+        },
+        {
+          "word": " wetlands",
+          "start": 222.36,
+          "end": 222.76,
+          "probability": 0.9745609164237976
+        },
+        {
+          "word": " instead",
+          "start": 222.76,
+          "end": 223.44,
+          "probability": 0.9926321506500244
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 21944,
+      "start": 224.56,
+      "end": 229.24,
+      "text": " Beavers help reduce flood water by up to 30%",
+      "tokens": [
+        50631,
+        1355,
+        30400,
+        1037,
+        4646,
+        6947,
+        1660,
+        416,
+        510,
+        284,
+        1542,
+        4,
+        50811
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12798883997160812,
+      "compression_ratio": 1.4464285714285714,
+      "no_speech_prob": 0.001972260419279337,
+      "words": [
+        {
+          "word": " Beavers",
+          "start": 224.56,
+          "end": 225.34,
+          "probability": 0.5303541626781225
+        },
+        {
+          "word": " help",
+          "start": 225.34,
+          "end": 225.9,
+          "probability": 0.9918743968009949
+        },
+        {
+          "word": " reduce",
+          "start": 225.9,
+          "end": 226.32,
+          "probability": 0.7733877897262573
+        },
+        {
+          "word": " flood",
+          "start": 226.32,
+          "end": 226.68,
+          "probability": 0.9947150349617004
+        },
+        {
+          "word": " water",
+          "start": 226.68,
+          "end": 227.14,
+          "probability": 0.49820244312286377
+        },
+        {
+          "word": " by",
+          "start": 227.14,
+          "end": 227.62,
+          "probability": 0.9922602772712708
+        },
+        {
+          "word": " up",
+          "start": 227.62,
+          "end": 227.8,
+          "probability": 0.9984936714172363
+        },
+        {
+          "word": " to",
+          "start": 227.8,
+          "end": 228.02,
+          "probability": 0.998583197593689
+        },
+        {
+          "word": " 30",
+          "start": 228.02,
+          "end": 228.46,
+          "probability": 0.9219872355461121
+        },
+        {
+          "word": "%",
+          "start": 228.46,
+          "end": 229.24,
+          "probability": 0.5111398696899414
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 21944,
+      "start": 230.96,
+      "end": 236.38,
+      "text": " To sum up, beavers are helping us to solve some serious environmental problems",
+      "tokens": [
+        50939,
+        1675,
+        2160,
+        510,
+        11,
+        307,
+        30400,
+        389,
+        5742,
+        514,
+        284,
+        8494,
+        617,
+        2726,
+        6142,
+        2761,
+        51207
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12798883997160812,
+      "compression_ratio": 1.4464285714285714,
+      "no_speech_prob": 0.001972260419279337,
+      "words": [
+        {
+          "word": " To",
+          "start": 230.79000000000002,
+          "end": 231.18,
+          "probability": 0.9778413772583008
+        },
+        {
+          "word": " sum",
+          "start": 231.18,
+          "end": 231.42,
+          "probability": 0.9975621700286865
+        },
+        {
+          "word": " up,",
+          "start": 231.42,
+          "end": 231.8,
+          "probability": 0.9945976734161377
+        },
+        {
+          "word": " beavers",
+          "start": 232.32,
+          "end": 232.56,
+          "probability": 0.9574135839939117
+        },
+        {
+          "word": " are",
+          "start": 232.56,
+          "end": 232.98,
+          "probability": 0.9974466562271118
+        },
+        {
+          "word": " helping",
+          "start": 232.98,
+          "end": 233.4,
+          "probability": 0.9982466697692871
+        },
+        {
+          "word": " us",
+          "start": 233.4,
+          "end": 233.62,
+          "probability": 0.9975318908691406
+        },
+        {
+          "word": " to",
+          "start": 233.62,
+          "end": 233.82,
+          "probability": 0.9724454283714294
+        },
+        {
+          "word": " solve",
+          "start": 233.82,
+          "end": 234.06,
+          "probability": 0.9991970658302307
+        },
+        {
+          "word": " some",
+          "start": 234.06,
+          "end": 234.34,
+          "probability": 0.9971598386764526
+        },
+        {
+          "word": " serious",
+          "start": 234.34,
+          "end": 234.9,
+          "probability": 0.9990481734275818
+        },
+        {
+          "word": " environmental",
+          "start": 234.9,
+          "end": 235.6,
+          "probability": 0.9964809417724609
+        },
+        {
+          "word": " problems",
+          "start": 235.6,
+          "end": 236.38,
+          "probability": 0.9986032843589783
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 21944,
+      "start": 237.44,
+      "end": 241.58,
+      "text": " We just have to let nature's engineers get on with their job",
+      "tokens": [
+        51263,
+        775,
+        655,
+        423,
+        284,
+        1309,
+        3450,
+        338,
+        12037,
+        651,
+        319,
+        351,
+        511,
+        1693,
+        51467
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12798883997160812,
+      "compression_ratio": 1.4464285714285714,
+      "no_speech_prob": 0.001972260419279337,
+      "words": [
+        {
+          "word": " We",
+          "start": 237.29000000000002,
+          "end": 237.68,
+          "probability": 0.7126253843307495
+        },
+        {
+          "word": " just",
+          "start": 237.68,
+          "end": 237.98,
+          "probability": 0.996921956539154
+        },
+        {
+          "word": " have",
+          "start": 237.98,
+          "end": 238.3,
+          "probability": 0.9985377788543701
+        },
+        {
+          "word": " to",
+          "start": 238.3,
+          "end": 238.46,
+          "probability": 0.9980031847953796
+        },
+        {
+          "word": " let",
+          "start": 238.46,
+          "end": 238.7,
+          "probability": 0.9984475374221802
+        },
+        {
+          "word": " nature's",
+          "start": 238.7,
+          "end": 239.36,
+          "probability": 0.8681174218654633
+        },
+        {
+          "word": " engineers",
+          "start": 239.36,
+          "end": 239.88,
+          "probability": 0.9887191653251648
+        },
+        {
+          "word": " get",
+          "start": 239.88,
+          "end": 240.56,
+          "probability": 0.9846886396408081
+        },
+        {
+          "word": " on",
+          "start": 240.56,
+          "end": 240.8,
+          "probability": 0.9984129667282104
+        },
+        {
+          "word": " with",
+          "start": 240.8,
+          "end": 241.02,
+          "probability": 0.9987723231315613
+        },
+        {
+          "word": " their",
+          "start": 241.02,
+          "end": 241.26,
+          "probability": 0.998336672782898
+        },
+        {
+          "word": " job",
+          "start": 241.26,
+          "end": 241.58,
+          "probability": 0.9991832375526428
+        }
+      ]
+    }
+  ]
+}

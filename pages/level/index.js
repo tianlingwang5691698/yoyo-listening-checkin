@@ -3,7 +3,7 @@ const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 
-const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV6';
+const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV7';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function t(key, variables) {
@@ -13,6 +13,7 @@ function t(key, variables) {
 
 function localizeMaterialTitle(title) {
   return String(title || '')
+    .replace(/听口练习册 第三版/g, t('listeningWorkbook3'))
     .replace(/听口练习册 第二版/g, t('listeningWorkbook2'))
     .replace(/听口 第三版/g, t('listening3'))
     .replace(/听口 第二版/g, t('listening2'))
@@ -34,25 +35,34 @@ const LEVEL_MATERIALS = {
   A1: [
     { category: 'newconcept1', title: 'New Concept 1' },
     { category: 'unlock1', title: 'Unlock 1 听口 第二版' },
+    { category: 'unlock1thirdedition', title: 'Unlock 1 听口 第三版' },
+    { category: 'unlock1workbookthirdedition', title: 'Unlock 1 听口练习册 第三版' },
+    { category: 'unlock1workbook', title: 'Unlock 1 听口 练习册 第二版' },
     { category: 'peppa', title: 'Peppa' }
   ],
   A2: [
     { category: 'newconcept2', title: 'New Concept 2' },
     { category: 'petethecat', title: 'Pete the Cat' },
     { category: 'magictreehouse', title: 'Magic Tree House' },
-    { category: 'unlock2', title: 'Unlock 2 课本' }
+    { category: 'unlock2', title: 'Unlock 2 课本' },
+    { category: 'unlock2thirdedition', title: 'Unlock 2 听口 第三版' },
+    { category: 'unlock2workbookthirdedition', title: 'Unlock 2 听口练习册 第三版' },
+    { category: 'unlock2workbook', title: 'Unlock 2 练习册' }
   ],
   B1: [
     { category: 'newconcept3', title: 'New Concept 3' },
     { category: 'magictreehouseb1', title: 'Magic Tree House' },
     { category: 'unlock3textbook', title: 'Unlock3 听口 第二版' },
     { category: 'unlock3thirdedition', title: 'Unlock3 听口 第三版' },
+    { category: 'unlock3workbookthirdedition', title: 'Unlock3 听口练习册 第三版' },
     { category: 'unlock3', title: 'Unlock3 听口练习册 第二版' }
   ],
   B2: [
     { category: 'newconcept4', title: 'New Concept 4' },
     { category: 'unlock4', title: 'Unlock 4 课本' },
-    { category: 'unlock4thirdedition', title: 'Unlock 4 听口 第三版' }
+    { category: 'unlock4thirdedition', title: 'Unlock 4 听口 第三版' },
+    { category: 'unlock4workbookthirdedition', title: 'Unlock 4 听口练习册 第三版' },
+    { category: 'unlock4workbook', title: 'Unlock 4 练习册' }
   ]
 };
 

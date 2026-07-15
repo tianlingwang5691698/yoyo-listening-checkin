@@ -1,0 +1,3370 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 4.1 The topic of today's seminar is how climate change is affecting the Earth's various climates. At the beginning of the 19th century, Vladimir Köppen, a German scientist, organised the world's climates into five categories, which we still use today. Global warming is affecting each of these climates in different ways. Let's begin with tropical climates, which are hot and humid, with lots of rain. A tropical climate has temperatures higher than 18 degrees Celsius all year. Countries near the equator have tropical climates, including Brazil and Colombia in South America, the Congo in Africa and Malaysia and Indonesia in Asia. As the weather gets hotter, they receive less rain. This affects the rainforests. There are more forest fires, which kill lots of wildlife. People are also cutting down the rainforests, so many types of animals, plants and trees could disappear forever. We need to look after the rainforests to save the plants and wildlife. And also, because rainforests help to slow down global warming for the whole planet. Next, the dry climate. A dry climate is one in which there isn't a lot of rain. There are two types of desert climates, hot and cold. Hot desert climates have hot temperatures all year round. For example, Australia, most countries in the Middle East and North Africa. On the other hand, cold desert climates have hot summers and cold winters, such as Argentina and Chile in South America, some countries in Central Asia. In the future, the weather in these places will become even hotter and drier. There will be droughts and people will need to use water very carefully. Some areas, like Central Australia, could become so hot that people just won't be able to live there anymore. At the other extreme is the polar climate, the areas covering the North and South Pole. The weather here is very cold, with temperatures never higher than 10 degrees Celsius. The warmer global temperatures mean that the ice here is melting and sea levels are rising. Scientists believe that Arctic and Antarctic wildlife are in danger due to the changing environment. The final two categories we are going to talk about are the temperate climate, which has warm, humid summers and mild winters. The continental climate has warm to cool summers and very cold winters.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Track 4.1",
+      "tokens": [
+        50364,
+        31903,
+        1017,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25721666812896726,
+      "compression_ratio": 1.4841628959276019,
+      "no_speech_prob": 0.05367819592356682,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.6,
+          "probability": 0.8888905048370361
+        },
+        {
+          "word": " 4",
+          "start": 0.6,
+          "end": 1.08,
+          "probability": 0.9655221700668335
+        },
+        {
+          "word": ".1",
+          "start": 1.08,
+          "end": 2.0,
+          "probability": 0.9963065683841705
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.88,
+      "end": 11.18,
+      "text": " The topic of today's seminar is how climate change is affecting the Earth's various climates.",
+      "tokens": [
+        50558,
+        440,
+        4829,
+        295,
+        965,
+        311,
+        29235,
+        307,
+        577,
+        5659,
+        1319,
+        307,
+        17476,
+        264,
+        4755,
+        311,
+        3683,
+        5644,
+        1024,
+        13,
+        50924
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25721666812896726,
+      "compression_ratio": 1.4841628959276019,
+      "no_speech_prob": 0.05367819592356682,
+      "words": [
+        {
+          "word": " The",
+          "start": 3.780000000000002,
+          "end": 4.24,
+          "probability": 0.8296444416046143
+        },
+        {
+          "word": " topic",
+          "start": 4.24,
+          "end": 4.72,
+          "probability": 0.9978208541870117
+        },
+        {
+          "word": " of",
+          "start": 4.72,
+          "end": 5.12,
+          "probability": 0.9903002977371216
+        },
+        {
+          "word": " today's",
+          "start": 5.12,
+          "end": 5.72,
+          "probability": 0.989403486251831
+        },
+        {
+          "word": " seminar",
+          "start": 5.72,
+          "end": 6.2,
+          "probability": 0.9936424493789673
+        },
+        {
+          "word": " is",
+          "start": 6.2,
+          "end": 6.72,
+          "probability": 0.9931676983833313
+        },
+        {
+          "word": " how",
+          "start": 6.72,
+          "end": 7.26,
+          "probability": 0.8543839454650879
+        },
+        {
+          "word": " climate",
+          "start": 7.26,
+          "end": 7.74,
+          "probability": 0.9771387577056885
+        },
+        {
+          "word": " change",
+          "start": 7.74,
+          "end": 8.14,
+          "probability": 0.9948263764381409
+        },
+        {
+          "word": " is",
+          "start": 8.14,
+          "end": 8.5,
+          "probability": 0.9970707893371582
+        },
+        {
+          "word": " affecting",
+          "start": 8.5,
+          "end": 8.98,
+          "probability": 0.9827836751937866
+        },
+        {
+          "word": " the",
+          "start": 8.98,
+          "end": 9.42,
+          "probability": 0.990018367767334
+        },
+        {
+          "word": " Earth's",
+          "start": 9.42,
+          "end": 10.1,
+          "probability": 0.8620106279850006
+        },
+        {
+          "word": " various",
+          "start": 10.1,
+          "end": 10.42,
+          "probability": 0.9977782368659973
+        },
+        {
+          "word": " climates.",
+          "start": 10.42,
+          "end": 11.18,
+          "probability": 0.9944912791252136
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 12.4,
+      "end": 17.74,
+      "text": " At the beginning of the 19th century, Vladimir Köppen, a German scientist,",
+      "tokens": [
+        50968,
+        1711,
+        264,
+        2863,
+        295,
+        264,
+        1294,
+        392,
+        4901,
+        11,
+        31669,
+        43197,
+        21278,
+        11,
+        257,
+        6521,
+        12662,
+        11,
+        51258
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25721666812896726,
+      "compression_ratio": 1.4841628959276019,
+      "no_speech_prob": 0.05367819592356682,
+      "words": [
+        {
+          "word": " At",
+          "start": 12.4,
+          "end": 12.54,
+          "probability": 0.9983183145523071
+        },
+        {
+          "word": " the",
+          "start": 12.54,
+          "end": 12.78,
+          "probability": 0.9992014765739441
+        },
+        {
+          "word": " beginning",
+          "start": 12.78,
+          "end": 13.12,
+          "probability": 0.9981358051300049
+        },
+        {
+          "word": " of",
+          "start": 13.12,
+          "end": 13.38,
+          "probability": 0.9991173148155212
+        },
+        {
+          "word": " the",
+          "start": 13.38,
+          "end": 13.54,
+          "probability": 0.9912869334220886
+        },
+        {
+          "word": " 19th",
+          "start": 13.54,
+          "end": 14.16,
+          "probability": 0.9620770812034607
+        },
+        {
+          "word": " century,",
+          "start": 14.16,
+          "end": 14.62,
+          "probability": 0.9369739890098572
+        },
+        {
+          "word": " Vladimir",
+          "start": 15.16,
+          "end": 15.6,
+          "probability": 0.8386067152023315
+        },
+        {
+          "word": " Köppen,",
+          "start": 15.6,
+          "end": 16.06,
+          "probability": 0.9105200469493866
+        },
+        {
+          "word": " a",
+          "start": 16.44,
+          "end": 16.62,
+          "probability": 0.9964516162872314
+        },
+        {
+          "word": " German",
+          "start": 16.62,
+          "end": 17.08,
+          "probability": 0.9923030138015747
+        },
+        {
+          "word": " scientist,",
+          "start": 17.08,
+          "end": 17.74,
+          "probability": 0.9851908087730408
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 18.5,
+      "end": 23.54,
+      "text": " organised the world's climates into five categories, which we still use today.",
+      "tokens": [
+        51258,
+        36866,
+        264,
+        1002,
+        311,
+        5644,
+        1024,
+        666,
+        1732,
+        10479,
+        11,
+        597,
+        321,
+        920,
+        764,
+        965,
+        13,
+        51544
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25721666812896726,
+      "compression_ratio": 1.4841628959276019,
+      "no_speech_prob": 0.05367819592356682,
+      "words": [
+        {
+          "word": " organised",
+          "start": 18.5,
+          "end": 18.82,
+          "probability": 0.5183530449867249
+        },
+        {
+          "word": " the",
+          "start": 18.82,
+          "end": 19.18,
+          "probability": 0.9978431463241577
+        },
+        {
+          "word": " world's",
+          "start": 19.18,
+          "end": 19.72,
+          "probability": 0.9837649166584015
+        },
+        {
+          "word": " climates",
+          "start": 19.72,
+          "end": 20.06,
+          "probability": 0.9859773814678192
+        },
+        {
+          "word": " into",
+          "start": 20.06,
+          "end": 20.48,
+          "probability": 0.9963340759277344
+        },
+        {
+          "word": " five",
+          "start": 20.48,
+          "end": 20.98,
+          "probability": 0.81553053855896
+        },
+        {
+          "word": " categories,",
+          "start": 20.98,
+          "end": 21.56,
+          "probability": 0.9968980550765991
+        },
+        {
+          "word": " which",
+          "start": 21.88,
+          "end": 22.08,
+          "probability": 0.9990190267562866
+        },
+        {
+          "word": " we",
+          "start": 22.08,
+          "end": 22.36,
+          "probability": 0.9991156458854675
+        },
+        {
+          "word": " still",
+          "start": 22.36,
+          "end": 22.64,
+          "probability": 0.9989013671875
+        },
+        {
+          "word": " use",
+          "start": 22.64,
+          "end": 22.92,
+          "probability": 0.9988295435905457
+        },
+        {
+          "word": " today.",
+          "start": 22.92,
+          "end": 23.54,
+          "probability": 0.9989984631538391
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 24.76,
+      "end": 29.54,
+      "text": " Global warming is affecting each of these climates in different ways.",
+      "tokens": [
+        51590,
+        14465,
+        17983,
+        307,
+        17476,
+        1184,
+        295,
+        613,
+        5644,
+        1024,
+        294,
+        819,
+        2098,
+        13,
+        51850
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25721666812896726,
+      "compression_ratio": 1.4841628959276019,
+      "no_speech_prob": 0.05367819592356682,
+      "words": [
+        {
+          "word": " Global",
+          "start": 24.76,
+          "end": 25.18,
+          "probability": 0.9722880721092224
+        },
+        {
+          "word": " warming",
+          "start": 25.18,
+          "end": 25.68,
+          "probability": 0.9919154047966003
+        },
+        {
+          "word": " is",
+          "start": 25.68,
+          "end": 26.14,
+          "probability": 0.9981346130371094
+        },
+        {
+          "word": " affecting",
+          "start": 26.14,
+          "end": 26.58,
+          "probability": 0.9959938526153564
+        },
+        {
+          "word": " each",
+          "start": 26.58,
+          "end": 27.1,
+          "probability": 0.9984920024871826
+        },
+        {
+          "word": " of",
+          "start": 27.1,
+          "end": 27.26,
+          "probability": 0.9984201192855835
+        },
+        {
+          "word": " these",
+          "start": 27.26,
+          "end": 27.54,
+          "probability": 0.9958423972129822
+        },
+        {
+          "word": " climates",
+          "start": 27.54,
+          "end": 28.1,
+          "probability": 0.9969065189361572
+        },
+        {
+          "word": " in",
+          "start": 28.1,
+          "end": 28.54,
+          "probability": 0.9949167966842651
+        },
+        {
+          "word": " different",
+          "start": 28.54,
+          "end": 28.98,
+          "probability": 0.9985255599021912
+        },
+        {
+          "word": " ways.",
+          "start": 28.98,
+          "end": 29.54,
+          "probability": 0.9995200634002686
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 3000,
+      "start": 30.68,
+      "end": 36.7,
+      "text": " Let's begin with tropical climates, which are hot and humid, with lots of rain.",
+      "tokens": [
+        50398,
+        961,
+        311,
+        1841,
+        365,
+        22857,
+        5644,
+        1024,
+        11,
+        597,
+        366,
+        2368,
+        293,
+        34649,
+        11,
+        365,
+        3195,
+        295,
+        4830,
+        13,
+        50702
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24041036878313338,
+      "compression_ratio": 1.5472636815920398,
+      "no_speech_prob": 0.004201930016279221,
+      "words": [
+        {
+          "word": " Let's",
+          "start": 30.68,
+          "end": 31.26,
+          "probability": 0.9688035547733307
+        },
+        {
+          "word": " begin",
+          "start": 31.26,
+          "end": 31.62,
+          "probability": 0.9977065324783325
+        },
+        {
+          "word": " with",
+          "start": 31.62,
+          "end": 31.98,
+          "probability": 0.9990310668945312
+        },
+        {
+          "word": " tropical",
+          "start": 31.98,
+          "end": 32.58,
+          "probability": 0.8717897534370422
+        },
+        {
+          "word": " climates,",
+          "start": 32.58,
+          "end": 33.28,
+          "probability": 0.9979785978794098
+        },
+        {
+          "word": " which",
+          "start": 33.56,
+          "end": 33.74,
+          "probability": 0.9967370629310608
+        },
+        {
+          "word": " are",
+          "start": 33.74,
+          "end": 33.96,
+          "probability": 0.9988483190536499
+        },
+        {
+          "word": " hot",
+          "start": 33.96,
+          "end": 34.28,
+          "probability": 0.9984347224235535
+        },
+        {
+          "word": " and",
+          "start": 34.28,
+          "end": 34.7,
+          "probability": 0.9966868758201599
+        },
+        {
+          "word": " humid,",
+          "start": 34.7,
+          "end": 35.1,
+          "probability": 0.999363124370575
+        },
+        {
+          "word": " with",
+          "start": 35.44,
+          "end": 35.64,
+          "probability": 0.9983024597167969
+        },
+        {
+          "word": " lots",
+          "start": 35.64,
+          "end": 35.96,
+          "probability": 0.9982238411903381
+        },
+        {
+          "word": " of",
+          "start": 35.96,
+          "end": 36.28,
+          "probability": 0.9994298815727234
+        },
+        {
+          "word": " rain.",
+          "start": 36.28,
+          "end": 36.7,
+          "probability": 0.9991170763969421
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 3000,
+      "start": 38.32,
+      "end": 44.18,
+      "text": " A tropical climate has temperatures higher than 18 degrees Celsius all year.",
+      "tokens": [
+        50768,
+        316,
+        22857,
+        5659,
+        575,
+        12633,
+        2946,
+        813,
+        2443,
+        5310,
+        22658,
+        439,
+        1064,
+        13,
+        51072
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24041036878313338,
+      "compression_ratio": 1.5472636815920398,
+      "no_speech_prob": 0.004201930016279221,
+      "words": [
+        {
+          "word": " A",
+          "start": 38.32,
+          "end": 38.48,
+          "probability": 0.9921682476997375
+        },
+        {
+          "word": " tropical",
+          "start": 38.48,
+          "end": 38.92,
+          "probability": 0.9939113855361938
+        },
+        {
+          "word": " climate",
+          "start": 38.92,
+          "end": 39.42,
+          "probability": 0.9988588094711304
+        },
+        {
+          "word": " has",
+          "start": 39.42,
+          "end": 40.0,
+          "probability": 0.9914104342460632
+        },
+        {
+          "word": " temperatures",
+          "start": 40.0,
+          "end": 40.56,
+          "probability": 0.9960377216339111
+        },
+        {
+          "word": " higher",
+          "start": 40.56,
+          "end": 41.06,
+          "probability": 0.9974111914634705
+        },
+        {
+          "word": " than",
+          "start": 41.06,
+          "end": 41.34,
+          "probability": 0.997003972530365
+        },
+        {
+          "word": " 18",
+          "start": 41.34,
+          "end": 41.78,
+          "probability": 0.9804425835609436
+        },
+        {
+          "word": " degrees",
+          "start": 41.78,
+          "end": 42.36,
+          "probability": 0.5953741073608398
+        },
+        {
+          "word": " Celsius",
+          "start": 42.36,
+          "end": 42.98,
+          "probability": 0.9045653343200684
+        },
+        {
+          "word": " all",
+          "start": 42.98,
+          "end": 43.68,
+          "probability": 0.7481908202171326
+        },
+        {
+          "word": " year.",
+          "start": 43.68,
+          "end": 44.18,
+          "probability": 0.9955340623855591
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 3000,
+      "start": 45.42,
+      "end": 52.72,
+      "text": " Countries near the equator have tropical climates, including Brazil and Colombia in South America,",
+      "tokens": [
+        51126,
+        5247,
+        2244,
+        2651,
+        264,
+        45544,
+        362,
+        22857,
+        5644,
+        1024,
+        11,
+        3009,
+        9435,
+        293,
+        22677,
+        294,
+        4242,
+        3374,
+        11,
+        51502
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24041036878313338,
+      "compression_ratio": 1.5472636815920398,
+      "no_speech_prob": 0.004201930016279221,
+      "words": [
+        {
+          "word": " Countries",
+          "start": 45.42,
+          "end": 45.96,
+          "probability": 0.9960481822490692
+        },
+        {
+          "word": " near",
+          "start": 45.96,
+          "end": 46.22,
+          "probability": 0.9983578324317932
+        },
+        {
+          "word": " the",
+          "start": 46.22,
+          "end": 46.52,
+          "probability": 0.9993093013763428
+        },
+        {
+          "word": " equator",
+          "start": 46.52,
+          "end": 46.92,
+          "probability": 0.8115254044532776
+        },
+        {
+          "word": " have",
+          "start": 46.92,
+          "end": 47.26,
+          "probability": 0.9982983469963074
+        },
+        {
+          "word": " tropical",
+          "start": 47.26,
+          "end": 47.8,
+          "probability": 0.9955052137374878
+        },
+        {
+          "word": " climates,",
+          "start": 47.8,
+          "end": 48.6,
+          "probability": 0.9962728917598724
+        },
+        {
+          "word": " including",
+          "start": 49.16,
+          "end": 49.56,
+          "probability": 0.9950518012046814
+        },
+        {
+          "word": " Brazil",
+          "start": 49.56,
+          "end": 50.22,
+          "probability": 0.9970423579216003
+        },
+        {
+          "word": " and",
+          "start": 50.22,
+          "end": 50.8,
+          "probability": 0.9484990239143372
+        },
+        {
+          "word": " Colombia",
+          "start": 50.8,
+          "end": 51.42,
+          "probability": 0.8477826714515686
+        },
+        {
+          "word": " in",
+          "start": 51.42,
+          "end": 51.78,
+          "probability": 0.9807425737380981
+        },
+        {
+          "word": " South",
+          "start": 51.78,
+          "end": 52.12,
+          "probability": 0.9966766834259033
+        },
+        {
+          "word": " America,",
+          "start": 52.12,
+          "end": 52.72,
+          "probability": 0.9965794682502747
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 3000,
+      "start": 53.56,
+      "end": 59.18,
+      "text": " the Congo in Africa and Malaysia and Indonesia in Asia.",
+      "tokens": [
+        51534,
+        264,
+        42839,
+        294,
+        7349,
+        293,
+        25465,
+        293,
+        16879,
+        294,
+        10038,
+        13,
+        51826
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24041036878313338,
+      "compression_ratio": 1.5472636815920398,
+      "no_speech_prob": 0.004201930016279221,
+      "words": [
+        {
+          "word": " the",
+          "start": 53.56,
+          "end": 53.78,
+          "probability": 0.9651968479156494
+        },
+        {
+          "word": " Congo",
+          "start": 53.78,
+          "end": 54.26,
+          "probability": 0.9994718432426453
+        },
+        {
+          "word": " in",
+          "start": 54.26,
+          "end": 54.62,
+          "probability": 0.993837296962738
+        },
+        {
+          "word": " Africa",
+          "start": 54.62,
+          "end": 55.18,
+          "probability": 0.9993298053741455
+        },
+        {
+          "word": " and",
+          "start": 55.18,
+          "end": 56.16,
+          "probability": 0.5072227716445923
+        },
+        {
+          "word": " Malaysia",
+          "start": 56.16,
+          "end": 56.86,
+          "probability": 0.9971596002578735
+        },
+        {
+          "word": " and",
+          "start": 56.86,
+          "end": 57.42,
+          "probability": 0.9943207502365112
+        },
+        {
+          "word": " Indonesia",
+          "start": 57.42,
+          "end": 58.02,
+          "probability": 0.9989314675331116
+        },
+        {
+          "word": " in",
+          "start": 58.02,
+          "end": 58.62,
+          "probability": 0.9896695017814636
+        },
+        {
+          "word": " Asia.",
+          "start": 58.62,
+          "end": 59.18,
+          "probability": 0.9994692206382751
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 6000,
+      "start": 60.22,
+      "end": 64.56,
+      "text": " As the weather gets hotter, they receive less rain.",
+      "tokens": [
+        50388,
+        1018,
+        264,
+        5503,
+        2170,
+        32149,
+        11,
+        436,
+        4774,
+        1570,
+        4830,
+        13,
+        50598
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22605401051195362,
+      "compression_ratio": 1.6615384615384616,
+      "no_speech_prob": 0.0032963056582957506,
+      "words": [
+        {
+          "word": " As",
+          "start": 60.22,
+          "end": 60.94,
+          "probability": 0.9519484639167786
+        },
+        {
+          "word": " the",
+          "start": 60.94,
+          "end": 61.2,
+          "probability": 0.9979612827301025
+        },
+        {
+          "word": " weather",
+          "start": 61.2,
+          "end": 61.48,
+          "probability": 0.9972634315490723
+        },
+        {
+          "word": " gets",
+          "start": 61.48,
+          "end": 61.94,
+          "probability": 0.9954425096511841
+        },
+        {
+          "word": " hotter,",
+          "start": 61.94,
+          "end": 62.3,
+          "probability": 0.9920505881309509
+        },
+        {
+          "word": " they",
+          "start": 62.92,
+          "end": 63.18,
+          "probability": 0.992440938949585
+        },
+        {
+          "word": " receive",
+          "start": 63.18,
+          "end": 63.68,
+          "probability": 0.9917271137237549
+        },
+        {
+          "word": " less",
+          "start": 63.68,
+          "end": 64.04,
+          "probability": 0.9987596273422241
+        },
+        {
+          "word": " rain.",
+          "start": 64.04,
+          "end": 64.56,
+          "probability": 0.9976425766944885
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 6000,
+      "start": 65.72,
+      "end": 68.4,
+      "text": " This affects the rainforests.",
+      "tokens": [
+        50644,
+        639,
+        11807,
+        264,
+        48531,
+        82,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22605401051195362,
+      "compression_ratio": 1.6615384615384616,
+      "no_speech_prob": 0.0032963056582957506,
+      "words": [
+        {
+          "word": " This",
+          "start": 65.72,
+          "end": 66.06,
+          "probability": 0.9933969974517822
+        },
+        {
+          "word": " affects",
+          "start": 66.06,
+          "end": 66.64,
+          "probability": 0.9468058347702026
+        },
+        {
+          "word": " the",
+          "start": 66.64,
+          "end": 67.0,
+          "probability": 0.9943743944168091
+        },
+        {
+          "word": " rainforests.",
+          "start": 67.0,
+          "end": 68.4,
+          "probability": 0.9704164266586304
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 6000,
+      "start": 69.02,
+      "end": 72.76,
+      "text": " There are more forest fires, which kill lots of wildlife.",
+      "tokens": [
+        50806,
+        821,
+        366,
+        544,
+        6719,
+        15044,
+        11,
+        597,
+        1961,
+        3195,
+        295,
+        19199,
+        13,
+        51010
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22605401051195362,
+      "compression_ratio": 1.6615384615384616,
+      "no_speech_prob": 0.0032963056582957506,
+      "words": [
+        {
+          "word": " There",
+          "start": 69.02,
+          "end": 69.2,
+          "probability": 0.9935551285743713
+        },
+        {
+          "word": " are",
+          "start": 69.2,
+          "end": 69.32,
+          "probability": 0.9982154369354248
+        },
+        {
+          "word": " more",
+          "start": 69.32,
+          "end": 69.74,
+          "probability": 0.9988093376159668
+        },
+        {
+          "word": " forest",
+          "start": 69.74,
+          "end": 70.06,
+          "probability": 0.9974402189254761
+        },
+        {
+          "word": " fires,",
+          "start": 70.06,
+          "end": 70.5,
+          "probability": 0.9927753210067749
+        },
+        {
+          "word": " which",
+          "start": 70.9,
+          "end": 71.22,
+          "probability": 0.9978770017623901
+        },
+        {
+          "word": " kill",
+          "start": 71.22,
+          "end": 71.56,
+          "probability": 0.9870373010635376
+        },
+        {
+          "word": " lots",
+          "start": 71.56,
+          "end": 71.92,
+          "probability": 0.9948076605796814
+        },
+        {
+          "word": " of",
+          "start": 71.92,
+          "end": 72.3,
+          "probability": 0.9995915293693542
+        },
+        {
+          "word": " wildlife.",
+          "start": 72.3,
+          "end": 72.76,
+          "probability": 0.9936255216598511
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 6000,
+      "start": 74.36,
+      "end": 77.66,
+      "text": " People are also cutting down the rainforests,",
+      "tokens": [
+        51072,
+        3432,
+        366,
+        611,
+        6492,
+        760,
+        264,
+        48531,
+        82,
+        11,
+        51234
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22605401051195362,
+      "compression_ratio": 1.6615384615384616,
+      "no_speech_prob": 0.0032963056582957506,
+      "words": [
+        {
+          "word": " People",
+          "start": 74.36,
+          "end": 74.7,
+          "probability": 0.998515784740448
+        },
+        {
+          "word": " are",
+          "start": 74.7,
+          "end": 75.0,
+          "probability": 0.997404158115387
+        },
+        {
+          "word": " also",
+          "start": 75.0,
+          "end": 75.38,
+          "probability": 0.9988420605659485
+        },
+        {
+          "word": " cutting",
+          "start": 75.38,
+          "end": 75.74,
+          "probability": 0.9991169571876526
+        },
+        {
+          "word": " down",
+          "start": 75.74,
+          "end": 76.2,
+          "probability": 0.9988763928413391
+        },
+        {
+          "word": " the",
+          "start": 76.2,
+          "end": 76.48,
+          "probability": 0.9820479154586792
+        },
+        {
+          "word": " rainforests,",
+          "start": 76.48,
+          "end": 77.66,
+          "probability": 0.985532134771347
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 6000,
+      "start": 77.7,
+      "end": 82.9,
+      "text": " so many types of animals, plants and trees could disappear forever.",
+      "tokens": [
+        51234,
+        370,
+        867,
+        3467,
+        295,
+        4882,
+        11,
+        5972,
+        293,
+        5852,
+        727,
+        11596,
+        5680,
+        13,
+        51518
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22605401051195362,
+      "compression_ratio": 1.6615384615384616,
+      "no_speech_prob": 0.0032963056582957506,
+      "words": [
+        {
+          "word": " so",
+          "start": 77.7,
+          "end": 77.94,
+          "probability": 0.9924167394638062
+        },
+        {
+          "word": " many",
+          "start": 77.94,
+          "end": 78.34,
+          "probability": 0.9952599406242371
+        },
+        {
+          "word": " types",
+          "start": 78.34,
+          "end": 78.68,
+          "probability": 0.9951847195625305
+        },
+        {
+          "word": " of",
+          "start": 78.68,
+          "end": 79.04,
+          "probability": 0.999021053314209
+        },
+        {
+          "word": " animals,",
+          "start": 79.04,
+          "end": 79.44,
+          "probability": 0.9975908994674683
+        },
+        {
+          "word": " plants",
+          "start": 79.8,
+          "end": 80.22,
+          "probability": 0.9984744191169739
+        },
+        {
+          "word": " and",
+          "start": 80.22,
+          "end": 80.56,
+          "probability": 0.8879554867744446
+        },
+        {
+          "word": " trees",
+          "start": 80.56,
+          "end": 81.14,
+          "probability": 0.9975818395614624
+        },
+        {
+          "word": " could",
+          "start": 81.14,
+          "end": 81.72,
+          "probability": 0.9312252402305603
+        },
+        {
+          "word": " disappear",
+          "start": 81.72,
+          "end": 82.34,
+          "probability": 0.9957791566848755
+        },
+        {
+          "word": " forever.",
+          "start": 82.34,
+          "end": 82.9,
+          "probability": 0.9932998418807983
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 6000,
+      "start": 84.62,
+      "end": 89.38,
+      "text": " We need to look after the rainforests to save the plants and wildlife.",
+      "tokens": [
+        51588,
+        492,
+        643,
+        281,
+        574,
+        934,
+        264,
+        48531,
+        82,
+        281,
+        3155,
+        264,
+        5972,
+        293,
+        19199,
+        13,
+        51838
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22605401051195362,
+      "compression_ratio": 1.6615384615384616,
+      "no_speech_prob": 0.0032963056582957506,
+      "words": [
+        {
+          "word": " We",
+          "start": 84.62,
+          "end": 84.94,
+          "probability": 0.997927188873291
+        },
+        {
+          "word": " need",
+          "start": 84.94,
+          "end": 85.22,
+          "probability": 0.9987474679946899
+        },
+        {
+          "word": " to",
+          "start": 85.22,
+          "end": 85.36,
+          "probability": 0.9992150068283081
+        },
+        {
+          "word": " look",
+          "start": 85.36,
+          "end": 85.64,
+          "probability": 0.9993196725845337
+        },
+        {
+          "word": " after",
+          "start": 85.64,
+          "end": 86.02,
+          "probability": 0.9989609718322754
+        },
+        {
+          "word": " the",
+          "start": 86.02,
+          "end": 86.28,
+          "probability": 0.9902611374855042
+        },
+        {
+          "word": " rainforests",
+          "start": 86.28,
+          "end": 87.34,
+          "probability": 0.9899296462535858
+        },
+        {
+          "word": " to",
+          "start": 87.34,
+          "end": 87.54,
+          "probability": 0.7043498158454895
+        },
+        {
+          "word": " save",
+          "start": 87.54,
+          "end": 87.94,
+          "probability": 0.9982604384422302
+        },
+        {
+          "word": " the",
+          "start": 87.94,
+          "end": 88.2,
+          "probability": 0.9953930377960205
+        },
+        {
+          "word": " plants",
+          "start": 88.2,
+          "end": 88.48,
+          "probability": 0.9974740147590637
+        },
+        {
+          "word": " and",
+          "start": 88.48,
+          "end": 88.82,
+          "probability": 0.9981533885002136
+        },
+        {
+          "word": " wildlife.",
+          "start": 88.82,
+          "end": 89.38,
+          "probability": 0.9951180219650269
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 9000,
+      "start": 90.0,
+      "end": 96.08,
+      "text": " And also, because rainforests help to slow down global warming for the whole planet.",
+      "tokens": [
+        50364,
+        400,
+        611,
+        11,
+        570,
+        48531,
+        82,
+        854,
+        281,
+        2964,
+        760,
+        4338,
+        17983,
+        337,
+        264,
+        1379,
+        5054,
+        13,
+        50666
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17877693434019346,
+      "compression_ratio": 1.5248618784530388,
+      "no_speech_prob": 0.0003942486073356122,
+      "words": [
+        {
+          "word": " And",
+          "start": 90.0,
+          "end": 90.28,
+          "probability": 0.23813496530056
+        },
+        {
+          "word": " also,",
+          "start": 90.28,
+          "end": 90.82,
+          "probability": 0.9884926676750183
+        },
+        {
+          "word": " because",
+          "start": 91.18,
+          "end": 91.46,
+          "probability": 0.9951825737953186
+        },
+        {
+          "word": " rainforests",
+          "start": 91.46,
+          "end": 92.5,
+          "probability": 0.8657652735710144
+        },
+        {
+          "word": " help",
+          "start": 92.5,
+          "end": 92.72,
+          "probability": 0.9917944073677063
+        },
+        {
+          "word": " to",
+          "start": 92.72,
+          "end": 93.04,
+          "probability": 0.9965488314628601
+        },
+        {
+          "word": " slow",
+          "start": 93.04,
+          "end": 93.36,
+          "probability": 0.9978910088539124
+        },
+        {
+          "word": " down",
+          "start": 93.36,
+          "end": 93.72,
+          "probability": 0.9878169894218445
+        },
+        {
+          "word": " global",
+          "start": 93.72,
+          "end": 94.14,
+          "probability": 0.9969971179962158
+        },
+        {
+          "word": " warming",
+          "start": 94.14,
+          "end": 94.6,
+          "probability": 0.9994069337844849
+        },
+        {
+          "word": " for",
+          "start": 94.6,
+          "end": 95.06,
+          "probability": 0.9735585451126099
+        },
+        {
+          "word": " the",
+          "start": 95.06,
+          "end": 95.22,
+          "probability": 0.9982771873474121
+        },
+        {
+          "word": " whole",
+          "start": 95.22,
+          "end": 95.44,
+          "probability": 0.9987743496894836
+        },
+        {
+          "word": " planet.",
+          "start": 95.44,
+          "end": 96.08,
+          "probability": 0.9978665709495544
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 9000,
+      "start": 97.96,
+      "end": 100.06,
+      "text": " Next, the dry climate.",
+      "tokens": [
+        50760,
+        3087,
+        11,
+        264,
+        4016,
+        5659,
+        13,
+        50866
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17877693434019346,
+      "compression_ratio": 1.5248618784530388,
+      "no_speech_prob": 0.0003942486073356122,
+      "words": [
+        {
+          "word": " Next,",
+          "start": 97.96,
+          "end": 98.48,
+          "probability": 0.7677807807922363
+        },
+        {
+          "word": " the",
+          "start": 98.76,
+          "end": 99.04,
+          "probability": 0.9456857442855835
+        },
+        {
+          "word": " dry",
+          "start": 99.04,
+          "end": 99.4,
+          "probability": 0.8665685653686523
+        },
+        {
+          "word": " climate.",
+          "start": 99.4,
+          "end": 100.06,
+          "probability": 0.9973063468933105
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 9000,
+      "start": 101.24,
+      "end": 105.24,
+      "text": " A dry climate is one in which there isn't a lot of rain.",
+      "tokens": [
+        50920,
+        316,
+        4016,
+        5659,
+        307,
+        472,
+        294,
+        597,
+        456,
+        1943,
+        380,
+        257,
+        688,
+        295,
+        4830,
+        13,
+        51130
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17877693434019346,
+      "compression_ratio": 1.5248618784530388,
+      "no_speech_prob": 0.0003942486073356122,
+      "words": [
+        {
+          "word": " A",
+          "start": 101.24,
+          "end": 101.4,
+          "probability": 0.9828574657440186
+        },
+        {
+          "word": " dry",
+          "start": 101.4,
+          "end": 101.74,
+          "probability": 0.9969382286071777
+        },
+        {
+          "word": " climate",
+          "start": 101.74,
+          "end": 102.3,
+          "probability": 0.9969266057014465
+        },
+        {
+          "word": " is",
+          "start": 102.3,
+          "end": 102.72,
+          "probability": 0.9960880279541016
+        },
+        {
+          "word": " one",
+          "start": 102.72,
+          "end": 102.98,
+          "probability": 0.9973146319389343
+        },
+        {
+          "word": " in",
+          "start": 102.98,
+          "end": 103.18,
+          "probability": 0.9950651526451111
+        },
+        {
+          "word": " which",
+          "start": 103.18,
+          "end": 103.44,
+          "probability": 0.9993113279342651
+        },
+        {
+          "word": " there",
+          "start": 103.44,
+          "end": 103.8,
+          "probability": 0.9959213733673096
+        },
+        {
+          "word": " isn't",
+          "start": 103.8,
+          "end": 104.22,
+          "probability": 0.993785947561264
+        },
+        {
+          "word": " a",
+          "start": 104.22,
+          "end": 104.38,
+          "probability": 0.9966728687286377
+        },
+        {
+          "word": " lot",
+          "start": 104.38,
+          "end": 104.64,
+          "probability": 0.9996547698974609
+        },
+        {
+          "word": " of",
+          "start": 104.64,
+          "end": 104.92,
+          "probability": 0.9972413778305054
+        },
+        {
+          "word": " rain.",
+          "start": 104.92,
+          "end": 105.24,
+          "probability": 0.9992569088935852
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 9000,
+      "start": 106.24,
+      "end": 110.54,
+      "text": " There are two types of desert climates, hot and cold.",
+      "tokens": [
+        51174,
+        821,
+        366,
+        732,
+        3467,
+        295,
+        11029,
+        5644,
+        1024,
+        11,
+        2368,
+        293,
+        3554,
+        13,
+        51396
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17877693434019346,
+      "compression_ratio": 1.5248618784530388,
+      "no_speech_prob": 0.0003942486073356122,
+      "words": [
+        {
+          "word": " There",
+          "start": 106.24,
+          "end": 106.42,
+          "probability": 0.9919553399085999
+        },
+        {
+          "word": " are",
+          "start": 106.42,
+          "end": 106.68,
+          "probability": 0.9978777170181274
+        },
+        {
+          "word": " two",
+          "start": 106.68,
+          "end": 106.96,
+          "probability": 0.9619680047035217
+        },
+        {
+          "word": " types",
+          "start": 106.96,
+          "end": 107.36,
+          "probability": 0.99777752161026
+        },
+        {
+          "word": " of",
+          "start": 107.36,
+          "end": 107.66,
+          "probability": 0.9992150068283081
+        },
+        {
+          "word": " desert",
+          "start": 107.66,
+          "end": 108.04,
+          "probability": 0.9931663870811462
+        },
+        {
+          "word": " climates,",
+          "start": 108.04,
+          "end": 108.72,
+          "probability": 0.9576463401317596
+        },
+        {
+          "word": " hot",
+          "start": 109.08,
+          "end": 109.44,
+          "probability": 0.9514504075050354
+        },
+        {
+          "word": " and",
+          "start": 109.44,
+          "end": 110.02,
+          "probability": 0.9885615706443787
+        },
+        {
+          "word": " cold.",
+          "start": 110.02,
+          "end": 110.54,
+          "probability": 0.999568521976471
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 9000,
+      "start": 111.64,
+      "end": 115.66,
+      "text": " Hot desert climates have hot temperatures all year round.",
+      "tokens": [
+        51440,
+        9423,
+        11029,
+        5644,
+        1024,
+        362,
+        2368,
+        12633,
+        439,
+        1064,
+        3098,
+        13,
+        51648
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17877693434019346,
+      "compression_ratio": 1.5248618784530388,
+      "no_speech_prob": 0.0003942486073356122,
+      "words": [
+        {
+          "word": " Hot",
+          "start": 111.64,
+          "end": 111.94,
+          "probability": 0.9933111667633057
+        },
+        {
+          "word": " desert",
+          "start": 111.94,
+          "end": 112.38,
+          "probability": 0.9927956461906433
+        },
+        {
+          "word": " climates",
+          "start": 112.38,
+          "end": 112.94,
+          "probability": 0.992123931646347
+        },
+        {
+          "word": " have",
+          "start": 112.94,
+          "end": 113.32,
+          "probability": 0.9964765906333923
+        },
+        {
+          "word": " hot",
+          "start": 113.32,
+          "end": 113.62,
+          "probability": 0.9954309463500977
+        },
+        {
+          "word": " temperatures",
+          "start": 113.62,
+          "end": 114.28,
+          "probability": 0.9956697225570679
+        },
+        {
+          "word": " all",
+          "start": 114.28,
+          "end": 114.86,
+          "probability": 0.997715950012207
+        },
+        {
+          "word": " year",
+          "start": 114.86,
+          "end": 115.16,
+          "probability": 0.9955317974090576
+        },
+        {
+          "word": " round.",
+          "start": 115.16,
+          "end": 115.66,
+          "probability": 0.9721412658691406
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 11566,
+      "start": 115.66,
+      "end": 121.72,
+      "text": " For example, Australia, most countries in the Middle East and North Africa.",
+      "tokens": [
+        50388,
+        1171,
+        1365,
+        11,
+        7060,
+        11,
+        881,
+        3517,
+        294,
+        264,
+        10775,
+        6747,
+        293,
+        4067,
+        7349,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14002513885498047,
+      "compression_ratio": 1.5073891625615763,
+      "no_speech_prob": 0.021598387509584427,
+      "words": [
+        {
+          "word": " For",
+          "start": 115.66,
+          "end": 116.38,
+          "probability": 0.4966212213039398
+        },
+        {
+          "word": " example,",
+          "start": 116.38,
+          "end": 117.02,
+          "probability": 0.9936396479606628
+        },
+        {
+          "word": " Australia,",
+          "start": 117.26,
+          "end": 117.78,
+          "probability": 0.9941480159759521
+        },
+        {
+          "word": " most",
+          "start": 118.4,
+          "end": 118.72,
+          "probability": 0.9825473427772522
+        },
+        {
+          "word": " countries",
+          "start": 118.72,
+          "end": 119.22,
+          "probability": 0.9933173656463623
+        },
+        {
+          "word": " in",
+          "start": 119.22,
+          "end": 119.46,
+          "probability": 0.9964473843574524
+        },
+        {
+          "word": " the",
+          "start": 119.46,
+          "end": 119.58,
+          "probability": 0.9910079836845398
+        },
+        {
+          "word": " Middle",
+          "start": 119.58,
+          "end": 119.88,
+          "probability": 0.9526059627532959
+        },
+        {
+          "word": " East",
+          "start": 119.88,
+          "end": 120.24,
+          "probability": 0.9917928576469421
+        },
+        {
+          "word": " and",
+          "start": 120.24,
+          "end": 120.8,
+          "probability": 0.5922595262527466
+        },
+        {
+          "word": " North",
+          "start": 120.8,
+          "end": 121.16,
+          "probability": 0.979296088218689
+        },
+        {
+          "word": " Africa.",
+          "start": 121.16,
+          "end": 121.72,
+          "probability": 0.9969292283058167
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 11566,
+      "start": 123.08,
+      "end": 128.88,
+      "text": " On the other hand, cold desert climates have hot summers and cold winters,",
+      "tokens": [
+        50728,
+        1282,
+        264,
+        661,
+        1011,
+        11,
+        3554,
+        11029,
+        5644,
+        1024,
+        362,
+        2368,
+        46474,
+        293,
+        3554,
+        1942,
+        1559,
+        11,
+        51010
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14002513885498047,
+      "compression_ratio": 1.5073891625615763,
+      "no_speech_prob": 0.021598387509584427,
+      "words": [
+        {
+          "word": " On",
+          "start": 123.08,
+          "end": 123.2,
+          "probability": 0.9844265580177307
+        },
+        {
+          "word": " the",
+          "start": 123.2,
+          "end": 123.4,
+          "probability": 0.9989370703697205
+        },
+        {
+          "word": " other",
+          "start": 123.4,
+          "end": 123.66,
+          "probability": 0.9994288086891174
+        },
+        {
+          "word": " hand,",
+          "start": 123.66,
+          "end": 124.1,
+          "probability": 0.9984545707702637
+        },
+        {
+          "word": " cold",
+          "start": 124.58,
+          "end": 124.78,
+          "probability": 0.9742557406425476
+        },
+        {
+          "word": " desert",
+          "start": 124.78,
+          "end": 125.24,
+          "probability": 0.9914777874946594
+        },
+        {
+          "word": " climates",
+          "start": 125.24,
+          "end": 125.84,
+          "probability": 0.9812391102313995
+        },
+        {
+          "word": " have",
+          "start": 125.84,
+          "end": 126.28,
+          "probability": 0.9928023219108582
+        },
+        {
+          "word": " hot",
+          "start": 126.28,
+          "end": 126.64,
+          "probability": 0.9691762328147888
+        },
+        {
+          "word": " summers",
+          "start": 126.64,
+          "end": 127.0,
+          "probability": 0.9927937984466553
+        },
+        {
+          "word": " and",
+          "start": 127.0,
+          "end": 127.6,
+          "probability": 0.9748086929321289
+        },
+        {
+          "word": " cold",
+          "start": 127.6,
+          "end": 127.98,
+          "probability": 0.9976981282234192
+        },
+        {
+          "word": " winters,",
+          "start": 127.98,
+          "end": 128.88,
+          "probability": 0.9988204836845398
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 11566,
+      "start": 129.14,
+      "end": 135.08,
+      "text": " such as Argentina and Chile in South America, some countries in Central Asia.",
+      "tokens": [
+        51030,
+        1270,
+        382,
+        18336,
+        293,
+        22238,
+        294,
+        4242,
+        3374,
+        11,
+        512,
+        3517,
+        294,
+        9701,
+        10038,
+        13,
+        51328
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14002513885498047,
+      "compression_ratio": 1.5073891625615763,
+      "no_speech_prob": 0.021598387509584427,
+      "words": [
+        {
+          "word": " such",
+          "start": 129.14,
+          "end": 129.42,
+          "probability": 0.9879684448242188
+        },
+        {
+          "word": " as",
+          "start": 129.42,
+          "end": 129.7,
+          "probability": 0.9981675148010254
+        },
+        {
+          "word": " Argentina",
+          "start": 129.7,
+          "end": 130.3,
+          "probability": 0.9923270344734192
+        },
+        {
+          "word": " and",
+          "start": 130.3,
+          "end": 130.7,
+          "probability": 0.9915800094604492
+        },
+        {
+          "word": " Chile",
+          "start": 130.7,
+          "end": 131.08,
+          "probability": 0.9949904084205627
+        },
+        {
+          "word": " in",
+          "start": 131.08,
+          "end": 131.34,
+          "probability": 0.9784793257713318
+        },
+        {
+          "word": " South",
+          "start": 131.34,
+          "end": 131.68,
+          "probability": 0.9949963092803955
+        },
+        {
+          "word": " America,",
+          "start": 131.68,
+          "end": 132.28,
+          "probability": 0.9937653541564941
+        },
+        {
+          "word": " some",
+          "start": 132.74,
+          "end": 133.06,
+          "probability": 0.9701355695724487
+        },
+        {
+          "word": " countries",
+          "start": 133.06,
+          "end": 133.62,
+          "probability": 0.9951878786087036
+        },
+        {
+          "word": " in",
+          "start": 133.62,
+          "end": 134.04,
+          "probability": 0.994934618473053
+        },
+        {
+          "word": " Central",
+          "start": 134.04,
+          "end": 134.46,
+          "probability": 0.897143542766571
+        },
+        {
+          "word": " Asia.",
+          "start": 134.46,
+          "end": 135.08,
+          "probability": 0.9983377456665039
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 11566,
+      "start": 136.62,
+      "end": 142.6,
+      "text": " In the future, the weather in these places will become even hotter and drier.",
+      "tokens": [
+        51410,
+        682,
+        264,
+        2027,
+        11,
+        264,
+        5503,
+        294,
+        613,
+        3190,
+        486,
+        1813,
+        754,
+        32149,
+        293,
+        1630,
+        260,
+        13,
+        51702
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14002513885498047,
+      "compression_ratio": 1.5073891625615763,
+      "no_speech_prob": 0.021598387509584427,
+      "words": [
+        {
+          "word": " In",
+          "start": 136.62,
+          "end": 136.84,
+          "probability": 0.9910303354263306
+        },
+        {
+          "word": " the",
+          "start": 136.84,
+          "end": 137.1,
+          "probability": 0.9965382814407349
+        },
+        {
+          "word": " future,",
+          "start": 137.1,
+          "end": 137.54,
+          "probability": 0.9994311928749084
+        },
+        {
+          "word": " the",
+          "start": 138.0,
+          "end": 138.16,
+          "probability": 0.9981520771980286
+        },
+        {
+          "word": " weather",
+          "start": 138.16,
+          "end": 138.44,
+          "probability": 0.997977077960968
+        },
+        {
+          "word": " in",
+          "start": 138.44,
+          "end": 138.72,
+          "probability": 0.9982445240020752
+        },
+        {
+          "word": " these",
+          "start": 138.72,
+          "end": 138.98,
+          "probability": 0.9953136444091797
+        },
+        {
+          "word": " places",
+          "start": 138.98,
+          "end": 139.4,
+          "probability": 0.9954515099525452
+        },
+        {
+          "word": " will",
+          "start": 139.4,
+          "end": 139.86,
+          "probability": 0.9969563484191895
+        },
+        {
+          "word": " become",
+          "start": 139.86,
+          "end": 140.36,
+          "probability": 0.995112955570221
+        },
+        {
+          "word": " even",
+          "start": 140.36,
+          "end": 140.94,
+          "probability": 0.9960405826568604
+        },
+        {
+          "word": " hotter",
+          "start": 140.94,
+          "end": 141.26,
+          "probability": 0.9972399473190308
+        },
+        {
+          "word": " and",
+          "start": 141.26,
+          "end": 141.96,
+          "probability": 0.9971766471862793
+        },
+        {
+          "word": " drier.",
+          "start": 141.96,
+          "end": 142.6,
+          "probability": 0.9849993586540222
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 14260,
+      "start": 143.44,
+      "end": 148.54,
+      "text": " There will be droughts and people will need to use water very carefully.",
+      "tokens": [
+        50406,
+        821,
+        486,
+        312,
+        22900,
+        82,
+        293,
+        561,
+        486,
+        643,
+        281,
+        764,
+        1281,
+        588,
+        7500,
+        13,
+        50660
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19525341554121536,
+      "compression_ratio": 1.4673913043478262,
+      "no_speech_prob": 0.002378842094913125,
+      "words": [
+        {
+          "word": " There",
+          "start": 143.32,
+          "end": 143.72,
+          "probability": 0.7721157073974609
+        },
+        {
+          "word": " will",
+          "start": 143.72,
+          "end": 144.02,
+          "probability": 0.9951553344726562
+        },
+        {
+          "word": " be",
+          "start": 144.02,
+          "end": 144.26,
+          "probability": 0.997787594795227
+        },
+        {
+          "word": " droughts",
+          "start": 144.26,
+          "end": 145.06,
+          "probability": 0.9901406764984131
+        },
+        {
+          "word": " and",
+          "start": 145.06,
+          "end": 145.3,
+          "probability": 0.8166886568069458
+        },
+        {
+          "word": " people",
+          "start": 145.3,
+          "end": 145.82,
+          "probability": 0.9968055486679077
+        },
+        {
+          "word": " will",
+          "start": 145.82,
+          "end": 146.16,
+          "probability": 0.9915334582328796
+        },
+        {
+          "word": " need",
+          "start": 146.16,
+          "end": 146.4,
+          "probability": 0.9959210157394409
+        },
+        {
+          "word": " to",
+          "start": 146.4,
+          "end": 146.62,
+          "probability": 0.9983919262886047
+        },
+        {
+          "word": " use",
+          "start": 146.62,
+          "end": 146.82,
+          "probability": 0.9961013793945312
+        },
+        {
+          "word": " water",
+          "start": 146.82,
+          "end": 147.3,
+          "probability": 0.9947414398193359
+        },
+        {
+          "word": " very",
+          "start": 147.3,
+          "end": 147.9,
+          "probability": 0.9937739372253418
+        },
+        {
+          "word": " carefully.",
+          "start": 147.9,
+          "end": 148.54,
+          "probability": 0.9942445158958435
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 14260,
+      "start": 149.88,
+      "end": 154.4,
+      "text": " Some areas, like Central Australia, could become so hot",
+      "tokens": [
+        50710,
+        2188,
+        3179,
+        11,
+        411,
+        9701,
+        7060,
+        11,
+        727,
+        1813,
+        370,
+        2368,
+        50952
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19525341554121536,
+      "compression_ratio": 1.4673913043478262,
+      "no_speech_prob": 0.002378842094913125,
+      "words": [
+        {
+          "word": " Some",
+          "start": 149.88,
+          "end": 150.14,
+          "probability": 0.9828108549118042
+        },
+        {
+          "word": " areas,",
+          "start": 150.14,
+          "end": 150.72,
+          "probability": 0.9950600266456604
+        },
+        {
+          "word": " like",
+          "start": 150.94,
+          "end": 151.34,
+          "probability": 0.9922784566879272
+        },
+        {
+          "word": " Central",
+          "start": 151.34,
+          "end": 151.72,
+          "probability": 0.49995166063308716
+        },
+        {
+          "word": " Australia,",
+          "start": 151.72,
+          "end": 152.36,
+          "probability": 0.9961541295051575
+        },
+        {
+          "word": " could",
+          "start": 152.76,
+          "end": 153.02,
+          "probability": 0.9953629970550537
+        },
+        {
+          "word": " become",
+          "start": 153.02,
+          "end": 153.52,
+          "probability": 0.9896490573883057
+        },
+        {
+          "word": " so",
+          "start": 153.52,
+          "end": 154.0,
+          "probability": 0.9913498163223267
+        },
+        {
+          "word": " hot",
+          "start": 154.0,
+          "end": 154.4,
+          "probability": 0.9974402189254761
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 14260,
+      "start": 154.4,
+      "end": 158.22,
+      "text": " that people just won't be able to live there anymore.",
+      "tokens": [
+        50962,
+        300,
+        561,
+        445,
+        1582,
+        380,
+        312,
+        1075,
+        281,
+        1621,
+        456,
+        3602,
+        13,
+        51142
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19525341554121536,
+      "compression_ratio": 1.4673913043478262,
+      "no_speech_prob": 0.002378842094913125,
+      "words": [
+        {
+          "word": " that",
+          "start": 154.4,
+          "end": 154.94,
+          "probability": 0.8847466707229614
+        },
+        {
+          "word": " people",
+          "start": 154.94,
+          "end": 155.34,
+          "probability": 0.9971137046813965
+        },
+        {
+          "word": " just",
+          "start": 155.34,
+          "end": 155.94,
+          "probability": 0.9766340851783752
+        },
+        {
+          "word": " won't",
+          "start": 155.94,
+          "end": 156.18,
+          "probability": 0.9888397753238678
+        },
+        {
+          "word": " be",
+          "start": 156.18,
+          "end": 156.48,
+          "probability": 0.9978445768356323
+        },
+        {
+          "word": " able",
+          "start": 156.48,
+          "end": 156.8,
+          "probability": 0.9990341663360596
+        },
+        {
+          "word": " to",
+          "start": 156.8,
+          "end": 157.12,
+          "probability": 0.9977912902832031
+        },
+        {
+          "word": " live",
+          "start": 157.12,
+          "end": 157.32,
+          "probability": 0.9971365928649902
+        },
+        {
+          "word": " there",
+          "start": 157.32,
+          "end": 157.74,
+          "probability": 0.994865357875824
+        },
+        {
+          "word": " anymore.",
+          "start": 157.74,
+          "end": 158.22,
+          "probability": 0.7696774005889893
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 14260,
+      "start": 159.86,
+      "end": 166.34,
+      "text": " At the other extreme is the polar climate, the areas covering the North and South Pole.",
+      "tokens": [
+        51220,
+        1711,
+        264,
+        661,
+        8084,
+        307,
+        264,
+        12367,
+        5659,
+        11,
+        264,
+        3179,
+        10322,
+        264,
+        4067,
+        293,
+        4242,
+        34212,
+        13,
+        51550
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19525341554121536,
+      "compression_ratio": 1.4673913043478262,
+      "no_speech_prob": 0.002378842094913125,
+      "words": [
+        {
+          "word": " At",
+          "start": 159.86,
+          "end": 160.14,
+          "probability": 0.9470648765563965
+        },
+        {
+          "word": " the",
+          "start": 160.14,
+          "end": 160.44,
+          "probability": 0.9959874749183655
+        },
+        {
+          "word": " other",
+          "start": 160.44,
+          "end": 160.74,
+          "probability": 0.9983978867530823
+        },
+        {
+          "word": " extreme",
+          "start": 160.74,
+          "end": 161.28,
+          "probability": 0.9889103174209595
+        },
+        {
+          "word": " is",
+          "start": 161.28,
+          "end": 161.66,
+          "probability": 0.9794741868972778
+        },
+        {
+          "word": " the",
+          "start": 161.66,
+          "end": 161.86,
+          "probability": 0.9981405735015869
+        },
+        {
+          "word": " polar",
+          "start": 161.86,
+          "end": 162.3,
+          "probability": 0.8496624827384949
+        },
+        {
+          "word": " climate,",
+          "start": 162.3,
+          "end": 162.88,
+          "probability": 0.9987422823905945
+        },
+        {
+          "word": " the",
+          "start": 163.64,
+          "end": 163.74,
+          "probability": 0.9927260875701904
+        },
+        {
+          "word": " areas",
+          "start": 163.74,
+          "end": 164.18,
+          "probability": 0.990205705165863
+        },
+        {
+          "word": " covering",
+          "start": 164.18,
+          "end": 164.66,
+          "probability": 0.9981096982955933
+        },
+        {
+          "word": " the",
+          "start": 164.66,
+          "end": 165.0,
+          "probability": 0.9971850514411926
+        },
+        {
+          "word": " North",
+          "start": 165.0,
+          "end": 165.3,
+          "probability": 0.6925520896911621
+        },
+        {
+          "word": " and",
+          "start": 165.3,
+          "end": 165.54,
+          "probability": 0.9933786392211914
+        },
+        {
+          "word": " South",
+          "start": 165.54,
+          "end": 165.94,
+          "probability": 0.9923585057258606
+        },
+        {
+          "word": " Pole.",
+          "start": 165.94,
+          "end": 166.34,
+          "probability": 0.8565001487731934
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 16634,
+      "start": 167.3,
+      "end": 173.8,
+      "text": " The weather here is very cold, with temperatures never higher than 10 degrees Celsius.",
+      "tokens": [
+        50412,
+        440,
+        5503,
+        510,
+        307,
+        588,
+        3554,
+        11,
+        365,
+        12633,
+        1128,
+        2946,
+        813,
+        1266,
+        5310,
+        22658,
+        13,
+        50744
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23777124799531082,
+      "compression_ratio": 1.516304347826087,
+      "no_speech_prob": 0.07738079875707626,
+      "words": [
+        {
+          "word": " The",
+          "start": 167.12,
+          "end": 167.62,
+          "probability": 0.7393728494644165
+        },
+        {
+          "word": " weather",
+          "start": 167.62,
+          "end": 167.94,
+          "probability": 0.9669897556304932
+        },
+        {
+          "word": " here",
+          "start": 167.94,
+          "end": 168.48,
+          "probability": 0.9903462529182434
+        },
+        {
+          "word": " is",
+          "start": 168.48,
+          "end": 168.78,
+          "probability": 0.9974506497383118
+        },
+        {
+          "word": " very",
+          "start": 168.78,
+          "end": 169.18,
+          "probability": 0.9726258516311646
+        },
+        {
+          "word": " cold,",
+          "start": 169.18,
+          "end": 169.7,
+          "probability": 0.9986743927001953
+        },
+        {
+          "word": " with",
+          "start": 170.2,
+          "end": 170.38,
+          "probability": 0.9928828477859497
+        },
+        {
+          "word": " temperatures",
+          "start": 170.38,
+          "end": 170.92,
+          "probability": 0.9945567846298218
+        },
+        {
+          "word": " never",
+          "start": 170.92,
+          "end": 171.32,
+          "probability": 0.9944722056388855
+        },
+        {
+          "word": " higher",
+          "start": 171.32,
+          "end": 171.82,
+          "probability": 0.9965362548828125
+        },
+        {
+          "word": " than",
+          "start": 171.82,
+          "end": 172.26,
+          "probability": 0.9905411601066589
+        },
+        {
+          "word": " 10",
+          "start": 172.26,
+          "end": 172.64,
+          "probability": 0.9376828074455261
+        },
+        {
+          "word": " degrees",
+          "start": 172.64,
+          "end": 173.16,
+          "probability": 0.7357167601585388
+        },
+        {
+          "word": " Celsius.",
+          "start": 173.16,
+          "end": 173.8,
+          "probability": 0.7871931195259094
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 16634,
+      "start": 175.24,
+      "end": 181.82,
+      "text": " The warmer global temperatures mean that the ice here is melting and sea levels are rising.",
+      "tokens": [
+        50796,
+        440,
+        21599,
+        4338,
+        12633,
+        914,
+        300,
+        264,
+        4435,
+        510,
+        307,
+        20493,
+        293,
+        4158,
+        4358,
+        366,
+        11636,
+        13,
+        51144
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23777124799531082,
+      "compression_ratio": 1.516304347826087,
+      "no_speech_prob": 0.07738079875707626,
+      "words": [
+        {
+          "word": " The",
+          "start": 175.24,
+          "end": 175.54,
+          "probability": 0.9914335012435913
+        },
+        {
+          "word": " warmer",
+          "start": 175.54,
+          "end": 175.86,
+          "probability": 0.9980132579803467
+        },
+        {
+          "word": " global",
+          "start": 175.86,
+          "end": 176.36,
+          "probability": 0.9953943490982056
+        },
+        {
+          "word": " temperatures",
+          "start": 176.36,
+          "end": 177.0,
+          "probability": 0.9972152709960938
+        },
+        {
+          "word": " mean",
+          "start": 177.0,
+          "end": 177.72,
+          "probability": 0.9647694826126099
+        },
+        {
+          "word": " that",
+          "start": 177.72,
+          "end": 177.98,
+          "probability": 0.9929770827293396
+        },
+        {
+          "word": " the",
+          "start": 177.98,
+          "end": 178.22,
+          "probability": 0.995843231678009
+        },
+        {
+          "word": " ice",
+          "start": 178.22,
+          "end": 178.54,
+          "probability": 0.9968748092651367
+        },
+        {
+          "word": " here",
+          "start": 178.54,
+          "end": 178.92,
+          "probability": 0.9945911765098572
+        },
+        {
+          "word": " is",
+          "start": 178.92,
+          "end": 179.18,
+          "probability": 0.9980005621910095
+        },
+        {
+          "word": " melting",
+          "start": 179.18,
+          "end": 179.68,
+          "probability": 0.9973838925361633
+        },
+        {
+          "word": " and",
+          "start": 179.68,
+          "end": 180.32,
+          "probability": 0.8566741347312927
+        },
+        {
+          "word": " sea",
+          "start": 180.32,
+          "end": 180.64,
+          "probability": 0.9962796568870544
+        },
+        {
+          "word": " levels",
+          "start": 180.64,
+          "end": 181.0,
+          "probability": 0.9903776049613953
+        },
+        {
+          "word": " are",
+          "start": 181.0,
+          "end": 181.32,
+          "probability": 0.9976215958595276
+        },
+        {
+          "word": " rising.",
+          "start": 181.32,
+          "end": 181.82,
+          "probability": 0.997208297252655
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 16634,
+      "start": 183.28,
+      "end": 191.16,
+      "text": " Scientists believe that Arctic and Antarctic wildlife are in danger due to the changing environment.",
+      "tokens": [
+        51196,
+        32958,
+        1697,
+        300,
+        27241,
+        293,
+        30536,
+        15518,
+        19199,
+        366,
+        294,
+        4330,
+        3462,
+        281,
+        264,
+        4473,
+        2823,
+        13,
+        51612
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23777124799531082,
+      "compression_ratio": 1.516304347826087,
+      "no_speech_prob": 0.07738079875707626,
+      "words": [
+        {
+          "word": " Scientists",
+          "start": 183.28,
+          "end": 183.74,
+          "probability": 0.9881138205528259
+        },
+        {
+          "word": " believe",
+          "start": 183.74,
+          "end": 184.52,
+          "probability": 0.9988681077957153
+        },
+        {
+          "word": " that",
+          "start": 184.52,
+          "end": 184.98,
+          "probability": 0.991828203201294
+        },
+        {
+          "word": " Arctic",
+          "start": 184.98,
+          "end": 185.52,
+          "probability": 0.8746732473373413
+        },
+        {
+          "word": " and",
+          "start": 185.52,
+          "end": 186.22,
+          "probability": 0.9882606267929077
+        },
+        {
+          "word": " Antarctic",
+          "start": 186.22,
+          "end": 187.02,
+          "probability": 0.9958141446113586
+        },
+        {
+          "word": " wildlife",
+          "start": 187.02,
+          "end": 187.66,
+          "probability": 0.9866003394126892
+        },
+        {
+          "word": " are",
+          "start": 187.66,
+          "end": 188.12,
+          "probability": 0.9968572854995728
+        },
+        {
+          "word": " in",
+          "start": 188.12,
+          "end": 188.36,
+          "probability": 0.9983854293823242
+        },
+        {
+          "word": " danger",
+          "start": 188.36,
+          "end": 188.98,
+          "probability": 0.9993991851806641
+        },
+        {
+          "word": " due",
+          "start": 188.98,
+          "end": 189.6,
+          "probability": 0.8017550110816956
+        },
+        {
+          "word": " to",
+          "start": 189.6,
+          "end": 189.82,
+          "probability": 0.9976093769073486
+        },
+        {
+          "word": " the",
+          "start": 189.82,
+          "end": 190.02,
+          "probability": 0.9961736798286438
+        },
+        {
+          "word": " changing",
+          "start": 190.02,
+          "end": 190.34,
+          "probability": 0.9971670508384705
+        },
+        {
+          "word": " environment.",
+          "start": 190.34,
+          "end": 191.16,
+          "probability": 0.9964711666107178
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 19116,
+      "start": 192.38,
+      "end": 197.68,
+      "text": " The final two categories we are going to talk about are the temperate climate,",
+      "tokens": [
+        50414,
+        440,
+        2572,
+        732,
+        10479,
+        321,
+        366,
+        516,
+        281,
+        751,
+        466,
+        366,
+        264,
+        3393,
+        473,
+        5659,
+        11,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26218382517496747,
+      "compression_ratio": 1.523076923076923,
+      "no_speech_prob": 0.02728017047047615,
+      "words": [
+        {
+          "word": " The",
+          "start": 192.38,
+          "end": 193.22,
+          "probability": 0.8483148217201233
+        },
+        {
+          "word": " final",
+          "start": 193.22,
+          "end": 193.66,
+          "probability": 0.9897639751434326
+        },
+        {
+          "word": " two",
+          "start": 193.66,
+          "end": 194.0,
+          "probability": 0.9560624957084656
+        },
+        {
+          "word": " categories",
+          "start": 194.0,
+          "end": 194.48,
+          "probability": 0.996076762676239
+        },
+        {
+          "word": " we",
+          "start": 194.48,
+          "end": 194.72,
+          "probability": 0.9811617136001587
+        },
+        {
+          "word": " are",
+          "start": 194.72,
+          "end": 194.92,
+          "probability": 0.977235734462738
+        },
+        {
+          "word": " going",
+          "start": 194.92,
+          "end": 195.1,
+          "probability": 0.998380184173584
+        },
+        {
+          "word": " to",
+          "start": 195.1,
+          "end": 195.36,
+          "probability": 0.9975016713142395
+        },
+        {
+          "word": " talk",
+          "start": 195.36,
+          "end": 195.54,
+          "probability": 0.996383786201477
+        },
+        {
+          "word": " about",
+          "start": 195.54,
+          "end": 195.92,
+          "probability": 0.9986097812652588
+        },
+        {
+          "word": " are",
+          "start": 195.92,
+          "end": 196.38,
+          "probability": 0.9771528244018555
+        },
+        {
+          "word": " the",
+          "start": 196.38,
+          "end": 196.62,
+          "probability": 0.9791964888572693
+        },
+        {
+          "word": " temperate",
+          "start": 196.62,
+          "end": 197.22,
+          "probability": 0.9120637476444244
+        },
+        {
+          "word": " climate,",
+          "start": 197.22,
+          "end": 197.68,
+          "probability": 0.9903682470321655
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 19116,
+      "start": 198.26,
+      "end": 202.28,
+      "text": " which has warm, humid summers and mild winters.",
+      "tokens": [
+        50664,
+        597,
+        575,
+        4561,
+        11,
+        34649,
+        46474,
+        293,
+        15154,
+        1942,
+        1559,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26218382517496747,
+      "compression_ratio": 1.523076923076923,
+      "no_speech_prob": 0.02728017047047615,
+      "words": [
+        {
+          "word": " which",
+          "start": 198.26,
+          "end": 198.52,
+          "probability": 0.9956014156341553
+        },
+        {
+          "word": " has",
+          "start": 198.52,
+          "end": 198.9,
+          "probability": 0.9857497215270996
+        },
+        {
+          "word": " warm,",
+          "start": 198.9,
+          "end": 199.34,
+          "probability": 0.9965830445289612
+        },
+        {
+          "word": " humid",
+          "start": 199.64,
+          "end": 199.94,
+          "probability": 0.9970561265945435
+        },
+        {
+          "word": " summers",
+          "start": 199.94,
+          "end": 200.32,
+          "probability": 0.9918655753135681
+        },
+        {
+          "word": " and",
+          "start": 200.32,
+          "end": 201.02,
+          "probability": 0.8461583256721497
+        },
+        {
+          "word": " mild",
+          "start": 201.02,
+          "end": 201.44,
+          "probability": 0.9991167187690735
+        },
+        {
+          "word": " winters.",
+          "start": 201.44,
+          "end": 202.28,
+          "probability": 0.9980404078960419
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 19116,
+      "start": 203.16,
+      "end": 208.16,
+      "text": " The continental climate has warm to cool summers and very cold winters.",
+      "tokens": [
+        50914,
+        440,
+        42479,
+        5659,
+        575,
+        4561,
+        281,
+        1627,
+        46474,
+        293,
+        588,
+        3554,
+        1942,
+        1559,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26218382517496747,
+      "compression_ratio": 1.523076923076923,
+      "no_speech_prob": 0.02728017047047615,
+      "words": [
+        {
+          "word": " The",
+          "start": 203.16,
+          "end": 203.42,
+          "probability": 0.9817849397659302
+        },
+        {
+          "word": " continental",
+          "start": 203.42,
+          "end": 203.92,
+          "probability": 0.9902937412261963
+        },
+        {
+          "word": " climate",
+          "start": 203.92,
+          "end": 204.46,
+          "probability": 0.994251012802124
+        },
+        {
+          "word": " has",
+          "start": 204.46,
+          "end": 204.96,
+          "probability": 0.9940418601036072
+        },
+        {
+          "word": " warm",
+          "start": 204.96,
+          "end": 205.38,
+          "probability": 0.9970398545265198
+        },
+        {
+          "word": " to",
+          "start": 205.38,
+          "end": 205.72,
+          "probability": 0.8484748601913452
+        },
+        {
+          "word": " cool",
+          "start": 205.72,
+          "end": 206.08,
+          "probability": 0.9925548434257507
+        },
+        {
+          "word": " summers",
+          "start": 206.08,
+          "end": 206.44,
+          "probability": 0.9955580830574036
+        },
+        {
+          "word": " and",
+          "start": 206.44,
+          "end": 207.28,
+          "probability": 0.8517778515815735
+        },
+        {
+          "word": " very",
+          "start": 207.28,
+          "end": 207.74,
+          "probability": 0.995779275894165
+        },
+        {
+          "word": " cold",
+          "start": 207.74,
+          "end": 208.12,
+          "probability": 0.9971344470977783
+        },
+        {
+          "word": " winters.",
+          "start": 208.12,
+          "end": 208.54,
+          "probability": 0.9986048340797424
+        }
+      ]
+    }
+  ]
+}

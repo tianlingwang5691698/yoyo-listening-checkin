@@ -1,0 +1,810 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Mid-course test, track two. So, I think everybody here knows what a drone is. Two. As you know, we are cutting down trees in rainforests all over the world. Three. In my opinion, one of the best ways that we use drones is for going into dangerous places. I tested more expensive ones and I personally feel that our drone is just as good. Five. The problem with this kind of drone is that it uses batteries and obviously you have to charge them after flying.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Mid-course test, track two.",
+      "tokens": [
+        50364,
+        7033,
+        12,
+        31913,
+        1500,
+        11,
+        2837,
+        732,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46559166489985954,
+      "compression_ratio": 1.2727272727272727,
+      "no_speech_prob": 0.38910502195358276,
+      "words": [
+        {
+          "word": " Mid",
+          "start": 0.0,
+          "end": 0.68,
+          "probability": 0.3368193805217743
+        },
+        {
+          "word": "-course",
+          "start": 0.68,
+          "end": 1.0,
+          "probability": 0.7376856654882431
+        },
+        {
+          "word": " test,",
+          "start": 1.0,
+          "end": 1.64,
+          "probability": 0.9692746996879578
+        },
+        {
+          "word": " track",
+          "start": 2.1,
+          "end": 2.32,
+          "probability": 0.7759514451026917
+        },
+        {
+          "word": " two.",
+          "start": 2.32,
+          "end": 3.0,
+          "probability": 0.5569743514060974
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.78,
+      "end": 5.78,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.46559166489985954,
+      "compression_ratio": 1.2727272727272727,
+      "no_speech_prob": 0.38910502195358276,
+      "words": []
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 7.86,
+      "end": 11.7,
+      "text": " So, I think everybody here knows what a drone is.",
+      "tokens": [
+        50729,
+        407,
+        11,
+        286,
+        519,
+        2201,
+        510,
+        3255,
+        437,
+        257,
+        13852,
+        307,
+        13,
+        50946
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46559166489985954,
+      "compression_ratio": 1.2727272727272727,
+      "no_speech_prob": 0.38910502195358276,
+      "words": [
+        {
+          "word": " So,",
+          "start": 7.86,
+          "end": 8.0,
+          "probability": 0.8287915587425232
+        },
+        {
+          "word": " I",
+          "start": 8.28,
+          "end": 8.46,
+          "probability": 0.9941459894180298
+        },
+        {
+          "word": " think",
+          "start": 8.46,
+          "end": 8.76,
+          "probability": 0.999001681804657
+        },
+        {
+          "word": " everybody",
+          "start": 8.76,
+          "end": 9.38,
+          "probability": 0.9849377274513245
+        },
+        {
+          "word": " here",
+          "start": 9.38,
+          "end": 9.74,
+          "probability": 0.995215654373169
+        },
+        {
+          "word": " knows",
+          "start": 9.74,
+          "end": 10.12,
+          "probability": 0.9915888905525208
+        },
+        {
+          "word": " what",
+          "start": 10.12,
+          "end": 10.52,
+          "probability": 0.9948280453681946
+        },
+        {
+          "word": " a",
+          "start": 10.52,
+          "end": 10.7,
+          "probability": 0.9978076815605164
+        },
+        {
+          "word": " drone",
+          "start": 10.7,
+          "end": 10.92,
+          "probability": 0.9879871010780334
+        },
+        {
+          "word": " is.",
+          "start": 10.92,
+          "end": 11.7,
+          "probability": 0.9992971420288086
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 13.5,
+      "end": 14.08,
+      "text": " Two.",
+      "tokens": [
+        51025,
+        4453,
+        13,
+        51075
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46559166489985954,
+      "compression_ratio": 1.2727272727272727,
+      "no_speech_prob": 0.38910502195358276,
+      "words": [
+        {
+          "word": " Two.",
+          "start": 13.5,
+          "end": 14.08,
+          "probability": 0.9965554475784302
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 16.16,
+      "end": 21.5,
+      "text": " As you know, we are cutting down trees in rainforests all over the world.",
+      "tokens": [
+        51154,
+        1018,
+        291,
+        458,
+        11,
+        321,
+        366,
+        6492,
+        760,
+        5852,
+        294,
+        48531,
+        82,
+        439,
+        670,
+        264,
+        1002,
+        13,
+        51444
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46559166489985954,
+      "compression_ratio": 1.2727272727272727,
+      "no_speech_prob": 0.38910502195358276,
+      "words": [
+        {
+          "word": " As",
+          "start": 16.16,
+          "end": 16.44,
+          "probability": 0.9958242177963257
+        },
+        {
+          "word": " you",
+          "start": 16.44,
+          "end": 16.64,
+          "probability": 0.9994778037071228
+        },
+        {
+          "word": " know,",
+          "start": 16.64,
+          "end": 16.94,
+          "probability": 0.9989355206489563
+        },
+        {
+          "word": " we",
+          "start": 17.12,
+          "end": 17.28,
+          "probability": 0.994619607925415
+        },
+        {
+          "word": " are",
+          "start": 17.28,
+          "end": 17.48,
+          "probability": 0.9827862977981567
+        },
+        {
+          "word": " cutting",
+          "start": 17.48,
+          "end": 17.82,
+          "probability": 0.9989105463027954
+        },
+        {
+          "word": " down",
+          "start": 17.82,
+          "end": 18.24,
+          "probability": 0.9977403879165649
+        },
+        {
+          "word": " trees",
+          "start": 18.24,
+          "end": 18.68,
+          "probability": 0.9954558610916138
+        },
+        {
+          "word": " in",
+          "start": 18.68,
+          "end": 19.02,
+          "probability": 0.9953246116638184
+        },
+        {
+          "word": " rainforests",
+          "start": 19.02,
+          "end": 20.0,
+          "probability": 0.952619880437851
+        },
+        {
+          "word": " all",
+          "start": 20.0,
+          "end": 20.32,
+          "probability": 0.9923006296157837
+        },
+        {
+          "word": " over",
+          "start": 20.32,
+          "end": 20.74,
+          "probability": 0.9989088773727417
+        },
+        {
+          "word": " the",
+          "start": 20.74,
+          "end": 20.96,
+          "probability": 0.9995613694190979
+        },
+        {
+          "word": " world.",
+          "start": 20.96,
+          "end": 21.5,
+          "probability": 0.9947350025177002
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 23.46,
+      "end": 24.12,
+      "text": " Three.",
+      "tokens": [
+        51527,
+        6244,
+        13,
+        51577
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46559166489985954,
+      "compression_ratio": 1.2727272727272727,
+      "no_speech_prob": 0.38910502195358276,
+      "words": [
+        {
+          "word": " Three.",
+          "start": 23.46,
+          "end": 24.12,
+          "probability": 0.9982696771621704
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2412,
+      "start": 25.68,
+      "end": 32.78,
+      "text": " In my opinion, one of the best ways that we use drones is for going into dangerous places.",
+      "tokens": [
+        50414,
+        682,
+        452,
+        4800,
+        11,
+        472,
+        295,
+        264,
+        1151,
+        2098,
+        300,
+        321,
+        764,
+        23823,
+        307,
+        337,
+        516,
+        666,
+        5795,
+        3190,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21131515502929688,
+      "compression_ratio": 1.3805970149253732,
+      "no_speech_prob": 0.005690534599125385,
+      "words": [
+        {
+          "word": " In",
+          "start": 25.68,
+          "end": 26.4,
+          "probability": 0.5203660130500793
+        },
+        {
+          "word": " my",
+          "start": 26.4,
+          "end": 26.74,
+          "probability": 0.9973856806755066
+        },
+        {
+          "word": " opinion,",
+          "start": 26.74,
+          "end": 27.32,
+          "probability": 0.9972406625747681
+        },
+        {
+          "word": " one",
+          "start": 27.64,
+          "end": 27.86,
+          "probability": 0.9882856607437134
+        },
+        {
+          "word": " of",
+          "start": 27.86,
+          "end": 28.0,
+          "probability": 0.9974063038825989
+        },
+        {
+          "word": " the",
+          "start": 28.0,
+          "end": 28.22,
+          "probability": 0.9982157945632935
+        },
+        {
+          "word": " best",
+          "start": 28.22,
+          "end": 28.54,
+          "probability": 0.9928674697875977
+        },
+        {
+          "word": " ways",
+          "start": 28.54,
+          "end": 28.9,
+          "probability": 0.9873197078704834
+        },
+        {
+          "word": " that",
+          "start": 28.9,
+          "end": 29.14,
+          "probability": 0.9641076326370239
+        },
+        {
+          "word": " we",
+          "start": 29.14,
+          "end": 29.36,
+          "probability": 0.9984868764877319
+        },
+        {
+          "word": " use",
+          "start": 29.36,
+          "end": 29.56,
+          "probability": 0.99430251121521
+        },
+        {
+          "word": " drones",
+          "start": 29.56,
+          "end": 29.96,
+          "probability": 0.9935011267662048
+        },
+        {
+          "word": " is",
+          "start": 29.96,
+          "end": 30.42,
+          "probability": 0.9404752850532532
+        },
+        {
+          "word": " for",
+          "start": 30.42,
+          "end": 30.68,
+          "probability": 0.9771400690078735
+        },
+        {
+          "word": " going",
+          "start": 30.68,
+          "end": 30.92,
+          "probability": 0.9979521632194519
+        },
+        {
+          "word": " into",
+          "start": 30.92,
+          "end": 31.32,
+          "probability": 0.9256026148796082
+        },
+        {
+          "word": " dangerous",
+          "start": 31.32,
+          "end": 31.8,
+          "probability": 0.9963333606719971
+        },
+        {
+          "word": " places.",
+          "start": 31.8,
+          "end": 32.78,
+          "probability": 0.9972051978111267
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2412,
+      "start": 35.54,
+      "end": 35.54,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.21131515502929688,
+      "compression_ratio": 1.3805970149253732,
+      "no_speech_prob": 0.005690534599125385,
+      "words": []
+    },
+    {
+      "id": 8,
+      "seek": 2412,
+      "start": 37.4,
+      "end": 43.2,
+      "text": " I tested more expensive ones and I personally feel that our drone is just as good.",
+      "tokens": [
+        51014,
+        286,
+        8246,
+        544,
+        5124,
+        2306,
+        293,
+        286,
+        5665,
+        841,
+        300,
+        527,
+        13852,
+        307,
+        445,
+        382,
+        665,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21131515502929688,
+      "compression_ratio": 1.3805970149253732,
+      "no_speech_prob": 0.005690534599125385,
+      "words": [
+        {
+          "word": " I",
+          "start": 37.4,
+          "end": 37.4,
+          "probability": 0.5946328639984131
+        },
+        {
+          "word": " tested",
+          "start": 37.4,
+          "end": 37.9,
+          "probability": 0.9802897572517395
+        },
+        {
+          "word": " more",
+          "start": 37.9,
+          "end": 38.22,
+          "probability": 0.9958016276359558
+        },
+        {
+          "word": " expensive",
+          "start": 38.22,
+          "end": 38.8,
+          "probability": 0.9987506866455078
+        },
+        {
+          "word": " ones",
+          "start": 38.8,
+          "end": 39.14,
+          "probability": 0.9690965414047241
+        },
+        {
+          "word": " and",
+          "start": 39.14,
+          "end": 39.68,
+          "probability": 0.7045774459838867
+        },
+        {
+          "word": " I",
+          "start": 39.68,
+          "end": 40.08,
+          "probability": 0.9878623485565186
+        },
+        {
+          "word": " personally",
+          "start": 40.08,
+          "end": 40.58,
+          "probability": 0.9941444993019104
+        },
+        {
+          "word": " feel",
+          "start": 40.58,
+          "end": 41.0,
+          "probability": 0.9963780045509338
+        },
+        {
+          "word": " that",
+          "start": 41.0,
+          "end": 41.3,
+          "probability": 0.9936798810958862
+        },
+        {
+          "word": " our",
+          "start": 41.3,
+          "end": 41.58,
+          "probability": 0.9962865114212036
+        },
+        {
+          "word": " drone",
+          "start": 41.58,
+          "end": 41.82,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " is",
+          "start": 41.82,
+          "end": 42.16,
+          "probability": 0.9984071850776672
+        },
+        {
+          "word": " just",
+          "start": 42.16,
+          "end": 42.5,
+          "probability": 0.9892721176147461
+        },
+        {
+          "word": " as",
+          "start": 42.5,
+          "end": 42.76,
+          "probability": 0.9989560842514038
+        },
+        {
+          "word": " good.",
+          "start": 42.76,
+          "end": 43.2,
+          "probability": 0.9991363883018494
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2412,
+      "start": 45.2,
+      "end": 45.92,
+      "text": " Five.",
+      "tokens": [
+        51414,
+        9436,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21131515502929688,
+      "compression_ratio": 1.3805970149253732,
+      "no_speech_prob": 0.005690534599125385,
+      "words": [
+        {
+          "word": " Five.",
+          "start": 45.2,
+          "end": 45.92,
+          "probability": 0.9933261871337891
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 4592,
+      "start": 47.440000000000005,
+      "end": 54.78,
+      "text": " The problem with this kind of drone is that it uses batteries and obviously you have to charge them after flying.",
+      "tokens": [
+        50414,
+        440,
+        1154,
+        365,
+        341,
+        733,
+        295,
+        13852,
+        307,
+        300,
+        309,
+        4960,
+        13070,
+        293,
+        2745,
+        291,
+        362,
+        281,
+        4602,
+        552,
+        934,
+        7137,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08080501556396484,
+      "compression_ratio": 1.202127659574468,
+      "no_speech_prob": 0.017141273245215416,
+      "words": [
+        {
+          "word": " The",
+          "start": 47.440000000000005,
+          "end": 48.06,
+          "probability": 0.9354042410850525
+        },
+        {
+          "word": " problem",
+          "start": 48.06,
+          "end": 48.58,
+          "probability": 0.9966320395469666
+        },
+        {
+          "word": " with",
+          "start": 48.58,
+          "end": 48.82,
+          "probability": 0.9964019060134888
+        },
+        {
+          "word": " this",
+          "start": 48.82,
+          "end": 49.12,
+          "probability": 0.9967350363731384
+        },
+        {
+          "word": " kind",
+          "start": 49.12,
+          "end": 49.38,
+          "probability": 0.99512779712677
+        },
+        {
+          "word": " of",
+          "start": 49.38,
+          "end": 49.56,
+          "probability": 0.9982820749282837
+        },
+        {
+          "word": " drone",
+          "start": 49.56,
+          "end": 49.84,
+          "probability": 0.99430251121521
+        },
+        {
+          "word": " is",
+          "start": 49.84,
+          "end": 50.16,
+          "probability": 0.9881749153137207
+        },
+        {
+          "word": " that",
+          "start": 50.16,
+          "end": 50.38,
+          "probability": 0.9960023760795593
+        },
+        {
+          "word": " it",
+          "start": 50.38,
+          "end": 50.58,
+          "probability": 0.9902655482292175
+        },
+        {
+          "word": " uses",
+          "start": 50.58,
+          "end": 50.88,
+          "probability": 0.9954456090927124
+        },
+        {
+          "word": " batteries",
+          "start": 50.88,
+          "end": 51.4,
+          "probability": 0.9948517680168152
+        },
+        {
+          "word": " and",
+          "start": 51.4,
+          "end": 52.18,
+          "probability": 0.572205126285553
+        },
+        {
+          "word": " obviously",
+          "start": 52.18,
+          "end": 52.66,
+          "probability": 0.9591230154037476
+        },
+        {
+          "word": " you",
+          "start": 52.66,
+          "end": 52.98,
+          "probability": 0.9527368545532227
+        },
+        {
+          "word": " have",
+          "start": 52.98,
+          "end": 53.18,
+          "probability": 0.9950839877128601
+        },
+        {
+          "word": " to",
+          "start": 53.18,
+          "end": 53.4,
+          "probability": 0.9975104331970215
+        },
+        {
+          "word": " charge",
+          "start": 53.4,
+          "end": 53.76,
+          "probability": 0.9950526356697083
+        },
+        {
+          "word": " them",
+          "start": 53.76,
+          "end": 54.04,
+          "probability": 0.9967681169509888
+        },
+        {
+          "word": " after",
+          "start": 54.04,
+          "end": 54.38,
+          "probability": 0.9937869310379028
+        },
+        {
+          "word": " flying.",
+          "start": 54.38,
+          "end": 54.78,
+          "probability": 0.9977351427078247
+        }
+      ]
+    }
+  ]
+}

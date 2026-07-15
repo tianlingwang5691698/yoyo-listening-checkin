@@ -1,0 +1,3246 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 2.1 Today, Yuyan and Liang are going to talk to us about traditional festivals in China. And there are a lot of them. Isn't that right, Yuyan? Yes, because Chinese culture is a very ancient culture. We have a long history and a lot of festivals. Some are thousands of years old. There are two types of festival – local ones, which people celebrate in certain areas of the country, and national festivals, which everyone celebrates. We're going to talk about the big national festivals. And Liang's going to begin with the Spring Festival. Yes, the Spring Festival is the biggest holiday in China. Everyone takes at least a week's holiday from work, and we all go home to our families. The festival celebrates the Chinese New Year, and it takes place at the end of January. The traditional festival lasted a month. Now, most people only celebrate Chinese New Year's Day itself and the day before it. On the day before, we clean everything in our houses, and we decorate everything with the colour red, a lucky colour in China. We prepare special dishes for the evening when people celebrate by eating a big dinner with their family and giving each other gifts. Children get new clothes and gifts of money in red envelopes. There are lots of fireworks to welcome the New Year. On New Year's Day, people go out in the streets to meet their friends, and there are parades with traditional entertainment, such as lion dancing, with people dressed up in amazing traditional lion costumes. The next festival we are going to talk about is the Mid-Autumn Festival. This takes place near the beginning of October, and it celebrates the moon. It's another festival where families usually get together. The special dish for the festival is mooncakes, which people give each other as gifts. Making mooncakes is very important, and every family has their own way to do it. Families usually celebrate the Mid-Autumn Festival with a big dinner. One favourite activity is going outside to look at the moon. Parents tell their children traditional stories about it. In some parts of China, parents try to find wives and husbands for their sons and daughters.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.3,
+      "text": " Track 2.1",
+      "tokens": [
+        50364,
+        31903,
+        568,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3225862714979384,
+      "compression_ratio": 1.471502590673575,
+      "no_speech_prob": 0.29874974489212036,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.6,
+          "probability": 0.7628166675567627
+        },
+        {
+          "word": " 2",
+          "start": 0.6,
+          "end": 1.06,
+          "probability": 0.9621384739875793
+        },
+        {
+          "word": ".1",
+          "start": 1.06,
+          "end": 2.3,
+          "probability": 0.9958591759204865
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.7800000000000002,
+      "end": 11.12,
+      "text": " Today, Yuyan and Liang are going to talk to us about traditional festivals in China.",
+      "tokens": [
+        50558,
+        2692,
+        11,
+        10767,
+        6277,
+        293,
+        35842,
+        366,
+        516,
+        281,
+        751,
+        281,
+        505,
+        466,
+        5164,
+        28040,
+        294,
+        3533,
+        13,
+        50924
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3225862714979384,
+      "compression_ratio": 1.471502590673575,
+      "no_speech_prob": 0.29874974489212036,
+      "words": [
+        {
+          "word": " Today,",
+          "start": 3.7800000000000002,
+          "end": 4.62,
+          "probability": 0.25320878624916077
+        },
+        {
+          "word": " Yuyan",
+          "start": 5.08,
+          "end": 5.52,
+          "probability": 0.5504032969474792
+        },
+        {
+          "word": " and",
+          "start": 5.52,
+          "end": 6.0,
+          "probability": 0.9893855452537537
+        },
+        {
+          "word": " Liang",
+          "start": 6.0,
+          "end": 6.42,
+          "probability": 0.9492377042770386
+        },
+        {
+          "word": " are",
+          "start": 6.42,
+          "end": 7.0,
+          "probability": 0.9667096138000488
+        },
+        {
+          "word": " going",
+          "start": 7.0,
+          "end": 7.38,
+          "probability": 0.9982566237449646
+        },
+        {
+          "word": " to",
+          "start": 7.38,
+          "end": 7.62,
+          "probability": 0.9969527721405029
+        },
+        {
+          "word": " talk",
+          "start": 7.62,
+          "end": 7.9,
+          "probability": 0.9978809952735901
+        },
+        {
+          "word": " to",
+          "start": 7.9,
+          "end": 8.08,
+          "probability": 0.9832316637039185
+        },
+        {
+          "word": " us",
+          "start": 8.08,
+          "end": 8.42,
+          "probability": 0.9982411861419678
+        },
+        {
+          "word": " about",
+          "start": 8.42,
+          "end": 8.82,
+          "probability": 0.9862543344497681
+        },
+        {
+          "word": " traditional",
+          "start": 8.82,
+          "end": 9.52,
+          "probability": 0.959517776966095
+        },
+        {
+          "word": " festivals",
+          "start": 9.52,
+          "end": 10.22,
+          "probability": 0.9985307455062866
+        },
+        {
+          "word": " in",
+          "start": 10.22,
+          "end": 10.64,
+          "probability": 0.9978634715080261
+        },
+        {
+          "word": " China.",
+          "start": 10.64,
+          "end": 11.12,
+          "probability": 0.9991497993469238
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 11.84,
+      "end": 15.34,
+      "text": " And there are a lot of them. Isn't that right, Yuyan?",
+      "tokens": [
+        50956,
+        400,
+        456,
+        366,
+        257,
+        688,
+        295,
+        552,
+        13,
+        6998,
+        380,
+        300,
+        558,
+        11,
+        10767,
+        6277,
+        30,
+        51136
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3225862714979384,
+      "compression_ratio": 1.471502590673575,
+      "no_speech_prob": 0.29874974489212036,
+      "words": [
+        {
+          "word": " And",
+          "start": 11.84,
+          "end": 12.16,
+          "probability": 0.9745970368385315
+        },
+        {
+          "word": " there",
+          "start": 12.16,
+          "end": 12.36,
+          "probability": 0.9881083369255066
+        },
+        {
+          "word": " are",
+          "start": 12.36,
+          "end": 12.64,
+          "probability": 0.994098424911499
+        },
+        {
+          "word": " a",
+          "start": 12.64,
+          "end": 12.78,
+          "probability": 0.9845615029335022
+        },
+        {
+          "word": " lot",
+          "start": 12.78,
+          "end": 12.96,
+          "probability": 0.9942268133163452
+        },
+        {
+          "word": " of",
+          "start": 12.96,
+          "end": 13.22,
+          "probability": 0.998803973197937
+        },
+        {
+          "word": " them.",
+          "start": 13.22,
+          "end": 13.46,
+          "probability": 0.9984784722328186
+        },
+        {
+          "word": " Isn't",
+          "start": 13.82,
+          "end": 14.06,
+          "probability": 0.993596762418747
+        },
+        {
+          "word": " that",
+          "start": 14.06,
+          "end": 14.38,
+          "probability": 0.9965348243713379
+        },
+        {
+          "word": " right,",
+          "start": 14.38,
+          "end": 14.78,
+          "probability": 0.9989708662033081
+        },
+        {
+          "word": " Yuyan?",
+          "start": 14.92,
+          "end": 15.34,
+          "probability": 0.9956987500190735
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 15.92,
+      "end": 20.66,
+      "text": " Yes, because Chinese culture is a very ancient culture.",
+      "tokens": [
+        51152,
+        1079,
+        11,
+        570,
+        4649,
+        3713,
+        307,
+        257,
+        588,
+        7832,
+        3713,
+        13,
+        51400
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3225862714979384,
+      "compression_ratio": 1.471502590673575,
+      "no_speech_prob": 0.29874974489212036,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 15.92,
+          "end": 16.44,
+          "probability": 0.981905460357666
+        },
+        {
+          "word": " because",
+          "start": 16.84,
+          "end": 17.34,
+          "probability": 0.9963576197624207
+        },
+        {
+          "word": " Chinese",
+          "start": 17.34,
+          "end": 17.88,
+          "probability": 0.9945505261421204
+        },
+        {
+          "word": " culture",
+          "start": 17.88,
+          "end": 18.42,
+          "probability": 0.9982360601425171
+        },
+        {
+          "word": " is",
+          "start": 18.42,
+          "end": 18.88,
+          "probability": 0.9981028437614441
+        },
+        {
+          "word": " a",
+          "start": 18.88,
+          "end": 18.9,
+          "probability": 0.991772472858429
+        },
+        {
+          "word": " very",
+          "start": 18.9,
+          "end": 19.48,
+          "probability": 0.9983363747596741
+        },
+        {
+          "word": " ancient",
+          "start": 19.48,
+          "end": 20.02,
+          "probability": 0.9957341551780701
+        },
+        {
+          "word": " culture.",
+          "start": 20.02,
+          "end": 20.66,
+          "probability": 0.9992831349372864
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 21.26,
+      "end": 24.8,
+      "text": " We have a long history and a lot of festivals.",
+      "tokens": [
+        51416,
+        492,
+        362,
+        257,
+        938,
+        2503,
+        293,
+        257,
+        688,
+        295,
+        28040,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3225862714979384,
+      "compression_ratio": 1.471502590673575,
+      "no_speech_prob": 0.29874974489212036,
+      "words": [
+        {
+          "word": " We",
+          "start": 21.26,
+          "end": 21.38,
+          "probability": 0.9960499405860901
+        },
+        {
+          "word": " have",
+          "start": 21.38,
+          "end": 21.68,
+          "probability": 0.9989493489265442
+        },
+        {
+          "word": " a",
+          "start": 21.68,
+          "end": 21.92,
+          "probability": 0.9961497783660889
+        },
+        {
+          "word": " long",
+          "start": 21.92,
+          "end": 22.18,
+          "probability": 0.998211145401001
+        },
+        {
+          "word": " history",
+          "start": 22.18,
+          "end": 22.82,
+          "probability": 0.9993374943733215
+        },
+        {
+          "word": " and",
+          "start": 22.82,
+          "end": 23.26,
+          "probability": 0.9336239099502563
+        },
+        {
+          "word": " a",
+          "start": 23.26,
+          "end": 23.52,
+          "probability": 0.9893336892127991
+        },
+        {
+          "word": " lot",
+          "start": 23.52,
+          "end": 23.84,
+          "probability": 0.9919969439506531
+        },
+        {
+          "word": " of",
+          "start": 23.84,
+          "end": 24.28,
+          "probability": 0.998552143573761
+        },
+        {
+          "word": " festivals.",
+          "start": 24.28,
+          "end": 24.8,
+          "probability": 0.9989751577377319
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 25.96,
+      "end": 28.4,
+      "text": " Some are thousands of years old.",
+      "tokens": [
+        51658,
+        2188,
+        366,
+        5383,
+        295,
+        924,
+        1331,
+        13,
+        51786
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3225862714979384,
+      "compression_ratio": 1.471502590673575,
+      "no_speech_prob": 0.29874974489212036,
+      "words": [
+        {
+          "word": " Some",
+          "start": 25.96,
+          "end": 26.5,
+          "probability": 0.9957574009895325
+        },
+        {
+          "word": " are",
+          "start": 26.5,
+          "end": 26.88,
+          "probability": 0.9960197806358337
+        },
+        {
+          "word": " thousands",
+          "start": 26.88,
+          "end": 27.4,
+          "probability": 0.9873281121253967
+        },
+        {
+          "word": " of",
+          "start": 27.4,
+          "end": 27.74,
+          "probability": 0.9985679388046265
+        },
+        {
+          "word": " years",
+          "start": 27.74,
+          "end": 28.02,
+          "probability": 0.9976747632026672
+        },
+        {
+          "word": " old.",
+          "start": 28.02,
+          "end": 28.4,
+          "probability": 0.9966753721237183
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2840,
+      "start": 29.04,
+      "end": 35.76,
+      "text": " There are two types of festival – local ones, which people celebrate in certain areas of the country,",
+      "tokens": [
+        50396,
+        821,
+        366,
+        732,
+        3467,
+        295,
+        12091,
+        1662,
+        2654,
+        2306,
+        11,
+        597,
+        561,
+        8098,
+        294,
+        1629,
+        3179,
+        295,
+        264,
+        1941,
+        11,
+        50736
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26664262204556854,
+      "compression_ratio": 1.6111111111111112,
+      "no_speech_prob": 0.006153843365609646,
+      "words": [
+        {
+          "word": " There",
+          "start": 28.92,
+          "end": 29.32,
+          "probability": 0.9881585240364075
+        },
+        {
+          "word": " are",
+          "start": 29.32,
+          "end": 29.6,
+          "probability": 0.9983741044998169
+        },
+        {
+          "word": " two",
+          "start": 29.6,
+          "end": 29.9,
+          "probability": 0.9727473258972168
+        },
+        {
+          "word": " types",
+          "start": 29.9,
+          "end": 30.34,
+          "probability": 0.9987473487854004
+        },
+        {
+          "word": " of",
+          "start": 30.34,
+          "end": 30.58,
+          "probability": 0.9993674159049988
+        },
+        {
+          "word": " festival",
+          "start": 30.58,
+          "end": 31.0,
+          "probability": 0.8300970792770386
+        },
+        {
+          "word": " –",
+          "start": 31.0,
+          "end": 31.46,
+          "probability": 0.22194521129131317
+        },
+        {
+          "word": " local",
+          "start": 31.46,
+          "end": 31.94,
+          "probability": 0.9695587754249573
+        },
+        {
+          "word": " ones,",
+          "start": 31.94,
+          "end": 32.42,
+          "probability": 0.9979034662246704
+        },
+        {
+          "word": " which",
+          "start": 32.58,
+          "end": 32.78,
+          "probability": 0.999137282371521
+        },
+        {
+          "word": " people",
+          "start": 32.78,
+          "end": 33.14,
+          "probability": 0.9985311031341553
+        },
+        {
+          "word": " celebrate",
+          "start": 33.14,
+          "end": 33.72,
+          "probability": 0.9990696310997009
+        },
+        {
+          "word": " in",
+          "start": 33.72,
+          "end": 34.06,
+          "probability": 0.998607337474823
+        },
+        {
+          "word": " certain",
+          "start": 34.06,
+          "end": 34.42,
+          "probability": 0.9991018772125244
+        },
+        {
+          "word": " areas",
+          "start": 34.42,
+          "end": 34.86,
+          "probability": 0.9984205961227417
+        },
+        {
+          "word": " of",
+          "start": 34.86,
+          "end": 35.1,
+          "probability": 0.9991095662117004
+        },
+        {
+          "word": " the",
+          "start": 35.1,
+          "end": 35.3,
+          "probability": 0.9978154897689819
+        },
+        {
+          "word": " country,",
+          "start": 35.3,
+          "end": 35.76,
+          "probability": 0.9969502091407776
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2840,
+      "start": 36.16,
+      "end": 39.62,
+      "text": " and national festivals, which everyone celebrates.",
+      "tokens": [
+        50752,
+        293,
+        4048,
+        28040,
+        11,
+        597,
+        1518,
+        47182,
+        13,
+        50932
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26664262204556854,
+      "compression_ratio": 1.6111111111111112,
+      "no_speech_prob": 0.006153843365609646,
+      "words": [
+        {
+          "word": " and",
+          "start": 36.16,
+          "end": 36.54,
+          "probability": 0.9976680874824524
+        },
+        {
+          "word": " national",
+          "start": 36.54,
+          "end": 37.06,
+          "probability": 0.955094575881958
+        },
+        {
+          "word": " festivals,",
+          "start": 37.06,
+          "end": 37.68,
+          "probability": 0.9963420033454895
+        },
+        {
+          "word": " which",
+          "start": 37.88,
+          "end": 38.28,
+          "probability": 0.9995658993721008
+        },
+        {
+          "word": " everyone",
+          "start": 38.28,
+          "end": 38.9,
+          "probability": 0.9946709275245667
+        },
+        {
+          "word": " celebrates.",
+          "start": 38.9,
+          "end": 39.62,
+          "probability": 0.9986316561698914
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2840,
+      "start": 40.7,
+      "end": 44.14,
+      "text": " We're going to talk about the big national festivals.",
+      "tokens": [
+        50970,
+        492,
+        434,
+        516,
+        281,
+        751,
+        466,
+        264,
+        955,
+        4048,
+        28040,
+        13,
+        51156
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26664262204556854,
+      "compression_ratio": 1.6111111111111112,
+      "no_speech_prob": 0.006153843365609646,
+      "words": [
+        {
+          "word": " We're",
+          "start": 40.7,
+          "end": 41.08,
+          "probability": 0.9900884628295898
+        },
+        {
+          "word": " going",
+          "start": 41.08,
+          "end": 41.3,
+          "probability": 0.9993506073951721
+        },
+        {
+          "word": " to",
+          "start": 41.3,
+          "end": 41.62,
+          "probability": 0.9987061023712158
+        },
+        {
+          "word": " talk",
+          "start": 41.62,
+          "end": 41.82,
+          "probability": 0.9994463324546814
+        },
+        {
+          "word": " about",
+          "start": 41.82,
+          "end": 42.16,
+          "probability": 0.9991812109947205
+        },
+        {
+          "word": " the",
+          "start": 42.16,
+          "end": 42.54,
+          "probability": 0.9949927926063538
+        },
+        {
+          "word": " big",
+          "start": 42.54,
+          "end": 42.92,
+          "probability": 0.9149360656738281
+        },
+        {
+          "word": " national",
+          "start": 42.92,
+          "end": 43.52,
+          "probability": 0.9734864830970764
+        },
+        {
+          "word": " festivals.",
+          "start": 43.52,
+          "end": 44.14,
+          "probability": 0.9985126852989197
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2840,
+      "start": 44.74,
+      "end": 48.08,
+      "text": " And Liang's going to begin with the Spring Festival.",
+      "tokens": [
+        51170,
+        400,
+        35842,
+        311,
+        516,
+        281,
+        1841,
+        365,
+        264,
+        14013,
+        16512,
+        13,
+        51354
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26664262204556854,
+      "compression_ratio": 1.6111111111111112,
+      "no_speech_prob": 0.006153843365609646,
+      "words": [
+        {
+          "word": " And",
+          "start": 44.74,
+          "end": 45.02,
+          "probability": 0.9542959928512573
+        },
+        {
+          "word": " Liang's",
+          "start": 45.02,
+          "end": 45.48,
+          "probability": 0.9218115210533142
+        },
+        {
+          "word": " going",
+          "start": 45.48,
+          "end": 45.74,
+          "probability": 0.9973535537719727
+        },
+        {
+          "word": " to",
+          "start": 45.74,
+          "end": 46.02,
+          "probability": 0.9992187023162842
+        },
+        {
+          "word": " begin",
+          "start": 46.02,
+          "end": 46.32,
+          "probability": 0.9975517392158508
+        },
+        {
+          "word": " with",
+          "start": 46.32,
+          "end": 46.64,
+          "probability": 0.9988688826560974
+        },
+        {
+          "word": " the",
+          "start": 46.64,
+          "end": 46.96,
+          "probability": 0.9882727265357971
+        },
+        {
+          "word": " Spring",
+          "start": 46.96,
+          "end": 47.42,
+          "probability": 0.5849258899688721
+        },
+        {
+          "word": " Festival.",
+          "start": 47.42,
+          "end": 48.08,
+          "probability": 0.9157175421714783
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2840,
+      "start": 48.94,
+      "end": 53.62,
+      "text": " Yes, the Spring Festival is the biggest holiday in China.",
+      "tokens": [
+        51382,
+        1079,
+        11,
+        264,
+        14013,
+        16512,
+        307,
+        264,
+        3880,
+        9960,
+        294,
+        3533,
+        13,
+        51632
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26664262204556854,
+      "compression_ratio": 1.6111111111111112,
+      "no_speech_prob": 0.006153843365609646,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 48.94,
+          "end": 49.36,
+          "probability": 0.9922468662261963
+        },
+        {
+          "word": " the",
+          "start": 49.46,
+          "end": 49.9,
+          "probability": 0.9950492978096008
+        },
+        {
+          "word": " Spring",
+          "start": 49.9,
+          "end": 50.28,
+          "probability": 0.9647567272186279
+        },
+        {
+          "word": " Festival",
+          "start": 50.28,
+          "end": 50.88,
+          "probability": 0.991093099117279
+        },
+        {
+          "word": " is",
+          "start": 50.88,
+          "end": 51.44,
+          "probability": 0.9969724416732788
+        },
+        {
+          "word": " the",
+          "start": 51.44,
+          "end": 51.76,
+          "probability": 0.9987071752548218
+        },
+        {
+          "word": " biggest",
+          "start": 51.76,
+          "end": 52.16,
+          "probability": 0.9986366629600525
+        },
+        {
+          "word": " holiday",
+          "start": 52.16,
+          "end": 52.76,
+          "probability": 0.999566376209259
+        },
+        {
+          "word": " in",
+          "start": 52.76,
+          "end": 53.06,
+          "probability": 0.9993618130683899
+        },
+        {
+          "word": " China.",
+          "start": 53.06,
+          "end": 53.62,
+          "probability": 0.9997230172157288
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5362,
+      "start": 54.18,
+      "end": 60.92,
+      "text": " Everyone takes at least a week's holiday from work, and we all go home to our families.",
+      "tokens": [
+        50392,
+        5198,
+        2516,
+        412,
+        1935,
+        257,
+        1243,
+        311,
+        9960,
+        490,
+        589,
+        11,
+        293,
+        321,
+        439,
+        352,
+        1280,
+        281,
+        527,
+        4466,
+        13,
+        50736
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22310923223626122,
+      "compression_ratio": 1.5435897435897437,
+      "no_speech_prob": 0.5485749244689941,
+      "words": [
+        {
+          "word": " Everyone",
+          "start": 54.18,
+          "end": 54.9,
+          "probability": 0.310413122177124
+        },
+        {
+          "word": " takes",
+          "start": 54.9,
+          "end": 55.56,
+          "probability": 0.9905661940574646
+        },
+        {
+          "word": " at",
+          "start": 55.56,
+          "end": 55.88,
+          "probability": 0.9694744944572449
+        },
+        {
+          "word": " least",
+          "start": 55.88,
+          "end": 56.24,
+          "probability": 0.9955345392227173
+        },
+        {
+          "word": " a",
+          "start": 56.24,
+          "end": 56.48,
+          "probability": 0.996446430683136
+        },
+        {
+          "word": " week's",
+          "start": 56.48,
+          "end": 56.98,
+          "probability": 0.9708904027938843
+        },
+        {
+          "word": " holiday",
+          "start": 56.98,
+          "end": 57.34,
+          "probability": 0.9850450158119202
+        },
+        {
+          "word": " from",
+          "start": 57.34,
+          "end": 57.72,
+          "probability": 0.9959707856178284
+        },
+        {
+          "word": " work,",
+          "start": 57.72,
+          "end": 58.2,
+          "probability": 0.9985223412513733
+        },
+        {
+          "word": " and",
+          "start": 58.76,
+          "end": 58.86,
+          "probability": 0.9891769289970398
+        },
+        {
+          "word": " we",
+          "start": 58.86,
+          "end": 59.1,
+          "probability": 0.9964058995246887
+        },
+        {
+          "word": " all",
+          "start": 59.1,
+          "end": 59.3,
+          "probability": 0.9951829314231873
+        },
+        {
+          "word": " go",
+          "start": 59.3,
+          "end": 59.54,
+          "probability": 0.9971259236335754
+        },
+        {
+          "word": " home",
+          "start": 59.54,
+          "end": 59.88,
+          "probability": 0.9961722493171692
+        },
+        {
+          "word": " to",
+          "start": 59.88,
+          "end": 60.12,
+          "probability": 0.9983022212982178
+        },
+        {
+          "word": " our",
+          "start": 60.12,
+          "end": 60.36,
+          "probability": 0.998259961605072
+        },
+        {
+          "word": " families.",
+          "start": 60.36,
+          "end": 60.92,
+          "probability": 0.9982762336730957
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5362,
+      "start": 61.84,
+      "end": 68.62,
+      "text": " The festival celebrates the Chinese New Year, and it takes place at the end of January.",
+      "tokens": [
+        50760,
+        440,
+        12091,
+        47182,
+        264,
+        4649,
+        1873,
+        10289,
+        11,
+        293,
+        309,
+        2516,
+        1081,
+        412,
+        264,
+        917,
+        295,
+        7061,
+        13,
+        51118
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22310923223626122,
+      "compression_ratio": 1.5435897435897437,
+      "no_speech_prob": 0.5485749244689941,
+      "words": [
+        {
+          "word": " The",
+          "start": 61.84,
+          "end": 61.94,
+          "probability": 0.9877023100852966
+        },
+        {
+          "word": " festival",
+          "start": 61.94,
+          "end": 62.6,
+          "probability": 0.913450300693512
+        },
+        {
+          "word": " celebrates",
+          "start": 62.6,
+          "end": 63.56,
+          "probability": 0.995309054851532
+        },
+        {
+          "word": " the",
+          "start": 63.56,
+          "end": 63.86,
+          "probability": 0.9910495281219482
+        },
+        {
+          "word": " Chinese",
+          "start": 63.86,
+          "end": 64.44,
+          "probability": 0.9951997995376587
+        },
+        {
+          "word": " New",
+          "start": 64.44,
+          "end": 64.78,
+          "probability": 0.9373584985733032
+        },
+        {
+          "word": " Year,",
+          "start": 64.78,
+          "end": 65.12,
+          "probability": 0.9975947737693787
+        },
+        {
+          "word": " and",
+          "start": 65.78,
+          "end": 65.82,
+          "probability": 0.9967131614685059
+        },
+        {
+          "word": " it",
+          "start": 65.82,
+          "end": 66.1,
+          "probability": 0.9894371032714844
+        },
+        {
+          "word": " takes",
+          "start": 66.1,
+          "end": 66.36,
+          "probability": 0.9985418319702148
+        },
+        {
+          "word": " place",
+          "start": 66.36,
+          "end": 67.04,
+          "probability": 0.9993807077407837
+        },
+        {
+          "word": " at",
+          "start": 67.04,
+          "end": 67.34,
+          "probability": 0.9958738684654236
+        },
+        {
+          "word": " the",
+          "start": 67.34,
+          "end": 67.48,
+          "probability": 0.9992684721946716
+        },
+        {
+          "word": " end",
+          "start": 67.48,
+          "end": 67.66,
+          "probability": 0.9995678067207336
+        },
+        {
+          "word": " of",
+          "start": 67.66,
+          "end": 67.92,
+          "probability": 0.9993614554405212
+        },
+        {
+          "word": " January.",
+          "start": 67.92,
+          "end": 68.62,
+          "probability": 0.9973013997077942
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5362,
+      "start": 70.02,
+      "end": 72.92,
+      "text": " The traditional festival lasted a month.",
+      "tokens": [
+        51172,
+        440,
+        5164,
+        12091,
+        21116,
+        257,
+        1618,
+        13,
+        51332
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22310923223626122,
+      "compression_ratio": 1.5435897435897437,
+      "no_speech_prob": 0.5485749244689941,
+      "words": [
+        {
+          "word": " The",
+          "start": 70.02,
+          "end": 70.14,
+          "probability": 0.9784931540489197
+        },
+        {
+          "word": " traditional",
+          "start": 70.14,
+          "end": 70.72,
+          "probability": 0.9534293413162231
+        },
+        {
+          "word": " festival",
+          "start": 70.72,
+          "end": 71.58,
+          "probability": 0.9920147657394409
+        },
+        {
+          "word": " lasted",
+          "start": 71.58,
+          "end": 72.2,
+          "probability": 0.9961917400360107
+        },
+        {
+          "word": " a",
+          "start": 72.2,
+          "end": 72.52,
+          "probability": 0.9956337809562683
+        },
+        {
+          "word": " month.",
+          "start": 72.52,
+          "end": 72.92,
+          "probability": 0.9994149208068848
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5362,
+      "start": 73.66,
+      "end": 81.72,
+      "text": " Now, most people only celebrate Chinese New Year's Day itself and the day before it.",
+      "tokens": [
+        51358,
+        823,
+        11,
+        881,
+        561,
+        787,
+        8098,
+        4649,
+        1873,
+        10289,
+        311,
+        5226,
+        2564,
+        293,
+        264,
+        786,
+        949,
+        309,
+        13,
+        51766
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22310923223626122,
+      "compression_ratio": 1.5435897435897437,
+      "no_speech_prob": 0.5485749244689941,
+      "words": [
+        {
+          "word": " Now,",
+          "start": 73.66,
+          "end": 74.28,
+          "probability": 0.9973961114883423
+        },
+        {
+          "word": " most",
+          "start": 74.78,
+          "end": 75.12,
+          "probability": 0.9958076477050781
+        },
+        {
+          "word": " people",
+          "start": 75.12,
+          "end": 75.58,
+          "probability": 0.998817503452301
+        },
+        {
+          "word": " only",
+          "start": 75.58,
+          "end": 76.16,
+          "probability": 0.9904265999794006
+        },
+        {
+          "word": " celebrate",
+          "start": 76.16,
+          "end": 76.68,
+          "probability": 0.9920996427536011
+        },
+        {
+          "word": " Chinese",
+          "start": 76.68,
+          "end": 77.44,
+          "probability": 0.9903203845024109
+        },
+        {
+          "word": " New",
+          "start": 77.44,
+          "end": 77.9,
+          "probability": 0.9966220855712891
+        },
+        {
+          "word": " Year's",
+          "start": 77.9,
+          "end": 78.4,
+          "probability": 0.9707237482070923
+        },
+        {
+          "word": " Day",
+          "start": 78.4,
+          "end": 78.62,
+          "probability": 0.9437429308891296
+        },
+        {
+          "word": " itself",
+          "start": 78.62,
+          "end": 79.4,
+          "probability": 0.9930398464202881
+        },
+        {
+          "word": " and",
+          "start": 79.4,
+          "end": 80.28,
+          "probability": 0.4621633291244507
+        },
+        {
+          "word": " the",
+          "start": 80.28,
+          "end": 80.54,
+          "probability": 0.9969912767410278
+        },
+        {
+          "word": " day",
+          "start": 80.54,
+          "end": 80.76,
+          "probability": 0.9976415634155273
+        },
+        {
+          "word": " before",
+          "start": 80.76,
+          "end": 81.24,
+          "probability": 0.9996308088302612
+        },
+        {
+          "word": " it.",
+          "start": 81.24,
+          "end": 81.72,
+          "probability": 0.991107165813446
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 8172,
+      "start": 82.67999999999999,
+      "end": 86.84,
+      "text": " On the day before, we clean everything in our houses,",
+      "tokens": [
+        50412,
+        1282,
+        264,
+        786,
+        949,
+        11,
+        321,
+        2541,
+        1203,
+        294,
+        527,
+        8078,
+        11,
+        50628
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23884071350097658,
+      "compression_ratio": 1.61,
+      "no_speech_prob": 0.017922474071383476,
+      "words": [
+        {
+          "word": " On",
+          "start": 82.62,
+          "end": 83.06,
+          "probability": 0.9724565744400024
+        },
+        {
+          "word": " the",
+          "start": 83.06,
+          "end": 83.22,
+          "probability": 0.9987441301345825
+        },
+        {
+          "word": " day",
+          "start": 83.22,
+          "end": 83.46,
+          "probability": 0.9969509840011597
+        },
+        {
+          "word": " before,",
+          "start": 83.46,
+          "end": 84.12,
+          "probability": 0.999210000038147
+        },
+        {
+          "word": " we",
+          "start": 84.38,
+          "end": 84.82,
+          "probability": 0.996588945388794
+        },
+        {
+          "word": " clean",
+          "start": 84.82,
+          "end": 85.18,
+          "probability": 0.995598316192627
+        },
+        {
+          "word": " everything",
+          "start": 85.18,
+          "end": 85.76,
+          "probability": 0.9983697533607483
+        },
+        {
+          "word": " in",
+          "start": 85.76,
+          "end": 86.08,
+          "probability": 0.9986017346382141
+        },
+        {
+          "word": " our",
+          "start": 86.08,
+          "end": 86.24,
+          "probability": 0.9982404708862305
+        },
+        {
+          "word": " houses,",
+          "start": 86.24,
+          "end": 86.84,
+          "probability": 0.9954748749732971
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 8172,
+      "start": 87.3,
+      "end": 92.52,
+      "text": " and we decorate everything with the colour red, a lucky colour in China.",
+      "tokens": [
+        50636,
+        293,
+        321,
+        24229,
+        1203,
+        365,
+        264,
+        8267,
+        2182,
+        11,
+        257,
+        6356,
+        8267,
+        294,
+        3533,
+        13,
+        50908
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23884071350097658,
+      "compression_ratio": 1.61,
+      "no_speech_prob": 0.017922474071383476,
+      "words": [
+        {
+          "word": " and",
+          "start": 87.3,
+          "end": 87.54,
+          "probability": 0.9905480742454529
+        },
+        {
+          "word": " we",
+          "start": 87.54,
+          "end": 87.92,
+          "probability": 0.9947012662887573
+        },
+        {
+          "word": " decorate",
+          "start": 87.92,
+          "end": 88.42,
+          "probability": 0.9984051585197449
+        },
+        {
+          "word": " everything",
+          "start": 88.42,
+          "end": 89.06,
+          "probability": 0.9983047246932983
+        },
+        {
+          "word": " with",
+          "start": 89.06,
+          "end": 89.46,
+          "probability": 0.9946736693382263
+        },
+        {
+          "word": " the",
+          "start": 89.46,
+          "end": 89.7,
+          "probability": 0.9940440058708191
+        },
+        {
+          "word": " colour",
+          "start": 89.7,
+          "end": 89.94,
+          "probability": 0.5602102875709534
+        },
+        {
+          "word": " red,",
+          "start": 89.94,
+          "end": 90.4,
+          "probability": 0.9304532408714294
+        },
+        {
+          "word": " a",
+          "start": 90.86,
+          "end": 91.1,
+          "probability": 0.9965354204177856
+        },
+        {
+          "word": " lucky",
+          "start": 91.1,
+          "end": 91.44,
+          "probability": 0.9877666234970093
+        },
+        {
+          "word": " colour",
+          "start": 91.44,
+          "end": 91.76,
+          "probability": 0.9802255034446716
+        },
+        {
+          "word": " in",
+          "start": 91.76,
+          "end": 92.04,
+          "probability": 0.9915828108787537
+        },
+        {
+          "word": " China.",
+          "start": 92.04,
+          "end": 92.52,
+          "probability": 0.9983214735984802
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 8172,
+      "start": 93.62,
+      "end": 98.7,
+      "text": " We prepare special dishes for the evening when people celebrate",
+      "tokens": [
+        50952,
+        492,
+        5940,
+        2121,
+        10814,
+        337,
+        264,
+        5634,
+        562,
+        561,
+        8098,
+        51216
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23884071350097658,
+      "compression_ratio": 1.61,
+      "no_speech_prob": 0.017922474071383476,
+      "words": [
+        {
+          "word": " We",
+          "start": 93.62,
+          "end": 94.0,
+          "probability": 0.9973123073577881
+        },
+        {
+          "word": " prepare",
+          "start": 94.0,
+          "end": 94.54,
+          "probability": 0.9984323382377625
+        },
+        {
+          "word": " special",
+          "start": 94.54,
+          "end": 95.02,
+          "probability": 0.9991599321365356
+        },
+        {
+          "word": " dishes",
+          "start": 95.02,
+          "end": 95.62,
+          "probability": 0.9977906942367554
+        },
+        {
+          "word": " for",
+          "start": 95.62,
+          "end": 96.06,
+          "probability": 0.9989773035049438
+        },
+        {
+          "word": " the",
+          "start": 96.06,
+          "end": 96.34,
+          "probability": 0.9980106949806213
+        },
+        {
+          "word": " evening",
+          "start": 96.34,
+          "end": 96.86,
+          "probability": 0.9919428825378418
+        },
+        {
+          "word": " when",
+          "start": 96.86,
+          "end": 97.4,
+          "probability": 0.8146734833717346
+        },
+        {
+          "word": " people",
+          "start": 97.4,
+          "end": 97.86,
+          "probability": 0.9941850304603577
+        },
+        {
+          "word": " celebrate",
+          "start": 97.86,
+          "end": 98.7,
+          "probability": 0.9992388486862183
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8172,
+      "start": 98.7,
+      "end": 104.32,
+      "text": " by eating a big dinner with their family and giving each other gifts.",
+      "tokens": [
+        51216,
+        538,
+        3936,
+        257,
+        955,
+        6148,
+        365,
+        641,
+        1605,
+        293,
+        2902,
+        1184,
+        661,
+        11449,
+        13,
+        51500
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23884071350097658,
+      "compression_ratio": 1.61,
+      "no_speech_prob": 0.017922474071383476,
+      "words": [
+        {
+          "word": " by",
+          "start": 98.7,
+          "end": 99.36,
+          "probability": 0.9582793712615967
+        },
+        {
+          "word": " eating",
+          "start": 99.36,
+          "end": 99.8,
+          "probability": 0.9951446652412415
+        },
+        {
+          "word": " a",
+          "start": 99.8,
+          "end": 100.08,
+          "probability": 0.9963704347610474
+        },
+        {
+          "word": " big",
+          "start": 100.08,
+          "end": 100.3,
+          "probability": 0.9970068335533142
+        },
+        {
+          "word": " dinner",
+          "start": 100.3,
+          "end": 100.78,
+          "probability": 0.9975304007530212
+        },
+        {
+          "word": " with",
+          "start": 100.78,
+          "end": 101.08,
+          "probability": 0.9990707635879517
+        },
+        {
+          "word": " their",
+          "start": 101.08,
+          "end": 101.4,
+          "probability": 0.996740996837616
+        },
+        {
+          "word": " family",
+          "start": 101.4,
+          "end": 102.0,
+          "probability": 0.9921078085899353
+        },
+        {
+          "word": " and",
+          "start": 102.0,
+          "end": 102.74,
+          "probability": 0.8374932408332825
+        },
+        {
+          "word": " giving",
+          "start": 102.74,
+          "end": 103.06,
+          "probability": 0.9964652061462402
+        },
+        {
+          "word": " each",
+          "start": 103.06,
+          "end": 103.4,
+          "probability": 0.9991520643234253
+        },
+        {
+          "word": " other",
+          "start": 103.4,
+          "end": 103.64,
+          "probability": 0.9959641695022583
+        },
+        {
+          "word": " gifts.",
+          "start": 103.64,
+          "end": 104.32,
+          "probability": 0.9976562261581421
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8172,
+      "start": 105.32,
+      "end": 110.9,
+      "text": " Children get new clothes and gifts of money in red envelopes.",
+      "tokens": [
+        51534,
+        13354,
+        483,
+        777,
+        5534,
+        293,
+        11449,
+        295,
+        1460,
+        294,
+        2182,
+        33860,
+        279,
+        13,
+        51820
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23884071350097658,
+      "compression_ratio": 1.61,
+      "no_speech_prob": 0.017922474071383476,
+      "words": [
+        {
+          "word": " Children",
+          "start": 105.32,
+          "end": 105.92,
+          "probability": 0.9958981871604919
+        },
+        {
+          "word": " get",
+          "start": 105.92,
+          "end": 106.48,
+          "probability": 0.9927625060081482
+        },
+        {
+          "word": " new",
+          "start": 106.48,
+          "end": 106.8,
+          "probability": 0.9990668892860413
+        },
+        {
+          "word": " clothes",
+          "start": 106.8,
+          "end": 107.44,
+          "probability": 0.9977163076400757
+        },
+        {
+          "word": " and",
+          "start": 107.44,
+          "end": 108.24,
+          "probability": 0.8803223967552185
+        },
+        {
+          "word": " gifts",
+          "start": 108.24,
+          "end": 108.58,
+          "probability": 0.9938440322875977
+        },
+        {
+          "word": " of",
+          "start": 108.58,
+          "end": 108.9,
+          "probability": 0.9979639053344727
+        },
+        {
+          "word": " money",
+          "start": 108.9,
+          "end": 109.28,
+          "probability": 0.9994612336158752
+        },
+        {
+          "word": " in",
+          "start": 109.28,
+          "end": 109.66,
+          "probability": 0.9982790946960449
+        },
+        {
+          "word": " red",
+          "start": 109.66,
+          "end": 110.0,
+          "probability": 0.9965601563453674
+        },
+        {
+          "word": " envelopes.",
+          "start": 110.0,
+          "end": 110.9,
+          "probability": 0.990882158279419
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 11172,
+      "start": 111.72,
+      "end": 115.6,
+      "text": " There are lots of fireworks to welcome the New Year.",
+      "tokens": [
+        50372,
+        821,
+        366,
+        3195,
+        295,
+        28453,
+        281,
+        2928,
+        264,
+        1873,
+        10289,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2033061981201172,
+      "compression_ratio": 1.5633802816901408,
+      "no_speech_prob": 0.0024500926956534386,
+      "words": [
+        {
+          "word": " There",
+          "start": 111.72,
+          "end": 112.12,
+          "probability": 0.6949248909950256
+        },
+        {
+          "word": " are",
+          "start": 112.12,
+          "end": 112.34,
+          "probability": 0.992239236831665
+        },
+        {
+          "word": " lots",
+          "start": 112.34,
+          "end": 112.6,
+          "probability": 0.9791618585586548
+        },
+        {
+          "word": " of",
+          "start": 112.6,
+          "end": 113.04,
+          "probability": 0.9991304278373718
+        },
+        {
+          "word": " fireworks",
+          "start": 113.04,
+          "end": 113.66,
+          "probability": 0.9672039151191711
+        },
+        {
+          "word": " to",
+          "start": 113.66,
+          "end": 114.1,
+          "probability": 0.9893131852149963
+        },
+        {
+          "word": " welcome",
+          "start": 114.1,
+          "end": 114.62,
+          "probability": 0.996630847454071
+        },
+        {
+          "word": " the",
+          "start": 114.62,
+          "end": 114.88,
+          "probability": 0.9901992082595825
+        },
+        {
+          "word": " New",
+          "start": 114.88,
+          "end": 115.16,
+          "probability": 0.49501967430114746
+        },
+        {
+          "word": " Year.",
+          "start": 115.16,
+          "end": 115.6,
+          "probability": 0.995717465877533
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 11172,
+      "start": 116.72,
+      "end": 121.78,
+      "text": " On New Year's Day, people go out in the streets to meet their friends,",
+      "tokens": [
+        50600,
+        1282,
+        1873,
+        10289,
+        311,
+        5226,
+        11,
+        561,
+        352,
+        484,
+        294,
+        264,
+        8481,
+        281,
+        1677,
+        641,
+        1855,
+        11,
+        50874
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2033061981201172,
+      "compression_ratio": 1.5633802816901408,
+      "no_speech_prob": 0.0024500926956534386,
+      "words": [
+        {
+          "word": " On",
+          "start": 116.72,
+          "end": 116.96,
+          "probability": 0.9894669651985168
+        },
+        {
+          "word": " New",
+          "start": 116.96,
+          "end": 117.26,
+          "probability": 0.9866618514060974
+        },
+        {
+          "word": " Year's",
+          "start": 117.26,
+          "end": 117.66,
+          "probability": 0.9808320105075836
+        },
+        {
+          "word": " Day,",
+          "start": 117.66,
+          "end": 118.16,
+          "probability": 0.8768563270568848
+        },
+        {
+          "word": " people",
+          "start": 118.46,
+          "end": 118.78,
+          "probability": 0.9935778379440308
+        },
+        {
+          "word": " go",
+          "start": 118.78,
+          "end": 119.1,
+          "probability": 0.997624933719635
+        },
+        {
+          "word": " out",
+          "start": 119.1,
+          "end": 119.48,
+          "probability": 0.9964233040809631
+        },
+        {
+          "word": " in",
+          "start": 119.48,
+          "end": 119.64,
+          "probability": 0.9611158967018127
+        },
+        {
+          "word": " the",
+          "start": 119.64,
+          "end": 119.98,
+          "probability": 0.9987926483154297
+        },
+        {
+          "word": " streets",
+          "start": 119.98,
+          "end": 120.36,
+          "probability": 0.9894803762435913
+        },
+        {
+          "word": " to",
+          "start": 120.36,
+          "end": 120.66,
+          "probability": 0.9934023022651672
+        },
+        {
+          "word": " meet",
+          "start": 120.66,
+          "end": 120.92,
+          "probability": 0.9990045428276062
+        },
+        {
+          "word": " their",
+          "start": 120.92,
+          "end": 121.26,
+          "probability": 0.9965533018112183
+        },
+        {
+          "word": " friends,",
+          "start": 121.26,
+          "end": 121.78,
+          "probability": 0.9988092184066772
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 11172,
+      "start": 122.42,
+      "end": 128.7,
+      "text": " and there are parades with traditional entertainment, such as lion dancing,",
+      "tokens": [
+        50884,
+        293,
+        456,
+        366,
+        971,
+        2977,
+        365,
+        5164,
+        12393,
+        11,
+        1270,
+        382,
+        17226,
+        8898,
+        11,
+        51220
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2033061981201172,
+      "compression_ratio": 1.5633802816901408,
+      "no_speech_prob": 0.0024500926956534386,
+      "words": [
+        {
+          "word": " and",
+          "start": 122.42,
+          "end": 122.82,
+          "probability": 0.9880228042602539
+        },
+        {
+          "word": " there",
+          "start": 122.82,
+          "end": 123.2,
+          "probability": 0.9954344630241394
+        },
+        {
+          "word": " are",
+          "start": 123.2,
+          "end": 123.48,
+          "probability": 0.999157190322876
+        },
+        {
+          "word": " parades",
+          "start": 123.48,
+          "end": 124.12,
+          "probability": 0.9979192614555359
+        },
+        {
+          "word": " with",
+          "start": 124.12,
+          "end": 124.64,
+          "probability": 0.9804673194885254
+        },
+        {
+          "word": " traditional",
+          "start": 124.64,
+          "end": 125.28,
+          "probability": 0.9961644411087036
+        },
+        {
+          "word": " entertainment,",
+          "start": 125.28,
+          "end": 126.26,
+          "probability": 0.9866412281990051
+        },
+        {
+          "word": " such",
+          "start": 126.68,
+          "end": 127.02,
+          "probability": 0.9961796998977661
+        },
+        {
+          "word": " as",
+          "start": 127.02,
+          "end": 127.54,
+          "probability": 0.9985974431037903
+        },
+        {
+          "word": " lion",
+          "start": 127.54,
+          "end": 127.98,
+          "probability": 0.9023513197898865
+        },
+        {
+          "word": " dancing,",
+          "start": 127.98,
+          "end": 128.7,
+          "probability": 0.9113509058952332
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 11172,
+      "start": 129.08,
+      "end": 133.9,
+      "text": " with people dressed up in amazing traditional lion costumes.",
+      "tokens": [
+        51220,
+        365,
+        561,
+        12386,
+        493,
+        294,
+        2243,
+        5164,
+        17226,
+        22695,
+        13,
+        51486
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2033061981201172,
+      "compression_ratio": 1.5633802816901408,
+      "no_speech_prob": 0.0024500926956534386,
+      "words": [
+        {
+          "word": " with",
+          "start": 129.08,
+          "end": 129.48,
+          "probability": 0.9962361454963684
+        },
+        {
+          "word": " people",
+          "start": 129.48,
+          "end": 129.98,
+          "probability": 0.9991238713264465
+        },
+        {
+          "word": " dressed",
+          "start": 129.98,
+          "end": 130.34,
+          "probability": 0.9991576671600342
+        },
+        {
+          "word": " up",
+          "start": 130.34,
+          "end": 130.76,
+          "probability": 0.9893765449523926
+        },
+        {
+          "word": " in",
+          "start": 130.76,
+          "end": 131.06,
+          "probability": 0.9962682127952576
+        },
+        {
+          "word": " amazing",
+          "start": 131.06,
+          "end": 131.72,
+          "probability": 0.9936436414718628
+        },
+        {
+          "word": " traditional",
+          "start": 131.72,
+          "end": 132.52,
+          "probability": 0.8651736974716187
+        },
+        {
+          "word": " lion",
+          "start": 132.52,
+          "end": 133.04,
+          "probability": 0.9924972057342529
+        },
+        {
+          "word": " costumes.",
+          "start": 133.04,
+          "end": 133.9,
+          "probability": 0.9980509281158447
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 11172,
+      "start": 135.68,
+      "end": 140.54,
+      "text": " The next festival we are going to talk about is the Mid-Autumn Festival.",
+      "tokens": [
+        51552,
+        440,
+        958,
+        12091,
+        321,
+        366,
+        516,
+        281,
+        751,
+        466,
+        307,
+        264,
+        7033,
+        12,
+        49769,
+        16449,
+        16512,
+        13,
+        51812
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2033061981201172,
+      "compression_ratio": 1.5633802816901408,
+      "no_speech_prob": 0.0024500926956534386,
+      "words": [
+        {
+          "word": " The",
+          "start": 135.68,
+          "end": 135.84,
+          "probability": 0.9902876615524292
+        },
+        {
+          "word": " next",
+          "start": 135.84,
+          "end": 136.28,
+          "probability": 0.998256266117096
+        },
+        {
+          "word": " festival",
+          "start": 136.28,
+          "end": 136.84,
+          "probability": 0.9663215279579163
+        },
+        {
+          "word": " we",
+          "start": 136.84,
+          "end": 137.02,
+          "probability": 0.9945192933082581
+        },
+        {
+          "word": " are",
+          "start": 137.02,
+          "end": 137.26,
+          "probability": 0.9744064807891846
+        },
+        {
+          "word": " going",
+          "start": 137.26,
+          "end": 137.52,
+          "probability": 0.999037504196167
+        },
+        {
+          "word": " to",
+          "start": 137.52,
+          "end": 137.76,
+          "probability": 0.9988180994987488
+        },
+        {
+          "word": " talk",
+          "start": 137.76,
+          "end": 138.0,
+          "probability": 0.9993165731430054
+        },
+        {
+          "word": " about",
+          "start": 138.0,
+          "end": 138.34,
+          "probability": 0.9994516968727112
+        },
+        {
+          "word": " is",
+          "start": 138.34,
+          "end": 138.78,
+          "probability": 0.9792739152908325
+        },
+        {
+          "word": " the",
+          "start": 138.78,
+          "end": 139.04,
+          "probability": 0.9830626249313354
+        },
+        {
+          "word": " Mid",
+          "start": 139.04,
+          "end": 139.46,
+          "probability": 0.8573169708251953
+        },
+        {
+          "word": "-Autumn",
+          "start": 139.46,
+          "end": 139.94,
+          "probability": 0.9176350831985474
+        },
+        {
+          "word": " Festival.",
+          "start": 139.94,
+          "end": 140.54,
+          "probability": 0.875145673751831
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 14054,
+      "start": 141.34,
+      "end": 146.56,
+      "text": " This takes place near the beginning of October, and it celebrates the moon.",
+      "tokens": [
+        50404,
+        639,
+        2516,
+        1081,
+        2651,
+        264,
+        2863,
+        295,
+        7617,
+        11,
+        293,
+        309,
+        47182,
+        264,
+        7135,
+        13,
+        50676
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20693741382007869,
+      "compression_ratio": 1.532994923857868,
+      "no_speech_prob": 0.0011371704749763012,
+      "words": [
+        {
+          "word": " This",
+          "start": 141.34,
+          "end": 141.74,
+          "probability": 0.7194389700889587
+        },
+        {
+          "word": " takes",
+          "start": 141.74,
+          "end": 142.1,
+          "probability": 0.9874216318130493
+        },
+        {
+          "word": " place",
+          "start": 142.1,
+          "end": 142.66,
+          "probability": 0.9992495179176331
+        },
+        {
+          "word": " near",
+          "start": 142.66,
+          "end": 142.96,
+          "probability": 0.9963706731796265
+        },
+        {
+          "word": " the",
+          "start": 142.96,
+          "end": 143.2,
+          "probability": 0.997376561164856
+        },
+        {
+          "word": " beginning",
+          "start": 143.2,
+          "end": 143.66,
+          "probability": 0.9913254380226135
+        },
+        {
+          "word": " of",
+          "start": 143.66,
+          "end": 143.94,
+          "probability": 0.9969421029090881
+        },
+        {
+          "word": " October,",
+          "start": 143.94,
+          "end": 144.54,
+          "probability": 0.9926758408546448
+        },
+        {
+          "word": " and",
+          "start": 145.08,
+          "end": 145.08,
+          "probability": 0.9880528450012207
+        },
+        {
+          "word": " it",
+          "start": 145.08,
+          "end": 145.48,
+          "probability": 0.9800689220428467
+        },
+        {
+          "word": " celebrates",
+          "start": 145.48,
+          "end": 145.9,
+          "probability": 0.9926322102546692
+        },
+        {
+          "word": " the",
+          "start": 145.9,
+          "end": 146.24,
+          "probability": 0.9633404612541199
+        },
+        {
+          "word": " moon.",
+          "start": 146.24,
+          "end": 146.56,
+          "probability": 0.6114230155944824
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 14054,
+      "start": 147.58,
+      "end": 151.04,
+      "text": " It's another festival where families usually get together.",
+      "tokens": [
+        50704,
+        467,
+        311,
+        1071,
+        12091,
+        689,
+        4466,
+        2673,
+        483,
+        1214,
+        13,
+        50896
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20693741382007869,
+      "compression_ratio": 1.532994923857868,
+      "no_speech_prob": 0.0011371704749763012,
+      "words": [
+        {
+          "word": " It's",
+          "start": 147.58,
+          "end": 147.78,
+          "probability": 0.978661298751831
+        },
+        {
+          "word": " another",
+          "start": 147.78,
+          "end": 148.22,
+          "probability": 0.9958646297454834
+        },
+        {
+          "word": " festival",
+          "start": 148.22,
+          "end": 148.82,
+          "probability": 0.9866560697555542
+        },
+        {
+          "word": " where",
+          "start": 148.82,
+          "end": 149.22,
+          "probability": 0.931514322757721
+        },
+        {
+          "word": " families",
+          "start": 149.22,
+          "end": 149.68,
+          "probability": 0.9939715266227722
+        },
+        {
+          "word": " usually",
+          "start": 149.68,
+          "end": 150.18,
+          "probability": 0.997246265411377
+        },
+        {
+          "word": " get",
+          "start": 150.18,
+          "end": 150.46,
+          "probability": 0.9987943172454834
+        },
+        {
+          "word": " together.",
+          "start": 150.46,
+          "end": 151.04,
+          "probability": 0.9989594221115112
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 14054,
+      "start": 152.06,
+      "end": 157.82,
+      "text": " The special dish for the festival is mooncakes, which people give each other as gifts.",
+      "tokens": [
+        50924,
+        440,
+        2121,
+        5025,
+        337,
+        264,
+        12091,
+        307,
+        7135,
+        18853,
+        11,
+        597,
+        561,
+        976,
+        1184,
+        661,
+        382,
+        11449,
+        13,
+        51236
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20693741382007869,
+      "compression_ratio": 1.532994923857868,
+      "no_speech_prob": 0.0011371704749763012,
+      "words": [
+        {
+          "word": " The",
+          "start": 152.06,
+          "end": 152.18,
+          "probability": 0.990420937538147
+        },
+        {
+          "word": " special",
+          "start": 152.18,
+          "end": 152.66,
+          "probability": 0.9973573088645935
+        },
+        {
+          "word": " dish",
+          "start": 152.66,
+          "end": 152.96,
+          "probability": 0.9982829093933105
+        },
+        {
+          "word": " for",
+          "start": 152.96,
+          "end": 153.18,
+          "probability": 0.9967279434204102
+        },
+        {
+          "word": " the",
+          "start": 153.18,
+          "end": 153.4,
+          "probability": 0.9918230175971985
+        },
+        {
+          "word": " festival",
+          "start": 153.4,
+          "end": 153.86,
+          "probability": 0.9945120811462402
+        },
+        {
+          "word": " is",
+          "start": 153.86,
+          "end": 154.32,
+          "probability": 0.9917287230491638
+        },
+        {
+          "word": " mooncakes,",
+          "start": 154.32,
+          "end": 155.02,
+          "probability": 0.7889654040336609
+        },
+        {
+          "word": " which",
+          "start": 155.42,
+          "end": 155.66,
+          "probability": 0.9978283047676086
+        },
+        {
+          "word": " people",
+          "start": 155.66,
+          "end": 156.08,
+          "probability": 0.9991088509559631
+        },
+        {
+          "word": " give",
+          "start": 156.08,
+          "end": 156.44,
+          "probability": 0.9971029162406921
+        },
+        {
+          "word": " each",
+          "start": 156.44,
+          "end": 156.72,
+          "probability": 0.9943011999130249
+        },
+        {
+          "word": " other",
+          "start": 156.72,
+          "end": 157.02,
+          "probability": 0.9957417249679565
+        },
+        {
+          "word": " as",
+          "start": 157.02,
+          "end": 157.34,
+          "probability": 0.9986209869384766
+        },
+        {
+          "word": " gifts.",
+          "start": 157.34,
+          "end": 157.82,
+          "probability": 0.9868756532669067
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 14054,
+      "start": 159.14,
+      "end": 165.18,
+      "text": " Making mooncakes is very important, and every family has their own way to do it.",
+      "tokens": [
+        51276,
+        14595,
+        7135,
+        18853,
+        307,
+        588,
+        1021,
+        11,
+        293,
+        633,
+        1605,
+        575,
+        641,
+        1065,
+        636,
+        281,
+        360,
+        309,
+        13,
+        51596
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20693741382007869,
+      "compression_ratio": 1.532994923857868,
+      "no_speech_prob": 0.0011371704749763012,
+      "words": [
+        {
+          "word": " Making",
+          "start": 159.14,
+          "end": 159.38,
+          "probability": 0.9899583458900452
+        },
+        {
+          "word": " mooncakes",
+          "start": 159.38,
+          "end": 160.02,
+          "probability": 0.9865066111087799
+        },
+        {
+          "word": " is",
+          "start": 160.02,
+          "end": 160.34,
+          "probability": 0.998826801776886
+        },
+        {
+          "word": " very",
+          "start": 160.34,
+          "end": 160.76,
+          "probability": 0.997416615486145
+        },
+        {
+          "word": " important,",
+          "start": 160.76,
+          "end": 161.48,
+          "probability": 0.9995891451835632
+        },
+        {
+          "word": " and",
+          "start": 161.86,
+          "end": 162.14,
+          "probability": 0.9980722665786743
+        },
+        {
+          "word": " every",
+          "start": 162.14,
+          "end": 162.62,
+          "probability": 0.9980112314224243
+        },
+        {
+          "word": " family",
+          "start": 162.62,
+          "end": 163.1,
+          "probability": 0.9989402890205383
+        },
+        {
+          "word": " has",
+          "start": 163.1,
+          "end": 163.5,
+          "probability": 0.9986793398857117
+        },
+        {
+          "word": " their",
+          "start": 163.5,
+          "end": 163.82,
+          "probability": 0.9955697655677795
+        },
+        {
+          "word": " own",
+          "start": 163.82,
+          "end": 164.12,
+          "probability": 0.9973188042640686
+        },
+        {
+          "word": " way",
+          "start": 164.12,
+          "end": 164.38,
+          "probability": 0.9978809952735901
+        },
+        {
+          "word": " to",
+          "start": 164.38,
+          "end": 164.64,
+          "probability": 0.999054491519928
+        },
+        {
+          "word": " do",
+          "start": 164.64,
+          "end": 164.82,
+          "probability": 0.9991297125816345
+        },
+        {
+          "word": " it.",
+          "start": 164.82,
+          "end": 165.22,
+          "probability": 0.9993088245391846
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 16522,
+      "start": 166.1,
+      "end": 171.16,
+      "text": " Families usually celebrate the Mid-Autumn Festival with a big dinner.",
+      "tokens": [
+        50408,
+        45081,
+        2673,
+        8098,
+        264,
+        7033,
+        12,
+        49769,
+        16449,
+        16512,
+        365,
+        257,
+        955,
+        6148,
+        13,
+        50668
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18037456936306423,
+      "compression_ratio": 1.4484536082474226,
+      "no_speech_prob": 0.010998094454407692,
+      "words": [
+        {
+          "word": " Families",
+          "start": 166.1,
+          "end": 166.66,
+          "probability": 0.9665923118591309
+        },
+        {
+          "word": " usually",
+          "start": 166.66,
+          "end": 167.34,
+          "probability": 0.9988576173782349
+        },
+        {
+          "word": " celebrate",
+          "start": 167.34,
+          "end": 167.96,
+          "probability": 0.9968852400779724
+        },
+        {
+          "word": " the",
+          "start": 167.96,
+          "end": 168.3,
+          "probability": 0.992800235748291
+        },
+        {
+          "word": " Mid",
+          "start": 168.3,
+          "end": 168.56,
+          "probability": 0.3740997314453125
+        },
+        {
+          "word": "-Autumn",
+          "start": 168.56,
+          "end": 168.96,
+          "probability": 0.8787920475006104
+        },
+        {
+          "word": " Festival",
+          "start": 168.96,
+          "end": 169.52,
+          "probability": 0.7947555184364319
+        },
+        {
+          "word": " with",
+          "start": 169.52,
+          "end": 169.94,
+          "probability": 0.9858992099761963
+        },
+        {
+          "word": " a",
+          "start": 169.94,
+          "end": 170.34,
+          "probability": 0.9963627457618713
+        },
+        {
+          "word": " big",
+          "start": 170.34,
+          "end": 170.6,
+          "probability": 0.9492828249931335
+        },
+        {
+          "word": " dinner.",
+          "start": 170.6,
+          "end": 171.16,
+          "probability": 0.9955639839172363
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 16522,
+      "start": 172.76,
+      "end": 177.48,
+      "text": " One favourite activity is going outside to look at the moon.",
+      "tokens": [
+        50724,
+        1485,
+        10696,
+        5191,
+        307,
+        516,
+        2380,
+        281,
+        574,
+        412,
+        264,
+        7135,
+        13,
+        50980
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18037456936306423,
+      "compression_ratio": 1.4484536082474226,
+      "no_speech_prob": 0.010998094454407692,
+      "words": [
+        {
+          "word": " One",
+          "start": 172.76,
+          "end": 172.92,
+          "probability": 0.9962626099586487
+        },
+        {
+          "word": " favourite",
+          "start": 172.92,
+          "end": 173.54,
+          "probability": 0.6249758005142212
+        },
+        {
+          "word": " activity",
+          "start": 173.54,
+          "end": 174.2,
+          "probability": 0.9995274543762207
+        },
+        {
+          "word": " is",
+          "start": 174.2,
+          "end": 174.72,
+          "probability": 0.9930992126464844
+        },
+        {
+          "word": " going",
+          "start": 174.72,
+          "end": 175.08,
+          "probability": 0.9966347813606262
+        },
+        {
+          "word": " outside",
+          "start": 175.08,
+          "end": 175.78,
+          "probability": 0.9968467354774475
+        },
+        {
+          "word": " to",
+          "start": 175.78,
+          "end": 176.14,
+          "probability": 0.9963825941085815
+        },
+        {
+          "word": " look",
+          "start": 176.14,
+          "end": 176.52,
+          "probability": 0.9451607465744019
+        },
+        {
+          "word": " at",
+          "start": 176.52,
+          "end": 176.86,
+          "probability": 0.9953567385673523
+        },
+        {
+          "word": " the",
+          "start": 176.86,
+          "end": 177.08,
+          "probability": 0.9981915354728699
+        },
+        {
+          "word": " moon.",
+          "start": 177.08,
+          "end": 177.48,
+          "probability": 0.8906837105751038
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 16522,
+      "start": 178.54,
+      "end": 182.72,
+      "text": " Parents tell their children traditional stories about it.",
+      "tokens": [
+        51016,
+        33990,
+        980,
+        641,
+        2227,
+        5164,
+        3676,
+        466,
+        309,
+        13,
+        51240
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18037456936306423,
+      "compression_ratio": 1.4484536082474226,
+      "no_speech_prob": 0.010998094454407692,
+      "words": [
+        {
+          "word": " Parents",
+          "start": 178.54,
+          "end": 178.9,
+          "probability": 0.9970263838768005
+        },
+        {
+          "word": " tell",
+          "start": 178.9,
+          "end": 179.42,
+          "probability": 0.9979409575462341
+        },
+        {
+          "word": " their",
+          "start": 179.42,
+          "end": 179.68,
+          "probability": 0.9987773299217224
+        },
+        {
+          "word": " children",
+          "start": 179.68,
+          "end": 180.2,
+          "probability": 0.9973326921463013
+        },
+        {
+          "word": " traditional",
+          "start": 180.2,
+          "end": 181.1,
+          "probability": 0.9876139163970947
+        },
+        {
+          "word": " stories",
+          "start": 181.1,
+          "end": 181.8,
+          "probability": 0.9989365935325623
+        },
+        {
+          "word": " about",
+          "start": 181.8,
+          "end": 182.22,
+          "probability": 0.9992775321006775
+        },
+        {
+          "word": " it.",
+          "start": 182.22,
+          "end": 182.72,
+          "probability": 0.998932421207428
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 16522,
+      "start": 183.76,
+      "end": 190.0,
+      "text": " In some parts of China, parents try to find wives and husbands for their sons and daughters.",
+      "tokens": [
+        51288,
+        682,
+        512,
+        3166,
+        295,
+        3533,
+        11,
+        3152,
+        853,
+        281,
+        915,
+        24936,
+        293,
+        37835,
+        337,
+        641,
+        13476,
+        293,
+        17070,
+        13,
+        51616
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18037456936306423,
+      "compression_ratio": 1.4484536082474226,
+      "no_speech_prob": 0.010998094454407692,
+      "words": [
+        {
+          "word": " In",
+          "start": 183.76,
+          "end": 184.06,
+          "probability": 0.9963433146476746
+        },
+        {
+          "word": " some",
+          "start": 184.06,
+          "end": 184.38,
+          "probability": 0.9992132186889648
+        },
+        {
+          "word": " parts",
+          "start": 184.38,
+          "end": 184.68,
+          "probability": 0.9970045685768127
+        },
+        {
+          "word": " of",
+          "start": 184.68,
+          "end": 184.96,
+          "probability": 0.9985462427139282
+        },
+        {
+          "word": " China,",
+          "start": 184.96,
+          "end": 185.36,
+          "probability": 0.9991433620452881
+        },
+        {
+          "word": " parents",
+          "start": 185.76,
+          "end": 186.16,
+          "probability": 0.9945295453071594
+        },
+        {
+          "word": " try",
+          "start": 186.16,
+          "end": 186.56,
+          "probability": 0.9975733160972595
+        },
+        {
+          "word": " to",
+          "start": 186.56,
+          "end": 186.88,
+          "probability": 0.9992446899414062
+        },
+        {
+          "word": " find",
+          "start": 186.88,
+          "end": 187.1,
+          "probability": 0.9987813830375671
+        },
+        {
+          "word": " wives",
+          "start": 187.1,
+          "end": 187.5,
+          "probability": 0.9967166781425476
+        },
+        {
+          "word": " and",
+          "start": 187.5,
+          "end": 187.82,
+          "probability": 0.9961156845092773
+        },
+        {
+          "word": " husbands",
+          "start": 187.82,
+          "end": 188.3,
+          "probability": 0.9976410865783691
+        },
+        {
+          "word": " for",
+          "start": 188.3,
+          "end": 188.54,
+          "probability": 0.9970678687095642
+        },
+        {
+          "word": " their",
+          "start": 188.54,
+          "end": 188.86,
+          "probability": 0.9988600015640259
+        },
+        {
+          "word": " sons",
+          "start": 188.86,
+          "end": 189.16,
+          "probability": 0.9948853850364685
+        },
+        {
+          "word": " and",
+          "start": 189.16,
+          "end": 189.42,
+          "probability": 0.9978017210960388
+        },
+        {
+          "word": " daughters.",
+          "start": 189.42,
+          "end": 190.0,
+          "probability": 0.9994356036186218
+        }
+      ]
+    }
+  ]
+}

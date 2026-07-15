@@ -1,0 +1,2239 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 6.1 Lucas, I think we need to find a new place to live. Why? I like this flat. I mean, I know it's a bit noisy, but it's near the town centre and all the shops. I want to stay here and it's near my parents. Yes, I know, but it's expensive and small. We should look for a flat with more rooms. My brother Irvin lives in a flat not far from the office, and it's very quiet because it's next to the park. I'm not so sure. I like our flat because it's clean and comfortable. Well, there's a nice flat in his building, and I think we should go and see it tomorrow. Well, what do you think? I think it's great because it's bigger and quieter than our flat. I love the modern design of the building, especially the windows. You can see the river and university, and it's cheaper than the flat we live in now. True, but it's cheaper because there isn't enough furniture. There's only an uncomfortable sofa and a desk. We'll need to buy a table and chairs, an armchair and a lamp or two. We should go to the furniture shop behind the bus station, because they sell lots of cheap things there. Okay, I want to get a desk for my room. Oh, and a wooden bookcase for all my books. And lots of other things as well come to think of me.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Track 6.1",
+      "tokens": [
+        50364,
+        31903,
+        1386,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2737762277776545,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.36255815625190735,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.5,
+          "probability": 0.11963856220245361
+        },
+        {
+          "word": " 6",
+          "start": 0.5,
+          "end": 1.06,
+          "probability": 0.9626184701919556
+        },
+        {
+          "word": ".1",
+          "start": 1.06,
+          "end": 2.0,
+          "probability": 0.9961877763271332
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.76,
+      "end": 8.16,
+      "text": " Lucas, I think we need to find a new place to live.",
+      "tokens": [
+        50560,
+        19178,
+        11,
+        286,
+        519,
+        321,
+        643,
+        281,
+        915,
+        257,
+        777,
+        1081,
+        281,
+        1621,
+        13,
+        50784
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2737762277776545,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.36255815625190735,
+      "words": [
+        {
+          "word": " Lucas,",
+          "start": 3.76,
+          "end": 4.48,
+          "probability": 0.03572644665837288
+        },
+        {
+          "word": " I",
+          "start": 4.9,
+          "end": 5.22,
+          "probability": 0.9946088790893555
+        },
+        {
+          "word": " think",
+          "start": 5.22,
+          "end": 5.62,
+          "probability": 0.9967043995857239
+        },
+        {
+          "word": " we",
+          "start": 5.62,
+          "end": 5.9,
+          "probability": 0.9981585144996643
+        },
+        {
+          "word": " need",
+          "start": 5.9,
+          "end": 6.12,
+          "probability": 0.9974265694618225
+        },
+        {
+          "word": " to",
+          "start": 6.12,
+          "end": 6.32,
+          "probability": 0.9974695444107056
+        },
+        {
+          "word": " find",
+          "start": 6.32,
+          "end": 6.64,
+          "probability": 0.999194324016571
+        },
+        {
+          "word": " a",
+          "start": 6.64,
+          "end": 6.88,
+          "probability": 0.997853696346283
+        },
+        {
+          "word": " new",
+          "start": 6.88,
+          "end": 7.1,
+          "probability": 0.9993605017662048
+        },
+        {
+          "word": " place",
+          "start": 7.1,
+          "end": 7.46,
+          "probability": 0.9989410042762756
+        },
+        {
+          "word": " to",
+          "start": 7.46,
+          "end": 7.72,
+          "probability": 0.9995400905609131
+        },
+        {
+          "word": " live.",
+          "start": 7.72,
+          "end": 8.16,
+          "probability": 0.9992530941963196
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.74,
+      "end": 11.26,
+      "text": " Why? I like this flat.",
+      "tokens": [
+        50784,
+        1545,
+        30,
+        286,
+        411,
+        341,
+        4962,
+        13,
+        50958
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2737762277776545,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.36255815625190735,
+      "words": [
+        {
+          "word": " Why?",
+          "start": 8.74,
+          "end": 9.18,
+          "probability": 0.9580419659614563
+        },
+        {
+          "word": " I",
+          "start": 10.0,
+          "end": 10.38,
+          "probability": 0.9974859952926636
+        },
+        {
+          "word": " like",
+          "start": 10.38,
+          "end": 10.62,
+          "probability": 0.9925774931907654
+        },
+        {
+          "word": " this",
+          "start": 10.62,
+          "end": 10.94,
+          "probability": 0.9986224174499512
+        },
+        {
+          "word": " flat.",
+          "start": 10.94,
+          "end": 11.26,
+          "probability": 0.9747526049613953
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 12.12,
+      "end": 14.8,
+      "text": " I mean, I know it's a bit noisy,",
+      "tokens": [
+        50958,
+        286,
+        914,
+        11,
+        286,
+        458,
+        309,
+        311,
+        257,
+        857,
+        24518,
+        11,
+        51128
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2737762277776545,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.36255815625190735,
+      "words": [
+        {
+          "word": " I",
+          "start": 12.12,
+          "end": 12.4,
+          "probability": 0.998482882976532
+        },
+        {
+          "word": " mean,",
+          "start": 12.4,
+          "end": 12.56,
+          "probability": 0.9964863061904907
+        },
+        {
+          "word": " I",
+          "start": 13.08,
+          "end": 13.22,
+          "probability": 0.9973970651626587
+        },
+        {
+          "word": " know",
+          "start": 13.22,
+          "end": 13.6,
+          "probability": 0.9950083494186401
+        },
+        {
+          "word": " it's",
+          "start": 13.6,
+          "end": 13.96,
+          "probability": 0.9886327385902405
+        },
+        {
+          "word": " a",
+          "start": 13.96,
+          "end": 14.04,
+          "probability": 0.9982240796089172
+        },
+        {
+          "word": " bit",
+          "start": 14.04,
+          "end": 14.22,
+          "probability": 0.9994538426399231
+        },
+        {
+          "word": " noisy,",
+          "start": 14.22,
+          "end": 14.8,
+          "probability": 0.9963582158088684
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 15.44,
+      "end": 19.18,
+      "text": " but it's near the town centre and all the shops.",
+      "tokens": [
+        51128,
+        457,
+        309,
+        311,
+        2651,
+        264,
+        3954,
+        10093,
+        293,
+        439,
+        264,
+        14457,
+        13,
+        51358
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2737762277776545,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.36255815625190735,
+      "words": [
+        {
+          "word": " but",
+          "start": 15.44,
+          "end": 15.74,
+          "probability": 0.9821109175682068
+        },
+        {
+          "word": " it's",
+          "start": 15.74,
+          "end": 16.18,
+          "probability": 0.9957873523235321
+        },
+        {
+          "word": " near",
+          "start": 16.18,
+          "end": 16.42,
+          "probability": 0.9992446899414062
+        },
+        {
+          "word": " the",
+          "start": 16.42,
+          "end": 16.66,
+          "probability": 0.9938130378723145
+        },
+        {
+          "word": " town",
+          "start": 16.66,
+          "end": 16.98,
+          "probability": 0.9799404740333557
+        },
+        {
+          "word": " centre",
+          "start": 16.98,
+          "end": 17.56,
+          "probability": 0.8332725167274475
+        },
+        {
+          "word": " and",
+          "start": 17.56,
+          "end": 18.2,
+          "probability": 0.8920117020606995
+        },
+        {
+          "word": " all",
+          "start": 18.2,
+          "end": 18.62,
+          "probability": 0.936806321144104
+        },
+        {
+          "word": " the",
+          "start": 18.62,
+          "end": 18.84,
+          "probability": 0.9928533434867859
+        },
+        {
+          "word": " shops.",
+          "start": 18.84,
+          "end": 19.18,
+          "probability": 0.9982445240020752
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 20.04,
+      "end": 23.68,
+      "text": " I want to stay here and it's near my parents.",
+      "tokens": [
+        51358,
+        286,
+        528,
+        281,
+        1754,
+        510,
+        293,
+        309,
+        311,
+        2651,
+        452,
+        3152,
+        13,
+        51580
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2737762277776545,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.36255815625190735,
+      "words": [
+        {
+          "word": " I",
+          "start": 20.04,
+          "end": 20.36,
+          "probability": 0.9982884526252747
+        },
+        {
+          "word": " want",
+          "start": 20.36,
+          "end": 20.56,
+          "probability": 0.9979771971702576
+        },
+        {
+          "word": " to",
+          "start": 20.56,
+          "end": 20.78,
+          "probability": 0.9995390176773071
+        },
+        {
+          "word": " stay",
+          "start": 20.78,
+          "end": 21.1,
+          "probability": 0.998671293258667
+        },
+        {
+          "word": " here",
+          "start": 21.1,
+          "end": 21.62,
+          "probability": 0.9994953870773315
+        },
+        {
+          "word": " and",
+          "start": 21.62,
+          "end": 22.32,
+          "probability": 0.7653217911720276
+        },
+        {
+          "word": " it's",
+          "start": 22.32,
+          "end": 22.84,
+          "probability": 0.9933023750782013
+        },
+        {
+          "word": " near",
+          "start": 22.84,
+          "end": 23.0,
+          "probability": 0.9985920786857605
+        },
+        {
+          "word": " my",
+          "start": 23.0,
+          "end": 23.22,
+          "probability": 0.998906135559082
+        },
+        {
+          "word": " parents.",
+          "start": 23.22,
+          "end": 23.68,
+          "probability": 0.9934711456298828
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 24.42,
+      "end": 28.38,
+      "text": " Yes, I know, but it's expensive and small.",
+      "tokens": [
+        51580,
+        1079,
+        11,
+        286,
+        458,
+        11,
+        457,
+        309,
+        311,
+        5124,
+        293,
+        1359,
+        13,
+        51810
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2737762277776545,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.36255815625190735,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 24.42,
+          "end": 24.88,
+          "probability": 0.9876058101654053
+        },
+        {
+          "word": " I",
+          "start": 25.08,
+          "end": 25.16,
+          "probability": 0.9982714653015137
+        },
+        {
+          "word": " know,",
+          "start": 25.16,
+          "end": 25.48,
+          "probability": 0.9993764758110046
+        },
+        {
+          "word": " but",
+          "start": 25.78,
+          "end": 26.0,
+          "probability": 0.9981461763381958
+        },
+        {
+          "word": " it's",
+          "start": 26.0,
+          "end": 26.58,
+          "probability": 0.9970206022262573
+        },
+        {
+          "word": " expensive",
+          "start": 26.58,
+          "end": 27.02,
+          "probability": 0.9969695210456848
+        },
+        {
+          "word": " and",
+          "start": 27.02,
+          "end": 27.88,
+          "probability": 0.9916039109230042
+        },
+        {
+          "word": " small.",
+          "start": 27.88,
+          "end": 28.38,
+          "probability": 0.9992604851722717
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2838,
+      "start": 28.38,
+      "end": 31.9,
+      "text": " We should look for a flat with more rooms.",
+      "tokens": [
+        50364,
+        492,
+        820,
+        574,
+        337,
+        257,
+        4962,
+        365,
+        544,
+        9396,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14076971745753025,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.0015520317247137427,
+      "words": [
+        {
+          "word": " We",
+          "start": 28.38,
+          "end": 29.4,
+          "probability": 0.31381547451019287
+        },
+        {
+          "word": " should",
+          "start": 29.4,
+          "end": 29.66,
+          "probability": 0.9894015192985535
+        },
+        {
+          "word": " look",
+          "start": 29.66,
+          "end": 29.86,
+          "probability": 0.9974396228790283
+        },
+        {
+          "word": " for",
+          "start": 29.86,
+          "end": 30.12,
+          "probability": 0.997620165348053
+        },
+        {
+          "word": " a",
+          "start": 30.12,
+          "end": 30.24,
+          "probability": 0.9944908618927002
+        },
+        {
+          "word": " flat",
+          "start": 30.24,
+          "end": 30.5,
+          "probability": 0.9901266098022461
+        },
+        {
+          "word": " with",
+          "start": 30.5,
+          "end": 30.94,
+          "probability": 0.9965016841888428
+        },
+        {
+          "word": " more",
+          "start": 30.94,
+          "end": 31.3,
+          "probability": 0.9916620254516602
+        },
+        {
+          "word": " rooms.",
+          "start": 31.3,
+          "end": 31.9,
+          "probability": 0.978769063949585
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2838,
+      "start": 32.9,
+      "end": 37.42,
+      "text": " My brother Irvin lives in a flat not far from the office,",
+      "tokens": [
+        50564,
+        1222,
+        3708,
+        9151,
+        4796,
+        2909,
+        294,
+        257,
+        4962,
+        406,
+        1400,
+        490,
+        264,
+        3398,
+        11,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14076971745753025,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.0015520317247137427,
+      "words": [
+        {
+          "word": " My",
+          "start": 32.9,
+          "end": 33.2,
+          "probability": 0.9665756225585938
+        },
+        {
+          "word": " brother",
+          "start": 33.2,
+          "end": 33.62,
+          "probability": 0.9914752244949341
+        },
+        {
+          "word": " Irvin",
+          "start": 33.62,
+          "end": 34.24,
+          "probability": 0.7866721749305725
+        },
+        {
+          "word": " lives",
+          "start": 34.24,
+          "end": 34.86,
+          "probability": 0.98028564453125
+        },
+        {
+          "word": " in",
+          "start": 34.86,
+          "end": 35.24,
+          "probability": 0.9984108209609985
+        },
+        {
+          "word": " a",
+          "start": 35.24,
+          "end": 35.36,
+          "probability": 0.9988909363746643
+        },
+        {
+          "word": " flat",
+          "start": 35.36,
+          "end": 35.68,
+          "probability": 0.9972485899925232
+        },
+        {
+          "word": " not",
+          "start": 35.68,
+          "end": 36.1,
+          "probability": 0.9768299460411072
+        },
+        {
+          "word": " far",
+          "start": 36.1,
+          "end": 36.52,
+          "probability": 0.9993771910667419
+        },
+        {
+          "word": " from",
+          "start": 36.52,
+          "end": 36.78,
+          "probability": 0.9982927441596985
+        },
+        {
+          "word": " the",
+          "start": 36.78,
+          "end": 36.96,
+          "probability": 0.9971412420272827
+        },
+        {
+          "word": " office,",
+          "start": 36.96,
+          "end": 37.42,
+          "probability": 0.9985754489898682
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2838,
+      "start": 37.98,
+      "end": 41.22,
+      "text": " and it's very quiet because it's next to the park.",
+      "tokens": [
+        50814,
+        293,
+        309,
+        311,
+        588,
+        5677,
+        570,
+        309,
+        311,
+        958,
+        281,
+        264,
+        3884,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14076971745753025,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.0015520317247137427,
+      "words": [
+        {
+          "word": " and",
+          "start": 37.98,
+          "end": 38.26,
+          "probability": 0.9928367733955383
+        },
+        {
+          "word": " it's",
+          "start": 38.26,
+          "end": 38.6,
+          "probability": 0.9758239388465881
+        },
+        {
+          "word": " very",
+          "start": 38.6,
+          "end": 38.78,
+          "probability": 0.9985491633415222
+        },
+        {
+          "word": " quiet",
+          "start": 38.78,
+          "end": 39.32,
+          "probability": 0.9971458315849304
+        },
+        {
+          "word": " because",
+          "start": 39.32,
+          "end": 39.98,
+          "probability": 0.7836000919342041
+        },
+        {
+          "word": " it's",
+          "start": 39.98,
+          "end": 40.32,
+          "probability": 0.9896186590194702
+        },
+        {
+          "word": " next",
+          "start": 40.32,
+          "end": 40.5,
+          "probability": 0.9988114833831787
+        },
+        {
+          "word": " to",
+          "start": 40.5,
+          "end": 40.76,
+          "probability": 0.9983152151107788
+        },
+        {
+          "word": " the",
+          "start": 40.76,
+          "end": 40.9,
+          "probability": 0.9987767338752747
+        },
+        {
+          "word": " park.",
+          "start": 40.9,
+          "end": 41.22,
+          "probability": 0.9875872731208801
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2838,
+      "start": 42.18,
+      "end": 43.88,
+      "text": " I'm not so sure.",
+      "tokens": [
+        51014,
+        286,
+        478,
+        406,
+        370,
+        988,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14076971745753025,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.0015520317247137427,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 42.18,
+          "end": 42.66,
+          "probability": 0.8135708272457123
+        },
+        {
+          "word": " not",
+          "start": 42.66,
+          "end": 42.92,
+          "probability": 0.9979812502861023
+        },
+        {
+          "word": " so",
+          "start": 42.92,
+          "end": 43.28,
+          "probability": 0.9953923225402832
+        },
+        {
+          "word": " sure.",
+          "start": 43.28,
+          "end": 43.88,
+          "probability": 0.9979197382926941
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2838,
+      "start": 45.0,
+      "end": 48.94,
+      "text": " I like our flat because it's clean and comfortable.",
+      "tokens": [
+        51164,
+        286,
+        411,
+        527,
+        4962,
+        570,
+        309,
+        311,
+        2541,
+        293,
+        4619,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14076971745753025,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.0015520317247137427,
+      "words": [
+        {
+          "word": " I",
+          "start": 45.0,
+          "end": 45.16,
+          "probability": 0.9909406900405884
+        },
+        {
+          "word": " like",
+          "start": 45.16,
+          "end": 45.46,
+          "probability": 0.9962230920791626
+        },
+        {
+          "word": " our",
+          "start": 45.46,
+          "end": 45.82,
+          "probability": 0.993187427520752
+        },
+        {
+          "word": " flat",
+          "start": 45.82,
+          "end": 46.18,
+          "probability": 0.9973964691162109
+        },
+        {
+          "word": " because",
+          "start": 46.18,
+          "end": 46.78,
+          "probability": 0.9248099327087402
+        },
+        {
+          "word": " it's",
+          "start": 46.78,
+          "end": 47.24,
+          "probability": 0.9920459389686584
+        },
+        {
+          "word": " clean",
+          "start": 47.24,
+          "end": 47.66,
+          "probability": 0.9944075345993042
+        },
+        {
+          "word": " and",
+          "start": 47.66,
+          "end": 48.28,
+          "probability": 0.9963136315345764
+        },
+        {
+          "word": " comfortable.",
+          "start": 48.28,
+          "end": 48.94,
+          "probability": 0.9987543821334839
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2838,
+      "start": 49.72,
+      "end": 52.78,
+      "text": " Well, there's a nice flat in his building,",
+      "tokens": [
+        51414,
+        1042,
+        11,
+        456,
+        311,
+        257,
+        1481,
+        4962,
+        294,
+        702,
+        2390,
+        11,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14076971745753025,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.0015520317247137427,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 49.72,
+          "end": 50.26,
+          "probability": 0.9882364869117737
+        },
+        {
+          "word": " there's",
+          "start": 50.58,
+          "end": 51.04,
+          "probability": 0.9927994906902313
+        },
+        {
+          "word": " a",
+          "start": 51.04,
+          "end": 51.12,
+          "probability": 0.9979641437530518
+        },
+        {
+          "word": " nice",
+          "start": 51.12,
+          "end": 51.36,
+          "probability": 0.9983237385749817
+        },
+        {
+          "word": " flat",
+          "start": 51.36,
+          "end": 51.74,
+          "probability": 0.9948451519012451
+        },
+        {
+          "word": " in",
+          "start": 51.74,
+          "end": 52.06,
+          "probability": 0.9989320635795593
+        },
+        {
+          "word": " his",
+          "start": 52.06,
+          "end": 52.22,
+          "probability": 0.994005560874939
+        },
+        {
+          "word": " building,",
+          "start": 52.22,
+          "end": 52.78,
+          "probability": 0.9984809756278992
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2838,
+      "start": 53.28,
+      "end": 56.0,
+      "text": " and I think we should go and see it tomorrow.",
+      "tokens": [
+        51614,
+        293,
+        286,
+        519,
+        321,
+        820,
+        352,
+        293,
+        536,
+        309,
+        4153,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14076971745753025,
+      "compression_ratio": 1.5527638190954773,
+      "no_speech_prob": 0.0015520317247137427,
+      "words": [
+        {
+          "word": " and",
+          "start": 53.28,
+          "end": 53.7,
+          "probability": 0.995877742767334
+        },
+        {
+          "word": " I",
+          "start": 53.7,
+          "end": 54.12,
+          "probability": 0.9893298745155334
+        },
+        {
+          "word": " think",
+          "start": 54.12,
+          "end": 54.36,
+          "probability": 0.9993602633476257
+        },
+        {
+          "word": " we",
+          "start": 54.36,
+          "end": 54.6,
+          "probability": 0.9983009696006775
+        },
+        {
+          "word": " should",
+          "start": 54.6,
+          "end": 54.82,
+          "probability": 0.9994326233863831
+        },
+        {
+          "word": " go",
+          "start": 54.82,
+          "end": 55.02,
+          "probability": 0.9960665106773376
+        },
+        {
+          "word": " and",
+          "start": 55.02,
+          "end": 55.16,
+          "probability": 0.9862903952598572
+        },
+        {
+          "word": " see",
+          "start": 55.16,
+          "end": 55.4,
+          "probability": 0.9987668991088867
+        },
+        {
+          "word": " it",
+          "start": 55.4,
+          "end": 55.56,
+          "probability": 0.9982582926750183
+        },
+        {
+          "word": " tomorrow.",
+          "start": 55.56,
+          "end": 56.0,
+          "probability": 0.9984644651412964
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5838,
+      "start": 59.38,
+      "end": 60.84,
+      "text": " Well, what do you think?",
+      "tokens": [
+        50414,
+        1042,
+        11,
+        437,
+        360,
+        291,
+        519,
+        30,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05778560405824243,
+      "compression_ratio": 1.556701030927835,
+      "no_speech_prob": 0.007728083990514278,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 59.08,
+          "end": 59.48,
+          "probability": 0.7582127451896667
+        },
+        {
+          "word": " what",
+          "start": 59.88,
+          "end": 60.14,
+          "probability": 0.9900023937225342
+        },
+        {
+          "word": " do",
+          "start": 60.14,
+          "end": 60.32,
+          "probability": 0.9918145537376404
+        },
+        {
+          "word": " you",
+          "start": 60.32,
+          "end": 60.46,
+          "probability": 0.9950501322746277
+        },
+        {
+          "word": " think?",
+          "start": 60.46,
+          "end": 60.84,
+          "probability": 0.9984729886054993
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5838,
+      "start": 61.6,
+      "end": 66.62,
+      "text": " I think it's great because it's bigger and quieter than our flat.",
+      "tokens": [
+        50514,
+        286,
+        519,
+        309,
+        311,
+        869,
+        570,
+        309,
+        311,
+        3801,
+        293,
+        43339,
+        813,
+        527,
+        4962,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05778560405824243,
+      "compression_ratio": 1.556701030927835,
+      "no_speech_prob": 0.007728083990514278,
+      "words": [
+        {
+          "word": " I",
+          "start": 61.6,
+          "end": 61.88,
+          "probability": 0.9946046471595764
+        },
+        {
+          "word": " think",
+          "start": 61.88,
+          "end": 62.08,
+          "probability": 0.9984809756278992
+        },
+        {
+          "word": " it's",
+          "start": 62.08,
+          "end": 62.44,
+          "probability": 0.957101047039032
+        },
+        {
+          "word": " great",
+          "start": 62.44,
+          "end": 62.94,
+          "probability": 0.9919719696044922
+        },
+        {
+          "word": " because",
+          "start": 62.94,
+          "end": 63.62,
+          "probability": 0.8553907871246338
+        },
+        {
+          "word": " it's",
+          "start": 63.62,
+          "end": 64.04,
+          "probability": 0.9848982393741608
+        },
+        {
+          "word": " bigger",
+          "start": 64.04,
+          "end": 64.44,
+          "probability": 0.9893195629119873
+        },
+        {
+          "word": " and",
+          "start": 64.44,
+          "end": 64.96,
+          "probability": 0.9892783761024475
+        },
+        {
+          "word": " quieter",
+          "start": 64.96,
+          "end": 65.66,
+          "probability": 0.9963569045066833
+        },
+        {
+          "word": " than",
+          "start": 65.66,
+          "end": 66.02,
+          "probability": 0.9884797930717468
+        },
+        {
+          "word": " our",
+          "start": 66.02,
+          "end": 66.24,
+          "probability": 0.9667007923126221
+        },
+        {
+          "word": " flat.",
+          "start": 66.24,
+          "end": 66.62,
+          "probability": 0.975318968296051
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5838,
+      "start": 67.5,
+      "end": 71.84,
+      "text": " I love the modern design of the building, especially the windows.",
+      "tokens": [
+        50814,
+        286,
+        959,
+        264,
+        4363,
+        1715,
+        295,
+        264,
+        2390,
+        11,
+        2318,
+        264,
+        9309,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05778560405824243,
+      "compression_ratio": 1.556701030927835,
+      "no_speech_prob": 0.007728083990514278,
+      "words": [
+        {
+          "word": " I",
+          "start": 67.5,
+          "end": 67.74,
+          "probability": 0.9900102019309998
+        },
+        {
+          "word": " love",
+          "start": 67.74,
+          "end": 68.02,
+          "probability": 0.9908672571182251
+        },
+        {
+          "word": " the",
+          "start": 68.02,
+          "end": 68.34,
+          "probability": 0.9966567754745483
+        },
+        {
+          "word": " modern",
+          "start": 68.34,
+          "end": 68.72,
+          "probability": 0.977700412273407
+        },
+        {
+          "word": " design",
+          "start": 68.72,
+          "end": 69.22,
+          "probability": 0.9979851245880127
+        },
+        {
+          "word": " of",
+          "start": 69.22,
+          "end": 69.56,
+          "probability": 0.9982049465179443
+        },
+        {
+          "word": " the",
+          "start": 69.56,
+          "end": 69.72,
+          "probability": 0.9932960867881775
+        },
+        {
+          "word": " building,",
+          "start": 69.72,
+          "end": 70.18,
+          "probability": 0.9946377873420715
+        },
+        {
+          "word": " especially",
+          "start": 70.64,
+          "end": 71.08,
+          "probability": 0.9965747594833374
+        },
+        {
+          "word": " the",
+          "start": 71.08,
+          "end": 71.38,
+          "probability": 0.996423065662384
+        },
+        {
+          "word": " windows.",
+          "start": 71.38,
+          "end": 71.84,
+          "probability": 0.9791379570960999
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5838,
+      "start": 72.62,
+      "end": 75.58,
+      "text": " You can see the river and university,",
+      "tokens": [
+        51064,
+        509,
+        393,
+        536,
+        264,
+        6810,
+        293,
+        5454,
+        11,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05778560405824243,
+      "compression_ratio": 1.556701030927835,
+      "no_speech_prob": 0.007728083990514278,
+      "words": [
+        {
+          "word": " You",
+          "start": 72.62,
+          "end": 73.1,
+          "probability": 0.9954493641853333
+        },
+        {
+          "word": " can",
+          "start": 73.1,
+          "end": 73.24,
+          "probability": 0.9965470433235168
+        },
+        {
+          "word": " see",
+          "start": 73.24,
+          "end": 73.54,
+          "probability": 0.9971828460693359
+        },
+        {
+          "word": " the",
+          "start": 73.54,
+          "end": 73.72,
+          "probability": 0.9975652694702148
+        },
+        {
+          "word": " river",
+          "start": 73.72,
+          "end": 74.12,
+          "probability": 0.9791391491889954
+        },
+        {
+          "word": " and",
+          "start": 74.12,
+          "end": 74.62,
+          "probability": 0.9873407483100891
+        },
+        {
+          "word": " university,",
+          "start": 74.62,
+          "end": 75.58,
+          "probability": 0.7270377278327942
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5838,
+      "start": 76.1,
+      "end": 79.44,
+      "text": " and it's cheaper than the flat we live in now.",
+      "tokens": [
+        51264,
+        293,
+        309,
+        311,
+        12284,
+        813,
+        264,
+        4962,
+        321,
+        1621,
+        294,
+        586,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05778560405824243,
+      "compression_ratio": 1.556701030927835,
+      "no_speech_prob": 0.007728083990514278,
+      "words": [
+        {
+          "word": " and",
+          "start": 76.1,
+          "end": 76.78,
+          "probability": 0.9906898736953735
+        },
+        {
+          "word": " it's",
+          "start": 76.78,
+          "end": 77.02,
+          "probability": 0.9891147911548615
+        },
+        {
+          "word": " cheaper",
+          "start": 77.02,
+          "end": 77.5,
+          "probability": 0.9968580007553101
+        },
+        {
+          "word": " than",
+          "start": 77.5,
+          "end": 77.8,
+          "probability": 0.993296205997467
+        },
+        {
+          "word": " the",
+          "start": 77.8,
+          "end": 77.96,
+          "probability": 0.9941421151161194
+        },
+        {
+          "word": " flat",
+          "start": 77.96,
+          "end": 78.24,
+          "probability": 0.5914560556411743
+        },
+        {
+          "word": " we",
+          "start": 78.24,
+          "end": 78.58,
+          "probability": 0.9887020587921143
+        },
+        {
+          "word": " live",
+          "start": 78.58,
+          "end": 78.8,
+          "probability": 0.9988504648208618
+        },
+        {
+          "word": " in",
+          "start": 78.8,
+          "end": 79.04,
+          "probability": 0.9969404935836792
+        },
+        {
+          "word": " now.",
+          "start": 79.04,
+          "end": 79.44,
+          "probability": 0.9945433139801025
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 5838,
+      "start": 80.62,
+      "end": 85.32,
+      "text": " True, but it's cheaper because there isn't enough furniture.",
+      "tokens": [
+        51464,
+        13587,
+        11,
+        457,
+        309,
+        311,
+        12284,
+        570,
+        456,
+        1943,
+        380,
+        1547,
+        15671,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05778560405824243,
+      "compression_ratio": 1.556701030927835,
+      "no_speech_prob": 0.007728083990514278,
+      "words": [
+        {
+          "word": " True,",
+          "start": 80.62,
+          "end": 81.02,
+          "probability": 0.9329662322998047
+        },
+        {
+          "word": " but",
+          "start": 81.54,
+          "end": 82.04,
+          "probability": 0.9930679798126221
+        },
+        {
+          "word": " it's",
+          "start": 82.04,
+          "end": 82.44,
+          "probability": 0.9924357533454895
+        },
+        {
+          "word": " cheaper",
+          "start": 82.44,
+          "end": 82.9,
+          "probability": 0.9971768856048584
+        },
+        {
+          "word": " because",
+          "start": 82.9,
+          "end": 83.34,
+          "probability": 0.9799516797065735
+        },
+        {
+          "word": " there",
+          "start": 83.34,
+          "end": 83.7,
+          "probability": 0.9907564520835876
+        },
+        {
+          "word": " isn't",
+          "start": 83.7,
+          "end": 84.28,
+          "probability": 0.9969257116317749
+        },
+        {
+          "word": " enough",
+          "start": 84.28,
+          "end": 84.54,
+          "probability": 0.9936007857322693
+        },
+        {
+          "word": " furniture.",
+          "start": 84.54,
+          "end": 85.32,
+          "probability": 0.9997790455818176
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 8532,
+      "start": 86.04,
+      "end": 90.42,
+      "text": " There's only an uncomfortable sofa and a desk.",
+      "tokens": [
+        50414,
+        821,
+        311,
+        787,
+        364,
+        10532,
+        28668,
+        293,
+        257,
+        10026,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06631996180560137,
+      "compression_ratio": 1.4857142857142858,
+      "no_speech_prob": 0.19505420327186584,
+      "words": [
+        {
+          "word": " There's",
+          "start": 86.04,
+          "end": 86.76,
+          "probability": 0.5110556185245514
+        },
+        {
+          "word": " only",
+          "start": 86.76,
+          "end": 87.18,
+          "probability": 0.9874932765960693
+        },
+        {
+          "word": " an",
+          "start": 87.18,
+          "end": 87.64,
+          "probability": 0.962919294834137
+        },
+        {
+          "word": " uncomfortable",
+          "start": 87.64,
+          "end": 88.4,
+          "probability": 0.9750044941902161
+        },
+        {
+          "word": " sofa",
+          "start": 88.4,
+          "end": 89.06,
+          "probability": 0.9890763759613037
+        },
+        {
+          "word": " and",
+          "start": 89.06,
+          "end": 89.7,
+          "probability": 0.9799088835716248
+        },
+        {
+          "word": " a",
+          "start": 89.7,
+          "end": 89.86,
+          "probability": 0.9914133548736572
+        },
+        {
+          "word": " desk.",
+          "start": 89.86,
+          "end": 90.42,
+          "probability": 0.9965318441390991
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 8532,
+      "start": 91.3,
+      "end": 97.66,
+      "text": " We'll need to buy a table and chairs, an armchair and a lamp or two.",
+      "tokens": [
+        50664,
+        492,
+        603,
+        643,
+        281,
+        2256,
+        257,
+        3199,
+        293,
+        18299,
+        11,
+        364,
+        3726,
+        17892,
+        293,
+        257,
+        12684,
+        420,
+        732,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06631996180560137,
+      "compression_ratio": 1.4857142857142858,
+      "no_speech_prob": 0.19505420327186584,
+      "words": [
+        {
+          "word": " We'll",
+          "start": 91.3,
+          "end": 91.74,
+          "probability": 0.9847780466079712
+        },
+        {
+          "word": " need",
+          "start": 91.74,
+          "end": 91.96,
+          "probability": 0.99837327003479
+        },
+        {
+          "word": " to",
+          "start": 91.96,
+          "end": 92.16,
+          "probability": 0.9987309575080872
+        },
+        {
+          "word": " buy",
+          "start": 92.16,
+          "end": 92.44,
+          "probability": 0.9989281296730042
+        },
+        {
+          "word": " a",
+          "start": 92.44,
+          "end": 92.7,
+          "probability": 0.9979264736175537
+        },
+        {
+          "word": " table",
+          "start": 92.7,
+          "end": 93.18,
+          "probability": 0.995016872882843
+        },
+        {
+          "word": " and",
+          "start": 93.18,
+          "end": 93.52,
+          "probability": 0.9909857511520386
+        },
+        {
+          "word": " chairs,",
+          "start": 93.52,
+          "end": 94.0,
+          "probability": 0.9963057041168213
+        },
+        {
+          "word": " an",
+          "start": 94.6,
+          "end": 94.78,
+          "probability": 0.9682416915893555
+        },
+        {
+          "word": " armchair",
+          "start": 94.78,
+          "end": 95.48,
+          "probability": 0.9449332654476166
+        },
+        {
+          "word": " and",
+          "start": 95.48,
+          "end": 96.5,
+          "probability": 0.5611634254455566
+        },
+        {
+          "word": " a",
+          "start": 96.5,
+          "end": 96.76,
+          "probability": 0.9908291101455688
+        },
+        {
+          "word": " lamp",
+          "start": 96.76,
+          "end": 96.98,
+          "probability": 0.9202726483345032
+        },
+        {
+          "word": " or",
+          "start": 96.98,
+          "end": 97.3,
+          "probability": 0.5363600850105286
+        },
+        {
+          "word": " two.",
+          "start": 97.3,
+          "end": 97.66,
+          "probability": 0.9896069169044495
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 8532,
+      "start": 98.56,
+      "end": 102.46,
+      "text": " We should go to the furniture shop behind the bus station,",
+      "tokens": [
+        51014,
+        492,
+        820,
+        352,
+        281,
+        264,
+        15671,
+        3945,
+        2261,
+        264,
+        1255,
+        5214,
+        11,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06631996180560137,
+      "compression_ratio": 1.4857142857142858,
+      "no_speech_prob": 0.19505420327186584,
+      "words": [
+        {
+          "word": " We",
+          "start": 98.56,
+          "end": 98.86,
+          "probability": 0.6308513283729553
+        },
+        {
+          "word": " should",
+          "start": 98.86,
+          "end": 99.18,
+          "probability": 0.995402455329895
+        },
+        {
+          "word": " go",
+          "start": 99.18,
+          "end": 99.46,
+          "probability": 0.9965997338294983
+        },
+        {
+          "word": " to",
+          "start": 99.46,
+          "end": 99.64,
+          "probability": 0.9896613359451294
+        },
+        {
+          "word": " the",
+          "start": 99.64,
+          "end": 99.8,
+          "probability": 0.9916977882385254
+        },
+        {
+          "word": " furniture",
+          "start": 99.8,
+          "end": 100.14,
+          "probability": 0.9840229749679565
+        },
+        {
+          "word": " shop",
+          "start": 100.14,
+          "end": 100.76,
+          "probability": 0.9983407258987427
+        },
+        {
+          "word": " behind",
+          "start": 100.76,
+          "end": 101.32,
+          "probability": 0.9632282257080078
+        },
+        {
+          "word": " the",
+          "start": 101.32,
+          "end": 101.68,
+          "probability": 0.995033860206604
+        },
+        {
+          "word": " bus",
+          "start": 101.68,
+          "end": 101.84,
+          "probability": 0.9886146783828735
+        },
+        {
+          "word": " station,",
+          "start": 101.84,
+          "end": 102.46,
+          "probability": 0.9980469942092896
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 8532,
+      "start": 102.82,
+      "end": 105.62,
+      "text": " because they sell lots of cheap things there.",
+      "tokens": [
+        51214,
+        570,
+        436,
+        3607,
+        3195,
+        295,
+        7084,
+        721,
+        456,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06631996180560137,
+      "compression_ratio": 1.4857142857142858,
+      "no_speech_prob": 0.19505420327186584,
+      "words": [
+        {
+          "word": " because",
+          "start": 102.82,
+          "end": 103.12,
+          "probability": 0.9942574501037598
+        },
+        {
+          "word": " they",
+          "start": 103.12,
+          "end": 103.4,
+          "probability": 0.9965283274650574
+        },
+        {
+          "word": " sell",
+          "start": 103.4,
+          "end": 103.7,
+          "probability": 0.9996243715286255
+        },
+        {
+          "word": " lots",
+          "start": 103.7,
+          "end": 104.08,
+          "probability": 0.9917994737625122
+        },
+        {
+          "word": " of",
+          "start": 104.08,
+          "end": 104.48,
+          "probability": 0.9989160299301147
+        },
+        {
+          "word": " cheap",
+          "start": 104.48,
+          "end": 104.76,
+          "probability": 0.9960336089134216
+        },
+        {
+          "word": " things",
+          "start": 104.76,
+          "end": 105.32,
+          "probability": 0.9983265995979309
+        },
+        {
+          "word": " there.",
+          "start": 105.32,
+          "end": 105.62,
+          "probability": 0.9753784537315369
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 8532,
+      "start": 106.5,
+      "end": 110.6,
+      "text": " Okay, I want to get a desk for my room.",
+      "tokens": [
+        51414,
+        1033,
+        11,
+        286,
+        528,
+        281,
+        483,
+        257,
+        10026,
+        337,
+        452,
+        1808,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06631996180560137,
+      "compression_ratio": 1.4857142857142858,
+      "no_speech_prob": 0.19505420327186584,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 106.5,
+          "end": 107.22,
+          "probability": 0.4396744966506958
+        },
+        {
+          "word": " I",
+          "start": 107.7,
+          "end": 108.28,
+          "probability": 0.994967520236969
+        },
+        {
+          "word": " want",
+          "start": 108.28,
+          "end": 108.48,
+          "probability": 0.9969555139541626
+        },
+        {
+          "word": " to",
+          "start": 108.48,
+          "end": 108.74,
+          "probability": 0.9991353154182434
+        },
+        {
+          "word": " get",
+          "start": 108.74,
+          "end": 108.94,
+          "probability": 0.9986087679862976
+        },
+        {
+          "word": " a",
+          "start": 108.94,
+          "end": 109.22,
+          "probability": 0.9974034428596497
+        },
+        {
+          "word": " desk",
+          "start": 109.22,
+          "end": 109.7,
+          "probability": 0.9989286065101624
+        },
+        {
+          "word": " for",
+          "start": 109.7,
+          "end": 109.98,
+          "probability": 0.997714638710022
+        },
+        {
+          "word": " my",
+          "start": 109.98,
+          "end": 110.24,
+          "probability": 0.9992343187332153
+        },
+        {
+          "word": " room.",
+          "start": 110.24,
+          "end": 110.6,
+          "probability": 0.9985381364822388
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 11060,
+      "start": 111.67999999999999,
+      "end": 115.4,
+      "text": " Oh, and a wooden bookcase for all my books.",
+      "tokens": [
+        50414,
+        876,
+        11,
+        293,
+        257,
+        14744,
+        1446,
+        9765,
+        337,
+        439,
+        452,
+        3642,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12843406995137532,
+      "compression_ratio": 1.1547619047619047,
+      "no_speech_prob": 0.2292579710483551,
+      "words": [
+        {
+          "word": " Oh,",
+          "start": 111.67999999999999,
+          "end": 112.24,
+          "probability": 0.7277036905288696
+        },
+        {
+          "word": " and",
+          "start": 112.24,
+          "end": 112.8,
+          "probability": 0.8711304068565369
+        },
+        {
+          "word": " a",
+          "start": 112.8,
+          "end": 113.0,
+          "probability": 0.9517567753791809
+        },
+        {
+          "word": " wooden",
+          "start": 113.0,
+          "end": 113.38,
+          "probability": 0.9911012649536133
+        },
+        {
+          "word": " bookcase",
+          "start": 113.38,
+          "end": 114.1,
+          "probability": 0.9581818580627441
+        },
+        {
+          "word": " for",
+          "start": 114.1,
+          "end": 114.48,
+          "probability": 0.9746983647346497
+        },
+        {
+          "word": " all",
+          "start": 114.48,
+          "end": 114.68,
+          "probability": 0.9912883043289185
+        },
+        {
+          "word": " my",
+          "start": 114.68,
+          "end": 114.9,
+          "probability": 0.9837400317192078
+        },
+        {
+          "word": " books.",
+          "start": 114.9,
+          "end": 115.4,
+          "probability": 0.9954774975776672
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 11060,
+      "start": 116.08,
+      "end": 119.08,
+      "text": " And lots of other things as well come to think of me.",
+      "tokens": [
+        50614,
+        400,
+        3195,
+        295,
+        661,
+        721,
+        382,
+        731,
+        808,
+        281,
+        519,
+        295,
+        385,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12843406995137532,
+      "compression_ratio": 1.1547619047619047,
+      "no_speech_prob": 0.2292579710483551,
+      "words": [
+        {
+          "word": " And",
+          "start": 116.08,
+          "end": 116.28,
+          "probability": 0.9231204390525818
+        },
+        {
+          "word": " lots",
+          "start": 116.28,
+          "end": 116.5,
+          "probability": 0.9869051575660706
+        },
+        {
+          "word": " of",
+          "start": 116.5,
+          "end": 116.78,
+          "probability": 0.9977163076400757
+        },
+        {
+          "word": " other",
+          "start": 116.78,
+          "end": 117.06,
+          "probability": 0.9802832007408142
+        },
+        {
+          "word": " things",
+          "start": 117.06,
+          "end": 117.38,
+          "probability": 0.99641352891922
+        },
+        {
+          "word": " as",
+          "start": 117.38,
+          "end": 117.58,
+          "probability": 0.9063430428504944
+        },
+        {
+          "word": " well",
+          "start": 117.58,
+          "end": 117.86,
+          "probability": 0.9686148166656494
+        },
+        {
+          "word": " come",
+          "start": 117.86,
+          "end": 118.2,
+          "probability": 0.8549633622169495
+        },
+        {
+          "word": " to",
+          "start": 118.2,
+          "end": 118.48,
+          "probability": 0.99309241771698
+        },
+        {
+          "word": " think",
+          "start": 118.48,
+          "end": 118.78,
+          "probability": 0.9843438863754272
+        },
+        {
+          "word": " of",
+          "start": 118.78,
+          "end": 118.96,
+          "probability": 0.9762202501296997
+        },
+        {
+          "word": " me.",
+          "start": 118.96,
+          "end": 119.08,
+          "probability": 0.5191065669059753
+        }
+      ]
+    }
+  ]
+}

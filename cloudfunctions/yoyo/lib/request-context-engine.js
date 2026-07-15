@@ -11,7 +11,7 @@ function hasTaskAudioSource(task) {
 
 function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
-  const knownAudioCategories = ['newconcept1', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook', 'peppa', 'song', 'unlock1', 'unlock1thirdedition', 'unlock1workbook'];
+  const knownAudioCategories = ['newconcept1', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook', 'peppa', 'song', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook'];
   const view = String((payload && payload.view) || '').trim();
   const staticManifestOnly = STATIC_MANIFEST_ONLY_CATEGORIES.includes(requestedCategory);
   if (action === 'getDashboard' || action === 'getMonthHeatmap') {

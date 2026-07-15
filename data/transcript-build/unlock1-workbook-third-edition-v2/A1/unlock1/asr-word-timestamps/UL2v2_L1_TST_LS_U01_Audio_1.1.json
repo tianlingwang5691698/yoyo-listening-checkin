@@ -1,0 +1,2422 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 1.1 Hi Sophia, is that the photo of your family? Yes, here, look. Are these your parents? Yes, my mother Hannah and my father Marco. Where are they from? Well, my father is from Italy, but my mother isn't. She's from Australia. So your grandparents are Australian? My grandmother isn't. She's from England, but she lives in Melbourne with my grandfather. But is your father Italian? Yes, he is. My brother and I are two. My father's a TV presenter in Rome, and my mother's a writer. She's very creative. She writes children's books. Is your brother a student at university? Yes, he's a student. He wants to be a scientist and work in America. What about your family, Kenji? Here's a photo of my parents, my brother, and my two sisters. Where is your family from? We come from Tokyo in Japan, but my brother and I don't live there now. I'm a student here, and my brother works in England in London. What does he do? He's a teacher, and my sister Yumiko is a manager in a hotel in Tokyo. My other sister is 15 and still at school, but she wants to be a chef. And you? What do you want to do? I want to be a businessman. I want to work in China or the UAE. And what do you want to do in the future? I don't know. Not a businesswoman, though. Maybe a doctor, like my grandfather.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.56,
+      "text": " Track 1.1",
+      "tokens": [
+        50364,
+        31903,
+        502,
+        13,
+        16,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1898879198960855,
+      "compression_ratio": 1.4066666666666667,
+      "no_speech_prob": 0.3122858703136444,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.54,
+          "probability": 0.2829495966434479
+        },
+        {
+          "word": " 1",
+          "start": 0.54,
+          "end": 1.3,
+          "probability": 0.9203720688819885
+        },
+        {
+          "word": ".1",
+          "start": 1.3,
+          "end": 2.56,
+          "probability": 0.9956031441688538
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.7600000000000007,
+      "end": 8.14,
+      "text": " Hi Sophia, is that the photo of your family?",
+      "tokens": [
+        50564,
+        2421,
+        35152,
+        11,
+        307,
+        300,
+        264,
+        5052,
+        295,
+        428,
+        1605,
+        30,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1898879198960855,
+      "compression_ratio": 1.4066666666666667,
+      "no_speech_prob": 0.3122858703136444,
+      "words": [
+        {
+          "word": " Hi",
+          "start": 3.7600000000000007,
+          "end": 4.64,
+          "probability": 0.5385578870773315
+        },
+        {
+          "word": " Sophia,",
+          "start": 4.64,
+          "end": 5.24,
+          "probability": 0.31490206718444824
+        },
+        {
+          "word": " is",
+          "start": 5.82,
+          "end": 6.2,
+          "probability": 0.9497223496437073
+        },
+        {
+          "word": " that",
+          "start": 6.2,
+          "end": 6.46,
+          "probability": 0.9964264035224915
+        },
+        {
+          "word": " the",
+          "start": 6.46,
+          "end": 6.72,
+          "probability": 0.7196236848831177
+        },
+        {
+          "word": " photo",
+          "start": 6.72,
+          "end": 7.14,
+          "probability": 0.9944373369216919
+        },
+        {
+          "word": " of",
+          "start": 7.14,
+          "end": 7.44,
+          "probability": 0.9978660941123962
+        },
+        {
+          "word": " your",
+          "start": 7.44,
+          "end": 7.56,
+          "probability": 0.9963079690933228
+        },
+        {
+          "word": " family?",
+          "start": 7.56,
+          "end": 8.14,
+          "probability": 0.998046875
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.06,
+      "end": 11.58,
+      "text": " Yes, here, look.",
+      "tokens": [
+        50814,
+        1079,
+        11,
+        510,
+        11,
+        574,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1898879198960855,
+      "compression_ratio": 1.4066666666666667,
+      "no_speech_prob": 0.3122858703136444,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 9.06,
+          "end": 9.5,
+          "probability": 0.9502944350242615
+        },
+        {
+          "word": " here,",
+          "start": 10.16,
+          "end": 10.72,
+          "probability": 0.9740997552871704
+        },
+        {
+          "word": " look.",
+          "start": 11.14,
+          "end": 11.58,
+          "probability": 0.9912431240081787
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 12.74,
+      "end": 14.16,
+      "text": " Are these your parents?",
+      "tokens": [
+        50964,
+        2014,
+        613,
+        428,
+        3152,
+        30,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1898879198960855,
+      "compression_ratio": 1.4066666666666667,
+      "no_speech_prob": 0.3122858703136444,
+      "words": [
+        {
+          "word": " Are",
+          "start": 12.74,
+          "end": 12.9,
+          "probability": 0.9297429919242859
+        },
+        {
+          "word": " these",
+          "start": 12.9,
+          "end": 13.2,
+          "probability": 0.9929746389389038
+        },
+        {
+          "word": " your",
+          "start": 13.2,
+          "end": 13.58,
+          "probability": 0.9977076053619385
+        },
+        {
+          "word": " parents?",
+          "start": 13.58,
+          "end": 14.16,
+          "probability": 0.9986348748207092
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 15.12,
+      "end": 20.14,
+      "text": " Yes, my mother Hannah and my father Marco.",
+      "tokens": [
+        51114,
+        1079,
+        11,
+        452,
+        2895,
+        21754,
+        293,
+        452,
+        3086,
+        26535,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1898879198960855,
+      "compression_ratio": 1.4066666666666667,
+      "no_speech_prob": 0.3122858703136444,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 15.12,
+          "end": 15.52,
+          "probability": 0.858381450176239
+        },
+        {
+          "word": " my",
+          "start": 16.32,
+          "end": 16.7,
+          "probability": 0.9898114800453186
+        },
+        {
+          "word": " mother",
+          "start": 16.7,
+          "end": 17.16,
+          "probability": 0.9765533804893494
+        },
+        {
+          "word": " Hannah",
+          "start": 17.16,
+          "end": 17.76,
+          "probability": 0.5312067866325378
+        },
+        {
+          "word": " and",
+          "start": 17.76,
+          "end": 18.6,
+          "probability": 0.9071502685546875
+        },
+        {
+          "word": " my",
+          "start": 18.6,
+          "end": 18.86,
+          "probability": 0.9981353282928467
+        },
+        {
+          "word": " father",
+          "start": 18.86,
+          "end": 19.34,
+          "probability": 0.985683023929596
+        },
+        {
+          "word": " Marco.",
+          "start": 19.34,
+          "end": 20.14,
+          "probability": 0.8333395719528198
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 21.5,
+      "end": 22.86,
+      "text": " Where are they from?",
+      "tokens": [
+        51414,
+        2305,
+        366,
+        436,
+        490,
+        30,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1898879198960855,
+      "compression_ratio": 1.4066666666666667,
+      "no_speech_prob": 0.3122858703136444,
+      "words": [
+        {
+          "word": " Where",
+          "start": 21.5,
+          "end": 21.84,
+          "probability": 0.9890852570533752
+        },
+        {
+          "word": " are",
+          "start": 21.84,
+          "end": 22.16,
+          "probability": 0.9981623291969299
+        },
+        {
+          "word": " they",
+          "start": 22.16,
+          "end": 22.42,
+          "probability": 0.9978407621383667
+        },
+        {
+          "word": " from?",
+          "start": 22.42,
+          "end": 22.86,
+          "probability": 0.9979585409164429
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 23.92,
+      "end": 28.86,
+      "text": " Well, my father is from Italy, but my mother isn't.",
+      "tokens": [
+        51564,
+        1042,
+        11,
+        452,
+        3086,
+        307,
+        490,
+        10705,
+        11,
+        457,
+        452,
+        2895,
+        1943,
+        380,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1898879198960855,
+      "compression_ratio": 1.4066666666666667,
+      "no_speech_prob": 0.3122858703136444,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 23.92,
+          "end": 24.38,
+          "probability": 0.9663750529289246
+        },
+        {
+          "word": " my",
+          "start": 24.78,
+          "end": 25.08,
+          "probability": 0.9968910813331604
+        },
+        {
+          "word": " father",
+          "start": 25.08,
+          "end": 25.6,
+          "probability": 0.9949237704277039
+        },
+        {
+          "word": " is",
+          "start": 25.6,
+          "end": 25.98,
+          "probability": 0.9955463409423828
+        },
+        {
+          "word": " from",
+          "start": 25.98,
+          "end": 26.3,
+          "probability": 0.9985886216163635
+        },
+        {
+          "word": " Italy,",
+          "start": 26.3,
+          "end": 26.82,
+          "probability": 0.9992314577102661
+        },
+        {
+          "word": " but",
+          "start": 27.34,
+          "end": 27.62,
+          "probability": 0.9960183501243591
+        },
+        {
+          "word": " my",
+          "start": 27.62,
+          "end": 27.84,
+          "probability": 0.9987708926200867
+        },
+        {
+          "word": " mother",
+          "start": 27.84,
+          "end": 28.2,
+          "probability": 0.9924626350402832
+        },
+        {
+          "word": " isn't.",
+          "start": 28.2,
+          "end": 28.86,
+          "probability": 0.9910898506641388
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2886,
+      "start": 28.86,
+      "end": 30.74,
+      "text": " She's from Australia.",
+      "tokens": [
+        50364,
+        1240,
+        311,
+        490,
+        7060,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08034403731183308,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.05282698571681976,
+      "words": [
+        {
+          "word": " She's",
+          "start": 28.86,
+          "end": 29.72,
+          "probability": 0.46345922350883484
+        },
+        {
+          "word": " from",
+          "start": 29.72,
+          "end": 29.96,
+          "probability": 0.995559811592102
+        },
+        {
+          "word": " Australia.",
+          "start": 29.96,
+          "end": 30.74,
+          "probability": 0.9931923747062683
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2886,
+      "start": 31.6,
+      "end": 35.28,
+      "text": " So your grandparents are Australian?",
+      "tokens": [
+        50514,
+        407,
+        428,
+        21876,
+        366,
+        13337,
+        30,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08034403731183308,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.05282698571681976,
+      "words": [
+        {
+          "word": " So",
+          "start": 31.6,
+          "end": 32.04,
+          "probability": 0.6375434398651123
+        },
+        {
+          "word": " your",
+          "start": 32.04,
+          "end": 32.6,
+          "probability": 0.7955161333084106
+        },
+        {
+          "word": " grandparents",
+          "start": 32.6,
+          "end": 33.42,
+          "probability": 0.9609338045120239
+        },
+        {
+          "word": " are",
+          "start": 33.42,
+          "end": 34.18,
+          "probability": 0.9956014156341553
+        },
+        {
+          "word": " Australian?",
+          "start": 34.18,
+          "end": 35.28,
+          "probability": 0.9403894543647766
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2886,
+      "start": 36.08,
+      "end": 37.88,
+      "text": " My grandmother isn't.",
+      "tokens": [
+        50714,
+        1222,
+        14317,
+        1943,
+        380,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08034403731183308,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.05282698571681976,
+      "words": [
+        {
+          "word": " My",
+          "start": 36.08,
+          "end": 36.44,
+          "probability": 0.9882077574729919
+        },
+        {
+          "word": " grandmother",
+          "start": 36.44,
+          "end": 37.0,
+          "probability": 0.9541693925857544
+        },
+        {
+          "word": " isn't.",
+          "start": 37.0,
+          "end": 37.88,
+          "probability": 0.9807213842868805
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2886,
+      "start": 38.3,
+      "end": 43.34,
+      "text": " She's from England, but she lives in Melbourne with my grandfather.",
+      "tokens": [
+        50814,
+        1240,
+        311,
+        490,
+        8196,
+        11,
+        457,
+        750,
+        2909,
+        294,
+        27496,
+        365,
+        452,
+        14754,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08034403731183308,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.05282698571681976,
+      "words": [
+        {
+          "word": " She's",
+          "start": 38.3,
+          "end": 38.74,
+          "probability": 0.9744569063186646
+        },
+        {
+          "word": " from",
+          "start": 38.74,
+          "end": 38.94,
+          "probability": 0.9979327917098999
+        },
+        {
+          "word": " England,",
+          "start": 38.94,
+          "end": 39.52,
+          "probability": 0.9990712404251099
+        },
+        {
+          "word": " but",
+          "start": 40.06,
+          "end": 40.34,
+          "probability": 0.9919849634170532
+        },
+        {
+          "word": " she",
+          "start": 40.34,
+          "end": 40.58,
+          "probability": 0.9969590902328491
+        },
+        {
+          "word": " lives",
+          "start": 40.58,
+          "end": 40.86,
+          "probability": 0.9967846870422363
+        },
+        {
+          "word": " in",
+          "start": 40.86,
+          "end": 41.22,
+          "probability": 0.9992165565490723
+        },
+        {
+          "word": " Melbourne",
+          "start": 41.22,
+          "end": 41.74,
+          "probability": 0.9931373596191406
+        },
+        {
+          "word": " with",
+          "start": 41.74,
+          "end": 42.34,
+          "probability": 0.9304439425468445
+        },
+        {
+          "word": " my",
+          "start": 42.34,
+          "end": 42.58,
+          "probability": 0.9972440004348755
+        },
+        {
+          "word": " grandfather.",
+          "start": 42.58,
+          "end": 43.34,
+          "probability": 0.9779540300369263
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2886,
+      "start": 44.18,
+      "end": 46.78,
+      "text": " But is your father Italian?",
+      "tokens": [
+        51114,
+        583,
+        307,
+        428,
+        3086,
+        10003,
+        30,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08034403731183308,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.05282698571681976,
+      "words": [
+        {
+          "word": " But",
+          "start": 44.18,
+          "end": 44.6,
+          "probability": 0.9668068885803223
+        },
+        {
+          "word": " is",
+          "start": 44.6,
+          "end": 45.12,
+          "probability": 0.8905564546585083
+        },
+        {
+          "word": " your",
+          "start": 45.12,
+          "end": 45.32,
+          "probability": 0.9969921112060547
+        },
+        {
+          "word": " father",
+          "start": 45.32,
+          "end": 45.9,
+          "probability": 0.9850414395332336
+        },
+        {
+          "word": " Italian?",
+          "start": 45.9,
+          "end": 46.78,
+          "probability": 0.9647232294082642
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2886,
+      "start": 47.62,
+      "end": 49.24,
+      "text": " Yes, he is.",
+      "tokens": [
+        51264,
+        1079,
+        11,
+        415,
+        307,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08034403731183308,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.05282698571681976,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 47.62,
+          "end": 48.14,
+          "probability": 0.9895768165588379
+        },
+        {
+          "word": " he",
+          "start": 48.56,
+          "end": 48.78,
+          "probability": 0.9949960708618164
+        },
+        {
+          "word": " is.",
+          "start": 48.78,
+          "end": 49.24,
+          "probability": 0.9972535967826843
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2886,
+      "start": 49.94,
+      "end": 51.98,
+      "text": " My brother and I are two.",
+      "tokens": [
+        51414,
+        1222,
+        3708,
+        293,
+        286,
+        366,
+        732,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08034403731183308,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.05282698571681976,
+      "words": [
+        {
+          "word": " My",
+          "start": 49.94,
+          "end": 50.26,
+          "probability": 0.9953485131263733
+        },
+        {
+          "word": " brother",
+          "start": 50.26,
+          "end": 50.72,
+          "probability": 0.9826534390449524
+        },
+        {
+          "word": " and",
+          "start": 50.72,
+          "end": 51.06,
+          "probability": 0.9916545152664185
+        },
+        {
+          "word": " I",
+          "start": 51.06,
+          "end": 51.36,
+          "probability": 0.9942617416381836
+        },
+        {
+          "word": " are",
+          "start": 51.36,
+          "end": 51.58,
+          "probability": 0.9992390871047974
+        },
+        {
+          "word": " two.",
+          "start": 51.58,
+          "end": 51.98,
+          "probability": 0.5587561130523682
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 2886,
+      "start": 53.02,
+      "end": 58.1,
+      "text": " My father's a TV presenter in Rome, and my mother's a writer.",
+      "tokens": [
+        51564,
+        1222,
+        3086,
+        311,
+        257,
+        3558,
+        35594,
+        294,
+        12043,
+        11,
+        293,
+        452,
+        2895,
+        311,
+        257,
+        9936,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08034403731183308,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.05282698571681976,
+      "words": [
+        {
+          "word": " My",
+          "start": 53.02,
+          "end": 53.34,
+          "probability": 0.9972587823867798
+        },
+        {
+          "word": " father's",
+          "start": 53.34,
+          "end": 54.0,
+          "probability": 0.8793812394142151
+        },
+        {
+          "word": " a",
+          "start": 54.0,
+          "end": 54.12,
+          "probability": 0.9671664834022522
+        },
+        {
+          "word": " TV",
+          "start": 54.12,
+          "end": 54.6,
+          "probability": 0.9456480145454407
+        },
+        {
+          "word": " presenter",
+          "start": 54.6,
+          "end": 55.12,
+          "probability": 0.9970898628234863
+        },
+        {
+          "word": " in",
+          "start": 55.12,
+          "end": 55.64,
+          "probability": 0.9954155683517456
+        },
+        {
+          "word": " Rome,",
+          "start": 55.64,
+          "end": 56.06,
+          "probability": 0.9980658888816833
+        },
+        {
+          "word": " and",
+          "start": 56.52,
+          "end": 56.76,
+          "probability": 0.9973412156105042
+        },
+        {
+          "word": " my",
+          "start": 56.76,
+          "end": 56.92,
+          "probability": 0.9983013868331909
+        },
+        {
+          "word": " mother's",
+          "start": 56.92,
+          "end": 57.62,
+          "probability": 0.9570644795894623
+        },
+        {
+          "word": " a",
+          "start": 57.62,
+          "end": 57.7,
+          "probability": 0.9915549159049988
+        },
+        {
+          "word": " writer.",
+          "start": 57.7,
+          "end": 58.1,
+          "probability": 0.9969865679740906
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5810,
+      "start": 58.1,
+      "end": 60.26,
+      "text": " She's very creative.",
+      "tokens": [
+        50364,
+        1240,
+        311,
+        588,
+        5880,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05583294335897867,
+      "compression_ratio": 1.423728813559322,
+      "no_speech_prob": 0.09150183200836182,
+      "words": [
+        {
+          "word": " She's",
+          "start": 58.1,
+          "end": 59.06,
+          "probability": 0.6621471047401428
+        },
+        {
+          "word": " very",
+          "start": 59.06,
+          "end": 59.38,
+          "probability": 0.96340411901474
+        },
+        {
+          "word": " creative.",
+          "start": 59.38,
+          "end": 60.26,
+          "probability": 0.9798830151557922
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5810,
+      "start": 60.84,
+      "end": 63.2,
+      "text": " She writes children's books.",
+      "tokens": [
+        50514,
+        1240,
+        13657,
+        2227,
+        311,
+        3642,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05583294335897867,
+      "compression_ratio": 1.423728813559322,
+      "no_speech_prob": 0.09150183200836182,
+      "words": [
+        {
+          "word": " She",
+          "start": 60.84,
+          "end": 61.44,
+          "probability": 0.9875499606132507
+        },
+        {
+          "word": " writes",
+          "start": 61.44,
+          "end": 61.76,
+          "probability": 0.9946627616882324
+        },
+        {
+          "word": " children's",
+          "start": 61.76,
+          "end": 62.76,
+          "probability": 0.9827163219451904
+        },
+        {
+          "word": " books.",
+          "start": 62.76,
+          "end": 63.2,
+          "probability": 0.9979775547981262
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5810,
+      "start": 64.24,
+      "end": 67.74,
+      "text": " Is your brother a student at university?",
+      "tokens": [
+        50664,
+        1119,
+        428,
+        3708,
+        257,
+        3107,
+        412,
+        5454,
+        30,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05583294335897867,
+      "compression_ratio": 1.423728813559322,
+      "no_speech_prob": 0.09150183200836182,
+      "words": [
+        {
+          "word": " Is",
+          "start": 64.24,
+          "end": 64.56,
+          "probability": 0.7440620064735413
+        },
+        {
+          "word": " your",
+          "start": 64.56,
+          "end": 64.86,
+          "probability": 0.9928619265556335
+        },
+        {
+          "word": " brother",
+          "start": 64.86,
+          "end": 65.42,
+          "probability": 0.9833914041519165
+        },
+        {
+          "word": " a",
+          "start": 65.42,
+          "end": 65.86,
+          "probability": 0.974876344203949
+        },
+        {
+          "word": " student",
+          "start": 65.86,
+          "end": 66.44,
+          "probability": 0.9976117610931396
+        },
+        {
+          "word": " at",
+          "start": 66.44,
+          "end": 66.94,
+          "probability": 0.9985833168029785
+        },
+        {
+          "word": " university?",
+          "start": 66.94,
+          "end": 67.74,
+          "probability": 0.7175363898277283
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5810,
+      "start": 68.78,
+      "end": 70.56,
+      "text": " Yes, he's a student.",
+      "tokens": [
+        50864,
+        1079,
+        11,
+        415,
+        311,
+        257,
+        3107,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05583294335897867,
+      "compression_ratio": 1.423728813559322,
+      "no_speech_prob": 0.09150183200836182,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 68.78,
+          "end": 69.18,
+          "probability": 0.979152500629425
+        },
+        {
+          "word": " he's",
+          "start": 69.68,
+          "end": 69.96,
+          "probability": 0.9700005054473877
+        },
+        {
+          "word": " a",
+          "start": 69.96,
+          "end": 70.04,
+          "probability": 0.9978173971176147
+        },
+        {
+          "word": " student.",
+          "start": 70.04,
+          "end": 70.56,
+          "probability": 0.9990849494934082
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 5810,
+      "start": 71.34,
+      "end": 74.58,
+      "text": " He wants to be a scientist and work in America.",
+      "tokens": [
+        51014,
+        634,
+        2738,
+        281,
+        312,
+        257,
+        12662,
+        293,
+        589,
+        294,
+        3374,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05583294335897867,
+      "compression_ratio": 1.423728813559322,
+      "no_speech_prob": 0.09150183200836182,
+      "words": [
+        {
+          "word": " He",
+          "start": 71.34,
+          "end": 71.54,
+          "probability": 0.995959460735321
+        },
+        {
+          "word": " wants",
+          "start": 71.54,
+          "end": 71.8,
+          "probability": 0.995028555393219
+        },
+        {
+          "word": " to",
+          "start": 71.8,
+          "end": 71.98,
+          "probability": 0.9988698363304138
+        },
+        {
+          "word": " be",
+          "start": 71.98,
+          "end": 72.12,
+          "probability": 0.9987478256225586
+        },
+        {
+          "word": " a",
+          "start": 72.12,
+          "end": 72.22,
+          "probability": 0.9948487877845764
+        },
+        {
+          "word": " scientist",
+          "start": 72.22,
+          "end": 72.92,
+          "probability": 0.9942798614501953
+        },
+        {
+          "word": " and",
+          "start": 72.92,
+          "end": 73.4,
+          "probability": 0.9881199598312378
+        },
+        {
+          "word": " work",
+          "start": 73.4,
+          "end": 73.7,
+          "probability": 0.9963763356208801
+        },
+        {
+          "word": " in",
+          "start": 73.7,
+          "end": 73.94,
+          "probability": 0.9978336691856384
+        },
+        {
+          "word": " America.",
+          "start": 73.94,
+          "end": 74.58,
+          "probability": 0.9890295267105103
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 5810,
+      "start": 75.88,
+      "end": 78.12,
+      "text": " What about your family, Kenji?",
+      "tokens": [
+        51214,
+        708,
+        466,
+        428,
+        1605,
+        11,
+        8273,
+        4013,
+        30,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05583294335897867,
+      "compression_ratio": 1.423728813559322,
+      "no_speech_prob": 0.09150183200836182,
+      "words": [
+        {
+          "word": " What",
+          "start": 75.88,
+          "end": 76.22,
+          "probability": 0.9891140460968018
+        },
+        {
+          "word": " about",
+          "start": 76.22,
+          "end": 76.54,
+          "probability": 0.9995573163032532
+        },
+        {
+          "word": " your",
+          "start": 76.54,
+          "end": 76.84,
+          "probability": 0.9931888580322266
+        },
+        {
+          "word": " family,",
+          "start": 76.84,
+          "end": 77.4,
+          "probability": 0.9960265159606934
+        },
+        {
+          "word": " Kenji?",
+          "start": 77.74,
+          "end": 78.12,
+          "probability": 0.8433218896389008
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 5810,
+      "start": 78.76,
+      "end": 84.48,
+      "text": " Here's a photo of my parents, my brother, and my two sisters.",
+      "tokens": [
+        51364,
+        1692,
+        311,
+        257,
+        5052,
+        295,
+        452,
+        3152,
+        11,
+        452,
+        3708,
+        11,
+        293,
+        452,
+        732,
+        11589,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05583294335897867,
+      "compression_ratio": 1.423728813559322,
+      "no_speech_prob": 0.09150183200836182,
+      "words": [
+        {
+          "word": " Here's",
+          "start": 78.76,
+          "end": 79.16,
+          "probability": 0.7980763018131256
+        },
+        {
+          "word": " a",
+          "start": 79.16,
+          "end": 79.3,
+          "probability": 0.9982095956802368
+        },
+        {
+          "word": " photo",
+          "start": 79.3,
+          "end": 79.76,
+          "probability": 0.9976382255554199
+        },
+        {
+          "word": " of",
+          "start": 79.76,
+          "end": 80.26,
+          "probability": 0.998242974281311
+        },
+        {
+          "word": " my",
+          "start": 80.26,
+          "end": 80.52,
+          "probability": 0.9880164265632629
+        },
+        {
+          "word": " parents,",
+          "start": 80.52,
+          "end": 81.12,
+          "probability": 0.9973461627960205
+        },
+        {
+          "word": " my",
+          "start": 81.82,
+          "end": 81.98,
+          "probability": 0.9955436587333679
+        },
+        {
+          "word": " brother,",
+          "start": 81.98,
+          "end": 82.48,
+          "probability": 0.9961910247802734
+        },
+        {
+          "word": " and",
+          "start": 83.18,
+          "end": 83.42,
+          "probability": 0.9967125654220581
+        },
+        {
+          "word": " my",
+          "start": 83.42,
+          "end": 83.64,
+          "probability": 0.9953460097312927
+        },
+        {
+          "word": " two",
+          "start": 83.64,
+          "end": 83.96,
+          "probability": 0.9773321747779846
+        },
+        {
+          "word": " sisters.",
+          "start": 83.96,
+          "end": 84.48,
+          "probability": 0.9939578771591187
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 8448,
+      "start": 85.48,
+      "end": 87.6,
+      "text": " Where is your family from?",
+      "tokens": [
+        50414,
+        2305,
+        307,
+        428,
+        1605,
+        490,
+        30,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07356044493223492,
+      "compression_ratio": 1.439306358381503,
+      "no_speech_prob": 0.7107610106468201,
+      "words": [
+        {
+          "word": " Where",
+          "start": 85.48,
+          "end": 85.98,
+          "probability": 0.3475828170776367
+        },
+        {
+          "word": " is",
+          "start": 85.98,
+          "end": 86.24,
+          "probability": 0.9742419719696045
+        },
+        {
+          "word": " your",
+          "start": 86.24,
+          "end": 86.54,
+          "probability": 0.995960533618927
+        },
+        {
+          "word": " family",
+          "start": 86.54,
+          "end": 87.04,
+          "probability": 0.9820646643638611
+        },
+        {
+          "word": " from?",
+          "start": 87.04,
+          "end": 87.6,
+          "probability": 0.9896249175071716
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 8448,
+      "start": 88.5,
+      "end": 94.8,
+      "text": " We come from Tokyo in Japan, but my brother and I don't live there now.",
+      "tokens": [
+        50564,
+        492,
+        808,
+        490,
+        15147,
+        294,
+        3367,
+        11,
+        457,
+        452,
+        3708,
+        293,
+        286,
+        500,
+        380,
+        1621,
+        456,
+        586,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07356044493223492,
+      "compression_ratio": 1.439306358381503,
+      "no_speech_prob": 0.7107610106468201,
+      "words": [
+        {
+          "word": " We",
+          "start": 88.5,
+          "end": 88.64,
+          "probability": 0.06411711871623993
+        },
+        {
+          "word": " come",
+          "start": 88.64,
+          "end": 88.94,
+          "probability": 0.9825509190559387
+        },
+        {
+          "word": " from",
+          "start": 88.94,
+          "end": 89.28,
+          "probability": 0.99583899974823
+        },
+        {
+          "word": " Tokyo",
+          "start": 89.28,
+          "end": 89.84,
+          "probability": 0.9934775829315186
+        },
+        {
+          "word": " in",
+          "start": 89.84,
+          "end": 90.46,
+          "probability": 0.8988773226737976
+        },
+        {
+          "word": " Japan,",
+          "start": 90.46,
+          "end": 90.9,
+          "probability": 0.9937240481376648
+        },
+        {
+          "word": " but",
+          "start": 91.6,
+          "end": 92.0,
+          "probability": 0.9849148988723755
+        },
+        {
+          "word": " my",
+          "start": 92.0,
+          "end": 92.26,
+          "probability": 0.9928492307662964
+        },
+        {
+          "word": " brother",
+          "start": 92.26,
+          "end": 92.66,
+          "probability": 0.9843201637268066
+        },
+        {
+          "word": " and",
+          "start": 92.66,
+          "end": 92.98,
+          "probability": 0.9834343194961548
+        },
+        {
+          "word": " I",
+          "start": 92.98,
+          "end": 93.32,
+          "probability": 0.9948278069496155
+        },
+        {
+          "word": " don't",
+          "start": 93.32,
+          "end": 93.92,
+          "probability": 0.9891018271446228
+        },
+        {
+          "word": " live",
+          "start": 93.92,
+          "end": 94.14,
+          "probability": 0.9984721541404724
+        },
+        {
+          "word": " there",
+          "start": 94.14,
+          "end": 94.46,
+          "probability": 0.9952925443649292
+        },
+        {
+          "word": " now.",
+          "start": 94.46,
+          "end": 94.8,
+          "probability": 0.9936058521270752
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 8448,
+      "start": 95.8,
+      "end": 101.36,
+      "text": " I'm a student here, and my brother works in England in London.",
+      "tokens": [
+        50914,
+        286,
+        478,
+        257,
+        3107,
+        510,
+        11,
+        293,
+        452,
+        3708,
+        1985,
+        294,
+        8196,
+        294,
+        7042,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07356044493223492,
+      "compression_ratio": 1.439306358381503,
+      "no_speech_prob": 0.7107610106468201,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 95.8,
+          "end": 96.28,
+          "probability": 0.9533744752407074
+        },
+        {
+          "word": " a",
+          "start": 96.28,
+          "end": 96.4,
+          "probability": 0.9988462924957275
+        },
+        {
+          "word": " student",
+          "start": 96.4,
+          "end": 96.88,
+          "probability": 0.998740017414093
+        },
+        {
+          "word": " here,",
+          "start": 96.88,
+          "end": 97.36,
+          "probability": 0.998702883720398
+        },
+        {
+          "word": " and",
+          "start": 98.0,
+          "end": 98.26,
+          "probability": 0.9951295852661133
+        },
+        {
+          "word": " my",
+          "start": 98.26,
+          "end": 98.46,
+          "probability": 0.9987308382987976
+        },
+        {
+          "word": " brother",
+          "start": 98.46,
+          "end": 98.92,
+          "probability": 0.9970577955245972
+        },
+        {
+          "word": " works",
+          "start": 98.92,
+          "end": 99.34,
+          "probability": 0.9970722198486328
+        },
+        {
+          "word": " in",
+          "start": 99.34,
+          "end": 99.62,
+          "probability": 0.9983720183372498
+        },
+        {
+          "word": " England",
+          "start": 99.62,
+          "end": 100.1,
+          "probability": 0.9966301321983337
+        },
+        {
+          "word": " in",
+          "start": 100.1,
+          "end": 100.82,
+          "probability": 0.5963743925094604
+        },
+        {
+          "word": " London.",
+          "start": 100.82,
+          "end": 101.36,
+          "probability": 0.9995884299278259
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 8448,
+      "start": 102.12,
+      "end": 103.54,
+      "text": " What does he do?",
+      "tokens": [
+        51264,
+        708,
+        775,
+        415,
+        360,
+        30,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07356044493223492,
+      "compression_ratio": 1.439306358381503,
+      "no_speech_prob": 0.7107610106468201,
+      "words": [
+        {
+          "word": " What",
+          "start": 102.12,
+          "end": 102.72,
+          "probability": 0.8791587352752686
+        },
+        {
+          "word": " does",
+          "start": 102.72,
+          "end": 103.06,
+          "probability": 0.9964656829833984
+        },
+        {
+          "word": " he",
+          "start": 103.06,
+          "end": 103.28,
+          "probability": 0.9969757795333862
+        },
+        {
+          "word": " do?",
+          "start": 103.28,
+          "end": 103.54,
+          "probability": 0.9984331727027893
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 8448,
+      "start": 104.34,
+      "end": 111.12,
+      "text": " He's a teacher, and my sister Yumiko is a manager in a hotel in Tokyo.",
+      "tokens": [
+        51364,
+        634,
+        311,
+        257,
+        5027,
+        11,
+        293,
+        452,
+        4892,
+        398,
+        449,
+        10770,
+        307,
+        257,
+        6598,
+        294,
+        257,
+        7622,
+        294,
+        15147,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07356044493223492,
+      "compression_ratio": 1.439306358381503,
+      "no_speech_prob": 0.7107610106468201,
+      "words": [
+        {
+          "word": " He's",
+          "start": 104.34,
+          "end": 104.7,
+          "probability": 0.8834701776504517
+        },
+        {
+          "word": " a",
+          "start": 104.7,
+          "end": 104.82,
+          "probability": 0.996856689453125
+        },
+        {
+          "word": " teacher,",
+          "start": 104.82,
+          "end": 105.3,
+          "probability": 0.9978479146957397
+        },
+        {
+          "word": " and",
+          "start": 105.86,
+          "end": 106.2,
+          "probability": 0.9976639747619629
+        },
+        {
+          "word": " my",
+          "start": 106.2,
+          "end": 106.4,
+          "probability": 0.9974820017814636
+        },
+        {
+          "word": " sister",
+          "start": 106.4,
+          "end": 106.88,
+          "probability": 0.9929991960525513
+        },
+        {
+          "word": " Yumiko",
+          "start": 106.88,
+          "end": 107.54,
+          "probability": 0.6458513538042704
+        },
+        {
+          "word": " is",
+          "start": 107.54,
+          "end": 108.18,
+          "probability": 0.9931858777999878
+        },
+        {
+          "word": " a",
+          "start": 108.18,
+          "end": 108.38,
+          "probability": 0.995205819606781
+        },
+        {
+          "word": " manager",
+          "start": 108.38,
+          "end": 108.8,
+          "probability": 0.9732239842414856
+        },
+        {
+          "word": " in",
+          "start": 108.8,
+          "end": 109.28,
+          "probability": 0.9907061457633972
+        },
+        {
+          "word": " a",
+          "start": 109.28,
+          "end": 109.44,
+          "probability": 0.9914743900299072
+        },
+        {
+          "word": " hotel",
+          "start": 109.44,
+          "end": 109.88,
+          "probability": 0.9986950755119324
+        },
+        {
+          "word": " in",
+          "start": 109.88,
+          "end": 110.5,
+          "probability": 0.997837483882904
+        },
+        {
+          "word": " Tokyo.",
+          "start": 110.5,
+          "end": 111.12,
+          "probability": 0.999327540397644
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 11112,
+      "start": 111.92,
+      "end": 119.08,
+      "text": " My other sister is 15 and still at school, but she wants to be a chef.",
+      "tokens": [
+        50414,
+        1222,
+        661,
+        4892,
+        307,
+        2119,
+        293,
+        920,
+        412,
+        1395,
+        11,
+        457,
+        750,
+        2738,
+        281,
+        312,
+        257,
+        10530,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08317283483651969,
+      "compression_ratio": 1.4768211920529801,
+      "no_speech_prob": 0.4036269783973694,
+      "words": [
+        {
+          "word": " My",
+          "start": 111.92,
+          "end": 112.56,
+          "probability": 0.11889087408781052
+        },
+        {
+          "word": " other",
+          "start": 112.56,
+          "end": 113.04,
+          "probability": 0.9335802793502808
+        },
+        {
+          "word": " sister",
+          "start": 113.04,
+          "end": 113.56,
+          "probability": 0.9940954446792603
+        },
+        {
+          "word": " is",
+          "start": 113.56,
+          "end": 114.02,
+          "probability": 0.9918448328971863
+        },
+        {
+          "word": " 15",
+          "start": 114.02,
+          "end": 114.58,
+          "probability": 0.7805836796760559
+        },
+        {
+          "word": " and",
+          "start": 114.58,
+          "end": 115.32,
+          "probability": 0.7914462089538574
+        },
+        {
+          "word": " still",
+          "start": 115.32,
+          "end": 115.74,
+          "probability": 0.8519341349601746
+        },
+        {
+          "word": " at",
+          "start": 115.74,
+          "end": 115.9,
+          "probability": 0.9930264949798584
+        },
+        {
+          "word": " school,",
+          "start": 115.9,
+          "end": 116.4,
+          "probability": 0.9979852437973022
+        },
+        {
+          "word": " but",
+          "start": 116.94,
+          "end": 117.3,
+          "probability": 0.9800850749015808
+        },
+        {
+          "word": " she",
+          "start": 117.3,
+          "end": 117.66,
+          "probability": 0.9969321489334106
+        },
+        {
+          "word": " wants",
+          "start": 117.66,
+          "end": 117.96,
+          "probability": 0.9839614629745483
+        },
+        {
+          "word": " to",
+          "start": 117.96,
+          "end": 118.18,
+          "probability": 0.9972420930862427
+        },
+        {
+          "word": " be",
+          "start": 118.18,
+          "end": 118.36,
+          "probability": 0.9975225329399109
+        },
+        {
+          "word": " a",
+          "start": 118.36,
+          "end": 118.56,
+          "probability": 0.9837846755981445
+        },
+        {
+          "word": " chef.",
+          "start": 118.56,
+          "end": 119.08,
+          "probability": 0.9770231246948242
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 11112,
+      "start": 119.84,
+      "end": 120.64,
+      "text": " And you?",
+      "tokens": [
+        50764,
+        400,
+        291,
+        30,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08317283483651969,
+      "compression_ratio": 1.4768211920529801,
+      "no_speech_prob": 0.4036269783973694,
+      "words": [
+        {
+          "word": " And",
+          "start": 119.84,
+          "end": 120.3,
+          "probability": 0.6965581178665161
+        },
+        {
+          "word": " you?",
+          "start": 120.3,
+          "end": 120.64,
+          "probability": 0.9737952351570129
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 11112,
+      "start": 121.16,
+      "end": 122.6,
+      "text": " What do you want to do?",
+      "tokens": [
+        50864,
+        708,
+        360,
+        291,
+        528,
+        281,
+        360,
+        30,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08317283483651969,
+      "compression_ratio": 1.4768211920529801,
+      "no_speech_prob": 0.4036269783973694,
+      "words": [
+        {
+          "word": " What",
+          "start": 121.16,
+          "end": 121.42,
+          "probability": 0.7393415570259094
+        },
+        {
+          "word": " do",
+          "start": 121.42,
+          "end": 121.62,
+          "probability": 0.9952772855758667
+        },
+        {
+          "word": " you",
+          "start": 121.62,
+          "end": 121.78,
+          "probability": 0.9952338337898254
+        },
+        {
+          "word": " want",
+          "start": 121.78,
+          "end": 122.1,
+          "probability": 0.9958708882331848
+        },
+        {
+          "word": " to",
+          "start": 122.1,
+          "end": 122.38,
+          "probability": 0.9980717301368713
+        },
+        {
+          "word": " do?",
+          "start": 122.38,
+          "end": 122.6,
+          "probability": 0.9960671067237854
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 11112,
+      "start": 123.26,
+      "end": 125.0,
+      "text": " I want to be a businessman.",
+      "tokens": [
+        50964,
+        286,
+        528,
+        281,
+        312,
+        257,
+        35317,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08317283483651969,
+      "compression_ratio": 1.4768211920529801,
+      "no_speech_prob": 0.4036269783973694,
+      "words": [
+        {
+          "word": " I",
+          "start": 123.26,
+          "end": 123.5,
+          "probability": 0.9914090037345886
+        },
+        {
+          "word": " want",
+          "start": 123.5,
+          "end": 123.7,
+          "probability": 0.9943948984146118
+        },
+        {
+          "word": " to",
+          "start": 123.7,
+          "end": 123.96,
+          "probability": 0.9982869029045105
+        },
+        {
+          "word": " be",
+          "start": 123.96,
+          "end": 124.16,
+          "probability": 0.99845290184021
+        },
+        {
+          "word": " a",
+          "start": 124.16,
+          "end": 124.4,
+          "probability": 0.9938931465148926
+        },
+        {
+          "word": " businessman.",
+          "start": 124.4,
+          "end": 125.0,
+          "probability": 0.3541440963745117
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 11112,
+      "start": 125.84,
+      "end": 129.98,
+      "text": " I want to work in China or the UAE.",
+      "tokens": [
+        51114,
+        286,
+        528,
+        281,
+        589,
+        294,
+        3533,
+        420,
+        264,
+        32765,
+        36,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08317283483651969,
+      "compression_ratio": 1.4768211920529801,
+      "no_speech_prob": 0.4036269783973694,
+      "words": [
+        {
+          "word": " I",
+          "start": 125.84,
+          "end": 126.34,
+          "probability": 0.9984316229820251
+        },
+        {
+          "word": " want",
+          "start": 126.34,
+          "end": 126.54,
+          "probability": 0.9972278475761414
+        },
+        {
+          "word": " to",
+          "start": 126.54,
+          "end": 126.78,
+          "probability": 0.9968262910842896
+        },
+        {
+          "word": " work",
+          "start": 126.78,
+          "end": 127.06,
+          "probability": 0.9980005621910095
+        },
+        {
+          "word": " in",
+          "start": 127.06,
+          "end": 127.28,
+          "probability": 0.9979110360145569
+        },
+        {
+          "word": " China",
+          "start": 127.28,
+          "end": 127.86,
+          "probability": 0.9919978976249695
+        },
+        {
+          "word": " or",
+          "start": 127.86,
+          "end": 128.44,
+          "probability": 0.8536220788955688
+        },
+        {
+          "word": " the",
+          "start": 128.44,
+          "end": 128.74,
+          "probability": 0.9880310893058777
+        },
+        {
+          "word": " UAE.",
+          "start": 128.74,
+          "end": 129.98,
+          "probability": 0.9215079545974731
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 11112,
+      "start": 131.04000000000002,
+      "end": 133.88,
+      "text": " And what do you want to do in the future?",
+      "tokens": [
+        51364,
+        400,
+        437,
+        360,
+        291,
+        528,
+        281,
+        360,
+        294,
+        264,
+        2027,
+        30,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08317283483651969,
+      "compression_ratio": 1.4768211920529801,
+      "no_speech_prob": 0.4036269783973694,
+      "words": [
+        {
+          "word": " And",
+          "start": 131.04000000000002,
+          "end": 131.68,
+          "probability": 0.9613093137741089
+        },
+        {
+          "word": " what",
+          "start": 131.68,
+          "end": 131.96,
+          "probability": 0.981975257396698
+        },
+        {
+          "word": " do",
+          "start": 131.96,
+          "end": 132.24,
+          "probability": 0.9958953857421875
+        },
+        {
+          "word": " you",
+          "start": 132.24,
+          "end": 132.42,
+          "probability": 0.9978790283203125
+        },
+        {
+          "word": " want",
+          "start": 132.42,
+          "end": 132.66,
+          "probability": 0.9967613816261292
+        },
+        {
+          "word": " to",
+          "start": 132.66,
+          "end": 132.9,
+          "probability": 0.997929573059082
+        },
+        {
+          "word": " do",
+          "start": 132.9,
+          "end": 133.1,
+          "probability": 0.9970898628234863
+        },
+        {
+          "word": " in",
+          "start": 133.1,
+          "end": 133.3,
+          "probability": 0.9979619979858398
+        },
+        {
+          "word": " the",
+          "start": 133.3,
+          "end": 133.44,
+          "probability": 0.9977188110351562
+        },
+        {
+          "word": " future?",
+          "start": 133.44,
+          "end": 133.88,
+          "probability": 0.9996013045310974
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 11112,
+      "start": 134.56,
+      "end": 135.54,
+      "text": " I don't know.",
+      "tokens": [
+        51514,
+        286,
+        500,
+        380,
+        458,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08317283483651969,
+      "compression_ratio": 1.4768211920529801,
+      "no_speech_prob": 0.4036269783973694,
+      "words": [
+        {
+          "word": " I",
+          "start": 134.56,
+          "end": 134.94,
+          "probability": 0.9938640594482422
+        },
+        {
+          "word": " don't",
+          "start": 134.94,
+          "end": 135.26,
+          "probability": 0.9929211139678955
+        },
+        {
+          "word": " know.",
+          "start": 135.26,
+          "end": 135.54,
+          "probability": 0.9994910955429077
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 13554,
+      "start": 135.54,
+      "end": 137.78,
+      "text": " Not a businesswoman, though.",
+      "tokens": [
+        50364,
+        1726,
+        257,
+        1606,
+        18339,
+        11,
+        1673,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2134178876876831,
+      "compression_ratio": 0.9285714285714286,
+      "no_speech_prob": 0.7655068635940552,
+      "words": [
+        {
+          "word": " Not",
+          "start": 135.54,
+          "end": 136.38,
+          "probability": 0.06217318773269653
+        },
+        {
+          "word": " a",
+          "start": 136.38,
+          "end": 136.64,
+          "probability": 0.9920400381088257
+        },
+        {
+          "word": " businesswoman,",
+          "start": 136.64,
+          "end": 137.46,
+          "probability": 0.6906465590000153
+        },
+        {
+          "word": " though.",
+          "start": 137.74,
+          "end": 137.78,
+          "probability": 0.5711907148361206
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 13554,
+      "start": 138.34,
+      "end": 141.02,
+      "text": " Maybe a doctor, like my grandfather.",
+      "tokens": [
+        50514,
+        2704,
+        257,
+        4631,
+        11,
+        411,
+        452,
+        14754,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2134178876876831,
+      "compression_ratio": 0.9285714285714286,
+      "no_speech_prob": 0.7655068635940552,
+      "words": [
+        {
+          "word": " Maybe",
+          "start": 138.34,
+          "end": 138.72,
+          "probability": 0.9666426181793213
+        },
+        {
+          "word": " a",
+          "start": 138.72,
+          "end": 139.04,
+          "probability": 0.983822762966156
+        },
+        {
+          "word": " doctor,",
+          "start": 139.04,
+          "end": 139.5,
+          "probability": 0.9712656736373901
+        },
+        {
+          "word": " like",
+          "start": 139.96,
+          "end": 140.24,
+          "probability": 0.9947846531867981
+        },
+        {
+          "word": " my",
+          "start": 140.24,
+          "end": 140.5,
+          "probability": 0.995431661605835
+        },
+        {
+          "word": " grandfather.",
+          "start": 140.5,
+          "end": 141.02,
+          "probability": 0.9775874018669128
+        }
+      ]
+    }
+  ]
+}

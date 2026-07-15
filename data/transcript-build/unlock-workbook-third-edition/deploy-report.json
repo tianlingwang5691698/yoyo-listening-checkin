@@ -1,0 +1,59 @@
+{
+  "mode": "applied",
+  "statusAfter": "Active",
+  "modifiedAfter": "2026-07-15 20:33:04",
+  "files": [
+    "data/unlock-series-manifests.json",
+    "lib/constants.js",
+    "lib/catalog-engine.js",
+    "lib/level-engine.js",
+    "lib/listening-plan-engine.js",
+    "lib/request-context-engine.js",
+    "lib/task-presenter.js",
+    "services/level.service.js",
+    "services/task.service.js",
+    "services/transcript.service.js"
+  ],
+  "requests": [
+    {
+      "file": "data/unlock-series-manifests.json",
+      "requestId": "dfd11e64-36d1-428e-9242-04bea6f46171"
+    },
+    {
+      "file": "lib/constants.js",
+      "requestId": "315ec02f-1d1c-4030-a9f5-11fdd11c78a1"
+    },
+    {
+      "file": "lib/catalog-engine.js",
+      "requestId": "dd189663-0212-4a74-a05b-ddee2cf9631a"
+    },
+    {
+      "file": "lib/level-engine.js",
+      "requestId": "0fa1ed0f-3c3b-431c-9c2f-05c677197e44"
+    },
+    {
+      "file": "lib/listening-plan-engine.js",
+      "requestId": "d23deb79-6620-486f-91b4-279b67458f2a"
+    },
+    {
+      "file": "lib/request-context-engine.js",
+      "requestId": "a2d2e591-a5ad-4adf-812c-de29b90b1e6f"
+    },
+    {
+      "file": "lib/task-presenter.js",
+      "requestId": "66063038-677b-4767-a1bb-860e627291ef"
+    },
+    {
+      "file": "services/level.service.js",
+      "requestId": "6584fb7b-4636-4b2e-9317-02029adb04fd"
+    },
+    {
+      "file": "services/task.service.js",
+      "requestId": "c0e6ffe1-519e-4f79-a794-5e920117e97e"
+    },
+    {
+      "file": "services/transcript.service.js",
+      "requestId": "cd0b6899-1e4f-4036-8714-ed41b1fbc896"
+    }
+  ]
+}

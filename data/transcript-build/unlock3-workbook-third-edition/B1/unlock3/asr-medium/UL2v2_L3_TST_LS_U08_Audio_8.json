@@ -1,0 +1,4008 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 8.1 Thank you for coming tonight. Let's start with some quick questions for everyone. When was the last time you took out money from a cash machine? When was the last time you made a payment with cash? In other words, when did you last use coins and notes to buy something? Probably not for some time. It seems that every day more and more shops are making the decision to have customers use cards or mobile payment. Some people think this means that we won't use cash anymore. The end of cash they call it. Personally, I'm not convinced for a couple of reasons. First of all, we've used physical money like coins and notes for a very, very long time. Some coins are thousands of years old. It is easy to carry and it's very reliable. You can use it anywhere, whether you want to buy a bar of chocolates at the corner shop or do your weekly shopping in a big supermarket chain. Using cash is also a way of keeping your money private. That is, you can use it without anyone checking on you. Bitcoin, a digital kind of money, which is managed by people and not the government, is similar to cash in this way. But it isn't safe and it's difficult to use. People use credit and debit cards all the time, but they immediately connect what you buy to who you are. To use online payments, you have to have an app and an account. To put it another way, technology doesn't have the secret thing that cash has. Cash is private and I like that. However, the main reason I don't agree that this is the end of cash is our relationship with it. People look at coins and notes in a different way from electronic money. They both have the same value, but because you can see cash and hold it, it makes it feel like you own it more. In fact, when I have cash, I spend it in a more responsible way. When I buy things with my card, I use it without thinking. Humans have a strong relationship with coins and notes, so I don't think we'd be able to give up cash easily anyway. Cash just feels safer and this is something that digital money can't offer at the moment. If there's some kind of financial crisis or a natural disaster when there's no power, I'm sure most of you would rather have the money in your hand, right? I know I would. To sum up, I don't think that the end of cash is happening soon. I just don't see the other options as better. For now anyway. And our relationship with cash means it will be in our pockets for some time to come.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.78,
+      "text": " Track 8.1",
+      "tokens": [
+        50364,
+        31903,
+        1649,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33218935311558734,
+      "compression_ratio": 1.5505050505050506,
+      "no_speech_prob": 0.05729436129331589,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.52,
+          "probability": 0.5745407342910767
+        },
+        {
+          "word": " 8",
+          "start": 0.52,
+          "end": 0.98,
+          "probability": 0.9693962931632996
+        },
+        {
+          "word": ".1",
+          "start": 0.98,
+          "end": 1.78,
+          "probability": 0.9971820712089539
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.62,
+      "end": 5.72,
+      "text": " Thank you for coming tonight.",
+      "tokens": [
+        50560,
+        1044,
+        291,
+        337,
+        1348,
+        4440,
+        13,
+        50670
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33218935311558734,
+      "compression_ratio": 1.5505050505050506,
+      "no_speech_prob": 0.05729436129331589,
+      "words": [
+        {
+          "word": " Thank",
+          "start": 3.62,
+          "end": 4.3,
+          "probability": 0.6905171275138855
+        },
+        {
+          "word": " you",
+          "start": 4.3,
+          "end": 4.66,
+          "probability": 0.9869691133499146
+        },
+        {
+          "word": " for",
+          "start": 4.66,
+          "end": 4.9,
+          "probability": 0.9976940751075745
+        },
+        {
+          "word": " coming",
+          "start": 4.9,
+          "end": 5.18,
+          "probability": 0.9978419542312622
+        },
+        {
+          "word": " tonight.",
+          "start": 5.18,
+          "end": 5.72,
+          "probability": 0.9819697141647339
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.4,
+      "end": 9.16,
+      "text": " Let's start with some quick questions for everyone.",
+      "tokens": [
+        50692,
+        961,
+        311,
+        722,
+        365,
+        512,
+        1702,
+        1651,
+        337,
+        1518,
+        13,
+        50834
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33218935311558734,
+      "compression_ratio": 1.5505050505050506,
+      "no_speech_prob": 0.05729436129331589,
+      "words": [
+        {
+          "word": " Let's",
+          "start": 6.4,
+          "end": 7.08,
+          "probability": 0.9934487640857697
+        },
+        {
+          "word": " start",
+          "start": 7.08,
+          "end": 7.28,
+          "probability": 0.998095691204071
+        },
+        {
+          "word": " with",
+          "start": 7.28,
+          "end": 7.56,
+          "probability": 0.9978594183921814
+        },
+        {
+          "word": " some",
+          "start": 7.56,
+          "end": 7.8,
+          "probability": 0.9928106665611267
+        },
+        {
+          "word": " quick",
+          "start": 7.8,
+          "end": 8.06,
+          "probability": 0.9906478524208069
+        },
+        {
+          "word": " questions",
+          "start": 8.06,
+          "end": 8.5,
+          "probability": 0.9964543581008911
+        },
+        {
+          "word": " for",
+          "start": 8.5,
+          "end": 8.74,
+          "probability": 0.9972923398017883
+        },
+        {
+          "word": " everyone.",
+          "start": 8.74,
+          "end": 9.16,
+          "probability": 0.9962465167045593
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 10.58,
+      "end": 14.36,
+      "text": " When was the last time you took out money from a cash machine?",
+      "tokens": [
+        50876,
+        1133,
+        390,
+        264,
+        1036,
+        565,
+        291,
+        1890,
+        484,
+        1460,
+        490,
+        257,
+        6388,
+        3479,
+        30,
+        51096
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33218935311558734,
+      "compression_ratio": 1.5505050505050506,
+      "no_speech_prob": 0.05729436129331589,
+      "words": [
+        {
+          "word": " When",
+          "start": 10.58,
+          "end": 10.66,
+          "probability": 0.7346382141113281
+        },
+        {
+          "word": " was",
+          "start": 10.66,
+          "end": 10.92,
+          "probability": 0.9974319338798523
+        },
+        {
+          "word": " the",
+          "start": 10.92,
+          "end": 11.1,
+          "probability": 0.996383547782898
+        },
+        {
+          "word": " last",
+          "start": 11.1,
+          "end": 11.42,
+          "probability": 0.9989838004112244
+        },
+        {
+          "word": " time",
+          "start": 11.42,
+          "end": 11.88,
+          "probability": 0.9991069436073303
+        },
+        {
+          "word": " you",
+          "start": 11.88,
+          "end": 12.44,
+          "probability": 0.9872783422470093
+        },
+        {
+          "word": " took",
+          "start": 12.44,
+          "end": 12.68,
+          "probability": 0.9980150461196899
+        },
+        {
+          "word": " out",
+          "start": 12.68,
+          "end": 12.94,
+          "probability": 0.9881772398948669
+        },
+        {
+          "word": " money",
+          "start": 12.94,
+          "end": 13.26,
+          "probability": 0.9989917874336243
+        },
+        {
+          "word": " from",
+          "start": 13.26,
+          "end": 13.56,
+          "probability": 0.9979586601257324
+        },
+        {
+          "word": " a",
+          "start": 13.56,
+          "end": 13.72,
+          "probability": 0.9950696229934692
+        },
+        {
+          "word": " cash",
+          "start": 13.72,
+          "end": 13.94,
+          "probability": 0.9089482426643372
+        },
+        {
+          "word": " machine?",
+          "start": 13.94,
+          "end": 14.36,
+          "probability": 0.995101273059845
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 15.86,
+      "end": 19.14,
+      "text": " When was the last time you made a payment with cash?",
+      "tokens": [
+        51150,
+        1133,
+        390,
+        264,
+        1036,
+        565,
+        291,
+        1027,
+        257,
+        10224,
+        365,
+        6388,
+        30,
+        51340
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33218935311558734,
+      "compression_ratio": 1.5505050505050506,
+      "no_speech_prob": 0.05729436129331589,
+      "words": [
+        {
+          "word": " When",
+          "start": 15.86,
+          "end": 16.12,
+          "probability": 0.9709888696670532
+        },
+        {
+          "word": " was",
+          "start": 16.12,
+          "end": 16.34,
+          "probability": 0.9973336458206177
+        },
+        {
+          "word": " the",
+          "start": 16.34,
+          "end": 16.52,
+          "probability": 0.9982669353485107
+        },
+        {
+          "word": " last",
+          "start": 16.52,
+          "end": 16.78,
+          "probability": 0.9997420907020569
+        },
+        {
+          "word": " time",
+          "start": 16.78,
+          "end": 17.18,
+          "probability": 0.9990196228027344
+        },
+        {
+          "word": " you",
+          "start": 17.18,
+          "end": 17.42,
+          "probability": 0.9983502626419067
+        },
+        {
+          "word": " made",
+          "start": 17.42,
+          "end": 17.7,
+          "probability": 0.9978885054588318
+        },
+        {
+          "word": " a",
+          "start": 17.7,
+          "end": 17.98,
+          "probability": 0.9948315620422363
+        },
+        {
+          "word": " payment",
+          "start": 17.98,
+          "end": 18.38,
+          "probability": 0.9973867535591125
+        },
+        {
+          "word": " with",
+          "start": 18.38,
+          "end": 18.8,
+          "probability": 0.997416615486145
+        },
+        {
+          "word": " cash?",
+          "start": 18.8,
+          "end": 19.14,
+          "probability": 0.9697125554084778
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 20.02,
+      "end": 25.48,
+      "text": " In other words, when did you last use coins and notes to buy something?",
+      "tokens": [
+        51370,
+        682,
+        661,
+        2283,
+        11,
+        562,
+        630,
+        291,
+        1036,
+        764,
+        13561,
+        293,
+        5570,
+        281,
+        2256,
+        746,
+        30,
+        51650
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33218935311558734,
+      "compression_ratio": 1.5505050505050506,
+      "no_speech_prob": 0.05729436129331589,
+      "words": [
+        {
+          "word": " In",
+          "start": 20.02,
+          "end": 20.44,
+          "probability": 0.9959505796432495
+        },
+        {
+          "word": " other",
+          "start": 20.44,
+          "end": 20.62,
+          "probability": 0.9995707869529724
+        },
+        {
+          "word": " words,",
+          "start": 20.62,
+          "end": 20.96,
+          "probability": 0.9994742274284363
+        },
+        {
+          "word": " when",
+          "start": 21.52,
+          "end": 21.78,
+          "probability": 0.9723630547523499
+        },
+        {
+          "word": " did",
+          "start": 21.78,
+          "end": 21.98,
+          "probability": 0.9989515542984009
+        },
+        {
+          "word": " you",
+          "start": 21.98,
+          "end": 22.18,
+          "probability": 0.9990397095680237
+        },
+        {
+          "word": " last",
+          "start": 22.18,
+          "end": 22.54,
+          "probability": 0.9961338043212891
+        },
+        {
+          "word": " use",
+          "start": 22.54,
+          "end": 23.06,
+          "probability": 0.9925088286399841
+        },
+        {
+          "word": " coins",
+          "start": 23.06,
+          "end": 23.44,
+          "probability": 0.981319785118103
+        },
+        {
+          "word": " and",
+          "start": 23.44,
+          "end": 24.02,
+          "probability": 0.983306348323822
+        },
+        {
+          "word": " notes",
+          "start": 24.02,
+          "end": 24.38,
+          "probability": 0.9777979850769043
+        },
+        {
+          "word": " to",
+          "start": 24.38,
+          "end": 24.68,
+          "probability": 0.998611569404602
+        },
+        {
+          "word": " buy",
+          "start": 24.68,
+          "end": 24.94,
+          "probability": 0.9992491602897644
+        },
+        {
+          "word": " something?",
+          "start": 24.94,
+          "end": 25.48,
+          "probability": 0.9981895089149475
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 26.52,
+      "end": 28.64,
+      "text": " Probably not for some time.",
+      "tokens": [
+        51686,
+        9210,
+        406,
+        337,
+        512,
+        565,
+        13,
+        51806
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33218935311558734,
+      "compression_ratio": 1.5505050505050506,
+      "no_speech_prob": 0.05729436129331589,
+      "words": [
+        {
+          "word": " Probably",
+          "start": 26.52,
+          "end": 27.0,
+          "probability": 0.9917424917221069
+        },
+        {
+          "word": " not",
+          "start": 27.0,
+          "end": 27.54,
+          "probability": 0.9906423687934875
+        },
+        {
+          "word": " for",
+          "start": 27.54,
+          "end": 27.86,
+          "probability": 0.9847704768180847
+        },
+        {
+          "word": " some",
+          "start": 27.86,
+          "end": 28.12,
+          "probability": 0.9877046346664429
+        },
+        {
+          "word": " time.",
+          "start": 28.12,
+          "end": 28.64,
+          "probability": 0.9992552399635315
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 38.46,
+      "text": " It seems that every day more and more shops are making the decision to have customers use cards or mobile payment.",
+      "tokens": [
+        50378,
+        467,
+        2544,
+        300,
+        633,
+        786,
+        544,
+        293,
+        544,
+        14457,
+        366,
+        1455,
+        264,
+        3537,
+        281,
+        362,
+        4581,
+        764,
+        5632,
+        420,
+        6013,
+        10224,
+        13,
+        50790
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17911008271304044,
+      "compression_ratio": 1.551111111111111,
+      "no_speech_prob": 0.0017942418344318867,
+      "words": [
+        {
+          "word": " It",
+          "start": 30.0,
+          "end": 30.4,
+          "probability": 0.6974436640739441
+        },
+        {
+          "word": " seems",
+          "start": 30.4,
+          "end": 30.7,
+          "probability": 0.9948613047599792
+        },
+        {
+          "word": " that",
+          "start": 30.7,
+          "end": 31.12,
+          "probability": 0.9921257495880127
+        },
+        {
+          "word": " every",
+          "start": 31.12,
+          "end": 31.52,
+          "probability": 0.5868610143661499
+        },
+        {
+          "word": " day",
+          "start": 31.52,
+          "end": 31.84,
+          "probability": 0.9984121322631836
+        },
+        {
+          "word": " more",
+          "start": 31.84,
+          "end": 32.46,
+          "probability": 0.5630574822425842
+        },
+        {
+          "word": " and",
+          "start": 32.46,
+          "end": 32.8,
+          "probability": 0.9911448359489441
+        },
+        {
+          "word": " more",
+          "start": 32.8,
+          "end": 33.06,
+          "probability": 0.9987465143203735
+        },
+        {
+          "word": " shops",
+          "start": 33.06,
+          "end": 33.5,
+          "probability": 0.9968184232711792
+        },
+        {
+          "word": " are",
+          "start": 33.5,
+          "end": 33.82,
+          "probability": 0.9950450658798218
+        },
+        {
+          "word": " making",
+          "start": 33.82,
+          "end": 34.14,
+          "probability": 0.9975928664207458
+        },
+        {
+          "word": " the",
+          "start": 34.14,
+          "end": 34.36,
+          "probability": 0.9721615314483643
+        },
+        {
+          "word": " decision",
+          "start": 34.36,
+          "end": 34.76,
+          "probability": 0.9924265146255493
+        },
+        {
+          "word": " to",
+          "start": 34.76,
+          "end": 35.08,
+          "probability": 0.9974082112312317
+        },
+        {
+          "word": " have",
+          "start": 35.08,
+          "end": 35.28,
+          "probability": 0.9968597888946533
+        },
+        {
+          "word": " customers",
+          "start": 35.28,
+          "end": 35.84,
+          "probability": 0.9871177077293396
+        },
+        {
+          "word": " use",
+          "start": 35.84,
+          "end": 36.36,
+          "probability": 0.9910723567008972
+        },
+        {
+          "word": " cards",
+          "start": 36.36,
+          "end": 36.78,
+          "probability": 0.9638012647628784
+        },
+        {
+          "word": " or",
+          "start": 36.78,
+          "end": 37.36,
+          "probability": 0.9587229490280151
+        },
+        {
+          "word": " mobile",
+          "start": 37.36,
+          "end": 37.8,
+          "probability": 0.9970239996910095
+        },
+        {
+          "word": " payment.",
+          "start": 37.8,
+          "end": 38.46,
+          "probability": 0.9373168349266052
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 3000,
+      "start": 39.08,
+      "end": 43.22,
+      "text": " Some people think this means that we won't use cash anymore.",
+      "tokens": [
+        50842,
+        2188,
+        561,
+        519,
+        341,
+        1355,
+        300,
+        321,
+        1582,
+        380,
+        764,
+        6388,
+        3602,
+        13,
+        51032
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17911008271304044,
+      "compression_ratio": 1.551111111111111,
+      "no_speech_prob": 0.0017942418344318867,
+      "words": [
+        {
+          "word": " Some",
+          "start": 39.08,
+          "end": 39.8,
+          "probability": 0.9892454147338867
+        },
+        {
+          "word": " people",
+          "start": 39.8,
+          "end": 40.28,
+          "probability": 0.999047577381134
+        },
+        {
+          "word": " think",
+          "start": 40.28,
+          "end": 40.7,
+          "probability": 0.9981720447540283
+        },
+        {
+          "word": " this",
+          "start": 40.7,
+          "end": 40.94,
+          "probability": 0.9643776416778564
+        },
+        {
+          "word": " means",
+          "start": 40.94,
+          "end": 41.3,
+          "probability": 0.998601496219635
+        },
+        {
+          "word": " that",
+          "start": 41.3,
+          "end": 41.6,
+          "probability": 0.9605203866958618
+        },
+        {
+          "word": " we",
+          "start": 41.6,
+          "end": 41.8,
+          "probability": 0.9954055547714233
+        },
+        {
+          "word": " won't",
+          "start": 41.8,
+          "end": 42.14,
+          "probability": 0.9848482012748718
+        },
+        {
+          "word": " use",
+          "start": 42.14,
+          "end": 42.5,
+          "probability": 0.9952635765075684
+        },
+        {
+          "word": " cash",
+          "start": 42.5,
+          "end": 42.72,
+          "probability": 0.9669586420059204
+        },
+        {
+          "word": " anymore.",
+          "start": 42.72,
+          "end": 43.22,
+          "probability": 0.8828619122505188
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 3000,
+      "start": 43.9,
+      "end": 45.76,
+      "text": " The end of cash they call it.",
+      "tokens": [
+        51058,
+        440,
+        917,
+        295,
+        6388,
+        436,
+        818,
+        309,
+        13,
+        51154
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17911008271304044,
+      "compression_ratio": 1.551111111111111,
+      "no_speech_prob": 0.0017942418344318867,
+      "words": [
+        {
+          "word": " The",
+          "start": 43.9,
+          "end": 44.0,
+          "probability": 0.967717170715332
+        },
+        {
+          "word": " end",
+          "start": 44.0,
+          "end": 44.36,
+          "probability": 0.9624455571174622
+        },
+        {
+          "word": " of",
+          "start": 44.36,
+          "end": 44.56,
+          "probability": 0.9725554585456848
+        },
+        {
+          "word": " cash",
+          "start": 44.56,
+          "end": 45.0,
+          "probability": 0.9702348709106445
+        },
+        {
+          "word": " they",
+          "start": 45.0,
+          "end": 45.26,
+          "probability": 0.7257046103477478
+        },
+        {
+          "word": " call",
+          "start": 45.26,
+          "end": 45.5,
+          "probability": 0.9970543384552002
+        },
+        {
+          "word": " it.",
+          "start": 45.5,
+          "end": 45.76,
+          "probability": 0.9986928105354309
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 3000,
+      "start": 46.66,
+      "end": 50.04,
+      "text": " Personally, I'm not convinced for a couple of reasons.",
+      "tokens": [
+        51202,
+        21079,
+        11,
+        286,
+        478,
+        406,
+        12561,
+        337,
+        257,
+        1916,
+        295,
+        4112,
+        13,
+        51374
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17911008271304044,
+      "compression_ratio": 1.551111111111111,
+      "no_speech_prob": 0.0017942418344318867,
+      "words": [
+        {
+          "word": " Personally,",
+          "start": 46.66,
+          "end": 47.22,
+          "probability": 0.9807594418525696
+        },
+        {
+          "word": " I'm",
+          "start": 47.6,
+          "end": 47.96,
+          "probability": 0.9689987897872925
+        },
+        {
+          "word": " not",
+          "start": 47.96,
+          "end": 48.12,
+          "probability": 0.9969063401222229
+        },
+        {
+          "word": " convinced",
+          "start": 48.12,
+          "end": 48.56,
+          "probability": 0.997115969657898
+        },
+        {
+          "word": " for",
+          "start": 48.56,
+          "end": 49.04,
+          "probability": 0.9910627603530884
+        },
+        {
+          "word": " a",
+          "start": 49.04,
+          "end": 49.16,
+          "probability": 0.9971858859062195
+        },
+        {
+          "word": " couple",
+          "start": 49.16,
+          "end": 49.46,
+          "probability": 0.9980587363243103
+        },
+        {
+          "word": " of",
+          "start": 49.46,
+          "end": 49.64,
+          "probability": 0.9955548644065857
+        },
+        {
+          "word": " reasons.",
+          "start": 49.64,
+          "end": 50.04,
+          "probability": 0.998887836933136
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 3000,
+      "start": 51.5,
+      "end": 58.4,
+      "text": " First of all, we've used physical money like coins and notes for a very, very long time.",
+      "tokens": [
+        51440,
+        2386,
+        295,
+        439,
+        11,
+        321,
+        600,
+        1143,
+        4001,
+        1460,
+        411,
+        13561,
+        293,
+        5570,
+        337,
+        257,
+        588,
+        11,
+        588,
+        938,
+        565,
+        13,
+        51788
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17911008271304044,
+      "compression_ratio": 1.551111111111111,
+      "no_speech_prob": 0.0017942418344318867,
+      "words": [
+        {
+          "word": " First",
+          "start": 51.5,
+          "end": 51.72,
+          "probability": 0.9771440625190735
+        },
+        {
+          "word": " of",
+          "start": 51.72,
+          "end": 51.98,
+          "probability": 0.9982529282569885
+        },
+        {
+          "word": " all,",
+          "start": 51.98,
+          "end": 52.18,
+          "probability": 0.9985880255699158
+        },
+        {
+          "word": " we've",
+          "start": 52.64,
+          "end": 52.98,
+          "probability": 0.9684567451477051
+        },
+        {
+          "word": " used",
+          "start": 52.98,
+          "end": 53.24,
+          "probability": 0.996123731136322
+        },
+        {
+          "word": " physical",
+          "start": 53.24,
+          "end": 53.7,
+          "probability": 0.9749689102172852
+        },
+        {
+          "word": " money",
+          "start": 53.7,
+          "end": 54.1,
+          "probability": 0.9990289211273193
+        },
+        {
+          "word": " like",
+          "start": 54.1,
+          "end": 54.72,
+          "probability": 0.45948460698127747
+        },
+        {
+          "word": " coins",
+          "start": 54.72,
+          "end": 55.12,
+          "probability": 0.673067569732666
+        },
+        {
+          "word": " and",
+          "start": 55.12,
+          "end": 55.34,
+          "probability": 0.9666419625282288
+        },
+        {
+          "word": " notes",
+          "start": 55.34,
+          "end": 55.6,
+          "probability": 0.8930627703666687
+        },
+        {
+          "word": " for",
+          "start": 55.6,
+          "end": 56.22,
+          "probability": 0.9633152484893799
+        },
+        {
+          "word": " a",
+          "start": 56.22,
+          "end": 56.44,
+          "probability": 0.994989812374115
+        },
+        {
+          "word": " very,",
+          "start": 56.44,
+          "end": 56.9,
+          "probability": 0.9966908693313599
+        },
+        {
+          "word": " very",
+          "start": 57.16,
+          "end": 57.58,
+          "probability": 0.9956278800964355
+        },
+        {
+          "word": " long",
+          "start": 57.58,
+          "end": 57.9,
+          "probability": 0.9934267997741699
+        },
+        {
+          "word": " time.",
+          "start": 57.9,
+          "end": 58.4,
+          "probability": 0.9992150068283081
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5840,
+      "start": 59.28,
+      "end": 61.68,
+      "text": " Some coins are thousands of years old.",
+      "tokens": [
+        50408,
+        2188,
+        13561,
+        366,
+        5383,
+        295,
+        924,
+        1331,
+        13,
+        50530
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16832506933877633,
+      "compression_ratio": 1.574766355140187,
+      "no_speech_prob": 0.015962783247232437,
+      "words": [
+        {
+          "word": " Some",
+          "start": 59.24,
+          "end": 59.56,
+          "probability": 0.1791335493326187
+        },
+        {
+          "word": " coins",
+          "start": 59.56,
+          "end": 59.94,
+          "probability": 0.9573214650154114
+        },
+        {
+          "word": " are",
+          "start": 59.94,
+          "end": 60.16,
+          "probability": 0.9952123165130615
+        },
+        {
+          "word": " thousands",
+          "start": 60.16,
+          "end": 60.68,
+          "probability": 0.887264609336853
+        },
+        {
+          "word": " of",
+          "start": 60.68,
+          "end": 60.94,
+          "probability": 0.9749479293823242
+        },
+        {
+          "word": " years",
+          "start": 60.94,
+          "end": 61.16,
+          "probability": 0.991895854473114
+        },
+        {
+          "word": " old.",
+          "start": 61.16,
+          "end": 61.68,
+          "probability": 0.9936661124229431
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5840,
+      "start": 62.4,
+      "end": 65.94,
+      "text": " It is easy to carry and it's very reliable.",
+      "tokens": [
+        50568,
+        467,
+        307,
+        1858,
+        281,
+        3985,
+        293,
+        309,
+        311,
+        588,
+        12924,
+        13,
+        50750
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16832506933877633,
+      "compression_ratio": 1.574766355140187,
+      "no_speech_prob": 0.015962783247232437,
+      "words": [
+        {
+          "word": " It",
+          "start": 62.4,
+          "end": 62.68,
+          "probability": 0.9821738004684448
+        },
+        {
+          "word": " is",
+          "start": 62.68,
+          "end": 62.82,
+          "probability": 0.9451237320899963
+        },
+        {
+          "word": " easy",
+          "start": 62.82,
+          "end": 63.16,
+          "probability": 0.9931954145431519
+        },
+        {
+          "word": " to",
+          "start": 63.16,
+          "end": 63.36,
+          "probability": 0.9969105124473572
+        },
+        {
+          "word": " carry",
+          "start": 63.36,
+          "end": 63.74,
+          "probability": 0.9958348274230957
+        },
+        {
+          "word": " and",
+          "start": 63.74,
+          "end": 64.54,
+          "probability": 0.7035583853721619
+        },
+        {
+          "word": " it's",
+          "start": 64.54,
+          "end": 64.98,
+          "probability": 0.7744961082935333
+        },
+        {
+          "word": " very",
+          "start": 64.98,
+          "end": 65.3,
+          "probability": 0.9842473268508911
+        },
+        {
+          "word": " reliable.",
+          "start": 65.3,
+          "end": 65.94,
+          "probability": 0.9984488487243652
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5840,
+      "start": 66.8,
+      "end": 75.8,
+      "text": " You can use it anywhere, whether you want to buy a bar of chocolates at the corner shop or do your weekly shopping in a big supermarket chain.",
+      "tokens": [
+        50800,
+        509,
+        393,
+        764,
+        309,
+        4992,
+        11,
+        1968,
+        291,
+        528,
+        281,
+        2256,
+        257,
+        2159,
+        295,
+        42018,
+        412,
+        264,
+        4538,
+        3945,
+        420,
+        360,
+        428,
+        12460,
+        8688,
+        294,
+        257,
+        955,
+        25180,
+        5021,
+        13,
+        51236
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16832506933877633,
+      "compression_ratio": 1.574766355140187,
+      "no_speech_prob": 0.015962783247232437,
+      "words": [
+        {
+          "word": " You",
+          "start": 66.8,
+          "end": 67.26,
+          "probability": 0.9630736112594604
+        },
+        {
+          "word": " can",
+          "start": 67.26,
+          "end": 67.44,
+          "probability": 0.9975154399871826
+        },
+        {
+          "word": " use",
+          "start": 67.44,
+          "end": 67.64,
+          "probability": 0.991551399230957
+        },
+        {
+          "word": " it",
+          "start": 67.64,
+          "end": 67.76,
+          "probability": 0.9967892169952393
+        },
+        {
+          "word": " anywhere,",
+          "start": 67.76,
+          "end": 68.24,
+          "probability": 0.9725396633148193
+        },
+        {
+          "word": " whether",
+          "start": 68.9,
+          "end": 69.22,
+          "probability": 0.9754884839057922
+        },
+        {
+          "word": " you",
+          "start": 69.22,
+          "end": 69.42,
+          "probability": 0.9934079647064209
+        },
+        {
+          "word": " want",
+          "start": 69.42,
+          "end": 69.6,
+          "probability": 0.9953272342681885
+        },
+        {
+          "word": " to",
+          "start": 69.6,
+          "end": 69.8,
+          "probability": 0.9942301511764526
+        },
+        {
+          "word": " buy",
+          "start": 69.8,
+          "end": 69.98,
+          "probability": 0.9984713196754456
+        },
+        {
+          "word": " a",
+          "start": 69.98,
+          "end": 70.16,
+          "probability": 0.9962639212608337
+        },
+        {
+          "word": " bar",
+          "start": 70.16,
+          "end": 70.34,
+          "probability": 0.9895139932632446
+        },
+        {
+          "word": " of",
+          "start": 70.34,
+          "end": 70.56,
+          "probability": 0.9960272312164307
+        },
+        {
+          "word": " chocolates",
+          "start": 70.56,
+          "end": 70.96,
+          "probability": 0.44575434923171997
+        },
+        {
+          "word": " at",
+          "start": 70.96,
+          "end": 71.38,
+          "probability": 0.9968990087509155
+        },
+        {
+          "word": " the",
+          "start": 71.38,
+          "end": 71.54,
+          "probability": 0.9858803153038025
+        },
+        {
+          "word": " corner",
+          "start": 71.54,
+          "end": 71.8,
+          "probability": 0.8204854726791382
+        },
+        {
+          "word": " shop",
+          "start": 71.8,
+          "end": 72.1,
+          "probability": 0.9920884370803833
+        },
+        {
+          "word": " or",
+          "start": 72.1,
+          "end": 72.84,
+          "probability": 0.7470598220825195
+        },
+        {
+          "word": " do",
+          "start": 72.84,
+          "end": 73.04,
+          "probability": 0.9670726656913757
+        },
+        {
+          "word": " your",
+          "start": 73.04,
+          "end": 73.22,
+          "probability": 0.9275075197219849
+        },
+        {
+          "word": " weekly",
+          "start": 73.22,
+          "end": 73.54,
+          "probability": 0.9828560948371887
+        },
+        {
+          "word": " shopping",
+          "start": 73.54,
+          "end": 74.0,
+          "probability": 0.9923363327980042
+        },
+        {
+          "word": " in",
+          "start": 74.0,
+          "end": 74.32,
+          "probability": 0.9949848651885986
+        },
+        {
+          "word": " a",
+          "start": 74.32,
+          "end": 74.42,
+          "probability": 0.9932228326797485
+        },
+        {
+          "word": " big",
+          "start": 74.42,
+          "end": 74.6,
+          "probability": 0.9883769154548645
+        },
+        {
+          "word": " supermarket",
+          "start": 74.6,
+          "end": 75.22,
+          "probability": 0.9848272800445557
+        },
+        {
+          "word": " chain.",
+          "start": 75.22,
+          "end": 75.8,
+          "probability": 0.9957320094108582
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5840,
+      "start": 77.0,
+      "end": 80.62,
+      "text": " Using cash is also a way of keeping your money private.",
+      "tokens": [
+        51296,
+        11142,
+        6388,
+        307,
+        611,
+        257,
+        636,
+        295,
+        5145,
+        428,
+        1460,
+        4551,
+        13,
+        51482
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16832506933877633,
+      "compression_ratio": 1.574766355140187,
+      "no_speech_prob": 0.015962783247232437,
+      "words": [
+        {
+          "word": " Using",
+          "start": 77.0,
+          "end": 77.38,
+          "probability": 0.9776312708854675
+        },
+        {
+          "word": " cash",
+          "start": 77.38,
+          "end": 77.74,
+          "probability": 0.9630632996559143
+        },
+        {
+          "word": " is",
+          "start": 77.74,
+          "end": 78.18,
+          "probability": 0.9920670986175537
+        },
+        {
+          "word": " also",
+          "start": 78.18,
+          "end": 78.66,
+          "probability": 0.9978545308113098
+        },
+        {
+          "word": " a",
+          "start": 78.66,
+          "end": 78.86,
+          "probability": 0.9910223484039307
+        },
+        {
+          "word": " way",
+          "start": 78.86,
+          "end": 79.04,
+          "probability": 0.9987784028053284
+        },
+        {
+          "word": " of",
+          "start": 79.04,
+          "end": 79.2,
+          "probability": 0.9921236634254456
+        },
+        {
+          "word": " keeping",
+          "start": 79.2,
+          "end": 79.46,
+          "probability": 0.9974560141563416
+        },
+        {
+          "word": " your",
+          "start": 79.46,
+          "end": 79.78,
+          "probability": 0.9788830876350403
+        },
+        {
+          "word": " money",
+          "start": 79.78,
+          "end": 80.02,
+          "probability": 0.998427152633667
+        },
+        {
+          "word": " private.",
+          "start": 80.02,
+          "end": 80.62,
+          "probability": 0.9942235350608826
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5840,
+      "start": 81.54,
+      "end": 85.5,
+      "text": " That is, you can use it without anyone checking on you.",
+      "tokens": [
+        51524,
+        663,
+        307,
+        11,
+        291,
+        393,
+        764,
+        309,
+        1553,
+        2878,
+        8568,
+        322,
+        291,
+        13,
+        51718
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16832506933877633,
+      "compression_ratio": 1.574766355140187,
+      "no_speech_prob": 0.015962783247232437,
+      "words": [
+        {
+          "word": " That",
+          "start": 81.54,
+          "end": 81.84,
+          "probability": 0.973602831363678
+        },
+        {
+          "word": " is,",
+          "start": 81.84,
+          "end": 82.08,
+          "probability": 0.9920374155044556
+        },
+        {
+          "word": " you",
+          "start": 82.5,
+          "end": 82.74,
+          "probability": 0.9935534000396729
+        },
+        {
+          "word": " can",
+          "start": 82.74,
+          "end": 82.94,
+          "probability": 0.9962775111198425
+        },
+        {
+          "word": " use",
+          "start": 82.94,
+          "end": 83.22,
+          "probability": 0.9973760843276978
+        },
+        {
+          "word": " it",
+          "start": 83.22,
+          "end": 83.42,
+          "probability": 0.9926839470863342
+        },
+        {
+          "word": " without",
+          "start": 83.42,
+          "end": 83.8,
+          "probability": 0.9958022236824036
+        },
+        {
+          "word": " anyone",
+          "start": 83.8,
+          "end": 84.46,
+          "probability": 0.9765198230743408
+        },
+        {
+          "word": " checking",
+          "start": 84.46,
+          "end": 84.98,
+          "probability": 0.9927006959915161
+        },
+        {
+          "word": " on",
+          "start": 84.98,
+          "end": 85.2,
+          "probability": 0.9834480285644531
+        },
+        {
+          "word": " you.",
+          "start": 85.2,
+          "end": 85.5,
+          "probability": 0.9984661340713501
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 8550,
+      "start": 86.44,
+      "end": 94.76,
+      "text": " Bitcoin, a digital kind of money, which is managed by people and not the government, is similar to cash in this way.",
+      "tokens": [
+        50412,
+        11414,
+        11,
+        257,
+        4562,
+        733,
+        295,
+        1460,
+        11,
+        597,
+        307,
+        6453,
+        538,
+        561,
+        293,
+        406,
+        264,
+        2463,
+        11,
+        307,
+        2531,
+        281,
+        6388,
+        294,
+        341,
+        636,
+        13,
+        50832
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20363874996409698,
+      "compression_ratio": 1.5467289719626167,
+      "no_speech_prob": 0.013974619098007679,
+      "words": [
+        {
+          "word": " Bitcoin,",
+          "start": 86.44,
+          "end": 87.12,
+          "probability": 0.8819329142570496
+        },
+        {
+          "word": " a",
+          "start": 87.74,
+          "end": 87.86,
+          "probability": 0.9877769947052002
+        },
+        {
+          "word": " digital",
+          "start": 87.86,
+          "end": 88.26,
+          "probability": 0.9916233420372009
+        },
+        {
+          "word": " kind",
+          "start": 88.26,
+          "end": 88.7,
+          "probability": 0.9924079179763794
+        },
+        {
+          "word": " of",
+          "start": 88.7,
+          "end": 88.86,
+          "probability": 0.9967367053031921
+        },
+        {
+          "word": " money,",
+          "start": 88.86,
+          "end": 89.18,
+          "probability": 0.9980610013008118
+        },
+        {
+          "word": " which",
+          "start": 89.66,
+          "end": 89.86,
+          "probability": 0.9932548999786377
+        },
+        {
+          "word": " is",
+          "start": 89.86,
+          "end": 90.02,
+          "probability": 0.9947431087493896
+        },
+        {
+          "word": " managed",
+          "start": 90.02,
+          "end": 90.38,
+          "probability": 0.9880626201629639
+        },
+        {
+          "word": " by",
+          "start": 90.38,
+          "end": 90.74,
+          "probability": 0.9989771842956543
+        },
+        {
+          "word": " people",
+          "start": 90.74,
+          "end": 91.26,
+          "probability": 0.9901828169822693
+        },
+        {
+          "word": " and",
+          "start": 91.26,
+          "end": 91.58,
+          "probability": 0.9105808734893799
+        },
+        {
+          "word": " not",
+          "start": 91.58,
+          "end": 91.8,
+          "probability": 0.9968459010124207
+        },
+        {
+          "word": " the",
+          "start": 91.8,
+          "end": 92.0,
+          "probability": 0.9869558811187744
+        },
+        {
+          "word": " government,",
+          "start": 92.0,
+          "end": 92.44,
+          "probability": 0.9462274312973022
+        },
+        {
+          "word": " is",
+          "start": 92.86,
+          "end": 93.06,
+          "probability": 0.996232807636261
+        },
+        {
+          "word": " similar",
+          "start": 93.06,
+          "end": 93.48,
+          "probability": 0.9963485598564148
+        },
+        {
+          "word": " to",
+          "start": 93.48,
+          "end": 93.72,
+          "probability": 0.9982585310935974
+        },
+        {
+          "word": " cash",
+          "start": 93.72,
+          "end": 93.98,
+          "probability": 0.9306776523590088
+        },
+        {
+          "word": " in",
+          "start": 93.98,
+          "end": 94.28,
+          "probability": 0.9474769830703735
+        },
+        {
+          "word": " this",
+          "start": 94.28,
+          "end": 94.48,
+          "probability": 0.9976277947425842
+        },
+        {
+          "word": " way.",
+          "start": 94.48,
+          "end": 94.76,
+          "probability": 0.9980056881904602
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8550,
+      "start": 95.52,
+      "end": 98.88,
+      "text": " But it isn't safe and it's difficult to use.",
+      "tokens": [
+        50868,
+        583,
+        309,
+        1943,
+        380,
+        3273,
+        293,
+        309,
+        311,
+        2252,
+        281,
+        764,
+        13,
+        51042
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20363874996409698,
+      "compression_ratio": 1.5467289719626167,
+      "no_speech_prob": 0.013974619098007679,
+      "words": [
+        {
+          "word": " But",
+          "start": 95.52,
+          "end": 95.86,
+          "probability": 0.9869296550750732
+        },
+        {
+          "word": " it",
+          "start": 95.86,
+          "end": 96.2,
+          "probability": 0.8256540298461914
+        },
+        {
+          "word": " isn't",
+          "start": 96.2,
+          "end": 96.54,
+          "probability": 0.9818913340568542
+        },
+        {
+          "word": " safe",
+          "start": 96.54,
+          "end": 96.88,
+          "probability": 0.9972143769264221
+        },
+        {
+          "word": " and",
+          "start": 96.88,
+          "end": 97.56,
+          "probability": 0.6082283854484558
+        },
+        {
+          "word": " it's",
+          "start": 97.56,
+          "end": 97.88,
+          "probability": 0.9391099810600281
+        },
+        {
+          "word": " difficult",
+          "start": 97.88,
+          "end": 98.26,
+          "probability": 0.9977642297744751
+        },
+        {
+          "word": " to",
+          "start": 98.26,
+          "end": 98.52,
+          "probability": 0.9990979433059692
+        },
+        {
+          "word": " use.",
+          "start": 98.52,
+          "end": 98.88,
+          "probability": 0.9986196756362915
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8550,
+      "start": 99.98,
+      "end": 107.72,
+      "text": " People use credit and debit cards all the time, but they immediately connect what you buy to who you are.",
+      "tokens": [
+        51104,
+        3432,
+        764,
+        5397,
+        293,
+        39709,
+        5632,
+        439,
+        264,
+        565,
+        11,
+        457,
+        436,
+        4258,
+        1745,
+        437,
+        291,
+        2256,
+        281,
+        567,
+        291,
+        366,
+        13,
+        51482
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20363874996409698,
+      "compression_ratio": 1.5467289719626167,
+      "no_speech_prob": 0.013974619098007679,
+      "words": [
+        {
+          "word": " People",
+          "start": 99.98,
+          "end": 100.66,
+          "probability": 0.9900846481323242
+        },
+        {
+          "word": " use",
+          "start": 100.66,
+          "end": 101.02,
+          "probability": 0.9954149723052979
+        },
+        {
+          "word": " credit",
+          "start": 101.02,
+          "end": 101.4,
+          "probability": 0.9755566716194153
+        },
+        {
+          "word": " and",
+          "start": 101.4,
+          "end": 101.72,
+          "probability": 0.9926581978797913
+        },
+        {
+          "word": " debit",
+          "start": 101.72,
+          "end": 102.02,
+          "probability": 0.9984684586524963
+        },
+        {
+          "word": " cards",
+          "start": 102.02,
+          "end": 102.36,
+          "probability": 0.9912887811660767
+        },
+        {
+          "word": " all",
+          "start": 102.36,
+          "end": 102.76,
+          "probability": 0.9968281388282776
+        },
+        {
+          "word": " the",
+          "start": 102.76,
+          "end": 102.94,
+          "probability": 0.9957900643348694
+        },
+        {
+          "word": " time,",
+          "start": 102.94,
+          "end": 103.4,
+          "probability": 0.999617338180542
+        },
+        {
+          "word": " but",
+          "start": 103.84,
+          "end": 104.0,
+          "probability": 0.9958200454711914
+        },
+        {
+          "word": " they",
+          "start": 104.0,
+          "end": 104.2,
+          "probability": 0.9979661703109741
+        },
+        {
+          "word": " immediately",
+          "start": 104.2,
+          "end": 104.92,
+          "probability": 0.9975337982177734
+        },
+        {
+          "word": " connect",
+          "start": 104.92,
+          "end": 105.56,
+          "probability": 0.9965540170669556
+        },
+        {
+          "word": " what",
+          "start": 105.56,
+          "end": 105.98,
+          "probability": 0.9944584369659424
+        },
+        {
+          "word": " you",
+          "start": 105.98,
+          "end": 106.2,
+          "probability": 0.9979248046875
+        },
+        {
+          "word": " buy",
+          "start": 106.2,
+          "end": 106.52,
+          "probability": 0.9968523383140564
+        },
+        {
+          "word": " to",
+          "start": 106.52,
+          "end": 106.96,
+          "probability": 0.9928570985794067
+        },
+        {
+          "word": " who",
+          "start": 106.96,
+          "end": 107.18,
+          "probability": 0.9886081218719482
+        },
+        {
+          "word": " you",
+          "start": 107.18,
+          "end": 107.4,
+          "probability": 0.999152421951294
+        },
+        {
+          "word": " are.",
+          "start": 107.4,
+          "end": 107.72,
+          "probability": 0.9986951947212219
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 8550,
+      "start": 108.78,
+      "end": 112.8,
+      "text": " To use online payments, you have to have an app and an account.",
+      "tokens": [
+        51528,
+        1407,
+        764,
+        2950,
+        14348,
+        11,
+        291,
+        362,
+        281,
+        362,
+        364,
+        724,
+        293,
+        364,
+        2696,
+        13,
+        51740
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20363874996409698,
+      "compression_ratio": 1.5467289719626167,
+      "no_speech_prob": 0.013974619098007679,
+      "words": [
+        {
+          "word": " To",
+          "start": 108.78,
+          "end": 109.06,
+          "probability": 0.9961748123168945
+        },
+        {
+          "word": " use",
+          "start": 109.06,
+          "end": 109.34,
+          "probability": 0.9941909909248352
+        },
+        {
+          "word": " online",
+          "start": 109.34,
+          "end": 109.7,
+          "probability": 0.9938555359840393
+        },
+        {
+          "word": " payments,",
+          "start": 109.7,
+          "end": 110.18,
+          "probability": 0.7434009313583374
+        },
+        {
+          "word": " you",
+          "start": 110.64,
+          "end": 110.78,
+          "probability": 0.9985985159873962
+        },
+        {
+          "word": " have",
+          "start": 110.78,
+          "end": 110.96,
+          "probability": 0.9941903352737427
+        },
+        {
+          "word": " to",
+          "start": 110.96,
+          "end": 111.14,
+          "probability": 0.9974172115325928
+        },
+        {
+          "word": " have",
+          "start": 111.14,
+          "end": 111.28,
+          "probability": 0.9971605539321899
+        },
+        {
+          "word": " an",
+          "start": 111.28,
+          "end": 111.48,
+          "probability": 0.9945486187934875
+        },
+        {
+          "word": " app",
+          "start": 111.48,
+          "end": 111.72,
+          "probability": 0.9740692973136902
+        },
+        {
+          "word": " and",
+          "start": 111.72,
+          "end": 112.26,
+          "probability": 0.9761752486228943
+        },
+        {
+          "word": " an",
+          "start": 112.26,
+          "end": 112.44,
+          "probability": 0.9748715758323669
+        },
+        {
+          "word": " account.",
+          "start": 112.44,
+          "end": 112.8,
+          "probability": 0.9988428354263306
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 11280,
+      "start": 112.8,
+      "end": 119.72,
+      "text": " To put it another way, technology doesn't have the secret thing that cash has.",
+      "tokens": [
+        50412,
+        1407,
+        829,
+        309,
+        1071,
+        636,
+        11,
+        2899,
+        1177,
+        380,
+        362,
+        264,
+        4054,
+        551,
+        300,
+        6388,
+        575,
+        13,
+        50702
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19641960842508666,
+      "compression_ratio": 1.4789473684210526,
+      "no_speech_prob": 0.009819919243454933,
+      "words": [
+        {
+          "word": " To",
+          "start": 112.8,
+          "end": 113.62,
+          "probability": 0.20226067304611206
+        },
+        {
+          "word": " put",
+          "start": 113.62,
+          "end": 114.46,
+          "probability": 0.9769103527069092
+        },
+        {
+          "word": " it",
+          "start": 114.46,
+          "end": 114.68,
+          "probability": 0.9683640003204346
+        },
+        {
+          "word": " another",
+          "start": 114.68,
+          "end": 114.94,
+          "probability": 0.9720503687858582
+        },
+        {
+          "word": " way,",
+          "start": 114.94,
+          "end": 115.38,
+          "probability": 0.9889017343521118
+        },
+        {
+          "word": " technology",
+          "start": 115.94,
+          "end": 116.52,
+          "probability": 0.9433177709579468
+        },
+        {
+          "word": " doesn't",
+          "start": 116.52,
+          "end": 117.2,
+          "probability": 0.9807601273059845
+        },
+        {
+          "word": " have",
+          "start": 117.2,
+          "end": 117.42,
+          "probability": 0.9939461350440979
+        },
+        {
+          "word": " the",
+          "start": 117.42,
+          "end": 117.68,
+          "probability": 0.9740090370178223
+        },
+        {
+          "word": " secret",
+          "start": 117.68,
+          "end": 118.14,
+          "probability": 0.9236038327217102
+        },
+        {
+          "word": " thing",
+          "start": 118.14,
+          "end": 118.56,
+          "probability": 0.9698931574821472
+        },
+        {
+          "word": " that",
+          "start": 118.56,
+          "end": 118.9,
+          "probability": 0.9706586599349976
+        },
+        {
+          "word": " cash",
+          "start": 118.9,
+          "end": 119.22,
+          "probability": 0.5953609347343445
+        },
+        {
+          "word": " has.",
+          "start": 119.22,
+          "end": 119.72,
+          "probability": 0.9928362965583801
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 11280,
+      "start": 120.5,
+      "end": 122.74,
+      "text": " Cash is private and I like that.",
+      "tokens": [
+        50736,
+        27016,
+        307,
+        4551,
+        293,
+        286,
+        411,
+        300,
+        13,
+        50856
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19641960842508666,
+      "compression_ratio": 1.4789473684210526,
+      "no_speech_prob": 0.009819919243454933,
+      "words": [
+        {
+          "word": " Cash",
+          "start": 120.5,
+          "end": 120.7,
+          "probability": 0.9574469327926636
+        },
+        {
+          "word": " is",
+          "start": 120.7,
+          "end": 120.9,
+          "probability": 0.9931403994560242
+        },
+        {
+          "word": " private",
+          "start": 120.9,
+          "end": 121.44,
+          "probability": 0.9663346409797668
+        },
+        {
+          "word": " and",
+          "start": 121.44,
+          "end": 122.0,
+          "probability": 0.4764210879802704
+        },
+        {
+          "word": " I",
+          "start": 122.0,
+          "end": 122.12,
+          "probability": 0.9786650538444519
+        },
+        {
+          "word": " like",
+          "start": 122.12,
+          "end": 122.4,
+          "probability": 0.9964480400085449
+        },
+        {
+          "word": " that.",
+          "start": 122.4,
+          "end": 122.74,
+          "probability": 0.9948673248291016
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 11280,
+      "start": 124.5,
+      "end": 131.34,
+      "text": " However, the main reason I don't agree that this is the end of cash is our relationship with it.",
+      "tokens": [
+        50944,
+        2908,
+        11,
+        264,
+        2135,
+        1778,
+        286,
+        500,
+        380,
+        3986,
+        300,
+        341,
+        307,
+        264,
+        917,
+        295,
+        6388,
+        307,
+        527,
+        2480,
+        365,
+        309,
+        13,
+        51284
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19641960842508666,
+      "compression_ratio": 1.4789473684210526,
+      "no_speech_prob": 0.009819919243454933,
+      "words": [
+        {
+          "word": " However,",
+          "start": 124.5,
+          "end": 124.88,
+          "probability": 0.9729859232902527
+        },
+        {
+          "word": " the",
+          "start": 125.5,
+          "end": 125.58,
+          "probability": 0.9906691312789917
+        },
+        {
+          "word": " main",
+          "start": 125.58,
+          "end": 125.92,
+          "probability": 0.9969210624694824
+        },
+        {
+          "word": " reason",
+          "start": 125.92,
+          "end": 126.28,
+          "probability": 0.9964112639427185
+        },
+        {
+          "word": " I",
+          "start": 126.28,
+          "end": 126.6,
+          "probability": 0.972751259803772
+        },
+        {
+          "word": " don't",
+          "start": 126.6,
+          "end": 127.02,
+          "probability": 0.9965202808380127
+        },
+        {
+          "word": " agree",
+          "start": 127.02,
+          "end": 127.36,
+          "probability": 0.9977782368659973
+        },
+        {
+          "word": " that",
+          "start": 127.36,
+          "end": 127.56,
+          "probability": 0.9552212953567505
+        },
+        {
+          "word": " this",
+          "start": 127.56,
+          "end": 127.84,
+          "probability": 0.9851543307304382
+        },
+        {
+          "word": " is",
+          "start": 127.84,
+          "end": 128.08,
+          "probability": 0.9821240305900574
+        },
+        {
+          "word": " the",
+          "start": 128.08,
+          "end": 128.28,
+          "probability": 0.9799031615257263
+        },
+        {
+          "word": " end",
+          "start": 128.28,
+          "end": 128.62,
+          "probability": 0.9850298762321472
+        },
+        {
+          "word": " of",
+          "start": 128.62,
+          "end": 128.8,
+          "probability": 0.9939839243888855
+        },
+        {
+          "word": " cash",
+          "start": 128.8,
+          "end": 129.24,
+          "probability": 0.8780729174613953
+        },
+        {
+          "word": " is",
+          "start": 129.24,
+          "end": 129.78,
+          "probability": 0.8132668137550354
+        },
+        {
+          "word": " our",
+          "start": 129.78,
+          "end": 130.0,
+          "probability": 0.9929025769233704
+        },
+        {
+          "word": " relationship",
+          "start": 130.0,
+          "end": 130.56,
+          "probability": 0.9949246644973755
+        },
+        {
+          "word": " with",
+          "start": 130.56,
+          "end": 130.98,
+          "probability": 0.9958400726318359
+        },
+        {
+          "word": " it.",
+          "start": 130.98,
+          "end": 131.34,
+          "probability": 0.9974127411842346
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 11280,
+      "start": 132.38,
+      "end": 136.64,
+      "text": " People look at coins and notes in a different way from electronic money.",
+      "tokens": [
+        51336,
+        3432,
+        574,
+        412,
+        13561,
+        293,
+        5570,
+        294,
+        257,
+        819,
+        636,
+        490,
+        10092,
+        1460,
+        13,
+        51552
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19641960842508666,
+      "compression_ratio": 1.4789473684210526,
+      "no_speech_prob": 0.009819919243454933,
+      "words": [
+        {
+          "word": " People",
+          "start": 132.38,
+          "end": 132.76,
+          "probability": 0.9850654006004333
+        },
+        {
+          "word": " look",
+          "start": 132.76,
+          "end": 133.12,
+          "probability": 0.9949585795402527
+        },
+        {
+          "word": " at",
+          "start": 133.12,
+          "end": 133.36,
+          "probability": 0.9987718462944031
+        },
+        {
+          "word": " coins",
+          "start": 133.36,
+          "end": 133.68,
+          "probability": 0.995316743850708
+        },
+        {
+          "word": " and",
+          "start": 133.68,
+          "end": 133.96,
+          "probability": 0.9943535327911377
+        },
+        {
+          "word": " notes",
+          "start": 133.96,
+          "end": 134.26,
+          "probability": 0.9677960872650146
+        },
+        {
+          "word": " in",
+          "start": 134.26,
+          "end": 134.64,
+          "probability": 0.9888203740119934
+        },
+        {
+          "word": " a",
+          "start": 134.64,
+          "end": 134.76,
+          "probability": 0.9963729381561279
+        },
+        {
+          "word": " different",
+          "start": 134.76,
+          "end": 135.06,
+          "probability": 0.9989221096038818
+        },
+        {
+          "word": " way",
+          "start": 135.06,
+          "end": 135.42,
+          "probability": 0.9980474710464478
+        },
+        {
+          "word": " from",
+          "start": 135.42,
+          "end": 135.66,
+          "probability": 0.974816083908081
+        },
+        {
+          "word": " electronic",
+          "start": 135.66,
+          "end": 136.14,
+          "probability": 0.9622717499732971
+        },
+        {
+          "word": " money.",
+          "start": 136.14,
+          "end": 136.64,
+          "probability": 0.9994097948074341
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 13664,
+      "start": 137.23999999999998,
+      "end": 145.52,
+      "text": " They both have the same value, but because you can see cash and hold it, it makes it feel like you own it more.",
+      "tokens": [
+        50412,
+        814,
+        1293,
+        362,
+        264,
+        912,
+        2158,
+        11,
+        457,
+        570,
+        291,
+        393,
+        536,
+        6388,
+        293,
+        1797,
+        309,
+        11,
+        309,
+        1669,
+        309,
+        841,
+        411,
+        291,
+        1065,
+        309,
+        544,
+        13,
+        50812
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08657578204540496,
+      "compression_ratio": 1.5855855855855856,
+      "no_speech_prob": 0.02373429387807846,
+      "words": [
+        {
+          "word": " They",
+          "start": 137.23999999999998,
+          "end": 137.82,
+          "probability": 0.280467689037323
+        },
+        {
+          "word": " both",
+          "start": 137.82,
+          "end": 138.12,
+          "probability": 0.9941617846488953
+        },
+        {
+          "word": " have",
+          "start": 138.12,
+          "end": 138.36,
+          "probability": 0.9959151148796082
+        },
+        {
+          "word": " the",
+          "start": 138.36,
+          "end": 138.56,
+          "probability": 0.9924909472465515
+        },
+        {
+          "word": " same",
+          "start": 138.56,
+          "end": 138.82,
+          "probability": 0.9987371563911438
+        },
+        {
+          "word": " value,",
+          "start": 138.82,
+          "end": 139.38,
+          "probability": 0.9881070852279663
+        },
+        {
+          "word": " but",
+          "start": 139.84,
+          "end": 140.1,
+          "probability": 0.9929266571998596
+        },
+        {
+          "word": " because",
+          "start": 140.1,
+          "end": 140.46,
+          "probability": 0.9498512148857117
+        },
+        {
+          "word": " you",
+          "start": 140.46,
+          "end": 140.68,
+          "probability": 0.9968822002410889
+        },
+        {
+          "word": " can",
+          "start": 140.68,
+          "end": 140.86,
+          "probability": 0.9888741970062256
+        },
+        {
+          "word": " see",
+          "start": 140.86,
+          "end": 141.22,
+          "probability": 0.9853432178497314
+        },
+        {
+          "word": " cash",
+          "start": 141.22,
+          "end": 141.58,
+          "probability": 0.2692987322807312
+        },
+        {
+          "word": " and",
+          "start": 141.58,
+          "end": 142.06,
+          "probability": 0.9018794298171997
+        },
+        {
+          "word": " hold",
+          "start": 142.06,
+          "end": 142.38,
+          "probability": 0.9903218150138855
+        },
+        {
+          "word": " it,",
+          "start": 142.38,
+          "end": 142.78,
+          "probability": 0.9975680708885193
+        },
+        {
+          "word": " it",
+          "start": 143.14,
+          "end": 143.38,
+          "probability": 0.9898315072059631
+        },
+        {
+          "word": " makes",
+          "start": 143.38,
+          "end": 143.62,
+          "probability": 0.9937769174575806
+        },
+        {
+          "word": " it",
+          "start": 143.62,
+          "end": 143.88,
+          "probability": 0.9909088015556335
+        },
+        {
+          "word": " feel",
+          "start": 143.88,
+          "end": 144.12,
+          "probability": 0.9974294304847717
+        },
+        {
+          "word": " like",
+          "start": 144.12,
+          "end": 144.38,
+          "probability": 0.9977872371673584
+        },
+        {
+          "word": " you",
+          "start": 144.38,
+          "end": 144.64,
+          "probability": 0.9960330128669739
+        },
+        {
+          "word": " own",
+          "start": 144.64,
+          "end": 145.0,
+          "probability": 0.9953678846359253
+        },
+        {
+          "word": " it",
+          "start": 145.0,
+          "end": 145.22,
+          "probability": 0.9936428070068359
+        },
+        {
+          "word": " more.",
+          "start": 145.22,
+          "end": 145.52,
+          "probability": 0.9861590266227722
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 13664,
+      "start": 146.52,
+      "end": 151.48,
+      "text": " In fact, when I have cash, I spend it in a more responsible way.",
+      "tokens": [
+        50860,
+        682,
+        1186,
+        11,
+        562,
+        286,
+        362,
+        6388,
+        11,
+        286,
+        3496,
+        309,
+        294,
+        257,
+        544,
+        6250,
+        636,
+        13,
+        51104
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08657578204540496,
+      "compression_ratio": 1.5855855855855856,
+      "no_speech_prob": 0.02373429387807846,
+      "words": [
+        {
+          "word": " In",
+          "start": 146.52,
+          "end": 146.76,
+          "probability": 0.9843363761901855
+        },
+        {
+          "word": " fact,",
+          "start": 146.76,
+          "end": 147.16,
+          "probability": 0.9979514479637146
+        },
+        {
+          "word": " when",
+          "start": 147.62,
+          "end": 147.76,
+          "probability": 0.9908214211463928
+        },
+        {
+          "word": " I",
+          "start": 147.76,
+          "end": 147.98,
+          "probability": 0.9926658272743225
+        },
+        {
+          "word": " have",
+          "start": 147.98,
+          "end": 148.28,
+          "probability": 0.9945632815361023
+        },
+        {
+          "word": " cash,",
+          "start": 148.28,
+          "end": 148.58,
+          "probability": 0.9945417046546936
+        },
+        {
+          "word": " I",
+          "start": 149.08,
+          "end": 149.18,
+          "probability": 0.9977543950080872
+        },
+        {
+          "word": " spend",
+          "start": 149.18,
+          "end": 149.52,
+          "probability": 0.9909414649009705
+        },
+        {
+          "word": " it",
+          "start": 149.52,
+          "end": 149.84,
+          "probability": 0.9959737658500671
+        },
+        {
+          "word": " in",
+          "start": 149.84,
+          "end": 150.02,
+          "probability": 0.9899082183837891
+        },
+        {
+          "word": " a",
+          "start": 150.02,
+          "end": 150.1,
+          "probability": 0.9949414134025574
+        },
+        {
+          "word": " more",
+          "start": 150.1,
+          "end": 150.34,
+          "probability": 0.9981091022491455
+        },
+        {
+          "word": " responsible",
+          "start": 150.34,
+          "end": 150.92,
+          "probability": 0.9743573665618896
+        },
+        {
+          "word": " way.",
+          "start": 150.92,
+          "end": 151.48,
+          "probability": 0.9989350438117981
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 13664,
+      "start": 152.34,
+      "end": 155.92,
+      "text": " When I buy things with my card, I use it without thinking.",
+      "tokens": [
+        51148,
+        1133,
+        286,
+        2256,
+        721,
+        365,
+        452,
+        2920,
+        11,
+        286,
+        764,
+        309,
+        1553,
+        1953,
+        13,
+        51328
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08657578204540496,
+      "compression_ratio": 1.5855855855855856,
+      "no_speech_prob": 0.02373429387807846,
+      "words": [
+        {
+          "word": " When",
+          "start": 152.34,
+          "end": 152.62,
+          "probability": 0.9863048791885376
+        },
+        {
+          "word": " I",
+          "start": 152.62,
+          "end": 152.74,
+          "probability": 0.9979268312454224
+        },
+        {
+          "word": " buy",
+          "start": 152.74,
+          "end": 152.94,
+          "probability": 0.9989655017852783
+        },
+        {
+          "word": " things",
+          "start": 152.94,
+          "end": 153.22,
+          "probability": 0.9985142350196838
+        },
+        {
+          "word": " with",
+          "start": 153.22,
+          "end": 153.44,
+          "probability": 0.996444046497345
+        },
+        {
+          "word": " my",
+          "start": 153.44,
+          "end": 153.62,
+          "probability": 0.9968469738960266
+        },
+        {
+          "word": " card,",
+          "start": 153.62,
+          "end": 154.0,
+          "probability": 0.9922248125076294
+        },
+        {
+          "word": " I",
+          "start": 154.52,
+          "end": 154.64,
+          "probability": 0.9979029893875122
+        },
+        {
+          "word": " use",
+          "start": 154.64,
+          "end": 154.96,
+          "probability": 0.9919478297233582
+        },
+        {
+          "word": " it",
+          "start": 154.96,
+          "end": 155.1,
+          "probability": 0.9960979223251343
+        },
+        {
+          "word": " without",
+          "start": 155.1,
+          "end": 155.4,
+          "probability": 0.9984651803970337
+        },
+        {
+          "word": " thinking.",
+          "start": 155.4,
+          "end": 155.92,
+          "probability": 0.9967958331108093
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 13664,
+      "start": 157.34,
+      "end": 164.58,
+      "text": " Humans have a strong relationship with coins and notes, so I don't think we'd be able to give up cash easily anyway.",
+      "tokens": [
+        51396,
+        35809,
+        362,
+        257,
+        2068,
+        2480,
+        365,
+        13561,
+        293,
+        5570,
+        11,
+        370,
+        286,
+        500,
+        380,
+        519,
+        321,
+        1116,
+        312,
+        1075,
+        281,
+        976,
+        493,
+        6388,
+        3612,
+        4033,
+        13,
+        51760
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08657578204540496,
+      "compression_ratio": 1.5855855855855856,
+      "no_speech_prob": 0.02373429387807846,
+      "words": [
+        {
+          "word": " Humans",
+          "start": 157.34,
+          "end": 157.64,
+          "probability": 0.9627803564071655
+        },
+        {
+          "word": " have",
+          "start": 157.64,
+          "end": 157.94,
+          "probability": 0.9978578686714172
+        },
+        {
+          "word": " a",
+          "start": 157.94,
+          "end": 158.06,
+          "probability": 0.9963765740394592
+        },
+        {
+          "word": " strong",
+          "start": 158.06,
+          "end": 158.38,
+          "probability": 0.9982196688652039
+        },
+        {
+          "word": " relationship",
+          "start": 158.38,
+          "end": 159.12,
+          "probability": 0.9960728883743286
+        },
+        {
+          "word": " with",
+          "start": 159.12,
+          "end": 159.44,
+          "probability": 0.9926844835281372
+        },
+        {
+          "word": " coins",
+          "start": 159.44,
+          "end": 159.7,
+          "probability": 0.993051290512085
+        },
+        {
+          "word": " and",
+          "start": 159.7,
+          "end": 159.94,
+          "probability": 0.9923076629638672
+        },
+        {
+          "word": " notes,",
+          "start": 159.94,
+          "end": 160.22,
+          "probability": 0.9416710138320923
+        },
+        {
+          "word": " so",
+          "start": 160.74,
+          "end": 161.0,
+          "probability": 0.9959331154823303
+        },
+        {
+          "word": " I",
+          "start": 161.0,
+          "end": 161.26,
+          "probability": 0.9853470325469971
+        },
+        {
+          "word": " don't",
+          "start": 161.26,
+          "end": 161.72,
+          "probability": 0.9912897348403931
+        },
+        {
+          "word": " think",
+          "start": 161.72,
+          "end": 161.9,
+          "probability": 0.996051013469696
+        },
+        {
+          "word": " we'd",
+          "start": 161.9,
+          "end": 162.26,
+          "probability": 0.7457793354988098
+        },
+        {
+          "word": " be",
+          "start": 162.26,
+          "end": 162.34,
+          "probability": 0.9954081177711487
+        },
+        {
+          "word": " able",
+          "start": 162.34,
+          "end": 162.58,
+          "probability": 0.9975436329841614
+        },
+        {
+          "word": " to",
+          "start": 162.58,
+          "end": 162.84,
+          "probability": 0.9966567754745483
+        },
+        {
+          "word": " give",
+          "start": 162.84,
+          "end": 163.04,
+          "probability": 0.9814969301223755
+        },
+        {
+          "word": " up",
+          "start": 163.04,
+          "end": 163.28,
+          "probability": 0.9971500039100647
+        },
+        {
+          "word": " cash",
+          "start": 163.28,
+          "end": 163.52,
+          "probability": 0.9848928451538086
+        },
+        {
+          "word": " easily",
+          "start": 163.52,
+          "end": 164.02,
+          "probability": 0.9929729700088501
+        },
+        {
+          "word": " anyway.",
+          "start": 164.02,
+          "end": 164.58,
+          "probability": 0.9520860910415649
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 16458,
+      "start": 165.3,
+      "end": 171.28,
+      "text": " Cash just feels safer and this is something that digital money can't offer at the moment.",
+      "tokens": [
+        50412,
+        27016,
+        445,
+        3417,
+        15856,
+        293,
+        341,
+        307,
+        746,
+        300,
+        4562,
+        1460,
+        393,
+        380,
+        2626,
+        412,
+        264,
+        1623,
+        13,
+        50692
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09935707092285156,
+      "compression_ratio": 1.617391304347826,
+      "no_speech_prob": 0.011603306047618389,
+      "words": [
+        {
+          "word": " Cash",
+          "start": 165.3,
+          "end": 165.9,
+          "probability": 0.43856751918792725
+        },
+        {
+          "word": " just",
+          "start": 165.9,
+          "end": 166.32,
+          "probability": 0.9850000143051147
+        },
+        {
+          "word": " feels",
+          "start": 166.32,
+          "end": 166.62,
+          "probability": 0.9836002588272095
+        },
+        {
+          "word": " safer",
+          "start": 166.62,
+          "end": 167.26,
+          "probability": 0.9977617263793945
+        },
+        {
+          "word": " and",
+          "start": 167.26,
+          "end": 167.98,
+          "probability": 0.3763474225997925
+        },
+        {
+          "word": " this",
+          "start": 167.98,
+          "end": 168.18,
+          "probability": 0.9948678016662598
+        },
+        {
+          "word": " is",
+          "start": 168.18,
+          "end": 168.32,
+          "probability": 0.9950408339500427
+        },
+        {
+          "word": " something",
+          "start": 168.32,
+          "end": 168.68,
+          "probability": 0.9960525035858154
+        },
+        {
+          "word": " that",
+          "start": 168.68,
+          "end": 168.92,
+          "probability": 0.983526885509491
+        },
+        {
+          "word": " digital",
+          "start": 168.92,
+          "end": 169.26,
+          "probability": 0.9661997556686401
+        },
+        {
+          "word": " money",
+          "start": 169.26,
+          "end": 169.68,
+          "probability": 0.9960724115371704
+        },
+        {
+          "word": " can't",
+          "start": 169.68,
+          "end": 170.28,
+          "probability": 0.9849289655685425
+        },
+        {
+          "word": " offer",
+          "start": 170.28,
+          "end": 170.52,
+          "probability": 0.9973539113998413
+        },
+        {
+          "word": " at",
+          "start": 170.52,
+          "end": 170.7,
+          "probability": 0.9881467223167419
+        },
+        {
+          "word": " the",
+          "start": 170.7,
+          "end": 170.8,
+          "probability": 0.9933364391326904
+        },
+        {
+          "word": " moment.",
+          "start": 170.8,
+          "end": 171.28,
+          "probability": 0.998210072517395
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 16458,
+      "start": 171.68,
+      "end": 177.22,
+      "text": " If there's some kind of financial crisis or a natural disaster when there's no power,",
+      "tokens": [
+        50732,
+        759,
+        456,
+        311,
+        512,
+        733,
+        295,
+        4669,
+        5869,
+        420,
+        257,
+        3303,
+        11293,
+        562,
+        456,
+        311,
+        572,
+        1347,
+        11,
+        50996
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09935707092285156,
+      "compression_ratio": 1.617391304347826,
+      "no_speech_prob": 0.011603306047618389,
+      "words": [
+        {
+          "word": " If",
+          "start": 171.68,
+          "end": 172.22,
+          "probability": 0.9872090816497803
+        },
+        {
+          "word": " there's",
+          "start": 172.22,
+          "end": 172.48,
+          "probability": 0.9374343752861023
+        },
+        {
+          "word": " some",
+          "start": 172.48,
+          "end": 172.72,
+          "probability": 0.9947235584259033
+        },
+        {
+          "word": " kind",
+          "start": 172.72,
+          "end": 172.98,
+          "probability": 0.9769953489303589
+        },
+        {
+          "word": " of",
+          "start": 172.98,
+          "end": 173.12,
+          "probability": 0.9950647950172424
+        },
+        {
+          "word": " financial",
+          "start": 173.12,
+          "end": 173.6,
+          "probability": 0.9964438080787659
+        },
+        {
+          "word": " crisis",
+          "start": 173.6,
+          "end": 174.18,
+          "probability": 0.9983521699905396
+        },
+        {
+          "word": " or",
+          "start": 174.18,
+          "end": 174.54,
+          "probability": 0.9606991410255432
+        },
+        {
+          "word": " a",
+          "start": 174.54,
+          "end": 174.66,
+          "probability": 0.9033401608467102
+        },
+        {
+          "word": " natural",
+          "start": 174.66,
+          "end": 175.06,
+          "probability": 0.9943183064460754
+        },
+        {
+          "word": " disaster",
+          "start": 175.06,
+          "end": 175.72,
+          "probability": 0.9984596967697144
+        },
+        {
+          "word": " when",
+          "start": 175.72,
+          "end": 176.08,
+          "probability": 0.9057986736297607
+        },
+        {
+          "word": " there's",
+          "start": 176.08,
+          "end": 176.46,
+          "probability": 0.9736483991146088
+        },
+        {
+          "word": " no",
+          "start": 176.46,
+          "end": 176.64,
+          "probability": 0.9956294298171997
+        },
+        {
+          "word": " power,",
+          "start": 176.64,
+          "end": 177.22,
+          "probability": 0.9952192902565002
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 16458,
+      "start": 177.82,
+      "end": 181.66,
+      "text": " I'm sure most of you would rather have the money in your hand, right?",
+      "tokens": [
+        51024,
+        286,
+        478,
+        988,
+        881,
+        295,
+        291,
+        576,
+        2831,
+        362,
+        264,
+        1460,
+        294,
+        428,
+        1011,
+        11,
+        558,
+        30,
+        51220
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09935707092285156,
+      "compression_ratio": 1.617391304347826,
+      "no_speech_prob": 0.011603306047618389,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 177.82,
+          "end": 178.06,
+          "probability": 0.990825355052948
+        },
+        {
+          "word": " sure",
+          "start": 178.06,
+          "end": 178.24,
+          "probability": 0.9998409748077393
+        },
+        {
+          "word": " most",
+          "start": 178.24,
+          "end": 178.64,
+          "probability": 0.9969581365585327
+        },
+        {
+          "word": " of",
+          "start": 178.64,
+          "end": 178.9,
+          "probability": 0.9857962131500244
+        },
+        {
+          "word": " you",
+          "start": 178.9,
+          "end": 179.08,
+          "probability": 0.9992102384567261
+        },
+        {
+          "word": " would",
+          "start": 179.08,
+          "end": 179.3,
+          "probability": 0.9943833351135254
+        },
+        {
+          "word": " rather",
+          "start": 179.3,
+          "end": 179.66,
+          "probability": 0.9868242144584656
+        },
+        {
+          "word": " have",
+          "start": 179.66,
+          "end": 179.96,
+          "probability": 0.9986534118652344
+        },
+        {
+          "word": " the",
+          "start": 179.96,
+          "end": 180.14,
+          "probability": 0.9868834614753723
+        },
+        {
+          "word": " money",
+          "start": 180.14,
+          "end": 180.46,
+          "probability": 0.998908519744873
+        },
+        {
+          "word": " in",
+          "start": 180.46,
+          "end": 180.66,
+          "probability": 0.9966995120048523
+        },
+        {
+          "word": " your",
+          "start": 180.66,
+          "end": 180.82,
+          "probability": 0.9973734617233276
+        },
+        {
+          "word": " hand,",
+          "start": 180.82,
+          "end": 181.26,
+          "probability": 0.9700726270675659
+        },
+        {
+          "word": " right?",
+          "start": 181.42,
+          "end": 181.66,
+          "probability": 0.9962024092674255
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 16458,
+      "start": 182.56,
+      "end": 183.62,
+      "text": " I know I would.",
+      "tokens": [
+        51260,
+        286,
+        458,
+        286,
+        576,
+        13,
+        51312
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09935707092285156,
+      "compression_ratio": 1.617391304347826,
+      "no_speech_prob": 0.011603306047618389,
+      "words": [
+        {
+          "word": " I",
+          "start": 182.56,
+          "end": 182.82,
+          "probability": 0.9447001814842224
+        },
+        {
+          "word": " know",
+          "start": 182.82,
+          "end": 183.02,
+          "probability": 0.9958428740501404
+        },
+        {
+          "word": " I",
+          "start": 183.02,
+          "end": 183.32,
+          "probability": 0.9539341926574707
+        },
+        {
+          "word": " would.",
+          "start": 183.32,
+          "end": 183.62,
+          "probability": 0.9984241724014282
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 16458,
+      "start": 185.12,
+      "end": 189.34,
+      "text": " To sum up, I don't think that the end of cash is happening soon.",
+      "tokens": [
+        51392,
+        1407,
+        2408,
+        493,
+        11,
+        286,
+        500,
+        380,
+        519,
+        300,
+        264,
+        917,
+        295,
+        6388,
+        307,
+        2737,
+        2321,
+        13,
+        51604
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09935707092285156,
+      "compression_ratio": 1.617391304347826,
+      "no_speech_prob": 0.011603306047618389,
+      "words": [
+        {
+          "word": " To",
+          "start": 185.12,
+          "end": 185.42,
+          "probability": 0.9417875409126282
+        },
+        {
+          "word": " sum",
+          "start": 185.42,
+          "end": 185.7,
+          "probability": 0.9897623658180237
+        },
+        {
+          "word": " up,",
+          "start": 185.7,
+          "end": 185.98,
+          "probability": 0.9973487854003906
+        },
+        {
+          "word": " I",
+          "start": 186.46,
+          "end": 186.7,
+          "probability": 0.9980641007423401
+        },
+        {
+          "word": " don't",
+          "start": 186.7,
+          "end": 186.94,
+          "probability": 0.9989272654056549
+        },
+        {
+          "word": " think",
+          "start": 186.94,
+          "end": 187.2,
+          "probability": 0.9982403516769409
+        },
+        {
+          "word": " that",
+          "start": 187.2,
+          "end": 187.44,
+          "probability": 0.9728747010231018
+        },
+        {
+          "word": " the",
+          "start": 187.44,
+          "end": 187.62,
+          "probability": 0.9943576455116272
+        },
+        {
+          "word": " end",
+          "start": 187.62,
+          "end": 187.84,
+          "probability": 0.9977027773857117
+        },
+        {
+          "word": " of",
+          "start": 187.84,
+          "end": 188.02,
+          "probability": 0.9956511855125427
+        },
+        {
+          "word": " cash",
+          "start": 188.02,
+          "end": 188.26,
+          "probability": 0.9858340620994568
+        },
+        {
+          "word": " is",
+          "start": 188.26,
+          "end": 188.54,
+          "probability": 0.9982221722602844
+        },
+        {
+          "word": " happening",
+          "start": 188.54,
+          "end": 188.88,
+          "probability": 0.9965985417366028
+        },
+        {
+          "word": " soon.",
+          "start": 188.88,
+          "end": 189.34,
+          "probability": 0.9987805485725403
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 16458,
+      "start": 190.14,
+      "end": 192.78,
+      "text": " I just don't see the other options as better.",
+      "tokens": [
+        51640,
+        286,
+        445,
+        500,
+        380,
+        536,
+        264,
+        661,
+        3956,
+        382,
+        1101,
+        13,
+        51796
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09935707092285156,
+      "compression_ratio": 1.617391304347826,
+      "no_speech_prob": 0.011603306047618389,
+      "words": [
+        {
+          "word": " I",
+          "start": 190.14,
+          "end": 190.32,
+          "probability": 0.9956296682357788
+        },
+        {
+          "word": " just",
+          "start": 190.32,
+          "end": 190.64,
+          "probability": 0.9900568127632141
+        },
+        {
+          "word": " don't",
+          "start": 190.64,
+          "end": 191.04,
+          "probability": 0.9989781677722931
+        },
+        {
+          "word": " see",
+          "start": 191.04,
+          "end": 191.34,
+          "probability": 0.9953219294548035
+        },
+        {
+          "word": " the",
+          "start": 191.34,
+          "end": 191.56,
+          "probability": 0.9770144820213318
+        },
+        {
+          "word": " other",
+          "start": 191.56,
+          "end": 191.8,
+          "probability": 0.995187520980835
+        },
+        {
+          "word": " options",
+          "start": 191.8,
+          "end": 192.16,
+          "probability": 0.9938964247703552
+        },
+        {
+          "word": " as",
+          "start": 192.16,
+          "end": 192.38,
+          "probability": 0.989124059677124
+        },
+        {
+          "word": " better.",
+          "start": 192.38,
+          "end": 192.78,
+          "probability": 0.9947526454925537
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 19278,
+      "start": 192.78,
+      "end": 194.28,
+      "text": " For now anyway.",
+      "tokens": [
+        50384,
+        1171,
+        586,
+        4033,
+        13,
+        50432
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2926761839124892,
+      "compression_ratio": 1.1348314606741574,
+      "no_speech_prob": 0.02957588993012905,
+      "words": [
+        {
+          "word": " For",
+          "start": 192.78,
+          "end": 193.42,
+          "probability": 0.12772664427757263
+        },
+        {
+          "word": " now",
+          "start": 193.42,
+          "end": 193.68,
+          "probability": 0.9197832345962524
+        },
+        {
+          "word": " anyway.",
+          "start": 193.68,
+          "end": 194.28,
+          "probability": 0.8098937273025513
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 19278,
+      "start": 194.86,
+      "end": 199.88,
+      "text": " And our relationship with cash means it will be in our pockets for some time to come.",
+      "tokens": [
+        50468,
+        400,
+        527,
+        2480,
+        365,
+        6388,
+        1355,
+        309,
+        486,
+        312,
+        294,
+        527,
+        16491,
+        337,
+        512,
+        565,
+        281,
+        808,
+        13,
+        50744
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2926761839124892,
+      "compression_ratio": 1.1348314606741574,
+      "no_speech_prob": 0.02957588993012905,
+      "words": [
+        {
+          "word": " And",
+          "start": 194.86,
+          "end": 195.24,
+          "probability": 0.919098436832428
+        },
+        {
+          "word": " our",
+          "start": 195.24,
+          "end": 195.42,
+          "probability": 0.9544852375984192
+        },
+        {
+          "word": " relationship",
+          "start": 195.42,
+          "end": 195.92,
+          "probability": 0.9808788299560547
+        },
+        {
+          "word": " with",
+          "start": 195.92,
+          "end": 196.24,
+          "probability": 0.9967374205589294
+        },
+        {
+          "word": " cash",
+          "start": 196.24,
+          "end": 196.46,
+          "probability": 0.834129810333252
+        },
+        {
+          "word": " means",
+          "start": 196.46,
+          "end": 197.02,
+          "probability": 0.981177806854248
+        },
+        {
+          "word": " it",
+          "start": 197.02,
+          "end": 197.34,
+          "probability": 0.9862637519836426
+        },
+        {
+          "word": " will",
+          "start": 197.34,
+          "end": 197.46,
+          "probability": 0.7742403745651245
+        },
+        {
+          "word": " be",
+          "start": 197.46,
+          "end": 197.62,
+          "probability": 0.983941376209259
+        },
+        {
+          "word": " in",
+          "start": 197.62,
+          "end": 197.76,
+          "probability": 0.9956405162811279
+        },
+        {
+          "word": " our",
+          "start": 197.76,
+          "end": 197.9,
+          "probability": 0.9971497654914856
+        },
+        {
+          "word": " pockets",
+          "start": 197.9,
+          "end": 198.28,
+          "probability": 0.9660747647285461
+        },
+        {
+          "word": " for",
+          "start": 198.28,
+          "end": 198.8,
+          "probability": 0.8834357857704163
+        },
+        {
+          "word": " some",
+          "start": 198.8,
+          "end": 199.08,
+          "probability": 0.9140499234199524
+        },
+        {
+          "word": " time",
+          "start": 199.08,
+          "end": 199.4,
+          "probability": 0.9929314851760864
+        },
+        {
+          "word": " to",
+          "start": 199.4,
+          "end": 199.6,
+          "probability": 0.9925642609596252
+        },
+        {
+          "word": " come.",
+          "start": 199.6,
+          "end": 199.88,
+          "probability": 0.996234118938446
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2114 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 4.1 Welcome to Renton and I hope you enjoy your stay here. I'm going to give you some directions so you can find your way around while you are here. We're outside the train station now and in front of us is a historical monument. You can enjoy the sun in our lovely park. It's behind the small shopping centre next to the cafe. There are lots of trees and flowers and a very old fountain in the middle. There is a food court in the shopping centre and you can buy your food here. As you can see, there is a department store opposite the station. Where's the bank? The bank is next to the library. Go Downwood Street, pass the museum, turn right and the bank is between the library and the cinema. Where's the university? That's over the river. Walk down Ship Street next to the shopping centre. You can see the river at the end of the street and a bridge to the right. Go over the bridge and the university campus is in front of you. I have maps of the town with me or you can download the app. Renton is a beautiful town and it's very safe too. I hope you enjoy your time here. Thank you.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.9,
+      "text": " Track 4.1",
+      "tokens": [
+        50364,
+        31903,
+        1017,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.280777814911633,
+      "compression_ratio": 1.4972972972972973,
+      "no_speech_prob": 0.07238616794347763,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.5,
+          "probability": 0.6975577473640442
+        },
+        {
+          "word": " 4",
+          "start": 0.5,
+          "end": 1.14,
+          "probability": 0.9790943264961243
+        },
+        {
+          "word": ".1",
+          "start": 1.14,
+          "end": 1.9,
+          "probability": 0.9972926378250122
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.019999999999998,
+      "end": 6.78,
+      "text": " Welcome to Renton",
+      "tokens": [
+        50624,
+        4027,
+        281,
+        42743,
+        266,
+        50724
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.280777814911633,
+      "compression_ratio": 1.4972972972972973,
+      "no_speech_prob": 0.07238616794347763,
+      "words": [
+        {
+          "word": " Welcome",
+          "start": 5.019999999999998,
+          "end": 5.76,
+          "probability": 0.5907521843910217
+        },
+        {
+          "word": " to",
+          "start": 5.76,
+          "end": 6.22,
+          "probability": 0.993190348148346
+        },
+        {
+          "word": " Renton",
+          "start": 6.22,
+          "end": 6.78,
+          "probability": 0.9603309035301208
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.78,
+      "end": 10.16,
+      "text": " and I hope you enjoy your stay here.",
+      "tokens": [
+        50724,
+        293,
+        286,
+        1454,
+        291,
+        2103,
+        428,
+        1754,
+        510,
+        13,
+        50884
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.280777814911633,
+      "compression_ratio": 1.4972972972972973,
+      "no_speech_prob": 0.07238616794347763,
+      "words": [
+        {
+          "word": " and",
+          "start": 6.78,
+          "end": 7.88,
+          "probability": 0.3578560948371887
+        },
+        {
+          "word": " I",
+          "start": 7.88,
+          "end": 8.06,
+          "probability": 0.9809829592704773
+        },
+        {
+          "word": " hope",
+          "start": 8.06,
+          "end": 8.3,
+          "probability": 0.9977589845657349
+        },
+        {
+          "word": " you",
+          "start": 8.3,
+          "end": 8.54,
+          "probability": 0.9983982443809509
+        },
+        {
+          "word": " enjoy",
+          "start": 8.54,
+          "end": 8.94,
+          "probability": 0.9955248832702637
+        },
+        {
+          "word": " your",
+          "start": 8.94,
+          "end": 9.3,
+          "probability": 0.9962189793586731
+        },
+        {
+          "word": " stay",
+          "start": 9.3,
+          "end": 9.7,
+          "probability": 0.9945078492164612
+        },
+        {
+          "word": " here.",
+          "start": 9.7,
+          "end": 10.16,
+          "probability": 0.99774569272995
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.14,
+      "end": 13.32,
+      "text": " I'm going to give you some directions",
+      "tokens": [
+        50934,
+        286,
+        478,
+        516,
+        281,
+        976,
+        291,
+        512,
+        11095,
+        51054
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.280777814911633,
+      "compression_ratio": 1.4972972972972973,
+      "no_speech_prob": 0.07238616794347763,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 11.14,
+          "end": 11.88,
+          "probability": 0.9612528383731842
+        },
+        {
+          "word": " going",
+          "start": 11.88,
+          "end": 12.02,
+          "probability": 0.9952751398086548
+        },
+        {
+          "word": " to",
+          "start": 12.02,
+          "end": 12.2,
+          "probability": 0.999411940574646
+        },
+        {
+          "word": " give",
+          "start": 12.2,
+          "end": 12.36,
+          "probability": 0.9986281394958496
+        },
+        {
+          "word": " you",
+          "start": 12.36,
+          "end": 12.56,
+          "probability": 0.9986391663551331
+        },
+        {
+          "word": " some",
+          "start": 12.56,
+          "end": 12.82,
+          "probability": 0.9987515211105347
+        },
+        {
+          "word": " directions",
+          "start": 12.82,
+          "end": 13.32,
+          "probability": 0.995316743850708
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 13.32,
+      "end": 17.9,
+      "text": " so you can find your way around while you are here.",
+      "tokens": [
+        51054,
+        370,
+        291,
+        393,
+        915,
+        428,
+        636,
+        926,
+        1339,
+        291,
+        366,
+        510,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.280777814911633,
+      "compression_ratio": 1.4972972972972973,
+      "no_speech_prob": 0.07238616794347763,
+      "words": [
+        {
+          "word": " so",
+          "start": 13.32,
+          "end": 14.34,
+          "probability": 0.8659746646881104
+        },
+        {
+          "word": " you",
+          "start": 14.34,
+          "end": 14.6,
+          "probability": 0.9958280920982361
+        },
+        {
+          "word": " can",
+          "start": 14.6,
+          "end": 14.8,
+          "probability": 0.9986242055892944
+        },
+        {
+          "word": " find",
+          "start": 14.8,
+          "end": 15.12,
+          "probability": 0.9982662796974182
+        },
+        {
+          "word": " your",
+          "start": 15.12,
+          "end": 15.4,
+          "probability": 0.9963009357452393
+        },
+        {
+          "word": " way",
+          "start": 15.4,
+          "end": 15.68,
+          "probability": 0.9991266131401062
+        },
+        {
+          "word": " around",
+          "start": 15.68,
+          "end": 16.24,
+          "probability": 0.9978979825973511
+        },
+        {
+          "word": " while",
+          "start": 16.24,
+          "end": 16.98,
+          "probability": 0.9456629157066345
+        },
+        {
+          "word": " you",
+          "start": 16.98,
+          "end": 17.26,
+          "probability": 0.9986525177955627
+        },
+        {
+          "word": " are",
+          "start": 17.26,
+          "end": 17.42,
+          "probability": 0.9869535565376282
+        },
+        {
+          "word": " here.",
+          "start": 17.42,
+          "end": 17.9,
+          "probability": 0.9991838335990906
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 19.1,
+      "end": 21.64,
+      "text": " We're outside the train station now",
+      "tokens": [
+        51314,
+        492,
+        434,
+        2380,
+        264,
+        3847,
+        5214,
+        586,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.280777814911633,
+      "compression_ratio": 1.4972972972972973,
+      "no_speech_prob": 0.07238616794347763,
+      "words": [
+        {
+          "word": " We're",
+          "start": 19.1,
+          "end": 19.58,
+          "probability": 0.8481618463993073
+        },
+        {
+          "word": " outside",
+          "start": 19.58,
+          "end": 20.08,
+          "probability": 0.9974778294563293
+        },
+        {
+          "word": " the",
+          "start": 20.08,
+          "end": 20.42,
+          "probability": 0.9980731010437012
+        },
+        {
+          "word": " train",
+          "start": 20.42,
+          "end": 20.72,
+          "probability": 0.9524240493774414
+        },
+        {
+          "word": " station",
+          "start": 20.72,
+          "end": 21.26,
+          "probability": 0.9989180564880371
+        },
+        {
+          "word": " now",
+          "start": 21.26,
+          "end": 21.64,
+          "probability": 0.994667649269104
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 21.64,
+      "end": 24.98,
+      "text": " and in front of us is a historical monument.",
+      "tokens": [
+        51464,
+        293,
+        294,
+        1868,
+        295,
+        505,
+        307,
+        257,
+        8584,
+        20289,
+        13,
+        51634
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.280777814911633,
+      "compression_ratio": 1.4972972972972973,
+      "no_speech_prob": 0.07238616794347763,
+      "words": [
+        {
+          "word": " and",
+          "start": 21.64,
+          "end": 22.32,
+          "probability": 0.9101635813713074
+        },
+        {
+          "word": " in",
+          "start": 22.32,
+          "end": 22.46,
+          "probability": 0.9963678121566772
+        },
+        {
+          "word": " front",
+          "start": 22.46,
+          "end": 22.72,
+          "probability": 0.9992464780807495
+        },
+        {
+          "word": " of",
+          "start": 22.72,
+          "end": 23.0,
+          "probability": 0.9991497993469238
+        },
+        {
+          "word": " us",
+          "start": 23.0,
+          "end": 23.24,
+          "probability": 0.9975793957710266
+        },
+        {
+          "word": " is",
+          "start": 23.24,
+          "end": 23.6,
+          "probability": 0.9630728363990784
+        },
+        {
+          "word": " a",
+          "start": 23.6,
+          "end": 23.76,
+          "probability": 0.9951679706573486
+        },
+        {
+          "word": " historical",
+          "start": 23.76,
+          "end": 24.38,
+          "probability": 0.9874803423881531
+        },
+        {
+          "word": " monument.",
+          "start": 24.38,
+          "end": 24.98,
+          "probability": 0.9964988231658936
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 25.84,
+      "end": 29.38,
+      "text": " You can enjoy the sun in our lovely park.",
+      "tokens": [
+        51674,
+        509,
+        393,
+        2103,
+        264,
+        3295,
+        294,
+        527,
+        7496,
+        3884,
+        13,
+        51844
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.280777814911633,
+      "compression_ratio": 1.4972972972972973,
+      "no_speech_prob": 0.07238616794347763,
+      "words": [
+        {
+          "word": " You",
+          "start": 25.84,
+          "end": 26.58,
+          "probability": 0.9910728335380554
+        },
+        {
+          "word": " can",
+          "start": 26.58,
+          "end": 26.76,
+          "probability": 0.9992375373840332
+        },
+        {
+          "word": " enjoy",
+          "start": 26.76,
+          "end": 27.18,
+          "probability": 0.9982532858848572
+        },
+        {
+          "word": " the",
+          "start": 27.18,
+          "end": 27.44,
+          "probability": 0.9988430738449097
+        },
+        {
+          "word": " sun",
+          "start": 27.44,
+          "end": 27.8,
+          "probability": 0.9152307510375977
+        },
+        {
+          "word": " in",
+          "start": 27.8,
+          "end": 28.16,
+          "probability": 0.9986059069633484
+        },
+        {
+          "word": " our",
+          "start": 28.16,
+          "end": 28.32,
+          "probability": 0.9971814155578613
+        },
+        {
+          "word": " lovely",
+          "start": 28.32,
+          "end": 28.82,
+          "probability": 0.9868484139442444
+        },
+        {
+          "word": " park.",
+          "start": 28.82,
+          "end": 29.38,
+          "probability": 0.9707821607589722
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2938,
+      "start": 30.139999999999997,
+      "end": 34.4,
+      "text": " It's behind the small shopping centre next to the cafe.",
+      "tokens": [
+        50414,
+        467,
+        311,
+        2261,
+        264,
+        1359,
+        8688,
+        10093,
+        958,
+        281,
+        264,
+        17773,
+        13,
+        50634
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.170916464270615,
+      "compression_ratio": 1.6077348066298343,
+      "no_speech_prob": 0.00706526217982173,
+      "words": [
+        {
+          "word": " It's",
+          "start": 30.139999999999997,
+          "end": 30.86,
+          "probability": 0.8505098819732666
+        },
+        {
+          "word": " behind",
+          "start": 30.86,
+          "end": 31.22,
+          "probability": 0.9909580945968628
+        },
+        {
+          "word": " the",
+          "start": 31.22,
+          "end": 31.52,
+          "probability": 0.9947347640991211
+        },
+        {
+          "word": " small",
+          "start": 31.52,
+          "end": 31.86,
+          "probability": 0.8123726844787598
+        },
+        {
+          "word": " shopping",
+          "start": 31.86,
+          "end": 32.32,
+          "probability": 0.990134060382843
+        },
+        {
+          "word": " centre",
+          "start": 32.32,
+          "end": 32.84,
+          "probability": 0.7153546810150146
+        },
+        {
+          "word": " next",
+          "start": 32.84,
+          "end": 33.4,
+          "probability": 0.9270644783973694
+        },
+        {
+          "word": " to",
+          "start": 33.4,
+          "end": 33.88,
+          "probability": 0.9978190660476685
+        },
+        {
+          "word": " the",
+          "start": 33.88,
+          "end": 34.04,
+          "probability": 0.9955469369888306
+        },
+        {
+          "word": " cafe.",
+          "start": 34.04,
+          "end": 34.4,
+          "probability": 0.6051163673400879
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2938,
+      "start": 35.300000000000004,
+      "end": 38.02,
+      "text": " There are lots of trees and flowers",
+      "tokens": [
+        50684,
+        821,
+        366,
+        3195,
+        295,
+        5852,
+        293,
+        8085,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.170916464270615,
+      "compression_ratio": 1.6077348066298343,
+      "no_speech_prob": 0.00706526217982173,
+      "words": [
+        {
+          "word": " There",
+          "start": 35.300000000000004,
+          "end": 36.02,
+          "probability": 0.9951696991920471
+        },
+        {
+          "word": " are",
+          "start": 36.02,
+          "end": 36.16,
+          "probability": 0.9922102689743042
+        },
+        {
+          "word": " lots",
+          "start": 36.16,
+          "end": 36.4,
+          "probability": 0.9828805327415466
+        },
+        {
+          "word": " of",
+          "start": 36.4,
+          "end": 36.72,
+          "probability": 0.9976242184638977
+        },
+        {
+          "word": " trees",
+          "start": 36.72,
+          "end": 37.08,
+          "probability": 0.996961772441864
+        },
+        {
+          "word": " and",
+          "start": 37.08,
+          "end": 37.52,
+          "probability": 0.9903531670570374
+        },
+        {
+          "word": " flowers",
+          "start": 37.52,
+          "end": 38.02,
+          "probability": 0.9936281442642212
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2938,
+      "start": 38.02,
+      "end": 41.22,
+      "text": " and a very old fountain in the middle.",
+      "tokens": [
+        50814,
+        293,
+        257,
+        588,
+        1331,
+        29451,
+        294,
+        264,
+        2808,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.170916464270615,
+      "compression_ratio": 1.6077348066298343,
+      "no_speech_prob": 0.00706526217982173,
+      "words": [
+        {
+          "word": " and",
+          "start": 38.02,
+          "end": 38.82,
+          "probability": 0.8278122544288635
+        },
+        {
+          "word": " a",
+          "start": 38.82,
+          "end": 38.92,
+          "probability": 0.9397383332252502
+        },
+        {
+          "word": " very",
+          "start": 38.92,
+          "end": 39.24,
+          "probability": 0.9993390440940857
+        },
+        {
+          "word": " old",
+          "start": 39.24,
+          "end": 39.54,
+          "probability": 0.9990726709365845
+        },
+        {
+          "word": " fountain",
+          "start": 39.54,
+          "end": 40.04,
+          "probability": 0.9932958483695984
+        },
+        {
+          "word": " in",
+          "start": 40.04,
+          "end": 40.68,
+          "probability": 0.9937267303466797
+        },
+        {
+          "word": " the",
+          "start": 40.68,
+          "end": 40.86,
+          "probability": 0.9994575381278992
+        },
+        {
+          "word": " middle.",
+          "start": 40.86,
+          "end": 41.22,
+          "probability": 0.9987931251525879
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2938,
+      "start": 42.120000000000005,
+      "end": 45.3,
+      "text": " There is a food court in the shopping centre",
+      "tokens": [
+        51024,
+        821,
+        307,
+        257,
+        1755,
+        4753,
+        294,
+        264,
+        8688,
+        10093,
+        51174
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.170916464270615,
+      "compression_ratio": 1.6077348066298343,
+      "no_speech_prob": 0.00706526217982173,
+      "words": [
+        {
+          "word": " There",
+          "start": 42.120000000000005,
+          "end": 42.84,
+          "probability": 0.9956656098365784
+        },
+        {
+          "word": " is",
+          "start": 42.84,
+          "end": 43.06,
+          "probability": 0.9887987971305847
+        },
+        {
+          "word": " a",
+          "start": 43.06,
+          "end": 43.18,
+          "probability": 0.9922844767570496
+        },
+        {
+          "word": " food",
+          "start": 43.18,
+          "end": 43.54,
+          "probability": 0.9943471550941467
+        },
+        {
+          "word": " court",
+          "start": 43.54,
+          "end": 43.9,
+          "probability": 0.9842754006385803
+        },
+        {
+          "word": " in",
+          "start": 43.9,
+          "end": 44.26,
+          "probability": 0.99334716796875
+        },
+        {
+          "word": " the",
+          "start": 44.26,
+          "end": 44.4,
+          "probability": 0.9975517392158508
+        },
+        {
+          "word": " shopping",
+          "start": 44.4,
+          "end": 44.76,
+          "probability": 0.9930158853530884
+        },
+        {
+          "word": " centre",
+          "start": 44.76,
+          "end": 45.3,
+          "probability": 0.9759458899497986
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2938,
+      "start": 45.3,
+      "end": 47.86,
+      "text": " and you can buy your food here.",
+      "tokens": [
+        51174,
+        293,
+        291,
+        393,
+        2256,
+        428,
+        1755,
+        510,
+        13,
+        51294
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.170916464270615,
+      "compression_ratio": 1.6077348066298343,
+      "no_speech_prob": 0.00706526217982173,
+      "words": [
+        {
+          "word": " and",
+          "start": 45.3,
+          "end": 46.08,
+          "probability": 0.8534701466560364
+        },
+        {
+          "word": " you",
+          "start": 46.08,
+          "end": 46.26,
+          "probability": 0.9978697299957275
+        },
+        {
+          "word": " can",
+          "start": 46.26,
+          "end": 46.44,
+          "probability": 0.9991794228553772
+        },
+        {
+          "word": " buy",
+          "start": 46.44,
+          "end": 46.7,
+          "probability": 0.9979541301727295
+        },
+        {
+          "word": " your",
+          "start": 46.7,
+          "end": 46.98,
+          "probability": 0.9957391023635864
+        },
+        {
+          "word": " food",
+          "start": 46.98,
+          "end": 47.3,
+          "probability": 0.9993220567703247
+        },
+        {
+          "word": " here.",
+          "start": 47.3,
+          "end": 47.86,
+          "probability": 0.9987536668777466
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2938,
+      "start": 48.72,
+      "end": 50.22,
+      "text": " As you can see,",
+      "tokens": [
+        51354,
+        1018,
+        291,
+        393,
+        536,
+        11,
+        51424
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.170916464270615,
+      "compression_ratio": 1.6077348066298343,
+      "no_speech_prob": 0.00706526217982173,
+      "words": [
+        {
+          "word": " As",
+          "start": 48.72,
+          "end": 49.44,
+          "probability": 0.9938471913337708
+        },
+        {
+          "word": " you",
+          "start": 49.44,
+          "end": 49.64,
+          "probability": 0.9991711378097534
+        },
+        {
+          "word": " can",
+          "start": 49.64,
+          "end": 49.84,
+          "probability": 0.99819415807724
+        },
+        {
+          "word": " see,",
+          "start": 49.84,
+          "end": 50.22,
+          "probability": 0.9994086027145386
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 2938,
+      "start": 50.74,
+      "end": 53.94,
+      "text": " there is a department store opposite the station.",
+      "tokens": [
+        51424,
+        456,
+        307,
+        257,
+        5882,
+        3531,
+        6182,
+        264,
+        5214,
+        13,
+        51604
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.170916464270615,
+      "compression_ratio": 1.6077348066298343,
+      "no_speech_prob": 0.00706526217982173,
+      "words": [
+        {
+          "word": " there",
+          "start": 50.74,
+          "end": 50.98,
+          "probability": 0.9961349964141846
+        },
+        {
+          "word": " is",
+          "start": 50.98,
+          "end": 51.18,
+          "probability": 0.9888623356819153
+        },
+        {
+          "word": " a",
+          "start": 51.18,
+          "end": 51.3,
+          "probability": 0.9532086849212646
+        },
+        {
+          "word": " department",
+          "start": 51.3,
+          "end": 51.82,
+          "probability": 0.963134765625
+        },
+        {
+          "word": " store",
+          "start": 51.82,
+          "end": 52.42,
+          "probability": 0.9934822916984558
+        },
+        {
+          "word": " opposite",
+          "start": 52.42,
+          "end": 53.02,
+          "probability": 0.9817533493041992
+        },
+        {
+          "word": " the",
+          "start": 53.02,
+          "end": 53.44,
+          "probability": 0.988430380821228
+        },
+        {
+          "word": " station.",
+          "start": 53.44,
+          "end": 53.94,
+          "probability": 0.99400395154953
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 2938,
+      "start": 54.48,
+      "end": 55.64,
+      "text": " Where's the bank?",
+      "tokens": [
+        51604,
+        2305,
+        311,
+        264,
+        3765,
+        30,
+        51704
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.170916464270615,
+      "compression_ratio": 1.6077348066298343,
+      "no_speech_prob": 0.00706526217982173,
+      "words": [
+        {
+          "word": " Where's",
+          "start": 54.48,
+          "end": 55.18,
+          "probability": 0.8342606425285339
+        },
+        {
+          "word": " the",
+          "start": 55.18,
+          "end": 55.3,
+          "probability": 0.9976892471313477
+        },
+        {
+          "word": " bank?",
+          "start": 55.3,
+          "end": 55.64,
+          "probability": 0.9607682824134827
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5564,
+      "start": 56.64,
+      "end": 59.02,
+      "text": " The bank is next to the library.",
+      "tokens": [
+        50414,
+        440,
+        3765,
+        307,
+        958,
+        281,
+        264,
+        6405,
+        13,
+        50544
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " The",
+          "start": 56.49,
+          "end": 56.86,
+          "probability": 0.18887747824192047
+        },
+        {
+          "word": " bank",
+          "start": 56.86,
+          "end": 57.26,
+          "probability": 0.8093697428703308
+        },
+        {
+          "word": " is",
+          "start": 57.26,
+          "end": 57.72,
+          "probability": 0.992238461971283
+        },
+        {
+          "word": " next",
+          "start": 57.72,
+          "end": 58.02,
+          "probability": 0.9975534081459045
+        },
+        {
+          "word": " to",
+          "start": 58.02,
+          "end": 58.38,
+          "probability": 0.9974785447120667
+        },
+        {
+          "word": " the",
+          "start": 58.38,
+          "end": 58.54,
+          "probability": 0.9955645799636841
+        },
+        {
+          "word": " library.",
+          "start": 58.54,
+          "end": 59.02,
+          "probability": 0.936532735824585
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5564,
+      "start": 60.24,
+      "end": 61.42,
+      "text": " Go Downwood Street,",
+      "tokens": [
+        50584,
+        1037,
+        9506,
+        6092,
+        7638,
+        11,
+        50674
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " Go",
+          "start": 60.24,
+          "end": 60.38,
+          "probability": 0.8962737917900085
+        },
+        {
+          "word": " Downwood",
+          "start": 60.38,
+          "end": 60.98,
+          "probability": 0.48677076399326324
+        },
+        {
+          "word": " Street,",
+          "start": 60.98,
+          "end": 61.42,
+          "probability": 0.9322142004966736
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5564,
+      "start": 62.0,
+      "end": 63.12,
+      "text": " pass the museum,",
+      "tokens": [
+        50674,
+        1320,
+        264,
+        8441,
+        11,
+        50774
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " pass",
+          "start": 62.0,
+          "end": 62.32,
+          "probability": 0.6705915331840515
+        },
+        {
+          "word": " the",
+          "start": 62.32,
+          "end": 62.6,
+          "probability": 0.9948973059654236
+        },
+        {
+          "word": " museum,",
+          "start": 62.6,
+          "end": 63.12,
+          "probability": 0.8841736316680908
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 5564,
+      "start": 63.8,
+      "end": 68.68,
+      "text": " turn right and the bank is between the library and the cinema.",
+      "tokens": [
+        50774,
+        1261,
+        558,
+        293,
+        264,
+        3765,
+        307,
+        1296,
+        264,
+        6405,
+        293,
+        264,
+        17178,
+        13,
+        51034
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " turn",
+          "start": 63.8,
+          "end": 64.22,
+          "probability": 0.9389001131057739
+        },
+        {
+          "word": " right",
+          "start": 64.22,
+          "end": 64.62,
+          "probability": 0.972052276134491
+        },
+        {
+          "word": " and",
+          "start": 64.62,
+          "end": 65.36,
+          "probability": 0.5539224743843079
+        },
+        {
+          "word": " the",
+          "start": 65.36,
+          "end": 65.52,
+          "probability": 0.9932726621627808
+        },
+        {
+          "word": " bank",
+          "start": 65.52,
+          "end": 66.0,
+          "probability": 0.9910549521446228
+        },
+        {
+          "word": " is",
+          "start": 66.0,
+          "end": 66.26,
+          "probability": 0.9966622591018677
+        },
+        {
+          "word": " between",
+          "start": 66.26,
+          "end": 66.64,
+          "probability": 0.9952132701873779
+        },
+        {
+          "word": " the",
+          "start": 66.64,
+          "end": 66.88,
+          "probability": 0.9952197670936584
+        },
+        {
+          "word": " library",
+          "start": 66.88,
+          "end": 67.4,
+          "probability": 0.9234986305236816
+        },
+        {
+          "word": " and",
+          "start": 67.4,
+          "end": 68.12,
+          "probability": 0.9885455965995789
+        },
+        {
+          "word": " the",
+          "start": 68.12,
+          "end": 68.32,
+          "probability": 0.9928937554359436
+        },
+        {
+          "word": " cinema.",
+          "start": 68.32,
+          "end": 68.68,
+          "probability": 0.9716639518737793
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 5564,
+      "start": 69.42,
+      "end": 71.08,
+      "text": " Where's the university?",
+      "tokens": [
+        51054,
+        2305,
+        311,
+        264,
+        5454,
+        30,
+        51174
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " Where's",
+          "start": 69.42,
+          "end": 70.16,
+          "probability": 0.6908550560474396
+        },
+        {
+          "word": " the",
+          "start": 70.16,
+          "end": 70.3,
+          "probability": 0.9947096109390259
+        },
+        {
+          "word": " university?",
+          "start": 70.3,
+          "end": 71.08,
+          "probability": 0.8221216797828674
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 5564,
+      "start": 71.98,
+      "end": 73.24,
+      "text": " That's over the river.",
+      "tokens": [
+        51174,
+        663,
+        311,
+        670,
+        264,
+        6810,
+        13,
+        51274
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " That's",
+          "start": 71.98,
+          "end": 72.48,
+          "probability": 0.9793106913566589
+        },
+        {
+          "word": " over",
+          "start": 72.48,
+          "end": 72.78,
+          "probability": 0.816551923751831
+        },
+        {
+          "word": " the",
+          "start": 72.78,
+          "end": 72.96,
+          "probability": 0.9871631264686584
+        },
+        {
+          "word": " river.",
+          "start": 72.96,
+          "end": 73.24,
+          "probability": 0.9747797846794128
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 5564,
+      "start": 74.44,
+      "end": 77.54,
+      "text": " Walk down Ship Street next to the shopping centre.",
+      "tokens": [
+        51274,
+        10818,
+        760,
+        38407,
+        7638,
+        958,
+        281,
+        264,
+        8688,
+        10093,
+        13,
+        51474
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " Walk",
+          "start": 74.44,
+          "end": 74.6,
+          "probability": 0.9928553700447083
+        },
+        {
+          "word": " down",
+          "start": 74.6,
+          "end": 74.96,
+          "probability": 0.7139889001846313
+        },
+        {
+          "word": " Ship",
+          "start": 74.96,
+          "end": 75.34,
+          "probability": 0.5411577224731445
+        },
+        {
+          "word": " Street",
+          "start": 75.34,
+          "end": 75.82,
+          "probability": 0.9162450432777405
+        },
+        {
+          "word": " next",
+          "start": 75.82,
+          "end": 76.4,
+          "probability": 0.7911192774772644
+        },
+        {
+          "word": " to",
+          "start": 76.4,
+          "end": 76.7,
+          "probability": 0.9979670643806458
+        },
+        {
+          "word": " the",
+          "start": 76.7,
+          "end": 76.8,
+          "probability": 0.9927086234092712
+        },
+        {
+          "word": " shopping",
+          "start": 76.8,
+          "end": 77.04,
+          "probability": 0.945501446723938
+        },
+        {
+          "word": " centre.",
+          "start": 77.04,
+          "end": 77.54,
+          "probability": 0.6729738116264343
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 5564,
+      "start": 78.04,
+      "end": 81.06,
+      "text": " You can see the river at the end of the street",
+      "tokens": [
+        51504,
+        509,
+        393,
+        536,
+        264,
+        6810,
+        412,
+        264,
+        917,
+        295,
+        264,
+        4838,
+        51654
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " You",
+          "start": 78.04,
+          "end": 78.74,
+          "probability": 0.9916200637817383
+        },
+        {
+          "word": " can",
+          "start": 78.74,
+          "end": 78.9,
+          "probability": 0.9969993829727173
+        },
+        {
+          "word": " see",
+          "start": 78.9,
+          "end": 79.18,
+          "probability": 0.9981263279914856
+        },
+        {
+          "word": " the",
+          "start": 79.18,
+          "end": 79.36,
+          "probability": 0.9984644651412964
+        },
+        {
+          "word": " river",
+          "start": 79.36,
+          "end": 79.68,
+          "probability": 0.9942904710769653
+        },
+        {
+          "word": " at",
+          "start": 79.68,
+          "end": 79.94,
+          "probability": 0.9964481592178345
+        },
+        {
+          "word": " the",
+          "start": 79.94,
+          "end": 80.1,
+          "probability": 0.9992664456367493
+        },
+        {
+          "word": " end",
+          "start": 80.1,
+          "end": 80.4,
+          "probability": 0.9984961748123169
+        },
+        {
+          "word": " of",
+          "start": 80.4,
+          "end": 80.56,
+          "probability": 0.9981576800346375
+        },
+        {
+          "word": " the",
+          "start": 80.56,
+          "end": 80.68,
+          "probability": 0.9982218146324158
+        },
+        {
+          "word": " street",
+          "start": 80.68,
+          "end": 81.06,
+          "probability": 0.9838790893554688
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 5564,
+      "start": 81.06,
+      "end": 83.18,
+      "text": " and a bridge to the right.",
+      "tokens": [
+        51654,
+        293,
+        257,
+        7283,
+        281,
+        264,
+        558,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22654192635182585,
+      "compression_ratio": 1.625668449197861,
+      "no_speech_prob": 0.015822462737560272,
+      "words": [
+        {
+          "word": " and",
+          "start": 81.06,
+          "end": 81.74,
+          "probability": 0.8911768198013306
+        },
+        {
+          "word": " a",
+          "start": 81.74,
+          "end": 81.88,
+          "probability": 0.9683674573898315
+        },
+        {
+          "word": " bridge",
+          "start": 81.88,
+          "end": 82.22,
+          "probability": 0.9985381364822388
+        },
+        {
+          "word": " to",
+          "start": 82.22,
+          "end": 82.74,
+          "probability": 0.9974895715713501
+        },
+        {
+          "word": " the",
+          "start": 82.74,
+          "end": 82.88,
+          "probability": 0.9991130232810974
+        },
+        {
+          "word": " right.",
+          "start": 82.88,
+          "end": 83.18,
+          "probability": 0.988993227481842
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 8318,
+      "start": 83.92,
+      "end": 85.62,
+      "text": " Go over the bridge",
+      "tokens": [
+        50414,
+        1037,
+        670,
+        264,
+        7283,
+        50504
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1621368408203125,
+      "compression_ratio": 1.4379084967320261,
+      "no_speech_prob": 0.01762000098824501,
+      "words": [
+        {
+          "word": " Go",
+          "start": 83.92,
+          "end": 84.64,
+          "probability": 0.818476140499115
+        },
+        {
+          "word": " over",
+          "start": 84.64,
+          "end": 85.0,
+          "probability": 0.9892230033874512
+        },
+        {
+          "word": " the",
+          "start": 85.0,
+          "end": 85.16,
+          "probability": 0.9973068237304688
+        },
+        {
+          "word": " bridge",
+          "start": 85.16,
+          "end": 85.62,
+          "probability": 0.9864295721054077
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 8318,
+      "start": 85.62,
+      "end": 89.32,
+      "text": " and the university campus is in front of you.",
+      "tokens": [
+        50504,
+        293,
+        264,
+        5454,
+        4828,
+        307,
+        294,
+        1868,
+        295,
+        291,
+        13,
+        50684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1621368408203125,
+      "compression_ratio": 1.4379084967320261,
+      "no_speech_prob": 0.01762000098824501,
+      "words": [
+        {
+          "word": " and",
+          "start": 85.62,
+          "end": 86.22,
+          "probability": 0.7490090727806091
+        },
+        {
+          "word": " the",
+          "start": 86.22,
+          "end": 86.42,
+          "probability": 0.9922675490379333
+        },
+        {
+          "word": " university",
+          "start": 86.42,
+          "end": 87.12,
+          "probability": 0.5277020931243896
+        },
+        {
+          "word": " campus",
+          "start": 87.12,
+          "end": 87.68,
+          "probability": 0.9882203340530396
+        },
+        {
+          "word": " is",
+          "start": 87.68,
+          "end": 88.32,
+          "probability": 0.9924121499061584
+        },
+        {
+          "word": " in",
+          "start": 88.32,
+          "end": 88.58,
+          "probability": 0.9969614148139954
+        },
+        {
+          "word": " front",
+          "start": 88.58,
+          "end": 88.8,
+          "probability": 0.9971951246261597
+        },
+        {
+          "word": " of",
+          "start": 88.8,
+          "end": 89.1,
+          "probability": 0.998314619064331
+        },
+        {
+          "word": " you.",
+          "start": 89.1,
+          "end": 89.32,
+          "probability": 0.9987770915031433
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 8318,
+      "start": 90.54,
+      "end": 92.8,
+      "text": " I have maps of the town with me",
+      "tokens": [
+        50734,
+        286,
+        362,
+        11317,
+        295,
+        264,
+        3954,
+        365,
+        385,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1621368408203125,
+      "compression_ratio": 1.4379084967320261,
+      "no_speech_prob": 0.01762000098824501,
+      "words": [
+        {
+          "word": " I",
+          "start": 90.54,
+          "end": 90.9,
+          "probability": 0.9911865592002869
+        },
+        {
+          "word": " have",
+          "start": 90.9,
+          "end": 91.14,
+          "probability": 0.9981487989425659
+        },
+        {
+          "word": " maps",
+          "start": 91.14,
+          "end": 91.42,
+          "probability": 0.9910092353820801
+        },
+        {
+          "word": " of",
+          "start": 91.42,
+          "end": 91.76,
+          "probability": 0.996042013168335
+        },
+        {
+          "word": " the",
+          "start": 91.76,
+          "end": 91.9,
+          "probability": 0.9982898831367493
+        },
+        {
+          "word": " town",
+          "start": 91.9,
+          "end": 92.22,
+          "probability": 0.9966722726821899
+        },
+        {
+          "word": " with",
+          "start": 92.22,
+          "end": 92.52,
+          "probability": 0.9945374131202698
+        },
+        {
+          "word": " me",
+          "start": 92.52,
+          "end": 92.8,
+          "probability": 0.9984514713287354
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 8318,
+      "start": 92.8,
+      "end": 95.34,
+      "text": " or you can download the app.",
+      "tokens": [
+        50864,
+        420,
+        291,
+        393,
+        5484,
+        264,
+        724,
+        13,
+        50984
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1621368408203125,
+      "compression_ratio": 1.4379084967320261,
+      "no_speech_prob": 0.01762000098824501,
+      "words": [
+        {
+          "word": " or",
+          "start": 92.8,
+          "end": 93.5,
+          "probability": 0.8204589486122131
+        },
+        {
+          "word": " you",
+          "start": 93.5,
+          "end": 93.72,
+          "probability": 0.9957683086395264
+        },
+        {
+          "word": " can",
+          "start": 93.72,
+          "end": 93.96,
+          "probability": 0.9963662624359131
+        },
+        {
+          "word": " download",
+          "start": 93.96,
+          "end": 94.56,
+          "probability": 0.9975019097328186
+        },
+        {
+          "word": " the",
+          "start": 94.56,
+          "end": 94.98,
+          "probability": 0.9979639053344727
+        },
+        {
+          "word": " app.",
+          "start": 94.98,
+          "end": 95.34,
+          "probability": 0.9942915439605713
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 8318,
+      "start": 96.74,
+      "end": 99.0,
+      "text": " Renton is a beautiful town",
+      "tokens": [
+        51034,
+        42743,
+        266,
+        307,
+        257,
+        2238,
+        3954,
+        51184
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1621368408203125,
+      "compression_ratio": 1.4379084967320261,
+      "no_speech_prob": 0.01762000098824501,
+      "words": [
+        {
+          "word": " Renton",
+          "start": 96.74,
+          "end": 97.3,
+          "probability": 0.9703207314014435
+        },
+        {
+          "word": " is",
+          "start": 97.3,
+          "end": 97.74,
+          "probability": 0.9907965660095215
+        },
+        {
+          "word": " a",
+          "start": 97.74,
+          "end": 97.9,
+          "probability": 0.9987066984176636
+        },
+        {
+          "word": " beautiful",
+          "start": 97.9,
+          "end": 98.34,
+          "probability": 0.9963451027870178
+        },
+        {
+          "word": " town",
+          "start": 98.34,
+          "end": 99.0,
+          "probability": 0.9993498921394348
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 8318,
+      "start": 99.58000000000001,
+      "end": 101.4,
+      "text": " and it's very safe too.",
+      "tokens": [
+        51184,
+        293,
+        309,
+        311,
+        588,
+        3273,
+        886,
+        13,
+        51294
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1621368408203125,
+      "compression_ratio": 1.4379084967320261,
+      "no_speech_prob": 0.01762000098824501,
+      "words": [
+        {
+          "word": " and",
+          "start": 99.5,
+          "end": 99.86,
+          "probability": 0.8353028297424316
+        },
+        {
+          "word": " it's",
+          "start": 99.86,
+          "end": 100.2,
+          "probability": 0.9545943140983582
+        },
+        {
+          "word": " very",
+          "start": 100.2,
+          "end": 100.46,
+          "probability": 0.998256504535675
+        },
+        {
+          "word": " safe",
+          "start": 100.46,
+          "end": 101.08,
+          "probability": 0.997296154499054
+        },
+        {
+          "word": " too.",
+          "start": 101.08,
+          "end": 101.4,
+          "probability": 0.8501092195510864
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 8318,
+      "start": 102.62,
+      "end": 104.8,
+      "text": " I hope you enjoy your time here.",
+      "tokens": [
+        51334,
+        286,
+        1454,
+        291,
+        2103,
+        428,
+        565,
+        510,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1621368408203125,
+      "compression_ratio": 1.4379084967320261,
+      "no_speech_prob": 0.01762000098824501,
+      "words": [
+        {
+          "word": " I",
+          "start": 102.62,
+          "end": 103.0,
+          "probability": 0.9965620636940002
+        },
+        {
+          "word": " hope",
+          "start": 103.0,
+          "end": 103.22,
+          "probability": 0.9988868832588196
+        },
+        {
+          "word": " you",
+          "start": 103.22,
+          "end": 103.46,
+          "probability": 0.9985305070877075
+        },
+        {
+          "word": " enjoy",
+          "start": 103.46,
+          "end": 103.76,
+          "probability": 0.9975348711013794
+        },
+        {
+          "word": " your",
+          "start": 103.76,
+          "end": 104.1,
+          "probability": 0.9988672733306885
+        },
+        {
+          "word": " time",
+          "start": 104.1,
+          "end": 104.42,
+          "probability": 0.9993478655815125
+        },
+        {
+          "word": " here.",
+          "start": 104.42,
+          "end": 104.8,
+          "probability": 0.9977346658706665
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 8318,
+      "start": 105.6,
+      "end": 106.26,
+      "text": " Thank you.",
+      "tokens": [
+        51484,
+        1044,
+        291,
+        13,
+        51534
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1621368408203125,
+      "compression_ratio": 1.4379084967320261,
+      "no_speech_prob": 0.01762000098824501,
+      "words": [
+        {
+          "word": " Thank",
+          "start": 105.6,
+          "end": 105.88,
+          "probability": 0.993098795413971
+        },
+        {
+          "word": " you.",
+          "start": 105.88,
+          "end": 106.26,
+          "probability": 0.9708167314529419
+        }
+      ]
+    }
+  ]
+}

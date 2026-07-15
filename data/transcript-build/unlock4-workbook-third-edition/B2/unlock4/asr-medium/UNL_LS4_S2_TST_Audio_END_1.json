@@ -1,0 +1,6598 @@
+{
+  "model": "small.en",
+  "language": "en",
+  "text": "End of course test, track one. Good afternoon. It's great to see you all here today. I'm Sandy Dickinson, and I'm going to focus on three important construction innovations. Before we begin, however, I'd just like to mention that my company, Innovators Construct, will be at next week's Architectural Design Conference in London, where I'll be launching our energy-saving underfloor heating product. Please do come along to the event if you can. Right, so let's get started. First, I'd like to talk to you about a concept called digital twins. A digital twin is basically a computer-made copy of an asset, which can be an object, a system, or a process. It uses a computer program that takes real-world data about the asset and predicts how that data will affect the asset. This means that the digital twin can show us how the asset will perform without the need to test it in the real world. How can the digital twin help construction projects? Well, it can include all the information from design, through to construction, and then operation. Because the digital twin can analyse data as it arrives, it helps project managers to make early decisions and avoid unexpected costs. Or, if additional costs are necessary, it allows project managers to remain in control throughout the cycle of the project. The digital twin was implemented for the Thames Estuary Flood Management Project, where it analysed 70 years of historical data. By getting data up to 25 years faster than other more historical methods, it transformed the way developers and architects work together. Next, I want to talk to you about augmented reality. Augmented reality technology has come a long way since it was invented in 1968 by Ivan Sutherland. He was a computer graphics engineer, as well as a teacher, and he developed the first augmented reality display system with the help of his students. Augmented reality technologies, like smart glasses, give you an interactive experience that mixes the real world with a computer-made one. For example, this means you can look at a house that is being built right now, but the glasses can show you what it will look like when it is finished. It is a three-dimensional, or 3D, example of reality. And it's quite amazing. Using AR technology, we can put the potential customers directly inside a building at the design stage. Furthermore, when working on site, engineers wearing smart glasses see where there are electrical wires hidden behind walls. The AR technology, in this example, would act as a safety or alarm system. Finally, I want to talk about robots. For many of us, robots are a thing of films. Most of us have seen R2-D2 or C3PO in George Lucas's Star Wars. These lovable robots, with different personalities and behaviours, were, and still are, popular with cinema fans today. Robots are already in use today within the construction industry, in a range of shapes and sizes. They can lay bricks, move materials, and 3D print, among other things. However, the way of the future is Swarm Robotics, a new experimental technology that is developing very fast. What is Swarm Robotics? Simply put, Swarm Robotics is a multi-robot system which consists of a large number of simple, individual robots. Think of it like a family of bees, called a swarm, that work individually, but for the benefit of the whole family. One of the advantages of Swarm Robotics is that it can be designed to work on large-scale projects, and they are a self-organising network, making them extremely efficient. Several companies have started working on the next stage of robots and robot networks, which is the development of mobility, the ability to move from one place to another. This is positive news for architecture, design and construction industries, as the ability to use robots on rough ground, which is hilly or rocky, for example, would be a huge step forward from where we are now. Right, well, that's all we have time for today. I think you'll agree from these innovations that this is by far the most exciting time to be involved in the construction industry as a developer, engineer or architect. Thank you. Now, any questions? Yes, the lady with the glasses.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.7,
+      "text": " End of course test, track one.",
+      "tokens": [
+        50363,
+        5268,
+        286,
+        1781,
+        1332,
+        11,
+        2610,
+        530,
+        13,
+        50513
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32380187645387115,
+      "compression_ratio": 1.449339207048458,
+      "no_speech_prob": 0.038988903164863586,
+      "words": [
+        {
+          "word": " End",
+          "start": 0.0,
+          "end": 0.42,
+          "probability": 0.3286682665348053
+        },
+        {
+          "word": " of",
+          "start": 0.42,
+          "end": 0.6,
+          "probability": 0.8703247904777527
+        },
+        {
+          "word": " course",
+          "start": 0.6,
+          "end": 0.88,
+          "probability": 0.817116379737854
+        },
+        {
+          "word": " test,",
+          "start": 0.88,
+          "end": 1.52,
+          "probability": 0.9279426336288452
+        },
+        {
+          "word": " track",
+          "start": 2.2,
+          "end": 2.24,
+          "probability": 0.6928609013557434
+        },
+        {
+          "word": " one.",
+          "start": 2.24,
+          "end": 2.7,
+          "probability": 0.7091965675354004
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.82,
+      "end": 5.66,
+      "text": " Good afternoon.",
+      "tokens": [
+        50597,
+        4599,
+        6672,
+        13,
+        50671
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32380187645387115,
+      "compression_ratio": 1.449339207048458,
+      "no_speech_prob": 0.038988903164863586,
+      "words": [
+        {
+          "word": " Good",
+          "start": 4.82,
+          "end": 5.1,
+          "probability": 0.7928128242492676
+        },
+        {
+          "word": " afternoon.",
+          "start": 5.1,
+          "end": 5.66,
+          "probability": 0.9526073336601257
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.42,
+      "end": 8.64,
+      "text": " It's great to see you all here today.",
+      "tokens": [
+        50671,
+        632,
+        338,
+        1049,
+        284,
+        766,
+        345,
+        477,
+        994,
+        1909,
+        13,
+        50813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32380187645387115,
+      "compression_ratio": 1.449339207048458,
+      "no_speech_prob": 0.038988903164863586,
+      "words": [
+        {
+          "word": " It's",
+          "start": 6.42,
+          "end": 6.84,
+          "probability": 0.9781904220581055
+        },
+        {
+          "word": " great",
+          "start": 6.84,
+          "end": 7.16,
+          "probability": 0.9894736409187317
+        },
+        {
+          "word": " to",
+          "start": 7.16,
+          "end": 7.58,
+          "probability": 0.9974058270454407
+        },
+        {
+          "word": " see",
+          "start": 7.58,
+          "end": 7.76,
+          "probability": 0.9988683462142944
+        },
+        {
+          "word": " you",
+          "start": 7.76,
+          "end": 7.92,
+          "probability": 0.9894372224807739
+        },
+        {
+          "word": " all",
+          "start": 7.92,
+          "end": 8.08,
+          "probability": 0.9845561981201172
+        },
+        {
+          "word": " here",
+          "start": 8.08,
+          "end": 8.28,
+          "probability": 0.9901742935180664
+        },
+        {
+          "word": " today.",
+          "start": 8.28,
+          "end": 8.64,
+          "probability": 0.9934037327766418
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 9.56,
+      "end": 10.56,
+      "text": " I'm Sandy Dickinson,",
+      "tokens": [
+        50831,
+        314,
+        1101,
+        17581,
+        47485,
+        11,
+        50913
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32380187645387115,
+      "compression_ratio": 1.449339207048458,
+      "no_speech_prob": 0.038988903164863586,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 9.56,
+          "end": 9.88,
+          "probability": 0.9893923401832581
+        },
+        {
+          "word": " Sandy",
+          "start": 9.88,
+          "end": 10.22,
+          "probability": 0.8700695037841797
+        },
+        {
+          "word": " Dickinson,",
+          "start": 10.22,
+          "end": 10.56,
+          "probability": 0.9855733513832092
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 11.32,
+      "end": 15.4,
+      "text": " and I'm going to focus on three important construction innovations.",
+      "tokens": [
+        50913,
+        290,
+        314,
+        1101,
+        1016,
+        284,
+        2962,
+        319,
+        1115,
+        1593,
+        5103,
+        25438,
+        13,
+        51157
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32380187645387115,
+      "compression_ratio": 1.449339207048458,
+      "no_speech_prob": 0.038988903164863586,
+      "words": [
+        {
+          "word": " and",
+          "start": 11.32,
+          "end": 11.44,
+          "probability": 0.9917987585067749
+        },
+        {
+          "word": " I'm",
+          "start": 11.44,
+          "end": 11.86,
+          "probability": 0.9913850724697113
+        },
+        {
+          "word": " going",
+          "start": 11.86,
+          "end": 12.02,
+          "probability": 0.9974305033683777
+        },
+        {
+          "word": " to",
+          "start": 12.02,
+          "end": 12.26,
+          "probability": 0.9965730905532837
+        },
+        {
+          "word": " focus",
+          "start": 12.26,
+          "end": 12.52,
+          "probability": 0.9980586171150208
+        },
+        {
+          "word": " on",
+          "start": 12.52,
+          "end": 13.0,
+          "probability": 0.9972718358039856
+        },
+        {
+          "word": " three",
+          "start": 13.0,
+          "end": 13.4,
+          "probability": 0.9249139428138733
+        },
+        {
+          "word": " important",
+          "start": 13.4,
+          "end": 14.22,
+          "probability": 0.996758759021759
+        },
+        {
+          "word": " construction",
+          "start": 14.22,
+          "end": 14.72,
+          "probability": 0.9637105464935303
+        },
+        {
+          "word": " innovations.",
+          "start": 14.72,
+          "end": 15.4,
+          "probability": 0.9971475005149841
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 16.76,
+      "end": 17.98,
+      "text": " Before we begin, however,",
+      "tokens": [
+        51189,
+        7413,
+        356,
+        2221,
+        11,
+        2158,
+        11,
+        51281
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32380187645387115,
+      "compression_ratio": 1.449339207048458,
+      "no_speech_prob": 0.038988903164863586,
+      "words": [
+        {
+          "word": " Before",
+          "start": 16.76,
+          "end": 17.0,
+          "probability": 0.9916369318962097
+        },
+        {
+          "word": " we",
+          "start": 17.0,
+          "end": 17.18,
+          "probability": 0.9986061453819275
+        },
+        {
+          "word": " begin,",
+          "start": 17.18,
+          "end": 17.54,
+          "probability": 0.9952065348625183
+        },
+        {
+          "word": " however,",
+          "start": 17.72,
+          "end": 17.98,
+          "probability": 0.9774847626686096
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 18.58,
+      "end": 22.62,
+      "text": " I'd just like to mention that my company, Innovators Construct,",
+      "tokens": [
+        51281,
+        314,
+        1549,
+        655,
+        588,
+        284,
+        3068,
+        326,
+        616,
+        1664,
+        11,
+        43405,
+        2024,
+        28407,
+        11,
+        51513
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32380187645387115,
+      "compression_ratio": 1.449339207048458,
+      "no_speech_prob": 0.038988903164863586,
+      "words": [
+        {
+          "word": " I'd",
+          "start": 18.58,
+          "end": 18.9,
+          "probability": 0.9965131878852844
+        },
+        {
+          "word": " just",
+          "start": 18.9,
+          "end": 19.2,
+          "probability": 0.9874019026756287
+        },
+        {
+          "word": " like",
+          "start": 19.2,
+          "end": 19.48,
+          "probability": 0.9987471103668213
+        },
+        {
+          "word": " to",
+          "start": 19.48,
+          "end": 19.66,
+          "probability": 0.9991002082824707
+        },
+        {
+          "word": " mention",
+          "start": 19.66,
+          "end": 19.86,
+          "probability": 0.9984437823295593
+        },
+        {
+          "word": " that",
+          "start": 19.86,
+          "end": 20.22,
+          "probability": 0.9928876757621765
+        },
+        {
+          "word": " my",
+          "start": 20.22,
+          "end": 20.5,
+          "probability": 0.9981042146682739
+        },
+        {
+          "word": " company,",
+          "start": 20.5,
+          "end": 20.96,
+          "probability": 0.995608389377594
+        },
+        {
+          "word": " Innovators",
+          "start": 21.5,
+          "end": 22.02,
+          "probability": 0.9329013824462891
+        },
+        {
+          "word": " Construct,",
+          "start": 22.02,
+          "end": 22.62,
+          "probability": 0.9600780606269836
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 23.12,
+      "end": 27.1,
+      "text": " will be at next week's Architectural Design Conference in London,",
+      "tokens": [
+        51513,
+        481,
+        307,
+        379,
+        1306,
+        1285,
+        338,
+        17340,
+        1523,
+        8495,
+        8785,
+        287,
+        3576,
+        11,
+        51739
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32380187645387115,
+      "compression_ratio": 1.449339207048458,
+      "no_speech_prob": 0.038988903164863586,
+      "words": [
+        {
+          "word": " will",
+          "start": 23.12,
+          "end": 23.34,
+          "probability": 0.9966590404510498
+        },
+        {
+          "word": " be",
+          "start": 23.34,
+          "end": 23.56,
+          "probability": 0.9985103011131287
+        },
+        {
+          "word": " at",
+          "start": 23.56,
+          "end": 23.76,
+          "probability": 0.9942243695259094
+        },
+        {
+          "word": " next",
+          "start": 23.76,
+          "end": 24.14,
+          "probability": 0.9964259266853333
+        },
+        {
+          "word": " week's",
+          "start": 24.14,
+          "end": 24.64,
+          "probability": 0.992514044046402
+        },
+        {
+          "word": " Architectural",
+          "start": 24.64,
+          "end": 25.36,
+          "probability": 0.8105241656303406
+        },
+        {
+          "word": " Design",
+          "start": 25.36,
+          "end": 25.78,
+          "probability": 0.988066554069519
+        },
+        {
+          "word": " Conference",
+          "start": 25.78,
+          "end": 26.28,
+          "probability": 0.9319542646408081
+        },
+        {
+          "word": " in",
+          "start": 26.28,
+          "end": 26.7,
+          "probability": 0.9818822741508484
+        },
+        {
+          "word": " London,",
+          "start": 26.7,
+          "end": 27.1,
+          "probability": 0.9994180202484131
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2710,
+      "start": 27.1,
+      "end": 32.2,
+      "text": " where I'll be launching our energy-saving underfloor heating product.",
+      "tokens": [
+        50387,
+        810,
+        314,
+        1183,
+        307,
+        13925,
+        674,
+        2568,
+        12,
+        29336,
+        739,
+        28300,
+        16930,
+        1720,
+        13,
+        50627
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27620663113064237,
+      "compression_ratio": 1.481651376146789,
+      "no_speech_prob": 0.01759299263358116,
+      "words": [
+        {
+          "word": " where",
+          "start": 27.1,
+          "end": 28.0,
+          "probability": 0.4951837658882141
+        },
+        {
+          "word": " I'll",
+          "start": 28.0,
+          "end": 28.36,
+          "probability": 0.9527776837348938
+        },
+        {
+          "word": " be",
+          "start": 28.36,
+          "end": 28.54,
+          "probability": 0.9983695149421692
+        },
+        {
+          "word": " launching",
+          "start": 28.54,
+          "end": 28.88,
+          "probability": 0.9989383816719055
+        },
+        {
+          "word": " our",
+          "start": 28.88,
+          "end": 29.36,
+          "probability": 0.9959123730659485
+        },
+        {
+          "word": " energy",
+          "start": 29.36,
+          "end": 29.82,
+          "probability": 0.8780215382575989
+        },
+        {
+          "word": "-saving",
+          "start": 29.82,
+          "end": 30.34,
+          "probability": 0.7913419008255005
+        },
+        {
+          "word": " underfloor",
+          "start": 30.34,
+          "end": 31.26,
+          "probability": 0.6320444047451019
+        },
+        {
+          "word": " heating",
+          "start": 31.26,
+          "end": 31.66,
+          "probability": 0.9963459372520447
+        },
+        {
+          "word": " product.",
+          "start": 31.66,
+          "end": 32.2,
+          "probability": 0.9815556406974792
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2710,
+      "start": 32.98,
+      "end": 35.66,
+      "text": " Please do come along to the event if you can.",
+      "tokens": [
+        50647,
+        4222,
+        466,
+        1282,
+        1863,
+        284,
+        262,
+        1785,
+        611,
+        345,
+        460,
+        13,
+        50803
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27620663113064237,
+      "compression_ratio": 1.481651376146789,
+      "no_speech_prob": 0.01759299263358116,
+      "words": [
+        {
+          "word": " Please",
+          "start": 32.98,
+          "end": 33.16,
+          "probability": 0.9852592945098877
+        },
+        {
+          "word": " do",
+          "start": 33.16,
+          "end": 33.62,
+          "probability": 0.9345935583114624
+        },
+        {
+          "word": " come",
+          "start": 33.62,
+          "end": 33.9,
+          "probability": 0.9978556036949158
+        },
+        {
+          "word": " along",
+          "start": 33.9,
+          "end": 34.12,
+          "probability": 0.9968971014022827
+        },
+        {
+          "word": " to",
+          "start": 34.12,
+          "end": 34.34,
+          "probability": 0.9950003027915955
+        },
+        {
+          "word": " the",
+          "start": 34.34,
+          "end": 34.48,
+          "probability": 0.9930902123451233
+        },
+        {
+          "word": " event",
+          "start": 34.48,
+          "end": 34.8,
+          "probability": 0.9961537718772888
+        },
+        {
+          "word": " if",
+          "start": 34.8,
+          "end": 35.12,
+          "probability": 0.9094758629798889
+        },
+        {
+          "word": " you",
+          "start": 35.12,
+          "end": 35.3,
+          "probability": 0.9997246861457825
+        },
+        {
+          "word": " can.",
+          "start": 35.3,
+          "end": 35.66,
+          "probability": 0.9990345239639282
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2710,
+      "start": 36.86,
+      "end": 39.0,
+      "text": " Right, so let's get started.",
+      "tokens": [
+        50843,
+        6498,
+        11,
+        523,
+        1309,
+        338,
+        651,
+        2067,
+        13,
+        50973
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27620663113064237,
+      "compression_ratio": 1.481651376146789,
+      "no_speech_prob": 0.01759299263358116,
+      "words": [
+        {
+          "word": " Right,",
+          "start": 36.86,
+          "end": 37.1,
+          "probability": 0.9503757953643799
+        },
+        {
+          "word": " so",
+          "start": 37.46,
+          "end": 37.8,
+          "probability": 0.9886215329170227
+        },
+        {
+          "word": " let's",
+          "start": 37.8,
+          "end": 38.44,
+          "probability": 0.8148285448551178
+        },
+        {
+          "word": " get",
+          "start": 38.44,
+          "end": 38.54,
+          "probability": 0.998717188835144
+        },
+        {
+          "word": " started.",
+          "start": 38.54,
+          "end": 39.0,
+          "probability": 0.9984437823295593
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2710,
+      "start": 40.14,
+      "end": 44.64,
+      "text": " First, I'd like to talk to you about a concept called digital twins.",
+      "tokens": [
+        51007,
+        3274,
+        11,
+        314,
+        1549,
+        588,
+        284,
+        1561,
+        284,
+        345,
+        546,
+        257,
+        3721,
+        1444,
+        4875,
+        20345,
+        13,
+        51263
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27620663113064237,
+      "compression_ratio": 1.481651376146789,
+      "no_speech_prob": 0.01759299263358116,
+      "words": [
+        {
+          "word": " First,",
+          "start": 40.14,
+          "end": 40.42,
+          "probability": 0.985903799533844
+        },
+        {
+          "word": " I'd",
+          "start": 40.66,
+          "end": 40.92,
+          "probability": 0.9921445846557617
+        },
+        {
+          "word": " like",
+          "start": 40.92,
+          "end": 41.06,
+          "probability": 0.9991299510002136
+        },
+        {
+          "word": " to",
+          "start": 41.06,
+          "end": 41.28,
+          "probability": 0.9979842901229858
+        },
+        {
+          "word": " talk",
+          "start": 41.28,
+          "end": 41.46,
+          "probability": 0.9986030459403992
+        },
+        {
+          "word": " to",
+          "start": 41.46,
+          "end": 41.7,
+          "probability": 0.9932621121406555
+        },
+        {
+          "word": " you",
+          "start": 41.7,
+          "end": 41.9,
+          "probability": 0.9988151788711548
+        },
+        {
+          "word": " about",
+          "start": 41.9,
+          "end": 42.22,
+          "probability": 0.9985566735267639
+        },
+        {
+          "word": " a",
+          "start": 42.22,
+          "end": 42.44,
+          "probability": 0.9962906837463379
+        },
+        {
+          "word": " concept",
+          "start": 42.44,
+          "end": 42.88,
+          "probability": 0.9990932941436768
+        },
+        {
+          "word": " called",
+          "start": 42.88,
+          "end": 43.44,
+          "probability": 0.9960395097732544
+        },
+        {
+          "word": " digital",
+          "start": 43.44,
+          "end": 44.18,
+          "probability": 0.3879110515117645
+        },
+        {
+          "word": " twins.",
+          "start": 44.18,
+          "end": 44.64,
+          "probability": 0.9757462739944458
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2710,
+      "start": 45.78,
+      "end": 51.12,
+      "text": " A digital twin is basically a computer-made copy of an asset,",
+      "tokens": [
+        51297,
+        317,
+        4875,
+        15203,
+        318,
+        6209,
+        257,
+        3644,
+        12,
+        9727,
+        4866,
+        286,
+        281,
+        11171,
+        11,
+        51579
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27620663113064237,
+      "compression_ratio": 1.481651376146789,
+      "no_speech_prob": 0.01759299263358116,
+      "words": [
+        {
+          "word": " A",
+          "start": 45.78,
+          "end": 46.06,
+          "probability": 0.9923650026321411
+        },
+        {
+          "word": " digital",
+          "start": 46.06,
+          "end": 46.5,
+          "probability": 0.9807577133178711
+        },
+        {
+          "word": " twin",
+          "start": 46.5,
+          "end": 46.86,
+          "probability": 0.9984645843505859
+        },
+        {
+          "word": " is",
+          "start": 46.86,
+          "end": 47.38,
+          "probability": 0.9939448237419128
+        },
+        {
+          "word": " basically",
+          "start": 47.38,
+          "end": 48.04,
+          "probability": 0.9928070306777954
+        },
+        {
+          "word": " a",
+          "start": 48.04,
+          "end": 48.54,
+          "probability": 0.9959554672241211
+        },
+        {
+          "word": " computer",
+          "start": 48.54,
+          "end": 49.12,
+          "probability": 0.9977142810821533
+        },
+        {
+          "word": "-made",
+          "start": 49.12,
+          "end": 49.5,
+          "probability": 0.8844515085220337
+        },
+        {
+          "word": " copy",
+          "start": 49.5,
+          "end": 50.06,
+          "probability": 0.9976730942726135
+        },
+        {
+          "word": " of",
+          "start": 50.06,
+          "end": 50.42,
+          "probability": 0.9989727735519409
+        },
+        {
+          "word": " an",
+          "start": 50.42,
+          "end": 50.64,
+          "probability": 0.9988158941268921
+        },
+        {
+          "word": " asset,",
+          "start": 50.64,
+          "end": 51.12,
+          "probability": 0.989600419998169
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2710,
+      "start": 51.48,
+      "end": 55.46,
+      "text": " which can be an object, a system, or a process.",
+      "tokens": [
+        51579,
+        543,
+        460,
+        307,
+        281,
+        2134,
+        11,
+        257,
+        1080,
+        11,
+        393,
+        257,
+        1429,
+        13,
+        51805
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27620663113064237,
+      "compression_ratio": 1.481651376146789,
+      "no_speech_prob": 0.01759299263358116,
+      "words": [
+        {
+          "word": " which",
+          "start": 51.48,
+          "end": 51.72,
+          "probability": 0.9981178045272827
+        },
+        {
+          "word": " can",
+          "start": 51.72,
+          "end": 51.94,
+          "probability": 0.9983006119728088
+        },
+        {
+          "word": " be",
+          "start": 51.94,
+          "end": 52.14,
+          "probability": 0.9992201328277588
+        },
+        {
+          "word": " an",
+          "start": 52.14,
+          "end": 52.3,
+          "probability": 0.9967327117919922
+        },
+        {
+          "word": " object,",
+          "start": 52.3,
+          "end": 52.82,
+          "probability": 0.9969344139099121
+        },
+        {
+          "word": " a",
+          "start": 53.32,
+          "end": 53.52,
+          "probability": 0.997668445110321
+        },
+        {
+          "word": " system,",
+          "start": 53.52,
+          "end": 54.02,
+          "probability": 0.9992160797119141
+        },
+        {
+          "word": " or",
+          "start": 54.32,
+          "end": 54.78,
+          "probability": 0.998577356338501
+        },
+        {
+          "word": " a",
+          "start": 54.78,
+          "end": 54.98,
+          "probability": 0.9971345663070679
+        },
+        {
+          "word": " process.",
+          "start": 54.98,
+          "end": 55.46,
+          "probability": 0.9990655779838562
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5546,
+      "start": 56.18,
+      "end": 62.26,
+      "text": " It uses a computer program that takes real-world data about the asset",
+      "tokens": [
+        50399,
+        632,
+        3544,
+        257,
+        3644,
+        1430,
+        326,
+        2753,
+        1103,
+        12,
+        6894,
+        1366,
+        546,
+        262,
+        11171,
+        50689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28225269317626955,
+      "compression_ratio": 1.6440677966101696,
+      "no_speech_prob": 0.022129006683826447,
+      "words": [
+        {
+          "word": " It",
+          "start": 56.18,
+          "end": 56.94,
+          "probability": 0.5974512100219727
+        },
+        {
+          "word": " uses",
+          "start": 56.94,
+          "end": 57.44,
+          "probability": 0.9935415983200073
+        },
+        {
+          "word": " a",
+          "start": 57.44,
+          "end": 57.74,
+          "probability": 0.9975437521934509
+        },
+        {
+          "word": " computer",
+          "start": 57.74,
+          "end": 58.2,
+          "probability": 0.9931161999702454
+        },
+        {
+          "word": " program",
+          "start": 58.2,
+          "end": 58.78,
+          "probability": 0.8105083107948303
+        },
+        {
+          "word": " that",
+          "start": 58.78,
+          "end": 59.28,
+          "probability": 0.9818078875541687
+        },
+        {
+          "word": " takes",
+          "start": 59.28,
+          "end": 59.66,
+          "probability": 0.9932425618171692
+        },
+        {
+          "word": " real",
+          "start": 59.66,
+          "end": 60.16,
+          "probability": 0.986027717590332
+        },
+        {
+          "word": "-world",
+          "start": 60.16,
+          "end": 60.5,
+          "probability": 0.8012520968914032
+        },
+        {
+          "word": " data",
+          "start": 60.5,
+          "end": 61.0,
+          "probability": 0.9991415739059448
+        },
+        {
+          "word": " about",
+          "start": 61.0,
+          "end": 61.56,
+          "probability": 0.9980413913726807
+        },
+        {
+          "word": " the",
+          "start": 61.56,
+          "end": 61.88,
+          "probability": 0.9962546825408936
+        },
+        {
+          "word": " asset",
+          "start": 61.88,
+          "end": 62.26,
+          "probability": 0.990652322769165
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5546,
+      "start": 62.26,
+      "end": 66.82,
+      "text": " and predicts how that data will affect the asset.",
+      "tokens": [
+        50689,
+        290,
+        26334,
+        703,
+        326,
+        1366,
+        481,
+        2689,
+        262,
+        11171,
+        13,
+        50913
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28225269317626955,
+      "compression_ratio": 1.6440677966101696,
+      "no_speech_prob": 0.022129006683826447,
+      "words": [
+        {
+          "word": " and",
+          "start": 62.26,
+          "end": 62.84,
+          "probability": 0.8976274132728577
+        },
+        {
+          "word": " predicts",
+          "start": 62.84,
+          "end": 63.4,
+          "probability": 0.990520715713501
+        },
+        {
+          "word": " how",
+          "start": 63.4,
+          "end": 64.08,
+          "probability": 0.9979852437973022
+        },
+        {
+          "word": " that",
+          "start": 64.08,
+          "end": 64.44,
+          "probability": 0.994236171245575
+        },
+        {
+          "word": " data",
+          "start": 64.44,
+          "end": 64.9,
+          "probability": 0.9954967498779297
+        },
+        {
+          "word": " will",
+          "start": 64.9,
+          "end": 65.26,
+          "probability": 0.9974185228347778
+        },
+        {
+          "word": " affect",
+          "start": 65.26,
+          "end": 65.82,
+          "probability": 0.970954954624176
+        },
+        {
+          "word": " the",
+          "start": 65.82,
+          "end": 66.32,
+          "probability": 0.9964396357536316
+        },
+        {
+          "word": " asset.",
+          "start": 66.32,
+          "end": 66.82,
+          "probability": 0.9963287711143494
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5546,
+      "start": 67.98,
+      "end": 73.78,
+      "text": " This means that the digital twin can show us how the asset will perform",
+      "tokens": [
+        50969,
+        770,
+        1724,
+        326,
+        262,
+        4875,
+        15203,
+        460,
+        905,
+        514,
+        703,
+        262,
+        11171,
+        481,
+        1620,
+        51263
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28225269317626955,
+      "compression_ratio": 1.6440677966101696,
+      "no_speech_prob": 0.022129006683826447,
+      "words": [
+        {
+          "word": " This",
+          "start": 67.98,
+          "end": 68.5,
+          "probability": 0.9940038323402405
+        },
+        {
+          "word": " means",
+          "start": 68.5,
+          "end": 68.86,
+          "probability": 0.9988677501678467
+        },
+        {
+          "word": " that",
+          "start": 68.86,
+          "end": 69.4,
+          "probability": 0.9886196851730347
+        },
+        {
+          "word": " the",
+          "start": 69.4,
+          "end": 69.6,
+          "probability": 0.9898630380630493
+        },
+        {
+          "word": " digital",
+          "start": 69.6,
+          "end": 70.1,
+          "probability": 0.7194609045982361
+        },
+        {
+          "word": " twin",
+          "start": 70.1,
+          "end": 70.44,
+          "probability": 0.9411065578460693
+        },
+        {
+          "word": " can",
+          "start": 70.44,
+          "end": 70.98,
+          "probability": 0.9964067339897156
+        },
+        {
+          "word": " show",
+          "start": 70.98,
+          "end": 71.34,
+          "probability": 0.9969935417175293
+        },
+        {
+          "word": " us",
+          "start": 71.34,
+          "end": 71.62,
+          "probability": 0.9956316947937012
+        },
+        {
+          "word": " how",
+          "start": 71.62,
+          "end": 72.1,
+          "probability": 0.9950681924819946
+        },
+        {
+          "word": " the",
+          "start": 72.1,
+          "end": 72.4,
+          "probability": 0.995907187461853
+        },
+        {
+          "word": " asset",
+          "start": 72.4,
+          "end": 72.86,
+          "probability": 0.9964325428009033
+        },
+        {
+          "word": " will",
+          "start": 72.86,
+          "end": 73.12,
+          "probability": 0.9985548853874207
+        },
+        {
+          "word": " perform",
+          "start": 73.12,
+          "end": 73.78,
+          "probability": 0.9981715679168701
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5546,
+      "start": 73.78,
+      "end": 77.84,
+      "text": " without the need to test it in the real world.",
+      "tokens": [
+        51263,
+        1231,
+        262,
+        761,
+        284,
+        1332,
+        340,
+        287,
+        262,
+        1103,
+        995,
+        13,
+        51463
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28225269317626955,
+      "compression_ratio": 1.6440677966101696,
+      "no_speech_prob": 0.022129006683826447,
+      "words": [
+        {
+          "word": " without",
+          "start": 73.78,
+          "end": 74.74,
+          "probability": 0.9281256198883057
+        },
+        {
+          "word": " the",
+          "start": 74.74,
+          "end": 75.12,
+          "probability": 0.9969918727874756
+        },
+        {
+          "word": " need",
+          "start": 75.12,
+          "end": 75.42,
+          "probability": 0.9987595081329346
+        },
+        {
+          "word": " to",
+          "start": 75.42,
+          "end": 75.76,
+          "probability": 0.9992222785949707
+        },
+        {
+          "word": " test",
+          "start": 75.76,
+          "end": 76.08,
+          "probability": 0.9949315190315247
+        },
+        {
+          "word": " it",
+          "start": 76.08,
+          "end": 76.4,
+          "probability": 0.9953886270523071
+        },
+        {
+          "word": " in",
+          "start": 76.4,
+          "end": 76.76,
+          "probability": 0.9970793724060059
+        },
+        {
+          "word": " the",
+          "start": 76.76,
+          "end": 76.96,
+          "probability": 0.9982796907424927
+        },
+        {
+          "word": " real",
+          "start": 76.96,
+          "end": 77.24,
+          "probability": 0.9975125789642334
+        },
+        {
+          "word": " world.",
+          "start": 77.24,
+          "end": 77.84,
+          "probability": 0.9706661105155945
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5546,
+      "start": 79.02,
+      "end": 82.68,
+      "text": " How can the digital twin help construction projects?",
+      "tokens": [
+        51513,
+        1374,
+        460,
+        262,
+        4875,
+        15203,
+        1037,
+        5103,
+        4493,
+        30,
+        51713
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28225269317626955,
+      "compression_ratio": 1.6440677966101696,
+      "no_speech_prob": 0.022129006683826447,
+      "words": [
+        {
+          "word": " How",
+          "start": 79.02,
+          "end": 79.32,
+          "probability": 0.9307387471199036
+        },
+        {
+          "word": " can",
+          "start": 79.32,
+          "end": 79.62,
+          "probability": 0.9954425096511841
+        },
+        {
+          "word": " the",
+          "start": 79.62,
+          "end": 79.86,
+          "probability": 0.9895071387290955
+        },
+        {
+          "word": " digital",
+          "start": 79.86,
+          "end": 80.3,
+          "probability": 0.9512441158294678
+        },
+        {
+          "word": " twin",
+          "start": 80.3,
+          "end": 80.72,
+          "probability": 0.9965658783912659
+        },
+        {
+          "word": " help",
+          "start": 80.72,
+          "end": 81.38,
+          "probability": 0.9959884285926819
+        },
+        {
+          "word": " construction",
+          "start": 81.38,
+          "end": 81.92,
+          "probability": 0.995931088924408
+        },
+        {
+          "word": " projects?",
+          "start": 81.92,
+          "end": 82.68,
+          "probability": 0.9979875087738037
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8268,
+      "start": 83.4,
+      "end": 87.52,
+      "text": " Well, it can include all the information from design,",
+      "tokens": [
+        50399,
+        3894,
+        11,
+        340,
+        460,
+        2291,
+        477,
+        262,
+        1321,
+        422,
+        1486,
+        11,
+        50619
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25317916870117185,
+      "compression_ratio": 1.4945054945054945,
+      "no_speech_prob": 0.01588490419089794,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 83.36,
+          "end": 83.84,
+          "probability": 0.8837286829948425
+        },
+        {
+          "word": " it",
+          "start": 84.3,
+          "end": 84.5,
+          "probability": 0.9934021830558777
+        },
+        {
+          "word": " can",
+          "start": 84.5,
+          "end": 84.7,
+          "probability": 0.9970679879188538
+        },
+        {
+          "word": " include",
+          "start": 84.7,
+          "end": 85.18,
+          "probability": 0.9950887560844421
+        },
+        {
+          "word": " all",
+          "start": 85.18,
+          "end": 85.68,
+          "probability": 0.9956755042076111
+        },
+        {
+          "word": " the",
+          "start": 85.68,
+          "end": 85.88,
+          "probability": 0.9882331490516663
+        },
+        {
+          "word": " information",
+          "start": 85.88,
+          "end": 86.42,
+          "probability": 0.9988546371459961
+        },
+        {
+          "word": " from",
+          "start": 86.42,
+          "end": 86.94,
+          "probability": 0.990885317325592
+        },
+        {
+          "word": " design,",
+          "start": 86.94,
+          "end": 87.52,
+          "probability": 0.9324256181716919
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 8268,
+      "start": 87.92,
+      "end": 90.92,
+      "text": " through to construction, and then operation.",
+      "tokens": [
+        50619,
+        832,
+        284,
+        5103,
+        11,
+        290,
+        788,
+        4905,
+        13,
+        50799
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25317916870117185,
+      "compression_ratio": 1.4945054945054945,
+      "no_speech_prob": 0.01588490419089794,
+      "words": [
+        {
+          "word": " through",
+          "start": 87.92,
+          "end": 88.26,
+          "probability": 0.9851456880569458
+        },
+        {
+          "word": " to",
+          "start": 88.26,
+          "end": 88.5,
+          "probability": 0.9896295666694641
+        },
+        {
+          "word": " construction,",
+          "start": 88.5,
+          "end": 89.0,
+          "probability": 0.9942856431007385
+        },
+        {
+          "word": " and",
+          "start": 89.52,
+          "end": 89.8,
+          "probability": 0.9940945506095886
+        },
+        {
+          "word": " then",
+          "start": 89.8,
+          "end": 90.22,
+          "probability": 0.993910551071167
+        },
+        {
+          "word": " operation.",
+          "start": 90.22,
+          "end": 90.92,
+          "probability": 0.9268475770950317
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 8268,
+      "start": 92.26,
+      "end": 96.66,
+      "text": " Because the digital twin can analyse data as it arrives,",
+      "tokens": [
+        50837,
+        4362,
+        262,
+        4875,
+        15203,
+        460,
+        39552,
+        1366,
+        355,
+        340,
+        14443,
+        11,
+        51095
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25317916870117185,
+      "compression_ratio": 1.4945054945054945,
+      "no_speech_prob": 0.01588490419089794,
+      "words": [
+        {
+          "word": " Because",
+          "start": 92.26,
+          "end": 92.76,
+          "probability": 0.9917948842048645
+        },
+        {
+          "word": " the",
+          "start": 92.76,
+          "end": 93.08,
+          "probability": 0.99149090051651
+        },
+        {
+          "word": " digital",
+          "start": 93.08,
+          "end": 93.54,
+          "probability": 0.7409834265708923
+        },
+        {
+          "word": " twin",
+          "start": 93.54,
+          "end": 93.84,
+          "probability": 0.9385666251182556
+        },
+        {
+          "word": " can",
+          "start": 93.84,
+          "end": 94.26,
+          "probability": 0.9987289309501648
+        },
+        {
+          "word": " analyse",
+          "start": 94.26,
+          "end": 94.82,
+          "probability": 0.6084789037704468
+        },
+        {
+          "word": " data",
+          "start": 94.82,
+          "end": 95.34,
+          "probability": 0.9974043965339661
+        },
+        {
+          "word": " as",
+          "start": 95.34,
+          "end": 95.92,
+          "probability": 0.9946274161338806
+        },
+        {
+          "word": " it",
+          "start": 95.92,
+          "end": 96.14,
+          "probability": 0.9982203841209412
+        },
+        {
+          "word": " arrives,",
+          "start": 96.14,
+          "end": 96.66,
+          "probability": 0.9977036118507385
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 8268,
+      "start": 97.36,
+      "end": 100.78,
+      "text": " it helps project managers to make early decisions",
+      "tokens": [
+        51095,
+        340,
+        5419,
+        1628,
+        11663,
+        284,
+        787,
+        1903,
+        5370,
+        51281
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25317916870117185,
+      "compression_ratio": 1.4945054945054945,
+      "no_speech_prob": 0.01588490419089794,
+      "words": [
+        {
+          "word": " it",
+          "start": 97.36,
+          "end": 97.66,
+          "probability": 0.9865951538085938
+        },
+        {
+          "word": " helps",
+          "start": 97.66,
+          "end": 98.14,
+          "probability": 0.9974506497383118
+        },
+        {
+          "word": " project",
+          "start": 98.14,
+          "end": 98.58,
+          "probability": 0.9817051887512207
+        },
+        {
+          "word": " managers",
+          "start": 98.58,
+          "end": 99.14,
+          "probability": 0.9958049058914185
+        },
+        {
+          "word": " to",
+          "start": 99.14,
+          "end": 99.62,
+          "probability": 0.9911271929740906
+        },
+        {
+          "word": " make",
+          "start": 99.62,
+          "end": 99.82,
+          "probability": 0.9987263083457947
+        },
+        {
+          "word": " early",
+          "start": 99.82,
+          "end": 100.28,
+          "probability": 0.9967169165611267
+        },
+        {
+          "word": " decisions",
+          "start": 100.28,
+          "end": 100.78,
+          "probability": 0.9961114525794983
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 8268,
+      "start": 100.78,
+      "end": 103.48,
+      "text": " and avoid unexpected costs.",
+      "tokens": [
+        51281,
+        290,
+        3368,
+        10059,
+        3484,
+        13,
+        51413
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25317916870117185,
+      "compression_ratio": 1.4945054945054945,
+      "no_speech_prob": 0.01588490419089794,
+      "words": [
+        {
+          "word": " and",
+          "start": 100.78,
+          "end": 101.36,
+          "probability": 0.9772307276725769
+        },
+        {
+          "word": " avoid",
+          "start": 101.36,
+          "end": 101.82,
+          "probability": 0.9974794983863831
+        },
+        {
+          "word": " unexpected",
+          "start": 101.82,
+          "end": 102.68,
+          "probability": 0.9974076151847839
+        },
+        {
+          "word": " costs.",
+          "start": 102.68,
+          "end": 103.48,
+          "probability": 0.9976183772087097
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 8268,
+      "start": 104.14,
+      "end": 107.18,
+      "text": " Or, if additional costs are necessary,",
+      "tokens": [
+        51435,
+        1471,
+        11,
+        611,
+        3224,
+        3484,
+        389,
+        3306,
+        11,
+        51613
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25317916870117185,
+      "compression_ratio": 1.4945054945054945,
+      "no_speech_prob": 0.01588490419089794,
+      "words": [
+        {
+          "word": " Or,",
+          "start": 104.14,
+          "end": 104.58,
+          "probability": 0.9848788380622864
+        },
+        {
+          "word": " if",
+          "start": 104.8,
+          "end": 105.1,
+          "probability": 0.9958279728889465
+        },
+        {
+          "word": " additional",
+          "start": 105.1,
+          "end": 105.64,
+          "probability": 0.9981867671012878
+        },
+        {
+          "word": " costs",
+          "start": 105.64,
+          "end": 106.08,
+          "probability": 0.9958114624023438
+        },
+        {
+          "word": " are",
+          "start": 106.08,
+          "end": 106.58,
+          "probability": 0.9961612224578857
+        },
+        {
+          "word": " necessary,",
+          "start": 106.58,
+          "end": 107.18,
+          "probability": 0.9986875653266907
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 10718,
+      "start": 107.18,
+      "end": 111.08,
+      "text": " it allows project managers to remain in control",
+      "tokens": [
+        50387,
+        340,
+        3578,
+        1628,
+        11663,
+        284,
+        3520,
+        287,
+        1630,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25490117390950523,
+      "compression_ratio": 1.5129310344827587,
+      "no_speech_prob": 0.08645863831043243,
+      "words": [
+        {
+          "word": " it",
+          "start": 107.18,
+          "end": 108.0,
+          "probability": 0.6277581453323364
+        },
+        {
+          "word": " allows",
+          "start": 108.0,
+          "end": 108.46,
+          "probability": 0.9941629767417908
+        },
+        {
+          "word": " project",
+          "start": 108.46,
+          "end": 108.92,
+          "probability": 0.9752013683319092
+        },
+        {
+          "word": " managers",
+          "start": 108.92,
+          "end": 109.44,
+          "probability": 0.9978724718093872
+        },
+        {
+          "word": " to",
+          "start": 109.44,
+          "end": 109.78,
+          "probability": 0.9985761642456055
+        },
+        {
+          "word": " remain",
+          "start": 109.78,
+          "end": 110.18,
+          "probability": 0.9976974129676819
+        },
+        {
+          "word": " in",
+          "start": 110.18,
+          "end": 110.56,
+          "probability": 0.9986732006072998
+        },
+        {
+          "word": " control",
+          "start": 110.56,
+          "end": 111.08,
+          "probability": 0.9946160912513733
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 10718,
+      "start": 111.08,
+      "end": 113.54,
+      "text": " throughout the cycle of the project.",
+      "tokens": [
+        50563,
+        3690,
+        262,
+        6772,
+        286,
+        262,
+        1628,
+        13,
+        50697
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25490117390950523,
+      "compression_ratio": 1.5129310344827587,
+      "no_speech_prob": 0.08645863831043243,
+      "words": [
+        {
+          "word": " throughout",
+          "start": 111.08,
+          "end": 111.8,
+          "probability": 0.986280083656311
+        },
+        {
+          "word": " the",
+          "start": 111.8,
+          "end": 112.2,
+          "probability": 0.997986912727356
+        },
+        {
+          "word": " cycle",
+          "start": 112.2,
+          "end": 112.56,
+          "probability": 0.9989326596260071
+        },
+        {
+          "word": " of",
+          "start": 112.56,
+          "end": 112.96,
+          "probability": 0.9987767338752747
+        },
+        {
+          "word": " the",
+          "start": 112.96,
+          "end": 113.1,
+          "probability": 0.9969003200531006
+        },
+        {
+          "word": " project.",
+          "start": 113.1,
+          "end": 113.54,
+          "probability": 0.9983773231506348
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 10718,
+      "start": 114.68,
+      "end": 119.92,
+      "text": " The digital twin was implemented for the Thames Estuary Flood Management Project,",
+      "tokens": [
+        50739,
+        383,
+        4875,
+        15203,
+        373,
+        9177,
+        329,
+        262,
+        42521,
+        10062,
+        2838,
+        25588,
+        8549,
+        4935,
+        11,
+        51013
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25490117390950523,
+      "compression_ratio": 1.5129310344827587,
+      "no_speech_prob": 0.08645863831043243,
+      "words": [
+        {
+          "word": " The",
+          "start": 114.68,
+          "end": 114.98,
+          "probability": 0.9933945536613464
+        },
+        {
+          "word": " digital",
+          "start": 114.98,
+          "end": 115.38,
+          "probability": 0.36475884914398193
+        },
+        {
+          "word": " twin",
+          "start": 115.38,
+          "end": 115.68,
+          "probability": 0.8660097122192383
+        },
+        {
+          "word": " was",
+          "start": 115.68,
+          "end": 116.08,
+          "probability": 0.9978139400482178
+        },
+        {
+          "word": " implemented",
+          "start": 116.08,
+          "end": 116.78,
+          "probability": 0.9987660646438599
+        },
+        {
+          "word": " for",
+          "start": 116.78,
+          "end": 117.24,
+          "probability": 0.997734785079956
+        },
+        {
+          "word": " the",
+          "start": 117.24,
+          "end": 117.54,
+          "probability": 0.9820110201835632
+        },
+        {
+          "word": " Thames",
+          "start": 117.54,
+          "end": 117.76,
+          "probability": 0.9037808179855347
+        },
+        {
+          "word": " Estuary",
+          "start": 117.76,
+          "end": 118.4,
+          "probability": 0.8207182288169861
+        },
+        {
+          "word": " Flood",
+          "start": 118.4,
+          "end": 118.76,
+          "probability": 0.6286320090293884
+        },
+        {
+          "word": " Management",
+          "start": 118.76,
+          "end": 119.28,
+          "probability": 0.9920507073402405
+        },
+        {
+          "word": " Project,",
+          "start": 119.28,
+          "end": 119.92,
+          "probability": 0.658166229724884
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 10718,
+      "start": 120.46,
+      "end": 123.9,
+      "text": " where it analysed 70 years of historical data.",
+      "tokens": [
+        51013,
+        810,
+        340,
+        34763,
+        4317,
+        812,
+        286,
+        6754,
+        1366,
+        13,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25490117390950523,
+      "compression_ratio": 1.5129310344827587,
+      "no_speech_prob": 0.08645863831043243,
+      "words": [
+        {
+          "word": " where",
+          "start": 120.46,
+          "end": 120.5,
+          "probability": 0.9974440336227417
+        },
+        {
+          "word": " it",
+          "start": 120.5,
+          "end": 120.7,
+          "probability": 0.9984548091888428
+        },
+        {
+          "word": " analysed",
+          "start": 120.7,
+          "end": 121.34,
+          "probability": 0.4855324327945709
+        },
+        {
+          "word": " 70",
+          "start": 121.34,
+          "end": 121.96,
+          "probability": 0.9638325572013855
+        },
+        {
+          "word": " years",
+          "start": 121.96,
+          "end": 122.48,
+          "probability": 0.9950599074363708
+        },
+        {
+          "word": " of",
+          "start": 122.48,
+          "end": 122.78,
+          "probability": 0.9981561303138733
+        },
+        {
+          "word": " historical",
+          "start": 122.78,
+          "end": 123.3,
+          "probability": 0.998213529586792
+        },
+        {
+          "word": " data.",
+          "start": 123.3,
+          "end": 123.9,
+          "probability": 0.9994851350784302
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 10718,
+      "start": 125.12,
+      "end": 131.4,
+      "text": " By getting data up to 25 years faster than other more historical methods,",
+      "tokens": [
+        51259,
+        2750,
+        1972,
+        1366,
+        510,
+        284,
+        1679,
+        812,
+        5443,
+        621,
+        584,
+        517,
+        6754,
+        5050,
+        11,
+        51595
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25490117390950523,
+      "compression_ratio": 1.5129310344827587,
+      "no_speech_prob": 0.08645863831043243,
+      "words": [
+        {
+          "word": " By",
+          "start": 125.12,
+          "end": 125.38,
+          "probability": 0.9975647926330566
+        },
+        {
+          "word": " getting",
+          "start": 125.38,
+          "end": 125.78,
+          "probability": 0.9984275102615356
+        },
+        {
+          "word": " data",
+          "start": 125.78,
+          "end": 126.2,
+          "probability": 0.9952632188796997
+        },
+        {
+          "word": " up",
+          "start": 126.2,
+          "end": 126.62,
+          "probability": 0.9948379397392273
+        },
+        {
+          "word": " to",
+          "start": 126.62,
+          "end": 126.86,
+          "probability": 0.9982427358627319
+        },
+        {
+          "word": " 25",
+          "start": 126.86,
+          "end": 127.84,
+          "probability": 0.9874260425567627
+        },
+        {
+          "word": " years",
+          "start": 127.84,
+          "end": 128.36,
+          "probability": 0.996594250202179
+        },
+        {
+          "word": " faster",
+          "start": 128.36,
+          "end": 128.8,
+          "probability": 0.9963335990905762
+        },
+        {
+          "word": " than",
+          "start": 128.8,
+          "end": 129.54,
+          "probability": 0.9881966710090637
+        },
+        {
+          "word": " other",
+          "start": 129.54,
+          "end": 129.94,
+          "probability": 0.9975074529647827
+        },
+        {
+          "word": " more",
+          "start": 129.94,
+          "end": 130.2,
+          "probability": 0.8450920581817627
+        },
+        {
+          "word": " historical",
+          "start": 130.2,
+          "end": 130.82,
+          "probability": 0.9860115647315979
+        },
+        {
+          "word": " methods,",
+          "start": 130.82,
+          "end": 131.4,
+          "probability": 0.9989331364631653
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 10718,
+      "start": 131.88,
+      "end": 136.18,
+      "text": " it transformed the way developers and architects work together.",
+      "tokens": [
+        51595,
+        340,
+        14434,
+        262,
+        835,
+        6505,
+        290,
+        29518,
+        670,
+        1978,
+        13,
+        51825
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25490117390950523,
+      "compression_ratio": 1.5129310344827587,
+      "no_speech_prob": 0.08645863831043243,
+      "words": [
+        {
+          "word": " it",
+          "start": 131.88,
+          "end": 132.18,
+          "probability": 0.9969301819801331
+        },
+        {
+          "word": " transformed",
+          "start": 132.18,
+          "end": 132.84,
+          "probability": 0.9991158843040466
+        },
+        {
+          "word": " the",
+          "start": 132.84,
+          "end": 133.18,
+          "probability": 0.9983722567558289
+        },
+        {
+          "word": " way",
+          "start": 133.18,
+          "end": 133.44,
+          "probability": 0.9991944432258606
+        },
+        {
+          "word": " developers",
+          "start": 133.44,
+          "end": 133.94,
+          "probability": 0.9874228239059448
+        },
+        {
+          "word": " and",
+          "start": 133.94,
+          "end": 134.58,
+          "probability": 0.9976022839546204
+        },
+        {
+          "word": " architects",
+          "start": 134.58,
+          "end": 135.12,
+          "probability": 0.9956982135772705
+        },
+        {
+          "word": " work",
+          "start": 135.12,
+          "end": 135.64,
+          "probability": 0.8542227745056152
+        },
+        {
+          "word": " together.",
+          "start": 135.64,
+          "end": 136.18,
+          "probability": 0.9994714856147766
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 13718,
+      "start": 137.54,
+      "end": 142.28,
+      "text": " Next, I want to talk to you about augmented reality.",
+      "tokens": [
+        50399,
+        7406,
+        11,
+        314,
+        765,
+        284,
+        1561,
+        284,
+        345,
+        546,
+        30259,
+        3950,
+        13,
+        50635
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2430171708802919,
+      "compression_ratio": 1.52020202020202,
+      "no_speech_prob": 0.008955647237598896,
+      "words": [
+        {
+          "word": " Next,",
+          "start": 137.54,
+          "end": 138.34,
+          "probability": 0.7906420230865479
+        },
+        {
+          "word": " I",
+          "start": 138.82,
+          "end": 138.98,
+          "probability": 0.9915766716003418
+        },
+        {
+          "word": " want",
+          "start": 138.98,
+          "end": 139.2,
+          "probability": 0.9944732785224915
+        },
+        {
+          "word": " to",
+          "start": 139.2,
+          "end": 139.42,
+          "probability": 0.9966650605201721
+        },
+        {
+          "word": " talk",
+          "start": 139.42,
+          "end": 139.6,
+          "probability": 0.9970383644104004
+        },
+        {
+          "word": " to",
+          "start": 139.6,
+          "end": 139.84,
+          "probability": 0.9865117073059082
+        },
+        {
+          "word": " you",
+          "start": 139.84,
+          "end": 140.06,
+          "probability": 0.998357355594635
+        },
+        {
+          "word": " about",
+          "start": 140.06,
+          "end": 140.56,
+          "probability": 0.9968883395195007
+        },
+        {
+          "word": " augmented",
+          "start": 140.56,
+          "end": 141.32,
+          "probability": 0.4998347759246826
+        },
+        {
+          "word": " reality.",
+          "start": 141.32,
+          "end": 142.28,
+          "probability": 0.995272696018219
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 13718,
+      "start": 143.9,
+      "end": 147.48,
+      "text": " Augmented reality technology has come a long way",
+      "tokens": [
+        50687,
+        2447,
+        12061,
+        3950,
+        3037,
+        468,
+        1282,
+        257,
+        890,
+        835,
+        50881
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2430171708802919,
+      "compression_ratio": 1.52020202020202,
+      "no_speech_prob": 0.008955647237598896,
+      "words": [
+        {
+          "word": " Augmented",
+          "start": 143.9,
+          "end": 144.38,
+          "probability": 0.9599736332893372
+        },
+        {
+          "word": " reality",
+          "start": 144.38,
+          "end": 145.04,
+          "probability": 0.9166662096977234
+        },
+        {
+          "word": " technology",
+          "start": 145.04,
+          "end": 145.6,
+          "probability": 0.9947616457939148
+        },
+        {
+          "word": " has",
+          "start": 145.6,
+          "end": 146.1,
+          "probability": 0.9952226281166077
+        },
+        {
+          "word": " come",
+          "start": 146.1,
+          "end": 146.42,
+          "probability": 0.9937165379524231
+        },
+        {
+          "word": " a",
+          "start": 146.42,
+          "end": 146.72,
+          "probability": 0.9953743815422058
+        },
+        {
+          "word": " long",
+          "start": 146.72,
+          "end": 147.08,
+          "probability": 0.996117115020752
+        },
+        {
+          "word": " way",
+          "start": 147.08,
+          "end": 147.48,
+          "probability": 0.9884775280952454
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 13718,
+      "start": 147.48,
+      "end": 151.5,
+      "text": " since it was invented in 1968 by Ivan Sutherland.",
+      "tokens": [
+        50881,
+        1201,
+        340,
+        373,
+        15646,
+        287,
+        15963,
+        416,
+        21798,
+        47793,
+        13,
+        51105
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2430171708802919,
+      "compression_ratio": 1.52020202020202,
+      "no_speech_prob": 0.008955647237598896,
+      "words": [
+        {
+          "word": " since",
+          "start": 147.48,
+          "end": 147.82,
+          "probability": 0.989959716796875
+        },
+        {
+          "word": " it",
+          "start": 147.82,
+          "end": 148.04,
+          "probability": 0.9943318367004395
+        },
+        {
+          "word": " was",
+          "start": 148.04,
+          "end": 148.22,
+          "probability": 0.9990772008895874
+        },
+        {
+          "word": " invented",
+          "start": 148.22,
+          "end": 148.66,
+          "probability": 0.9990488886833191
+        },
+        {
+          "word": " in",
+          "start": 148.66,
+          "end": 148.96,
+          "probability": 0.9946063160896301
+        },
+        {
+          "word": " 1968",
+          "start": 148.96,
+          "end": 150.02,
+          "probability": 0.9983636736869812
+        },
+        {
+          "word": " by",
+          "start": 150.02,
+          "end": 150.64,
+          "probability": 0.9443294405937195
+        },
+        {
+          "word": " Ivan",
+          "start": 150.64,
+          "end": 151.1,
+          "probability": 0.9889471530914307
+        },
+        {
+          "word": " Sutherland.",
+          "start": 151.1,
+          "end": 151.5,
+          "probability": 0.9695706367492676
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 13718,
+      "start": 152.9,
+      "end": 157.14,
+      "text": " He was a computer graphics engineer, as well as a teacher,",
+      "tokens": [
+        51147,
+        679,
+        373,
+        257,
+        3644,
+        9382,
+        11949,
+        11,
+        355,
+        880,
+        355,
+        257,
+        4701,
+        11,
+        51391
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2430171708802919,
+      "compression_ratio": 1.52020202020202,
+      "no_speech_prob": 0.008955647237598896,
+      "words": [
+        {
+          "word": " He",
+          "start": 152.9,
+          "end": 153.14,
+          "probability": 0.9941018223762512
+        },
+        {
+          "word": " was",
+          "start": 153.14,
+          "end": 153.4,
+          "probability": 0.9993545413017273
+        },
+        {
+          "word": " a",
+          "start": 153.4,
+          "end": 153.64,
+          "probability": 0.993893027305603
+        },
+        {
+          "word": " computer",
+          "start": 153.64,
+          "end": 154.04,
+          "probability": 0.9660781025886536
+        },
+        {
+          "word": " graphics",
+          "start": 154.04,
+          "end": 154.7,
+          "probability": 0.9957614541053772
+        },
+        {
+          "word": " engineer,",
+          "start": 154.7,
+          "end": 155.4,
+          "probability": 0.9985376596450806
+        },
+        {
+          "word": " as",
+          "start": 156.02,
+          "end": 156.16,
+          "probability": 0.991887629032135
+        },
+        {
+          "word": " well",
+          "start": 156.16,
+          "end": 156.4,
+          "probability": 0.9983351826667786
+        },
+        {
+          "word": " as",
+          "start": 156.4,
+          "end": 156.58,
+          "probability": 0.9961165189743042
+        },
+        {
+          "word": " a",
+          "start": 156.58,
+          "end": 156.74,
+          "probability": 0.9931290149688721
+        },
+        {
+          "word": " teacher,",
+          "start": 156.74,
+          "end": 157.14,
+          "probability": 0.9976232647895813
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 13718,
+      "start": 157.88,
+      "end": 162.04,
+      "text": " and he developed the first augmented reality display system",
+      "tokens": [
+        51391,
+        290,
+        339,
+        4166,
+        262,
+        717,
+        30259,
+        3950,
+        3359,
+        1080,
+        51621
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2430171708802919,
+      "compression_ratio": 1.52020202020202,
+      "no_speech_prob": 0.008955647237598896,
+      "words": [
+        {
+          "word": " and",
+          "start": 157.88,
+          "end": 158.12,
+          "probability": 0.9934038519859314
+        },
+        {
+          "word": " he",
+          "start": 158.12,
+          "end": 158.38,
+          "probability": 0.9855871200561523
+        },
+        {
+          "word": " developed",
+          "start": 158.38,
+          "end": 158.76,
+          "probability": 0.9972733855247498
+        },
+        {
+          "word": " the",
+          "start": 158.76,
+          "end": 159.08,
+          "probability": 0.997191846370697
+        },
+        {
+          "word": " first",
+          "start": 159.08,
+          "end": 159.56,
+          "probability": 0.9914082884788513
+        },
+        {
+          "word": " augmented",
+          "start": 159.56,
+          "end": 160.2,
+          "probability": 0.8918323516845703
+        },
+        {
+          "word": " reality",
+          "start": 160.2,
+          "end": 161.0,
+          "probability": 0.9910010695457458
+        },
+        {
+          "word": " display",
+          "start": 161.0,
+          "end": 161.5,
+          "probability": 0.9983364939689636
+        },
+        {
+          "word": " system",
+          "start": 161.5,
+          "end": 162.04,
+          "probability": 0.9985408782958984
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 13718,
+      "start": 162.04,
+      "end": 164.12,
+      "text": " with the help of his students.",
+      "tokens": [
+        51621,
+        351,
+        262,
+        1037,
+        286,
+        465,
+        2444,
+        13,
+        51731
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2430171708802919,
+      "compression_ratio": 1.52020202020202,
+      "no_speech_prob": 0.008955647237598896,
+      "words": [
+        {
+          "word": " with",
+          "start": 162.04,
+          "end": 162.62,
+          "probability": 0.7038450837135315
+        },
+        {
+          "word": " the",
+          "start": 162.62,
+          "end": 162.86,
+          "probability": 0.9984090924263
+        },
+        {
+          "word": " help",
+          "start": 162.86,
+          "end": 163.06,
+          "probability": 0.9995995163917542
+        },
+        {
+          "word": " of",
+          "start": 163.06,
+          "end": 163.44,
+          "probability": 0.997814416885376
+        },
+        {
+          "word": " his",
+          "start": 163.44,
+          "end": 163.58,
+          "probability": 0.9988044500350952
+        },
+        {
+          "word": " students.",
+          "start": 163.58,
+          "end": 164.12,
+          "probability": 0.9990623593330383
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 16412,
+      "start": 165.94,
+      "end": 170.04,
+      "text": " Augmented reality technologies, like smart glasses,",
+      "tokens": [
+        50413,
+        2447,
+        12061,
+        3950,
+        8514,
+        11,
+        588,
+        4451,
+        15232,
+        11,
+        50641
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2225084626272823,
+      "compression_ratio": 1.5707762557077625,
+      "no_speech_prob": 0.0305679589509964,
+      "words": [
+        {
+          "word": " Augmented",
+          "start": 165.94,
+          "end": 166.62,
+          "probability": 0.8123743236064911
+        },
+        {
+          "word": " reality",
+          "start": 166.62,
+          "end": 167.14,
+          "probability": 0.8092912435531616
+        },
+        {
+          "word": " technologies,",
+          "start": 167.14,
+          "end": 167.9,
+          "probability": 0.990473210811615
+        },
+        {
+          "word": " like",
+          "start": 168.44,
+          "end": 168.78,
+          "probability": 0.9950554370880127
+        },
+        {
+          "word": " smart",
+          "start": 168.78,
+          "end": 169.5,
+          "probability": 0.7223114967346191
+        },
+        {
+          "word": " glasses,",
+          "start": 169.5,
+          "end": 170.04,
+          "probability": 0.974871814250946
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 16412,
+      "start": 170.38,
+      "end": 172.78,
+      "text": " give you an interactive experience",
+      "tokens": [
+        50641,
+        1577,
+        345,
+        281,
+        14333,
+        1998,
+        50771
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2225084626272823,
+      "compression_ratio": 1.5707762557077625,
+      "no_speech_prob": 0.0305679589509964,
+      "words": [
+        {
+          "word": " give",
+          "start": 170.38,
+          "end": 170.82,
+          "probability": 0.9875604510307312
+        },
+        {
+          "word": " you",
+          "start": 170.82,
+          "end": 171.14,
+          "probability": 0.9982612729072571
+        },
+        {
+          "word": " an",
+          "start": 171.14,
+          "end": 171.34,
+          "probability": 0.9935668110847473
+        },
+        {
+          "word": " interactive",
+          "start": 171.34,
+          "end": 172.04,
+          "probability": 0.9966026544570923
+        },
+        {
+          "word": " experience",
+          "start": 172.04,
+          "end": 172.78,
+          "probability": 0.9990647435188293
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 16412,
+      "start": 172.78,
+      "end": 176.78,
+      "text": " that mixes the real world with a computer-made one.",
+      "tokens": [
+        50771,
+        326,
+        33237,
+        262,
+        1103,
+        995,
+        351,
+        257,
+        3644,
+        12,
+        9727,
+        530,
+        13,
+        50991
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2225084626272823,
+      "compression_ratio": 1.5707762557077625,
+      "no_speech_prob": 0.0305679589509964,
+      "words": [
+        {
+          "word": " that",
+          "start": 172.78,
+          "end": 173.34,
+          "probability": 0.9759914875030518
+        },
+        {
+          "word": " mixes",
+          "start": 173.34,
+          "end": 173.76,
+          "probability": 0.9990691542625427
+        },
+        {
+          "word": " the",
+          "start": 173.76,
+          "end": 174.1,
+          "probability": 0.9985472559928894
+        },
+        {
+          "word": " real",
+          "start": 174.1,
+          "end": 174.38,
+          "probability": 0.9842798709869385
+        },
+        {
+          "word": " world",
+          "start": 174.38,
+          "end": 174.82,
+          "probability": 0.9743321537971497
+        },
+        {
+          "word": " with",
+          "start": 174.82,
+          "end": 175.28,
+          "probability": 0.9914190769195557
+        },
+        {
+          "word": " a",
+          "start": 175.28,
+          "end": 175.46,
+          "probability": 0.9551554918289185
+        },
+        {
+          "word": " computer",
+          "start": 175.46,
+          "end": 175.98,
+          "probability": 0.9951010346412659
+        },
+        {
+          "word": "-made",
+          "start": 175.98,
+          "end": 176.26,
+          "probability": 0.84576815366745
+        },
+        {
+          "word": " one.",
+          "start": 176.26,
+          "end": 176.78,
+          "probability": 0.9975225329399109
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 16412,
+      "start": 177.68,
+      "end": 183.1,
+      "text": " For example, this means you can look at a house that is being built right now,",
+      "tokens": [
+        50991,
+        1114,
+        1672,
+        11,
+        428,
+        1724,
+        345,
+        460,
+        804,
+        379,
+        257,
+        2156,
+        326,
+        318,
+        852,
+        3170,
+        826,
+        783,
+        11,
+        51283
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2225084626272823,
+      "compression_ratio": 1.5707762557077625,
+      "no_speech_prob": 0.0305679589509964,
+      "words": [
+        {
+          "word": " For",
+          "start": 177.68,
+          "end": 177.9,
+          "probability": 0.9895256757736206
+        },
+        {
+          "word": " example,",
+          "start": 177.9,
+          "end": 178.22,
+          "probability": 0.9991822838783264
+        },
+        {
+          "word": " this",
+          "start": 178.78,
+          "end": 179.06,
+          "probability": 0.9964723587036133
+        },
+        {
+          "word": " means",
+          "start": 179.06,
+          "end": 179.38,
+          "probability": 0.9990440011024475
+        },
+        {
+          "word": " you",
+          "start": 179.38,
+          "end": 179.68,
+          "probability": 0.983183741569519
+        },
+        {
+          "word": " can",
+          "start": 179.68,
+          "end": 179.84,
+          "probability": 0.9976166486740112
+        },
+        {
+          "word": " look",
+          "start": 179.84,
+          "end": 180.08,
+          "probability": 0.9986572265625
+        },
+        {
+          "word": " at",
+          "start": 180.08,
+          "end": 180.34,
+          "probability": 0.9974920749664307
+        },
+        {
+          "word": " a",
+          "start": 180.34,
+          "end": 180.6,
+          "probability": 0.9874950051307678
+        },
+        {
+          "word": " house",
+          "start": 180.6,
+          "end": 180.84,
+          "probability": 0.998127281665802
+        },
+        {
+          "word": " that",
+          "start": 180.84,
+          "end": 181.14,
+          "probability": 0.99704509973526
+        },
+        {
+          "word": " is",
+          "start": 181.14,
+          "end": 181.3,
+          "probability": 0.9956159591674805
+        },
+        {
+          "word": " being",
+          "start": 181.3,
+          "end": 181.64,
+          "probability": 0.9941996335983276
+        },
+        {
+          "word": " built",
+          "start": 181.64,
+          "end": 182.14,
+          "probability": 0.9963561296463013
+        },
+        {
+          "word": " right",
+          "start": 182.14,
+          "end": 182.58,
+          "probability": 0.9401452541351318
+        },
+        {
+          "word": " now,",
+          "start": 182.58,
+          "end": 183.1,
+          "probability": 0.9987842440605164
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 16412,
+      "start": 183.5,
+      "end": 187.78,
+      "text": " but the glasses can show you what it will look like when it is finished.",
+      "tokens": [
+        51283,
+        475,
+        262,
+        15232,
+        460,
+        905,
+        345,
+        644,
+        340,
+        481,
+        804,
+        588,
+        618,
+        340,
+        318,
+        5201,
+        13,
+        51543
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2225084626272823,
+      "compression_ratio": 1.5707762557077625,
+      "no_speech_prob": 0.0305679589509964,
+      "words": [
+        {
+          "word": " but",
+          "start": 183.5,
+          "end": 183.72,
+          "probability": 0.9972680807113647
+        },
+        {
+          "word": " the",
+          "start": 183.72,
+          "end": 183.9,
+          "probability": 0.9977292418479919
+        },
+        {
+          "word": " glasses",
+          "start": 183.9,
+          "end": 184.44,
+          "probability": 0.9820964336395264
+        },
+        {
+          "word": " can",
+          "start": 184.44,
+          "end": 184.88,
+          "probability": 0.9958770275115967
+        },
+        {
+          "word": " show",
+          "start": 184.88,
+          "end": 185.16,
+          "probability": 0.9976668357849121
+        },
+        {
+          "word": " you",
+          "start": 185.16,
+          "end": 185.42,
+          "probability": 0.990382730960846
+        },
+        {
+          "word": " what",
+          "start": 185.42,
+          "end": 185.66,
+          "probability": 0.9990379810333252
+        },
+        {
+          "word": " it",
+          "start": 185.66,
+          "end": 185.86,
+          "probability": 0.9937096834182739
+        },
+        {
+          "word": " will",
+          "start": 185.86,
+          "end": 186.0,
+          "probability": 0.9936671853065491
+        },
+        {
+          "word": " look",
+          "start": 186.0,
+          "end": 186.24,
+          "probability": 0.9991405010223389
+        },
+        {
+          "word": " like",
+          "start": 186.24,
+          "end": 186.54,
+          "probability": 0.9991831183433533
+        },
+        {
+          "word": " when",
+          "start": 186.54,
+          "end": 187.04,
+          "probability": 0.9893976449966431
+        },
+        {
+          "word": " it",
+          "start": 187.04,
+          "end": 187.22,
+          "probability": 0.9975649118423462
+        },
+        {
+          "word": " is",
+          "start": 187.22,
+          "end": 187.38,
+          "probability": 0.9960883855819702
+        },
+        {
+          "word": " finished.",
+          "start": 187.38,
+          "end": 187.78,
+          "probability": 0.9991753697395325
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 16412,
+      "start": 188.86,
+      "end": 193.9,
+      "text": " It is a three-dimensional, or 3D, example of reality.",
+      "tokens": [
+        51543,
+        632,
+        318,
+        257,
+        1115,
+        12,
+        19577,
+        11,
+        393,
+        513,
+        35,
+        11,
+        1672,
+        286,
+        3950,
+        13,
+        51831
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2225084626272823,
+      "compression_ratio": 1.5707762557077625,
+      "no_speech_prob": 0.0305679589509964,
+      "words": [
+        {
+          "word": " It",
+          "start": 188.86,
+          "end": 189.06,
+          "probability": 0.9954000115394592
+        },
+        {
+          "word": " is",
+          "start": 189.06,
+          "end": 189.22,
+          "probability": 0.9974660873413086
+        },
+        {
+          "word": " a",
+          "start": 189.22,
+          "end": 189.4,
+          "probability": 0.9955558180809021
+        },
+        {
+          "word": " three",
+          "start": 189.4,
+          "end": 189.76,
+          "probability": 0.858970046043396
+        },
+        {
+          "word": "-dimensional,",
+          "start": 189.76,
+          "end": 190.3,
+          "probability": 0.9458496868610382
+        },
+        {
+          "word": " or",
+          "start": 190.7,
+          "end": 191.08,
+          "probability": 0.9983224272727966
+        },
+        {
+          "word": " 3D,",
+          "start": 191.08,
+          "end": 191.7,
+          "probability": 0.9406393766403198
+        },
+        {
+          "word": " example",
+          "start": 192.24,
+          "end": 192.58,
+          "probability": 0.9896402955055237
+        },
+        {
+          "word": " of",
+          "start": 192.58,
+          "end": 193.24,
+          "probability": 0.9930100440979004
+        },
+        {
+          "word": " reality.",
+          "start": 193.24,
+          "end": 193.9,
+          "probability": 0.9857860803604126
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 19390,
+      "start": 193.9,
+      "end": 196.36,
+      "text": " And it's quite amazing.",
+      "tokens": [
+        50387,
+        843,
+        340,
+        338,
+        2407,
+        4998,
+        13,
+        50503
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.344415283203125,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.023389339447021484,
+      "words": [
+        {
+          "word": " And",
+          "start": 193.9,
+          "end": 194.68,
+          "probability": 0.0615023635327816
+        },
+        {
+          "word": " it's",
+          "start": 194.68,
+          "end": 195.12,
+          "probability": 0.4175424538552761
+        },
+        {
+          "word": " quite",
+          "start": 195.12,
+          "end": 195.42,
+          "probability": 0.983043372631073
+        },
+        {
+          "word": " amazing.",
+          "start": 195.42,
+          "end": 196.36,
+          "probability": 0.9703956842422485
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 19390,
+      "start": 198.36,
+      "end": 200.3,
+      "text": " Using AR technology,",
+      "tokens": [
+        50571,
+        8554,
+        5923,
+        3037,
+        11,
+        50707
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.344415283203125,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.023389339447021484,
+      "words": [
+        {
+          "word": " Using",
+          "start": 198.36,
+          "end": 198.74,
+          "probability": 0.9812625050544739
+        },
+        {
+          "word": " AR",
+          "start": 198.74,
+          "end": 199.56,
+          "probability": 0.9562082886695862
+        },
+        {
+          "word": " technology,",
+          "start": 199.56,
+          "end": 200.3,
+          "probability": 0.9459456205368042
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "seek": 19390,
+      "start": 200.9,
+      "end": 207.0,
+      "text": " we can put the potential customers directly inside a building at the design stage.",
+      "tokens": [
+        50707,
+        356,
+        460,
+        1234,
+        262,
+        2785,
+        4297,
+        3264,
+        2641,
+        257,
+        2615,
+        379,
+        262,
+        1486,
+        3800,
+        13,
+        51027
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.344415283203125,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.023389339447021484,
+      "words": [
+        {
+          "word": " we",
+          "start": 200.9,
+          "end": 201.14,
+          "probability": 0.9232931733131409
+        },
+        {
+          "word": " can",
+          "start": 201.14,
+          "end": 201.4,
+          "probability": 0.995055079460144
+        },
+        {
+          "word": " put",
+          "start": 201.4,
+          "end": 201.66,
+          "probability": 0.9967365860939026
+        },
+        {
+          "word": " the",
+          "start": 201.66,
+          "end": 201.94,
+          "probability": 0.9640739560127258
+        },
+        {
+          "word": " potential",
+          "start": 201.94,
+          "end": 202.42,
+          "probability": 0.9984978437423706
+        },
+        {
+          "word": " customers",
+          "start": 202.42,
+          "end": 203.12,
+          "probability": 0.9902102947235107
+        },
+        {
+          "word": " directly",
+          "start": 203.12,
+          "end": 203.84,
+          "probability": 0.9725052714347839
+        },
+        {
+          "word": " inside",
+          "start": 203.84,
+          "end": 204.7,
+          "probability": 0.9887908697128296
+        },
+        {
+          "word": " a",
+          "start": 204.7,
+          "end": 205.0,
+          "probability": 0.9140089750289917
+        },
+        {
+          "word": " building",
+          "start": 205.0,
+          "end": 205.32,
+          "probability": 0.9967131614685059
+        },
+        {
+          "word": " at",
+          "start": 205.32,
+          "end": 205.84,
+          "probability": 0.9479749798774719
+        },
+        {
+          "word": " the",
+          "start": 205.84,
+          "end": 206.08,
+          "probability": 0.9949440360069275
+        },
+        {
+          "word": " design",
+          "start": 206.08,
+          "end": 206.44,
+          "probability": 0.988664448261261
+        },
+        {
+          "word": " stage.",
+          "start": 206.44,
+          "end": 207.0,
+          "probability": 0.9970000386238098
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "seek": 19390,
+      "start": 208.14,
+      "end": 210.58,
+      "text": " Furthermore, when working on site,",
+      "tokens": [
+        51065,
+        11399,
+        11,
+        618,
+        1762,
+        319,
+        2524,
+        11,
+        51223
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.344415283203125,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.023389339447021484,
+      "words": [
+        {
+          "word": " Furthermore,",
+          "start": 208.14,
+          "end": 208.44,
+          "probability": 0.9648803472518921
+        },
+        {
+          "word": " when",
+          "start": 209.14,
+          "end": 209.46,
+          "probability": 0.9904542565345764
+        },
+        {
+          "word": " working",
+          "start": 209.46,
+          "end": 209.9,
+          "probability": 0.9982670545578003
+        },
+        {
+          "word": " on",
+          "start": 209.9,
+          "end": 210.14,
+          "probability": 0.9961166381835938
+        },
+        {
+          "word": " site,",
+          "start": 210.14,
+          "end": 210.58,
+          "probability": 0.6674211621284485
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "seek": 19390,
+      "start": 211.38,
+      "end": 213.58,
+      "text": " engineers wearing smart glasses",
+      "tokens": [
+        51223,
+        12037,
+        5762,
+        4451,
+        15232,
+        51365
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.344415283203125,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.023389339447021484,
+      "words": [
+        {
+          "word": " engineers",
+          "start": 211.38,
+          "end": 211.7,
+          "probability": 0.9502949714660645
+        },
+        {
+          "word": " wearing",
+          "start": 211.7,
+          "end": 212.4,
+          "probability": 0.9906207323074341
+        },
+        {
+          "word": " smart",
+          "start": 212.4,
+          "end": 212.98,
+          "probability": 0.9312697649002075
+        },
+        {
+          "word": " glasses",
+          "start": 212.98,
+          "end": 213.58,
+          "probability": 0.9822401404380798
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "seek": 19390,
+      "start": 213.58,
+      "end": 218.1,
+      "text": " see where there are electrical wires hidden behind walls.",
+      "tokens": [
+        51365,
+        766,
+        810,
+        612,
+        389,
+        12278,
+        19474,
+        7104,
+        2157,
+        7714,
+        13,
+        51587
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.344415283203125,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.023389339447021484,
+      "words": [
+        {
+          "word": " see",
+          "start": 213.58,
+          "end": 214.44,
+          "probability": 0.7498573064804077
+        },
+        {
+          "word": " where",
+          "start": 214.44,
+          "end": 215.02,
+          "probability": 0.9873148202896118
+        },
+        {
+          "word": " there",
+          "start": 215.02,
+          "end": 215.24,
+          "probability": 0.9873868823051453
+        },
+        {
+          "word": " are",
+          "start": 215.24,
+          "end": 215.46,
+          "probability": 0.9958056211471558
+        },
+        {
+          "word": " electrical",
+          "start": 215.46,
+          "end": 215.92,
+          "probability": 0.9934640526771545
+        },
+        {
+          "word": " wires",
+          "start": 215.92,
+          "end": 216.54,
+          "probability": 0.9987471103668213
+        },
+        {
+          "word": " hidden",
+          "start": 216.54,
+          "end": 216.96,
+          "probability": 0.993343710899353
+        },
+        {
+          "word": " behind",
+          "start": 216.96,
+          "end": 217.5,
+          "probability": 0.9985854625701904
+        },
+        {
+          "word": " walls.",
+          "start": 217.5,
+          "end": 218.1,
+          "probability": 0.9839996695518494
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "seek": 21810,
+      "start": 219.01999999999998,
+      "end": 221.8,
+      "text": " The AR technology, in this example,",
+      "tokens": [
+        50409,
+        383,
+        5923,
+        3037,
+        11,
+        287,
+        428,
+        1672,
+        11,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22851275054501816,
+      "compression_ratio": 1.2848837209302326,
+      "no_speech_prob": 0.025500861927866936,
+      "words": [
+        {
+          "word": " The",
+          "start": 218.98000000000002,
+          "end": 219.36,
+          "probability": 0.5722870826721191
+        },
+        {
+          "word": " AR",
+          "start": 219.36,
+          "end": 219.82,
+          "probability": 0.910474419593811
+        },
+        {
+          "word": " technology,",
+          "start": 219.82,
+          "end": 220.48,
+          "probability": 0.9820886254310608
+        },
+        {
+          "word": " in",
+          "start": 220.76,
+          "end": 221.0,
+          "probability": 0.9940803647041321
+        },
+        {
+          "word": " this",
+          "start": 221.0,
+          "end": 221.26,
+          "probability": 0.9984402060508728
+        },
+        {
+          "word": " example,",
+          "start": 221.26,
+          "end": 221.8,
+          "probability": 0.9976131916046143
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "seek": 21810,
+      "start": 222.28,
+      "end": 225.62,
+      "text": " would act as a safety or alarm system.",
+      "tokens": [
+        50563,
+        561,
+        719,
+        355,
+        257,
+        3747,
+        393,
+        10436,
+        1080,
+        13,
+        50751
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22851275054501816,
+      "compression_ratio": 1.2848837209302326,
+      "no_speech_prob": 0.025500861927866936,
+      "words": [
+        {
+          "word": " would",
+          "start": 222.28,
+          "end": 222.42,
+          "probability": 0.9934919476509094
+        },
+        {
+          "word": " act",
+          "start": 222.42,
+          "end": 222.78,
+          "probability": 0.9934046864509583
+        },
+        {
+          "word": " as",
+          "start": 222.78,
+          "end": 223.1,
+          "probability": 0.9973002076148987
+        },
+        {
+          "word": " a",
+          "start": 223.1,
+          "end": 223.34,
+          "probability": 0.9830420017242432
+        },
+        {
+          "word": " safety",
+          "start": 223.34,
+          "end": 223.8,
+          "probability": 0.9652014374732971
+        },
+        {
+          "word": " or",
+          "start": 223.8,
+          "end": 224.5,
+          "probability": 0.6932731866836548
+        },
+        {
+          "word": " alarm",
+          "start": 224.5,
+          "end": 225.04,
+          "probability": 0.9824746251106262
+        },
+        {
+          "word": " system.",
+          "start": 225.04,
+          "end": 225.62,
+          "probability": 0.9970634579658508
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "seek": 21810,
+      "start": 228.38,
+      "end": 230.96,
+      "text": " Finally, I want to talk about robots.",
+      "tokens": [
+        50845,
+        9461,
+        11,
+        314,
+        765,
+        284,
+        1561,
+        546,
+        14193,
+        13,
+        51051
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22851275054501816,
+      "compression_ratio": 1.2848837209302326,
+      "no_speech_prob": 0.025500861927866936,
+      "words": [
+        {
+          "word": " Finally,",
+          "start": 228.38,
+          "end": 228.38,
+          "probability": 0.96430903673172
+        },
+        {
+          "word": " I",
+          "start": 229.04,
+          "end": 229.2,
+          "probability": 0.9932593703269958
+        },
+        {
+          "word": " want",
+          "start": 229.2,
+          "end": 229.48,
+          "probability": 0.9964399933815002
+        },
+        {
+          "word": " to",
+          "start": 229.48,
+          "end": 229.7,
+          "probability": 0.9982182383537292
+        },
+        {
+          "word": " talk",
+          "start": 229.7,
+          "end": 229.92,
+          "probability": 0.9988180994987488
+        },
+        {
+          "word": " about",
+          "start": 229.92,
+          "end": 230.42,
+          "probability": 0.9965837001800537
+        },
+        {
+          "word": " robots.",
+          "start": 230.42,
+          "end": 230.96,
+          "probability": 0.8439134955406189
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "seek": 21810,
+      "start": 232.06,
+      "end": 235.24,
+      "text": " For many of us, robots are a thing of films.",
+      "tokens": [
+        51051,
+        1114,
+        867,
+        286,
+        514,
+        11,
+        14193,
+        389,
+        257,
+        1517,
+        286,
+        7328,
+        13,
+        51251
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22851275054501816,
+      "compression_ratio": 1.2848837209302326,
+      "no_speech_prob": 0.025500861927866936,
+      "words": [
+        {
+          "word": " For",
+          "start": 232.06,
+          "end": 232.22,
+          "probability": 0.9893286824226379
+        },
+        {
+          "word": " many",
+          "start": 232.22,
+          "end": 232.54,
+          "probability": 0.9971132278442383
+        },
+        {
+          "word": " of",
+          "start": 232.54,
+          "end": 232.84,
+          "probability": 0.9981435537338257
+        },
+        {
+          "word": " us,",
+          "start": 232.84,
+          "end": 233.22,
+          "probability": 0.9991008043289185
+        },
+        {
+          "word": " robots",
+          "start": 233.5,
+          "end": 233.8,
+          "probability": 0.994132936000824
+        },
+        {
+          "word": " are",
+          "start": 233.8,
+          "end": 234.2,
+          "probability": 0.9985243678092957
+        },
+        {
+          "word": " a",
+          "start": 234.2,
+          "end": 234.36,
+          "probability": 0.9949766993522644
+        },
+        {
+          "word": " thing",
+          "start": 234.36,
+          "end": 234.52,
+          "probability": 0.9988049268722534
+        },
+        {
+          "word": " of",
+          "start": 234.52,
+          "end": 234.7,
+          "probability": 0.9985707998275757
+        },
+        {
+          "word": " films.",
+          "start": 234.7,
+          "end": 235.24,
+          "probability": 0.9656039476394653
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "seek": 21810,
+      "start": 236.06,
+      "end": 242.52,
+      "text": " Most of us have seen R2-D2 or C3PO in George Lucas's Star Wars.",
+      "tokens": [
+        51251,
+        4042,
+        286,
+        514,
+        423,
+        1775,
+        371,
+        17,
+        12,
+        35,
+        17,
+        393,
+        327,
+        18,
+        16402,
+        287,
+        4502,
+        15257,
+        338,
+        2907,
+        6176,
+        13,
+        51631
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22851275054501816,
+      "compression_ratio": 1.2848837209302326,
+      "no_speech_prob": 0.025500861927866936,
+      "words": [
+        {
+          "word": " Most",
+          "start": 236.06,
+          "end": 236.32,
+          "probability": 0.9881027340888977
+        },
+        {
+          "word": " of",
+          "start": 236.32,
+          "end": 236.56,
+          "probability": 0.9974890947341919
+        },
+        {
+          "word": " us",
+          "start": 236.56,
+          "end": 236.78,
+          "probability": 0.997511625289917
+        },
+        {
+          "word": " have",
+          "start": 236.78,
+          "end": 237.0,
+          "probability": 0.9966210126876831
+        },
+        {
+          "word": " seen",
+          "start": 237.0,
+          "end": 237.28,
+          "probability": 0.9952196478843689
+        },
+        {
+          "word": " R2",
+          "start": 237.28,
+          "end": 238.02,
+          "probability": 0.9661838710308075
+        },
+        {
+          "word": "-D2",
+          "start": 238.02,
+          "end": 238.6,
+          "probability": 0.8413501381874084
+        },
+        {
+          "word": " or",
+          "start": 238.6,
+          "end": 239.14,
+          "probability": 0.8530667424201965
+        },
+        {
+          "word": " C3PO",
+          "start": 239.14,
+          "end": 240.14,
+          "probability": 0.7247704764207205
+        },
+        {
+          "word": " in",
+          "start": 240.14,
+          "end": 240.64,
+          "probability": 0.9879118204116821
+        },
+        {
+          "word": " George",
+          "start": 240.64,
+          "end": 240.94,
+          "probability": 0.9807984232902527
+        },
+        {
+          "word": " Lucas's",
+          "start": 240.94,
+          "end": 241.74,
+          "probability": 0.7439269572496414
+        },
+        {
+          "word": " Star",
+          "start": 241.74,
+          "end": 242.12,
+          "probability": 0.7555131912231445
+        },
+        {
+          "word": " Wars.",
+          "start": 242.12,
+          "end": 242.52,
+          "probability": 0.9980029463768005
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "seek": 24252,
+      "start": 243.52,
+      "end": 248.14,
+      "text": " These lovable robots, with different personalities and behaviours,",
+      "tokens": [
+        50413,
+        2312,
+        300,
+        21985,
+        14193,
+        11,
+        351,
+        1180,
+        20929,
+        290,
+        38975,
+        11,
+        50659
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21221845922335772,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.09451635181903839,
+      "words": [
+        {
+          "word": " These",
+          "start": 243.5,
+          "end": 243.92,
+          "probability": 0.7286168336868286
+        },
+        {
+          "word": " lovable",
+          "start": 243.92,
+          "end": 244.46,
+          "probability": 0.8623219430446625
+        },
+        {
+          "word": " robots,",
+          "start": 244.46,
+          "end": 245.08,
+          "probability": 0.9782282114028931
+        },
+        {
+          "word": " with",
+          "start": 245.58,
+          "end": 245.66,
+          "probability": 0.9956945180892944
+        },
+        {
+          "word": " different",
+          "start": 245.66,
+          "end": 246.2,
+          "probability": 0.9964483976364136
+        },
+        {
+          "word": " personalities",
+          "start": 246.2,
+          "end": 246.84,
+          "probability": 0.9950171113014221
+        },
+        {
+          "word": " and",
+          "start": 246.84,
+          "end": 247.54,
+          "probability": 0.9922681450843811
+        },
+        {
+          "word": " behaviours,",
+          "start": 247.54,
+          "end": 248.14,
+          "probability": 0.8854644894599915
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "seek": 24252,
+      "start": 248.48,
+      "end": 252.8,
+      "text": " were, and still are, popular with cinema fans today.",
+      "tokens": [
+        50659,
+        547,
+        11,
+        290,
+        991,
+        389,
+        11,
+        2968,
+        351,
+        22041,
+        3296,
+        1909,
+        13,
+        50889
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21221845922335772,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.09451635181903839,
+      "words": [
+        {
+          "word": " were,",
+          "start": 248.48,
+          "end": 248.94,
+          "probability": 0.9926521182060242
+        },
+        {
+          "word": " and",
+          "start": 249.08,
+          "end": 249.5,
+          "probability": 0.9916509985923767
+        },
+        {
+          "word": " still",
+          "start": 249.5,
+          "end": 249.78,
+          "probability": 0.9887475967407227
+        },
+        {
+          "word": " are,",
+          "start": 249.78,
+          "end": 250.22,
+          "probability": 0.9965221881866455
+        },
+        {
+          "word": " popular",
+          "start": 250.46,
+          "end": 250.92,
+          "probability": 0.9989442229270935
+        },
+        {
+          "word": " with",
+          "start": 250.92,
+          "end": 251.34,
+          "probability": 0.9974629878997803
+        },
+        {
+          "word": " cinema",
+          "start": 251.34,
+          "end": 251.7,
+          "probability": 0.986011266708374
+        },
+        {
+          "word": " fans",
+          "start": 251.7,
+          "end": 252.16,
+          "probability": 0.9976364374160767
+        },
+        {
+          "word": " today.",
+          "start": 252.16,
+          "end": 252.8,
+          "probability": 0.9911729693412781
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "seek": 24252,
+      "start": 254.22,
+      "end": 258.34,
+      "text": " Robots are already in use today within the construction industry,",
+      "tokens": [
+        50935,
+        39096,
+        389,
+        1541,
+        287,
+        779,
+        1909,
+        1626,
+        262,
+        5103,
+        2831,
+        11,
+        51171
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21221845922335772,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.09451635181903839,
+      "words": [
+        {
+          "word": " Robots",
+          "start": 254.22,
+          "end": 254.48,
+          "probability": 0.984744131565094
+        },
+        {
+          "word": " are",
+          "start": 254.48,
+          "end": 254.94,
+          "probability": 0.9979919195175171
+        },
+        {
+          "word": " already",
+          "start": 254.94,
+          "end": 255.48,
+          "probability": 0.9979780316352844
+        },
+        {
+          "word": " in",
+          "start": 255.48,
+          "end": 255.82,
+          "probability": 0.9973973035812378
+        },
+        {
+          "word": " use",
+          "start": 255.82,
+          "end": 256.1,
+          "probability": 0.9973244667053223
+        },
+        {
+          "word": " today",
+          "start": 256.1,
+          "end": 256.48,
+          "probability": 0.989490807056427
+        },
+        {
+          "word": " within",
+          "start": 256.48,
+          "end": 257.0,
+          "probability": 0.9483346343040466
+        },
+        {
+          "word": " the",
+          "start": 257.0,
+          "end": 257.26,
+          "probability": 0.9985547661781311
+        },
+        {
+          "word": " construction",
+          "start": 257.26,
+          "end": 257.68,
+          "probability": 0.987883985042572
+        },
+        {
+          "word": " industry,",
+          "start": 257.68,
+          "end": 258.34,
+          "probability": 0.9988275170326233
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "seek": 24252,
+      "start": 258.7,
+      "end": 260.88,
+      "text": " in a range of shapes and sizes.",
+      "tokens": [
+        51171,
+        287,
+        257,
+        2837,
+        286,
+        15268,
+        290,
+        10620,
+        13,
+        51333
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21221845922335772,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.09451635181903839,
+      "words": [
+        {
+          "word": " in",
+          "start": 258.7,
+          "end": 258.92,
+          "probability": 0.9950725436210632
+        },
+        {
+          "word": " a",
+          "start": 258.92,
+          "end": 259.08,
+          "probability": 0.9982295632362366
+        },
+        {
+          "word": " range",
+          "start": 259.08,
+          "end": 259.34,
+          "probability": 0.9992527365684509
+        },
+        {
+          "word": " of",
+          "start": 259.34,
+          "end": 259.6,
+          "probability": 0.9986497759819031
+        },
+        {
+          "word": " shapes",
+          "start": 259.6,
+          "end": 259.92,
+          "probability": 0.9991329312324524
+        },
+        {
+          "word": " and",
+          "start": 259.92,
+          "end": 260.36,
+          "probability": 0.9971396923065186
+        },
+        {
+          "word": " sizes.",
+          "start": 260.36,
+          "end": 260.88,
+          "probability": 0.9994174242019653
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "seek": 24252,
+      "start": 262.02,
+      "end": 267.94,
+      "text": " They can lay bricks, move materials, and 3D print, among other things.",
+      "tokens": [
+        51333,
+        1119,
+        460,
+        3830,
+        28902,
+        11,
+        1445,
+        5696,
+        11,
+        290,
+        513,
+        35,
+        3601,
+        11,
+        1871,
+        584,
+        1243,
+        13,
+        51683
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21221845922335772,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.09451635181903839,
+      "words": [
+        {
+          "word": " They",
+          "start": 262.02,
+          "end": 262.18,
+          "probability": 0.9923475980758667
+        },
+        {
+          "word": " can",
+          "start": 262.18,
+          "end": 262.36,
+          "probability": 0.9984003901481628
+        },
+        {
+          "word": " lay",
+          "start": 262.36,
+          "end": 262.64,
+          "probability": 0.9985210299491882
+        },
+        {
+          "word": " bricks,",
+          "start": 262.64,
+          "end": 263.1,
+          "probability": 0.9979296922683716
+        },
+        {
+          "word": " move",
+          "start": 263.72,
+          "end": 263.94,
+          "probability": 0.9958279728889465
+        },
+        {
+          "word": " materials,",
+          "start": 263.94,
+          "end": 264.52,
+          "probability": 0.9951465725898743
+        },
+        {
+          "word": " and",
+          "start": 265.2,
+          "end": 265.54,
+          "probability": 0.9912346601486206
+        },
+        {
+          "word": " 3D",
+          "start": 265.54,
+          "end": 266.3,
+          "probability": 0.9460237920284271
+        },
+        {
+          "word": " print,",
+          "start": 266.3,
+          "end": 266.78,
+          "probability": 0.9391531348228455
+        },
+        {
+          "word": " among",
+          "start": 267.04,
+          "end": 267.2,
+          "probability": 0.9968417882919312
+        },
+        {
+          "word": " other",
+          "start": 267.2,
+          "end": 267.52,
+          "probability": 0.9976431727409363
+        },
+        {
+          "word": " things.",
+          "start": 267.52,
+          "end": 267.94,
+          "probability": 0.9986438155174255
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "seek": 26794,
+      "start": 268.94,
+      "end": 273.46,
+      "text": " However, the way of the future is Swarm Robotics,",
+      "tokens": [
+        50413,
+        2102,
+        11,
+        262,
+        835,
+        286,
+        262,
+        2003,
+        318,
+        38293,
+        47061,
+        11,
+        50679
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17177015775209897,
+      "compression_ratio": 1.5204081632653061,
+      "no_speech_prob": 0.043103523552417755,
+      "words": [
+        {
+          "word": " However,",
+          "start": 268.92,
+          "end": 269.32,
+          "probability": 0.5235944390296936
+        },
+        {
+          "word": " the",
+          "start": 269.96,
+          "end": 270.12,
+          "probability": 0.9914925694465637
+        },
+        {
+          "word": " way",
+          "start": 270.12,
+          "end": 270.42,
+          "probability": 0.9640472531318665
+        },
+        {
+          "word": " of",
+          "start": 270.42,
+          "end": 270.74,
+          "probability": 0.9966386556625366
+        },
+        {
+          "word": " the",
+          "start": 270.74,
+          "end": 270.9,
+          "probability": 0.9958659410476685
+        },
+        {
+          "word": " future",
+          "start": 270.9,
+          "end": 271.32,
+          "probability": 0.9980480670928955
+        },
+        {
+          "word": " is",
+          "start": 271.32,
+          "end": 271.94,
+          "probability": 0.9954388737678528
+        },
+        {
+          "word": " Swarm",
+          "start": 271.94,
+          "end": 272.66,
+          "probability": 0.33878272771835327
+        },
+        {
+          "word": " Robotics,",
+          "start": 272.66,
+          "end": 273.46,
+          "probability": 0.894109308719635
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "seek": 26794,
+      "start": 274.2,
+      "end": 279.16,
+      "text": " a new experimental technology that is developing very fast.",
+      "tokens": [
+        50679,
+        257,
+        649,
+        11992,
+        3037,
+        326,
+        318,
+        5922,
+        845,
+        3049,
+        13,
+        50933
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17177015775209897,
+      "compression_ratio": 1.5204081632653061,
+      "no_speech_prob": 0.043103523552417755,
+      "words": [
+        {
+          "word": " a",
+          "start": 274.2,
+          "end": 274.5,
+          "probability": 0.9819164872169495
+        },
+        {
+          "word": " new",
+          "start": 274.5,
+          "end": 274.88,
+          "probability": 0.9971556663513184
+        },
+        {
+          "word": " experimental",
+          "start": 274.88,
+          "end": 275.8,
+          "probability": 0.9372140169143677
+        },
+        {
+          "word": " technology",
+          "start": 275.8,
+          "end": 276.6,
+          "probability": 0.9973375201225281
+        },
+        {
+          "word": " that",
+          "start": 276.6,
+          "end": 277.1,
+          "probability": 0.9867492318153381
+        },
+        {
+          "word": " is",
+          "start": 277.1,
+          "end": 277.26,
+          "probability": 0.9966369867324829
+        },
+        {
+          "word": " developing",
+          "start": 277.26,
+          "end": 277.84,
+          "probability": 0.9976582527160645
+        },
+        {
+          "word": " very",
+          "start": 277.84,
+          "end": 278.46,
+          "probability": 0.9914114475250244
+        },
+        {
+          "word": " fast.",
+          "start": 278.46,
+          "end": 279.16,
+          "probability": 0.9979032278060913
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "seek": 26794,
+      "start": 280.56,
+      "end": 282.18,
+      "text": " What is Swarm Robotics?",
+      "tokens": [
+        50983,
+        1867,
+        318,
+        38293,
+        47061,
+        30,
+        51123
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17177015775209897,
+      "compression_ratio": 1.5204081632653061,
+      "no_speech_prob": 0.043103523552417755,
+      "words": [
+        {
+          "word": " What",
+          "start": 280.56,
+          "end": 280.62,
+          "probability": 0.8817424774169922
+        },
+        {
+          "word": " is",
+          "start": 280.62,
+          "end": 281.0,
+          "probability": 0.9971906542778015
+        },
+        {
+          "word": " Swarm",
+          "start": 281.0,
+          "end": 281.58,
+          "probability": 0.862798810005188
+        },
+        {
+          "word": " Robotics?",
+          "start": 281.58,
+          "end": 282.18,
+          "probability": 0.9911647439002991
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "seek": 26794,
+      "start": 283.4,
+      "end": 287.42,
+      "text": " Simply put, Swarm Robotics is a multi-robot system",
+      "tokens": [
+        51123,
+        17973,
+        1234,
+        11,
+        38293,
+        47061,
+        318,
+        257,
+        5021,
+        12,
+        305,
+        13645,
+        1080,
+        51349
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17177015775209897,
+      "compression_ratio": 1.5204081632653061,
+      "no_speech_prob": 0.043103523552417755,
+      "words": [
+        {
+          "word": " Simply",
+          "start": 283.4,
+          "end": 283.54,
+          "probability": 0.9714061617851257
+        },
+        {
+          "word": " put,",
+          "start": 283.54,
+          "end": 283.98,
+          "probability": 0.9968612194061279
+        },
+        {
+          "word": " Swarm",
+          "start": 284.68,
+          "end": 284.84,
+          "probability": 0.9552791118621826
+        },
+        {
+          "word": " Robotics",
+          "start": 284.84,
+          "end": 285.42,
+          "probability": 0.9910783171653748
+        },
+        {
+          "word": " is",
+          "start": 285.42,
+          "end": 285.86,
+          "probability": 0.9934866428375244
+        },
+        {
+          "word": " a",
+          "start": 285.86,
+          "end": 286.12,
+          "probability": 0.9950119256973267
+        },
+        {
+          "word": " multi",
+          "start": 286.12,
+          "end": 286.48,
+          "probability": 0.9662737250328064
+        },
+        {
+          "word": "-robot",
+          "start": 286.48,
+          "end": 286.92,
+          "probability": 0.9523240526517233
+        },
+        {
+          "word": " system",
+          "start": 286.92,
+          "end": 287.42,
+          "probability": 0.995664656162262
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "seek": 26794,
+      "start": 287.42,
+      "end": 292.2,
+      "text": " which consists of a large number of simple, individual robots.",
+      "tokens": [
+        51349,
+        543,
+        10874,
+        286,
+        257,
+        1588,
+        1271,
+        286,
+        2829,
+        11,
+        1981,
+        14193,
+        13,
+        51617
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17177015775209897,
+      "compression_ratio": 1.5204081632653061,
+      "no_speech_prob": 0.043103523552417755,
+      "words": [
+        {
+          "word": " which",
+          "start": 287.42,
+          "end": 287.92,
+          "probability": 0.8361453413963318
+        },
+        {
+          "word": " consists",
+          "start": 287.92,
+          "end": 288.38,
+          "probability": 0.9944663643836975
+        },
+        {
+          "word": " of",
+          "start": 288.38,
+          "end": 288.8,
+          "probability": 0.9962195754051208
+        },
+        {
+          "word": " a",
+          "start": 288.8,
+          "end": 288.98,
+          "probability": 0.9938016533851624
+        },
+        {
+          "word": " large",
+          "start": 288.98,
+          "end": 289.32,
+          "probability": 0.998252809047699
+        },
+        {
+          "word": " number",
+          "start": 289.32,
+          "end": 289.66,
+          "probability": 0.9985421895980835
+        },
+        {
+          "word": " of",
+          "start": 289.66,
+          "end": 290.06,
+          "probability": 0.998504638671875
+        },
+        {
+          "word": " simple,",
+          "start": 290.06,
+          "end": 290.68,
+          "probability": 0.9928887486457825
+        },
+        {
+          "word": " individual",
+          "start": 290.96,
+          "end": 291.62,
+          "probability": 0.9984140396118164
+        },
+        {
+          "word": " robots.",
+          "start": 291.62,
+          "end": 292.2,
+          "probability": 0.9877585768699646
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "seek": 26794,
+      "start": 293.06,
+      "end": 296.46,
+      "text": " Think of it like a family of bees, called a swarm,",
+      "tokens": [
+        51617,
+        11382,
+        286,
+        340,
+        588,
+        257,
+        1641,
+        286,
+        17002,
+        11,
+        1444,
+        257,
+        30077,
+        11,
+        51809
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17177015775209897,
+      "compression_ratio": 1.5204081632653061,
+      "no_speech_prob": 0.043103523552417755,
+      "words": [
+        {
+          "word": " Think",
+          "start": 293.06,
+          "end": 293.4,
+          "probability": 0.9948142766952515
+        },
+        {
+          "word": " of",
+          "start": 293.4,
+          "end": 293.6,
+          "probability": 0.997621476650238
+        },
+        {
+          "word": " it",
+          "start": 293.6,
+          "end": 293.76,
+          "probability": 0.996566891670227
+        },
+        {
+          "word": " like",
+          "start": 293.76,
+          "end": 294.04,
+          "probability": 0.9839354753494263
+        },
+        {
+          "word": " a",
+          "start": 294.04,
+          "end": 294.24,
+          "probability": 0.9961767196655273
+        },
+        {
+          "word": " family",
+          "start": 294.24,
+          "end": 294.54,
+          "probability": 0.9981687068939209
+        },
+        {
+          "word": " of",
+          "start": 294.54,
+          "end": 294.86,
+          "probability": 0.9993023872375488
+        },
+        {
+          "word": " bees,",
+          "start": 294.86,
+          "end": 295.22,
+          "probability": 0.9885780811309814
+        },
+        {
+          "word": " called",
+          "start": 295.58,
+          "end": 295.88,
+          "probability": 0.9966752529144287
+        },
+        {
+          "word": " a",
+          "start": 295.88,
+          "end": 296.08,
+          "probability": 0.9953356385231018
+        },
+        {
+          "word": " swarm,",
+          "start": 296.08,
+          "end": 296.46,
+          "probability": 0.9379866719245911
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "seek": 29646,
+      "start": 296.46,
+      "end": 300.98,
+      "text": " that work individually, but for the benefit of the whole family.",
+      "tokens": [
+        50369,
+        326,
+        670,
+        17033,
+        11,
+        475,
+        329,
+        262,
+        4414,
+        286,
+        262,
+        2187,
+        1641,
+        13,
+        50605
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26579426036161535,
+      "compression_ratio": 1.5739130434782609,
+      "no_speech_prob": 0.011797886341810226,
+      "words": [
+        {
+          "word": " that",
+          "start": 296.46,
+          "end": 297.12,
+          "probability": 0.4950428009033203
+        },
+        {
+          "word": " work",
+          "start": 297.12,
+          "end": 297.46,
+          "probability": 0.9827684760093689
+        },
+        {
+          "word": " individually,",
+          "start": 297.46,
+          "end": 298.12,
+          "probability": 0.9958418011665344
+        },
+        {
+          "word": " but",
+          "start": 298.52,
+          "end": 298.82,
+          "probability": 0.993626594543457
+        },
+        {
+          "word": " for",
+          "start": 298.82,
+          "end": 299.06,
+          "probability": 0.992438018321991
+        },
+        {
+          "word": " the",
+          "start": 299.06,
+          "end": 299.24,
+          "probability": 0.996615469455719
+        },
+        {
+          "word": " benefit",
+          "start": 299.24,
+          "end": 299.64,
+          "probability": 0.9903096556663513
+        },
+        {
+          "word": " of",
+          "start": 299.64,
+          "end": 300.0,
+          "probability": 0.9968963861465454
+        },
+        {
+          "word": " the",
+          "start": 300.0,
+          "end": 300.14,
+          "probability": 0.9964445233345032
+        },
+        {
+          "word": " whole",
+          "start": 300.14,
+          "end": 300.44,
+          "probability": 0.9986680746078491
+        },
+        {
+          "word": " family.",
+          "start": 300.44,
+          "end": 300.98,
+          "probability": 0.9973558187484741
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "seek": 29646,
+      "start": 302.48,
+      "end": 304.6,
+      "text": " One of the advantages of Swarm Robotics",
+      "tokens": [
+        50605,
+        1881,
+        286,
+        262,
+        13391,
+        286,
+        38293,
+        47061,
+        50781
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26579426036161535,
+      "compression_ratio": 1.5739130434782609,
+      "no_speech_prob": 0.011797886341810226,
+      "words": [
+        {
+          "word": " One",
+          "start": 302.48,
+          "end": 302.58,
+          "probability": 0.98988276720047
+        },
+        {
+          "word": " of",
+          "start": 302.58,
+          "end": 302.72,
+          "probability": 0.9979807734489441
+        },
+        {
+          "word": " the",
+          "start": 302.72,
+          "end": 302.88,
+          "probability": 0.9991913437843323
+        },
+        {
+          "word": " advantages",
+          "start": 302.88,
+          "end": 303.44,
+          "probability": 0.9963260293006897
+        },
+        {
+          "word": " of",
+          "start": 303.44,
+          "end": 304.0,
+          "probability": 0.9979349374771118
+        },
+        {
+          "word": " Swarm",
+          "start": 304.0,
+          "end": 304.16,
+          "probability": 0.5149368643760681
+        },
+        {
+          "word": " Robotics",
+          "start": 304.16,
+          "end": 304.6,
+          "probability": 0.9565985798835754
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "seek": 29646,
+      "start": 304.6,
+      "end": 308.86,
+      "text": " is that it can be designed to work on large-scale projects,",
+      "tokens": [
+        50781,
+        318,
+        326,
+        340,
+        460,
+        307,
+        3562,
+        284,
+        670,
+        319,
+        1588,
+        12,
+        9888,
+        4493,
+        11,
+        50995
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26579426036161535,
+      "compression_ratio": 1.5739130434782609,
+      "no_speech_prob": 0.011797886341810226,
+      "words": [
+        {
+          "word": " is",
+          "start": 304.6,
+          "end": 305.32,
+          "probability": 0.9416536092758179
+        },
+        {
+          "word": " that",
+          "start": 305.32,
+          "end": 305.54,
+          "probability": 0.9962659478187561
+        },
+        {
+          "word": " it",
+          "start": 305.54,
+          "end": 305.68,
+          "probability": 0.9837849140167236
+        },
+        {
+          "word": " can",
+          "start": 305.68,
+          "end": 305.86,
+          "probability": 0.9982445240020752
+        },
+        {
+          "word": " be",
+          "start": 305.86,
+          "end": 306.02,
+          "probability": 0.997053861618042
+        },
+        {
+          "word": " designed",
+          "start": 306.02,
+          "end": 306.48,
+          "probability": 0.9983755350112915
+        },
+        {
+          "word": " to",
+          "start": 306.48,
+          "end": 306.84,
+          "probability": 0.998856782913208
+        },
+        {
+          "word": " work",
+          "start": 306.84,
+          "end": 307.14,
+          "probability": 0.9991692304611206
+        },
+        {
+          "word": " on",
+          "start": 307.14,
+          "end": 307.44,
+          "probability": 0.9964715242385864
+        },
+        {
+          "word": " large",
+          "start": 307.44,
+          "end": 307.84,
+          "probability": 0.9865437150001526
+        },
+        {
+          "word": "-scale",
+          "start": 307.84,
+          "end": 308.22,
+          "probability": 0.7892936766147614
+        },
+        {
+          "word": " projects,",
+          "start": 308.22,
+          "end": 308.86,
+          "probability": 0.9978493452072144
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "seek": 29646,
+      "start": 309.4,
+      "end": 314.34,
+      "text": " and they are a self-organising network, making them extremely efficient.",
+      "tokens": [
+        50995,
+        290,
+        484,
+        389,
+        257,
+        2116,
+        12,
+        9971,
+        1710,
+        3127,
+        11,
+        1642,
+        606,
+        4457,
+        6942,
+        13,
+        51273
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26579426036161535,
+      "compression_ratio": 1.5739130434782609,
+      "no_speech_prob": 0.011797886341810226,
+      "words": [
+        {
+          "word": " and",
+          "start": 309.4,
+          "end": 309.56,
+          "probability": 0.9953752756118774
+        },
+        {
+          "word": " they",
+          "start": 309.56,
+          "end": 309.72,
+          "probability": 0.9933854937553406
+        },
+        {
+          "word": " are",
+          "start": 309.72,
+          "end": 309.92,
+          "probability": 0.9965218305587769
+        },
+        {
+          "word": " a",
+          "start": 309.92,
+          "end": 310.12,
+          "probability": 0.99405437707901
+        },
+        {
+          "word": " self",
+          "start": 310.12,
+          "end": 310.42,
+          "probability": 0.9978784322738647
+        },
+        {
+          "word": "-organising",
+          "start": 310.42,
+          "end": 311.14,
+          "probability": 0.9085020820299784
+        },
+        {
+          "word": " network,",
+          "start": 311.14,
+          "end": 311.74,
+          "probability": 0.9972782731056213
+        },
+        {
+          "word": " making",
+          "start": 312.16,
+          "end": 312.36,
+          "probability": 0.9978894591331482
+        },
+        {
+          "word": " them",
+          "start": 312.36,
+          "end": 312.7,
+          "probability": 0.9990413784980774
+        },
+        {
+          "word": " extremely",
+          "start": 312.7,
+          "end": 313.46,
+          "probability": 0.9972436428070068
+        },
+        {
+          "word": " efficient.",
+          "start": 313.46,
+          "end": 314.34,
+          "probability": 0.9968456625938416
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "seek": 29646,
+      "start": 315.9,
+      "end": 320.0,
+      "text": " Several companies have started working on the next stage of robots",
+      "tokens": [
+        51273,
+        12168,
+        2706,
+        423,
+        2067,
+        1762,
+        319,
+        262,
+        1306,
+        3800,
+        286,
+        14193,
+        51543
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26579426036161535,
+      "compression_ratio": 1.5739130434782609,
+      "no_speech_prob": 0.011797886341810226,
+      "words": [
+        {
+          "word": " Several",
+          "start": 315.9,
+          "end": 316.38,
+          "probability": 0.9906358122825623
+        },
+        {
+          "word": " companies",
+          "start": 316.38,
+          "end": 316.94,
+          "probability": 0.9988479614257812
+        },
+        {
+          "word": " have",
+          "start": 316.94,
+          "end": 317.22,
+          "probability": 0.997527539730072
+        },
+        {
+          "word": " started",
+          "start": 317.22,
+          "end": 317.62,
+          "probability": 0.9977705478668213
+        },
+        {
+          "word": " working",
+          "start": 317.62,
+          "end": 318.06,
+          "probability": 0.9982239603996277
+        },
+        {
+          "word": " on",
+          "start": 318.06,
+          "end": 318.36,
+          "probability": 0.9982115030288696
+        },
+        {
+          "word": " the",
+          "start": 318.36,
+          "end": 318.5,
+          "probability": 0.8972485065460205
+        },
+        {
+          "word": " next",
+          "start": 318.5,
+          "end": 318.86,
+          "probability": 0.9966075420379639
+        },
+        {
+          "word": " stage",
+          "start": 318.86,
+          "end": 319.38,
+          "probability": 0.997134804725647
+        },
+        {
+          "word": " of",
+          "start": 319.38,
+          "end": 319.62,
+          "probability": 0.9982962012290955
+        },
+        {
+          "word": " robots",
+          "start": 319.62,
+          "end": 320.0,
+          "probability": 0.9418246746063232
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "seek": 29646,
+      "start": 320.0,
+      "end": 323.76,
+      "text": " and robot networks, which is the development of mobility,",
+      "tokens": [
+        51543,
+        290,
+        9379,
+        7686,
+        11,
+        543,
+        318,
+        262,
+        2478,
+        286,
+        15873,
+        11,
+        51747
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26579426036161535,
+      "compression_ratio": 1.5739130434782609,
+      "no_speech_prob": 0.011797886341810226,
+      "words": [
+        {
+          "word": " and",
+          "start": 320.0,
+          "end": 320.52,
+          "probability": 0.92659592628479
+        },
+        {
+          "word": " robot",
+          "start": 320.52,
+          "end": 320.94,
+          "probability": 0.9813010692596436
+        },
+        {
+          "word": " networks,",
+          "start": 320.94,
+          "end": 321.48,
+          "probability": 0.9904217720031738
+        },
+        {
+          "word": " which",
+          "start": 321.82,
+          "end": 322.04,
+          "probability": 0.9971320629119873
+        },
+        {
+          "word": " is",
+          "start": 322.04,
+          "end": 322.26,
+          "probability": 0.9991058707237244
+        },
+        {
+          "word": " the",
+          "start": 322.26,
+          "end": 322.44,
+          "probability": 0.9963937401771545
+        },
+        {
+          "word": " development",
+          "start": 322.44,
+          "end": 322.88,
+          "probability": 0.9962150454521179
+        },
+        {
+          "word": " of",
+          "start": 322.88,
+          "end": 323.34,
+          "probability": 0.9993000030517578
+        },
+        {
+          "word": " mobility,",
+          "start": 323.34,
+          "end": 323.76,
+          "probability": 0.9699567556381226
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "seek": 32376,
+      "start": 324.4,
+      "end": 327.64,
+      "text": " the ability to move from one place to another.",
+      "tokens": [
+        50395,
+        262,
+        2694,
+        284,
+        1445,
+        422,
+        530,
+        1295,
+        284,
+        1194,
+        13,
+        50611
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18563675094436813,
+      "compression_ratio": 1.5350877192982457,
+      "no_speech_prob": 0.027897579595446587,
+      "words": [
+        {
+          "word": " the",
+          "start": 324.4,
+          "end": 324.74,
+          "probability": 0.133035808801651
+        },
+        {
+          "word": " ability",
+          "start": 324.74,
+          "end": 325.06,
+          "probability": 0.9414750933647156
+        },
+        {
+          "word": " to",
+          "start": 325.06,
+          "end": 325.54,
+          "probability": 0.9939206838607788
+        },
+        {
+          "word": " move",
+          "start": 325.54,
+          "end": 325.88,
+          "probability": 0.9927292466163635
+        },
+        {
+          "word": " from",
+          "start": 325.88,
+          "end": 326.3,
+          "probability": 0.9944154024124146
+        },
+        {
+          "word": " one",
+          "start": 326.3,
+          "end": 326.56,
+          "probability": 0.9912296533584595
+        },
+        {
+          "word": " place",
+          "start": 326.56,
+          "end": 326.86,
+          "probability": 0.9984209537506104
+        },
+        {
+          "word": " to",
+          "start": 326.86,
+          "end": 327.28,
+          "probability": 0.9913442134857178
+        },
+        {
+          "word": " another.",
+          "start": 327.28,
+          "end": 327.64,
+          "probability": 0.9867606163024902
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "seek": 32376,
+      "start": 328.94,
+      "end": 334.32,
+      "text": " This is positive news for architecture, design and construction industries,",
+      "tokens": [
+        50611,
+        770,
+        318,
+        3967,
+        1705,
+        329,
+        10959,
+        11,
+        1486,
+        290,
+        5103,
+        11798,
+        11,
+        50905
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18563675094436813,
+      "compression_ratio": 1.5350877192982457,
+      "no_speech_prob": 0.027897579595446587,
+      "words": [
+        {
+          "word": " This",
+          "start": 328.94,
+          "end": 329.16,
+          "probability": 0.9861228466033936
+        },
+        {
+          "word": " is",
+          "start": 329.16,
+          "end": 329.48,
+          "probability": 0.9984838366508484
+        },
+        {
+          "word": " positive",
+          "start": 329.48,
+          "end": 329.94,
+          "probability": 0.9814772009849548
+        },
+        {
+          "word": " news",
+          "start": 329.94,
+          "end": 330.52,
+          "probability": 0.9960231781005859
+        },
+        {
+          "word": " for",
+          "start": 330.52,
+          "end": 330.86,
+          "probability": 0.9957849383354187
+        },
+        {
+          "word": " architecture,",
+          "start": 330.86,
+          "end": 331.5,
+          "probability": 0.905389130115509
+        },
+        {
+          "word": " design",
+          "start": 332.1,
+          "end": 332.5,
+          "probability": 0.9983140230178833
+        },
+        {
+          "word": " and",
+          "start": 332.5,
+          "end": 333.16,
+          "probability": 0.7549725770950317
+        },
+        {
+          "word": " construction",
+          "start": 333.16,
+          "end": 333.74,
+          "probability": 0.9936968684196472
+        },
+        {
+          "word": " industries,",
+          "start": 333.74,
+          "end": 334.32,
+          "probability": 0.9932811260223389
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "seek": 32376,
+      "start": 334.76,
+      "end": 337.84,
+      "text": " as the ability to use robots on rough ground,",
+      "tokens": [
+        50905,
+        355,
+        262,
+        2694,
+        284,
+        779,
+        14193,
+        319,
+        5210,
+        2323,
+        11,
+        51075
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18563675094436813,
+      "compression_ratio": 1.5350877192982457,
+      "no_speech_prob": 0.027897579595446587,
+      "words": [
+        {
+          "word": " as",
+          "start": 334.76,
+          "end": 335.0,
+          "probability": 0.9923391342163086
+        },
+        {
+          "word": " the",
+          "start": 335.0,
+          "end": 335.18,
+          "probability": 0.9971436858177185
+        },
+        {
+          "word": " ability",
+          "start": 335.18,
+          "end": 335.52,
+          "probability": 0.9975179433822632
+        },
+        {
+          "word": " to",
+          "start": 335.52,
+          "end": 336.02,
+          "probability": 0.9985652565956116
+        },
+        {
+          "word": " use",
+          "start": 336.02,
+          "end": 336.36,
+          "probability": 0.9971600770950317
+        },
+        {
+          "word": " robots",
+          "start": 336.36,
+          "end": 336.76,
+          "probability": 0.9929304122924805
+        },
+        {
+          "word": " on",
+          "start": 336.76,
+          "end": 337.08,
+          "probability": 0.996616780757904
+        },
+        {
+          "word": " rough",
+          "start": 337.08,
+          "end": 337.36,
+          "probability": 0.994897186756134
+        },
+        {
+          "word": " ground,",
+          "start": 337.36,
+          "end": 337.84,
+          "probability": 0.9886890053749084
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "seek": 32376,
+      "start": 338.36,
+      "end": 340.46,
+      "text": " which is hilly or rocky, for example,",
+      "tokens": [
+        51075,
+        543,
+        318,
+        289,
+        6548,
+        393,
+        26898,
+        11,
+        329,
+        1672,
+        11,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18563675094436813,
+      "compression_ratio": 1.5350877192982457,
+      "no_speech_prob": 0.027897579595446587,
+      "words": [
+        {
+          "word": " which",
+          "start": 338.36,
+          "end": 338.42,
+          "probability": 0.9850949048995972
+        },
+        {
+          "word": " is",
+          "start": 338.42,
+          "end": 338.7,
+          "probability": 0.9960796236991882
+        },
+        {
+          "word": " hilly",
+          "start": 338.7,
+          "end": 339.04,
+          "probability": 0.9706308245658875
+        },
+        {
+          "word": " or",
+          "start": 339.04,
+          "end": 339.32,
+          "probability": 0.9850585460662842
+        },
+        {
+          "word": " rocky,",
+          "start": 339.32,
+          "end": 339.68,
+          "probability": 0.993556797504425
+        },
+        {
+          "word": " for",
+          "start": 339.94,
+          "end": 339.96,
+          "probability": 0.9840032458305359
+        },
+        {
+          "word": " example,",
+          "start": 339.96,
+          "end": 340.46,
+          "probability": 0.9981153011322021
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "seek": 32376,
+      "start": 341.0,
+      "end": 344.2,
+      "text": " would be a huge step forward from where we are now.",
+      "tokens": [
+        51213,
+        561,
+        307,
+        257,
+        3236,
+        2239,
+        2651,
+        422,
+        810,
+        356,
+        389,
+        783,
+        13,
+        51463
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18563675094436813,
+      "compression_ratio": 1.5350877192982457,
+      "no_speech_prob": 0.027897579595446587,
+      "words": [
+        {
+          "word": " would",
+          "start": 341.0,
+          "end": 341.12,
+          "probability": 0.9799818992614746
+        },
+        {
+          "word": " be",
+          "start": 341.12,
+          "end": 341.36,
+          "probability": 0.9989563226699829
+        },
+        {
+          "word": " a",
+          "start": 341.36,
+          "end": 341.68,
+          "probability": 0.9952343106269836
+        },
+        {
+          "word": " huge",
+          "start": 341.68,
+          "end": 341.98,
+          "probability": 0.9974552989006042
+        },
+        {
+          "word": " step",
+          "start": 341.98,
+          "end": 342.42,
+          "probability": 0.9983768463134766
+        },
+        {
+          "word": " forward",
+          "start": 342.42,
+          "end": 342.86,
+          "probability": 0.9938673377037048
+        },
+        {
+          "word": " from",
+          "start": 342.86,
+          "end": 343.2,
+          "probability": 0.9943388104438782
+        },
+        {
+          "word": " where",
+          "start": 343.2,
+          "end": 343.44,
+          "probability": 0.9975345134735107
+        },
+        {
+          "word": " we",
+          "start": 343.44,
+          "end": 343.6,
+          "probability": 0.9980701804161072
+        },
+        {
+          "word": " are",
+          "start": 343.6,
+          "end": 343.8,
+          "probability": 0.9959924817085266
+        },
+        {
+          "word": " now.",
+          "start": 343.8,
+          "end": 344.2,
+          "probability": 0.9961787462234497
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "seek": 32376,
+      "start": 346.0,
+      "end": 349.12,
+      "text": " Right, well, that's all we have time for today.",
+      "tokens": [
+        51463,
+        6498,
+        11,
+        880,
+        11,
+        326,
+        338,
+        477,
+        356,
+        423,
+        640,
+        329,
+        1909,
+        13,
+        51657
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18563675094436813,
+      "compression_ratio": 1.5350877192982457,
+      "no_speech_prob": 0.027897579595446587,
+      "words": [
+        {
+          "word": " Right,",
+          "start": 346.0,
+          "end": 346.24,
+          "probability": 0.9431441426277161
+        },
+        {
+          "word": " well,",
+          "start": 346.82,
+          "end": 347.16,
+          "probability": 0.9525827765464783
+        },
+        {
+          "word": " that's",
+          "start": 347.36,
+          "end": 347.6,
+          "probability": 0.9910349547863007
+        },
+        {
+          "word": " all",
+          "start": 347.6,
+          "end": 347.9,
+          "probability": 0.9992451667785645
+        },
+        {
+          "word": " we",
+          "start": 347.9,
+          "end": 348.08,
+          "probability": 0.9945297837257385
+        },
+        {
+          "word": " have",
+          "start": 348.08,
+          "end": 348.28,
+          "probability": 0.9969925880432129
+        },
+        {
+          "word": " time",
+          "start": 348.28,
+          "end": 348.52,
+          "probability": 0.9972789883613586
+        },
+        {
+          "word": " for",
+          "start": 348.52,
+          "end": 348.8,
+          "probability": 0.998433530330658
+        },
+        {
+          "word": " today.",
+          "start": 348.8,
+          "end": 349.12,
+          "probability": 0.9929521679878235
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "seek": 32376,
+      "start": 349.8,
+      "end": 352.2,
+      "text": " I think you'll agree from these innovations",
+      "tokens": [
+        51657,
+        314,
+        892,
+        345,
+        1183,
+        4236,
+        422,
+        777,
+        25438,
+        51797
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18563675094436813,
+      "compression_ratio": 1.5350877192982457,
+      "no_speech_prob": 0.027897579595446587,
+      "words": [
+        {
+          "word": " I",
+          "start": 349.8,
+          "end": 350.06,
+          "probability": 0.9962906837463379
+        },
+        {
+          "word": " think",
+          "start": 350.06,
+          "end": 350.26,
+          "probability": 0.998840868473053
+        },
+        {
+          "word": " you'll",
+          "start": 350.26,
+          "end": 350.5,
+          "probability": 0.9796166121959686
+        },
+        {
+          "word": " agree",
+          "start": 350.5,
+          "end": 350.78,
+          "probability": 0.9983487129211426
+        },
+        {
+          "word": " from",
+          "start": 350.78,
+          "end": 351.12,
+          "probability": 0.9552361965179443
+        },
+        {
+          "word": " these",
+          "start": 351.12,
+          "end": 351.5,
+          "probability": 0.9953450560569763
+        },
+        {
+          "word": " innovations",
+          "start": 351.5,
+          "end": 352.2,
+          "probability": 0.9963060617446899
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "seek": 35220,
+      "start": 352.2,
+      "end": 356.7,
+      "text": " that this is by far the most exciting time to be involved",
+      "tokens": [
+        50375,
+        326,
+        428,
+        318,
+        416,
+        1290,
+        262,
+        749,
+        7895,
+        640,
+        284,
+        307,
+        2950,
+        50591
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32091570835487515,
+      "compression_ratio": 1.323943661971831,
+      "no_speech_prob": 0.025987692177295685,
+      "words": [
+        {
+          "word": " that",
+          "start": 352.2,
+          "end": 352.82,
+          "probability": 0.7633556127548218
+        },
+        {
+          "word": " this",
+          "start": 352.82,
+          "end": 353.08,
+          "probability": 0.990216851234436
+        },
+        {
+          "word": " is",
+          "start": 353.08,
+          "end": 353.3,
+          "probability": 0.994641900062561
+        },
+        {
+          "word": " by",
+          "start": 353.3,
+          "end": 353.52,
+          "probability": 0.9822196960449219
+        },
+        {
+          "word": " far",
+          "start": 353.52,
+          "end": 353.82,
+          "probability": 0.9974924325942993
+        },
+        {
+          "word": " the",
+          "start": 353.82,
+          "end": 354.04,
+          "probability": 0.9927096366882324
+        },
+        {
+          "word": " most",
+          "start": 354.04,
+          "end": 354.48,
+          "probability": 0.9976910352706909
+        },
+        {
+          "word": " exciting",
+          "start": 354.48,
+          "end": 355.22,
+          "probability": 0.9977779984474182
+        },
+        {
+          "word": " time",
+          "start": 355.22,
+          "end": 355.74,
+          "probability": 0.9972591400146484
+        },
+        {
+          "word": " to",
+          "start": 355.74,
+          "end": 356.0,
+          "probability": 0.994428277015686
+        },
+        {
+          "word": " be",
+          "start": 356.0,
+          "end": 356.28,
+          "probability": 0.9985771179199219
+        },
+        {
+          "word": " involved",
+          "start": 356.28,
+          "end": 356.7,
+          "probability": 0.9990907907485962
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "seek": 35220,
+      "start": 356.7,
+      "end": 361.78,
+      "text": " in the construction industry as a developer, engineer or architect.",
+      "tokens": [
+        50591,
+        287,
+        262,
+        5103,
+        2831,
+        355,
+        257,
+        8517,
+        11,
+        11949,
+        393,
+        7068,
+        13,
+        50881
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32091570835487515,
+      "compression_ratio": 1.323943661971831,
+      "no_speech_prob": 0.025987692177295685,
+      "words": [
+        {
+          "word": " in",
+          "start": 356.7,
+          "end": 357.16,
+          "probability": 0.9944682121276855
+        },
+        {
+          "word": " the",
+          "start": 357.16,
+          "end": 357.32,
+          "probability": 0.9968672394752502
+        },
+        {
+          "word": " construction",
+          "start": 357.32,
+          "end": 357.74,
+          "probability": 0.9693621397018433
+        },
+        {
+          "word": " industry",
+          "start": 357.74,
+          "end": 358.32,
+          "probability": 0.9986543655395508
+        },
+        {
+          "word": " as",
+          "start": 358.32,
+          "end": 358.76,
+          "probability": 0.948686957359314
+        },
+        {
+          "word": " a",
+          "start": 358.76,
+          "end": 358.92,
+          "probability": 0.997748076915741
+        },
+        {
+          "word": " developer,",
+          "start": 358.92,
+          "end": 359.42,
+          "probability": 0.9473881721496582
+        },
+        {
+          "word": " engineer",
+          "start": 359.82,
+          "end": 360.32,
+          "probability": 0.9968681931495667
+        },
+        {
+          "word": " or",
+          "start": 360.32,
+          "end": 361.14,
+          "probability": 0.7368302941322327
+        },
+        {
+          "word": " architect.",
+          "start": 361.14,
+          "end": 361.78,
+          "probability": 0.9930227994918823
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "seek": 35220,
+      "start": 362.8,
+      "end": 363.44,
+      "text": " Thank you.",
+      "tokens": [
+        50881,
+        6952,
+        345,
+        13,
+        50959
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32091570835487515,
+      "compression_ratio": 1.323943661971831,
+      "no_speech_prob": 0.025987692177295685,
+      "words": [
+        {
+          "word": " Thank",
+          "start": 362.8,
+          "end": 363.08,
+          "probability": 0.9821487665176392
+        },
+        {
+          "word": " you.",
+          "start": 363.08,
+          "end": 363.44,
+          "probability": 0.9636692404747009
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "seek": 35220,
+      "start": 364.4,
+      "end": 366.1,
+      "text": " Now, any questions?",
+      "tokens": [
+        50959,
+        2735,
+        11,
+        597,
+        2683,
+        30,
+        51099
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32091570835487515,
+      "compression_ratio": 1.323943661971831,
+      "no_speech_prob": 0.025987692177295685,
+      "words": [
+        {
+          "word": " Now,",
+          "start": 364.4,
+          "end": 364.66,
+          "probability": 0.9611690640449524
+        },
+        {
+          "word": " any",
+          "start": 365.4,
+          "end": 365.64,
+          "probability": 0.9831780791282654
+        },
+        {
+          "word": " questions?",
+          "start": 365.64,
+          "end": 366.1,
+          "probability": 0.9970059990882874
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "seek": 35220,
+      "start": 367.12,
+      "end": 368.68,
+      "text": " Yes, the lady with the glasses.",
+      "tokens": [
+        51099,
+        3363,
+        11,
+        262,
+        10846,
+        351,
+        262,
+        15232,
+        13,
+        51199
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.32091570835487515,
+      "compression_ratio": 1.323943661971831,
+      "no_speech_prob": 0.025987692177295685,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 367.12,
+          "end": 367.44,
+          "probability": 0.8364905118942261
+        },
+        {
+          "word": " the",
+          "start": 367.78,
+          "end": 367.9,
+          "probability": 0.93891441822052
+        },
+        {
+          "word": " lady",
+          "start": 367.9,
+          "end": 368.12,
+          "probability": 0.9833770990371704
+        },
+        {
+          "word": " with",
+          "start": 368.12,
+          "end": 368.36,
+          "probability": 0.9409475922584534
+        },
+        {
+          "word": " the",
+          "start": 368.36,
+          "end": 368.48,
+          "probability": 0.9375777244567871
+        },
+        {
+          "word": " glasses.",
+          "start": 368.48,
+          "end": 368.68,
+          "probability": 0.9629356265068054
+        }
+      ]
+    }
+  ]
+}

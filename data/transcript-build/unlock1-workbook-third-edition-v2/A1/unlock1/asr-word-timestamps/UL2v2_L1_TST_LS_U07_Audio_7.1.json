@@ -1,0 +1,2273 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 7.1 So, last week we had an international food festival with food from 15 different countries. Did you all enjoy it? Yes, it was great. I read that 200 people came to the college to try our food. I ate home-cooked Japanese food for the first time. It's very different to Mexican food. In Mexico, we eat a lot of tacos and rice. My mom cooks healthy meals, but I often eat burgers because it's quicker. It's the same in Italy. At home, we eat pasta with meat and vegetables. But when I go out, I eat pizza with chips. Did you know that people bought 62 pizzas at the festival? It was the most popular dish. Wow! That's a lot of pizzas. What dish did you bring to the festival, Dijun? My favorite noodles with fish and vegetables. It's very popular in Korea. I ate tacos and rice at the festival. The price was good. It only cost $3. I didn't have a taco, but I had meat and salad. It was $7. So more expensive than your taco. But it was delicious and better than the sandwich I usually have from the campus cafe. The food at college isn't very nice. Only the chips are okay. True. Maybe we should have more food festivals so we can eat better food. The college made nearly $2,000. $1,800 to be exact. So they definitely think it was a good idea.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.06,
+      "text": " Track 7.1",
+      "tokens": [
+        50364,
+        31903,
+        1614,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29957626961372996,
+      "compression_ratio": 1.375,
+      "no_speech_prob": 0.4593046307563782,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.54,
+          "probability": 0.11432033777236938
+        },
+        {
+          "word": " 7",
+          "start": 0.54,
+          "end": 1.06,
+          "probability": 0.9773574471473694
+        },
+        {
+          "word": ".1",
+          "start": 1.06,
+          "end": 2.06,
+          "probability": 0.99627485871315
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.540000000000001,
+      "end": 12.14,
+      "text": " So, last week we had an international food festival with food from 15 different countries.",
+      "tokens": [
+        50556,
+        407,
+        11,
+        1036,
+        1243,
+        321,
+        632,
+        364,
+        5058,
+        1755,
+        12091,
+        365,
+        1755,
+        490,
+        2119,
+        819,
+        3517,
+        13,
+        51004
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29957626961372996,
+      "compression_ratio": 1.375,
+      "no_speech_prob": 0.4593046307563782,
+      "words": [
+        {
+          "word": " So,",
+          "start": 3.540000000000001,
+          "end": 4.42,
+          "probability": 0.3970286250114441
+        },
+        {
+          "word": " last",
+          "start": 4.8,
+          "end": 5.52,
+          "probability": 0.9803497791290283
+        },
+        {
+          "word": " week",
+          "start": 5.52,
+          "end": 5.98,
+          "probability": 0.9991438388824463
+        },
+        {
+          "word": " we",
+          "start": 5.98,
+          "end": 6.52,
+          "probability": 0.5862178802490234
+        },
+        {
+          "word": " had",
+          "start": 6.52,
+          "end": 6.78,
+          "probability": 0.9975300431251526
+        },
+        {
+          "word": " an",
+          "start": 6.78,
+          "end": 7.02,
+          "probability": 0.9897454977035522
+        },
+        {
+          "word": " international",
+          "start": 7.02,
+          "end": 7.66,
+          "probability": 0.7867680788040161
+        },
+        {
+          "word": " food",
+          "start": 7.66,
+          "end": 8.1,
+          "probability": 0.972519040107727
+        },
+        {
+          "word": " festival",
+          "start": 8.1,
+          "end": 8.66,
+          "probability": 0.9873768091201782
+        },
+        {
+          "word": " with",
+          "start": 8.66,
+          "end": 9.34,
+          "probability": 0.9345927238464355
+        },
+        {
+          "word": " food",
+          "start": 9.34,
+          "end": 9.78,
+          "probability": 0.9746615886688232
+        },
+        {
+          "word": " from",
+          "start": 9.78,
+          "end": 10.14,
+          "probability": 0.9974483251571655
+        },
+        {
+          "word": " 15",
+          "start": 10.14,
+          "end": 10.74,
+          "probability": 0.9015421271324158
+        },
+        {
+          "word": " different",
+          "start": 10.74,
+          "end": 11.42,
+          "probability": 0.9987102746963501
+        },
+        {
+          "word": " countries.",
+          "start": 11.42,
+          "end": 12.14,
+          "probability": 0.9984754920005798
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 12.52,
+      "end": 14.54,
+      "text": " Did you all enjoy it?",
+      "tokens": [
+        51004,
+        2589,
+        291,
+        439,
+        2103,
+        309,
+        30,
+        51104
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29957626961372996,
+      "compression_ratio": 1.375,
+      "no_speech_prob": 0.4593046307563782,
+      "words": [
+        {
+          "word": " Did",
+          "start": 12.52,
+          "end": 13.4,
+          "probability": 0.9836273193359375
+        },
+        {
+          "word": " you",
+          "start": 13.4,
+          "end": 13.62,
+          "probability": 0.9977089166641235
+        },
+        {
+          "word": " all",
+          "start": 13.62,
+          "end": 13.8,
+          "probability": 0.9992268085479736
+        },
+        {
+          "word": " enjoy",
+          "start": 13.8,
+          "end": 14.12,
+          "probability": 0.998170018196106
+        },
+        {
+          "word": " it?",
+          "start": 14.12,
+          "end": 14.54,
+          "probability": 0.9985436201095581
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 15.12,
+      "end": 16.54,
+      "text": " Yes, it was great.",
+      "tokens": [
+        51104,
+        1079,
+        11,
+        309,
+        390,
+        869,
+        13,
+        51224
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29957626961372996,
+      "compression_ratio": 1.375,
+      "no_speech_prob": 0.4593046307563782,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 15.12,
+          "end": 15.52,
+          "probability": 0.9586228728294373
+        },
+        {
+          "word": " it",
+          "start": 15.74,
+          "end": 15.9,
+          "probability": 0.9963892698287964
+        },
+        {
+          "word": " was",
+          "start": 15.9,
+          "end": 16.08,
+          "probability": 0.9993376135826111
+        },
+        {
+          "word": " great.",
+          "start": 16.08,
+          "end": 16.54,
+          "probability": 0.9984493255615234
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 17.46,
+      "end": 23.02,
+      "text": " I read that 200 people came to the college to try our food.",
+      "tokens": [
+        51224,
+        286,
+        1401,
+        300,
+        2331,
+        561,
+        1361,
+        281,
+        264,
+        3859,
+        281,
+        853,
+        527,
+        1755,
+        13,
+        51554
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29957626961372996,
+      "compression_ratio": 1.375,
+      "no_speech_prob": 0.4593046307563782,
+      "words": [
+        {
+          "word": " I",
+          "start": 17.46,
+          "end": 17.8,
+          "probability": 0.9945242404937744
+        },
+        {
+          "word": " read",
+          "start": 17.8,
+          "end": 18.14,
+          "probability": 0.9980958104133606
+        },
+        {
+          "word": " that",
+          "start": 18.14,
+          "end": 18.44,
+          "probability": 0.9969045519828796
+        },
+        {
+          "word": " 200",
+          "start": 18.44,
+          "end": 19.38,
+          "probability": 0.9761725664138794
+        },
+        {
+          "word": " people",
+          "start": 19.38,
+          "end": 20.14,
+          "probability": 0.9988345503807068
+        },
+        {
+          "word": " came",
+          "start": 20.14,
+          "end": 20.56,
+          "probability": 0.9976882934570312
+        },
+        {
+          "word": " to",
+          "start": 20.56,
+          "end": 20.82,
+          "probability": 0.9968344569206238
+        },
+        {
+          "word": " the",
+          "start": 20.82,
+          "end": 20.96,
+          "probability": 0.9941317439079285
+        },
+        {
+          "word": " college",
+          "start": 20.96,
+          "end": 21.38,
+          "probability": 0.964218258857727
+        },
+        {
+          "word": " to",
+          "start": 21.38,
+          "end": 21.76,
+          "probability": 0.9989880919456482
+        },
+        {
+          "word": " try",
+          "start": 21.76,
+          "end": 22.16,
+          "probability": 0.9966121315956116
+        },
+        {
+          "word": " our",
+          "start": 22.16,
+          "end": 22.46,
+          "probability": 0.9950017333030701
+        },
+        {
+          "word": " food.",
+          "start": 22.46,
+          "end": 23.02,
+          "probability": 0.9945464134216309
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 24.1,
+      "end": 28.58,
+      "text": " I ate home-cooked Japanese food for the first time.",
+      "tokens": [
+        51554,
+        286,
+        8468,
+        1280,
+        12,
+        66,
+        29262,
+        5433,
+        1755,
+        337,
+        264,
+        700,
+        565,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29957626961372996,
+      "compression_ratio": 1.375,
+      "no_speech_prob": 0.4593046307563782,
+      "words": [
+        {
+          "word": " I",
+          "start": 24.1,
+          "end": 24.48,
+          "probability": 0.9707276225090027
+        },
+        {
+          "word": " ate",
+          "start": 24.48,
+          "end": 24.9,
+          "probability": 0.999009370803833
+        },
+        {
+          "word": " home",
+          "start": 24.9,
+          "end": 25.32,
+          "probability": 0.7802472114562988
+        },
+        {
+          "word": "-cooked",
+          "start": 25.32,
+          "end": 25.78,
+          "probability": 0.851022481918335
+        },
+        {
+          "word": " Japanese",
+          "start": 25.78,
+          "end": 26.4,
+          "probability": 0.9112656712532043
+        },
+        {
+          "word": " food",
+          "start": 26.4,
+          "end": 27.02,
+          "probability": 0.9970554113388062
+        },
+        {
+          "word": " for",
+          "start": 27.02,
+          "end": 27.26,
+          "probability": 0.9975399971008301
+        },
+        {
+          "word": " the",
+          "start": 27.26,
+          "end": 27.44,
+          "probability": 0.9986847043037415
+        },
+        {
+          "word": " first",
+          "start": 27.44,
+          "end": 27.94,
+          "probability": 0.9981881976127625
+        },
+        {
+          "word": " time.",
+          "start": 27.94,
+          "end": 28.58,
+          "probability": 0.9998334646224976
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2858,
+      "start": 29.38,
+      "end": 32.22,
+      "text": " It's very different to Mexican food.",
+      "tokens": [
+        50404,
+        467,
+        311,
+        588,
+        819,
+        281,
+        16164,
+        1755,
+        13,
+        50584
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12398808002471924,
+      "compression_ratio": 1.4408602150537635,
+      "no_speech_prob": 0.0822451189160347,
+      "words": [
+        {
+          "word": " It's",
+          "start": 29.36,
+          "end": 29.78,
+          "probability": 0.6761336624622345
+        },
+        {
+          "word": " very",
+          "start": 29.78,
+          "end": 30.04,
+          "probability": 0.9470161199569702
+        },
+        {
+          "word": " different",
+          "start": 30.04,
+          "end": 30.64,
+          "probability": 0.9931869506835938
+        },
+        {
+          "word": " to",
+          "start": 30.64,
+          "end": 31.04,
+          "probability": 0.9243994355201721
+        },
+        {
+          "word": " Mexican",
+          "start": 31.04,
+          "end": 31.56,
+          "probability": 0.990799069404602
+        },
+        {
+          "word": " food.",
+          "start": 31.56,
+          "end": 32.22,
+          "probability": 0.990708589553833
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2858,
+      "start": 33.12,
+      "end": 37.5,
+      "text": " In Mexico, we eat a lot of tacos and rice.",
+      "tokens": [
+        50584,
+        682,
+        8612,
+        11,
+        321,
+        1862,
+        257,
+        688,
+        295,
+        34776,
+        293,
+        5090,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12398808002471924,
+      "compression_ratio": 1.4408602150537635,
+      "no_speech_prob": 0.0822451189160347,
+      "words": [
+        {
+          "word": " In",
+          "start": 33.12,
+          "end": 33.32,
+          "probability": 0.9733590483665466
+        },
+        {
+          "word": " Mexico,",
+          "start": 33.32,
+          "end": 33.98,
+          "probability": 0.9961634874343872
+        },
+        {
+          "word": " we",
+          "start": 34.52,
+          "end": 34.62,
+          "probability": 0.9946414232254028
+        },
+        {
+          "word": " eat",
+          "start": 34.62,
+          "end": 35.06,
+          "probability": 0.9947264790534973
+        },
+        {
+          "word": " a",
+          "start": 35.06,
+          "end": 35.26,
+          "probability": 0.9863020181655884
+        },
+        {
+          "word": " lot",
+          "start": 35.26,
+          "end": 35.56,
+          "probability": 0.9958294034004211
+        },
+        {
+          "word": " of",
+          "start": 35.56,
+          "end": 36.0,
+          "probability": 0.996249258518219
+        },
+        {
+          "word": " tacos",
+          "start": 36.0,
+          "end": 36.48,
+          "probability": 0.9921653270721436
+        },
+        {
+          "word": " and",
+          "start": 36.48,
+          "end": 37.08,
+          "probability": 0.9920365810394287
+        },
+        {
+          "word": " rice.",
+          "start": 37.08,
+          "end": 37.5,
+          "probability": 0.9965835213661194
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2858,
+      "start": 38.6,
+      "end": 44.38,
+      "text": " My mom cooks healthy meals, but I often eat burgers because it's quicker.",
+      "tokens": [
+        50864,
+        1222,
+        1225,
+        30709,
+        4627,
+        12832,
+        11,
+        457,
+        286,
+        2049,
+        1862,
+        28403,
+        570,
+        309,
+        311,
+        16255,
+        13,
+        51204
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12398808002471924,
+      "compression_ratio": 1.4408602150537635,
+      "no_speech_prob": 0.0822451189160347,
+      "words": [
+        {
+          "word": " My",
+          "start": 38.6,
+          "end": 39.14,
+          "probability": 0.9879292249679565
+        },
+        {
+          "word": " mom",
+          "start": 39.14,
+          "end": 39.48,
+          "probability": 0.8377329707145691
+        },
+        {
+          "word": " cooks",
+          "start": 39.48,
+          "end": 39.8,
+          "probability": 0.9929494857788086
+        },
+        {
+          "word": " healthy",
+          "start": 39.8,
+          "end": 40.32,
+          "probability": 0.9981837868690491
+        },
+        {
+          "word": " meals,",
+          "start": 40.32,
+          "end": 40.82,
+          "probability": 0.9965482354164124
+        },
+        {
+          "word": " but",
+          "start": 41.32,
+          "end": 41.6,
+          "probability": 0.9884599447250366
+        },
+        {
+          "word": " I",
+          "start": 41.6,
+          "end": 41.9,
+          "probability": 0.9967926144599915
+        },
+        {
+          "word": " often",
+          "start": 41.9,
+          "end": 42.24,
+          "probability": 0.999468982219696
+        },
+        {
+          "word": " eat",
+          "start": 42.24,
+          "end": 42.52,
+          "probability": 0.999049961566925
+        },
+        {
+          "word": " burgers",
+          "start": 42.52,
+          "end": 42.9,
+          "probability": 0.9736374616622925
+        },
+        {
+          "word": " because",
+          "start": 42.9,
+          "end": 43.64,
+          "probability": 0.9137369990348816
+        },
+        {
+          "word": " it's",
+          "start": 43.64,
+          "end": 43.94,
+          "probability": 0.9903604388237
+        },
+        {
+          "word": " quicker.",
+          "start": 43.94,
+          "end": 44.38,
+          "probability": 0.9982534050941467
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2858,
+      "start": 45.52,
+      "end": 47.2,
+      "text": " It's the same in Italy.",
+      "tokens": [
+        51204,
+        467,
+        311,
+        264,
+        912,
+        294,
+        10705,
+        13,
+        51344
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12398808002471924,
+      "compression_ratio": 1.4408602150537635,
+      "no_speech_prob": 0.0822451189160347,
+      "words": [
+        {
+          "word": " It's",
+          "start": 45.52,
+          "end": 45.96,
+          "probability": 0.9335776269435883
+        },
+        {
+          "word": " the",
+          "start": 45.96,
+          "end": 46.16,
+          "probability": 0.9967130422592163
+        },
+        {
+          "word": " same",
+          "start": 46.16,
+          "end": 46.58,
+          "probability": 0.999876856803894
+        },
+        {
+          "word": " in",
+          "start": 46.58,
+          "end": 46.82,
+          "probability": 0.9949944019317627
+        },
+        {
+          "word": " Italy.",
+          "start": 46.82,
+          "end": 47.2,
+          "probability": 0.9946854114532471
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2858,
+      "start": 48.18,
+      "end": 51.86,
+      "text": " At home, we eat pasta with meat and vegetables.",
+      "tokens": [
+        51344,
+        1711,
+        1280,
+        11,
+        321,
+        1862,
+        13296,
+        365,
+        4615,
+        293,
+        9320,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12398808002471924,
+      "compression_ratio": 1.4408602150537635,
+      "no_speech_prob": 0.0822451189160347,
+      "words": [
+        {
+          "word": " At",
+          "start": 48.18,
+          "end": 48.46,
+          "probability": 0.9942300319671631
+        },
+        {
+          "word": " home,",
+          "start": 48.46,
+          "end": 48.92,
+          "probability": 0.9962375164031982
+        },
+        {
+          "word": " we",
+          "start": 49.28,
+          "end": 49.48,
+          "probability": 0.9724997878074646
+        },
+        {
+          "word": " eat",
+          "start": 49.48,
+          "end": 49.72,
+          "probability": 0.9812093377113342
+        },
+        {
+          "word": " pasta",
+          "start": 49.72,
+          "end": 50.18,
+          "probability": 0.9973288774490356
+        },
+        {
+          "word": " with",
+          "start": 50.18,
+          "end": 50.56,
+          "probability": 0.9960659146308899
+        },
+        {
+          "word": " meat",
+          "start": 50.56,
+          "end": 50.84,
+          "probability": 0.9946852922439575
+        },
+        {
+          "word": " and",
+          "start": 50.84,
+          "end": 51.32,
+          "probability": 0.9767098426818848
+        },
+        {
+          "word": " vegetables.",
+          "start": 51.32,
+          "end": 51.86,
+          "probability": 0.9986722469329834
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2858,
+      "start": 52.68,
+      "end": 56.42,
+      "text": " But when I go out, I eat pizza with chips.",
+      "tokens": [
+        51564,
+        583,
+        562,
+        286,
+        352,
+        484,
+        11,
+        286,
+        1862,
+        8298,
+        365,
+        11583,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12398808002471924,
+      "compression_ratio": 1.4408602150537635,
+      "no_speech_prob": 0.0822451189160347,
+      "words": [
+        {
+          "word": " But",
+          "start": 52.68,
+          "end": 53.02,
+          "probability": 0.9945988655090332
+        },
+        {
+          "word": " when",
+          "start": 53.02,
+          "end": 53.34,
+          "probability": 0.9693822264671326
+        },
+        {
+          "word": " I",
+          "start": 53.34,
+          "end": 53.6,
+          "probability": 0.9959639310836792
+        },
+        {
+          "word": " go",
+          "start": 53.6,
+          "end": 53.82,
+          "probability": 0.9972270131111145
+        },
+        {
+          "word": " out,",
+          "start": 53.82,
+          "end": 54.24,
+          "probability": 0.9993358254432678
+        },
+        {
+          "word": " I",
+          "start": 54.78,
+          "end": 54.88,
+          "probability": 0.9982609152793884
+        },
+        {
+          "word": " eat",
+          "start": 54.88,
+          "end": 55.14,
+          "probability": 0.9868539571762085
+        },
+        {
+          "word": " pizza",
+          "start": 55.14,
+          "end": 55.6,
+          "probability": 0.9925317168235779
+        },
+        {
+          "word": " with",
+          "start": 55.6,
+          "end": 56.02,
+          "probability": 0.9965319633483887
+        },
+        {
+          "word": " chips.",
+          "start": 56.02,
+          "end": 56.42,
+          "probability": 0.9939707517623901
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5642,
+      "start": 57.22,
+      "end": 62.26,
+      "text": " Did you know that people bought 62 pizzas at the festival?",
+      "tokens": [
+        50404,
+        2589,
+        291,
+        458,
+        300,
+        561,
+        4243,
+        24536,
+        44037,
+        412,
+        264,
+        12091,
+        30,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20285102467478058,
+      "compression_ratio": 1.481283422459893,
+      "no_speech_prob": 0.14418862760066986,
+      "words": [
+        {
+          "word": " Did",
+          "start": 57.22,
+          "end": 57.94,
+          "probability": 0.1602851152420044
+        },
+        {
+          "word": " you",
+          "start": 57.94,
+          "end": 58.2,
+          "probability": 0.995506763458252
+        },
+        {
+          "word": " know",
+          "start": 58.2,
+          "end": 58.48,
+          "probability": 0.9915540814399719
+        },
+        {
+          "word": " that",
+          "start": 58.48,
+          "end": 58.78,
+          "probability": 0.9536817073822021
+        },
+        {
+          "word": " people",
+          "start": 58.78,
+          "end": 59.26,
+          "probability": 0.9439054131507874
+        },
+        {
+          "word": " bought",
+          "start": 59.26,
+          "end": 59.6,
+          "probability": 0.9718627333641052
+        },
+        {
+          "word": " 62",
+          "start": 59.6,
+          "end": 60.38,
+          "probability": 0.9629403948783875
+        },
+        {
+          "word": " pizzas",
+          "start": 60.38,
+          "end": 61.22,
+          "probability": 0.9801988005638123
+        },
+        {
+          "word": " at",
+          "start": 61.22,
+          "end": 61.54,
+          "probability": 0.9971154928207397
+        },
+        {
+          "word": " the",
+          "start": 61.54,
+          "end": 61.72,
+          "probability": 0.988217294216156
+        },
+        {
+          "word": " festival?",
+          "start": 61.72,
+          "end": 62.26,
+          "probability": 0.972596287727356
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5642,
+      "start": 62.88,
+      "end": 65.1,
+      "text": " It was the most popular dish.",
+      "tokens": [
+        50664,
+        467,
+        390,
+        264,
+        881,
+        3743,
+        5025,
+        13,
+        50804
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20285102467478058,
+      "compression_ratio": 1.481283422459893,
+      "no_speech_prob": 0.14418862760066986,
+      "words": [
+        {
+          "word": " It",
+          "start": 62.88,
+          "end": 63.32,
+          "probability": 0.9772518873214722
+        },
+        {
+          "word": " was",
+          "start": 63.32,
+          "end": 63.52,
+          "probability": 0.9971593618392944
+        },
+        {
+          "word": " the",
+          "start": 63.52,
+          "end": 63.8,
+          "probability": 0.9939963817596436
+        },
+        {
+          "word": " most",
+          "start": 63.8,
+          "end": 64.08,
+          "probability": 0.9976332187652588
+        },
+        {
+          "word": " popular",
+          "start": 64.08,
+          "end": 64.58,
+          "probability": 0.9974883794784546
+        },
+        {
+          "word": " dish.",
+          "start": 64.58,
+          "end": 65.1,
+          "probability": 0.9954754710197449
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5642,
+      "start": 65.98,
+      "end": 68.3,
+      "text": " Wow! That's a lot of pizzas.",
+      "tokens": [
+        50804,
+        3153,
+        0,
+        663,
+        311,
+        257,
+        688,
+        295,
+        44037,
+        13,
+        51004
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20285102467478058,
+      "compression_ratio": 1.481283422459893,
+      "no_speech_prob": 0.14418862760066986,
+      "words": [
+        {
+          "word": " Wow!",
+          "start": 65.98,
+          "end": 66.38,
+          "probability": 0.731955885887146
+        },
+        {
+          "word": " That's",
+          "start": 66.82,
+          "end": 67.32,
+          "probability": 0.9705133438110352
+        },
+        {
+          "word": " a",
+          "start": 67.32,
+          "end": 67.42,
+          "probability": 0.9883434176445007
+        },
+        {
+          "word": " lot",
+          "start": 67.42,
+          "end": 67.68,
+          "probability": 0.9890066385269165
+        },
+        {
+          "word": " of",
+          "start": 67.68,
+          "end": 67.9,
+          "probability": 0.997977077960968
+        },
+        {
+          "word": " pizzas.",
+          "start": 67.9,
+          "end": 68.3,
+          "probability": 0.9973262548446655
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5642,
+      "start": 69.88,
+      "end": 72.6,
+      "text": " What dish did you bring to the festival, Dijun?",
+      "tokens": [
+        51004,
+        708,
+        5025,
+        630,
+        291,
+        1565,
+        281,
+        264,
+        12091,
+        11,
+        413,
+        1718,
+        409,
+        30,
+        51204
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20285102467478058,
+      "compression_ratio": 1.481283422459893,
+      "no_speech_prob": 0.14418862760066986,
+      "words": [
+        {
+          "word": " What",
+          "start": 69.88,
+          "end": 70.04,
+          "probability": 0.9633387327194214
+        },
+        {
+          "word": " dish",
+          "start": 70.04,
+          "end": 70.44,
+          "probability": 0.9960546493530273
+        },
+        {
+          "word": " did",
+          "start": 70.44,
+          "end": 70.62,
+          "probability": 0.9980996251106262
+        },
+        {
+          "word": " you",
+          "start": 70.62,
+          "end": 70.82,
+          "probability": 0.9986376166343689
+        },
+        {
+          "word": " bring",
+          "start": 70.82,
+          "end": 71.02,
+          "probability": 0.9991788268089294
+        },
+        {
+          "word": " to",
+          "start": 71.02,
+          "end": 71.2,
+          "probability": 0.9971923232078552
+        },
+        {
+          "word": " the",
+          "start": 71.2,
+          "end": 71.3,
+          "probability": 0.9952291250228882
+        },
+        {
+          "word": " festival,",
+          "start": 71.3,
+          "end": 71.74,
+          "probability": 0.9843383431434631
+        },
+        {
+          "word": " Dijun?",
+          "start": 72.18,
+          "end": 72.6,
+          "probability": 0.3862687076131503
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5642,
+      "start": 73.38,
+      "end": 77.46,
+      "text": " My favorite noodles with fish and vegetables.",
+      "tokens": [
+        51204,
+        1222,
+        2954,
+        10480,
+        365,
+        3506,
+        293,
+        9320,
+        13,
+        51444
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20285102467478058,
+      "compression_ratio": 1.481283422459893,
+      "no_speech_prob": 0.14418862760066986,
+      "words": [
+        {
+          "word": " My",
+          "start": 73.38,
+          "end": 73.88,
+          "probability": 0.9815899729728699
+        },
+        {
+          "word": " favorite",
+          "start": 73.88,
+          "end": 74.48,
+          "probability": 0.47344690561294556
+        },
+        {
+          "word": " noodles",
+          "start": 74.48,
+          "end": 75.5,
+          "probability": 0.5339879393577576
+        },
+        {
+          "word": " with",
+          "start": 75.5,
+          "end": 76.1,
+          "probability": 0.9921422004699707
+        },
+        {
+          "word": " fish",
+          "start": 76.1,
+          "end": 76.56,
+          "probability": 0.9878082871437073
+        },
+        {
+          "word": " and",
+          "start": 76.56,
+          "end": 76.92,
+          "probability": 0.9951632022857666
+        },
+        {
+          "word": " vegetables.",
+          "start": 76.92,
+          "end": 77.46,
+          "probability": 0.9902461767196655
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5642,
+      "start": 78.08,
+      "end": 80.34,
+      "text": " It's very popular in Korea.",
+      "tokens": [
+        51444,
+        467,
+        311,
+        588,
+        3743,
+        294,
+        6307,
+        13,
+        51594
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20285102467478058,
+      "compression_ratio": 1.481283422459893,
+      "no_speech_prob": 0.14418862760066986,
+      "words": [
+        {
+          "word": " It's",
+          "start": 78.08,
+          "end": 78.68,
+          "probability": 0.9584671556949615
+        },
+        {
+          "word": " very",
+          "start": 78.68,
+          "end": 78.96,
+          "probability": 0.9948681592941284
+        },
+        {
+          "word": " popular",
+          "start": 78.96,
+          "end": 79.58,
+          "probability": 0.9994433522224426
+        },
+        {
+          "word": " in",
+          "start": 79.58,
+          "end": 79.88,
+          "probability": 0.996377170085907
+        },
+        {
+          "word": " Korea.",
+          "start": 79.88,
+          "end": 80.34,
+          "probability": 0.9708397388458252
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5642,
+      "start": 81.48,
+      "end": 84.26,
+      "text": " I ate tacos and rice at the festival.",
+      "tokens": [
+        51594,
+        286,
+        8468,
+        34776,
+        293,
+        5090,
+        412,
+        264,
+        12091,
+        13,
+        51784
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20285102467478058,
+      "compression_ratio": 1.481283422459893,
+      "no_speech_prob": 0.14418862760066986,
+      "words": [
+        {
+          "word": " I",
+          "start": 81.48,
+          "end": 81.68,
+          "probability": 0.9752408266067505
+        },
+        {
+          "word": " ate",
+          "start": 81.68,
+          "end": 82.02,
+          "probability": 0.9934729933738708
+        },
+        {
+          "word": " tacos",
+          "start": 82.02,
+          "end": 82.48,
+          "probability": 0.9623433947563171
+        },
+        {
+          "word": " and",
+          "start": 82.48,
+          "end": 82.94,
+          "probability": 0.9960212111473083
+        },
+        {
+          "word": " rice",
+          "start": 82.94,
+          "end": 83.22,
+          "probability": 0.9914926886558533
+        },
+        {
+          "word": " at",
+          "start": 83.22,
+          "end": 83.62,
+          "probability": 0.9989583492279053
+        },
+        {
+          "word": " the",
+          "start": 83.62,
+          "end": 83.78,
+          "probability": 0.9973177313804626
+        },
+        {
+          "word": " festival.",
+          "start": 83.78,
+          "end": 84.26,
+          "probability": 0.9969879984855652
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8426,
+      "start": 85.06,
+      "end": 88.32,
+      "text": " The price was good. It only cost $3.",
+      "tokens": [
+        50404,
+        440,
+        3218,
+        390,
+        665,
+        13,
+        467,
+        787,
+        2063,
+        1848,
+        18,
+        13,
+        50604
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13085848864387065,
+      "compression_ratio": 1.4416243654822336,
+      "no_speech_prob": 0.1819949895143509,
+      "words": [
+        {
+          "word": " The",
+          "start": 84.96,
+          "end": 85.3,
+          "probability": 0.40142127871513367
+        },
+        {
+          "word": " price",
+          "start": 85.3,
+          "end": 85.58,
+          "probability": 0.9831368327140808
+        },
+        {
+          "word": " was",
+          "start": 85.58,
+          "end": 85.88,
+          "probability": 0.9920855164527893
+        },
+        {
+          "word": " good.",
+          "start": 85.88,
+          "end": 86.18,
+          "probability": 0.99089515209198
+        },
+        {
+          "word": " It",
+          "start": 86.7,
+          "end": 86.78,
+          "probability": 0.9869987368583679
+        },
+        {
+          "word": " only",
+          "start": 86.78,
+          "end": 87.18,
+          "probability": 0.9801896214485168
+        },
+        {
+          "word": " cost",
+          "start": 87.18,
+          "end": 87.46,
+          "probability": 0.8826077580451965
+        },
+        {
+          "word": " $3.",
+          "start": 87.46,
+          "end": 88.32,
+          "probability": 0.720003679394722
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 8426,
+      "start": 89.24,
+      "end": 92.82,
+      "text": " I didn't have a taco, but I had meat and salad.",
+      "tokens": [
+        50604,
+        286,
+        994,
+        380,
+        362,
+        257,
+        34101,
+        11,
+        457,
+        286,
+        632,
+        4615,
+        293,
+        12604,
+        13,
+        50844
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13085848864387065,
+      "compression_ratio": 1.4416243654822336,
+      "no_speech_prob": 0.1819949895143509,
+      "words": [
+        {
+          "word": " I",
+          "start": 89.24,
+          "end": 89.58,
+          "probability": 0.8428314924240112
+        },
+        {
+          "word": " didn't",
+          "start": 89.58,
+          "end": 89.9,
+          "probability": 0.9935351312160492
+        },
+        {
+          "word": " have",
+          "start": 89.9,
+          "end": 90.1,
+          "probability": 0.9977248311042786
+        },
+        {
+          "word": " a",
+          "start": 90.1,
+          "end": 90.22,
+          "probability": 0.8385656476020813
+        },
+        {
+          "word": " taco,",
+          "start": 90.22,
+          "end": 90.56,
+          "probability": 0.812411904335022
+        },
+        {
+          "word": " but",
+          "start": 91.04,
+          "end": 91.36,
+          "probability": 0.9879370331764221
+        },
+        {
+          "word": " I",
+          "start": 91.36,
+          "end": 91.52,
+          "probability": 0.9970107078552246
+        },
+        {
+          "word": " had",
+          "start": 91.52,
+          "end": 91.72,
+          "probability": 0.9272382855415344
+        },
+        {
+          "word": " meat",
+          "start": 91.72,
+          "end": 91.98,
+          "probability": 0.9938873648643494
+        },
+        {
+          "word": " and",
+          "start": 91.98,
+          "end": 92.4,
+          "probability": 0.9932944178581238
+        },
+        {
+          "word": " salad.",
+          "start": 92.4,
+          "end": 92.82,
+          "probability": 0.9977885484695435
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 8426,
+      "start": 93.8,
+      "end": 97.9,
+      "text": " It was $7. So more expensive than your taco.",
+      "tokens": [
+        50844,
+        467,
+        390,
+        1848,
+        22,
+        13,
+        407,
+        544,
+        5124,
+        813,
+        428,
+        34101,
+        13,
+        51084
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13085848864387065,
+      "compression_ratio": 1.4416243654822336,
+      "no_speech_prob": 0.1819949895143509,
+      "words": [
+        {
+          "word": " It",
+          "start": 93.8,
+          "end": 94.04,
+          "probability": 0.9871494174003601
+        },
+        {
+          "word": " was",
+          "start": 94.04,
+          "end": 94.22,
+          "probability": 0.9981560111045837
+        },
+        {
+          "word": " $7.",
+          "start": 94.22,
+          "end": 94.82,
+          "probability": 0.9597046375274658
+        },
+        {
+          "word": " So",
+          "start": 95.72,
+          "end": 96.02,
+          "probability": 0.9570481181144714
+        },
+        {
+          "word": " more",
+          "start": 96.02,
+          "end": 96.3,
+          "probability": 0.9745221734046936
+        },
+        {
+          "word": " expensive",
+          "start": 96.3,
+          "end": 96.92,
+          "probability": 0.9993675351142883
+        },
+        {
+          "word": " than",
+          "start": 96.92,
+          "end": 97.24,
+          "probability": 0.9980133771896362
+        },
+        {
+          "word": " your",
+          "start": 97.24,
+          "end": 97.46,
+          "probability": 0.9926019310951233
+        },
+        {
+          "word": " taco.",
+          "start": 97.46,
+          "end": 97.9,
+          "probability": 0.9871648550033569
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 8426,
+      "start": 98.64,
+      "end": 104.32,
+      "text": " But it was delicious and better than the sandwich I usually have from the campus cafe.",
+      "tokens": [
+        51084,
+        583,
+        309,
+        390,
+        4809,
+        293,
+        1101,
+        813,
+        264,
+        11141,
+        286,
+        2673,
+        362,
+        490,
+        264,
+        4828,
+        17773,
+        13,
+        51404
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13085848864387065,
+      "compression_ratio": 1.4416243654822336,
+      "no_speech_prob": 0.1819949895143509,
+      "words": [
+        {
+          "word": " But",
+          "start": 98.64,
+          "end": 98.82,
+          "probability": 0.991468071937561
+        },
+        {
+          "word": " it",
+          "start": 98.82,
+          "end": 98.96,
+          "probability": 0.9896376132965088
+        },
+        {
+          "word": " was",
+          "start": 98.96,
+          "end": 99.12,
+          "probability": 0.9988621473312378
+        },
+        {
+          "word": " delicious",
+          "start": 99.12,
+          "end": 99.74,
+          "probability": 0.9953176975250244
+        },
+        {
+          "word": " and",
+          "start": 99.74,
+          "end": 100.56,
+          "probability": 0.43952104449272156
+        },
+        {
+          "word": " better",
+          "start": 100.56,
+          "end": 101.02,
+          "probability": 0.998108983039856
+        },
+        {
+          "word": " than",
+          "start": 101.02,
+          "end": 101.22,
+          "probability": 0.9910575151443481
+        },
+        {
+          "word": " the",
+          "start": 101.22,
+          "end": 101.4,
+          "probability": 0.995276689529419
+        },
+        {
+          "word": " sandwich",
+          "start": 101.4,
+          "end": 101.82,
+          "probability": 0.981689453125
+        },
+        {
+          "word": " I",
+          "start": 101.82,
+          "end": 102.1,
+          "probability": 0.9896801114082336
+        },
+        {
+          "word": " usually",
+          "start": 102.1,
+          "end": 102.58,
+          "probability": 0.9983541965484619
+        },
+        {
+          "word": " have",
+          "start": 102.58,
+          "end": 102.98,
+          "probability": 0.9938151836395264
+        },
+        {
+          "word": " from",
+          "start": 102.98,
+          "end": 103.22,
+          "probability": 0.98497074842453
+        },
+        {
+          "word": " the",
+          "start": 103.22,
+          "end": 103.38,
+          "probability": 0.994437575340271
+        },
+        {
+          "word": " campus",
+          "start": 103.38,
+          "end": 103.76,
+          "probability": 0.9259464144706726
+        },
+        {
+          "word": " cafe.",
+          "start": 103.76,
+          "end": 104.32,
+          "probability": 0.8097293972969055
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 8426,
+      "start": 105.12,
+      "end": 110.12,
+      "text": " The food at college isn't very nice. Only the chips are okay.",
+      "tokens": [
+        51404,
+        440,
+        1755,
+        412,
+        3859,
+        1943,
+        380,
+        588,
+        1481,
+        13,
+        5686,
+        264,
+        11583,
+        366,
+        1392,
+        13,
+        51684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13085848864387065,
+      "compression_ratio": 1.4416243654822336,
+      "no_speech_prob": 0.1819949895143509,
+      "words": [
+        {
+          "word": " The",
+          "start": 105.12,
+          "end": 105.34,
+          "probability": 0.8300582766532898
+        },
+        {
+          "word": " food",
+          "start": 105.34,
+          "end": 105.7,
+          "probability": 0.9725441932678223
+        },
+        {
+          "word": " at",
+          "start": 105.7,
+          "end": 105.92,
+          "probability": 0.9453527927398682
+        },
+        {
+          "word": " college",
+          "start": 105.92,
+          "end": 106.36,
+          "probability": 0.8366050720214844
+        },
+        {
+          "word": " isn't",
+          "start": 106.36,
+          "end": 107.08,
+          "probability": 0.9941783547401428
+        },
+        {
+          "word": " very",
+          "start": 107.08,
+          "end": 107.38,
+          "probability": 0.9927283525466919
+        },
+        {
+          "word": " nice.",
+          "start": 107.38,
+          "end": 107.8,
+          "probability": 0.9973701238632202
+        },
+        {
+          "word": " Only",
+          "start": 108.52,
+          "end": 108.88,
+          "probability": 0.9932954907417297
+        },
+        {
+          "word": " the",
+          "start": 108.88,
+          "end": 109.08,
+          "probability": 0.9970096349716187
+        },
+        {
+          "word": " chips",
+          "start": 109.08,
+          "end": 109.36,
+          "probability": 0.9855940937995911
+        },
+        {
+          "word": " are",
+          "start": 109.36,
+          "end": 109.7,
+          "probability": 0.9957219362258911
+        },
+        {
+          "word": " okay.",
+          "start": 109.7,
+          "end": 110.12,
+          "probability": 0.6991387605667114
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 8426,
+      "start": 110.84,
+      "end": 111.2,
+      "text": " True.",
+      "tokens": [
+        51684,
+        13587,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13085848864387065,
+      "compression_ratio": 1.4416243654822336,
+      "no_speech_prob": 0.1819949895143509,
+      "words": [
+        {
+          "word": " True.",
+          "start": 110.84,
+          "end": 111.2,
+          "probability": 0.9610612988471985
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 11120,
+      "start": 112.0,
+      "end": 116.88,
+      "text": " Maybe we should have more food festivals so we can eat better food.",
+      "tokens": [
+        50404,
+        2704,
+        321,
+        820,
+        362,
+        544,
+        1755,
+        28040,
+        370,
+        321,
+        393,
+        1862,
+        1101,
+        1755,
+        13,
+        50684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11231218338012695,
+      "compression_ratio": 1.2424242424242424,
+      "no_speech_prob": 0.2102159708738327,
+      "words": [
+        {
+          "word": " Maybe",
+          "start": 112.0,
+          "end": 112.7,
+          "probability": 0.6185778379440308
+        },
+        {
+          "word": " we",
+          "start": 112.7,
+          "end": 113.1,
+          "probability": 0.9764809608459473
+        },
+        {
+          "word": " should",
+          "start": 113.1,
+          "end": 113.3,
+          "probability": 0.998557984828949
+        },
+        {
+          "word": " have",
+          "start": 113.3,
+          "end": 113.46,
+          "probability": 0.9966897964477539
+        },
+        {
+          "word": " more",
+          "start": 113.46,
+          "end": 113.78,
+          "probability": 0.9945153594017029
+        },
+        {
+          "word": " food",
+          "start": 113.78,
+          "end": 114.08,
+          "probability": 0.9944497346878052
+        },
+        {
+          "word": " festivals",
+          "start": 114.08,
+          "end": 114.66,
+          "probability": 0.9688405394554138
+        },
+        {
+          "word": " so",
+          "start": 114.66,
+          "end": 115.26,
+          "probability": 0.6787323951721191
+        },
+        {
+          "word": " we",
+          "start": 115.26,
+          "end": 115.5,
+          "probability": 0.9843963384628296
+        },
+        {
+          "word": " can",
+          "start": 115.5,
+          "end": 115.68,
+          "probability": 0.9857186675071716
+        },
+        {
+          "word": " eat",
+          "start": 115.68,
+          "end": 115.86,
+          "probability": 0.997435986995697
+        },
+        {
+          "word": " better",
+          "start": 115.86,
+          "end": 116.32,
+          "probability": 0.9838939309120178
+        },
+        {
+          "word": " food.",
+          "start": 116.32,
+          "end": 116.88,
+          "probability": 0.9964913725852966
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 11120,
+      "start": 117.5,
+      "end": 120.14,
+      "text": " The college made nearly $2,000.",
+      "tokens": [
+        50684,
+        440,
+        3859,
+        1027,
+        6217,
+        1848,
+        17,
+        11,
+        1360,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11231218338012695,
+      "compression_ratio": 1.2424242424242424,
+      "no_speech_prob": 0.2102159708738327,
+      "words": [
+        {
+          "word": " The",
+          "start": 117.5,
+          "end": 117.94,
+          "probability": 0.9869664907455444
+        },
+        {
+          "word": " college",
+          "start": 117.94,
+          "end": 118.34,
+          "probability": 0.9015206098556519
+        },
+        {
+          "word": " made",
+          "start": 118.34,
+          "end": 118.7,
+          "probability": 0.9964203834533691
+        },
+        {
+          "word": " nearly",
+          "start": 118.7,
+          "end": 119.16,
+          "probability": 0.9988760352134705
+        },
+        {
+          "word": " $2",
+          "start": 119.16,
+          "end": 119.64,
+          "probability": 0.8343533873558044
+        },
+        {
+          "word": ",000.",
+          "start": 119.64,
+          "end": 120.14,
+          "probability": 0.9903908371925354
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 11120,
+      "start": 121.1,
+      "end": 123.82,
+      "text": " $1,800 to be exact.",
+      "tokens": [
+        50864,
+        1848,
+        16,
+        11,
+        14423,
+        281,
+        312,
+        1900,
+        13,
+        51024
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11231218338012695,
+      "compression_ratio": 1.2424242424242424,
+      "no_speech_prob": 0.2102159708738327,
+      "words": [
+        {
+          "word": " $1",
+          "start": 121.1,
+          "end": 121.78,
+          "probability": 0.8182228207588196
+        },
+        {
+          "word": ",800",
+          "start": 121.78,
+          "end": 122.88,
+          "probability": 0.9938491582870483
+        },
+        {
+          "word": " to",
+          "start": 122.88,
+          "end": 123.2,
+          "probability": 0.9384863972663879
+        },
+        {
+          "word": " be",
+          "start": 123.2,
+          "end": 123.34,
+          "probability": 0.9986544847488403
+        },
+        {
+          "word": " exact.",
+          "start": 123.34,
+          "end": 123.82,
+          "probability": 0.9947351813316345
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 11120,
+      "start": 124.46,
+      "end": 126.88,
+      "text": " So they definitely think it was a good idea.",
+      "tokens": [
+        51024,
+        407,
+        436,
+        2138,
+        519,
+        309,
+        390,
+        257,
+        665,
+        1558,
+        13,
+        51224
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11231218338012695,
+      "compression_ratio": 1.2424242424242424,
+      "no_speech_prob": 0.2102159708738327,
+      "words": [
+        {
+          "word": " So",
+          "start": 124.46,
+          "end": 124.78,
+          "probability": 0.9900853633880615
+        },
+        {
+          "word": " they",
+          "start": 124.78,
+          "end": 124.94,
+          "probability": 0.9528534412384033
+        },
+        {
+          "word": " definitely",
+          "start": 124.94,
+          "end": 125.42,
+          "probability": 0.982316792011261
+        },
+        {
+          "word": " think",
+          "start": 125.42,
+          "end": 125.86,
+          "probability": 0.9973994493484497
+        },
+        {
+          "word": " it",
+          "start": 125.86,
+          "end": 125.98,
+          "probability": 0.9924907088279724
+        },
+        {
+          "word": " was",
+          "start": 125.98,
+          "end": 126.12,
+          "probability": 0.9983668923377991
+        },
+        {
+          "word": " a",
+          "start": 126.12,
+          "end": 126.26,
+          "probability": 0.9982996582984924
+        },
+        {
+          "word": " good",
+          "start": 126.26,
+          "end": 126.44,
+          "probability": 0.9982985854148865
+        },
+        {
+          "word": " idea.",
+          "start": 126.44,
+          "end": 126.88,
+          "probability": 0.9993396401405334
+        }
+      ]
+    }
+  ]
+}

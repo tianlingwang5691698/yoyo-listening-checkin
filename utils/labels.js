@@ -32,11 +32,17 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'unlock1workbook') {
     return 'Unlock 1 听口 练习册 第二版';
   }
+  if (category === 'unlock1workbookthirdedition') {
+    return 'Unlock 1 听口练习册 第三版';
+  }
   if (category === 'unlock2') {
     return 'Unlock 2 课本';
   }
   if (category === 'unlock2workbook') {
     return 'Unlock 2 练习册';
+  }
+  if (category === 'unlock2workbookthirdedition') {
+    return 'Unlock 2 听口练习册 第三版';
   }
   if (category === 'unlock3textbook') {
     return 'Unlock3 听口 第二版';
@@ -47,6 +53,9 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'unlock3') {
     return 'Unlock3 听口练习册 第二版';
   }
+  if (category === 'unlock3workbookthirdedition') {
+    return 'Unlock3 听口练习册 第三版';
+  }
   if (category === 'unlock4') {
     return 'Unlock 4 课本';
   }
@@ -55,6 +64,9 @@ function getCategoryDisplayLabel(category, label) {
   }
   if (category === 'unlock4workbook') {
     return 'Unlock 4 练习册';
+  }
+  if (category === 'unlock4workbookthirdedition') {
+    return 'Unlock 4 听口练习册 第三版';
   }
   if (category === 'newconcept1') {
     return 'New Concept 1';

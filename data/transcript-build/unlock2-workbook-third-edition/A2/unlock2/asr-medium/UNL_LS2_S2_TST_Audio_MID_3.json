@@ -1,0 +1,3318 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "mid-course test, track three. So, Freya, you are going to talk about an Icelandic festival. Could you begin by telling us a bit about Iceland? Of course. Well, Iceland is a small northern European country in the Atlantic Ocean. We have quite cold weather with snow and ice in winter, but the weather isn't as cold as in Norway or Sweden. Most of the country is still very rural, and there are only a few big towns and one big city. Because there are so many mountains and ice fields, there aren't many places to build houses and towns, so about 80% of Icelanders live in or near the capital city of Reykjavik on the southwest coast. Tell us about Reykjavik. Well, it's a very safe, clean city. Since we have a good bus system and people like walking, there isn't a lot of traffic or pollution. The streets aren't crowded, but that doesn't mean it's boring. Iceland has a long and ancient history, so there are a lot of museums and other interesting places to visit in the city. It's the best place in the world to learn about the Vikings and other northern European culture. Many people come to Reykjavik for the festivals. We have several music festivals, a design festival and my favorite, the book festival. Reading is a very popular activity in Iceland. Perhaps it's because of the long, dark winters, when we have to stay inside a lot of the time. People read a lot anyway, and we often give books as presents. We have a lot of traditional literature, and there are many new Icelandic books every year. In fact, each year, more and more of them are translated into other languages. Since everyone reads and writes so much, and the population is so small, it means that one in ten Icelanders will write a book in their lives. Wow! So, is the festival just for books in the Icelandic language? No. Writers from all over the world come to celebrate books and reading. It's a big international event. The lectures, readings and workshops are in English, and they are all free. There are other sorts of entertainment too, like dancing and parties. It's a great time to meet your favorite writers, taste traditional dishes and have fun. Anyone who loves books should come.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.94,
+      "text": " mid-course test, track three.",
+      "tokens": [
+        50364,
+        2062,
+        12,
+        31913,
+        1500,
+        11,
+        2837,
+        1045,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3981718515094958,
+      "compression_ratio": 1.4663212435233162,
+      "no_speech_prob": 0.19099463522434235,
+      "words": [
+        {
+          "word": " mid",
+          "start": 0.0,
+          "end": 0.6,
+          "probability": 0.25886547565460205
+        },
+        {
+          "word": "-course",
+          "start": 0.6,
+          "end": 0.94,
+          "probability": 0.8358836770057678
+        },
+        {
+          "word": " test,",
+          "start": 0.94,
+          "end": 1.54,
+          "probability": 0.9895986318588257
+        },
+        {
+          "word": " track",
+          "start": 2.1,
+          "end": 2.34,
+          "probability": 0.8042526245117188
+        },
+        {
+          "word": " three.",
+          "start": 2.34,
+          "end": 2.94,
+          "probability": 0.5093513131141663
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.94,
+      "end": 10.36,
+      "text": " So, Freya, you are going to talk about an Icelandic festival.",
+      "tokens": [
+        50592,
+        407,
+        11,
+        6142,
+        3016,
+        11,
+        291,
+        366,
+        516,
+        281,
+        751,
+        466,
+        364,
+        28004,
+        299,
+        12091,
+        13,
+        50894
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3981718515094958,
+      "compression_ratio": 1.4663212435233162,
+      "no_speech_prob": 0.19099463522434235,
+      "words": [
+        {
+          "word": " So,",
+          "start": 4.94,
+          "end": 5.38,
+          "probability": 0.8744035363197327
+        },
+        {
+          "word": " Freya,",
+          "start": 5.54,
+          "end": 6.0,
+          "probability": 0.6795801073312759
+        },
+        {
+          "word": " you",
+          "start": 6.38,
+          "end": 6.76,
+          "probability": 0.9927334785461426
+        },
+        {
+          "word": " are",
+          "start": 6.76,
+          "end": 7.22,
+          "probability": 0.9766178131103516
+        },
+        {
+          "word": " going",
+          "start": 7.22,
+          "end": 7.52,
+          "probability": 0.9980981945991516
+        },
+        {
+          "word": " to",
+          "start": 7.52,
+          "end": 7.82,
+          "probability": 0.9980055689811707
+        },
+        {
+          "word": " talk",
+          "start": 7.82,
+          "end": 8.08,
+          "probability": 0.9979240894317627
+        },
+        {
+          "word": " about",
+          "start": 8.08,
+          "end": 8.52,
+          "probability": 0.9975059628486633
+        },
+        {
+          "word": " an",
+          "start": 8.52,
+          "end": 8.86,
+          "probability": 0.9401545524597168
+        },
+        {
+          "word": " Icelandic",
+          "start": 8.86,
+          "end": 9.66,
+          "probability": 0.9952716827392578
+        },
+        {
+          "word": " festival.",
+          "start": 9.66,
+          "end": 10.36,
+          "probability": 0.9477760791778564
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 11.1,
+      "end": 14.54,
+      "text": " Could you begin by telling us a bit about Iceland?",
+      "tokens": [
+        50906,
+        7497,
+        291,
+        1841,
+        538,
+        3585,
+        505,
+        257,
+        857,
+        466,
+        28004,
+        30,
+        51104
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3981718515094958,
+      "compression_ratio": 1.4663212435233162,
+      "no_speech_prob": 0.19099463522434235,
+      "words": [
+        {
+          "word": " Could",
+          "start": 11.1,
+          "end": 11.34,
+          "probability": 0.99064701795578
+        },
+        {
+          "word": " you",
+          "start": 11.34,
+          "end": 11.5,
+          "probability": 0.9988405108451843
+        },
+        {
+          "word": " begin",
+          "start": 11.5,
+          "end": 11.9,
+          "probability": 0.9951369166374207
+        },
+        {
+          "word": " by",
+          "start": 11.9,
+          "end": 12.36,
+          "probability": 0.994526207447052
+        },
+        {
+          "word": " telling",
+          "start": 12.36,
+          "end": 12.66,
+          "probability": 0.9951736330986023
+        },
+        {
+          "word": " us",
+          "start": 12.66,
+          "end": 13.08,
+          "probability": 0.997393012046814
+        },
+        {
+          "word": " a",
+          "start": 13.08,
+          "end": 13.2,
+          "probability": 0.9848211407661438
+        },
+        {
+          "word": " bit",
+          "start": 13.2,
+          "end": 13.44,
+          "probability": 0.9984652996063232
+        },
+        {
+          "word": " about",
+          "start": 13.44,
+          "end": 13.92,
+          "probability": 0.9992400407791138
+        },
+        {
+          "word": " Iceland?",
+          "start": 13.92,
+          "end": 14.54,
+          "probability": 0.9991084933280945
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 15.18,
+      "end": 22.36,
+      "text": " Of course. Well, Iceland is a small northern European country in the Atlantic Ocean.",
+      "tokens": [
+        51112,
+        2720,
+        1164,
+        13,
+        1042,
+        11,
+        28004,
+        307,
+        257,
+        1359,
+        14197,
+        6473,
+        1941,
+        294,
+        264,
+        20233,
+        18101,
+        13,
+        51494
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3981718515094958,
+      "compression_ratio": 1.4663212435233162,
+      "no_speech_prob": 0.19099463522434235,
+      "words": [
+        {
+          "word": " Of",
+          "start": 15.18,
+          "end": 15.6,
+          "probability": 0.9869456887245178
+        },
+        {
+          "word": " course.",
+          "start": 15.6,
+          "end": 16.02,
+          "probability": 0.9978856444358826
+        },
+        {
+          "word": " Well,",
+          "start": 16.66,
+          "end": 17.14,
+          "probability": 0.9550743699073792
+        },
+        {
+          "word": " Iceland",
+          "start": 17.4,
+          "end": 17.84,
+          "probability": 0.9981505274772644
+        },
+        {
+          "word": " is",
+          "start": 17.84,
+          "end": 18.32,
+          "probability": 0.9973279237747192
+        },
+        {
+          "word": " a",
+          "start": 18.32,
+          "end": 18.7,
+          "probability": 0.995758593082428
+        },
+        {
+          "word": " small",
+          "start": 18.7,
+          "end": 18.96,
+          "probability": 0.9929004907608032
+        },
+        {
+          "word": " northern",
+          "start": 18.96,
+          "end": 19.48,
+          "probability": 0.6009721755981445
+        },
+        {
+          "word": " European",
+          "start": 19.48,
+          "end": 20.06,
+          "probability": 0.982801079750061
+        },
+        {
+          "word": " country",
+          "start": 20.06,
+          "end": 20.7,
+          "probability": 0.9959676265716553
+        },
+        {
+          "word": " in",
+          "start": 20.7,
+          "end": 21.1,
+          "probability": 0.9667580723762512
+        },
+        {
+          "word": " the",
+          "start": 21.1,
+          "end": 21.26,
+          "probability": 0.9991908669471741
+        },
+        {
+          "word": " Atlantic",
+          "start": 21.26,
+          "end": 21.76,
+          "probability": 0.9942586421966553
+        },
+        {
+          "word": " Ocean.",
+          "start": 21.76,
+          "end": 22.36,
+          "probability": 0.9214068651199341
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 23.18,
+      "end": 27.28,
+      "text": " We have quite cold weather with snow and ice in winter,",
+      "tokens": [
+        51514,
+        492,
+        362,
+        1596,
+        3554,
+        5503,
+        365,
+        5756,
+        293,
+        4435,
+        294,
+        6355,
+        11,
+        51742
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3981718515094958,
+      "compression_ratio": 1.4663212435233162,
+      "no_speech_prob": 0.19099463522434235,
+      "words": [
+        {
+          "word": " We",
+          "start": 23.18,
+          "end": 23.5,
+          "probability": 0.9966977834701538
+        },
+        {
+          "word": " have",
+          "start": 23.5,
+          "end": 23.76,
+          "probability": 0.998767614364624
+        },
+        {
+          "word": " quite",
+          "start": 23.76,
+          "end": 24.12,
+          "probability": 0.9968679547309875
+        },
+        {
+          "word": " cold",
+          "start": 24.12,
+          "end": 24.5,
+          "probability": 0.9956222176551819
+        },
+        {
+          "word": " weather",
+          "start": 24.5,
+          "end": 24.9,
+          "probability": 0.9983115196228027
+        },
+        {
+          "word": " with",
+          "start": 24.9,
+          "end": 25.24,
+          "probability": 0.9725164771080017
+        },
+        {
+          "word": " snow",
+          "start": 25.24,
+          "end": 25.66,
+          "probability": 0.9990419745445251
+        },
+        {
+          "word": " and",
+          "start": 25.66,
+          "end": 26.2,
+          "probability": 0.9950070381164551
+        },
+        {
+          "word": " ice",
+          "start": 26.2,
+          "end": 26.6,
+          "probability": 0.9993854761123657
+        },
+        {
+          "word": " in",
+          "start": 26.6,
+          "end": 26.88,
+          "probability": 0.9980619549751282
+        },
+        {
+          "word": " winter,",
+          "start": 26.88,
+          "end": 27.28,
+          "probability": 0.9337542057037354
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2728,
+      "start": 27.28,
+      "end": 32.38,
+      "text": " but the weather isn't as cold as in Norway or Sweden.",
+      "tokens": [
+        50364,
+        457,
+        264,
+        5503,
+        1943,
+        380,
+        382,
+        3554,
+        382,
+        294,
+        24354,
+        420,
+        17727,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20588999854193793,
+      "compression_ratio": 1.5675675675675675,
+      "no_speech_prob": 0.01308931689709425,
+      "words": [
+        {
+          "word": " but",
+          "start": 27.28,
+          "end": 28.24,
+          "probability": 0.39253783226013184
+        },
+        {
+          "word": " the",
+          "start": 28.24,
+          "end": 28.46,
+          "probability": 0.9949136972427368
+        },
+        {
+          "word": " weather",
+          "start": 28.46,
+          "end": 28.86,
+          "probability": 0.9986403584480286
+        },
+        {
+          "word": " isn't",
+          "start": 28.86,
+          "end": 29.56,
+          "probability": 0.9874267876148224
+        },
+        {
+          "word": " as",
+          "start": 29.56,
+          "end": 29.94,
+          "probability": 0.9957548379898071
+        },
+        {
+          "word": " cold",
+          "start": 29.94,
+          "end": 30.26,
+          "probability": 0.9981645941734314
+        },
+        {
+          "word": " as",
+          "start": 30.26,
+          "end": 30.52,
+          "probability": 0.9929919242858887
+        },
+        {
+          "word": " in",
+          "start": 30.52,
+          "end": 30.8,
+          "probability": 0.9855074882507324
+        },
+        {
+          "word": " Norway",
+          "start": 30.8,
+          "end": 31.22,
+          "probability": 0.9958689212799072
+        },
+        {
+          "word": " or",
+          "start": 31.22,
+          "end": 31.82,
+          "probability": 0.955950140953064
+        },
+        {
+          "word": " Sweden.",
+          "start": 31.82,
+          "end": 32.38,
+          "probability": 0.9983969330787659
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2728,
+      "start": 33.64,
+      "end": 40.8,
+      "text": " Most of the country is still very rural, and there are only a few big towns and one big city.",
+      "tokens": [
+        50664,
+        4534,
+        295,
+        264,
+        1941,
+        307,
+        920,
+        588,
+        11165,
+        11,
+        293,
+        456,
+        366,
+        787,
+        257,
+        1326,
+        955,
+        18104,
+        293,
+        472,
+        955,
+        2307,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20588999854193793,
+      "compression_ratio": 1.5675675675675675,
+      "no_speech_prob": 0.01308931689709425,
+      "words": [
+        {
+          "word": " Most",
+          "start": 33.64,
+          "end": 34.04,
+          "probability": 0.9876746535301208
+        },
+        {
+          "word": " of",
+          "start": 34.04,
+          "end": 34.32,
+          "probability": 0.9985503554344177
+        },
+        {
+          "word": " the",
+          "start": 34.32,
+          "end": 34.42,
+          "probability": 0.9987117052078247
+        },
+        {
+          "word": " country",
+          "start": 34.42,
+          "end": 34.92,
+          "probability": 0.9921649694442749
+        },
+        {
+          "word": " is",
+          "start": 34.92,
+          "end": 35.42,
+          "probability": 0.9944207072257996
+        },
+        {
+          "word": " still",
+          "start": 35.42,
+          "end": 35.66,
+          "probability": 0.9985300302505493
+        },
+        {
+          "word": " very",
+          "start": 35.66,
+          "end": 36.02,
+          "probability": 0.9985049962997437
+        },
+        {
+          "word": " rural,",
+          "start": 36.02,
+          "end": 36.46,
+          "probability": 0.9997175335884094
+        },
+        {
+          "word": " and",
+          "start": 36.96,
+          "end": 37.04,
+          "probability": 0.9953926801681519
+        },
+        {
+          "word": " there",
+          "start": 37.04,
+          "end": 37.28,
+          "probability": 0.998043417930603
+        },
+        {
+          "word": " are",
+          "start": 37.28,
+          "end": 37.48,
+          "probability": 0.9966795444488525
+        },
+        {
+          "word": " only",
+          "start": 37.48,
+          "end": 37.84,
+          "probability": 0.9944133162498474
+        },
+        {
+          "word": " a",
+          "start": 37.84,
+          "end": 38.06,
+          "probability": 0.9896795749664307
+        },
+        {
+          "word": " few",
+          "start": 38.06,
+          "end": 38.24,
+          "probability": 0.9996583461761475
+        },
+        {
+          "word": " big",
+          "start": 38.24,
+          "end": 38.56,
+          "probability": 0.9982247948646545
+        },
+        {
+          "word": " towns",
+          "start": 38.56,
+          "end": 39.16,
+          "probability": 0.9983653426170349
+        },
+        {
+          "word": " and",
+          "start": 39.16,
+          "end": 39.76,
+          "probability": 0.9018178582191467
+        },
+        {
+          "word": " one",
+          "start": 39.76,
+          "end": 40.04,
+          "probability": 0.9963510036468506
+        },
+        {
+          "word": " big",
+          "start": 40.04,
+          "end": 40.3,
+          "probability": 0.9994832277297974
+        },
+        {
+          "word": " city.",
+          "start": 40.3,
+          "end": 40.8,
+          "probability": 0.998499870300293
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2728,
+      "start": 42.1,
+      "end": 48.78,
+      "text": " Because there are so many mountains and ice fields, there aren't many places to build houses and towns,",
+      "tokens": [
+        51064,
+        1436,
+        456,
+        366,
+        370,
+        867,
+        10233,
+        293,
+        4435,
+        7909,
+        11,
+        456,
+        3212,
+        380,
+        867,
+        3190,
+        281,
+        1322,
+        8078,
+        293,
+        18104,
+        11,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20588999854193793,
+      "compression_ratio": 1.5675675675675675,
+      "no_speech_prob": 0.01308931689709425,
+      "words": [
+        {
+          "word": " Because",
+          "start": 42.1,
+          "end": 42.58,
+          "probability": 0.9946326017379761
+        },
+        {
+          "word": " there",
+          "start": 42.58,
+          "end": 42.88,
+          "probability": 0.9977462887763977
+        },
+        {
+          "word": " are",
+          "start": 42.88,
+          "end": 43.04,
+          "probability": 0.9971370697021484
+        },
+        {
+          "word": " so",
+          "start": 43.04,
+          "end": 43.34,
+          "probability": 0.995475709438324
+        },
+        {
+          "word": " many",
+          "start": 43.34,
+          "end": 43.6,
+          "probability": 0.9990819692611694
+        },
+        {
+          "word": " mountains",
+          "start": 43.6,
+          "end": 44.24,
+          "probability": 0.9953882694244385
+        },
+        {
+          "word": " and",
+          "start": 44.24,
+          "end": 44.68,
+          "probability": 0.9945096373558044
+        },
+        {
+          "word": " ice",
+          "start": 44.68,
+          "end": 45.06,
+          "probability": 0.9955119490623474
+        },
+        {
+          "word": " fields,",
+          "start": 45.06,
+          "end": 45.48,
+          "probability": 0.6842340230941772
+        },
+        {
+          "word": " there",
+          "start": 45.9,
+          "end": 45.94,
+          "probability": 0.9894614815711975
+        },
+        {
+          "word": " aren't",
+          "start": 45.94,
+          "end": 46.14,
+          "probability": 0.9978541433811188
+        },
+        {
+          "word": " many",
+          "start": 46.14,
+          "end": 46.48,
+          "probability": 0.968069314956665
+        },
+        {
+          "word": " places",
+          "start": 46.48,
+          "end": 46.92,
+          "probability": 0.997227132320404
+        },
+        {
+          "word": " to",
+          "start": 46.92,
+          "end": 47.22,
+          "probability": 0.9992052912712097
+        },
+        {
+          "word": " build",
+          "start": 47.22,
+          "end": 47.42,
+          "probability": 0.9967077970504761
+        },
+        {
+          "word": " houses",
+          "start": 47.42,
+          "end": 47.96,
+          "probability": 0.9969466328620911
+        },
+        {
+          "word": " and",
+          "start": 47.96,
+          "end": 48.26,
+          "probability": 0.989109992980957
+        },
+        {
+          "word": " towns,",
+          "start": 48.26,
+          "end": 48.78,
+          "probability": 0.9982315897941589
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2728,
+      "start": 49.28,
+      "end": 57.0,
+      "text": " so about 80% of Icelanders live in or near the capital city of Reykjavik on the southwest coast.",
+      "tokens": [
+        51414,
+        370,
+        466,
+        4688,
+        4,
+        295,
+        28004,
+        433,
+        1621,
+        294,
+        420,
+        2651,
+        264,
+        4238,
+        2307,
+        295,
+        17547,
+        74,
+        73,
+        706,
+        1035,
+        322,
+        264,
+        34363,
+        8684,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20588999854193793,
+      "compression_ratio": 1.5675675675675675,
+      "no_speech_prob": 0.01308931689709425,
+      "words": [
+        {
+          "word": " so",
+          "start": 49.28,
+          "end": 49.64,
+          "probability": 0.9960286617279053
+        },
+        {
+          "word": " about",
+          "start": 49.64,
+          "end": 50.1,
+          "probability": 0.9911835193634033
+        },
+        {
+          "word": " 80",
+          "start": 50.1,
+          "end": 50.42,
+          "probability": 0.908155620098114
+        },
+        {
+          "word": "%",
+          "start": 50.42,
+          "end": 50.88,
+          "probability": 0.758053719997406
+        },
+        {
+          "word": " of",
+          "start": 50.88,
+          "end": 51.18,
+          "probability": 0.9979745745658875
+        },
+        {
+          "word": " Icelanders",
+          "start": 51.18,
+          "end": 52.12,
+          "probability": 0.995362401008606
+        },
+        {
+          "word": " live",
+          "start": 52.12,
+          "end": 52.42,
+          "probability": 0.9949418902397156
+        },
+        {
+          "word": " in",
+          "start": 52.42,
+          "end": 52.86,
+          "probability": 0.996224045753479
+        },
+        {
+          "word": " or",
+          "start": 52.86,
+          "end": 53.04,
+          "probability": 0.9925850033760071
+        },
+        {
+          "word": " near",
+          "start": 53.04,
+          "end": 53.26,
+          "probability": 0.9983637928962708
+        },
+        {
+          "word": " the",
+          "start": 53.26,
+          "end": 53.58,
+          "probability": 0.997706413269043
+        },
+        {
+          "word": " capital",
+          "start": 53.58,
+          "end": 53.94,
+          "probability": 0.9850547313690186
+        },
+        {
+          "word": " city",
+          "start": 53.94,
+          "end": 54.4,
+          "probability": 0.9983854293823242
+        },
+        {
+          "word": " of",
+          "start": 54.4,
+          "end": 54.8,
+          "probability": 0.9940746426582336
+        },
+        {
+          "word": " Reykjavik",
+          "start": 54.8,
+          "end": 55.46,
+          "probability": 0.968923556804657
+        },
+        {
+          "word": " on",
+          "start": 55.46,
+          "end": 55.8,
+          "probability": 0.8009929060935974
+        },
+        {
+          "word": " the",
+          "start": 55.8,
+          "end": 56.02,
+          "probability": 0.9993278980255127
+        },
+        {
+          "word": " southwest",
+          "start": 56.02,
+          "end": 56.44,
+          "probability": 0.6453689932823181
+        },
+        {
+          "word": " coast.",
+          "start": 56.44,
+          "end": 57.0,
+          "probability": 0.998155415058136
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 5728,
+      "start": 57.28,
+      "end": 60.0,
+      "text": " Tell us about Reykjavik.",
+      "tokens": [
+        50364,
+        5115,
+        505,
+        466,
+        17547,
+        74,
+        73,
+        706,
+        1035,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08597540337106456,
+      "compression_ratio": 1.5426008968609866,
+      "no_speech_prob": 0.0037696664221584797,
+      "words": [
+        {
+          "word": " Tell",
+          "start": 57.28,
+          "end": 58.38,
+          "probability": 0.7879058718681335
+        },
+        {
+          "word": " us",
+          "start": 58.38,
+          "end": 58.76,
+          "probability": 0.9967357516288757
+        },
+        {
+          "word": " about",
+          "start": 58.76,
+          "end": 59.16,
+          "probability": 0.9962040781974792
+        },
+        {
+          "word": " Reykjavik.",
+          "start": 59.16,
+          "end": 60.0,
+          "probability": 0.9736116886138916
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5728,
+      "start": 60.64,
+      "end": 68.56,
+      "text": " Well, it's a very safe, clean city. Since we have a good bus system and people like walking,",
+      "tokens": [
+        50514,
+        1042,
+        11,
+        309,
+        311,
+        257,
+        588,
+        3273,
+        11,
+        2541,
+        2307,
+        13,
+        4162,
+        321,
+        362,
+        257,
+        665,
+        1255,
+        1185,
+        293,
+        561,
+        411,
+        4494,
+        11,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08597540337106456,
+      "compression_ratio": 1.5426008968609866,
+      "no_speech_prob": 0.0037696664221584797,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 60.64,
+          "end": 61.12,
+          "probability": 0.9710640907287598
+        },
+        {
+          "word": " it's",
+          "start": 61.54,
+          "end": 61.74,
+          "probability": 0.9768002331256866
+        },
+        {
+          "word": " a",
+          "start": 61.74,
+          "end": 61.88,
+          "probability": 0.9967480897903442
+        },
+        {
+          "word": " very",
+          "start": 61.88,
+          "end": 62.24,
+          "probability": 0.9950922727584839
+        },
+        {
+          "word": " safe,",
+          "start": 62.24,
+          "end": 62.64,
+          "probability": 0.996672511100769
+        },
+        {
+          "word": " clean",
+          "start": 62.84,
+          "end": 63.2,
+          "probability": 0.9979565143585205
+        },
+        {
+          "word": " city.",
+          "start": 63.2,
+          "end": 63.7,
+          "probability": 0.9891389012336731
+        },
+        {
+          "word": " Since",
+          "start": 64.46,
+          "end": 64.82,
+          "probability": 0.99503493309021
+        },
+        {
+          "word": " we",
+          "start": 64.82,
+          "end": 65.12,
+          "probability": 0.9974979758262634
+        },
+        {
+          "word": " have",
+          "start": 65.12,
+          "end": 65.42,
+          "probability": 0.9985992312431335
+        },
+        {
+          "word": " a",
+          "start": 65.42,
+          "end": 65.66,
+          "probability": 0.9942421317100525
+        },
+        {
+          "word": " good",
+          "start": 65.66,
+          "end": 65.88,
+          "probability": 0.9992064833641052
+        },
+        {
+          "word": " bus",
+          "start": 65.88,
+          "end": 66.22,
+          "probability": 0.9974223375320435
+        },
+        {
+          "word": " system",
+          "start": 66.22,
+          "end": 66.72,
+          "probability": 0.974858283996582
+        },
+        {
+          "word": " and",
+          "start": 66.72,
+          "end": 67.22,
+          "probability": 0.8009265065193176
+        },
+        {
+          "word": " people",
+          "start": 67.22,
+          "end": 67.7,
+          "probability": 0.997211754322052
+        },
+        {
+          "word": " like",
+          "start": 67.7,
+          "end": 68.14,
+          "probability": 0.9977188110351562
+        },
+        {
+          "word": " walking,",
+          "start": 68.14,
+          "end": 68.56,
+          "probability": 0.9942567944526672
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5728,
+      "start": 69.02,
+      "end": 76.26,
+      "text": " there isn't a lot of traffic or pollution. The streets aren't crowded, but that doesn't mean it's boring.",
+      "tokens": [
+        50914,
+        456,
+        1943,
+        380,
+        257,
+        688,
+        295,
+        6419,
+        420,
+        16727,
+        13,
+        440,
+        8481,
+        3212,
+        380,
+        21634,
+        11,
+        457,
+        300,
+        1177,
+        380,
+        914,
+        309,
+        311,
+        9989,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08597540337106456,
+      "compression_ratio": 1.5426008968609866,
+      "no_speech_prob": 0.0037696664221584797,
+      "words": [
+        {
+          "word": " there",
+          "start": 69.02,
+          "end": 69.28,
+          "probability": 0.9897081851959229
+        },
+        {
+          "word": " isn't",
+          "start": 69.28,
+          "end": 69.58,
+          "probability": 0.997944176197052
+        },
+        {
+          "word": " a",
+          "start": 69.58,
+          "end": 69.64,
+          "probability": 0.9962961077690125
+        },
+        {
+          "word": " lot",
+          "start": 69.64,
+          "end": 69.88,
+          "probability": 0.9996771812438965
+        },
+        {
+          "word": " of",
+          "start": 69.88,
+          "end": 70.18,
+          "probability": 0.99662846326828
+        },
+        {
+          "word": " traffic",
+          "start": 70.18,
+          "end": 70.64,
+          "probability": 0.9990910291671753
+        },
+        {
+          "word": " or",
+          "start": 70.64,
+          "end": 71.1,
+          "probability": 0.9599810242652893
+        },
+        {
+          "word": " pollution.",
+          "start": 71.1,
+          "end": 71.62,
+          "probability": 0.9991533756256104
+        },
+        {
+          "word": " The",
+          "start": 72.58,
+          "end": 72.88,
+          "probability": 0.997162401676178
+        },
+        {
+          "word": " streets",
+          "start": 72.88,
+          "end": 73.08,
+          "probability": 0.9970839619636536
+        },
+        {
+          "word": " aren't",
+          "start": 73.08,
+          "end": 73.42,
+          "probability": 0.9981249272823334
+        },
+        {
+          "word": " crowded,",
+          "start": 73.42,
+          "end": 73.96,
+          "probability": 0.9980676770210266
+        },
+        {
+          "word": " but",
+          "start": 74.4,
+          "end": 74.62,
+          "probability": 0.9984399676322937
+        },
+        {
+          "word": " that",
+          "start": 74.62,
+          "end": 74.9,
+          "probability": 0.9966204166412354
+        },
+        {
+          "word": " doesn't",
+          "start": 74.9,
+          "end": 75.24,
+          "probability": 0.9987429082393646
+        },
+        {
+          "word": " mean",
+          "start": 75.24,
+          "end": 75.5,
+          "probability": 0.9988303780555725
+        },
+        {
+          "word": " it's",
+          "start": 75.5,
+          "end": 75.82,
+          "probability": 0.9927737712860107
+        },
+        {
+          "word": " boring.",
+          "start": 75.82,
+          "end": 76.26,
+          "probability": 0.9990039467811584
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5728,
+      "start": 77.48,
+      "end": 86.54,
+      "text": " Iceland has a long and ancient history, so there are a lot of museums and other interesting places to visit in the city.",
+      "tokens": [
+        51314,
+        28004,
+        575,
+        257,
+        938,
+        293,
+        7832,
+        2503,
+        11,
+        370,
+        456,
+        366,
+        257,
+        688,
+        295,
+        23248,
+        293,
+        661,
+        1880,
+        3190,
+        281,
+        3441,
+        294,
+        264,
+        2307,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08597540337106456,
+      "compression_ratio": 1.5426008968609866,
+      "no_speech_prob": 0.0037696664221584797,
+      "words": [
+        {
+          "word": " Iceland",
+          "start": 77.48,
+          "end": 77.94,
+          "probability": 0.9967368245124817
+        },
+        {
+          "word": " has",
+          "start": 77.94,
+          "end": 78.34,
+          "probability": 0.9992475509643555
+        },
+        {
+          "word": " a",
+          "start": 78.34,
+          "end": 78.64,
+          "probability": 0.9962688684463501
+        },
+        {
+          "word": " long",
+          "start": 78.64,
+          "end": 79.0,
+          "probability": 0.9990781545639038
+        },
+        {
+          "word": " and",
+          "start": 79.0,
+          "end": 79.54,
+          "probability": 0.9888400435447693
+        },
+        {
+          "word": " ancient",
+          "start": 79.54,
+          "end": 79.98,
+          "probability": 0.999671459197998
+        },
+        {
+          "word": " history,",
+          "start": 79.98,
+          "end": 80.62,
+          "probability": 0.9993488192558289
+        },
+        {
+          "word": " so",
+          "start": 81.08,
+          "end": 81.32,
+          "probability": 0.996326744556427
+        },
+        {
+          "word": " there",
+          "start": 81.32,
+          "end": 81.62,
+          "probability": 0.9978681802749634
+        },
+        {
+          "word": " are",
+          "start": 81.62,
+          "end": 81.84,
+          "probability": 0.9949232935905457
+        },
+        {
+          "word": " a",
+          "start": 81.84,
+          "end": 81.96,
+          "probability": 0.9932969212532043
+        },
+        {
+          "word": " lot",
+          "start": 81.96,
+          "end": 82.16,
+          "probability": 0.9995447993278503
+        },
+        {
+          "word": " of",
+          "start": 82.16,
+          "end": 82.54,
+          "probability": 0.9981566071510315
+        },
+        {
+          "word": " museums",
+          "start": 82.54,
+          "end": 83.08,
+          "probability": 0.995863676071167
+        },
+        {
+          "word": " and",
+          "start": 83.08,
+          "end": 83.64,
+          "probability": 0.9714396595954895
+        },
+        {
+          "word": " other",
+          "start": 83.64,
+          "end": 84.02,
+          "probability": 0.9986863732337952
+        },
+        {
+          "word": " interesting",
+          "start": 84.02,
+          "end": 84.74,
+          "probability": 0.9992061257362366
+        },
+        {
+          "word": " places",
+          "start": 84.74,
+          "end": 85.18,
+          "probability": 0.9987234473228455
+        },
+        {
+          "word": " to",
+          "start": 85.18,
+          "end": 85.5,
+          "probability": 0.9995288848876953
+        },
+        {
+          "word": " visit",
+          "start": 85.5,
+          "end": 85.74,
+          "probability": 0.9994072914123535
+        },
+        {
+          "word": " in",
+          "start": 85.74,
+          "end": 85.98,
+          "probability": 0.9988743662834167
+        },
+        {
+          "word": " the",
+          "start": 85.98,
+          "end": 86.16,
+          "probability": 0.9986679553985596
+        },
+        {
+          "word": " city.",
+          "start": 86.16,
+          "end": 86.54,
+          "probability": 0.9985930323600769
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 8654,
+      "start": 86.54,
+      "end": 94.82,
+      "text": " It's the best place in the world to learn about the Vikings and other northern European culture.",
+      "tokens": [
+        50364,
+        467,
+        311,
+        264,
+        1151,
+        1081,
+        294,
+        264,
+        1002,
+        281,
+        1466,
+        466,
+        264,
+        48761,
+        293,
+        661,
+        14197,
+        6473,
+        3713,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08450694669756972,
+      "compression_ratio": 1.45,
+      "no_speech_prob": 0.0017152983928099275,
+      "words": [
+        {
+          "word": " It's",
+          "start": 86.54,
+          "end": 88.06,
+          "probability": 0.9167582094669342
+        },
+        {
+          "word": " the",
+          "start": 88.06,
+          "end": 88.36,
+          "probability": 0.9971081614494324
+        },
+        {
+          "word": " best",
+          "start": 88.36,
+          "end": 88.74,
+          "probability": 0.9974561333656311
+        },
+        {
+          "word": " place",
+          "start": 88.74,
+          "end": 89.2,
+          "probability": 0.9992377758026123
+        },
+        {
+          "word": " in",
+          "start": 89.2,
+          "end": 89.46,
+          "probability": 0.9974587559700012
+        },
+        {
+          "word": " the",
+          "start": 89.46,
+          "end": 89.64,
+          "probability": 0.9992082715034485
+        },
+        {
+          "word": " world",
+          "start": 89.64,
+          "end": 90.06,
+          "probability": 0.9919833540916443
+        },
+        {
+          "word": " to",
+          "start": 90.06,
+          "end": 90.48,
+          "probability": 0.980290412902832
+        },
+        {
+          "word": " learn",
+          "start": 90.48,
+          "end": 90.76,
+          "probability": 0.9984130859375
+        },
+        {
+          "word": " about",
+          "start": 90.76,
+          "end": 91.12,
+          "probability": 0.9986458420753479
+        },
+        {
+          "word": " the",
+          "start": 91.12,
+          "end": 91.38,
+          "probability": 0.9848994016647339
+        },
+        {
+          "word": " Vikings",
+          "start": 91.38,
+          "end": 91.88,
+          "probability": 0.8988131880760193
+        },
+        {
+          "word": " and",
+          "start": 91.88,
+          "end": 92.58,
+          "probability": 0.9609383344650269
+        },
+        {
+          "word": " other",
+          "start": 92.58,
+          "end": 93.0,
+          "probability": 0.9906807541847229
+        },
+        {
+          "word": " northern",
+          "start": 93.0,
+          "end": 93.48,
+          "probability": 0.32802003622055054
+        },
+        {
+          "word": " European",
+          "start": 93.48,
+          "end": 94.02,
+          "probability": 0.9733239412307739
+        },
+        {
+          "word": " culture.",
+          "start": 94.02,
+          "end": 94.82,
+          "probability": 0.9878009557723999
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 8654,
+      "start": 96.08,
+      "end": 99.36,
+      "text": " Many people come to Reykjavik for the festivals.",
+      "tokens": [
+        50764,
+        5126,
+        561,
+        808,
+        281,
+        17547,
+        74,
+        73,
+        706,
+        1035,
+        337,
+        264,
+        28040,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08450694669756972,
+      "compression_ratio": 1.45,
+      "no_speech_prob": 0.0017152983928099275,
+      "words": [
+        {
+          "word": " Many",
+          "start": 96.08,
+          "end": 96.34,
+          "probability": 0.9920374155044556
+        },
+        {
+          "word": " people",
+          "start": 96.34,
+          "end": 96.76,
+          "probability": 0.99847811460495
+        },
+        {
+          "word": " come",
+          "start": 96.76,
+          "end": 97.12,
+          "probability": 0.9981889128684998
+        },
+        {
+          "word": " to",
+          "start": 97.12,
+          "end": 97.3,
+          "probability": 0.9981959462165833
+        },
+        {
+          "word": " Reykjavik",
+          "start": 97.3,
+          "end": 97.88,
+          "probability": 0.949101984500885
+        },
+        {
+          "word": " for",
+          "start": 97.88,
+          "end": 98.46,
+          "probability": 0.993354320526123
+        },
+        {
+          "word": " the",
+          "start": 98.46,
+          "end": 98.76,
+          "probability": 0.9877535700798035
+        },
+        {
+          "word": " festivals.",
+          "start": 98.76,
+          "end": 99.36,
+          "probability": 0.9921114444732666
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 8654,
+      "start": 100.52,
+      "end": 107.72,
+      "text": " We have several music festivals, a design festival and my favorite, the book festival.",
+      "tokens": [
+        51014,
+        492,
+        362,
+        2940,
+        1318,
+        28040,
+        11,
+        257,
+        1715,
+        12091,
+        293,
+        452,
+        2954,
+        11,
+        264,
+        1446,
+        12091,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08450694669756972,
+      "compression_ratio": 1.45,
+      "no_speech_prob": 0.0017152983928099275,
+      "words": [
+        {
+          "word": " We",
+          "start": 100.52,
+          "end": 100.78,
+          "probability": 0.9964476823806763
+        },
+        {
+          "word": " have",
+          "start": 100.78,
+          "end": 101.12,
+          "probability": 0.9991003274917603
+        },
+        {
+          "word": " several",
+          "start": 101.12,
+          "end": 101.72,
+          "probability": 0.9986023306846619
+        },
+        {
+          "word": " music",
+          "start": 101.72,
+          "end": 102.28,
+          "probability": 0.9868177175521851
+        },
+        {
+          "word": " festivals,",
+          "start": 102.28,
+          "end": 102.92,
+          "probability": 0.9990363121032715
+        },
+        {
+          "word": " a",
+          "start": 103.34,
+          "end": 103.54,
+          "probability": 0.9884489178657532
+        },
+        {
+          "word": " design",
+          "start": 103.54,
+          "end": 103.98,
+          "probability": 0.9635884761810303
+        },
+        {
+          "word": " festival",
+          "start": 103.98,
+          "end": 104.6,
+          "probability": 0.9971718192100525
+        },
+        {
+          "word": " and",
+          "start": 104.6,
+          "end": 105.18,
+          "probability": 0.7379226684570312
+        },
+        {
+          "word": " my",
+          "start": 105.18,
+          "end": 105.58,
+          "probability": 0.8704412579536438
+        },
+        {
+          "word": " favorite,",
+          "start": 105.58,
+          "end": 106.2,
+          "probability": 0.3458090126514435
+        },
+        {
+          "word": " the",
+          "start": 106.56,
+          "end": 106.72,
+          "probability": 0.9857979416847229
+        },
+        {
+          "word": " book",
+          "start": 106.72,
+          "end": 106.96,
+          "probability": 0.892679750919342
+        },
+        {
+          "word": " festival.",
+          "start": 106.96,
+          "end": 107.72,
+          "probability": 0.9899481534957886
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 10772,
+      "start": 108.86000000000001,
+      "end": 116.48,
+      "text": " Reading is a very popular activity in Iceland. Perhaps it's because of the long, dark winters,",
+      "tokens": [
+        50414,
+        29766,
+        307,
+        257,
+        588,
+        3743,
+        5191,
+        294,
+        28004,
+        13,
+        10517,
+        309,
+        311,
+        570,
+        295,
+        264,
+        938,
+        11,
+        2877,
+        1942,
+        1559,
+        11,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0754959132220294,
+      "compression_ratio": 1.5336787564766838,
+      "no_speech_prob": 0.03292465582489967,
+      "words": [
+        {
+          "word": " Reading",
+          "start": 108.86000000000001,
+          "end": 109.54,
+          "probability": 0.8821301460266113
+        },
+        {
+          "word": " is",
+          "start": 109.54,
+          "end": 109.88,
+          "probability": 0.9896185994148254
+        },
+        {
+          "word": " a",
+          "start": 109.88,
+          "end": 109.96,
+          "probability": 0.9915328621864319
+        },
+        {
+          "word": " very",
+          "start": 109.96,
+          "end": 110.46,
+          "probability": 0.9927151799201965
+        },
+        {
+          "word": " popular",
+          "start": 110.46,
+          "end": 110.96,
+          "probability": 0.9985575079917908
+        },
+        {
+          "word": " activity",
+          "start": 110.96,
+          "end": 111.58,
+          "probability": 0.9980353713035583
+        },
+        {
+          "word": " in",
+          "start": 111.58,
+          "end": 111.94,
+          "probability": 0.9975972771644592
+        },
+        {
+          "word": " Iceland.",
+          "start": 111.94,
+          "end": 112.54,
+          "probability": 0.9954854846000671
+        },
+        {
+          "word": " Perhaps",
+          "start": 113.36,
+          "end": 113.84,
+          "probability": 0.982170820236206
+        },
+        {
+          "word": " it's",
+          "start": 113.84,
+          "end": 114.18,
+          "probability": 0.9245123267173767
+        },
+        {
+          "word": " because",
+          "start": 114.18,
+          "end": 114.6,
+          "probability": 0.9986791014671326
+        },
+        {
+          "word": " of",
+          "start": 114.6,
+          "end": 114.86,
+          "probability": 0.9970487952232361
+        },
+        {
+          "word": " the",
+          "start": 114.86,
+          "end": 115.08,
+          "probability": 0.9920504689216614
+        },
+        {
+          "word": " long,",
+          "start": 115.08,
+          "end": 115.38,
+          "probability": 0.9966461062431335
+        },
+        {
+          "word": " dark",
+          "start": 115.52,
+          "end": 115.86,
+          "probability": 0.9990667700767517
+        },
+        {
+          "word": " winters,",
+          "start": 115.86,
+          "end": 116.48,
+          "probability": 0.9944767951965332
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 10772,
+      "start": 116.74,
+      "end": 125.44,
+      "text": " when we have to stay inside a lot of the time. People read a lot anyway, and we often give books as presents.",
+      "tokens": [
+        50814,
+        562,
+        321,
+        362,
+        281,
+        1754,
+        1854,
+        257,
+        688,
+        295,
+        264,
+        565,
+        13,
+        3432,
+        1401,
+        257,
+        688,
+        4033,
+        11,
+        293,
+        321,
+        2049,
+        976,
+        3642,
+        382,
+        13533,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0754959132220294,
+      "compression_ratio": 1.5336787564766838,
+      "no_speech_prob": 0.03292465582489967,
+      "words": [
+        {
+          "word": " when",
+          "start": 116.74,
+          "end": 117.0,
+          "probability": 0.9886088371276855
+        },
+        {
+          "word": " we",
+          "start": 117.0,
+          "end": 117.22,
+          "probability": 0.9983314871788025
+        },
+        {
+          "word": " have",
+          "start": 117.22,
+          "end": 117.46,
+          "probability": 0.9951854348182678
+        },
+        {
+          "word": " to",
+          "start": 117.46,
+          "end": 117.72,
+          "probability": 0.9961690306663513
+        },
+        {
+          "word": " stay",
+          "start": 117.72,
+          "end": 117.94,
+          "probability": 0.9970970153808594
+        },
+        {
+          "word": " inside",
+          "start": 117.94,
+          "end": 118.54,
+          "probability": 0.9964523315429688
+        },
+        {
+          "word": " a",
+          "start": 118.54,
+          "end": 118.7,
+          "probability": 0.9891420602798462
+        },
+        {
+          "word": " lot",
+          "start": 118.7,
+          "end": 118.9,
+          "probability": 0.9995502829551697
+        },
+        {
+          "word": " of",
+          "start": 118.9,
+          "end": 119.08,
+          "probability": 0.9982690811157227
+        },
+        {
+          "word": " the",
+          "start": 119.08,
+          "end": 119.26,
+          "probability": 0.9951816201210022
+        },
+        {
+          "word": " time.",
+          "start": 119.26,
+          "end": 119.64,
+          "probability": 0.9993956089019775
+        },
+        {
+          "word": " People",
+          "start": 120.88,
+          "end": 121.3,
+          "probability": 0.9947605729103088
+        },
+        {
+          "word": " read",
+          "start": 121.3,
+          "end": 121.7,
+          "probability": 0.9973406195640564
+        },
+        {
+          "word": " a",
+          "start": 121.7,
+          "end": 121.9,
+          "probability": 0.9971911311149597
+        },
+        {
+          "word": " lot",
+          "start": 121.9,
+          "end": 122.16,
+          "probability": 0.9997050166130066
+        },
+        {
+          "word": " anyway,",
+          "start": 122.16,
+          "end": 122.68,
+          "probability": 0.9231973886489868
+        },
+        {
+          "word": " and",
+          "start": 123.2,
+          "end": 123.38,
+          "probability": 0.9973738193511963
+        },
+        {
+          "word": " we",
+          "start": 123.38,
+          "end": 123.62,
+          "probability": 0.9988957643508911
+        },
+        {
+          "word": " often",
+          "start": 123.62,
+          "end": 124.08,
+          "probability": 0.9944673776626587
+        },
+        {
+          "word": " give",
+          "start": 124.08,
+          "end": 124.38,
+          "probability": 0.9963170289993286
+        },
+        {
+          "word": " books",
+          "start": 124.38,
+          "end": 124.72,
+          "probability": 0.9988634586334229
+        },
+        {
+          "word": " as",
+          "start": 124.72,
+          "end": 125.06,
+          "probability": 0.995919406414032
+        },
+        {
+          "word": " presents.",
+          "start": 125.06,
+          "end": 125.44,
+          "probability": 0.996764063835144
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 10772,
+      "start": 126.7,
+      "end": 132.98,
+      "text": " We have a lot of traditional literature, and there are many new Icelandic books every year.",
+      "tokens": [
+        51264,
+        492,
+        362,
+        257,
+        688,
+        295,
+        5164,
+        10394,
+        11,
+        293,
+        456,
+        366,
+        867,
+        777,
+        28004,
+        299,
+        3642,
+        633,
+        1064,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0754959132220294,
+      "compression_ratio": 1.5336787564766838,
+      "no_speech_prob": 0.03292465582489967,
+      "words": [
+        {
+          "word": " We",
+          "start": 126.7,
+          "end": 126.98,
+          "probability": 0.9955422282218933
+        },
+        {
+          "word": " have",
+          "start": 126.98,
+          "end": 127.36,
+          "probability": 0.9989940524101257
+        },
+        {
+          "word": " a",
+          "start": 127.36,
+          "end": 127.5,
+          "probability": 0.9967504739761353
+        },
+        {
+          "word": " lot",
+          "start": 127.5,
+          "end": 127.76,
+          "probability": 0.9995494484901428
+        },
+        {
+          "word": " of",
+          "start": 127.76,
+          "end": 128.06,
+          "probability": 0.9991329312324524
+        },
+        {
+          "word": " traditional",
+          "start": 128.06,
+          "end": 128.64,
+          "probability": 0.9824867248535156
+        },
+        {
+          "word": " literature,",
+          "start": 128.64,
+          "end": 129.28,
+          "probability": 0.9987768530845642
+        },
+        {
+          "word": " and",
+          "start": 129.72,
+          "end": 129.9,
+          "probability": 0.996906578540802
+        },
+        {
+          "word": " there",
+          "start": 129.9,
+          "end": 130.14,
+          "probability": 0.9983797073364258
+        },
+        {
+          "word": " are",
+          "start": 130.14,
+          "end": 130.28,
+          "probability": 0.9973528385162354
+        },
+        {
+          "word": " many",
+          "start": 130.28,
+          "end": 130.6,
+          "probability": 0.9982095956802368
+        },
+        {
+          "word": " new",
+          "start": 130.6,
+          "end": 130.9,
+          "probability": 0.9876294136047363
+        },
+        {
+          "word": " Icelandic",
+          "start": 130.9,
+          "end": 131.72,
+          "probability": 0.9916676878929138
+        },
+        {
+          "word": " books",
+          "start": 131.72,
+          "end": 132.1,
+          "probability": 0.9984090924263
+        },
+        {
+          "word": " every",
+          "start": 132.1,
+          "end": 132.62,
+          "probability": 0.986198902130127
+        },
+        {
+          "word": " year.",
+          "start": 132.62,
+          "end": 132.98,
+          "probability": 0.9996046423912048
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 13298,
+      "start": 132.98,
+      "end": 139.48,
+      "text": " In fact, each year, more and more of them are translated into other languages.",
+      "tokens": [
+        50364,
+        682,
+        1186,
+        11,
+        1184,
+        1064,
+        11,
+        544,
+        293,
+        544,
+        295,
+        552,
+        366,
+        16805,
+        666,
+        661,
+        8650,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.062658116624162,
+      "compression_ratio": 1.5401069518716577,
+      "no_speech_prob": 0.046047188341617584,
+      "words": [
+        {
+          "word": " In",
+          "start": 132.98,
+          "end": 133.92,
+          "probability": 0.7857638597488403
+        },
+        {
+          "word": " fact,",
+          "start": 133.92,
+          "end": 134.4,
+          "probability": 0.9970165491104126
+        },
+        {
+          "word": " each",
+          "start": 134.72,
+          "end": 135.04,
+          "probability": 0.9955998659133911
+        },
+        {
+          "word": " year,",
+          "start": 135.04,
+          "end": 135.52,
+          "probability": 0.9987062215805054
+        },
+        {
+          "word": " more",
+          "start": 135.74,
+          "end": 136.12,
+          "probability": 0.9969679713249207
+        },
+        {
+          "word": " and",
+          "start": 136.12,
+          "end": 136.38,
+          "probability": 0.9946850538253784
+        },
+        {
+          "word": " more",
+          "start": 136.38,
+          "end": 136.68,
+          "probability": 0.9994743466377258
+        },
+        {
+          "word": " of",
+          "start": 136.68,
+          "end": 136.82,
+          "probability": 0.9948518872261047
+        },
+        {
+          "word": " them",
+          "start": 136.82,
+          "end": 136.96,
+          "probability": 0.9982543587684631
+        },
+        {
+          "word": " are",
+          "start": 136.96,
+          "end": 137.24,
+          "probability": 0.9971045851707458
+        },
+        {
+          "word": " translated",
+          "start": 137.24,
+          "end": 137.86,
+          "probability": 0.9967309236526489
+        },
+        {
+          "word": " into",
+          "start": 137.86,
+          "end": 138.5,
+          "probability": 0.9856607913970947
+        },
+        {
+          "word": " other",
+          "start": 138.5,
+          "end": 138.86,
+          "probability": 0.9967526793479919
+        },
+        {
+          "word": " languages.",
+          "start": 138.86,
+          "end": 139.48,
+          "probability": 0.9968788623809814
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 13298,
+      "start": 140.84,
+      "end": 145.8,
+      "text": " Since everyone reads and writes so much, and the population is so small,",
+      "tokens": [
+        50714,
+        4162,
+        1518,
+        15700,
+        293,
+        13657,
+        370,
+        709,
+        11,
+        293,
+        264,
+        4415,
+        307,
+        370,
+        1359,
+        11,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.062658116624162,
+      "compression_ratio": 1.5401069518716577,
+      "no_speech_prob": 0.046047188341617584,
+      "words": [
+        {
+          "word": " Since",
+          "start": 140.84,
+          "end": 141.18,
+          "probability": 0.9798952341079712
+        },
+        {
+          "word": " everyone",
+          "start": 141.18,
+          "end": 141.88,
+          "probability": 0.9863901138305664
+        },
+        {
+          "word": " reads",
+          "start": 141.88,
+          "end": 142.26,
+          "probability": 0.9906712770462036
+        },
+        {
+          "word": " and",
+          "start": 142.26,
+          "end": 142.48,
+          "probability": 0.9936612844467163
+        },
+        {
+          "word": " writes",
+          "start": 142.48,
+          "end": 142.76,
+          "probability": 0.9973115921020508
+        },
+        {
+          "word": " so",
+          "start": 142.76,
+          "end": 143.14,
+          "probability": 0.9960162043571472
+        },
+        {
+          "word": " much,",
+          "start": 143.14,
+          "end": 143.52,
+          "probability": 0.9994751811027527
+        },
+        {
+          "word": " and",
+          "start": 143.88,
+          "end": 144.02,
+          "probability": 0.9931551814079285
+        },
+        {
+          "word": " the",
+          "start": 144.02,
+          "end": 144.2,
+          "probability": 0.9979521632194519
+        },
+        {
+          "word": " population",
+          "start": 144.2,
+          "end": 144.78,
+          "probability": 0.9970978498458862
+        },
+        {
+          "word": " is",
+          "start": 144.78,
+          "end": 145.14,
+          "probability": 0.9978991746902466
+        },
+        {
+          "word": " so",
+          "start": 145.14,
+          "end": 145.48,
+          "probability": 0.9937731623649597
+        },
+        {
+          "word": " small,",
+          "start": 145.48,
+          "end": 145.8,
+          "probability": 0.9991391897201538
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 13298,
+      "start": 146.26,
+      "end": 151.58,
+      "text": " it means that one in ten Icelanders will write a book in their lives.",
+      "tokens": [
+        51014,
+        309,
+        1355,
+        300,
+        472,
+        294,
+        2064,
+        28004,
+        433,
+        486,
+        2464,
+        257,
+        1446,
+        294,
+        641,
+        2909,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.062658116624162,
+      "compression_ratio": 1.5401069518716577,
+      "no_speech_prob": 0.046047188341617584,
+      "words": [
+        {
+          "word": " it",
+          "start": 146.26,
+          "end": 146.44,
+          "probability": 0.9847809076309204
+        },
+        {
+          "word": " means",
+          "start": 146.44,
+          "end": 146.84,
+          "probability": 0.9987169504165649
+        },
+        {
+          "word": " that",
+          "start": 146.84,
+          "end": 147.22,
+          "probability": 0.9893731474876404
+        },
+        {
+          "word": " one",
+          "start": 147.22,
+          "end": 147.54,
+          "probability": 0.5661836862564087
+        },
+        {
+          "word": " in",
+          "start": 147.54,
+          "end": 147.84,
+          "probability": 0.9945337772369385
+        },
+        {
+          "word": " ten",
+          "start": 147.84,
+          "end": 148.28,
+          "probability": 0.8972391486167908
+        },
+        {
+          "word": " Icelanders",
+          "start": 148.28,
+          "end": 149.16,
+          "probability": 0.9909224808216095
+        },
+        {
+          "word": " will",
+          "start": 149.16,
+          "end": 149.58,
+          "probability": 0.9907732009887695
+        },
+        {
+          "word": " write",
+          "start": 149.58,
+          "end": 149.94,
+          "probability": 0.9973094463348389
+        },
+        {
+          "word": " a",
+          "start": 149.94,
+          "end": 150.22,
+          "probability": 0.9982630610466003
+        },
+        {
+          "word": " book",
+          "start": 150.22,
+          "end": 150.48,
+          "probability": 0.9986580610275269
+        },
+        {
+          "word": " in",
+          "start": 150.48,
+          "end": 150.78,
+          "probability": 0.9977020621299744
+        },
+        {
+          "word": " their",
+          "start": 150.78,
+          "end": 151.04,
+          "probability": 0.9989849925041199
+        },
+        {
+          "word": " lives.",
+          "start": 151.04,
+          "end": 151.58,
+          "probability": 0.9981536269187927
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 13298,
+      "start": 152.2,
+      "end": 158.14,
+      "text": " Wow! So, is the festival just for books in the Icelandic language?",
+      "tokens": [
+        51314,
+        3153,
+        0,
+        407,
+        11,
+        307,
+        264,
+        12091,
+        445,
+        337,
+        3642,
+        294,
+        264,
+        28004,
+        299,
+        2856,
+        30,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.062658116624162,
+      "compression_ratio": 1.5401069518716577,
+      "no_speech_prob": 0.046047188341617584,
+      "words": [
+        {
+          "word": " Wow!",
+          "start": 152.2,
+          "end": 152.72,
+          "probability": 0.9160199761390686
+        },
+        {
+          "word": " So,",
+          "start": 153.42,
+          "end": 153.76,
+          "probability": 0.9741341471672058
+        },
+        {
+          "word": " is",
+          "start": 153.98,
+          "end": 154.32,
+          "probability": 0.9953603148460388
+        },
+        {
+          "word": " the",
+          "start": 154.32,
+          "end": 154.5,
+          "probability": 0.9923795461654663
+        },
+        {
+          "word": " festival",
+          "start": 154.5,
+          "end": 154.94,
+          "probability": 0.9551429748535156
+        },
+        {
+          "word": " just",
+          "start": 154.94,
+          "end": 155.48,
+          "probability": 0.9767469763755798
+        },
+        {
+          "word": " for",
+          "start": 155.48,
+          "end": 155.76,
+          "probability": 0.9973201155662537
+        },
+        {
+          "word": " books",
+          "start": 155.76,
+          "end": 156.28,
+          "probability": 0.9289752840995789
+        },
+        {
+          "word": " in",
+          "start": 156.28,
+          "end": 156.62,
+          "probability": 0.9782581925392151
+        },
+        {
+          "word": " the",
+          "start": 156.62,
+          "end": 156.8,
+          "probability": 0.9412499666213989
+        },
+        {
+          "word": " Icelandic",
+          "start": 156.8,
+          "end": 157.48,
+          "probability": 0.9973576664924622
+        },
+        {
+          "word": " language?",
+          "start": 157.48,
+          "end": 158.14,
+          "probability": 0.9952359795570374
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 15814,
+      "start": 158.14,
+      "end": 166.82,
+      "text": " No. Writers from all over the world come to celebrate books and reading. It's a big international event.",
+      "tokens": [
+        50364,
+        883,
+        13,
+        343,
+        39335,
+        490,
+        439,
+        670,
+        264,
+        1002,
+        808,
+        281,
+        8098,
+        3642,
+        293,
+        3760,
+        13,
+        467,
+        311,
+        257,
+        955,
+        5058,
+        2280,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06439366936683655,
+      "compression_ratio": 1.5648148148148149,
+      "no_speech_prob": 0.3289428651332855,
+      "words": [
+        {
+          "word": " No.",
+          "start": 158.14,
+          "end": 159.24,
+          "probability": 0.36648374795913696
+        },
+        {
+          "word": " Writers",
+          "start": 159.86,
+          "end": 160.26,
+          "probability": 0.9820345640182495
+        },
+        {
+          "word": " from",
+          "start": 160.26,
+          "end": 160.74,
+          "probability": 0.9921340942382812
+        },
+        {
+          "word": " all",
+          "start": 160.74,
+          "end": 161.08,
+          "probability": 0.9973179697990417
+        },
+        {
+          "word": " over",
+          "start": 161.08,
+          "end": 161.46,
+          "probability": 0.9962548017501831
+        },
+        {
+          "word": " the",
+          "start": 161.46,
+          "end": 161.66,
+          "probability": 0.9970658421516418
+        },
+        {
+          "word": " world",
+          "start": 161.66,
+          "end": 161.92,
+          "probability": 0.9891209006309509
+        },
+        {
+          "word": " come",
+          "start": 161.92,
+          "end": 162.22,
+          "probability": 0.9877562522888184
+        },
+        {
+          "word": " to",
+          "start": 162.22,
+          "end": 162.52,
+          "probability": 0.9951026439666748
+        },
+        {
+          "word": " celebrate",
+          "start": 162.52,
+          "end": 162.98,
+          "probability": 0.9976012110710144
+        },
+        {
+          "word": " books",
+          "start": 162.98,
+          "end": 163.4,
+          "probability": 0.9901608228683472
+        },
+        {
+          "word": " and",
+          "start": 163.4,
+          "end": 163.78,
+          "probability": 0.9905430674552917
+        },
+        {
+          "word": " reading.",
+          "start": 163.78,
+          "end": 164.14,
+          "probability": 0.9953032732009888
+        },
+        {
+          "word": " It's",
+          "start": 164.74,
+          "end": 165.1,
+          "probability": 0.9755504727363586
+        },
+        {
+          "word": " a",
+          "start": 165.1,
+          "end": 165.3,
+          "probability": 0.9982137680053711
+        },
+        {
+          "word": " big",
+          "start": 165.3,
+          "end": 165.56,
+          "probability": 0.9957785606384277
+        },
+        {
+          "word": " international",
+          "start": 165.56,
+          "end": 166.36,
+          "probability": 0.972891628742218
+        },
+        {
+          "word": " event.",
+          "start": 166.36,
+          "end": 166.82,
+          "probability": 0.9978494644165039
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 15814,
+      "start": 167.8,
+      "end": 172.9,
+      "text": " The lectures, readings and workshops are in English, and they are all free.",
+      "tokens": [
+        50814,
+        440,
+        16564,
+        11,
+        27319,
+        293,
+        19162,
+        366,
+        294,
+        3669,
+        11,
+        293,
+        436,
+        366,
+        439,
+        1737,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06439366936683655,
+      "compression_ratio": 1.5648148148148149,
+      "no_speech_prob": 0.3289428651332855,
+      "words": [
+        {
+          "word": " The",
+          "start": 167.8,
+          "end": 167.96,
+          "probability": 0.9874659180641174
+        },
+        {
+          "word": " lectures,",
+          "start": 167.96,
+          "end": 168.46,
+          "probability": 0.9866031408309937
+        },
+        {
+          "word": " readings",
+          "start": 168.84,
+          "end": 169.14,
+          "probability": 0.9888244271278381
+        },
+        {
+          "word": " and",
+          "start": 169.14,
+          "end": 169.54,
+          "probability": 0.6946455836296082
+        },
+        {
+          "word": " workshops",
+          "start": 169.54,
+          "end": 170.12,
+          "probability": 0.989202082157135
+        },
+        {
+          "word": " are",
+          "start": 170.12,
+          "end": 170.72,
+          "probability": 0.984050452709198
+        },
+        {
+          "word": " in",
+          "start": 170.72,
+          "end": 170.96,
+          "probability": 0.9934483170509338
+        },
+        {
+          "word": " English,",
+          "start": 170.96,
+          "end": 171.4,
+          "probability": 0.9938702583312988
+        },
+        {
+          "word": " and",
+          "start": 171.68,
+          "end": 171.94,
+          "probability": 0.994248628616333
+        },
+        {
+          "word": " they",
+          "start": 171.94,
+          "end": 172.18,
+          "probability": 0.9969671368598938
+        },
+        {
+          "word": " are",
+          "start": 172.18,
+          "end": 172.34,
+          "probability": 0.9703873991966248
+        },
+        {
+          "word": " all",
+          "start": 172.34,
+          "end": 172.6,
+          "probability": 0.9933585524559021
+        },
+        {
+          "word": " free.",
+          "start": 172.6,
+          "end": 172.9,
+          "probability": 0.9950035214424133
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 15814,
+      "start": 174.02,
+      "end": 178.6,
+      "text": " There are other sorts of entertainment too, like dancing and parties.",
+      "tokens": [
+        51114,
+        821,
+        366,
+        661,
+        7527,
+        295,
+        12393,
+        886,
+        11,
+        411,
+        8898,
+        293,
+        8265,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06439366936683655,
+      "compression_ratio": 1.5648148148148149,
+      "no_speech_prob": 0.3289428651332855,
+      "words": [
+        {
+          "word": " There",
+          "start": 174.02,
+          "end": 174.34,
+          "probability": 0.9930195212364197
+        },
+        {
+          "word": " are",
+          "start": 174.34,
+          "end": 174.66,
+          "probability": 0.9979821443557739
+        },
+        {
+          "word": " other",
+          "start": 174.66,
+          "end": 174.94,
+          "probability": 0.9948126077651978
+        },
+        {
+          "word": " sorts",
+          "start": 174.94,
+          "end": 175.22,
+          "probability": 0.9669596552848816
+        },
+        {
+          "word": " of",
+          "start": 175.22,
+          "end": 175.56,
+          "probability": 0.9993817806243896
+        },
+        {
+          "word": " entertainment",
+          "start": 175.56,
+          "end": 176.06,
+          "probability": 0.9958808422088623
+        },
+        {
+          "word": " too,",
+          "start": 176.06,
+          "end": 176.54,
+          "probability": 0.6929729580879211
+        },
+        {
+          "word": " like",
+          "start": 176.86,
+          "end": 177.12,
+          "probability": 0.997086226940155
+        },
+        {
+          "word": " dancing",
+          "start": 177.12,
+          "end": 177.66,
+          "probability": 0.9935257434844971
+        },
+        {
+          "word": " and",
+          "start": 177.66,
+          "end": 178.12,
+          "probability": 0.9886616468429565
+        },
+        {
+          "word": " parties.",
+          "start": 178.12,
+          "end": 178.6,
+          "probability": 0.9971535205841064
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 15814,
+      "start": 179.54,
+      "end": 186.42,
+      "text": " It's a great time to meet your favorite writers, taste traditional dishes and have fun.",
+      "tokens": [
+        51414,
+        467,
+        311,
+        257,
+        869,
+        565,
+        281,
+        1677,
+        428,
+        2954,
+        13491,
+        11,
+        3939,
+        5164,
+        10814,
+        293,
+        362,
+        1019,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06439366936683655,
+      "compression_ratio": 1.5648148148148149,
+      "no_speech_prob": 0.3289428651332855,
+      "words": [
+        {
+          "word": " It's",
+          "start": 179.54,
+          "end": 179.94,
+          "probability": 0.9925404787063599
+        },
+        {
+          "word": " a",
+          "start": 179.94,
+          "end": 180.24,
+          "probability": 0.9977251887321472
+        },
+        {
+          "word": " great",
+          "start": 180.24,
+          "end": 180.44,
+          "probability": 0.9990020394325256
+        },
+        {
+          "word": " time",
+          "start": 180.44,
+          "end": 180.82,
+          "probability": 0.9992542862892151
+        },
+        {
+          "word": " to",
+          "start": 180.82,
+          "end": 181.12,
+          "probability": 0.9993177652359009
+        },
+        {
+          "word": " meet",
+          "start": 181.12,
+          "end": 181.36,
+          "probability": 0.9986013770103455
+        },
+        {
+          "word": " your",
+          "start": 181.36,
+          "end": 181.68,
+          "probability": 0.9971410036087036
+        },
+        {
+          "word": " favorite",
+          "start": 181.68,
+          "end": 182.22,
+          "probability": 0.5870118737220764
+        },
+        {
+          "word": " writers,",
+          "start": 182.22,
+          "end": 182.84,
+          "probability": 0.9907068610191345
+        },
+        {
+          "word": " taste",
+          "start": 183.4,
+          "end": 183.74,
+          "probability": 0.9954236149787903
+        },
+        {
+          "word": " traditional",
+          "start": 183.74,
+          "end": 184.42,
+          "probability": 0.9971379041671753
+        },
+        {
+          "word": " dishes",
+          "start": 184.42,
+          "end": 185.02,
+          "probability": 0.9979034662246704
+        },
+        {
+          "word": " and",
+          "start": 185.02,
+          "end": 185.72,
+          "probability": 0.5289110541343689
+        },
+        {
+          "word": " have",
+          "start": 185.72,
+          "end": 186.02,
+          "probability": 0.998104453086853
+        },
+        {
+          "word": " fun.",
+          "start": 186.02,
+          "end": 186.42,
+          "probability": 0.9989820122718811
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 18642,
+      "start": 187.26000000000002,
+      "end": 189.48,
+      "text": " Anyone who loves books should come.",
+      "tokens": [
+        50364,
+        14643,
+        567,
+        6752,
+        3642,
+        820,
+        808,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12269598245620728,
+      "compression_ratio": 0.813953488372093,
+      "no_speech_prob": 0.09638383239507675,
+      "words": [
+        {
+          "word": " Anyone",
+          "start": 187.26000000000002,
+          "end": 187.9,
+          "probability": 0.8200927972793579
+        },
+        {
+          "word": " who",
+          "start": 187.9,
+          "end": 188.2,
+          "probability": 0.9837470650672913
+        },
+        {
+          "word": " loves",
+          "start": 188.2,
+          "end": 188.5,
+          "probability": 0.9893372058868408
+        },
+        {
+          "word": " books",
+          "start": 188.5,
+          "end": 188.82,
+          "probability": 0.9922230839729309
+        },
+        {
+          "word": " should",
+          "start": 188.82,
+          "end": 189.16,
+          "probability": 0.977401614189148
+        },
+        {
+          "word": " come.",
+          "start": 189.16,
+          "end": 189.48,
+          "probability": 0.996033251285553
+        }
+      ]
+    }
+  ]
+}

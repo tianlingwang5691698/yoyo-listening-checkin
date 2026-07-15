@@ -1,0 +1,1111 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 5.1 I'm not happy with this work at all. I think the builders decided to cut corners. I'm sure they used the cheapest materials they could find. Taking care of my brother when he was sick wasn't a bed of roses. He cried a lot, and when he wasn't crying he was constantly asking for things. Rob, can I have a snack? Rob, bring me my red car. Rob, I'm bored. I'm not sure your idea works. I'm sorry, but I think we need to go back to the drawing board. We need to revisit the original idea. I've been sitting in this traffic jam for two hours, and time is money. I earn £40 an hour, so I've just lost £80.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.96,
+      "text": " Track 5.1",
+      "tokens": [
+        50364,
+        31903,
+        1025,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2785217101315418,
+      "compression_ratio": 1.4898989898989898,
+      "no_speech_prob": 0.24634340405464172,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.42,
+          "probability": 0.3284444510936737
+        },
+        {
+          "word": " 5",
+          "start": 0.42,
+          "end": 1.04,
+          "probability": 0.8296893835067749
+        },
+        {
+          "word": ".1",
+          "start": 1.04,
+          "end": 1.96,
+          "probability": 0.9913532733917236
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.9999999999999964,
+      "end": 6.3,
+      "text": " I'm not happy with this work at all.",
+      "tokens": [
+        50576,
+        286,
+        478,
+        406,
+        2055,
+        365,
+        341,
+        589,
+        412,
+        439,
+        13,
+        50700
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2785217101315418,
+      "compression_ratio": 1.4898989898989898,
+      "no_speech_prob": 0.24634340405464172,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 3.9999999999999964,
+          "end": 4.68,
+          "probability": 0.5918535143136978
+        },
+        {
+          "word": " not",
+          "start": 4.68,
+          "end": 4.8,
+          "probability": 0.9975735545158386
+        },
+        {
+          "word": " happy",
+          "start": 4.8,
+          "end": 5.16,
+          "probability": 0.9990917444229126
+        },
+        {
+          "word": " with",
+          "start": 5.16,
+          "end": 5.34,
+          "probability": 0.9975776076316833
+        },
+        {
+          "word": " this",
+          "start": 5.34,
+          "end": 5.58,
+          "probability": 0.9956938028335571
+        },
+        {
+          "word": " work",
+          "start": 5.58,
+          "end": 5.82,
+          "probability": 0.9981403350830078
+        },
+        {
+          "word": " at",
+          "start": 5.82,
+          "end": 6.04,
+          "probability": 0.9889640808105469
+        },
+        {
+          "word": " all.",
+          "start": 6.04,
+          "end": 6.3,
+          "probability": 0.9991461038589478
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.78,
+      "end": 9.4,
+      "text": " I think the builders decided to cut corners.",
+      "tokens": [
+        50700,
+        286,
+        519,
+        264,
+        36281,
+        3047,
+        281,
+        1723,
+        12413,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2785217101315418,
+      "compression_ratio": 1.4898989898989898,
+      "no_speech_prob": 0.24634340405464172,
+      "words": [
+        {
+          "word": " I",
+          "start": 6.78,
+          "end": 7.3,
+          "probability": 0.9964926838874817
+        },
+        {
+          "word": " think",
+          "start": 7.3,
+          "end": 7.52,
+          "probability": 0.9969273209571838
+        },
+        {
+          "word": " the",
+          "start": 7.52,
+          "end": 7.72,
+          "probability": 0.9931722283363342
+        },
+        {
+          "word": " builders",
+          "start": 7.72,
+          "end": 8.0,
+          "probability": 0.9850119352340698
+        },
+        {
+          "word": " decided",
+          "start": 8.0,
+          "end": 8.52,
+          "probability": 0.9960634112358093
+        },
+        {
+          "word": " to",
+          "start": 8.52,
+          "end": 8.76,
+          "probability": 0.9995322227478027
+        },
+        {
+          "word": " cut",
+          "start": 8.76,
+          "end": 8.98,
+          "probability": 0.9991573095321655
+        },
+        {
+          "word": " corners.",
+          "start": 8.98,
+          "end": 9.4,
+          "probability": 0.9943274855613708
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 10.16,
+      "end": 13.48,
+      "text": " I'm sure they used the cheapest materials they could find.",
+      "tokens": [
+        50864,
+        286,
+        478,
+        988,
+        436,
+        1143,
+        264,
+        29167,
+        5319,
+        436,
+        727,
+        915,
+        13,
+        51052
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2785217101315418,
+      "compression_ratio": 1.4898989898989898,
+      "no_speech_prob": 0.24634340405464172,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 10.16,
+          "end": 10.46,
+          "probability": 0.9939541220664978
+        },
+        {
+          "word": " sure",
+          "start": 10.46,
+          "end": 10.66,
+          "probability": 0.9997039437294006
+        },
+        {
+          "word": " they",
+          "start": 10.66,
+          "end": 10.9,
+          "probability": 0.9972987771034241
+        },
+        {
+          "word": " used",
+          "start": 10.9,
+          "end": 11.32,
+          "probability": 0.9796944260597229
+        },
+        {
+          "word": " the",
+          "start": 11.32,
+          "end": 11.48,
+          "probability": 0.9983674883842468
+        },
+        {
+          "word": " cheapest",
+          "start": 11.48,
+          "end": 11.86,
+          "probability": 0.9881000518798828
+        },
+        {
+          "word": " materials",
+          "start": 11.86,
+          "end": 12.46,
+          "probability": 0.9758250713348389
+        },
+        {
+          "word": " they",
+          "start": 12.46,
+          "end": 12.78,
+          "probability": 0.9960893392562866
+        },
+        {
+          "word": " could",
+          "start": 12.78,
+          "end": 12.92,
+          "probability": 0.9983332753181458
+        },
+        {
+          "word": " find.",
+          "start": 12.92,
+          "end": 13.48,
+          "probability": 0.9981521964073181
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 15.68,
+      "end": 20.04,
+      "text": " Taking care of my brother when he was sick wasn't a bed of roses.",
+      "tokens": [
+        51144,
+        17837,
+        1127,
+        295,
+        452,
+        3708,
+        562,
+        415,
+        390,
+        4998,
+        2067,
+        380,
+        257,
+        2901,
+        295,
+        28620,
+        13,
+        51396
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2785217101315418,
+      "compression_ratio": 1.4898989898989898,
+      "no_speech_prob": 0.24634340405464172,
+      "words": [
+        {
+          "word": " Taking",
+          "start": 15.68,
+          "end": 16.08,
+          "probability": 0.6830452084541321
+        },
+        {
+          "word": " care",
+          "start": 16.08,
+          "end": 16.42,
+          "probability": 0.9994829893112183
+        },
+        {
+          "word": " of",
+          "start": 16.42,
+          "end": 16.72,
+          "probability": 0.9992830157279968
+        },
+        {
+          "word": " my",
+          "start": 16.72,
+          "end": 16.88,
+          "probability": 0.9987150430679321
+        },
+        {
+          "word": " brother",
+          "start": 16.88,
+          "end": 17.34,
+          "probability": 0.9969593286514282
+        },
+        {
+          "word": " when",
+          "start": 17.34,
+          "end": 17.7,
+          "probability": 0.9336328506469727
+        },
+        {
+          "word": " he",
+          "start": 17.7,
+          "end": 17.94,
+          "probability": 0.9989058971405029
+        },
+        {
+          "word": " was",
+          "start": 17.94,
+          "end": 18.14,
+          "probability": 0.999466598033905
+        },
+        {
+          "word": " sick",
+          "start": 18.14,
+          "end": 18.5,
+          "probability": 0.9970921277999878
+        },
+        {
+          "word": " wasn't",
+          "start": 18.5,
+          "end": 19.16,
+          "probability": 0.9613482356071472
+        },
+        {
+          "word": " a",
+          "start": 19.16,
+          "end": 19.28,
+          "probability": 0.9546555280685425
+        },
+        {
+          "word": " bed",
+          "start": 19.28,
+          "end": 19.44,
+          "probability": 0.9757252931594849
+        },
+        {
+          "word": " of",
+          "start": 19.44,
+          "end": 19.6,
+          "probability": 0.9987319111824036
+        },
+        {
+          "word": " roses.",
+          "start": 19.6,
+          "end": 20.04,
+          "probability": 0.9963185787200928
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 20.82,
+      "end": 26.46,
+      "text": " He cried a lot, and when he wasn't crying he was constantly asking for things.",
+      "tokens": [
+        51396,
+        634,
+        16266,
+        257,
+        688,
+        11,
+        293,
+        562,
+        415,
+        2067,
+        380,
+        8554,
+        415,
+        390,
+        6460,
+        3365,
+        337,
+        721,
+        13,
+        51704
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2785217101315418,
+      "compression_ratio": 1.4898989898989898,
+      "no_speech_prob": 0.24634340405464172,
+      "words": [
+        {
+          "word": " He",
+          "start": 20.82,
+          "end": 21.02,
+          "probability": 0.9962570667266846
+        },
+        {
+          "word": " cried",
+          "start": 21.02,
+          "end": 21.36,
+          "probability": 0.9975636005401611
+        },
+        {
+          "word": " a",
+          "start": 21.36,
+          "end": 21.6,
+          "probability": 0.9881128668785095
+        },
+        {
+          "word": " lot,",
+          "start": 21.6,
+          "end": 21.86,
+          "probability": 0.9989608526229858
+        },
+        {
+          "word": " and",
+          "start": 22.42,
+          "end": 22.78,
+          "probability": 0.9952008724212646
+        },
+        {
+          "word": " when",
+          "start": 22.78,
+          "end": 22.96,
+          "probability": 0.9899135828018188
+        },
+        {
+          "word": " he",
+          "start": 22.96,
+          "end": 23.12,
+          "probability": 0.9987585544586182
+        },
+        {
+          "word": " wasn't",
+          "start": 23.12,
+          "end": 23.58,
+          "probability": 0.9987078905105591
+        },
+        {
+          "word": " crying",
+          "start": 23.58,
+          "end": 24.04,
+          "probability": 0.9980158805847168
+        },
+        {
+          "word": " he",
+          "start": 24.04,
+          "end": 24.48,
+          "probability": 0.5902915596961975
+        },
+        {
+          "word": " was",
+          "start": 24.48,
+          "end": 24.66,
+          "probability": 0.9992461204528809
+        },
+        {
+          "word": " constantly",
+          "start": 24.66,
+          "end": 25.18,
+          "probability": 0.9990829229354858
+        },
+        {
+          "word": " asking",
+          "start": 25.18,
+          "end": 25.72,
+          "probability": 0.9989179372787476
+        },
+        {
+          "word": " for",
+          "start": 25.72,
+          "end": 26.0,
+          "probability": 0.9989897608757019
+        },
+        {
+          "word": " things.",
+          "start": 26.0,
+          "end": 26.46,
+          "probability": 0.9993813037872314
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2646,
+      "start": 26.46,
+      "end": 32.4,
+      "text": " Rob, can I have a snack? Rob, bring me my red car. Rob, I'm bored.",
+      "tokens": [
+        50388,
+        5424,
+        11,
+        393,
+        286,
+        362,
+        257,
+        13288,
+        30,
+        5424,
+        11,
+        1565,
+        385,
+        452,
+        2182,
+        1032,
+        13,
+        5424,
+        11,
+        286,
+        478,
+        13521,
+        13,
+        50668
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11863946914672852,
+      "compression_ratio": 1.4917127071823204,
+      "no_speech_prob": 0.11284083127975464,
+      "words": [
+        {
+          "word": " Rob,",
+          "start": 26.46,
+          "end": 27.32,
+          "probability": 0.33727535605430603
+        },
+        {
+          "word": " can",
+          "start": 27.62,
+          "end": 27.72,
+          "probability": 0.9855377078056335
+        },
+        {
+          "word": " I",
+          "start": 27.72,
+          "end": 27.86,
+          "probability": 0.9782343506813049
+        },
+        {
+          "word": " have",
+          "start": 27.86,
+          "end": 28.02,
+          "probability": 0.9986170530319214
+        },
+        {
+          "word": " a",
+          "start": 28.02,
+          "end": 28.14,
+          "probability": 0.9990236759185791
+        },
+        {
+          "word": " snack?",
+          "start": 28.14,
+          "end": 28.48,
+          "probability": 0.988103449344635
+        },
+        {
+          "word": " Rob,",
+          "start": 29.08,
+          "end": 29.32,
+          "probability": 0.9922303557395935
+        },
+        {
+          "word": " bring",
+          "start": 29.64,
+          "end": 29.78,
+          "probability": 0.9921767115592957
+        },
+        {
+          "word": " me",
+          "start": 29.78,
+          "end": 29.96,
+          "probability": 0.9916003942489624
+        },
+        {
+          "word": " my",
+          "start": 29.96,
+          "end": 30.12,
+          "probability": 0.9984959363937378
+        },
+        {
+          "word": " red",
+          "start": 30.12,
+          "end": 30.34,
+          "probability": 0.9757729768753052
+        },
+        {
+          "word": " car.",
+          "start": 30.34,
+          "end": 30.64,
+          "probability": 0.9915899634361267
+        },
+        {
+          "word": " Rob,",
+          "start": 31.16,
+          "end": 31.44,
+          "probability": 0.9917089343070984
+        },
+        {
+          "word": " I'm",
+          "start": 31.72,
+          "end": 31.9,
+          "probability": 0.9879772365093231
+        },
+        {
+          "word": " bored.",
+          "start": 31.9,
+          "end": 32.4,
+          "probability": 0.9933549165725708
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2646,
+      "start": 34.68,
+      "end": 37.0,
+      "text": " I'm not sure your idea works.",
+      "tokens": [
+        50784,
+        286,
+        478,
+        406,
+        988,
+        428,
+        1558,
+        1985,
+        13,
+        50896
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11863946914672852,
+      "compression_ratio": 1.4917127071823204,
+      "no_speech_prob": 0.11284083127975464,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 34.68,
+          "end": 35.28,
+          "probability": 0.9663701951503754
+        },
+        {
+          "word": " not",
+          "start": 35.28,
+          "end": 35.48,
+          "probability": 0.9961268305778503
+        },
+        {
+          "word": " sure",
+          "start": 35.48,
+          "end": 35.88,
+          "probability": 0.9995755553245544
+        },
+        {
+          "word": " your",
+          "start": 35.88,
+          "end": 36.18,
+          "probability": 0.9913108348846436
+        },
+        {
+          "word": " idea",
+          "start": 36.18,
+          "end": 36.54,
+          "probability": 0.992384135723114
+        },
+        {
+          "word": " works.",
+          "start": 36.54,
+          "end": 37.0,
+          "probability": 0.997750461101532
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2646,
+      "start": 37.78,
+      "end": 41.58,
+      "text": " I'm sorry, but I think we need to go back to the drawing board.",
+      "tokens": [
+        50932,
+        286,
+        478,
+        2597,
+        11,
+        457,
+        286,
+        519,
+        321,
+        643,
+        281,
+        352,
+        646,
+        281,
+        264,
+        6316,
+        3150,
+        13,
+        51116
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11863946914672852,
+      "compression_ratio": 1.4917127071823204,
+      "no_speech_prob": 0.11284083127975464,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 37.78,
+          "end": 38.14,
+          "probability": 0.9960682988166809
+        },
+        {
+          "word": " sorry,",
+          "start": 38.14,
+          "end": 38.44,
+          "probability": 0.9980955719947815
+        },
+        {
+          "word": " but",
+          "start": 38.76,
+          "end": 39.14,
+          "probability": 0.9934687614440918
+        },
+        {
+          "word": " I",
+          "start": 39.14,
+          "end": 39.4,
+          "probability": 0.9937060475349426
+        },
+        {
+          "word": " think",
+          "start": 39.4,
+          "end": 39.58,
+          "probability": 0.9992340803146362
+        },
+        {
+          "word": " we",
+          "start": 39.58,
+          "end": 39.74,
+          "probability": 0.9988252520561218
+        },
+        {
+          "word": " need",
+          "start": 39.74,
+          "end": 39.92,
+          "probability": 0.9988337159156799
+        },
+        {
+          "word": " to",
+          "start": 39.92,
+          "end": 40.06,
+          "probability": 0.9990478157997131
+        },
+        {
+          "word": " go",
+          "start": 40.06,
+          "end": 40.2,
+          "probability": 0.9983332753181458
+        },
+        {
+          "word": " back",
+          "start": 40.2,
+          "end": 40.42,
+          "probability": 0.9983029365539551
+        },
+        {
+          "word": " to",
+          "start": 40.42,
+          "end": 40.66,
+          "probability": 0.9989117383956909
+        },
+        {
+          "word": " the",
+          "start": 40.66,
+          "end": 40.78,
+          "probability": 0.9962500929832458
+        },
+        {
+          "word": " drawing",
+          "start": 40.78,
+          "end": 41.1,
+          "probability": 0.9813060164451599
+        },
+        {
+          "word": " board.",
+          "start": 41.1,
+          "end": 41.58,
+          "probability": 0.9912145137786865
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2646,
+      "start": 42.14,
+      "end": 44.6,
+      "text": " We need to revisit the original idea.",
+      "tokens": [
+        51148,
+        492,
+        643,
+        281,
+        32676,
+        264,
+        3380,
+        1558,
+        13,
+        51272
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11863946914672852,
+      "compression_ratio": 1.4917127071823204,
+      "no_speech_prob": 0.11284083127975464,
+      "words": [
+        {
+          "word": " We",
+          "start": 42.14,
+          "end": 42.38,
+          "probability": 0.9968572854995728
+        },
+        {
+          "word": " need",
+          "start": 42.38,
+          "end": 42.54,
+          "probability": 0.9993684887886047
+        },
+        {
+          "word": " to",
+          "start": 42.54,
+          "end": 42.74,
+          "probability": 0.9995520710945129
+        },
+        {
+          "word": " revisit",
+          "start": 42.74,
+          "end": 43.22,
+          "probability": 0.9800839424133301
+        },
+        {
+          "word": " the",
+          "start": 43.22,
+          "end": 43.62,
+          "probability": 0.9969256520271301
+        },
+        {
+          "word": " original",
+          "start": 43.62,
+          "end": 43.98,
+          "probability": 0.9977049231529236
+        },
+        {
+          "word": " idea.",
+          "start": 43.98,
+          "end": 44.6,
+          "probability": 0.9987284541130066
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2646,
+      "start": 46.56,
+      "end": 51.4,
+      "text": " I've been sitting in this traffic jam for two hours, and time is money.",
+      "tokens": [
+        51384,
+        286,
+        600,
+        668,
+        3798,
+        294,
+        341,
+        6419,
+        7872,
+        337,
+        732,
+        2496,
+        11,
+        293,
+        565,
+        307,
+        1460,
+        13,
+        51612
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11863946914672852,
+      "compression_ratio": 1.4917127071823204,
+      "no_speech_prob": 0.11284083127975464,
+      "words": [
+        {
+          "word": " I've",
+          "start": 46.56,
+          "end": 47.16,
+          "probability": 0.9857757985591888
+        },
+        {
+          "word": " been",
+          "start": 47.16,
+          "end": 47.3,
+          "probability": 0.9983887672424316
+        },
+        {
+          "word": " sitting",
+          "start": 47.3,
+          "end": 47.74,
+          "probability": 0.9940155744552612
+        },
+        {
+          "word": " in",
+          "start": 47.74,
+          "end": 48.0,
+          "probability": 0.9975307583808899
+        },
+        {
+          "word": " this",
+          "start": 48.0,
+          "end": 48.2,
+          "probability": 0.9978640675544739
+        },
+        {
+          "word": " traffic",
+          "start": 48.2,
+          "end": 48.6,
+          "probability": 0.992531955242157
+        },
+        {
+          "word": " jam",
+          "start": 48.6,
+          "end": 48.88,
+          "probability": 0.9912524819374084
+        },
+        {
+          "word": " for",
+          "start": 48.88,
+          "end": 49.12,
+          "probability": 0.9978031516075134
+        },
+        {
+          "word": " two",
+          "start": 49.12,
+          "end": 49.48,
+          "probability": 0.7620653510093689
+        },
+        {
+          "word": " hours,",
+          "start": 49.48,
+          "end": 49.84,
+          "probability": 0.9990990161895752
+        },
+        {
+          "word": " and",
+          "start": 50.3,
+          "end": 50.46,
+          "probability": 0.9969272017478943
+        },
+        {
+          "word": " time",
+          "start": 50.46,
+          "end": 50.82,
+          "probability": 0.9978825449943542
+        },
+        {
+          "word": " is",
+          "start": 50.82,
+          "end": 51.04,
+          "probability": 0.9991881251335144
+        },
+        {
+          "word": " money.",
+          "start": 51.04,
+          "end": 51.4,
+          "probability": 0.9948170781135559
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5140,
+      "start": 51.4,
+      "end": 56.14,
+      "text": " I earn £40 an hour, so I've just lost £80.",
+      "tokens": [
+        50408,
+        286,
+        6012,
+        14378,
+        5254,
+        364,
+        1773,
+        11,
+        370,
+        286,
+        600,
+        445,
+        2731,
+        14378,
+        4702,
+        13,
+        50620
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27952130635579425,
+      "compression_ratio": 0.8627450980392157,
+      "no_speech_prob": 0.029945403337478638,
+      "words": [
+        {
+          "word": " I",
+          "start": 51.4,
+          "end": 52.54,
+          "probability": 0.7917798757553101
+        },
+        {
+          "word": " earn",
+          "start": 52.54,
+          "end": 52.72,
+          "probability": 0.9304246306419373
+        },
+        {
+          "word": " £40",
+          "start": 52.72,
+          "end": 53.3,
+          "probability": 0.6495016813278198
+        },
+        {
+          "word": " an",
+          "start": 53.3,
+          "end": 53.76,
+          "probability": 0.9249285459518433
+        },
+        {
+          "word": " hour,",
+          "start": 53.76,
+          "end": 54.08,
+          "probability": 0.9963108897209167
+        },
+        {
+          "word": " so",
+          "start": 54.46,
+          "end": 54.66,
+          "probability": 0.9920703768730164
+        },
+        {
+          "word": " I've",
+          "start": 54.66,
+          "end": 54.86,
+          "probability": 0.9321600794792175
+        },
+        {
+          "word": " just",
+          "start": 54.86,
+          "end": 55.0,
+          "probability": 0.9937288761138916
+        },
+        {
+          "word": " lost",
+          "start": 55.0,
+          "end": 55.34,
+          "probability": 0.9903684854507446
+        },
+        {
+          "word": " £80.",
+          "start": 55.34,
+          "end": 56.14,
+          "probability": 0.9688864946365356
+        }
+      ]
+    }
+  ]
+}

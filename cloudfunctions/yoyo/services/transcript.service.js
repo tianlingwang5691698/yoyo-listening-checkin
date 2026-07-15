@@ -1,6 +1,6 @@
 const study = require('../facades/study.facade');
 
-const STANDALONE_LEVEL_CATEGORIES = ['petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
+const STANDALONE_LEVEL_CATEGORIES = ['petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 
 async function getTaskTranscript(event) {
   const { ctx, requestedCategory, today } = await study.prepareRequestContext(Object.assign({}, event, {

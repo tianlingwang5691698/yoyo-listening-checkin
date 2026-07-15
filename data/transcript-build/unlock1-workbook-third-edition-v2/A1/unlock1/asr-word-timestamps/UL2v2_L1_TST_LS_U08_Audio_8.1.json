@@ -1,0 +1,2959 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 8.1 I want to drive into London next week. My brother lives there, but I read that I have to pay a congestion charge. What's that? That's the money you have to pay to drive into the centre of the city on weekdays. Why don't you take the metro or a bus into the centre? There's a lot of traffic in London and there are bus lanes everywhere. Are they the parts of the road only for buses? Yes and no. They help the buses move around the city faster, but taxis and motorbikes can also go in them. However, cars are not allowed during the day. The passengers think bus lanes are a good idea because their journeys are much quicker, but don't drive in a bus lane or you'll get a fine. What's a fine? It's money you pay when you do something wrong. It's about £80, but you only pay £40 if you pay in two weeks. Oh no, I don't think I want to drive into London. Most people travel by public transport. Is it expensive? The metro fairs are cheap. The fair means the price of the ticket. So how much is it? When are you going? Tuesday morning. Don't go at peak time. That's the time when a lot of people travel. Well, I have to leave at 8.30. Where does your brother live? He lives in central London. That's zone one, so you certainly don't want to drive into the centre. Park your car in the suburbs and then take the metro. The suburbs, what are they? Oh, the suburbs are areas outside the city or town centre. That's where most people live. Drive your car to a metro station. Park and take the train. It's much easier. OK, I'll do that.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.96,
+      "text": " Track 8.1",
+      "tokens": [
+        50364,
+        31903,
+        1649,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.48,
+          "probability": 0.33920684456825256
+        },
+        {
+          "word": " 8",
+          "start": 0.48,
+          "end": 1.02,
+          "probability": 0.9443126916885376
+        },
+        {
+          "word": ".1",
+          "start": 1.02,
+          "end": 1.96,
+          "probability": 0.9975996315479279
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.74,
+      "text": " I want to drive into London next week.",
+      "tokens": [
+        50564,
+        286,
+        528,
+        281,
+        3332,
+        666,
+        7042,
+        958,
+        1243,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " I",
+          "start": 3.8400000000000007,
+          "end": 4.2,
+          "probability": 0.21176791191101074
+        },
+        {
+          "word": " want",
+          "start": 4.2,
+          "end": 4.5,
+          "probability": 0.9300113916397095
+        },
+        {
+          "word": " to",
+          "start": 4.5,
+          "end": 4.72,
+          "probability": 0.9988757967948914
+        },
+        {
+          "word": " drive",
+          "start": 4.72,
+          "end": 4.98,
+          "probability": 0.9943655729293823
+        },
+        {
+          "word": " into",
+          "start": 4.98,
+          "end": 5.36,
+          "probability": 0.97157883644104
+        },
+        {
+          "word": " London",
+          "start": 5.36,
+          "end": 5.64,
+          "probability": 0.9984655380249023
+        },
+        {
+          "word": " next",
+          "start": 5.64,
+          "end": 6.26,
+          "probability": 0.9954309463500977
+        },
+        {
+          "word": " week.",
+          "start": 6.26,
+          "end": 6.74,
+          "probability": 0.999129593372345
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 7.1,
+      "end": 8.68,
+      "text": " My brother lives there,",
+      "tokens": [
+        50714,
+        1222,
+        3708,
+        2909,
+        456,
+        11,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " My",
+          "start": 7.1,
+          "end": 7.42,
+          "probability": 0.9929919242858887
+        },
+        {
+          "word": " brother",
+          "start": 7.42,
+          "end": 7.94,
+          "probability": 0.9901406168937683
+        },
+        {
+          "word": " lives",
+          "start": 7.94,
+          "end": 8.32,
+          "probability": 0.9941288232803345
+        },
+        {
+          "word": " there,",
+          "start": 8.32,
+          "end": 8.68,
+          "probability": 0.9996029734611511
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 9.0,
+      "end": 13.8,
+      "text": " but I read that I have to pay a congestion charge.",
+      "tokens": [
+        50814,
+        457,
+        286,
+        1401,
+        300,
+        286,
+        362,
+        281,
+        1689,
+        257,
+        40816,
+        4602,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " but",
+          "start": 9.0,
+          "end": 9.38,
+          "probability": 0.9904304146766663
+        },
+        {
+          "word": " I",
+          "start": 9.38,
+          "end": 9.98,
+          "probability": 0.9720988869667053
+        },
+        {
+          "word": " read",
+          "start": 9.98,
+          "end": 10.24,
+          "probability": 0.9226189255714417
+        },
+        {
+          "word": " that",
+          "start": 10.24,
+          "end": 10.38,
+          "probability": 0.9893577694892883
+        },
+        {
+          "word": " I",
+          "start": 10.38,
+          "end": 10.56,
+          "probability": 0.9974654912948608
+        },
+        {
+          "word": " have",
+          "start": 10.56,
+          "end": 10.8,
+          "probability": 0.9966707825660706
+        },
+        {
+          "word": " to",
+          "start": 10.8,
+          "end": 10.96,
+          "probability": 0.9989738464355469
+        },
+        {
+          "word": " pay",
+          "start": 10.96,
+          "end": 11.28,
+          "probability": 0.9978492259979248
+        },
+        {
+          "word": " a",
+          "start": 11.28,
+          "end": 11.88,
+          "probability": 0.8873501420021057
+        },
+        {
+          "word": " congestion",
+          "start": 11.88,
+          "end": 12.96,
+          "probability": 0.9345430731773376
+        },
+        {
+          "word": " charge.",
+          "start": 12.96,
+          "end": 13.8,
+          "probability": 0.9953745007514954
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 14.4,
+      "end": 15.18,
+      "text": " What's that?",
+      "tokens": [
+        51064,
+        708,
+        311,
+        300,
+        30,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " What's",
+          "start": 14.4,
+          "end": 14.98,
+          "probability": 0.9895120859146118
+        },
+        {
+          "word": " that?",
+          "start": 14.98,
+          "end": 15.18,
+          "probability": 0.9994783997535706
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 15.84,
+      "end": 17.8,
+      "text": " That's the money you have to pay",
+      "tokens": [
+        51164,
+        663,
+        311,
+        264,
+        1460,
+        291,
+        362,
+        281,
+        1689,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " That's",
+          "start": 15.84,
+          "end": 16.34,
+          "probability": 0.969149112701416
+        },
+        {
+          "word": " the",
+          "start": 16.34,
+          "end": 16.44,
+          "probability": 0.9974344372749329
+        },
+        {
+          "word": " money",
+          "start": 16.44,
+          "end": 16.76,
+          "probability": 0.9992631077766418
+        },
+        {
+          "word": " you",
+          "start": 16.76,
+          "end": 17.12,
+          "probability": 0.9773705005645752
+        },
+        {
+          "word": " have",
+          "start": 17.12,
+          "end": 17.3,
+          "probability": 0.9980467557907104
+        },
+        {
+          "word": " to",
+          "start": 17.3,
+          "end": 17.48,
+          "probability": 0.9994428753852844
+        },
+        {
+          "word": " pay",
+          "start": 17.48,
+          "end": 17.8,
+          "probability": 0.9989018440246582
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 17.8,
+      "end": 21.26,
+      "text": " to drive into the centre of the city on weekdays.",
+      "tokens": [
+        51264,
+        281,
+        3332,
+        666,
+        264,
+        10093,
+        295,
+        264,
+        2307,
+        322,
+        1243,
+        45563,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " to",
+          "start": 17.8,
+          "end": 18.22,
+          "probability": 0.9386265873908997
+        },
+        {
+          "word": " drive",
+          "start": 18.22,
+          "end": 18.54,
+          "probability": 0.9974766373634338
+        },
+        {
+          "word": " into",
+          "start": 18.54,
+          "end": 18.92,
+          "probability": 0.9858534336090088
+        },
+        {
+          "word": " the",
+          "start": 18.92,
+          "end": 19.08,
+          "probability": 0.9970006346702576
+        },
+        {
+          "word": " centre",
+          "start": 19.08,
+          "end": 19.52,
+          "probability": 0.7845247983932495
+        },
+        {
+          "word": " of",
+          "start": 19.52,
+          "end": 19.78,
+          "probability": 0.9989086389541626
+        },
+        {
+          "word": " the",
+          "start": 19.78,
+          "end": 19.9,
+          "probability": 0.9931847453117371
+        },
+        {
+          "word": " city",
+          "start": 19.9,
+          "end": 20.3,
+          "probability": 0.9658940434455872
+        },
+        {
+          "word": " on",
+          "start": 20.3,
+          "end": 20.66,
+          "probability": 0.9715529680252075
+        },
+        {
+          "word": " weekdays.",
+          "start": 20.66,
+          "end": 21.26,
+          "probability": 0.9847307205200195
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 22.3,
+      "end": 25.98,
+      "text": " Why don't you take the metro or a bus into the centre?",
+      "tokens": [
+        51464,
+        1545,
+        500,
+        380,
+        291,
+        747,
+        264,
+        27334,
+        420,
+        257,
+        1255,
+        666,
+        264,
+        10093,
+        30,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " Why",
+          "start": 22.3,
+          "end": 22.68,
+          "probability": 0.9912465214729309
+        },
+        {
+          "word": " don't",
+          "start": 22.68,
+          "end": 23.0,
+          "probability": 0.9971285760402679
+        },
+        {
+          "word": " you",
+          "start": 23.0,
+          "end": 23.22,
+          "probability": 0.998915433883667
+        },
+        {
+          "word": " take",
+          "start": 23.22,
+          "end": 23.52,
+          "probability": 0.998233437538147
+        },
+        {
+          "word": " the",
+          "start": 23.52,
+          "end": 23.74,
+          "probability": 0.9963202476501465
+        },
+        {
+          "word": " metro",
+          "start": 23.74,
+          "end": 24.18,
+          "probability": 0.6926725506782532
+        },
+        {
+          "word": " or",
+          "start": 24.18,
+          "end": 24.62,
+          "probability": 0.980705738067627
+        },
+        {
+          "word": " a",
+          "start": 24.62,
+          "end": 24.78,
+          "probability": 0.9656339287757874
+        },
+        {
+          "word": " bus",
+          "start": 24.78,
+          "end": 24.98,
+          "probability": 0.9997287392616272
+        },
+        {
+          "word": " into",
+          "start": 24.98,
+          "end": 25.38,
+          "probability": 0.9839946031570435
+        },
+        {
+          "word": " the",
+          "start": 25.38,
+          "end": 25.58,
+          "probability": 0.9982566237449646
+        },
+        {
+          "word": " centre?",
+          "start": 25.58,
+          "end": 25.98,
+          "probability": 0.9855690598487854
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 26.5,
+      "end": 28.6,
+      "text": " There's a lot of traffic in London",
+      "tokens": [
+        51664,
+        821,
+        311,
+        257,
+        688,
+        295,
+        6419,
+        294,
+        7042,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12749692797660828,
+      "compression_ratio": 1.6524064171122994,
+      "no_speech_prob": 0.32175183296203613,
+      "words": [
+        {
+          "word": " There's",
+          "start": 26.5,
+          "end": 26.96,
+          "probability": 0.9772976636886597
+        },
+        {
+          "word": " a",
+          "start": 26.96,
+          "end": 27.04,
+          "probability": 0.9951186180114746
+        },
+        {
+          "word": " lot",
+          "start": 27.04,
+          "end": 27.28,
+          "probability": 0.9980389475822449
+        },
+        {
+          "word": " of",
+          "start": 27.28,
+          "end": 27.54,
+          "probability": 0.9980202913284302
+        },
+        {
+          "word": " traffic",
+          "start": 27.54,
+          "end": 27.92,
+          "probability": 0.9995984435081482
+        },
+        {
+          "word": " in",
+          "start": 27.92,
+          "end": 28.22,
+          "probability": 0.9990690350532532
+        },
+        {
+          "word": " London",
+          "start": 28.22,
+          "end": 28.6,
+          "probability": 0.9993065595626831
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2860,
+      "start": 28.6,
+      "end": 31.06,
+      "text": " and there are bus lanes everywhere.",
+      "tokens": [
+        50364,
+        293,
+        456,
+        366,
+        1255,
+        25397,
+        5315,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " and",
+          "start": 28.6,
+          "end": 28.84,
+          "probability": 0.10498259961605072
+        },
+        {
+          "word": " there",
+          "start": 28.84,
+          "end": 29.42,
+          "probability": 0.9001384377479553
+        },
+        {
+          "word": " are",
+          "start": 29.42,
+          "end": 29.6,
+          "probability": 0.995489776134491
+        },
+        {
+          "word": " bus",
+          "start": 29.6,
+          "end": 29.88,
+          "probability": 0.9596572518348694
+        },
+        {
+          "word": " lanes",
+          "start": 29.88,
+          "end": 30.1,
+          "probability": 0.9934523105621338
+        },
+        {
+          "word": " everywhere.",
+          "start": 30.1,
+          "end": 31.06,
+          "probability": 0.9948242902755737
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2860,
+      "start": 31.58,
+      "end": 34.44,
+      "text": " Are they the parts of the road only for buses?",
+      "tokens": [
+        50514,
+        2014,
+        436,
+        264,
+        3166,
+        295,
+        264,
+        3060,
+        787,
+        337,
+        20519,
+        30,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " Are",
+          "start": 31.58,
+          "end": 31.88,
+          "probability": 0.5420355796813965
+        },
+        {
+          "word": " they",
+          "start": 31.88,
+          "end": 32.12,
+          "probability": 0.9711641669273376
+        },
+        {
+          "word": " the",
+          "start": 32.12,
+          "end": 32.38,
+          "probability": 0.9870247840881348
+        },
+        {
+          "word": " parts",
+          "start": 32.38,
+          "end": 32.66,
+          "probability": 0.9904927611351013
+        },
+        {
+          "word": " of",
+          "start": 32.66,
+          "end": 32.92,
+          "probability": 0.9942915439605713
+        },
+        {
+          "word": " the",
+          "start": 32.92,
+          "end": 33.06,
+          "probability": 0.9931153655052185
+        },
+        {
+          "word": " road",
+          "start": 33.06,
+          "end": 33.32,
+          "probability": 0.9961005449295044
+        },
+        {
+          "word": " only",
+          "start": 33.32,
+          "end": 33.86,
+          "probability": 0.8123036026954651
+        },
+        {
+          "word": " for",
+          "start": 33.86,
+          "end": 34.1,
+          "probability": 0.9984170198440552
+        },
+        {
+          "word": " buses?",
+          "start": 34.1,
+          "end": 34.44,
+          "probability": 0.9765843749046326
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2860,
+      "start": 35.26,
+      "end": 36.28,
+      "text": " Yes and no.",
+      "tokens": [
+        50664,
+        1079,
+        293,
+        572,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " Yes",
+          "start": 35.26,
+          "end": 35.62,
+          "probability": 0.9626919627189636
+        },
+        {
+          "word": " and",
+          "start": 35.62,
+          "end": 35.96,
+          "probability": 0.8407112956047058
+        },
+        {
+          "word": " no.",
+          "start": 35.96,
+          "end": 36.28,
+          "probability": 0.9799994230270386
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2860,
+      "start": 36.82,
+      "end": 39.58,
+      "text": " They help the buses move around the city faster,",
+      "tokens": [
+        50764,
+        814,
+        854,
+        264,
+        20519,
+        1286,
+        926,
+        264,
+        2307,
+        4663,
+        11,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " They",
+          "start": 36.82,
+          "end": 37.04,
+          "probability": 0.9913524389266968
+        },
+        {
+          "word": " help",
+          "start": 37.04,
+          "end": 37.32,
+          "probability": 0.9916906356811523
+        },
+        {
+          "word": " the",
+          "start": 37.32,
+          "end": 37.54,
+          "probability": 0.9916759729385376
+        },
+        {
+          "word": " buses",
+          "start": 37.54,
+          "end": 37.88,
+          "probability": 0.9765257239341736
+        },
+        {
+          "word": " move",
+          "start": 37.88,
+          "end": 38.16,
+          "probability": 0.9956026077270508
+        },
+        {
+          "word": " around",
+          "start": 38.16,
+          "end": 38.54,
+          "probability": 0.9954094290733337
+        },
+        {
+          "word": " the",
+          "start": 38.54,
+          "end": 38.76,
+          "probability": 0.9981963038444519
+        },
+        {
+          "word": " city",
+          "start": 38.76,
+          "end": 39.06,
+          "probability": 0.9784411191940308
+        },
+        {
+          "word": " faster,",
+          "start": 39.06,
+          "end": 39.58,
+          "probability": 0.9937538504600525
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2860,
+      "start": 40.06,
+      "end": 42.84,
+      "text": " but taxis and motorbikes can also go in them.",
+      "tokens": [
+        50914,
+        457,
+        3366,
+        271,
+        293,
+        5932,
+        65,
+        8916,
+        393,
+        611,
+        352,
+        294,
+        552,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " but",
+          "start": 40.06,
+          "end": 40.28,
+          "probability": 0.9946931004524231
+        },
+        {
+          "word": " taxis",
+          "start": 40.28,
+          "end": 40.82,
+          "probability": 0.9183538258075714
+        },
+        {
+          "word": " and",
+          "start": 40.82,
+          "end": 41.08,
+          "probability": 0.9936562180519104
+        },
+        {
+          "word": " motorbikes",
+          "start": 41.08,
+          "end": 41.72,
+          "probability": 0.9707560737927755
+        },
+        {
+          "word": " can",
+          "start": 41.72,
+          "end": 41.9,
+          "probability": 0.9967557787895203
+        },
+        {
+          "word": " also",
+          "start": 41.9,
+          "end": 42.24,
+          "probability": 0.9911366701126099
+        },
+        {
+          "word": " go",
+          "start": 42.24,
+          "end": 42.5,
+          "probability": 0.9965999722480774
+        },
+        {
+          "word": " in",
+          "start": 42.5,
+          "end": 42.7,
+          "probability": 0.9971876740455627
+        },
+        {
+          "word": " them.",
+          "start": 42.7,
+          "end": 42.84,
+          "probability": 0.9938667416572571
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 2860,
+      "start": 43.559999999999995,
+      "end": 46.74,
+      "text": " However, cars are not allowed during the day.",
+      "tokens": [
+        51114,
+        2908,
+        11,
+        5163,
+        366,
+        406,
+        4350,
+        1830,
+        264,
+        786,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " However,",
+          "start": 43.559999999999995,
+          "end": 44.16,
+          "probability": 0.995501697063446
+        },
+        {
+          "word": " cars",
+          "start": 44.72,
+          "end": 44.98,
+          "probability": 0.9973980188369751
+        },
+        {
+          "word": " are",
+          "start": 44.98,
+          "end": 45.16,
+          "probability": 0.9933714866638184
+        },
+        {
+          "word": " not",
+          "start": 45.16,
+          "end": 45.4,
+          "probability": 0.9975408315658569
+        },
+        {
+          "word": " allowed",
+          "start": 45.4,
+          "end": 45.84,
+          "probability": 0.9980959296226501
+        },
+        {
+          "word": " during",
+          "start": 45.84,
+          "end": 46.22,
+          "probability": 0.9987447261810303
+        },
+        {
+          "word": " the",
+          "start": 46.22,
+          "end": 46.42,
+          "probability": 0.9966147541999817
+        },
+        {
+          "word": " day.",
+          "start": 46.42,
+          "end": 46.74,
+          "probability": 0.9989426732063293
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 2860,
+      "start": 48.14,
+      "end": 50.9,
+      "text": " The passengers think bus lanes are a good idea",
+      "tokens": [
+        51314,
+        440,
+        18436,
+        519,
+        1255,
+        25397,
+        366,
+        257,
+        665,
+        1558,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " The",
+          "start": 48.14,
+          "end": 48.26,
+          "probability": 0.9937293529510498
+        },
+        {
+          "word": " passengers",
+          "start": 48.26,
+          "end": 48.78,
+          "probability": 0.9964471459388733
+        },
+        {
+          "word": " think",
+          "start": 48.78,
+          "end": 49.26,
+          "probability": 0.9907970428466797
+        },
+        {
+          "word": " bus",
+          "start": 49.26,
+          "end": 49.54,
+          "probability": 0.9243879318237305
+        },
+        {
+          "word": " lanes",
+          "start": 49.54,
+          "end": 49.8,
+          "probability": 0.9965044260025024
+        },
+        {
+          "word": " are",
+          "start": 49.8,
+          "end": 50.12,
+          "probability": 0.998816967010498
+        },
+        {
+          "word": " a",
+          "start": 50.12,
+          "end": 50.22,
+          "probability": 0.9971981048583984
+        },
+        {
+          "word": " good",
+          "start": 50.22,
+          "end": 50.4,
+          "probability": 0.9986704587936401
+        },
+        {
+          "word": " idea",
+          "start": 50.4,
+          "end": 50.9,
+          "probability": 0.9991129040718079
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 2860,
+      "start": 50.9,
+      "end": 53.3,
+      "text": " because their journeys are much quicker,",
+      "tokens": [
+        51464,
+        570,
+        641,
+        36736,
+        366,
+        709,
+        16255,
+        11,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " because",
+          "start": 50.9,
+          "end": 51.54,
+          "probability": 0.6648172736167908
+        },
+        {
+          "word": " their",
+          "start": 51.54,
+          "end": 51.84,
+          "probability": 0.9801726937294006
+        },
+        {
+          "word": " journeys",
+          "start": 51.84,
+          "end": 52.3,
+          "probability": 0.9946278929710388
+        },
+        {
+          "word": " are",
+          "start": 52.3,
+          "end": 52.58,
+          "probability": 0.9980008006095886
+        },
+        {
+          "word": " much",
+          "start": 52.58,
+          "end": 52.88,
+          "probability": 0.9981284737586975
+        },
+        {
+          "word": " quicker,",
+          "start": 52.88,
+          "end": 53.3,
+          "probability": 0.9988380074501038
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 2860,
+      "start": 53.88,
+      "end": 57.46,
+      "text": " but don't drive in a bus lane or you'll get a fine.",
+      "tokens": [
+        51614,
+        457,
+        500,
+        380,
+        3332,
+        294,
+        257,
+        1255,
+        12705,
+        420,
+        291,
+        603,
+        483,
+        257,
+        2489,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04703396221376815,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.018072130158543587,
+      "words": [
+        {
+          "word": " but",
+          "start": 53.88,
+          "end": 54.14,
+          "probability": 0.9933564066886902
+        },
+        {
+          "word": " don't",
+          "start": 54.14,
+          "end": 54.66,
+          "probability": 0.9943336248397827
+        },
+        {
+          "word": " drive",
+          "start": 54.66,
+          "end": 54.96,
+          "probability": 0.99461430311203
+        },
+        {
+          "word": " in",
+          "start": 54.96,
+          "end": 55.2,
+          "probability": 0.996196985244751
+        },
+        {
+          "word": " a",
+          "start": 55.2,
+          "end": 55.28,
+          "probability": 0.9989780187606812
+        },
+        {
+          "word": " bus",
+          "start": 55.28,
+          "end": 55.54,
+          "probability": 0.9935786724090576
+        },
+        {
+          "word": " lane",
+          "start": 55.54,
+          "end": 55.94,
+          "probability": 0.998223602771759
+        },
+        {
+          "word": " or",
+          "start": 55.94,
+          "end": 56.38,
+          "probability": 0.8311483860015869
+        },
+        {
+          "word": " you'll",
+          "start": 56.38,
+          "end": 56.68,
+          "probability": 0.974525660276413
+        },
+        {
+          "word": " get",
+          "start": 56.68,
+          "end": 56.88,
+          "probability": 0.9976529479026794
+        },
+        {
+          "word": " a",
+          "start": 56.88,
+          "end": 57.04,
+          "probability": 0.9779234528541565
+        },
+        {
+          "word": " fine.",
+          "start": 57.04,
+          "end": 57.46,
+          "probability": 0.9679160714149475
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5746,
+      "start": 57.46,
+      "end": 59.52,
+      "text": " What's a fine?",
+      "tokens": [
+        50364,
+        708,
+        311,
+        257,
+        2489,
+        30,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " What's",
+          "start": 57.46,
+          "end": 58.66,
+          "probability": 0.5708276927471161
+        },
+        {
+          "word": " a",
+          "start": 58.66,
+          "end": 58.84,
+          "probability": 0.6054971218109131
+        },
+        {
+          "word": " fine?",
+          "start": 58.84,
+          "end": 59.52,
+          "probability": 0.7722901701927185
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 5746,
+      "start": 60.28,
+      "end": 63.26,
+      "text": " It's money you pay when you do something wrong.",
+      "tokens": [
+        50464,
+        467,
+        311,
+        1460,
+        291,
+        1689,
+        562,
+        291,
+        360,
+        746,
+        2085,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " It's",
+          "start": 60.28,
+          "end": 60.44,
+          "probability": 0.6596355587244034
+        },
+        {
+          "word": " money",
+          "start": 60.44,
+          "end": 60.72,
+          "probability": 0.9639986157417297
+        },
+        {
+          "word": " you",
+          "start": 60.72,
+          "end": 61.0,
+          "probability": 0.9696755409240723
+        },
+        {
+          "word": " pay",
+          "start": 61.0,
+          "end": 61.32,
+          "probability": 0.998829185962677
+        },
+        {
+          "word": " when",
+          "start": 61.32,
+          "end": 61.64,
+          "probability": 0.9942463040351868
+        },
+        {
+          "word": " you",
+          "start": 61.64,
+          "end": 61.9,
+          "probability": 0.9976834058761597
+        },
+        {
+          "word": " do",
+          "start": 61.9,
+          "end": 62.1,
+          "probability": 0.9957947731018066
+        },
+        {
+          "word": " something",
+          "start": 62.1,
+          "end": 62.7,
+          "probability": 0.9964017868041992
+        },
+        {
+          "word": " wrong.",
+          "start": 62.7,
+          "end": 63.26,
+          "probability": 0.9948569536209106
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 5746,
+      "start": 64.06,
+      "end": 65.28,
+      "text": " It's about £80,",
+      "tokens": [
+        50664,
+        467,
+        311,
+        466,
+        14378,
+        4702,
+        11,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " It's",
+          "start": 64.06,
+          "end": 64.46,
+          "probability": 0.9925142526626587
+        },
+        {
+          "word": " about",
+          "start": 64.46,
+          "end": 64.7,
+          "probability": 0.9946354031562805
+        },
+        {
+          "word": " £80,",
+          "start": 64.7,
+          "end": 65.28,
+          "probability": 0.640684500336647
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 5746,
+      "start": 65.48,
+      "end": 70.16,
+      "text": " but you only pay £40 if you pay in two weeks.",
+      "tokens": [
+        50764,
+        457,
+        291,
+        787,
+        1689,
+        14378,
+        5254,
+        498,
+        291,
+        1689,
+        294,
+        732,
+        3259,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " but",
+          "start": 65.48,
+          "end": 66.42,
+          "probability": 0.9938317537307739
+        },
+        {
+          "word": " you",
+          "start": 66.42,
+          "end": 66.74,
+          "probability": 0.9925932288169861
+        },
+        {
+          "word": " only",
+          "start": 66.74,
+          "end": 67.0,
+          "probability": 0.9941909909248352
+        },
+        {
+          "word": " pay",
+          "start": 67.0,
+          "end": 67.28,
+          "probability": 0.9981598258018494
+        },
+        {
+          "word": " £40",
+          "start": 67.28,
+          "end": 67.86,
+          "probability": 0.9862502813339233
+        },
+        {
+          "word": " if",
+          "start": 67.86,
+          "end": 68.6,
+          "probability": 0.9425546526908875
+        },
+        {
+          "word": " you",
+          "start": 68.6,
+          "end": 68.76,
+          "probability": 0.9992510676383972
+        },
+        {
+          "word": " pay",
+          "start": 68.76,
+          "end": 69.06,
+          "probability": 0.9971317052841187
+        },
+        {
+          "word": " in",
+          "start": 69.06,
+          "end": 69.34,
+          "probability": 0.9965324401855469
+        },
+        {
+          "word": " two",
+          "start": 69.34,
+          "end": 69.66,
+          "probability": 0.8661620616912842
+        },
+        {
+          "word": " weeks.",
+          "start": 69.66,
+          "end": 70.16,
+          "probability": 0.9983059167861938
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 5746,
+      "start": 70.88,
+      "end": 74.78,
+      "text": " Oh no, I don't think I want to drive into London.",
+      "tokens": [
+        51014,
+        876,
+        572,
+        11,
+        286,
+        500,
+        380,
+        519,
+        286,
+        528,
+        281,
+        3332,
+        666,
+        7042,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " Oh",
+          "start": 70.88,
+          "end": 71.22,
+          "probability": 0.6917432546615601
+        },
+        {
+          "word": " no,",
+          "start": 71.22,
+          "end": 71.5,
+          "probability": 0.8454444408416748
+        },
+        {
+          "word": " I",
+          "start": 72.04,
+          "end": 72.38,
+          "probability": 0.9922044277191162
+        },
+        {
+          "word": " don't",
+          "start": 72.38,
+          "end": 72.8,
+          "probability": 0.9978989660739899
+        },
+        {
+          "word": " think",
+          "start": 72.8,
+          "end": 73.0,
+          "probability": 0.9981189370155334
+        },
+        {
+          "word": " I",
+          "start": 73.0,
+          "end": 73.22,
+          "probability": 0.9963441491127014
+        },
+        {
+          "word": " want",
+          "start": 73.22,
+          "end": 73.46,
+          "probability": 0.9865096211433411
+        },
+        {
+          "word": " to",
+          "start": 73.46,
+          "end": 73.72,
+          "probability": 0.9970424771308899
+        },
+        {
+          "word": " drive",
+          "start": 73.72,
+          "end": 74.02,
+          "probability": 0.9957274198532104
+        },
+        {
+          "word": " into",
+          "start": 74.02,
+          "end": 74.38,
+          "probability": 0.9558122754096985
+        },
+        {
+          "word": " London.",
+          "start": 74.38,
+          "end": 74.78,
+          "probability": 0.9989939332008362
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 5746,
+      "start": 75.8,
+      "end": 78.2,
+      "text": " Most people travel by public transport.",
+      "tokens": [
+        51264,
+        4534,
+        561,
+        3147,
+        538,
+        1908,
+        5495,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " Most",
+          "start": 75.8,
+          "end": 76.0,
+          "probability": 0.021952250972390175
+        },
+        {
+          "word": " people",
+          "start": 76.0,
+          "end": 76.46,
+          "probability": 0.998874843120575
+        },
+        {
+          "word": " travel",
+          "start": 76.46,
+          "end": 76.88,
+          "probability": 0.9928269982337952
+        },
+        {
+          "word": " by",
+          "start": 76.88,
+          "end": 77.16,
+          "probability": 0.9964146614074707
+        },
+        {
+          "word": " public",
+          "start": 77.16,
+          "end": 77.58,
+          "probability": 0.9956080317497253
+        },
+        {
+          "word": " transport.",
+          "start": 77.58,
+          "end": 78.2,
+          "probability": 0.9992613196372986
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 5746,
+      "start": 79.0,
+      "end": 80.02,
+      "text": " Is it expensive?",
+      "tokens": [
+        51414,
+        1119,
+        309,
+        5124,
+        30,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " Is",
+          "start": 79.0,
+          "end": 79.22,
+          "probability": 0.9250937700271606
+        },
+        {
+          "word": " it",
+          "start": 79.22,
+          "end": 79.4,
+          "probability": 0.9970979690551758
+        },
+        {
+          "word": " expensive?",
+          "start": 79.4,
+          "end": 80.02,
+          "probability": 0.9939303398132324
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 5746,
+      "start": 81.04,
+      "end": 82.76,
+      "text": " The metro fairs are cheap.",
+      "tokens": [
+        51514,
+        440,
+        27334,
+        3143,
+        82,
+        366,
+        7084,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " The",
+          "start": 81.04,
+          "end": 81.18,
+          "probability": 0.9885000586509705
+        },
+        {
+          "word": " metro",
+          "start": 81.18,
+          "end": 81.72,
+          "probability": 0.38245317339897156
+        },
+        {
+          "word": " fairs",
+          "start": 81.72,
+          "end": 82.34,
+          "probability": 0.7947773337364197
+        },
+        {
+          "word": " are",
+          "start": 82.34,
+          "end": 82.46,
+          "probability": 0.9963864088058472
+        },
+        {
+          "word": " cheap.",
+          "start": 82.46,
+          "end": 82.76,
+          "probability": 0.9993036985397339
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 5746,
+      "start": 83.66,
+      "end": 85.9,
+      "text": " The fair means the price of the ticket.",
+      "tokens": [
+        51664,
+        440,
+        3143,
+        1355,
+        264,
+        3218,
+        295,
+        264,
+        10550,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0600813627243042,
+      "compression_ratio": 1.408450704225352,
+      "no_speech_prob": 0.025674693286418915,
+      "words": [
+        {
+          "word": " The",
+          "start": 83.66,
+          "end": 83.82,
+          "probability": 0.9946533441543579
+        },
+        {
+          "word": " fair",
+          "start": 83.82,
+          "end": 84.22,
+          "probability": 0.8456037044525146
+        },
+        {
+          "word": " means",
+          "start": 84.22,
+          "end": 84.6,
+          "probability": 0.9902258515357971
+        },
+        {
+          "word": " the",
+          "start": 84.6,
+          "end": 84.84,
+          "probability": 0.9964643716812134
+        },
+        {
+          "word": " price",
+          "start": 84.84,
+          "end": 85.16,
+          "probability": 0.9986188411712646
+        },
+        {
+          "word": " of",
+          "start": 85.16,
+          "end": 85.4,
+          "probability": 0.9985846281051636
+        },
+        {
+          "word": " the",
+          "start": 85.4,
+          "end": 85.54,
+          "probability": 0.9960122108459473
+        },
+        {
+          "word": " ticket.",
+          "start": 85.54,
+          "end": 85.9,
+          "probability": 0.9967909455299377
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 8590,
+      "start": 85.9,
+      "end": 88.58,
+      "text": " So how much is it?",
+      "tokens": [
+        50364,
+        407,
+        577,
+        709,
+        307,
+        309,
+        30,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " So",
+          "start": 85.9,
+          "end": 87.06,
+          "probability": 0.2291148602962494
+        },
+        {
+          "word": " how",
+          "start": 87.06,
+          "end": 87.38,
+          "probability": 0.660037100315094
+        },
+        {
+          "word": " much",
+          "start": 87.38,
+          "end": 87.74,
+          "probability": 0.9928036332130432
+        },
+        {
+          "word": " is",
+          "start": 87.74,
+          "end": 87.92,
+          "probability": 0.9965288043022156
+        },
+        {
+          "word": " it?",
+          "start": 87.92,
+          "end": 88.58,
+          "probability": 0.9949682354927063
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 8590,
+      "start": 88.84,
+      "end": 89.6,
+      "text": " When are you going?",
+      "tokens": [
+        50464,
+        1133,
+        366,
+        291,
+        516,
+        30,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " When",
+          "start": 88.84,
+          "end": 89.0,
+          "probability": 0.0648915097117424
+        },
+        {
+          "word": " are",
+          "start": 89.0,
+          "end": 89.14,
+          "probability": 0.9937321543693542
+        },
+        {
+          "word": " you",
+          "start": 89.14,
+          "end": 89.3,
+          "probability": 0.9977872371673584
+        },
+        {
+          "word": " going?",
+          "start": 89.3,
+          "end": 89.6,
+          "probability": 0.9963724613189697
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 8590,
+      "start": 90.22,
+      "end": 91.2,
+      "text": " Tuesday morning.",
+      "tokens": [
+        50564,
+        10017,
+        2446,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " Tuesday",
+          "start": 90.22,
+          "end": 90.52,
+          "probability": 0.20000337064266205
+        },
+        {
+          "word": " morning.",
+          "start": 90.52,
+          "end": 91.2,
+          "probability": 0.9018783569335938
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 8590,
+      "start": 92.0,
+      "end": 93.64,
+      "text": " Don't go at peak time.",
+      "tokens": [
+        50664,
+        1468,
+        380,
+        352,
+        412,
+        10651,
+        565,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " Don't",
+          "start": 92.0,
+          "end": 92.36,
+          "probability": 0.5095892753452063
+        },
+        {
+          "word": " go",
+          "start": 92.36,
+          "end": 92.62,
+          "probability": 0.9950959086418152
+        },
+        {
+          "word": " at",
+          "start": 92.62,
+          "end": 92.92,
+          "probability": 0.990085244178772
+        },
+        {
+          "word": " peak",
+          "start": 92.92,
+          "end": 93.16,
+          "probability": 0.9811602234840393
+        },
+        {
+          "word": " time.",
+          "start": 93.16,
+          "end": 93.64,
+          "probability": 0.989831805229187
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 8590,
+      "start": 94.28,
+      "end": 97.58,
+      "text": " That's the time when a lot of people travel.",
+      "tokens": [
+        50764,
+        663,
+        311,
+        264,
+        565,
+        562,
+        257,
+        688,
+        295,
+        561,
+        3147,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " That's",
+          "start": 94.28,
+          "end": 94.82,
+          "probability": 0.9780779480934143
+        },
+        {
+          "word": " the",
+          "start": 94.82,
+          "end": 94.92,
+          "probability": 0.9949750900268555
+        },
+        {
+          "word": " time",
+          "start": 94.92,
+          "end": 95.28,
+          "probability": 0.9962896108627319
+        },
+        {
+          "word": " when",
+          "start": 95.28,
+          "end": 95.62,
+          "probability": 0.9927380681037903
+        },
+        {
+          "word": " a",
+          "start": 95.62,
+          "end": 95.92,
+          "probability": 0.9760876893997192
+        },
+        {
+          "word": " lot",
+          "start": 95.92,
+          "end": 96.3,
+          "probability": 0.95954829454422
+        },
+        {
+          "word": " of",
+          "start": 96.3,
+          "end": 96.58,
+          "probability": 0.9953681230545044
+        },
+        {
+          "word": " people",
+          "start": 96.58,
+          "end": 96.96,
+          "probability": 0.9984986782073975
+        },
+        {
+          "word": " travel.",
+          "start": 96.96,
+          "end": 97.58,
+          "probability": 0.9976670742034912
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 8590,
+      "start": 98.46,
+      "end": 101.16,
+      "text": " Well, I have to leave at 8.30.",
+      "tokens": [
+        50964,
+        1042,
+        11,
+        286,
+        362,
+        281,
+        1856,
+        412,
+        1649,
+        13,
+        3446,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 98.46,
+          "end": 98.58,
+          "probability": 0.075656458735466
+        },
+        {
+          "word": " I",
+          "start": 98.78,
+          "end": 99.12,
+          "probability": 0.9959114789962769
+        },
+        {
+          "word": " have",
+          "start": 99.12,
+          "end": 99.36,
+          "probability": 0.9983660578727722
+        },
+        {
+          "word": " to",
+          "start": 99.36,
+          "end": 99.56,
+          "probability": 0.9993220567703247
+        },
+        {
+          "word": " leave",
+          "start": 99.56,
+          "end": 99.88,
+          "probability": 0.9249039888381958
+        },
+        {
+          "word": " at",
+          "start": 99.88,
+          "end": 100.28,
+          "probability": 0.9964350461959839
+        },
+        {
+          "word": " 8",
+          "start": 100.28,
+          "end": 100.56,
+          "probability": 0.9725937843322754
+        },
+        {
+          "word": ".30.",
+          "start": 100.56,
+          "end": 101.16,
+          "probability": 0.8499220609664917
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 8590,
+      "start": 102.14,
+      "end": 103.6,
+      "text": " Where does your brother live?",
+      "tokens": [
+        51164,
+        2305,
+        775,
+        428,
+        3708,
+        1621,
+        30,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " Where",
+          "start": 102.14,
+          "end": 102.54,
+          "probability": 0.7493606209754944
+        },
+        {
+          "word": " does",
+          "start": 102.54,
+          "end": 102.76,
+          "probability": 0.9981160163879395
+        },
+        {
+          "word": " your",
+          "start": 102.76,
+          "end": 102.98,
+          "probability": 0.9977737069129944
+        },
+        {
+          "word": " brother",
+          "start": 102.98,
+          "end": 103.28,
+          "probability": 0.9978047013282776
+        },
+        {
+          "word": " live?",
+          "start": 103.28,
+          "end": 103.6,
+          "probability": 0.9977401494979858
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 8590,
+      "start": 104.4,
+      "end": 106.06,
+      "text": " He lives in central London.",
+      "tokens": [
+        51264,
+        634,
+        2909,
+        294,
+        5777,
+        7042,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " He",
+          "start": 104.4,
+          "end": 104.58,
+          "probability": 0.9816142916679382
+        },
+        {
+          "word": " lives",
+          "start": 104.58,
+          "end": 104.8,
+          "probability": 0.9967902302742004
+        },
+        {
+          "word": " in",
+          "start": 104.8,
+          "end": 105.08,
+          "probability": 0.9988104104995728
+        },
+        {
+          "word": " central",
+          "start": 105.08,
+          "end": 105.58,
+          "probability": 0.6621941924095154
+        },
+        {
+          "word": " London.",
+          "start": 105.58,
+          "end": 106.06,
+          "probability": 0.994419515132904
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 8590,
+      "start": 106.98,
+      "end": 108.32,
+      "text": " That's zone one,",
+      "tokens": [
+        51414,
+        663,
+        311,
+        6668,
+        472,
+        11,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " That's",
+          "start": 106.98,
+          "end": 107.62,
+          "probability": 0.910790890455246
+        },
+        {
+          "word": " zone",
+          "start": 107.62,
+          "end": 107.98,
+          "probability": 0.7806475162506104
+        },
+        {
+          "word": " one,",
+          "start": 107.98,
+          "end": 108.32,
+          "probability": 0.6055180430412292
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 8590,
+      "start": 108.72,
+      "end": 111.94,
+      "text": " so you certainly don't want to drive into the centre.",
+      "tokens": [
+        51514,
+        370,
+        291,
+        3297,
+        500,
+        380,
+        528,
+        281,
+        3332,
+        666,
+        264,
+        10093,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06755299771085699,
+      "compression_ratio": 1.4292929292929293,
+      "no_speech_prob": 0.14875441789627075,
+      "words": [
+        {
+          "word": " so",
+          "start": 108.72,
+          "end": 109.06,
+          "probability": 0.9954850673675537
+        },
+        {
+          "word": " you",
+          "start": 109.06,
+          "end": 109.32,
+          "probability": 0.9974079728126526
+        },
+        {
+          "word": " certainly",
+          "start": 109.32,
+          "end": 109.96,
+          "probability": 0.9838855266571045
+        },
+        {
+          "word": " don't",
+          "start": 109.96,
+          "end": 110.36,
+          "probability": 0.9981513023376465
+        },
+        {
+          "word": " want",
+          "start": 110.36,
+          "end": 110.54,
+          "probability": 0.9985879063606262
+        },
+        {
+          "word": " to",
+          "start": 110.54,
+          "end": 110.74,
+          "probability": 0.9972565770149231
+        },
+        {
+          "word": " drive",
+          "start": 110.74,
+          "end": 111.0,
+          "probability": 0.9980286955833435
+        },
+        {
+          "word": " into",
+          "start": 111.0,
+          "end": 111.38,
+          "probability": 0.985781729221344
+        },
+        {
+          "word": " the",
+          "start": 111.38,
+          "end": 111.54,
+          "probability": 0.9987443685531616
+        },
+        {
+          "word": " centre.",
+          "start": 111.54,
+          "end": 111.94,
+          "probability": 0.69582200050354
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 11194,
+      "start": 111.94,
+      "end": 116.18,
+      "text": " Park your car in the suburbs and then take the metro.",
+      "tokens": [
+        50364,
+        4964,
+        428,
+        1032,
+        294,
+        264,
+        34185,
+        293,
+        550,
+        747,
+        264,
+        27334,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10010069172556807,
+      "compression_ratio": 1.5433526011560694,
+      "no_speech_prob": 0.274707555770874,
+      "words": [
+        {
+          "word": " Park",
+          "start": 111.94,
+          "end": 112.96,
+          "probability": 0.4607750475406647
+        },
+        {
+          "word": " your",
+          "start": 112.96,
+          "end": 113.22,
+          "probability": 0.9940286874771118
+        },
+        {
+          "word": " car",
+          "start": 113.22,
+          "end": 113.54,
+          "probability": 0.9948334693908691
+        },
+        {
+          "word": " in",
+          "start": 113.54,
+          "end": 113.82,
+          "probability": 0.9964746832847595
+        },
+        {
+          "word": " the",
+          "start": 113.82,
+          "end": 113.96,
+          "probability": 0.9952911138534546
+        },
+        {
+          "word": " suburbs",
+          "start": 113.96,
+          "end": 114.3,
+          "probability": 0.9841182231903076
+        },
+        {
+          "word": " and",
+          "start": 114.3,
+          "end": 115.0,
+          "probability": 0.784462571144104
+        },
+        {
+          "word": " then",
+          "start": 115.0,
+          "end": 115.2,
+          "probability": 0.9921687245368958
+        },
+        {
+          "word": " take",
+          "start": 115.2,
+          "end": 115.56,
+          "probability": 0.99407958984375
+        },
+        {
+          "word": " the",
+          "start": 115.56,
+          "end": 115.78,
+          "probability": 0.997980535030365
+        },
+        {
+          "word": " metro.",
+          "start": 115.78,
+          "end": 116.18,
+          "probability": 0.793198823928833
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 11194,
+      "start": 116.62,
+      "end": 119.5,
+      "text": " The suburbs, what are they?",
+      "tokens": [
+        50614,
+        440,
+        34185,
+        11,
+        437,
+        366,
+        436,
+        30,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10010069172556807,
+      "compression_ratio": 1.5433526011560694,
+      "no_speech_prob": 0.274707555770874,
+      "words": [
+        {
+          "word": " The",
+          "start": 116.62,
+          "end": 117.32,
+          "probability": 0.878288209438324
+        },
+        {
+          "word": " suburbs,",
+          "start": 117.32,
+          "end": 118.02,
+          "probability": 0.9811464548110962
+        },
+        {
+          "word": " what",
+          "start": 118.68,
+          "end": 119.08,
+          "probability": 0.9905607104301453
+        },
+        {
+          "word": " are",
+          "start": 119.08,
+          "end": 119.24,
+          "probability": 0.9977059364318848
+        },
+        {
+          "word": " they?",
+          "start": 119.24,
+          "end": 119.5,
+          "probability": 0.9972148537635803
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 11194,
+      "start": 120.4,
+      "end": 125.16,
+      "text": " Oh, the suburbs are areas outside the city or town centre.",
+      "tokens": [
+        50764,
+        876,
+        11,
+        264,
+        34185,
+        366,
+        3179,
+        2380,
+        264,
+        2307,
+        420,
+        3954,
+        10093,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10010069172556807,
+      "compression_ratio": 1.5433526011560694,
+      "no_speech_prob": 0.274707555770874,
+      "words": [
+        {
+          "word": " Oh,",
+          "start": 120.4,
+          "end": 120.78,
+          "probability": 0.920161783695221
+        },
+        {
+          "word": " the",
+          "start": 121.1,
+          "end": 121.24,
+          "probability": 0.9913483262062073
+        },
+        {
+          "word": " suburbs",
+          "start": 121.24,
+          "end": 121.76,
+          "probability": 0.9986885190010071
+        },
+        {
+          "word": " are",
+          "start": 121.76,
+          "end": 122.16,
+          "probability": 0.9937164187431335
+        },
+        {
+          "word": " areas",
+          "start": 122.16,
+          "end": 122.68,
+          "probability": 0.9912864565849304
+        },
+        {
+          "word": " outside",
+          "start": 122.68,
+          "end": 123.28,
+          "probability": 0.996585488319397
+        },
+        {
+          "word": " the",
+          "start": 123.28,
+          "end": 123.64,
+          "probability": 0.9919734001159668
+        },
+        {
+          "word": " city",
+          "start": 123.64,
+          "end": 124.04,
+          "probability": 0.8777276277542114
+        },
+        {
+          "word": " or",
+          "start": 124.04,
+          "end": 124.32,
+          "probability": 0.9902585744857788
+        },
+        {
+          "word": " town",
+          "start": 124.32,
+          "end": 124.58,
+          "probability": 0.9963104128837585
+        },
+        {
+          "word": " centre.",
+          "start": 124.58,
+          "end": 125.16,
+          "probability": 0.7699287533760071
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 11194,
+      "start": 125.98,
+      "end": 127.66,
+      "text": " That's where most people live.",
+      "tokens": [
+        51064,
+        663,
+        311,
+        689,
+        881,
+        561,
+        1621,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10010069172556807,
+      "compression_ratio": 1.5433526011560694,
+      "no_speech_prob": 0.274707555770874,
+      "words": [
+        {
+          "word": " That's",
+          "start": 125.98,
+          "end": 126.4,
+          "probability": 0.9915086030960083
+        },
+        {
+          "word": " where",
+          "start": 126.4,
+          "end": 126.56,
+          "probability": 0.9931672215461731
+        },
+        {
+          "word": " most",
+          "start": 126.56,
+          "end": 126.82,
+          "probability": 0.9965500831604004
+        },
+        {
+          "word": " people",
+          "start": 126.82,
+          "end": 127.22,
+          "probability": 0.9995070695877075
+        },
+        {
+          "word": " live.",
+          "start": 127.22,
+          "end": 127.66,
+          "probability": 0.9953501224517822
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 11194,
+      "start": 128.46,
+      "end": 130.56,
+      "text": " Drive your car to a metro station.",
+      "tokens": [
+        51164,
+        15622,
+        428,
+        1032,
+        281,
+        257,
+        27334,
+        5214,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10010069172556807,
+      "compression_ratio": 1.5433526011560694,
+      "no_speech_prob": 0.274707555770874,
+      "words": [
+        {
+          "word": " Drive",
+          "start": 128.46,
+          "end": 128.7,
+          "probability": 0.9628488421440125
+        },
+        {
+          "word": " your",
+          "start": 128.7,
+          "end": 128.94,
+          "probability": 0.9965676069259644
+        },
+        {
+          "word": " car",
+          "start": 128.94,
+          "end": 129.28,
+          "probability": 0.9983999133110046
+        },
+        {
+          "word": " to",
+          "start": 129.28,
+          "end": 129.5,
+          "probability": 0.9966789484024048
+        },
+        {
+          "word": " a",
+          "start": 129.5,
+          "end": 129.6,
+          "probability": 0.985925018787384
+        },
+        {
+          "word": " metro",
+          "start": 129.6,
+          "end": 129.96,
+          "probability": 0.9559406638145447
+        },
+        {
+          "word": " station.",
+          "start": 129.96,
+          "end": 130.56,
+          "probability": 0.9989628791809082
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 11194,
+      "start": 131.1,
+      "end": 132.72,
+      "text": " Park and take the train.",
+      "tokens": [
+        51314,
+        4964,
+        293,
+        747,
+        264,
+        3847,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10010069172556807,
+      "compression_ratio": 1.5433526011560694,
+      "no_speech_prob": 0.274707555770874,
+      "words": [
+        {
+          "word": " Park",
+          "start": 131.1,
+          "end": 131.32,
+          "probability": 0.9609127640724182
+        },
+        {
+          "word": " and",
+          "start": 131.32,
+          "end": 131.88,
+          "probability": 0.8757467269897461
+        },
+        {
+          "word": " take",
+          "start": 131.88,
+          "end": 132.16,
+          "probability": 0.9940973520278931
+        },
+        {
+          "word": " the",
+          "start": 132.16,
+          "end": 132.44,
+          "probability": 0.9959698915481567
+        },
+        {
+          "word": " train.",
+          "start": 132.44,
+          "end": 132.72,
+          "probability": 0.9987785220146179
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 11194,
+      "start": 133.3,
+      "end": 134.36,
+      "text": " It's much easier.",
+      "tokens": [
+        51414,
+        467,
+        311,
+        709,
+        3571,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10010069172556807,
+      "compression_ratio": 1.5433526011560694,
+      "no_speech_prob": 0.274707555770874,
+      "words": [
+        {
+          "word": " It's",
+          "start": 133.3,
+          "end": 133.52,
+          "probability": 0.9917721152305603
+        },
+        {
+          "word": " much",
+          "start": 133.52,
+          "end": 133.8,
+          "probability": 0.9975255131721497
+        },
+        {
+          "word": " easier.",
+          "start": 133.8,
+          "end": 134.36,
+          "probability": 0.9996452331542969
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 11194,
+      "start": 135.02,
+      "end": 136.46,
+      "text": " OK, I'll do that.",
+      "tokens": [
+        51514,
+        2264,
+        11,
+        286,
+        603,
+        360,
+        300,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10010069172556807,
+      "compression_ratio": 1.5433526011560694,
+      "no_speech_prob": 0.274707555770874,
+      "words": [
+        {
+          "word": " OK,",
+          "start": 135.02,
+          "end": 135.46,
+          "probability": 0.33284488320350647
+        },
+        {
+          "word": " I'll",
+          "start": 135.76,
+          "end": 136.02,
+          "probability": 0.9829345643520355
+        },
+        {
+          "word": " do",
+          "start": 136.02,
+          "end": 136.14,
+          "probability": 0.9993516802787781
+        },
+        {
+          "word": " that.",
+          "start": 136.14,
+          "end": 136.46,
+          "probability": 0.9993220567703247
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5394 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 4.1 Hello everyone, my name is Wacabi Labou. I live in the United Kingdom and my family comes from Kenya, which is a large country in East Africa. My talk today is about an environmental problem in Kenya. First, I'm going to explain the issue and then I'd like to tell you about an organization which has found a successful way of dealing with the situation. So, back in the 1970s, women living in rural areas of Kenya, that is, living in the countryside, became very worried. You see, they had always collected fresh water from local streams, but now these streams were mostly dry. For this reason, the women had to walk a much greater distance every day just to fetch the water their families needed, and also to find wood for their fires. Their access to food had become more difficult too. Why was all this happening? The explanation was deforestation. What do we know about deforestation? Well, we now have a lot of data about the negative impact of deforestation on the environment. The fact is that our planet cannot survive without trees. When trees are cut down, it harms the ecosystem. It damages the soil, which means that crops cannot grow properly. It can affect the availability as well as the quality of fresh water. It affects climate change, and the result is that less rainfall. Of course, deforestation also causes local wildlife to decline because of habitat destruction. Fortunately, a solution was found thanks to an extraordinary Kenyan woman called Wangari Maffai. She was a professor and a politician who really cared about the environment and conservation. She understood the impact of destroying the forests in Kenya. She knew it meant that crops would stop growing, rivers would stop flowing, and that wildlife in these areas would disappear. Due to loss of habitat. So, in 1977, Wangari Maffai set up an environmental organisation called the Green Belt Movement. Belt is just another word for area, by the way. The Green Belt Movement, or GBM, had a plan that was quite simple. Local women were encouraged to start planting trees. Science shows that if people plant more trees, the ecosystem will begin to repair itself. And, since 1977, GBM communities have planted over 51 million trees in Kenya. I think it's incredible that these communities came together to achieve their goal. The work was mainly done by women, and, as the trees grew, the Green Belt Movement also grew. This growth then made it possible for the organisation to run environmental classes for the public. Through the GBM, Professor Maffai organised classes and seminars to teach people about the connection between human activity and the environment. She knew that if the public learned about this link and the effect it has on their lives, it would make them want to change their behaviour and solve their environmental problems. Over the years, the Green Belt Movement has developed a climate change programme, with the aim of giving people in rural communities a greater understanding of the issues, and even better, helping them to see that they have the ability and the power to work against climate change. When Garimaffai was an amazing person, she achieved many important things in her lifetime, and her environmental work has made an enormous difference to the people of Kenya. It is not surprising, therefore, that she won the Nobel Peace Prize in 2004, and she was the first African woman to receive this great award, you know. She died in 2011, but the Green Belt Movement continues to protect and improve the environment in Kenya. And the message I want to leave you with today is that everyone, all of us, can do something to help stop environmental damage where we live, and around the world. Thank you for listening.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.7,
+      "text": " Track 4.1",
+      "tokens": [
+        50364,
+        31903,
+        1017,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2680541701236014,
+      "compression_ratio": 1.2962962962962963,
+      "no_speech_prob": 0.1877652108669281,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.42,
+          "probability": 0.3576878309249878
+        },
+        {
+          "word": " 4",
+          "start": 0.42,
+          "end": 0.92,
+          "probability": 0.9634418487548828
+        },
+        {
+          "word": ".1",
+          "start": 0.92,
+          "end": 1.7,
+          "probability": 0.9956358671188354
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.679999999999999,
+      "end": 7.7,
+      "text": " Hello everyone, my name is Wacabi Labou.",
+      "tokens": [
+        50564,
+        2425,
+        1518,
+        11,
+        452,
+        1315,
+        307,
+        343,
+        326,
+        18884,
+        10137,
+        263,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2680541701236014,
+      "compression_ratio": 1.2962962962962963,
+      "no_speech_prob": 0.1877652108669281,
+      "words": [
+        {
+          "word": " Hello",
+          "start": 3.679999999999999,
+          "end": 4.44,
+          "probability": 0.30792132019996643
+        },
+        {
+          "word": " everyone,",
+          "start": 4.44,
+          "end": 5.08,
+          "probability": 0.7444672584533691
+        },
+        {
+          "word": " my",
+          "start": 5.44,
+          "end": 5.78,
+          "probability": 0.9589921236038208
+        },
+        {
+          "word": " name",
+          "start": 5.78,
+          "end": 6.02,
+          "probability": 0.9990296363830566
+        },
+        {
+          "word": " is",
+          "start": 6.02,
+          "end": 6.5,
+          "probability": 0.9943015575408936
+        },
+        {
+          "word": " Wacabi",
+          "start": 6.5,
+          "end": 7.1,
+          "probability": 0.5329334735870361
+        },
+        {
+          "word": " Labou.",
+          "start": 7.1,
+          "end": 7.7,
+          "probability": 0.39253591001033783
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.06,
+      "end": 15.74,
+      "text": " I live in the United Kingdom and my family comes from Kenya, which is a large country in East Africa.",
+      "tokens": [
+        50764,
+        286,
+        1621,
+        294,
+        264,
+        2824,
+        11277,
+        293,
+        452,
+        1605,
+        1487,
+        490,
+        31011,
+        11,
+        597,
+        307,
+        257,
+        2416,
+        1941,
+        294,
+        6747,
+        7349,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2680541701236014,
+      "compression_ratio": 1.2962962962962963,
+      "no_speech_prob": 0.1877652108669281,
+      "words": [
+        {
+          "word": " I",
+          "start": 8.06,
+          "end": 8.78,
+          "probability": 0.9900035262107849
+        },
+        {
+          "word": " live",
+          "start": 8.78,
+          "end": 9.04,
+          "probability": 0.99880051612854
+        },
+        {
+          "word": " in",
+          "start": 9.04,
+          "end": 9.32,
+          "probability": 0.9985482096672058
+        },
+        {
+          "word": " the",
+          "start": 9.32,
+          "end": 9.44,
+          "probability": 0.9923938512802124
+        },
+        {
+          "word": " United",
+          "start": 9.44,
+          "end": 9.8,
+          "probability": 0.9732463955879211
+        },
+        {
+          "word": " Kingdom",
+          "start": 9.8,
+          "end": 10.26,
+          "probability": 0.9969449639320374
+        },
+        {
+          "word": " and",
+          "start": 10.26,
+          "end": 10.92,
+          "probability": 0.742809534072876
+        },
+        {
+          "word": " my",
+          "start": 10.92,
+          "end": 11.24,
+          "probability": 0.9937399625778198
+        },
+        {
+          "word": " family",
+          "start": 11.24,
+          "end": 11.76,
+          "probability": 0.9974321722984314
+        },
+        {
+          "word": " comes",
+          "start": 11.76,
+          "end": 12.14,
+          "probability": 0.983260452747345
+        },
+        {
+          "word": " from",
+          "start": 12.14,
+          "end": 12.5,
+          "probability": 0.9977989792823792
+        },
+        {
+          "word": " Kenya,",
+          "start": 12.5,
+          "end": 12.86,
+          "probability": 0.9953775405883789
+        },
+        {
+          "word": " which",
+          "start": 13.24,
+          "end": 13.38,
+          "probability": 0.9978431463241577
+        },
+        {
+          "word": " is",
+          "start": 13.38,
+          "end": 13.76,
+          "probability": 0.9986364245414734
+        },
+        {
+          "word": " a",
+          "start": 13.76,
+          "end": 13.86,
+          "probability": 0.9993540644645691
+        },
+        {
+          "word": " large",
+          "start": 13.86,
+          "end": 14.26,
+          "probability": 0.9972018003463745
+        },
+        {
+          "word": " country",
+          "start": 14.26,
+          "end": 14.66,
+          "probability": 0.9965910911560059
+        },
+        {
+          "word": " in",
+          "start": 14.66,
+          "end": 15.08,
+          "probability": 0.9973986148834229
+        },
+        {
+          "word": " East",
+          "start": 15.08,
+          "end": 15.4,
+          "probability": 0.9572546482086182
+        },
+        {
+          "word": " Africa.",
+          "start": 15.4,
+          "end": 15.74,
+          "probability": 0.9976443648338318
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 16.88,
+      "end": 21.14,
+      "text": " My talk today is about an environmental problem in Kenya.",
+      "tokens": [
+        51164,
+        1222,
+        751,
+        965,
+        307,
+        466,
+        364,
+        8303,
+        1154,
+        294,
+        31011,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2680541701236014,
+      "compression_ratio": 1.2962962962962963,
+      "no_speech_prob": 0.1877652108669281,
+      "words": [
+        {
+          "word": " My",
+          "start": 16.88,
+          "end": 17.18,
+          "probability": 0.9808927774429321
+        },
+        {
+          "word": " talk",
+          "start": 17.18,
+          "end": 17.48,
+          "probability": 0.9861417412757874
+        },
+        {
+          "word": " today",
+          "start": 17.48,
+          "end": 17.88,
+          "probability": 0.9775654077529907
+        },
+        {
+          "word": " is",
+          "start": 17.88,
+          "end": 18.38,
+          "probability": 0.9859955906867981
+        },
+        {
+          "word": " about",
+          "start": 18.38,
+          "end": 18.64,
+          "probability": 0.9990119934082031
+        },
+        {
+          "word": " an",
+          "start": 18.64,
+          "end": 18.94,
+          "probability": 0.9896278381347656
+        },
+        {
+          "word": " environmental",
+          "start": 18.94,
+          "end": 19.64,
+          "probability": 0.9655299186706543
+        },
+        {
+          "word": " problem",
+          "start": 19.64,
+          "end": 20.44,
+          "probability": 0.9990717172622681
+        },
+        {
+          "word": " in",
+          "start": 20.44,
+          "end": 20.84,
+          "probability": 0.9947911500930786
+        },
+        {
+          "word": " Kenya.",
+          "start": 20.84,
+          "end": 21.14,
+          "probability": 0.9996308088302612
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 2114,
+      "start": 21.840000000000003,
+      "end": 31.96,
+      "text": " First, I'm going to explain the issue and then I'd like to tell you about an organization which has found a successful way of dealing with the situation.",
+      "tokens": [
+        50364,
+        2386,
+        11,
+        286,
+        478,
+        516,
+        281,
+        2903,
+        264,
+        2734,
+        293,
+        550,
+        286,
+        1116,
+        411,
+        281,
+        980,
+        291,
+        466,
+        364,
+        4475,
+        597,
+        575,
+        1352,
+        257,
+        4406,
+        636,
+        295,
+        6260,
+        365,
+        264,
+        2590,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10742704796068596,
+      "compression_ratio": 1.4041450777202074,
+      "no_speech_prob": 0.6473486423492432,
+      "words": [
+        {
+          "word": " First,",
+          "start": 21.840000000000003,
+          "end": 22.44,
+          "probability": 0.28286799788475037
+        },
+        {
+          "word": " I'm",
+          "start": 22.88,
+          "end": 23.1,
+          "probability": 0.8871342241764069
+        },
+        {
+          "word": " going",
+          "start": 23.1,
+          "end": 23.26,
+          "probability": 0.9961810111999512
+        },
+        {
+          "word": " to",
+          "start": 23.26,
+          "end": 23.5,
+          "probability": 0.9920002222061157
+        },
+        {
+          "word": " explain",
+          "start": 23.5,
+          "end": 23.98,
+          "probability": 0.9949600696563721
+        },
+        {
+          "word": " the",
+          "start": 23.98,
+          "end": 24.28,
+          "probability": 0.9899170994758606
+        },
+        {
+          "word": " issue",
+          "start": 24.28,
+          "end": 24.58,
+          "probability": 0.9944549202919006
+        },
+        {
+          "word": " and",
+          "start": 24.58,
+          "end": 25.16,
+          "probability": 0.427110880613327
+        },
+        {
+          "word": " then",
+          "start": 25.16,
+          "end": 25.4,
+          "probability": 0.9901928901672363
+        },
+        {
+          "word": " I'd",
+          "start": 25.4,
+          "end": 25.92,
+          "probability": 0.962481826543808
+        },
+        {
+          "word": " like",
+          "start": 25.92,
+          "end": 26.02,
+          "probability": 0.997464656829834
+        },
+        {
+          "word": " to",
+          "start": 26.02,
+          "end": 26.24,
+          "probability": 0.9946550130844116
+        },
+        {
+          "word": " tell",
+          "start": 26.24,
+          "end": 26.46,
+          "probability": 0.9960144758224487
+        },
+        {
+          "word": " you",
+          "start": 26.46,
+          "end": 26.78,
+          "probability": 0.995297372341156
+        },
+        {
+          "word": " about",
+          "start": 26.78,
+          "end": 27.1,
+          "probability": 0.9972827434539795
+        },
+        {
+          "word": " an",
+          "start": 27.1,
+          "end": 27.36,
+          "probability": 0.9941522479057312
+        },
+        {
+          "word": " organization",
+          "start": 27.36,
+          "end": 27.98,
+          "probability": 0.47100260853767395
+        },
+        {
+          "word": " which",
+          "start": 27.98,
+          "end": 28.6,
+          "probability": 0.9513705372810364
+        },
+        {
+          "word": " has",
+          "start": 28.6,
+          "end": 28.78,
+          "probability": 0.9688002467155457
+        },
+        {
+          "word": " found",
+          "start": 28.78,
+          "end": 29.04,
+          "probability": 0.996921956539154
+        },
+        {
+          "word": " a",
+          "start": 29.04,
+          "end": 29.2,
+          "probability": 0.9978371262550354
+        },
+        {
+          "word": " successful",
+          "start": 29.2,
+          "end": 29.86,
+          "probability": 0.9829962849617004
+        },
+        {
+          "word": " way",
+          "start": 29.86,
+          "end": 30.24,
+          "probability": 0.9962796568870544
+        },
+        {
+          "word": " of",
+          "start": 30.24,
+          "end": 30.62,
+          "probability": 0.9943190217018127
+        },
+        {
+          "word": " dealing",
+          "start": 30.62,
+          "end": 30.92,
+          "probability": 0.9973224997520447
+        },
+        {
+          "word": " with",
+          "start": 30.92,
+          "end": 31.2,
+          "probability": 0.9990113973617554
+        },
+        {
+          "word": " the",
+          "start": 31.2,
+          "end": 31.32,
+          "probability": 0.9672930240631104
+        },
+        {
+          "word": " situation.",
+          "start": 31.32,
+          "end": 31.96,
+          "probability": 0.99847811460495
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2114,
+      "start": 33.1,
+      "end": 42.8,
+      "text": " So, back in the 1970s, women living in rural areas of Kenya, that is, living in the countryside, became very worried.",
+      "tokens": [
+        50964,
+        407,
+        11,
+        646,
+        294,
+        264,
+        14577,
+        82,
+        11,
+        2266,
+        2647,
+        294,
+        11165,
+        3179,
+        295,
+        31011,
+        11,
+        300,
+        307,
+        11,
+        2647,
+        294,
+        264,
+        28252,
+        11,
+        3062,
+        588,
+        5804,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10742704796068596,
+      "compression_ratio": 1.4041450777202074,
+      "no_speech_prob": 0.6473486423492432,
+      "words": [
+        {
+          "word": " So,",
+          "start": 33.1,
+          "end": 33.52,
+          "probability": 0.9792658686637878
+        },
+        {
+          "word": " back",
+          "start": 33.8,
+          "end": 34.0,
+          "probability": 0.9912320971488953
+        },
+        {
+          "word": " in",
+          "start": 34.0,
+          "end": 34.26,
+          "probability": 0.9982469081878662
+        },
+        {
+          "word": " the",
+          "start": 34.26,
+          "end": 34.38,
+          "probability": 0.9987769722938538
+        },
+        {
+          "word": " 1970s,",
+          "start": 34.38,
+          "end": 35.7,
+          "probability": 0.9540269076824188
+        },
+        {
+          "word": " women",
+          "start": 35.98,
+          "end": 36.16,
+          "probability": 0.9822589159011841
+        },
+        {
+          "word": " living",
+          "start": 36.16,
+          "end": 36.74,
+          "probability": 0.9935837388038635
+        },
+        {
+          "word": " in",
+          "start": 36.74,
+          "end": 37.02,
+          "probability": 0.9987823367118835
+        },
+        {
+          "word": " rural",
+          "start": 37.02,
+          "end": 37.32,
+          "probability": 0.9864726066589355
+        },
+        {
+          "word": " areas",
+          "start": 37.32,
+          "end": 37.94,
+          "probability": 0.9979439377784729
+        },
+        {
+          "word": " of",
+          "start": 37.94,
+          "end": 38.18,
+          "probability": 0.997786283493042
+        },
+        {
+          "word": " Kenya,",
+          "start": 38.18,
+          "end": 38.48,
+          "probability": 0.9890363812446594
+        },
+        {
+          "word": " that",
+          "start": 38.92,
+          "end": 39.22,
+          "probability": 0.9580944180488586
+        },
+        {
+          "word": " is,",
+          "start": 39.22,
+          "end": 39.44,
+          "probability": 0.9912858605384827
+        },
+        {
+          "word": " living",
+          "start": 39.76,
+          "end": 39.9,
+          "probability": 0.9950796365737915
+        },
+        {
+          "word": " in",
+          "start": 39.9,
+          "end": 40.14,
+          "probability": 0.9964428544044495
+        },
+        {
+          "word": " the",
+          "start": 40.14,
+          "end": 40.28,
+          "probability": 0.9969017505645752
+        },
+        {
+          "word": " countryside,",
+          "start": 40.28,
+          "end": 40.98,
+          "probability": 0.9972700476646423
+        },
+        {
+          "word": " became",
+          "start": 41.4,
+          "end": 41.7,
+          "probability": 0.994541347026825
+        },
+        {
+          "word": " very",
+          "start": 41.7,
+          "end": 42.3,
+          "probability": 0.9949886202812195
+        },
+        {
+          "word": " worried.",
+          "start": 42.3,
+          "end": 42.8,
+          "probability": 0.9993778467178345
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 4280,
+      "start": 42.8,
+      "end": 51.02,
+      "text": " You see, they had always collected fresh water from local streams, but now these streams were mostly dry.",
+      "tokens": [
+        50364,
+        509,
+        536,
+        11,
+        436,
+        632,
+        1009,
+        11087,
+        4451,
+        1281,
+        490,
+        2654,
+        15842,
+        11,
+        457,
+        586,
+        613,
+        15842,
+        645,
+        5240,
+        4016,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.061232846975326535,
+      "compression_ratio": 1.5779816513761469,
+      "no_speech_prob": 0.35626420378685,
+      "words": [
+        {
+          "word": " You",
+          "start": 42.8,
+          "end": 43.74,
+          "probability": 0.7759365439414978
+        },
+        {
+          "word": " see,",
+          "start": 43.74,
+          "end": 43.88,
+          "probability": 0.9949709177017212
+        },
+        {
+          "word": " they",
+          "start": 44.22,
+          "end": 44.34,
+          "probability": 0.9954677820205688
+        },
+        {
+          "word": " had",
+          "start": 44.34,
+          "end": 44.5,
+          "probability": 0.992691695690155
+        },
+        {
+          "word": " always",
+          "start": 44.5,
+          "end": 44.78,
+          "probability": 0.9842118620872498
+        },
+        {
+          "word": " collected",
+          "start": 44.78,
+          "end": 45.38,
+          "probability": 0.9970570802688599
+        },
+        {
+          "word": " fresh",
+          "start": 45.38,
+          "end": 45.8,
+          "probability": 0.9679810404777527
+        },
+        {
+          "word": " water",
+          "start": 45.8,
+          "end": 46.34,
+          "probability": 0.9989140033721924
+        },
+        {
+          "word": " from",
+          "start": 46.34,
+          "end": 46.74,
+          "probability": 0.9970663189888
+        },
+        {
+          "word": " local",
+          "start": 46.74,
+          "end": 47.06,
+          "probability": 0.9949659705162048
+        },
+        {
+          "word": " streams,",
+          "start": 47.06,
+          "end": 47.48,
+          "probability": 0.9914605617523193
+        },
+        {
+          "word": " but",
+          "start": 48.12,
+          "end": 48.36,
+          "probability": 0.9961097836494446
+        },
+        {
+          "word": " now",
+          "start": 48.36,
+          "end": 48.68,
+          "probability": 0.9965137839317322
+        },
+        {
+          "word": " these",
+          "start": 48.68,
+          "end": 49.28,
+          "probability": 0.810117244720459
+        },
+        {
+          "word": " streams",
+          "start": 49.28,
+          "end": 49.86,
+          "probability": 0.994411289691925
+        },
+        {
+          "word": " were",
+          "start": 49.86,
+          "end": 50.14,
+          "probability": 0.9940170049667358
+        },
+        {
+          "word": " mostly",
+          "start": 50.14,
+          "end": 50.6,
+          "probability": 0.9990161657333374
+        },
+        {
+          "word": " dry.",
+          "start": 50.6,
+          "end": 51.02,
+          "probability": 0.9986675977706909
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 4280,
+      "start": 52.0,
+      "end": 62.78,
+      "text": " For this reason, the women had to walk a much greater distance every day just to fetch the water their families needed, and also to find wood for their fires.",
+      "tokens": [
+        50764,
+        1171,
+        341,
+        1778,
+        11,
+        264,
+        2266,
+        632,
+        281,
+        1792,
+        257,
+        709,
+        5044,
+        4560,
+        633,
+        786,
+        445,
+        281,
+        23673,
+        264,
+        1281,
+        641,
+        4466,
+        2978,
+        11,
+        293,
+        611,
+        281,
+        915,
+        4576,
+        337,
+        641,
+        15044,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.061232846975326535,
+      "compression_ratio": 1.5779816513761469,
+      "no_speech_prob": 0.35626420378685,
+      "words": [
+        {
+          "word": " For",
+          "start": 52.0,
+          "end": 52.2,
+          "probability": 0.9907662868499756
+        },
+        {
+          "word": " this",
+          "start": 52.2,
+          "end": 52.42,
+          "probability": 0.9980610013008118
+        },
+        {
+          "word": " reason,",
+          "start": 52.42,
+          "end": 52.88,
+          "probability": 0.9988418221473694
+        },
+        {
+          "word": " the",
+          "start": 53.22,
+          "end": 53.3,
+          "probability": 0.9949154853820801
+        },
+        {
+          "word": " women",
+          "start": 53.3,
+          "end": 53.48,
+          "probability": 0.984731912612915
+        },
+        {
+          "word": " had",
+          "start": 53.48,
+          "end": 53.72,
+          "probability": 0.9989041090011597
+        },
+        {
+          "word": " to",
+          "start": 53.72,
+          "end": 53.96,
+          "probability": 0.9997052550315857
+        },
+        {
+          "word": " walk",
+          "start": 53.96,
+          "end": 54.16,
+          "probability": 0.9964444041252136
+        },
+        {
+          "word": " a",
+          "start": 54.16,
+          "end": 54.42,
+          "probability": 0.9972188472747803
+        },
+        {
+          "word": " much",
+          "start": 54.42,
+          "end": 54.78,
+          "probability": 0.9989043474197388
+        },
+        {
+          "word": " greater",
+          "start": 54.78,
+          "end": 55.32,
+          "probability": 0.9852466583251953
+        },
+        {
+          "word": " distance",
+          "start": 55.32,
+          "end": 55.82,
+          "probability": 0.9996243715286255
+        },
+        {
+          "word": " every",
+          "start": 55.82,
+          "end": 56.38,
+          "probability": 0.9259012341499329
+        },
+        {
+          "word": " day",
+          "start": 56.38,
+          "end": 56.7,
+          "probability": 0.999629020690918
+        },
+        {
+          "word": " just",
+          "start": 56.7,
+          "end": 57.28,
+          "probability": 0.6560508608818054
+        },
+        {
+          "word": " to",
+          "start": 57.28,
+          "end": 57.58,
+          "probability": 0.999283492565155
+        },
+        {
+          "word": " fetch",
+          "start": 57.58,
+          "end": 57.78,
+          "probability": 0.9872961044311523
+        },
+        {
+          "word": " the",
+          "start": 57.78,
+          "end": 58.08,
+          "probability": 0.983869731426239
+        },
+        {
+          "word": " water",
+          "start": 58.08,
+          "end": 58.42,
+          "probability": 0.9992929697036743
+        },
+        {
+          "word": " their",
+          "start": 58.42,
+          "end": 58.7,
+          "probability": 0.9841904044151306
+        },
+        {
+          "word": " families",
+          "start": 58.7,
+          "end": 59.12,
+          "probability": 0.991324782371521
+        },
+        {
+          "word": " needed,",
+          "start": 59.12,
+          "end": 59.64,
+          "probability": 0.9987767338752747
+        },
+        {
+          "word": " and",
+          "start": 60.26,
+          "end": 60.4,
+          "probability": 0.9964092373847961
+        },
+        {
+          "word": " also",
+          "start": 60.4,
+          "end": 60.82,
+          "probability": 0.994306743144989
+        },
+        {
+          "word": " to",
+          "start": 60.82,
+          "end": 61.22,
+          "probability": 0.925938069820404
+        },
+        {
+          "word": " find",
+          "start": 61.22,
+          "end": 61.46,
+          "probability": 0.9983065128326416
+        },
+        {
+          "word": " wood",
+          "start": 61.46,
+          "end": 61.82,
+          "probability": 0.9909976720809937
+        },
+        {
+          "word": " for",
+          "start": 61.82,
+          "end": 62.16,
+          "probability": 0.9979786276817322
+        },
+        {
+          "word": " their",
+          "start": 62.16,
+          "end": 62.32,
+          "probability": 0.9981179237365723
+        },
+        {
+          "word": " fires.",
+          "start": 62.32,
+          "end": 62.78,
+          "probability": 0.9886847138404846
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 4280,
+      "start": 63.64,
+      "end": 66.52,
+      "text": " Their access to food had become more difficult too.",
+      "tokens": [
+        51364,
+        6710,
+        2105,
+        281,
+        1755,
+        632,
+        1813,
+        544,
+        2252,
+        886,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.061232846975326535,
+      "compression_ratio": 1.5779816513761469,
+      "no_speech_prob": 0.35626420378685,
+      "words": [
+        {
+          "word": " Their",
+          "start": 63.64,
+          "end": 63.92,
+          "probability": 0.9941269159317017
+        },
+        {
+          "word": " access",
+          "start": 63.92,
+          "end": 64.26,
+          "probability": 0.9967365860939026
+        },
+        {
+          "word": " to",
+          "start": 64.26,
+          "end": 64.58,
+          "probability": 0.9996215105056763
+        },
+        {
+          "word": " food",
+          "start": 64.58,
+          "end": 64.94,
+          "probability": 0.9940218329429626
+        },
+        {
+          "word": " had",
+          "start": 64.94,
+          "end": 65.2,
+          "probability": 0.985175609588623
+        },
+        {
+          "word": " become",
+          "start": 65.2,
+          "end": 65.5,
+          "probability": 0.9976160526275635
+        },
+        {
+          "word": " more",
+          "start": 65.5,
+          "end": 65.78,
+          "probability": 0.9977454543113708
+        },
+        {
+          "word": " difficult",
+          "start": 65.78,
+          "end": 66.12,
+          "probability": 0.9997413754463196
+        },
+        {
+          "word": " too.",
+          "start": 66.12,
+          "end": 66.52,
+          "probability": 0.4556696116924286
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 4280,
+      "start": 67.54,
+      "end": 68.86,
+      "text": " Why was all this happening?",
+      "tokens": [
+        51564,
+        1545,
+        390,
+        439,
+        341,
+        2737,
+        30,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.061232846975326535,
+      "compression_ratio": 1.5779816513761469,
+      "no_speech_prob": 0.35626420378685,
+      "words": [
+        {
+          "word": " Why",
+          "start": 67.54,
+          "end": 67.9,
+          "probability": 0.872964084148407
+        },
+        {
+          "word": " was",
+          "start": 67.9,
+          "end": 68.16,
+          "probability": 0.9975795149803162
+        },
+        {
+          "word": " all",
+          "start": 68.16,
+          "end": 68.34,
+          "probability": 0.9890781044960022
+        },
+        {
+          "word": " this",
+          "start": 68.34,
+          "end": 68.46,
+          "probability": 0.9876179695129395
+        },
+        {
+          "word": " happening?",
+          "start": 68.46,
+          "end": 68.86,
+          "probability": 0.9978650212287903
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 6886,
+      "start": 68.86,
+      "end": 72.04,
+      "text": " The explanation was deforestation.",
+      "tokens": [
+        50364,
+        440,
+        10835,
+        390,
+        368,
+        845,
+        19159,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03943507772096446,
+      "compression_ratio": 1.5964912280701755,
+      "no_speech_prob": 0.38678956031799316,
+      "words": [
+        {
+          "word": " The",
+          "start": 68.86,
+          "end": 69.76,
+          "probability": 0.1603429615497589
+        },
+        {
+          "word": " explanation",
+          "start": 69.76,
+          "end": 70.22,
+          "probability": 0.6419082283973694
+        },
+        {
+          "word": " was",
+          "start": 70.22,
+          "end": 71.1,
+          "probability": 0.9633682370185852
+        },
+        {
+          "word": " deforestation.",
+          "start": 71.1,
+          "end": 72.04,
+          "probability": 0.9679516951243082
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 6886,
+      "start": 73.22,
+      "end": 76.24,
+      "text": " What do we know about deforestation?",
+      "tokens": [
+        50564,
+        708,
+        360,
+        321,
+        458,
+        466,
+        368,
+        845,
+        19159,
+        30,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03943507772096446,
+      "compression_ratio": 1.5964912280701755,
+      "no_speech_prob": 0.38678956031799316,
+      "words": [
+        {
+          "word": " What",
+          "start": 73.22,
+          "end": 74.06,
+          "probability": 0.6890114545822144
+        },
+        {
+          "word": " do",
+          "start": 74.06,
+          "end": 74.26,
+          "probability": 0.9948428273200989
+        },
+        {
+          "word": " we",
+          "start": 74.26,
+          "end": 74.4,
+          "probability": 0.9949724674224854
+        },
+        {
+          "word": " know",
+          "start": 74.4,
+          "end": 74.72,
+          "probability": 0.9955396056175232
+        },
+        {
+          "word": " about",
+          "start": 74.72,
+          "end": 75.34,
+          "probability": 0.997978150844574
+        },
+        {
+          "word": " deforestation?",
+          "start": 75.34,
+          "end": 76.24,
+          "probability": 0.9981526931126913
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 6886,
+      "start": 77.24,
+      "end": 83.74,
+      "text": " Well, we now have a lot of data about the negative impact of deforestation on the environment.",
+      "tokens": [
+        50764,
+        1042,
+        11,
+        321,
+        586,
+        362,
+        257,
+        688,
+        295,
+        1412,
+        466,
+        264,
+        3671,
+        2712,
+        295,
+        368,
+        845,
+        19159,
+        322,
+        264,
+        2823,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03943507772096446,
+      "compression_ratio": 1.5964912280701755,
+      "no_speech_prob": 0.38678956031799316,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 77.24,
+          "end": 77.56,
+          "probability": 0.9488844275474548
+        },
+        {
+          "word": " we",
+          "start": 77.82,
+          "end": 78.04,
+          "probability": 0.99535071849823
+        },
+        {
+          "word": " now",
+          "start": 78.04,
+          "end": 78.24,
+          "probability": 0.9938809871673584
+        },
+        {
+          "word": " have",
+          "start": 78.24,
+          "end": 78.56,
+          "probability": 0.9982407093048096
+        },
+        {
+          "word": " a",
+          "start": 78.56,
+          "end": 78.72,
+          "probability": 0.985939621925354
+        },
+        {
+          "word": " lot",
+          "start": 78.72,
+          "end": 79.02,
+          "probability": 0.9954779744148254
+        },
+        {
+          "word": " of",
+          "start": 79.02,
+          "end": 79.26,
+          "probability": 0.9928425550460815
+        },
+        {
+          "word": " data",
+          "start": 79.26,
+          "end": 79.66,
+          "probability": 0.9993608593940735
+        },
+        {
+          "word": " about",
+          "start": 79.66,
+          "end": 80.12,
+          "probability": 0.9959235191345215
+        },
+        {
+          "word": " the",
+          "start": 80.12,
+          "end": 80.36,
+          "probability": 0.9899858236312866
+        },
+        {
+          "word": " negative",
+          "start": 80.36,
+          "end": 80.84,
+          "probability": 0.9961340427398682
+        },
+        {
+          "word": " impact",
+          "start": 80.84,
+          "end": 81.38,
+          "probability": 0.9969889521598816
+        },
+        {
+          "word": " of",
+          "start": 81.38,
+          "end": 81.74,
+          "probability": 0.994507372379303
+        },
+        {
+          "word": " deforestation",
+          "start": 81.74,
+          "end": 82.56,
+          "probability": 0.9988409678141276
+        },
+        {
+          "word": " on",
+          "start": 82.56,
+          "end": 82.98,
+          "probability": 0.9939407110214233
+        },
+        {
+          "word": " the",
+          "start": 82.98,
+          "end": 83.14,
+          "probability": 0.9970523118972778
+        },
+        {
+          "word": " environment.",
+          "start": 83.14,
+          "end": 83.74,
+          "probability": 0.9986162185668945
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 6886,
+      "start": 84.22,
+      "end": 88.48,
+      "text": " The fact is that our planet cannot survive without trees.",
+      "tokens": [
+        51164,
+        440,
+        1186,
+        307,
+        300,
+        527,
+        5054,
+        2644,
+        7867,
+        1553,
+        5852,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03943507772096446,
+      "compression_ratio": 1.5964912280701755,
+      "no_speech_prob": 0.38678956031799316,
+      "words": [
+        {
+          "word": " The",
+          "start": 84.22,
+          "end": 84.6,
+          "probability": 0.9955183267593384
+        },
+        {
+          "word": " fact",
+          "start": 84.6,
+          "end": 84.82,
+          "probability": 0.9956246018409729
+        },
+        {
+          "word": " is",
+          "start": 84.82,
+          "end": 85.3,
+          "probability": 0.998248815536499
+        },
+        {
+          "word": " that",
+          "start": 85.3,
+          "end": 85.64,
+          "probability": 0.9052119255065918
+        },
+        {
+          "word": " our",
+          "start": 85.64,
+          "end": 85.78,
+          "probability": 0.9912387728691101
+        },
+        {
+          "word": " planet",
+          "start": 85.78,
+          "end": 86.16,
+          "probability": 0.9974024891853333
+        },
+        {
+          "word": " cannot",
+          "start": 86.16,
+          "end": 86.78,
+          "probability": 0.9745104908943176
+        },
+        {
+          "word": " survive",
+          "start": 86.78,
+          "end": 87.48,
+          "probability": 0.9983524084091187
+        },
+        {
+          "word": " without",
+          "start": 87.48,
+          "end": 88.04,
+          "probability": 0.9989093542098999
+        },
+        {
+          "word": " trees.",
+          "start": 88.04,
+          "end": 88.48,
+          "probability": 0.9941530823707581
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 6886,
+      "start": 89.3,
+      "end": 92.58,
+      "text": " When trees are cut down, it harms the ecosystem.",
+      "tokens": [
+        51364,
+        1133,
+        5852,
+        366,
+        1723,
+        760,
+        11,
+        309,
+        48505,
+        264,
+        11311,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03943507772096446,
+      "compression_ratio": 1.5964912280701755,
+      "no_speech_prob": 0.38678956031799316,
+      "words": [
+        {
+          "word": " When",
+          "start": 89.3,
+          "end": 89.62,
+          "probability": 0.9975433349609375
+        },
+        {
+          "word": " trees",
+          "start": 89.62,
+          "end": 90.06,
+          "probability": 0.9973344802856445
+        },
+        {
+          "word": " are",
+          "start": 90.06,
+          "end": 90.24,
+          "probability": 0.9982922673225403
+        },
+        {
+          "word": " cut",
+          "start": 90.24,
+          "end": 90.38,
+          "probability": 0.9983593821525574
+        },
+        {
+          "word": " down,",
+          "start": 90.38,
+          "end": 90.8,
+          "probability": 0.9977501034736633
+        },
+        {
+          "word": " it",
+          "start": 91.14,
+          "end": 91.26,
+          "probability": 0.9970731735229492
+        },
+        {
+          "word": " harms",
+          "start": 91.26,
+          "end": 91.72,
+          "probability": 0.9955537915229797
+        },
+        {
+          "word": " the",
+          "start": 91.72,
+          "end": 91.94,
+          "probability": 0.9989032745361328
+        },
+        {
+          "word": " ecosystem.",
+          "start": 91.94,
+          "end": 92.58,
+          "probability": 0.9693225026130676
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 9258,
+      "start": 92.58,
+      "end": 97.48,
+      "text": " It damages the soil, which means that crops cannot grow properly.",
+      "tokens": [
+        50364,
+        467,
+        28536,
+        264,
+        6704,
+        11,
+        597,
+        1355,
+        300,
+        16829,
+        2644,
+        1852,
+        6108,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08176037802625058,
+      "compression_ratio": 1.544502617801047,
+      "no_speech_prob": 0.19083887338638306,
+      "words": [
+        {
+          "word": " It",
+          "start": 92.58,
+          "end": 93.68,
+          "probability": 0.31003066897392273
+        },
+        {
+          "word": " damages",
+          "start": 93.68,
+          "end": 94.14,
+          "probability": 0.902424693107605
+        },
+        {
+          "word": " the",
+          "start": 94.14,
+          "end": 94.44,
+          "probability": 0.9876576662063599
+        },
+        {
+          "word": " soil,",
+          "start": 94.44,
+          "end": 94.78,
+          "probability": 0.9989057779312134
+        },
+        {
+          "word": " which",
+          "start": 95.18,
+          "end": 95.34,
+          "probability": 0.9954107403755188
+        },
+        {
+          "word": " means",
+          "start": 95.34,
+          "end": 95.58,
+          "probability": 0.9978904128074646
+        },
+        {
+          "word": " that",
+          "start": 95.58,
+          "end": 95.88,
+          "probability": 0.9769104719161987
+        },
+        {
+          "word": " crops",
+          "start": 95.88,
+          "end": 96.24,
+          "probability": 0.991025447845459
+        },
+        {
+          "word": " cannot",
+          "start": 96.24,
+          "end": 96.68,
+          "probability": 0.903878390789032
+        },
+        {
+          "word": " grow",
+          "start": 96.68,
+          "end": 96.98,
+          "probability": 0.9990645051002502
+        },
+        {
+          "word": " properly.",
+          "start": 96.98,
+          "end": 97.48,
+          "probability": 0.9993897676467896
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 9258,
+      "start": 98.18,
+      "end": 102.84,
+      "text": " It can affect the availability as well as the quality of fresh water.",
+      "tokens": [
+        50564,
+        467,
+        393,
+        3345,
+        264,
+        17945,
+        382,
+        731,
+        382,
+        264,
+        3125,
+        295,
+        4451,
+        1281,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08176037802625058,
+      "compression_ratio": 1.544502617801047,
+      "no_speech_prob": 0.19083887338638306,
+      "words": [
+        {
+          "word": " It",
+          "start": 98.18,
+          "end": 98.44,
+          "probability": 0.9943899512290955
+        },
+        {
+          "word": " can",
+          "start": 98.44,
+          "end": 98.66,
+          "probability": 0.9957524538040161
+        },
+        {
+          "word": " affect",
+          "start": 98.66,
+          "end": 98.96,
+          "probability": 0.9635624289512634
+        },
+        {
+          "word": " the",
+          "start": 98.96,
+          "end": 99.26,
+          "probability": 0.9958221912384033
+        },
+        {
+          "word": " availability",
+          "start": 99.26,
+          "end": 99.8,
+          "probability": 0.9973894953727722
+        },
+        {
+          "word": " as",
+          "start": 99.8,
+          "end": 100.6,
+          "probability": 0.48973408341407776
+        },
+        {
+          "word": " well",
+          "start": 100.6,
+          "end": 100.8,
+          "probability": 0.996745228767395
+        },
+        {
+          "word": " as",
+          "start": 100.8,
+          "end": 101.0,
+          "probability": 0.9885467290878296
+        },
+        {
+          "word": " the",
+          "start": 101.0,
+          "end": 101.1,
+          "probability": 0.9876016974449158
+        },
+        {
+          "word": " quality",
+          "start": 101.1,
+          "end": 101.62,
+          "probability": 0.9931917786598206
+        },
+        {
+          "word": " of",
+          "start": 101.62,
+          "end": 102.08,
+          "probability": 0.997535228729248
+        },
+        {
+          "word": " fresh",
+          "start": 102.08,
+          "end": 102.4,
+          "probability": 0.8214973211288452
+        },
+        {
+          "word": " water.",
+          "start": 102.4,
+          "end": 102.84,
+          "probability": 0.9988561868667603
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 9258,
+      "start": 103.64,
+      "end": 108.04,
+      "text": " It affects climate change, and the result is that less rainfall.",
+      "tokens": [
+        50864,
+        467,
+        11807,
+        5659,
+        1319,
+        11,
+        293,
+        264,
+        1874,
+        307,
+        300,
+        1570,
+        29382,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08176037802625058,
+      "compression_ratio": 1.544502617801047,
+      "no_speech_prob": 0.19083887338638306,
+      "words": [
+        {
+          "word": " It",
+          "start": 103.64,
+          "end": 103.86,
+          "probability": 0.9938153028488159
+        },
+        {
+          "word": " affects",
+          "start": 103.86,
+          "end": 104.28,
+          "probability": 0.9690723419189453
+        },
+        {
+          "word": " climate",
+          "start": 104.28,
+          "end": 104.72,
+          "probability": 0.9968296885490417
+        },
+        {
+          "word": " change,",
+          "start": 104.72,
+          "end": 105.3,
+          "probability": 0.9981491565704346
+        },
+        {
+          "word": " and",
+          "start": 105.52,
+          "end": 105.76,
+          "probability": 0.9961575865745544
+        },
+        {
+          "word": " the",
+          "start": 105.76,
+          "end": 105.86,
+          "probability": 0.9983343482017517
+        },
+        {
+          "word": " result",
+          "start": 105.86,
+          "end": 106.18,
+          "probability": 0.8295681476593018
+        },
+        {
+          "word": " is",
+          "start": 106.18,
+          "end": 106.76,
+          "probability": 0.9952912330627441
+        },
+        {
+          "word": " that",
+          "start": 106.76,
+          "end": 107.14,
+          "probability": 0.9604039788246155
+        },
+        {
+          "word": " less",
+          "start": 107.14,
+          "end": 107.48,
+          "probability": 0.9918301701545715
+        },
+        {
+          "word": " rainfall.",
+          "start": 107.48,
+          "end": 108.04,
+          "probability": 0.5540249347686768
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 9258,
+      "start": 109.06,
+      "end": 115.4,
+      "text": " Of course, deforestation also causes local wildlife to decline because of habitat destruction.",
+      "tokens": [
+        51164,
+        2720,
+        1164,
+        11,
+        368,
+        845,
+        19159,
+        611,
+        7700,
+        2654,
+        19199,
+        281,
+        15635,
+        570,
+        295,
+        20110,
+        13563,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08176037802625058,
+      "compression_ratio": 1.544502617801047,
+      "no_speech_prob": 0.19083887338638306,
+      "words": [
+        {
+          "word": " Of",
+          "start": 109.06,
+          "end": 109.42,
+          "probability": 0.9579819440841675
+        },
+        {
+          "word": " course,",
+          "start": 109.42,
+          "end": 109.66,
+          "probability": 0.9962558746337891
+        },
+        {
+          "word": " deforestation",
+          "start": 110.0,
+          "end": 110.62,
+          "probability": 0.9450461069742838
+        },
+        {
+          "word": " also",
+          "start": 110.62,
+          "end": 111.08,
+          "probability": 0.9961792230606079
+        },
+        {
+          "word": " causes",
+          "start": 111.08,
+          "end": 111.58,
+          "probability": 0.9983060359954834
+        },
+        {
+          "word": " local",
+          "start": 111.58,
+          "end": 112.06,
+          "probability": 0.9736065864562988
+        },
+        {
+          "word": " wildlife",
+          "start": 112.06,
+          "end": 112.72,
+          "probability": 0.992009162902832
+        },
+        {
+          "word": " to",
+          "start": 112.72,
+          "end": 113.1,
+          "probability": 0.9812591671943665
+        },
+        {
+          "word": " decline",
+          "start": 113.1,
+          "end": 113.4,
+          "probability": 0.9957759976387024
+        },
+        {
+          "word": " because",
+          "start": 113.4,
+          "end": 114.04,
+          "probability": 0.8859132528305054
+        },
+        {
+          "word": " of",
+          "start": 114.04,
+          "end": 114.28,
+          "probability": 0.9994650483131409
+        },
+        {
+          "word": " habitat",
+          "start": 114.28,
+          "end": 114.62,
+          "probability": 0.979125440120697
+        },
+        {
+          "word": " destruction.",
+          "start": 114.62,
+          "end": 115.4,
+          "probability": 0.9941940903663635
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 11540,
+      "start": 116.58,
+      "end": 124.06,
+      "text": " Fortunately, a solution was found thanks to an extraordinary Kenyan woman called Wangari Maffai.",
+      "tokens": [
+        50364,
+        20652,
+        11,
+        257,
+        3827,
+        390,
+        1352,
+        3231,
+        281,
+        364,
+        10581,
+        8273,
+        6277,
+        3059,
+        1219,
+        14499,
+        3504,
+        376,
+        2518,
+        1301,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11300581472891348,
+      "compression_ratio": 1.6016949152542372,
+      "no_speech_prob": 0.05877820774912834,
+      "words": [
+        {
+          "word": " Fortunately,",
+          "start": 116.58,
+          "end": 117.38,
+          "probability": 0.6533826589584351
+        },
+        {
+          "word": " a",
+          "start": 117.9,
+          "end": 117.96,
+          "probability": 0.9930630326271057
+        },
+        {
+          "word": " solution",
+          "start": 117.96,
+          "end": 118.44,
+          "probability": 0.9940428137779236
+        },
+        {
+          "word": " was",
+          "start": 118.44,
+          "end": 118.7,
+          "probability": 0.9982821941375732
+        },
+        {
+          "word": " found",
+          "start": 118.7,
+          "end": 119.1,
+          "probability": 0.9996757507324219
+        },
+        {
+          "word": " thanks",
+          "start": 119.1,
+          "end": 119.64,
+          "probability": 0.8666836619377136
+        },
+        {
+          "word": " to",
+          "start": 119.64,
+          "end": 119.88,
+          "probability": 0.998955249786377
+        },
+        {
+          "word": " an",
+          "start": 119.88,
+          "end": 120.0,
+          "probability": 0.9932119846343994
+        },
+        {
+          "word": " extraordinary",
+          "start": 120.0,
+          "end": 120.98,
+          "probability": 0.9853014349937439
+        },
+        {
+          "word": " Kenyan",
+          "start": 120.98,
+          "end": 121.56,
+          "probability": 0.8389507532119751
+        },
+        {
+          "word": " woman",
+          "start": 121.56,
+          "end": 121.84,
+          "probability": 0.9899099469184875
+        },
+        {
+          "word": " called",
+          "start": 121.84,
+          "end": 122.58,
+          "probability": 0.6069654226303101
+        },
+        {
+          "word": " Wangari",
+          "start": 122.58,
+          "end": 123.42,
+          "probability": 0.6539466977119446
+        },
+        {
+          "word": " Maffai.",
+          "start": 123.42,
+          "end": 124.06,
+          "probability": 0.4787232180436452
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 11540,
+      "start": 125.08,
+      "end": 131.0,
+      "text": " She was a professor and a politician who really cared about the environment and conservation.",
+      "tokens": [
+        50764,
+        1240,
+        390,
+        257,
+        8304,
+        293,
+        257,
+        26453,
+        567,
+        534,
+        19779,
+        466,
+        264,
+        2823,
+        293,
+        16185,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11300581472891348,
+      "compression_ratio": 1.6016949152542372,
+      "no_speech_prob": 0.05877820774912834,
+      "words": [
+        {
+          "word": " She",
+          "start": 125.08,
+          "end": 125.26,
+          "probability": 0.9936522245407104
+        },
+        {
+          "word": " was",
+          "start": 125.26,
+          "end": 125.42,
+          "probability": 0.9988239407539368
+        },
+        {
+          "word": " a",
+          "start": 125.42,
+          "end": 125.54,
+          "probability": 0.9990319013595581
+        },
+        {
+          "word": " professor",
+          "start": 125.54,
+          "end": 126.0,
+          "probability": 0.884483814239502
+        },
+        {
+          "word": " and",
+          "start": 126.0,
+          "end": 126.52,
+          "probability": 0.9551097750663757
+        },
+        {
+          "word": " a",
+          "start": 126.52,
+          "end": 126.64,
+          "probability": 0.9570061564445496
+        },
+        {
+          "word": " politician",
+          "start": 126.64,
+          "end": 127.14,
+          "probability": 0.9987217783927917
+        },
+        {
+          "word": " who",
+          "start": 127.14,
+          "end": 127.6,
+          "probability": 0.9772360324859619
+        },
+        {
+          "word": " really",
+          "start": 127.6,
+          "end": 128.18,
+          "probability": 0.9831507802009583
+        },
+        {
+          "word": " cared",
+          "start": 128.18,
+          "end": 128.66,
+          "probability": 0.9988775849342346
+        },
+        {
+          "word": " about",
+          "start": 128.66,
+          "end": 128.92,
+          "probability": 0.9991180300712585
+        },
+        {
+          "word": " the",
+          "start": 128.92,
+          "end": 129.12,
+          "probability": 0.9972767233848572
+        },
+        {
+          "word": " environment",
+          "start": 129.12,
+          "end": 129.68,
+          "probability": 0.9966835379600525
+        },
+        {
+          "word": " and",
+          "start": 129.68,
+          "end": 130.24,
+          "probability": 0.9814334511756897
+        },
+        {
+          "word": " conservation.",
+          "start": 130.24,
+          "end": 131.0,
+          "probability": 0.9955405592918396
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 11540,
+      "start": 131.72,
+      "end": 136.0,
+      "text": " She understood the impact of destroying the forests in Kenya.",
+      "tokens": [
+        51164,
+        1240,
+        7320,
+        264,
+        2712,
+        295,
+        19926,
+        264,
+        21700,
+        294,
+        31011,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11300581472891348,
+      "compression_ratio": 1.6016949152542372,
+      "no_speech_prob": 0.05877820774912834,
+      "words": [
+        {
+          "word": " She",
+          "start": 131.72,
+          "end": 132.26,
+          "probability": 0.9960821270942688
+        },
+        {
+          "word": " understood",
+          "start": 132.26,
+          "end": 132.94,
+          "probability": 0.9875578880310059
+        },
+        {
+          "word": " the",
+          "start": 132.94,
+          "end": 133.28,
+          "probability": 0.9991583824157715
+        },
+        {
+          "word": " impact",
+          "start": 133.28,
+          "end": 133.8,
+          "probability": 0.9973464012145996
+        },
+        {
+          "word": " of",
+          "start": 133.8,
+          "end": 134.18,
+          "probability": 0.999569833278656
+        },
+        {
+          "word": " destroying",
+          "start": 134.18,
+          "end": 134.8,
+          "probability": 0.99179607629776
+        },
+        {
+          "word": " the",
+          "start": 134.8,
+          "end": 135.04,
+          "probability": 0.9957962036132812
+        },
+        {
+          "word": " forests",
+          "start": 135.04,
+          "end": 135.34,
+          "probability": 0.9713123440742493
+        },
+        {
+          "word": " in",
+          "start": 135.34,
+          "end": 135.7,
+          "probability": 0.9986659288406372
+        },
+        {
+          "word": " Kenya.",
+          "start": 135.7,
+          "end": 136.0,
+          "probability": 0.9383566379547119
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 11540,
+      "start": 136.7,
+      "end": 145.16,
+      "text": " She knew it meant that crops would stop growing, rivers would stop flowing, and that wildlife in these areas would disappear.",
+      "tokens": [
+        51364,
+        1240,
+        2586,
+        309,
+        4140,
+        300,
+        16829,
+        576,
+        1590,
+        4194,
+        11,
+        18361,
+        576,
+        1590,
+        13974,
+        11,
+        293,
+        300,
+        19199,
+        294,
+        613,
+        3179,
+        576,
+        11596,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11300581472891348,
+      "compression_ratio": 1.6016949152542372,
+      "no_speech_prob": 0.05877820774912834,
+      "words": [
+        {
+          "word": " She",
+          "start": 136.7,
+          "end": 136.96,
+          "probability": 0.9966201782226562
+        },
+        {
+          "word": " knew",
+          "start": 136.96,
+          "end": 137.26,
+          "probability": 0.9983280301094055
+        },
+        {
+          "word": " it",
+          "start": 137.26,
+          "end": 137.4,
+          "probability": 0.9819071888923645
+        },
+        {
+          "word": " meant",
+          "start": 137.4,
+          "end": 137.58,
+          "probability": 0.999360978603363
+        },
+        {
+          "word": " that",
+          "start": 137.58,
+          "end": 138.0,
+          "probability": 0.9968771934509277
+        },
+        {
+          "word": " crops",
+          "start": 138.0,
+          "end": 138.38,
+          "probability": 0.9833738803863525
+        },
+        {
+          "word": " would",
+          "start": 138.38,
+          "end": 138.72,
+          "probability": 0.9959093332290649
+        },
+        {
+          "word": " stop",
+          "start": 138.72,
+          "end": 138.98,
+          "probability": 0.9961153268814087
+        },
+        {
+          "word": " growing,",
+          "start": 138.98,
+          "end": 139.34,
+          "probability": 0.9964728951454163
+        },
+        {
+          "word": " rivers",
+          "start": 139.92,
+          "end": 140.14,
+          "probability": 0.9970199465751648
+        },
+        {
+          "word": " would",
+          "start": 140.14,
+          "end": 140.72,
+          "probability": 0.9957692623138428
+        },
+        {
+          "word": " stop",
+          "start": 140.72,
+          "end": 141.08,
+          "probability": 0.9965404868125916
+        },
+        {
+          "word": " flowing,",
+          "start": 141.08,
+          "end": 141.48,
+          "probability": 0.9921701550483704
+        },
+        {
+          "word": " and",
+          "start": 141.98,
+          "end": 142.2,
+          "probability": 0.9972572922706604
+        },
+        {
+          "word": " that",
+          "start": 142.2,
+          "end": 142.46,
+          "probability": 0.9934778213500977
+        },
+        {
+          "word": " wildlife",
+          "start": 142.46,
+          "end": 143.04,
+          "probability": 0.9734240174293518
+        },
+        {
+          "word": " in",
+          "start": 143.04,
+          "end": 143.46,
+          "probability": 0.9990562796592712
+        },
+        {
+          "word": " these",
+          "start": 143.46,
+          "end": 143.64,
+          "probability": 0.9955421090126038
+        },
+        {
+          "word": " areas",
+          "start": 143.64,
+          "end": 144.0,
+          "probability": 0.9977208971977234
+        },
+        {
+          "word": " would",
+          "start": 144.0,
+          "end": 144.54,
+          "probability": 0.996006190776825
+        },
+        {
+          "word": " disappear.",
+          "start": 144.54,
+          "end": 145.16,
+          "probability": 0.9974101185798645
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 14516,
+      "start": 145.16,
+      "end": 146.88,
+      "text": " Due to loss of habitat.",
+      "tokens": [
+        50364,
+        18980,
+        281,
+        4470,
+        295,
+        20110,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09226446027879591,
+      "compression_ratio": 1.4619289340101522,
+      "no_speech_prob": 0.18120776116847992,
+      "words": [
+        {
+          "word": " Due",
+          "start": 145.16,
+          "end": 145.76,
+          "probability": 0.020910445600748062
+        },
+        {
+          "word": " to",
+          "start": 145.76,
+          "end": 146.04,
+          "probability": 0.9885351061820984
+        },
+        {
+          "word": " loss",
+          "start": 146.04,
+          "end": 146.3,
+          "probability": 0.9695603251457214
+        },
+        {
+          "word": " of",
+          "start": 146.3,
+          "end": 146.5,
+          "probability": 0.9974411725997925
+        },
+        {
+          "word": " habitat.",
+          "start": 146.5,
+          "end": 146.88,
+          "probability": 0.9873217940330505
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 14516,
+      "start": 148.22,
+      "end": 156.86,
+      "text": " So, in 1977, Wangari Maffai set up an environmental organisation called the Green Belt Movement.",
+      "tokens": [
+        50514,
+        407,
+        11,
+        294,
+        35092,
+        11,
+        14499,
+        3504,
+        376,
+        2518,
+        1301,
+        992,
+        493,
+        364,
+        8303,
+        18641,
+        1219,
+        264,
+        6969,
+        38869,
+        26523,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09226446027879591,
+      "compression_ratio": 1.4619289340101522,
+      "no_speech_prob": 0.18120776116847992,
+      "words": [
+        {
+          "word": " So,",
+          "start": 148.22,
+          "end": 148.58,
+          "probability": 0.9226068258285522
+        },
+        {
+          "word": " in",
+          "start": 148.86,
+          "end": 149.02,
+          "probability": 0.9788888096809387
+        },
+        {
+          "word": " 1977,",
+          "start": 149.02,
+          "end": 150.18,
+          "probability": 0.9905468225479126
+        },
+        {
+          "word": " Wangari",
+          "start": 150.84,
+          "end": 151.38,
+          "probability": 0.6394419521093369
+        },
+        {
+          "word": " Maffai",
+          "start": 151.38,
+          "end": 151.94,
+          "probability": 0.5219187488158544
+        },
+        {
+          "word": " set",
+          "start": 151.94,
+          "end": 152.5,
+          "probability": 0.9115205407142639
+        },
+        {
+          "word": " up",
+          "start": 152.5,
+          "end": 152.76,
+          "probability": 0.9956667423248291
+        },
+        {
+          "word": " an",
+          "start": 152.76,
+          "end": 152.98,
+          "probability": 0.9756076335906982
+        },
+        {
+          "word": " environmental",
+          "start": 152.98,
+          "end": 153.6,
+          "probability": 0.9286728501319885
+        },
+        {
+          "word": " organisation",
+          "start": 153.6,
+          "end": 154.66,
+          "probability": 0.6928722262382507
+        },
+        {
+          "word": " called",
+          "start": 154.66,
+          "end": 155.26,
+          "probability": 0.9767523407936096
+        },
+        {
+          "word": " the",
+          "start": 155.26,
+          "end": 155.72,
+          "probability": 0.5799177885055542
+        },
+        {
+          "word": " Green",
+          "start": 155.72,
+          "end": 156.08,
+          "probability": 0.8046028017997742
+        },
+        {
+          "word": " Belt",
+          "start": 156.08,
+          "end": 156.34,
+          "probability": 0.8400638699531555
+        },
+        {
+          "word": " Movement.",
+          "start": 156.34,
+          "end": 156.86,
+          "probability": 0.8015561103820801
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 14516,
+      "start": 157.54,
+      "end": 161.06,
+      "text": " Belt is just another word for area, by the way.",
+      "tokens": [
+        50964,
+        38869,
+        307,
+        445,
+        1071,
+        1349,
+        337,
+        1859,
+        11,
+        538,
+        264,
+        636,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09226446027879591,
+      "compression_ratio": 1.4619289340101522,
+      "no_speech_prob": 0.18120776116847992,
+      "words": [
+        {
+          "word": " Belt",
+          "start": 157.54,
+          "end": 158.26,
+          "probability": 0.6643199920654297
+        },
+        {
+          "word": " is",
+          "start": 158.26,
+          "end": 158.64,
+          "probability": 0.9884415864944458
+        },
+        {
+          "word": " just",
+          "start": 158.64,
+          "end": 159.0,
+          "probability": 0.9965735673904419
+        },
+        {
+          "word": " another",
+          "start": 159.0,
+          "end": 159.32,
+          "probability": 0.9901307821273804
+        },
+        {
+          "word": " word",
+          "start": 159.32,
+          "end": 159.68,
+          "probability": 0.9933207631111145
+        },
+        {
+          "word": " for",
+          "start": 159.68,
+          "end": 159.92,
+          "probability": 0.9951594471931458
+        },
+        {
+          "word": " area,",
+          "start": 159.92,
+          "end": 160.36,
+          "probability": 0.6008145213127136
+        },
+        {
+          "word": " by",
+          "start": 160.6,
+          "end": 160.74,
+          "probability": 0.9905672669410706
+        },
+        {
+          "word": " the",
+          "start": 160.74,
+          "end": 160.84,
+          "probability": 0.9980759620666504
+        },
+        {
+          "word": " way.",
+          "start": 160.84,
+          "end": 161.06,
+          "probability": 0.9995142221450806
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 14516,
+      "start": 161.42,
+      "end": 167.32,
+      "text": " The Green Belt Movement, or GBM, had a plan that was quite simple.",
+      "tokens": [
+        51164,
+        440,
+        6969,
+        38869,
+        26523,
+        11,
+        420,
+        460,
+        18345,
+        11,
+        632,
+        257,
+        1393,
+        300,
+        390,
+        1596,
+        2199,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09226446027879591,
+      "compression_ratio": 1.4619289340101522,
+      "no_speech_prob": 0.18120776116847992,
+      "words": [
+        {
+          "word": " The",
+          "start": 161.42,
+          "end": 162.14,
+          "probability": 0.9817718267440796
+        },
+        {
+          "word": " Green",
+          "start": 162.14,
+          "end": 162.46,
+          "probability": 0.9741108417510986
+        },
+        {
+          "word": " Belt",
+          "start": 162.46,
+          "end": 162.74,
+          "probability": 0.9919488430023193
+        },
+        {
+          "word": " Movement,",
+          "start": 162.74,
+          "end": 163.16,
+          "probability": 0.5431333780288696
+        },
+        {
+          "word": " or",
+          "start": 163.46,
+          "end": 163.78,
+          "probability": 0.9931498169898987
+        },
+        {
+          "word": " GBM,",
+          "start": 163.78,
+          "end": 164.68,
+          "probability": 0.7507471144199371
+        },
+        {
+          "word": " had",
+          "start": 165.24,
+          "end": 165.38,
+          "probability": 0.9961414933204651
+        },
+        {
+          "word": " a",
+          "start": 165.38,
+          "end": 165.5,
+          "probability": 0.9979996085166931
+        },
+        {
+          "word": " plan",
+          "start": 165.5,
+          "end": 165.82,
+          "probability": 0.988949179649353
+        },
+        {
+          "word": " that",
+          "start": 165.82,
+          "end": 166.14,
+          "probability": 0.9960641264915466
+        },
+        {
+          "word": " was",
+          "start": 166.14,
+          "end": 166.34,
+          "probability": 0.9988310933113098
+        },
+        {
+          "word": " quite",
+          "start": 166.34,
+          "end": 166.78,
+          "probability": 0.9965580105781555
+        },
+        {
+          "word": " simple.",
+          "start": 166.78,
+          "end": 167.32,
+          "probability": 0.9986215829849243
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 14516,
+      "start": 168.26,
+      "end": 171.28,
+      "text": " Local women were encouraged to start planting trees.",
+      "tokens": [
+        51514,
+        22755,
+        2266,
+        645,
+        14658,
+        281,
+        722,
+        20585,
+        5852,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09226446027879591,
+      "compression_ratio": 1.4619289340101522,
+      "no_speech_prob": 0.18120776116847992,
+      "words": [
+        {
+          "word": " Local",
+          "start": 168.26,
+          "end": 168.64,
+          "probability": 0.9842937588691711
+        },
+        {
+          "word": " women",
+          "start": 168.64,
+          "end": 169.0,
+          "probability": 0.9938894510269165
+        },
+        {
+          "word": " were",
+          "start": 169.0,
+          "end": 169.26,
+          "probability": 0.9990680813789368
+        },
+        {
+          "word": " encouraged",
+          "start": 169.26,
+          "end": 169.72,
+          "probability": 0.9993636012077332
+        },
+        {
+          "word": " to",
+          "start": 169.72,
+          "end": 170.0,
+          "probability": 0.9976645708084106
+        },
+        {
+          "word": " start",
+          "start": 170.0,
+          "end": 170.3,
+          "probability": 0.9983804225921631
+        },
+        {
+          "word": " planting",
+          "start": 170.3,
+          "end": 170.8,
+          "probability": 0.997401237487793
+        },
+        {
+          "word": " trees.",
+          "start": 170.8,
+          "end": 171.28,
+          "probability": 0.9972027540206909
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 17128,
+      "start": 172.28,
+      "end": 178.2,
+      "text": " Science shows that if people plant more trees, the ecosystem will begin to repair itself.",
+      "tokens": [
+        50414,
+        8976,
+        3110,
+        300,
+        498,
+        561,
+        3709,
+        544,
+        5852,
+        11,
+        264,
+        11311,
+        486,
+        1841,
+        281,
+        10535,
+        2564,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05302488594724421,
+      "compression_ratio": 1.3867403314917126,
+      "no_speech_prob": 0.196467787027359,
+      "words": [
+        {
+          "word": " Science",
+          "start": 172.06,
+          "end": 172.52,
+          "probability": 0.15359662473201752
+        },
+        {
+          "word": " shows",
+          "start": 172.52,
+          "end": 172.98,
+          "probability": 0.9741474986076355
+        },
+        {
+          "word": " that",
+          "start": 172.98,
+          "end": 173.4,
+          "probability": 0.9747740030288696
+        },
+        {
+          "word": " if",
+          "start": 173.4,
+          "end": 173.54,
+          "probability": 0.9854558110237122
+        },
+        {
+          "word": " people",
+          "start": 173.54,
+          "end": 173.9,
+          "probability": 0.9968137145042419
+        },
+        {
+          "word": " plant",
+          "start": 173.9,
+          "end": 174.3,
+          "probability": 0.995606005191803
+        },
+        {
+          "word": " more",
+          "start": 174.3,
+          "end": 174.64,
+          "probability": 0.9985442161560059
+        },
+        {
+          "word": " trees,",
+          "start": 174.64,
+          "end": 175.02,
+          "probability": 0.9979128241539001
+        },
+        {
+          "word": " the",
+          "start": 175.52,
+          "end": 175.6,
+          "probability": 0.9924507737159729
+        },
+        {
+          "word": " ecosystem",
+          "start": 175.6,
+          "end": 176.1,
+          "probability": 0.9538577795028687
+        },
+        {
+          "word": " will",
+          "start": 176.1,
+          "end": 176.66,
+          "probability": 0.9953489899635315
+        },
+        {
+          "word": " begin",
+          "start": 176.66,
+          "end": 176.98,
+          "probability": 0.9849591851234436
+        },
+        {
+          "word": " to",
+          "start": 176.98,
+          "end": 177.24,
+          "probability": 0.9978261590003967
+        },
+        {
+          "word": " repair",
+          "start": 177.24,
+          "end": 177.58,
+          "probability": 0.995384156703949
+        },
+        {
+          "word": " itself.",
+          "start": 177.58,
+          "end": 178.2,
+          "probability": 0.9977874755859375
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 17128,
+      "start": 178.68,
+      "end": 187.02,
+      "text": " And, since 1977, GBM communities have planted over 51 million trees in Kenya.",
+      "tokens": [
+        50714,
+        400,
+        11,
+        1670,
+        35092,
+        11,
+        460,
+        18345,
+        4456,
+        362,
+        17395,
+        670,
+        18485,
+        2459,
+        5852,
+        294,
+        31011,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05302488594724421,
+      "compression_ratio": 1.3867403314917126,
+      "no_speech_prob": 0.196467787027359,
+      "words": [
+        {
+          "word": " And,",
+          "start": 178.68,
+          "end": 179.0,
+          "probability": 0.9824967980384827
+        },
+        {
+          "word": " since",
+          "start": 179.16,
+          "end": 179.68,
+          "probability": 0.99404376745224
+        },
+        {
+          "word": " 1977,",
+          "start": 179.68,
+          "end": 181.08,
+          "probability": 0.9944989085197449
+        },
+        {
+          "word": " GBM",
+          "start": 181.68,
+          "end": 182.1,
+          "probability": 0.7866524159908295
+        },
+        {
+          "word": " communities",
+          "start": 182.1,
+          "end": 182.76,
+          "probability": 0.9432111978530884
+        },
+        {
+          "word": " have",
+          "start": 182.76,
+          "end": 183.28,
+          "probability": 0.9954577684402466
+        },
+        {
+          "word": " planted",
+          "start": 183.28,
+          "end": 183.76,
+          "probability": 0.9925035238265991
+        },
+        {
+          "word": " over",
+          "start": 183.76,
+          "end": 184.26,
+          "probability": 0.9911373853683472
+        },
+        {
+          "word": " 51",
+          "start": 184.26,
+          "end": 185.14,
+          "probability": 0.9403823018074036
+        },
+        {
+          "word": " million",
+          "start": 185.14,
+          "end": 185.94,
+          "probability": 0.905821681022644
+        },
+        {
+          "word": " trees",
+          "start": 185.94,
+          "end": 186.46,
+          "probability": 0.998389482498169
+        },
+        {
+          "word": " in",
+          "start": 186.46,
+          "end": 186.76,
+          "probability": 0.9873899221420288
+        },
+        {
+          "word": " Kenya.",
+          "start": 186.76,
+          "end": 187.02,
+          "probability": 0.9974110722541809
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 17128,
+      "start": 187.6,
+      "end": 193.32,
+      "text": " I think it's incredible that these communities came together to achieve their goal.",
+      "tokens": [
+        51164,
+        286,
+        519,
+        309,
+        311,
+        4651,
+        300,
+        613,
+        4456,
+        1361,
+        1214,
+        281,
+        4584,
+        641,
+        3387,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05302488594724421,
+      "compression_ratio": 1.3867403314917126,
+      "no_speech_prob": 0.196467787027359,
+      "words": [
+        {
+          "word": " I",
+          "start": 187.6,
+          "end": 188.32,
+          "probability": 0.9838332533836365
+        },
+        {
+          "word": " think",
+          "start": 188.32,
+          "end": 188.7,
+          "probability": 0.9931958913803101
+        },
+        {
+          "word": " it's",
+          "start": 188.7,
+          "end": 189.02,
+          "probability": 0.9733507931232452
+        },
+        {
+          "word": " incredible",
+          "start": 189.02,
+          "end": 189.7,
+          "probability": 0.9893693923950195
+        },
+        {
+          "word": " that",
+          "start": 189.7,
+          "end": 190.08,
+          "probability": 0.9945127964019775
+        },
+        {
+          "word": " these",
+          "start": 190.08,
+          "end": 190.3,
+          "probability": 0.9952778816223145
+        },
+        {
+          "word": " communities",
+          "start": 190.3,
+          "end": 190.96,
+          "probability": 0.9954356551170349
+        },
+        {
+          "word": " came",
+          "start": 190.96,
+          "end": 191.44,
+          "probability": 0.9832649827003479
+        },
+        {
+          "word": " together",
+          "start": 191.44,
+          "end": 192.0,
+          "probability": 0.9980781078338623
+        },
+        {
+          "word": " to",
+          "start": 192.0,
+          "end": 192.38,
+          "probability": 0.9976905584335327
+        },
+        {
+          "word": " achieve",
+          "start": 192.38,
+          "end": 192.72,
+          "probability": 0.9970292448997498
+        },
+        {
+          "word": " their",
+          "start": 192.72,
+          "end": 193.04,
+          "probability": 0.9961169958114624
+        },
+        {
+          "word": " goal.",
+          "start": 193.04,
+          "end": 193.32,
+          "probability": 0.9926455020904541
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 19332,
+      "start": 194.32,
+      "end": 201.5,
+      "text": " The work was mainly done by women, and, as the trees grew, the Green Belt Movement also grew.",
+      "tokens": [
+        50414,
+        440,
+        589,
+        390,
+        8704,
+        1096,
+        538,
+        2266,
+        11,
+        293,
+        11,
+        382,
+        264,
+        5852,
+        6109,
+        11,
+        264,
+        6969,
+        38869,
+        26523,
+        611,
+        6109,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05328855122605415,
+      "compression_ratio": 1.5767441860465117,
+      "no_speech_prob": 0.26844486594200134,
+      "words": [
+        {
+          "word": " The",
+          "start": 194.11,
+          "end": 194.5,
+          "probability": 0.34567537903785706
+        },
+        {
+          "word": " work",
+          "start": 194.5,
+          "end": 194.78,
+          "probability": 0.970954179763794
+        },
+        {
+          "word": " was",
+          "start": 194.78,
+          "end": 195.12,
+          "probability": 0.9980717897415161
+        },
+        {
+          "word": " mainly",
+          "start": 195.12,
+          "end": 195.52,
+          "probability": 0.9947307109832764
+        },
+        {
+          "word": " done",
+          "start": 195.52,
+          "end": 195.84,
+          "probability": 0.9995809197425842
+        },
+        {
+          "word": " by",
+          "start": 195.84,
+          "end": 196.08,
+          "probability": 0.9982327222824097
+        },
+        {
+          "word": " women,",
+          "start": 196.08,
+          "end": 196.42,
+          "probability": 0.9925633072853088
+        },
+        {
+          "word": " and,",
+          "start": 196.86,
+          "end": 197.2,
+          "probability": 0.9873430728912354
+        },
+        {
+          "word": " as",
+          "start": 197.32,
+          "end": 197.68,
+          "probability": 0.9976953864097595
+        },
+        {
+          "word": " the",
+          "start": 197.68,
+          "end": 197.9,
+          "probability": 0.9811667799949646
+        },
+        {
+          "word": " trees",
+          "start": 197.9,
+          "end": 198.24,
+          "probability": 0.8512675166130066
+        },
+        {
+          "word": " grew,",
+          "start": 198.24,
+          "end": 198.72,
+          "probability": 0.9891069531440735
+        },
+        {
+          "word": " the",
+          "start": 199.26,
+          "end": 199.34,
+          "probability": 0.99107426404953
+        },
+        {
+          "word": " Green",
+          "start": 199.34,
+          "end": 199.7,
+          "probability": 0.6499396562576294
+        },
+        {
+          "word": " Belt",
+          "start": 199.7,
+          "end": 199.9,
+          "probability": 0.6394864916801453
+        },
+        {
+          "word": " Movement",
+          "start": 199.9,
+          "end": 200.36,
+          "probability": 0.3098412752151489
+        },
+        {
+          "word": " also",
+          "start": 200.36,
+          "end": 200.94,
+          "probability": 0.9456971287727356
+        },
+        {
+          "word": " grew.",
+          "start": 200.94,
+          "end": 201.5,
+          "probability": 0.9983609318733215
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 19332,
+      "start": 202.38,
+      "end": 208.4,
+      "text": " This growth then made it possible for the organisation to run environmental classes for the public.",
+      "tokens": [
+        50814,
+        639,
+        4599,
+        550,
+        1027,
+        309,
+        1944,
+        337,
+        264,
+        18641,
+        281,
+        1190,
+        8303,
+        5359,
+        337,
+        264,
+        1908,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05328855122605415,
+      "compression_ratio": 1.5767441860465117,
+      "no_speech_prob": 0.26844486594200134,
+      "words": [
+        {
+          "word": " This",
+          "start": 202.38,
+          "end": 202.66,
+          "probability": 0.9915775060653687
+        },
+        {
+          "word": " growth",
+          "start": 202.66,
+          "end": 203.02,
+          "probability": 0.9939616322517395
+        },
+        {
+          "word": " then",
+          "start": 203.02,
+          "end": 203.42,
+          "probability": 0.9836448431015015
+        },
+        {
+          "word": " made",
+          "start": 203.42,
+          "end": 203.64,
+          "probability": 0.9991244673728943
+        },
+        {
+          "word": " it",
+          "start": 203.64,
+          "end": 203.8,
+          "probability": 0.9996969699859619
+        },
+        {
+          "word": " possible",
+          "start": 203.8,
+          "end": 204.2,
+          "probability": 0.9990125894546509
+        },
+        {
+          "word": " for",
+          "start": 204.2,
+          "end": 204.48,
+          "probability": 0.9949457049369812
+        },
+        {
+          "word": " the",
+          "start": 204.48,
+          "end": 204.62,
+          "probability": 0.9981604218482971
+        },
+        {
+          "word": " organisation",
+          "start": 204.62,
+          "end": 205.2,
+          "probability": 0.6673437356948853
+        },
+        {
+          "word": " to",
+          "start": 205.2,
+          "end": 205.82,
+          "probability": 0.9918330907821655
+        },
+        {
+          "word": " run",
+          "start": 205.82,
+          "end": 206.12,
+          "probability": 0.9978492259979248
+        },
+        {
+          "word": " environmental",
+          "start": 206.12,
+          "end": 206.82,
+          "probability": 0.9911901950836182
+        },
+        {
+          "word": " classes",
+          "start": 206.82,
+          "end": 207.54,
+          "probability": 0.9838094711303711
+        },
+        {
+          "word": " for",
+          "start": 207.54,
+          "end": 207.94,
+          "probability": 0.9977926015853882
+        },
+        {
+          "word": " the",
+          "start": 207.94,
+          "end": 208.04,
+          "probability": 0.9973771572113037
+        },
+        {
+          "word": " public.",
+          "start": 208.04,
+          "end": 208.4,
+          "probability": 0.9954249262809753
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 19332,
+      "start": 209.7,
+      "end": 220.56,
+      "text": " Through the GBM, Professor Maffai organised classes and seminars to teach people about the connection between human activity and the environment.",
+      "tokens": [
+        51164,
+        8927,
+        264,
+        460,
+        18345,
+        11,
+        8419,
+        376,
+        2518,
+        1301,
+        36866,
+        5359,
+        293,
+        43112,
+        281,
+        2924,
+        561,
+        466,
+        264,
+        4984,
+        1296,
+        1952,
+        5191,
+        293,
+        264,
+        2823,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05328855122605415,
+      "compression_ratio": 1.5767441860465117,
+      "no_speech_prob": 0.26844486594200134,
+      "words": [
+        {
+          "word": " Through",
+          "start": 209.7,
+          "end": 210.48,
+          "probability": 0.9866251945495605
+        },
+        {
+          "word": " the",
+          "start": 210.48,
+          "end": 210.72,
+          "probability": 0.9959642887115479
+        },
+        {
+          "word": " GBM,",
+          "start": 210.72,
+          "end": 211.18,
+          "probability": 0.9406045973300934
+        },
+        {
+          "word": " Professor",
+          "start": 211.7,
+          "end": 212.06,
+          "probability": 0.906766951084137
+        },
+        {
+          "word": " Maffai",
+          "start": 212.06,
+          "end": 212.56,
+          "probability": 0.46322040756543476
+        },
+        {
+          "word": " organised",
+          "start": 212.56,
+          "end": 213.64,
+          "probability": 0.669055163860321
+        },
+        {
+          "word": " classes",
+          "start": 213.64,
+          "end": 214.16,
+          "probability": 0.9925788044929504
+        },
+        {
+          "word": " and",
+          "start": 214.16,
+          "end": 214.52,
+          "probability": 0.9913548827171326
+        },
+        {
+          "word": " seminars",
+          "start": 214.52,
+          "end": 214.98,
+          "probability": 0.9933562874794006
+        },
+        {
+          "word": " to",
+          "start": 214.98,
+          "end": 215.52,
+          "probability": 0.9848226308822632
+        },
+        {
+          "word": " teach",
+          "start": 215.52,
+          "end": 215.9,
+          "probability": 0.993678867816925
+        },
+        {
+          "word": " people",
+          "start": 215.9,
+          "end": 216.24,
+          "probability": 0.9981029033660889
+        },
+        {
+          "word": " about",
+          "start": 216.24,
+          "end": 216.6,
+          "probability": 0.997413694858551
+        },
+        {
+          "word": " the",
+          "start": 216.6,
+          "end": 216.82,
+          "probability": 0.9963963627815247
+        },
+        {
+          "word": " connection",
+          "start": 216.82,
+          "end": 217.2,
+          "probability": 0.997071385383606
+        },
+        {
+          "word": " between",
+          "start": 217.2,
+          "end": 217.84,
+          "probability": 0.999485969543457
+        },
+        {
+          "word": " human",
+          "start": 217.84,
+          "end": 218.5,
+          "probability": 0.9685823321342468
+        },
+        {
+          "word": " activity",
+          "start": 218.5,
+          "end": 219.1,
+          "probability": 0.9961601495742798
+        },
+        {
+          "word": " and",
+          "start": 219.1,
+          "end": 219.78,
+          "probability": 0.9747775197029114
+        },
+        {
+          "word": " the",
+          "start": 219.78,
+          "end": 220.0,
+          "probability": 0.9871036410331726
+        },
+        {
+          "word": " environment.",
+          "start": 220.0,
+          "end": 220.56,
+          "probability": 0.9988579750061035
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 22056,
+      "start": 221.56,
+      "end": 226.88,
+      "text": " She knew that if the public learned about this link and the effect it has on their lives,",
+      "tokens": [
+        50414,
+        1240,
+        2586,
+        300,
+        498,
+        264,
+        1908,
+        3264,
+        466,
+        341,
+        2113,
+        293,
+        264,
+        1802,
+        309,
+        575,
+        322,
+        641,
+        2909,
+        11,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0888661511739095,
+      "compression_ratio": 1.5530973451327434,
+      "no_speech_prob": 0.07244941592216492,
+      "words": [
+        {
+          "word": " She",
+          "start": 221.4,
+          "end": 221.74,
+          "probability": 0.5015657544136047
+        },
+        {
+          "word": " knew",
+          "start": 221.74,
+          "end": 222.08,
+          "probability": 0.9944629073143005
+        },
+        {
+          "word": " that",
+          "start": 222.08,
+          "end": 222.36,
+          "probability": 0.989164412021637
+        },
+        {
+          "word": " if",
+          "start": 222.36,
+          "end": 222.74,
+          "probability": 0.7001440525054932
+        },
+        {
+          "word": " the",
+          "start": 222.74,
+          "end": 222.88,
+          "probability": 0.9926959276199341
+        },
+        {
+          "word": " public",
+          "start": 222.88,
+          "end": 223.24,
+          "probability": 0.9802160859107971
+        },
+        {
+          "word": " learned",
+          "start": 223.24,
+          "end": 223.66,
+          "probability": 0.9414966702461243
+        },
+        {
+          "word": " about",
+          "start": 223.66,
+          "end": 223.94,
+          "probability": 0.9978412389755249
+        },
+        {
+          "word": " this",
+          "start": 223.94,
+          "end": 224.22,
+          "probability": 0.9875714778900146
+        },
+        {
+          "word": " link",
+          "start": 224.22,
+          "end": 224.64,
+          "probability": 0.9180058240890503
+        },
+        {
+          "word": " and",
+          "start": 224.64,
+          "end": 225.06,
+          "probability": 0.8118117451667786
+        },
+        {
+          "word": " the",
+          "start": 225.06,
+          "end": 225.2,
+          "probability": 0.9938340187072754
+        },
+        {
+          "word": " effect",
+          "start": 225.2,
+          "end": 225.54,
+          "probability": 0.959784984588623
+        },
+        {
+          "word": " it",
+          "start": 225.54,
+          "end": 225.92,
+          "probability": 0.9931134581565857
+        },
+        {
+          "word": " has",
+          "start": 225.92,
+          "end": 226.14,
+          "probability": 0.9932534098625183
+        },
+        {
+          "word": " on",
+          "start": 226.14,
+          "end": 226.3,
+          "probability": 0.9986653327941895
+        },
+        {
+          "word": " their",
+          "start": 226.3,
+          "end": 226.46,
+          "probability": 0.997490406036377
+        },
+        {
+          "word": " lives,",
+          "start": 226.46,
+          "end": 226.88,
+          "probability": 0.9968991279602051
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 22056,
+      "start": 227.26,
+      "end": 232.38,
+      "text": " it would make them want to change their behaviour and solve their environmental problems.",
+      "tokens": [
+        50664,
+        309,
+        576,
+        652,
+        552,
+        528,
+        281,
+        1319,
+        641,
+        17229,
+        293,
+        5039,
+        641,
+        8303,
+        2740,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0888661511739095,
+      "compression_ratio": 1.5530973451327434,
+      "no_speech_prob": 0.07244941592216492,
+      "words": [
+        {
+          "word": " it",
+          "start": 227.26,
+          "end": 227.34,
+          "probability": 0.988751232624054
+        },
+        {
+          "word": " would",
+          "start": 227.34,
+          "end": 227.48,
+          "probability": 0.9960058331489563
+        },
+        {
+          "word": " make",
+          "start": 227.48,
+          "end": 227.72,
+          "probability": 0.9980446100234985
+        },
+        {
+          "word": " them",
+          "start": 227.72,
+          "end": 227.98,
+          "probability": 0.9984482526779175
+        },
+        {
+          "word": " want",
+          "start": 227.98,
+          "end": 228.16,
+          "probability": 0.9963316321372986
+        },
+        {
+          "word": " to",
+          "start": 228.16,
+          "end": 228.38,
+          "probability": 0.9986940026283264
+        },
+        {
+          "word": " change",
+          "start": 228.38,
+          "end": 228.88,
+          "probability": 0.9920184016227722
+        },
+        {
+          "word": " their",
+          "start": 228.88,
+          "end": 229.1,
+          "probability": 0.9983741044998169
+        },
+        {
+          "word": " behaviour",
+          "start": 229.1,
+          "end": 229.62,
+          "probability": 0.8323021531105042
+        },
+        {
+          "word": " and",
+          "start": 229.62,
+          "end": 230.14,
+          "probability": 0.9149983525276184
+        },
+        {
+          "word": " solve",
+          "start": 230.14,
+          "end": 230.62,
+          "probability": 0.9957899451255798
+        },
+        {
+          "word": " their",
+          "start": 230.62,
+          "end": 231.0,
+          "probability": 0.9953309893608093
+        },
+        {
+          "word": " environmental",
+          "start": 231.0,
+          "end": 231.52,
+          "probability": 0.9950544834136963
+        },
+        {
+          "word": " problems.",
+          "start": 231.52,
+          "end": 232.38,
+          "probability": 0.99726402759552
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 22056,
+      "start": 233.18,
+      "end": 238.32,
+      "text": " Over the years, the Green Belt Movement has developed a climate change programme,",
+      "tokens": [
+        50964,
+        4886,
+        264,
+        924,
+        11,
+        264,
+        6969,
+        38869,
+        26523,
+        575,
+        4743,
+        257,
+        5659,
+        1319,
+        14001,
+        11,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0888661511739095,
+      "compression_ratio": 1.5530973451327434,
+      "no_speech_prob": 0.07244941592216492,
+      "words": [
+        {
+          "word": " Over",
+          "start": 233.18,
+          "end": 233.86,
+          "probability": 0.9921548962593079
+        },
+        {
+          "word": " the",
+          "start": 233.86,
+          "end": 234.02,
+          "probability": 0.9973152279853821
+        },
+        {
+          "word": " years,",
+          "start": 234.02,
+          "end": 234.38,
+          "probability": 0.9985038042068481
+        },
+        {
+          "word": " the",
+          "start": 234.72,
+          "end": 234.78,
+          "probability": 0.9738030433654785
+        },
+        {
+          "word": " Green",
+          "start": 234.78,
+          "end": 235.1,
+          "probability": 0.980697751045227
+        },
+        {
+          "word": " Belt",
+          "start": 235.1,
+          "end": 235.26,
+          "probability": 0.5530537962913513
+        },
+        {
+          "word": " Movement",
+          "start": 235.26,
+          "end": 235.64,
+          "probability": 0.5291561484336853
+        },
+        {
+          "word": " has",
+          "start": 235.64,
+          "end": 236.0,
+          "probability": 0.9963133931159973
+        },
+        {
+          "word": " developed",
+          "start": 236.0,
+          "end": 236.42,
+          "probability": 0.995270311832428
+        },
+        {
+          "word": " a",
+          "start": 236.42,
+          "end": 236.8,
+          "probability": 0.9982732534408569
+        },
+        {
+          "word": " climate",
+          "start": 236.8,
+          "end": 237.3,
+          "probability": 0.7585227489471436
+        },
+        {
+          "word": " change",
+          "start": 237.3,
+          "end": 237.62,
+          "probability": 0.9634409546852112
+        },
+        {
+          "word": " programme,",
+          "start": 237.62,
+          "end": 238.32,
+          "probability": 0.5719480514526367
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 22056,
+      "start": 238.64,
+      "end": 244.04,
+      "text": " with the aim of giving people in rural communities a greater understanding of the issues,",
+      "tokens": [
+        51214,
+        365,
+        264,
+        5939,
+        295,
+        2902,
+        561,
+        294,
+        11165,
+        4456,
+        257,
+        5044,
+        3701,
+        295,
+        264,
+        2663,
+        11,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0888661511739095,
+      "compression_ratio": 1.5530973451327434,
+      "no_speech_prob": 0.07244941592216492,
+      "words": [
+        {
+          "word": " with",
+          "start": 238.64,
+          "end": 238.76,
+          "probability": 0.9896315932273865
+        },
+        {
+          "word": " the",
+          "start": 238.76,
+          "end": 238.98,
+          "probability": 0.9971191883087158
+        },
+        {
+          "word": " aim",
+          "start": 238.98,
+          "end": 239.24,
+          "probability": 0.9984976053237915
+        },
+        {
+          "word": " of",
+          "start": 239.24,
+          "end": 239.4,
+          "probability": 0.9988821148872375
+        },
+        {
+          "word": " giving",
+          "start": 239.4,
+          "end": 239.68,
+          "probability": 0.9960892200469971
+        },
+        {
+          "word": " people",
+          "start": 239.68,
+          "end": 240.2,
+          "probability": 0.9986112117767334
+        },
+        {
+          "word": " in",
+          "start": 240.2,
+          "end": 240.42,
+          "probability": 0.9834026098251343
+        },
+        {
+          "word": " rural",
+          "start": 240.42,
+          "end": 240.76,
+          "probability": 0.9955684542655945
+        },
+        {
+          "word": " communities",
+          "start": 240.76,
+          "end": 241.42,
+          "probability": 0.9978926777839661
+        },
+        {
+          "word": " a",
+          "start": 241.42,
+          "end": 241.96,
+          "probability": 0.9865258932113647
+        },
+        {
+          "word": " greater",
+          "start": 241.96,
+          "end": 242.28,
+          "probability": 0.9900496006011963
+        },
+        {
+          "word": " understanding",
+          "start": 242.28,
+          "end": 243.1,
+          "probability": 0.9990398287773132
+        },
+        {
+          "word": " of",
+          "start": 243.1,
+          "end": 243.48,
+          "probability": 0.9987994432449341
+        },
+        {
+          "word": " the",
+          "start": 243.48,
+          "end": 243.66,
+          "probability": 0.987939715385437
+        },
+        {
+          "word": " issues,",
+          "start": 243.66,
+          "end": 244.04,
+          "probability": 0.9952523708343506
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 24404,
+      "start": 244.04,
+      "end": 252.84,
+      "text": " and even better, helping them to see that they have the ability and the power to work against climate change.",
+      "tokens": [
+        50414,
+        293,
+        754,
+        1101,
+        11,
+        4315,
+        552,
+        281,
+        536,
+        300,
+        436,
+        362,
+        264,
+        3485,
+        293,
+        264,
+        1347,
+        281,
+        589,
+        1970,
+        5659,
+        1319,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1378841996192932,
+      "compression_ratio": 1.4894736842105263,
+      "no_speech_prob": 0.07019594311714172,
+      "words": [
+        {
+          "word": " and",
+          "start": 244.04,
+          "end": 244.84,
+          "probability": 0.6326929926872253
+        },
+        {
+          "word": " even",
+          "start": 244.84,
+          "end": 245.46,
+          "probability": 0.6963956356048584
+        },
+        {
+          "word": " better,",
+          "start": 245.46,
+          "end": 245.92,
+          "probability": 0.9124166369438171
+        },
+        {
+          "word": " helping",
+          "start": 246.44,
+          "end": 246.7,
+          "probability": 0.9950845837593079
+        },
+        {
+          "word": " them",
+          "start": 246.7,
+          "end": 246.9,
+          "probability": 0.9956497550010681
+        },
+        {
+          "word": " to",
+          "start": 246.9,
+          "end": 247.08,
+          "probability": 0.9826211333274841
+        },
+        {
+          "word": " see",
+          "start": 247.08,
+          "end": 247.38,
+          "probability": 0.9960712194442749
+        },
+        {
+          "word": " that",
+          "start": 247.38,
+          "end": 247.8,
+          "probability": 0.9825703501701355
+        },
+        {
+          "word": " they",
+          "start": 247.8,
+          "end": 248.08,
+          "probability": 0.9971749782562256
+        },
+        {
+          "word": " have",
+          "start": 248.08,
+          "end": 248.4,
+          "probability": 0.9973018169403076
+        },
+        {
+          "word": " the",
+          "start": 248.4,
+          "end": 248.6,
+          "probability": 0.9970805048942566
+        },
+        {
+          "word": " ability",
+          "start": 248.6,
+          "end": 249.12,
+          "probability": 0.9971888661384583
+        },
+        {
+          "word": " and",
+          "start": 249.12,
+          "end": 249.62,
+          "probability": 0.9914745092391968
+        },
+        {
+          "word": " the",
+          "start": 249.62,
+          "end": 249.94,
+          "probability": 0.9737176895141602
+        },
+        {
+          "word": " power",
+          "start": 249.94,
+          "end": 250.34,
+          "probability": 0.9977442026138306
+        },
+        {
+          "word": " to",
+          "start": 250.34,
+          "end": 250.8,
+          "probability": 0.9960988759994507
+        },
+        {
+          "word": " work",
+          "start": 250.8,
+          "end": 251.14,
+          "probability": 0.9959503412246704
+        },
+        {
+          "word": " against",
+          "start": 251.14,
+          "end": 251.78,
+          "probability": 0.9965927004814148
+        },
+        {
+          "word": " climate",
+          "start": 251.78,
+          "end": 252.24,
+          "probability": 0.9858163595199585
+        },
+        {
+          "word": " change.",
+          "start": 252.24,
+          "end": 252.84,
+          "probability": 0.9988127946853638
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 24404,
+      "start": 254.24,
+      "end": 261.1,
+      "text": " When Garimaffai was an amazing person, she achieved many important things in her lifetime,",
+      "tokens": [
+        50864,
+        1133,
+        7995,
+        332,
+        2518,
+        1301,
+        390,
+        364,
+        2243,
+        954,
+        11,
+        750,
+        11042,
+        867,
+        1021,
+        721,
+        294,
+        720,
+        11364,
+        11,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1378841996192932,
+      "compression_ratio": 1.4894736842105263,
+      "no_speech_prob": 0.07019594311714172,
+      "words": [
+        {
+          "word": " When",
+          "start": 254.24,
+          "end": 254.56,
+          "probability": 0.621216356754303
+        },
+        {
+          "word": " Garimaffai",
+          "start": 254.56,
+          "end": 255.48,
+          "probability": 0.34666582659701817
+        },
+        {
+          "word": " was",
+          "start": 255.48,
+          "end": 255.98,
+          "probability": 0.9810521602630615
+        },
+        {
+          "word": " an",
+          "start": 255.98,
+          "end": 256.32,
+          "probability": 0.9918095469474792
+        },
+        {
+          "word": " amazing",
+          "start": 256.32,
+          "end": 256.92,
+          "probability": 0.9780665636062622
+        },
+        {
+          "word": " person,",
+          "start": 256.92,
+          "end": 257.62,
+          "probability": 0.9980860948562622
+        },
+        {
+          "word": " she",
+          "start": 258.2,
+          "end": 258.36,
+          "probability": 0.992438018321991
+        },
+        {
+          "word": " achieved",
+          "start": 258.36,
+          "end": 258.84,
+          "probability": 0.9939337372779846
+        },
+        {
+          "word": " many",
+          "start": 258.84,
+          "end": 259.18,
+          "probability": 0.9989933371543884
+        },
+        {
+          "word": " important",
+          "start": 259.18,
+          "end": 259.88,
+          "probability": 0.9966409206390381
+        },
+        {
+          "word": " things",
+          "start": 259.88,
+          "end": 260.2,
+          "probability": 0.998967170715332
+        },
+        {
+          "word": " in",
+          "start": 260.2,
+          "end": 260.48,
+          "probability": 0.9985051155090332
+        },
+        {
+          "word": " her",
+          "start": 260.48,
+          "end": 260.62,
+          "probability": 0.999626874923706
+        },
+        {
+          "word": " lifetime,",
+          "start": 260.62,
+          "end": 261.1,
+          "probability": 0.9625658988952637
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 24404,
+      "start": 261.6,
+      "end": 266.32,
+      "text": " and her environmental work has made an enormous difference to the people of Kenya.",
+      "tokens": [
+        51214,
+        293,
+        720,
+        8303,
+        589,
+        575,
+        1027,
+        364,
+        11322,
+        2649,
+        281,
+        264,
+        561,
+        295,
+        31011,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1378841996192932,
+      "compression_ratio": 1.4894736842105263,
+      "no_speech_prob": 0.07019594311714172,
+      "words": [
+        {
+          "word": " and",
+          "start": 261.6,
+          "end": 261.82,
+          "probability": 0.9977322816848755
+        },
+        {
+          "word": " her",
+          "start": 261.82,
+          "end": 261.98,
+          "probability": 0.9993470311164856
+        },
+        {
+          "word": " environmental",
+          "start": 261.98,
+          "end": 262.5,
+          "probability": 0.9848280549049377
+        },
+        {
+          "word": " work",
+          "start": 262.5,
+          "end": 263.16,
+          "probability": 0.9990378618240356
+        },
+        {
+          "word": " has",
+          "start": 263.16,
+          "end": 263.52,
+          "probability": 0.8414995074272156
+        },
+        {
+          "word": " made",
+          "start": 263.52,
+          "end": 263.72,
+          "probability": 0.9986009001731873
+        },
+        {
+          "word": " an",
+          "start": 263.72,
+          "end": 264.06,
+          "probability": 0.998389482498169
+        },
+        {
+          "word": " enormous",
+          "start": 264.06,
+          "end": 264.56,
+          "probability": 0.999427318572998
+        },
+        {
+          "word": " difference",
+          "start": 264.56,
+          "end": 265.06,
+          "probability": 0.9986385703086853
+        },
+        {
+          "word": " to",
+          "start": 265.06,
+          "end": 265.46,
+          "probability": 0.9982871413230896
+        },
+        {
+          "word": " the",
+          "start": 265.46,
+          "end": 265.56,
+          "probability": 0.9956731200218201
+        },
+        {
+          "word": " people",
+          "start": 265.56,
+          "end": 265.86,
+          "probability": 0.9960030913352966
+        },
+        {
+          "word": " of",
+          "start": 265.86,
+          "end": 266.08,
+          "probability": 0.9994668364524841
+        },
+        {
+          "word": " Kenya.",
+          "start": 266.08,
+          "end": 266.32,
+          "probability": 0.9800818562507629
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 26632,
+      "start": 267.32,
+      "end": 273.44,
+      "text": " It is not surprising, therefore, that she won the Nobel Peace Prize in 2004,",
+      "tokens": [
+        50414,
+        467,
+        307,
+        406,
+        8830,
+        11,
+        4412,
+        11,
+        300,
+        750,
+        1582,
+        264,
+        24611,
+        13204,
+        22604,
+        294,
+        15817,
+        11,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06318955343277728,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.6065176129341125,
+      "words": [
+        {
+          "word": " It",
+          "start": 267.3,
+          "end": 267.66,
+          "probability": 0.1349577009677887
+        },
+        {
+          "word": " is",
+          "start": 267.66,
+          "end": 267.84,
+          "probability": 0.9455925822257996
+        },
+        {
+          "word": " not",
+          "start": 267.84,
+          "end": 268.06,
+          "probability": 0.9849556088447571
+        },
+        {
+          "word": " surprising,",
+          "start": 268.06,
+          "end": 268.8,
+          "probability": 0.9967455863952637
+        },
+        {
+          "word": " therefore,",
+          "start": 268.8,
+          "end": 269.32,
+          "probability": 0.9837849140167236
+        },
+        {
+          "word": " that",
+          "start": 269.72,
+          "end": 269.8,
+          "probability": 0.986517608165741
+        },
+        {
+          "word": " she",
+          "start": 269.8,
+          "end": 270.1,
+          "probability": 0.974692702293396
+        },
+        {
+          "word": " won",
+          "start": 270.1,
+          "end": 270.4,
+          "probability": 0.9997387528419495
+        },
+        {
+          "word": " the",
+          "start": 270.4,
+          "end": 270.74,
+          "probability": 0.9471065402030945
+        },
+        {
+          "word": " Nobel",
+          "start": 270.74,
+          "end": 271.16,
+          "probability": 0.991351842880249
+        },
+        {
+          "word": " Peace",
+          "start": 271.16,
+          "end": 271.66,
+          "probability": 0.9884588122367859
+        },
+        {
+          "word": " Prize",
+          "start": 271.66,
+          "end": 271.98,
+          "probability": 0.9911278486251831
+        },
+        {
+          "word": " in",
+          "start": 271.98,
+          "end": 272.44,
+          "probability": 0.9857677817344666
+        },
+        {
+          "word": " 2004,",
+          "start": 272.44,
+          "end": 273.44,
+          "probability": 0.9959946870803833
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 26632,
+      "start": 274.0,
+      "end": 278.72,
+      "text": " and she was the first African woman to receive this great award, you know.",
+      "tokens": [
+        50714,
+        293,
+        750,
+        390,
+        264,
+        700,
+        7312,
+        3059,
+        281,
+        4774,
+        341,
+        869,
+        7130,
+        11,
+        291,
+        458,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06318955343277728,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.6065176129341125,
+      "words": [
+        {
+          "word": " and",
+          "start": 274.0,
+          "end": 274.5,
+          "probability": 0.987756609916687
+        },
+        {
+          "word": " she",
+          "start": 274.5,
+          "end": 274.8,
+          "probability": 0.9648929834365845
+        },
+        {
+          "word": " was",
+          "start": 274.8,
+          "end": 274.92,
+          "probability": 0.9983851909637451
+        },
+        {
+          "word": " the",
+          "start": 274.92,
+          "end": 275.1,
+          "probability": 0.9948590993881226
+        },
+        {
+          "word": " first",
+          "start": 275.1,
+          "end": 275.64,
+          "probability": 0.9627476334571838
+        },
+        {
+          "word": " African",
+          "start": 275.64,
+          "end": 276.28,
+          "probability": 0.9914647936820984
+        },
+        {
+          "word": " woman",
+          "start": 276.28,
+          "end": 276.58,
+          "probability": 0.9590722322463989
+        },
+        {
+          "word": " to",
+          "start": 276.58,
+          "end": 276.84,
+          "probability": 0.9962987303733826
+        },
+        {
+          "word": " receive",
+          "start": 276.84,
+          "end": 277.3,
+          "probability": 0.9903600215911865
+        },
+        {
+          "word": " this",
+          "start": 277.3,
+          "end": 277.74,
+          "probability": 0.9900950193405151
+        },
+        {
+          "word": " great",
+          "start": 277.74,
+          "end": 278.0,
+          "probability": 0.6868582963943481
+        },
+        {
+          "word": " award,",
+          "start": 278.0,
+          "end": 278.34,
+          "probability": 0.9795454740524292
+        },
+        {
+          "word": " you",
+          "start": 278.34,
+          "end": 278.56,
+          "probability": 0.9920563101768494
+        },
+        {
+          "word": " know.",
+          "start": 278.56,
+          "end": 278.72,
+          "probability": 0.9990929365158081
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 26632,
+      "start": 279.88,
+      "end": 287.82,
+      "text": " She died in 2011, but the Green Belt Movement continues to protect and improve the environment in Kenya.",
+      "tokens": [
+        51014,
+        1240,
+        4539,
+        294,
+        10154,
+        11,
+        457,
+        264,
+        6969,
+        38869,
+        26523,
+        6515,
+        281,
+        2371,
+        293,
+        3470,
+        264,
+        2823,
+        294,
+        31011,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06318955343277728,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.6065176129341125,
+      "words": [
+        {
+          "word": " She",
+          "start": 279.88,
+          "end": 280.16,
+          "probability": 0.9752967357635498
+        },
+        {
+          "word": " died",
+          "start": 280.16,
+          "end": 280.5,
+          "probability": 0.9956455826759338
+        },
+        {
+          "word": " in",
+          "start": 280.5,
+          "end": 281.02,
+          "probability": 0.989486813545227
+        },
+        {
+          "word": " 2011,",
+          "start": 281.02,
+          "end": 281.8,
+          "probability": 0.996948778629303
+        },
+        {
+          "word": " but",
+          "start": 282.16,
+          "end": 282.44,
+          "probability": 0.9977771639823914
+        },
+        {
+          "word": " the",
+          "start": 282.44,
+          "end": 282.7,
+          "probability": 0.9708360433578491
+        },
+        {
+          "word": " Green",
+          "start": 282.7,
+          "end": 283.12,
+          "probability": 0.9551737308502197
+        },
+        {
+          "word": " Belt",
+          "start": 283.12,
+          "end": 283.3,
+          "probability": 0.5472959280014038
+        },
+        {
+          "word": " Movement",
+          "start": 283.3,
+          "end": 283.76,
+          "probability": 0.41577908396720886
+        },
+        {
+          "word": " continues",
+          "start": 283.76,
+          "end": 284.6,
+          "probability": 0.9948840737342834
+        },
+        {
+          "word": " to",
+          "start": 284.6,
+          "end": 284.9,
+          "probability": 0.9995298385620117
+        },
+        {
+          "word": " protect",
+          "start": 284.9,
+          "end": 285.28,
+          "probability": 0.9962496161460876
+        },
+        {
+          "word": " and",
+          "start": 285.28,
+          "end": 285.88,
+          "probability": 0.9719342589378357
+        },
+        {
+          "word": " improve",
+          "start": 285.88,
+          "end": 286.38,
+          "probability": 0.9963914752006531
+        },
+        {
+          "word": " the",
+          "start": 286.38,
+          "end": 286.68,
+          "probability": 0.9982141256332397
+        },
+        {
+          "word": " environment",
+          "start": 286.68,
+          "end": 287.2,
+          "probability": 0.9894959330558777
+        },
+        {
+          "word": " in",
+          "start": 287.2,
+          "end": 287.54,
+          "probability": 0.9766572713851929
+        },
+        {
+          "word": " Kenya.",
+          "start": 287.54,
+          "end": 287.82,
+          "probability": 0.9974645376205444
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 28782,
+      "start": 288.52000000000004,
+      "end": 300.74,
+      "text": " And the message I want to leave you with today is that everyone, all of us, can do something to help stop environmental damage where we live, and around the world.",
+      "tokens": [
+        50414,
+        400,
+        264,
+        3636,
+        286,
+        528,
+        281,
+        1856,
+        291,
+        365,
+        965,
+        307,
+        300,
+        1518,
+        11,
+        439,
+        295,
+        505,
+        11,
+        393,
+        360,
+        746,
+        281,
+        854,
+        1590,
+        8303,
+        4344,
+        689,
+        321,
+        1621,
+        11,
+        293,
+        926,
+        264,
+        1002,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11991491317749023,
+      "compression_ratio": 1.3428571428571427,
+      "no_speech_prob": 0.7892016768455505,
+      "words": [
+        {
+          "word": " And",
+          "start": 288.52000000000004,
+          "end": 289.22,
+          "probability": 0.43483075499534607
+        },
+        {
+          "word": " the",
+          "start": 289.22,
+          "end": 289.6,
+          "probability": 0.7407061457633972
+        },
+        {
+          "word": " message",
+          "start": 289.6,
+          "end": 289.94,
+          "probability": 0.9955295920372009
+        },
+        {
+          "word": " I",
+          "start": 289.94,
+          "end": 290.3,
+          "probability": 0.9647381901741028
+        },
+        {
+          "word": " want",
+          "start": 290.3,
+          "end": 290.52,
+          "probability": 0.9966558218002319
+        },
+        {
+          "word": " to",
+          "start": 290.52,
+          "end": 290.74,
+          "probability": 0.9987106323242188
+        },
+        {
+          "word": " leave",
+          "start": 290.74,
+          "end": 290.96,
+          "probability": 0.9925500154495239
+        },
+        {
+          "word": " you",
+          "start": 290.96,
+          "end": 291.16,
+          "probability": 0.9916033148765564
+        },
+        {
+          "word": " with",
+          "start": 291.16,
+          "end": 291.28,
+          "probability": 0.9966318011283875
+        },
+        {
+          "word": " today",
+          "start": 291.28,
+          "end": 291.64,
+          "probability": 0.9960182309150696
+        },
+        {
+          "word": " is",
+          "start": 291.64,
+          "end": 292.24,
+          "probability": 0.8346129655838013
+        },
+        {
+          "word": " that",
+          "start": 292.24,
+          "end": 292.52,
+          "probability": 0.9900338053703308
+        },
+        {
+          "word": " everyone,",
+          "start": 292.52,
+          "end": 293.22,
+          "probability": 0.9739485383033752
+        },
+        {
+          "word": " all",
+          "start": 293.62,
+          "end": 293.98,
+          "probability": 0.9821929931640625
+        },
+        {
+          "word": " of",
+          "start": 293.98,
+          "end": 294.2,
+          "probability": 0.9988369345664978
+        },
+        {
+          "word": " us,",
+          "start": 294.2,
+          "end": 294.54,
+          "probability": 0.9986976385116577
+        },
+        {
+          "word": " can",
+          "start": 294.78,
+          "end": 294.82,
+          "probability": 0.9743438959121704
+        },
+        {
+          "word": " do",
+          "start": 294.82,
+          "end": 295.12,
+          "probability": 0.9985357522964478
+        },
+        {
+          "word": " something",
+          "start": 295.12,
+          "end": 295.54,
+          "probability": 0.9981770515441895
+        },
+        {
+          "word": " to",
+          "start": 295.54,
+          "end": 295.86,
+          "probability": 0.9967156648635864
+        },
+        {
+          "word": " help",
+          "start": 295.86,
+          "end": 296.06,
+          "probability": 0.9712045192718506
+        },
+        {
+          "word": " stop",
+          "start": 296.06,
+          "end": 296.6,
+          "probability": 0.9897403717041016
+        },
+        {
+          "word": " environmental",
+          "start": 296.6,
+          "end": 297.36,
+          "probability": 0.9832401871681213
+        },
+        {
+          "word": " damage",
+          "start": 297.36,
+          "end": 298.08,
+          "probability": 0.9982938170433044
+        },
+        {
+          "word": " where",
+          "start": 298.08,
+          "end": 298.5,
+          "probability": 0.8682065010070801
+        },
+        {
+          "word": " we",
+          "start": 298.5,
+          "end": 298.7,
+          "probability": 0.9990599751472473
+        },
+        {
+          "word": " live,",
+          "start": 298.7,
+          "end": 299.04,
+          "probability": 0.9986176490783691
+        },
+        {
+          "word": " and",
+          "start": 299.3,
+          "end": 299.7,
+          "probability": 0.9875273108482361
+        },
+        {
+          "word": " around",
+          "start": 299.7,
+          "end": 300.16,
+          "probability": 0.9721064567565918
+        },
+        {
+          "word": " the",
+          "start": 300.16,
+          "end": 300.36,
+          "probability": 0.9987198114395142
+        },
+        {
+          "word": " world.",
+          "start": 300.36,
+          "end": 300.74,
+          "probability": 0.9945053458213806
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "seek": 28782,
+      "start": 301.3,
+      "end": 302.74,
+      "text": " Thank you for listening.",
+      "tokens": [
+        51014,
+        1044,
+        291,
+        337,
+        4764,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11991491317749023,
+      "compression_ratio": 1.3428571428571427,
+      "no_speech_prob": 0.7892016768455505,
+      "words": [
+        {
+          "word": " Thank",
+          "start": 301.3,
+          "end": 302.0,
+          "probability": 0.9908158779144287
+        },
+        {
+          "word": " you",
+          "start": 302.0,
+          "end": 302.24,
+          "probability": 0.9778107404708862
+        },
+        {
+          "word": " for",
+          "start": 302.24,
+          "end": 302.38,
+          "probability": 0.9957031607627869
+        },
+        {
+          "word": " listening.",
+          "start": 302.38,
+          "end": 302.74,
+          "probability": 0.996561586856842
+        }
+      ]
+    }
+  ]
+}

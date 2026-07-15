@@ -1,0 +1,3355 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "End of course test, track two. Today you are going to present your research into scientists who have had an impact on astronomy and how we understand the stars and planets. So we'll begin with Yoko who is going to talk about Isaac Newton, then Walid is going to tell us about Carl Sagan. Sir Isaac Newton was an English scientist who lived from 1643 to 1727. He is one of the most remarkable scientists who ever lived. Of course he lived a long time before humans started exploring space, but he helped us to start to understand it better. He invented a new kind of telescope, an object for looking at the stars, which meant people could see them more clearly. Some of Newton's work is not very easy to understand unless you are a mathematician. His book, The Principles of Mathematics, explained the movement of the planets around the sun. It was an amazing achievement which changed people's ideas about physics. At the time we believed that the sun moved around the earth. Because Newton's ideas were so new and different, they made some people very angry. So it's perhaps not surprising that later in life Newton stopped showing people his work. Although everyone remembers Newton as a great scientist, he had some strange ideas too. Like many people at the time, Newton tried to change ordinary metal into gold and did lots of research about it. Carl Sagan was an American astronomer who lived from 1934 to 1996. His scientific achievements are not quite as amazing as Newton's or Einstein's. However, Sagan knew how to explain complicated scientific ideas so that people could understand them. He wrote popular books about astronomy and had a TV show called The Cosmos in the 1980s. Because he was very excited about astronomy, he was able to show ordinary people how exciting it is too. A talent that not many scientists have. The show had 135 million viewers from all over the world, which even today is quite a few people. However, some astronomers believed that Carl Sagan couldn't be so popular and a serious scientist at the same time. This was made worse when Sagan became one of the first scientists to talk about global warming. At the time, no one understood his ideas very well. And it became another reason why other scientists disliked him.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.46,
+      "text": " End of course test, track two.",
+      "tokens": [
+        50364,
+        6967,
+        295,
+        1164,
+        1500,
+        11,
+        2837,
+        732,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26287694295247394,
+      "compression_ratio": 1.4870466321243523,
+      "no_speech_prob": 0.1453031301498413,
+      "words": [
+        {
+          "word": " End",
+          "start": 0.0,
+          "end": 0.56,
+          "probability": 0.4249664545059204
+        },
+        {
+          "word": " of",
+          "start": 0.56,
+          "end": 0.8,
+          "probability": 0.9058206677436829
+        },
+        {
+          "word": " course",
+          "start": 0.8,
+          "end": 1.04,
+          "probability": 0.7097954154014587
+        },
+        {
+          "word": " test,",
+          "start": 1.04,
+          "end": 1.62,
+          "probability": 0.9618040919303894
+        },
+        {
+          "word": " track",
+          "start": 2.18,
+          "end": 2.38,
+          "probability": 0.7513761520385742
+        },
+        {
+          "word": " two.",
+          "start": 2.38,
+          "end": 3.46,
+          "probability": 0.5745680332183838
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.28,
+      "end": 12.76,
+      "text": " Today you are going to present your research into scientists who have had an impact on astronomy",
+      "tokens": [
+        50604,
+        2692,
+        291,
+        366,
+        516,
+        281,
+        1974,
+        428,
+        2132,
+        666,
+        7708,
+        567,
+        362,
+        632,
+        364,
+        2712,
+        322,
+        37844,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26287694295247394,
+      "compression_ratio": 1.4870466321243523,
+      "no_speech_prob": 0.1453031301498413,
+      "words": [
+        {
+          "word": " Today",
+          "start": 5.28,
+          "end": 5.46,
+          "probability": 0.9224046468734741
+        },
+        {
+          "word": " you",
+          "start": 5.46,
+          "end": 6.44,
+          "probability": 0.511014461517334
+        },
+        {
+          "word": " are",
+          "start": 6.44,
+          "end": 6.84,
+          "probability": 0.9837919473648071
+        },
+        {
+          "word": " going",
+          "start": 6.84,
+          "end": 7.06,
+          "probability": 0.9981011748313904
+        },
+        {
+          "word": " to",
+          "start": 7.06,
+          "end": 7.38,
+          "probability": 0.9981799125671387
+        },
+        {
+          "word": " present",
+          "start": 7.38,
+          "end": 7.7,
+          "probability": 0.9974744915962219
+        },
+        {
+          "word": " your",
+          "start": 7.7,
+          "end": 8.1,
+          "probability": 0.9967048764228821
+        },
+        {
+          "word": " research",
+          "start": 8.1,
+          "end": 8.7,
+          "probability": 0.9988954067230225
+        },
+        {
+          "word": " into",
+          "start": 8.7,
+          "end": 9.12,
+          "probability": 0.9776198863983154
+        },
+        {
+          "word": " scientists",
+          "start": 9.12,
+          "end": 9.92,
+          "probability": 0.9764576554298401
+        },
+        {
+          "word": " who",
+          "start": 9.92,
+          "end": 10.26,
+          "probability": 0.9825663566589355
+        },
+        {
+          "word": " have",
+          "start": 10.26,
+          "end": 10.5,
+          "probability": 0.9898653626441956
+        },
+        {
+          "word": " had",
+          "start": 10.5,
+          "end": 10.78,
+          "probability": 0.994807779788971
+        },
+        {
+          "word": " an",
+          "start": 10.78,
+          "end": 11.26,
+          "probability": 0.9939635396003723
+        },
+        {
+          "word": " impact",
+          "start": 11.26,
+          "end": 11.66,
+          "probability": 0.9978075623512268
+        },
+        {
+          "word": " on",
+          "start": 11.66,
+          "end": 12.12,
+          "probability": 0.9985125660896301
+        },
+        {
+          "word": " astronomy",
+          "start": 12.12,
+          "end": 12.76,
+          "probability": 0.9515066146850586
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 12.76,
+      "end": 16.3,
+      "text": " and how we understand the stars and planets.",
+      "tokens": [
+        51014,
+        293,
+        577,
+        321,
+        1223,
+        264,
+        6105,
+        293,
+        15126,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26287694295247394,
+      "compression_ratio": 1.4870466321243523,
+      "no_speech_prob": 0.1453031301498413,
+      "words": [
+        {
+          "word": " and",
+          "start": 12.76,
+          "end": 13.66,
+          "probability": 0.7908833622932434
+        },
+        {
+          "word": " how",
+          "start": 13.66,
+          "end": 14.08,
+          "probability": 0.9816040992736816
+        },
+        {
+          "word": " we",
+          "start": 14.08,
+          "end": 14.3,
+          "probability": 0.9985053539276123
+        },
+        {
+          "word": " understand",
+          "start": 14.3,
+          "end": 14.8,
+          "probability": 0.998706579208374
+        },
+        {
+          "word": " the",
+          "start": 14.8,
+          "end": 15.06,
+          "probability": 0.9785072803497314
+        },
+        {
+          "word": " stars",
+          "start": 15.06,
+          "end": 15.44,
+          "probability": 0.9926525354385376
+        },
+        {
+          "word": " and",
+          "start": 15.44,
+          "end": 15.84,
+          "probability": 0.9983195662498474
+        },
+        {
+          "word": " planets.",
+          "start": 15.84,
+          "end": 16.3,
+          "probability": 0.9970026612281799
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 17.28,
+      "end": 22.52,
+      "text": " So we'll begin with Yoko who is going to talk about Isaac Newton,",
+      "tokens": [
+        51214,
+        407,
+        321,
+        603,
+        1841,
+        365,
+        398,
+        13704,
+        567,
+        307,
+        516,
+        281,
+        751,
+        466,
+        22505,
+        19541,
+        11,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26287694295247394,
+      "compression_ratio": 1.4870466321243523,
+      "no_speech_prob": 0.1453031301498413,
+      "words": [
+        {
+          "word": " So",
+          "start": 17.28,
+          "end": 17.56,
+          "probability": 0.9695109128952026
+        },
+        {
+          "word": " we'll",
+          "start": 17.56,
+          "end": 18.04,
+          "probability": 0.8877791166305542
+        },
+        {
+          "word": " begin",
+          "start": 18.04,
+          "end": 18.42,
+          "probability": 0.9957311749458313
+        },
+        {
+          "word": " with",
+          "start": 18.42,
+          "end": 18.88,
+          "probability": 0.9987943172454834
+        },
+        {
+          "word": " Yoko",
+          "start": 18.88,
+          "end": 19.38,
+          "probability": 0.8825067281723022
+        },
+        {
+          "word": " who",
+          "start": 19.38,
+          "end": 20.02,
+          "probability": 0.4752347767353058
+        },
+        {
+          "word": " is",
+          "start": 20.02,
+          "end": 20.34,
+          "probability": 0.9937865734100342
+        },
+        {
+          "word": " going",
+          "start": 20.34,
+          "end": 20.5,
+          "probability": 0.9988956451416016
+        },
+        {
+          "word": " to",
+          "start": 20.5,
+          "end": 20.76,
+          "probability": 0.9986973404884338
+        },
+        {
+          "word": " talk",
+          "start": 20.76,
+          "end": 20.96,
+          "probability": 0.9982404708862305
+        },
+        {
+          "word": " about",
+          "start": 20.96,
+          "end": 21.4,
+          "probability": 0.9994149208068848
+        },
+        {
+          "word": " Isaac",
+          "start": 21.4,
+          "end": 21.94,
+          "probability": 0.9918647408485413
+        },
+        {
+          "word": " Newton,",
+          "start": 21.94,
+          "end": 22.52,
+          "probability": 0.995444655418396
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 23.36,
+      "end": 27.18,
+      "text": " then Walid is going to tell us about Carl Sagan.",
+      "tokens": [
+        51514,
+        550,
+        9707,
+        327,
+        307,
+        516,
+        281,
+        980,
+        505,
+        466,
+        14256,
+        318,
+        14167,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26287694295247394,
+      "compression_ratio": 1.4870466321243523,
+      "no_speech_prob": 0.1453031301498413,
+      "words": [
+        {
+          "word": " then",
+          "start": 23.36,
+          "end": 23.66,
+          "probability": 0.9799030423164368
+        },
+        {
+          "word": " Walid",
+          "start": 23.66,
+          "end": 24.24,
+          "probability": 0.8377074003219604
+        },
+        {
+          "word": " is",
+          "start": 24.24,
+          "end": 24.84,
+          "probability": 0.9590610861778259
+        },
+        {
+          "word": " going",
+          "start": 24.84,
+          "end": 25.1,
+          "probability": 0.998883068561554
+        },
+        {
+          "word": " to",
+          "start": 25.1,
+          "end": 25.32,
+          "probability": 0.9978821873664856
+        },
+        {
+          "word": " tell",
+          "start": 25.32,
+          "end": 25.44,
+          "probability": 0.996697187423706
+        },
+        {
+          "word": " us",
+          "start": 25.44,
+          "end": 25.7,
+          "probability": 0.998291552066803
+        },
+        {
+          "word": " about",
+          "start": 25.7,
+          "end": 26.1,
+          "probability": 0.9986230134963989
+        },
+        {
+          "word": " Carl",
+          "start": 26.1,
+          "end": 26.62,
+          "probability": 0.9860769510269165
+        },
+        {
+          "word": " Sagan.",
+          "start": 26.62,
+          "end": 27.18,
+          "probability": 0.9956749379634857
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2718,
+      "start": 28.419999999999998,
+      "end": 36.44,
+      "text": " Sir Isaac Newton was an English scientist who lived from 1643 to 1727.",
+      "tokens": [
+        50414,
+        6144,
+        22505,
+        19541,
+        390,
+        364,
+        3669,
+        12662,
+        567,
+        5152,
+        490,
+        3165,
+        17201,
+        281,
+        3282,
+        10076,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08488958112655147,
+      "compression_ratio": 1.3944444444444444,
+      "no_speech_prob": 0.015124278143048286,
+      "words": [
+        {
+          "word": " Sir",
+          "start": 28.419999999999998,
+          "end": 29.2,
+          "probability": 0.9250894784927368
+        },
+        {
+          "word": " Isaac",
+          "start": 29.2,
+          "end": 29.72,
+          "probability": 0.9880009293556213
+        },
+        {
+          "word": " Newton",
+          "start": 29.72,
+          "end": 30.24,
+          "probability": 0.988970160484314
+        },
+        {
+          "word": " was",
+          "start": 30.24,
+          "end": 30.62,
+          "probability": 0.9833216667175293
+        },
+        {
+          "word": " an",
+          "start": 30.62,
+          "end": 30.86,
+          "probability": 0.9887712597846985
+        },
+        {
+          "word": " English",
+          "start": 30.86,
+          "end": 31.26,
+          "probability": 0.9920728802680969
+        },
+        {
+          "word": " scientist",
+          "start": 31.26,
+          "end": 31.96,
+          "probability": 0.9735420942306519
+        },
+        {
+          "word": " who",
+          "start": 31.96,
+          "end": 32.5,
+          "probability": 0.9119792580604553
+        },
+        {
+          "word": " lived",
+          "start": 32.5,
+          "end": 32.7,
+          "probability": 0.9980138540267944
+        },
+        {
+          "word": " from",
+          "start": 32.7,
+          "end": 33.1,
+          "probability": 0.9982764720916748
+        },
+        {
+          "word": " 1643",
+          "start": 33.1,
+          "end": 34.34,
+          "probability": 0.9942115843296051
+        },
+        {
+          "word": " to",
+          "start": 34.34,
+          "end": 34.94,
+          "probability": 0.9449201226234436
+        },
+        {
+          "word": " 1727.",
+          "start": 34.94,
+          "end": 36.44,
+          "probability": 0.998675674200058
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2718,
+      "start": 37.44,
+      "end": 41.28,
+      "text": " He is one of the most remarkable scientists who ever lived.",
+      "tokens": [
+        50814,
+        634,
+        307,
+        472,
+        295,
+        264,
+        881,
+        12802,
+        7708,
+        567,
+        1562,
+        5152,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08488958112655147,
+      "compression_ratio": 1.3944444444444444,
+      "no_speech_prob": 0.015124278143048286,
+      "words": [
+        {
+          "word": " He",
+          "start": 37.44,
+          "end": 37.62,
+          "probability": 0.9929236173629761
+        },
+        {
+          "word": " is",
+          "start": 37.62,
+          "end": 37.8,
+          "probability": 0.9825910925865173
+        },
+        {
+          "word": " one",
+          "start": 37.8,
+          "end": 38.02,
+          "probability": 0.9976401329040527
+        },
+        {
+          "word": " of",
+          "start": 38.02,
+          "end": 38.14,
+          "probability": 0.9974363446235657
+        },
+        {
+          "word": " the",
+          "start": 38.14,
+          "end": 38.32,
+          "probability": 0.9966462254524231
+        },
+        {
+          "word": " most",
+          "start": 38.32,
+          "end": 38.62,
+          "probability": 0.9982315897941589
+        },
+        {
+          "word": " remarkable",
+          "start": 38.62,
+          "end": 39.38,
+          "probability": 0.9973822236061096
+        },
+        {
+          "word": " scientists",
+          "start": 39.38,
+          "end": 40.16,
+          "probability": 0.9930117726325989
+        },
+        {
+          "word": " who",
+          "start": 40.16,
+          "end": 40.58,
+          "probability": 0.9929301142692566
+        },
+        {
+          "word": " ever",
+          "start": 40.58,
+          "end": 40.9,
+          "probability": 0.9966089725494385
+        },
+        {
+          "word": " lived.",
+          "start": 40.9,
+          "end": 41.28,
+          "probability": 0.9992589354515076
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2718,
+      "start": 42.1,
+      "end": 46.18,
+      "text": " Of course he lived a long time before humans started exploring space,",
+      "tokens": [
+        51064,
+        2720,
+        1164,
+        415,
+        5152,
+        257,
+        938,
+        565,
+        949,
+        6255,
+        1409,
+        12736,
+        1901,
+        11,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08488958112655147,
+      "compression_ratio": 1.3944444444444444,
+      "no_speech_prob": 0.015124278143048286,
+      "words": [
+        {
+          "word": " Of",
+          "start": 42.1,
+          "end": 42.4,
+          "probability": 0.9943873286247253
+        },
+        {
+          "word": " course",
+          "start": 42.4,
+          "end": 42.82,
+          "probability": 0.9991705417633057
+        },
+        {
+          "word": " he",
+          "start": 42.82,
+          "end": 43.16,
+          "probability": 0.2439303696155548
+        },
+        {
+          "word": " lived",
+          "start": 43.16,
+          "end": 43.4,
+          "probability": 0.9973272085189819
+        },
+        {
+          "word": " a",
+          "start": 43.4,
+          "end": 43.66,
+          "probability": 0.992351233959198
+        },
+        {
+          "word": " long",
+          "start": 43.66,
+          "end": 43.92,
+          "probability": 0.9989413619041443
+        },
+        {
+          "word": " time",
+          "start": 43.92,
+          "end": 44.26,
+          "probability": 0.9989078044891357
+        },
+        {
+          "word": " before",
+          "start": 44.26,
+          "end": 44.7,
+          "probability": 0.9983432292938232
+        },
+        {
+          "word": " humans",
+          "start": 44.7,
+          "end": 45.12,
+          "probability": 0.957454264163971
+        },
+        {
+          "word": " started",
+          "start": 45.12,
+          "end": 45.6,
+          "probability": 0.9960830211639404
+        },
+        {
+          "word": " exploring",
+          "start": 45.6,
+          "end": 46.16,
+          "probability": 0.9964178800582886
+        },
+        {
+          "word": " space,",
+          "start": 46.16,
+          "end": 46.55,
+          "probability": 0.9897881746292114
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2718,
+      "start": 47.12,
+      "end": 50.7,
+      "text": " but he helped us to start to understand it better.",
+      "tokens": [
+        51314,
+        457,
+        415,
+        4254,
+        505,
+        281,
+        722,
+        281,
+        1223,
+        309,
+        1101,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08488958112655147,
+      "compression_ratio": 1.3944444444444444,
+      "no_speech_prob": 0.015124278143048286,
+      "words": [
+        {
+          "word": " but",
+          "start": 47.12,
+          "end": 47.6,
+          "probability": 0.9890657663345337
+        },
+        {
+          "word": " he",
+          "start": 47.6,
+          "end": 48.06,
+          "probability": 0.9823379516601562
+        },
+        {
+          "word": " helped",
+          "start": 48.06,
+          "end": 48.26,
+          "probability": 0.9971436858177185
+        },
+        {
+          "word": " us",
+          "start": 48.26,
+          "end": 48.58,
+          "probability": 0.9974755644798279
+        },
+        {
+          "word": " to",
+          "start": 48.58,
+          "end": 48.92,
+          "probability": 0.9911907911300659
+        },
+        {
+          "word": " start",
+          "start": 48.92,
+          "end": 49.14,
+          "probability": 0.9952957034111023
+        },
+        {
+          "word": " to",
+          "start": 49.14,
+          "end": 49.5,
+          "probability": 0.9985204339027405
+        },
+        {
+          "word": " understand",
+          "start": 49.5,
+          "end": 50.06,
+          "probability": 0.9991243481636047
+        },
+        {
+          "word": " it",
+          "start": 50.06,
+          "end": 50.34,
+          "probability": 0.9973104000091553
+        },
+        {
+          "word": " better.",
+          "start": 50.34,
+          "end": 50.7,
+          "probability": 0.9988413453102112
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 5070,
+      "start": 51.7,
+      "end": 57.2,
+      "text": " He invented a new kind of telescope, an object for looking at the stars,",
+      "tokens": [
+        50414,
+        634,
+        14479,
+        257,
+        777,
+        733,
+        295,
+        26114,
+        11,
+        364,
+        2657,
+        337,
+        1237,
+        412,
+        264,
+        6105,
+        11,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07214478651682536,
+      "compression_ratio": 1.4563106796116505,
+      "no_speech_prob": 0.13072222471237183,
+      "words": [
+        {
+          "word": " He",
+          "start": 51.68000000000001,
+          "end": 52.02,
+          "probability": 0.9474722146987915
+        },
+        {
+          "word": " invented",
+          "start": 52.02,
+          "end": 52.6,
+          "probability": 0.9932352900505066
+        },
+        {
+          "word": " a",
+          "start": 52.6,
+          "end": 52.84,
+          "probability": 0.9967472553253174
+        },
+        {
+          "word": " new",
+          "start": 52.84,
+          "end": 53.24,
+          "probability": 0.9870837926864624
+        },
+        {
+          "word": " kind",
+          "start": 53.24,
+          "end": 53.6,
+          "probability": 0.9934349060058594
+        },
+        {
+          "word": " of",
+          "start": 53.6,
+          "end": 53.8,
+          "probability": 0.9994237422943115
+        },
+        {
+          "word": " telescope,",
+          "start": 53.8,
+          "end": 54.36,
+          "probability": 0.988311231136322
+        },
+        {
+          "word": " an",
+          "start": 54.96,
+          "end": 55.18,
+          "probability": 0.9795230627059937
+        },
+        {
+          "word": " object",
+          "start": 55.18,
+          "end": 55.68,
+          "probability": 0.9801432490348816
+        },
+        {
+          "word": " for",
+          "start": 55.68,
+          "end": 56.04,
+          "probability": 0.9743744730949402
+        },
+        {
+          "word": " looking",
+          "start": 56.04,
+          "end": 56.32,
+          "probability": 0.9948107004165649
+        },
+        {
+          "word": " at",
+          "start": 56.32,
+          "end": 56.54,
+          "probability": 0.9974554181098938
+        },
+        {
+          "word": " the",
+          "start": 56.54,
+          "end": 56.78,
+          "probability": 0.9771793484687805
+        },
+        {
+          "word": " stars,",
+          "start": 56.78,
+          "end": 57.2,
+          "probability": 0.993665874004364
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5070,
+      "start": 57.86,
+      "end": 60.6,
+      "text": " which meant people could see them more clearly.",
+      "tokens": [
+        50714,
+        597,
+        4140,
+        561,
+        727,
+        536,
+        552,
+        544,
+        4448,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07214478651682536,
+      "compression_ratio": 1.4563106796116505,
+      "no_speech_prob": 0.13072222471237183,
+      "words": [
+        {
+          "word": " which",
+          "start": 57.86,
+          "end": 58.1,
+          "probability": 0.9926100373268127
+        },
+        {
+          "word": " meant",
+          "start": 58.1,
+          "end": 58.38,
+          "probability": 0.9916662573814392
+        },
+        {
+          "word": " people",
+          "start": 58.38,
+          "end": 58.8,
+          "probability": 0.9841008186340332
+        },
+        {
+          "word": " could",
+          "start": 58.8,
+          "end": 59.08,
+          "probability": 0.9963622689247131
+        },
+        {
+          "word": " see",
+          "start": 59.08,
+          "end": 59.38,
+          "probability": 0.997399091720581
+        },
+        {
+          "word": " them",
+          "start": 59.38,
+          "end": 59.68,
+          "probability": 0.9973267316818237
+        },
+        {
+          "word": " more",
+          "start": 59.68,
+          "end": 60.02,
+          "probability": 0.9979414343833923
+        },
+        {
+          "word": " clearly.",
+          "start": 60.02,
+          "end": 60.6,
+          "probability": 0.9992601275444031
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5070,
+      "start": 61.78,
+      "end": 67.32,
+      "text": " Some of Newton's work is not very easy to understand unless you are a mathematician.",
+      "tokens": [
+        50864,
+        2188,
+        295,
+        19541,
+        311,
+        589,
+        307,
+        406,
+        588,
+        1858,
+        281,
+        1223,
+        5969,
+        291,
+        366,
+        257,
+        48281,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07214478651682536,
+      "compression_ratio": 1.4563106796116505,
+      "no_speech_prob": 0.13072222471237183,
+      "words": [
+        {
+          "word": " Some",
+          "start": 61.78,
+          "end": 62.04,
+          "probability": 0.9884763956069946
+        },
+        {
+          "word": " of",
+          "start": 62.04,
+          "end": 62.28,
+          "probability": 0.9980892539024353
+        },
+        {
+          "word": " Newton's",
+          "start": 62.28,
+          "end": 62.7,
+          "probability": 0.9938862919807434
+        },
+        {
+          "word": " work",
+          "start": 62.7,
+          "end": 63.04,
+          "probability": 0.9915964007377625
+        },
+        {
+          "word": " is",
+          "start": 63.04,
+          "end": 63.34,
+          "probability": 0.9963321089744568
+        },
+        {
+          "word": " not",
+          "start": 63.34,
+          "end": 63.68,
+          "probability": 0.9987994432449341
+        },
+        {
+          "word": " very",
+          "start": 63.68,
+          "end": 64.08,
+          "probability": 0.985493004322052
+        },
+        {
+          "word": " easy",
+          "start": 64.08,
+          "end": 64.5,
+          "probability": 0.9989678859710693
+        },
+        {
+          "word": " to",
+          "start": 64.5,
+          "end": 64.84,
+          "probability": 0.9991896748542786
+        },
+        {
+          "word": " understand",
+          "start": 64.84,
+          "end": 65.4,
+          "probability": 0.9993979930877686
+        },
+        {
+          "word": " unless",
+          "start": 65.4,
+          "end": 66.12,
+          "probability": 0.48761293292045593
+        },
+        {
+          "word": " you",
+          "start": 66.12,
+          "end": 66.34,
+          "probability": 0.9991645812988281
+        },
+        {
+          "word": " are",
+          "start": 66.34,
+          "end": 66.54,
+          "probability": 0.9831337332725525
+        },
+        {
+          "word": " a",
+          "start": 66.54,
+          "end": 66.76,
+          "probability": 0.9934762120246887
+        },
+        {
+          "word": " mathematician.",
+          "start": 66.76,
+          "end": 67.32,
+          "probability": 0.9972591400146484
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5070,
+      "start": 68.56,
+      "end": 74.84,
+      "text": " His book, The Principles of Mathematics, explained the movement of the planets around the sun.",
+      "tokens": [
+        51214,
+        2812,
+        1446,
+        11,
+        440,
+        38372,
+        2622,
+        295,
+        15776,
+        37541,
+        11,
+        8825,
+        264,
+        3963,
+        295,
+        264,
+        15126,
+        926,
+        264,
+        3295,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07214478651682536,
+      "compression_ratio": 1.4563106796116505,
+      "no_speech_prob": 0.13072222471237183,
+      "words": [
+        {
+          "word": " His",
+          "start": 68.56,
+          "end": 68.8,
+          "probability": 0.99324631690979
+        },
+        {
+          "word": " book,",
+          "start": 68.8,
+          "end": 69.22,
+          "probability": 0.9980282187461853
+        },
+        {
+          "word": " The",
+          "start": 69.48,
+          "end": 69.68,
+          "probability": 0.48885899782180786
+        },
+        {
+          "word": " Principles",
+          "start": 69.68,
+          "end": 70.24,
+          "probability": 0.9869606196880341
+        },
+        {
+          "word": " of",
+          "start": 70.24,
+          "end": 70.44,
+          "probability": 0.9899571537971497
+        },
+        {
+          "word": " Mathematics,",
+          "start": 70.44,
+          "end": 71.14,
+          "probability": 0.9978887736797333
+        },
+        {
+          "word": " explained",
+          "start": 71.84,
+          "end": 72.1,
+          "probability": 0.8674286007881165
+        },
+        {
+          "word": " the",
+          "start": 72.1,
+          "end": 72.46,
+          "probability": 0.9988321661949158
+        },
+        {
+          "word": " movement",
+          "start": 72.46,
+          "end": 72.82,
+          "probability": 0.9945574998855591
+        },
+        {
+          "word": " of",
+          "start": 72.82,
+          "end": 73.04,
+          "probability": 0.9989445805549622
+        },
+        {
+          "word": " the",
+          "start": 73.04,
+          "end": 73.3,
+          "probability": 0.9798015356063843
+        },
+        {
+          "word": " planets",
+          "start": 73.3,
+          "end": 73.64,
+          "probability": 0.9931800365447998
+        },
+        {
+          "word": " around",
+          "start": 73.64,
+          "end": 74.22,
+          "probability": 0.9987020492553711
+        },
+        {
+          "word": " the",
+          "start": 74.22,
+          "end": 74.5,
+          "probability": 0.9990792274475098
+        },
+        {
+          "word": " sun.",
+          "start": 74.5,
+          "end": 74.84,
+          "probability": 0.5012513995170593
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 7484,
+      "start": 75.84,
+      "end": 80.72,
+      "text": " It was an amazing achievement which changed people's ideas about physics.",
+      "tokens": [
+        50414,
+        467,
+        390,
+        364,
+        2243,
+        15838,
+        597,
+        3105,
+        561,
+        311,
+        3487,
+        466,
+        10649,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0625077383858817,
+      "compression_ratio": 1.5172413793103448,
+      "no_speech_prob": 0.04953375831246376,
+      "words": [
+        {
+          "word": " It",
+          "start": 75.7,
+          "end": 76.12,
+          "probability": 0.7448807954788208
+        },
+        {
+          "word": " was",
+          "start": 76.12,
+          "end": 76.4,
+          "probability": 0.9961277842521667
+        },
+        {
+          "word": " an",
+          "start": 76.4,
+          "end": 76.58,
+          "probability": 0.987387478351593
+        },
+        {
+          "word": " amazing",
+          "start": 76.58,
+          "end": 77.18,
+          "probability": 0.9963104128837585
+        },
+        {
+          "word": " achievement",
+          "start": 77.18,
+          "end": 77.82,
+          "probability": 0.993176281452179
+        },
+        {
+          "word": " which",
+          "start": 77.82,
+          "end": 78.24,
+          "probability": 0.7993441820144653
+        },
+        {
+          "word": " changed",
+          "start": 78.24,
+          "end": 78.8,
+          "probability": 0.9938202500343323
+        },
+        {
+          "word": " people's",
+          "start": 78.8,
+          "end": 79.54,
+          "probability": 0.9726599156856537
+        },
+        {
+          "word": " ideas",
+          "start": 79.54,
+          "end": 79.82,
+          "probability": 0.9930019974708557
+        },
+        {
+          "word": " about",
+          "start": 79.82,
+          "end": 80.18,
+          "probability": 0.9951685667037964
+        },
+        {
+          "word": " physics.",
+          "start": 80.18,
+          "end": 80.72,
+          "probability": 0.9685525894165039
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 7484,
+      "start": 81.76,
+      "end": 85.58,
+      "text": " At the time we believed that the sun moved around the earth.",
+      "tokens": [
+        50664,
+        1711,
+        264,
+        565,
+        321,
+        7847,
+        300,
+        264,
+        3295,
+        4259,
+        926,
+        264,
+        4120,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0625077383858817,
+      "compression_ratio": 1.5172413793103448,
+      "no_speech_prob": 0.04953375831246376,
+      "words": [
+        {
+          "word": " At",
+          "start": 81.76,
+          "end": 81.82,
+          "probability": 0.973235547542572
+        },
+        {
+          "word": " the",
+          "start": 81.82,
+          "end": 82.04,
+          "probability": 0.9512550234794617
+        },
+        {
+          "word": " time",
+          "start": 82.04,
+          "end": 82.4,
+          "probability": 0.9993898868560791
+        },
+        {
+          "word": " we",
+          "start": 82.4,
+          "end": 82.94,
+          "probability": 0.33528923988342285
+        },
+        {
+          "word": " believed",
+          "start": 82.94,
+          "end": 83.4,
+          "probability": 0.9869916439056396
+        },
+        {
+          "word": " that",
+          "start": 83.4,
+          "end": 83.76,
+          "probability": 0.9789695739746094
+        },
+        {
+          "word": " the",
+          "start": 83.76,
+          "end": 83.94,
+          "probability": 0.9917313456535339
+        },
+        {
+          "word": " sun",
+          "start": 83.94,
+          "end": 84.14,
+          "probability": 0.41725417971611023
+        },
+        {
+          "word": " moved",
+          "start": 84.14,
+          "end": 84.52,
+          "probability": 0.9865896701812744
+        },
+        {
+          "word": " around",
+          "start": 84.52,
+          "end": 84.92,
+          "probability": 0.9941976070404053
+        },
+        {
+          "word": " the",
+          "start": 84.92,
+          "end": 85.18,
+          "probability": 0.9946777820587158
+        },
+        {
+          "word": " earth.",
+          "start": 85.18,
+          "end": 85.58,
+          "probability": 0.681492805480957
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 7484,
+      "start": 86.66,
+      "end": 92.48,
+      "text": " Because Newton's ideas were so new and different, they made some people very angry.",
+      "tokens": [
+        50914,
+        1436,
+        19541,
+        311,
+        3487,
+        645,
+        370,
+        777,
+        293,
+        819,
+        11,
+        436,
+        1027,
+        512,
+        561,
+        588,
+        6884,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0625077383858817,
+      "compression_ratio": 1.5172413793103448,
+      "no_speech_prob": 0.04953375831246376,
+      "words": [
+        {
+          "word": " Because",
+          "start": 86.66,
+          "end": 87.0,
+          "probability": 0.9794904589653015
+        },
+        {
+          "word": " Newton's",
+          "start": 87.0,
+          "end": 87.58,
+          "probability": 0.9858601689338684
+        },
+        {
+          "word": " ideas",
+          "start": 87.58,
+          "end": 88.0,
+          "probability": 0.996399998664856
+        },
+        {
+          "word": " were",
+          "start": 88.0,
+          "end": 88.38,
+          "probability": 0.9691089391708374
+        },
+        {
+          "word": " so",
+          "start": 88.38,
+          "end": 88.8,
+          "probability": 0.9976422190666199
+        },
+        {
+          "word": " new",
+          "start": 88.8,
+          "end": 89.04,
+          "probability": 0.9973255395889282
+        },
+        {
+          "word": " and",
+          "start": 89.04,
+          "end": 89.36,
+          "probability": 0.996569037437439
+        },
+        {
+          "word": " different,",
+          "start": 89.36,
+          "end": 89.84,
+          "probability": 0.9960224628448486
+        },
+        {
+          "word": " they",
+          "start": 90.34,
+          "end": 90.46,
+          "probability": 0.9853647351264954
+        },
+        {
+          "word": " made",
+          "start": 90.46,
+          "end": 90.76,
+          "probability": 0.9959147572517395
+        },
+        {
+          "word": " some",
+          "start": 90.76,
+          "end": 91.1,
+          "probability": 0.9950439929962158
+        },
+        {
+          "word": " people",
+          "start": 91.1,
+          "end": 91.5,
+          "probability": 0.9985496401786804
+        },
+        {
+          "word": " very",
+          "start": 91.5,
+          "end": 92.0,
+          "probability": 0.9928204417228699
+        },
+        {
+          "word": " angry.",
+          "start": 92.0,
+          "end": 92.48,
+          "probability": 0.9987521171569824
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 7484,
+      "start": 93.5,
+      "end": 100.28,
+      "text": " So it's perhaps not surprising that later in life Newton stopped showing people his work.",
+      "tokens": [
+        51264,
+        407,
+        309,
+        311,
+        4317,
+        406,
+        8830,
+        300,
+        1780,
+        294,
+        993,
+        19541,
+        5936,
+        4099,
+        561,
+        702,
+        589,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0625077383858817,
+      "compression_ratio": 1.5172413793103448,
+      "no_speech_prob": 0.04953375831246376,
+      "words": [
+        {
+          "word": " So",
+          "start": 93.5,
+          "end": 93.96,
+          "probability": 0.9829022884368896
+        },
+        {
+          "word": " it's",
+          "start": 93.96,
+          "end": 94.46,
+          "probability": 0.7809973955154419
+        },
+        {
+          "word": " perhaps",
+          "start": 94.46,
+          "end": 94.78,
+          "probability": 0.9899145364761353
+        },
+        {
+          "word": " not",
+          "start": 94.78,
+          "end": 95.1,
+          "probability": 0.9981525540351868
+        },
+        {
+          "word": " surprising",
+          "start": 95.1,
+          "end": 95.72,
+          "probability": 0.990522563457489
+        },
+        {
+          "word": " that",
+          "start": 95.72,
+          "end": 96.38,
+          "probability": 0.9069251418113708
+        },
+        {
+          "word": " later",
+          "start": 96.38,
+          "end": 96.78,
+          "probability": 0.9268290400505066
+        },
+        {
+          "word": " in",
+          "start": 96.78,
+          "end": 97.06,
+          "probability": 0.9971158504486084
+        },
+        {
+          "word": " life",
+          "start": 97.06,
+          "end": 97.52,
+          "probability": 0.9977546334266663
+        },
+        {
+          "word": " Newton",
+          "start": 97.52,
+          "end": 98.0,
+          "probability": 0.6969428062438965
+        },
+        {
+          "word": " stopped",
+          "start": 98.0,
+          "end": 98.48,
+          "probability": 0.9796336889266968
+        },
+        {
+          "word": " showing",
+          "start": 98.48,
+          "end": 98.84,
+          "probability": 0.9974080920219421
+        },
+        {
+          "word": " people",
+          "start": 98.84,
+          "end": 99.32,
+          "probability": 0.9976748824119568
+        },
+        {
+          "word": " his",
+          "start": 99.32,
+          "end": 99.64,
+          "probability": 0.9984662532806396
+        },
+        {
+          "word": " work.",
+          "start": 99.64,
+          "end": 100.28,
+          "probability": 0.9981328845024109
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 10028,
+      "start": 101.28,
+      "end": 108.28,
+      "text": " Although everyone remembers Newton as a great scientist, he had some strange ideas too.",
+      "tokens": [
+        50414,
+        5780,
+        1518,
+        26228,
+        19541,
+        382,
+        257,
+        869,
+        12662,
+        11,
+        415,
+        632,
+        512,
+        5861,
+        3487,
+        886,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04214426827809167,
+      "compression_ratio": 1.383419689119171,
+      "no_speech_prob": 0.007434853818267584,
+      "words": [
+        {
+          "word": " Although",
+          "start": 101.28,
+          "end": 102.0,
+          "probability": 0.9380552768707275
+        },
+        {
+          "word": " everyone",
+          "start": 102.0,
+          "end": 102.64,
+          "probability": 0.9682931303977966
+        },
+        {
+          "word": " remembers",
+          "start": 102.64,
+          "end": 103.28,
+          "probability": 0.9915865659713745
+        },
+        {
+          "word": " Newton",
+          "start": 103.28,
+          "end": 103.72,
+          "probability": 0.9873936176300049
+        },
+        {
+          "word": " as",
+          "start": 103.72,
+          "end": 104.02,
+          "probability": 0.995139479637146
+        },
+        {
+          "word": " a",
+          "start": 104.02,
+          "end": 104.34,
+          "probability": 0.993110179901123
+        },
+        {
+          "word": " great",
+          "start": 104.34,
+          "end": 104.6,
+          "probability": 0.9905531406402588
+        },
+        {
+          "word": " scientist,",
+          "start": 104.6,
+          "end": 105.28,
+          "probability": 0.9892513155937195
+        },
+        {
+          "word": " he",
+          "start": 105.82,
+          "end": 105.96,
+          "probability": 0.9875611662864685
+        },
+        {
+          "word": " had",
+          "start": 105.96,
+          "end": 106.26,
+          "probability": 0.9917057752609253
+        },
+        {
+          "word": " some",
+          "start": 106.26,
+          "end": 106.74,
+          "probability": 0.9968522191047668
+        },
+        {
+          "word": " strange",
+          "start": 106.74,
+          "end": 107.16,
+          "probability": 0.9934408068656921
+        },
+        {
+          "word": " ideas",
+          "start": 107.16,
+          "end": 107.72,
+          "probability": 0.9980871677398682
+        },
+        {
+          "word": " too.",
+          "start": 107.72,
+          "end": 108.28,
+          "probability": 0.7879648804664612
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 10028,
+      "start": 109.04,
+      "end": 117.48,
+      "text": " Like many people at the time, Newton tried to change ordinary metal into gold and did lots of research about it.",
+      "tokens": [
+        50764,
+        1743,
+        867,
+        561,
+        412,
+        264,
+        565,
+        11,
+        19541,
+        3031,
+        281,
+        1319,
+        10547,
+        5760,
+        666,
+        3821,
+        293,
+        630,
+        3195,
+        295,
+        2132,
+        466,
+        309,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04214426827809167,
+      "compression_ratio": 1.383419689119171,
+      "no_speech_prob": 0.007434853818267584,
+      "words": [
+        {
+          "word": " Like",
+          "start": 109.04,
+          "end": 109.32,
+          "probability": 0.9893883466720581
+        },
+        {
+          "word": " many",
+          "start": 109.32,
+          "end": 109.64,
+          "probability": 0.9982112646102905
+        },
+        {
+          "word": " people",
+          "start": 109.64,
+          "end": 110.0,
+          "probability": 0.9967252612113953
+        },
+        {
+          "word": " at",
+          "start": 110.0,
+          "end": 110.2,
+          "probability": 0.9905698299407959
+        },
+        {
+          "word": " the",
+          "start": 110.2,
+          "end": 110.38,
+          "probability": 0.9671865105628967
+        },
+        {
+          "word": " time,",
+          "start": 110.38,
+          "end": 110.78,
+          "probability": 0.9995158910751343
+        },
+        {
+          "word": " Newton",
+          "start": 111.3,
+          "end": 111.54,
+          "probability": 0.9945342540740967
+        },
+        {
+          "word": " tried",
+          "start": 111.54,
+          "end": 111.98,
+          "probability": 0.9965464472770691
+        },
+        {
+          "word": " to",
+          "start": 111.98,
+          "end": 112.34,
+          "probability": 0.9988906979560852
+        },
+        {
+          "word": " change",
+          "start": 112.34,
+          "end": 112.6,
+          "probability": 0.9977008700370789
+        },
+        {
+          "word": " ordinary",
+          "start": 112.6,
+          "end": 113.22,
+          "probability": 0.9839026927947998
+        },
+        {
+          "word": " metal",
+          "start": 113.22,
+          "end": 113.68,
+          "probability": 0.9967576861381531
+        },
+        {
+          "word": " into",
+          "start": 113.68,
+          "end": 114.14,
+          "probability": 0.9940136075019836
+        },
+        {
+          "word": " gold",
+          "start": 114.14,
+          "end": 114.62,
+          "probability": 0.9962033629417419
+        },
+        {
+          "word": " and",
+          "start": 114.62,
+          "end": 115.14,
+          "probability": 0.8844636678695679
+        },
+        {
+          "word": " did",
+          "start": 115.14,
+          "end": 115.5,
+          "probability": 0.9956323504447937
+        },
+        {
+          "word": " lots",
+          "start": 115.5,
+          "end": 115.88,
+          "probability": 0.9828158020973206
+        },
+        {
+          "word": " of",
+          "start": 115.88,
+          "end": 116.2,
+          "probability": 0.9989702701568604
+        },
+        {
+          "word": " research",
+          "start": 116.2,
+          "end": 116.64,
+          "probability": 0.9984191656112671
+        },
+        {
+          "word": " about",
+          "start": 116.64,
+          "end": 117.06,
+          "probability": 0.9952287673950195
+        },
+        {
+          "word": " it.",
+          "start": 117.06,
+          "end": 117.48,
+          "probability": 0.9988136291503906
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 10028,
+      "start": 119.54,
+      "end": 127.1,
+      "text": " Carl Sagan was an American astronomer who lived from 1934 to 1996.",
+      "tokens": [
+        51314,
+        14256,
+        318,
+        14167,
+        390,
+        364,
+        2665,
+        11117,
+        14301,
+        567,
+        5152,
+        490,
+        1294,
+        12249,
+        281,
+        22690,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04214426827809167,
+      "compression_ratio": 1.383419689119171,
+      "no_speech_prob": 0.007434853818267584,
+      "words": [
+        {
+          "word": " Carl",
+          "start": 119.54,
+          "end": 119.92,
+          "probability": 0.6484876275062561
+        },
+        {
+          "word": " Sagan",
+          "start": 119.92,
+          "end": 120.46,
+          "probability": 0.9954099357128143
+        },
+        {
+          "word": " was",
+          "start": 120.46,
+          "end": 121.08,
+          "probability": 0.989872932434082
+        },
+        {
+          "word": " an",
+          "start": 121.08,
+          "end": 121.36,
+          "probability": 0.9910518527030945
+        },
+        {
+          "word": " American",
+          "start": 121.36,
+          "end": 121.88,
+          "probability": 0.9913802742958069
+        },
+        {
+          "word": " astronomer",
+          "start": 121.88,
+          "end": 122.66,
+          "probability": 0.9904004037380219
+        },
+        {
+          "word": " who",
+          "start": 122.66,
+          "end": 123.02,
+          "probability": 0.9618489742279053
+        },
+        {
+          "word": " lived",
+          "start": 123.02,
+          "end": 123.32,
+          "probability": 0.9963164329528809
+        },
+        {
+          "word": " from",
+          "start": 123.32,
+          "end": 123.74,
+          "probability": 0.9963036775588989
+        },
+        {
+          "word": " 1934",
+          "start": 123.74,
+          "end": 125.16,
+          "probability": 0.9945726692676544
+        },
+        {
+          "word": " to",
+          "start": 125.16,
+          "end": 125.74,
+          "probability": 0.913870096206665
+        },
+        {
+          "word": " 1996.",
+          "start": 125.74,
+          "end": 127.1,
+          "probability": 0.9928478002548218
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 12710,
+      "start": 127.1,
+      "end": 134.1,
+      "text": " His scientific achievements are not quite as amazing as Newton's or Einstein's.",
+      "tokens": [
+        50364,
+        2812,
+        8134,
+        21420,
+        366,
+        406,
+        1596,
+        382,
+        2243,
+        382,
+        19541,
+        311,
+        420,
+        23486,
+        311,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04948288495423364,
+      "compression_ratio": 1.3846153846153846,
+      "no_speech_prob": 0.0035618427209556103,
+      "words": [
+        {
+          "word": " His",
+          "start": 127.1,
+          "end": 128.46,
+          "probability": 0.6094596982002258
+        },
+        {
+          "word": " scientific",
+          "start": 128.46,
+          "end": 129.18,
+          "probability": 0.9952694773674011
+        },
+        {
+          "word": " achievements",
+          "start": 129.18,
+          "end": 129.92,
+          "probability": 0.9918376803398132
+        },
+        {
+          "word": " are",
+          "start": 129.92,
+          "end": 130.44,
+          "probability": 0.9863031506538391
+        },
+        {
+          "word": " not",
+          "start": 130.44,
+          "end": 130.78,
+          "probability": 0.9970195889472961
+        },
+        {
+          "word": " quite",
+          "start": 130.78,
+          "end": 131.2,
+          "probability": 0.9774612784385681
+        },
+        {
+          "word": " as",
+          "start": 131.2,
+          "end": 131.52,
+          "probability": 0.9970044493675232
+        },
+        {
+          "word": " amazing",
+          "start": 131.52,
+          "end": 131.98,
+          "probability": 0.9948869347572327
+        },
+        {
+          "word": " as",
+          "start": 131.98,
+          "end": 132.5,
+          "probability": 0.9973803162574768
+        },
+        {
+          "word": " Newton's",
+          "start": 132.5,
+          "end": 133.38,
+          "probability": 0.9851091802120209
+        },
+        {
+          "word": " or",
+          "start": 133.38,
+          "end": 133.56,
+          "probability": 0.9708964824676514
+        },
+        {
+          "word": " Einstein's.",
+          "start": 133.56,
+          "end": 134.1,
+          "probability": 0.9953088164329529
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 12710,
+      "start": 134.92,
+      "end": 143.1,
+      "text": " However, Sagan knew how to explain complicated scientific ideas so that people could understand them.",
+      "tokens": [
+        50714,
+        2908,
+        11,
+        318,
+        14167,
+        2586,
+        577,
+        281,
+        2903,
+        6179,
+        8134,
+        3487,
+        370,
+        300,
+        561,
+        727,
+        1223,
+        552,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04948288495423364,
+      "compression_ratio": 1.3846153846153846,
+      "no_speech_prob": 0.0035618427209556103,
+      "words": [
+        {
+          "word": " However,",
+          "start": 134.92,
+          "end": 135.62,
+          "probability": 0.989020049571991
+        },
+        {
+          "word": " Sagan",
+          "start": 136.14,
+          "end": 136.34,
+          "probability": 0.9844112396240234
+        },
+        {
+          "word": " knew",
+          "start": 136.34,
+          "end": 136.76,
+          "probability": 0.9970755577087402
+        },
+        {
+          "word": " how",
+          "start": 136.76,
+          "end": 137.04,
+          "probability": 0.9975042939186096
+        },
+        {
+          "word": " to",
+          "start": 137.04,
+          "end": 137.48,
+          "probability": 0.9993608593940735
+        },
+        {
+          "word": " explain",
+          "start": 137.48,
+          "end": 138.0,
+          "probability": 0.9975392818450928
+        },
+        {
+          "word": " complicated",
+          "start": 138.0,
+          "end": 139.04,
+          "probability": 0.9946126937866211
+        },
+        {
+          "word": " scientific",
+          "start": 139.04,
+          "end": 139.84,
+          "probability": 0.9852638244628906
+        },
+        {
+          "word": " ideas",
+          "start": 139.84,
+          "end": 140.54,
+          "probability": 0.9987194538116455
+        },
+        {
+          "word": " so",
+          "start": 140.54,
+          "end": 141.16,
+          "probability": 0.8580959439277649
+        },
+        {
+          "word": " that",
+          "start": 141.16,
+          "end": 141.4,
+          "probability": 0.9906322956085205
+        },
+        {
+          "word": " people",
+          "start": 141.4,
+          "end": 141.82,
+          "probability": 0.9974107146263123
+        },
+        {
+          "word": " could",
+          "start": 141.82,
+          "end": 142.18,
+          "probability": 0.993811845779419
+        },
+        {
+          "word": " understand",
+          "start": 142.18,
+          "end": 142.72,
+          "probability": 0.9991499185562134
+        },
+        {
+          "word": " them.",
+          "start": 142.72,
+          "end": 143.1,
+          "probability": 0.9975449442863464
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 12710,
+      "start": 143.88,
+      "end": 151.1,
+      "text": " He wrote popular books about astronomy and had a TV show called The Cosmos in the 1980s.",
+      "tokens": [
+        51114,
+        634,
+        4114,
+        3743,
+        3642,
+        466,
+        37844,
+        293,
+        632,
+        257,
+        3558,
+        855,
+        1219,
+        440,
+        15855,
+        3415,
+        294,
+        264,
+        13626,
+        82,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04948288495423364,
+      "compression_ratio": 1.3846153846153846,
+      "no_speech_prob": 0.0035618427209556103,
+      "words": [
+        {
+          "word": " He",
+          "start": 143.88,
+          "end": 144.02,
+          "probability": 0.9916266202926636
+        },
+        {
+          "word": " wrote",
+          "start": 144.02,
+          "end": 144.42,
+          "probability": 0.9966206550598145
+        },
+        {
+          "word": " popular",
+          "start": 144.42,
+          "end": 144.96,
+          "probability": 0.9950863718986511
+        },
+        {
+          "word": " books",
+          "start": 144.96,
+          "end": 145.46,
+          "probability": 0.9988744854927063
+        },
+        {
+          "word": " about",
+          "start": 145.46,
+          "end": 145.86,
+          "probability": 0.9981891512870789
+        },
+        {
+          "word": " astronomy",
+          "start": 145.86,
+          "end": 146.5,
+          "probability": 0.9871758818626404
+        },
+        {
+          "word": " and",
+          "start": 146.5,
+          "end": 147.3,
+          "probability": 0.8541253209114075
+        },
+        {
+          "word": " had",
+          "start": 147.3,
+          "end": 147.56,
+          "probability": 0.9899032115936279
+        },
+        {
+          "word": " a",
+          "start": 147.56,
+          "end": 147.7,
+          "probability": 0.9973909258842468
+        },
+        {
+          "word": " TV",
+          "start": 147.7,
+          "end": 148.06,
+          "probability": 0.9714056253433228
+        },
+        {
+          "word": " show",
+          "start": 148.06,
+          "end": 148.52,
+          "probability": 0.9921810626983643
+        },
+        {
+          "word": " called",
+          "start": 148.52,
+          "end": 148.98,
+          "probability": 0.9727704524993896
+        },
+        {
+          "word": " The",
+          "start": 148.98,
+          "end": 149.34,
+          "probability": 0.4237234890460968
+        },
+        {
+          "word": " Cosmos",
+          "start": 149.34,
+          "end": 149.98,
+          "probability": 0.9717975854873657
+        },
+        {
+          "word": " in",
+          "start": 149.98,
+          "end": 150.5,
+          "probability": 0.9337062239646912
+        },
+        {
+          "word": " the",
+          "start": 150.5,
+          "end": 150.66,
+          "probability": 0.9874526858329773
+        },
+        {
+          "word": " 1980s.",
+          "start": 150.66,
+          "end": 151.12,
+          "probability": 0.9587067067623138
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 15112,
+      "start": 152.18,
+      "end": 161.0,
+      "text": " Because he was very excited about astronomy, he was able to show ordinary people how exciting it is too.",
+      "tokens": [
+        50414,
+        1436,
+        415,
+        390,
+        588,
+        2919,
+        466,
+        37844,
+        11,
+        415,
+        390,
+        1075,
+        281,
+        855,
+        10547,
+        561,
+        577,
+        4670,
+        309,
+        307,
+        886,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09707486218419568,
+      "compression_ratio": 1.423529411764706,
+      "no_speech_prob": 0.05800401046872139,
+      "words": [
+        {
+          "word": " Because",
+          "start": 152.18,
+          "end": 153.1,
+          "probability": 0.4920491874217987
+        },
+        {
+          "word": " he",
+          "start": 153.1,
+          "end": 153.34,
+          "probability": 0.9907535314559937
+        },
+        {
+          "word": " was",
+          "start": 153.34,
+          "end": 153.7,
+          "probability": 0.998374342918396
+        },
+        {
+          "word": " very",
+          "start": 153.7,
+          "end": 154.1,
+          "probability": 0.9870263934135437
+        },
+        {
+          "word": " excited",
+          "start": 154.1,
+          "end": 154.78,
+          "probability": 0.9947750568389893
+        },
+        {
+          "word": " about",
+          "start": 154.78,
+          "end": 155.18,
+          "probability": 0.9985138773918152
+        },
+        {
+          "word": " astronomy,",
+          "start": 155.18,
+          "end": 155.88,
+          "probability": 0.9813354015350342
+        },
+        {
+          "word": " he",
+          "start": 156.44,
+          "end": 156.54,
+          "probability": 0.9916737675666809
+        },
+        {
+          "word": " was",
+          "start": 156.54,
+          "end": 156.8,
+          "probability": 0.9985256791114807
+        },
+        {
+          "word": " able",
+          "start": 156.8,
+          "end": 157.14,
+          "probability": 0.9919358491897583
+        },
+        {
+          "word": " to",
+          "start": 157.14,
+          "end": 157.5,
+          "probability": 0.9975826740264893
+        },
+        {
+          "word": " show",
+          "start": 157.5,
+          "end": 157.86,
+          "probability": 0.9960989952087402
+        },
+        {
+          "word": " ordinary",
+          "start": 157.86,
+          "end": 158.52,
+          "probability": 0.9961506128311157
+        },
+        {
+          "word": " people",
+          "start": 158.52,
+          "end": 159.1,
+          "probability": 0.9985873699188232
+        },
+        {
+          "word": " how",
+          "start": 159.1,
+          "end": 159.42,
+          "probability": 0.9925023317337036
+        },
+        {
+          "word": " exciting",
+          "start": 159.42,
+          "end": 160.0,
+          "probability": 0.9965788722038269
+        },
+        {
+          "word": " it",
+          "start": 160.0,
+          "end": 160.2,
+          "probability": 0.9963733553886414
+        },
+        {
+          "word": " is",
+          "start": 160.2,
+          "end": 160.54,
+          "probability": 0.9944175481796265
+        },
+        {
+          "word": " too.",
+          "start": 160.54,
+          "end": 161.0,
+          "probability": 0.6157985925674438
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 15112,
+      "start": 161.46,
+      "end": 164.9,
+      "text": " A talent that not many scientists have.",
+      "tokens": [
+        50814,
+        316,
+        8301,
+        300,
+        406,
+        867,
+        7708,
+        362,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09707486218419568,
+      "compression_ratio": 1.423529411764706,
+      "no_speech_prob": 0.05800401046872139,
+      "words": [
+        {
+          "word": " A",
+          "start": 161.46,
+          "end": 161.68,
+          "probability": 0.9817637801170349
+        },
+        {
+          "word": " talent",
+          "start": 161.68,
+          "end": 162.12,
+          "probability": 0.99553382396698
+        },
+        {
+          "word": " that",
+          "start": 162.12,
+          "end": 162.68,
+          "probability": 0.9629467129707336
+        },
+        {
+          "word": " not",
+          "start": 162.68,
+          "end": 163.26,
+          "probability": 0.9836840629577637
+        },
+        {
+          "word": " many",
+          "start": 163.26,
+          "end": 163.66,
+          "probability": 0.9943963289260864
+        },
+        {
+          "word": " scientists",
+          "start": 163.66,
+          "end": 164.32,
+          "probability": 0.9891771674156189
+        },
+        {
+          "word": " have.",
+          "start": 164.32,
+          "end": 164.9,
+          "probability": 0.9976039528846741
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 15112,
+      "start": 165.9,
+      "end": 176.18,
+      "text": " The show had 135 million viewers from all over the world, which even today is quite a few people.",
+      "tokens": [
+        51014,
+        440,
+        855,
+        632,
+        42652,
+        2459,
+        8499,
+        490,
+        439,
+        670,
+        264,
+        1002,
+        11,
+        597,
+        754,
+        965,
+        307,
+        1596,
+        257,
+        1326,
+        561,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09707486218419568,
+      "compression_ratio": 1.423529411764706,
+      "no_speech_prob": 0.05800401046872139,
+      "words": [
+        {
+          "word": " The",
+          "start": 165.9,
+          "end": 166.02,
+          "probability": 0.9689813256263733
+        },
+        {
+          "word": " show",
+          "start": 166.02,
+          "end": 166.5,
+          "probability": 0.994504988193512
+        },
+        {
+          "word": " had",
+          "start": 166.5,
+          "end": 167.08,
+          "probability": 0.9892187714576721
+        },
+        {
+          "word": " 135",
+          "start": 167.08,
+          "end": 168.54,
+          "probability": 0.9433849453926086
+        },
+        {
+          "word": " million",
+          "start": 168.54,
+          "end": 169.54,
+          "probability": 0.964838981628418
+        },
+        {
+          "word": " viewers",
+          "start": 169.54,
+          "end": 170.14,
+          "probability": 0.9808030128479004
+        },
+        {
+          "word": " from",
+          "start": 170.14,
+          "end": 170.66,
+          "probability": 0.9581085443496704
+        },
+        {
+          "word": " all",
+          "start": 170.66,
+          "end": 171.06,
+          "probability": 0.9981982111930847
+        },
+        {
+          "word": " over",
+          "start": 171.06,
+          "end": 171.42,
+          "probability": 0.9975728392601013
+        },
+        {
+          "word": " the",
+          "start": 171.42,
+          "end": 171.68,
+          "probability": 0.998976469039917
+        },
+        {
+          "word": " world,",
+          "start": 171.68,
+          "end": 172.2,
+          "probability": 0.9936290383338928
+        },
+        {
+          "word": " which",
+          "start": 172.52,
+          "end": 172.94,
+          "probability": 0.9936379790306091
+        },
+        {
+          "word": " even",
+          "start": 172.94,
+          "end": 173.44,
+          "probability": 0.6646987199783325
+        },
+        {
+          "word": " today",
+          "start": 173.44,
+          "end": 174.14,
+          "probability": 0.9965903759002686
+        },
+        {
+          "word": " is",
+          "start": 174.14,
+          "end": 174.7,
+          "probability": 0.8446173071861267
+        },
+        {
+          "word": " quite",
+          "start": 174.7,
+          "end": 175.12,
+          "probability": 0.9964397549629211
+        },
+        {
+          "word": " a",
+          "start": 175.12,
+          "end": 175.36,
+          "probability": 0.9985368251800537
+        },
+        {
+          "word": " few",
+          "start": 175.36,
+          "end": 175.58,
+          "probability": 0.9993826150894165
+        },
+        {
+          "word": " people.",
+          "start": 175.58,
+          "end": 176.18,
+          "probability": 0.990704357624054
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 17618,
+      "start": 176.18,
+      "end": 187.02,
+      "text": " However, some astronomers believed that Carl Sagan couldn't be so popular and a serious scientist at the same time.",
+      "tokens": [
+        50364,
+        2908,
+        11,
+        512,
+        43151,
+        7847,
+        300,
+        14256,
+        318,
+        14167,
+        2809,
+        380,
+        312,
+        370,
+        3743,
+        293,
+        257,
+        3156,
+        12662,
+        412,
+        264,
+        912,
+        565,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05861403865198935,
+      "compression_ratio": 1.4530386740331491,
+      "no_speech_prob": 0.02584448643028736,
+      "words": [
+        {
+          "word": " However,",
+          "start": 176.18,
+          "end": 177.64,
+          "probability": 0.9837667942047119
+        },
+        {
+          "word": " some",
+          "start": 178.06,
+          "end": 178.3,
+          "probability": 0.9958586096763611
+        },
+        {
+          "word": " astronomers",
+          "start": 178.3,
+          "end": 178.96,
+          "probability": 0.9890086054801941
+        },
+        {
+          "word": " believed",
+          "start": 178.96,
+          "end": 179.66,
+          "probability": 0.9749099612236023
+        },
+        {
+          "word": " that",
+          "start": 179.66,
+          "end": 180.16,
+          "probability": 0.9903644919395447
+        },
+        {
+          "word": " Carl",
+          "start": 180.16,
+          "end": 180.48,
+          "probability": 0.9815214276313782
+        },
+        {
+          "word": " Sagan",
+          "start": 180.48,
+          "end": 180.92,
+          "probability": 0.9965024292469025
+        },
+        {
+          "word": " couldn't",
+          "start": 180.92,
+          "end": 181.52,
+          "probability": 0.9878336489200592
+        },
+        {
+          "word": " be",
+          "start": 181.52,
+          "end": 182.02,
+          "probability": 0.998635470867157
+        },
+        {
+          "word": " so",
+          "start": 182.02,
+          "end": 182.46,
+          "probability": 0.9980467557907104
+        },
+        {
+          "word": " popular",
+          "start": 182.46,
+          "end": 183.14,
+          "probability": 0.993286669254303
+        },
+        {
+          "word": " and",
+          "start": 183.14,
+          "end": 183.96,
+          "probability": 0.6641221642494202
+        },
+        {
+          "word": " a",
+          "start": 183.96,
+          "end": 184.28,
+          "probability": 0.9933248162269592
+        },
+        {
+          "word": " serious",
+          "start": 184.28,
+          "end": 184.74,
+          "probability": 0.9945747256278992
+        },
+        {
+          "word": " scientist",
+          "start": 184.74,
+          "end": 185.56,
+          "probability": 0.9935593605041504
+        },
+        {
+          "word": " at",
+          "start": 185.56,
+          "end": 186.0,
+          "probability": 0.9774335026741028
+        },
+        {
+          "word": " the",
+          "start": 186.0,
+          "end": 186.16,
+          "probability": 0.9985020160675049
+        },
+        {
+          "word": " same",
+          "start": 186.16,
+          "end": 186.5,
+          "probability": 0.9993168115615845
+        },
+        {
+          "word": " time.",
+          "start": 186.5,
+          "end": 187.02,
+          "probability": 0.9985427856445312
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 17618,
+      "start": 187.76,
+      "end": 195.04,
+      "text": " This was made worse when Sagan became one of the first scientists to talk about global warming.",
+      "tokens": [
+        50914,
+        639,
+        390,
+        1027,
+        5324,
+        562,
+        318,
+        14167,
+        3062,
+        472,
+        295,
+        264,
+        700,
+        7708,
+        281,
+        751,
+        466,
+        4338,
+        17983,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05861403865198935,
+      "compression_ratio": 1.4530386740331491,
+      "no_speech_prob": 0.02584448643028736,
+      "words": [
+        {
+          "word": " This",
+          "start": 187.76,
+          "end": 188.12,
+          "probability": 0.9938157796859741
+        },
+        {
+          "word": " was",
+          "start": 188.12,
+          "end": 188.44,
+          "probability": 0.9975922703742981
+        },
+        {
+          "word": " made",
+          "start": 188.44,
+          "end": 188.78,
+          "probability": 0.9975913763046265
+        },
+        {
+          "word": " worse",
+          "start": 188.78,
+          "end": 189.32,
+          "probability": 0.9955434203147888
+        },
+        {
+          "word": " when",
+          "start": 189.32,
+          "end": 189.92,
+          "probability": 0.9787598252296448
+        },
+        {
+          "word": " Sagan",
+          "start": 189.92,
+          "end": 190.5,
+          "probability": 0.9972476959228516
+        },
+        {
+          "word": " became",
+          "start": 190.5,
+          "end": 191.02,
+          "probability": 0.9948986172676086
+        },
+        {
+          "word": " one",
+          "start": 191.02,
+          "end": 191.3,
+          "probability": 0.9945335388183594
+        },
+        {
+          "word": " of",
+          "start": 191.3,
+          "end": 191.44,
+          "probability": 0.9963730573654175
+        },
+        {
+          "word": " the",
+          "start": 191.44,
+          "end": 191.62,
+          "probability": 0.9976370334625244
+        },
+        {
+          "word": " first",
+          "start": 191.62,
+          "end": 192.1,
+          "probability": 0.9986880421638489
+        },
+        {
+          "word": " scientists",
+          "start": 192.1,
+          "end": 192.84,
+          "probability": 0.995311975479126
+        },
+        {
+          "word": " to",
+          "start": 192.84,
+          "end": 193.26,
+          "probability": 0.9991031885147095
+        },
+        {
+          "word": " talk",
+          "start": 193.26,
+          "end": 193.5,
+          "probability": 0.9989045858383179
+        },
+        {
+          "word": " about",
+          "start": 193.5,
+          "end": 193.94,
+          "probability": 0.9993923902511597
+        },
+        {
+          "word": " global",
+          "start": 193.94,
+          "end": 194.44,
+          "probability": 0.9528080821037292
+        },
+        {
+          "word": " warming.",
+          "start": 194.44,
+          "end": 195.04,
+          "probability": 0.9993011951446533
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 17618,
+      "start": 196.1,
+      "end": 200.4,
+      "text": " At the time, no one understood his ideas very well.",
+      "tokens": [
+        51314,
+        1711,
+        264,
+        565,
+        11,
+        572,
+        472,
+        7320,
+        702,
+        3487,
+        588,
+        731,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05861403865198935,
+      "compression_ratio": 1.4530386740331491,
+      "no_speech_prob": 0.02584448643028736,
+      "words": [
+        {
+          "word": " At",
+          "start": 196.1,
+          "end": 196.36,
+          "probability": 0.9975368976593018
+        },
+        {
+          "word": " the",
+          "start": 196.36,
+          "end": 196.58,
+          "probability": 0.9852264523506165
+        },
+        {
+          "word": " time,",
+          "start": 196.58,
+          "end": 197.1,
+          "probability": 0.9994183778762817
+        },
+        {
+          "word": " no",
+          "start": 197.5,
+          "end": 197.68,
+          "probability": 0.9955503940582275
+        },
+        {
+          "word": " one",
+          "start": 197.68,
+          "end": 197.94,
+          "probability": 0.8376145362854004
+        },
+        {
+          "word": " understood",
+          "start": 197.94,
+          "end": 198.58,
+          "probability": 0.9966123700141907
+        },
+        {
+          "word": " his",
+          "start": 198.58,
+          "end": 198.84,
+          "probability": 0.9988510608673096
+        },
+        {
+          "word": " ideas",
+          "start": 198.84,
+          "end": 199.5,
+          "probability": 0.9982181191444397
+        },
+        {
+          "word": " very",
+          "start": 199.5,
+          "end": 200.0,
+          "probability": 0.9961131811141968
+        },
+        {
+          "word": " well.",
+          "start": 200.0,
+          "end": 200.4,
+          "probability": 0.9997830986976624
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 20040,
+      "start": 200.4,
+      "end": 205.7,
+      "text": " And it became another reason why other scientists disliked him.",
+      "tokens": [
+        50364,
+        400,
+        309,
+        3062,
+        1071,
+        1778,
+        983,
+        661,
+        7708,
+        717,
+        13462,
+        292,
+        796,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05666431784629822,
+      "compression_ratio": 0.9692307692307692,
+      "no_speech_prob": 0.07646429538726807,
+      "words": [
+        {
+          "word": " And",
+          "start": 200.4,
+          "end": 201.24,
+          "probability": 0.7677575349807739
+        },
+        {
+          "word": " it",
+          "start": 201.24,
+          "end": 201.64,
+          "probability": 0.8863849639892578
+        },
+        {
+          "word": " became",
+          "start": 201.64,
+          "end": 202.02,
+          "probability": 0.989447832107544
+        },
+        {
+          "word": " another",
+          "start": 202.02,
+          "end": 202.5,
+          "probability": 0.9803957343101501
+        },
+        {
+          "word": " reason",
+          "start": 202.5,
+          "end": 203.06,
+          "probability": 0.9986276626586914
+        },
+        {
+          "word": " why",
+          "start": 203.06,
+          "end": 203.52,
+          "probability": 0.9810489416122437
+        },
+        {
+          "word": " other",
+          "start": 203.52,
+          "end": 203.86,
+          "probability": 0.9934766888618469
+        },
+        {
+          "word": " scientists",
+          "start": 203.86,
+          "end": 204.7,
+          "probability": 0.9841268658638
+        },
+        {
+          "word": " disliked",
+          "start": 204.7,
+          "end": 205.44,
+          "probability": 0.9974343776702881
+        },
+        {
+          "word": " him.",
+          "start": 205.44,
+          "end": 205.7,
+          "probability": 0.9980138540267944
+        }
+      ]
+    }
+  ]
+}

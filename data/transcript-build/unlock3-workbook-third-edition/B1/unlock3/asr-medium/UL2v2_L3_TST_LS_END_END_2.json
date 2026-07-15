@@ -1,0 +1,3878 @@
+{
+  "model": "small.en",
+  "language": "en",
+  "text": "End of course test, track two. I love it when the power stops working. Why? Well, it gives me a chance to see the night sky. Something that fewer and fewer people see these days. Hi everyone, and welcome to this week's podcast. I'm talking about a threat you might not know about. Light pollution. That is, the light from street lights and houses that stop us from seeing the beautiful night sky. The light bulb is one of the greatest things ever invented. We all agree on that. Can you imagine what life would be like without them? By turning on a light switch, we have the power to turn the dark into light. But this also causes problems. More than 80% of the world's population lives under skies that are polluted by light. To put it another way, over 6 billion people live with light pollution. In some places that have a lot of light pollution, like Singapore, there is so much light that you can only see 0.05% of the stars in the sky. About 14% of the world's population don't even use their ability to see at night. Some cities, like Las Vegas, are so bright that you can see their lights from over 65km away. Light pollution might not be as serious as other issues, but it does cause problems for the environment. It is bad for animals, like birds, that move a lot at night because it can make them go the wrong way. Studies show that light pollution affects other species that don't even live in the cities. These include bats, fish, turtles and monkeys. Every year, millions of baby sea turtles die because the lights make them confused and they can't find the ocean, where they would be safe from other animals. Light pollution also damages human health. It doesn't matter if it's a computer screen or a street light shining through a window. Too much light affects the natural, light-dark cycle of day and night and upsets our biological clock. In other words, we don't know when to sleep and when to wake up. This can damage our health by increasing the risk of heart disease, obesity and cancer. It can also damage our mental health. When we don't sleep well, we get stressed. So, what can we do to keep healthy? We can't escape light pollution, but let me tell you a secret that may help a little. Looking at the clear night sky is very relaxing. It makes you feel like you are part of something bigger. Well, that's it for today. Tune in next time when I'll be talking about...",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.74,
+      "text": " End of course test, track two.",
+      "tokens": [
+        50363,
+        5268,
+        286,
+        1781,
+        1332,
+        11,
+        2610,
+        734,
+        13,
+        50519
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3939657876657885,
+      "compression_ratio": 1.4558823529411764,
+      "no_speech_prob": 0.07711780071258545,
+      "words": [
+        {
+          "word": " End",
+          "start": 0.0,
+          "end": 0.52,
+          "probability": 0.35240840911865234
+        },
+        {
+          "word": " of",
+          "start": 0.52,
+          "end": 0.7,
+          "probability": 0.9599965214729309
+        },
+        {
+          "word": " course",
+          "start": 0.7,
+          "end": 0.98,
+          "probability": 0.9477272629737854
+        },
+        {
+          "word": " test,",
+          "start": 0.98,
+          "end": 1.54,
+          "probability": 0.9353033900260925
+        },
+        {
+          "word": " track",
+          "start": 2.2,
+          "end": 2.24,
+          "probability": 0.8750988245010376
+        },
+        {
+          "word": " two.",
+          "start": 2.24,
+          "end": 2.74,
+          "probability": 0.4998127818107605
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.22,
+      "end": 7.82,
+      "text": " I love it when the power stops working.",
+      "tokens": [
+        50603,
+        314,
+        1842,
+        340,
+        618,
+        262,
+        1176,
+        9911,
+        1762,
+        13,
+        50771
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3939657876657885,
+      "compression_ratio": 1.4558823529411764,
+      "no_speech_prob": 0.07711780071258545,
+      "words": [
+        {
+          "word": " I",
+          "start": 5.22,
+          "end": 5.22,
+          "probability": 0.917131245136261
+        },
+        {
+          "word": " love",
+          "start": 5.22,
+          "end": 5.82,
+          "probability": 0.9286448955535889
+        },
+        {
+          "word": " it",
+          "start": 5.82,
+          "end": 6.08,
+          "probability": 0.996707022190094
+        },
+        {
+          "word": " when",
+          "start": 6.08,
+          "end": 6.34,
+          "probability": 0.9923715591430664
+        },
+        {
+          "word": " the",
+          "start": 6.34,
+          "end": 6.54,
+          "probability": 0.9950631260871887
+        },
+        {
+          "word": " power",
+          "start": 6.54,
+          "end": 6.84,
+          "probability": 0.9929372668266296
+        },
+        {
+          "word": " stops",
+          "start": 6.84,
+          "end": 7.18,
+          "probability": 0.9966199398040771
+        },
+        {
+          "word": " working.",
+          "start": 7.18,
+          "end": 7.82,
+          "probability": 0.9990339279174805
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.64,
+      "end": 9.08,
+      "text": " Why?",
+      "tokens": [
+        50791,
+        4162,
+        30,
+        50841
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3939657876657885,
+      "compression_ratio": 1.4558823529411764,
+      "no_speech_prob": 0.07711780071258545,
+      "words": [
+        {
+          "word": " Why?",
+          "start": 8.64,
+          "end": 9.08,
+          "probability": 0.9963944554328918
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 9.82,
+      "end": 13.24,
+      "text": " Well, it gives me a chance to see the night sky.",
+      "tokens": [
+        50849,
+        3894,
+        11,
+        340,
+        3607,
+        502,
+        257,
+        2863,
+        284,
+        766,
+        262,
+        1755,
+        6766,
+        13,
+        51043
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3939657876657885,
+      "compression_ratio": 1.4558823529411764,
+      "no_speech_prob": 0.07711780071258545,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 9.82,
+          "end": 10.16,
+          "probability": 0.9743183255195618
+        },
+        {
+          "word": " it",
+          "start": 10.5,
+          "end": 10.62,
+          "probability": 0.9932445883750916
+        },
+        {
+          "word": " gives",
+          "start": 10.62,
+          "end": 10.82,
+          "probability": 0.9933417439460754
+        },
+        {
+          "word": " me",
+          "start": 10.82,
+          "end": 11.1,
+          "probability": 0.9972296357154846
+        },
+        {
+          "word": " a",
+          "start": 11.1,
+          "end": 11.36,
+          "probability": 0.9852614998817444
+        },
+        {
+          "word": " chance",
+          "start": 11.36,
+          "end": 11.54,
+          "probability": 0.9989618062973022
+        },
+        {
+          "word": " to",
+          "start": 11.54,
+          "end": 11.92,
+          "probability": 0.9974384307861328
+        },
+        {
+          "word": " see",
+          "start": 11.92,
+          "end": 12.2,
+          "probability": 0.9963006973266602
+        },
+        {
+          "word": " the",
+          "start": 12.2,
+          "end": 12.4,
+          "probability": 0.9938370585441589
+        },
+        {
+          "word": " night",
+          "start": 12.4,
+          "end": 12.7,
+          "probability": 0.9810298681259155
+        },
+        {
+          "word": " sky.",
+          "start": 12.7,
+          "end": 13.24,
+          "probability": 0.9967484474182129
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 14.1,
+      "end": 17.78,
+      "text": " Something that fewer and fewer people see these days.",
+      "tokens": [
+        51051,
+        13742,
+        326,
+        7380,
+        290,
+        7380,
+        661,
+        766,
+        777,
+        1528,
+        13,
+        51273
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3939657876657885,
+      "compression_ratio": 1.4558823529411764,
+      "no_speech_prob": 0.07711780071258545,
+      "words": [
+        {
+          "word": " Something",
+          "start": 14.1,
+          "end": 14.24,
+          "probability": 0.9861620664596558
+        },
+        {
+          "word": " that",
+          "start": 14.24,
+          "end": 14.8,
+          "probability": 0.9956079125404358
+        },
+        {
+          "word": " fewer",
+          "start": 14.8,
+          "end": 15.28,
+          "probability": 0.9813744425773621
+        },
+        {
+          "word": " and",
+          "start": 15.28,
+          "end": 15.8,
+          "probability": 0.9880070686340332
+        },
+        {
+          "word": " fewer",
+          "start": 15.8,
+          "end": 16.2,
+          "probability": 0.9958540201187134
+        },
+        {
+          "word": " people",
+          "start": 16.2,
+          "end": 16.66,
+          "probability": 0.9988694787025452
+        },
+        {
+          "word": " see",
+          "start": 16.66,
+          "end": 17.2,
+          "probability": 0.9946145415306091
+        },
+        {
+          "word": " these",
+          "start": 17.2,
+          "end": 17.48,
+          "probability": 0.9956425428390503
+        },
+        {
+          "word": " days.",
+          "start": 17.48,
+          "end": 17.78,
+          "probability": 0.9979535341262817
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 19.06,
+      "end": 22.3,
+      "text": " Hi everyone, and welcome to this week's podcast.",
+      "tokens": [
+        51311,
+        15902,
+        2506,
+        11,
+        290,
+        7062,
+        284,
+        428,
+        1285,
+        338,
+        9905,
+        13,
+        51503
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3939657876657885,
+      "compression_ratio": 1.4558823529411764,
+      "no_speech_prob": 0.07711780071258545,
+      "words": [
+        {
+          "word": " Hi",
+          "start": 19.06,
+          "end": 19.34,
+          "probability": 0.9840885400772095
+        },
+        {
+          "word": " everyone,",
+          "start": 19.34,
+          "end": 19.72,
+          "probability": 0.8311850428581238
+        },
+        {
+          "word": " and",
+          "start": 20.42,
+          "end": 20.64,
+          "probability": 0.9886673092842102
+        },
+        {
+          "word": " welcome",
+          "start": 20.64,
+          "end": 20.88,
+          "probability": 0.9960319399833679
+        },
+        {
+          "word": " to",
+          "start": 20.88,
+          "end": 21.28,
+          "probability": 0.9980931878089905
+        },
+        {
+          "word": " this",
+          "start": 21.28,
+          "end": 21.52,
+          "probability": 0.9971808195114136
+        },
+        {
+          "word": " week's",
+          "start": 21.52,
+          "end": 22.3,
+          "probability": 0.9755211174488068
+        },
+        {
+          "word": " podcast.",
+          "start": 22.3,
+          "end": 22.3,
+          "probability": 0.9814136624336243
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 23.4,
+      "end": 26.88,
+      "text": " I'm talking about a threat you might not know about.",
+      "tokens": [
+        51529,
+        314,
+        1101,
+        3375,
+        546,
+        257,
+        2372,
+        345,
+        1244,
+        407,
+        760,
+        546,
+        13,
+        51717
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3939657876657885,
+      "compression_ratio": 1.4558823529411764,
+      "no_speech_prob": 0.07711780071258545,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 23.4,
+          "end": 23.8,
+          "probability": 0.9852780997753143
+        },
+        {
+          "word": " talking",
+          "start": 23.8,
+          "end": 24.14,
+          "probability": 0.9972637891769409
+        },
+        {
+          "word": " about",
+          "start": 24.14,
+          "end": 24.56,
+          "probability": 0.998823344707489
+        },
+        {
+          "word": " a",
+          "start": 24.56,
+          "end": 24.76,
+          "probability": 0.9965477585792542
+        },
+        {
+          "word": " threat",
+          "start": 24.76,
+          "end": 25.06,
+          "probability": 0.9938866496086121
+        },
+        {
+          "word": " you",
+          "start": 25.06,
+          "end": 25.46,
+          "probability": 0.9855430126190186
+        },
+        {
+          "word": " might",
+          "start": 25.46,
+          "end": 25.78,
+          "probability": 0.9959337115287781
+        },
+        {
+          "word": " not",
+          "start": 25.78,
+          "end": 26.06,
+          "probability": 0.9980394244194031
+        },
+        {
+          "word": " know",
+          "start": 26.06,
+          "end": 26.32,
+          "probability": 0.9985894560813904
+        },
+        {
+          "word": " about.",
+          "start": 26.32,
+          "end": 26.88,
+          "probability": 0.995543897151947
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 27.6,
+      "end": 28.36,
+      "text": " Light pollution.",
+      "tokens": [
+        51731,
+        4401,
+        12231,
+        13,
+        51805
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3939657876657885,
+      "compression_ratio": 1.4558823529411764,
+      "no_speech_prob": 0.07711780071258545,
+      "words": [
+        {
+          "word": " Light",
+          "start": 27.6,
+          "end": 27.86,
+          "probability": 0.9828960299491882
+        },
+        {
+          "word": " pollution.",
+          "start": 27.86,
+          "end": 28.36,
+          "probability": 0.9887020587921143
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2836,
+      "start": 29.08,
+      "end": 36.66,
+      "text": " That is, the light from street lights and houses that stop us from seeing the beautiful night sky.",
+      "tokens": [
+        50363,
+        1320,
+        318,
+        11,
+        262,
+        1657,
+        422,
+        4675,
+        7588,
+        290,
+        7777,
+        326,
+        2245,
+        514,
+        422,
+        4379,
+        262,
+        4950,
+        1755,
+        6766,
+        13,
+        50791
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2870311079354122,
+      "compression_ratio": 1.5906976744186045,
+      "no_speech_prob": 0.036973148584365845,
+      "words": [
+        {
+          "word": " That",
+          "start": 29.08,
+          "end": 29.76,
+          "probability": 0.7998294234275818
+        },
+        {
+          "word": " is,",
+          "start": 29.76,
+          "end": 30.06,
+          "probability": 0.9944406151771545
+        },
+        {
+          "word": " the",
+          "start": 30.52,
+          "end": 30.64,
+          "probability": 0.9889046549797058
+        },
+        {
+          "word": " light",
+          "start": 30.64,
+          "end": 30.9,
+          "probability": 0.9825599789619446
+        },
+        {
+          "word": " from",
+          "start": 30.9,
+          "end": 31.3,
+          "probability": 0.9973672032356262
+        },
+        {
+          "word": " street",
+          "start": 31.3,
+          "end": 31.66,
+          "probability": 0.9634285569190979
+        },
+        {
+          "word": " lights",
+          "start": 31.66,
+          "end": 31.98,
+          "probability": 0.31616857647895813
+        },
+        {
+          "word": " and",
+          "start": 31.98,
+          "end": 32.32,
+          "probability": 0.9906502962112427
+        },
+        {
+          "word": " houses",
+          "start": 32.32,
+          "end": 32.76,
+          "probability": 0.9976179003715515
+        },
+        {
+          "word": " that",
+          "start": 32.76,
+          "end": 33.46,
+          "probability": 0.9486694931983948
+        },
+        {
+          "word": " stop",
+          "start": 33.46,
+          "end": 33.8,
+          "probability": 0.9915884137153625
+        },
+        {
+          "word": " us",
+          "start": 33.8,
+          "end": 34.1,
+          "probability": 0.9973239898681641
+        },
+        {
+          "word": " from",
+          "start": 34.1,
+          "end": 34.32,
+          "probability": 0.9951412677764893
+        },
+        {
+          "word": " seeing",
+          "start": 34.32,
+          "end": 34.7,
+          "probability": 0.9976953864097595
+        },
+        {
+          "word": " the",
+          "start": 34.7,
+          "end": 35.04,
+          "probability": 0.9938980937004089
+        },
+        {
+          "word": " beautiful",
+          "start": 35.04,
+          "end": 35.66,
+          "probability": 0.9863759875297546
+        },
+        {
+          "word": " night",
+          "start": 35.66,
+          "end": 36.1,
+          "probability": 0.9912749528884888
+        },
+        {
+          "word": " sky.",
+          "start": 36.1,
+          "end": 36.66,
+          "probability": 0.99534010887146
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2836,
+      "start": 38.12,
+      "end": 42.26,
+      "text": " The light bulb is one of the greatest things ever invented.",
+      "tokens": [
+        50851,
+        383,
+        1657,
+        28287,
+        318,
+        530,
+        286,
+        262,
+        6000,
+        1243,
+        1683,
+        15646,
+        13,
+        51063
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2870311079354122,
+      "compression_ratio": 1.5906976744186045,
+      "no_speech_prob": 0.036973148584365845,
+      "words": [
+        {
+          "word": " The",
+          "start": 38.12,
+          "end": 38.68,
+          "probability": 0.9882134795188904
+        },
+        {
+          "word": " light",
+          "start": 38.68,
+          "end": 38.92,
+          "probability": 0.9745808243751526
+        },
+        {
+          "word": " bulb",
+          "start": 38.92,
+          "end": 39.2,
+          "probability": 0.9305716156959534
+        },
+        {
+          "word": " is",
+          "start": 39.2,
+          "end": 39.62,
+          "probability": 0.9980596899986267
+        },
+        {
+          "word": " one",
+          "start": 39.62,
+          "end": 39.8,
+          "probability": 0.99614417552948
+        },
+        {
+          "word": " of",
+          "start": 39.8,
+          "end": 39.94,
+          "probability": 0.9963265061378479
+        },
+        {
+          "word": " the",
+          "start": 39.94,
+          "end": 40.1,
+          "probability": 0.9979518055915833
+        },
+        {
+          "word": " greatest",
+          "start": 40.1,
+          "end": 40.54,
+          "probability": 0.986501157283783
+        },
+        {
+          "word": " things",
+          "start": 40.54,
+          "end": 41.2,
+          "probability": 0.995008111000061
+        },
+        {
+          "word": " ever",
+          "start": 41.2,
+          "end": 41.64,
+          "probability": 0.9863718152046204
+        },
+        {
+          "word": " invented.",
+          "start": 41.64,
+          "end": 42.26,
+          "probability": 0.9983117580413818
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2836,
+      "start": 42.9,
+      "end": 44.02,
+      "text": " We all agree on that.",
+      "tokens": [
+        51063,
+        775,
+        477,
+        4236,
+        319,
+        326,
+        13,
+        51163
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2870311079354122,
+      "compression_ratio": 1.5906976744186045,
+      "no_speech_prob": 0.036973148584365845,
+      "words": [
+        {
+          "word": " We",
+          "start": 42.9,
+          "end": 43.1,
+          "probability": 0.9946539402008057
+        },
+        {
+          "word": " all",
+          "start": 43.1,
+          "end": 43.26,
+          "probability": 0.9975703358650208
+        },
+        {
+          "word": " agree",
+          "start": 43.26,
+          "end": 43.52,
+          "probability": 0.9979028701782227
+        },
+        {
+          "word": " on",
+          "start": 43.52,
+          "end": 43.68,
+          "probability": 0.9968848824501038
+        },
+        {
+          "word": " that.",
+          "start": 43.68,
+          "end": 44.02,
+          "probability": 0.9993233680725098
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2836,
+      "start": 44.92,
+      "end": 47.78,
+      "text": " Can you imagine what life would be like without them?",
+      "tokens": [
+        51163,
+        1680,
+        345,
+        5967,
+        644,
+        1204,
+        561,
+        307,
+        588,
+        1231,
+        606,
+        30,
+        51363
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2870311079354122,
+      "compression_ratio": 1.5906976744186045,
+      "no_speech_prob": 0.036973148584365845,
+      "words": [
+        {
+          "word": " Can",
+          "start": 44.92,
+          "end": 45.16,
+          "probability": 0.997178316116333
+        },
+        {
+          "word": " you",
+          "start": 45.16,
+          "end": 45.34,
+          "probability": 0.9994623064994812
+        },
+        {
+          "word": " imagine",
+          "start": 45.34,
+          "end": 45.7,
+          "probability": 0.9958721995353699
+        },
+        {
+          "word": " what",
+          "start": 45.7,
+          "end": 46.04,
+          "probability": 0.9980319142341614
+        },
+        {
+          "word": " life",
+          "start": 46.04,
+          "end": 46.4,
+          "probability": 0.9958588480949402
+        },
+        {
+          "word": " would",
+          "start": 46.4,
+          "end": 46.6,
+          "probability": 0.997750461101532
+        },
+        {
+          "word": " be",
+          "start": 46.6,
+          "end": 46.8,
+          "probability": 0.9983273148536682
+        },
+        {
+          "word": " like",
+          "start": 46.8,
+          "end": 47.06,
+          "probability": 0.9974963068962097
+        },
+        {
+          "word": " without",
+          "start": 47.06,
+          "end": 47.44,
+          "probability": 0.9966933727264404
+        },
+        {
+          "word": " them?",
+          "start": 47.44,
+          "end": 47.78,
+          "probability": 0.9976614713668823
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2836,
+      "start": 48.66,
+      "end": 54.18,
+      "text": " By turning on a light switch, we have the power to turn the dark into light.",
+      "tokens": [
+        51363,
+        2750,
+        6225,
+        319,
+        257,
+        1657,
+        5078,
+        11,
+        356,
+        423,
+        262,
+        1176,
+        284,
+        1210,
+        262,
+        3223,
+        656,
+        1657,
+        13,
+        51663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2870311079354122,
+      "compression_ratio": 1.5906976744186045,
+      "no_speech_prob": 0.036973148584365845,
+      "words": [
+        {
+          "word": " By",
+          "start": 48.66,
+          "end": 48.94,
+          "probability": 0.9965152740478516
+        },
+        {
+          "word": " turning",
+          "start": 48.94,
+          "end": 49.32,
+          "probability": 0.9989551305770874
+        },
+        {
+          "word": " on",
+          "start": 49.32,
+          "end": 49.62,
+          "probability": 0.9967371821403503
+        },
+        {
+          "word": " a",
+          "start": 49.62,
+          "end": 49.96,
+          "probability": 0.9940410256385803
+        },
+        {
+          "word": " light",
+          "start": 49.96,
+          "end": 50.2,
+          "probability": 0.9941433072090149
+        },
+        {
+          "word": " switch,",
+          "start": 50.2,
+          "end": 50.56,
+          "probability": 0.9952249526977539
+        },
+        {
+          "word": " we",
+          "start": 51.08,
+          "end": 51.4,
+          "probability": 0.994752049446106
+        },
+        {
+          "word": " have",
+          "start": 51.4,
+          "end": 51.64,
+          "probability": 0.9984323382377625
+        },
+        {
+          "word": " the",
+          "start": 51.64,
+          "end": 51.84,
+          "probability": 0.9958899617195129
+        },
+        {
+          "word": " power",
+          "start": 51.84,
+          "end": 52.1,
+          "probability": 0.9995501637458801
+        },
+        {
+          "word": " to",
+          "start": 52.1,
+          "end": 52.42,
+          "probability": 0.9986685514450073
+        },
+        {
+          "word": " turn",
+          "start": 52.42,
+          "end": 52.7,
+          "probability": 0.9906550049781799
+        },
+        {
+          "word": " the",
+          "start": 52.7,
+          "end": 52.94,
+          "probability": 0.996131420135498
+        },
+        {
+          "word": " dark",
+          "start": 52.94,
+          "end": 53.28,
+          "probability": 0.9972255229949951
+        },
+        {
+          "word": " into",
+          "start": 53.28,
+          "end": 53.82,
+          "probability": 0.9978227615356445
+        },
+        {
+          "word": " light.",
+          "start": 53.82,
+          "end": 54.18,
+          "probability": 0.9937525391578674
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2836,
+      "start": 55.16,
+      "end": 57.44,
+      "text": " But this also causes problems.",
+      "tokens": [
+        51663,
+        887,
+        428,
+        635,
+        5640,
+        2761,
+        13,
+        51813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2870311079354122,
+      "compression_ratio": 1.5906976744186045,
+      "no_speech_prob": 0.036973148584365845,
+      "words": [
+        {
+          "word": " But",
+          "start": 55.16,
+          "end": 55.62,
+          "probability": 0.9944301247596741
+        },
+        {
+          "word": " this",
+          "start": 55.62,
+          "end": 55.94,
+          "probability": 0.9617612957954407
+        },
+        {
+          "word": " also",
+          "start": 55.94,
+          "end": 56.48,
+          "probability": 0.9981235861778259
+        },
+        {
+          "word": " causes",
+          "start": 56.48,
+          "end": 56.94,
+          "probability": 0.9972877502441406
+        },
+        {
+          "word": " problems.",
+          "start": 56.94,
+          "end": 57.44,
+          "probability": 0.9982557892799377
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5744,
+      "start": 58.44,
+      "end": 64.86,
+      "text": " More than 80% of the world's population lives under skies that are polluted by light.",
+      "tokens": [
+        50413,
+        3125,
+        621,
+        4019,
+        4,
+        286,
+        262,
+        995,
+        338,
+        3265,
+        3160,
+        739,
+        24091,
+        326,
+        389,
+        42340,
+        416,
+        1657,
+        13,
+        50763
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09052298619196965,
+      "compression_ratio": 1.5151515151515151,
+      "no_speech_prob": 0.05534538999199867,
+      "words": [
+        {
+          "word": " More",
+          "start": 58.44,
+          "end": 58.8,
+          "probability": 0.21155618131160736
+        },
+        {
+          "word": " than",
+          "start": 58.8,
+          "end": 59.06,
+          "probability": 0.9967007040977478
+        },
+        {
+          "word": " 80",
+          "start": 59.06,
+          "end": 59.56,
+          "probability": 0.9620168209075928
+        },
+        {
+          "word": "%",
+          "start": 59.56,
+          "end": 59.9,
+          "probability": 0.8025953769683838
+        },
+        {
+          "word": " of",
+          "start": 59.9,
+          "end": 60.22,
+          "probability": 0.9939344525337219
+        },
+        {
+          "word": " the",
+          "start": 60.22,
+          "end": 60.36,
+          "probability": 0.987363874912262
+        },
+        {
+          "word": " world's",
+          "start": 60.36,
+          "end": 60.88,
+          "probability": 0.9686994850635529
+        },
+        {
+          "word": " population",
+          "start": 60.88,
+          "end": 61.5,
+          "probability": 0.9938243627548218
+        },
+        {
+          "word": " lives",
+          "start": 61.5,
+          "end": 62.18,
+          "probability": 0.9281158447265625
+        },
+        {
+          "word": " under",
+          "start": 62.18,
+          "end": 62.6,
+          "probability": 0.9799426794052124
+        },
+        {
+          "word": " skies",
+          "start": 62.6,
+          "end": 62.96,
+          "probability": 0.9636991620063782
+        },
+        {
+          "word": " that",
+          "start": 62.96,
+          "end": 63.28,
+          "probability": 0.9913532137870789
+        },
+        {
+          "word": " are",
+          "start": 63.28,
+          "end": 63.54,
+          "probability": 0.9975932240486145
+        },
+        {
+          "word": " polluted",
+          "start": 63.54,
+          "end": 64.06,
+          "probability": 0.993111252784729
+        },
+        {
+          "word": " by",
+          "start": 64.06,
+          "end": 64.5,
+          "probability": 0.9987797141075134
+        },
+        {
+          "word": " light.",
+          "start": 64.5,
+          "end": 64.86,
+          "probability": 0.9917747974395752
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5744,
+      "start": 65.94,
+      "end": 71.3,
+      "text": " To put it another way, over 6 billion people live with light pollution.",
+      "tokens": [
+        50763,
+        1675,
+        1234,
+        340,
+        1194,
+        835,
+        11,
+        625,
+        718,
+        2997,
+        661,
+        2107,
+        351,
+        1657,
+        12231,
+        13,
+        51063
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09052298619196965,
+      "compression_ratio": 1.5151515151515151,
+      "no_speech_prob": 0.05534538999199867,
+      "words": [
+        {
+          "word": " To",
+          "start": 65.94,
+          "end": 66.06,
+          "probability": 0.9774428606033325
+        },
+        {
+          "word": " put",
+          "start": 66.06,
+          "end": 66.26,
+          "probability": 0.9988025426864624
+        },
+        {
+          "word": " it",
+          "start": 66.26,
+          "end": 66.46,
+          "probability": 0.9933369159698486
+        },
+        {
+          "word": " another",
+          "start": 66.46,
+          "end": 66.8,
+          "probability": 0.9930516481399536
+        },
+        {
+          "word": " way,",
+          "start": 66.8,
+          "end": 67.34,
+          "probability": 0.996659517288208
+        },
+        {
+          "word": " over",
+          "start": 67.84,
+          "end": 68.1,
+          "probability": 0.9581355452537537
+        },
+        {
+          "word": " 6",
+          "start": 68.1,
+          "end": 68.6,
+          "probability": 0.8480628132820129
+        },
+        {
+          "word": " billion",
+          "start": 68.6,
+          "end": 69.08,
+          "probability": 0.9715909957885742
+        },
+        {
+          "word": " people",
+          "start": 69.08,
+          "end": 69.66,
+          "probability": 0.997183620929718
+        },
+        {
+          "word": " live",
+          "start": 69.66,
+          "end": 70.02,
+          "probability": 0.9953640699386597
+        },
+        {
+          "word": " with",
+          "start": 70.02,
+          "end": 70.48,
+          "probability": 0.9963896870613098
+        },
+        {
+          "word": " light",
+          "start": 70.48,
+          "end": 70.76,
+          "probability": 0.9893643856048584
+        },
+        {
+          "word": " pollution.",
+          "start": 70.76,
+          "end": 71.3,
+          "probability": 0.9972251653671265
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5744,
+      "start": 72.66,
+      "end": 76.66,
+      "text": " In some places that have a lot of light pollution, like Singapore,",
+      "tokens": [
+        51113,
+        554,
+        617,
+        4113,
+        326,
+        423,
+        257,
+        1256,
+        286,
+        1657,
+        12231,
+        11,
+        588,
+        12551,
+        11,
+        51363
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09052298619196965,
+      "compression_ratio": 1.5151515151515151,
+      "no_speech_prob": 0.05534538999199867,
+      "words": [
+        {
+          "word": " In",
+          "start": 72.66,
+          "end": 72.96,
+          "probability": 0.9869663715362549
+        },
+        {
+          "word": " some",
+          "start": 72.96,
+          "end": 73.24,
+          "probability": 0.9964814186096191
+        },
+        {
+          "word": " places",
+          "start": 73.24,
+          "end": 73.58,
+          "probability": 0.9969948530197144
+        },
+        {
+          "word": " that",
+          "start": 73.58,
+          "end": 74.04,
+          "probability": 0.9883939027786255
+        },
+        {
+          "word": " have",
+          "start": 74.04,
+          "end": 74.32,
+          "probability": 0.9974958300590515
+        },
+        {
+          "word": " a",
+          "start": 74.32,
+          "end": 74.44,
+          "probability": 0.9907709360122681
+        },
+        {
+          "word": " lot",
+          "start": 74.44,
+          "end": 74.62,
+          "probability": 0.9992513060569763
+        },
+        {
+          "word": " of",
+          "start": 74.62,
+          "end": 74.84,
+          "probability": 0.9961434602737427
+        },
+        {
+          "word": " light",
+          "start": 74.84,
+          "end": 75.06,
+          "probability": 0.9771186113357544
+        },
+        {
+          "word": " pollution,",
+          "start": 75.06,
+          "end": 75.58,
+          "probability": 0.9979143738746643
+        },
+        {
+          "word": " like",
+          "start": 75.94,
+          "end": 76.12,
+          "probability": 0.9952508211135864
+        },
+        {
+          "word": " Singapore,",
+          "start": 76.12,
+          "end": 76.66,
+          "probability": 0.9968082308769226
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5744,
+      "start": 77.44,
+      "end": 84.32,
+      "text": " there is so much light that you can only see 0.05% of the stars in the sky.",
+      "tokens": [
+        51363,
+        612,
+        318,
+        523,
+        881,
+        1657,
+        326,
+        345,
+        460,
+        691,
+        766,
+        657,
+        13,
+        2713,
+        4,
+        286,
+        262,
+        5788,
+        287,
+        262,
+        6766,
+        13,
+        51713
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09052298619196965,
+      "compression_ratio": 1.5151515151515151,
+      "no_speech_prob": 0.05534538999199867,
+      "words": [
+        {
+          "word": " there",
+          "start": 77.44,
+          "end": 77.66,
+          "probability": 0.9842947721481323
+        },
+        {
+          "word": " is",
+          "start": 77.66,
+          "end": 77.82,
+          "probability": 0.9886959791183472
+        },
+        {
+          "word": " so",
+          "start": 77.82,
+          "end": 78.16,
+          "probability": 0.9937227368354797
+        },
+        {
+          "word": " much",
+          "start": 78.16,
+          "end": 78.48,
+          "probability": 0.9992179870605469
+        },
+        {
+          "word": " light",
+          "start": 78.48,
+          "end": 78.8,
+          "probability": 0.9970670342445374
+        },
+        {
+          "word": " that",
+          "start": 78.8,
+          "end": 79.26,
+          "probability": 0.9264290928840637
+        },
+        {
+          "word": " you",
+          "start": 79.26,
+          "end": 79.44,
+          "probability": 0.996228814125061
+        },
+        {
+          "word": " can",
+          "start": 79.44,
+          "end": 79.58,
+          "probability": 0.9939951300621033
+        },
+        {
+          "word": " only",
+          "start": 79.58,
+          "end": 79.94,
+          "probability": 0.9912152290344238
+        },
+        {
+          "word": " see",
+          "start": 79.94,
+          "end": 80.26,
+          "probability": 0.9984295964241028
+        },
+        {
+          "word": " 0",
+          "start": 80.26,
+          "end": 80.9,
+          "probability": 0.9808169007301331
+        },
+        {
+          "word": ".05",
+          "start": 80.9,
+          "end": 82.18,
+          "probability": 0.9753860831260681
+        },
+        {
+          "word": "%",
+          "start": 82.18,
+          "end": 82.64,
+          "probability": 0.9656967520713806
+        },
+        {
+          "word": " of",
+          "start": 82.64,
+          "end": 82.96,
+          "probability": 0.9964641332626343
+        },
+        {
+          "word": " the",
+          "start": 82.96,
+          "end": 83.1,
+          "probability": 0.995711088180542
+        },
+        {
+          "word": " stars",
+          "start": 83.1,
+          "end": 83.4,
+          "probability": 0.9964172840118408
+        },
+        {
+          "word": " in",
+          "start": 83.4,
+          "end": 83.78,
+          "probability": 0.9986818432807922
+        },
+        {
+          "word": " the",
+          "start": 83.78,
+          "end": 83.94,
+          "probability": 0.9991437196731567
+        },
+        {
+          "word": " sky.",
+          "start": 83.94,
+          "end": 84.32,
+          "probability": 0.9988112449645996
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8432,
+      "start": 85.24000000000001,
+      "end": 92.16,
+      "text": " About 14% of the world's population don't even use their ability to see at night.",
+      "tokens": [
+        50413,
+        7994,
+        1478,
+        4,
+        286,
+        262,
+        995,
+        338,
+        3265,
+        836,
+        470,
+        772,
+        779,
+        511,
+        2694,
+        284,
+        766,
+        379,
+        1755,
+        13,
+        50763
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060427651889082314,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.01206373330205679,
+      "words": [
+        {
+          "word": " About",
+          "start": 85.24000000000001,
+          "end": 85.98,
+          "probability": 0.23146790266036987
+        },
+        {
+          "word": " 14",
+          "start": 85.98,
+          "end": 86.72,
+          "probability": 0.9452486038208008
+        },
+        {
+          "word": "%",
+          "start": 86.72,
+          "end": 87.12,
+          "probability": 0.8377497792243958
+        },
+        {
+          "word": " of",
+          "start": 87.12,
+          "end": 87.44,
+          "probability": 0.99236661195755
+        },
+        {
+          "word": " the",
+          "start": 87.44,
+          "end": 87.56,
+          "probability": 0.9917072653770447
+        },
+        {
+          "word": " world's",
+          "start": 87.56,
+          "end": 87.96,
+          "probability": 0.9775884449481964
+        },
+        {
+          "word": " population",
+          "start": 87.96,
+          "end": 88.52,
+          "probability": 0.9945176243782043
+        },
+        {
+          "word": " don't",
+          "start": 88.52,
+          "end": 89.42,
+          "probability": 0.985191285610199
+        },
+        {
+          "word": " even",
+          "start": 89.42,
+          "end": 89.78,
+          "probability": 0.9953487515449524
+        },
+        {
+          "word": " use",
+          "start": 89.78,
+          "end": 90.08,
+          "probability": 0.9978109002113342
+        },
+        {
+          "word": " their",
+          "start": 90.08,
+          "end": 90.32,
+          "probability": 0.9960595369338989
+        },
+        {
+          "word": " ability",
+          "start": 90.32,
+          "end": 90.66,
+          "probability": 0.996265709400177
+        },
+        {
+          "word": " to",
+          "start": 90.66,
+          "end": 91.12,
+          "probability": 0.9984283447265625
+        },
+        {
+          "word": " see",
+          "start": 91.12,
+          "end": 91.44,
+          "probability": 0.9659459590911865
+        },
+        {
+          "word": " at",
+          "start": 91.44,
+          "end": 91.76,
+          "probability": 0.9980226755142212
+        },
+        {
+          "word": " night.",
+          "start": 91.76,
+          "end": 92.16,
+          "probability": 0.9990757703781128
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8432,
+      "start": 93.38,
+      "end": 101.3,
+      "text": " Some cities, like Las Vegas, are so bright that you can see their lights from over 65km away.",
+      "tokens": [
+        50813,
+        2773,
+        4736,
+        11,
+        588,
+        10123,
+        9621,
+        11,
+        389,
+        523,
+        6016,
+        326,
+        345,
+        460,
+        766,
+        511,
+        7588,
+        422,
+        625,
+        6135,
+        13276,
+        1497,
+        13,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060427651889082314,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.01206373330205679,
+      "words": [
+        {
+          "word": " Some",
+          "start": 93.38,
+          "end": 93.62,
+          "probability": 0.9928516745567322
+        },
+        {
+          "word": " cities,",
+          "start": 93.62,
+          "end": 94.08,
+          "probability": 0.999024510383606
+        },
+        {
+          "word": " like",
+          "start": 94.48,
+          "end": 94.58,
+          "probability": 0.9963874816894531
+        },
+        {
+          "word": " Las",
+          "start": 94.58,
+          "end": 94.78,
+          "probability": 0.996340811252594
+        },
+        {
+          "word": " Vegas,",
+          "start": 94.78,
+          "end": 95.22,
+          "probability": 0.9975199103355408
+        },
+        {
+          "word": " are",
+          "start": 95.68,
+          "end": 95.88,
+          "probability": 0.9964579939842224
+        },
+        {
+          "word": " so",
+          "start": 95.88,
+          "end": 96.26,
+          "probability": 0.9972276091575623
+        },
+        {
+          "word": " bright",
+          "start": 96.26,
+          "end": 96.68,
+          "probability": 0.9964951872825623
+        },
+        {
+          "word": " that",
+          "start": 96.68,
+          "end": 97.2,
+          "probability": 0.9279299974441528
+        },
+        {
+          "word": " you",
+          "start": 97.2,
+          "end": 97.42,
+          "probability": 0.9971006512641907
+        },
+        {
+          "word": " can",
+          "start": 97.42,
+          "end": 97.58,
+          "probability": 0.9962766766548157
+        },
+        {
+          "word": " see",
+          "start": 97.58,
+          "end": 97.86,
+          "probability": 0.9962283372879028
+        },
+        {
+          "word": " their",
+          "start": 97.86,
+          "end": 98.08,
+          "probability": 0.99198979139328
+        },
+        {
+          "word": " lights",
+          "start": 98.08,
+          "end": 98.34,
+          "probability": 0.9934203028678894
+        },
+        {
+          "word": " from",
+          "start": 98.34,
+          "end": 98.76,
+          "probability": 0.9950464963912964
+        },
+        {
+          "word": " over",
+          "start": 98.76,
+          "end": 99.22,
+          "probability": 0.996915340423584
+        },
+        {
+          "word": " 65km",
+          "start": 99.22,
+          "end": 100.66,
+          "probability": 0.62571582198143
+        },
+        {
+          "word": " away.",
+          "start": 100.66,
+          "end": 101.3,
+          "probability": 0.9930885434150696
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 8432,
+      "start": 103.02,
+      "end": 109.68,
+      "text": " Light pollution might not be as serious as other issues, but it does cause problems for the environment.",
+      "tokens": [
+        51263,
+        4401,
+        12231,
+        1244,
+        407,
+        307,
+        355,
+        2726,
+        355,
+        584,
+        2428,
+        11,
+        475,
+        340,
+        857,
+        2728,
+        2761,
+        329,
+        262,
+        2858,
+        13,
+        51663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060427651889082314,
+      "compression_ratio": 1.435897435897436,
+      "no_speech_prob": 0.01206373330205679,
+      "words": [
+        {
+          "word": " Light",
+          "start": 103.02,
+          "end": 103.3,
+          "probability": 0.9850698709487915
+        },
+        {
+          "word": " pollution",
+          "start": 103.3,
+          "end": 103.88,
+          "probability": 0.9983602166175842
+        },
+        {
+          "word": " might",
+          "start": 103.88,
+          "end": 104.26,
+          "probability": 0.9903309345245361
+        },
+        {
+          "word": " not",
+          "start": 104.26,
+          "end": 104.58,
+          "probability": 0.9976307153701782
+        },
+        {
+          "word": " be",
+          "start": 104.58,
+          "end": 104.84,
+          "probability": 0.9991361498832703
+        },
+        {
+          "word": " as",
+          "start": 104.84,
+          "end": 104.98,
+          "probability": 0.9921888113021851
+        },
+        {
+          "word": " serious",
+          "start": 104.98,
+          "end": 105.32,
+          "probability": 0.9994664788246155
+        },
+        {
+          "word": " as",
+          "start": 105.32,
+          "end": 105.66,
+          "probability": 0.997900128364563
+        },
+        {
+          "word": " other",
+          "start": 105.66,
+          "end": 106.02,
+          "probability": 0.9959139227867126
+        },
+        {
+          "word": " issues,",
+          "start": 106.02,
+          "end": 106.5,
+          "probability": 0.9984629154205322
+        },
+        {
+          "word": " but",
+          "start": 106.96,
+          "end": 107.3,
+          "probability": 0.9953945279121399
+        },
+        {
+          "word": " it",
+          "start": 107.3,
+          "end": 107.62,
+          "probability": 0.9951512813568115
+        },
+        {
+          "word": " does",
+          "start": 107.62,
+          "end": 107.88,
+          "probability": 0.995768666267395
+        },
+        {
+          "word": " cause",
+          "start": 107.88,
+          "end": 108.26,
+          "probability": 0.9989026784896851
+        },
+        {
+          "word": " problems",
+          "start": 108.26,
+          "end": 108.74,
+          "probability": 0.9973773956298828
+        },
+        {
+          "word": " for",
+          "start": 108.74,
+          "end": 109.0,
+          "probability": 0.9960759282112122
+        },
+        {
+          "word": " the",
+          "start": 109.0,
+          "end": 109.16,
+          "probability": 0.9992825388908386
+        },
+        {
+          "word": " environment.",
+          "start": 109.16,
+          "end": 109.68,
+          "probability": 0.9992094039916992
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 10968,
+      "start": 110.47999999999999,
+      "end": 118.56,
+      "text": " It is bad for animals, like birds, that move a lot at night because it can make them go the wrong way.",
+      "tokens": [
+        50413,
+        632,
+        318,
+        2089,
+        329,
+        4695,
+        11,
+        588,
+        10087,
+        11,
+        326,
+        1445,
+        257,
+        1256,
+        379,
+        1755,
+        780,
+        340,
+        460,
+        787,
+        606,
+        467,
+        262,
+        2642,
+        835,
+        13,
+        50813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06989506085713705,
+      "compression_ratio": 1.4176470588235295,
+      "no_speech_prob": 0.019205186516046524,
+      "words": [
+        {
+          "word": " It",
+          "start": 110.47999999999999,
+          "end": 111.16,
+          "probability": 0.4665656089782715
+        },
+        {
+          "word": " is",
+          "start": 111.16,
+          "end": 111.36,
+          "probability": 0.9671708941459656
+        },
+        {
+          "word": " bad",
+          "start": 111.36,
+          "end": 111.62,
+          "probability": 0.9921337366104126
+        },
+        {
+          "word": " for",
+          "start": 111.62,
+          "end": 111.9,
+          "probability": 0.998464822769165
+        },
+        {
+          "word": " animals,",
+          "start": 111.9,
+          "end": 112.4,
+          "probability": 0.9978779554367065
+        },
+        {
+          "word": " like",
+          "start": 112.94,
+          "end": 113.12,
+          "probability": 0.9943944215774536
+        },
+        {
+          "word": " birds,",
+          "start": 113.12,
+          "end": 113.66,
+          "probability": 0.9963234663009644
+        },
+        {
+          "word": " that",
+          "start": 114.06,
+          "end": 114.26,
+          "probability": 0.9944537281990051
+        },
+        {
+          "word": " move",
+          "start": 114.26,
+          "end": 114.6,
+          "probability": 0.9963417649269104
+        },
+        {
+          "word": " a",
+          "start": 114.6,
+          "end": 114.76,
+          "probability": 0.9887163639068604
+        },
+        {
+          "word": " lot",
+          "start": 114.76,
+          "end": 114.94,
+          "probability": 0.9996610879898071
+        },
+        {
+          "word": " at",
+          "start": 114.94,
+          "end": 115.14,
+          "probability": 0.9973242282867432
+        },
+        {
+          "word": " night",
+          "start": 115.14,
+          "end": 115.48,
+          "probability": 0.9994339346885681
+        },
+        {
+          "word": " because",
+          "start": 115.48,
+          "end": 116.3,
+          "probability": 0.5884320139884949
+        },
+        {
+          "word": " it",
+          "start": 116.3,
+          "end": 116.46,
+          "probability": 0.9959164261817932
+        },
+        {
+          "word": " can",
+          "start": 116.46,
+          "end": 116.66,
+          "probability": 0.99733966588974
+        },
+        {
+          "word": " make",
+          "start": 116.66,
+          "end": 116.9,
+          "probability": 0.9954290390014648
+        },
+        {
+          "word": " them",
+          "start": 116.9,
+          "end": 117.16,
+          "probability": 0.9989529848098755
+        },
+        {
+          "word": " go",
+          "start": 117.16,
+          "end": 117.38,
+          "probability": 0.9955205917358398
+        },
+        {
+          "word": " the",
+          "start": 117.38,
+          "end": 117.6,
+          "probability": 0.9983931183815002
+        },
+        {
+          "word": " wrong",
+          "start": 117.6,
+          "end": 117.82,
+          "probability": 0.9990448355674744
+        },
+        {
+          "word": " way.",
+          "start": 117.82,
+          "end": 118.56,
+          "probability": 0.9991530179977417
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 10968,
+      "start": 119.72,
+      "end": 124.86,
+      "text": " Studies show that light pollution affects other species that don't even live in the cities.",
+      "tokens": [
+        50813,
+        10422,
+        905,
+        326,
+        1657,
+        12231,
+        10975,
+        584,
+        4693,
+        326,
+        836,
+        470,
+        772,
+        2107,
+        287,
+        262,
+        4736,
+        13,
+        51113
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06989506085713705,
+      "compression_ratio": 1.4176470588235295,
+      "no_speech_prob": 0.019205186516046524,
+      "words": [
+        {
+          "word": " Studies",
+          "start": 119.72,
+          "end": 119.72,
+          "probability": 0.9862086772918701
+        },
+        {
+          "word": " show",
+          "start": 119.72,
+          "end": 120.08,
+          "probability": 0.9937517046928406
+        },
+        {
+          "word": " that",
+          "start": 120.08,
+          "end": 120.34,
+          "probability": 0.9890987873077393
+        },
+        {
+          "word": " light",
+          "start": 120.34,
+          "end": 120.62,
+          "probability": 0.9972328543663025
+        },
+        {
+          "word": " pollution",
+          "start": 120.62,
+          "end": 121.12,
+          "probability": 0.9985131621360779
+        },
+        {
+          "word": " affects",
+          "start": 121.12,
+          "end": 121.6,
+          "probability": 0.9389320015907288
+        },
+        {
+          "word": " other",
+          "start": 121.6,
+          "end": 122.04,
+          "probability": 0.9960624575614929
+        },
+        {
+          "word": " species",
+          "start": 122.04,
+          "end": 122.48,
+          "probability": 0.9982859492301941
+        },
+        {
+          "word": " that",
+          "start": 122.48,
+          "end": 122.94,
+          "probability": 0.9945979118347168
+        },
+        {
+          "word": " don't",
+          "start": 122.94,
+          "end": 123.4,
+          "probability": 0.9930450618267059
+        },
+        {
+          "word": " even",
+          "start": 123.4,
+          "end": 123.74,
+          "probability": 0.9923030138015747
+        },
+        {
+          "word": " live",
+          "start": 123.74,
+          "end": 124.04,
+          "probability": 0.9988700747489929
+        },
+        {
+          "word": " in",
+          "start": 124.04,
+          "end": 124.36,
+          "probability": 0.9989871382713318
+        },
+        {
+          "word": " the",
+          "start": 124.36,
+          "end": 124.54,
+          "probability": 0.691808819770813
+        },
+        {
+          "word": " cities.",
+          "start": 124.54,
+          "end": 124.86,
+          "probability": 0.9959619641304016
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 10968,
+      "start": 125.94,
+      "end": 130.58,
+      "text": " These include bats, fish, turtles and monkeys.",
+      "tokens": [
+        51163,
+        2312,
+        2291,
+        19553,
+        11,
+        5916,
+        11,
+        36288,
+        290,
+        26697,
+        13,
+        51413
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06989506085713705,
+      "compression_ratio": 1.4176470588235295,
+      "no_speech_prob": 0.019205186516046524,
+      "words": [
+        {
+          "word": " These",
+          "start": 125.94,
+          "end": 126.16,
+          "probability": 0.99128258228302
+        },
+        {
+          "word": " include",
+          "start": 126.16,
+          "end": 126.58,
+          "probability": 0.9974567294120789
+        },
+        {
+          "word": " bats,",
+          "start": 126.58,
+          "end": 127.14,
+          "probability": 0.9485004544258118
+        },
+        {
+          "word": " fish,",
+          "start": 127.8,
+          "end": 128.24,
+          "probability": 0.997100293636322
+        },
+        {
+          "word": " turtles",
+          "start": 129.46,
+          "end": 129.46,
+          "probability": 0.9983324408531189
+        },
+        {
+          "word": " and",
+          "start": 129.46,
+          "end": 130.04,
+          "probability": 0.7514697313308716
+        },
+        {
+          "word": " monkeys.",
+          "start": 130.04,
+          "end": 130.58,
+          "probability": 0.9982031583786011
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 13058,
+      "start": 131.45999999999998,
+      "end": 139.78,
+      "text": " Every year, millions of baby sea turtles die because the lights make them confused and they can't find the ocean,",
+      "tokens": [
+        50413,
+        3887,
+        614,
+        11,
+        5242,
+        286,
+        5156,
+        5417,
+        36288,
+        4656,
+        780,
+        262,
+        7588,
+        787,
+        606,
+        10416,
+        290,
+        484,
+        460,
+        470,
+        1064,
+        262,
+        9151,
+        11,
+        50813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07471062155330882,
+      "compression_ratio": 1.4820512820512821,
+      "no_speech_prob": 0.07462611049413681,
+      "words": [
+        {
+          "word": " Every",
+          "start": 131.45999999999998,
+          "end": 132.14,
+          "probability": 0.49748852849006653
+        },
+        {
+          "word": " year,",
+          "start": 132.14,
+          "end": 132.48,
+          "probability": 0.9966667294502258
+        },
+        {
+          "word": " millions",
+          "start": 133.12,
+          "end": 133.34,
+          "probability": 0.9800814390182495
+        },
+        {
+          "word": " of",
+          "start": 133.34,
+          "end": 133.86,
+          "probability": 0.9983384609222412
+        },
+        {
+          "word": " baby",
+          "start": 133.86,
+          "end": 134.22,
+          "probability": 0.9903103709220886
+        },
+        {
+          "word": " sea",
+          "start": 134.22,
+          "end": 134.64,
+          "probability": 0.9913254380226135
+        },
+        {
+          "word": " turtles",
+          "start": 134.64,
+          "end": 135.02,
+          "probability": 0.9777116775512695
+        },
+        {
+          "word": " die",
+          "start": 135.02,
+          "end": 135.54,
+          "probability": 0.9947964549064636
+        },
+        {
+          "word": " because",
+          "start": 135.54,
+          "end": 136.24,
+          "probability": 0.8078019618988037
+        },
+        {
+          "word": " the",
+          "start": 136.24,
+          "end": 136.44,
+          "probability": 0.993026852607727
+        },
+        {
+          "word": " lights",
+          "start": 136.44,
+          "end": 136.74,
+          "probability": 0.9906619191169739
+        },
+        {
+          "word": " make",
+          "start": 136.74,
+          "end": 137.06,
+          "probability": 0.9940074682235718
+        },
+        {
+          "word": " them",
+          "start": 137.06,
+          "end": 137.32,
+          "probability": 0.9984357953071594
+        },
+        {
+          "word": " confused",
+          "start": 137.32,
+          "end": 137.9,
+          "probability": 0.9979323148727417
+        },
+        {
+          "word": " and",
+          "start": 137.9,
+          "end": 138.5,
+          "probability": 0.9192019104957581
+        },
+        {
+          "word": " they",
+          "start": 138.5,
+          "end": 138.66,
+          "probability": 0.9800094962120056
+        },
+        {
+          "word": " can't",
+          "start": 138.66,
+          "end": 138.98,
+          "probability": 0.983031690120697
+        },
+        {
+          "word": " find",
+          "start": 138.98,
+          "end": 139.2,
+          "probability": 0.9983519315719604
+        },
+        {
+          "word": " the",
+          "start": 139.2,
+          "end": 139.38,
+          "probability": 0.9975908994674683
+        },
+        {
+          "word": " ocean,",
+          "start": 139.38,
+          "end": 139.78,
+          "probability": 0.9967496395111084
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 13058,
+      "start": 140.22,
+      "end": 142.58,
+      "text": " where they would be safe from other animals.",
+      "tokens": [
+        50813,
+        810,
+        484,
+        561,
+        307,
+        3338,
+        422,
+        584,
+        4695,
+        13,
+        50963
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07471062155330882,
+      "compression_ratio": 1.4820512820512821,
+      "no_speech_prob": 0.07462611049413681,
+      "words": [
+        {
+          "word": " where",
+          "start": 140.22,
+          "end": 140.54,
+          "probability": 0.994636595249176
+        },
+        {
+          "word": " they",
+          "start": 140.54,
+          "end": 140.72,
+          "probability": 0.99765944480896
+        },
+        {
+          "word": " would",
+          "start": 140.72,
+          "end": 140.88,
+          "probability": 0.9820500612258911
+        },
+        {
+          "word": " be",
+          "start": 140.88,
+          "end": 141.08,
+          "probability": 0.9983068704605103
+        },
+        {
+          "word": " safe",
+          "start": 141.08,
+          "end": 141.34,
+          "probability": 0.9969370365142822
+        },
+        {
+          "word": " from",
+          "start": 141.34,
+          "end": 141.8,
+          "probability": 0.9951287508010864
+        },
+        {
+          "word": " other",
+          "start": 141.8,
+          "end": 142.06,
+          "probability": 0.9958152174949646
+        },
+        {
+          "word": " animals.",
+          "start": 142.06,
+          "end": 142.58,
+          "probability": 0.999471127986908
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 13058,
+      "start": 144.5,
+      "end": 147.24,
+      "text": " Light pollution also damages human health.",
+      "tokens": [
+        51013,
+        4401,
+        12231,
+        635,
+        12616,
+        1692,
+        1535,
+        13,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07471062155330882,
+      "compression_ratio": 1.4820512820512821,
+      "no_speech_prob": 0.07462611049413681,
+      "words": [
+        {
+          "word": " Light",
+          "start": 144.5,
+          "end": 144.66,
+          "probability": 0.9263954162597656
+        },
+        {
+          "word": " pollution",
+          "start": 144.66,
+          "end": 145.16,
+          "probability": 0.996748685836792
+        },
+        {
+          "word": " also",
+          "start": 145.16,
+          "end": 145.62,
+          "probability": 0.9981322884559631
+        },
+        {
+          "word": " damages",
+          "start": 145.62,
+          "end": 146.38,
+          "probability": 0.9983494281768799
+        },
+        {
+          "word": " human",
+          "start": 146.38,
+          "end": 146.72,
+          "probability": 0.9987897276878357
+        },
+        {
+          "word": " health.",
+          "start": 146.72,
+          "end": 147.24,
+          "probability": 0.999424934387207
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 13058,
+      "start": 148.3,
+      "end": 153.32,
+      "text": " It doesn't matter if it's a computer screen or a street light shining through a window.",
+      "tokens": [
+        51213,
+        632,
+        1595,
+        470,
+        2300,
+        611,
+        340,
+        338,
+        257,
+        3644,
+        3159,
+        393,
+        257,
+        4675,
+        1657,
+        22751,
+        832,
+        257,
+        4324,
+        13,
+        51513
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07471062155330882,
+      "compression_ratio": 1.4820512820512821,
+      "no_speech_prob": 0.07462611049413681,
+      "words": [
+        {
+          "word": " It",
+          "start": 148.3,
+          "end": 148.46,
+          "probability": 0.9922021627426147
+        },
+        {
+          "word": " doesn't",
+          "start": 148.46,
+          "end": 148.78,
+          "probability": 0.9969534873962402
+        },
+        {
+          "word": " matter",
+          "start": 148.78,
+          "end": 149.06,
+          "probability": 0.9993314743041992
+        },
+        {
+          "word": " if",
+          "start": 149.06,
+          "end": 149.3,
+          "probability": 0.9949411153793335
+        },
+        {
+          "word": " it's",
+          "start": 149.3,
+          "end": 149.48,
+          "probability": 0.9765017330646515
+        },
+        {
+          "word": " a",
+          "start": 149.48,
+          "end": 149.62,
+          "probability": 0.9952911138534546
+        },
+        {
+          "word": " computer",
+          "start": 149.62,
+          "end": 150.0,
+          "probability": 0.9989504218101501
+        },
+        {
+          "word": " screen",
+          "start": 150.0,
+          "end": 150.5,
+          "probability": 0.9979793429374695
+        },
+        {
+          "word": " or",
+          "start": 150.5,
+          "end": 151.04,
+          "probability": 0.9115551114082336
+        },
+        {
+          "word": " a",
+          "start": 151.04,
+          "end": 151.22,
+          "probability": 0.9881446361541748
+        },
+        {
+          "word": " street",
+          "start": 151.22,
+          "end": 151.56,
+          "probability": 0.9917198419570923
+        },
+        {
+          "word": " light",
+          "start": 151.56,
+          "end": 152.0,
+          "probability": 0.8814043402671814
+        },
+        {
+          "word": " shining",
+          "start": 152.0,
+          "end": 152.4,
+          "probability": 0.9925798773765564
+        },
+        {
+          "word": " through",
+          "start": 152.4,
+          "end": 152.74,
+          "probability": 0.9950684309005737
+        },
+        {
+          "word": " a",
+          "start": 152.74,
+          "end": 152.96,
+          "probability": 0.9944434762001038
+        },
+        {
+          "word": " window.",
+          "start": 152.96,
+          "end": 153.32,
+          "probability": 0.9993540644645691
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 15332,
+      "start": 153.32,
+      "end": 162.28,
+      "text": " Too much light affects the natural, light-dark cycle of day and night and upsets our biological clock.",
+      "tokens": [
+        50363,
+        14190,
+        881,
+        1657,
+        10975,
+        262,
+        3288,
+        11,
+        1657,
+        12,
+        21953,
+        6772,
+        286,
+        1110,
+        290,
+        1755,
+        290,
+        19649,
+        1039,
+        674,
+        10685,
+        8801,
+        13,
+        50813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06448644560736579,
+      "compression_ratio": 1.5502645502645502,
+      "no_speech_prob": 0.1293821632862091,
+      "words": [
+        {
+          "word": " Too",
+          "start": 153.32,
+          "end": 154.26,
+          "probability": 0.472204327583313
+        },
+        {
+          "word": " much",
+          "start": 154.26,
+          "end": 154.6,
+          "probability": 0.9961953163146973
+        },
+        {
+          "word": " light",
+          "start": 154.6,
+          "end": 154.96,
+          "probability": 0.9960272312164307
+        },
+        {
+          "word": " affects",
+          "start": 154.96,
+          "end": 155.42,
+          "probability": 0.9388508796691895
+        },
+        {
+          "word": " the",
+          "start": 155.42,
+          "end": 155.86,
+          "probability": 0.9981086254119873
+        },
+        {
+          "word": " natural,",
+          "start": 155.86,
+          "end": 156.3,
+          "probability": 0.9949701428413391
+        },
+        {
+          "word": " light",
+          "start": 156.76,
+          "end": 156.76,
+          "probability": 0.9921587705612183
+        },
+        {
+          "word": "-dark",
+          "start": 156.76,
+          "end": 157.26,
+          "probability": 0.73276287317276
+        },
+        {
+          "word": " cycle",
+          "start": 157.26,
+          "end": 157.84,
+          "probability": 0.9773338437080383
+        },
+        {
+          "word": " of",
+          "start": 157.84,
+          "end": 158.26,
+          "probability": 0.9956386685371399
+        },
+        {
+          "word": " day",
+          "start": 158.26,
+          "end": 158.56,
+          "probability": 0.992042601108551
+        },
+        {
+          "word": " and",
+          "start": 158.56,
+          "end": 158.84,
+          "probability": 0.9794834852218628
+        },
+        {
+          "word": " night",
+          "start": 158.84,
+          "end": 159.2,
+          "probability": 0.9992485642433167
+        },
+        {
+          "word": " and",
+          "start": 159.2,
+          "end": 160.08,
+          "probability": 0.6280766725540161
+        },
+        {
+          "word": " upsets",
+          "start": 160.08,
+          "end": 160.74,
+          "probability": 0.9925046563148499
+        },
+        {
+          "word": " our",
+          "start": 160.74,
+          "end": 161.06,
+          "probability": 0.9977051615715027
+        },
+        {
+          "word": " biological",
+          "start": 161.06,
+          "end": 161.68,
+          "probability": 0.9988492727279663
+        },
+        {
+          "word": " clock.",
+          "start": 161.68,
+          "end": 162.28,
+          "probability": 0.9969865679740906
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 15332,
+      "start": 163.28,
+      "end": 167.6,
+      "text": " In other words, we don't know when to sleep and when to wake up.",
+      "tokens": [
+        50863,
+        554,
+        584,
+        2456,
+        11,
+        356,
+        836,
+        470,
+        760,
+        618,
+        284,
+        3993,
+        290,
+        618,
+        284,
+        7765,
+        510,
+        13,
+        51063
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06448644560736579,
+      "compression_ratio": 1.5502645502645502,
+      "no_speech_prob": 0.1293821632862091,
+      "words": [
+        {
+          "word": " In",
+          "start": 163.28,
+          "end": 163.52,
+          "probability": 0.9949883818626404
+        },
+        {
+          "word": " other",
+          "start": 163.52,
+          "end": 163.74,
+          "probability": 0.9992347955703735
+        },
+        {
+          "word": " words,",
+          "start": 163.74,
+          "end": 164.12,
+          "probability": 0.999747097492218
+        },
+        {
+          "word": " we",
+          "start": 164.5,
+          "end": 164.66,
+          "probability": 0.9963546991348267
+        },
+        {
+          "word": " don't",
+          "start": 164.66,
+          "end": 164.92,
+          "probability": 0.9941838085651398
+        },
+        {
+          "word": " know",
+          "start": 164.92,
+          "end": 165.14,
+          "probability": 0.9993602633476257
+        },
+        {
+          "word": " when",
+          "start": 165.14,
+          "end": 165.32,
+          "probability": 0.9980395436286926
+        },
+        {
+          "word": " to",
+          "start": 165.32,
+          "end": 165.56,
+          "probability": 0.9994044303894043
+        },
+        {
+          "word": " sleep",
+          "start": 165.56,
+          "end": 165.88,
+          "probability": 0.9995591044425964
+        },
+        {
+          "word": " and",
+          "start": 165.88,
+          "end": 166.46,
+          "probability": 0.9499154090881348
+        },
+        {
+          "word": " when",
+          "start": 166.46,
+          "end": 166.7,
+          "probability": 0.9959868788719177
+        },
+        {
+          "word": " to",
+          "start": 166.7,
+          "end": 166.94,
+          "probability": 0.9997060894966125
+        },
+        {
+          "word": " wake",
+          "start": 166.94,
+          "end": 167.18,
+          "probability": 0.9993777275085449
+        },
+        {
+          "word": " up.",
+          "start": 167.18,
+          "end": 167.6,
+          "probability": 0.9770303964614868
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 15332,
+      "start": 168.78,
+      "end": 175.28,
+      "text": " This can damage our health by increasing the risk of heart disease, obesity and cancer.",
+      "tokens": [
+        51113,
+        770,
+        460,
+        2465,
+        674,
+        1535,
+        416,
+        3649,
+        262,
+        2526,
+        286,
+        2612,
+        4369,
+        11,
+        13825,
+        290,
+        4890,
+        13,
+        51463
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06448644560736579,
+      "compression_ratio": 1.5502645502645502,
+      "no_speech_prob": 0.1293821632862091,
+      "words": [
+        {
+          "word": " This",
+          "start": 168.78,
+          "end": 169.18,
+          "probability": 0.9956563711166382
+        },
+        {
+          "word": " can",
+          "start": 169.18,
+          "end": 169.48,
+          "probability": 0.9984562397003174
+        },
+        {
+          "word": " damage",
+          "start": 169.48,
+          "end": 169.8,
+          "probability": 0.9984174966812134
+        },
+        {
+          "word": " our",
+          "start": 169.8,
+          "end": 170.06,
+          "probability": 0.9976534247398376
+        },
+        {
+          "word": " health",
+          "start": 170.06,
+          "end": 170.36,
+          "probability": 0.9991008043289185
+        },
+        {
+          "word": " by",
+          "start": 170.36,
+          "end": 170.68,
+          "probability": 0.9966399669647217
+        },
+        {
+          "word": " increasing",
+          "start": 170.68,
+          "end": 171.22,
+          "probability": 0.9978885054588318
+        },
+        {
+          "word": " the",
+          "start": 171.22,
+          "end": 171.56,
+          "probability": 0.9977268576622009
+        },
+        {
+          "word": " risk",
+          "start": 171.56,
+          "end": 171.82,
+          "probability": 0.9927734732627869
+        },
+        {
+          "word": " of",
+          "start": 171.82,
+          "end": 172.12,
+          "probability": 0.9987378716468811
+        },
+        {
+          "word": " heart",
+          "start": 172.12,
+          "end": 172.38,
+          "probability": 0.9962588548660278
+        },
+        {
+          "word": " disease,",
+          "start": 172.38,
+          "end": 172.76,
+          "probability": 0.9977236390113831
+        },
+        {
+          "word": " obesity",
+          "start": 173.34,
+          "end": 173.74,
+          "probability": 0.9995173215866089
+        },
+        {
+          "word": " and",
+          "start": 173.74,
+          "end": 174.74,
+          "probability": 0.7321583032608032
+        },
+        {
+          "word": " cancer.",
+          "start": 174.74,
+          "end": 175.28,
+          "probability": 0.9988516569137573
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 15332,
+      "start": 176.44,
+      "end": 179.04,
+      "text": " It can also damage our mental health.",
+      "tokens": [
+        51513,
+        632,
+        460,
+        635,
+        2465,
+        674,
+        5110,
+        1535,
+        13,
+        51663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06448644560736579,
+      "compression_ratio": 1.5502645502645502,
+      "no_speech_prob": 0.1293821632862091,
+      "words": [
+        {
+          "word": " It",
+          "start": 176.44,
+          "end": 176.72,
+          "probability": 0.9963564872741699
+        },
+        {
+          "word": " can",
+          "start": 176.72,
+          "end": 176.92,
+          "probability": 0.9965459704399109
+        },
+        {
+          "word": " also",
+          "start": 176.92,
+          "end": 177.38,
+          "probability": 0.9990643858909607
+        },
+        {
+          "word": " damage",
+          "start": 177.38,
+          "end": 177.88,
+          "probability": 0.9991625547409058
+        },
+        {
+          "word": " our",
+          "start": 177.88,
+          "end": 178.16,
+          "probability": 0.9990271329879761
+        },
+        {
+          "word": " mental",
+          "start": 178.16,
+          "end": 178.52,
+          "probability": 0.9998224377632141
+        },
+        {
+          "word": " health.",
+          "start": 178.52,
+          "end": 179.04,
+          "probability": 0.9998451471328735
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 17904,
+      "start": 180.04,
+      "end": 182.74,
+      "text": " When we don't sleep well, we get stressed.",
+      "tokens": [
+        50413,
+        1649,
+        356,
+        836,
+        470,
+        3993,
+        880,
+        11,
+        356,
+        651,
+        15033,
+        13,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0564208423390108,
+      "compression_ratio": 1.4924623115577889,
+      "no_speech_prob": 0.04712865129113197,
+      "words": [
+        {
+          "word": " When",
+          "start": 180.0,
+          "end": 180.32,
+          "probability": 0.8555787205696106
+        },
+        {
+          "word": " we",
+          "start": 180.32,
+          "end": 180.5,
+          "probability": 0.9978623986244202
+        },
+        {
+          "word": " don't",
+          "start": 180.5,
+          "end": 180.78,
+          "probability": 0.9944382607936859
+        },
+        {
+          "word": " sleep",
+          "start": 180.78,
+          "end": 181.12,
+          "probability": 0.9978829026222229
+        },
+        {
+          "word": " well,",
+          "start": 181.12,
+          "end": 181.46,
+          "probability": 0.9952564835548401
+        },
+        {
+          "word": " we",
+          "start": 181.9,
+          "end": 182.08,
+          "probability": 0.9957400560379028
+        },
+        {
+          "word": " get",
+          "start": 182.08,
+          "end": 182.3,
+          "probability": 0.9976166486740112
+        },
+        {
+          "word": " stressed.",
+          "start": 182.3,
+          "end": 182.74,
+          "probability": 0.998868465423584
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 17904,
+      "start": 184.62,
+      "end": 187.34,
+      "text": " So, what can we do to keep healthy?",
+      "tokens": [
+        50613,
+        1406,
+        11,
+        644,
+        460,
+        356,
+        466,
+        284,
+        1394,
+        5448,
+        30,
+        50763
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0564208423390108,
+      "compression_ratio": 1.4924623115577889,
+      "no_speech_prob": 0.04712865129113197,
+      "words": [
+        {
+          "word": " So,",
+          "start": 184.62,
+          "end": 184.72,
+          "probability": 0.9638637900352478
+        },
+        {
+          "word": " what",
+          "start": 185.26,
+          "end": 185.62,
+          "probability": 0.9853612780570984
+        },
+        {
+          "word": " can",
+          "start": 185.62,
+          "end": 185.86,
+          "probability": 0.994464099407196
+        },
+        {
+          "word": " we",
+          "start": 185.86,
+          "end": 186.08,
+          "probability": 0.9972610473632812
+        },
+        {
+          "word": " do",
+          "start": 186.08,
+          "end": 186.32,
+          "probability": 0.9973336458206177
+        },
+        {
+          "word": " to",
+          "start": 186.32,
+          "end": 186.62,
+          "probability": 0.996405839920044
+        },
+        {
+          "word": " keep",
+          "start": 186.62,
+          "end": 186.82,
+          "probability": 0.9915904402732849
+        },
+        {
+          "word": " healthy?",
+          "start": 186.82,
+          "end": 187.34,
+          "probability": 0.9953088164329529
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 17904,
+      "start": 188.54,
+      "end": 194.58,
+      "text": " We can't escape light pollution, but let me tell you a secret that may help a little.",
+      "tokens": [
+        50813,
+        775,
+        460,
+        470,
+        6654,
+        1657,
+        12231,
+        11,
+        475,
+        1309,
+        502,
+        1560,
+        345,
+        257,
+        3200,
+        326,
+        743,
+        1037,
+        257,
+        1310,
+        13,
+        51113
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0564208423390108,
+      "compression_ratio": 1.4924623115577889,
+      "no_speech_prob": 0.04712865129113197,
+      "words": [
+        {
+          "word": " We",
+          "start": 188.54,
+          "end": 188.8,
+          "probability": 0.9947437047958374
+        },
+        {
+          "word": " can't",
+          "start": 188.8,
+          "end": 189.18,
+          "probability": 0.9979400038719177
+        },
+        {
+          "word": " escape",
+          "start": 189.18,
+          "end": 189.7,
+          "probability": 0.9964430928230286
+        },
+        {
+          "word": " light",
+          "start": 189.7,
+          "end": 190.02,
+          "probability": 0.9170529246330261
+        },
+        {
+          "word": " pollution,",
+          "start": 190.02,
+          "end": 190.56,
+          "probability": 0.8312167525291443
+        },
+        {
+          "word": " but",
+          "start": 191.12,
+          "end": 191.36,
+          "probability": 0.9932136535644531
+        },
+        {
+          "word": " let",
+          "start": 191.36,
+          "end": 191.62,
+          "probability": 0.9954127669334412
+        },
+        {
+          "word": " me",
+          "start": 191.62,
+          "end": 191.8,
+          "probability": 0.99831223487854
+        },
+        {
+          "word": " tell",
+          "start": 191.8,
+          "end": 192.06,
+          "probability": 0.9991175532341003
+        },
+        {
+          "word": " you",
+          "start": 192.06,
+          "end": 192.28,
+          "probability": 0.9961950778961182
+        },
+        {
+          "word": " a",
+          "start": 192.28,
+          "end": 192.54,
+          "probability": 0.9893186688423157
+        },
+        {
+          "word": " secret",
+          "start": 192.54,
+          "end": 192.9,
+          "probability": 0.9983916878700256
+        },
+        {
+          "word": " that",
+          "start": 192.9,
+          "end": 193.36,
+          "probability": 0.9951057434082031
+        },
+        {
+          "word": " may",
+          "start": 193.36,
+          "end": 193.78,
+          "probability": 0.9895350337028503
+        },
+        {
+          "word": " help",
+          "start": 193.78,
+          "end": 194.14,
+          "probability": 0.9981004595756531
+        },
+        {
+          "word": " a",
+          "start": 194.14,
+          "end": 194.34,
+          "probability": 0.9963775277137756
+        },
+        {
+          "word": " little.",
+          "start": 194.34,
+          "end": 194.58,
+          "probability": 0.998955488204956
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 17904,
+      "start": 195.94,
+      "end": 199.44,
+      "text": " Looking at the clear night sky is very relaxing.",
+      "tokens": [
+        51163,
+        15616,
+        379,
+        262,
+        1598,
+        1755,
+        6766,
+        318,
+        845,
+        28175,
+        13,
+        51363
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0564208423390108,
+      "compression_ratio": 1.4924623115577889,
+      "no_speech_prob": 0.04712865129113197,
+      "words": [
+        {
+          "word": " Looking",
+          "start": 195.94,
+          "end": 196.26,
+          "probability": 0.9925903081893921
+        },
+        {
+          "word": " at",
+          "start": 196.26,
+          "end": 196.5,
+          "probability": 0.9984069466590881
+        },
+        {
+          "word": " the",
+          "start": 196.5,
+          "end": 196.7,
+          "probability": 0.9871906638145447
+        },
+        {
+          "word": " clear",
+          "start": 196.7,
+          "end": 197.08,
+          "probability": 0.9967957139015198
+        },
+        {
+          "word": " night",
+          "start": 197.08,
+          "end": 197.36,
+          "probability": 0.9938462376594543
+        },
+        {
+          "word": " sky",
+          "start": 197.36,
+          "end": 197.8,
+          "probability": 0.989025890827179
+        },
+        {
+          "word": " is",
+          "start": 197.8,
+          "end": 198.28,
+          "probability": 0.9884878993034363
+        },
+        {
+          "word": " very",
+          "start": 198.28,
+          "end": 198.74,
+          "probability": 0.9958296418190002
+        },
+        {
+          "word": " relaxing.",
+          "start": 198.74,
+          "end": 199.44,
+          "probability": 0.9993608593940735
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 17904,
+      "start": 200.4,
+      "end": 203.78,
+      "text": " It makes you feel like you are part of something bigger.",
+      "tokens": [
+        51413,
+        632,
+        1838,
+        345,
+        1254,
+        588,
+        345,
+        389,
+        636,
+        286,
+        1223,
+        5749,
+        13,
+        51613
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0564208423390108,
+      "compression_ratio": 1.4924623115577889,
+      "no_speech_prob": 0.04712865129113197,
+      "words": [
+        {
+          "word": " It",
+          "start": 200.4,
+          "end": 200.72,
+          "probability": 0.9950652718544006
+        },
+        {
+          "word": " makes",
+          "start": 200.72,
+          "end": 200.98,
+          "probability": 0.996471643447876
+        },
+        {
+          "word": " you",
+          "start": 200.98,
+          "end": 201.26,
+          "probability": 0.9986847043037415
+        },
+        {
+          "word": " feel",
+          "start": 201.26,
+          "end": 201.52,
+          "probability": 0.9984517097473145
+        },
+        {
+          "word": " like",
+          "start": 201.52,
+          "end": 201.76,
+          "probability": 0.994232714176178
+        },
+        {
+          "word": " you",
+          "start": 201.76,
+          "end": 202.0,
+          "probability": 0.9983130693435669
+        },
+        {
+          "word": " are",
+          "start": 202.0,
+          "end": 202.2,
+          "probability": 0.9639899730682373
+        },
+        {
+          "word": " part",
+          "start": 202.2,
+          "end": 202.5,
+          "probability": 0.9541012644767761
+        },
+        {
+          "word": " of",
+          "start": 202.5,
+          "end": 202.86,
+          "probability": 0.9986302852630615
+        },
+        {
+          "word": " something",
+          "start": 202.86,
+          "end": 203.26,
+          "probability": 0.9988981485366821
+        },
+        {
+          "word": " bigger.",
+          "start": 203.26,
+          "end": 203.78,
+          "probability": 0.9971158504486084
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 17904,
+      "start": 205.14,
+      "end": 207.06,
+      "text": " Well, that's it for today.",
+      "tokens": [
+        51663,
+        3894,
+        11,
+        326,
+        338,
+        340,
+        329,
+        1909,
+        13,
+        51763
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0564208423390108,
+      "compression_ratio": 1.4924623115577889,
+      "no_speech_prob": 0.04712865129113197,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 205.14,
+          "end": 205.5,
+          "probability": 0.9762236475944519
+        },
+        {
+          "word": " that's",
+          "start": 205.92,
+          "end": 206.4,
+          "probability": 0.9938966035842896
+        },
+        {
+          "word": " it",
+          "start": 206.4,
+          "end": 206.54,
+          "probability": 0.9975462555885315
+        },
+        {
+          "word": " for",
+          "start": 206.54,
+          "end": 206.74,
+          "probability": 0.9961530566215515
+        },
+        {
+          "word": " today.",
+          "start": 206.74,
+          "end": 207.06,
+          "probability": 0.9988842606544495
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 20706,
+      "start": 207.06,
+      "end": 211.02,
+      "text": " Tune in next time when I'll be talking about...",
+      "tokens": [
+        50363,
+        42587,
+        287,
+        1306,
+        640,
+        618,
+        314,
+        1183,
+        307,
+        3375,
+        546,
+        986,
+        50513
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2312293222972325,
+      "compression_ratio": 0.8545454545454545,
+      "no_speech_prob": 0.12181972712278366,
+      "words": [
+        {
+          "word": " Tune",
+          "start": 207.06,
+          "end": 208.02,
+          "probability": 0.5235024690628052
+        },
+        {
+          "word": " in",
+          "start": 208.02,
+          "end": 208.24,
+          "probability": 0.9828601479530334
+        },
+        {
+          "word": " next",
+          "start": 208.24,
+          "end": 208.5,
+          "probability": 0.9905956983566284
+        },
+        {
+          "word": " time",
+          "start": 208.5,
+          "end": 208.92,
+          "probability": 0.9983250498771667
+        },
+        {
+          "word": " when",
+          "start": 208.92,
+          "end": 209.3,
+          "probability": 0.6045358180999756
+        },
+        {
+          "word": " I'll",
+          "start": 209.3,
+          "end": 209.66,
+          "probability": 0.953811913728714
+        },
+        {
+          "word": " be",
+          "start": 209.66,
+          "end": 209.84,
+          "probability": 0.9930189251899719
+        },
+        {
+          "word": " talking",
+          "start": 209.84,
+          "end": 210.24,
+          "probability": 0.9886948466300964
+        },
+        {
+          "word": " about...",
+          "start": 210.24,
+          "end": 211.02,
+          "probability": 0.5531474500894547
+        }
+      ]
+    }
+  ]
+}

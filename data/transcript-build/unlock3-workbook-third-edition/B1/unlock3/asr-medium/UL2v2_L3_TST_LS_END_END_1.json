@@ -1,0 +1,4361 @@
+{
+  "model": "small.en",
+  "language": "en",
+  "text": "End of course test track one. Welcome back to 9 to 5. Here today is Susie Hawley. We're going to chat a bit about the countries that work the longest hours and how this is unhealthy. It's common knowledge that there is a global increase in the number of hours that people are working. So Susie, which countries work the most? It's really hard to say which countries work the most. There is no doubt that there are countries that work more hours than others. South Korea for example works very long hours. A couple of years ago they cut the working week from 68 hours to 52 hours. But it didn't change much because people still spent a lot of time at their desks. And it's still more than the 48 hours a week maximum that the ILO, the International Labour Organization, recommends. Is there an upper limit to how much time people can spend at work in different countries? Well in many countries like the UK, Brazil or Turkey there's a weekly limit on working time. But there are also countries that don't have such a limit. Other countries like Mexico also don't have a limit. And Mexico is the country where people spend the most hours at work. They also only get 10 days of holiday a year which is a very small amount. There is no question in my opinion that too much time working can cause a lot of health problems. For example if you have a desk job you are sitting down all day. And studies show that working long hours doesn't improve work performance. It increases your stress and makes you feel bad. What happens when we work too much? What does sitting down all day do to your body? It creates long term problems for your body. You can develop a bad back or neck problems from sitting too much. There are also more serious health problems. Studies show that you are more likely to get heart disease and other illnesses. When you work too much you also start to make bad decisions. Like eating fast food and not exercising. Mental health problems like feeling unhappy are another issue. Not sleeping enough is also a problem I guess. Absolutely. It's called sleep deprivation and you feel tired all the time. People need to work to pay bills so they work more and more. But their health suffers. I think people could be more useful if they didn't work long hours. Everyone knows that when you are tired you are more likely to have an accident. Whose responsibility is this? Good question. Most people think that managers and bosses are responsible. But it's the person's responsibility too. We should all try to avoid working too much and take more time to eat well and do exercise. We will all work better. Thanks Susie. That's all we have time for now. But tune in next week when we'll be talking to another expert about...",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.98,
+      "text": " End of course test track one.",
+      "tokens": [
+        50363,
+        5268,
+        286,
+        1781,
+        1332,
+        2610,
+        530,
+        13,
+        50503
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26961201985677086,
+      "compression_ratio": 1.4639175257731958,
+      "no_speech_prob": 0.04526989161968231,
+      "words": [
+        {
+          "word": " End",
+          "start": 0.0,
+          "end": 0.56,
+          "probability": 0.713877260684967
+        },
+        {
+          "word": " of",
+          "start": 0.56,
+          "end": 0.74,
+          "probability": 0.9520689249038696
+        },
+        {
+          "word": " course",
+          "start": 0.74,
+          "end": 1.02,
+          "probability": 0.9444242119789124
+        },
+        {
+          "word": " test",
+          "start": 1.02,
+          "end": 1.62,
+          "probability": 0.9237436056137085
+        },
+        {
+          "word": " track",
+          "start": 1.62,
+          "end": 2.12,
+          "probability": 0.30559802055358887
+        },
+        {
+          "word": " one.",
+          "start": 2.12,
+          "end": 2.98,
+          "probability": 0.6729811429977417
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.08,
+      "end": 7.14,
+      "text": " Welcome back to 9 to 5.",
+      "tokens": [
+        50603,
+        19134,
+        736,
+        284,
+        860,
+        284,
+        642,
+        13,
+        50743
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26961201985677086,
+      "compression_ratio": 1.4639175257731958,
+      "no_speech_prob": 0.04526989161968231,
+      "words": [
+        {
+          "word": " Welcome",
+          "start": 5.08,
+          "end": 5.14,
+          "probability": 0.8681880235671997
+        },
+        {
+          "word": " back",
+          "start": 5.14,
+          "end": 5.58,
+          "probability": 0.9962218999862671
+        },
+        {
+          "word": " to",
+          "start": 5.58,
+          "end": 6.08,
+          "probability": 0.9909130334854126
+        },
+        {
+          "word": " 9",
+          "start": 6.08,
+          "end": 6.54,
+          "probability": 0.5497608184814453
+        },
+        {
+          "word": " to",
+          "start": 6.54,
+          "end": 6.74,
+          "probability": 0.66676265001297
+        },
+        {
+          "word": " 5.",
+          "start": 6.74,
+          "end": 7.14,
+          "probability": 0.9898877739906311
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.04,
+      "end": 10.42,
+      "text": " Here today is Susie Hawley.",
+      "tokens": [
+        50743,
+        3423,
+        1909,
+        318,
+        8932,
+        494,
+        6091,
+        1636,
+        13,
+        50903
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26961201985677086,
+      "compression_ratio": 1.4639175257731958,
+      "no_speech_prob": 0.04526989161968231,
+      "words": [
+        {
+          "word": " Here",
+          "start": 8.04,
+          "end": 8.28,
+          "probability": 0.9634358286857605
+        },
+        {
+          "word": " today",
+          "start": 8.28,
+          "end": 8.66,
+          "probability": 0.9830506443977356
+        },
+        {
+          "word": " is",
+          "start": 8.66,
+          "end": 9.18,
+          "probability": 0.9862599968910217
+        },
+        {
+          "word": " Susie",
+          "start": 9.18,
+          "end": 9.88,
+          "probability": 0.8153618574142456
+        },
+        {
+          "word": " Hawley.",
+          "start": 9.88,
+          "end": 10.42,
+          "probability": 0.9706886410713196
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.18,
+      "end": 18.24,
+      "text": " We're going to chat a bit about the countries that work the longest hours and how this is unhealthy.",
+      "tokens": [
+        50903,
+        775,
+        821,
+        1016,
+        284,
+        8537,
+        257,
+        1643,
+        546,
+        262,
+        2678,
+        326,
+        670,
+        262,
+        14069,
+        2250,
+        290,
+        703,
+        428,
+        318,
+        27942,
+        13,
+        51303
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26961201985677086,
+      "compression_ratio": 1.4639175257731958,
+      "no_speech_prob": 0.04526989161968231,
+      "words": [
+        {
+          "word": " We're",
+          "start": 11.18,
+          "end": 11.42,
+          "probability": 0.949069082736969
+        },
+        {
+          "word": " going",
+          "start": 11.42,
+          "end": 11.62,
+          "probability": 0.9970198273658752
+        },
+        {
+          "word": " to",
+          "start": 11.62,
+          "end": 11.84,
+          "probability": 0.9986425042152405
+        },
+        {
+          "word": " chat",
+          "start": 11.84,
+          "end": 12.18,
+          "probability": 0.9836766719818115
+        },
+        {
+          "word": " a",
+          "start": 12.18,
+          "end": 12.42,
+          "probability": 0.9786964654922485
+        },
+        {
+          "word": " bit",
+          "start": 12.42,
+          "end": 12.62,
+          "probability": 0.9982196688652039
+        },
+        {
+          "word": " about",
+          "start": 12.62,
+          "end": 13.06,
+          "probability": 0.9973095655441284
+        },
+        {
+          "word": " the",
+          "start": 13.06,
+          "end": 13.32,
+          "probability": 0.9917401075363159
+        },
+        {
+          "word": " countries",
+          "start": 13.32,
+          "end": 13.8,
+          "probability": 0.9969377517700195
+        },
+        {
+          "word": " that",
+          "start": 13.8,
+          "end": 14.3,
+          "probability": 0.9925022125244141
+        },
+        {
+          "word": " work",
+          "start": 14.3,
+          "end": 14.74,
+          "probability": 0.9914270639419556
+        },
+        {
+          "word": " the",
+          "start": 14.74,
+          "end": 15.04,
+          "probability": 0.9922661185264587
+        },
+        {
+          "word": " longest",
+          "start": 15.04,
+          "end": 15.54,
+          "probability": 0.99846351146698
+        },
+        {
+          "word": " hours",
+          "start": 15.54,
+          "end": 16.16,
+          "probability": 0.9955912828445435
+        },
+        {
+          "word": " and",
+          "start": 16.16,
+          "end": 16.64,
+          "probability": 0.849355936050415
+        },
+        {
+          "word": " how",
+          "start": 16.64,
+          "end": 16.9,
+          "probability": 0.9976285099983215
+        },
+        {
+          "word": " this",
+          "start": 16.9,
+          "end": 17.22,
+          "probability": 0.9963033199310303
+        },
+        {
+          "word": " is",
+          "start": 17.22,
+          "end": 17.54,
+          "probability": 0.997430145740509
+        },
+        {
+          "word": " unhealthy.",
+          "start": 17.54,
+          "end": 18.24,
+          "probability": 0.9981541037559509
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 19.46,
+      "end": 26.06,
+      "text": " It's common knowledge that there is a global increase in the number of hours that people are working.",
+      "tokens": [
+        51303,
+        632,
+        338,
+        2219,
+        3725,
+        326,
+        612,
+        318,
+        257,
+        3298,
+        2620,
+        287,
+        262,
+        1271,
+        286,
+        2250,
+        326,
+        661,
+        389,
+        1762,
+        13,
+        51683
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26961201985677086,
+      "compression_ratio": 1.4639175257731958,
+      "no_speech_prob": 0.04526989161968231,
+      "words": [
+        {
+          "word": " It's",
+          "start": 19.46,
+          "end": 19.88,
+          "probability": 0.9825206100940704
+        },
+        {
+          "word": " common",
+          "start": 19.88,
+          "end": 20.16,
+          "probability": 0.9982588887214661
+        },
+        {
+          "word": " knowledge",
+          "start": 20.16,
+          "end": 20.64,
+          "probability": 0.9979389309883118
+        },
+        {
+          "word": " that",
+          "start": 20.64,
+          "end": 21.1,
+          "probability": 0.9925967454910278
+        },
+        {
+          "word": " there",
+          "start": 21.1,
+          "end": 21.42,
+          "probability": 0.9976785778999329
+        },
+        {
+          "word": " is",
+          "start": 21.42,
+          "end": 21.62,
+          "probability": 0.9941622614860535
+        },
+        {
+          "word": " a",
+          "start": 21.62,
+          "end": 21.78,
+          "probability": 0.9971427321434021
+        },
+        {
+          "word": " global",
+          "start": 21.78,
+          "end": 22.26,
+          "probability": 0.9985125660896301
+        },
+        {
+          "word": " increase",
+          "start": 22.26,
+          "end": 22.98,
+          "probability": 0.9972732663154602
+        },
+        {
+          "word": " in",
+          "start": 22.98,
+          "end": 23.42,
+          "probability": 0.9952760934829712
+        },
+        {
+          "word": " the",
+          "start": 23.42,
+          "end": 23.54,
+          "probability": 0.9982327222824097
+        },
+        {
+          "word": " number",
+          "start": 23.54,
+          "end": 23.76,
+          "probability": 0.9950773119926453
+        },
+        {
+          "word": " of",
+          "start": 23.76,
+          "end": 24.06,
+          "probability": 0.9991518259048462
+        },
+        {
+          "word": " hours",
+          "start": 24.06,
+          "end": 24.48,
+          "probability": 0.9987196922302246
+        },
+        {
+          "word": " that",
+          "start": 24.48,
+          "end": 24.82,
+          "probability": 0.9894283413887024
+        },
+        {
+          "word": " people",
+          "start": 24.82,
+          "end": 25.14,
+          "probability": 0.9993616938591003
+        },
+        {
+          "word": " are",
+          "start": 25.14,
+          "end": 25.44,
+          "probability": 0.998591959476471
+        },
+        {
+          "word": " working.",
+          "start": 25.44,
+          "end": 26.06,
+          "probability": 0.9992517828941345
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2606,
+      "start": 26.86,
+      "end": 30.14,
+      "text": " So Susie, which countries work the most?",
+      "tokens": [
+        50403,
+        1406,
+        8932,
+        494,
+        11,
+        543,
+        2678,
+        670,
+        262,
+        749,
+        30,
+        50603
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10256431579589843,
+      "compression_ratio": 1.6243093922651934,
+      "no_speech_prob": 0.09265647083520889,
+      "words": [
+        {
+          "word": " So",
+          "start": 26.740000000000002,
+          "end": 27.1,
+          "probability": 0.5284243822097778
+        },
+        {
+          "word": " Susie,",
+          "start": 27.1,
+          "end": 27.58,
+          "probability": 0.6163638979196548
+        },
+        {
+          "word": " which",
+          "start": 28.12,
+          "end": 28.28,
+          "probability": 0.9786733984947205
+        },
+        {
+          "word": " countries",
+          "start": 28.28,
+          "end": 28.82,
+          "probability": 0.9806798696517944
+        },
+        {
+          "word": " work",
+          "start": 28.82,
+          "end": 29.4,
+          "probability": 0.9892260432243347
+        },
+        {
+          "word": " the",
+          "start": 29.4,
+          "end": 29.64,
+          "probability": 0.9917814135551453
+        },
+        {
+          "word": " most?",
+          "start": 29.64,
+          "end": 30.14,
+          "probability": 0.9976140260696411
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2606,
+      "start": 31.16,
+      "end": 34.48,
+      "text": " It's really hard to say which countries work the most.",
+      "tokens": [
+        50603,
+        632,
+        338,
+        1107,
+        1327,
+        284,
+        910,
+        543,
+        2678,
+        670,
+        262,
+        749,
+        13,
+        50803
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10256431579589843,
+      "compression_ratio": 1.6243093922651934,
+      "no_speech_prob": 0.09265647083520889,
+      "words": [
+        {
+          "word": " It's",
+          "start": 31.16,
+          "end": 31.4,
+          "probability": 0.84279003739357
+        },
+        {
+          "word": " really",
+          "start": 31.4,
+          "end": 31.74,
+          "probability": 0.9850487112998962
+        },
+        {
+          "word": " hard",
+          "start": 31.74,
+          "end": 32.1,
+          "probability": 0.9984657764434814
+        },
+        {
+          "word": " to",
+          "start": 32.1,
+          "end": 32.36,
+          "probability": 0.9989491105079651
+        },
+        {
+          "word": " say",
+          "start": 32.36,
+          "end": 32.64,
+          "probability": 0.9980851411819458
+        },
+        {
+          "word": " which",
+          "start": 32.64,
+          "end": 32.92,
+          "probability": 0.9968379735946655
+        },
+        {
+          "word": " countries",
+          "start": 32.92,
+          "end": 33.44,
+          "probability": 0.9929999113082886
+        },
+        {
+          "word": " work",
+          "start": 33.44,
+          "end": 33.8,
+          "probability": 0.9928053021430969
+        },
+        {
+          "word": " the",
+          "start": 33.8,
+          "end": 34.04,
+          "probability": 0.9909396171569824
+        },
+        {
+          "word": " most.",
+          "start": 34.04,
+          "end": 34.48,
+          "probability": 0.9989938139915466
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2606,
+      "start": 35.32,
+      "end": 39.28,
+      "text": " There is no doubt that there are countries that work more hours than others.",
+      "tokens": [
+        50803,
+        1318,
+        318,
+        645,
+        4719,
+        326,
+        612,
+        389,
+        2678,
+        326,
+        670,
+        517,
+        2250,
+        621,
+        1854,
+        13,
+        51053
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10256431579589843,
+      "compression_ratio": 1.6243093922651934,
+      "no_speech_prob": 0.09265647083520889,
+      "words": [
+        {
+          "word": " There",
+          "start": 35.32,
+          "end": 35.42,
+          "probability": 0.9890965819358826
+        },
+        {
+          "word": " is",
+          "start": 35.42,
+          "end": 35.56,
+          "probability": 0.944403350353241
+        },
+        {
+          "word": " no",
+          "start": 35.56,
+          "end": 35.8,
+          "probability": 0.9977612495422363
+        },
+        {
+          "word": " doubt",
+          "start": 35.8,
+          "end": 36.12,
+          "probability": 0.99933260679245
+        },
+        {
+          "word": " that",
+          "start": 36.12,
+          "end": 36.44,
+          "probability": 0.971644937992096
+        },
+        {
+          "word": " there",
+          "start": 36.44,
+          "end": 36.64,
+          "probability": 0.994263231754303
+        },
+        {
+          "word": " are",
+          "start": 36.64,
+          "end": 36.9,
+          "probability": 0.998572826385498
+        },
+        {
+          "word": " countries",
+          "start": 36.9,
+          "end": 37.4,
+          "probability": 0.9945464134216309
+        },
+        {
+          "word": " that",
+          "start": 37.4,
+          "end": 37.68,
+          "probability": 0.994200587272644
+        },
+        {
+          "word": " work",
+          "start": 37.68,
+          "end": 38.0,
+          "probability": 0.9986870884895325
+        },
+        {
+          "word": " more",
+          "start": 38.0,
+          "end": 38.28,
+          "probability": 0.9980006814002991
+        },
+        {
+          "word": " hours",
+          "start": 38.28,
+          "end": 38.62,
+          "probability": 0.9972277283668518
+        },
+        {
+          "word": " than",
+          "start": 38.62,
+          "end": 38.9,
+          "probability": 0.9938172698020935
+        },
+        {
+          "word": " others.",
+          "start": 38.9,
+          "end": 39.28,
+          "probability": 0.9976574182510376
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2606,
+      "start": 40.28,
+      "end": 43.38,
+      "text": " South Korea for example works very long hours.",
+      "tokens": [
+        51053,
+        2520,
+        4969,
+        329,
+        1672,
+        2499,
+        845,
+        890,
+        2250,
+        13,
+        51253
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10256431579589843,
+      "compression_ratio": 1.6243093922651934,
+      "no_speech_prob": 0.09265647083520889,
+      "words": [
+        {
+          "word": " South",
+          "start": 40.28,
+          "end": 40.42,
+          "probability": 0.9942435622215271
+        },
+        {
+          "word": " Korea",
+          "start": 40.42,
+          "end": 40.88,
+          "probability": 0.9947826266288757
+        },
+        {
+          "word": " for",
+          "start": 40.88,
+          "end": 41.28,
+          "probability": 0.27974843978881836
+        },
+        {
+          "word": " example",
+          "start": 41.28,
+          "end": 41.7,
+          "probability": 0.9976812601089478
+        },
+        {
+          "word": " works",
+          "start": 41.7,
+          "end": 42.26,
+          "probability": 0.9285386800765991
+        },
+        {
+          "word": " very",
+          "start": 42.26,
+          "end": 42.68,
+          "probability": 0.9929465651512146
+        },
+        {
+          "word": " long",
+          "start": 42.68,
+          "end": 42.96,
+          "probability": 0.9984215497970581
+        },
+        {
+          "word": " hours.",
+          "start": 42.96,
+          "end": 43.38,
+          "probability": 0.9985067248344421
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2606,
+      "start": 44.52,
+      "end": 50.8,
+      "text": " A couple of years ago they cut the working week from 68 hours to 52 hours.",
+      "tokens": [
+        51253,
+        317,
+        3155,
+        286,
+        812,
+        2084,
+        484,
+        2005,
+        262,
+        1762,
+        1285,
+        422,
+        8257,
+        2250,
+        284,
+        6740,
+        2250,
+        13,
+        51603
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10256431579589843,
+      "compression_ratio": 1.6243093922651934,
+      "no_speech_prob": 0.09265647083520889,
+      "words": [
+        {
+          "word": " A",
+          "start": 44.52,
+          "end": 44.7,
+          "probability": 0.9843926429748535
+        },
+        {
+          "word": " couple",
+          "start": 44.7,
+          "end": 44.84,
+          "probability": 0.9977184534072876
+        },
+        {
+          "word": " of",
+          "start": 44.84,
+          "end": 45.08,
+          "probability": 0.983607828617096
+        },
+        {
+          "word": " years",
+          "start": 45.08,
+          "end": 45.38,
+          "probability": 0.9980841875076294
+        },
+        {
+          "word": " ago",
+          "start": 45.38,
+          "end": 45.76,
+          "probability": 0.9976268410682678
+        },
+        {
+          "word": " they",
+          "start": 45.76,
+          "end": 46.3,
+          "probability": 0.7065562605857849
+        },
+        {
+          "word": " cut",
+          "start": 46.3,
+          "end": 46.64,
+          "probability": 0.9981429576873779
+        },
+        {
+          "word": " the",
+          "start": 46.64,
+          "end": 46.88,
+          "probability": 0.9946097135543823
+        },
+        {
+          "word": " working",
+          "start": 46.88,
+          "end": 47.24,
+          "probability": 0.9937028288841248
+        },
+        {
+          "word": " week",
+          "start": 47.24,
+          "end": 47.64,
+          "probability": 0.9936895370483398
+        },
+        {
+          "word": " from",
+          "start": 47.64,
+          "end": 47.98,
+          "probability": 0.9962397813796997
+        },
+        {
+          "word": " 68",
+          "start": 47.98,
+          "end": 48.76,
+          "probability": 0.939426064491272
+        },
+        {
+          "word": " hours",
+          "start": 48.76,
+          "end": 49.16,
+          "probability": 0.9530969858169556
+        },
+        {
+          "word": " to",
+          "start": 49.16,
+          "end": 49.72,
+          "probability": 0.982382595539093
+        },
+        {
+          "word": " 52",
+          "start": 49.72,
+          "end": 50.32,
+          "probability": 0.996612012386322
+        },
+        {
+          "word": " hours.",
+          "start": 50.32,
+          "end": 50.8,
+          "probability": 0.9960860013961792
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5080,
+      "start": 51.599999999999994,
+      "end": 56.44,
+      "text": " But it didn't change much because people still spent a lot of time at their desks.",
+      "tokens": [
+        50403,
+        887,
+        340,
+        1422,
+        470,
+        1487,
+        881,
+        780,
+        661,
+        991,
+        3377,
+        257,
+        1256,
+        286,
+        640,
+        379,
+        511,
+        44301,
+        13,
+        50653
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10656090343699735,
+      "compression_ratio": 1.4427860696517414,
+      "no_speech_prob": 0.04815143346786499,
+      "words": [
+        {
+          "word": " But",
+          "start": 51.3,
+          "end": 51.66,
+          "probability": 0.37908294796943665
+        },
+        {
+          "word": " it",
+          "start": 51.66,
+          "end": 51.9,
+          "probability": 0.9494701027870178
+        },
+        {
+          "word": " didn't",
+          "start": 51.9,
+          "end": 52.28,
+          "probability": 0.9899832904338837
+        },
+        {
+          "word": " change",
+          "start": 52.28,
+          "end": 52.58,
+          "probability": 0.9961438179016113
+        },
+        {
+          "word": " much",
+          "start": 52.58,
+          "end": 53.04,
+          "probability": 0.9945946335792542
+        },
+        {
+          "word": " because",
+          "start": 53.04,
+          "end": 53.42,
+          "probability": 0.861329197883606
+        },
+        {
+          "word": " people",
+          "start": 53.42,
+          "end": 53.86,
+          "probability": 0.9941136240959167
+        },
+        {
+          "word": " still",
+          "start": 53.86,
+          "end": 54.24,
+          "probability": 0.9660905599594116
+        },
+        {
+          "word": " spent",
+          "start": 54.24,
+          "end": 54.62,
+          "probability": 0.912784993648529
+        },
+        {
+          "word": " a",
+          "start": 54.62,
+          "end": 54.9,
+          "probability": 0.9908628463745117
+        },
+        {
+          "word": " lot",
+          "start": 54.9,
+          "end": 55.08,
+          "probability": 0.9982157945632935
+        },
+        {
+          "word": " of",
+          "start": 55.08,
+          "end": 55.3,
+          "probability": 0.9973338842391968
+        },
+        {
+          "word": " time",
+          "start": 55.3,
+          "end": 55.6,
+          "probability": 0.9965597987174988
+        },
+        {
+          "word": " at",
+          "start": 55.6,
+          "end": 55.78,
+          "probability": 0.9943326711654663
+        },
+        {
+          "word": " their",
+          "start": 55.78,
+          "end": 56.0,
+          "probability": 0.9953315854072571
+        },
+        {
+          "word": " desks.",
+          "start": 56.0,
+          "end": 56.44,
+          "probability": 0.9968032836914062
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5080,
+      "start": 57.6,
+      "end": 66.08,
+      "text": " And it's still more than the 48 hours a week maximum that the ILO, the International Labour Organization, recommends.",
+      "tokens": [
+        50653,
+        843,
+        340,
+        338,
+        991,
+        517,
+        621,
+        262,
+        4764,
+        2250,
+        257,
+        1285,
+        5415,
+        326,
+        262,
+        14639,
+        46,
+        11,
+        262,
+        4037,
+        7179,
+        12275,
+        11,
+        20829,
+        13,
+        51153
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10656090343699735,
+      "compression_ratio": 1.4427860696517414,
+      "no_speech_prob": 0.04815143346786499,
+      "words": [
+        {
+          "word": " And",
+          "start": 57.6,
+          "end": 57.6,
+          "probability": 0.9292709827423096
+        },
+        {
+          "word": " it's",
+          "start": 57.6,
+          "end": 58.14,
+          "probability": 0.9580574631690979
+        },
+        {
+          "word": " still",
+          "start": 58.14,
+          "end": 58.38,
+          "probability": 0.992529571056366
+        },
+        {
+          "word": " more",
+          "start": 58.38,
+          "end": 58.74,
+          "probability": 0.9978212118148804
+        },
+        {
+          "word": " than",
+          "start": 58.74,
+          "end": 58.98,
+          "probability": 0.9955897331237793
+        },
+        {
+          "word": " the",
+          "start": 58.98,
+          "end": 59.14,
+          "probability": 0.9926682114601135
+        },
+        {
+          "word": " 48",
+          "start": 59.14,
+          "end": 59.72,
+          "probability": 0.9854059219360352
+        },
+        {
+          "word": " hours",
+          "start": 59.72,
+          "end": 60.04,
+          "probability": 0.907493531703949
+        },
+        {
+          "word": " a",
+          "start": 60.04,
+          "end": 60.28,
+          "probability": 0.9517403244972229
+        },
+        {
+          "word": " week",
+          "start": 60.28,
+          "end": 60.46,
+          "probability": 0.9987488985061646
+        },
+        {
+          "word": " maximum",
+          "start": 60.46,
+          "end": 60.96,
+          "probability": 0.9882259964942932
+        },
+        {
+          "word": " that",
+          "start": 60.96,
+          "end": 61.38,
+          "probability": 0.9741318821907043
+        },
+        {
+          "word": " the",
+          "start": 61.38,
+          "end": 61.56,
+          "probability": 0.9886038303375244
+        },
+        {
+          "word": " ILO,",
+          "start": 61.56,
+          "end": 62.54,
+          "probability": 0.9478808641433716
+        },
+        {
+          "word": " the",
+          "start": 62.72,
+          "end": 63.06,
+          "probability": 0.9525478482246399
+        },
+        {
+          "word": " International",
+          "start": 63.06,
+          "end": 63.7,
+          "probability": 0.7245954275131226
+        },
+        {
+          "word": " Labour",
+          "start": 63.7,
+          "end": 64.26,
+          "probability": 0.9439619183540344
+        },
+        {
+          "word": " Organization,",
+          "start": 64.26,
+          "end": 65.12,
+          "probability": 0.5864403247833252
+        },
+        {
+          "word": " recommends.",
+          "start": 65.6,
+          "end": 66.08,
+          "probability": 0.9841968417167664
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5080,
+      "start": 67.48,
+      "end": 73.62,
+      "text": " Is there an upper limit to how much time people can spend at work in different countries?",
+      "tokens": [
+        51153,
+        1148,
+        612,
+        281,
+        6727,
+        4179,
+        284,
+        703,
+        881,
+        640,
+        661,
+        460,
+        4341,
+        379,
+        670,
+        287,
+        1180,
+        2678,
+        30,
+        51503
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10656090343699735,
+      "compression_ratio": 1.4427860696517414,
+      "no_speech_prob": 0.04815143346786499,
+      "words": [
+        {
+          "word": " Is",
+          "start": 67.48,
+          "end": 67.68,
+          "probability": 0.5406527519226074
+        },
+        {
+          "word": " there",
+          "start": 67.68,
+          "end": 68.0,
+          "probability": 0.9957139492034912
+        },
+        {
+          "word": " an",
+          "start": 68.0,
+          "end": 68.28,
+          "probability": 0.9831085801124573
+        },
+        {
+          "word": " upper",
+          "start": 68.28,
+          "end": 68.62,
+          "probability": 0.9918603301048279
+        },
+        {
+          "word": " limit",
+          "start": 68.62,
+          "end": 69.06,
+          "probability": 0.9845367074012756
+        },
+        {
+          "word": " to",
+          "start": 69.06,
+          "end": 69.5,
+          "probability": 0.9898450374603271
+        },
+        {
+          "word": " how",
+          "start": 69.5,
+          "end": 69.72,
+          "probability": 0.9986912608146667
+        },
+        {
+          "word": " much",
+          "start": 69.72,
+          "end": 69.98,
+          "probability": 0.9985401630401611
+        },
+        {
+          "word": " time",
+          "start": 69.98,
+          "end": 70.44,
+          "probability": 0.9854187965393066
+        },
+        {
+          "word": " people",
+          "start": 70.44,
+          "end": 70.8,
+          "probability": 0.996448278427124
+        },
+        {
+          "word": " can",
+          "start": 70.8,
+          "end": 71.14,
+          "probability": 0.9944091439247131
+        },
+        {
+          "word": " spend",
+          "start": 71.14,
+          "end": 71.54,
+          "probability": 0.9977754950523376
+        },
+        {
+          "word": " at",
+          "start": 71.54,
+          "end": 71.82,
+          "probability": 0.9965366125106812
+        },
+        {
+          "word": " work",
+          "start": 71.82,
+          "end": 72.18,
+          "probability": 0.9995284080505371
+        },
+        {
+          "word": " in",
+          "start": 72.18,
+          "end": 72.72,
+          "probability": 0.9769291281700134
+        },
+        {
+          "word": " different",
+          "start": 72.72,
+          "end": 73.08,
+          "probability": 0.9978850483894348
+        },
+        {
+          "word": " countries?",
+          "start": 73.08,
+          "end": 73.62,
+          "probability": 0.997980535030365
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 7362,
+      "start": 74.42,
+      "end": 81.7,
+      "text": " Well in many countries like the UK, Brazil or Turkey there's a weekly limit on working time.",
+      "tokens": [
+        50403,
+        3894,
+        287,
+        867,
+        2678,
+        588,
+        262,
+        3482,
+        11,
+        7595,
+        393,
+        7137,
+        612,
+        338,
+        257,
+        10273,
+        4179,
+        319,
+        1762,
+        640,
+        13,
+        50803
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0735653296284292,
+      "compression_ratio": 1.6036866359447004,
+      "no_speech_prob": 0.10800014436244965,
+      "words": [
+        {
+          "word": " Well",
+          "start": 74.32000000000001,
+          "end": 74.68,
+          "probability": 0.3125324249267578
+        },
+        {
+          "word": " in",
+          "start": 74.68,
+          "end": 75.08,
+          "probability": 0.28256314992904663
+        },
+        {
+          "word": " many",
+          "start": 75.08,
+          "end": 75.42,
+          "probability": 0.9946298599243164
+        },
+        {
+          "word": " countries",
+          "start": 75.42,
+          "end": 75.94,
+          "probability": 0.9900994896888733
+        },
+        {
+          "word": " like",
+          "start": 75.94,
+          "end": 76.44,
+          "probability": 0.7600894570350647
+        },
+        {
+          "word": " the",
+          "start": 76.44,
+          "end": 76.72,
+          "probability": 0.9843595623970032
+        },
+        {
+          "word": " UK,",
+          "start": 76.72,
+          "end": 77.18,
+          "probability": 0.9592548608779907
+        },
+        {
+          "word": " Brazil",
+          "start": 78.08,
+          "end": 78.08,
+          "probability": 0.9930216670036316
+        },
+        {
+          "word": " or",
+          "start": 78.08,
+          "end": 78.46,
+          "probability": 0.9111499786376953
+        },
+        {
+          "word": " Turkey",
+          "start": 78.46,
+          "end": 78.98,
+          "probability": 0.9916266202926636
+        },
+        {
+          "word": " there's",
+          "start": 78.98,
+          "end": 79.72,
+          "probability": 0.6245153546333313
+        },
+        {
+          "word": " a",
+          "start": 79.72,
+          "end": 79.86,
+          "probability": 0.9957844614982605
+        },
+        {
+          "word": " weekly",
+          "start": 79.86,
+          "end": 80.18,
+          "probability": 0.9853441119194031
+        },
+        {
+          "word": " limit",
+          "start": 80.18,
+          "end": 80.56,
+          "probability": 0.996531069278717
+        },
+        {
+          "word": " on",
+          "start": 80.56,
+          "end": 80.8,
+          "probability": 0.9915492534637451
+        },
+        {
+          "word": " working",
+          "start": 80.8,
+          "end": 81.2,
+          "probability": 0.9953710436820984
+        },
+        {
+          "word": " time.",
+          "start": 81.2,
+          "end": 81.7,
+          "probability": 0.9957566857337952
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 7362,
+      "start": 82.48,
+      "end": 85.62,
+      "text": " But there are also countries that don't have such a limit.",
+      "tokens": [
+        50803,
+        887,
+        612,
+        389,
+        635,
+        2678,
+        326,
+        836,
+        470,
+        423,
+        884,
+        257,
+        4179,
+        13,
+        51003
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0735653296284292,
+      "compression_ratio": 1.6036866359447004,
+      "no_speech_prob": 0.10800014436244965,
+      "words": [
+        {
+          "word": " But",
+          "start": 82.48,
+          "end": 82.54,
+          "probability": 0.9454917311668396
+        },
+        {
+          "word": " there",
+          "start": 82.54,
+          "end": 82.7,
+          "probability": 0.987869918346405
+        },
+        {
+          "word": " are",
+          "start": 82.7,
+          "end": 82.9,
+          "probability": 0.9893367290496826
+        },
+        {
+          "word": " also",
+          "start": 82.9,
+          "end": 83.34,
+          "probability": 0.9947431087493896
+        },
+        {
+          "word": " countries",
+          "start": 83.34,
+          "end": 83.9,
+          "probability": 0.9919482469558716
+        },
+        {
+          "word": " that",
+          "start": 83.9,
+          "end": 84.2,
+          "probability": 0.9931401610374451
+        },
+        {
+          "word": " don't",
+          "start": 84.2,
+          "end": 84.6,
+          "probability": 0.9957879185676575
+        },
+        {
+          "word": " have",
+          "start": 84.6,
+          "end": 84.86,
+          "probability": 0.9984707236289978
+        },
+        {
+          "word": " such",
+          "start": 84.86,
+          "end": 85.1,
+          "probability": 0.9978975057601929
+        },
+        {
+          "word": " a",
+          "start": 85.1,
+          "end": 85.3,
+          "probability": 0.992388904094696
+        },
+        {
+          "word": " limit.",
+          "start": 85.3,
+          "end": 85.62,
+          "probability": 0.9988282322883606
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 7362,
+      "start": 86.86,
+      "end": 90.66,
+      "text": " Other countries like Mexico also don't have a limit.",
+      "tokens": [
+        51003,
+        3819,
+        2678,
+        588,
+        5828,
+        635,
+        836,
+        470,
+        423,
+        257,
+        4179,
+        13,
+        51253
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0735653296284292,
+      "compression_ratio": 1.6036866359447004,
+      "no_speech_prob": 0.10800014436244965,
+      "words": [
+        {
+          "word": " Other",
+          "start": 86.86,
+          "end": 87.04,
+          "probability": 0.9916702508926392
+        },
+        {
+          "word": " countries",
+          "start": 87.04,
+          "end": 87.54,
+          "probability": 0.998256504535675
+        },
+        {
+          "word": " like",
+          "start": 87.54,
+          "end": 87.98,
+          "probability": 0.9304850101470947
+        },
+        {
+          "word": " Mexico",
+          "start": 87.98,
+          "end": 88.7,
+          "probability": 0.9928926229476929
+        },
+        {
+          "word": " also",
+          "start": 88.7,
+          "end": 89.44,
+          "probability": 0.9608451724052429
+        },
+        {
+          "word": " don't",
+          "start": 89.44,
+          "end": 89.86,
+          "probability": 0.9978122115135193
+        },
+        {
+          "word": " have",
+          "start": 89.86,
+          "end": 90.14,
+          "probability": 0.9988322854042053
+        },
+        {
+          "word": " a",
+          "start": 90.14,
+          "end": 90.32,
+          "probability": 0.9958958625793457
+        },
+        {
+          "word": " limit.",
+          "start": 90.32,
+          "end": 90.66,
+          "probability": 0.9989540576934814
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 7362,
+      "start": 91.44,
+      "end": 95.54,
+      "text": " And Mexico is the country where people spend the most hours at work.",
+      "tokens": [
+        51253,
+        843,
+        5828,
+        318,
+        262,
+        1499,
+        810,
+        661,
+        4341,
+        262,
+        749,
+        2250,
+        379,
+        670,
+        13,
+        51503
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0735653296284292,
+      "compression_ratio": 1.6036866359447004,
+      "no_speech_prob": 0.10800014436244965,
+      "words": [
+        {
+          "word": " And",
+          "start": 91.44,
+          "end": 91.58,
+          "probability": 0.9645766019821167
+        },
+        {
+          "word": " Mexico",
+          "start": 91.58,
+          "end": 92.0,
+          "probability": 0.9945157170295715
+        },
+        {
+          "word": " is",
+          "start": 92.0,
+          "end": 92.3,
+          "probability": 0.9965241551399231
+        },
+        {
+          "word": " the",
+          "start": 92.3,
+          "end": 92.48,
+          "probability": 0.9946251511573792
+        },
+        {
+          "word": " country",
+          "start": 92.48,
+          "end": 92.82,
+          "probability": 0.9961990714073181
+        },
+        {
+          "word": " where",
+          "start": 92.82,
+          "end": 93.2,
+          "probability": 0.9931718111038208
+        },
+        {
+          "word": " people",
+          "start": 93.2,
+          "end": 93.56,
+          "probability": 0.9959158301353455
+        },
+        {
+          "word": " spend",
+          "start": 93.56,
+          "end": 93.94,
+          "probability": 0.9972469806671143
+        },
+        {
+          "word": " the",
+          "start": 93.94,
+          "end": 94.18,
+          "probability": 0.9909572601318359
+        },
+        {
+          "word": " most",
+          "start": 94.18,
+          "end": 94.48,
+          "probability": 0.999270498752594
+        },
+        {
+          "word": " hours",
+          "start": 94.48,
+          "end": 94.88,
+          "probability": 0.9988320469856262
+        },
+        {
+          "word": " at",
+          "start": 94.88,
+          "end": 95.1,
+          "probability": 0.99181067943573
+        },
+        {
+          "word": " work.",
+          "start": 95.1,
+          "end": 95.54,
+          "probability": 0.9994162321090698
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 7362,
+      "start": 96.54,
+      "end": 101.74,
+      "text": " They also only get 10 days of holiday a year which is a very small amount.",
+      "tokens": [
+        51503,
+        1119,
+        635,
+        691,
+        651,
+        838,
+        1528,
+        286,
+        9912,
+        257,
+        614,
+        543,
+        318,
+        257,
+        845,
+        1402,
+        2033,
+        13,
+        51803
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0735653296284292,
+      "compression_ratio": 1.6036866359447004,
+      "no_speech_prob": 0.10800014436244965,
+      "words": [
+        {
+          "word": " They",
+          "start": 96.54,
+          "end": 96.8,
+          "probability": 0.9903969764709473
+        },
+        {
+          "word": " also",
+          "start": 96.8,
+          "end": 97.18,
+          "probability": 0.9951413869857788
+        },
+        {
+          "word": " only",
+          "start": 97.18,
+          "end": 97.58,
+          "probability": 0.9900524020195007
+        },
+        {
+          "word": " get",
+          "start": 97.58,
+          "end": 97.9,
+          "probability": 0.9975868463516235
+        },
+        {
+          "word": " 10",
+          "start": 97.9,
+          "end": 98.26,
+          "probability": 0.6631395816802979
+        },
+        {
+          "word": " days",
+          "start": 98.26,
+          "end": 98.58,
+          "probability": 0.9956499934196472
+        },
+        {
+          "word": " of",
+          "start": 98.58,
+          "end": 98.8,
+          "probability": 0.9867391586303711
+        },
+        {
+          "word": " holiday",
+          "start": 98.8,
+          "end": 99.14,
+          "probability": 0.9902120232582092
+        },
+        {
+          "word": " a",
+          "start": 99.14,
+          "end": 99.4,
+          "probability": 0.9860429763793945
+        },
+        {
+          "word": " year",
+          "start": 99.4,
+          "end": 99.72,
+          "probability": 0.9993836879730225
+        },
+        {
+          "word": " which",
+          "start": 99.72,
+          "end": 100.36,
+          "probability": 0.39661169052124023
+        },
+        {
+          "word": " is",
+          "start": 100.36,
+          "end": 100.6,
+          "probability": 0.9983741044998169
+        },
+        {
+          "word": " a",
+          "start": 100.6,
+          "end": 100.74,
+          "probability": 0.9958922863006592
+        },
+        {
+          "word": " very",
+          "start": 100.74,
+          "end": 100.96,
+          "probability": 0.9967928528785706
+        },
+        {
+          "word": " small",
+          "start": 100.96,
+          "end": 101.34,
+          "probability": 0.9991329312324524
+        },
+        {
+          "word": " amount.",
+          "start": 101.34,
+          "end": 101.74,
+          "probability": 0.998612642288208
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 10174,
+      "start": 102.53999999999999,
+      "end": 109.6,
+      "text": " There is no question in my opinion that too much time working can cause a lot of health problems.",
+      "tokens": [
+        50403,
+        1318,
+        318,
+        645,
+        1808,
+        287,
+        616,
+        4459,
+        326,
+        1165,
+        881,
+        640,
+        1762,
+        460,
+        2728,
+        257,
+        1256,
+        286,
+        1535,
+        2761,
+        13,
+        50753
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07118324744395721,
+      "compression_ratio": 1.511737089201878,
+      "no_speech_prob": 0.012722082436084747,
+      "words": [
+        {
+          "word": " There",
+          "start": 102.53999999999999,
+          "end": 103.22,
+          "probability": 0.5938572883605957
+        },
+        {
+          "word": " is",
+          "start": 103.22,
+          "end": 103.4,
+          "probability": 0.9846018552780151
+        },
+        {
+          "word": " no",
+          "start": 103.4,
+          "end": 103.64,
+          "probability": 0.9965787529945374
+        },
+        {
+          "word": " question",
+          "start": 103.64,
+          "end": 104.12,
+          "probability": 0.9986913800239563
+        },
+        {
+          "word": " in",
+          "start": 104.12,
+          "end": 104.5,
+          "probability": 0.31131237745285034
+        },
+        {
+          "word": " my",
+          "start": 104.5,
+          "end": 104.78,
+          "probability": 0.9982224106788635
+        },
+        {
+          "word": " opinion",
+          "start": 104.78,
+          "end": 105.28,
+          "probability": 0.9979408383369446
+        },
+        {
+          "word": " that",
+          "start": 105.28,
+          "end": 105.86,
+          "probability": 0.8782449960708618
+        },
+        {
+          "word": " too",
+          "start": 105.86,
+          "end": 106.1,
+          "probability": 0.9908242225646973
+        },
+        {
+          "word": " much",
+          "start": 106.1,
+          "end": 106.34,
+          "probability": 0.9990391731262207
+        },
+        {
+          "word": " time",
+          "start": 106.34,
+          "end": 106.68,
+          "probability": 0.9965845346450806
+        },
+        {
+          "word": " working",
+          "start": 106.68,
+          "end": 107.18,
+          "probability": 0.959749162197113
+        },
+        {
+          "word": " can",
+          "start": 107.18,
+          "end": 107.74,
+          "probability": 0.991034209728241
+        },
+        {
+          "word": " cause",
+          "start": 107.74,
+          "end": 108.16,
+          "probability": 0.9972182512283325
+        },
+        {
+          "word": " a",
+          "start": 108.16,
+          "end": 108.34,
+          "probability": 0.9944579601287842
+        },
+        {
+          "word": " lot",
+          "start": 108.34,
+          "end": 108.52,
+          "probability": 0.9990955591201782
+        },
+        {
+          "word": " of",
+          "start": 108.52,
+          "end": 108.68,
+          "probability": 0.9988007545471191
+        },
+        {
+          "word": " health",
+          "start": 108.68,
+          "end": 108.94,
+          "probability": 0.9981480836868286
+        },
+        {
+          "word": " problems.",
+          "start": 108.94,
+          "end": 109.6,
+          "probability": 0.9984285235404968
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 10174,
+      "start": 110.42,
+      "end": 115.26,
+      "text": " For example if you have a desk job you are sitting down all day.",
+      "tokens": [
+        50753,
+        1114,
+        1672,
+        611,
+        345,
+        423,
+        257,
+        6915,
+        1693,
+        345,
+        389,
+        5586,
+        866,
+        477,
+        1110,
+        13,
+        51053
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07118324744395721,
+      "compression_ratio": 1.511737089201878,
+      "no_speech_prob": 0.012722082436084747,
+      "words": [
+        {
+          "word": " For",
+          "start": 110.42,
+          "end": 110.52,
+          "probability": 0.9761996865272522
+        },
+        {
+          "word": " example",
+          "start": 110.52,
+          "end": 110.84,
+          "probability": 0.9985333681106567
+        },
+        {
+          "word": " if",
+          "start": 110.84,
+          "end": 111.66,
+          "probability": 0.2972107231616974
+        },
+        {
+          "word": " you",
+          "start": 111.66,
+          "end": 111.94,
+          "probability": 0.996912956237793
+        },
+        {
+          "word": " have",
+          "start": 111.94,
+          "end": 112.28,
+          "probability": 0.9970797896385193
+        },
+        {
+          "word": " a",
+          "start": 112.28,
+          "end": 112.46,
+          "probability": 0.998348593711853
+        },
+        {
+          "word": " desk",
+          "start": 112.46,
+          "end": 112.72,
+          "probability": 0.9482232928276062
+        },
+        {
+          "word": " job",
+          "start": 112.72,
+          "end": 113.08,
+          "probability": 0.9852484464645386
+        },
+        {
+          "word": " you",
+          "start": 113.08,
+          "end": 113.72,
+          "probability": 0.6873346567153931
+        },
+        {
+          "word": " are",
+          "start": 113.72,
+          "end": 113.92,
+          "probability": 0.9945125579833984
+        },
+        {
+          "word": " sitting",
+          "start": 113.92,
+          "end": 114.18,
+          "probability": 0.9981125593185425
+        },
+        {
+          "word": " down",
+          "start": 114.18,
+          "end": 114.58,
+          "probability": 0.9965304732322693
+        },
+        {
+          "word": " all",
+          "start": 114.58,
+          "end": 114.86,
+          "probability": 0.9989460110664368
+        },
+        {
+          "word": " day.",
+          "start": 114.86,
+          "end": 115.26,
+          "probability": 0.9967637062072754
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 10174,
+      "start": 116.26,
+      "end": 121.0,
+      "text": " And studies show that working long hours doesn't improve work performance.",
+      "tokens": [
+        51053,
+        843,
+        3640,
+        905,
+        326,
+        1762,
+        890,
+        2250,
+        1595,
+        470,
+        2987,
+        670,
+        2854,
+        13,
+        51353
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07118324744395721,
+      "compression_ratio": 1.511737089201878,
+      "no_speech_prob": 0.012722082436084747,
+      "words": [
+        {
+          "word": " And",
+          "start": 116.26,
+          "end": 116.32,
+          "probability": 0.81786048412323
+        },
+        {
+          "word": " studies",
+          "start": 116.32,
+          "end": 116.76,
+          "probability": 0.9603508710861206
+        },
+        {
+          "word": " show",
+          "start": 116.76,
+          "end": 117.2,
+          "probability": 0.9952887296676636
+        },
+        {
+          "word": " that",
+          "start": 117.2,
+          "end": 117.8,
+          "probability": 0.9894114136695862
+        },
+        {
+          "word": " working",
+          "start": 117.8,
+          "end": 118.34,
+          "probability": 0.9922969937324524
+        },
+        {
+          "word": " long",
+          "start": 118.34,
+          "end": 118.68,
+          "probability": 0.9974817633628845
+        },
+        {
+          "word": " hours",
+          "start": 118.68,
+          "end": 119.12,
+          "probability": 0.997435986995697
+        },
+        {
+          "word": " doesn't",
+          "start": 119.12,
+          "end": 119.56,
+          "probability": 0.9874914586544037
+        },
+        {
+          "word": " improve",
+          "start": 119.56,
+          "end": 119.94,
+          "probability": 0.9990774393081665
+        },
+        {
+          "word": " work",
+          "start": 119.94,
+          "end": 120.36,
+          "probability": 0.9964990615844727
+        },
+        {
+          "word": " performance.",
+          "start": 120.36,
+          "end": 121.0,
+          "probability": 0.9984188079833984
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 10174,
+      "start": 121.68,
+      "end": 124.96,
+      "text": " It increases your stress and makes you feel bad.",
+      "tokens": [
+        51353,
+        632,
+        5732,
+        534,
+        5503,
+        290,
+        1838,
+        345,
+        1254,
+        2089,
+        13,
+        51553
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07118324744395721,
+      "compression_ratio": 1.511737089201878,
+      "no_speech_prob": 0.012722082436084747,
+      "words": [
+        {
+          "word": " It",
+          "start": 121.68,
+          "end": 121.92,
+          "probability": 0.9885469675064087
+        },
+        {
+          "word": " increases",
+          "start": 121.92,
+          "end": 122.34,
+          "probability": 0.9987601041793823
+        },
+        {
+          "word": " your",
+          "start": 122.34,
+          "end": 122.64,
+          "probability": 0.9958601593971252
+        },
+        {
+          "word": " stress",
+          "start": 122.64,
+          "end": 123.08,
+          "probability": 0.9997205138206482
+        },
+        {
+          "word": " and",
+          "start": 123.08,
+          "end": 123.7,
+          "probability": 0.9834485650062561
+        },
+        {
+          "word": " makes",
+          "start": 123.7,
+          "end": 123.92,
+          "probability": 0.9947105646133423
+        },
+        {
+          "word": " you",
+          "start": 123.92,
+          "end": 124.18,
+          "probability": 0.9993463158607483
+        },
+        {
+          "word": " feel",
+          "start": 124.18,
+          "end": 124.46,
+          "probability": 0.9991056323051453
+        },
+        {
+          "word": " bad.",
+          "start": 124.46,
+          "end": 124.96,
+          "probability": 0.996594250202179
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 10174,
+      "start": 126.18,
+      "end": 129.12,
+      "text": " What happens when we work too much?",
+      "tokens": [
+        51553,
+        1867,
+        4325,
+        618,
+        356,
+        670,
+        1165,
+        881,
+        30,
+        51753
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07118324744395721,
+      "compression_ratio": 1.511737089201878,
+      "no_speech_prob": 0.012722082436084747,
+      "words": [
+        {
+          "word": " What",
+          "start": 126.18,
+          "end": 126.42,
+          "probability": 0.958948016166687
+        },
+        {
+          "word": " happens",
+          "start": 126.42,
+          "end": 126.9,
+          "probability": 0.9942209720611572
+        },
+        {
+          "word": " when",
+          "start": 126.9,
+          "end": 127.44,
+          "probability": 0.9977172613143921
+        },
+        {
+          "word": " we",
+          "start": 127.44,
+          "end": 127.7,
+          "probability": 0.9980905652046204
+        },
+        {
+          "word": " work",
+          "start": 127.7,
+          "end": 128.1,
+          "probability": 0.9966163039207458
+        },
+        {
+          "word": " too",
+          "start": 128.1,
+          "end": 128.52,
+          "probability": 0.9963535070419312
+        },
+        {
+          "word": " much?",
+          "start": 128.52,
+          "end": 129.12,
+          "probability": 0.9994600415229797
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 12912,
+      "start": 129.12,
+      "end": 132.68,
+      "text": " What does sitting down all day do to your body?",
+      "tokens": [
+        50363,
+        1867,
+        857,
+        5586,
+        866,
+        477,
+        1110,
+        466,
+        284,
+        534,
+        1767,
+        30,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06231921059744699,
+      "compression_ratio": 1.6350710900473933,
+      "no_speech_prob": 0.029485926032066345,
+      "words": [
+        {
+          "word": " What",
+          "start": 129.12,
+          "end": 129.68,
+          "probability": 0.6041542291641235
+        },
+        {
+          "word": " does",
+          "start": 129.68,
+          "end": 130.02,
+          "probability": 0.9894310235977173
+        },
+        {
+          "word": " sitting",
+          "start": 130.02,
+          "end": 130.46,
+          "probability": 0.8758158683776855
+        },
+        {
+          "word": " down",
+          "start": 130.46,
+          "end": 130.92,
+          "probability": 0.988142192363739
+        },
+        {
+          "word": " all",
+          "start": 130.92,
+          "end": 131.28,
+          "probability": 0.9881885647773743
+        },
+        {
+          "word": " day",
+          "start": 131.28,
+          "end": 131.64,
+          "probability": 0.9946109056472778
+        },
+        {
+          "word": " do",
+          "start": 131.64,
+          "end": 132.0,
+          "probability": 0.9912641048431396
+        },
+        {
+          "word": " to",
+          "start": 132.0,
+          "end": 132.2,
+          "probability": 0.9969308972358704
+        },
+        {
+          "word": " your",
+          "start": 132.2,
+          "end": 132.36,
+          "probability": 0.9965624213218689
+        },
+        {
+          "word": " body?",
+          "start": 132.36,
+          "end": 132.68,
+          "probability": 0.9993597865104675
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 12912,
+      "start": 133.6,
+      "end": 136.38,
+      "text": " It creates long term problems for your body.",
+      "tokens": [
+        50563,
+        632,
+        8075,
+        890,
+        3381,
+        2761,
+        329,
+        534,
+        1767,
+        13,
+        50763
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06231921059744699,
+      "compression_ratio": 1.6350710900473933,
+      "no_speech_prob": 0.029485926032066345,
+      "words": [
+        {
+          "word": " It",
+          "start": 133.6,
+          "end": 133.6,
+          "probability": 0.9142727851867676
+        },
+        {
+          "word": " creates",
+          "start": 133.6,
+          "end": 134.0,
+          "probability": 0.996635377407074
+        },
+        {
+          "word": " long",
+          "start": 134.0,
+          "end": 134.5,
+          "probability": 0.9848050475120544
+        },
+        {
+          "word": " term",
+          "start": 134.5,
+          "end": 134.86,
+          "probability": 0.37182626128196716
+        },
+        {
+          "word": " problems",
+          "start": 134.86,
+          "end": 135.48,
+          "probability": 0.9968053102493286
+        },
+        {
+          "word": " for",
+          "start": 135.48,
+          "end": 135.82,
+          "probability": 0.9965962767601013
+        },
+        {
+          "word": " your",
+          "start": 135.82,
+          "end": 136.04,
+          "probability": 0.9962144494056702
+        },
+        {
+          "word": " body.",
+          "start": 136.04,
+          "end": 136.38,
+          "probability": 0.999562680721283
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 12912,
+      "start": 137.36,
+      "end": 141.6,
+      "text": " You can develop a bad back or neck problems from sitting too much.",
+      "tokens": [
+        50763,
+        921,
+        460,
+        1205,
+        257,
+        2089,
+        736,
+        393,
+        7393,
+        2761,
+        422,
+        5586,
+        1165,
+        881,
+        13,
+        51013
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06231921059744699,
+      "compression_ratio": 1.6350710900473933,
+      "no_speech_prob": 0.029485926032066345,
+      "words": [
+        {
+          "word": " You",
+          "start": 137.36,
+          "end": 137.4,
+          "probability": 0.9832133054733276
+        },
+        {
+          "word": " can",
+          "start": 137.4,
+          "end": 137.64,
+          "probability": 0.9984203577041626
+        },
+        {
+          "word": " develop",
+          "start": 137.64,
+          "end": 138.06,
+          "probability": 0.9975075721740723
+        },
+        {
+          "word": " a",
+          "start": 138.06,
+          "end": 138.32,
+          "probability": 0.9624840617179871
+        },
+        {
+          "word": " bad",
+          "start": 138.32,
+          "end": 138.58,
+          "probability": 0.997757613658905
+        },
+        {
+          "word": " back",
+          "start": 138.58,
+          "end": 138.94,
+          "probability": 0.9818252325057983
+        },
+        {
+          "word": " or",
+          "start": 138.94,
+          "end": 139.26,
+          "probability": 0.9677057862281799
+        },
+        {
+          "word": " neck",
+          "start": 139.26,
+          "end": 139.58,
+          "probability": 0.997859537601471
+        },
+        {
+          "word": " problems",
+          "start": 139.58,
+          "end": 140.06,
+          "probability": 0.9566329121589661
+        },
+        {
+          "word": " from",
+          "start": 140.06,
+          "end": 140.4,
+          "probability": 0.986729085445404
+        },
+        {
+          "word": " sitting",
+          "start": 140.4,
+          "end": 140.8,
+          "probability": 0.9978860020637512
+        },
+        {
+          "word": " too",
+          "start": 140.8,
+          "end": 141.12,
+          "probability": 0.9925691485404968
+        },
+        {
+          "word": " much.",
+          "start": 141.12,
+          "end": 141.6,
+          "probability": 0.9989749193191528
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 12912,
+      "start": 142.68,
+      "end": 145.04,
+      "text": " There are also more serious health problems.",
+      "tokens": [
+        51013,
+        1318,
+        389,
+        635,
+        517,
+        2726,
+        1535,
+        2761,
+        13,
+        51163
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06231921059744699,
+      "compression_ratio": 1.6350710900473933,
+      "no_speech_prob": 0.029485926032066345,
+      "words": [
+        {
+          "word": " There",
+          "start": 142.68,
+          "end": 142.82,
+          "probability": 0.9895303249359131
+        },
+        {
+          "word": " are",
+          "start": 142.82,
+          "end": 142.96,
+          "probability": 0.9943260550498962
+        },
+        {
+          "word": " also",
+          "start": 142.96,
+          "end": 143.34,
+          "probability": 0.9974603652954102
+        },
+        {
+          "word": " more",
+          "start": 143.34,
+          "end": 143.58,
+          "probability": 0.9930358529090881
+        },
+        {
+          "word": " serious",
+          "start": 143.58,
+          "end": 144.08,
+          "probability": 0.9978601336479187
+        },
+        {
+          "word": " health",
+          "start": 144.08,
+          "end": 144.44,
+          "probability": 0.9974919557571411
+        },
+        {
+          "word": " problems.",
+          "start": 144.44,
+          "end": 145.04,
+          "probability": 0.9985326528549194
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 12912,
+      "start": 146.08,
+      "end": 150.58,
+      "text": " Studies show that you are more likely to get heart disease and other illnesses.",
+      "tokens": [
+        51163,
+        10422,
+        905,
+        326,
+        345,
+        389,
+        517,
+        1884,
+        284,
+        651,
+        2612,
+        4369,
+        290,
+        584,
+        24024,
+        13,
+        51463
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06231921059744699,
+      "compression_ratio": 1.6350710900473933,
+      "no_speech_prob": 0.029485926032066345,
+      "words": [
+        {
+          "word": " Studies",
+          "start": 146.08,
+          "end": 146.08,
+          "probability": 0.9944334626197815
+        },
+        {
+          "word": " show",
+          "start": 146.08,
+          "end": 146.52,
+          "probability": 0.9931569695472717
+        },
+        {
+          "word": " that",
+          "start": 146.52,
+          "end": 147.0,
+          "probability": 0.9691630005836487
+        },
+        {
+          "word": " you",
+          "start": 147.0,
+          "end": 147.14,
+          "probability": 0.9979082345962524
+        },
+        {
+          "word": " are",
+          "start": 147.14,
+          "end": 147.26,
+          "probability": 0.9743013381958008
+        },
+        {
+          "word": " more",
+          "start": 147.26,
+          "end": 147.48,
+          "probability": 0.9959432482719421
+        },
+        {
+          "word": " likely",
+          "start": 147.48,
+          "end": 147.84,
+          "probability": 0.9943388104438782
+        },
+        {
+          "word": " to",
+          "start": 147.84,
+          "end": 148.12,
+          "probability": 0.9987584352493286
+        },
+        {
+          "word": " get",
+          "start": 148.12,
+          "end": 148.3,
+          "probability": 0.9970006346702576
+        },
+        {
+          "word": " heart",
+          "start": 148.3,
+          "end": 148.66,
+          "probability": 0.9958367347717285
+        },
+        {
+          "word": " disease",
+          "start": 148.66,
+          "end": 149.08,
+          "probability": 0.9832864999771118
+        },
+        {
+          "word": " and",
+          "start": 149.08,
+          "end": 149.76,
+          "probability": 0.9631807804107666
+        },
+        {
+          "word": " other",
+          "start": 149.76,
+          "end": 150.06,
+          "probability": 0.9965851306915283
+        },
+        {
+          "word": " illnesses.",
+          "start": 150.06,
+          "end": 150.58,
+          "probability": 0.9867803454399109
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 12912,
+      "start": 151.82,
+      "end": 155.46,
+      "text": " When you work too much you also start to make bad decisions.",
+      "tokens": [
+        51463,
+        1649,
+        345,
+        670,
+        1165,
+        881,
+        345,
+        635,
+        923,
+        284,
+        787,
+        2089,
+        5370,
+        13,
+        51713
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06231921059744699,
+      "compression_ratio": 1.6350710900473933,
+      "no_speech_prob": 0.029485926032066345,
+      "words": [
+        {
+          "word": " When",
+          "start": 151.82,
+          "end": 152.04,
+          "probability": 0.9890061616897583
+        },
+        {
+          "word": " you",
+          "start": 152.04,
+          "end": 152.24,
+          "probability": 0.9991909861564636
+        },
+        {
+          "word": " work",
+          "start": 152.24,
+          "end": 152.48,
+          "probability": 0.9987745881080627
+        },
+        {
+          "word": " too",
+          "start": 152.48,
+          "end": 152.7,
+          "probability": 0.9949883222579956
+        },
+        {
+          "word": " much",
+          "start": 152.7,
+          "end": 153.0,
+          "probability": 0.9992269277572632
+        },
+        {
+          "word": " you",
+          "start": 153.0,
+          "end": 153.5,
+          "probability": 0.5321645736694336
+        },
+        {
+          "word": " also",
+          "start": 153.5,
+          "end": 153.8,
+          "probability": 0.9935815334320068
+        },
+        {
+          "word": " start",
+          "start": 153.8,
+          "end": 154.16,
+          "probability": 0.9925383925437927
+        },
+        {
+          "word": " to",
+          "start": 154.16,
+          "end": 154.36,
+          "probability": 0.9973370432853699
+        },
+        {
+          "word": " make",
+          "start": 154.36,
+          "end": 154.56,
+          "probability": 0.9990133047103882
+        },
+        {
+          "word": " bad",
+          "start": 154.56,
+          "end": 154.92,
+          "probability": 0.9913691878318787
+        },
+        {
+          "word": " decisions.",
+          "start": 154.92,
+          "end": 155.46,
+          "probability": 0.9946048855781555
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 15546,
+      "start": 155.46,
+      "end": 159.84,
+      "text": " Like eating fast food and not exercising.",
+      "tokens": [
+        50363,
+        4525,
+        6600,
+        3049,
+        2057,
+        290,
+        407,
+        25352,
+        13,
+        50613
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06875514356713545,
+      "compression_ratio": 1.526829268292683,
+      "no_speech_prob": 0.18332459032535553,
+      "words": [
+        {
+          "word": " Like",
+          "start": 155.46,
+          "end": 156.46,
+          "probability": 0.051585208624601364
+        },
+        {
+          "word": " eating",
+          "start": 156.46,
+          "end": 157.2,
+          "probability": 0.8767457604408264
+        },
+        {
+          "word": " fast",
+          "start": 157.2,
+          "end": 157.66,
+          "probability": 0.9947103261947632
+        },
+        {
+          "word": " food",
+          "start": 157.66,
+          "end": 158.2,
+          "probability": 0.981589138507843
+        },
+        {
+          "word": " and",
+          "start": 158.2,
+          "end": 158.8,
+          "probability": 0.801953911781311
+        },
+        {
+          "word": " not",
+          "start": 158.8,
+          "end": 159.08,
+          "probability": 0.9950594902038574
+        },
+        {
+          "word": " exercising.",
+          "start": 159.08,
+          "end": 159.84,
+          "probability": 0.9910895824432373
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 15546,
+      "start": 161.2,
+      "end": 165.06,
+      "text": " Mental health problems like feeling unhappy are another issue.",
+      "tokens": [
+        50613,
+        21235,
+        1535,
+        2761,
+        588,
+        4203,
+        19283,
+        389,
+        1194,
+        2071,
+        13,
+        50863
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06875514356713545,
+      "compression_ratio": 1.526829268292683,
+      "no_speech_prob": 0.18332459032535553,
+      "words": [
+        {
+          "word": " Mental",
+          "start": 161.2,
+          "end": 161.36,
+          "probability": 0.965561032295227
+        },
+        {
+          "word": " health",
+          "start": 161.36,
+          "end": 161.78,
+          "probability": 0.9971707463264465
+        },
+        {
+          "word": " problems",
+          "start": 161.78,
+          "end": 162.3,
+          "probability": 0.9982030391693115
+        },
+        {
+          "word": " like",
+          "start": 162.3,
+          "end": 162.74,
+          "probability": 0.8088071942329407
+        },
+        {
+          "word": " feeling",
+          "start": 162.74,
+          "end": 163.28,
+          "probability": 0.9716658592224121
+        },
+        {
+          "word": " unhappy",
+          "start": 163.28,
+          "end": 163.82,
+          "probability": 0.9959304928779602
+        },
+        {
+          "word": " are",
+          "start": 163.82,
+          "end": 164.24,
+          "probability": 0.9828260540962219
+        },
+        {
+          "word": " another",
+          "start": 164.24,
+          "end": 164.52,
+          "probability": 0.9969396591186523
+        },
+        {
+          "word": " issue.",
+          "start": 164.52,
+          "end": 165.06,
+          "probability": 0.9948734641075134
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 15546,
+      "start": 166.16,
+      "end": 168.96,
+      "text": " Not sleeping enough is also a problem I guess.",
+      "tokens": [
+        50863,
+        1892,
+        11029,
+        1576,
+        318,
+        635,
+        257,
+        1917,
+        314,
+        4724,
+        13,
+        51063
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06875514356713545,
+      "compression_ratio": 1.526829268292683,
+      "no_speech_prob": 0.18332459032535553,
+      "words": [
+        {
+          "word": " Not",
+          "start": 166.16,
+          "end": 166.22,
+          "probability": 0.49947643280029297
+        },
+        {
+          "word": " sleeping",
+          "start": 166.22,
+          "end": 166.72,
+          "probability": 0.9961495399475098
+        },
+        {
+          "word": " enough",
+          "start": 166.72,
+          "end": 167.1,
+          "probability": 0.9948208332061768
+        },
+        {
+          "word": " is",
+          "start": 167.1,
+          "end": 167.44,
+          "probability": 0.9923948049545288
+        },
+        {
+          "word": " also",
+          "start": 167.44,
+          "end": 167.82,
+          "probability": 0.9973451495170593
+        },
+        {
+          "word": " a",
+          "start": 167.82,
+          "end": 168.1,
+          "probability": 0.9955961108207703
+        },
+        {
+          "word": " problem",
+          "start": 168.1,
+          "end": 168.46,
+          "probability": 0.9986005425453186
+        },
+        {
+          "word": " I",
+          "start": 168.46,
+          "end": 168.64,
+          "probability": 0.45367711782455444
+        },
+        {
+          "word": " guess.",
+          "start": 168.64,
+          "end": 168.96,
+          "probability": 0.9993413090705872
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 15546,
+      "start": 170.18,
+      "end": 175.9,
+      "text": " Absolutely. It's called sleep deprivation and you feel tired all the time.",
+      "tokens": [
+        51063,
+        28416,
+        13,
+        632,
+        338,
+        1444,
+        3993,
+        28922,
+        290,
+        345,
+        1254,
+        10032,
+        477,
+        262,
+        640,
+        13,
+        51413
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06875514356713545,
+      "compression_ratio": 1.526829268292683,
+      "no_speech_prob": 0.18332459032535553,
+      "words": [
+        {
+          "word": " Absolutely.",
+          "start": 170.18,
+          "end": 170.2,
+          "probability": 0.9861451387405396
+        },
+        {
+          "word": " It's",
+          "start": 171.12,
+          "end": 171.46,
+          "probability": 0.9683229625225067
+        },
+        {
+          "word": " called",
+          "start": 171.46,
+          "end": 171.74,
+          "probability": 0.999240517616272
+        },
+        {
+          "word": " sleep",
+          "start": 171.74,
+          "end": 172.12,
+          "probability": 0.9475727677345276
+        },
+        {
+          "word": " deprivation",
+          "start": 172.12,
+          "end": 172.76,
+          "probability": 0.9875895977020264
+        },
+        {
+          "word": " and",
+          "start": 172.76,
+          "end": 173.66,
+          "probability": 0.8492616415023804
+        },
+        {
+          "word": " you",
+          "start": 173.66,
+          "end": 173.96,
+          "probability": 0.9968463778495789
+        },
+        {
+          "word": " feel",
+          "start": 173.96,
+          "end": 174.28,
+          "probability": 0.9973247051239014
+        },
+        {
+          "word": " tired",
+          "start": 174.28,
+          "end": 174.84,
+          "probability": 0.9969058632850647
+        },
+        {
+          "word": " all",
+          "start": 174.84,
+          "end": 175.28,
+          "probability": 0.9946516156196594
+        },
+        {
+          "word": " the",
+          "start": 175.28,
+          "end": 175.5,
+          "probability": 0.9980417490005493
+        },
+        {
+          "word": " time.",
+          "start": 175.5,
+          "end": 175.9,
+          "probability": 0.999774158000946
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 15546,
+      "start": 177.3,
+      "end": 181.22,
+      "text": " People need to work to pay bills so they work more and more.",
+      "tokens": [
+        51413,
+        4380,
+        761,
+        284,
+        670,
+        284,
+        1414,
+        9024,
+        523,
+        484,
+        670,
+        517,
+        290,
+        517,
+        13,
+        51663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06875514356713545,
+      "compression_ratio": 1.526829268292683,
+      "no_speech_prob": 0.18332459032535553,
+      "words": [
+        {
+          "word": " People",
+          "start": 177.3,
+          "end": 177.6,
+          "probability": 0.9854243397712708
+        },
+        {
+          "word": " need",
+          "start": 177.6,
+          "end": 177.9,
+          "probability": 0.9988788962364197
+        },
+        {
+          "word": " to",
+          "start": 177.9,
+          "end": 178.1,
+          "probability": 0.9961607456207275
+        },
+        {
+          "word": " work",
+          "start": 178.1,
+          "end": 178.32,
+          "probability": 0.998856782913208
+        },
+        {
+          "word": " to",
+          "start": 178.32,
+          "end": 178.52,
+          "probability": 0.9981485605239868
+        },
+        {
+          "word": " pay",
+          "start": 178.52,
+          "end": 178.76,
+          "probability": 0.999549925327301
+        },
+        {
+          "word": " bills",
+          "start": 178.76,
+          "end": 179.18,
+          "probability": 0.9972363114356995
+        },
+        {
+          "word": " so",
+          "start": 179.18,
+          "end": 179.5,
+          "probability": 0.7843425869941711
+        },
+        {
+          "word": " they",
+          "start": 179.5,
+          "end": 179.84,
+          "probability": 0.9884443879127502
+        },
+        {
+          "word": " work",
+          "start": 179.84,
+          "end": 180.12,
+          "probability": 0.9984891414642334
+        },
+        {
+          "word": " more",
+          "start": 180.12,
+          "end": 180.52,
+          "probability": 0.9979262351989746
+        },
+        {
+          "word": " and",
+          "start": 180.52,
+          "end": 180.8,
+          "probability": 0.9963183403015137
+        },
+        {
+          "word": " more.",
+          "start": 180.8,
+          "end": 181.22,
+          "probability": 0.9997121691703796
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 15546,
+      "start": 181.78,
+      "end": 183.16,
+      "text": " But their health suffers.",
+      "tokens": [
+        51663,
+        887,
+        511,
+        1535,
+        21046,
+        13,
+        51813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06875514356713545,
+      "compression_ratio": 1.526829268292683,
+      "no_speech_prob": 0.18332459032535553,
+      "words": [
+        {
+          "word": " But",
+          "start": 181.78,
+          "end": 182.02,
+          "probability": 0.9829428195953369
+        },
+        {
+          "word": " their",
+          "start": 182.02,
+          "end": 182.22,
+          "probability": 0.980715274810791
+        },
+        {
+          "word": " health",
+          "start": 182.22,
+          "end": 182.64,
+          "probability": 0.9959242343902588
+        },
+        {
+          "word": " suffers.",
+          "start": 182.64,
+          "end": 183.16,
+          "probability": 0.9957938194274902
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 18316,
+      "start": 184.0,
+      "end": 188.3,
+      "text": " I think people could be more useful if they didn't work long hours.",
+      "tokens": [
+        50363,
+        314,
+        892,
+        661,
+        714,
+        307,
+        517,
+        4465,
+        611,
+        484,
+        1422,
+        470,
+        670,
+        890,
+        2250,
+        13,
+        50613
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06008218739130725,
+      "compression_ratio": 1.53125,
+      "no_speech_prob": 0.047462284564971924,
+      "words": [
+        {
+          "word": " I",
+          "start": 184.0,
+          "end": 184.7,
+          "probability": 0.2953430712223053
+        },
+        {
+          "word": " think",
+          "start": 184.7,
+          "end": 184.96,
+          "probability": 0.9743514657020569
+        },
+        {
+          "word": " people",
+          "start": 184.96,
+          "end": 185.28,
+          "probability": 0.9904944896697998
+        },
+        {
+          "word": " could",
+          "start": 185.28,
+          "end": 185.52,
+          "probability": 0.9842588901519775
+        },
+        {
+          "word": " be",
+          "start": 185.52,
+          "end": 185.66,
+          "probability": 0.9987865090370178
+        },
+        {
+          "word": " more",
+          "start": 185.66,
+          "end": 185.88,
+          "probability": 0.9958627223968506
+        },
+        {
+          "word": " useful",
+          "start": 185.88,
+          "end": 186.4,
+          "probability": 0.9984790682792664
+        },
+        {
+          "word": " if",
+          "start": 186.4,
+          "end": 186.78,
+          "probability": 0.9746583700180054
+        },
+        {
+          "word": " they",
+          "start": 186.78,
+          "end": 186.98,
+          "probability": 0.9978172779083252
+        },
+        {
+          "word": " didn't",
+          "start": 186.98,
+          "end": 187.32,
+          "probability": 0.9900319278240204
+        },
+        {
+          "word": " work",
+          "start": 187.32,
+          "end": 187.66,
+          "probability": 0.9963359832763672
+        },
+        {
+          "word": " long",
+          "start": 187.66,
+          "end": 187.9,
+          "probability": 0.9969114661216736
+        },
+        {
+          "word": " hours.",
+          "start": 187.9,
+          "end": 188.3,
+          "probability": 0.9981770515441895
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 18316,
+      "start": 189.78,
+      "end": 194.06,
+      "text": " Everyone knows that when you are tired you are more likely to have an accident.",
+      "tokens": [
+        50613,
+        11075,
+        4206,
+        326,
+        618,
+        345,
+        389,
+        10032,
+        345,
+        389,
+        517,
+        1884,
+        284,
+        423,
+        281,
+        5778,
+        13,
+        50913
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06008218739130725,
+      "compression_ratio": 1.53125,
+      "no_speech_prob": 0.047462284564971924,
+      "words": [
+        {
+          "word": " Everyone",
+          "start": 189.78,
+          "end": 189.78,
+          "probability": 0.9260480403900146
+        },
+        {
+          "word": " knows",
+          "start": 189.78,
+          "end": 190.14,
+          "probability": 0.9962185025215149
+        },
+        {
+          "word": " that",
+          "start": 190.14,
+          "end": 190.4,
+          "probability": 0.985434889793396
+        },
+        {
+          "word": " when",
+          "start": 190.4,
+          "end": 190.6,
+          "probability": 0.9815152883529663
+        },
+        {
+          "word": " you",
+          "start": 190.6,
+          "end": 190.78,
+          "probability": 0.9988706707954407
+        },
+        {
+          "word": " are",
+          "start": 190.78,
+          "end": 190.92,
+          "probability": 0.9386030435562134
+        },
+        {
+          "word": " tired",
+          "start": 190.92,
+          "end": 191.38,
+          "probability": 0.9985361099243164
+        },
+        {
+          "word": " you",
+          "start": 191.38,
+          "end": 192.08,
+          "probability": 0.39562690258026123
+        },
+        {
+          "word": " are",
+          "start": 192.08,
+          "end": 192.2,
+          "probability": 0.977191686630249
+        },
+        {
+          "word": " more",
+          "start": 192.2,
+          "end": 192.38,
+          "probability": 0.9953187108039856
+        },
+        {
+          "word": " likely",
+          "start": 192.38,
+          "end": 192.7,
+          "probability": 0.9971530437469482
+        },
+        {
+          "word": " to",
+          "start": 192.7,
+          "end": 193.04,
+          "probability": 0.9991208910942078
+        },
+        {
+          "word": " have",
+          "start": 193.04,
+          "end": 193.28,
+          "probability": 0.9990969896316528
+        },
+        {
+          "word": " an",
+          "start": 193.28,
+          "end": 193.44,
+          "probability": 0.9982414245605469
+        },
+        {
+          "word": " accident.",
+          "start": 193.44,
+          "end": 194.06,
+          "probability": 0.9984431862831116
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 18316,
+      "start": 195.08,
+      "end": 197.3,
+      "text": " Whose responsibility is this?",
+      "tokens": [
+        50913,
+        854,
+        577,
+        5798,
+        318,
+        428,
+        30,
+        51063
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06008218739130725,
+      "compression_ratio": 1.53125,
+      "no_speech_prob": 0.047462284564971924,
+      "words": [
+        {
+          "word": " Whose",
+          "start": 195.08,
+          "end": 195.46,
+          "probability": 0.5576536320149899
+        },
+        {
+          "word": " responsibility",
+          "start": 195.46,
+          "end": 196.16,
+          "probability": 0.988490104675293
+        },
+        {
+          "word": " is",
+          "start": 196.16,
+          "end": 196.8,
+          "probability": 0.9980342984199524
+        },
+        {
+          "word": " this?",
+          "start": 196.8,
+          "end": 197.3,
+          "probability": 0.9991244673728943
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 18316,
+      "start": 197.8,
+      "end": 198.64,
+      "text": " Good question.",
+      "tokens": [
+        51063,
+        4599,
+        1808,
+        13,
+        51163
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06008218739130725,
+      "compression_ratio": 1.53125,
+      "no_speech_prob": 0.047462284564971924,
+      "words": [
+        {
+          "word": " Good",
+          "start": 197.8,
+          "end": 197.96,
+          "probability": 0.9816229343414307
+        },
+        {
+          "word": " question.",
+          "start": 197.96,
+          "end": 198.64,
+          "probability": 0.9878162741661072
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 18316,
+      "start": 199.74,
+      "end": 203.1,
+      "text": " Most people think that managers and bosses are responsible.",
+      "tokens": [
+        51163,
+        4042,
+        661,
+        892,
+        326,
+        11663,
+        290,
+        17317,
+        389,
+        4497,
+        13,
+        51363
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06008218739130725,
+      "compression_ratio": 1.53125,
+      "no_speech_prob": 0.047462284564971924,
+      "words": [
+        {
+          "word": " Most",
+          "start": 199.74,
+          "end": 199.94,
+          "probability": 0.9901764988899231
+        },
+        {
+          "word": " people",
+          "start": 199.94,
+          "end": 200.34,
+          "probability": 0.9990473389625549
+        },
+        {
+          "word": " think",
+          "start": 200.34,
+          "end": 200.68,
+          "probability": 0.9981555342674255
+        },
+        {
+          "word": " that",
+          "start": 200.68,
+          "end": 200.98,
+          "probability": 0.9920445680618286
+        },
+        {
+          "word": " managers",
+          "start": 200.98,
+          "end": 201.42,
+          "probability": 0.962681770324707
+        },
+        {
+          "word": " and",
+          "start": 201.42,
+          "end": 201.8,
+          "probability": 0.9915794134140015
+        },
+        {
+          "word": " bosses",
+          "start": 201.8,
+          "end": 202.1,
+          "probability": 0.998053789138794
+        },
+        {
+          "word": " are",
+          "start": 202.1,
+          "end": 202.42,
+          "probability": 0.9990465044975281
+        },
+        {
+          "word": " responsible.",
+          "start": 202.42,
+          "end": 203.1,
+          "probability": 0.997927188873291
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 18316,
+      "start": 203.6,
+      "end": 206.14,
+      "text": " But it's the person's responsibility too.",
+      "tokens": [
+        51363,
+        887,
+        340,
+        338,
+        262,
+        1048,
+        338,
+        5798,
+        1165,
+        13,
+        51513
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06008218739130725,
+      "compression_ratio": 1.53125,
+      "no_speech_prob": 0.047462284564971924,
+      "words": [
+        {
+          "word": " But",
+          "start": 203.6,
+          "end": 203.86,
+          "probability": 0.9678764939308167
+        },
+        {
+          "word": " it's",
+          "start": 203.86,
+          "end": 204.22,
+          "probability": 0.964559018611908
+        },
+        {
+          "word": " the",
+          "start": 204.22,
+          "end": 204.4,
+          "probability": 0.9967066645622253
+        },
+        {
+          "word": " person's",
+          "start": 204.4,
+          "end": 204.94,
+          "probability": 0.9737723767757416
+        },
+        {
+          "word": " responsibility",
+          "start": 204.94,
+          "end": 205.52,
+          "probability": 0.9971466660499573
+        },
+        {
+          "word": " too.",
+          "start": 205.52,
+          "end": 206.14,
+          "probability": 0.853282630443573
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 20614,
+      "start": 206.14,
+      "end": 213.4,
+      "text": " We should all try to avoid working too much and take more time to eat well and do exercise.",
+      "tokens": [
+        50363,
+        775,
+        815,
+        477,
+        1949,
+        284,
+        3368,
+        1762,
+        1165,
+        881,
+        290,
+        1011,
+        517,
+        640,
+        284,
+        4483,
+        880,
+        290,
+        466,
+        5517,
+        13,
+        50713
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1297140414898212,
+      "compression_ratio": 1.453416149068323,
+      "no_speech_prob": 0.5832602977752686,
+      "words": [
+        {
+          "word": " We",
+          "start": 206.14,
+          "end": 207.26,
+          "probability": 0.47264429926872253
+        },
+        {
+          "word": " should",
+          "start": 207.26,
+          "end": 207.44,
+          "probability": 0.9732243418693542
+        },
+        {
+          "word": " all",
+          "start": 207.44,
+          "end": 207.82,
+          "probability": 0.9901637434959412
+        },
+        {
+          "word": " try",
+          "start": 207.82,
+          "end": 208.22,
+          "probability": 0.9834839701652527
+        },
+        {
+          "word": " to",
+          "start": 208.22,
+          "end": 208.44,
+          "probability": 0.9876554608345032
+        },
+        {
+          "word": " avoid",
+          "start": 208.44,
+          "end": 208.82,
+          "probability": 0.9986252784729004
+        },
+        {
+          "word": " working",
+          "start": 208.82,
+          "end": 209.38,
+          "probability": 0.9908449053764343
+        },
+        {
+          "word": " too",
+          "start": 209.38,
+          "end": 209.72,
+          "probability": 0.993450403213501
+        },
+        {
+          "word": " much",
+          "start": 209.72,
+          "end": 210.06,
+          "probability": 0.9987636804580688
+        },
+        {
+          "word": " and",
+          "start": 210.06,
+          "end": 210.52,
+          "probability": 0.7716887593269348
+        },
+        {
+          "word": " take",
+          "start": 210.52,
+          "end": 210.76,
+          "probability": 0.995849609375
+        },
+        {
+          "word": " more",
+          "start": 210.76,
+          "end": 211.04,
+          "probability": 0.9897785782814026
+        },
+        {
+          "word": " time",
+          "start": 211.04,
+          "end": 211.36,
+          "probability": 0.9979599714279175
+        },
+        {
+          "word": " to",
+          "start": 211.36,
+          "end": 211.56,
+          "probability": 0.9971760511398315
+        },
+        {
+          "word": " eat",
+          "start": 211.56,
+          "end": 211.78,
+          "probability": 0.9975618124008179
+        },
+        {
+          "word": " well",
+          "start": 211.78,
+          "end": 212.1,
+          "probability": 0.9900953769683838
+        },
+        {
+          "word": " and",
+          "start": 212.1,
+          "end": 212.66,
+          "probability": 0.8415169715881348
+        },
+        {
+          "word": " do",
+          "start": 212.66,
+          "end": 212.88,
+          "probability": 0.8681638240814209
+        },
+        {
+          "word": " exercise.",
+          "start": 212.88,
+          "end": 213.4,
+          "probability": 0.9974875450134277
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 20614,
+      "start": 214.22,
+      "end": 215.68,
+      "text": " We will all work better.",
+      "tokens": [
+        50713,
+        775,
+        481,
+        477,
+        670,
+        1365,
+        13,
+        50863
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1297140414898212,
+      "compression_ratio": 1.453416149068323,
+      "no_speech_prob": 0.5832602977752686,
+      "words": [
+        {
+          "word": " We",
+          "start": 214.22,
+          "end": 214.42,
+          "probability": 0.9928297400474548
+        },
+        {
+          "word": " will",
+          "start": 214.42,
+          "end": 214.56,
+          "probability": 0.9751165509223938
+        },
+        {
+          "word": " all",
+          "start": 214.56,
+          "end": 214.8,
+          "probability": 0.9943540096282959
+        },
+        {
+          "word": " work",
+          "start": 214.8,
+          "end": 215.16,
+          "probability": 0.9985673427581787
+        },
+        {
+          "word": " better.",
+          "start": 215.16,
+          "end": 215.68,
+          "probability": 0.9990529417991638
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 20614,
+      "start": 216.54,
+      "end": 217.38,
+      "text": " Thanks Susie.",
+      "tokens": [
+        50863,
+        6930,
+        8932,
+        494,
+        13,
+        50913
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1297140414898212,
+      "compression_ratio": 1.453416149068323,
+      "no_speech_prob": 0.5832602977752686,
+      "words": [
+        {
+          "word": " Thanks",
+          "start": 216.54,
+          "end": 216.86,
+          "probability": 0.917894721031189
+        },
+        {
+          "word": " Susie.",
+          "start": 216.86,
+          "end": 217.38,
+          "probability": 0.7763816714286804
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 20614,
+      "start": 218.14,
+      "end": 220.22,
+      "text": " That's all we have time for now.",
+      "tokens": [
+        50913,
+        1320,
+        338,
+        477,
+        356,
+        423,
+        640,
+        329,
+        783,
+        13,
+        51063
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1297140414898212,
+      "compression_ratio": 1.453416149068323,
+      "no_speech_prob": 0.5832602977752686,
+      "words": [
+        {
+          "word": " That's",
+          "start": 218.14,
+          "end": 218.54,
+          "probability": 0.9792837202548981
+        },
+        {
+          "word": " all",
+          "start": 218.54,
+          "end": 218.88,
+          "probability": 0.9984051585197449
+        },
+        {
+          "word": " we",
+          "start": 218.88,
+          "end": 219.1,
+          "probability": 0.992942214012146
+        },
+        {
+          "word": " have",
+          "start": 219.1,
+          "end": 219.3,
+          "probability": 0.9910861849784851
+        },
+        {
+          "word": " time",
+          "start": 219.3,
+          "end": 219.62,
+          "probability": 0.9913673996925354
+        },
+        {
+          "word": " for",
+          "start": 219.62,
+          "end": 219.92,
+          "probability": 0.9960832595825195
+        },
+        {
+          "word": " now.",
+          "start": 219.92,
+          "end": 220.22,
+          "probability": 0.9906486868858337
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "seek": 20614,
+      "start": 220.68,
+      "end": 225.24,
+      "text": " But tune in next week when we'll be talking to another expert about...",
+      "tokens": [
+        51063,
+        887,
+        14009,
+        287,
+        1306,
+        1285,
+        618,
+        356,
+        1183,
+        307,
+        3375,
+        284,
+        1194,
+        5887,
+        546,
+        986,
+        51263
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1297140414898212,
+      "compression_ratio": 1.453416149068323,
+      "no_speech_prob": 0.5832602977752686,
+      "words": [
+        {
+          "word": " But",
+          "start": 220.68,
+          "end": 220.68,
+          "probability": 0.688342273235321
+        },
+        {
+          "word": " tune",
+          "start": 220.68,
+          "end": 221.02,
+          "probability": 0.9591347575187683
+        },
+        {
+          "word": " in",
+          "start": 221.02,
+          "end": 221.24,
+          "probability": 0.9913439750671387
+        },
+        {
+          "word": " next",
+          "start": 221.24,
+          "end": 221.44,
+          "probability": 0.9965355396270752
+        },
+        {
+          "word": " week",
+          "start": 221.44,
+          "end": 221.76,
+          "probability": 0.9983497858047485
+        },
+        {
+          "word": " when",
+          "start": 221.76,
+          "end": 222.1,
+          "probability": 0.7203858494758606
+        },
+        {
+          "word": " we'll",
+          "start": 222.1,
+          "end": 222.3,
+          "probability": 0.9774209856987
+        },
+        {
+          "word": " be",
+          "start": 222.3,
+          "end": 222.42,
+          "probability": 0.9917530417442322
+        },
+        {
+          "word": " talking",
+          "start": 222.42,
+          "end": 222.7,
+          "probability": 0.9976112842559814
+        },
+        {
+          "word": " to",
+          "start": 222.7,
+          "end": 223.18,
+          "probability": 0.993034839630127
+        },
+        {
+          "word": " another",
+          "start": 223.18,
+          "end": 223.66,
+          "probability": 0.8857583403587341
+        },
+        {
+          "word": " expert",
+          "start": 223.66,
+          "end": 224.4,
+          "probability": 0.9834820032119751
+        },
+        {
+          "word": " about...",
+          "start": 224.4,
+          "end": 225.24,
+          "probability": 0.5097775459289551
+        }
+      ]
+    }
+  ]
+}

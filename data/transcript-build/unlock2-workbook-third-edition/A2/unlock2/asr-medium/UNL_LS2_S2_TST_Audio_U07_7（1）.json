@@ -1,0 +1,596 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 7.1 1 This is the best invention ever, because the design is so simple! 2 That does sound quite interesting. Tell us more! 3 But surely it must be more complicated than that! 4 The surprising thing about him is that he never tried to get rich! 5 Okay, that's not a bad story!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Track 7.1",
+      "tokens": [
+        50364,
+        31903,
+        1614,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.43663054572211374,
+      "compression_ratio": 1.2037037037037037,
+      "no_speech_prob": 0.2288137972354889,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.6,
+          "probability": 0.8155941963195801
+        },
+        {
+          "word": " 7",
+          "start": 0.6,
+          "end": 1.14,
+          "probability": 0.7692200541496277
+        },
+        {
+          "word": ".1",
+          "start": 1.14,
+          "end": 2.0,
+          "probability": 0.9936208426952362
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.88,
+      "end": 4.92,
+      "text": " 1",
+      "tokens": [
+        50554,
+        502,
+        50594
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.43663054572211374,
+      "compression_ratio": 1.2037037037037037,
+      "no_speech_prob": 0.2288137972354889,
+      "words": [
+        {
+          "word": " 1",
+          "start": 3.88,
+          "end": 4.92,
+          "probability": 0.14740516245365143
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.18,
+      "end": 12.72,
+      "text": " This is the best invention ever, because the design is so simple!",
+      "tokens": [
+        50694,
+        639,
+        307,
+        264,
+        1151,
+        22265,
+        1562,
+        11,
+        570,
+        264,
+        1715,
+        307,
+        370,
+        2199,
+        0,
+        50994
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.43663054572211374,
+      "compression_ratio": 1.2037037037037037,
+      "no_speech_prob": 0.2288137972354889,
+      "words": [
+        {
+          "word": " This",
+          "start": 6.18,
+          "end": 7.22,
+          "probability": 0.7969008088111877
+        },
+        {
+          "word": " is",
+          "start": 7.22,
+          "end": 7.68,
+          "probability": 0.9900497198104858
+        },
+        {
+          "word": " the",
+          "start": 7.68,
+          "end": 7.96,
+          "probability": 0.9973534345626831
+        },
+        {
+          "word": " best",
+          "start": 7.96,
+          "end": 8.38,
+          "probability": 0.9914379715919495
+        },
+        {
+          "word": " invention",
+          "start": 8.38,
+          "end": 9.14,
+          "probability": 0.9986814856529236
+        },
+        {
+          "word": " ever,",
+          "start": 9.14,
+          "end": 9.86,
+          "probability": 0.9828858375549316
+        },
+        {
+          "word": " because",
+          "start": 10.24,
+          "end": 10.62,
+          "probability": 0.9859064817428589
+        },
+        {
+          "word": " the",
+          "start": 10.62,
+          "end": 10.92,
+          "probability": 0.9979390501976013
+        },
+        {
+          "word": " design",
+          "start": 10.92,
+          "end": 11.32,
+          "probability": 0.9989711046218872
+        },
+        {
+          "word": " is",
+          "start": 11.32,
+          "end": 11.6,
+          "probability": 0.9984650611877441
+        },
+        {
+          "word": " so",
+          "start": 11.6,
+          "end": 11.96,
+          "probability": 0.9986703395843506
+        },
+        {
+          "word": " simple!",
+          "start": 11.96,
+          "end": 12.72,
+          "probability": 0.9980767965316772
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 14.58,
+      "end": 15.42,
+      "text": " 2",
+      "tokens": [
+        51089,
+        568,
+        51124
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.43663054572211374,
+      "compression_ratio": 1.2037037037037037,
+      "no_speech_prob": 0.2288137972354889,
+      "words": [
+        {
+          "word": " 2",
+          "start": 14.58,
+          "end": 15.42,
+          "probability": 0.989561140537262
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 17.2,
+      "end": 21.5,
+      "text": " That does sound quite interesting. Tell us more!",
+      "tokens": [
+        51224,
+        663,
+        775,
+        1626,
+        1596,
+        1880,
+        13,
+        5115,
+        505,
+        544,
+        0,
+        51434
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.43663054572211374,
+      "compression_ratio": 1.2037037037037037,
+      "no_speech_prob": 0.2288137972354889,
+      "words": [
+        {
+          "word": " That",
+          "start": 17.2,
+          "end": 17.72,
+          "probability": 0.971808135509491
+        },
+        {
+          "word": " does",
+          "start": 17.72,
+          "end": 18.14,
+          "probability": 0.9897268414497375
+        },
+        {
+          "word": " sound",
+          "start": 18.14,
+          "end": 18.56,
+          "probability": 0.9914246797561646
+        },
+        {
+          "word": " quite",
+          "start": 18.56,
+          "end": 18.94,
+          "probability": 0.9933726787567139
+        },
+        {
+          "word": " interesting.",
+          "start": 18.94,
+          "end": 19.66,
+          "probability": 0.9987439513206482
+        },
+        {
+          "word": " Tell",
+          "start": 20.52,
+          "end": 20.74,
+          "probability": 0.9960085153579712
+        },
+        {
+          "word": " us",
+          "start": 20.74,
+          "end": 21.0,
+          "probability": 0.9994667172431946
+        },
+        {
+          "word": " more!",
+          "start": 21.0,
+          "end": 21.5,
+          "probability": 0.9994456171989441
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 23.220000000000002,
+      "end": 24.26,
+      "text": " 3",
+      "tokens": [
+        51534,
+        805,
+        51569
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.43663054572211374,
+      "compression_ratio": 1.2037037037037037,
+      "no_speech_prob": 0.2288137972354889,
+      "words": [
+        {
+          "word": " 3",
+          "start": 23.220000000000002,
+          "end": 24.26,
+          "probability": 0.9986286163330078
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2426,
+      "start": 25.72,
+      "end": 30.26,
+      "text": " But surely it must be more complicated than that!",
+      "tokens": [
+        50414,
+        583,
+        11468,
+        309,
+        1633,
+        312,
+        544,
+        6179,
+        813,
+        300,
+        0,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24488040675287662,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.012202928774058819,
+      "words": [
+        {
+          "word": " But",
+          "start": 25.72,
+          "end": 26.5,
+          "probability": 0.8087301850318909
+        },
+        {
+          "word": " surely",
+          "start": 26.5,
+          "end": 27.14,
+          "probability": 0.9418893456459045
+        },
+        {
+          "word": " it",
+          "start": 27.14,
+          "end": 27.52,
+          "probability": 0.927790641784668
+        },
+        {
+          "word": " must",
+          "start": 27.52,
+          "end": 27.92,
+          "probability": 0.9849535226821899
+        },
+        {
+          "word": " be",
+          "start": 27.92,
+          "end": 28.2,
+          "probability": 0.997435986995697
+        },
+        {
+          "word": " more",
+          "start": 28.2,
+          "end": 28.56,
+          "probability": 0.9956368803977966
+        },
+        {
+          "word": " complicated",
+          "start": 28.56,
+          "end": 29.36,
+          "probability": 0.9990676045417786
+        },
+        {
+          "word": " than",
+          "start": 29.36,
+          "end": 29.74,
+          "probability": 0.995519757270813
+        },
+        {
+          "word": " that!",
+          "start": 29.74,
+          "end": 30.26,
+          "probability": 0.9988808035850525
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2426,
+      "start": 32.78,
+      "end": 33.12,
+      "text": " 4",
+      "tokens": [
+        50764,
+        1017,
+        50804
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24488040675287662,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.012202928774058819,
+      "words": [
+        {
+          "word": " 4",
+          "start": 32.78,
+          "end": 33.12,
+          "probability": 0.18144026398658752
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2426,
+      "start": 34.62,
+      "end": 39.3,
+      "text": " The surprising thing about him is that he never tried to get rich!",
+      "tokens": [
+        50904,
+        440,
+        8830,
+        551,
+        466,
+        796,
+        307,
+        300,
+        415,
+        1128,
+        3031,
+        281,
+        483,
+        4593,
+        0,
+        51124
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24488040675287662,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.012202928774058819,
+      "words": [
+        {
+          "word": " The",
+          "start": 34.62,
+          "end": 35.4,
+          "probability": 0.3037715256214142
+        },
+        {
+          "word": " surprising",
+          "start": 35.4,
+          "end": 36.14,
+          "probability": 0.993176281452179
+        },
+        {
+          "word": " thing",
+          "start": 36.14,
+          "end": 36.56,
+          "probability": 0.997593343257904
+        },
+        {
+          "word": " about",
+          "start": 36.56,
+          "end": 36.88,
+          "probability": 0.9977953433990479
+        },
+        {
+          "word": " him",
+          "start": 36.88,
+          "end": 37.2,
+          "probability": 0.9982843995094299
+        },
+        {
+          "word": " is",
+          "start": 37.2,
+          "end": 37.44,
+          "probability": 0.977242648601532
+        },
+        {
+          "word": " that",
+          "start": 37.44,
+          "end": 37.62,
+          "probability": 0.992872953414917
+        },
+        {
+          "word": " he",
+          "start": 37.62,
+          "end": 37.78,
+          "probability": 0.9958521127700806
+        },
+        {
+          "word": " never",
+          "start": 37.78,
+          "end": 38.1,
+          "probability": 0.9961051940917969
+        },
+        {
+          "word": " tried",
+          "start": 38.1,
+          "end": 38.44,
+          "probability": 0.9962448477745056
+        },
+        {
+          "word": " to",
+          "start": 38.44,
+          "end": 38.66,
+          "probability": 0.9988536834716797
+        },
+        {
+          "word": " get",
+          "start": 38.66,
+          "end": 38.86,
+          "probability": 0.9983989596366882
+        },
+        {
+          "word": " rich!",
+          "start": 38.86,
+          "end": 39.3,
+          "probability": 0.9986792206764221
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2426,
+      "start": 41.74,
+      "end": 42.52,
+      "text": " 5",
+      "tokens": [
+        51214,
+        1025,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24488040675287662,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.012202928774058819,
+      "words": [
+        {
+          "word": " 5",
+          "start": 41.74,
+          "end": 42.52,
+          "probability": 0.9953886270523071
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2426,
+      "start": 44.199999999999996,
+      "end": 47.28,
+      "text": " Okay, that's not a bad story!",
+      "tokens": [
+        51364,
+        1033,
+        11,
+        300,
+        311,
+        406,
+        257,
+        1578,
+        1657,
+        0,
+        51524
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.24488040675287662,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.012202928774058819,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 44.199999999999996,
+          "end": 44.98,
+          "probability": 0.3794999420642853
+        },
+        {
+          "word": " that's",
+          "start": 45.62,
+          "end": 46.1,
+          "probability": 0.9950443506240845
+        },
+        {
+          "word": " not",
+          "start": 46.1,
+          "end": 46.38,
+          "probability": 0.9985061287879944
+        },
+        {
+          "word": " a",
+          "start": 46.38,
+          "end": 46.52,
+          "probability": 0.9980168342590332
+        },
+        {
+          "word": " bad",
+          "start": 46.52,
+          "end": 46.8,
+          "probability": 0.9992882609367371
+        },
+        {
+          "word": " story!",
+          "start": 46.8,
+          "end": 47.28,
+          "probability": 0.9995604157447815
+        }
+      ]
+    }
+  ]
+}

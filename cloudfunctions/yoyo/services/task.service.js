@@ -1,7 +1,7 @@
 const study = require('../facades/study.facade');
 
-const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
-const CATALOG_BROWSE_CATEGORIES = ['song', 'littlebear', 'newconcept1', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'peppa', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
+const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
+const CATALOG_BROWSE_CATEGORIES = ['song', 'littlebear', 'newconcept1', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'peppa', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 
 function normalizeTaskSnapshot(snapshot, payload) {
   if (!snapshot || typeof snapshot !== 'object') {

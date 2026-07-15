@@ -1,0 +1,4827 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 8.1 Hey, Mia. That was an interesting lecture about retirement options and whether it is better to retire or keep working under the new State Pension Law. Hey, Ben. Yes, it was. It's only right that older people now have the choice to work longer. Just working one extra year can increase a person's pension fund by up to £4,500 the data said. Yes, and that's not all. If everyone over 65 chose to work for an extra 12 months GDP, that's gross domestic product, would increase by 1%. That doesn't sound like a lot, but it's equal to 16 billion for the economy. What do you think, Tom? I understand the argument, Ben, but where are all these jobs coming from? For me, there aren't enough jobs for the younger generation these days. Surely it's the responsibility of the younger generation to devote some time to taking care of their older relatives. That way they can relax and enjoy their retirement. Tom, you assume that those who have reached retirement age want to give up work. I know what you mean about the younger generation having responsibility for their parents or grandparents as they get older. But isn't what you're saying unfair towards elderly people? Forcing people to retire at 55 may have made sense in the 1950s, but ideas and lifestyles were different from the way they are now in the 21st century. That's a valid point, Mayor. 33% of today's workers are 50 and older and over 1 million are over 65. The number of people who continue to work at retirement age increased by over 300,000 between 2014 and 2024 and the trend is growing year on year. How can anyone say that the elderly don't have a huge role to play in our economy? If someone wants to carry on working and using their skills, it's quite right they should be able to. In some cases they have a lot more knowledge than the younger generation who can learn from them. I take your point Ben, but people at retirement age for example don't have the skills required for the majority of today's jobs, which involve computers, etc. They weren't brought up in a technological age like we were. I don't think it would be fair to put someone in a role they weren't skilled for just because they're older. That wouldn't be fair for the more highly skilled younger people. We need to ensure that people get jobs if they have the right skills. That's nonsense. Just because someone is older than 50, it doesn't mean they are afraid of technology or unskilled in that area. I get your point that the older generation may not have had a smartphone all their lives, but there has been a clear increase in the number of people over 65 owning a smartphone. In 2023 80% of people aged over 65 owned one according to one survey, that number is significant. What's more, for the first time ever, more women aged 60 to 64 are in work than not in work according to analysis of data from the Office for National Statistics. Yes, I read that. The number of older women in work has increased by 51% since the government changed the state pension age. Interestingly, the number of working men aged between 60 and 64 increased by only 13% over the same period. Working is a positive choice for older people as it gives them financial independence. Personally, I think it's about choice. Age is or should be irrelevant.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.88,
+      "text": " Track 8.1",
+      "tokens": [
+        50364,
+        31903,
+        1649,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3218872474901604,
+      "compression_ratio": 1.3977900552486189,
+      "no_speech_prob": 0.11448083072900772,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.4,
+          "probability": 0.3316251337528229
+        },
+        {
+          "word": " 8",
+          "start": 0.4,
+          "end": 0.94,
+          "probability": 0.9449844360351562
+        },
+        {
+          "word": ".1",
+          "start": 0.94,
+          "end": 1.88,
+          "probability": 0.9971116185188293
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.7999999999999976,
+      "end": 13.12,
+      "text": " Hey, Mia. That was an interesting lecture about retirement options and whether it is better to retire or keep working under the new State Pension Law.",
+      "tokens": [
+        50524,
+        1911,
+        11,
+        28545,
+        13,
+        663,
+        390,
+        364,
+        1880,
+        7991,
+        466,
+        15189,
+        3956,
+        293,
+        1968,
+        309,
+        307,
+        1101,
+        281,
+        10731,
+        420,
+        1066,
+        1364,
+        833,
+        264,
+        777,
+        4533,
+        430,
+        3378,
+        7744,
+        13,
+        51039
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3218872474901604,
+      "compression_ratio": 1.3977900552486189,
+      "no_speech_prob": 0.11448083072900772,
+      "words": [
+        {
+          "word": " Hey,",
+          "start": 2.7999999999999976,
+          "end": 3.52,
+          "probability": 0.10911936312913895
+        },
+        {
+          "word": " Mia.",
+          "start": 3.72,
+          "end": 3.74,
+          "probability": 0.43864524364471436
+        },
+        {
+          "word": " That",
+          "start": 4.48,
+          "end": 4.6,
+          "probability": 0.9902083873748779
+        },
+        {
+          "word": " was",
+          "start": 4.6,
+          "end": 4.76,
+          "probability": 0.9945189356803894
+        },
+        {
+          "word": " an",
+          "start": 4.76,
+          "end": 4.94,
+          "probability": 0.9927296042442322
+        },
+        {
+          "word": " interesting",
+          "start": 4.94,
+          "end": 5.5,
+          "probability": 0.9961709380149841
+        },
+        {
+          "word": " lecture",
+          "start": 5.5,
+          "end": 5.98,
+          "probability": 0.998992383480072
+        },
+        {
+          "word": " about",
+          "start": 5.98,
+          "end": 6.36,
+          "probability": 0.9910933375358582
+        },
+        {
+          "word": " retirement",
+          "start": 6.36,
+          "end": 7.04,
+          "probability": 0.9796517491340637
+        },
+        {
+          "word": " options",
+          "start": 7.04,
+          "end": 7.52,
+          "probability": 0.9965656399726868
+        },
+        {
+          "word": " and",
+          "start": 7.52,
+          "end": 8.1,
+          "probability": 0.7206858992576599
+        },
+        {
+          "word": " whether",
+          "start": 8.1,
+          "end": 8.68,
+          "probability": 0.9839762449264526
+        },
+        {
+          "word": " it",
+          "start": 8.68,
+          "end": 8.92,
+          "probability": 0.9978939890861511
+        },
+        {
+          "word": " is",
+          "start": 8.92,
+          "end": 9.06,
+          "probability": 0.9776220321655273
+        },
+        {
+          "word": " better",
+          "start": 9.06,
+          "end": 9.36,
+          "probability": 0.997795581817627
+        },
+        {
+          "word": " to",
+          "start": 9.36,
+          "end": 9.56,
+          "probability": 0.9894472360610962
+        },
+        {
+          "word": " retire",
+          "start": 9.56,
+          "end": 10.12,
+          "probability": 0.9986572265625
+        },
+        {
+          "word": " or",
+          "start": 10.12,
+          "end": 10.58,
+          "probability": 0.6053784489631653
+        },
+        {
+          "word": " keep",
+          "start": 10.58,
+          "end": 10.8,
+          "probability": 0.9950780868530273
+        },
+        {
+          "word": " working",
+          "start": 10.8,
+          "end": 11.28,
+          "probability": 0.9988310933113098
+        },
+        {
+          "word": " under",
+          "start": 11.28,
+          "end": 11.64,
+          "probability": 0.9932346940040588
+        },
+        {
+          "word": " the",
+          "start": 11.64,
+          "end": 11.78,
+          "probability": 0.9961223006248474
+        },
+        {
+          "word": " new",
+          "start": 11.78,
+          "end": 11.96,
+          "probability": 0.5198030471801758
+        },
+        {
+          "word": " State",
+          "start": 11.96,
+          "end": 12.28,
+          "probability": 0.6615914106369019
+        },
+        {
+          "word": " Pension",
+          "start": 12.28,
+          "end": 12.82,
+          "probability": 0.7750613987445831
+        },
+        {
+          "word": " Law.",
+          "start": 12.82,
+          "end": 13.12,
+          "probability": 0.8356194496154785
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.34,
+      "end": 21.88,
+      "text": " Hey, Ben. Yes, it was. It's only right that older people now have the choice to work longer.",
+      "tokens": [
+        51074,
+        1911,
+        11,
+        3964,
+        13,
+        1079,
+        11,
+        309,
+        390,
+        13,
+        467,
+        311,
+        787,
+        558,
+        300,
+        4906,
+        561,
+        586,
+        362,
+        264,
+        3922,
+        281,
+        589,
+        2854,
+        13,
+        51474
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3218872474901604,
+      "compression_ratio": 1.3977900552486189,
+      "no_speech_prob": 0.11448083072900772,
+      "words": [
+        {
+          "word": " Hey,",
+          "start": 14.34,
+          "end": 14.6,
+          "probability": 0.9094141721725464
+        },
+        {
+          "word": " Ben.",
+          "start": 14.8,
+          "end": 14.92,
+          "probability": 0.9883062243461609
+        },
+        {
+          "word": " Yes,",
+          "start": 15.58,
+          "end": 15.8,
+          "probability": 0.992716908454895
+        },
+        {
+          "word": " it",
+          "start": 16.02,
+          "end": 16.14,
+          "probability": 0.9971768856048584
+        },
+        {
+          "word": " was.",
+          "start": 16.14,
+          "end": 16.48,
+          "probability": 0.9984874725341797
+        },
+        {
+          "word": " It's",
+          "start": 17.16,
+          "end": 17.58,
+          "probability": 0.9837447702884674
+        },
+        {
+          "word": " only",
+          "start": 17.58,
+          "end": 17.78,
+          "probability": 0.9789137840270996
+        },
+        {
+          "word": " right",
+          "start": 17.78,
+          "end": 18.2,
+          "probability": 0.9974040389060974
+        },
+        {
+          "word": " that",
+          "start": 18.2,
+          "end": 18.5,
+          "probability": 0.9952470660209656
+        },
+        {
+          "word": " older",
+          "start": 18.5,
+          "end": 18.9,
+          "probability": 0.996880054473877
+        },
+        {
+          "word": " people",
+          "start": 18.9,
+          "end": 19.44,
+          "probability": 0.9992105960845947
+        },
+        {
+          "word": " now",
+          "start": 19.44,
+          "end": 19.96,
+          "probability": 0.990458607673645
+        },
+        {
+          "word": " have",
+          "start": 19.96,
+          "end": 20.24,
+          "probability": 0.9991056323051453
+        },
+        {
+          "word": " the",
+          "start": 20.24,
+          "end": 20.44,
+          "probability": 0.9964814186096191
+        },
+        {
+          "word": " choice",
+          "start": 20.44,
+          "end": 20.82,
+          "probability": 0.9976887702941895
+        },
+        {
+          "word": " to",
+          "start": 20.82,
+          "end": 21.12,
+          "probability": 0.9997076392173767
+        },
+        {
+          "word": " work",
+          "start": 21.12,
+          "end": 21.36,
+          "probability": 0.9994033575057983
+        },
+        {
+          "word": " longer.",
+          "start": 21.36,
+          "end": 21.88,
+          "probability": 0.9981405735015869
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 2188,
+      "start": 22.58,
+      "end": 31.52,
+      "text": " Just working one extra year can increase a person's pension fund by up to £4,500 the data said.",
+      "tokens": [
+        50399,
+        1449,
+        1364,
+        472,
+        2857,
+        1064,
+        393,
+        3488,
+        257,
+        954,
+        311,
+        21927,
+        2374,
+        538,
+        493,
+        281,
+        14378,
+        19,
+        11,
+        7526,
+        264,
+        1412,
+        848,
+        13,
+        50849
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20836480971305602,
+      "compression_ratio": 1.3111111111111111,
+      "no_speech_prob": 0.22652937471866608,
+      "words": [
+        {
+          "word": " Just",
+          "start": 22.5,
+          "end": 22.86,
+          "probability": 0.6668905019760132
+        },
+        {
+          "word": " working",
+          "start": 22.86,
+          "end": 23.32,
+          "probability": 0.9948740601539612
+        },
+        {
+          "word": " one",
+          "start": 23.32,
+          "end": 23.68,
+          "probability": 0.8669955730438232
+        },
+        {
+          "word": " extra",
+          "start": 23.68,
+          "end": 24.2,
+          "probability": 0.9976755976676941
+        },
+        {
+          "word": " year",
+          "start": 24.2,
+          "end": 24.66,
+          "probability": 0.9903082251548767
+        },
+        {
+          "word": " can",
+          "start": 24.66,
+          "end": 25.14,
+          "probability": 0.9893575310707092
+        },
+        {
+          "word": " increase",
+          "start": 25.14,
+          "end": 25.56,
+          "probability": 0.9962877035140991
+        },
+        {
+          "word": " a",
+          "start": 25.56,
+          "end": 25.84,
+          "probability": 0.9871992468833923
+        },
+        {
+          "word": " person's",
+          "start": 25.84,
+          "end": 26.46,
+          "probability": 0.9784498810768127
+        },
+        {
+          "word": " pension",
+          "start": 26.46,
+          "end": 26.84,
+          "probability": 0.9748862981796265
+        },
+        {
+          "word": " fund",
+          "start": 26.84,
+          "end": 27.4,
+          "probability": 0.9967622756958008
+        },
+        {
+          "word": " by",
+          "start": 27.4,
+          "end": 27.84,
+          "probability": 0.9726515412330627
+        },
+        {
+          "word": " up",
+          "start": 27.84,
+          "end": 27.98,
+          "probability": 0.9958345890045166
+        },
+        {
+          "word": " to",
+          "start": 27.98,
+          "end": 28.16,
+          "probability": 0.9965277314186096
+        },
+        {
+          "word": " £4",
+          "start": 28.16,
+          "end": 28.74,
+          "probability": 0.8570913672447205
+        },
+        {
+          "word": ",500",
+          "start": 28.74,
+          "end": 29.98,
+          "probability": 0.9694938957691193
+        },
+        {
+          "word": " the",
+          "start": 29.98,
+          "end": 30.76,
+          "probability": 0.6733658909797668
+        },
+        {
+          "word": " data",
+          "start": 30.76,
+          "end": 31.08,
+          "probability": 0.9762341380119324
+        },
+        {
+          "word": " said.",
+          "start": 31.08,
+          "end": 31.52,
+          "probability": 0.9114229083061218
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 2188,
+      "start": 32.18,
+      "end": 44.14,
+      "text": " Yes, and that's not all. If everyone over 65 chose to work for an extra 12 months GDP, that's gross domestic product, would increase by 1%.",
+      "tokens": [
+        50884,
+        1079,
+        11,
+        293,
+        300,
+        311,
+        406,
+        439,
+        13,
+        759,
+        1518,
+        670,
+        11624,
+        5111,
+        281,
+        589,
+        337,
+        364,
+        2857,
+        2272,
+        2493,
+        19599,
+        11,
+        300,
+        311,
+        11367,
+        10939,
+        1674,
+        11,
+        576,
+        3488,
+        538,
+        502,
+        6856,
+        51474
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20836480971305602,
+      "compression_ratio": 1.3111111111111111,
+      "no_speech_prob": 0.22652937471866608,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 32.18,
+          "end": 32.54,
+          "probability": 0.881184458732605
+        },
+        {
+          "word": " and",
+          "start": 32.9,
+          "end": 33.02,
+          "probability": 0.9741178154945374
+        },
+        {
+          "word": " that's",
+          "start": 33.02,
+          "end": 33.34,
+          "probability": 0.9903274476528168
+        },
+        {
+          "word": " not",
+          "start": 33.34,
+          "end": 33.48,
+          "probability": 0.9984838366508484
+        },
+        {
+          "word": " all.",
+          "start": 33.48,
+          "end": 33.78,
+          "probability": 0.9974925518035889
+        },
+        {
+          "word": " If",
+          "start": 34.36,
+          "end": 34.5,
+          "probability": 0.9954574108123779
+        },
+        {
+          "word": " everyone",
+          "start": 34.5,
+          "end": 34.86,
+          "probability": 0.9769477844238281
+        },
+        {
+          "word": " over",
+          "start": 34.86,
+          "end": 35.18,
+          "probability": 0.9869286417961121
+        },
+        {
+          "word": " 65",
+          "start": 35.18,
+          "end": 35.68,
+          "probability": 0.8839479088783264
+        },
+        {
+          "word": " chose",
+          "start": 35.68,
+          "end": 36.26,
+          "probability": 0.9822774529457092
+        },
+        {
+          "word": " to",
+          "start": 36.26,
+          "end": 36.54,
+          "probability": 0.9991472959518433
+        },
+        {
+          "word": " work",
+          "start": 36.54,
+          "end": 36.8,
+          "probability": 0.9985878467559814
+        },
+        {
+          "word": " for",
+          "start": 36.8,
+          "end": 37.06,
+          "probability": 0.9974077343940735
+        },
+        {
+          "word": " an",
+          "start": 37.06,
+          "end": 37.16,
+          "probability": 0.9266635775566101
+        },
+        {
+          "word": " extra",
+          "start": 37.16,
+          "end": 37.42,
+          "probability": 0.9992250204086304
+        },
+        {
+          "word": " 12",
+          "start": 37.42,
+          "end": 37.78,
+          "probability": 0.959259033203125
+        },
+        {
+          "word": " months",
+          "start": 37.78,
+          "end": 38.08,
+          "probability": 0.8465595245361328
+        },
+        {
+          "word": " GDP,",
+          "start": 38.08,
+          "end": 38.9,
+          "probability": 0.6438812017440796
+        },
+        {
+          "word": " that's",
+          "start": 39.72,
+          "end": 40.16,
+          "probability": 0.9781491458415985
+        },
+        {
+          "word": " gross",
+          "start": 40.16,
+          "end": 40.52,
+          "probability": 0.4784802794456482
+        },
+        {
+          "word": " domestic",
+          "start": 40.52,
+          "end": 40.88,
+          "probability": 0.9891722202301025
+        },
+        {
+          "word": " product,",
+          "start": 40.88,
+          "end": 41.66,
+          "probability": 0.9931951761245728
+        },
+        {
+          "word": " would",
+          "start": 41.92,
+          "end": 42.22,
+          "probability": 0.991113007068634
+        },
+        {
+          "word": " increase",
+          "start": 42.22,
+          "end": 42.7,
+          "probability": 0.9912124276161194
+        },
+        {
+          "word": " by",
+          "start": 42.7,
+          "end": 43.04,
+          "probability": 0.9982128143310547
+        },
+        {
+          "word": " 1%.",
+          "start": 43.04,
+          "end": 44.14,
+          "probability": 0.869621068239212
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 4414,
+      "start": 44.14,
+      "end": 51.58,
+      "text": " That doesn't sound like a lot, but it's equal to 16 billion for the economy. What do you think, Tom?",
+      "tokens": [
+        50389,
+        663,
+        1177,
+        380,
+        1626,
+        411,
+        257,
+        688,
+        11,
+        457,
+        309,
+        311,
+        2681,
+        281,
+        3165,
+        5218,
+        337,
+        264,
+        5010,
+        13,
+        708,
+        360,
+        291,
+        519,
+        11,
+        5041,
+        30,
+        50739
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12552756071090698,
+      "compression_ratio": 1.6774193548387097,
+      "no_speech_prob": 0.11112546175718307,
+      "words": [
+        {
+          "word": " That",
+          "start": 44.14,
+          "end": 45.0,
+          "probability": 0.5616863965988159
+        },
+        {
+          "word": " doesn't",
+          "start": 45.0,
+          "end": 45.36,
+          "probability": 0.9874437749385834
+        },
+        {
+          "word": " sound",
+          "start": 45.36,
+          "end": 45.7,
+          "probability": 0.9957461953163147
+        },
+        {
+          "word": " like",
+          "start": 45.7,
+          "end": 46.0,
+          "probability": 0.9940009713172913
+        },
+        {
+          "word": " a",
+          "start": 46.0,
+          "end": 46.16,
+          "probability": 0.992972731590271
+        },
+        {
+          "word": " lot,",
+          "start": 46.16,
+          "end": 46.34,
+          "probability": 0.9953392744064331
+        },
+        {
+          "word": " but",
+          "start": 46.86,
+          "end": 47.0,
+          "probability": 0.9954591989517212
+        },
+        {
+          "word": " it's",
+          "start": 47.0,
+          "end": 47.2,
+          "probability": 0.9794615507125854
+        },
+        {
+          "word": " equal",
+          "start": 47.2,
+          "end": 47.54,
+          "probability": 0.9962863922119141
+        },
+        {
+          "word": " to",
+          "start": 47.54,
+          "end": 47.74,
+          "probability": 0.9967010617256165
+        },
+        {
+          "word": " 16",
+          "start": 47.74,
+          "end": 48.4,
+          "probability": 0.6582262516021729
+        },
+        {
+          "word": " billion",
+          "start": 48.4,
+          "end": 49.02,
+          "probability": 0.9369359016418457
+        },
+        {
+          "word": " for",
+          "start": 49.02,
+          "end": 49.32,
+          "probability": 0.9767182469367981
+        },
+        {
+          "word": " the",
+          "start": 49.32,
+          "end": 49.4,
+          "probability": 0.9933106899261475
+        },
+        {
+          "word": " economy.",
+          "start": 49.4,
+          "end": 49.84,
+          "probability": 0.9965952038764954
+        },
+        {
+          "word": " What",
+          "start": 50.58,
+          "end": 50.78,
+          "probability": 0.9895413517951965
+        },
+        {
+          "word": " do",
+          "start": 50.78,
+          "end": 50.88,
+          "probability": 0.9956373572349548
+        },
+        {
+          "word": " you",
+          "start": 50.88,
+          "end": 50.98,
+          "probability": 0.9958937168121338
+        },
+        {
+          "word": " think,",
+          "start": 50.98,
+          "end": 51.34,
+          "probability": 0.9986540079116821
+        },
+        {
+          "word": " Tom?",
+          "start": 51.5,
+          "end": 51.58,
+          "probability": 0.9781405925750732
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 4414,
+      "start": 52.42,
+      "end": 61.56,
+      "text": " I understand the argument, Ben, but where are all these jobs coming from? For me, there aren't enough jobs for the younger generation these days.",
+      "tokens": [
+        50789,
+        286,
+        1223,
+        264,
+        6770,
+        11,
+        3964,
+        11,
+        457,
+        689,
+        366,
+        439,
+        613,
+        4782,
+        1348,
+        490,
+        30,
+        1171,
+        385,
+        11,
+        456,
+        3212,
+        380,
+        1547,
+        4782,
+        337,
+        264,
+        7037,
+        5125,
+        613,
+        1708,
+        13,
+        51239
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12552756071090698,
+      "compression_ratio": 1.6774193548387097,
+      "no_speech_prob": 0.11112546175718307,
+      "words": [
+        {
+          "word": " I",
+          "start": 52.42,
+          "end": 52.86,
+          "probability": 0.7862780690193176
+        },
+        {
+          "word": " understand",
+          "start": 52.86,
+          "end": 53.42,
+          "probability": 0.9974954128265381
+        },
+        {
+          "word": " the",
+          "start": 53.42,
+          "end": 53.72,
+          "probability": 0.9963899254798889
+        },
+        {
+          "word": " argument,",
+          "start": 53.72,
+          "end": 54.14,
+          "probability": 0.9969826340675354
+        },
+        {
+          "word": " Ben,",
+          "start": 54.14,
+          "end": 54.48,
+          "probability": 0.9902105331420898
+        },
+        {
+          "word": " but",
+          "start": 54.86,
+          "end": 55.08,
+          "probability": 0.9932941198348999
+        },
+        {
+          "word": " where",
+          "start": 55.08,
+          "end": 55.42,
+          "probability": 0.9949579834938049
+        },
+        {
+          "word": " are",
+          "start": 55.42,
+          "end": 55.62,
+          "probability": 0.8239304423332214
+        },
+        {
+          "word": " all",
+          "start": 55.62,
+          "end": 55.82,
+          "probability": 0.9839532971382141
+        },
+        {
+          "word": " these",
+          "start": 55.82,
+          "end": 56.0,
+          "probability": 0.9794482588768005
+        },
+        {
+          "word": " jobs",
+          "start": 56.0,
+          "end": 56.38,
+          "probability": 0.9953798055648804
+        },
+        {
+          "word": " coming",
+          "start": 56.38,
+          "end": 56.86,
+          "probability": 0.9968355298042297
+        },
+        {
+          "word": " from?",
+          "start": 56.86,
+          "end": 57.2,
+          "probability": 0.9984435439109802
+        },
+        {
+          "word": " For",
+          "start": 57.9,
+          "end": 58.06,
+          "probability": 0.9923998713493347
+        },
+        {
+          "word": " me,",
+          "start": 58.06,
+          "end": 58.26,
+          "probability": 0.9985498785972595
+        },
+        {
+          "word": " there",
+          "start": 58.52,
+          "end": 58.6,
+          "probability": 0.9989228844642639
+        },
+        {
+          "word": " aren't",
+          "start": 58.6,
+          "end": 58.92,
+          "probability": 0.9955821931362152
+        },
+        {
+          "word": " enough",
+          "start": 58.92,
+          "end": 59.1,
+          "probability": 0.9996083378791809
+        },
+        {
+          "word": " jobs",
+          "start": 59.1,
+          "end": 59.52,
+          "probability": 0.9982255101203918
+        },
+        {
+          "word": " for",
+          "start": 59.52,
+          "end": 59.86,
+          "probability": 0.9987910389900208
+        },
+        {
+          "word": " the",
+          "start": 59.86,
+          "end": 59.98,
+          "probability": 0.991637647151947
+        },
+        {
+          "word": " younger",
+          "start": 59.98,
+          "end": 60.26,
+          "probability": 0.9962905645370483
+        },
+        {
+          "word": " generation",
+          "start": 60.26,
+          "end": 60.86,
+          "probability": 0.9987213015556335
+        },
+        {
+          "word": " these",
+          "start": 60.86,
+          "end": 61.14,
+          "probability": 0.9953743815422058
+        },
+        {
+          "word": " days.",
+          "start": 61.14,
+          "end": 61.56,
+          "probability": 0.9996125102043152
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 4414,
+      "start": 62.18,
+      "end": 72.2,
+      "text": " Surely it's the responsibility of the younger generation to devote some time to taking care of their older relatives. That way they can relax and enjoy their retirement.",
+      "tokens": [
+        51264,
+        29803,
+        309,
+        311,
+        264,
+        6357,
+        295,
+        264,
+        7037,
+        5125,
+        281,
+        23184,
+        512,
+        565,
+        281,
+        1940,
+        1127,
+        295,
+        641,
+        4906,
+        18201,
+        13,
+        663,
+        636,
+        436,
+        393,
+        5789,
+        293,
+        2103,
+        641,
+        15189,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12552756071090698,
+      "compression_ratio": 1.6774193548387097,
+      "no_speech_prob": 0.11112546175718307,
+      "words": [
+        {
+          "word": " Surely",
+          "start": 62.18,
+          "end": 62.6,
+          "probability": 0.9847288727760315
+        },
+        {
+          "word": " it's",
+          "start": 62.6,
+          "end": 63.04,
+          "probability": 0.8975281119346619
+        },
+        {
+          "word": " the",
+          "start": 63.04,
+          "end": 63.14,
+          "probability": 0.9983653426170349
+        },
+        {
+          "word": " responsibility",
+          "start": 63.14,
+          "end": 63.92,
+          "probability": 0.9969432950019836
+        },
+        {
+          "word": " of",
+          "start": 63.92,
+          "end": 64.28,
+          "probability": 0.9976771473884583
+        },
+        {
+          "word": " the",
+          "start": 64.28,
+          "end": 64.38,
+          "probability": 0.9962453246116638
+        },
+        {
+          "word": " younger",
+          "start": 64.38,
+          "end": 64.72,
+          "probability": 0.998856782913208
+        },
+        {
+          "word": " generation",
+          "start": 64.72,
+          "end": 65.36,
+          "probability": 0.9992941617965698
+        },
+        {
+          "word": " to",
+          "start": 65.36,
+          "end": 65.64,
+          "probability": 0.9973601698875427
+        },
+        {
+          "word": " devote",
+          "start": 65.64,
+          "end": 65.92,
+          "probability": 0.9954496026039124
+        },
+        {
+          "word": " some",
+          "start": 65.92,
+          "end": 66.24,
+          "probability": 0.9936211705207825
+        },
+        {
+          "word": " time",
+          "start": 66.24,
+          "end": 66.66,
+          "probability": 0.9993767142295837
+        },
+        {
+          "word": " to",
+          "start": 66.66,
+          "end": 66.9,
+          "probability": 0.9956339001655579
+        },
+        {
+          "word": " taking",
+          "start": 66.9,
+          "end": 67.18,
+          "probability": 0.9925919771194458
+        },
+        {
+          "word": " care",
+          "start": 67.18,
+          "end": 67.58,
+          "probability": 0.9995161294937134
+        },
+        {
+          "word": " of",
+          "start": 67.58,
+          "end": 67.8,
+          "probability": 0.9981890320777893
+        },
+        {
+          "word": " their",
+          "start": 67.8,
+          "end": 67.94,
+          "probability": 0.997040331363678
+        },
+        {
+          "word": " older",
+          "start": 67.94,
+          "end": 68.22,
+          "probability": 0.9973445534706116
+        },
+        {
+          "word": " relatives.",
+          "start": 68.22,
+          "end": 68.88,
+          "probability": 0.9977461695671082
+        },
+        {
+          "word": " That",
+          "start": 69.36,
+          "end": 69.66,
+          "probability": 0.9980213642120361
+        },
+        {
+          "word": " way",
+          "start": 69.66,
+          "end": 69.9,
+          "probability": 0.999512791633606
+        },
+        {
+          "word": " they",
+          "start": 69.9,
+          "end": 70.22,
+          "probability": 0.4533177614212036
+        },
+        {
+          "word": " can",
+          "start": 70.22,
+          "end": 70.38,
+          "probability": 0.9974272847175598
+        },
+        {
+          "word": " relax",
+          "start": 70.38,
+          "end": 70.7,
+          "probability": 0.998516857624054
+        },
+        {
+          "word": " and",
+          "start": 70.7,
+          "end": 71.22,
+          "probability": 0.9443271160125732
+        },
+        {
+          "word": " enjoy",
+          "start": 71.22,
+          "end": 71.52,
+          "probability": 0.999085545539856
+        },
+        {
+          "word": " their",
+          "start": 71.52,
+          "end": 71.7,
+          "probability": 0.9981051683425903
+        },
+        {
+          "word": " retirement.",
+          "start": 71.7,
+          "end": 72.2,
+          "probability": 0.9993208646774292
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 7220,
+      "start": 72.2,
+      "end": 79.46,
+      "text": " Tom, you assume that those who have reached retirement age want to give up work.",
+      "tokens": [
+        50389,
+        5041,
+        11,
+        291,
+        6552,
+        300,
+        729,
+        567,
+        362,
+        6488,
+        15189,
+        3205,
+        528,
+        281,
+        976,
+        493,
+        589,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17519564464174467,
+      "compression_ratio": 1.4722222222222223,
+      "no_speech_prob": 0.09163103252649307,
+      "words": [
+        {
+          "word": " Tom,",
+          "start": 72.2,
+          "end": 73.46,
+          "probability": 0.5682562589645386
+        },
+        {
+          "word": " you",
+          "start": 73.98,
+          "end": 74.4,
+          "probability": 0.9823145866394043
+        },
+        {
+          "word": " assume",
+          "start": 74.4,
+          "end": 74.88,
+          "probability": 0.9900327920913696
+        },
+        {
+          "word": " that",
+          "start": 74.88,
+          "end": 75.16,
+          "probability": 0.98802649974823
+        },
+        {
+          "word": " those",
+          "start": 75.16,
+          "end": 75.54,
+          "probability": 0.9907743334770203
+        },
+        {
+          "word": " who",
+          "start": 75.54,
+          "end": 75.76,
+          "probability": 0.9895319938659668
+        },
+        {
+          "word": " have",
+          "start": 75.76,
+          "end": 75.96,
+          "probability": 0.988672137260437
+        },
+        {
+          "word": " reached",
+          "start": 75.96,
+          "end": 76.3,
+          "probability": 0.9948996901512146
+        },
+        {
+          "word": " retirement",
+          "start": 76.3,
+          "end": 76.88,
+          "probability": 0.9857096672058105
+        },
+        {
+          "word": " age",
+          "start": 76.88,
+          "end": 77.62,
+          "probability": 0.9970771074295044
+        },
+        {
+          "word": " want",
+          "start": 77.62,
+          "end": 78.22,
+          "probability": 0.9096432328224182
+        },
+        {
+          "word": " to",
+          "start": 78.22,
+          "end": 78.6,
+          "probability": 0.9983566403388977
+        },
+        {
+          "word": " give",
+          "start": 78.6,
+          "end": 78.76,
+          "probability": 0.997914731502533
+        },
+        {
+          "word": " up",
+          "start": 78.76,
+          "end": 78.96,
+          "probability": 0.9972150325775146
+        },
+        {
+          "word": " work.",
+          "start": 78.96,
+          "end": 79.46,
+          "probability": 0.9994080066680908
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 7220,
+      "start": 79.94,
+      "end": 88.58,
+      "text": " I know what you mean about the younger generation having responsibility for their parents or grandparents as they get older.",
+      "tokens": [
+        50739,
+        286,
+        458,
+        437,
+        291,
+        914,
+        466,
+        264,
+        7037,
+        5125,
+        1419,
+        6357,
+        337,
+        641,
+        3152,
+        420,
+        21876,
+        382,
+        436,
+        483,
+        4906,
+        13,
+        51189
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17519564464174467,
+      "compression_ratio": 1.4722222222222223,
+      "no_speech_prob": 0.09163103252649307,
+      "words": [
+        {
+          "word": " I",
+          "start": 79.94,
+          "end": 80.6,
+          "probability": 0.9933862090110779
+        },
+        {
+          "word": " know",
+          "start": 80.6,
+          "end": 80.8,
+          "probability": 0.997367799282074
+        },
+        {
+          "word": " what",
+          "start": 80.8,
+          "end": 81.02,
+          "probability": 0.9977917671203613
+        },
+        {
+          "word": " you",
+          "start": 81.02,
+          "end": 81.2,
+          "probability": 0.9989193677902222
+        },
+        {
+          "word": " mean",
+          "start": 81.2,
+          "end": 81.54,
+          "probability": 0.9989311099052429
+        },
+        {
+          "word": " about",
+          "start": 81.54,
+          "end": 81.9,
+          "probability": 0.9766924381256104
+        },
+        {
+          "word": " the",
+          "start": 81.9,
+          "end": 82.16,
+          "probability": 0.9900258779525757
+        },
+        {
+          "word": " younger",
+          "start": 82.16,
+          "end": 82.5,
+          "probability": 0.9982321858406067
+        },
+        {
+          "word": " generation",
+          "start": 82.5,
+          "end": 83.3,
+          "probability": 0.9982484579086304
+        },
+        {
+          "word": " having",
+          "start": 83.3,
+          "end": 83.84,
+          "probability": 0.7650128602981567
+        },
+        {
+          "word": " responsibility",
+          "start": 83.84,
+          "end": 84.58,
+          "probability": 0.9331361055374146
+        },
+        {
+          "word": " for",
+          "start": 84.58,
+          "end": 85.36,
+          "probability": 0.9984458088874817
+        },
+        {
+          "word": " their",
+          "start": 85.36,
+          "end": 85.56,
+          "probability": 0.9988583326339722
+        },
+        {
+          "word": " parents",
+          "start": 85.56,
+          "end": 86.1,
+          "probability": 0.9959881901741028
+        },
+        {
+          "word": " or",
+          "start": 86.1,
+          "end": 86.44,
+          "probability": 0.961740255355835
+        },
+        {
+          "word": " grandparents",
+          "start": 86.44,
+          "end": 87.2,
+          "probability": 0.9683464169502258
+        },
+        {
+          "word": " as",
+          "start": 87.2,
+          "end": 87.7,
+          "probability": 0.9670470356941223
+        },
+        {
+          "word": " they",
+          "start": 87.7,
+          "end": 87.9,
+          "probability": 0.9992823004722595
+        },
+        {
+          "word": " get",
+          "start": 87.9,
+          "end": 88.14,
+          "probability": 0.9983662962913513
+        },
+        {
+          "word": " older.",
+          "start": 88.14,
+          "end": 88.58,
+          "probability": 0.9913038015365601
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 7220,
+      "start": 89.18,
+      "end": 93.94,
+      "text": " But isn't what you're saying unfair towards elderly people?",
+      "tokens": [
+        51189,
+        583,
+        1943,
+        380,
+        437,
+        291,
+        434,
+        1566,
+        17019,
+        3030,
+        19682,
+        561,
+        30,
+        51439
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17519564464174467,
+      "compression_ratio": 1.4722222222222223,
+      "no_speech_prob": 0.09163103252649307,
+      "words": [
+        {
+          "word": " But",
+          "start": 89.18,
+          "end": 89.6,
+          "probability": 0.9959151148796082
+        },
+        {
+          "word": " isn't",
+          "start": 89.6,
+          "end": 90.46,
+          "probability": 0.879918783903122
+        },
+        {
+          "word": " what",
+          "start": 90.46,
+          "end": 90.66,
+          "probability": 0.9932905435562134
+        },
+        {
+          "word": " you're",
+          "start": 90.66,
+          "end": 90.92,
+          "probability": 0.9785977602005005
+        },
+        {
+          "word": " saying",
+          "start": 90.92,
+          "end": 91.34,
+          "probability": 0.9981839060783386
+        },
+        {
+          "word": " unfair",
+          "start": 91.34,
+          "end": 92.14,
+          "probability": 0.9677313566207886
+        },
+        {
+          "word": " towards",
+          "start": 92.14,
+          "end": 92.88,
+          "probability": 0.982205331325531
+        },
+        {
+          "word": " elderly",
+          "start": 92.88,
+          "end": 93.32,
+          "probability": 0.9987437129020691
+        },
+        {
+          "word": " people?",
+          "start": 93.32,
+          "end": 93.94,
+          "probability": 0.9994029998779297
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 9394,
+      "start": 93.94,
+      "end": 108.22,
+      "text": " Forcing people to retire at 55 may have made sense in the 1950s, but ideas and lifestyles were different from the way they are now in the 21st century.",
+      "tokens": [
+        50389,
+        1171,
+        2175,
+        561,
+        281,
+        10731,
+        412,
+        12330,
+        815,
+        362,
+        1027,
+        2020,
+        294,
+        264,
+        18141,
+        82,
+        11,
+        457,
+        3487,
+        293,
+        4545,
+        7819,
+        904,
+        645,
+        819,
+        490,
+        264,
+        636,
+        436,
+        366,
+        586,
+        294,
+        264,
+        5080,
+        372,
+        4901,
+        13,
+        51089
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12185127594891716,
+      "compression_ratio": 1.3770491803278688,
+      "no_speech_prob": 0.09080970287322998,
+      "words": [
+        {
+          "word": " Forcing",
+          "start": 93.94,
+          "end": 95.3,
+          "probability": 0.568686880171299
+        },
+        {
+          "word": " people",
+          "start": 95.3,
+          "end": 95.72,
+          "probability": 0.997159481048584
+        },
+        {
+          "word": " to",
+          "start": 95.72,
+          "end": 95.94,
+          "probability": 0.9990378618240356
+        },
+        {
+          "word": " retire",
+          "start": 95.94,
+          "end": 96.48,
+          "probability": 0.9966499209403992
+        },
+        {
+          "word": " at",
+          "start": 96.48,
+          "end": 96.72,
+          "probability": 0.9986506104469299
+        },
+        {
+          "word": " 55",
+          "start": 96.72,
+          "end": 97.4,
+          "probability": 0.8006553053855896
+        },
+        {
+          "word": " may",
+          "start": 97.4,
+          "end": 98.2,
+          "probability": 0.9483945965766907
+        },
+        {
+          "word": " have",
+          "start": 98.2,
+          "end": 98.4,
+          "probability": 0.9984419941902161
+        },
+        {
+          "word": " made",
+          "start": 98.4,
+          "end": 98.66,
+          "probability": 0.9945372939109802
+        },
+        {
+          "word": " sense",
+          "start": 98.66,
+          "end": 98.98,
+          "probability": 0.9193748831748962
+        },
+        {
+          "word": " in",
+          "start": 98.98,
+          "end": 99.36,
+          "probability": 0.9973540306091309
+        },
+        {
+          "word": " the",
+          "start": 99.36,
+          "end": 99.5,
+          "probability": 0.9978848099708557
+        },
+        {
+          "word": " 1950s,",
+          "start": 99.5,
+          "end": 100.98,
+          "probability": 0.9363209307193756
+        },
+        {
+          "word": " but",
+          "start": 101.0,
+          "end": 101.62,
+          "probability": 0.9934117197990417
+        },
+        {
+          "word": " ideas",
+          "start": 101.62,
+          "end": 102.36,
+          "probability": 0.9758298397064209
+        },
+        {
+          "word": " and",
+          "start": 102.36,
+          "end": 102.78,
+          "probability": 0.9937047362327576
+        },
+        {
+          "word": " lifestyles",
+          "start": 102.78,
+          "end": 103.72,
+          "probability": 0.913793941338857
+        },
+        {
+          "word": " were",
+          "start": 103.72,
+          "end": 104.02,
+          "probability": 0.9855515956878662
+        },
+        {
+          "word": " different",
+          "start": 104.02,
+          "end": 104.7,
+          "probability": 0.9939363598823547
+        },
+        {
+          "word": " from",
+          "start": 104.7,
+          "end": 105.12,
+          "probability": 0.9914653897285461
+        },
+        {
+          "word": " the",
+          "start": 105.12,
+          "end": 105.3,
+          "probability": 0.97379070520401
+        },
+        {
+          "word": " way",
+          "start": 105.3,
+          "end": 105.48,
+          "probability": 0.9983817338943481
+        },
+        {
+          "word": " they",
+          "start": 105.48,
+          "end": 105.7,
+          "probability": 0.9935529232025146
+        },
+        {
+          "word": " are",
+          "start": 105.7,
+          "end": 105.88,
+          "probability": 0.9793522953987122
+        },
+        {
+          "word": " now",
+          "start": 105.88,
+          "end": 106.3,
+          "probability": 0.9950084686279297
+        },
+        {
+          "word": " in",
+          "start": 106.3,
+          "end": 106.8,
+          "probability": 0.9305044412612915
+        },
+        {
+          "word": " the",
+          "start": 106.8,
+          "end": 106.92,
+          "probability": 0.9898549318313599
+        },
+        {
+          "word": " 21st",
+          "start": 106.92,
+          "end": 107.72,
+          "probability": 0.989783525466919
+        },
+        {
+          "word": " century.",
+          "start": 107.72,
+          "end": 108.22,
+          "probability": 0.9570512771606445
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 9394,
+      "start": 109.08,
+      "end": 118.0,
+      "text": " That's a valid point, Mayor. 33% of today's workers are 50 and older and over 1 million are over 65.",
+      "tokens": [
+        51139,
+        663,
+        311,
+        257,
+        7363,
+        935,
+        11,
+        13925,
+        13,
+        11816,
+        4,
+        295,
+        965,
+        311,
+        5600,
+        366,
+        2625,
+        293,
+        4906,
+        293,
+        670,
+        502,
+        2459,
+        366,
+        670,
+        11624,
+        13,
+        51589
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12185127594891716,
+      "compression_ratio": 1.3770491803278688,
+      "no_speech_prob": 0.09080970287322998,
+      "words": [
+        {
+          "word": " That's",
+          "start": 109.08,
+          "end": 109.68,
+          "probability": 0.9394291043281555
+        },
+        {
+          "word": " a",
+          "start": 109.68,
+          "end": 109.74,
+          "probability": 0.9974229335784912
+        },
+        {
+          "word": " valid",
+          "start": 109.74,
+          "end": 110.04,
+          "probability": 0.9963254332542419
+        },
+        {
+          "word": " point,",
+          "start": 110.04,
+          "end": 110.4,
+          "probability": 0.9930849075317383
+        },
+        {
+          "word": " Mayor.",
+          "start": 110.58,
+          "end": 110.8,
+          "probability": 0.30332568287849426
+        },
+        {
+          "word": " 33",
+          "start": 111.3,
+          "end": 111.64,
+          "probability": 0.8018195629119873
+        },
+        {
+          "word": "%",
+          "start": 111.64,
+          "end": 112.26,
+          "probability": 0.8960567116737366
+        },
+        {
+          "word": " of",
+          "start": 112.26,
+          "end": 112.5,
+          "probability": 0.9989218711853027
+        },
+        {
+          "word": " today's",
+          "start": 112.5,
+          "end": 113.0,
+          "probability": 0.9953799545764923
+        },
+        {
+          "word": " workers",
+          "start": 113.0,
+          "end": 113.38,
+          "probability": 0.9965349435806274
+        },
+        {
+          "word": " are",
+          "start": 113.38,
+          "end": 113.9,
+          "probability": 0.9919776916503906
+        },
+        {
+          "word": " 50",
+          "start": 113.9,
+          "end": 114.4,
+          "probability": 0.9871231317520142
+        },
+        {
+          "word": " and",
+          "start": 114.4,
+          "end": 114.76,
+          "probability": 0.9742773771286011
+        },
+        {
+          "word": " older",
+          "start": 114.76,
+          "end": 115.14,
+          "probability": 0.9996365308761597
+        },
+        {
+          "word": " and",
+          "start": 115.14,
+          "end": 115.68,
+          "probability": 0.4973334074020386
+        },
+        {
+          "word": " over",
+          "start": 115.68,
+          "end": 116.04,
+          "probability": 0.9825367331504822
+        },
+        {
+          "word": " 1",
+          "start": 116.04,
+          "end": 116.48,
+          "probability": 0.7285025715827942
+        },
+        {
+          "word": " million",
+          "start": 116.48,
+          "end": 116.74,
+          "probability": 0.9561477899551392
+        },
+        {
+          "word": " are",
+          "start": 116.74,
+          "end": 117.08,
+          "probability": 0.9956560134887695
+        },
+        {
+          "word": " over",
+          "start": 117.08,
+          "end": 117.36,
+          "probability": 0.9836586117744446
+        },
+        {
+          "word": " 65.",
+          "start": 117.36,
+          "end": 118.0,
+          "probability": 0.9962271451950073
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 11800,
+      "start": 119.0,
+      "end": 130.94,
+      "text": " The number of people who continue to work at retirement age increased by over 300,000 between 2014 and 2024 and the trend is growing year on year.",
+      "tokens": [
+        50414,
+        440,
+        1230,
+        295,
+        561,
+        567,
+        2354,
+        281,
+        589,
+        412,
+        15189,
+        3205,
+        6505,
+        538,
+        670,
+        6641,
+        11,
+        1360,
+        1296,
+        8227,
+        293,
+        45237,
+        293,
+        264,
+        6028,
+        307,
+        4194,
+        1064,
+        322,
+        1064,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06338736377184905,
+      "compression_ratio": 1.484304932735426,
+      "no_speech_prob": 0.07384637743234634,
+      "words": [
+        {
+          "word": " The",
+          "start": 118.86,
+          "end": 119.16,
+          "probability": 0.18733848631381989
+        },
+        {
+          "word": " number",
+          "start": 119.16,
+          "end": 119.44,
+          "probability": 0.9754059314727783
+        },
+        {
+          "word": " of",
+          "start": 119.44,
+          "end": 119.6,
+          "probability": 0.9945630431175232
+        },
+        {
+          "word": " people",
+          "start": 119.6,
+          "end": 119.96,
+          "probability": 0.9965757727622986
+        },
+        {
+          "word": " who",
+          "start": 119.96,
+          "end": 120.22,
+          "probability": 0.9920781254768372
+        },
+        {
+          "word": " continue",
+          "start": 120.22,
+          "end": 120.7,
+          "probability": 0.9839878082275391
+        },
+        {
+          "word": " to",
+          "start": 120.7,
+          "end": 120.94,
+          "probability": 0.9960663914680481
+        },
+        {
+          "word": " work",
+          "start": 120.94,
+          "end": 121.2,
+          "probability": 0.9983736276626587
+        },
+        {
+          "word": " at",
+          "start": 121.2,
+          "end": 121.58,
+          "probability": 0.9921870231628418
+        },
+        {
+          "word": " retirement",
+          "start": 121.58,
+          "end": 122.16,
+          "probability": 0.9178719520568848
+        },
+        {
+          "word": " age",
+          "start": 122.16,
+          "end": 122.76,
+          "probability": 0.9975972771644592
+        },
+        {
+          "word": " increased",
+          "start": 122.76,
+          "end": 123.22,
+          "probability": 0.9507912993431091
+        },
+        {
+          "word": " by",
+          "start": 123.22,
+          "end": 123.6,
+          "probability": 0.9918304085731506
+        },
+        {
+          "word": " over",
+          "start": 123.6,
+          "end": 123.88,
+          "probability": 0.991593599319458
+        },
+        {
+          "word": " 300",
+          "start": 123.88,
+          "end": 124.52,
+          "probability": 0.8313038349151611
+        },
+        {
+          "word": ",000",
+          "start": 124.52,
+          "end": 125.06,
+          "probability": 0.92363640666008
+        },
+        {
+          "word": " between",
+          "start": 125.06,
+          "end": 125.5,
+          "probability": 0.9872978925704956
+        },
+        {
+          "word": " 2014",
+          "start": 125.5,
+          "end": 126.5,
+          "probability": 0.990918755531311
+        },
+        {
+          "word": " and",
+          "start": 126.5,
+          "end": 127.24,
+          "probability": 0.9923059344291687
+        },
+        {
+          "word": " 2024",
+          "start": 127.24,
+          "end": 128.26,
+          "probability": 0.9759480357170105
+        },
+        {
+          "word": " and",
+          "start": 128.26,
+          "end": 129.02,
+          "probability": 0.5203022360801697
+        },
+        {
+          "word": " the",
+          "start": 129.02,
+          "end": 129.12,
+          "probability": 0.9863195419311523
+        },
+        {
+          "word": " trend",
+          "start": 129.12,
+          "end": 129.4,
+          "probability": 0.9640765190124512
+        },
+        {
+          "word": " is",
+          "start": 129.4,
+          "end": 129.62,
+          "probability": 0.993937611579895
+        },
+        {
+          "word": " growing",
+          "start": 129.62,
+          "end": 129.98,
+          "probability": 0.9933586716651917
+        },
+        {
+          "word": " year",
+          "start": 129.98,
+          "end": 130.36,
+          "probability": 0.9677857160568237
+        },
+        {
+          "word": " on",
+          "start": 130.36,
+          "end": 130.58,
+          "probability": 0.59798264503479
+        },
+        {
+          "word": " year.",
+          "start": 130.58,
+          "end": 130.94,
+          "probability": 0.9975070357322693
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 11800,
+      "start": 132.0,
+      "end": 136.98,
+      "text": " How can anyone say that the elderly don't have a huge role to play in our economy?",
+      "tokens": [
+        51064,
+        1012,
+        393,
+        2878,
+        584,
+        300,
+        264,
+        19682,
+        500,
+        380,
+        362,
+        257,
+        2603,
+        3090,
+        281,
+        862,
+        294,
+        527,
+        5010,
+        30,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06338736377184905,
+      "compression_ratio": 1.484304932735426,
+      "no_speech_prob": 0.07384637743234634,
+      "words": [
+        {
+          "word": " How",
+          "start": 132.0,
+          "end": 132.2,
+          "probability": 0.9853489995002747
+        },
+        {
+          "word": " can",
+          "start": 132.2,
+          "end": 132.38,
+          "probability": 0.9944075345993042
+        },
+        {
+          "word": " anyone",
+          "start": 132.38,
+          "end": 132.86,
+          "probability": 0.9898579716682434
+        },
+        {
+          "word": " say",
+          "start": 132.86,
+          "end": 133.26,
+          "probability": 0.9972800016403198
+        },
+        {
+          "word": " that",
+          "start": 133.26,
+          "end": 133.5,
+          "probability": 0.9873764514923096
+        },
+        {
+          "word": " the",
+          "start": 133.5,
+          "end": 133.7,
+          "probability": 0.9803264141082764
+        },
+        {
+          "word": " elderly",
+          "start": 133.7,
+          "end": 134.06,
+          "probability": 0.9931724667549133
+        },
+        {
+          "word": " don't",
+          "start": 134.06,
+          "end": 134.52,
+          "probability": 0.9945981204509735
+        },
+        {
+          "word": " have",
+          "start": 134.52,
+          "end": 134.76,
+          "probability": 0.9978366494178772
+        },
+        {
+          "word": " a",
+          "start": 134.76,
+          "end": 134.9,
+          "probability": 0.9959975481033325
+        },
+        {
+          "word": " huge",
+          "start": 134.9,
+          "end": 135.3,
+          "probability": 0.9953135251998901
+        },
+        {
+          "word": " role",
+          "start": 135.3,
+          "end": 135.6,
+          "probability": 0.9992677569389343
+        },
+        {
+          "word": " to",
+          "start": 135.6,
+          "end": 135.82,
+          "probability": 0.9978123903274536
+        },
+        {
+          "word": " play",
+          "start": 135.82,
+          "end": 136.08,
+          "probability": 0.999255359172821
+        },
+        {
+          "word": " in",
+          "start": 136.08,
+          "end": 136.3,
+          "probability": 0.9988710284233093
+        },
+        {
+          "word": " our",
+          "start": 136.3,
+          "end": 136.48,
+          "probability": 0.9991636276245117
+        },
+        {
+          "word": " economy?",
+          "start": 136.48,
+          "end": 136.98,
+          "probability": 0.999477207660675
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 11800,
+      "start": 137.9,
+      "end": 143.94,
+      "text": " If someone wants to carry on working and using their skills, it's quite right they should be able to.",
+      "tokens": [
+        51364,
+        759,
+        1580,
+        2738,
+        281,
+        3985,
+        322,
+        1364,
+        293,
+        1228,
+        641,
+        3942,
+        11,
+        309,
+        311,
+        1596,
+        558,
+        436,
+        820,
+        312,
+        1075,
+        281,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06338736377184905,
+      "compression_ratio": 1.484304932735426,
+      "no_speech_prob": 0.07384637743234634,
+      "words": [
+        {
+          "word": " If",
+          "start": 137.9,
+          "end": 138.18,
+          "probability": 0.9939301013946533
+        },
+        {
+          "word": " someone",
+          "start": 138.18,
+          "end": 138.54,
+          "probability": 0.9978424310684204
+        },
+        {
+          "word": " wants",
+          "start": 138.54,
+          "end": 138.82,
+          "probability": 0.9955537915229797
+        },
+        {
+          "word": " to",
+          "start": 138.82,
+          "end": 139.0,
+          "probability": 0.9994810223579407
+        },
+        {
+          "word": " carry",
+          "start": 139.0,
+          "end": 139.28,
+          "probability": 0.9967690706253052
+        },
+        {
+          "word": " on",
+          "start": 139.28,
+          "end": 139.44,
+          "probability": 0.9979333877563477
+        },
+        {
+          "word": " working",
+          "start": 139.44,
+          "end": 139.88,
+          "probability": 0.9972891807556152
+        },
+        {
+          "word": " and",
+          "start": 139.88,
+          "end": 140.16,
+          "probability": 0.9821876287460327
+        },
+        {
+          "word": " using",
+          "start": 140.16,
+          "end": 140.64,
+          "probability": 0.9860787987709045
+        },
+        {
+          "word": " their",
+          "start": 140.64,
+          "end": 140.9,
+          "probability": 0.9988910555839539
+        },
+        {
+          "word": " skills,",
+          "start": 140.9,
+          "end": 141.32,
+          "probability": 0.9987001419067383
+        },
+        {
+          "word": " it's",
+          "start": 141.88,
+          "end": 142.18,
+          "probability": 0.9829843938350677
+        },
+        {
+          "word": " quite",
+          "start": 142.18,
+          "end": 142.44,
+          "probability": 0.9940738081932068
+        },
+        {
+          "word": " right",
+          "start": 142.44,
+          "end": 142.82,
+          "probability": 0.9924730062484741
+        },
+        {
+          "word": " they",
+          "start": 142.82,
+          "end": 143.06,
+          "probability": 0.9512069821357727
+        },
+        {
+          "word": " should",
+          "start": 143.06,
+          "end": 143.26,
+          "probability": 0.9968060255050659
+        },
+        {
+          "word": " be",
+          "start": 143.26,
+          "end": 143.46,
+          "probability": 0.9985489249229431
+        },
+        {
+          "word": " able",
+          "start": 143.46,
+          "end": 143.7,
+          "probability": 0.9994131326675415
+        },
+        {
+          "word": " to.",
+          "start": 143.7,
+          "end": 143.94,
+          "probability": 0.9987994432449341
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 14394,
+      "start": 143.94,
+      "end": 150.16,
+      "text": " In some cases they have a lot more knowledge than the younger generation who can learn from them.",
+      "tokens": [
+        50414,
+        682,
+        512,
+        3331,
+        436,
+        362,
+        257,
+        688,
+        544,
+        3601,
+        813,
+        264,
+        7037,
+        5125,
+        567,
+        393,
+        1466,
+        490,
+        552,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12577714005561724,
+      "compression_ratio": 1.5095238095238095,
+      "no_speech_prob": 0.08528095483779907,
+      "words": [
+        {
+          "word": " In",
+          "start": 143.94,
+          "end": 144.94,
+          "probability": 0.6907362341880798
+        },
+        {
+          "word": " some",
+          "start": 144.94,
+          "end": 145.16,
+          "probability": 0.9961913824081421
+        },
+        {
+          "word": " cases",
+          "start": 145.16,
+          "end": 145.62,
+          "probability": 0.997826874256134
+        },
+        {
+          "word": " they",
+          "start": 145.62,
+          "end": 146.12,
+          "probability": 0.2944400906562805
+        },
+        {
+          "word": " have",
+          "start": 146.12,
+          "end": 146.28,
+          "probability": 0.9976024031639099
+        },
+        {
+          "word": " a",
+          "start": 146.28,
+          "end": 146.36,
+          "probability": 0.9664122462272644
+        },
+        {
+          "word": " lot",
+          "start": 146.36,
+          "end": 146.54,
+          "probability": 0.9959012866020203
+        },
+        {
+          "word": " more",
+          "start": 146.54,
+          "end": 146.78,
+          "probability": 0.9977128505706787
+        },
+        {
+          "word": " knowledge",
+          "start": 146.78,
+          "end": 147.16,
+          "probability": 0.9979665279388428
+        },
+        {
+          "word": " than",
+          "start": 147.16,
+          "end": 147.48,
+          "probability": 0.9695020914077759
+        },
+        {
+          "word": " the",
+          "start": 147.48,
+          "end": 147.62,
+          "probability": 0.9878067374229431
+        },
+        {
+          "word": " younger",
+          "start": 147.62,
+          "end": 147.88,
+          "probability": 0.9965612292289734
+        },
+        {
+          "word": " generation",
+          "start": 147.88,
+          "end": 148.52,
+          "probability": 0.9972150325775146
+        },
+        {
+          "word": " who",
+          "start": 148.52,
+          "end": 149.12,
+          "probability": 0.8679646849632263
+        },
+        {
+          "word": " can",
+          "start": 149.12,
+          "end": 149.3,
+          "probability": 0.985844612121582
+        },
+        {
+          "word": " learn",
+          "start": 149.3,
+          "end": 149.54,
+          "probability": 0.9984990358352661
+        },
+        {
+          "word": " from",
+          "start": 149.54,
+          "end": 149.84,
+          "probability": 0.997700035572052
+        },
+        {
+          "word": " them.",
+          "start": 149.84,
+          "end": 150.16,
+          "probability": 0.9983915686607361
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 14394,
+      "start": 151.02,
+      "end": 162.2,
+      "text": " I take your point Ben, but people at retirement age for example don't have the skills required for the majority of today's jobs, which involve computers, etc.",
+      "tokens": [
+        50714,
+        286,
+        747,
+        428,
+        935,
+        3964,
+        11,
+        457,
+        561,
+        412,
+        15189,
+        3205,
+        337,
+        1365,
+        500,
+        380,
+        362,
+        264,
+        3942,
+        4739,
+        337,
+        264,
+        6286,
+        295,
+        965,
+        311,
+        4782,
+        11,
+        597,
+        9494,
+        10807,
+        11,
+        5183,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12577714005561724,
+      "compression_ratio": 1.5095238095238095,
+      "no_speech_prob": 0.08528095483779907,
+      "words": [
+        {
+          "word": " I",
+          "start": 151.02,
+          "end": 151.42,
+          "probability": 0.8388997912406921
+        },
+        {
+          "word": " take",
+          "start": 151.42,
+          "end": 151.64,
+          "probability": 0.9944321513175964
+        },
+        {
+          "word": " your",
+          "start": 151.64,
+          "end": 151.86,
+          "probability": 0.9916382431983948
+        },
+        {
+          "word": " point",
+          "start": 151.86,
+          "end": 152.18,
+          "probability": 0.9988030195236206
+        },
+        {
+          "word": " Ben,",
+          "start": 152.18,
+          "end": 152.46,
+          "probability": 0.44943109154701233
+        },
+        {
+          "word": " but",
+          "start": 153.02,
+          "end": 153.12,
+          "probability": 0.9789513945579529
+        },
+        {
+          "word": " people",
+          "start": 153.12,
+          "end": 153.62,
+          "probability": 0.9811570048332214
+        },
+        {
+          "word": " at",
+          "start": 153.62,
+          "end": 153.88,
+          "probability": 0.9890963435173035
+        },
+        {
+          "word": " retirement",
+          "start": 153.88,
+          "end": 154.42,
+          "probability": 0.9538904428482056
+        },
+        {
+          "word": " age",
+          "start": 154.42,
+          "end": 154.82,
+          "probability": 0.9991349577903748
+        },
+        {
+          "word": " for",
+          "start": 154.82,
+          "end": 154.98,
+          "probability": 0.72235107421875
+        },
+        {
+          "word": " example",
+          "start": 154.98,
+          "end": 155.52,
+          "probability": 0.9988020658493042
+        },
+        {
+          "word": " don't",
+          "start": 155.52,
+          "end": 156.1,
+          "probability": 0.8984164893627167
+        },
+        {
+          "word": " have",
+          "start": 156.1,
+          "end": 156.32,
+          "probability": 0.9975025057792664
+        },
+        {
+          "word": " the",
+          "start": 156.32,
+          "end": 156.54,
+          "probability": 0.9909221529960632
+        },
+        {
+          "word": " skills",
+          "start": 156.54,
+          "end": 156.94,
+          "probability": 0.9976934790611267
+        },
+        {
+          "word": " required",
+          "start": 156.94,
+          "end": 157.58,
+          "probability": 0.9977114200592041
+        },
+        {
+          "word": " for",
+          "start": 157.58,
+          "end": 157.96,
+          "probability": 0.9983464479446411
+        },
+        {
+          "word": " the",
+          "start": 157.96,
+          "end": 158.08,
+          "probability": 0.9975301623344421
+        },
+        {
+          "word": " majority",
+          "start": 158.08,
+          "end": 158.42,
+          "probability": 0.997346043586731
+        },
+        {
+          "word": " of",
+          "start": 158.42,
+          "end": 158.7,
+          "probability": 0.9976415634155273
+        },
+        {
+          "word": " today's",
+          "start": 158.7,
+          "end": 159.16,
+          "probability": 0.9906728863716125
+        },
+        {
+          "word": " jobs,",
+          "start": 159.16,
+          "end": 159.64,
+          "probability": 0.9926647543907166
+        },
+        {
+          "word": " which",
+          "start": 159.98,
+          "end": 160.1,
+          "probability": 0.9974729418754578
+        },
+        {
+          "word": " involve",
+          "start": 160.1,
+          "end": 160.42,
+          "probability": 0.9693930745124817
+        },
+        {
+          "word": " computers,",
+          "start": 160.42,
+          "end": 161.24,
+          "probability": 0.9854377508163452
+        },
+        {
+          "word": " etc.",
+          "start": 161.78,
+          "end": 162.2,
+          "probability": 0.8045582175254822
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 14394,
+      "start": 163.72,
+      "end": 166.74,
+      "text": " They weren't brought up in a technological age like we were.",
+      "tokens": [
+        51364,
+        814,
+        4999,
+        380,
+        3038,
+        493,
+        294,
+        257,
+        18439,
+        3205,
+        411,
+        321,
+        645,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12577714005561724,
+      "compression_ratio": 1.5095238095238095,
+      "no_speech_prob": 0.08528095483779907,
+      "words": [
+        {
+          "word": " They",
+          "start": 163.72,
+          "end": 164.04,
+          "probability": 0.9781463742256165
+        },
+        {
+          "word": " weren't",
+          "start": 164.04,
+          "end": 164.28,
+          "probability": 0.9983481168746948
+        },
+        {
+          "word": " brought",
+          "start": 164.28,
+          "end": 164.46,
+          "probability": 0.9977157115936279
+        },
+        {
+          "word": " up",
+          "start": 164.46,
+          "end": 164.68,
+          "probability": 0.9906899929046631
+        },
+        {
+          "word": " in",
+          "start": 164.68,
+          "end": 164.86,
+          "probability": 0.9954984188079834
+        },
+        {
+          "word": " a",
+          "start": 164.86,
+          "end": 164.94,
+          "probability": 0.9940213561058044
+        },
+        {
+          "word": " technological",
+          "start": 164.94,
+          "end": 165.42,
+          "probability": 0.9894858598709106
+        },
+        {
+          "word": " age",
+          "start": 165.42,
+          "end": 166.12,
+          "probability": 0.9994483590126038
+        },
+        {
+          "word": " like",
+          "start": 166.12,
+          "end": 166.28,
+          "probability": 0.5727945566177368
+        },
+        {
+          "word": " we",
+          "start": 166.28,
+          "end": 166.52,
+          "probability": 0.9956667423248291
+        },
+        {
+          "word": " were.",
+          "start": 166.52,
+          "end": 166.74,
+          "probability": 0.9948450326919556
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 16674,
+      "start": 167.74,
+      "end": 173.58,
+      "text": " I don't think it would be fair to put someone in a role they weren't skilled for just because they're older.",
+      "tokens": [
+        50414,
+        286,
+        500,
+        380,
+        519,
+        309,
+        576,
+        312,
+        3143,
+        281,
+        829,
+        1580,
+        294,
+        257,
+        3090,
+        436,
+        4999,
+        380,
+        19690,
+        337,
+        445,
+        570,
+        436,
+        434,
+        4906,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060726741085881775,
+      "compression_ratio": 1.6877828054298643,
+      "no_speech_prob": 0.1908935010433197,
+      "words": [
+        {
+          "word": " I",
+          "start": 167.66,
+          "end": 167.98,
+          "probability": 0.21205319464206696
+        },
+        {
+          "word": " don't",
+          "start": 167.98,
+          "end": 168.14,
+          "probability": 0.9649128913879395
+        },
+        {
+          "word": " think",
+          "start": 168.14,
+          "end": 168.42,
+          "probability": 0.9911501407623291
+        },
+        {
+          "word": " it",
+          "start": 168.42,
+          "end": 168.66,
+          "probability": 0.9841721653938293
+        },
+        {
+          "word": " would",
+          "start": 168.66,
+          "end": 168.78,
+          "probability": 0.9781655669212341
+        },
+        {
+          "word": " be",
+          "start": 168.78,
+          "end": 168.96,
+          "probability": 0.995554506778717
+        },
+        {
+          "word": " fair",
+          "start": 168.96,
+          "end": 169.4,
+          "probability": 0.9976263642311096
+        },
+        {
+          "word": " to",
+          "start": 169.4,
+          "end": 169.66,
+          "probability": 0.9907239079475403
+        },
+        {
+          "word": " put",
+          "start": 169.66,
+          "end": 169.86,
+          "probability": 0.9984643459320068
+        },
+        {
+          "word": " someone",
+          "start": 169.86,
+          "end": 170.26,
+          "probability": 0.9831730127334595
+        },
+        {
+          "word": " in",
+          "start": 170.26,
+          "end": 170.42,
+          "probability": 0.9897335171699524
+        },
+        {
+          "word": " a",
+          "start": 170.42,
+          "end": 170.54,
+          "probability": 0.995130181312561
+        },
+        {
+          "word": " role",
+          "start": 170.54,
+          "end": 170.8,
+          "probability": 0.914410412311554
+        },
+        {
+          "word": " they",
+          "start": 170.8,
+          "end": 171.08,
+          "probability": 0.5888885855674744
+        },
+        {
+          "word": " weren't",
+          "start": 171.08,
+          "end": 171.44,
+          "probability": 0.9952340722084045
+        },
+        {
+          "word": " skilled",
+          "start": 171.44,
+          "end": 171.74,
+          "probability": 0.984289824962616
+        },
+        {
+          "word": " for",
+          "start": 171.74,
+          "end": 172.2,
+          "probability": 0.9972527623176575
+        },
+        {
+          "word": " just",
+          "start": 172.2,
+          "end": 172.56,
+          "probability": 0.8030930161476135
+        },
+        {
+          "word": " because",
+          "start": 172.56,
+          "end": 172.98,
+          "probability": 0.9958705306053162
+        },
+        {
+          "word": " they're",
+          "start": 172.98,
+          "end": 173.3,
+          "probability": 0.9401298463344574
+        },
+        {
+          "word": " older.",
+          "start": 173.3,
+          "end": 173.58,
+          "probability": 0.9975839853286743
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 16674,
+      "start": 174.06,
+      "end": 177.48,
+      "text": " That wouldn't be fair for the more highly skilled younger people.",
+      "tokens": [
+        50714,
+        663,
+        2759,
+        380,
+        312,
+        3143,
+        337,
+        264,
+        544,
+        5405,
+        19690,
+        7037,
+        561,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060726741085881775,
+      "compression_ratio": 1.6877828054298643,
+      "no_speech_prob": 0.1908935010433197,
+      "words": [
+        {
+          "word": " That",
+          "start": 174.06,
+          "end": 174.3,
+          "probability": 0.9950138926506042
+        },
+        {
+          "word": " wouldn't",
+          "start": 174.3,
+          "end": 174.54,
+          "probability": 0.9854911863803864
+        },
+        {
+          "word": " be",
+          "start": 174.54,
+          "end": 174.7,
+          "probability": 0.9913244247436523
+        },
+        {
+          "word": " fair",
+          "start": 174.7,
+          "end": 175.1,
+          "probability": 0.9958030581474304
+        },
+        {
+          "word": " for",
+          "start": 175.1,
+          "end": 175.42,
+          "probability": 0.9937483072280884
+        },
+        {
+          "word": " the",
+          "start": 175.42,
+          "end": 175.56,
+          "probability": 0.9900244474411011
+        },
+        {
+          "word": " more",
+          "start": 175.56,
+          "end": 175.72,
+          "probability": 0.9975123405456543
+        },
+        {
+          "word": " highly",
+          "start": 175.72,
+          "end": 176.16,
+          "probability": 0.9959955215454102
+        },
+        {
+          "word": " skilled",
+          "start": 176.16,
+          "end": 176.56,
+          "probability": 0.9834787845611572
+        },
+        {
+          "word": " younger",
+          "start": 176.56,
+          "end": 176.98,
+          "probability": 0.9376354217529297
+        },
+        {
+          "word": " people.",
+          "start": 176.98,
+          "end": 177.48,
+          "probability": 0.9967401623725891
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 16674,
+      "start": 178.04,
+      "end": 182.6,
+      "text": " We need to ensure that people get jobs if they have the right skills.",
+      "tokens": [
+        50914,
+        492,
+        643,
+        281,
+        5586,
+        300,
+        561,
+        483,
+        4782,
+        498,
+        436,
+        362,
+        264,
+        558,
+        3942,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060726741085881775,
+      "compression_ratio": 1.6877828054298643,
+      "no_speech_prob": 0.1908935010433197,
+      "words": [
+        {
+          "word": " We",
+          "start": 178.04,
+          "end": 178.36,
+          "probability": 0.9951636791229248
+        },
+        {
+          "word": " need",
+          "start": 178.36,
+          "end": 178.52,
+          "probability": 0.9973962306976318
+        },
+        {
+          "word": " to",
+          "start": 178.52,
+          "end": 178.72,
+          "probability": 0.9984227418899536
+        },
+        {
+          "word": " ensure",
+          "start": 178.72,
+          "end": 179.22,
+          "probability": 0.9586334228515625
+        },
+        {
+          "word": " that",
+          "start": 179.22,
+          "end": 179.46,
+          "probability": 0.9661742448806763
+        },
+        {
+          "word": " people",
+          "start": 179.46,
+          "end": 179.82,
+          "probability": 0.9972878694534302
+        },
+        {
+          "word": " get",
+          "start": 179.82,
+          "end": 180.08,
+          "probability": 0.9939587116241455
+        },
+        {
+          "word": " jobs",
+          "start": 180.08,
+          "end": 180.6,
+          "probability": 0.9979713559150696
+        },
+        {
+          "word": " if",
+          "start": 180.6,
+          "end": 181.1,
+          "probability": 0.983836829662323
+        },
+        {
+          "word": " they",
+          "start": 181.1,
+          "end": 181.26,
+          "probability": 0.997478187084198
+        },
+        {
+          "word": " have",
+          "start": 181.26,
+          "end": 181.52,
+          "probability": 0.997688889503479
+        },
+        {
+          "word": " the",
+          "start": 181.52,
+          "end": 181.7,
+          "probability": 0.9951342940330505
+        },
+        {
+          "word": " right",
+          "start": 181.7,
+          "end": 181.94,
+          "probability": 0.9978498220443726
+        },
+        {
+          "word": " skills.",
+          "start": 181.94,
+          "end": 182.6,
+          "probability": 0.9957755208015442
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 16674,
+      "start": 183.36,
+      "end": 193.62,
+      "text": " That's nonsense. Just because someone is older than 50, it doesn't mean they are afraid of technology or unskilled in that area.",
+      "tokens": [
+        51214,
+        663,
+        311,
+        14925,
+        13,
+        1449,
+        570,
+        1580,
+        307,
+        4906,
+        813,
+        2625,
+        11,
+        309,
+        1177,
+        380,
+        914,
+        436,
+        366,
+        4638,
+        295,
+        2899,
+        420,
+        2693,
+        74,
+        6261,
+        294,
+        300,
+        1859,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060726741085881775,
+      "compression_ratio": 1.6877828054298643,
+      "no_speech_prob": 0.1908935010433197,
+      "words": [
+        {
+          "word": " That's",
+          "start": 183.36,
+          "end": 183.94,
+          "probability": 0.9437539577484131
+        },
+        {
+          "word": " nonsense.",
+          "start": 183.94,
+          "end": 184.48,
+          "probability": 0.9653843641281128
+        },
+        {
+          "word": " Just",
+          "start": 185.4,
+          "end": 185.68,
+          "probability": 0.9928039908409119
+        },
+        {
+          "word": " because",
+          "start": 185.68,
+          "end": 186.06,
+          "probability": 0.9973019361495972
+        },
+        {
+          "word": " someone",
+          "start": 186.06,
+          "end": 186.54,
+          "probability": 0.994187593460083
+        },
+        {
+          "word": " is",
+          "start": 186.54,
+          "end": 186.84,
+          "probability": 0.9949570298194885
+        },
+        {
+          "word": " older",
+          "start": 186.84,
+          "end": 187.26,
+          "probability": 0.998416543006897
+        },
+        {
+          "word": " than",
+          "start": 187.26,
+          "end": 187.52,
+          "probability": 0.9957133531570435
+        },
+        {
+          "word": " 50,",
+          "start": 187.52,
+          "end": 188.08,
+          "probability": 0.9126580357551575
+        },
+        {
+          "word": " it",
+          "start": 188.54,
+          "end": 188.72,
+          "probability": 0.9806220531463623
+        },
+        {
+          "word": " doesn't",
+          "start": 188.72,
+          "end": 189.06,
+          "probability": 0.9988028407096863
+        },
+        {
+          "word": " mean",
+          "start": 189.06,
+          "end": 189.36,
+          "probability": 0.9993187189102173
+        },
+        {
+          "word": " they",
+          "start": 189.36,
+          "end": 189.62,
+          "probability": 0.9776802659034729
+        },
+        {
+          "word": " are",
+          "start": 189.62,
+          "end": 189.78,
+          "probability": 0.9660230278968811
+        },
+        {
+          "word": " afraid",
+          "start": 189.78,
+          "end": 190.26,
+          "probability": 0.843770444393158
+        },
+        {
+          "word": " of",
+          "start": 190.26,
+          "end": 190.64,
+          "probability": 0.9979314804077148
+        },
+        {
+          "word": " technology",
+          "start": 190.64,
+          "end": 191.42,
+          "probability": 0.9944973587989807
+        },
+        {
+          "word": " or",
+          "start": 191.42,
+          "end": 192.08,
+          "probability": 0.7625426650047302
+        },
+        {
+          "word": " unskilled",
+          "start": 192.08,
+          "end": 192.78,
+          "probability": 0.9038804173469543
+        },
+        {
+          "word": " in",
+          "start": 192.78,
+          "end": 192.98,
+          "probability": 0.9970989227294922
+        },
+        {
+          "word": " that",
+          "start": 192.98,
+          "end": 193.14,
+          "probability": 0.9959516525268555
+        },
+        {
+          "word": " area.",
+          "start": 193.14,
+          "end": 193.62,
+          "probability": 0.999031662940979
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 19362,
+      "start": 194.62,
+      "end": 207.9,
+      "text": " I get your point that the older generation may not have had a smartphone all their lives, but there has been a clear increase in the number of people over 65 owning a smartphone.",
+      "tokens": [
+        50414,
+        286,
+        483,
+        428,
+        935,
+        300,
+        264,
+        4906,
+        5125,
+        815,
+        406,
+        362,
+        632,
+        257,
+        13307,
+        439,
+        641,
+        2909,
+        11,
+        457,
+        456,
+        575,
+        668,
+        257,
+        1850,
+        3488,
+        294,
+        264,
+        1230,
+        295,
+        561,
+        670,
+        11624,
+        29820,
+        257,
+        13307,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07588404700869605,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.40723246335983276,
+      "words": [
+        {
+          "word": " I",
+          "start": 194.4,
+          "end": 194.8,
+          "probability": 0.44921261072158813
+        },
+        {
+          "word": " get",
+          "start": 194.8,
+          "end": 195.1,
+          "probability": 0.8929933309555054
+        },
+        {
+          "word": " your",
+          "start": 195.1,
+          "end": 195.38,
+          "probability": 0.9531274437904358
+        },
+        {
+          "word": " point",
+          "start": 195.38,
+          "end": 195.78,
+          "probability": 0.998609185218811
+        },
+        {
+          "word": " that",
+          "start": 195.78,
+          "end": 196.06,
+          "probability": 0.974297821521759
+        },
+        {
+          "word": " the",
+          "start": 196.06,
+          "end": 196.3,
+          "probability": 0.9861845374107361
+        },
+        {
+          "word": " older",
+          "start": 196.3,
+          "end": 196.66,
+          "probability": 0.9916163086891174
+        },
+        {
+          "word": " generation",
+          "start": 196.66,
+          "end": 197.46,
+          "probability": 0.9917797446250916
+        },
+        {
+          "word": " may",
+          "start": 197.46,
+          "end": 198.12,
+          "probability": 0.9848301410675049
+        },
+        {
+          "word": " not",
+          "start": 198.12,
+          "end": 198.42,
+          "probability": 0.9975998997688293
+        },
+        {
+          "word": " have",
+          "start": 198.42,
+          "end": 198.74,
+          "probability": 0.9968321919441223
+        },
+        {
+          "word": " had",
+          "start": 198.74,
+          "end": 198.9,
+          "probability": 0.9801511764526367
+        },
+        {
+          "word": " a",
+          "start": 198.9,
+          "end": 199.02,
+          "probability": 0.9955694079399109
+        },
+        {
+          "word": " smartphone",
+          "start": 199.02,
+          "end": 199.58,
+          "probability": 0.9636285305023193
+        },
+        {
+          "word": " all",
+          "start": 199.58,
+          "end": 200.04,
+          "probability": 0.9662109613418579
+        },
+        {
+          "word": " their",
+          "start": 200.04,
+          "end": 200.26,
+          "probability": 0.9936938881874084
+        },
+        {
+          "word": " lives,",
+          "start": 200.26,
+          "end": 200.86,
+          "probability": 0.996181845664978
+        },
+        {
+          "word": " but",
+          "start": 201.36,
+          "end": 201.7,
+          "probability": 0.9899880290031433
+        },
+        {
+          "word": " there",
+          "start": 201.7,
+          "end": 201.96,
+          "probability": 0.9955937266349792
+        },
+        {
+          "word": " has",
+          "start": 201.96,
+          "end": 202.24,
+          "probability": 0.9968108534812927
+        },
+        {
+          "word": " been",
+          "start": 202.24,
+          "end": 202.44,
+          "probability": 0.9976825714111328
+        },
+        {
+          "word": " a",
+          "start": 202.44,
+          "end": 202.58,
+          "probability": 0.9977721571922302
+        },
+        {
+          "word": " clear",
+          "start": 202.58,
+          "end": 202.96,
+          "probability": 0.9938422441482544
+        },
+        {
+          "word": " increase",
+          "start": 202.96,
+          "end": 203.74,
+          "probability": 0.9983183145523071
+        },
+        {
+          "word": " in",
+          "start": 203.74,
+          "end": 204.14,
+          "probability": 0.9972714781761169
+        },
+        {
+          "word": " the",
+          "start": 204.14,
+          "end": 204.26,
+          "probability": 0.9927531480789185
+        },
+        {
+          "word": " number",
+          "start": 204.26,
+          "end": 204.6,
+          "probability": 0.9986817240715027
+        },
+        {
+          "word": " of",
+          "start": 204.6,
+          "end": 204.86,
+          "probability": 0.9975998997688293
+        },
+        {
+          "word": " people",
+          "start": 204.86,
+          "end": 205.3,
+          "probability": 0.9969814419746399
+        },
+        {
+          "word": " over",
+          "start": 205.3,
+          "end": 205.82,
+          "probability": 0.9894754886627197
+        },
+        {
+          "word": " 65",
+          "start": 205.82,
+          "end": 206.5,
+          "probability": 0.9448363780975342
+        },
+        {
+          "word": " owning",
+          "start": 206.5,
+          "end": 207.16,
+          "probability": 0.9783178567886353
+        },
+        {
+          "word": " a",
+          "start": 207.16,
+          "end": 207.34,
+          "probability": 0.9988358616828918
+        },
+        {
+          "word": " smartphone.",
+          "start": 207.34,
+          "end": 207.9,
+          "probability": 0.9949498176574707
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 19362,
+      "start": 208.46,
+      "end": 219.36,
+      "text": " In 2023 80% of people aged over 65 owned one according to one survey, that number is significant.",
+      "tokens": [
+        51114,
+        682,
+        44377,
+        4688,
+        4,
+        295,
+        561,
+        21213,
+        670,
+        11624,
+        11684,
+        472,
+        4650,
+        281,
+        472,
+        8984,
+        11,
+        300,
+        1230,
+        307,
+        4776,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07588404700869605,
+      "compression_ratio": 1.5593220338983051,
+      "no_speech_prob": 0.40723246335983276,
+      "words": [
+        {
+          "word": " In",
+          "start": 208.46,
+          "end": 209.16,
+          "probability": 0.9865841269493103
+        },
+        {
+          "word": " 2023",
+          "start": 209.16,
+          "end": 210.2,
+          "probability": 0.9781259894371033
+        },
+        {
+          "word": " 80",
+          "start": 210.2,
+          "end": 211.24,
+          "probability": 0.23541472852230072
+        },
+        {
+          "word": "%",
+          "start": 211.24,
+          "end": 211.72,
+          "probability": 0.8413163423538208
+        },
+        {
+          "word": " of",
+          "start": 211.72,
+          "end": 212.04,
+          "probability": 0.9980169534683228
+        },
+        {
+          "word": " people",
+          "start": 212.04,
+          "end": 212.5,
+          "probability": 0.9978431463241577
+        },
+        {
+          "word": " aged",
+          "start": 212.5,
+          "end": 213.1,
+          "probability": 0.9951476454734802
+        },
+        {
+          "word": " over",
+          "start": 213.1,
+          "end": 213.48,
+          "probability": 0.9950026869773865
+        },
+        {
+          "word": " 65",
+          "start": 213.48,
+          "end": 214.12,
+          "probability": 0.9972303509712219
+        },
+        {
+          "word": " owned",
+          "start": 214.12,
+          "end": 214.68,
+          "probability": 0.9841947555541992
+        },
+        {
+          "word": " one",
+          "start": 214.68,
+          "end": 215.08,
+          "probability": 0.8961609601974487
+        },
+        {
+          "word": " according",
+          "start": 215.08,
+          "end": 215.62,
+          "probability": 0.5319410562515259
+        },
+        {
+          "word": " to",
+          "start": 215.62,
+          "end": 216.02,
+          "probability": 0.9986932873725891
+        },
+        {
+          "word": " one",
+          "start": 216.02,
+          "end": 216.24,
+          "probability": 0.9183018207550049
+        },
+        {
+          "word": " survey,",
+          "start": 216.24,
+          "end": 216.8,
+          "probability": 0.9961684346199036
+        },
+        {
+          "word": " that",
+          "start": 217.74,
+          "end": 217.96,
+          "probability": 0.9917119741439819
+        },
+        {
+          "word": " number",
+          "start": 217.96,
+          "end": 218.4,
+          "probability": 0.9970983266830444
+        },
+        {
+          "word": " is",
+          "start": 218.4,
+          "end": 218.64,
+          "probability": 0.99787437915802
+        },
+        {
+          "word": " significant.",
+          "start": 218.64,
+          "end": 219.36,
+          "probability": 0.994143545627594
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 21936,
+      "start": 220.36,
+      "end": 234.16,
+      "text": " What's more, for the first time ever, more women aged 60 to 64 are in work than not in work according to analysis of data from the Office for National Statistics.",
+      "tokens": [
+        50414,
+        708,
+        311,
+        544,
+        11,
+        337,
+        264,
+        700,
+        565,
+        1562,
+        11,
+        544,
+        2266,
+        21213,
+        4060,
+        281,
+        12145,
+        366,
+        294,
+        589,
+        813,
+        406,
+        294,
+        589,
+        4650,
+        281,
+        5215,
+        295,
+        1412,
+        490,
+        264,
+        8935,
+        337,
+        4862,
+        49226,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06972976993112003,
+      "compression_ratio": 1.4568527918781726,
+      "no_speech_prob": 0.1685255616903305,
+      "words": [
+        {
+          "word": " What's",
+          "start": 220.36,
+          "end": 220.74,
+          "probability": 0.6402504742145538
+        },
+        {
+          "word": " more,",
+          "start": 220.74,
+          "end": 220.96,
+          "probability": 0.9932066202163696
+        },
+        {
+          "word": " for",
+          "start": 221.5,
+          "end": 221.62,
+          "probability": 0.9899749159812927
+        },
+        {
+          "word": " the",
+          "start": 221.62,
+          "end": 221.78,
+          "probability": 0.9982916712760925
+        },
+        {
+          "word": " first",
+          "start": 221.78,
+          "end": 222.08,
+          "probability": 0.995126485824585
+        },
+        {
+          "word": " time",
+          "start": 222.08,
+          "end": 222.48,
+          "probability": 0.996569037437439
+        },
+        {
+          "word": " ever,",
+          "start": 222.48,
+          "end": 223.1,
+          "probability": 0.9816598296165466
+        },
+        {
+          "word": " more",
+          "start": 223.66,
+          "end": 223.8,
+          "probability": 0.97114098072052
+        },
+        {
+          "word": " women",
+          "start": 223.8,
+          "end": 224.22,
+          "probability": 0.9880362749099731
+        },
+        {
+          "word": " aged",
+          "start": 224.22,
+          "end": 224.78,
+          "probability": 0.9890623688697815
+        },
+        {
+          "word": " 60",
+          "start": 224.78,
+          "end": 225.46,
+          "probability": 0.9822047352790833
+        },
+        {
+          "word": " to",
+          "start": 225.46,
+          "end": 225.78,
+          "probability": 0.6731064319610596
+        },
+        {
+          "word": " 64",
+          "start": 225.78,
+          "end": 226.46,
+          "probability": 0.9833626747131348
+        },
+        {
+          "word": " are",
+          "start": 226.46,
+          "end": 226.9,
+          "probability": 0.9963111281394958
+        },
+        {
+          "word": " in",
+          "start": 226.9,
+          "end": 227.26,
+          "probability": 0.9440978765487671
+        },
+        {
+          "word": " work",
+          "start": 227.26,
+          "end": 227.56,
+          "probability": 0.9248113632202148
+        },
+        {
+          "word": " than",
+          "start": 227.56,
+          "end": 228.12,
+          "probability": 0.9833374619483948
+        },
+        {
+          "word": " not",
+          "start": 228.12,
+          "end": 228.58,
+          "probability": 0.9921802282333374
+        },
+        {
+          "word": " in",
+          "start": 228.58,
+          "end": 228.9,
+          "probability": 0.9962165951728821
+        },
+        {
+          "word": " work",
+          "start": 228.9,
+          "end": 229.26,
+          "probability": 0.9967736601829529
+        },
+        {
+          "word": " according",
+          "start": 229.26,
+          "end": 230.1,
+          "probability": 0.21207088232040405
+        },
+        {
+          "word": " to",
+          "start": 230.1,
+          "end": 230.52,
+          "probability": 0.9992449283599854
+        },
+        {
+          "word": " analysis",
+          "start": 230.52,
+          "end": 231.02,
+          "probability": 0.8904594779014587
+        },
+        {
+          "word": " of",
+          "start": 231.02,
+          "end": 231.36,
+          "probability": 0.9942453503608704
+        },
+        {
+          "word": " data",
+          "start": 231.36,
+          "end": 231.78,
+          "probability": 0.9984838366508484
+        },
+        {
+          "word": " from",
+          "start": 231.78,
+          "end": 232.2,
+          "probability": 0.9957301020622253
+        },
+        {
+          "word": " the",
+          "start": 232.2,
+          "end": 232.36,
+          "probability": 0.9942374229431152
+        },
+        {
+          "word": " Office",
+          "start": 232.36,
+          "end": 232.74,
+          "probability": 0.8498358130455017
+        },
+        {
+          "word": " for",
+          "start": 232.74,
+          "end": 233.06,
+          "probability": 0.9617429971694946
+        },
+        {
+          "word": " National",
+          "start": 233.06,
+          "end": 233.44,
+          "probability": 0.890156626701355
+        },
+        {
+          "word": " Statistics.",
+          "start": 233.44,
+          "end": 234.16,
+          "probability": 0.9756041169166565
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 21936,
+      "start": 235.08,
+      "end": 244.36,
+      "text": " Yes, I read that. The number of older women in work has increased by 51% since the government changed the state pension age.",
+      "tokens": [
+        51164,
+        1079,
+        11,
+        286,
+        1401,
+        300,
+        13,
+        440,
+        1230,
+        295,
+        4906,
+        2266,
+        294,
+        589,
+        575,
+        6505,
+        538,
+        18485,
+        4,
+        1670,
+        264,
+        2463,
+        3105,
+        264,
+        1785,
+        21927,
+        3205,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06972976993112003,
+      "compression_ratio": 1.4568527918781726,
+      "no_speech_prob": 0.1685255616903305,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 235.08,
+          "end": 235.84,
+          "probability": 0.7657932043075562
+        },
+        {
+          "word": " I",
+          "start": 236.02,
+          "end": 236.16,
+          "probability": 0.9908628463745117
+        },
+        {
+          "word": " read",
+          "start": 236.16,
+          "end": 236.34,
+          "probability": 0.9948681592941284
+        },
+        {
+          "word": " that.",
+          "start": 236.34,
+          "end": 236.76,
+          "probability": 0.9990645051002502
+        },
+        {
+          "word": " The",
+          "start": 237.16,
+          "end": 237.36,
+          "probability": 0.9652480483055115
+        },
+        {
+          "word": " number",
+          "start": 237.36,
+          "end": 237.68,
+          "probability": 0.9962568283081055
+        },
+        {
+          "word": " of",
+          "start": 237.68,
+          "end": 237.9,
+          "probability": 0.9984343647956848
+        },
+        {
+          "word": " older",
+          "start": 237.9,
+          "end": 238.22,
+          "probability": 0.9959160685539246
+        },
+        {
+          "word": " women",
+          "start": 238.22,
+          "end": 238.48,
+          "probability": 0.9963536262512207
+        },
+        {
+          "word": " in",
+          "start": 238.48,
+          "end": 238.78,
+          "probability": 0.9989192485809326
+        },
+        {
+          "word": " work",
+          "start": 238.78,
+          "end": 239.16,
+          "probability": 0.9966683983802795
+        },
+        {
+          "word": " has",
+          "start": 239.16,
+          "end": 239.46,
+          "probability": 0.9964128136634827
+        },
+        {
+          "word": " increased",
+          "start": 239.46,
+          "end": 239.9,
+          "probability": 0.9984707236289978
+        },
+        {
+          "word": " by",
+          "start": 239.9,
+          "end": 240.2,
+          "probability": 0.999093770980835
+        },
+        {
+          "word": " 51",
+          "start": 240.2,
+          "end": 240.8,
+          "probability": 0.973089337348938
+        },
+        {
+          "word": "%",
+          "start": 240.8,
+          "end": 241.38,
+          "probability": 0.665595293045044
+        },
+        {
+          "word": " since",
+          "start": 241.38,
+          "end": 241.92,
+          "probability": 0.9910982251167297
+        },
+        {
+          "word": " the",
+          "start": 241.92,
+          "end": 242.18,
+          "probability": 0.9973118305206299
+        },
+        {
+          "word": " government",
+          "start": 242.18,
+          "end": 242.48,
+          "probability": 0.8848161101341248
+        },
+        {
+          "word": " changed",
+          "start": 242.48,
+          "end": 243.02,
+          "probability": 0.993937611579895
+        },
+        {
+          "word": " the",
+          "start": 243.02,
+          "end": 243.2,
+          "probability": 0.9959369897842407
+        },
+        {
+          "word": " state",
+          "start": 243.2,
+          "end": 243.44,
+          "probability": 0.8344094157218933
+        },
+        {
+          "word": " pension",
+          "start": 243.44,
+          "end": 243.84,
+          "probability": 0.9786669015884399
+        },
+        {
+          "word": " age.",
+          "start": 243.84,
+          "end": 244.36,
+          "probability": 0.994016170501709
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 24436,
+      "start": 245.36,
+      "end": 254.0,
+      "text": " Interestingly, the number of working men aged between 60 and 64 increased by only 13% over the same period.",
+      "tokens": [
+        50414,
+        30564,
+        11,
+        264,
+        1230,
+        295,
+        1364,
+        1706,
+        21213,
+        1296,
+        4060,
+        293,
+        12145,
+        6505,
+        538,
+        787,
+        3705,
+        4,
+        670,
+        264,
+        912,
+        2896,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060669434070587155,
+      "compression_ratio": 1.387434554973822,
+      "no_speech_prob": 0.03156577795743942,
+      "words": [
+        {
+          "word": " Interestingly,",
+          "start": 245.36,
+          "end": 245.86,
+          "probability": 0.9562734961509705
+        },
+        {
+          "word": " the",
+          "start": 246.46,
+          "end": 246.54,
+          "probability": 0.9966360330581665
+        },
+        {
+          "word": " number",
+          "start": 246.54,
+          "end": 246.88,
+          "probability": 0.994674563407898
+        },
+        {
+          "word": " of",
+          "start": 246.88,
+          "end": 247.08,
+          "probability": 0.9931521415710449
+        },
+        {
+          "word": " working",
+          "start": 247.08,
+          "end": 247.42,
+          "probability": 0.987991988658905
+        },
+        {
+          "word": " men",
+          "start": 247.42,
+          "end": 247.72,
+          "probability": 0.9950005412101746
+        },
+        {
+          "word": " aged",
+          "start": 247.72,
+          "end": 248.28,
+          "probability": 0.9975449442863464
+        },
+        {
+          "word": " between",
+          "start": 248.28,
+          "end": 248.68,
+          "probability": 0.993309497833252
+        },
+        {
+          "word": " 60",
+          "start": 248.68,
+          "end": 249.2,
+          "probability": 0.9634256958961487
+        },
+        {
+          "word": " and",
+          "start": 249.2,
+          "end": 249.46,
+          "probability": 0.971803605556488
+        },
+        {
+          "word": " 64",
+          "start": 249.46,
+          "end": 250.14,
+          "probability": 0.98155677318573
+        },
+        {
+          "word": " increased",
+          "start": 250.14,
+          "end": 251.02,
+          "probability": 0.9565399885177612
+        },
+        {
+          "word": " by",
+          "start": 251.02,
+          "end": 251.36,
+          "probability": 0.9980388283729553
+        },
+        {
+          "word": " only",
+          "start": 251.36,
+          "end": 251.68,
+          "probability": 0.9973959922790527
+        },
+        {
+          "word": " 13",
+          "start": 251.68,
+          "end": 252.22,
+          "probability": 0.9796549677848816
+        },
+        {
+          "word": "%",
+          "start": 252.22,
+          "end": 252.66,
+          "probability": 0.842746376991272
+        },
+        {
+          "word": " over",
+          "start": 252.66,
+          "end": 253.08,
+          "probability": 0.996698796749115
+        },
+        {
+          "word": " the",
+          "start": 253.08,
+          "end": 253.24,
+          "probability": 0.9967811107635498
+        },
+        {
+          "word": " same",
+          "start": 253.24,
+          "end": 253.52,
+          "probability": 0.998956561088562
+        },
+        {
+          "word": " period.",
+          "start": 253.52,
+          "end": 254.0,
+          "probability": 0.9989461302757263
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 24436,
+      "start": 254.7,
+      "end": 260.7,
+      "text": " Working is a positive choice for older people as it gives them financial independence.",
+      "tokens": [
+        50864,
+        18337,
+        307,
+        257,
+        3353,
+        3922,
+        337,
+        4906,
+        561,
+        382,
+        309,
+        2709,
+        552,
+        4669,
+        14640,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060669434070587155,
+      "compression_ratio": 1.387434554973822,
+      "no_speech_prob": 0.03156577795743942,
+      "words": [
+        {
+          "word": " Working",
+          "start": 254.7,
+          "end": 255.3,
+          "probability": 0.9180519580841064
+        },
+        {
+          "word": " is",
+          "start": 255.3,
+          "end": 255.68,
+          "probability": 0.9961451292037964
+        },
+        {
+          "word": " a",
+          "start": 255.68,
+          "end": 255.8,
+          "probability": 0.9990463852882385
+        },
+        {
+          "word": " positive",
+          "start": 255.8,
+          "end": 256.44,
+          "probability": 0.9957809448242188
+        },
+        {
+          "word": " choice",
+          "start": 256.44,
+          "end": 256.88,
+          "probability": 0.9973829388618469
+        },
+        {
+          "word": " for",
+          "start": 256.88,
+          "end": 257.22,
+          "probability": 0.999312162399292
+        },
+        {
+          "word": " older",
+          "start": 257.22,
+          "end": 257.5,
+          "probability": 0.997564435005188
+        },
+        {
+          "word": " people",
+          "start": 257.5,
+          "end": 257.98,
+          "probability": 0.999226450920105
+        },
+        {
+          "word": " as",
+          "start": 257.98,
+          "end": 258.72,
+          "probability": 0.5416147112846375
+        },
+        {
+          "word": " it",
+          "start": 258.72,
+          "end": 258.9,
+          "probability": 0.9986106157302856
+        },
+        {
+          "word": " gives",
+          "start": 258.9,
+          "end": 259.08,
+          "probability": 0.9956229329109192
+        },
+        {
+          "word": " them",
+          "start": 259.08,
+          "end": 259.36,
+          "probability": 0.998511016368866
+        },
+        {
+          "word": " financial",
+          "start": 259.36,
+          "end": 259.96,
+          "probability": 0.998066246509552
+        },
+        {
+          "word": " independence.",
+          "start": 259.96,
+          "end": 260.7,
+          "probability": 0.9915547966957092
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 24436,
+      "start": 261.64,
+      "end": 268.54,
+      "text": " Personally, I think it's about choice. Age is or should be irrelevant.",
+      "tokens": [
+        51214,
+        21079,
+        11,
+        286,
+        519,
+        309,
+        311,
+        466,
+        3922,
+        13,
+        16280,
+        307,
+        420,
+        820,
+        312,
+        28682,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.060669434070587155,
+      "compression_ratio": 1.387434554973822,
+      "no_speech_prob": 0.03156577795743942,
+      "words": [
+        {
+          "word": " Personally,",
+          "start": 261.64,
+          "end": 262.36,
+          "probability": 0.9871117472648621
+        },
+        {
+          "word": " I",
+          "start": 262.9,
+          "end": 263.1,
+          "probability": 0.9952512979507446
+        },
+        {
+          "word": " think",
+          "start": 263.1,
+          "end": 263.5,
+          "probability": 0.9994206428527832
+        },
+        {
+          "word": " it's",
+          "start": 263.5,
+          "end": 263.86,
+          "probability": 0.9710048139095306
+        },
+        {
+          "word": " about",
+          "start": 263.86,
+          "end": 264.12,
+          "probability": 0.9972023963928223
+        },
+        {
+          "word": " choice.",
+          "start": 264.12,
+          "end": 264.7,
+          "probability": 0.9924299120903015
+        },
+        {
+          "word": " Age",
+          "start": 265.66,
+          "end": 265.94,
+          "probability": 0.9614994525909424
+        },
+        {
+          "word": " is",
+          "start": 265.94,
+          "end": 266.28,
+          "probability": 0.990341067314148
+        },
+        {
+          "word": " or",
+          "start": 266.28,
+          "end": 266.72,
+          "probability": 0.595565915107727
+        },
+        {
+          "word": " should",
+          "start": 266.72,
+          "end": 267.26,
+          "probability": 0.9811586141586304
+        },
+        {
+          "word": " be",
+          "start": 267.26,
+          "end": 267.56,
+          "probability": 0.9920138716697693
+        },
+        {
+          "word": " irrelevant.",
+          "start": 267.56,
+          "end": 268.54,
+          "probability": 0.974663257598877
+        }
+      ]
+    }
+  ]
+}

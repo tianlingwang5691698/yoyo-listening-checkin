@@ -1,9 +1,9 @@
 const study = require('../facades/study.facade');
 
 const LEVEL_CATEGORY_GROUPS = {
-  A2: ['newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbook'],
-  B1: ['newconcept3', 'magictreehouseb1', 'unlock3textbook', 'unlock3thirdedition', 'unlock3'],
-  B2: ['newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook']
+  A2: ['newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook'],
+  B1: ['newconcept3', 'magictreehouseb1', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3'],
+  B2: ['newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook']
 };
 
 const STANDALONE_CATEGORY_IDS = [].concat(LEVEL_CATEGORY_GROUPS.A2, LEVEL_CATEGORY_GROUPS.B1, LEVEL_CATEGORY_GROUPS.B2);
@@ -87,15 +87,18 @@ async function getLevelOverview(event) {
     magictreehouse: { directTasks: [], overview: [] },
     unlock2: { directTasks: [], overview: [] },
     unlock2thirdedition: { directTasks: [], overview: [] },
+    unlock2workbookthirdedition: { directTasks: [], overview: [] },
     unlock2workbook: { directTasks: [], overview: [] },
     newconcept3: { directTasks: [], overview: [] },
     magictreehouseb1: { directTasks: [], overview: [] },
     unlock3textbook: { directTasks: [], overview: [] },
     unlock3thirdedition: { directTasks: [], overview: [] },
+    unlock3workbookthirdedition: { directTasks: [], overview: [] },
     unlock3: { directTasks: [], overview: [] },
     newconcept4: { directTasks: [], overview: [] },
     unlock4: { directTasks: [], overview: [] },
     unlock4thirdedition: { directTasks: [], overview: [] },
+    unlock4workbookthirdedition: { directTasks: [], overview: [] },
     unlock4workbook: { directTasks: [], overview: [] }
   } : Object.fromEntries(await Promise.all(standaloneCategoryIds.map(async (categoryId) => {
     const directTasks = await study.resolveStandaloneCategoryTasks(categoryId, ctx.child.childId, today);

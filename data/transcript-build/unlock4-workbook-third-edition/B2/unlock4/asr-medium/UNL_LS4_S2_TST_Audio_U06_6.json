@@ -1,0 +1,839 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 6.2 1 Well, we all know non-renewable energy sources are declining, and most of us have heard about solar, wind and hydro energy. But what about the power of algae? 2 These simple plants use a process called photo-synthesis. But basically, photo-synthesis is how plants generate energy from sunlight. 3 Although algae are fast growing, and large volumes can be farmed at once, there are cost drawbacks. 4 We need to overcome the drawbacks around expense for one thing.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.74,
+      "text": " Track 6.2",
+      "tokens": [
+        50364,
+        31903,
+        1386,
+        13,
+        17,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3962134240378796,
+      "compression_ratio": 1.3609467455621302,
+      "no_speech_prob": 0.057317622005939484,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.4,
+          "probability": 0.1345212459564209
+        },
+        {
+          "word": " 6",
+          "start": 0.4,
+          "end": 0.94,
+          "probability": 0.9529559016227722
+        },
+        {
+          "word": ".2",
+          "start": 0.94,
+          "end": 1.74,
+          "probability": 0.9951046407222748
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.299999999999997,
+      "end": 4.18,
+      "text": " 1",
+      "tokens": [
+        50550,
+        502,
+        50600
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3962134240378796,
+      "compression_ratio": 1.3609467455621302,
+      "no_speech_prob": 0.057317622005939484,
+      "words": [
+        {
+          "word": " 1",
+          "start": 3.299999999999997,
+          "end": 4.18,
+          "probability": 0.21827968955039978
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.979999999999998,
+      "end": 10.76,
+      "text": " Well, we all know non-renewable energy sources are declining,",
+      "tokens": [
+        50680,
+        1042,
+        11,
+        321,
+        439,
+        458,
+        2107,
+        12,
+        265,
+        7686,
+        712,
+        2281,
+        7139,
+        366,
+        34298,
+        11,
+        50922
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3962134240378796,
+      "compression_ratio": 1.3609467455621302,
+      "no_speech_prob": 0.057317622005939484,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 5.979999999999998,
+          "end": 6.86,
+          "probability": 0.11987339705228806
+        },
+        {
+          "word": " we",
+          "start": 7.06,
+          "end": 7.38,
+          "probability": 0.9939854741096497
+        },
+        {
+          "word": " all",
+          "start": 7.38,
+          "end": 7.76,
+          "probability": 0.9920737743377686
+        },
+        {
+          "word": " know",
+          "start": 7.76,
+          "end": 8.02,
+          "probability": 0.9940361976623535
+        },
+        {
+          "word": " non",
+          "start": 8.02,
+          "end": 8.48,
+          "probability": 0.980536699295044
+        },
+        {
+          "word": "-renewable",
+          "start": 8.48,
+          "end": 9.08,
+          "probability": 0.9261352866888046
+        },
+        {
+          "word": " energy",
+          "start": 9.08,
+          "end": 9.44,
+          "probability": 0.9972781538963318
+        },
+        {
+          "word": " sources",
+          "start": 9.44,
+          "end": 9.9,
+          "probability": 0.9987964630126953
+        },
+        {
+          "word": " are",
+          "start": 9.9,
+          "end": 10.26,
+          "probability": 0.9983610510826111
+        },
+        {
+          "word": " declining,",
+          "start": 10.26,
+          "end": 10.76,
+          "probability": 0.9985712766647339
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.14,
+      "end": 15.82,
+      "text": " and most of us have heard about solar, wind and hydro energy.",
+      "tokens": [
+        50922,
+        293,
+        881,
+        295,
+        505,
+        362,
+        2198,
+        466,
+        7936,
+        11,
+        2468,
+        293,
+        15435,
+        2281,
+        13,
+        51180
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3962134240378796,
+      "compression_ratio": 1.3609467455621302,
+      "no_speech_prob": 0.057317622005939484,
+      "words": [
+        {
+          "word": " and",
+          "start": 11.14,
+          "end": 11.56,
+          "probability": 0.9939058423042297
+        },
+        {
+          "word": " most",
+          "start": 11.56,
+          "end": 11.86,
+          "probability": 0.9971110820770264
+        },
+        {
+          "word": " of",
+          "start": 11.86,
+          "end": 12.08,
+          "probability": 0.9796342253684998
+        },
+        {
+          "word": " us",
+          "start": 12.08,
+          "end": 12.32,
+          "probability": 0.9987653493881226
+        },
+        {
+          "word": " have",
+          "start": 12.32,
+          "end": 12.48,
+          "probability": 0.9967184662818909
+        },
+        {
+          "word": " heard",
+          "start": 12.48,
+          "end": 12.76,
+          "probability": 0.9963197708129883
+        },
+        {
+          "word": " about",
+          "start": 12.76,
+          "end": 13.0,
+          "probability": 0.9979077577590942
+        },
+        {
+          "word": " solar,",
+          "start": 13.0,
+          "end": 13.48,
+          "probability": 0.9661858081817627
+        },
+        {
+          "word": " wind",
+          "start": 14.0,
+          "end": 14.22,
+          "probability": 0.9989200830459595
+        },
+        {
+          "word": " and",
+          "start": 14.22,
+          "end": 14.84,
+          "probability": 0.6120651364326477
+        },
+        {
+          "word": " hydro",
+          "start": 14.84,
+          "end": 15.4,
+          "probability": 0.9749215245246887
+        },
+        {
+          "word": " energy.",
+          "start": 15.4,
+          "end": 15.82,
+          "probability": 0.5219476222991943
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 16.32,
+      "end": 19.26,
+      "text": " But what about the power of algae?",
+      "tokens": [
+        51180,
+        583,
+        437,
+        466,
+        264,
+        1347,
+        295,
+        32658,
+        30,
+        51354
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3962134240378796,
+      "compression_ratio": 1.3609467455621302,
+      "no_speech_prob": 0.057317622005939484,
+      "words": [
+        {
+          "word": " But",
+          "start": 16.32,
+          "end": 16.76,
+          "probability": 0.9862856268882751
+        },
+        {
+          "word": " what",
+          "start": 16.76,
+          "end": 17.3,
+          "probability": 0.8460813164710999
+        },
+        {
+          "word": " about",
+          "start": 17.3,
+          "end": 17.66,
+          "probability": 0.9994908571243286
+        },
+        {
+          "word": " the",
+          "start": 17.66,
+          "end": 17.9,
+          "probability": 0.9949448704719543
+        },
+        {
+          "word": " power",
+          "start": 17.9,
+          "end": 18.38,
+          "probability": 0.9786202907562256
+        },
+        {
+          "word": " of",
+          "start": 18.38,
+          "end": 18.78,
+          "probability": 0.9990074038505554
+        },
+        {
+          "word": " algae?",
+          "start": 18.78,
+          "end": 19.26,
+          "probability": 0.9723552465438843
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 21.3,
+      "end": 22.18,
+      "text": " 2",
+      "tokens": [
+        51446,
+        568,
+        51496
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3962134240378796,
+      "compression_ratio": 1.3609467455621302,
+      "no_speech_prob": 0.057317622005939484,
+      "words": [
+        {
+          "word": " 2",
+          "start": 21.3,
+          "end": 22.18,
+          "probability": 0.9268192052841187
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 23.88,
+      "end": 28.34,
+      "text": " These simple plants use a process called photo-synthesis.",
+      "tokens": [
+        51580,
+        1981,
+        2199,
+        5972,
+        764,
+        257,
+        1399,
+        1219,
+        5052,
+        12,
+        82,
+        45601,
+        13,
+        51804
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3962134240378796,
+      "compression_ratio": 1.3609467455621302,
+      "no_speech_prob": 0.057317622005939484,
+      "words": [
+        {
+          "word": " These",
+          "start": 23.88,
+          "end": 24.76,
+          "probability": 0.07994446903467178
+        },
+        {
+          "word": " simple",
+          "start": 24.76,
+          "end": 25.3,
+          "probability": 0.9957849383354187
+        },
+        {
+          "word": " plants",
+          "start": 25.3,
+          "end": 25.74,
+          "probability": 0.9923142790794373
+        },
+        {
+          "word": " use",
+          "start": 25.74,
+          "end": 26.22,
+          "probability": 0.9767612218856812
+        },
+        {
+          "word": " a",
+          "start": 26.22,
+          "end": 26.5,
+          "probability": 0.9963149428367615
+        },
+        {
+          "word": " process",
+          "start": 26.5,
+          "end": 26.88,
+          "probability": 0.9886793494224548
+        },
+        {
+          "word": " called",
+          "start": 26.88,
+          "end": 27.32,
+          "probability": 0.9926689863204956
+        },
+        {
+          "word": " photo",
+          "start": 27.32,
+          "end": 27.76,
+          "probability": 0.4990529417991638
+        },
+        {
+          "word": "-synthesis.",
+          "start": 27.76,
+          "end": 28.34,
+          "probability": 0.6634355088075002
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2834,
+      "start": 28.9,
+      "end": 34.4,
+      "text": " But basically, photo-synthesis is how plants generate energy from sunlight.",
+      "tokens": [
+        50392,
+        583,
+        1936,
+        11,
+        5052,
+        12,
+        82,
+        45601,
+        307,
+        577,
+        5972,
+        8460,
+        2281,
+        490,
+        18379,
+        13,
+        50660
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35140096224271333,
+      "compression_ratio": 1.4046242774566473,
+      "no_speech_prob": 0.005388015881180763,
+      "words": [
+        {
+          "word": " But",
+          "start": 28.66,
+          "end": 29.1,
+          "probability": 0.18132619559764862
+        },
+        {
+          "word": " basically,",
+          "start": 29.1,
+          "end": 29.52,
+          "probability": 0.9482712745666504
+        },
+        {
+          "word": " photo",
+          "start": 29.78,
+          "end": 30.16,
+          "probability": 0.17168092727661133
+        },
+        {
+          "word": "-synthesis",
+          "start": 30.16,
+          "end": 30.7,
+          "probability": 0.7070074081420898
+        },
+        {
+          "word": " is",
+          "start": 30.7,
+          "end": 31.42,
+          "probability": 0.9668009281158447
+        },
+        {
+          "word": " how",
+          "start": 31.42,
+          "end": 31.64,
+          "probability": 0.99681156873703
+        },
+        {
+          "word": " plants",
+          "start": 31.64,
+          "end": 32.22,
+          "probability": 0.9935094714164734
+        },
+        {
+          "word": " generate",
+          "start": 32.22,
+          "end": 32.68,
+          "probability": 0.994617760181427
+        },
+        {
+          "word": " energy",
+          "start": 32.68,
+          "end": 33.3,
+          "probability": 0.9992786049842834
+        },
+        {
+          "word": " from",
+          "start": 33.3,
+          "end": 33.62,
+          "probability": 0.9983536005020142
+        },
+        {
+          "word": " sunlight.",
+          "start": 33.62,
+          "end": 34.4,
+          "probability": 0.9903258085250854
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2834,
+      "start": 36.74,
+      "end": 37.1,
+      "text": " 3",
+      "tokens": [
+        50784,
+        805,
+        50834
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35140096224271333,
+      "compression_ratio": 1.4046242774566473,
+      "no_speech_prob": 0.005388015881180763,
+      "words": [
+        {
+          "word": " 3",
+          "start": 36.66,
+          "end": 37.1,
+          "probability": 0.20221363008022308
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2834,
+      "start": 39.22,
+      "end": 44.82,
+      "text": " Although algae are fast growing, and large volumes can be farmed at once,",
+      "tokens": [
+        50908,
+        5780,
+        32658,
+        366,
+        2370,
+        4194,
+        11,
+        293,
+        2416,
+        22219,
+        393,
+        312,
+        1400,
+        1912,
+        412,
+        1564,
+        11,
+        51208
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35140096224271333,
+      "compression_ratio": 1.4046242774566473,
+      "no_speech_prob": 0.005388015881180763,
+      "words": [
+        {
+          "word": " Although",
+          "start": 39.120000000000005,
+          "end": 39.56,
+          "probability": 0.20763756334781647
+        },
+        {
+          "word": " algae",
+          "start": 39.56,
+          "end": 40.2,
+          "probability": 0.8017012476921082
+        },
+        {
+          "word": " are",
+          "start": 40.2,
+          "end": 40.48,
+          "probability": 0.9987547397613525
+        },
+        {
+          "word": " fast",
+          "start": 40.48,
+          "end": 40.96,
+          "probability": 0.9965534210205078
+        },
+        {
+          "word": " growing,",
+          "start": 40.96,
+          "end": 41.56,
+          "probability": 0.6434479355812073
+        },
+        {
+          "word": " and",
+          "start": 42.04,
+          "end": 42.36,
+          "probability": 0.9878641963005066
+        },
+        {
+          "word": " large",
+          "start": 42.36,
+          "end": 42.74,
+          "probability": 0.9988773465156555
+        },
+        {
+          "word": " volumes",
+          "start": 42.74,
+          "end": 43.22,
+          "probability": 0.9923932552337646
+        },
+        {
+          "word": " can",
+          "start": 43.22,
+          "end": 43.62,
+          "probability": 0.994936466217041
+        },
+        {
+          "word": " be",
+          "start": 43.62,
+          "end": 43.9,
+          "probability": 0.9994592070579529
+        },
+        {
+          "word": " farmed",
+          "start": 43.9,
+          "end": 44.34,
+          "probability": 0.9176475405693054
+        },
+        {
+          "word": " at",
+          "start": 44.34,
+          "end": 44.44,
+          "probability": 0.9990585446357727
+        },
+        {
+          "word": " once,",
+          "start": 44.44,
+          "end": 44.82,
+          "probability": 0.9985431432723999
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2834,
+      "start": 45.32,
+      "end": 46.7,
+      "text": " there are cost drawbacks.",
+      "tokens": [
+        51208,
+        456,
+        366,
+        2063,
+        2642,
+        17758,
+        13,
+        51292
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35140096224271333,
+      "compression_ratio": 1.4046242774566473,
+      "no_speech_prob": 0.005388015881180763,
+      "words": [
+        {
+          "word": " there",
+          "start": 45.32,
+          "end": 45.42,
+          "probability": 0.9841449856758118
+        },
+        {
+          "word": " are",
+          "start": 45.42,
+          "end": 45.62,
+          "probability": 0.9955193996429443
+        },
+        {
+          "word": " cost",
+          "start": 45.62,
+          "end": 46.04,
+          "probability": 0.9344945549964905
+        },
+        {
+          "word": " drawbacks.",
+          "start": 46.04,
+          "end": 46.7,
+          "probability": 0.979379266500473
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2834,
+      "start": 49.04,
+      "end": 49.64,
+      "text": " 4",
+      "tokens": [
+        51408,
+        1017,
+        51448
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35140096224271333,
+      "compression_ratio": 1.4046242774566473,
+      "no_speech_prob": 0.005388015881180763,
+      "words": [
+        {
+          "word": " 4",
+          "start": 49.04,
+          "end": 49.64,
+          "probability": 0.9895057082176208
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2834,
+      "start": 51.86,
+      "end": 56.1,
+      "text": " We need to overcome the drawbacks around expense for one thing.",
+      "tokens": [
+        51540,
+        492,
+        643,
+        281,
+        10473,
+        264,
+        2642,
+        17758,
+        926,
+        18406,
+        337,
+        472,
+        551,
+        13,
+        51752
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35140096224271333,
+      "compression_ratio": 1.4046242774566473,
+      "no_speech_prob": 0.005388015881180763,
+      "words": [
+        {
+          "word": " We",
+          "start": 51.67999999999999,
+          "end": 52.12,
+          "probability": 0.6619963049888611
+        },
+        {
+          "word": " need",
+          "start": 52.12,
+          "end": 52.4,
+          "probability": 0.9978485107421875
+        },
+        {
+          "word": " to",
+          "start": 52.4,
+          "end": 52.66,
+          "probability": 0.9987558126449585
+        },
+        {
+          "word": " overcome",
+          "start": 52.66,
+          "end": 53.12,
+          "probability": 0.9984263181686401
+        },
+        {
+          "word": " the",
+          "start": 53.12,
+          "end": 53.38,
+          "probability": 0.9958711266517639
+        },
+        {
+          "word": " drawbacks",
+          "start": 53.38,
+          "end": 54.02,
+          "probability": 0.9964611828327179
+        },
+        {
+          "word": " around",
+          "start": 54.02,
+          "end": 54.4,
+          "probability": 0.9962490200996399
+        },
+        {
+          "word": " expense",
+          "start": 54.4,
+          "end": 54.98,
+          "probability": 0.9864298105239868
+        },
+        {
+          "word": " for",
+          "start": 54.98,
+          "end": 55.42,
+          "probability": 0.9951724410057068
+        },
+        {
+          "word": " one",
+          "start": 55.42,
+          "end": 55.66,
+          "probability": 0.9941135048866272
+        },
+        {
+          "word": " thing.",
+          "start": 55.66,
+          "end": 56.1,
+          "probability": 0.9990373849868774
+        }
+      ]
+    }
+  ]
+}

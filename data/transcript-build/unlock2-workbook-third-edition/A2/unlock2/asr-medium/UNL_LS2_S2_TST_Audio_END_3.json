@@ -1,0 +1,1111 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "End of course test, track 3. Some of Newton's work is not very easy to understand unless you are a mathematician. 2 So it's perhaps not surprising that Newton stopped showing people his work. 3 Like many people at the time, Newton tried to change ordinary metal into gold. His scientific achievements are not quite as amazing as Newton's or Einstein's. 5 Because he was very excited about astronomy, he was able to show ordinary people how exciting it is too, a talent that not many scientists have. 6 His show had 135 million viewers from all over the world, which even today is quite a few people.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " End of course test, track 3.",
+      "tokens": [
+        50364,
+        6967,
+        295,
+        1164,
+        1500,
+        11,
+        2837,
+        805,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4716344197591146,
+      "compression_ratio": 1.3356164383561644,
+      "no_speech_prob": 0.3868362009525299,
+      "words": [
+        {
+          "word": " End",
+          "start": 0.0,
+          "end": 0.56,
+          "probability": 0.7732433676719666
+        },
+        {
+          "word": " of",
+          "start": 0.56,
+          "end": 0.8,
+          "probability": 0.8878255486488342
+        },
+        {
+          "word": " course",
+          "start": 0.8,
+          "end": 1.04,
+          "probability": 0.9276965856552124
+        },
+        {
+          "word": " test,",
+          "start": 1.04,
+          "end": 1.64,
+          "probability": 0.9738339781761169
+        },
+        {
+          "word": " track",
+          "start": 2.18,
+          "end": 2.38,
+          "probability": 0.8083282113075256
+        },
+        {
+          "word": " 3.",
+          "start": 2.38,
+          "end": 3.0,
+          "probability": 0.5287086367607117
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 7.74,
+      "end": 7.74,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.4716344197591146,
+      "compression_ratio": 1.3356164383561644,
+      "no_speech_prob": 0.3868362009525299,
+      "words": []
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 7.74,
+      "end": 11.58,
+      "text": " Some of Newton's work is not very easy to understand",
+      "tokens": [
+        50728,
+        2188,
+        295,
+        19541,
+        311,
+        589,
+        307,
+        406,
+        588,
+        1858,
+        281,
+        1223,
+        50946
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4716344197591146,
+      "compression_ratio": 1.3356164383561644,
+      "no_speech_prob": 0.3868362009525299,
+      "words": [
+        {
+          "word": " Some",
+          "start": 7.74,
+          "end": 7.96,
+          "probability": 0.026944711804389954
+        },
+        {
+          "word": " of",
+          "start": 7.96,
+          "end": 8.34,
+          "probability": 0.9988922476768494
+        },
+        {
+          "word": " Newton's",
+          "start": 8.34,
+          "end": 8.82,
+          "probability": 0.9898560345172882
+        },
+        {
+          "word": " work",
+          "start": 8.82,
+          "end": 9.18,
+          "probability": 0.9980674386024475
+        },
+        {
+          "word": " is",
+          "start": 9.18,
+          "end": 9.48,
+          "probability": 0.9953402280807495
+        },
+        {
+          "word": " not",
+          "start": 9.48,
+          "end": 9.86,
+          "probability": 0.9981916546821594
+        },
+        {
+          "word": " very",
+          "start": 9.86,
+          "end": 10.32,
+          "probability": 0.9938177466392517
+        },
+        {
+          "word": " easy",
+          "start": 10.32,
+          "end": 10.68,
+          "probability": 0.9990247488021851
+        },
+        {
+          "word": " to",
+          "start": 10.68,
+          "end": 11.02,
+          "probability": 0.999249279499054
+        },
+        {
+          "word": " understand",
+          "start": 11.02,
+          "end": 11.58,
+          "probability": 0.9994730353355408
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.58,
+      "end": 13.72,
+      "text": " unless you are a mathematician.",
+      "tokens": [
+        50946,
+        5969,
+        291,
+        366,
+        257,
+        48281,
+        13,
+        51066
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4716344197591146,
+      "compression_ratio": 1.3356164383561644,
+      "no_speech_prob": 0.3868362009525299,
+      "words": [
+        {
+          "word": " unless",
+          "start": 11.58,
+          "end": 12.44,
+          "probability": 0.612341582775116
+        },
+        {
+          "word": " you",
+          "start": 12.44,
+          "end": 12.62,
+          "probability": 0.9985625147819519
+        },
+        {
+          "word": " are",
+          "start": 12.62,
+          "end": 12.88,
+          "probability": 0.9762234687805176
+        },
+        {
+          "word": " a",
+          "start": 12.88,
+          "end": 13.08,
+          "probability": 0.9943453669548035
+        },
+        {
+          "word": " mathematician.",
+          "start": 13.08,
+          "end": 13.72,
+          "probability": 0.9946621060371399
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 15.84,
+      "end": 16.76,
+      "text": " 2",
+      "tokens": [
+        51144,
+        568,
+        51194
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4716344197591146,
+      "compression_ratio": 1.3356164383561644,
+      "no_speech_prob": 0.3868362009525299,
+      "words": [
+        {
+          "word": " 2",
+          "start": 15.84,
+          "end": 16.76,
+          "probability": 0.9894490242004395
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 18.099999999999998,
+      "end": 20.92,
+      "text": " So it's perhaps not surprising",
+      "tokens": [
+        51276,
+        407,
+        309,
+        311,
+        4317,
+        406,
+        8830,
+        51412
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4716344197591146,
+      "compression_ratio": 1.3356164383561644,
+      "no_speech_prob": 0.3868362009525299,
+      "words": [
+        {
+          "word": " So",
+          "start": 18.099999999999998,
+          "end": 19.02,
+          "probability": 0.9828671813011169
+        },
+        {
+          "word": " it's",
+          "start": 19.02,
+          "end": 19.44,
+          "probability": 0.9019968807697296
+        },
+        {
+          "word": " perhaps",
+          "start": 19.44,
+          "end": 19.94,
+          "probability": 0.9934985637664795
+        },
+        {
+          "word": " not",
+          "start": 19.94,
+          "end": 20.28,
+          "probability": 0.9992225170135498
+        },
+        {
+          "word": " surprising",
+          "start": 20.28,
+          "end": 20.92,
+          "probability": 0.9948278069496155
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 20.92,
+      "end": 23.98,
+      "text": " that Newton stopped showing people his work.",
+      "tokens": [
+        51412,
+        300,
+        19541,
+        5936,
+        4099,
+        561,
+        702,
+        589,
+        13,
+        51570
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4716344197591146,
+      "compression_ratio": 1.3356164383561644,
+      "no_speech_prob": 0.3868362009525299,
+      "words": [
+        {
+          "word": " that",
+          "start": 20.92,
+          "end": 21.44,
+          "probability": 0.9927485585212708
+        },
+        {
+          "word": " Newton",
+          "start": 21.44,
+          "end": 21.88,
+          "probability": 0.9951352477073669
+        },
+        {
+          "word": " stopped",
+          "start": 21.88,
+          "end": 22.28,
+          "probability": 0.9881921410560608
+        },
+        {
+          "word": " showing",
+          "start": 22.28,
+          "end": 22.66,
+          "probability": 0.998485267162323
+        },
+        {
+          "word": " people",
+          "start": 22.66,
+          "end": 23.18,
+          "probability": 0.9974552989006042
+        },
+        {
+          "word": " his",
+          "start": 23.18,
+          "end": 23.5,
+          "probability": 0.9986602067947388
+        },
+        {
+          "word": " work.",
+          "start": 23.5,
+          "end": 23.98,
+          "probability": 0.9993603825569153
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 25.68,
+      "end": 26.6,
+      "text": " 3",
+      "tokens": [
+        51652,
+        805,
+        51702
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4716344197591146,
+      "compression_ratio": 1.3356164383561644,
+      "no_speech_prob": 0.3868362009525299,
+      "words": [
+        {
+          "word": " 3",
+          "start": 25.68,
+          "end": 26.6,
+          "probability": 0.9983172416687012
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2660,
+      "start": 28.06,
+      "end": 30.8,
+      "text": " Like many people at the time,",
+      "tokens": [
+        50414,
+        1743,
+        867,
+        561,
+        412,
+        264,
+        565,
+        11,
+        50576
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3802743209035773,
+      "compression_ratio": 1.29375,
+      "no_speech_prob": 0.007338003721088171,
+      "words": [
+        {
+          "word": " Like",
+          "start": 28.06,
+          "end": 29.04,
+          "probability": 0.44910183548927307
+        },
+        {
+          "word": " many",
+          "start": 29.04,
+          "end": 29.52,
+          "probability": 0.997897744178772
+        },
+        {
+          "word": " people",
+          "start": 29.52,
+          "end": 29.96,
+          "probability": 0.9970290064811707
+        },
+        {
+          "word": " at",
+          "start": 29.96,
+          "end": 30.2,
+          "probability": 0.9906795620918274
+        },
+        {
+          "word": " the",
+          "start": 30.2,
+          "end": 30.4,
+          "probability": 0.9740657806396484
+        },
+        {
+          "word": " time,",
+          "start": 30.4,
+          "end": 30.8,
+          "probability": 0.9995984435081482
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2660,
+      "start": 31.34,
+      "end": 34.96,
+      "text": " Newton tried to change ordinary metal into gold.",
+      "tokens": [
+        50576,
+        19541,
+        3031,
+        281,
+        1319,
+        10547,
+        5760,
+        666,
+        3821,
+        13,
+        50782
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3802743209035773,
+      "compression_ratio": 1.29375,
+      "no_speech_prob": 0.007338003721088171,
+      "words": [
+        {
+          "word": " Newton",
+          "start": 31.34,
+          "end": 31.56,
+          "probability": 0.9877161383628845
+        },
+        {
+          "word": " tried",
+          "start": 31.56,
+          "end": 31.96,
+          "probability": 0.9970966577529907
+        },
+        {
+          "word": " to",
+          "start": 31.96,
+          "end": 32.34,
+          "probability": 0.9983260035514832
+        },
+        {
+          "word": " change",
+          "start": 32.34,
+          "end": 32.58,
+          "probability": 0.9982082843780518
+        },
+        {
+          "word": " ordinary",
+          "start": 32.58,
+          "end": 33.28,
+          "probability": 0.9641127586364746
+        },
+        {
+          "word": " metal",
+          "start": 33.28,
+          "end": 33.74,
+          "probability": 0.9965605139732361
+        },
+        {
+          "word": " into",
+          "start": 33.74,
+          "end": 34.26,
+          "probability": 0.9962182641029358
+        },
+        {
+          "word": " gold.",
+          "start": 34.26,
+          "end": 34.96,
+          "probability": 0.9970703125
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2660,
+      "start": 37.7,
+      "end": 37.7,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.3802743209035773,
+      "compression_ratio": 1.29375,
+      "no_speech_prob": 0.007338003721088171,
+      "words": []
+    },
+    {
+      "id": 11,
+      "seek": 2660,
+      "start": 39.02,
+      "end": 43.84,
+      "text": " His scientific achievements are not quite as amazing",
+      "tokens": [
+        51008,
+        2812,
+        8134,
+        21420,
+        366,
+        406,
+        1596,
+        382,
+        2243,
+        51224
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3802743209035773,
+      "compression_ratio": 1.29375,
+      "no_speech_prob": 0.007338003721088171,
+      "words": [
+        {
+          "word": " His",
+          "start": 39.02,
+          "end": 40.0,
+          "probability": 0.2109433263540268
+        },
+        {
+          "word": " scientific",
+          "start": 40.0,
+          "end": 40.84,
+          "probability": 0.993450403213501
+        },
+        {
+          "word": " achievements",
+          "start": 40.84,
+          "end": 41.66,
+          "probability": 0.995272696018219
+        },
+        {
+          "word": " are",
+          "start": 41.66,
+          "end": 42.14,
+          "probability": 0.9941369295120239
+        },
+        {
+          "word": " not",
+          "start": 42.14,
+          "end": 42.52,
+          "probability": 0.997879147529602
+        },
+        {
+          "word": " quite",
+          "start": 42.52,
+          "end": 43.04,
+          "probability": 0.9875460267066956
+        },
+        {
+          "word": " as",
+          "start": 43.04,
+          "end": 43.34,
+          "probability": 0.9978895783424377
+        },
+        {
+          "word": " amazing",
+          "start": 43.34,
+          "end": 43.84,
+          "probability": 0.9982097148895264
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2660,
+      "start": 43.84,
+      "end": 46.52,
+      "text": " as Newton's or Einstein's.",
+      "tokens": [
+        51224,
+        382,
+        19541,
+        311,
+        420,
+        23486,
+        311,
+        13,
+        51350
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3802743209035773,
+      "compression_ratio": 1.29375,
+      "no_speech_prob": 0.007338003721088171,
+      "words": [
+        {
+          "word": " as",
+          "start": 43.84,
+          "end": 44.26,
+          "probability": 0.9983125925064087
+        },
+        {
+          "word": " Newton's",
+          "start": 44.26,
+          "end": 45.1,
+          "probability": 0.9942569434642792
+        },
+        {
+          "word": " or",
+          "start": 45.1,
+          "end": 45.32,
+          "probability": 0.984733521938324
+        },
+        {
+          "word": " Einstein's.",
+          "start": 45.32,
+          "end": 46.52,
+          "probability": 0.9988589882850647
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2660,
+      "start": 48.940000000000005,
+      "end": 49.2,
+      "text": " 5",
+      "tokens": [
+        51444,
+        1025,
+        51494
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3802743209035773,
+      "compression_ratio": 1.29375,
+      "no_speech_prob": 0.007338003721088171,
+      "words": [
+        {
+          "word": " 5",
+          "start": 48.940000000000005,
+          "end": 49.43000000000001,
+          "probability": 0.9970951080322266
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 2660,
+      "start": 50.760000000000005,
+      "end": 54.5,
+      "text": " Because he was very excited about astronomy,",
+      "tokens": [
+        51588,
+        1436,
+        415,
+        390,
+        588,
+        2919,
+        466,
+        37844,
+        11,
+        51778
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3802743209035773,
+      "compression_ratio": 1.29375,
+      "no_speech_prob": 0.007338003721088171,
+      "words": [
+        {
+          "word": " Because",
+          "start": 50.760000000000005,
+          "end": 51.74,
+          "probability": 0.9943475127220154
+        },
+        {
+          "word": " he",
+          "start": 51.74,
+          "end": 51.96,
+          "probability": 0.9986948370933533
+        },
+        {
+          "word": " was",
+          "start": 51.96,
+          "end": 52.28,
+          "probability": 0.998836100101471
+        },
+        {
+          "word": " very",
+          "start": 52.28,
+          "end": 52.68,
+          "probability": 0.996587872505188
+        },
+        {
+          "word": " excited",
+          "start": 52.68,
+          "end": 53.44,
+          "probability": 0.9967706203460693
+        },
+        {
+          "word": " about",
+          "start": 53.44,
+          "end": 53.84,
+          "probability": 0.9994200468063354
+        },
+        {
+          "word": " astronomy,",
+          "start": 53.84,
+          "end": 54.5,
+          "probability": 0.9906814694404602
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5450,
+      "start": 54.5,
+      "end": 60.06,
+      "text": " he was able to show ordinary people how exciting it is too,",
+      "tokens": [
+        50388,
+        415,
+        390,
+        1075,
+        281,
+        855,
+        10547,
+        561,
+        577,
+        4670,
+        309,
+        307,
+        886,
+        11,
+        50656
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2562559269092701,
+      "compression_ratio": 1.3537414965986394,
+      "no_speech_prob": 0.0015058262506499887,
+      "words": [
+        {
+          "word": " he",
+          "start": 54.5,
+          "end": 55.22,
+          "probability": 0.2126530110836029
+        },
+        {
+          "word": " was",
+          "start": 55.22,
+          "end": 55.52,
+          "probability": 0.9978456497192383
+        },
+        {
+          "word": " able",
+          "start": 55.52,
+          "end": 55.98,
+          "probability": 0.9965316653251648
+        },
+        {
+          "word": " to",
+          "start": 55.98,
+          "end": 56.28,
+          "probability": 0.9977371692657471
+        },
+        {
+          "word": " show",
+          "start": 56.28,
+          "end": 56.56,
+          "probability": 0.999371349811554
+        },
+        {
+          "word": " ordinary",
+          "start": 56.56,
+          "end": 57.2,
+          "probability": 0.9951180219650269
+        },
+        {
+          "word": " people",
+          "start": 57.2,
+          "end": 57.8,
+          "probability": 0.9991434812545776
+        },
+        {
+          "word": " how",
+          "start": 57.8,
+          "end": 58.2,
+          "probability": 0.9913620352745056
+        },
+        {
+          "word": " exciting",
+          "start": 58.2,
+          "end": 58.86,
+          "probability": 0.9955465793609619
+        },
+        {
+          "word": " it",
+          "start": 58.86,
+          "end": 59.1,
+          "probability": 0.9967054724693298
+        },
+        {
+          "word": " is",
+          "start": 59.1,
+          "end": 59.5,
+          "probability": 0.9966350197792053
+        },
+        {
+          "word": " too,",
+          "start": 59.5,
+          "end": 60.06,
+          "probability": 0.7253389358520508
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5450,
+      "start": 60.52,
+      "end": 63.74,
+      "text": " a talent that not many scientists have.",
+      "tokens": [
+        50656,
+        257,
+        8301,
+        300,
+        406,
+        867,
+        7708,
+        362,
+        13,
+        50826
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2562559269092701,
+      "compression_ratio": 1.3537414965986394,
+      "no_speech_prob": 0.0015058262506499887,
+      "words": [
+        {
+          "word": " a",
+          "start": 60.52,
+          "end": 60.72,
+          "probability": 0.9904522895812988
+        },
+        {
+          "word": " talent",
+          "start": 60.72,
+          "end": 61.14,
+          "probability": 0.9979873895645142
+        },
+        {
+          "word": " that",
+          "start": 61.14,
+          "end": 61.7,
+          "probability": 0.9870592355728149
+        },
+        {
+          "word": " not",
+          "start": 61.7,
+          "end": 62.06,
+          "probability": 0.9967477321624756
+        },
+        {
+          "word": " many",
+          "start": 62.06,
+          "end": 62.48,
+          "probability": 0.998565137386322
+        },
+        {
+          "word": " scientists",
+          "start": 62.48,
+          "end": 63.16,
+          "probability": 0.9886882901191711
+        },
+        {
+          "word": " have.",
+          "start": 63.16,
+          "end": 63.74,
+          "probability": 0.9990710020065308
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5450,
+      "start": 66.1,
+      "end": 66.68,
+      "text": " 6",
+      "tokens": [
+        50926,
+        1386,
+        50976
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2562559269092701,
+      "compression_ratio": 1.3537414965986394,
+      "no_speech_prob": 0.0015058262506499887,
+      "words": [
+        {
+          "word": " 6",
+          "start": 66.1,
+          "end": 66.68,
+          "probability": 0.081787109375
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5450,
+      "start": 68.58,
+      "end": 74.76,
+      "text": " His show had 135 million viewers from all over the world,",
+      "tokens": [
+        51068,
+        2812,
+        855,
+        632,
+        42652,
+        2459,
+        8499,
+        490,
+        439,
+        670,
+        264,
+        1002,
+        11,
+        51386
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2562559269092701,
+      "compression_ratio": 1.3537414965986394,
+      "no_speech_prob": 0.0015058262506499887,
+      "words": [
+        {
+          "word": " His",
+          "start": 68.42,
+          "end": 68.92,
+          "probability": 0.2818066477775574
+        },
+        {
+          "word": " show",
+          "start": 68.92,
+          "end": 69.46,
+          "probability": 0.9941457509994507
+        },
+        {
+          "word": " had",
+          "start": 69.46,
+          "end": 69.9,
+          "probability": 0.9882640838623047
+        },
+        {
+          "word": " 135",
+          "start": 69.9,
+          "end": 71.16,
+          "probability": 0.9024103283882141
+        },
+        {
+          "word": " million",
+          "start": 71.16,
+          "end": 72.14,
+          "probability": 0.9701095223426819
+        },
+        {
+          "word": " viewers",
+          "start": 72.14,
+          "end": 72.76,
+          "probability": 0.9907584190368652
+        },
+        {
+          "word": " from",
+          "start": 72.76,
+          "end": 73.24,
+          "probability": 0.9896955490112305
+        },
+        {
+          "word": " all",
+          "start": 73.24,
+          "end": 73.64,
+          "probability": 0.9989232420921326
+        },
+        {
+          "word": " over",
+          "start": 73.64,
+          "end": 74.02,
+          "probability": 0.9989570379257202
+        },
+        {
+          "word": " the",
+          "start": 74.02,
+          "end": 74.26,
+          "probability": 0.9992153644561768
+        },
+        {
+          "word": " world,",
+          "start": 74.26,
+          "end": 74.76,
+          "probability": 0.9952905178070068
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 5450,
+      "start": 75.04,
+      "end": 78.86,
+      "text": " which even today is quite a few people.",
+      "tokens": [
+        51386,
+        597,
+        754,
+        965,
+        307,
+        1596,
+        257,
+        1326,
+        561,
+        13,
+        51582
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2562559269092701,
+      "compression_ratio": 1.3537414965986394,
+      "no_speech_prob": 0.0015058262506499887,
+      "words": [
+        {
+          "word": " which",
+          "start": 75.04,
+          "end": 75.52,
+          "probability": 0.9975885152816772
+        },
+        {
+          "word": " even",
+          "start": 75.52,
+          "end": 76.02,
+          "probability": 0.5859041213989258
+        },
+        {
+          "word": " today",
+          "start": 76.02,
+          "end": 76.58,
+          "probability": 0.998290479183197
+        },
+        {
+          "word": " is",
+          "start": 76.58,
+          "end": 77.16,
+          "probability": 0.9129536747932434
+        },
+        {
+          "word": " quite",
+          "start": 77.16,
+          "end": 77.72,
+          "probability": 0.9971376657485962
+        },
+        {
+          "word": " a",
+          "start": 77.72,
+          "end": 78.02,
+          "probability": 0.9989386200904846
+        },
+        {
+          "word": " few",
+          "start": 78.02,
+          "end": 78.26,
+          "probability": 0.9997078776359558
+        },
+        {
+          "word": " people.",
+          "start": 78.26,
+          "end": 78.86,
+          "probability": 0.9983869791030884
+        }
+      ]
+    }
+  ]
+}

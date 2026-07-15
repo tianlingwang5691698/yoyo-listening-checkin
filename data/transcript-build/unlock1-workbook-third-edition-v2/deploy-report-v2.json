@@ -1,0 +1,19 @@
+{
+  "mode": "applied",
+  "statusAfter": "Active",
+  "modifiedAfter": "2026-07-15 22:04:07",
+  "files": [
+    "data/unlock-series-manifests.json",
+    "lib/constants.js"
+  ],
+  "requests": [
+    {
+      "file": "data/unlock-series-manifests.json",
+      "requestId": "22053e5a-7cc6-4d4f-803b-1bb81af756e5"
+    },
+    {
+      "file": "lib/constants.js",
+      "requestId": "4835966f-bcea-4e20-ad6f-923ba72b1438"
+    }
+  ]
+}

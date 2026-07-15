@@ -1,0 +1,5111 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 3.1 Hey, Sienna, I'm glad I've seen you. Do you have a moment? Item? Yeah, sure. Great. I wanted to get your opinion on the changes happening at the hospital before this afternoon's meeting. You know, the decision that doing more clinical trials is necessary? Ah, yes. How do you feel about the changes? Well, you are right that this research is necessary, but as I see it, there are more important things to focus on first, like making improvements to our working conditions. Yes, working conditions could definitely be improved. But to me, the data that's collected by researchers from clinical trials is very valuable. Otherwise, we wouldn't know if new treatments are safe or effective. So what do you think are the key things that we need to focus on? Well, there's a lot of work to do around patient understanding. From my perspective, some patients do not agree to take part in trials because they don't know what treatments are available. We need to make sure that we discuss all treatment options with our patients. Hmm. Okay, Tom. But it seems to me that in addition to discussing options, we need to make sure that patients know what is expected of them if they take part in a trial. Yes, I agree. What amount support for us, the doctors? Well, we need more information and support, too. I have had this experience myself at another hospital. Although the process itself isn't too complex, completing the extra paperwork takes too much time. As you know, when a patient takes part in a clinical trial, there are a lot of extra appointments that wouldn't be necessary if the patients were offered a standard treatment. To be honest, I'm really not sure we have the time for that. Of course, time is a problem, but it seems to me that the additional training we are going to receive will help us understand how to complete the extra forms and documents. I think it is still going to be too challenging. I'm not sure we have the time to collect all this extra data right now. And what about the role of the researchers? Well, we are also going to be working closely with researchers who will help collect the data from patients after they have been treated. As far as I'm concerned, they should interview the patients before and during the trials. So I'm in favor of that. What about treatments being trialled? Just because we are doctors, it doesn't mean we know what drugs are being developed. Yes, there are new drugs being developed all the time, and that can be challenging. If you ask me, the hospital has made the right decision to focus on a small number of diseases. Let me tell you more about how that will work at the meeting later. Okay, that makes sense, I guess. Well, if you ask me, one good reason for doing clinical trials is the financial benefit. It will allow us to invest in new hospital equipment that we really need right now. That's right. Of course, we could do with the financial support. The additional money will definitely help us buy those new hospital beds we need. But as far as I am concerned, this is about our patients. This data, which I mentioned before, is valuable to understand more about certain diseases and prove whether or not new drugs work effectively. You're right, Tom. Right, well, I won't keep you any longer, but I'm sure you can see why it is so important to come to the meeting at 4pm to discuss the changes. Absolutely. Thanks, Tom. See you later.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.9,
+      "text": " Track 3.1",
+      "tokens": [
+        50364,
+        31903,
+        805,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22553177290065315,
+      "compression_ratio": 1.4372093023255814,
+      "no_speech_prob": 0.2220122218132019,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.4,
+          "probability": 0.08908701688051224
+        },
+        {
+          "word": " 3",
+          "start": 0.4,
+          "end": 0.92,
+          "probability": 0.9445857405662537
+        },
+        {
+          "word": ".1",
+          "start": 0.92,
+          "end": 1.9,
+          "probability": 0.9947062134742737
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.4800000000000004,
+      "end": 8.06,
+      "text": " Hey, Sienna, I'm glad I've seen you. Do you have a moment?",
+      "tokens": [
+        50554,
+        1911,
+        11,
+        318,
+        26143,
+        11,
+        286,
+        478,
+        5404,
+        286,
+        600,
+        1612,
+        291,
+        13,
+        1144,
+        291,
+        362,
+        257,
+        1623,
+        30,
+        50784
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22553177290065315,
+      "compression_ratio": 1.4372093023255814,
+      "no_speech_prob": 0.2220122218132019,
+      "words": [
+        {
+          "word": " Hey,",
+          "start": 3.4800000000000004,
+          "end": 4.18,
+          "probability": 0.07640063017606735
+        },
+        {
+          "word": " Sienna,",
+          "start": 4.54,
+          "end": 4.68,
+          "probability": 0.7896498143672943
+        },
+        {
+          "word": " I'm",
+          "start": 5.3,
+          "end": 5.46,
+          "probability": 0.9756433665752411
+        },
+        {
+          "word": " glad",
+          "start": 5.46,
+          "end": 5.64,
+          "probability": 0.9946685433387756
+        },
+        {
+          "word": " I've",
+          "start": 5.64,
+          "end": 5.96,
+          "probability": 0.9936966300010681
+        },
+        {
+          "word": " seen",
+          "start": 5.96,
+          "end": 6.14,
+          "probability": 0.9940876960754395
+        },
+        {
+          "word": " you.",
+          "start": 6.14,
+          "end": 6.5,
+          "probability": 0.9990041851997375
+        },
+        {
+          "word": " Do",
+          "start": 7.02,
+          "end": 7.26,
+          "probability": 0.9926890730857849
+        },
+        {
+          "word": " you",
+          "start": 7.26,
+          "end": 7.38,
+          "probability": 0.998446524143219
+        },
+        {
+          "word": " have",
+          "start": 7.38,
+          "end": 7.54,
+          "probability": 0.9988850951194763
+        },
+        {
+          "word": " a",
+          "start": 7.54,
+          "end": 7.66,
+          "probability": 0.99882572889328
+        },
+        {
+          "word": " moment?",
+          "start": 7.66,
+          "end": 8.06,
+          "probability": 0.9985330104827881
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.66,
+      "end": 10.46,
+      "text": " Item? Yeah, sure.",
+      "tokens": [
+        50784,
+        31066,
+        30,
+        865,
+        11,
+        988,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22553177290065315,
+      "compression_ratio": 1.4372093023255814,
+      "no_speech_prob": 0.2220122218132019,
+      "words": [
+        {
+          "word": " Item?",
+          "start": 8.66,
+          "end": 9.04,
+          "probability": 0.060508035123348236
+        },
+        {
+          "word": " Yeah,",
+          "start": 9.7,
+          "end": 10.06,
+          "probability": 0.8494151830673218
+        },
+        {
+          "word": " sure.",
+          "start": 10.08,
+          "end": 10.46,
+          "probability": 0.9963755011558533
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.28,
+      "end": 11.6,
+      "text": " Great.",
+      "tokens": [
+        50914,
+        3769,
+        13,
+        50984
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22553177290065315,
+      "compression_ratio": 1.4372093023255814,
+      "no_speech_prob": 0.2220122218132019,
+      "words": [
+        {
+          "word": " Great.",
+          "start": 11.28,
+          "end": 11.6,
+          "probability": 0.9912046790122986
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 12.72,
+      "end": 18.46,
+      "text": " I wanted to get your opinion on the changes happening at the hospital before this afternoon's meeting.",
+      "tokens": [
+        50984,
+        286,
+        1415,
+        281,
+        483,
+        428,
+        4800,
+        322,
+        264,
+        2962,
+        2737,
+        412,
+        264,
+        4530,
+        949,
+        341,
+        6499,
+        311,
+        3440,
+        13,
+        51324
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22553177290065315,
+      "compression_ratio": 1.4372093023255814,
+      "no_speech_prob": 0.2220122218132019,
+      "words": [
+        {
+          "word": " I",
+          "start": 12.72,
+          "end": 12.76,
+          "probability": 0.3603770136833191
+        },
+        {
+          "word": " wanted",
+          "start": 12.76,
+          "end": 13.12,
+          "probability": 0.992746889591217
+        },
+        {
+          "word": " to",
+          "start": 13.12,
+          "end": 13.32,
+          "probability": 0.9993126392364502
+        },
+        {
+          "word": " get",
+          "start": 13.32,
+          "end": 13.48,
+          "probability": 0.9987241625785828
+        },
+        {
+          "word": " your",
+          "start": 13.48,
+          "end": 13.76,
+          "probability": 0.9409219622612
+        },
+        {
+          "word": " opinion",
+          "start": 13.76,
+          "end": 14.24,
+          "probability": 0.9993897676467896
+        },
+        {
+          "word": " on",
+          "start": 14.24,
+          "end": 14.5,
+          "probability": 0.9974760413169861
+        },
+        {
+          "word": " the",
+          "start": 14.5,
+          "end": 14.66,
+          "probability": 0.9916472434997559
+        },
+        {
+          "word": " changes",
+          "start": 14.66,
+          "end": 15.12,
+          "probability": 0.9718594551086426
+        },
+        {
+          "word": " happening",
+          "start": 15.12,
+          "end": 15.7,
+          "probability": 0.9962908029556274
+        },
+        {
+          "word": " at",
+          "start": 15.7,
+          "end": 15.92,
+          "probability": 0.9974161386489868
+        },
+        {
+          "word": " the",
+          "start": 15.92,
+          "end": 16.06,
+          "probability": 0.9931408762931824
+        },
+        {
+          "word": " hospital",
+          "start": 16.06,
+          "end": 16.64,
+          "probability": 0.9898332357406616
+        },
+        {
+          "word": " before",
+          "start": 16.64,
+          "end": 17.2,
+          "probability": 0.9200560450553894
+        },
+        {
+          "word": " this",
+          "start": 17.2,
+          "end": 17.52,
+          "probability": 0.9981558918952942
+        },
+        {
+          "word": " afternoon's",
+          "start": 17.52,
+          "end": 18.12,
+          "probability": 0.9908576309680939
+        },
+        {
+          "word": " meeting.",
+          "start": 18.12,
+          "end": 18.46,
+          "probability": 0.9985309839248657
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 19.3,
+      "end": 23.66,
+      "text": " You know, the decision that doing more clinical trials is necessary?",
+      "tokens": [
+        51324,
+        509,
+        458,
+        11,
+        264,
+        3537,
+        300,
+        884,
+        544,
+        9115,
+        12450,
+        307,
+        4818,
+        30,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22553177290065315,
+      "compression_ratio": 1.4372093023255814,
+      "no_speech_prob": 0.2220122218132019,
+      "words": [
+        {
+          "word": " You",
+          "start": 19.3,
+          "end": 19.56,
+          "probability": 0.9744958281517029
+        },
+        {
+          "word": " know,",
+          "start": 19.56,
+          "end": 19.76,
+          "probability": 0.9994439482688904
+        },
+        {
+          "word": " the",
+          "start": 20.22,
+          "end": 20.52,
+          "probability": 0.9927940964698792
+        },
+        {
+          "word": " decision",
+          "start": 20.52,
+          "end": 20.98,
+          "probability": 0.9962880611419678
+        },
+        {
+          "word": " that",
+          "start": 20.98,
+          "end": 21.3,
+          "probability": 0.9903404116630554
+        },
+        {
+          "word": " doing",
+          "start": 21.3,
+          "end": 21.64,
+          "probability": 0.9836905598640442
+        },
+        {
+          "word": " more",
+          "start": 21.64,
+          "end": 21.94,
+          "probability": 0.9983202815055847
+        },
+        {
+          "word": " clinical",
+          "start": 21.94,
+          "end": 22.32,
+          "probability": 0.9908362627029419
+        },
+        {
+          "word": " trials",
+          "start": 22.32,
+          "end": 22.84,
+          "probability": 0.9970026612281799
+        },
+        {
+          "word": " is",
+          "start": 22.84,
+          "end": 23.16,
+          "probability": 0.9983962178230286
+        },
+        {
+          "word": " necessary?",
+          "start": 23.16,
+          "end": 23.66,
+          "probability": 0.998801589012146
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 24.2,
+      "end": 25.14,
+      "text": " Ah, yes.",
+      "tokens": [
+        51564,
+        2438,
+        11,
+        2086,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22553177290065315,
+      "compression_ratio": 1.4372093023255814,
+      "no_speech_prob": 0.2220122218132019,
+      "words": [
+        {
+          "word": " Ah,",
+          "start": 24.2,
+          "end": 24.4,
+          "probability": 0.42750826478004456
+        },
+        {
+          "word": " yes.",
+          "start": 24.76,
+          "end": 25.14,
+          "probability": 0.9931848645210266
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 26.1,
+      "end": 27.92,
+      "text": " How do you feel about the changes?",
+      "tokens": [
+        51664,
+        1012,
+        360,
+        291,
+        841,
+        466,
+        264,
+        2962,
+        30,
+        51804
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22553177290065315,
+      "compression_ratio": 1.4372093023255814,
+      "no_speech_prob": 0.2220122218132019,
+      "words": [
+        {
+          "word": " How",
+          "start": 26.1,
+          "end": 26.44,
+          "probability": 0.9929889440536499
+        },
+        {
+          "word": " do",
+          "start": 26.44,
+          "end": 26.58,
+          "probability": 0.9985095858573914
+        },
+        {
+          "word": " you",
+          "start": 26.58,
+          "end": 26.74,
+          "probability": 0.9991616010665894
+        },
+        {
+          "word": " feel",
+          "start": 26.74,
+          "end": 27.02,
+          "probability": 0.9982641339302063
+        },
+        {
+          "word": " about",
+          "start": 27.02,
+          "end": 27.34,
+          "probability": 0.9993274211883545
+        },
+        {
+          "word": " the",
+          "start": 27.34,
+          "end": 27.52,
+          "probability": 0.9951472878456116
+        },
+        {
+          "word": " changes?",
+          "start": 27.52,
+          "end": 27.92,
+          "probability": 0.9981818199157715
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2792,
+      "start": 27.92,
+      "end": 40.88,
+      "text": " Well, you are right that this research is necessary, but as I see it, there are more important things to focus on first, like making improvements to our working conditions.",
+      "tokens": [
+        50364,
+        1042,
+        11,
+        291,
+        366,
+        558,
+        300,
+        341,
+        2132,
+        307,
+        4818,
+        11,
+        457,
+        382,
+        286,
+        536,
+        309,
+        11,
+        456,
+        366,
+        544,
+        1021,
+        721,
+        281,
+        1879,
+        322,
+        700,
+        11,
+        411,
+        1455,
+        13797,
+        281,
+        527,
+        1364,
+        4487,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10912852287292481,
+      "compression_ratio": 1.5771144278606966,
+      "no_speech_prob": 0.029107239097356796,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 27.92,
+          "end": 29.22,
+          "probability": 0.654705286026001
+        },
+        {
+          "word": " you",
+          "start": 29.76,
+          "end": 30.04,
+          "probability": 0.9949337840080261
+        },
+        {
+          "word": " are",
+          "start": 30.04,
+          "end": 30.24,
+          "probability": 0.9686344861984253
+        },
+        {
+          "word": " right",
+          "start": 30.24,
+          "end": 30.62,
+          "probability": 0.9984244108200073
+        },
+        {
+          "word": " that",
+          "start": 30.62,
+          "end": 30.94,
+          "probability": 0.9529854655265808
+        },
+        {
+          "word": " this",
+          "start": 30.94,
+          "end": 31.26,
+          "probability": 0.986841082572937
+        },
+        {
+          "word": " research",
+          "start": 31.26,
+          "end": 31.78,
+          "probability": 0.9806109666824341
+        },
+        {
+          "word": " is",
+          "start": 31.78,
+          "end": 32.04,
+          "probability": 0.995608389377594
+        },
+        {
+          "word": " necessary,",
+          "start": 32.04,
+          "end": 32.68,
+          "probability": 0.9959385395050049
+        },
+        {
+          "word": " but",
+          "start": 32.96,
+          "end": 33.1,
+          "probability": 0.9952536821365356
+        },
+        {
+          "word": " as",
+          "start": 33.1,
+          "end": 33.74,
+          "probability": 0.6882231831550598
+        },
+        {
+          "word": " I",
+          "start": 33.74,
+          "end": 33.96,
+          "probability": 0.9950587749481201
+        },
+        {
+          "word": " see",
+          "start": 33.96,
+          "end": 34.26,
+          "probability": 0.9933846592903137
+        },
+        {
+          "word": " it,",
+          "start": 34.26,
+          "end": 34.6,
+          "probability": 0.9992839694023132
+        },
+        {
+          "word": " there",
+          "start": 34.8,
+          "end": 34.92,
+          "probability": 0.9964792132377625
+        },
+        {
+          "word": " are",
+          "start": 34.92,
+          "end": 35.04,
+          "probability": 0.9986234903335571
+        },
+        {
+          "word": " more",
+          "start": 35.04,
+          "end": 35.24,
+          "probability": 0.9881799221038818
+        },
+        {
+          "word": " important",
+          "start": 35.24,
+          "end": 35.82,
+          "probability": 0.9972260594367981
+        },
+        {
+          "word": " things",
+          "start": 35.82,
+          "end": 36.12,
+          "probability": 0.9984733462333679
+        },
+        {
+          "word": " to",
+          "start": 36.12,
+          "end": 36.36,
+          "probability": 0.9990323781967163
+        },
+        {
+          "word": " focus",
+          "start": 36.36,
+          "end": 36.68,
+          "probability": 0.9986724853515625
+        },
+        {
+          "word": " on",
+          "start": 36.68,
+          "end": 36.92,
+          "probability": 0.9977723956108093
+        },
+        {
+          "word": " first,",
+          "start": 36.92,
+          "end": 37.38,
+          "probability": 0.9895340800285339
+        },
+        {
+          "word": " like",
+          "start": 37.94,
+          "end": 38.16,
+          "probability": 0.9939100742340088
+        },
+        {
+          "word": " making",
+          "start": 38.16,
+          "end": 38.62,
+          "probability": 0.9976027607917786
+        },
+        {
+          "word": " improvements",
+          "start": 38.62,
+          "end": 39.4,
+          "probability": 0.9976335763931274
+        },
+        {
+          "word": " to",
+          "start": 39.4,
+          "end": 39.74,
+          "probability": 0.9989091157913208
+        },
+        {
+          "word": " our",
+          "start": 39.74,
+          "end": 39.88,
+          "probability": 0.9978613257408142
+        },
+        {
+          "word": " working",
+          "start": 39.88,
+          "end": 40.26,
+          "probability": 0.990204930305481
+        },
+        {
+          "word": " conditions.",
+          "start": 40.26,
+          "end": 40.88,
+          "probability": 0.998789370059967
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2792,
+      "start": 41.5,
+      "end": 45.7,
+      "text": " Yes, working conditions could definitely be improved.",
+      "tokens": [
+        51014,
+        1079,
+        11,
+        1364,
+        4487,
+        727,
+        2138,
+        312,
+        9689,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10912852287292481,
+      "compression_ratio": 1.5771144278606966,
+      "no_speech_prob": 0.029107239097356796,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 41.5,
+          "end": 42.04,
+          "probability": 0.9712375402450562
+        },
+        {
+          "word": " working",
+          "start": 42.8,
+          "end": 43.08,
+          "probability": 0.9848079681396484
+        },
+        {
+          "word": " conditions",
+          "start": 43.08,
+          "end": 43.64,
+          "probability": 0.9940524697303772
+        },
+        {
+          "word": " could",
+          "start": 43.64,
+          "end": 44.06,
+          "probability": 0.9953981041908264
+        },
+        {
+          "word": " definitely",
+          "start": 44.06,
+          "end": 44.66,
+          "probability": 0.987622082233429
+        },
+        {
+          "word": " be",
+          "start": 44.66,
+          "end": 45.08,
+          "probability": 0.998671293258667
+        },
+        {
+          "word": " improved.",
+          "start": 45.08,
+          "end": 45.7,
+          "probability": 0.996556282043457
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2792,
+      "start": 46.22,
+      "end": 52.58,
+      "text": " But to me, the data that's collected by researchers from clinical trials is very valuable.",
+      "tokens": [
+        51264,
+        583,
+        281,
+        385,
+        11,
+        264,
+        1412,
+        300,
+        311,
+        11087,
+        538,
+        10309,
+        490,
+        9115,
+        12450,
+        307,
+        588,
+        8263,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10912852287292481,
+      "compression_ratio": 1.5771144278606966,
+      "no_speech_prob": 0.029107239097356796,
+      "words": [
+        {
+          "word": " But",
+          "start": 46.22,
+          "end": 46.54,
+          "probability": 0.9965986609458923
+        },
+        {
+          "word": " to",
+          "start": 46.54,
+          "end": 46.82,
+          "probability": 0.9171674847602844
+        },
+        {
+          "word": " me,",
+          "start": 46.82,
+          "end": 47.06,
+          "probability": 0.9982982277870178
+        },
+        {
+          "word": " the",
+          "start": 47.32,
+          "end": 47.38,
+          "probability": 0.998322069644928
+        },
+        {
+          "word": " data",
+          "start": 47.38,
+          "end": 47.82,
+          "probability": 0.9982250332832336
+        },
+        {
+          "word": " that's",
+          "start": 47.82,
+          "end": 48.28,
+          "probability": 0.9495685696601868
+        },
+        {
+          "word": " collected",
+          "start": 48.28,
+          "end": 48.72,
+          "probability": 0.9978854060173035
+        },
+        {
+          "word": " by",
+          "start": 48.72,
+          "end": 49.1,
+          "probability": 0.997177243232727
+        },
+        {
+          "word": " researchers",
+          "start": 49.1,
+          "end": 49.72,
+          "probability": 0.9895823001861572
+        },
+        {
+          "word": " from",
+          "start": 49.72,
+          "end": 50.16,
+          "probability": 0.9919570684432983
+        },
+        {
+          "word": " clinical",
+          "start": 50.16,
+          "end": 50.58,
+          "probability": 0.9790394902229309
+        },
+        {
+          "word": " trials",
+          "start": 50.58,
+          "end": 51.12,
+          "probability": 0.9979743361473083
+        },
+        {
+          "word": " is",
+          "start": 51.12,
+          "end": 51.58,
+          "probability": 0.99189692735672
+        },
+        {
+          "word": " very",
+          "start": 51.58,
+          "end": 51.98,
+          "probability": 0.9946666955947876
+        },
+        {
+          "word": " valuable.",
+          "start": 51.98,
+          "end": 52.58,
+          "probability": 0.9982628226280212
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5258,
+      "start": 52.58,
+      "end": 57.08,
+      "text": " Otherwise, we wouldn't know if new treatments are safe or effective.",
+      "tokens": [
+        50364,
+        10328,
+        11,
+        321,
+        2759,
+        380,
+        458,
+        498,
+        777,
+        15795,
+        366,
+        3273,
+        420,
+        4942,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.035365260274786696,
+      "compression_ratio": 1.6611570247933884,
+      "no_speech_prob": 0.21127590537071228,
+      "words": [
+        {
+          "word": " Otherwise,",
+          "start": 52.58,
+          "end": 53.54,
+          "probability": 0.5011072158813477
+        },
+        {
+          "word": " we",
+          "start": 53.88,
+          "end": 53.96,
+          "probability": 0.9978752136230469
+        },
+        {
+          "word": " wouldn't",
+          "start": 53.96,
+          "end": 54.28,
+          "probability": 0.9934107065200806
+        },
+        {
+          "word": " know",
+          "start": 54.28,
+          "end": 54.56,
+          "probability": 0.9984176158905029
+        },
+        {
+          "word": " if",
+          "start": 54.56,
+          "end": 54.8,
+          "probability": 0.9986588954925537
+        },
+        {
+          "word": " new",
+          "start": 54.8,
+          "end": 55.04,
+          "probability": 0.9956541061401367
+        },
+        {
+          "word": " treatments",
+          "start": 55.04,
+          "end": 55.46,
+          "probability": 0.9974193572998047
+        },
+        {
+          "word": " are",
+          "start": 55.46,
+          "end": 55.82,
+          "probability": 0.9985312223434448
+        },
+        {
+          "word": " safe",
+          "start": 55.82,
+          "end": 56.22,
+          "probability": 0.9979074001312256
+        },
+        {
+          "word": " or",
+          "start": 56.22,
+          "end": 56.52,
+          "probability": 0.9941118359565735
+        },
+        {
+          "word": " effective.",
+          "start": 56.52,
+          "end": 57.08,
+          "probability": 0.9981301426887512
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5258,
+      "start": 57.9,
+      "end": 61.78,
+      "text": " So what do you think are the key things that we need to focus on?",
+      "tokens": [
+        50614,
+        407,
+        437,
+        360,
+        291,
+        519,
+        366,
+        264,
+        2141,
+        721,
+        300,
+        321,
+        643,
+        281,
+        1879,
+        322,
+        30,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.035365260274786696,
+      "compression_ratio": 1.6611570247933884,
+      "no_speech_prob": 0.21127590537071228,
+      "words": [
+        {
+          "word": " So",
+          "start": 57.9,
+          "end": 58.38,
+          "probability": 0.8569203019142151
+        },
+        {
+          "word": " what",
+          "start": 58.38,
+          "end": 58.7,
+          "probability": 0.6809806227684021
+        },
+        {
+          "word": " do",
+          "start": 58.7,
+          "end": 58.92,
+          "probability": 0.9986153841018677
+        },
+        {
+          "word": " you",
+          "start": 58.92,
+          "end": 59.04,
+          "probability": 0.9952349066734314
+        },
+        {
+          "word": " think",
+          "start": 59.04,
+          "end": 59.28,
+          "probability": 0.9986547231674194
+        },
+        {
+          "word": " are",
+          "start": 59.28,
+          "end": 59.5,
+          "probability": 0.8672066926956177
+        },
+        {
+          "word": " the",
+          "start": 59.5,
+          "end": 59.62,
+          "probability": 0.9978546500205994
+        },
+        {
+          "word": " key",
+          "start": 59.62,
+          "end": 59.86,
+          "probability": 0.9950466156005859
+        },
+        {
+          "word": " things",
+          "start": 59.86,
+          "end": 60.38,
+          "probability": 0.9984564781188965
+        },
+        {
+          "word": " that",
+          "start": 60.38,
+          "end": 60.6,
+          "probability": 0.957558810710907
+        },
+        {
+          "word": " we",
+          "start": 60.6,
+          "end": 60.74,
+          "probability": 0.9978881478309631
+        },
+        {
+          "word": " need",
+          "start": 60.74,
+          "end": 60.88,
+          "probability": 0.9982819557189941
+        },
+        {
+          "word": " to",
+          "start": 60.88,
+          "end": 61.08,
+          "probability": 0.9991029500961304
+        },
+        {
+          "word": " focus",
+          "start": 61.08,
+          "end": 61.42,
+          "probability": 0.9993993043899536
+        },
+        {
+          "word": " on?",
+          "start": 61.42,
+          "end": 61.78,
+          "probability": 0.998043417930603
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5258,
+      "start": 62.74,
+      "end": 66.72,
+      "text": " Well, there's a lot of work to do around patient understanding.",
+      "tokens": [
+        50864,
+        1042,
+        11,
+        456,
+        311,
+        257,
+        688,
+        295,
+        589,
+        281,
+        360,
+        926,
+        4537,
+        3701,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.035365260274786696,
+      "compression_ratio": 1.6611570247933884,
+      "no_speech_prob": 0.21127590537071228,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 62.74,
+          "end": 63.1,
+          "probability": 0.9796684384346008
+        },
+        {
+          "word": " there's",
+          "start": 63.24,
+          "end": 63.74,
+          "probability": 0.9774788618087769
+        },
+        {
+          "word": " a",
+          "start": 63.74,
+          "end": 63.86,
+          "probability": 0.9957083463668823
+        },
+        {
+          "word": " lot",
+          "start": 63.86,
+          "end": 64.1,
+          "probability": 0.9991408586502075
+        },
+        {
+          "word": " of",
+          "start": 64.1,
+          "end": 64.34,
+          "probability": 0.9980225563049316
+        },
+        {
+          "word": " work",
+          "start": 64.34,
+          "end": 64.52,
+          "probability": 0.999393105506897
+        },
+        {
+          "word": " to",
+          "start": 64.52,
+          "end": 64.74,
+          "probability": 0.9996687173843384
+        },
+        {
+          "word": " do",
+          "start": 64.74,
+          "end": 64.96,
+          "probability": 0.9994369149208069
+        },
+        {
+          "word": " around",
+          "start": 64.96,
+          "end": 65.36,
+          "probability": 0.9902985692024231
+        },
+        {
+          "word": " patient",
+          "start": 65.36,
+          "end": 65.94,
+          "probability": 0.9908623695373535
+        },
+        {
+          "word": " understanding.",
+          "start": 65.94,
+          "end": 66.72,
+          "probability": 0.9846746921539307
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5258,
+      "start": 67.42,
+      "end": 75.16,
+      "text": " From my perspective, some patients do not agree to take part in trials because they don't know what treatments are available.",
+      "tokens": [
+        51114,
+        3358,
+        452,
+        4585,
+        11,
+        512,
+        4209,
+        360,
+        406,
+        3986,
+        281,
+        747,
+        644,
+        294,
+        12450,
+        570,
+        436,
+        500,
+        380,
+        458,
+        437,
+        15795,
+        366,
+        2435,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.035365260274786696,
+      "compression_ratio": 1.6611570247933884,
+      "no_speech_prob": 0.21127590537071228,
+      "words": [
+        {
+          "word": " From",
+          "start": 67.42,
+          "end": 67.88,
+          "probability": 0.9967296123504639
+        },
+        {
+          "word": " my",
+          "start": 67.88,
+          "end": 68.14,
+          "probability": 0.9992859959602356
+        },
+        {
+          "word": " perspective,",
+          "start": 68.14,
+          "end": 68.74,
+          "probability": 0.9998223185539246
+        },
+        {
+          "word": " some",
+          "start": 69.42,
+          "end": 69.52,
+          "probability": 0.9960665106773376
+        },
+        {
+          "word": " patients",
+          "start": 69.52,
+          "end": 69.94,
+          "probability": 0.9917532205581665
+        },
+        {
+          "word": " do",
+          "start": 69.94,
+          "end": 70.3,
+          "probability": 0.9745487570762634
+        },
+        {
+          "word": " not",
+          "start": 70.3,
+          "end": 70.46,
+          "probability": 0.9994627833366394
+        },
+        {
+          "word": " agree",
+          "start": 70.46,
+          "end": 70.8,
+          "probability": 0.9966357350349426
+        },
+        {
+          "word": " to",
+          "start": 70.8,
+          "end": 70.98,
+          "probability": 0.9990711212158203
+        },
+        {
+          "word": " take",
+          "start": 70.98,
+          "end": 71.24,
+          "probability": 0.9987438321113586
+        },
+        {
+          "word": " part",
+          "start": 71.24,
+          "end": 71.48,
+          "probability": 0.9875544905662537
+        },
+        {
+          "word": " in",
+          "start": 71.48,
+          "end": 71.76,
+          "probability": 0.9992868304252625
+        },
+        {
+          "word": " trials",
+          "start": 71.76,
+          "end": 72.2,
+          "probability": 0.9864402413368225
+        },
+        {
+          "word": " because",
+          "start": 72.2,
+          "end": 72.8,
+          "probability": 0.7423053979873657
+        },
+        {
+          "word": " they",
+          "start": 72.8,
+          "end": 73.1,
+          "probability": 0.9995181560516357
+        },
+        {
+          "word": " don't",
+          "start": 73.1,
+          "end": 73.44,
+          "probability": 0.9970206320285797
+        },
+        {
+          "word": " know",
+          "start": 73.44,
+          "end": 73.64,
+          "probability": 0.9978311657905579
+        },
+        {
+          "word": " what",
+          "start": 73.64,
+          "end": 73.9,
+          "probability": 0.9989051818847656
+        },
+        {
+          "word": " treatments",
+          "start": 73.9,
+          "end": 74.32,
+          "probability": 0.998915433883667
+        },
+        {
+          "word": " are",
+          "start": 74.32,
+          "end": 74.66,
+          "probability": 0.9994916915893555
+        },
+        {
+          "word": " available.",
+          "start": 74.66,
+          "end": 75.16,
+          "probability": 0.998900294303894
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5258,
+      "start": 75.72,
+      "end": 80.92,
+      "text": " We need to make sure that we discuss all treatment options with our patients.",
+      "tokens": [
+        51514,
+        492,
+        643,
+        281,
+        652,
+        988,
+        300,
+        321,
+        2248,
+        439,
+        5032,
+        3956,
+        365,
+        527,
+        4209,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.035365260274786696,
+      "compression_ratio": 1.6611570247933884,
+      "no_speech_prob": 0.21127590537071228,
+      "words": [
+        {
+          "word": " We",
+          "start": 75.72,
+          "end": 76.34,
+          "probability": 0.9975824356079102
+        },
+        {
+          "word": " need",
+          "start": 76.34,
+          "end": 76.54,
+          "probability": 0.9988420605659485
+        },
+        {
+          "word": " to",
+          "start": 76.54,
+          "end": 76.68,
+          "probability": 0.9990554451942444
+        },
+        {
+          "word": " make",
+          "start": 76.68,
+          "end": 76.84,
+          "probability": 0.9987726807594299
+        },
+        {
+          "word": " sure",
+          "start": 76.84,
+          "end": 77.28,
+          "probability": 0.9994674324989319
+        },
+        {
+          "word": " that",
+          "start": 77.28,
+          "end": 77.64,
+          "probability": 0.9917823076248169
+        },
+        {
+          "word": " we",
+          "start": 77.64,
+          "end": 77.88,
+          "probability": 0.9992319345474243
+        },
+        {
+          "word": " discuss",
+          "start": 77.88,
+          "end": 78.32,
+          "probability": 0.992693305015564
+        },
+        {
+          "word": " all",
+          "start": 78.32,
+          "end": 78.9,
+          "probability": 0.996188223361969
+        },
+        {
+          "word": " treatment",
+          "start": 78.9,
+          "end": 79.46,
+          "probability": 0.9876900911331177
+        },
+        {
+          "word": " options",
+          "start": 79.46,
+          "end": 79.86,
+          "probability": 0.9971309900283813
+        },
+        {
+          "word": " with",
+          "start": 79.86,
+          "end": 80.24,
+          "probability": 0.9985138773918152
+        },
+        {
+          "word": " our",
+          "start": 80.24,
+          "end": 80.4,
+          "probability": 0.9980934262275696
+        },
+        {
+          "word": " patients.",
+          "start": 80.4,
+          "end": 80.92,
+          "probability": 0.9946084022521973
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 8092,
+      "start": 80.92,
+      "end": 92.34,
+      "text": " Hmm. Okay, Tom. But it seems to me that in addition to discussing options, we need to make sure that patients know what is expected of them if they take part in a trial.",
+      "tokens": [
+        50364,
+        8239,
+        13,
+        1033,
+        11,
+        5041,
+        13,
+        583,
+        309,
+        2544,
+        281,
+        385,
+        300,
+        294,
+        4500,
+        281,
+        10850,
+        3956,
+        11,
+        321,
+        643,
+        281,
+        652,
+        988,
+        300,
+        4209,
+        458,
+        437,
+        307,
+        5176,
+        295,
+        552,
+        498,
+        436,
+        747,
+        644,
+        294,
+        257,
+        7308,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09561605569792957,
+      "compression_ratio": 1.5327102803738317,
+      "no_speech_prob": 0.08224713057279587,
+      "words": [
+        {
+          "word": " Hmm.",
+          "start": 80.92,
+          "end": 81.98,
+          "probability": 0.3941520154476166
+        },
+        {
+          "word": " Okay,",
+          "start": 82.6,
+          "end": 82.84,
+          "probability": 0.6218196749687195
+        },
+        {
+          "word": " Tom.",
+          "start": 83.04,
+          "end": 83.14,
+          "probability": 0.9811448454856873
+        },
+        {
+          "word": " But",
+          "start": 83.64,
+          "end": 83.84,
+          "probability": 0.992693305015564
+        },
+        {
+          "word": " it",
+          "start": 83.84,
+          "end": 83.98,
+          "probability": 0.980150580406189
+        },
+        {
+          "word": " seems",
+          "start": 83.98,
+          "end": 84.24,
+          "probability": 0.997605562210083
+        },
+        {
+          "word": " to",
+          "start": 84.24,
+          "end": 84.48,
+          "probability": 0.9974790215492249
+        },
+        {
+          "word": " me",
+          "start": 84.48,
+          "end": 84.7,
+          "probability": 0.9977973699569702
+        },
+        {
+          "word": " that",
+          "start": 84.7,
+          "end": 84.92,
+          "probability": 0.9821581840515137
+        },
+        {
+          "word": " in",
+          "start": 84.92,
+          "end": 85.1,
+          "probability": 0.9021261930465698
+        },
+        {
+          "word": " addition",
+          "start": 85.1,
+          "end": 85.44,
+          "probability": 0.9988524913787842
+        },
+        {
+          "word": " to",
+          "start": 85.44,
+          "end": 85.7,
+          "probability": 0.9994655251502991
+        },
+        {
+          "word": " discussing",
+          "start": 85.7,
+          "end": 86.18,
+          "probability": 0.9901013374328613
+        },
+        {
+          "word": " options,",
+          "start": 86.18,
+          "end": 86.96,
+          "probability": 0.985065758228302
+        },
+        {
+          "word": " we",
+          "start": 87.42,
+          "end": 87.5,
+          "probability": 0.9894304275512695
+        },
+        {
+          "word": " need",
+          "start": 87.5,
+          "end": 87.68,
+          "probability": 0.9993267059326172
+        },
+        {
+          "word": " to",
+          "start": 87.68,
+          "end": 87.82,
+          "probability": 0.9990501999855042
+        },
+        {
+          "word": " make",
+          "start": 87.82,
+          "end": 87.98,
+          "probability": 0.9983227849006653
+        },
+        {
+          "word": " sure",
+          "start": 87.98,
+          "end": 88.26,
+          "probability": 0.9993557333946228
+        },
+        {
+          "word": " that",
+          "start": 88.26,
+          "end": 88.44,
+          "probability": 0.9743796586990356
+        },
+        {
+          "word": " patients",
+          "start": 88.44,
+          "end": 88.86,
+          "probability": 0.9893769025802612
+        },
+        {
+          "word": " know",
+          "start": 88.86,
+          "end": 89.34,
+          "probability": 0.9985619187355042
+        },
+        {
+          "word": " what",
+          "start": 89.34,
+          "end": 89.62,
+          "probability": 0.9988829493522644
+        },
+        {
+          "word": " is",
+          "start": 89.62,
+          "end": 89.8,
+          "probability": 0.9867297410964966
+        },
+        {
+          "word": " expected",
+          "start": 89.8,
+          "end": 90.18,
+          "probability": 0.9988611936569214
+        },
+        {
+          "word": " of",
+          "start": 90.18,
+          "end": 90.6,
+          "probability": 0.9970230460166931
+        },
+        {
+          "word": " them",
+          "start": 90.6,
+          "end": 90.84,
+          "probability": 0.9990739822387695
+        },
+        {
+          "word": " if",
+          "start": 90.84,
+          "end": 91.02,
+          "probability": 0.9788452386856079
+        },
+        {
+          "word": " they",
+          "start": 91.02,
+          "end": 91.16,
+          "probability": 0.9988852143287659
+        },
+        {
+          "word": " take",
+          "start": 91.16,
+          "end": 91.4,
+          "probability": 0.9985858201980591
+        },
+        {
+          "word": " part",
+          "start": 91.4,
+          "end": 91.64,
+          "probability": 0.9979972243309021
+        },
+        {
+          "word": " in",
+          "start": 91.64,
+          "end": 91.86,
+          "probability": 0.9996534585952759
+        },
+        {
+          "word": " a",
+          "start": 91.86,
+          "end": 91.94,
+          "probability": 0.9891654849052429
+        },
+        {
+          "word": " trial.",
+          "start": 91.94,
+          "end": 92.34,
+          "probability": 0.9971705079078674
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 8092,
+      "start": 93.18,
+      "end": 98.16,
+      "text": " Yes, I agree. What amount support for us, the doctors?",
+      "tokens": [
+        50964,
+        1079,
+        11,
+        286,
+        3986,
+        13,
+        708,
+        2372,
+        1406,
+        337,
+        505,
+        11,
+        264,
+        8778,
+        30,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09561605569792957,
+      "compression_ratio": 1.5327102803738317,
+      "no_speech_prob": 0.08224713057279587,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 93.18,
+          "end": 93.56,
+          "probability": 0.8686255812644958
+        },
+        {
+          "word": " I",
+          "start": 94.0,
+          "end": 94.16,
+          "probability": 0.9975143671035767
+        },
+        {
+          "word": " agree.",
+          "start": 94.16,
+          "end": 94.54,
+          "probability": 0.9995848536491394
+        },
+        {
+          "word": " What",
+          "start": 95.82,
+          "end": 96.04,
+          "probability": 0.9829498529434204
+        },
+        {
+          "word": " amount",
+          "start": 96.04,
+          "end": 96.28,
+          "probability": 0.5886330008506775
+        },
+        {
+          "word": " support",
+          "start": 96.28,
+          "end": 96.82,
+          "probability": 0.759190022945404
+        },
+        {
+          "word": " for",
+          "start": 96.82,
+          "end": 97.24,
+          "probability": 0.9954450130462646
+        },
+        {
+          "word": " us,",
+          "start": 97.24,
+          "end": 97.56,
+          "probability": 0.9967615008354187
+        },
+        {
+          "word": " the",
+          "start": 97.74,
+          "end": 97.8,
+          "probability": 0.9954221844673157
+        },
+        {
+          "word": " doctors?",
+          "start": 97.8,
+          "end": 98.16,
+          "probability": 0.9446150660514832
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8092,
+      "start": 99.16,
+      "end": 106.62,
+      "text": " Well, we need more information and support, too. I have had this experience myself at another hospital.",
+      "tokens": [
+        51264,
+        1042,
+        11,
+        321,
+        643,
+        544,
+        1589,
+        293,
+        1406,
+        11,
+        886,
+        13,
+        286,
+        362,
+        632,
+        341,
+        1752,
+        2059,
+        412,
+        1071,
+        4530,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09561605569792957,
+      "compression_ratio": 1.5327102803738317,
+      "no_speech_prob": 0.08224713057279587,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 99.16,
+          "end": 99.52,
+          "probability": 0.9951512813568115
+        },
+        {
+          "word": " we",
+          "start": 99.9,
+          "end": 100.22,
+          "probability": 0.9969442486763
+        },
+        {
+          "word": " need",
+          "start": 100.22,
+          "end": 100.58,
+          "probability": 0.9993816614151001
+        },
+        {
+          "word": " more",
+          "start": 100.58,
+          "end": 100.8,
+          "probability": 0.9990779161453247
+        },
+        {
+          "word": " information",
+          "start": 100.8,
+          "end": 101.42,
+          "probability": 0.9988598823547363
+        },
+        {
+          "word": " and",
+          "start": 101.42,
+          "end": 101.58,
+          "probability": 0.9816673994064331
+        },
+        {
+          "word": " support,",
+          "start": 101.58,
+          "end": 101.96,
+          "probability": 0.9996960163116455
+        },
+        {
+          "word": " too.",
+          "start": 102.22,
+          "end": 102.48,
+          "probability": 0.9991459846496582
+        },
+        {
+          "word": " I",
+          "start": 103.38,
+          "end": 103.64,
+          "probability": 0.9989705085754395
+        },
+        {
+          "word": " have",
+          "start": 103.64,
+          "end": 103.82,
+          "probability": 0.9870110750198364
+        },
+        {
+          "word": " had",
+          "start": 103.82,
+          "end": 103.98,
+          "probability": 0.9499256014823914
+        },
+        {
+          "word": " this",
+          "start": 103.98,
+          "end": 104.22,
+          "probability": 0.9982056617736816
+        },
+        {
+          "word": " experience",
+          "start": 104.22,
+          "end": 104.76,
+          "probability": 0.9992600083351135
+        },
+        {
+          "word": " myself",
+          "start": 104.76,
+          "end": 105.38,
+          "probability": 0.9898706078529358
+        },
+        {
+          "word": " at",
+          "start": 105.38,
+          "end": 105.68,
+          "probability": 0.985630989074707
+        },
+        {
+          "word": " another",
+          "start": 105.68,
+          "end": 105.96,
+          "probability": 0.9965745210647583
+        },
+        {
+          "word": " hospital.",
+          "start": 105.96,
+          "end": 106.62,
+          "probability": 0.9979053735733032
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 10662,
+      "start": 106.62,
+      "end": 113.94,
+      "text": " Although the process itself isn't too complex, completing the extra paperwork takes too much time.",
+      "tokens": [
+        50364,
+        5780,
+        264,
+        1399,
+        2564,
+        1943,
+        380,
+        886,
+        3997,
+        11,
+        19472,
+        264,
+        2857,
+        27953,
+        2516,
+        886,
+        709,
+        565,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.040261702104048294,
+      "compression_ratio": 1.5654205607476634,
+      "no_speech_prob": 0.3551121950149536,
+      "words": [
+        {
+          "word": " Although",
+          "start": 106.62,
+          "end": 107.74,
+          "probability": 0.833580493927002
+        },
+        {
+          "word": " the",
+          "start": 107.74,
+          "end": 108.02,
+          "probability": 0.9886765480041504
+        },
+        {
+          "word": " process",
+          "start": 108.02,
+          "end": 108.44,
+          "probability": 0.992145836353302
+        },
+        {
+          "word": " itself",
+          "start": 108.44,
+          "end": 109.0,
+          "probability": 0.995244562625885
+        },
+        {
+          "word": " isn't",
+          "start": 109.0,
+          "end": 109.56,
+          "probability": 0.9950284361839294
+        },
+        {
+          "word": " too",
+          "start": 109.56,
+          "end": 109.76,
+          "probability": 0.9924123883247375
+        },
+        {
+          "word": " complex,",
+          "start": 109.76,
+          "end": 110.32,
+          "probability": 0.9994731545448303
+        },
+        {
+          "word": " completing",
+          "start": 110.92,
+          "end": 111.3,
+          "probability": 0.9746623635292053
+        },
+        {
+          "word": " the",
+          "start": 111.3,
+          "end": 111.58,
+          "probability": 0.9953649044036865
+        },
+        {
+          "word": " extra",
+          "start": 111.58,
+          "end": 111.86,
+          "probability": 0.9748557209968567
+        },
+        {
+          "word": " paperwork",
+          "start": 111.86,
+          "end": 112.48,
+          "probability": 0.9798015356063843
+        },
+        {
+          "word": " takes",
+          "start": 112.48,
+          "end": 112.88,
+          "probability": 0.9943246245384216
+        },
+        {
+          "word": " too",
+          "start": 112.88,
+          "end": 113.22,
+          "probability": 0.9948375821113586
+        },
+        {
+          "word": " much",
+          "start": 113.22,
+          "end": 113.42,
+          "probability": 0.998534083366394
+        },
+        {
+          "word": " time.",
+          "start": 113.42,
+          "end": 113.94,
+          "probability": 0.9992677569389343
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 10662,
+      "start": 114.52,
+      "end": 124.72,
+      "text": " As you know, when a patient takes part in a clinical trial, there are a lot of extra appointments that wouldn't be necessary if the patients were offered a standard treatment.",
+      "tokens": [
+        50764,
+        1018,
+        291,
+        458,
+        11,
+        562,
+        257,
+        4537,
+        2516,
+        644,
+        294,
+        257,
+        9115,
+        7308,
+        11,
+        456,
+        366,
+        257,
+        688,
+        295,
+        2857,
+        25084,
+        300,
+        2759,
+        380,
+        312,
+        4818,
+        498,
+        264,
+        4209,
+        645,
+        8059,
+        257,
+        3832,
+        5032,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.040261702104048294,
+      "compression_ratio": 1.5654205607476634,
+      "no_speech_prob": 0.3551121950149536,
+      "words": [
+        {
+          "word": " As",
+          "start": 114.52,
+          "end": 115.16,
+          "probability": 0.9923122525215149
+        },
+        {
+          "word": " you",
+          "start": 115.16,
+          "end": 115.32,
+          "probability": 0.9988631010055542
+        },
+        {
+          "word": " know,",
+          "start": 115.32,
+          "end": 115.54,
+          "probability": 0.9981614947319031
+        },
+        {
+          "word": " when",
+          "start": 115.82,
+          "end": 115.88,
+          "probability": 0.9973137974739075
+        },
+        {
+          "word": " a",
+          "start": 115.88,
+          "end": 116.0,
+          "probability": 0.9991996884346008
+        },
+        {
+          "word": " patient",
+          "start": 116.0,
+          "end": 116.36,
+          "probability": 0.9989180564880371
+        },
+        {
+          "word": " takes",
+          "start": 116.36,
+          "end": 116.74,
+          "probability": 0.9966166615486145
+        },
+        {
+          "word": " part",
+          "start": 116.74,
+          "end": 117.06,
+          "probability": 0.997775137424469
+        },
+        {
+          "word": " in",
+          "start": 117.06,
+          "end": 117.28,
+          "probability": 0.9987336993217468
+        },
+        {
+          "word": " a",
+          "start": 117.28,
+          "end": 117.36,
+          "probability": 0.998819887638092
+        },
+        {
+          "word": " clinical",
+          "start": 117.36,
+          "end": 117.68,
+          "probability": 0.9964829683303833
+        },
+        {
+          "word": " trial,",
+          "start": 117.68,
+          "end": 118.26,
+          "probability": 0.9985816478729248
+        },
+        {
+          "word": " there",
+          "start": 118.74,
+          "end": 118.86,
+          "probability": 0.9965531826019287
+        },
+        {
+          "word": " are",
+          "start": 118.86,
+          "end": 119.0,
+          "probability": 0.9912052750587463
+        },
+        {
+          "word": " a",
+          "start": 119.0,
+          "end": 119.12,
+          "probability": 0.9715141654014587
+        },
+        {
+          "word": " lot",
+          "start": 119.12,
+          "end": 119.34,
+          "probability": 0.9975374937057495
+        },
+        {
+          "word": " of",
+          "start": 119.34,
+          "end": 119.56,
+          "probability": 0.9923669695854187
+        },
+        {
+          "word": " extra",
+          "start": 119.56,
+          "end": 119.92,
+          "probability": 0.9964661598205566
+        },
+        {
+          "word": " appointments",
+          "start": 119.92,
+          "end": 120.46,
+          "probability": 0.9819841980934143
+        },
+        {
+          "word": " that",
+          "start": 120.46,
+          "end": 120.86,
+          "probability": 0.9951761960983276
+        },
+        {
+          "word": " wouldn't",
+          "start": 120.86,
+          "end": 121.22,
+          "probability": 0.9931109547615051
+        },
+        {
+          "word": " be",
+          "start": 121.22,
+          "end": 121.38,
+          "probability": 0.9875128865242004
+        },
+        {
+          "word": " necessary",
+          "start": 121.38,
+          "end": 121.98,
+          "probability": 0.9987816214561462
+        },
+        {
+          "word": " if",
+          "start": 121.98,
+          "end": 122.26,
+          "probability": 0.9920992851257324
+        },
+        {
+          "word": " the",
+          "start": 122.26,
+          "end": 122.4,
+          "probability": 0.9950069189071655
+        },
+        {
+          "word": " patients",
+          "start": 122.4,
+          "end": 122.8,
+          "probability": 0.9828831553459167
+        },
+        {
+          "word": " were",
+          "start": 122.8,
+          "end": 123.14,
+          "probability": 0.9927003979682922
+        },
+        {
+          "word": " offered",
+          "start": 123.14,
+          "end": 123.42,
+          "probability": 0.9978049397468567
+        },
+        {
+          "word": " a",
+          "start": 123.42,
+          "end": 123.54,
+          "probability": 0.9976345300674438
+        },
+        {
+          "word": " standard",
+          "start": 123.54,
+          "end": 124.06,
+          "probability": 0.9893576502799988
+        },
+        {
+          "word": " treatment.",
+          "start": 124.06,
+          "end": 124.72,
+          "probability": 0.9983929991722107
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 10662,
+      "start": 125.54,
+      "end": 129.52,
+      "text": " To be honest, I'm really not sure we have the time for that.",
+      "tokens": [
+        51314,
+        1407,
+        312,
+        3245,
+        11,
+        286,
+        478,
+        534,
+        406,
+        988,
+        321,
+        362,
+        264,
+        565,
+        337,
+        300,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.040261702104048294,
+      "compression_ratio": 1.5654205607476634,
+      "no_speech_prob": 0.3551121950149536,
+      "words": [
+        {
+          "word": " To",
+          "start": 125.54,
+          "end": 126.12,
+          "probability": 0.9942513704299927
+        },
+        {
+          "word": " be",
+          "start": 126.12,
+          "end": 126.22,
+          "probability": 0.9974589943885803
+        },
+        {
+          "word": " honest,",
+          "start": 126.22,
+          "end": 126.56,
+          "probability": 0.999769389629364
+        },
+        {
+          "word": " I'm",
+          "start": 127.08,
+          "end": 127.28,
+          "probability": 0.9854693412780762
+        },
+        {
+          "word": " really",
+          "start": 127.28,
+          "end": 127.5,
+          "probability": 0.9646760821342468
+        },
+        {
+          "word": " not",
+          "start": 127.5,
+          "end": 127.72,
+          "probability": 0.9991400241851807
+        },
+        {
+          "word": " sure",
+          "start": 127.72,
+          "end": 128.08,
+          "probability": 0.9990559220314026
+        },
+        {
+          "word": " we",
+          "start": 128.08,
+          "end": 128.32,
+          "probability": 0.9919105172157288
+        },
+        {
+          "word": " have",
+          "start": 128.32,
+          "end": 128.48,
+          "probability": 0.9982169270515442
+        },
+        {
+          "word": " the",
+          "start": 128.48,
+          "end": 128.66,
+          "probability": 0.9942044615745544
+        },
+        {
+          "word": " time",
+          "start": 128.66,
+          "end": 128.98,
+          "probability": 0.9995929598808289
+        },
+        {
+          "word": " for",
+          "start": 128.98,
+          "end": 129.2,
+          "probability": 0.9989457726478577
+        },
+        {
+          "word": " that.",
+          "start": 129.2,
+          "end": 129.52,
+          "probability": 0.9994032382965088
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 12952,
+      "start": 129.52,
+      "end": 142.22,
+      "text": " Of course, time is a problem, but it seems to me that the additional training we are going to receive will help us understand how to complete the extra forms and documents.",
+      "tokens": [
+        50364,
+        2720,
+        1164,
+        11,
+        565,
+        307,
+        257,
+        1154,
+        11,
+        457,
+        309,
+        2544,
+        281,
+        385,
+        300,
+        264,
+        4497,
+        3097,
+        321,
+        366,
+        516,
+        281,
+        4774,
+        486,
+        854,
+        505,
+        1223,
+        577,
+        281,
+        3566,
+        264,
+        2857,
+        6422,
+        293,
+        8512,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03930954138437907,
+      "compression_ratio": 1.5674418604651164,
+      "no_speech_prob": 0.7021229267120361,
+      "words": [
+        {
+          "word": " Of",
+          "start": 129.52,
+          "end": 130.48,
+          "probability": 0.30494141578674316
+        },
+        {
+          "word": " course,",
+          "start": 130.48,
+          "end": 130.8,
+          "probability": 0.9937132000923157
+        },
+        {
+          "word": " time",
+          "start": 131.1,
+          "end": 131.32,
+          "probability": 0.9830561876296997
+        },
+        {
+          "word": " is",
+          "start": 131.32,
+          "end": 131.68,
+          "probability": 0.9896067976951599
+        },
+        {
+          "word": " a",
+          "start": 131.68,
+          "end": 131.9,
+          "probability": 0.9988710284233093
+        },
+        {
+          "word": " problem,",
+          "start": 131.9,
+          "end": 132.32,
+          "probability": 0.9985131621360779
+        },
+        {
+          "word": " but",
+          "start": 132.82,
+          "end": 133.1,
+          "probability": 0.9946630001068115
+        },
+        {
+          "word": " it",
+          "start": 133.1,
+          "end": 133.32,
+          "probability": 0.9961447715759277
+        },
+        {
+          "word": " seems",
+          "start": 133.32,
+          "end": 133.58,
+          "probability": 0.9923912882804871
+        },
+        {
+          "word": " to",
+          "start": 133.58,
+          "end": 133.8,
+          "probability": 0.9963780045509338
+        },
+        {
+          "word": " me",
+          "start": 133.8,
+          "end": 134.04,
+          "probability": 0.9969007968902588
+        },
+        {
+          "word": " that",
+          "start": 134.04,
+          "end": 134.46,
+          "probability": 0.9835764765739441
+        },
+        {
+          "word": " the",
+          "start": 134.46,
+          "end": 134.7,
+          "probability": 0.990311861038208
+        },
+        {
+          "word": " additional",
+          "start": 134.7,
+          "end": 135.14,
+          "probability": 0.9860923886299133
+        },
+        {
+          "word": " training",
+          "start": 135.14,
+          "end": 135.6,
+          "probability": 0.9951364398002625
+        },
+        {
+          "word": " we",
+          "start": 135.6,
+          "end": 135.9,
+          "probability": 0.9952432513237
+        },
+        {
+          "word": " are",
+          "start": 135.9,
+          "end": 136.04,
+          "probability": 0.9692777991294861
+        },
+        {
+          "word": " going",
+          "start": 136.04,
+          "end": 136.3,
+          "probability": 0.9972035884857178
+        },
+        {
+          "word": " to",
+          "start": 136.3,
+          "end": 136.5,
+          "probability": 0.9983975291252136
+        },
+        {
+          "word": " receive",
+          "start": 136.5,
+          "end": 136.9,
+          "probability": 0.9974557757377625
+        },
+        {
+          "word": " will",
+          "start": 136.9,
+          "end": 137.44,
+          "probability": 0.9897553324699402
+        },
+        {
+          "word": " help",
+          "start": 137.44,
+          "end": 137.86,
+          "probability": 0.9974193572998047
+        },
+        {
+          "word": " us",
+          "start": 137.86,
+          "end": 138.1,
+          "probability": 0.9989079236984253
+        },
+        {
+          "word": " understand",
+          "start": 138.1,
+          "end": 138.86,
+          "probability": 0.9936336278915405
+        },
+        {
+          "word": " how",
+          "start": 138.86,
+          "end": 139.48,
+          "probability": 0.9877285957336426
+        },
+        {
+          "word": " to",
+          "start": 139.48,
+          "end": 139.74,
+          "probability": 0.9993001222610474
+        },
+        {
+          "word": " complete",
+          "start": 139.74,
+          "end": 140.18,
+          "probability": 0.9954850673675537
+        },
+        {
+          "word": " the",
+          "start": 140.18,
+          "end": 140.54,
+          "probability": 0.9945656061172485
+        },
+        {
+          "word": " extra",
+          "start": 140.54,
+          "end": 140.96,
+          "probability": 0.8996726274490356
+        },
+        {
+          "word": " forms",
+          "start": 140.96,
+          "end": 141.4,
+          "probability": 0.9225277900695801
+        },
+        {
+          "word": " and",
+          "start": 141.4,
+          "end": 141.58,
+          "probability": 0.9971069693565369
+        },
+        {
+          "word": " documents.",
+          "start": 141.58,
+          "end": 142.22,
+          "probability": 0.9918311238288879
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 12952,
+      "start": 142.62,
+      "end": 153.82,
+      "text": " I think it is still going to be too challenging. I'm not sure we have the time to collect all this extra data right now. And what about the role of the researchers?",
+      "tokens": [
+        51014,
+        286,
+        519,
+        309,
+        307,
+        920,
+        516,
+        281,
+        312,
+        886,
+        7595,
+        13,
+        286,
+        478,
+        406,
+        988,
+        321,
+        362,
+        264,
+        565,
+        281,
+        2500,
+        439,
+        341,
+        2857,
+        1412,
+        558,
+        586,
+        13,
+        400,
+        437,
+        466,
+        264,
+        3090,
+        295,
+        264,
+        10309,
+        30,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03930954138437907,
+      "compression_ratio": 1.5674418604651164,
+      "no_speech_prob": 0.7021229267120361,
+      "words": [
+        {
+          "word": " I",
+          "start": 142.62,
+          "end": 143.1,
+          "probability": 0.9053846597671509
+        },
+        {
+          "word": " think",
+          "start": 143.1,
+          "end": 143.38,
+          "probability": 0.9786698818206787
+        },
+        {
+          "word": " it",
+          "start": 143.38,
+          "end": 143.54,
+          "probability": 0.994292140007019
+        },
+        {
+          "word": " is",
+          "start": 143.54,
+          "end": 143.68,
+          "probability": 0.9813636541366577
+        },
+        {
+          "word": " still",
+          "start": 143.68,
+          "end": 144.04,
+          "probability": 0.997298538684845
+        },
+        {
+          "word": " going",
+          "start": 144.04,
+          "end": 144.3,
+          "probability": 0.9970648884773254
+        },
+        {
+          "word": " to",
+          "start": 144.3,
+          "end": 144.48,
+          "probability": 0.997408926486969
+        },
+        {
+          "word": " be",
+          "start": 144.48,
+          "end": 144.64,
+          "probability": 0.9990529417991638
+        },
+        {
+          "word": " too",
+          "start": 144.64,
+          "end": 144.94,
+          "probability": 0.9445295929908752
+        },
+        {
+          "word": " challenging.",
+          "start": 144.94,
+          "end": 145.5,
+          "probability": 0.9988024234771729
+        },
+        {
+          "word": " I'm",
+          "start": 146.2,
+          "end": 146.8,
+          "probability": 0.9571018517017365
+        },
+        {
+          "word": " not",
+          "start": 146.8,
+          "end": 146.96,
+          "probability": 0.9983795881271362
+        },
+        {
+          "word": " sure",
+          "start": 146.96,
+          "end": 147.32,
+          "probability": 0.9995108842849731
+        },
+        {
+          "word": " we",
+          "start": 147.32,
+          "end": 147.54,
+          "probability": 0.9938562512397766
+        },
+        {
+          "word": " have",
+          "start": 147.54,
+          "end": 147.68,
+          "probability": 0.9978402853012085
+        },
+        {
+          "word": " the",
+          "start": 147.68,
+          "end": 147.82,
+          "probability": 0.9888307452201843
+        },
+        {
+          "word": " time",
+          "start": 147.82,
+          "end": 148.14,
+          "probability": 0.9996224641799927
+        },
+        {
+          "word": " to",
+          "start": 148.14,
+          "end": 148.36,
+          "probability": 0.9993165731430054
+        },
+        {
+          "word": " collect",
+          "start": 148.36,
+          "end": 148.62,
+          "probability": 0.9986044764518738
+        },
+        {
+          "word": " all",
+          "start": 148.62,
+          "end": 149.04,
+          "probability": 0.9968728423118591
+        },
+        {
+          "word": " this",
+          "start": 149.04,
+          "end": 149.3,
+          "probability": 0.9859359264373779
+        },
+        {
+          "word": " extra",
+          "start": 149.3,
+          "end": 149.82,
+          "probability": 0.9957762360572815
+        },
+        {
+          "word": " data",
+          "start": 149.82,
+          "end": 150.16,
+          "probability": 0.9996795654296875
+        },
+        {
+          "word": " right",
+          "start": 150.16,
+          "end": 150.44,
+          "probability": 0.9917667508125305
+        },
+        {
+          "word": " now.",
+          "start": 150.44,
+          "end": 150.78,
+          "probability": 0.9992806315422058
+        },
+        {
+          "word": " And",
+          "start": 151.5,
+          "end": 151.96,
+          "probability": 0.9661131501197815
+        },
+        {
+          "word": " what",
+          "start": 151.96,
+          "end": 152.12,
+          "probability": 0.9856544137001038
+        },
+        {
+          "word": " about",
+          "start": 152.12,
+          "end": 152.44,
+          "probability": 0.9995782971382141
+        },
+        {
+          "word": " the",
+          "start": 152.44,
+          "end": 152.62,
+          "probability": 0.9982746839523315
+        },
+        {
+          "word": " role",
+          "start": 152.62,
+          "end": 152.9,
+          "probability": 0.9844020009040833
+        },
+        {
+          "word": " of",
+          "start": 152.9,
+          "end": 153.12,
+          "probability": 0.9985003471374512
+        },
+        {
+          "word": " the",
+          "start": 153.12,
+          "end": 153.24,
+          "probability": 0.9897449612617493
+        },
+        {
+          "word": " researchers?",
+          "start": 153.24,
+          "end": 153.82,
+          "probability": 0.991773784160614
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 15382,
+      "start": 153.82,
+      "end": 163.42,
+      "text": " Well, we are also going to be working closely with researchers who will help collect the data from patients after they have been treated.",
+      "tokens": [
+        50364,
+        1042,
+        11,
+        321,
+        366,
+        611,
+        516,
+        281,
+        312,
+        1364,
+        8185,
+        365,
+        10309,
+        567,
+        486,
+        854,
+        2500,
+        264,
+        1412,
+        490,
+        4209,
+        934,
+        436,
+        362,
+        668,
+        8668,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05750601712395163,
+      "compression_ratio": 1.5690376569037656,
+      "no_speech_prob": 0.845273494720459,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 153.82,
+          "end": 154.98,
+          "probability": 0.4507750868797302
+        },
+        {
+          "word": " we",
+          "start": 155.28,
+          "end": 155.52,
+          "probability": 0.9948029518127441
+        },
+        {
+          "word": " are",
+          "start": 155.52,
+          "end": 155.7,
+          "probability": 0.9643133282661438
+        },
+        {
+          "word": " also",
+          "start": 155.7,
+          "end": 156.16,
+          "probability": 0.9921137094497681
+        },
+        {
+          "word": " going",
+          "start": 156.16,
+          "end": 156.56,
+          "probability": 0.9973587393760681
+        },
+        {
+          "word": " to",
+          "start": 156.56,
+          "end": 156.72,
+          "probability": 0.9984001517295837
+        },
+        {
+          "word": " be",
+          "start": 156.72,
+          "end": 156.84,
+          "probability": 0.992435872554779
+        },
+        {
+          "word": " working",
+          "start": 156.84,
+          "end": 157.22,
+          "probability": 0.9985818862915039
+        },
+        {
+          "word": " closely",
+          "start": 157.22,
+          "end": 157.78,
+          "probability": 0.9970589876174927
+        },
+        {
+          "word": " with",
+          "start": 157.78,
+          "end": 158.26,
+          "probability": 0.9975757002830505
+        },
+        {
+          "word": " researchers",
+          "start": 158.26,
+          "end": 158.88,
+          "probability": 0.9734084010124207
+        },
+        {
+          "word": " who",
+          "start": 158.88,
+          "end": 159.44,
+          "probability": 0.7737873196601868
+        },
+        {
+          "word": " will",
+          "start": 159.44,
+          "end": 159.68,
+          "probability": 0.9942161440849304
+        },
+        {
+          "word": " help",
+          "start": 159.68,
+          "end": 159.92,
+          "probability": 0.9982489347457886
+        },
+        {
+          "word": " collect",
+          "start": 159.92,
+          "end": 160.38,
+          "probability": 0.996364176273346
+        },
+        {
+          "word": " the",
+          "start": 160.38,
+          "end": 160.68,
+          "probability": 0.9952706694602966
+        },
+        {
+          "word": " data",
+          "start": 160.68,
+          "end": 160.96,
+          "probability": 0.9987521171569824
+        },
+        {
+          "word": " from",
+          "start": 160.96,
+          "end": 161.18,
+          "probability": 0.9970519542694092
+        },
+        {
+          "word": " patients",
+          "start": 161.18,
+          "end": 161.64,
+          "probability": 0.9916597008705139
+        },
+        {
+          "word": " after",
+          "start": 161.64,
+          "end": 162.42,
+          "probability": 0.9859721660614014
+        },
+        {
+          "word": " they",
+          "start": 162.42,
+          "end": 162.7,
+          "probability": 0.9984838366508484
+        },
+        {
+          "word": " have",
+          "start": 162.7,
+          "end": 162.86,
+          "probability": 0.9871821403503418
+        },
+        {
+          "word": " been",
+          "start": 162.86,
+          "end": 163.0,
+          "probability": 0.9973713159561157
+        },
+        {
+          "word": " treated.",
+          "start": 163.0,
+          "end": 163.42,
+          "probability": 0.9989452958106995
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 15382,
+      "start": 164.32,
+      "end": 172.22,
+      "text": " As far as I'm concerned, they should interview the patients before and during the trials. So I'm in favor of that.",
+      "tokens": [
+        50864,
+        1018,
+        1400,
+        382,
+        286,
+        478,
+        5922,
+        11,
+        436,
+        820,
+        4049,
+        264,
+        4209,
+        949,
+        293,
+        1830,
+        264,
+        12450,
+        13,
+        407,
+        286,
+        478,
+        294,
+        2294,
+        295,
+        300,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05750601712395163,
+      "compression_ratio": 1.5690376569037656,
+      "no_speech_prob": 0.845273494720459,
+      "words": [
+        {
+          "word": " As",
+          "start": 164.32,
+          "end": 164.7,
+          "probability": 0.6538641452789307
+        },
+        {
+          "word": " far",
+          "start": 164.7,
+          "end": 164.92,
+          "probability": 0.9962620139122009
+        },
+        {
+          "word": " as",
+          "start": 164.92,
+          "end": 165.16,
+          "probability": 0.9979739785194397
+        },
+        {
+          "word": " I'm",
+          "start": 165.16,
+          "end": 165.42,
+          "probability": 0.9502661526203156
+        },
+        {
+          "word": " concerned,",
+          "start": 165.42,
+          "end": 165.92,
+          "probability": 0.9995707869529724
+        },
+        {
+          "word": " they",
+          "start": 166.48,
+          "end": 166.56,
+          "probability": 0.9952045679092407
+        },
+        {
+          "word": " should",
+          "start": 166.56,
+          "end": 166.7,
+          "probability": 0.9993665814399719
+        },
+        {
+          "word": " interview",
+          "start": 166.7,
+          "end": 167.16,
+          "probability": 0.979778528213501
+        },
+        {
+          "word": " the",
+          "start": 167.16,
+          "end": 167.36,
+          "probability": 0.9969351291656494
+        },
+        {
+          "word": " patients",
+          "start": 167.36,
+          "end": 167.88,
+          "probability": 0.9799745678901672
+        },
+        {
+          "word": " before",
+          "start": 167.88,
+          "end": 168.34,
+          "probability": 0.9953218102455139
+        },
+        {
+          "word": " and",
+          "start": 168.34,
+          "end": 168.96,
+          "probability": 0.9596844911575317
+        },
+        {
+          "word": " during",
+          "start": 168.96,
+          "end": 169.48,
+          "probability": 0.9976689219474792
+        },
+        {
+          "word": " the",
+          "start": 169.48,
+          "end": 169.7,
+          "probability": 0.9970507621765137
+        },
+        {
+          "word": " trials.",
+          "start": 169.7,
+          "end": 170.18,
+          "probability": 0.9962502121925354
+        },
+        {
+          "word": " So",
+          "start": 170.76,
+          "end": 171.02,
+          "probability": 0.990948498249054
+        },
+        {
+          "word": " I'm",
+          "start": 171.02,
+          "end": 171.26,
+          "probability": 0.8572107553482056
+        },
+        {
+          "word": " in",
+          "start": 171.26,
+          "end": 171.32,
+          "probability": 0.9998217225074768
+        },
+        {
+          "word": " favor",
+          "start": 171.32,
+          "end": 171.68,
+          "probability": 0.4884644150733948
+        },
+        {
+          "word": " of",
+          "start": 171.68,
+          "end": 171.92,
+          "probability": 0.9988951086997986
+        },
+        {
+          "word": " that.",
+          "start": 171.92,
+          "end": 172.22,
+          "probability": 0.9992412328720093
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 15382,
+      "start": 173.44,
+      "end": 181.04,
+      "text": " What about treatments being trialled? Just because we are doctors, it doesn't mean we know what drugs are being developed.",
+      "tokens": [
+        51314,
+        708,
+        466,
+        15795,
+        885,
+        1376,
+        8907,
+        30,
+        1449,
+        570,
+        321,
+        366,
+        8778,
+        11,
+        309,
+        1177,
+        380,
+        914,
+        321,
+        458,
+        437,
+        7766,
+        366,
+        885,
+        4743,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05750601712395163,
+      "compression_ratio": 1.5690376569037656,
+      "no_speech_prob": 0.845273494720459,
+      "words": [
+        {
+          "word": " What",
+          "start": 173.44,
+          "end": 173.62,
+          "probability": 0.758935272693634
+        },
+        {
+          "word": " about",
+          "start": 173.62,
+          "end": 174.04,
+          "probability": 0.9990259408950806
+        },
+        {
+          "word": " treatments",
+          "start": 174.04,
+          "end": 174.58,
+          "probability": 0.7876167297363281
+        },
+        {
+          "word": " being",
+          "start": 174.58,
+          "end": 175.12,
+          "probability": 0.9988079071044922
+        },
+        {
+          "word": " trialled?",
+          "start": 175.12,
+          "end": 175.78,
+          "probability": 0.7284098863601685
+        },
+        {
+          "word": " Just",
+          "start": 176.46,
+          "end": 176.8,
+          "probability": 0.987821638584137
+        },
+        {
+          "word": " because",
+          "start": 176.8,
+          "end": 177.14,
+          "probability": 0.9982353448867798
+        },
+        {
+          "word": " we",
+          "start": 177.14,
+          "end": 177.4,
+          "probability": 0.9987671375274658
+        },
+        {
+          "word": " are",
+          "start": 177.4,
+          "end": 177.5,
+          "probability": 0.7936403751373291
+        },
+        {
+          "word": " doctors,",
+          "start": 177.5,
+          "end": 177.92,
+          "probability": 0.9836292862892151
+        },
+        {
+          "word": " it",
+          "start": 178.4,
+          "end": 178.5,
+          "probability": 0.9929134249687195
+        },
+        {
+          "word": " doesn't",
+          "start": 178.5,
+          "end": 178.84,
+          "probability": 0.9983437657356262
+        },
+        {
+          "word": " mean",
+          "start": 178.84,
+          "end": 179.02,
+          "probability": 0.999663233757019
+        },
+        {
+          "word": " we",
+          "start": 179.02,
+          "end": 179.2,
+          "probability": 0.9848025441169739
+        },
+        {
+          "word": " know",
+          "start": 179.2,
+          "end": 179.42,
+          "probability": 0.9987918734550476
+        },
+        {
+          "word": " what",
+          "start": 179.42,
+          "end": 179.66,
+          "probability": 0.9984883069992065
+        },
+        {
+          "word": " drugs",
+          "start": 179.66,
+          "end": 180.04,
+          "probability": 0.9964565634727478
+        },
+        {
+          "word": " are",
+          "start": 180.04,
+          "end": 180.28,
+          "probability": 0.9989921450614929
+        },
+        {
+          "word": " being",
+          "start": 180.28,
+          "end": 180.5,
+          "probability": 0.9992262125015259
+        },
+        {
+          "word": " developed.",
+          "start": 180.5,
+          "end": 181.04,
+          "probability": 0.9978172779083252
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 18104,
+      "start": 181.74,
+      "end": 187.56,
+      "text": " Yes, there are new drugs being developed all the time, and that can be challenging.",
+      "tokens": [
+        50364,
+        1079,
+        11,
+        456,
+        366,
+        777,
+        7766,
+        885,
+        4743,
+        439,
+        264,
+        565,
+        11,
+        293,
+        300,
+        393,
+        312,
+        7595,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05336406459547069,
+      "compression_ratio": 1.4736842105263157,
+      "no_speech_prob": 0.2706495225429535,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 181.74,
+          "end": 182.38,
+          "probability": 0.37485551834106445
+        },
+        {
+          "word": " there",
+          "start": 182.76,
+          "end": 183.0,
+          "probability": 0.9932482242584229
+        },
+        {
+          "word": " are",
+          "start": 183.0,
+          "end": 183.18,
+          "probability": 0.9982665181159973
+        },
+        {
+          "word": " new",
+          "start": 183.18,
+          "end": 183.46,
+          "probability": 0.9878751635551453
+        },
+        {
+          "word": " drugs",
+          "start": 183.46,
+          "end": 183.76,
+          "probability": 0.9947481751441956
+        },
+        {
+          "word": " being",
+          "start": 183.76,
+          "end": 184.08,
+          "probability": 0.9917546510696411
+        },
+        {
+          "word": " developed",
+          "start": 184.08,
+          "end": 184.6,
+          "probability": 0.9970564842224121
+        },
+        {
+          "word": " all",
+          "start": 184.6,
+          "end": 184.92,
+          "probability": 0.996755063533783
+        },
+        {
+          "word": " the",
+          "start": 184.92,
+          "end": 185.08,
+          "probability": 0.9855800867080688
+        },
+        {
+          "word": " time,",
+          "start": 185.08,
+          "end": 185.54,
+          "probability": 0.9988272786140442
+        },
+        {
+          "word": " and",
+          "start": 186.04,
+          "end": 186.2,
+          "probability": 0.9948310256004333
+        },
+        {
+          "word": " that",
+          "start": 186.2,
+          "end": 186.42,
+          "probability": 0.9964029788970947
+        },
+        {
+          "word": " can",
+          "start": 186.42,
+          "end": 186.82,
+          "probability": 0.9887520670890808
+        },
+        {
+          "word": " be",
+          "start": 186.82,
+          "end": 187.06,
+          "probability": 0.9969837069511414
+        },
+        {
+          "word": " challenging.",
+          "start": 187.06,
+          "end": 187.56,
+          "probability": 0.9983019828796387
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 18104,
+      "start": 188.0,
+      "end": 194.54,
+      "text": " If you ask me, the hospital has made the right decision to focus on a small number of diseases.",
+      "tokens": [
+        50714,
+        759,
+        291,
+        1029,
+        385,
+        11,
+        264,
+        4530,
+        575,
+        1027,
+        264,
+        558,
+        3537,
+        281,
+        1879,
+        322,
+        257,
+        1359,
+        1230,
+        295,
+        11044,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05336406459547069,
+      "compression_ratio": 1.4736842105263157,
+      "no_speech_prob": 0.2706495225429535,
+      "words": [
+        {
+          "word": " If",
+          "start": 188.0,
+          "end": 188.64,
+          "probability": 0.8988374471664429
+        },
+        {
+          "word": " you",
+          "start": 188.64,
+          "end": 188.78,
+          "probability": 0.9986085295677185
+        },
+        {
+          "word": " ask",
+          "start": 188.78,
+          "end": 189.08,
+          "probability": 0.9739041924476624
+        },
+        {
+          "word": " me,",
+          "start": 189.08,
+          "end": 189.32,
+          "probability": 0.9893307685852051
+        },
+        {
+          "word": " the",
+          "start": 189.88,
+          "end": 189.98,
+          "probability": 0.9826642870903015
+        },
+        {
+          "word": " hospital",
+          "start": 189.98,
+          "end": 190.46,
+          "probability": 0.9763651490211487
+        },
+        {
+          "word": " has",
+          "start": 190.46,
+          "end": 190.76,
+          "probability": 0.9971320629119873
+        },
+        {
+          "word": " made",
+          "start": 190.76,
+          "end": 190.94,
+          "probability": 0.9978958368301392
+        },
+        {
+          "word": " the",
+          "start": 190.94,
+          "end": 191.12,
+          "probability": 0.9947636127471924
+        },
+        {
+          "word": " right",
+          "start": 191.12,
+          "end": 191.34,
+          "probability": 0.9968299269676208
+        },
+        {
+          "word": " decision",
+          "start": 191.34,
+          "end": 191.9,
+          "probability": 0.9968529343605042
+        },
+        {
+          "word": " to",
+          "start": 191.9,
+          "end": 192.24,
+          "probability": 0.9934724569320679
+        },
+        {
+          "word": " focus",
+          "start": 192.24,
+          "end": 192.7,
+          "probability": 0.9934468865394592
+        },
+        {
+          "word": " on",
+          "start": 192.7,
+          "end": 193.06,
+          "probability": 0.997183620929718
+        },
+        {
+          "word": " a",
+          "start": 193.06,
+          "end": 193.18,
+          "probability": 0.9759253263473511
+        },
+        {
+          "word": " small",
+          "start": 193.18,
+          "end": 193.46,
+          "probability": 0.9909816384315491
+        },
+        {
+          "word": " number",
+          "start": 193.46,
+          "end": 193.9,
+          "probability": 0.9981167316436768
+        },
+        {
+          "word": " of",
+          "start": 193.9,
+          "end": 194.06,
+          "probability": 0.9990707039833069
+        },
+        {
+          "word": " diseases.",
+          "start": 194.06,
+          "end": 194.54,
+          "probability": 0.992662787437439
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 18104,
+      "start": 195.28,
+      "end": 199.7,
+      "text": " Let me tell you more about how that will work at the meeting later.",
+      "tokens": [
+        51064,
+        961,
+        385,
+        980,
+        291,
+        544,
+        466,
+        577,
+        300,
+        486,
+        589,
+        412,
+        264,
+        3440,
+        1780,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05336406459547069,
+      "compression_ratio": 1.4736842105263157,
+      "no_speech_prob": 0.2706495225429535,
+      "words": [
+        {
+          "word": " Let",
+          "start": 195.28,
+          "end": 195.8,
+          "probability": 0.981433093547821
+        },
+        {
+          "word": " me",
+          "start": 195.8,
+          "end": 195.98,
+          "probability": 0.9986212253570557
+        },
+        {
+          "word": " tell",
+          "start": 195.98,
+          "end": 196.22,
+          "probability": 0.9974677562713623
+        },
+        {
+          "word": " you",
+          "start": 196.22,
+          "end": 196.44,
+          "probability": 0.9983683228492737
+        },
+        {
+          "word": " more",
+          "start": 196.44,
+          "end": 196.7,
+          "probability": 0.995851993560791
+        },
+        {
+          "word": " about",
+          "start": 196.7,
+          "end": 197.2,
+          "probability": 0.9978222846984863
+        },
+        {
+          "word": " how",
+          "start": 197.2,
+          "end": 197.56,
+          "probability": 0.9929434657096863
+        },
+        {
+          "word": " that",
+          "start": 197.56,
+          "end": 197.88,
+          "probability": 0.9874030351638794
+        },
+        {
+          "word": " will",
+          "start": 197.88,
+          "end": 198.06,
+          "probability": 0.9867070913314819
+        },
+        {
+          "word": " work",
+          "start": 198.06,
+          "end": 198.56,
+          "probability": 0.9981334805488586
+        },
+        {
+          "word": " at",
+          "start": 198.56,
+          "end": 198.72,
+          "probability": 0.9364643692970276
+        },
+        {
+          "word": " the",
+          "start": 198.72,
+          "end": 198.86,
+          "probability": 0.9963245987892151
+        },
+        {
+          "word": " meeting",
+          "start": 198.86,
+          "end": 199.2,
+          "probability": 0.9945467710494995
+        },
+        {
+          "word": " later.",
+          "start": 199.2,
+          "end": 199.7,
+          "probability": 0.9866825342178345
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 18104,
+      "start": 200.48,
+      "end": 202.86,
+      "text": " Okay, that makes sense, I guess.",
+      "tokens": [
+        51314,
+        1033,
+        11,
+        300,
+        1669,
+        2020,
+        11,
+        286,
+        2041,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05336406459547069,
+      "compression_ratio": 1.4736842105263157,
+      "no_speech_prob": 0.2706495225429535,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 200.48,
+          "end": 200.82,
+          "probability": 0.44869112968444824
+        },
+        {
+          "word": " that",
+          "start": 201.26,
+          "end": 201.54,
+          "probability": 0.9932275414466858
+        },
+        {
+          "word": " makes",
+          "start": 201.54,
+          "end": 201.7,
+          "probability": 0.973977267742157
+        },
+        {
+          "word": " sense,",
+          "start": 201.7,
+          "end": 202.08,
+          "probability": 0.9994654059410095
+        },
+        {
+          "word": " I",
+          "start": 202.54,
+          "end": 202.66,
+          "probability": 0.9963316321372986
+        },
+        {
+          "word": " guess.",
+          "start": 202.66,
+          "end": 202.86,
+          "probability": 0.9992578625679016
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 20286,
+      "start": 203.56,
+      "end": 209.82,
+      "text": " Well, if you ask me, one good reason for doing clinical trials is the financial benefit.",
+      "tokens": [
+        50364,
+        1042,
+        11,
+        498,
+        291,
+        1029,
+        385,
+        11,
+        472,
+        665,
+        1778,
+        337,
+        884,
+        9115,
+        12450,
+        307,
+        264,
+        4669,
+        5121,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05325889587402344,
+      "compression_ratio": 1.584033613445378,
+      "no_speech_prob": 0.5392656326293945,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 203.56,
+          "end": 204.16,
+          "probability": 0.12212860584259033
+        },
+        {
+          "word": " if",
+          "start": 204.58,
+          "end": 204.72,
+          "probability": 0.9797784090042114
+        },
+        {
+          "word": " you",
+          "start": 204.72,
+          "end": 204.8,
+          "probability": 0.998002827167511
+        },
+        {
+          "word": " ask",
+          "start": 204.8,
+          "end": 205.1,
+          "probability": 0.9725666642189026
+        },
+        {
+          "word": " me,",
+          "start": 205.1,
+          "end": 205.36,
+          "probability": 0.9912113547325134
+        },
+        {
+          "word": " one",
+          "start": 205.74,
+          "end": 205.92,
+          "probability": 0.9457170963287354
+        },
+        {
+          "word": " good",
+          "start": 205.92,
+          "end": 206.24,
+          "probability": 0.9973326921463013
+        },
+        {
+          "word": " reason",
+          "start": 206.24,
+          "end": 206.66,
+          "probability": 0.9987579584121704
+        },
+        {
+          "word": " for",
+          "start": 206.66,
+          "end": 206.9,
+          "probability": 0.9950196743011475
+        },
+        {
+          "word": " doing",
+          "start": 206.9,
+          "end": 207.12,
+          "probability": 0.9918931722640991
+        },
+        {
+          "word": " clinical",
+          "start": 207.12,
+          "end": 207.6,
+          "probability": 0.9858052134513855
+        },
+        {
+          "word": " trials",
+          "start": 207.6,
+          "end": 208.06,
+          "probability": 0.9973656535148621
+        },
+        {
+          "word": " is",
+          "start": 208.06,
+          "end": 208.48,
+          "probability": 0.9729819893836975
+        },
+        {
+          "word": " the",
+          "start": 208.48,
+          "end": 208.66,
+          "probability": 0.9878111481666565
+        },
+        {
+          "word": " financial",
+          "start": 208.66,
+          "end": 209.2,
+          "probability": 0.9738845229148865
+        },
+        {
+          "word": " benefit.",
+          "start": 209.2,
+          "end": 209.82,
+          "probability": 0.9965234398841858
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 20286,
+      "start": 210.46,
+      "end": 215.28,
+      "text": " It will allow us to invest in new hospital equipment that we really need right now.",
+      "tokens": [
+        50714,
+        467,
+        486,
+        2089,
+        505,
+        281,
+        1963,
+        294,
+        777,
+        4530,
+        5927,
+        300,
+        321,
+        534,
+        643,
+        558,
+        586,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05325889587402344,
+      "compression_ratio": 1.584033613445378,
+      "no_speech_prob": 0.5392656326293945,
+      "words": [
+        {
+          "word": " It",
+          "start": 210.46,
+          "end": 210.72,
+          "probability": 0.9916886687278748
+        },
+        {
+          "word": " will",
+          "start": 210.72,
+          "end": 210.86,
+          "probability": 0.5731490254402161
+        },
+        {
+          "word": " allow",
+          "start": 210.86,
+          "end": 211.16,
+          "probability": 0.9978018403053284
+        },
+        {
+          "word": " us",
+          "start": 211.16,
+          "end": 211.44,
+          "probability": 0.9982584118843079
+        },
+        {
+          "word": " to",
+          "start": 211.44,
+          "end": 211.58,
+          "probability": 0.9974790215492249
+        },
+        {
+          "word": " invest",
+          "start": 211.58,
+          "end": 211.9,
+          "probability": 0.9987693428993225
+        },
+        {
+          "word": " in",
+          "start": 211.9,
+          "end": 212.22,
+          "probability": 0.9902233481407166
+        },
+        {
+          "word": " new",
+          "start": 212.22,
+          "end": 212.48,
+          "probability": 0.971447229385376
+        },
+        {
+          "word": " hospital",
+          "start": 212.48,
+          "end": 212.96,
+          "probability": 0.9732916355133057
+        },
+        {
+          "word": " equipment",
+          "start": 212.96,
+          "end": 213.52,
+          "probability": 0.9974026083946228
+        },
+        {
+          "word": " that",
+          "start": 213.52,
+          "end": 213.96,
+          "probability": 0.9569575786590576
+        },
+        {
+          "word": " we",
+          "start": 213.96,
+          "end": 214.1,
+          "probability": 0.99752277135849
+        },
+        {
+          "word": " really",
+          "start": 214.1,
+          "end": 214.38,
+          "probability": 0.9861068725585938
+        },
+        {
+          "word": " need",
+          "start": 214.38,
+          "end": 214.66,
+          "probability": 0.9984970092773438
+        },
+        {
+          "word": " right",
+          "start": 214.66,
+          "end": 214.92,
+          "probability": 0.9806371927261353
+        },
+        {
+          "word": " now.",
+          "start": 214.92,
+          "end": 215.28,
+          "probability": 0.9980607628822327
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 20286,
+      "start": 215.74,
+      "end": 220.26,
+      "text": " That's right. Of course, we could do with the financial support.",
+      "tokens": [
+        50964,
+        663,
+        311,
+        558,
+        13,
+        2720,
+        1164,
+        11,
+        321,
+        727,
+        360,
+        365,
+        264,
+        4669,
+        1406,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05325889587402344,
+      "compression_ratio": 1.584033613445378,
+      "no_speech_prob": 0.5392656326293945,
+      "words": [
+        {
+          "word": " That's",
+          "start": 215.74,
+          "end": 216.2,
+          "probability": 0.9446787238121033
+        },
+        {
+          "word": " right.",
+          "start": 216.2,
+          "end": 216.5,
+          "probability": 0.9944615960121155
+        },
+        {
+          "word": " Of",
+          "start": 217.42,
+          "end": 217.66,
+          "probability": 0.9929628968238831
+        },
+        {
+          "word": " course,",
+          "start": 217.66,
+          "end": 217.9,
+          "probability": 0.9966394901275635
+        },
+        {
+          "word": " we",
+          "start": 218.26,
+          "end": 218.4,
+          "probability": 0.9967779517173767
+        },
+        {
+          "word": " could",
+          "start": 218.4,
+          "end": 218.68,
+          "probability": 0.9906499981880188
+        },
+        {
+          "word": " do",
+          "start": 218.68,
+          "end": 218.92,
+          "probability": 0.9943834543228149
+        },
+        {
+          "word": " with",
+          "start": 218.92,
+          "end": 219.1,
+          "probability": 0.9964743256568909
+        },
+        {
+          "word": " the",
+          "start": 219.1,
+          "end": 219.2,
+          "probability": 0.9629791975021362
+        },
+        {
+          "word": " financial",
+          "start": 219.2,
+          "end": 219.62,
+          "probability": 0.9937523007392883
+        },
+        {
+          "word": " support.",
+          "start": 219.62,
+          "end": 220.26,
+          "probability": 0.9995205402374268
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 20286,
+      "start": 220.9,
+      "end": 225.24,
+      "text": " The additional money will definitely help us buy those new hospital beds we need.",
+      "tokens": [
+        51214,
+        440,
+        4497,
+        1460,
+        486,
+        2138,
+        854,
+        505,
+        2256,
+        729,
+        777,
+        4530,
+        18068,
+        321,
+        643,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05325889587402344,
+      "compression_ratio": 1.584033613445378,
+      "no_speech_prob": 0.5392656326293945,
+      "words": [
+        {
+          "word": " The",
+          "start": 220.9,
+          "end": 221.08,
+          "probability": 0.9945888519287109
+        },
+        {
+          "word": " additional",
+          "start": 221.08,
+          "end": 221.48,
+          "probability": 0.998005211353302
+        },
+        {
+          "word": " money",
+          "start": 221.48,
+          "end": 221.84,
+          "probability": 0.9995406866073608
+        },
+        {
+          "word": " will",
+          "start": 221.84,
+          "end": 222.02,
+          "probability": 0.9981195330619812
+        },
+        {
+          "word": " definitely",
+          "start": 222.02,
+          "end": 222.54,
+          "probability": 0.9935359954833984
+        },
+        {
+          "word": " help",
+          "start": 222.54,
+          "end": 223.04,
+          "probability": 0.9991666078567505
+        },
+        {
+          "word": " us",
+          "start": 223.04,
+          "end": 223.26,
+          "probability": 0.9993541836738586
+        },
+        {
+          "word": " buy",
+          "start": 223.26,
+          "end": 223.52,
+          "probability": 0.9775360226631165
+        },
+        {
+          "word": " those",
+          "start": 223.52,
+          "end": 223.82,
+          "probability": 0.9948368072509766
+        },
+        {
+          "word": " new",
+          "start": 223.82,
+          "end": 224.0,
+          "probability": 0.9968565702438354
+        },
+        {
+          "word": " hospital",
+          "start": 224.0,
+          "end": 224.44,
+          "probability": 0.9973207116127014
+        },
+        {
+          "word": " beds",
+          "start": 224.44,
+          "end": 224.76,
+          "probability": 0.9952789545059204
+        },
+        {
+          "word": " we",
+          "start": 224.76,
+          "end": 224.98,
+          "probability": 0.9949873685836792
+        },
+        {
+          "word": " need.",
+          "start": 224.98,
+          "end": 225.24,
+          "probability": 0.9993934631347656
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 20286,
+      "start": 225.84,
+      "end": 229.88,
+      "text": " But as far as I am concerned, this is about our patients.",
+      "tokens": [
+        51464,
+        583,
+        382,
+        1400,
+        382,
+        286,
+        669,
+        5922,
+        11,
+        341,
+        307,
+        466,
+        527,
+        4209,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05325889587402344,
+      "compression_ratio": 1.584033613445378,
+      "no_speech_prob": 0.5392656326293945,
+      "words": [
+        {
+          "word": " But",
+          "start": 225.84,
+          "end": 226.1,
+          "probability": 0.9921756386756897
+        },
+        {
+          "word": " as",
+          "start": 226.1,
+          "end": 226.42,
+          "probability": 0.8284928798675537
+        },
+        {
+          "word": " far",
+          "start": 226.42,
+          "end": 226.74,
+          "probability": 0.9992687106132507
+        },
+        {
+          "word": " as",
+          "start": 226.74,
+          "end": 226.96,
+          "probability": 0.998065173625946
+        },
+        {
+          "word": " I",
+          "start": 226.96,
+          "end": 227.1,
+          "probability": 0.9933225512504578
+        },
+        {
+          "word": " am",
+          "start": 227.1,
+          "end": 227.24,
+          "probability": 0.9072016477584839
+        },
+        {
+          "word": " concerned,",
+          "start": 227.24,
+          "end": 227.66,
+          "probability": 0.9994850158691406
+        },
+        {
+          "word": " this",
+          "start": 228.12,
+          "end": 228.38,
+          "probability": 0.9947376847267151
+        },
+        {
+          "word": " is",
+          "start": 228.38,
+          "end": 228.66,
+          "probability": 0.9912035465240479
+        },
+        {
+          "word": " about",
+          "start": 228.66,
+          "end": 228.96,
+          "probability": 0.9976667165756226
+        },
+        {
+          "word": " our",
+          "start": 228.96,
+          "end": 229.36,
+          "probability": 0.9976046085357666
+        },
+        {
+          "word": " patients.",
+          "start": 229.36,
+          "end": 229.88,
+          "probability": 0.5765643119812012
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 22988,
+      "start": 230.88,
+      "end": 241.0,
+      "text": " This data, which I mentioned before, is valuable to understand more about certain diseases and prove whether or not new drugs work effectively.",
+      "tokens": [
+        50414,
+        639,
+        1412,
+        11,
+        597,
+        286,
+        2835,
+        949,
+        11,
+        307,
+        8263,
+        281,
+        1223,
+        544,
+        466,
+        1629,
+        11044,
+        293,
+        7081,
+        1968,
+        420,
+        406,
+        777,
+        7766,
+        589,
+        8659,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08739722858775746,
+      "compression_ratio": 1.4849785407725322,
+      "no_speech_prob": 0.31970497965812683,
+      "words": [
+        {
+          "word": " This",
+          "start": 230.82,
+          "end": 231.14,
+          "probability": 0.4705709218978882
+        },
+        {
+          "word": " data,",
+          "start": 231.14,
+          "end": 231.62,
+          "probability": 0.9824119210243225
+        },
+        {
+          "word": " which",
+          "start": 231.8,
+          "end": 231.96,
+          "probability": 0.997982382774353
+        },
+        {
+          "word": " I",
+          "start": 231.96,
+          "end": 232.12,
+          "probability": 0.9940203428268433
+        },
+        {
+          "word": " mentioned",
+          "start": 232.12,
+          "end": 232.44,
+          "probability": 0.9740392565727234
+        },
+        {
+          "word": " before,",
+          "start": 232.44,
+          "end": 233.0,
+          "probability": 0.9935739636421204
+        },
+        {
+          "word": " is",
+          "start": 233.44,
+          "end": 233.58,
+          "probability": 0.998391330242157
+        },
+        {
+          "word": " valuable",
+          "start": 233.58,
+          "end": 234.06,
+          "probability": 0.992192804813385
+        },
+        {
+          "word": " to",
+          "start": 234.06,
+          "end": 234.42,
+          "probability": 0.9975810050964355
+        },
+        {
+          "word": " understand",
+          "start": 234.42,
+          "end": 234.96,
+          "probability": 0.9944052696228027
+        },
+        {
+          "word": " more",
+          "start": 234.96,
+          "end": 235.42,
+          "probability": 0.9925665855407715
+        },
+        {
+          "word": " about",
+          "start": 235.42,
+          "end": 235.78,
+          "probability": 0.9993365406990051
+        },
+        {
+          "word": " certain",
+          "start": 235.78,
+          "end": 236.3,
+          "probability": 0.9985846281051636
+        },
+        {
+          "word": " diseases",
+          "start": 236.3,
+          "end": 236.82,
+          "probability": 0.9949451088905334
+        },
+        {
+          "word": " and",
+          "start": 236.82,
+          "end": 237.74,
+          "probability": 0.7910602688789368
+        },
+        {
+          "word": " prove",
+          "start": 237.74,
+          "end": 238.26,
+          "probability": 0.9664702415466309
+        },
+        {
+          "word": " whether",
+          "start": 238.26,
+          "end": 238.7,
+          "probability": 0.995424211025238
+        },
+        {
+          "word": " or",
+          "start": 238.7,
+          "end": 238.9,
+          "probability": 0.9965757727622986
+        },
+        {
+          "word": " not",
+          "start": 238.9,
+          "end": 239.14,
+          "probability": 0.9994871616363525
+        },
+        {
+          "word": " new",
+          "start": 239.14,
+          "end": 239.5,
+          "probability": 0.9944949746131897
+        },
+        {
+          "word": " drugs",
+          "start": 239.5,
+          "end": 239.82,
+          "probability": 0.995074450969696
+        },
+        {
+          "word": " work",
+          "start": 239.82,
+          "end": 240.26,
+          "probability": 0.9976611137390137
+        },
+        {
+          "word": " effectively.",
+          "start": 240.26,
+          "end": 241.0,
+          "probability": 0.9956561326980591
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 22988,
+      "start": 241.52,
+      "end": 242.52,
+      "text": " You're right, Tom.",
+      "tokens": [
+        50964,
+        509,
+        434,
+        558,
+        11,
+        5041,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08739722858775746,
+      "compression_ratio": 1.4849785407725322,
+      "no_speech_prob": 0.31970497965812683,
+      "words": [
+        {
+          "word": " You're",
+          "start": 241.52,
+          "end": 242.02,
+          "probability": 0.8593073487281799
+        },
+        {
+          "word": " right,",
+          "start": 242.02,
+          "end": 242.22,
+          "probability": 0.9962206482887268
+        },
+        {
+          "word": " Tom.",
+          "start": 242.38,
+          "end": 242.52,
+          "probability": 0.9728606939315796
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 22988,
+      "start": 243.3,
+      "end": 252.78,
+      "text": " Right, well, I won't keep you any longer, but I'm sure you can see why it is so important to come to the meeting at 4pm to discuss the changes.",
+      "tokens": [
+        51064,
+        1779,
+        11,
+        731,
+        11,
+        286,
+        1582,
+        380,
+        1066,
+        291,
+        604,
+        2854,
+        11,
+        457,
+        286,
+        478,
+        988,
+        291,
+        393,
+        536,
+        983,
+        309,
+        307,
+        370,
+        1021,
+        281,
+        808,
+        281,
+        264,
+        3440,
+        412,
+        1017,
+        14395,
+        281,
+        2248,
+        264,
+        2962,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08739722858775746,
+      "compression_ratio": 1.4849785407725322,
+      "no_speech_prob": 0.31970497965812683,
+      "words": [
+        {
+          "word": " Right,",
+          "start": 243.3,
+          "end": 243.82,
+          "probability": 0.9279302358627319
+        },
+        {
+          "word": " well,",
+          "start": 244.16,
+          "end": 244.44,
+          "probability": 0.9907490611076355
+        },
+        {
+          "word": " I",
+          "start": 244.84,
+          "end": 245.04,
+          "probability": 0.9966148734092712
+        },
+        {
+          "word": " won't",
+          "start": 245.04,
+          "end": 245.28,
+          "probability": 0.9968180656433105
+        },
+        {
+          "word": " keep",
+          "start": 245.28,
+          "end": 245.52,
+          "probability": 0.9977074861526489
+        },
+        {
+          "word": " you",
+          "start": 245.52,
+          "end": 245.7,
+          "probability": 0.9990022778511047
+        },
+        {
+          "word": " any",
+          "start": 245.7,
+          "end": 245.8,
+          "probability": 0.9994692206382751
+        },
+        {
+          "word": " longer,",
+          "start": 245.8,
+          "end": 246.12,
+          "probability": 0.9991893172264099
+        },
+        {
+          "word": " but",
+          "start": 246.44,
+          "end": 246.56,
+          "probability": 0.9963485598564148
+        },
+        {
+          "word": " I'm",
+          "start": 246.56,
+          "end": 247.02,
+          "probability": 0.9818419814109802
+        },
+        {
+          "word": " sure",
+          "start": 247.02,
+          "end": 247.38,
+          "probability": 0.9995002746582031
+        },
+        {
+          "word": " you",
+          "start": 247.38,
+          "end": 247.62,
+          "probability": 0.9932718873023987
+        },
+        {
+          "word": " can",
+          "start": 247.62,
+          "end": 247.78,
+          "probability": 0.9945006370544434
+        },
+        {
+          "word": " see",
+          "start": 247.78,
+          "end": 248.04,
+          "probability": 0.9985684156417847
+        },
+        {
+          "word": " why",
+          "start": 248.04,
+          "end": 248.28,
+          "probability": 0.9967683553695679
+        },
+        {
+          "word": " it",
+          "start": 248.28,
+          "end": 248.46,
+          "probability": 0.9950732588768005
+        },
+        {
+          "word": " is",
+          "start": 248.46,
+          "end": 248.64,
+          "probability": 0.9765509963035583
+        },
+        {
+          "word": " so",
+          "start": 248.64,
+          "end": 248.86,
+          "probability": 0.9937534928321838
+        },
+        {
+          "word": " important",
+          "start": 248.86,
+          "end": 249.38,
+          "probability": 0.9985727071762085
+        },
+        {
+          "word": " to",
+          "start": 249.38,
+          "end": 249.64,
+          "probability": 0.9978703260421753
+        },
+        {
+          "word": " come",
+          "start": 249.64,
+          "end": 249.84,
+          "probability": 0.998933732509613
+        },
+        {
+          "word": " to",
+          "start": 249.84,
+          "end": 250.02,
+          "probability": 0.9980929493904114
+        },
+        {
+          "word": " the",
+          "start": 250.02,
+          "end": 250.12,
+          "probability": 0.9963153004646301
+        },
+        {
+          "word": " meeting",
+          "start": 250.12,
+          "end": 250.46,
+          "probability": 0.9941082000732422
+        },
+        {
+          "word": " at",
+          "start": 250.46,
+          "end": 250.7,
+          "probability": 0.9939996004104614
+        },
+        {
+          "word": " 4pm",
+          "start": 250.7,
+          "end": 251.38,
+          "probability": 0.7846366167068481
+        },
+        {
+          "word": " to",
+          "start": 251.38,
+          "end": 251.72,
+          "probability": 0.9819009900093079
+        },
+        {
+          "word": " discuss",
+          "start": 251.72,
+          "end": 252.08,
+          "probability": 0.9979161620140076
+        },
+        {
+          "word": " the",
+          "start": 252.08,
+          "end": 252.36,
+          "probability": 0.9963248372077942
+        },
+        {
+          "word": " changes.",
+          "start": 252.36,
+          "end": 252.78,
+          "probability": 0.9958314299583435
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 22988,
+      "start": 253.32,
+      "end": 256.56,
+      "text": " Absolutely. Thanks, Tom. See you later.",
+      "tokens": [
+        51514,
+        7021,
+        13,
+        2561,
+        11,
+        5041,
+        13,
+        3008,
+        291,
+        1780,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08739722858775746,
+      "compression_ratio": 1.4849785407725322,
+      "no_speech_prob": 0.31970497965812683,
+      "words": [
+        {
+          "word": " Absolutely.",
+          "start": 253.32,
+          "end": 253.96,
+          "probability": 0.9927880167961121
+        },
+        {
+          "word": " Thanks,",
+          "start": 254.78,
+          "end": 255.2,
+          "probability": 0.994384765625
+        },
+        {
+          "word": " Tom.",
+          "start": 255.4,
+          "end": 255.44,
+          "probability": 0.9954994320869446
+        },
+        {
+          "word": " See",
+          "start": 256.0,
+          "end": 256.16,
+          "probability": 0.990935742855072
+        },
+        {
+          "word": " you",
+          "start": 256.16,
+          "end": 256.26,
+          "probability": 0.9975453019142151
+        },
+        {
+          "word": " later.",
+          "start": 256.26,
+          "end": 256.56,
+          "probability": 0.9985222220420837
+        }
+      ]
+    }
+  ]
+}

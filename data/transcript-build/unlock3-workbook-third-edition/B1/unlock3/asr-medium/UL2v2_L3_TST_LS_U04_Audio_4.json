@@ -1,0 +1,4206 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 4.1 On this week's podcast, I'll be talking about a festival close to my heart, Dongjue, and in particular, the dumpling, a type of traditional Chinese food. I'm from China. That's why this festival is a special event for me. To understand this celebration, first you have to know about the winter solstice, which is when Dongjue takes place. The winter solstice is the shortest day of the year. This means that after it, the days start to get longer and the nights get shorter. The day of the solstice changes every year, but for people in the northern parts of the world, it's usually around the 21st of December. For those of you in the south, it's around June 20th. Dongjue means the extreme of winter, and it shows the light winning over the dark. Personally, I don't really like winter, but for me, Dongjue is one of the best things about it. Due to the nature of our modern world, families don't get the opportunity to spend much time together anymore. They work in different cities or countries. It seems to me that Dongjue is an occasion to bring families together, a time when different generations can interact with one another. And one thing is certain. All families will eat the most famous Chinese comfort food there is. Tainu'en. I love these sweet dumplings, and they remind me of my childhood. Tainu'en are sweet and round, and they are about the size of a table tennis ball. The traditional way of making them is to fill them with sesame seeds or red beans. Then they are boiled, you can fry them too, and served in a sweet soup. This is the way they taste best. Their round shape is to show a coming together, suitable for when a family gets together, right? A little history about these delicious dumplings then. People say Tainu'en are over 1000 years old, and they come from the time of the Tang dynasty. People back then began eating a ball of rice, sesame seeds, fat and sugar. They've had several names over the centuries, but during the 20th century, they became Tainu'en. This means round balls in soup. I think that it's quite a boring name for a food with such long history. During Dongjiu, the dumplings, which are usually white, are coloured, red or pink. The reason for this is that they bring people good luck. For a lot of older Chinese people, Dongjiu is an anniversary. They believe people become a year older on Dongjiu, rather than on their birthdays. People also believe that if you eat too Tainu'en, you will be lucky, and that a married person should leave too in the bowl so their wishes come true. But I'm not convinced. I don't really believe in superstitions, but it doesn't matter. It's nice to see that some traditions aren't dying out.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.82,
+      "text": " Track 4.1",
+      "tokens": [
+        50364,
+        31903,
+        1017,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46044999274654663,
+      "compression_ratio": 1.3275862068965518,
+      "no_speech_prob": 0.236455038189888,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.52,
+          "probability": 0.19969844818115234
+        },
+        {
+          "word": " 4",
+          "start": 0.52,
+          "end": 0.92,
+          "probability": 0.9773813486099243
+        },
+        {
+          "word": ".1",
+          "start": 0.92,
+          "end": 1.82,
+          "probability": 0.9977642297744751
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.7,
+      "end": 9.18,
+      "text": " On this week's podcast, I'll be talking about a festival close to my heart,",
+      "tokens": [
+        50549,
+        1282,
+        341,
+        1243,
+        311,
+        7367,
+        11,
+        286,
+        603,
+        312,
+        1417,
+        466,
+        257,
+        12091,
+        1998,
+        281,
+        452,
+        1917,
+        11,
+        50830
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46044999274654663,
+      "compression_ratio": 1.3275862068965518,
+      "no_speech_prob": 0.236455038189888,
+      "words": [
+        {
+          "word": " On",
+          "start": 3.580000000000001,
+          "end": 4.02,
+          "probability": 0.4816421866416931
+        },
+        {
+          "word": " this",
+          "start": 4.02,
+          "end": 4.36,
+          "probability": 0.9956842660903931
+        },
+        {
+          "word": " week's",
+          "start": 4.36,
+          "end": 4.76,
+          "probability": 0.9909786283969879
+        },
+        {
+          "word": " podcast,",
+          "start": 4.76,
+          "end": 5.2,
+          "probability": 0.9599856734275818
+        },
+        {
+          "word": " I'll",
+          "start": 5.8,
+          "end": 5.88,
+          "probability": 0.9635410904884338
+        },
+        {
+          "word": " be",
+          "start": 5.88,
+          "end": 5.98,
+          "probability": 0.9963567852973938
+        },
+        {
+          "word": " talking",
+          "start": 5.98,
+          "end": 6.34,
+          "probability": 0.9970237612724304
+        },
+        {
+          "word": " about",
+          "start": 6.34,
+          "end": 6.76,
+          "probability": 0.9989776611328125
+        },
+        {
+          "word": " a",
+          "start": 6.76,
+          "end": 7.0,
+          "probability": 0.9867678284645081
+        },
+        {
+          "word": " festival",
+          "start": 7.0,
+          "end": 7.52,
+          "probability": 0.9707940220832825
+        },
+        {
+          "word": " close",
+          "start": 7.52,
+          "end": 8.04,
+          "probability": 0.8682209849357605
+        },
+        {
+          "word": " to",
+          "start": 8.04,
+          "end": 8.42,
+          "probability": 0.9963492155075073
+        },
+        {
+          "word": " my",
+          "start": 8.42,
+          "end": 8.62,
+          "probability": 0.9781937599182129
+        },
+        {
+          "word": " heart,",
+          "start": 8.62,
+          "end": 9.18,
+          "probability": 0.9991512298583984
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.74,
+      "end": 10.3,
+      "text": " Dongjue,",
+      "tokens": [
+        50830,
+        13609,
+        73,
+        622,
+        11,
+        50905
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46044999274654663,
+      "compression_ratio": 1.3275862068965518,
+      "no_speech_prob": 0.236455038189888,
+      "words": [
+        {
+          "word": " Dongjue,",
+          "start": 9.74,
+          "end": 10.3,
+          "probability": 0.26256781816482544
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 10.66,
+      "end": 16.64,
+      "text": " and in particular, the dumpling, a type of traditional Chinese food.",
+      "tokens": [
+        50905,
+        293,
+        294,
+        1729,
+        11,
+        264,
+        46517,
+        11,
+        257,
+        2010,
+        295,
+        5164,
+        4649,
+        1755,
+        13,
+        51215
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46044999274654663,
+      "compression_ratio": 1.3275862068965518,
+      "no_speech_prob": 0.236455038189888,
+      "words": [
+        {
+          "word": " and",
+          "start": 10.66,
+          "end": 11.66,
+          "probability": 0.952380359172821
+        },
+        {
+          "word": " in",
+          "start": 11.66,
+          "end": 11.8,
+          "probability": 0.9329230189323425
+        },
+        {
+          "word": " particular,",
+          "start": 11.8,
+          "end": 12.42,
+          "probability": 0.9988716244697571
+        },
+        {
+          "word": " the",
+          "start": 12.86,
+          "end": 12.94,
+          "probability": 0.9577680826187134
+        },
+        {
+          "word": " dumpling,",
+          "start": 12.94,
+          "end": 13.34,
+          "probability": 0.6863467693328857
+        },
+        {
+          "word": " a",
+          "start": 13.88,
+          "end": 14.0,
+          "probability": 0.9934458136558533
+        },
+        {
+          "word": " type",
+          "start": 14.0,
+          "end": 14.28,
+          "probability": 0.9892827272415161
+        },
+        {
+          "word": " of",
+          "start": 14.28,
+          "end": 14.54,
+          "probability": 0.9983611702919006
+        },
+        {
+          "word": " traditional",
+          "start": 14.54,
+          "end": 15.16,
+          "probability": 0.9943407773971558
+        },
+        {
+          "word": " Chinese",
+          "start": 15.16,
+          "end": 15.82,
+          "probability": 0.9529668688774109
+        },
+        {
+          "word": " food.",
+          "start": 15.82,
+          "end": 16.64,
+          "probability": 0.9975034594535828
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 17.540000000000006,
+      "end": 23.3,
+      "text": " I'm from China. That's why this festival is a special event for me.",
+      "tokens": [
+        51255,
+        286,
+        478,
+        490,
+        3533,
+        13,
+        663,
+        311,
+        983,
+        341,
+        12091,
+        307,
+        257,
+        2121,
+        2280,
+        337,
+        385,
+        13,
+        51545
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46044999274654663,
+      "compression_ratio": 1.3275862068965518,
+      "no_speech_prob": 0.236455038189888,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 17.540000000000006,
+          "end": 18.42,
+          "probability": 0.9592869579792023
+        },
+        {
+          "word": " from",
+          "start": 18.42,
+          "end": 18.58,
+          "probability": 0.9993048906326294
+        },
+        {
+          "word": " China.",
+          "start": 18.58,
+          "end": 19.04,
+          "probability": 0.9983419179916382
+        },
+        {
+          "word": " That's",
+          "start": 19.62,
+          "end": 20.08,
+          "probability": 0.9954209327697754
+        },
+        {
+          "word": " why",
+          "start": 20.08,
+          "end": 20.34,
+          "probability": 0.9994169473648071
+        },
+        {
+          "word": " this",
+          "start": 20.34,
+          "end": 20.64,
+          "probability": 0.9964145421981812
+        },
+        {
+          "word": " festival",
+          "start": 20.64,
+          "end": 21.3,
+          "probability": 0.9906173348426819
+        },
+        {
+          "word": " is",
+          "start": 21.3,
+          "end": 21.74,
+          "probability": 0.9951533079147339
+        },
+        {
+          "word": " a",
+          "start": 21.74,
+          "end": 21.94,
+          "probability": 0.9929376244544983
+        },
+        {
+          "word": " special",
+          "start": 21.94,
+          "end": 22.42,
+          "probability": 0.99802565574646
+        },
+        {
+          "word": " event",
+          "start": 22.42,
+          "end": 22.78,
+          "probability": 0.9959575533866882
+        },
+        {
+          "word": " for",
+          "start": 22.78,
+          "end": 23.06,
+          "probability": 0.9987751841545105
+        },
+        {
+          "word": " me.",
+          "start": 23.06,
+          "end": 23.3,
+          "probability": 0.9997968077659607
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2330,
+      "start": 24.02,
+      "end": 30.04,
+      "text": " To understand this celebration, first you have to know about the winter solstice,",
+      "tokens": [
+        50400,
+        1407,
+        1223,
+        341,
+        14184,
+        11,
+        700,
+        291,
+        362,
+        281,
+        458,
+        466,
+        264,
+        6355,
+        1404,
+        372,
+        573,
+        11,
+        50704
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28481829166412354,
+      "compression_ratio": 1.6536312849162011,
+      "no_speech_prob": 0.053288571536540985,
+      "words": [
+        {
+          "word": " To",
+          "start": 23.96,
+          "end": 24.32,
+          "probability": 0.6152938008308411
+        },
+        {
+          "word": " understand",
+          "start": 24.32,
+          "end": 24.92,
+          "probability": 0.9964092373847961
+        },
+        {
+          "word": " this",
+          "start": 24.92,
+          "end": 25.28,
+          "probability": 0.9943084120750427
+        },
+        {
+          "word": " celebration,",
+          "start": 25.28,
+          "end": 25.96,
+          "probability": 0.9795276522636414
+        },
+        {
+          "word": " first",
+          "start": 26.48,
+          "end": 26.78,
+          "probability": 0.9573876857757568
+        },
+        {
+          "word": " you",
+          "start": 26.78,
+          "end": 27.26,
+          "probability": 0.689670741558075
+        },
+        {
+          "word": " have",
+          "start": 27.26,
+          "end": 27.5,
+          "probability": 0.9943747520446777
+        },
+        {
+          "word": " to",
+          "start": 27.5,
+          "end": 27.7,
+          "probability": 0.99793541431427
+        },
+        {
+          "word": " know",
+          "start": 27.7,
+          "end": 28.0,
+          "probability": 0.9967910647392273
+        },
+        {
+          "word": " about",
+          "start": 28.0,
+          "end": 28.42,
+          "probability": 0.9963093400001526
+        },
+        {
+          "word": " the",
+          "start": 28.42,
+          "end": 28.66,
+          "probability": 0.9631283283233643
+        },
+        {
+          "word": " winter",
+          "start": 28.66,
+          "end": 29.02,
+          "probability": 0.41288629174232483
+        },
+        {
+          "word": " solstice,",
+          "start": 29.02,
+          "end": 30.04,
+          "probability": 0.945013701915741
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2330,
+      "start": 30.3,
+      "end": 32.8,
+      "text": " which is when Dongjue takes place.",
+      "tokens": [
+        50704,
+        597,
+        307,
+        562,
+        13609,
+        73,
+        622,
+        2516,
+        1081,
+        13,
+        50856
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28481829166412354,
+      "compression_ratio": 1.6536312849162011,
+      "no_speech_prob": 0.053288571536540985,
+      "words": [
+        {
+          "word": " which",
+          "start": 30.3,
+          "end": 30.54,
+          "probability": 0.99552321434021
+        },
+        {
+          "word": " is",
+          "start": 30.54,
+          "end": 30.72,
+          "probability": 0.9875919222831726
+        },
+        {
+          "word": " when",
+          "start": 30.72,
+          "end": 31.0,
+          "probability": 0.9687048196792603
+        },
+        {
+          "word": " Dongjue",
+          "start": 31.0,
+          "end": 31.76,
+          "probability": 0.4629226128260295
+        },
+        {
+          "word": " takes",
+          "start": 31.76,
+          "end": 32.16,
+          "probability": 0.9871314764022827
+        },
+        {
+          "word": " place.",
+          "start": 32.16,
+          "end": 32.8,
+          "probability": 0.9990409016609192
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2330,
+      "start": 33.98,
+      "end": 37.74,
+      "text": " The winter solstice is the shortest day of the year.",
+      "tokens": [
+        50896,
+        440,
+        6355,
+        1404,
+        372,
+        573,
+        307,
+        264,
+        31875,
+        786,
+        295,
+        264,
+        1064,
+        13,
+        51116
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28481829166412354,
+      "compression_ratio": 1.6536312849162011,
+      "no_speech_prob": 0.053288571536540985,
+      "words": [
+        {
+          "word": " The",
+          "start": 33.98,
+          "end": 34.22,
+          "probability": 0.8782251477241516
+        },
+        {
+          "word": " winter",
+          "start": 34.22,
+          "end": 34.54,
+          "probability": 0.9679738879203796
+        },
+        {
+          "word": " solstice",
+          "start": 34.54,
+          "end": 35.42,
+          "probability": 0.9978744983673096
+        },
+        {
+          "word": " is",
+          "start": 35.42,
+          "end": 35.78,
+          "probability": 0.989997923374176
+        },
+        {
+          "word": " the",
+          "start": 35.78,
+          "end": 36.02,
+          "probability": 0.9977097511291504
+        },
+        {
+          "word": " shortest",
+          "start": 36.02,
+          "end": 36.54,
+          "probability": 0.9883956909179688
+        },
+        {
+          "word": " day",
+          "start": 36.54,
+          "end": 37.02,
+          "probability": 0.9972795844078064
+        },
+        {
+          "word": " of",
+          "start": 37.02,
+          "end": 37.24,
+          "probability": 0.999401330947876
+        },
+        {
+          "word": " the",
+          "start": 37.24,
+          "end": 37.4,
+          "probability": 0.9981831908226013
+        },
+        {
+          "word": " year.",
+          "start": 37.4,
+          "end": 37.74,
+          "probability": 0.997367799282074
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2330,
+      "start": 38.42,
+      "end": 44.64,
+      "text": " This means that after it, the days start to get longer and the nights get shorter.",
+      "tokens": [
+        51116,
+        639,
+        1355,
+        300,
+        934,
+        309,
+        11,
+        264,
+        1708,
+        722,
+        281,
+        483,
+        2854,
+        293,
+        264,
+        13249,
+        483,
+        11639,
+        13,
+        51452
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28481829166412354,
+      "compression_ratio": 1.6536312849162011,
+      "no_speech_prob": 0.053288571536540985,
+      "words": [
+        {
+          "word": " This",
+          "start": 38.42,
+          "end": 38.76,
+          "probability": 0.9942330718040466
+        },
+        {
+          "word": " means",
+          "start": 38.76,
+          "end": 39.12,
+          "probability": 0.9987949132919312
+        },
+        {
+          "word": " that",
+          "start": 39.12,
+          "end": 39.5,
+          "probability": 0.9852900505065918
+        },
+        {
+          "word": " after",
+          "start": 39.5,
+          "end": 40.06,
+          "probability": 0.6096085906028748
+        },
+        {
+          "word": " it,",
+          "start": 40.06,
+          "end": 40.42,
+          "probability": 0.9918228983879089
+        },
+        {
+          "word": " the",
+          "start": 40.88,
+          "end": 41.0,
+          "probability": 0.9945790767669678
+        },
+        {
+          "word": " days",
+          "start": 41.0,
+          "end": 41.24,
+          "probability": 0.9932157397270203
+        },
+        {
+          "word": " start",
+          "start": 41.24,
+          "end": 41.7,
+          "probability": 0.997156023979187
+        },
+        {
+          "word": " to",
+          "start": 41.7,
+          "end": 41.96,
+          "probability": 0.9990885257720947
+        },
+        {
+          "word": " get",
+          "start": 41.96,
+          "end": 42.12,
+          "probability": 0.9990153312683105
+        },
+        {
+          "word": " longer",
+          "start": 42.12,
+          "end": 42.68,
+          "probability": 0.9943848848342896
+        },
+        {
+          "word": " and",
+          "start": 42.68,
+          "end": 43.26,
+          "probability": 0.5660105347633362
+        },
+        {
+          "word": " the",
+          "start": 43.26,
+          "end": 43.42,
+          "probability": 0.9935685396194458
+        },
+        {
+          "word": " nights",
+          "start": 43.42,
+          "end": 43.76,
+          "probability": 0.9847593903541565
+        },
+        {
+          "word": " get",
+          "start": 43.76,
+          "end": 44.04,
+          "probability": 0.9909992218017578
+        },
+        {
+          "word": " shorter.",
+          "start": 44.04,
+          "end": 44.64,
+          "probability": 0.9984110593795776
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2330,
+      "start": 45.76,
+      "end": 48.94,
+      "text": " The day of the solstice changes every year,",
+      "tokens": [
+        51488,
+        440,
+        786,
+        295,
+        264,
+        1404,
+        372,
+        573,
+        2962,
+        633,
+        1064,
+        11,
+        51660
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.28481829166412354,
+      "compression_ratio": 1.6536312849162011,
+      "no_speech_prob": 0.053288571536540985,
+      "words": [
+        {
+          "word": " The",
+          "start": 45.76,
+          "end": 46.08,
+          "probability": 0.9941020607948303
+        },
+        {
+          "word": " day",
+          "start": 46.08,
+          "end": 46.34,
+          "probability": 0.9874650239944458
+        },
+        {
+          "word": " of",
+          "start": 46.34,
+          "end": 46.58,
+          "probability": 0.9979389309883118
+        },
+        {
+          "word": " the",
+          "start": 46.58,
+          "end": 46.72,
+          "probability": 0.9856400489807129
+        },
+        {
+          "word": " solstice",
+          "start": 46.72,
+          "end": 47.36,
+          "probability": 0.9902603427569071
+        },
+        {
+          "word": " changes",
+          "start": 47.36,
+          "end": 47.9,
+          "probability": 0.9987837672233582
+        },
+        {
+          "word": " every",
+          "start": 47.9,
+          "end": 48.5,
+          "probability": 0.9960435628890991
+        },
+        {
+          "word": " year,",
+          "start": 48.5,
+          "end": 48.94,
+          "probability": 0.9991610050201416
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 4894,
+      "start": 48.94,
+      "end": 56.54,
+      "text": " but for people in the northern parts of the world, it's usually around the 21st of December.",
+      "tokens": [
+        50380,
+        457,
+        337,
+        561,
+        294,
+        264,
+        14197,
+        3166,
+        295,
+        264,
+        1002,
+        11,
+        309,
+        311,
+        2673,
+        926,
+        264,
+        5080,
+        372,
+        295,
+        7687,
+        13,
+        50748
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10717762722058242,
+      "compression_ratio": 1.5625,
+      "no_speech_prob": 0.004394990857690573,
+      "words": [
+        {
+          "word": " but",
+          "start": 48.94,
+          "end": 49.54,
+          "probability": 0.36039501428604126
+        },
+        {
+          "word": " for",
+          "start": 49.54,
+          "end": 49.98,
+          "probability": 0.9673547148704529
+        },
+        {
+          "word": " people",
+          "start": 49.98,
+          "end": 50.36,
+          "probability": 0.9978531002998352
+        },
+        {
+          "word": " in",
+          "start": 50.36,
+          "end": 50.68,
+          "probability": 0.9980829954147339
+        },
+        {
+          "word": " the",
+          "start": 50.68,
+          "end": 50.82,
+          "probability": 0.9972652196884155
+        },
+        {
+          "word": " northern",
+          "start": 50.82,
+          "end": 51.22,
+          "probability": 0.9422820806503296
+        },
+        {
+          "word": " parts",
+          "start": 51.22,
+          "end": 51.66,
+          "probability": 0.9623928666114807
+        },
+        {
+          "word": " of",
+          "start": 51.66,
+          "end": 51.98,
+          "probability": 0.999609649181366
+        },
+        {
+          "word": " the",
+          "start": 51.98,
+          "end": 52.14,
+          "probability": 0.999203622341156
+        },
+        {
+          "word": " world,",
+          "start": 52.14,
+          "end": 52.6,
+          "probability": 0.9955353736877441
+        },
+        {
+          "word": " it's",
+          "start": 52.82,
+          "end": 53.24,
+          "probability": 0.9728956818580627
+        },
+        {
+          "word": " usually",
+          "start": 53.24,
+          "end": 53.78,
+          "probability": 0.9980097413063049
+        },
+        {
+          "word": " around",
+          "start": 53.78,
+          "end": 54.3,
+          "probability": 0.9947289824485779
+        },
+        {
+          "word": " the",
+          "start": 54.3,
+          "end": 54.64,
+          "probability": 0.8984901905059814
+        },
+        {
+          "word": " 21st",
+          "start": 54.64,
+          "end": 55.68,
+          "probability": 0.9828645586967468
+        },
+        {
+          "word": " of",
+          "start": 55.68,
+          "end": 55.88,
+          "probability": 0.9822593927383423
+        },
+        {
+          "word": " December.",
+          "start": 55.88,
+          "end": 56.54,
+          "probability": 0.9787052273750305
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 4894,
+      "start": 57.28,
+      "end": 61.68,
+      "text": " For those of you in the south, it's around June 20th.",
+      "tokens": [
+        50784,
+        1171,
+        729,
+        295,
+        291,
+        294,
+        264,
+        7377,
+        11,
+        309,
+        311,
+        926,
+        6928,
+        945,
+        392,
+        13,
+        50988
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10717762722058242,
+      "compression_ratio": 1.5625,
+      "no_speech_prob": 0.004394990857690573,
+      "words": [
+        {
+          "word": " For",
+          "start": 57.28,
+          "end": 57.6,
+          "probability": 0.9929350018501282
+        },
+        {
+          "word": " those",
+          "start": 57.6,
+          "end": 57.88,
+          "probability": 0.9990123510360718
+        },
+        {
+          "word": " of",
+          "start": 57.88,
+          "end": 58.16,
+          "probability": 0.993863582611084
+        },
+        {
+          "word": " you",
+          "start": 58.16,
+          "end": 58.3,
+          "probability": 0.9990983009338379
+        },
+        {
+          "word": " in",
+          "start": 58.3,
+          "end": 58.56,
+          "probability": 0.9981666803359985
+        },
+        {
+          "word": " the",
+          "start": 58.56,
+          "end": 58.7,
+          "probability": 0.9887039065361023
+        },
+        {
+          "word": " south,",
+          "start": 58.7,
+          "end": 59.2,
+          "probability": 0.8009320497512817
+        },
+        {
+          "word": " it's",
+          "start": 59.54,
+          "end": 59.74,
+          "probability": 0.9946567118167877
+        },
+        {
+          "word": " around",
+          "start": 59.74,
+          "end": 60.1,
+          "probability": 0.996441662311554
+        },
+        {
+          "word": " June",
+          "start": 60.1,
+          "end": 60.56,
+          "probability": 0.9824764728546143
+        },
+        {
+          "word": " 20th.",
+          "start": 60.56,
+          "end": 61.68,
+          "probability": 0.6361280381679535
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 4894,
+      "start": 62.88,
+      "end": 69.74,
+      "text": " Dongjue means the extreme of winter, and it shows the light winning over the dark.",
+      "tokens": [
+        51052,
+        13609,
+        73,
+        622,
+        1355,
+        264,
+        8084,
+        295,
+        6355,
+        11,
+        293,
+        309,
+        3110,
+        264,
+        1442,
+        8224,
+        670,
+        264,
+        2877,
+        13,
+        51408
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10717762722058242,
+      "compression_ratio": 1.5625,
+      "no_speech_prob": 0.004394990857690573,
+      "words": [
+        {
+          "word": " Dongjue",
+          "start": 62.88,
+          "end": 63.32,
+          "probability": 0.38924796382586163
+        },
+        {
+          "word": " means",
+          "start": 63.32,
+          "end": 63.86,
+          "probability": 0.9869840145111084
+        },
+        {
+          "word": " the",
+          "start": 63.86,
+          "end": 64.52,
+          "probability": 0.742815375328064
+        },
+        {
+          "word": " extreme",
+          "start": 64.52,
+          "end": 65.16,
+          "probability": 0.8573492765426636
+        },
+        {
+          "word": " of",
+          "start": 65.16,
+          "end": 65.66,
+          "probability": 0.9958546161651611
+        },
+        {
+          "word": " winter,",
+          "start": 65.66,
+          "end": 66.12,
+          "probability": 0.9755913019180298
+        },
+        {
+          "word": " and",
+          "start": 66.66,
+          "end": 66.94,
+          "probability": 0.9958624839782715
+        },
+        {
+          "word": " it",
+          "start": 66.94,
+          "end": 67.12,
+          "probability": 0.9974178075790405
+        },
+        {
+          "word": " shows",
+          "start": 67.12,
+          "end": 67.42,
+          "probability": 0.9898908138275146
+        },
+        {
+          "word": " the",
+          "start": 67.42,
+          "end": 67.72,
+          "probability": 0.9970111846923828
+        },
+        {
+          "word": " light",
+          "start": 67.72,
+          "end": 68.12,
+          "probability": 0.9881064891815186
+        },
+        {
+          "word": " winning",
+          "start": 68.12,
+          "end": 68.7,
+          "probability": 0.8933229446411133
+        },
+        {
+          "word": " over",
+          "start": 68.7,
+          "end": 69.24,
+          "probability": 0.9991330504417419
+        },
+        {
+          "word": " the",
+          "start": 69.24,
+          "end": 69.42,
+          "probability": 0.9985361099243164
+        },
+        {
+          "word": " dark.",
+          "start": 69.42,
+          "end": 69.74,
+          "probability": 0.9818192720413208
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 4894,
+      "start": 70.94,
+      "end": 78.92,
+      "text": " Personally, I don't really like winter, but for me, Dongjue is one of the best things about it.",
+      "tokens": [
+        51468,
+        21079,
+        11,
+        286,
+        500,
+        380,
+        534,
+        411,
+        6355,
+        11,
+        457,
+        337,
+        385,
+        11,
+        13609,
+        73,
+        622,
+        307,
+        472,
+        295,
+        264,
+        1151,
+        721,
+        466,
+        309,
+        13,
+        51860
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10717762722058242,
+      "compression_ratio": 1.5625,
+      "no_speech_prob": 0.004394990857690573,
+      "words": [
+        {
+          "word": " Personally,",
+          "start": 70.94,
+          "end": 71.7,
+          "probability": 0.9861773252487183
+        },
+        {
+          "word": " I",
+          "start": 72.08,
+          "end": 72.32,
+          "probability": 0.9970154762268066
+        },
+        {
+          "word": " don't",
+          "start": 72.32,
+          "end": 72.8,
+          "probability": 0.9986505508422852
+        },
+        {
+          "word": " really",
+          "start": 72.8,
+          "end": 73.06,
+          "probability": 0.9944201111793518
+        },
+        {
+          "word": " like",
+          "start": 73.06,
+          "end": 73.42,
+          "probability": 0.9992006421089172
+        },
+        {
+          "word": " winter,",
+          "start": 73.42,
+          "end": 73.94,
+          "probability": 0.9902922511100769
+        },
+        {
+          "word": " but",
+          "start": 74.44,
+          "end": 74.78,
+          "probability": 0.9964298605918884
+        },
+        {
+          "word": " for",
+          "start": 74.78,
+          "end": 75.12,
+          "probability": 0.9715415239334106
+        },
+        {
+          "word": " me,",
+          "start": 75.12,
+          "end": 75.44,
+          "probability": 0.9994261264801025
+        },
+        {
+          "word": " Dongjue",
+          "start": 75.78,
+          "end": 76.28,
+          "probability": 0.9680418968200684
+        },
+        {
+          "word": " is",
+          "start": 76.28,
+          "end": 76.76,
+          "probability": 0.9852985143661499
+        },
+        {
+          "word": " one",
+          "start": 76.76,
+          "end": 77.16,
+          "probability": 0.9968183040618896
+        },
+        {
+          "word": " of",
+          "start": 77.16,
+          "end": 77.28,
+          "probability": 0.9982115030288696
+        },
+        {
+          "word": " the",
+          "start": 77.28,
+          "end": 77.44,
+          "probability": 0.9990684390068054
+        },
+        {
+          "word": " best",
+          "start": 77.44,
+          "end": 77.86,
+          "probability": 0.9955955147743225
+        },
+        {
+          "word": " things",
+          "start": 77.86,
+          "end": 78.26,
+          "probability": 0.9984857439994812
+        },
+        {
+          "word": " about",
+          "start": 78.26,
+          "end": 78.62,
+          "probability": 0.9988930821418762
+        },
+        {
+          "word": " it.",
+          "start": 78.62,
+          "end": 78.92,
+          "probability": 0.9977254271507263
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 7894,
+      "start": 80.36,
+      "end": 88.56,
+      "text": " Due to the nature of our modern world, families don't get the opportunity to spend much time together anymore.",
+      "tokens": [
+        50388,
+        18980,
+        281,
+        264,
+        3687,
+        295,
+        527,
+        4363,
+        1002,
+        11,
+        4466,
+        500,
+        380,
+        483,
+        264,
+        2650,
+        281,
+        3496,
+        709,
+        565,
+        1214,
+        3602,
+        13,
+        50844
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16377118808120045,
+      "compression_ratio": 1.5508021390374331,
+      "no_speech_prob": 0.006872972473502159,
+      "words": [
+        {
+          "word": " Due",
+          "start": 80.36,
+          "end": 81.2,
+          "probability": 0.6759822964668274
+        },
+        {
+          "word": " to",
+          "start": 81.2,
+          "end": 81.44,
+          "probability": 0.9963445067405701
+        },
+        {
+          "word": " the",
+          "start": 81.44,
+          "end": 81.6,
+          "probability": 0.9660129547119141
+        },
+        {
+          "word": " nature",
+          "start": 81.6,
+          "end": 82.0,
+          "probability": 0.9982408285140991
+        },
+        {
+          "word": " of",
+          "start": 82.0,
+          "end": 82.28,
+          "probability": 0.9987699389457703
+        },
+        {
+          "word": " our",
+          "start": 82.28,
+          "end": 82.46,
+          "probability": 0.9897140264511108
+        },
+        {
+          "word": " modern",
+          "start": 82.46,
+          "end": 82.76,
+          "probability": 0.992254376411438
+        },
+        {
+          "word": " world,",
+          "start": 82.76,
+          "end": 83.36,
+          "probability": 0.992275059223175
+        },
+        {
+          "word": " families",
+          "start": 83.82,
+          "end": 84.18,
+          "probability": 0.9886246919631958
+        },
+        {
+          "word": " don't",
+          "start": 84.18,
+          "end": 84.84,
+          "probability": 0.9869547784328461
+        },
+        {
+          "word": " get",
+          "start": 84.84,
+          "end": 85.06,
+          "probability": 0.9967664480209351
+        },
+        {
+          "word": " the",
+          "start": 85.06,
+          "end": 85.3,
+          "probability": 0.9844056963920593
+        },
+        {
+          "word": " opportunity",
+          "start": 85.3,
+          "end": 85.86,
+          "probability": 0.9957152009010315
+        },
+        {
+          "word": " to",
+          "start": 85.86,
+          "end": 86.36,
+          "probability": 0.998915433883667
+        },
+        {
+          "word": " spend",
+          "start": 86.36,
+          "end": 86.7,
+          "probability": 0.9979647397994995
+        },
+        {
+          "word": " much",
+          "start": 86.7,
+          "end": 87.1,
+          "probability": 0.996330201625824
+        },
+        {
+          "word": " time",
+          "start": 87.1,
+          "end": 87.46,
+          "probability": 0.998765230178833
+        },
+        {
+          "word": " together",
+          "start": 87.46,
+          "end": 87.98,
+          "probability": 0.9977383613586426
+        },
+        {
+          "word": " anymore.",
+          "start": 87.98,
+          "end": 88.56,
+          "probability": 0.8840638995170593
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 7894,
+      "start": 89.28,
+      "end": 92.5,
+      "text": " They work in different cities or countries.",
+      "tokens": [
+        50844,
+        814,
+        589,
+        294,
+        819,
+        6486,
+        420,
+        3517,
+        13,
+        51044
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16377118808120045,
+      "compression_ratio": 1.5508021390374331,
+      "no_speech_prob": 0.006872972473502159,
+      "words": [
+        {
+          "word": " They",
+          "start": 89.28,
+          "end": 89.9,
+          "probability": 0.9951558113098145
+        },
+        {
+          "word": " work",
+          "start": 89.9,
+          "end": 90.2,
+          "probability": 0.998633086681366
+        },
+        {
+          "word": " in",
+          "start": 90.2,
+          "end": 90.54,
+          "probability": 0.9986050724983215
+        },
+        {
+          "word": " different",
+          "start": 90.54,
+          "end": 90.94,
+          "probability": 0.9989628791809082
+        },
+        {
+          "word": " cities",
+          "start": 90.94,
+          "end": 91.52,
+          "probability": 0.9966656565666199
+        },
+        {
+          "word": " or",
+          "start": 91.52,
+          "end": 91.9,
+          "probability": 0.9468826651573181
+        },
+        {
+          "word": " countries.",
+          "start": 91.9,
+          "end": 92.5,
+          "probability": 0.9817453026771545
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 7894,
+      "start": 93.18,
+      "end": 98.92,
+      "text": " It seems to me that Dongjue is an occasion to bring families together,",
+      "tokens": [
+        51044,
+        467,
+        2544,
+        281,
+        385,
+        300,
+        13609,
+        73,
+        622,
+        307,
+        364,
+        9674,
+        281,
+        1565,
+        4466,
+        1214,
+        11,
+        51356
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16377118808120045,
+      "compression_ratio": 1.5508021390374331,
+      "no_speech_prob": 0.006872972473502159,
+      "words": [
+        {
+          "word": " It",
+          "start": 93.18,
+          "end": 93.88,
+          "probability": 0.9936473965644836
+        },
+        {
+          "word": " seems",
+          "start": 93.88,
+          "end": 94.2,
+          "probability": 0.9969053864479065
+        },
+        {
+          "word": " to",
+          "start": 94.2,
+          "end": 94.44,
+          "probability": 0.9956762194633484
+        },
+        {
+          "word": " me",
+          "start": 94.44,
+          "end": 94.72,
+          "probability": 0.9990905523300171
+        },
+        {
+          "word": " that",
+          "start": 94.72,
+          "end": 95.1,
+          "probability": 0.983472466468811
+        },
+        {
+          "word": " Dongjue",
+          "start": 95.1,
+          "end": 95.8,
+          "probability": 0.39000720841189224
+        },
+        {
+          "word": " is",
+          "start": 95.8,
+          "end": 96.24,
+          "probability": 0.9800461530685425
+        },
+        {
+          "word": " an",
+          "start": 96.24,
+          "end": 96.4,
+          "probability": 0.9893331527709961
+        },
+        {
+          "word": " occasion",
+          "start": 96.4,
+          "end": 96.84,
+          "probability": 0.9916985034942627
+        },
+        {
+          "word": " to",
+          "start": 96.84,
+          "end": 97.34,
+          "probability": 0.9979202151298523
+        },
+        {
+          "word": " bring",
+          "start": 97.34,
+          "end": 97.66,
+          "probability": 0.9856683015823364
+        },
+        {
+          "word": " families",
+          "start": 97.66,
+          "end": 98.26,
+          "probability": 0.9882516264915466
+        },
+        {
+          "word": " together,",
+          "start": 98.26,
+          "end": 98.92,
+          "probability": 0.9981895089149475
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 7894,
+      "start": 99.48,
+      "end": 104.02,
+      "text": " a time when different generations can interact with one another.",
+      "tokens": [
+        51356,
+        257,
+        565,
+        562,
+        819,
+        10593,
+        393,
+        4648,
+        365,
+        472,
+        1071,
+        13,
+        51616
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16377118808120045,
+      "compression_ratio": 1.5508021390374331,
+      "no_speech_prob": 0.006872972473502159,
+      "words": [
+        {
+          "word": " a",
+          "start": 99.48,
+          "end": 99.6,
+          "probability": 0.9243643879890442
+        },
+        {
+          "word": " time",
+          "start": 99.6,
+          "end": 99.98,
+          "probability": 0.9993274211883545
+        },
+        {
+          "word": " when",
+          "start": 99.98,
+          "end": 100.3,
+          "probability": 0.9520299434661865
+        },
+        {
+          "word": " different",
+          "start": 100.3,
+          "end": 100.74,
+          "probability": 0.9979222416877747
+        },
+        {
+          "word": " generations",
+          "start": 100.74,
+          "end": 101.52,
+          "probability": 0.9962106943130493
+        },
+        {
+          "word": " can",
+          "start": 101.52,
+          "end": 102.02,
+          "probability": 0.9961848855018616
+        },
+        {
+          "word": " interact",
+          "start": 102.02,
+          "end": 102.64,
+          "probability": 0.9979090690612793
+        },
+        {
+          "word": " with",
+          "start": 102.64,
+          "end": 103.22,
+          "probability": 0.9991937279701233
+        },
+        {
+          "word": " one",
+          "start": 103.22,
+          "end": 103.62,
+          "probability": 0.9950939416885376
+        },
+        {
+          "word": " another.",
+          "start": 103.62,
+          "end": 104.02,
+          "probability": 0.9972530007362366
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 10402,
+      "start": 105.26,
+      "end": 113.24,
+      "text": " And one thing is certain. All families will eat the most famous Chinese comfort food there is.",
+      "tokens": [
+        50400,
+        400,
+        472,
+        551,
+        307,
+        1629,
+        13,
+        1057,
+        4466,
+        486,
+        1862,
+        264,
+        881,
+        4618,
+        4649,
+        3400,
+        1755,
+        456,
+        307,
+        13,
+        50812
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25132700423119775,
+      "compression_ratio": 1.5089820359281436,
+      "no_speech_prob": 0.02832222729921341,
+      "words": [
+        {
+          "word": " And",
+          "start": 105.26,
+          "end": 105.98,
+          "probability": 0.24878853559494019
+        },
+        {
+          "word": " one",
+          "start": 105.98,
+          "end": 106.22,
+          "probability": 0.9620025157928467
+        },
+        {
+          "word": " thing",
+          "start": 106.22,
+          "end": 106.54,
+          "probability": 0.9954745173454285
+        },
+        {
+          "word": " is",
+          "start": 106.54,
+          "end": 106.84,
+          "probability": 0.9947589039802551
+        },
+        {
+          "word": " certain.",
+          "start": 106.84,
+          "end": 107.36,
+          "probability": 0.9748407602310181
+        },
+        {
+          "word": " All",
+          "start": 108.04,
+          "end": 108.36,
+          "probability": 0.9790862202644348
+        },
+        {
+          "word": " families",
+          "start": 108.36,
+          "end": 108.88,
+          "probability": 0.9840232133865356
+        },
+        {
+          "word": " will",
+          "start": 108.88,
+          "end": 109.22,
+          "probability": 0.9933472871780396
+        },
+        {
+          "word": " eat",
+          "start": 109.22,
+          "end": 109.56,
+          "probability": 0.9980306029319763
+        },
+        {
+          "word": " the",
+          "start": 109.56,
+          "end": 109.9,
+          "probability": 0.9918476343154907
+        },
+        {
+          "word": " most",
+          "start": 109.9,
+          "end": 110.2,
+          "probability": 0.9950070381164551
+        },
+        {
+          "word": " famous",
+          "start": 110.2,
+          "end": 110.7,
+          "probability": 0.9977031350135803
+        },
+        {
+          "word": " Chinese",
+          "start": 110.7,
+          "end": 111.32,
+          "probability": 0.972063422203064
+        },
+        {
+          "word": " comfort",
+          "start": 111.32,
+          "end": 111.96,
+          "probability": 0.8915985226631165
+        },
+        {
+          "word": " food",
+          "start": 111.96,
+          "end": 112.38,
+          "probability": 0.9952850937843323
+        },
+        {
+          "word": " there",
+          "start": 112.38,
+          "end": 112.66,
+          "probability": 0.9716764092445374
+        },
+        {
+          "word": " is.",
+          "start": 112.66,
+          "end": 113.24,
+          "probability": 0.9935212731361389
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 10402,
+      "start": 113.78,
+      "end": 114.38,
+      "text": " Tainu'en.",
+      "tokens": [
+        50812,
+        314,
+        491,
+        84,
+        6,
+        268,
+        13,
+        50876
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25132700423119775,
+      "compression_ratio": 1.5089820359281436,
+      "no_speech_prob": 0.02832222729921341,
+      "words": [
+        {
+          "word": " Tainu",
+          "start": 113.78,
+          "end": 114.14,
+          "probability": 0.3943404157956441
+        },
+        {
+          "word": "'en.",
+          "start": 114.14,
+          "end": 114.38,
+          "probability": 0.5604536980390549
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 10402,
+      "start": 115.54,
+      "end": 120.1,
+      "text": " I love these sweet dumplings, and they remind me of my childhood.",
+      "tokens": [
+        50876,
+        286,
+        959,
+        613,
+        3844,
+        31721,
+        11,
+        293,
+        436,
+        4160,
+        385,
+        295,
+        452,
+        9278,
+        13,
+        51172
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25132700423119775,
+      "compression_ratio": 1.5089820359281436,
+      "no_speech_prob": 0.02832222729921341,
+      "words": [
+        {
+          "word": " I",
+          "start": 115.54,
+          "end": 115.7,
+          "probability": 0.9405019879341125
+        },
+        {
+          "word": " love",
+          "start": 115.7,
+          "end": 116.02,
+          "probability": 0.9945316314697266
+        },
+        {
+          "word": " these",
+          "start": 116.02,
+          "end": 116.4,
+          "probability": 0.9848626255989075
+        },
+        {
+          "word": " sweet",
+          "start": 116.4,
+          "end": 116.94,
+          "probability": 0.969892144203186
+        },
+        {
+          "word": " dumplings,",
+          "start": 116.94,
+          "end": 117.44,
+          "probability": 0.9665224552154541
+        },
+        {
+          "word": " and",
+          "start": 118.1,
+          "end": 118.2,
+          "probability": 0.9793722033500671
+        },
+        {
+          "word": " they",
+          "start": 118.2,
+          "end": 118.36,
+          "probability": 0.9985212683677673
+        },
+        {
+          "word": " remind",
+          "start": 118.36,
+          "end": 118.72,
+          "probability": 0.9907947182655334
+        },
+        {
+          "word": " me",
+          "start": 118.72,
+          "end": 119.08,
+          "probability": 0.9954231381416321
+        },
+        {
+          "word": " of",
+          "start": 119.08,
+          "end": 119.36,
+          "probability": 0.9977768063545227
+        },
+        {
+          "word": " my",
+          "start": 119.36,
+          "end": 119.56,
+          "probability": 0.9971978664398193
+        },
+        {
+          "word": " childhood.",
+          "start": 119.56,
+          "end": 120.1,
+          "probability": 0.9988362193107605
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 10402,
+      "start": 121.32,
+      "end": 127.56,
+      "text": " Tainu'en are sweet and round, and they are about the size of a table tennis ball.",
+      "tokens": [
+        51172,
+        314,
+        491,
+        84,
+        6,
+        268,
+        366,
+        3844,
+        293,
+        3098,
+        11,
+        293,
+        436,
+        366,
+        466,
+        264,
+        2744,
+        295,
+        257,
+        3199,
+        18118,
+        2594,
+        13,
+        51540
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25132700423119775,
+      "compression_ratio": 1.5089820359281436,
+      "no_speech_prob": 0.02832222729921341,
+      "words": [
+        {
+          "word": " Tainu",
+          "start": 121.32,
+          "end": 121.86,
+          "probability": 0.9703571597735087
+        },
+        {
+          "word": "'en",
+          "start": 121.86,
+          "end": 122.12,
+          "probability": 0.9974454641342163
+        },
+        {
+          "word": " are",
+          "start": 122.12,
+          "end": 122.5,
+          "probability": 0.9875013828277588
+        },
+        {
+          "word": " sweet",
+          "start": 122.5,
+          "end": 122.98,
+          "probability": 0.9642558097839355
+        },
+        {
+          "word": " and",
+          "start": 122.98,
+          "end": 123.32,
+          "probability": 0.9892889261245728
+        },
+        {
+          "word": " round,",
+          "start": 123.32,
+          "end": 123.72,
+          "probability": 0.9966576099395752
+        },
+        {
+          "word": " and",
+          "start": 124.24,
+          "end": 124.6,
+          "probability": 0.9933961033821106
+        },
+        {
+          "word": " they",
+          "start": 124.6,
+          "end": 124.88,
+          "probability": 0.9955008625984192
+        },
+        {
+          "word": " are",
+          "start": 124.88,
+          "end": 125.08,
+          "probability": 0.9926097989082336
+        },
+        {
+          "word": " about",
+          "start": 125.08,
+          "end": 125.42,
+          "probability": 0.994144856929779
+        },
+        {
+          "word": " the",
+          "start": 125.42,
+          "end": 125.64,
+          "probability": 0.9986529350280762
+        },
+        {
+          "word": " size",
+          "start": 125.64,
+          "end": 126.0,
+          "probability": 0.9994825124740601
+        },
+        {
+          "word": " of",
+          "start": 126.0,
+          "end": 126.3,
+          "probability": 0.9989917874336243
+        },
+        {
+          "word": " a",
+          "start": 126.3,
+          "end": 126.46,
+          "probability": 0.9863189458847046
+        },
+        {
+          "word": " table",
+          "start": 126.46,
+          "end": 126.8,
+          "probability": 0.913053035736084
+        },
+        {
+          "word": " tennis",
+          "start": 126.8,
+          "end": 127.18,
+          "probability": 0.9937572479248047
+        },
+        {
+          "word": " ball.",
+          "start": 127.18,
+          "end": 127.56,
+          "probability": 0.9905975461006165
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 12756,
+      "start": 128.52,
+      "end": 134.62,
+      "text": " The traditional way of making them is to fill them with sesame seeds or red beans.",
+      "tokens": [
+        50412,
+        440,
+        5164,
+        636,
+        295,
+        1455,
+        552,
+        307,
+        281,
+        2836,
+        552,
+        365,
+        21994,
+        9203,
+        420,
+        2182,
+        12010,
+        13,
+        50720
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11074012517929077,
+      "compression_ratio": 1.5781990521327014,
+      "no_speech_prob": 0.02934732846915722,
+      "words": [
+        {
+          "word": " The",
+          "start": 128.45,
+          "end": 128.82,
+          "probability": 0.41514238715171814
+        },
+        {
+          "word": " traditional",
+          "start": 128.82,
+          "end": 129.46,
+          "probability": 0.9774362444877625
+        },
+        {
+          "word": " way",
+          "start": 129.46,
+          "end": 129.8,
+          "probability": 0.9987516403198242
+        },
+        {
+          "word": " of",
+          "start": 129.8,
+          "end": 130.06,
+          "probability": 0.9968979358673096
+        },
+        {
+          "word": " making",
+          "start": 130.06,
+          "end": 130.42,
+          "probability": 0.9953075051307678
+        },
+        {
+          "word": " them",
+          "start": 130.42,
+          "end": 130.7,
+          "probability": 0.9891068339347839
+        },
+        {
+          "word": " is",
+          "start": 130.7,
+          "end": 131.22,
+          "probability": 0.9549874663352966
+        },
+        {
+          "word": " to",
+          "start": 131.22,
+          "end": 131.5,
+          "probability": 0.9977182149887085
+        },
+        {
+          "word": " fill",
+          "start": 131.5,
+          "end": 131.78,
+          "probability": 0.9794418811798096
+        },
+        {
+          "word": " them",
+          "start": 131.78,
+          "end": 132.08,
+          "probability": 0.9935082197189331
+        },
+        {
+          "word": " with",
+          "start": 132.08,
+          "end": 132.42,
+          "probability": 0.9983983635902405
+        },
+        {
+          "word": " sesame",
+          "start": 132.42,
+          "end": 132.8,
+          "probability": 0.9879286885261536
+        },
+        {
+          "word": " seeds",
+          "start": 132.8,
+          "end": 133.3,
+          "probability": 0.9958588480949402
+        },
+        {
+          "word": " or",
+          "start": 133.3,
+          "end": 133.86,
+          "probability": 0.9430456757545471
+        },
+        {
+          "word": " red",
+          "start": 133.86,
+          "end": 134.18,
+          "probability": 0.9910343289375305
+        },
+        {
+          "word": " beans.",
+          "start": 134.18,
+          "end": 134.62,
+          "probability": 0.992043673992157
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 12756,
+      "start": 135.32,
+      "end": 141.5,
+      "text": " Then they are boiled, you can fry them too, and served in a sweet soup.",
+      "tokens": [
+        50752,
+        1396,
+        436,
+        366,
+        21058,
+        11,
+        291,
+        393,
+        13776,
+        552,
+        886,
+        11,
+        293,
+        7584,
+        294,
+        257,
+        3844,
+        7884,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11074012517929077,
+      "compression_ratio": 1.5781990521327014,
+      "no_speech_prob": 0.02934732846915722,
+      "words": [
+        {
+          "word": " Then",
+          "start": 135.32,
+          "end": 135.72,
+          "probability": 0.9863280653953552
+        },
+        {
+          "word": " they",
+          "start": 135.72,
+          "end": 136.02,
+          "probability": 0.9098365306854248
+        },
+        {
+          "word": " are",
+          "start": 136.02,
+          "end": 136.22,
+          "probability": 0.9953652620315552
+        },
+        {
+          "word": " boiled,",
+          "start": 136.22,
+          "end": 136.78,
+          "probability": 0.9705078601837158
+        },
+        {
+          "word": " you",
+          "start": 137.34,
+          "end": 137.62,
+          "probability": 0.977405846118927
+        },
+        {
+          "word": " can",
+          "start": 137.62,
+          "end": 137.88,
+          "probability": 0.9989644289016724
+        },
+        {
+          "word": " fry",
+          "start": 137.88,
+          "end": 138.24,
+          "probability": 0.9803727865219116
+        },
+        {
+          "word": " them",
+          "start": 138.24,
+          "end": 138.64,
+          "probability": 0.9966819882392883
+        },
+        {
+          "word": " too,",
+          "start": 138.64,
+          "end": 139.02,
+          "probability": 0.8002634644508362
+        },
+        {
+          "word": " and",
+          "start": 139.58,
+          "end": 139.72,
+          "probability": 0.9933759570121765
+        },
+        {
+          "word": " served",
+          "start": 139.72,
+          "end": 140.22,
+          "probability": 0.9521431922912598
+        },
+        {
+          "word": " in",
+          "start": 140.22,
+          "end": 140.58,
+          "probability": 0.9940782785415649
+        },
+        {
+          "word": " a",
+          "start": 140.58,
+          "end": 140.7,
+          "probability": 0.9972367286682129
+        },
+        {
+          "word": " sweet",
+          "start": 140.7,
+          "end": 141.06,
+          "probability": 0.9948506951332092
+        },
+        {
+          "word": " soup.",
+          "start": 141.06,
+          "end": 141.5,
+          "probability": 0.9904036521911621
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 12756,
+      "start": 142.58,
+      "end": 150.5,
+      "text": " This is the way they taste best. Their round shape is to show a coming together, suitable for",
+      "tokens": [
+        51116,
+        639,
+        307,
+        264,
+        636,
+        436,
+        3939,
+        1151,
+        13,
+        6710,
+        3098,
+        3909,
+        307,
+        281,
+        855,
+        257,
+        1348,
+        1214,
+        11,
+        12873,
+        337,
+        51508
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11074012517929077,
+      "compression_ratio": 1.5781990521327014,
+      "no_speech_prob": 0.02934732846915722,
+      "words": [
+        {
+          "word": " This",
+          "start": 142.58,
+          "end": 142.88,
+          "probability": 0.9914038181304932
+        },
+        {
+          "word": " is",
+          "start": 142.88,
+          "end": 143.26,
+          "probability": 0.9939963817596436
+        },
+        {
+          "word": " the",
+          "start": 143.26,
+          "end": 143.48,
+          "probability": 0.9974063038825989
+        },
+        {
+          "word": " way",
+          "start": 143.48,
+          "end": 143.68,
+          "probability": 0.9995245933532715
+        },
+        {
+          "word": " they",
+          "start": 143.68,
+          "end": 143.9,
+          "probability": 0.9958066940307617
+        },
+        {
+          "word": " taste",
+          "start": 143.9,
+          "end": 144.28,
+          "probability": 0.9955939650535583
+        },
+        {
+          "word": " best.",
+          "start": 144.28,
+          "end": 144.62,
+          "probability": 0.9884900450706482
+        },
+        {
+          "word": " Their",
+          "start": 145.62,
+          "end": 145.9,
+          "probability": 0.9751455783843994
+        },
+        {
+          "word": " round",
+          "start": 145.9,
+          "end": 146.28,
+          "probability": 0.9922391176223755
+        },
+        {
+          "word": " shape",
+          "start": 146.28,
+          "end": 146.76,
+          "probability": 0.9967784285545349
+        },
+        {
+          "word": " is",
+          "start": 146.76,
+          "end": 147.36,
+          "probability": 0.9903132915496826
+        },
+        {
+          "word": " to",
+          "start": 147.36,
+          "end": 147.6,
+          "probability": 0.9976905584335327
+        },
+        {
+          "word": " show",
+          "start": 147.6,
+          "end": 147.92,
+          "probability": 0.9974620342254639
+        },
+        {
+          "word": " a",
+          "start": 147.92,
+          "end": 148.34,
+          "probability": 0.5506299138069153
+        },
+        {
+          "word": " coming",
+          "start": 148.34,
+          "end": 148.62,
+          "probability": 0.9787330031394958
+        },
+        {
+          "word": " together,",
+          "start": 148.62,
+          "end": 149.18,
+          "probability": 0.9928984642028809
+        },
+        {
+          "word": " suitable",
+          "start": 149.72,
+          "end": 150.06,
+          "probability": 0.9952206015586853
+        },
+        {
+          "word": " for",
+          "start": 150.06,
+          "end": 150.5,
+          "probability": 0.998711347579956
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 12756,
+      "start": 150.5,
+      "end": 157.12,
+      "text": " when a family gets together, right? A little history about these delicious dumplings",
+      "tokens": [
+        51508,
+        562,
+        257,
+        1605,
+        2170,
+        1214,
+        11,
+        558,
+        30,
+        316,
+        707,
+        2503,
+        466,
+        613,
+        4809,
+        31721,
+        51852
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11074012517929077,
+      "compression_ratio": 1.5781990521327014,
+      "no_speech_prob": 0.02934732846915722,
+      "words": [
+        {
+          "word": " when",
+          "start": 150.5,
+          "end": 150.76,
+          "probability": 0.9886026382446289
+        },
+        {
+          "word": " a",
+          "start": 150.76,
+          "end": 150.94,
+          "probability": 0.9959153532981873
+        },
+        {
+          "word": " family",
+          "start": 150.94,
+          "end": 151.3,
+          "probability": 0.99906986951828
+        },
+        {
+          "word": " gets",
+          "start": 151.3,
+          "end": 151.6,
+          "probability": 0.9806677103042603
+        },
+        {
+          "word": " together,",
+          "start": 151.6,
+          "end": 152.22,
+          "probability": 0.9988036155700684
+        },
+        {
+          "word": " right?",
+          "start": 152.34,
+          "end": 152.52,
+          "probability": 0.9950773119926453
+        },
+        {
+          "word": " A",
+          "start": 153.76,
+          "end": 154.34,
+          "probability": 0.9797279238700867
+        },
+        {
+          "word": " little",
+          "start": 154.34,
+          "end": 154.54,
+          "probability": 0.9919084906578064
+        },
+        {
+          "word": " history",
+          "start": 154.54,
+          "end": 155.14,
+          "probability": 0.9916252493858337
+        },
+        {
+          "word": " about",
+          "start": 155.14,
+          "end": 155.56,
+          "probability": 0.9956246018409729
+        },
+        {
+          "word": " these",
+          "start": 155.56,
+          "end": 155.96,
+          "probability": 0.9935560822486877
+        },
+        {
+          "word": " delicious",
+          "start": 155.96,
+          "end": 156.54,
+          "probability": 0.995347797870636
+        },
+        {
+          "word": " dumplings",
+          "start": 156.54,
+          "end": 157.12,
+          "probability": 0.9706929326057434
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 15712,
+      "start": 157.12,
+      "end": 165.9,
+      "text": " then. People say Tainu'en are over 1000 years old, and they come from the time of the Tang dynasty.",
+      "tokens": [
+        50384,
+        550,
+        13,
+        3432,
+        584,
+        314,
+        491,
+        84,
+        6,
+        268,
+        366,
+        670,
+        9714,
+        924,
+        1331,
+        11,
+        293,
+        436,
+        808,
+        490,
+        264,
+        565,
+        295,
+        264,
+        22063,
+        32841,
+        13,
+        50808
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1545440928141276,
+      "compression_ratio": 1.4972375690607735,
+      "no_speech_prob": 0.006721858866512775,
+      "words": [
+        {
+          "word": " then.",
+          "start": 157.12,
+          "end": 157.64,
+          "probability": 0.046767838299274445
+        },
+        {
+          "word": " People",
+          "start": 158.52,
+          "end": 158.86,
+          "probability": 0.8913967609405518
+        },
+        {
+          "word": " say",
+          "start": 158.86,
+          "end": 159.32,
+          "probability": 0.9924376606941223
+        },
+        {
+          "word": " Tainu",
+          "start": 159.32,
+          "end": 160.02,
+          "probability": 0.18131385495265326
+        },
+        {
+          "word": "'en",
+          "start": 160.02,
+          "end": 160.26,
+          "probability": 0.5410414636135101
+        },
+        {
+          "word": " are",
+          "start": 160.26,
+          "end": 160.54,
+          "probability": 0.9735947251319885
+        },
+        {
+          "word": " over",
+          "start": 160.54,
+          "end": 160.98,
+          "probability": 0.9891623258590698
+        },
+        {
+          "word": " 1000",
+          "start": 160.98,
+          "end": 161.54,
+          "probability": 0.4146973490715027
+        },
+        {
+          "word": " years",
+          "start": 161.54,
+          "end": 162.08,
+          "probability": 0.9914385080337524
+        },
+        {
+          "word": " old,",
+          "start": 162.08,
+          "end": 162.66,
+          "probability": 0.9976159334182739
+        },
+        {
+          "word": " and",
+          "start": 163.02,
+          "end": 163.28,
+          "probability": 0.9941932559013367
+        },
+        {
+          "word": " they",
+          "start": 163.28,
+          "end": 163.44,
+          "probability": 0.9968992471694946
+        },
+        {
+          "word": " come",
+          "start": 163.44,
+          "end": 163.68,
+          "probability": 0.9918124675750732
+        },
+        {
+          "word": " from",
+          "start": 163.68,
+          "end": 164.0,
+          "probability": 0.9964205026626587
+        },
+        {
+          "word": " the",
+          "start": 164.0,
+          "end": 164.2,
+          "probability": 0.9894247055053711
+        },
+        {
+          "word": " time",
+          "start": 164.2,
+          "end": 164.54,
+          "probability": 0.9812883138656616
+        },
+        {
+          "word": " of",
+          "start": 164.54,
+          "end": 164.8,
+          "probability": 0.9983674883842468
+        },
+        {
+          "word": " the",
+          "start": 164.8,
+          "end": 164.96,
+          "probability": 0.9674574732780457
+        },
+        {
+          "word": " Tang",
+          "start": 164.96,
+          "end": 165.32,
+          "probability": 0.8429458141326904
+        },
+        {
+          "word": " dynasty.",
+          "start": 165.32,
+          "end": 165.9,
+          "probability": 0.5259802937507629
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 15712,
+      "start": 167.02,
+      "end": 173.06,
+      "text": " People back then began eating a ball of rice, sesame seeds, fat and sugar.",
+      "tokens": [
+        50860,
+        3432,
+        646,
+        550,
+        4283,
+        3936,
+        257,
+        2594,
+        295,
+        5090,
+        11,
+        21994,
+        9203,
+        11,
+        4046,
+        293,
+        5076,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1545440928141276,
+      "compression_ratio": 1.4972375690607735,
+      "no_speech_prob": 0.006721858866512775,
+      "words": [
+        {
+          "word": " People",
+          "start": 167.02,
+          "end": 167.4,
+          "probability": 0.982569694519043
+        },
+        {
+          "word": " back",
+          "start": 167.4,
+          "end": 167.68,
+          "probability": 0.9724295139312744
+        },
+        {
+          "word": " then",
+          "start": 167.68,
+          "end": 168.12,
+          "probability": 0.9985917210578918
+        },
+        {
+          "word": " began",
+          "start": 168.12,
+          "end": 168.58,
+          "probability": 0.9823922514915466
+        },
+        {
+          "word": " eating",
+          "start": 168.58,
+          "end": 169.1,
+          "probability": 0.9938960671424866
+        },
+        {
+          "word": " a",
+          "start": 169.1,
+          "end": 169.38,
+          "probability": 0.9945881366729736
+        },
+        {
+          "word": " ball",
+          "start": 169.38,
+          "end": 169.6,
+          "probability": 0.6502593159675598
+        },
+        {
+          "word": " of",
+          "start": 169.6,
+          "end": 169.88,
+          "probability": 0.9983579516410828
+        },
+        {
+          "word": " rice,",
+          "start": 169.88,
+          "end": 170.2,
+          "probability": 0.9969243407249451
+        },
+        {
+          "word": " sesame",
+          "start": 170.96,
+          "end": 171.14,
+          "probability": 0.9872902035713196
+        },
+        {
+          "word": " seeds,",
+          "start": 171.14,
+          "end": 171.62,
+          "probability": 0.9964531660079956
+        },
+        {
+          "word": " fat",
+          "start": 172.14,
+          "end": 172.26,
+          "probability": 0.8414015173912048
+        },
+        {
+          "word": " and",
+          "start": 172.26,
+          "end": 172.7,
+          "probability": 0.7391295433044434
+        },
+        {
+          "word": " sugar.",
+          "start": 172.7,
+          "end": 173.06,
+          "probability": 0.996967613697052
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 15712,
+      "start": 174.32,
+      "end": 181.92,
+      "text": " They've had several names over the centuries, but during the 20th century, they became Tainu'en.",
+      "tokens": [
+        51228,
+        814,
+        600,
+        632,
+        2940,
+        5288,
+        670,
+        264,
+        13926,
+        11,
+        457,
+        1830,
+        264,
+        945,
+        392,
+        4901,
+        11,
+        436,
+        3062,
+        314,
+        491,
+        84,
+        6,
+        268,
+        13,
+        51600
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1545440928141276,
+      "compression_ratio": 1.4972375690607735,
+      "no_speech_prob": 0.006721858866512775,
+      "words": [
+        {
+          "word": " They've",
+          "start": 174.32,
+          "end": 174.82,
+          "probability": 0.876521646976471
+        },
+        {
+          "word": " had",
+          "start": 174.82,
+          "end": 175.02,
+          "probability": 0.596661388874054
+        },
+        {
+          "word": " several",
+          "start": 175.02,
+          "end": 175.48,
+          "probability": 0.9981252551078796
+        },
+        {
+          "word": " names",
+          "start": 175.48,
+          "end": 175.98,
+          "probability": 0.9983162879943848
+        },
+        {
+          "word": " over",
+          "start": 175.98,
+          "end": 176.44,
+          "probability": 0.9962422847747803
+        },
+        {
+          "word": " the",
+          "start": 176.44,
+          "end": 176.6,
+          "probability": 0.9960216879844666
+        },
+        {
+          "word": " centuries,",
+          "start": 176.6,
+          "end": 177.1,
+          "probability": 0.9940849542617798
+        },
+        {
+          "word": " but",
+          "start": 177.68,
+          "end": 177.88,
+          "probability": 0.998067319393158
+        },
+        {
+          "word": " during",
+          "start": 177.88,
+          "end": 178.44,
+          "probability": 0.9446979761123657
+        },
+        {
+          "word": " the",
+          "start": 178.44,
+          "end": 178.66,
+          "probability": 0.9955134987831116
+        },
+        {
+          "word": " 20th",
+          "start": 178.66,
+          "end": 179.28,
+          "probability": 0.9694713354110718
+        },
+        {
+          "word": " century,",
+          "start": 179.28,
+          "end": 179.76,
+          "probability": 0.9679960012435913
+        },
+        {
+          "word": " they",
+          "start": 180.16,
+          "end": 180.38,
+          "probability": 0.9978545308113098
+        },
+        {
+          "word": " became",
+          "start": 180.38,
+          "end": 180.9,
+          "probability": 0.9878080487251282
+        },
+        {
+          "word": " Tainu",
+          "start": 180.9,
+          "end": 181.7,
+          "probability": 0.9432133436203003
+        },
+        {
+          "word": "'en.",
+          "start": 181.7,
+          "end": 181.92,
+          "probability": 0.9948903620243073
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 18192,
+      "start": 182.72,
+      "end": 191.42,
+      "text": " This means round balls in soup. I think that it's quite a boring name for a food with such long history.",
+      "tokens": [
+        50404,
+        639,
+        1355,
+        3098,
+        9803,
+        294,
+        7884,
+        13,
+        286,
+        519,
+        300,
+        309,
+        311,
+        1596,
+        257,
+        9989,
+        1315,
+        337,
+        257,
+        1755,
+        365,
+        1270,
+        938,
+        2503,
+        13,
+        50840
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13652238728087626,
+      "compression_ratio": 1.5073891625615763,
+      "no_speech_prob": 0.005176952108740807,
+      "words": [
+        {
+          "word": " This",
+          "start": 182.54,
+          "end": 182.94,
+          "probability": 0.5924564003944397
+        },
+        {
+          "word": " means",
+          "start": 182.94,
+          "end": 183.34,
+          "probability": 0.992852509021759
+        },
+        {
+          "word": " round",
+          "start": 183.34,
+          "end": 184.1,
+          "probability": 0.413975328207016
+        },
+        {
+          "word": " balls",
+          "start": 184.1,
+          "end": 184.62,
+          "probability": 0.9565070271492004
+        },
+        {
+          "word": " in",
+          "start": 184.62,
+          "end": 185.1,
+          "probability": 0.9911201596260071
+        },
+        {
+          "word": " soup.",
+          "start": 185.1,
+          "end": 185.54,
+          "probability": 0.9719586968421936
+        },
+        {
+          "word": " I",
+          "start": 186.1,
+          "end": 186.8,
+          "probability": 0.9906997084617615
+        },
+        {
+          "word": " think",
+          "start": 186.8,
+          "end": 187.02,
+          "probability": 0.9981591105461121
+        },
+        {
+          "word": " that",
+          "start": 187.02,
+          "end": 187.28,
+          "probability": 0.913610577583313
+        },
+        {
+          "word": " it's",
+          "start": 187.28,
+          "end": 187.76,
+          "probability": 0.937398374080658
+        },
+        {
+          "word": " quite",
+          "start": 187.76,
+          "end": 187.96,
+          "probability": 0.995893120765686
+        },
+        {
+          "word": " a",
+          "start": 187.96,
+          "end": 188.12,
+          "probability": 0.9970025420188904
+        },
+        {
+          "word": " boring",
+          "start": 188.12,
+          "end": 188.5,
+          "probability": 0.9922388792037964
+        },
+        {
+          "word": " name",
+          "start": 188.5,
+          "end": 188.86,
+          "probability": 0.9962230920791626
+        },
+        {
+          "word": " for",
+          "start": 188.86,
+          "end": 189.34,
+          "probability": 0.9889539480209351
+        },
+        {
+          "word": " a",
+          "start": 189.34,
+          "end": 189.52,
+          "probability": 0.981635332107544
+        },
+        {
+          "word": " food",
+          "start": 189.52,
+          "end": 189.84,
+          "probability": 0.9930056929588318
+        },
+        {
+          "word": " with",
+          "start": 189.84,
+          "end": 190.1,
+          "probability": 0.9931464791297913
+        },
+        {
+          "word": " such",
+          "start": 190.1,
+          "end": 190.56,
+          "probability": 0.9964308738708496
+        },
+        {
+          "word": " long",
+          "start": 190.56,
+          "end": 190.8,
+          "probability": 0.9914930462837219
+        },
+        {
+          "word": " history.",
+          "start": 190.8,
+          "end": 191.42,
+          "probability": 0.9989782571792603
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 18192,
+      "start": 193.46,
+      "end": 200.16,
+      "text": " During Dongjiu, the dumplings, which are usually white, are coloured, red or pink.",
+      "tokens": [
+        50940,
+        6842,
+        13609,
+        4013,
+        84,
+        11,
+        264,
+        31721,
+        11,
+        597,
+        366,
+        2673,
+        2418,
+        11,
+        366,
+        42042,
+        11,
+        2182,
+        420,
+        7022,
+        13,
+        51272
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13652238728087626,
+      "compression_ratio": 1.5073891625615763,
+      "no_speech_prob": 0.005176952108740807,
+      "words": [
+        {
+          "word": " During",
+          "start": 193.46,
+          "end": 193.86,
+          "probability": 0.41247788071632385
+        },
+        {
+          "word": " Dongjiu,",
+          "start": 193.86,
+          "end": 194.8,
+          "probability": 0.3775129516919454
+        },
+        {
+          "word": " the",
+          "start": 195.26,
+          "end": 195.34,
+          "probability": 0.9942371845245361
+        },
+        {
+          "word": " dumplings,",
+          "start": 195.34,
+          "end": 195.72,
+          "probability": 0.9804314970970154
+        },
+        {
+          "word": " which",
+          "start": 196.26,
+          "end": 196.52,
+          "probability": 0.9973817467689514
+        },
+        {
+          "word": " are",
+          "start": 196.52,
+          "end": 196.78,
+          "probability": 0.9965200424194336
+        },
+        {
+          "word": " usually",
+          "start": 196.78,
+          "end": 197.22,
+          "probability": 0.9926247000694275
+        },
+        {
+          "word": " white,",
+          "start": 197.22,
+          "end": 197.74,
+          "probability": 0.9969195127487183
+        },
+        {
+          "word": " are",
+          "start": 198.3,
+          "end": 198.38,
+          "probability": 0.99718177318573
+        },
+        {
+          "word": " coloured,",
+          "start": 198.38,
+          "end": 198.82,
+          "probability": 0.6193284392356873
+        },
+        {
+          "word": " red",
+          "start": 199.2,
+          "end": 199.3,
+          "probability": 0.9859977960586548
+        },
+        {
+          "word": " or",
+          "start": 199.3,
+          "end": 199.76,
+          "probability": 0.7735836505889893
+        },
+        {
+          "word": " pink.",
+          "start": 199.76,
+          "end": 200.16,
+          "probability": 0.9989182949066162
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 18192,
+      "start": 201.0,
+      "end": 204.54,
+      "text": " The reason for this is that they bring people good luck.",
+      "tokens": [
+        51324,
+        440,
+        1778,
+        337,
+        341,
+        307,
+        300,
+        436,
+        1565,
+        561,
+        665,
+        3668,
+        13,
+        51496
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13652238728087626,
+      "compression_ratio": 1.5073891625615763,
+      "no_speech_prob": 0.005176952108740807,
+      "words": [
+        {
+          "word": " The",
+          "start": 201.0,
+          "end": 201.34,
+          "probability": 0.9958664178848267
+        },
+        {
+          "word": " reason",
+          "start": 201.34,
+          "end": 201.66,
+          "probability": 0.9988752007484436
+        },
+        {
+          "word": " for",
+          "start": 201.66,
+          "end": 201.88,
+          "probability": 0.9974396228790283
+        },
+        {
+          "word": " this",
+          "start": 201.88,
+          "end": 202.16,
+          "probability": 0.9978629946708679
+        },
+        {
+          "word": " is",
+          "start": 202.16,
+          "end": 202.68,
+          "probability": 0.9482019543647766
+        },
+        {
+          "word": " that",
+          "start": 202.68,
+          "end": 202.96,
+          "probability": 0.9855406880378723
+        },
+        {
+          "word": " they",
+          "start": 202.96,
+          "end": 203.16,
+          "probability": 0.9954196214675903
+        },
+        {
+          "word": " bring",
+          "start": 203.16,
+          "end": 203.44,
+          "probability": 0.9980443716049194
+        },
+        {
+          "word": " people",
+          "start": 203.44,
+          "end": 203.9,
+          "probability": 0.9982351064682007
+        },
+        {
+          "word": " good",
+          "start": 203.9,
+          "end": 204.2,
+          "probability": 0.9940954446792603
+        },
+        {
+          "word": " luck.",
+          "start": 204.2,
+          "end": 204.54,
+          "probability": 0.9997304081916809
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 18192,
+      "start": 205.7,
+      "end": 210.6,
+      "text": " For a lot of older Chinese people, Dongjiu is an anniversary.",
+      "tokens": [
+        51556,
+        1171,
+        257,
+        688,
+        295,
+        4906,
+        4649,
+        561,
+        11,
+        13609,
+        4013,
+        84,
+        307,
+        364,
+        12962,
+        13,
+        51808
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13652238728087626,
+      "compression_ratio": 1.5073891625615763,
+      "no_speech_prob": 0.005176952108740807,
+      "words": [
+        {
+          "word": " For",
+          "start": 205.7,
+          "end": 206.08,
+          "probability": 0.995597779750824
+        },
+        {
+          "word": " a",
+          "start": 206.08,
+          "end": 206.24,
+          "probability": 0.9936928749084473
+        },
+        {
+          "word": " lot",
+          "start": 206.24,
+          "end": 206.42,
+          "probability": 0.9986673593521118
+        },
+        {
+          "word": " of",
+          "start": 206.42,
+          "end": 206.64,
+          "probability": 0.9959994554519653
+        },
+        {
+          "word": " older",
+          "start": 206.64,
+          "end": 207.0,
+          "probability": 0.9777324199676514
+        },
+        {
+          "word": " Chinese",
+          "start": 207.0,
+          "end": 207.42,
+          "probability": 0.9830762147903442
+        },
+        {
+          "word": " people,",
+          "start": 207.42,
+          "end": 208.12,
+          "probability": 0.9983488321304321
+        },
+        {
+          "word": " Dongjiu",
+          "start": 208.64,
+          "end": 209.18,
+          "probability": 0.9760270714759827
+        },
+        {
+          "word": " is",
+          "start": 209.18,
+          "end": 209.66,
+          "probability": 0.9943283200263977
+        },
+        {
+          "word": " an",
+          "start": 209.66,
+          "end": 209.88,
+          "probability": 0.9953193068504333
+        },
+        {
+          "word": " anniversary.",
+          "start": 209.88,
+          "end": 210.6,
+          "probability": 0.9579476714134216
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 21060,
+      "start": 210.6,
+      "end": 217.6,
+      "text": " They believe people become a year older on Dongjiu, rather than on their birthdays.",
+      "tokens": [
+        50372,
+        814,
+        1697,
+        561,
+        1813,
+        257,
+        1064,
+        4906,
+        322,
+        13609,
+        4013,
+        84,
+        11,
+        2831,
+        813,
+        322,
+        641,
+        48739,
+        13,
+        50720
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18932740828570196,
+      "compression_ratio": 1.4438202247191012,
+      "no_speech_prob": 0.007314165588468313,
+      "words": [
+        {
+          "word": " They",
+          "start": 210.6,
+          "end": 211.94,
+          "probability": 0.44599753618240356
+        },
+        {
+          "word": " believe",
+          "start": 211.94,
+          "end": 212.36,
+          "probability": 0.980614960193634
+        },
+        {
+          "word": " people",
+          "start": 212.36,
+          "end": 212.92,
+          "probability": 0.9807386994361877
+        },
+        {
+          "word": " become",
+          "start": 212.92,
+          "end": 213.38,
+          "probability": 0.992290198802948
+        },
+        {
+          "word": " a",
+          "start": 213.38,
+          "end": 213.64,
+          "probability": 0.9734708070755005
+        },
+        {
+          "word": " year",
+          "start": 213.64,
+          "end": 213.9,
+          "probability": 0.9735174179077148
+        },
+        {
+          "word": " older",
+          "start": 213.9,
+          "end": 214.46,
+          "probability": 0.991472601890564
+        },
+        {
+          "word": " on",
+          "start": 214.46,
+          "end": 214.88,
+          "probability": 0.90123450756073
+        },
+        {
+          "word": " Dongjiu,",
+          "start": 214.88,
+          "end": 215.56,
+          "probability": 0.38960237552722293
+        },
+        {
+          "word": " rather",
+          "start": 215.88,
+          "end": 216.42,
+          "probability": 0.99184650182724
+        },
+        {
+          "word": " than",
+          "start": 216.42,
+          "end": 216.66,
+          "probability": 0.9859126210212708
+        },
+        {
+          "word": " on",
+          "start": 216.66,
+          "end": 216.92,
+          "probability": 0.9873954057693481
+        },
+        {
+          "word": " their",
+          "start": 216.92,
+          "end": 217.1,
+          "probability": 0.990931510925293
+        },
+        {
+          "word": " birthdays.",
+          "start": 217.1,
+          "end": 217.6,
+          "probability": 0.9332994222640991
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 21060,
+      "start": 218.82,
+      "end": 226.46,
+      "text": " People also believe that if you eat too Tainu'en, you will be lucky, and that a married person",
+      "tokens": [
+        50776,
+        3432,
+        611,
+        1697,
+        300,
+        498,
+        291,
+        1862,
+        886,
+        314,
+        491,
+        84,
+        6,
+        268,
+        11,
+        291,
+        486,
+        312,
+        6356,
+        11,
+        293,
+        300,
+        257,
+        5259,
+        954,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18932740828570196,
+      "compression_ratio": 1.4438202247191012,
+      "no_speech_prob": 0.007314165588468313,
+      "words": [
+        {
+          "word": " People",
+          "start": 218.82,
+          "end": 219.2,
+          "probability": 0.9842686653137207
+        },
+        {
+          "word": " also",
+          "start": 219.2,
+          "end": 219.74,
+          "probability": 0.9977287650108337
+        },
+        {
+          "word": " believe",
+          "start": 219.74,
+          "end": 220.2,
+          "probability": 0.9979275465011597
+        },
+        {
+          "word": " that",
+          "start": 220.2,
+          "end": 220.6,
+          "probability": 0.9851077198982239
+        },
+        {
+          "word": " if",
+          "start": 220.6,
+          "end": 220.92,
+          "probability": 0.955928385257721
+        },
+        {
+          "word": " you",
+          "start": 220.92,
+          "end": 221.14,
+          "probability": 0.9980881810188293
+        },
+        {
+          "word": " eat",
+          "start": 221.14,
+          "end": 221.56,
+          "probability": 0.9970077872276306
+        },
+        {
+          "word": " too",
+          "start": 221.56,
+          "end": 222.06,
+          "probability": 0.517842710018158
+        },
+        {
+          "word": " Tainu",
+          "start": 222.06,
+          "end": 222.78,
+          "probability": 0.22355251821378866
+        },
+        {
+          "word": "'en,",
+          "start": 222.78,
+          "end": 223.02,
+          "probability": 0.5378392413258553
+        },
+        {
+          "word": " you",
+          "start": 223.4,
+          "end": 223.56,
+          "probability": 0.9901142120361328
+        },
+        {
+          "word": " will",
+          "start": 223.56,
+          "end": 223.7,
+          "probability": 0.9642931818962097
+        },
+        {
+          "word": " be",
+          "start": 223.7,
+          "end": 223.86,
+          "probability": 0.9985356330871582
+        },
+        {
+          "word": " lucky,",
+          "start": 223.86,
+          "end": 224.3,
+          "probability": 0.9808881282806396
+        },
+        {
+          "word": " and",
+          "start": 224.88,
+          "end": 225.1,
+          "probability": 0.9889994263648987
+        },
+        {
+          "word": " that",
+          "start": 225.1,
+          "end": 225.28,
+          "probability": 0.9927674531936646
+        },
+        {
+          "word": " a",
+          "start": 225.28,
+          "end": 225.46,
+          "probability": 0.9889225959777832
+        },
+        {
+          "word": " married",
+          "start": 225.46,
+          "end": 225.86,
+          "probability": 0.9927105903625488
+        },
+        {
+          "word": " person",
+          "start": 225.86,
+          "end": 226.46,
+          "probability": 0.9981575608253479
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 21060,
+      "start": 226.46,
+      "end": 233.54,
+      "text": " should leave too in the bowl so their wishes come true. But I'm not convinced.",
+      "tokens": [
+        51164,
+        820,
+        1856,
+        886,
+        294,
+        264,
+        6571,
+        370,
+        641,
+        15065,
+        808,
+        2074,
+        13,
+        583,
+        286,
+        478,
+        406,
+        12561,
+        13,
+        51508
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18932740828570196,
+      "compression_ratio": 1.4438202247191012,
+      "no_speech_prob": 0.007314165588468313,
+      "words": [
+        {
+          "word": " should",
+          "start": 226.46,
+          "end": 226.94,
+          "probability": 0.995788037776947
+        },
+        {
+          "word": " leave",
+          "start": 226.94,
+          "end": 227.34,
+          "probability": 0.9341392517089844
+        },
+        {
+          "word": " too",
+          "start": 227.34,
+          "end": 227.9,
+          "probability": 0.9688720107078552
+        },
+        {
+          "word": " in",
+          "start": 227.9,
+          "end": 228.26,
+          "probability": 0.9654225707054138
+        },
+        {
+          "word": " the",
+          "start": 228.26,
+          "end": 228.38,
+          "probability": 0.9946326017379761
+        },
+        {
+          "word": " bowl",
+          "start": 228.38,
+          "end": 228.76,
+          "probability": 0.8867445588111877
+        },
+        {
+          "word": " so",
+          "start": 228.76,
+          "end": 229.38,
+          "probability": 0.5198880434036255
+        },
+        {
+          "word": " their",
+          "start": 229.38,
+          "end": 229.6,
+          "probability": 0.9848641753196716
+        },
+        {
+          "word": " wishes",
+          "start": 229.6,
+          "end": 229.94,
+          "probability": 0.9926024079322815
+        },
+        {
+          "word": " come",
+          "start": 229.94,
+          "end": 230.26,
+          "probability": 0.9964369535446167
+        },
+        {
+          "word": " true.",
+          "start": 230.26,
+          "end": 230.66,
+          "probability": 0.9972679615020752
+        },
+        {
+          "word": " But",
+          "start": 231.46,
+          "end": 231.9,
+          "probability": 0.9710540771484375
+        },
+        {
+          "word": " I'm",
+          "start": 231.9,
+          "end": 232.64,
+          "probability": 0.8636646270751953
+        },
+        {
+          "word": " not",
+          "start": 232.64,
+          "end": 232.8,
+          "probability": 0.9984795451164246
+        },
+        {
+          "word": " convinced.",
+          "start": 232.8,
+          "end": 233.54,
+          "probability": 0.9980677962303162
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 23354,
+      "start": 234.26,
+      "end": 240.78,
+      "text": " I don't really believe in superstitions, but it doesn't matter. It's nice to see that some",
+      "tokens": [
+        50400,
+        286,
+        500,
+        380,
+        534,
+        1697,
+        294,
+        29423,
+        2451,
+        11,
+        457,
+        309,
+        1177,
+        380,
+        1871,
+        13,
+        467,
+        311,
+        1481,
+        281,
+        536,
+        300,
+        512,
+        50724
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20338921113447708,
+      "compression_ratio": 1.2142857142857142,
+      "no_speech_prob": 0.13543948531150818,
+      "words": [
+        {
+          "word": " I",
+          "start": 234.16,
+          "end": 234.5,
+          "probability": 0.8294200301170349
+        },
+        {
+          "word": " don't",
+          "start": 234.5,
+          "end": 234.76,
+          "probability": 0.9899535775184631
+        },
+        {
+          "word": " really",
+          "start": 234.76,
+          "end": 235.04,
+          "probability": 0.9880889058113098
+        },
+        {
+          "word": " believe",
+          "start": 235.04,
+          "end": 235.56,
+          "probability": 0.9972359538078308
+        },
+        {
+          "word": " in",
+          "start": 235.56,
+          "end": 235.88,
+          "probability": 0.9991648197174072
+        },
+        {
+          "word": " superstitions,",
+          "start": 235.88,
+          "end": 236.72,
+          "probability": 0.9910183250904083
+        },
+        {
+          "word": " but",
+          "start": 237.18,
+          "end": 237.42,
+          "probability": 0.9925820827484131
+        },
+        {
+          "word": " it",
+          "start": 237.42,
+          "end": 237.76,
+          "probability": 0.9907854795455933
+        },
+        {
+          "word": " doesn't",
+          "start": 237.76,
+          "end": 238.1,
+          "probability": 0.9937625527381897
+        },
+        {
+          "word": " matter.",
+          "start": 238.1,
+          "end": 238.5,
+          "probability": 0.9984152317047119
+        },
+        {
+          "word": " It's",
+          "start": 239.06,
+          "end": 239.4,
+          "probability": 0.986413300037384
+        },
+        {
+          "word": " nice",
+          "start": 239.4,
+          "end": 239.7,
+          "probability": 0.9969191551208496
+        },
+        {
+          "word": " to",
+          "start": 239.7,
+          "end": 239.94,
+          "probability": 0.9990720748901367
+        },
+        {
+          "word": " see",
+          "start": 239.94,
+          "end": 240.18,
+          "probability": 0.9975417852401733
+        },
+        {
+          "word": " that",
+          "start": 240.18,
+          "end": 240.38,
+          "probability": 0.9866918921470642
+        },
+        {
+          "word": " some",
+          "start": 240.38,
+          "end": 240.78,
+          "probability": 0.9939258694648743
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 23354,
+      "start": 240.78,
+      "end": 242.88,
+      "text": " traditions aren't dying out.",
+      "tokens": [
+        50724,
+        15643,
+        3212,
+        380,
+        8639,
+        484,
+        13,
+        50884
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.20338921113447708,
+      "compression_ratio": 1.2142857142857142,
+      "no_speech_prob": 0.13543948531150818,
+      "words": [
+        {
+          "word": " traditions",
+          "start": 240.78,
+          "end": 241.34,
+          "probability": 0.9944100975990295
+        },
+        {
+          "word": " aren't",
+          "start": 241.34,
+          "end": 242.06,
+          "probability": 0.9978358447551727
+        },
+        {
+          "word": " dying",
+          "start": 242.06,
+          "end": 242.38,
+          "probability": 0.9590607285499573
+        },
+        {
+          "word": " out.",
+          "start": 242.38,
+          "end": 242.88,
+          "probability": 0.9986408352851868
+        }
+      ]
+    }
+  ]
+}

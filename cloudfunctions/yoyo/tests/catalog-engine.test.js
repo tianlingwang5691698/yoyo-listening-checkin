@@ -5,6 +5,7 @@ const catalogEngine = require('../lib/catalog-engine');
 const listeningPlanEngine = require('../lib/listening-plan-engine');
 const taskPresenter = require('../lib/task-presenter');
 const labels = require('../../../utils/labels');
+const { TRANSCRIPT_BUNDLE_PATHS } = require('../lib/constants');
 
 test('Peppa 时长按云端 128kbps MP3 文件大小还原', () => {
   assert.equal(catalogEngine.inferPeppaDurationFromFileSize(4976408), 311);
@@ -297,6 +298,24 @@ test('Unlock 4 听口 第三版使用静态 manifest 快速目录', async () => 
   assert.equal(elapsedMs < 300, true);
 });
 
+test('Unlock 1-4 听口练习册第三版使用独立静态目录', () => {
+  const expected = {
+    unlock1workbookthirdedition: 12,
+    unlock2workbookthirdedition: 16,
+    unlock3workbookthirdedition: 13,
+    unlock4workbookthirdedition: 15
+  };
+  const catalogs = catalogEngine.getStaticCatalogMap();
+  Object.entries(expected).forEach(([category, count]) => {
+    assert.equal(catalogs[category].length, count);
+    assert.equal(new Set(catalogs[category].map((item) => item.audioCloudPath)).size, count);
+  });
+  assert.deepEqual(TRANSCRIPT_BUNDLE_PATHS.unlock1workbookthirdedition, [
+    '_transcripts/A1/unlock1-workbook-third-edition/bundle-wordaligned-v2.json',
+    '_transcripts/A1/unlock1-workbook-third-edition/bundle-wordaligned-v1.json'
+  ]);
+});
+
 test('B2 听力首屏只返回 Unlock 4 第三版数量摘要', () => {
   const materials = listeningPlanEngine.buildMaterialEntries('B2', {
     getCatalogSummary: catalogEngine.getCatalogSummary
@@ -323,32 +342,40 @@ test('Unlock 分类标签区分课本和练习册', () => {
   assert.equal(catalogLabels.unlock1, 'Unlock 1 听口 第二版');
   assert.equal(catalogLabels.unlock1thirdedition, 'Unlock 1 听口 第三版');
   assert.equal(catalogLabels.unlock1workbook, 'Unlock 1 听口 练习册 第二版');
+  assert.equal(catalogLabels.unlock1workbookthirdedition, 'Unlock 1 听口练习册 第三版');
   assert.equal(catalogLabels.unlock2, 'Unlock 2 课本');
   assert.equal(catalogLabels.unlock2thirdedition, 'Unlock 2 听口 第三版');
   assert.equal(catalogLabels.unlock2workbook, 'Unlock 2 练习册');
+  assert.equal(catalogLabels.unlock2workbookthirdedition, 'Unlock 2 听口练习册 第三版');
   assert.equal(catalogLabels.unlock3textbook, 'Unlock3 听口 第二版');
   assert.equal(catalogLabels.unlock3thirdedition, 'Unlock3 听口 第三版');
   assert.equal(catalogLabels.unlock3, 'Unlock3 听口练习册 第二版');
+  assert.equal(catalogLabels.unlock3workbookthirdedition, 'Unlock3 听口练习册 第三版');
   assert.equal(catalogLabels.unlock4, 'Unlock 4 课本');
   assert.equal(catalogLabels.unlock4thirdedition, 'Unlock 4 听口 第三版');
   assert.equal(catalogLabels.unlock4workbook, 'Unlock 4 练习册');
+  assert.equal(catalogLabels.unlock4workbookthirdedition, 'Unlock 4 听口练习册 第三版');
   assert.deepEqual(planTitles, {
     unlock1: 'Unlock 1 听口 第二版',
     unlock1thirdedition: 'Unlock 1 听口 第三版',
+    unlock1workbookthirdedition: 'Unlock 1 听口练习册 第三版',
     unlock1workbook: 'Unlock 1 听口 练习册 第二版',
     unlock2: 'Unlock 2 课本',
     unlock2thirdedition: 'Unlock 2 听口 第三版',
+    unlock2workbookthirdedition: 'Unlock 2 听口练习册 第三版',
     unlock2workbook: 'Unlock 2 练习册',
     unlock3textbook: 'Unlock3 听口 第二版',
     unlock3thirdedition: 'Unlock3 听口 第三版',
+    unlock3workbookthirdedition: 'Unlock3 听口练习册 第三版',
     unlock3: 'Unlock3 听口练习册 第二版',
     unlock4: 'Unlock 4 课本',
     unlock4thirdedition: 'Unlock 4 听口 第三版',
+    unlock4workbookthirdedition: 'Unlock 4 听口练习册 第三版',
     unlock4workbook: 'Unlock 4 练习册'
   });
   assert.deepEqual(
     listeningPlanEngine.MATERIALS.filter((item) => item.levelIds.includes('A1') && item.category.startsWith('unlock')).map((item) => item.category),
-    ['unlock1', 'unlock1thirdedition', 'unlock1workbook']
+    ['unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook']
   );
   assert.equal(taskPresenter.getCategoryLabel('unlock1thirdedition'), 'Unlock 1 听口 第三版');
   assert.deepEqual(taskPresenter.getTaskPresentation({
@@ -361,11 +388,14 @@ test('Unlock 分类标签区分课本和练习册', () => {
     coverBadge: 'Unlock 1 听口 第三版'
   });
   assert.equal(taskPresenter.getCategoryLabel('unlock1workbook'), 'Unlock 1 听口 练习册 第二版');
+  assert.equal(taskPresenter.getCategoryLabel('unlock1workbookthirdedition'), 'Unlock 1 听口练习册 第三版');
   assert.equal(taskPresenter.getCategoryLabel('unlock2workbook'), 'Unlock 2 练习册');
+  assert.equal(taskPresenter.getCategoryLabel('unlock2workbookthirdedition'), 'Unlock 2 听口练习册 第三版');
   assert.equal(taskPresenter.getCategoryLabel('unlock2thirdedition'), 'Unlock 2 听口 第三版');
   assert.equal(taskPresenter.getCategoryLabel('unlock3textbook'), 'Unlock3 听口 第二版');
   assert.equal(taskPresenter.getCategoryLabel('unlock3thirdedition'), 'Unlock3 听口 第三版');
   assert.equal(taskPresenter.getCategoryLabel('unlock3'), 'Unlock3 听口练习册 第二版');
+  assert.equal(taskPresenter.getCategoryLabel('unlock3workbookthirdedition'), 'Unlock3 听口练习册 第三版');
   assert.deepEqual(taskPresenter.getTaskPresentation({
     category: 'unlock3thirdedition',
     title: 'UNL3_PP_IN_LS3_U07_p158_X05_t06'
@@ -376,9 +406,11 @@ test('Unlock 分类标签区分课本和练习册', () => {
     coverBadge: 'Unlock 3 听口 第三版'
   });
   assert.equal(taskPresenter.getCategoryLabel('unlock4workbook'), 'Unlock 4 练习册');
+  assert.equal(taskPresenter.getCategoryLabel('unlock4workbookthirdedition'), 'Unlock 4 听口练习册 第三版');
   assert.equal(taskPresenter.getCategoryLabel('unlock4thirdedition'), 'Unlock 4 听口 第三版');
   assert.equal(labels.getCategoryDisplayLabel('unlock4'), 'Unlock 4 课本');
   assert.equal(labels.getCategoryDisplayLabel('unlock4workbook'), 'Unlock 4 练习册');
+  assert.equal(labels.getCategoryDisplayLabel('unlock4workbookthirdedition'), 'Unlock 4 听口练习册 第三版');
   assert.equal(labels.getCategoryDisplayLabel('unlock4thirdedition'), 'Unlock 4 听口 第三版');
   assert.equal(labels.getCategoryDisplayLabel('unlock1thirdedition'), 'Unlock 1 听口 第三版');
   assert.equal(labels.getCategoryDisplayLabel('unlock2thirdedition'), 'Unlock 2 听口 第三版');
@@ -387,10 +419,10 @@ test('Unlock 分类标签区分课本和练习册', () => {
   assert.equal(labels.getCategoryDisplayLabel('unlock3'), 'Unlock3 听口练习册 第二版');
   assert.deepEqual(
     listeningPlanEngine.MATERIALS.filter((item) => item.levelIds.includes('B1') && item.category.startsWith('unlock')).map((item) => item.category),
-    ['unlock3textbook', 'unlock3thirdedition', 'unlock3']
+    ['unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3']
   );
   assert.deepEqual(
     listeningPlanEngine.MATERIALS.filter((item) => item.levelIds.includes('B2') && item.category.startsWith('unlock')).map((item) => item.category),
-    ['unlock4', 'unlock4thirdedition', 'unlock4workbook']
+    ['unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook']
   );
 });

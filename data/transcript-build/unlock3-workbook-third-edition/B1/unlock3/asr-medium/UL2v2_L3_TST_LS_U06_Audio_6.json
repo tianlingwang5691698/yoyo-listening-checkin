@@ -1,0 +1,4281 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Track 6.1 Hello and welcome to the lecture. Do you know what a happy accident is? It's when something happens that isn't planned and turns out to be good for everyone. This happens to scientists quite a lot and they have made some important discoveries as a result. Some of these you may already know about but perhaps you don't know that some were happy accidents. I'd like to start by talking about some surprising numbers. Experts say that between 30 and 50% of the things that scientists discover aren't planned. But the important thing is that the scientist realises it is valuable. So let's have a look at some of these happy accidents. First we'll discuss the discovery of a very important kind of medicine, antibiotics. In 1928, Alexander Fleming was cleaning his laboratory after a holiday when he found a dish of bacteria that he had left out. But he noticed that something had killed the bacteria on it, something he called penicillin. After more research, he found that it could kill other bacteria and didn't hurt animals. Fleming wasn't able to produce large quantities of penicillin, but he published his research in one of the medical journals. Oxford University scientists Howard Flory and Ernst Chain studied penicillin some more and after a lot of research, they developed the first antibiotic in 1942. Next, let's look at the X-ray. In 1895, Wilhelm Konrad-Runtken, a physicist, was doing an experiment with something called a cathode ray tube. A long pipe filled with a special gas, similar to a modern light bulb. When he put electricity into the tube, it lit up. Then he decided to put black paper around it and noticed a green-coloured light coming from a chemical close by. Runtken realized that the cathode ray tube was sending out a new type of light and he discovered this light could go through skin, but not bones or metal. He called the technology X-rays because he didn't really know what they were. Runtken won a Nobel Prize in Physics in 1901 for his discovery. Now I'd like to mention a product I'm sure you all know. Plastic Leo Hendrick Bakeland invented the first kind of plastic in 1907. Bakeland was looking for something to replace the main ingredient in wood polish called shellac, which comes from an insect. People used this to protect wood and other things, but it was very expensive. Bakeland mixed a lot of things together and then heated them up, but he didn't find what he was looking for. Instead, he created something that didn't melt when it got hot or break when someone hit it. Yes, he discovered plastic, a material you can see all around you right now by accident. Are there any questions? Okay, let's look at a few more examples.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.76,
+      "text": " Track 6.1",
+      "tokens": [
+        50364,
+        31903,
+        1386,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2616579267713759,
+      "compression_ratio": 1.4324324324324325,
+      "no_speech_prob": 0.39615821838378906,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.54,
+          "probability": 0.07087317109107971
+        },
+        {
+          "word": " 6",
+          "start": 0.54,
+          "end": 1.02,
+          "probability": 0.9669926166534424
+        },
+        {
+          "word": ".1",
+          "start": 1.02,
+          "end": 1.76,
+          "probability": 0.9965360760688782
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.3600000000000003,
+      "end": 6.86,
+      "text": " Hello and welcome to the lecture.",
+      "tokens": [
+        50554,
+        2425,
+        293,
+        2928,
+        281,
+        264,
+        7991,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2616579267713759,
+      "compression_ratio": 1.4324324324324325,
+      "no_speech_prob": 0.39615821838378906,
+      "words": [
+        {
+          "word": " Hello",
+          "start": 3.3600000000000003,
+          "end": 4.32,
+          "probability": 0.26634299755096436
+        },
+        {
+          "word": " and",
+          "start": 4.32,
+          "end": 5.28,
+          "probability": 0.6904159784317017
+        },
+        {
+          "word": " welcome",
+          "start": 5.28,
+          "end": 5.88,
+          "probability": 0.9638170003890991
+        },
+        {
+          "word": " to",
+          "start": 5.88,
+          "end": 6.26,
+          "probability": 0.997403085231781
+        },
+        {
+          "word": " the",
+          "start": 6.26,
+          "end": 6.36,
+          "probability": 0.9628379344940186
+        },
+        {
+          "word": " lecture.",
+          "start": 6.36,
+          "end": 6.86,
+          "probability": 0.9919490814208984
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.26,
+      "end": 11.3,
+      "text": " Do you know what a happy accident is?",
+      "tokens": [
+        50764,
+        1144,
+        291,
+        458,
+        437,
+        257,
+        2055,
+        6398,
+        307,
+        30,
+        50934
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2616579267713759,
+      "compression_ratio": 1.4324324324324325,
+      "no_speech_prob": 0.39615821838378906,
+      "words": [
+        {
+          "word": " Do",
+          "start": 8.26,
+          "end": 8.4,
+          "probability": 0.9643126726150513
+        },
+        {
+          "word": " you",
+          "start": 8.4,
+          "end": 8.62,
+          "probability": 0.998396098613739
+        },
+        {
+          "word": " know",
+          "start": 8.62,
+          "end": 9.06,
+          "probability": 0.9965540170669556
+        },
+        {
+          "word": " what",
+          "start": 9.06,
+          "end": 9.42,
+          "probability": 0.9960351586341858
+        },
+        {
+          "word": " a",
+          "start": 9.42,
+          "end": 9.56,
+          "probability": 0.9983452558517456
+        },
+        {
+          "word": " happy",
+          "start": 9.56,
+          "end": 10.06,
+          "probability": 0.9529415369033813
+        },
+        {
+          "word": " accident",
+          "start": 10.06,
+          "end": 10.7,
+          "probability": 0.995578944683075
+        },
+        {
+          "word": " is?",
+          "start": 10.7,
+          "end": 11.3,
+          "probability": 0.9902207851409912
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 12.38,
+      "end": 15.5,
+      "text": " It's when something happens that isn't planned",
+      "tokens": [
+        50984,
+        467,
+        311,
+        562,
+        746,
+        2314,
+        300,
+        1943,
+        380,
+        8589,
+        51144
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2616579267713759,
+      "compression_ratio": 1.4324324324324325,
+      "no_speech_prob": 0.39615821838378906,
+      "words": [
+        {
+          "word": " It's",
+          "start": 12.38,
+          "end": 12.74,
+          "probability": 0.9782548546791077
+        },
+        {
+          "word": " when",
+          "start": 12.74,
+          "end": 12.9,
+          "probability": 0.9964136481285095
+        },
+        {
+          "word": " something",
+          "start": 12.9,
+          "end": 13.5,
+          "probability": 0.9975124597549438
+        },
+        {
+          "word": " happens",
+          "start": 13.5,
+          "end": 14.08,
+          "probability": 0.9973706007003784
+        },
+        {
+          "word": " that",
+          "start": 14.08,
+          "end": 14.5,
+          "probability": 0.9920676946640015
+        },
+        {
+          "word": " isn't",
+          "start": 14.5,
+          "end": 14.98,
+          "probability": 0.9978879988193512
+        },
+        {
+          "word": " planned",
+          "start": 14.98,
+          "end": 15.5,
+          "probability": 0.9980247020721436
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 15.5,
+      "end": 18.26,
+      "text": " and turns out to be good for everyone.",
+      "tokens": [
+        51154,
+        293,
+        4523,
+        484,
+        281,
+        312,
+        665,
+        337,
+        1518,
+        13,
+        51284
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2616579267713759,
+      "compression_ratio": 1.4324324324324325,
+      "no_speech_prob": 0.39615821838378906,
+      "words": [
+        {
+          "word": " and",
+          "start": 15.5,
+          "end": 16.16,
+          "probability": 0.8764194846153259
+        },
+        {
+          "word": " turns",
+          "start": 16.16,
+          "end": 16.54,
+          "probability": 0.9948291182518005
+        },
+        {
+          "word": " out",
+          "start": 16.54,
+          "end": 16.82,
+          "probability": 0.9995241165161133
+        },
+        {
+          "word": " to",
+          "start": 16.82,
+          "end": 17.04,
+          "probability": 0.9982609152793884
+        },
+        {
+          "word": " be",
+          "start": 17.04,
+          "end": 17.16,
+          "probability": 0.9991359114646912
+        },
+        {
+          "word": " good",
+          "start": 17.16,
+          "end": 17.38,
+          "probability": 0.9987764954566956
+        },
+        {
+          "word": " for",
+          "start": 17.38,
+          "end": 17.66,
+          "probability": 0.9994107484817505
+        },
+        {
+          "word": " everyone.",
+          "start": 17.66,
+          "end": 18.26,
+          "probability": 0.9959210157394409
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 19.24,
+      "end": 22.0,
+      "text": " This happens to scientists quite a lot",
+      "tokens": [
+        51334,
+        639,
+        2314,
+        281,
+        7708,
+        1596,
+        257,
+        688,
+        51474
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2616579267713759,
+      "compression_ratio": 1.4324324324324325,
+      "no_speech_prob": 0.39615821838378906,
+      "words": [
+        {
+          "word": " This",
+          "start": 19.24,
+          "end": 19.72,
+          "probability": 0.9937631487846375
+        },
+        {
+          "word": " happens",
+          "start": 19.72,
+          "end": 20.24,
+          "probability": 0.9972367286682129
+        },
+        {
+          "word": " to",
+          "start": 20.24,
+          "end": 20.46,
+          "probability": 0.9960837364196777
+        },
+        {
+          "word": " scientists",
+          "start": 20.46,
+          "end": 21.12,
+          "probability": 0.9865922331809998
+        },
+        {
+          "word": " quite",
+          "start": 21.12,
+          "end": 21.56,
+          "probability": 0.9988160133361816
+        },
+        {
+          "word": " a",
+          "start": 21.56,
+          "end": 21.76,
+          "probability": 0.9987633228302002
+        },
+        {
+          "word": " lot",
+          "start": 21.76,
+          "end": 22.0,
+          "probability": 0.9997907280921936
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 22.0,
+      "end": 26.38,
+      "text": " and they have made some important discoveries as a result.",
+      "tokens": [
+        51484,
+        293,
+        436,
+        362,
+        1027,
+        512,
+        1021,
+        28400,
+        382,
+        257,
+        1874,
+        13,
+        51694
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2616579267713759,
+      "compression_ratio": 1.4324324324324325,
+      "no_speech_prob": 0.39615821838378906,
+      "words": [
+        {
+          "word": " and",
+          "start": 22.0,
+          "end": 22.92,
+          "probability": 0.729279637336731
+        },
+        {
+          "word": " they",
+          "start": 22.92,
+          "end": 23.22,
+          "probability": 0.9966555833816528
+        },
+        {
+          "word": " have",
+          "start": 23.22,
+          "end": 23.42,
+          "probability": 0.994544267654419
+        },
+        {
+          "word": " made",
+          "start": 23.42,
+          "end": 23.64,
+          "probability": 0.9985388517379761
+        },
+        {
+          "word": " some",
+          "start": 23.64,
+          "end": 23.92,
+          "probability": 0.9980448484420776
+        },
+        {
+          "word": " important",
+          "start": 23.92,
+          "end": 24.44,
+          "probability": 0.9973843693733215
+        },
+        {
+          "word": " discoveries",
+          "start": 24.44,
+          "end": 25.22,
+          "probability": 0.999330997467041
+        },
+        {
+          "word": " as",
+          "start": 25.22,
+          "end": 25.8,
+          "probability": 0.9862536191940308
+        },
+        {
+          "word": " a",
+          "start": 25.8,
+          "end": 25.94,
+          "probability": 0.9985402822494507
+        },
+        {
+          "word": " result.",
+          "start": 25.94,
+          "end": 26.38,
+          "probability": 0.999776303768158
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2638,
+      "start": 27.38,
+      "end": 30.48,
+      "text": " Some of these you may already know about",
+      "tokens": [
+        50414,
+        2188,
+        295,
+        613,
+        291,
+        815,
+        1217,
+        458,
+        466,
+        50574
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17084106070096375,
+      "compression_ratio": 1.4450867052023122,
+      "no_speech_prob": 0.09709638357162476,
+      "words": [
+        {
+          "word": " Some",
+          "start": 27.28,
+          "end": 27.76,
+          "probability": 0.23249934613704681
+        },
+        {
+          "word": " of",
+          "start": 27.76,
+          "end": 28.0,
+          "probability": 0.989048421382904
+        },
+        {
+          "word": " these",
+          "start": 28.0,
+          "end": 28.34,
+          "probability": 0.9890341758728027
+        },
+        {
+          "word": " you",
+          "start": 28.34,
+          "end": 28.76,
+          "probability": 0.8436800837516785
+        },
+        {
+          "word": " may",
+          "start": 28.76,
+          "end": 29.02,
+          "probability": 0.9905564785003662
+        },
+        {
+          "word": " already",
+          "start": 29.02,
+          "end": 29.58,
+          "probability": 0.9842669367790222
+        },
+        {
+          "word": " know",
+          "start": 29.58,
+          "end": 30.0,
+          "probability": 0.9958834052085876
+        },
+        {
+          "word": " about",
+          "start": 30.0,
+          "end": 30.48,
+          "probability": 0.9910417199134827
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2638,
+      "start": 30.48,
+      "end": 35.76,
+      "text": " but perhaps you don't know that some were happy accidents.",
+      "tokens": [
+        50584,
+        457,
+        4317,
+        291,
+        500,
+        380,
+        458,
+        300,
+        512,
+        645,
+        2055,
+        23875,
+        13,
+        50844
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17084106070096375,
+      "compression_ratio": 1.4450867052023122,
+      "no_speech_prob": 0.09709638357162476,
+      "words": [
+        {
+          "word": " but",
+          "start": 30.48,
+          "end": 31.3,
+          "probability": 0.1467600017786026
+        },
+        {
+          "word": " perhaps",
+          "start": 31.3,
+          "end": 31.78,
+          "probability": 0.9591553807258606
+        },
+        {
+          "word": " you",
+          "start": 31.78,
+          "end": 32.18,
+          "probability": 0.992664635181427
+        },
+        {
+          "word": " don't",
+          "start": 32.18,
+          "end": 32.68,
+          "probability": 0.9850270748138428
+        },
+        {
+          "word": " know",
+          "start": 32.68,
+          "end": 32.92,
+          "probability": 0.9918268918991089
+        },
+        {
+          "word": " that",
+          "start": 32.92,
+          "end": 33.42,
+          "probability": 0.976157009601593
+        },
+        {
+          "word": " some",
+          "start": 33.42,
+          "end": 33.84,
+          "probability": 0.9872949719429016
+        },
+        {
+          "word": " were",
+          "start": 33.84,
+          "end": 34.38,
+          "probability": 0.9822849035263062
+        },
+        {
+          "word": " happy",
+          "start": 34.38,
+          "end": 34.88,
+          "probability": 0.9823747277259827
+        },
+        {
+          "word": " accidents.",
+          "start": 34.88,
+          "end": 35.76,
+          "probability": 0.9810545444488525
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2638,
+      "start": 37.58,
+      "end": 41.78,
+      "text": " I'd like to start by talking about some surprising numbers.",
+      "tokens": [
+        50924,
+        286,
+        1116,
+        411,
+        281,
+        722,
+        538,
+        1417,
+        466,
+        512,
+        8830,
+        3547,
+        13,
+        51144
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17084106070096375,
+      "compression_ratio": 1.4450867052023122,
+      "no_speech_prob": 0.09709638357162476,
+      "words": [
+        {
+          "word": " I'd",
+          "start": 37.540000000000006,
+          "end": 38.02,
+          "probability": 0.9616775214672089
+        },
+        {
+          "word": " like",
+          "start": 38.02,
+          "end": 38.16,
+          "probability": 0.999180257320404
+        },
+        {
+          "word": " to",
+          "start": 38.16,
+          "end": 38.4,
+          "probability": 0.998599112033844
+        },
+        {
+          "word": " start",
+          "start": 38.4,
+          "end": 38.88,
+          "probability": 0.9989967942237854
+        },
+        {
+          "word": " by",
+          "start": 38.88,
+          "end": 39.3,
+          "probability": 0.9910762310028076
+        },
+        {
+          "word": " talking",
+          "start": 39.3,
+          "end": 39.68,
+          "probability": 0.9967520236968994
+        },
+        {
+          "word": " about",
+          "start": 39.68,
+          "end": 40.02,
+          "probability": 0.9976480603218079
+        },
+        {
+          "word": " some",
+          "start": 40.02,
+          "end": 40.36,
+          "probability": 0.9980610013008118
+        },
+        {
+          "word": " surprising",
+          "start": 40.36,
+          "end": 41.08,
+          "probability": 0.9951924085617065
+        },
+        {
+          "word": " numbers.",
+          "start": 41.08,
+          "end": 41.78,
+          "probability": 0.9970566034317017
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2638,
+      "start": 43.02,
+      "end": 50.9,
+      "text": " Experts say that between 30 and 50% of the things that scientists discover aren't planned.",
+      "tokens": [
+        51194,
+        12522,
+        1373,
+        584,
+        300,
+        1296,
+        2217,
+        293,
+        2625,
+        4,
+        295,
+        264,
+        721,
+        300,
+        7708,
+        4411,
+        3212,
+        380,
+        8589,
+        13,
+        51594
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17084106070096375,
+      "compression_ratio": 1.4450867052023122,
+      "no_speech_prob": 0.09709638357162476,
+      "words": [
+        {
+          "word": " Experts",
+          "start": 43.02,
+          "end": 43.88,
+          "probability": 0.9748871326446533
+        },
+        {
+          "word": " say",
+          "start": 43.88,
+          "end": 44.1,
+          "probability": 0.9989684820175171
+        },
+        {
+          "word": " that",
+          "start": 44.1,
+          "end": 44.6,
+          "probability": 0.9902517795562744
+        },
+        {
+          "word": " between",
+          "start": 44.6,
+          "end": 44.98,
+          "probability": 0.9846702814102173
+        },
+        {
+          "word": " 30",
+          "start": 44.98,
+          "end": 45.74,
+          "probability": 0.9353166222572327
+        },
+        {
+          "word": " and",
+          "start": 45.74,
+          "end": 46.28,
+          "probability": 0.9009875059127808
+        },
+        {
+          "word": " 50",
+          "start": 46.28,
+          "end": 46.78,
+          "probability": 0.993569016456604
+        },
+        {
+          "word": "%",
+          "start": 46.78,
+          "end": 47.18,
+          "probability": 0.72682785987854
+        },
+        {
+          "word": " of",
+          "start": 47.18,
+          "end": 47.46,
+          "probability": 0.9982661604881287
+        },
+        {
+          "word": " the",
+          "start": 47.46,
+          "end": 47.6,
+          "probability": 0.9962493777275085
+        },
+        {
+          "word": " things",
+          "start": 47.6,
+          "end": 47.96,
+          "probability": 0.9925816059112549
+        },
+        {
+          "word": " that",
+          "start": 47.96,
+          "end": 48.2,
+          "probability": 0.9843906760215759
+        },
+        {
+          "word": " scientists",
+          "start": 48.2,
+          "end": 48.72,
+          "probability": 0.9800556302070618
+        },
+        {
+          "word": " discover",
+          "start": 48.72,
+          "end": 49.5,
+          "probability": 0.9951919317245483
+        },
+        {
+          "word": " aren't",
+          "start": 49.5,
+          "end": 50.36,
+          "probability": 0.9935013353824615
+        },
+        {
+          "word": " planned.",
+          "start": 50.36,
+          "end": 50.9,
+          "probability": 0.9985241293907166
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5090,
+      "start": 51.9,
+      "end": 57.14,
+      "text": " But the important thing is that the scientist realises it is valuable.",
+      "tokens": [
+        50414,
+        583,
+        264,
+        1021,
+        551,
+        307,
+        300,
+        264,
+        12662,
+        957,
+        3598,
+        309,
+        307,
+        8263,
+        13,
+        50694
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2082675485049977,
+      "compression_ratio": 1.4189189189189189,
+      "no_speech_prob": 0.06248629838228226,
+      "words": [
+        {
+          "word": " But",
+          "start": 51.53,
+          "end": 52.02,
+          "probability": 0.4387013614177704
+        },
+        {
+          "word": " the",
+          "start": 52.02,
+          "end": 52.58,
+          "probability": 0.7682542204856873
+        },
+        {
+          "word": " important",
+          "start": 52.58,
+          "end": 53.1,
+          "probability": 0.9933204650878906
+        },
+        {
+          "word": " thing",
+          "start": 53.1,
+          "end": 53.44,
+          "probability": 0.9964396357536316
+        },
+        {
+          "word": " is",
+          "start": 53.44,
+          "end": 53.78,
+          "probability": 0.9953600764274597
+        },
+        {
+          "word": " that",
+          "start": 53.78,
+          "end": 54.28,
+          "probability": 0.9541192650794983
+        },
+        {
+          "word": " the",
+          "start": 54.28,
+          "end": 54.42,
+          "probability": 0.9880225658416748
+        },
+        {
+          "word": " scientist",
+          "start": 54.42,
+          "end": 55.02,
+          "probability": 0.9154393076896667
+        },
+        {
+          "word": " realises",
+          "start": 55.02,
+          "end": 56.02,
+          "probability": 0.730899304151535
+        },
+        {
+          "word": " it",
+          "start": 56.02,
+          "end": 56.44,
+          "probability": 0.9753381013870239
+        },
+        {
+          "word": " is",
+          "start": 56.44,
+          "end": 56.66,
+          "probability": 0.9787278771400452
+        },
+        {
+          "word": " valuable.",
+          "start": 56.66,
+          "end": 57.14,
+          "probability": 0.9780053496360779
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5090,
+      "start": 57.82,
+      "end": 62.8,
+      "text": " So let's have a look at some of these happy accidents.",
+      "tokens": [
+        50734,
+        407,
+        718,
+        311,
+        362,
+        257,
+        574,
+        412,
+        512,
+        295,
+        613,
+        2055,
+        23875,
+        13,
+        50974
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2082675485049977,
+      "compression_ratio": 1.4189189189189189,
+      "no_speech_prob": 0.06248629838228226,
+      "words": [
+        {
+          "word": " So",
+          "start": 57.82,
+          "end": 58.56,
+          "probability": 0.9488877654075623
+        },
+        {
+          "word": " let's",
+          "start": 58.56,
+          "end": 59.7,
+          "probability": 0.6877116858959198
+        },
+        {
+          "word": " have",
+          "start": 59.7,
+          "end": 59.94,
+          "probability": 0.9952268600463867
+        },
+        {
+          "word": " a",
+          "start": 59.94,
+          "end": 60.1,
+          "probability": 0.9991594552993774
+        },
+        {
+          "word": " look",
+          "start": 60.1,
+          "end": 60.32,
+          "probability": 0.9985212683677673
+        },
+        {
+          "word": " at",
+          "start": 60.32,
+          "end": 60.76,
+          "probability": 0.9940438866615295
+        },
+        {
+          "word": " some",
+          "start": 60.76,
+          "end": 61.02,
+          "probability": 0.9951576590538025
+        },
+        {
+          "word": " of",
+          "start": 61.02,
+          "end": 61.2,
+          "probability": 0.9973227381706238
+        },
+        {
+          "word": " these",
+          "start": 61.2,
+          "end": 61.5,
+          "probability": 0.9880714416503906
+        },
+        {
+          "word": " happy",
+          "start": 61.5,
+          "end": 62.0,
+          "probability": 0.9714573621749878
+        },
+        {
+          "word": " accidents.",
+          "start": 62.0,
+          "end": 62.8,
+          "probability": 0.9813356399536133
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5090,
+      "start": 64.02,
+      "end": 71.74,
+      "text": " First we'll discuss the discovery of a very important kind of medicine, antibiotics.",
+      "tokens": [
+        51044,
+        2386,
+        321,
+        603,
+        2248,
+        264,
+        12114,
+        295,
+        257,
+        588,
+        1021,
+        733,
+        295,
+        7195,
+        11,
+        26922,
+        13,
+        51444
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2082675485049977,
+      "compression_ratio": 1.4189189189189189,
+      "no_speech_prob": 0.06248629838228226,
+      "words": [
+        {
+          "word": " First",
+          "start": 64.02,
+          "end": 64.76,
+          "probability": 0.9628868699073792
+        },
+        {
+          "word": " we'll",
+          "start": 64.76,
+          "end": 65.8,
+          "probability": 0.6596559435129166
+        },
+        {
+          "word": " discuss",
+          "start": 65.8,
+          "end": 66.18,
+          "probability": 0.9943939447402954
+        },
+        {
+          "word": " the",
+          "start": 66.18,
+          "end": 66.54,
+          "probability": 0.9924061894416809
+        },
+        {
+          "word": " discovery",
+          "start": 66.54,
+          "end": 67.18,
+          "probability": 0.9854230880737305
+        },
+        {
+          "word": " of",
+          "start": 67.18,
+          "end": 67.54,
+          "probability": 0.9976676106452942
+        },
+        {
+          "word": " a",
+          "start": 67.54,
+          "end": 67.68,
+          "probability": 0.9852631092071533
+        },
+        {
+          "word": " very",
+          "start": 67.68,
+          "end": 68.08,
+          "probability": 0.9971531629562378
+        },
+        {
+          "word": " important",
+          "start": 68.08,
+          "end": 68.78,
+          "probability": 0.9983596205711365
+        },
+        {
+          "word": " kind",
+          "start": 68.78,
+          "end": 69.18,
+          "probability": 0.9962059259414673
+        },
+        {
+          "word": " of",
+          "start": 69.18,
+          "end": 69.5,
+          "probability": 0.9979958534240723
+        },
+        {
+          "word": " medicine,",
+          "start": 69.5,
+          "end": 70.04,
+          "probability": 0.991613507270813
+        },
+        {
+          "word": " antibiotics.",
+          "start": 70.84,
+          "end": 71.74,
+          "probability": 0.9587223529815674
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 7174,
+      "start": 72.74,
+      "end": 79.76,
+      "text": " In 1928, Alexander Fleming was cleaning his laboratory after a holiday",
+      "tokens": [
+        50414,
+        682,
+        1294,
+        11205,
+        11,
+        14845,
+        18612,
+        2810,
+        390,
+        8924,
+        702,
+        16523,
+        934,
+        257,
+        9960,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18669336614474444,
+      "compression_ratio": 1.5842696629213484,
+      "no_speech_prob": 0.12491617351770401,
+      "words": [
+        {
+          "word": " In",
+          "start": 72.74,
+          "end": 73.46,
+          "probability": 0.6248437762260437
+        },
+        {
+          "word": " 1928,",
+          "start": 73.46,
+          "end": 75.02,
+          "probability": 0.9883030354976654
+        },
+        {
+          "word": " Alexander",
+          "start": 75.64,
+          "end": 76.08,
+          "probability": 0.9863356351852417
+        },
+        {
+          "word": " Fleming",
+          "start": 76.08,
+          "end": 76.84,
+          "probability": 0.9059029519557953
+        },
+        {
+          "word": " was",
+          "start": 76.84,
+          "end": 77.22,
+          "probability": 0.9957824945449829
+        },
+        {
+          "word": " cleaning",
+          "start": 77.22,
+          "end": 77.6,
+          "probability": 0.9958533048629761
+        },
+        {
+          "word": " his",
+          "start": 77.6,
+          "end": 77.92,
+          "probability": 0.9981006979942322
+        },
+        {
+          "word": " laboratory",
+          "start": 77.92,
+          "end": 78.38,
+          "probability": 0.9889464974403381
+        },
+        {
+          "word": " after",
+          "start": 78.38,
+          "end": 79.04,
+          "probability": 0.9909088015556335
+        },
+        {
+          "word": " a",
+          "start": 79.04,
+          "end": 79.26,
+          "probability": 0.9976621866226196
+        },
+        {
+          "word": " holiday",
+          "start": 79.26,
+          "end": 79.76,
+          "probability": 0.9973201155662537
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 7174,
+      "start": 79.76,
+      "end": 84.44,
+      "text": " when he found a dish of bacteria that he had left out.",
+      "tokens": [
+        50774,
+        562,
+        415,
+        1352,
+        257,
+        5025,
+        295,
+        11763,
+        300,
+        415,
+        632,
+        1411,
+        484,
+        13,
+        51024
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18669336614474444,
+      "compression_ratio": 1.5842696629213484,
+      "no_speech_prob": 0.12491617351770401,
+      "words": [
+        {
+          "word": " when",
+          "start": 79.76,
+          "end": 80.44,
+          "probability": 0.8779688477516174
+        },
+        {
+          "word": " he",
+          "start": 80.44,
+          "end": 80.64,
+          "probability": 0.9987579584121704
+        },
+        {
+          "word": " found",
+          "start": 80.64,
+          "end": 81.04,
+          "probability": 0.9941839575767517
+        },
+        {
+          "word": " a",
+          "start": 81.04,
+          "end": 81.3,
+          "probability": 0.9950957894325256
+        },
+        {
+          "word": " dish",
+          "start": 81.3,
+          "end": 81.56,
+          "probability": 0.9749046564102173
+        },
+        {
+          "word": " of",
+          "start": 81.56,
+          "end": 81.82,
+          "probability": 0.9937917590141296
+        },
+        {
+          "word": " bacteria",
+          "start": 81.82,
+          "end": 82.44,
+          "probability": 0.9972143769264221
+        },
+        {
+          "word": " that",
+          "start": 82.44,
+          "end": 83.2,
+          "probability": 0.9873654842376709
+        },
+        {
+          "word": " he",
+          "start": 83.2,
+          "end": 83.46,
+          "probability": 0.9972587823867798
+        },
+        {
+          "word": " had",
+          "start": 83.46,
+          "end": 83.68,
+          "probability": 0.996239185333252
+        },
+        {
+          "word": " left",
+          "start": 83.68,
+          "end": 83.86,
+          "probability": 0.9980918765068054
+        },
+        {
+          "word": " out.",
+          "start": 83.86,
+          "end": 84.44,
+          "probability": 0.9984117746353149
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 7174,
+      "start": 85.16,
+      "end": 90.24,
+      "text": " But he noticed that something had killed the bacteria on it,",
+      "tokens": [
+        51034,
+        583,
+        415,
+        5694,
+        300,
+        746,
+        632,
+        4652,
+        264,
+        11763,
+        322,
+        309,
+        11,
+        51294
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18669336614474444,
+      "compression_ratio": 1.5842696629213484,
+      "no_speech_prob": 0.12491617351770401,
+      "words": [
+        {
+          "word": " But",
+          "start": 85.16,
+          "end": 85.74,
+          "probability": 0.9831477403640747
+        },
+        {
+          "word": " he",
+          "start": 85.74,
+          "end": 86.0,
+          "probability": 0.9866328239440918
+        },
+        {
+          "word": " noticed",
+          "start": 86.0,
+          "end": 86.52,
+          "probability": 0.9961270689964294
+        },
+        {
+          "word": " that",
+          "start": 86.52,
+          "end": 86.88,
+          "probability": 0.9960759282112122
+        },
+        {
+          "word": " something",
+          "start": 86.88,
+          "end": 87.5,
+          "probability": 0.9895429611206055
+        },
+        {
+          "word": " had",
+          "start": 87.5,
+          "end": 87.82,
+          "probability": 0.997001588344574
+        },
+        {
+          "word": " killed",
+          "start": 87.82,
+          "end": 88.26,
+          "probability": 0.9858943223953247
+        },
+        {
+          "word": " the",
+          "start": 88.26,
+          "end": 88.68,
+          "probability": 0.9981366395950317
+        },
+        {
+          "word": " bacteria",
+          "start": 88.68,
+          "end": 89.38,
+          "probability": 0.9958239793777466
+        },
+        {
+          "word": " on",
+          "start": 89.38,
+          "end": 89.86,
+          "probability": 0.9977895021438599
+        },
+        {
+          "word": " it,",
+          "start": 89.86,
+          "end": 90.24,
+          "probability": 0.9989000558853149
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 7174,
+      "start": 90.88,
+      "end": 93.3,
+      "text": " something he called penicillin.",
+      "tokens": [
+        51304,
+        746,
+        415,
+        1219,
+        3435,
+        299,
+        373,
+        259,
+        13,
+        51474
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18669336614474444,
+      "compression_ratio": 1.5842696629213484,
+      "no_speech_prob": 0.12491617351770401,
+      "words": [
+        {
+          "word": " something",
+          "start": 90.88,
+          "end": 91.36,
+          "probability": 0.9923325777053833
+        },
+        {
+          "word": " he",
+          "start": 91.36,
+          "end": 91.7,
+          "probability": 0.9924536347389221
+        },
+        {
+          "word": " called",
+          "start": 91.7,
+          "end": 92.26,
+          "probability": 0.9899528622627258
+        },
+        {
+          "word": " penicillin.",
+          "start": 92.26,
+          "end": 93.3,
+          "probability": 0.9448446929454803
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 7174,
+      "start": 94.54,
+      "end": 99.26,
+      "text": " After more research, he found that it could kill other bacteria",
+      "tokens": [
+        51484,
+        2381,
+        544,
+        2132,
+        11,
+        415,
+        1352,
+        300,
+        309,
+        727,
+        1961,
+        661,
+        11763,
+        51734
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18669336614474444,
+      "compression_ratio": 1.5842696629213484,
+      "no_speech_prob": 0.12491617351770401,
+      "words": [
+        {
+          "word": " After",
+          "start": 94.54,
+          "end": 95.0,
+          "probability": 0.9849743843078613
+        },
+        {
+          "word": " more",
+          "start": 95.0,
+          "end": 95.26,
+          "probability": 0.9944465160369873
+        },
+        {
+          "word": " research,",
+          "start": 95.26,
+          "end": 95.94,
+          "probability": 0.9993888139724731
+        },
+        {
+          "word": " he",
+          "start": 96.34,
+          "end": 96.4,
+          "probability": 0.9976092576980591
+        },
+        {
+          "word": " found",
+          "start": 96.4,
+          "end": 96.86,
+          "probability": 0.9987255930900574
+        },
+        {
+          "word": " that",
+          "start": 96.86,
+          "end": 97.14,
+          "probability": 0.9878156781196594
+        },
+        {
+          "word": " it",
+          "start": 97.14,
+          "end": 97.28,
+          "probability": 0.9932180047035217
+        },
+        {
+          "word": " could",
+          "start": 97.28,
+          "end": 97.48,
+          "probability": 0.9945724606513977
+        },
+        {
+          "word": " kill",
+          "start": 97.48,
+          "end": 97.92,
+          "probability": 0.9956556558609009
+        },
+        {
+          "word": " other",
+          "start": 97.92,
+          "end": 98.44,
+          "probability": 0.9942453503608704
+        },
+        {
+          "word": " bacteria",
+          "start": 98.44,
+          "end": 99.26,
+          "probability": 0.9986522793769836
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 9926,
+      "start": 99.26,
+      "end": 101.38,
+      "text": " and didn't hurt animals.",
+      "tokens": [
+        50364,
+        293,
+        994,
+        380,
+        4607,
+        4882,
+        13,
+        50494
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18738709220403357,
+      "compression_ratio": 1.4485981308411215,
+      "no_speech_prob": 0.004121521953493357,
+      "words": [
+        {
+          "word": " and",
+          "start": 99.26,
+          "end": 99.88,
+          "probability": 0.45192429423332214
+        },
+        {
+          "word": " didn't",
+          "start": 99.88,
+          "end": 100.4,
+          "probability": 0.9570154249668121
+        },
+        {
+          "word": " hurt",
+          "start": 100.4,
+          "end": 100.64,
+          "probability": 0.996785044670105
+        },
+        {
+          "word": " animals.",
+          "start": 100.64,
+          "end": 101.38,
+          "probability": 0.9980127811431885
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 9926,
+      "start": 102.54,
+      "end": 106.74,
+      "text": " Fleming wasn't able to produce large quantities of penicillin,",
+      "tokens": [
+        50534,
+        18612,
+        2810,
+        2067,
+        380,
+        1075,
+        281,
+        5258,
+        2416,
+        22927,
+        295,
+        3435,
+        299,
+        373,
+        259,
+        11,
+        50744
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18738709220403357,
+      "compression_ratio": 1.4485981308411215,
+      "no_speech_prob": 0.004121521953493357,
+      "words": [
+        {
+          "word": " Fleming",
+          "start": 102.54,
+          "end": 103.04,
+          "probability": 0.7862251400947571
+        },
+        {
+          "word": " wasn't",
+          "start": 103.04,
+          "end": 103.66,
+          "probability": 0.9924277067184448
+        },
+        {
+          "word": " able",
+          "start": 103.66,
+          "end": 103.96,
+          "probability": 0.9988548755645752
+        },
+        {
+          "word": " to",
+          "start": 103.96,
+          "end": 104.14,
+          "probability": 0.9986876845359802
+        },
+        {
+          "word": " produce",
+          "start": 104.14,
+          "end": 104.48,
+          "probability": 0.9953612685203552
+        },
+        {
+          "word": " large",
+          "start": 104.48,
+          "end": 105.06,
+          "probability": 0.997168242931366
+        },
+        {
+          "word": " quantities",
+          "start": 105.06,
+          "end": 105.64,
+          "probability": 0.9975748658180237
+        },
+        {
+          "word": " of",
+          "start": 105.64,
+          "end": 106.02,
+          "probability": 0.9979451298713684
+        },
+        {
+          "word": " penicillin,",
+          "start": 106.02,
+          "end": 106.74,
+          "probability": 0.95743727684021
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 9926,
+      "start": 107.22,
+      "end": 110.78,
+      "text": " but he published his research in one of the medical journals.",
+      "tokens": [
+        50754,
+        457,
+        415,
+        6572,
+        702,
+        2132,
+        294,
+        472,
+        295,
+        264,
+        4625,
+        29621,
+        13,
+        50984
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18738709220403357,
+      "compression_ratio": 1.4485981308411215,
+      "no_speech_prob": 0.004121521953493357,
+      "words": [
+        {
+          "word": " but",
+          "start": 107.22,
+          "end": 107.42,
+          "probability": 0.9970607161521912
+        },
+        {
+          "word": " he",
+          "start": 107.42,
+          "end": 107.86,
+          "probability": 0.9869922399520874
+        },
+        {
+          "word": " published",
+          "start": 107.86,
+          "end": 108.28,
+          "probability": 0.9970523118972778
+        },
+        {
+          "word": " his",
+          "start": 108.28,
+          "end": 108.6,
+          "probability": 0.9973552227020264
+        },
+        {
+          "word": " research",
+          "start": 108.6,
+          "end": 109.0,
+          "probability": 0.9978811144828796
+        },
+        {
+          "word": " in",
+          "start": 109.0,
+          "end": 109.3,
+          "probability": 0.99400395154953
+        },
+        {
+          "word": " one",
+          "start": 109.3,
+          "end": 109.5,
+          "probability": 0.9904069304466248
+        },
+        {
+          "word": " of",
+          "start": 109.5,
+          "end": 109.6,
+          "probability": 0.994282603263855
+        },
+        {
+          "word": " the",
+          "start": 109.6,
+          "end": 109.72,
+          "probability": 0.9886943697929382
+        },
+        {
+          "word": " medical",
+          "start": 109.72,
+          "end": 110.08,
+          "probability": 0.9683173894882202
+        },
+        {
+          "word": " journals.",
+          "start": 110.08,
+          "end": 110.78,
+          "probability": 0.9986372590065002
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 9926,
+      "start": 111.92,
+      "end": 116.6,
+      "text": " Oxford University scientists Howard Flory and Ernst Chain",
+      "tokens": [
+        50994,
+        24786,
+        3535,
+        7708,
+        17626,
+        3235,
+        827,
+        293,
+        24147,
+        372,
+        33252,
+        51254
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18738709220403357,
+      "compression_ratio": 1.4485981308411215,
+      "no_speech_prob": 0.004121521953493357,
+      "words": [
+        {
+          "word": " Oxford",
+          "start": 111.92,
+          "end": 112.4,
+          "probability": 0.9923410415649414
+        },
+        {
+          "word": " University",
+          "start": 112.4,
+          "end": 113.18,
+          "probability": 0.9519626498222351
+        },
+        {
+          "word": " scientists",
+          "start": 113.18,
+          "end": 114.02,
+          "probability": 0.8413565754890442
+        },
+        {
+          "word": " Howard",
+          "start": 114.02,
+          "end": 114.66,
+          "probability": 0.9129817485809326
+        },
+        {
+          "word": " Flory",
+          "start": 114.66,
+          "end": 115.24,
+          "probability": 0.6302424669265747
+        },
+        {
+          "word": " and",
+          "start": 115.24,
+          "end": 115.78,
+          "probability": 0.9248513579368591
+        },
+        {
+          "word": " Ernst",
+          "start": 115.78,
+          "end": 116.3,
+          "probability": 0.8878713846206665
+        },
+        {
+          "word": " Chain",
+          "start": 116.3,
+          "end": 116.6,
+          "probability": 0.4622860848903656
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 9926,
+      "start": 117.26,
+      "end": 121.5,
+      "text": " studied penicillin some more and after a lot of research,",
+      "tokens": [
+        51264,
+        9454,
+        3435,
+        299,
+        373,
+        259,
+        512,
+        544,
+        293,
+        934,
+        257,
+        688,
+        295,
+        2132,
+        11,
+        51484
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18738709220403357,
+      "compression_ratio": 1.4485981308411215,
+      "no_speech_prob": 0.004121521953493357,
+      "words": [
+        {
+          "word": " studied",
+          "start": 117.14,
+          "end": 117.64,
+          "probability": 0.9709850549697876
+        },
+        {
+          "word": " penicillin",
+          "start": 117.64,
+          "end": 118.44,
+          "probability": 0.9716045409440994
+        },
+        {
+          "word": " some",
+          "start": 118.44,
+          "end": 118.66,
+          "probability": 0.9616373777389526
+        },
+        {
+          "word": " more",
+          "start": 118.66,
+          "end": 119.04,
+          "probability": 0.999327540397644
+        },
+        {
+          "word": " and",
+          "start": 119.04,
+          "end": 119.82,
+          "probability": 0.22316743433475494
+        },
+        {
+          "word": " after",
+          "start": 119.82,
+          "end": 120.42,
+          "probability": 0.7767636775970459
+        },
+        {
+          "word": " a",
+          "start": 120.42,
+          "end": 120.58,
+          "probability": 0.9922072291374207
+        },
+        {
+          "word": " lot",
+          "start": 120.58,
+          "end": 120.78,
+          "probability": 0.9981884360313416
+        },
+        {
+          "word": " of",
+          "start": 120.78,
+          "end": 120.98,
+          "probability": 0.9931846261024475
+        },
+        {
+          "word": " research,",
+          "start": 120.98,
+          "end": 121.5,
+          "probability": 0.9997747540473938
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 9926,
+      "start": 122.1,
+      "end": 125.84,
+      "text": " they developed the first antibiotic in 1942.",
+      "tokens": [
+        51494,
+        436,
+        4743,
+        264,
+        700,
+        37828,
+        294,
+        37549,
+        13,
+        51734
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18738709220403357,
+      "compression_ratio": 1.4485981308411215,
+      "no_speech_prob": 0.004121521953493357,
+      "words": [
+        {
+          "word": " they",
+          "start": 122.1,
+          "end": 122.22,
+          "probability": 0.9965083003044128
+        },
+        {
+          "word": " developed",
+          "start": 122.22,
+          "end": 122.78,
+          "probability": 0.9964710474014282
+        },
+        {
+          "word": " the",
+          "start": 122.78,
+          "end": 122.96,
+          "probability": 0.9949775338172913
+        },
+        {
+          "word": " first",
+          "start": 122.96,
+          "end": 123.42,
+          "probability": 0.9657294750213623
+        },
+        {
+          "word": " antibiotic",
+          "start": 123.42,
+          "end": 124.26,
+          "probability": 0.9390779733657837
+        },
+        {
+          "word": " in",
+          "start": 124.26,
+          "end": 124.76,
+          "probability": 0.9980506896972656
+        },
+        {
+          "word": " 1942.",
+          "start": 124.76,
+          "end": 125.84,
+          "probability": 0.994836688041687
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 12584,
+      "start": 127.32,
+      "end": 130.52,
+      "text": " Next, let's look at the X-ray.",
+      "tokens": [
+        50364,
+        3087,
+        11,
+        718,
+        311,
+        574,
+        412,
+        264,
+        1783,
+        12,
+        3458,
+        13,
+        50604
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23221378326416015,
+      "compression_ratio": 1.3487179487179488,
+      "no_speech_prob": 0.11581013351678848,
+      "words": [
+        {
+          "word": " Next,",
+          "start": 127.32,
+          "end": 128.16,
+          "probability": 0.29014265537261963
+        },
+        {
+          "word": " let's",
+          "start": 128.76,
+          "end": 129.26,
+          "probability": 0.973016619682312
+        },
+        {
+          "word": " look",
+          "start": 129.26,
+          "end": 129.46,
+          "probability": 0.9882705211639404
+        },
+        {
+          "word": " at",
+          "start": 129.46,
+          "end": 129.66,
+          "probability": 0.9958462119102478
+        },
+        {
+          "word": " the",
+          "start": 129.66,
+          "end": 129.82,
+          "probability": 0.9704664349555969
+        },
+        {
+          "word": " X",
+          "start": 129.82,
+          "end": 130.2,
+          "probability": 0.6246743202209473
+        },
+        {
+          "word": "-ray.",
+          "start": 130.2,
+          "end": 130.52,
+          "probability": 0.8550768196582794
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 12584,
+      "start": 131.2,
+      "end": 137.2,
+      "text": " In 1895, Wilhelm Konrad-Runtken, a physicist,",
+      "tokens": [
+        50614,
+        682,
+        2443,
+        15718,
+        11,
+        9483,
+        48319,
+        12718,
+        6206,
+        12,
+        49,
+        2760,
+        2653,
+        11,
+        257,
+        42466,
+        11,
+        50934
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23221378326416015,
+      "compression_ratio": 1.3487179487179488,
+      "no_speech_prob": 0.11581013351678848,
+      "words": [
+        {
+          "word": " In",
+          "start": 131.2,
+          "end": 131.92,
+          "probability": 0.9739563465118408
+        },
+        {
+          "word": " 1895,",
+          "start": 131.92,
+          "end": 133.54,
+          "probability": 0.9821300208568573
+        },
+        {
+          "word": " Wilhelm",
+          "start": 134.08,
+          "end": 134.92,
+          "probability": 0.710150882601738
+        },
+        {
+          "word": " Konrad",
+          "start": 134.92,
+          "end": 135.46,
+          "probability": 0.6491198390722275
+        },
+        {
+          "word": "-Runtken,",
+          "start": 135.46,
+          "end": 136.08,
+          "probability": 0.5561167895793915
+        },
+        {
+          "word": " a",
+          "start": 136.56,
+          "end": 136.66,
+          "probability": 0.9970759153366089
+        },
+        {
+          "word": " physicist,",
+          "start": 136.66,
+          "end": 137.2,
+          "probability": 0.9946192502975464
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 12584,
+      "start": 137.82,
+      "end": 142.48,
+      "text": " was doing an experiment with something called a cathode ray tube.",
+      "tokens": [
+        50944,
+        390,
+        884,
+        364,
+        5120,
+        365,
+        746,
+        1219,
+        257,
+        17763,
+        1429,
+        18592,
+        9917,
+        13,
+        51194
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23221378326416015,
+      "compression_ratio": 1.3487179487179488,
+      "no_speech_prob": 0.11581013351678848,
+      "words": [
+        {
+          "word": " was",
+          "start": 137.82,
+          "end": 137.96,
+          "probability": 0.9980734586715698
+        },
+        {
+          "word": " doing",
+          "start": 137.96,
+          "end": 138.32,
+          "probability": 0.9968265295028687
+        },
+        {
+          "word": " an",
+          "start": 138.32,
+          "end": 138.52,
+          "probability": 0.9880051016807556
+        },
+        {
+          "word": " experiment",
+          "start": 138.52,
+          "end": 139.14,
+          "probability": 0.9994475245475769
+        },
+        {
+          "word": " with",
+          "start": 139.14,
+          "end": 139.48,
+          "probability": 0.9967760443687439
+        },
+        {
+          "word": " something",
+          "start": 139.48,
+          "end": 139.94,
+          "probability": 0.9916566610336304
+        },
+        {
+          "word": " called",
+          "start": 139.94,
+          "end": 140.5,
+          "probability": 0.9980574250221252
+        },
+        {
+          "word": " a",
+          "start": 140.5,
+          "end": 140.86,
+          "probability": 0.9309074282646179
+        },
+        {
+          "word": " cathode",
+          "start": 140.86,
+          "end": 141.5,
+          "probability": 0.9587158262729645
+        },
+        {
+          "word": " ray",
+          "start": 141.5,
+          "end": 141.94,
+          "probability": 0.7776730060577393
+        },
+        {
+          "word": " tube.",
+          "start": 141.94,
+          "end": 142.48,
+          "probability": 0.9958509206771851
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 12584,
+      "start": 143.14,
+      "end": 148.7,
+      "text": " A long pipe filled with a special gas, similar to a modern light bulb.",
+      "tokens": [
+        51204,
+        316,
+        938,
+        11240,
+        6412,
+        365,
+        257,
+        2121,
+        4211,
+        11,
+        2531,
+        281,
+        257,
+        4363,
+        1442,
+        21122,
+        13,
+        51504
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23221378326416015,
+      "compression_ratio": 1.3487179487179488,
+      "no_speech_prob": 0.11581013351678848,
+      "words": [
+        {
+          "word": " A",
+          "start": 143.14,
+          "end": 143.54,
+          "probability": 0.98363196849823
+        },
+        {
+          "word": " long",
+          "start": 143.54,
+          "end": 143.84,
+          "probability": 0.9890187978744507
+        },
+        {
+          "word": " pipe",
+          "start": 143.84,
+          "end": 144.34,
+          "probability": 0.9726458191871643
+        },
+        {
+          "word": " filled",
+          "start": 144.34,
+          "end": 145.0,
+          "probability": 0.949905514717102
+        },
+        {
+          "word": " with",
+          "start": 145.0,
+          "end": 145.34,
+          "probability": 0.9986149072647095
+        },
+        {
+          "word": " a",
+          "start": 145.34,
+          "end": 145.48,
+          "probability": 0.9908362627029419
+        },
+        {
+          "word": " special",
+          "start": 145.48,
+          "end": 145.86,
+          "probability": 0.9977056384086609
+        },
+        {
+          "word": " gas,",
+          "start": 145.86,
+          "end": 146.22,
+          "probability": 0.9859768152236938
+        },
+        {
+          "word": " similar",
+          "start": 146.84,
+          "end": 147.2,
+          "probability": 0.9978680610656738
+        },
+        {
+          "word": " to",
+          "start": 147.2,
+          "end": 147.52,
+          "probability": 0.999459445476532
+        },
+        {
+          "word": " a",
+          "start": 147.52,
+          "end": 147.64,
+          "probability": 0.9953858256340027
+        },
+        {
+          "word": " modern",
+          "start": 147.64,
+          "end": 147.94,
+          "probability": 0.9907013177871704
+        },
+        {
+          "word": " light",
+          "start": 147.94,
+          "end": 148.3,
+          "probability": 0.9925400614738464
+        },
+        {
+          "word": " bulb.",
+          "start": 148.3,
+          "end": 148.7,
+          "probability": 0.9487800002098083
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 12584,
+      "start": 149.28,
+      "end": 153.72,
+      "text": " When he put electricity into the tube, it lit up.",
+      "tokens": [
+        51514,
+        1133,
+        415,
+        829,
+        10356,
+        666,
+        264,
+        9917,
+        11,
+        309,
+        7997,
+        493,
+        13,
+        51754
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23221378326416015,
+      "compression_ratio": 1.3487179487179488,
+      "no_speech_prob": 0.11581013351678848,
+      "words": [
+        {
+          "word": " When",
+          "start": 149.28,
+          "end": 150.12,
+          "probability": 0.996626615524292
+        },
+        {
+          "word": " he",
+          "start": 150.12,
+          "end": 150.3,
+          "probability": 0.995059609413147
+        },
+        {
+          "word": " put",
+          "start": 150.3,
+          "end": 150.6,
+          "probability": 0.9975301623344421
+        },
+        {
+          "word": " electricity",
+          "start": 150.6,
+          "end": 151.18,
+          "probability": 0.989680826663971
+        },
+        {
+          "word": " into",
+          "start": 151.18,
+          "end": 151.8,
+          "probability": 0.9887596368789673
+        },
+        {
+          "word": " the",
+          "start": 151.8,
+          "end": 152.0,
+          "probability": 0.9977115392684937
+        },
+        {
+          "word": " tube,",
+          "start": 152.0,
+          "end": 152.42,
+          "probability": 0.9984436631202698
+        },
+        {
+          "word": " it",
+          "start": 152.86,
+          "end": 153.12,
+          "probability": 0.9977220892906189
+        },
+        {
+          "word": " lit",
+          "start": 153.12,
+          "end": 153.38,
+          "probability": 0.993565022945404
+        },
+        {
+          "word": " up.",
+          "start": 153.38,
+          "end": 153.72,
+          "probability": 0.9976270794868469
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 15372,
+      "start": 153.72,
+      "end": 158.2,
+      "text": " Then he decided to put black paper around it",
+      "tokens": [
+        50364,
+        1396,
+        415,
+        3047,
+        281,
+        829,
+        2211,
+        3035,
+        926,
+        309,
+        50554
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.178764244605755,
+      "compression_ratio": 1.5265486725663717,
+      "no_speech_prob": 0.00299201556481421,
+      "words": [
+        {
+          "word": " Then",
+          "start": 153.72,
+          "end": 155.06,
+          "probability": 0.8250446915626526
+        },
+        {
+          "word": " he",
+          "start": 155.06,
+          "end": 155.6,
+          "probability": 0.6013157963752747
+        },
+        {
+          "word": " decided",
+          "start": 155.6,
+          "end": 156.02,
+          "probability": 0.9969122409820557
+        },
+        {
+          "word": " to",
+          "start": 156.02,
+          "end": 156.34,
+          "probability": 0.9989163875579834
+        },
+        {
+          "word": " put",
+          "start": 156.34,
+          "end": 156.52,
+          "probability": 0.9995644688606262
+        },
+        {
+          "word": " black",
+          "start": 156.52,
+          "end": 156.84,
+          "probability": 0.9643877148628235
+        },
+        {
+          "word": " paper",
+          "start": 156.84,
+          "end": 157.4,
+          "probability": 0.9987331032752991
+        },
+        {
+          "word": " around",
+          "start": 157.4,
+          "end": 157.82,
+          "probability": 0.9979076385498047
+        },
+        {
+          "word": " it",
+          "start": 157.82,
+          "end": 158.2,
+          "probability": 0.9971473813056946
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 15372,
+      "start": 158.2,
+      "end": 163.38,
+      "text": " and noticed a green-coloured light coming from a chemical close by.",
+      "tokens": [
+        50564,
+        293,
+        5694,
+        257,
+        3092,
+        12,
+        8768,
+        16439,
+        1442,
+        1348,
+        490,
+        257,
+        7313,
+        1998,
+        538,
+        13,
+        50854
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.178764244605755,
+      "compression_ratio": 1.5265486725663717,
+      "no_speech_prob": 0.00299201556481421,
+      "words": [
+        {
+          "word": " and",
+          "start": 158.2,
+          "end": 158.62,
+          "probability": 0.7574813365936279
+        },
+        {
+          "word": " noticed",
+          "start": 158.62,
+          "end": 159.12,
+          "probability": 0.9904791712760925
+        },
+        {
+          "word": " a",
+          "start": 159.12,
+          "end": 159.62,
+          "probability": 0.9959051609039307
+        },
+        {
+          "word": " green",
+          "start": 159.62,
+          "end": 160.02,
+          "probability": 0.9918228983879089
+        },
+        {
+          "word": "-coloured",
+          "start": 160.02,
+          "end": 160.66,
+          "probability": 0.6900658210118612
+        },
+        {
+          "word": " light",
+          "start": 160.66,
+          "end": 160.98,
+          "probability": 0.9923157691955566
+        },
+        {
+          "word": " coming",
+          "start": 160.98,
+          "end": 161.66,
+          "probability": 0.9857659339904785
+        },
+        {
+          "word": " from",
+          "start": 161.66,
+          "end": 161.94,
+          "probability": 0.9984440207481384
+        },
+        {
+          "word": " a",
+          "start": 161.94,
+          "end": 162.12,
+          "probability": 0.9972980618476868
+        },
+        {
+          "word": " chemical",
+          "start": 162.12,
+          "end": 162.5,
+          "probability": 0.9879494905471802
+        },
+        {
+          "word": " close",
+          "start": 162.5,
+          "end": 163.0,
+          "probability": 0.9873501658439636
+        },
+        {
+          "word": " by.",
+          "start": 163.0,
+          "end": 163.38,
+          "probability": 0.7673367261886597
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 15372,
+      "start": 164.7,
+      "end": 170.62,
+      "text": " Runtken realized that the cathode ray tube was sending out a new type of light",
+      "tokens": [
+        50864,
+        497,
+        2760,
+        2653,
+        5334,
+        300,
+        264,
+        17763,
+        1429,
+        18592,
+        9917,
+        390,
+        7750,
+        484,
+        257,
+        777,
+        2010,
+        295,
+        1442,
+        51204
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.178764244605755,
+      "compression_ratio": 1.5265486725663717,
+      "no_speech_prob": 0.00299201556481421,
+      "words": [
+        {
+          "word": " Runtken",
+          "start": 164.7,
+          "end": 165.26,
+          "probability": 0.6553506751855215
+        },
+        {
+          "word": " realized",
+          "start": 165.26,
+          "end": 165.78,
+          "probability": 0.42320895195007324
+        },
+        {
+          "word": " that",
+          "start": 165.78,
+          "end": 166.54,
+          "probability": 0.988189697265625
+        },
+        {
+          "word": " the",
+          "start": 166.54,
+          "end": 166.68,
+          "probability": 0.9931643605232239
+        },
+        {
+          "word": " cathode",
+          "start": 166.68,
+          "end": 167.2,
+          "probability": 0.9094657003879547
+        },
+        {
+          "word": " ray",
+          "start": 167.2,
+          "end": 167.48,
+          "probability": 0.7862650156021118
+        },
+        {
+          "word": " tube",
+          "start": 167.48,
+          "end": 167.9,
+          "probability": 0.9961721301078796
+        },
+        {
+          "word": " was",
+          "start": 167.9,
+          "end": 168.46,
+          "probability": 0.9882715344429016
+        },
+        {
+          "word": " sending",
+          "start": 168.46,
+          "end": 168.84,
+          "probability": 0.9975259900093079
+        },
+        {
+          "word": " out",
+          "start": 168.84,
+          "end": 169.12,
+          "probability": 0.9962361454963684
+        },
+        {
+          "word": " a",
+          "start": 169.12,
+          "end": 169.38,
+          "probability": 0.995540201663971
+        },
+        {
+          "word": " new",
+          "start": 169.38,
+          "end": 169.64,
+          "probability": 0.9960373640060425
+        },
+        {
+          "word": " type",
+          "start": 169.64,
+          "end": 170.02,
+          "probability": 0.9936501383781433
+        },
+        {
+          "word": " of",
+          "start": 170.02,
+          "end": 170.3,
+          "probability": 0.9986720085144043
+        },
+        {
+          "word": " light",
+          "start": 170.3,
+          "end": 170.62,
+          "probability": 0.996101975440979
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 15372,
+      "start": 170.62,
+      "end": 176.56,
+      "text": " and he discovered this light could go through skin, but not bones or metal.",
+      "tokens": [
+        51214,
+        293,
+        415,
+        6941,
+        341,
+        1442,
+        727,
+        352,
+        807,
+        3178,
+        11,
+        457,
+        406,
+        10491,
+        420,
+        5760,
+        13,
+        51534
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.178764244605755,
+      "compression_ratio": 1.5265486725663717,
+      "no_speech_prob": 0.00299201556481421,
+      "words": [
+        {
+          "word": " and",
+          "start": 170.62,
+          "end": 171.52,
+          "probability": 0.2896839380264282
+        },
+        {
+          "word": " he",
+          "start": 171.52,
+          "end": 171.72,
+          "probability": 0.9772019982337952
+        },
+        {
+          "word": " discovered",
+          "start": 171.72,
+          "end": 172.24,
+          "probability": 0.9935862421989441
+        },
+        {
+          "word": " this",
+          "start": 172.24,
+          "end": 172.56,
+          "probability": 0.9552791118621826
+        },
+        {
+          "word": " light",
+          "start": 172.56,
+          "end": 172.86,
+          "probability": 0.9976640939712524
+        },
+        {
+          "word": " could",
+          "start": 172.86,
+          "end": 173.16,
+          "probability": 0.9976921081542969
+        },
+        {
+          "word": " go",
+          "start": 173.16,
+          "end": 173.46,
+          "probability": 0.9972654581069946
+        },
+        {
+          "word": " through",
+          "start": 173.46,
+          "end": 173.72,
+          "probability": 0.9956580400466919
+        },
+        {
+          "word": " skin,",
+          "start": 173.72,
+          "end": 174.26,
+          "probability": 0.9910925030708313
+        },
+        {
+          "word": " but",
+          "start": 174.88,
+          "end": 175.0,
+          "probability": 0.9940698146820068
+        },
+        {
+          "word": " not",
+          "start": 175.0,
+          "end": 175.24,
+          "probability": 0.9977906942367554
+        },
+        {
+          "word": " bones",
+          "start": 175.24,
+          "end": 175.66,
+          "probability": 0.9846182465553284
+        },
+        {
+          "word": " or",
+          "start": 175.66,
+          "end": 176.22,
+          "probability": 0.8395993113517761
+        },
+        {
+          "word": " metal.",
+          "start": 176.22,
+          "end": 176.56,
+          "probability": 0.9937479496002197
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 15372,
+      "start": 177.72,
+      "end": 182.8,
+      "text": " He called the technology X-rays because he didn't really know what they were.",
+      "tokens": [
+        51544,
+        634,
+        1219,
+        264,
+        2899,
+        1783,
+        12,
+        36212,
+        570,
+        415,
+        994,
+        380,
+        534,
+        458,
+        437,
+        436,
+        645,
+        13,
+        51834
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.178764244605755,
+      "compression_ratio": 1.5265486725663717,
+      "no_speech_prob": 0.00299201556481421,
+      "words": [
+        {
+          "word": " He",
+          "start": 177.72,
+          "end": 177.96,
+          "probability": 0.9933479428291321
+        },
+        {
+          "word": " called",
+          "start": 177.96,
+          "end": 178.24,
+          "probability": 0.9982219338417053
+        },
+        {
+          "word": " the",
+          "start": 178.24,
+          "end": 178.44,
+          "probability": 0.9941009879112244
+        },
+        {
+          "word": " technology",
+          "start": 178.44,
+          "end": 179.04,
+          "probability": 0.9194352030754089
+        },
+        {
+          "word": " X",
+          "start": 179.04,
+          "end": 179.64,
+          "probability": 0.7976893186569214
+        },
+        {
+          "word": "-rays",
+          "start": 179.64,
+          "end": 179.9,
+          "probability": 0.9551894068717957
+        },
+        {
+          "word": " because",
+          "start": 179.9,
+          "end": 180.8,
+          "probability": 0.843024730682373
+        },
+        {
+          "word": " he",
+          "start": 180.8,
+          "end": 181.12,
+          "probability": 0.9908843636512756
+        },
+        {
+          "word": " didn't",
+          "start": 181.12,
+          "end": 181.42,
+          "probability": 0.9890052676200867
+        },
+        {
+          "word": " really",
+          "start": 181.42,
+          "end": 181.7,
+          "probability": 0.9577662348747253
+        },
+        {
+          "word": " know",
+          "start": 181.7,
+          "end": 181.94,
+          "probability": 0.9982249140739441
+        },
+        {
+          "word": " what",
+          "start": 181.94,
+          "end": 182.22,
+          "probability": 0.9980190992355347
+        },
+        {
+          "word": " they",
+          "start": 182.22,
+          "end": 182.44,
+          "probability": 0.9980269074440002
+        },
+        {
+          "word": " were.",
+          "start": 182.44,
+          "end": 182.8,
+          "probability": 0.9968271851539612
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 18280,
+      "start": 183.76,
+      "end": 189.24,
+      "text": " Runtken won a Nobel Prize in Physics in 1901 for his discovery.",
+      "tokens": [
+        50364,
+        497,
+        2760,
+        2653,
+        1582,
+        257,
+        24611,
+        22604,
+        294,
+        38355,
+        294,
+        1294,
+        10607,
+        337,
+        702,
+        12114,
+        13,
+        50754
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16143763904840175,
+      "compression_ratio": 1.3903743315508021,
+      "no_speech_prob": 0.008036525920033455,
+      "words": [
+        {
+          "word": " Runtken",
+          "start": 183.76,
+          "end": 184.48,
+          "probability": 0.2330042372147242
+        },
+        {
+          "word": " won",
+          "start": 184.48,
+          "end": 184.88,
+          "probability": 0.9893888831138611
+        },
+        {
+          "word": " a",
+          "start": 184.88,
+          "end": 185.08,
+          "probability": 0.9905964136123657
+        },
+        {
+          "word": " Nobel",
+          "start": 185.08,
+          "end": 185.38,
+          "probability": 0.9871315956115723
+        },
+        {
+          "word": " Prize",
+          "start": 185.38,
+          "end": 185.94,
+          "probability": 0.9305692315101624
+        },
+        {
+          "word": " in",
+          "start": 185.94,
+          "end": 186.28,
+          "probability": 0.9980083107948303
+        },
+        {
+          "word": " Physics",
+          "start": 186.28,
+          "end": 186.66,
+          "probability": 0.8928443789482117
+        },
+        {
+          "word": " in",
+          "start": 186.66,
+          "end": 187.02,
+          "probability": 0.9864482283592224
+        },
+        {
+          "word": " 1901",
+          "start": 187.02,
+          "end": 187.88,
+          "probability": 0.9864715933799744
+        },
+        {
+          "word": " for",
+          "start": 187.88,
+          "end": 188.34,
+          "probability": 0.9718136787414551
+        },
+        {
+          "word": " his",
+          "start": 188.34,
+          "end": 188.58,
+          "probability": 0.9915074110031128
+        },
+        {
+          "word": " discovery.",
+          "start": 188.58,
+          "end": 189.24,
+          "probability": 0.9549948573112488
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 18280,
+      "start": 190.54,
+      "end": 194.56,
+      "text": " Now I'd like to mention a product I'm sure you all know.",
+      "tokens": [
+        50764,
+        823,
+        286,
+        1116,
+        411,
+        281,
+        2152,
+        257,
+        1674,
+        286,
+        478,
+        988,
+        291,
+        439,
+        458,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16143763904840175,
+      "compression_ratio": 1.3903743315508021,
+      "no_speech_prob": 0.008036525920033455,
+      "words": [
+        {
+          "word": " Now",
+          "start": 190.54,
+          "end": 191.26,
+          "probability": 0.8358221054077148
+        },
+        {
+          "word": " I'd",
+          "start": 191.26,
+          "end": 191.68,
+          "probability": 0.9442375898361206
+        },
+        {
+          "word": " like",
+          "start": 191.68,
+          "end": 191.78,
+          "probability": 0.9993652701377869
+        },
+        {
+          "word": " to",
+          "start": 191.78,
+          "end": 192.04,
+          "probability": 0.9984277486801147
+        },
+        {
+          "word": " mention",
+          "start": 192.04,
+          "end": 192.38,
+          "probability": 0.9973376393318176
+        },
+        {
+          "word": " a",
+          "start": 192.38,
+          "end": 192.62,
+          "probability": 0.9967693090438843
+        },
+        {
+          "word": " product",
+          "start": 192.62,
+          "end": 193.04,
+          "probability": 0.9851500391960144
+        },
+        {
+          "word": " I'm",
+          "start": 193.04,
+          "end": 193.46,
+          "probability": 0.9426518976688385
+        },
+        {
+          "word": " sure",
+          "start": 193.46,
+          "end": 193.74,
+          "probability": 0.999578058719635
+        },
+        {
+          "word": " you",
+          "start": 193.74,
+          "end": 194.06,
+          "probability": 0.9929266571998596
+        },
+        {
+          "word": " all",
+          "start": 194.06,
+          "end": 194.28,
+          "probability": 0.9906050562858582
+        },
+        {
+          "word": " know.",
+          "start": 194.28,
+          "end": 194.56,
+          "probability": 0.9973052740097046
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 18280,
+      "start": 195.42,
+      "end": 195.86,
+      "text": " Plastic",
+      "tokens": [
+        50974,
+        2149,
+        2750,
+        51074
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16143763904840175,
+      "compression_ratio": 1.3903743315508021,
+      "no_speech_prob": 0.008036525920033455,
+      "words": [
+        {
+          "word": " Plastic",
+          "start": 195.42,
+          "end": 195.86,
+          "probability": 0.9579011797904968
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 18280,
+      "start": 197.08,
+      "end": 203.2,
+      "text": " Leo Hendrick Bakeland invented the first kind of plastic in 1907.",
+      "tokens": [
+        51084,
+        19344,
+        28594,
+        9323,
+        12063,
+        15280,
+        14479,
+        264,
+        700,
+        733,
+        295,
+        5900,
+        294,
+        1294,
+        16231,
+        13,
+        51434
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16143763904840175,
+      "compression_ratio": 1.3903743315508021,
+      "no_speech_prob": 0.008036525920033455,
+      "words": [
+        {
+          "word": " Leo",
+          "start": 197.08,
+          "end": 197.8,
+          "probability": 0.16463017463684082
+        },
+        {
+          "word": " Hendrick",
+          "start": 197.8,
+          "end": 198.52,
+          "probability": 0.8309032320976257
+        },
+        {
+          "word": " Bakeland",
+          "start": 198.52,
+          "end": 199.08,
+          "probability": 0.4715806022286415
+        },
+        {
+          "word": " invented",
+          "start": 199.08,
+          "end": 200.1,
+          "probability": 0.9921413660049438
+        },
+        {
+          "word": " the",
+          "start": 200.1,
+          "end": 200.34,
+          "probability": 0.9954119324684143
+        },
+        {
+          "word": " first",
+          "start": 200.34,
+          "end": 200.7,
+          "probability": 0.9920810461044312
+        },
+        {
+          "word": " kind",
+          "start": 200.7,
+          "end": 201.0,
+          "probability": 0.9889317750930786
+        },
+        {
+          "word": " of",
+          "start": 201.0,
+          "end": 201.22,
+          "probability": 0.997576892375946
+        },
+        {
+          "word": " plastic",
+          "start": 201.22,
+          "end": 201.7,
+          "probability": 0.9693255424499512
+        },
+        {
+          "word": " in",
+          "start": 201.7,
+          "end": 202.06,
+          "probability": 0.995717465877533
+        },
+        {
+          "word": " 1907.",
+          "start": 202.06,
+          "end": 203.2,
+          "probability": 0.9940918982028961
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 18280,
+      "start": 204.66,
+      "end": 208.26,
+      "text": " Bakeland was looking for something to replace the main ingredient",
+      "tokens": [
+        51444,
+        12063,
+        15280,
+        390,
+        1237,
+        337,
+        746,
+        281,
+        7406,
+        264,
+        2135,
+        14751,
+        51634
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16143763904840175,
+      "compression_ratio": 1.3903743315508021,
+      "no_speech_prob": 0.008036525920033455,
+      "words": [
+        {
+          "word": " Bakeland",
+          "start": 204.66,
+          "end": 205.04,
+          "probability": 0.9802635014057159
+        },
+        {
+          "word": " was",
+          "start": 205.04,
+          "end": 205.4,
+          "probability": 0.9979618787765503
+        },
+        {
+          "word": " looking",
+          "start": 205.4,
+          "end": 205.78,
+          "probability": 0.9986825585365295
+        },
+        {
+          "word": " for",
+          "start": 205.78,
+          "end": 205.98,
+          "probability": 0.9980711340904236
+        },
+        {
+          "word": " something",
+          "start": 205.98,
+          "end": 206.32,
+          "probability": 0.998977780342102
+        },
+        {
+          "word": " to",
+          "start": 206.32,
+          "end": 206.52,
+          "probability": 0.9988433122634888
+        },
+        {
+          "word": " replace",
+          "start": 206.52,
+          "end": 206.86,
+          "probability": 0.9990835189819336
+        },
+        {
+          "word": " the",
+          "start": 206.86,
+          "end": 207.22,
+          "probability": 0.9952439665794373
+        },
+        {
+          "word": " main",
+          "start": 207.22,
+          "end": 207.56,
+          "probability": 0.9800875782966614
+        },
+        {
+          "word": " ingredient",
+          "start": 207.56,
+          "end": 208.26,
+          "probability": 0.9872967004776001
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 20826,
+      "start": 208.26,
+      "end": 212.5,
+      "text": " in wood polish called shellac, which comes from an insect.",
+      "tokens": [
+        50364,
+        294,
+        4576,
+        20452,
+        1219,
+        8720,
+        326,
+        11,
+        597,
+        1487,
+        490,
+        364,
+        13261,
+        13,
+        50634
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.097204492061953,
+      "compression_ratio": 1.5555555555555556,
+      "no_speech_prob": 0.10039599984884262,
+      "words": [
+        {
+          "word": " in",
+          "start": 208.26,
+          "end": 208.64,
+          "probability": 0.24766026437282562
+        },
+        {
+          "word": " wood",
+          "start": 208.64,
+          "end": 209.0,
+          "probability": 0.952178418636322
+        },
+        {
+          "word": " polish",
+          "start": 209.0,
+          "end": 209.38,
+          "probability": 0.7875765562057495
+        },
+        {
+          "word": " called",
+          "start": 209.38,
+          "end": 209.84,
+          "probability": 0.9695253968238831
+        },
+        {
+          "word": " shellac,",
+          "start": 209.84,
+          "end": 210.36,
+          "probability": 0.6945131421089172
+        },
+        {
+          "word": " which",
+          "start": 210.8,
+          "end": 211.12,
+          "probability": 0.9974976181983948
+        },
+        {
+          "word": " comes",
+          "start": 211.12,
+          "end": 211.4,
+          "probability": 0.9971781969070435
+        },
+        {
+          "word": " from",
+          "start": 211.4,
+          "end": 211.82,
+          "probability": 0.9983628392219543
+        },
+        {
+          "word": " an",
+          "start": 211.82,
+          "end": 212.04,
+          "probability": 0.9908762574195862
+        },
+        {
+          "word": " insect.",
+          "start": 212.04,
+          "end": 212.5,
+          "probability": 0.9961138963699341
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 20826,
+      "start": 213.86,
+      "end": 219.62,
+      "text": " People used this to protect wood and other things, but it was very expensive.",
+      "tokens": [
+        50644,
+        3432,
+        1143,
+        341,
+        281,
+        2371,
+        4576,
+        293,
+        661,
+        721,
+        11,
+        457,
+        309,
+        390,
+        588,
+        5124,
+        13,
+        50984
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.097204492061953,
+      "compression_ratio": 1.5555555555555556,
+      "no_speech_prob": 0.10039599984884262,
+      "words": [
+        {
+          "word": " People",
+          "start": 213.86,
+          "end": 214.3,
+          "probability": 0.9827077984809875
+        },
+        {
+          "word": " used",
+          "start": 214.3,
+          "end": 214.88,
+          "probability": 0.9933650493621826
+        },
+        {
+          "word": " this",
+          "start": 214.88,
+          "end": 215.16,
+          "probability": 0.9966552257537842
+        },
+        {
+          "word": " to",
+          "start": 215.16,
+          "end": 215.38,
+          "probability": 0.9989331364631653
+        },
+        {
+          "word": " protect",
+          "start": 215.38,
+          "end": 215.74,
+          "probability": 0.9958896040916443
+        },
+        {
+          "word": " wood",
+          "start": 215.74,
+          "end": 216.18,
+          "probability": 0.9935609102249146
+        },
+        {
+          "word": " and",
+          "start": 216.18,
+          "end": 216.56,
+          "probability": 0.9851917028427124
+        },
+        {
+          "word": " other",
+          "start": 216.56,
+          "end": 216.88,
+          "probability": 0.9986029267311096
+        },
+        {
+          "word": " things,",
+          "start": 216.88,
+          "end": 217.28,
+          "probability": 0.9974138736724854
+        },
+        {
+          "word": " but",
+          "start": 217.74,
+          "end": 217.98,
+          "probability": 0.9979345798492432
+        },
+        {
+          "word": " it",
+          "start": 217.98,
+          "end": 218.26,
+          "probability": 0.9974051117897034
+        },
+        {
+          "word": " was",
+          "start": 218.26,
+          "end": 218.46,
+          "probability": 0.9983940720558167
+        },
+        {
+          "word": " very",
+          "start": 218.46,
+          "end": 218.92,
+          "probability": 0.9975493550300598
+        },
+        {
+          "word": " expensive.",
+          "start": 218.92,
+          "end": 219.62,
+          "probability": 0.9975097179412842
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 20826,
+      "start": 220.88,
+      "end": 225.58,
+      "text": " Bakeland mixed a lot of things together and then heated them up,",
+      "tokens": [
+        50994,
+        12063,
+        15280,
+        7467,
+        257,
+        688,
+        295,
+        721,
+        1214,
+        293,
+        550,
+        18806,
+        552,
+        493,
+        11,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.097204492061953,
+      "compression_ratio": 1.5555555555555556,
+      "no_speech_prob": 0.10039599984884262,
+      "words": [
+        {
+          "word": " Bakeland",
+          "start": 220.88,
+          "end": 221.48,
+          "probability": 0.6024342477321625
+        },
+        {
+          "word": " mixed",
+          "start": 221.48,
+          "end": 222.14,
+          "probability": 0.7964559197425842
+        },
+        {
+          "word": " a",
+          "start": 222.14,
+          "end": 222.38,
+          "probability": 0.9932460784912109
+        },
+        {
+          "word": " lot",
+          "start": 222.38,
+          "end": 222.56,
+          "probability": 0.9990517497062683
+        },
+        {
+          "word": " of",
+          "start": 222.56,
+          "end": 222.76,
+          "probability": 0.9968685507774353
+        },
+        {
+          "word": " things",
+          "start": 222.76,
+          "end": 223.0,
+          "probability": 0.9983708262443542
+        },
+        {
+          "word": " together",
+          "start": 223.0,
+          "end": 223.64,
+          "probability": 0.9985488057136536
+        },
+        {
+          "word": " and",
+          "start": 223.64,
+          "end": 224.24,
+          "probability": 0.6895697116851807
+        },
+        {
+          "word": " then",
+          "start": 224.24,
+          "end": 224.56,
+          "probability": 0.9832602143287659
+        },
+        {
+          "word": " heated",
+          "start": 224.56,
+          "end": 225.04,
+          "probability": 0.9717621803283691
+        },
+        {
+          "word": " them",
+          "start": 225.04,
+          "end": 225.3,
+          "probability": 0.9968076944351196
+        },
+        {
+          "word": " up,",
+          "start": 225.3,
+          "end": 225.58,
+          "probability": 0.9995802044868469
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 20826,
+      "start": 226.36,
+      "end": 229.16,
+      "text": " but he didn't find what he was looking for.",
+      "tokens": [
+        51274,
+        457,
+        415,
+        994,
+        380,
+        915,
+        437,
+        415,
+        390,
+        1237,
+        337,
+        13,
+        51454
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.097204492061953,
+      "compression_ratio": 1.5555555555555556,
+      "no_speech_prob": 0.10039599984884262,
+      "words": [
+        {
+          "word": " but",
+          "start": 226.36,
+          "end": 226.74,
+          "probability": 0.9959814548492432
+        },
+        {
+          "word": " he",
+          "start": 226.74,
+          "end": 227.02,
+          "probability": 0.9940891265869141
+        },
+        {
+          "word": " didn't",
+          "start": 227.02,
+          "end": 227.46,
+          "probability": 0.9941668212413788
+        },
+        {
+          "word": " find",
+          "start": 227.46,
+          "end": 227.78,
+          "probability": 0.9985759258270264
+        },
+        {
+          "word": " what",
+          "start": 227.78,
+          "end": 228.14,
+          "probability": 0.997580885887146
+        },
+        {
+          "word": " he",
+          "start": 228.14,
+          "end": 228.38,
+          "probability": 0.9965609908103943
+        },
+        {
+          "word": " was",
+          "start": 228.38,
+          "end": 228.54,
+          "probability": 0.9993200302124023
+        },
+        {
+          "word": " looking",
+          "start": 228.54,
+          "end": 228.8,
+          "probability": 0.9991148114204407
+        },
+        {
+          "word": " for.",
+          "start": 228.8,
+          "end": 229.16,
+          "probability": 0.9990397095680237
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 20826,
+      "start": 230.16,
+      "end": 234.78,
+      "text": " Instead, he created something that didn't melt when it got hot",
+      "tokens": [
+        51464,
+        7156,
+        11,
+        415,
+        2942,
+        746,
+        300,
+        994,
+        380,
+        10083,
+        562,
+        309,
+        658,
+        2368,
+        51704
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.097204492061953,
+      "compression_ratio": 1.5555555555555556,
+      "no_speech_prob": 0.10039599984884262,
+      "words": [
+        {
+          "word": " Instead,",
+          "start": 230.16,
+          "end": 230.92,
+          "probability": 0.9940574169158936
+        },
+        {
+          "word": " he",
+          "start": 231.4,
+          "end": 231.66,
+          "probability": 0.9982509016990662
+        },
+        {
+          "word": " created",
+          "start": 231.66,
+          "end": 232.22,
+          "probability": 0.9966086149215698
+        },
+        {
+          "word": " something",
+          "start": 232.22,
+          "end": 232.66,
+          "probability": 0.9987063407897949
+        },
+        {
+          "word": " that",
+          "start": 232.66,
+          "end": 232.9,
+          "probability": 0.997046172618866
+        },
+        {
+          "word": " didn't",
+          "start": 232.9,
+          "end": 233.36,
+          "probability": 0.9979929327964783
+        },
+        {
+          "word": " melt",
+          "start": 233.36,
+          "end": 233.74,
+          "probability": 0.997002899646759
+        },
+        {
+          "word": " when",
+          "start": 233.74,
+          "end": 234.04,
+          "probability": 0.9979158043861389
+        },
+        {
+          "word": " it",
+          "start": 234.04,
+          "end": 234.2,
+          "probability": 0.9987567663192749
+        },
+        {
+          "word": " got",
+          "start": 234.2,
+          "end": 234.42,
+          "probability": 0.9970883727073669
+        },
+        {
+          "word": " hot",
+          "start": 234.42,
+          "end": 234.78,
+          "probability": 0.9969134330749512
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "seek": 23478,
+      "start": 234.78,
+      "end": 237.56,
+      "text": " or break when someone hit it.",
+      "tokens": [
+        50364,
+        420,
+        1821,
+        562,
+        1580,
+        2045,
+        309,
+        13,
+        50524
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1927487616445504,
+      "compression_ratio": 1.295774647887324,
+      "no_speech_prob": 0.051254648715257645,
+      "words": [
+        {
+          "word": " or",
+          "start": 234.78,
+          "end": 235.4,
+          "probability": 0.38446590304374695
+        },
+        {
+          "word": " break",
+          "start": 235.4,
+          "end": 235.8,
+          "probability": 0.892857015132904
+        },
+        {
+          "word": " when",
+          "start": 235.8,
+          "end": 236.24,
+          "probability": 0.9777301549911499
+        },
+        {
+          "word": " someone",
+          "start": 236.24,
+          "end": 236.74,
+          "probability": 0.9938762784004211
+        },
+        {
+          "word": " hit",
+          "start": 236.74,
+          "end": 237.14,
+          "probability": 0.8426664471626282
+        },
+        {
+          "word": " it.",
+          "start": 237.14,
+          "end": 237.56,
+          "probability": 0.9982944130897522
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "seek": 23478,
+      "start": 238.3,
+      "end": 246.16,
+      "text": " Yes, he discovered plastic, a material you can see all around you right now by accident.",
+      "tokens": [
+        50534,
+        1079,
+        11,
+        415,
+        6941,
+        5900,
+        11,
+        257,
+        2527,
+        291,
+        393,
+        536,
+        439,
+        926,
+        291,
+        558,
+        586,
+        538,
+        6398,
+        13,
+        50994
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1927487616445504,
+      "compression_ratio": 1.295774647887324,
+      "no_speech_prob": 0.051254648715257645,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 238.3,
+          "end": 238.46,
+          "probability": 0.9582064747810364
+        },
+        {
+          "word": " he",
+          "start": 238.98,
+          "end": 239.28,
+          "probability": 0.9908338189125061
+        },
+        {
+          "word": " discovered",
+          "start": 239.28,
+          "end": 240.04,
+          "probability": 0.9936602711677551
+        },
+        {
+          "word": " plastic,",
+          "start": 240.04,
+          "end": 240.72,
+          "probability": 0.9320592880249023
+        },
+        {
+          "word": " a",
+          "start": 241.4,
+          "end": 241.52,
+          "probability": 0.9646923542022705
+        },
+        {
+          "word": " material",
+          "start": 241.52,
+          "end": 242.04,
+          "probability": 0.9975850582122803
+        },
+        {
+          "word": " you",
+          "start": 242.04,
+          "end": 242.4,
+          "probability": 0.9864140152931213
+        },
+        {
+          "word": " can",
+          "start": 242.4,
+          "end": 242.6,
+          "probability": 0.9963705539703369
+        },
+        {
+          "word": " see",
+          "start": 242.6,
+          "end": 242.92,
+          "probability": 0.9984692931175232
+        },
+        {
+          "word": " all",
+          "start": 242.92,
+          "end": 243.38,
+          "probability": 0.9946044087409973
+        },
+        {
+          "word": " around",
+          "start": 243.38,
+          "end": 243.74,
+          "probability": 0.9963400363922119
+        },
+        {
+          "word": " you",
+          "start": 243.74,
+          "end": 244.02,
+          "probability": 0.995633065700531
+        },
+        {
+          "word": " right",
+          "start": 244.02,
+          "end": 244.3,
+          "probability": 0.982998788356781
+        },
+        {
+          "word": " now",
+          "start": 244.3,
+          "end": 244.78,
+          "probability": 0.999062716960907
+        },
+        {
+          "word": " by",
+          "start": 244.78,
+          "end": 245.58,
+          "probability": 0.49106475710868835
+        },
+        {
+          "word": " accident.",
+          "start": 245.58,
+          "end": 246.16,
+          "probability": 0.9997730851173401
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "seek": 23478,
+      "start": 247.68,
+      "end": 249.28,
+      "text": " Are there any questions?",
+      "tokens": [
+        51004,
+        2014,
+        456,
+        604,
+        1651,
+        30,
+        51144
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1927487616445504,
+      "compression_ratio": 1.295774647887324,
+      "no_speech_prob": 0.051254648715257645,
+      "words": [
+        {
+          "word": " Are",
+          "start": 247.68,
+          "end": 248.06,
+          "probability": 0.9835090041160583
+        },
+        {
+          "word": " there",
+          "start": 248.06,
+          "end": 248.32,
+          "probability": 0.9986119270324707
+        },
+        {
+          "word": " any",
+          "start": 248.32,
+          "end": 248.68,
+          "probability": 0.9939514398574829
+        },
+        {
+          "word": " questions?",
+          "start": 248.68,
+          "end": 249.28,
+          "probability": 0.9977520108222961
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "seek": 23478,
+      "start": 250.64,
+      "end": 254.18,
+      "text": " Okay, let's look at a few more examples.",
+      "tokens": [
+        51154,
+        1033,
+        11,
+        718,
+        311,
+        574,
+        412,
+        257,
+        1326,
+        544,
+        5110,
+        13,
+        51354
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1927487616445504,
+      "compression_ratio": 1.295774647887324,
+      "no_speech_prob": 0.051254648715257645,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 250.64,
+          "end": 251.16,
+          "probability": 0.5649760365486145
+        },
+        {
+          "word": " let's",
+          "start": 251.72,
+          "end": 252.26,
+          "probability": 0.9882789254188538
+        },
+        {
+          "word": " look",
+          "start": 252.26,
+          "end": 252.48,
+          "probability": 0.9969527721405029
+        },
+        {
+          "word": " at",
+          "start": 252.48,
+          "end": 252.62,
+          "probability": 0.9982403516769409
+        },
+        {
+          "word": " a",
+          "start": 252.62,
+          "end": 252.78,
+          "probability": 0.9973010420799255
+        },
+        {
+          "word": " few",
+          "start": 252.78,
+          "end": 253.02,
+          "probability": 0.999573290348053
+        },
+        {
+          "word": " more",
+          "start": 253.02,
+          "end": 253.46,
+          "probability": 0.9992490410804749
+        },
+        {
+          "word": " examples.",
+          "start": 253.46,
+          "end": 254.18,
+          "probability": 0.9951608777046204
+        }
+      ]
+    }
+  ]
+}

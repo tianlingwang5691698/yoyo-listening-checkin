@@ -1,0 +1,2310 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "End of course test Track 1 Where did you go on your holiday? I took a bus across America from New York to San Francisco. It took 18 days and it was so interesting. Wasn't it boring on the bus? No. We didn't stay on the bus all the time. We went to two national parks, Yosemite and the Grand Canyon. I think Yosemite was better than the Grand Canyon because there were fewer people. There were over 500 when I was at the Grand Canyon. There's a bridge made of glass and you can stand on it and look down at the river. I know it's not dangerous but I felt uncomfortable standing on it and didn't really like it. Was it hot? Yes, but it rained too. I didn't like that. But Yosemite Park was amazing. There were lots of trees so it was very green and not too hot. I loved it there. Where did you go next? To San Francisco. You should go there. It has lots of unusual shops and fantastic food. One pizza restaurant made 30 different kinds of pizza and they weren't like the fast food pizzas we get here. More like the ones my grandmother cooked at home. Did you stay in a hotel? Yes, in San Francisco we did. It was cheap and small. There were only six rooms and the other people staying there were nice. The city is amazing. I think you should visit too. You'd love it.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.96,
+      "text": " End of course test Track 1",
+      "tokens": [
+        50364,
+        6967,
+        295,
+        1164,
+        1500,
+        31903,
+        502,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16076266765594482,
+      "compression_ratio": 1.4047619047619047,
+      "no_speech_prob": 0.2080487310886383,
+      "words": [
+        {
+          "word": " End",
+          "start": 0.0,
+          "end": 0.52,
+          "probability": 0.5480251908302307
+        },
+        {
+          "word": " of",
+          "start": 0.52,
+          "end": 0.66,
+          "probability": 0.8765512704849243
+        },
+        {
+          "word": " course",
+          "start": 0.66,
+          "end": 0.96,
+          "probability": 0.9865281581878662
+        },
+        {
+          "word": " test",
+          "start": 0.96,
+          "end": 1.6,
+          "probability": 0.6624093651771545
+        },
+        {
+          "word": " Track",
+          "start": 1.6,
+          "end": 2.36,
+          "probability": 0.45237526297569275
+        },
+        {
+          "word": " 1",
+          "start": 2.36,
+          "end": 2.96,
+          "probability": 0.7182490825653076
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.54,
+      "end": 7.24,
+      "text": " Where did you go on your holiday?",
+      "tokens": [
+        50614,
+        2305,
+        630,
+        291,
+        352,
+        322,
+        428,
+        9960,
+        30,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16076266765594482,
+      "compression_ratio": 1.4047619047619047,
+      "no_speech_prob": 0.2080487310886383,
+      "words": [
+        {
+          "word": " Where",
+          "start": 4.54,
+          "end": 5.38,
+          "probability": 0.5513833165168762
+        },
+        {
+          "word": " did",
+          "start": 5.38,
+          "end": 5.62,
+          "probability": 0.9967106580734253
+        },
+        {
+          "word": " you",
+          "start": 5.62,
+          "end": 5.88,
+          "probability": 0.9986874461174011
+        },
+        {
+          "word": " go",
+          "start": 5.88,
+          "end": 6.14,
+          "probability": 0.996479332447052
+        },
+        {
+          "word": " on",
+          "start": 6.14,
+          "end": 6.48,
+          "probability": 0.9978410005569458
+        },
+        {
+          "word": " your",
+          "start": 6.48,
+          "end": 6.62,
+          "probability": 0.995650589466095
+        },
+        {
+          "word": " holiday?",
+          "start": 6.62,
+          "end": 7.24,
+          "probability": 0.9914302229881287
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.32,
+      "end": 13.14,
+      "text": " I took a bus across America from New York to San Francisco.",
+      "tokens": [
+        50764,
+        286,
+        1890,
+        257,
+        1255,
+        2108,
+        3374,
+        490,
+        1873,
+        3609,
+        281,
+        5271,
+        12279,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16076266765594482,
+      "compression_ratio": 1.4047619047619047,
+      "no_speech_prob": 0.2080487310886383,
+      "words": [
+        {
+          "word": " I",
+          "start": 8.32,
+          "end": 8.42,
+          "probability": 0.8288581371307373
+        },
+        {
+          "word": " took",
+          "start": 8.42,
+          "end": 8.7,
+          "probability": 0.995978593826294
+        },
+        {
+          "word": " a",
+          "start": 8.7,
+          "end": 8.92,
+          "probability": 0.9981811046600342
+        },
+        {
+          "word": " bus",
+          "start": 8.92,
+          "end": 9.32,
+          "probability": 0.9992989301681519
+        },
+        {
+          "word": " across",
+          "start": 9.32,
+          "end": 9.8,
+          "probability": 0.9984983205795288
+        },
+        {
+          "word": " America",
+          "start": 9.8,
+          "end": 10.5,
+          "probability": 0.9949808716773987
+        },
+        {
+          "word": " from",
+          "start": 10.5,
+          "end": 11.04,
+          "probability": 0.9791760444641113
+        },
+        {
+          "word": " New",
+          "start": 11.04,
+          "end": 11.44,
+          "probability": 0.9956764578819275
+        },
+        {
+          "word": " York",
+          "start": 11.44,
+          "end": 11.76,
+          "probability": 0.9987296462059021
+        },
+        {
+          "word": " to",
+          "start": 11.76,
+          "end": 12.2,
+          "probability": 0.994257926940918
+        },
+        {
+          "word": " San",
+          "start": 12.2,
+          "end": 12.5,
+          "probability": 0.9976007342338562
+        },
+        {
+          "word": " Francisco.",
+          "start": 12.5,
+          "end": 13.14,
+          "probability": 0.9956525564193726
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 13.54,
+      "end": 18.26,
+      "text": " It took 18 days and it was so interesting.",
+      "tokens": [
+        51064,
+        467,
+        1890,
+        2443,
+        1708,
+        293,
+        309,
+        390,
+        370,
+        1880,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16076266765594482,
+      "compression_ratio": 1.4047619047619047,
+      "no_speech_prob": 0.2080487310886383,
+      "words": [
+        {
+          "word": " It",
+          "start": 13.54,
+          "end": 14.3,
+          "probability": 0.9938230514526367
+        },
+        {
+          "word": " took",
+          "start": 14.3,
+          "end": 14.64,
+          "probability": 0.9991756081581116
+        },
+        {
+          "word": " 18",
+          "start": 14.64,
+          "end": 15.22,
+          "probability": 0.8605726957321167
+        },
+        {
+          "word": " days",
+          "start": 15.22,
+          "end": 15.94,
+          "probability": 0.9982261061668396
+        },
+        {
+          "word": " and",
+          "start": 15.94,
+          "end": 16.5,
+          "probability": 0.8771791458129883
+        },
+        {
+          "word": " it",
+          "start": 16.5,
+          "end": 16.66,
+          "probability": 0.9967828989028931
+        },
+        {
+          "word": " was",
+          "start": 16.66,
+          "end": 16.82,
+          "probability": 0.9992682337760925
+        },
+        {
+          "word": " so",
+          "start": 16.82,
+          "end": 17.3,
+          "probability": 0.9830663204193115
+        },
+        {
+          "word": " interesting.",
+          "start": 17.3,
+          "end": 18.26,
+          "probability": 0.9879217743873596
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 18.94,
+      "end": 21.38,
+      "text": " Wasn't it boring on the bus?",
+      "tokens": [
+        51314,
+        28782,
+        380,
+        309,
+        9989,
+        322,
+        264,
+        1255,
+        30,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16076266765594482,
+      "compression_ratio": 1.4047619047619047,
+      "no_speech_prob": 0.2080487310886383,
+      "words": [
+        {
+          "word": " Wasn't",
+          "start": 18.94,
+          "end": 19.78,
+          "probability": 0.9569487571716309
+        },
+        {
+          "word": " it",
+          "start": 19.78,
+          "end": 20.04,
+          "probability": 0.9981088638305664
+        },
+        {
+          "word": " boring",
+          "start": 20.04,
+          "end": 20.58,
+          "probability": 0.9864102005958557
+        },
+        {
+          "word": " on",
+          "start": 20.58,
+          "end": 20.88,
+          "probability": 0.9990090131759644
+        },
+        {
+          "word": " the",
+          "start": 20.88,
+          "end": 21.04,
+          "probability": 0.998213529586792
+        },
+        {
+          "word": " bus?",
+          "start": 21.04,
+          "end": 21.38,
+          "probability": 0.9992008805274963
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 22.12,
+      "end": 26.48,
+      "text": " No. We didn't stay on the bus all the time.",
+      "tokens": [
+        51464,
+        883,
+        13,
+        492,
+        994,
+        380,
+        1754,
+        322,
+        264,
+        1255,
+        439,
+        264,
+        565,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16076266765594482,
+      "compression_ratio": 1.4047619047619047,
+      "no_speech_prob": 0.2080487310886383,
+      "words": [
+        {
+          "word": " No.",
+          "start": 22.12,
+          "end": 22.56,
+          "probability": 0.9903491735458374
+        },
+        {
+          "word": " We",
+          "start": 23.14,
+          "end": 23.8,
+          "probability": 0.9966378211975098
+        },
+        {
+          "word": " didn't",
+          "start": 23.8,
+          "end": 24.32,
+          "probability": 0.9984003901481628
+        },
+        {
+          "word": " stay",
+          "start": 24.32,
+          "end": 24.6,
+          "probability": 0.9986555576324463
+        },
+        {
+          "word": " on",
+          "start": 24.6,
+          "end": 24.82,
+          "probability": 0.9987841248512268
+        },
+        {
+          "word": " the",
+          "start": 24.82,
+          "end": 25.06,
+          "probability": 0.9986270666122437
+        },
+        {
+          "word": " bus",
+          "start": 25.06,
+          "end": 25.46,
+          "probability": 0.9988840222358704
+        },
+        {
+          "word": " all",
+          "start": 25.46,
+          "end": 25.82,
+          "probability": 0.9944255352020264
+        },
+        {
+          "word": " the",
+          "start": 25.82,
+          "end": 26.04,
+          "probability": 0.9973516464233398
+        },
+        {
+          "word": " time.",
+          "start": 26.04,
+          "end": 26.48,
+          "probability": 0.9995737671852112
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2648,
+      "start": 26.48,
+      "end": 32.7,
+      "text": " We went to two national parks, Yosemite and the Grand Canyon.",
+      "tokens": [
+        50364,
+        492,
+        1437,
+        281,
+        732,
+        4048,
+        16213,
+        11,
+        398,
+        329,
+        443,
+        642,
+        293,
+        264,
+        6757,
+        29170,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.058152776015432256,
+      "compression_ratio": 1.6127167630057804,
+      "no_speech_prob": 0.3012252748012543,
+      "words": [
+        {
+          "word": " We",
+          "start": 26.48,
+          "end": 27.56,
+          "probability": 0.3221389949321747
+        },
+        {
+          "word": " went",
+          "start": 27.56,
+          "end": 27.9,
+          "probability": 0.9874239563941956
+        },
+        {
+          "word": " to",
+          "start": 27.9,
+          "end": 28.3,
+          "probability": 0.9859024286270142
+        },
+        {
+          "word": " two",
+          "start": 28.3,
+          "end": 28.7,
+          "probability": 0.8656270503997803
+        },
+        {
+          "word": " national",
+          "start": 28.7,
+          "end": 29.18,
+          "probability": 0.8162047266960144
+        },
+        {
+          "word": " parks,",
+          "start": 29.18,
+          "end": 29.82,
+          "probability": 0.9964753985404968
+        },
+        {
+          "word": " Yosemite",
+          "start": 30.44,
+          "end": 30.92,
+          "probability": 0.8678771406412125
+        },
+        {
+          "word": " and",
+          "start": 30.92,
+          "end": 31.64,
+          "probability": 0.9195284843444824
+        },
+        {
+          "word": " the",
+          "start": 31.64,
+          "end": 31.8,
+          "probability": 0.8893841505050659
+        },
+        {
+          "word": " Grand",
+          "start": 31.8,
+          "end": 32.14,
+          "probability": 0.9750375747680664
+        },
+        {
+          "word": " Canyon.",
+          "start": 32.14,
+          "end": 32.7,
+          "probability": 0.9826432466506958
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2648,
+      "start": 33.68,
+      "end": 39.9,
+      "text": " I think Yosemite was better than the Grand Canyon because there were fewer people.",
+      "tokens": [
+        50714,
+        286,
+        519,
+        398,
+        329,
+        443,
+        642,
+        390,
+        1101,
+        813,
+        264,
+        6757,
+        29170,
+        570,
+        456,
+        645,
+        13366,
+        561,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.058152776015432256,
+      "compression_ratio": 1.6127167630057804,
+      "no_speech_prob": 0.3012252748012543,
+      "words": [
+        {
+          "word": " I",
+          "start": 33.68,
+          "end": 34.48,
+          "probability": 0.9812739491462708
+        },
+        {
+          "word": " think",
+          "start": 34.48,
+          "end": 34.78,
+          "probability": 0.9965882301330566
+        },
+        {
+          "word": " Yosemite",
+          "start": 34.78,
+          "end": 35.52,
+          "probability": 0.9931490570306778
+        },
+        {
+          "word": " was",
+          "start": 35.52,
+          "end": 35.86,
+          "probability": 0.9955892562866211
+        },
+        {
+          "word": " better",
+          "start": 35.86,
+          "end": 36.36,
+          "probability": 0.995403528213501
+        },
+        {
+          "word": " than",
+          "start": 36.36,
+          "end": 36.7,
+          "probability": 0.9899749159812927
+        },
+        {
+          "word": " the",
+          "start": 36.7,
+          "end": 36.9,
+          "probability": 0.9818452596664429
+        },
+        {
+          "word": " Grand",
+          "start": 36.9,
+          "end": 37.22,
+          "probability": 0.9705886840820312
+        },
+        {
+          "word": " Canyon",
+          "start": 37.22,
+          "end": 37.76,
+          "probability": 0.9969180822372437
+        },
+        {
+          "word": " because",
+          "start": 37.76,
+          "end": 38.42,
+          "probability": 0.7687762379646301
+        },
+        {
+          "word": " there",
+          "start": 38.42,
+          "end": 38.72,
+          "probability": 0.9944828748703003
+        },
+        {
+          "word": " were",
+          "start": 38.72,
+          "end": 38.88,
+          "probability": 0.9979308843612671
+        },
+        {
+          "word": " fewer",
+          "start": 38.88,
+          "end": 39.34,
+          "probability": 0.9967394471168518
+        },
+        {
+          "word": " people.",
+          "start": 39.34,
+          "end": 39.9,
+          "probability": 0.9980231523513794
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2648,
+      "start": 40.72,
+      "end": 45.52,
+      "text": " There were over 500 when I was at the Grand Canyon.",
+      "tokens": [
+        51064,
+        821,
+        645,
+        670,
+        5923,
+        562,
+        286,
+        390,
+        412,
+        264,
+        6757,
+        29170,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.058152776015432256,
+      "compression_ratio": 1.6127167630057804,
+      "no_speech_prob": 0.3012252748012543,
+      "words": [
+        {
+          "word": " There",
+          "start": 40.72,
+          "end": 41.38,
+          "probability": 0.9678723812103271
+        },
+        {
+          "word": " were",
+          "start": 41.38,
+          "end": 41.54,
+          "probability": 0.9929256439208984
+        },
+        {
+          "word": " over",
+          "start": 41.54,
+          "end": 42.08,
+          "probability": 0.9924010038375854
+        },
+        {
+          "word": " 500",
+          "start": 42.08,
+          "end": 43.24,
+          "probability": 0.892156183719635
+        },
+        {
+          "word": " when",
+          "start": 43.24,
+          "end": 43.66,
+          "probability": 0.9816291332244873
+        },
+        {
+          "word": " I",
+          "start": 43.66,
+          "end": 43.9,
+          "probability": 0.9926286935806274
+        },
+        {
+          "word": " was",
+          "start": 43.9,
+          "end": 44.1,
+          "probability": 0.9988211989402771
+        },
+        {
+          "word": " at",
+          "start": 44.1,
+          "end": 44.26,
+          "probability": 0.9984099864959717
+        },
+        {
+          "word": " the",
+          "start": 44.26,
+          "end": 44.56,
+          "probability": 0.9905720353126526
+        },
+        {
+          "word": " Grand",
+          "start": 44.56,
+          "end": 44.86,
+          "probability": 0.9898339509963989
+        },
+        {
+          "word": " Canyon.",
+          "start": 44.86,
+          "end": 45.52,
+          "probability": 0.9980167150497437
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2648,
+      "start": 46.5,
+      "end": 52.86,
+      "text": " There's a bridge made of glass and you can stand on it and look down at the river.",
+      "tokens": [
+        51364,
+        821,
+        311,
+        257,
+        7283,
+        1027,
+        295,
+        4276,
+        293,
+        291,
+        393,
+        1463,
+        322,
+        309,
+        293,
+        574,
+        760,
+        412,
+        264,
+        6810,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.058152776015432256,
+      "compression_ratio": 1.6127167630057804,
+      "no_speech_prob": 0.3012252748012543,
+      "words": [
+        {
+          "word": " There's",
+          "start": 46.5,
+          "end": 47.3,
+          "probability": 0.858283519744873
+        },
+        {
+          "word": " a",
+          "start": 47.3,
+          "end": 47.4,
+          "probability": 0.9980509281158447
+        },
+        {
+          "word": " bridge",
+          "start": 47.4,
+          "end": 47.78,
+          "probability": 0.9972063899040222
+        },
+        {
+          "word": " made",
+          "start": 47.78,
+          "end": 48.16,
+          "probability": 0.9934383034706116
+        },
+        {
+          "word": " of",
+          "start": 48.16,
+          "end": 48.4,
+          "probability": 0.9982624650001526
+        },
+        {
+          "word": " glass",
+          "start": 48.4,
+          "end": 48.74,
+          "probability": 0.9954825639724731
+        },
+        {
+          "word": " and",
+          "start": 48.74,
+          "end": 49.56,
+          "probability": 0.7205649614334106
+        },
+        {
+          "word": " you",
+          "start": 49.56,
+          "end": 49.78,
+          "probability": 0.9960747957229614
+        },
+        {
+          "word": " can",
+          "start": 49.78,
+          "end": 49.96,
+          "probability": 0.9981902241706848
+        },
+        {
+          "word": " stand",
+          "start": 49.96,
+          "end": 50.36,
+          "probability": 0.9969922304153442
+        },
+        {
+          "word": " on",
+          "start": 50.36,
+          "end": 50.64,
+          "probability": 0.9990577101707458
+        },
+        {
+          "word": " it",
+          "start": 50.64,
+          "end": 50.88,
+          "probability": 0.9987937211990356
+        },
+        {
+          "word": " and",
+          "start": 50.88,
+          "end": 51.34,
+          "probability": 0.9878805875778198
+        },
+        {
+          "word": " look",
+          "start": 51.34,
+          "end": 51.68,
+          "probability": 0.9932998418807983
+        },
+        {
+          "word": " down",
+          "start": 51.68,
+          "end": 52.14,
+          "probability": 0.9983226656913757
+        },
+        {
+          "word": " at",
+          "start": 52.14,
+          "end": 52.36,
+          "probability": 0.989345371723175
+        },
+        {
+          "word": " the",
+          "start": 52.36,
+          "end": 52.52,
+          "probability": 0.9990299940109253
+        },
+        {
+          "word": " river.",
+          "start": 52.52,
+          "end": 52.86,
+          "probability": 0.9851002097129822
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5286,
+      "start": 52.86,
+      "end": 61.4,
+      "text": " I know it's not dangerous but I felt uncomfortable standing on it and didn't really like it.",
+      "tokens": [
+        50364,
+        286,
+        458,
+        309,
+        311,
+        406,
+        5795,
+        457,
+        286,
+        2762,
+        10532,
+        4877,
+        322,
+        309,
+        293,
+        994,
+        380,
+        534,
+        411,
+        309,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06987650801495808,
+      "compression_ratio": 1.4285714285714286,
+      "no_speech_prob": 0.08920478075742722,
+      "words": [
+        {
+          "word": " I",
+          "start": 52.86,
+          "end": 54.14,
+          "probability": 0.25167861580848694
+        },
+        {
+          "word": " know",
+          "start": 54.14,
+          "end": 54.42,
+          "probability": 0.6494035124778748
+        },
+        {
+          "word": " it's",
+          "start": 54.42,
+          "end": 54.76,
+          "probability": 0.9614095985889435
+        },
+        {
+          "word": " not",
+          "start": 54.76,
+          "end": 54.94,
+          "probability": 0.9967306852340698
+        },
+        {
+          "word": " dangerous",
+          "start": 54.94,
+          "end": 55.6,
+          "probability": 0.9945732951164246
+        },
+        {
+          "word": " but",
+          "start": 55.6,
+          "end": 56.32,
+          "probability": 0.2871299088001251
+        },
+        {
+          "word": " I",
+          "start": 56.32,
+          "end": 56.68,
+          "probability": 0.9860184192657471
+        },
+        {
+          "word": " felt",
+          "start": 56.68,
+          "end": 57.04,
+          "probability": 0.9992923736572266
+        },
+        {
+          "word": " uncomfortable",
+          "start": 57.04,
+          "end": 57.92,
+          "probability": 0.9826900959014893
+        },
+        {
+          "word": " standing",
+          "start": 57.92,
+          "end": 58.62,
+          "probability": 0.9913676381111145
+        },
+        {
+          "word": " on",
+          "start": 58.62,
+          "end": 58.86,
+          "probability": 0.9986023306846619
+        },
+        {
+          "word": " it",
+          "start": 58.86,
+          "end": 59.14,
+          "probability": 0.9978959560394287
+        },
+        {
+          "word": " and",
+          "start": 59.14,
+          "end": 59.66,
+          "probability": 0.9107682108879089
+        },
+        {
+          "word": " didn't",
+          "start": 59.66,
+          "end": 60.18,
+          "probability": 0.9919516742229462
+        },
+        {
+          "word": " really",
+          "start": 60.18,
+          "end": 60.46,
+          "probability": 0.9724013805389404
+        },
+        {
+          "word": " like",
+          "start": 60.46,
+          "end": 60.84,
+          "probability": 0.9974021911621094
+        },
+        {
+          "word": " it.",
+          "start": 60.84,
+          "end": 61.4,
+          "probability": 0.9981040954589844
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5286,
+      "start": 61.74,
+      "end": 63.0,
+      "text": " Was it hot?",
+      "tokens": [
+        50814,
+        3027,
+        309,
+        2368,
+        30,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06987650801495808,
+      "compression_ratio": 1.4285714285714286,
+      "no_speech_prob": 0.08920478075742722,
+      "words": [
+        {
+          "word": " Was",
+          "start": 61.74,
+          "end": 62.38,
+          "probability": 0.33697715401649475
+        },
+        {
+          "word": " it",
+          "start": 62.38,
+          "end": 62.7,
+          "probability": 0.9963207244873047
+        },
+        {
+          "word": " hot?",
+          "start": 62.7,
+          "end": 63.0,
+          "probability": 0.9966532588005066
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5286,
+      "start": 63.88,
+      "end": 66.38,
+      "text": " Yes, but it rained too.",
+      "tokens": [
+        50914,
+        1079,
+        11,
+        457,
+        309,
+        47533,
+        886,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06987650801495808,
+      "compression_ratio": 1.4285714285714286,
+      "no_speech_prob": 0.08920478075742722,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 63.88,
+          "end": 64.26,
+          "probability": 0.975176215171814
+        },
+        {
+          "word": " but",
+          "start": 64.82,
+          "end": 65.06,
+          "probability": 0.9963654279708862
+        },
+        {
+          "word": " it",
+          "start": 65.06,
+          "end": 65.36,
+          "probability": 0.9960417747497559
+        },
+        {
+          "word": " rained",
+          "start": 65.36,
+          "end": 65.76,
+          "probability": 0.9626868963241577
+        },
+        {
+          "word": " too.",
+          "start": 65.76,
+          "end": 66.38,
+          "probability": 0.830790638923645
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5286,
+      "start": 67.22,
+      "end": 68.66,
+      "text": " I didn't like that.",
+      "tokens": [
+        51064,
+        286,
+        994,
+        380,
+        411,
+        300,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06987650801495808,
+      "compression_ratio": 1.4285714285714286,
+      "no_speech_prob": 0.08920478075742722,
+      "words": [
+        {
+          "word": " I",
+          "start": 67.22,
+          "end": 67.5,
+          "probability": 0.9930277466773987
+        },
+        {
+          "word": " didn't",
+          "start": 67.5,
+          "end": 67.88,
+          "probability": 0.9985105693340302
+        },
+        {
+          "word": " like",
+          "start": 67.88,
+          "end": 68.12,
+          "probability": 0.9990983009338379
+        },
+        {
+          "word": " that.",
+          "start": 68.12,
+          "end": 68.66,
+          "probability": 0.9984768033027649
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5286,
+      "start": 69.5,
+      "end": 72.48,
+      "text": " But Yosemite Park was amazing.",
+      "tokens": [
+        51164,
+        583,
+        398,
+        329,
+        443,
+        642,
+        4964,
+        390,
+        2243,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06987650801495808,
+      "compression_ratio": 1.4285714285714286,
+      "no_speech_prob": 0.08920478075742722,
+      "words": [
+        {
+          "word": " But",
+          "start": 69.5,
+          "end": 69.9,
+          "probability": 0.9678827524185181
+        },
+        {
+          "word": " Yosemite",
+          "start": 69.9,
+          "end": 70.56,
+          "probability": 0.7709651365876198
+        },
+        {
+          "word": " Park",
+          "start": 70.56,
+          "end": 71.0,
+          "probability": 0.8841651678085327
+        },
+        {
+          "word": " was",
+          "start": 71.0,
+          "end": 71.56,
+          "probability": 0.9980201721191406
+        },
+        {
+          "word": " amazing.",
+          "start": 71.56,
+          "end": 72.48,
+          "probability": 0.993914783000946
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5286,
+      "start": 73.46,
+      "end": 78.96,
+      "text": " There were lots of trees so it was very green and not too hot.",
+      "tokens": [
+        51364,
+        821,
+        645,
+        3195,
+        295,
+        5852,
+        370,
+        309,
+        390,
+        588,
+        3092,
+        293,
+        406,
+        886,
+        2368,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06987650801495808,
+      "compression_ratio": 1.4285714285714286,
+      "no_speech_prob": 0.08920478075742722,
+      "words": [
+        {
+          "word": " There",
+          "start": 73.46,
+          "end": 73.74,
+          "probability": 0.9912458062171936
+        },
+        {
+          "word": " were",
+          "start": 73.74,
+          "end": 73.9,
+          "probability": 0.9887433052062988
+        },
+        {
+          "word": " lots",
+          "start": 73.9,
+          "end": 74.24,
+          "probability": 0.9949942231178284
+        },
+        {
+          "word": " of",
+          "start": 74.24,
+          "end": 74.58,
+          "probability": 0.9992677569389343
+        },
+        {
+          "word": " trees",
+          "start": 74.58,
+          "end": 74.9,
+          "probability": 0.9673103094100952
+        },
+        {
+          "word": " so",
+          "start": 74.9,
+          "end": 75.82,
+          "probability": 0.6108129620552063
+        },
+        {
+          "word": " it",
+          "start": 75.82,
+          "end": 76.02,
+          "probability": 0.9964233040809631
+        },
+        {
+          "word": " was",
+          "start": 76.02,
+          "end": 76.18,
+          "probability": 0.9985377788543701
+        },
+        {
+          "word": " very",
+          "start": 76.18,
+          "end": 76.62,
+          "probability": 0.9945567846298218
+        },
+        {
+          "word": " green",
+          "start": 76.62,
+          "end": 77.08,
+          "probability": 0.9974337220191956
+        },
+        {
+          "word": " and",
+          "start": 77.08,
+          "end": 77.72,
+          "probability": 0.9819172024726868
+        },
+        {
+          "word": " not",
+          "start": 77.72,
+          "end": 78.16,
+          "probability": 0.9967308044433594
+        },
+        {
+          "word": " too",
+          "start": 78.16,
+          "end": 78.58,
+          "probability": 0.9925813674926758
+        },
+        {
+          "word": " hot.",
+          "start": 78.58,
+          "end": 78.96,
+          "probability": 0.9992175102233887
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5286,
+      "start": 79.72,
+      "end": 81.26,
+      "text": " I loved it there.",
+      "tokens": [
+        51714,
+        286,
+        4333,
+        309,
+        456,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06987650801495808,
+      "compression_ratio": 1.4285714285714286,
+      "no_speech_prob": 0.08920478075742722,
+      "words": [
+        {
+          "word": " I",
+          "start": 79.72,
+          "end": 80.18,
+          "probability": 0.9965810179710388
+        },
+        {
+          "word": " loved",
+          "start": 80.18,
+          "end": 80.64,
+          "probability": 0.9822236895561218
+        },
+        {
+          "word": " it",
+          "start": 80.64,
+          "end": 80.94,
+          "probability": 0.9995498061180115
+        },
+        {
+          "word": " there.",
+          "start": 80.94,
+          "end": 81.26,
+          "probability": 0.987967312335968
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 8126,
+      "start": 82.26,
+      "end": 84.28,
+      "text": " Where did you go next?",
+      "tokens": [
+        50414,
+        2305,
+        630,
+        291,
+        352,
+        958,
+        30,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08660559587075677,
+      "compression_ratio": 1.4361702127659575,
+      "no_speech_prob": 0.13546817004680634,
+      "words": [
+        {
+          "word": " Where",
+          "start": 82.26,
+          "end": 82.9,
+          "probability": 0.5195856690406799
+        },
+        {
+          "word": " did",
+          "start": 82.9,
+          "end": 83.12,
+          "probability": 0.9748318195343018
+        },
+        {
+          "word": " you",
+          "start": 83.12,
+          "end": 83.36,
+          "probability": 0.9957363605499268
+        },
+        {
+          "word": " go",
+          "start": 83.36,
+          "end": 83.64,
+          "probability": 0.9953060746192932
+        },
+        {
+          "word": " next?",
+          "start": 83.64,
+          "end": 84.28,
+          "probability": 0.9969486594200134
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8126,
+      "start": 85.14,
+      "end": 86.14,
+      "text": " To San Francisco.",
+      "tokens": [
+        50514,
+        1407,
+        5271,
+        12279,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08660559587075677,
+      "compression_ratio": 1.4361702127659575,
+      "no_speech_prob": 0.13546817004680634,
+      "words": [
+        {
+          "word": " To",
+          "start": 85.14,
+          "end": 85.18,
+          "probability": 0.24832060933113098
+        },
+        {
+          "word": " San",
+          "start": 85.18,
+          "end": 85.46,
+          "probability": 0.9981591105461121
+        },
+        {
+          "word": " Francisco.",
+          "start": 85.46,
+          "end": 86.14,
+          "probability": 0.9936869740486145
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8126,
+      "start": 87.24,
+      "end": 88.48,
+      "text": " You should go there.",
+      "tokens": [
+        50614,
+        509,
+        820,
+        352,
+        456,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08660559587075677,
+      "compression_ratio": 1.4361702127659575,
+      "no_speech_prob": 0.13546817004680634,
+      "words": [
+        {
+          "word": " You",
+          "start": 87.24,
+          "end": 87.6,
+          "probability": 0.986804723739624
+        },
+        {
+          "word": " should",
+          "start": 87.6,
+          "end": 87.84,
+          "probability": 0.9967601895332336
+        },
+        {
+          "word": " go",
+          "start": 87.84,
+          "end": 88.16,
+          "probability": 0.9950961470603943
+        },
+        {
+          "word": " there.",
+          "start": 88.16,
+          "end": 88.48,
+          "probability": 0.9949140548706055
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 8126,
+      "start": 89.48,
+      "end": 94.18,
+      "text": " It has lots of unusual shops and fantastic food.",
+      "tokens": [
+        50764,
+        467,
+        575,
+        3195,
+        295,
+        10901,
+        14457,
+        293,
+        5456,
+        1755,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08660559587075677,
+      "compression_ratio": 1.4361702127659575,
+      "no_speech_prob": 0.13546817004680634,
+      "words": [
+        {
+          "word": " It",
+          "start": 89.48,
+          "end": 89.68,
+          "probability": 0.992576003074646
+        },
+        {
+          "word": " has",
+          "start": 89.68,
+          "end": 89.86,
+          "probability": 0.9964509010314941
+        },
+        {
+          "word": " lots",
+          "start": 89.86,
+          "end": 90.18,
+          "probability": 0.9951375126838684
+        },
+        {
+          "word": " of",
+          "start": 90.18,
+          "end": 90.52,
+          "probability": 0.9988546371459961
+        },
+        {
+          "word": " unusual",
+          "start": 90.52,
+          "end": 91.16,
+          "probability": 0.9867765307426453
+        },
+        {
+          "word": " shops",
+          "start": 91.16,
+          "end": 91.94,
+          "probability": 0.9965083003044128
+        },
+        {
+          "word": " and",
+          "start": 91.94,
+          "end": 92.56,
+          "probability": 0.9027271270751953
+        },
+        {
+          "word": " fantastic",
+          "start": 92.56,
+          "end": 93.48,
+          "probability": 0.9885037541389465
+        },
+        {
+          "word": " food.",
+          "start": 93.48,
+          "end": 94.18,
+          "probability": 0.965597927570343
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 8126,
+      "start": 95.28,
+      "end": 104.32,
+      "text": " One pizza restaurant made 30 different kinds of pizza and they weren't like the fast food pizzas we get here.",
+      "tokens": [
+        51014,
+        1485,
+        8298,
+        6383,
+        1027,
+        2217,
+        819,
+        3685,
+        295,
+        8298,
+        293,
+        436,
+        4999,
+        380,
+        411,
+        264,
+        2370,
+        1755,
+        44037,
+        321,
+        483,
+        510,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08660559587075677,
+      "compression_ratio": 1.4361702127659575,
+      "no_speech_prob": 0.13546817004680634,
+      "words": [
+        {
+          "word": " One",
+          "start": 95.28,
+          "end": 95.58,
+          "probability": 0.9637705683708191
+        },
+        {
+          "word": " pizza",
+          "start": 95.58,
+          "end": 96.06,
+          "probability": 0.9456043243408203
+        },
+        {
+          "word": " restaurant",
+          "start": 96.06,
+          "end": 96.68,
+          "probability": 0.9966860413551331
+        },
+        {
+          "word": " made",
+          "start": 96.68,
+          "end": 97.18,
+          "probability": 0.9682819247245789
+        },
+        {
+          "word": " 30",
+          "start": 97.18,
+          "end": 97.98,
+          "probability": 0.8370423316955566
+        },
+        {
+          "word": " different",
+          "start": 97.98,
+          "end": 98.54,
+          "probability": 0.9990862607955933
+        },
+        {
+          "word": " kinds",
+          "start": 98.54,
+          "end": 99.02,
+          "probability": 0.9929648637771606
+        },
+        {
+          "word": " of",
+          "start": 99.02,
+          "end": 99.28,
+          "probability": 0.998927891254425
+        },
+        {
+          "word": " pizza",
+          "start": 99.28,
+          "end": 99.7,
+          "probability": 0.9847091436386108
+        },
+        {
+          "word": " and",
+          "start": 99.7,
+          "end": 100.68,
+          "probability": 0.5252133011817932
+        },
+        {
+          "word": " they",
+          "start": 100.68,
+          "end": 100.88,
+          "probability": 0.9969733953475952
+        },
+        {
+          "word": " weren't",
+          "start": 100.88,
+          "end": 101.34,
+          "probability": 0.9356357753276825
+        },
+        {
+          "word": " like",
+          "start": 101.34,
+          "end": 101.58,
+          "probability": 0.9863008260726929
+        },
+        {
+          "word": " the",
+          "start": 101.58,
+          "end": 101.86,
+          "probability": 0.9984717965126038
+        },
+        {
+          "word": " fast",
+          "start": 101.86,
+          "end": 102.22,
+          "probability": 0.9922365546226501
+        },
+        {
+          "word": " food",
+          "start": 102.22,
+          "end": 102.74,
+          "probability": 0.8994512557983398
+        },
+        {
+          "word": " pizzas",
+          "start": 102.74,
+          "end": 103.28,
+          "probability": 0.9924303889274597
+        },
+        {
+          "word": " we",
+          "start": 103.28,
+          "end": 103.56,
+          "probability": 0.9952529668807983
+        },
+        {
+          "word": " get",
+          "start": 103.56,
+          "end": 103.8,
+          "probability": 0.99669349193573
+        },
+        {
+          "word": " here.",
+          "start": 103.8,
+          "end": 104.32,
+          "probability": 0.9984557628631592
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 8126,
+      "start": 105.14,
+      "end": 108.4,
+      "text": " More like the ones my grandmother cooked at home.",
+      "tokens": [
+        51514,
+        5048,
+        411,
+        264,
+        2306,
+        452,
+        14317,
+        9267,
+        412,
+        1280,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08660559587075677,
+      "compression_ratio": 1.4361702127659575,
+      "no_speech_prob": 0.13546817004680634,
+      "words": [
+        {
+          "word": " More",
+          "start": 105.14,
+          "end": 105.32,
+          "probability": 0.9939613342285156
+        },
+        {
+          "word": " like",
+          "start": 105.32,
+          "end": 105.6,
+          "probability": 0.9987151622772217
+        },
+        {
+          "word": " the",
+          "start": 105.6,
+          "end": 105.86,
+          "probability": 0.9838956594467163
+        },
+        {
+          "word": " ones",
+          "start": 105.86,
+          "end": 106.12,
+          "probability": 0.9785017967224121
+        },
+        {
+          "word": " my",
+          "start": 106.12,
+          "end": 106.42,
+          "probability": 0.9916281700134277
+        },
+        {
+          "word": " grandmother",
+          "start": 106.42,
+          "end": 106.98,
+          "probability": 0.9886717796325684
+        },
+        {
+          "word": " cooked",
+          "start": 106.98,
+          "end": 107.62,
+          "probability": 0.960049033164978
+        },
+        {
+          "word": " at",
+          "start": 107.62,
+          "end": 107.92,
+          "probability": 0.9996687173843384
+        },
+        {
+          "word": " home.",
+          "start": 107.92,
+          "end": 108.4,
+          "probability": 0.9994760155677795
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 10840,
+      "start": 109.4,
+      "end": 111.1,
+      "text": " Did you stay in a hotel?",
+      "tokens": [
+        50414,
+        2589,
+        291,
+        1754,
+        294,
+        257,
+        7622,
+        30,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06360197778957993,
+      "compression_ratio": 1.3670886075949367,
+      "no_speech_prob": 0.07606397569179535,
+      "words": [
+        {
+          "word": " Did",
+          "start": 109.22,
+          "end": 109.6,
+          "probability": 0.5441181063652039
+        },
+        {
+          "word": " you",
+          "start": 109.6,
+          "end": 109.88,
+          "probability": 0.9956564903259277
+        },
+        {
+          "word": " stay",
+          "start": 109.88,
+          "end": 110.24,
+          "probability": 0.9884932637214661
+        },
+        {
+          "word": " in",
+          "start": 110.24,
+          "end": 110.54,
+          "probability": 0.9944019913673401
+        },
+        {
+          "word": " a",
+          "start": 110.54,
+          "end": 110.68,
+          "probability": 0.9960623383522034
+        },
+        {
+          "word": " hotel?",
+          "start": 110.68,
+          "end": 111.1,
+          "probability": 0.9991322159767151
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 10840,
+      "start": 112.14,
+      "end": 114.6,
+      "text": " Yes, in San Francisco we did.",
+      "tokens": [
+        50514,
+        1079,
+        11,
+        294,
+        5271,
+        12279,
+        321,
+        630,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06360197778957993,
+      "compression_ratio": 1.3670886075949367,
+      "no_speech_prob": 0.07606397569179535,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 112.14,
+          "end": 112.48,
+          "probability": 0.9764625430107117
+        },
+        {
+          "word": " in",
+          "start": 112.92,
+          "end": 113.2,
+          "probability": 0.9914974570274353
+        },
+        {
+          "word": " San",
+          "start": 113.2,
+          "end": 113.44,
+          "probability": 0.9971901774406433
+        },
+        {
+          "word": " Francisco",
+          "start": 113.44,
+          "end": 113.9,
+          "probability": 0.9914172291755676
+        },
+        {
+          "word": " we",
+          "start": 113.9,
+          "end": 114.38,
+          "probability": 0.8550045490264893
+        },
+        {
+          "word": " did.",
+          "start": 114.38,
+          "end": 114.6,
+          "probability": 0.9991037249565125
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 10840,
+      "start": 115.34,
+      "end": 117.0,
+      "text": " It was cheap and small.",
+      "tokens": [
+        50714,
+        467,
+        390,
+        7084,
+        293,
+        1359,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06360197778957993,
+      "compression_ratio": 1.3670886075949367,
+      "no_speech_prob": 0.07606397569179535,
+      "words": [
+        {
+          "word": " It",
+          "start": 115.34,
+          "end": 115.64,
+          "probability": 0.9941945672035217
+        },
+        {
+          "word": " was",
+          "start": 115.64,
+          "end": 115.88,
+          "probability": 0.9988559484481812
+        },
+        {
+          "word": " cheap",
+          "start": 115.88,
+          "end": 116.18,
+          "probability": 0.9977452158927917
+        },
+        {
+          "word": " and",
+          "start": 116.18,
+          "end": 116.56,
+          "probability": 0.9932284951210022
+        },
+        {
+          "word": " small.",
+          "start": 116.56,
+          "end": 117.0,
+          "probability": 0.9987010955810547
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 10840,
+      "start": 117.86,
+      "end": 122.52,
+      "text": " There were only six rooms and the other people staying there were nice.",
+      "tokens": [
+        50814,
+        821,
+        645,
+        787,
+        2309,
+        9396,
+        293,
+        264,
+        661,
+        561,
+        7939,
+        456,
+        645,
+        1481,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06360197778957993,
+      "compression_ratio": 1.3670886075949367,
+      "no_speech_prob": 0.07606397569179535,
+      "words": [
+        {
+          "word": " There",
+          "start": 117.86,
+          "end": 118.12,
+          "probability": 0.9963598847389221
+        },
+        {
+          "word": " were",
+          "start": 118.12,
+          "end": 118.26,
+          "probability": 0.9968798160552979
+        },
+        {
+          "word": " only",
+          "start": 118.26,
+          "end": 118.62,
+          "probability": 0.9988666772842407
+        },
+        {
+          "word": " six",
+          "start": 118.62,
+          "end": 119.1,
+          "probability": 0.814447820186615
+        },
+        {
+          "word": " rooms",
+          "start": 119.1,
+          "end": 119.42,
+          "probability": 0.9976239800453186
+        },
+        {
+          "word": " and",
+          "start": 119.42,
+          "end": 120.28,
+          "probability": 0.7140194177627563
+        },
+        {
+          "word": " the",
+          "start": 120.28,
+          "end": 120.5,
+          "probability": 0.9836824536323547
+        },
+        {
+          "word": " other",
+          "start": 120.5,
+          "end": 120.78,
+          "probability": 0.9964888095855713
+        },
+        {
+          "word": " people",
+          "start": 120.78,
+          "end": 121.14,
+          "probability": 0.9976869821548462
+        },
+        {
+          "word": " staying",
+          "start": 121.14,
+          "end": 121.56,
+          "probability": 0.9898779392242432
+        },
+        {
+          "word": " there",
+          "start": 121.56,
+          "end": 121.96,
+          "probability": 0.9978781938552856
+        },
+        {
+          "word": " were",
+          "start": 121.96,
+          "end": 122.2,
+          "probability": 0.9971976280212402
+        },
+        {
+          "word": " nice.",
+          "start": 122.2,
+          "end": 122.52,
+          "probability": 0.9969190359115601
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 10840,
+      "start": 123.58,
+      "end": 125.76,
+      "text": " The city is amazing.",
+      "tokens": [
+        51114,
+        440,
+        2307,
+        307,
+        2243,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06360197778957993,
+      "compression_ratio": 1.3670886075949367,
+      "no_speech_prob": 0.07606397569179535,
+      "words": [
+        {
+          "word": " The",
+          "start": 123.58,
+          "end": 123.8,
+          "probability": 0.8699114918708801
+        },
+        {
+          "word": " city",
+          "start": 123.8,
+          "end": 124.3,
+          "probability": 0.971710741519928
+        },
+        {
+          "word": " is",
+          "start": 124.3,
+          "end": 124.8,
+          "probability": 0.9973401427268982
+        },
+        {
+          "word": " amazing.",
+          "start": 124.8,
+          "end": 125.76,
+          "probability": 0.9908558130264282
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 10840,
+      "start": 126.78,
+      "end": 128.9,
+      "text": " I think you should visit too.",
+      "tokens": [
+        51264,
+        286,
+        519,
+        291,
+        820,
+        3441,
+        886,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06360197778957993,
+      "compression_ratio": 1.3670886075949367,
+      "no_speech_prob": 0.07606397569179535,
+      "words": [
+        {
+          "word": " I",
+          "start": 126.78,
+          "end": 126.98,
+          "probability": 0.9916797280311584
+        },
+        {
+          "word": " think",
+          "start": 126.98,
+          "end": 127.26,
+          "probability": 0.99897301197052
+        },
+        {
+          "word": " you",
+          "start": 127.26,
+          "end": 127.7,
+          "probability": 0.9647917747497559
+        },
+        {
+          "word": " should",
+          "start": 127.7,
+          "end": 128.02,
+          "probability": 0.9996328353881836
+        },
+        {
+          "word": " visit",
+          "start": 128.02,
+          "end": 128.36,
+          "probability": 0.9990959167480469
+        },
+        {
+          "word": " too.",
+          "start": 128.36,
+          "end": 128.9,
+          "probability": 0.8105551600456238
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 10840,
+      "start": 129.72,
+      "end": 131.08,
+      "text": " You'd love it.",
+      "tokens": [
+        51414,
+        509,
+        1116,
+        959,
+        309,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06360197778957993,
+      "compression_ratio": 1.3670886075949367,
+      "no_speech_prob": 0.07606397569179535,
+      "words": [
+        {
+          "word": " You'd",
+          "start": 129.72,
+          "end": 130.12,
+          "probability": 0.9448404014110565
+        },
+        {
+          "word": " love",
+          "start": 130.12,
+          "end": 130.54,
+          "probability": 0.9849172234535217
+        },
+        {
+          "word": " it.",
+          "start": 130.54,
+          "end": 131.08,
+          "probability": 0.9994884729385376
+        }
+      ]
+    }
+  ]
+}

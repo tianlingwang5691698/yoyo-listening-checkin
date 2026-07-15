@@ -1,0 +1,4657 @@
+{
+  "model": "small.en",
+  "language": "en",
+  "text": "Track 1.1 Hi everyone, thanks for coming. Today I'm going to talk about working at an animal shelter. I want to start by saying that animal shelters are always looking for people to work for them. There are so many animals to look after. For example, in the summer of 2018, the RSPCA, that the Royal Society for the Prevention of Cruelty to Animals, got around 20,000 calls about abandoned animals, animals that are left because people don't want them. That's one every six minutes. Anyway, let me talk about the advantages of working at a shelter. By the way, there are more advantages than disadvantages. First of all, you know that you are doing a good thing, and you're making sure the animals get all the care they need. It's a fantastic feeling to see an animal find a home, even though it is a lot of hard work to get an animal ready in the first place, especially those that have survived in difficult places. Luckily, not all animals that come to us have suffered abuse. On the contrary, their owners loved and cared for them, but had to give them up because they were no longer able to look after them. It's very sad, but we're working very hard to find them good homes. Furthermore, working at a shelter is good for your health too. It's a fact that spending time with animals helps you feel less stressed. Some universities in the UK actually use animals during exams to help students with stress. And a number of airlines let passengers travel with their pets to help with the anxiety of flying. Connecting with animals has a positive effect on your mood, helps you to be more relaxed and happier. Another point is that you get to know the animals over a long period of time, which is important for people who want to take an animal home. You can tell them about the animal's character and any training it needs. Finally, you see them go to a good home. You have done all you can to help. You know they are going to a place where they will be safe and looked after. However, working at a shelter has some disadvantages too. Knowing about the abuse the animal suffered and the conditions they lived in before can make you feel unhappy. It can also be very difficult to see an animal leave the shelter, especially one that has become your friend. In most cases, it's the last time you will see these animals. Another disadvantage is more to do with the number of animals that are here. This is certainly a problem in the shelter where I work. We receive more animals than we can handle and we work hard to make more space for them all the time. Crowded places make animals anxious and disease can also be an issue. That's why we need more people. To sum up, working at an animal shelter has both pros and cons, but it's a very rewarding job. It doesn't only benefit your welfare, it benefits the welfare of all the animals in the shelter too.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.9,
+      "text": " Track 1.1",
+      "tokens": [
+        50363,
+        17762,
+        352,
+        13,
+        16,
+        50463
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.187050199508667,
+      "compression_ratio": 1.4564102564102563,
+      "no_speech_prob": 0.022382907569408417,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.58,
+          "probability": 0.721098780632019
+        },
+        {
+          "word": " 1",
+          "start": 0.58,
+          "end": 1.0,
+          "probability": 0.9303529262542725
+        },
+        {
+          "word": ".1",
+          "start": 1.0,
+          "end": 1.9,
+          "probability": 0.9922046661376953
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.42,
+      "end": 5.88,
+      "text": " Hi everyone, thanks for coming.",
+      "tokens": [
+        50538,
+        15902,
+        2506,
+        11,
+        5176,
+        329,
+        2406,
+        13,
+        50663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.187050199508667,
+      "compression_ratio": 1.4564102564102563,
+      "no_speech_prob": 0.022382907569408417,
+      "words": [
+        {
+          "word": " Hi",
+          "start": 3.42,
+          "end": 4.14,
+          "probability": 0.14218991994857788
+        },
+        {
+          "word": " everyone,",
+          "start": 4.14,
+          "end": 4.68,
+          "probability": 0.8141113519668579
+        },
+        {
+          "word": " thanks",
+          "start": 4.94,
+          "end": 5.28,
+          "probability": 0.9802754521369934
+        },
+        {
+          "word": " for",
+          "start": 5.28,
+          "end": 5.52,
+          "probability": 0.9991356730461121
+        },
+        {
+          "word": " coming.",
+          "start": 5.52,
+          "end": 5.88,
+          "probability": 0.9987762570381165
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.62,
+      "end": 10.14,
+      "text": " Today I'm going to talk about working at an animal shelter.",
+      "tokens": [
+        50663,
+        6288,
+        314,
+        1101,
+        1016,
+        284,
+        1561,
+        546,
+        1762,
+        379,
+        281,
+        5044,
+        11772,
+        13,
+        50863
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.187050199508667,
+      "compression_ratio": 1.4564102564102563,
+      "no_speech_prob": 0.022382907569408417,
+      "words": [
+        {
+          "word": " Today",
+          "start": 6.62,
+          "end": 6.9,
+          "probability": 0.994167685508728
+        },
+        {
+          "word": " I'm",
+          "start": 6.9,
+          "end": 7.46,
+          "probability": 0.7782883048057556
+        },
+        {
+          "word": " going",
+          "start": 7.46,
+          "end": 7.6,
+          "probability": 0.9971568584442139
+        },
+        {
+          "word": " to",
+          "start": 7.6,
+          "end": 7.8,
+          "probability": 0.997268557548523
+        },
+        {
+          "word": " talk",
+          "start": 7.8,
+          "end": 8.02,
+          "probability": 0.9985015392303467
+        },
+        {
+          "word": " about",
+          "start": 8.02,
+          "end": 8.34,
+          "probability": 0.9987711310386658
+        },
+        {
+          "word": " working",
+          "start": 8.34,
+          "end": 8.78,
+          "probability": 0.9819456934928894
+        },
+        {
+          "word": " at",
+          "start": 8.78,
+          "end": 9.1,
+          "probability": 0.9962120056152344
+        },
+        {
+          "word": " an",
+          "start": 9.1,
+          "end": 9.28,
+          "probability": 0.9953357577323914
+        },
+        {
+          "word": " animal",
+          "start": 9.28,
+          "end": 9.64,
+          "probability": 0.9776261448860168
+        },
+        {
+          "word": " shelter.",
+          "start": 9.64,
+          "end": 10.14,
+          "probability": 0.9988716244697571
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.06,
+      "end": 17.16,
+      "text": " I want to start by saying that animal shelters are always looking for people to work for them.",
+      "tokens": [
+        50913,
+        314,
+        765,
+        284,
+        923,
+        416,
+        2282,
+        326,
+        5044,
+        23629,
+        389,
+        1464,
+        2045,
+        329,
+        661,
+        284,
+        670,
+        329,
+        606,
+        13,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.187050199508667,
+      "compression_ratio": 1.4564102564102563,
+      "no_speech_prob": 0.022382907569408417,
+      "words": [
+        {
+          "word": " I",
+          "start": 11.06,
+          "end": 11.28,
+          "probability": 0.9973545074462891
+        },
+        {
+          "word": " want",
+          "start": 11.28,
+          "end": 11.52,
+          "probability": 0.9981074333190918
+        },
+        {
+          "word": " to",
+          "start": 11.52,
+          "end": 11.74,
+          "probability": 0.9990880489349365
+        },
+        {
+          "word": " start",
+          "start": 11.74,
+          "end": 12.08,
+          "probability": 0.9978577494621277
+        },
+        {
+          "word": " by",
+          "start": 12.08,
+          "end": 12.44,
+          "probability": 0.9950928688049316
+        },
+        {
+          "word": " saying",
+          "start": 12.44,
+          "end": 12.86,
+          "probability": 0.9987154006958008
+        },
+        {
+          "word": " that",
+          "start": 12.86,
+          "end": 13.14,
+          "probability": 0.9940313696861267
+        },
+        {
+          "word": " animal",
+          "start": 13.14,
+          "end": 13.6,
+          "probability": 0.9895111918449402
+        },
+        {
+          "word": " shelters",
+          "start": 13.6,
+          "end": 13.98,
+          "probability": 0.9981493949890137
+        },
+        {
+          "word": " are",
+          "start": 13.98,
+          "end": 14.38,
+          "probability": 0.9974368810653687
+        },
+        {
+          "word": " always",
+          "start": 14.38,
+          "end": 14.92,
+          "probability": 0.9945637583732605
+        },
+        {
+          "word": " looking",
+          "start": 14.92,
+          "end": 15.42,
+          "probability": 0.9983111619949341
+        },
+        {
+          "word": " for",
+          "start": 15.42,
+          "end": 15.74,
+          "probability": 0.9988734126091003
+        },
+        {
+          "word": " people",
+          "start": 15.74,
+          "end": 16.08,
+          "probability": 0.9987316727638245
+        },
+        {
+          "word": " to",
+          "start": 16.08,
+          "end": 16.42,
+          "probability": 0.9970209002494812
+        },
+        {
+          "word": " work",
+          "start": 16.42,
+          "end": 16.68,
+          "probability": 0.9991301894187927
+        },
+        {
+          "word": " for",
+          "start": 16.68,
+          "end": 16.92,
+          "probability": 0.9989128112792969
+        },
+        {
+          "word": " them.",
+          "start": 16.92,
+          "end": 17.16,
+          "probability": 0.9995749592781067
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 17.7,
+      "end": 20.54,
+      "text": " There are so many animals to look after.",
+      "tokens": [
+        51213,
+        1318,
+        389,
+        523,
+        867,
+        4695,
+        284,
+        804,
+        706,
+        13,
+        51413
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.187050199508667,
+      "compression_ratio": 1.4564102564102563,
+      "no_speech_prob": 0.022382907569408417,
+      "words": [
+        {
+          "word": " There",
+          "start": 17.7,
+          "end": 17.84,
+          "probability": 0.9939841628074646
+        },
+        {
+          "word": " are",
+          "start": 17.84,
+          "end": 18.0,
+          "probability": 0.9965909719467163
+        },
+        {
+          "word": " so",
+          "start": 18.0,
+          "end": 18.48,
+          "probability": 0.9692788124084473
+        },
+        {
+          "word": " many",
+          "start": 18.48,
+          "end": 18.98,
+          "probability": 0.9939122200012207
+        },
+        {
+          "word": " animals",
+          "start": 18.98,
+          "end": 19.44,
+          "probability": 0.9990987777709961
+        },
+        {
+          "word": " to",
+          "start": 19.44,
+          "end": 19.82,
+          "probability": 0.9994377493858337
+        },
+        {
+          "word": " look",
+          "start": 19.82,
+          "end": 20.02,
+          "probability": 0.9993085861206055
+        },
+        {
+          "word": " after.",
+          "start": 20.02,
+          "end": 20.54,
+          "probability": 0.9994034767150879
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 21.34,
+      "end": 25.98,
+      "text": " For example, in the summer of 2018, the RSPCA,",
+      "tokens": [
+        51413,
+        1114,
+        1672,
+        11,
+        287,
+        262,
+        3931,
+        286,
+        2864,
+        11,
+        262,
+        371,
+        4303,
+        8141,
+        11,
+        51663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.187050199508667,
+      "compression_ratio": 1.4564102564102563,
+      "no_speech_prob": 0.022382907569408417,
+      "words": [
+        {
+          "word": " For",
+          "start": 21.34,
+          "end": 21.58,
+          "probability": 0.9951737523078918
+        },
+        {
+          "word": " example,",
+          "start": 21.58,
+          "end": 21.98,
+          "probability": 0.9985091090202332
+        },
+        {
+          "word": " in",
+          "start": 22.4,
+          "end": 22.6,
+          "probability": 0.9910508394241333
+        },
+        {
+          "word": " the",
+          "start": 22.6,
+          "end": 22.74,
+          "probability": 0.9910326600074768
+        },
+        {
+          "word": " summer",
+          "start": 22.74,
+          "end": 23.02,
+          "probability": 0.9645513892173767
+        },
+        {
+          "word": " of",
+          "start": 23.02,
+          "end": 23.3,
+          "probability": 0.9971070885658264
+        },
+        {
+          "word": " 2018,",
+          "start": 23.3,
+          "end": 24.22,
+          "probability": 0.9910241365432739
+        },
+        {
+          "word": " the",
+          "start": 24.8,
+          "end": 24.84,
+          "probability": 0.9859245419502258
+        },
+        {
+          "word": " RSPCA,",
+          "start": 24.84,
+          "end": 25.98,
+          "probability": 0.9689376354217529
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2598,
+      "start": 25.98,
+      "end": 30.42,
+      "text": " that the Royal Society for the Prevention of Cruelty to Animals,",
+      "tokens": [
+        50363,
+        326,
+        262,
+        8111,
+        7023,
+        329,
+        262,
+        18313,
+        286,
+        44153,
+        774,
+        284,
+        25390,
+        11,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08331539034843445,
+      "compression_ratio": 1.5285714285714285,
+      "no_speech_prob": 0.026445763185620308,
+      "words": [
+        {
+          "word": " that",
+          "start": 25.98,
+          "end": 26.66,
+          "probability": 0.22408688068389893
+        },
+        {
+          "word": " the",
+          "start": 26.66,
+          "end": 26.98,
+          "probability": 0.6001278162002563
+        },
+        {
+          "word": " Royal",
+          "start": 26.98,
+          "end": 27.24,
+          "probability": 0.9539245963096619
+        },
+        {
+          "word": " Society",
+          "start": 27.24,
+          "end": 27.96,
+          "probability": 0.9867765307426453
+        },
+        {
+          "word": " for",
+          "start": 27.96,
+          "end": 28.3,
+          "probability": 0.9807588458061218
+        },
+        {
+          "word": " the",
+          "start": 28.3,
+          "end": 28.46,
+          "probability": 0.9878081679344177
+        },
+        {
+          "word": " Prevention",
+          "start": 28.46,
+          "end": 28.9,
+          "probability": 0.9792816638946533
+        },
+        {
+          "word": " of",
+          "start": 28.9,
+          "end": 29.38,
+          "probability": 0.9952594637870789
+        },
+        {
+          "word": " Cruelty",
+          "start": 29.38,
+          "end": 29.72,
+          "probability": 0.9929758906364441
+        },
+        {
+          "word": " to",
+          "start": 29.72,
+          "end": 29.92,
+          "probability": 0.9942008256912231
+        },
+        {
+          "word": " Animals,",
+          "start": 29.92,
+          "end": 30.42,
+          "probability": 0.9844017624855042
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2598,
+      "start": 30.8,
+      "end": 34.78,
+      "text": " got around 20,000 calls about abandoned animals,",
+      "tokens": [
+        50563,
+        1392,
+        1088,
+        1160,
+        11,
+        830,
+        3848,
+        546,
+        9958,
+        4695,
+        11,
+        50813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08331539034843445,
+      "compression_ratio": 1.5285714285714285,
+      "no_speech_prob": 0.026445763185620308,
+      "words": [
+        {
+          "word": " got",
+          "start": 30.8,
+          "end": 31.08,
+          "probability": 0.9775493144989014
+        },
+        {
+          "word": " around",
+          "start": 31.08,
+          "end": 31.46,
+          "probability": 0.9827696084976196
+        },
+        {
+          "word": " 20",
+          "start": 31.46,
+          "end": 32.14,
+          "probability": 0.8714022636413574
+        },
+        {
+          "word": ",000",
+          "start": 32.14,
+          "end": 32.72,
+          "probability": 0.9551955759525299
+        },
+        {
+          "word": " calls",
+          "start": 32.72,
+          "end": 33.14,
+          "probability": 0.997195839881897
+        },
+        {
+          "word": " about",
+          "start": 33.14,
+          "end": 33.56,
+          "probability": 0.9929592609405518
+        },
+        {
+          "word": " abandoned",
+          "start": 33.56,
+          "end": 34.12,
+          "probability": 0.9804770946502686
+        },
+        {
+          "word": " animals,",
+          "start": 34.12,
+          "end": 34.78,
+          "probability": 0.9992577433586121
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2598,
+      "start": 35.26,
+      "end": 38.58,
+      "text": " animals that are left because people don't want them.",
+      "tokens": [
+        50813,
+        4695,
+        326,
+        389,
+        1364,
+        780,
+        661,
+        836,
+        470,
+        765,
+        606,
+        13,
+        51013
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08331539034843445,
+      "compression_ratio": 1.5285714285714285,
+      "no_speech_prob": 0.026445763185620308,
+      "words": [
+        {
+          "word": " animals",
+          "start": 35.26,
+          "end": 35.64,
+          "probability": 0.9891996383666992
+        },
+        {
+          "word": " that",
+          "start": 35.64,
+          "end": 35.94,
+          "probability": 0.9890118837356567
+        },
+        {
+          "word": " are",
+          "start": 35.94,
+          "end": 36.12,
+          "probability": 0.9975875616073608
+        },
+        {
+          "word": " left",
+          "start": 36.12,
+          "end": 36.62,
+          "probability": 0.9872418642044067
+        },
+        {
+          "word": " because",
+          "start": 36.62,
+          "end": 37.02,
+          "probability": 0.9911627769470215
+        },
+        {
+          "word": " people",
+          "start": 37.02,
+          "end": 37.42,
+          "probability": 0.9971137046813965
+        },
+        {
+          "word": " don't",
+          "start": 37.42,
+          "end": 37.94,
+          "probability": 0.9909200966358185
+        },
+        {
+          "word": " want",
+          "start": 37.94,
+          "end": 38.18,
+          "probability": 0.9985312223434448
+        },
+        {
+          "word": " them.",
+          "start": 38.18,
+          "end": 38.58,
+          "probability": 0.997536301612854
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2598,
+      "start": 39.16,
+      "end": 41.98,
+      "text": " That's one every six minutes.",
+      "tokens": [
+        51013,
+        1320,
+        338,
+        530,
+        790,
+        2237,
+        2431,
+        13,
+        51163
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08331539034843445,
+      "compression_ratio": 1.5285714285714285,
+      "no_speech_prob": 0.026445763185620308,
+      "words": [
+        {
+          "word": " That's",
+          "start": 39.16,
+          "end": 39.66,
+          "probability": 0.9737412333488464
+        },
+        {
+          "word": " one",
+          "start": 39.66,
+          "end": 40.08,
+          "probability": 0.7949011921882629
+        },
+        {
+          "word": " every",
+          "start": 40.08,
+          "end": 40.84,
+          "probability": 0.8990359902381897
+        },
+        {
+          "word": " six",
+          "start": 40.84,
+          "end": 41.38,
+          "probability": 0.9162048101425171
+        },
+        {
+          "word": " minutes.",
+          "start": 41.38,
+          "end": 41.98,
+          "probability": 0.997423529624939
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2598,
+      "start": 43.68,
+      "end": 48.06,
+      "text": " Anyway, let me talk about the advantages of working at a shelter.",
+      "tokens": [
+        51213,
+        21836,
+        11,
+        1309,
+        502,
+        1561,
+        546,
+        262,
+        13391,
+        286,
+        1762,
+        379,
+        257,
+        11772,
+        13,
+        51463
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08331539034843445,
+      "compression_ratio": 1.5285714285714285,
+      "no_speech_prob": 0.026445763185620308,
+      "words": [
+        {
+          "word": " Anyway,",
+          "start": 43.68,
+          "end": 44.1,
+          "probability": 0.9386179447174072
+        },
+        {
+          "word": " let",
+          "start": 44.58,
+          "end": 44.82,
+          "probability": 0.9938452839851379
+        },
+        {
+          "word": " me",
+          "start": 44.82,
+          "end": 45.02,
+          "probability": 0.9987862706184387
+        },
+        {
+          "word": " talk",
+          "start": 45.02,
+          "end": 45.3,
+          "probability": 0.9982520937919617
+        },
+        {
+          "word": " about",
+          "start": 45.3,
+          "end": 45.64,
+          "probability": 0.9984577894210815
+        },
+        {
+          "word": " the",
+          "start": 45.64,
+          "end": 45.8,
+          "probability": 0.9977508187294006
+        },
+        {
+          "word": " advantages",
+          "start": 45.8,
+          "end": 46.34,
+          "probability": 0.9948474168777466
+        },
+        {
+          "word": " of",
+          "start": 46.34,
+          "end": 46.76,
+          "probability": 0.995240330696106
+        },
+        {
+          "word": " working",
+          "start": 46.76,
+          "end": 47.16,
+          "probability": 0.9980683922767639
+        },
+        {
+          "word": " at",
+          "start": 47.16,
+          "end": 47.54,
+          "probability": 0.9971946477890015
+        },
+        {
+          "word": " a",
+          "start": 47.54,
+          "end": 47.7,
+          "probability": 0.9959742426872253
+        },
+        {
+          "word": " shelter.",
+          "start": 47.7,
+          "end": 48.06,
+          "probability": 0.9948000907897949
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2598,
+      "start": 49.08,
+      "end": 52.46,
+      "text": " By the way, there are more advantages than disadvantages.",
+      "tokens": [
+        51463,
+        2750,
+        262,
+        835,
+        11,
+        612,
+        389,
+        517,
+        13391,
+        621,
+        38457,
+        13,
+        51713
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08331539034843445,
+      "compression_ratio": 1.5285714285714285,
+      "no_speech_prob": 0.026445763185620308,
+      "words": [
+        {
+          "word": " By",
+          "start": 49.08,
+          "end": 49.26,
+          "probability": 0.9709469676017761
+        },
+        {
+          "word": " the",
+          "start": 49.26,
+          "end": 49.42,
+          "probability": 0.9993207454681396
+        },
+        {
+          "word": " way,",
+          "start": 49.42,
+          "end": 49.68,
+          "probability": 0.999365508556366
+        },
+        {
+          "word": " there",
+          "start": 50.06,
+          "end": 50.28,
+          "probability": 0.9965865612030029
+        },
+        {
+          "word": " are",
+          "start": 50.28,
+          "end": 50.44,
+          "probability": 0.9962373971939087
+        },
+        {
+          "word": " more",
+          "start": 50.44,
+          "end": 50.68,
+          "probability": 0.9977322816848755
+        },
+        {
+          "word": " advantages",
+          "start": 50.68,
+          "end": 51.3,
+          "probability": 0.9946605563163757
+        },
+        {
+          "word": " than",
+          "start": 51.3,
+          "end": 51.8,
+          "probability": 0.9882736206054688
+        },
+        {
+          "word": " disadvantages.",
+          "start": 51.8,
+          "end": 52.46,
+          "probability": 0.9980490207672119
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5246,
+      "start": 53.519999999999996,
+      "end": 57.04,
+      "text": " First of all, you know that you are doing a good thing,",
+      "tokens": [
+        50413,
+        3274,
+        286,
+        477,
+        11,
+        345,
+        760,
+        326,
+        345,
+        389,
+        1804,
+        257,
+        922,
+        1517,
+        11,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05640394985675812,
+      "compression_ratio": 1.6832579185520362,
+      "no_speech_prob": 0.032019782811403275,
+      "words": [
+        {
+          "word": " First",
+          "start": 53.519999999999996,
+          "end": 54.08,
+          "probability": 0.25259965658187866
+        },
+        {
+          "word": " of",
+          "start": 54.08,
+          "end": 54.3,
+          "probability": 0.9829394817352295
+        },
+        {
+          "word": " all,",
+          "start": 54.3,
+          "end": 54.54,
+          "probability": 0.99793541431427
+        },
+        {
+          "word": " you",
+          "start": 54.98,
+          "end": 55.02,
+          "probability": 0.9871379137039185
+        },
+        {
+          "word": " know",
+          "start": 55.02,
+          "end": 55.28,
+          "probability": 0.9934564232826233
+        },
+        {
+          "word": " that",
+          "start": 55.28,
+          "end": 55.54,
+          "probability": 0.9512841105461121
+        },
+        {
+          "word": " you",
+          "start": 55.54,
+          "end": 55.72,
+          "probability": 0.9971039891242981
+        },
+        {
+          "word": " are",
+          "start": 55.72,
+          "end": 55.86,
+          "probability": 0.9259682297706604
+        },
+        {
+          "word": " doing",
+          "start": 55.86,
+          "end": 56.16,
+          "probability": 0.9942343831062317
+        },
+        {
+          "word": " a",
+          "start": 56.16,
+          "end": 56.38,
+          "probability": 0.9973825812339783
+        },
+        {
+          "word": " good",
+          "start": 56.38,
+          "end": 56.66,
+          "probability": 0.9868979454040527
+        },
+        {
+          "word": " thing,",
+          "start": 56.66,
+          "end": 57.04,
+          "probability": 0.9978391528129578
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5246,
+      "start": 57.48,
+      "end": 60.8,
+      "text": " and you're making sure the animals get all the care they need.",
+      "tokens": [
+        50563,
+        290,
+        345,
+        821,
+        1642,
+        1654,
+        262,
+        4695,
+        651,
+        477,
+        262,
+        1337,
+        484,
+        761,
+        13,
+        50763
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05640394985675812,
+      "compression_ratio": 1.6832579185520362,
+      "no_speech_prob": 0.032019782811403275,
+      "words": [
+        {
+          "word": " and",
+          "start": 57.48,
+          "end": 57.58,
+          "probability": 0.9890007972717285
+        },
+        {
+          "word": " you're",
+          "start": 57.58,
+          "end": 57.84,
+          "probability": 0.9038189351558685
+        },
+        {
+          "word": " making",
+          "start": 57.84,
+          "end": 58.08,
+          "probability": 0.9981924891471863
+        },
+        {
+          "word": " sure",
+          "start": 58.08,
+          "end": 58.46,
+          "probability": 0.9986496567726135
+        },
+        {
+          "word": " the",
+          "start": 58.46,
+          "end": 58.68,
+          "probability": 0.9683051109313965
+        },
+        {
+          "word": " animals",
+          "start": 58.68,
+          "end": 59.12,
+          "probability": 0.9975186586380005
+        },
+        {
+          "word": " get",
+          "start": 59.12,
+          "end": 59.4,
+          "probability": 0.9973077774047852
+        },
+        {
+          "word": " all",
+          "start": 59.4,
+          "end": 59.78,
+          "probability": 0.9959652423858643
+        },
+        {
+          "word": " the",
+          "start": 59.78,
+          "end": 60.0,
+          "probability": 0.9900593161582947
+        },
+        {
+          "word": " care",
+          "start": 60.0,
+          "end": 60.22,
+          "probability": 0.9997236132621765
+        },
+        {
+          "word": " they",
+          "start": 60.22,
+          "end": 60.46,
+          "probability": 0.9883579611778259
+        },
+        {
+          "word": " need.",
+          "start": 60.46,
+          "end": 60.8,
+          "probability": 0.9995427131652832
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5246,
+      "start": 61.58,
+      "end": 65.3,
+      "text": " It's a fantastic feeling to see an animal find a home,",
+      "tokens": [
+        50763,
+        632,
+        338,
+        257,
+        9623,
+        4203,
+        284,
+        766,
+        281,
+        5044,
+        1064,
+        257,
+        1363,
+        11,
+        50963
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05640394985675812,
+      "compression_ratio": 1.6832579185520362,
+      "no_speech_prob": 0.032019782811403275,
+      "words": [
+        {
+          "word": " It's",
+          "start": 61.58,
+          "end": 61.76,
+          "probability": 0.9812080562114716
+        },
+        {
+          "word": " a",
+          "start": 61.76,
+          "end": 61.94,
+          "probability": 0.9973182082176208
+        },
+        {
+          "word": " fantastic",
+          "start": 61.94,
+          "end": 62.58,
+          "probability": 0.9967271089553833
+        },
+        {
+          "word": " feeling",
+          "start": 62.58,
+          "end": 63.22,
+          "probability": 0.9984487295150757
+        },
+        {
+          "word": " to",
+          "start": 63.22,
+          "end": 63.6,
+          "probability": 0.9915623068809509
+        },
+        {
+          "word": " see",
+          "start": 63.6,
+          "end": 63.78,
+          "probability": 0.9982278943061829
+        },
+        {
+          "word": " an",
+          "start": 63.78,
+          "end": 63.96,
+          "probability": 0.9944618344306946
+        },
+        {
+          "word": " animal",
+          "start": 63.96,
+          "end": 64.36,
+          "probability": 0.9986806511878967
+        },
+        {
+          "word": " find",
+          "start": 64.36,
+          "end": 64.74,
+          "probability": 0.9942751526832581
+        },
+        {
+          "word": " a",
+          "start": 64.74,
+          "end": 64.98,
+          "probability": 0.9974459409713745
+        },
+        {
+          "word": " home,",
+          "start": 64.98,
+          "end": 65.3,
+          "probability": 0.9990713596343994
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5246,
+      "start": 65.68,
+      "end": 70.14,
+      "text": " even though it is a lot of hard work to get an animal ready in the first place,",
+      "tokens": [
+        50963,
+        772,
+        996,
+        340,
+        318,
+        257,
+        1256,
+        286,
+        1327,
+        670,
+        284,
+        651,
+        281,
+        5044,
+        3492,
+        287,
+        262,
+        717,
+        1295,
+        11,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05640394985675812,
+      "compression_ratio": 1.6832579185520362,
+      "no_speech_prob": 0.032019782811403275,
+      "words": [
+        {
+          "word": " even",
+          "start": 65.68,
+          "end": 65.94,
+          "probability": 0.993389368057251
+        },
+        {
+          "word": " though",
+          "start": 65.94,
+          "end": 66.16,
+          "probability": 0.9948694705963135
+        },
+        {
+          "word": " it",
+          "start": 66.16,
+          "end": 66.32,
+          "probability": 0.9961109757423401
+        },
+        {
+          "word": " is",
+          "start": 66.32,
+          "end": 66.5,
+          "probability": 0.9818816781044006
+        },
+        {
+          "word": " a",
+          "start": 66.5,
+          "end": 66.66,
+          "probability": 0.9949383735656738
+        },
+        {
+          "word": " lot",
+          "start": 66.66,
+          "end": 66.92,
+          "probability": 0.9930930137634277
+        },
+        {
+          "word": " of",
+          "start": 66.92,
+          "end": 67.12,
+          "probability": 0.9985853433609009
+        },
+        {
+          "word": " hard",
+          "start": 67.12,
+          "end": 67.46,
+          "probability": 0.9913671612739563
+        },
+        {
+          "word": " work",
+          "start": 67.46,
+          "end": 67.74,
+          "probability": 0.9903262257575989
+        },
+        {
+          "word": " to",
+          "start": 67.74,
+          "end": 68.04,
+          "probability": 0.9894982576370239
+        },
+        {
+          "word": " get",
+          "start": 68.04,
+          "end": 68.24,
+          "probability": 0.9980120658874512
+        },
+        {
+          "word": " an",
+          "start": 68.24,
+          "end": 68.42,
+          "probability": 0.9913743138313293
+        },
+        {
+          "word": " animal",
+          "start": 68.42,
+          "end": 68.88,
+          "probability": 0.9986698627471924
+        },
+        {
+          "word": " ready",
+          "start": 68.88,
+          "end": 69.18,
+          "probability": 0.9944249391555786
+        },
+        {
+          "word": " in",
+          "start": 69.18,
+          "end": 69.46,
+          "probability": 0.9888328313827515
+        },
+        {
+          "word": " the",
+          "start": 69.46,
+          "end": 69.6,
+          "probability": 0.9977612495422363
+        },
+        {
+          "word": " first",
+          "start": 69.6,
+          "end": 69.8,
+          "probability": 0.9980047345161438
+        },
+        {
+          "word": " place,",
+          "start": 69.8,
+          "end": 70.14,
+          "probability": 0.9992959499359131
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5246,
+      "start": 70.62,
+      "end": 73.7,
+      "text": " especially those that have survived in difficult places.",
+      "tokens": [
+        51213,
+        2592,
+        883,
+        326,
+        423,
+        11803,
+        287,
+        2408,
+        4113,
+        13,
+        51413
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05640394985675812,
+      "compression_ratio": 1.6832579185520362,
+      "no_speech_prob": 0.032019782811403275,
+      "words": [
+        {
+          "word": " especially",
+          "start": 70.62,
+          "end": 71.0,
+          "probability": 0.9934311509132385
+        },
+        {
+          "word": " those",
+          "start": 71.0,
+          "end": 71.46,
+          "probability": 0.995757520198822
+        },
+        {
+          "word": " that",
+          "start": 71.46,
+          "end": 71.7,
+          "probability": 0.9808109402656555
+        },
+        {
+          "word": " have",
+          "start": 71.7,
+          "end": 71.86,
+          "probability": 0.994654655456543
+        },
+        {
+          "word": " survived",
+          "start": 71.86,
+          "end": 72.34,
+          "probability": 0.9976944327354431
+        },
+        {
+          "word": " in",
+          "start": 72.34,
+          "end": 72.64,
+          "probability": 0.9968846440315247
+        },
+        {
+          "word": " difficult",
+          "start": 72.64,
+          "end": 73.02,
+          "probability": 0.9973642230033875
+        },
+        {
+          "word": " places.",
+          "start": 73.02,
+          "end": 73.7,
+          "probability": 0.9983808994293213
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5246,
+      "start": 74.9,
+      "end": 78.56,
+      "text": " Luckily, not all animals that come to us have suffered abuse.",
+      "tokens": [
+        51413,
+        24262,
+        11,
+        407,
+        477,
+        4695,
+        326,
+        1282,
+        284,
+        514,
+        423,
+        6989,
+        5076,
+        13,
+        51663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05640394985675812,
+      "compression_ratio": 1.6832579185520362,
+      "no_speech_prob": 0.032019782811403275,
+      "words": [
+        {
+          "word": " Luckily,",
+          "start": 74.9,
+          "end": 75.34,
+          "probability": 0.9702581167221069
+        },
+        {
+          "word": " not",
+          "start": 75.62,
+          "end": 75.92,
+          "probability": 0.9973057508468628
+        },
+        {
+          "word": " all",
+          "start": 75.92,
+          "end": 76.28,
+          "probability": 0.9992523789405823
+        },
+        {
+          "word": " animals",
+          "start": 76.28,
+          "end": 76.68,
+          "probability": 0.997538685798645
+        },
+        {
+          "word": " that",
+          "start": 76.68,
+          "end": 76.98,
+          "probability": 0.9974332451820374
+        },
+        {
+          "word": " come",
+          "start": 76.98,
+          "end": 77.2,
+          "probability": 0.9954676628112793
+        },
+        {
+          "word": " to",
+          "start": 77.2,
+          "end": 77.4,
+          "probability": 0.9988364577293396
+        },
+        {
+          "word": " us",
+          "start": 77.4,
+          "end": 77.62,
+          "probability": 0.9981379508972168
+        },
+        {
+          "word": " have",
+          "start": 77.62,
+          "end": 77.82,
+          "probability": 0.9943694472312927
+        },
+        {
+          "word": " suffered",
+          "start": 77.82,
+          "end": 78.16,
+          "probability": 0.9951527118682861
+        },
+        {
+          "word": " abuse.",
+          "start": 78.16,
+          "end": 78.56,
+          "probability": 0.9921407699584961
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 7856,
+      "start": 78.56,
+      "end": 82.72,
+      "text": " On the contrary, their owners loved and cared for them,",
+      "tokens": [
+        50413,
+        1550,
+        262,
+        10388,
+        11,
+        511,
+        4393,
+        6151,
+        290,
+        19951,
+        329,
+        606,
+        11,
+        50563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05316202585087266,
+      "compression_ratio": 1.5896226415094339,
+      "no_speech_prob": 0.028463035821914673,
+      "words": [
+        {
+          "word": " On",
+          "start": 78.56,
+          "end": 79.48,
+          "probability": 0.26969629526138306
+        },
+        {
+          "word": " the",
+          "start": 79.48,
+          "end": 79.62,
+          "probability": 0.9971471428871155
+        },
+        {
+          "word": " contrary,",
+          "start": 79.62,
+          "end": 80.1,
+          "probability": 0.9746127724647522
+        },
+        {
+          "word": " their",
+          "start": 80.62,
+          "end": 80.72,
+          "probability": 0.9806550741195679
+        },
+        {
+          "word": " owners",
+          "start": 80.72,
+          "end": 81.04,
+          "probability": 0.9756989479064941
+        },
+        {
+          "word": " loved",
+          "start": 81.04,
+          "end": 81.56,
+          "probability": 0.995347797870636
+        },
+        {
+          "word": " and",
+          "start": 81.56,
+          "end": 81.88,
+          "probability": 0.9936303496360779
+        },
+        {
+          "word": " cared",
+          "start": 81.88,
+          "end": 82.18,
+          "probability": 0.998166024684906
+        },
+        {
+          "word": " for",
+          "start": 82.18,
+          "end": 82.44,
+          "probability": 0.997556209564209
+        },
+        {
+          "word": " them,",
+          "start": 82.44,
+          "end": 82.72,
+          "probability": 0.9985137581825256
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 7856,
+      "start": 83.0,
+      "end": 87.54,
+      "text": " but had to give them up because they were no longer able to look after them.",
+      "tokens": [
+        50563,
+        475,
+        550,
+        284,
+        1577,
+        606,
+        510,
+        780,
+        484,
+        547,
+        645,
+        2392,
+        1498,
+        284,
+        804,
+        706,
+        606,
+        13,
+        50813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05316202585087266,
+      "compression_ratio": 1.5896226415094339,
+      "no_speech_prob": 0.028463035821914673,
+      "words": [
+        {
+          "word": " but",
+          "start": 83.0,
+          "end": 83.26,
+          "probability": 0.9891839027404785
+        },
+        {
+          "word": " had",
+          "start": 83.26,
+          "end": 83.52,
+          "probability": 0.9963893890380859
+        },
+        {
+          "word": " to",
+          "start": 83.52,
+          "end": 83.72,
+          "probability": 0.9989166259765625
+        },
+        {
+          "word": " give",
+          "start": 83.72,
+          "end": 83.9,
+          "probability": 0.9987633228302002
+        },
+        {
+          "word": " them",
+          "start": 83.9,
+          "end": 84.1,
+          "probability": 0.993744432926178
+        },
+        {
+          "word": " up",
+          "start": 84.1,
+          "end": 84.4,
+          "probability": 0.9973242282867432
+        },
+        {
+          "word": " because",
+          "start": 84.4,
+          "end": 84.92,
+          "probability": 0.8648067116737366
+        },
+        {
+          "word": " they",
+          "start": 84.92,
+          "end": 85.14,
+          "probability": 0.9977155923843384
+        },
+        {
+          "word": " were",
+          "start": 85.14,
+          "end": 85.28,
+          "probability": 0.9947003126144409
+        },
+        {
+          "word": " no",
+          "start": 85.28,
+          "end": 85.58,
+          "probability": 0.9960049986839294
+        },
+        {
+          "word": " longer",
+          "start": 85.58,
+          "end": 85.98,
+          "probability": 0.9959443211555481
+        },
+        {
+          "word": " able",
+          "start": 85.98,
+          "end": 86.36,
+          "probability": 0.9988182187080383
+        },
+        {
+          "word": " to",
+          "start": 86.36,
+          "end": 86.68,
+          "probability": 0.998677670955658
+        },
+        {
+          "word": " look",
+          "start": 86.68,
+          "end": 86.8,
+          "probability": 0.9988237023353577
+        },
+        {
+          "word": " after",
+          "start": 86.8,
+          "end": 87.08,
+          "probability": 0.9993133544921875
+        },
+        {
+          "word": " them.",
+          "start": 87.08,
+          "end": 87.54,
+          "probability": 0.9992685914039612
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 7856,
+      "start": 88.3,
+      "end": 92.96,
+      "text": " It's very sad, but we're working very hard to find them good homes.",
+      "tokens": [
+        50813,
+        632,
+        338,
+        845,
+        6507,
+        11,
+        475,
+        356,
+        821,
+        1762,
+        845,
+        1327,
+        284,
+        1064,
+        606,
+        922,
+        5682,
+        13,
+        51113
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05316202585087266,
+      "compression_ratio": 1.5896226415094339,
+      "no_speech_prob": 0.028463035821914673,
+      "words": [
+        {
+          "word": " It's",
+          "start": 88.3,
+          "end": 88.48,
+          "probability": 0.9610946774482727
+        },
+        {
+          "word": " very",
+          "start": 88.48,
+          "end": 88.82,
+          "probability": 0.9952006340026855
+        },
+        {
+          "word": " sad,",
+          "start": 88.82,
+          "end": 89.26,
+          "probability": 0.9985326528549194
+        },
+        {
+          "word": " but",
+          "start": 89.64,
+          "end": 89.88,
+          "probability": 0.9974672794342041
+        },
+        {
+          "word": " we're",
+          "start": 89.88,
+          "end": 90.2,
+          "probability": 0.9803918898105621
+        },
+        {
+          "word": " working",
+          "start": 90.2,
+          "end": 90.5,
+          "probability": 0.9987868666648865
+        },
+        {
+          "word": " very",
+          "start": 90.5,
+          "end": 90.96,
+          "probability": 0.9811091423034668
+        },
+        {
+          "word": " hard",
+          "start": 90.96,
+          "end": 91.38,
+          "probability": 0.9995138645172119
+        },
+        {
+          "word": " to",
+          "start": 91.38,
+          "end": 91.62,
+          "probability": 0.9976924657821655
+        },
+        {
+          "word": " find",
+          "start": 91.62,
+          "end": 91.88,
+          "probability": 0.9990845918655396
+        },
+        {
+          "word": " them",
+          "start": 91.88,
+          "end": 92.1,
+          "probability": 0.9952255487442017
+        },
+        {
+          "word": " good",
+          "start": 92.1,
+          "end": 92.42,
+          "probability": 0.9674687385559082
+        },
+        {
+          "word": " homes.",
+          "start": 92.42,
+          "end": 92.96,
+          "probability": 0.998322069644928
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 7856,
+      "start": 94.1,
+      "end": 98.52,
+      "text": " Furthermore, working at a shelter is good for your health too.",
+      "tokens": [
+        51113,
+        11399,
+        11,
+        1762,
+        379,
+        257,
+        11772,
+        318,
+        922,
+        329,
+        534,
+        1535,
+        1165,
+        13,
+        51363
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05316202585087266,
+      "compression_ratio": 1.5896226415094339,
+      "no_speech_prob": 0.028463035821914673,
+      "words": [
+        {
+          "word": " Furthermore,",
+          "start": 94.1,
+          "end": 94.7,
+          "probability": 0.9844239354133606
+        },
+        {
+          "word": " working",
+          "start": 95.5,
+          "end": 95.78,
+          "probability": 0.9953008890151978
+        },
+        {
+          "word": " at",
+          "start": 95.78,
+          "end": 96.06,
+          "probability": 0.9978042244911194
+        },
+        {
+          "word": " a",
+          "start": 96.06,
+          "end": 96.24,
+          "probability": 0.9942922592163086
+        },
+        {
+          "word": " shelter",
+          "start": 96.24,
+          "end": 96.52,
+          "probability": 0.9982438087463379
+        },
+        {
+          "word": " is",
+          "start": 96.52,
+          "end": 97.0,
+          "probability": 0.9983067512512207
+        },
+        {
+          "word": " good",
+          "start": 97.0,
+          "end": 97.32,
+          "probability": 0.9985541701316833
+        },
+        {
+          "word": " for",
+          "start": 97.32,
+          "end": 97.52,
+          "probability": 0.9994902610778809
+        },
+        {
+          "word": " your",
+          "start": 97.52,
+          "end": 97.7,
+          "probability": 0.9961413741111755
+        },
+        {
+          "word": " health",
+          "start": 97.7,
+          "end": 98.18,
+          "probability": 0.9987437129020691
+        },
+        {
+          "word": " too.",
+          "start": 98.18,
+          "end": 98.52,
+          "probability": 0.7708222270011902
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 7856,
+      "start": 99.32,
+      "end": 103.7,
+      "text": " It's a fact that spending time with animals helps you feel less stressed.",
+      "tokens": [
+        51363,
+        632,
+        338,
+        257,
+        1109,
+        326,
+        4581,
+        640,
+        351,
+        4695,
+        5419,
+        345,
+        1254,
+        1342,
+        15033,
+        13,
+        51613
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05316202585087266,
+      "compression_ratio": 1.5896226415094339,
+      "no_speech_prob": 0.028463035821914673,
+      "words": [
+        {
+          "word": " It's",
+          "start": 99.32,
+          "end": 99.54,
+          "probability": 0.9901526570320129
+        },
+        {
+          "word": " a",
+          "start": 99.54,
+          "end": 99.7,
+          "probability": 0.9926195740699768
+        },
+        {
+          "word": " fact",
+          "start": 99.7,
+          "end": 100.0,
+          "probability": 0.9996283054351807
+        },
+        {
+          "word": " that",
+          "start": 100.0,
+          "end": 100.4,
+          "probability": 0.9879921674728394
+        },
+        {
+          "word": " spending",
+          "start": 100.4,
+          "end": 100.82,
+          "probability": 0.9986976385116577
+        },
+        {
+          "word": " time",
+          "start": 100.82,
+          "end": 101.24,
+          "probability": 0.9988011121749878
+        },
+        {
+          "word": " with",
+          "start": 101.24,
+          "end": 101.46,
+          "probability": 0.9992597699165344
+        },
+        {
+          "word": " animals",
+          "start": 101.46,
+          "end": 101.92,
+          "probability": 0.9993563294410706
+        },
+        {
+          "word": " helps",
+          "start": 101.92,
+          "end": 102.28,
+          "probability": 0.9927467703819275
+        },
+        {
+          "word": " you",
+          "start": 102.28,
+          "end": 102.52,
+          "probability": 0.9991650581359863
+        },
+        {
+          "word": " feel",
+          "start": 102.52,
+          "end": 102.82,
+          "probability": 0.9953683614730835
+        },
+        {
+          "word": " less",
+          "start": 102.82,
+          "end": 103.22,
+          "probability": 0.9990160465240479
+        },
+        {
+          "word": " stressed.",
+          "start": 103.22,
+          "end": 103.7,
+          "probability": 0.9983419179916382
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 10370,
+      "start": 104.7,
+      "end": 109.46,
+      "text": " Some universities in the UK actually use animals during exams",
+      "tokens": [
+        50413,
+        2773,
+        11155,
+        287,
+        262,
+        3482,
+        1682,
+        779,
+        4695,
+        1141,
+        26420,
+        50663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04820197650364467,
+      "compression_ratio": 1.5208333333333333,
+      "no_speech_prob": 0.040549393743276596,
+      "words": [
+        {
+          "word": " Some",
+          "start": 104.56,
+          "end": 105.0,
+          "probability": 0.5566327571868896
+        },
+        {
+          "word": " universities",
+          "start": 105.0,
+          "end": 105.64,
+          "probability": 0.912239134311676
+        },
+        {
+          "word": " in",
+          "start": 105.64,
+          "end": 106.12,
+          "probability": 0.9914592504501343
+        },
+        {
+          "word": " the",
+          "start": 106.12,
+          "end": 106.26,
+          "probability": 0.9961624145507812
+        },
+        {
+          "word": " UK",
+          "start": 106.26,
+          "end": 106.7,
+          "probability": 0.9821038842201233
+        },
+        {
+          "word": " actually",
+          "start": 106.7,
+          "end": 107.4,
+          "probability": 0.9769507050514221
+        },
+        {
+          "word": " use",
+          "start": 107.4,
+          "end": 107.82,
+          "probability": 0.9940991401672363
+        },
+        {
+          "word": " animals",
+          "start": 107.82,
+          "end": 108.34,
+          "probability": 0.9968094229698181
+        },
+        {
+          "word": " during",
+          "start": 108.34,
+          "end": 108.84,
+          "probability": 0.9877795577049255
+        },
+        {
+          "word": " exams",
+          "start": 108.84,
+          "end": 109.46,
+          "probability": 0.9973975419998169
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 10370,
+      "start": 109.46,
+      "end": 111.78,
+      "text": " to help students with stress.",
+      "tokens": [
+        50663,
+        284,
+        1037,
+        2444,
+        351,
+        5503,
+        13,
+        50813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04820197650364467,
+      "compression_ratio": 1.5208333333333333,
+      "no_speech_prob": 0.040549393743276596,
+      "words": [
+        {
+          "word": " to",
+          "start": 109.46,
+          "end": 109.96,
+          "probability": 0.9792450666427612
+        },
+        {
+          "word": " help",
+          "start": 109.96,
+          "end": 110.32,
+          "probability": 0.9981998205184937
+        },
+        {
+          "word": " students",
+          "start": 110.32,
+          "end": 110.92,
+          "probability": 0.9950857758522034
+        },
+        {
+          "word": " with",
+          "start": 110.92,
+          "end": 111.28,
+          "probability": 0.996636152267456
+        },
+        {
+          "word": " stress.",
+          "start": 111.28,
+          "end": 111.78,
+          "probability": 0.9977779984474182
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 10370,
+      "start": 112.88,
+      "end": 117.16,
+      "text": " And a number of airlines let passengers travel with their pets",
+      "tokens": [
+        50813,
+        843,
+        257,
+        1271,
+        286,
+        26225,
+        1309,
+        10405,
+        3067,
+        351,
+        511,
+        17252,
+        51063
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04820197650364467,
+      "compression_ratio": 1.5208333333333333,
+      "no_speech_prob": 0.040549393743276596,
+      "words": [
+        {
+          "word": " And",
+          "start": 112.88,
+          "end": 113.08,
+          "probability": 0.9480242729187012
+        },
+        {
+          "word": " a",
+          "start": 113.08,
+          "end": 113.24,
+          "probability": 0.9790902137756348
+        },
+        {
+          "word": " number",
+          "start": 113.24,
+          "end": 113.48,
+          "probability": 0.999177873134613
+        },
+        {
+          "word": " of",
+          "start": 113.48,
+          "end": 113.78,
+          "probability": 0.9988082647323608
+        },
+        {
+          "word": " airlines",
+          "start": 113.78,
+          "end": 114.42,
+          "probability": 0.9919363260269165
+        },
+        {
+          "word": " let",
+          "start": 114.42,
+          "end": 115.08,
+          "probability": 0.9805201888084412
+        },
+        {
+          "word": " passengers",
+          "start": 115.08,
+          "end": 115.74,
+          "probability": 0.9936299920082092
+        },
+        {
+          "word": " travel",
+          "start": 115.74,
+          "end": 116.26,
+          "probability": 0.9977142810821533
+        },
+        {
+          "word": " with",
+          "start": 116.26,
+          "end": 116.56,
+          "probability": 0.996650755405426
+        },
+        {
+          "word": " their",
+          "start": 116.56,
+          "end": 116.78,
+          "probability": 0.9976227879524231
+        },
+        {
+          "word": " pets",
+          "start": 116.78,
+          "end": 117.16,
+          "probability": 0.999078631401062
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 10370,
+      "start": 117.16,
+      "end": 119.96,
+      "text": " to help with the anxiety of flying.",
+      "tokens": [
+        51063,
+        284,
+        1037,
+        351,
+        262,
+        9751,
+        286,
+        7348,
+        13,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04820197650364467,
+      "compression_ratio": 1.5208333333333333,
+      "no_speech_prob": 0.040549393743276596,
+      "words": [
+        {
+          "word": " to",
+          "start": 117.16,
+          "end": 117.66,
+          "probability": 0.9349582195281982
+        },
+        {
+          "word": " help",
+          "start": 117.66,
+          "end": 117.94,
+          "probability": 0.9990732669830322
+        },
+        {
+          "word": " with",
+          "start": 117.94,
+          "end": 118.2,
+          "probability": 0.9932000041007996
+        },
+        {
+          "word": " the",
+          "start": 118.2,
+          "end": 118.34,
+          "probability": 0.9891654849052429
+        },
+        {
+          "word": " anxiety",
+          "start": 118.34,
+          "end": 118.96,
+          "probability": 0.9984331727027893
+        },
+        {
+          "word": " of",
+          "start": 118.96,
+          "end": 119.36,
+          "probability": 0.9992881417274475
+        },
+        {
+          "word": " flying.",
+          "start": 119.36,
+          "end": 119.96,
+          "probability": 0.99720299243927
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 10370,
+      "start": 121.24,
+      "end": 124.98,
+      "text": " Connecting with animals has a positive effect on your mood,",
+      "tokens": [
+        51213,
+        8113,
+        278,
+        351,
+        4695,
+        468,
+        257,
+        3967,
+        1245,
+        319,
+        534,
+        10038,
+        11,
+        51413
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04820197650364467,
+      "compression_ratio": 1.5208333333333333,
+      "no_speech_prob": 0.040549393743276596,
+      "words": [
+        {
+          "word": " Connecting",
+          "start": 121.24,
+          "end": 121.9,
+          "probability": 0.9967249929904938
+        },
+        {
+          "word": " with",
+          "start": 121.9,
+          "end": 122.04,
+          "probability": 0.9993603825569153
+        },
+        {
+          "word": " animals",
+          "start": 122.04,
+          "end": 122.5,
+          "probability": 0.9991766810417175
+        },
+        {
+          "word": " has",
+          "start": 122.5,
+          "end": 122.8,
+          "probability": 0.9970460534095764
+        },
+        {
+          "word": " a",
+          "start": 122.8,
+          "end": 123.0,
+          "probability": 0.9979590177536011
+        },
+        {
+          "word": " positive",
+          "start": 123.0,
+          "end": 123.46,
+          "probability": 0.9988510608673096
+        },
+        {
+          "word": " effect",
+          "start": 123.46,
+          "end": 123.98,
+          "probability": 0.9667105674743652
+        },
+        {
+          "word": " on",
+          "start": 123.98,
+          "end": 124.3,
+          "probability": 0.9990315437316895
+        },
+        {
+          "word": " your",
+          "start": 124.3,
+          "end": 124.52,
+          "probability": 0.9987527132034302
+        },
+        {
+          "word": " mood,",
+          "start": 124.52,
+          "end": 124.98,
+          "probability": 0.9997584223747253
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 10370,
+      "start": 125.42,
+      "end": 128.12,
+      "text": " helps you to be more relaxed and happier.",
+      "tokens": [
+        51413,
+        5419,
+        345,
+        284,
+        307,
+        517,
+        18397,
+        290,
+        23030,
+        13,
+        51613
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.04820197650364467,
+      "compression_ratio": 1.5208333333333333,
+      "no_speech_prob": 0.040549393743276596,
+      "words": [
+        {
+          "word": " helps",
+          "start": 125.42,
+          "end": 125.78,
+          "probability": 0.9500319361686707
+        },
+        {
+          "word": " you",
+          "start": 125.78,
+          "end": 126.08,
+          "probability": 0.9977226853370667
+        },
+        {
+          "word": " to",
+          "start": 126.08,
+          "end": 126.26,
+          "probability": 0.9703298211097717
+        },
+        {
+          "word": " be",
+          "start": 126.26,
+          "end": 126.42,
+          "probability": 0.9980973601341248
+        },
+        {
+          "word": " more",
+          "start": 126.42,
+          "end": 126.62,
+          "probability": 0.9987142086029053
+        },
+        {
+          "word": " relaxed",
+          "start": 126.62,
+          "end": 127.24,
+          "probability": 0.999534010887146
+        },
+        {
+          "word": " and",
+          "start": 127.24,
+          "end": 127.58,
+          "probability": 0.9940635561943054
+        },
+        {
+          "word": " happier.",
+          "start": 127.58,
+          "end": 128.12,
+          "probability": 0.9993860721588135
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 12812,
+      "start": 129.22,
+      "end": 134.92,
+      "text": " Another point is that you get to know the animals over a long period of time,",
+      "tokens": [
+        50413,
+        6023,
+        966,
+        318,
+        326,
+        345,
+        651,
+        284,
+        760,
+        262,
+        4695,
+        625,
+        257,
+        890,
+        2278,
+        286,
+        640,
+        11,
+        50713
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.028424559141460217,
+      "compression_ratio": 1.6457399103139014,
+      "no_speech_prob": 0.027982162311673164,
+      "words": [
+        {
+          "word": " Another",
+          "start": 129.22,
+          "end": 129.82,
+          "probability": 0.6809132099151611
+        },
+        {
+          "word": " point",
+          "start": 129.82,
+          "end": 130.32,
+          "probability": 0.9930009841918945
+        },
+        {
+          "word": " is",
+          "start": 130.32,
+          "end": 130.8,
+          "probability": 0.9827107787132263
+        },
+        {
+          "word": " that",
+          "start": 130.8,
+          "end": 130.98,
+          "probability": 0.9929270148277283
+        },
+        {
+          "word": " you",
+          "start": 130.98,
+          "end": 131.16,
+          "probability": 0.996466875076294
+        },
+        {
+          "word": " get",
+          "start": 131.16,
+          "end": 131.38,
+          "probability": 0.9967437982559204
+        },
+        {
+          "word": " to",
+          "start": 131.38,
+          "end": 131.62,
+          "probability": 0.9986817240715027
+        },
+        {
+          "word": " know",
+          "start": 131.62,
+          "end": 132.02,
+          "probability": 0.9765881299972534
+        },
+        {
+          "word": " the",
+          "start": 132.02,
+          "end": 132.28,
+          "probability": 0.9900040030479431
+        },
+        {
+          "word": " animals",
+          "start": 132.28,
+          "end": 132.7,
+          "probability": 0.9958472847938538
+        },
+        {
+          "word": " over",
+          "start": 132.7,
+          "end": 133.12,
+          "probability": 0.9933700561523438
+        },
+        {
+          "word": " a",
+          "start": 133.12,
+          "end": 133.34,
+          "probability": 0.996707558631897
+        },
+        {
+          "word": " long",
+          "start": 133.34,
+          "end": 133.66,
+          "probability": 0.9976581335067749
+        },
+        {
+          "word": " period",
+          "start": 133.66,
+          "end": 134.12,
+          "probability": 0.9961317777633667
+        },
+        {
+          "word": " of",
+          "start": 134.12,
+          "end": 134.46,
+          "probability": 0.9982510209083557
+        },
+        {
+          "word": " time,",
+          "start": 134.46,
+          "end": 134.92,
+          "probability": 0.9995833039283752
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 12812,
+      "start": 135.32,
+      "end": 139.0,
+      "text": " which is important for people who want to take an animal home.",
+      "tokens": [
+        50713,
+        543,
+        318,
+        1593,
+        329,
+        661,
+        508,
+        765,
+        284,
+        1011,
+        281,
+        5044,
+        1363,
+        13,
+        50913
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.028424559141460217,
+      "compression_ratio": 1.6457399103139014,
+      "no_speech_prob": 0.027982162311673164,
+      "words": [
+        {
+          "word": " which",
+          "start": 135.32,
+          "end": 135.54,
+          "probability": 0.9953059554100037
+        },
+        {
+          "word": " is",
+          "start": 135.54,
+          "end": 135.72,
+          "probability": 0.998578667640686
+        },
+        {
+          "word": " important",
+          "start": 135.72,
+          "end": 136.24,
+          "probability": 0.998330295085907
+        },
+        {
+          "word": " for",
+          "start": 136.24,
+          "end": 136.74,
+          "probability": 0.9963441491127014
+        },
+        {
+          "word": " people",
+          "start": 136.74,
+          "end": 137.1,
+          "probability": 0.997115969657898
+        },
+        {
+          "word": " who",
+          "start": 137.1,
+          "end": 137.38,
+          "probability": 0.9959994554519653
+        },
+        {
+          "word": " want",
+          "start": 137.38,
+          "end": 137.62,
+          "probability": 0.9977260231971741
+        },
+        {
+          "word": " to",
+          "start": 137.62,
+          "end": 137.82,
+          "probability": 0.9989140033721924
+        },
+        {
+          "word": " take",
+          "start": 137.82,
+          "end": 138.04,
+          "probability": 0.998371422290802
+        },
+        {
+          "word": " an",
+          "start": 138.04,
+          "end": 138.26,
+          "probability": 0.9942001104354858
+        },
+        {
+          "word": " animal",
+          "start": 138.26,
+          "end": 138.6,
+          "probability": 0.9987167119979858
+        },
+        {
+          "word": " home.",
+          "start": 138.6,
+          "end": 139.0,
+          "probability": 0.9981831908226013
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 12812,
+      "start": 139.92,
+      "end": 144.66,
+      "text": " You can tell them about the animal's character and any training it needs.",
+      "tokens": [
+        50913,
+        921,
+        460,
+        1560,
+        606,
+        546,
+        262,
+        5044,
+        338,
+        2095,
+        290,
+        597,
+        3047,
+        340,
+        2476,
+        13,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.028424559141460217,
+      "compression_ratio": 1.6457399103139014,
+      "no_speech_prob": 0.027982162311673164,
+      "words": [
+        {
+          "word": " You",
+          "start": 139.92,
+          "end": 140.14,
+          "probability": 0.9962455630302429
+        },
+        {
+          "word": " can",
+          "start": 140.14,
+          "end": 140.36,
+          "probability": 0.9978891015052795
+        },
+        {
+          "word": " tell",
+          "start": 140.36,
+          "end": 140.7,
+          "probability": 0.9981194138526917
+        },
+        {
+          "word": " them",
+          "start": 140.7,
+          "end": 140.9,
+          "probability": 0.9622971415519714
+        },
+        {
+          "word": " about",
+          "start": 140.9,
+          "end": 141.18,
+          "probability": 0.9973644614219666
+        },
+        {
+          "word": " the",
+          "start": 141.18,
+          "end": 141.36,
+          "probability": 0.9948786497116089
+        },
+        {
+          "word": " animal's",
+          "start": 141.36,
+          "end": 141.92,
+          "probability": 0.868818074464798
+        },
+        {
+          "word": " character",
+          "start": 141.92,
+          "end": 142.52,
+          "probability": 0.9977926015853882
+        },
+        {
+          "word": " and",
+          "start": 142.52,
+          "end": 143.14,
+          "probability": 0.9132891297340393
+        },
+        {
+          "word": " any",
+          "start": 143.14,
+          "end": 143.44,
+          "probability": 0.9980388283729553
+        },
+        {
+          "word": " training",
+          "start": 143.44,
+          "end": 143.9,
+          "probability": 0.999457061290741
+        },
+        {
+          "word": " it",
+          "start": 143.9,
+          "end": 144.2,
+          "probability": 0.9951750040054321
+        },
+        {
+          "word": " needs.",
+          "start": 144.2,
+          "end": 144.66,
+          "probability": 0.9987922310829163
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 12812,
+      "start": 145.62,
+      "end": 148.7,
+      "text": " Finally, you see them go to a good home.",
+      "tokens": [
+        51213,
+        9461,
+        11,
+        345,
+        766,
+        606,
+        467,
+        284,
+        257,
+        922,
+        1363,
+        13,
+        51413
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.028424559141460217,
+      "compression_ratio": 1.6457399103139014,
+      "no_speech_prob": 0.027982162311673164,
+      "words": [
+        {
+          "word": " Finally,",
+          "start": 145.62,
+          "end": 146.06,
+          "probability": 0.9932578802108765
+        },
+        {
+          "word": " you",
+          "start": 146.28,
+          "end": 146.68,
+          "probability": 0.9981768131256104
+        },
+        {
+          "word": " see",
+          "start": 146.68,
+          "end": 146.96,
+          "probability": 0.9973869919776917
+        },
+        {
+          "word": " them",
+          "start": 146.96,
+          "end": 147.18,
+          "probability": 0.9986245632171631
+        },
+        {
+          "word": " go",
+          "start": 147.18,
+          "end": 147.5,
+          "probability": 0.9955698847770691
+        },
+        {
+          "word": " to",
+          "start": 147.5,
+          "end": 147.78,
+          "probability": 0.9979937076568604
+        },
+        {
+          "word": " a",
+          "start": 147.78,
+          "end": 147.94,
+          "probability": 0.9948036074638367
+        },
+        {
+          "word": " good",
+          "start": 147.94,
+          "end": 148.28,
+          "probability": 0.9538202881813049
+        },
+        {
+          "word": " home.",
+          "start": 148.28,
+          "end": 148.7,
+          "probability": 0.9991170763969421
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 12812,
+      "start": 149.3,
+      "end": 151.76,
+      "text": " You have done all you can to help.",
+      "tokens": [
+        51413,
+        921,
+        423,
+        1760,
+        477,
+        345,
+        460,
+        284,
+        1037,
+        13,
+        51563
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.028424559141460217,
+      "compression_ratio": 1.6457399103139014,
+      "no_speech_prob": 0.027982162311673164,
+      "words": [
+        {
+          "word": " You",
+          "start": 149.3,
+          "end": 149.68,
+          "probability": 0.9929053783416748
+        },
+        {
+          "word": " have",
+          "start": 149.68,
+          "end": 149.94,
+          "probability": 0.9953674077987671
+        },
+        {
+          "word": " done",
+          "start": 149.94,
+          "end": 150.22,
+          "probability": 0.9984704852104187
+        },
+        {
+          "word": " all",
+          "start": 150.22,
+          "end": 150.68,
+          "probability": 0.9988330006599426
+        },
+        {
+          "word": " you",
+          "start": 150.68,
+          "end": 150.98,
+          "probability": 0.9971711039543152
+        },
+        {
+          "word": " can",
+          "start": 150.98,
+          "end": 151.24,
+          "probability": 0.9990764856338501
+        },
+        {
+          "word": " to",
+          "start": 151.24,
+          "end": 151.48,
+          "probability": 0.9983006119728088
+        },
+        {
+          "word": " help.",
+          "start": 151.48,
+          "end": 151.76,
+          "probability": 0.9996960163116455
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 12812,
+      "start": 152.26,
+      "end": 156.68,
+      "text": " You know they are going to a place where they will be safe and looked after.",
+      "tokens": [
+        51563,
+        921,
+        760,
+        484,
+        389,
+        1016,
+        284,
+        257,
+        1295,
+        810,
+        484,
+        481,
+        307,
+        3338,
+        290,
+        3114,
+        706,
+        13,
+        51813
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.028424559141460217,
+      "compression_ratio": 1.6457399103139014,
+      "no_speech_prob": 0.027982162311673164,
+      "words": [
+        {
+          "word": " You",
+          "start": 152.26,
+          "end": 152.46,
+          "probability": 0.9968552589416504
+        },
+        {
+          "word": " know",
+          "start": 152.46,
+          "end": 152.84,
+          "probability": 0.9985859394073486
+        },
+        {
+          "word": " they",
+          "start": 152.84,
+          "end": 153.06,
+          "probability": 0.9687831401824951
+        },
+        {
+          "word": " are",
+          "start": 153.06,
+          "end": 153.22,
+          "probability": 0.9782261252403259
+        },
+        {
+          "word": " going",
+          "start": 153.22,
+          "end": 153.46,
+          "probability": 0.9992702603340149
+        },
+        {
+          "word": " to",
+          "start": 153.46,
+          "end": 153.68,
+          "probability": 0.9981775283813477
+        },
+        {
+          "word": " a",
+          "start": 153.68,
+          "end": 153.84,
+          "probability": 0.9950023293495178
+        },
+        {
+          "word": " place",
+          "start": 153.84,
+          "end": 154.12,
+          "probability": 0.9994670748710632
+        },
+        {
+          "word": " where",
+          "start": 154.12,
+          "end": 154.56,
+          "probability": 0.991208553314209
+        },
+        {
+          "word": " they",
+          "start": 154.56,
+          "end": 154.78,
+          "probability": 0.9987412095069885
+        },
+        {
+          "word": " will",
+          "start": 154.78,
+          "end": 154.94,
+          "probability": 0.9951707720756531
+        },
+        {
+          "word": " be",
+          "start": 154.94,
+          "end": 155.1,
+          "probability": 0.9992683529853821
+        },
+        {
+          "word": " safe",
+          "start": 155.1,
+          "end": 155.54,
+          "probability": 0.9940586090087891
+        },
+        {
+          "word": " and",
+          "start": 155.54,
+          "end": 155.9,
+          "probability": 0.997150719165802
+        },
+        {
+          "word": " looked",
+          "start": 155.9,
+          "end": 156.16,
+          "probability": 0.9934601783752441
+        },
+        {
+          "word": " after.",
+          "start": 156.16,
+          "end": 156.68,
+          "probability": 0.9974141120910645
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 15812,
+      "start": 158.12,
+      "end": 162.36,
+      "text": " However, working at a shelter has some disadvantages too.",
+      "tokens": [
+        50363,
+        2102,
+        11,
+        1762,
+        379,
+        257,
+        11772,
+        468,
+        617,
+        38457,
+        1165,
+        13,
+        50613
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.029011961890429986,
+      "compression_ratio": 1.6113744075829384,
+      "no_speech_prob": 0.009879659861326218,
+      "words": [
+        {
+          "word": " However,",
+          "start": 158.12,
+          "end": 158.58,
+          "probability": 0.8098227977752686
+        },
+        {
+          "word": " working",
+          "start": 159.16,
+          "end": 159.44,
+          "probability": 0.9873746633529663
+        },
+        {
+          "word": " at",
+          "start": 159.44,
+          "end": 159.7,
+          "probability": 0.9548726677894592
+        },
+        {
+          "word": " a",
+          "start": 159.7,
+          "end": 159.88,
+          "probability": 0.9851877689361572
+        },
+        {
+          "word": " shelter",
+          "start": 159.88,
+          "end": 160.24,
+          "probability": 0.9957374334335327
+        },
+        {
+          "word": " has",
+          "start": 160.24,
+          "end": 160.72,
+          "probability": 0.9848649501800537
+        },
+        {
+          "word": " some",
+          "start": 160.72,
+          "end": 161.0,
+          "probability": 0.987956702709198
+        },
+        {
+          "word": " disadvantages",
+          "start": 161.0,
+          "end": 161.7,
+          "probability": 0.9945622086524963
+        },
+        {
+          "word": " too.",
+          "start": 161.7,
+          "end": 162.36,
+          "probability": 0.7943721413612366
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 15812,
+      "start": 163.56,
+      "end": 165.9,
+      "text": " Knowing about the abuse the animal suffered",
+      "tokens": [
+        50613,
+        29154,
+        546,
+        262,
+        5076,
+        262,
+        5044,
+        6989,
+        50763
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.029011961890429986,
+      "compression_ratio": 1.6113744075829384,
+      "no_speech_prob": 0.009879659861326218,
+      "words": [
+        {
+          "word": " Knowing",
+          "start": 163.56,
+          "end": 163.76,
+          "probability": 0.9671124815940857
+        },
+        {
+          "word": " about",
+          "start": 163.76,
+          "end": 164.1,
+          "probability": 0.9962109327316284
+        },
+        {
+          "word": " the",
+          "start": 164.1,
+          "end": 164.34,
+          "probability": 0.9957346320152283
+        },
+        {
+          "word": " abuse",
+          "start": 164.34,
+          "end": 164.78,
+          "probability": 0.9948524832725525
+        },
+        {
+          "word": " the",
+          "start": 164.78,
+          "end": 165.08,
+          "probability": 0.9905913472175598
+        },
+        {
+          "word": " animal",
+          "start": 165.08,
+          "end": 165.38,
+          "probability": 0.7774279713630676
+        },
+        {
+          "word": " suffered",
+          "start": 165.38,
+          "end": 165.9,
+          "probability": 0.9968016147613525
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 15812,
+      "start": 165.9,
+      "end": 170.28,
+      "text": " and the conditions they lived in before can make you feel unhappy.",
+      "tokens": [
+        50763,
+        290,
+        262,
+        3403,
+        484,
+        5615,
+        287,
+        878,
+        460,
+        787,
+        345,
+        1254,
+        19283,
+        13,
+        51013
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.029011961890429986,
+      "compression_ratio": 1.6113744075829384,
+      "no_speech_prob": 0.009879659861326218,
+      "words": [
+        {
+          "word": " and",
+          "start": 165.9,
+          "end": 166.4,
+          "probability": 0.7568343877792358
+        },
+        {
+          "word": " the",
+          "start": 166.4,
+          "end": 166.54,
+          "probability": 0.994640052318573
+        },
+        {
+          "word": " conditions",
+          "start": 166.54,
+          "end": 167.04,
+          "probability": 0.9948816299438477
+        },
+        {
+          "word": " they",
+          "start": 167.04,
+          "end": 167.34,
+          "probability": 0.9901978969573975
+        },
+        {
+          "word": " lived",
+          "start": 167.34,
+          "end": 167.6,
+          "probability": 0.9928103685379028
+        },
+        {
+          "word": " in",
+          "start": 167.6,
+          "end": 167.92,
+          "probability": 0.9867058396339417
+        },
+        {
+          "word": " before",
+          "start": 167.92,
+          "end": 168.36,
+          "probability": 0.9961118102073669
+        },
+        {
+          "word": " can",
+          "start": 168.36,
+          "end": 168.92,
+          "probability": 0.919532299041748
+        },
+        {
+          "word": " make",
+          "start": 168.92,
+          "end": 169.16,
+          "probability": 0.9963552951812744
+        },
+        {
+          "word": " you",
+          "start": 169.16,
+          "end": 169.42,
+          "probability": 0.999240517616272
+        },
+        {
+          "word": " feel",
+          "start": 169.42,
+          "end": 169.7,
+          "probability": 0.9967569708824158
+        },
+        {
+          "word": " unhappy.",
+          "start": 169.7,
+          "end": 170.28,
+          "probability": 0.9970515966415405
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 15812,
+      "start": 171.26,
+      "end": 175.24,
+      "text": " It can also be very difficult to see an animal leave the shelter,",
+      "tokens": [
+        51013,
+        632,
+        460,
+        635,
+        307,
+        845,
+        2408,
+        284,
+        766,
+        281,
+        5044,
+        2666,
+        262,
+        11772,
+        11,
+        51213
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.029011961890429986,
+      "compression_ratio": 1.6113744075829384,
+      "no_speech_prob": 0.009879659861326218,
+      "words": [
+        {
+          "word": " It",
+          "start": 171.26,
+          "end": 171.46,
+          "probability": 0.9915101528167725
+        },
+        {
+          "word": " can",
+          "start": 171.46,
+          "end": 171.6,
+          "probability": 0.9942429661750793
+        },
+        {
+          "word": " also",
+          "start": 171.6,
+          "end": 172.04,
+          "probability": 0.9910539984703064
+        },
+        {
+          "word": " be",
+          "start": 172.04,
+          "end": 172.24,
+          "probability": 0.9979100823402405
+        },
+        {
+          "word": " very",
+          "start": 172.24,
+          "end": 172.64,
+          "probability": 0.988111138343811
+        },
+        {
+          "word": " difficult",
+          "start": 172.64,
+          "end": 173.06,
+          "probability": 0.9993492960929871
+        },
+        {
+          "word": " to",
+          "start": 173.06,
+          "end": 173.36,
+          "probability": 0.9983124732971191
+        },
+        {
+          "word": " see",
+          "start": 173.36,
+          "end": 173.6,
+          "probability": 0.9987409710884094
+        },
+        {
+          "word": " an",
+          "start": 173.6,
+          "end": 173.78,
+          "probability": 0.9932316541671753
+        },
+        {
+          "word": " animal",
+          "start": 173.78,
+          "end": 174.16,
+          "probability": 0.998666524887085
+        },
+        {
+          "word": " leave",
+          "start": 174.16,
+          "end": 174.54,
+          "probability": 0.9967994689941406
+        },
+        {
+          "word": " the",
+          "start": 174.54,
+          "end": 174.8,
+          "probability": 0.9970408082008362
+        },
+        {
+          "word": " shelter,",
+          "start": 174.8,
+          "end": 175.24,
+          "probability": 0.9994606375694275
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 15812,
+      "start": 175.68,
+      "end": 177.94,
+      "text": " especially one that has become your friend.",
+      "tokens": [
+        51213,
+        2592,
+        530,
+        326,
+        468,
+        1716,
+        534,
+        1545,
+        13,
+        51413
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.029011961890429986,
+      "compression_ratio": 1.6113744075829384,
+      "no_speech_prob": 0.009879659861326218,
+      "words": [
+        {
+          "word": " especially",
+          "start": 175.68,
+          "end": 176.04,
+          "probability": 0.9932109713554382
+        },
+        {
+          "word": " one",
+          "start": 176.04,
+          "end": 176.54,
+          "probability": 0.9948064684867859
+        },
+        {
+          "word": " that",
+          "start": 176.54,
+          "end": 176.7,
+          "probability": 0.9953558444976807
+        },
+        {
+          "word": " has",
+          "start": 176.7,
+          "end": 176.9,
+          "probability": 0.9950565099716187
+        },
+        {
+          "word": " become",
+          "start": 176.9,
+          "end": 177.28,
+          "probability": 0.9980744123458862
+        },
+        {
+          "word": " your",
+          "start": 177.28,
+          "end": 177.56,
+          "probability": 0.9981133937835693
+        },
+        {
+          "word": " friend.",
+          "start": 177.56,
+          "end": 177.94,
+          "probability": 0.9961812496185303
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 15812,
+      "start": 179.22,
+      "end": 183.42,
+      "text": " In most cases, it's the last time you will see these animals.",
+      "tokens": [
+        51413,
+        554,
+        749,
+        2663,
+        11,
+        340,
+        338,
+        262,
+        938,
+        640,
+        345,
+        481,
+        766,
+        777,
+        4695,
+        13,
+        51663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.029011961890429986,
+      "compression_ratio": 1.6113744075829384,
+      "no_speech_prob": 0.009879659861326218,
+      "words": [
+        {
+          "word": " In",
+          "start": 179.22,
+          "end": 179.48,
+          "probability": 0.9936776757240295
+        },
+        {
+          "word": " most",
+          "start": 179.48,
+          "end": 179.78,
+          "probability": 0.9986170530319214
+        },
+        {
+          "word": " cases,",
+          "start": 179.78,
+          "end": 180.36,
+          "probability": 0.9990247488021851
+        },
+        {
+          "word": " it's",
+          "start": 180.76,
+          "end": 181.02,
+          "probability": 0.9521040320396423
+        },
+        {
+          "word": " the",
+          "start": 181.02,
+          "end": 181.18,
+          "probability": 0.9986302852630615
+        },
+        {
+          "word": " last",
+          "start": 181.18,
+          "end": 181.56,
+          "probability": 0.9964082837104797
+        },
+        {
+          "word": " time",
+          "start": 181.56,
+          "end": 181.98,
+          "probability": 0.9985860586166382
+        },
+        {
+          "word": " you",
+          "start": 181.98,
+          "end": 182.28,
+          "probability": 0.9932675361633301
+        },
+        {
+          "word": " will",
+          "start": 182.28,
+          "end": 182.46,
+          "probability": 0.9857401251792908
+        },
+        {
+          "word": " see",
+          "start": 182.46,
+          "end": 182.74,
+          "probability": 0.9983556866645813
+        },
+        {
+          "word": " these",
+          "start": 182.74,
+          "end": 182.98,
+          "probability": 0.9923880100250244
+        },
+        {
+          "word": " animals.",
+          "start": 182.98,
+          "end": 183.42,
+          "probability": 0.9992305040359497
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 18342,
+      "start": 184.54,
+      "end": 189.26,
+      "text": " Another disadvantage is more to do with the number of animals that are here.",
+      "tokens": [
+        50413,
+        6023,
+        21407,
+        318,
+        517,
+        284,
+        466,
+        351,
+        262,
+        1271,
+        286,
+        4695,
+        326,
+        389,
+        994,
+        13,
+        50663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0467649123247932,
+      "compression_ratio": 1.5971563981042654,
+      "no_speech_prob": 0.018370015546679497,
+      "words": [
+        {
+          "word": " Another",
+          "start": 184.54,
+          "end": 185.22,
+          "probability": 0.3111673593521118
+        },
+        {
+          "word": " disadvantage",
+          "start": 185.22,
+          "end": 185.9,
+          "probability": 0.9912636280059814
+        },
+        {
+          "word": " is",
+          "start": 185.9,
+          "end": 186.58,
+          "probability": 0.9876136779785156
+        },
+        {
+          "word": " more",
+          "start": 186.58,
+          "end": 186.82,
+          "probability": 0.9934205412864685
+        },
+        {
+          "word": " to",
+          "start": 186.82,
+          "end": 186.98,
+          "probability": 0.9965426325798035
+        },
+        {
+          "word": " do",
+          "start": 186.98,
+          "end": 187.18,
+          "probability": 0.9961510896682739
+        },
+        {
+          "word": " with",
+          "start": 187.18,
+          "end": 187.34,
+          "probability": 0.9974883794784546
+        },
+        {
+          "word": " the",
+          "start": 187.34,
+          "end": 187.5,
+          "probability": 0.9932488203048706
+        },
+        {
+          "word": " number",
+          "start": 187.5,
+          "end": 187.74,
+          "probability": 0.9925327897071838
+        },
+        {
+          "word": " of",
+          "start": 187.74,
+          "end": 188.06,
+          "probability": 0.9962079524993896
+        },
+        {
+          "word": " animals",
+          "start": 188.06,
+          "end": 188.5,
+          "probability": 0.9986016154289246
+        },
+        {
+          "word": " that",
+          "start": 188.5,
+          "end": 188.74,
+          "probability": 0.9882204532623291
+        },
+        {
+          "word": " are",
+          "start": 188.74,
+          "end": 188.9,
+          "probability": 0.9980924725532532
+        },
+        {
+          "word": " here.",
+          "start": 188.9,
+          "end": 189.26,
+          "probability": 0.998028576374054
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 18342,
+      "start": 190.36,
+      "end": 193.2,
+      "text": " This is certainly a problem in the shelter where I work.",
+      "tokens": [
+        50663,
+        770,
+        318,
+        3729,
+        257,
+        1917,
+        287,
+        262,
+        11772,
+        810,
+        314,
+        670,
+        13,
+        50863
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0467649123247932,
+      "compression_ratio": 1.5971563981042654,
+      "no_speech_prob": 0.018370015546679497,
+      "words": [
+        {
+          "word": " This",
+          "start": 190.36,
+          "end": 190.5,
+          "probability": 0.9747865200042725
+        },
+        {
+          "word": " is",
+          "start": 190.5,
+          "end": 190.72,
+          "probability": 0.9966641068458557
+        },
+        {
+          "word": " certainly",
+          "start": 190.72,
+          "end": 191.14,
+          "probability": 0.9957177042961121
+        },
+        {
+          "word": " a",
+          "start": 191.14,
+          "end": 191.4,
+          "probability": 0.9969115853309631
+        },
+        {
+          "word": " problem",
+          "start": 191.4,
+          "end": 191.64,
+          "probability": 0.9987013339996338
+        },
+        {
+          "word": " in",
+          "start": 191.64,
+          "end": 191.96,
+          "probability": 0.9969223141670227
+        },
+        {
+          "word": " the",
+          "start": 191.96,
+          "end": 192.1,
+          "probability": 0.9940967559814453
+        },
+        {
+          "word": " shelter",
+          "start": 192.1,
+          "end": 192.34,
+          "probability": 0.9956747889518738
+        },
+        {
+          "word": " where",
+          "start": 192.34,
+          "end": 192.68,
+          "probability": 0.9907656908035278
+        },
+        {
+          "word": " I",
+          "start": 192.68,
+          "end": 192.9,
+          "probability": 0.9933252334594727
+        },
+        {
+          "word": " work.",
+          "start": 192.9,
+          "end": 193.2,
+          "probability": 0.9993916749954224
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 18342,
+      "start": 194.1,
+      "end": 196.84,
+      "text": " We receive more animals than we can handle",
+      "tokens": [
+        50863,
+        775,
+        3328,
+        517,
+        4695,
+        621,
+        356,
+        460,
+        5412,
+        51013
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0467649123247932,
+      "compression_ratio": 1.5971563981042654,
+      "no_speech_prob": 0.018370015546679497,
+      "words": [
+        {
+          "word": " We",
+          "start": 194.1,
+          "end": 194.32,
+          "probability": 0.9902607798576355
+        },
+        {
+          "word": " receive",
+          "start": 194.32,
+          "end": 194.82,
+          "probability": 0.9920240640640259
+        },
+        {
+          "word": " more",
+          "start": 194.82,
+          "end": 195.3,
+          "probability": 0.9919276237487793
+        },
+        {
+          "word": " animals",
+          "start": 195.3,
+          "end": 195.82,
+          "probability": 0.9994322657585144
+        },
+        {
+          "word": " than",
+          "start": 195.82,
+          "end": 196.08,
+          "probability": 0.9889398217201233
+        },
+        {
+          "word": " we",
+          "start": 196.08,
+          "end": 196.24,
+          "probability": 0.9974881410598755
+        },
+        {
+          "word": " can",
+          "start": 196.24,
+          "end": 196.42,
+          "probability": 0.999189555644989
+        },
+        {
+          "word": " handle",
+          "start": 196.42,
+          "end": 196.84,
+          "probability": 0.9995346069335938
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 18342,
+      "start": 196.84,
+      "end": 200.9,
+      "text": " and we work hard to make more space for them all the time.",
+      "tokens": [
+        51013,
+        290,
+        356,
+        670,
+        1327,
+        284,
+        787,
+        517,
+        2272,
+        329,
+        606,
+        477,
+        262,
+        640,
+        13,
+        51263
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0467649123247932,
+      "compression_ratio": 1.5971563981042654,
+      "no_speech_prob": 0.018370015546679497,
+      "words": [
+        {
+          "word": " and",
+          "start": 196.84,
+          "end": 197.42,
+          "probability": 0.612443208694458
+        },
+        {
+          "word": " we",
+          "start": 197.42,
+          "end": 197.62,
+          "probability": 0.9862218499183655
+        },
+        {
+          "word": " work",
+          "start": 197.62,
+          "end": 197.88,
+          "probability": 0.9978753328323364
+        },
+        {
+          "word": " hard",
+          "start": 197.88,
+          "end": 198.36,
+          "probability": 0.9968070983886719
+        },
+        {
+          "word": " to",
+          "start": 198.36,
+          "end": 198.62,
+          "probability": 0.9975359439849854
+        },
+        {
+          "word": " make",
+          "start": 198.62,
+          "end": 198.82,
+          "probability": 0.9984920024871826
+        },
+        {
+          "word": " more",
+          "start": 198.82,
+          "end": 199.18,
+          "probability": 0.997453510761261
+        },
+        {
+          "word": " space",
+          "start": 199.18,
+          "end": 199.56,
+          "probability": 0.999306321144104
+        },
+        {
+          "word": " for",
+          "start": 199.56,
+          "end": 199.8,
+          "probability": 0.9982872605323792
+        },
+        {
+          "word": " them",
+          "start": 199.8,
+          "end": 199.94,
+          "probability": 0.9986451268196106
+        },
+        {
+          "word": " all",
+          "start": 199.94,
+          "end": 200.28,
+          "probability": 0.9903941750526428
+        },
+        {
+          "word": " the",
+          "start": 200.28,
+          "end": 200.5,
+          "probability": 0.9976820945739746
+        },
+        {
+          "word": " time.",
+          "start": 200.5,
+          "end": 200.9,
+          "probability": 0.999613344669342
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "seek": 18342,
+      "start": 202.08,
+      "end": 206.7,
+      "text": " Crowded places make animals anxious and disease can also be an issue.",
+      "tokens": [
+        51263,
+        29452,
+        276,
+        4113,
+        787,
+        4695,
+        18116,
+        290,
+        4369,
+        460,
+        635,
+        307,
+        281,
+        2071,
+        13,
+        51513
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0467649123247932,
+      "compression_ratio": 1.5971563981042654,
+      "no_speech_prob": 0.018370015546679497,
+      "words": [
+        {
+          "word": " Crowded",
+          "start": 202.08,
+          "end": 202.42,
+          "probability": 0.9878168106079102
+        },
+        {
+          "word": " places",
+          "start": 202.42,
+          "end": 202.78,
+          "probability": 0.9979904890060425
+        },
+        {
+          "word": " make",
+          "start": 202.78,
+          "end": 203.18,
+          "probability": 0.9915728569030762
+        },
+        {
+          "word": " animals",
+          "start": 203.18,
+          "end": 203.66,
+          "probability": 0.9980237483978271
+        },
+        {
+          "word": " anxious",
+          "start": 203.66,
+          "end": 204.24,
+          "probability": 0.9983875751495361
+        },
+        {
+          "word": " and",
+          "start": 204.24,
+          "end": 204.86,
+          "probability": 0.904634416103363
+        },
+        {
+          "word": " disease",
+          "start": 204.86,
+          "end": 205.24,
+          "probability": 0.9983465671539307
+        },
+        {
+          "word": " can",
+          "start": 205.24,
+          "end": 205.58,
+          "probability": 0.996699869632721
+        },
+        {
+          "word": " also",
+          "start": 205.58,
+          "end": 205.94,
+          "probability": 0.9966952800750732
+        },
+        {
+          "word": " be",
+          "start": 205.94,
+          "end": 206.24,
+          "probability": 0.9992327690124512
+        },
+        {
+          "word": " an",
+          "start": 206.24,
+          "end": 206.36,
+          "probability": 0.9984356760978699
+        },
+        {
+          "word": " issue.",
+          "start": 206.36,
+          "end": 206.7,
+          "probability": 0.9995554089546204
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "seek": 18342,
+      "start": 207.54,
+      "end": 209.94,
+      "text": " That's why we need more people.",
+      "tokens": [
+        51513,
+        1320,
+        338,
+        1521,
+        356,
+        761,
+        517,
+        661,
+        13,
+        51713
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0467649123247932,
+      "compression_ratio": 1.5971563981042654,
+      "no_speech_prob": 0.018370015546679497,
+      "words": [
+        {
+          "word": " That's",
+          "start": 207.54,
+          "end": 207.98,
+          "probability": 0.9851503372192383
+        },
+        {
+          "word": " why",
+          "start": 207.98,
+          "end": 208.26,
+          "probability": 0.9994409680366516
+        },
+        {
+          "word": " we",
+          "start": 208.26,
+          "end": 208.56,
+          "probability": 0.9977364540100098
+        },
+        {
+          "word": " need",
+          "start": 208.56,
+          "end": 208.98,
+          "probability": 0.9917659163475037
+        },
+        {
+          "word": " more",
+          "start": 208.98,
+          "end": 209.4,
+          "probability": 0.9978581070899963
+        },
+        {
+          "word": " people.",
+          "start": 209.4,
+          "end": 209.94,
+          "probability": 0.9994589686393738
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "seek": 20994,
+      "start": 210.9,
+      "end": 216.32,
+      "text": " To sum up, working at an animal shelter has both pros and cons,",
+      "tokens": [
+        50413,
+        1675,
+        2160,
+        510,
+        11,
+        1762,
+        379,
+        281,
+        5044,
+        11772,
+        468,
+        1111,
+        10360,
+        290,
+        762,
+        11,
+        50663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06784866890817318,
+      "compression_ratio": 1.4233576642335766,
+      "no_speech_prob": 0.04009596258401871,
+      "words": [
+        {
+          "word": " To",
+          "start": 210.9,
+          "end": 211.72,
+          "probability": 0.8671573400497437
+        },
+        {
+          "word": " sum",
+          "start": 211.72,
+          "end": 211.92,
+          "probability": 0.9939934611320496
+        },
+        {
+          "word": " up,",
+          "start": 211.92,
+          "end": 212.3,
+          "probability": 0.9918627738952637
+        },
+        {
+          "word": " working",
+          "start": 212.92,
+          "end": 213.16,
+          "probability": 0.9661023616790771
+        },
+        {
+          "word": " at",
+          "start": 213.16,
+          "end": 213.48,
+          "probability": 0.9898484349250793
+        },
+        {
+          "word": " an",
+          "start": 213.48,
+          "end": 213.66,
+          "probability": 0.9907678961753845
+        },
+        {
+          "word": " animal",
+          "start": 213.66,
+          "end": 213.98,
+          "probability": 0.9934589266777039
+        },
+        {
+          "word": " shelter",
+          "start": 213.98,
+          "end": 214.4,
+          "probability": 0.9977831244468689
+        },
+        {
+          "word": " has",
+          "start": 214.4,
+          "end": 214.78,
+          "probability": 0.9895456433296204
+        },
+        {
+          "word": " both",
+          "start": 214.78,
+          "end": 215.1,
+          "probability": 0.9824693202972412
+        },
+        {
+          "word": " pros",
+          "start": 215.1,
+          "end": 215.48,
+          "probability": 0.9866456985473633
+        },
+        {
+          "word": " and",
+          "start": 215.48,
+          "end": 215.9,
+          "probability": 0.9937917590141296
+        },
+        {
+          "word": " cons,",
+          "start": 215.9,
+          "end": 216.32,
+          "probability": 0.9997386336326599
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "seek": 20994,
+      "start": 216.72,
+      "end": 219.28,
+      "text": " but it's a very rewarding job.",
+      "tokens": [
+        50663,
+        475,
+        340,
+        338,
+        257,
+        845,
+        23404,
+        1693,
+        13,
+        50863
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06784866890817318,
+      "compression_ratio": 1.4233576642335766,
+      "no_speech_prob": 0.04009596258401871,
+      "words": [
+        {
+          "word": " but",
+          "start": 216.72,
+          "end": 217.18,
+          "probability": 0.9867332577705383
+        },
+        {
+          "word": " it's",
+          "start": 217.18,
+          "end": 217.62,
+          "probability": 0.9257718324661255
+        },
+        {
+          "word": " a",
+          "start": 217.62,
+          "end": 217.74,
+          "probability": 0.9959327578544617
+        },
+        {
+          "word": " very",
+          "start": 217.74,
+          "end": 218.2,
+          "probability": 0.9955086708068848
+        },
+        {
+          "word": " rewarding",
+          "start": 218.2,
+          "end": 218.88,
+          "probability": 0.9989936947822571
+        },
+        {
+          "word": " job.",
+          "start": 218.88,
+          "end": 219.28,
+          "probability": 0.9991305470466614
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "seek": 20994,
+      "start": 220.26,
+      "end": 222.94,
+      "text": " It doesn't only benefit your welfare,",
+      "tokens": [
+        50863,
+        632,
+        1595,
+        470,
+        691,
+        4414,
+        534,
+        9490,
+        11,
+        51013
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06784866890817318,
+      "compression_ratio": 1.4233576642335766,
+      "no_speech_prob": 0.04009596258401871,
+      "words": [
+        {
+          "word": " It",
+          "start": 220.26,
+          "end": 220.42,
+          "probability": 0.99128657579422
+        },
+        {
+          "word": " doesn't",
+          "start": 220.42,
+          "end": 220.9,
+          "probability": 0.9956886172294617
+        },
+        {
+          "word": " only",
+          "start": 220.9,
+          "end": 221.26,
+          "probability": 0.9811558723449707
+        },
+        {
+          "word": " benefit",
+          "start": 221.26,
+          "end": 221.82,
+          "probability": 0.9911392331123352
+        },
+        {
+          "word": " your",
+          "start": 221.82,
+          "end": 222.34,
+          "probability": 0.9222285151481628
+        },
+        {
+          "word": " welfare,",
+          "start": 222.34,
+          "end": 222.94,
+          "probability": 0.9988613128662109
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "seek": 20994,
+      "start": 223.62,
+      "end": 228.0,
+      "text": " it benefits the welfare of all the animals in the shelter too.",
+      "tokens": [
+        51013,
+        340,
+        4034,
+        262,
+        9490,
+        286,
+        477,
+        262,
+        4695,
+        287,
+        262,
+        11772,
+        1165,
+        13,
+        51263
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06784866890817318,
+      "compression_ratio": 1.4233576642335766,
+      "no_speech_prob": 0.04009596258401871,
+      "words": [
+        {
+          "word": " it",
+          "start": 223.62,
+          "end": 223.82,
+          "probability": 0.9848893880844116
+        },
+        {
+          "word": " benefits",
+          "start": 223.82,
+          "end": 224.4,
+          "probability": 0.9920850396156311
+        },
+        {
+          "word": " the",
+          "start": 224.4,
+          "end": 224.66,
+          "probability": 0.9966694712638855
+        },
+        {
+          "word": " welfare",
+          "start": 224.66,
+          "end": 225.12,
+          "probability": 0.9970249533653259
+        },
+        {
+          "word": " of",
+          "start": 225.12,
+          "end": 225.42,
+          "probability": 0.9989901185035706
+        },
+        {
+          "word": " all",
+          "start": 225.42,
+          "end": 225.94,
+          "probability": 0.9795798063278198
+        },
+        {
+          "word": " the",
+          "start": 225.94,
+          "end": 226.16,
+          "probability": 0.953003466129303
+        },
+        {
+          "word": " animals",
+          "start": 226.16,
+          "end": 226.64,
+          "probability": 0.9987449645996094
+        },
+        {
+          "word": " in",
+          "start": 226.64,
+          "end": 226.96,
+          "probability": 0.9989088773727417
+        },
+        {
+          "word": " the",
+          "start": 226.96,
+          "end": 227.1,
+          "probability": 0.9922957420349121
+        },
+        {
+          "word": " shelter",
+          "start": 227.1,
+          "end": 227.42,
+          "probability": 0.997992753982544
+        },
+        {
+          "word": " too.",
+          "start": 227.42,
+          "end": 228.0,
+          "probability": 0.8216281533241272
+        }
+      ]
+    }
+  ]
+}

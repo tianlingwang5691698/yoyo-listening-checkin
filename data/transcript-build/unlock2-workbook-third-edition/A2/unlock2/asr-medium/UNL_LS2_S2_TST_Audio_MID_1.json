@@ -1,0 +1,3430 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Mid-course test, track one. Dr Eka is here today to talk about how we can use drones to help with the problems created by global warming. Yes, thank you for inviting me, Professor. So, I think everybody here knows what a drone is. It's basically a flying computer, a bit like a small plane, controlled from the ground. We can use drones in many different ways. For example, we can send drones into different locations to collect information about the weather. They help us to find out about how climates change over time. For example, how humid or dry they become. And I believe you said that we can also use drones to plant trees. Yes! As you know, we are cutting down trees in rainforests all over the world. We're trying to plant new trees at the same time, but the problem is that we cut down about 15 billion trees a year, but only plant 9 billion. However, by using drones we can now plant trees from the air. The drones fly 3 meters above the ground and are able to plant 120 trees per minute. It's actually possible to plant as many as 100,000 trees in one day. That's amazing! In my opinion, one of the best ways that we use drones is for going into dangerous places, such as areas where there are forest fires or floods. Drones can help us to find and save wildlife that is in danger. So, are there any disadvantages to drone technology? For example, is it very expensive? Well, drones are like computers. You can get cheap ones and you can get very expensive ones. Our department at the university bought a drone last year for about 1,500 euros. I tested more expensive ones and I personally feel that our drone is just as good. It's quite easy to use. We control it using an app from a mobile phone. It can fly for 45 minutes at up to 40 kilometers per hour. The problem with this kind of drone is that it uses batteries, and obviously you have to charge them after flying, which can take up quite a lot of time. It's a good drone for flying. It's a good drone for flying. It's a good drone for flying.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Mid-course test, track one.",
+      "tokens": [
+        50364,
+        7033,
+        12,
+        31913,
+        1500,
+        11,
+        2837,
+        472,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22610036064596736,
+      "compression_ratio": 1.4196428571428572,
+      "no_speech_prob": 0.171331524848938,
+      "words": [
+        {
+          "word": " Mid",
+          "start": 0.0,
+          "end": 0.64,
+          "probability": 0.2725712060928345
+        },
+        {
+          "word": "-course",
+          "start": 0.64,
+          "end": 1.0,
+          "probability": 0.6861811429262161
+        },
+        {
+          "word": " test,",
+          "start": 1.0,
+          "end": 1.62,
+          "probability": 0.9081742763519287
+        },
+        {
+          "word": " track",
+          "start": 2.04,
+          "end": 2.22,
+          "probability": 0.682654082775116
+        },
+        {
+          "word": " one.",
+          "start": 2.22,
+          "end": 3.0,
+          "probability": 0.6162956953048706
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.08,
+      "end": 13.36,
+      "text": " Dr Eka is here today to talk about how we can use drones to help with the problems created by global warming.",
+      "tokens": [
+        50589,
+        2491,
+        462,
+        2330,
+        307,
+        510,
+        965,
+        281,
+        751,
+        466,
+        577,
+        321,
+        393,
+        764,
+        23823,
+        281,
+        854,
+        365,
+        264,
+        2740,
+        2942,
+        538,
+        4338,
+        17983,
+        13,
+        51039
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22610036064596736,
+      "compression_ratio": 1.4196428571428572,
+      "no_speech_prob": 0.171331524848938,
+      "words": [
+        {
+          "word": " Dr",
+          "start": 5.08,
+          "end": 5.28,
+          "probability": 0.7978094220161438
+        },
+        {
+          "word": " Eka",
+          "start": 5.28,
+          "end": 5.76,
+          "probability": 0.513867162168026
+        },
+        {
+          "word": " is",
+          "start": 5.76,
+          "end": 6.08,
+          "probability": 0.9938442707061768
+        },
+        {
+          "word": " here",
+          "start": 6.08,
+          "end": 6.42,
+          "probability": 0.9977147579193115
+        },
+        {
+          "word": " today",
+          "start": 6.42,
+          "end": 6.9,
+          "probability": 0.9942666888237
+        },
+        {
+          "word": " to",
+          "start": 6.9,
+          "end": 7.3,
+          "probability": 0.9521676301956177
+        },
+        {
+          "word": " talk",
+          "start": 7.3,
+          "end": 7.56,
+          "probability": 0.998487114906311
+        },
+        {
+          "word": " about",
+          "start": 7.56,
+          "end": 7.94,
+          "probability": 0.9984273910522461
+        },
+        {
+          "word": " how",
+          "start": 7.94,
+          "end": 8.24,
+          "probability": 0.9878795742988586
+        },
+        {
+          "word": " we",
+          "start": 8.24,
+          "end": 8.44,
+          "probability": 0.9969672560691833
+        },
+        {
+          "word": " can",
+          "start": 8.44,
+          "end": 8.66,
+          "probability": 0.9983345866203308
+        },
+        {
+          "word": " use",
+          "start": 8.66,
+          "end": 9.04,
+          "probability": 0.9985448122024536
+        },
+        {
+          "word": " drones",
+          "start": 9.04,
+          "end": 9.72,
+          "probability": 0.9934087991714478
+        },
+        {
+          "word": " to",
+          "start": 9.72,
+          "end": 10.18,
+          "probability": 0.9531669616699219
+        },
+        {
+          "word": " help",
+          "start": 10.18,
+          "end": 10.42,
+          "probability": 0.9994331002235413
+        },
+        {
+          "word": " with",
+          "start": 10.42,
+          "end": 10.66,
+          "probability": 0.9973556995391846
+        },
+        {
+          "word": " the",
+          "start": 10.66,
+          "end": 10.94,
+          "probability": 0.993049144744873
+        },
+        {
+          "word": " problems",
+          "start": 10.94,
+          "end": 11.34,
+          "probability": 0.9964524507522583
+        },
+        {
+          "word": " created",
+          "start": 11.34,
+          "end": 11.98,
+          "probability": 0.9976937174797058
+        },
+        {
+          "word": " by",
+          "start": 11.98,
+          "end": 12.42,
+          "probability": 0.9989836812019348
+        },
+        {
+          "word": " global",
+          "start": 12.42,
+          "end": 12.84,
+          "probability": 0.9745821952819824
+        },
+        {
+          "word": " warming.",
+          "start": 12.84,
+          "end": 13.36,
+          "probability": 0.9998748302459717
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.3,
+      "end": 16.7,
+      "text": " Yes, thank you for inviting me, Professor.",
+      "tokens": [
+        51064,
+        1079,
+        11,
+        1309,
+        291,
+        337,
+        18202,
+        385,
+        11,
+        8419,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22610036064596736,
+      "compression_ratio": 1.4196428571428572,
+      "no_speech_prob": 0.171331524848938,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 14.3,
+          "end": 14.66,
+          "probability": 0.9802599549293518
+        },
+        {
+          "word": " thank",
+          "start": 14.72,
+          "end": 15.14,
+          "probability": 0.9891535639762878
+        },
+        {
+          "word": " you",
+          "start": 15.14,
+          "end": 15.3,
+          "probability": 0.9972379207611084
+        },
+        {
+          "word": " for",
+          "start": 15.3,
+          "end": 15.5,
+          "probability": 0.9954806566238403
+        },
+        {
+          "word": " inviting",
+          "start": 15.5,
+          "end": 15.9,
+          "probability": 0.9988939166069031
+        },
+        {
+          "word": " me,",
+          "start": 15.9,
+          "end": 16.2,
+          "probability": 0.9973975419998169
+        },
+        {
+          "word": " Professor.",
+          "start": 16.2,
+          "end": 16.7,
+          "probability": 0.7595041394233704
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 17.52,
+      "end": 21.36,
+      "text": " So, I think everybody here knows what a drone is.",
+      "tokens": [
+        51239,
+        407,
+        11,
+        286,
+        519,
+        2201,
+        510,
+        3255,
+        437,
+        257,
+        13852,
+        307,
+        13,
+        51439
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22610036064596736,
+      "compression_ratio": 1.4196428571428572,
+      "no_speech_prob": 0.171331524848938,
+      "words": [
+        {
+          "word": " So,",
+          "start": 17.52,
+          "end": 17.96,
+          "probability": 0.9895802140235901
+        },
+        {
+          "word": " I",
+          "start": 18.18,
+          "end": 18.34,
+          "probability": 0.9963117241859436
+        },
+        {
+          "word": " think",
+          "start": 18.34,
+          "end": 18.64,
+          "probability": 0.999213457107544
+        },
+        {
+          "word": " everybody",
+          "start": 18.64,
+          "end": 19.24,
+          "probability": 0.987255334854126
+        },
+        {
+          "word": " here",
+          "start": 19.24,
+          "end": 19.64,
+          "probability": 0.996013879776001
+        },
+        {
+          "word": " knows",
+          "start": 19.64,
+          "end": 20.1,
+          "probability": 0.994013249874115
+        },
+        {
+          "word": " what",
+          "start": 20.1,
+          "end": 20.46,
+          "probability": 0.9981642365455627
+        },
+        {
+          "word": " a",
+          "start": 20.46,
+          "end": 20.6,
+          "probability": 0.9966484904289246
+        },
+        {
+          "word": " drone",
+          "start": 20.6,
+          "end": 20.86,
+          "probability": 0.9905497431755066
+        },
+        {
+          "word": " is.",
+          "start": 20.86,
+          "end": 21.36,
+          "probability": 0.9994128942489624
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 22.08,
+      "end": 28.72,
+      "text": " It's basically a flying computer, a bit like a small plane, controlled from the ground.",
+      "tokens": [
+        51464,
+        467,
+        311,
+        1936,
+        257,
+        7137,
+        3820,
+        11,
+        257,
+        857,
+        411,
+        257,
+        1359,
+        5720,
+        11,
+        10164,
+        490,
+        264,
+        2727,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22610036064596736,
+      "compression_ratio": 1.4196428571428572,
+      "no_speech_prob": 0.171331524848938,
+      "words": [
+        {
+          "word": " It's",
+          "start": 22.08,
+          "end": 22.42,
+          "probability": 0.9864203333854675
+        },
+        {
+          "word": " basically",
+          "start": 22.42,
+          "end": 23.02,
+          "probability": 0.9961101412773132
+        },
+        {
+          "word": " a",
+          "start": 23.02,
+          "end": 23.5,
+          "probability": 0.9963435530662537
+        },
+        {
+          "word": " flying",
+          "start": 23.5,
+          "end": 23.86,
+          "probability": 0.9780862927436829
+        },
+        {
+          "word": " computer,",
+          "start": 23.86,
+          "end": 24.6,
+          "probability": 0.9989938139915466
+        },
+        {
+          "word": " a",
+          "start": 25.18,
+          "end": 25.44,
+          "probability": 0.9892035126686096
+        },
+        {
+          "word": " bit",
+          "start": 25.44,
+          "end": 25.66,
+          "probability": 0.999357283115387
+        },
+        {
+          "word": " like",
+          "start": 25.66,
+          "end": 25.96,
+          "probability": 0.9993752837181091
+        },
+        {
+          "word": " a",
+          "start": 25.96,
+          "end": 26.26,
+          "probability": 0.9982820749282837
+        },
+        {
+          "word": " small",
+          "start": 26.26,
+          "end": 26.56,
+          "probability": 0.9983592629432678
+        },
+        {
+          "word": " plane,",
+          "start": 26.56,
+          "end": 27.06,
+          "probability": 0.9954267740249634
+        },
+        {
+          "word": " controlled",
+          "start": 27.5,
+          "end": 27.86,
+          "probability": 0.9942261576652527
+        },
+        {
+          "word": " from",
+          "start": 27.86,
+          "end": 28.18,
+          "probability": 0.9984813332557678
+        },
+        {
+          "word": " the",
+          "start": 28.18,
+          "end": 28.4,
+          "probability": 0.9990416169166565
+        },
+        {
+          "word": " ground.",
+          "start": 28.4,
+          "end": 28.72,
+          "probability": 0.9998753070831299
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2872,
+      "start": 29.72,
+      "end": 32.6,
+      "text": " We can use drones in many different ways.",
+      "tokens": [
+        50414,
+        492,
+        393,
+        764,
+        23823,
+        294,
+        867,
+        819,
+        2098,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08559947818904728,
+      "compression_ratio": 1.616580310880829,
+      "no_speech_prob": 0.0037310400512069464,
+      "words": [
+        {
+          "word": " We",
+          "start": 29.72,
+          "end": 30.1,
+          "probability": 0.7190108895301819
+        },
+        {
+          "word": " can",
+          "start": 30.1,
+          "end": 30.36,
+          "probability": 0.9942569136619568
+        },
+        {
+          "word": " use",
+          "start": 30.36,
+          "end": 30.6,
+          "probability": 0.9905187487602234
+        },
+        {
+          "word": " drones",
+          "start": 30.6,
+          "end": 30.96,
+          "probability": 0.9889617562294006
+        },
+        {
+          "word": " in",
+          "start": 30.96,
+          "end": 31.32,
+          "probability": 0.996921956539154
+        },
+        {
+          "word": " many",
+          "start": 31.32,
+          "end": 31.76,
+          "probability": 0.9958601593971252
+        },
+        {
+          "word": " different",
+          "start": 31.76,
+          "end": 32.16,
+          "probability": 0.9969834685325623
+        },
+        {
+          "word": " ways.",
+          "start": 32.16,
+          "end": 32.6,
+          "probability": 0.9991371035575867
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2872,
+      "start": 33.08,
+      "end": 39.26,
+      "text": " For example, we can send drones into different locations to collect information about the weather.",
+      "tokens": [
+        50589,
+        1171,
+        1365,
+        11,
+        321,
+        393,
+        2845,
+        23823,
+        666,
+        819,
+        9253,
+        281,
+        2500,
+        1589,
+        466,
+        264,
+        5503,
+        13,
+        50889
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08559947818904728,
+      "compression_ratio": 1.616580310880829,
+      "no_speech_prob": 0.0037310400512069464,
+      "words": [
+        {
+          "word": " For",
+          "start": 33.08,
+          "end": 33.28,
+          "probability": 0.9642553925514221
+        },
+        {
+          "word": " example,",
+          "start": 33.28,
+          "end": 33.8,
+          "probability": 0.9972463846206665
+        },
+        {
+          "word": " we",
+          "start": 34.26,
+          "end": 34.36,
+          "probability": 0.9758107662200928
+        },
+        {
+          "word": " can",
+          "start": 34.36,
+          "end": 34.64,
+          "probability": 0.9948234558105469
+        },
+        {
+          "word": " send",
+          "start": 34.64,
+          "end": 34.86,
+          "probability": 0.9979667663574219
+        },
+        {
+          "word": " drones",
+          "start": 34.86,
+          "end": 35.3,
+          "probability": 0.9965813755989075
+        },
+        {
+          "word": " into",
+          "start": 35.3,
+          "end": 35.7,
+          "probability": 0.9294578433036804
+        },
+        {
+          "word": " different",
+          "start": 35.7,
+          "end": 36.08,
+          "probability": 0.9964730143547058
+        },
+        {
+          "word": " locations",
+          "start": 36.08,
+          "end": 36.74,
+          "probability": 0.9979817867279053
+        },
+        {
+          "word": " to",
+          "start": 36.74,
+          "end": 37.14,
+          "probability": 0.9807124137878418
+        },
+        {
+          "word": " collect",
+          "start": 37.14,
+          "end": 37.5,
+          "probability": 0.9980085492134094
+        },
+        {
+          "word": " information",
+          "start": 37.5,
+          "end": 38.24,
+          "probability": 0.9987162351608276
+        },
+        {
+          "word": " about",
+          "start": 38.24,
+          "end": 38.66,
+          "probability": 0.9989438652992249
+        },
+        {
+          "word": " the",
+          "start": 38.66,
+          "end": 38.9,
+          "probability": 0.9966526627540588
+        },
+        {
+          "word": " weather.",
+          "start": 38.9,
+          "end": 39.26,
+          "probability": 0.999326229095459
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2872,
+      "start": 40.16,
+      "end": 44.58,
+      "text": " They help us to find out about how climates change over time.",
+      "tokens": [
+        50914,
+        814,
+        854,
+        505,
+        281,
+        915,
+        484,
+        466,
+        577,
+        5644,
+        1024,
+        1319,
+        670,
+        565,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08559947818904728,
+      "compression_ratio": 1.616580310880829,
+      "no_speech_prob": 0.0037310400512069464,
+      "words": [
+        {
+          "word": " They",
+          "start": 40.16,
+          "end": 40.44,
+          "probability": 0.990730345249176
+        },
+        {
+          "word": " help",
+          "start": 40.44,
+          "end": 40.76,
+          "probability": 0.996743381023407
+        },
+        {
+          "word": " us",
+          "start": 40.76,
+          "end": 41.1,
+          "probability": 0.9988970756530762
+        },
+        {
+          "word": " to",
+          "start": 41.1,
+          "end": 41.34,
+          "probability": 0.9908169507980347
+        },
+        {
+          "word": " find",
+          "start": 41.34,
+          "end": 41.6,
+          "probability": 0.9982567429542542
+        },
+        {
+          "word": " out",
+          "start": 41.6,
+          "end": 41.96,
+          "probability": 0.9956346154212952
+        },
+        {
+          "word": " about",
+          "start": 41.96,
+          "end": 42.34,
+          "probability": 0.9786271452903748
+        },
+        {
+          "word": " how",
+          "start": 42.34,
+          "end": 42.7,
+          "probability": 0.9976772665977478
+        },
+        {
+          "word": " climates",
+          "start": 42.7,
+          "end": 43.2,
+          "probability": 0.99053093791008
+        },
+        {
+          "word": " change",
+          "start": 43.2,
+          "end": 43.76,
+          "probability": 0.9980701804161072
+        },
+        {
+          "word": " over",
+          "start": 43.76,
+          "end": 44.16,
+          "probability": 0.9866568446159363
+        },
+        {
+          "word": " time.",
+          "start": 44.16,
+          "end": 44.58,
+          "probability": 0.9989939332008362
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2872,
+      "start": 45.02,
+      "end": 48.44,
+      "text": " For example, how humid or dry they become.",
+      "tokens": [
+        51189,
+        1171,
+        1365,
+        11,
+        577,
+        34649,
+        420,
+        4016,
+        436,
+        1813,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08559947818904728,
+      "compression_ratio": 1.616580310880829,
+      "no_speech_prob": 0.0037310400512069464,
+      "words": [
+        {
+          "word": " For",
+          "start": 45.02,
+          "end": 45.3,
+          "probability": 0.9867829084396362
+        },
+        {
+          "word": " example,",
+          "start": 45.3,
+          "end": 45.88,
+          "probability": 0.9987667798995972
+        },
+        {
+          "word": " how",
+          "start": 46.24,
+          "end": 46.52,
+          "probability": 0.9981870055198669
+        },
+        {
+          "word": " humid",
+          "start": 46.52,
+          "end": 46.96,
+          "probability": 0.9956743121147156
+        },
+        {
+          "word": " or",
+          "start": 46.96,
+          "end": 47.42,
+          "probability": 0.990704357624054
+        },
+        {
+          "word": " dry",
+          "start": 47.42,
+          "end": 47.66,
+          "probability": 0.9986722469329834
+        },
+        {
+          "word": " they",
+          "start": 47.66,
+          "end": 47.98,
+          "probability": 0.9983262419700623
+        },
+        {
+          "word": " become.",
+          "start": 47.98,
+          "end": 48.44,
+          "probability": 0.9958401918411255
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2872,
+      "start": 49.2,
+      "end": 53.78,
+      "text": " And I believe you said that we can also use drones to plant trees.",
+      "tokens": [
+        51389,
+        400,
+        286,
+        1697,
+        291,
+        848,
+        300,
+        321,
+        393,
+        611,
+        764,
+        23823,
+        281,
+        3709,
+        5852,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08559947818904728,
+      "compression_ratio": 1.616580310880829,
+      "no_speech_prob": 0.0037310400512069464,
+      "words": [
+        {
+          "word": " And",
+          "start": 49.2,
+          "end": 49.28,
+          "probability": 0.9268051385879517
+        },
+        {
+          "word": " I",
+          "start": 49.28,
+          "end": 49.44,
+          "probability": 0.9389814734458923
+        },
+        {
+          "word": " believe",
+          "start": 49.44,
+          "end": 49.84,
+          "probability": 0.9984248876571655
+        },
+        {
+          "word": " you",
+          "start": 49.84,
+          "end": 50.18,
+          "probability": 0.9167270660400391
+        },
+        {
+          "word": " said",
+          "start": 50.18,
+          "end": 50.48,
+          "probability": 0.9862354397773743
+        },
+        {
+          "word": " that",
+          "start": 50.48,
+          "end": 50.8,
+          "probability": 0.8786306381225586
+        },
+        {
+          "word": " we",
+          "start": 50.8,
+          "end": 50.98,
+          "probability": 0.9969096779823303
+        },
+        {
+          "word": " can",
+          "start": 50.98,
+          "end": 51.22,
+          "probability": 0.995415449142456
+        },
+        {
+          "word": " also",
+          "start": 51.22,
+          "end": 51.72,
+          "probability": 0.9964809417724609
+        },
+        {
+          "word": " use",
+          "start": 51.72,
+          "end": 52.12,
+          "probability": 0.9978019595146179
+        },
+        {
+          "word": " drones",
+          "start": 52.12,
+          "end": 52.58,
+          "probability": 0.9963722229003906
+        },
+        {
+          "word": " to",
+          "start": 52.58,
+          "end": 52.96,
+          "probability": 0.9982495903968811
+        },
+        {
+          "word": " plant",
+          "start": 52.96,
+          "end": 53.22,
+          "probability": 0.9981776475906372
+        },
+        {
+          "word": " trees.",
+          "start": 53.22,
+          "end": 53.78,
+          "probability": 0.9971001744270325
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5378,
+      "start": 53.78,
+      "end": 55.04,
+      "text": " Yes!",
+      "tokens": [
+        50389,
+        1079,
+        0,
+        50439
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09902384342291416,
+      "compression_ratio": 1.554945054945055,
+      "no_speech_prob": 0.27321624755859375,
+      "words": [
+        {
+          "word": " Yes!",
+          "start": 53.78,
+          "end": 55.04,
+          "probability": 0.5395622849464417
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5378,
+      "start": 55.88,
+      "end": 60.86,
+      "text": " As you know, we are cutting down trees in rainforests all over the world.",
+      "tokens": [
+        50464,
+        1018,
+        291,
+        458,
+        11,
+        321,
+        366,
+        6492,
+        760,
+        5852,
+        294,
+        48531,
+        82,
+        439,
+        670,
+        264,
+        1002,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09902384342291416,
+      "compression_ratio": 1.554945054945055,
+      "no_speech_prob": 0.27321624755859375,
+      "words": [
+        {
+          "word": " As",
+          "start": 55.88,
+          "end": 56.14,
+          "probability": 0.96186363697052
+        },
+        {
+          "word": " you",
+          "start": 56.14,
+          "end": 56.36,
+          "probability": 0.998288094997406
+        },
+        {
+          "word": " know,",
+          "start": 56.36,
+          "end": 56.7,
+          "probability": 0.9975284934043884
+        },
+        {
+          "word": " we",
+          "start": 56.9,
+          "end": 56.98,
+          "probability": 0.9923433661460876
+        },
+        {
+          "word": " are",
+          "start": 56.98,
+          "end": 57.2,
+          "probability": 0.9725757837295532
+        },
+        {
+          "word": " cutting",
+          "start": 57.2,
+          "end": 57.54,
+          "probability": 0.9980412721633911
+        },
+        {
+          "word": " down",
+          "start": 57.54,
+          "end": 57.96,
+          "probability": 0.9963550567626953
+        },
+        {
+          "word": " trees",
+          "start": 57.96,
+          "end": 58.34,
+          "probability": 0.986974835395813
+        },
+        {
+          "word": " in",
+          "start": 58.34,
+          "end": 58.64,
+          "probability": 0.9928213953971863
+        },
+        {
+          "word": " rainforests",
+          "start": 58.64,
+          "end": 59.6,
+          "probability": 0.9549019038677216
+        },
+        {
+          "word": " all",
+          "start": 59.6,
+          "end": 59.88,
+          "probability": 0.9909969568252563
+        },
+        {
+          "word": " over",
+          "start": 59.88,
+          "end": 60.3,
+          "probability": 0.9965941309928894
+        },
+        {
+          "word": " the",
+          "start": 60.3,
+          "end": 60.46,
+          "probability": 0.9988386034965515
+        },
+        {
+          "word": " world.",
+          "start": 60.46,
+          "end": 60.86,
+          "probability": 0.9903808236122131
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5378,
+      "start": 61.66,
+      "end": 64.8,
+      "text": " We're trying to plant new trees at the same time,",
+      "tokens": [
+        50739,
+        492,
+        434,
+        1382,
+        281,
+        3709,
+        777,
+        5852,
+        412,
+        264,
+        912,
+        565,
+        11,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09902384342291416,
+      "compression_ratio": 1.554945054945055,
+      "no_speech_prob": 0.27321624755859375,
+      "words": [
+        {
+          "word": " We're",
+          "start": 61.66,
+          "end": 61.92,
+          "probability": 0.9540030360221863
+        },
+        {
+          "word": " trying",
+          "start": 61.92,
+          "end": 62.32,
+          "probability": 0.9971137046813965
+        },
+        {
+          "word": " to",
+          "start": 62.32,
+          "end": 62.52,
+          "probability": 0.9992535710334778
+        },
+        {
+          "word": " plant",
+          "start": 62.52,
+          "end": 62.78,
+          "probability": 0.9981163740158081
+        },
+        {
+          "word": " new",
+          "start": 62.78,
+          "end": 63.18,
+          "probability": 0.9944660067558289
+        },
+        {
+          "word": " trees",
+          "start": 63.18,
+          "end": 63.54,
+          "probability": 0.9985575079917908
+        },
+        {
+          "word": " at",
+          "start": 63.54,
+          "end": 63.78,
+          "probability": 0.9895015358924866
+        },
+        {
+          "word": " the",
+          "start": 63.78,
+          "end": 64.02,
+          "probability": 0.9986578226089478
+        },
+        {
+          "word": " same",
+          "start": 64.02,
+          "end": 64.34,
+          "probability": 0.9994708895683289
+        },
+        {
+          "word": " time,",
+          "start": 64.34,
+          "end": 64.8,
+          "probability": 0.998782217502594
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5378,
+      "start": 65.14,
+      "end": 73.26,
+      "text": " but the problem is that we cut down about 15 billion trees a year, but only plant 9 billion.",
+      "tokens": [
+        50939,
+        457,
+        264,
+        1154,
+        307,
+        300,
+        321,
+        1723,
+        760,
+        466,
+        2119,
+        5218,
+        5852,
+        257,
+        1064,
+        11,
+        457,
+        787,
+        3709,
+        1722,
+        5218,
+        13,
+        51339
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09902384342291416,
+      "compression_ratio": 1.554945054945055,
+      "no_speech_prob": 0.27321624755859375,
+      "words": [
+        {
+          "word": " but",
+          "start": 65.14,
+          "end": 65.42,
+          "probability": 0.98614501953125
+        },
+        {
+          "word": " the",
+          "start": 65.42,
+          "end": 65.74,
+          "probability": 0.9893492460250854
+        },
+        {
+          "word": " problem",
+          "start": 65.74,
+          "end": 66.12,
+          "probability": 0.9987409710884094
+        },
+        {
+          "word": " is",
+          "start": 66.12,
+          "end": 66.46,
+          "probability": 0.9982998967170715
+        },
+        {
+          "word": " that",
+          "start": 66.46,
+          "end": 66.62,
+          "probability": 0.9564242959022522
+        },
+        {
+          "word": " we",
+          "start": 66.62,
+          "end": 66.88,
+          "probability": 0.9981973767280579
+        },
+        {
+          "word": " cut",
+          "start": 66.88,
+          "end": 67.12,
+          "probability": 0.9976704716682434
+        },
+        {
+          "word": " down",
+          "start": 67.12,
+          "end": 67.54,
+          "probability": 0.9974900484085083
+        },
+        {
+          "word": " about",
+          "start": 67.54,
+          "end": 68.04,
+          "probability": 0.9884613752365112
+        },
+        {
+          "word": " 15",
+          "start": 68.04,
+          "end": 68.82,
+          "probability": 0.8579055070877075
+        },
+        {
+          "word": " billion",
+          "start": 68.82,
+          "end": 69.48,
+          "probability": 0.9597668647766113
+        },
+        {
+          "word": " trees",
+          "start": 69.48,
+          "end": 69.94,
+          "probability": 0.9988453388214111
+        },
+        {
+          "word": " a",
+          "start": 69.94,
+          "end": 70.24,
+          "probability": 0.9909263849258423
+        },
+        {
+          "word": " year,",
+          "start": 70.24,
+          "end": 70.56,
+          "probability": 0.9994389414787292
+        },
+        {
+          "word": " but",
+          "start": 70.94,
+          "end": 71.2,
+          "probability": 0.9951379895210266
+        },
+        {
+          "word": " only",
+          "start": 71.2,
+          "end": 71.82,
+          "probability": 0.9904788732528687
+        },
+        {
+          "word": " plant",
+          "start": 71.82,
+          "end": 72.22,
+          "probability": 0.9958114624023438
+        },
+        {
+          "word": " 9",
+          "start": 72.22,
+          "end": 72.8,
+          "probability": 0.8385708928108215
+        },
+        {
+          "word": " billion.",
+          "start": 72.8,
+          "end": 73.26,
+          "probability": 0.9958482980728149
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5378,
+      "start": 74.18,
+      "end": 79.16,
+      "text": " However, by using drones we can now plant trees from the air.",
+      "tokens": [
+        51364,
+        2908,
+        11,
+        538,
+        1228,
+        23823,
+        321,
+        393,
+        586,
+        3709,
+        5852,
+        490,
+        264,
+        1988,
+        13,
+        51639
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09902384342291416,
+      "compression_ratio": 1.554945054945055,
+      "no_speech_prob": 0.27321624755859375,
+      "words": [
+        {
+          "word": " However,",
+          "start": 74.18,
+          "end": 74.84,
+          "probability": 0.9956069588661194
+        },
+        {
+          "word": " by",
+          "start": 75.28,
+          "end": 75.54,
+          "probability": 0.994640588760376
+        },
+        {
+          "word": " using",
+          "start": 75.54,
+          "end": 75.94,
+          "probability": 0.9990552067756653
+        },
+        {
+          "word": " drones",
+          "start": 75.94,
+          "end": 76.4,
+          "probability": 0.9983618855476379
+        },
+        {
+          "word": " we",
+          "start": 76.4,
+          "end": 76.7,
+          "probability": 0.4802701771259308
+        },
+        {
+          "word": " can",
+          "start": 76.7,
+          "end": 77.08,
+          "probability": 0.9973449110984802
+        },
+        {
+          "word": " now",
+          "start": 77.08,
+          "end": 77.44,
+          "probability": 0.986791729927063
+        },
+        {
+          "word": " plant",
+          "start": 77.44,
+          "end": 77.78,
+          "probability": 0.9972960352897644
+        },
+        {
+          "word": " trees",
+          "start": 77.78,
+          "end": 78.24,
+          "probability": 0.9946743249893188
+        },
+        {
+          "word": " from",
+          "start": 78.24,
+          "end": 78.56,
+          "probability": 0.9969659447669983
+        },
+        {
+          "word": " the",
+          "start": 78.56,
+          "end": 78.82,
+          "probability": 0.9984530210494995
+        },
+        {
+          "word": " air.",
+          "start": 78.82,
+          "end": 79.16,
+          "probability": 0.998713493347168
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 7916,
+      "start": 80.16,
+      "end": 87.92,
+      "text": " The drones fly 3 meters above the ground and are able to plant 120 trees per minute.",
+      "tokens": [
+        50414,
+        440,
+        23823,
+        3603,
+        805,
+        8146,
+        3673,
+        264,
+        2727,
+        293,
+        366,
+        1075,
+        281,
+        3709,
+        10411,
+        5852,
+        680,
+        3456,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044976141394639,
+      "compression_ratio": 1.5242718446601942,
+      "no_speech_prob": 0.004591980949044228,
+      "words": [
+        {
+          "word": " The",
+          "start": 80.16,
+          "end": 80.54,
+          "probability": 0.5127846598625183
+        },
+        {
+          "word": " drones",
+          "start": 80.54,
+          "end": 81.02,
+          "probability": 0.948637843132019
+        },
+        {
+          "word": " fly",
+          "start": 81.02,
+          "end": 81.42,
+          "probability": 0.9887219667434692
+        },
+        {
+          "word": " 3",
+          "start": 81.42,
+          "end": 81.96,
+          "probability": 0.5873385667800903
+        },
+        {
+          "word": " meters",
+          "start": 81.96,
+          "end": 82.48,
+          "probability": 0.43888264894485474
+        },
+        {
+          "word": " above",
+          "start": 82.48,
+          "end": 82.84,
+          "probability": 0.9966111779212952
+        },
+        {
+          "word": " the",
+          "start": 82.84,
+          "end": 83.1,
+          "probability": 0.9926757216453552
+        },
+        {
+          "word": " ground",
+          "start": 83.1,
+          "end": 83.44,
+          "probability": 0.9992167949676514
+        },
+        {
+          "word": " and",
+          "start": 83.44,
+          "end": 83.9,
+          "probability": 0.8652008771896362
+        },
+        {
+          "word": " are",
+          "start": 83.9,
+          "end": 84.04,
+          "probability": 0.9915422201156616
+        },
+        {
+          "word": " able",
+          "start": 84.04,
+          "end": 84.38,
+          "probability": 0.9976003766059875
+        },
+        {
+          "word": " to",
+          "start": 84.38,
+          "end": 84.7,
+          "probability": 0.999089241027832
+        },
+        {
+          "word": " plant",
+          "start": 84.7,
+          "end": 85.0,
+          "probability": 0.9940156936645508
+        },
+        {
+          "word": " 120",
+          "start": 85.0,
+          "end": 86.38,
+          "probability": 0.9731501936912537
+        },
+        {
+          "word": " trees",
+          "start": 86.38,
+          "end": 86.98,
+          "probability": 0.9934359788894653
+        },
+        {
+          "word": " per",
+          "start": 86.98,
+          "end": 87.46,
+          "probability": 0.995634138584137
+        },
+        {
+          "word": " minute.",
+          "start": 87.46,
+          "end": 87.92,
+          "probability": 0.9972701668739319
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 7916,
+      "start": 88.68,
+      "end": 94.38,
+      "text": " It's actually possible to plant as many as 100,000 trees in one day.",
+      "tokens": [
+        50839,
+        467,
+        311,
+        767,
+        1944,
+        281,
+        3709,
+        382,
+        867,
+        382,
+        2319,
+        11,
+        1360,
+        5852,
+        294,
+        472,
+        786,
+        13,
+        51139
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044976141394639,
+      "compression_ratio": 1.5242718446601942,
+      "no_speech_prob": 0.004591980949044228,
+      "words": [
+        {
+          "word": " It's",
+          "start": 88.68,
+          "end": 88.96,
+          "probability": 0.9631152451038361
+        },
+        {
+          "word": " actually",
+          "start": 88.96,
+          "end": 89.42,
+          "probability": 0.9923092126846313
+        },
+        {
+          "word": " possible",
+          "start": 89.42,
+          "end": 90.0,
+          "probability": 0.9985199570655823
+        },
+        {
+          "word": " to",
+          "start": 90.0,
+          "end": 90.3,
+          "probability": 0.9987356066703796
+        },
+        {
+          "word": " plant",
+          "start": 90.3,
+          "end": 90.52,
+          "probability": 0.9977207779884338
+        },
+        {
+          "word": " as",
+          "start": 90.52,
+          "end": 90.96,
+          "probability": 0.995137631893158
+        },
+        {
+          "word": " many",
+          "start": 90.96,
+          "end": 91.3,
+          "probability": 0.9990166425704956
+        },
+        {
+          "word": " as",
+          "start": 91.3,
+          "end": 91.58,
+          "probability": 0.9957935810089111
+        },
+        {
+          "word": " 100",
+          "start": 91.58,
+          "end": 92.24,
+          "probability": 0.951893150806427
+        },
+        {
+          "word": ",000",
+          "start": 92.24,
+          "end": 92.84,
+          "probability": 0.9389569461345673
+        },
+        {
+          "word": " trees",
+          "start": 92.84,
+          "end": 93.28,
+          "probability": 0.9946107864379883
+        },
+        {
+          "word": " in",
+          "start": 93.28,
+          "end": 93.58,
+          "probability": 0.9974557757377625
+        },
+        {
+          "word": " one",
+          "start": 93.58,
+          "end": 93.94,
+          "probability": 0.9573180079460144
+        },
+        {
+          "word": " day.",
+          "start": 93.94,
+          "end": 94.38,
+          "probability": 0.9994149208068848
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 7916,
+      "start": 95.22,
+      "end": 96.34,
+      "text": " That's amazing!",
+      "tokens": [
+        51164,
+        663,
+        311,
+        2243,
+        0,
+        51239
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044976141394639,
+      "compression_ratio": 1.5242718446601942,
+      "no_speech_prob": 0.004591980949044228,
+      "words": [
+        {
+          "word": " That's",
+          "start": 95.22,
+          "end": 95.68,
+          "probability": 0.9173193573951721
+        },
+        {
+          "word": " amazing!",
+          "start": 95.68,
+          "end": 96.34,
+          "probability": 0.9886499643325806
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 7916,
+      "start": 97.06,
+      "end": 103.12,
+      "text": " In my opinion, one of the best ways that we use drones is for going into dangerous places,",
+      "tokens": [
+        51264,
+        682,
+        452,
+        4800,
+        11,
+        472,
+        295,
+        264,
+        1151,
+        2098,
+        300,
+        321,
+        764,
+        23823,
+        307,
+        337,
+        516,
+        666,
+        5795,
+        3190,
+        11,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044976141394639,
+      "compression_ratio": 1.5242718446601942,
+      "no_speech_prob": 0.004591980949044228,
+      "words": [
+        {
+          "word": " In",
+          "start": 97.06,
+          "end": 97.28,
+          "probability": 0.9795516729354858
+        },
+        {
+          "word": " my",
+          "start": 97.28,
+          "end": 97.58,
+          "probability": 0.9991130232810974
+        },
+        {
+          "word": " opinion,",
+          "start": 97.58,
+          "end": 98.08,
+          "probability": 0.998062789440155
+        },
+        {
+          "word": " one",
+          "start": 98.34,
+          "end": 98.54,
+          "probability": 0.9930915832519531
+        },
+        {
+          "word": " of",
+          "start": 98.54,
+          "end": 98.7,
+          "probability": 0.9978856444358826
+        },
+        {
+          "word": " the",
+          "start": 98.7,
+          "end": 98.94,
+          "probability": 0.9985256791114807
+        },
+        {
+          "word": " best",
+          "start": 98.94,
+          "end": 99.28,
+          "probability": 0.9884451627731323
+        },
+        {
+          "word": " ways",
+          "start": 99.28,
+          "end": 99.64,
+          "probability": 0.9947932362556458
+        },
+        {
+          "word": " that",
+          "start": 99.64,
+          "end": 99.86,
+          "probability": 0.9351854920387268
+        },
+        {
+          "word": " we",
+          "start": 99.86,
+          "end": 100.06,
+          "probability": 0.9991784691810608
+        },
+        {
+          "word": " use",
+          "start": 100.06,
+          "end": 100.26,
+          "probability": 0.997138261795044
+        },
+        {
+          "word": " drones",
+          "start": 100.26,
+          "end": 100.66,
+          "probability": 0.9972368478775024
+        },
+        {
+          "word": " is",
+          "start": 100.66,
+          "end": 101.0,
+          "probability": 0.9559584259986877
+        },
+        {
+          "word": " for",
+          "start": 101.0,
+          "end": 101.24,
+          "probability": 0.9856416583061218
+        },
+        {
+          "word": " going",
+          "start": 101.24,
+          "end": 101.46,
+          "probability": 0.99854576587677
+        },
+        {
+          "word": " into",
+          "start": 101.46,
+          "end": 101.84,
+          "probability": 0.9797638654708862
+        },
+        {
+          "word": " dangerous",
+          "start": 101.84,
+          "end": 102.38,
+          "probability": 0.9952215552330017
+        },
+        {
+          "word": " places,",
+          "start": 102.38,
+          "end": 103.12,
+          "probability": 0.9977194666862488
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 7916,
+      "start": 103.6,
+      "end": 107.2,
+      "text": " such as areas where there are forest fires or floods.",
+      "tokens": [
+        51589,
+        1270,
+        382,
+        3179,
+        689,
+        456,
+        366,
+        6719,
+        15044,
+        420,
+        35536,
+        13,
+        51789
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08044976141394639,
+      "compression_ratio": 1.5242718446601942,
+      "no_speech_prob": 0.004591980949044228,
+      "words": [
+        {
+          "word": " such",
+          "start": 103.6,
+          "end": 103.86,
+          "probability": 0.9942307472229004
+        },
+        {
+          "word": " as",
+          "start": 103.86,
+          "end": 104.24,
+          "probability": 0.9943816065788269
+        },
+        {
+          "word": " areas",
+          "start": 104.24,
+          "end": 104.6,
+          "probability": 0.9908966422080994
+        },
+        {
+          "word": " where",
+          "start": 104.6,
+          "end": 105.06,
+          "probability": 0.9929119944572449
+        },
+        {
+          "word": " there",
+          "start": 105.06,
+          "end": 105.28,
+          "probability": 0.9947584271430969
+        },
+        {
+          "word": " are",
+          "start": 105.28,
+          "end": 105.54,
+          "probability": 0.9957808256149292
+        },
+        {
+          "word": " forest",
+          "start": 105.54,
+          "end": 105.94,
+          "probability": 0.9953195452690125
+        },
+        {
+          "word": " fires",
+          "start": 105.94,
+          "end": 106.3,
+          "probability": 0.9949967861175537
+        },
+        {
+          "word": " or",
+          "start": 106.3,
+          "end": 106.74,
+          "probability": 0.9811125993728638
+        },
+        {
+          "word": " floods.",
+          "start": 106.74,
+          "end": 107.2,
+          "probability": 0.9993014335632324
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 10720,
+      "start": 107.2,
+      "end": 112.48,
+      "text": " Drones can help us to find and save wildlife that is in danger.",
+      "tokens": [
+        50389,
+        413,
+        25562,
+        393,
+        854,
+        505,
+        281,
+        915,
+        293,
+        3155,
+        19199,
+        300,
+        307,
+        294,
+        4330,
+        13,
+        50639
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0808975753330049,
+      "compression_ratio": 1.5186915887850467,
+      "no_speech_prob": 0.000650671892799437,
+      "words": [
+        {
+          "word": " Drones",
+          "start": 107.2,
+          "end": 108.46,
+          "probability": 0.7490542531013489
+        },
+        {
+          "word": " can",
+          "start": 108.46,
+          "end": 108.8,
+          "probability": 0.9692838788032532
+        },
+        {
+          "word": " help",
+          "start": 108.8,
+          "end": 109.1,
+          "probability": 0.998247504234314
+        },
+        {
+          "word": " us",
+          "start": 109.1,
+          "end": 109.42,
+          "probability": 0.9967648983001709
+        },
+        {
+          "word": " to",
+          "start": 109.42,
+          "end": 109.74,
+          "probability": 0.9837965369224548
+        },
+        {
+          "word": " find",
+          "start": 109.74,
+          "end": 110.04,
+          "probability": 0.9958710074424744
+        },
+        {
+          "word": " and",
+          "start": 110.04,
+          "end": 110.32,
+          "probability": 0.9945411086082458
+        },
+        {
+          "word": " save",
+          "start": 110.32,
+          "end": 110.6,
+          "probability": 0.9973033666610718
+        },
+        {
+          "word": " wildlife",
+          "start": 110.6,
+          "end": 111.32,
+          "probability": 0.9945573806762695
+        },
+        {
+          "word": " that",
+          "start": 111.32,
+          "end": 111.58,
+          "probability": 0.9915406107902527
+        },
+        {
+          "word": " is",
+          "start": 111.58,
+          "end": 111.74,
+          "probability": 0.9829924702644348
+        },
+        {
+          "word": " in",
+          "start": 111.74,
+          "end": 111.92,
+          "probability": 0.9983289837837219
+        },
+        {
+          "word": " danger.",
+          "start": 111.92,
+          "end": 112.48,
+          "probability": 0.9982746839523315
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 10720,
+      "start": 113.56,
+      "end": 117.08,
+      "text": " So, are there any disadvantages to drone technology?",
+      "tokens": [
+        50664,
+        407,
+        11,
+        366,
+        456,
+        604,
+        37431,
+        281,
+        13852,
+        2899,
+        30,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0808975753330049,
+      "compression_ratio": 1.5186915887850467,
+      "no_speech_prob": 0.000650671892799437,
+      "words": [
+        {
+          "word": " So,",
+          "start": 113.56,
+          "end": 113.64,
+          "probability": 0.8209714889526367
+        },
+        {
+          "word": " are",
+          "start": 114.22,
+          "end": 114.32,
+          "probability": 0.9928292632102966
+        },
+        {
+          "word": " there",
+          "start": 114.32,
+          "end": 114.58,
+          "probability": 0.9974491000175476
+        },
+        {
+          "word": " any",
+          "start": 114.58,
+          "end": 115.02,
+          "probability": 0.9965900182723999
+        },
+        {
+          "word": " disadvantages",
+          "start": 115.02,
+          "end": 115.72,
+          "probability": 0.9913873076438904
+        },
+        {
+          "word": " to",
+          "start": 115.72,
+          "end": 116.14,
+          "probability": 0.9943049550056458
+        },
+        {
+          "word": " drone",
+          "start": 116.14,
+          "end": 116.48,
+          "probability": 0.993057131767273
+        },
+        {
+          "word": " technology?",
+          "start": 116.48,
+          "end": 117.08,
+          "probability": 0.9976801872253418
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 10720,
+      "start": 118.06,
+      "end": 120.64,
+      "text": " For example, is it very expensive?",
+      "tokens": [
+        50889,
+        1171,
+        1365,
+        11,
+        307,
+        309,
+        588,
+        5124,
+        30,
+        51039
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0808975753330049,
+      "compression_ratio": 1.5186915887850467,
+      "no_speech_prob": 0.000650671892799437,
+      "words": [
+        {
+          "word": " For",
+          "start": 118.06,
+          "end": 118.26,
+          "probability": 0.9568876028060913
+        },
+        {
+          "word": " example,",
+          "start": 118.26,
+          "end": 118.82,
+          "probability": 0.9983181953430176
+        },
+        {
+          "word": " is",
+          "start": 119.4,
+          "end": 119.5,
+          "probability": 0.9875049591064453
+        },
+        {
+          "word": " it",
+          "start": 119.5,
+          "end": 119.64,
+          "probability": 0.9969735145568848
+        },
+        {
+          "word": " very",
+          "start": 119.64,
+          "end": 119.96,
+          "probability": 0.9944626688957214
+        },
+        {
+          "word": " expensive?",
+          "start": 119.96,
+          "end": 120.64,
+          "probability": 0.9991317391395569
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 10720,
+      "start": 121.36,
+      "end": 123.84,
+      "text": " Well, drones are like computers.",
+      "tokens": [
+        51064,
+        1042,
+        11,
+        23823,
+        366,
+        411,
+        10807,
+        13,
+        51189
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0808975753330049,
+      "compression_ratio": 1.5186915887850467,
+      "no_speech_prob": 0.000650671892799437,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 121.36,
+          "end": 121.92,
+          "probability": 0.9688627123832703
+        },
+        {
+          "word": " drones",
+          "start": 122.18,
+          "end": 122.56,
+          "probability": 0.9934804439544678
+        },
+        {
+          "word": " are",
+          "start": 122.56,
+          "end": 122.88,
+          "probability": 0.998323380947113
+        },
+        {
+          "word": " like",
+          "start": 122.88,
+          "end": 123.2,
+          "probability": 0.9989450573921204
+        },
+        {
+          "word": " computers.",
+          "start": 123.2,
+          "end": 123.84,
+          "probability": 0.998865008354187
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 10720,
+      "start": 124.32,
+      "end": 128.28,
+      "text": " You can get cheap ones and you can get very expensive ones.",
+      "tokens": [
+        51214,
+        509,
+        393,
+        483,
+        7084,
+        2306,
+        293,
+        291,
+        393,
+        483,
+        588,
+        5124,
+        2306,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0808975753330049,
+      "compression_ratio": 1.5186915887850467,
+      "no_speech_prob": 0.000650671892799437,
+      "words": [
+        {
+          "word": " You",
+          "start": 124.32,
+          "end": 124.58,
+          "probability": 0.9935998916625977
+        },
+        {
+          "word": " can",
+          "start": 124.58,
+          "end": 124.84,
+          "probability": 0.9991452693939209
+        },
+        {
+          "word": " get",
+          "start": 124.84,
+          "end": 125.08,
+          "probability": 0.9982728958129883
+        },
+        {
+          "word": " cheap",
+          "start": 125.08,
+          "end": 125.38,
+          "probability": 0.9931962490081787
+        },
+        {
+          "word": " ones",
+          "start": 125.38,
+          "end": 125.88,
+          "probability": 0.9941293001174927
+        },
+        {
+          "word": " and",
+          "start": 125.88,
+          "end": 126.34,
+          "probability": 0.5667864084243774
+        },
+        {
+          "word": " you",
+          "start": 126.34,
+          "end": 126.5,
+          "probability": 0.9924070239067078
+        },
+        {
+          "word": " can",
+          "start": 126.5,
+          "end": 126.76,
+          "probability": 0.9965477585792542
+        },
+        {
+          "word": " get",
+          "start": 126.76,
+          "end": 126.94,
+          "probability": 0.9974452257156372
+        },
+        {
+          "word": " very",
+          "start": 126.94,
+          "end": 127.28,
+          "probability": 0.9949461817741394
+        },
+        {
+          "word": " expensive",
+          "start": 127.28,
+          "end": 127.88,
+          "probability": 0.999241828918457
+        },
+        {
+          "word": " ones.",
+          "start": 127.88,
+          "end": 128.28,
+          "probability": 0.9986818432807922
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 10720,
+      "start": 129.24,
+      "end": 135.46,
+      "text": " Our department at the university bought a drone last year for about 1,500 euros.",
+      "tokens": [
+        51439,
+        2621,
+        5882,
+        412,
+        264,
+        5454,
+        4243,
+        257,
+        13852,
+        1036,
+        1064,
+        337,
+        466,
+        502,
+        11,
+        7526,
+        14160,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0808975753330049,
+      "compression_ratio": 1.5186915887850467,
+      "no_speech_prob": 0.000650671892799437,
+      "words": [
+        {
+          "word": " Our",
+          "start": 129.24,
+          "end": 129.46,
+          "probability": 0.9928317070007324
+        },
+        {
+          "word": " department",
+          "start": 129.46,
+          "end": 130.06,
+          "probability": 0.9888028502464294
+        },
+        {
+          "word": " at",
+          "start": 130.06,
+          "end": 130.24,
+          "probability": 0.9910764694213867
+        },
+        {
+          "word": " the",
+          "start": 130.24,
+          "end": 130.44,
+          "probability": 0.9915327429771423
+        },
+        {
+          "word": " university",
+          "start": 130.44,
+          "end": 131.06,
+          "probability": 0.5444753170013428
+        },
+        {
+          "word": " bought",
+          "start": 131.06,
+          "end": 131.48,
+          "probability": 0.9802589416503906
+        },
+        {
+          "word": " a",
+          "start": 131.48,
+          "end": 131.72,
+          "probability": 0.9981095790863037
+        },
+        {
+          "word": " drone",
+          "start": 131.72,
+          "end": 131.92,
+          "probability": 0.9991034865379333
+        },
+        {
+          "word": " last",
+          "start": 131.92,
+          "end": 132.36,
+          "probability": 0.9973747730255127
+        },
+        {
+          "word": " year",
+          "start": 132.36,
+          "end": 132.66,
+          "probability": 0.9990359544754028
+        },
+        {
+          "word": " for",
+          "start": 132.66,
+          "end": 132.92,
+          "probability": 0.9762375354766846
+        },
+        {
+          "word": " about",
+          "start": 132.92,
+          "end": 133.66,
+          "probability": 0.9791722893714905
+        },
+        {
+          "word": " 1",
+          "start": 133.66,
+          "end": 133.96,
+          "probability": 0.39197710156440735
+        },
+        {
+          "word": ",500",
+          "start": 133.96,
+          "end": 134.82,
+          "probability": 0.9855218231678009
+        },
+        {
+          "word": " euros.",
+          "start": 134.82,
+          "end": 135.46,
+          "probability": 0.7254836559295654
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 13546,
+      "start": 135.46,
+      "end": 142.26,
+      "text": " I tested more expensive ones and I personally feel that our drone is just as good.",
+      "tokens": [
+        50389,
+        286,
+        8246,
+        544,
+        5124,
+        2306,
+        293,
+        286,
+        5665,
+        841,
+        300,
+        527,
+        13852,
+        307,
+        445,
+        382,
+        665,
+        13,
+        50689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09315185136692498,
+      "compression_ratio": 1.5291666666666666,
+      "no_speech_prob": 0.009946702048182487,
+      "words": [
+        {
+          "word": " I",
+          "start": 135.46,
+          "end": 136.4,
+          "probability": 0.9770478010177612
+        },
+        {
+          "word": " tested",
+          "start": 136.4,
+          "end": 136.94,
+          "probability": 0.9412872791290283
+        },
+        {
+          "word": " more",
+          "start": 136.94,
+          "end": 137.22,
+          "probability": 0.9906471371650696
+        },
+        {
+          "word": " expensive",
+          "start": 137.22,
+          "end": 137.82,
+          "probability": 0.9985432624816895
+        },
+        {
+          "word": " ones",
+          "start": 137.82,
+          "end": 138.14,
+          "probability": 0.9881513118743896
+        },
+        {
+          "word": " and",
+          "start": 138.14,
+          "end": 138.64,
+          "probability": 0.714105486869812
+        },
+        {
+          "word": " I",
+          "start": 138.64,
+          "end": 139.04,
+          "probability": 0.9826767444610596
+        },
+        {
+          "word": " personally",
+          "start": 139.04,
+          "end": 139.56,
+          "probability": 0.9967567324638367
+        },
+        {
+          "word": " feel",
+          "start": 139.56,
+          "end": 140.02,
+          "probability": 0.9954771399497986
+        },
+        {
+          "word": " that",
+          "start": 140.02,
+          "end": 140.32,
+          "probability": 0.9867043495178223
+        },
+        {
+          "word": " our",
+          "start": 140.32,
+          "end": 140.58,
+          "probability": 0.9917377829551697
+        },
+        {
+          "word": " drone",
+          "start": 140.58,
+          "end": 140.94,
+          "probability": 0.9962666630744934
+        },
+        {
+          "word": " is",
+          "start": 140.94,
+          "end": 141.24,
+          "probability": 0.9973043203353882
+        },
+        {
+          "word": " just",
+          "start": 141.24,
+          "end": 141.64,
+          "probability": 0.9948437213897705
+        },
+        {
+          "word": " as",
+          "start": 141.64,
+          "end": 141.9,
+          "probability": 0.9981100559234619
+        },
+        {
+          "word": " good.",
+          "start": 141.9,
+          "end": 142.26,
+          "probability": 0.9990543723106384
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 13546,
+      "start": 143.4,
+      "end": 148.34,
+      "text": " It's quite easy to use. We control it using an app from a mobile phone.",
+      "tokens": [
+        50739,
+        467,
+        311,
+        1596,
+        1858,
+        281,
+        764,
+        13,
+        492,
+        1969,
+        309,
+        1228,
+        364,
+        724,
+        490,
+        257,
+        6013,
+        2593,
+        13,
+        50989
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09315185136692498,
+      "compression_ratio": 1.5291666666666666,
+      "no_speech_prob": 0.009946702048182487,
+      "words": [
+        {
+          "word": " It's",
+          "start": 143.4,
+          "end": 143.68,
+          "probability": 0.974827766418457
+        },
+        {
+          "word": " quite",
+          "start": 143.68,
+          "end": 144.02,
+          "probability": 0.9950799942016602
+        },
+        {
+          "word": " easy",
+          "start": 144.02,
+          "end": 144.36,
+          "probability": 0.9996053576469421
+        },
+        {
+          "word": " to",
+          "start": 144.36,
+          "end": 144.7,
+          "probability": 0.9989297986030579
+        },
+        {
+          "word": " use.",
+          "start": 144.7,
+          "end": 144.98,
+          "probability": 0.9993849992752075
+        },
+        {
+          "word": " We",
+          "start": 145.22,
+          "end": 145.58,
+          "probability": 0.9932501316070557
+        },
+        {
+          "word": " control",
+          "start": 145.58,
+          "end": 146.04,
+          "probability": 0.9819662570953369
+        },
+        {
+          "word": " it",
+          "start": 146.04,
+          "end": 146.34,
+          "probability": 0.9984466433525085
+        },
+        {
+          "word": " using",
+          "start": 146.34,
+          "end": 146.64,
+          "probability": 0.9872915148735046
+        },
+        {
+          "word": " an",
+          "start": 146.64,
+          "end": 146.9,
+          "probability": 0.9963578581809998
+        },
+        {
+          "word": " app",
+          "start": 146.9,
+          "end": 147.18,
+          "probability": 0.983235239982605
+        },
+        {
+          "word": " from",
+          "start": 147.18,
+          "end": 147.42,
+          "probability": 0.9921883344650269
+        },
+        {
+          "word": " a",
+          "start": 147.42,
+          "end": 147.62,
+          "probability": 0.9959956407546997
+        },
+        {
+          "word": " mobile",
+          "start": 147.62,
+          "end": 147.98,
+          "probability": 0.9984835982322693
+        },
+        {
+          "word": " phone.",
+          "start": 147.98,
+          "end": 148.34,
+          "probability": 0.9993188381195068
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 13546,
+      "start": 148.98,
+      "end": 154.26,
+      "text": " It can fly for 45 minutes at up to 40 kilometers per hour.",
+      "tokens": [
+        51014,
+        467,
+        393,
+        3603,
+        337,
+        6905,
+        2077,
+        412,
+        493,
+        281,
+        3356,
+        13904,
+        680,
+        1773,
+        13,
+        51289
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09315185136692498,
+      "compression_ratio": 1.5291666666666666,
+      "no_speech_prob": 0.009946702048182487,
+      "words": [
+        {
+          "word": " It",
+          "start": 148.98,
+          "end": 149.18,
+          "probability": 0.9947718977928162
+        },
+        {
+          "word": " can",
+          "start": 149.18,
+          "end": 149.48,
+          "probability": 0.9992469549179077
+        },
+        {
+          "word": " fly",
+          "start": 149.48,
+          "end": 149.86,
+          "probability": 0.9990357160568237
+        },
+        {
+          "word": " for",
+          "start": 149.86,
+          "end": 150.2,
+          "probability": 0.993567168712616
+        },
+        {
+          "word": " 45",
+          "start": 150.2,
+          "end": 150.9,
+          "probability": 0.9391577839851379
+        },
+        {
+          "word": " minutes",
+          "start": 150.9,
+          "end": 151.54,
+          "probability": 0.9730880856513977
+        },
+        {
+          "word": " at",
+          "start": 151.54,
+          "end": 151.76,
+          "probability": 0.9849706292152405
+        },
+        {
+          "word": " up",
+          "start": 151.76,
+          "end": 151.96,
+          "probability": 0.9973306655883789
+        },
+        {
+          "word": " to",
+          "start": 151.96,
+          "end": 152.24,
+          "probability": 0.9885950684547424
+        },
+        {
+          "word": " 40",
+          "start": 152.24,
+          "end": 152.7,
+          "probability": 0.9938978552818298
+        },
+        {
+          "word": " kilometers",
+          "start": 152.7,
+          "end": 153.3,
+          "probability": 0.25999948382377625
+        },
+        {
+          "word": " per",
+          "start": 153.3,
+          "end": 153.78,
+          "probability": 0.9982047080993652
+        },
+        {
+          "word": " hour.",
+          "start": 153.78,
+          "end": 154.26,
+          "probability": 0.9990378618240356
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 13546,
+      "start": 155.42,
+      "end": 159.06,
+      "text": " The problem with this kind of drone is that it uses batteries,",
+      "tokens": [
+        51339,
+        440,
+        1154,
+        365,
+        341,
+        733,
+        295,
+        13852,
+        307,
+        300,
+        309,
+        4960,
+        13070,
+        11,
+        51539
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09315185136692498,
+      "compression_ratio": 1.5291666666666666,
+      "no_speech_prob": 0.009946702048182487,
+      "words": [
+        {
+          "word": " The",
+          "start": 155.42,
+          "end": 155.74,
+          "probability": 0.9966332316398621
+        },
+        {
+          "word": " problem",
+          "start": 155.74,
+          "end": 156.18,
+          "probability": 0.9965164661407471
+        },
+        {
+          "word": " with",
+          "start": 156.18,
+          "end": 156.38,
+          "probability": 0.9988162517547607
+        },
+        {
+          "word": " this",
+          "start": 156.38,
+          "end": 156.66,
+          "probability": 0.9989427924156189
+        },
+        {
+          "word": " kind",
+          "start": 156.66,
+          "end": 156.94,
+          "probability": 0.9973973035812378
+        },
+        {
+          "word": " of",
+          "start": 156.94,
+          "end": 157.18,
+          "probability": 0.9993439316749573
+        },
+        {
+          "word": " drone",
+          "start": 157.18,
+          "end": 157.38,
+          "probability": 0.9982807636260986
+        },
+        {
+          "word": " is",
+          "start": 157.38,
+          "end": 157.78,
+          "probability": 0.9773334264755249
+        },
+        {
+          "word": " that",
+          "start": 157.78,
+          "end": 157.96,
+          "probability": 0.9986768364906311
+        },
+        {
+          "word": " it",
+          "start": 157.96,
+          "end": 158.14,
+          "probability": 0.9946175217628479
+        },
+        {
+          "word": " uses",
+          "start": 158.14,
+          "end": 158.44,
+          "probability": 0.997292697429657
+        },
+        {
+          "word": " batteries,",
+          "start": 158.44,
+          "end": 159.06,
+          "probability": 0.9982384443283081
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 13546,
+      "start": 159.46,
+      "end": 164.46,
+      "text": " and obviously you have to charge them after flying, which can take up quite a lot of time.",
+      "tokens": [
+        51564,
+        293,
+        2745,
+        291,
+        362,
+        281,
+        4602,
+        552,
+        934,
+        7137,
+        11,
+        597,
+        393,
+        747,
+        493,
+        1596,
+        257,
+        688,
+        295,
+        565,
+        13,
+        51789
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09315185136692498,
+      "compression_ratio": 1.5291666666666666,
+      "no_speech_prob": 0.009946702048182487,
+      "words": [
+        {
+          "word": " and",
+          "start": 159.46,
+          "end": 159.64,
+          "probability": 0.9933204650878906
+        },
+        {
+          "word": " obviously",
+          "start": 159.64,
+          "end": 160.04,
+          "probability": 0.9883158206939697
+        },
+        {
+          "word": " you",
+          "start": 160.04,
+          "end": 160.32,
+          "probability": 0.9037474989891052
+        },
+        {
+          "word": " have",
+          "start": 160.32,
+          "end": 160.52,
+          "probability": 0.9968900084495544
+        },
+        {
+          "word": " to",
+          "start": 160.52,
+          "end": 160.7,
+          "probability": 0.9990955591201782
+        },
+        {
+          "word": " charge",
+          "start": 160.7,
+          "end": 161.04,
+          "probability": 0.9986106157302856
+        },
+        {
+          "word": " them",
+          "start": 161.04,
+          "end": 161.28,
+          "probability": 0.9985622763633728
+        },
+        {
+          "word": " after",
+          "start": 161.28,
+          "end": 161.6,
+          "probability": 0.9964279532432556
+        },
+        {
+          "word": " flying,",
+          "start": 161.6,
+          "end": 162.0,
+          "probability": 0.9981316924095154
+        },
+        {
+          "word": " which",
+          "start": 162.22,
+          "end": 162.52,
+          "probability": 0.9989836812019348
+        },
+        {
+          "word": " can",
+          "start": 162.52,
+          "end": 162.82,
+          "probability": 0.9978627562522888
+        },
+        {
+          "word": " take",
+          "start": 162.82,
+          "end": 163.04,
+          "probability": 0.9992177486419678
+        },
+        {
+          "word": " up",
+          "start": 163.04,
+          "end": 163.22,
+          "probability": 0.9888756275177002
+        },
+        {
+          "word": " quite",
+          "start": 163.22,
+          "end": 163.52,
+          "probability": 0.9953408241271973
+        },
+        {
+          "word": " a",
+          "start": 163.52,
+          "end": 163.64,
+          "probability": 0.9994810223579407
+        },
+        {
+          "word": " lot",
+          "start": 163.64,
+          "end": 163.84,
+          "probability": 0.998256266117096
+        },
+        {
+          "word": " of",
+          "start": 163.84,
+          "end": 164.1,
+          "probability": 0.9989181756973267
+        },
+        {
+          "word": " time.",
+          "start": 164.1,
+          "end": 164.46,
+          "probability": 0.9988558292388916
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 16546,
+      "start": 165.46,
+      "end": 165.46,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": []
+    },
+    {
+      "id": 32,
+      "seek": 16546,
+      "start": 165.46,
+      "end": 165.46,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": []
+    },
+    {
+      "id": 33,
+      "seek": 16546,
+      "start": 165.46,
+      "end": 165.5,
+      "text": " It's a good drone for flying.",
+      "tokens": [
+        50714,
+        467,
+        311,
+        257,
+        665,
+        13852,
+        337,
+        7137,
+        13,
+        50839
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": [
+        {
+          "word": " It's",
+          "start": 165.46,
+          "end": 165.46,
+          "probability": 0.4342038482427597
+        },
+        {
+          "word": " a",
+          "start": 165.46,
+          "end": 165.5,
+          "probability": 0.3426888585090637
+        },
+        {
+          "word": " good",
+          "start": 165.5,
+          "end": 165.5,
+          "probability": 0.40374165773391724
+        },
+        {
+          "word": " drone",
+          "start": 165.5,
+          "end": 165.5,
+          "probability": 0.7093192934989929
+        },
+        {
+          "word": " for",
+          "start": 165.5,
+          "end": 165.5,
+          "probability": 0.798844039440155
+        },
+        {
+          "word": " flying.",
+          "start": 165.5,
+          "end": 165.5,
+          "probability": 0.24977371096611023
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 16546,
+      "start": 165.5,
+      "end": 165.5,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": []
+    },
+    {
+      "id": 35,
+      "seek": 16546,
+      "start": 165.5,
+      "end": 165.5,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": []
+    },
+    {
+      "id": 36,
+      "seek": 16546,
+      "start": 165.5,
+      "end": 165.7,
+      "text": " It's a good drone for flying.",
+      "tokens": [
+        51164,
+        467,
+        311,
+        257,
+        665,
+        13852,
+        337,
+        7137,
+        13,
+        51289
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": [
+        {
+          "word": " It's",
+          "start": 165.5,
+          "end": 165.7,
+          "probability": 0.8491255342960358
+        },
+        {
+          "word": " a",
+          "start": 165.7,
+          "end": 165.7,
+          "probability": 0.9764502644538879
+        },
+        {
+          "word": " good",
+          "start": 165.7,
+          "end": 165.7,
+          "probability": 0.9345198273658752
+        },
+        {
+          "word": " drone",
+          "start": 165.7,
+          "end": 165.7,
+          "probability": 0.9830428957939148
+        },
+        {
+          "word": " for",
+          "start": 165.7,
+          "end": 165.7,
+          "probability": 0.9875840544700623
+        },
+        {
+          "word": " flying.",
+          "start": 165.7,
+          "end": 165.7,
+          "probability": 0.9815851449966431
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 16546,
+      "start": 165.7,
+      "end": 165.7,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": []
+    },
+    {
+      "id": 38,
+      "seek": 16546,
+      "start": 165.7,
+      "end": 165.7,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": []
+    },
+    {
+      "id": 39,
+      "seek": 16546,
+      "start": 165.7,
+      "end": 166.2,
+      "text": " It's a good drone for flying.",
+      "tokens": [
+        51614,
+        467,
+        311,
+        257,
+        665,
+        13852,
+        337,
+        7137,
+        13,
+        51739
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5657519879548446,
+      "compression_ratio": 4.839285714285714,
+      "no_speech_prob": 0.9145496487617493,
+      "words": [
+        {
+          "word": " It's",
+          "start": 165.7,
+          "end": 165.88,
+          "probability": 0.9571277499198914
+        },
+        {
+          "word": " a",
+          "start": 165.88,
+          "end": 165.88,
+          "probability": 0.9950696229934692
+        },
+        {
+          "word": " good",
+          "start": 165.88,
+          "end": 166.08,
+          "probability": 0.984174907207489
+        },
+        {
+          "word": " drone",
+          "start": 166.08,
+          "end": 166.2,
+          "probability": 0.9946040511131287
+        },
+        {
+          "word": " for",
+          "start": 166.2,
+          "end": 166.2,
+          "probability": 0.9955522418022156
+        },
+        {
+          "word": " flying.",
+          "start": 166.2,
+          "end": 166.2,
+          "probability": 0.9894663691520691
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 16620,
+      "start": 166.18,
+      "end": 166.18,
+      "text": "",
+      "tokens": [],
+      "temperature": 0.0,
+      "avg_logprob": -0.7357752919197083,
+      "compression_ratio": 0.7419354838709677,
+      "no_speech_prob": 0.8745811581611633,
+      "words": []
+    }
+  ]
+}

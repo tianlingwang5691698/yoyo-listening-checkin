@@ -1,0 +1,3448 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 5.1 Is it a good thing that football is such a big business these days? I'm talking to Obi Kanu, who has just signed a contract with Westchester United. Congratulations, Obi! Thank you. Let's start with Victor, the club manager of Westchester United. Victor, you've been a club manager for 30 years. Do you think that there is too much money in football? Well, yes and no. People are happy to spend lots of money on what they love. In my opinion, if there is a lot of money in football, it's because of the fans. And this is great because clubs can pay for players to have the best training, so they have more skills and get better and better. Today's players are the best ever. Okay, so football players these days are very good, but the salaries they earn are still too much. And the cost of tickets is too high. Clubs charge so much money that many fans can't afford to come to matches. Okay, but fans can still watch the game on television. A lot of money comes from television and advertising. Clubs need that money very much. The clubs often have money problems, and the club managers worry about this more than anybody else. We always have to make more money so we can attract champion players who will score goals and help us win matches. Without those players, clubs cannot continue. So, Obi, you trained at the famous Abigen football academy in Ivory Coast. What's your opinion of football as a business? Well, Ivory Coast is not a rich country. I spent all my time as a kid kicking a football around with my friends in the street. We all dreamed of getting into the academy. It's the one big chance to make money. We had to compete with each other all the time. The big prize is getting into a professional team. Then you can support your family and give them a better life. But you have to work hard and be strong. You also have to be lucky to get the opportunity. The football business is hardest to vol for the players. Clubs are businesses that buy and sell us. If you get hurt and can't play anymore, you can lose your job. Nobody cares about you after that.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Track 5.1",
+      "tokens": [
+        50364,
+        31903,
+        1025,
+        13,
+        16,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3590437745394772,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.11546169966459274,
+      "words": [
+        {
+          "word": " Track",
+          "start": 0.0,
+          "end": 0.6,
+          "probability": 0.7029679417610168
+        },
+        {
+          "word": " 5",
+          "start": 0.6,
+          "end": 1.12,
+          "probability": 0.9230235815048218
+        },
+        {
+          "word": ".1",
+          "start": 1.12,
+          "end": 2.0,
+          "probability": 0.9947039484977722
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.4599999999999964,
+      "end": 9.34,
+      "text": " Is it a good thing that football is such a big business these days?",
+      "tokens": [
+        50558,
+        1119,
+        309,
+        257,
+        665,
+        551,
+        300,
+        7346,
+        307,
+        1270,
+        257,
+        955,
+        1606,
+        613,
+        1708,
+        30,
+        50840
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3590437745394772,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.11546169966459274,
+      "words": [
+        {
+          "word": " Is",
+          "start": 3.4599999999999964,
+          "end": 4.3,
+          "probability": 0.47674474120140076
+        },
+        {
+          "word": " it",
+          "start": 4.3,
+          "end": 4.6,
+          "probability": 0.9941561222076416
+        },
+        {
+          "word": " a",
+          "start": 4.6,
+          "end": 4.92,
+          "probability": 0.9927850961685181
+        },
+        {
+          "word": " good",
+          "start": 4.92,
+          "end": 5.14,
+          "probability": 0.9961381554603577
+        },
+        {
+          "word": " thing",
+          "start": 5.14,
+          "end": 5.56,
+          "probability": 0.9981210827827454
+        },
+        {
+          "word": " that",
+          "start": 5.56,
+          "end": 5.92,
+          "probability": 0.9859781265258789
+        },
+        {
+          "word": " football",
+          "start": 5.92,
+          "end": 6.46,
+          "probability": 0.9820635318756104
+        },
+        {
+          "word": " is",
+          "start": 6.46,
+          "end": 6.96,
+          "probability": 0.9924853444099426
+        },
+        {
+          "word": " such",
+          "start": 6.96,
+          "end": 7.3,
+          "probability": 0.9973512887954712
+        },
+        {
+          "word": " a",
+          "start": 7.3,
+          "end": 7.6,
+          "probability": 0.9974824786186218
+        },
+        {
+          "word": " big",
+          "start": 7.6,
+          "end": 7.86,
+          "probability": 0.995274007320404
+        },
+        {
+          "word": " business",
+          "start": 7.86,
+          "end": 8.42,
+          "probability": 0.9962753057479858
+        },
+        {
+          "word": " these",
+          "start": 8.42,
+          "end": 8.9,
+          "probability": 0.993617057800293
+        },
+        {
+          "word": " days?",
+          "start": 8.9,
+          "end": 9.34,
+          "probability": 0.9990561604499817
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 10.02,
+      "end": 16.28,
+      "text": " I'm talking to Obi Kanu, who has just signed a contract with Westchester United.",
+      "tokens": [
+        50858,
+        286,
+        478,
+        1417,
+        281,
+        48533,
+        11120,
+        84,
+        11,
+        567,
+        575,
+        445,
+        8175,
+        257,
+        4364,
+        365,
+        4055,
+        17022,
+        2824,
+        13,
+        51190
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3590437745394772,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.11546169966459274,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 10.02,
+          "end": 10.36,
+          "probability": 0.981379508972168
+        },
+        {
+          "word": " talking",
+          "start": 10.36,
+          "end": 10.8,
+          "probability": 0.9987127780914307
+        },
+        {
+          "word": " to",
+          "start": 10.8,
+          "end": 11.18,
+          "probability": 0.9983598589897156
+        },
+        {
+          "word": " Obi",
+          "start": 11.18,
+          "end": 11.48,
+          "probability": 0.5178758502006531
+        },
+        {
+          "word": " Kanu,",
+          "start": 11.48,
+          "end": 12.14,
+          "probability": 0.8603523671627045
+        },
+        {
+          "word": " who",
+          "start": 12.44,
+          "end": 12.54,
+          "probability": 0.9958778619766235
+        },
+        {
+          "word": " has",
+          "start": 12.54,
+          "end": 12.88,
+          "probability": 0.988869309425354
+        },
+        {
+          "word": " just",
+          "start": 12.88,
+          "end": 13.36,
+          "probability": 0.9971392154693604
+        },
+        {
+          "word": " signed",
+          "start": 13.36,
+          "end": 13.7,
+          "probability": 0.9986473917961121
+        },
+        {
+          "word": " a",
+          "start": 13.7,
+          "end": 14.0,
+          "probability": 0.9977701902389526
+        },
+        {
+          "word": " contract",
+          "start": 14.0,
+          "end": 14.5,
+          "probability": 0.9967520236968994
+        },
+        {
+          "word": " with",
+          "start": 14.5,
+          "end": 14.8,
+          "probability": 0.9978559613227844
+        },
+        {
+          "word": " Westchester",
+          "start": 14.8,
+          "end": 15.6,
+          "probability": 0.9444732666015625
+        },
+        {
+          "word": " United.",
+          "start": 15.6,
+          "end": 16.28,
+          "probability": 0.9934547543525696
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 17.32,
+      "end": 18.82,
+      "text": " Congratulations, Obi!",
+      "tokens": [
+        51202,
+        9694,
+        11,
+        48533,
+        0,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3590437745394772,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.11546169966459274,
+      "words": [
+        {
+          "word": " Congratulations,",
+          "start": 17.32,
+          "end": 18.16,
+          "probability": 0.9796130657196045
+        },
+        {
+          "word": " Obi!",
+          "start": 18.36,
+          "end": 18.82,
+          "probability": 0.969051718711853
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 19.7,
+      "end": 20.46,
+      "text": " Thank you.",
+      "tokens": [
+        51342,
+        1044,
+        291,
+        13,
+        51390
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3590437745394772,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.11546169966459274,
+      "words": [
+        {
+          "word": " Thank",
+          "start": 19.7,
+          "end": 20.04,
+          "probability": 0.9875630140304565
+        },
+        {
+          "word": " you.",
+          "start": 20.04,
+          "end": 20.46,
+          "probability": 0.9900680780410767
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 20.98,
+      "end": 25.82,
+      "text": " Let's start with Victor, the club manager of Westchester United.",
+      "tokens": [
+        51400,
+        961,
+        311,
+        722,
+        365,
+        15777,
+        11,
+        264,
+        6482,
+        6598,
+        295,
+        4055,
+        17022,
+        2824,
+        13,
+        51658
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3590437745394772,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.11546169966459274,
+      "words": [
+        {
+          "word": " Let's",
+          "start": 20.98,
+          "end": 21.36,
+          "probability": 0.9950626790523529
+        },
+        {
+          "word": " start",
+          "start": 21.36,
+          "end": 21.7,
+          "probability": 0.9990295171737671
+        },
+        {
+          "word": " with",
+          "start": 21.7,
+          "end": 22.0,
+          "probability": 0.9993495345115662
+        },
+        {
+          "word": " Victor,",
+          "start": 22.0,
+          "end": 22.52,
+          "probability": 0.915549635887146
+        },
+        {
+          "word": " the",
+          "start": 22.84,
+          "end": 23.18,
+          "probability": 0.9947577118873596
+        },
+        {
+          "word": " club",
+          "start": 23.18,
+          "end": 23.44,
+          "probability": 0.9032171964645386
+        },
+        {
+          "word": " manager",
+          "start": 23.44,
+          "end": 24.0,
+          "probability": 0.997922956943512
+        },
+        {
+          "word": " of",
+          "start": 24.0,
+          "end": 24.34,
+          "probability": 0.9961838126182556
+        },
+        {
+          "word": " Westchester",
+          "start": 24.34,
+          "end": 25.06,
+          "probability": 0.9977961480617523
+        },
+        {
+          "word": " United.",
+          "start": 25.06,
+          "end": 25.82,
+          "probability": 0.9971731901168823
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2582,
+      "start": 26.46,
+      "end": 30.7,
+      "text": " Victor, you've been a club manager for 30 years.",
+      "tokens": [
+        50396,
+        15777,
+        11,
+        291,
+        600,
+        668,
+        257,
+        6482,
+        6598,
+        337,
+        2217,
+        924,
+        13,
+        50618
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21601658679069358,
+      "compression_ratio": 1.5813953488372092,
+      "no_speech_prob": 0.0727919340133667,
+      "words": [
+        {
+          "word": " Victor,",
+          "start": 26.46,
+          "end": 27.14,
+          "probability": 0.49828043580055237
+        },
+        {
+          "word": " you've",
+          "start": 27.42,
+          "end": 27.78,
+          "probability": 0.9596669673919678
+        },
+        {
+          "word": " been",
+          "start": 27.78,
+          "end": 28.04,
+          "probability": 0.9985160231590271
+        },
+        {
+          "word": " a",
+          "start": 28.04,
+          "end": 28.2,
+          "probability": 0.9759610891342163
+        },
+        {
+          "word": " club",
+          "start": 28.2,
+          "end": 28.54,
+          "probability": 0.9926018118858337
+        },
+        {
+          "word": " manager",
+          "start": 28.54,
+          "end": 29.04,
+          "probability": 0.9914564490318298
+        },
+        {
+          "word": " for",
+          "start": 29.04,
+          "end": 29.48,
+          "probability": 0.997674286365509
+        },
+        {
+          "word": " 30",
+          "start": 29.48,
+          "end": 29.94,
+          "probability": 0.8158033490180969
+        },
+        {
+          "word": " years.",
+          "start": 29.94,
+          "end": 30.7,
+          "probability": 0.9918002486228943
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2582,
+      "start": 31.18,
+      "end": 34.38,
+      "text": " Do you think that there is too much money in football?",
+      "tokens": [
+        50630,
+        1144,
+        291,
+        519,
+        300,
+        456,
+        307,
+        886,
+        709,
+        1460,
+        294,
+        7346,
+        30,
+        50806
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21601658679069358,
+      "compression_ratio": 1.5813953488372092,
+      "no_speech_prob": 0.0727919340133667,
+      "words": [
+        {
+          "word": " Do",
+          "start": 31.18,
+          "end": 31.48,
+          "probability": 0.9913485646247864
+        },
+        {
+          "word": " you",
+          "start": 31.48,
+          "end": 31.64,
+          "probability": 0.9987311959266663
+        },
+        {
+          "word": " think",
+          "start": 31.64,
+          "end": 31.98,
+          "probability": 0.997714638710022
+        },
+        {
+          "word": " that",
+          "start": 31.98,
+          "end": 32.2,
+          "probability": 0.7718053460121155
+        },
+        {
+          "word": " there",
+          "start": 32.2,
+          "end": 32.3,
+          "probability": 0.9927113056182861
+        },
+        {
+          "word": " is",
+          "start": 32.3,
+          "end": 32.58,
+          "probability": 0.9699050784111023
+        },
+        {
+          "word": " too",
+          "start": 32.58,
+          "end": 32.96,
+          "probability": 0.9962122440338135
+        },
+        {
+          "word": " much",
+          "start": 32.96,
+          "end": 33.26,
+          "probability": 0.9984540939331055
+        },
+        {
+          "word": " money",
+          "start": 33.26,
+          "end": 33.64,
+          "probability": 0.9966171383857727
+        },
+        {
+          "word": " in",
+          "start": 33.64,
+          "end": 33.92,
+          "probability": 0.9967106580734253
+        },
+        {
+          "word": " football?",
+          "start": 33.92,
+          "end": 34.38,
+          "probability": 0.9839216470718384
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2582,
+      "start": 35.22,
+      "end": 37.28,
+      "text": " Well, yes and no.",
+      "tokens": [
+        50832,
+        1042,
+        11,
+        2086,
+        293,
+        572,
+        13,
+        50942
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21601658679069358,
+      "compression_ratio": 1.5813953488372092,
+      "no_speech_prob": 0.0727919340133667,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 35.22,
+          "end": 35.9,
+          "probability": 0.8913012146949768
+        },
+        {
+          "word": " yes",
+          "start": 36.1,
+          "end": 36.48,
+          "probability": 0.9875746369361877
+        },
+        {
+          "word": " and",
+          "start": 36.48,
+          "end": 36.84,
+          "probability": 0.974678099155426
+        },
+        {
+          "word": " no.",
+          "start": 36.84,
+          "end": 37.28,
+          "probability": 0.9972637891769409
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2582,
+      "start": 37.8,
+      "end": 41.78,
+      "text": " People are happy to spend lots of money on what they love.",
+      "tokens": [
+        50956,
+        3432,
+        366,
+        2055,
+        281,
+        3496,
+        3195,
+        295,
+        1460,
+        322,
+        437,
+        436,
+        959,
+        13,
+        51172
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21601658679069358,
+      "compression_ratio": 1.5813953488372092,
+      "no_speech_prob": 0.0727919340133667,
+      "words": [
+        {
+          "word": " People",
+          "start": 37.8,
+          "end": 38.24,
+          "probability": 0.995352029800415
+        },
+        {
+          "word": " are",
+          "start": 38.24,
+          "end": 38.6,
+          "probability": 0.9985027313232422
+        },
+        {
+          "word": " happy",
+          "start": 38.6,
+          "end": 39.04,
+          "probability": 0.9975693821907043
+        },
+        {
+          "word": " to",
+          "start": 39.04,
+          "end": 39.38,
+          "probability": 0.9983684420585632
+        },
+        {
+          "word": " spend",
+          "start": 39.38,
+          "end": 39.7,
+          "probability": 0.998105525970459
+        },
+        {
+          "word": " lots",
+          "start": 39.7,
+          "end": 40.1,
+          "probability": 0.9898930191993713
+        },
+        {
+          "word": " of",
+          "start": 40.1,
+          "end": 40.28,
+          "probability": 0.9974498152732849
+        },
+        {
+          "word": " money",
+          "start": 40.28,
+          "end": 40.66,
+          "probability": 0.9994168281555176
+        },
+        {
+          "word": " on",
+          "start": 40.66,
+          "end": 40.92,
+          "probability": 0.9955843091011047
+        },
+        {
+          "word": " what",
+          "start": 40.92,
+          "end": 41.16,
+          "probability": 0.998551070690155
+        },
+        {
+          "word": " they",
+          "start": 41.16,
+          "end": 41.44,
+          "probability": 0.9989590644836426
+        },
+        {
+          "word": " love.",
+          "start": 41.44,
+          "end": 41.78,
+          "probability": 0.998329222202301
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2582,
+      "start": 42.52,
+      "end": 48.66,
+      "text": " In my opinion, if there is a lot of money in football, it's because of the fans.",
+      "tokens": [
+        51192,
+        682,
+        452,
+        4800,
+        11,
+        498,
+        456,
+        307,
+        257,
+        688,
+        295,
+        1460,
+        294,
+        7346,
+        11,
+        309,
+        311,
+        570,
+        295,
+        264,
+        4499,
+        13,
+        51516
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21601658679069358,
+      "compression_ratio": 1.5813953488372092,
+      "no_speech_prob": 0.0727919340133667,
+      "words": [
+        {
+          "word": " In",
+          "start": 42.52,
+          "end": 42.8,
+          "probability": 0.9865098595619202
+        },
+        {
+          "word": " my",
+          "start": 42.8,
+          "end": 43.12,
+          "probability": 0.9990857839584351
+        },
+        {
+          "word": " opinion,",
+          "start": 43.12,
+          "end": 43.7,
+          "probability": 0.9972115159034729
+        },
+        {
+          "word": " if",
+          "start": 43.94,
+          "end": 44.18,
+          "probability": 0.9898501634597778
+        },
+        {
+          "word": " there",
+          "start": 44.18,
+          "end": 44.46,
+          "probability": 0.9986714124679565
+        },
+        {
+          "word": " is",
+          "start": 44.46,
+          "end": 44.6,
+          "probability": 0.7672130465507507
+        },
+        {
+          "word": " a",
+          "start": 44.6,
+          "end": 44.72,
+          "probability": 0.989547073841095
+        },
+        {
+          "word": " lot",
+          "start": 44.72,
+          "end": 44.96,
+          "probability": 0.9979963898658752
+        },
+        {
+          "word": " of",
+          "start": 44.96,
+          "end": 45.22,
+          "probability": 0.9952988028526306
+        },
+        {
+          "word": " money",
+          "start": 45.22,
+          "end": 45.48,
+          "probability": 0.9987871050834656
+        },
+        {
+          "word": " in",
+          "start": 45.48,
+          "end": 45.7,
+          "probability": 0.9971972703933716
+        },
+        {
+          "word": " football,",
+          "start": 45.7,
+          "end": 46.26,
+          "probability": 0.996148943901062
+        },
+        {
+          "word": " it's",
+          "start": 46.76,
+          "end": 47.1,
+          "probability": 0.9695942103862762
+        },
+        {
+          "word": " because",
+          "start": 47.1,
+          "end": 47.66,
+          "probability": 0.9972056746482849
+        },
+        {
+          "word": " of",
+          "start": 47.66,
+          "end": 47.98,
+          "probability": 0.9988695979118347
+        },
+        {
+          "word": " the",
+          "start": 47.98,
+          "end": 48.26,
+          "probability": 0.9953925609588623
+        },
+        {
+          "word": " fans.",
+          "start": 48.26,
+          "end": 48.66,
+          "probability": 0.9957972764968872
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2582,
+      "start": 49.08,
+      "end": 54.64,
+      "text": " And this is great because clubs can pay for players to have the best training,",
+      "tokens": [
+        51526,
+        400,
+        341,
+        307,
+        869,
+        570,
+        15428,
+        393,
+        1689,
+        337,
+        4150,
+        281,
+        362,
+        264,
+        1151,
+        3097,
+        11,
+        51810
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.21601658679069358,
+      "compression_ratio": 1.5813953488372092,
+      "no_speech_prob": 0.0727919340133667,
+      "words": [
+        {
+          "word": " And",
+          "start": 49.08,
+          "end": 49.62,
+          "probability": 0.9686791896820068
+        },
+        {
+          "word": " this",
+          "start": 49.62,
+          "end": 49.96,
+          "probability": 0.9717873334884644
+        },
+        {
+          "word": " is",
+          "start": 49.96,
+          "end": 50.3,
+          "probability": 0.9961742758750916
+        },
+        {
+          "word": " great",
+          "start": 50.3,
+          "end": 50.66,
+          "probability": 0.9985511898994446
+        },
+        {
+          "word": " because",
+          "start": 50.66,
+          "end": 51.16,
+          "probability": 0.8459388613700867
+        },
+        {
+          "word": " clubs",
+          "start": 51.16,
+          "end": 51.62,
+          "probability": 0.9897492527961731
+        },
+        {
+          "word": " can",
+          "start": 51.62,
+          "end": 52.0,
+          "probability": 0.9975663423538208
+        },
+        {
+          "word": " pay",
+          "start": 52.0,
+          "end": 52.34,
+          "probability": 0.9965873956680298
+        },
+        {
+          "word": " for",
+          "start": 52.34,
+          "end": 52.66,
+          "probability": 0.9940728545188904
+        },
+        {
+          "word": " players",
+          "start": 52.66,
+          "end": 52.98,
+          "probability": 0.9918387532234192
+        },
+        {
+          "word": " to",
+          "start": 52.98,
+          "end": 53.34,
+          "probability": 0.9973992109298706
+        },
+        {
+          "word": " have",
+          "start": 53.34,
+          "end": 53.48,
+          "probability": 0.9991402626037598
+        },
+        {
+          "word": " the",
+          "start": 53.48,
+          "end": 53.78,
+          "probability": 0.99346923828125
+        },
+        {
+          "word": " best",
+          "start": 53.78,
+          "end": 54.12,
+          "probability": 0.9945376515388489
+        },
+        {
+          "word": " training,",
+          "start": 54.12,
+          "end": 54.64,
+          "probability": 0.9966337084770203
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5464,
+      "start": 54.64,
+      "end": 59.8,
+      "text": " so they have more skills and get better and better.",
+      "tokens": [
+        50376,
+        370,
+        436,
+        362,
+        544,
+        3942,
+        293,
+        483,
+        1101,
+        293,
+        1101,
+        13,
+        50600
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26389483916453826,
+      "compression_ratio": 1.538860103626943,
+      "no_speech_prob": 0.004765111021697521,
+      "words": [
+        {
+          "word": " so",
+          "start": 54.64,
+          "end": 55.28,
+          "probability": 0.09823457896709442
+        },
+        {
+          "word": " they",
+          "start": 55.28,
+          "end": 55.5,
+          "probability": 0.9805399775505066
+        },
+        {
+          "word": " have",
+          "start": 55.5,
+          "end": 55.76,
+          "probability": 0.9977171421051025
+        },
+        {
+          "word": " more",
+          "start": 55.76,
+          "end": 56.18,
+          "probability": 0.9975889921188354
+        },
+        {
+          "word": " skills",
+          "start": 56.18,
+          "end": 56.72,
+          "probability": 0.9934530258178711
+        },
+        {
+          "word": " and",
+          "start": 56.72,
+          "end": 57.26,
+          "probability": 0.9740618467330933
+        },
+        {
+          "word": " get",
+          "start": 57.26,
+          "end": 57.62,
+          "probability": 0.9897928237915039
+        },
+        {
+          "word": " better",
+          "start": 57.62,
+          "end": 58.1,
+          "probability": 0.9979374408721924
+        },
+        {
+          "word": " and",
+          "start": 58.1,
+          "end": 58.68,
+          "probability": 0.989844560623169
+        },
+        {
+          "word": " better.",
+          "start": 58.68,
+          "end": 59.8,
+          "probability": 0.9962305426597595
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 5464,
+      "start": 60.16,
+      "end": 63.06,
+      "text": " Today's players are the best ever.",
+      "tokens": [
+        50624,
+        2692,
+        311,
+        4150,
+        366,
+        264,
+        1151,
+        1562,
+        13,
+        50782
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26389483916453826,
+      "compression_ratio": 1.538860103626943,
+      "no_speech_prob": 0.004765111021697521,
+      "words": [
+        {
+          "word": " Today's",
+          "start": 60.16,
+          "end": 60.7,
+          "probability": 0.9663451015949249
+        },
+        {
+          "word": " players",
+          "start": 60.7,
+          "end": 61.08,
+          "probability": 0.9954299926757812
+        },
+        {
+          "word": " are",
+          "start": 61.08,
+          "end": 61.52,
+          "probability": 0.9980189800262451
+        },
+        {
+          "word": " the",
+          "start": 61.52,
+          "end": 61.9,
+          "probability": 0.9937933683395386
+        },
+        {
+          "word": " best",
+          "start": 61.9,
+          "end": 62.32,
+          "probability": 0.987174928188324
+        },
+        {
+          "word": " ever.",
+          "start": 62.32,
+          "end": 63.06,
+          "probability": 0.9942571520805359
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 5464,
+      "start": 64.24,
+      "end": 72.2,
+      "text": " Okay, so football players these days are very good, but the salaries they earn are still too much.",
+      "tokens": [
+        50822,
+        1033,
+        11,
+        370,
+        7346,
+        4150,
+        613,
+        1708,
+        366,
+        588,
+        665,
+        11,
+        457,
+        264,
+        35057,
+        436,
+        6012,
+        366,
+        920,
+        886,
+        709,
+        13,
+        51250
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26389483916453826,
+      "compression_ratio": 1.538860103626943,
+      "no_speech_prob": 0.004765111021697521,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 64.24,
+          "end": 64.5,
+          "probability": 0.5619420409202576
+        },
+        {
+          "word": " so",
+          "start": 65.02,
+          "end": 65.48,
+          "probability": 0.9862631559371948
+        },
+        {
+          "word": " football",
+          "start": 65.48,
+          "end": 66.06,
+          "probability": 0.8919812440872192
+        },
+        {
+          "word": " players",
+          "start": 66.06,
+          "end": 66.56,
+          "probability": 0.9967553019523621
+        },
+        {
+          "word": " these",
+          "start": 66.56,
+          "end": 67.0,
+          "probability": 0.9904542565345764
+        },
+        {
+          "word": " days",
+          "start": 67.0,
+          "end": 67.28,
+          "probability": 0.9990629553794861
+        },
+        {
+          "word": " are",
+          "start": 67.28,
+          "end": 67.7,
+          "probability": 0.998236894607544
+        },
+        {
+          "word": " very",
+          "start": 67.7,
+          "end": 68.18,
+          "probability": 0.997000515460968
+        },
+        {
+          "word": " good,",
+          "start": 68.18,
+          "end": 68.56,
+          "probability": 0.9994926452636719
+        },
+        {
+          "word": " but",
+          "start": 68.72,
+          "end": 68.98,
+          "probability": 0.9776905179023743
+        },
+        {
+          "word": " the",
+          "start": 68.98,
+          "end": 69.32,
+          "probability": 0.989875853061676
+        },
+        {
+          "word": " salaries",
+          "start": 69.32,
+          "end": 69.82,
+          "probability": 0.9975128173828125
+        },
+        {
+          "word": " they",
+          "start": 69.82,
+          "end": 70.22,
+          "probability": 0.9904128909111023
+        },
+        {
+          "word": " earn",
+          "start": 70.22,
+          "end": 70.42,
+          "probability": 0.9954515099525452
+        },
+        {
+          "word": " are",
+          "start": 70.42,
+          "end": 70.8,
+          "probability": 0.9964948296546936
+        },
+        {
+          "word": " still",
+          "start": 70.8,
+          "end": 71.28,
+          "probability": 0.9981741905212402
+        },
+        {
+          "word": " too",
+          "start": 71.28,
+          "end": 71.7,
+          "probability": 0.9963045120239258
+        },
+        {
+          "word": " much.",
+          "start": 71.7,
+          "end": 72.2,
+          "probability": 0.9993922710418701
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5464,
+      "start": 72.8,
+      "end": 75.54,
+      "text": " And the cost of tickets is too high.",
+      "tokens": [
+        51264,
+        400,
+        264,
+        2063,
+        295,
+        12628,
+        307,
+        886,
+        1090,
+        13,
+        51410
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26389483916453826,
+      "compression_ratio": 1.538860103626943,
+      "no_speech_prob": 0.004765111021697521,
+      "words": [
+        {
+          "word": " And",
+          "start": 72.8,
+          "end": 73.02,
+          "probability": 0.8564556241035461
+        },
+        {
+          "word": " the",
+          "start": 73.02,
+          "end": 73.14,
+          "probability": 0.9900218844413757
+        },
+        {
+          "word": " cost",
+          "start": 73.14,
+          "end": 73.44,
+          "probability": 0.997952938079834
+        },
+        {
+          "word": " of",
+          "start": 73.44,
+          "end": 73.76,
+          "probability": 0.9988768696784973
+        },
+        {
+          "word": " tickets",
+          "start": 73.76,
+          "end": 74.14,
+          "probability": 0.9907702803611755
+        },
+        {
+          "word": " is",
+          "start": 74.14,
+          "end": 74.58,
+          "probability": 0.9961601495742798
+        },
+        {
+          "word": " too",
+          "start": 74.58,
+          "end": 74.96,
+          "probability": 0.9971644282341003
+        },
+        {
+          "word": " high.",
+          "start": 74.96,
+          "end": 75.54,
+          "probability": 0.9990283250808716
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5464,
+      "start": 76.06,
+      "end": 80.72,
+      "text": " Clubs charge so much money that many fans can't afford to come to matches.",
+      "tokens": [
+        51422,
+        2033,
+        5432,
+        4602,
+        370,
+        709,
+        1460,
+        300,
+        867,
+        4499,
+        393,
+        380,
+        6157,
+        281,
+        808,
+        281,
+        10676,
+        13,
+        51684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26389483916453826,
+      "compression_ratio": 1.538860103626943,
+      "no_speech_prob": 0.004765111021697521,
+      "words": [
+        {
+          "word": " Clubs",
+          "start": 76.06,
+          "end": 76.32,
+          "probability": 0.9942137897014618
+        },
+        {
+          "word": " charge",
+          "start": 76.32,
+          "end": 76.74,
+          "probability": 0.990933895111084
+        },
+        {
+          "word": " so",
+          "start": 76.74,
+          "end": 77.14,
+          "probability": 0.9979409575462341
+        },
+        {
+          "word": " much",
+          "start": 77.14,
+          "end": 77.36,
+          "probability": 0.9989240765571594
+        },
+        {
+          "word": " money",
+          "start": 77.36,
+          "end": 77.7,
+          "probability": 0.9982084035873413
+        },
+        {
+          "word": " that",
+          "start": 77.7,
+          "end": 78.02,
+          "probability": 0.9414286017417908
+        },
+        {
+          "word": " many",
+          "start": 78.02,
+          "end": 78.36,
+          "probability": 0.9963261485099792
+        },
+        {
+          "word": " fans",
+          "start": 78.36,
+          "end": 78.72,
+          "probability": 0.9969748258590698
+        },
+        {
+          "word": " can't",
+          "start": 78.72,
+          "end": 79.1,
+          "probability": 0.9958829283714294
+        },
+        {
+          "word": " afford",
+          "start": 79.1,
+          "end": 79.42,
+          "probability": 0.9995939135551453
+        },
+        {
+          "word": " to",
+          "start": 79.42,
+          "end": 79.72,
+          "probability": 0.9982489347457886
+        },
+        {
+          "word": " come",
+          "start": 79.72,
+          "end": 79.92,
+          "probability": 0.9994072914123535
+        },
+        {
+          "word": " to",
+          "start": 79.92,
+          "end": 80.18,
+          "probability": 0.9988503456115723
+        },
+        {
+          "word": " matches.",
+          "start": 80.18,
+          "end": 80.72,
+          "probability": 0.997675359249115
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 8072,
+      "start": 81.56,
+      "end": 85.56,
+      "text": " Okay, but fans can still watch the game on television.",
+      "tokens": [
+        50406,
+        1033,
+        11,
+        457,
+        4499,
+        393,
+        920,
+        1159,
+        264,
+        1216,
+        322,
+        8815,
+        13,
+        50618
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29026073520466433,
+      "compression_ratio": 1.4695121951219512,
+      "no_speech_prob": 0.19947193562984467,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 81.56,
+          "end": 82.18,
+          "probability": 0.33169522881507874
+        },
+        {
+          "word": " but",
+          "start": 82.24,
+          "end": 82.84,
+          "probability": 0.9956845045089722
+        },
+        {
+          "word": " fans",
+          "start": 82.84,
+          "end": 83.3,
+          "probability": 0.9721415042877197
+        },
+        {
+          "word": " can",
+          "start": 83.3,
+          "end": 83.74,
+          "probability": 0.9792816638946533
+        },
+        {
+          "word": " still",
+          "start": 83.74,
+          "end": 83.98,
+          "probability": 0.9951140880584717
+        },
+        {
+          "word": " watch",
+          "start": 83.98,
+          "end": 84.26,
+          "probability": 0.9989058971405029
+        },
+        {
+          "word": " the",
+          "start": 84.26,
+          "end": 84.54,
+          "probability": 0.9936915636062622
+        },
+        {
+          "word": " game",
+          "start": 84.54,
+          "end": 84.72,
+          "probability": 0.996707022190094
+        },
+        {
+          "word": " on",
+          "start": 84.72,
+          "end": 85.0,
+          "probability": 0.9978101849555969
+        },
+        {
+          "word": " television.",
+          "start": 85.0,
+          "end": 85.56,
+          "probability": 0.9544586539268494
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 8072,
+      "start": 86.46,
+      "end": 90.24,
+      "text": " A lot of money comes from television and advertising.",
+      "tokens": [
+        50640,
+        316,
+        688,
+        295,
+        1460,
+        1487,
+        490,
+        8815,
+        293,
+        13097,
+        13,
+        50856
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29026073520466433,
+      "compression_ratio": 1.4695121951219512,
+      "no_speech_prob": 0.19947193562984467,
+      "words": [
+        {
+          "word": " A",
+          "start": 86.46,
+          "end": 86.72,
+          "probability": 0.9808419942855835
+        },
+        {
+          "word": " lot",
+          "start": 86.72,
+          "end": 87.04,
+          "probability": 0.966029703617096
+        },
+        {
+          "word": " of",
+          "start": 87.04,
+          "end": 87.26,
+          "probability": 0.99781334400177
+        },
+        {
+          "word": " money",
+          "start": 87.26,
+          "end": 87.62,
+          "probability": 0.9956315755844116
+        },
+        {
+          "word": " comes",
+          "start": 87.62,
+          "end": 87.96,
+          "probability": 0.9953562617301941
+        },
+        {
+          "word": " from",
+          "start": 87.96,
+          "end": 88.22,
+          "probability": 0.9985262155532837
+        },
+        {
+          "word": " television",
+          "start": 88.22,
+          "end": 88.88,
+          "probability": 0.983975887298584
+        },
+        {
+          "word": " and",
+          "start": 88.88,
+          "end": 89.52,
+          "probability": 0.9909358620643616
+        },
+        {
+          "word": " advertising.",
+          "start": 89.52,
+          "end": 90.24,
+          "probability": 0.9932148456573486
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 8072,
+      "start": 91.2,
+      "end": 93.78,
+      "text": " Clubs need that money very much.",
+      "tokens": [
+        50880,
+        2033,
+        5432,
+        643,
+        300,
+        1460,
+        588,
+        709,
+        13,
+        51024
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29026073520466433,
+      "compression_ratio": 1.4695121951219512,
+      "no_speech_prob": 0.19947193562984467,
+      "words": [
+        {
+          "word": " Clubs",
+          "start": 91.2,
+          "end": 91.62,
+          "probability": 0.9959617257118225
+        },
+        {
+          "word": " need",
+          "start": 91.62,
+          "end": 92.04,
+          "probability": 0.9946110248565674
+        },
+        {
+          "word": " that",
+          "start": 92.04,
+          "end": 92.38,
+          "probability": 0.99516761302948
+        },
+        {
+          "word": " money",
+          "start": 92.38,
+          "end": 92.76,
+          "probability": 0.9971669316291809
+        },
+        {
+          "word": " very",
+          "start": 92.76,
+          "end": 93.28,
+          "probability": 0.9832981824874878
+        },
+        {
+          "word": " much.",
+          "start": 93.28,
+          "end": 93.78,
+          "probability": 0.9993970394134521
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 8072,
+      "start": 94.6,
+      "end": 102.3,
+      "text": " The clubs often have money problems, and the club managers worry about this more than anybody else.",
+      "tokens": [
+        51048,
+        440,
+        15428,
+        2049,
+        362,
+        1460,
+        2740,
+        11,
+        293,
+        264,
+        6482,
+        14084,
+        3292,
+        466,
+        341,
+        544,
+        813,
+        4472,
+        1646,
+        13,
+        51450
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29026073520466433,
+      "compression_ratio": 1.4695121951219512,
+      "no_speech_prob": 0.19947193562984467,
+      "words": [
+        {
+          "word": " The",
+          "start": 94.6,
+          "end": 94.92,
+          "probability": 0.9888985753059387
+        },
+        {
+          "word": " clubs",
+          "start": 94.92,
+          "end": 95.34,
+          "probability": 0.990598738193512
+        },
+        {
+          "word": " often",
+          "start": 95.34,
+          "end": 95.88,
+          "probability": 0.9912602305412292
+        },
+        {
+          "word": " have",
+          "start": 95.88,
+          "end": 96.16,
+          "probability": 0.998544454574585
+        },
+        {
+          "word": " money",
+          "start": 96.16,
+          "end": 96.54,
+          "probability": 0.9962146878242493
+        },
+        {
+          "word": " problems,",
+          "start": 96.54,
+          "end": 97.06,
+          "probability": 0.9968903660774231
+        },
+        {
+          "word": " and",
+          "start": 97.62,
+          "end": 97.8,
+          "probability": 0.9979062080383301
+        },
+        {
+          "word": " the",
+          "start": 97.8,
+          "end": 98.04,
+          "probability": 0.9825085401535034
+        },
+        {
+          "word": " club",
+          "start": 98.04,
+          "end": 98.34,
+          "probability": 0.996768593788147
+        },
+        {
+          "word": " managers",
+          "start": 98.34,
+          "end": 98.84,
+          "probability": 0.9853478074073792
+        },
+        {
+          "word": " worry",
+          "start": 98.84,
+          "end": 99.36,
+          "probability": 0.9970458149909973
+        },
+        {
+          "word": " about",
+          "start": 99.36,
+          "end": 99.76,
+          "probability": 0.9966025352478027
+        },
+        {
+          "word": " this",
+          "start": 99.76,
+          "end": 100.32,
+          "probability": 0.9931173324584961
+        },
+        {
+          "word": " more",
+          "start": 100.32,
+          "end": 100.86,
+          "probability": 0.9809039235115051
+        },
+        {
+          "word": " than",
+          "start": 100.86,
+          "end": 101.16,
+          "probability": 0.9979878664016724
+        },
+        {
+          "word": " anybody",
+          "start": 101.16,
+          "end": 101.7,
+          "probability": 0.9704158902168274
+        },
+        {
+          "word": " else.",
+          "start": 101.7,
+          "end": 102.3,
+          "probability": 0.9981132745742798
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 10230,
+      "start": 103.3,
+      "end": 112.04,
+      "text": " We always have to make more money so we can attract champion players who will score goals and help us win matches.",
+      "tokens": [
+        50414,
+        492,
+        1009,
+        362,
+        281,
+        652,
+        544,
+        1460,
+        370,
+        321,
+        393,
+        5049,
+        10971,
+        4150,
+        567,
+        486,
+        6175,
+        5493,
+        293,
+        854,
+        505,
+        1942,
+        10676,
+        13,
+        50856
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25102794461134004,
+      "compression_ratio": 1.5093457943925233,
+      "no_speech_prob": 0.03913065791130066,
+      "words": [
+        {
+          "word": " We",
+          "start": 103.23,
+          "end": 103.66,
+          "probability": 0.6477072834968567
+        },
+        {
+          "word": " always",
+          "start": 103.66,
+          "end": 104.34,
+          "probability": 0.9826734662055969
+        },
+        {
+          "word": " have",
+          "start": 104.34,
+          "end": 104.62,
+          "probability": 0.9964829683303833
+        },
+        {
+          "word": " to",
+          "start": 104.62,
+          "end": 104.88,
+          "probability": 0.9989922642707825
+        },
+        {
+          "word": " make",
+          "start": 104.88,
+          "end": 105.14,
+          "probability": 0.9981722831726074
+        },
+        {
+          "word": " more",
+          "start": 105.14,
+          "end": 105.54,
+          "probability": 0.9958685636520386
+        },
+        {
+          "word": " money",
+          "start": 105.54,
+          "end": 105.98,
+          "probability": 0.999032735824585
+        },
+        {
+          "word": " so",
+          "start": 105.98,
+          "end": 106.28,
+          "probability": 0.8691695332527161
+        },
+        {
+          "word": " we",
+          "start": 106.28,
+          "end": 106.52,
+          "probability": 0.9899724721908569
+        },
+        {
+          "word": " can",
+          "start": 106.52,
+          "end": 106.8,
+          "probability": 0.9992448091506958
+        },
+        {
+          "word": " attract",
+          "start": 106.8,
+          "end": 107.22,
+          "probability": 0.9963858127593994
+        },
+        {
+          "word": " champion",
+          "start": 107.22,
+          "end": 107.98,
+          "probability": 0.9650682806968689
+        },
+        {
+          "word": " players",
+          "start": 107.98,
+          "end": 108.58,
+          "probability": 0.9969696402549744
+        },
+        {
+          "word": " who",
+          "start": 108.58,
+          "end": 108.82,
+          "probability": 0.9736538529396057
+        },
+        {
+          "word": " will",
+          "start": 108.82,
+          "end": 109.06,
+          "probability": 0.9944707155227661
+        },
+        {
+          "word": " score",
+          "start": 109.06,
+          "end": 109.4,
+          "probability": 0.9980759620666504
+        },
+        {
+          "word": " goals",
+          "start": 109.4,
+          "end": 109.96,
+          "probability": 0.9965533018112183
+        },
+        {
+          "word": " and",
+          "start": 109.96,
+          "end": 110.56,
+          "probability": 0.968525767326355
+        },
+        {
+          "word": " help",
+          "start": 110.56,
+          "end": 110.78,
+          "probability": 0.9963653087615967
+        },
+        {
+          "word": " us",
+          "start": 110.78,
+          "end": 111.1,
+          "probability": 0.9989429116249084
+        },
+        {
+          "word": " win",
+          "start": 111.1,
+          "end": 111.38,
+          "probability": 0.9975587129592896
+        },
+        {
+          "word": " matches.",
+          "start": 111.38,
+          "end": 112.04,
+          "probability": 0.9979186654090881
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 10230,
+      "start": 112.78,
+      "end": 116.02,
+      "text": " Without those players, clubs cannot continue.",
+      "tokens": [
+        50876,
+        9129,
+        729,
+        4150,
+        11,
+        15428,
+        2644,
+        2354,
+        13,
+        51056
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25102794461134004,
+      "compression_ratio": 1.5093457943925233,
+      "no_speech_prob": 0.03913065791130066,
+      "words": [
+        {
+          "word": " Without",
+          "start": 112.78,
+          "end": 113.18,
+          "probability": 0.9941337704658508
+        },
+        {
+          "word": " those",
+          "start": 113.18,
+          "end": 113.62,
+          "probability": 0.9923271536827087
+        },
+        {
+          "word": " players,",
+          "start": 113.62,
+          "end": 114.22,
+          "probability": 0.9974310994148254
+        },
+        {
+          "word": " clubs",
+          "start": 114.58,
+          "end": 114.8,
+          "probability": 0.9855152368545532
+        },
+        {
+          "word": " cannot",
+          "start": 114.8,
+          "end": 115.26,
+          "probability": 0.963146448135376
+        },
+        {
+          "word": " continue.",
+          "start": 115.26,
+          "end": 116.02,
+          "probability": 0.998295247554779
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 10230,
+      "start": 116.94,
+      "end": 123.32,
+      "text": " So, Obi, you trained at the famous Abigen football academy in Ivory Coast.",
+      "tokens": [
+        51082,
+        407,
+        11,
+        48533,
+        11,
+        291,
+        8895,
+        412,
+        264,
+        4618,
+        2847,
+        3213,
+        7346,
+        25525,
+        294,
+        26546,
+        827,
+        14960,
+        13,
+        51426
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25102794461134004,
+      "compression_ratio": 1.5093457943925233,
+      "no_speech_prob": 0.03913065791130066,
+      "words": [
+        {
+          "word": " So,",
+          "start": 116.94,
+          "end": 117.38,
+          "probability": 0.9496403336524963
+        },
+        {
+          "word": " Obi,",
+          "start": 117.62,
+          "end": 117.78,
+          "probability": 0.44289764761924744
+        },
+        {
+          "word": " you",
+          "start": 118.24,
+          "end": 118.6,
+          "probability": 0.9821470379829407
+        },
+        {
+          "word": " trained",
+          "start": 118.6,
+          "end": 119.02,
+          "probability": 0.9859958291053772
+        },
+        {
+          "word": " at",
+          "start": 119.02,
+          "end": 119.32,
+          "probability": 0.9963877201080322
+        },
+        {
+          "word": " the",
+          "start": 119.32,
+          "end": 119.42,
+          "probability": 0.9965103268623352
+        },
+        {
+          "word": " famous",
+          "start": 119.42,
+          "end": 120.04,
+          "probability": 0.9969590902328491
+        },
+        {
+          "word": " Abigen",
+          "start": 120.04,
+          "end": 120.7,
+          "probability": 0.6200137287378311
+        },
+        {
+          "word": " football",
+          "start": 120.7,
+          "end": 121.34,
+          "probability": 0.5925115346908569
+        },
+        {
+          "word": " academy",
+          "start": 121.34,
+          "end": 122.0,
+          "probability": 0.9734319448471069
+        },
+        {
+          "word": " in",
+          "start": 122.0,
+          "end": 122.46,
+          "probability": 0.9619144797325134
+        },
+        {
+          "word": " Ivory",
+          "start": 122.46,
+          "end": 122.92,
+          "probability": 0.9966535866260529
+        },
+        {
+          "word": " Coast.",
+          "start": 122.92,
+          "end": 123.32,
+          "probability": 0.991693913936615
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 10230,
+      "start": 124.0,
+      "end": 127.04,
+      "text": " What's your opinion of football as a business?",
+      "tokens": [
+        51440,
+        708,
+        311,
+        428,
+        4800,
+        295,
+        7346,
+        382,
+        257,
+        1606,
+        30,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25102794461134004,
+      "compression_ratio": 1.5093457943925233,
+      "no_speech_prob": 0.03913065791130066,
+      "words": [
+        {
+          "word": " What's",
+          "start": 124.0,
+          "end": 124.48,
+          "probability": 0.9860970079898834
+        },
+        {
+          "word": " your",
+          "start": 124.48,
+          "end": 124.8,
+          "probability": 0.9973198771476746
+        },
+        {
+          "word": " opinion",
+          "start": 124.8,
+          "end": 125.28,
+          "probability": 0.998339056968689
+        },
+        {
+          "word": " of",
+          "start": 125.28,
+          "end": 125.6,
+          "probability": 0.9808486700057983
+        },
+        {
+          "word": " football",
+          "start": 125.6,
+          "end": 126.14,
+          "probability": 0.985124409198761
+        },
+        {
+          "word": " as",
+          "start": 126.14,
+          "end": 126.46,
+          "probability": 0.9967024922370911
+        },
+        {
+          "word": " a",
+          "start": 126.46,
+          "end": 126.6,
+          "probability": 0.996614396572113
+        },
+        {
+          "word": " business?",
+          "start": 126.6,
+          "end": 127.04,
+          "probability": 0.998040497303009
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 10230,
+      "start": 128.14,
+      "end": 131.66,
+      "text": " Well, Ivory Coast is not a rich country.",
+      "tokens": [
+        51646,
+        1042,
+        11,
+        26546,
+        827,
+        14960,
+        307,
+        406,
+        257,
+        4593,
+        1941,
+        13,
+        51836
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25102794461134004,
+      "compression_ratio": 1.5093457943925233,
+      "no_speech_prob": 0.03913065791130066,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 128.14,
+          "end": 128.64,
+          "probability": 0.9418483376502991
+        },
+        {
+          "word": " Ivory",
+          "start": 129.12,
+          "end": 129.58,
+          "probability": 0.9984687864780426
+        },
+        {
+          "word": " Coast",
+          "start": 129.58,
+          "end": 130.04,
+          "probability": 0.9828659892082214
+        },
+        {
+          "word": " is",
+          "start": 130.04,
+          "end": 130.4,
+          "probability": 0.9944950938224792
+        },
+        {
+          "word": " not",
+          "start": 130.4,
+          "end": 130.68,
+          "probability": 0.9980990290641785
+        },
+        {
+          "word": " a",
+          "start": 130.68,
+          "end": 130.84,
+          "probability": 0.9978160858154297
+        },
+        {
+          "word": " rich",
+          "start": 130.84,
+          "end": 131.06,
+          "probability": 0.9990853071212769
+        },
+        {
+          "word": " country.",
+          "start": 131.06,
+          "end": 131.66,
+          "probability": 0.9986816048622131
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 13166,
+      "start": 131.66,
+      "end": 137.4,
+      "text": " I spent all my time as a kid kicking a football around with my friends in the street.",
+      "tokens": [
+        50376,
+        286,
+        4418,
+        439,
+        452,
+        565,
+        382,
+        257,
+        1636,
+        19137,
+        257,
+        7346,
+        926,
+        365,
+        452,
+        1855,
+        294,
+        264,
+        4838,
+        13,
+        50656
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18881511688232422,
+      "compression_ratio": 1.6299559471365639,
+      "no_speech_prob": 0.0017875757766887546,
+      "words": [
+        {
+          "word": " I",
+          "start": 131.66,
+          "end": 132.26,
+          "probability": 0.7384715676307678
+        },
+        {
+          "word": " spent",
+          "start": 132.26,
+          "end": 132.6,
+          "probability": 0.9166626334190369
+        },
+        {
+          "word": " all",
+          "start": 132.6,
+          "end": 132.92,
+          "probability": 0.9919344186782837
+        },
+        {
+          "word": " my",
+          "start": 132.92,
+          "end": 133.14,
+          "probability": 0.9646326899528503
+        },
+        {
+          "word": " time",
+          "start": 133.14,
+          "end": 133.46,
+          "probability": 0.9985163807868958
+        },
+        {
+          "word": " as",
+          "start": 133.46,
+          "end": 133.66,
+          "probability": 0.9780846834182739
+        },
+        {
+          "word": " a",
+          "start": 133.66,
+          "end": 133.92,
+          "probability": 0.9945833086967468
+        },
+        {
+          "word": " kid",
+          "start": 133.92,
+          "end": 134.18,
+          "probability": 0.9972077012062073
+        },
+        {
+          "word": " kicking",
+          "start": 134.18,
+          "end": 134.58,
+          "probability": 0.9577836394309998
+        },
+        {
+          "word": " a",
+          "start": 134.58,
+          "end": 134.9,
+          "probability": 0.9700130820274353
+        },
+        {
+          "word": " football",
+          "start": 134.9,
+          "end": 135.28,
+          "probability": 0.9970869421958923
+        },
+        {
+          "word": " around",
+          "start": 135.28,
+          "end": 135.72,
+          "probability": 0.9904323220252991
+        },
+        {
+          "word": " with",
+          "start": 135.72,
+          "end": 135.92,
+          "probability": 0.9940171241760254
+        },
+        {
+          "word": " my",
+          "start": 135.92,
+          "end": 136.22,
+          "probability": 0.9916641712188721
+        },
+        {
+          "word": " friends",
+          "start": 136.22,
+          "end": 136.56,
+          "probability": 0.9983392953872681
+        },
+        {
+          "word": " in",
+          "start": 136.56,
+          "end": 136.8,
+          "probability": 0.9548144340515137
+        },
+        {
+          "word": " the",
+          "start": 136.8,
+          "end": 137.08,
+          "probability": 0.9987334609031677
+        },
+        {
+          "word": " street.",
+          "start": 137.08,
+          "end": 137.4,
+          "probability": 0.9859769344329834
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 13166,
+      "start": 138.02,
+      "end": 140.54,
+      "text": " We all dreamed of getting into the academy.",
+      "tokens": [
+        50674,
+        492,
+        439,
+        26726,
+        295,
+        1242,
+        666,
+        264,
+        25525,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18881511688232422,
+      "compression_ratio": 1.6299559471365639,
+      "no_speech_prob": 0.0017875757766887546,
+      "words": [
+        {
+          "word": " We",
+          "start": 138.02,
+          "end": 138.22,
+          "probability": 0.9948825836181641
+        },
+        {
+          "word": " all",
+          "start": 138.22,
+          "end": 138.58,
+          "probability": 0.9981840252876282
+        },
+        {
+          "word": " dreamed",
+          "start": 138.58,
+          "end": 139.0,
+          "probability": 0.9947392344474792
+        },
+        {
+          "word": " of",
+          "start": 139.0,
+          "end": 139.28,
+          "probability": 0.997831404209137
+        },
+        {
+          "word": " getting",
+          "start": 139.28,
+          "end": 139.56,
+          "probability": 0.9977051615715027
+        },
+        {
+          "word": " into",
+          "start": 139.56,
+          "end": 139.88,
+          "probability": 0.9874522089958191
+        },
+        {
+          "word": " the",
+          "start": 139.88,
+          "end": 140.1,
+          "probability": 0.9963396787643433
+        },
+        {
+          "word": " academy.",
+          "start": 140.1,
+          "end": 140.54,
+          "probability": 0.6776106953620911
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 13166,
+      "start": 141.2,
+      "end": 143.98,
+      "text": " It's the one big chance to make money.",
+      "tokens": [
+        50834,
+        467,
+        311,
+        264,
+        472,
+        955,
+        2931,
+        281,
+        652,
+        1460,
+        13,
+        50980
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18881511688232422,
+      "compression_ratio": 1.6299559471365639,
+      "no_speech_prob": 0.0017875757766887546,
+      "words": [
+        {
+          "word": " It's",
+          "start": 141.2,
+          "end": 141.64,
+          "probability": 0.9732931554317474
+        },
+        {
+          "word": " the",
+          "start": 141.64,
+          "end": 141.94,
+          "probability": 0.9925766587257385
+        },
+        {
+          "word": " one",
+          "start": 141.94,
+          "end": 142.2,
+          "probability": 0.9956223368644714
+        },
+        {
+          "word": " big",
+          "start": 142.2,
+          "end": 142.52,
+          "probability": 0.9984355568885803
+        },
+        {
+          "word": " chance",
+          "start": 142.52,
+          "end": 143.12,
+          "probability": 0.9962074756622314
+        },
+        {
+          "word": " to",
+          "start": 143.12,
+          "end": 143.38,
+          "probability": 0.9983602166175842
+        },
+        {
+          "word": " make",
+          "start": 143.38,
+          "end": 143.58,
+          "probability": 0.9993581175804138
+        },
+        {
+          "word": " money.",
+          "start": 143.58,
+          "end": 143.98,
+          "probability": 0.9980584979057312
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 13166,
+      "start": 144.58,
+      "end": 147.48,
+      "text": " We had to compete with each other all the time.",
+      "tokens": [
+        51002,
+        492,
+        632,
+        281,
+        11831,
+        365,
+        1184,
+        661,
+        439,
+        264,
+        565,
+        13,
+        51154
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18881511688232422,
+      "compression_ratio": 1.6299559471365639,
+      "no_speech_prob": 0.0017875757766887546,
+      "words": [
+        {
+          "word": " We",
+          "start": 144.58,
+          "end": 144.78,
+          "probability": 0.9953634738922119
+        },
+        {
+          "word": " had",
+          "start": 144.78,
+          "end": 145.0,
+          "probability": 0.9938533306121826
+        },
+        {
+          "word": " to",
+          "start": 145.0,
+          "end": 145.28,
+          "probability": 0.9990026354789734
+        },
+        {
+          "word": " compete",
+          "start": 145.28,
+          "end": 145.54,
+          "probability": 0.998963475227356
+        },
+        {
+          "word": " with",
+          "start": 145.54,
+          "end": 145.76,
+          "probability": 0.9991205334663391
+        },
+        {
+          "word": " each",
+          "start": 145.76,
+          "end": 146.02,
+          "probability": 0.9990971088409424
+        },
+        {
+          "word": " other",
+          "start": 146.02,
+          "end": 146.34,
+          "probability": 0.9979003667831421
+        },
+        {
+          "word": " all",
+          "start": 146.34,
+          "end": 146.8,
+          "probability": 0.9953097701072693
+        },
+        {
+          "word": " the",
+          "start": 146.8,
+          "end": 147.08,
+          "probability": 0.9949373006820679
+        },
+        {
+          "word": " time.",
+          "start": 147.08,
+          "end": 147.48,
+          "probability": 0.9996471405029297
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 13166,
+      "start": 148.02,
+      "end": 151.32,
+      "text": " The big prize is getting into a professional team.",
+      "tokens": [
+        51176,
+        440,
+        955,
+        12818,
+        307,
+        1242,
+        666,
+        257,
+        4843,
+        1469,
+        13,
+        51348
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18881511688232422,
+      "compression_ratio": 1.6299559471365639,
+      "no_speech_prob": 0.0017875757766887546,
+      "words": [
+        {
+          "word": " The",
+          "start": 148.02,
+          "end": 148.2,
+          "probability": 0.996096670627594
+        },
+        {
+          "word": " big",
+          "start": 148.2,
+          "end": 148.5,
+          "probability": 0.9975171089172363
+        },
+        {
+          "word": " prize",
+          "start": 148.5,
+          "end": 149.06,
+          "probability": 0.9980941414833069
+        },
+        {
+          "word": " is",
+          "start": 149.06,
+          "end": 149.36,
+          "probability": 0.9954413175582886
+        },
+        {
+          "word": " getting",
+          "start": 149.36,
+          "end": 149.64,
+          "probability": 0.9979928731918335
+        },
+        {
+          "word": " into",
+          "start": 149.64,
+          "end": 150.02,
+          "probability": 0.9917042255401611
+        },
+        {
+          "word": " a",
+          "start": 150.02,
+          "end": 150.2,
+          "probability": 0.9969407320022583
+        },
+        {
+          "word": " professional",
+          "start": 150.2,
+          "end": 150.78,
+          "probability": 0.998609185218811
+        },
+        {
+          "word": " team.",
+          "start": 150.78,
+          "end": 151.32,
+          "probability": 0.999196469783783
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 13166,
+      "start": 151.98,
+      "end": 155.72,
+      "text": " Then you can support your family and give them a better life.",
+      "tokens": [
+        51372,
+        1396,
+        291,
+        393,
+        1406,
+        428,
+        1605,
+        293,
+        976,
+        552,
+        257,
+        1101,
+        993,
+        13,
+        51568
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18881511688232422,
+      "compression_ratio": 1.6299559471365639,
+      "no_speech_prob": 0.0017875757766887546,
+      "words": [
+        {
+          "word": " Then",
+          "start": 151.98,
+          "end": 152.32,
+          "probability": 0.9952161312103271
+        },
+        {
+          "word": " you",
+          "start": 152.32,
+          "end": 152.52,
+          "probability": 0.9251126646995544
+        },
+        {
+          "word": " can",
+          "start": 152.52,
+          "end": 152.82,
+          "probability": 0.9983200430870056
+        },
+        {
+          "word": " support",
+          "start": 152.82,
+          "end": 153.2,
+          "probability": 0.9986394047737122
+        },
+        {
+          "word": " your",
+          "start": 153.2,
+          "end": 153.48,
+          "probability": 0.9983665347099304
+        },
+        {
+          "word": " family",
+          "start": 153.48,
+          "end": 154.06,
+          "probability": 0.9991387128829956
+        },
+        {
+          "word": " and",
+          "start": 154.06,
+          "end": 154.46,
+          "probability": 0.9630959630012512
+        },
+        {
+          "word": " give",
+          "start": 154.46,
+          "end": 154.66,
+          "probability": 0.9987618923187256
+        },
+        {
+          "word": " them",
+          "start": 154.66,
+          "end": 154.86,
+          "probability": 0.9995943903923035
+        },
+        {
+          "word": " a",
+          "start": 154.86,
+          "end": 155.04,
+          "probability": 0.9992005228996277
+        },
+        {
+          "word": " better",
+          "start": 155.04,
+          "end": 155.24,
+          "probability": 0.999681830406189
+        },
+        {
+          "word": " life.",
+          "start": 155.24,
+          "end": 155.72,
+          "probability": 0.9995400905609131
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 13166,
+      "start": 156.26,
+      "end": 159.08,
+      "text": " But you have to work hard and be strong.",
+      "tokens": [
+        51592,
+        583,
+        291,
+        362,
+        281,
+        589,
+        1152,
+        293,
+        312,
+        2068,
+        13,
+        51734
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18881511688232422,
+      "compression_ratio": 1.6299559471365639,
+      "no_speech_prob": 0.0017875757766887546,
+      "words": [
+        {
+          "word": " But",
+          "start": 156.26,
+          "end": 156.5,
+          "probability": 0.9930222630500793
+        },
+        {
+          "word": " you",
+          "start": 156.5,
+          "end": 156.7,
+          "probability": 0.9880501627922058
+        },
+        {
+          "word": " have",
+          "start": 156.7,
+          "end": 156.96,
+          "probability": 0.9983015060424805
+        },
+        {
+          "word": " to",
+          "start": 156.96,
+          "end": 157.14,
+          "probability": 0.9988760352134705
+        },
+        {
+          "word": " work",
+          "start": 157.14,
+          "end": 157.44,
+          "probability": 0.9992334842681885
+        },
+        {
+          "word": " hard",
+          "start": 157.44,
+          "end": 157.92,
+          "probability": 0.999193012714386
+        },
+        {
+          "word": " and",
+          "start": 157.92,
+          "end": 158.24,
+          "probability": 0.9757834076881409
+        },
+        {
+          "word": " be",
+          "start": 158.24,
+          "end": 158.6,
+          "probability": 0.999060332775116
+        },
+        {
+          "word": " strong.",
+          "start": 158.6,
+          "end": 159.08,
+          "probability": 0.9991614818572998
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 15908,
+      "start": 159.08,
+      "end": 162.74,
+      "text": " You also have to be lucky to get the opportunity.",
+      "tokens": [
+        50388,
+        509,
+        611,
+        362,
+        281,
+        312,
+        6356,
+        281,
+        483,
+        264,
+        2650,
+        13,
+        50556
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23354606917410187,
+      "compression_ratio": 1.4790419161676647,
+      "no_speech_prob": 0.009596754796802998,
+      "words": [
+        {
+          "word": " You",
+          "start": 159.08,
+          "end": 159.84,
+          "probability": 0.9396480321884155
+        },
+        {
+          "word": " also",
+          "start": 159.84,
+          "end": 160.24,
+          "probability": 0.9925615191459656
+        },
+        {
+          "word": " have",
+          "start": 160.24,
+          "end": 160.54,
+          "probability": 0.9968074560165405
+        },
+        {
+          "word": " to",
+          "start": 160.54,
+          "end": 160.66,
+          "probability": 0.9983768463134766
+        },
+        {
+          "word": " be",
+          "start": 160.66,
+          "end": 160.84,
+          "probability": 0.997957706451416
+        },
+        {
+          "word": " lucky",
+          "start": 160.84,
+          "end": 161.26,
+          "probability": 0.9929757118225098
+        },
+        {
+          "word": " to",
+          "start": 161.26,
+          "end": 161.52,
+          "probability": 0.9956297874450684
+        },
+        {
+          "word": " get",
+          "start": 161.52,
+          "end": 161.76,
+          "probability": 0.9978721141815186
+        },
+        {
+          "word": " the",
+          "start": 161.76,
+          "end": 162.06,
+          "probability": 0.9897488951683044
+        },
+        {
+          "word": " opportunity.",
+          "start": 162.06,
+          "end": 162.74,
+          "probability": 0.9963255524635315
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 15908,
+      "start": 163.56,
+      "end": 167.12,
+      "text": " The football business is hardest to vol for the players.",
+      "tokens": [
+        50576,
+        440,
+        7346,
+        1606,
+        307,
+        13158,
+        281,
+        1996,
+        337,
+        264,
+        4150,
+        13,
+        50772
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23354606917410187,
+      "compression_ratio": 1.4790419161676647,
+      "no_speech_prob": 0.009596754796802998,
+      "words": [
+        {
+          "word": " The",
+          "start": 163.56,
+          "end": 163.72,
+          "probability": 0.9950653910636902
+        },
+        {
+          "word": " football",
+          "start": 163.72,
+          "end": 164.1,
+          "probability": 0.9973152279853821
+        },
+        {
+          "word": " business",
+          "start": 164.1,
+          "end": 164.72,
+          "probability": 0.9979231953620911
+        },
+        {
+          "word": " is",
+          "start": 164.72,
+          "end": 165.2,
+          "probability": 0.9970260262489319
+        },
+        {
+          "word": " hardest",
+          "start": 165.2,
+          "end": 165.68,
+          "probability": 0.9823022484779358
+        },
+        {
+          "word": " to",
+          "start": 165.68,
+          "end": 165.98,
+          "probability": 0.9218614101409912
+        },
+        {
+          "word": " vol",
+          "start": 165.98,
+          "end": 166.12,
+          "probability": 0.8952428102493286
+        },
+        {
+          "word": " for",
+          "start": 166.12,
+          "end": 166.38,
+          "probability": 0.902194619178772
+        },
+        {
+          "word": " the",
+          "start": 166.38,
+          "end": 166.64,
+          "probability": 0.9936941266059875
+        },
+        {
+          "word": " players.",
+          "start": 166.64,
+          "end": 167.12,
+          "probability": 0.9967237114906311
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 15908,
+      "start": 167.92,
+      "end": 171.0,
+      "text": " Clubs are businesses that buy and sell us.",
+      "tokens": [
+        50792,
+        2033,
+        5432,
+        366,
+        6011,
+        300,
+        2256,
+        293,
+        3607,
+        505,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23354606917410187,
+      "compression_ratio": 1.4790419161676647,
+      "no_speech_prob": 0.009596754796802998,
+      "words": [
+        {
+          "word": " Clubs",
+          "start": 167.92,
+          "end": 168.22,
+          "probability": 0.9965465366840363
+        },
+        {
+          "word": " are",
+          "start": 168.22,
+          "end": 168.48,
+          "probability": 0.9861904382705688
+        },
+        {
+          "word": " businesses",
+          "start": 168.48,
+          "end": 169.12,
+          "probability": 0.9605929851531982
+        },
+        {
+          "word": " that",
+          "start": 169.12,
+          "end": 169.68,
+          "probability": 0.994101345539093
+        },
+        {
+          "word": " buy",
+          "start": 169.68,
+          "end": 170.06,
+          "probability": 0.9962409734725952
+        },
+        {
+          "word": " and",
+          "start": 170.06,
+          "end": 170.44,
+          "probability": 0.9951748251914978
+        },
+        {
+          "word": " sell",
+          "start": 170.44,
+          "end": 170.64,
+          "probability": 0.9985527396202087
+        },
+        {
+          "word": " us.",
+          "start": 170.64,
+          "end": 171.0,
+          "probability": 0.9989351630210876
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 15908,
+      "start": 171.56,
+      "end": 175.58,
+      "text": " If you get hurt and can't play anymore, you can lose your job.",
+      "tokens": [
+        50980,
+        759,
+        291,
+        483,
+        4607,
+        293,
+        393,
+        380,
+        862,
+        3602,
+        11,
+        291,
+        393,
+        3624,
+        428,
+        1691,
+        13,
+        51192
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23354606917410187,
+      "compression_ratio": 1.4790419161676647,
+      "no_speech_prob": 0.009596754796802998,
+      "words": [
+        {
+          "word": " If",
+          "start": 171.56,
+          "end": 171.74,
+          "probability": 0.9945289492607117
+        },
+        {
+          "word": " you",
+          "start": 171.74,
+          "end": 171.94,
+          "probability": 0.9987824559211731
+        },
+        {
+          "word": " get",
+          "start": 171.94,
+          "end": 172.14,
+          "probability": 0.9980530738830566
+        },
+        {
+          "word": " hurt",
+          "start": 172.14,
+          "end": 172.52,
+          "probability": 0.9991287589073181
+        },
+        {
+          "word": " and",
+          "start": 172.52,
+          "end": 172.86,
+          "probability": 0.9744757413864136
+        },
+        {
+          "word": " can't",
+          "start": 172.86,
+          "end": 173.34,
+          "probability": 0.9916447401046753
+        },
+        {
+          "word": " play",
+          "start": 173.34,
+          "end": 173.5,
+          "probability": 0.998691737651825
+        },
+        {
+          "word": " anymore,",
+          "start": 173.5,
+          "end": 173.98,
+          "probability": 0.9364675879478455
+        },
+        {
+          "word": " you",
+          "start": 174.4,
+          "end": 174.52,
+          "probability": 0.9961504936218262
+        },
+        {
+          "word": " can",
+          "start": 174.52,
+          "end": 174.7,
+          "probability": 0.9957374334335327
+        },
+        {
+          "word": " lose",
+          "start": 174.7,
+          "end": 174.98,
+          "probability": 0.9913651943206787
+        },
+        {
+          "word": " your",
+          "start": 174.98,
+          "end": 175.26,
+          "probability": 0.9980645775794983
+        },
+        {
+          "word": " job.",
+          "start": 175.26,
+          "end": 175.58,
+          "probability": 0.999524712562561
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 15908,
+      "start": 176.34,
+      "end": 178.46,
+      "text": " Nobody cares about you after that.",
+      "tokens": [
+        51214,
+        9297,
+        12310,
+        466,
+        291,
+        934,
+        300,
+        13,
+        51340
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.23354606917410187,
+      "compression_ratio": 1.4790419161676647,
+      "no_speech_prob": 0.009596754796802998,
+      "words": [
+        {
+          "word": " Nobody",
+          "start": 176.34,
+          "end": 176.58,
+          "probability": 0.9938288331031799
+        },
+        {
+          "word": " cares",
+          "start": 176.58,
+          "end": 177.06,
+          "probability": 0.9976660013198853
+        },
+        {
+          "word": " about",
+          "start": 177.06,
+          "end": 177.46,
+          "probability": 0.9984672665596008
+        },
+        {
+          "word": " you",
+          "start": 177.46,
+          "end": 177.76,
+          "probability": 0.998285710811615
+        },
+        {
+          "word": " after",
+          "start": 177.76,
+          "end": 178.08,
+          "probability": 0.9955345392227173
+        },
+        {
+          "word": " that.",
+          "start": 178.08,
+          "end": 178.46,
+          "probability": 0.9991779923439026
+        }
+      ]
+    }
+  ]
+}

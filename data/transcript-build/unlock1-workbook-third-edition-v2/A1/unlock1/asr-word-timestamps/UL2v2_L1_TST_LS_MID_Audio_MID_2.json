@@ -1,0 +1,2051 @@
+{
+  "model": "base",
+  "language": "en",
+  "text": "Mid-course test, Track 2 I live in Cairo in Egypt. Cairo is a very busy city with many people. The river Nile is in Cairo and there are many bridges over the river. But a very famous bridge is the Casser El Nile Bridge. Cairo has many old buildings and also lots of new buildings. There is a university near the river and many shopping centers, hotels and beautiful parks. At weekends I go with my family to a park next to a big hotel and relax all afternoon. The weather in Cairo is very hot and dry in the summer and there are sandstorms that come from the desert. In the winter it rains a little but it is still hot. My hometown is in Switzerland. It is small, beautiful and very busy. In the winter we have a lot of snow and it is very cold but the sky is blue and it is sunny. The summer in the mountains isn't very hot and it rains but the forests are green. Lots of people come to my town and walk in the mountains or ski in the snow. The town has two hotels, a lot of restaurants and a train station. We also have a supermarket and a park with an old monument in it. Next to the park is a library and there is a little cafe behind it. I go there every Saturday to have coffee.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.96,
+      "text": " Mid-course test, Track 2",
+      "tokens": [
+        50364,
+        7033,
+        12,
+        31913,
+        1500,
+        11,
+        31903,
+        568,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22789632706415086,
+      "compression_ratio": 1.5642458100558658,
+      "no_speech_prob": 0.13343104720115662,
+      "words": [
+        {
+          "word": " Mid",
+          "start": 0.0,
+          "end": 0.56,
+          "probability": 0.38969388604164124
+        },
+        {
+          "word": "-course",
+          "start": 0.56,
+          "end": 0.9,
+          "probability": 0.59464992582798
+        },
+        {
+          "word": " test,",
+          "start": 0.9,
+          "end": 1.52,
+          "probability": 0.8230526447296143
+        },
+        {
+          "word": " Track",
+          "start": 1.94,
+          "end": 2.42,
+          "probability": 0.5856298208236694
+        },
+        {
+          "word": " 2",
+          "start": 2.42,
+          "end": 2.96,
+          "probability": 0.8928598761558533
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.0,
+      "end": 7.22,
+      "text": " I live in Cairo in Egypt.",
+      "tokens": [
+        50614,
+        286,
+        1621,
+        294,
+        30983,
+        340,
+        294,
+        9582,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22789632706415086,
+      "compression_ratio": 1.5642458100558658,
+      "no_speech_prob": 0.13343104720115662,
+      "words": [
+        {
+          "word": " I",
+          "start": 4.84,
+          "end": 5.26,
+          "probability": 0.08210407942533493
+        },
+        {
+          "word": " live",
+          "start": 5.26,
+          "end": 5.52,
+          "probability": 0.990282416343689
+        },
+        {
+          "word": " in",
+          "start": 5.52,
+          "end": 5.82,
+          "probability": 0.9985848665237427
+        },
+        {
+          "word": " Cairo",
+          "start": 5.82,
+          "end": 6.3,
+          "probability": 0.9628105461597443
+        },
+        {
+          "word": " in",
+          "start": 6.3,
+          "end": 6.72,
+          "probability": 0.45482662320137024
+        },
+        {
+          "word": " Egypt.",
+          "start": 6.72,
+          "end": 7.22,
+          "probability": 0.9971580505371094
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 7.76,
+      "end": 11.54,
+      "text": " Cairo is a very busy city with many people.",
+      "tokens": [
+        50764,
+        30983,
+        340,
+        307,
+        257,
+        588,
+        5856,
+        2307,
+        365,
+        867,
+        561,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22789632706415086,
+      "compression_ratio": 1.5642458100558658,
+      "no_speech_prob": 0.13343104720115662,
+      "words": [
+        {
+          "word": " Cairo",
+          "start": 7.76,
+          "end": 8.6,
+          "probability": 0.994949996471405
+        },
+        {
+          "word": " is",
+          "start": 8.6,
+          "end": 8.82,
+          "probability": 0.9982922673225403
+        },
+        {
+          "word": " a",
+          "start": 8.82,
+          "end": 8.94,
+          "probability": 0.9904100894927979
+        },
+        {
+          "word": " very",
+          "start": 8.94,
+          "end": 9.36,
+          "probability": 0.9958404898643494
+        },
+        {
+          "word": " busy",
+          "start": 9.36,
+          "end": 9.66,
+          "probability": 0.9981696605682373
+        },
+        {
+          "word": " city",
+          "start": 9.66,
+          "end": 10.18,
+          "probability": 0.9978283047676086
+        },
+        {
+          "word": " with",
+          "start": 10.18,
+          "end": 10.54,
+          "probability": 0.9573555588722229
+        },
+        {
+          "word": " many",
+          "start": 10.54,
+          "end": 10.92,
+          "probability": 0.9967435002326965
+        },
+        {
+          "word": " people.",
+          "start": 10.92,
+          "end": 11.54,
+          "probability": 0.9974000453948975
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.98,
+      "end": 17.08,
+      "text": " The river Nile is in Cairo and there are many bridges over the river.",
+      "tokens": [
+        50964,
+        440,
+        6810,
+        426,
+        794,
+        307,
+        294,
+        30983,
+        340,
+        293,
+        456,
+        366,
+        867,
+        21114,
+        670,
+        264,
+        6810,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22789632706415086,
+      "compression_ratio": 1.5642458100558658,
+      "no_speech_prob": 0.13343104720115662,
+      "words": [
+        {
+          "word": " The",
+          "start": 11.98,
+          "end": 12.82,
+          "probability": 0.9905411601066589
+        },
+        {
+          "word": " river",
+          "start": 12.82,
+          "end": 13.02,
+          "probability": 0.608034074306488
+        },
+        {
+          "word": " Nile",
+          "start": 13.02,
+          "end": 13.44,
+          "probability": 0.891879141330719
+        },
+        {
+          "word": " is",
+          "start": 13.44,
+          "end": 13.7,
+          "probability": 0.9938250780105591
+        },
+        {
+          "word": " in",
+          "start": 13.7,
+          "end": 13.82,
+          "probability": 0.9979598522186279
+        },
+        {
+          "word": " Cairo",
+          "start": 13.82,
+          "end": 14.32,
+          "probability": 0.9996311366558075
+        },
+        {
+          "word": " and",
+          "start": 14.32,
+          "end": 14.9,
+          "probability": 0.7505742311477661
+        },
+        {
+          "word": " there",
+          "start": 14.9,
+          "end": 15.06,
+          "probability": 0.9976907968521118
+        },
+        {
+          "word": " are",
+          "start": 15.06,
+          "end": 15.16,
+          "probability": 0.9976761937141418
+        },
+        {
+          "word": " many",
+          "start": 15.16,
+          "end": 15.58,
+          "probability": 0.9975289702415466
+        },
+        {
+          "word": " bridges",
+          "start": 15.58,
+          "end": 16.06,
+          "probability": 0.993685781955719
+        },
+        {
+          "word": " over",
+          "start": 16.06,
+          "end": 16.6,
+          "probability": 0.9970285296440125
+        },
+        {
+          "word": " the",
+          "start": 16.6,
+          "end": 16.76,
+          "probability": 0.9990241527557373
+        },
+        {
+          "word": " river.",
+          "start": 16.76,
+          "end": 17.08,
+          "probability": 0.989376425743103
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 17.64,
+      "end": 22.54,
+      "text": " But a very famous bridge is the Casser El Nile Bridge.",
+      "tokens": [
+        51264,
+        583,
+        257,
+        588,
+        4618,
+        7283,
+        307,
+        264,
+        383,
+        12129,
+        2699,
+        426,
+        794,
+        18917,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22789632706415086,
+      "compression_ratio": 1.5642458100558658,
+      "no_speech_prob": 0.13343104720115662,
+      "words": [
+        {
+          "word": " But",
+          "start": 17.64,
+          "end": 18.28,
+          "probability": 0.9821885228157043
+        },
+        {
+          "word": " a",
+          "start": 18.28,
+          "end": 18.5,
+          "probability": 0.9666891098022461
+        },
+        {
+          "word": " very",
+          "start": 18.5,
+          "end": 18.82,
+          "probability": 0.9961075186729431
+        },
+        {
+          "word": " famous",
+          "start": 18.82,
+          "end": 19.34,
+          "probability": 0.9989327788352966
+        },
+        {
+          "word": " bridge",
+          "start": 19.34,
+          "end": 19.78,
+          "probability": 0.9961004257202148
+        },
+        {
+          "word": " is",
+          "start": 19.78,
+          "end": 20.44,
+          "probability": 0.9784319400787354
+        },
+        {
+          "word": " the",
+          "start": 20.44,
+          "end": 20.6,
+          "probability": 0.9753575921058655
+        },
+        {
+          "word": " Casser",
+          "start": 20.6,
+          "end": 21.14,
+          "probability": 0.43787524849176407
+        },
+        {
+          "word": " El",
+          "start": 21.14,
+          "end": 21.54,
+          "probability": 0.6564926505088806
+        },
+        {
+          "word": " Nile",
+          "start": 21.54,
+          "end": 21.9,
+          "probability": 0.6615397036075592
+        },
+        {
+          "word": " Bridge.",
+          "start": 21.9,
+          "end": 22.54,
+          "probability": 0.6313456296920776
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 23.54,
+      "end": 28.2,
+      "text": " Cairo has many old buildings and also lots of new buildings.",
+      "tokens": [
+        51514,
+        30983,
+        340,
+        575,
+        867,
+        1331,
+        7446,
+        293,
+        611,
+        3195,
+        295,
+        777,
+        7446,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.22789632706415086,
+      "compression_ratio": 1.5642458100558658,
+      "no_speech_prob": 0.13343104720115662,
+      "words": [
+        {
+          "word": " Cairo",
+          "start": 23.54,
+          "end": 24.38,
+          "probability": 0.9951446354389191
+        },
+        {
+          "word": " has",
+          "start": 24.38,
+          "end": 24.68,
+          "probability": 0.9956328272819519
+        },
+        {
+          "word": " many",
+          "start": 24.68,
+          "end": 25.06,
+          "probability": 0.9993519186973572
+        },
+        {
+          "word": " old",
+          "start": 25.06,
+          "end": 25.46,
+          "probability": 0.9903312921524048
+        },
+        {
+          "word": " buildings",
+          "start": 25.46,
+          "end": 25.92,
+          "probability": 0.9981934428215027
+        },
+        {
+          "word": " and",
+          "start": 25.92,
+          "end": 26.5,
+          "probability": 0.959968090057373
+        },
+        {
+          "word": " also",
+          "start": 26.5,
+          "end": 26.96,
+          "probability": 0.9853643774986267
+        },
+        {
+          "word": " lots",
+          "start": 26.96,
+          "end": 27.28,
+          "probability": 0.9888314008712769
+        },
+        {
+          "word": " of",
+          "start": 27.28,
+          "end": 27.5,
+          "probability": 0.9974209070205688
+        },
+        {
+          "word": " new",
+          "start": 27.5,
+          "end": 27.7,
+          "probability": 0.9973032474517822
+        },
+        {
+          "word": " buildings.",
+          "start": 27.7,
+          "end": 28.2,
+          "probability": 0.9969019889831543
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2820,
+      "start": 28.2,
+      "end": 35.32,
+      "text": " There is a university near the river and many shopping centers, hotels and beautiful parks.",
+      "tokens": [
+        50364,
+        821,
+        307,
+        257,
+        5454,
+        2651,
+        264,
+        6810,
+        293,
+        867,
+        8688,
+        10898,
+        11,
+        22718,
+        293,
+        2238,
+        16213,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08068406241280691,
+      "compression_ratio": 1.507936507936508,
+      "no_speech_prob": 0.01633792743086815,
+      "words": [
+        {
+          "word": " There",
+          "start": 28.2,
+          "end": 29.2,
+          "probability": 0.8578451871871948
+        },
+        {
+          "word": " is",
+          "start": 29.2,
+          "end": 29.36,
+          "probability": 0.987097442150116
+        },
+        {
+          "word": " a",
+          "start": 29.36,
+          "end": 29.5,
+          "probability": 0.9960999488830566
+        },
+        {
+          "word": " university",
+          "start": 29.5,
+          "end": 30.24,
+          "probability": 0.9184028506278992
+        },
+        {
+          "word": " near",
+          "start": 30.24,
+          "end": 30.74,
+          "probability": 0.9842065572738647
+        },
+        {
+          "word": " the",
+          "start": 30.74,
+          "end": 30.98,
+          "probability": 0.9867187142372131
+        },
+        {
+          "word": " river",
+          "start": 30.98,
+          "end": 31.32,
+          "probability": 0.9808876514434814
+        },
+        {
+          "word": " and",
+          "start": 31.32,
+          "end": 31.9,
+          "probability": 0.9130237102508545
+        },
+        {
+          "word": " many",
+          "start": 31.9,
+          "end": 32.26,
+          "probability": 0.9972375631332397
+        },
+        {
+          "word": " shopping",
+          "start": 32.26,
+          "end": 32.6,
+          "probability": 0.9971709847450256
+        },
+        {
+          "word": " centers,",
+          "start": 32.6,
+          "end": 33.12,
+          "probability": 0.6827013492584229
+        },
+        {
+          "word": " hotels",
+          "start": 33.58,
+          "end": 33.82,
+          "probability": 0.9876870512962341
+        },
+        {
+          "word": " and",
+          "start": 33.82,
+          "end": 34.4,
+          "probability": 0.9140102863311768
+        },
+        {
+          "word": " beautiful",
+          "start": 34.4,
+          "end": 34.84,
+          "probability": 0.9964984655380249
+        },
+        {
+          "word": " parks.",
+          "start": 34.84,
+          "end": 35.32,
+          "probability": 0.9890794157981873
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2820,
+      "start": 36.26,
+      "end": 42.64,
+      "text": " At weekends I go with my family to a park next to a big hotel and relax all afternoon.",
+      "tokens": [
+        50764,
+        1711,
+        23595,
+        286,
+        352,
+        365,
+        452,
+        1605,
+        281,
+        257,
+        3884,
+        958,
+        281,
+        257,
+        955,
+        7622,
+        293,
+        5789,
+        439,
+        6499,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08068406241280691,
+      "compression_ratio": 1.507936507936508,
+      "no_speech_prob": 0.01633792743086815,
+      "words": [
+        {
+          "word": " At",
+          "start": 36.26,
+          "end": 36.48,
+          "probability": 0.9943271279335022
+        },
+        {
+          "word": " weekends",
+          "start": 36.48,
+          "end": 36.86,
+          "probability": 0.9717811346054077
+        },
+        {
+          "word": " I",
+          "start": 36.86,
+          "end": 37.4,
+          "probability": 0.6161887049674988
+        },
+        {
+          "word": " go",
+          "start": 37.4,
+          "end": 37.58,
+          "probability": 0.9948564767837524
+        },
+        {
+          "word": " with",
+          "start": 37.58,
+          "end": 37.76,
+          "probability": 0.9974574446678162
+        },
+        {
+          "word": " my",
+          "start": 37.76,
+          "end": 37.92,
+          "probability": 0.9987101554870605
+        },
+        {
+          "word": " family",
+          "start": 37.92,
+          "end": 38.34,
+          "probability": 0.9988523721694946
+        },
+        {
+          "word": " to",
+          "start": 38.34,
+          "end": 38.68,
+          "probability": 0.9779877662658691
+        },
+        {
+          "word": " a",
+          "start": 38.68,
+          "end": 38.76,
+          "probability": 0.9894700050354004
+        },
+        {
+          "word": " park",
+          "start": 38.76,
+          "end": 39.04,
+          "probability": 0.9963688850402832
+        },
+        {
+          "word": " next",
+          "start": 39.04,
+          "end": 39.44,
+          "probability": 0.9956713914871216
+        },
+        {
+          "word": " to",
+          "start": 39.44,
+          "end": 39.74,
+          "probability": 0.9986873269081116
+        },
+        {
+          "word": " a",
+          "start": 39.74,
+          "end": 39.84,
+          "probability": 0.9965498447418213
+        },
+        {
+          "word": " big",
+          "start": 39.84,
+          "end": 40.1,
+          "probability": 0.9967886209487915
+        },
+        {
+          "word": " hotel",
+          "start": 40.1,
+          "end": 40.6,
+          "probability": 0.9968089461326599
+        },
+        {
+          "word": " and",
+          "start": 40.6,
+          "end": 41.12,
+          "probability": 0.9750478863716125
+        },
+        {
+          "word": " relax",
+          "start": 41.12,
+          "end": 41.5,
+          "probability": 0.9976648092269897
+        },
+        {
+          "word": " all",
+          "start": 41.5,
+          "end": 42.0,
+          "probability": 0.9833571910858154
+        },
+        {
+          "word": " afternoon.",
+          "start": 42.0,
+          "end": 42.64,
+          "probability": 0.9844824075698853
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2820,
+      "start": 44.04,
+      "end": 51.92,
+      "text": " The weather in Cairo is very hot and dry in the summer and there are sandstorms that come from the desert.",
+      "tokens": [
+        51114,
+        440,
+        5503,
+        294,
+        30983,
+        340,
+        307,
+        588,
+        2368,
+        293,
+        4016,
+        294,
+        264,
+        4266,
+        293,
+        456,
+        366,
+        4932,
+        17367,
+        82,
+        300,
+        808,
+        490,
+        264,
+        11029,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08068406241280691,
+      "compression_ratio": 1.507936507936508,
+      "no_speech_prob": 0.01633792743086815,
+      "words": [
+        {
+          "word": " The",
+          "start": 44.04,
+          "end": 44.34,
+          "probability": 0.9935007691383362
+        },
+        {
+          "word": " weather",
+          "start": 44.34,
+          "end": 44.7,
+          "probability": 0.9990382194519043
+        },
+        {
+          "word": " in",
+          "start": 44.7,
+          "end": 45.04,
+          "probability": 0.9954119324684143
+        },
+        {
+          "word": " Cairo",
+          "start": 45.04,
+          "end": 45.52,
+          "probability": 0.9386981427669525
+        },
+        {
+          "word": " is",
+          "start": 45.52,
+          "end": 45.8,
+          "probability": 0.995385468006134
+        },
+        {
+          "word": " very",
+          "start": 45.8,
+          "end": 46.24,
+          "probability": 0.983283519744873
+        },
+        {
+          "word": " hot",
+          "start": 46.24,
+          "end": 46.66,
+          "probability": 0.9993236064910889
+        },
+        {
+          "word": " and",
+          "start": 46.66,
+          "end": 47.02,
+          "probability": 0.9971761703491211
+        },
+        {
+          "word": " dry",
+          "start": 47.02,
+          "end": 47.44,
+          "probability": 0.9971874356269836
+        },
+        {
+          "word": " in",
+          "start": 47.44,
+          "end": 47.78,
+          "probability": 0.9939275979995728
+        },
+        {
+          "word": " the",
+          "start": 47.78,
+          "end": 47.88,
+          "probability": 0.9779208302497864
+        },
+        {
+          "word": " summer",
+          "start": 47.88,
+          "end": 48.24,
+          "probability": 0.9936442375183105
+        },
+        {
+          "word": " and",
+          "start": 48.24,
+          "end": 49.16,
+          "probability": 0.6546033024787903
+        },
+        {
+          "word": " there",
+          "start": 49.16,
+          "end": 49.36,
+          "probability": 0.995940089225769
+        },
+        {
+          "word": " are",
+          "start": 49.36,
+          "end": 49.48,
+          "probability": 0.9967904686927795
+        },
+        {
+          "word": " sandstorms",
+          "start": 49.48,
+          "end": 50.66,
+          "probability": 0.8428924282391866
+        },
+        {
+          "word": " that",
+          "start": 50.66,
+          "end": 50.74,
+          "probability": 0.9958410859107971
+        },
+        {
+          "word": " come",
+          "start": 50.74,
+          "end": 51.0,
+          "probability": 0.9948443174362183
+        },
+        {
+          "word": " from",
+          "start": 51.0,
+          "end": 51.36,
+          "probability": 0.9978766441345215
+        },
+        {
+          "word": " the",
+          "start": 51.36,
+          "end": 51.54,
+          "probability": 0.9781697988510132
+        },
+        {
+          "word": " desert.",
+          "start": 51.54,
+          "end": 51.92,
+          "probability": 0.9983323216438293
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 5192,
+      "start": 52.92,
+      "end": 57.5,
+      "text": " In the winter it rains a little but it is still hot.",
+      "tokens": [
+        50414,
+        682,
+        264,
+        6355,
+        309,
+        27805,
+        257,
+        707,
+        457,
+        309,
+        307,
+        920,
+        2368,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08992787330381331,
+      "compression_ratio": 1.4965034965034965,
+      "no_speech_prob": 0.5861369371414185,
+      "words": [
+        {
+          "word": " In",
+          "start": 52.900000000000006,
+          "end": 53.28,
+          "probability": 0.31597277522087097
+        },
+        {
+          "word": " the",
+          "start": 53.28,
+          "end": 53.46,
+          "probability": 0.9677414298057556
+        },
+        {
+          "word": " winter",
+          "start": 53.46,
+          "end": 53.88,
+          "probability": 0.9934242963790894
+        },
+        {
+          "word": " it",
+          "start": 53.88,
+          "end": 54.5,
+          "probability": 0.5559789538383484
+        },
+        {
+          "word": " rains",
+          "start": 54.5,
+          "end": 54.88,
+          "probability": 0.9906383752822876
+        },
+        {
+          "word": " a",
+          "start": 54.88,
+          "end": 55.12,
+          "probability": 0.997262716293335
+        },
+        {
+          "word": " little",
+          "start": 55.12,
+          "end": 55.5,
+          "probability": 0.9923275113105774
+        },
+        {
+          "word": " but",
+          "start": 55.5,
+          "end": 56.1,
+          "probability": 0.5570570826530457
+        },
+        {
+          "word": " it",
+          "start": 56.1,
+          "end": 56.26,
+          "probability": 0.9833059906959534
+        },
+        {
+          "word": " is",
+          "start": 56.26,
+          "end": 56.4,
+          "probability": 0.9940627217292786
+        },
+        {
+          "word": " still",
+          "start": 56.4,
+          "end": 56.92,
+          "probability": 0.9980652928352356
+        },
+        {
+          "word": " hot.",
+          "start": 56.92,
+          "end": 57.5,
+          "probability": 0.9989952445030212
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5192,
+      "start": 59.66,
+      "end": 61.96,
+      "text": " My hometown is in Switzerland.",
+      "tokens": [
+        50714,
+        1222,
+        22112,
+        307,
+        294,
+        23312,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08992787330381331,
+      "compression_ratio": 1.4965034965034965,
+      "no_speech_prob": 0.5861369371414185,
+      "words": [
+        {
+          "word": " My",
+          "start": 59.66,
+          "end": 60.0,
+          "probability": 0.8406538963317871
+        },
+        {
+          "word": " hometown",
+          "start": 60.0,
+          "end": 60.52,
+          "probability": 0.9044638276100159
+        },
+        {
+          "word": " is",
+          "start": 60.52,
+          "end": 61.08,
+          "probability": 0.9945245981216431
+        },
+        {
+          "word": " in",
+          "start": 61.08,
+          "end": 61.44,
+          "probability": 0.9957744479179382
+        },
+        {
+          "word": " Switzerland.",
+          "start": 61.44,
+          "end": 61.96,
+          "probability": 0.9913462996482849
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 5192,
+      "start": 62.72,
+      "end": 65.88,
+      "text": " It is small, beautiful and very busy.",
+      "tokens": [
+        50864,
+        467,
+        307,
+        1359,
+        11,
+        2238,
+        293,
+        588,
+        5856,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08992787330381331,
+      "compression_ratio": 1.4965034965034965,
+      "no_speech_prob": 0.5861369371414185,
+      "words": [
+        {
+          "word": " It",
+          "start": 62.72,
+          "end": 62.9,
+          "probability": 0.985079824924469
+        },
+        {
+          "word": " is",
+          "start": 62.9,
+          "end": 63.02,
+          "probability": 0.9973468780517578
+        },
+        {
+          "word": " small,",
+          "start": 63.02,
+          "end": 63.48,
+          "probability": 0.9976629018783569
+        },
+        {
+          "word": " beautiful",
+          "start": 63.84,
+          "end": 64.2,
+          "probability": 0.998496413230896
+        },
+        {
+          "word": " and",
+          "start": 64.2,
+          "end": 64.98,
+          "probability": 0.8719251751899719
+        },
+        {
+          "word": " very",
+          "start": 64.98,
+          "end": 65.52,
+          "probability": 0.9965537786483765
+        },
+        {
+          "word": " busy.",
+          "start": 65.52,
+          "end": 65.88,
+          "probability": 0.9977622032165527
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 5192,
+      "start": 66.76,
+      "end": 75.24,
+      "text": " In the winter we have a lot of snow and it is very cold but the sky is blue and it is sunny.",
+      "tokens": [
+        51064,
+        682,
+        264,
+        6355,
+        321,
+        362,
+        257,
+        688,
+        295,
+        5756,
+        293,
+        309,
+        307,
+        588,
+        3554,
+        457,
+        264,
+        5443,
+        307,
+        3344,
+        293,
+        309,
+        307,
+        20412,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08992787330381331,
+      "compression_ratio": 1.4965034965034965,
+      "no_speech_prob": 0.5861369371414185,
+      "words": [
+        {
+          "word": " In",
+          "start": 66.76,
+          "end": 67.18,
+          "probability": 0.9949232935905457
+        },
+        {
+          "word": " the",
+          "start": 67.18,
+          "end": 67.32,
+          "probability": 0.9983494281768799
+        },
+        {
+          "word": " winter",
+          "start": 67.32,
+          "end": 67.7,
+          "probability": 0.9978893399238586
+        },
+        {
+          "word": " we",
+          "start": 67.7,
+          "end": 68.3,
+          "probability": 0.9142345190048218
+        },
+        {
+          "word": " have",
+          "start": 68.3,
+          "end": 68.66,
+          "probability": 0.9991057515144348
+        },
+        {
+          "word": " a",
+          "start": 68.66,
+          "end": 68.84,
+          "probability": 0.9969927072525024
+        },
+        {
+          "word": " lot",
+          "start": 68.84,
+          "end": 68.98,
+          "probability": 0.999373733997345
+        },
+        {
+          "word": " of",
+          "start": 68.98,
+          "end": 69.2,
+          "probability": 0.9985517859458923
+        },
+        {
+          "word": " snow",
+          "start": 69.2,
+          "end": 69.52,
+          "probability": 0.9989765882492065
+        },
+        {
+          "word": " and",
+          "start": 69.52,
+          "end": 70.42,
+          "probability": 0.921166181564331
+        },
+        {
+          "word": " it",
+          "start": 70.42,
+          "end": 70.64,
+          "probability": 0.9968596696853638
+        },
+        {
+          "word": " is",
+          "start": 70.64,
+          "end": 70.8,
+          "probability": 0.9982923865318298
+        },
+        {
+          "word": " very",
+          "start": 70.8,
+          "end": 71.04,
+          "probability": 0.9989770650863647
+        },
+        {
+          "word": " cold",
+          "start": 71.04,
+          "end": 71.6,
+          "probability": 0.9997772574424744
+        },
+        {
+          "word": " but",
+          "start": 71.6,
+          "end": 72.36,
+          "probability": 0.4911153018474579
+        },
+        {
+          "word": " the",
+          "start": 72.36,
+          "end": 72.64,
+          "probability": 0.9974835515022278
+        },
+        {
+          "word": " sky",
+          "start": 72.64,
+          "end": 73.0,
+          "probability": 0.9989416003227234
+        },
+        {
+          "word": " is",
+          "start": 73.0,
+          "end": 73.54,
+          "probability": 0.9986169338226318
+        },
+        {
+          "word": " blue",
+          "start": 73.54,
+          "end": 73.88,
+          "probability": 0.9977339506149292
+        },
+        {
+          "word": " and",
+          "start": 73.88,
+          "end": 74.52,
+          "probability": 0.9845273494720459
+        },
+        {
+          "word": " it",
+          "start": 74.52,
+          "end": 74.7,
+          "probability": 0.9902896285057068
+        },
+        {
+          "word": " is",
+          "start": 74.7,
+          "end": 74.86,
+          "probability": 0.9977942705154419
+        },
+        {
+          "word": " sunny.",
+          "start": 74.86,
+          "end": 75.24,
+          "probability": 0.9961806535720825
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 7524,
+      "start": 76.24,
+      "end": 83.1,
+      "text": " The summer in the mountains isn't very hot and it rains but the forests are green.",
+      "tokens": [
+        50414,
+        440,
+        4266,
+        294,
+        264,
+        10233,
+        1943,
+        380,
+        588,
+        2368,
+        293,
+        309,
+        27805,
+        457,
+        264,
+        21700,
+        366,
+        3092,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03948277538105593,
+      "compression_ratio": 1.516778523489933,
+      "no_speech_prob": 0.07415904104709625,
+      "words": [
+        {
+          "word": " The",
+          "start": 76.09,
+          "end": 76.5,
+          "probability": 0.8947102427482605
+        },
+        {
+          "word": " summer",
+          "start": 76.5,
+          "end": 76.96,
+          "probability": 0.9449523091316223
+        },
+        {
+          "word": " in",
+          "start": 76.96,
+          "end": 77.42,
+          "probability": 0.9716039299964905
+        },
+        {
+          "word": " the",
+          "start": 77.42,
+          "end": 77.56,
+          "probability": 0.9949770569801331
+        },
+        {
+          "word": " mountains",
+          "start": 77.56,
+          "end": 78.0,
+          "probability": 0.9881170988082886
+        },
+        {
+          "word": " isn't",
+          "start": 78.0,
+          "end": 78.86,
+          "probability": 0.9843724966049194
+        },
+        {
+          "word": " very",
+          "start": 78.86,
+          "end": 79.24,
+          "probability": 0.9957504272460938
+        },
+        {
+          "word": " hot",
+          "start": 79.24,
+          "end": 79.56,
+          "probability": 0.9990807771682739
+        },
+        {
+          "word": " and",
+          "start": 79.56,
+          "end": 80.16,
+          "probability": 0.80775386095047
+        },
+        {
+          "word": " it",
+          "start": 80.16,
+          "end": 80.32,
+          "probability": 0.992493748664856
+        },
+        {
+          "word": " rains",
+          "start": 80.32,
+          "end": 80.62,
+          "probability": 0.9922786951065063
+        },
+        {
+          "word": " but",
+          "start": 80.62,
+          "end": 81.5,
+          "probability": 0.3911897838115692
+        },
+        {
+          "word": " the",
+          "start": 81.5,
+          "end": 81.9,
+          "probability": 0.991911768913269
+        },
+        {
+          "word": " forests",
+          "start": 81.9,
+          "end": 82.26,
+          "probability": 0.985539972782135
+        },
+        {
+          "word": " are",
+          "start": 82.26,
+          "end": 82.66,
+          "probability": 0.9989443421363831
+        },
+        {
+          "word": " green.",
+          "start": 82.66,
+          "end": 83.1,
+          "probability": 0.9950551986694336
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 7524,
+      "start": 84.12,
+      "end": 90.66,
+      "text": " Lots of people come to my town and walk in the mountains or ski in the snow.",
+      "tokens": [
+        50764,
+        15908,
+        295,
+        561,
+        808,
+        281,
+        452,
+        3954,
+        293,
+        1792,
+        294,
+        264,
+        10233,
+        420,
+        14274,
+        294,
+        264,
+        5756,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03948277538105593,
+      "compression_ratio": 1.516778523489933,
+      "no_speech_prob": 0.07415904104709625,
+      "words": [
+        {
+          "word": " Lots",
+          "start": 84.12,
+          "end": 84.28,
+          "probability": 0.9836035966873169
+        },
+        {
+          "word": " of",
+          "start": 84.28,
+          "end": 84.58,
+          "probability": 0.9990602135658264
+        },
+        {
+          "word": " people",
+          "start": 84.58,
+          "end": 84.94,
+          "probability": 0.9987126588821411
+        },
+        {
+          "word": " come",
+          "start": 84.94,
+          "end": 85.36,
+          "probability": 0.9982391595840454
+        },
+        {
+          "word": " to",
+          "start": 85.36,
+          "end": 85.62,
+          "probability": 0.9976323843002319
+        },
+        {
+          "word": " my",
+          "start": 85.62,
+          "end": 85.84,
+          "probability": 0.9951459765434265
+        },
+        {
+          "word": " town",
+          "start": 85.84,
+          "end": 86.28,
+          "probability": 0.9976540207862854
+        },
+        {
+          "word": " and",
+          "start": 86.28,
+          "end": 86.88,
+          "probability": 0.990298867225647
+        },
+        {
+          "word": " walk",
+          "start": 86.88,
+          "end": 87.36,
+          "probability": 0.9826297760009766
+        },
+        {
+          "word": " in",
+          "start": 87.36,
+          "end": 87.76,
+          "probability": 0.9973316192626953
+        },
+        {
+          "word": " the",
+          "start": 87.76,
+          "end": 87.9,
+          "probability": 0.9943506121635437
+        },
+        {
+          "word": " mountains",
+          "start": 87.9,
+          "end": 88.48,
+          "probability": 0.997296154499054
+        },
+        {
+          "word": " or",
+          "start": 88.48,
+          "end": 89.22,
+          "probability": 0.9630693793296814
+        },
+        {
+          "word": " ski",
+          "start": 89.22,
+          "end": 89.74,
+          "probability": 0.9773788452148438
+        },
+        {
+          "word": " in",
+          "start": 89.74,
+          "end": 90.1,
+          "probability": 0.9956905245780945
+        },
+        {
+          "word": " the",
+          "start": 90.1,
+          "end": 90.24,
+          "probability": 0.9974784255027771
+        },
+        {
+          "word": " snow.",
+          "start": 90.24,
+          "end": 90.66,
+          "probability": 0.9975134134292603
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 7524,
+      "start": 91.72,
+      "end": 97.48,
+      "text": " The town has two hotels, a lot of restaurants and a train station.",
+      "tokens": [
+        51164,
+        440,
+        3954,
+        575,
+        732,
+        22718,
+        11,
+        257,
+        688,
+        295,
+        11486,
+        293,
+        257,
+        3847,
+        5214,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.03948277538105593,
+      "compression_ratio": 1.516778523489933,
+      "no_speech_prob": 0.07415904104709625,
+      "words": [
+        {
+          "word": " The",
+          "start": 91.72,
+          "end": 91.92,
+          "probability": 0.9949511289596558
+        },
+        {
+          "word": " town",
+          "start": 91.92,
+          "end": 92.32,
+          "probability": 0.9971989393234253
+        },
+        {
+          "word": " has",
+          "start": 92.32,
+          "end": 92.8,
+          "probability": 0.9988947510719299
+        },
+        {
+          "word": " two",
+          "start": 92.8,
+          "end": 93.2,
+          "probability": 0.9220296144485474
+        },
+        {
+          "word": " hotels,",
+          "start": 93.2,
+          "end": 93.84,
+          "probability": 0.9976855516433716
+        },
+        {
+          "word": " a",
+          "start": 94.44,
+          "end": 94.54,
+          "probability": 0.9920411705970764
+        },
+        {
+          "word": " lot",
+          "start": 94.54,
+          "end": 94.68,
+          "probability": 0.9984139204025269
+        },
+        {
+          "word": " of",
+          "start": 94.68,
+          "end": 94.9,
+          "probability": 0.998174786567688
+        },
+        {
+          "word": " restaurants",
+          "start": 94.9,
+          "end": 95.38,
+          "probability": 0.9967387318611145
+        },
+        {
+          "word": " and",
+          "start": 95.38,
+          "end": 96.48,
+          "probability": 0.9422858953475952
+        },
+        {
+          "word": " a",
+          "start": 96.48,
+          "end": 96.62,
+          "probability": 0.9866440892219543
+        },
+        {
+          "word": " train",
+          "start": 96.62,
+          "end": 96.88,
+          "probability": 0.9963558912277222
+        },
+        {
+          "word": " station.",
+          "start": 96.88,
+          "end": 97.48,
+          "probability": 0.9984482526779175
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 9748,
+      "start": 98.48,
+      "end": 104.38,
+      "text": " We also have a supermarket and a park with an old monument in it.",
+      "tokens": [
+        50414,
+        492,
+        611,
+        362,
+        257,
+        25180,
+        293,
+        257,
+        3884,
+        365,
+        364,
+        1331,
+        20289,
+        294,
+        309,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.055132104995402886,
+      "compression_ratio": 1.3779527559055118,
+      "no_speech_prob": 0.03047158755362034,
+      "words": [
+        {
+          "word": " We",
+          "start": 98.25999999999999,
+          "end": 98.66,
+          "probability": 0.7739061713218689
+        },
+        {
+          "word": " also",
+          "start": 98.66,
+          "end": 99.1,
+          "probability": 0.9972860813140869
+        },
+        {
+          "word": " have",
+          "start": 99.1,
+          "end": 99.52,
+          "probability": 0.9991157650947571
+        },
+        {
+          "word": " a",
+          "start": 99.52,
+          "end": 99.78,
+          "probability": 0.9966753721237183
+        },
+        {
+          "word": " supermarket",
+          "start": 99.78,
+          "end": 100.52,
+          "probability": 0.9471145868301392
+        },
+        {
+          "word": " and",
+          "start": 100.52,
+          "end": 101.68,
+          "probability": 0.8017836213111877
+        },
+        {
+          "word": " a",
+          "start": 101.68,
+          "end": 101.88,
+          "probability": 0.9335681200027466
+        },
+        {
+          "word": " park",
+          "start": 101.88,
+          "end": 102.12,
+          "probability": 0.9797706007957458
+        },
+        {
+          "word": " with",
+          "start": 102.12,
+          "end": 102.68,
+          "probability": 0.988431453704834
+        },
+        {
+          "word": " an",
+          "start": 102.68,
+          "end": 102.92,
+          "probability": 0.9927841424942017
+        },
+        {
+          "word": " old",
+          "start": 102.92,
+          "end": 103.26,
+          "probability": 0.9965687990188599
+        },
+        {
+          "word": " monument",
+          "start": 103.26,
+          "end": 103.78,
+          "probability": 0.9884886145591736
+        },
+        {
+          "word": " in",
+          "start": 103.78,
+          "end": 104.18,
+          "probability": 0.9903738498687744
+        },
+        {
+          "word": " it.",
+          "start": 104.18,
+          "end": 104.38,
+          "probability": 0.998484194278717
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 9748,
+      "start": 105.26,
+      "end": 111.22,
+      "text": " Next to the park is a library and there is a little cafe behind it.",
+      "tokens": [
+        50714,
+        3087,
+        281,
+        264,
+        3884,
+        307,
+        257,
+        6405,
+        293,
+        456,
+        307,
+        257,
+        707,
+        17773,
+        2261,
+        309,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.055132104995402886,
+      "compression_ratio": 1.3779527559055118,
+      "no_speech_prob": 0.03047158755362034,
+      "words": [
+        {
+          "word": " Next",
+          "start": 105.26,
+          "end": 105.64,
+          "probability": 0.9907784461975098
+        },
+        {
+          "word": " to",
+          "start": 105.64,
+          "end": 105.9,
+          "probability": 0.9972370862960815
+        },
+        {
+          "word": " the",
+          "start": 105.9,
+          "end": 106.02,
+          "probability": 0.9986661672592163
+        },
+        {
+          "word": " park",
+          "start": 106.02,
+          "end": 106.34,
+          "probability": 0.9855743646621704
+        },
+        {
+          "word": " is",
+          "start": 106.34,
+          "end": 106.96,
+          "probability": 0.9781951308250427
+        },
+        {
+          "word": " a",
+          "start": 106.96,
+          "end": 107.2,
+          "probability": 0.9729257822036743
+        },
+        {
+          "word": " library",
+          "start": 107.2,
+          "end": 107.7,
+          "probability": 0.9924454092979431
+        },
+        {
+          "word": " and",
+          "start": 107.7,
+          "end": 108.78,
+          "probability": 0.798913300037384
+        },
+        {
+          "word": " there",
+          "start": 108.78,
+          "end": 109.14,
+          "probability": 0.9935238361358643
+        },
+        {
+          "word": " is",
+          "start": 109.14,
+          "end": 109.42,
+          "probability": 0.9849219918251038
+        },
+        {
+          "word": " a",
+          "start": 109.42,
+          "end": 109.56,
+          "probability": 0.9927362203598022
+        },
+        {
+          "word": " little",
+          "start": 109.56,
+          "end": 109.8,
+          "probability": 0.9915603995323181
+        },
+        {
+          "word": " cafe",
+          "start": 109.8,
+          "end": 110.26,
+          "probability": 0.9332293272018433
+        },
+        {
+          "word": " behind",
+          "start": 110.26,
+          "end": 110.82,
+          "probability": 0.9992184638977051
+        },
+        {
+          "word": " it.",
+          "start": 110.82,
+          "end": 111.22,
+          "probability": 0.9978867173194885
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 9748,
+      "start": 111.72,
+      "end": 114.48,
+      "text": " I go there every Saturday to have coffee.",
+      "tokens": [
+        51064,
+        286,
+        352,
+        456,
+        633,
+        8803,
+        281,
+        362,
+        4982,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.055132104995402886,
+      "compression_ratio": 1.3779527559055118,
+      "no_speech_prob": 0.03047158755362034,
+      "words": [
+        {
+          "word": " I",
+          "start": 111.72,
+          "end": 111.98,
+          "probability": 0.9957261085510254
+        },
+        {
+          "word": " go",
+          "start": 111.98,
+          "end": 112.18,
+          "probability": 0.9957854151725769
+        },
+        {
+          "word": " there",
+          "start": 112.18,
+          "end": 112.44,
+          "probability": 0.9984307885169983
+        },
+        {
+          "word": " every",
+          "start": 112.44,
+          "end": 112.92,
+          "probability": 0.9933557510375977
+        },
+        {
+          "word": " Saturday",
+          "start": 112.92,
+          "end": 113.34,
+          "probability": 0.9853716492652893
+        },
+        {
+          "word": " to",
+          "start": 113.34,
+          "end": 113.84,
+          "probability": 0.9969485402107239
+        },
+        {
+          "word": " have",
+          "start": 113.84,
+          "end": 114.02,
+          "probability": 0.9993067979812622
+        },
+        {
+          "word": " coffee.",
+          "start": 114.02,
+          "end": 114.48,
+          "probability": 0.9867138266563416
+        }
+      ]
+    }
+  ]
+}
