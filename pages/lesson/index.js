@@ -36,6 +36,7 @@ const LISTENING_RESUME_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
 const LISTENING_RESUME_SAVE_INTERVAL_SEC = 5;
 const LISTENING_RESUME_REWIND_SEC = 0;
 const AUDIO_PROGRESS_SLIDER_MAX = 1000;
+const LESSON_STUDY_PACK_MAX_DURATION_SEC = 8 * 60;
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const NEW_CONCEPT_AUDIO_ROOTS = {
   newconcept1: 'A1/NewConcept1-US',
@@ -2674,6 +2675,7 @@ Page({
     if (this.data.lessonStudyLoading) return;
     if (this.data.lessonStudyPack) return;
     const task = this.data.task || {};
+    if (Number(task.durationSec || 0) > LESSON_STUDY_PACK_MAX_DURATION_SEC) return;
     if (this.data.lessonStudyCompleted && !this.data.lessonStudyPack) {
       this.setData({ lessonStudyLoading: true, lessonStudyError: '' });
       const restored = await this.loadCachedLessonStudyPack(task);

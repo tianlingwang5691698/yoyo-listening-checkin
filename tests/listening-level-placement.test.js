@@ -47,6 +47,9 @@ test('静谧图书馆听力学习包限制三栏和单按钮宽度', () => {
   assert.doesNotMatch(wxml, /progress && \(progress\.transcriptVisible \|\| transcriptManualVisible\)/);
   assert.equal((wxml.match(/\? '播放' : '发音'/g) || []).length, 2);
   assert.doesNotMatch(js.match(/async loadLessonSecondaryData[\s\S]*?\n  },/)[0], /loadCachedLessonStudyPack/);
+  assert.equal((wxml.match(/task\.durationSec <= 480/g) || []).length, 2);
+  assert.match(js, /LESSON_STUDY_PACK_MAX_DURATION_SEC = 8 \* 60/);
+  assert.match(js, /Number\(task\.durationSec \|\| 0\) > LESSON_STUDY_PACK_MAX_DURATION_SEC\) return/);
 });
 
 test('听力计划数量单位使用集与每集遍数', () => {

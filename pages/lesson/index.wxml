@@ -76,7 +76,7 @@
     </view>
   </view>
 
-  <view id="lesson-study-card" class="audio-study-drawer" wx:if="{{lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length || lessonStudyError}}">
+  <view id="lesson-study-card" class="audio-study-drawer" wx:if="{{(!task.durationSec || task.durationSec <= 480) && (lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length || lessonStudyError)}}">
     <view class="audio-section-head">
       <view>
         <view class="audio-section-title">{{texts.textStudy}}</view>
@@ -356,7 +356,7 @@
     </view>
   </view>
 
-  <view id="lesson-study-card" class="section-panel lesson-study-card" wx:if="{{lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length || lessonStudyError}}">
+  <view id="lesson-study-card" class="section-panel lesson-study-card" wx:if="{{(!task.durationSec || task.durationSec <= 480) && (lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length || lessonStudyError)}}">
     <view class="row-between transcript-header">
       <view>
         <view class="section-title type-section-title">{{texts.textStudy}}</view>
