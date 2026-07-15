@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "baseCommit": "e3b4ece",
+  "environment": {
+    "wechatDevTools": "2.01.2510290",
+    "wechatLib": "3.15.2"
+  },
+  "pageLoad": {
+    "cold": {
+      "pageReadyMs": 20,
+      "cloudRefreshMs": 1155
+    },
+    "cached": {
+      "pageReadyMs": 13,
+      "cloudRefreshMs": 674
+    }
+  },
+  "levelSwitch": {
+    "iterations": 10,
+    "maxDurationMs": 36,
+    "blankFrames": 0
+  },
+  "catalogCounts": {
+    "A1": 12,
+    "A2": 16,
+    "B1": 13,
+    "B2": 15
+  },
+  "automationExceptions": 0
+}
