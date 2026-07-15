@@ -289,11 +289,14 @@ test('home view 任务分组保留播放字段但不返回大字段', async () =
     'displayTitle',
     'durationSec',
     'isPendingAsset',
+    'lessonNumber',
     'progressText',
     'repeatTarget',
     'taskId',
     'textType',
-    'title'
+    'title',
+    'topic',
+    'topicLabel'
   ].sort());
 });
 

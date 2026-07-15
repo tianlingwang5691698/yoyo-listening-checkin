@@ -984,6 +984,15 @@ Page({
     if (!this.ensureNicknameReady()) {
       return;
     }
+    if (category === 'grammar') {
+      const group = (this.data.groupedDailyTasks || []).find((item) => item.category === 'grammar');
+      const task = group && (group.tasks || []).find((item) => item.taskId === taskId);
+      if (!task) return;
+      wx.navigateTo({
+        url: `/grammar-package/pages/classroom/index?topic=${encodeURIComponent(task.topic || '')}&lessonNumber=${Number(task.lessonNumber || 1)}&taskId=${encodeURIComponent(task.taskId || '')}`
+      });
+      return;
+    }
     const query = taskId
       ? `/pages/lesson/index?category=${category}&taskId=${taskId}`
       : `/pages/lesson/index?category=${category}`;

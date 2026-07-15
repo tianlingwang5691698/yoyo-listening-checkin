@@ -23,6 +23,9 @@ function decorateHomeTask(task) {
   return {
     category: task.category,
     taskId: task.taskId,
+    topic: task.topic || '',
+    topicLabel: task.topicLabel || '',
+    lessonNumber: Number(task.lessonNumber || 0),
     title: task.title || '',
     displayTitle: task.displayTitle || '',
     isPendingAsset: !!task.isPendingAsset,
@@ -226,7 +229,7 @@ async function getDashboardData(ctx, deps, options = {}) {
       return plan;
     })
     : null;
-  const progressPromise = options.progressScope === 'home' && deps.getHomeProgressRecords
+  const progressPromise = options.progressScope === 'home' && deps.getHomeProgressRecords && !(deps.isYoyoChild && deps.isYoyoChild(ctx.child))
     ? deps.getHomeProgressRecords(scope, today)
     : deps.getChildProgressRecords(scope);
   let [progressRecords, checkins, todayReport, activeListeningPlan] = await Promise.all([
@@ -258,11 +261,12 @@ async function getDashboardData(ctx, deps, options = {}) {
       await deps.refreshRuntimeCatalogs(false, planCategories);
     }
   }
-  const getActivePlanDayIndex = deps.getNextPlanDayIndexForDate || deps.getPlanDayIndexForDate;
   const planDayIndex = useCustomListeningPlan
     ? deps.getCustomPlanDayIndex(progressRecords, today, activeListeningPlan)
     : useFixedYoyoPlan
-      ? getActivePlanDayIndex(checkins, today)
+      ? (deps.buildFixedPlanBySlots
+        ? Number((deps.planLib && deps.planLib.FIXED_SLOT_PLAN_DAY) || 86)
+        : (deps.getNextPlanDayIndexForDate || deps.getPlanDayIndexForDate)(checkins, today))
       : 1;
   const peppaReviewPlanOptions = deps.getPeppaReviewPlanOptions
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, today)
@@ -270,10 +274,9 @@ async function getDashboardData(ctx, deps, options = {}) {
   const todayPlan = useCustomListeningPlan
     ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex, { date: today, progressRecords })
     : useFixedYoyoPlan
-      ? deps.buildPlanForDay(
-        planDayIndex,
-        peppaReviewPlanOptions
-      )
+      ? (deps.buildFixedPlanBySlots
+        ? deps.buildFixedPlanBySlots(progressRecords, ctx.child.childId, today, peppaReviewPlanOptions)
+        : deps.buildPlanForDay(planDayIndex, peppaReviewPlanOptions))
       : {
         dayIndex: 1,
         phase: { key: 'none', label: '未设置' },
@@ -294,7 +297,7 @@ async function getDashboardData(ctx, deps, options = {}) {
         listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
       })
       : useFixedYoyoPlan
-        ? deps.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+        ? (deps.decorateFixedSlotPlanTasks || deps.decoratePlanTasks)(progressRecords, ctx.child.childId, today, todayPlan, {
           planRunType: 'normal'
         })
         : [])

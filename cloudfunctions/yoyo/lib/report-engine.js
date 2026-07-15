@@ -46,15 +46,21 @@ async function upsertDailyReport(scope, date, deps) {
     ? await deps.getActiveListeningPlanByScope(scope)
     : null;
   const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
+  const useFixedSlotPlan = !useCustomListeningPlan && progressRecords.some((item) => (
+    String(item.planSource || '') === 'fixed-yoyo'
+      && Number(item.planSlotIndex || 0) > 0
+  ));
   const planOptions = deps.getPeppaReviewPlanOptions
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, scope.childId, date)
     : {};
   const planDayIndex = useCustomListeningPlan
     ? deps.getCustomPlanDayIndex(progressRecords, date, activeListeningPlan)
-    : deps.getPlanDayIndexForDate(checkins, date);
+    : (useFixedSlotPlan ? 86 : deps.getPlanDayIndexForDate(checkins, date));
   const todayPlan = useCustomListeningPlan
     ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex, { date, progressRecords })
-    : deps.buildPlanForDay(planDayIndex, planOptions);
+    : (useFixedSlotPlan && deps.buildFixedPlanBySlots
+      ? deps.buildFixedPlanBySlots(progressRecords, scope.childId, date, planOptions)
+      : deps.buildPlanForDay(planDayIndex, planOptions));
   const checkin = checkins.find((item) => item.date === date) || null;
   const categoryOrder = useCustomListeningPlan
     ? (todayPlan.categoryOrder || Object.keys(todayPlan.byCategory || {}))
@@ -66,11 +72,14 @@ async function upsertDailyReport(scope, date, deps) {
         planRunType: 'normal',
         listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
       }).filter((item) => item.category === category)
-      : deps.decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
-        planRunType: 'normal',
-        targetDate: date,
-        planDayIndex: todayPlan.dayIndex
-      })
+      : (useFixedSlotPlan && deps.decorateFixedSlotPlanTasks
+        ? deps.decorateFixedSlotPlanTasks(progressRecords, scope.childId, date, todayPlan, { planRunType: 'normal' })
+          .filter((item) => item.category === category)
+        : deps.decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
+          planRunType: 'normal',
+          targetDate: date,
+          planDayIndex: todayPlan.dayIndex
+        }))
   }));
   const items = groupedTasks.flatMap((group) => group.tasks.map((task) => {
     const repeatTarget = task.repeatTarget || 3;

@@ -216,3 +216,48 @@ test('阶段二 Peppa 不额外叠加旧集复听', () => {
   assert.deepEqual(plan.byCategory.peppa.map((task) => task.repeatTarget), [1, 1, 1, 1, 1]);
   assert.deepEqual(plan.byCategory.unlock1.map((task) => task.repeatTarget), [1, 1, 1]);
 });
+
+test('佑佑第 86 天从名词前 3 节开始词法计划', () => {
+  const catalog = planRuntime.buildGrammarCatalog();
+  assert.equal(catalog.length, 168);
+  assert.deepEqual(
+    planRuntime.getPlanIndicesForCategory(86, 'grammar', catalog.length),
+    [0, 1, 2]
+  );
+  assert.deepEqual(
+    planRuntime.getPlanIndicesForCategory(87, 'grammar', catalog.length),
+    [3, 4, 5]
+  );
+});
+
+test('佑佑固定计划每个槽位独立推进', () => {
+  const catalogs = {
+    newconcept1: Array.from({ length: 76 }, (_, index) => ({ taskId: `nce-${index}`, category: 'newconcept1' })),
+    peppa: Array.from({ length: 100 }, (_, index) => ({ taskId: `peppa-${index}`, category: 'peppa' })),
+    unlock1: Array.from({ length: 24 }, (_, index) => ({ taskId: `unlock-${index}`, category: 'unlock1' }))
+  };
+  const deps = {
+    planSlotCount: 24,
+    getCatalog: (category) => catalogs[category] || [],
+    planLib: planRuntime
+  };
+  const initial = planEngine.buildFixedPlanBySlots([], 'child-yoyo', '2026-07-15', deps);
+  const firstSlot = initial.byCategory.grammar[0];
+  const secondSlot = initial.byCategory.grammar[1];
+  const progress = [{
+    childId: 'child-yoyo',
+    category: 'grammar',
+    taskId: firstSlot.taskId,
+    date: '2026-07-15',
+    planSource: 'fixed-yoyo',
+    planRunType: 'normal',
+    planSlotIndex: 1,
+    repeatTarget: 1,
+    completedToday: true
+  }];
+  const sameDay = planEngine.buildFixedPlanBySlots(progress, 'child-yoyo', '2026-07-15', deps);
+  const nextDay = planEngine.buildFixedPlanBySlots(progress, 'child-yoyo', '2026-07-16', deps);
+  assert.equal(sameDay.byCategory.grammar[0].taskId, firstSlot.taskId);
+  assert.notEqual(nextDay.byCategory.grammar[0].taskId, firstSlot.taskId);
+  assert.equal(nextDay.byCategory.grammar[1].taskId, secondSlot.taskId);
+});

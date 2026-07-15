@@ -334,12 +334,12 @@ async function markTaskListened(event, context) {
       study.getCustomPlanDayIndex(progressRecords, targetDate, activeListeningPlan),
       { date: targetDate, progressRecords }
     )
-    : study.buildPlanForDay(
-      planRunType === 'catchup'
-        ? (Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate))
-        : study.getNextPlanDayIndexForDate(checkins, today),
-      study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate)
-    );
+    : (planRunType === 'normal' && study.isYoyoChild(ctx.child)
+      ? study.buildFixedPlanBySlots(progressRecords, ctx.child.childId, targetDate, study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate))
+      : study.buildPlanForDay(
+        Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate),
+        study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate)
+      ));
   const categoryTasks = useCustomListeningPlan
     ? study.decorateListeningPlanTasks(progressRecords, ctx.child.childId, targetDate, todayPlan, {
       planRunType,
@@ -352,11 +352,14 @@ async function markTaskListened(event, context) {
       targetDate,
       planDayIndex: 1
     })
-    : study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
-      planRunType,
-      targetDate,
-      planDayIndex: todayPlan.dayIndex
-    });
+    : (planRunType === 'normal' && study.isYoyoChild(ctx.child)
+      ? study.decorateFixedSlotPlanTasks(progressRecords, ctx.child.childId, targetDate, todayPlan, { planRunType })
+        .filter((item) => item.category === category)
+      : study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
+        planRunType,
+        targetDate,
+        planDayIndex: todayPlan.dayIndex
+      }));
   const task = categoryTasks.find((item) => item.taskId === payload.taskId)
     || categoryTasks.find((item) => !item.completedToday)
     || categoryTasks[0];
@@ -388,6 +391,8 @@ async function markTaskListened(event, context) {
     textUnlocked: nextPlayCount >= task.repeatTarget - 1,
     completedToday: nextPlayCount >= task.repeatTarget,
     planDayIndex: todayPlan.dayIndex,
+    planSlotIndex: Number(task.planSlotIndex || 0),
+    planSlotCount: Number(task.planSlotCount || 0),
     planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
     listeningPlanId: useCustomListeningPlan ? (activeListeningPlan.planId || activeListeningPlan._id || '') : '',
     planRunType,
@@ -405,7 +410,7 @@ async function markTaskListened(event, context) {
     await study.maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
       planRunType,
       planDayIndex: todayPlan.dayIndex,
-      todayPlan: useCustomListeningPlan ? todayPlan : undefined,
+      todayPlan: useCustomListeningPlan || study.isYoyoChild(ctx.child) ? todayPlan : undefined,
       planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
       listeningPlanId: useCustomListeningPlan ? (activeListeningPlan.planId || activeListeningPlan._id || '') : ''
     });
@@ -473,10 +478,12 @@ async function completeTodayCheckin(event, context) {
   const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
   const planDayIndex = useCustomListeningPlan
     ? study.getCustomPlanDayIndex(progressRecords, today, activeListeningPlan)
-    : study.getNextPlanDayIndexForDate(checkins, today);
+    : (study.isYoyoChild(ctx.child) ? 86 : study.getNextPlanDayIndexForDate(checkins, today));
   const todayPlan = useCustomListeningPlan
     ? study.buildListeningPlanForDay(activeListeningPlan, planDayIndex, { date: today, progressRecords })
-    : undefined;
+    : (study.isYoyoChild(ctx.child)
+      ? study.buildFixedPlanBySlots(progressRecords, ctx.child.childId, today)
+      : undefined);
   const checkin = await study.maybeCreateCheckin(scope, progressRecords, today, {
     planRunType: 'normal',
     planDayIndex,
@@ -504,9 +511,67 @@ async function completeTodayCheckin(event, context) {
   };
 }
 
+async function completeGrammarPlanTask(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'completeGrammarPlanTask'
+  }));
+  if (study.normalizeStudyRole(ctx.member) !== 'student') {
+    throw new Error('家长模式不计入打卡');
+  }
+  if (!study.isYoyoChild(ctx.child)) {
+    throw new Error('grammar-fixed-plan-yoyo-only');
+  }
+  const scope = study.getUserScope(ctx);
+  const checkins = await study.getCheckins(scope);
+  const progressBefore = await study.getChildProgressRecords(scope);
+  const todayPlan = study.buildFixedPlanBySlots(progressBefore, ctx.child.childId, today);
+  const planDayIndex = todayPlan.dayIndex;
+  const taskId = String(payload.taskId || '').trim();
+  const task = (todayPlan.byCategory.grammar || []).find((item) => item.taskId === taskId);
+  if (!task) {
+    throw new Error(`grammar-plan-task-invalid:${taskId || 'missing'}`);
+  }
+  const now = new Date().toISOString();
+  await study.saveProgressRecord({
+    progressId: `${scope.familyId}_${scope.childId}_${today}_grammar_${task.taskId}`,
+    userId: scope.userId,
+    openId: scope.openId,
+    memberId: scope.memberId,
+    familyId: scope.familyId,
+    childId: scope.childId,
+    category: 'grammar',
+    date: today,
+    taskId: task.taskId,
+    playCount: 1,
+    playMoments: [now],
+    repeatTarget: 1,
+    durationSec: 0,
+    textUnlocked: true,
+    completedToday: true,
+    planDayIndex,
+    planSlotIndex: Number(task.planSlotIndex || 0),
+    planSlotCount: Number(task.planSlotCount || 0),
+    planSource: 'fixed-yoyo',
+    planRunType: 'normal',
+    targetDate: today,
+    updatedAt: now
+  });
+  const progressRecords = await study.getChildProgressRecords(scope);
+  await study.upsertDailyReport(scope, today);
+  const checkin = await study.maybeCreateCheckin(scope, progressRecords, today, {
+    planRunType: 'normal',
+    planDayIndex,
+    todayPlan,
+    planSource: 'fixed-yoyo'
+  });
+  return { saved: true, taskId, checkin: checkin || null };
+}
+
 module.exports = {
   getTaskDetail,
   getTaskTranscript,
   markTaskListened,
+  completeGrammarPlanTask,
   completeTodayCheckin
 };

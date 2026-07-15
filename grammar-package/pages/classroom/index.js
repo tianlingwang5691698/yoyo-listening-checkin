@@ -182,10 +182,18 @@ Page({
     debugMessage: ''
   },
 
-  onLoad() {
+  onLoad(options = {}) {
     this.pageStartedAt = Date.now();
     this.classroomPerf = page.startPagePerf('grammar-classroom');
+    this.plannedEntry = {
+      topic: String(options.topic || ''),
+      lessonNumber: Math.max(1, Number(options.lessonNumber || 1)),
+      taskId: String(options.taskId || '')
+    };
     this.syncPreferences();
+    if (this.plannedEntry.topic && this.plannedEntry.taskId) {
+      this.loadCourse(this.plannedEntry.topic);
+    }
   },
 
   onShow() {
@@ -390,7 +398,13 @@ Page({
       answer: '',
       result: '',
       debugMessage: debugMessage || ''
-    }, () => this.reportPerformance(2102, Date.now() - (this.loadStartedAt || Date.now())));
+    }, () => {
+      this.reportPerformance(2102, Date.now() - (this.loadStartedAt || Date.now()));
+      if (this.plannedEntry && this.plannedEntry.topic === this.data.selectedTopic) {
+        const plannedLesson = course[this.plannedEntry.lessonNumber - 1];
+        if (plannedLesson) this.openLessonById(plannedLesson.id);
+      }
+    });
   },
 
   getDebugTargetChildId() {
@@ -651,6 +665,10 @@ Page({
 
   openLesson(event) {
     const id = String(event.currentTarget.dataset.lesson || '');
+    this.openLessonById(id);
+  },
+
+  openLessonById(id) {
     const course = this.activeCourse || this.fullCourse || [];
     const index = course.findIndex((lesson) => lesson.id === id);
     const lesson = index >= 0 ? course[index] : null;
@@ -686,7 +704,7 @@ Page({
     this.setData({ answer: '', result: '' });
   },
 
-  continueLesson() {
+  async continueLesson() {
     if (this.data.result !== 'correct') return;
     const lesson = this.data.activeLesson;
     if (!this.data.isLastQuestion) {
@@ -698,6 +716,19 @@ Page({
         result: '',
         isLastQuestion: questionIndex === lesson.questions.length - 1
       });
+      return;
+    }
+    if (this.plannedEntry && this.plannedEntry.taskId) {
+      const completedTaskId = this.plannedEntry.taskId;
+      this.plannedEntry = null;
+      try {
+        await store.completeGrammarPlanTask(completedTaskId);
+        wx.showToast({ title: '微课已完成', icon: 'success' });
+      } catch (error) {
+        this.setData({ debugMessage: `DEBUG: grammar-package/pages/classroom.continueLesson -> store.completeGrammarPlanTask -> cloud.completeGrammarPlanTask -> saved: ${error && error.message || 'missing'}; taskId=${completedTaskId}; targetChildId=${this.getDebugTargetChildId()}` });
+        return;
+      }
+      this.backToCourseMap();
       return;
     }
     if (this.data.isLastLesson) {

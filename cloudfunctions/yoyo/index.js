@@ -428,6 +428,7 @@ const actionMap = {
   rescoreSpeakingAttempt: serviceAction('speaking', 'rescoreSpeakingAttempt'),
   getSpeakingAttempts: serviceAction('speaking', 'getSpeakingAttempts'),
   completeTodayCheckin: serviceAction('task', 'completeTodayCheckin'),
+  completeGrammarPlanTask: serviceAction('task', 'completeGrammarPlanTask'),
   getProfileData: serviceAction('family', 'getProfileData'),
   getFamilyPage: serviceAction('family', 'getFamilyPage'),
   refreshInviteCode: serviceAction('family', 'refreshInviteCode'),

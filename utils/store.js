@@ -1134,6 +1134,10 @@ async function recordStudyCompletion(item) {
   return callCloud('recordStudyCompletion', withSelectedStudent(item || {}), { saved: false }, { useCache: false });
 }
 
+async function completeGrammarPlanTask(taskId) {
+  return callCloud('completeGrammarPlanTask', withSelectedStudent({ taskId }), { saved: false }, { useCache: false });
+}
+
 async function getStudyCompletions(options, onRefresh) {
   return callCloud('getStudyCompletions', withSelectedStudent(options || {}), { items: [] }, { onRefresh });
 }
@@ -1335,6 +1339,7 @@ module.exports = {
   recordGrammarProgress,
   getGrammarNarrationAudio,
   recordStudyCompletion,
+  completeGrammarPlanTask,
   getStudyCompletions,
   getStudyCompletionDetail,
   getCachedReadResult,

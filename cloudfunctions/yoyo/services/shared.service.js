@@ -541,6 +541,39 @@ function buildStats(progressRecords, checkins, childId) {
   });
 }
 
+function buildFixedPlanBySlots(progressRecords, childId, date, options = {}) {
+  return planEngine.buildFixedPlanBySlots(progressRecords, childId, date, {
+    planLib,
+    planSlotCount: PLAN_SLOT_COUNT,
+    getCatalog,
+    ...options
+  });
+}
+
+function decorateFixedSlotPlanTasks(progressRecords, childId, date, plan, options = {}) {
+  const carriedRecords = (plan.flatTasks || []).reduce((records, task) => {
+    const hasTodayRecord = records.some((item) => item.childId === childId
+      && item.category === task.category && item.taskId === task.taskId && item.date === date);
+    if (hasTodayRecord) return records;
+    const latest = (progressRecords || []).filter((item) => item.childId === childId
+      && item.category === task.category
+      && item.taskId === task.taskId
+      && Number(item.planSlotIndex || 0) === Number(task.planSlotIndex || 0)
+      && String(item.planSource || 'fixed-yoyo') === 'fixed-yoyo'
+      && String(item.date || '') >= planLib.FIXED_SLOT_PLAN_STARTED_AT)
+      .sort((left, right) => String(right.updatedAt || '').localeCompare(String(left.updatedAt || '')))[0];
+    return latest ? records.concat([Object.assign({}, latest, { date })]) : records;
+  }, (progressRecords || []).slice());
+  return planLib.getPlanCategoryOrder(plan.dayIndex).flatMap((category) => (
+    decoratePlannedTasks(carriedRecords, childId, category, date, plan.byCategory[category] || [], {
+      planRunType: options.planRunType || 'normal',
+      targetDate: date,
+      planDayIndex: plan.dayIndex,
+      planSource: 'fixed-yoyo'
+    })
+  ));
+}
+
 async function maybeCreateCheckin(scope, progressRecords, date, options = {}) {
   return checkinEngine.maybeCreateCheckin(scope, progressRecords, date, options, {
     getCheckins,
@@ -648,6 +681,8 @@ async function upsertDailyReport(scope, date) {
     getPlanDayIndexForDate,
     getPlanCategoryOrder,
     decoratePlannedTasks,
+    decorateFixedSlotPlanTasks,
+    buildFixedPlanBySlots,
     getCatalog,
     findAttemptsByDate: (nextScope, nextDate) => attemptRepository.findByDate(nextScope, nextDate),
     findCompletionItemsByDate: getCompletionItemsByDate,
@@ -672,12 +707,14 @@ async function getDashboardData(ctx, options = {}) {
     getPlanDayIndexForDate,
     getNextPlanDayIndexForDate,
     buildPlanForDay,
+    buildFixedPlanBySlots,
     getCustomPlanDayIndex,
     buildListeningPlanForDay,
     decorateListeningPlanTasks,
     getPeppaReviewPlanOptions,
     getPlanCategoryOrder,
     decoratePlannedTasks,
+    decorateFixedSlotPlanTasks,
     decorateTask,
     buildCategorySummary,
     decoratePlanTasks,
@@ -750,6 +787,8 @@ module.exports = {
   normalizeStudyRole,
   isStudyWriteAllowed,
   maybeCreateCheckin,
+  buildFixedPlanBySlots,
+  decorateFixedSlotPlanTasks,
   reconcileCheckins,
   saveProgressRecord,
   saveDeviceStudyRole,

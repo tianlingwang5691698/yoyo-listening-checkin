@@ -12,6 +12,9 @@ function normalizePlannedTask(task, category, dayIndex, deps) {
 
 function getPlanCatalog(category, deps) {
   const { getCatalog, planSlotCount } = deps;
+  if (category === 'grammar') {
+    return deps.planLib.buildGrammarCatalog();
+  }
   if (category === 'newconcept1') {
     return getCatalog(category).slice(0, 76);
   }
@@ -89,8 +92,11 @@ function buildPlanForDay(dayIndex, deps, options = {}) {
     const plannedTasks = category === 'peppa' && options.includePeppaReview && phase.key !== 'round-2'
       ? tasks.concat(buildPeppaReviewTasks(dayIndex, catalog, tasks, options.peppaReviewCursor))
       : tasks;
-    byCategory[category] = plannedTasks;
-    plannedTasks.forEach((task, slotIndex) => {
+    byCategory[category] = plannedTasks.map((task, slotIndex) => Object.assign({}, task, {
+      planSlotIndex: slotIndex + 1,
+      planSlotCount: plannedTasks.length
+    }));
+    byCategory[category].forEach((task, slotIndex) => {
       flatTasks.push(Object.assign({}, task, {
         planDayIndex: dayIndex,
         planPhase: phase.key,
@@ -104,6 +110,53 @@ function buildPlanForDay(dayIndex, deps, options = {}) {
   return {
     dayIndex,
     phase,
+    byCategory,
+    flatTasks
+  };
+}
+
+function buildFixedPlanBySlots(progressRecords, childId, date, deps) {
+  const dayIndex = deps.planLib.FIXED_SLOT_PLAN_DAY;
+  const basePlan = buildPlanForDay(dayIndex, deps);
+  const byCategory = {};
+  const flatTasks = [];
+  deps.planLib.getPlanCategoryOrder(dayIndex).forEach((category) => {
+    const catalog = getPlanCatalog(category, deps);
+    const baseTasks = basePlan.byCategory[category] || [];
+    const slotCount = baseTasks.length;
+    byCategory[category] = baseTasks.map((baseTask, slotOffset) => {
+      const slotIndex = slotOffset + 1;
+      const completedCount = (progressRecords || []).filter((item) => (
+        item.childId === childId
+          && item.category === category
+          && String(item.planSource || 'fixed-yoyo') === 'fixed-yoyo'
+          && String(item.planRunType || 'normal') === 'normal'
+          && String(item.date || '') >= deps.planLib.FIXED_SLOT_PLAN_STARTED_AT
+          && String(item.date || '') < date
+          && Number(item.planSlotIndex || 0) === slotIndex
+          && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 1))
+      )).length;
+      const baseIndex = catalog.findIndex((task) => task.taskId === baseTask.taskId);
+      const nextIndex = baseIndex < 0 ? -1 : baseIndex + completedCount * slotCount;
+      const source = category === 'grammar'
+        ? catalog[nextIndex]
+        : catalog.length ? catalog[nextIndex % catalog.length] : null;
+      return source ? Object.assign({}, source, {
+        repeatTarget: 1,
+        planSlotIndex: slotIndex,
+        planSlotCount: slotCount
+      }) : null;
+    }).filter(Boolean);
+    byCategory[category].forEach((task) => flatTasks.push(Object.assign({}, task, {
+      planDayIndex: dayIndex,
+      planPhase: basePlan.phase.key,
+      planPhaseLabel: basePlan.phase.label,
+      planBatchSize: slotCount
+    })));
+  });
+  return {
+    dayIndex,
+    phase: basePlan.phase,
     byCategory,
     flatTasks
   };
@@ -126,5 +179,6 @@ module.exports = {
   getPeppaReviewIndices,
   buildPeppaReviewTasks,
   buildPlanForDay,
+  buildFixedPlanBySlots,
   decoratePlanTasks
 };

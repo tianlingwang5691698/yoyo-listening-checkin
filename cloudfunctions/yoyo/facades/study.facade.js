@@ -21,6 +21,8 @@ module.exports = {
   getPlanDayIndexForDate: shared.getPlanDayIndexForDate,
   getNextPlanDayIndexForDate: shared.getNextPlanDayIndexForDate,
   buildPlanForDay: shared.buildPlanForDay,
+  buildFixedPlanBySlots: shared.buildFixedPlanBySlots,
+  decorateFixedSlotPlanTasks: shared.decorateFixedSlotPlanTasks,
   getPeppaReviewCursor: shared.getPeppaReviewCursor,
   getPeppaReviewPlanOptions: shared.getPeppaReviewPlanOptions,
   decoratePlannedTasks: shared.decoratePlannedTasks,
