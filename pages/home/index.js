@@ -710,9 +710,7 @@ Page({
       source: memoryReady ? 'memory' : (cacheReady ? 'cache' : 'skeleton'),
       groups: (this.data.groupedDailyTasks || []).length
     });
-    const homeRefreshPromise = this.refreshHomeDashboard({ skipCache: true, perf: homePerf }).catch(() => {
-      this.setData({ homeLoading: false });
-    });
+    const homeRefreshPromise = this.startHomeDashboardRefresh({ skipCache: true, perf: homePerf });
     setTimeout(() => {
       writeTodayCompletedCache(this.data.child, this.data.todayCompletedItems || []);
     }, 100);
@@ -720,9 +718,11 @@ Page({
   },
   onUnload() {
     this.clearHomePrefetchTimers();
+    this.invalidateHomeDashboardRefresh();
   },
   onHide() {
     this.clearHomePrefetchTimers();
+    this.invalidateHomeDashboardRefresh();
   },
   clearHomePrefetchTimers() {
     (this._homePrefetchTimers || []).forEach((timer) => clearTimeout(timer));
@@ -789,10 +789,12 @@ Page({
       identityConfirmVisible: false,
       modeChangedNoticeVisible: false,
       entryPosterVisible: false,
-      identitySelectedInSession: true,
-      homeLoading: false
+      identitySelectedInSession: true
     }, this.buildStudyModePresentation({ studyRole: nextRole })));
     const fastPainted = this.applyFastDashboardSnapshot(nextRole);
+    if (!fastPainted) {
+      this.setData({ homeLoading: true, homeDataReady: false });
+    }
     wx.showToast({
       title: nextRole === 'student' ? t('enteredStudent') : t('enteredParent'),
       icon: 'none',
@@ -828,12 +830,8 @@ Page({
           child: data.child || snapshot.child,
           currentMember: data.currentMember || snapshot.currentMember
         }));
-      } else if (!fastPainted) {
-        this.setData({ homeLoading: true });
       }
-      this.refreshHomeDashboard().catch(() => {
-        this.setData({ homeLoading: false });
-      });
+      this.startHomeDashboardRefresh();
     } catch (error) {
       wx.showToast({
         title: t('localSwitched'),
@@ -841,7 +839,27 @@ Page({
       });
     }
   },
+  beginHomeDashboardRefresh() {
+    this._homeDashboardRefreshId = Number(this._homeDashboardRefreshId || 0) + 1;
+    return this._homeDashboardRefreshId;
+  },
+  invalidateHomeDashboardRefresh() {
+    this._homeDashboardRefreshId = Number(this._homeDashboardRefreshId || 0) + 1;
+  },
+  isHomeDashboardRefreshCurrent(refreshId) {
+    return refreshId === this._homeDashboardRefreshId;
+  },
+  startHomeDashboardRefresh(options = {}) {
+    const refreshId = this.beginHomeDashboardRefresh();
+    return this.refreshHomeDashboard(Object.assign({}, options, { refreshId })).catch(() => {
+      if (this.isHomeDashboardRefreshCurrent(refreshId)) {
+        this.setData({ homeLoading: false });
+      }
+      return this.data.groupedDailyTasks || [];
+    });
+  },
   async refreshHomeDashboard(options = {}) {
+    const refreshId = options.refreshId || this.beginHomeDashboardRefresh();
     const selectedTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
     const currentChild = this.data.child || {};
     const target = selectedTarget.targetFamilyId || selectedTarget.targetChildId
@@ -853,10 +871,11 @@ Page({
     const cached = store.getCachedReadResult
       ? store.getCachedReadResult('getDashboard', Object.assign({ view: 'home' }, target))
       : null;
-    if (!options.skipCache && cached && cached.child) {
+    if (!options.skipCache && cached && cached.child && this.isHomeDashboardRefreshCurrent(refreshId)) {
       this.applyDashboard(cached);
     }
     const data = await store.getDashboard(Object.assign({ view: 'home', forceRefresh: true }, target), (fresh) => {
+      if (!this.isHomeDashboardRefreshCurrent(refreshId)) return;
       const groups = this.applyDashboard(fresh);
       if (options.perf || this.homePerf) {
         (options.perf || this.homePerf).mark('cloudRefresh', {
@@ -864,6 +883,9 @@ Page({
         });
       }
     });
+    if (!this.isHomeDashboardRefreshCurrent(refreshId)) {
+      return this.data.groupedDailyTasks || [];
+    }
     const groups = this.applyDashboard(data);
     if (options.perf || this.homePerf) {
       (options.perf || this.homePerf).mark('cloudRefresh', {

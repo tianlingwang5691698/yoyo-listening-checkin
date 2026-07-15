@@ -364,6 +364,9 @@ async function markTaskListened(event, context) {
     || categoryTasks.find((item) => !item.completedToday)
     || categoryTasks[0];
   if (!task || task.isPendingAsset || task.completedToday) {
+    if (task && task.completedToday && planRunType === 'normal' && study.isYoyoChild(ctx.child) && Number(task.planSlotIndex || 0) > 0) {
+      await study.syncFixedPlanProgressSummary(scope, task);
+    }
     return getTaskDetail({ payload: { category, taskId: payload.taskId, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } });
   }
   const completeOnListen = payload.completeOnListen === true;
@@ -401,6 +404,9 @@ async function markTaskListened(event, context) {
     updatedAt: now
   };
   await study.saveProgressRecord(record);
+  if (record.planSource === 'fixed-yoyo' && record.planRunType === 'normal' && record.planSlotIndex > 0) {
+    await study.syncFixedPlanProgressSummary(scope, record);
+  }
   let nextProgressRecords = null;
   if ((planRunType === 'normal' || planRunType === 'catchup') && study.normalizeStudyRole(ctx.member) === 'student') {
     await study.upsertDailyReport(scope, targetDate);
@@ -570,6 +576,10 @@ async function completeGrammarPlanTask(event) {
     planRunType: 'normal',
     targetDate: today,
     updatedAt: now
+  });
+  await study.syncFixedPlanProgressSummary(scope, {
+    category: 'grammar',
+    planSlotIndex: Number(task.planSlotIndex || 0)
   });
   const progressRecords = await study.getChildProgressRecords(scope);
   await study.upsertDailyReport(scope, today);

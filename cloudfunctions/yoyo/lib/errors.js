@@ -8,6 +8,12 @@ function isMissingCollectionError(error) {
     || message.includes('collection.doc:fail');
 }
 
+function isMissingDocumentError(error) {
+  const message = String((error && (error.errMsg || error.message)) || error || '');
+  return message.includes('-502005') || /document.*not exist|not found/i.test(message);
+}
+
 module.exports = {
-  isMissingCollectionError
+  isMissingCollectionError,
+  isMissingDocumentError
 };

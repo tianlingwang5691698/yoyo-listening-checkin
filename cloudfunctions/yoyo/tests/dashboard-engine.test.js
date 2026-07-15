@@ -71,10 +71,11 @@ test('首页只读取今日进度和复听所需历史进度', async () => {
   assert.equal(fullProgressReads, 0);
 });
 
-test('佑佑首页使用字段投影的历史进度和打卡读取', async () => {
+test('佑佑首页使用固定计划摘要和字段投影打卡读取', async () => {
   let fullProgressReads = 0;
   let fullCheckinReads = 0;
-  let homeProgressOptions = null;
+  let homeProgressReads = 0;
+  let fixedPlanStateReads = 0;
   await dashboardEngine.getDashboardData({
     member: { role: 'student' },
     child: { childId: 'child-1', childLoginCode: '317613' }
@@ -82,7 +83,11 @@ test('佑佑首页使用字段投影的历史进度和打卡读取', async () =>
     getTodayString: () => '2026-07-15',
     getUserScope: () => ({ familyId: 'family-1', childId: 'child-1' }),
     getChildProgressRecords: async () => { fullProgressReads += 1; return []; },
-    getHomeProgressRecords: async (_scope, _date, options) => { homeProgressOptions = options; return []; },
+    getHomeProgressRecords: async () => { homeProgressReads += 1; return []; },
+    getFixedPlanHomeState: async () => {
+      fixedPlanStateReads += 1;
+      return { summary: { version: 1, slots: {} }, progressRecords: [], source: 'fixed-plan-summary' };
+    },
     getCheckins: async () => { fullCheckinReads += 1; return []; },
     getHomeCheckins: async () => [],
     getDailyReport: async () => null,
@@ -109,7 +114,8 @@ test('佑佑首页使用字段投影的历史进度和打卡读取', async () =>
     reconcileCheckins: false
   });
 
-  assert.deepEqual(homeProgressOptions, { includeHistory: true });
+  assert.equal(fixedPlanStateReads, 1);
+  assert.equal(homeProgressReads, 0);
   assert.equal(fullProgressReads, 0);
   assert.equal(fullCheckinReads, 0);
 });

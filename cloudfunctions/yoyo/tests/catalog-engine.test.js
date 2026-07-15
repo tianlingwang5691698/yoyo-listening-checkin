@@ -122,6 +122,11 @@ test('New Concept 2-4 摘要有兜底数量', () => {
   });
 });
 
+test('静态目录映射在同一云函数实例内复用', () => {
+  assert.equal(catalogEngine.getCatalog('unlock1thirdedition'), catalogEngine.getCatalog('unlock1thirdedition'));
+  assert.equal(catalogEngine.getCatalog('peppa'), catalogEngine.getCatalog('peppa'));
+});
+
 test('New Concept 1-4 在所有计划阶段保留回答评分', () => {
   const categories = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
   const phases = ['round-1', 'round-2', 'custom', 'level'];

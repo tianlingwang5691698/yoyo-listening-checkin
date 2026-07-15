@@ -18,6 +18,7 @@ const GRAMMAR_TOPICS = [
   ['conjunction', '连词', 14],
   ['interjection', '感叹词', 10]
 ];
+let grammarCatalogCache = null;
 const PLAN_PHASES = [
   { key: 'round-1', label: '第1轮', startDay: 1, length: 72, batchSize: 1 },
   { key: 'round-2', label: '阶段二', startDay: 73, length: 72, batchSize: 1 }
@@ -38,11 +39,13 @@ function getPlanCategoryOrder(dayIndex = 1) {
 }
 
 function buildGrammarCatalog() {
-  return grammarPlanCatalog.map((item) => Object.assign({}, item, {
+  if (grammarCatalogCache) return grammarCatalogCache;
+  grammarCatalogCache = grammarPlanCatalog.map((item) => Object.assign({}, item, {
     category: 'grammar',
     repeatTarget: 1,
     durationSec: 0
   }));
+  return grammarCatalogCache;
 }
 
 function getGrammarIndicesForDay(dayIndex, catalogLength = 168) {

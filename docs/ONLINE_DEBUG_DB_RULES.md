@@ -86,6 +86,25 @@
 
 ## 已知案例
 
+### 2026-07-15 首页先显示服务暂时不可用再出现数据
+
+1. 现象：首页冷进入时短暂显示“服务暂时不可用”，随后正常数据出现。
+2. 账号：不限账号；连续触发 `onShow` 或切换目标学生时可能出现。
+3. 查询：`pages/home.onShow/startHomeDashboardRefresh`、`confirmStudyIdentity/applyFastDashboardSnapshot` -> `store.getDashboard` -> `cloud.getDashboard`，对比多次请求的完成顺序与 `syncMode/homeLoading/targetChildId`。
+4. 结论：首页并发刷新没有请求序号保护；冷启动身份确认还会在缓存检查前把 `homeLoading=false`。两条路径都会让默认 `cloud-error` 短暂可见。
+5. 修复：刷新增加单调请求序号，只允许最新请求写入 dashboard、加载状态和性能标记；身份确认只有命中真实缓存才显示数据，否则保持稳定占位；页面隐藏或卸载时作废旧请求。
+6. 是否需要发版：前端改动，需要重新编译并发布小程序；云函数无需修改。
+
+### 2026-07-16 首页固定计划全历史读取超过 1 秒
+
+1. 现象：首页缓存首屏小于 100ms，但 `cloudRefresh=1538–1929ms`，连续三轮不达标。
+2. 账号：317613 / family-1776427951478 / child-yoyo。
+3. 查询：`pages/home.refreshHomeDashboard -> store.getDashboard -> dashboard.getFixedPlanHomeState -> fixedPlanProgressSummaries`；原首页读取 `dailyTaskProgress=587` 条。
+4. 结论：固定槽位推进只需要 2026-07-15 后的槽位完成次数和最近进度；同时 `getCatalog()` 每次重复重建全部 Unlock 静态目录。
+5. 修复：新集合按学生保存槽位摘要，回填 11 条有效进度和 11 个槽位；任务写入后按槽位幂等同步；静态听力和语法目录改为实例内复用。
+6. 是否需要发版：`yoyo` 云函数已部署，原进度未修改；前端摘要竞态修复仍需发布小程序版本。
+7. 回归：`cloudRefresh=697/604/870ms`，全部 `dataFresh=true`，无 timeout 和错误文案闪烁。
+
 ### 2026-07-15 Magic Tree House 每集进入加载缓慢
 
 1. 现象：从任务表进入任意 Magic Tree House 单集时，真机课程页等待时间明显长于其他音频。

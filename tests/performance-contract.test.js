@@ -60,11 +60,25 @@ test('首页快照首显后强制刷新并回写可复用缓存', () => {
 test('首页次级预取等待 dashboard 云刷新完成后再错峰执行', () => {
   const source = fs.readFileSync(path.join(root, 'pages/home/index.js'), 'utf8');
   const onShowSource = source.slice(source.indexOf('async onShow()'), source.indexOf('showNextEntryPosterPage()'));
-  assert.match(onShowSource, /const homeRefreshPromise = this\.refreshHomeDashboard/);
+  assert.match(onShowSource, /const homeRefreshPromise = this\.startHomeDashboardRefresh/);
   assert.match(onShowSource, /this\.scheduleHomePrefetches\(homeRefreshPromise\)/);
   assert.doesNotMatch(onShowSource, /setTimeout\(\(\) => \{\s*this\.prefetchReadingHome/);
   assert.match(source, /Promise\.resolve\(refreshPromise\)[\s\S]*?prefetchRecordHome/);
   assert.match(source, /onHide\(\) \{\s*this\.clearHomePrefetchTimers\(\)/);
+});
+
+test('首页只允许最新 dashboard 请求更新加载和不可用状态', () => {
+  const source = fs.readFileSync(path.join(root, 'pages/home/index.js'), 'utf8');
+  const refreshSource = source.slice(source.indexOf('  startHomeDashboardRefresh(options = {}) {'), source.indexOf('  prefetchListeningMaterialHome() {'));
+  const identitySource = source.slice(source.indexOf('  async confirmStudyIdentity(event) {'), source.indexOf('  beginHomeDashboardRefresh() {'));
+  assert.match(source, /const homeRefreshPromise = this\.startHomeDashboardRefresh\(\{ skipCache: true, perf: homePerf \}\)/);
+  assert.match(refreshSource, /const refreshId = this\.beginHomeDashboardRefresh\(\)/);
+  assert.match(refreshSource, /if \(this\.isHomeDashboardRefreshCurrent\(refreshId\)\) \{\s*this\.setData\(\{ homeLoading: false \}\)/);
+  assert.match(refreshSource, /if \(!this\.isHomeDashboardRefreshCurrent\(refreshId\)\) return;/);
+  assert.match(refreshSource, /if \(!this\.isHomeDashboardRefreshCurrent\(refreshId\)\) \{\s*return this\.data\.groupedDailyTasks \|\| \[\]/);
+  assert.doesNotMatch(identitySource, /identitySelectedInSession: true,\s*homeLoading: false/);
+  assert.match(identitySource, /const fastPainted = this\.applyFastDashboardSnapshot\(nextRole\);\s*if \(!fastPainted\) \{\s*this\.setData\(\{ homeLoading: true, homeDataReady: false \}\)/);
+  assert.match(source, /onHide\(\) \{\s*this\.clearHomePrefetchTimers\(\);\s*this\.invalidateHomeDashboardRefresh\(\)/);
 });
 
 test('小程序上传包排除非运行时工程目录', () => {

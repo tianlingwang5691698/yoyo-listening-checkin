@@ -2,6 +2,7 @@ const cloud = require('wx-server-sdk');
 const { getWXContext } = require('../adapters/wx-context.adapter');
 const familyRepository = require('../repositories/family.repository');
 const progressRepository = require('../repositories/progress.repository');
+const fixedPlanSummaryRepository = require('../repositories/fixed-plan-summary.repository');
 const checkinRepository = require('../repositories/checkin.repository');
 const reportRepository = require('../repositories/report.repository');
 const attemptRepository = require('../repositories/attempt.repository');
@@ -20,6 +21,7 @@ const requestContextEngine = require('../lib/request-context-engine');
 const monitor = require('../lib/monitor');
 const catalogEngine = require('../lib/catalog-engine');
 const listeningPlanEngine = require('../lib/listening-plan-engine');
+const fixedPlanSummary = require('../lib/fixed-plan-summary');
 const familyContextFacade = require('../facades/family-context.facade');
 const { collection } = require('../adapters/db.adapter');
 const { isMissingCollectionError } = require('../lib/errors');
@@ -42,7 +44,8 @@ const REQUIRED_COLLECTIONS = [
   'dailyReports',
   'subscriptionPreferences',
   'taskAttempts',
-  'deviceStudySessions'
+  'deviceStudySessions',
+  'fixedPlanProgressSummaries'
 ];
 const childTemplate = {
   childId: 'child-yoyo',
@@ -266,6 +269,42 @@ async function saveProgressRecord(record) {
     familyId: record.familyId,
     childId: record.childId
   }, record);
+}
+
+async function getFixedPlanHomeState(scope, date) {
+  const [summary, todayRecords] = await Promise.all([
+    fixedPlanSummaryRepository.findByScope(scope),
+    progressRepository.findForHomeDate(scope, date)
+  ]);
+  if (summary && Number(summary.version || 0) === fixedPlanSummary.SUMMARY_VERSION) {
+    return {
+      summary,
+      progressRecords: fixedPlanSummary.buildProgressRecords(summary, todayRecords),
+      source: 'fixed-plan-summary'
+    };
+  }
+  return {
+    summary: null,
+    progressRecords: await progressRepository.findForHome(Object.assign({}, scope, { includeHistory: true }), date),
+    source: 'history-fallback'
+  };
+}
+
+async function syncFixedPlanProgressSummary(scope, record) {
+  const category = String(record && record.category || '').trim();
+  const planSlotIndex = Number(record && record.planSlotIndex || 0);
+  if (!category || planSlotIndex <= 0) return null;
+  let summary = await fixedPlanSummaryRepository.findByScope(scope);
+  if (!summary || Number(summary.version || 0) !== fixedPlanSummary.SUMMARY_VERSION) {
+    const records = await progressRepository.findFixedPlanRecords(scope);
+    summary = fixedPlanSummary.buildSummaryDocument(records, scope, summary);
+    await fixedPlanSummaryRepository.replace(scope, summary);
+    return summary.slots[fixedPlanSummary.buildSlotKey(category, planSlotIndex)] || null;
+  }
+  const records = await progressRepository.findFixedPlanSlotRecords(scope, category, planSlotIndex);
+  const slot = fixedPlanSummary.buildSlotSummary(records, category, planSlotIndex);
+  await fixedPlanSummaryRepository.updateSlot(scope, fixedPlanSummary.buildSlotKey(category, planSlotIndex), slot);
+  return slot;
 }
 
 async function getChildProgressRecords(scope) {
@@ -547,6 +586,7 @@ function buildFixedPlanBySlots(progressRecords, childId, date, options = {}) {
     planLib,
     planSlotCount: PLAN_SLOT_COUNT,
     getCatalog,
+    getCompletedCountBeforeDate: fixedPlanSummary.getCompletedCountBeforeDate,
     ...options
   });
 }
@@ -700,6 +740,7 @@ async function getDashboardData(ctx, options = {}) {
     getHomeProgressRecords: (scope, date, queryOptions = {}) => progressRepository.findForHome(Object.assign({}, scope, {
       includeHistory: !!queryOptions.includeHistory
     }), date),
+    getFixedPlanHomeState,
     getCompletedProgressCount: (scope) => progressRepository.countCompletedByScope(scope),
     getCheckins,
     getHomeCheckins: (scope) => checkinRepository.findForHome(scope),
@@ -795,6 +836,7 @@ module.exports = {
   decorateFixedSlotPlanTasks,
   reconcileCheckins,
   saveProgressRecord,
+  syncFixedPlanProgressSummary,
   saveDeviceStudyRole,
   level,
   getLightweightContext,

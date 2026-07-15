@@ -126,16 +126,18 @@ function buildFixedPlanBySlots(progressRecords, childId, date, deps) {
     const slotCount = baseTasks.length;
     byCategory[category] = baseTasks.map((baseTask, slotOffset) => {
       const slotIndex = slotOffset + 1;
-      const completedCount = (progressRecords || []).filter((item) => (
-        item.childId === childId
-          && item.category === category
-          && String(item.planSource || 'fixed-yoyo') === 'fixed-yoyo'
-          && String(item.planRunType || 'normal') === 'normal'
-          && String(item.date || '') >= deps.planLib.FIXED_SLOT_PLAN_STARTED_AT
-          && String(item.date || '') < date
-          && Number(item.planSlotIndex || 0) === slotIndex
-          && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 1))
-      )).length;
+      const completedCount = deps.fixedPlanSummary && deps.getCompletedCountBeforeDate
+        ? deps.getCompletedCountBeforeDate(deps.fixedPlanSummary, category, slotIndex, date)
+        : (progressRecords || []).filter((item) => (
+          item.childId === childId
+            && item.category === category
+            && String(item.planSource || 'fixed-yoyo') === 'fixed-yoyo'
+            && String(item.planRunType || 'normal') === 'normal'
+            && String(item.date || '') >= deps.planLib.FIXED_SLOT_PLAN_STARTED_AT
+            && String(item.date || '') < date
+            && Number(item.planSlotIndex || 0) === slotIndex
+            && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 1))
+        )).length;
       const baseIndex = catalog.findIndex((task) => task.taskId === baseTask.taskId);
       const nextIndex = baseIndex < 0 ? -1 : baseIndex + completedCount * slotCount;
       const source = category === 'grammar'

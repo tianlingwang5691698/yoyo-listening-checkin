@@ -5,6 +5,7 @@ function dailyTaskProgress() {
 }
 
 const HOME_PROGRESS_FIELDS = {
+  progressId: true,
   childId: true,
   category: true,
   date: true,
@@ -21,6 +22,13 @@ const HOME_PROGRESS_FIELDS = {
   durationSec: true,
   updatedAt: true
 };
+
+function fixedPlanQuery(scope) {
+  return dailyTaskProgress().where({
+    familyId: scope.familyId,
+    childId: scope.childId
+  }).field(HOME_PROGRESS_FIELDS);
+}
 
 async function findByScope(scope) {
   const res = await dailyTaskProgress().where({
@@ -49,10 +57,7 @@ async function findByScopeAndCategory(scope, category) {
 }
 
 async function findForHome(scope, date) {
-  const query = dailyTaskProgress().where({
-    familyId: scope.familyId,
-    childId: scope.childId
-  }).field(HOME_PROGRESS_FIELDS);
+  const query = fixedPlanQuery(scope);
   if (scope.includeHistory) {
     const res = await query.limit(1000).get();
     return res.data || [];
@@ -75,6 +80,30 @@ async function findForHome(scope, date) {
     byId[key] = item;
   });
   return Object.values(byId);
+}
+
+async function findForHomeDate(scope, date) {
+  const res = await dailyTaskProgress().where({
+    familyId: scope.familyId,
+    childId: scope.childId,
+    date
+  }).field(HOME_PROGRESS_FIELDS).limit(1000).get();
+  return res.data || [];
+}
+
+async function findFixedPlanRecords(scope) {
+  const res = await fixedPlanQuery(scope).limit(1000).get();
+  return res.data || [];
+}
+
+async function findFixedPlanSlotRecords(scope, category, planSlotIndex) {
+  const res = await dailyTaskProgress().where({
+    familyId: scope.familyId,
+    childId: scope.childId,
+    category,
+    planSlotIndex: Number(planSlotIndex || 0)
+  }).field(HOME_PROGRESS_FIELDS).limit(1000).get();
+  return res.data || [];
 }
 
 async function countCompletedByScope(scope) {
@@ -122,6 +151,9 @@ module.exports = {
   findByScopeAndDate,
   findByScopeAndCategory,
   findForHome,
+  findForHomeDate,
+  findFixedPlanRecords,
+  findFixedPlanSlotRecords,
   countCompletedByScope,
   findByProgressId,
   upsert,

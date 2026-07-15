@@ -107,6 +107,7 @@ const FALLBACK_CATALOG_COUNTS = {
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
 let runtimeCatalogDebug = null;
+let staticCatalogMapCache = null;
 let runtimeDurationTrackMaps = {};
 let runtimeDurationTrackMapExpiresAt = {};
 let storageDebugShapes = {};
@@ -600,7 +601,8 @@ async function getTranscriptBundle(task) {
 }
 
 function getStaticCatalogMap() {
-  return {
+  if (staticCatalogMapCache) return staticCatalogMapCache;
+  staticCatalogMapCache = {
     newconcept1: [],
     newconcept2: [],
     newconcept3: [],
@@ -628,6 +630,7 @@ function getStaticCatalogMap() {
     unlock4workbookthirdedition: buildUnlockSeriesTasks('unlock4workbookthirdedition'),
     song: songTasks
   };
+  return staticCatalogMapCache;
 }
 
 function getStorageManager() {

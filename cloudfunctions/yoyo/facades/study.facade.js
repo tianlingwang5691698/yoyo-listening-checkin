@@ -46,6 +46,7 @@ module.exports = {
   maybeCreateCheckin: shared.maybeCreateCheckin,
   reconcileCheckins: shared.reconcileCheckins,
   saveProgressRecord: shared.saveProgressRecord,
+  syncFixedPlanProgressSummary: shared.syncFixedPlanProgressSummary,
   getResourceDebugSnapshot: shared.getResourceDebugSnapshot,
   isYoyoChild: shared.isYoyoChild,
   level: shared.level

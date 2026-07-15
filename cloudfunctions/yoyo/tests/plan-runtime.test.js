@@ -232,6 +232,10 @@ test('佑佑第 86 天从名词前 3 节开始词法计划', () => {
   );
 });
 
+test('语法固定目录在同一云函数实例内复用', () => {
+  assert.equal(planRuntime.buildGrammarCatalog(), planRuntime.buildGrammarCatalog());
+});
+
 test('佑佑固定计划每个槽位独立推进', () => {
   const catalogs = {
     newconcept1: Array.from({ length: 76 }, (_, index) => ({ taskId: `nce-${index}`, category: 'newconcept1' })),

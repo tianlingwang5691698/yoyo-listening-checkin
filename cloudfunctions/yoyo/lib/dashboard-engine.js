@@ -232,20 +232,30 @@ async function getDashboardData(ctx, deps, options = {}) {
     })
     : null;
   const isYoyoFixedPlanChild = !!(deps.isYoyoChild && deps.isYoyoChild(ctx.child));
-  const progressPromise = options.progressScope === 'home' && deps.getHomeProgressRecords
-    ? deps.getHomeProgressRecords(scope, today, { includeHistory: isYoyoFixedPlanChild })
+  const fixedPlanStatePromise = options.progressScope === 'home' && isYoyoFixedPlanChild && deps.getFixedPlanHomeState
+    ? deps.getFixedPlanHomeState(scope, today)
+    : null;
+  const progressPromise = fixedPlanStatePromise
+    ? fixedPlanStatePromise.then((state) => state.progressRecords)
+    : options.progressScope === 'home' && deps.getHomeProgressRecords
+    ? deps.getHomeProgressRecords(scope, today, { includeHistory: false })
     : deps.getChildProgressRecords(scope);
   const checkinsPromise = options.progressScope === 'home' && deps.getHomeCheckins
     ? deps.getHomeCheckins(scope)
     : deps.getCheckins(scope);
-  let [progressRecords, checkins, todayReport, activeListeningPlan] = await Promise.all([
+  let [progressRecords, checkins, todayReport, activeListeningPlan, fixedPlanState] = await Promise.all([
     progressPromise,
     checkinsPromise,
     includeTodayListeningMinutes && deps.getDailyReport
       ? deps.getDailyReport(scope, today)
       : null,
-    activePlanPromise
+    activePlanPromise,
+    fixedPlanStatePromise
   ]);
+  if (fixedPlanState && activeListeningPlan && activeListeningPlan.active !== false) {
+    progressRecords = await deps.getChildProgressRecords(scope);
+    fixedPlanState = null;
+  }
   markPerf('records', recordsStartedAt);
   if (options.reconcileCheckins !== false && deps.reconcileCheckins) {
     const reconcileStartedAt = Date.now();
@@ -281,7 +291,9 @@ async function getDashboardData(ctx, deps, options = {}) {
     ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex, { date: today, progressRecords })
     : useFixedYoyoPlan
       ? (deps.buildFixedPlanBySlots
-        ? deps.buildFixedPlanBySlots(progressRecords, ctx.child.childId, today, peppaReviewPlanOptions)
+        ? deps.buildFixedPlanBySlots(progressRecords, ctx.child.childId, today, Object.assign({}, peppaReviewPlanOptions, {
+          fixedPlanSummary: fixedPlanState && fixedPlanState.summary || null
+        }))
         : deps.buildPlanForDay(planDayIndex, peppaReviewPlanOptions))
       : {
         dayIndex: 1,
@@ -440,6 +452,7 @@ async function getDashboardData(ctx, deps, options = {}) {
   if (perfDebug) {
     perfDebug.totalMs = Date.now() - perfStartedAt;
     perfDebug.progressRecordCount = progressRecords.length;
+    perfDebug.fixedPlanProgressSource = fixedPlanState && fixedPlanState.source || '';
     perfDebug.checkinCount = checkins.length;
     perfDebug.stats = {
       completedTasks: Number((stats && stats.completedTasks) || 0),

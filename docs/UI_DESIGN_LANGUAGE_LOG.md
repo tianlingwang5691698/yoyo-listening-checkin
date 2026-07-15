@@ -1,5 +1,19 @@
 # 小程序设计语言与改动记录
 
+### 2026-07-15 首页加载状态防竞态
+
+- 板块：首页
+- 文件：`pages/home/index.js`、`tests/performance-contract.test.js`
+- 改动：首页 dashboard 刷新增加请求序号，只允许最新请求更新页面；页面隐藏或卸载时作废未完成请求。冷启动身份确认不再提前关闭加载状态，旧请求失败或身份缓存未命中时都不会短暂显示“服务暂时不可用”。
+- 交互要求：无缓存时持续显示稳定占位，直到最新请求成功或明确失败；已有真实数据不被旧请求状态覆盖。
+
+### 2026-07-16 首页固定计划摘要首屏
+
+- 板块：首页
+- 文件：`cloudfunctions/yoyo/lib/fixed-plan-summary.js`、`cloudfunctions/yoyo/repositories/fixed-plan-summary.repository.js`、`cloudfunctions/yoyo/lib/dashboard-engine.js`、`cloudfunctions/yoyo/lib/plan-engine.js`、`cloudfunctions/yoyo/services/shared.service.js`、`cloudfunctions/yoyo/services/task.service.js`
+- 改动：固定槽位计划首页不再读取完整历史进度，改为读取按学生隔离的槽位摘要和今日进度；摘要缺失时保留旧历史查询回退，普通学生和自定义计划逻辑不变。
+- 性能：线上 `317613` 三轮 `cloudRefresh=697/604/870ms`，首屏 `44/54/87ms`，无加载或不可用文案闪烁。
+
 ### 2026-07-15 口语入口双主题分级跟读
 
 - 口语页新增入口层，统一为“分级句子跟读”主入口和“雅思口语”预留入口；首页不展示虚构进度或统计。
