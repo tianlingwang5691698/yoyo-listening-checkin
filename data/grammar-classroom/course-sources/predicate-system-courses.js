@@ -119,6 +119,67 @@ const EXPLANATIONS = {
     ['Does 已承担现在时和三单一致，seem 必须恢复原形；reasonable 是 seem 后说明 plan 状态的表语。','Does already carries present tense and third-person agreement, so seem returns to the base form; reasonable is the subject complement describing plan.']
   ]
 };
+
+const PREDICATE_NARRATION_FRAMES = {
+  'auxiliary-chain': ['把一串助动词想成排队上车：谁站前面、谁站后面都有固定位置，不能随意换座。先抓住情态、完成、进行和被动这四层，长谓语就不会乱。', '遇到长谓语，从最左边开始读：先判断情态，再看完成、进行或被动，最后落到实义动作。缺哪层就跳过哪层，但顺序不能倒。'],
+  operator: ['一句话要变成疑问或否定，通常不是整条谓语一起搬家，而是让最前面的助动词当“操作开关”。先找到这个开关，后面的变化会简单很多。', '做变句题时先问：原句有没有现成助动词？有，就操作第一个；没有，再请 do、does 或 did 来帮忙，并让实义动词回到原形。这样疑问、否定和时态都会落在同一个开关上。'],
+  'agreement-basic': ['主谓一致可以先理解成“主语和限定动词要对上号”。现在时里，主语是一个人、两个人，或者是 I，动词给出的形式会不同。', '先圈完整主语，再判断它的人称和单复数，最后只检查限定谓语。表语、宾语和地点说明都不决定这次变化。简单句先把“谁”和“怎么样”对好，不要看见一个名词就去改动词。先确定主语范围，再动谓语。'],
+  'agreement-head': ['主语一长，最容易被离动词最近的复数词带跑。正确做法像拆快递：先去掉外面的补充说明，找到真正决定单复数的中心词。', '看到 of、with、together with 或关系从句时，先划清它们属于哪一层。限定谓语跟真正的主语中心一致，不是机械跟最近的名词一致。'],
+  'agreement-proximity-meaning': ['有些主语不能只数词尾，还要看连接方式和整句话把它当成一个整体还是多个个体。这一课处理的就是基础一致之外的两类特殊判断。', '判断顺序是：先看有没有 either...or 一类连接；再找靠近谓语的主语；如果表示时间、金额或比例，再看语境把它理解成整体还是成员。'],
+  'tense-viewpoint': ['时态不只是“现在、过去”的标签，更像摄像机站在哪里看事情；体则告诉你镜头里看到的是常态、正在进行，还是已经完成并和现在有关。', '先定观察点，再看动作内部状态。时间词只能提供线索，真正决定形式的是说话人想把事件放在哪个时间关系里。同一件事换一个观察点，形式也可能跟着变。'],
+  'simple-progressive': ['一般体和进行体的区别，可以先问：是在介绍一条稳定规律，还是把镜头对准一段正在展开、暂时持续的过程？不要见到 now 就机械加 doing。', '先判断动作是常态、状态还是临时过程，再选一般体或进行体。像 understand 这样的状态意义，通常不会为了“此刻”就强行改成进行体。'],
+  'perfect-system': ['完成体像一座桥：动作可能发生在较早时间，但说话人关心它怎样连到现在；完成进行体还会把持续过程一起放到镜头里。', '判断完成体时别只翻成“已经”。要问较早的事件给当前留下什么结果，或者从过去开始的状态、过程是否仍延续到观察点。'],
+  'past-sequence': ['讲过去不只需要“过去式”，还要把几件事排出先后和背景。可以把时间线画出来：哪件事是参照点，哪件更早，哪件当时正在进行。', '先找到过去参照点；更早完成的用过去完成，当时展开的背景用过去进行，落在时间线上的主要事件用一般过去。先后清楚，时态才不会打架。'],
+  'future-system': ['英语表达将来并不只有 will。临时决定、已经安排好的计划，以及条件成立后的结果，会选择不同结构；关键是先看说话场景。', '先判断是当场决定、事先安排还是条件结果，再选择形式。尤其在 if 从句中，不要因为意义指向未来就把两个分句都塞进 will。'],
+  'voice-focus': ['主动和被动不是把同一意思换个壳，而是把镜头对准不同角色：主动句先说谁造成动作，被动句先说谁受到影响。', '先问主语是动作发出者还是承受者，再决定主动或被动。施事不知道、不重要或不想强调时，被动句不必硬加 by someone。镜头换了，事件中谁做、谁承受并没有改变。'],
+  'passive-chain': ['被动可以出现在一般、进行和完成等不同时间画面里。看起来动词很多，其实只是在同一条谓语链上叠加“什么时候、怎样展开、谁承受动作”。', '从左向右先找限定助动词，再识别进行或完成，最后确认被动结构落在过去分词上。每个形式只承担自己那一层信息。'],
+  'modal-system': ['情态动词像给动作加一层说话人的态度：能不能、必须不必须、可能不可能。它不替代动作，而是站在动作前面评价这件事。', '先确定情态意义，再看它判断的是现在动作还是较早事件。普通情态后接原形；情态加 have done 时，判断被推向过去。选词时还要比较语气强弱，“可能”和“必须”并不是同一种态度。'],
+  'semi-modal-system': ['have to、able 结构和 used to 意思有点像情态，但语法行为又保留了实义结构的特点，所以不能全部照 can、must 的方法处理。', '先找真正承担时态和疑问操作的词。半情态的意义可以整体理解，但变否定、疑问或完成时，仍要按它内部的动词结构变化。'],
+  'negation-questions': ['否定和疑问看似要改整句，其实核心动作只有一个：找到限定操作词。它负责接 not，也负责在一般疑问句里移动到主语前。', '变句前先找 be、助动词或情态词；都没有才用 do 支持。特殊疑问词本身作主语时，不要再多做一次倒装。每次只让一个词承担限定变化，实义动词就不会又变一次。先找开关，再变句。'],
+  'emphatic-do': ['肯定句里出现 do、does 或 did，有时不是提问，也不是否定，而是在说“确实如此”。它常用来确认事实、纠正别人或加强对比。', '强调 do 自己承担时态和主谓一致，后面的实义动词必须保持原形。听语气时抓住“确实”，写形式时避免重复变化。句子仍然是肯定陈述，只是说话人把语气特别加重了。'],
+  'short-answers-substitution': ['英语短答不喜欢把刚说过的整条谓语再念一遍，会留下一个能代表原结构的操作词。比较句和“也一样”结构也使用同样办法。', '先回到前一句找操作词：has 就保留 has，can 就保留 can，一般实义动词则用 do、does 或 did 替代。不要只按中文的“也”来猜。'],
+  'predicate-sharing-ellipsis': ['并列结构里，相同的信息可以只说一次。看见后半句变短时，不要认为它缺语法成分，而要从前面的平行结构把共享或省略的部分还原出来。', '还原后要检查时态、语态和情态是否仍一致。能唯一恢复才可以省；如果读者可能恢复出不同内容，就应该保留完整谓语。'],
+  'predicate-integration': ['面对长谓语，最稳的方法不是一次翻完，而是像拆积木一样分层：谁承担限定性，后面依次加入了什么时间、语态和情态信息。', '综合判断按固定顺序走：主语、限定操作词、助动词链、实义动词、补足成分。每层只标一次，既不会漏，也不会把多个形式误数成多个谓语。']
+};
+
+const PREDICATE_NARRATION_CUES = {
+  'auxiliary-chain': ['may 先把整件事标成“可能”，begin 保持原形，两个词合起来才说完整。', '这次链条比第一句多了完成和进行：先是 may，再是 have，最后落到 been waiting。', '第三句没有进行这一层，may、have 和 been repaired 分别交代可能、较早完成和被动。'],
+  operator: ['原陈述句已经有 has，所以直接把它移到 she 前面，不需要另找帮手。', '变否定时 has 不搬家，not 紧跟在它后面，finished 继续保留过去分词。', 'likes 原来独自承担三单；变疑问后这份变化交给 Does，like 就回到原形。'],
+  'agreement-basic': ['boy 只表示一个第三人称对象，所以现在时的 play 要带上 s。', '主语换成 I，be 就使用 am；ready 只是说明状态，不参与选择。', 'Tom 和 Mia 被 and 连成两个人，主语按复数理解，因此使用 are。'],
+  'agreement-head': ['books 虽然靠近 is，却只是放在 of 后修饰 box；真正管单复数的是 box。', 'friends 也只是附加说明，核心主语仍是 Mia，所以不能被复数词带成 are。', '这一句要进入 who 从句判断：who 指回 students，从句里的 work 因此按复数处理。'],
+  'agreement-proximity-meaning': ['either...or 让谓语看靠近的一项；这里 boys 紧挨谓语，所以选择 are。', 'ten minutes 虽有复数形式，这里却被当作一整段时长，搭配单数 is。', 'half 本身不决定形式；water 是不可数整体，所以这一句仍用 is。'],
+  'tense-viewpoint': ['lives 把居住状态当作现在成立的事实，now 只是把语境说得更明确。', 'is 负责现在时间，reading 把镜头拉到正在展开的过程，两部分缺一不可。', 'have read 把较早的阅读经历连到当前，重点不是过去日期，而是现在仍相关。'],
+  'simple-progressive': ['水在一百度沸腾是一条常规规律，不是在拍某一秒的过程，所以用 boils。', 'this week 限定一段临时时间，is staying 正好呈现这段暂住过程。', 'understand 表示当前认知状态；这里不需要把“理解”硬说成正在展开的动作。'],
+  'perfect-system': ['钥匙较早丢失，但句子关心她现在仍找不到或受到影响，所以使用 has lost。', '居住从过去延续到现在，for five years 量出的是整段持续时间。', '雨从早些时候一直下到现在，has been raining 同时突出连接当前和持续过程。'],
+  'past-sequence': ['八点是明确的过去时间点，rang 直接把响铃事件放到这条过去时间线上。', 'arrived 提供较晚的参照点，火车离开更早，因此用 had left 拉开先后。', '做饭是当时铺开的背景，来电是插入背景的短事件，两种过去形式分工不同。'],
+  'future-system': ['电话响起后当场决定去接，will answer 表达的正是说话时形成的决定。', '见老师已经安排好，are meeting 用现在进行形式呈现确定安排，tomorrow 指向未来。', 'if 从句先给未来条件，用 rains；主句再用 will stay 说明条件成立后的结果。'],
+  'voice-focus': ['主动句先摆出 storm，让读者先看造成损坏的来源，再看到 roof 承受动作。', '被动句把 roof 推到句首；was damaged 说明它受到影响，by 短语才补回风暴。', '自行车被偷已经是完整重点，偷车的人未知也不重要，没有必要虚加一个施事。'],
+  'passive-chain': ['is 负责现在和单数一致，cleaned 负责被动；daily 再说明这一动作的规律。', '道路此刻处在维修过程中，所以进行层和被动层同时出现，形成 is being repaired。', '工作已经完成，has been finished 把完成结果与被动关系叠在同一条链上。'],
+  'modal-system': ['can 先给 swim 加上能力意义，而真正动作仍由原形 swim 表达。', 'must 把“系安全带”变成强义务；wear 不再自己变化。', 'may 表示不确定判断，have missed 把这个判断指向较早发生的误车。'],
+  'semi-modal-system': ['have to 自己不能像 must 那样直接前移，这里需要 Do 来承担疑问。', '完成变化落在 has been 上，able to solve 说明到现在已经具备的能力。', 'Did 已经带走过去标记，后面只能写 use to，不能再让 used 重复过去变化。'],
+  'negation-questions': ['is 本身就能接 not，ready 只是表语，因此不用额外增加 do。', '原句没有助动词，Did 被请到句首承担过去和疑问，arrive 随即恢复原形。', 'Who 就是要寻找的主语，called 直接跟在后面；这里没有另一个主语需要倒装。'],
+  'emphatic-do': ['do 没有改变 understand 的动作，只把语气加强成“我确实理解”。', 'does 同时扛起强调和三单，want 不能再加 s，否则同一变化会出现两次。', '过去的强调由 did 负责，所以后面保留 call，而不是再写过去式。'],
+  'short-answers-substitution': ['问句使用 Has，答语就保留 has；Mia 换成 she 后，不需要再重复 left。', 'does 在比较分句里代替 sings，同时与 Tom 保持现在时和单数一致。', '前句的关键操作词是 can，所以“Tom 也会”仍保留 can，而不是换成 does。'],
+  'predicate-sharing-ellipsis': ['has 同时管 finished 和 sent，两个动作并列共享同一层完成意义。', 'Tom 后只留下 can，读者能从前半句恢复 play the piano，所以无需重复。', 'were not 保留被动和否定，省掉的 accepted 能从前一分句唯一找回。'],
+  'predicate-integration': ['may 是最左边的限定开关，have 加入完成，been closed 再加入被动。', 'must 先表达判断，have 把完成放到较早时间，been completed 表明 work 承受动作。', 'Does 已经承担现在时和三单，seem 必须用原形；reasonable 再说明 plan 的状态。']
+};
+
+function attachPredicateNarrations(course) {
+  const connectors = ['先看', '再看', '最后看'];
+  course.slice(1).forEach((item) => {
+    const frame = PREDICATE_NARRATION_FRAMES[item.id];
+    const cues = PREDICATE_NARRATION_CUES[item.id];
+    if (!frame || !cues || cues.length !== item.examples.length) throw new Error(`Missing predicate narration: ${item.id}`);
+    const exampleText = item.examples.map((example, index) => `${connectors[index] || '接着看'}，${example}<#0.7#>${cues[index]}`).join('<#0.8#>\n');
+    const text = `${frame[0]}<#0.9#>\n${exampleText}<#0.9#>\n${frame[1]}`;
+    item.narration = {
+      id: `predicate-system:${item.id}`,
+      version: 'v1',
+      text,
+      lengthText: `${text.replace(/<#\d+(?:\.\d+)?#>/g, '').replace(/\s/g, '').length} 字 · 约 2 分钟`
+    };
+  });
+}
 function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms) {
   if (atoms.length < 3) throw new Error(`Too few predicate atoms: ${id}`);
   const explanations = EXPLANATIONS[id];
@@ -279,6 +340,7 @@ I know that she agrees。<#0.8#>先看外层，I 的限定谓语是 know。that 
 判断时先划分小句；再在每个小句里找负责时间、语气或主语变化的动词；如果它后面还跟着其他动词形式，再把相关部分合成完整谓语。先分层，再数谓语，最不容易错。`,
     lengthText:'443 字 · 约 2 分钟'
   };
+  attachPredicateNarrations(course);
   const core=course.filter(l=>l.level==='core'), advanced=course.filter(l=>l.level==='advanced');
   return { title:pick(english,`谓语系统 · ${course.length} 节微课`,`Predicate system · ${course.length} lessons`), copy:pick(english,'从限定谓语出发，系统理解一致、时体、语态、情态和句子操作。','Start with finiteness, then build agreement, tense-aspect, voice, modality and clause operations.'), course,sections,groups:[
     {id:'core',title:pick(english,`核心必学 · ${core.length} 节`,`Core · ${core.length} essential lessons`),copy:pick(english,'建立所有句子分析都依赖的谓语框架。','Build the predicate framework required for sentence analysis.'),lessons:core},

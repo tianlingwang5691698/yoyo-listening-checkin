@@ -182,6 +182,134 @@ const exampleExplanations = {
   ]
 };
 
+const sentenceElementNarrationTexts = {
+  subject: `找主语，不能只问“谁做了动作”，而要先找谓语，再看这句话主要在说谁或什么。<#0.8#>
+The window was broken。<#0.8#>先找到 was broken，它说明“被打破”这件事。整句话说的是 The window，所以 The window 是主语。窗户没有主动去打破什么，也不影响它做主语。主语是谓语陈述的对象，不一定是动作发出者。<#0.8#>
+Reading aloud helps。<#0.8#>helps 是谓语，什么有帮助？Reading aloud，也就是“朗读这件事”。这里不能只圈 Reading，因为 aloud 在这块内容里面说明朗读的方式。整段动名词短语一起站在主语位置。<#0.8#>
+The box of old books is heavy。<#0.8#>is 是限定谓语，主语要完整框出 The box of old books。真正决定单复数的是中心词 box，of old books 只是说明哪一个箱子，所以用 is。<#0.8#>
+判断主语时按三步走：先找带时态或情态的谓语，再问谓语在陈述谁或什么，最后把答案的完整边界圈出来。遇到被动、动名词短语和带修饰语的名词短语，都不要只凭中文意思猜。`,
+  'predicate-boundary': `一句话里看到两三个像动词的词，别急着把它们算成两三个谓语。先找真正负责时态的那一组，再看动作后面还带了什么。<#0.8#>
+Mia has finished her work。<#0.8#>has 带现在时并组成完成结构，finished 给出“完成”的实际动作，所以 has finished 要一起看作谓语动词组。her work 回答完成了什么，是它后面的宾语。<#0.8#>
+You must leave now。<#0.8#>must 表示必须，leave 表示离开，两者合在一起才是谓语核心。now 只补充时间，不能因为紧跟在后面就算进谓语动词组。<#0.8#>
+The girl standing by the door is my sister。<#0.8#>先找真正带时态的 is。standing by the door 没有独立承担时态，只是放在 girl 后面说明是哪一个女孩，所以它是后置定语。is 连接主语和 my sister。<#0.8#>
+实用判断是：先找全句唯一能承担时态、情态或主谓一致的部分，再把助动词、情态动词和实义动词连成谓语动词组，最后才看它后面带了哪些其他成分。`,
+  'direct-object': `直接宾语可以理解成：一个动作发出去以后，最直接落到谁或什么上。先找到动词，再问它直接涉及的是谁或什么。<#0.8#>
+Leo opened the door。<#0.8#>opened 是动作，打开了什么？the door。它不需要介词引出，直接跟在 opened 后承受动作，所以是直接宾语。主干就是 Leo、opened、the door 三个核心位置。<#0.8#>
+The teacher praised him。<#0.8#>praised 后要补出表扬的对象，him 填进这个位置。这里用 him 而不是主格形式，因为人称代词进入宾语位置要用宾格。<#0.8#>
+We enjoy reading stories。<#0.8#>enjoy 的对象不是某一个东西，而是 reading stories 所表示的“读故事这件事”。这块内容内部有 reading 和 stories 的关系，放到外层却要整体作 enjoy 的宾语。<#0.8#>
+判断直接宾语，不要只盯一个名词。先确认动词能直接支配对象，再找完整答案；这个答案可以是名词、代词，也可以是一整块非谓语结构。`,
+  'indirect-object': `有些动作同时牵涉“给谁”和“给什么”，这时要把接收者与被传递的事物分开。接收者通常是间接宾语，事物通常是直接宾语。<#0.8#>
+Dad gave me a key。<#0.8#>gave 后先出现 me，再出现 a key。me 是拿到钥匙的人，作间接宾语；a key 是实际被给予的东西，作直接宾语。这就是常见的双宾语结构。<#0.8#>
+Dad gave a key to me。<#0.8#>顺序变化后，a key 仍然是 gave 直接涉及的事物。to 把动作指向接收者，me 现在受介词 to 支配，所以它是介词宾语，不再叫间接宾语。<#0.8#>
+Mum made us lunch。<#0.8#>us 是得到好处的人，lunch 是做出来的东西。这里同样是“人加物”，但如果把事物放前面，通常要另外标出受益关系。<#0.8#>
+分析时先问两件事：动作涉及的东西是什么，接收或受益的人是谁。再看这个人是直接跟在动词后，还是已经被介词引出。位置不同，成分名称也会改变。`,
+  'preposition-object': `介词像一个关系箭头，但箭头后面必须有落点。这个落点就是介词宾语；介词和它的宾语合在一起，才构成完整的介词短语。<#0.8#>
+She sat beside me。<#0.8#>beside 表示旁边的关系，me 是这个关系指向的对象，所以 me 是介词宾语。beside me 整块再去说明 sat 的位置，不能把 me 当成 sat 的直接宾语。<#0.8#>
+He left without saying goodbye。<#0.8#>without 后面没有接普通名词，而是 saying goodbye。它表示“说再见这件事”，整块动名词短语受 without 支配，仍然是介词宾语。<#0.8#>
+The choice depends on what you need。<#0.8#>on 后面的落点更长，是 what you need 这个从句。先把从句完整框起来，再判断它整体受 on 支配；不要跳进从句内部，把其中某一个词单独当介词宾语。<#0.8#>
+判断方法很直接：先圈介词，再找它后面管到哪里。落点可能是代词、动名词短语，也可能是从句；边界不同，形式不同，但它们承担的都是介词宾语这一任务。`,
+  predicative: `看到 is、tastes 这类词，先别急着问“动作碰到了谁”。有时它们只是搭一座桥，把主语和它的身份或状态连起来；桥后面的部分，才叫表语。<#0.8#>
+Amy is a doctor。<#0.8#>is 在这里没有表示一个具体动作，而是把 Amy 和 a doctor 连起来。a doctor 说明 Amy 的身份，所以是表语，也可以理解为对主语的补充说明。<#0.8#>
+The soup tastes delicious。<#0.8#>tastes 不是说汤主动品尝了什么，而是在表达汤尝起来的状态。delicious 回头说明 The soup 怎么样，因此它是表语，不是宾语。<#0.8#>
+The problem is that we lack time。<#0.8#>这次 is 后面不是一个词，而是 that we lack time 整个从句。它把问题的具体内容说完整，所以整个从句作表语。<#0.8#>
+辨认表语时，先看动词是否在表示身份、性质、状态或变化，再看后面的内容能否回指主语。能回答主语“是什么、怎么样”的，就是表语；即使它是一整句话，也要按完整边界分析。`,
+  'object-complement': `有时动词后面已经有宾语，但意思还没说完，还要再补一句“这个宾语是谁、怎么样，或者做了什么”。这块补充内容就是宾语补足语。<#0.8#>
+They elected Mia captain。<#0.8#>Mia 是 elected 的宾语，captain 说明 Mia 被选成什么。Mia 和 captain 之间能建立“她就是队长”的关系，所以 captain 是宾语补足语。<#0.8#>
+The news made us happy。<#0.8#>us 是受到影响的对象，happy 描写 us 产生的状态。happy 不是动作方式，也不是另一个宾语，而是把宾语的状态补完整。<#0.8#>
+I saw him cross the road。<#0.8#>him 是 saw 的宾语，cross the road 说明 him 做了什么。这里要把宾语和后面的动作联系起来，不能把 cross 误当成全句第二个限定谓语。<#0.8#>
+检查宾补可以在宾语和后面内容之间加入“是、变得、做了”来理解。如果后半部分正好补充宾语的身份、状态或动作，而且动词需要这层信息才能完整，就应分析为宾语补足语。`,
+  attributes: `定语的任务是帮助听者认出“哪一个人或东西”。短的修饰常放在名词前，较长的短语或从句常放在名词后，但它们都围绕名词工作。<#0.8#>
+The red school bus stopped。<#0.8#>整句先看主干：The red school bus 是主语，stopped 是谓语。red 和 school 都放在中心词 bus 前，帮助说明是哪一辆车，因此属于前置定语。<#0.8#>
+The girl with a red scarf is Mia。<#0.8#>with a red scarf 紧跟 girl，说明是哪一个女孩，所以整块介词短语作后置定语。is Mia 才是主干的谓语和表语。<#0.8#>
+The book that you lent me is useful。<#0.8#>that you lent me 也是放在 book 后面限定它，只不过这次修饰部分是一整个从句。外层主语要一直框到从句结束，is useful 才接着构成主干。<#0.8#>
+判断定语先找中心名词，再问旁边内容是否在回答“哪一个、什么样的”。不要只根据长短判断；关键是它修饰名词，而不是说明动作发生的时间、地点或方式。`,
+  'adverbial-time-place-frequency': `状语是在主干之外补充动作背景的成分。这一节只看三个最常用的问题：什么时候、在哪里、多久或多常发生。<#0.8#>
+We met after class。<#0.8#>主干 We met 已经完整，after class 只是回答什么时候见面，所以整块是时间状语。去掉它，句子仍有主谓骨架，只是时间信息少了。<#0.8#>
+They play football in the park。<#0.8#>play 直接带 football 作宾语，in the park 回答在哪里踢球，因此是地点状语。它修饰的是 play 这个动作，不是限定 football。<#0.8#>
+She has often visited us。<#0.8#>often 表示动作出现的频率。这里 has 和 visited 共同组成谓语动词组，频率副词放在第一个助动词 has 后面。它的位置受英语谓语结构影响，不能机械照搬中文顺序。<#0.8#>
+判断时先拿出主干，再对剩余内容提问：回答何时的是时间状语，回答何地的是地点状语，说明动作出现次数或规律的是频率状语。同时还要看它究竟修饰动词，还是紧跟名词去限定名词。`,
+  'adverbial-manner-degree': `同样是状语，有的说明动作怎样进行，有的说明程度高低，还有的只把重点框在某一部分。判断时要先找它真正影响的对象。<#0.8#>
+Mia answered the question carefully。<#0.8#>主干里 answered 带 the question 作宾语，carefully 回答“怎样回答”，所以是方式状语。它说明动作的进行方式，不是形容 the question。<#0.8#>
+The water is very cold。<#0.8#>is 连接 The water 和 cold，cold 是表语。very 紧贴 cold，只把“冷”的程度往上推，因此是程度状语。它修饰形容词，不直接修饰 is。<#0.8#>
+Only Mia solved the problem。<#0.8#>only 靠近 Mia，作用范围就是主语，意思重点落在“只有 Mia”。如果只看到它是副词，却不看位置和范围，就会漏掉句子的真正强调。<#0.8#>
+分析这类状语，可以问三个问题：它在说明动作怎么做，还是把性质推到什么程度，还是把重点限制在哪一块。先找修饰对象，再给状语分类，比背固定位置更可靠。`,
+  'adverbial-cause-purpose-result': `原因、目的和结果都能给动作补充逻辑，但方向不同：原因在回答为什么发生，目的在回答想达到什么，结果在回答最后实际发生了什么。<#0.8#>
+Because of the rain, the match stopped。<#0.8#>the match stopped 是发生的事，Because of the rain 把停止的原因放在前面，所以它是原因状语。<#0.8#>
+She left early to catch the bus。<#0.8#>left 是已经做出的动作，to catch the bus 说明提前离开的目标。赶上车是她想实现的事，不是句子已经确认出现的结果，因此是目的状语。<#0.8#>
+He was so tired that he fell asleep。<#0.8#>so 把 tired 的程度推高，that he fell asleep 说出由此真正产生的后果。睡着不是预先要完成的目标，而是太累带来的结果，所以整个从句作结果状语。<#0.8#>
+区分时按时间方向想：动作之前促成它的是原因，动作时心里瞄准的是目的，动作或状态之后实际出现的是结果。不要只看到某个连接形式就下结论，要回到句中逻辑。`,
+  'adverbial-condition-concession-comment': `有些状语不是补充时间地点，而是在搭建整句话的逻辑背景：事情在什么条件下成立，结果是否出乎预期，或者说话人怎样看待这件事。<#0.8#>
+If you hurry, you can catch the train。<#0.8#>后半句能否实现，要看前面的 If you hurry 是否满足，所以这个从句是条件状语。它提供的是主句成立的前提。<#0.8#>
+Although it was cold, they swam。<#0.8#>冷通常会让人不去游泳，但实际结果是 they swam。前面先承认事实，后面却出现反预期结果，因此这是让步关系。<#0.8#>
+Fortunately, everyone arrived safely。<#0.8#>Fortunately 不是说明怎样到达；怎样到达由 safely 表达。它是在评价“大家安全到达”这整件事，传达说话人的庆幸，所以是评注性状语。<#0.8#>
+判断这三类时看作用范围：控制主句能否成立的是条件，承认阻碍却不改变结果的是让步，表达说话人态度并评价整句的是评注。`,
+  apposition: `同位语可以理解成：同一个人或事物，紧接着换一种叫法再说明一次。前后两块指向同一个对象，不是一个修饰另一个的普通性质。<#0.8#>
+Mr Li, our English teacher, is speaking。<#0.8#>Mr Li 和 our English teacher 都指同一个人。后者告诉我们李老师的身份，因此作同位语；拿掉这块附加说明，主干仍然成立。<#0.8#>
+Paris, the capital of France, attracts tourists。<#0.8#>Paris 与 the capital of France 也是两个名称指向同一座城市。逗号把附加解释隔开，主干是 Paris 作主语，attracts 作谓语，tourists 作宾语。<#0.8#>
+The news that we won is true。<#0.8#>that we won 不只是描述消息的外在特点，而是在回答消息的具体内容是什么，所以它是同位语从句。这里的 that 负责引出内容，不在从句内部充当成分。<#0.8#>
+辨认同位关系，可以问前后两块能否画等号，后面是否在重命名或解释前面的内容。若只是回答“哪一个、什么样的”，则更可能是定语。`,
+  'dummy-it-subject': `英语不喜欢把很长的主语全堆在句首，常先让 it 占住主语位置，再把真正要谈的事情放到后面。这个 it 叫形式主语。<#0.8#>
+It is important to sleep well。<#0.8#>important 真正评价的是 to sleep well，也就是睡好觉这件事。it 不指某个具体东西，只让句首结构轻一些；to sleep well 才是真正主语。<#0.8#>
+It is clear that he agrees。<#0.8#>clear 所判断的内容由 that he agrees 给出。前面的 it 仍然只是占位，后面的整个从句是真正主语。分析时不要把 that 从句误当成普通宾语。<#0.8#>
+It took me an hour to finish。<#0.8#>句首 it 继续占位，to finish 表示真正需要完成的事项。me 是经历这段时间的人，an hour 是所用时长，各有自己的位置。<#0.8#>
+识别形式主语，可以检查 it 是否有明确指代，再看句末的不定式或从句是不是整句真正谈论和评价的内容。能后移长内容、自己又没有实义的 it，就是形式主语。`,
+  'dummy-it-object': `宾语太长时，英语也会先用 it 占住宾语位置，把真正宾语放到后面。这样动词和紧跟的宾语补足语不会被一大段内容隔开。<#0.8#>
+I find it useful to review daily。<#0.8#>find 后的 it 是形式宾语，useful 是宾语补足语。真正被判断为有用的是 to review daily，所以这块不定式才是真正宾语。<#0.8#>
+She made it clear that she disagreed。<#0.8#>made 后先放 it，再用 clear 补充说明；clear 的具体内容由 that she disagreed 给出。it 没有指代某件物品，整个 that 从句才是真正宾语。<#0.8#>
+We consider it necessary that everyone attend。<#0.8#>consider、it、necessary 先形成清楚的框架，that everyone attend 放到末尾承载实际内容。长从句后移，读者更容易看出动词与补足语的关系。<#0.8#>
+判断形式宾语时，看见“动词、it、形容词、长内容”这一排列，要检查形容词真正评价谁。若评价的是后面的不定式或从句，it 只是占位，后面的长内容才是真正宾语。`,
+  'existential-there': `there 有两种完全不同的工作：一种只负责把“有某物”带进句子，另一种真的表示“在那里”。判断时不能只看这个单词，要看整句结构。<#0.8#>
+There is a book on the desk。<#0.8#>句首 There 不指具体地点，只是存在句引导词；is 是存在谓语，a book 是被介绍出来的后置主语，真正的地点由 on the desk 表达。<#0.8#>
+There are two reasons。<#0.8#>这里 are 的单复数不是跟句首 There 决定，而是看后置主语 two reasons。中心词 reasons 是复数，所以使用 are。<#0.8#>
+Your bag is there。<#0.8#>这次句子已经有主语 Your bag，is 后的 there 能直接回答包在哪里，也可以在口语中重读，所以它有真实地点意义，作地点状语。<#0.8#>
+分辨方法是先看 there 后是否紧接存在谓语和新出现的人或物；如果是，它多半只作引导。若句子已有明确主语，there 又能回答“在哪里”，它就是有实义的地点状语。`,
+  'subject-complement-passive': `一个人被选成队长，“队长”仍然在说明这个人，不会因为句子用了“被”就变成另一个宾语。主动句变成被动句后，原来的宾语变成主语，原来的宾补也就跟着变成主语补足语。<#0.8#>
+Mia was elected captain。<#0.8#>was elected 是被动谓语，Mia 是主语。captain 说明 Mia 被选成什么，它与主语建立身份关系，因此是主语补足语，不是 elected 后的新宾语。<#0.8#>
+He was seen to enter the room。<#0.8#>He 是被看见的人，to enter the room 说明主语做了什么。感官动词变为被动后，原来省略的 to 通常恢复，整块不定式作主语补足语。<#0.8#>
+The door was painted red。<#0.8#>was painted 表示被漆，red 说明 The door 最后形成的状态。它不是漆的方式，而是对主语结果状态的补充。<#0.8#>
+判断时追踪关系变化：先找被动主语，再看后面的名词、形容词或不定式是否仍在说明这个主语的身份、状态或动作。能补全主语意义的，就是主语补足语。`,
+  'nonfinite-elements': `一句话里出现多个像动词的形式，不等于每一个都在负责全句时态。先找真正带时态的那一个，再把剩下的整块圈出来，看它在外层句子里做什么。<#0.8#>
+She has a report to finish tonight。<#0.8#>全句谓语是 has。to finish tonight 紧跟 report，说明是哪一份报告，所以整块作后置定语；tonight 只在这块内部说明 finish 的时间。<#0.8#>
+Learning a language takes time。<#0.8#>takes 是限定谓语，Learning a language 整体表示一项活动，放在谓语前作主语。它内部虽然有“学习”和“语言”的关系，外层任务仍是一个完整主语。<#0.8#>
+Seen from above, the city looks beautiful。<#0.8#>Seen from above 表示城市从上方被看时的视角，逻辑承受者是 the city。整块分词短语修饰主句，作状语；looks 才是主句谓语。<#0.8#>
+处理非谓语，记住顺序：先确认它不负责全句时态，再判断完整边界和逻辑主语，最后看它整体是主语、定语、状语还是补足语。`,
+  'clauses-as-elements': `从句里面有自己的主谓关系，但放进更大的句子后，它还会整体承担一个外层任务。分析时必须先框出从句，再分别看外层和内层。<#0.8#>
+I know why he left。<#0.8#>主句是 I know，know 需要补出知道的内容。why he left 整块回答“知道什么”，所以作宾语从句；它不是在说明 I know 的原因。<#0.8#>
+The student who answered first won。<#0.8#>who answered first 跟在 student 后，说明是哪一个学生，因此整个从句作后置定语。进入从句内部，who 又承担 answered 的主语，连接作用和内部成分要同时看到。<#0.8#>
+We will start when everyone arrives。<#0.8#>We will start 已有完整主干，when everyone arrives 只是说明开始的时间，所以整个从句作时间状语。<#0.8#>
+判断从句功能，不要只凭开头的连接词。看它在外层填了什么空：补动词内容的是宾语，限制名词的是定语，给主句添加时间等背景的是状语。`,
+  'coordination-sharing-ellipsis': `并列结构会把同一层级的内容放在一起，有时还会共享主语、谓语，甚至省掉重复部分。分析前先还原平行关系，再给每块命名。<#0.8#>
+Mia bought books and magazines。<#0.8#>books 和 magazines 都回答买了什么，and 把两个直接宾语连接在同一层级。不能把 and 后面的 magazines 看成另起一句。<#0.8#>
+Tom and Mia opened the box and checked it。<#0.8#>Tom and Mia 是并列主语，共同完成两个动作。opened 带 the box 作宾语，checked 带 it 作宾语；第二个动作共享前面的主语，没有必要重复写出。<#0.8#>
+Mia likes tea; Tom, coffee。<#0.8#>分号两边结构平行，后一部分省略了与前面相同的谓语。还原后就能看出 Tom 是主语，coffee 是省略谓语所带的宾语。<#0.8#>
+处理并列和省略，先看连接或标点两边是否地位相同，再补回能从前文确定的共同成分。还原后的结构说得通，成分判断才可靠。`,
+  'nested-analysis': `复杂句容易错，不是因为成分突然变多，而是不同层级叠在一起。最稳的方法是从外到内，一层一层拆，不能把内层谓语和外层谓语并排计算。<#0.8#>
+The teacher said that the test was easy。<#0.8#>先看外层，The teacher 是主语，said 是主句谓语，后面整块从句作宾语。进入从句内部，the test、was、easy 才构成自己的主系表关系。<#0.8#>
+The book that you recommended is useful。<#0.8#>外层主语是 The book that you recommended 整块，is 是谓语，useful 是表语。在主语内部，that you recommended 只负责修饰中心词 book。<#0.8#>
+The students in the library read quietly。<#0.8#>in the library 紧跟 students，限定是哪一些学生，所以在主语内部作后置定语；quietly 才直接说明 read 的方式。<#0.8#>
+做嵌套分析时，先找主句限定谓语和主干，再圈出大成分边界，最后进入大成分内部继续拆。每次只回答当前层级的问题。`,
+  'integrated-analysis': `综合分析不是一次给每个词贴标签，而是先抓骨架，再把说明性内容挂回它真正修饰的中心。遇到不确定，还要用提问、替换和语境验证。<#0.8#>
+My brother Tom sent me a photo yesterday。<#0.8#>主干先看 sent 前后的关系：My brother Tom 是主语，me 是接收者，a photo 是被传递的东西。Tom 与 brother 指同一个人，作同位语；yesterday 再补充时间。<#0.8#>
+The young scientist explained the result to us clearly。<#0.8#>explained 直接带 the result，to 把关系指向 us，clearly 回答怎样解释。直接宾语、介词宾语和方式状语要分开，不能全并成一块。<#0.8#>
+She saw the man with a telescope。<#0.8#>with a telescope 可能跟 man 连在一起，说明是哪一个人；也可能修饰 saw，说明看的工具。页面没有更多语境时，两种结构都要保留。<#0.8#>
+完整步骤是：找限定谓语，划主干槽位，框出短语或从句边界，把定语和状语挂回中心，最后用语义检查。无法由语境排除的歧义，不要强行只留一个答案。`
+};
+
+const sentenceElementNarrationVersions = {
+  'predicate-boundary': 'v2',
+  'direct-object': 'v2',
+  predicative: 'v2',
+  'subject-complement-passive': 'v2',
+  'nonfinite-elements': 'v2'
+};
+
+const makeSentenceElementNarration = (id, text) => ({
+  id: `sentence-elements:${id}`,
+  version: sentenceElementNarrationVersions[id] || 'v1',
+  text,
+  lengthText: `${text.replace(/<#\d+(?:\.\d+)?#>/g, '').replace(/\s/g, '').length} 字 · 约 2 分钟`
+});
+
 function buildSentenceElementsCourse(english) {
   const L = (...args) => makeLesson(english, ...args);
   const lessons = [
@@ -330,6 +458,7 @@ function buildSentenceElementsCourse(english) {
     if (INCLUDE_RULE_COVERAGE) item.ruleCoverage.forEach((coverage, index) => {
       if (!coverage.exampleIndexes.length || !coverage.questionIndexes.length || coverage.exampleIndexes.some((i) => i < 0 || i >= item.examples.length) || coverage.questionIndexes.some((i) => i < 0 || i >= item.questions.length)) throw new Error(`Invalid rule coverage: ${item.id}:${index}`);
     });
+    if (sentenceElementNarrationTexts[item.id]) item.narration = makeSentenceElementNarration(item.id, sentenceElementNarrationTexts[item.id]);
   }
   course[0].narration = {
     id: 'sentence-elements:element-levels',

@@ -172,19 +172,24 @@ test('25 个云端专题与源 builder 一致且版本哈希可验证', () => {
   assert.equal(manifest.manifestHash, sha256(JSON.stringify(stable(manifestCore))));
 });
 
-test('全部词法课程、其他专题首课及五大基本句型提供中文共享微课讲解', () => {
+test('全部词法与句法课程、其他专题首课提供中文共享微课讲解', () => {
   const narrations = [];
   const allLexicalBuilders = new Set(Object.keys(allBuilders).concat(Object.keys(sourceWordFormationCourses)));
+  const allSyntaxBuilders = new Set([
+    'buildSentenceElementsCourse',
+    'buildBasicSentencePatternsCourse',
+    'buildPredicateSystemCourse',
+    'buildNonfiniteSystemCourse',
+    'buildSpecialStructuresCourse'
+  ]);
   Object.entries(allSectionBuilders).forEach(([builderName, builder]) => {
     const zhBundle = builder(false);
     const enBundle = builder(true);
     const zhLessons = zhBundle.course.filter((lesson) => lesson.narration);
     const enLessons = enBundle.course.filter((lesson) => lesson.narration);
-    const expectedLessonIds = allLexicalBuilders.has(builderName)
+    const expectedLessonIds = allLexicalBuilders.has(builderName) || allSyntaxBuilders.has(builderName)
       ? zhBundle.course.map((lesson) => lesson.id)
-      : builderName === 'buildBasicSentencePatternsCourse'
-        ? [zhBundle.course[0].id, 'pattern-sv', 'pattern-svc', 'pattern-svo', 'pattern-svoo', 'pattern-svoc']
-        : [zhBundle.course[0].id];
+      : [zhBundle.course[0].id];
     assert.deepEqual(zhLessons.map((lesson) => lesson.id), expectedLessonIds, `${builderName} narrated lessons mismatch`);
     assert.deepEqual(enLessons.map((lesson) => lesson.id), expectedLessonIds, `${builderName} English narrated lessons mismatch`);
     zhLessons.forEach((lesson, index) => {
@@ -221,11 +226,11 @@ test('全部词法课程、其他专题首课及五大基本句型提供中文�
     });
     assert.notEqual(zhBundle.course[0].narration.version, 'v1', `${builderName} first narration version must invalidate the old audio`);
   });
-  assert.equal(narrations.length, 205);
-  assert.equal(new Set(narrations.map((item) => item.id)).size, 205);
+  assert.equal(narrations.length, 301);
+  assert.equal(new Set(narrations.map((item) => item.id)).size, 301);
 
   const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, '../cloudfunctions/yoyo/data/grammar-narration-manifest.json'), 'utf8'));
-  assert.equal(manifest.lessons.length, 205);
+  assert.equal(manifest.lessons.length, 301);
   narrations.forEach((narration) => {
     const key = `${narration.id}:${narration.version}:zh-CN`;
     assert.equal(manifest.hashes[key], narrationHash(narration.text), `manifest mismatch: ${key}`);
@@ -234,6 +239,28 @@ test('全部词法课程、其他专题首课及五大基本句型提供中文�
   const classroomPage = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   assert.match(classroomPage, /const language = 'zh-CN'/);
   assert.match(classroomPage, /shared-zh-CN/);
+});
+
+test('句法全课口播不扩大课程地图与单课视图数据', () => {
+  const syntaxBuilders = [
+    sourceSentenceElementsCourses.buildSentenceElementsCourse,
+    sourceBasicSentencePatternsCourses.buildBasicSentencePatternsCourse,
+    sourcePredicateSystemCourses.buildPredicateSystemCourse,
+    sourceNonfiniteSystemCourses.buildNonfiniteSystemCourse,
+    sourceSpecialStructuresCourses.buildSpecialStructuresCourse
+  ];
+  syntaxBuilders.forEach((builder) => {
+    const bundle = builder(false);
+    const summaries = bundle.course.map(({ id, level, title, meta }) => ({ id, level, title, meta }));
+    const summaryBytes = Buffer.byteLength(JSON.stringify(summaries));
+    const largestLessonBytes = Math.max(...bundle.course.map((lesson) => Buffer.byteLength(JSON.stringify(lesson))));
+    assert.ok(summaryBytes < 10 * 1024, `${builder.name} course summaries too large: ${summaryBytes}`);
+    assert.ok(largestLessonBytes < 12 * 1024, `${builder.name} single lesson too large: ${largestLessonBytes}`);
+  });
+  const classroomPage = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(classroomPage, /this\.fullCourse = course/);
+  assert.match(classroomPage, /course: courseSummaries/);
+  assert.doesNotMatch(classroomPage, /this\.setData\(\{[^}]*course: course[^S]/);
 });
 
 test('十大词性课程中英文内容、练习和两套主题完整', () => {

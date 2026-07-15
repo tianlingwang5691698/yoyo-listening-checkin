@@ -284,14 +284,62 @@
       "source": "verb-numeral-article-courses.js"
     },
     {
+      "id": "basic-sentence-patterns:coordination-sharing",
+      "version": "v2",
+      "lessonId": "coordination-sharing",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:existential-there-be",
+      "version": "v1",
+      "lessonId": "existential-there-be",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
       "id": "basic-sentence-patterns:find-predicate-skeleton",
       "version": "v3",
       "lessonId": "find-predicate-skeleton",
       "source": "basic-sentence-patterns-courses.js"
     },
     {
-      "id": "basic-sentence-patterns:pattern-sv",
+      "id": "basic-sentence-patterns:integrated-pattern-choice",
       "version": "v1",
+      "lessonId": "integrated-pattern-choice",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:linking-transitivity",
+      "version": "v1",
+      "lessonId": "linking-transitivity",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:modifiers-preserve-skeleton",
+      "version": "v1",
+      "lessonId": "modifiers-preserve-skeleton",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:obligatory-adverbial",
+      "version": "v1",
+      "lessonId": "obligatory-adverbial",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:one-verb-many-patterns",
+      "version": "v1",
+      "lessonId": "one-verb-many-patterns",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:pattern-boundaries",
+      "version": "v1",
+      "lessonId": "pattern-boundaries",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:pattern-sv",
+      "version": "v2",
       "lessonId": "pattern-sv",
       "source": "basic-sentence-patterns-courses.js"
     },
@@ -303,7 +351,7 @@
     },
     {
       "id": "basic-sentence-patterns:pattern-svo",
-      "version": "v2",
+      "version": "v3",
       "lessonId": "pattern-svo",
       "source": "basic-sentence-patterns-courses.js"
     },
@@ -317,6 +365,18 @@
       "id": "basic-sentence-patterns:pattern-svoo",
       "version": "v2",
       "lessonId": "pattern-svoo",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:svoo-vs-svoc",
+      "version": "v1",
+      "lessonId": "svoo-vs-svoc",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:transformations-skeleton",
+      "version": "v1",
+      "lessonId": "transformations-skeleton",
       "source": "basic-sentence-patterns-courses.js"
     },
     {
@@ -488,9 +548,117 @@
       "source": "interjection-courses.js"
     },
     {
+      "id": "nonfinite-system:absolute-with-construction",
+      "version": "v1",
+      "lessonId": "absolute-with-construction",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:bare-infinitive",
+      "version": "v1",
+      "lessonId": "bare-infinitive",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:dangling-modifiers",
+      "version": "v1",
+      "lessonId": "dangling-modifiers",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:doing-to-do-meaning",
+      "version": "v1",
+      "lessonId": "doing-to-do-meaning",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
       "id": "nonfinite-system:finite-nonfinite-boundary",
       "version": "v3",
       "lessonId": "finite-nonfinite-boundary",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:gerund-form-logical-subject",
+      "version": "v1",
+      "lessonId": "gerund-form-logical-subject",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:gerund-functions",
+      "version": "v1",
+      "lessonId": "gerund-functions",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:infinitive-adverbials",
+      "version": "v1",
+      "lessonId": "infinitive-adverbials",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:infinitive-forms",
+      "version": "v1",
+      "lessonId": "infinitive-forms",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:infinitive-object-attribute-complement",
+      "version": "v1",
+      "lessonId": "infinitive-object-attribute-complement",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:infinitive-subject-predicative",
+      "version": "v1",
+      "lessonId": "infinitive-subject-predicative",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:nonfinite-clause-conversion",
+      "version": "v1",
+      "lessonId": "nonfinite-clause-conversion",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:nonfinite-integrated",
+      "version": "v1",
+      "lessonId": "nonfinite-integrated",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:participle-adverbials",
+      "version": "v1",
+      "lessonId": "participle-adverbials",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:participle-attribute-predicative",
+      "version": "v1",
+      "lessonId": "participle-attribute-predicative",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:participle-object-complements",
+      "version": "v1",
+      "lessonId": "participle-object-complements",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:participle-voice-time",
+      "version": "v1",
+      "lessonId": "participle-voice-time",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:perception-causative",
+      "version": "v1",
+      "lessonId": "perception-causative",
+      "source": "nonfinite-system-courses.js"
+    },
+    {
+      "id": "nonfinite-system:verb-complement-patterns",
+      "version": "v1",
+      "lessonId": "verb-complement-patterns",
       "source": "nonfinite-system-courses.js"
     },
     {
@@ -632,9 +800,123 @@
       "source": "verb-numeral-article-courses.js"
     },
     {
+      "id": "predicate-system:agreement-basic",
+      "version": "v1",
+      "lessonId": "agreement-basic",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:agreement-head",
+      "version": "v1",
+      "lessonId": "agreement-head",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:agreement-proximity-meaning",
+      "version": "v1",
+      "lessonId": "agreement-proximity-meaning",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:auxiliary-chain",
+      "version": "v1",
+      "lessonId": "auxiliary-chain",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:emphatic-do",
+      "version": "v1",
+      "lessonId": "emphatic-do",
+      "source": "predicate-system-courses.js"
+    },
+    {
       "id": "predicate-system:finite-boundary",
       "version": "v3",
       "lessonId": "finite-boundary",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:future-system",
+      "version": "v1",
+      "lessonId": "future-system",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:modal-system",
+      "version": "v1",
+      "lessonId": "modal-system",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:negation-questions",
+      "version": "v1",
+      "lessonId": "negation-questions",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:operator",
+      "version": "v1",
+      "lessonId": "operator",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:passive-chain",
+      "version": "v1",
+      "lessonId": "passive-chain",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:past-sequence",
+      "version": "v1",
+      "lessonId": "past-sequence",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:perfect-system",
+      "version": "v1",
+      "lessonId": "perfect-system",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:predicate-integration",
+      "version": "v1",
+      "lessonId": "predicate-integration",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:predicate-sharing-ellipsis",
+      "version": "v1",
+      "lessonId": "predicate-sharing-ellipsis",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:semi-modal-system",
+      "version": "v1",
+      "lessonId": "semi-modal-system",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:short-answers-substitution",
+      "version": "v1",
+      "lessonId": "short-answers-substitution",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:simple-progressive",
+      "version": "v1",
+      "lessonId": "simple-progressive",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:tense-viewpoint",
+      "version": "v1",
+      "lessonId": "tense-viewpoint",
+      "source": "predicate-system-courses.js"
+    },
+    {
+      "id": "predicate-system:voice-focus",
+      "version": "v1",
+      "lessonId": "voice-focus",
       "source": "predicate-system-courses.js"
     },
     {
@@ -896,15 +1178,309 @@
       "source": "reported-speech-courses.js"
     },
     {
+      "id": "sentence-elements:adverbial-cause-purpose-result",
+      "version": "v1",
+      "lessonId": "adverbial-cause-purpose-result",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:adverbial-condition-concession-comment",
+      "version": "v1",
+      "lessonId": "adverbial-condition-concession-comment",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:adverbial-manner-degree",
+      "version": "v1",
+      "lessonId": "adverbial-manner-degree",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:adverbial-time-place-frequency",
+      "version": "v1",
+      "lessonId": "adverbial-time-place-frequency",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:apposition",
+      "version": "v1",
+      "lessonId": "apposition",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:attributes",
+      "version": "v1",
+      "lessonId": "attributes",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:clauses-as-elements",
+      "version": "v1",
+      "lessonId": "clauses-as-elements",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:coordination-sharing-ellipsis",
+      "version": "v1",
+      "lessonId": "coordination-sharing-ellipsis",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:direct-object",
+      "version": "v2",
+      "lessonId": "direct-object",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:dummy-it-object",
+      "version": "v1",
+      "lessonId": "dummy-it-object",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:dummy-it-subject",
+      "version": "v1",
+      "lessonId": "dummy-it-subject",
+      "source": "sentence-elements-courses.js"
+    },
+    {
       "id": "sentence-elements:element-levels",
       "version": "v3",
       "lessonId": "element-levels",
       "source": "sentence-elements-courses.js"
     },
     {
+      "id": "sentence-elements:existential-there",
+      "version": "v1",
+      "lessonId": "existential-there",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:indirect-object",
+      "version": "v1",
+      "lessonId": "indirect-object",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:integrated-analysis",
+      "version": "v1",
+      "lessonId": "integrated-analysis",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:nested-analysis",
+      "version": "v1",
+      "lessonId": "nested-analysis",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:nonfinite-elements",
+      "version": "v2",
+      "lessonId": "nonfinite-elements",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:object-complement",
+      "version": "v1",
+      "lessonId": "object-complement",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:predicate-boundary",
+      "version": "v2",
+      "lessonId": "predicate-boundary",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:predicative",
+      "version": "v2",
+      "lessonId": "predicative",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:preposition-object",
+      "version": "v1",
+      "lessonId": "preposition-object",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:subject",
+      "version": "v1",
+      "lessonId": "subject",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "sentence-elements:subject-complement-passive",
+      "version": "v2",
+      "lessonId": "subject-complement-passive",
+      "source": "sentence-elements-courses.js"
+    },
+    {
+      "id": "special-structures:ellipsis-adverbial",
+      "version": "v1",
+      "lessonId": "ellipsis-adverbial",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:ellipsis-coordination",
+      "version": "v1",
+      "lessonId": "ellipsis-coordination",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:ellipsis-infinitive",
+      "version": "v1",
+      "lessonId": "ellipsis-infinitive",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:emphasis-do",
+      "version": "v1",
+      "lessonId": "emphasis-do",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:emphasis-it-cleft",
+      "version": "v1",
+      "lessonId": "emphasis-it-cleft",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:emphasis-wh-cleft",
+      "version": "v1",
+      "lessonId": "emphasis-wh-cleft",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:exclamation-how",
+      "version": "v1",
+      "lessonId": "exclamation-how",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:exclamation-what",
+      "version": "v1",
+      "lessonId": "exclamation-what",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:focus-fronting",
+      "version": "v1",
+      "lessonId": "focus-fronting",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:imperative-affirmative",
+      "version": "v1",
+      "lessonId": "imperative-affirmative",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:imperative-let",
+      "version": "v1",
+      "lessonId": "imperative-let",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:imperative-negative",
+      "version": "v1",
+      "lessonId": "imperative-negative",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:integrated-special-structures",
+      "version": "v1",
+      "lessonId": "integrated-special-structures",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:inversion-foundation",
+      "version": "v1",
+      "lessonId": "inversion-foundation",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:inversion-full-locative",
+      "version": "v1",
+      "lessonId": "inversion-full-locative",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:inversion-negative",
+      "version": "v1",
+      "lessonId": "inversion-negative",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:inversion-only-so-neither",
+      "version": "v1",
+      "lessonId": "inversion-only-so-neither",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:parentheticals",
+      "version": "v1",
+      "lessonId": "parentheticals",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:question-alternative",
+      "version": "v1",
+      "lessonId": "question-alternative",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:question-tag-basic",
+      "version": "v1",
+      "lessonId": "question-tag-basic",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:question-tag-special",
+      "version": "v1",
+      "lessonId": "question-tag-special",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:question-wh",
+      "version": "v1",
+      "lessonId": "question-wh",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:question-yes-no",
+      "version": "v1",
+      "lessonId": "question-yes-no",
+      "source": "special-structures-courses.js"
+    },
+    {
       "id": "special-structures:special-structure-essence",
       "version": "v3",
       "lessonId": "special-structure-essence",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:subjunctive-suggestion",
+      "version": "v1",
+      "lessonId": "subjunctive-suggestion",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:subjunctive-wish",
+      "version": "v1",
+      "lessonId": "subjunctive-wish",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:substitution-do-so-not",
+      "version": "v1",
+      "lessonId": "substitution-do-so-not",
+      "source": "special-structures-courses.js"
+    },
+    {
+      "id": "special-structures:substitution-one-ones",
+      "version": "v1",
+      "lessonId": "substitution-one-ones",
       "source": "special-structures-courses.js"
     },
     {
@@ -1280,12 +1856,22 @@
     "article:the-known:v1:zh-CN": "3ea49b256b5a9eb06e443cc5fd04f9cce35c1148b8835e3b9444d3f2f45ec584",
     "article:unique-superlative:v1:zh-CN": "51eb0cb420f5bb236f49ed00ecd09f41a61b4b88856e131bade5fe1109299682",
     "article:zero-basic:v1:zh-CN": "3902d9000f91b5f2dd60d7195d9b1644e66c9018092ef8bd3715900e8c3bb247",
+    "basic-sentence-patterns:coordination-sharing:v2:zh-CN": "30d2d11f130c9649ffe1d06d13123e413c2cb20c63156f72a164f9e35ab4cf39",
+    "basic-sentence-patterns:existential-there-be:v1:zh-CN": "2eb0a39b4bc91b3c089436476120ca32fb6b45a49bb197fc605a0cc9657f8b8a",
     "basic-sentence-patterns:find-predicate-skeleton:v3:zh-CN": "62855dd8e5b8a794b9ec37408ff0716cd44c87ba0c93ffc10055ec77debf19cd",
-    "basic-sentence-patterns:pattern-sv:v1:zh-CN": "342b7c17f5b31289e1552e824caf80188cc98e4ad2a03f6b486c3724f3bd887a",
+    "basic-sentence-patterns:integrated-pattern-choice:v1:zh-CN": "404b2681117d749b082a95b955ab4e5f863139b0e92b24dd2713819032733aa0",
+    "basic-sentence-patterns:linking-transitivity:v1:zh-CN": "57062ba0809c5ca652873b28d3cc6883a2e43425d51ef01ce513233b126f3cb5",
+    "basic-sentence-patterns:modifiers-preserve-skeleton:v1:zh-CN": "04e326fae64c687d2080af63bece16f85b1715887de56350ba353699523e4dcc",
+    "basic-sentence-patterns:obligatory-adverbial:v1:zh-CN": "0933b618c63f7058cbb24a1e19a92d533e1060a5cbe1a89d88ff1d8d8b8cea5d",
+    "basic-sentence-patterns:one-verb-many-patterns:v1:zh-CN": "0e00a329abd41965ec109971306b63f382c99d695d57c34bb67eca665382036d",
+    "basic-sentence-patterns:pattern-boundaries:v1:zh-CN": "1c404660a3105e63fb8a1df9f7daeee207b912782d1ab4fe09f3529ebf2bfc96",
+    "basic-sentence-patterns:pattern-sv:v2:zh-CN": "388ff71d620b2ea24af954c2eab4070fad0df88e4b76035ffc8eac8a3e2c4ed4",
     "basic-sentence-patterns:pattern-svc:v1:zh-CN": "459852863389aea5b40c2abbbad81a3c6f12266f2f37c5221ad4c8dd3e1f9eb2",
-    "basic-sentence-patterns:pattern-svo:v2:zh-CN": "074da3a2c1ab18925356cd4dd1c42d6d350747d3b2f77f82ab1f7a14c43df978",
+    "basic-sentence-patterns:pattern-svo:v3:zh-CN": "68ea267f8ab908d7e96e2dccfe39d43e3baff15c8e9823064f905057d8cd54f7",
     "basic-sentence-patterns:pattern-svoc:v2:zh-CN": "2ade6b7faef8011f9456bcc8846cd8599349f2acff77e224bca4cc334182b907",
     "basic-sentence-patterns:pattern-svoo:v2:zh-CN": "82a84ba53794e848ae608bd1b54d22fd3760e259c8491f229ea9b85c9ac19731",
+    "basic-sentence-patterns:svoo-vs-svoc:v1:zh-CN": "99d68e01c94115f8ebc0fb5bd4575155049a8cd501f11876f1b0826885fc4cb0",
+    "basic-sentence-patterns:transformations-skeleton:v1:zh-CN": "cb6ad2127e721e1297d71e355609c403a8e65aff99a56d2864ae088d8d3574ed",
     "cohesion-reference:cohesion-reference-essence:v2:zh-CN": "770c0c77e03219c04d014a926e68aadae46cc353de95cde26aa3d99d111f0dbf",
     "common-expression:common-expression-essence:v3:zh-CN": "57841321267149fc70bddf25f142a46caeae01d7dd911f19b254042fb58fe71b",
     "conjunction:conj-and-or:v1:zh-CN": "ebc39d6640f51d0ba9b4b9423a020cb09840b1920dc01ae274b3166bd222d1b6",
@@ -1314,7 +1900,25 @@
     "interjection:interj-register-politeness:v2:zh-CN": "6b84920aec8683b517241a9b3c906dac43c254f093feebd2834682b3619b3180",
     "interjection:interj-vs-exclamative:v1:zh-CN": "e4ae77d39714fc9f795dee8c85c974fcc088b8cb49a73270307cb0cfc003c448",
     "interjection:interj-wordclass-sounds:v1:zh-CN": "d431766fed8d0612c4e641e8bdb3b3d7404f9ea7c0ce7857ccf9801a6c577736",
+    "nonfinite-system:absolute-with-construction:v1:zh-CN": "dc72968b09205da4d06d5f07adf2360db4368eff4efb3e9a84900c59213b46a7",
+    "nonfinite-system:bare-infinitive:v1:zh-CN": "abce4bd9a2003522a64069c1c99e55c56ec4aeebc0d78d9a18021a066e01a32c",
+    "nonfinite-system:dangling-modifiers:v1:zh-CN": "364c1ac70fb52a9ea950384487fcfef7d7793f6fdbebccb6f981019d8f88dafc",
+    "nonfinite-system:doing-to-do-meaning:v1:zh-CN": "a27f5d9a2ed1a9530d5a555eacd30f2762e6035f06a6a7f3f6572ed4dca62b9b",
     "nonfinite-system:finite-nonfinite-boundary:v3:zh-CN": "442c2341ffb3ac455e69cd7fc4342078703f91124ef548c3964fb6fdb772fa2c",
+    "nonfinite-system:gerund-form-logical-subject:v1:zh-CN": "23721525c40fea999b70bb415e265255511ab10ad1b58412a39c1385be8782ac",
+    "nonfinite-system:gerund-functions:v1:zh-CN": "e1299cf33c2e1eb54253c8fb52bc44e7e31f175afe3965e21d6bb2425d9bf21d",
+    "nonfinite-system:infinitive-adverbials:v1:zh-CN": "96c3e5c007963b16ab092fa1523f0f757ef490237734e402d7380fae94d3baff",
+    "nonfinite-system:infinitive-forms:v1:zh-CN": "1b2702523ee7e3d8256d9faaacf03971d5619c8403a477fd92461e8700d51c2c",
+    "nonfinite-system:infinitive-object-attribute-complement:v1:zh-CN": "75514b058671852ee4951ffb10af0518b21ab953688cd6e1a479a7a2cf9d31f4",
+    "nonfinite-system:infinitive-subject-predicative:v1:zh-CN": "e5c3b789e970a5a260f32414bf2d295f86f81030516fb55e886dffdd03ada509",
+    "nonfinite-system:nonfinite-clause-conversion:v1:zh-CN": "92fd2c8e56f056aad708c6006b1ac9de9854dfd87ee599f383682b1756364d15",
+    "nonfinite-system:nonfinite-integrated:v1:zh-CN": "66760932d8f061969ad10f2e61a5181d4b5315e33116db3ea28a438f25d4394f",
+    "nonfinite-system:participle-adverbials:v1:zh-CN": "97f807bec0330431a8a0fde563842a4ca8ead6cf8e27e649f3f0202df426591a",
+    "nonfinite-system:participle-attribute-predicative:v1:zh-CN": "9b40fafc4c5367eb7ebe4ffbb0de67820fb2fb1d12e21dfa32d3c9d4b47fe56f",
+    "nonfinite-system:participle-object-complements:v1:zh-CN": "8476411c449ccbc00fe2c8668553f6863710bf54acbc790de89df5b750a81a26",
+    "nonfinite-system:participle-voice-time:v1:zh-CN": "fd38e592184ab97e3c8ba771ec9752e68dc33d6f8ba64f510dd35ecc0e8ec644",
+    "nonfinite-system:perception-causative:v1:zh-CN": "9a9705d1278860fd886a85452c772a340199733a7c1b110ef1a519fa0577476c",
+    "nonfinite-system:verb-complement-patterns:v1:zh-CN": "508937a71145a37c85d64e24a7a8cf16ba4f49fb2ea07140fe5d7551be4c2442",
     "noun-clauses:clause-as-noun-slot:v3:zh-CN": "f9d3157360adce77a0cbf96ea181efba644535d83a987aaa024b5496f7fc8906",
     "noun:collective-noun:v1:zh-CN": "4032fc0ed93a995890dca53b826655fc8b71c7948a1d15035061eea0d285c804",
     "noun:countability:v1:zh-CN": "ebb129b9b304eff6c8ae78b0c6bd2eef5b4d82c7400da072adcdbd8da753145e",
@@ -1338,7 +1942,26 @@
     "numeral:numeral-essence:v3:zh-CN": "55e9be50c100dfb6208669db0b270481cff172c2f55c8d13c886b321fcea3e1c",
     "numeral:numeral-functions:v1:zh-CN": "1fd1657a62057d0c46bf0d7ba11622a72625f975dbba56207add64ee839cd568",
     "numeral:ordinals:v1:zh-CN": "3c735db1787323314c05cc1de6c1b3304908e4921efa0f148dd37853de702950",
+    "predicate-system:agreement-basic:v1:zh-CN": "bd5a44a8ebf3594f3ccf4ecdead71063b2533ea6f0d8ee60851db6d8b597d8d2",
+    "predicate-system:agreement-head:v1:zh-CN": "f93124ff1d6f64e0ca64c7af75c341425778b136ae34a3898c0bec664cc7aef5",
+    "predicate-system:agreement-proximity-meaning:v1:zh-CN": "c1f035f9d152edcd3f3342c38fc0396b48419d6d7ac8e0fd4518dffd06c71a58",
+    "predicate-system:auxiliary-chain:v1:zh-CN": "2022af526b78c99162dcd3ea4837e74199824fbddb5248526153ce321ff4d4bc",
+    "predicate-system:emphatic-do:v1:zh-CN": "1c0746d49d0a202c4723c35ccb20b409a151c58c4f2c8724918d560363c3fccc",
     "predicate-system:finite-boundary:v3:zh-CN": "81df4263300cfb110d358fb38b37fc19e8bbeea11c5a8aa207eece79d5bdfe33",
+    "predicate-system:future-system:v1:zh-CN": "329f0c2b87c84ae51e1c894c4fc811c5931e04f8dd4115f0f73fc6ef09a7eca9",
+    "predicate-system:modal-system:v1:zh-CN": "d7166597e45e05250989d5cf0d3e3cf201696234824f037348ce0bef4f22dde3",
+    "predicate-system:negation-questions:v1:zh-CN": "5f6a2a8a6a0e3e7f2903afae2bf0228548212f741cf12884db8ec5e731369b10",
+    "predicate-system:operator:v1:zh-CN": "dfcbd2a0731f51038ca6e7f62d83e082964c11de94c2c30d1d53bf964d02163f",
+    "predicate-system:passive-chain:v1:zh-CN": "dbf31695839a484a067d879cb25fb95ca3e8f601fe7d60bca16ce35908ea9138",
+    "predicate-system:past-sequence:v1:zh-CN": "306a0af59d6e1cb856005ebe08340da2973cabe4d323d7e7911061f5ec629e48",
+    "predicate-system:perfect-system:v1:zh-CN": "550614cf2ce5dff8ba625169f2cb336ab59ed06f354dd5be4b4cbfb0e3ca11ba",
+    "predicate-system:predicate-integration:v1:zh-CN": "2d89a38abc9634540f7ffddfef3ea5a40b8cbd2158ed9154a87536c794635422",
+    "predicate-system:predicate-sharing-ellipsis:v1:zh-CN": "4e76835da030751517aa6962d29e3dc9c2697802175e630465fd64effc0a9838",
+    "predicate-system:semi-modal-system:v1:zh-CN": "d62fb9a58de9751cb1cf8e10422e33ca98c285299e211c90584f3992ed5190dc",
+    "predicate-system:short-answers-substitution:v1:zh-CN": "efa8ea3990aa08ea14930d1f0ae12690626eee6a8fa8667148c0ecc8dd189140",
+    "predicate-system:simple-progressive:v1:zh-CN": "57bff5c9b9c909db5da6c67840ea0088862a91ed9f9629d7880a0002f8b7a82d",
+    "predicate-system:tense-viewpoint:v1:zh-CN": "ab2c5c66f2a32ecb6774696459c984ba90a0040eadf5ac35d4b3b740634d0d2c",
+    "predicate-system:voice-focus:v1:zh-CN": "dd0a4699a27cbd2d81c435e5330fda3d43dad3ff84337a9e77d655bafb2a5d72",
     "preposition:prep-adverbial-functions:v1:zh-CN": "21ba0ae2ea2916eb5dfa2c002eb260b037ffd03339fa74afe0d84e1a40249ee7",
     "preposition:prep-cause-purpose:v1:zh-CN": "47de4e8e1ec76e468f2234cd3657e2c71cd8bb40d5fbd9fb9866badebff5a3bb",
     "preposition:prep-collocation-meaning:v1:zh-CN": "0018deaa8876fc9b6108f9f071511b6d0ad095f16bb16f63a7637cac5ec2ae0e",
@@ -1389,8 +2012,57 @@
     "punctuation:punctuation-capitalization-essence:v3:zh-CN": "70b7a052b6587082a04c4844fae2e25ef6486ba780aa2d6cfc8a76fea52cc9bc",
     "relative-clauses:relative-boundary:v3:zh-CN": "5f1ef01c120502272b36cd0e284cdb3a54d9bea3b4599834e1f4048d5a864e78",
     "reported-speech:reported-speech-essence:v3:zh-CN": "2daf7b49f8a3c394458e7e4afb56770442a86838ab463715a228134a8a48e3de",
+    "sentence-elements:adverbial-cause-purpose-result:v1:zh-CN": "ed952611267c1e980f49428dd4ccdb92422a05e7c6461a9847bce7dbe2a45eb8",
+    "sentence-elements:adverbial-condition-concession-comment:v1:zh-CN": "b97f3c3163bf017be4bb581356ffd6dd846290ff403f85a473d8745b6f825b32",
+    "sentence-elements:adverbial-manner-degree:v1:zh-CN": "48b1f818c7441624b57e04642d049f33987841494a50ecdad9c39ca59f0c47c7",
+    "sentence-elements:adverbial-time-place-frequency:v1:zh-CN": "6e9b6d6d52cb6f8238fce7a91f808ae7a45a74a8750e36bfd568de63819ebc02",
+    "sentence-elements:apposition:v1:zh-CN": "415756b5188c5c507de8d6e971863547965d64e1be55adcc55ad2d686019bb23",
+    "sentence-elements:attributes:v1:zh-CN": "65820cfee6607d38ac5538ea090409a16a59f5c25a2052b2b17d882a354bfca1",
+    "sentence-elements:clauses-as-elements:v1:zh-CN": "5b3f17e2349b2d7b58cd3ec3df6f0f63c74144886162ad9a7d081681145b3af1",
+    "sentence-elements:coordination-sharing-ellipsis:v1:zh-CN": "88d23da17e33e8530ece1faeba271c8dca8a1ae3876e1e8d902b4f4e44561777",
+    "sentence-elements:direct-object:v2:zh-CN": "04e6ee80f1c3946113dad4f5af32cee25eee2f72897da61ca5e1f01e6cc20c47",
+    "sentence-elements:dummy-it-object:v1:zh-CN": "e3f9711f7e8472ebddcd2847a42e4452ff4036ba9974820d8d1ccdb2880980eb",
+    "sentence-elements:dummy-it-subject:v1:zh-CN": "c183214a47c7e1dfcac11a8a17dd8db1ce5b9b2e9a0c705dcd3eb04dd4511e6a",
     "sentence-elements:element-levels:v3:zh-CN": "a7547764c082954319724c6122659d402949f3c50455490e7005f00a78ce641e",
+    "sentence-elements:existential-there:v1:zh-CN": "72703de5ec1de4630f53e82e3945ed70bb4c89c9bd455fb65505aca33017b8c1",
+    "sentence-elements:indirect-object:v1:zh-CN": "1c185e6c7a4df012870611809a46cbe15ddf740db0ed59e6996dd6898fc2725c",
+    "sentence-elements:integrated-analysis:v1:zh-CN": "981ab02ccc5289a49c434d7bbab8a224c1e066e39d615df6bdacf14bb4ce258f",
+    "sentence-elements:nested-analysis:v1:zh-CN": "65d9fc1ca64c928dd302d63bca9b8b24759d7892f46adbd0715f43ce2008a8a3",
+    "sentence-elements:nonfinite-elements:v2:zh-CN": "77e8a3f761f10185d331bcd23f74123c0765f3d6f7609baaaed2bd9edaf69e11",
+    "sentence-elements:object-complement:v1:zh-CN": "34c5d04bec3789f8810c011c8c416ced2c36a5c364469c90df00397cb14c08eb",
+    "sentence-elements:predicate-boundary:v2:zh-CN": "82a874ee1bfbd22bac2c237a6a9ad1839eda10b46a1730c0bae9f53d50b23d88",
+    "sentence-elements:predicative:v2:zh-CN": "7ba36c99d345a47734e29391d333585cfaf8385129c1f4522bac4ec759867b1a",
+    "sentence-elements:preposition-object:v1:zh-CN": "7530eef76d89b35e3f0ca5fcd0367ff06f78fe2a43626fb5d608f56feda157a7",
+    "sentence-elements:subject-complement-passive:v2:zh-CN": "325416217123e24e1027e9190c3e7b76eab81b8ba592702e1007750f85e686a0",
+    "sentence-elements:subject:v1:zh-CN": "6be2e68b4b6cc8cfa3969fce348d3ca20c7a5b7a71111324aeffd34405461177",
+    "special-structures:ellipsis-adverbial:v1:zh-CN": "586e028b3d350948d9b0441bec24ab10a606f931e5893c9d811f326ac2d22e0e",
+    "special-structures:ellipsis-coordination:v1:zh-CN": "ac1bcafe70fa5d6d4155164607c959c95f827fba781728c29626ed16be037b41",
+    "special-structures:ellipsis-infinitive:v1:zh-CN": "5acc3fa979ceea1b00fc725d5cce7fbb3b92bbc9c96b9afbf1a40a6b5bd5fcb8",
+    "special-structures:emphasis-do:v1:zh-CN": "a1a1523ffcfb8c88c474f4a95a20358bdd0c023012b9d65018a2f0515b968325",
+    "special-structures:emphasis-it-cleft:v1:zh-CN": "70f041ba595b89640b316e16c5305320b997c06f8fcc4b71b2d82092eca9c4d6",
+    "special-structures:emphasis-wh-cleft:v1:zh-CN": "33b4449f3df9bc24ec1412fcb805da05c747949798e369ad0bf694688e5d3094",
+    "special-structures:exclamation-how:v1:zh-CN": "3c69c03977190b9f63799b1253075c86f30d2999e4490a4bb9b236e74ca2dd08",
+    "special-structures:exclamation-what:v1:zh-CN": "4154938a3b5d1fecafe2a079fa60ed9a8525651975ec70842a8b6b38cd3780fa",
+    "special-structures:focus-fronting:v1:zh-CN": "0eca7f8395dd07d704f2bbd353224ac25ae5ef9dd4ef31e39f379f510b396266",
+    "special-structures:imperative-affirmative:v1:zh-CN": "221611b77a0697e1f9c5dcb6e1c7ebf98577607ccd8d72ee07ac58d5cb12ad52",
+    "special-structures:imperative-let:v1:zh-CN": "d880ef967418b6e328c0dde03083c88f90a86b8d9775be930f18005c0e0e47ab",
+    "special-structures:imperative-negative:v1:zh-CN": "7817f25b348695e3cbe51f843fe9c7d95f30a4ba1e70f2e5a9e85f5de0472aab",
+    "special-structures:integrated-special-structures:v1:zh-CN": "1a002b0d115a8016d4ff1fe22727002b898513ad0d8c95142cfda6c218e1c469",
+    "special-structures:inversion-foundation:v1:zh-CN": "c2baae2f27608d3f9ec2a63c309a2ffbad77585aafb322f248534d23162cc3ea",
+    "special-structures:inversion-full-locative:v1:zh-CN": "82c1d8c5e49eafb4445f57019a024336dfc7c6359c57862506a17d74c9d27870",
+    "special-structures:inversion-negative:v1:zh-CN": "8404b6f71b84567bc8d8ae1959670db977a829a7c92570cbd1ac8b5050cc44fb",
+    "special-structures:inversion-only-so-neither:v1:zh-CN": "a10de70aca893cb6ab694a8bc315210d9a37af90ceac259883e5a71bc2fd7b4a",
+    "special-structures:parentheticals:v1:zh-CN": "6b9ef258be11ac134b831c366065ff3df4270c6148a1fcc91376f805271b2fe8",
+    "special-structures:question-alternative:v1:zh-CN": "a24c6da2dfb39b935a7fb80f312bc7513a3dbcb65ca208841196a243911cea98",
+    "special-structures:question-tag-basic:v1:zh-CN": "67f228d2894953eeb7bd4aad11dc091b2c2deb97c20a6992ec879c83e9a162b7",
+    "special-structures:question-tag-special:v1:zh-CN": "691e479d77fa929f1cb1823ba4f045ae720915b7daacc47b74c86c505fb653da",
+    "special-structures:question-wh:v1:zh-CN": "2eca0684fdb2ae1f856c73630e557525a6eb473e27fb5f02060b24b63eef7474",
+    "special-structures:question-yes-no:v1:zh-CN": "25c4944e5ddfaca586f82347e5aa437d40a56b592c8627af8a977454264e9d28",
     "special-structures:special-structure-essence:v3:zh-CN": "c282abcaf175faeeb9e18344b68ff8c0177f50dee1caa7a2683251ccdcdd6b5c",
+    "special-structures:subjunctive-suggestion:v1:zh-CN": "3cfca0fe3161f4b7241318a7ee1a47cf2c13487bbe5a502dfb1d7479e509ac0c",
+    "special-structures:subjunctive-wish:v1:zh-CN": "487eb9fe3eefb2b237a58b9fd015246776204e33478988d6dcd3c6086d354ed9",
+    "special-structures:substitution-do-so-not:v1:zh-CN": "2fa850f36e87853380b3cb1560d455d3951ed5a73911e83e488df26fccd522f9",
+    "special-structures:substitution-one-ones:v1:zh-CN": "69e3468032b4738f76f1c8a4dd8ab39eff8d0c779d264df6df90278308f353db",
     "verb:agreement-complex:v1:zh-CN": "06233f9e1875ada71337bff1420b4ca8add8bad0906abf01aa6243437193595e",
     "verb:aux-modal:v1:zh-CN": "1d3d93e1451209dac111d1e81b1d551093eae568b7ac853a13fdf9acaf0f5e48",
     "verb:auxiliary-system:v1:zh-CN": "c327e21d760c6145fbe09f1c5ad2818e72aef4edcaae677643bdfc3fe228d0d0",

@@ -383,12 +383,12 @@ const lessonSpecs = [
 const FIVE_PATTERN_NARRATIONS = {
   'pattern-sv': {
     id: 'basic-sentence-patterns:pattern-sv',
-    version: 'v1',
+    version: 'v2',
     text: `The baby cried。<#0.7#>先看谁，The baby，也就是这个宝宝。再看他怎么了，cried，哭了。说到这里，意思已经完整：宝宝哭了。后面不需要再补“哭了谁”或者“哭了什么”。这种只有“谁，加上做了什么”的骨架，叫主谓结构，也就是 SV。<#0.8#>
-再看 The train arrived at noon。<#0.7#>真正撑起句子的是 The train arrived，火车到了。at noon 只是告诉我们什么时候到。把它暂时拿走，句子仍然完整，所以 at noon 不会把主谓结构变成别的句型。<#0.8#>
-My grandparents live in Suzhou 也是一样。<#0.6#>先留下 My grandparents live，爷爷奶奶生活、居住，核心意思已经成立。in Suzhou 补充住在哪里。它前面还有介词 in，不能因为放在动词后面，就把 Suzhou 当成宾语。
+再看 The train arrived at noon。<#0.7#>at noon 只告诉我们什么时候到。把这段时间信息暂时遮住，火车到达这件事仍然完整，所以 at noon 不会把主谓结构变成别的句型。<#0.8#>
+My grandparents live in Suzhou 也是一样。<#0.6#>in Suzhou 补充爷爷奶奶住在哪里。就算暂时不说地点，“爷爷奶奶居住”这个核心意思也已经成立。而且地点前有介词 in，不能因为它放在动词后面，就把 Suzhou 当成宾语。
 判断 SV，可以做两步。先找“谁”和“怎么了”；再把时间、地点、方式这些补充信息暂时遮住。如果剩下的意思已经站得住，而且动词后不需要一个对象，这个动词在这里就是不及物用法，句子骨架就是 SV。`,
-    lengthText: '439 字 · 约 2 分钟'
+    lengthText: '413 字 · 约 2 分钟'
   },
   'pattern-svc': {
     id: 'basic-sentence-patterns:pattern-svc',
@@ -401,12 +401,12 @@ The leaves turned yellow 说的是树叶变黄了。<#0.6#>yellow 说明树叶�
   },
   'pattern-svo': {
     id: 'basic-sentence-patterns:pattern-svo',
-    version: 'v2',
-    text: `有些动词说完以后，意思还没结束。比如 Leo opened。<#0.6#>Leo 打开了。听到这里，自然会问：打开了什么？补上 the window，变成 Leo opened the window，意思才完整。the window 是 opened 直接指向的东西，语法上叫直接宾语。整个骨架是主谓宾，也就是 SVO。<#0.8#>
+    version: 'v3',
+    text: `有些动词说完以后，意思还没结束。Leo opened the window。<#0.6#>先找到动作 opened，再问：打开了什么？答案是 the window。如果没有这个对象，听者会自然追问。the window 是 opened 直接指向的东西，语法上叫直接宾语。整个骨架是主谓宾，也就是 SVO。<#0.8#>
 宾语不一定真的被碰到。We enjoy music。<#0.6#>music 没有承受一个看得见的动作，但它是 enjoy 所指向的内容，所以仍然是宾语。She understood the question 也一样，理解的内容是 the question。<#0.8#>
 这三个例句里，宾语都直接跟在动词后面，中间没有介词。判断时不能只看位置，还要确认它是不是动作、想法或感受直接指向的内容。
 判断 SVO，先找到动词，再问：这个动作、想法或感受直接指向谁，或者什么？如果不说出这个对象，意思会明显缺一块，而且对象直接由动词带出，中间没有介词，它就是直接宾语。主语、动词、这一个宾语合起来，就是 SVO。`,
-    lengthText: '413 字 · 约 2 分钟'
+    lengthText: '409 字 · 约 2 分钟'
   },
   'pattern-svoo': {
     id: 'basic-sentence-patterns:pattern-svoo',
@@ -427,6 +427,49 @@ I saw the bird fly away 也是同一条关系。<#0.6#>看到的是 the bird，�
 最容易混的是把最后两部分都当成宾语。其实这里的后半部分不是另一个对象，而是在补充宾语的身份、状态或动作。两部分之间有说明与被说明的关系。<#0.8#>
 判断 SVOC，可以把宾语和最后一部分看成一组小关系：最后一部分是否在说明这个宾语是谁、怎么样或做了什么？如果是，它就叫宾语补语，整个骨架就是 SVOC。`,
     lengthText: '421 字 · 约 2 分钟'
+  }
+};
+
+const REMAINING_PATTERN_NARRATIONS = {
+  'existential-there-be': {
+    id: 'basic-sentence-patterns:existential-there-be', version: 'v1',
+    text: `走进一间屋子，想告诉别人桌上有一本书，英语会先把“有东西存在”这件事引出来。<#0.5#>There is a book on the desk。<#0.8#>开头的 There 不是“那里”的地点意思，它像一个开场提示：接下来要出现某样东西。真正被介绍出来的是 a book，所以它才是实义主语；on the desk 只补充书在哪里。<#0.8#>再看 There are two students outside。<#0.6#>这次出现的是 two students，数量是复数，因此前面的 be 动词用 are。outside 告诉我们人在什么地方，不负责决定单复数。判断时不要让最前面的 There 迷惑，要把目光移到 be 后面的名词短语。<#0.8#>There seems to be a problem 又多了一层语气。<#0.6#>它不是直接断定“有问题”，而是说“似乎有一个问题”。可见存在句不只会出现 is 或 are，也能用 seems to be 表达说话人的判断。<#0.8#>这类句子可以抓住三步：先认出 There 只是引出存在；再找 be 后真正出现的人或物；最后把地点放回去。中文常把地点放前面说“某处有某物”，英语则先用 There 打开这个存在画面。`, lengthText: '450 字 · 约 2 分钟'
+  },
+  'obligatory-adverbial': {
+    id: 'basic-sentence-patterns:obligatory-adverbial', version: 'v1',
+    text: `有些地点、时长信息只是锦上添花，有些却是动词把意思说完整时少不了的一块。<#0.6#>She put the keys on the table。<#0.8#>put 表示把东西放到某处。the keys 说明放了什么，on the table 说明放到哪里。只听到“她把钥匙放了”，你会自然追问放在哪儿，所以这个地点信息在当前用法里是必需的。<#0.8#>The meeting lasted for two hours。<#0.6#>for two hours 给出会议持续的时长。这里不是动作指向一个宾语，而是 lasted 需要时长信息把“持续多久”交代清楚。<#0.8#>再看 He lives in Shanghai。<#0.6#>in Shanghai 说明居住地点。live 在这里表达“居住”，地点和动词的意义紧密相连；它虽然形式上是介词短语，却不能只因为带介词就随手删掉。<#0.8#>判断必要状语，不能只看它在句末，也不能只看它是不是介词短语。先找谓语，再暂时拿走后面的地点或时长信息。如果拿走后，听者一定会追问“放哪儿、持续多久、住哪儿”，这部分就是骨架所需的必要状语。`, lengthText: '419 字 · 约 2 分钟'
+  },
+  'linking-transitivity': {
+    id: 'basic-sentence-patterns:linking-transitivity', version: 'v1',
+    text: `同一个动词长得一样，在不同句子里却可能承担完全不同的任务，不能给它贴一张永久标签。<#0.6#>The flowers smell sweet。<#0.8#>这里不是花朵主动去闻什么，sweet 描写的是 flowers 的气味状态。smell 只把主语和这种状态连起来，所以它是系动词，句子是主系表。<#0.8#>再看 She smelled the flowers。<#0.6#>这次 She 做出“闻”的动作，动作直接指向 the flowers。smelled 成了及物动词，the flowers 是宾语，骨架也变成主谓宾。<#0.8#>The door opened。<#0.6#>opened 后面没有宾语，却已经说清“门开了”。门是发生变化的对象，但在句子结构里它是主语；opened 在这里是不及物用法，骨架是主谓。<#0.8#>所以判句型要从当前句子取证。先问动词是在连接主语的状态，还是在表达动作；如果是动作，再问它有没有直接指向的对象。关系变了，句型也会跟着变。`, lengthText: '372 字 · 约 2 分钟'
+  },
+  'svoo-vs-svoc': {
+    id: 'basic-sentence-patterns:svoo-vs-svoc', version: 'v1',
+    text: `动词后面连续出现两块内容，不代表一定是双宾语。真正要看的是：后两块是在完成一次传递，还是后一块在说明前一块。<#0.6#>She sent me a message。<#0.8#>sent 表示传递。a message 是被发送的内容，me 是接收的人。“给谁，加上什么”组成双宾语，所以骨架是主谓双宾。<#0.8#>They named the baby Leo。<#0.6#>这里没有两样东西被命名。the baby 是动作指向的宾语，Leo 说明这个宝宝被取了什么名字。Leo 和 the baby 是说明与被说明的关系，因此 Leo 是宾语补语，骨架是主谓宾补。<#0.8#>We found the task difficult。<#0.6#>the task 是发现所涉及的对象，difficult 描写这个任务呈现出的状态。它也不是接收者和事物，而是“宾语怎么样”。<#0.8#>判断时别数词，直接测试关系。能问“给谁、给什么”，后两项彼此独立，是双宾语；后一项在说明这个宾语是谁或怎么样，就是宾补。`, lengthText: '380 字 · 约 2 分钟'
+  },
+  'modifiers-preserve-skeleton': {
+    id: 'basic-sentence-patterns:modifiers-preserve-skeleton', version: 'v1',
+    text: `句子一长，最容易把所有词都算进基本句型。更稳的办法，是先把修饰信息轻轻拿开，看看核心关系还剩什么。<#0.6#>The girl with a red bag smiled warmly。<#0.8#>with a red bag 帮我们认出是哪一个 girl，warmly 说明笑的方式。真正的骨架只有 girl 和 smiled，是主谓结构；定语、状语再长，也不增加新的核心槽位。<#0.8#>The book that you lent me is useful。<#0.6#>that you lent me 整体跟在 book 后面，限定是哪本书。主句真正说的是这本书“是有用的”，is 连接主语和 useful，所以外层骨架是主系表。<#0.8#>Yesterday, Tom quickly finished his homework。<#0.6#>Yesterday 是时间，quickly 是方式；它们都在补充 finished。his homework 才是动作直接指向的宾语，核心骨架是主谓宾。<#0.8#>操作时按顺序做：先找完整谓语；再圈出它必需的主语、宾语或补语；最后把时间、地点、方式和名词旁的修饰语挂回去。修饰语让画面更具体，却不会凭空创造新句型。`, lengthText: ''
+  },
+  'transformations-skeleton': {
+    id: 'basic-sentence-patterns:transformations-skeleton', version: 'v1',
+    text: `句子变成否定、疑问或被动以后，单词位置和动词形式会变化，但谁和谁发生关系，仍然能追踪。<#0.6#>She does not like coffee。<#0.8#>does 和 not 帮助构成否定，真正表达“喜欢”的是 like，coffee 仍是这个动作直接涉及的宾语。因此加入否定，没有把主谓宾骨架变掉。<#0.8#>Did Tom open the door？<#0.6#>Did 被提前，用来发问；open 还原成原形。判断时要把 Did 和 open 合起来看成完整谓语，Tom 仍是主语，the door 仍是宾语。疑问语序不能把三个关系打乱。<#0.8#>The door was opened by Tom。<#0.6#>被动句把承受动作的 the door 放到主语位置，was opened 是完整谓语；by Tom 补出动作执行者。这里要按页面当前结构判断，而不是只看中文里谁做事。<#0.8#>遇到转换句，先找助动词和主要动词组成的完整谓语，再追问当前主语是谁、动作指向谁。形式变化是外壳，核心关系才是判型证据。`, lengthText: ''
+  },
+  'one-verb-many-patterns': {
+    id: 'basic-sentence-patterns:one-verb-many-patterns', version: 'v1',
+    text: `查到一个动词时，不能顺手在旁边写上“它永远属于某个句型”。句型属于整个句子，不属于一个孤零零的单词。<#0.6#>The bell rang。<#0.8#>rang 表示铃响了，后面不需要对象，意思已经完整，所以这里是不及物用法，骨架是主谓。<#0.8#>She rang the bell。<#0.6#>这次是她按响或摇响了铃。动作直接指向 the bell，rang 变成及物用法，the bell 是宾语，骨架是主谓宾。词形几乎没变，搭配关系已经变了。<#0.8#>The idea sounds reasonable。<#0.6#>sounds 不是“发出声音给某个对象”，而是把 The idea 和 reasonable 连起来，说明这个想法听起来合理。reasonable 描写主语，因此 sounds 在这里是系动词，骨架是主系表。<#0.8#>判断时每次都从零开始：先看动词在当前语境表达动作还是连接状态；再看后面是否有动作直接指向的对象。句内关系才是答案。`, lengthText: ''
+  },
+  'coordination-sharing': {
+    id: 'basic-sentence-patterns:coordination-sharing', version: 'v2',
+    text: `看到句子里有 and 和两个动词，不要马上宣布“这里有两个完整分句”。并列成分常常会共用前面已经出现的信息。<#0.6#>Tom opened the door and walked in。<#0.8#>opened 和 walked in 都由 Tom 发出，第二个动作没有再写一个主语。这里是同一个主语带两个并列谓语，不是两个各自写全主语的分句。<#0.8#>Mia washed and dried the dishes。<#0.6#>washed 和 dried 不但共用主语 Mia，还共用后面的 the dishes。碗碟同时是“洗”和“擦干”所涉及的对象，不能只把它连给离得最近的 dried。<#0.8#>Leo gave Amy a pen and a notebook。<#0.6#>这次 and 连接的不是两个谓语，而是 a pen 和 a notebook 两个直接宾语。它们共用 gave 和接收者 Amy。<#0.8#>判断并列时，先看 and 两边形式相当的是什么，再把省略信息补到脑中。连词连接哪一级，句子就在哪一级并列；动词多，不等于分句一定多。`, lengthText: ''
+  },
+  'integrated-pattern-choice': {
+    id: 'basic-sentence-patterns:integrated-pattern-choice', version: 'v1',
+    text: `综合判型时，不靠“看起来像”，而是沿着固定路线找证据：先谓语，再必需成分，最后排除修饰语。<#0.6#>The children became quiet after lunch。<#0.8#>became 表示状态变化，quiet 描写 children 变得怎么样；after lunch 只交代时间。因此核心是主语、系动词和表语，也就是 SVC。<#0.8#>Our teacher showed us an interesting video。<#0.6#>showed 表示展示，an interesting video 是展示的内容，us 是接收内容的人。“给谁看什么”形成两个宾语，所以骨架是 SVOO。<#0.8#>The joke kept everyone awake all night。<#0.6#>everyone 是 kept 直接涉及的对象，awake 说明 everyone 保持什么状态；all night 只补充持续时长。后两项是“宾语怎么样”，所以 awake 是宾补，骨架是 SVOC。<#0.8#>三句表面都在动词后带了不止一块内容，但关系不同。先拿走时间等状语，再问后面的成分是在说明主语、完成传递，还是说明宾语。`, lengthText: ''
+  },
+  'pattern-boundaries': {
+    id: 'basic-sentence-patterns:pattern-boundaries', version: 'v1',
+    text: `基本句型只描述一个分句的核心骨架，并不等于把整句贴成“简单句、复合句”这些类别。句子里有从句时，要先看它整体占什么位置，再进到内部分析。<#0.6#>I know that she is right。<#0.8#>主句里 I 是主语，know 是谓语，that she is right 整体回答“知道什么”，占宾语位置，所以主句骨架是 SVO。从句内部还有自己的结构，但不能和外层混着数。<#0.8#>What he said surprised me。<#0.6#>What he said 虽然内部有多个词，却整体站在 surprised 前，承担主语；me 是宾语。外层仍是 SVO。先框出从句边界，比逐词抢位置更重要。<#0.8#>The girl who won is my sister。<#0.6#>who won 跟在 girl 后面，帮助确定是哪位女孩，整体作后置定语。主句中 is 连接 The girl 和 my sister，所以外层是 SVC。<#0.8#>遇到复杂句，先用括号把从句当成一个大块，判断它在外层是主语、宾语还是修饰语；完成主句判型后，再进入从句内部。这是两张不同的地图。`, lengthText: ''
   }
 };
 
@@ -462,6 +505,16 @@ The boy in blue is running。<#0.8#>先找谁在跑，答案是 The boy。in blu
     const lesson = course.find((item) => item.id === lessonId);
     if (!lesson) throw new Error(`Missing narrated basic pattern lesson: ${lessonId}`);
     lesson.narration = Object.assign({}, narration);
+  });
+  Object.entries(REMAINING_PATTERN_NARRATIONS).forEach(([lessonId, narration]) => {
+    const lesson = course.find((item) => item.id === lessonId);
+    if (!lesson) throw new Error(`Missing narrated basic pattern lesson: ${lessonId}`);
+    const narrationCopy = Object.assign({}, narration);
+    if (!narrationCopy.lengthText) {
+      const spokenLength = Array.from(narrationCopy.text.replace(/<#\d+(?:\.\d+)?#>/g, '').replace(/\s/g, '')).length;
+      narrationCopy.lengthText = `${spokenLength} 字 · 约 2 分钟`;
+    }
+    lesson.narration = narrationCopy;
   });
   const sections = sectionSpecs.map((item) => ({
     id: item[0],

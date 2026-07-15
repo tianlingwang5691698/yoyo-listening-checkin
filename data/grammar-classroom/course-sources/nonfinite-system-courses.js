@@ -407,6 +407,76 @@ const specs = [
   }
 ];
 
+const NONFINITE_NARRATION_FRAMES = {
+  'infinitive-forms': ['不定式不只有 to do 一种样子。动作要否定、要表达被动，或者要说明它比谓语动作更早、当时正在进行，都会在 to 后面增加不同层次。', '先确定不定式动作的否定、主动被动和时间关系，再从左到右搭形式。不要看到多个动词就分开翻，它们共同组成一个不定式结构。'],
+  'infinitive-subject-predicative': ['把“学一门语言”“成为医生”当成一件事，它们就能像名词一样站在主语或表语的位置。不定式的动作意思还在，但外层工作变了。', '先找限定谓语，再看不定式整块放在哪个槽位。句首太长时可用 it 占位，把真正的不定式主语放到后面。'],
+  'infinitive-object-attribute-complement': ['同样是 to do，放在不同位置会回答不同问题：想做什么、有什么事情要做，或者要求谁做什么。先看它依靠哪个中心词。', '判断时不要只标“不定式”。要继续问它补充动词、修饰名词，还是说明宾语要执行的动作；槽位不同，逻辑关系也不同。'],
+  'infinitive-adverbials': ['有时 to do 不填主语或宾语，而是给前面的动作补一层原因：为什么去、最后发展成什么结果，或者为什么产生某种感受。', '先把句子主干读完整，再问不定式是在回答目的、结果还是评价原因。能准确回答这个问题，状语意义就不会混。'],
+  'bare-infinitive': ['动词原形前不一定都要加 to。情态动词、某些使役结构和 help 会决定后面直接出现原形；结构改成被动时，to 还可能重新出现。', '先找前面的触发词，再决定用 do 还是 to do。主动改被动时要重新检查整个补足结构，不能只交换主语和宾语。'],
+  'gerund-form-logical-subject': ['动名词可以把动作打包成“一件事”，同时仍能表达被动、完成以及动作是谁做的。重点不是只认 doing，而是看整块内部关系。', '先判断动作主动还是被动、是否早于谓语，再找它的逻辑主语。所有格放在 doing 前时，表示“某人做这件事”。'],
+  'gerund-functions': ['动名词像一个带动作味道的名词短语，可以做主语、宾语、表语，也能放在介词后。判断它时先看外层位置，不要只看中文翻译。', '先找限定谓语和介词边界，再看 doing 整块占据哪个槽位。同样的 -ing 外形，只有结合位置才能确定是动名词。'],
+  'participle-voice-time': ['分词常把一个附加动作压缩进句子。要读懂它，先问动作是谁做的、主语是主动还是承受，再比较它与谓语动作的先后。', 'doing 常见主动或同时，done 常见被动或结果，having done 强调更早完成；形式选择必须同时满足语态和时间。'],
+  'participle-attribute-predicative': ['分词可以跟在名词后说明“哪一个”，也可以放在系动词后描述特征或感受。位置相似时，先看它在修饰谁。', '修饰名词时判断主动或被动；放在表语位置时再区分引发感受的特征和受到影响后的状态。不要把所有 be 加 -ing 都看成进行时。'],
+  'participle-adverbials': ['分词短语放在句首或句尾，常把原因、条件、伴随或让步压缩成更紧凑的说明。省掉的主语必须能从主句里找到。', '先找主句主语，把它代回分词动作，再判断主动被动和逻辑关系。需要明确让步或条件时，连词可以保留。'],
+  'participle-object-complements': ['有些分词不是修饰名词，而是跟在宾语后说明宾语正在做什么、处于什么状态，或被安排完成什么事情。', '先圈出宾语，再看宾语与分词动作的关系：主动进行常用 doing，被动或结果状态常用 done。'],
+  'verb-complement-patterns': ['一个动词后面接 doing 还是 to do，常由前面的中心动词决定。与其背孤立中文，不如把中心动词和后面的结构一起观察。', '先找中心动词，再确认它允许的补足结构和意义。能两种都接时还要比较意思；需要宾语时，也不能把“谁去做”省掉。'],
+  'doing-to-do-meaning': ['有些动词后接 doing 和 to do 都合语法，但意思会改变。差别通常来自把动作看成已经发生的经历，还是接下来要做的目标。', '先确定前一个动词在当前语境中的意思，再判断后面动作是已发生、停止的活动、尝试方法，还是计划目标。不要只背一个中文释义。'],
+  'perception-causative': ['感官和使役结构会用 do、doing、done 展示不同画面：看到完整过程、看到正在进行的一段，或看到宾语承受动作。', '先找宾语和后面动作的关系，再看观察范围。主动完整用原形，主动进行用 doing，被动承受用 done；使役动词还决定是否带 to。'],
+  'absolute-with-construction': ['普通分词状语借用主句主语；独立主格和 with 结构则自己带一个逻辑主语，像在主句旁边放了一幅独立小画面。', '先圈出结构内部的名词，再看它和 doing、done 或状态词的关系。它不抢主句谓语，只补充背景、状态或伴随情况。'],
+  'dangling-modifiers': ['句首非谓语最怕“动作找错人”。读者会默认主句主语就是它的逻辑主语，如果两者对不上，就会出现悬垂修饰。', '检查时把主句主语放回非谓语动作里试读。意思不合理，就补出真正主语或改写主句，不能只靠中文语感放过。'],
+  'nonfinite-clause-conversion': ['从句可以压缩成非谓语，让表达更紧凑，但前提是主语、主动被动和时间关系都能被准确恢复。不是见到 who 或 after 就直接删除。', '转换前先标从句主语和谓语；转换后再检查逻辑主语、语态与先后是否保留。任何一项不清楚，都应保留完整从句。'],
+  'nonfinite-integrated': ['综合题里，to do、doing 和 done 不能只按外形分类。要把形式、句中位置、逻辑主语、主动被动和时间先后一起看。', '固定顺序是：先找限定谓语，再定非谓语边界；接着判断句中功能、逻辑主语、语态和时间。逐层回答，比直接翻译可靠。']
+};
+
+const NONFINITE_NARRATION_REPLACEMENTS = {
+  'to be done': '“to be 加过去分词”',
+  '可理解为 Because they saw the teacher': '可以还原成“学生看见老师后变得安静”，这里压缩的是原因关系',
+  '可理解为 If it is used carefully': '可以还原成“机器如果被小心使用，就会更耐用”，这里压缩的是条件关系',
+  'remind somebody to do': 'remind 后接宾语再接不定式',
+  'remember to lock': '另一种 remember 结构',
+  'stop to smoke': '另一种 stop 结构',
+  'try to restart': '另一种 try 结构',
+  'mean to do': '另一种 mean 结构',
+  'see somebody do': '感官动词后接宾语和原形',
+  'see somebody doing': '感官动词后接宾语和现在分词',
+  'after all the work was finished': '对应的完整从句',
+  'While I was walking to school': '补出真正主语后的时间从句',
+  'it started to rain': '把 rain 改为真正主语后的表达',
+  'The man talking to Mia': '压缩后的名词短语',
+  'The bridge built last year': '压缩后的被动修饰结构',
+  'Having finished her work': '压缩后的完成式分词结构',
+  'The weather being fine': '带独立逻辑主语的结构'
+};
+
+const NONFINITE_NARRATION_NOTE_OVERRIDES = {
+  '主动且同时可压缩为 The man talking to Mia ...。': 'who 引导的定语从句说明 man 主动交谈，而且动作与主句同时发生，因此可以缩成 doing 短语。',
+  '被动关系可压缩为 The bridge built last year ...。': 'bridge 承受 build 这个动作，因此定语从句可以缩成过去分词短语。',
+  '从句与主句主语相同且动作先发生，可压缩为 Having finished her work, she went home。': '从句和主句都是 she 做动作，而且完成工作更早发生，因此可用 having done 保留先后关系。',
+  '从句主语 weather 与主句主语 we 不同，不能直接写 Being fine, we went out；可用独立主格 The weather being fine。': '从句主语是 weather，主句主语是 we，两者不同；压缩时必须保留 weather，组成独立主格，不能让 we 被误解为天气晴朗。'
+};
+
+function cleanNonfiniteNarrationNote(value) {
+  if (NONFINITE_NARRATION_NOTE_OVERRIDES[value]) return NONFINITE_NARRATION_NOTE_OVERRIDES[value];
+  return Object.keys(NONFINITE_NARRATION_REPLACEMENTS).reduce((text, source) => text.split(source).join(NONFINITE_NARRATION_REPLACEMENTS[source]), String(value || ''));
+}
+
+function attachNonfiniteNarrations(course) {
+  const connectors = ['先看', '再看', '接着看', '最后看'];
+  course.slice(1).forEach((item, courseIndex) => {
+    const spec = specs[courseIndex + 1];
+    const frame = NONFINITE_NARRATION_FRAMES[item.id];
+    if (!spec || !frame || spec.examples.length !== item.examples.length) throw new Error(`Missing non-finite narration: ${item.id}`);
+    const exampleText = item.examples.map((example, index) => `${connectors[index] || '接着看'}，${example}<#0.7#>${cleanNonfiniteNarrationNote(spec.examples[index][2])}`).join('<#0.8#>\n');
+    const text = `${frame[0]}<#0.9#>\n${exampleText}<#0.9#>\n判断时不要只认 to、doing 或 done 的外形。先找全句限定谓语，再看这块内容放在哪个位置、动作由谁完成、主动还是被动，以及它和谓语动作谁先谁后。<#0.8#>\n${frame[1]}`;
+    item.narration = {
+      id: `nonfinite-system:${item.id}`,
+      version: 'v1',
+      text,
+      lengthText: `${text.replace(/<#\d+(?:\.\d+)?#>/g, '').replace(/\s/g, '').length} 字 · 约 2 分钟`
+    };
+  });
+}
+
 const sectionSpecs = [
   ['nonfinite-foundation','非谓语基础与形式','Foundations and forms','区分限定谓语，建立不定式、动名词和分词的形式系统。','Separate finite predicates and build the infinitive, gerund and participle form systems.',['finite-nonfinite-boundary','infinitive-forms','gerund-form-logical-subject','participle-voice-time']],
   ['infinitive-functions','不定式的句法功能','Infinitive functions','系统掌握不定式作主语、表语、宾语、定语、状语和宾补。','Master infinitives as subjects, complements, objects, attributes, adverbials and object complements.',['infinitive-subject-predicative','infinitive-object-attribute-complement','infinitive-adverbials','bare-infinitive']],
@@ -432,6 +502,7 @@ The boy standing by the door is Tom。<#0.8#>这里的 standing by the door 是�
 判断时，先找出每个小句里真正负责时间的谓语；再圈出剩下的 to do、doing 或 done；最后问三件事：这整块在句中当什么，动作是谁做的，它和谓语动作谁先谁后。不要只数动词，要看每个动词正在做哪份工作。`,
     lengthText: '524 字 · 约 2 分钟'
   };
+  attachNonfiniteNarrations(course);
   const core = course.filter((item) => item.level === 'core');
   const advanced = course.filter((item) => item.level === 'advanced');
   return {
