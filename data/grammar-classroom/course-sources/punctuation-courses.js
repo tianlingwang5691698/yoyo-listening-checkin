@@ -18,13 +18,12 @@ const question = (english, q, index) => {
 const A = (rz,re,p,q,nz,ne) => ({ ruleZh:rz, ruleEn:re, pieces:p, q, noteZh:nz, noteEn:ne });
 const Q = (z,e,az,ae,bz,be,a,wz,we) => [z,e,az,ae,bz,be,a,wz,we];
 const PUNCTUATION_ESSENCE_NARRATION={
-  id:'punctuation:punctuation-capitalization-essence',version:'v1',
-  text:`英语标点不是把朗读停顿照着画下来，而是帮读者看清句子边界、分句关系和信息层级。大小写也不只是字形变化，它会标出句首、专有名称和约定格式。所以加符号前，先分析结构，不能直接套用中文习惯。<#0.7#>
-Although it was late, we continued。<#0.5#>先划出 Although it was late 这个前置让步从句，再找主句 we continued。逗号的主要任务，是标出前置从句到此结束，主句从这里开始，而不是命令朗读者一定停几秒。<#0.8#>
-再看 Let's eat, Grandma。有逗号时，Grandma 是被叫到的人，不是 eat 的宾语。删掉逗号后，读者就可能把 Grandma 误读成“吃掉外婆”。一个小符号会改变成分关系，所以标点准确与否会直接影响意思。<#0.7#>
-Mia's five-year-old brother lives in New York。这句可以先思考三种书写标记各在做什么。<#0.5#>Mia's 的撇号表示所属；five-year-old 的连字符把多个词组成一个前置定语；New York 的大写标出专有地名。它们处理的结构层级并不相同。<#0.7#>
-处理标点和大小写：先找完整句和分句边界；再判断并列、从属、插入、称呼或列举关系；然后选择对应符号；最后检查句首、专名和词内结构。结构是依据，停顿只是可能出现的语音效果。`,
-  lengthText:'487 字 · 约 2 分钟'
+  id:'punctuation:punctuation-capitalization-essence',version:'v3',
+  text:`标点不是把喘气的位置画出来，而是在纸面上告诉读者：哪些词属于一组，哪里是一段结构的边界。先看：<#0.4#>Although it was late, we continued。<#0.8#>别凭感觉找停顿。Although it was late 是前置的让步从句，we continued 才是主句。逗号像一道边界，告诉读者“虽然很晚”这个背景到此结束，主要事情从这里开始。先看结构，才知道符号为什么放在这里。
+再看群里的一句“开饭了，外婆”。英语可以写：<#0.4#>Let's eat, Grandma。<#0.7#>逗号把 Grandma 标成被叫到的人。如果拿掉逗号，Grandma 会紧贴 eat，看起来像被吃的对象。一个小逗号，就能改变词和词之间的关系。
+Mia's five-year-old brother lives in New York 里，三个小地方各有任务。Mia's 的撇号表示弟弟和 Mia 的所属关系；five-year-old 中的连字符把几个词捆成一个前置定语，共同说明 brother；New York 首字母大写，是因为它是专有地名。它们不是同一种停顿，而是在不同层级组织信息。<#0.8#>
+大小写也属于书写信号：句子开头、专名等位置要让读者一眼识别。处理时先圈出完整句和分句；再判断有没有称呼、插入、并列或列举；然后按结构选逗号、句号等符号；最后检查所属、组合词、句首和专名的书写。`,
+  lengthText:'546 字 · 约 2 分钟'
 };
 function makeLesson(english,spec,index){
   if(!spec.atoms||spec.atoms.length<3) throw new Error(`Punctuation lesson needs at least three atomic rules: ${spec.id}`);

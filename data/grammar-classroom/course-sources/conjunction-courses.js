@@ -6,6 +6,113 @@ const Q=(en,zp,ep,a,b,answer,zh,x)=>({question:pick(en,zp,ep),options:[{key:'A',
 const L=(en,id,zt,et,zm,em,items)=>({id,title:pick(en,zt,et),meta:pick(en,zm,em),examples:items.map(v=>X(en,v.p,v.zn,v.en).text),analyses:items.map(v=>X(en,v.p,v.zn,v.en).analysis),exampleNotes:items.map(v=>X(en,v.p,v.zn,v.en).note),rules:items.map(v=>pick(en,v.zr,v.er)),questions:items.map(v=>Q(en,v.zq,v.eq,v.a,v.b,v.k,v.zf,v.ef)),ruleCoverage:COVER?items.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[]});
 const I=(p,zn,en,zr,er,zq,eq,a,b,k,zf,ef)=>({p,zn,en,zr,er,zq,eq,a,b,k,zf,ef});
 
+const EXTRA_CONJUNCTION_NARRATIONS={
+ 'conj-and-or':{
+  id:'conjunction:conj-and-or',version:'v1',
+  text:`点餐时，服务员问“茶还是咖啡”，你只能选一个；如果说“茶和咖啡都有”，两样都包括。and 和 or 都能连接同一层级的内容，但给出的选择关系不同。<#0.7#>
+She reads and writes。<#0.8#>先看 and 两边：reads 和 writes 都是 She 做的动作，共享主语 She。and 把两个动作一起加入，表示她既读也写。它也能连接名词或形容词，只要两边地位相同。<#0.7#>
+再听：<#0.4#>Hurry up, or you will miss the bus。<#0.8#>这里不是让你在“快点”和“误车”中任选一个。or 放在祈使句后，表示“否则”：如果不快点，不利结果就是误车。它与第一句的添加关系不同，本节重点就是从两句实际逻辑区分 and 和 or。
+判断时先在连词左右划出被连接的两块，确认它们处于同一语法层级；两项都加入，用 and；从备选中选择，用 or；若前面是命令或建议、后面是不照做的结果，把 or 还原成“否则”再检查逻辑。`,
+  lengthText:'376 字 · 约 2 分钟'
+ },
+ 'conj-but-so':{
+  id:'conjunction:conj-but-so',version:'v1',
+  text:`房间很小，接下来你可能猜它也昏暗，可实际很明亮。英语说：<#0.4#>The room is small, but it is bright。<#0.8#>but 把两个同等分句接起来，并提醒听者：后面的事实和前面带来的预期相反。这就是转折。
+再看下雨后的决定：<#0.4#>It rained, so we stayed home。<#0.8#>前句给原因，so 把后句标成结果。若换成 but，就会变成“虽然下雨，却……”，逻辑完全不同。<#0.7#>
+but 和 so 都是并列连词，能连接词、短语或完整分句；连接两个完整分句时，正式书写通常在前面加逗号。它们与 although、because 的主从结构不同，这一课只处理同等分句之间的转折和结果。
+选择时先确认两边是不是同层信息；再问后句是在打破预期，还是由前句造成。打破预期用 but，呈现结果用 so。最后把关系读成“但是”或“所以”，检查真实语境是否说得通，不能只靠中文表面词。`,
+  lengthText:'363 字 · 约 2 分钟'
+ },
+ 'conj-for-nor-yet':{
+  id:'conjunction:conj-for-nor-yet',version:'v1',
+  text:`and、but、or、so 之外，并列连词里还有三个容易被忽略的成员。先听：<#0.4#>We stayed home, for it was raining。<#0.8#>for 从后面补一句解释，说明为什么待在家。它常出现在主句之后补充理由，不像 because 那样自然地放句首建立普通原因从句。
+He did not call, nor did he write。<#0.8#>前面已经是否定，nor 再加入另一项否定，意思是“也没有写信”。nor 放在第二分句开头时，助动词 did 要到主语 he 前，形成部分倒装。<#0.7#>
+The task was difficult, yet she finished it 中，yet 表示尽管困难，她仍然完成，转折带有“出乎预期”的味道，比普通 but 更强调反差。
+判断时把三种关系分开：后句是在补充解释前句原因，用 for；是在前一个否定后继续添加否定，用 nor，并检查倒装；后句虽与预期相反却仍发生，用 yet。还要记住它们连接的是同等分句，不要把 for 当所有位置都能替换 because。`,
+  lengthText:'410 字 · 约 2 分钟'
+ },
+ 'conj-time':{
+  id:'conjunction:conj-time',version:'v1',
+  text:`做饭时有人在读书，两件事在同一段时间持续。英语说：<#0.4#>She read while I cooked。<#0.8#>I cooked 自己有主语和谓语，while 把它接成时间背景，并突出两个持续动作同时进行。
+如果重点不是“同时”，而是一个动作持续到某个终点，就用 until。<#0.4#>Wait here until I return。<#0.8#>等待从现在开始，I return 是结束等待的时间点。until 关注一段延续何时停止，不能只当成普通“当……时”。<#0.7#>
+when 常把主句放到某个时间点或事件上，可用于短动作或较宽的时间关系；while 更常突出过程重叠；until 则给持续动作画终点。本节解决的是连接词怎样给两个事件排时间，而不是只背三个中文翻译。
+判断时先画两条事件时间线：若问某事发生在什么时候，可先考虑 when；两条持续线重叠，用 while；一条线一直延续到另一事件出现，用 until。最后检查主句动作是否真的能持续到那个终点。`,
+  lengthText:'386 字 · 约 2 分钟'
+ },
+ 'conj-reason-condition':{
+  id:'conjunction:conj-reason-condition',version:'v1',
+  text:`“我们待在屋里”可能是在解释已经发生的原因，也可能是在说明将来要满足的条件。这两种逻辑不能混。<#0.4#>We stayed inside because it was raining。<#0.8#>because 后的 it was raining 是完整分句，直接回答“为什么待在里面”，所以建立原因关系。
+再看门票规定：<#0.4#>You cannot enter unless you have a ticket。<#0.8#>unless 把“有票”设为进入的必要条件，意思是没有票就不能进入。unless 自带“如果不”的否定条件，不能再机械叠加否定。<#0.7#>
+if 只提出“如果某条件成立”，条件本身可正可负；because 则把某事当作原因。一个是在问“为什么已经这样”，一个是在问“什么情况下才这样”。
+选择时先看后面是不是有主语和谓语的完整分句；再问它解释原因，还是设定前提。解释“为什么”用 because；一般条件用 if；表达“除非、如果不”用 unless。最后把 unless 改写成 if not，若意思不等，就说明连接词选错了。`,
+  lengthText:'419 字 · 约 2 分钟'
+ },
+ 'conj-concession-purpose':{
+  id:'conjunction:conj-concession-purpose',version:'v1',
+  text:`一个人很累，却继续做事；另一个人压低声音，是为了不让别人听见。前者在说“阻碍没有改变结果”，后者在说“动作想达到什么”。<#0.7#>
+Although she was tired, she continued。<#0.8#>although 先承认“她很累”这个不利情况，主句结果仍然是继续，这叫让步。英语里 although 已经标出让步，主句通常不再加 but。<#0.7#>
+She whispered so that nobody would hear。<#0.8#>低声说是主动采取的动作，nobody would hear 是她希望达到的目的，所以 so that 引导目的从句。本节同时提醒：so that 直接接目的内容，而 so...that 结构强调程度造成结果，两者不能只看都有 so 和 that 就混在一起。
+判断时先问两件事：从句是在承认障碍，还是在解释意图或实际后果？障碍存在但主句仍成立，用 although；“为了让……”用 so that；“如此……以至于真的发生……”用 so 加形容词或副词再加 that。最后检查 although 和 but 有没有重复。`,
+  lengthText:'430 字 · 约 2 分钟'
+ },
+ 'conj-place-manner-comparison':{
+  id:'conjunction:conj-place-manner-comparison',version:'v1',
+  text:`从属从句不只交代时间原因，还能告诉主句“在哪里、以什么样子、和什么相比”。<#0.4#>Sit where you can see the screen。<#0.8#>主句只要求“坐下”，where you can see the screen 给 sit 划出地点：坐在能看见屏幕的地方。
+再听：<#0.4#>He talks as if he knew everything。<#0.8#>as if 不是说他真的什么都知道，而是把“仿佛全都知道”当成他讲话呈现出的样子，建立方式或样态关系。<#0.7#>
+The exam was harder than I expected 中，harder 先提出比较，than I expected 给出比较基准。than 后不是只有一个名词，I expected 保留了自己的主谓骨架，是比较从句。
+判断时先抓主句，再问附加从句回答什么：回答“在什么地方”用 where；回答“看起来仿佛怎样”用 as if 或 as though；跟在比较级后补“比什么标准”用 than。最后确认这些从句整体都在给主句补关系，而不是占主句的主语或宾语槽位。`,
+  lengthText:'415 字 · 约 2 分钟'
+ },
+ 'conj-correlative':{
+  id:'conjunction:conj-correlative',version:'v1',
+  text:`有些连词像一副成对耳机，只戴一边，结构就不完整。<#0.4#>Both Tom and Amy are ready。<#0.8#>both 先告诉读者“两者都包括”，and 接出第二项。Tom 和 Amy 共同作主语，因此谓语用复数 are。
+再看：<#0.4#>She not only sings but also dances。<#0.8#>not only 和 but also 成对，表示“不但唱歌，而且跳舞”。更重要的是，两边连接的都是谓语动词 sings 和 dances，形式与层级保持平行。<#0.7#>
+页面第二句的两端都是动作，读者能顺着同一结构理解。若两端的句法身份不同，就会找不到并列点。either...or 表示两者选一，neither...nor 表示两者都不，也同样要求两端对齐。
+操作时先把成对标记一起圈出，不能漏掉搭档；再分别划出两端真正连接的内容；检查两边是否同为名词、动词、短语或分句。both...and 表两者都，either...or 表选择，neither...nor 表两者都不，页面第二组表示递进添加。`,
+  lengthText:'410 字 · 约 2 分钟'
+ },
+ 'conj-near-agreement':{
+  id:'conjunction:conj-near-agreement',version:'v1',
+  text:`either...or 和 neither...nor 连接两个主语时，一个单数、一个复数，谓语跟谁走？先看：<#0.4#>Either you or he is wrong。<#0.8#>离谓语最近的主语是 he，第三人称单数，所以用 is。这叫就近一致。
+再看：<#0.4#>Neither the teacher nor the students are ready。<#0.8#>这次较近的是复数 students，所以用 are。与第一句对照，连接词虽然同属成对结构，谓语形式仍要按它旁边的主语重新判断。<#0.7#>
+这条规则解决的是成对连词连接“主语”时的数，不适用于两端只是宾语或谓语。both...and 把两者都纳入主语，通常直接按复数处理；either...or、neither...nor 才常按最近一项决定。
+判断时先确认成对连词两端是不是共同作主语；若是 either...or 或 neither...nor，从谓语向左找最近的主语中心词，按它的单复数选 is、are、has 等形式。写作时若读起来别扭，可把复数项放近谓语，或改写句子避免摇摆。`,
+  lengthText:'424 字 · 约 2 分钟'
+ },
+ 'conj-boundary':{
+  id:'conjunction:conj-boundary',version:'v1',
+  text:`before 有时是连词，有时是介词，however 又能表示转折，却不是并列连词。区别不在中文翻译，而在它后面接什么、怎样连接句子。<#0.7#>
+We left before the rain started。<#0.8#>before 后面有 the rain 作主语、started 作谓语，是完整分句；before 把它接成时间从句，所以这里是连词。若 before 后面只带名词短语，它承担的就会是介词工作。<#0.7#>
+再看：<#0.4#>It rained; however, we continued。<#0.8#>however 表达转折关系，但不能像 but 一样单独把两个完整分句连成一句。前面要用分号或句号建立句界，however 后常加逗号，因此它是连接副词。
+判断边界时先看后接结构：接完整主谓分句，可能是从属连词；接名词或代词，常是介词。再看两个独立分句之间的符号：but 等并列连词可配逗号连接，however 等连接副词前要用分号或句号。不要只因都能译成“但是、之前”就判成同一词类。`,
+  lengthText:'398 字 · 约 2 分钟'
+ },
+ 'conj-punctuation':{
+  id:'conjunction:conj-punctuation',version:'v1',
+  text:`写完 I called，后面又写 nobody answered，两边都有完整主谓。它们不能只用一个逗号粘起来。若加入并列连词，可以写：<#0.4#>I called, but nobody answered。<#0.8#>but 连接两个独立分句，正式书写通常把逗号放在 but 前，先标出第一分句结束。
+如果不想用连词，可以写：<#0.4#>I called; nobody answered。<#0.8#>分号的力度比逗号强，能连接意义紧密的两个完整分句。也可以直接用句号，拆成两个句子。<#0.7#>
+把第二句的分号换成单独一个逗号，就会形成逗号拼接：逗号独自承担不了两个独立句界。反过来，如果连词只连接两个词或短语，就不能机械套用完整分句的句界逗号。
+处理标点时先分别检查连词左右有没有各自的主语和谓语。若是两个完整分句，用“逗号加并列连词”、分号或句号；若只是词或短语并列，不套用完整分句的逗号规则。最后重点排查“完整句，完整句”的单逗号拼接。`,
+  lengthText:'376 字 · 约 2 分钟'
+ },
+ 'conj-parallel':{
+  id:'conjunction:conj-parallel',version:'v1',
+  text:`列兴趣时，说“喜欢阅读和游泳”很顺；若写成“喜欢阅读和去游泳”，两边形式忽然换轨。英语自然说：<#0.4#>She likes reading and swimming。<#0.8#>reading 和 swimming 都是 ing 形式，都作 likes 的宾语，连接层级相同，这叫平行结构。
+再看：<#0.4#>Tom bought a book and a pen。<#0.8#>bought 只出现一次，却同时支配 a book 和 a pen。并列结构可以共享前面重复的主语或谓语，只要省略后两项关系仍清楚。<#0.7#>
+如果一边是名词、一边是完整分句，或者一边用 to do、一边无理由改用 doing，读者就会重新分析结构。平行不要求每个字一样，而是要求两端承担相同语法任务，并尽量采用匹配形式。
+检查时先圈出 and、or、but 两边真正的并列项；再问它们是否同作主语、宾语、谓语或其他成分；然后比较形式是否同为名词短语、doing、to do 或分句。若共享了某个词，把它分别补回两端读一遍，两个结构都成立才算省略清楚。`,
+  lengthText:'404 字 · 约 2 分钟'
+ },
+ 'conj-integration':{
+  id:'conjunction:conj-integration',version:'v1',
+  text:`长句里可能同时出现两三种连词，不能从左到右都当成同一层。<#0.4#>Although it rained, we stayed, and we finished the game。<#0.8#>although 先把 it rained 降成让步背景，依附后面的主要信息；and 则连接 we stayed 和 we finished the game 两个同等主句。一个负责从属，一个负责并列。
+再看：<#0.4#>We left because it was late, not because it was cold。<#0.8#>两个 because 从句都在解释离开的原因，但 not 只压住第二个原因“因为冷”，意思是离开确实因为晚，而不是因为冷。若把 not 的范围看错，整句意思就会反转。<#0.7#>
+综合题的关键不是先翻译每个连词，而是画层级。最外层先找独立主句；再看并列连词连接哪些同等块；最后把 because、although 等从属从句挂回它们说明的主句，并单独圈出 not、only 等范围词。
+操作时按“边界、层级、逻辑、范围”四步走：划分完整分句，确认同等还是依附，判断转折、原因等真实关系，再检查否定落在哪一块。每个连词都要能说清左右连接对象。`,
+  lengthText:'461 字 · 约 2 分钟'
+ }
+};
+
 function buildConjunctionCourse(english){
  const ls=[
   L(english,'conj-essence','连词的定义与本质','Definition and core of conjunctions','给成分建立逻辑连接','Building logical links between units',[
@@ -58,15 +165,16 @@ function buildConjunctionCourse(english){
  const section={}; specs.forEach(s=>s[5].forEach(id=>section[id]=s[0]));
  const course=ls.map((v,i)=>Object.assign({},v,{no:String(i+1).padStart(2,'0'),level:advanced.includes(v.id)?'advanced':'core',sectionId:section[v.id]}));
  const byId=Object.fromEntries(course.map(v=>[v.id,v]));
+ Object.keys(EXTRA_CONJUNCTION_NARRATIONS).forEach(id=>{byId[id].narration=EXTRA_CONJUNCTION_NARRATIONS[id];});
  byId['conj-essence'].narration={
   id:'conjunction:conj-essence',
-  version:'v1',
-  text:`连词的本质，是把词、短语或分句连接起来，并告诉我们这些单位之间是什么逻辑关系。分析连词时，先看连接层级，再看意义，不能只背“和、但是、因为”。<#0.6#>
-Tea and coffee are available。<#0.7#>先看主干，Tea and coffee 是主语，are available 是谓语部分。and 连接 Tea 和 coffee 两个地位相同的名词，让它们共同占据主语位置，表示两者并列加入。因此整个并列主语按复数理解。<#0.8#>
-再看 We left because it was late。<#0.7#>We left 是主句，it was late 本身也有主语和谓语。because 把后一个分句变成原因从句，让它依附主句，说明离开的原因。这里连接的不是两个同等成分，而是主句和从属分句。<#0.8#>
-可以思考：Tea or coffee is available 中，or 与 and 连接的层级相同，为什么意义不同？因为连词不仅负责连接，还标明并列、选择、转折、因果等关系。<#0.8#>
-判断连词分三步：找出连词两边的完整单位；判断它连接的是词、短语还是分句；最后判断两边是同等并列，还是一边依附另一边。先确定结构层级，再选择符合逻辑的连词。`,
-  lengthText:'465 字 · 约 2 分钟'
+  version:'v3',
+  text:`说话时，我们经常要把两块信息接起来：茶和咖啡、想去但是没时间、因为下雨所以离开。and、but、because 就像不同形状的连接扣，不只负责把内容接住，还告诉听者两边是一起出现、发生转折，还是在解释原因。这样的词叫连词。<#0.8#>
+先听。<#0.4#>Tea and coffee are available。<#0.8#>and 左边是 Tea，右边是 coffee，它把两个同等的东西并排放在“有什么可选”的位置，两样都包括。这里连的是两个词。<#0.8#>
+再听。<#0.4#>We left because it was late。<#0.8#>because 左边的 We left 已经能单独说清一件事；右边的 it was late 也有“谁”和“怎么样”。because 把后面这件事接成离开的原因。后半句不能在这里和前半句平起平坐，而是依靠前半句，这种关系叫从属。<#0.8#>
+回到页面两句，第一句的 and 连接两个同等的词，第二句的 because 连接主句和依附它的原因从句。可见，连词能连接多长的内容、两边是否同等，都要从当前句子结构判断。<#0.7#>
+判断连词时，先在它左右各画一道线，找出真正被连接的两块；再看每块是一个词、一组词，还是各自都有主语和谓语的完整分句；最后判断两边是同等并排，还是一边给另一边补原因、时间或条件。`,
+  lengthText:'497 字 · 约 2 分钟'
  };
  byId['conj-essence'].analyses[0][0].role='subject';
  byId['conj-essence'].analyses[0][2].role='subject';

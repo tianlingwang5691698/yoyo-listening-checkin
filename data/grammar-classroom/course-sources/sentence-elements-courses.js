@@ -185,7 +185,7 @@ const exampleExplanations = {
 function buildSentenceElementsCourse(english) {
   const L = (...args) => makeLesson(english, ...args);
   const lessons = [
-    L('element-levels','core','句子成分的定义与本质','Definition and core of sentence elements','语言单位在具体句子中承担什么任务','What job a unit performs in a particular sentence',[
+    L('element-levels','core','句子成分的定义与本质','Definition and core of sentence elements','词、短语和从句怎样整体充当句子成分','How words, phrases and clauses function as sentence elements',[
       atom('句子成分是词、短语或从句在具体句子中承担的任务；词性只说明词本身是什么。','A sentence element is the job a word, phrase or clause performs in a particular sentence; word class only says what the word itself is.',[['Birds','subject'],['fly.','predicate']],Q('Birds 在句中是什么成分？','What element is Birds?','主语','Subject','名词词性','Noun word class','A','题目问句中任务，应答主语。','The question asks for its sentence role: subject.')),
       atom('一个短语可以整体充当一个成分，分析时先划出完整边界。','A phrase can fill one element; identify its full boundary first.',[['The tall boy','subject','名词短语作主语','Noun phrase as subject'],['smiled.','predicate']],Q('The tall boy 应整体分析为什么？','How should The tall boy be analysed?','主语','Subject','三个独立主语','Three separate subjects','A','整个名词短语共同作主语。','The whole noun phrase is the subject.')),
       atom('一个从句也可以整体充当主语、宾语、表语、定语或状语。','A clause can function as subject, object, predicative, attribute or adverbial.',[['What he said','clause','主语从句','Subject clause'],['surprised','predicate'],['me.','directObject']],Q('What he said 整体是什么成分？','What element is What he said as a whole?','主语','Subject','宾语','Object','A','该从句位于谓语 surprised 前并触发动作。','The clause precedes surprised and functions as its subject.'))
@@ -333,13 +333,13 @@ function buildSentenceElementsCourse(english) {
   }
   course[0].narration = {
     id: 'sentence-elements:element-levels',
-    version: 'v1',
-    text: `句子成分不是单词的固定身份，而是词、短语或从句在具体句子中承担的任务。名词、动词、形容词属于词性；主语、谓语、宾语、定语和状语属于句中功能。分析时必须先看完整边界，再看内部结构。<#0.6#>
-Birds fly。<#0.7#>先找限定谓语 fly，它说明主语的动作；再问谁在飞，答案是 Birds。所以 Birds 是主语，fly 是谓语。这个最短主干让我们看到，成分由句中关系决定。<#0.8#>
-The tall boy smiled。<#0.7#>限定谓语是 smiled，完整主语不是只有 boy，而是 The tall boy。这个名词短语整体作主语，内部 boy 是中心词，tall 修饰 boy，作定语。先划整体，再分析内部，不能把 tall 单独误当成句子的主语。<#0.8#>
-再看 What he said surprised me。<#0.7#>可以先想：是谁使我惊讶？不是 he，而是 What he said 这件事。整个从句作主语，surprised 是主句谓语，me 是宾语。<#0.8#>
-分析句子成分，先找限定谓语和分句边界；再找主语以及谓语要求的宾语、表语或补足语；然后把定语和状语挂回对应成分；最后再分析短语或从句内部。词性告诉你材料是什么，句子成分告诉你这份材料在当前句子里做什么。`,
-    lengthText: '477 字 · 约 2 分钟'
+    version: 'v3',
+    text: `一句话里的内容有长有短，但判断成分不能只数单词，要看哪一整块在完成同一份工作。<#0.7#>
+Birds fly。<#0.8#>谁在飞？Birds。发生了什么？fly。这里一个词 Birds 就能站在“谁”的位置，这份工作叫主语；fly 负责说明 Birds 怎么了，这份工作叫谓语动词。Birds 本身是名词，主语却是它在这句话里的任务。词是什么，和它做什么，是两回事。<#0.8#>
+The tall boy smiled。<#0.8#>这次回答“谁笑了”的不是 boy 一个词，而是完整的 The tall boy。The 和 tall 都跟着 boy，一起让听者认出是哪一个男孩。因此整块 The tall boy 才是主语，smiled 是谓语动词。分析时不能把 The、tall、boy 拆成三个主语。<#0.8#>
+What he said surprised me。<#0.8#>谁或什么让我吃惊？答案是 What he said，也就是“他说的话”这整件事。它内部虽然有 he 和 said，放到外层句子里却要整块当主语。surprised 说明发生了什么，me 是受到影响的对象，叫直接宾语。<#0.8#>
+判断时先找外层谓语，再问“谁或什么怎么了”；答案可能是一个词、一个短语，也可能是一个从句。先把完整边界框出来，确定它整体做什么，再分析里面每个词的工作。`,
+    lengthText: '499 字 · 约 2 分钟'
   };
   const core = course.filter((item) => item.level === 'core');
   const advanced = course.filter((item) => item.level === 'advanced');

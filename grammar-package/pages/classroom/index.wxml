@@ -1,30 +1,4 @@
 <view class="theme-{{theme}} language-{{language}} classroom-page">
-  <grammar-word-loader wx:if="{{loaderKind === 'word'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-pronoun-loader wx:if="{{loaderKind === 'pronoun'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-word-formation-loader wx:if="{{loaderKind === 'word-formation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-verb-loader wx:if="{{loaderKind === 'verb'}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-numeral-loader wx:if="{{loaderKind === 'numeral'}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-article-loader wx:if="{{loaderKind === 'article'}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-adjective-loader wx:if="{{loaderKind === 'adjective'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-adverb-loader wx:if="{{loaderKind === 'adverb'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-preposition-loader wx:if="{{loaderKind === 'preposition'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-conjunction-loader wx:if="{{loaderKind === 'conjunction'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-interjection-loader wx:if="{{loaderKind === 'interjection'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-sentence-elements-loader wx:if="{{loaderKind === 'sentence-elements'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-basic-patterns-loader wx:if="{{loaderKind === 'basic-patterns'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-predicate-system-loader wx:if="{{loaderKind === 'predicate-system'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-nonfinite-system-loader wx:if="{{loaderKind === 'nonfinite-system'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-special-structures-loader wx:if="{{loaderKind === 'special-structures'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-coordination-loader wx:if="{{loaderKind === 'coordination'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-noun-clauses-loader wx:if="{{loaderKind === 'noun-clauses'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-relative-clauses-loader wx:if="{{loaderKind === 'relative-clauses'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-adverbial-clauses-loader wx:if="{{loaderKind === 'adverbial-clauses'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-reported-speech-loader wx:if="{{loaderKind === 'reported-speech'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-cohesion-reference-loader wx:if="{{loaderKind === 'cohesion-reference'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-information-order-loader wx:if="{{loaderKind === 'information-order'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-punctuation-loader wx:if="{{loaderKind === 'punctuation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-common-expression-loader wx:if="{{loaderKind === 'common-expression'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-
   <view class="page-topbar">
     <view class="topbar-back" bindtap="handleTopBack"><text class="topbar-chevron">‹</text><text class="topbar-back-text">{{ui.back}}</text></view>
     <view class="topbar-title">{{language === 'en' ? 'Grammar Micro-Lessons' : '语法微课堂'}}</view>
@@ -32,8 +6,10 @@
   </view>
 
   <view class="debug-card" wx:if="{{debugMessage}}">
-    <view>{{debugMessage}}</view>
-    <view class="debug-back" bindtap="handleTopBack">{{ui.loadError}} · {{ui.back}}</view>
+    <text user-select="true">{{debugMessage}}</text>
+    <view class="debug-back" wx:if="{{!courseLoading}}" bindtap="retryCourse">{{ui.retryCourse}}</view>
+    <view class="debug-back" wx:if="{{courseLoading}}" bindtap="handleTopBack">{{ui.back}}</view>
+    <view class="debug-back" wx:else bindtap="handleTopBack">{{courseLoadFallback ? ui.cachedCourse : ui.loadError}} · {{ui.back}}</view>
   </view>
 
   <view class="classroom-shell">
@@ -146,7 +122,7 @@
         <view class="narration-controls">
           <view class="narration-control {{!narrationReady ? 'is-disabled' : ''}}" bindtap="rewindNarration" hover-class="narration-tapped" hover-stay-time="80"><text class="narration-seek-sign">-</text><text class="narration-seek-value">15</text><text class="narration-seek-unit">s</text></view>
           <view class="narration-button {{narrationPlaying ? 'is-playing' : ''}} {{narrationLoading ? 'is-loading' : ''}}" bindtap="playNarration" hover-class="narration-tapped" hover-stay-time="80">
-            <text wx:if="{{!narrationLoading}}">{{narrationPlaying ? 'Ⅱ' : '▶'}}</text>
+            <text wx:if="{{!narrationLoading && (narrationPlaying || narrationEnded || !narrationCurrentTime)}}">{{narrationPlaying ? 'Ⅱ' : '▶'}}</text>
             <text>{{narrationLoading ? ui.loadingNarration : (narrationPlaying ? ui.pauseNarration : (narrationEnded ? ui.replayNarration : (narrationCurrentTime > 0 ? ui.resumeNarration : ui.listenNarration)))}}</text>
           </view>
           <view class="narration-control {{!narrationReady ? 'is-disabled' : ''}}" bindtap="forwardNarration" hover-class="narration-tapped" hover-stay-time="80"><text class="narration-seek-sign">+</text><text class="narration-seek-value">15</text><text class="narration-seek-unit">s</text></view>

@@ -3,12 +3,108 @@ const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR
 const NOUN_ONLY = typeof GRAMMAR_NOUN_ONLY !== 'undefined' && GRAMMAR_NOUN_ONLY;
 const PRONOUN_ONLY = typeof GRAMMAR_PRONOUN_ONLY !== 'undefined' && GRAMMAR_PRONOUN_ONLY;
 const NOUN_FIRST_LESSON_NARRATION = {
-    id: 'noun:noun-job', version: 'v1', lengthText: '400 字 · 约 2 分钟',
-    text: `名词的本质，是给人、事物、地点或抽象概念命名。Tom 是人名，books 给一类事物命名，Shanghai 是地名，happiness 则给看不见的“幸福”命名。因此，判断名词不能只看它能不能用手摸到。<#0.7#>\n看句子：Tom reads books。先找谓语核心 reads，它表示“阅读”这个动作。Tom 告诉我们谁在读，所以作主语；books 告诉我们读什么，所以作宾语。这里有两个名词，但它们在句中的任务不同。名词是词性，主语和宾语是句子成分，两者不能混为一谈。<#0.8#>\n再看 Shanghai is a city。Shanghai 作主语，a city 在系动词 is 后说明 Shanghai 属于哪一类，整个名词短语作表语。思考 Happiness matters：happiness 虽然是抽象概念，但它独立回答“什么很重要”，因此作主语。<#0.7#>\n判断时分两步：先找出给谁或什么命名的中心词；再根据它与谓语的关系，判断整个名词短语作主语、宾语还是表语。`
+    id: 'noun:noun-job', version: 'v2', lengthText: '537 字 · 约 2 分钟',
+    text: `想象一下，你走进教室，要告诉别人你看见了谁、拿了什么、心里有什么感觉。你会说 Tom、book、happiness。这些词就像贴在不同东西上的名字标签：Tom 是人的名字，book 是物品的名字，happiness 连看不见的“幸福”也能叫出来。这样的词，语法上叫名词。所以，名词不只是桌子、苹果这类摸得到的东西。<#0.8#>\n看一句话。<#0.4#>Tom reads books。<#0.8#>先别急着背术语，只问两个问题：谁在读？Tom。读什么？books。Tom 和 books 都是在给对象起名字，所以都是名词；但它们在这句话里干的活不一样。Tom 站在动作前，告诉我们“谁来做”，这份工作叫主语；books 接在 reads 后，告诉我们“读什么”，这份工作叫宾语。词是什么，和它在句子里做什么，是两件事。<#0.8#>\n再听。<#0.4#>Shanghai is a city。<#0.7#>Shanghai 是地点的名字，city 是一类事物的名字。a city 放在 is 后面，是在说明 Shanghai 属于哪一类，这份工作叫表语。Happiness matters 也一样，happiness 虽然摸不到，却能回答“什么很重要”。<#0.7#>\n判断时就做两步：先圈出给人、物、地点或想法起名字的中心词；再问整个名词或名词短语在回答“谁、什么”，还是在说明“是什么”。这样就不会把名词和主语、宾语混在一起。`
+};
+const NOUN_REMAINING_NARRATIONS = {
+  'noun-functions': {
+    id: 'noun:noun-functions', version: 'v1', lengthText: '486 字 · 约 2 分钟',
+    text: `排练节目时，同一个人可以一会儿当主持人，一会儿当摄影师。名词放进句子，也会承担不同任务。先听。<#0.4#>The young teacher smiled。<#0.8#>谁笑了？不是只有 teacher，而是 The young teacher 整体。这个名词短语站在动作 smiled 前，负责说清“谁做动作”，语法上叫主语。<#0.7#>再听 We visited the museum。动作是 visited，the museum 回答“参观了什么”，所以它是宾语。Amy is our monitor 里，our monitor 没有承受动作，而是在 is 后说明 Amy 的身份，这个位置叫表语。可见，看到名词不能马上断定它就是主语，要看它和谓语是什么关系。<#0.8#>还有两种容易混的任务。She gave Tom a book 里，Tom 是收到东西的人，叫间接宾语；a book 是被给出的东西，叫直接宾语。They elected Tom captain 里，Tom 是宾语，captain 接着补充 Tom 被选成什么，叫宾语补足语。<#0.7#>判断时先圈出完整名词短语，再找谓语：谓语前回答“谁做”多半是主语；动作后回答“谁或什么”多半是宾语；系动词后说明身份是表语；宾语后再给身份，就是宾语补足语。`,
+  },
+  countability: {
+    id: 'noun:countability', version: 'v1', lengthText: '379 字 · 约 2 分钟',
+    text: `往购物袋里装东西时，有些东西能一件件数，有些要先装进一个单位再数。页面先给出。<#0.4#>a book · two books。<#0.8#>book 能分出一本、两本，所以数量变多时名词也变成复数 books。这类能直接按个数计算的，叫可数名词。<#0.7#>再看。<#0.4#>some water · a glass of water。<#0.8#>water 在这里表示没有切分单位的水，不能为了表示很多就随手加复数词尾；a glass of water 先用 glass 划出一份，再说明这一份装的是水。<#0.7#>第三组是。<#0.4#>some advice · a piece of advice。<#0.8#>advice 不是液体，但英语通常把“建议”看成不可数的内容整体。a piece of advice 用 piece 划出一条，advice 本身保持原形。<#0.8#>判断时先看名词能否直接和数量搭配并形成单复数；若不能，就找页面所示的容器或单位词。最后还要结合当前词义，因为同一个词换到不同语境，可数性也可能改变。`,
+  },
+  'regular-plural': {
+    id: 'noun:regular-plural', version: 'v1', lengthText: '325 字 · 约 2 分钟',
+    text: `整理仓库清单时，一件和多件要用不同词形。页面第一组是。<#0.4#>book → books　map → maps。<#0.8#>这两个词直接在末尾加 s，是最常见的复数路线。<#0.7#>第二组是。<#0.4#>box → boxes　watch → watches。<#0.8#>这类词尾原本就不容易和一个 s 分开读，所以加 es，多出更清楚的尾音。判断时既看结尾字母，也要听结尾声音。<#0.7#>第三组是。<#0.4#>city → cities　knife → knives。<#0.8#>city 把末尾 y 调整后再加 es；knife 则把 fe 调整成 ves。这些变化都比直接加 s 多一步，不能混在一起背。<#0.8#>术语上，能按常见词尾模式变化的叫规则复数。动笔时按页面顺序检查：普通结尾先考虑直接加 s；特殊尾音考虑 es；看到辅音字母加 y，再检查是否变 ies；遇到 f 或 fe 的词，按这个词的实际复数形式核对。`,
+  },
+  'irregular-plural': {
+    id: 'noun:irregular-plural', version: 'v1', lengthText: '341 字 · 约 2 分钟',
+    text: `有些名词变成多个时，不走普通的 s 或 es 路线。页面第一组是。<#0.4#>man → men　woman → women。<#0.8#>它们通过词内部元音变化表示复数，不是在末尾直接添词尾。<#0.7#>第二组是。<#0.4#>child → children　person → people。<#0.8#>这两组变化更明显，复数形式必须和单词一起记，不能临场按规则拼出来。这类形式叫不规则复数。<#0.7#>第三组是。<#0.4#>sheep → sheep　fish → fish/fishes。<#0.8#>sheep 单数和复数外形相同，数量要靠前面的限定信息和句中谓语判断。fish 常用同形复数 fish；fishes 可在强调不同鱼类时出现，意义范围不同。<#0.8#>判断时先找数量信号，再看当前名词能不能走普通复数规则；若属于页面这些不规则类型，就直接调出对应形式。遇到单复数同形的词，不看外壳猜数量，要连同上下文和谓语一起判断。`,
+  },
+  possessive: {
+    id: 'noun:possessive', version: 'v1', lengthText: '431 字 · 约 2 分钟',
+    text: `课桌上有几本书，贴上 Tom's book，就能看出这本书和 Tom 有所属关系。撇号不是装饰，它把前面的名词变成“与谁有关”的标记。单数名词 Tom 后通常加撇号 s；不以 s 结尾的不规则复数也按这类形式处理。<#0.8#>如果物品属于多位学生，页面写 the students' classroom。students 已经是以 s 结尾的规则复数，所以只在末尾加撇号。先判断原词是不是复数，再决定撇号放在哪里，不能只凭耳朵。<#0.7#>所有格也不只是“人的东西”。today's news 表示今天对应的新闻，学校、公司、城市等组织地点也常自然使用撇号 s。所以“有生命才用撇号 s”会误导。<#0.8#>再看 the roof of the house。roof 是房屋的一部分，of 把部分和整体连起来，中文通常说“房子的屋顶”。英语究竟选撇号 s 还是 of，要看关系类型和习惯。<#0.7#>操作时先找真正被说明的中心名词，再确认前面的名词是单数、普通复数还是不规则复数；最后判断是在表达所属、时间和组织关系，还是部分与整体。形式和关系都对上，所有格才选得准。`,
+  },
+  'noun-modifier': {
+    id: 'noun:noun-modifier', version: 'v1', lengthText: '413 字 · 约 2 分钟',
+    text: `看到 a shoe shop，先别逐词翻成“一个鞋一个商店”。真正决定这是什么东西的是最后的 shop：它是一家商店；前面的 shoe 只是说明商店卖什么、属于什么类型。这里 shoe 仍是名词，但放在另一个名词前做修饰，语法上叫名词作定语。<#0.8#>再看 two apple trees。数量 two 数的是树，所以中心名词 trees 变复数；apple 只标明树的种类，通常保持单数。<#0.7#>复合名词常把多个词压成一个概念，中文也常合并表达。分析时仍要找中心：最后的名词通常决定整个短语是一家店、一棵树还是一次会议，也决定单复数落在哪里。<#0.8#>不过“前面的名词永远单数”也不是绝对规则。页面第三个例子 a sports meeting 里，sports 保留已经形成的复数形式，这类约定要按真实表达记住。<#0.7#>判断时从右往左做三步：先圈出最后的中心名词；再问前面的名词说明用途、材料还是类型；最后把数量变化放到中心词上。若见到 sports 这类惯用复数修饰语，再单独核对页面或词典中的实际形式。`,
+  },
+  'noun-types': {
+    id: 'noun:noun-types', version: 'v1', lengthText: '450 字 · 约 2 分钟',
+    text: `打开地图，China 是一个国家的专名，country 是“国家”这一类事物的通名；翻到日历，Monday 是某一天的名称，day 只是类别。给特定对象命名、通常首字母大写的叫专有名词；表示一类人或物的叫普通名词。<#0.8#>厨房里的 water、rice，木桌的材料 wood，都在说物质本身，这类叫物质名词，通常按不可数使用。love、courage、knowledge 看不见，却给感情、品质和知识概念命名，叫抽象名词，也常按不可数处理。<#0.7#>不过类别不是给单词贴上一张永远不变的标签。页面用 coffee → two coffees 展示：coffee 表示饮料这种物质时常按不可数理解；two coffees 则把它切成两份或两杯，词义变成可数的份数。<#0.8#>同样，抽象概念在表示一次具体经历、一个种类时，也可能出现可数用法。决定形式的是当前句子想表达什么，而不是词典里排在最前面的中文意思。<#0.7#>判断时先问：它是在叫某个独特名称、一整个类别、一种物质，还是一个抽象概念？再看语境有没有把物质或概念切成种类、份数或具体实例，最后决定是否大写、能否计数。`,
+  },
+  'collective-noun': {
+    id: 'noun:collective-noun', version: 'v1', lengthText: '455 字 · 约 2 分钟',
+    text: `球场记分牌上，一支队伍作为一个整体参赛，可以说 The team is strong。这里关注的是“这支队”这个单位，所以谓语用单数 is。team 这种用一个词装下许多成员的名词，叫集体名词。<#0.8#>如果镜头转到更衣室，页面写 The team are arguing among themselves。复数 are 把注意力放到一个个成员身上。英式英语可以采用这种成员视角；美式英语通常仍把 team 当单数，或明确说成员，避免视角含糊。<#0.8#>再听 The police are working。police 和普通 team 不一样，它本身按复数处理，谓语要跟着复数关系。people 表示“人们”时也通常配复数谓语。<#0.7#>My family lives in Shanghai 里，family 表示一个家庭整体，所以 lives 用单数；如果英式语境强调家人各自的意见，才可能采用成员视角。<#0.7#>判断时不要只数现实中有几个人。先看这个词在语法上属于普通集体名词，还是 police、people 这类复数词；再看说话者把它当一个单位，还是突出成员分别行动；最后保持同一段话的英式或美式用法一致。`,
+  },
+  'noun-boss': {
+    id: 'noun:noun-boss', version: 'v1', lengthText: '538 字 · 约 2 分钟',
+    text: `书桌上写着 two children's books，看起来有两个复数信号，却各管一件事。children 已经是 child 的不规则复数，表示多个孩子；后面的撇号 s 建立“孩子们与书”的关系；最后 books 才表示有两本书。不能写 childrens，也不能把 two 错当成在数 children。<#0.8#>再看 three pieces of information。真正要表达的是三条信息，但 information 在这里不可数，不能写 informations。负责接受数字 three 的是 pieces，of information 再说明每一份是什么内容。<#0.7#>the windows of the classroom 里，中心名词 windows 表示多个窗户，所以复数落在 windows；of the classroom 只是交代窗户属于哪个整体。中文会把这层关系移到前面，说“教室的窗户”，英语结构仍从中心词 windows 开始理解。<#0.8#>综合题常把复数、所有格和名词修饰叠在一起，难点不是多背一个词尾，而是先弄清每个标记作用在哪个名词上。<#0.7#>下笔按三步：第一，圈出整个短语最核心的东西，并确认数字到底数谁；第二，判断中心词可数还是不可数，需要复数还是量词；第三，再处理谁属于谁，以及用撇号所有格还是 of。每一步只解决一个关系，复杂短语就会拆开。`,
+  },
 };
 const PRONOUN_FIRST_LESSON_NARRATION = {
-    id: 'pronoun:pronoun-essence', version: 'v1', lengthText: '432 字 · 约 2 分钟',
-    text: `代词的本质，是指向语境中已经出现或现场可以确定的人、事物或内容，避免一遍遍重复名称。代词不是没有意义，而是把意义指回另一个对象。<#0.7#>\n看两句话：Amy is reading。She looks happy。第二句的谓语核心是 looks，She 在谓语前作主语。She 没有重新给人命名，而是指回前一句的 Amy。Amy 叫先行词，它让我们知道 She 具体指谁。如果只说 She looks happy，却没有前文或现场信息，听者就可能不知道 She 是谁。<#0.8#>\n再看 I saw a dog。It was wet。It 指回 a dog，并在第二句作主语。这说明代词也要与指向对象的数量和语义相配。这里是一只狗，所以用 It，不用 They。<#0.7#>\n思考这组对比：This is my seat和 This book is mine。第一句中 This 独立占据主语位置，是代词；第二句中 this 后面直接带 book，它是限定词，不是独立代替名词。<#0.7#>\n判断代词，先问它指向谁或什么，再看它是否独立占据名词短语的位置，最后判断它在句中作主语、宾语还是其他成分。`
+    id: 'pronoun:pronoun-essence', version: 'v3', lengthText: '488 字 · 约 2 分钟',
+    text: `如果一段话里不停地说 Amy、Amy、Amy，听起来会很累。英语会换一个短词，指回刚才那个人。看这两句。<#0.4#>Amy is reading。<#0.5#>She looks happy。<#0.8#>第二句里的 She 就像一根手指，指回前面的 Amy。它没有重新给人起名字，却让我们知道说的还是谁。这种用来指人、指物或指一段内容的词，叫代词。代词不是空词，它的具体意思要从前文或现场去找。<#0.8#>\n再听。<#0.4#>I saw a dog。<#0.5#>It was wet。<#0.8#>It 指的是那只 dog。因为是一只动物，这里用 It；如果对象变成多个，代词也要跟着调整。可见，代词要和它指向的对象对得上。如果只冒出这一组的第二句，周围又有好几个可能对象，听者就会追问：它到底指谁？<#0.8#>\n再比较两句。<#0.4#>This is my seat。<#0.5#>This book is mine。<#0.8#>第一句中 This 自己站在“谁或什么”的位置，代替一个对象，所以是代词。第二句的 this 后面紧跟 book，它只是帮我们锁定哪本书，不是独立代替 book。<#0.7#>\n判断时先别背表格，连续问三件事：这个词指向谁或什么？听者能不能找到它指的对象？它有没有独立站在本来可以放名词短语的位置？三个问题都对上，再判断它在句中负责“谁”“什么”或其他工作。`
+};
+const PRONOUN_REMAINING_NARRATIONS = {
+  'personal-pronoun': {
+    id: 'pronoun:personal-pronoun', version: 'v1', lengthText: '413 字 · 约 2 分钟',
+    text: `两个人搬箱子，一个负责帮忙，一个接受帮助。英语要把这两个位置分清。<#0.4#>She helped me。<#0.8#>She 站在 helped 前，是发出动作的人；me 放在 helped 后，是动作落到的人。两者都指人，但句中任务不同，所以形式不同。作主语的 she 属于主格，作动词宾语的 me 属于宾格。<#0.7#>再听 They spoke to him。They 负责“谁说话”，用主格；him 跟在介词 to 后，作介词宾语，所以用宾格。判断格不能只盯着词离动词近不近，要看它到底占了主语位置，还是被动词、介词支配。<#0.8#>并列时最容易被“礼貌顺序”带偏。The teacher invited Tom and me 中，me 和 Tom 一起接受邀请，所以仍用宾格。You and I are partners 中，I 和 You 一起站在主语位置，所以用主格。<#0.7#>人称代词先区分说话者、听话者和谈到的第三方，再根据位置选格。操作时做两步：先问代词指的是谁；再暂时遮住并列的另一项，只看这个位置负责发出动作，还是接受动词或介词关系。`,
+  },
+  'possessive-pronoun': {
+    id: 'pronoun:possessive-pronoun', version: 'v1', lengthText: '482 字 · 约 2 分钟',
+    text: `几本书放在桌上，你拿起一本说 My book is new。my 像一张贴在 book 前的归属标签，必须带着后面的名词一起出现。语法上，my、your、her、our、their 这类叫物主限定词。<#0.8#>如果对方已经知道在谈 book，就可以说 This book is mine。mine 自己占满了“我的书”这个位置，后面不能再接 book。它叫物主代词，功能相当于 my book，但不是把两个词机械拼起来。<#0.7#>再看 Her answer is different from ours。Her 后有 answer，所以用限定形式；ours 跟在 from 后独立出现，指 our answer，所以用代词形式。A friend of mine called 里，mine 也独立放在 of 后，表示“我的朋友之一”，不能换成 my。<#0.8#>两组词中文都常译成“……的”，但英语看的是后面有没有中心名词。his 比较特殊，两种形式写法相同，仍要按位置判断任务；its 通常只作限定形式，英语没有与 mine 平行的独立物主代词。<#0.7#>选择时先看空格后：紧跟名词，就用限定形式；空格本身要代表“谁的某物”，就用独立形式。最后把被省略的名词补回心里读一遍，意思通顺再确定。`,
+  },
+  reflexive: {
+    id: 'pronoun:reflexive', version: 'v1', lengthText: '448 字 · 约 2 分钟',
+    text: `镜子前，一个女孩自己教自己弹琴。英语说 She taught herself。动作从 She 发出，又回到同一个人身上，所以不能用 her，而要用 herself。这个带 self 或 selves 的形式叫反身代词。<#0.8#>He looked at himself 也是同样的路线：He 是看的动作发出者，介词 at 后被看的人仍是他本人。即使中间隔着介词，只要动作对象和主语指向同一个人，就用反身形式。<#0.7#>但 I made the cake myself 里的 myself 不承担“做谁”的宾语，它只是强调蛋糕是我亲手做的。删掉 myself，I made the cake 仍然完整。这个用法叫同位强调，位置可以变化，主干不靠它补齐。<#0.8#>The door opened by itself 表示门没有外力帮助，自己开了。by oneself 有时强调独自一人，有时强调没有帮助，要根据场景判断。<#0.7#>操作时先画动作箭头：箭头从主语出发，又回到同一个对象，就用反身代词；若删掉它后主干仍完整，只是少了“亲自”的语气，就是强调用法；看到 by oneself，再问是在说独处，还是在说自行完成。`,
+  },
+  demonstrative: {
+    id: 'pronoun:demonstrative', version: 'v2', lengthText: '427 字 · 约 2 分钟',
+    text: `找钥匙时，你指着手边的一把说 This is my key；看向远处几双鞋，说 Those are ours。指示词像手指一样把注意力对准对象，同时还告诉听者距离和数量。this 指较近的一个，these 指较近的多个；that 指较远的一个，those 指较远的多个。<#0.8#>第一句中，This 后面没有名词，自己站在主语位置，代替眼前那件东西，所以是指示代词。<#0.7#>接着看 This idea may work。这里 This 紧贴 idea，只负责限定“这个想法”，整个 This idea 才是主语；它在这里是指示限定词。<#0.7#>距离也不一定拿尺子量。He missed the bus。That made him late。这里 That 不是指远处某个物品，而是把前面“错过公交车”整件事打包指回来。对话中 this 和 that 也能组织刚说过或将要说的信息。<#0.8#>判断时先找它指向什么，再核对一个还是多个、语境中较近还是较远；然后看后面是否直接带名词。独立占位置的是代词，带名词的是限定词。最后别忘了检查谓语，不能只顾远近忘了单复数。`,
+  },
+  interrogative: {
+    id: 'pronoun:interrogative', version: 'v1', lengthText: '468 字 · 约 2 分钟',
+    text: `电话响了却不知道来电人，你问 Who called you？Who 不是站在句子外贴个“问人”标签，它正占着“谁打来电话”的主语位置，所以后面直接接 called，不需要再添一个主语。这样的疑问词在句内代替未知项，叫疑问代词。<#0.8#>Whom did you speak to？想问的是你和谁说话。you 才是主语，whom 是介词 to 的对象，只因问句结构移到前面。正式语体，尤其介词前置时常用 whom；日常口语中常听到 who。<#0.7#>Whose bag is this 询问所属。这里 this 是要辨认的物品，Whose bag 说明它是谁的包。whose 后带 bag 时有类似限定的作用，但核心仍是把未知的所有者问出来。<#0.8#>桌上只有茶和咖啡两项，问 Which do you prefer, tea or coffee？Which 面向已经限定的范围；如果选项开放，问“你想要什么”，通常用 what。<#0.7#>操作时先把问句还原成带空格的陈述关系：谁做动作，用 who；动作或介词指向谁，正式表达可用 whom；问所属用 whose；给定范围里选用 which，开放询问用 what。再确认疑问词在句内究竟作主语、宾语还是表语。`,
+  },
+  'indefinite-some-any': {
+    id: 'pronoun:indefinite-some-any', version: 'v2', lengthText: '446 字 · 约 2 分钟',
+    text: `门外传来脚步声，你知道有人，却不知道是谁，可以说 Someone is waiting。Someone 不给出具体身份，只确认“存在某个人”；这类把人或事物留在不确定范围里的词，叫不定代词。它在句中作主语，通常按单数处理，所以用 is。<#0.8#>I did not see anything 里，not 已经表达否定，anything 把范围打开成“任何东西”，合起来就是“什么也没看见”。这里否定已经表达完整，不能再叠加另一个否定词。<#0.7#>问句并非永远只能用 any。端着饮料招待客人时说 Would you like something to drink？说话者在积极提供某样东西，也期待对方接受，所以 something 很自然。普通询问信息、否定或条件中，any 系列更常见。<#0.7#>最后看 Nobody knows the answer。Nobody 自己已经含“没有人”，后面不再加 not，而且它在句中作主语，基础用法配单数 knows。<#0.8#>判断时先看说话者是在确认某个对象存在，还是把范围开放到任何对象；再看否定是否已经由 not 或 no 系列承担；最后检查谓语一致。`
+  },
+  'indefinite-quantity': {
+    id: 'pronoun:indefinite-quantity', version: 'v1', lengthText: '551 字 · 约 2 分钟',
+    text: `桌上有两个答案。说 Both are correct，是把两个一起纳入，所以 Both 配复数 are；说 Either will work，是从两个里任选一个，视角落在“一个”上，基础用法配单数。Neither of the answers is correct 则表示两个中一个也不对，通常也按单数处理。<#0.8#>换成一排学生，Each has a ticket。虽然现场有很多人，Each 像镜头逐个扫过，每次只看一个成员，所以用单数 has。这里决定谓语的不是现实总人数，而是词怎样切分这个范围。<#0.7#>All 要看它后面装的是什么。All of the students are ready 指整个复数学生集合，用 are；All of the water is clean 指全部水量，water 不可数，用 is。<#0.8#>None 表示数量为零，却不是“永远单数”。None of the water is left 跟不可数 water 用 is；None of the students are absent 把复数集合中的缺席人数说成零，用 are 很自然。<#0.7#>判断时先画范围：刚好两个，区分 both、either、neither；逐个看用 each；整个范围用 all；零数量用 none。然后看 of 后的中心名词是复数集合还是不可数数量，再决定谓语。不要只背中文“都、任一、都不”，要看镜头是合看、选一个、逐个看还是看零个。`,
+  },
+  'it-reference': {
+    id: 'pronoun:it-reference', version: 'v1', lengthText: '504 字 · 约 2 分钟',
+    text: `刚买了一部手机，接着说 I bought a phone。It works well。这里 It 明确指回前面的 a phone，听者能回答“什么运行得好”。这种 it 有具体先行词，承担真正的指代任务。<#0.8#>但窗外下雨时说 It is raining，并没有某个东西叫 it。英语完整句子通常需要主语位置，天气表达就让 it 先把这个位置撑起来。It is five o'clock 表时间，It is three kilometres to the station 表距离，也都不指某件具体物品。<#0.8#>还有一种情况是把太长的内容往后放。It is important to rest 中，真正被评价为 important 的是 to rest；it 先作形式主语，让句子头部轻一些。I find it easy to learn online 里，find 真正涉及的内容是 to learn online，it 先占形式宾语位置，easy 才能自然紧跟。<#0.7#>术语上，要分指代 it、天气时间距离中的无指向 it，以及形式主语或形式宾语 it。<#0.7#>判断时先追问“it 到底指谁或什么”。能在前文找到唯一对象，就是指代用法；找不到，再看是否在说天气、时间、距离；若后面还有不定式或从句，试着把它移到前面，能还原真正内容，就按形式成分分析。`,
+  },
+  'relative-pronoun': {
+    id: 'pronoun:relative-pronoun', version: 'v1', lengthText: '514 字 · 约 2 分钟',
+    text: `人群里要说明“那个唱歌的女孩”，英语说 The girl who sings is Amy。who 一头指回 girl，把后面的说明接到女孩身上；另一头又站在 sings 前，承担“谁唱歌”的主语。一个词同时连接外面的名词和填补从句内部位置，这就是关系代词的双重任务。<#0.8#>The book that I bought is useful 里，that 指回 book；从句 I bought 后缺少“买了什么”，that 在内部作宾语。选择关系词不能只看先行词是人还是物，还要检查从句究竟缺主语、宾语还是所属成分。<#0.8#>The boy whose bike was lost is sad 中，whose 把 bike 与 boy 的所属关系带进从句，意思是“他的自行车丢了”。who 常指人，which 常指物，that 可以指人或物，whose 表所属，但具体选择还受句子结构限制。<#0.7#>The place where we met is nearby 的 where 表示“在那里”，在从句中承担地点关系，它是关系副词，不是关系代词；when 和 why 也分别表达时间、原因。<#0.7#>判断时先圈出先行词，再遮住关系词读从句：缺人或物的主语、宾语、所属，就选合适的关系代词；主干成分完整，只缺地点、时间或原因关系，再考虑 where、when、why。`,
+  },
+  reciprocal: {
+    id: 'pronoun:reciprocal', version: 'v1', lengthText: '400 字 · 约 2 分钟',
+    text: `双胞胎一起做作业，一个帮另一个，另一个也帮回来，可以说 The twins help each other。动作不是各自回到自己身上，而是在两个参与者之间来回流动。each other 这种表示彼此作用的形式，叫相互代词。<#0.8#>The players talked to one another 也把说话动作连到其他队员。现代英语中 each other 和 one another 通常可以互换，不必机械规定“两个人只能用前者、三个人以上只能用后者”；真正重要的是场景里至少有不同参与者互相发生作用。<#0.8#>对比 They looked at themselves。这里每个人看的对象是自己，动作分别返回各自主语，所以用反身代词 themselves。前两句是参与者彼此作用，第三句是动作回到各自本人。<#0.7#>判断时画箭头最直接：箭头从一个参与者指向另一个，同时反向发生，用相互代词；箭头从每个主语绕回自己，用反身代词。若动词本身需要介词，还要把介词连同关系一起保留。`,
+  },
+  'substitute-pronoun': {
+    id: 'pronoun:substitute-pronoun', version: 'v1', lengthText: '463 字 · 约 2 分钟',
+    text: `手里的笔坏了，你想买一支新的，页面说 My pen is broken；I need a new one。one 代替的是 pen 这一类名词，指同类中的另一支，不是原来那支。<#0.8#>These shoes are tight；show me the larger ones。前面是复数 shoes，所以用 ones，larger 继续说明要同类鞋中更大的那些。one 和 ones 都替代可数名词类别，但要跟着单复数变化。<#0.7#>杯子脏了，要求再拿一个，页面是 This cup is dirty；give me another。another 表示开放范围里的“再一个”或“另一个”单数对象，后面不必重复 cup。<#0.8#>如果范围明确只有两个，就用 One answer is correct；the other is wrong。one 先提出一个，the other 锁定剩下的那个。多于两个时，范围和数量还要随语境继续判断。<#0.7#>操作时先问代词是在指回原来的具体对象，还是替代同类中的另一个；再看单数还是复数、范围是否恰好两个。同类单数或复数看 one、ones，开放范围的另一个看 another，两个中的剩余项看 the other。`,
+  },
+  'pronoun-agreement': {
+    id: 'pronoun:pronoun-agreement', version: 'v1', lengthText: '514 字 · 约 2 分钟',
+    text: `接力传话时，代词必须把信息准确交回前面的对象。Lucy said she was ready。she 指回 Lucy，两者都是第三人称单数，语境也已经说明是 Lucy，所以读者不会换错人。这个被代词指回的对象叫先行词，代词要和它在人称、数量及已知信息上协调。<#0.8#>The students finished their work 中，先行词 students 是复数，物主形式就用 their。即使中间出现 work 这样的单数名词，也不能改用 its，因为决定代词的是它真正指向谁，不是离它最近的词。<#0.8#>如果说 If anyone calls, tell them I am busy，anyone 形式上按单数处理，但来电者的性别未知，现代标准英语自然使用单数 they 的宾格 them。Every student should bring their ID 也是逐个学生，却不限定性别，their 是包容而标准的回指。<#0.7#>单数 they 不等于把先行词变成复数；谓语和其他表达仍要按各自结构判断，并在同一语境保持代词形式一致。<#0.7#>检查时先用箭头连出每个代词的先行词，再核对第一、第二、第三人称和单复数；性别未知、不重要或对象使用 they 时，可选 they、them、their。最后从头读一遍，确认没有被中间名词带偏。`,
+  },
+  'pronoun-ambiguity': {
+    id: 'pronoun:pronoun-ambiguity', version: 'v1', lengthText: '459 字 · 约 2 分钟',
+    text: `Tom 遇见 Jack 之后，有人笑了。若只写 When Tom met Jack, he smiled，he 在人称和单数上同时匹配 Tom 与 Jack，语法形式没有错，画面却有两个可能答案。读者不知道是谁笑，这就是指代歧义。<#0.8#>最直接的修复就是页面第二句 When Tom met Jack, Tom smiled。虽然重复了 Tom，却换来了唯一明确的意思。代词的价值是减少重复，但清楚永远比少写一个词更重要。<#0.7#>再看 Put the vase on the table and clean it。it 既可能指 vase，也可能指 table。要消除歧义，就应重复真正要清洁的对象，不能指望读者猜场景。<#0.8#>不过清晰不等于禁止代词。Students lose focus when they are tired 中，前面只有 students 是合理的复数人物先行词，they 指向唯一，使用自然。<#0.7#>检查时从每个代词向前找所有在人称、数量和意义上可能匹配的对象。若候选超过一个，就重复目标名词、调整语序或拆句；若只有一个合理候选，保留代词即可。最后让句子脱离你脑中的画面再读一次，看陌生读者能否立刻确定指向。`,
+  },
+  'pronoun-boss': {
+    id: 'pronoun:pronoun-boss', version: 'v1', lengthText: '598 字 · 约 2 分钟',
+    text: `赛前，每位跑者亲自核对号码，可以说 Every runner checked their number themselves。their 指回 every runner，放在 number 前表示所属；themselves 不是宾语，而是强调跑者亲自核对。两个代词靠得很近，任务却完全不同，不能只按中文“他们的、他们自己”机械选词。<#0.8#>I lost my umbrella, so I bought another 里，my 必须带 umbrella；another 独立表示同类中的另一把伞，不是找回原来那把。先问同一个对象还是同类替代，才能在 it 和 another 之间选对。<#0.8#>The teacher asked who had finished。who 在从句内部占主语位置，询问未知的人；下一句 Two students raised their hands，their 又清楚指回复数 students。每出现一个代词，都要重新建立自己的指向和句中任务。<#0.7#>This is the book that I need 中，This 指现场事物，that 一头连 book，一头作 need 的宾语。Nina spoke to Emma after Nina arrived 则故意重复 Nina，因为换成 she 会让两个女性名字都成为候选。<#0.7#>综合判断按三步：先给每个代词画出指向；再看它在句中作主语、宾语、限定、强调还是连接；最后判断它表示原对象、同类替代还是相互关系。完成后再做一次清晰度检查，候选不唯一就重复名词。`,
+  },
 };
 const FIRST_LESSON_NARRATIONS = NOUN_ONLY
   ? { Nouns: NOUN_FIRST_LESSON_NARRATION }
@@ -87,6 +183,12 @@ function buildSections(english, enTitle, course) {
 function groupCourse(english, lessons, zhTitle, enTitle, coreCount = 6) {
   const course = lessons.map((item, index) => Object.assign({}, item, { no: String(index + 1).padStart(2, '0'), level: index < coreCount ? 'core' : 'advanced' }));
   if (FIRST_LESSON_NARRATIONS[enTitle] && course.length) course[0].narration = Object.assign({}, FIRST_LESSON_NARRATIONS[enTitle]);
+  if (enTitle === 'Nouns') course.forEach((item) => {
+    if (NOUN_REMAINING_NARRATIONS[item.id]) item.narration = Object.assign({}, NOUN_REMAINING_NARRATIONS[item.id]);
+  });
+  if (enTitle === 'Pronouns') course.forEach((item) => {
+    if (PRONOUN_REMAINING_NARRATIONS[item.id]) item.narration = Object.assign({}, PRONOUN_REMAINING_NARRATIONS[item.id]);
+  });
   return {
     title: pick(english, `${zhTitle} · ${course.length} 节微课`, `${enTitle} · ${course.length} lessons`),
     copy: pick(english, '先掌握核心规则，再处理复杂语境。', 'Master the core rules, then handle complex contexts.'),

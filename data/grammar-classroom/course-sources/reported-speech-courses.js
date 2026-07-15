@@ -28,13 +28,13 @@ const question = (english, q, index) => {
 const A = (ruleZh, ruleEn, pieces, q, noteZh, noteEn) => ({ ruleZh, ruleEn, pieces, q, noteZh, noteEn });
 const Q = (zh, en, aZh, aEn, bZh, bEn, answer, whyZh, whyEn) => [zh, en, aZh, aEn, bZh, bEn, answer, whyZh, whyEn];
 const REPORTED_SPEECH_ESSENCE_NARRATION={
-  id:'reported-speech:reported-speech-essence',version:'v1',
-  text:`直接引语和间接引语的核心区别，在于转述者是否声称保留原话。直接引语用引号保留说话人当时的措辞和视点；间接引语则从新的报告视点重建原意。所以转述不是把每个词机械替换，而是先确定谁说、对谁说、何时何地再报告。<#0.7#>
-Mia said, "I will call you tomorrow."。<#0.5#>引号里的 I、you 和 tomorrow，都以 Mia 说话的现场为中心。如果第二天由原听话人转述，可以说 Mia said that she would call me the next day。主干是 Mia said，that 从句整体是所说的内容。she、me、would 和 the next day 都随新的说话视点调整。<#0.8#>
-但这些变化不是见到过去时就全部后移。如果时间、人物或事实还没有改变，就要根据实际报告语境决定。<#0.7#>
-Leo said, "No, I won't leave."。这句还可以按交际功能概括为 Leo refused to leave。refused 清楚保留了“拒绝离开”的意思，但没有冒充逐字原话。<#0.7#>
-转述前先判断原话的交际类型。陈述通常用 that 内容从句；一般疑问用 if 或 whether；特殊疑问保留疑问词；命令、请求和建议则要选择合适的报告动词和结构。先选对句子骨架，再调整人称、时间和地点。`,
-  lengthText:'465 字 · 约 2 分钟'
+  id:'reported-speech:reported-speech-essence',version:'v3',
+  text:`同学让你把米娅的话转告别人。你有两种说法：一种像复制聊天记录，保留她当时的原话；另一种用你现在的身份、时间和地点，把意思重新讲一遍。前者叫直接引语，后者叫间接引语。<#0.8#>
+Mia said, "I will call you tomorrow."。<#0.7#>引号告诉读者，I、you、tomorrow 都站在米娅说话的现场来理解。假设第二天，原来的听话人转述这件事，可以说：<#0.4#>Mia said that she would call me the next day。<#0.8#>主干是 Mia said，that 后面装的是她说的内容。原话里的 I 指米娅，所以变成 she；you 指现在的转述者，所以变成 me；tomorrow 从新的时间点回看，变成 the next day。will 变成 would，也是在过去的报告点看原来的将来。
+但转述不是看到 said 就把所有词自动换掉。如果当天就转述，tomorrow 可能仍然是 tomorrow；如果说的是客观事实，也不一定后移时态。每一处变化都要看人物和时间有没有真的换。<#0.8#>
+再看 Leo refused to leave。这里没有假装逐字复述，而是用 refused 直接概括“拒绝离开”这个交际意思。间接转述可以保留意思和功能，不必虚构一段带引号的原话。
+操作时先判断原话是在陈述、提问、命令还是请求；再选 that、if 或 whether、疑问词，或合适的报告动词；最后站到报告现场，逐个核对人称、时态、时间和地点是否需要调整。`,
+  lengthText:'586 字 · 约 2 分钟'
 };
 
 function makeLesson(english, spec, index) {

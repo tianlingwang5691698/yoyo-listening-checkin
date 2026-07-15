@@ -1,4 +1,5 @@
 const store = require('../../../utils/store');
+const page = require('../../../utils/page');
 
 const THEME_KEY = 'uiTheme';
 const LANGUAGE_KEY = 'yoyoLanguageV1';
@@ -122,6 +123,9 @@ function uiText(english) {
     coreLevel: english ? 'Core' : '核心',
     advancedLevel: english ? 'Advanced' : '进阶',
     loadError: english ? 'The course could not be opened. Return and try again.' : '课程暂时无法打开，请返回后重试。',
+    cachedCourse: english ? 'Showing the saved course. Cloud sync is temporarily unavailable.' : '已打开设备缓存，云端同步暂时失败。',
+    loadingCourse: english ? 'Loading course…' : '正在加载课程…',
+    retryCourse: english ? 'Retry' : '重新加载',
     planned: english ? 'Course in progress' : '课程正在建设',
     listenNarration: english ? 'Play' : '播放讲解',
     resumeNarration: english ? 'Resume' : '继续播放',
@@ -133,30 +137,6 @@ function uiText(english) {
     forwardNarration: '+15s',
     narrationUnavailable: english ? 'Audio is temporarily unavailable.' : '讲解语音暂时不可用'
   };
-}
-
-function loaderFor(topic) {
-  if (topic === 'noun') return 'word';
-  if (topic === 'pronoun') return 'pronoun';
-  if (topic === 'word-formation') return 'word-formation';
-  if (topic === 'verb' || topic === 'numeral' || topic === 'article') return topic;
-  if (topic === 'adjective' || topic === 'adverb') return topic;
-  if (topic === 'preposition' || topic === 'conjunction' || topic === 'interjection') return topic;
-  if (topic === 'sentence-elements') return 'sentence-elements';
-  if (topic === 'basic-patterns') return 'basic-patterns';
-  if (topic === 'predicate-system') return 'predicate-system';
-  if (topic === 'nonfinite-system') return 'nonfinite-system';
-  if (topic === 'special-structures') return 'special-structures';
-  if (topic === 'coordination') return 'coordination';
-  if (topic === 'noun-clauses') return 'noun-clauses';
-  if (topic === 'relative-clauses') return 'relative-clauses';
-  if (topic === 'adverbial-clauses') return 'adverbial-clauses';
-  if (topic === 'reported-speech') return 'reported-speech';
-  if (topic === 'cohesion-reference') return 'cohesion-reference';
-  if (topic === 'information-order') return 'information-order';
-  if (topic === 'punctuation') return 'punctuation';
-  if (topic === 'common-expression') return 'common-expression';
-  return 'relation';
 }
 
 Page({
@@ -171,7 +151,8 @@ Page({
     domainBackText: '',
     domainItems: [],
     selectedTopic: '',
-    loaderKind: '',
+    courseLoading: false,
+    courseLoadFallback: false,
     course: [],
     groups: [],
     sections: [],
@@ -203,6 +184,7 @@ Page({
 
   onLoad() {
     this.pageStartedAt = Date.now();
+    this.classroomPerf = page.startPagePerf('grammar-classroom');
     this.syncPreferences();
   },
 
@@ -218,6 +200,7 @@ Page({
           return;
         }
         this.pageReadyReported = true;
+        if (this.classroomPerf) this.classroomPerf.ready('pageReady', { source: 'directory', cacheHit: true });
         this.reportPerformance(2101, Date.now() - (this.pageStartedAt || Date.now()));
       }).exec();
     });
@@ -225,6 +208,7 @@ Page({
 
   onUnload() {
     if (this.loadTimer) clearTimeout(this.loadTimer);
+    this.loadRequestId = (this.loadRequestId || 0) + 1;
     if (this.narrationPollTimer) clearTimeout(this.narrationPollTimer);
     this.narrationRequestKey = '';
     if (this.narrationAudioContext) {
@@ -281,24 +265,77 @@ Page({
     this.loadCourse('verb');
   },
 
-  loadCourse(topic) {
+  async loadCourse(topic) {
     this.loadStartedAt = Date.now();
     const requestId = (this.loadRequestId || 0) + 1;
     this.loadRequestId = requestId;
     if (this.loadTimer) clearTimeout(this.loadTimer);
-    this.setData({ selectedTopic: topic, loaderKind: loaderFor(topic), debugMessage: '' });
+    const language = this.data.language === 'en' ? 'en' : 'zh-CN';
+    const versionKey = `${topic}:${language}`;
+    const known = this.courseVersions && this.courseVersions[versionKey] || {};
+    this.setData({ selectedTopic: topic, courseLoading: true, courseLoadFallback: false, debugMessage: '' });
     this.loadTimer = setTimeout(() => {
-      if (this.loadRequestId === requestId && this.data.selectedTopic === topic && this.data.loaderKind) {
-        this.setData({ debugMessage: `DEBUG: grammar-package/pages/classroom.loadCourse -> ${this.data.loaderKind}-loader.loaded -> bundle: missing; topic=${topic}` });
+      if (this.loadRequestId === requestId && this.data.selectedTopic === topic && this.data.courseLoading) {
+        this.setData({ debugMessage: `DEBUG: grammar-package/pages/classroom.loadCourse -> store.getGrammarClassroomCourse -> cloud.getGrammarClassroomCourse -> result.course/bundle: pending; topic=${topic}; language=${language}; targetChildId=${this.getDebugTargetChildId()}` });
       }
     }, 1500);
+    try {
+      const result = await store.getGrammarClassroomCourse({
+        topic,
+        language,
+        knownReleaseId: known.releaseId || '',
+        knownContentVersion: known.contentVersion || ''
+      }, (fresh) => this.handleCourseBackgroundRefresh(topic, language, versionKey, requestId, fresh));
+      if (this.loadRequestId !== requestId || this.data.selectedTopic !== topic) return;
+      if (this.loadTimer) clearTimeout(this.loadTimer);
+      if (!result || !result.bundle) {
+        this.showCourseLoadError(topic, language, result);
+        return;
+      }
+      if (this.classroomPerf) {
+        if (!result.staleWhileRevalidate) this.classroomPerf.mark('cloudRefresh', { topic, language, cacheHit: Boolean(result.cacheHit), cacheFallback: Boolean(result.cacheFallback) });
+        this.classroomPerf.mark('dataFresh', { topic, releaseId: result.releaseId || '', contentVersion: result.contentVersion || '' });
+      }
+      if (result.cachePersisted !== false) {
+        this.courseVersions = this.courseVersions || {};
+        this.courseVersions[versionKey] = {
+          releaseId: String(result.releaseId || ''),
+          contentVersion: String(result.contentVersion || '')
+        };
+      }
+      const fallbackDebug = result.cacheFallback
+        ? this.buildCourseLoadDebug(topic, language, result, 'cached-fallback')
+        : '';
+      this.applyCourseBundle(result.bundle, fallbackDebug, Boolean(result.cacheFallback));
+    } catch (error) {
+      if (this.loadRequestId !== requestId || this.data.selectedTopic !== topic) return;
+      if (this.loadTimer) clearTimeout(this.loadTimer);
+      this.showCourseLoadError(topic, language, { cloudError: { message: error && error.message || 'unknown' } });
+    }
   },
 
-  onCourseLoaded(event) {
-    const detail = event.detail || {};
-    if (!detail.bundle || detail.topic !== this.data.selectedTopic) return;
-    if (this.loadTimer) clearTimeout(this.loadTimer);
-    const bundle = detail.bundle;
+  handleCourseBackgroundRefresh(topic, language, versionKey, requestId, result) {
+    if (this.loadRequestId !== requestId || this.data.selectedTopic !== topic || !result) return;
+    if (this.classroomPerf) this.classroomPerf.mark('cloudRefresh', { topic, language, cacheHit: Boolean(result.cacheHit), cacheFallback: Boolean(result.cacheFallback) });
+    if (result.cacheFallback || result.syncMode === 'cloud-error' || !result.notModified && !result.bundle) {
+      this.setData({
+        courseLoadFallback: true,
+        debugMessage: this.buildCourseLoadDebug(topic, language, result, 'cached-fallback')
+      });
+      return;
+    }
+    this.courseVersions = this.courseVersions || {};
+    this.courseVersions[versionKey] = {
+      releaseId: String(result.releaseId || ''),
+      contentVersion: String(result.contentVersion || '')
+    };
+    if (result.notModified || !result.bundle) return;
+    if ((this.data.screen === 'course-map' || this.data.screen === 'section-map') && !this.data.activeSectionId) {
+      this.applyCourseBundle(result.bundle, '', false);
+    }
+  },
+
+  applyCourseBundle(bundle, debugMessage, courseLoadFallback) {
     const sourceCourse = bundle.course || [];
     const sourceById = sourceCourse.reduce((map, lesson) => Object.assign(map, { [lesson.id]: lesson }), {});
     const rawSections = Array.isArray(bundle.sections) ? bundle.sections : [];
@@ -333,7 +370,8 @@ Page({
     this.courseSections = sections;
     this.setData({
       screen: hasSectionMap ? 'section-map' : 'course-map',
-      loaderKind: '',
+      courseLoading: false,
+      courseLoadFallback: Boolean(courseLoadFallback),
       course: courseSummaries,
       groups: hasSectionMap ? [] : groups,
       sections,
@@ -350,8 +388,33 @@ Page({
       activeQuestion: null,
       answer: '',
       result: '',
-      debugMessage: ''
+      debugMessage: debugMessage || ''
     }, () => this.reportPerformance(2102, Date.now() - (this.loadStartedAt || Date.now())));
+  },
+
+  getDebugTargetChildId() {
+    const target = store.getSelectedStudentTarget && store.getSelectedStudentTarget() || {};
+    return String(target.targetChildId || 'public-course');
+  },
+
+  buildCourseLoadDebug(topic, language, result, bundleState) {
+    const cloudMessage = String(result && result.cloudError && result.cloudError.message || result && result.cacheError || 'missing');
+    const syncReason = String(result && result.syncDebug && result.syncDebug.reason || '');
+    const envId = String(result && result.syncDebug && result.syncDebug.envId || 'missing');
+    return `DEBUG: grammar-package/pages/classroom.loadCourse -> store.getGrammarClassroomCourse -> cloud.getGrammarClassroomCourse -> result.course/bundle: ${bundleState}; topic=${topic}; language=${language}; releaseId=${result && result.releaseId || 'missing'}; contentVersion=${result && result.contentVersion || 'missing'}; cloudError.message=${cloudMessage}; syncDebug.reason=${syncReason || 'missing'}; syncDebug.envId=${envId}; targetChildId=${this.getDebugTargetChildId()}`;
+  },
+
+  showCourseLoadError(topic, language, result) {
+    this.setData({
+      courseLoading: false,
+      courseLoadFallback: false,
+      debugMessage: this.buildCourseLoadDebug(topic, language, result || {}, 'missing')
+    });
+  },
+
+  retryCourse() {
+    const topic = String(this.data.selectedTopic || '');
+    if (topic && !this.data.courseLoading) this.loadCourse(topic);
   },
 
   openSection(event) {
@@ -373,15 +436,6 @@ Page({
       lessonPosition: 0
     });
     wx.pageScrollTo({ scrollTop: 0, duration: 0 });
-  },
-
-  onCourseLoadError(event) {
-    if (this.loadTimer) clearTimeout(this.loadTimer);
-    const detail = event.detail || {};
-    this.setData({
-      loaderKind: '',
-      debugMessage: `DEBUG: grammar-package/pages/classroom.onCourseLoadError -> course-loader.load -> ${detail.topic || 'unknown'}: ${detail.message || 'missing'}`
-    });
   },
 
   stopNarrationAudio(cancelRequest = true) {
@@ -684,7 +738,7 @@ Page({
     this.stopNarrationAudio();
     this.fullCourse = [];
     this.activeCourse = [];
-    this.setData({ screen: 'directory', selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', courseTitle: '', courseCopy: '', activeLesson: null, debugMessage: '' });
+    this.setData({ screen: 'directory', selectedTopic: '', courseLoading: false, course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', courseTitle: '', courseCopy: '', activeLesson: null, debugMessage: '' });
   },
 
   backToDomainMap() {
@@ -694,7 +748,7 @@ Page({
     this.stopNarrationAudio();
     this.fullCourse = [];
     this.activeCourse = [];
-    this.setData({ screen: 'domain-map', selectedDomain: selected.id, domainTitle: selected.title, domainCopy: selected.meta, domainBackText: `‹ ${selected.title}`, domainItems: ui.domainMaps[selected.id] || [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
+    this.setData({ screen: 'domain-map', selectedDomain: selected.id, domainTitle: selected.title, domainCopy: selected.meta, domainBackText: `‹ ${selected.title}`, domainItems: ui.domainMaps[selected.id] || [], selectedTopic: '', courseLoading: false, course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
   },
 
   backToSystem() {
@@ -702,7 +756,7 @@ Page({
     this.stopNarrationAudio();
     this.fullCourse = [];
     this.activeCourse = [];
-    this.setData({ screen: 'system', selectedDomain: '', domainTitle: '', domainCopy: '', domainBackText: '', domainItems: [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
+    this.setData({ screen: 'system', selectedDomain: '', domainTitle: '', domainCopy: '', domainBackText: '', domainItems: [], selectedTopic: '', courseLoading: false, course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
   },
 
   handleTopBack() {

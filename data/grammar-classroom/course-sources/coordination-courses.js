@@ -7,13 +7,13 @@ const note=(english,x)=>x?{visible:true,mode:'structure',title:pick(english,'例
 const question=(english,x)=>({question:pick(english,x[0],x[1]),options:[{key:'A',text:pick(english,x[2],x[3])},{key:'B',text:pick(english,x[4],x[5])}],answer:x[6],correct:pick(english,x[7],x[8]),wrong:pick(english,`再看规则：${x[7]}`,`Check the rule: ${x[8]}`)});
 const A=(zh,en,parts,q,n)=>({zh,en,parts,q,n}); const Q=(...x)=>x; const N=(zh,en)=>[zh,en];
 const COORDINATION_ESSENCE_NARRATION={
- id:'coordination:coordination-boundary',version:'v1',
- text:`并列结构的本质，是把语法层级相同的单位连接起来。连接的可以是词、短语，也可以是完整分句。判断时不能只看 and、but 或 or，要看连词两边究竟是什么。<#0.7#>
-Mia smiled, and Tom laughed。<#0.5#>先看 and 两边。Mia smiled 有主语 Mia 和谓语 smiled；Tom laughed 也有主语 Tom 和谓语 laughed。两边都能独立成句，所以 and 连接的是两个并列分句。<#0.8#>
-再看 Mia bought tea and coffee。这里只有一套主干 Mia bought，tea 和 coffee 共享同一个主语和谓语，所以它们是并列宾语，不是两个并列句。<#0.7#>
-She wants to sing and to dance。可以先思考：and 是连接 She 和 dance，还是连接 to sing 和 to dance？<#0.5#>两边都是不定式短语，形式平行，功能也相同。<#0.7#>
-判断并列结构：先找并列连词；再框出两边最大的平行单位；最后检查两边的语法层级和句中功能是否一致。先判断连接层级，再讨论添加、转折、选择或结果等逻辑。`,
- lengthText:'421 字 · 约 2 分钟'
+ id:'coordination:coordination-boundary',version:'v2',
+ text:`想象桌上有两个同样的盒子。一根绳子要把它们系在一起，左右两边最好是同一类东西：两个人、两个动作，或两句都能单独说完的话。英语里的 and、but、or 就常常做这根绳子。这种把同级内容连起来的做法，叫并列。<#0.8#>
+Mia smiled, and Tom laughed。<#0.9#>看 and 左边，Mia smiled 有“谁”和“怎么了”，可以单独成句。右边 Tom laughed 也一样。所以这里 and 系住的是两个完整小句，准确名称是并列分句。<#0.9#>
+再看 Mia bought tea and coffee。<#0.8#>这次 and 左边只是 tea，右边只是 coffee。它们都回答“Mia 买了什么”，共用 Mia bought 这一套主干。因此这不是两个句子，而是两个并列宾语。有 and 不代表一定有并列句，关键要看它到底连了多大的内容。<#0.9#>
+She wants to sing and to dance。<#0.8#>先别往下听，想一下 and 连的是什么。<#1.0#>左边 to sing 和右边 to dance 都是“想做的事”，形式一样，工作也一样，这叫平行结构。如果一边写 reading，另一边却写 to dance，就要检查是不是连错了层级。
+判断时只做三步：先圈出 and、but、or 这类连接词；再分别框出它左右两边完整的内容；最后看两边能不能回答同一个问题、做同一份工作。先看连的是词、短语还是完整句子，再判断它表示添加、转折还是选择。`,
+ lengthText:'556 字 · 约 2 分钟'
 };
 function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){
   if(atoms.length<3)throw new Error(`Too few coordination atoms: ${id}`);

@@ -6,13 +6,13 @@ function note(english,mode,zh,en){if(!mode)return{visible:false,mode:'',title:''
 const opt=(english,v)=>Array.isArray(v)?pick(english,v[0],v[1]):v;
 function question(english,x,index){const options=x[2].map((v,i)=>({key:String.fromCharCode(65+i),text:opt(english,v)}));let answer=x[3];if(index%2===1&&options.length===2){options.reverse();options.forEach((item,i)=>{item.key=String.fromCharCode(65+i);});answer=answer==='A'?'B':'A';}return{question:pick(english,x[0],x[1]),options,answer,correct:pick(english,x[4],x[5]),wrong:pick(english,`再看逻辑：${x[4]}`,`Check the logic: ${x[5]}`)};}
 const ADVERBIAL_CLAUSE_ESSENCE_NARRATION={
- id:'adverbial-clauses:adverbial-function-position',version:'v1',
- text:`状语从句的本质，是用一个内部完整的从句，给主句事件加上时间、地点、原因、条件、让步等逻辑关系。它的内部有自己的主语和谓语，但在外层不占主句的主语或宾语位置，而是整体修饰主句。<#0.7#>
-When the bell rang, the students left。<#0.5#>先找主句主干 the students left。When the bell rang 内部有主语 the bell 和谓语 rang，所以它是从句；整体只回答“学生什么时候离开”，因此作时间状语。when 不是简单把两句话粘起来，它明确标出了时间关系。<#0.8#>
-再看 Because the road was closed, we turned back。主干是 we turned back，because 从句说明返回的原因。句子换了逻辑，连接词也要跟着换，不能只背一个中文意思。<#0.7#>
-The students left when the bell rang。时间从句放在主句后面，与 left 联系紧密，通常不加逗号。如果从句前置，通常用逗号标出与主句的边界。<#0.7#>
-Because of the rain 也能表原因，但 the rain 没有谓语，所以它是介词短语，不是状语从句。<#0.6#>判断时：先找主句主干；再检查这一段内部是否有主谓骨架；接着判断连接词表达的逻辑；最后根据前置或后置处理标点。`,
- lengthText:'482 字 · 约 2 分钟'
+ id:'adverbial-clauses:adverbial-function-position',version:'v2',
+ text:`“学生离开了”这件事已经说清楚，可听的人还可能问：什么时候离开的？为什么离开？在什么条件下才离开？英语会在主句旁边再加一个小句子，把这些背景交代出来。<#0.7#>
+When the bell rang, the students left。<#0.8#>先抓住真正要说的事：the students left。前面的 the bell rang 自己也有“铃响了”这套主谓骨架；when 把它接到主句上，告诉我们学生离开的时间。整个 When the bell rang 不占主句的主语或宾语，只给离开这件事加时间背景，所以叫时间状语从句。
+换一个连接词：<#0.4#>Because the road was closed, we turned back。<#0.7#>主干是 we turned back。because 后面说明“道路封闭了”，回答为什么返回，因此是原因状语从句。连接词不是装饰：when 标时间，because 标原因，if 还可以标条件，选错了，两个事件的关系就变了。
+The students left when the bell rang 把时间从句放在后面，和 left 连得很紧，通常不加逗号；放到前面时，常用逗号告诉读者背景结束、主句开始。<#0.8#>
+再比较 Because of the rain。the rain 只有名词，没有自己的主语和谓语，所以这是介词短语，不是从句。判断时先找主句；再看附加部分有没有完整主谓；有的话，问它给主句加的是时间、原因、条件还是其他逻辑；最后根据前后位置处理逗号。`,
+ lengthText:'586 字 · 约 2 分钟'
 };
 function lesson(english,spec,index){if(spec.rules.length!==spec.examples.length||spec.rules.length!==spec.questions.length)throw new Error(`Adverbial-clause coverage mismatch: ${spec.id}`);const examples=spec.examples.map(x=>({text:x[0].map(c=>c[0]).join(' '),analysis:analysis(english,x[0]),note:note(english,x[1],x[2],x[3])}));const result={id:spec.id,no:String(index+1).padStart(2,'0'),level:spec.level,title:pick(english,...spec.title),meta:pick(english,...spec.meta),examples:examples.map(x=>x.text),analyses:examples.map(x=>x.analysis),exampleNotes:examples.map(x=>x.note),rules:spec.rules.map(x=>pick(english,...x)),ruleCoverage:INCLUDE_RULE_COVERAGE?spec.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:spec.questions.map((x,i)=>question(english,x,i))};if(spec.id==='adverbial-function-position')result.narration=ADVERBIAL_CLAUSE_ESSENCE_NARRATION;return result;}
 

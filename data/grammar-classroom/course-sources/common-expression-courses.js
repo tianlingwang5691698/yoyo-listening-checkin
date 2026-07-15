@@ -7,13 +7,13 @@ const note=(english,x)=>x?{visible:true,mode:x[0],title:pick(english,x[0]==='tra
 const question=(english,x)=>({question:pick(english,x[0],x[1]),options:[{key:'A',text:pick(english,x[2],x[3])},{key:'B',text:pick(english,x[4],x[5])}],answer:x[6],correct:pick(english,x[7],x[8]),wrong:pick(english,`再看表达关系：${x[7]}`,`Check the expression pattern: ${x[8]}`)});
 const A=(zh,en,parts,q,n)=>({zh,en,parts,q,n});const Q=(...x)=>x;const T=(zh,en)=>['translation',zh,en];const S=(zh,en)=>['structure',zh,en];
 const COMMON_EXPRESSION_ESSENCE_NARRATION={
- id:'common-expression:common-expression-essence',version:'v1',
- text:`中英表达差异的核心，不是中文和英文的词必须一一对应，而是两种语言可能用不同的句子骨架、动词搭配和信息顺序表达同一件事。中译英时，不要从第一个中文词开始替换，而要先确定谁做什么、作用于谁。<#0.7#>
-“这本书，我很喜欢。”<#0.5#>中文可以先提出“这本书”作话题，英语中性表达则先建立 I like this book very much。I 是主语，like 是谓语，this book 是宾语，very much 补充程度。先把主干搭好，才不会写出 This book very like 这种按中文顺序堆词的句子。<#0.8#>
-再看中文的“有”。Our school has a library 表达学校拥有图书馆，school 是拥有者，library 是对象。There is a library in our school 则是在校园这个地点引入一个存在的新事物。中文都可以用“有”，英语却要先判断是拥有关系还是存在关系。<#0.7#>
-The book that you recommended is useful。可以思考：为什么不按中文“你推荐的书”的顺序，把从句放在 book 前面？<#0.5#>英语先出现中心名词 book，再用 that you recommended 后置修饰它。只有两种语言的结构顺序确实不同时，才做必要调整。<#0.7#>
-中英转换的步骤：先确定事件参与者和逻辑关系；再选择能承担核心意义的英语动词和句型；接着放好主语、宾语和补足成分；最后根据英语定语、状语和信息顺序做必要调整。`,
- lengthText:'488 字 · 约 2 分钟'
+ id:'common-expression:common-expression-essence',version:'v3',
+ text:`把中文逐字换成英文，常常每个词都认识，合在一起却不像一句英语。比如“这本书，我很喜欢”，如果沿着中文顺序硬排，意思也许能猜，普通表达却不自然。<#0.8#>
+先别翻第一个词，先问：谁喜欢什么？答案是“我喜欢这本书”。英语中性说法是：<#0.4#>I like this book very much。<#0.8#>I 是主语，like 是核心动词，this book 是喜欢的对象，very much 再补程度。中文能把“这本书”先拿出来当话题；英语通常先把“谁做什么”这副骨架搭稳。这就是中英表达差异：同一件事，两种语言不一定选相同的词序和结构。
+再看“有”。<#0.4#>Our school has a library 表示学校拥有一座图书馆，school 是拥有者。中文里的“有”还可能是在某个地点介绍新事物，但那是后面课程要细分的存在关系。这一页先抓住：不能只给“有”固定配一个英文词。<#0.8#>
+The book that you recommended is useful 也不能照搬“你推荐的书”的顺序。英语先放中心名词 book，再把 that you recommended 放到后面说明是哪本书。
+转换时先用自己的话说清事件：谁做什么，涉及谁或什么，前后是什么逻辑；再选真正能承担意思的英语动词和句型；最后按英语习惯安排宾语、定语和状语。先重建意思，再翻译句子，不做逐词搬运。`,
+ lengthText:'533 字 · 约 2 分钟'
 };
 function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){if(atoms.length<3)throw new Error(`Too few expression atoms: ${id}`);const result={id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses:atoms.map(a=>a.parts.map(x=>part(english,x))),exampleNotes:atoms.map(a=>note(english,a.n||S(a.q[7],a.q[8]))),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};if(id==='common-expression-essence')result.narration=COMMON_EXPRESSION_ESSENCE_NARRATION;return result;}
 const flipQuestion=(q)=>({question:q.question,options:[{key:'A',text:q.options[1].text},{key:'B',text:q.options[0].text}],answer:q.answer==='A'?'B':'A',correct:q.correct,wrong:q.wrong});

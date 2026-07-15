@@ -1,6 +1,72 @@
 const pick = (english, zh, en) => english ? en : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
 
+const INTERJECTION_NARRATIONS = {
+  'interj-independence-position': {
+    id: 'interjection:interj-independence-position', version: 'v2', lengthText: '351 字 · 约 2 分钟',
+    text: `别人解释半天，你忽然明白了，可能说 Oh, I understand now。<#0.7#>真正讲事情的是后面的完整主干。Oh 放在最前面，只告诉别人“我刚刚反应过来了”。把 Oh 拿走，主干仍然完整，所以它和后面的句子连得很松。<#0.8#>
+再看 Aha! 只这一个词，反应已经传出去了，不必再补“谁做了什么”。这说明感叹词可以自己成为一次完整回应。<#0.8#>
+感叹词不只出现在开头。The answer, alas, was wrong 里，alas 插在主语和后面之间，表达遗憾，但不承担主干成分。两边的逗号像括号一样，把这个临时反应隔在主干外。<#0.8#>
+判断位置时，不要只看它是不是第一个词。先把疑似感叹词暂时拿走，检查剩下的主语和谓语是否完整；再看这个词能否单独表达反应；如果插在句中，还要检查两边是否用逗号隔开。能独立、可移开、又不承担主干工作，它就是主干外的感叹成分。`
+  },
+  'interj-vs-exclamative': {
+    id: 'interjection:interj-vs-exclamative', version: 'v1', lengthText: '356 字 · 约 2 分钟',
+    text: `看到漂亮的天空，有人先喊 Wow! 接着说 What a beautiful day! 两部分都很有感情，但不是同一种东西。<#0.8#>
+Wow 只是一个独立短词，拿掉以后不影响后面的句子，它属于感叹词。What a beautiful day 则把整句话排成特殊样子，用 what 突出“多么美的一天”，它叫感叹句。一个是词的类别，一个是整句的结构。<#0.8#>
+再看 How fast she runs! 这里 how 把 fast 的程度推到最前面，后面仍能找到 she 和 runs。它不是一个孤零零的情绪声，而是有内部结构的 how 感叹句。<#0.8#>
+判断时先看表达能不能只靠一个短词独立出现；再看后面是否还有完整的主语、谓语，或者 what、how 带出的特殊结构。短词只负责即时反应，是感叹词；整句话用 what 或 how 突出名词、形容词或副词的程度，是感叹句。两者可以同时出现，但不能混成一个术语。`
+  },
+  'interj-emotions': {
+    id: 'interjection:interj-emotions', version: 'v1', lengthText: '350 字 · 约 2 分钟',
+    text: `比赛最后一秒获胜，你可能喊 Hooray! 赶公交车却看着车开走，可能说 Oh no! 喝到变质的牛奶，也许会脱口而出 Yuck! 这些词都很短，却把不同反应直接送给听者。<#0.8#>
+Hooray! We won! 里，Hooray 是成功后的欢呼。Oh no! I missed the bus 里，Oh no 带着懊恼或担心。Yuck! This milk tastes awful 里，Yuck 表达明显的厌恶，而且很口语。<#0.8#>
+感叹词不是一张“英文等于中文”的死表。同一个坏消息，有人可能说 Oh no，有人只叹 Oh；语气、关系和场合都会改变力度。正式发言中随口说 Yuck，也可能显得不合适。<#0.8#>
+选择时先判断自己是在庆祝、遗憾、害怕、疼痛还是厌恶；再看面对的是朋友、老师还是正式听众；最后用后一句内容验证反应是否匹配。先看真实情绪和场景，再选词，不要只背一条中文翻译。`
+  },
+  'interj-context-tone': {
+    id: 'interjection:interj-context-tone', version: 'v1', lengthText: '331 字 · 约 2 分钟',
+    text: `同一个 Oh，可以让人听见完全不同的心情。门一开，盼了很久的朋友出现，你可能提高声音说 Oh! You came! 这里是惊喜。收到消息说旅行取消了，低声说 Oh. The trip is cancelled，听起来更像失望。<#0.8#>
+单看字母 Oh，无法决定具体态度。后面的事情告诉我们发生了什么，声音的高低、长短和停顿告诉我们反应有多强，感叹号或句号只是把这种语气写在纸上。<#0.8#>
+所以感叹词没有永远固定的一句中文。Oh 可能表示惊讶、明白、遗憾，也可能只是回应别人。脱离场景，只凭一个感叹号判断“它一定很开心”，很容易错。<#0.8#>
+理解时按三步走：先读感叹词后的完整内容，确定好消息还是坏消息；再想象说话人的关系和语调；最后结合停顿、大小写和标点判断力度。词形只给出反应入口，真正的态度要由整个场景共同决定。`
+  },
+  'interj-interaction': {
+    id: 'interjection:interj-interaction', version: 'v1', lengthText: '325 字 · 约 2 分钟',
+    text: `朋友走在前面没听见你，你会喊 Hey! Wait for me。演出结束，观众可能喊 Bravo! 婴儿正在睡觉，有人会轻声说 Shh! 三个短词都不是在描述事情，而是在当场影响交流。<#0.8#>
+Hey 的任务是把对方注意力拉过来，适合熟人之间的招呼或提醒。Bravo 是公开喝彩，重点是赞赏表现，不等于普通回答里的“同意”。Shh 则直接要求周围安静，它在管理听者接下来怎么做。<#0.8#>
+这些感叹词的选择取决于交际目的。想叫住人却说 Bravo，情绪虽然强，功能却完全不对。对老师或陌生人直接喊 Hey，也可能显得太随便。<#0.8#>
+使用时先问自己想让对方注意、接受赞赏，还是停止出声；再判断双方关系和场合是否适合这个词；最后看后面的句子有没有把目的说清。感叹词不仅表达心情，也能招呼、提醒、喝彩和管理现场。`
+  },
+  'interj-discourse-markers': {
+    id: 'interjection:interj-discourse-markers', version: 'v2', lengthText: '311 字 · 约 2 分钟',
+    text: `别人催你立刻回答，你还要想一想，可能先说 Well, I need more time。这里 Well 不是“好好地”，也不是突然欢呼，它像一个小缓冲，告诉对方：我要整理一下接下来的话。<#0.8#>
+Oh, now I see 里的 Oh 也不只表达情绪，它标出理解发生了变化——刚才不明白，现在明白了。这样的短词会帮助对话转弯、回应或继续，常叫话语标记。<#0.8#>
+再比较词的工作：方式副词会直接回答动作做得怎么样；这里的 Well 和 Oh 都能被逗号隔开，不直接修饰后面的动作，而是在整句话前组织语气和信息变化。<#0.8#>
+判断时先问这个词有没有直接修饰动作或性质；如果没有，再看它是否能拿掉而主干仍完整，以及它是否在表示犹豫、回应、领悟或转折。看它在交流中做什么，比只看单词外形更可靠。`
+  },
+  'interj-punctuation': {
+    id: 'interjection:interj-punctuation', version: 'v1', lengthText: '343 字 · 约 2 分钟',
+    text: `把 Ouch That really hurt 连在一起写，读者会不知道即时反应在哪里结束。写成 Ouch! That really hurt，感叹号先关住强烈疼痛，后面再开始一个完整句子。<#0.8#>
+如果反应较轻，常用逗号连接。Well, we should begin 里，Well 只是一个温和的开场和缓冲，不需要大喊。Oh, I forgot 也用逗号，让 Oh 和后面的说明保持松散连接。<#0.8#>
+标点不是装饰情绪。感叹号表示反应强而独立，逗号表示它轻轻挂在后句前；句首仍然要大写，所以应写 Oh，而不是 oh。连续堆很多感叹号，通常不会让正式文字更准确。<#0.8#>
+书写时先判断这个反应能否独立、语气有多强；强烈独立就用感叹号结束，再开启下一句；较弱并引出后句，就用逗号隔开；最后检查句首大写和完整句界。让标点跟独立程度走，不要只凭想象中的喘气位置。`
+  },
+  'interj-register-politeness': {
+    id: 'interjection:interj-register-politeness', version: 'v2', lengthText: '345 字 · 约 2 分钟',
+    text: `看到朋友的新发现，说 Hey, Mia, look at this 很自然；同样的 Hey 如果直接用来叫陌生长辈，可能就显得太随便。句子语法没有错，问题出在关系和场合。<#0.8#>
+Well, I see your point 先用 Well 留出缓冲，再表示理解，对话听起来比生硬地说 No 更柔和。但 Well 也不会自动把后面任何话变礼貌。如果接着说很冒犯的内容，一个话语标记救不了整句话。<#0.8#>
+感叹词常带明显口语色彩。朋友聊天、课堂发言、正式演讲和书面报告，对自然程度的要求不同。同一个招呼或缓冲词，在熟人之间可能自然，面对陌生人或正式听众就可能需要换成更完整、克制的说法。<#0.8#>
+选择时依次检查：我和听者是什么关系；现在是随意交流还是正式场合；这个词要达到招呼、缓冲、赞赏还是反对的目的；整句话是否仍然尊重对方。自然不只看语法，还要看使用分寸。`
+  },
+  'interj-wordclass-sounds': {
+    id: 'interjection:interj-wordclass-sounds', version: 'v1', lengthText: '369 字 · 约 2 分钟',
+    text: `同样一个 well，放进不同句子会换工作。Well, we should leave 里，Well 被逗号隔在主干外，负责组织接下来的话。She sings well 里，well 回答“唱得怎么样”，直接修饰 sings，所以它是副词。<#0.8#>
+词的外形没有变，判断却不能只看词典第一项。要看它和句子主干发生什么关系：是独立反应、组织话语，还是给动作补充方式。<#0.8#>
+再听 Bang! The door slammed shut。Bang 模仿突然的撞击声，所以它首先是拟声表达；当它独立放在话语里时，又具有感叹词式的用法。“模仿什么声音”和“在句中怎样使用”，是两个不同问题。<#0.8#>
+判断时先把词放回完整句子，找它修饰或连接的对象；如果拿掉后主干不变，再看它是否独立表达反应或组织交流；遇到 Bang、buzz 这类词，还要问它是不是在模仿声音。按功能判断，才能分清感叹词、话语标记、副词和拟声词。`
+  }
+};
+
 const example = (english, pieces, zhNote, enNote) => ({
   text: pieces.map((item) => item[0]).join(' '),
   analysis: pieces.map((item) => ({
@@ -424,14 +490,19 @@ function buildInterjectionCourse(english) {
   const lessons = specs.map((spec) => lesson(english, spec));
   lessons[0].narration = {
     id: 'interjection:interj-essence',
-    version: 'v1',
-    text: `感叹词的本质，是把说话人的即时反应直接放进话语中，但通常不进入句子的主谓骨架。它可以表达惊喜、疼痛、犹豫、赞同或提醒，具体态度还要结合语调和语境判断。<#0.6#>
-Wow! That view is amazing。<#0.7#>先看句子主干 That view is amazing，主语、系动词和表语都完整。Wow 不充当主语、谓语或宾语，只在主干外直接表达看到景色时的惊叹。去掉 Wow，句子仍然成立；保留它，说话人的即时情绪更鲜明。<#0.8#>
-再看 Ouch! That hurt。<#0.7#>Ouch 是疼痛发生时的直接反应，That hurt 才是说明情况的完整句子。即使不补出主语和谓语，Ouch 也能单独成为一次完整回应。<#0.8#>
-感叹词和感叹句不是一回事。Wow 是一个词类，而 What a beautiful view! 是一种句型。可以想一想：一个普通陈述句前加 Oh，句子主干改变了吗？没有，变化的是说话人的态度和交际效果。<#0.8#>
-判断感叹词，可以先把它暂时移开。如果剩下部分仍有完整主干，它通常是主干外的独立成分。再结合停顿、标点和语调，判断它表达哪一种即时反应。`,
-    lengthText: '437 字 · 约 2 分钟'
+    version: 'v3',
+    text: `看到特别漂亮的景色，你可能先说 Wow，再说 That view is amazing。手突然被烫到，也可能先喊 Ouch，再解释发生了什么。Wow 和 Ouch 像是情绪抢先跑出了嘴巴，不用先组织完整句子，就能让别人马上听懂你的反应。这样的短词叫感叹词。<#0.8#>
+听这句。<#0.4#>Wow! That view is amazing。<#0.8#>真正说明景色怎么样的是 That view is amazing，里面有完整的“谁”和“怎么样”。Wow 不负责其中任何一项，它只是把惊喜放在句子前面。拿掉 Wow，句子还是成立；留下它，情绪更明显。<#0.8#>
+再听。<#0.4#>Ouch! That hurt。<#0.8#>Ouch 是疼痛发生那一刻的直接反应，That hurt 才是在讲发生了什么。Ouch 甚至可以自己单独说完，靠现场和语气让人明白。<#0.8#>
+要注意，感叹词和感叹句不是同一件事。Wow 是一种词，感叹句则是整句话采用特殊结构。感叹词放在完整句子旁边时，原来的句子主干通常不变，变化的是说话人的态度。<#0.7#>
+判断时，可以把最前面或单独出现的短词先拿开，看看剩下部分能不能独立说清一件事。如果可以，再把这个词放回去，看它是不是只在表达惊喜、疼痛、犹豫、赞同或提醒；最后结合停顿、标点和语气确认。`,
+    lengthText: '487 字 · 约 2 分钟'
   };
+  lessons.slice(1).forEach((item) => {
+    const narration = INTERJECTION_NARRATIONS[item.id];
+    if (!narration) throw new Error(`Missing interjection narration: ${item.id}`);
+    item.narration = Object.assign({}, narration);
+  });
   return grouped(english, lessons, ['interj-register-politeness', 'interj-wordclass-sounds'], [
     ['interj-foundation', '定义、本质与边界', 'Definition, essence and boundaries', '理解感叹词为何位于句子主干之外，并区分感叹词与感叹句。', 'Understand why interjections stand outside the clause core and distinguish them from exclamative sentences.', ['interj-essence', 'interj-independence-position', 'interj-vs-exclamative']],
     ['interj-meaning-system', '即时情绪与语境意义', 'Emotion and contextual meaning', '认识高频情绪表达，并依据上下文、语调和标点判断具体态度。', 'Recognize frequent emotional reactions and interpret attitude through context, intonation and punctuation.', ['interj-emotions', 'interj-context-tone']],

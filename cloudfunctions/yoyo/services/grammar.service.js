@@ -1,6 +1,7 @@
 const storageAdapter = require('../adapters/storage.adapter');
 const dbAdapter = require('../adapters/db.adapter');
 const study = require('../facades/study.facade');
+const grammarClassroomRepository = require('../repositories/grammar-classroom.repository');
 const narrationManifest = require('../data/grammar-narration-manifest.json');
 const https = require('https');
 const crypto = require('crypto');
@@ -23,6 +24,138 @@ const EXPLANATION_COLLECTION = 'grammarQuestionExplanations';
 const NARRATION_AUDIO_COLLECTION = 'grammarLessonNarrationAudios';
 const NARRATION_JOB_STALE_MS = 4 * 60 * 1000;
 const NARRATION_HASHES = narrationManifest.hashes || {};
+const CLASSROOM_RELEASE_CACHE_MS = 30 * 1000;
+const CLASSROOM_CONTENT_CACHE_MS = 60 * 1000;
+const CLASSROOM_CACHE_MAX_ITEMS = 200;
+const classroomCache = new Map();
+
+function normalizeClassroomTopic(value) {
+  const topic = String(value || '').trim();
+  if (!topic || !/^[a-z0-9][a-z0-9-]{0,79}$/i.test(topic)) {
+    throw new Error(`grammar-classroom-invalid-topic:topic=${topic || 'empty'}`);
+  }
+  return topic;
+}
+
+function normalizeClassroomLanguage(value) {
+  const language = String(value || 'zh-CN').trim().replace('_', '-').toLowerCase();
+  if (language === 'zh' || language === 'zh-cn') return 'zh-CN';
+  if (language === 'en' || language === 'en-us') return 'en';
+  throw new Error(`grammar-classroom-invalid-language:language=${language || 'empty'}`);
+}
+
+function normalizeClassroomReleaseId(value, topic, language) {
+  const releaseId = String(value || '').trim();
+  if (!releaseId || !/^[a-z0-9][a-z0-9._-]{0,99}$/i.test(releaseId)) {
+    throw classroomReadError('release', topic, language, releaseId, 'invalid-release-id');
+  }
+  return releaseId;
+}
+
+function getClassroomCache(key) {
+  const cached = classroomCache.get(key);
+  if (!cached) return null;
+  if (cached.expiresAt <= Date.now()) {
+    classroomCache.delete(key);
+    return null;
+  }
+  return cached.value;
+}
+
+function setClassroomCache(key, value, maxAgeMs) {
+  if (classroomCache.size >= CLASSROOM_CACHE_MAX_ITEMS && !classroomCache.has(key)) {
+    classroomCache.delete(classroomCache.keys().next().value);
+  }
+  classroomCache.set(key, { value, expiresAt: Date.now() + maxAgeMs });
+  return value;
+}
+
+function classroomReadError(stage, topic, language, releaseId, error, cloudPath) {
+  const cause = String(error && (error.errMsg || error.message) || error || 'unknown')
+    .replace(/[\r\n]+/g, ' ')
+    .slice(0, 240);
+  const path = cloudPath ? `;path=${cloudPath}` : '';
+  return new Error(`grammar-classroom-read-failed:stage=${stage};topic=${topic};language=${language};release=${releaseId || 'unresolved'}${path};cause=${cause}`);
+}
+
+async function getLatestClassroomRelease(topic, language) {
+  const cacheKey = 'release:latest';
+  const cached = getClassroomCache(cacheKey);
+  if (cached) return cached;
+  let release;
+  try {
+    release = await grammarClassroomRepository.findLatestReleased();
+  } catch (error) {
+    throw classroomReadError('release', topic, language, '', error);
+  }
+  if (!release || !release.releaseId) {
+    throw classroomReadError('release', topic, language, '', 'released-active-record-not-found');
+  }
+  return setClassroomCache(cacheKey, release, CLASSROOM_RELEASE_CACHE_MS);
+}
+
+async function getClassroomReleaseContent(topic, language, releaseId) {
+  const cloudPath = `_content/grammar-classroom/releases/${releaseId}/topics/${topic}.json`;
+  const cacheKey = `content:${releaseId}:${topic}`;
+  const cached = getClassroomCache(cacheKey);
+  try {
+    const content = cached || await storageAdapter.downloadCloudJson(cloudPath);
+    if (!content || typeof content !== 'object' || Array.isArray(content)) {
+      throw new Error('invalid-json-object');
+    }
+    if (String(content.topicId || '').trim() !== topic) {
+      throw new Error(`topic-mismatch:${content.topicId || 'empty'}`);
+    }
+    if (String(content.releaseId || '').trim() !== releaseId) {
+      throw new Error(`release-mismatch:${content.releaseId || 'empty'}`);
+    }
+    if (!content.bundles || typeof content.bundles !== 'object' || !content.bundles[language]) {
+      throw new Error(`bundle-not-found:${language}`);
+    }
+    if (!cached) setClassroomCache(cacheKey, content, CLASSROOM_CONTENT_CACHE_MS);
+    return { content, cloudPath, cached: Boolean(cached) };
+  } catch (error) {
+    throw classroomReadError('content', topic, language, releaseId, error, cloudPath);
+  }
+}
+
+async function getGrammarClassroomCourse(event) {
+  const payload = (event && event.payload) || {};
+  const topic = normalizeClassroomTopic(payload.topic || payload.topicId || event.topic || event.topicId);
+  const language = normalizeClassroomLanguage(payload.language || event.language);
+  const knownReleaseId = String(payload.knownReleaseId || '').trim();
+  const knownContentVersion = String(payload.knownContentVersion || '').trim();
+  const release = await getLatestClassroomRelease(topic, language);
+  const releaseId = normalizeClassroomReleaseId(release.releaseId, topic, language);
+  const downloaded = await getClassroomReleaseContent(topic, language, releaseId);
+  const content = downloaded.content;
+  const contentVersion = String(content.contentVersion || '').trim();
+  const contentVersionMatches = Boolean(
+    knownContentVersion && contentVersion && knownContentVersion === contentVersion
+  );
+  if (contentVersionMatches) {
+    return {
+      topic,
+      language,
+      releaseId,
+      contentVersion,
+      releasedAt: release.releasedAt || release.publishedAt || '',
+      notModified: true,
+      source: 'grammar-classroom-release'
+    };
+  }
+  return {
+    topic,
+    language,
+    releaseId,
+    contentVersion,
+    releasedAt: release.releasedAt || release.publishedAt || '',
+    notModified: false,
+    course: content.bundles[language],
+    source: 'grammar-classroom-release',
+    cacheHit: downloaded.cached
+  };
+}
 
 function topicFileName(topicId) {
   return `${crypto.createHash('sha1').update(String(topicId || '')).digest('hex')}.json`;
@@ -589,9 +722,9 @@ async function getGrammarNarrationAudio(event) {
   const apiKey = String(process.env.GRAMMAR_TTS_API_KEY || '').trim();
   const model = String(process.env.GRAMMAR_TTS_MODEL || 'speech-2.8-turbo').trim();
   const voice = String(process.env.GRAMMAR_TTS_VOICE || 'male-qn-jingying').trim();
-  const emotion = String(process.env.GRAMMAR_TTS_EMOTION || 'calm').trim();
-  const speedValue = Number(process.env.GRAMMAR_TTS_SPEED || 0.9);
-  const speed = Number.isFinite(speedValue) ? Math.min(2, Math.max(0.5, speedValue)) : 0.9;
+  const emotion = String(process.env.GRAMMAR_TTS_EMOTION || 'fluent').trim();
+  const speedValue = Number(process.env.GRAMMAR_TTS_SPEED || 0.95);
+  const speed = Number.isFinite(speedValue) ? Math.min(2, Math.max(0.5, speedValue)) : 0.95;
   if (!endpoint || !apiKey) throw new Error('grammar-narration-missing-env');
 
   const cacheKey = narrationHash([approvalKey, textHash, model, voice, speed, emotion, 'mp3'].join('|')).slice(0, 40);
@@ -759,7 +892,8 @@ async function explainGrammarQuestion(event) {
   }
   const endpoint = process.env.GRAMMAR_EXPLAIN_ENDPOINT || process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '';
   const apiKey = process.env.GRAMMAR_EXPLAIN_API_KEY || process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '';
-  const model = process.env.GRAMMAR_EXPLAIN_MODEL || 'gpt-5.5';
+  const model = process.env.GRAMMAR_EXPLAIN_MODEL || process.env.READING_STUDY_MODEL || 'gpt-5.6-sol';
+  const fallbackModel = process.env.GRAMMAR_EXPLAIN_FALLBACK_MODEL || process.env.READING_STUDY_FALLBACK_MODEL || 'gpt-5.5';
   if (!endpoint || !apiKey) {
     return { explanation: fallbackExplanation(question, 'missing-env'), source: 'fallback', error: 'missing-env' };
   }
@@ -770,40 +904,53 @@ async function explainGrammarQuestion(event) {
       questionId: question._id,
       force
     }));
-    const response = await postJson(endpoint, apiKey, {
-      model,
-      temperature: 0.2,
-      messages: [{
-        role: 'user',
-        content: [
-          '你是上海中考英语老师。只返回 JSON，不要 Markdown。',
-          '中文简明讲解。若有标准答案，按标准答案讲；若没有标准答案，请先判断最可能答案再讲。',
-          'JSON 格式：{"answer":"A","topic":"考点","explanation":"为什么选/生成这个答案","elimination":"其他选项为什么不合适"}',
-          `题干：${question.prompt || ''}`,
-          `选项：${JSON.stringify(question.options || {})}`,
-          `标准答案：${question.answer || '无，请模型生成'}`,
-          `已有分类：${question.topic || question.subtopic || ''}`,
-          force && question.explanation ? `上一版讲解：${question.explanation.explanation || ''}` : '',
-          force ? '如果上一版学生看不懂，请换一种更简单、更具体的说法。' : ''
-        ].join('\n')
-      }]
-    });
-    const parsed = parseJsonText(extractMessageText(response)) || {};
-    if (!parsed.explanation) {
-      throw new Error(`grammar-explain-empty:${JSON.stringify(response).slice(0, 240)}`);
+    const content = [
+      '你是上海中考英语老师。只返回 JSON，不要 Markdown。',
+      '中文简明讲解。若有标准答案，按标准答案讲；若没有标准答案，请先判断最可能答案再讲。',
+      'JSON 格式：{"answer":"A","topic":"考点","explanation":"为什么选/生成这个答案","elimination":"其他选项为什么不合适"}',
+      `题干：${question.prompt || ''}`,
+      `选项：${JSON.stringify(question.options || {})}`,
+      `标准答案：${question.answer || '无，请模型生成'}`,
+      `已有分类：${question.topic || question.subtopic || ''}`,
+      force && question.explanation ? `上一版讲解：${question.explanation.explanation || ''}` : '',
+      force ? '如果上一版学生看不懂，请换一种更简单、更具体的说法。' : ''
+    ].join('\n');
+    async function requestModel(targetModel) {
+      const response = await postJson(endpoint, apiKey, {
+        model: targetModel,
+        temperature: 0.2,
+        messages: [{ role: 'user', content }]
+      });
+      const parsed = parseJsonText(extractMessageText(response)) || {};
+      if (!parsed.explanation) {
+        throw new Error(`grammar-explain-empty:${JSON.stringify(response).slice(0, 240)}`);
+      }
+      return {
+        answer: parsed.answer || question.answer,
+        topic: parsed.topic || question.topic || question.subtopic || '语法',
+        explanation: parsed.explanation || '',
+        elimination: parsed.elimination || '',
+        source: `model:${targetModel}`
+      };
     }
-    const explanation = {
-      answer: parsed.answer || question.answer,
-      topic: parsed.topic || question.topic || question.subtopic || '语法',
-      explanation: parsed.explanation || '',
-      elimination: parsed.elimination || '',
-      source: `model:${model}`
-    };
-    const saved = personalOnly ? false : await saveExplanation(question, explanation, model);
+    let selectedModel = model;
+    let explanation;
+    try {
+      explanation = await requestModel(model);
+    } catch (primaryError) {
+      if (!fallbackModel || fallbackModel === model) throw primaryError;
+      selectedModel = fallbackModel;
+      try {
+        explanation = await requestModel(fallbackModel);
+      } catch (fallbackError) {
+        throw new Error(`grammar-explain-model-failed:${primaryError.message || String(primaryError)};fallback:${fallbackError.message || String(fallbackError)}`);
+      }
+    }
+    const saved = personalOnly ? false : await saveExplanation(question, explanation, selectedModel);
     if (!personalOnly && !saved) throw new Error('grammar-explain-save-failed');
     return {
       explanation,
-      source: `model:${model}`,
+      source: `model:${selectedModel}`,
       cached: false,
       persisted: !personalOnly,
       personalOnly
@@ -820,6 +967,7 @@ async function explainGrammarQuestion(event) {
 module.exports = {
   getGrammarHome,
   getGrammarTopic,
+  getGrammarClassroomCourse,
   recordGrammarWrong,
   addPracticeWrongQuestion,
   getPracticeWrongQuestions,

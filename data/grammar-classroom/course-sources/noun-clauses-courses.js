@@ -10,13 +10,13 @@ function note(english, mode, zh, en) {
 const opt = (english, value) => Array.isArray(value) ? pick(english, value[0], value[1]) : value;
 function question(english, item) { return { question:pick(english,item[0],item[1]), options:item[2].map((v,i)=>({key:String.fromCharCode(65+i),text:opt(english,v)})), answer:item[3], correct:pick(english,item[4],item[5]), wrong:pick(english,`再看规则：${item[4]}`,`Check the rule: ${item[5]}`) }; }
 const NOUN_CLAUSE_ESSENCE_NARRATION={
- id:'noun-clauses:clause-as-noun-slot',version:'v1',
- text:`名词性从句的本质，是一整个从句填进原本可以放名词的位置。它在外层当一个名词单位使用，内部却仍然有自己的主语和谓语。分析时要分清外层功能和从句内部结构。<#0.7#>
-What she said surprised me。<#0.5#>先看外层主干。What she said 整体是主语，surprised 是主句谓语，me 是宾语。再进入从句内部，可以理解为 she said what：she 是主语，said 是谓语，what 是 said 的宾语。同一个 what 既引出从句，又填上内部缺失的宾语位置。<#0.8#>
-再看 I know that she is honest。主句主干是 I know，that she is honest 整体填入 know 的内容宾语位置。that 只标出从句起点，不在内部作主语或宾语。<#0.7#>
-The question is whether we should leave。可以思考：whether 从句整体在 is 后面说明什么？<#0.5#>它说明 question 的具体内容，所以整体作表语。<#0.7#>
-判断名词性从句：先找主句主干和空缺的名词槽位；再把从句整体放入主语、宾语、表语或同位说明的位置；最后进入从句内部，检查连接词、主语、谓语和语序。`,
- lengthText:'443 字 · 约 2 分钟'
+ id:'noun-clauses:clause-as-noun-slot',version:'v3',
+ text:`朋友刚说完一句话，你听后很意外。英语可以直接说：<#0.4#>What she said surprised me。<#0.8#>先把开头整块盖住，只看后面 surprised me，也就是“让什么人吃惊”。现在缺的是“什么让人吃惊”，答案不是一个单词，而是 What she said 这一整件事。所以它整体站在主语的位置。
+再把这块打开看。里面的 she 是说话的人，said 是动作，what 表示“说了什么”。也就是说，它外面像一个名词，里面却自带一套“谁做什么”的小句子。这样的结构就叫名词性从句。<#0.8#>
+再听：<#0.4#>I know that she is honest。<#0.7#>主干 I know 听到一半会让人追问“知道什么”。that she is honest 整体补上知道的内容，作宾语。这里 that 只是把这段内容接进来；从句内部的主语是 she，that 不顶替任何人或事物。
+The question is whether we should leave 里，question 已经是主语，whether we should leave 放在 is 后，说明问题的具体内容，也就是“我们是否该离开”。它整体作表语。<#0.8#>
+判断时先找外层主干，看句子缺的是“谁、什么”或“具体内容”；再把整个从句当成一块放进主语、宾语、表语或同位说明的位置；最后进入里面，另找一次主语、谓语，并检查连接词有没有承担成分。`,
+ lengthText:'539 字 · 约 2 分钟'
 };
 function lesson(english, spec, index) {
   if (spec.rules.length !== spec.examples.length || spec.rules.length !== spec.questions.length) throw new Error(`Noun-clause coverage mismatch: ${spec.id}`);

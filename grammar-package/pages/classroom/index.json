@@ -1,30 +1,4 @@
 {
   "navigationBarTitleText": "语法微课堂",
-  "usingComponents": {
-    "grammar-word-loader": "../../components/grammar-word-loader/index",
-    "grammar-pronoun-loader": "../../components/grammar-pronoun-loader/index",
-    "grammar-word-formation-loader": "../../components/grammar-word-formation-loader/index",
-    "grammar-verb-loader": "../../components/grammar-verb-loader/index",
-    "grammar-numeral-loader": "../../components/grammar-numeral-loader/index",
-    "grammar-article-loader": "../../components/grammar-article-loader/index",
-    "grammar-adjective-loader": "../../components/grammar-adjective-loader/index",
-    "grammar-adverb-loader": "../../components/grammar-adverb-loader/index",
-    "grammar-preposition-loader": "../../components/grammar-preposition-loader/index",
-    "grammar-conjunction-loader": "../../components/grammar-conjunction-loader/index",
-    "grammar-interjection-loader": "../../components/grammar-interjection-loader/index",
-    "grammar-sentence-elements-loader": "../../components/grammar-sentence-elements-loader/index",
-    "grammar-basic-patterns-loader": "../../components/grammar-basic-patterns-loader/index",
-    "grammar-predicate-system-loader": "../../components/grammar-predicate-system-loader/index",
-    "grammar-nonfinite-system-loader": "../../components/grammar-nonfinite-system-loader/index",
-    "grammar-special-structures-loader": "../../components/grammar-special-structures-loader/index",
-    "grammar-coordination-loader": "../../components/grammar-coordination-loader/index",
-    "grammar-noun-clauses-loader": "../../components/grammar-noun-clauses-loader/index",
-    "grammar-relative-clauses-loader": "../../components/grammar-relative-clauses-loader/index",
-    "grammar-adverbial-clauses-loader": "../../components/grammar-adverbial-clauses-loader/index",
-    "grammar-reported-speech-loader": "../../components/grammar-reported-speech-loader/index",
-    "grammar-cohesion-reference-loader": "../../components/grammar-cohesion-reference-loader/index",
-    "grammar-information-order-loader": "../../components/grammar-information-order-loader/index",
-    "grammar-punctuation-loader": "../../components/grammar-punctuation-loader/index",
-    "grammar-common-expression-loader": "../../components/grammar-common-expression-loader/index"
-  }
+  "usingComponents": {}
 }

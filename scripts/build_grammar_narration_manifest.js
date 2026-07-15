@@ -44,6 +44,25 @@ function hash(text) {
   return crypto.createHash('sha256').update(String(text || '')).digest('hex');
 }
 
+function validateNarrationAgainstLesson(fileName, builderName, lesson, narration) {
+  const examples = (lesson.examples || []).map((example) => String(example).toLowerCase().replace(/[^a-z0-9]/g, ''));
+  const normalizedNarration = narration.text.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g, '');
+  const hasDisplayedExample = (lesson.examples || []).some((example) => {
+    const normalizedExample = String(example).toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g, '');
+    return normalizedExample.length >= 4 && normalizedNarration.includes(normalizedExample);
+  });
+  const order = [];
+  const runs = narration.text.match(/[A-Za-z][A-Za-z'’]*(?:(?:[\s,.'’!?-]+)[A-Za-z][A-Za-z'’]*){2,}/g) || [];
+  runs.forEach((run) => {
+    const normalizedRun = run.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const exampleIndex = examples.findIndex((example) => example.includes(normalizedRun));
+    if (normalizedRun.length >= 6 && exampleIndex < 0) throw new Error(`Narration uses a page-external example: ${fileName}/${builderName}/${lesson.id}: ${run}`);
+    if (exampleIndex >= 0 && order[order.length - 1] !== exampleIndex) order.push(exampleIndex);
+  });
+  if (!hasDisplayedExample) throw new Error(`Narration does not explain a displayed example: ${fileName}/${builderName}/${lesson.id}`);
+  if (order.some((exampleIndex, index) => index > 0 && exampleIndex < order[index - 1])) throw new Error(`Narration explains examples out of page order: ${fileName}/${builderName}/${lesson.id}`);
+}
+
 const hashes = Object.assign({}, legacyHashes);
 const lessons = [];
 
@@ -53,23 +72,35 @@ sourceFiles.forEach((fileName) => {
     if (typeof builder !== 'function' || !builderName.startsWith('build')) return;
     const zhBundle = builder(false);
     const enBundle = builder(true);
-    const zhLesson = zhBundle && zhBundle.course && zhBundle.course[0];
-    const enLesson = enBundle && enBundle.course && enBundle.course[0];
+    const zhCourse = zhBundle && zhBundle.course || [];
+    const enCourse = enBundle && enBundle.course || [];
+    const zhLesson = zhCourse[0];
     const narration = zhLesson && zhLesson.narration;
     if (!narration || !narration.id || !narration.version || !String(narration.text || '').trim()) {
       throw new Error(`Missing first-lesson narration: ${fileName}/${builderName}`);
     }
-    if (!enLesson || JSON.stringify(enLesson.narration) !== JSON.stringify(narration)) {
-      throw new Error(`English interface must reuse Chinese narration: ${fileName}/${builderName}`);
-    }
-    const key = `${narration.id}:${narration.version}:zh-CN`;
-    if (hashes[key] && hashes[key] !== hash(narration.text)) throw new Error(`Narration key collision: ${key}`);
-    hashes[key] = hash(narration.text);
-    lessons.push({ id: narration.id, version: narration.version, lessonId: zhLesson.id, source: fileName });
+    zhCourse.forEach((courseLesson, lessonIndex) => {
+      if (!courseLesson.narration) return;
+      const englishLesson = enCourse[lessonIndex];
+      const lessonNarration = courseLesson.narration;
+      if (!lessonNarration.id || !lessonNarration.version || !String(lessonNarration.text || '').trim()) {
+        throw new Error(`Invalid narration: ${fileName}/${builderName}/${courseLesson.id}`);
+      }
+      validateNarrationAgainstLesson(fileName, builderName, courseLesson, lessonNarration);
+      if (!englishLesson || englishLesson.id !== courseLesson.id || JSON.stringify(englishLesson.narration) !== JSON.stringify(lessonNarration)) {
+        throw new Error(`English interface must reuse Chinese narration: ${fileName}/${builderName}/${courseLesson.id}`);
+      }
+      const key = `${lessonNarration.id}:${lessonNarration.version}:zh-CN`;
+      if (hashes[key] && hashes[key] !== hash(lessonNarration.text)) throw new Error(`Narration key collision: ${key}`);
+      hashes[key] = hash(lessonNarration.text);
+      lessons.push({ id: lessonNarration.id, version: lessonNarration.version, lessonId: courseLesson.id, source: fileName });
+    });
   });
 });
 
 lessons.sort((left, right) => left.id.localeCompare(right.id));
+if (lessons.length !== 205) throw new Error(`Expected 205 grammar narrations, received ${lessons.length}`);
+if (new Set(lessons.map((lesson) => lesson.id)).size !== lessons.length) throw new Error('Duplicate grammar narration id');
 const orderedHashes = Object.fromEntries(Object.entries(hashes).sort(([left], [right]) => left.localeCompare(right)));
 fs.writeFileSync(outputPath, `${JSON.stringify({ version: 1, lessons, hashes: orderedHashes }, null, 2)}\n`);
 console.log(`Generated ${lessons.length} grammar narrations: ${outputPath}`);

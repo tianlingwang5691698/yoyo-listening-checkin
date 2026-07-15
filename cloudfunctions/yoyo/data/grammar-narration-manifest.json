@@ -2,173 +2,1350 @@
   "version": 1,
   "lessons": [
     {
-      "id": "adjective:adjective-essence",
+      "id": "adjective:adjective-comparative-form",
       "version": "v1",
+      "lessonId": "adjective-comparative-form",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-comparison",
+      "version": "v1",
+      "lessonId": "adjective-comparison",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-complements",
+      "version": "v1",
+      "lessonId": "adjective-complements",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-degree",
+      "version": "v1",
+      "lessonId": "adjective-degree",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-essence",
+      "version": "v2",
       "lessonId": "adjective-essence",
       "source": "adjective-adverb-courses.js"
     },
     {
-      "id": "adverb:adverb-essence",
+      "id": "adjective:adjective-jobs",
       "version": "v1",
+      "lessonId": "adjective-jobs",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-nominal",
+      "version": "v1",
+      "lessonId": "adjective-nominal",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-order",
+      "version": "v1",
+      "lessonId": "adjective-order",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-position",
+      "version": "v1",
+      "lessonId": "adjective-position",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-restrictions",
+      "version": "v1",
+      "lessonId": "adjective-restrictions",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:adjective-superlative",
+      "version": "v1",
+      "lessonId": "adjective-superlative",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:comparative-modifiers",
+      "version": "v1",
+      "lessonId": "comparative-modifiers",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:comparison-boundaries",
+      "version": "v2",
+      "lessonId": "comparison-boundaries",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:compound-adjectives",
+      "version": "v1",
+      "lessonId": "compound-adjectives",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adjective:participle-adjectives",
+      "version": "v1",
+      "lessonId": "participle-adjectives",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adjective-or-adverb",
+      "version": "v1",
+      "lessonId": "adjective-or-adverb",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverb-comparison",
+      "version": "v1",
+      "lessonId": "adverb-comparison",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverb-essence",
+      "version": "v2",
       "lessonId": "adverb-essence",
       "source": "adjective-adverb-courses.js"
     },
     {
-      "id": "adverbial-clauses:adverbial-function-position",
+      "id": "adverb:adverb-formation",
       "version": "v1",
+      "lessonId": "adverb-formation",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverb-jobs",
+      "version": "v1",
+      "lessonId": "adverb-jobs",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverb-position",
+      "version": "v1",
+      "lessonId": "adverb-position",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverb-scope",
+      "version": "v1",
+      "lessonId": "adverb-scope",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverb-traps",
+      "version": "v1",
+      "lessonId": "adverb-traps",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverb-types",
+      "version": "v1",
+      "lessonId": "adverb-types",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:adverbial-boundary",
+      "version": "v1",
+      "lessonId": "adverbial-boundary",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:conjunctive-adverbs",
+      "version": "v1",
+      "lessonId": "conjunctive-adverbs",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:degree-patterns",
+      "version": "v2",
+      "lessonId": "degree-patterns",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:interrogative-relative-adverbs",
+      "version": "v1",
+      "lessonId": "interrogative-relative-adverbs",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:multiple-adverb-order",
+      "version": "v1",
+      "lessonId": "multiple-adverb-order",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:negative-limiting-adverbs",
+      "version": "v1",
+      "lessonId": "negative-limiting-adverbs",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverb:sentence-adverbs",
+      "version": "v1",
+      "lessonId": "sentence-adverbs",
+      "source": "adjective-adverb-courses.js"
+    },
+    {
+      "id": "adverbial-clauses:adverbial-function-position",
+      "version": "v2",
       "lessonId": "adverbial-function-position",
       "source": "adverbial-clauses-courses.js"
     },
     {
-      "id": "article:article-essence",
+      "id": "article:a-an",
       "version": "v1",
+      "lessonId": "a-an",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:activity-conventions",
+      "version": "v1",
+      "lessonId": "activity-conventions",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:article-countability-shift",
+      "version": "v1",
+      "lessonId": "article-countability-shift",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:article-determiner-boundary",
+      "version": "v1",
+      "lessonId": "article-determiner-boundary",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:article-essence",
+      "version": "v3",
       "lessonId": "article-essence",
       "source": "verb-numeral-article-courses.js"
     },
     {
-      "id": "basic-sentence-patterns:find-predicate-skeleton",
+      "id": "article:article-groups",
       "version": "v1",
+      "lessonId": "article-groups",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:article-meaning",
+      "version": "v1",
+      "lessonId": "article-meaning",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:generic-contrast",
+      "version": "v1",
+      "lessonId": "generic-contrast",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:indefinite-reference",
+      "version": "v1",
+      "lessonId": "indefinite-reference",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:institutions-meals",
+      "version": "v1",
+      "lessonId": "institutions-meals",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:names-places",
+      "version": "v1",
+      "lessonId": "names-places",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:the-context-chain",
+      "version": "v1",
+      "lessonId": "the-context-chain",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:the-known",
+      "version": "v1",
+      "lessonId": "the-known",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:unique-superlative",
+      "version": "v1",
+      "lessonId": "unique-superlative",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "article:zero-basic",
+      "version": "v1",
+      "lessonId": "zero-basic",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:find-predicate-skeleton",
+      "version": "v3",
       "lessonId": "find-predicate-skeleton",
       "source": "basic-sentence-patterns-courses.js"
     },
     {
-      "id": "cohesion-reference:cohesion-reference-essence",
+      "id": "basic-sentence-patterns:pattern-sv",
       "version": "v1",
+      "lessonId": "pattern-sv",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:pattern-svc",
+      "version": "v1",
+      "lessonId": "pattern-svc",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:pattern-svo",
+      "version": "v2",
+      "lessonId": "pattern-svo",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:pattern-svoc",
+      "version": "v2",
+      "lessonId": "pattern-svoc",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "basic-sentence-patterns:pattern-svoo",
+      "version": "v2",
+      "lessonId": "pattern-svoo",
+      "source": "basic-sentence-patterns-courses.js"
+    },
+    {
+      "id": "cohesion-reference:cohesion-reference-essence",
+      "version": "v2",
       "lessonId": "cohesion-reference-essence",
       "source": "cohesion-reference-courses.js"
     },
     {
       "id": "common-expression:common-expression-essence",
-      "version": "v1",
+      "version": "v3",
       "lessonId": "common-expression-essence",
       "source": "common-expression-courses.js"
     },
     {
-      "id": "conjunction:conj-essence",
+      "id": "conjunction:conj-and-or",
       "version": "v1",
+      "lessonId": "conj-and-or",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-boundary",
+      "version": "v1",
+      "lessonId": "conj-boundary",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-but-so",
+      "version": "v1",
+      "lessonId": "conj-but-so",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-concession-purpose",
+      "version": "v1",
+      "lessonId": "conj-concession-purpose",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-correlative",
+      "version": "v1",
+      "lessonId": "conj-correlative",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-essence",
+      "version": "v3",
       "lessonId": "conj-essence",
       "source": "conjunction-courses.js"
     },
     {
-      "id": "coordination:coordination-boundary",
+      "id": "conjunction:conj-for-nor-yet",
       "version": "v1",
+      "lessonId": "conj-for-nor-yet",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-integration",
+      "version": "v1",
+      "lessonId": "conj-integration",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-near-agreement",
+      "version": "v1",
+      "lessonId": "conj-near-agreement",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-parallel",
+      "version": "v1",
+      "lessonId": "conj-parallel",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-place-manner-comparison",
+      "version": "v1",
+      "lessonId": "conj-place-manner-comparison",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-punctuation",
+      "version": "v1",
+      "lessonId": "conj-punctuation",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-reason-condition",
+      "version": "v1",
+      "lessonId": "conj-reason-condition",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "conjunction:conj-time",
+      "version": "v1",
+      "lessonId": "conj-time",
+      "source": "conjunction-courses.js"
+    },
+    {
+      "id": "coordination:coordination-boundary",
+      "version": "v2",
       "lessonId": "coordination-boundary",
       "source": "coordination-courses.js"
     },
     {
       "id": "information-order:information-order-essence",
-      "version": "v1",
+      "version": "v3",
       "lessonId": "information-order-essence",
       "source": "information-order-courses.js"
     },
     {
-      "id": "interjection:interj-essence",
+      "id": "interjection:interj-context-tone",
       "version": "v1",
+      "lessonId": "interj-context-tone",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "interjection:interj-discourse-markers",
+      "version": "v2",
+      "lessonId": "interj-discourse-markers",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "interjection:interj-emotions",
+      "version": "v1",
+      "lessonId": "interj-emotions",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "interjection:interj-essence",
+      "version": "v3",
       "lessonId": "interj-essence",
       "source": "interjection-courses.js"
     },
     {
-      "id": "nonfinite-system:finite-nonfinite-boundary",
+      "id": "interjection:interj-independence-position",
+      "version": "v2",
+      "lessonId": "interj-independence-position",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "interjection:interj-interaction",
       "version": "v1",
+      "lessonId": "interj-interaction",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "interjection:interj-punctuation",
+      "version": "v1",
+      "lessonId": "interj-punctuation",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "interjection:interj-register-politeness",
+      "version": "v2",
+      "lessonId": "interj-register-politeness",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "interjection:interj-vs-exclamative",
+      "version": "v1",
+      "lessonId": "interj-vs-exclamative",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "interjection:interj-wordclass-sounds",
+      "version": "v1",
+      "lessonId": "interj-wordclass-sounds",
+      "source": "interjection-courses.js"
+    },
+    {
+      "id": "nonfinite-system:finite-nonfinite-boundary",
+      "version": "v3",
       "lessonId": "finite-nonfinite-boundary",
       "source": "nonfinite-system-courses.js"
     },
     {
       "id": "noun-clauses:clause-as-noun-slot",
-      "version": "v1",
+      "version": "v3",
       "lessonId": "clause-as-noun-slot",
       "source": "noun-clauses-courses.js"
     },
     {
-      "id": "noun:noun-job",
+      "id": "noun:collective-noun",
       "version": "v1",
+      "lessonId": "collective-noun",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "noun:countability",
+      "version": "v1",
+      "lessonId": "countability",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "noun:irregular-plural",
+      "version": "v1",
+      "lessonId": "irregular-plural",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "noun:noun-boss",
+      "version": "v1",
+      "lessonId": "noun-boss",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "noun:noun-functions",
+      "version": "v1",
+      "lessonId": "noun-functions",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "noun:noun-job",
+      "version": "v2",
       "lessonId": "noun-job",
       "source": "word-courses.js"
     },
     {
-      "id": "numeral:numeral-essence",
+      "id": "noun:noun-modifier",
       "version": "v1",
+      "lessonId": "noun-modifier",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "noun:noun-types",
+      "version": "v1",
+      "lessonId": "noun-types",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "noun:possessive",
+      "version": "v1",
+      "lessonId": "possessive",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "noun:regular-plural",
+      "version": "v1",
+      "lessonId": "regular-plural",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "numeral:approximate",
+      "version": "v1",
+      "lessonId": "approximate",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:cardinals",
+      "version": "v1",
+      "lessonId": "cardinals",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:date-time",
+      "version": "v1",
+      "lessonId": "date-time",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:decimals-percent",
+      "version": "v1",
+      "lessonId": "decimals-percent",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:fractions",
+      "version": "v1",
+      "lessonId": "fractions",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:labels-years",
+      "version": "v1",
+      "lessonId": "labels-years",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:large-numbers",
+      "version": "v1",
+      "lessonId": "large-numbers",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:multiples-ratios",
+      "version": "v1",
+      "lessonId": "multiples-ratios",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:number-agreement",
+      "version": "v1",
+      "lessonId": "number-agreement",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:numeral-essence",
+      "version": "v3",
       "lessonId": "numeral-essence",
       "source": "verb-numeral-article-courses.js"
     },
     {
-      "id": "predicate-system:finite-boundary",
+      "id": "numeral:numeral-functions",
       "version": "v1",
+      "lessonId": "numeral-functions",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "numeral:ordinals",
+      "version": "v1",
+      "lessonId": "ordinals",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "predicate-system:finite-boundary",
+      "version": "v3",
       "lessonId": "finite-boundary",
       "source": "predicate-system-courses.js"
     },
     {
+      "id": "preposition:prep-adverbial-functions",
+      "version": "v1",
+      "lessonId": "prep-adverbial-functions",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-cause-purpose",
+      "version": "v1",
+      "lessonId": "prep-cause-purpose",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-collocation",
+      "version": "v1",
+      "lessonId": "prep-collocation",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-collocation-meaning",
+      "version": "v1",
+      "lessonId": "prep-collocation-meaning",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-complements",
+      "version": "v1",
+      "lessonId": "prep-complements",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-complex-objects",
+      "version": "v1",
+      "lessonId": "prep-complex-objects",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-direction",
+      "version": "v1",
+      "lessonId": "prep-direction",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
       "id": "preposition:prep-essence",
-      "version": "v7",
+      "version": "v8",
       "lessonId": "prep-essence",
       "source": "preposition-conjunction-interjection-courses.js"
     },
     {
-      "id": "pronoun:pronoun-essence",
+      "id": "preposition:prep-form-contrast",
       "version": "v1",
+      "lessonId": "prep-form-contrast",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-forms",
+      "version": "v2",
+      "lessonId": "prep-forms",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-integration",
+      "version": "v2",
+      "lessonId": "prep-integration",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-material-comparison",
+      "version": "v1",
+      "lessonId": "prep-material-comparison",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-means",
+      "version": "v1",
+      "lessonId": "prep-means",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-medium-language",
+      "version": "v1",
+      "lessonId": "prep-medium-language",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-movement-path",
+      "version": "v1",
+      "lessonId": "prep-movement-path",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-object",
+      "version": "v1",
+      "lessonId": "prep-object",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-place",
+      "version": "v1",
+      "lessonId": "prep-place",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-postmodifier",
+      "version": "v1",
+      "lessonId": "prep-postmodifier",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-predicative",
+      "version": "v1",
+      "lessonId": "prep-predicative",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-relative-place",
+      "version": "v1",
+      "lessonId": "prep-relative-place",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-source-separation",
+      "version": "v1",
+      "lessonId": "prep-source-separation",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-time",
+      "version": "v1",
+      "lessonId": "prep-time",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-time-contrast",
+      "version": "v1",
+      "lessonId": "prep-time-contrast",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-time-deadline",
+      "version": "v1",
+      "lessonId": "prep-time-deadline",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "preposition:prep-topic-content",
+      "version": "v1",
+      "lessonId": "prep-topic-content",
+      "source": "preposition-conjunction-interjection-courses.js"
+    },
+    {
+      "id": "pronoun:demonstrative",
+      "version": "v2",
+      "lessonId": "demonstrative",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:indefinite-quantity",
+      "version": "v1",
+      "lessonId": "indefinite-quantity",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:indefinite-some-any",
+      "version": "v2",
+      "lessonId": "indefinite-some-any",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:interrogative",
+      "version": "v1",
+      "lessonId": "interrogative",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:it-reference",
+      "version": "v1",
+      "lessonId": "it-reference",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:personal-pronoun",
+      "version": "v1",
+      "lessonId": "personal-pronoun",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:possessive-pronoun",
+      "version": "v1",
+      "lessonId": "possessive-pronoun",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:pronoun-agreement",
+      "version": "v1",
+      "lessonId": "pronoun-agreement",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:pronoun-ambiguity",
+      "version": "v1",
+      "lessonId": "pronoun-ambiguity",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:pronoun-boss",
+      "version": "v1",
+      "lessonId": "pronoun-boss",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:pronoun-essence",
+      "version": "v3",
       "lessonId": "pronoun-essence",
       "source": "word-courses.js"
     },
     {
-      "id": "punctuation:punctuation-capitalization-essence",
+      "id": "pronoun:reciprocal",
       "version": "v1",
+      "lessonId": "reciprocal",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:reflexive",
+      "version": "v1",
+      "lessonId": "reflexive",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:relative-pronoun",
+      "version": "v1",
+      "lessonId": "relative-pronoun",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "pronoun:substitute-pronoun",
+      "version": "v1",
+      "lessonId": "substitute-pronoun",
+      "source": "word-courses.js"
+    },
+    {
+      "id": "punctuation:punctuation-capitalization-essence",
+      "version": "v3",
       "lessonId": "punctuation-capitalization-essence",
       "source": "punctuation-courses.js"
     },
     {
       "id": "relative-clauses:relative-boundary",
-      "version": "v1",
+      "version": "v3",
       "lessonId": "relative-boundary",
       "source": "relative-clauses-courses.js"
     },
     {
       "id": "reported-speech:reported-speech-essence",
-      "version": "v1",
+      "version": "v3",
       "lessonId": "reported-speech-essence",
       "source": "reported-speech-courses.js"
     },
     {
       "id": "sentence-elements:element-levels",
-      "version": "v1",
+      "version": "v3",
       "lessonId": "element-levels",
       "source": "sentence-elements-courses.js"
     },
     {
       "id": "special-structures:special-structure-essence",
-      "version": "v1",
+      "version": "v3",
       "lessonId": "special-structure-essence",
       "source": "special-structures-courses.js"
     },
     {
-      "id": "verb:verb-jobs",
+      "id": "verb:agreement-complex",
       "version": "v1",
+      "lessonId": "agreement-complex",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:aux-modal",
+      "version": "v1",
+      "lessonId": "aux-modal",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:auxiliary-system",
+      "version": "v1",
+      "lessonId": "auxiliary-system",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:causative-perception",
+      "version": "v1",
+      "lessonId": "causative-perception",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:double-object-complement",
+      "version": "v1",
+      "lessonId": "double-object-complement",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:finite-forms",
+      "version": "v1",
+      "lessonId": "finite-forms",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:five-sentence-patterns",
+      "version": "v1",
+      "lessonId": "five-sentence-patterns",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:future-forms",
+      "version": "v1",
+      "lessonId": "future-forms",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:future-in-clauses",
+      "version": "v1",
+      "lessonId": "future-in-clauses",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:gerund",
+      "version": "v1",
+      "lessonId": "gerund",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:gerund-infinitive-meaning",
+      "version": "v1",
+      "lessonId": "gerund-infinitive-meaning",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:infinitive",
+      "version": "v1",
+      "lessonId": "infinitive",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:ing-forms",
+      "version": "v1",
+      "lessonId": "ing-forms",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:linking",
+      "version": "v1",
+      "lessonId": "linking",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:modal-meanings",
+      "version": "v1",
+      "lessonId": "modal-meanings",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:nonfinite",
+      "version": "v1",
+      "lessonId": "nonfinite",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:nonfinite-advanced",
+      "version": "v1",
+      "lessonId": "nonfinite-advanced",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:participles",
+      "version": "v1",
+      "lessonId": "participles",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:passive-tenses",
+      "version": "v1",
+      "lessonId": "passive-tenses",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:past-forms",
+      "version": "v1",
+      "lessonId": "past-forms",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:past-progressive",
+      "version": "v1",
+      "lessonId": "past-progressive",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:past-simple",
+      "version": "v1",
+      "lessonId": "past-simple",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:past-time-sequence",
+      "version": "v1",
+      "lessonId": "past-time-sequence",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:perfect-vs-past",
+      "version": "v1",
+      "lessonId": "perfect-vs-past",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:phrasal",
+      "version": "v1",
+      "lessonId": "phrasal",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:present-progressive",
+      "version": "v1",
+      "lessonId": "present-progressive",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:present-simple",
+      "version": "v1",
+      "lessonId": "present-simple",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:special-verb-patterns",
+      "version": "v1",
+      "lessonId": "special-verb-patterns",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:subject-verb-agreement",
+      "version": "v1",
+      "lessonId": "subject-verb-agreement",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:tense-aspect",
+      "version": "v1",
+      "lessonId": "tense-aspect",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:third-person-form",
+      "version": "v1",
+      "lessonId": "third-person-form",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:transitivity",
+      "version": "v1",
+      "lessonId": "transitivity",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:verb-complements",
+      "version": "v1",
+      "lessonId": "verb-complements",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:verb-five-forms",
+      "version": "v1",
+      "lessonId": "verb-five-forms",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "verb:verb-jobs",
+      "version": "v3",
       "lessonId": "verb-jobs",
       "source": "verb-numeral-article-courses.js"
     },
     {
-      "id": "word-formation:word-parts",
+      "id": "verb:voice",
       "version": "v1",
+      "lessonId": "voice",
+      "source": "verb-numeral-article-courses.js"
+    },
+    {
+      "id": "word-formation:abstract-noun-suffixes",
+      "version": "v1",
+      "lessonId": "abstract-noun-suffixes",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:adjective-suffixes",
+      "version": "v1",
+      "lessonId": "adjective-suffixes",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:adverb-suffix",
+      "version": "v1",
+      "lessonId": "adverb-suffix",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:compounds",
+      "version": "v1",
+      "lessonId": "compounds",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:conversion",
+      "version": "v1",
+      "lessonId": "conversion",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:derivation-inflection",
+      "version": "v1",
+      "lessonId": "derivation-inflection",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:layered-derivation",
+      "version": "v1",
+      "lessonId": "layered-derivation",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:meaning-prefixes",
+      "version": "v1",
+      "lessonId": "meaning-prefixes",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:negative-prefixes",
+      "version": "v1",
+      "lessonId": "negative-prefixes",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:participial-adjectives",
+      "version": "v1",
+      "lessonId": "participial-adjectives",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:person-noun-suffixes",
+      "version": "v1",
+      "lessonId": "person-noun-suffixes",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:prefix-assimilation",
+      "version": "v1",
+      "lessonId": "prefix-assimilation",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:suffix-sound-stress",
+      "version": "v1",
+      "lessonId": "suffix-sound-stress",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:suffix-spelling",
+      "version": "v1",
+      "lessonId": "suffix-spelling",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:verb-suffixes",
+      "version": "v1",
+      "lessonId": "verb-suffixes",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:word-class-slots",
+      "version": "v1",
+      "lessonId": "word-class-slots",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:word-inference",
+      "version": "v2",
+      "lessonId": "word-inference",
+      "source": "word-formation-courses.js"
+    },
+    {
+      "id": "word-formation:word-parts",
+      "version": "v2",
       "lessonId": "word-parts",
       "source": "word-formation-courses.js"
     }
   ],
   "hashes": {
-    "adjective:adjective-essence:v1:zh-CN": "ebea87fc5e1136899bef053f308a3ecd01fba9959b20fa3bb8baee22dc8ce5fb",
-    "adverb:adverb-essence:v1:zh-CN": "f611b6e5e99c88512a9b30f99362d43c45af29df8bcd68099d4c738847f0392d",
-    "adverbial-clauses:adverbial-function-position:v1:zh-CN": "ed9a6a93eac25ab637afeeeafd44598f68386a2195cf45af20c1fb391fe44c80",
-    "article:article-essence:v1:zh-CN": "5792477203d3dc83f1bca492d70cff53e7dacb922bbb21daad49fc1bc1c54472",
-    "basic-sentence-patterns:find-predicate-skeleton:v1:zh-CN": "acfe08db46cd16233897e29d45373a6b87dd982ee625ec4741a5d817508bb340",
-    "cohesion-reference:cohesion-reference-essence:v1:zh-CN": "b12fa1f751c7f016dd23c44a9c0dd53c54fd5bb2c3de59f0cfa2e3eb69ccccd9",
-    "common-expression:common-expression-essence:v1:zh-CN": "aa418b5ade179cb6f446b1492d8e879807badf22ee0e0c53da565c7d534082ea",
-    "conjunction:conj-essence:v1:zh-CN": "a555c0dfdf6c263e3c3c771a8c3bee3dc5b5a39ab33d49afee672e2a44773da4",
-    "coordination:coordination-boundary:v1:zh-CN": "153fdd1159fc41764cff75cc7b18e718f84a1ae047188fa02d6777da52451484",
-    "information-order:information-order-essence:v1:zh-CN": "12477236df3a027dabda0985c0e76439ee6746b834dcb97b832f73154121ab7c",
-    "interjection:interj-essence:v1:zh-CN": "2b0505ec6d5066ea6a293696be8859b6b65559de948331b8cc16b23635690faa",
-    "nonfinite-system:finite-nonfinite-boundary:v1:zh-CN": "dca7d8b193c56be054d432313fd95ae2cfe196fa66ebe3253aa0e032b09026c1",
-    "noun-clauses:clause-as-noun-slot:v1:zh-CN": "315704a3c2a3af5af44e5c0e58d7ef1720c8f4a181f1c41a83182bdf7bac59ae",
-    "noun:noun-job:v1:zh-CN": "877895d3a2ca121575903f447a6c2bdf5585e0348f91cbb392adfb31c0a75e94",
-    "numeral:numeral-essence:v1:zh-CN": "036f695fa1fd50852e82726f4a7c5d5071651a4323a2c540b703c00e40792a80",
-    "predicate-system:finite-boundary:v1:zh-CN": "fdc97a13af90aa719661a5890baf87b32ea122a54f153cbf78d953dac28088cb",
+    "adjective:adjective-comparative-form:v1:zh-CN": "3b9e3ec615a1a98496c0b17870f6c04fcbfb585eb3f1a9f59f8c402cb15562bf",
+    "adjective:adjective-comparison:v1:zh-CN": "f1df5e9a230547ecf48f9047d74873dc8214d72fc7147b8ede56709d8e269cd0",
+    "adjective:adjective-complements:v1:zh-CN": "1a01eb4ca50816f1cc43e74e46b38c2b9bda30086a517a5c61dda0fdd5f02550",
+    "adjective:adjective-degree:v1:zh-CN": "7613d6cbfa2c435e6a66024337a82a8a0697f0a1ddef6308249aef8d00bf2e6d",
+    "adjective:adjective-essence:v2:zh-CN": "acbf31268d3508c47a8b0095ef5a48ae01a6bf5fcb72ec1c824e5d973bcc74d6",
+    "adjective:adjective-jobs:v1:zh-CN": "f82f112c1dd4de186e77d68498dff5780fed52583577fcc50027375b4f51737a",
+    "adjective:adjective-nominal:v1:zh-CN": "dbe96591f97fb79f6898c46f6e418c0852b02787634748c5154ec1e551473296",
+    "adjective:adjective-order:v1:zh-CN": "41be984aa2a902ed79ecad33bcbf68f5a8eea28a9d7980367ba091f5e36ff269",
+    "adjective:adjective-position:v1:zh-CN": "b26a0176d482136fcac5aec5f018a8806c078e91b14ea1850c4c0d92ca278ce8",
+    "adjective:adjective-restrictions:v1:zh-CN": "f250f0caf7cbac0517993ed8aba042fb0761198489d2999c7cb9d6fdfdf81159",
+    "adjective:adjective-superlative:v1:zh-CN": "d78582ee81776080bb6f5844fbb0b4ca7acfaaa003a1b86d1427ac375ae5c49d",
+    "adjective:comparative-modifiers:v1:zh-CN": "8dbac784c69e8218b27efa255cc7fd711ae46c33d3b6b62133f76209ddf06353",
+    "adjective:comparison-boundaries:v2:zh-CN": "81d7b7d60a768091d68fc5d8bd5d1f88702ab05dac55dcadef8d47e0c3b0de9b",
+    "adjective:compound-adjectives:v1:zh-CN": "6300120867f34163a3039ec381d80a9e8d05c44acc2ea16adeaaa98efb3cb571",
+    "adjective:participle-adjectives:v1:zh-CN": "3b45904158b6972ae9bb6f455206b02bc0ff1e40f5a5fd634e3ab0b635be37d1",
+    "adverb:adjective-or-adverb:v1:zh-CN": "34949a84ad8c6bd3dc6a5880816a0566e559a14b48ce3cd9897eddec5997b01e",
+    "adverb:adverb-comparison:v1:zh-CN": "a96aa969afb9bf9a99a2d821b8194bfda242d83cd157c51c2a4cf3e97400865e",
+    "adverb:adverb-essence:v2:zh-CN": "7493e3fec7d8647c2bab827eced841b20802007f99872c72acb7c0ee6030f8b1",
+    "adverb:adverb-formation:v1:zh-CN": "36234286c478747f3e58bd1dfb5091bd779076e250a67eb0a2f70d8b58cd5f80",
+    "adverb:adverb-jobs:v1:zh-CN": "0fa7674d1f34f2dbd099c30f3c7d7d5b8ac32d6e23bafff321b1c7379cb1eb15",
+    "adverb:adverb-position:v1:zh-CN": "f0c7e65f39265fdf87123c2e35499f3f5d63a968288053c18f6f3af01b9be714",
+    "adverb:adverb-scope:v1:zh-CN": "453b5985a5896650a3fd0c2be1f18e5dd691c4fe7930862168c5ff0765bff82b",
+    "adverb:adverb-traps:v1:zh-CN": "489716c2f696b1176cba2bd0f4cb861571188930c84bf95294d60e8bb700555f",
+    "adverb:adverb-types:v1:zh-CN": "41c96d3faf974a50dd0101211755d7638ef8077663341a133fee4a67027ea906",
+    "adverb:adverbial-boundary:v1:zh-CN": "b75666b5828a9784d9efda0476170d9facdf05d74182b77b2a156867ffc725ca",
+    "adverb:conjunctive-adverbs:v1:zh-CN": "c445eac9a5ad0240b628921d9398e05c8a04bbbc88db94c329be68111157649c",
+    "adverb:degree-patterns:v2:zh-CN": "1284f3225a07e3824f1a25ab709aac40777fdb86ec4077c46b12d8e2c934735b",
+    "adverb:interrogative-relative-adverbs:v1:zh-CN": "20e246055c2009abf325a6d5f3d338daecda23c8f164f83b8269e04a9cd19602",
+    "adverb:multiple-adverb-order:v1:zh-CN": "25f543002533506f0769a69e32c0d574d2554f241615030193f1c4de5e88c7fc",
+    "adverb:negative-limiting-adverbs:v1:zh-CN": "5a8109a169443e896020d9bd450b86c18af6385e2ffe4fdeff073d59d2dc85d0",
+    "adverb:sentence-adverbs:v1:zh-CN": "914fad76adf4da57d98394719811e8775eb48ab94710e856631254586255e9ad",
+    "adverbial-clauses:adverbial-function-position:v2:zh-CN": "66a963e1b5431c99ede411bb3236465e963becabdada13d9bd3a7627ea26f963",
+    "article:a-an:v1:zh-CN": "2de2f5d3de6673a0f66b588d31ab92950d25ff1fce5e2294a22b86bbe78b6a10",
+    "article:activity-conventions:v1:zh-CN": "24a6d20dfe7ceacf90f739f7c1fe47fbd78204e622d500cc564b427a9f6c3c20",
+    "article:article-countability-shift:v1:zh-CN": "dda406f36be87af9ba4f35eae69a8a08131a2fbcc0fa1c84e68ec4ccf6293f56",
+    "article:article-determiner-boundary:v1:zh-CN": "fdc0fc839096e053eb41d34bac47d9cb5fb9dff30b476064acc5f3211dfef45d",
+    "article:article-essence:v3:zh-CN": "05c5c8cc45a81dedeb73058c64819255d2442acbfc24dd66eef5efa6f8325857",
+    "article:article-groups:v1:zh-CN": "62807965e0c7c18f5ce86c8850cc272f1f401bf1dc06bdd15adb91084b2801b1",
+    "article:article-meaning:v1:zh-CN": "94de16bbfccff6caa702f05bfe7ac057624b693d070588d56fe759abfa4b18de",
+    "article:generic-contrast:v1:zh-CN": "f3bfa4d5f54475cebf6a4095f2ae39ced32413b2cdcf75eaca742962c416b1f0",
+    "article:indefinite-reference:v1:zh-CN": "fab5333105beafdbeebe3d65225e3afdc69ff0f8d136dac238da8c94abff179a",
+    "article:institutions-meals:v1:zh-CN": "da02dd862c8bb9c51ca90c57055f800f428dd8b46f2fb53d751d075905bf8c8b",
+    "article:names-places:v1:zh-CN": "13ca95b5a4994b2100feae04818de36b0d2d97c2e3dffb3bc9989935459280ec",
+    "article:the-context-chain:v1:zh-CN": "f2281a65365dfd43c25a0dd5bae1c13af8df92d90f99b7196a02ee9a6a8c009e",
+    "article:the-known:v1:zh-CN": "3ea49b256b5a9eb06e443cc5fd04f9cce35c1148b8835e3b9444d3f2f45ec584",
+    "article:unique-superlative:v1:zh-CN": "51eb0cb420f5bb236f49ed00ecd09f41a61b4b88856e131bade5fe1109299682",
+    "article:zero-basic:v1:zh-CN": "3902d9000f91b5f2dd60d7195d9b1644e66c9018092ef8bd3715900e8c3bb247",
+    "basic-sentence-patterns:find-predicate-skeleton:v3:zh-CN": "62855dd8e5b8a794b9ec37408ff0716cd44c87ba0c93ffc10055ec77debf19cd",
+    "basic-sentence-patterns:pattern-sv:v1:zh-CN": "342b7c17f5b31289e1552e824caf80188cc98e4ad2a03f6b486c3724f3bd887a",
+    "basic-sentence-patterns:pattern-svc:v1:zh-CN": "459852863389aea5b40c2abbbad81a3c6f12266f2f37c5221ad4c8dd3e1f9eb2",
+    "basic-sentence-patterns:pattern-svo:v2:zh-CN": "074da3a2c1ab18925356cd4dd1c42d6d350747d3b2f77f82ab1f7a14c43df978",
+    "basic-sentence-patterns:pattern-svoc:v2:zh-CN": "2ade6b7faef8011f9456bcc8846cd8599349f2acff77e224bca4cc334182b907",
+    "basic-sentence-patterns:pattern-svoo:v2:zh-CN": "82a84ba53794e848ae608bd1b54d22fd3760e259c8491f229ea9b85c9ac19731",
+    "cohesion-reference:cohesion-reference-essence:v2:zh-CN": "770c0c77e03219c04d014a926e68aadae46cc353de95cde26aa3d99d111f0dbf",
+    "common-expression:common-expression-essence:v3:zh-CN": "57841321267149fc70bddf25f142a46caeae01d7dd911f19b254042fb58fe71b",
+    "conjunction:conj-and-or:v1:zh-CN": "ebc39d6640f51d0ba9b4b9423a020cb09840b1920dc01ae274b3166bd222d1b6",
+    "conjunction:conj-boundary:v1:zh-CN": "d47beb8a1627a2c2c6b4a40f83bfc53eb88c8b3b068f383c1f6c57f19ceaf919",
+    "conjunction:conj-but-so:v1:zh-CN": "257bdbe044ed765521b86a4b69b5d92890d690e193ee82da6df0e60a10065277",
+    "conjunction:conj-concession-purpose:v1:zh-CN": "7b12be5a2f56f369d08bad7e25bf2725200e97f366a8aa7e293907b5b4bec031",
+    "conjunction:conj-correlative:v1:zh-CN": "0c00c4c4aea582386c77a93f1f7dbffe1861450f0b0e4cf5358f434ace990c69",
+    "conjunction:conj-essence:v3:zh-CN": "827e32cf3cdd095ebcc18489c3f2bd634958d1467f7cf35e171a98edb67c0c43",
+    "conjunction:conj-for-nor-yet:v1:zh-CN": "94f21eff69874e9e21619599be72c4c0aa6eed26ba89de66e1623ed2b862653c",
+    "conjunction:conj-integration:v1:zh-CN": "c1f4e151e0a539379cdd9f99ca2849d1fba85959bae20a7493437d81d9ac2123",
+    "conjunction:conj-near-agreement:v1:zh-CN": "d3bcb9c5a0f1528a251837c92dbc598221ced49b23538799d74d2e5fe135d154",
+    "conjunction:conj-parallel:v1:zh-CN": "735040be292145e8341842d456eb63d1f3ede226922e6d39e9eea805f607659d",
+    "conjunction:conj-place-manner-comparison:v1:zh-CN": "81eb636f03dc37821d67492aa7d6c64c643c7ea4420d7a94b26c5e61b41b9a40",
+    "conjunction:conj-punctuation:v1:zh-CN": "ad1480cfd8cbe13c379111a1fb70fbd6befae656f2c60f5dc505caa394121f26",
+    "conjunction:conj-reason-condition:v1:zh-CN": "12fc92ee6d92b99363dc5f0b3efb52e64e9177da6bc82ef664cdbfad1dc1b366",
+    "conjunction:conj-time:v1:zh-CN": "54add4d7e49395ed9c04babd1762f7cb6b93caf0ebd51cc0559a92d702fd5fb5",
+    "coordination:coordination-boundary:v2:zh-CN": "185d74451758582dfb68d3cfad3ea8d6ba750b88e33526874959057697f8eb07",
+    "information-order:information-order-essence:v3:zh-CN": "9b5a7c307f7917d4fca3798fd4249e6143da3c7de97b56ab9a88f558ac040872",
+    "interjection:interj-context-tone:v1:zh-CN": "fcaab5626c4b0c842cca9fd9ac2220d0f02657a3356493d8177b74a4b5111b0b",
+    "interjection:interj-discourse-markers:v2:zh-CN": "7c70dbbfbfbcd6efe46a6138a7c4b4890fe10ba30ebc4812c471c2c54f14e86a",
+    "interjection:interj-emotions:v1:zh-CN": "ce1ccf56acdb44bf3ee37e05f660efb5d1b76d3bbb0047f59b68969b910f8621",
+    "interjection:interj-essence:v3:zh-CN": "04ffe01d2287bf1b347ea1812f85c3d14833dd41c2fcbc81df6a8962cc200719",
+    "interjection:interj-independence-position:v2:zh-CN": "09bec75f9c796d4f9bb3eb592990a46c532e8f5437ba0111767e9d1d0ea93d21",
+    "interjection:interj-interaction:v1:zh-CN": "7be179763d3710212afab8df33e12fc119c088f361802ed5427d58899a2c1b29",
+    "interjection:interj-punctuation:v1:zh-CN": "33ee9805f6b9d9e1e38fe2bca9adc4519f0345262ffaf7dc58f03ec74e6e9f31",
+    "interjection:interj-register-politeness:v2:zh-CN": "6b84920aec8683b517241a9b3c906dac43c254f093feebd2834682b3619b3180",
+    "interjection:interj-vs-exclamative:v1:zh-CN": "e4ae77d39714fc9f795dee8c85c974fcc088b8cb49a73270307cb0cfc003c448",
+    "interjection:interj-wordclass-sounds:v1:zh-CN": "d431766fed8d0612c4e641e8bdb3b3d7404f9ea7c0ce7857ccf9801a6c577736",
+    "nonfinite-system:finite-nonfinite-boundary:v3:zh-CN": "442c2341ffb3ac455e69cd7fc4342078703f91124ef548c3964fb6fdb772fa2c",
+    "noun-clauses:clause-as-noun-slot:v3:zh-CN": "f9d3157360adce77a0cbf96ea181efba644535d83a987aaa024b5496f7fc8906",
+    "noun:collective-noun:v1:zh-CN": "4032fc0ed93a995890dca53b826655fc8b71c7948a1d15035061eea0d285c804",
+    "noun:countability:v1:zh-CN": "ebb129b9b304eff6c8ae78b0c6bd2eef5b4d82c7400da072adcdbd8da753145e",
+    "noun:irregular-plural:v1:zh-CN": "9d19694349559aa5dea2e7478bad167c13898e302add3e5608e99d1e3abd3e2c",
+    "noun:noun-boss:v1:zh-CN": "3687a8127d7d92ce05537e10edaba298440d814fe1a89390fdd8ed243fd0347d",
+    "noun:noun-functions:v1:zh-CN": "29aa764cb0ce232ba5c489dd7f575fd21292dc799f2a6dfc938dd01df418dc41",
+    "noun:noun-job:v2:zh-CN": "6e7dae962f89f17f647683b378d1232a4f0743872a6e97ca081247a49a676c15",
+    "noun:noun-modifier:v1:zh-CN": "17a4a560831f765bba16383df63a1679d340b7f4f3afe1427fae21dd9c8c0f68",
+    "noun:noun-types:v1:zh-CN": "eb20635cfe70d43cde9c8a26742120ea7442096aebd342f8398cc11aa8925f34",
+    "noun:possessive:v1:zh-CN": "8eecdc44bc29bdc249c49db8a1c8bd440fe4e50510fe2a342214d5f3a77319be",
+    "noun:regular-plural:v1:zh-CN": "fdbd741f8427690c83305a67b3571d4687a6932693bdfa60e6dab73816300eab",
+    "numeral:approximate:v1:zh-CN": "ecd13cdec09b9ea8a71c599e33d2ad07fe69442d904a93b7fbdeb5519b64a957",
+    "numeral:cardinals:v1:zh-CN": "51e15edb86d8722c90f178b7b5092c5b07897639b068720fc4f80de9d58daa08",
+    "numeral:date-time:v1:zh-CN": "30da67a9654b35cdfca916fb20746108e1f902777a5784096d7c0c901f428d18",
+    "numeral:decimals-percent:v1:zh-CN": "d23c7eb9c8e3fc585177bc49805fcabe43d0b908e79ff1aa6a3edca42a72a690",
+    "numeral:fractions:v1:zh-CN": "5a51a8431821a2fbc1035e3b1907038967832754fd9aeaf103da5c267d2cfe4b",
+    "numeral:labels-years:v1:zh-CN": "bb141f708d9304f27b10417d290f6a033f7de4964bce1163e74fef64b76391d0",
+    "numeral:large-numbers:v1:zh-CN": "3d4c76fce924f74593f969838402907ae9754eac4fb803f909f1f6b9380520ab",
+    "numeral:multiples-ratios:v1:zh-CN": "8afb8b08ef8a3b47306c2f57937847ad84031a867d2f44a4cd00565cfb7d94c9",
+    "numeral:number-agreement:v1:zh-CN": "17766501a6b3860fdcc2fab7cb3bcfa792776026ae1ec39802c7d5b22fe52cb6",
+    "numeral:numeral-essence:v3:zh-CN": "55e9be50c100dfb6208669db0b270481cff172c2f55c8d13c886b321fcea3e1c",
+    "numeral:numeral-functions:v1:zh-CN": "1fd1657a62057d0c46bf0d7ba11622a72625f975dbba56207add64ee839cd568",
+    "numeral:ordinals:v1:zh-CN": "3c735db1787323314c05cc1de6c1b3304908e4921efa0f148dd37853de702950",
+    "predicate-system:finite-boundary:v3:zh-CN": "81df4263300cfb110d358fb38b37fc19e8bbeea11c5a8aa207eece79d5bdfe33",
+    "preposition:prep-adverbial-functions:v1:zh-CN": "21ba0ae2ea2916eb5dfa2c002eb260b037ffd03339fa74afe0d84e1a40249ee7",
+    "preposition:prep-cause-purpose:v1:zh-CN": "47de4e8e1ec76e468f2234cd3657e2c71cd8bb40d5fbd9fb9866badebff5a3bb",
+    "preposition:prep-collocation-meaning:v1:zh-CN": "0018deaa8876fc9b6108f9f071511b6d0ad095f16bb16f63a7637cac5ec2ae0e",
+    "preposition:prep-collocation:v1:zh-CN": "bc840c2471220845d60ef90cb5bfa4ec7432a9074a791feadefcf3afec5a436e",
+    "preposition:prep-complements:v1:zh-CN": "f577acfc113b554421698c638a44c15ff9663fc4007239a6d7322ea561a51726",
+    "preposition:prep-complex-objects:v1:zh-CN": "930c321b145d1c9db4f642d4f967faeac35b11c578a1b8ab66df27a1f1d35cb9",
+    "preposition:prep-direction:v1:zh-CN": "03ab0b2f0594fed988cfcf2ca0e2852ad586c7ec1bbf5f1727face7d1a8c8d3a",
     "preposition:prep-essence:v1:en": "7742c616aaf5bd88bb8d2df644226a9e63e85f40321f3122944388dfa511655f",
     "preposition:prep-essence:v1:zh-CN": "18e438f2df994dbe73bc048cd2d926401ae92aaf007df233f036f773b3a14792",
     "preposition:prep-essence:v2:zh-CN": "566b67c46c72910e8b679307cc234c5b83145b223be268ada98981bbba36c18a",
@@ -176,14 +1353,97 @@
     "preposition:prep-essence:v4:zh-CN": "ad55bc1889020d139e8355348e5deff8e7cdd556ba988453db2ee72a9041ed58",
     "preposition:prep-essence:v5:zh-CN": "2e69f034eb6c4722a10844586aa4b90ce4b40c48d1b7e16f17ba4d91bbf202c8",
     "preposition:prep-essence:v6:zh-CN": "20ea797dd0980665800ff6fae80bc82924b7ae41cc7674966fd274a335fc99aa",
-    "preposition:prep-essence:v7:zh-CN": "7d20df69ff9189c44c09ac854e0c32471333fc1e6e97ab0ca5c3aab55e041683",
-    "pronoun:pronoun-essence:v1:zh-CN": "8bc789f566922acd2f8dbf1c5f812d44f9faa8d2b16949bfaae111d1c729f5c1",
-    "punctuation:punctuation-capitalization-essence:v1:zh-CN": "b3854d820e41a086cd2c45e9a7c766b101c338d7c5a70cf5c09669cce3da5bc0",
-    "relative-clauses:relative-boundary:v1:zh-CN": "6c2445e0123d6622279547630f06de62ddf09e42435338cf3419aafd1fb1742b",
-    "reported-speech:reported-speech-essence:v1:zh-CN": "ac2d979d719f033cd8091a91b68943b236ce9568d71398f55702928e71662e98",
-    "sentence-elements:element-levels:v1:zh-CN": "ad3fb5412ab939000d11ef2ddd44e7afefc51fec23bf53510b162df0ef0ecdcb",
-    "special-structures:special-structure-essence:v1:zh-CN": "de4eb65457856b4d88c204954f2f838d3a232a8b46338790e851eddc947a9231",
-    "verb:verb-jobs:v1:zh-CN": "26a5badb499b5752da4efcdc2163b0e33c14a7ccafb674b85d5d03138fc0bba4",
-    "word-formation:word-parts:v1:zh-CN": "07aeec401ca79cc6989b54aacdfba108745eedceb4f00ae5249342c19051410b"
+    "preposition:prep-essence:v8:zh-CN": "d42a7cedd825da27c862b68a59bde671614df34ee82a5a3d23823b6e47a7ad62",
+    "preposition:prep-form-contrast:v1:zh-CN": "1372c4873e95bca3150a9795a35ec6aa7e313d95c7df85bab904f4ccfd85168c",
+    "preposition:prep-forms:v2:zh-CN": "d713948962c7e5caf6a5ff14e96ee8fcd45a326f3f0c8602ba3a72697b9a2a40",
+    "preposition:prep-integration:v2:zh-CN": "435628215375c4513072712e21a37500e5aed847b4273ecade81c0a38498634e",
+    "preposition:prep-material-comparison:v1:zh-CN": "195f00be7a9b98e1b8959c8fee2bc10abe14a3b8410f790930fc173359679b43",
+    "preposition:prep-means:v1:zh-CN": "95fae3e5f92718029401d6187654e4f6f8b0df328161b692a8883b4feddd0d1f",
+    "preposition:prep-medium-language:v1:zh-CN": "f7ff3b7ba30bdbfc3fbfa489fd3391fc85726df65efbdf809214761f0cdd13e5",
+    "preposition:prep-movement-path:v1:zh-CN": "18951ea97a876dda35b96820d85d46442c308ce75faa56d8333201b0f7bd0746",
+    "preposition:prep-object:v1:zh-CN": "70e3df9b4bbad975ce4b80df159b908265b1832b5726f80e552ce3b949007e6b",
+    "preposition:prep-place:v1:zh-CN": "676ef0c8d81840c87513ffa48d926784dd6289fd1e4659c67a6d3c1894bcc443",
+    "preposition:prep-postmodifier:v1:zh-CN": "153f535278e60ce23ef87030ecbfb68412f1ba08bf867a4afe98debab5367b93",
+    "preposition:prep-predicative:v1:zh-CN": "9fe231a9845e8dd1db8ebaa2bb0045476d30cdfa734e38f0d6c84373b15b1e5d",
+    "preposition:prep-relative-place:v1:zh-CN": "8589ff6f73dab676531b5f4d8a6f9e36e585e1afe28b81a02d9dcd1f23eed215",
+    "preposition:prep-source-separation:v1:zh-CN": "ab83dcda482f1eec3ffc5252803cabc0044c8db60324bd3c6e116e833ee56749",
+    "preposition:prep-time-contrast:v1:zh-CN": "8830e9bb5e3dc37c2dd47d7fe8ba015f4cb36489c4bf481fd4311fefa0d86389",
+    "preposition:prep-time-deadline:v1:zh-CN": "0e28fa448a888d711727d85669ea05e756877f7f56ac9781f8bfac6338439dca",
+    "preposition:prep-time:v1:zh-CN": "8e4b8d7a2f5fa6c639f4b7bb754f6eb491aa33ab74a7f0d0ef58930533e1eaf8",
+    "preposition:prep-topic-content:v1:zh-CN": "7fb3d20ab05edb0428ba20a3e99694c1e3fe266eb96fd1aa4597131e2f39afee",
+    "pronoun:demonstrative:v2:zh-CN": "f3abc62003245439e8a3d8d2bc440c54ce58e869893675e0984042b2ac441df8",
+    "pronoun:indefinite-quantity:v1:zh-CN": "9aeadc03d4a95d6efd9ef852a1423dca8d2dfd4a72cf49f000a993dab1c7638e",
+    "pronoun:indefinite-some-any:v2:zh-CN": "403ff21741824046cc56a8a3726812054fe434ef8ae666a447b3e70013b2f475",
+    "pronoun:interrogative:v1:zh-CN": "0de8473ed3778e2baffe3e5ef465eb1fc8bb642e7db3e4ee88121cfca2750543",
+    "pronoun:it-reference:v1:zh-CN": "1a07a1b7830893090d9836839d9816507f07efb50ff8c3ac6fcba946a3ac37ad",
+    "pronoun:personal-pronoun:v1:zh-CN": "e495fdb83b03acdadb267de51e304e9e991d86fe3faef28cdfd048def03ffaac",
+    "pronoun:possessive-pronoun:v1:zh-CN": "0a7f1196be32aa3f38873a96eb9127c15a4b6fc094fa216a3c7314bcc64f1b4a",
+    "pronoun:pronoun-agreement:v1:zh-CN": "06453c3bb927632135fd2813ec85e86cc166e1f4086148e6701058ad15c9e553",
+    "pronoun:pronoun-ambiguity:v1:zh-CN": "2dcb6dce83599020164e4ac73d402542b8d18ba9561e33c63640a746f3d2dba0",
+    "pronoun:pronoun-boss:v1:zh-CN": "97acc5f1727bca2b10aa1cdd5e7c30d5230da24d39e0cf75664677cbb506d4d3",
+    "pronoun:pronoun-essence:v3:zh-CN": "dd8755e4f9ae62df71f1b8967a3a2038529f77120e850039024e0c49198627bf",
+    "pronoun:reciprocal:v1:zh-CN": "cba9185dfe31feac5fad89e8e362c94e9a7e701832bee51cd3491456fb77f14c",
+    "pronoun:reflexive:v1:zh-CN": "7522872ad21ce54331dd7ae923261bb64dd6fce9f4194cc8b224117ff9075682",
+    "pronoun:relative-pronoun:v1:zh-CN": "dc296dcb632800e28c16859848159cb36aabd1be7a1604217e1d52d63eded3e2",
+    "pronoun:substitute-pronoun:v1:zh-CN": "7031d18bf5f6f0d5b9f7533a89f42ef25033f8c7e680061d3666b4940a1e60dd",
+    "punctuation:punctuation-capitalization-essence:v3:zh-CN": "70b7a052b6587082a04c4844fae2e25ef6486ba780aa2d6cfc8a76fea52cc9bc",
+    "relative-clauses:relative-boundary:v3:zh-CN": "5f1ef01c120502272b36cd0e284cdb3a54d9bea3b4599834e1f4048d5a864e78",
+    "reported-speech:reported-speech-essence:v3:zh-CN": "2daf7b49f8a3c394458e7e4afb56770442a86838ab463715a228134a8a48e3de",
+    "sentence-elements:element-levels:v3:zh-CN": "a7547764c082954319724c6122659d402949f3c50455490e7005f00a78ce641e",
+    "special-structures:special-structure-essence:v3:zh-CN": "c282abcaf175faeeb9e18344b68ff8c0177f50dee1caa7a2683251ccdcdd6b5c",
+    "verb:agreement-complex:v1:zh-CN": "06233f9e1875ada71337bff1420b4ca8add8bad0906abf01aa6243437193595e",
+    "verb:aux-modal:v1:zh-CN": "1d3d93e1451209dac111d1e81b1d551093eae568b7ac853a13fdf9acaf0f5e48",
+    "verb:auxiliary-system:v1:zh-CN": "c327e21d760c6145fbe09f1c5ad2818e72aef4edcaae677643bdfc3fe228d0d0",
+    "verb:causative-perception:v1:zh-CN": "69f566683b35f4b4f60119c4e674cd48dc2be98ce7f616ff08938cb29c81bac8",
+    "verb:double-object-complement:v1:zh-CN": "9b05edba7bac21e259d80b2f2d1cbe12bf23615aed73e9621ed23c92f063ebf8",
+    "verb:finite-forms:v1:zh-CN": "271452e2e5db7acf956cb31e9a129ba45b5ac17439ca22f067fe212c1c328e05",
+    "verb:five-sentence-patterns:v1:zh-CN": "fbc030de87bf3f8fe4d2c04d58cc70269522a6aa9bfa8ded5d964f7f0d50e5ab",
+    "verb:future-forms:v1:zh-CN": "e4ed6b898a613ef34bfd424a343abae66bd272965eb43728c3bef3d97c202081",
+    "verb:future-in-clauses:v1:zh-CN": "49fbef5f79ffe1bab31d6e95c9957391d002041f836abe7017a05128ffde1c55",
+    "verb:gerund-infinitive-meaning:v1:zh-CN": "8745a7f5d4f5c369b5c04333a8d62d62b9c4cd1dd528ae6b80f4591e928a2f72",
+    "verb:gerund:v1:zh-CN": "9ed65d9b60dcb73c4cd9803c1ad3cd82d891f5d1be716490e90417054be86bde",
+    "verb:infinitive:v1:zh-CN": "687d2777e86377eec3286f365728e0ed354808928c9f03394a84fdd51fff6fb4",
+    "verb:ing-forms:v1:zh-CN": "714f41a213555e4f2c485206f2c2de84cc19f61933755767335f936eafdea106",
+    "verb:linking:v1:zh-CN": "eb160084d521968fd62a96a1ebd41667fd4107996eceee1d31ba7606d31986b4",
+    "verb:modal-meanings:v1:zh-CN": "d268022d050cef9310ac43804cfb733683ff74c597c5b45cc39e1a8fee74f218",
+    "verb:nonfinite-advanced:v1:zh-CN": "51aeca2d6410dd23998e6d536d4b8c0b68d0c8e1b557f710f5839f1b6a8b2b6c",
+    "verb:nonfinite:v1:zh-CN": "b69222d4feb1ebb31802d094905b3aff3633573f5d76cd56bc388c4232dd23ae",
+    "verb:participles:v1:zh-CN": "1e466a969ff2a5ea51eee1467fa027df18d2cdcfb77192311fe0e9a49e1511ff",
+    "verb:passive-tenses:v1:zh-CN": "be4c53f64da457eaf80c8acd834d6a05f6bd596dadefd1538594567cd3233e2a",
+    "verb:past-forms:v1:zh-CN": "e2620f1f24cd92e5f5515bd723d3a8f5f1fc04349ab9870e79534d044ac74056",
+    "verb:past-progressive:v1:zh-CN": "855d957f1573c49e662a319201135ff570563814583fb12897833c8064196124",
+    "verb:past-simple:v1:zh-CN": "6da25af64053dd413c5f3d72a358a1cfc4497bb9c4173ffca2a996db526f0a30",
+    "verb:past-time-sequence:v1:zh-CN": "61906a53e5bf6cb33b4d86304ea42419f8321f89c2ade0361c0591b288bea9c4",
+    "verb:perfect-vs-past:v1:zh-CN": "f17abb9d092742683931094ef0a8948000d5e12b76556b4c59e9e2cc57d8215c",
+    "verb:phrasal:v1:zh-CN": "4d0bd4e60108774278d99f3b9504e456ef5b8068839a324330a0a823cfd6db85",
+    "verb:present-progressive:v1:zh-CN": "cd3a6e3663c5f0cea581004d7050d175d6240070b61156cfdb3947625065c686",
+    "verb:present-simple:v1:zh-CN": "dc8d2220106c26163ee081c9898da2a4716f1cc4f850c9f39a27ceac8e722217",
+    "verb:special-verb-patterns:v1:zh-CN": "4b12f993fd9c0b63def26e3d71a1678108639460da21cf2058a79736a4c8fd03",
+    "verb:subject-verb-agreement:v1:zh-CN": "0b04c293b56ac201ef37daecc00e5ce29880e8871dbfa31cb741dfd9faca75ec",
+    "verb:tense-aspect:v1:zh-CN": "cea450bb97d778d26572aa5f1cfcf9c88c73aeeb9eb8cac01c5425af53187e13",
+    "verb:third-person-form:v1:zh-CN": "04d71eaa639dda1f7ccb2f0e891a91183a888972464c0d5d71006a22e9414f5f",
+    "verb:transitivity:v1:zh-CN": "926f650fb6c32778993e7cf62d3c6cc82a7e9c84459aa1de83ed7d2268c6637c",
+    "verb:verb-complements:v1:zh-CN": "93c7ce1719934acfe07ab7330430389bb514502618dd626342a8c4df1d3170d0",
+    "verb:verb-five-forms:v1:zh-CN": "68e30fc0112dbca359b542ae7ae9f2781b1c97e367bdc41583c3d9ec78791a34",
+    "verb:verb-jobs:v3:zh-CN": "6bf6aa557acc1a3f8d3096079a081fceda243ad46a3edd2acf097b64ef464109",
+    "verb:voice:v1:zh-CN": "a98f08bc3c8a80824fd139763954c6160bf1cd4f1fe27c1c80a3727d86c83d0a",
+    "word-formation:abstract-noun-suffixes:v1:zh-CN": "5d0afcb97de49b5bdc52830262249994d2eab17a94b3c5ad05b847e750361526",
+    "word-formation:adjective-suffixes:v1:zh-CN": "85d1ed5b3d13b94999974cbe6348cd71a4636e624df0d2bf7d2131813afde160",
+    "word-formation:adverb-suffix:v1:zh-CN": "bd0c85d02f1d07191ce534af0648c4f6a0422bb131c73d4657d15a02f2a9575f",
+    "word-formation:compounds:v1:zh-CN": "598640c7be66593845ffed31e4a8c293766cbc89b6f0d1b5e47912a7bcc87424",
+    "word-formation:conversion:v1:zh-CN": "d3b69a908aede13ddfb090722f41ca1b833b0f6162c7a6a7a74083374d169e5d",
+    "word-formation:derivation-inflection:v1:zh-CN": "4a25861fe042a763f377e64c8662708729dc3af975add89925fdacf699fa5ce0",
+    "word-formation:layered-derivation:v1:zh-CN": "cba56267aa384eedd77cc3cafe6cbefeec30cb523e891a76c877a9b21c547b1f",
+    "word-formation:meaning-prefixes:v1:zh-CN": "69276bde72c91a074f0ecf50ce65bc392131e89faa176c11b4d9026782a8525d",
+    "word-formation:negative-prefixes:v1:zh-CN": "fa4212c754cc3db9703d1d89bdf5fa4915895cf7b708363e145094378c067825",
+    "word-formation:participial-adjectives:v1:zh-CN": "2da3b806a4d5acaf2dfc4dc2432678b4a565ecc7f49874fad5dfac0745f3bb90",
+    "word-formation:person-noun-suffixes:v1:zh-CN": "64dd7a1918ccda378f2031d609e780939f20cd7a2d17b20ee4367299d59127be",
+    "word-formation:prefix-assimilation:v1:zh-CN": "a2b6cfedeab1888633d471b7e0b60648af846bd621811e7950232c4753d4f560",
+    "word-formation:suffix-sound-stress:v1:zh-CN": "1e0c3d7d70e9510b82da6f29b5fa3decd5887a78fd19a39976c5d666853998ed",
+    "word-formation:suffix-spelling:v1:zh-CN": "46731db522c870381d8f911a5a28b1a7914db483c1e4d28a1ae4ab03e619a458",
+    "word-formation:verb-suffixes:v1:zh-CN": "f640577c2977f71810af5418b93bd38563420547452c878f22edcca2ff8b48d0",
+    "word-formation:word-class-slots:v1:zh-CN": "be8e979b9ed3ace212f6637bd2344147b90c4b2e97c275957ec80dc7c42e794b",
+    "word-formation:word-inference:v2:zh-CN": "c73b1f40e96950b1e49ac98db155d21d6b74926fc81555487d56dc984440ab27",
+    "word-formation:word-parts:v2:zh-CN": "bb05d4b266511f3a59d5f60ce652fb2233a89c6a896ec1aa85bf63afe292592b"
   }
 }

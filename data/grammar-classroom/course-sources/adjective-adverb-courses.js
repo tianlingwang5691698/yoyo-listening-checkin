@@ -99,6 +99,123 @@ function groupCourse(english, lessons, zhTitle, enTitle, coreCount, sectionDefs)
   };
 }
 
+const EXTRA_ADJECTIVE_NARRATIONS = {
+  'adjective-jobs': {
+    id: 'adjective:adjective-jobs', version: 'v1',
+    text: `同一个形容词，换个位置，可能就在句子里换一份工作。先看：<#0.4#>The kind teacher helped us。<#0.8#>真正发生的事是 teacher helped us。kind 紧贴在 teacher 前面，先告诉我们是哪一位老师。它在名词短语里修饰 teacher，这份工作叫定语。
+再看：<#0.4#>The sky looks blue。<#0.8#>blue 仍然是在说明东西“什么样”，但它没有放在 sky 前。looks 在这里不是“看某物”，而是“看起来”，把 sky 和 blue 连起来。blue 说明天空呈现的状态，这份工作叫表语。<#0.7#>
+The news made her happy 里，先抓主干“消息使她……”。her 是受到影响的人，happy 补出她后来变成什么状态。her 和 happy 形成“她处于开心状态”的关系，所以 happy 说明的是宾语 her，叫宾语补足语。它不是第二个宾语，也不修饰 made。
+判断时先圈出形容词，再问“谁或什么是这样的”。如果它贴着名词，通常作定语；通过 be、look、feel 等系动词连回主语，作表语；跟在宾语后说明宾语的状态或结果，作宾语补足语。`,
+    lengthText: '450 字 · 约 2 分钟'
+  },
+  'adjective-position': {
+    id: 'adjective:adjective-position', version: 'v1',
+    text: `你想买一条漂亮的裙子，英语说：<#0.4#>She bought a beautiful dress。<#0.8#>beautiful 只用一个词说明 dress，通常直接放在名词前。这是形容词作定语最常见的位置，先说特征，再说东西。
+可是遇到 something，顺序要反过来。<#0.4#>I need something useful。<#0.8#>英语先说“某样东西”something，再补 useful，意思是“某个有用的东西”。something、anything、nothing 这类不定代词已经把“某物”打包成一个整体，修饰它们的形容词要放在后面。<#0.7#>
+再看 The students present were quiet。present 放在 students 后，表示“在场的学生”。这个位置既说明它修饰 students，也帮助锁定“在场的”这一词义。
+判断位置时，先找形容词说明的中心词。普通名词前的单个形容词，优先放前面；中心词是 something、anything、nothing 等不定代词，形容词放后面；遇到 present、concerned 等会随位置变义的词，要连同整个名词短语和语境一起判断。`,
+    lengthText: '460 字 · 约 2 分钟'
+  },
+  'adjective-restrictions': {
+    id: 'adjective:adjective-restrictions', version: 'v1',
+    text: `不是每个形容词都能在名词前后自由搬家。比如会议超支了，你说：<#0.4#>The main reason is cost。<#0.8#>main 表示“最主要的”，自然地贴在 reason 前。它在这句里限定原因的地位，而不是通过系动词说明一种状态。像 main、mere、former 这类词，通常只在名词前作定语。
+再看熟睡的孩子：<#0.4#>The child is asleep。<#0.8#>asleep 通过 is 说明孩子的状态，通常作表语。它和 afraid、alive 等词一样，常用于系动词后说明主语，而不自由搬到普通名词前。<#0.7#>
+还有一种更容易误判。The students concerned looked concerned。第一个 concerned 放在 students 后，表示“有关的学生”；第二个放在 looked 后，表示这些学生“看起来担心”。拼写完全一样，位置和说明关系不同，意思就不同。
+遇到这类词，别先套“形容词都放名词前”。先查它在句中说明哪个对象；再看它是在名词前限定身份，还是在系动词后说明状态；最后留意位置是否会改变词义。只作定语或只作表语的限制，需要连同具体词义一起记。`,
+    lengthText: '455 字 · 约 2 分钟'
+  },
+  'adjective-complements': {
+    id: 'adjective:adjective-complements', version: 'v1',
+    text: `有人说 She is afraid，你知道她害怕，却还会问“怕什么”。补上 of dogs，意思才具体：<#0.4#>She is afraid of dogs。<#0.8#>afraid 先说明她的状态，of dogs 再交代这个害怕指向的对象。这里 of dogs 是跟在形容词后的介词短语。
+再看出发前的场景：<#0.4#>We are ready to leave。<#0.8#>ready 表示“准备好了”，to leave 补出准备做的动作。它不是另一个谓语，而是不定式补充形容词的内容。<#0.7#>
+I am sure that he is right 中，sure 表示确信，that he is right 把“确信的具体内容”完整说出来，所以用从句。glad、aware 等词也能按意义接相应内容。
+这些后接部分统称形容词的补足成分，但形式不是随便选的。判断时先说出形容词留下的问题：是“对谁、关于什么”，常看介词短语；是“准备或可能做什么”，常看不定式；是一个完整判断或事实，就看从句。最后还要核对形容词通常选择哪个介词，不能只按中文逐字配。`,
+    lengthText: '410 字 · 约 2 分钟'
+  },
+  'adjective-degree': {
+    id: 'adjective:adjective-degree', version: 'v1',
+    text: `冬天走进一个房间，冷可以有一点冷、很冷等不同强弱。页面先说：<#0.4#>The room is very cold。<#0.8#>very 把 cold 的程度明显提高。cold 能放在一条连续刻度上，这种性质叫可分级。
+再看答案：<#0.4#>The answer is absolutely correct。<#0.8#>correct 在这里把答案放到“正确”这个明确状态，absolutely 强调完全达到，而不是只把普通程度往上推。表示终点或绝对状态的形容词，常和 absolutely、completely 这一类强调词配合。<#0.7#>
+第三句是 This task is slightly difficult。difficult 也有程度差别，slightly 把它压到较低位置，意思是任务只有一点难。它和第一句正好展示同一条程度刻度可以向高处或低处调整。
+判断时先问形容词表达的性质能不能自然分成一点、很、更加。能，就按可分级处理，再根据页面语境选择 very 或 slightly 等程度词；如果词义本身像到达一个完整终点，就优先考虑 absolutely、completely 一类表达。最后检查程度词和形容词想表达的刻度是否匹配。`,
+    lengthText: '462 字 · 约 2 分钟'
+  },
+  'adjective-comparative-form': {
+    id: 'adjective:adjective-comparative-form', version: 'v1',
+    text: `两条路摆在眼前，要说这条更长，long 要先变形。<#0.4#>This road is longer than that one。<#0.8#>long 是普通短词，直接加 er 得到 longer；需要最高级时，同类短词通常加 est。
+第二句 Amy is happier today 展示词尾 y 的变化。happy 是辅音字母加 y 结尾，要把 y 变成 i，再加 er。<#0.7#>
+第三句 This is the most useful tool here 中，useful 较长，不硬接词尾，而是在前面用 most 构成最高级。<#0.7#>第四句 My bag is bigger than yours 里，big 是重读的“辅音、元音、辅音”短词，要先双写末字母 g，再加 er。
+最后看 Today is better than yesterday。better 不能从 good 按普通拼写推出，它属于要单独记住的不规则比较级。
+操作时按页面顺序核对五类：普通短词直接加 er 或 est；辅音加 y 先变 i；较长词用 more 或 most；重读短词必要时双写末字母；最后单独检查 good、bad、many、much 等不规则形式。`,
+    lengthText: '434 字 · 约 2 分钟'
+  },
+  'adjective-comparison': {
+    id: 'adjective:adjective-comparison', version: 'v1',
+    text: `体育课上，Leo 和 Max 站在一起量身高。Leo 更高，可以说：<#0.4#>Leo is taller than Max。<#0.8#>taller 表示程度更高，than 把 Max 放成比较基准。两边比的是同一种性质，也就是身高。
+如果两个箱子一样重，就说：<#0.4#>This box is as heavy as that one。<#0.8#>两个 as 像一副括号，把原级 heavy 放在中间，表示程度相同。若蓝色路线危险程度较低，则说 The blue route is less dangerous than the red route，用 less 加原级表示“没那么危险”。<#0.7#>
+比较还要防止对象错位。My bag is heavier than yours 中，yours 代表对方的包，让 bag 始终和 bag 比。替代词虽然省掉重复名词，实际指向仍必须与前一方同类。
+判断时先圈出比较性质；再找比较的两方，确认它们是同类对象。程度更高用比较级加 than，相同用 as 加原级加 as，程度更低用 less 加原级加 than。最后检查代词或替代词实际代表什么，不能只看句型外壳。`,
+    lengthText: '423 字 · 约 2 分钟'
+  },
+  'comparative-modifiers': {
+    id: 'adjective:comparative-modifiers', version: 'v1',
+    text: `只说“这个房间更大”，听者还不知道大多少。差很多时可以说：<#0.4#>This room is much larger than mine。<#0.8#>much 放在 larger 前，把差距拉大。far、a lot 也能做类似工作，但不能说 very larger，因为 very 通常修饰原级，不直接修饰比较级。
+差一点点就说：<#0.4#>This route is a little shorter。<#0.8#>a little、a bit、slightly 都能把差距缩小。若手里有准确数据，Tom is five centimetres taller than Ben 直接把 five centimetres 放在 taller 前，告诉我们具体高五厘米。<#0.7#>
+比较也能表现持续变化。The days are getting longer and longer 不是比较两个固定对象，而是说白天随着时间越来越长。两个 longer 通过 and 连起来，把变化过程连续推进。
+操作时先确认已经有比较级；再问差距是大、小、精确数值，还是持续变化。大用 much、far、a lot，小用 a little、a bit、slightly，精确差值直接放比较级前，渐变用比较级加 and 加比较级。最后删掉误放在比较级前的 very。`,
+    lengthText: '487 字 · 约 2 分钟'
+  },
+  'adjective-superlative': {
+    id: 'adjective:adjective-superlative', version: 'v1',
+    text: `两个人比高，只能说谁更高；全班一起比，才会出现“最高”。比如：<#0.4#>Mia is the tallest in her class。<#0.8#>tallest 把 Mia 放到全班身高的顶端，in her class 画出比较范围。三者或以上选程度最高的一项，通常用形容词最高级。
+再看：<#0.4#>This is the most exciting game of the three。<#0.8#>exciting 较长，用 most exciting；of the three 明确是三场比赛中比较。常见区别是，in 后多接地点或群体，of 后多接明确的一组对象。最高级前通常有 the，因为说的是这个范围内可以认出的最高项。<#0.7#>
+The Yellow River is the second longest river in China 不是“最长”，而是“第二长”。序数词 second 放在最高级前，给排名加位置。
+判断时先数比较对象：只有两者不用最高级，三者以上才进入最高级；再写 the 加 est 形式或 most 加原级；接着用 in 或 of 交代范围；若表达第几高、第几大，就把序数词放在最高级前。`,
+    lengthText: '433 字 · 约 2 分钟'
+  },
+  'comparison-boundaries': {
+    id: 'adjective:comparison-boundaries', version: 'v2',
+    text: `桌上只有两支笔，想选较长的那支，不能因为“选最高”就用最高级。英语说：<#0.4#>Leo is the taller of the two。<#0.8#>范围只有两个，所以用比较级 taller；the 表示两者中可以确定的那一个。
+范围里还要排除自己。<#0.4#>Shanghai is larger than any other city in China。<#0.8#>Shanghai 本身也是中国城市，other 把它从比较对象中拿出去。若少了 other，就像在说上海比包括上海自己的每座城市都大，逻辑冲突。<#0.7#>
+This rope is twice as long as that one 用 twice 放在 as long as 前，表示长度是两倍。最高级也能换一种说法：No other runner is faster than Mia，意思是没有别的选手比 Mia 更快，也就是 Mia 最快。
+判断特殊比较时先画范围：两个对象用带定冠词的比较级，并明确两者范围；同一群体内一对多比较，要用 other 排除自身；说倍数时把倍数放在同级结构前；看到 no other 加比较级，尝试还原成最高级，核对意思是否相同。`,
+    lengthText: '439 字 · 约 2 分钟'
+  },
+  'participle-adjectives': {
+    id: 'adjective:participle-adjectives', version: 'v1',
+    text: `一节课很有趣，学生也觉得有趣，中文都能说“有趣”，英语却要分两边。<#0.4#>The lesson is interesting。<#0.8#>lesson 是带来感受的事物，interesting 表示它“让人产生兴趣”。
+再看学生：<#0.4#>The students are interested in the lesson。<#0.8#>students 是感受到兴趣的人，所以用 interested，表示“感到有兴趣”。常见的 ing 形容词写引发感受的一方，ed 形容词写接收到感受的一方。<#0.7#>
+但不能背成“物用 ing，人用 ed”。The frightening noise made the child frightened 里，noise 是引起害怕的一方，用 frightening；child 是感到害怕的一方，用 frightened。同一句已经说明，真正标准是引发感受还是承受感受，而不是对象属于人还是物。
+选择时先找感受是什么；再问被说明的对象是在制造这种感受，还是在承受这种感受。制造、引起的一方通常用 ing，感受到的一方通常用 ed；最后把形容词放回句子，确认它真正说明的是谁，而不是按人和物机械分配。`,
+    lengthText: '458 字 · 约 2 分钟'
+  },
+  'compound-adjectives': {
+    id: 'adjective:compound-adjectives', version: 'v1',
+    text: `“一个十岁的儿子”里，ten、year、old 三个词要一起说明 son。英语写成：<#0.4#>She has a ten-year-old son。<#0.8#>连字符像订书钉，把三个词装成一块前置形容词，让读者知道它们共同修饰后面的 son。ten-year-old 已经作为一个整体特征出现，内部的单位 year 保持单数。
+第二句是：<#0.4#>This is a well-known story。<#0.8#>well 和 known 共同表达“广为人知”，连字符让读者在看到 story 前，就把两词作为同一个特征处理。<#0.7#>
+第三句 We took a two-hour walk 中，two-hour 整体说明 walk 持续多久，hour 同样保持单数。这里数词和单位不在独立报告时长，而是在名词前共同做定语。
+判断时先看名词前是不是有两三个词共同回答“什么样”；如果它们必须成组理解，就用连字符连接。遇到“数词加单位”作前置定语，单位名词保持单数；把这组词移到表语位置后，再按普通数量结构处理复数。最后检查连字符只连接共同修饰名词的那一组。`,
+    lengthText: '420 字 · 约 2 分钟'
+  },
+  'adjective-order': {
+    id: 'adjective:adjective-order', version: 'v1',
+    text: `一件东西同时有大小、年龄、颜色等特征时，形容词不能完全随手排。先看：<#0.4#>She bought a lovely small old house。<#0.8#>lovely 是主观评价，small 说大小，old 说年龄。评价先出现，越客观、越贴近房子本身的特征越靠近 house。
+第二句 He wears a new black Italian coat 按新旧、颜色、来源排列。<#0.7#>第三句 We sat at a beautiful round wooden table 中，beautiful 是评价，round 是形状，wooden 是材料；材料最靠近中心名词 table。<#0.7#>
+最后看 She chose a lovely old wooden dining table。lovely 说评价，old 说年龄，wooden 说材料，dining 说用途。用途和材料都直接帮助界定桌子的类别，所以贴近 table。<#0.7#>
+常见路线是：限定、评价、大小、形状、年龄、颜色、来源、材料、用途，最后才到名词。这是帮助自然表达的顺序，不是让你每次把所有格子填满。
+操作时先圈出中心名词；再给每个修饰词贴上评价、大小、年龄、颜色、来源、材料或用途标签；按从主观到客观、从一般特征到贴近名词的类别排列。若拿不准，就把材料和用途放近名词，评价词放远一些，再用自然语感或词典例句校验。`,
+    lengthText: '524 字 · 约 2 分钟'
+  },
+  'adjective-nominal': {
+    id: 'adjective:adjective-nominal', version: 'v1',
+    text: `形容词平时说明名词，但有些结构会让它承担更大的任务。比如：<#0.4#>The rich should help the poor。<#0.8#>rich 和 poor 后面没有写 people，the rich 整体表示“富人这一类”，the poor 表示“穷人这一类”。它们通常按复数群体理解，所以谓语用 should help，而不是把 rich 当一个人的名字。
+形容词还能接在尺寸后。<#0.4#>The wall is two metres high。<#0.8#>two metres 给出具体数值，high 说明测量的是高度。数量、单位和 high 合作，先交代数值，再交代测量维度。<#0.7#>
+再看联动变化：The more careful you are, the fewer mistakes you make。前半句说“越仔细”，后半句说“错误越少”。两个 the 加比较级不是最高级，而是把两种变化绑在一起。
+判断时看到 the 加形容词，先问它是否代表一类人，并按复数理解；看到数量、单位和形容词，确认是在表达高、长、宽等尺寸；看到两个 the 加比较级，分别找出两条变化，再判断它们是否构成“越……越……”的关系。`,
+    lengthText: '445 字 · 约 2 分钟'
+  }
+};
+
 function buildAdjectiveCourse(english) {
   const e = (parts, mode = '', zh = '', en = '') => example(english, parts, mode, zh, en);
   const q = (...args) => question(english, ...args);
@@ -386,18 +503,143 @@ function buildAdjectiveCourse(english) {
       item.exampleNotes[index] = { visible: true, mode: 'structure', title: pick(english, '例句说明', 'Example focus'), body: pick(english, pair[0], pair[1]), detail: '' };
     });
   });
+  bundle.course.forEach((item) => {
+    if (EXTRA_ADJECTIVE_NARRATIONS[item.id]) item.narration = EXTRA_ADJECTIVE_NARRATIONS[item.id];
+  });
   bundle.course[0].narration = {
     id: 'adjective:adjective-essence',
-    version: 'v1',
-    text: `形容词的本质，是给人或事物添加性质、状态或类别特征。判断时不要只看单词位置，要先问：它在说明谁，说明了什么。<#0.6#>
-The red ball rolled away。<#0.7#>先看句子主干，ball 是主语中心词，rolled away 是谓语。red 放在 ball 前面，给球增加“红色”特征，帮助我们确定是哪一种球。这里 red 是形容词，在名词短语中作定语。<#0.8#>
-再看 The ball is red。<#0.7#>主干已经是完整的主系表结构。red 通过系动词 is 说明主语 ball 的性质，所以作表语。位置变了，说明对象没有变，仍然是 ball。<#0.8#>
-They painted the ball red。<#0.7#>可以先想：red 说明的是 They，还是 the ball？它表示球被刷成红色，补充宾语形成的结果状态，所以作宾语补足语。<#0.8#>
-三个句子里的 red 都给 ball 添加特征，但进入句子的方式不同。判断形容词分三步：找到形容词；确定它说明哪个人或事物；再看它是放在名词旁作定语，通过系动词作表语，还是补充宾语的状态。核心不是背位置，而是找清形容词的说明对象。`,
-    lengthText: '431 字 · 约 2 分钟'
+    version: 'v2',
+    text: `桌上有好几个球，只说 ball，对方不知道你要哪个；加上 red，就能锁定红色的那个。red 给 ball 添了一条特征。像 red、tall、happy 这样，专门告诉我们“什么样”的词，叫形容词。找形容词时，第一件事不是看它放哪儿，而是找它在说明谁。<#0.8#>
+先听。<#0.4#>The red ball rolled away。<#0.8#>事情的主干是“球滚走了”。red 贴在 ball 前面，告诉我们是哪一种球。形容词这样放在名词旁边做说明，语法上叫作定语。<#0.8#>
+再听。<#0.4#>The ball is red。<#0.8#>red 还是在说明 ball，只是它没有贴在名词前，而是通过 is 连回 ball，告诉我们球处于什么样的状态。这份工作叫表语。位置变了，被说明的对象没有变。<#0.8#>
+再想一句。<#0.4#>They painted the ball red。<#0.8#>是谁变红了？不是 They，而是 the ball。red 补上刷完以后球变成什么样，这份工作叫宾语补足语。<#0.7#>
+三个 red 都在说明同一个对象，却用三种方式进入句子。判断时只做三步：先找表示“什么样”的词；再顺着意思问“谁或什么是这样的”；最后看它是贴在名词旁、通过系动词连接，还是补充动作后的结果。先找说明对象，再判断术语，最不容易错。`,
+    lengthText: '481 字 · 约 2 分钟'
   };
   return bundle;
 }
+
+const EXTRA_ADVERB_NARRATIONS = {
+  'adverb-jobs': {
+    id: 'adverb:adverb-jobs', version: 'v1',
+    text: `同样是副词，作用目标可能完全不同。先听：<#0.4#>Mia answered politely。<#0.8#>主干 Mia answered 已经说明她回答了，politely 只补充“怎样回答”，直接修饰动词 answered。
+再听：<#0.4#>The water is very cold。<#0.8#>very 不说明 water，也不说明 is，它只把 cold 的程度提高，所以修饰形容词。<#0.7#>
+Fortunately, everyone arrived safely 里有两个副词。safely 只说明 arrived 的方式；Fortunately 表示说话人觉得“幸好大家安全到达”，评价的是整件事。把 Fortunately 去掉，事件仍在，只是说话人的态度没了。He finished the task remarkably quickly 中，quickly 说明完成得怎样，remarkably 再加强 quickly，形成“非常快地”。一个副词也能修饰另一个副词。
+判断副词的工作，先别只找 ly。给副词画一根箭头：指向动作，就是修饰动词；指向性质词，就是修饰形容词；指向另一个方式或程度词，就是修饰副词；若它在评价整句话的可能性、幸运与否或说话态度，就按句子副词处理。`,
+    lengthText: '482 字 · 约 2 分钟'
+  },
+  'adverbial-boundary': {
+    id: 'adverb:adverbial-boundary', version: 'v1',
+    text: `老师问“softly 是副词还是状语”，答案可能是：两个说法都对，但回答的不是同一个问题。<#0.4#>She spoke softly。<#0.8#>softly 这个单词属于副词；它在句中回答“怎样说话”，承担的工作叫方式状语。副词是词的类别，状语是句子里的职位。
+这个职位不只给副词坐。<#0.4#>She spoke in a soft voice。<#0.8#>in a soft voice 是介词短语，不是一个副词，但整块仍回答“怎样说话”，所以也作方式状语。<#0.7#>
+She spoke when the room became quiet 中，when the room became quiet 里面有自己的主语和谓语，是一个从句；它整体回答“什么时候说话”，作时间状语。名词短语、非谓语短语也可能承担状语工作。
+区分时分两层检查：先看形式，一个词是什么词类，一组词是介词短语、名词短语还是从句；再看功能，它对主句补充时间、地点、方式、原因还是条件。看到副词可以判断它常作状语，但看到状语绝不能反推它一定是副词。`,
+    lengthText: '406 字 · 约 2 分钟'
+  },
+  'adverb-types': {
+    id: 'adverb:adverb-types', version: 'v1',
+    text: `一句话里可能同时塞进好几种背景。<#0.4#>We will meet outside tomorrow。<#0.8#>outside 回答“在哪里见”，是地点副词；tomorrow 回答“什么时候见”，是时间副词。分类不是看它们站在句尾，而是看各自补了什么信息。
+再听：<#0.4#>She often reads quietly here。<#0.8#>often 说明阅读发生得多频繁，是频率副词；quietly 回答“怎样读”，是方式副词；here 指出地点。三个词都和 reads 有关，却各自回答不同问题。<#0.7#>
+The bag is too heavy 中，too 不说明时间地点，而是把 heavy 推到“过于重”的程度，叫程度副词。Fortunately, the rain stopped soon 里，soon 给 stopped 加时间；Fortunately 则评价“雨停了”整件事，表达说话人的态度。
+分类时先找副词的作用对象，再逐个提问：何时是时间，何地是地点，怎样是方式，多常是频率，到什么程度是程度；若它表达对整件事的幸运、意外或把握，就归入评注性句子副词。一个句子可以同时出现多类，不必只选一个。`,
+    lengthText: '450 字 · 约 2 分钟'
+  },
+  'adverb-formation': {
+    id: 'adverb:adverb-formation', version: 'v1',
+    text: `想把 quick 变成“快速地”，最常见的办法是加 ly：<#0.4#>quick → quickly。<#0.8#>但不能只在每个形容词后面随手粘 ly，拼写和词义都要检查。
+第二组是 happy → happily。happy 结尾是辅音字母加 y，变副词时先把 y 改成 i，再加 ly。<#0.7#>第三组 true → truly，要去掉结尾的 e，再加 ly。这些变化说明构词还要处理原词拼写。<#0.7#>
+最后看 He runs fast。fast 没有 ly，却直接修饰 runs，说明动作怎样发生。不是所有副词都以 ly 结尾，也不是所有形容词都必须加 ly 才能承担副词功能。
+构词时先确认句中真的需要副词；普通方式词可尝试加 ly；遇到辅音加 y、true、full 等词先处理拼写；最后检查这个词是否本来就能同形作副词，以及 ly 形式有没有产生新意思。不能用“有 ly 就是副词、没 ly 就不是”来判断。`,
+    lengthText: '347 字 · 约 2 分钟'
+  },
+  'adverb-position': {
+    id: 'adverb:adverb-position', version: 'v1',
+    text: `你想说 Lily 通常走路上学，usually 放哪儿？英语说：<#0.4#>Lily usually walks to school。<#0.8#>walks 是实义动词，频率副词通常站在它前面。
+换成 be，位置就换了：<#0.4#>Lily is always kind。<#0.8#>always 放在 is 后。第三句 Yesterday, we finished the work quickly 把时间提到句首作背景，让方式副词 quickly 放在动词和宾语之后。<#0.7#>
+最后看 She has never visited London。句中有助动词 has，never 放在第一个助动词后、主要动词 visited 前。可以把频率副词想成靠近谓语核心的中间位置，但具体落点要看前面是 be 还是助动词。
+操作时先给副词分类。频率词遇到实义动词放前，遇到 be 放后，有助动词放第一个助动词后；方式词通常放动词和宾语之后；时间词可放句首或句尾，句首背景后常加逗号。最后再按想强调的信息作小幅调整。`,
+    lengthText: '385 字 · 约 2 分钟'
+  },
+  'multiple-adverb-order': {
+    id: 'adverb:multiple-adverb-order', version: 'v1',
+    text: `一句话同时有“唱得很美、在舞台上、昨晚”，怎样排才不挤？中性说法是：<#0.4#>She sang beautifully on stage last night。<#0.8#>先交代方式 beautifully，再说地点 on stage，最后放时间 last night。这是多个句尾状语常见的“方式、地点、时间”顺序。
+顺序不是铁板一块。<#0.4#>Yesterday, we worked quietly in the library。<#0.8#>Yesterday 被提到句首，先搭起昨天这个背景，后面再说怎样工作、在哪里工作。前置的时间或地点状语常与主句用逗号分开。<#0.7#>
+She carefully opened the box 把 carefully 放在动词前，让“动作很小心”更早进入听者注意。这个页面位置强调的是方式，而前两句主要展示多个状语在句首和句尾怎样排布。
+排列时先把每个状语标成方式、地点或时间；都放句尾时先试方式、地点、时间；若某个信息要承接上文或搭背景，就把它前置并加逗号；最后朗读检查，避免把方式副词硬塞到动词与宾语之间。`,
+    lengthText: '423 字 · 约 2 分钟'
+  },
+  'adjective-or-adverb': {
+    id: 'adverb:adjective-or-adverb', version: 'v1',
+    text: `闻到花香时，英语说：<#0.4#>The flowers smell sweet。<#0.8#>这里 smell 是“闻起来”，像一座桥把 flowers 和 sweet 连起来。sweet 说明花本身的性质，所以在这里是形容词。
+如果孩子主动去闻花，句子变成：<#0.4#>The child smelled the flower carefully。<#0.8#>smelled 现在是行为动作，carefully 回答孩子“怎样闻”，所以用副词。判断形式前，要先分清动词是在连接主语状态，还是在表示真实动作。<#0.7#>
+词尾也会骗人。The train moves fast 里，fast 没有 ly，却直接说明 moves 的方式。Our new neighbour is friendly 中，friendly 虽然以 ly 结尾，却通过 is 说明 neighbour，所以是形容词。
+选择时先问被说明的是人或物的状态，还是动作发生的方式。系动词后说明主语，用形容词；行为动词旁说明动作，通常用副词。接着检查页面中的 fast 和 friendly 这类形式，不能只靠 ly 词尾下结论。`,
+    lengthText: '422 字 · 约 2 分钟'
+  },
+  'adverb-comparison': {
+    id: 'adverb:adverb-comparison', version: 'v1',
+    text: `比赛时不只比较谁更高，还会比较谁跑得更快。<#0.4#>Amy runs faster than Sue。<#0.8#>faster 说明动作 runs 的速度更高。fast 是短副词，比较级直接加 er，最高级加 est。
+若副词以 ly 结尾，通常不把词拉得更长。<#0.4#>Ben answered more carefully than I did。<#0.8#>carefully 前加 more 表示更仔细；三者以上可用 most carefully。Of all the runners, Leo ran the fastest 画出多人范围，用 fastest 选出速度最高者。<#0.7#>
+还有不规则形式。Nora performed better than before 中，better 是 well 的比较级；well、better、best 要整体记。badly 则变 worse、worst。
+操作时先确认比较的是动作方式或程度，而不是人或物的性质；再看副词形式。短副词常加 er 或 est，多数 ly 副词用 more 或 most；最后检查 well、badly 等不规则变化，并用 than 或范围短语说清比较基准。`,
+    lengthText: '434 字 · 约 2 分钟'
+  },
+  'degree-patterns': {
+    id: 'adverb:degree-patterns', version: 'v2',
+    text: `同样是“很暖”，几个程度词站的位置不一样。宝宝待在房间里刚好合适，可以说：<#0.4#>The room is warm enough for the baby。<#0.8#>enough 放在形容词 warm 后，表示程度已经足够。
+箱子重到我抬不动，就说：<#0.4#>The box is too heavy for me to lift。<#0.8#>too 放在 heavy 前，表示程度超过合适范围，后面的 for me to lift 说明对谁、做什么来说太重。<#0.7#>
+第三句 It was such a difficult question that nobody answered it 中，such 抓住整个名词短语 a difficult question。第四句 The question was so difficult that nobody answered it 里，so 直接修饰形容词 difficult。两句结果相同，程度词后面的结构不同。
+选择时先看程度词后面的中心。修饰形容词或副词，enough 放后面，too 和 so 放前面；修饰带冠词和名词的整块，用 such。若后面还有 that 从句，再判断前面突出的是性质程度，还是包含冠词、形容词和名词的完整名词短语。`,
+    lengthText: '461 字 · 约 2 分钟'
+  },
+  'adverb-scope': {
+    id: 'adverb:adverb-scope', version: 'v1',
+    text: `一句话只挪动 only，重点就可能换人。<#0.4#>Only Mia solved the puzzle。<#0.8#>only 靠近 Mia，排除的是其他人：只有米娅解开了。第二句 Mia only solved the puzzle 中，only 靠近 solved，更容易表示她只是解开了，没有做别的。副词影响哪一块内容，叫作用范围；位置常在帮我们标范围。<#0.7#>
+最后看 Even Ben almost missed the bus。even 把 Ben 标成出乎意料的人，暗示连他都差点误车；almost 修饰 missed，表示事情接近发生，但最后没有真的错过。两个副词在同一句里，各有自己的焦点。<#0.7#>
+判断时给 only、even、almost 各画一条括号，圈住它最直接限定的成分；再用排除、意外或接近发生来改述意思。若一句话可能圈出两种范围，就把副词挪到目标成分旁边，或改写句子，让焦点唯一。`,
+    lengthText: '356 字 · 约 2 分钟'
+  },
+  'sentence-adverbs': {
+    id: 'adverb:sentence-adverbs', version: 'v1',
+    text: `同一句 Mia is right，前面换一个副词，说话人的态度就变了。<#0.4#>Perhaps, Mia is right。<#0.8#>perhaps 表示“可能”，不是说明 Mia 怎样做事，而是降低说话人对整件判断的把握。
+再看：<#0.4#>Fortunately, nobody was hurt。<#0.8#>nobody was hurt 是事实内容；Fortunately 表示说话人认为这个结果很幸运。这类词不是描写某一个动作，而是在评价整件事。<#0.7#>
+Frankly, I disagree 里的 Frankly 也不是说“不同意得很坦率”，而是说明接下来这句话是坦率地讲出来。honestly、briefly 等还能提示说话方式或组织话语。
+识别时先把句首副词拿掉，看剩下的主干事实是否完整；再问它表达的是对事实真假的把握、对结果的评价，还是讲话方式。perhaps、probably 属于把握程度，fortunately、sadly 属于评价，frankly、briefly 属于话语态度。别把它们误当成只修饰紧邻的主语。`,
+    lengthText: '416 字 · 约 2 分钟'
+  },
+  'interrogative-relative-adverbs': {
+    id: 'adverb:interrogative-relative-adverbs', version: 'v1',
+    text: `why、where、how 都能出现在句首，但它们做的事不总一样。直接问离开的原因：<#0.4#>Why did you leave?<#0.8#>Why 是疑问副词，在疑问句中留下“因为什么”的空位，并触发主句疑问语序。
+再看地点：<#0.4#>This is the place where we met。<#0.8#>where 不在提问，而是把 we met 接到先行词 place 上，并在从句里表示见面的地点。它既连接名词和定语从句，又在从句内作地点状语，所以叫关系副词。<#0.7#>
+Tell me how you solved it 里，how 保留“怎样”的意义，引出一整块“你怎样解决它”的内容，整体作 tell 的宾语。这是疑问副词引导名词性从句，内部要用 you solved 的陈述语序。
+判断时先看整句是不是直接提问；是，就按疑问副词处理。若前面有 time、place、reason 等先行词，后面从句在修饰它，就看关系副词；若从句整体回答“告诉、知道、询问什么”，就按名词性从句处理。最后检查它在从句内表示时间、地点、原因还是方式。`,
+    lengthText: '414 字 · 约 2 分钟'
+  },
+  'negative-limiting-adverbs': {
+    id: 'adverb:negative-limiting-adverbs', version: 'v1',
+    text: `hardly 看起来像 hard 加 ly，意思却不是“努力地”。<#0.4#>I hardly know him。<#0.8#>hardly 表示“几乎不”，句子已经接近否定，不能再随手加 not 变成重复否定。
+再听：<#0.4#>She rarely complains。<#0.8#>rarely 表示抱怨发生得很少，和 seldom 一样带低频限制。它们不是完全的 no，但已把发生频率压得很低，普通标准英语通常不再和 not 叠用。<#0.7#>
+把否定或限制词推到句首，语序还会变化。Never have I seen such a view 先强调“从来没有”，随后把助动词 have 放到主语 I 前，形成部分倒装。这个倒装是句首否定范围带来的正式结构。
+操作时先识别 hardly、scarcely、barely、rarely、seldom、never 自带的否定或限制强度；再圈出它们否定的是动作、频率还是范围；若它们位于句首，检查是否需要“助动词加主语加主要动词”的部分倒装。最后删掉没有特殊语境支撑的重复 not。`,
+    lengthText: '400 字 · 约 2 分钟'
+  },
+  'conjunctive-adverbs': {
+    id: 'adverb:conjunctive-adverbs', version: 'v1',
+    text: `道路封闭，我们换了路线，两件事之间是结果关系。英语可以写：<#0.4#>The road was closed; therefore, we took another route。<#0.8#>therefore 告诉读者后句是前句的结果，但它不是 and、so 那样的并列连词，不能只靠一个逗号把两个完整分句粘起来。这里先用分号结束第一层句界，therefore 后再加逗号。
+转折也一样：<#0.4#>The task was difficult; however, we finished it。<#0.8#>however 标出“虽然困难，仍然完成”的反向关系。前面也可以直接用句号，写成两个句子。<#0.7#>
+连接副词还能组织顺序。First, check the data; then, write the report 中，First 和 then 帮读者按步骤推进，不是连接两个词或短语。
+判断时先看前后是不是各自完整的分句；再辨认副词标的是结果、转折还是顺序。如果用 therefore、however 等连接两个独立分句，前面选分号或句号，后面通常加逗号；不要写成“完整句，however 完整句”的逗号拼接。`,
+    lengthText: '444 字 · 约 2 分钟'
+  },
+  'adverb-traps': {
+    id: 'adverb:adverb-traps', version: 'v1',
+    text: `有些副词只差两个字母，意思却拐到另一条路。<#0.4#>He works hard every day。<#0.8#>hard 修饰 works，表示“努力地”。如果换成 hardly，句子就变成“他几乎不工作”，不是“更努力”。
+再听：<#0.4#>I have hardly seen her lately。<#0.8#>hardly 表示“几乎没见过”，lately 表示“最近”。这里两个 ly 形式都不能从 hard 和 late 的表面意思直接推出来。<#0.7#>
+页面第二句同时放入 hardly 和 lately，正好展示 ly 形式可能形成独立词义。lately 只谈最近一段时间，不能按 late 的“迟”直接推导。类似词必须把整组意义分开存，而不是把 ly 当作普通构词尾。
+遇到 hard 或 hardly，先问句子要表达努力，还是几乎不；遇到 late 或 lately，先问是某次到得迟，还是最近这段时间。选完后把中文意思完整代回原句检查，若逻辑突然反转，就说明掉进了同形近形词陷阱。`,
+    lengthText: '383 字 · 约 2 分钟'
+  }
+};
 
 function buildAdverbCourse(english) {
   const e = (parts, mode = '', zh = '', en = '') => example(english, parts, mode, zh, en);
@@ -737,15 +979,18 @@ function buildAdverbCourse(english) {
       item.exampleNotes[index] = { visible: true, mode: 'structure', title: pick(english, '例句说明', 'Example focus'), body: pick(english, pair[0], pair[1]), detail: '' };
     });
   });
+  bundle.course.forEach((item) => {
+    if (EXTRA_ADVERB_NARRATIONS[item.id]) item.narration = EXTRA_ADVERB_NARRATIONS[item.id];
+  });
   bundle.course[0].narration = {
     id: 'adverb:adverb-essence',
-    version: 'v1',
-    text: `副词的本质，是给动作、性质、另一个副词或整句话增加背景、程度和作用范围。判断副词，关键不是看到词尾有 ly，而是找它在修饰谁、补充了什么信息。<#0.6#>
-Mia answered calmly。<#0.7#>先看主干 Mia answered，表示米娅回答了。calmly 不改变“回答”这个动作，而是回答“怎样回答”，给 answered 增加平静这一方式。因此 calmly 是副词，在句中作方式状语。<#0.8#>
-The water is very cold。<#0.7#>这里 very 不直接说明 water，也不修饰 is，而是提高形容词 cold 的程度，表示“非常冷”。副词不只修饰动词，也能修饰形容词。<#0.8#>
-再听 Probably, the train will arrive soon。<#0.7#>Probably 表示说话人对整件事可能性的判断，作用范围是全句；soon 只说明 arrive 的时间。你可以思考：如果去掉 probably，事件内容有没有改变？火车仍会到达，只是说话人的把握程度不再表达。<#0.8#>
-判断副词分三步：先找可能的副词；再问它修饰动作、性质还是整句话；最后判断它增加的是时间、地点、方式、程度、频率、态度还是范围。副词的位置会提示作用范围，但最终要用句意验证。`,
-    lengthText: '483 字 · 约 2 分钟'
+    version: 'v2',
+    text: `只说“米娅回答了”，事情已经完整；如果加上“平静地”，我们就知道她是怎么回答的。这个后来补上的词，不负责说人或东西“什么样”，而是在给动作加细节。这样的词常常叫副词。副词还能给一个性质加程度，甚至表达说话人对整件事的态度。<#0.8#>
+先听。<#0.4#>Mia answered calmly。<#0.8#>主干只是 Mia answered。calmly 回答“怎么回答”，给动作 answered 加上方式。在句子里，这份补充方式的工作叫状语。<#0.8#>
+再听。<#0.4#>The water is very cold。<#0.8#>very 不是在说明 water，也不是在说明 is，它只把 cold 的程度往上推，变成“非常冷”。所以副词不只跟动作，也可以跟形容词。<#0.8#>
+再听一句。<#0.4#>Probably, the train will arrive soon。<#0.8#>soon 只告诉我们什么时候到；Probably 管的是整件事，表示说话人觉得“可能会到”。两个词都属于副词，管的范围却不一样。去掉 Probably，火车到达这件事还在，只是说话人的把握没有说出来。<#0.7#>
+判断时别看到 ly 就直接下结论，因为 friendly 不是这里说的副词，fast 也没有 ly。先问这个词在给哪个动作、哪种性质或哪件事加信息；再问加的是时间、方式、程度还是态度；最后用整句意思检查它到底管到哪里。`,
+    lengthText: '520 字 · 约 2 分钟'
   };
   return bundle;
 }

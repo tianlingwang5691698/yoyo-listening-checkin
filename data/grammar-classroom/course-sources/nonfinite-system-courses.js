@@ -424,13 +424,13 @@ function buildNonfiniteSystemCourse(english) {
   const sections = sectionSpecs.map((item) => ({ id: item[0], title: pick(english, item[1], item[2]), copy: pick(english, item[3], item[4]), lessonIds: item[5].slice(), lessonCount: item[5].length }));
   course[0].narration = {
     id: 'nonfinite-system:finite-nonfinite-boundary',
-    version: 'v1',
-    text: `非谓语保留动作或状态的意义，却不独立承担时态、情态和主谓一致，所以不能单独充当分句的限定谓语。它可以组成短语，整体进入主语、宾语、定语等位置。<#0.6#>
-She wants to leave。<#0.7#>先找限定谓语 wants，它随主语 She 使用第三人称单数形式。to leave 没有时态和一致变化，是不定式，补充说明她想做什么。句中有两个动词形式，但只有 wants 是限定谓语。<#0.8#>
-Reading books helps me。<#0.7#>helps 是限定谓语。Reading books 整体表示“读书这件事”，放在 helps 前作主语。Reading 有动作意义，还带宾语 books，却不承担本句的时态和一致。<#0.8#>
-再看 The boy standing by the door is Tom。<#0.7#>先找 is，它是限定谓语。standing by the door 放在 boy 后面，说明是哪一个男孩，整体作后置定语。可以思考：standing 的动作执行者是谁？是 boy，这就是非谓语的逻辑主语。<#0.8#>
-判断非谓语，先找每个分句的限定谓语；再检查其他动词是 to do、doing 还是 done；然后判断它整体占据什么句法位置，并找清逻辑主语、主动被动和时间关系。不要看到多个动词形式，就机械地判断为多个谓语。`,
-    lengthText: '500 字 · 约 2 分钟'
+    version: 'v3',
+    text: `一句话可以同时提到几个动作，但不能让每个动作都抢着管时间。通常只有一个动词负责告诉我们“现在还是过去”，其他动作会被打包成“一件事”或“一段说明”，放进句子的某个位置。这些被打包的动作，就叫非谓语。<#0.8#>
+She wants to leave。<#0.8#>真正负责这句话时间的是 wants；如果时间改变，变化也落在 wants 上。to leave 只回答“她想做什么”，自己不负责设置主句时间。这种 to 加动词原形的样子，叫不定式。<#0.9#>
+再看 Reading books helps me。<#0.8#>这句真正会随时间变化的是 helps。Reading books 表面上有动作，实际上整块在说“读书这件事”，它放在句首，做的是主语的工作。动作还在，但在外层句子里换了一份工作。<#0.9#>
+The boy standing by the door is Tom。<#0.8#>这里的 standing by the door 是在告诉我们“哪个男孩”，所以它整体在修饰 boy。standing 这个动作是 boy 做的，boy 就是它意思上的执行者，准确术语叫逻辑主语。
+判断时，先找出每个小句里真正负责时间的谓语；再圈出剩下的 to do、doing 或 done；最后问三件事：这整块在句中当什么，动作是谁做的，它和谓语动作谁先谁后。不要只数动词，要看每个动词正在做哪份工作。`,
+    lengthText: '524 字 · 约 2 分钟'
   };
   const core = course.filter((item) => item.level === 'core');
   const advanced = course.filter((item) => item.level === 'advanced');

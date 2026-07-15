@@ -380,6 +380,56 @@ const lessonSpecs = [
   }
 ];
 
+const FIVE_PATTERN_NARRATIONS = {
+  'pattern-sv': {
+    id: 'basic-sentence-patterns:pattern-sv',
+    version: 'v1',
+    text: `The baby cried。<#0.7#>先看谁，The baby，也就是这个宝宝。再看他怎么了，cried，哭了。说到这里，意思已经完整：宝宝哭了。后面不需要再补“哭了谁”或者“哭了什么”。这种只有“谁，加上做了什么”的骨架，叫主谓结构，也就是 SV。<#0.8#>
+再看 The train arrived at noon。<#0.7#>真正撑起句子的是 The train arrived，火车到了。at noon 只是告诉我们什么时候到。把它暂时拿走，句子仍然完整，所以 at noon 不会把主谓结构变成别的句型。<#0.8#>
+My grandparents live in Suzhou 也是一样。<#0.6#>先留下 My grandparents live，爷爷奶奶生活、居住，核心意思已经成立。in Suzhou 补充住在哪里。它前面还有介词 in，不能因为放在动词后面，就把 Suzhou 当成宾语。
+判断 SV，可以做两步。先找“谁”和“怎么了”；再把时间、地点、方式这些补充信息暂时遮住。如果剩下的意思已经站得住，而且动词后不需要一个对象，这个动词在这里就是不及物用法，句子骨架就是 SV。`,
+    lengthText: '439 字 · 约 2 分钟'
+  },
+  'pattern-svc': {
+    id: 'basic-sentence-patterns:pattern-svc',
+    version: 'v1',
+    text: `Mia is a doctor。<#0.7#>这句话不是说 Mia 做了一个叫 is 的动作，而是在说 Mia 是谁。is 像一座桥，把 Mia 和 a doctor 连在一起。桥后面的 a doctor 说明 Mia 的身份。这样的骨架叫主系表，也就是 SVC。<#0.8#>
+再看 The soup tastes delicious。<#0.7#>这里不是“汤正在品尝美味的东西”。真正的意思是，这个汤尝起来很美味。delicious 描写的是前面的 soup，tastes 仍然只负责把两边连起来。<#0.8#>
+The leaves turned yellow 说的是树叶变黄了。<#0.6#>yellow 说明树叶变化后的样子，turned 在这里表示“变得”，所以它也是连接作用。
+判断 SVC，不要一看到动词就找动作对象。先问后面的内容是在回答“主语是谁”还是“主语怎么样”。如果答案是，而且中间的动词只是在连接身份、状态或变化，这个动词就叫系动词，后面说明主语的部分叫表语，也叫主语补语。可以把句子理解成“主语，等于或呈现出，后面的身份和状态”。这条关系成立，骨架就是 SVC。`,
+    lengthText: '423 字 · 约 2 分钟'
+  },
+  'pattern-svo': {
+    id: 'basic-sentence-patterns:pattern-svo',
+    version: 'v2',
+    text: `有些动词说完以后，意思还没结束。比如 Leo opened。<#0.6#>Leo 打开了。听到这里，自然会问：打开了什么？补上 the window，变成 Leo opened the window，意思才完整。the window 是 opened 直接指向的东西，语法上叫直接宾语。整个骨架是主谓宾，也就是 SVO。<#0.8#>
+宾语不一定真的被碰到。We enjoy music。<#0.6#>music 没有承受一个看得见的动作，但它是 enjoy 所指向的内容，所以仍然是宾语。She understood the question 也一样，理解的内容是 the question。<#0.8#>
+这三个例句里，宾语都直接跟在动词后面，中间没有介词。判断时不能只看位置，还要确认它是不是动作、想法或感受直接指向的内容。
+判断 SVO，先找到动词，再问：这个动作、想法或感受直接指向谁，或者什么？如果不说出这个对象，意思会明显缺一块，而且对象直接由动词带出，中间没有介词，它就是直接宾语。主语、动词、这一个宾语合起来，就是 SVO。`,
+    lengthText: '413 字 · 约 2 分钟'
+  },
+  'pattern-svoo': {
+    id: 'basic-sentence-patterns:pattern-svoo',
+    version: 'v2',
+    text: `Dad gave me a camera。<#0.7#>先别急着数动词后有几个词，先看发生了什么：爸爸给出一台相机，相机到了我这里。给的是什么？a camera。给了谁？me。一个是被传递的东西，一个是接收的人，所以句子有两个宾语，骨架叫主谓双宾，也就是 SVOO。<#0.8#>
+在这个结构里，a camera 是动作直接涉及的东西，叫直接宾语；me 是接收者，叫间接宾语。虽然 me 排在前面，但“间接”和“直接”不是按前后顺序随便命名，而是看它们和动作的关系。<#0.8#>
+She taught us English 也能这样看。教的内容是 English，学习这些内容的人是 us。
+再看 I bought a gift for my mother。<#0.6#>这里 a gift 是直接宾语，for my mother 前面有 for，是一个介词短语。它仍然说明受益的人，却不是无介词连接的间接宾语，所以这句不算双宾结构。
+判断 SVOO，就问两个问题：传递的是什么？接收者是谁？如果动词能够直接带出“接收者，加上事物或内容”，没有 to 或 for 隔开，这通常就是双宾结构。`,
+    lengthText: '428 字 · 约 2 分钟'
+  },
+  'pattern-svoc': {
+    id: 'basic-sentence-patterns:pattern-svoc',
+    version: 'v2',
+    text: `They elected Amy captain。<#0.7#>动作指向 Amy，所以 Amy 是宾语。可句子还想告诉我们：Amy 被选成了什么？答案是 captain。captain 不是第二个被选出来的东西，而是在说明 Amy 的新身份。这样的骨架叫主谓宾补，也就是 SVOC。<#0.8#>
+再看 The news made him happy。<#0.7#>him 是消息影响的人，happy 说明他后来是什么状态。him 和 happy 之间可以理解成“他变得开心”。后面的 happy 就是在补充说明宾语。<#0.8#>
+I saw the bird fly away 也是同一条关系。<#0.6#>看到的是 the bird，而 fly away 告诉我们鸟做了什么。这里不是两个宾语。
+最容易混的是把最后两部分都当成宾语。其实这里的后半部分不是另一个对象，而是在补充宾语的身份、状态或动作。两部分之间有说明与被说明的关系。<#0.8#>
+判断 SVOC，可以把宾语和最后一部分看成一组小关系：最后一部分是否在说明这个宾语是谁、怎么样或做了什么？如果是，它就叫宾语补语，整个骨架就是 SVOC。`,
+    lengthText: '421 字 · 约 2 分钟'
+  }
+};
+
 const sectionSpecs = [
   ['skeleton-foundation', '骨架识别基础', 'Skeleton foundations', '先找谓语和必要成分，建立判型步骤。', 'Find predicates and required elements before classifying.', ['find-predicate-skeleton','linking-transitivity']],
   ['five-basic-patterns', '五大基本句型', 'The five basic patterns', '系统掌握 SV、SVC、SVO、SVOO 和 SVOC。', 'Master SV, SVC, SVO, SVOO and SVOC systematically.', ['pattern-sv','pattern-svc','pattern-svo','pattern-svoo','pattern-svoc']],
@@ -400,14 +450,19 @@ function buildBasicSentencePatternsCourse(english) {
   validateSections(course);
   course[0].narration = {
     id: 'basic-sentence-patterns:find-predicate-skeleton',
-    version: 'v1',
-    text: `基本句型的本质，是一个分句的核心骨架，也就是限定谓语与它必需成分的组合。判句型不是数单词，也不是看中文翻译，而是先找谓语，再看这个谓语需要哪些核心槽位才能表达完整。<#0.6#>
-Birds fly。<#0.7#>限定谓语是 fly，谁在飞是 Birds。fly 表示的动作不需要宾语就完整，所以骨架只有主语和谓语，是主谓结构，也就是 SV。<#0.8#>
-She can sing。<#0.7#>不要因为 can 和 sing 是两个单词，就算成两个谓语。can 是情态动词，sing 是主要动词，它们共同组成一个谓语动词组 can sing；主语是 She，骨架仍然是 SV。<#0.8#>
-再看 The boy in blue is running。<#0.7#>先暂时移开 in blue，剩下 The boy is running，主干仍完整。in blue 修饰 boy，是主语内部的后置定语，不会改变外层句型。<#0.8#>
-判断基本句型，先划分分句；找到限定谓语或谓语动词组；再问谓语后是否必须有表语、一个宾语、两个宾语或宾语补足语；最后排除可选的定语和状语。句型只描述分句骨架，长修饰语和从句内部结构需要另行分析。`,
-    lengthText: '431 字 · 约 2 分钟'
+    version: 'v3',
+    text: `句子有长有短，先别数单词。把修饰和补充信息暂时放到一边，留下能撑住意思的部分，就是句子的骨架；不同骨架，就是不同的基本句型。<#0.8#>
+Birds fly。<#0.8#>谁在飞？Birds。发生了什么？fly。说到这里意思已经完整，fly 后面不缺动作对象，所以骨架只有主语和谓语，叫主谓结构，简写为 SV。<#0.8#>
+She can sing。<#0.8#>句子里虽然有 can 和 sing 两个动词形式，却不能算成两个谓语。can 表示“能”，sing 说出具体动作，两部分合起来才是完整的谓语动词组。主语仍是 She，骨架仍然是 SV。<#0.8#>
+The boy in blue is running。<#0.8#>先找谁在跑，答案是 The boy。in blue 只是帮助我们认出“穿蓝衣服的那个男孩”，它在主语内部修饰 boy。is running 要合起来看，表示正在跑。暂时拿开 in blue，核心关系没有改变。<#0.8#>
+判断基本句型时，先找到完整的谓语动词组；再问“谁怎么了”，以及谓语后面是否还必须补什么；最后把时间、地点、方式和名词旁的修饰信息暂时移开。剩下的必需成分，才决定句型。`,
+    lengthText: '433 字 · 约 2 分钟'
   };
+  Object.entries(FIVE_PATTERN_NARRATIONS).forEach(([lessonId, narration]) => {
+    const lesson = course.find((item) => item.id === lessonId);
+    if (!lesson) throw new Error(`Missing narrated basic pattern lesson: ${lessonId}`);
+    lesson.narration = Object.assign({}, narration);
+  });
   const sections = sectionSpecs.map((item) => ({
     id: item[0],
     title: pick(english, item[1], item[2]),

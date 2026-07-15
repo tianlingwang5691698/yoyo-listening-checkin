@@ -298,13 +298,13 @@ function buildSpecialStructuresCourse(english) {
   validateCourse(course, sections);
   course[0].narration = {
     id: 'special-structures:special-structure-essence',
-    version: 'v1',
-    text: `特殊句式不是一套全新的句子成分，而是在原有分句骨架上改变语序、省略成分或突出焦点，以完成命令、强调、提问等交际任务。分析时先恢复中性骨架，再看形式变化带来了什么效果。<#0.6#>
-Open the door。<#0.7#>句首直接使用动词原形，表面没有主语，但祈使句默认的执行者是听话人 you。恢复关系就是 You open the door。省略主语让命令更直接，并没有改变 open 与 the door 的动宾关系。<#0.8#>
-Never have I seen such a view。<#0.7#>先恢复中性语序 I have never seen such a view。否定意义的 Never 被放到句首后，助动词 have 移到主语 I 前，形成部分倒装。事件和参与者没有变化，变化的是语序和强调。<#0.8#>
-再看 It was Mia who solved the problem。<#0.7#>基础关系是 Mia solved the problem。分裂结构把 Mia 放进焦点位置，强调解决问题的人是 Mia。<#0.8#>
-判断特殊句式，先找或补出限定谓语和主语；恢复普通陈述顺序；再判断哪里发生了省略、倒装、前置或焦点突出。最后检查：原来的主谓、动宾和补足关系是否仍能追踪。特殊形式改变表达重点，不会凭空改变句子的基本成分关系。`,
-    lengthText: '486 字 · 约 2 分钟'
+    version: 'v3',
+    text: `同一个意思，可以平平地说，也可以根据当时的目的，把某些词移到前面、把大家都知道的内容省掉，或者把最想强调的部分专门打亮。句子看起来变特别了，但里面“谁做什么”的基本关系通常还在。这些为表达目的改过造型的句子，就是特殊句式。<#0.8#>
+Open the door。<#0.8#>这句表面上没有“谁”，可说话人正对着听话人发出指令，执行者就是正在听的人。主语被省掉后，指令更干脆；open 和 the door 的关系没有改变。这种直接要求别人行动的句子，叫祈使句。<#0.9#>
+Never have I seen such a view。<#0.8#>Never 被提到最前面，have 也移动到 I 前面，句子用不普通的顺序突出“从来没有”。这种变化叫部分倒装，但看风景的人仍然是 I。<#0.9#>
+It was Mia who solved the problem。<#0.8#>说话人特别想指出“是 Mia，不是别人”，于是用 It was 和 who 把 Mia 框在聚光灯下。这叫分裂强调句。无论怎样强调，解题的人仍是 Mia，problem 仍是 solved 指向的对象。
+遇到陌生句式，先别猜名称。第一步，找到动词和它对应的主语；第二步，把省掉的内容补回来，再尝试恢复普通陈述顺序；第三步，看它是在发命令、提问，还是突出某个重点。能还原，就能看懂大部分特殊句式。`,
+    lengthText: '511 字 · 约 2 分钟'
   };
   const core = course.filter((lesson) => lesson.level === 'core');
   const advanced = course.filter((lesson) => lesson.level === 'advanced');

@@ -63,13 +63,12 @@ const syntaxBank={
  'cohesion-integration':[[['Anna','subject','主语；明确先行项','Subject; explicit antecedent'],['arrived','predicate'],['first,','adverbial'],['so','connector'],['Lily','subject','主语；后句动作执行者','Subject; performer in the later clause'],['emailed','predicate'],['her.','object','宾语；唯一回指 Anna','Object; uniquely refers to Anna']],F('However,','it','is unreliable.','','主语；转折后的限制信息','Subject; qualifying information after contrast'),S('The service','has shortened','many commutes.','','主语；概括回指 bus route','Subject; summary reference to bus route')]
 };
 const COHESION_ESSENCE_NARRATION={
- id:'cohesion-reference:cohesion-reference-essence',version:'v1',
- text:`衔接与指代处理的不是一个单句，而是句子之间怎样连续。衔接是读者能看见的语言线索，比如代词、指示词、替代、省略、关键词和连接词；连贯则是这些句子在意义上真的能组成合理整体。<#0.7#>
-Mia found the key. She opened the door。<#0.5#>第一句建立人物 Mia，第二句的 She 回到 Mia，然后加上新动作 opened the door。She 没有介绍新人物，而是让读者继续追踪同一个对象。这就是指代链：后面的表达必须能准确找到前文指向。<#0.8#>
-再看 The experiment failed. This result surprised us。This result 不只回指 experiment 这个名词，而是概括“实验失败”整件事，并把它带入下一句接受新评价。<#0.7#>
-The sky was clear. Therefore, I forgot my keys。这里有 therefore 这个显性衔接形式，但天空晴朗并不能合理导致忘带钥匙。连接词可以标出逻辑，却不能凭空创造正确逻辑。<#0.7#>
-检查篇章衔接：先问代词、指示表达或省略内容能否从前文唯一恢复；再问连接词标出的因果、转折、顺序是否真实成立；最后看每句是否承接旧信息，并向同一主题推进新信息。`,
- lengthText:'438 字 · 约 2 分钟'
+ id:'cohesion-reference:cohesion-reference-essence',version:'v2',
+ text:`听一段小故事：米娅找到钥匙。她打开了门。第二句不必再说一遍“米娅”，因为“她”会把我们带回刚出现的人。英语也是这样：<#0.4#>Mia found the key. She opened the door。<#0.8#>She 没有介绍新人，而是指回 Mia，再接着说她的新动作。这个从 Mia 到 She 的联系叫指代链。要是前文同时出现 Mia 和 Lucy，突然来一句 She opened the door，读者就可能不知道“她”是谁。
+句子能连起来，不只靠人称代词。<#0.4#>The experiment failed. This result surprised us。<#0.7#>这里 This result 指的不是 experiment 这个东西，而是“实验失败”这件事。它先把前一句打包接住，再让后一句对这件事作评价。重复关键词、用替代词、省略已知内容，也都能帮助读者沿着同一条线往下读。这些看得见的连接线索，叫衔接。
+但有连接词，不代表意思一定通。The sky was clear. Therefore, I forgot my keys 里，therefore 声称前后是因果，可“天晴”并不会自然导致“忘带钥匙”。形式接上了，逻辑没有接上，文章仍然不连贯。<#0.8#>
+检查时做三件事：看到 he、she、it、this 先问它能不能唯一指回某个对象或事件；看到 therefore、however 等词，核对前后逻辑是否真实；最后看每句有没有接住已知信息，再推进一个与主题有关的新信息。`,
+ lengthText:'580 字 · 约 2 分钟'
 };
 function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){if(atoms.length<3)throw new Error(`Too few cohesion atoms: ${id}`);const notes=lessonNotes[id],syntax=syntaxBank[id];if(!notes||notes.length!==atoms.length||!syntax||syntax.length!==atoms.length)throw new Error(`Invalid cohesion support: ${id}`);const examples=atoms.map(a=>a.parts.map(x=>x[0]).join(' '));const analyses=atoms.map((a,i)=>{const base=a.parts.map(x=>part(english,x));if(base.some(x=>x.role==='subject')&&base.some(x=>x.role==='predicate'))return base;const fine=syntax[i].map(x=>part(english,x));let cut=-1;for(let k=0;k<base.length;k++){if(normalize(base.slice(k).map(x=>x.text).join(' '))===normalize(fine.map(x=>x.text).join(' '))){cut=k;break;}}if(cut>=0)return base.slice(0,cut).concat(fine);const full=examples[i],fineText=fine.map(x=>x.text).join(' '),pos=full.lastIndexOf(fineText);if(pos<0)throw new Error(`Invalid cohesion syntax splice: ${id}:${i}`);const prefix=full.slice(0,pos).trim();return(prefix?[{text:prefix,role:'sentence',label:pick(english,'前文语境','Prior context')}]:[]).concat(fine);});analyses.forEach((a,i)=>{if(normalize(a.map(x=>x.text).join(' '))!==normalize(examples[i]))throw new Error(`Invalid cohesion analysis text: ${id}:${i}`);});const result={id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples,analyses,exampleNotes:notes.map(x=>note(english,x)),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};if(id==='cohesion-reference-essence')result.narration=COHESION_ESSENCE_NARRATION;return result;}
 function buildCohesionReferenceCourse(english){

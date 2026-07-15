@@ -6,13 +6,13 @@ function note(english,mode,zh,en){if(!mode)return{visible:false,mode:'',title:''
 const opt=(english,v)=>Array.isArray(v)?pick(english,v[0],v[1]):v;
 function question(english,x,index){const reverse=index%2===1&&x[2].length===2,values=reverse?x[2].slice().reverse():x[2],answer=reverse?(x[3]==='A'?'B':x[3]==='B'?'A':x[3]):x[3];return{question:pick(english,x[0],x[1]),options:values.map((v,i)=>({key:String.fromCharCode(65+i),text:opt(english,v)})),answer,correct:pick(english,x[4],x[5]),wrong:pick(english,`再看语序：${x[4]}`,`Check the order: ${x[5]}`)};}
 const INFORMATION_ORDER_ESSENCE_NARRATION={
- id:'information-order:information-order-essence',version:'v1',
- text:`信息顺序不是随意调换单词，而是在语法允许的结构中，决定读者先接触什么，最后将注意力落在哪里。语法负责建立谁做什么的参与关系，信息顺序负责安排话题、已知信息、新信息和焦点。<#0.7#>
-Mia solved the problem。<#0.5#>这是中性主动语序，句子先从 Mia 说起，再把 solved the problem 作为新消息送出。如果前文正在谈 the problem，可以改为 The problem was solved by Mia。两句的核心事实没变，仍然是 Mia 解决问题；变的是信息起点和句尾焦点。<#0.8#>
-再看 That the plan failed is obvious。这句语法正确，但较长的主语从句放在句首，读者要等很久才听到核心判断 is obvious。普通语境中常改为 It is obvious that the plan failed，先给出判断框架，再展开较重内容。这说明“语法正确”和“信息自然”要分开判断。<#0.7#>
-Only then did we understand the cause。可以先思考：为什么 did 放在 we 前面？<#0.5#>Only then 被前置作强焦点，它同时触发部分倒装。这是有标记语序，必须服务于真实强调，不是为了让句子看起来高级。<#0.7#>
-安排信息顺序：先确定句子主干和核心参与关系；再看上下文正在谈谁；把已知、较短内容尽量放前，新的、较重内容适当放后；只在有明确对比或焦点时，才使用前置、倒装或强调结构。`,
- lengthText:'493 字 · 约 2 分钟'
+ id:'information-order:information-order-essence',version:'v3',
+ text:`同一张照片，你可以先指米娅，也可以先指她解决的那道题。事实没有变，但听者第一眼看到谁、最后把注意力落到哪里，会不一样。英语的信息顺序，就是在句子结构允许的范围里安排这条注意力路线。<#0.8#>
+Mia solved the problem。<#0.7#>这句先从 Mia 说起，再告诉我们她做了什么，是最普通的主动顺序。如果前文一直在谈 the problem，可以说：<#0.4#>The problem was solved by Mia。<#0.8#>现在旧话题 the problem 走在前面，新答案 Mia 落在后面。两句都表示米娅解决了问题；主语和语态变了，是为了让句子接住不同的上下文。通常读者已经知道、比较短的信息放前面，新出现、比较重的信息放后面，会更容易跟上。
+再听 That the plan failed is obvious。它语法没错，可一大段内容堵在句首，听者要等到最后才听见“这很明显”。日常表达常会借助形式主语 it，先给判断框架，再把真正内容放到后面。这里要看懂的不是另一句固定答案，而是“较长的新信息通常往后放”这条安排。<#0.8#>
+Only then did we understand the cause 则把 Only then 推到最前面，强调“直到那时”，并带来 did we understand 的倒装。这种顺序有明确焦点，不是随便搬词。
+安排时先搭好谁做什么的主干；再看上文正在谈谁，把已知信息放前，把新而长的信息放后；只有确实要对比或强调时，才用被动、前置、倒装或强调结构。`,
+ lengthText:'592 字 · 约 2 分钟'
 };
 function lesson(english,s,index){if(s.rules.length!==s.examples.length||s.rules.length!==s.questions.length)throw new Error(`Information-order coverage mismatch: ${s.id}`);const examples=s.examples.map(x=>({text:x[0].map(c=>c[0]).join(' '),analysis:analysis(english,x[0]),note:note(english,x[1],x[2],x[3])}));const result={id:s.id,no:String(index+1).padStart(2,'0'),level:s.level,title:pick(english,...s.title),meta:pick(english,...s.meta),examples:examples.map(x=>x.text),analyses:examples.map(x=>x.analysis),exampleNotes:examples.map(x=>x.note),rules:s.rules.map(x=>pick(english,...x)),ruleCoverage:INCLUDE_RULE_COVERAGE?s.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:s.questions.map((x,i)=>question(english,x,index+i))};if(s.id==='information-order-essence')result.narration=INFORMATION_ORDER_ESSENCE_NARRATION;return result;}
 

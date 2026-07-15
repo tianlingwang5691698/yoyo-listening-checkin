@@ -16,6 +16,7 @@ const RECORD_CACHE_MAX_AGE_MS = 2 * 60 * 1000;
 const LISTENING_PLAN_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
 const WORD_LOOKUP_MAX_AGE_MS = 30 * 60 * 1000;
+const GRAMMAR_CLASSROOM_CACHE_PREFIX = 'yoyoGrammarClassroomBundleV1';
 const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
 const PENDING_FLASHCARDS_KEY = 'pendingStudyFlashcardsV1';
 let cloudReadCacheVersion = 0;
@@ -1013,6 +1014,104 @@ async function getGrammarProgress(topicId) {
   });
 }
 
+function getGrammarClassroomCacheKey(topic, language) {
+  return `${GRAMMAR_CLASSROOM_CACHE_PREFIX}:${String(topic || '').trim()}:${language === 'en' ? 'en' : 'zh-CN'}`;
+}
+
+function readGrammarClassroomCache(topic, language) {
+  try {
+    const cached = wx.getStorageSync(getGrammarClassroomCacheKey(topic, language));
+    if (!cached || !cached.bundle || !Array.isArray(cached.bundle.course) || !cached.bundle.course.length) return null;
+    return cached;
+  } catch (error) {
+    monitor.logError('store', 'getGrammarClassroomCourse-cache-read', error, { topic, language });
+    return null;
+  }
+}
+
+function writeGrammarClassroomCache(topic, language, result) {
+  const cached = {
+    topic,
+    language,
+    releaseId: String(result.releaseId || ''),
+    contentVersion: String(result.contentVersion || ''),
+    savedAt: Date.now(),
+    bundle: result.bundle
+  };
+  let persisted = false;
+  try {
+    wx.setStorageSync(getGrammarClassroomCacheKey(topic, language), cached);
+    persisted = true;
+  } catch (error) {
+    monitor.logError('store', 'getGrammarClassroomCourse-cache-write', error, { topic, language });
+  }
+  return { cached, persisted };
+}
+
+async function refreshGrammarClassroomCourse(topic, language, cached, payload) {
+  const result = await callCloud('getGrammarClassroomCourse', payload, {
+    topic,
+    language,
+    releaseId: '',
+    contentVersion: '',
+    notModified: false,
+    course: null,
+    bundle: null
+  }, { useCache: false });
+  if (result && result.syncMode === 'cloud-error') {
+    return cached
+      ? Object.assign({}, result, cached, { bundle: cached.bundle, cacheFallback: true })
+      : result;
+  }
+  if (result && result.notModified) {
+    return cached
+      ? Object.assign({}, cached, result, { bundle: cached.bundle, cacheHit: true, notModified: true })
+      : Object.assign({}, result, { bundle: null, cacheError: 'notModified-without-local-bundle' });
+  }
+  const bundle = result && (result.bundle || result.course);
+  if (!bundle || !Array.isArray(bundle.course) || !bundle.course.length) {
+    return Object.assign({}, result || {}, {
+      topic,
+      language,
+      releaseId: cached && cached.releaseId || result && result.releaseId || '',
+      contentVersion: cached && cached.contentVersion || result && result.contentVersion || '',
+      bundle: cached && cached.bundle || null,
+      cacheFallback: Boolean(cached),
+      cacheError: 'bundle-missing-or-invalid'
+    });
+  }
+  const normalized = Object.assign({}, result, { bundle });
+  const saved = writeGrammarClassroomCache(topic, language, normalized);
+  return Object.assign({}, normalized, saved.cached, { bundle, cacheHit: false, cachePersisted: saved.persisted });
+}
+
+async function getGrammarClassroomCourse(options, onRefresh) {
+  const input = Object.assign({}, options || {});
+  const topic = String(input.topic || '').trim();
+  const language = input.language === 'en' ? 'en' : 'zh-CN';
+  const cached = readGrammarClassroomCache(topic, language);
+  const payload = {
+    topic,
+    language,
+    knownReleaseId: String(cached && cached.releaseId || input.knownReleaseId || ''),
+    knownContentVersion: String(cached && cached.contentVersion || input.knownContentVersion || input.contentVersion || '')
+  };
+  const refresh = refreshGrammarClassroomCourse(topic, language, cached, payload);
+  if (!cached) return refresh;
+  refresh.then((fresh) => {
+    if (typeof onRefresh === 'function') onRefresh(fresh);
+  }).catch((error) => {
+    monitor.logError('store', 'getGrammarClassroomCourse-background-refresh', error, { topic, language });
+  });
+  return Object.assign({}, cached, {
+    bundle: cached.bundle,
+    cacheHit: true,
+    cachePersisted: true,
+    staleWhileRevalidate: true,
+    source: 'device-cache'
+  });
+}
+
 async function recordGrammarProgress(topicId, nextIndex, answeredQuestions) {
   return callCloud('recordGrammarProgress', withSelectedStudent({ topicId, nextIndex, answeredQuestions: answeredQuestions || [] }), { saved: false }, { useCache: false });
 }
@@ -1232,6 +1331,7 @@ module.exports = {
   addPracticeWrongQuestion,
   getPracticeWrongQuestions,
   getGrammarProgress,
+  getGrammarClassroomCourse,
   recordGrammarProgress,
   getGrammarNarrationAudio,
   recordStudyCompletion,

@@ -1,8 +1,78 @@
 const pick = (en, zh, english) => en ? english : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
 const FIRST_LESSON_NARRATION = {
-  id: 'word-formation:word-parts', version: 'v1', lengthText: '493 字 · 约 2 分钟',
-  text: `构词法的本质，是观察一个词由哪些部分组成，这些部分怎样保留核心意义，又怎样改变词义或词性。它能帮我们理解词族和推测生词，但不是把每个单词都强行拆开。<#0.7#>\n先看 help、helpful 和 helpless。三个词共有的部分是 help，它能独立使用，并承载“帮助”这个核心意义，所以可以叫基词。helpful 在 help 后加 -ful，形成表示“有帮助的”的形容词；helpless 在后面加 -less，形成“无助的”。这两个后缀不仅提供意义方向，也提示新词的词性。<#0.8#>\n再看 unhappy 和 teacher。un- 放在 happy 前面，是前缀，它把意义推向否定；-er 放在 teach 后面，是后缀，它把动作词 teach 变成表示人的名词 teacher。前缀和后缀的名称首先由它们在基词前还是后的位置决定。<#0.7#>\n思考 act、action、active 和 actively。它们共享核心形式和意义，但分别可以是动词、名词、形容词和副词。这就是词族：不同成员有联系，却不能在句中随意互换。<#0.7#>\n分析时，先找承载核心意义的基词或词根；再看前后是否有词缀；最后把推测出的意义和词性放回句子检查。如果拆分后的意义不通，必须结合语境和词典确认。`
+  id: 'word-formation:word-parts', version: 'v2', lengthText: '534 字 · 约 2 分钟',
+  text: `看到陌生词 helpful，不一定要立刻查词典。先看看它里面有没有熟面孔：help。再看后面多出来的 ful。help 是“帮助”，ful 常让词带上“充满、有这种特点”的方向，于是 helpful 大致就是“有帮助的”。像这样观察单词是怎么拼起来的，叫构词法。它能帮你猜方向，但不是拆开就一定得到标准答案。<#0.8#>\n把三个词放在一起。<#0.4#>help，helpful，helpless。<#0.8#>它们都保留 help 这块核心。helpful 往“有帮助的”走，helpless 往“缺少帮助、无助的”走。放在核心后面的 ful 和 less，叫后缀；它们不只改变意思，还常提示新词在句中能做什么。<#0.8#>\n再看。<#0.4#>happy，unhappy。<#0.6#>un 放在 happy 前，把意思推向否定。放在前面的这一小块叫前缀。teacher 也能拆出 teach 和 er，er 在这里把“教”变成“教的人”。<#0.8#>\n不过，不能看见几个字母相同就硬拆。比如一个词拆完后意思很奇怪，或者放回句子根本不通，就要停下来查词典。act、action、active、actively 看起来是一家人，意思有关，词的用途却不同，不能随便互换。<#0.7#>\n遇到生词就按这个顺序：先找认识的核心部分；再看前后有没有常见的小零件；猜出大概意思和词的用途；最后放回原句验证。猜得通才保留，猜不通就查证。`
+};
+const REMAINING_NARRATIONS = {
+  'derivation-inflection': {
+    id: 'word-formation:derivation-inflection', version: 'v1', lengthText: '395 字 · 约 2 分钟',
+    text: `看 teach 和 teacher。<#0.5#>teach 是“教”这个动作，后面加 er 以后，teacher 变成“教书的人”。这不是同一个词换了外衣，而是做出了一个用途不同的新词。这样的变化叫派生。<#0.8#>\n再看 play、plays、played、playing。它们都还是“玩”这个动词，只是为了配合谁来玩、什么时候玩，或者句子需要的形式而变化，没有造出一个新的词典词。这种只调整语法形式的变化叫屈折。<#0.8#>\n最容易混的是同样的字母可能做不同工作。teach 加 er，teacher 是“教的人”，er 在造新词；tall 加 er，taller 还是形容词 tall，只是拿来比较高矮，er 在表达比较级。不能只看到后缀长得一样，就认定作用一样。<#0.8#>\n做题时先把变化前后的词放回句子。问它们还是不是同一种词、核心意思是否没变。如果词性或基本意义变了，通常是派生；如果只是复数、时态、第三人称、比较级等句法要求，通常是屈折。先看句中工作，再看词尾。`
+  },
+  'negative-prefixes': {
+    id: 'word-formation:negative-prefixes', version: 'v1', lengthText: '400 字 · 约 2 分钟',
+    text: `一扇门锁上后，再把锁打开，可以用页面第一组来观察。<#0.4#>unhappy · unfair · unlock。<#0.8#>un 在 unhappy、unfair 中把意思推向否定，在 unlock 中则把动作反过来。放在词前、改变意义方向的小零件叫前缀，但同一个前缀的中文不能永远固定。<#0.7#>第二组 incorrect · impossible · illegal · irregular 都带否定方向。in 会为了说起来顺口出现 im、il、ir 等变化，这些形式要随完整单词记。<#0.7#>第三组 disagree · disconnect · disappear 里，dis 提示不同意、断开或不再出现；第四组 non-smoker · non-fiction 里的 non 常表示“不属于这一类”。<#0.8#>这些前缀都能带来否定或相反方向，却不能随便互换。判断时先遮住前缀，看剩下的部分是否是本课熟词；再把否定、相反或撤销的方向放回去；最后核对英语是否真的这样组成。前缀帮助猜方向，固定词形仍要随单词确认。`
+  },
+  'meaning-prefixes': {
+    id: 'word-formation:meaning-prefixes', version: 'v1', lengthText: '395 字 · 约 2 分钟',
+    text: `前缀不只表示否定，还能提示时间、次数、错误和程度。先看页面第一组。<#0.4#>rewrite · return · rebuild。<#0.8#>re 常给出“再次、返回”的方向，其中 rewrite、rebuild 容易看出重复动作；return 更适合作为完整词记，不能把每个字母组合都硬拆。<#0.7#>第二组 pre-school · preview · post-war 中，pre 指向之前，post 指向之后。第三组 misunderstand · mispronounce 里的 mis 提示理解或发音出了错。<#0.7#>第四组 overcook · underpaid · underground 更要看语境：over 可以提示过度，underpaid 表示低于应有程度，underground 里的 under 则说位置在地下。<#0.8#>判断时先找认识的核心部分，再看前面的小块是在说再次、之前、之后、错误、过度还是不足。得到大概方向后，把整个词放回原句检查；若拆分后意思牵强，就停止硬拆并查词典。`
+  },
+  'person-noun-suffixes': {
+    id: 'word-formation:person-noun-suffixes', version: 'v1', lengthText: '386 字 · 约 2 分钟',
+    text: `看到一个动作词，词尾有时能把它变成“做这件事的人”。页面第一组是。<#0.4#>teach → teacher · act → actor · visit → visitor。<#0.8#>er 和 or 在这里都把动作变成人物名词，但具体拼写要随完整词记。放在词尾、帮助造出新词的小块叫后缀。<#0.7#>第二组 art → artist · music → musician · history → historian。ist 和 ian 常把领域名称变成从事或研究这个领域的人，词根拼写也可能随之调整。<#0.7#>第三组 employ → employee · interview → interviewee 的方向不同。ee 常把注意力放在动作的接受者身上，而不是动作发出者，但仍要以实际词义为准。<#0.8#>做词形题时，先看空格是不是在表示“一个人”；再找前面的动作或领域，以及这个人是执行者还是接受者；最后用页面词族确认 er、or、ist、ian 或 ee。后缀给出人物方向，不代表每个词都能随意添加。`
+  },
+  'abstract-noun-suffixes': {
+    id: 'word-formation:abstract-noun-suffixes', version: 'v1', lengthText: '373 字 · 约 2 分钟',
+    text: `动作、结果或品质可以被“装进一个名字里”。页面第一组是。<#0.4#>act → action · decide → decision · discuss → discussion。<#0.8#>tion 或 sion 把动作变成可以谈论的事情或结果，这类词叫抽象名词；变化时拼写和读音也可能调整。<#0.7#>第二组 develop → development · arrive → arrival 中，ment 和 al 同样把动作变成名词概念。第三组 kind → kindness · possible → possibility 则把性质变成“善良、可能性”这样的概念，ness 和 ity 常提示名词位置。<#0.8#>这些后缀能帮你判断词性，却不是看到字母就机械翻译；真正意思还由词根和语境决定。<#0.7#>做题先看空格前后，判断句子是否缺一个能表示事情、结果或品质的名词；再从所给词的页面词族中选择合适形式；最后检查拼写、读音和搭配。句中位置先定词性，后缀只负责验证。`
+  },
+  'adjective-suffixes': {
+    id: 'word-formation:adjective-suffixes', version: 'v1', lengthText: '412 字 · 约 2 分钟',
+    text: `有些词尾一出现，就会提示这个词可以说明“什么样”。先看 careful ↔ careless · hopeful ↔ hopeless。<#0.8#>ful 常把意义推向“有这种特点”，less 常推向“缺少这种特点”，两边形成清楚对照。这类专门给人或事物添特点的词叫形容词。<#0.7#>第二组 dangerous · natural · active 分别用 ous、al、ive 形成形容词；第三组 readable · washable · possible 中，able 或 ible 常带“能够、可以”的方向。第四组 rainy · sunny · scientific 也通过 y、ic 提示形容词用途。<#0.8#>后缀只提示方向，不能机械翻译。possible 的内部结构不适合随意强拆，washable 也要结合被说明对象理解。<#0.7#>判断时先找空格在说明哪个名词，或是否在系动词后说明主语；确认句子需要形容词后，再观察 ful、less、ous、al、ive、able、ible、y、ic 等词尾。最后把整个词放回句子检查意义。`
+  },
+  'participial-adjectives': {
+    id: 'word-formation:participial-adjectives', version: 'v1', lengthText: '461 字 · 约 2 分钟',
+    text: `看书时，你觉得有趣，可以说。<#0.4#>I am interested in the book。<#0.7#>这本书让人觉得有趣，可以说。<#0.4#>The book is interesting。<#0.8#>两句都来自 interest，但 ed 形式把镜头对准“感受到的人”，ing 形式把镜头对准“带来这种感受的人或事物”。它们在这里都像普通形容词一样说明特点。<#0.8#>\n所以 bored 是某人感到无聊，boring 是某事让人无聊；excited 是感到兴奋，exciting 是让人兴奋。不要死背“人用 ed、物用 ing”。一本书也可以是 interested，前提是语境真的说它“感兴趣”；一个人也可以是 interesting，表示这个人很有趣。关键是感受从哪里来、落在谁身上。<#0.8#>\n还要注意，ed 和 ing 形容词不全是在讲情绪。an experienced teacher 是有经验的老师，a developing country 是正在发展的国家，要看词本身的意思。<#0.8#>\n判断时先圈出被说明的对象，再问：它是在承受某种感受或结果，还是在引发感受、表现进行中的特点？用这个关系选择 ed 或 ing，最后放回整句验证，别只按人和物分类。`
+  },
+  'adverb-suffix': {
+    id: 'word-formation:adverb-suffix', version: 'v1', lengthText: '341 字 · 约 2 分钟',
+    text: `给动作补充“怎样发生”，常需要副词。页面第一组是。<#0.4#>careful → carefully · quick → quickly。<#0.8#>两个形容词加 ly 后变成副词，可以去修饰动作。<#0.7#>第二组 happy → happily · simple → simply 显示拼写会调整：y 变 i，le 结尾也会随词族变化，不能只把 ly 生硬接上。<#0.7#>第三组 a friendly boy · a lovely day 提醒我们，看到 ly 不等于副词；friendly 和 lovely 都在说明后面的名词，是形容词。第四组 work hard · hardly work 则相反：hard 没有 ly 也能作副词，hardly 的意思已经变成“几乎不”。<#0.8#>做题先看空格说明谁：说明名词，通常要形容词；说明动作、形容词或整句，才考虑副词。确认需要副词后，再处理拼写，句中作用比词尾长相更可靠。`
+  },
+  'verb-suffixes': {
+    id: 'word-formation:verb-suffixes', version: 'v1', lengthText: '340 字 · 约 2 分钟',
+    text: `名词或形容词有时会通过词尾变成一个动作。先看页面第一组。<#0.4#>modern → modernize · real → realize。<#0.8#>ize 或 ise 提示新词常按动词使用，但完整词义仍要结合语境。<#0.7#>第二组 wide → widen · strength → strengthen 中，en 带来“使变成、发生变化”的方向；strength 变 strengthen 时，拼写和读音也一起调整。<#0.7#>第三组 simple → simplify · pure → purify 中，ify 把性质变成“使其具有这种性质”的动作。把名词或形容词改造成动作词的词尾，叫动词后缀。<#0.8#>不过，后缀不能像积木一样随便接。判断时先找句子的谓语位置，或情态动词、to 后需要的动词位置；再看所给词能否用页面词族形成动词；最后检查主语、时态和拼写。先确认句子缺动词，再选后缀。`
+  },
+  conversion: {
+    id: 'word-formation:conversion', version: 'v1', lengthText: '355 字 · 约 2 分钟',
+    text: `同一个词一个字母也不加，换到不同位置就可能做不同工作。先看 water (n.) → water the flowers (v.)。<#0.8#>前面的 water 给物质命名，是名词；后面的 water 放在动作位置，表示给花浇水，是动词。这种不加词缀、直接改变词性的办法，叫转化。<#0.7#>第二组 to answer (v.) → an answer (n.) 中，to 后的 answer 是动作，an 后的 answer 变成一件事物的名称。<#0.7#>第三组 empty (adj.) → empty the box (v.) 中，empty 先说明“空的”这一特点，换到动作位置后表示把盒子清空。<#0.8#>这不代表一个词能随便当任何词性。判断时先不要贴死标签，而要看前后信号：限定词后常需要名词，名词前常需要形容词，动作位置需要动词。再用句意问它是在命名、说明特点，还是表达动作。位置和意义同时对上，才确定转化。`
+  },
+  compounds: {
+    id: 'word-formation:compounds', version: 'v1', lengthText: '405 字 · 约 2 分钟',
+    text: `两个熟词合在一起，可能形成一个不能逐字理解的新概念。先看 blackboard · greenhouse · smartphone。<#0.8#>它们把两个部分组合成稳定名称，这种词叫合成词；第一个部分缩小范围，后一个部分常决定整体是什么。<#0.7#>第二组 toothbrush (a kind of brush) · school bus (a kind of bus) 把中心说得更清楚：toothbrush 是一种 brush，school bus 是一种 bus。第三组 notebook · post office · well-known 又显示，合成词可能连写、分写或加连字符，拼写要按实际词记。<#0.8#>第四组 school buses · toothbrushes · passers-by 说明复数也要先找中心。前两个的中心在末尾，复数变化落在末尾；passers-by 的中心在前面，所以变化位置不同。<#0.7#>判断时先问组合是否形成稳定新概念，再找哪一部分回答“它是什么”，最后根据中心确定词性和复数位置。`
+  },
+  'word-class-slots': {
+    id: 'word-formation:word-class-slots', version: 'v1', lengthText: '374 字 · 约 2 分钟',
+    text: `词形转换题先问的，不是“这个词能变出什么”，而是“句子这个位置需要什么角色”。先看 Her kindness moved us。<#0.8#>Her 后面需要一个能作主语中心的名词，kindness 正好站进这个位置。<#0.7#>第二句 The plan sounds practical 中，sounds 把 plan 和它的特点连起来，后面需要形容词 practical。第三句 She answered politely 里，politely 补充怎样回答，所以是副词。第四句 We can simplify it 中，can 后要接动词原形，因此用 simplify。<#0.8#>这些位置像不同形状的插槽：限定词后常放名词，系动词后常放形容词，修饰动作常用副词，情态动词后放动词原形。<#0.7#>做题时先遮住括号提示，只读句子，判断空格在负责命名、说明特点、补充动作，还是表达动作；再写出所需词性；最后才从提示词变形，并检查单复数、时态和拼写。`
+  },
+  'prefix-assimilation': {
+    id: 'word-formation:prefix-assimilation', version: 'v1', lengthText: '352 字 · 约 2 分钟',
+    text: `否定前缀 in 会为了让相邻声音更顺口，变成 im、il 或 ir。先看 possible → impossible · patient → impatient。<#0.8#>后面的声音需要双唇参与，前缀常变成 im。这个声音互相靠近的现象叫同化。<#0.7#>第二组 legal → illegal · regular → irregular 中，in 分别调整成 il 和 ir，让开头更容易连读。第三组 inaccurate · inactive · uncertain 提醒我们，有些词保留 in，有些否定词使用 un，拼写不能只靠一条同化规则现场创造。<#0.8#>这些规律能帮你理解和记忆，却不能替代固定词形。有些以 im、in 开头的词，也未必都能按否定前缀拆开。<#0.7#>判断时先去掉开头，看剩下部分是否是熟悉词；再看整个词是否表达否定；若是，就把 im、il、ir 和 in 联系起来。最后用页面词族或词典确认拼写。`
+  },
+  'suffix-spelling': {
+    id: 'word-formation:suffix-spelling', version: 'v1', lengthText: '340 字 · 约 2 分钟',
+    text: `加后缀不只是把字母接到最后，原词常要调整。先看 happy → happiness · happily · hurrying。<#0.8#>happy 加后缀时常把 y 变成 i，hurrying 在 ing 前则保留 y；同样看到 y，后缀不同，处理也不同。<#0.7#>第二组 write → writing · hope → hopeful 显示，结尾 e 有时去掉，有时保留，要看后缀和固定词形。第三组 sun → sunny · begin → beginner 会双写末尾字母。<#0.7#>最后一组 decide → decision · explain → explanation 变化更大，不能只套一条“去 e 加后缀”。拼写规则还和音节、重音、词族习惯有关。<#0.8#>操作时先写出基词和目标后缀，再观察结尾是 y、e 还是短元音加辅音；按本课词族写出候选形式，最后核对。变化较大的要整组记忆，不临场硬算。`
+  },
+  'suffix-sound-stress': {
+    id: 'word-formation:suffix-sound-stress', version: 'v1', lengthText: '316 字 · 约 2 分钟',
+    text: `同一家族的词长得相像，重音却不一定待在同一位置。先看 action /ˈækʃən/ · education /ˌedʒuˈkeɪʃən/。<#0.8#>tion 常形成相近的结尾声音，但两个词的音节数量和重音位置不同，不能只认词尾就套同一个节奏。<#0.7#>第二组 PHOtograph → phoTOGraphy 更直观：加入后缀后，重音从靠前音节移向后面。第三组 exPLAIN → explaNAtion 也发生重音移动，词根中的声音还可能随之变化。<#0.8#>后缀不只提示词性，有时还会拉动重音；具体发音仍属于每个词的固定信息。<#0.7#>学习时把页面中的基词和派生词成对读：先划音节，再标最响的音节，最后比较后缀加入后哪里变化。听到熟悉词根却重音不同，先想它是否换了词性。拼写、词性和发音要一起记。`
+  },
+  'layered-derivation': {
+    id: 'word-formation:layered-derivation', version: 'v1', lengthText: '349 字 · 约 2 分钟',
+    text: `长词不需要一口气拆完，要按形成顺序一层层看。先看 nation → national → international。<#0.8#>nation 先变成 national，再在前面加 inter；每一步都在已有词上继续构造，顺序不同，结构和意义也可能不同。<#0.7#>第二组 care → careful → carefully 中，ful 先把 care 变成形容词，最外面的 ly 再提示 carefully 最终按副词使用。分析长词时，最外层往往最直接决定当前词性。<#0.7#>第三组 teach → teacher → teachers 中，er 先派生出人物名词，最后的 s 只标复数，是派生完成后的语法变化，两层作用不能混。<#0.8#>操作时从最确定的核心词开始，一次只加或去一层，并在每一步写下词性和大概意思；再看最外层决定当前用途，最后放回句子验证。若中间一步不成立，就说明拆分顺序可能错了。`
+  },
+  'word-inference': {
+    id: 'word-formation:word-inference', version: 'v2', lengthText: '371 字 · 约 2 分钟',
+    text: `阅读时遇到陌生派生词，不必立刻停下，先让句子位置提供线索。页面第一句是 The new policy improved safety。<#0.8#>improved 后面缺一个“改善了什么”，所以需要名词；safe 是安全的，ty 把它变成 safety，意思是安全程度或安全状况。句中位置和词缀互相验证，比只拆字母可靠。<#0.7#>再看 The machine is reusable。is 后面需要一个说明机器特点的词，able 提示“可以被”，中间是 use，前面的 re 表示再次，于是可以推到“可以重复使用的”。<#0.8#>最后看 understand ≠ under + stand 的简单相加。很多词经历长期变化，今天的意思不能靠现代词块直接相加。猜词只是暂时理解，不是最终判决。<#0.8#>遇到生词按四步走：先看位置需要什么词性；再找可靠词根和词缀，只猜意义方向；接着用上下文检查；如果影响理解或需要自己使用，再查词典确认。`
+  }
 };
 
 const example = (en, text, mode, zh, english) => ({
@@ -318,6 +388,9 @@ function buildWordFormationCourse(en) {
   ];
 
   if (lessons.length) lessons[0].narration = Object.assign({}, FIRST_LESSON_NARRATION);
+  lessons.slice(1).forEach((item) => {
+    item.narration = REMAINING_NARRATIONS[item.id];
+  });
 
   const coreCount = 13;
   const course = lessons.map((item, index) => Object.assign({}, item, {

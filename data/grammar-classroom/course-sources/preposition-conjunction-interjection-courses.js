@@ -54,6 +54,105 @@ function grouped(english, lessons, zhTitle, enTitle, coreCount, sectionSpecs) {
   ] };
 }
 
+const PREPOSITION_REMAINING_NARRATIONS = {
+  'prep-forms': {
+    id: 'preposition:prep-forms', version: 'v2', lengthText: '341 字 · 约 2 分钟',
+    text: `约好午饭后见面，页面第一句是。<#0.4#>We met after lunch。<#0.8#>after 只有一个词，后面带 lunch，把见面安排在午饭之后。这种单个词直接建立关系的，叫简单介词。<#0.7#>再看。<#0.4#>The game stopped because of the rain。<#0.8#>这里建立原因关系的部分由两个词组成，却要合起来理解，不能只拿其中一个词分析。这类整体叫复合介词。<#0.7#>第三句是。<#0.4#>The cat came out of the box。<#0.8#>这里的关系词组也要整体看，它从盒子内部出发，交代猫离开的起点。页面三组关系结构都是介词连同后面对象组成的介词短语。<#0.8#>本节只解决“介词长什么样”：它可能是一个词，也可能是几个词组成的固定整体。判断时先找后面的参照对象，再向前确认究竟由一个词还是一组词共同建立关系；一组词若缺一部分就失去原意，就按整体识别。`
+  },
+  'prep-object': {
+    id: 'preposition:prep-object', version: 'v1', lengthText: '357 字 · 约 2 分钟',
+    text: `座位在谁旁边，要把那个人说出来。<#0.4#>She sat beside me。<#0.8#>beside 先给出“旁边”的关系，me 再提供参照对象。这里不能用 I，因为代词放在介词后面，要用宾格 me。这个被介词带出的对象，叫介词宾语。<#0.7#>再看。<#0.4#>We talked about the plan。<#0.8#>about 说明谈话围绕什么，the plan 是完整的名词短语，负责把话题补清楚。介词如果没有后面的对象，关系通常就悬空了。<#0.7#>第三句是。<#0.4#>Before leaving, he called me。<#0.8#>before 后面想放“离开”这个动作时，不能直接放动词原形，而要用 leaving。这里 leaving 把动作当成一件事情，作为介词宾语。<#0.8#>本节重点不是再认介词，而是看介词后面能放什么。操作时先圈介词，再圈紧跟它的完整对象：代词要用宾格，名词要把整个短语圈全，动作放在介词后通常用 ing 形式。`
+  },
+  'prep-form-contrast': {
+    id: 'preposition:prep-form-contrast', version: 'v1', lengthText: '389 字 · 约 2 分钟',
+    text: `同一个小词，换了后面的结构，工作可能完全不同。先看。<#0.4#>Before dinner, we walked。<#0.8#>before 后面直接带名词 dinner，合起来说明 walked 发生的时间，所以这里 before 是介词。<#0.7#>再看。<#0.4#>I look forward to meeting you。<#0.8#>这里 to 后面接 meeting，表示期待指向的事情。to 属于 look forward to 这个关系结构中的介词，所以后面的动作要用 ing 形式，不能因为看到 to 就自动判断为不定式标记。<#0.7#>第三句是。<#0.4#>Please look up the word。<#0.8#>up 后面没有自己的介词宾语，它和 look 合起来表达“查找”，the word 是整个 look up 的宾语。这里 up 叫小品词。<#0.8#>判断边界时，先看小词后面有没有名词、代词或 ing 形式作为自己的对象；有对象并建立关系，通常按介词分析。若后面接完整分句，可能是连词；若和动词合成整体、没有自己的对象，就考虑小品词。`
+  },
+  'prep-time': {
+    id: 'preposition:prep-time', version: 'v1', lengthText: '421 字 · 约 2 分钟',
+    text: `安排日程时，先看时间像一个点、一页日历，还是一段较长的范围。<#0.4#>The class starts at six。<#0.8#>six 是钟表上的具体时刻，所以用 at。<#0.5#>We meet on Monday。<#0.8#>Monday 是日历上的一天，所以用 on。<#0.5#>Birds return in spring。<#0.8#>spring 是包住许多天的一段季节，所以用 in。<#0.7#>接着看起止。<#0.4#>The library is open from nine to five。<#0.8#>from 标出起点，to 标出终点，两边合起来画出开放的时间范围。<#0.7#>She has lived here since 2020 里，since 把 2020 当成起点，并把状态拉到现在；We waited for two hours 里，for 不说从哪天开始，只量出持续了两小时。<#0.8#>本节把基础时间关系放进一张图。判断时先问：是具体时刻、某一天，还是较长时段；再看句子要的是起点、终点还是持续长度。点钟选 at，日期和星期选 on，月份季节年份等选 in；起止、起点和时长再分别检查 from to、since、for。`
+  },
+  'prep-time-deadline': {
+    id: 'preposition:prep-time-deadline', version: 'v1', lengthText: '371 字 · 约 2 分钟',
+    text: `任务写着周五前交，重点不是一直做到周五，而是最晚不能超过周五。<#0.4#>Please finish the work by Friday。<#0.8#>by 给出截止线，周五之前任何时候完成都可以。<#0.7#>再看。<#0.4#>We waited until noon。<#0.8#>until 让 waited 这个动作持续到中午，中午是等待停止的终点。by 关心“最迟何时完成”，until 关心“状态一直延续到何时”。<#0.7#>第三句是。<#0.4#>No phones rang during the meeting。<#0.8#>during 把 rang 放进 meeting 这段期间，说明整场会议之中没有电话响；它只标期间，不直接说明动作持续多久。within 则常表示必须落在给定期限内部。<#0.8#>判断时先看动作类型：是要在某条线之前完成，用 by；是一直维持到终点，用 until；是说某事件发生在一段活动中，用 during；是限定在多长时间以内，用 within。先画时间线，再选词。`
+  },
+  'prep-time-contrast': {
+    id: 'preposition:prep-time-contrast', version: 'v1', lengthText: '346 字 · 约 2 分钟',
+    text: `两天以后和两天之内，中文听着接近，英语看的时间起点不同。先看。<#0.4#>The train will leave in ten minutes。<#0.8#>in ten minutes 从“现在”往后数十分钟，表示十分钟后列车将离开，常和将来情境连用。<#0.7#>再看。<#0.4#>He returned after two days。<#0.8#>after two days 是从语境中已经确定的某个事件起，再过两天返回。它不一定以说话此刻为起点。<#0.7#>第三句是。<#0.4#>We arrived in time for the bus。<#0.8#>in time 表示赶在错过之前到达，虽然可能不早，但还来得及；on time 则强调正好按计划时间，不迟到。<#0.8#>判断时先找计时起点：从现在往后多久，多考虑 in；从前文事件之后多久，用 after。再看重点是“准点”还是“还来得及”：按时刻表是 on time，赶上最后机会是 in time。`
+  },
+  'prep-place': {
+    id: 'preposition:prep-place', version: 'v1', lengthText: '397 字 · 约 2 分钟',
+    text: `找东西时，先决定把地点看成一个点、一个内部空间，还是一个接触面。<#0.4#>Tom waited at the gate。<#0.8#>at 把 gate 当作等待发生的点位。<#0.5#>The keys are in the box。<#0.8#>in 强调钥匙在盒子内部。<#0.7#>A picture hangs above the desk 里，above 只说明画比桌子高，不要求正对；The cup is on the table 里，on 还表示杯子接触桌面。<#0.7#>The valley lies below the village 中，below 表示山谷位置更低；A lamp hangs over the table 中，over 常让人看到灯在桌子上方覆盖或正对的画面。相应地，under 常用于正下方。<#0.8#>本节解决静态位置的基础视角。判断时先问：参照物被当成点、内部还是表面；再比较高低位置是否要求正对或覆盖。点位用 at，内部用 in，接触面用 on；单纯高低看 above、below，正上正下或覆盖关系再考虑 over、under。`
+  },
+  'prep-relative-place': {
+    id: 'preposition:prep-relative-place', version: 'v1', lengthText: '360 字 · 约 2 分钟',
+    text: `描述位置时，“在中间”和“在旁边”最容易被中文带偏。先看。<#0.4#>The bank is between the school and the park。<#0.8#>学校和公园是两个清楚分开的参照，银行位于二者之间，所以用 between。<#0.7#>再看。<#0.4#>She stood among the crowd。<#0.8#>crowd 是一群围绕她的人，重点是处在群体之中，而不是精确夹在两个对象之间，所以用 among。<#0.7#>第三句是。<#0.4#>Ben sat beside me。<#0.8#>beside 只表示 Ben 坐在我旁边。besides 多了 s 时，常表示“除……之外还包括”，不是空间上的旁边。<#0.8#>判断时先数参照关系：两个或几个分别明确列出的对象之间，用 between；处在未逐个列出的群体之中，用 among。再分清 beside 和 besides：一个说位置相邻，一个说范围追加。不要只凭中文都能译成“在……中”或“除外”来选。`
+  },
+  'prep-direction': {
+    id: 'preposition:prep-direction', version: 'v1', lengthText: '380 字 · 约 2 分钟',
+    text: `位置课回答“在哪里”，这一课回答“从哪里动到哪里”。<#0.4#>She walked into the room。<#0.8#>into 把走路的终点放到房间内部，既有方向，也有进入。<#0.5#>The cat jumped onto the table。<#0.8#>onto 表示猫跳动后到达桌面，并与表面接触。单说 in 或 on，通常只描写静态位置。<#0.7#>We ran across the road 中，across 画的是从道路一边横到另一边；The train went through the tunnel 中，through 画的是进入隧道内部，再从内部穿过。<#0.8#>to 只指向目标，不一定说明已经进入内部或落到表面；into 和 onto 把终点关系说得更具体。<#0.7#>判断运动介词，先找动作轨迹和终点：进入内部选 into，到达表面选 onto；横过一个表面或区域选 across，穿过有内部的空间选 through。最后检查句子是在说动态到达，还是已经处于 in、on 表示的位置。`
+  },
+  'prep-movement-path': {
+    id: 'preposition:prep-movement-path', version: 'v1', lengthText: '346 字 · 约 2 分钟',
+    text: `走路导航不仅要说终点，还要说一路怎样经过。<#0.4#>We walked along the river。<#0.8#>along 把路线贴着河流延伸，重点是沿着同一方向前进，不要求跨到河对岸。<#0.7#>再看。<#0.4#>She ran past the library。<#0.8#>past 把图书馆当成路上的参照点，她从它旁边经过并继续向前，重点是“超过、经过”这个点。<#0.7#>第三句是。<#0.4#>The hikers went through the forest。<#0.8#>through 表示徒步者进入森林内部，并沿内部路径穿行。across 则更强调从一个区域的一边到另一边。<#0.8#>判断路径时先画一条线：路线顺着某个线状参照延伸，用 along；越过路边的一个点，用 past；进入并穿行于空间内部，用 through；若重点是横跨表面或区域，再考虑 across。每个词回答的是轨迹形状，不只是“经过”的中文翻译。`
+  },
+  'prep-source-separation': {
+    id: 'preposition:prep-source-separation', version: 'v1', lengthText: '318 字 · 约 2 分钟',
+    text: `运动不只看去向，也能回头看从哪里出发、从哪里脱离。<#0.4#>This train comes from Beijing。<#0.8#>from 把 Beijing 标成列车来源或起点，但不额外说明它原来在什么容器里。<#0.7#>再看。<#0.4#>The bird flew out of the cage。<#0.8#>out of 明确画出鸟原来在笼子内部，飞行后离开内部空间。它比单独的 from 多了“从里面出来”的画面。<#0.7#>第三句是。<#0.4#>The cup fell off the table。<#0.8#>off 说明杯子原来与桌面有接触，掉落后脱离这个表面。<#0.8#>判断时先问起点是什么关系：只交代来源或出发点，用 from；原来在内部、现在离开内部，用 out of；原来接触表面、现在脱离表面，用 off。把动作前后的两个位置都画出来，就不会把三个词都机械翻成“从”。`
+  },
+  'prep-means': {
+    id: 'preposition:prep-means', version: 'v1', lengthText: '358 字 · 约 2 分钟',
+    text: `同样译成“用”或“由”，英语会区分交通方式、手里的工具和动作执行者。<#0.4#>We travelled by train。<#0.8#>by train 把 train 当成出行方式，不是在强调某一列具体火车内部。<#0.7#>再看。<#0.4#>She cut the paper with scissors。<#0.8#>scissors 是她实际拿来剪纸的工具，所以用 with。这里动作执行者是 She，工具是 scissors，两者不能混。<#0.7#>第三句是。<#0.4#>The novel was written by Orwell。<#0.8#>句子把 novel 放在主语位置，was written 是被动结构，by Orwell 再补出写作动作由谁完成。这个 Orwell 叫施事，也就是动作执行者。<#0.8#>判断时先问后面的名词扮演什么角色：交通工具作为方式，用 by；手里使用的具体器具，用 with；被动句中补出谁做了动作，也用 by。不要只看中文都有一个“用”字。`
+  },
+  'prep-medium-language': {
+    id: 'preposition:prep-medium-language', version: 'v1', lengthText: '306 字 · 约 2 分钟',
+    text: `发送消息、观看比赛、选择回答语言，都在说“通过什么呈现”，但关系不完全一样。<#0.4#>Please send it by email。<#0.8#>email 在这里是传递信息的渠道，by 强调通过这种方式发送。<#0.7#>再看。<#0.4#>The match is on TV。<#0.8#>on TV 表示比赛出现在电视这个传播平台上，重点是内容在哪个平台播出。<#0.7#>第三句是。<#0.4#>She answered in English。<#0.8#>in English 说明回答采用的语言或表达形式，不是交通方式，也不是平台。<#0.8#>本节与上一课的工具关系相邻，但它专门区分媒介、平台和语言。判断时问三个问题：是在说信息通过什么渠道送出，内容在哪个平台呈现，还是用哪种语言或形式表达？渠道方式常用 by，平台常用 on，语言和表达形式常用 in。`
+  },
+  'prep-cause-purpose': {
+    id: 'preposition:prep-cause-purpose', version: 'v1', lengthText: '490 字 · 约 2 分钟',
+    text: `比赛为什么停、工具拿来做什么、天气虽冷还是否继续，是三种不同逻辑。<#0.4#>The match stopped because of the rain。<#0.8#>because of 后面带名词 the rain，把雨作为停止的原因。<#0.5#>This tool is for cutting glass。<#0.8#>for cutting glass 不说已经发生的动作，而是说明工具的用途。<#0.7#>Despite the cold, they continued 里，despite 承认寒冷这个阻碍，但主句结果仍然继续，这叫让步关系。<#0.7#>再对比。<#0.4#>We stayed home because it rained。<#0.8#>because 后面是 it rained 这个完整分句；because of 后面则是名词短语。最后看 In spite of being tired, she continued，in spite of 和 despite 一样建立让步，但它是三个词组成的整体，后面用 being tired。<#0.8#>判断时先分逻辑：解释原因、说明用途，还是承认阻碍仍有结果；再看后面接名词短语、ing 形式还是完整分句。原因短语用 because of，完整原因句用 because；用途看 for；让步看 despite 或 in spite of。`
+  },
+  'prep-material-comparison': {
+    id: 'preposition:prep-material-comparison', version: 'v1', lengthText: '372 字 · 约 2 分钟',
+    text: `看一张木桌，木头的样子仍然看得出来。<#0.4#>The table is made of wood。<#0.8#>of 把成品和仍可辨认的材料连起来，说明桌子的构成。若原料加工后已经看不出原样，通常会用另一种来源关系表达，本节先抓住“材料仍可辨认”这条线。<#0.7#>再看。<#0.4#>She works as a doctor。<#0.8#>as a doctor 说明她实际以医生的身份工作，不是在说她像医生。like 更偏向相似，as 更强调真实身份或承担的角色。<#0.7#>第三句是。<#0.4#>Everyone came except Tom。<#0.8#>except 把 Tom 从 everyone 所包含的范围中排除，意思是其他人都来了。besides 则常把对象继续加进范围，方向相反。<#0.8#>判断时先找本节的三类关系：成品由什么材料构成，某人以什么身份行动，某对象是被排除还是被追加。材料看构成关系，身份区分 as 与相似的 like，范围区分排除的 except 与追加的 besides。`
+  },
+  'prep-topic-content': {
+    id: 'preposition:prep-topic-content', version: 'v1', lengthText: '365 字 · 约 2 分钟',
+    text: `谈话围绕旅行、讲座聚焦气候变化、女孩带着眼镜，这三句都在名词或动作旁补信息，却建立不同关系。<#0.4#>We talked about the trip。<#0.8#>about the trip 说明谈话围绕什么话题，修补的是 talked 的内容范围。<#0.7#>再看。<#0.4#>A lecture on climate change begins now。<#0.8#>on climate change 紧跟 lecture，告诉我们讲座的专题，语气通常比普通谈话的 about 更聚焦、正式。<#0.7#>第三句是。<#0.4#>The girl with glasses is Amy。<#0.8#>with glasses 不是谈话内容，而是给 girl 增加外在特征，帮助听者认出是哪位女孩。<#0.8#>判断时先问短语靠着谁、在补什么：围绕动作的谈论内容常用 about；讲座、文章等聚焦的专题可用 on；给人物或事物附加“带有什么”的特征，用 with。不要因为中文都能出现“关于、有”就混选。`
+  },
+  'prep-adverbial-functions': {
+    id: 'preposition:prep-adverbial-functions', version: 'v1', lengthText: '349 字 · 约 2 分钟',
+    text: `同一个动作说清以后，还可以补上什么时候、在哪里、用什么方式发生。<#0.4#>We will meet after class。<#0.8#>主干 We will meet 已经说明谁要见面，after class 只给 meet 加上时间，这整个介词短语叫时间状语。<#0.7#>再看。<#0.4#>The children played in the garden。<#0.8#>in the garden 回答“在哪里玩”，修饰的是动作 played，所以是地点状语，不是 children 的种类。<#0.7#>第三句是。<#0.4#>She opened the box with a key。<#0.8#>with a key 回答“用什么打开”，给动作增加工具关系，属于工具状语。<#0.8#>本节解决介词短语怎样挂到动作上。判断时先暂时拿掉介词短语，看句子主干是否仍成立；再问它是在补时间、地点、工具、原因还是方式。若它主要回答动作何时、何地、怎样发生，整体就按状语分析。`
+  },
+  'prep-postmodifier': {
+    id: 'preposition:prep-postmodifier', version: 'v1', lengthText: '358 字 · 约 2 分钟',
+    text: `人群里要认出戴红帽子的男孩，英语先说男孩，再把特征放在后面。<#0.4#>The boy with a red cap is my brother。<#0.8#>with a red cap 紧跟 boy，帮助确定是哪一个男孩，所以整个短语修饰名词 boy，叫后置定语。中文通常把它移到名词前理解。<#0.7#>再看。<#0.4#>The books on the desk are mine。<#0.8#>on the desk 贴着 books，回答“哪些书”，不是在说明 are 发生在哪里。<#0.7#>第三句是。<#0.4#>Students from Class Two won。<#0.8#>from Class Two 限定 Students 的来源，确定获胜的是二班学生。<#0.8#>判断时先看介词短语是否紧跟名词，再问它在回答“哪一个、哪一些、什么样的”。若删掉后名词范围变宽，它通常是后置定语；若主要回答动作在哪里发生，则是地点状语。最后翻成中文时可把这段说明前移，但英语结构仍在名词后。`
+  },
+  'prep-predicative': {
+    id: 'preposition:prep-predicative', version: 'v1', lengthText: '338 字 · 约 2 分钟',
+    text: `钥匙在哪里，句子可以直接用一段位置关系来回答。<#0.4#>The keys are on the desk。<#0.8#>are 像一座桥，on the desk 放在桥后说明主语 keys 所处的位置。整个介词短语在这里叫表语。<#0.7#>再看。<#0.4#>The child is in danger。<#0.8#>in danger 不是真实空间内部，而是说明孩子处于危险状态；它仍通过 is 描写主语，所以也是表语。<#0.7#>第三句是。<#0.4#>She worked in the library。<#0.8#>这里 worked 本身已经是完整动作，in the library 只补充工作地点，属于地点状语，不是表语。<#0.8#>判断时先看介词短语前面的动词：如果是 be 等系动词，短语直接说明主语在哪里或处于什么状态，按表语分析；如果前面是 worked 这类实义动作，短语只回答动作发生地点，通常是状语。不能只因位置在句尾就下结论。`
+  },
+  'prep-complements': {
+    id: 'preposition:prep-complements', version: 'v1', lengthText: '357 字 · 约 2 分钟',
+    text: `有些词说到一半，会让人自然追问“依靠什么、为哪件事骄傲、对什么的需要”。介词短语负责把这种未完成的关系补齐。<#0.4#>Success depends on effort。<#0.8#>depends 会追问依靠什么，on effort 是动词需要的补足成分。<#0.7#>再看。<#0.4#>She is proud of her work。<#0.8#>proud 只说“骄傲”还没有交代对象，of her work 补清骄傲所针对的事情，所以补足形容词 proud。<#0.7#>第三句是。<#0.4#>The need for change is clear。<#0.8#>for change 紧跟名词 need，说明是什么方面的需要，补足名词意义。<#0.8#>本节与普通状语不同：状语多是可选背景，补足成分由前面的中心词强烈要求。判断时先找介词短语前的动词、形容词或名词，再问去掉短语后是否留下“对谁、关于什么、依靠什么”的明显空缺；有空缺，就按相应中心词的补足成分分析。`
+  },
+  'prep-collocation': {
+    id: 'preposition:prep-collocation', version: 'v1', lengthText: '342 字 · 约 2 分钟',
+    text: `介词选择不是随便跟在词后，也不只是死背。先看。<#0.4#>She listens to music。<#0.8#>to 把听的注意方向引向 music，补清 listens 的目标。<#0.7#>再看。<#0.4#>He is interested in science。<#0.8#>in 把兴趣放进 science 这个领域，说明兴趣所在的范围。<#0.7#>第三句是。<#0.4#>The answer to the question is clear。<#0.8#>to the question 放在 answer 后，让答案指向并对应那个问题。中文会把它前移理解，但英语把关系放在中心名词后。<#0.8#>本节开始研究中心词为什么选择某个介词：to 常有指向目标的感觉，in 常有处在领域或范围中的感觉。判断时先找中心词是动词、形容词还是名词，再问它要把关系指向目标、放入范围，还是建立对应；用关系帮助理解后，仍要把中心词和介词作为真实组合核对记忆。`
+  },
+  'prep-collocation-meaning': {
+    id: 'preposition:prep-collocation-meaning', version: 'v1', lengthText: '308 字 · 约 2 分钟',
+    text: `同一个 agree，后面的介词一换，谈的对象类型也会变化。<#0.4#>I agree with you。<#0.8#>with 把我和 you 放进同一意见关系，表示我赞同你这个人表达的看法。<#0.7#>再看。<#0.4#>We agreed on the date。<#0.8#>on the date 把 date 当成双方讨论后共同确定的事项，重点是就日期达成一致。<#0.7#>第三句是。<#0.4#>They agreed to the plan。<#0.8#>to the plan 表示他们把同意指向这个方案，接受方案本身。<#0.8#>本节不是再背三个搭配，而是观察介词怎样改变 agree 后的关系：with 常连意见一致的人，on 常连协商确定的事项，to 常连被接受的建议或方案。判断时先辨认后面是人、共同议定事项，还是需要接受的内容；再选介词，并把整个关系放回语境检查。`
+  },
+  'prep-complex-objects': {
+    id: 'preposition:prep-complex-objects', version: 'v1', lengthText: '333 字 · 约 2 分钟',
+    text: `介词后面不一定只有一个短名词，有时会带一整块信息。<#0.4#>We talked about what he said。<#0.8#>about 后面的 what he said 整体回答“谈论什么”，所以整块内容作为介词宾语，内部仍有自己的结构。<#0.7#>再看。<#0.4#>Who are you talking to？<#0.8#>to 的对象是 Who，但疑问词被移到句首，介词留在句尾。这种位置变化不代表 to 没有对象。<#0.7#>第三句是。<#0.4#>The person I spoke to is here。<#0.8#>I spoke to 说明 The person，to 的对象由前面的 person 补回理解，介词同样可以留在从句末尾。<#0.8#>判断复杂介词宾语时，先找介词建立的关系，再追问对象是否被展开成 wh 从句，或因疑问、定语从句移到前面。把移走的对象在心里放回介词后，关系能闭合，就不要把句尾介词误判成多余。`
+  },
+  'prep-integration': {
+    id: 'preposition:prep-integration', version: 'v2', lengthText: '349 字 · 约 2 分钟',
+    text: `同一个地点短语放在不同位置，会挂到不同对象上。先看。<#0.4#>The students in the library are reading。<#0.8#>句中的地点关系紧跟 students，回答“哪些学生”，所以它修饰名词，是后置定语。<#0.7#>再看。<#0.4#>The students are reading in the library。<#0.8#>这次句子先出现完整动作 are reading，后面的地点关系回答“在哪里读”，所以它修饰动作，是地点状语。<#0.7#>第三句是。<#0.4#>Who are you speaking to？<#0.8#>to 虽在句尾，仍和句首 Who 建立说话对象关系，Who 是被移到前面的介词宾语。<#0.8#>综合判断按三步走：先找介词和它真正的对象，确定位置、时间或其他关系；再划清介词短语边界；最后看整个短语贴着名词作后置定语，挂在动作上作状语，还是补足中心词。若对象被前移，再把它放回去验证关系。`
+  }
+};
+
 function buildPrepositionCourse(english) {
   const E = (p, n) => ex(english, p, n); const Q = (...a) => q(english, ...a);
   const F = (id, zhTitle, enTitle, zhMeta, enMeta, items) => lesson(english, id, zhTitle, enTitle, zhMeta, enMeta,
@@ -71,13 +170,14 @@ function buildPrepositionCourse(english) {
   ];
   essence.narration = {
     id: 'preposition:prep-essence',
-    version: 'v7',
-    text: `介词的本质，是把动作或事物与一个参照对象连接起来，说明两者之间的关系。介词通常带着后面的名词或代词组成介词短语，后面的成分就是参照对象。<#0.6#>
-The cup is on the table。<#0.7#>先看主干 The cup is，杯子是被说明的对象。介词 on 后面是 the table，桌子提供参照。on 把 cup 和 table 连接起来，说明杯子接触桌面，建立表面位置关系。这里可以理解为“在什么上面”，但真正需要记住的是两个成分之间的关系。<#0.8#>
-We met after lunch。<#0.7#>主干是 We met。after 用 lunch 作时间参照，把见面的动作放在午饭之后，建立时间先后关系。<#0.8#>
-再听 She spoke with her teacher。<#0.7#>先不要急着逐词翻译。想一想 with 连接了什么。它把 spoke 和 her teacher 连接起来，表示老师共同参与交谈。<#0.8#>
-判断介词分三步：先找介词；再找介词后的参照对象；最后判断它把哪个动作或事物与参照对象连接起来，建立的是位置、时间、方向、方式还是其他关系。中文意思可以帮助理解，但介词的核心不是一条孤立翻译，而是一座表示关系的桥。`,
-    lengthText: '454 字 · 约 2 分钟'
+    version: 'v8',
+    text: `先想一个画面：一只杯子放在桌面上。英语怎样让听的人知道，杯子和桌子是什么关系？<#0.7#>
+The cup is on the table。<#0.8#>on 后面带着 the table，把桌子当成参照，再告诉我们杯子接触桌面。它没有增加一个新动作，只是在交代杯子在哪里。<#0.8#>
+再换成时间。We met after lunch。<#0.7#>见面是主要事情，lunch 是时间参照。after 把见面放到午饭后面，让人知道两件事谁先谁后。这里不能只把 after 背成“在什么之后”，要看到它正在安排时间顺序。<#0.8#>
+She spoke with her teacher。<#0.7#>说话是主要动作，her teacher 是另一个参与者。with 告诉我们，老师和她一起参与了交谈。它表达的是共同参与，不只是机械翻译成“和什么在一起”。<#0.8#>
+像 on、after、with 这样的小词，会带出一个参照对象，再说明前面的事物或动作和这个参照对象有什么关系。这样的小词叫介词。介词后面的名词或代词叫介词宾语；介词和它后面的部分合在一起，叫介词短语。<#0.8#>
+判断时做三件事：找到这个关系词；抓住它后面的参照对象；再问它交代的是位置、时间、方向、参与者，还是别的关系。先看关系，再看中文意思，介词就不会变成一堆零散翻译。`,
+    lengthText: '493 字 · 约 2 分钟'
   };
   essence.ruleCoverage = INCLUDE_RULE_COVERAGE ? [
     { exampleIndexes: [1], questionIndexes: [1] },
@@ -249,6 +349,9 @@ We met after lunch。<#0.7#>主干是 We met。after 用 lunch 作时间参照�
     ['prep-collocation-system', '中心词与介词意义', 'Head words and preposition meaning', '从指向、范围、依据和对应等关系理解中心词后的介词选择，再记必要的语言约定。', 'Understand target, field, basis and correspondence relations before learning necessary usage conventions.', ['prep-collocation', 'prep-collocation-meaning']],
     ['prep-advanced-integration', '进阶结构与综合分析', 'Advanced structures and integration', '处理复杂介词宾语、介词后置，并用关系、边界、功能三步法综合判断。', 'Handle complex objects and stranded prepositions, then integrate relation, boundary and function.', ['prep-complex-objects', 'prep-integration']]
   ]);
+  bundle.course.slice(1).forEach((item) => {
+    item.narration = PREPOSITION_REMAINING_NARRATIONS[item.id];
+  });
   const explanationOverrides = {
     'prep-form-contrast': { 0: ['before 后接 dinner 这个名词短语，所以这里是介词。', 'before is followed by the noun phrase dinner, so it is a preposition here.'] },
     'prep-time-deadline': { 2: ['during 把 rang 放在 meeting 这段期间内，表示会议期间没有电话响。', 'during places rang within the period of the meeting: no phones rang in that period.'] },
