@@ -10,11 +10,6 @@ const {
   getActiveListeningLessonKey,
   findListeningContinueTask
 } = require('../../utils/listening-resume');
-const {
-  ACTIVE_GRAMMAR_TASK_MAX_AGE_MS,
-  getActiveGrammarTaskKey,
-  findGrammarContinueTask
-} = require('../../utils/grammar-resume');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
@@ -1048,19 +1043,8 @@ Page({
     if (!this.ensureNicknameReady()) {
       return;
     }
-    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
-    let activeTask = null;
-    try {
-      const saved = wx.getStorageSync(getActiveGrammarTaskKey(target));
-      if (saved && Date.now() - Number(saved.updatedAt || 0) <= ACTIVE_GRAMMAR_TASK_MAX_AGE_MS) {
-        activeTask = saved;
-      }
-    } catch (error) {}
-    const task = findGrammarContinueTask(this.data.groupedDailyTasks || [], activeTask);
     wx.navigateTo({
-      url: task
-        ? `/grammar-package/pages/classroom/index?topic=${encodeURIComponent(task.topic || '')}&lessonNumber=${Number(task.lessonNumber || 1)}&taskId=${encodeURIComponent(task.taskId || '')}`
-        : '/pages/grammar/index'
+      url: '/pages/grammar/index'
     });
   },
   openTest() {

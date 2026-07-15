@@ -16,7 +16,7 @@ const grammarTasks = [1, 2, 3].map((lessonNumber) => ({
 }));
 const groups = [{ category: 'grammar', tasks: grammarTasks }];
 
-test('语法入口优先恢复最后打开的今日任务', () => {
+test('语法计划续学优先恢复最后打开的今日任务', () => {
   assert.equal(findGrammarContinueTask(groups, { taskId: 'grammar-noun-2' }).taskId, 'grammar-noun-2');
   assert.equal(getActiveGrammarTaskKey({ targetChildId: 'child-yoyo' }), 'activeGrammarPlanTaskV1:child-yoyo');
 });
@@ -26,11 +26,13 @@ test('最后任务已不在今日计划时进入下一条未完成任务', () =>
   assert.equal(findGrammarContinueTask(groups, null), null);
 });
 
-test('计划课堂记录最近任务，首页语法入口使用该记录', () => {
+test('计划课堂记录最近任务，首页普通语法入口仍进入语法首页', () => {
   const classroom = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   const home = fs.readFileSync(path.join(__dirname, '../pages/home/index.js'), 'utf8');
+  const openGrammar = home.match(/  openGrammar\(\) \{[\s\S]*?\n  \},\n  openTest\(\)/);
   assert.match(classroom, /rememberActivePlannedTask\(\)/);
   assert.match(classroom, /wx\.setStorageSync\(getActiveGrammarTaskKey\(target\)/);
-  assert.match(home, /findGrammarContinueTask\(this\.data\.groupedDailyTasks \|\| \[\], activeTask\)/);
-  assert.match(home, /grammar-package\/pages\/classroom\/index\?topic=/);
+  assert.ok(openGrammar);
+  assert.match(openGrammar[0], /url: '\/pages\/grammar\/index'/);
+  assert.doesNotMatch(openGrammar[0], /grammar-package\/pages\/classroom\/index/);
 });
