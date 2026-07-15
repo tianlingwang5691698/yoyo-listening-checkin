@@ -231,12 +231,16 @@ async function getDashboardData(ctx, deps, options = {}) {
       return plan;
     })
     : null;
-  const progressPromise = options.progressScope === 'home' && deps.getHomeProgressRecords && !(deps.isYoyoChild && deps.isYoyoChild(ctx.child))
-    ? deps.getHomeProgressRecords(scope, today)
+  const isYoyoFixedPlanChild = !!(deps.isYoyoChild && deps.isYoyoChild(ctx.child));
+  const progressPromise = options.progressScope === 'home' && deps.getHomeProgressRecords
+    ? deps.getHomeProgressRecords(scope, today, { includeHistory: isYoyoFixedPlanChild })
     : deps.getChildProgressRecords(scope);
+  const checkinsPromise = options.progressScope === 'home' && deps.getHomeCheckins
+    ? deps.getHomeCheckins(scope)
+    : deps.getCheckins(scope);
   let [progressRecords, checkins, todayReport, activeListeningPlan] = await Promise.all([
     progressPromise,
-    deps.getCheckins(scope),
+    checkinsPromise,
     includeTodayListeningMinutes && deps.getDailyReport
       ? deps.getDailyReport(scope, today)
       : null,

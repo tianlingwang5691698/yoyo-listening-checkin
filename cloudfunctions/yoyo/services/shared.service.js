@@ -697,9 +697,12 @@ async function getDashboardData(ctx, options = {}) {
     getTodayString,
     getUserScope,
     getChildProgressRecords,
-    getHomeProgressRecords: (scope, date) => progressRepository.findForHome(scope, date),
+    getHomeProgressRecords: (scope, date, queryOptions = {}) => progressRepository.findForHome(Object.assign({}, scope, {
+      includeHistory: !!queryOptions.includeHistory
+    }), date),
     getCompletedProgressCount: (scope) => progressRepository.countCompletedByScope(scope),
     getCheckins,
+    getHomeCheckins: (scope) => checkinRepository.findForHome(scope),
     getDailyReport: (scope, date) => reportRepository.findByScopeAndDate(scope, date),
     getActiveListeningPlan,
     refreshRuntimeCatalogs,

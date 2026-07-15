@@ -89,7 +89,19 @@ async function prepareRequestContext(event, deps) {
     ? await deps.getLightweightContext(OPENID, target)
     : null;
   let ctx = lightweightCtx || await deps.ensureBootstrap(OPENID, target);
-  if (deps.applyDeviceStudyRole) {
+  const useRequestDeviceRole = action === 'getDashboard'
+    && (view === 'home' || view === 'record')
+    && payload.deviceStudyRole
+    && ctx && ctx.member;
+  if (useRequestDeviceRole) {
+    ctx = Object.assign({}, ctx, {
+      member: Object.assign({}, ctx.member, {
+        studyRole: String(payload.deviceStudyRole).trim() === 'student' ? 'student' : 'parent',
+        deviceStudyRole: String(payload.deviceStudyRole).trim() === 'student' ? 'student' : 'parent',
+        deviceId: String(payload.deviceId || '').trim()
+      })
+    });
+  } else if (deps.applyDeviceStudyRole) {
     ctx = await deps.applyDeviceStudyRole(ctx, payload, action);
   }
   return {

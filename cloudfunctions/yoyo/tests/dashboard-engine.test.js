@@ -71,6 +71,49 @@ test('首页只读取今日进度和复听所需历史进度', async () => {
   assert.equal(fullProgressReads, 0);
 });
 
+test('佑佑首页使用字段投影的历史进度和打卡读取', async () => {
+  let fullProgressReads = 0;
+  let fullCheckinReads = 0;
+  let homeProgressOptions = null;
+  await dashboardEngine.getDashboardData({
+    member: { role: 'student' },
+    child: { childId: 'child-1', childLoginCode: '317613' }
+  }, {
+    getTodayString: () => '2026-07-15',
+    getUserScope: () => ({ familyId: 'family-1', childId: 'child-1' }),
+    getChildProgressRecords: async () => { fullProgressReads += 1; return []; },
+    getHomeProgressRecords: async (_scope, _date, options) => { homeProgressOptions = options; return []; },
+    getCheckins: async () => { fullCheckinReads += 1; return []; },
+    getHomeCheckins: async () => [],
+    getDailyReport: async () => null,
+    getActiveListeningPlan: async () => null,
+    isYoyoChild: () => true,
+    buildFixedPlanBySlots: () => ({ dayIndex: 86, phase: { key: 'round-2', label: '第2轮' }, byCategory: {}, flatTasks: [] }),
+    decorateFixedSlotPlanTasks: () => [],
+    getPlanCategoryOrder: () => [],
+    getPeppaReviewPlanOptions: () => ({}),
+    buildStats: () => ({ streakDays: 0 })
+  }, {
+    includeDailyTasks: false,
+    includeHomeTaskGroups: true,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: true,
+    includeUser: false,
+    includeFamily: false,
+    includeStats: false,
+    includeChildStats: false,
+    includeTodayListeningMinutes: true,
+    progressScope: 'home',
+    reconcileCheckins: false
+  });
+
+  assert.deepEqual(homeProgressOptions, { includeHistory: true });
+  assert.equal(fullProgressReads, 0);
+  assert.equal(fullCheckinReads, 0);
+});
+
 test('首页 Day 使用累计打卡日数而不是计划日', async () => {
   const dashboard = await dashboardEngine.getDashboardData({
     member: {}, child: { childId: 'child-1' }

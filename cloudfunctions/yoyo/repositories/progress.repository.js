@@ -4,6 +4,24 @@ function dailyTaskProgress() {
   return collection('dailyTaskProgress');
 }
 
+const HOME_PROGRESS_FIELDS = {
+  childId: true,
+  category: true,
+  date: true,
+  taskId: true,
+  originalTaskId: true,
+  planSource: true,
+  planRunType: true,
+  planSlotIndex: true,
+  listeningPlanId: true,
+  playCount: true,
+  repeatTarget: true,
+  completedToday: true,
+  textUnlocked: true,
+  durationSec: true,
+  updatedAt: true
+};
+
 async function findByScope(scope) {
   const res = await dailyTaskProgress().where({
     familyId: scope.familyId,
@@ -31,9 +49,25 @@ async function findByScopeAndCategory(scope, category) {
 }
 
 async function findForHome(scope, date) {
+  const query = dailyTaskProgress().where({
+    familyId: scope.familyId,
+    childId: scope.childId
+  }).field(HOME_PROGRESS_FIELDS);
+  if (scope.includeHistory) {
+    const res = await query.limit(1000).get();
+    return res.data || [];
+  }
   const [todayRecords, peppaRecords] = await Promise.all([
-    findByScopeAndDate(scope, date),
-    findByScopeAndCategory(scope, 'peppa')
+    dailyTaskProgress().where({
+      familyId: scope.familyId,
+      childId: scope.childId,
+      date
+    }).field(HOME_PROGRESS_FIELDS).limit(1000).get().then((res) => res.data || []),
+    dailyTaskProgress().where({
+      familyId: scope.familyId,
+      childId: scope.childId,
+      category: 'peppa'
+    }).field(HOME_PROGRESS_FIELDS).limit(1000).get().then((res) => res.data || [])
   ]);
   const byId = {};
   todayRecords.concat(peppaRecords).forEach((item) => {

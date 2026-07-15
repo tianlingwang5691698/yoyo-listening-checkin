@@ -42,6 +42,11 @@ async function findMembersByOpenId(openId) {
   return res.data || [];
 }
 
+async function findMemberByOpenIdAndFamilyId(openId, familyId) {
+  const res = await familyMembers().where({ openId, familyId }).limit(1).get();
+  return res.data[0] || null;
+}
+
 async function findMembersByFamilyId(familyId) {
   const res = await familyMembers().where({ familyId }).get();
   return res.data || [];
@@ -69,6 +74,7 @@ module.exports = {
   findFamilyByOwnerOpenId,
   findMemberByOpenId,
   findMembersByOpenId,
+  findMemberByOpenIdAndFamilyId,
   findMembersByFamilyId,
   createMember,
   updateMemberById,

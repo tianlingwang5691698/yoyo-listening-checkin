@@ -9,8 +9,40 @@ const familyFacade = require('../facades/family.facade');
 const studyFacade = require('../facades/study.facade');
 const childRepository = require('../repositories/child.repository');
 const familyRepository = require('../repositories/family.repository');
+const familyContextFacade = require('../facades/family-context.facade');
 const familyEngine = require('../lib/family-engine');
 const bootstrapEngine = require('../lib/bootstrap-engine');
+
+test('轻量上下文按目标家庭并行读取成员和孩子，不查询用户或全部家庭', async (t) => {
+  let allMemberReads = 0;
+  t.mock.method(familyRepository, 'findMemberByOpenIdAndFamilyId', async (openId, familyId) => ({
+    openId,
+    familyId,
+    memberId: 'member-1',
+    userId: 'user-1',
+    role: 'owner',
+    studyRole: 'student'
+  }));
+  t.mock.method(familyRepository, 'findMembersByOpenId', async () => {
+    allMemberReads += 1;
+    return [];
+  });
+  t.mock.method(childRepository, 'findByFamilyId', async (familyId) => ({
+    familyId,
+    childId: 'child-1',
+    childLoginCode: '317613'
+  }));
+
+  const ctx = await familyContextFacade.getLightweightContext('open-1', {
+    targetFamilyId: 'family-1',
+    targetChildId: 'child-1'
+  });
+
+  assert.equal(allMemberReads, 0);
+  assert.equal(ctx.user.userId, 'user-1');
+  assert.equal(ctx.family.familyId, 'family-1');
+  assert.equal(ctx.child.childId, 'child-1');
+});
 
 test('无目标学生时默认选择本机 owner 家庭', async () => {
   const ctx = await bootstrapEngine.ensureBootstrap('open-1', {

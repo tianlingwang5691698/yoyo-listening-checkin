@@ -710,32 +710,44 @@ Page({
       source: memoryReady ? 'memory' : (cacheReady ? 'cache' : 'skeleton'),
       groups: (this.data.groupedDailyTasks || []).length
     });
-    this.refreshHomeDashboard({ skipCache: true, perf: homePerf }).catch(() => {
+    const homeRefreshPromise = this.refreshHomeDashboard({ skipCache: true, perf: homePerf }).catch(() => {
       this.setData({ homeLoading: false });
     });
     setTimeout(() => {
       writeTodayCompletedCache(this.data.child, this.data.todayCompletedItems || []);
     }, 100);
-    setTimeout(() => {
-      this.prefetchListeningMaterialHome();
-      this.prefetchReadingHome();
-      this.prefetchVocabularyHome();
-    }, 200);
-    setTimeout(() => {
-      this.prefetchWritingMaterialHome();
-    }, 400);
-    setTimeout(() => {
-      this.prefetchGrammarHome();
-    }, 600);
-    setTimeout(() => {
-      this.prefetchListeningOverview();
-    }, 800);
-    setTimeout(() => {
-      this.prefetchRecordHome();
-    }, 1200);
-    setTimeout(() => {
-      this.prefetchProfileHome();
-    }, 1600);
+    this.scheduleHomePrefetches(homeRefreshPromise);
+  },
+  onUnload() {
+    this.clearHomePrefetchTimers();
+  },
+  onHide() {
+    this.clearHomePrefetchTimers();
+  },
+  clearHomePrefetchTimers() {
+    (this._homePrefetchTimers || []).forEach((timer) => clearTimeout(timer));
+    this._homePrefetchTimers = [];
+    this._homePrefetchScheduleId = Number(this._homePrefetchScheduleId || 0) + 1;
+  },
+  scheduleHomePrefetches(refreshPromise) {
+    this.clearHomePrefetchTimers();
+    const scheduleId = this._homePrefetchScheduleId;
+    Promise.resolve(refreshPromise).catch(() => {}).then(() => {
+      if (scheduleId !== this._homePrefetchScheduleId) return;
+      const steps = [
+        [0, () => {
+          this.prefetchListeningMaterialHome();
+          this.prefetchReadingHome();
+          this.prefetchVocabularyHome();
+        }],
+        [200, () => this.prefetchWritingMaterialHome()],
+        [400, () => this.prefetchGrammarHome()],
+        [600, () => this.prefetchListeningOverview()],
+        [1000, () => this.prefetchRecordHome()],
+        [1400, () => this.prefetchProfileHome()]
+      ];
+      this._homePrefetchTimers = steps.map(([delay, task]) => setTimeout(task, delay));
+    });
   },
   showNextEntryPosterPage() {
     this.setData({
@@ -830,14 +842,21 @@ Page({
     }
   },
   async refreshHomeDashboard(options = {}) {
-    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const selectedTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const currentChild = this.data.child || {};
+    const target = selectedTarget.targetFamilyId || selectedTarget.targetChildId
+      ? selectedTarget
+      : {
+        targetFamilyId: String(currentChild.familyId || '').trim(),
+        targetChildId: String(currentChild.childId || '').trim()
+      };
     const cached = store.getCachedReadResult
       ? store.getCachedReadResult('getDashboard', Object.assign({ view: 'home' }, target))
       : null;
     if (!options.skipCache && cached && cached.child) {
       this.applyDashboard(cached);
     }
-    const data = await store.getDashboard({ view: 'home', forceRefresh: true, requestNonce: Date.now() }, (fresh) => {
+    const data = await store.getDashboard(Object.assign({ view: 'home', forceRefresh: true }, target), (fresh) => {
       const groups = this.applyDashboard(fresh);
       if (options.perf || this.homePerf) {
         (options.perf || this.homePerf).mark('cloudRefresh', {

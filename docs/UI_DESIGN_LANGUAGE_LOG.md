@@ -6,6 +6,15 @@
 - 文件：`pages/home/index.js`、`tests/grammar-resume.test.js`
 - 改动：首页语法模块入口固定进入语法首页；只有今日任务中的具体语法任务继续直达对应课程。
 
+### 2026-07-15 首页云刷新与最小读取整改
+
+- 板块：首页
+- 文件：`pages/home/index.js`、`cloudfunctions/yoyo/facades/family-context.facade.js`、`cloudfunctions/yoyo/lib/request-context-engine.js`、`cloudfunctions/yoyo/lib/dashboard-engine.js`、`cloudfunctions/yoyo/repositories/progress.repository.js`、`cloudfunctions/yoyo/repositories/checkin.repository.js`、`tests/performance-contract.test.js`
+- 改动：首页快照首显后只优先执行 `getDashboard(view=home)`；次级页面预取改为 dashboard 完成后错峰执行，首页隐藏或卸载时取消。云端使用快照 target 并行校验成员与孩子，不再查询用户和设备会话；历史进度、打卡改为首页字段投影。
+- 设计记录：首页首屏只需要当前学生身份目标、今日任务、Day、目标分钟、学习入口和本地词汇摘要；后续页面预热、完整用户资料、设备会话和历史记录大字段不得进入首页刷新链路。
+- 性能要求：缓存 `pageReady <200ms`；首页云刷新 `<1000ms`，连续 3 轮必须全部达标、`dataFresh=true` 且无 timeout。
+- 验证：整改前 `cloudRefresh=1237–4476ms`；第一轮调度整改后 `pageReady=20–28ms`、`cloudRefresh=1017–1470ms`，仍按 `<1000ms` 判定不合格；第二轮云端最小读取本地回归 `79/79` 通过，需部署 `yoyo` 后执行最终线上 3 轮复测。底部 Tab 连续切换 10 次路径正确且无异常。
+
 ### 2026-07-15 首页底部安全留白
 
 - 首页两套主题统一保留底部导航高度和真机安全区，页面内容增多时最后一块仍可完整显示在导航上方。

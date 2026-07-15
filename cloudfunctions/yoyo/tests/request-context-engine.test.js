@@ -112,6 +112,33 @@ test('prepareRequestContext 听力素材详情使用轻量上下文', async () =
   assert.equal(result.ctx.child.childId, 'child-yoyo');
 });
 
+test('prepareRequestContext 首页直接使用请求设备身份，不查询设备会话', async () => {
+  let deviceSessionReads = 0;
+  const result = await requestContextEngine.prepareRequestContext({
+    action: 'getDashboard',
+    payload: { view: 'home', deviceId: 'dev-1', deviceStudyRole: 'student' }
+  }, {
+    refreshRuntimeCatalogs: async () => {},
+    getWXContext: () => ({ OPENID: 'open-1' }),
+    getLightweightContext: async () => ({
+      user: { openId: 'open-1' },
+      member: { memberId: 'member-1', studyRole: 'parent' },
+      family: { familyId: 'family-1' },
+      child: { childId: 'child-1' }
+    }),
+    ensureBootstrap: async () => ({}),
+    applyDeviceStudyRole: async () => {
+      deviceSessionReads += 1;
+      return {};
+    },
+    getTodayString: () => '2026-07-15'
+  });
+
+  assert.equal(deviceSessionReads, 0);
+  assert.equal(result.ctx.member.studyRole, 'student');
+  assert.equal(result.ctx.member.deviceId, 'dev-1');
+});
+
 test('prepareRequestContext 会传递选中学生上下文', async () => {
   const calls = [];
   await requestContextEngine.prepareRequestContext({

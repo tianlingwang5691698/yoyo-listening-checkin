@@ -49,10 +49,22 @@ test('成长页后台统计强制读取云端权威值，避免旧缓存覆盖�
   assert.equal(catalog.en.syncingDuration, 'Syncing');
 });
 
-test('首页快照首显后使用唯一请求刷新当前计划', () => {
+test('首页快照首显后强制刷新并回写可复用缓存', () => {
   const source = fs.readFileSync(path.join(root, 'pages/home/index.js'), 'utf8');
   assert.match(source, /HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV2'/);
-  assert.match(source, /getDashboard\(\{ view: 'home', forceRefresh: true, requestNonce: Date\.now\(\) \}/);
+  assert.match(source, /getDashboard\(Object\.assign\(\{ view: 'home', forceRefresh: true \}, target\)/);
+  assert.match(source, /targetFamilyId: String\(currentChild\.familyId/);
+  assert.doesNotMatch(source, /requestNonce/);
+});
+
+test('首页次级预取等待 dashboard 云刷新完成后再错峰执行', () => {
+  const source = fs.readFileSync(path.join(root, 'pages/home/index.js'), 'utf8');
+  const onShowSource = source.slice(source.indexOf('async onShow()'), source.indexOf('showNextEntryPosterPage()'));
+  assert.match(onShowSource, /const homeRefreshPromise = this\.refreshHomeDashboard/);
+  assert.match(onShowSource, /this\.scheduleHomePrefetches\(homeRefreshPromise\)/);
+  assert.doesNotMatch(onShowSource, /setTimeout\(\(\) => \{\s*this\.prefetchReadingHome/);
+  assert.match(source, /Promise\.resolve\(refreshPromise\)[\s\S]*?prefetchRecordHome/);
+  assert.match(source, /onHide\(\) \{\s*this\.clearHomePrefetchTimers\(\)/);
 });
 
 test('小程序上传包排除非运行时工程目录', () => {

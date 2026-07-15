@@ -12,6 +12,21 @@ async function findByScope(scope) {
   return res.data || [];
 }
 
+async function findForHome(scope) {
+  const res = await dailyCheckins().where({
+    familyId: scope.familyId,
+    childId: scope.childId
+  }).field({
+    date: true,
+    planDayIndex: true,
+    planRunType: true,
+    planSource: true,
+    completedAt: true,
+    completedCategories: true
+  }).get();
+  return res.data || [];
+}
+
 async function upsertByRecordId(existing, next) {
   if (existing) {
     await dailyCheckins().doc(existing._id).update({ data: next });
@@ -24,5 +39,6 @@ async function upsertByRecordId(existing, next) {
 module.exports = {
   dailyCheckins,
   findByScope,
+  findForHome,
   upsertByRecordId
 };

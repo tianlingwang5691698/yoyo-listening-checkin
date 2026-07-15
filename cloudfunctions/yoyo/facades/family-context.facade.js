@@ -95,25 +95,35 @@ async function ensureBootstrap(openId, target) {
 }
 
 async function getLightweightContext(openId, target) {
-  const memberRecords = await familyRepository.findMembersByOpenId(openId);
   const targetFamilyId = String((target && target.targetFamilyId) || '').trim();
   const forceSelf = !!(target && target.forceSelf);
-  const member = (targetFamilyId ? memberRecords.find((item) => item.familyId === targetFamilyId) : null)
-    || memberRecords.find((item) => item.role === 'owner')
-    || (forceSelf ? null : memberRecords[0])
-    || null;
+  const targetedContextPromise = targetFamilyId
+    ? Promise.all([
+      familyRepository.findMemberByOpenIdAndFamilyId(openId, targetFamilyId),
+      getChild(targetFamilyId)
+    ])
+    : null;
+  let member = null;
+  let child = null;
+  if (targetedContextPromise) {
+    [member, child] = await targetedContextPromise;
+  } else {
+    const memberRecords = await familyRepository.findMembersByOpenId(openId);
+    member = memberRecords.find((item) => item.role === 'owner')
+      || (forceSelf ? null : memberRecords[0])
+      || null;
+  }
   if (!member || !member.familyId) {
     return null;
   }
-  const [user, child] = await Promise.all([
-    userRepository.findByOpenId(openId),
-    getChild(member.familyId)
-  ]);
+  if (!child) {
+    child = await getChild(member.familyId);
+  }
   if (!child) {
     return null;
   }
   return {
-    user: user || {
+    user: {
       userId: member.userId || buildUserId(openId),
       openId
     },
