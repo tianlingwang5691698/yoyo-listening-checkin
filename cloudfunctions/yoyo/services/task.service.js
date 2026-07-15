@@ -532,6 +532,16 @@ async function completeGrammarPlanTask(event) {
   if (!task) {
     throw new Error(`grammar-plan-task-invalid:${taskId || 'missing'}`);
   }
+  const narrationDuration = Math.max(0, Number(payload.narrationDuration || 0));
+  const narrationListenedSec = Math.max(0, Number(payload.narrationListenedSec || 0));
+  const correctQuestionCount = Math.max(0, Number(payload.correctQuestionCount || 0));
+  const totalQuestionCount = Math.max(0, Number(payload.totalQuestionCount || 0));
+  if (!narrationDuration || narrationListenedSec < narrationDuration * 0.95) {
+    throw new Error('grammar-plan-audio-below-95-percent');
+  }
+  if (!totalQuestionCount || correctQuestionCount !== totalQuestionCount) {
+    throw new Error('grammar-plan-exercises-incomplete');
+  }
   const now = new Date().toISOString();
   await study.saveProgressRecord({
     progressId: `${scope.familyId}_${scope.childId}_${today}_grammar_${task.taskId}`,
@@ -547,6 +557,10 @@ async function completeGrammarPlanTask(event) {
     playMoments: [now],
     repeatTarget: 1,
     durationSec: 0,
+    narrationDuration,
+    narrationListenedSec,
+    correctQuestionCount,
+    totalQuestionCount,
     textUnlocked: true,
     completedToday: true,
     planDayIndex,

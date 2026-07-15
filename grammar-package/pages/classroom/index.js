@@ -3,6 +3,8 @@ const page = require('../../../utils/page');
 
 const THEME_KEY = 'uiTheme';
 const LANGUAGE_KEY = 'yoyoLanguageV1';
+const PLANNED_RESUME_PREFIX = 'grammarPlannedResumeV1:';
+const PLANNED_AUDIO_COMPLETE_RATIO = 0.95;
 
 function uiText(english) {
   const topics = english ? [
@@ -190,6 +192,18 @@ Page({
       lessonNumber: Math.max(1, Number(options.lessonNumber || 1)),
       taskId: String(options.taskId || '')
     };
+    this.plannedResume = this.readPlannedResume();
+    this.plannedCorrectQuestionIndexes = new Set(
+      Array.isArray(this.plannedResume.correctQuestionIndexes)
+        ? this.plannedResume.correctQuestionIndexes.map((item) => Number(item))
+        : Array.from({ length: Number(this.plannedResume.questionIndex || 0) }, (_, index) => index)
+    );
+    if (this.plannedResume.result === 'correct') {
+      this.plannedCorrectQuestionIndexes.add(Number(this.plannedResume.questionIndex || 0));
+    }
+    this.plannedNarrationListenedSec = Number(this.plannedResume.listenedSec || 0);
+    this.plannedNarrationResumePosition = Number(this.plannedResume.audioPosition || 0);
+    this.plannedNarrationLastTime = null;
     this.syncPreferences();
     if (this.plannedEntry.topic && this.plannedEntry.taskId) {
       this.loadCourse(this.plannedEntry.topic);
@@ -215,6 +229,7 @@ Page({
   },
 
   onUnload() {
+    this.persistPlannedResume();
     if (this.loadTimer) clearTimeout(this.loadTimer);
     this.loadRequestId = (this.loadRequestId || 0) + 1;
     if (this.narrationPollTimer) clearTimeout(this.narrationPollTimer);
@@ -224,6 +239,84 @@ Page({
       this.narrationAudioContext.destroy();
       this.narrationAudioContext = null;
     }
+  },
+
+  getPlannedResumeKey() {
+    return this.plannedEntry && this.plannedEntry.taskId
+      ? `${PLANNED_RESUME_PREFIX}${this.plannedEntry.taskId}`
+      : '';
+  },
+
+  readPlannedResume() {
+    const key = this.getPlannedResumeKey();
+    if (!key) return {};
+    try {
+      const value = wx.getStorageSync(key);
+      return value && typeof value === 'object' ? value : {};
+    } catch (error) {
+      return {};
+    }
+  },
+
+  persistPlannedResume() {
+    const key = this.getPlannedResumeKey();
+    if (!key || !this.data.activeLesson) return;
+    try {
+      wx.setStorageSync(key, {
+        topic: this.plannedEntry.topic,
+        lessonNumber: this.plannedEntry.lessonNumber,
+        taskId: this.plannedEntry.taskId,
+        lessonId: this.data.activeLesson.id || '',
+        questionIndex: Number(this.data.questionIndex || 0),
+        answer: this.data.answer || '',
+        result: this.data.result || '',
+        correctQuestionIndexes: Array.from(this.plannedCorrectQuestionIndexes || []).sort((left, right) => left - right),
+        listenedSec: Number(this.plannedNarrationListenedSec || 0),
+        audioPosition: Number(this.data.narrationCurrentTime || 0),
+        updatedAt: Date.now()
+      });
+    } catch (error) {}
+  },
+
+  clearPlannedResume(taskId) {
+    try {
+      wx.removeStorageSync(`${PLANNED_RESUME_PREFIX}${taskId}`);
+    } catch (error) {}
+  },
+
+  recordPlannedNarrationProgress(currentTime, duration) {
+    if (!this.plannedEntry || !this.plannedEntry.taskId || this.narrationSeeking || !this.data.narrationPlaying) {
+      this.plannedNarrationLastTime = Number(currentTime || 0);
+      return;
+    }
+    const current = Math.max(0, Number(currentTime || 0));
+    const last = Number(this.plannedNarrationLastTime);
+    const delta = Number.isFinite(last) ? current - last : 0;
+    if (delta > 0 && delta <= 1.5) {
+      const safeDuration = Math.max(0, Number(duration || 0));
+      this.plannedNarrationListenedSec = Math.min(
+        safeDuration || Infinity,
+        Number(this.plannedNarrationListenedSec || 0) + delta
+      );
+    }
+    this.plannedNarrationLastTime = current;
+    const now = Date.now();
+    if (!this.plannedResumeSavedAt || now - this.plannedResumeSavedAt >= 5000) {
+      this.plannedResumeSavedAt = now;
+      this.persistPlannedResume();
+    }
+  },
+
+  hasCompletedPlannedNarration() {
+    const duration = Number(this.data.narrationDuration || 0);
+    return duration > 0 && Number(this.plannedNarrationListenedSec || 0) >= duration * PLANNED_AUDIO_COMPLETE_RATIO;
+  },
+
+  hasCompletedPlannedQuestions() {
+    const questions = this.data.activeLesson && this.data.activeLesson.questions || [];
+    return questions.length > 0 && questions.every((_question, index) => (
+      this.plannedCorrectQuestionIndexes && this.plannedCorrectQuestionIndexes.has(index)
+    ));
   },
 
   syncPreferences() {
@@ -506,21 +599,37 @@ Page({
       const duration = Number(context.duration) || this.data.narrationDuration;
       this.setData({ narrationReady: true });
       this.syncNarrationTime(Number(context.currentTime) || 0, duration);
+      if (this.plannedNarrationResumePosition > 0 && this.plannedNarrationResumePosition < duration) {
+        const resumePosition = this.plannedNarrationResumePosition;
+        this.plannedNarrationResumePosition = 0;
+        this.seekNarrationTo(resumePosition);
+      }
     });
     context.onTimeUpdate(() => {
       if (this.narrationSeeking) return;
+      this.recordPlannedNarrationProgress(context.currentTime, context.duration);
       this.syncNarrationTime(context.currentTime, context.duration);
     });
     if (typeof context.onSeeked === 'function') {
       context.onSeeked(() => this.finalizeNarrationSeek(context.currentTime));
     }
-    context.onPlay(() => this.setData({ narrationLoading: false, narrationPlaying: true, narrationReady: true, narrationEnded: false }));
-    context.onPause(() => this.setData({ narrationPlaying: false }));
-    context.onStop(() => this.setData({ narrationPlaying: false }));
+    context.onPlay(() => {
+      this.plannedNarrationLastTime = Number(context.currentTime || 0);
+      this.setData({ narrationLoading: false, narrationPlaying: true, narrationReady: true, narrationEnded: false });
+    });
+    context.onPause(() => {
+      this.persistPlannedResume();
+      this.setData({ narrationPlaying: false });
+    });
+    context.onStop(() => {
+      this.persistPlannedResume();
+      this.setData({ narrationPlaying: false });
+    });
     context.onEnded(() => {
       const duration = Number(context.duration) || this.data.narrationDuration;
       this.syncNarrationTime(duration, duration);
       this.setData({ narrationPlaying: false, narrationEnded: true });
+      this.persistPlannedResume();
     });
     context.onError((error) => {
       if (this.data.screen !== 'lesson') return;
@@ -675,18 +784,20 @@ Page({
     if (!lesson || !lesson.questions || !lesson.questions.length) return;
     this.stopNarrationAudio();
     const startedAt = Date.now();
+    const resume = this.plannedResume && this.plannedResume.lessonId === lesson.id ? this.plannedResume : {};
+    const questionIndex = Math.min(Math.max(Number(resume.questionIndex || 0), 0), lesson.questions.length - 1);
     this.setData({
       screen: 'lesson',
       activeLesson: lesson,
       lessonIndex: index,
       lessonPosition: index + 1,
-      questionIndex: 0,
-      activeQuestion: lesson.questions[0],
-      answer: '',
-      result: '',
+      questionIndex,
+      activeQuestion: lesson.questions[questionIndex],
+      answer: resume.answer || '',
+      result: resume.result || '',
       narrationLoading: false,
       narrationPlaying: false,
-      isLastQuestion: lesson.questions.length === 1,
+      isLastQuestion: questionIndex === lesson.questions.length - 1,
       isLastLesson: index === course.length - 1
     }, () => {
       this.reportPerformance(2103, Date.now() - startedAt);
@@ -697,7 +808,11 @@ Page({
   chooseAnswer(event) {
     if (this.data.answer || !this.data.activeQuestion) return;
     const answer = String(event.currentTarget.dataset.answer || '');
-    this.setData({ answer, result: answer === this.data.activeQuestion.answer ? 'correct' : 'wrong' });
+    const result = answer === this.data.activeQuestion.answer ? 'correct' : 'wrong';
+    if (result === 'correct' && this.plannedCorrectQuestionIndexes) {
+      this.plannedCorrectQuestionIndexes.add(Number(this.data.questionIndex || 0));
+    }
+    this.setData({ answer, result }, () => this.persistPlannedResume());
   },
 
   retry() {
@@ -715,14 +830,32 @@ Page({
         answer: '',
         result: '',
         isLastQuestion: questionIndex === lesson.questions.length - 1
-      });
+      }, () => this.persistPlannedResume());
       return;
     }
     if (this.plannedEntry && this.plannedEntry.taskId) {
       const completedTaskId = this.plannedEntry.taskId;
-      this.plannedEntry = null;
+      if (!this.hasCompletedPlannedQuestions()) {
+        wx.showToast({ title: '请先完成全部课堂练习', icon: 'none', duration: 2400 });
+        this.persistPlannedResume();
+        return;
+      }
+      if (!this.hasCompletedPlannedNarration()) {
+        wx.showToast({ title: '讲解音频需播放满 95%', icon: 'none', duration: 2400 });
+        this.persistPlannedResume();
+        return;
+      }
       try {
-        await store.completeGrammarPlanTask(completedTaskId);
+        const totalQuestionCount = (this.data.activeLesson && this.data.activeLesson.questions || []).length;
+        await store.completeGrammarPlanTask({
+          taskId: completedTaskId,
+          narrationDuration: Number(this.data.narrationDuration || 0),
+          narrationListenedSec: Number(this.plannedNarrationListenedSec || 0),
+          correctQuestionCount: this.plannedCorrectQuestionIndexes.size,
+          totalQuestionCount
+        });
+        this.clearPlannedResume(completedTaskId);
+        this.plannedEntry = null;
         wx.showToast({ title: '微课已完成', icon: 'success' });
       } catch (error) {
         this.setData({ debugMessage: `DEBUG: grammar-package/pages/classroom.continueLesson -> store.completeGrammarPlanTask -> cloud.completeGrammarPlanTask -> saved: ${error && error.message || 'missing'}; taskId=${completedTaskId}; targetChildId=${this.getDebugTargetChildId()}` });

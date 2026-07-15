@@ -1134,8 +1134,8 @@ async function recordStudyCompletion(item) {
   return callCloud('recordStudyCompletion', withSelectedStudent(item || {}), { saved: false }, { useCache: false });
 }
 
-async function completeGrammarPlanTask(taskId) {
-  return callCloud('completeGrammarPlanTask', withSelectedStudent({ taskId }), { saved: false }, { useCache: false });
+async function completeGrammarPlanTask(payload) {
+  return callCloud('completeGrammarPlanTask', withSelectedStudent(payload || {}), { saved: false }, { useCache: false });
 }
 
 async function getStudyCompletions(options, onRefresh) {
