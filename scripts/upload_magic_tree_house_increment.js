@@ -17,14 +17,14 @@ const ROOT = path.join(__dirname, '..');
 const levelArg = process.argv.find((item) => item.startsWith('--level='));
 const LEVEL = String(levelArg ? levelArg.split('=')[1] : 'A2').toUpperCase();
 const CONFIGS = {
-  A2: { category: 'magictreehouse', count: 28, officialPdfCount: 27, asrFallbackCount: 1, referencePath: '_transcripts/A2/pete-the-cat/bundle-sentence-v1.json' },
-  B1: { category: 'magictreehouseb1', count: 24, officialPdfCount: 24, asrFallbackCount: 0, referencePath: '_transcripts/B1/new-concept-3-us-line/bundle.json' }
+  A2: { category: 'magictreehouse', count: 28, asrPrimaryCount: 28, referencePath: '_transcripts/A2/pete-the-cat/bundle-sentence-v1.json' },
+  B1: { category: 'magictreehouseb1', count: 24, asrPrimaryCount: 24, referencePath: '_transcripts/B1/new-concept-3-us-line/bundle.json' }
 };
 const CONFIG = CONFIGS[LEVEL];
 if (!CONFIG) throw new Error(`unsupported level: ${LEVEL}`);
 const BUILD_ROOT = path.join(ROOT, 'data', 'transcript-build', 'magic-tree-house', LEVEL, 'magic-tree-house');
 const MANIFEST_PATH = path.join(BUILD_ROOT, 'manifest.json');
-const BUNDLE_PATH = path.join(BUILD_ROOT, 'bundle-sentence-v2.json');
+const BUNDLE_PATH = path.join(BUILD_ROOT, 'bundle-sentence-v3.json');
 const REPORT_PATH = path.join(BUILD_ROOT, 'clean-report.json');
 const CREDENTIAL_PATH = path.join(ROOT, 'SecretKey.csv');
 const REFERENCE_PATH = CONFIG.referencePath;
@@ -125,8 +125,7 @@ async function main() {
     throw new Error(`expected ${CONFIG.count} Magic Tree House ${LEVEL} tracks`);
   }
   if (cleanReport.validationErrorCount !== 0 || cleanReport.builtTrackCount !== CONFIG.count
-    || cleanReport.officialPdfTrackCount !== CONFIG.officialPdfCount
-    || cleanReport.asrFallbackTrackCount !== CONFIG.asrFallbackCount) {
+    || cleanReport.asrPrimaryTrackCount !== CONFIG.asrPrimaryCount) {
     throw new Error(`local Magic Tree House ${LEVEL} validation report is not safe to upload`);
   }
 
@@ -145,7 +144,7 @@ async function main() {
     sha1: sha1File(BUNDLE_PATH)
   };
   const transcriptTrackItems = manifest.tracks.map((track) => {
-    const localPath = path.join(BUILD_ROOT, 'tracks-v2', `${track.trackId}.json`);
+    const localPath = path.join(BUILD_ROOT, 'tracks-v3', `${track.trackId}.json`);
     return {
       type: 'transcript-track',
       title: `${track.title} transcript`,
@@ -154,8 +153,8 @@ async function main() {
       sha1: sha1File(localPath)
     };
   });
-  // v2 uses new immutable paths for both levels; v1 remains available to old
-  // catalog releases and is never overwritten.
+  // v3 uses new immutable paths; v1/v2 remain available to old catalog
+  // releases and are never overwritten.
   const items = audioItems.concat(transcriptTrackItems, [transcriptItem]);
   if (items.some((item) => !fs.existsSync(item.localPath))) throw new Error('local upload file missing');
   if (new Set(items.map((item) => item.cloudPath)).size !== items.length) throw new Error('duplicate cloud path');

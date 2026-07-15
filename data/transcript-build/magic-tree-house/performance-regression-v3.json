@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-07-15T09:17:08+08:00",
+  "transcriptVersion": "sentence-v3",
+  "source": "whisper-small.en-segment-timestamps-primary",
+  "coldLoadThresholdMs": 1200,
+  "passed": true,
+  "samples": [
+    {
+      "trackId": "track-magic-tree-house-001",
+      "level": "A2",
+      "status": 200,
+      "wallMs": 570,
+      "bytes": 130841,
+      "lineCount": 778
+    },
+    {
+      "trackId": "track-magic-tree-house-028",
+      "level": "A2",
+      "status": 200,
+      "wallMs": 236,
+      "bytes": 149628,
+      "lineCount": 861
+    },
+    {
+      "trackId": "track-magic-tree-house-029",
+      "level": "B1",
+      "status": 200,
+      "wallMs": 241,
+      "bytes": 261509,
+      "lineCount": 1474
+    },
+    {
+      "trackId": "track-magic-tree-house-052",
+      "level": "B1",
+      "status": 200,
+      "wallMs": 222,
+      "bytes": 281480,
+      "lineCount": 1513
+    }
+  ]
+}

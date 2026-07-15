@@ -28,6 +28,7 @@ for (const config of configs) {
     const stable = (item) => {
       const copy = Object.assign({}, item);
       delete copy.textSource;
+      delete copy.validationStatus;
       return copy;
     };
     const current = categories[config.category];

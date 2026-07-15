@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build local Magic Tree House A2/B1 sentence bundles with real Whisper timestamps."""
+"""Build Magic Tree House A2/B1 bundles from Whisper ASR segments."""
 
 import argparse
 import hashlib
@@ -489,38 +489,20 @@ def build_one(meta, model_path, force_asr=False):
     # whisper.cpp may emit isolated non-UTF-8 bytes for unusual names; keep the
     # timestamped JSON structure and replace only those invalid text bytes.
     asr = json.loads(asr_path.read_text(encoding="utf-8", errors="replace"))
-    pdf_text_path = None
-    pdf_sha1 = ""
-    pdf_pages = 0
-    if meta["pdfPath"]:
-        pdf_text = extract_pdf_text(meta["pdfPath"])
-        pdf_text_path = root / "pdf-text" / f"{index:03d}-{file_slug}.txt"
-        pdf_text_path.parent.mkdir(parents=True, exist_ok=True)
-        pdf_text_path.write_text(pdf_text + "\n", encoding="utf-8")
-        pdf_sha1 = sha1_file(meta["pdfPath"])
-        pdf_pages = pdf_page_count(meta["pdfPath"])
-        alignment = align_official_sentences(meta["trackId"], official_sentences(pdf_text), asr, meta["durationMs"])
-        lines = alignment["lines"]
-        source = "official-pdf-plus-whisper-small.en-segment-backbone"
-        text_source = str(meta["pdfPath"])
-        validation_status = "official-pdf-aligned-candidate"
-    else:
-        lines = asr_sentence_lines(meta["trackId"], asr, meta["durationMs"])
-        alignment = {
-            "officialTokenCount": 0,
-            "asrWordCount": len(whisper_words(asr)),
-            "matchedAsrWordCount": 0,
-            "asrWordCoverage": 0,
-            "officialTokenCoverage": 0,
-            "officialLineCount": 0,
-            "asrPatchLineCount": len(lines),
-        }
-        source = "whisper-small.en-segment-timestamps"
-        text_source = "ASR fallback: supplied #17 PDF is Sea Monsters and was rejected"
-        validation_status = "asr-only-missing-correct-pdf-candidate"
+    lines = asr_sentence_lines(meta["trackId"], asr, meta["durationMs"])
+    alignment = {
+        "officialTokenCount": 0,
+        "asrWordCount": len(whisper_words(asr)),
+        "matchedAsrWordCount": 0,
+        "asrWordCoverage": 1,
+        "officialTokenCoverage": 0,
+        "officialLineCount": 0,
+        "asrPatchLineCount": 0,
+    }
+    source = "whisper-small.en-segment-timestamps-primary"
+    text_source = str(asr_path)
+    validation_status = "asr-primary-candidate"
     errors = validate_lines(lines, meta["durationMs"])
-    if meta["pdfPath"] and alignment["asrWordCoverage"] < 0.6:
-        errors.append(f"ASR word coverage below threshold: {alignment['asrWordCoverage']:.1%}")
     track = {
         "trackId": meta["trackId"],
         "contentId": meta["id"],
@@ -532,11 +514,7 @@ def build_one(meta, model_path, force_asr=False):
         "textSource": text_source,
         "durationSec": round(meta["durationSec"], 3),
         "lines": lines,
-        "scriptPatches": ([{
-            "source": "whisper.cpp-small.en",
-            "reason": "official PDF has unmatched or missing audio ranges",
-            "lineCount": alignment["asrPatchLineCount"],
-        }] if alignment["asrPatchLineCount"] else []),
+        "scriptPatches": [],
     }
     durations = [(line["endMs"] - line["startMs"]) / 1000 for line in lines]
     gaps = [(lines[index]["startMs"] - lines[index - 1]["endMs"]) / 1000 for index in range(1, len(lines))]
@@ -547,13 +525,13 @@ def build_one(meta, model_path, force_asr=False):
         "trackId": meta["trackId"],
         "title": meta["title"],
         "sourcePath": str(meta["audioPath"]),
-        "transcriptSourcePath": str(meta["pdfPath"]) if meta["pdfPath"] else "",
+        "transcriptSourcePath": str(asr_path),
         "audioCloudPath": meta["audioCloudPath"],
         "durationSec": round(meta["durationSec"], 3),
         "size": meta["audioPath"].stat().st_size,
         "sha1": meta["audioSha1"],
-        "pdfSha1": pdf_sha1,
-        "pdfPageCount": pdf_pages,
+        "pdfSha1": "",
+        "pdfPageCount": 0,
         "lineCount": len(lines),
         "officialTokenCount": alignment["officialTokenCount"],
         "asrWordCount": alignment["asrWordCount"],
@@ -567,7 +545,7 @@ def build_one(meta, model_path, force_asr=False):
         "validationStatus": validation_status,
         "validationErrors": errors,
         "asrPath": str(asr_path),
-        "pdfTextPath": str(pdf_text_path) if pdf_text_path else "",
+        "pdfTextPath": "",
         "asrGeneratedNow": generated,
         "asrElapsedSec": round(elapsed, 3),
     }
@@ -576,7 +554,7 @@ def build_one(meta, model_path, force_asr=False):
 
 def load_existing_level(level):
     root = OUT_ROOT / level / "magic-tree-house"
-    bundle_path = root / "bundle-sentence-v2.json"
+    bundle_path = root / "bundle-sentence-v3.json"
     manifest_path = root / "manifest.json"
     bundle = json.loads(bundle_path.read_text(encoding="utf-8")) if bundle_path.exists() else {}
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {"meta": {}, "tracks": []}
@@ -587,8 +565,8 @@ def write_level_outputs(level, bundle, items):
     root = OUT_ROOT / level / "magic-tree-house"
     tracks = [items[index] for index in sorted(items)]
     expected = list(range(1, 29)) if level == "A2" else list(range(29, 53))
-    transcript_cloud_path = f"_transcripts/{level}/magic-tree-house/bundle-sentence-v2.json"
-    transcript_track_root = f"_transcripts/{level}/magic-tree-house/tracks-v2"
+    transcript_cloud_path = f"_transcripts/{level}/magic-tree-house/bundle-sentence-v3.json"
+    transcript_track_root = f"_transcripts/{level}/magic-tree-house/tracks-v3"
     manifest = {
         "meta": {
             "level": level,
@@ -602,8 +580,8 @@ def write_level_outputs(level, bundle, items):
             "expectedIndexes": expected,
             "expectedTrackCount": len(expected),
             "asrModel": "whisper.cpp-small.en",
-            "transcriptVersion": "sentence-v2",
-            "timing": "whisper-segment-backbone-with-official-pdf-text-no-duration-proportional-allocation",
+            "transcriptVersion": "sentence-v3",
+            "timing": "whisper-asr-segment-text-with-original-segment-timestamps",
         },
         "tracks": tracks,
     }
@@ -637,8 +615,9 @@ def write_level_outputs(level, bundle, items):
         "expectedTrackCount": len(expected),
         "builtTrackCount": len(tracks),
         "missingIndexes": [index for index in expected if index not in items],
-        "officialPdfTrackCount": sum(1 for item in tracks if item["transcriptSourcePath"]),
-        "asrFallbackTrackCount": sum(1 for item in tracks if not item["transcriptSourcePath"]),
+        "officialPdfTrackCount": 0,
+        "asrFallbackTrackCount": 0,
+        "asrPrimaryTrackCount": len(tracks),
         "lineCount": sum(item["lineCount"] for item in tracks),
         "durationSec": round(sum(item["durationSec"] for item in tracks), 3),
         "audioBytes": sum(item["size"] for item in tracks),
@@ -648,7 +627,7 @@ def write_level_outputs(level, bundle, items):
         "maxGapSec": max((item.get("maxGapSec", 0) for item in tracks), default=0),
         "validationErrorCount": len(errors),
         "validationErrors": errors,
-        "timing": "whisper-segment-backbone-with-official-pdf-text-no-duration-proportional-allocation",
+        "timing": "whisper-asr-segment-text-with-original-segment-timestamps",
     }
     samples = []
     if tracks:
@@ -664,9 +643,9 @@ def write_level_outputs(level, bundle, items):
                 "lastLine": lines[-1] if lines else None,
                 "lastLineEndsAtDuration": bool(lines) and lines[-1]["endMs"] == round(item["durationSec"] * 1000),
             })
-    write_json(root / "bundle-sentence-v2.json", bundle)
+    write_json(root / "bundle-sentence-v3.json", bundle)
     for item in tracks:
-        write_json(root / "tracks-v2" / f"{item['trackId']}.json", bundle[item["trackId"]])
+        write_json(root / "tracks-v3" / f"{item['trackId']}.json", bundle[item["trackId"]])
     write_json(root / "manifest.json", manifest)
     write_json(root / "catalog-items.json", catalog)
     write_json(root / "clean-report.json", report)
