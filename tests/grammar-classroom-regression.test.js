@@ -95,7 +95,8 @@ test('语法微课堂只打包界面并通过云端按版本加载课程', () =>
   assert.match(classroomPage, /courseLoading:[\s\S]*retryCourse\(\)/);
   assert.match(classroomWxml, /courseLoading/);
   assert.doesNotMatch(classroomWxml, /ui\.loadingCourse/);
-  assert.match(classroomWxml, /narrationPlaying \|\| narrationEnded \|\| !narrationCurrentTime/);
+  assert.doesNotMatch(classroomWxml, /▶|Ⅱ/);
+  assert.match(classroomWxml, /narrationPlaying \? ui\.pauseNarration[\s\S]*narrationCurrentTime > 0 \? ui\.resumeNarration : ui\.listenNarration/);
   assert.match(classroomWxml, /bindtap="retryCourse"/);
   assert.ok(ignoredFolders.includes('grammar-package/domain/grammar-classroom'));
   assert.ok(ignoredFolders.includes('grammar-package/components'));
