@@ -99,7 +99,7 @@ sourceFiles.forEach((fileName) => {
 });
 
 lessons.sort((left, right) => left.id.localeCompare(right.id));
-if (lessons.length !== 301) throw new Error(`Expected 301 grammar narrations, received ${lessons.length}`);
+if (lessons.length !== 484) throw new Error(`Expected 484 grammar narrations, received ${lessons.length}`);
 if (new Set(lessons.map((lesson) => lesson.id)).size !== lessons.length) throw new Error('Duplicate grammar narration id');
 const orderedHashes = Object.fromEntries(Object.entries(hashes).sort(([left], [right]) => left.localeCompare(right)));
 fs.writeFileSync(outputPath, `${JSON.stringify({ version: 1, lessons, hashes: orderedHashes }, null, 2)}\n`);

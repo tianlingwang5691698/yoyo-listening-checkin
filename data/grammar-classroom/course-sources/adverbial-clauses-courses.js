@@ -5,16 +5,70 @@ function analysis(english,chunks){return chunks.map(([text,role,zh,en])=>({text,
 function note(english,mode,zh,en){if(!mode)return{visible:false,mode:'',title:'',body:'',detail:''};const t={logic:['逻辑关系','Logical relation'],order:['位置与标点','Position and punctuation'],contrast:['易混辨析','Contrast'],tense:['时态观察','Tense focus'],transformation:['结构转换','Transformation'],translation:['语序翻译','Word-order translation'],boundary:['边界提醒','Boundary note']};return{visible:true,mode,title:pick(english,...(t[mode]||t.logic)),body:pick(english,zh,en),detail:''};}
 const opt=(english,v)=>Array.isArray(v)?pick(english,v[0],v[1]):v;
 function question(english,x,index){const options=x[2].map((v,i)=>({key:String.fromCharCode(65+i),text:opt(english,v)}));let answer=x[3];if(index%2===1&&options.length===2){options.reverse();options.forEach((item,i)=>{item.key=String.fromCharCode(65+i);});answer=answer==='A'?'B':'A';}return{question:pick(english,x[0],x[1]),options,answer,correct:pick(english,x[4],x[5]),wrong:pick(english,`再看逻辑：${x[4]}`,`Check the logic: ${x[5]}`)};}
-const ADVERBIAL_CLAUSE_ESSENCE_NARRATION={
- id:'adverbial-clauses:adverbial-function-position',version:'v2',
- text:`“学生离开了”这件事已经说清楚，可听的人还可能问：什么时候离开的？为什么离开？在什么条件下才离开？英语会在主句旁边再加一个小句子，把这些背景交代出来。<#0.7#>
-When the bell rang, the students left。<#0.8#>先抓住真正要说的事：the students left。前面的 the bell rang 自己也有“铃响了”这套主谓骨架；when 把它接到主句上，告诉我们学生离开的时间。整个 When the bell rang 不占主句的主语或宾语，只给离开这件事加时间背景，所以叫时间状语从句。
-换一个连接词：<#0.4#>Because the road was closed, we turned back。<#0.7#>主干是 we turned back。because 后面说明“道路封闭了”，回答为什么返回，因此是原因状语从句。连接词不是装饰：when 标时间，because 标原因，if 还可以标条件，选错了，两个事件的关系就变了。
-The students left when the bell rang 把时间从句放在后面，和 left 连得很紧，通常不加逗号；放到前面时，常用逗号告诉读者背景结束、主句开始。<#0.8#>
-再比较 Because of the rain。the rain 只有名词，没有自己的主语和谓语，所以这是介词短语，不是从句。判断时先找主句；再看附加部分有没有完整主谓；有的话，问它给主句加的是时间、原因、条件还是其他逻辑；最后根据前后位置处理逗号。`,
- lengthText:'586 字 · 约 2 分钟'
+function narration(id,text){const count=text.replace(/<#[\d.]+#>/g,'').replace(/\s/g,'').length;return{id:`adverbial-clauses:${id}`,version:'v3',text,lengthText:`${count} 字 · 约 2 分钟`};}
+const NARRATIONS={
+ 'adverbial-function-position':narration('adverbial-function-position',`先看 When the bell rang, the students left。<#0.7#>真正要说的主干是 the students left，也就是“学生离开了”。When the bell rang 里面也有自己的主语 the bell 和动作 rang，但它整个放在主干旁边，只负责回答“什么时候离开”。这就是状语从句：里面是一套小句子，放到外面却像一个时间、原因或条件说明。
+第二句 Because the road was closed, we turned back。主干换成 we turned back，前面的小句子回答“为什么返回”。所以连接词不能只当成开头标记；when 让两个事件形成时间关系，because 让它们形成原因关系，连接词一换，听者理解的关系也会跟着变。<#0.8#>
+再看 The students left when the bell rang。时间从句放在后面，紧跟 left，通常不用逗号；放在前面时，逗号帮助我们看出背景讲完了，主句开始了。最后比较 Because of the rain, we stayed inside。the rain 只有名词，没有自己的谓语，因此 Because of the rain 是介词短语，不是从句。判断时先抓主句，再看附加部分有没有自己的主谓，最后问它给主句补的是哪一种关系。`),
+ 'time-when-while-as':narration('time-when-while-as',`when、while 和 as 都能说“当……时”，但它们让我们看到的时间画面不一样。先看 When the phone rang, I answered it。<#0.7#>电话响是一个清楚的时间点，回答电话紧接着发生。这里用 when，重点是把 answered 定位在电话响起的那个时刻。when 的范围最宽，既能接时间点，也能接一段时间。
+再看 While I was studying, my brother was sleeping。was studying 和 was sleeping 都在持续，两个动作有一段时间重叠。while 像是把一段时间框出来，让我们同时看到“我在学习”和“弟弟在睡觉”。如果只想抓某个突然发生的点，就不必强行用 while。<#0.8#>
+最后看 As the sun rose, the sky grew brighter。太阳升起不是一下完成，天空变亮也在逐渐发生，两个变化一起往前走。as 在这里更接近“随着”。所以选择时不要只背中文翻译：要看画面。抓一个时刻，when 最自然；突出两个持续过程重叠，用 while；强调两个过程同步变化，用 as。先判断事件是一个点、一段重叠，还是一起发展，再选连接词。`),
+ 'time-before-after':narration('time-before-after',`before 和 after 的核心不是翻译，而是给两个动作排队。先看 Wash your hands before you eat。<#0.7#>主句要求先洗手，before you eat 把“吃饭”放到后面，所以顺序是洗手在前，吃饭在后。看到 before 时，可以把从句里的动作当成一个时间界线，主句动作发生在这条界线之前。
+第二句 After she finished the report, she sent it。after 从句放在前面，告诉我们报告先完成，随后才发送。不要因为从句写在句首，就误以为句首动作一定晚发生；真正决定先后的，是 after 的意义。<#0.8#>
+再看 After she had finished the report, she sent it。had finished 用过去完成时，把“先完成”再突出一次。但 after 本身已经把顺序说清，所以很多语境里 finished 就足够，过去完成时不是见到 after 就必须使用。判断时先圈出两个事件，再让连接词排顺序：before 后的事件较晚，after 后的事件较早。时态负责补充强调，连接词才是判断时最先要看的路标。`),
+ 'time-until-since':narration('time-until-since',`until 和 since 都在时间线上找一个点，但一个看终点，一个看起点。先看 We waited until the bus arrived。<#0.7#>waited 是持续动作，等待一直延续，直到公交车到达才结束。until the bus arrived 就像给等待画出右边的终点，重点不是公交到达持续多久，而是等待到哪里停止。
+第二句 She did not leave until the meeting ended。这里不能机械理解成“离开一直持续”。did not leave 表示之前始终没有离开，会议结束时，leave 这个动作才发生。not ... until 常表达“直到……才……”。<#0.8#>
+再看 I have lived here since I graduated。since I graduated 给出过去的起点，have lived 表示从毕业以后一直延续到现在。于是常见组合是：since 从句用一般过去时交代起点，主句用现在完成时连接过去和现在。判断时先问动作是在某一点结束，还是从某一点开始。看到终点用 until；看到起点并延续到现在，用 since 和完成时。特别注意 not until，它说的是动作到终点才开始，不是普通的“持续到”。`),
+ 'time-immediate-once':narration('time-immediate-once',`as soon as 和 once 都把两个事件接得很近，但重点略有不同。先看 Call me as soon as you arrive。<#0.7#>arrive 一发生，call 就要紧接着发生，中间不希望有明显等待。as soon as 强调“一……就……”，适合表达立即跟上的动作。
+第二句 Once you understand the rule, the task becomes easier。这里 once 不只是说时间先后，还带有“条件一旦成立”的感觉：只要理解规则，任务就会变容易。所以 once 经常站在时间和条件的交界处。<#0.8#>
+最后看 I will tell you as soon as I know。主句 will tell 明确指向将来，从句虽然也说将来的“知道”，却用一般现在时 know，不说 will know。原因是这个连接语已经把它放进未来时间安排里，不需要再用普通 will 重复标记。判断时先看你要表达的是“马上跟着发生”，还是“一旦条件成立”。前者使用表示“一……就……”的连接语，后者可用 once。谈将来时，再检查从句是否误加了 will。`),
+ 'place-where-wherever':narration('place-where-wherever',`地点状语从句不是单独说一个地点名，而是用一整套主谓关系回答“在哪里”。先看 Stay where you are。<#0.7#>主干只有 Stay，也就是“待着”。where you are 里面有 you 和 are，整个小句子说明 stay 的地点：待在你现在所在的位置。它不是 stay 的宾语，而是给动作补地点范围。
+再看 Where there is water, life can exist。where there is water 概括的不是某一个已知地点，而是所有“有水的地方”；主句说这些地方可能有生命。句首地点从句先搭好一个空间背景，后面的结论在这个范围内成立。<#0.8#>
+最后看 Wherever you go, I will follow you。wherever 比 where 更开放，意思是无论你去哪个地方，主句结果都不改变。选择时先问范围是否有限：只是指出动作发生的地方，用 where；想把所有可能地点都包括进去，用 wherever。判断地点从句时仍要检查内部主谓；本页三个地点从句都有自己的主语和谓语，有了这套骨架，它才是从句，而不只是一个地点词。`),
+ 'reason-because-since-as':narration('reason-because-since-as',`because、since 和 as 都能给原因，但说话人把原因放在多重要的位置，并不一样。先看 We stayed inside because it was raining。<#0.7#>如果别人问“为什么待在里面”，because it was raining 就是直接答案。because 把下雨作为重点原因，解释力度最清楚。
+第二句 Since everyone is here, we can begin。everyone is here 更像双方都看得到、都能接受的前提。说话人不是重点追问原因，而是借这个已知背景推出“可以开始”。since 在这里接近“既然”。<#0.8#>
+再看 As it was getting late, we went home。天色渐晚被轻轻放在句首当背景，真正要推进的信息是 we went home。as 表原因时通常比 because 弱，也常前置。选择时不要把三个词当成随意替换：需要正面回答 why，用 because；原因已经明显，拿来作为推理前提，用 since；只是顺带铺一个较弱背景，可用 as。先判断原因是不是句子的焦点，再决定连接词。`),
+ 'purpose-clauses':narration('purpose-clauses',`目的从句说的是“做这件事，想让什么发生”，它描述意图，不保证结果真的实现。先看 Speak slowly so that everyone can understand。<#0.7#>主干是 Speak slowly，慢慢说的目标，是让每个人能够听懂。can understand 表示这种能力或可能性，因此 so that 后常见 can、may 一类情态词。
+第二句 She left early so that she could catch the bus。主句在过去，目的从句用 could，表示她早走是为了能赶上公交。句子只交代她的打算，并没有保证最后一定赶上。in order that no one would notice, he entered quietly 也是目的，但 in order that 更正式，放在句首时，目的被先交代出来。<#0.8#>
+最后比较 He spoke so quietly that nobody heard him。这里不是“为了没人听见”，而是声音安静到实际造成没人听见。结构是 so quietly 加 that，quietly 的程度带来结果。判断目的还是结果，可以问：这是行动前想达到的目标，还是行动后已经出现的后果？目标用普通或更正式的目的连接结构；程度造成的实际后果，用 so 加形容词或副词再接 that。`),
+ 'result-so-such':narration('result-so-such',`so...that 和 such...that 都在说“程度达到这里，于是出现那个结果”。区别先看 that 前面中心是什么。The box was so heavy that I could not lift it。<#0.7#>heavy 是形容词，so 直接把“重”的程度提高，that 从句说明实际结果：我抬不起来。结构可以先抓成 so heavy，再接结果。
+第二句 It was such a difficult question that nobody answered it。这里中心是 question，是名词。such 带着整个 a difficult question，表示“这样一道难题”，随后出现无人回答的结果。不是看到 difficult 就只选 so，还要看它和 a、question 组成了完整名词短语。<#0.8#>
+再看 There were so many people that we could not enter。many 虽然修饰 people，但 many、much、few、little 表数量时习惯放在 so 后面，所以是 so many people。选择时先看结构：形容词或副词直接表示程度，用 so；a 加形容词加名词这一整组，用 such；遇到数量词 many、much、few、little，优先用 so。that 后面说的都是真实造成的结果，不是行动目的。`),
+ 'condition-if':narration('condition-if',`if 从句先提出一个前提，主句再说这个前提成立会怎样。先看 If it rains tomorrow, we will stay home。<#0.7#>下雨还没有发生，只是明天可能出现的条件。主句用 will stay 说结果，从句却用 rains，不用 will rain。一般现在时放在这里不表示“现在下雨”，而是英语表达将来条件的常见方式。
+第二句 If you heat ice, it melts。这里不是预测某一次未来，而是在说反复成立的规律：只要给冰加热，它就融化。因此条件和结果都用一般现在时。<#0.8#>
+再看 If you need help, call me。条件成立后，主句不是 will，而是祈使句 call me，直接给出建议或指令。这说明条件句的主句有多种样子，不必套成唯一公式。判断时分两步：先看条件是未来可能、普遍规律，还是给指令的前提；再选主句形式。未来真实条件常见“if 加一般现在时，主句用 will”；规律两边都用现在时；建议和命令可以直接用祈使句。`),
+ 'condition-unless-provided':narration('condition-unless-provided',`三种连接方式都在设条件，但门槛的方向不同。先看 Unless you hurry, you will miss the bus。<#0.7#>unless you hurry 相当于“如果你不赶快”，也就是“不赶快的话”。unless 自己已经带有否定方向，通常不要再重复否定，否则意思可能变乱。
+第二句 You may stay as long as you are quiet。这里 as long as 不是“和……一样长”，而是“只要”。安静这个条件持续满足，就可以留下。它强调许可建立在这个条件上。<#0.8#>
+再看 We will go provided that the weather is safe。provided that 把前提说得很明确：只有天气安全，才会去，语气比普通 if 更正式。选择时先看你想怎样设门槛：第一种表达“如果不……就……”；第二种表达“只要条件保持成立”；第三种正式说明“前提是”。最后再检查第一种连接词后面是否不必要地重复了否定。`),
+ 'concession-although-even':narration('concession-although-even',`让步关系可以理解成：前面的情况本来可能阻止结果，可结果还是发生了。先看 Although it was cold, we went out。<#0.7#>天冷通常让人不想外出，但 we went out 仍然成立。although 不是原因，它专门提醒听者：后面的结果和通常预期不一样。
+Though he was tired, he kept working 表达同样的转折预期，though 一般更口语、更灵活。Even though she knew the risk, she continued 里的 even 把阻碍再加强：她明明知道风险，仍然继续，反差更明显。<#0.8#>
+最后看 Even if it rains, we will go。这里下雨还没确定，只是假设一个可能情况；无论是否发生，去这件事都不变。even though 引出的是已经承认的事实，even if 引出的是尚未确定的假设。判断时先找“本来会阻止什么”的因素，再看它是事实还是可能。普通事实让步用 although 或 though；想加强反差用 even though；情况尚未发生，只是假设也不改变结果，用 even if。`),
+ 'concession-while-no-matter':narration('concession-while-no-matter',`这一节的让步不是简单说“但是”，而是说明无论出现哪一种情况，主句结论仍然不变。先看 While I understand your point, I disagree。<#0.7#>我理解你的观点，却仍不同意。while 在这里不表示两个动作同时发生，而是把“理解”和“不同意”放在一起形成对比，接近“虽然”。
+No matter what happens, stay calm 把可能发生的所有事情都包括进来：不管发生什么，保持冷静这条指令不变。Wherever she goes, she makes friends 也是同样思路，wherever 表示“无论哪里”，不论地点怎样变化，结果都成立。<#0.8#>
+最后看 Whoever calls, do not answer。不论打来电话的是谁，指令都不改变。判断 wh-ever 时不能只看到 ever 就下结论，要看整块内容在句中做什么。本页这些从句都给主句加“无论哪种情况”的让步范围。选择时，对比两个立场可用 while；想展开所有可能，用 no matter 加疑问词，或用 whatever、wherever、whoever 这样的形式。`),
+ 'comparison-clauses':narration('comparison-clauses',`比较从句的任务，是给比较词提供一个基准。先看 Mia runs faster than I do。<#0.7#>主干先说 Mia runs faster，但 faster 必须回答“比谁更快”。than I do 提供参照，do 代替前面已经出现的 runs，避免把相同的“跑”再完整说一遍。这个 do 不是新的动作意思，只是把相同谓语简洁地接住。
+第二句 This room is as bright as that one is。第一个 as 和 bright 组成 as bright，表示达到同等亮度；第二个 as 引出比较对象 that one。后面的 is 对应前面的 is bright，重复的 bright 可以省掉。<#0.8#>
+再看 She is taller than me / than I am。than me 在日常口语中很常见，可以看成较短的比较短语；than I am 明确写出主语和谓语，是完整比较从句，也更正式。判断时先找比较中心，是 faster、taller，还是 as bright；再找它跟谁比。比较从句里与前面重复的内容常被助动词代替或直接省略，所以不要因为句子短，就误认为结构不完整。`),
+ 'manner-as-as-if':narration('manner-as-as-if',`方式从句回答“动作是按照什么样子发生的”。先看 Do as I showed you。<#0.7#>主句只有 Do，真正的操作方式由 as I showed you 补出来，意思是按照我展示的方法做。as 在这里不是原因，也不是时间，要看它是否给动作提供一个可照着执行的样子。
+第二句 He speaks as if he knows everything。说话的样子像是他什么都知道。knows 用一般现在时，说明说话人至少把这种可能性留着，并没有明确断定它不真实。<#0.8#>
+再看 He talks as if he knew everything。同样是“仿佛”，knew 用过去式却不一定表示过去时间，它可以把情况推远，暗示说话人并不相信他真的什么都知道。选择时先分两类：明确表示“按照……方式”，用 as；表示外在样子“好像……”，用 as if 或 as though。然后再判断说话人态度：觉得可能真实，用普通时态；想表达与现实有距离或不相信，可用过去式，涉及 be 时也常见 were。`),
+ 'future-present-rule':narration('future-present-rule',`“主将从现”不是看到两个分句就套用，而是专门处理将来的时间或真实条件。先看 When she arrives, we will start。<#0.7#>开始发生在将来，主句用 will start；when 已经把 arrives 放到未来时间里，所以从句用一般现在时。If he calls, tell me 也一样，calls 表示将来可能条件，主句则直接用祈使句。
+Once you have finished, you may leave 使用现在完成时 have finished，重点是先把事情完成，再允许离开。它仍属于现在形式，不需要普通 will。<#0.8#>
+但 I do not know whether he will come 不受这条规则限制，因为 whether he will come 是 do not know 的宾语，讨论的是“他是否会来”，不是条件状语从句，所以可以用 will。最后看 If you will wait here, I will check the schedule。从句里的 will 表“如果你愿意等”，说的是意愿，不是单纯预测。判断时先确认从句功能：是将来时间或真实条件，通常用现在形式；是宾语从句，或者 will 自己表达意愿，就不能机械删掉。`),
+ 'tense-relations':narration('tense-relations',`时间从句里的时态，是在帮我们看清两个过去动作怎样摆放：谁在持续，谁突然发生，谁更早完成。先看 While I was cooking, the phone rang。<#0.7#>was cooking 拉出一段持续背景，rang 是在这段背景中突然出现的短动作。可以想成一条长线被一个点打断，所以背景用过去进行时，点状事件用一般过去时。
+第二句 When I arrived, they were eating。arrived 是到达的时间点，were eating 表示在那个时刻，吃饭正在进行。它和第一句的画面方向相反：时间点放在从句，持续背景放在主句，但判断方法相同。<#0.8#>
+再看 By the time we arrived, the film had started。到达是截止点，电影开始发生得更早。had started 用过去完成时把“早于另一个过去动作”标出来。选择时不要只看到 while 就一定用进行时，而要看动作本身是否持续；也不要见到两个过去动作就都用过去完成时。先画时间线：持续背景用过去进行时，短动作常用一般过去时，需要突出在另一个过去点之前已经完成，才用过去完成时。`),
+ 'paired-conjunction-boundaries':narration('paired-conjunction-boundaries',`中文里常说“因为……所以……”“虽然……但是……”，英语标准句子通常只选一套连接方式。先看 Because it rained, we stayed home。<#0.7#>because 已经把 it rained 变成原因背景，后面的 we stayed home 是主句，中间不需要再加 so。不是少翻了“所以”，而是英语已经用 because 把关系交代完成。
+第二句 It rained, so we stayed home 也正确，但结构变了。这里没有 because，so 把“下雨”和“待在家”两个分句并列起来，明确后一句是结果。你可以突出原因从属关系，也可以用 so 推出结果，但不要两边同时占用。<#0.8#>
+Although she was tired, she continued 同样如此。although 已经表示“疲惫本应阻碍继续，但结果仍发生”，主句前不再加 but。判断时先圈出已有连接词：用了 because，就直接接主句；用了 although 或 though，也直接接主句。想用 so 或 but，就拿掉前面的从属连词，重新组织成并列分句。英语不是漏掉一半，而是每个关系只让一套结构负责。`),
+ 'ellipsis-participle':narration('ellipsis-participle',`状语从句可以变短，但前提是缩短后，谁在做动作仍然清楚。先看 When (she was) young, she lived abroad。<#0.7#>括号里的内容补出了完整结构。因为从句主语和主句主语相同，而且从句里有 be 动词，英语可以省掉从句主语和 be，只留下表示年轻状态的部分。If necessary 也是常见短式，相当于“如果有必要”。
+再看 Walking home, I met Mia。walking 的动作虽然没有写主语，但逻辑上必须由主句主语 I 来完成，也就是“我走回家时遇见了米娅”。如果让读者误以为 Mia 在走，省略就失败了。<#0.8#>
+最后看 Although invited, he did not attend。he 是被邀请的人，所以用过去分词 invited 表被动；保留 although，让“虽然被邀请但没参加”的让步关系清楚。判断能否省略时依次检查：从句和主句是不是同一个主语；是主动动作还是承受动作；连接词删掉后逻辑会不会模糊。同主语且含 be，可省主语和 be；主动常用 doing，被动常用 done，但不能只为句子短就强行转换。`),
+ 'adverbial-integration':narration('adverbial-integration',`同一个事实放进不同连接词，主句和它的关系会完全改变。这一节不要先找中文对应词，而要问说话人想表达哪种逻辑。先看 Because the road was closed, we took another route。<#0.7#>道路关闭已经发生，并且直接导致改道，所以是原因。because 回答“为什么换路线”。
+Although the road was closed, the race continued 仍然承认道路关闭这个事实，但正常预期是比赛难以继续，实际却继续了，因此是让步。If the road is closed, we will take another route 又不同：道路是否关闭还没确定，只把它当成改道的条件。<#0.8#>
+最后看 When the road is closed, traffic moves slowly。这里不是说某一次原因，而是描述一种反复出现的时间情境：每逢道路关闭，交通就变慢。四句都围绕道路关闭，连接词却分别让它成为原因、阻碍仍未改变结果、尚待满足的条件，或反复发生的时间背景。判断顺序是：事实是否直接导致结果？本应阻碍却仍发生？事情是否尚未确定？还是在说每逢某时的规律？按真实关系选择对应连接词。`)
 };
-function lesson(english,spec,index){if(spec.rules.length!==spec.examples.length||spec.rules.length!==spec.questions.length)throw new Error(`Adverbial-clause coverage mismatch: ${spec.id}`);const examples=spec.examples.map(x=>({text:x[0].map(c=>c[0]).join(' '),analysis:analysis(english,x[0]),note:note(english,x[1],x[2],x[3])}));const result={id:spec.id,no:String(index+1).padStart(2,'0'),level:spec.level,title:pick(english,...spec.title),meta:pick(english,...spec.meta),examples:examples.map(x=>x.text),analyses:examples.map(x=>x.analysis),exampleNotes:examples.map(x=>x.note),rules:spec.rules.map(x=>pick(english,...x)),ruleCoverage:INCLUDE_RULE_COVERAGE?spec.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:spec.questions.map((x,i)=>question(english,x,i))};if(spec.id==='adverbial-function-position')result.narration=ADVERBIAL_CLAUSE_ESSENCE_NARRATION;return result;}
+function lesson(english,spec,index){if(spec.rules.length!==spec.examples.length||spec.rules.length!==spec.questions.length)throw new Error(`Adverbial-clause coverage mismatch: ${spec.id}`);const examples=spec.examples.map(x=>({text:x[0].map(c=>c[0]).join(' '),analysis:analysis(english,x[0]),note:note(english,x[1],x[2],x[3])}));const result={id:spec.id,no:String(index+1).padStart(2,'0'),level:spec.level,title:pick(english,...spec.title),meta:pick(english,...spec.meta),examples:examples.map(x=>x.text),analyses:examples.map(x=>x.analysis),exampleNotes:examples.map(x=>x.note),rules:spec.rules.map(x=>pick(english,...x)),ruleCoverage:INCLUDE_RULE_COVERAGE?spec.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:spec.questions.map((x,i)=>question(english,x,i))};result.narration=NARRATIONS[spec.id];return result;}
 
 const specs=[
   {id:'adverbial-function-position',level:'core',title:['状语从句的定义、本质与边界','Definition, core and boundary of adverbial clauses'],meta:['从句整体给主句加上时间、原因、条件等关系','The whole clause adds time, reason, condition and other relations to the main clause'],examples:[

@@ -65,7 +65,71 @@ I met the teacher who taught us last year yesterday 里，who taught us last yea
 判断时先圈出被说明的名词；再找它后面负责“哪一个、什么样”的从句；接着把先行词代回从句，检查关系词补的是主语、宾语还是状语；最后把“名词加从句”整块放回主句。`,
  lengthText:'642 字 · 约 2 分钟'
 };
-function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){if(atoms.length<3)throw new Error(`Too few relative atoms: ${id}`);const analyses=atoms.map(a=>analysis(english,a.parts));const result={id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses,exampleNotes:atoms.map((a,i)=>note(english,a.n,pick(english,a.q[7],a.q[8]),analyses[i])),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};if(id==='relative-boundary')result.narration=RELATIVE_ESSENCE_NARRATION;return result;}
+const relativeNarration=(id,text)=>({id:`relative-clauses:${id}`,version:'v4',text,lengthText:`${text.replace(/<#[\d.]+#>/g,'').replace(/\s/g,'').length} 字 · 约 2 分钟`});
+const RELATIVE_NARRATIONS={
+ 'relative-boundary':RELATIVE_ESSENCE_NARRATION,
+ 'relative-internal-role':relativeNarration('relative-internal-role',`The boy who won the race is Tom 里，先行词是 the boy，who won the race 整体说明是哪一个男孩。进入从句内部，本来要表达“这个男孩赢了比赛”，who 代表 the boy，直接作 won 的主语。所以关系词不只是把两部分粘起来，它还要填从句里的空位。<#0.8#>
+The film which we watched was exciting 中，从句主语是 we，watched 后缺被观看的对象，which 代回 the film，作 watched 的宾语。因此后面不能再重复添加 it，否则 which 和 it 会占同一个位置。<#0.8#>
+I remember the day when we met 里，we met 的主谓已经完整，并不缺宾语；when 补的是“在哪一天见面”，所以作时间状语。实用判断是：先圈先行词，再只看从句内部，问谓语缺主语、宾语，还是主谓已全只缺时间、地点等背景。缺什么，关系词就在里面做什么。关系代词可以作主语、宾语或定语，关系副词补状语，不能只凭 who、which、when 的中文意思判断。`),
+ 'who-whom':relativeNarration('who-whom',`The student who answered first won 中，who 代表 the student，进入从句就是“这个学生先回答”，所以 who 作 answered 的主语。主语不能拿掉，否则 answered 前没人执行动作，因此这里 who 不能省略。<#0.8#>
+The woman whom we invited arrived 里，从句主语已经是 we，invited 后缺被邀请的人，whom 填这个宾语位置。正式语体常用 whom；日常表达中这里也常用 who，或者在不引起误解时省掉宾语关系词。The teacher to whom I spoke was helpful 中，介词 to 已经放到关系词前，后面要用宾格 whom，整体表示我与那位老师交谈。<#0.8#>
+判断 who 还是 whom，先别背“谁和谁的宾格”，直接还原从句：谁 answered，we invited 谁，以及“我和谁交谈”。关系词执行动作就是主语，用 who；动作指向它或介词指向它，就是宾语，正式结构用 whom。介词直接前置时 whom 最清楚；口语把介词留在句尾时，who 或省略更常见。`),
+ 'whose':relativeNarration('whose',`The girl whose bag was lost is crying 中，先行词是 the girl，但从句真正的主语不是 girl，而是 whose bag。whose 表示 bag 属于这个女孩，和 bag 一起作从句主语。它的作用不是代替整个 bag，而是给 bag 加所属关系。<#0.8#>
+We visited a house whose roof was red 把 whose 用到了事物上，表示屋顶属于房子的组成部分。The company whose products sell well is expanding 也是事物关系：products 属于 company 的产品范围，所以 whose 不只指人。<#0.8#>
+The house, the roof of which was damaged, was repaired 展示了更正式的另一种说法：the roof of which 指房子的屋顶。判断 whose 时先找后面紧跟的名词，再问“这个名词和先行词是什么所属或部分整体关系”。whose 加名词整体进入从句，可能作主语，也可能作其他成分。不要把 whose 单独当主语，更不要因为先行词是物就一律排除它。`),
+ 'which':relativeNarration('which',`The machine which saves energy is expensive 中，先行词是 machine，which 代表它，在从句里执行 saves energy，所以作主语，不能省。整个 which saves energy 后置说明是哪台机器。<#0.8#>
+The phone which I bought works well 里，从句主语是 I，bought 后缺买的对象，which 代替 phone 作宾语。宾语位置在限制性从句中可以省略关系词，但页面这句保留 which，结构更容易看清。<#0.8#>
+The tool with which we opened the box was old 中，with 被提前到 which 前，which 作介词宾语，表示“用这个工具”。判断 which 的功能，要把先行词代回从句：机器执行节能，phone 是购买的对象，tool 是打开箱子所使用的工具。它可以补主语、宾语，也可以跟在介词后作介词宾语。重点不是记 which 等于“哪个”，而是确认它指向事物，并看从句内部到底空了什么位置。`),
+ 'that-relative':relativeNarration('that-relative',`The book that explains the rule is useful 中，that 指向 the book，在从句里作 explains 的主语，所以不能省。它所在的限制性从句负责从许多书中指出“解释这条规则的那本”。<#0.8#>
+The song that we heard was beautiful 里，从句主语是 we，heard 后缺听到的对象，that 作宾语。这里若省掉 that，保留的从句主语和谓语仍能显示宾语缺口，因此限制性结构中可以省。<#0.8#>
+The boy whose bike was stolen called the police 提醒我们，that 并不包办所有指人或指物的关系。这里要表达“男孩的自行车”，需要 whose 加 bike 建立所属关系，不能用 that 替代。判断是否用 that，先确认从句是在限制先行词范围，再看内部需要的是普通主语或宾语，还是所属、介词前置等特殊关系。that 可指人也可指物，但它没有 whose 的所属功能，也不能因此被当成万能关系词。`),
+ 'object-relative-omission':relativeNarration('object-relative-omission',`The film we watched was long 中，film 后看不到关系词，但进入从句会发现 we watched 后缺宾语。把先行词代回去，它正是观看的对象，所以这里省略的是宾语关系词，整个 we watched 仍然后置修饰 film。<#0.8#>
+The person I spoke to was kind 也是宾语缺口。I spoke to 后面缺介词 to 的对象，省略的关系词代表 person。介词留在句尾时，这种省略在自然表达里很常见。<#0.8#>
+The dog that barked all night is quiet now 则不能删 that，因为从句 barked all night 前缺主语，that 就是执行 barked 的 dog。若删掉，听者会先把狗和 barked 连成主句，结构也会和后面的 is 冲突。判断能否省略，只需还原从句：若关系词作宾语，主语仍清楚，常可省；若关系词作主语，绝不能省。不要用“看起来顺不顺”代替缺口检查。`),
+ 'relative-when':relativeNarration('relative-when',`I remember the day when we first met 中，先行词是 the day，从句 we first met 主谓已经完整，when 补“在那一天”，作时间状语。它可以理解为介词 on 加“那一天”，但不要把 when 当作 met 的宾语。<#0.8#>
+That was the year in which we moved 用介词加 which 表达同样的时间关系：in which 对应“在那一年”，语气更正式。<#0.8#>
+I remember the day that changed my life 看起来也有 day 加关系词，但内部 changed my life 缺的是主语，that 代表 day，意思是“那一天改变了我的人生”。这里不能换成 when，因为需要的是动作发出者，不是时间状语。选择 when 前先检查从句是否已有完整主谓和必要宾语；若只缺“在那个时间”，用 when 或合适的介词加 which；若时间名词本身在从句里执行动作或承受动作，就应使用关系代词。`),
+ 'relative-where':relativeNarration('relative-where',`This is the room where we study 中，先行词 room 是地点，从句 we study 已有主谓，where 补“在这个房间”，作地点状语。The town in which she grew up is small 用 in which 表达相同关系，对应“她在这个城镇长大”。<#0.8#>
+The city that we visited was crowded 不用 where，因为 visited 后缺直接宾语，that 代表 city，作 visited 的对象。先行词是地点，不代表一定选择 where。<#0.8#>
+We reached a stage where every choice mattered 中，stage 不是具体房间，却被理解成事情发展的阶段或处境，where 表示“在这个阶段中”，仍是地点式的情境状语。判断时先看从句缺口：主谓宾完整，只缺“在这个地方或情境里”，用 where 或介词加 which；若地点名词本身作动词宾语，就用 which 或 that。决定关系词的是内部功能，不是先行词中文标签。`),
+ 'relative-why':relativeNarration('relative-why',`Tell me the reason why you left 中，先行词是 the reason，从句 you left 已经完整，why 补“因为这个原因”，在内部作原因状语。整个 why you left 说明是哪一个原因。<#0.8#>
+The reason for which he resigned is unclear 用更正式的 for which 表达同一关系。把先行词代回从句，就是“他因为这个原因辞职”，因此介词 for 不能随意换。I know the reason you left 则省掉了 why，仍能根据 reason 和完整的 you left 恢复原因关系。<#0.8#>
+判断 why 时先确认前面是否是 reason，再检查从句本身是否已经有主语和谓语、没有缺少必要宾语。如果完整而只需要说明“出于这个原因”，why、for which 或零关系结构都可能成立。不要把 why 当成 reason 的同义重复；reason 是先行词，why 在从句内部承担原因状语，两个层级不同。`),
+ 'relative-way':relativeNarration('relative-way',`I like the way that she explains grammar 中，the way 是先行词，that she explains grammar 表示她讲语法的方式。这里 that 建立方式关系，整个从句后置修饰 way。<#0.8#>
+This is the way in which the machine works 用 in which 更正式地表达“以这种方式运转”。I remember the way you solved the problem 则把关系标记省掉，you solved the problem 的主谓宾仍完整，听者能从 the way 恢复“以这种方式”的关系。<#0.8#>
+这组结构最容易出现重复。the way 本身已经表示方式，后面通常用 that、in which，或直接零关系词，不能再叠加 how。判断时先保留 the way 作为被说明的名词，再选一种连接方式即可。三句表面不同，核心都一样：从句不在说另一个 way，而是在展示动作怎样发生。避免把多个都表示“方式”的标记堆在一起。`),
+ 'preposition-relative':relativeNarration('preposition-relative',`The colleague with whom I worked has left 中，把介词 with 放在关系词前，whom 作 with 的宾语，结构正式而清楚。还原后表示“我和这位同事一起工作”。<#0.8#>
+The colleague I worked with has left 把 with 留在句尾，并省掉宾语关系词，更接近日常表达。The topic about which we spoke was difficult 同样把 about 提前；若后置，可以让关系词留在 spoken 结构后，但页面这句展示的是正式前置。<#0.8#>
+She has three sisters, two of whom are doctors 不是普通的“介词加关系词”位置变化。two of whom 表示三位姐妹中的两位，of 建立部分与整体关系，不能把 whom 省掉。判断时先还原从句原本需要哪个介词，再决定正式前置还是自然后置。介词前置后，指人用 whom，指物用 which，不能用 that，也不能省；介词后置时，宾语关系词常可省。`),
+ 'restrictive-relative':relativeNarration('restrictive-relative',`Students who work hard make progress 中，students 范围很大，who work hard 把它缩小到努力学习的那些学生。去掉从句，意思会变成所有学生都进步，指称范围发生变化，所以从句是识别对象所必需的，不用逗号隔开。<#0.8#>
+The book that I need is unavailable 也是在许多书中筛选我需要的那本；that 作 need 的宾语。The device that saves energy costs more 则筛选能节能的设备，that 在从句里作主语。<#0.8#>
+限制性不是说信息“很重要”这么模糊，而是看它是否参与确定先行词究竟指谁或指哪一个。朗读时先行词和从句连接紧密，书写时通常没有逗号。判断可做删除测试：拿掉从句后，如果对象范围扩大或听者不知道具体指哪类，从句就在限制范围。关系词的内部功能仍要另查，不能因为都是限制性就默认都作同一种成分。`),
+ 'nonrestrictive-relative':relativeNarration('nonrestrictive-relative',`Mia, who lives next door, is a doctor 中，Mia 这个名字已经能确定对象，who lives next door 只是补充她住在隔壁。拿掉中间部分，主句仍在说明米娅是一名医生，指的还是同一个人。两个逗号像括号一样划出插入信息，朗读也要停一下。<#0.8#>
+My car, which is ten years old, still runs well 中，my car 已经可识别，从句补充车龄。This book, which I bought yesterday, is useful 里，which I bought yesterday 同样只是附加购买时间，不负责从多本书中筛选。<#0.8#>
+非限制性从句的核心是补充，不是“句子可有可无”这么简单，而是先行词在从句出现前已经确定。书写要保留逗号边界，不能用 that；即使 which 在内部作 bought 的宾语，也不能省略。判断时先问“没有从句，听者还能唯一知道说的是谁或哪一个吗”，再看标点是否把它作为插入说明。`),
+ 'that-constraints':relativeNarration('that-constraints',`This is the best film that I have seen 中，best 已把范围限定到最高程度，传统规范在最高级这类强限定语境后常优先用 that。that 在从句里作 seen 的宾语。这里说“优先”，不是把它变成唯一机械答案。<#0.8#>
+My father, who is sixty, still works 有逗号，who is sixty 只是补充说明，是非限制性从句，因此不能换成 that。The chair that I sat on broke 中，介词 on 留在句尾，that 作 on 的宾语，可以使用。<#0.8#>
+若把介词提前，就要说 on which，不能说 on that。判断 that 的边界，先看从句是否限制先行词；非限制性逗号结构排除 that。再看介词位置；介词直接放在关系词前，也排除 that。最高级、序数词或 all 等强限定环境常倾向 that，但真正决定“禁用”的是逗号边界和介词前置等结构条件。`),
+ 'sentential-as-which':relativeNarration('sentential-as-which',`He missed the train, which surprised us 中，which 不是只指 train。真正让我们吃惊的是“他错过火车”整件事，所以 which 回指前面的整个主句。逗号后的从句是在评论一个事实。<#0.8#>
+As we expected, the team won 里，as 同样联系主句内容，但带有“正如我们预料”的意味，而且可以放在主句前。The team won, which everyone expected 中，which 跟在被评论的事实后面，表示大家预料到了球队获胜这件事。<#0.8#>
+区分 as 和 which，不只看都能译成“这”。先看位置和语气：as 常带“正如”意味，位置较灵活，可以前置；which 通常放在所指整件事之后，补充说明这个事实产生的反应或评价。还要确认它们回指的是完整命题，而不是旁边最近的一个名词。用“到底是什么让人吃惊、被预料”来检验，答案若是一整件事，就是整句指代。`),
+ 'what-boundary':relativeNarration('what-boundary',`What you said is true 中，what 自带“你所说的内容”这一层意思，外面没有另一个先行词；这整块直接作主语，内部 what 又作 said 的宾语。<#0.8#>
+The thing that you said is true 则把两部分拆开：前面的名词是明确先行词，后面的 that 从句负责修饰它。既然先行词已经出现，就不能再叠加自带先行内容的 what，否则会重复。<#0.8#>
+I understand what you mean 中，what 引导的整块内容作 understand 的宾语，并不修饰外部某个名词。判断边界时先看 what 前是否已有被修饰的先行词。没有先行词，而且整段能直接占主语或宾语槽位，它就是融合的名词性结构；已有 thing 等先行词，则应使用 that、which 或允许的宾语省略。what 不是普通关系代词，不能随手接在先行词后。`),
+ 'relative-agreement':relativeNarration('relative-agreement',`The students who work hard will improve 中，who 在从句里作主语，但它指向复数先行词 students，所以从句谓语用 work，不用 works。关系词本身没有固定的单复数，数来自它代表的先行词。<#0.8#>
+She is one of the students who work hardest 中，who 通常指前面的 students，意思是那些学习最努力的学生中的一位，因此用复数 work。She is the only one of the students who works here 里，the only 把真正被说明的中心收紧到唯一的 one，who 指这唯一的一人，所以用 works。<#0.8#>
+判断一致时，先圈出关系词，再问它在从句中是不是主语；若是，就沿着指向找到实际先行中心，而不是只看离它最近的名词形式。one of 结构通常描述复数群体，the only one of 结构通常描述唯一的 one。语义指向确定后，谓语的单复数自然就确定。`),
+ 'reduced-relatives':relativeNarration('reduced-relatives',`The girl standing by the door is Mia 中，standing by the door 后置修饰 girl；展开后，要给女孩补上 who 引导、表示她正站在门边的完整从句。girl 是站立动作的发出者，所以用现在分词表达主动关系。<#0.8#>
+The books written by Lu Xun are famous 里，books 不是写作的人，而是被写出来的对象；written by Lu Xun 表达被动或结果关系，展开后要补出关系词和表示“被鲁迅写作”的完整谓语。<#0.8#>
+Students who have finished the test may leave 提醒我们不能见到关系词和助动词就随手删除。若把关系词和完成结构直接拿掉，finished 和 may leave 两套限定谓语会争抢主干，结构错误。缩减前先确认关系词作从句主语，再判断先行词与动作是主动还是被动，并检查缩减后的时间意义是否仍清楚。主动常用 -ing，被动或结果常用过去分词，但不是机械替换公式。`),
+ 'relative-nesting-ambiguity':relativeNarration('relative-nesting-ambiguity',`The book that I think you need is here 中，先找外层先行词 the book。that 引出的部分虽然插入 I think，但真正的缺口在 you need 后面，也就是“你需要这本书”。内部可以理解为一层“我认为”，再包着一层“你需要它”，that 作最深一层 need 的宾语。<#0.8#>
+I met the brother of the teacher who lives in Beijing 中，who 前面连续出现 brother 和 teacher，二者都指人，单靠位置和意义可能无法唯一确定谁住北京。这不是分析者必须强行选一个答案的句子，而是真实歧义。<#0.8#>
+I met the teacher’s brother. The brother lives in Beijing 通过拆句并重复 The brother，明确了居住者。处理嵌套时先匹配外层先行词，再进入从句逐层找谓语和缺口；遇到多个可能先行词，要承认语境不足。写作时可移动从句、重复名词或拆句消歧，清楚比勉强维持复杂结构更重要。`),
+ 'relative-integration':relativeNarration('relative-integration',`The scientist whose discovery changed medicine won the prize 先找主句骨架：科学家赢得了奖项。whose discovery changed medicine 后置修饰 scientist；进入从句，whose 限定 discovery，whose discovery 整体作 changed 的主语。<#0.8#>
+My uncle, who lives in Canada, is visiting us 中，my uncle 已经确定对象，逗号把 who lives in Canada 标成补充说明，因此是非限制性从句，不能用 that。<#0.8#>
+The plan that the committee proposed after months of discussion was rejected 里，主干是在说“方案被否决”。that 作 proposed 的宾语，after months of discussion 属于从句内部的时间背景。中文表达时，英语后置的长定语通常移到“方案”前，太长时也可拆开。综合分析固定四步：找先行词，代回关系词检查内部成分，借标点判断限制性，再处理英语后置与中文前移的顺序。每一步只解决一个问题，就不会把外层主干和从句内部混在一起。`)
+};
+function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){if(atoms.length<3)throw new Error(`Too few relative atoms: ${id}`);const analyses=atoms.map(a=>analysis(english,a.parts));const result={id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses,exampleNotes:atoms.map((a,i)=>note(english,a.n,pick(english,a.q[7],a.q[8]),analyses[i])),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};if(RELATIVE_NARRATIONS[id])result.narration=RELATIVE_NARRATIONS[id];return result;}
 
 function buildRelativeClausesCourse(english){
  const L=(...x)=>lesson(english,...x);

@@ -18,11 +18,78 @@ The question is whether we should leave 里，question 已经是主语，whether
 判断时先找外层主干，看句子缺的是“谁、什么”或“具体内容”；再把整个从句当成一块放进主语、宾语、表语或同位说明的位置；最后进入里面，另找一次主语、谓语，并检查连接词有没有承担成分。`,
  lengthText:'539 字 · 约 2 分钟'
 };
+const nounNarration=(id,text)=>({id:`noun-clauses:${id}`,version:'v4',text,lengthText:`${text.replace(/<#[\d.]+#>/g,'').replace(/\s/g,'').length} 字 · 约 2 分钟`});
+const NOUN_CLAUSE_NARRATIONS={
+  'clause-as-noun-slot':NOUN_CLAUSE_ESSENCE_NARRATION,
+  'connector-system':nounNarration('connector-system',`先看 I believe that he is right。主干是 I believe，后面整段说明“相信的内容”。这里 that 像一个接口，只负责把内容接进来，在从句内部不当主语，也不当宾语。<#0.7#>We do not know whether he will come 里的 whether 多了一层“来还是不来”的选择，但它同样不代替 he，也不代替 come 后面的成分。<#0.8#>
+再看 Tell me what you need。外层先抓 Tell me，what you need 是要告诉我的内容；进入从句，you 是主语，need 后面缺“需要什么”，what 正好补上这个宾语。所以 what 既负责连接，也在里面做事。I remember where we met 中，we met 的主谓已经完整，where 补的是见面的地点，因此它是地点状语。<#0.8#>
+判断连接词不要只背名单。先问这段内容是陈述、是否选择，还是缺少人、事物、时间、地点、原因、方式；再进入从句找缺口。that 只接陈述内容，whether 或 if 表示“是否”，what 等连接代词要填主语、宾语或定语，where 等连接副词补状语。这样选择连接词，是看它在句子里承担什么，不是凭中文随手翻。`),
+  'declarative-order':nounNarration('declarative-order',`I wonder where he lives 说的是“我想知道他住在哪里”。重点不在翻译，而在从句里的顺序：where 后面保持主语 he 再接 lives，不能把助动词提前到主语前。因为这个从句已经被装进 wonder 后面，成为一个句子成分；它虽然带疑问意思，结构上却不再是一句独立提问。<#0.8#>
+再看 Do you know what she wants? 整句确实在提问，所以外层用了 Do you know；但进入宾语从句，仍然是 she wants 的陈述顺序。The issue is whether they are ready 也一样，whether 后保留 they are ready，不能把 are 提到 they 前面。<#0.8#>
+最后看 I know who called。这里不要误以为 who 后面少了一个人。who 本身就是 called 的主语，所以直接接 called，不需要再加 do，也不需要另放主语。实用判断是：先把外层问题和内层从句分开；进入名词性从句后，通常按“连接词、主语、谓语”排列。若连接词自己就是主语，就直接接谓语。疑问的是意思，不等于里面还要使用疑问倒装。`),
+  'subject-clauses':nounNarration('subject-clauses',`That he apologized surprised everyone 先不要从 that 开始逐词翻。先找外层谓语 surprised，再问“什么让所有人吃惊”。答案是 That he apologized 这一整件事，所以整段从句站在主语位置；里面 he 是道歉的人，apologized 是动作。<#0.8#>
+Whether we can finish today depends on the weather 也是同样的外层结构。depends on 前面需要一个“取决于什么”的主语，Whether we can finish today 整体填进去，表达“今天能不能完成”这件事。whether 只标出两种可能，从句内部仍是 we can finish。<#0.8#>
+What you said makes sense 中，What you said 整体作主语；再进入里面看，you 是主语，said 后缺说的内容，what 同时填补宾语。判断主语从句时，先找主句真正的限定谓语，再看它前面的整块内容能否回答“什么事情产生了这个结果”。不要把从句中的 he、we、you 误当成外层主语。整段从句在外层按一个单位处理，内部再单独分析自己的主谓和连接词功能。`),
+  'object-clauses':nounNarration('object-clauses',`She said that she was tired 先抓主干 She said。said 会让人追问“说了什么”，that she was tired 就是说出的内容，整段作宾语。进入里面，she 是主语，was tired 说明状态；that 只负责引出内容，不占内部成分。<#0.8#>
+I wonder whether he knows 中，wonder 后面接的是一个不确定的问题：他是否知道。whether 表示“是或不是”，但从句仍用 he knows 的陈述顺序。Please tell me why the train is late 里，me 是接收信息的人，why the train is late 才是要告诉我的内容；内部 the train is late 已完整，why 补原因。<#0.8#>
+所以找宾语从句，先看外层动词是不是在表达说、想、知道、询问一类内容，再问“说什么、知道什么、想知道什么”。能回答这个问题的整段从句，就是内容宾语。然后再进入从句检查：连接词是只连接，还是还承担宾语、原因等功能。不要把 tell 后的 me 和后面的内容从句混成同一种宾语。`),
+  'predicative-clauses':nounNarration('predicative-clauses',`The truth is that nobody called 中，主语 The truth 只告诉我们“真相”，内容还没说清。is 后面的 that nobody called 把真相具体化：没有人来电话。整段放在系动词后，说明主语的内容，这就是表语从句。that 只引出陈述，内部主干是 nobody called。<#0.8#>
+The question is whether we can afford it 里，question 指向一个未确定的问题，whether we can afford it 给出“我们是否负担得起”这项选择。whether 保留“是还是不是”的意味，内部仍按 we can afford it 排列。<#0.8#>
+This is why I left 中，why I left 不是修饰 This，而是在 is 后说明“这就是我离开的原因”。内部 I left 已有主谓，why 提供原因。判断表语从句，先圈出系动词，再看后面的整块是否在解释主语“到底是什么、具体内容是什么或原因是什么”。不要一看到 is 后有从句，就只记名称；真正要看的是前面主语的信息是否需要由后面补完整。`),
+  'appositive-clauses':nounNarration('appositive-clauses',`The news that we won spread quickly 中，拿掉中间的内容说明，主句仍在表达“消息迅速传开”。that we won 没有占 spread 的宾语位置，而是紧跟 news，告诉我们“消息的具体内容”是我们赢了。这种从句叫同位语从句，常跟在 news、idea、question 这类需要展开内容的抽象名词后面。<#0.8#>
+I have no idea whether he will return 里，外层是 I have no idea，whether he will return 说明 idea 的内容是“他是否回来”。The question who should lead remains unanswered 中，拿掉内容说明后，主句仍表示“这个问题没有答案”；who should lead 展开这个问题：谁应该带领。who 在内部还是 should lead 的主语。<#0.8#>
+判断时先把从句暂时拿掉，看前面的名词和主句骨架是否仍成立；再问从句是在回答“这个消息、想法、问题的内容是什么”，还是在筛选“哪一个名词”。前一种是同位说明。它不替主句新增主语或宾语槽位，而是把抽象名词里的内容打开给你看。`),
+  'dummy-it-subject':nounNarration('dummy-it-subject',`It is clear that she understands 如果把每个词都当实义翻译，会误以为 it 指某个东西。其实先看后面 that she understands，这才是“很清楚”的真正内容。英语为了不让长从句顶在句首，先放一个 it 占住主语位置，再把真正主语移到后面。<#0.8#>
+It does not matter whether he agrees 也是如此。表面主语是 it，真正“不重要”的事情是 whether he agrees，也就是他同不同意。It is said that the team will change 里，it 不指代球队；that the team will change 是被说的内容，整个结构用来表达“据说”。<#0.8#>
+识别形式主语时，不要问 it 翻成“它”是什么，而要看后面是否有一整段 that 或 whether 从句，能够回答“什么很清楚、什么不重要、什么被说”。如果能，it 只是把句子头部撑起来，真正承载意义的是后置从句。分析时先标 it 为形式主语，再把后面的从句标成真正主语，不能把它误判成普通宾语。`),
+  'dummy-it-object':nounNarration('dummy-it-object',`We find it strange that he left early 中，find 后面看似已经有 it，但 it 并不指某件东西。真正被认为 strange 的内容，是 that he left early。英语先把短小的 it 放在宾语位置，让 strange 紧跟在后面，再把较长的真正宾语从句放到句尾。<#0.8#>
+She made it clear that she disagreed 里，made it clear 先搭出“把某事说明白”的框架，that she disagreed 才是被说明白的具体内容。I think it important that everyone should attend 同样先出现 it 和宾语补语 important，最后用 that 从句交代真正认为重要的事情。<#0.8#>
+判断形式宾语，先看动词后是否出现 it，再看 it 后面有没有 strange、clear、important 这类对内容作评价的补语，句尾是否还有能回答“究竟什么很奇怪、清楚或重要”的从句。三部分都能对上时，it 只占位置，后面的 that 从句才是真正宾语。不要把 that 从句误当成随意补充的原因。`),
+  'preposition-noun-clauses':nounNarration('preposition-noun-clauses',`Everything depends on whether we agree 先抓 depends on。介词 on 后需要一个对象，这个对象不是单个名词，而是 whether we agree 整段“我们是否同意”的内容，所以它整体作介词宾语。whether 在这里合适，因为表达两种可能。<#0.8#>
+We talked about what happened 中，about 后接 what happened。进入从句看，what 本身就是 happened 的主语，因此不需要再放一个主语。She is worried about how he will react 里，about 后面是 how he will react，内部 he 是主语，will react 是谓语，how 说明反应的方式。<#0.8#>
+判断时先找介词，不要只盯最后一个单词；再看介词后面是否是一整套带主谓的内容。如果是，就把整个从句框成介词宾语。连接词的选择还要看内部缺口：whether 表示是否，what 可作主语或宾语，how 作方式状语。普通 that 从句不能像名词一样直接跟在多数介词后，不能因为中文能说“关于这件事”就机械套 that。`),
+  'that-omission':nounNarration('that-omission',`I think that she is right 里，that 只标出宾语从句的起点，不在内部作成分。口语中主干清楚时，可以省去这个连接词，直接接“她是对的”这条陈述，意思和内部结构都没有改变，所以这里 that 常能省。<#0.8#>
+但 That she is right is obvious 不一样。整个 that 从句位于句首作主语，that 清楚标出长主语的边界；若直接从 she 开始，听者容易先把它当主句，因此通常要保留。He said he was tired and that he would leave 里有两个并列内容，第二个 that 把新从句边界重新标出来，也避免把后半段误接到前一句。<#0.8#>
+所以“that 能不能省”不能只背“宾语从句可省”。先看从句的位置：普通动词后的单个宾语从句最容易省；句首主语从句通常保留；多个并列从句或边界可能混乱时也应保留。that 虽然不承担内部成分，却承担结构路标的作用。省略的前提，是听者仍能迅速看清从句从哪里开始、和谁并列。`),
+  'whether-if-boundaries':nounNarration('whether-if-boundaries',`I do not know 后面可以用 whether，也可以用 if，再接 he will come；两者都能表达“他是否会来”，放在普通动词后的宾语从句里通常都可以。区别要从位置和结构边界看，而不是把两个词当成永远互换。<#0.8#>
+Whether he will come is unclear 中，整个从句放在句首作主语，这里用 whether，不用 if。We discussed whether to wait 里，连接词后直接接 to wait，也只能用 whether。I wonder whether or not she agrees 把 or not 紧跟在连接词后，同样选择 whether，结构最清楚。<#0.8#>
+实用判断可以分两步：先看是不是普通动词后的完整宾语从句，如果是，whether 和 if 往往都能用；再检查是否位于句首、是否接不定式、是否紧跟 or not，遇到这些边界就用 whether。whether 更明确地摆出两个选择，适用范围也更宽。不要只按中文“是否”随手选 if，也不要反过来认为所有宾语从句都必须用 whether。`),
+  'connector-pronouns':nounNarration('connector-pronouns',`I know who called 中，who 不只是把从句接到 know 后面，它自己就是 called 的主语，意思是“谁打来了电话”。因此 who 后直接接 called，不再加另一个主语。<#0.8#>
+She asked whom we had invited 里，从句主语是 we，had invited 后缺被邀请的人，whom 填宾语位置。Tell me whose bag this is 中，whose 和 bag 绑在一起，说明“谁的包”，它在从句内作 bag 的限定成分。We must decide which route is safer 里，which 选择的是 route，which route 整体作从句主语。<#0.8#>
+连接代词的关键，是一边连接，一边填从句内部的空位。分析时把它换成一个未知项：谁 called，we invited 谁，谁的 bag，哪条 route。这样就能看出它作主语、宾语还是定语。不要看到 who、what、which 就只翻中文疑问词；要继续检查它和后面的名词是否组成一块，以及从句的主谓宾还缺哪一项。`),
+  'connector-adverbs':nounNarration('connector-adverbs',`I remember when we first met 中，we first met 已有完整主谓，when 不是主语或宾语，而是补“什么时候见面”，所以作时间状语。<#0.8#>Show me where the key is 里，the key is 的内容需要一个地点，where 回答钥匙在哪里，作地点状语。
+Nobody knows why he left 中，he left 已经完整，why 补离开的原因。Please explain how this machine works 里，this machine works 也有主谓，how 说明机器以什么方式运转。<#0.8#>
+这四类词都不去占主语或宾语槽位，而是给内部动作或状态加时间、地点、原因、方式。判断时先把连接副词暂时拿掉，如果剩下的从句主谓结构仍完整，就看缺的是哪种背景信息：when 对时间，where 对地点，why 对原因，how 对方式。同时别忘了，它们引导的是嵌入从句，后面保持陈述语序。表达“钥匙在哪里”时，也不要把内部结构倒装成独立问句的顺序。`),
+  'what-vs-that':nounNarration('what-vs-that',`I understand what you mean 中，先进入从句看：you 是主语，mean 后缺“你的意思是什么”，what 正好作 mean 的宾语。所以 what 不只连接，还带着“所……的内容”，整个 what you mean 作 understand 的宾语。<#0.8#>
+I understand that you are worried 里，从句 you are worried 自身已经完整，that 只是把这条陈述接到 understand 后面，不在内部承担成分。What he needs is time 再次说明 what 自带缺口：he needs 后缺宾语，what 填进去；同时整个 What he needs 又作主句主语。<#0.8#>
+区分时别先翻成“什么”或“这件事”。先检查连接词后面的从句是否完整。若主语、谓语和必要宾语都齐全，只需一个连接标记，用 that；若从句内部还缺人或事物，并且这个缺口就是要表达的内容，用 what。简单说，that 后面接一条完整陈述，what 自己要在陈述里面占一个位置。`),
+  'appositive-vs-relative':nounNarration('appositive-vs-relative',`The news that we won is true 中，从句内部 we won 已经完整，that 不填任何缺口；that we won 直接告诉我们 news 的内容是什么，所以是同位语从句。<#0.8#>
+The news that surprised us was true 表面也有 news that，但进入从句会发现 surprised us 前缺主语，that 代表 news，正好执行 surprised。这个从句不是展开消息内容，而是在筛选“让我们吃惊的那条消息”，所以是定语从句。The idea that we should leave early seems sensible 中，we should leave early 完整，从句说明 idea 的具体内容。<#0.8#>
+判断不能只看前面是不是 news、idea，也不能只看有没有 that。先进入从句检查缺口：结构完整、that 只连接，并回答“这个抽象名词的内容是什么”，就是同位语从句；若内部缺主语或宾语，that 代回前面的名词，整段回答“哪一个、什么样的”，就是定语从句。看功能和缺口，比记词表可靠。`),
+  'wh-ever-nominal':nounNarration('wh-ever-nominal',`Whoever arrives first will get a prize 中，不要把 whoever 拆成普通的 who 加强调词。Whoever arrives first 整体表示“无论谁先到，也就是任何先到的人”，整段作主句主语；在内部，whoever 又是 arrives 的主语。<#0.8#>
+Choose whatever you like 里，whatever you like 是 choose 的宾语，内部 you like 后缺对象，whatever 填进去，范围是“你喜欢的任何东西”。Take whichever seat is free 中，whichever 和 seat 一起表示可选座位中的任何一个，整个 whichever seat is free 作 take 的宾语。<#0.8#>
+Whoever wants to join may come 再看主语功能：整段作 may come 的主语，whoever 同时作 wants 的主语。判断 wh-ever 名词性结构，要同时看两层：外层整段占主语或宾语槽位，内层 whoever、whatever、whichever 还要填人、事物或选择范围。它不是单纯让语气更强，而是把“无论哪一个”整体名词化。`),
+  'tense-sequence-facts':nounNarration('tense-sequence-facts',`She said that she was tired 中，主句 said 把报告放在过去，从句 was tired 也回到她当时疲惫的状态，所以用过去时很自然。这是时态跟着报告时间调整，不是看到 said 就机械替换所有动词。<#0.8#>
+The teacher said that the earth moves around the sun 说的是客观事实，地球现在仍这样运动，因此保留一般现在时 moves。He told me that he is living in Shanghai now 中，now 明确指说话此刻，而且这项居住状态仍在继续，is living 可以保留现在进行时。<#0.8#>
+判断时先建立时间线：主句的“说”发生在什么时候，从句内容是只在当时成立，还是现在仍成立，或本来就是普遍事实。只在过去语境中的状态通常和过去报告时间呼应；客观事实不必后移；说话时仍真实的当前情况也可保留现在时。时态不是形式配对，而是让听者知道内容相对于哪个时间有效。`),
+  'negative-raising':nounNarration('negative-raising',`I do not think he is right 表面上 not 放在 think 前，实际否定的重点通常是“我认为他不对”。英语在 think、believe 这类表达判断的动词前，常把后面内容中的否定提前到主句，这叫否定转移。<#0.8#>
+She does not believe they will win 也是如此，更自然的理解通常是“她认为他们不会赢”，而不是强调“她没有进行相信这个动作”。但 I do not know why he left 不同，not 真正否定 know：我不知道原因。why he left 本身没有被改成“他没有离开”。<#0.8#>
+判断时看外层动词的意义。think、believe 表达个人判断时，主句的 not 常把对后面内容的否定提前；know 表示是否掌握信息，not 通常直接否定“知道”。还要结合语境，不能看见 not think 就永远机械改译。分析结构时仍要分清：语法上的否定在主句，理解上的否定焦点可能落在宾语从句内容。`),
+  'subject-clause-agreement':nounNarration('subject-clause-agreement',`What he needs is more time 中，What he needs 虽然包含多个词，外层表达的是“一件需要的东西或一个需求”，整体当单数主语，所以用 is。不要按从句有几个词来决定谓语。<#0.8#>
+Whether she comes or not does not matter 里，前后摆出“来还是不来”两种可能，但合起来仍是“她来不来这件事”，主句谓语用 does。What he says and what he does are different 则明显并列了两件内容：他说的和他做的，二者相比较，因此用 are。<#0.8#>
+判断主语从句的一致，先把每个从句框成一个意义单位。单个事实、问题或内容通常按单数；即使内部出现复数名词，也不直接控制主句谓语。若 and 明确并列两个彼此独立的从句内容，主语变成多个单位，通常用复数。关键看外层究竟在谈一件事还是两件事，而不是只找离谓语最近的词。`),
+  'reported-speech-boundary':nounNarration('reported-speech-boundary',`先看直接说法 Mia said, “I am busy.” 引号里的 I 是 Mia 当时亲口使用的词。改成 Mia said that she was busy 后，引号内容被装进 said 后面作宾语从句，I 要按报告者视角改成 she；was 表示她当时的状态。<#0.8#>
+Tom asked where I lived 不是把原问题原样塞进去。asked 后接 where 引导的宾语从句，进入从句后用 I lived 的陈述语序，不能保留独立问句的倒装形式。<#0.8#>
+这一课只抓进入宾语从句时必须做的三件事：去掉引号，让内容成为 said 或 asked 的宾语；按现在的说话者调整人称；把疑问内容改为连接词加陈述语序。时态是否后移，要看报告时间和事实是否仍成立，不能全部机械改变。完整的命令、请求和各种时空词变化属于更大的直接与间接引语系统，这里先守住宾语从句的结构边界。`),
+  'noun-clause-integration':nounNarration('noun-clause-integration',`It is uncertain whether what he said is true 先分外层：it 是形式主语，真正主语是 whether what he said is true。再进入这块，what he said 又是更小的主语从句，what 在里面作 said 的宾语。分析复杂句要一层层开盒子，不能把所有连接词放在同一层。<#0.8#>
+The fact that she knows what we need is helpful 的主干是在说“这个事实有帮助”。that 从句说明 fact 的内容；在这个从句里，what we need 又作 knows 的宾语。What matters is how we solve the problem 中，What matters 整体作主语，how we solve the problem 在 is 后作表语。<#0.8#>
+I do not think that whether he comes matters 里，that 从句整体作 think 的宾语，而 whether he comes 在这段内部又作 matters 的主语。综合判断固定四步：先找最外层限定谓语和槽位；把名词性从句整体框出；再进入每一层找自己的主谓和连接词功能；最后核对陈述语序与边界。每次只处理一层，嵌套就不会乱。`)
+};
 function lesson(english, spec, index) {
   if (spec.rules.length !== spec.examples.length || spec.rules.length !== spec.questions.length) throw new Error(`Noun-clause coverage mismatch: ${spec.id}`);
   const examples = spec.examples.map((item)=>({text:item[0].map((c)=>c[0]).join(' '),analysis:analysis(english,item[0]),note:note(english,item[1],item[2],item[3])}));
   const result={ id:spec.id, no:String(index+1).padStart(2,'0'), level:spec.level, title:pick(english,...spec.title), meta:pick(english,...spec.meta), examples:examples.map(x=>x.text), analyses:examples.map(x=>x.analysis), exampleNotes:examples.map(x=>x.note), rules:spec.rules.map(x=>pick(english,...x)), ruleCoverage:INCLUDE_RULE_COVERAGE?spec.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[], questions:spec.questions.map(x=>question(english,x)) };
-  if(spec.id==='clause-as-noun-slot')result.narration=NOUN_CLAUSE_ESSENCE_NARRATION;
+  if(NOUN_CLAUSE_NARRATIONS[spec.id])result.narration=NOUN_CLAUSE_NARRATIONS[spec.id];
   return result;
 }
 

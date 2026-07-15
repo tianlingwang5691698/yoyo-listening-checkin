@@ -27,14 +27,71 @@ const question = (english, q, index) => {
 };
 const A = (ruleZh, ruleEn, pieces, q, noteZh, noteEn) => ({ ruleZh, ruleEn, pieces, q, noteZh, noteEn });
 const Q = (zh, en, aZh, aEn, bZh, bEn, answer, whyZh, whyEn) => [zh, en, aZh, aEn, bZh, bEn, answer, whyZh, whyEn];
-const REPORTED_SPEECH_ESSENCE_NARRATION={
-  id:'reported-speech:reported-speech-essence',version:'v3',
-  text:`同学让你把米娅的话转告别人。你有两种说法：一种像复制聊天记录，保留她当时的原话；另一种用你现在的身份、时间和地点，把意思重新讲一遍。前者叫直接引语，后者叫间接引语。<#0.8#>
-Mia said, "I will call you tomorrow."。<#0.7#>引号告诉读者，I、you、tomorrow 都站在米娅说话的现场来理解。假设第二天，原来的听话人转述这件事，可以说：<#0.4#>Mia said that she would call me the next day。<#0.8#>主干是 Mia said，that 后面装的是她说的内容。原话里的 I 指米娅，所以变成 she；you 指现在的转述者，所以变成 me；tomorrow 从新的时间点回看，变成 the next day。will 变成 would，也是在过去的报告点看原来的将来。
-但转述不是看到 said 就把所有词自动换掉。如果当天就转述，tomorrow 可能仍然是 tomorrow；如果说的是客观事实，也不一定后移时态。每一处变化都要看人物和时间有没有真的换。<#0.8#>
-再看 Leo refused to leave。这里没有假装逐字复述，而是用 refused 直接概括“拒绝离开”这个交际意思。间接转述可以保留意思和功能，不必虚构一段带引号的原话。
-操作时先判断原话是在陈述、提问、命令还是请求；再选 that、if 或 whether、疑问词，或合适的报告动词；最后站到报告现场，逐个核对人称、时态、时间和地点是否需要调整。`,
-  lengthText:'586 字 · 约 2 分钟'
+const narration=(id,text)=>{const count=text.replace(/<#[\d.]+#>/g,'').replace(/\s/g,'').length;return{id:`reported-speech:${id}`,version:'v4',text,lengthText:`${count} 字 · 约 2 分钟`};};
+const NARRATIONS={
+  'reported-speech-essence':narration('reported-speech-essence',`转告别人的话，有两种做法。一种像把录音原样播放，另一种只把意思准确转述。Mia said, "I will call you tomorrow." 保留了米娅当时的原话，引号里的 I、you 和 tomorrow 都要站在她说话的现场理解，这叫直接引语。<#0.8#>
+Mia said that she would call me the next day 则站到新的报告现场。主干是 Mia said，that 后面装的是转述内容。I 原来指米娅，所以变 she；you 指现在的转述者，所以变 me；tomorrow 从后来的时间回看，成为 the next day；will 也变成 would。变化不是为了套表，而是人物和时间坐标真的换了。<#0.8#>
+Leo refused to leave 更进一步：它不假装逐字复制，只用 refused 概括“拒绝离开”这个交际功能。The teacher asked us to wait 也先判断原话是请求，再用 ask 加人加 to do。实际转换时，先认清原话是在陈述、提问、命令还是请求；再选择报告动词和骨架；最后核对人称、时态、时间、地点是否因报告现场变化而需要调整。`),
+  'direct-form-punctuation':narration('direct-form-punctuation',`直接引语的引号像一个清楚的边框：边框里面是说话人原封不动的话，边框外面是“谁说的”。Mia said, "I am tired." 中，Mia said 是报告语，I am tired 是米娅的原话。said 后用逗号把报告语送进引语，引语的 I 仍然大写，句号放在引号里面。<#0.8#>
+Tom said, "We are ready." 也是同一结构。引号里的话仍是一句独立句子，所以保留自己的首字母大写和句末标点。不要写成 Tom said "we are ready"，因为这样既丢了报告语后的分隔，也破坏了原话的句子边界。<#0.8#>
+原话是问句时，看 She asked, "Are you ready?"。问号属于原问句，因此留在引号内，而且问号已经结束这段引语，外面不再叠加句号。检查直接引语时，只看三个位置：引号是否完整包住原话；报告语后是否有合适的逗号或冒号；原话自己的句号、问号或感叹号是否放在引号内。`),
+  'reported-form-foundation':narration('reported-form-foundation',`间接引语不是给原话换几个单词，而是把原话变成报告动词后面的一个内容模块。Mia said that she was tired 中，Mia said 是报告主干，that she was tired 整体回答“说了什么”，所以是 said 的宾语从句。引号已经去掉，she 和 was 都按新的报告视点组织。<#0.8#>
+但不同原句不能都塞进 that。He asked whether I agreed 来自一般疑问，原来的任务是问“同不同意”，因此用 whether 或 if 引出转述内容；放进 asked 后，语序回到 I agreed，不再保留疑问倒装。<#0.8#>
+The teacher told us that the test was easy 又多了一个接收者。us 是老师告诉的人，that 从句是老师告诉的内容。于是选择骨架时先问原话是什么句型，再问是否要交代听话人：陈述内容常用 say 加 that 从句；一般疑问用 ask 加 if 或 whether；tell 常先接人，再接内容。骨架选对以后，才处理时态和人称。`),
+  'statements-that':narration('statements-that',`陈述句的任务是告诉别人一件事，所以转述时最自然的容器是 that 从句。Leo said that he needed help 中，that 后面完整交代“他需要帮助”。原话里的 I 指 Leo，转成 he；在过去的 said 后，need 按这个报告视点写成 needed。<#0.8#>
+口语里，that 有时可以不说。She said she was busy 就是省略连接词后的形式，意思不变，因为 said 后面的内容边界很清楚。省略连接词不等于省略从句，也不能把后面的主谓结构改成疑问语序。<#0.8#>
+多个内容并列时，边界更容易混。He said he was tired and that he would leave 中，第一个 that 可以省，第二个 that 保留，读者就能立即知道 and 后仍是 said 的另一项内容，而不是前一个从句内部随意接出的成分。处理陈述转述时，先搭 said 加 that 从句；边界清楚时可省 that；内容较长或多个从句并列时，保留后面的 that 会更清楚。`),
+  'say-tell-verbs':narration('say-tell-verbs',`say 和 tell 都与“说”有关，但它们安排听话人的方式不同。Mia said that she was ready 重点是她说了什么，said 后直接接内容。如果一定要交代对谁说，要在 say 后加介词再接听话人，不能让 say 直接接人。<#0.8#>
+Mia told me that she was ready 则把接收者 me 直接放在 told 后面，再接 that 内容从句。这里 me 是听话人，后面的从句是被告知的内容。tell 虽然常接人，但也有“讲真话”这样的直接宾语结构，所以不要把“tell 后永远只能是人”背成死规则。<#0.8#>
+They talked about the plan 说的是双方围绕计划交谈，about the plan 是话题，不是某一句被转述的具体内容。选择动词时先看交流方式：只报告一句内容，用 say；强调告诉谁，用 tell 加人；表示双方交谈，用 talk，并用 about 标话题。动词换了，后面的结构也要跟着换，不能把中文一个“说”字套进同一骨架。`),
+  'yes-no-questions':narration('yes-no-questions',`一般疑问句只需要回答“是”或“不是”。转述时，这个二选一的感觉要保留，但问句外形要收起来。She asked if I was ready 中，if 表示答案尚未确定；原来的直接问句不再倒装，主语回到谓语前。<#0.8#>
+He asked whether Tom had left 也是同样逻辑。原问句把助动词放在 Tom 前面，嵌入 asked 后恢复 Tom 在前、had 在后的陈述语序。whether 与 if 都能引出一般疑问转述，whether 在较正式或需要明确“是否”时尤其常见。<#0.8#>
+They discussed whether to leave 展示了另一种简洁形式。讨论的主语与行动承担者明确时，“我们是否离开”可以压缩成页面里的不定式结构。检查这类句子时，不要留下问号和倒装：先用 if 或 whether 保留“是否”，再把主语放回助动词前；条件合适时，还可以压缩为“是否加不定式”。`),
+  'wh-questions':narration('wh-questions',`特殊疑问句已经自带信息缺口，所以转述时保留原来的疑问词，不再加 if 或 whether。She asked where I lived 中，where 继续表示“哪里”，原问句里的助动词消失，语序恢复为主语在前。asked 已经承担提问功能，里面不用再摆出问句外形。<#0.8#>
+He asked why she left 展示同样变化。why 保留，原问句中的 did 只是帮助形成疑问，进入从句后去掉，left 放在主语 she 后面。<#0.8#>
+They asked who broke the window 看起来没有明显变序，因为 who 本身就是原问句的主语，后面直接接 broke。这不是例外口诀，而是原句本来就是“疑问词作主语”的顺序。转换时先保留 where、why、who 等疑问词，再检查它在从句中做什么；如果原句用了 do、does、did 或倒装，要恢复陈述语序；如果疑问词本身作主语，就不要凭感觉再加助动词。`),
+  'commands-requests':narration('commands-requests',`祈使句表面没有主语，但命令或请求总是对某个人发出的。The teacher told us to sit down 中，us 就是原来被要求坐下的人，to sit down 是他们要执行的动作。转述时先找“让谁做什么”，再搭 tell 加人加 to do。<#0.8#>
+She asked me to help her 不是一般疑问。原话里的 Please 表明请求，所以用 asked me to help；原说话人的 me 变为 her，因为现在是别人转述她的请求。ask 后的 me 是请求对象，不是被询问的问题答案。<#0.8#>
+否定命令看 He warned me not to touch it。原来的否定祈使形式进入转述后，不保留 don’t，而把否定放在不定式前。报告动词还可以用 warned，说明这不只是普通命令，还带警告意味。操作顺序是：判断命令、请求还是警告；确定听话人；用合适的报告动词接人和不定式；否定词放在不定式标记前。`),
+  'advice-suggestion':narration('advice-suggestion',`“你应该休息”和“我们早点走吧”都像建议，但英语会根据有没有明确劝告对象选择不同骨架。The doctor advised me to rest 中，me 是医生劝的人，to rest 是劝我做的事，所以 advise 后可以接被劝的人和不定式。<#0.8#>
+Mia suggested leaving early 不需要接一个被建议的人，suggest 后直接用 doing 表示建议的行动。也可以展开成页面第三句的 that 从句。注意 suggest 不能照搬 advise 的“人加不定式”结构。<#0.8#>
+The evidence suggests that he was there 又不是“证据在提建议”。这里 suggests 表示“暗示、表明”，that 从句陈述证据指向的事实，因此用 was，不用建议性原形。判断时先看功能：对某人劝告，用 advise 人 to do；提出行动方案，用 suggest doing 或 suggest that 从句；主语是 evidence 一类事物时，suggest 往往表示暗示。`),
+  'exclamations-responses':narration('exclamations-responses',`有些原话不是普通陈述，而是在感叹、道谢或答应。转述时要保留它完成的交际动作，不必复制原来的句型。She exclaimed that the view was wonderful 把原话的强烈感受保留下来，但嵌入 that 从句后，语序回到普通陈述顺序，不再保留感叹句外形。<#0.8#>
+Tom thanked me for my help 直接按“道谢”这个功能转述。thanked 表明动作是感谢，me 是被感谢的人，for my help 说明感谢原因。逐词写 said that 并不能同样清楚地表现这个功能。<#0.8#>
+Mia promised to help 则把一句肯定回应理解为“答应提供帮助”。如果肯定回应是在同意一个观点，报告动词可能是 agreed；如果是承诺去做事，就用 promise 接不定式。选择时别只看原话表面，要问说话人在做什么：感叹用 exclaimed，道谢用 thanked，承诺用 promised，同意观点用 agreed。`),
+  'backshift-present':narration('backshift-present',`过去的某个时刻说了一句话，后来再报告时，原话的现在通常要跟着报告时间向过去移动。She said that she liked tea 中，原话用一般现在时表达喜好；后来用 said 回看，I 变 she，like 变 liked。<#0.8#>
+He said that he was working 保留了“正在进行”的画面。原来的 am working 不是简单变成 worked，而是把现在进行时整体后移成过去进行时 was working，进行意义没有丢。<#0.8#>
+Mia said that she had finished 中，原来的 have finished 已经表达“完成”，后移后成为 had finished，完成体仍然保留，只是参照点移到过去。可以把它们看成整套系统移动：一般现在到一般过去，现在进行到过去进行，现在完成到过去完成。先辨认原时态表达的状态、进行或完成，再把时间层级后移，不能只盯着单个动词词形。`),
+  'backshift-past-future':narration('backshift-past-future',`报告过去和将来时，关键是站到过去的报告点重新看时间。He said that he had lost the key 中，丢钥匙发生在 he said 之前。原话用一般过去时，后来的转述改用 had lost，把“更早发生”标清楚。<#0.8#>
+She said that she had been waiting 保留了原来 was waiting 的持续过程，同时用 had been waiting 表示这段等待早于报告发生。不是所有过去动作都随便加 had，而是要让两个过去时间的先后清楚。<#0.8#>
+Tom said that he would call 则把 will call 放到过去报告点之后。对 Tom 当时来说是将来，对现在的转述者来说是“过去所设想的将来”，所以 will 变 would。画一条时间线会更直观：早于过去报告点，用过去完成；原来在过去持续，用过去完成进行保留过程；晚于过去报告点的将来，用 would。`),
+  'modal-changes':narration('modal-changes',`情态动词转述时，既要看时间变化，也要保留原来的能力、必要性或建议意味。She said that she could swim 中，原话 can swim 表能力；在过去的 said 后，can 常变 could，能力这个意思仍然存在。<#0.8#>
+He said that he had to leave 表达原话中“现在必须离开”的意思。must 在这里表示当时的必要，后来报告时常用 had to；表示“现在”的时间词若离开原现场，也会调整为 then。变化的不只是一个情态词，而是整段必要性和时间指向。<#0.8#>
+Mia said that we should wait 中，should 通常不需要变化，因为它本身已表达建议或应当，转述后继续用 should 就能保留原意。不能把所有情态动词都机械后移。先判断情态意义：can 表能力常变 could；must 表当时义务常变 had to；should、might、could 等形式往往保持。最终还要结合语境，看它说的是能力、义务、推测还是建议。`),
+  'no-backshift-boundaries':narration('no-backshift-boundaries',`时态后移是帮助时间关系清楚，不是只要看到 said 就把所有现在时变过去。The teacher said that water boils at 100°C 中，水在一百摄氏度沸腾是普遍事实，不只在老师说话那一刻成立，所以 boils 可以保留一般现在时。<#0.8#>
+Mia said that she lives in Shanghai 取决于现实。如果转述时她仍住在上海，保留 lives 能强调情况现在有效；如果只忠实站在过去报告点，或现在情况未知，也可能用 lived。lived 本身不自动证明她现在已经搬走。<#0.8#>
+He says that he is tired 更直接：报告动词 says 在现在，内容也处于当前视点，is tired 通常无需后移。判断是否后移时问三件事：报告动词是在过去还是现在；内容是不是客观事实；内容到转述时是否仍然成立。时态选择服务于真实时间关系，不能让变化表替你猜现实。`),
+  'person-possessive':narration('person-possessive',`代词转换不是 I 永远变 she、you 永远变 I，而是重新确认每个词指谁。Mia said that she was ready 中，原话 I 指说话人 Mia，离开引号后用第三人称提到她，所以变 she。先找人物，再选代词，顺序不能倒。<#0.8#>
+Tom told me that I was late 展示了 you 的变化。原话中的 you 指当时的听话人；报告句用 told me 明确这个听话人就是现在的 me，因此从句里写 I was late。换一个转述者或听话人，结果可能不同。<#0.8#>
+Mia said that she had lost her key herself 中，一整套指代要同步：I 对应 she，my 对应 her，myself 对应 herself。反身代词必须跟它所强调或回指的人保持一致。处理时先列出原说话人、原听话人和现在报告者，再逐个问 I、you、my、your、myself 分别指谁；不要按表格孤立替换，否则很容易出现 she 丢了 my key 这类人物关系错误。`),
+  'deictic-time-place':narration('deictic-time-place',`this、tomorrow、here、come 都依赖说话现场。现场一换，它们才可能变化。She said that she liked that book 中，原来的 this book 是米娅当时手边或眼前的书；后来从较远的报告点提起，近指 this 变成 that。若转述者仍拿着同一本书，this 也可能保留。<#0.8#>
+He said that he would leave the next day 把原话中的将来动作放到过去报告点重新定位。will 变 would，tomorrow 不再是报告者的明天，而是他说话后的第二天，所以写 the next day。<#0.8#>
+Mia said that she would go there 中，原来的 come here 以米娅说话地点为中心；转述者不在那个地点时，方向变 go，地点变 there。判断这些词时要先标四个坐标：谁在说、哪一天说、在哪里说、后来在哪里报告。只有坐标真的移动，this、tomorrow、here、come 才需要相应调整。`),
+  'reporting-clause-position':narration('reporting-clause-position',`报告语可以放在原话前、后或中间，位置一变，标点也要跟着变。The notice read: "Keep out." 先交代文字来源，再用冒号引出完整内容。冒号像是在说“后面就是通知的原文”，引号内 Keep 首字母大写。<#0.8#>
+"I am ready," Mia said 把原话放在前面。原话本来以句号结束，但后面还要接 Mia said，所以引号内先用逗号衔接，整个句子的句号放在报告语末尾。<#0.8#>
+"If you hurry," she said, "you can catch it." 把报告语插进同一句原话中。she said 两边用成对逗号标出插入边界；后半句 you 不大写，因为拿掉中间报告语后，原话在语法上仍是一句连续的话。检查时先把报告语暂时拿掉，确认引号内原句是否完整，再按前置、后置或中置选择冒号、逗号和大小写。`),
+  'indirect-to-direct':narration('indirect-to-direct',`把间接引语还原成直接引语，做的是“重建一种可能的说话现场”，不是把变化表倒着走。先看 Mia said, "I am tired."。这是从转述内容恢复出的一种可能原话，原来指 Mia 的 she 回到她自己口中成为 I，同时恢复引号、首字母和句末标点。<#0.8#>
+He asked, "Where do you live?" 展示疑问句的恢复。转述内容原本使用陈述语序；回到直接问句后，需要恢复 do 支持、原听话人的 you 和问号。<#0.8#>
+但 She said that she was pleased 无法证明原话一定用了 pleased，也可能说 happy 或其他相近表达。间接引语保存的是意思，不一定保存精确词语。因此还原时把信息分两类：人称、句型、语序和标点可以按场景重建；原来的具体用词若没有证据，只能给出一种合理可能，不能声称唯一答案。`),
+  'layered-reporting':narration('layered-reporting',`多层转述像一段话经过两个人传递，每一层都有自己的“谁对谁说、在什么时候说”。Tom said that Mia had told him that she was leaving 中，先看最里面：Mia 对 Tom 说她要离开；再把这件事放进 Tom said。him 指 Tom，she 指 Mia，必须逐层确认。<#0.8#>
+She said that he had claimed that he had finished 说明时态后移有终点。内层 had finished 已经是过去完成，外面再加一层过去报告时，通常仍保留这个形式，不继续机械叠加助动词。<#0.8#>
+Tom said that Leo had told Tom that Leo was ready 看起来重复姓名，却比连续使用两个 he 更清楚。若全部换成代词，最后一个 he 可能指 Tom，也可能指 Leo。多层转述优先保证指代清晰，必要时重复姓名。分析时从最内层向外，每加一层就重新核对说话人、听话人、时间点和代词指向。`),
+  'ambiguity-boundaries':narration('ambiguity-boundaries',`转述句语法正确，不等于意思已经唯一。Mia said that she lived in Shanghai 中，lived 可能只是因为 said 触发了时态后移，并不能单独证明她现在不住上海。要判断当前真假，还需要时间背景或其他语境。<#0.8#>
+He admitted that he was wrong 与普通的 said 不同。admitted 不只报告内容，还加入“承认原本不愿接受的事实”这种立场。换成 claimed、denied，读者对说话人态度的理解会完全变化，所以报告动词本身也是意义的一部分。<#0.8#>
+She refused to answer 则把原话中明确拒绝回答的交际功能直接概括出来，没有假装逐字复述。判断转述是否准确，要同时看三层：时态形式是否只是后移，代词是否有多个可能指向，报告动词是否增添了合适立场。间接引语允许意译，但时间、人物关系和原来的交际功能不能被改掉。`),
+  'integrated-rewrite':narration('integrated-rewrite',`综合改写不要同时乱改所有词，先决定原话在完成什么任务。The doctor advised me not to work too late 来自劝告，核心不是普通“说”，而是医生劝我别工作太晚，所以选 advise 接人和否定不定式。me 是劝告对象，后面的部分是行动内容。<#0.8#>
+Mia asked why I had not called her the day before 来自特殊疑问。why 保留，原问句恢复陈述语序；me 按原说话人变 her，yesterday 随报告时间变 the day before。<#0.8#>
+Leo suggested that we meet there the next day 来自邀请大家第二天在这里见面。suggest 使用 that 从句，不能套用“人加不定式”；here 和 tomorrow 是否变 there、the next day，要看报告地点和时间。完整检查可以按顺序进行：先判交际功能并选报告动词，再选 that、if、whether 或疑问词，恢复陈述语序，调整时间与人称，最后检查动词搭配和指代是否清楚。`)
 };
 
 function makeLesson(english, spec, index) {
@@ -49,7 +106,7 @@ function makeLesson(english, spec, index) {
     ruleCoverage: INCLUDE_RULE_COVERAGE ? spec.atoms.map((_, i) => ({ exampleIndexes: [i], questionIndexes: [i] })) : [],
     questions: spec.atoms.map((atom, atomIndex) => question(english, atom.q, atomIndex))
   };
-  if(spec.id==='reported-speech-essence')result.narration=REPORTED_SPEECH_ESSENCE_NARRATION;
+  result.narration=NARRATIONS[spec.id];
   return result;
 }
 
