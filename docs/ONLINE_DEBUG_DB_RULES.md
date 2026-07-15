@@ -288,3 +288,12 @@
 5. 修复：自定义计划的 ID、来源或更新时间与日报不一致时，首页改按当前任务 `durationSec × repeatTarget` 汇总；已完成时长也只统计当前任务。
 6. 是否需要发版：需重新部署 `yoyo` 云函数；前端无需修改。
 7. 部署后复测：22:53 首页显示“待设置”，同时段正式环境无 `getDashboard` 日志，证明页面未发起当次云刷新。首页快照升级 V2，后台 dashboard 请求附加唯一 `requestNonce`，避免任何旧读缓存或同请求复用。
+
+### 2026-07-15 Magic Tree House 拖拽后文本不同步
+
+1. 现象：播放 Magic Tree House 时拖动进度条，文本仍停留在原播放位置。
+2. 账号：不限账号。
+3. 查询：`pages/lesson.changingAudioProgress -> innerAudioContext.onTimeUpdate -> updateTranscriptByTime`。
+4. 结论：拖动时未主动更新文本，且播放中的旧 `currentTime` 持续覆盖拖动预览位置。
+5. 修复：拖动期间按目标时间更新文本；拖动时暂停接受旧时间回调；`onSeeked` 按实际落点再校正。
+6. 是否需要发版：前端改动，需重新发布小程序；不需要部署云函数。

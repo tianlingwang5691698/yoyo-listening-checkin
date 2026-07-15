@@ -716,6 +716,8 @@ Page({
     this.listeningResumeLastSaved = { key: '', bucket: -1 };
     this.listeningResumeLastKnown = { key: '', positionSec: 0 };
     this.audioProgressDragging = false;
+    this.audioSeekFallbackTimer = null;
+    this.pendingAudioSeekSeconds = 0;
     this.effectiveListeningSeconds = 0;
     this.effectiveListeningPassKey = '';
     this.effectiveListeningTracker = { audioSec: 0, wallMs: 0 };
@@ -813,16 +815,22 @@ Page({
         || ((this.data.task && this.data.task.durationSec) || 0);
       this.trackEffectiveListening(currentSeconds, durationSeconds);
       const currentTimeMs = Math.floor(currentSeconds * 1000);
-      this.updateTranscriptByTime(currentTimeMs);
       if (!this.audioProgressDragging) {
+        this.updateTranscriptByTime(currentTimeMs);
         this.setData({
           currentTimeLabel: this.formatTime(Math.floor(currentSeconds)),
           progressPercent: player.getProgressPercent(currentSeconds, durationSeconds),
           canRewind: currentSeconds > 1
         });
+        this.saveListeningResumeCheckpoint();
       }
-      this.saveListeningResumeCheckpoint();
     });
+    if (typeof this.innerAudioContext.onSeeked === 'function') {
+      this.innerAudioContext.onSeeked(() => {
+        const currentSeconds = Number(this.innerAudioContext.currentTime || 0);
+        this.finalizeAudioProgressSeek(currentSeconds);
+      });
+    }
     this.innerAudioContext.onPlay(() => {
       this.resetEffectiveListeningTracker(this.innerAudioContext.currentTime || 0);
       this.setData({
@@ -968,6 +976,10 @@ Page({
     if (this.audioErrorTimer) {
       clearTimeout(this.audioErrorTimer);
       this.audioErrorTimer = null;
+    }
+    if (this.audioSeekFallbackTimer) {
+      clearTimeout(this.audioSeekFallbackTimer);
+      this.audioSeekFallbackTimer = null;
     }
     if (this.innerAudioContext) {
       this.innerAudioContext.destroy();
@@ -2503,6 +2515,26 @@ Page({
       || (this.innerAudioContext && this.innerAudioContext.duration)
       || 0);
   },
+  finalizeAudioProgressSeek(positionSeconds) {
+    if (this.audioSeekFallbackTimer) {
+      clearTimeout(this.audioSeekFallbackTimer);
+      this.audioSeekFallbackTimer = null;
+    }
+    const durationSeconds = this.getAudioDurationSeconds();
+    const fallbackSeconds = Number(this.pendingAudioSeekSeconds || 0);
+    const currentSeconds = Math.max(0, Math.min(durationSeconds || Number.POSITIVE_INFINITY,
+      Number.isFinite(Number(positionSeconds)) ? Number(positionSeconds) : fallbackSeconds));
+    this.pendingAudioSeekSeconds = 0;
+    this.audioProgressDragging = false;
+    this.resetEffectiveListeningTracker(currentSeconds, !!this.data.isPlaying);
+    this.updateTranscriptByTime(Math.floor(currentSeconds * 1000));
+    this.setData({
+      currentTimeMs: Math.floor(currentSeconds * 1000),
+      currentTimeLabel: this.formatTime(Math.floor(currentSeconds)),
+      progressPercent: player.getProgressPercent(currentSeconds, durationSeconds),
+      canRewind: currentSeconds > 1
+    });
+  },
   changingAudioProgress(event) {
     if (!this.innerAudioContext || !this.innerAudioContext.src) return;
     const durationSeconds = this.getAudioDurationSeconds();
@@ -2510,6 +2542,7 @@ Page({
     const sliderValue = Math.max(0, Math.min(AUDIO_PROGRESS_SLIDER_MAX, Number(event.detail.value || 0)));
     const currentSeconds = durationSeconds * sliderValue / AUDIO_PROGRESS_SLIDER_MAX;
     this.audioProgressDragging = true;
+    this.updateTranscriptByTime(Math.floor(currentSeconds * 1000));
     this.setData({
       currentTimeMs: Math.floor(currentSeconds * 1000),
       currentTimeLabel: this.formatTime(Math.floor(currentSeconds)),
@@ -2524,7 +2557,8 @@ Page({
     const sliderValue = Math.max(0, Math.min(AUDIO_PROGRESS_SLIDER_MAX, Number(event.detail.value || 0)));
     const currentSeconds = durationSeconds * sliderValue / AUDIO_PROGRESS_SLIDER_MAX;
     const key = this.getListeningResumeStorageKey();
-    this.audioProgressDragging = false;
+    this.audioProgressDragging = true;
+    this.pendingAudioSeekSeconds = currentSeconds;
     this.innerAudioContext.seek(currentSeconds);
     this.resetEffectiveListeningTracker(currentSeconds, !!this.data.isPlaying);
     this.listeningResumeLastKnown = { key, positionSec: currentSeconds };
@@ -2535,6 +2569,9 @@ Page({
       progressPercent: player.getProgressPercent(currentSeconds, durationSeconds),
       canRewind: currentSeconds > 1
     });
+    this.audioSeekFallbackTimer = setTimeout(() => {
+      this.finalizeAudioProgressSeek(this.pendingAudioSeekSeconds);
+    }, 600);
     if (currentSeconds < 2) {
       if (this.effectiveListeningSeconds > 0) {
         this.saveListeningResumeCheckpoint({ force: true, positionSec: 0 });

@@ -210,6 +210,7 @@ Page({
     if (this.loadTimer) clearTimeout(this.loadTimer);
     this.loadRequestId = (this.loadRequestId || 0) + 1;
     if (this.narrationPollTimer) clearTimeout(this.narrationPollTimer);
+    if (this.narrationSeekFallbackTimer) clearTimeout(this.narrationSeekFallbackTimer);
     this.narrationRequestKey = '';
     if (this.narrationAudioContext) {
       this.narrationAudioContext.destroy();
@@ -444,6 +445,10 @@ Page({
       clearTimeout(this.narrationPollTimer);
       this.narrationPollTimer = null;
     }
+    if (this.narrationSeekFallbackTimer) {
+      clearTimeout(this.narrationSeekFallbackTimer);
+      this.narrationSeekFallbackTimer = null;
+    }
     if (this.narrationAudioContext) {
       try { this.narrationAudioContext.stop(); } catch (error) {}
     }
@@ -492,6 +497,9 @@ Page({
       if (this.narrationSeeking) return;
       this.syncNarrationTime(context.currentTime, context.duration);
     });
+    if (typeof context.onSeeked === 'function') {
+      context.onSeeked(() => this.finalizeNarrationSeek(context.currentTime));
+    }
     context.onPlay(() => this.setData({ narrationLoading: false, narrationPlaying: true, narrationReady: true, narrationEnded: false }));
     context.onPause(() => this.setData({ narrationPlaying: false }));
     context.onStop(() => this.setData({ narrationPlaying: false }));
@@ -593,9 +601,25 @@ Page({
     const duration = Number(context && context.duration) || this.data.narrationDuration;
     if (!context || !this.data.narrationReady || !duration) return;
     const target = Math.min(duration, Math.max(0, Number(seconds) || 0));
+    this.narrationSeeking = true;
+    if (this.narrationSeekFallbackTimer) clearTimeout(this.narrationSeekFallbackTimer);
     context.seek(target);
     this.syncNarrationTime(target, duration);
     this.setData({ narrationEnded: target >= duration - 0.1 });
+    this.narrationSeekFallbackTimer = setTimeout(() => this.finalizeNarrationSeek(target), 600);
+  },
+
+  finalizeNarrationSeek(position) {
+    if (this.narrationSeekFallbackTimer) {
+      clearTimeout(this.narrationSeekFallbackTimer);
+      this.narrationSeekFallbackTimer = null;
+    }
+    const context = this.narrationAudioContext;
+    const duration = Number(context && context.duration) || this.data.narrationDuration;
+    const current = Math.min(duration || Infinity, Math.max(0, Number(position) || 0));
+    this.narrationSeeking = false;
+    this.syncNarrationTime(current, duration);
+    this.setData({ narrationEnded: current >= duration - 0.1 });
   },
 
   rewindNarration() {
@@ -621,7 +645,6 @@ Page({
 
   seekNarration(event) {
     const duration = this.data.narrationDuration;
-    this.narrationSeeking = false;
     if (!duration) return;
     this.seekNarrationTo(duration * Number(event.detail.value || 0) / 100);
   },

@@ -268,6 +268,10 @@ Page({
       clearTimeout(this.audioMetaTimer);
       this.audioMetaTimer = null;
     }
+    if (this.audioSeekFallbackTimer) {
+      clearTimeout(this.audioSeekFallbackTimer);
+      this.audioSeekFallbackTimer = null;
+    }
     if (this.audio) {
       this.audio.stop();
       this.audio.destroy();
@@ -278,6 +282,10 @@ Page({
     if (this.audioMetaTimer) {
       clearTimeout(this.audioMetaTimer);
       this.audioMetaTimer = null;
+    }
+    if (this.audioSeekFallbackTimer) {
+      clearTimeout(this.audioSeekFallbackTimer);
+      this.audioSeekFallbackTimer = null;
     }
     if (this.audio) {
       this.audio.stop();
@@ -325,6 +333,9 @@ Page({
         if (!this.audio || this.data.audioSeeking) return;
         this.updateAudioProgress(this.audio.currentTime, this.audio.duration);
       });
+      if (typeof this.audio.onSeeked === 'function') {
+        this.audio.onSeeked(() => this.finalizeAudioSeek(this.audio && this.audio.currentTime));
+      }
       this.audio.onEnded(() => {
         const duration = this.data.audioDuration || (this.audio && this.audio.duration) || 0;
         this.updateAudioProgress(duration, duration, true);
@@ -353,6 +364,29 @@ Page({
       audioDurationText: formatAudioTime(nextDuration),
       audioProgress: nextDuration ? Math.round((nextCurrent / nextDuration) * AUDIO_SLIDER_MAX) : 0
     });
+  },
+  finalizeAudioSeek(fallbackCurrent) {
+    if (this.audioSeekFallbackTimer) {
+      clearTimeout(this.audioSeekFallbackTimer);
+      this.audioSeekFallbackTimer = null;
+    }
+    if (!this.audio) return;
+    const duration = this.data.audioDuration || this.audio.duration || 0;
+    const requestedCurrent = Number(fallbackCurrent);
+    const current = Number.isFinite(requestedCurrent) ? requestedCurrent : Number(this.audio.currentTime || 0);
+    this.setData({ audioSeeking: false, audioEnded: current >= duration - 0.1 });
+    this.lastAudioSecond = -1;
+    this.updateAudioProgress(current, duration, true);
+  },
+  seekAudioPosition(position, duration) {
+    if (!this.audio) return;
+    const current = normalizeAudioTime(position, duration);
+    if (this.audioSeekFallbackTimer) clearTimeout(this.audioSeekFallbackTimer);
+    this.setData({ audioSeeking: true, audioEnded: false });
+    this.audio.seek(current);
+    this.lastAudioSecond = -1;
+    this.updateAudioProgress(current, duration, true);
+    this.audioSeekFallbackTimer = setTimeout(() => this.finalizeAudioSeek(current), 600);
   },
   async prepareImages(images) {
     const fileList = (images || []).map((image) => image.cloudPath).filter(Boolean);
@@ -445,8 +479,7 @@ Page({
       return;
     }
     if (this.data.audioEnded) {
-      this.audio.seek(0);
-      this.updateAudioProgress(0, this.data.audioDuration, true);
+      this.seekAudioPosition(0, this.data.audioDuration);
     }
     this.audio.play();
   },
@@ -455,9 +488,7 @@ Page({
     const delta = Number(event.currentTarget.dataset.delta) || 0;
     const duration = this.data.audioDuration || this.audio.duration || 0;
     const current = normalizeAudioTime((this.audio.currentTime || 0) + delta, duration);
-    this.audio.seek(current);
-    this.updateAudioProgress(current, duration, true);
-    this.setData({ audioEnded: false });
+    this.seekAudioPosition(current, duration);
   },
   changingAudioProgress(event) {
     const duration = this.data.audioDuration || 0;
@@ -480,10 +511,7 @@ Page({
     const duration = this.data.audioDuration || this.audio.duration || 0;
     const value = Number(event.detail.value) || 0;
     const current = normalizeAudioTime(duration ? duration * value / AUDIO_SLIDER_MAX : 0, duration);
-    this.audio.seek(current);
-    this.lastAudioSecond = -1;
-    this.setData({ audioSeeking: false, audioEnded: false });
-    this.updateAudioProgress(current, duration, true);
+    this.seekAudioPosition(current, duration);
   },
   selectOption(event) {
     const number = Number(event.currentTarget.dataset.number);

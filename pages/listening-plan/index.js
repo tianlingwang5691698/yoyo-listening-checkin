@@ -3,7 +3,7 @@ const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 
-const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV5';
+const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV6';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function t(key, variables) {
@@ -38,10 +38,12 @@ const FALLBACK_MATERIALS = {
   A2: [
     { category: 'newconcept2', title: 'New Concept 2' },
     { category: 'petethecat', title: 'Pete the Cat' },
+    { category: 'magictreehouse', title: 'Magic Tree House' },
     { category: 'unlock2', title: 'Unlock 2 课本' }
   ],
   B1: [
     { category: 'newconcept3', title: 'New Concept 3' },
+    { category: 'magictreehouseb1', title: 'Magic Tree House' },
     { category: 'unlock3textbook', title: 'Unlock3 听口 第二版' },
     { category: 'unlock3thirdedition', title: 'Unlock3 听口 第三版' },
     { category: 'unlock3', title: 'Unlock3 听口练习册 第二版' }

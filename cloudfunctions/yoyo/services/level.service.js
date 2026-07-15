@@ -1,8 +1,8 @@
 const study = require('../facades/study.facade');
 
 const LEVEL_CATEGORY_GROUPS = {
-  A2: ['newconcept2', 'petethecat', 'unlock2', 'unlock2thirdedition', 'unlock2workbook'],
-  B1: ['newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3'],
+  A2: ['newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbook'],
+  B1: ['newconcept3', 'magictreehouseb1', 'unlock3textbook', 'unlock3thirdedition', 'unlock3'],
   B2: ['newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook']
 };
 
@@ -84,10 +84,12 @@ async function getLevelOverview(event) {
   const standaloneOverviews = isA1PhaseOverview ? {
     newconcept2: { directTasks: [], overview: [] },
     petethecat: { directTasks: [], overview: [] },
+    magictreehouse: { directTasks: [], overview: [] },
     unlock2: { directTasks: [], overview: [] },
     unlock2thirdedition: { directTasks: [], overview: [] },
     unlock2workbook: { directTasks: [], overview: [] },
     newconcept3: { directTasks: [], overview: [] },
+    magictreehouseb1: { directTasks: [], overview: [] },
     unlock3textbook: { directTasks: [], overview: [] },
     unlock3thirdedition: { directTasks: [], overview: [] },
     unlock3: { directTasks: [], overview: [] },
@@ -153,6 +155,8 @@ async function getLevelOverview(event) {
       newconcept2DirectCount: standaloneOverviews.newconcept2.directTasks.length,
       peteTheCatCatalogCount: study.getCatalog('petethecat').length,
       peteTheCatDirectCount: standaloneOverviews.petethecat.directTasks.length,
+      magicTreeHouseCatalogCount: study.getCatalog('magictreehouse').length,
+      magicTreeHouseDirectCount: standaloneOverviews.magictreehouse.directTasks.length,
       unlock2CatalogCount: study.getCatalog('unlock2').length,
       unlock2DirectCount: standaloneOverviews.unlock2.directTasks.length,
       unlock2ThirdEditionCatalogCount: study.getCatalog('unlock2thirdedition').length,
@@ -161,6 +165,8 @@ async function getLevelOverview(event) {
       unlock2WorkbookDirectCount: standaloneOverviews.unlock2workbook.directTasks.length,
       newconcept3CatalogCount: study.getCatalog('newconcept3').length,
       newconcept3DirectCount: standaloneOverviews.newconcept3.directTasks.length,
+      magicTreeHouseB1CatalogCount: study.getCatalog('magictreehouseb1').length,
+      magicTreeHouseB1DirectCount: standaloneOverviews.magictreehouseb1.directTasks.length,
       unlock3TextbookCatalogCount: study.getCatalog('unlock3textbook').length,
       unlock3TextbookDirectCount: standaloneOverviews.unlock3textbook.directTasks.length,
       unlock3ThirdEditionCatalogCount: study.getCatalog('unlock3thirdedition').length,

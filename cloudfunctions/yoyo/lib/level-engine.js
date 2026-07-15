@@ -59,14 +59,14 @@ async function listDirectAudioTasksForCategory(category, deps) {
 }
 
 async function resolveStandaloneCategoryTasks(category, childId, date, deps) {
-  if (!['newconcept1', 'littlebear', 'petethecat', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'peppa', 'song', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'].includes(category)) {
+  if (!['newconcept1', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'peppa', 'song', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'].includes(category)) {
     return [];
   }
   const tasks = await listDirectAudioTasksForCategory(category, deps);
   return tasks.map((task) => Object.assign({}, task, {
     planDayIndex: 1,
     planPhase: 'level',
-    planPhaseLabel: 'A2',
+    planPhaseLabel: category === 'magictreehouseb1' ? 'B1' : 'A2',
     targetDate: date,
     planRunType: 'level'
   }));

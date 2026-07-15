@@ -36,6 +36,8 @@ const STORAGE_ROOTS = {
   peppa: 'A1/Peppa',
   littlebear: 'Pre A1/Little Bear/Audio',
   petethecat: 'A2/Pete the Cat/Audio',
+  magictreehouse: 'A2/Magic Tree House/Audio',
+  magictreehouseb1: 'B1/Magic Tree House/Audio',
   unlock1: UNLOCK1_AUDIO_ROOT,
   unlock1thirdedition: UNLOCK1_THIRD_EDITION_AUDIO_ROOT,
   unlock1workbook: UNLOCK1_WORKBOOK_AUDIO_ROOT,
@@ -58,6 +60,8 @@ const STORAGE_ROOT_CANDIDATES = {
   peppa: [`${STORAGE_ROOTS.peppa}/第1季`, `${STORAGE_ROOTS.peppa}/第2季`, `${STORAGE_ROOTS.peppa}/第3季`, STORAGE_ROOTS.peppa],
   littlebear: [STORAGE_ROOTS.littlebear],
   petethecat: [STORAGE_ROOTS.petethecat],
+  magictreehouse: [STORAGE_ROOTS.magictreehouse],
+  magictreehouseb1: [STORAGE_ROOTS.magictreehouseb1],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
   unlock1thirdedition: [UNLOCK1_THIRD_EDITION_AUDIO_ROOT, 'A1/unlock1 第三版'],
   unlock1workbook: [UNLOCK1_WORKBOOK_AUDIO_ROOT, 'A1/unlock1 练习册'],
@@ -258,6 +262,8 @@ function buildStaticManifestTasks(category) {
 const songTasks = buildStaticManifestTasks('song');
 const littleBearTasks = buildStaticManifestTasks('littlebear');
 const peteTheCatTasks = buildStaticManifestTasks('petethecat');
+const magicTreeHouseTasks = buildStaticManifestTasks('magictreehouse');
+const magicTreeHouseB1Tasks = buildStaticManifestTasks('magictreehouseb1');
 const songPlaceholder = {
   taskId: 'song-pending',
   category: 'song',
@@ -275,11 +281,11 @@ const songPlaceholder = {
   textSource: null
 };
 
-const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'unlock1thirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
+const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
 const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock2workbook', 'unlock3', 'unlock4workbook'];
-const MANIFEST_ONLY_CATEGORIES = ['peppa', 'littlebear', 'petethecat', 'unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition', 'song'];
+const MANIFEST_ONLY_CATEGORIES = ['peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition', 'song'];
 
 function slugifyTrackIdPart(value) {
   return String(value || '')
@@ -587,6 +593,8 @@ function getStaticCatalogMap() {
     peppa: peppaTasks.concat(peppaSeason23Tasks),
     littlebear: littleBearTasks,
     petethecat: peteTheCatTasks,
+    magictreehouse: magicTreeHouseTasks,
+    magictreehouseb1: magicTreeHouseB1Tasks,
     unlock1: unlockTasks,
     unlock1thirdedition: buildUnlockSeriesTasks('unlock1thirdedition'),
     unlock1workbook: buildUnlockSeriesTasks('unlock1workbook'),
@@ -776,7 +784,7 @@ async function getDurationTrackMap(category) {
 }
 
 async function getTranscriptDurationLookup(category) {
-  if (![...NEW_CONCEPT_CATEGORIES, ...UNLOCK_SERIES_CATEGORIES, 'peppa', 'littlebear', 'petethecat', 'song'].includes(category)) {
+  if (![...NEW_CONCEPT_CATEGORIES, ...UNLOCK_SERIES_CATEGORIES, 'peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'song'].includes(category)) {
     return {};
   }
   const trackMap = await getDurationTrackMap(category);
@@ -1343,7 +1351,7 @@ function mergeCatalogDebug(...debugEntries) {
 async function refreshRuntimeCatalogs(force, categories) {
   const startedAt = Date.now();
   const now = Date.now();
-  const targetCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'littlebear', 'petethecat', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'song']).filter(Boolean)));
+  const targetCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'song']).filter(Boolean)));
   const hasAllRequested = runtimeCatalogs && targetCategories.every((category) => {
     const catalog = runtimeCatalogs[category];
     if (!Array.isArray(catalog)) {
@@ -1393,7 +1401,7 @@ function getResourceDebugSnapshot() {
   return Object.assign({}, runtimeCatalogDebug || summarizeRuntimeCatalogDebug({}));
 }
 
-const CATEGORY_ORDER = ['littlebear', 'song', 'newconcept1', 'peppa', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'newconcept2', 'petethecat', 'unlock2', 'unlock2thirdedition', 'unlock2workbook'];
+const CATEGORY_ORDER = ['littlebear', 'song', 'newconcept1', 'peppa', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'magictreehouseb1'];
 const CATEGORY_LABELS = {
   newconcept1: 'New Concept 1',
   newconcept2: 'New Concept 2',
@@ -1402,6 +1410,8 @@ const CATEGORY_LABELS = {
   peppa: 'Peppa',
   littlebear: 'Little Bear',
   petethecat: 'Pete the Cat',
+  magictreehouse: 'Magic Tree House',
+  magictreehouseb1: 'Magic Tree House',
   unlock1: 'Unlock 1 听口 第二版',
   unlock1thirdedition: 'Unlock 1 听口 第三版',
   unlock1workbook: 'Unlock 1 听口 练习册 第二版',

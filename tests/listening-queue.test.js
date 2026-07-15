@@ -135,13 +135,27 @@ test('所有带进度条的长音频播放器均支持拖拽定位', () => {
   const lessonWxml = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.wxml'), 'utf8');
   const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
   const materialWxml = fs.readFileSync(path.join(__dirname, '../pages/material/detail/index.wxml'), 'utf8');
+  const materialSource = fs.readFileSync(path.join(__dirname, '../pages/material/detail/index.js'), 'utf8');
   const grammarWxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  const grammarSource = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   assert.equal((lessonWxml.match(/bindchanging="changingAudioProgress"/g) || []).length, 2);
   assert.equal((lessonWxml.match(/bindchange="changeAudioProgress"/g) || []).length, 2);
   assert.match(lessonSource, /changingAudioProgress\(event\)[\s\S]*changeAudioProgress\(event\)/);
   assert.match(lessonSource, /saveListeningResumeCheckpoint\(\{ force: true, positionSec: currentSeconds \}\)/);
   assert.match(materialWxml, /bindchanging="changingAudioProgress"[\s\S]*bindchange="changeAudioProgress"/);
   assert.match(grammarWxml, /bindchanging="previewNarrationSeek" bindchange="seekNarration"/);
+  assert.match(materialSource, /audio\.onSeeked\(\(\) => this\.finalizeAudioSeek/);
+  assert.match(materialSource, /seekAudioPosition\(position, duration\)[\s\S]*audioSeeking: true[\s\S]*audio\.seek\(current\)/);
+  assert.match(grammarSource, /context\.onSeeked\(\(\) => this\.finalizeNarrationSeek/);
+  assert.match(grammarSource, /seekNarrationTo\(seconds\)[\s\S]*this\.narrationSeeking = true;[\s\S]*context\.seek\(target\)/);
+});
+
+test('Magic Tree House 拖拽期间预览文本并在 seek 落点重新同步', () => {
+  const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
+  assert.match(lessonSource, /onTimeUpdate\(\(\) => \{[\s\S]*if \(!this\.audioProgressDragging\) \{\s*this\.updateTranscriptByTime\(currentTimeMs\)/);
+  assert.match(lessonSource, /onSeeked\(\(\) => \{[\s\S]*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
+  assert.match(lessonSource, /changingAudioProgress\(event\)[\s\S]*this\.audioProgressDragging = true;\s*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
+  assert.match(lessonSource, /changeAudioProgress\(event\)[\s\S]*this\.innerAudioContext\.seek\(currentSeconds\)[\s\S]*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
 });
 
 test('拖拽不计有效听力，实际播放达到九成才完成一遍', () => {

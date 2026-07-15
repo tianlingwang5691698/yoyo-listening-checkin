@@ -6,6 +6,8 @@ const CATEGORY_LABELS = {
   peppa: 'Peppa',
   littlebear: 'Little Bear',
   petethecat: 'Pete the Cat',
+  magictreehouse: 'Magic Tree House',
+  magictreehouseb1: 'Magic Tree House',
   unlock1: 'Unlock 1 听口 第二版',
   unlock1thirdedition: 'Unlock 1 听口 第三版',
   unlock1workbook: 'Unlock 1 听口 练习册 第二版',
@@ -24,6 +26,7 @@ const CATEGORY_LABELS = {
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const UNLOCK_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
 const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock2workbook', 'unlock3', 'unlock4workbook'];
+const MAGIC_TREE_HOUSE_CATEGORIES = ['magictreehouse', 'magictreehouseb1'];
 
 function getCategoryLabel(category) {
   return CATEGORY_LABELS[category] || category;
@@ -53,6 +56,14 @@ function getTaskPresentation(task) {
       displaySubtitle: 'Pete the Cat',
       coverVariant: 'peppa',
       coverBadge: 'Pete the Cat'
+    };
+  }
+  if (MAGIC_TREE_HOUSE_CATEGORIES.includes(task.category)) {
+    return {
+      displayTitle: title,
+      displaySubtitle: 'Magic Tree House',
+      coverVariant: 'peppa',
+      coverBadge: 'Magic Tree House'
     };
   }
   if (task.category === 'littlebear') {
@@ -121,6 +132,13 @@ function getTaskReward(category, progress, task) {
       rewardCopy: progress && progress.completedToday ? '这一条今天已经完成。' : '按设定遍数听完，文本可随时查看。'
     };
   }
+  if (MAGIC_TREE_HOUSE_CATEGORIES.includes(category)) {
+    return {
+      rewardBadge: progress && progress.completedToday ? 'TREE HOUSE' : `BOOK ${nextStep}`,
+      rewardTitle: progress && progress.completedToday ? '今日听力已完成' : 'Magic Tree House 听力',
+      rewardCopy: progress && progress.completedToday ? '这一集今天已经完成。' : '按设定遍数听完，文本可随时查看。'
+    };
+  }
   if (category === 'littlebear') {
     return {
       rewardBadge: progress && progress.completedToday ? 'LITTLE BEAR' : `BEAR ${nextStep}`,
@@ -157,7 +175,7 @@ function decorateTask(task, progress, category, deps) {
     getMediaDisplayName
   } = deps;
   if (!task) {
-    const isAudioCourse = UNLOCK_CATEGORIES.includes(category) || NEW_CONCEPT_CATEGORIES.includes(category) || category === 'littlebear' || category === 'petethecat';
+    const isAudioCourse = UNLOCK_CATEGORIES.includes(category) || NEW_CONCEPT_CATEGORIES.includes(category) || category === 'littlebear' || category === 'petethecat' || MAGIC_TREE_HOUSE_CATEGORIES.includes(category);
     const emptyTask = isAudioCourse
       ? {
         taskId: `${category}-pending`,
@@ -218,7 +236,7 @@ function decorateTask(task, progress, category, deps) {
     transcriptTrackId,
     syncGranularity: task.syncGranularity || 'word',
     audioDisplayName: getMediaDisplayName(task.audioUrl),
-    audioCompactTitle: category === 'peppa' || category === 'littlebear' || category === 'petethecat'
+    audioCompactTitle: category === 'peppa' || category === 'littlebear' || category === 'petethecat' || MAGIC_TREE_HOUSE_CATEGORIES.includes(category)
       ? [base.displaySubtitle, base.displayTitle].filter(Boolean).join(' · ')
       : UNLOCK_CATEGORIES.includes(category)
         ? [base.coverBadge, base.displayTitle].filter(Boolean).join(' · ')

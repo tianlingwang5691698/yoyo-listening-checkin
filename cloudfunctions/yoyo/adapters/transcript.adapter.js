@@ -152,8 +152,21 @@ async function getTranscriptBundle(task) {
       transcriptLines: []
     };
   }
-  const trackMap = await getTranscriptTrackMap(task && task.category);
-  const transcriptTrack = findTranscriptTrack(trackMap, task);
+  const directTrackPath = task && task.textSource && task.textSource.sourceType === 'transcript-track'
+    ? String(task.textSource.filePath || '').trim()
+    : '';
+  let transcriptTrack = null;
+  if (directTrackPath) {
+    try {
+      transcriptTrack = await downloadCloudJson(directTrackPath);
+    } catch (error) {
+      transcriptTrack = null;
+    }
+  }
+  if (!transcriptTrack) {
+    const trackMap = await getTranscriptTrackMap(task && task.category);
+    transcriptTrack = findTranscriptTrack(trackMap, task);
+  }
   if (!task || !transcriptTrack) {
     return {
       transcriptTrack: null,
