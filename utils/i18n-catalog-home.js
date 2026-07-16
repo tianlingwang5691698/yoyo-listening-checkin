@@ -50,3 +50,6 @@ module.exports = {
     en: { navTitle: 'Listening Material', total: '{count} episodes', organizing: 'Catalog being organized', rangeRuler: 'Range', startNo: 'Start Episode', endNo: 'End Episode', dailyCount: 'Episodes per Day', repeatCount: 'Repeats per Episode', planRange: 'Plan Range', dailyItems: '{count} episodes daily', cancelPlan: 'Cancel Plan', saving: 'Saving', saveChanges: 'Save Changes', savePlan: 'Save Plan', debugTitle: 'Debug Checkpoint', catalog: 'Audio Catalog', empty: 'No listening material', durationPending: 'Duration pending', minute: 'min', hour: 'hr', second: 'sec', audio: 'Audio', estimatedDaily: 'Estimated daily', itemNo: 'Episode {n}', partialPending: 'Some durations pending', planSaved: 'Plan saved', saveFailed: 'Save failed', cancelled: 'Cancelled', cancelFailed: 'Cancel failed', audioUnavailable: 'Audio unavailable' }
   }
 };
+
+module.exports.levelStage['zh-CN'].course = '课程';
+module.exports.levelStage.en.course = 'Course';

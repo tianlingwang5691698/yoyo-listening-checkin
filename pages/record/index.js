@@ -334,6 +334,7 @@ function normalizeReport(report) {
 function normalizeCompletionItem(item) {
   const safeItem = item || {};
   const type = String(safeItem.type || '');
+  const isGrammarMicroLesson = type === 'grammar' && safeItem.section === 'micro-lesson';
   const typeLabels = {
     vocabulary: tr('vocabulary'),
     reading: tr('reading'),
@@ -345,7 +346,10 @@ function normalizeCompletionItem(item) {
     targetId: safeItem.targetId || '',
     passageId: safeItem.passageId || (type === 'reading' ? safeItem.targetId || '' : ''),
     type,
-    categoryLabel: typeLabels[type] || safeItem.meta || tr('completionRecord'),
+    category: safeItem.category || '',
+    taskId: safeItem.taskId || '',
+    section: safeItem.section || '',
+    categoryLabel: isGrammarMicroLesson ? tr('grammarMicroLesson') : (typeLabels[type] || safeItem.meta || tr('completionRecord')),
     title: safeItem.title || typeLabels[type] || tr('completionRecord'),
     progressText: safeItem.progressText || safeItem.meta || tr('completed'),
     completedToday: safeItem.completedToday !== false,
@@ -359,8 +363,14 @@ function normalizeCompletionItem(item) {
 function mergeReportWithCompletions(report, completions) {
   const normalizedReport = normalizeReport(report);
   const completionItems = (completions || []).map(normalizeCompletionItem);
+  const grammarMicroLessonTaskIds = new Set(completionItems
+    .filter((item) => item.type === 'grammar' && item.section === 'micro-lesson')
+    .map((item) => item.taskId)
+    .filter(Boolean));
   return Object.assign({}, normalizedReport, {
-    items: (normalizedReport.items || []).concat(completionItems)
+    items: (normalizedReport.items || [])
+      .filter((item) => !(item.category === 'grammar' && grammarMicroLessonTaskIds.has(item.taskId)))
+      .concat(completionItems)
   });
 }
 
@@ -1009,6 +1019,10 @@ Page({
     const index = Number(event.currentTarget.dataset.index || 0);
     const item = (this.data.selectedDayReport.items || [])[index];
     if (!item) return;
+    if (item.isStudyCompletion && item.type === 'grammar') {
+      wx.navigateTo({ url: '/pages/practice-history/index?type=grammar' });
+      return;
+    }
     if (item.isStudyCompletion && item.type === 'reading' && item.passageId) {
       const attemptId = item.latestAttempt && (item.latestAttempt.attemptId || item.latestAttempt._id) || '';
       wx.navigateTo({

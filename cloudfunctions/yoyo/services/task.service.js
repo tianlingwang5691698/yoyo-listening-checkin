@@ -1,4 +1,5 @@
 const study = require('../facades/study.facade');
+const completion = require('./completion.service');
 
 const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const CATALOG_BROWSE_CATEGORIES = ['song', 'littlebear', 'newconcept1', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'peppa', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
@@ -556,6 +557,26 @@ async function completeGrammarPlanTask(event) {
   await study.syncFixedPlanProgressSummary(scope, {
     category: 'grammar',
     planSlotIndex: Number(task.planSlotIndex || 0)
+  });
+  await completion.upsertStudyCompletion(ctx, today, {
+    type: 'grammar',
+    section: 'micro-lesson',
+    targetId: task.taskId,
+    taskId: task.taskId,
+    category: 'grammar',
+    topicId: task.topic || '',
+    title: task.title || task.displayTitle || '词法微课',
+    meta: [task.topicLabel, task.lessonNumber ? `第 ${task.lessonNumber} 节` : ''].filter(Boolean).join(' · '),
+    progressText: `完成 1 节微课 · 答对 ${correctQuestionCount}/${totalQuestionCount} 题 · 讲解收听完成`,
+    taskSnapshot: task,
+    latestAttempt: {
+      correctCount: correctQuestionCount,
+      totalCount: totalQuestionCount,
+      answeredCount: totalQuestionCount,
+      narrationDuration,
+      narrationListenedSec,
+      status: 'completed'
+    }
   });
   const progressRecords = await study.getChildProgressRecords(scope);
   await study.upsertDailyReport(scope, today);

@@ -285,6 +285,9 @@ function normalizeArchiveTitle(item) {
 
 function getArchiveRecordLabel(item, isListeningStudyPack) {
   const safeItem = item || {};
+  if (safeItem.type === 'grammar' && safeItem.section === 'micro-lesson') {
+    return tr('grammarMicroLesson');
+  }
   if (safeItem.type === 'vocabulary') {
     return safeItem.section === 'dictation' ? tr('dictation') : tr('memorization');
   }
@@ -379,6 +382,7 @@ function mergeStudyPackIntoAttempt(attempt, studyPack) {
 
 function normalizeCompletionItem(item, index) {
   const safeItem = item || {};
+  const isGrammarMicroLesson = safeItem.type === 'grammar' && safeItem.section === 'micro-lesson';
   const isListeningStudyPack = isListeningStudyCompletion(safeItem);
   const listeningTarget = isListeningStudyPack ? parseListeningStudyTarget(safeItem) : {};
   const latestAttempt = safeItem.latestAttempt || {};
@@ -433,6 +437,7 @@ function normalizeCompletionItem(item, index) {
     typeLabel: getCompletionTypeLabel(safeItem.type),
     recordLabel,
     isVocabulary,
+    isGrammarMicroLesson,
     isListeningStudyPack,
     category: safeItem.category || listeningTarget.category || '',
     taskId: safeItem.taskId || listeningTarget.taskId || '',
@@ -443,7 +448,9 @@ function normalizeCompletionItem(item, index) {
       : (safeItem.progressText || (totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : tr('complete'))),
     detailActionText: isListeningStudyPack ? tr('viewStudyPack') : tr('viewOriginalAnalysis'),
     scoreText: totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : '',
-    correctText: !isVocabulary && totalCount ? formatText(tr('questionCount'), { correct: correctCount, total: totalCount }) : '',
+    correctText: !isVocabulary && !isGrammarMicroLesson && totalCount
+      ? formatText(tr('questionCount'), { correct: correctCount, total: totalCount })
+      : '',
     reviewSummary: review.summary || review.feedback || '',
     reviewContent: review.content || '',
     reviewLanguage: review.language || '',
@@ -642,7 +649,7 @@ function needsCompletionHydration(item) {
   if (!item) return false;
   if (item.type === 'reading' && item.passageId) return readingCompletionNeedsHydration(item);
   if (item.type === 'reading-study' && !(item.phraseCards && item.phraseCards.length) && item.passageId) return true;
-  if (item.type === 'grammar' && item.topicId) {
+  if (item.type === 'grammar' && item.topicId && !item.isGrammarMicroLesson) {
     return !(item.grammarQuestions && item.grammarQuestions.length)
       || item.grammarQuestions.some((question) => !question.explanation || !question.explanation.explanation || question.explanation.source === 'fallback');
   }
@@ -660,14 +667,20 @@ async function hydrateCompletionItem(item) {
 
 function normalizeReport(report) {
   const safeReport = report || {};
-  const items = (safeReport.items || []).map((item) => Object.assign({}, labels.normalizeReportItem(item), {
+  const completionItems = (safeReport.completionItems || []).filter(shouldShowCompletionItem).map(normalizeCompletionItem);
+  const grammarMicroLessonTaskIds = new Set(completionItems
+    .filter((item) => item.isGrammarMicroLesson)
+    .map((item) => item.taskId)
+    .filter(Boolean));
+  const items = (safeReport.items || [])
+    .filter((item) => !(item.category === 'grammar' && grammarMicroLessonTaskIds.has(item.taskId)))
+    .map((item) => Object.assign({}, labels.normalizeReportItem(item), {
     timeLines: buildTimeLines(item),
     progressPercent: getProgressPercent(item.playCount, item.repeatTarget)
   }));
   const speakingAttempts = (safeReport.speakingAttempts || []).map(normalizeSpeakingAttempt);
   const speakingSummary = buildSpeakingSummary(speakingAttempts);
   const completedCount = items.filter((item) => item.completedToday).length;
-  const completionItems = (safeReport.completionItems || []).filter(shouldShowCompletionItem).map(normalizeCompletionItem);
   const completionItemCount = Number(safeReport.completionItemCount || completionItems.length);
   return {
     date: safeReport.date || '',

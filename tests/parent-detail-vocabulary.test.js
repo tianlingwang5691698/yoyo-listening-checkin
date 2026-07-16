@@ -18,7 +18,7 @@ test('日报内容档案按模块加载听力、口语和词汇明细', () => {
   assert.match(source, /recordLabel,[\s\S]*?isVocabulary,/);
   assert.equal((template.match(/bindtap="loadArchiveModule"/g) || []).length, 2);
   assert.equal((template.match(/activeArchiveModule === 'speaking'/g) || []).length, 2);
-  assert.equal((template.match(/wx:if="\{\{!item\.isVocabulary\}\}"/g) || []).length, 2);
+  assert.equal((template.match(/wx:if="\{\{!item\.isVocabulary && !item\.isGrammarMicroLesson\}\}"/g) || []).length, 2);
   assert.doesNotMatch(template, /\{\{item\.typeLabel\}\}/);
   assert.equal((template.match(/\{\{item\.recordLabel\}\}/g) || []).length, 4);
   assert.match(catalog['zh-CN'].dossierCopy, /按模块/);

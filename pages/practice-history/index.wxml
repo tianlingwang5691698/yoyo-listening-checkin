@@ -57,7 +57,12 @@
         </block>
 
         <block wx:if="{{type === 'grammar'}}">
-          <view class="history-question" wx:for="{{item.detailQuestions}}" wx:key="number" wx:for-item="question">
+          <view class="history-section" wx:if="{{item.isMicroLesson}}">
+            <view class="history-section-title">{{texts.microLesson}}</view>
+            <view class="history-analysis">{{item.summary}}</view>
+          </view>
+          <block wx:if="{{!item.isMicroLesson}}">
+            <view class="history-question" wx:for="{{item.detailQuestions}}" wx:key="number" wx:for-item="question">
             <view class="history-question-no">{{texts.questionPrefix}}{{question.number}}{{texts.questionSuffix}}</view>
             <view class="history-question-prompt">{{question.prompt}}</view>
             <view class="history-option {{option.isAnswer ? 'is-answer' : ''}} {{option.isSelected && !option.isAnswer ? 'is-selected-wrong' : ''}}" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">
@@ -72,7 +77,8 @@
             <view class="history-ai-status" wx:elif="{{question.analysisStatus}}">{{question.analysisStatus}}</view>
             <view class="history-explain-action" wx:else data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="loadGrammarExplanation">{{question.explaining ? texts.explanationLoading : texts.viewExplanation}}</view>
             <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
-          </view>
+            </view>
+          </block>
         </block>
 
         <block wx:if="{{type === 'writing' && item.detailReady}}">

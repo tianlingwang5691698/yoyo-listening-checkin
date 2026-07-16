@@ -76,6 +76,8 @@ Object.assign(module.exports.vocabularyDictation['zh-CN'], { unlockSecondBook: '
 Object.assign(module.exports.vocabularyDictation.en, { unlockSecondBook: 'Unlock Second Edition', unlockThirdBook: 'Unlock Third Edition' });
 Object.assign(module.exports.practiceHistory['zh-CN'], { readingMeta: '阅读', grammarMeta: '语法', writingMeta: '写作' });
 Object.assign(module.exports.practiceHistory.en, { readingMeta: 'Reading', grammarMeta: 'Grammar', writingMeta: 'Writing' });
+Object.assign(module.exports.practiceHistory['zh-CN'], { microLesson: '词法微课', microLessonCompleted: '完成 1 节微课' });
+Object.assign(module.exports.practiceHistory.en, { microLesson: 'Grammar Micro-lesson', microLessonCompleted: 'Completed 1 micro-lesson' });
 Object.assign(module.exports.practiceHistory['zh-CN'], { vocabularyTitle: '词汇听写记录', vocabularyEyebrow: '听音写词', vocabularyCopy: '回看每次听写、错词和订正结果。', noVocabulary: '还没有词汇听写记录', wrongDictation: '错词听写', wordUnit: ' 词' });
 Object.assign(module.exports.practiceHistory.en, { vocabularyTitle: 'Vocabulary Dictation History', vocabularyEyebrow: 'Listen and Spell', vocabularyCopy: 'Review dictation attempts, misspelled words, and corrections.', noVocabulary: 'No vocabulary dictation history yet', wrongDictation: 'Wrong-word Dictation', wordUnit: ' words' });
 Object.assign(module.exports.practiceHistory['zh-CN'], { childAnswer: '你的', childAnswerLabel: '你的：' });

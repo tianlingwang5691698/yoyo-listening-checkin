@@ -9,6 +9,9 @@ function getHomeTextType(task) {
   if (!task || task.isPendingAsset) {
     return '待准备';
   }
+  if (task.category === 'grammar') {
+    return '课程';
+  }
   if (task.transcriptTrackId) {
     return task.syncGranularity === 'line' ? '句级' : '逐词';
   }
@@ -39,7 +42,9 @@ function decorateHomeTask(task) {
     audioCloudPath: task.audioCloudPath || '',
     audioFileId: task.audioFileId || '',
     audioSource: task.audioSource || '',
-    progressText: `${task.playCount || 0}/${repeatTarget} 遍`
+    progressText: task.category === 'grammar'
+      ? `${task.playCount || 0}/1 节`
+      : `${task.playCount || 0}/${repeatTarget} 遍`
   };
 }
 

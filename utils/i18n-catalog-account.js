@@ -195,5 +195,10 @@ module.exports = {
   }
 };
 
+module.exports.record['zh-CN'].grammarMicroLesson = '词法微课';
+module.exports.record.en.grammarMicroLesson = 'Grammar Micro-lesson';
+module.exports.parentDetail['zh-CN'].grammarMicroLesson = '词法微课';
+module.exports.parentDetail.en.grammarMicroLesson = 'Grammar Micro-lesson';
+
 Object.assign(module.exports.record['zh-CN'], { syncingDuration: '同步中' });
 Object.assign(module.exports.record.en, { syncingDuration: 'Syncing' });

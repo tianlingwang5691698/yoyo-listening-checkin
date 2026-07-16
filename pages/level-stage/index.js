@@ -52,7 +52,7 @@ function getTextType(task) {
     return t('waiting');
   }
   if (task.category === 'grammar') {
-    return task.meta || task.displaySubtitle || task.topicLabel || '语法微课';
+    return t('course');
   }
   if (task.transcriptTrackId) {
     return task.syncGranularity === 'line' ? t('sentenceSync') : t('wordSync');
@@ -91,9 +91,7 @@ function buildTaskRows(category) {
     : (fallbackTask && fallbackTask.taskId ? [fallbackTask] : []);
   return sourceTasks.map((source, index) => {
     const task = labels.normalizeTask(source || {});
-    const taskMeta = task.category === 'grammar'
-      ? (task.meta || task.displaySubtitle || task.topicLabel || '语法微课')
-      : [getTextType(task), task.playStepText ? t('progress', { progress: task.playStepText }) : ''].filter(Boolean).join(' · ');
+    const taskMeta = [getTextType(task), task.playStepText ? t('progress', { progress: task.playStepText }) : ''].filter(Boolean).join(' · ');
     return {
       taskId: task.taskId || '',
       title: getTaskTitle(task),

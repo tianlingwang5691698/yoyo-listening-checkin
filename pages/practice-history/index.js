@@ -71,6 +71,7 @@ function normalizeReading(item, index) {
 
 function normalizeGrammar(item, index) {
   const attempt = item.latestAttempt || {};
+  const isMicroLesson = item.section === 'micro-lesson';
   const questions = Array.isArray(attempt.questions) ? attempt.questions : [];
   const correctCount = questions.length
     ? questions.filter((question) => question.isCorrect).length
@@ -79,11 +80,14 @@ function normalizeGrammar(item, index) {
     id: String(item.id || item.recordId || `grammar-${index}`),
     targetId: String(item.topicId || item.targetId || ''),
     title: String(item.title || '语法练习').replace(/^语法：/, ''),
-    meta: item.meta || text('grammarEyebrow', '语法'),
+    meta: isMicroLesson ? text('microLesson', '词法微课') : (item.meta || text('grammarEyebrow', '语法')),
     dateLabel: cleanDate(item.date, item.updatedAt),
-    summary: `${correctCount}/${questions.length || Number(attempt.answeredCount || 0)}${text('questionSuffix', ' 题')}`,
+    summary: isMicroLesson
+      ? (item.progressText || text('microLessonCompleted', '完成 1 节微课'))
+      : `${correctCount}/${questions.length || Number(attempt.answeredCount || 0)}${text('questionSuffix', ' 题')}`,
     attempt,
-    detailReady: questions.length > 0,
+    isMicroLesson,
+    detailReady: isMicroLesson || questions.length > 0,
     detailLoading: false,
     detailQuestions: buildGrammarDetailQuestions(questions, item)
   };

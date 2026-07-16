@@ -140,7 +140,7 @@
           </view>
           <view class="entry-copy" wx:if="{{item.displayMeta}}">{{item.displayMeta}}</view>
           <view class="answer-chip" wx:if="{{item.correctText}}">{{texts.answerPrefix}}{{item.correctText}}</view>
-          <button wx:if="{{!item.isVocabulary}}" class="detail-toggle library-detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
+          <button wx:if="{{!item.isVocabulary && !item.isGrammarMicroLesson}}" class="detail-toggle library-detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-loading" wx:if="{{item.detailLoading}}">{{texts.loadingDetail}}</view>
             <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">
@@ -395,7 +395,7 @@
           </view>
           <view class="quiet-note" wx:if="{{item.displayMeta}}">{{item.displayMeta}}</view>
           <view class="answer-chip" wx:if="{{item.correctText}}">{{texts.answerPrefix}}{{item.correctText}}</view>
-          <button wx:if="{{!item.isVocabulary}}" class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
+          <button wx:if="{{!item.isVocabulary && !item.isGrammarMicroLesson}}" class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-loading" wx:if="{{item.detailLoading}}">{{texts.loadingDetail}}</view>
             <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">
