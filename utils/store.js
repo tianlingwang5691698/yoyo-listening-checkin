@@ -58,6 +58,7 @@ const READ_CACHE_CONFIG = {
   getMaterialItem: { persist: true },
   getLevelOverview: { persist: true },
   getListeningPlanOverview: { persist: true, maxAgeMs: LISTENING_PLAN_CACHE_MAX_AGE_MS },
+  getListeningMaterialCatalog: { persist: true },
   getListeningMaterialDetail: { persist: true },
   getTaskDetail: { persist: true },
   getTaskTranscript: { persist: false },
@@ -92,6 +93,9 @@ const READ_CACHE_CONFIG = {
   getAdminStatus: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   getAdminFamilyList: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   explainGrammarQuestion: { persist: false }
+};
+const PUBLIC_READ_ACTIONS = {
+  getListeningMaterialCatalog: true
 };
 
 function normalizeStudyRoleValue(role) {
@@ -363,7 +367,10 @@ function getCachedCloudResult(action, payload) {
 }
 
 function getCachedReadResult(action, payload) {
-  return getCachedCloudResult(action, withDeviceContext(action, payload || {}));
+  const cachePayload = PUBLIC_READ_ACTIONS[action]
+    ? Object.assign({}, payload || {})
+    : withDeviceContext(action, payload || {});
+  return getCachedCloudResult(action, cachePayload);
 }
 
 function cacheCloudResult(action, payload, data) {
@@ -390,11 +397,15 @@ function cacheCloudResult(action, payload, data) {
 
 function clearCloudReadCache() {
   cloudReadCacheVersion += 1;
-  Object.keys(memoryCloudCache).forEach((key) => delete memoryCloudCache[key]);
+  const immutablePrefix = 'yoyoCloudReadCacheV4:getListeningMaterialCatalog:';
+  Object.keys(memoryCloudCache).forEach((key) => {
+    if (!key.startsWith(immutablePrefix)) delete memoryCloudCache[key];
+  });
   try {
     const keys = wx.getStorageSync(CACHE_INDEX_KEY) || [];
-    keys.forEach((key) => wx.removeStorageSync(key));
-    wx.removeStorageSync(CACHE_INDEX_KEY);
+    const keptKeys = keys.filter((key) => String(key).startsWith(immutablePrefix));
+    keys.filter((key) => !keptKeys.includes(key)).forEach((key) => wx.removeStorageSync(key));
+    wx.setStorageSync(CACHE_INDEX_KEY, keptKeys);
   } catch (error) {
     monitor.logError('store', 'cache-clear', error, {});
   }
@@ -439,7 +450,9 @@ async function callCloudFresh(action, payload, defaults) {
 }
 
 async function callCloud(action, payload, defaults, options = {}) {
-  const cloudPayload = withDeviceContext(action, payload);
+  const cloudPayload = PUBLIC_READ_ACTIONS[action]
+    ? Object.assign({}, payload || {})
+    : withDeviceContext(action, payload);
   if (MUTATION_ACTIONS[action]) {
     clearCloudReadCache();
   }
@@ -554,6 +567,18 @@ async function getListeningMaterialDetail(options, onRefresh) {
     tasks: [],
     activePlan: null,
     selectedMaterial: null
+  }, { onRefresh });
+}
+
+async function getListeningMaterialCatalog(options, onRefresh) {
+  return callCloud('getListeningMaterialCatalog', Object.assign({}, options || {}), {
+    category: '',
+    levelId: 'A1',
+    categoryLabel: '',
+    totalCount: 0,
+    tasks: [],
+    publicResource: true,
+    catalogVersion: 'public-v1'
   }, { onRefresh });
 }
 
@@ -1287,6 +1312,7 @@ module.exports = {
   getDailyReportByDate,
   getLevelOverview,
   getListeningPlanOverview,
+  getListeningMaterialCatalog,
   getListeningMaterialDetail,
   saveListeningPlanMaterial,
   removeListeningPlanMaterial,

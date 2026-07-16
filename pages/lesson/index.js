@@ -1175,6 +1175,21 @@ Page({
       this.markLessonRoute('snapshotMiss');
     }
   },
+  async finishLessonShowRefresh(detail) {
+    if (this.data.audioReady && this.innerAudioContext && this.innerAudioContext.src) {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.restoreListeningResumeCheckpoint({ force: true });
+    }
+    if (this.lessonPerf) {
+      this.lessonPerf.mark('cloudRefresh', {
+        source: detail && detail.__cacheHit ? 'cache' : (detail && detail.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+        cacheHit: !!(detail && detail.__cacheHit),
+        category: this.category,
+        taskId: this.taskId,
+        hasAudio: !!(detail && detail.task && hasTaskAudioSource(detail.task))
+      });
+    }
+  },
   async onShow() {
     page.syncTheme(this);
     if (!page.requireIdentityConfirmed()) {
@@ -1189,7 +1204,8 @@ Page({
       });
       return;
     }
-    if (!this.data.task) {
+    const hasSnapshotTask = !!this.data.task;
+    if (!hasSnapshotTask) {
       await new Promise((resolve) => wx.nextTick(resolve));
       this.lessonPerf.ready('pageReady', {
         source: 'fallback',
@@ -1199,20 +1215,18 @@ Page({
         hasAudio: false
       });
     }
-    const detail = await this.refreshPage();
-    if (this.data.audioReady && this.innerAudioContext && this.innerAudioContext.src) {
-      await new Promise((resolve) => wx.nextTick(resolve));
-      this.restoreListeningResumeCheckpoint({ force: true });
+    const refreshPromise = this.refreshPage();
+    if (hasSnapshotTask) {
+      refreshPromise
+        .then((detail) => this.finishLessonShowRefresh(detail))
+        .catch((error) => monitor.logError('lesson', 'backgroundRefresh', error, {
+          category: this.category,
+          taskId: this.taskId
+        }));
+      return;
     }
-    if (this.lessonPerf) {
-      this.lessonPerf.mark('cloudRefresh', {
-        source: detail && detail.__cacheHit ? 'cache' : (detail && detail.syncMode === 'cloud-error' ? 'error' : 'cloud'),
-        cacheHit: !!(detail && detail.__cacheHit),
-        category: this.category,
-        taskId: this.taskId,
-        hasAudio: !!(detail && detail.task && hasTaskAudioSource(detail.task))
-      });
-    }
+    const detail = await refreshPromise;
+    await this.finishLessonShowRefresh(detail);
   },
   onHide() {
     this.stopPreciseTranscriptSync();

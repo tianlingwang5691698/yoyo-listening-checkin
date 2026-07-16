@@ -107,9 +107,9 @@ test('Unlock4 练习册静态目录同样按教材顺序输出', () => {
   assert.equal(endIndex, titles.length - 2);
 });
 
-test('New Concept 2-4 摘要有兜底数量', () => {
+test('New Concept 2-4 摘要使用线上正式静态数量', () => {
   assert.deepEqual(catalogEngine.getCatalogSummary('newconcept2'), {
-    totalCount: 96,
+    totalCount: 98,
     enabled: true
   });
   assert.deepEqual(catalogEngine.getCatalogSummary('newconcept3'), {

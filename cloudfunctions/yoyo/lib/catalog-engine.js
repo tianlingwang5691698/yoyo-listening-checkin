@@ -273,6 +273,10 @@ function buildStaticManifestTasks(category) {
 }
 
 const songTasks = buildStaticManifestTasks('song');
+const newConcept1Tasks = buildStaticManifestTasks('newconcept1');
+const newConcept2Tasks = buildStaticManifestTasks('newconcept2');
+const newConcept3Tasks = buildStaticManifestTasks('newconcept3');
+const newConcept4Tasks = buildStaticManifestTasks('newconcept4');
 const littleBearTasks = buildStaticManifestTasks('littlebear');
 const peteTheCatTasks = buildStaticManifestTasks('petethecat');
 const magicTreeHouseTasks = buildStaticManifestTasks('magictreehouse');
@@ -298,7 +302,7 @@ const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbookthirdedition', 'unlock1workbook', 'unlock2workbookthirdedition', 'unlock2workbook', 'unlock3workbookthirdedition', 'unlock3', 'unlock4workbookthirdedition', 'unlock4workbook'];
-const MANIFEST_ONLY_CATEGORIES = ['peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition', 'unlock1workbookthirdedition', 'unlock2workbookthirdedition', 'unlock3workbookthirdedition', 'unlock4workbookthirdedition', 'song'];
+const MANIFEST_ONLY_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock2workbookthirdedition', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock3workbookthirdedition', 'unlock4', 'unlock4thirdedition', 'unlock4workbook', 'unlock4workbookthirdedition', 'song'];
 
 function slugifyTrackIdPart(value) {
   return String(value || '')
@@ -605,10 +609,10 @@ async function getTranscriptBundle(task) {
 function getStaticCatalogMap() {
   if (staticCatalogMapCache) return staticCatalogMapCache;
   staticCatalogMapCache = {
-    newconcept1: [],
-    newconcept2: [],
-    newconcept3: [],
-    newconcept4: [],
+    newconcept1: newConcept1Tasks,
+    newconcept2: newConcept2Tasks,
+    newconcept3: newConcept3Tasks,
+    newconcept4: newConcept4Tasks,
     peppa: peppaTasks.concat(peppaSeason23Tasks),
     littlebear: littleBearTasks,
     petethecat: peteTheCatTasks,

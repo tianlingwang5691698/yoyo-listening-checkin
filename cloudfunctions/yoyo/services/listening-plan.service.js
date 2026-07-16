@@ -1,5 +1,6 @@
 const study = require('../facades/study.facade');
 const listeningPlanEngine = require('../lib/listening-plan-engine');
+const listeningMaterialCatalog = require('../lib/listening-material-catalog');
 
 function getPlanMaterial(plan, category) {
   return ((plan && plan.materials) || []).find((item) => item.category === category) || null;
@@ -75,6 +76,37 @@ async function getListeningMaterialDetail(event) {
   };
 }
 
+async function getListeningMaterialCatalog(event) {
+  const payload = (event && event.payload) || {};
+  const category = String(payload.category || '').trim();
+  const material = listeningPlanEngine.MATERIALS.find((item) => item.category === category);
+  const levelId = listeningPlanEngine.normalizeMaterialLevelId(category, payload.levelId || 'A1');
+  if (!material) {
+    return {
+      category,
+      levelId,
+      categoryLabel: '',
+      totalCount: 0,
+      tasks: [],
+      publicResource: true,
+      catalogVersion: 'public-v1'
+    };
+  }
+  if (category === 'unlock1' || !study.getCatalog(category).length) {
+    await study.refreshRuntimeCatalogs(false, [category]);
+  }
+  const tasks = await study.resolveStandaloneCategoryTasks(category, '', study.getTodayString());
+  return {
+    category,
+    levelId,
+    categoryLabel: study.getCategoryLabel(category),
+    totalCount: tasks.length,
+    tasks: listeningMaterialCatalog.buildPublicCatalog(tasks),
+    publicResource: true,
+    catalogVersion: 'public-v1'
+  };
+}
+
 async function saveListeningPlanMaterial(event) {
   const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'saveListeningPlanMaterial'
@@ -101,6 +133,7 @@ async function removeListeningPlanMaterial(event) {
 
 module.exports = {
   getListeningPlanOverview,
+  getListeningMaterialCatalog,
   getListeningMaterialDetail,
   saveListeningPlanMaterial,
   removeListeningPlanMaterial

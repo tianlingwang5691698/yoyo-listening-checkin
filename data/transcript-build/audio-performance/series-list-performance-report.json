@@ -1,0 +1,187 @@
+{
+  "mode": "series-list",
+  "passed": true,
+  "targetMs": 500,
+  "materialListTargetMs": 800,
+  "navigationPrefetchDwellMs": 350,
+  "rounds": 3,
+  "seriesCount": 8,
+  "sampleCount": 24,
+  "maxClickToPlayMs": null,
+  "maxMaterialListMs": 528,
+  "maxLessonReadyMs": null,
+  "maxNavigationToPlayMs": null,
+  "maxAudioPrepareMs": null,
+  "failures": [],
+  "consoleErrors": [],
+  "results": [
+    {
+      "category": "newconcept2",
+      "round": 1,
+      "levelSwitchMs": 10,
+      "materialListMs": 318,
+      "passed": true
+    },
+    {
+      "category": "newconcept2",
+      "round": 2,
+      "levelSwitchMs": 30,
+      "materialListMs": 312,
+      "passed": true
+    },
+    {
+      "category": "newconcept2",
+      "round": 3,
+      "levelSwitchMs": 27,
+      "materialListMs": 528,
+      "passed": true
+    },
+    {
+      "category": "unlock2workbook",
+      "round": 1,
+      "levelSwitchMs": 35,
+      "materialListMs": 241,
+      "passed": true
+    },
+    {
+      "category": "unlock2workbook",
+      "round": 2,
+      "levelSwitchMs": 32,
+      "materialListMs": 229,
+      "passed": true
+    },
+    {
+      "category": "unlock2workbook",
+      "round": 3,
+      "levelSwitchMs": 33,
+      "materialListMs": 218,
+      "passed": true
+    },
+    {
+      "category": "newconcept3",
+      "round": 1,
+      "levelSwitchMs": 30,
+      "materialListMs": 291,
+      "passed": true
+    },
+    {
+      "category": "newconcept3",
+      "round": 2,
+      "levelSwitchMs": 34,
+      "materialListMs": 292,
+      "passed": true
+    },
+    {
+      "category": "newconcept3",
+      "round": 3,
+      "levelSwitchMs": 31,
+      "materialListMs": 261,
+      "passed": true
+    },
+    {
+      "category": "unlock3",
+      "round": 1,
+      "levelSwitchMs": 39,
+      "materialListMs": 243,
+      "passed": true
+    },
+    {
+      "category": "unlock3",
+      "round": 2,
+      "levelSwitchMs": 31,
+      "materialListMs": 230,
+      "passed": true
+    },
+    {
+      "category": "unlock3",
+      "round": 3,
+      "levelSwitchMs": 24,
+      "materialListMs": 230,
+      "passed": true
+    },
+    {
+      "category": "newconcept4",
+      "round": 1,
+      "levelSwitchMs": 25,
+      "materialListMs": 254,
+      "passed": true
+    },
+    {
+      "category": "newconcept4",
+      "round": 2,
+      "levelSwitchMs": 26,
+      "materialListMs": 299,
+      "passed": true
+    },
+    {
+      "category": "newconcept4",
+      "round": 3,
+      "levelSwitchMs": 30,
+      "materialListMs": 267,
+      "passed": true
+    },
+    {
+      "category": "unlock4thirdedition",
+      "round": 1,
+      "levelSwitchMs": 29,
+      "materialListMs": 257,
+      "passed": true
+    },
+    {
+      "category": "unlock4thirdedition",
+      "round": 2,
+      "levelSwitchMs": 25,
+      "materialListMs": 283,
+      "passed": true
+    },
+    {
+      "category": "unlock4thirdedition",
+      "round": 3,
+      "levelSwitchMs": 42,
+      "materialListMs": 271,
+      "passed": true
+    },
+    {
+      "category": "unlock4workbookthirdedition",
+      "round": 1,
+      "levelSwitchMs": 30,
+      "materialListMs": 250,
+      "passed": true
+    },
+    {
+      "category": "unlock4workbookthirdedition",
+      "round": 2,
+      "levelSwitchMs": 25,
+      "materialListMs": 239,
+      "passed": true
+    },
+    {
+      "category": "unlock4workbookthirdedition",
+      "round": 3,
+      "levelSwitchMs": 25,
+      "materialListMs": 219,
+      "passed": true
+    },
+    {
+      "category": "unlock4workbook",
+      "round": 1,
+      "levelSwitchMs": 34,
+      "materialListMs": 248,
+      "passed": true
+    },
+    {
+      "category": "unlock4workbook",
+      "round": 2,
+      "levelSwitchMs": 25,
+      "materialListMs": 248,
+      "passed": true
+    },
+    {
+      "category": "unlock4workbook",
+      "round": 3,
+      "levelSwitchMs": 25,
+      "materialListMs": 229,
+      "passed": true
+    }
+  ]
+}

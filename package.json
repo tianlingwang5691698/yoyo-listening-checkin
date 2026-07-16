@@ -7,6 +7,7 @@
     "wechat:page": "node scripts/wechat-automator.js page",
     "wechat:screenshot": "node scripts/wechat-automator.js screenshot",
     "wechat:audio-perf": "node scripts/audit_listening_series_performance.js",
+    "wechat:audio-list-perf": "AUDIO_PERF_LIST_ONLY=1 node scripts/audit_listening_series_performance.js",
     "wechat:audio-flow": "node scripts/test_segmented_audio_flows.js",
     "audio:assets-online": "node scripts/test_audio_performance_assets_online.js"
   },

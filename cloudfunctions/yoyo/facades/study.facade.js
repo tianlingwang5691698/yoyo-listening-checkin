@@ -2,6 +2,7 @@ const shared = require('../services/shared.service');
 
 module.exports = {
   prepareRequestContext: shared.prepareRequestContext,
+  refreshRuntimeCatalogs: shared.refreshRuntimeCatalogs,
   getDashboardData: (ctx, options) => shared.getDashboardData(ctx, options),
   getCumulativeListeningMinutes: (scope) => shared.getCumulativeListeningMinutes(scope),
   getUserScope: shared.getUserScope,

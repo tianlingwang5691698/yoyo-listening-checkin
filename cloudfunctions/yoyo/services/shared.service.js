@@ -789,6 +789,7 @@ async function prepareRequestContext(event) {
 
 module.exports = {
   getResourceDebugSnapshot,
+  refreshRuntimeCatalogs,
   prepareRequestContext,
   getDashboardData,
   getCumulativeListeningMinutes,

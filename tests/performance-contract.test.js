@@ -106,3 +106,28 @@ test('阶段详情只加载轻量语法目录', () => {
   assert.ok(Math.max(...samples) < 10, '语法计划目录解析必须小于 10ms');
   assert.equal(catalog.some((item) => item.examples || item.questions || item.narration), false);
 });
+
+test('音频系列列表使用公共轻量缓存和并发预取', () => {
+  const materialSource = fs.readFileSync(path.join(root, 'pages/listening-material/index.js'), 'utf8');
+  const levelSource = fs.readFileSync(path.join(root, 'pages/level/index.js'), 'utf8');
+  const levelTemplate = fs.readFileSync(path.join(root, 'pages/level/index.wxml'), 'utf8');
+  const storeSource = fs.readFileSync(path.join(root, 'utils/store.js'), 'utf8');
+
+  assert.match(materialSource, /listeningMaterialCatalogSnapshotV3/);
+  assert.match(materialSource, /store\.getListeningMaterialCatalog\(detailRequest/);
+  assert.doesNotMatch(materialSource, /getTargetSnapshotPart/);
+  assert.doesNotMatch(materialSource, /await planSelectionPromise/);
+  assert.match(levelSource, /Promise\.all\(\[worker\(\), worker\(\)\]\)/);
+  assert.equal((levelTemplate.match(/bindtouchstart="prefetchMaterial"/g) || []).length, 2);
+  assert.match(storeSource, /PUBLIC_READ_ACTIONS = \{\s*getListeningMaterialCatalog: true/);
+  assert.match(storeSource, /immutablePrefix = 'yoyoCloudReadCacheV4:getListeningMaterialCatalog:'/);
+});
+
+test('音频课程快照首屏不等待完整详情补齐', () => {
+  const source = fs.readFileSync(path.join(root, 'pages/lesson/index.js'), 'utf8');
+  const onShowSource = source.slice(source.indexOf('  async onShow() {'), source.indexOf('  onHide() {'));
+  assert.match(onShowSource, /const hasSnapshotTask = !!this\.data\.task/);
+  assert.match(onShowSource, /const refreshPromise = this\.refreshPage\(\)/);
+  assert.match(onShowSource, /if \(hasSnapshotTask\) \{[\s\S]*?refreshPromise[\s\S]*?return;/);
+  assert.match(source, /finishLessonShowRefresh\(detail\)/);
+});

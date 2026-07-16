@@ -46,7 +46,7 @@
       </block>
       <block wx:elif="{{materials.length}}">
         <block wx:for="{{materials}}" wx:key="category">
-          <view class="audio-spine-row {{item.disabled ? 'is-disabled' : ''}} {{item.selected ? 'is-selected' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtap="openMaterial">
+          <view class="audio-spine-row {{item.disabled ? 'is-disabled' : ''}} {{item.selected ? 'is-selected' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtouchstart="prefetchMaterial" bindtap="openMaterial">
             <view class="audio-spine-mark"></view>
             <view class="audio-spine-main">
               <view class="audio-spine-title">{{item.title}}</view>
@@ -96,7 +96,7 @@
     <view class="stage-channel">
       <view class="channel-rail"></view>
       <block wx:for="{{materials}}" wx:key="category">
-        <view class="stage-row {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtap="openMaterial">
+        <view class="stage-row {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtouchstart="prefetchMaterial" bindtap="openMaterial">
           <view class="stage-wave"><text></text><text></text><text></text></view>
           <view>
             <view class="stage-row-title">{{item.title}}</view>

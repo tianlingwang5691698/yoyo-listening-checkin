@@ -150,6 +150,40 @@ function getOverviewSnapshotKey(levelId) {
 Page({
   overviewCache: {},
   overviewRequests: {},
+  materialPrefetchRequests: {},
+  prefetchMaterialCatalog(levelId, category) {
+    if (!category) return Promise.resolve(null);
+    const key = `${levelId || 'A1'}:${category}`;
+    if (!this.materialPrefetchRequests[key]) {
+      this.materialPrefetchRequests[key] = store.getListeningMaterialCatalog({
+        levelId: levelId || 'A1',
+        category
+      }).then((data) => {
+        delete this.materialPrefetchRequests[key];
+        return data;
+      }, (error) => {
+        delete this.materialPrefetchRequests[key];
+        throw error;
+      });
+    }
+    return this.materialPrefetchRequests[key];
+  },
+  scheduleMaterialPrefetch(levelId, materials) {
+    if (this.materialPrefetchTimer) clearTimeout(this.materialPrefetchTimer);
+    const queue = (materials || []).filter((item) => item && item.enabled !== false && item.category).slice();
+    this.materialPrefetchTimer = setTimeout(() => {
+      this.materialPrefetchTimer = null;
+      let cursor = 0;
+      const worker = async () => {
+        while (cursor < queue.length) {
+          const item = queue[cursor];
+          cursor += 1;
+          await this.prefetchMaterialCatalog(levelId, item.category).catch(() => null);
+        }
+      };
+      Promise.all([worker(), worker()]).catch(() => null);
+    }, 80);
+  },
   scheduleSecondaryLevelPrefetch(firstLevel) {
     if (this.secondaryPrefetchTimer) {
       clearTimeout(this.secondaryPrefetchTimer);
@@ -233,6 +267,7 @@ Page({
     this.rememberOverview(levelId, data);
     if (this.data.selectedLevel === levelId) {
       this.applyOverview(data, levelId);
+      this.scheduleMaterialPrefetch(levelId, data.materials || []);
     }
   },
   async loadOverview(levelId, options = {}) {
@@ -249,6 +284,7 @@ Page({
     if (cached && !options.prefetch) {
       this.overviewCache[nextLevel] = cached;
       this.applyOverview(cached, nextLevel);
+      this.scheduleMaterialPrefetch(nextLevel, cached.materials || []);
       if (options.interactive) {
         setTimeout(() => {
           this.loadOverview(nextLevel, { prefetch: true }).catch(() => {});
@@ -257,7 +293,9 @@ Page({
       }
     }
     if (!cached && !options.prefetch) {
-      this.applyOverview(buildFallbackOverview(nextLevel, this.data), nextLevel);
+      const fallback = buildFallbackOverview(nextLevel, this.data);
+      this.applyOverview(fallback, nextLevel);
+      this.scheduleMaterialPrefetch(nextLevel, fallback.materials || []);
       this.setData({ levelLoading: true });
     }
     if (!this.overviewRequests[nextLevel]) {
@@ -285,6 +323,7 @@ Page({
     this.rememberOverview(nextLevel, data);
     if (!options.prefetch && this.data.selectedLevel === nextLevel) {
       this.applyOverview(data, nextLevel);
+      this.scheduleMaterialPrefetch(nextLevel, data.materials || []);
     }
     return data;
   },
@@ -343,6 +382,10 @@ Page({
       clearTimeout(this.secondaryPrefetchTimer);
       this.secondaryPrefetchTimer = null;
     }
+    if (this.materialPrefetchTimer) {
+      clearTimeout(this.materialPrefetchTimer);
+      this.materialPrefetchTimer = null;
+    }
   },
   async chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;
@@ -373,6 +416,13 @@ Page({
     wx.navigateTo({
       url: `/pages/listening-material/index?levelId=${encodeURIComponent(levelId)}&category=${encodeURIComponent(category)}`
     });
+  },
+  prefetchMaterial(event) {
+    const category = event.currentTarget.dataset.category;
+    const levelId = event.currentTarget.dataset.levelId || this.data.selectedLevel || 'A1';
+    const disabled = event.currentTarget.dataset.disabled;
+    if (!category || disabled === true || disabled === 'true') return;
+    this.prefetchMaterialCatalog(levelId, category).catch(() => null);
   },
   openFixedStage() {
     const fixedPlan = this.data.fixedPlan || {};

@@ -5,7 +5,7 @@ const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
-const MATERIAL_DETAIL_SNAPSHOT_KEY = 'listeningMaterialDetailSnapshotV2';
+const MATERIAL_DETAIL_SNAPSHOT_KEY = 'listeningMaterialCatalogSnapshotV3';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function t(key, variables) {
@@ -74,20 +74,20 @@ function getPlanMaterials(plan) {
   return Array.isArray(plan && plan.materials) ? plan.materials : [];
 }
 
-function getTargetSnapshotPart() {
-  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
-  return `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
-}
-
 function getDetailSnapshotId(levelId, category) {
-  return `${getTargetSnapshotPart()}:${levelId || 'A1'}:${category || ''}`;
+  return `${levelId || 'A1'}:${category || ''}`;
 }
 
-function rememberDetailSnapshot(snapshotId, data, source) {
+function getDetailSnapshotKey(levelId, category) {
+  return `${MATERIAL_DETAIL_SNAPSHOT_KEY}:${getDetailSnapshotId(levelId, category)}`;
+}
+
+function rememberDetailSnapshot(levelId, category, data, source) {
   if (!data || data.syncMode === 'cloud-error' || !Array.isArray(data.tasks)) {
     return;
   }
-  snapshotStore.write(MATERIAL_DETAIL_SNAPSHOT_KEY, snapshotId, data, { source });
+  const snapshotId = getDetailSnapshotId(levelId, category);
+  snapshotStore.write(getDetailSnapshotKey(levelId, category), snapshotId, data, { source });
 }
 
 function hasPlanMaterial(plan, category) {
@@ -190,7 +190,10 @@ Page({
   }),
   applyDetail(data) {
     const totalCount = Number(data.totalCount || 0);
-    const selected = data.selectedMaterial || {};
+    const selectedMaterial = Object.prototype.hasOwnProperty.call(data || {}, 'selectedMaterial')
+      ? data.selectedMaterial
+      : this.data.selectedMaterial;
+    const selected = selectedMaterial || {};
     const startNo = Math.max(1, Math.min(totalCount || 1, Number(selected.startNo || 1)));
     const endNo = Math.max(startNo, Math.min(totalCount || 1, Number(selected.endNo || totalCount || 1)));
     const nextData = Object.assign({}, data, {
@@ -201,12 +204,46 @@ Page({
       endNo,
       dailyCount: Number(selected.dailyCount || 1),
       repeatTarget: Number(selected.repeatTarget || 3),
-      selectedMaterial: data.selectedMaterial || null,
-      isSelected: !!data.selectedMaterial,
+      selectedMaterial: selectedMaterial || null,
+      isSelected: !!selectedMaterial,
       totalCountText: t('total', { count: totalCount }),
       dailyCountText: t('dailyItems', { count: Number(selected.dailyCount || 1) })
     });
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, nextData, buildDurationSummary(nextData))));
+  },
+  applyPlanSelection(activePlan) {
+    const selectedMaterial = getPlanMaterials(activePlan).find((item) => item && item.category === this.data.category) || null;
+    const nextData = Object.assign({}, this.data, {
+      selectedMaterial,
+      isSelected: !!selectedMaterial,
+      startNo: selectedMaterial ? Number(selectedMaterial.startNo || 1) : this.data.startNo,
+      endNo: selectedMaterial ? Number(selectedMaterial.endNo || this.data.totalCount || 1) : this.data.endNo,
+      dailyCount: selectedMaterial ? Number(selectedMaterial.dailyCount || 1) : this.data.dailyCount,
+      repeatTarget: selectedMaterial ? Number(selectedMaterial.repeatTarget || 3) : this.data.repeatTarget
+    });
+    this.setData(Object.assign({
+      selectedMaterial,
+      isSelected: !!selectedMaterial,
+      startNo: nextData.startNo,
+      endNo: nextData.endNo,
+      dailyCount: nextData.dailyCount,
+      repeatTarget: nextData.repeatTarget,
+      dailyCountText: t('dailyItems', { count: nextData.dailyCount })
+    }, buildDurationSummary(nextData)));
+  },
+  async refreshPlanSelection(levelId) {
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const request = { levelId };
+    const cached = store.getCachedReadResult
+      ? store.getCachedReadResult('getListeningPlanOverview', Object.assign({}, request, target))
+      : null;
+    if (cached) this.applyPlanSelection(cached.activePlan || null);
+    const data = await store.getListeningPlanOverview(request, (fresh) => {
+      this.applyPlanSelection(fresh.activePlan || null);
+    });
+    if (data && data.syncMode !== 'cloud-error') {
+      this.applyPlanSelection(data.activePlan || null);
+    }
   },
   async onLoad(query) {
     this.listeningMaterialPerf = page.startPagePerf('listening-material');
@@ -220,18 +257,17 @@ Page({
     };
     this.setData({ category, levelId });
     const snapshotId = getDetailSnapshotId(levelId, category);
-    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
     const cachedDetail = store.getCachedReadResult
-      ? store.getCachedReadResult('getListeningMaterialDetail', Object.assign({}, detailRequest, target))
+      ? store.getCachedReadResult('getListeningMaterialCatalog', detailRequest)
       : null;
-    const snapshot = snapshotStore.read(MATERIAL_DETAIL_SNAPSHOT_KEY, {
+    const snapshot = snapshotStore.read(getDetailSnapshotKey(levelId, category), {
       id: snapshotId,
       maxAgeMs: SNAPSHOT_MAX_AGE_MS
     });
     if (snapshot) {
       this.applyDetail(snapshot);
     } else if (cachedDetail) {
-      rememberDetailSnapshot(snapshotId, cachedDetail, 'listening-material-cache');
+      rememberDetailSnapshot(levelId, category, cachedDetail, 'listening-material-cache');
       this.applyDetail(cachedDetail);
     }
     const initialDetail = snapshot || cachedDetail;
@@ -253,8 +289,9 @@ Page({
         tasks: 0
       });
     }
-    const data = await store.getListeningMaterialDetail(detailRequest, (fresh) => {
-      rememberDetailSnapshot(snapshotId, fresh, 'listening-material-refresh');
+    const planSelectionPromise = this.refreshPlanSelection(levelId).catch(() => null);
+    const data = await store.getListeningMaterialCatalog(detailRequest, (fresh) => {
+      rememberDetailSnapshot(levelId, category, fresh, 'listening-material-refresh');
       this.applyDetail(fresh);
       if (this.listeningMaterialPerf) {
         this.listeningMaterialPerf.mark('cloudRefresh', { levelId, category, tasks: (fresh.tasks || []).length });
@@ -263,8 +300,9 @@ Page({
     if (data && data.syncMode === 'cloud-error' && snapshot) {
       return;
     }
-    rememberDetailSnapshot(snapshotId, data, 'listening-material-load');
+    rememberDetailSnapshot(levelId, category, data, 'listening-material-load');
     this.applyDetail(data);
+    planSelectionPromise.catch(() => null);
     if (!initialDetail) {
       this.listeningMaterialPerf.mark('cloudRefresh', {
         source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),

@@ -86,6 +86,18 @@ async function getTaskDetail(event) {
     let dailyQueueTasks = [hydratedTask];
     let planDayIndex = Number(payload.planDayIndex || snapshotTask.planDayIndex || 0);
     let hydrationDebug = null;
+    if (snapshotTask.catalogSummary) {
+      const canonicalTasks = await study.resolveStandaloneCategoryTasks(snapshotTask.category, '', today);
+      const canonicalTask = canonicalTasks.find((item) => item.taskId === snapshotTask.taskId);
+      if (canonicalTask && hasTaskAudioSource(canonicalTask)) {
+        hydratedTask = study.decorateTask(Object.assign({}, canonicalTask, {
+          planRunType: 'preview',
+          planDayIndex: 1
+        }), study.buildEmptyProgress(), snapshotTask.category);
+        dailyQueueTasks = [hydratedTask];
+        planDayIndex = 1;
+      }
+    }
     if (planRunType === 'normal' && String(payload.source || '') !== 'catalog') {
       try {
         const dashboard = await study.getDashboardData(ctx, {
