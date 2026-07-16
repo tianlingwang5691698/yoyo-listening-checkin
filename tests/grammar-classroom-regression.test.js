@@ -1280,3 +1280,58 @@ test('计划微课直达课程时不误报目录节点缺失', () => {
   assert.equal(readyCalls[0][1].source, 'planned-lesson');
   assert.equal(readyCalls[0][1].cacheHit, true);
 });
+
+test('词法微课完成记录在课堂内只读回看逐题结果', () => {
+  const source = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  const context = {
+    captured: null,
+    Page: (config) => { context.captured = config; },
+    wx: {},
+    require: (id) => {
+      if (id.endsWith('/page')) return { startPagePerf: () => ({ ready: () => {} }) };
+      if (id.endsWith('/grammar-resume')) return { getActiveGrammarTaskKey: () => '' };
+      return {};
+    },
+    setTimeout,
+    clearTimeout
+  };
+  vm.createContext(context);
+  vm.runInContext(source, context);
+  const page = Object.assign({}, context.captured, {
+    reviewMode: true,
+    reviewRecordId: 'record-1',
+    reviewCompletion: {
+      progressText: '完成 1 节微课 · 答对 1/1 题 · 讲解收听完成',
+      latestAttempt: {
+        questions: [{
+          _id: 'grammar-noun-1:1',
+          number: 1,
+          prompt: '哪个词是名词？',
+          options: { A: 'book', B: 'quickly' },
+          selectedAnswer: 'A',
+          firstAnswer: 'B',
+          answer: 'A',
+          isCorrect: true,
+          analysis: 'book 给事物命名。'
+        }]
+      }
+    },
+    data: Object.assign({}, context.captured.data, {
+      activeLesson: {
+        questions: [{ question: '哪个词是名词？', options: [{ key: 'A', text: 'book' }, { key: 'B', text: 'quickly' }], answer: 'A' }]
+      }
+    }),
+    setData(values) { Object.assign(this.data, values); }
+  });
+
+  page.applyReviewCompletion();
+  assert.equal(page.data.reviewLegacy, false);
+  assert.equal(page.data.reviewQuestions.length, 1);
+  assert.equal(page.data.reviewQuestions[0].showFirstAnswer, true);
+  assert.equal(page.data.reviewQuestions[0].options[0].isAnswer, true);
+
+  page.reviewCompletion = { progressText: '完成 1 节微课', latestAttempt: {} };
+  page.applyReviewCompletion();
+  assert.equal(page.data.reviewLegacy, true);
+  assert.equal(page.data.reviewQuestions.length, 0);
+});

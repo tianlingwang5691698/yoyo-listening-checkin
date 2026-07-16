@@ -417,29 +417,39 @@ Page({
   async toggleStudyRole() {
     const currentRole = this.data.currentMember && this.data.currentMember.studyRole === 'student' ? 'student' : 'parent';
     const nextRole = currentRole === 'student' ? 'parent' : 'student';
+    let preparedSwitch = null;
     try {
-      const data = await store.setStudyRole(nextRole);
+      preparedSwitch = store.prepareStudyRoleSwitch(nextRole);
       page.setIdentityConfirmed(true);
       wx.setStorageSync('lastStudyRole', nextRole);
       if (nextRole === 'student') {
         wx.setStorageSync('hasUsedStudentMode', 'yes');
       }
-      this.applyFamilyState(data, {
-        childJoinRequired: this.isChildJoinRequired(data)
-      });
+      this.setData(Object.assign({
+        currentMember: Object.assign({}, this.data.currentMember || {}, { studyRole: nextRole })
+      }, this.buildStudyRolePresentation({ studyRole: nextRole })));
+      const roleRequest = store.setStudyRole(nextRole, { preparedSwitch });
       wx.showToast({
         title: nextRole === 'student' ? this.data.texts.switchedStudent : this.data.texts.switchedParent,
         icon: 'none'
       });
-      if (nextRole === 'student') {
-        wx.switchTab({
-          url: '/pages/home/index'
-        });
+      wx.switchTab({
+        url: '/pages/home/index'
+      });
+      const data = await roleRequest;
+      if (!data || data.syncMode === 'cloud-error' || !data.currentMember || data.currentMember.studyRole !== nextRole) {
+        throw new Error((data && data.cloudError && data.cloudError.message) || '身份同步失败');
       }
     } catch (error) {
+      if (preparedSwitch) {
+        store.restoreStudyRoleSwitch(preparedSwitch);
+      }
       wx.showToast({
         title: this.data.texts.switchFailed,
         icon: 'none'
+      });
+      wx.navigateTo({
+        url: '/pages/family/index'
       });
     }
   },

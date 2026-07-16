@@ -138,7 +138,14 @@ function uiText(english) {
     restartNarration: english ? 'Play from start' : '从头播放',
     rewindNarration: '-15s',
     forwardNarration: '+15s',
-    narrationUnavailable: english ? 'Audio is temporarily unavailable.' : '讲解语音暂时不可用'
+    narrationUnavailable: english ? 'Audio is temporarily unavailable.' : '讲解语音暂时不可用',
+    reviewTitle: english ? 'Completed Questions' : '完成题目',
+    reviewLoading: english ? 'Loading completion record…' : '正在读取完成记录……',
+    reviewLegacy: english ? 'This earlier record contains the completion total only.' : '该历史记录仅保存完成数量',
+    yourAnswer: english ? 'Your answer' : '作答',
+    firstAnswer: english ? 'First answer' : '首次作答',
+    correctAnswer: english ? 'Correct answer' : '正确答案',
+    parentPreviewDone: english ? 'Parent preview is not recorded' : '家长预览不记录'
   };
 }
 
@@ -182,18 +189,30 @@ Page({
     narrationCurrentTime: 0,
     narrationDuration: 0,
     narrationTimeText: '00:00 / 00:00',
+    reviewMode: false,
+    reviewLoading: false,
+    reviewSummary: '',
+    reviewQuestions: [],
+    reviewLegacy: false,
     debugMessage: ''
   },
 
   onLoad(options = {}) {
     this.pageStartedAt = Date.now();
     this.classroomPerf = page.startPagePerf('grammar-classroom');
+    this.reviewRecordId = String(options.recordId || '');
+    this.reviewMode = options.mode === 'review' && !!this.reviewRecordId;
+    this.previewMode = !this.reviewMode && String(options.preview || '') === '1';
+    this.setData({ reviewMode: this.reviewMode, reviewLoading: this.reviewMode });
     this.plannedEntry = {
       topic: String(options.topic || ''),
       lessonNumber: Math.max(1, Number(options.lessonNumber || 1)),
       taskId: String(options.taskId || '')
     };
-    this.plannedResume = this.readPlannedResume();
+    this.plannedResume = this.reviewMode || this.previewMode ? {} : this.readPlannedResume();
+    this.plannedQuestionResults = Array.isArray(this.plannedResume.questionResults)
+      ? this.plannedResume.questionResults.slice()
+      : [];
     this.plannedCorrectQuestionIndexes = new Set(
       Array.isArray(this.plannedResume.correctQuestionIndexes)
         ? this.plannedResume.correctQuestionIndexes.map((item) => Number(item))
@@ -207,6 +226,7 @@ Page({
     this.plannedNarrationLastTime = null;
     this.rememberActivePlannedTask();
     this.syncPreferences();
+    if (this.reviewMode) this.loadReviewCompletion();
     if (this.plannedEntry.topic) {
       this.loadCourse(this.plannedEntry.topic);
     }
@@ -243,13 +263,13 @@ Page({
   },
 
   getPlannedResumeKey() {
-    return this.plannedEntry && this.plannedEntry.taskId
+    return !this.reviewMode && !this.previewMode && this.plannedEntry && this.plannedEntry.taskId
       ? `${PLANNED_RESUME_PREFIX}${this.plannedEntry.taskId}`
       : '';
   },
 
   rememberActivePlannedTask() {
-    if (!this.plannedEntry || !this.plannedEntry.taskId) return;
+    if (this.reviewMode || this.previewMode || !this.plannedEntry || !this.plannedEntry.taskId) return;
     try {
       const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
       wx.setStorageSync(getActiveGrammarTaskKey(target), Object.assign({}, this.plannedEntry, {
@@ -282,6 +302,7 @@ Page({
         answer: this.data.answer || '',
         result: this.data.result || '',
         correctQuestionIndexes: Array.from(this.plannedCorrectQuestionIndexes || []).sort((left, right) => left - right),
+        questionResults: (this.plannedQuestionResults || []).map((item) => item || null),
         listenedSec: Number(this.plannedNarrationListenedSec || 0),
         audioPosition: Number(this.data.narrationCurrentTime || 0),
         updatedAt: Date.now()
@@ -328,6 +349,97 @@ Page({
     return questions.length > 0 && questions.every((_question, index) => (
       this.plannedCorrectQuestionIndexes && this.plannedCorrectQuestionIndexes.has(index)
     ));
+  },
+
+  recordPlannedQuestionAnswer(answer, result) {
+    if (!this.plannedEntry || !this.plannedEntry.taskId || this.reviewMode || this.previewMode) return;
+    const index = Number(this.data.questionIndex || 0);
+    const previous = this.plannedQuestionResults[index] || {};
+    const attempts = (Array.isArray(previous.attempts) ? previous.attempts : []).concat(answer).slice(-10);
+    this.plannedQuestionResults[index] = {
+      selectedAnswer: answer,
+      firstAnswer: previous.firstAnswer || answer,
+      attempts,
+      isCorrect: result === 'correct'
+    };
+  },
+
+  buildCompletedQuestionResults() {
+    const lesson = this.data.activeLesson || {};
+    const taskId = this.plannedEntry && this.plannedEntry.taskId || '';
+    return (lesson.questions || []).map((question, index) => {
+      const saved = this.plannedQuestionResults[index] || {};
+      const options = (Array.isArray(question.options) ? question.options : []).reduce((result, option) => {
+        const key = String(option && option.key || '');
+        if (key) result[key] = String(option && option.text || '');
+        return result;
+      }, {});
+      return {
+        _id: `${taskId}:${index + 1}`,
+        number: index + 1,
+        prompt: question.question || question.prompt || '',
+        options,
+        selectedAnswer: saved.selectedAnswer || question.answer || '',
+        firstAnswer: saved.firstAnswer || saved.selectedAnswer || question.answer || '',
+        attempts: saved.attempts || [question.answer || ''],
+        answer: question.answer || '',
+        isCorrect: true,
+        analysis: question.correct || ''
+      };
+    });
+  },
+
+  async loadReviewCompletion() {
+    const result = await store.getStudyCompletionDetail(this.reviewRecordId);
+    if (!result || result.syncMode === 'cloud-error' || !result.item) {
+      this.setData({
+        reviewLoading: false,
+        debugMessage: `DEBUG: grammar-package/pages/classroom.loadReviewCompletion -> store.getStudyCompletionDetail -> cloud.getStudyCompletionDetail -> result.item: missing; recordId=${this.reviewRecordId}; targetChildId=${this.getDebugTargetChildId()}`
+      });
+      return;
+    }
+    this.reviewCompletion = result.item;
+    this.setData({ reviewLoading: false, reviewSummary: result.item.progressText || '' });
+    this.applyReviewCompletion();
+  },
+
+  applyReviewCompletion() {
+    if (!this.reviewMode || !this.reviewCompletion || !this.data.activeLesson) return;
+    const lessonQuestions = this.data.activeLesson.questions || [];
+    const attempt = this.reviewCompletion.latestAttempt || {};
+    const savedQuestions = Array.isArray(attempt.questions) ? attempt.questions : [];
+    const reviewQuestions = savedQuestions.map((saved, index) => {
+      const lessonQuestion = lessonQuestions[index] || {};
+      const rawOptions = saved.options && typeof saved.options === 'object' ? saved.options : {};
+      const options = Object.keys(rawOptions).length
+        ? Object.keys(rawOptions).map((key) => ({ key, text: rawOptions[key] }))
+        : (Array.isArray(lessonQuestion.options) ? lessonQuestion.options : []);
+      const selectedAnswer = String(saved.selectedAnswer || '');
+      const firstAnswer = String(saved.firstAnswer || selectedAnswer);
+      const answer = String(saved.answer || lessonQuestion.answer || '');
+      return {
+        questionId: String(saved._id || `${this.reviewRecordId}:${index + 1}`),
+        number: Number(saved.number || index + 1),
+        prompt: saved.prompt || lessonQuestion.question || '',
+        selectedAnswer,
+        firstAnswer,
+        answer,
+        showFirstAnswer: !!firstAnswer && firstAnswer !== selectedAnswer,
+        correct: saved.isCorrect === true || (!!selectedAnswer && selectedAnswer === answer),
+        analysis: saved.analysis || lessonQuestion.correct || '',
+        options: options.map((option) => ({
+          key: String(option.key || ''),
+          text: String(option.text || ''),
+          isSelected: String(option.key || '') === selectedAnswer,
+          isAnswer: String(option.key || '') === answer
+        }))
+      };
+    });
+    this.setData({
+      reviewQuestions,
+      reviewLegacy: !reviewQuestions.length,
+      reviewSummary: this.reviewCompletion.progressText || this.data.reviewSummary || ''
+    });
   },
 
   syncPreferences() {
@@ -823,6 +935,7 @@ Page({
       if (this.plannedEntry && this.plannedEntry.topic) {
         this.reportPageReady('planned-lesson', this.coursePageReadyCacheHit);
       }
+      if (this.reviewMode) this.applyReviewCompletion();
       wx.pageScrollTo({ scrollTop: 0, duration: 0 });
     });
   },
@@ -834,6 +947,7 @@ Page({
     if (result === 'correct' && this.plannedCorrectQuestionIndexes) {
       this.plannedCorrectQuestionIndexes.add(Number(this.data.questionIndex || 0));
     }
+    this.recordPlannedQuestionAnswer(answer, result);
     this.setData({ answer, result }, () => this.persistPlannedResume());
   },
 
@@ -857,6 +971,11 @@ Page({
     }
     if (this.plannedEntry && this.plannedEntry.taskId) {
       const completedTaskId = this.plannedEntry.taskId;
+      if (this.previewMode) {
+        wx.showToast({ title: this.data.ui.parentPreviewDone, icon: 'none' });
+        this.backToCourseMap();
+        return;
+      }
       if (!this.hasCompletedPlannedQuestions()) {
         wx.showToast({ title: '请先完成全部课堂练习', icon: 'none', duration: 2400 });
         this.persistPlannedResume();
@@ -874,7 +993,8 @@ Page({
           narrationDuration: Number(this.data.narrationDuration || 0),
           narrationListenedSec: Number(this.plannedNarrationListenedSec || 0),
           correctQuestionCount: this.plannedCorrectQuestionIndexes.size,
-          totalQuestionCount
+          totalQuestionCount,
+          questions: this.buildCompletedQuestionResults()
         });
         this.clearPlannedResume(completedTaskId);
         this.plannedEntry = null;

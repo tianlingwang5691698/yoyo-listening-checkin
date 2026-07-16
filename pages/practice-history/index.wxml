@@ -61,7 +61,7 @@
             <view class="history-section-title">{{texts.microLesson}}</view>
             <view class="history-analysis">{{item.summary}}</view>
           </view>
-          <block wx:if="{{!item.isMicroLesson}}">
+          <block wx:if="{{item.detailQuestions && item.detailQuestions.length}}">
             <view class="history-question" wx:for="{{item.detailQuestions}}" wx:key="number" wx:for-item="question">
             <view class="history-question-no">{{texts.questionPrefix}}{{question.number}}{{texts.questionSuffix}}</view>
             <view class="history-question-prompt">{{question.prompt}}</view>

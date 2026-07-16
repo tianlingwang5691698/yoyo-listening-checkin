@@ -15,6 +15,7 @@ const taskEngine = require('../lib/task-engine');
 const planEngine = require('../lib/plan-engine');
 const checkinEngine = require('../lib/checkin-engine');
 const reportEngine = require('../lib/report-engine');
+const completionRecords = require('../lib/completion-records');
 const dashboardEngine = require('../lib/dashboard-engine');
 const levelEngine = require('../lib/level-engine');
 const requestContextEngine = require('../lib/request-context-engine');
@@ -333,7 +334,7 @@ async function getCompletionItemsByDate(scope, date) {
     childId: scope.childId,
     date
   }).orderBy('updatedAt', 'desc').limit(100).get();
-  return result && result.data ? result.data : [];
+  return completionRecords.dedupeCompletionItems(result && result.data ? result.data : []);
 }
 
 const addDays = dateLib.addDays;

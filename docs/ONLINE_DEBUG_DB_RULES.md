@@ -1,5 +1,22 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-17 成长记录与日报详情不一致
+
+1. 现象：相同学生和日期从成长记录、家长日报进入后，最终显示记录不同。
+2. 查询：`pages/record.selectDate/loadSelectedDay -> getDailyReportByDate + getStudyCompletions`；`pages/parent.openDailyDetail -> pages/parent/detail -> getDailyReportByDate(summaryOnly) + 按模块加载`。
+3. 结论：两入口独立请求、合并、过滤和渲染同一天记录，缓存键也不同，无法保证一致。
+4. 修复：成长页移除独立详情链路，日期入口统一进入 `pages/parent/detail`；词法逐题回看迁入统一详情页。
+5. 是否需要发版：纯前端改动，需要重新编译并发布小程序；无需改库或部署云函数。
+6. 回归：`317613 / 2026-07-16` 从两个入口进入后的日期、完成数、计划数、分钟数、任务签名和档案模块签名完全一致。
+
+### 2026-07-17 历史日报伪造任务与学习包漏同步
+
+1. 现象：`317613 / 2026-06-25` 日报显示 14 条完成任务，其中 3 条词法任务当天没有学习记录；历史听力学习包也可能未同步到日报。
+2. 查询：`pages/parent/detail -> getDailyReportByDate -> dailyReports`，对照 `dailyTaskProgress / studyCompletedItems / listeningStudyPacks`。
+3. 结论：旧日报生成器把整日打卡当作所有计划任务完成证据；固定槽位历史重建还可能把当前任务带回旧日期。
+4. 修复：详情接口按当天 `dailyTaskProgress` 重组任务，按当天 `studyCompletedItems` 实时覆盖完成内容；页面任务可回到原词法或听力课程。
+5. 是否需要发版：`yoyo` 云函数需部署；任务点击和缓存版本需重新发布小程序前端；不修改历史进度和完成记录。
+
 ## 默认规则
 
 1. 先只读查询，不直接改库。
@@ -85,6 +102,34 @@
 6. 是否需要发版：
 
 ## 已知案例
+
+### 2026-07-17 听力学习包完成记录并发重复
+
+1. 现象：成长页同一条听力学习包重复显示；`317613` 在 `2026-07-16` 的 `7.3` 显示 7 次。
+2. 账号：`317613 / family-1776427951478 / child-yoyo`。
+3. 查询：`listeningStudyPacks=1`；同一 `studyCompletedItems.recordId` 在 52ms 内写入 7 条；全库 49 组重复、114 条多余记录、15 份日报含重复项。
+4. 结论：模型未重复调用；`applyLessonStudyPack -> recordStudyCompletion` 多次并发，云端“先查后新增”产生竞态，日报和前端未去重。
+5. 修复：前端单页防重；完成记录确定性文档写入；模型缓存分布式锁与 token 审计；云端、日报、前端三层去重。
+6. 数据修复：已删除 114 条重复完成记录，保留 49 组各自最新记录，重建 16 个学生日期范围的日报；复查完成记录、学习包缓存和日报重复组均为 0。
+7. 是否需要发版：`yoyo` 云函数已部署，旧客户端立即获得云端去重；前端单页防重需随下一小程序版本发布。
+
+### 2026-07-17 成长页词法微课误进入听力课程
+
+1. 现象：成长页点击词法微课后进入通用听力课程，且无法回看完成题目。
+2. 账号：`317613 / family-1776427951478 / child-yoyo`；`2026-07-16` 三节词法任务均为 `0/1`，无词法完成记录。
+3. 查询：`pages/record.normalizeReport/openReportItem -> dailyReports + studyCompletedItems -> grammar-package/pages/classroom`。
+4. 结论：旧日报的 `category=grammar` 被统一标记为 `listening`，因此走 `/pages/lesson`；微课完成记录仅保存答对数，没有逐题结果。
+5. 修复：成长页按 `category=grammar` 路由到词法课堂；家长仅预览；新完成记录增量保存逐题结果，旧记录仅显示真实汇总。
+6. 是否需要发版：`yoyo` 云函数已部署；成长页和词法课堂需重新编译发布小程序。
+
+### 2026-07-16 家庭切换身份后首页同步缓慢
+
+1. 现象：家庭页切换身份后，首页约 2.5–2.8 秒才显示新身份和对应学生数据。
+2. 账号：自动化测试覆盖学生 `986209` 与家长目标 `317613`。
+3. 查询：`pages/family.toggleStudyRole -> store.setStudyRole -> cloud.setStudyRole` 完成后才 `switchTab`；首页随后串行执行 `store.getDashboard -> cloud.getDashboard`。
+4. 结论：身份写入约 1.56–1.64 秒，首页刷新约 0.62–0.82 秒，两段串行；身份 mutation 还清空了按角色和目标隔离的可复用读缓存。
+5. 修复：本机角色和家长目标先更新，立即返回首页；身份写入和 dashboard 并行，身份切换保留角色、目标隔离缓存；失败回滚本机状态。
+6. 是否需要发版：纯前端改动，需要重新编译并发布小程序；无需部署云函数。
 
 ### 2026-07-16 继续学习课程显示 canonical-task-missing DEBUG
 

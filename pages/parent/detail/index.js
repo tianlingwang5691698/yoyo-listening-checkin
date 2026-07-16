@@ -19,6 +19,37 @@ function buildCloudFileId(cloudPath) {
   return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
 }
 
+function buildGrammarClassroomUrl(item, options) {
+  const safeItem = item || {};
+  const snapshot = safeItem.taskSnapshot && typeof safeItem.taskSnapshot === 'object'
+    ? safeItem.taskSnapshot
+    : {};
+  const taskId = String(safeItem.taskId || snapshot.taskId || safeItem.targetId || '').trim();
+  const matched = taskId.match(/^grammar-(.+)-(\d+)$/);
+  const topic = String(safeItem.topic || safeItem.topicId || snapshot.topic || (matched && matched[1]) || '').trim();
+  const lessonNumber = Math.max(1, Number(safeItem.lessonNumber || snapshot.lessonNumber || (matched && matched[2]) || 1));
+  const recordId = String(safeItem.recordId || safeItem.id || '').trim();
+  const params = [
+    `topic=${encodeURIComponent(topic)}`,
+    `lessonNumber=${lessonNumber}`,
+    `taskId=${encodeURIComponent(taskId)}`,
+    'source=record'
+  ];
+  if (options && options.review && recordId) {
+    params.push('mode=review', `recordId=${encodeURIComponent(recordId)}`);
+  } else {
+    params.push('preview=1');
+  }
+  return `/grammar-package/pages/classroom/index?${params.join('&')}`;
+}
+
+function buildLessonQuery(params) {
+  return Object.keys(params || {})
+    .filter((key) => params[key] !== undefined && params[key] !== null && params[key] !== '')
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    .join('&');
+}
+
 function pad(value) {
   return value < 10 ? `0${value}` : String(value);
 }
@@ -685,6 +716,8 @@ function normalizeReport(report) {
   return {
     date: safeReport.date || '',
     dateLabel: formatDateLabel(safeReport.date),
+    planDayIndex: Number(safeReport.planDayIndex || 0),
+    recordSourceVersion: safeReport.recordSourceVersion || '',
     totalMinutes: safeReport.totalMinutes || 0,
     completedCount: completedCount + completionItemCount,
     totalCount: items.length + completionItemCount,
@@ -799,8 +832,9 @@ Page({
       return;
     }
     const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const reportOptions = { summaryOnly: true, detailVersion: 'actual-records-v1' };
     const cached = store.getCachedReadResult
-      ? store.getCachedReadResult('getDailyReportByDate', Object.assign({ date: this.data.date, summaryOnly: true }, target))
+      ? store.getCachedReadResult('getDailyReportByDate', Object.assign({ date: this.data.date }, reportOptions, target))
       : null;
     if (cached) {
       this.applyReportData(cached);
@@ -824,7 +858,7 @@ Page({
       if (this.parentDetailPerf) {
         this.parentDetailPerf.mark('cloudRefresh', { date: this.data.date });
       }
-    }, { summaryOnly: true }).then((reportData) => {
+    }, reportOptions).then((reportData) => {
       this.applyReportData(reportData);
       if (!cached && this.parentDetailPerf) {
         this.parentDetailPerf.mark('cloudRefresh', {
@@ -921,6 +955,14 @@ Page({
       });
       return;
     }
+    if (current && current.isGrammarMicroLesson) {
+      if (!current.recordId && !current.id) {
+        wx.showToast({ title: this.data.texts.recordLoadFailed, icon: 'none' });
+        return;
+      }
+      wx.navigateTo({ url: buildGrammarClassroomUrl(current, { review: true }) });
+      return;
+    }
     const willExpand = current ? !current.expanded : false;
     const shouldHydrate = willExpand && needsCompletionHydration(current);
     const items = (this.data.report.completionItems || []).map((item) => Object.assign({}, item, {
@@ -943,6 +985,32 @@ Page({
           item.key === key ? hydrated : item
         ))
       })
+    });
+  },
+  openReportItem(event) {
+    const index = Number(event.currentTarget.dataset.index || 0);
+    const item = (this.data.report.items || [])[index];
+    if (!item || !item.category || !item.taskId) return;
+    if (item.category === 'grammar') {
+      wx.navigateTo({ url: buildGrammarClassroomUrl(item, { review: false }) });
+      return;
+    }
+    snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${item.category}:${item.taskId}`, {
+      category: item.category,
+      taskId: item.taskId,
+      task: Object.assign({}, item.taskSnapshot || {}, item, {
+        targetDate: this.data.date,
+        planDayIndex: Number(this.data.report.planDayIndex || 0) || ''
+      })
+    }, { source: 'parent-daily-report' });
+    wx.navigateTo({
+      url: `/pages/lesson/index?${buildLessonQuery({
+        category: item.category,
+        taskId: item.taskId,
+        planRunType: 'preview',
+        targetDate: this.data.date,
+        planDayIndex: Number(this.data.report.planDayIndex || 0) || ''
+      })}`
     });
   },
   async playSpeakingAttempt(event) {

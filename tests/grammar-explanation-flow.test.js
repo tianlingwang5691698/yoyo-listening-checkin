@@ -4,7 +4,7 @@ const path = require('node:path');
 const test = require('node:test');
 
 const root = path.resolve(__dirname, '..');
-const source = fs.readFileSync(path.join(root, 'pages/grammar/index.js'), 'utf8');
+const source = fs.readFileSync(path.join(root, 'data/grammar-classroom/page-source/index.js'), 'utf8');
 const template = fs.readFileSync(path.join(root, 'pages/grammar/index.wxml'), 'utf8');
 const storeSource = fs.readFileSync(path.join(root, 'utils/store.js'), 'utf8');
 const serviceSource = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/services/grammar.service.js'), 'utf8');

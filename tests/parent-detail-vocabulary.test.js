@@ -11,14 +11,16 @@ const catalog = require('../utils/i18n-catalog-account').parentDetail;
 test('日报内容档案按模块加载听力、口语和词汇明细', () => {
   assert.match(source, /\['listening', 'speaking', 'vocabulary', 'reading', 'grammar', 'writing'\]/);
   assert.match(source, /store\.getStudyCompletions\(\{[\s\S]*?types: getArchiveModuleTypes\(key\)/);
-  assert.match(source, /getDailyReportByDate\(this\.data\.date,[\s\S]*?summaryOnly: true/);
+  assert.match(source, /reportOptions = \{ summaryOnly: true, detailVersion: 'actual-records-v1' \}/);
+  assert.match(source, /getDailyReportByDate\(this\.data\.date,[\s\S]*?reportOptions/);
   assert.match(source, /store\.getSpeakingAttempts\(\{ targetDate: this\.data\.date \}/);
   assert.match(source, /if \(type === 'vocabulary'\) return tr\('vocabulary'\)/);
   assert.match(source, /const isVocabulary = safeItem\.type === 'vocabulary'/);
   assert.match(source, /recordLabel,[\s\S]*?isVocabulary,/);
   assert.equal((template.match(/bindtap="loadArchiveModule"/g) || []).length, 2);
   assert.equal((template.match(/activeArchiveModule === 'speaking'/g) || []).length, 2);
-  assert.equal((template.match(/wx:if="\{\{!item\.isVocabulary && !item\.isGrammarMicroLesson\}\}"/g) || []).length, 2);
+  assert.equal((template.match(/wx:if="\{\{!item\.isVocabulary\}\}"/g) || []).length, 2);
+  assert.match(source, /current && current\.isGrammarMicroLesson[\s\S]*?buildGrammarClassroomUrl\(current, \{ review: true \}\)/);
   assert.doesNotMatch(template, /\{\{item\.typeLabel\}\}/);
   assert.equal((template.match(/\{\{item\.recordLabel\}\}/g) || []).length, 4);
   assert.match(catalog['zh-CN'].dossierCopy, /按模块/);
@@ -47,6 +49,8 @@ test('日报首屏摘要不返回完整练习和录音内容', async () => {
   const originalPrepare = study.prepareRequestContext;
   const originalScope = study.getUserScope;
   const originalUpsert = study.upsertDailyReport;
+  const originalProgress = study.getChildProgressRecordsByDate;
+  const originalCompletions = study.getCompletionItemsByDate;
   const largeText = 'detail-'.repeat(1000);
   const fullReport = {
     date: '2026-07-13',
@@ -70,6 +74,8 @@ test('日报首屏摘要不返回完整练习和录音内容', async () => {
     study.prepareRequestContext = async () => ({ ctx: {}, today: '2026-07-13' });
     study.getUserScope = () => ({});
     study.upsertDailyReport = async () => fullReport;
+    study.getChildProgressRecordsByDate = async () => [];
+    study.getCompletionItemsByDate = async () => fullReport.completionItems;
     const result = await reportService.getDailyReportByDate({
       payload: { date: '2026-07-13', summaryOnly: true }
     });
@@ -81,5 +87,7 @@ test('日报首屏摘要不返回完整练习和录音内容', async () => {
     study.prepareRequestContext = originalPrepare;
     study.getUserScope = originalScope;
     study.upsertDailyReport = originalUpsert;
+    study.getChildProgressRecordsByDate = originalProgress;
+    study.getCompletionItemsByDate = originalCompletions;
   }
 });

@@ -5,6 +5,7 @@ const contracts = require('../../utils/contracts');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 const accountCatalog = require('../../utils/i18n-catalog-account');
+const dailyReportRoute = require('../../utils/daily-report-route');
 
 const PARENT_DASHBOARD_SNAPSHOT_KEY = 'parentDashboardSnapshotV3';
 const PARENT_DASHBOARD_SNAPSHOT_MAX_AGE_MS = 10 * 60 * 1000;
@@ -318,7 +319,7 @@ Page({
       return;
     }
     wx.navigateTo({
-      url: `/pages/parent/detail/index?date=${date}`
+      url: dailyReportRoute.buildDailyReportDetailUrl(date)
     });
   }
 });

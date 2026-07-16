@@ -1,8 +1,85 @@
 const study = require('../facades/study.facade');
 const reportRepository = require('../repositories/report.repository');
+const completionRecords = require('../lib/completion-records');
+const reportEngine = require('../lib/report-engine');
 
 function needsCompletionRefresh(report) {
   return !report || !Array.isArray(report.completionItems);
+}
+
+function progressRecordKey(item) {
+  return `${String(item && item.category || '')}:${String(item && item.taskId || '')}`;
+}
+
+function dedupeProgressRecords(items) {
+  const byKey = new Map();
+  (items || []).forEach((item) => {
+    if (!reportEngine.hasTaskProgress(item)) return;
+    const key = progressRecordKey(item);
+    if (!key || key === ':') return;
+    const current = byKey.get(key);
+    const itemTime = Date.parse(item.updatedAt || '') || 0;
+    const currentTime = Date.parse(current && current.updatedAt || '') || 0;
+    if (!current || itemTime >= currentTime) byKey.set(key, item);
+  });
+  return Array.from(byKey.values()).sort((left, right) => (
+    String(left.updatedAt || '').localeCompare(String(right.updatedAt || ''))
+      || progressRecordKey(left).localeCompare(progressRecordKey(right))
+  ));
+}
+
+function findReportTask(report, progress) {
+  const category = String(progress.category || '');
+  const taskId = String(progress.taskId || '');
+  const originalTaskId = String(progress.originalTaskId || taskId);
+  const existing = (report && report.items || []).find((item) => (
+    item && item.category === category && item.taskId === taskId
+  ));
+  const catalogTask = (study.getCatalog(category) || []).find((item) => (
+    item && (item.taskId === originalTaskId || item.taskId === taskId)
+  ));
+  const snapshot = existing && existing.taskSnapshot || existing || {};
+  return Object.assign({}, snapshot, catalogTask || {}, {
+    category,
+    taskId,
+    originalTaskId: progress.originalTaskId || (catalogTask && catalogTask.taskId !== taskId ? catalogTask.taskId : ''),
+    repeatTarget: Number(progress.repeatTarget || (catalogTask && catalogTask.repeatTarget) || snapshot.repeatTarget || 1)
+  });
+}
+
+function buildActualReportItems(report, progressRecords) {
+  return dedupeProgressRecords(progressRecords).map((progress) => {
+    const category = String(progress.category || '');
+    const sourceTask = findReportTask(report, progress);
+    const decorated = study.decorateTask(sourceTask, Object.assign({}, progress, {
+      playCount: Number(progress.playCount || 0),
+      completedToday: !!progress.completedToday
+    }), category);
+    return reportEngine.buildReportItem(category, decorated);
+  });
+}
+
+function calculateActualMinutes(items) {
+  return (items || []).reduce((sum, item) => {
+    const durationSec = Number(item && item.taskSnapshot && item.taskSnapshot.durationSec || 0);
+    const playCount = Math.min(Number(item && item.playCount || 0), Number(item && item.repeatTarget || 1));
+    return durationSec > 0 && playCount > 0 ? sum + Math.round((durationSec * playCount) / 60) : sum;
+  }, 0);
+}
+
+async function synchronizeReportRecords(report, scope, date) {
+  const [progressRecords, currentCompletionItems] = await Promise.all([
+    study.getChildProgressRecordsByDate(scope, date),
+    study.getCompletionItemsByDate(scope, date)
+  ]);
+  const items = buildActualReportItems(report, progressRecords);
+  return Object.assign({}, report || {}, {
+    items,
+    totalMinutes: calculateActualMinutes(items),
+    completedCategories: Array.from(new Set(items.filter((item) => item.completedToday).map((item) => item.category))),
+    completionItems: completionRecords.dedupeCompletionItems(currentCompletionItems || []),
+    recordSourceVersion: 'daily-progress-v1'
+  });
 }
 
 function getLatestAttempt(item) {
@@ -32,7 +109,7 @@ function buildTodayLearningStats(report) {
     vocabulary: { value: 0, unit: '个', label: '单词背诵', copy: '背诵单词' },
     speaking: { value: (report && report.speakingAttempts || []).length, unit: '次', label: '口语练习', copy: '完成录音' }
   };
-  (report && report.completionItems || []).forEach((item) => {
+  completionRecords.dedupeCompletionItems(report && report.completionItems || []).forEach((item) => {
     const type = item && item.type;
     if (type === 'reading') {
       stats.reading.value += 1;
@@ -200,6 +277,7 @@ async function getDailyReportByDate(event) {
     }
   }
   if (!report) report = await study.upsertDailyReport(scope, date);
+  report = await synchronizeReportRecords(report, scope, date);
   if (payload.summaryOnly) {
     const completionItems = report.completionItems || [];
     const speakingAttempts = report.speakingAttempts || [];
@@ -212,7 +290,9 @@ async function getDailyReportByDate(event) {
         section: item.section || '',
         title: item.title || '',
         meta: item.meta || '',
-        targetId: item.targetId || ''
+        targetId: item.targetId || '',
+        category: item.category || '',
+        taskId: item.taskId || ''
       })),
       speakingAttempts: speakingAttempts.map((item) => ({
         attemptId: item.attemptId || '',
@@ -239,11 +319,14 @@ async function getParentDashboard(event) {
   }
   const recentReports = summaryOnly
     ? await Promise.all(dates.map(async (date) => {
+      let report = null;
       if (date === today) {
-        return await study.upsertDailyReport(scope, date);
+        report = await study.upsertDailyReport(scope, date);
+      } else {
+        const existing = await reportRepository.findByScopeAndDate(scope, date);
+        report = existing || { date };
       }
-      const existing = await reportRepository.findByScopeAndDate(scope, date);
-      return existing || { date };
+      return await synchronizeReportRecords(report, scope, date);
     }))
     : [];
   if (!summaryOnly) {
@@ -275,7 +358,8 @@ async function getParentDashboard(event) {
       moduleStats.speaking.count += 1;
       moduleStats.speaking.latestTitle = item.questionText || '录音评分';
     });
-    (report.completionItems || []).forEach((item) => {
+    const completionItems = completionRecords.dedupeCompletionItems(report.completionItems || []);
+    completionItems.forEach((item) => {
       const type = item && item.type === 'reading-study' ? 'reading' : (item && item.type) || '';
       const key = type === 'vocabulary' ? 'vocabulary' : type;
       if (moduleStats[key]) {
@@ -293,9 +377,9 @@ async function getParentDashboard(event) {
       planPhase: report.planPhase || '',
       planSource: report.planSource || '',
       listeningPlanId: report.listeningPlanId || '',
-      completedContentCount: (report.completionItems || []).length,
+      completedContentCount: completionItems.length,
       speakingAttemptCount: (report.speakingAttempts || []).length,
-      totalCompletedCount: (report.completedCategories || []).length + (report.completionItems || []).length,
+      totalCompletedCount: (report.completedCategories || []).length + completionItems.length,
       moduleStats,
       updatedAt: report.updatedAt || ''
     };
@@ -339,5 +423,8 @@ module.exports = {
   getHeatmap,
   getMonthHeatmap,
   getDailyReportByDate,
-  getParentDashboard
+  getParentDashboard,
+  buildActualReportItems,
+  calculateActualMinutes,
+  synchronizeReportRecords
 };

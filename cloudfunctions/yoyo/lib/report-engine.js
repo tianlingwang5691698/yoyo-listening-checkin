@@ -1,4 +1,5 @@
 const monitor = require('./monitor');
+const completionRecords = require('./completion-records');
 
 function buildTaskSnapshot(task) {
   const source = task || {};
@@ -35,6 +36,36 @@ function buildTaskSnapshot(task) {
     planRunType: source.planRunType || '',
     planDayIndex: source.planDayIndex || 0,
     speakingMode: source.speakingMode || ''
+  };
+}
+
+function hasTaskProgress(task) {
+  const source = task || {};
+  return !!source.completedToday
+    || Number(source.playCount || 0) > 0
+    || (Array.isArray(source.playMoments) && source.playMoments.length > 0);
+}
+
+function buildReportItem(category, task) {
+  const source = task || {};
+  const repeatTarget = Number(source.repeatTarget || 3);
+  return {
+    category,
+    categoryLabel: source.categoryLabel,
+    taskId: source.taskId,
+    originalTaskId: source.originalTaskId || '',
+    title: source.audioCompactTitle || source.displayTitle || source.title,
+    audioUrl: source.audioUrl || '',
+    audioCloudPath: source.audioCloudPath || '',
+    audioFileId: source.audioFileId || '',
+    audioSource: source.audioSource || '',
+    taskSnapshot: buildTaskSnapshot(source),
+    playCount: Number(source.playCount || 0),
+    playMoments: Array.isArray(source.playMoments) ? source.playMoments : [],
+    repeatTarget,
+    completedToday: !!source.completedToday,
+    completionEvidence: 'dailyTaskProgress',
+    updatedAt: source.updatedAt || ''
   };
 }
 
@@ -81,30 +112,13 @@ async function upsertDailyReport(scope, date, deps) {
           planDayIndex: todayPlan.dayIndex
         }))
   }));
-  const items = groupedTasks.flatMap((group) => group.tasks.map((task) => {
-    const repeatTarget = task.repeatTarget || 3;
-    const completedByCheckin = !!checkin && !useCustomListeningPlan;
-    const completedToday = !!task.completedToday || completedByCheckin;
-    return {
-      category: group.category,
-      categoryLabel: task.categoryLabel,
-      taskId: task.taskId,
-      originalTaskId: task.originalTaskId || '',
-      title: task.audioCompactTitle || task.displayTitle || task.title,
-      audioUrl: task.audioUrl || '',
-      audioCloudPath: task.audioCloudPath || '',
-      audioFileId: task.audioFileId || '',
-      audioSource: task.audioSource || '',
-      taskSnapshot: buildTaskSnapshot(task),
-      playCount: completedToday ? Math.max(task.playCount || 0, repeatTarget) : (task.playCount || 0),
-      playMoments: Array.isArray(task.playMoments) ? task.playMoments : [],
-      repeatTarget,
-      completedToday,
-      updatedAt: task.updatedAt || (checkin && checkin.completedAt) || ''
-    };
-  }));
+  const items = groupedTasks.flatMap((group) => group.tasks
+    .filter(hasTaskProgress)
+    .map((task) => buildReportItem(group.category, task)));
   const attempts = deps.findAttemptsByDate ? await deps.findAttemptsByDate(scope, date) : [];
-  const completionItems = deps.findCompletionItemsByDate ? await deps.findCompletionItemsByDate(scope, date) : [];
+  const completionItems = completionRecords.dedupeCompletionItems(
+    deps.findCompletionItemsByDate ? await deps.findCompletionItemsByDate(scope, date) : []
+  );
   const speakingAttempts = attempts.map((item) => ({
     attemptId: item._id || item.attemptId || '',
     category: item.category || '',
@@ -137,9 +151,6 @@ async function upsertDailyReport(scope, date, deps) {
     date,
     completedCategories: Array.from(new Set(items.filter((item) => item.completedToday).map((item) => item.category))),
     totalMinutes: items.reduce((sum, item) => {
-      if (!item.completedToday) {
-        return sum;
-      }
       const taskId = item.originalTaskId || item.taskId;
       const task = deps.getCatalog(item.category).find((entry) => entry.taskId === taskId);
       const durationSec = Number(
@@ -148,7 +159,7 @@ async function upsertDailyReport(scope, date, deps) {
         || 0
       );
       return durationSec > 0
-        ? sum + Math.round((durationSec * item.repeatTarget) / 60)
+        ? sum + Math.round((durationSec * Math.min(item.playCount, item.repeatTarget)) / 60)
         : sum;
     }, 0),
     streakSnapshot: (checkin || {}).streakSnapshot || 0,
@@ -176,5 +187,8 @@ async function upsertDailyReport(scope, date, deps) {
 }
 
 module.exports = {
-  upsertDailyReport
+  upsertDailyReport,
+  buildTaskSnapshot,
+  buildReportItem,
+  hasTaskProgress
 };

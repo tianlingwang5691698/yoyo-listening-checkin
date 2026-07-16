@@ -665,6 +665,7 @@ Page({
     });
     const language = i18n.getLanguage();
     const texts = i18n.getPageTexts('home', language);
+    const deviceStudyRole = store.getDeviceStudyRole ? store.getDeviceStudyRole() : this.data.studyRole;
     wx.setNavigationBarTitle({ title: texts.navTitle });
     const tabBar = this.getTabBar && this.getTabBar();
     const identitySelectedInSession = !!this.data.identitySelectedInSession;
@@ -688,7 +689,7 @@ Page({
       if (tabBar.data.hidden !== entryPosterVisible) tabBarData.hidden = entryPosterVisible;
       if (Object.keys(tabBarData).length) tabBar.setData(tabBarData);
     }
-    this.setData({
+    this.setData(Object.assign({
       texts,
       language,
       planDayText: t('dayLabel', { day: this.data.checkinDayCount }),
@@ -703,7 +704,7 @@ Page({
       identityConfirmVisible,
       entryPosterPage: entryPosterVisible ? 0 : this.data.entryPosterPage,
       identitySelectedInSession
-    });
+    }, this.buildStudyModePresentation({ studyRole: deviceStudyRole })));
     await new Promise((resolve) => wx.nextTick(resolve));
     homePerf.ready('pageReady', {
       cacheHit: memoryReady || cacheReady,

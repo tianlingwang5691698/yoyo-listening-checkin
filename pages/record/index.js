@@ -8,6 +8,7 @@ const appConfig = require('../../app-config');
 const effects = require('../../utils/effects');
 const i18n = require('../../utils/i18n');
 const accountCatalog = require('../../utils/i18n-catalog-account');
+const dailyReportRoute = require('../../utils/daily-report-route');
 
 function tr(key) { return i18n.getPageText('record', key); }
 function buildTexts() {
@@ -22,21 +23,10 @@ function formatText(text, values) {
 function getWeekLabels() { return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(tr); }
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const RECORD_HOME_SNAPSHOT_KEY = 'recordHomeSnapshotV2';
-const EMPTY_REPORT = {
-  ...contracts.createReportDefaults()
-};
 function getEmptyDaySummary() {
   return { completedCount: 0, totalCount: 0, statusText: tr('notCompleted'), minutesText: tr('zeroMinutes') };
 }
 const STREAK_MILESTONES = [3, 7, 14, 30, 60, 100];
-
-function buildCloudFileId(cloudPath) {
-  const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
-  if (!normalizedPath || !appConfig.cloudEnvId || !appConfig.cloudBucket) {
-    return '';
-  }
-  return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
-}
 
 function pad(value) {
   return value < 10 ? `0${value}` : String(value);
@@ -80,28 +70,6 @@ function parseDateKey(dateKey) {
 function formatDateLabel(dateKey) {
   const date = parseDateKey(dateKey);
   return formatText(tr('monthDay'), { month: date.getMonth() + 1, day: date.getDate() });
-}
-
-function formatClock(value) {
-  if (!value) {
-    return '';
-  }
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) {
-    return '';
-  }
-  return `${pad(date.getHours())}:${pad(date.getMinutes())}`;
-}
-
-function buildTimeLines(item) {
-  const playMoments = Array.isArray(item.playMoments) ? item.playMoments : [];
-  return playMoments
-    .map((value, index) => ({
-      key: `${item.category}-${item.taskId || 'task'}-${index}`,
-      label: formatText(tr('passNumber'), { count: index + 1 }),
-      timeText: formatClock(value)
-    }))
-    .filter((entry) => entry.timeText);
 }
 
 function buildMetric(stats, mode) {
@@ -301,93 +269,6 @@ function isFutureMonth(year, month) {
   return year > today.getFullYear() || (year === today.getFullYear() && month > today.getMonth() + 1);
 }
 
-function normalizeReport(report) {
-  const safeReport = report || {};
-  const speakingAttempts = safeReport.speakingAttempts || [];
-  const items = (safeReport.items || []).map((item) => {
-    const normalized = labels.normalizeReportItem(item);
-    const attempts = speakingAttempts
-      .filter((attempt) => (
-        attempt.category === normalized.category
-        && (attempt.taskId === normalized.taskId || attempt.taskId === normalized.originalTaskId)
-      ))
-      .map((attempt, attemptIndex) => Object.assign({}, attempt, {
-        displayTitle: formatText(tr('attemptNumber'), { count: attemptIndex + 1 }),
-        scoreText: attempt.status === 'score-pending' ? tr('scorePending') : formatText(tr('score'), { score: Number(attempt.score || 0) })
-      }));
-    return Object.assign({}, normalized, {
-      timeLines: buildTimeLines(normalized),
-      type: attempts.length ? 'speaking' : 'listening',
-      attempts,
-      attemptCount: attempts.length,
-      latestAttemptScore: attempts.length ? Number(attempts[attempts.length - 1].score || 0) : 0,
-      expanded: false
-    });
-  });
-  return Object.assign({}, safeReport, {
-    items,
-    totalMinutes: safeReport.totalMinutes || 0,
-    completedCategories: safeReport.completedCategories || []
-  });
-}
-
-function normalizeCompletionItem(item) {
-  const safeItem = item || {};
-  const type = String(safeItem.type || '');
-  const isGrammarMicroLesson = type === 'grammar' && safeItem.section === 'micro-lesson';
-  const typeLabels = {
-    vocabulary: tr('vocabulary'),
-    reading: tr('reading'),
-    grammar: tr('grammar'),
-    writing: tr('writing')
-  };
-  return {
-    id: safeItem.id || safeItem.recordId || `${type}:${safeItem.targetId || ''}`,
-    targetId: safeItem.targetId || '',
-    passageId: safeItem.passageId || (type === 'reading' ? safeItem.targetId || '' : ''),
-    type,
-    category: safeItem.category || '',
-    taskId: safeItem.taskId || '',
-    section: safeItem.section || '',
-    categoryLabel: isGrammarMicroLesson ? tr('grammarMicroLesson') : (typeLabels[type] || safeItem.meta || tr('completionRecord')),
-    title: safeItem.title || typeLabels[type] || tr('completionRecord'),
-    progressText: safeItem.progressText || safeItem.meta || tr('completed'),
-    completedToday: safeItem.completedToday !== false,
-    playCount: '',
-    repeatTarget: '',
-    isStudyCompletion: true,
-    latestAttempt: safeItem.latestAttempt || null
-  };
-}
-
-function mergeReportWithCompletions(report, completions) {
-  const normalizedReport = normalizeReport(report);
-  const completionItems = (completions || []).map(normalizeCompletionItem);
-  const grammarMicroLessonTaskIds = new Set(completionItems
-    .filter((item) => item.type === 'grammar' && item.section === 'micro-lesson')
-    .map((item) => item.taskId)
-    .filter(Boolean));
-  return Object.assign({}, normalizedReport, {
-    items: (normalizedReport.items || [])
-      .filter((item) => !(item.category === 'grammar' && grammarMicroLessonTaskIds.has(item.taskId)))
-      .concat(completionItems)
-  });
-}
-
-function buildDaySummary(report) {
-  const safeReport = report || EMPTY_REPORT;
-  const items = safeReport.items || [];
-  const completedCount = items.filter((item) => item.completedToday).length;
-  const listenedCount = items.filter((item) => Number(item.playCount || 0) > 0).length;
-  const totalCount = items.length;
-  return {
-    completedCount,
-    totalCount,
-    statusText: completedCount ? tr('completed') : (listenedCount ? tr('hasRecord') : tr('notCompleted')),
-    minutesText: formatText(tr('minutes'), { minutes: safeReport.totalMinutes || 0 })
-  };
-}
-
 function buildCalendarDaySummary(heatmap, date) {
   const record = (heatmap || []).find((item) => item && item.date === date) || {};
   const count = Number(record.count || 0);
@@ -408,13 +289,6 @@ function markSelectedCells(cells, selectedDate) {
   return (cells || []).map((item) => Object.assign({}, item, {
     isSelected: item.date === selectedDate
   }));
-}
-
-function buildLessonQuery(params) {
-  return Object.keys(params || {})
-    .filter((key) => params[key] !== undefined && params[key] !== null && params[key] !== '')
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-    .join('&');
 }
 
 Page({
@@ -439,10 +313,7 @@ Page({
     todayDate: getDateKey(new Date()),
     selectedDate: getDateKey(new Date()),
     selectedDateLabel: '',
-    selectedDayReport: EMPTY_REPORT,
     selectedDaySummary: getEmptyDaySummary(),
-    selectedDayLoaded: false,
-    selectedDayLoading: false,
     catchupStatusLabel: tr('notNeeded'),
     catchupStatusClass: 'is-muted',
     catchupCopy: tr('normalRhythm'),
@@ -467,8 +338,7 @@ Page({
       weekLabels: getWeekLabels(),
       calendarTitle: formatText(tr('calendarTitle'), { year: this.data.calendarYear, month: this.data.calendarMonth }),
       selectedDateLabel: formatDateLabel(this.data.selectedDate),
-      totalDurationText: formatStatsDuration(this.data.stats, { pending: true }),
-      selectedDaySummary: this.data.selectedDayLoaded ? buildDaySummary(this.data.selectedDayReport) : getEmptyDaySummary()
+      totalDurationText: formatStatsDuration(this.data.stats, { pending: true })
     }, buildMetric(this.data.stats, this.data.metricMode), buildCatchupPresentation(this.data.catchupState)));
     wx.setNavigationBarTitle({ title: texts.navTitle });
     const tabBar = this.getTabBar && this.getTabBar();
@@ -521,9 +391,6 @@ Page({
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, snapshot, {
         stats: snapshotStats,
         totalDurationText: snapshotStats.totalDurationText,
-        selectedDayLoaded: false,
-        selectedDayLoading: false,
-        selectedDayReport: EMPTY_REPORT,
         selectedDaySummary: buildCalendarDaySummary(snapshotHeatmap, selectedDate)
       })));
       this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
@@ -545,9 +412,6 @@ Page({
         todayDate: getDateKey(today),
         selectedDate,
         selectedDateLabel: formatDateLabel(selectedDate),
-        selectedDayLoaded: false,
-        selectedDayLoading: false,
-        selectedDayReport: EMPTY_REPORT,
         selectedDaySummary: getEmptyDaySummary(),
         monthCells: buildMonthCells(calendarYear, calendarMonth, [], selectedDate, contracts.createCatchupStateDefaults()),
         catchupState: contracts.createCatchupStateDefaults(),
@@ -688,9 +552,6 @@ Page({
         todayDate: getDateKey(today),
         selectedDate,
         selectedDateLabel: formatDateLabel(selectedDate),
-        selectedDayLoaded: false,
-        selectedDayLoading: false,
-        selectedDayReport: EMPTY_REPORT,
         selectedDaySummary: buildCalendarDaySummary(heatmapData.heatmap, selectedDate),
         monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
         catchupState: heatmapData.catchupState,
@@ -841,9 +702,7 @@ Page({
     const nextState = {
       monthCells: buildMonthCells(this.data.calendarYear, this.data.calendarMonth, heatmapData.heatmap, this.data.selectedDate, this.data.catchupState)
     };
-    if (!this.data.selectedDayLoaded) {
-      nextState.selectedDaySummary = buildCalendarDaySummary(heatmapData.heatmap, this.data.selectedDate);
-    }
+    nextState.selectedDaySummary = buildCalendarDaySummary(heatmapData.heatmap, this.data.selectedDate);
     this.setData(nextState);
   },
   async loadCalendar(year, month, selectedDate) {
@@ -856,9 +715,6 @@ Page({
       calendarTitle: formatText(tr('calendarTitle'), { year, month }),
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
-      selectedDayLoaded: false,
-      selectedDayLoading: false,
-      selectedDayReport: EMPTY_REPORT,
       selectedDaySummary: buildCalendarDaySummary(cachedData.heatmap, selectedDate),
       monthCells: buildMonthCells(year, month, cachedData.heatmap, selectedDate, this.data.catchupState)
     }, buildCatchupPresentation(this.data.catchupState))));
@@ -872,48 +728,6 @@ Page({
       catchupState: heatmapData.catchupState
     }, buildCatchupPresentation(heatmapData.catchupState))));
     this.preloadAdjacentMonths(year, month);
-  },
-  async loadSelectedDay(input) {
-    const date = typeof input === 'string'
-      ? input
-      : (input && input.currentTarget && input.currentTarget.dataset && input.currentTarget.dataset.date) || this.data.selectedDate;
-    if (!date || this.data.selectedDayLoading) {
-      return;
-    }
-    this.setData({
-      selectedDayLoading: true
-    });
-    let reportData = null;
-    let completionData = null;
-    const applyData = () => {
-      if (!reportData) {
-        return;
-      }
-      const selectedDayReport = mergeReportWithCompletions(
-        reportData && reportData.report,
-        completionData && completionData.items
-      );
-      this.setData({
-        selectedDayReport,
-        selectedDaySummary: buildDaySummary(selectedDayReport),
-        selectedDayLoaded: true,
-        selectedDayLoading: false,
-        selectedDateLabel: formatDateLabel(date)
-      });
-    };
-    const [data, completions] = await Promise.all([
-      store.getDailyReportByDate(date, (fresh) => {
-        reportData = fresh;
-        applyData();
-      }),
-      store.getStudyCompletions({ date }, (freshCompletions) => {
-        completionData = freshCompletions;
-        applyData();
-      })
-    ]);
-    reportData = data;
-    completionData = completions;
-    applyData();
   },
   async loadCatchupTasks() {
     if (!this.data.catchupState || !this.data.catchupState.canCatchup || this.data.catchupTasksLoading) {
@@ -960,36 +774,39 @@ Page({
       : `${nextYear}-${pad(nextMonth)}-01`;
     await this.loadCalendar(nextYear, nextMonth, selectedDate);
   },
-  async pickDate(event) {
+  pickDate(event) {
     const date = event.detail.value;
     if (!date) {
       return;
     }
-    await this.goToDate(date);
+    this.openDailyDetail(date);
   },
-  async goToDate(date) {
-    const target = parseDateKey(date);
-    const today = new Date();
-    if (target > today) {
-      return;
-    }
-    const year = target.getFullYear();
-    const month = target.getMonth() + 1;
-    await this.loadCalendar(year, month, date);
-  },
-  async selectDate(event) {
+  selectDate(event) {
     const date = event.currentTarget.dataset.date;
     if (!date) {
       return;
     }
+    this.openDailyDetail(date);
+  },
+  openDailyDetail(input) {
+    const date = typeof input === 'string'
+      ? input
+      : (input && input.currentTarget && input.currentTarget.dataset && input.currentTarget.dataset.date) || this.data.selectedDate;
+    if (!date || parseDateKey(date) > new Date()) return;
+    const target = parseDateKey(date);
+    const year = target.getFullYear();
+    const month = target.getMonth() + 1;
+    const heatmapData = this.getCachedMonthData(year, month) || { heatmap: [] };
     this.setData({
       selectedDate: date,
       selectedDateLabel: formatDateLabel(date),
-      selectedDayLoaded: false,
-      selectedDayLoading: false,
-      selectedDayReport: EMPTY_REPORT,
-      selectedDaySummary: buildCalendarDaySummary((this.getCachedMonthData(this.data.calendarYear, this.data.calendarMonth) || {}).heatmap, date),
-      monthCells: markSelectedCells(this.data.monthCells, date)
+      selectedDaySummary: buildCalendarDaySummary(heatmapData.heatmap, date),
+      monthCells: year === this.data.calendarYear && month === this.data.calendarMonth
+        ? markSelectedCells(this.data.monthCells, date)
+        : this.data.monthCells
+    });
+    wx.navigateTo({
+      url: dailyReportRoute.buildDailyReportDetailUrl(date)
     });
   },
   openCatchupTask(event) {
@@ -1014,79 +831,5 @@ Page({
     wx.navigateTo({
       url: `/pages/lesson/index?category=${category}&taskId=${taskId}&planRunType=catchup&targetDate=${targetDate}&planDayIndex=${planDayIndex}`
     });
-  },
-  openReportItem(event) {
-    const index = Number(event.currentTarget.dataset.index || 0);
-    const item = (this.data.selectedDayReport.items || [])[index];
-    if (!item) return;
-    if (item.isStudyCompletion && item.type === 'grammar') {
-      wx.navigateTo({ url: '/pages/practice-history/index?type=grammar' });
-      return;
-    }
-    if (item.isStudyCompletion && item.type === 'reading' && item.passageId) {
-      const attemptId = item.latestAttempt && (item.latestAttempt.attemptId || item.latestAttempt._id) || '';
-      wx.navigateTo({
-        url: `/pages/reading/detail/index?passageId=${encodeURIComponent(item.passageId)}&attemptId=${encodeURIComponent(attemptId)}`
-      });
-      return;
-    }
-    if (item.type === 'speaking' && item.attempts && item.attempts.length) {
-      const report = Object.assign({}, this.data.selectedDayReport);
-      const items = (report.items || []).slice();
-      items[index] = Object.assign({}, item, { expanded: !item.expanded });
-      report.items = items;
-      this.setData({ selectedDayReport: report });
-      return;
-    }
-    if (item.category && item.taskId) {
-      const report = this.data.selectedDayReport || {};
-      const planDayIndex = Number(report.planDayIndex || item.planDayIndex || 0) || this.data.planDayIndex || '';
-      const targetDate = report.date || this.data.selectedDate || '';
-      snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${item.category}:${item.taskId}`, {
-        category: item.category,
-        taskId: item.taskId,
-        task: Object.assign({}, item.taskSnapshot || {}, item, {
-          targetDate,
-          planDayIndex
-        })
-      }, { source: 'record' });
-      const query = buildLessonQuery({
-        category: item.category,
-        taskId: item.taskId,
-        planRunType: 'preview',
-        targetDate,
-        planDayIndex
-      });
-      wx.navigateTo({
-        url: `/pages/lesson/index?${query}`
-      });
-    }
-  },
-  async playAttempt(event) {
-    const itemIndex = Number(event.currentTarget.dataset.itemIndex || 0);
-    const attemptIndex = Number(event.currentTarget.dataset.attemptIndex || 0);
-    const audioType = String(event.currentTarget.dataset.audioType || 'answer');
-    const item = (this.data.selectedDayReport.items || [])[itemIndex] || {};
-    const attempt = (item.attempts || [])[attemptIndex] || null;
-    if (!attempt) return;
-    const fileId = audioType === 'feedback'
-      ? (attempt.feedbackAudioFileId || buildCloudFileId(attempt.feedbackAudioCloudPath))
-      : (attempt.answerAudioFileId || buildCloudFileId(attempt.answerCloudPath));
-    if (!fileId) {
-      wx.showToast({ title: audioType === 'feedback' ? this.data.texts.noSuggestionAudio : this.data.texts.noRecording, icon: 'none' });
-      return;
-    }
-    try {
-      const url = await store.getTempFileURL(fileId);
-      if (!this.audioContext) {
-        this.audioContext = wx.createInnerAudioContext();
-        this.audioContext.obeyMuteSwitch = false;
-      }
-      this.audioContext.stop();
-      this.audioContext.src = url;
-      this.audioContext.play();
-    } catch (error) {
-      wx.showToast({ title: this.data.texts.playbackFailed, icon: 'none' });
-    }
   }
 });

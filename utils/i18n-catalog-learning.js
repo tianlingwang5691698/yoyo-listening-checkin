@@ -84,3 +84,7 @@ Object.assign(module.exports.practiceHistory['zh-CN'], { childAnswer: '你的', 
 Object.assign(module.exports.practiceHistory.en, { childAnswer: 'Yours', childAnswerLabel: 'Yours: ' });
 Object.assign(module.exports.lesson['zh-CN'], { studentAnswer: '你的：' });
 Object.assign(module.exports.lesson.en, { studentAnswer: 'Yours: ' });
+Object.assign(module.exports.lesson['zh-CN'], { speak: '发音', collapse: '收起', expand: '展开', expandTranscript: '展开文本', effectiveListeningInsufficientPrefix: '本遍还需实际收听 ', effectiveListeningInsufficientSuffix: ' 秒' });
+Object.assign(module.exports.lesson.en, { speak: 'Pronounce', collapse: 'Collapse', expand: 'Expand', expandTranscript: 'Show Transcript', effectiveListeningInsufficientPrefix: 'Listen for ', effectiveListeningInsufficientSuffix: ' more seconds' });
+Object.assign(module.exports.vocabularyDictation['zh-CN'], { navTitle: '听音写词' });
+Object.assign(module.exports.vocabularyDictation.en, { navTitle: 'Listen and Spell' });

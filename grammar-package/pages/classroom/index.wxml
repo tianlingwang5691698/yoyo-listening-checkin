@@ -160,21 +160,45 @@
         <view class="rule-line" wx:for="{{activeLesson.rules}}" wx:key="index">{{index + 1}}. {{item}}</view>
       </view>
 
-      <view class="exercise-count">{{questionIndex + 1}} / {{activeLesson.questions.length}}</view>
-      <view class="question-text">{{activeQuestion.question}}</view>
-      <view class="option-list">
-        <view class="option-item {{answer && option.key === activeQuestion.answer ? 'is-correct' : ''}} {{answer === option.key && result === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{activeQuestion.options}}" wx:key="key" wx:for-item="option" data-answer="{{option.key}}" bindtap="chooseAnswer">
-          <text class="option-key">{{option.key}}</text><text>{{option.text}}</text>
+      <view class="review-section" wx:if="{{reviewMode}}">
+        <view class="review-title">{{ui.reviewTitle}}</view>
+        <view class="review-summary" wx:if="{{reviewSummary}}">{{reviewSummary}}</view>
+        <view class="review-summary" wx:if="{{reviewLoading}}">{{ui.reviewLoading}}</view>
+        <view class="review-summary" wx:if="{{reviewLegacy}}">{{ui.reviewLegacy}}</view>
+        <view class="review-question" wx:for="{{reviewQuestions}}" wx:key="questionId" wx:for-item="reviewQuestion">
+          <view class="review-question-no">{{reviewQuestion.number}} / {{reviewQuestions.length}}</view>
+          <view class="review-question-prompt">{{reviewQuestion.prompt}}</view>
+          <view class="review-option {{reviewOption.isAnswer ? 'is-answer' : ''}} {{reviewOption.isSelected && !reviewOption.isAnswer ? 'is-selected-wrong' : ''}}" wx:for="{{reviewQuestion.options}}" wx:key="key" wx:for-item="reviewOption">
+            <text class="option-key">{{reviewOption.key}}</text><text>{{reviewOption.text}}</text>
+          </view>
+          <view class="review-answer {{reviewQuestion.correct ? 'is-correct' : 'is-wrong'}}">
+            <text>{{ui.yourAnswer}}：{{reviewQuestion.selectedAnswer}}</text>
+            <text wx:if="{{reviewQuestion.showFirstAnswer}}">{{ui.firstAnswer}}：{{reviewQuestion.firstAnswer}}</text>
+            <text>{{ui.correctAnswer}}：{{reviewQuestion.answer}}</text>
+          </view>
+          <view class="review-analysis" wx:if="{{reviewQuestion.analysis}}">{{reviewQuestion.analysis}}</view>
+        </view>
+        <view class="footer-actions review-footer">
+          <view class="footer-button back-button" bindtap="backToCourseMap">{{ui.back}}</view>
         </view>
       </view>
-      <view class="feedback {{result}}" wx:if="{{result}}">
-        <view>{{result === 'correct' ? activeQuestion.correct : activeQuestion.wrong}}</view>
-        <view class="retry" wx:if="{{result === 'wrong'}}" bindtap="retry">{{ui.retry}}</view>
-      </view>
-      <view class="footer-actions">
-        <view class="footer-button back-button" bindtap="backToCourseMap">{{ui.back}}</view>
-        <view class="footer-button next-button {{result === 'correct' ? '' : 'is-disabled'}}" bindtap="continueLesson">{{result === 'correct' ? (!isLastQuestion ? ui.nextQuestion : (isLastLesson ? ui.finish : ui.nextLesson)) : ui.answerFirst}}</view>
-      </view>
+      <block wx:else>
+        <view class="exercise-count">{{questionIndex + 1}} / {{activeLesson.questions.length}}</view>
+        <view class="question-text">{{activeQuestion.question}}</view>
+        <view class="option-list">
+          <view class="option-item {{answer && option.key === activeQuestion.answer ? 'is-correct' : ''}} {{answer === option.key && result === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{activeQuestion.options}}" wx:key="key" wx:for-item="option" data-answer="{{option.key}}" bindtap="chooseAnswer">
+            <text class="option-key">{{option.key}}</text><text>{{option.text}}</text>
+          </view>
+        </view>
+        <view class="feedback {{result}}" wx:if="{{result}}">
+          <view>{{result === 'correct' ? activeQuestion.correct : activeQuestion.wrong}}</view>
+          <view class="retry" wx:if="{{result === 'wrong'}}" bindtap="retry">{{ui.retry}}</view>
+        </view>
+        <view class="footer-actions">
+          <view class="footer-button back-button" bindtap="backToCourseMap">{{ui.back}}</view>
+          <view class="footer-button next-button {{result === 'correct' ? '' : 'is-disabled'}}" bindtap="continueLesson">{{result === 'correct' ? (!isLastQuestion ? ui.nextQuestion : (isLastLesson ? ui.finish : ui.nextLesson)) : ui.answerFirst}}</view>
+        </view>
+      </block>
     </view>
   </view>
 </view>

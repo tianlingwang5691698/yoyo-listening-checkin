@@ -37,6 +37,7 @@ SecretKey.csv
 
 # Local generated checkpoints and backups
 data/cloud-backups/
+data/cloud-repair/
 data/grammar/gpt-classification-24-progress.json
 data/grammar-em1-upload/gpt-classification-24-progress.json
 data/transcript-build/**/cloud-backup/

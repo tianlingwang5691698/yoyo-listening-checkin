@@ -1,5 +1,6 @@
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
+const completionRecords = require('../lib/completion-records');
 
 const COLLECTION = 'studyCompletedItems';
 
@@ -57,13 +58,15 @@ async function upsertStudyCompletion(ctx, today, payload) {
     familyId: record.familyId,
     childId: record.childId,
     recordId
-  }).limit(1).get();
-  const current = result && result.data && result.data[0];
+  }).orderBy('updatedAt', 'desc').limit(20).get();
+  const current = completionRecords.dedupeCompletionItems(result && result.data || [])[0];
   if (current && current._id) {
     await dbAdapter.collection(COLLECTION).doc(current._id).update({ data: record });
     return { saved: true, updated: true, item: record };
   }
-  await dbAdapter.collection(COLLECTION).add({ data: Object.assign({}, record, { createdAt: now }) });
+  await dbAdapter.collection(COLLECTION).doc(completionRecords.buildCompletionDocumentId(recordId)).set({
+    data: Object.assign({}, record, { createdAt: now })
+  });
   return { saved: true, updated: false, item: record };
 }
 
@@ -98,10 +101,11 @@ async function getStudyCompletions(event) {
   if (types.length === 1) where.type = types[0];
   if (types.length > 1) where.type = command.in(types);
   const result = await dbAdapter.collection(COLLECTION).where(where).orderBy('date', 'desc').limit(300).get();
+  const items = completionRecords.dedupeCompletionItems(result && result.data || []);
   return {
     date,
     days,
-    items: (result && result.data ? result.data : []).map((item) => {
+    items: items.map((item) => {
       const normalized = Object.assign({}, item, { id: item.recordId || item._id || '' });
       if (!payload.summaryOnly) return normalized;
       const attempt = item.latestAttempt || {};
@@ -132,8 +136,8 @@ async function getStudyCompletionDetail(event) {
     familyId: ctx.family.familyId,
     childId: ctx.child.childId,
     recordId
-  }).limit(1).get();
-  const item = result && result.data && result.data[0];
+  }).orderBy('updatedAt', 'desc').limit(20).get();
+  const item = completionRecords.dedupeCompletionItems(result && result.data || [])[0];
   return { item: item ? Object.assign({}, item, { id: item.recordId || item._id || '' }) : null };
 }
 

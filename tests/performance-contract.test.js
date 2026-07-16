@@ -81,6 +81,23 @@ test('首页只允许最新 dashboard 请求更新加载和不可用状态', () 
   assert.match(source, /onHide\(\) \{\s*this\.clearHomePrefetchTimers\(\);\s*this\.invalidateHomeDashboardRefresh\(\)/);
 });
 
+test('家庭身份切换先更新本机状态并与首页刷新并行', () => {
+  const familySource = fs.readFileSync(path.join(root, 'pages/family/index.js'), 'utf8');
+  const homeSource = fs.readFileSync(path.join(root, 'pages/home/index.js'), 'utf8');
+  const storeSource = fs.readFileSync(path.join(root, 'utils/store.js'), 'utf8');
+  const toggleSource = familySource.slice(familySource.indexOf('  async toggleStudyRole() {'), familySource.indexOf('  async undoLastListened() {'));
+  const onShowSource = homeSource.slice(homeSource.indexOf('  async onShow() {'), homeSource.indexOf('  onUnload() {'));
+  assert.match(toggleSource, /preparedSwitch = store\.prepareStudyRoleSwitch\(nextRole\)/);
+  assert.match(toggleSource, /const roleRequest = store\.setStudyRole\(nextRole, \{ preparedSwitch \}\)/);
+  assert.ok(toggleSource.indexOf("wx.switchTab({\n      url: '/pages/home/index'") < toggleSource.indexOf('const data = await roleRequest'));
+  assert.match(toggleSource, /wx\.navigateTo\(\{\s*url: '\/pages\/family\/index'/);
+  assert.match(onShowSource, /const deviceStudyRole = store\.getDeviceStudyRole/);
+  assert.match(onShowSource, /this\.buildStudyModePresentation\(\{ studyRole: deviceStudyRole \}\)/);
+  assert.match(storeSource, /function prepareStudyRoleSwitch\(studyRole\)/);
+  assert.match(storeSource, /setSelectedStudentTarget\(lastParentTarget\)/);
+  assert.match(storeSource, /preserveReadCache: true/);
+});
+
 test('小程序上传包排除非运行时工程目录', () => {
   const projectConfig = JSON.parse(fs.readFileSync(path.join(root, 'project.config.json'), 'utf8'));
   const ignoredFolders = new Set((projectConfig.packOptions.ignore || [])

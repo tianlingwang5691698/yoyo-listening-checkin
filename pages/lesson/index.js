@@ -38,6 +38,7 @@ const LISTENING_RESUME_SAVE_INTERVAL_SEC = 5;
 const LISTENING_RESUME_REWIND_SEC = 0;
 const AUDIO_PROGRESS_SLIDER_MAX = 1000;
 const LESSON_STUDY_PACK_MAX_DURATION_SEC = 8 * 60;
+const LESSON_STUDY_PACK_POLL_MAX = 50;
 const MAGIC_TREE_HOUSE_CATEGORIES = ['magictreehouse', 'magictreehouseb1'];
 const PRECISE_TRANSCRIPT_SYNC_INTERVAL_MS = 80;
 const AUDIO_SEEK_CONFIRM_INTERVAL_MS = 80;
@@ -378,8 +379,8 @@ function recordLessonStudyPackSynced(task, category, taskId) {
   const safeCategory = target.category || category || '';
   const safeTaskId = target.taskId || taskId || '';
   const targetId = [safeCategory, safeTaskId].filter(Boolean).join(':');
-  if (!targetId) return;
-  store.recordStudyCompletion({
+  if (!targetId) return Promise.resolve({ saved: false, reason: 'missing-target' });
+  return store.recordStudyCompletion({
     id: `listening-study:${targetId}`,
     type: 'listening',
     targetId,
@@ -1256,6 +1257,8 @@ Page({
     await this.finishLessonShowRefresh(detail);
   },
   onHide() {
+    this.clearLessonStudyPackPoll();
+    if (this.data.lessonStudyLoading) this.setData({ lessonStudyLoading: false });
     this.stopPreciseTranscriptSync();
     this.cancelAudioSeekConfirmation();
     this.audioProgressDragging = false;
@@ -1273,6 +1276,7 @@ Page({
     this.clearTranscriptState();
   },
   onUnload() {
+    this.clearLessonStudyPackPoll();
     this.stopPreciseTranscriptSync();
     this.cancelAudioSeekConfirmation();
     this.audioProgressDragging = false;
@@ -3125,7 +3129,63 @@ Page({
         this.scrollToLessonStudy();
       }
     });
-    recordLessonStudyPackSynced(this.data.task || {}, this.category, this.taskId);
+    const task = this.data.task || {};
+    const completionKey = `${task.category || this.category || ''}:${task.taskId || this.taskId || ''}`;
+    this.lessonStudyCompletionRecordKeys = this.lessonStudyCompletionRecordKeys || {};
+    if (completionKey !== ':' && !this.lessonStudyCompletionRecordKeys[completionKey]) {
+      this.lessonStudyCompletionRecordKeys[completionKey] = true;
+      recordLessonStudyPackSynced(task, this.category, this.taskId)
+        .then((result) => {
+          if (!result || !result.saved && result.reason !== 'preview-role') {
+            delete this.lessonStudyCompletionRecordKeys[completionKey];
+          }
+        })
+        .catch(() => {
+          delete this.lessonStudyCompletionRecordKeys[completionKey];
+        });
+    }
+  },
+  clearLessonStudyPackPoll() {
+    if (this.lessonStudyPackPollTimer) {
+      clearTimeout(this.lessonStudyPackPollTimer);
+      this.lessonStudyPackPollTimer = null;
+    }
+    this.lessonStudyPackPollAttempt = 0;
+  },
+  scheduleLessonStudyPackPoll(task, retryAfterMs) {
+    this.clearLessonStudyPackPoll();
+    const target = task || this.data.task || {};
+    const expectedKey = `${target.category || this.category || ''}:${target.taskId || this.taskId || ''}`;
+    const poll = async () => {
+      const current = this.data.task || {};
+      const currentKey = `${current.category || this.category || ''}:${current.taskId || this.taskId || ''}`;
+      if (currentKey !== expectedKey) {
+        this.clearLessonStudyPackPoll();
+        this.setData({ lessonStudyLoading: false });
+        return;
+      }
+      this.lessonStudyPackPollAttempt = Number(this.lessonStudyPackPollAttempt || 0) + 1;
+      const cachedResult = await store.getListeningStudyPack(
+        buildLessonStudyItem(target, this.category, this.taskId, ''),
+        { cacheOnly: true, useCache: false }
+      );
+      if (hasLessonStudyCards(cachedResult && cachedResult.studyPack)) {
+        this.clearLessonStudyPackPoll();
+        this.applyLessonStudyPack(cachedResult.studyPack);
+        this.setData({ lessonStudyLoading: false, lessonStudyError: '' });
+        return;
+      }
+      if (this.lessonStudyPackPollAttempt >= LESSON_STUDY_PACK_POLL_MAX) {
+        this.clearLessonStudyPackPoll();
+        this.setData({
+          lessonStudyLoading: false,
+          lessonStudyError: text('packTimeout', '生成超时，未拿到学习包，请稍后重试')
+        });
+        return;
+      }
+      this.lessonStudyPackPollTimer = setTimeout(poll, 3000);
+    };
+    this.lessonStudyPackPollTimer = setTimeout(poll, Math.max(1000, Number(retryAfterMs || 3000)));
   },
   async loadCachedLessonStudyPack(task) {
     const target = task || this.data.task || {};
@@ -3170,6 +3230,10 @@ Page({
     }
     this.setData({ lessonStudyLoading: true, lessonStudyError: '' });
     const result = await store.getListeningStudyPack(buildLessonStudyItem(task, this.category, this.taskId, transcript), { useCache: false });
+    if (result && result.generating) {
+      this.scheduleLessonStudyPackPoll(task, result.retryAfterMs);
+      return;
+    }
     let studyPack = result && result.studyPack;
     if (hasLessonStudyCards(studyPack)) {
       this.applyLessonStudyPack(studyPack);
@@ -3377,7 +3441,7 @@ Page({
         });
         this.saveListeningResumeCheckpoint({ force: true, positionSec: 0 });
         wx.showToast({
-          title: text('effectiveListeningInsufficient', `本遍还需实际收听 ${remainingSeconds} 秒`),
+          title: `${text('effectiveListeningInsufficientPrefix', '')}${remainingSeconds}${text('effectiveListeningInsufficientSuffix', '')}`,
           icon: 'none'
         });
         return;

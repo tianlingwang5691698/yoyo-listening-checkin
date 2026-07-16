@@ -122,55 +122,9 @@
         <view class="library-dossier-meta">
           <view>{{selectedDaySummary.minutesText}}</view>
           <text>{{selectedDaySummary.completedCount}} / {{selectedDaySummary.totalCount}}</text>
-          <view class="library-row-action" wx:if="{{!selectedDayLoaded}}" bindtap="loadSelectedDay" data-date="{{selectedDate}}">{{texts.view}}</view>
+          <view class="library-row-action" bindtap="openDailyDetail" data-date="{{selectedDate}}">{{texts.view}}</view>
         </view>
       </view>
-
-      <block wx:if="{{selectedDayLoaded && selectedDayReport.items && selectedDayReport.items.length}}">
-        <view class="library-report-list">
-          <block wx:for="{{selectedDayReport.items}}" wx:key="taskId">
-            <view class="library-report-card">
-              <view class="library-report-row" data-index="{{index}}" bindtap="openReportItem">
-                <view class="library-report-index">{{index + 1}}</view>
-                <view class="library-report-main">
-                  <view class="library-row-title">{{item.categoryLabel}}</view>
-                  <view class="library-row-copy">{{item.title}}</view>
-                  <view class="library-row-copy" wx:if="{{item.type === 'speaking' && item.attemptCount}}">
-                    {{texts.recentPrefix}}{{item.latestAttemptScore}}{{texts.scoreJoin}}{{item.attemptCount}}{{texts.answerCountSuffix}}
-                  </view>
-                  <view class="library-report-times" wx:if="{{item.timeLines && item.timeLines.length}}">
-                    <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
-                      <view>{{time.label}} {{time.timeText}}</view>
-                    </block>
-                  </view>
-                </view>
-                <view class="library-report-state {{item.completedToday ? 'is-done' : ''}}">
-                  <view>{{item.type === 'speaking' ? texts.view : (item.completedToday ? texts.completed : texts.wait)}}</view>
-                  <text>{{item.isStudyCompletion ? item.progressText : (item.playCount + ' / ' + item.repeatTarget)}}</text>
-                </view>
-              </view>
-
-              <view class="library-attempt-list" wx:if="{{item.expanded}}">
-                <view class="library-attempt-card" wx:for="{{item.attempts}}" wx:key="attemptId" wx:for-item="attempt" wx:for-index="attemptIndex">
-                  <view class="library-attempt-head">
-                    <view>{{attempt.displayTitle}}</view>
-                    <text>{{attempt.scoreText}}</text>
-                  </view>
-                  <view class="library-attempt-copy">{{texts.pronunciationLabel}} {{attempt.pronunciationFluencyScore || 0}} / {{texts.contentLabel}} {{attempt.contentGrammarScore || 0}}</view>
-                  <view class="library-attempt-copy" wx:if="{{attempt.questionText}}">{{texts.questionPrefix}}{{attempt.questionText}}</view>
-                  <view class="library-attempt-copy" wx:if="{{attempt.studentTranscript}}">{{texts.answerPrefix}}{{attempt.studentTranscript}}</view>
-                  <view class="library-attempt-feedback">{{attempt.feedback || texts.noAnalysis}}</view>
-                  <view class="library-attempt-actions">
-                    <button data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="answer" bindtap="playAttempt">{{texts.playAnswer}}</button>
-                    <button wx:if="{{attempt.feedbackAudioFileId}}" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="feedback" bindtap="playAttempt">{{texts.playAnalysis}}</button>
-                  </view>
-                </view>
-              </view>
-            </view>
-          </block>
-        </view>
-      </block>
-      <view class="library-empty-dossier" wx:elif="{{selectedDayLoaded}}">{{texts.noDayRecord}}</view>
     </view>
   </view>
 </block>
@@ -327,59 +281,9 @@
       <view class="day-meta">
         <view class="pill">{{selectedDaySummary.minutesText}}</view>
         <view class="day-count">{{selectedDaySummary.completedCount}} / {{selectedDaySummary.totalCount}}</view>
-        <view class="detail-link" wx:if="{{!selectedDayLoaded}}" bindtap="loadSelectedDay" data-date="{{selectedDate}}">{{texts.view}}</view>
+        <view class="detail-link" bindtap="openDailyDetail" data-date="{{selectedDate}}">{{texts.view}}</view>
       </view>
     </view>
-
-    <block wx:if="{{selectedDayLoaded && selectedDayReport.items && selectedDayReport.items.length}}">
-      <view class="report-card-grid">
-        <block wx:for="{{selectedDayReport.items}}" wx:key="taskId">
-          <view class="report-item-card">
-            <view class="report-row report-card-face" data-index="{{index}}" bindtap="openReportItem">
-              <view class="report-mark">
-                <view></view>
-                <view></view>
-                <view></view>
-              </view>
-              <view class="report-main">
-                <view class="report-title">{{item.categoryLabel}}</view>
-                <view class="report-copy">{{item.title}}</view>
-                <view class="report-copy" wx:if="{{item.type === 'speaking' && item.attemptCount}}">
-                  {{texts.recentPrefix}}{{item.latestAttemptScore}}{{texts.scoreJoin}}{{item.attemptCount}}{{texts.answerCountSuffix}}
-                </view>
-                <view class="report-times" wx:if="{{item.timeLines && item.timeLines.length}}">
-                  <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
-                    <view class="report-time">{{time.label}} {{time.timeText}}</view>
-                  </block>
-                </view>
-              </view>
-              <view class="report-state {{item.completedToday ? 'is-done' : ''}}">
-                <view>{{item.type === 'speaking' ? texts.view : (item.completedToday ? texts.completed : texts.wait)}}</view>
-                <view class="report-progress">{{item.isStudyCompletion ? item.progressText : (item.playCount + ' / ' + item.repeatTarget)}}</view>
-              </view>
-            </view>
-
-            <view class="attempt-detail-list" wx:if="{{item.expanded}}">
-              <view class="attempt-detail" wx:for="{{item.attempts}}" wx:key="attemptId" wx:for-item="attempt" wx:for-index="attemptIndex">
-                <view class="attempt-head">
-                  <view class="attempt-title">{{attempt.displayTitle}}</view>
-                  <view class="attempt-score">{{attempt.scoreText}}</view>
-                </view>
-                <view class="attempt-subscore">{{texts.pronunciationLabel}} {{attempt.pronunciationFluencyScore || 0}} / {{texts.contentLabel}} {{attempt.contentGrammarScore || 0}}</view>
-                <view class="attempt-text" wx:if="{{attempt.questionText}}">{{texts.questionPrefix}}{{attempt.questionText}}</view>
-                <view class="attempt-text" wx:if="{{attempt.studentTranscript}}">{{texts.answerPrefix}}{{attempt.studentTranscript}}</view>
-                <view class="attempt-feedback">{{attempt.feedback || texts.noAnalysis}}</view>
-                <view class="attempt-actions">
-                  <button class="attempt-button" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="answer" bindtap="playAttempt">{{texts.playAnswer}}</button>
-                  <button class="attempt-button" wx:if="{{attempt.feedbackAudioFileId}}" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="feedback" bindtap="playAttempt">{{texts.playAnalysis}}</button>
-                </view>
-              </view>
-            </view>
-          </view>
-        </block>
-      </view>
-    </block>
-    <view class="empty-state" wx:elif="{{selectedDayLoaded}}">{{texts.noDayRecord}}</view>
   </view>
 </view>
 </block>

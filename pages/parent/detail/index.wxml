@@ -29,7 +29,7 @@
       </view>
       <block wx:if="{{report.items.length}}">
         <view class="library-rhythm-line">
-          <view class="library-rhythm-item {{item.completedToday ? 'is-done' : ''}}" wx:for="{{report.items}}" wx:key="category">
+          <view class="library-rhythm-item {{item.completedToday ? 'is-done' : ''}}" wx:for="{{report.items}}" wx:key="taskId" data-index="{{index}}" bindtap="openReportItem">
             <view class="rhythm-pin"></view>
             <view class="rhythm-paper">
               <view class="library-card-head">
@@ -48,6 +48,7 @@
                 </view>
               </view>
               <view class="entry-copy" wx:else>{{texts.noCompletionTime}}</view>
+              <view class="entry-copy">{{item.category === 'grammar' ? texts.viewOriginalGrammar : texts.viewOriginalListening}}</view>
             </view>
           </view>
         </view>
@@ -140,7 +141,7 @@
           </view>
           <view class="entry-copy" wx:if="{{item.displayMeta}}">{{item.displayMeta}}</view>
           <view class="answer-chip" wx:if="{{item.correctText}}">{{texts.answerPrefix}}{{item.correctText}}</view>
-          <button wx:if="{{!item.isVocabulary && !item.isGrammarMicroLesson}}" class="detail-toggle library-detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
+          <button wx:if="{{!item.isVocabulary}}" class="detail-toggle library-detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack || item.isGrammarMicroLesson ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-loading" wx:if="{{item.detailLoading}}">{{texts.loadingDetail}}</view>
             <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">
@@ -270,7 +271,7 @@
     <block wx:if="{{report.items.length}}">
       <view class="rhythm-canvas">
         <view class="rhythm-track"></view>
-        <view class="rhythm-node {{item.completedToday ? 'is-done' : ''}}" wx:for="{{report.items}}" wx:key="category">
+        <view class="rhythm-node {{item.completedToday ? 'is-done' : ''}}" wx:for="{{report.items}}" wx:key="taskId" data-index="{{index}}" bindtap="openReportItem">
           <view class="node-mark">
             <text></text>
           </view>
@@ -293,6 +294,7 @@
               </view>
             </view>
             <view class="quiet-note" wx:else>{{texts.noCompletionTime}}</view>
+            <view class="quiet-note">{{item.category === 'grammar' ? texts.viewOriginalGrammar : texts.viewOriginalListening}}</view>
           </view>
         </view>
       </view>
@@ -395,7 +397,7 @@
           </view>
           <view class="quiet-note" wx:if="{{item.displayMeta}}">{{item.displayMeta}}</view>
           <view class="answer-chip" wx:if="{{item.correctText}}">{{texts.answerPrefix}}{{item.correctText}}</view>
-          <button wx:if="{{!item.isVocabulary && !item.isGrammarMicroLesson}}" class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
+        <button wx:if="{{!item.isVocabulary}}" class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack || item.isGrammarMicroLesson ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-loading" wx:if="{{item.detailLoading}}">{{texts.loadingDetail}}</view>
             <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">

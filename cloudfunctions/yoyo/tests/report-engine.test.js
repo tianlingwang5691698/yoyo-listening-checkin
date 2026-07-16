@@ -56,14 +56,14 @@ test('日报生成已完成分类和总时长', async () => {
     }
   });
 
-  assert.deepEqual(report.completedCategories, ['peppa', 'song']);
-  assert.equal(report.totalMinutes, 12);
+  assert.deepEqual(report.completedCategories, ['peppa']);
+  assert.equal(report.totalMinutes, 10);
   assert.equal(report.items[0].audioCloudPath, 'A1/Peppa/第1季/S101 Muddy Puddles.mp3');
   assert.equal(report.items[0].taskSnapshot.audioSource, 'static-cloud-url');
   assert.equal(saved.reportId, 'family-1_child-1_2026-04-21');
 });
 
-test('已有打卡记录的历史日报按 checkin 修复完成状态', async () => {
+test('已有打卡但没有任务进度时不伪造历史任务', async () => {
   const report = await reportEngine.upsertDailyReport({
     familyId: 'family-1',
     childId: 'child-1',
@@ -104,12 +104,11 @@ test('已有打卡记录的历史日报按 checkin 修复完成状态', async ()
     upsertReport: async () => {}
   });
 
-  assert.equal(report.items.every((item) => item.completedToday), true);
-  assert.equal(report.items.every((item) => item.playCount === item.repeatTarget), true);
-  assert.equal(report.totalMinutes, 6);
+  assert.equal(report.items.length, 0);
+  assert.equal(report.totalMinutes, 0);
 });
 
-test('已有 partial completedCategories 的打卡日仍按整日完成修复日报', async () => {
+test('已有 partial completedCategories 也不反推未发生任务', async () => {
   const report = await reportEngine.upsertDailyReport({
     familyId: 'family-1',
     childId: 'child-1',
@@ -150,8 +149,7 @@ test('已有 partial completedCategories 的打卡日仍按整日完成修复日
     upsertReport: async () => {}
   });
 
-  assert.equal(report.items.every((item) => item.completedToday), true);
-  assert.equal(report.items.every((item) => item.playCount === 3), true);
+  assert.equal(report.items.length, 0);
 });
 
 test('自定义计划日报不按旧 checkin 兜底完成新增任务', async () => {
@@ -185,10 +183,8 @@ test('自定义计划日报不按旧 checkin 兜底完成新增任务', async ()
   });
 
   assert.equal(report.planSource, 'custom-listening');
-  assert.equal(report.items.length, 2);
+  assert.equal(report.items.length, 1);
   assert.equal(report.items[0].completedToday, true);
-  assert.equal(report.items[1].completedToday, false);
-  assert.equal(report.items[1].playCount, 0);
 });
 
 test('日报生成包含当天 Peppa 复听任务和时长', async () => {
@@ -244,7 +240,7 @@ test('日报生成包含当天 Peppa 复听任务和时长', async () => {
   });
 
   assert.equal(report.items.some((item) => item.taskId === 'peppa-1__review_20_1'), true);
-  assert.equal(report.totalMinutes, 35);
+  assert.equal(report.totalMinutes, 5);
 });
 
 test('日报生成包含阅读写作完成内容', async () => {
@@ -270,7 +266,14 @@ test('日报生成包含阅读写作完成内容', async () => {
       recordId: 'reading-1',
       type: 'reading',
       title: '阅读练习',
-      completedToday: true
+      completedToday: true,
+      updatedAt: '2026-07-05T10:00:00.000Z'
+    }, {
+      recordId: 'reading-1',
+      type: 'reading',
+      title: '阅读练习新记录',
+      completedToday: true,
+      updatedAt: '2026-07-05T10:00:01.000Z'
     }, {
       recordId: 'writing-1',
       type: 'writing',
@@ -283,4 +286,5 @@ test('日报生成包含阅读写作完成内容', async () => {
 
   assert.equal(report.completionItems.length, 2);
   assert.deepEqual(report.completionItems.map((item) => item.id), ['reading-1', 'writing-1']);
+  assert.equal(report.completionItems[0].title, '阅读练习新记录');
 });

@@ -183,6 +183,36 @@ function clearSelectedStudentTarget() {
   wx.removeStorageSync(SELECTED_STUDENT_KEY);
 }
 
+function prepareStudyRoleSwitch(studyRole) {
+  const previousStudyRole = getDeviceStudyRole();
+  const previousTarget = getSelectedStudentTarget();
+  const nextStudyRole = setDeviceStudyRole(studyRole);
+  if (nextStudyRole === 'student') {
+    clearSelectedStudentTarget();
+  } else {
+    const lastParentTarget = getLastParentStudentTarget();
+    if (lastParentTarget.targetFamilyId || lastParentTarget.targetChildId) {
+      setSelectedStudentTarget(lastParentTarget);
+    }
+  }
+  return {
+    previousStudyRole,
+    previousTarget,
+    studyRole: nextStudyRole,
+    target: getSelectedStudentTarget()
+  };
+}
+
+function restoreStudyRoleSwitch(state) {
+  const previous = state || {};
+  setDeviceStudyRole(previous.previousStudyRole);
+  if (previous.previousTarget && (previous.previousTarget.targetFamilyId || previous.previousTarget.targetChildId)) {
+    setSelectedStudentTarget(previous.previousTarget);
+  } else {
+    clearSelectedStudentTarget();
+  }
+}
+
 function withSelectedStudent(payload) {
   const next = Object.assign({}, payload || {});
   if (next.targetFamilyId || next.targetChildId) {
@@ -453,7 +483,7 @@ async function callCloud(action, payload, defaults, options = {}) {
   const cloudPayload = PUBLIC_READ_ACTIONS[action]
     ? Object.assign({}, payload || {})
     : withDeviceContext(action, payload);
-  if (MUTATION_ACTIONS[action]) {
+  if (MUTATION_ACTIONS[action] && !options.preserveReadCache) {
     clearCloudReadCache();
   }
   const cacheVersion = cloudReadCacheVersion;
@@ -476,7 +506,7 @@ async function callCloud(action, payload, defaults, options = {}) {
     if (cacheVersion === cloudReadCacheVersion) {
       cacheCloudResult(action, cloudPayload, result);
     }
-  } else if (result && result.syncMode !== 'cloud-error') {
+  } else if (result && result.syncMode !== 'cloud-error' && !options.preserveReadCache) {
     clearCloudReadCache();
   }
   return result;
@@ -626,12 +656,12 @@ async function getListeningStudyPack(item, options, onRefresh) {
   };
   return callCloud('getListeningStudyPack', withSelectedStudent(payload), {
     listeningId: payload.listeningId || '',
-    studyPack: {
-      vocabularyCards: [],
-      phraseCards: [],
-      sentencePatternCards: [],
-      source: ''
-    }
+    studyPack: null,
+    cached: false,
+    generating: false,
+    retryAfterMs: 0,
+    modelCallCount: 0,
+    modelUsage: null
   }, { onRefresh: refresh, useCache: opts.useCache !== false });
 }
 
@@ -1234,19 +1264,22 @@ async function leaveFamily() {
   return data;
 }
 
-async function setStudyRole(studyRole) {
-  const deviceStudyRole = setDeviceStudyRole(studyRole);
+async function setStudyRole(studyRole, options = {}) {
+  const preparedSwitch = options.preparedSwitch || prepareStudyRoleSwitch(studyRole);
+  const deviceStudyRole = preparedSwitch.studyRole;
   if (studyRole === 'student') {
-    clearSelectedStudentTarget();
-    clearCloudReadCache();
-    return callCloud('setStudyRole', { studyRole, deviceStudyRole, forceSelf: true }, contracts.createFamilyPageDefaults());
+    return callCloud('setStudyRole', { studyRole, deviceStudyRole, forceSelf: true }, contracts.createFamilyPageDefaults(), {
+      preserveReadCache: true
+    });
   }
   const lastParentTarget = getLastParentStudentTarget();
   const hasLastParentTarget = !!(lastParentTarget.targetFamilyId || lastParentTarget.targetChildId);
   const payload = hasLastParentTarget
     ? Object.assign({ studyRole, deviceStudyRole }, lastParentTarget)
     : withSelectedStudent({ studyRole, deviceStudyRole });
-  let data = await callCloud('setStudyRole', payload, contracts.createFamilyPageDefaults());
+  let data = await callCloud('setStudyRole', payload, contracts.createFamilyPageDefaults(), {
+    preserveReadCache: true
+  });
   syncSelectedStudentFromData(data);
   if (!hasLastParentTarget) {
     const fallbackTarget = (data.studentLinks || []).find((item) => item && item.role !== 'owner' && (item.familyId || item.childId));
@@ -1375,6 +1408,8 @@ module.exports = {
   setSelectedStudentTarget,
   setLastParentStudentTarget,
   clearSelectedStudentTarget,
+  prepareStudyRoleSwitch,
+  restoreStudyRoleSwitch,
   explainGrammarQuestion,
   getFamilyPageData,
   refreshInviteCode,

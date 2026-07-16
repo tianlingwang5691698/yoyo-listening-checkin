@@ -104,6 +104,10 @@ test('getParentDashboard summaryOnly 不等待完整 dashboard', async (t) => {
     date,
     completionItems: [{ type: 'writing', title: '作文练习' }]
   }));
+  t.mock.method(study, 'getChildProgressRecordsByDate', async () => []);
+  t.mock.method(study, 'getCompletionItemsByDate', async (_scope, date) => (
+    date === '2026-07-06' ? [{ recordId: 'writing-1', type: 'writing', title: '作文练习' }] : []
+  ));
 
   const result = await reportService.getParentDashboard({
     payload: { days: 7, summaryOnly: true }
@@ -112,4 +116,59 @@ test('getParentDashboard summaryOnly 不等待完整 dashboard', async (t) => {
   assert.equal(result.recentReports.length, 7);
   assert.equal(result.moduleStats.writing.value, 1);
   assert.deepEqual(result.stats, {});
+});
+
+test('历史日报只返回当天真实任务并同步最新听力学习包', async (t) => {
+  t.mock.method(study, 'prepareRequestContext', async () => ({
+    ctx: { child: { childId: 'child-1' } },
+    today: '2026-07-17'
+  }));
+  t.mock.method(study, 'getUserScope', () => ({ familyId: 'family-1', childId: 'child-1' }));
+  t.mock.method(reportRepository, 'findByScopeAndDate', async () => ({
+    date: '2026-07-16',
+    items: [{
+      category: 'grammar',
+      taskId: 'grammar-noun-1',
+      completedToday: true,
+      playCount: 1,
+      taskSnapshot: { completedToday: false, playCount: 0 }
+    }],
+    completionItems: []
+  }));
+  t.mock.method(study, 'getChildProgressRecordsByDate', async () => [{
+    category: 'unlock1',
+    taskId: 'unlock1-19',
+    date: '2026-07-16',
+    playCount: 1,
+    repeatTarget: 1,
+    completedToday: true,
+    updatedAt: '2026-07-16T14:30:49.044Z'
+  }]);
+  t.mock.method(study, 'getCompletionItemsByDate', async () => [{
+    recordId: 'pack-1',
+    type: 'listening',
+    title: '听力学习包',
+    targetId: 'unlock1:unlock1-19'
+  }]);
+  t.mock.method(study, 'getCatalog', () => [{
+    taskId: 'unlock1-19',
+    title: '7.3',
+    durationSec: 60,
+    repeatTarget: 1
+  }]);
+  t.mock.method(study, 'decorateTask', (task, progress, category) => Object.assign({}, task, progress, {
+    category,
+    categoryLabel: 'Unlock 1',
+    audioCompactTitle: 'Unlock 1 · 7.3'
+  }));
+
+  const result = await reportService.getDailyReportByDate({
+    payload: { date: '2026-07-16', summaryOnly: true }
+  });
+
+  assert.deepEqual(result.report.items.map((item) => item.taskId), ['unlock1-19']);
+  assert.equal(result.report.totalMinutes, 1);
+  assert.equal(result.report.completionItemCount, 1);
+  assert.equal(result.report.completionItems[0].recordId, 'pack-1');
+  assert.equal(result.report.recordSourceVersion, 'daily-progress-v1');
 });

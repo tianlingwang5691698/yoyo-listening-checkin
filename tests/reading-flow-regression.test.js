@@ -15,7 +15,13 @@ test('阅读保持普通分包且详情路径参数安全传递', () => {
   const readingPackage = (appConfig.subPackages || []).find((item) => item.root === 'pages/reading');
   assert.ok(readingPackage, '阅读模块应保留在分包，避免主包超过 2MB');
   assert.notEqual(readingPackage.independent, true, '阅读依赖主包公共模块，不能设为独立分包');
-  assert.deepEqual(readingPackage.pages, ['index', 'detail/index', 'flashcards/index']);
+  assert.deepEqual(readingPackage.pages, [
+    'index',
+    'detail/index',
+    'flashcards/index',
+    'flashcards/dictation/index',
+    'flashcards/dictation/library/index'
+  ]);
   assert.match(readingHomeSource, /encodeURIComponent\(targetPassageId\)/);
   assert.match(readingDetailSource, /decodeURIComponent\(passageId\)/);
 });
@@ -26,8 +32,9 @@ test('阅读学习包术语解析不会覆盖翻译函数', () => {
   assert.match(readingDetailSource, /label = `\$\{text\('questionPrefix'/);
 });
 
-test('练习记录复用阅读详情并补全旧解析快照', () => {
-  assert.match(recordSource, /item\.isStudyCompletion && item\.type === 'reading' && item\.passageId[\s\S]*?pages\/reading\/detail\/index\?passageId=\$\{encodeURIComponent\(item\.passageId\)\}&attemptId=\$\{encodeURIComponent\(attemptId\)\}/);
+test('统一日报详情补全阅读旧解析快照', () => {
+  assert.match(recordSource, /dailyReportRoute\.buildDailyReportDetailUrl\(date\)/);
+  assert.doesNotMatch(recordSource, /pages\/reading\/detail\/index/);
   assert.match(parentDetailSource, /function readingCompletionNeedsHydration[\s\S]*?!analysesReady[\s\S]*?item\.phraseCards/);
   assert.match(parentDetailSource, /if \(!readingCompletionNeedsHydration\(item\) \|\| !item\.passageId\)/);
   assert.match(parentDetailSource, /getReadingPassage\(\{ passageId: item\.passageId, attemptId \}\)/);

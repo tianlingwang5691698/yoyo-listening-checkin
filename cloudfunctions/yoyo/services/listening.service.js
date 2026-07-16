@@ -1,8 +1,10 @@
 const dbAdapter = require('../adapters/db.adapter');
 const study = require('../facades/study.facade');
 const https = require('https');
+const crypto = require('crypto');
 
 const STUDY_PACK_COLLECTION = 'listeningStudyPacks';
+const STUDY_PACK_JOB_STALE_MS = 4 * 60 * 1000;
 
 function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -114,35 +116,116 @@ function getStudyModelConfig() {
   };
 }
 
+function getStudyPackCacheKey(listeningId) {
+  return crypto.createHash('sha256').update(String(listeningId || '')).digest('hex').slice(0, 40);
+}
+
+function isMissingDocumentError(error) {
+  const message = String(error && (error.errMsg || error.message || error) || '');
+  return message.includes('-502005') || /document.*not exist|not found/i.test(message);
+}
+
+function normalizeModelUsage(response) {
+  const usage = response && response.usage || {};
+  const inputTokens = Number(usage.prompt_tokens || usage.input_tokens || 0);
+  const outputTokens = Number(usage.completion_tokens || usage.output_tokens || 0);
+  return {
+    inputTokens,
+    outputTokens,
+    totalTokens: Number(usage.total_tokens || inputTokens + outputTokens || 0)
+  };
+}
+
+async function getStudyPackDocument(cacheKey) {
+  try {
+    const result = await dbAdapter.collection(STUDY_PACK_COLLECTION).doc(cacheKey).get();
+    return result && result.data ? result.data : null;
+  } catch (error) {
+    if (isMissingDocumentError(error)) return null;
+    throw error;
+  }
+}
+
 async function getCachedStudyPack(listeningId) {
   try {
+    const direct = await getStudyPackDocument(getStudyPackCacheKey(listeningId));
+    if (direct && direct.studyPack) return direct;
     const result = await dbAdapter.collection(STUDY_PACK_COLLECTION)
       .where({ listeningId })
       .orderBy('updatedAt', 'desc')
-      .limit(1)
+      .limit(10)
       .get();
-    const row = result && result.data && result.data[0];
-    return row && row.studyPack ? row.studyPack : null;
+    return (result && result.data || []).find((row) => row && row.studyPack) || null;
   } catch (error) {
     return null;
   }
 }
 
-async function saveStudyPack(listeningId, title, studyPack) {
-  try {
-    await dbAdapter.collection(STUDY_PACK_COLLECTION).add({
+async function acquireStudyPackJob(cacheKey, listeningId, title) {
+  const now = new Date().toISOString();
+  return dbAdapter.db.runTransaction(async (transaction) => {
+    const reference = transaction.collection(STUDY_PACK_COLLECTION).doc(cacheKey);
+    let current = null;
+    try {
+      const result = await reference.get();
+      current = result && result.data ? result.data : null;
+    } catch (error) {
+      if (!isMissingDocumentError(error)) throw error;
+    }
+    if (current && current.studyPack) return { state: 'ready', item: current };
+    const startedAt = Date.parse(current && current.generationStartedAt || '');
+    if (current && current.status === 'generating' && Number.isFinite(startedAt) && Date.now() - startedAt < STUDY_PACK_JOB_STALE_MS) {
+      return { state: 'generating' };
+    }
+    await reference.set({
       data: {
         listeningId,
         title,
-        studyPack,
-        source: studyPack.source || '',
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
+        status: 'generating',
+        generationStartedAt: now,
+        createdAt: current && current.createdAt || now,
+        updatedAt: now
+      }
+    });
+    return { state: 'acquired' };
+  });
+}
+
+async function saveStudyPack(cacheKey, listeningId, title, generated) {
+  try {
+    const now = new Date().toISOString();
+    await dbAdapter.collection(STUDY_PACK_COLLECTION).doc(cacheKey).set({
+      data: {
+        listeningId,
+        title,
+        studyPack: generated.studyPack,
+        source: generated.studyPack.source || '',
+        status: 'ready',
+        attemptedModels: generated.attemptedModels,
+        modelCallCount: generated.modelCallCount,
+        modelUsage: generated.modelUsage,
+        generationFinishedAt: now,
+        createdAt: generated.createdAt || now,
+        updatedAt: now
       }
     });
   } catch (error) {
     // Missing cache collection should not block the learner.
   }
+}
+
+async function markStudyPackJobFailed(cacheKey, error) {
+  try {
+    await dbAdapter.collection(STUDY_PACK_COLLECTION).doc(cacheKey).update({
+      data: {
+        status: 'failed',
+        lastError: String(error && error.message || error || 'unknown').slice(0, 500),
+        modelCallCount: Number(error && error.modelCallCount || 0),
+        attemptedModels: Array.isArray(error && error.attemptedModels) ? error.attemptedModels : [],
+        updatedAt: new Date().toISOString()
+      }
+    });
+  } catch (updateError) {}
 }
 
 async function buildStudyPackWithModel(item) {
@@ -160,7 +243,9 @@ async function buildStudyPackWithModel(item) {
     `标题：${item.title || ''}`,
     `听力文本：${item.transcript}`
   ].join('\n');
+  const attemptedModels = [];
   async function requestModel(model) {
+    attemptedModels.push(model);
     const response = await postJson(config.endpoint, config.apiKey, {
       model,
       messages: [
@@ -173,19 +258,33 @@ async function buildStudyPackWithModel(item) {
       source: `model:${model}`
     }));
     validateStudyPack(studyPack);
-    return studyPack;
+    return { studyPack, modelUsage: normalizeModelUsage(response) };
   }
   try {
-    return await requestModel(config.model);
+    const generated = await requestModel(config.model);
+    return Object.assign({}, generated, {
+      attemptedModels: attemptedModels.slice(),
+      modelCallCount: attemptedModels.length
+    });
   } catch (error) {
     if (config.fallbackModel && config.fallbackModel !== config.model) {
       try {
-        return await requestModel(config.fallbackModel);
+        const generated = await requestModel(config.fallbackModel);
+        return Object.assign({}, generated, {
+          attemptedModels: attemptedModels.slice(),
+          modelCallCount: attemptedModels.length
+        });
       } catch (fallbackError) {
-        throw new Error(`listening-study-model-failed:${error.message || String(error)};fallback:${fallbackError.message || String(fallbackError)}`);
+        const combined = new Error(`listening-study-model-failed:${error.message || String(error)};fallback:${fallbackError.message || String(fallbackError)}`);
+        combined.attemptedModels = attemptedModels.slice();
+        combined.modelCallCount = attemptedModels.length;
+        throw combined;
       }
     }
-    throw new Error(`listening-study-model-failed:${error.message || String(error)}`);
+    const failed = new Error(`listening-study-model-failed:${error.message || String(error)}`);
+    failed.attemptedModels = attemptedModels.slice();
+    failed.modelCallCount = attemptedModels.length;
+    throw failed;
   }
 }
 
@@ -198,10 +297,14 @@ async function getListeningStudyPack(event) {
   await study.prepareRequestContext(Object.assign({}, event, { action: 'getListeningStudyPack' }));
   const cached = await getCachedStudyPack(listeningId);
   if (cached) {
-    const studyPack = normalizeStudyPack(cached);
+    const studyPack = normalizeStudyPack(cached.studyPack);
     return {
       listeningId,
-      studyPack
+      studyPack,
+      cached: true,
+      generating: false,
+      modelCallCount: Number(cached.modelCallCount || 0),
+      modelUsage: cached.modelUsage || null
     };
   }
   if (payload.cacheOnly) {
@@ -211,12 +314,43 @@ async function getListeningStudyPack(event) {
     };
   }
   if (!transcript) throw new Error('listening-transcript-empty');
-  const studyPack = await buildStudyPackWithModel(Object.assign({}, item, { transcript }));
-  await saveStudyPack(listeningId, item.title || payload.title || '', studyPack);
-  return {
-    listeningId,
-    studyPack
-  };
+  const cacheKey = getStudyPackCacheKey(listeningId);
+  const title = item.title || payload.title || '';
+  const job = await acquireStudyPackJob(cacheKey, listeningId, title);
+  if (job.state === 'generating') {
+    return { listeningId, studyPack: null, cached: false, generating: true, retryAfterMs: 3000 };
+  }
+  if (job.state === 'ready' && job.item && job.item.studyPack) {
+    return {
+      listeningId,
+      studyPack: normalizeStudyPack(job.item.studyPack),
+      cached: true,
+      generating: false,
+      modelCallCount: Number(job.item.modelCallCount || 0),
+      modelUsage: job.item.modelUsage || null
+    };
+  }
+  try {
+    const generated = await buildStudyPackWithModel(Object.assign({}, item, { transcript }));
+    await saveStudyPack(cacheKey, listeningId, title, generated);
+    console.log('[listening-study] generated', JSON.stringify({
+      listeningId,
+      attemptedModels: generated.attemptedModels,
+      modelCallCount: generated.modelCallCount,
+      modelUsage: generated.modelUsage
+    }));
+    return {
+      listeningId,
+      studyPack: generated.studyPack,
+      cached: false,
+      generating: false,
+      modelCallCount: generated.modelCallCount,
+      modelUsage: generated.modelUsage
+    };
+  } catch (error) {
+    await markStudyPackJobFailed(cacheKey, error);
+    throw error;
+  }
 }
 
 module.exports = {

@@ -4,6 +4,34 @@ const completion = require('./completion.service');
 const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const CATALOG_BROWSE_CATEGORIES = ['song', 'littlebear', 'newconcept1', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'peppa', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 
+function normalizeGrammarCompletionQuestions(questions) {
+  return (Array.isArray(questions) ? questions : []).slice(0, 50).map((question, index) => {
+    const safeQuestion = question && typeof question === 'object' ? question : {};
+    const rawOptions = safeQuestion.options && typeof safeQuestion.options === 'object' ? safeQuestion.options : {};
+    const options = (Array.isArray(rawOptions) ? rawOptions : Object.keys(rawOptions).map((key) => ({ key, text: rawOptions[key] })))
+      .slice(0, 8)
+      .reduce((result, option) => {
+        const key = String(option && option.key || '').slice(0, 8);
+        if (key) result[key] = String(option && option.text || '').slice(0, 500);
+        return result;
+      }, {});
+    return {
+      _id: String(safeQuestion._id || safeQuestion.questionId || `grammar-question-${index + 1}`).slice(0, 200),
+      number: Math.max(1, Number(safeQuestion.number || index + 1)),
+      prompt: String(safeQuestion.prompt || safeQuestion.question || '').slice(0, 2000),
+      options,
+      selectedAnswer: String(safeQuestion.selectedAnswer || '').slice(0, 20),
+      firstAnswer: String(safeQuestion.firstAnswer || safeQuestion.selectedAnswer || '').slice(0, 20),
+      answer: String(safeQuestion.answer || '').slice(0, 20),
+      isCorrect: safeQuestion.isCorrect === true,
+      attempts: (Array.isArray(safeQuestion.attempts) ? safeQuestion.attempts : [])
+        .slice(-10)
+        .map((answer) => String(answer || '').slice(0, 20)),
+      analysis: String(safeQuestion.analysis || '').slice(0, 2000)
+    };
+  });
+}
+
 function normalizeTaskSnapshot(snapshot, payload) {
   if (!snapshot || typeof snapshot !== 'object') {
     return null;
@@ -519,6 +547,7 @@ async function completeGrammarPlanTask(event) {
   const narrationListenedSec = Math.max(0, Number(payload.narrationListenedSec || 0));
   const correctQuestionCount = Math.max(0, Number(payload.correctQuestionCount || 0));
   const totalQuestionCount = Math.max(0, Number(payload.totalQuestionCount || 0));
+  const completedQuestions = normalizeGrammarCompletionQuestions(payload.questions);
   if (!narrationDuration || narrationListenedSec < narrationDuration * 0.95) {
     throw new Error('grammar-plan-audio-below-95-percent');
   }
@@ -575,6 +604,7 @@ async function completeGrammarPlanTask(event) {
       answeredCount: totalQuestionCount,
       narrationDuration,
       narrationListenedSec,
+      questions: completedQuestions,
       status: 'completed'
     }
   });

@@ -82,8 +82,8 @@
         <view class="audio-section-title">{{texts.textStudy}}</view>
         <view class="audio-section-copy">{{lessonStudyPack ? texts.packReady : (lessonStudyCompleted ? texts.packSync : texts.packHint)}}</view>
       </view>
-      <button class="audio-paper-action" wx:if="{{lessonStudyPack}}" bindtap="toggleLessonStudyPack">{{lessonStudyExpanded ? '收起' : '展开'}}</button>
-      <button class="audio-paper-action" wx:else loading="{{lessonStudyLoading}}" disabled="{{lessonStudyLoading}}" bindtap="loadLessonStudyPack">生成</button>
+      <button class="audio-paper-action" wx:if="{{lessonStudyPack}}" bindtap="toggleLessonStudyPack">{{lessonStudyExpanded ? texts.collapse : texts.expand}}</button>
+      <button class="audio-paper-action" wx:else loading="{{lessonStudyLoading}}" disabled="{{lessonStudyLoading}}" bindtap="loadLessonStudyPack">{{texts.generate}}</button>
     </view>
     <view class="audio-study-error" wx:if="{{lessonStudyError}}">{{lessonStudyError}}</view>
     <view class="audio-study-tabs" wx:if="{{lessonStudyPack && lessonStudyExpanded}}">
@@ -97,9 +97,9 @@
             <text class="audio-study-phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
           </view>
           <view class="audio-study-actions has-three">
-            <view class="audio-mini-action is-speak {{speakingWord === ('word:' + item.word) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}" data-type="word" data-text="{{item.word}}" catchtap="speakLessonStudyAudio"><text>{{speakingWord === ('word:' + item.word) ? '播放' : '发音'}}</text></view>
-            <view class="audio-mini-action is-lookup" data-word="{{item.word}}" catchtap="lookupLessonStudyWord"><text>查词</text></view>
-            <view class="audio-mini-action is-add {{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.word] ? 'is-added' : ''}}" data-key="{{item.flashcardKey}}" data-type="word" data-text="{{item.word}}" catchtap="addLessonStudyWordToLibrary"><text>{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.word] ? '已加入' : '加入'}}</text></view>
+            <view class="audio-mini-action is-speak {{speakingWord === ('word:' + item.word) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}" data-type="word" data-text="{{item.word}}" catchtap="speakLessonStudyAudio"><text>{{speakingWord === ('word:' + item.word) ? texts.play : texts.speak}}</text></view>
+            <view class="audio-mini-action is-lookup" data-word="{{item.word}}" catchtap="lookupLessonStudyWord"><text>{{texts.lookup}}</text></view>
+            <view class="audio-mini-action is-add {{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.word] ? 'is-added' : ''}}" data-key="{{item.flashcardKey}}" data-type="word" data-text="{{item.word}}" catchtap="addLessonStudyWordToLibrary"><text>{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.word] ? texts.added : texts.add}}</text></view>
           </view>
         </view>
         <view class="audio-study-meaning">{{item.meaning}}</view>
@@ -114,8 +114,8 @@
             <view class="audio-study-title"><text class="audio-study-index">{{item.groupIndex}}</text><text>{{item.text}}</text></view>
           </view>
           <view class="audio-study-actions has-two">
-            <view class="audio-mini-action is-speak {{speakingWord === ('phrase:' + item.text) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}" data-type="phrase" data-text="{{item.text}}" catchtap="speakLessonStudyAudio"><text>{{speakingWord === ('phrase:' + item.text) ? '播放' : '发音'}}</text></view>
-            <view class="audio-mini-action is-add {{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.text] ? 'is-added' : ''}}" data-key="{{item.flashcardKey}}" data-type="phrase" data-text="{{item.text}}" catchtap="addLessonStudyWordToLibrary"><text>{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.text] ? '已加入' : '加入'}}</text></view>
+            <view class="audio-mini-action is-speak {{speakingWord === ('phrase:' + item.text) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}" data-type="phrase" data-text="{{item.text}}" catchtap="speakLessonStudyAudio"><text>{{speakingWord === ('phrase:' + item.text) ? texts.play : texts.speak}}</text></view>
+            <view class="audio-mini-action is-add {{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.text] ? 'is-added' : ''}}" data-key="{{item.flashcardKey}}" data-type="phrase" data-text="{{item.text}}" catchtap="addLessonStudyWordToLibrary"><text>{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.text] ? texts.added : texts.add}}</text></view>
           </view>
         </view>
         <view class="audio-study-meaning">{{item.meaning}}</view>
@@ -127,7 +127,7 @@
         <view class="audio-study-item-head">
           <view class="audio-study-title"><text class="audio-study-index">{{item.groupIndex}}</text><text>{{item.pattern}}</text></view>
           <view class="audio-study-actions is-single">
-            <view class="audio-mini-action is-add {{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.pattern] ? 'is-added' : ''}}" data-key="{{item.flashcardKey}}" data-type="pattern" data-text="{{item.pattern}}" catchtap="addLessonStudyWordToLibrary"><text>{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.pattern] ? '已加入' : '加入'}}</text></view>
+            <view class="audio-mini-action is-add {{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.pattern] ? 'is-added' : ''}}" data-key="{{item.flashcardKey}}" data-type="pattern" data-text="{{item.pattern}}" catchtap="addLessonStudyWordToLibrary"><text>{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.pattern] ? texts.added : texts.add}}</text></view>
           </view>
         </view>
         <view class="audio-study-meaning">{{item.meaning}}</view>
@@ -141,7 +141,7 @@
   <view class="audio-transcript-tape" wx:if="{{transcriptExpanded}}">
     <view class="audio-section-head">
       <view><view class="audio-section-title">{{texts.transcript}}</view></view>
-      <button class="audio-paper-action" bindtap="toggleTranscript">收起</button>
+      <button class="audio-paper-action" bindtap="toggleTranscript">{{texts.collapse}}</button>
     </view>
     <view class="audio-tape-lines" wx:if="{{transcriptLines.length}}">
       <view class="audio-tape-line is-side {{prevLine ? 'is-ready' : 'is-empty'}}" wx:if="{{prevLine}}" data-index="{{activeLineIndex - 1}}" bindtap="seekToLine">{{prevLine.text}}</view>
@@ -164,7 +164,7 @@
   <view class="audio-transcript-tape" wx:else>
     <view class="audio-tape-empty">
       <view>{{texts.transcriptHidden}}</view>
-      <button class="audio-switch" bindtap="toggleTranscript">展开文本</button>
+      <button class="audio-switch" bindtap="toggleTranscript">{{texts.expandTranscript}}</button>
     </view>
   </view>
 
@@ -431,7 +431,7 @@
       <view>
         <view class="section-title type-section-title">{{texts.transcript}}</view>
       </view>
-      <button class="pill transcript-pill" bindtap="toggleTranscript">收起</button>
+      <button class="pill transcript-pill" bindtap="toggleTranscript">{{texts.collapse}}</button>
     </view>
 
     <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
@@ -493,7 +493,7 @@
   <view class="section-panel transcript-card" wx:else>
     <view class="transcript-empty">
       <view class="transcript-empty-title">{{texts.transcriptHidden}}</view>
-      <button class="player-action record-action" bindtap="toggleTranscript">展开文本</button>
+      <button class="player-action record-action" bindtap="toggleTranscript">{{texts.expandTranscript}}</button>
     </view>
   </view>
 

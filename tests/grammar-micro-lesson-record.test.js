@@ -63,30 +63,55 @@ test('词法微课完成后先写学习记录再生成日报', async () => {
         narrationDuration: 100,
         narrationListenedSec: 96,
         correctQuestionCount: 3,
-        totalQuestionCount: 3
+        totalQuestionCount: 3,
+        questions: [{
+          _id: 'grammar-noun-1:1',
+          number: 1,
+          prompt: '哪个词是名词？',
+          options: { A: 'book', B: 'quickly' },
+          selectedAnswer: 'A',
+          firstAnswer: 'B',
+          attempts: ['B', 'A'],
+          answer: 'A',
+          isCorrect: true,
+          analysis: 'book 给事物命名。'
+        }]
       }
     });
     assert.ok(calls.indexOf('completion') < calls.indexOf('report'));
     assert.equal(completionPayload.section, 'micro-lesson');
     assert.equal(completionPayload.progressText, '完成 1 节微课 · 答对 3/3 题 · 讲解收听完成');
     assert.equal(completionPayload.latestAttempt.status, 'completed');
+    assert.equal(completionPayload.latestAttempt.questions.length, 1);
+    assert.equal(completionPayload.latestAttempt.questions[0].firstAnswer, 'B');
+    assert.deepEqual(completionPayload.latestAttempt.questions[0].attempts, ['B', 'A']);
   } finally {
     Object.keys(methods).forEach((key) => { study[key] = originals[key]; });
     completion.upsertStudyCompletion = originalCompletion;
   }
 });
 
-test('固定计划和记录页按课程口径展示词法微课', () => {
+test('固定计划和统一日报详情按课程口径展示词法微课', () => {
   const dashboard = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/lib/dashboard-engine.js'), 'utf8');
   const levelStage = fs.readFileSync(path.join(root, 'pages/level-stage/index.js'), 'utf8');
   const record = fs.readFileSync(path.join(root, 'pages/record/index.js'), 'utf8');
+  const classroom = fs.readFileSync(path.join(root, 'grammar-package/pages/classroom/index.js'), 'utf8');
+  const classroomTemplate = fs.readFileSync(path.join(root, 'grammar-package/pages/classroom/index.wxml'), 'utf8');
+  const practiceHistory = fs.readFileSync(path.join(root, 'pages/practice-history/index.js'), 'utf8');
+  const practiceTemplate = fs.readFileSync(path.join(root, 'pages/practice-history/index.wxml'), 'utf8');
   const parentDetail = fs.readFileSync(path.join(root, 'pages/parent/detail/index.js'), 'utf8');
   const parentTemplate = fs.readFileSync(path.join(root, 'pages/parent/detail/index.wxml'), 'utf8');
   assert.match(dashboard, /task\.category === 'grammar'[\s\S]*?return '课程'/);
   assert.match(dashboard, /task\.category === 'grammar'[\s\S]*?`\$\{task\.playCount \|\| 0\}\/1 节`/);
   assert.match(levelStage, /task\.category === 'grammar'[\s\S]*?return t\('course'\)/);
-  assert.match(record, /grammarMicroLessonTaskIds[\s\S]*?item\.category === 'grammar'/);
-  assert.match(record, /item\.isStudyCompletion && item\.type === 'grammar'/);
+  assert.match(record, /dailyReportRoute\.buildDailyReportDetailUrl\(date\)/);
+  assert.match(classroom, /store\.getStudyCompletionDetail\(this\.reviewRecordId\)/);
+  assert.match(classroom, /questions: this\.buildCompletedQuestionResults\(\)/);
+  assert.match(classroom, /this\.reviewMode \|\| this\.previewMode/);
+  assert.match(classroomTemplate, /wx:for="\{\{reviewQuestions\}\}"/);
+  assert.match(practiceHistory, /detailReady: questions\.length > 0/);
+  assert.match(practiceTemplate, /item\.detailQuestions && item\.detailQuestions\.length/);
   assert.match(parentDetail, /isGrammarMicroLesson[\s\S]*?grammarMicroLessonTaskIds/);
-  assert.equal((parentTemplate.match(/!item\.isVocabulary && !item\.isGrammarMicroLesson/g) || []).length, 2);
+  assert.match(parentDetail, /current && current\.isGrammarMicroLesson[\s\S]*?buildGrammarClassroomUrl\(current, \{ review: true \}\)/);
+  assert.equal((parentTemplate.match(/!item\.isVocabulary/g) || []).length, 2);
 });

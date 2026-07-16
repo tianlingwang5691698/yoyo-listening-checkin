@@ -87,7 +87,7 @@ function normalizeGrammar(item, index) {
       : `${correctCount}/${questions.length || Number(attempt.answeredCount || 0)}${text('questionSuffix', ' 题')}`,
     attempt,
     isMicroLesson,
-    detailReady: isMicroLesson || questions.length > 0,
+    detailReady: questions.length > 0,
     detailLoading: false,
     detailQuestions: buildGrammarDetailQuestions(questions, item)
   };

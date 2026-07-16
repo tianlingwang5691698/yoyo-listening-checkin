@@ -111,7 +111,7 @@ module.exports = {
     'zh-CN': {
       navTitle: '日报详情', observationDaily: '家庭观察日报', detailTitle: '日报详情', envelope: '信封', actionSummary: '今天留下了 {count} 个学习动作，累计 {minutes} 分钟。',
       completedItems: '完成 {count} 项', plannedItems: '计划 {count} 项', learningMinutes: '{count} 分钟', studyRhythm: '学习节奏', taskCount: '{count} 个任务',
-      actionCountJoin: '个学习动作，累计', minuteUnit: '分钟。', plannedLabel: '计划', learningMinutesLabel: '学习分钟', taskUnit: '个任务', listenLabel: '听读', scoredLabel: '已评分',
+      actionCountJoin: '个学习动作，累计', minuteUnit: '分钟。', plannedLabel: '记录', learningMinutesLabel: '学习分钟', taskUnit: '个任务', listenLabel: '听读', scoredLabel: '已评分',
       completed: '完成', pending: '待完成', listenRepeat: '听读 {count} / {target} 遍', noCompletionTime: '还没有完成时间记录', noDayRecord: '这一天还没有记录。',
       voiceArchive: '声音档案', scoredCount: '{count} / {total} 已评分', averageScore: '平均分', latestScore: '最近得分', recordingPrefix: '录音 ',
       playRecording: '播放录音', pauseRecording: '暂停录音', resumePlaying: '继续播放', noRecording: '这一天还没有录音。',
@@ -124,12 +124,12 @@ module.exports = {
       pronunciationContent: '发音 {pronunciation} · 内容 {content}', listening: '听力', reading: '阅读', grammar: '语法', writing: '写作', vocabulary: '词汇', complete: '完成', listeningCourse: '听力课程', completionRecord: '完成记录',
       viewStudyPack: '查看学习包', viewOriginalAnalysis: '查看原题和分析', score: '{score} 分', scoreFraction: '{score}/{total} 分', questionCount: '{correct}/{total} 题',
       memorization: '背诵', dictation: '听写', studyPack: '学习包', dailyReview: '日常复习', memorizationProgress: '复习 {reviewed} 词 · 不熟 {unfamiliar} 词', dictationProgress: '正确 {correct}/{total} · 错词 {wrong}',
-      recordingPlaybackFailed: '录音播放失败', recordLoadFailed: '记录加载失败', taskLocationMissing: '学习包缺少任务定位', recordingUnavailable: '录音暂不可播放', recordingLoadFailed: '录音加载失败'
+      recordingPlaybackFailed: '录音播放失败', recordLoadFailed: '记录加载失败', taskLocationMissing: '学习包缺少任务定位', recordingUnavailable: '录音暂不可播放', recordingLoadFailed: '录音加载失败', viewOriginalGrammar: '查看原词法课堂', viewOriginalListening: '查看原听力课程'
     },
     en: {
       navTitle: 'Daily Report Details', observationDaily: 'Family daily report', detailTitle: 'Report details', envelope: 'Report', actionSummary: '{count} learning activities today, {minutes} minutes in total.',
       completedItems: '{count} completed', plannedItems: '{count} planned', learningMinutes: '{count} min', studyRhythm: 'Learning rhythm', taskCount: '{count} tasks',
-      actionCountJoin: 'learning activities,', minuteUnit: 'minutes total.', plannedLabel: 'Planned', learningMinutesLabel: 'Minutes', taskUnit: 'tasks', listenLabel: 'Listened', scoredLabel: 'scored',
+      actionCountJoin: 'learning activities,', minuteUnit: 'minutes total.', plannedLabel: 'Records', learningMinutesLabel: 'Minutes', taskUnit: 'tasks', listenLabel: 'Listened', scoredLabel: 'scored',
       completed: 'Completed', pending: 'Pending', listenRepeat: 'Listened {count} / {target} times', noCompletionTime: 'No completion time recorded', noDayRecord: 'No record for this day.',
       voiceArchive: 'Voice records', scoredCount: '{count} / {total} scored', averageScore: 'Average score', latestScore: 'Latest score', recordingPrefix: 'Recording ',
       playRecording: 'Play recording', pauseRecording: 'Pause recording', resumePlaying: 'Resume', noRecording: 'No recording for this day.',
@@ -142,7 +142,7 @@ module.exports = {
       pronunciationContent: 'Pronunciation {pronunciation} · Content {content}', listening: 'Listening', reading: 'Reading', grammar: 'Grammar', writing: 'Writing', vocabulary: 'Vocabulary', complete: 'Completed', listeningCourse: 'Listening lesson', completionRecord: 'Completion record',
       viewStudyPack: 'View study pack', viewOriginalAnalysis: 'View question and analysis', score: '{score} points', scoreFraction: '{score}/{total} points', questionCount: '{correct}/{total} questions',
       memorization: 'Review', dictation: 'Dictation', studyPack: 'Study pack', dailyReview: 'Daily review', memorizationProgress: 'Reviewed {reviewed} words · Unfamiliar {unfamiliar}', dictationProgress: 'Correct {correct}/{total} · Wrong {wrong}',
-      recordingPlaybackFailed: 'Could not play recording', recordLoadFailed: 'Could not load record', taskLocationMissing: 'Task reference is missing', recordingUnavailable: 'Recording is temporarily unavailable', recordingLoadFailed: 'Could not load recording'
+      recordingPlaybackFailed: 'Could not play recording', recordLoadFailed: 'Could not load record', taskLocationMissing: 'Task reference is missing', recordingUnavailable: 'Recording is temporarily unavailable', recordingLoadFailed: 'Could not load recording', viewOriginalGrammar: 'View original grammar lesson', viewOriginalListening: 'View original listening lesson'
     }
   },
   record: {
