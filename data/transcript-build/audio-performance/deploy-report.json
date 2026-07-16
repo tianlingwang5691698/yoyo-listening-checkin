@@ -1,0 +1,24 @@
+{
+  "mode": "applied",
+  "statusAfter": "Active",
+  "modifiedAfter": "2026-07-16 02:14:16",
+  "files": [
+    "data/static-catalog-manifests.json",
+    "data/unlock-series-manifests.json",
+    "lib/catalog-engine.js"
+  ],
+  "requests": [
+    {
+      "file": "data/static-catalog-manifests.json",
+      "requestId": "50367ceb-90e5-4ebb-a83e-a2fef6f9b081"
+    },
+    {
+      "file": "data/unlock-series-manifests.json",
+      "requestId": "bba01480-4621-4fbc-9055-86991398cbbb"
+    },
+    {
+      "file": "lib/catalog-engine.js",
+      "requestId": "873813fe-a104-41b8-b0cd-fa63987ed763"
+    }
+  ]
+}

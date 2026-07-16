@@ -10,6 +10,7 @@ const i18n = require('../../utils/i18n');
 const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../utils/dictionary-voice');
 const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-player');
 const { getTaskAudioDisplayTitle } = require('../../utils/audio-title');
+const segmentedAudio = require('../../utils/segmented-audio');
 const {
   addEffectiveListeningSeconds,
   getRequiredListeningSeconds,
@@ -161,6 +162,7 @@ function hasTaskAudioSource(task) {
     || task.audioUrl
     || task.audioCloudPath
     || task.audioFileId
+    || (Array.isArray(task.audioSegments) && task.audioSegments.length)
   ));
 }
 
@@ -634,6 +636,228 @@ Page({
     this.prefetchTaskAudio(normalizedTask);
   },
   noop() {},
+  getTaskAudioSegments(task) {
+    return segmentedAudio.normalizeAudioSegments((task || this.data.task || {}).audioSegments);
+  },
+  resetAudioSegmentState(task, firstUrl) {
+    const segments = this.getTaskAudioSegments(task);
+    const taskKey = `${(task && task.category) || ''}:${(task && task.taskId) || ''}:${(task && task.audioSegmentVersion) || ''}:${segments.length}`;
+    if (this.audioSegmentTaskKey === taskKey && this.audioSegments.length === segments.length) {
+      if (this.audioSegments[0] && firstUrl) {
+        this.audioSegmentUrlCache[0] = normalizePlayableUrl(firstUrl);
+        this.audioSegmentSourceMap[0] = (task && task.audioSource) || this.audioSegmentSourceMap[0] || 'segment-temp-url';
+      }
+      return;
+    }
+    this.audioSegmentTaskKey = taskKey;
+    this.audioSegments = segments;
+    this.audioSegmentIndex = 0;
+    this.audioSegmentUrlCache = {};
+    this.audioSegmentLocalCache = {};
+    this.audioSegmentDownloadPromises = {};
+    this.audioSegmentTempRetryMap = {};
+    this.audioSegmentSourceMap = {};
+    this.audioSegmentSwitching = false;
+    this.audioSegmentSuppressStopCount = 0;
+    this.audioSegmentInternalSwitch = false;
+    this.audioSegmentPendingLocalSeek = null;
+    this.audioSegmentFallbackActive = false;
+    if (this.audioSegments[0] && firstUrl) {
+      this.audioSegmentUrlCache[0] = normalizePlayableUrl(firstUrl);
+      this.audioSegmentSourceMap[0] = (task && task.audioSource) || 'segment-temp-url';
+    }
+  },
+  hasActiveAudioSegments() {
+    return this.audioSegments.length > 0 && !this.audioSegmentFallbackActive;
+  },
+  getCurrentAudioPositionSeconds() {
+    const localPosition = Number((this.innerAudioContext && this.innerAudioContext.currentTime) || 0);
+    return this.hasActiveAudioSegments()
+      ? segmentedAudio.getSegmentGlobalTime(this.audioSegments, this.audioSegmentIndex, localPosition)
+      : localPosition;
+  },
+  async resolveAudioSegmentUrl(index) {
+    const segment = this.audioSegments[index];
+    if (!segment) return '';
+    if (this.audioSegmentUrlCache[index]) return this.audioSegmentUrlCache[index];
+    const fileId = segment.audioFileId || buildCloudFileId(segment.audioCloudPath);
+    let url = '';
+    if (fileId) {
+      try {
+        url = await store.getTempFileURL(fileId);
+      } catch (error) {
+        monitor.logError('lesson', 'resolveAudioSegmentUrl', error, {
+          taskId: this.taskId,
+          segment: index
+        });
+      }
+    }
+    if (url) {
+      this.audioSegmentSourceMap[index] = 'segment-temp-url';
+    } else {
+      url = segment.audioUrl || buildCloudAssetUrl(segment.audioCloudPath);
+      if (url) this.audioSegmentSourceMap[index] = 'segment-static-url';
+    }
+    url = normalizePlayableUrl(url);
+    if (url) this.audioSegmentUrlCache[index] = url;
+    return url;
+  },
+  async retryAudioSegmentWithTemp(positionSec) {
+    if (!this.hasActiveAudioSegments() || this.audioSegmentTempRetryMap[this.audioSegmentIndex]) return false;
+    const segment = this.audioSegments[this.audioSegmentIndex];
+    const fileId = segment && (segment.audioFileId || buildCloudFileId(segment.audioCloudPath));
+    if (!fileId) return false;
+    this.audioSegmentTempRetryMap[this.audioSegmentIndex] = true;
+    let tempUrl = '';
+    try {
+      tempUrl = await store.getTempFileURL(fileId);
+    } catch (error) {
+      monitor.logError('lesson', 'retryAudioSegmentWithTemp', error, {
+        taskId: this.taskId,
+        segment: this.audioSegmentIndex
+      });
+    }
+    if (!tempUrl) return false;
+    this.audioSegmentUrlCache[this.audioSegmentIndex] = normalizePlayableUrl(tempUrl);
+    this.audioSegmentSourceMap[this.audioSegmentIndex] = 'segment-temp-url';
+    delete this.audioSegmentLocalCache[this.audioSegmentIndex];
+    return this.switchToAudioSegment(this.audioSegmentIndex, positionSec, { play: true });
+  },
+  async prepareAudioSegment(index) {
+    if (this.audioSegmentLocalCache[index]) return this.audioSegmentLocalCache[index];
+    if (this.audioSegmentDownloadPromises[index]) return this.audioSegmentDownloadPromises[index];
+    const request = this.resolveAudioSegmentUrl(index)
+      .then((url) => (url ? this.downloadAudio(url).catch(() => url) : ''))
+      .then((playableUrl) => {
+        if (playableUrl) this.audioSegmentLocalCache[index] = playableUrl;
+        return playableUrl;
+      })
+      .finally(() => {
+        delete this.audioSegmentDownloadPromises[index];
+      });
+    this.audioSegmentDownloadPromises[index] = request;
+    return request;
+  },
+  prepareNextAudioSegment() {
+    if (!this.hasActiveAudioSegments()) return;
+    const nextIndex = this.audioSegmentIndex + 1;
+    if (nextIndex >= this.audioSegments.length) return;
+    this.prepareAudioSegment(nextIndex).catch((error) => {
+      monitor.logError('lesson', 'prepareNextAudioSegment', error, {
+        taskId: this.taskId,
+        segment: nextIndex
+      });
+    });
+  },
+  async switchToAudioSegment(index, globalPositionSec, options = {}) {
+    if (!this.innerAudioContext || !this.audioSegments[index]) return false;
+    const playableUrl = this.audioSegmentLocalCache[index]
+      || (this.audioSegmentDownloadPromises[index] ? await this.audioSegmentDownloadPromises[index] : '')
+      || await this.resolveAudioSegmentUrl(index);
+    if (!playableUrl) return false;
+    const localPosition = segmentedAudio.getSegmentLocalTime(this.audioSegments, index, globalPositionSec);
+    this.audioSegmentSwitching = true;
+    this.audioSegmentInternalSwitch = true;
+    this.audioSegmentPendingLocalSeek = localPosition;
+    this.audioSegmentIndex = index;
+    this.pendingAutoPlay = !!options.play;
+    if (!options.skipStop) {
+      this.audioSegmentSuppressStopCount += 1;
+      this.innerAudioContext.stop();
+    }
+    this.innerAudioContext.src = playableUrl;
+    this.innerAudioContext.playbackRate = this.data.playbackRate || 1;
+    this.setData({
+      audioReady: false,
+      audioResolving: true,
+      audioError: '',
+      audioErrorText: '',
+      audioErrorDetail: '',
+      audioPlaybackMode: this.audioSegmentSourceMap[index] || 'segment-temp-url'
+    });
+    return true;
+  },
+  async seekAudioTo(globalPositionSec, options = {}) {
+    if (!this.innerAudioContext) return false;
+    const positionSec = Math.max(0, Number(globalPositionSec || 0));
+    if (!this.hasActiveAudioSegments()) {
+      this.innerAudioContext.seek(positionSec);
+      if (options.play) this.innerAudioContext.play();
+      return true;
+    }
+    const segmentIndex = segmentedAudio.getSegmentIndexAtTime(this.audioSegments, positionSec);
+    if (segmentIndex === this.audioSegmentIndex) {
+      const localPosition = segmentedAudio.getSegmentLocalTime(this.audioSegments, segmentIndex, positionSec);
+      this.innerAudioContext.seek(localPosition);
+      if (options.play) this.innerAudioContext.play();
+      return true;
+    }
+    return this.switchToAudioSegment(segmentIndex, positionSec, options);
+  },
+  async handleSegmentedAudioEnded() {
+    if (!this.hasActiveAudioSegments()) return false;
+    const nextIndex = this.audioSegmentIndex + 1;
+    if (nextIndex >= this.audioSegments.length) return false;
+    const nextPosition = this.audioSegments[nextIndex].startSec;
+    const durationSeconds = this.getAudioDurationSeconds();
+    this.trackEffectiveListening(nextPosition, durationSeconds);
+    this.updateTranscriptByTime(Math.floor(nextPosition * 1000));
+    const switched = await this.switchToAudioSegment(nextIndex, nextPosition, { play: true, skipStop: true });
+    if (!switched) {
+      await this.fallbackSegmentedAudio('segment-switch-failed', nextPosition);
+    }
+    return true;
+  },
+  async fallbackSegmentedAudio(reason, positionSec) {
+    if (!this.innerAudioContext || this.audioSegmentFallbackActive) return false;
+    const task = this.data.task || {};
+    const fallbackUrl = normalizePlayableUrl(task.fullAudioUrl || buildCloudAssetUrl(task.audioCloudPath));
+    if (!fallbackUrl) return false;
+    const targetPosition = Math.max(0, Number(positionSec === undefined ? this.getCurrentAudioPositionSeconds() : positionSec));
+    this.audioSegmentFallbackActive = true;
+    this.audioSegmentSwitching = true;
+    this.audioSegmentSuppressStopCount += 1;
+    this.audioSegmentInternalSwitch = true;
+    this.audioSegmentPendingLocalSeek = targetPosition;
+    this.pendingAutoPlay = true;
+    this.innerAudioContext.stop();
+    this.innerAudioContext.src = fallbackUrl;
+    this.innerAudioContext.playbackRate = this.data.playbackRate || 1;
+    this.setData({
+      audioReady: false,
+      audioResolving: true,
+      audioPlaybackMode: 'static-fallback',
+      audioError: reason || 'segment-fallback',
+      audioErrorText: '',
+      audioErrorDetail: ''
+    });
+    return true;
+  },
+  handleAudioPlaybackError(error) {
+    this.stopPreciseTranscriptSync();
+    this.cancelAudioSeekConfirmation();
+    this.audioProgressDragging = false;
+    this.pendingAudioSeekSeconds = 0;
+    this.saveListeningResumeCheckpoint({ force: true });
+    this.pendingAutoPlay = false;
+    this.continuousPlaybackActive = false;
+    this.setData({
+      isPlaying: false,
+      audioReady: false,
+      audioResolving: false,
+      audioError: 'playback-error',
+      audioErrorText: '',
+      audioErrorDetail: `${(error && error.errCode) || ''}`.trim(),
+      audioPlaybackMode: 'error'
+    });
+    this.scheduleAudioErrorText('playback-error');
+    if (this.audioPlayRequested) {
+      wx.showToast({
+        title: text('cloudAudioFailed', '云端音频加载失败'),
+        icon: 'none'
+      });
+    }
+  },
   isStudyWriteAllowed() {
     return isLessonTrainingMode(this.data.currentMember, this.planRunType, this.data.studyWriteAllowed);
   },
@@ -716,6 +940,19 @@ Page({
     this.songAudioDownloadKey = '';
     this.songAudioDownloadPromise = null;
     this.songAudioLocalPath = '';
+    this.audioSegments = [];
+    this.audioSegmentTaskKey = '';
+    this.audioSegmentIndex = 0;
+    this.audioSegmentUrlCache = {};
+    this.audioSegmentLocalCache = {};
+    this.audioSegmentDownloadPromises = {};
+    this.audioSegmentTempRetryMap = {};
+    this.audioSegmentSourceMap = {};
+    this.audioSegmentSwitching = false;
+    this.audioSegmentSuppressStopCount = 0;
+    this.audioSegmentInternalSwitch = false;
+    this.audioSegmentPendingLocalSeek = null;
+    this.audioSegmentFallbackActive = false;
     this.checkinConfirmShowing = false;
     this.audioPlayRequested = false;
     this.pendingSpeakingAfterListen = null;
@@ -793,9 +1030,19 @@ Page({
       wx.showToast({ title: text('playbackFailed', '录音播放失败'), icon: 'none' });
     });
     this.innerAudioContext.onCanplay(() => {
+      this.clearAudioErrorTimer();
       const durationFromContext = Number(this.innerAudioContext.duration || 0);
       const taskDuration = (this.data.currentAudio && this.data.currentAudio.durationSec)
         || ((this.data.task && this.data.task.durationSec) || 0);
+      const displayDuration = this.hasActiveAudioSegments() ? taskDuration : (durationFromContext || taskDuration);
+      const internalSegmentSwitch = this.audioSegmentInternalSwitch;
+      const pendingLocalSeek = this.audioSegmentPendingLocalSeek;
+      this.audioSegmentPendingLocalSeek = null;
+      this.audioSegmentSwitching = false;
+      this.audioSegmentInternalSwitch = false;
+      if (pendingLocalSeek !== null && pendingLocalSeek !== undefined && Number(pendingLocalSeek) > 0.01) {
+        this.innerAudioContext.seek(Math.max(0, Number(pendingLocalSeek)));
+      }
       this.setData({
         audioReady: true,
         audioResolving: false,
@@ -803,24 +1050,26 @@ Page({
         audioErrorText: '',
         audioErrorDetail: '',
         audioPlaybackMode: 'ready',
-        durationLabel: this.formatTime(Math.floor(durationFromContext || taskDuration))
+        durationLabel: this.formatTime(Math.floor(displayDuration))
       }, () => {
         setTimeout(() => {
           if (!this.innerAudioContext) return;
           this.markLessonRoute('audioCanplay', {
-            duration: Math.floor(durationFromContext || taskDuration || 0)
+            duration: Math.floor(displayDuration || 0),
+            segment: this.hasActiveAudioSegments() ? this.audioSegmentIndex : -1
           });
-          this.restoreListeningResumeCheckpoint();
+          if (!internalSegmentSwitch) this.restoreListeningResumeCheckpoint();
           if (this.pendingAutoPlay) {
             this.pendingAutoPlay = false;
             this.audioPlayRequested = true;
             this.innerAudioContext.play();
           }
+          this.prepareNextAudioSegment();
         }, 0);
       });
     });
     this.innerAudioContext.onTimeUpdate(() => {
-      const currentSeconds = this.innerAudioContext.currentTime || 0;
+      const currentSeconds = this.getCurrentAudioPositionSeconds();
       const durationSeconds = (this.data.currentAudio && this.data.currentAudio.durationSec)
         || ((this.data.task && this.data.task.durationSec) || 0);
       this.trackEffectiveListening(currentSeconds, durationSeconds);
@@ -841,12 +1090,12 @@ Page({
           this.confirmAudioProgressSeek();
           return;
         }
-        const currentSeconds = Number(this.innerAudioContext.currentTime || 0);
+        const currentSeconds = this.getCurrentAudioPositionSeconds();
         this.finalizeAudioProgressSeek(currentSeconds);
       });
     }
     this.innerAudioContext.onPlay(() => {
-      this.resetEffectiveListeningTracker(this.innerAudioContext.currentTime || 0);
+      this.resetEffectiveListeningTracker(this.getCurrentAudioPositionSeconds());
       this.setData({
         isPlaying: true,
         audioReady: true,
@@ -857,16 +1106,21 @@ Page({
         audioPlaybackMode: this.data.audioPlaybackMode === 'resolving' ? 'ready' : this.data.audioPlaybackMode
       });
       this.startPreciseTranscriptSync();
+      this.prepareNextAudioSegment();
       this.markLessonRoute('audioPlay');
     });
     this.innerAudioContext.onPause(() => {
       this.stopPreciseTranscriptSync();
       this.saveListeningResumeCheckpoint({ force: true });
-      this.resetEffectiveListeningTracker(this.innerAudioContext.currentTime || 0, false);
+      this.resetEffectiveListeningTracker(this.getCurrentAudioPositionSeconds(), false);
       this.continuousPlaybackActive = false;
       this.setData({ isPlaying: false });
     });
     this.innerAudioContext.onStop(() => {
+      if (this.audioSegmentSuppressStopCount > 0) {
+        this.audioSegmentSuppressStopCount -= 1;
+        return;
+      }
       this.stopPreciseTranscriptSync();
       this.cancelAudioSeekConfirmation();
       this.audioProgressDragging = false;
@@ -885,13 +1139,14 @@ Page({
         currentAudio: null
       });
     });
-    this.innerAudioContext.onEnded(() => {
+    this.innerAudioContext.onEnded(async () => {
+      if (await this.handleSegmentedAudioEnded()) return;
       this.stopPreciseTranscriptSync();
       this.cancelAudioSeekConfirmation();
       this.audioProgressDragging = false;
       this.pendingAudioSeekSeconds = 0;
       const durationSeconds = this.getAudioDurationSeconds();
-      this.trackEffectiveListening(durationSeconds || this.innerAudioContext.currentTime || 0, durationSeconds);
+      this.trackEffectiveListening(durationSeconds || this.getCurrentAudioPositionSeconds(), durationSeconds);
       this.setData({
         isPlaying: false,
         currentTimeMs: 0,
@@ -902,29 +1157,16 @@ Page({
       this.handleAudioEnded();
     });
     this.innerAudioContext.onError((error) => {
-      this.stopPreciseTranscriptSync();
-      this.cancelAudioSeekConfirmation();
-      this.audioProgressDragging = false;
-      this.pendingAudioSeekSeconds = 0;
-      this.saveListeningResumeCheckpoint({ force: true });
-      this.pendingAutoPlay = false;
-      this.continuousPlaybackActive = false;
-      this.setData({
-        isPlaying: false,
-        audioReady: false,
-        audioResolving: false,
-        audioError: 'playback-error',
-        audioErrorText: '',
-        audioErrorDetail: `${error.errCode || ''}`.trim(),
-        audioPlaybackMode: 'error'
-      });
-      this.scheduleAudioErrorText('playback-error');
-      if (this.audioPlayRequested) {
-        wx.showToast({
-          title: text('cloudAudioFailed', '云端音频加载失败'),
-          icon: 'none'
-        });
+      if (this.hasActiveAudioSegments()) {
+        const positionSec = this.getCurrentAudioPositionSeconds();
+        this.retryAudioSegmentWithTemp(positionSec)
+          .then((retried) => (retried ? true : this.fallbackSegmentedAudio('segment-playback-error', positionSec)))
+          .then((handled) => {
+            if (!handled) this.handleAudioPlaybackError(error);
+          });
+        return;
       }
+      this.handleAudioPlaybackError(error);
     });
     const snapshotTask = this.readLessonTaskSnapshot();
     if (snapshotTask) {
@@ -1129,7 +1371,7 @@ Page({
     if (!key) return;
     const requestedSeconds = Number(options.positionSec);
     const hasPositionOverride = Number.isFinite(requestedSeconds) && requestedSeconds >= 0;
-    const contextSeconds = Number(this.innerAudioContext.currentTime || 0);
+    const contextSeconds = this.getCurrentAudioPositionSeconds();
     const currentSeconds = hasPositionOverride
       ? requestedSeconds
       : resolveListeningCheckpointSeconds(contextSeconds, key, this.listeningResumeLastKnown);
@@ -1192,7 +1434,7 @@ Page({
       return;
     }
     const resumePositionSec = Math.max(0, positionSec - LISTENING_RESUME_REWIND_SEC);
-    this.innerAudioContext.seek(resumePositionSec);
+    this.seekAudioTo(resumePositionSec);
     this.listeningResumeLastKnown = { key, positionSec: resumePositionSec };
     this.resetEffectiveListeningTracker(resumePositionSec, false);
     this.listeningResumeAppliedKey = key;
@@ -1240,6 +1482,44 @@ Page({
     const audioFileId = task.audioFileId || buildCloudFileId(audioCloudPath);
     let audioResolveError = '';
     const fallbackAudioUrl = String(task.audioUrl || buildCloudAssetUrl(audioCloudPath) || '').trim();
+    const audioSegments = segmentedAudio.normalizeAudioSegments(task.audioSegments);
+    if (audioSegments.length) {
+      const firstSegment = audioSegments[0];
+      const firstFileId = firstSegment.audioFileId || buildCloudFileId(firstSegment.audioCloudPath);
+      let firstUrl = '';
+      let segmentSource = 'segment-static-url';
+      if (firstFileId) {
+        try {
+          firstUrl = await store.getTempFileURL(firstFileId);
+          if (firstUrl) segmentSource = 'segment-temp-url';
+        } catch (error) {
+          audioResolveError = 'segment-temp-url-failed';
+          monitor.logError('lesson', 'resolveTaskAudio', error, {
+            category: task.category,
+            taskId: task.taskId,
+            mode: 'segment-temp-url'
+          });
+        }
+      }
+      firstUrl = String(firstUrl || firstSegment.audioUrl || buildCloudAssetUrl(firstSegment.audioCloudPath) || '').trim();
+      if (firstUrl) {
+        monitor.logPerf('lesson', 'resolveTaskAudio', Date.now() - startedAt, {
+          category: task.category,
+          taskId: task.taskId,
+          mode: segmentSource,
+          segments: audioSegments.length
+        });
+        return Object.assign({}, task, {
+          audioUrl: firstUrl,
+          fullAudioUrl: fallbackAudioUrl,
+          audioCloudPath,
+          audioFileId,
+          audioSegments,
+          audioSource: segmentSource,
+          audioResolveError
+        });
+      }
+    }
     const preferTempAudioUrl = MAGIC_TREE_HOUSE_CATEGORIES.includes(String(task.category || '').trim());
     if (preferTempAudioUrl && audioFileId) {
       try {
@@ -1385,10 +1665,13 @@ Page({
       this.scheduleAudioErrorText(resolvedTask && resolvedTask.audioResolveError ? resolvedTask.audioResolveError : 'missing-audio-url');
       return;
     }
+    this.resetAudioSegmentState(resolvedTask, resolvedTask.audioUrl);
     let playableUrl = await this.preparePlayableAudio(resolvedTask);
-    let playbackMode = resolvedTask.audioSource === 'temp-url'
-      ? 'temp-url'
-      : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url');
+    let playbackMode = String(resolvedTask.audioSource || '').startsWith('segment-')
+      ? resolvedTask.audioSource
+      : (resolvedTask.audioSource === 'temp-url'
+        ? 'temp-url'
+        : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url'));
     if (this.data.task !== resolvedTask) {
       this.setData({
         task: resolvedTask
@@ -1435,10 +1718,13 @@ Page({
         this.audioPrefetchKey = '';
         return;
       }
+      this.resetAudioSegmentState(resolvedTask, resolvedTask.audioUrl);
       const playableUrl = await this.preparePlayableAudio(resolvedTask);
-      const playbackMode = resolvedTask.audioSource === 'temp-url'
-        ? 'temp-url'
-        : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url');
+      const playbackMode = String(resolvedTask.audioSource || '').startsWith('segment-')
+        ? resolvedTask.audioSource
+        : (resolvedTask.audioSource === 'temp-url'
+          ? 'temp-url'
+          : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url'));
       const currentAudio = buildCurrentAudio(resolvedTask, playableUrl, playbackMode);
       if (this.innerAudioContext && this.innerAudioContext.src !== playableUrl) {
         this.innerAudioContext.stop();
@@ -1682,9 +1968,8 @@ Page({
       progressPercent: 0,
       canRewind: false
     });
-    this.innerAudioContext.seek(0);
+    this.seekAudioTo(0, { play: true });
     this.innerAudioContext.playbackRate = 1;
-    this.innerAudioContext.play();
   },
   async switchContinuousQueueTask(nextTask) {
     const normalizedTask = labels.normalizeTask(nextTask);
@@ -2514,7 +2799,7 @@ Page({
       || !this.innerAudioContext
       || this.audioProgressDragging
       || !(this.data.transcriptLines || []).length) return;
-    const timeMs = Math.floor(Number(this.innerAudioContext.currentTime || 0) * 1000);
+    const timeMs = Math.floor(this.getCurrentAudioPositionSeconds() * 1000);
     const lines = this.data.transcriptLines || [];
     const activeIndex = Number(this.data.activeLineIndex);
     const activeLine = activeIndex >= 0 ? lines[activeIndex] : null;
@@ -2559,9 +2844,8 @@ Page({
       return;
     }
     const seconds = Math.floor(line.startMs / 1000);
-    this.innerAudioContext.seek(seconds);
+    this.seekAudioTo(seconds, { play: true });
     this.resetEffectiveListeningTracker(seconds, true);
-    this.innerAudioContext.play();
     this.updateTranscriptByTime(line.startMs);
   },
   async toggleAudio() {
@@ -2625,7 +2909,7 @@ Page({
   confirmAudioProgressSeek() {
     if (!this.audioProgressDragging || !this.audioSeekConfirmationActive || !this.innerAudioContext) return false;
     const targetSeconds = Number(this.pendingAudioSeekSeconds || 0);
-    const currentSeconds = Number(this.innerAudioContext.currentTime || 0);
+    const currentSeconds = this.getCurrentAudioPositionSeconds();
     if (Math.abs(currentSeconds - targetSeconds) <= AUDIO_SEEK_CONFIRM_TOLERANCE_SEC) {
       this.finalizeAudioProgressSeek(currentSeconds);
     }
@@ -2640,7 +2924,7 @@ Page({
     let retryCount = 0;
     const check = () => {
       if (token !== this.audioSeekConfirmToken || !this.innerAudioContext) return;
-      const currentSeconds = Number(this.innerAudioContext.currentTime || 0);
+      const currentSeconds = this.getCurrentAudioPositionSeconds();
       if (Math.abs(currentSeconds - targetSeconds) <= AUDIO_SEEK_CONFIRM_TOLERANCE_SEC) {
         this.finalizeAudioProgressSeek(currentSeconds);
         return;
@@ -2649,7 +2933,7 @@ Page({
         if (retryCount < AUDIO_SEEK_CONFIRM_MAX_RETRIES) {
           retryCount += 1;
           startedAt = Date.now();
-          this.innerAudioContext.seek(targetSeconds);
+          this.seekAudioTo(targetSeconds, { play: !!this.data.isPlaying });
         } else {
           this.finalizeAudioProgressSeek(currentSeconds);
           return;
@@ -2701,7 +2985,7 @@ Page({
     const key = this.getListeningResumeStorageKey();
     this.audioProgressDragging = true;
     this.startAudioSeekConfirmation(currentSeconds);
-    this.innerAudioContext.seek(currentSeconds);
+    this.seekAudioTo(currentSeconds, { play: !!this.data.isPlaying });
     this.resetEffectiveListeningTracker(currentSeconds, !!this.data.isPlaying);
     this.listeningResumeLastKnown = { key, positionSec: currentSeconds };
     this.updateTranscriptByTime(Math.floor(currentSeconds * 1000));
@@ -2725,9 +3009,9 @@ Page({
     if (!this.innerAudioContext) {
       return;
     }
-    const current = this.innerAudioContext.currentTime || 0;
+    const current = this.getCurrentAudioPositionSeconds();
     const nextValue = Math.max(0, current - 5);
-    this.innerAudioContext.seek(nextValue);
+    this.seekAudioTo(nextValue, { play: !!this.data.isPlaying });
     this.resetEffectiveListeningTracker(nextValue, !!this.data.isPlaying);
     this.setData({
       currentTimeLabel: this.formatTime(nextValue),
@@ -3016,7 +3300,7 @@ Page({
         this.continuousPlaybackActive = false;
         this.pendingAutoPlay = false;
         const key = this.getListeningResumeStorageKey();
-        if (this.innerAudioContext) this.innerAudioContext.seek(0);
+        if (this.innerAudioContext) this.seekAudioTo(0);
         this.listeningResumeLastKnown = { key, positionSec: 0 };
         this.resetEffectiveListeningTracker(0, false);
         this.setData({

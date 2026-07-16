@@ -467,6 +467,8 @@ function buildUnlockSeriesTasks(category) {
       audioCloudPath: item.cloudPath,
       audioFileId: buildCloudFileId(item.cloudPath),
       audioSource: 'static-cloud-url',
+      audioSegments: Array.isArray(item.audioSegments) ? item.audioSegments : [],
+      audioSegmentVersion: item.audioSegmentVersion || '',
       repeatTarget: 3,
       durationSec: Number(item.durationSec || 0) || 180,
       coverTone: index % 2 === 0 ? 'peach' : 'berry',

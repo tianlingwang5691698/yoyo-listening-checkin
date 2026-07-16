@@ -22,7 +22,7 @@ test('听力页与计划页 fallback 只在 A1 放置 Peppa', () => {
     assert.doesNotMatch(a2Block, /category: 'littlebear'/);
     assert.match(a1Block, /category: 'peppa'/);
     assert.doesNotMatch(a2Block, /category: 'peppa'/);
-    assert.match(source, /listeningPlanOverviewSnapshotV6/);
+    assert.match(source, /listeningPlanOverviewSnapshotV7/);
   });
 });
 
@@ -62,6 +62,15 @@ test('听力计划数量单位使用集与每集遍数', () => {
   assert.match(catalog, /repeatCount: '每集几遍'/);
   assert.match(catalog, /dailyItems: '每天 \{count\} 集'/);
   assert.doesNotMatch(catalog, /dailyCount: '每天几条'|repeatCount: '每条几遍'/);
+});
+
+test('Unlock 听口练习册第三版不会被空翻译截断', () => {
+  const i18n = require('../utils/i18n');
+
+  assert.equal(i18n.getPageText('level', 'listeningWorkbook3', 'zh-CN'), '听口练习册第三版');
+  assert.equal(i18n.getPageText('level', 'listeningWorkbook3', 'en'), 'Listening & Speaking Workbook, 3rd Ed.');
+  assert.equal(i18n.getPageText('listeningPlan', 'listeningWorkbook3', 'zh-CN'), '听口练习册第三版');
+  assert.equal(i18n.getPageText('listeningPlan', 'listeningWorkbook3', 'en'), 'Listening & Speaking Workbook, 3rd Ed.');
 });
 
 test('连续播放切换下一集后保留文本与学习包入口', () => {

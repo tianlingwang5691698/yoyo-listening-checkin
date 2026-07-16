@@ -501,11 +501,58 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_1.1",
         "normalizedFileName": "Unlock2e_B2_1.1.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_1.1.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-1-1-7b7ecb8a71-64k-mono.mp3",
         "durationSec": 366.073,
         "unit": 1,
         "track": "1",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_1.1.mp3",
+        "sha1": "7b7ecb8a7149ff1688f4253ba8846ea3b33eba69",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2932461
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-1/000-beff28fc89-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-1/001-3867dddb43-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-1/002-c5c2d10299-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-1/003-b1093bdc0a-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 66.354,
+            "size": 532269,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-1/004-e2ea80ee54-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_1.3",
@@ -514,11 +561,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_1.3",
         "normalizedFileName": "Unlock2e_B2_1.3.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_1.3.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-1-3-2c0dd00026-64k-mono.mp3",
         "durationSec": 63.177,
         "unit": 1,
         "track": "3",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_1.3.mp3",
+        "sha1": "2c0dd0002688cea9369dbcee2fe37dcf1a81a75b",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 506637
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-3/000-b06ff87358-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 33.125,
+            "size": 266445,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-3/001-a1942b8595-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_1.5",
@@ -527,11 +600,58 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_1.5",
         "normalizedFileName": "Unlock2e_B2_1.5.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_1.5.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-1-5-31d9fc910c-64k-mono.mp3",
         "durationSec": 309.659,
         "unit": 1,
         "track": "5",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_1.5.mp3",
+        "sha1": "31d9fc910c007723656e9c0ee763bf312119217e",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2480589
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-5/000-e1c4539571-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-5/001-38c10d54bf-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-5/002-1384102a22-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-5/003-a8eca8d7c6-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 9.878,
+            "size": 80397,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-1-5/004-20203feb08-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_2.1",
@@ -540,11 +660,51 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_2.1",
         "normalizedFileName": "Unlock2e_B2_2.1.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.1.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-2-1-66081539fb-64k-mono.mp3",
         "durationSec": 254.809,
         "unit": 2,
         "track": "1",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.1.mp3",
+        "sha1": "66081539fbe3ae676bb72564790023bcebcb77d5",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2041389
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-1/000-54a0147014-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-1/001-82c1bf9a92-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-1/002-177c7ea0c9-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 44.968,
+            "size": 361197,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-1/003-01f8e9d90b-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_2.3",
@@ -553,11 +713,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_2.3",
         "normalizedFileName": "Unlock2e_B2_2.3.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.3.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-2-3-332a08c047-64k-mono.mp3",
         "durationSec": 67.091,
         "unit": 2,
         "track": "3",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.3.mp3",
+        "sha1": "332a08c047b50513c4fbaa26827bcbc562e9d319",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 538029
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-3/000-55844efeed-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 37.043,
+            "size": 297837,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-3/001-04e973560c-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_2.4",
@@ -566,11 +752,58 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_2.4",
         "normalizedFileName": "Unlock2e_B2_2.4.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.4.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-2-4-dbebdab225-64k-mono.mp3",
         "durationSec": 321.166,
         "unit": 2,
         "track": "4",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.4.mp3",
+        "sha1": "dbebdab2253d0f6a112389f249dd79a942e31ff9",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2572749
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-4/000-1d6b95fe29-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-4/001-682f863cf5-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-4/002-11f86720e6-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-4/003-cf708414ef-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 21.398,
+            "size": 172557,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-4/004-f6ed224296-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_2.5",
@@ -579,11 +812,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_2.5",
         "normalizedFileName": "Unlock2e_B2_2.5.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.5.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-2-5-e39848ed34-64k-mono.mp3",
         "durationSec": 73.823,
         "unit": 2,
         "track": "5",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.5.mp3",
+        "sha1": "e39848ed3448be5f4490b5ad02b1f26b290bfdeb",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 591885
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-5/000-8be2dcf125-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 43.783,
+            "size": 351693,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-5/001-1f39eaf9c9-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_2.6",
@@ -592,11 +851,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_2.6",
         "normalizedFileName": "Unlock2e_B2_2.6.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.6.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-2-6-0ee5626a20-64k-mono.mp3",
         "durationSec": 73.04,
         "unit": 2,
         "track": "6",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_2.6.mp3",
+        "sha1": "0ee5626a2066e6346a215324b7c08023f9ca93a2",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 585837
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-6/000-ca8b8b576c-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 43,
+            "size": 345645,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-2-6/001-3e8e8d33ef-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_3.1",
@@ -605,11 +890,58 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_3.1",
         "normalizedFileName": "Unlock2e_B2_3.1.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_3.1.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-3-1-0bcfe94d18-64k-mono.mp3",
         "durationSec": 315.138,
         "unit": 3,
         "track": "1",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_3.1.mp3",
+        "sha1": "0bcfe94d1884ff9b414b85b7903ff94f5ba9dd1e",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2524653
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-1/000-8a7876b01e-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-1/001-f9c0698319-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-1/002-d6b78515d8-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-1/003-8fd54f1a9d-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 15.363,
+            "size": 124461,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-1/004-fc92d6d0dd-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_3.2",
@@ -618,11 +950,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_3.2",
         "normalizedFileName": "Unlock2e_B2_3.2.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_3.2.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-3-2-74961485f6-64k-mono.mp3",
         "durationSec": 67.587,
         "unit": 3,
         "track": "2",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_3.2.mp3",
+        "sha1": "74961485f62c3a85013d35eeed3b2c784cc10fcf",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 542061
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-2/000-83ed986681-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 37.54,
+            "size": 301869,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-2/001-3fb31ecdc5-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_3.5",
@@ -631,11 +989,65 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_3.5",
         "normalizedFileName": "Unlock2e_B2_3.5.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_3.5.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-3-5-1920d862a8-64k-mono.mp3",
         "durationSec": 478.903,
         "unit": 3,
         "track": "5",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_3.5.mp3",
+        "sha1": "1920d862a8bc80570a09d43c4115831746d8b36f",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 3836205
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-5/000-732b3b5c8d-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-5/001-2cb20d74e4-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-5/002-3dcbcf04ec-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-5/003-d09921ae58-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-5/004-9679b5b2c7-90s-64k-mono.mp3"
+          },
+          {
+            "index": 5,
+            "startSec": 390,
+            "durationSec": 89.308,
+            "size": 716013,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-3-5/005-e5b44d404d-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_4.1",
@@ -644,11 +1056,58 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_4.1",
         "normalizedFileName": "Unlock2e_B2_4.1.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_4.1.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-4-1-b8c168d076-64k-mono.mp3",
         "durationSec": 342.693,
         "unit": 4,
         "track": "1",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_4.1.mp3",
+        "sha1": "b8c168d076a8f6105774b37398d0a81f61110960",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2745261
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-1/000-bb6767c3ee-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-1/001-3145882c97-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-1/002-d174401f65-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-1/003-5811c066c4-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 42.949,
+            "size": 345069,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-1/004-8c515ece9e-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_4.4",
@@ -657,11 +1116,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_4.4",
         "normalizedFileName": "Unlock2e_B2_4.4.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_4.4.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-4-4-f30b0a2c67-64k-mono.mp3",
         "durationSec": 107.719,
         "unit": 4,
         "track": "4",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_4.4.mp3",
+        "sha1": "f30b0a2c6735acad24098d216d0a7b39dfe5c1f1",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 863469
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-4/000-aa70583ea1-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 77.716,
+            "size": 623277,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-4/001-0cb7a0ced9-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_4.5",
@@ -670,11 +1155,72 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_4.5",
         "normalizedFileName": "Unlock2e_B2_4.5.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_4.5.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-4-5-6b40489883-64k-mono.mp3",
         "durationSec": 558.776,
         "unit": 4,
         "track": "5",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_4.5.mp3",
+        "sha1": "6b40489883d2599a90311c7494e0d237def07098",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 4475853
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-5/000-d88ecb9ea5-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-5/001-4cf454c6dd-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-5/002-3e7721a96a-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-5/003-ea737fedcf-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-5/004-b4bbd99edf-90s-64k-mono.mp3"
+          },
+          {
+            "index": 5,
+            "startSec": 390,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-5/005-44de137cef-90s-64k-mono.mp3"
+          },
+          {
+            "index": 6,
+            "startSec": 480,
+            "durationSec": 79.269,
+            "size": 635661,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-4-5/006-4749ab7c06-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_5.1",
@@ -683,11 +1229,58 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_5.1",
         "normalizedFileName": "Unlock2e_B2_5.1.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_5.1.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-5-1-4666ffbf8e-64k-mono.mp3",
         "durationSec": 325.158,
         "unit": 5,
         "track": "1",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_5.1.mp3",
+        "sha1": "4666ffbf8e0edfd6e7f75119a3600dd6e75f7b4f",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2604717
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-1/000-32f00fe847-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-1/001-0a4a8394b0-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-1/002-426bb75ceb-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-1/003-c023bd81c0-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 25.394,
+            "size": 204525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-1/004-ccd84dc1cc-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_5.2",
@@ -696,11 +1289,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_5.2",
         "normalizedFileName": "Unlock2e_B2_5.2.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_5.2.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-5-2-18f801aea2-64k-mono.mp3",
         "durationSec": 61.455,
         "unit": 5,
         "track": "2",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_5.2.mp3",
+        "sha1": "18f801aea2a7b94f7e3130cd09904ef69792c118",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 492813
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-2/000-e15c256cf8-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 31.401,
+            "size": 252621,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-2/001-0b6b346441-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_5.3",
@@ -709,11 +1328,58 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_5.3",
         "normalizedFileName": "Unlock2e_B2_5.3.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_5.3.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-5-3-91136d364c-64k-mono.mp3",
         "durationSec": 337.422,
         "unit": 5,
         "track": "3",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_5.3.mp3",
+        "sha1": "91136d364c5511ec24bf9dd04a12450c0baa7be0",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2703213
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-3/000-9ec2019d30-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-3/001-9b51787ff6-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-3/002-17f4b76bd6-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-3/003-4decf57096-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 37.672,
+            "size": 303021,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-5-3/004-6e47fb5886-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_6.1",
@@ -722,11 +1388,65 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_6.1",
         "normalizedFileName": "Unlock2e_B2_6.1.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_6.1.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-6-1-14cb669537-64k-mono.mp3",
         "durationSec": 457.323,
         "unit": 6,
         "track": "1",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_6.1.mp3",
+        "sha1": "14cb66953770725769955ec755288dc940dc94c6",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 3663405
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-1/000-d89237b1c1-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-1/001-311fc62abd-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-1/002-074e4d84df-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-1/003-65af866b6b-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-1/004-44de609117-90s-64k-mono.mp3"
+          },
+          {
+            "index": 5,
+            "startSec": 390,
+            "durationSec": 67.705,
+            "size": 543213,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-1/005-1be1c3678f-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_6.2",
@@ -735,11 +1455,44 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_6.2",
         "normalizedFileName": "Unlock2e_B2_6.2.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_6.2.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-6-2-7d042fdfd5-64k-mono.mp3",
         "durationSec": 169.013,
         "unit": 6,
         "track": "2",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_6.2.mp3",
+        "sha1": "7d042fdfd50fed854f83658eae543844c3c79dce",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 1354221
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-2/000-4c41b0efda-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-2/001-4b0d4f9f8b-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 49.078,
+            "size": 394029,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-2/002-669e031731-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_6.3",
@@ -748,11 +1501,51 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_6.3",
         "normalizedFileName": "Unlock2e_B2_6.3.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_6.3.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-6-3-2de12a6e46-64k-mono.mp3",
         "durationSec": 290.793,
         "unit": 6,
         "track": "3",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_6.3.mp3",
+        "sha1": "2de12a6e46f59fae8102443de2d02a543f697037",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2329677
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-3/000-a6a74dac65-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-3/001-b56e43f898-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-3/002-a3bcba9d17-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 80.991,
+            "size": 649485,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-3/003-dc60aa7608-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_6.7",
@@ -761,11 +1554,65 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_6.7",
         "normalizedFileName": "Unlock2e_B2_6.7.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_6.7.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-6-7-9469da7634-64k-mono.mp3",
         "durationSec": 390.001,
         "unit": 6,
         "track": "7",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_6.7.mp3",
+        "sha1": "9469da7634e212a03daef72a57428b8a508263a4",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 3124269
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-7/000-22b897d0aa-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-7/001-dc4ad73fa9-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-7/002-fefa6904f9-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-7/003-7c71594668-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-7/004-c84ee87de2-90s-64k-mono.mp3"
+          },
+          {
+            "index": 5,
+            "startSec": 390,
+            "durationSec": 0.309,
+            "size": 4077,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-6-7/005-df265cbe4d-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_7.1",
@@ -774,11 +1621,65 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_7.1",
         "normalizedFileName": "Unlock2e_B2_7.1.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_7.1.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-7-1-909a5ab885-64k-mono.mp3",
         "durationSec": 422.305,
         "unit": 7,
         "track": "1",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_7.1.mp3",
+        "sha1": "909a5ab885a890053711ca5308441bbc530f290e",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 3382893
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-1/000-dccd9310db-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-1/001-c3a29927eb-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-1/002-44418e493c-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-1/003-a3b36e0b21-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-1/004-f1fb1856bc-90s-64k-mono.mp3"
+          },
+          {
+            "index": 5,
+            "startSec": 390,
+            "durationSec": 32.648,
+            "size": 262701,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-1/005-29a2e95d0e-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_7.2",
@@ -787,11 +1688,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_7.2",
         "normalizedFileName": "Unlock2e_B2_7.2.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_7.2.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-7-2-95f0250d26-64k-mono.mp3",
         "durationSec": 60.541,
         "unit": 7,
         "track": "2",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_7.2.mp3",
+        "sha1": "95f0250d266d111549a414e0e910807aa603be34",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 485613
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-2/000-104fd6ddfe-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 30.487,
+            "size": 245421,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-2/001-2d9958079f-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_7.3",
@@ -800,11 +1727,65 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_7.3",
         "normalizedFileName": "Unlock2e_B2_7.3.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_7.3.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-7-3-f46fd4a7df-64k-mono.mp3",
         "durationSec": 463.559,
         "unit": 7,
         "track": "3",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_7.3.mp3",
+        "sha1": "f46fd4a7df329181c7388605ae9fd70a59247420",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 3713229
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-3/000-8f6f08109b-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-3/001-69b2277cea-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-3/002-5565fc840f-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-3/003-ecccfb74d7-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-3/004-06362d26af-90s-64k-mono.mp3"
+          },
+          {
+            "index": 5,
+            "startSec": 390,
+            "durationSec": 73.948,
+            "size": 593037,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-7-3/005-dac2679d73-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_8.1",
@@ -813,11 +1794,58 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_8.1",
         "normalizedFileName": "Unlock2e_B2_8.1.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_8.1.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-8-1-c2f30e0c42-64k-mono.mp3",
         "durationSec": 354.305,
         "unit": 8,
         "track": "1",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_8.1.mp3",
+        "sha1": "c2f30e0c423db2d6c9ece66d4b889ea4fe7d0fa8",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 2838285
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-1/000-9fbe0f82ce-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-1/001-0bd91f7192-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-1/002-e5ac2508b7-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-1/003-169cf7acce-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 54.573,
+            "size": 438093,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-1/004-0091a4671b-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_8.2",
@@ -826,11 +1854,37 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_8.2",
         "normalizedFileName": "Unlock2e_B2_8.2.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_8.2.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-8-2-45a68b89c6-64k-mono.mp3",
         "durationSec": 77.711,
         "unit": 8,
         "track": "2",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_8.2.mp3",
+        "sha1": "45a68b89c6988630f2b77d0c7424c00c83c33098",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 622989
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-2/000-f436689716-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 47.675,
+            "size": 382797,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-2/001-531b6c3dc0-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       },
       {
         "id": "unlock4-unlock2e_b2_8.3",
@@ -839,11 +1893,65 @@
         "book": "Unlock 4",
         "title": "Unlock2e_B2_8.3",
         "normalizedFileName": "Unlock2e_B2_8.3.mp3",
-        "cloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_8.3.mp3",
+        "cloudPath": "B2/Unlock4/Class Audio/optimized-v1/unlock2e-b2-8-3-988642b3d9-64k-mono.mp3",
         "durationSec": 393.837,
         "unit": 8,
         "track": "3",
-        "kind": "class_audio"
+        "kind": "class_audio",
+        "legacyCloudPath": "B2/Unlock4/Class Audio/Unlock2e_B2_8.3.mp3",
+        "sha1": "988642b3d9ea06ab6a4dafa02eb50d610ecb7fad",
+        "audioOptimization": {
+          "version": "unlock4-64k-mono-v1",
+          "bitrate": 64000,
+          "channels": 1,
+          "sampleRate": 32000,
+          "size": 3154797
+        },
+        "audioSegments": [
+          {
+            "index": 0,
+            "startSec": 0,
+            "durationSec": 30.006,
+            "size": 240525,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-3/000-d8b26f281f-30s-64k-mono.mp3"
+          },
+          {
+            "index": 1,
+            "startSec": 30,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-3/001-1ba8f9f506-90s-64k-mono.mp3"
+          },
+          {
+            "index": 2,
+            "startSec": 120,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-3/002-c1a7e57a71-90s-64k-mono.mp3"
+          },
+          {
+            "index": 3,
+            "startSec": 210,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-3/003-918caf6903-90s-64k-mono.mp3"
+          },
+          {
+            "index": 4,
+            "startSec": 300,
+            "durationSec": 90,
+            "size": 720333,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-3/004-75fcde7b10-90s-64k-mono.mp3"
+          },
+          {
+            "index": 5,
+            "startSec": 390,
+            "durationSec": 4.149,
+            "size": 34605,
+            "audioCloudPath": "B2/Unlock4/Class Audio/optimized-v1/segments-v1/unlock2e-b2-8-3/005-cab7d69b21-90s-64k-mono.mp3"
+          }
+        ],
+        "audioSegmentVersion": "unlock4-30s-first-90s-next-64k-mono-v1"
       }
     ]
   },

@@ -155,12 +155,12 @@ test('Magic Tree House 拖拽期间预览文本并在 seek 落点重新同步', 
   assert.match(lessonSource, /onTimeUpdate\(\(\) => \{[\s\S]*if \(!this\.audioProgressDragging\) \{\s*this\.updateTranscriptByTime\(currentTimeMs\)/);
   assert.match(lessonSource, /onSeeked\(\(\) => \{[\s\S]*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
   assert.match(lessonSource, /changingAudioProgress\(event\)[\s\S]*this\.audioProgressDragging = true;\s*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
-  assert.match(lessonSource, /changeAudioProgress\(event\)[\s\S]*this\.innerAudioContext\.seek\(currentSeconds\)[\s\S]*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
+  assert.match(lessonSource, /changeAudioProgress\(event\)[\s\S]*this\.seekAudioTo\(currentSeconds, \{ play: !!this\.data\.isPlaying \}\)[\s\S]*this\.updateTranscriptByTime\(Math\.floor\(currentSeconds \* 1000\)\)/);
   assert.match(lessonSource, /onSeeked\(\(\) => \{\s*if \(this\.audioProgressDragging\) \{\s*this\.confirmAudioProgressSeek\(\);\s*return;/);
   assert.match(lessonSource, /startAudioSeekConfirmation\(targetSeconds\)[\s\S]*Math\.abs\(currentSeconds - targetSeconds\) <= AUDIO_SEEK_CONFIRM_TOLERANCE_SEC/);
   assert.match(lessonSource, /audioSeekConfirmationActive = true/);
   assert.match(lessonSource, /AUDIO_SEEK_CONFIRM_TIMEOUT_MS = 1200[\s\S]*AUDIO_SEEK_CONFIRM_MAX_RETRIES = 1/);
-  assert.match(lessonSource, /retryCount < AUDIO_SEEK_CONFIRM_MAX_RETRIES[\s\S]*this\.innerAudioContext\.seek\(targetSeconds\)/);
+  assert.match(lessonSource, /retryCount < AUDIO_SEEK_CONFIRM_MAX_RETRIES[\s\S]*this\.seekAudioTo\(targetSeconds, \{ play: !!this\.data\.isPlaying \}\)/);
   assert.match(lessonSource, /for \(let index = 1; index < lines\.length; index \+= 1\)[\s\S]*timeMs < Number\(lines\[index\]\.startMs/);
   assert.match(lessonSource, /timeMs < activeLineEndMs/);
 });
@@ -177,11 +177,12 @@ test('全部 Magic Tree House 真机使用轻量高频句子同步', () => {
   assert.match(lessonSource, /onUnload\(\)[\s\S]*this\.stopPreciseTranscriptSync\(\)/);
 });
 
-test('Magic Tree House 首播优先使用临时 COS 地址并保留静态回退', () => {
+test('Magic Tree House 首播使用短分片并保留临时地址与整集回退', () => {
   const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
   assert.match(lessonSource, /MAGIC_TREE_HOUSE_CATEGORIES = \['magictreehouse', 'magictreehouseb1'\]/);
-  assert.match(lessonSource, /preferTempAudioUrl && audioFileId[\s\S]*await store\.getTempFileURL\(audioFileId\)[\s\S]*audioSource: 'temp-url'[\s\S]*if \(fallbackAudioUrl\)/);
-  assert.match(lessonSource, /if \(audioFileId && !preferTempAudioUrl\)/);
+  assert.match(lessonSource, /const audioSegments = segmentedAudio\.normalizeAudioSegments[\s\S]*await store\.getTempFileURL\(firstFileId\)[\s\S]*fullAudioUrl: fallbackAudioUrl/);
+  assert.match(lessonSource, /retryAudioSegmentWithTemp\(positionSec\)[\s\S]*await store\.getTempFileURL\(fileId\)/);
+  assert.match(lessonSource, /fallbackSegmentedAudio\(reason, positionSec\)[\s\S]*task\.fullAudioUrl \|\| buildCloudAssetUrl\(task\.audioCloudPath\)/);
   assert.match(lessonSource, /if \(!remoteUrl \|\| !task \|\| task\.category !== 'song'\) \{\s*return remoteUrl;\s*\}/);
 });
 

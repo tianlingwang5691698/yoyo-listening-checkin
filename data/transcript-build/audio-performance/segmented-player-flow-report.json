@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "consoleErrors": [],
+  "results": [
+    {
+      "category": "magictreehouse",
+      "taskId": "magic-tree-house-001",
+      "segmentCount": 29,
+      "crossedAtMs": 30000,
+      "seekedAtMs": 125000,
+      "activeLineId": "track-magic-tree-house-001-line-42",
+      "playbackMode": "ready",
+      "passed": true
+    },
+    {
+      "category": "magictreehouseb1",
+      "taskId": "magic-tree-house-029",
+      "segmentCount": 53,
+      "crossedAtMs": 30000,
+      "seekedAtMs": 125000,
+      "activeLineId": "track-magic-tree-house-029-line-38",
+      "playbackMode": "segment-temp-url",
+      "passed": true
+    },
+    {
+      "category": "unlock4",
+      "taskId": "unlock4-1",
+      "segmentCount": 5,
+      "crossedAtMs": 30000,
+      "seekedAtMs": 125000,
+      "activeLineId": "",
+      "playbackMode": "ready",
+      "passed": true
+    },
+    {
+      "category": "magictreehouse",
+      "taskId": "magic-tree-house-001",
+      "restoredAtMs": 125000,
+      "savedSnapshot": true,
+      "passed": true
+    }
+  ]
+}
