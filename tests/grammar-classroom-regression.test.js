@@ -1233,3 +1233,50 @@ test('构词法课程系统覆盖且逐条闭环', () => {
   assert.match(classroomPage, /selectedTopic === 'word-formation'[\s\S]*return this\.backToDomainMap\(\)/);
   assert.match(classroomPage, /store\.getGrammarClassroomCourse/);
 });
+
+test('计划微课直达课程时不误报目录节点缺失', () => {
+  const source = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  const context = {
+    captured: null,
+    Page: (config) => { context.captured = config; },
+    wx: { nextTick: (callback) => callback(), pageScrollTo: () => {} },
+    require: (id) => {
+      if (id.endsWith('/page')) return { startPagePerf: () => ({ ready: () => {} }) };
+      if (id.endsWith('/grammar-resume')) return { getActiveGrammarTaskKey: () => '' };
+      return {};
+    },
+    setTimeout,
+    clearTimeout
+  };
+  vm.createContext(context);
+  vm.runInContext(source, context);
+  let directoryQueried = false;
+  const readyCalls = [];
+  const page = Object.assign({}, context.captured, {
+    data: Object.assign({}, context.captured.data),
+    plannedEntry: { topic: 'noun', lessonNumber: 1, taskId: 'grammar-1' },
+    activeCourse: [{ id: 'noun-job', questions: [{ answer: 'A' }] }],
+    coursePageReadyCacheHit: true,
+    classroomPerf: { ready: (...args) => readyCalls.push(args) },
+    createSelectorQuery: () => {
+      directoryQueried = true;
+      return {};
+    },
+    stopNarrationAudio: () => {},
+    reportPerformance: () => {},
+    setData(values, callback) {
+      Object.assign(this.data, values);
+      if (callback) callback();
+    }
+  });
+
+  page.onReady();
+  assert.equal(directoryQueried, false);
+  assert.equal(page.data.debugMessage, '');
+  page.openLessonById('noun-job');
+  assert.equal(page.data.screen, 'lesson');
+  assert.equal(readyCalls.length, 1);
+  assert.equal(readyCalls[0][0], 'pageReady');
+  assert.equal(readyCalls[0][1].source, 'planned-lesson');
+  assert.equal(readyCalls[0][1].cacheHit, true);
+});

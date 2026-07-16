@@ -217,15 +217,14 @@ Page({
   },
 
   onReady() {
+    if (this.plannedEntry && this.plannedEntry.topic) return;
     wx.nextTick(() => {
       this.createSelectorQuery().select('.domain-item').boundingClientRect((rect) => {
         if (!rect) {
           this.setData({ debugMessage: 'DEBUG: grammar-package/pages/classroom.onReady -> system.render -> .domain-item: missing' });
           return;
         }
-        this.pageReadyReported = true;
-        if (this.classroomPerf) this.classroomPerf.ready('pageReady', { source: 'directory', cacheHit: true });
-        this.reportPerformance(2101, Date.now() - (this.pageStartedAt || Date.now()));
+        this.reportPageReady('directory', true);
       }).exec();
     });
   },
@@ -349,6 +348,13 @@ Page({
     } catch (error) {}
   },
 
+  reportPageReady(source, cacheHit) {
+    if (this.pageReadyReported) return;
+    this.pageReadyReported = true;
+    if (this.classroomPerf) this.classroomPerf.ready('pageReady', { source, cacheHit: Boolean(cacheHit) });
+    this.reportPerformance(2101, Date.now() - (this.pageStartedAt || Date.now()));
+  },
+
   selectTopic(event) {
     const topic = String(event.currentTarget.dataset.topic || '');
     if (!topic) return;
@@ -420,6 +426,7 @@ Page({
       const fallbackDebug = result.cacheFallback
         ? this.buildCourseLoadDebug(topic, language, result, 'cached-fallback')
         : '';
+      this.coursePageReadyCacheHit = Boolean(result.cacheHit);
       this.applyCourseBundle(result.bundle, fallbackDebug, Boolean(result.cacheFallback));
     } catch (error) {
       if (this.loadRequestId !== requestId || this.data.selectedTopic !== topic) return;
@@ -813,6 +820,9 @@ Page({
       isLastLesson: index === course.length - 1
     }, () => {
       this.reportPerformance(2103, Date.now() - startedAt);
+      if (this.plannedEntry && this.plannedEntry.topic) {
+        this.reportPageReady('planned-lesson', this.coursePageReadyCacheHit);
+      }
       wx.pageScrollTo({ scrollTop: 0, duration: 0 });
     });
   },
