@@ -3,7 +3,7 @@ const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 
-const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV7';
+const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV8';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function t(key, variables) {
@@ -12,7 +12,11 @@ function t(key, variables) {
 }
 
 function localizeMaterialTitle(title) {
-  return String(title || '')
+  const source = String(title || '');
+  if (source === 'Peppa' || source.startsWith('Peppa Pig')) {
+    return t('peppaSeasons');
+  }
+  return source
     .replace(/听口练习册 第三版/g, t('listeningWorkbook3'))
     .replace(/听口练习册 第二版/g, t('listeningWorkbook2'))
     .replace(/听口 第三版/g, t('listening3'))
@@ -30,15 +34,15 @@ const DEFAULT_FIRST_LEVEL = 'A1';
 const LEVEL_MATERIALS = {
   'Pre A1': [
     { category: 'song', title: 'Songs' },
-    { category: 'littlebear', title: 'Little Bear' }
+    { category: 'littlebear', title: 'Little Bear' },
+    { category: 'peppa', title: 'Peppa Pig · 第1–3季' }
   ],
   A1: [
     { category: 'newconcept1', title: 'New Concept 1' },
     { category: 'unlock1', title: 'Unlock 1 听口 第二版' },
     { category: 'unlock1thirdedition', title: 'Unlock 1 听口 第三版' },
     { category: 'unlock1workbookthirdedition', title: 'Unlock 1 听口练习册 第三版' },
-    { category: 'unlock1workbook', title: 'Unlock 1 听口 练习册 第二版' },
-    { category: 'peppa', title: 'Peppa' }
+    { category: 'unlock1workbook', title: 'Unlock 1 听口 练习册 第二版' }
   ],
   A2: [
     { category: 'newconcept2', title: 'New Concept 2' },
@@ -90,8 +94,12 @@ function formatEstimatedDuration(seconds) {
   return `${hours} ${t('hour')}${rest ? ` ${rest} ${t('minute')}` : ''}`;
 }
 
-function buildMaterialRows(materials, activePlan) {
-  return (materials || []).map((item) => {
+function getVisibleMaterials(levelId, materials) {
+  return (materials || []).filter((item) => !(levelId === 'A1' && item.category === 'peppa'));
+}
+
+function buildMaterialRows(materials, activePlan, levelId) {
+  return getVisibleMaterials(levelId, materials).map((item) => {
     const selected = !!(getPlanMaterial(activePlan, item.category) || item.selected);
     return Object.assign({}, item, {
       title: localizeMaterialTitle(item.title),
@@ -255,7 +263,7 @@ Page({
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       selectedLevel,
       levelTabs: buildLevelTabs(data.levelTabs, selectedLevel),
-      materials: buildMaterialRows(data.materials || [], data.activePlan || null),
+      materials: buildMaterialRows(data.materials || [], data.activePlan || null, selectedLevel),
       activePlan: data.activePlan || null,
       planSummaryText: buildPlanSummary(data.activePlan || null),
       fixedPlan: data.fixedPlan || null,
@@ -267,7 +275,7 @@ Page({
     this.rememberOverview(levelId, data);
     if (this.data.selectedLevel === levelId) {
       this.applyOverview(data, levelId);
-      this.scheduleMaterialPrefetch(levelId, data.materials || []);
+      this.scheduleMaterialPrefetch(levelId, getVisibleMaterials(levelId, data.materials || []));
     }
   },
   async loadOverview(levelId, options = {}) {
@@ -284,7 +292,7 @@ Page({
     if (cached && !options.prefetch) {
       this.overviewCache[nextLevel] = cached;
       this.applyOverview(cached, nextLevel);
-      this.scheduleMaterialPrefetch(nextLevel, cached.materials || []);
+      this.scheduleMaterialPrefetch(nextLevel, getVisibleMaterials(nextLevel, cached.materials || []));
       if (options.interactive) {
         setTimeout(() => {
           this.loadOverview(nextLevel, { prefetch: true }).catch(() => {});
@@ -295,7 +303,7 @@ Page({
     if (!cached && !options.prefetch) {
       const fallback = buildFallbackOverview(nextLevel, this.data);
       this.applyOverview(fallback, nextLevel);
-      this.scheduleMaterialPrefetch(nextLevel, fallback.materials || []);
+      this.scheduleMaterialPrefetch(nextLevel, getVisibleMaterials(nextLevel, fallback.materials || []));
       this.setData({ levelLoading: true });
     }
     if (!this.overviewRequests[nextLevel]) {
@@ -323,7 +331,7 @@ Page({
     this.rememberOverview(nextLevel, data);
     if (!options.prefetch && this.data.selectedLevel === nextLevel) {
       this.applyOverview(data, nextLevel);
-      this.scheduleMaterialPrefetch(nextLevel, data.materials || []);
+      this.scheduleMaterialPrefetch(nextLevel, getVisibleMaterials(nextLevel, data.materials || []));
     }
     return data;
   },

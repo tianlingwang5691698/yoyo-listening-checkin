@@ -177,7 +177,7 @@ test('Pre A1 Songs 与其他 Level 使用同一静态目录加载', async () => 
   assert.ok(Date.now() - startedAt < 100, 'Songs 静态目录不应触发云存储扫描');
 });
 
-test('Peppa 只归入 A1 且首屏保持轻量', () => {
+test('Peppa 新版归入 Pre A1 并保留 A1 旧客户端兼容摘要', () => {
   const startedAt = performance.now();
   const build = (levelId) => listeningPlanEngine.buildMaterialEntries(levelId, {
     getCatalogSummary: catalogEngine.getCatalogSummary
@@ -187,12 +187,17 @@ test('Peppa 只归入 A1 且首屏保持轻量', () => {
   const a2 = build('A2');
   const elapsedMs = performance.now() - startedAt;
 
-  assert.deepEqual(preA1.map((item) => item.category), ['song', 'littlebear']);
+  assert.deepEqual(preA1.map((item) => item.category), ['song', 'littlebear', 'peppa']);
   assert.equal(preA1.find((item) => item.category === 'littlebear').totalCount, 17);
+  assert.equal(preA1.find((item) => item.category === 'peppa').totalCount, 157);
+  assert.equal(preA1.find((item) => item.category === 'peppa').title, 'Peppa Pig · 第1–3季');
   assert.equal(a1.find((item) => item.category === 'peppa').totalCount, 157);
   assert.equal(a1.filter((item) => item.category === 'peppa').length, 1);
   assert.equal(a2.some((item) => item.category === 'peppa'), false);
+  assert.equal(JSON.stringify(preA1).includes('audioUrl'), false);
   assert.equal(JSON.stringify(a1).includes('audioUrl'), false);
+  assert.equal(listeningPlanEngine.normalizeMaterialLevelId('peppa', 'A1'), 'A1');
+  assert.equal(listeningPlanEngine.normalizeMaterialLevelId('peppa', 'Pre A1'), 'Pre A1');
   assert.ok(elapsedMs < 10, `三级摘要构建耗时 ${elapsedMs}ms`);
 });
 

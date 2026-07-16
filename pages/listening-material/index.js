@@ -13,6 +13,10 @@ function t(key, variables) {
   return Object.keys(variables || {}).reduce((text, name) => text.replace(new RegExp(`\\{${name}\\}`, 'g'), variables[name]), template);
 }
 
+function localizeCategoryLabel(category, label) {
+  return category === 'peppa' ? t('peppaSeasons') : label;
+}
+
 function formatDuration(seconds) {
   const value = Number(seconds || 0);
   return value > 0 ? `${Math.max(1, Math.round(value / 60))} ${t('minute')}` : t('audio');
@@ -197,6 +201,7 @@ Page({
     const startNo = Math.max(1, Math.min(totalCount || 1, Number(selected.startNo || 1)));
     const endNo = Math.max(startNo, Math.min(totalCount || 1, Number(selected.endNo || totalCount || 1)));
     const nextData = Object.assign({}, data, {
+      categoryLabel: localizeCategoryLabel(data.category, data.categoryLabel),
       totalCount,
       sliderMax: Math.max(totalCount, 1),
       tasks: buildRows(data.tasks || []),
@@ -249,7 +254,7 @@ Page({
     this.listeningMaterialPerf = page.startPagePerf('listening-material');
     page.syncTheme(this);
     const category = query.category || '';
-    const levelId = category === 'littlebear' ? 'Pre A1' : (query.levelId || 'A1');
+    const levelId = category === 'littlebear' || category === 'peppa' ? 'Pre A1' : (query.levelId || 'A1');
     const detailRequest = {
       category,
       levelId,

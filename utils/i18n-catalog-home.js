@@ -53,3 +53,9 @@ module.exports = {
 
 module.exports.levelStage['zh-CN'].course = '课程';
 module.exports.levelStage.en.course = 'Course';
+module.exports.level['zh-CN'].peppaSeasons = 'Peppa Pig · 第1–3季';
+module.exports.level.en.peppaSeasons = 'Peppa Pig · Seasons 1–3';
+module.exports.listeningPlan['zh-CN'].peppaSeasons = 'Peppa Pig · 第1–3季';
+module.exports.listeningPlan.en.peppaSeasons = 'Peppa Pig · Seasons 1–3';
+module.exports.listeningMaterial['zh-CN'].peppaSeasons = 'Peppa Pig · 第1–3季';
+module.exports.listeningMaterial.en.peppaSeasons = 'Peppa Pig · Seasons 1–3';

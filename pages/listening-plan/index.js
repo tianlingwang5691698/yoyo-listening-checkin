@@ -3,7 +3,7 @@ const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 
-const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV7';
+const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV8';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function t(key, variables) {
@@ -12,7 +12,11 @@ function t(key, variables) {
 }
 
 function localizeMaterialTitle(title) {
-  return String(title || '')
+  const source = String(title || '');
+  if (source === 'Peppa' || source.startsWith('Peppa Pig')) {
+    return t('peppaSeasons');
+  }
+  return source
     .replace(/听口练习册 第三版/g, t('listeningWorkbook3'))
     .replace(/听口练习册 第二版/g, t('listeningWorkbook2'))
     .replace(/听口 第三版/g, t('listening3'))
@@ -29,15 +33,15 @@ const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((
 const FALLBACK_MATERIALS = {
   'Pre A1': [
     { category: 'song', title: 'Songs' },
-    { category: 'littlebear', title: 'Little Bear' }
+    { category: 'littlebear', title: 'Little Bear' },
+    { category: 'peppa', title: 'Peppa Pig · 第1–3季' }
   ],
   A1: [
     { category: 'newconcept1', title: 'New Concept 1' },
     { category: 'unlock1', title: 'Unlock 1 听口 第二版' },
     { category: 'unlock1thirdedition', title: 'Unlock 1 听口 第三版' },
     { category: 'unlock1workbookthirdedition', title: 'Unlock 1 听口练习册 第三版' },
-    { category: 'unlock1workbook', title: 'Unlock 1 听口 练习册 第二版' },
-    { category: 'peppa', title: 'Peppa' }
+    { category: 'unlock1workbook', title: 'Unlock 1 听口 练习册 第二版' }
   ],
   A2: [
     { category: 'newconcept2', title: 'New Concept 2' },
@@ -89,8 +93,12 @@ function formatEstimatedDuration(seconds) {
   return `${hours} ${t('hour')}${rest ? ` ${rest} ${t('minute')}` : ''}`;
 }
 
-function buildMaterialRows(materials, activePlan) {
-  return (materials || []).filter((item) => !getPlanMaterial(activePlan, item.category)).map((item) => {
+function getVisibleMaterials(levelId, materials) {
+  return (materials || []).filter((item) => !(levelId === 'A1' && item.category === 'peppa'));
+}
+
+function buildMaterialRows(materials, activePlan, levelId) {
+  return getVisibleMaterials(levelId, materials).filter((item) => !getPlanMaterial(activePlan, item.category)).map((item) => {
     return Object.assign({}, item, {
       title: localizeMaterialTitle(item.title),
       countText: item.totalCount ? `${item.totalCount} ${t('items')}` : t('enterable'),
@@ -205,7 +213,7 @@ Page({
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       selectedLevel,
       levelTabs: buildLevelTabs(data.levelTabs, selectedLevel),
-      materials: buildMaterialRows(data.materials || [], activePlan),
+      materials: buildMaterialRows(data.materials || [], activePlan, selectedLevel),
       selectedRows: planSummary.selectedRows,
       selectedCount: planSummary.selectedCount,
       dailyTotal: planSummary.dailyTotal,

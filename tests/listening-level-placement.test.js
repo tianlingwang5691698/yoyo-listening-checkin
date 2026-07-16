@@ -9,21 +9,41 @@ function read(relativePath) {
   return fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
 }
 
-test('听力页与计划页 fallback 只在 A1 放置 Peppa', () => {
+test('新客户端只在 Pre A1 展示 Peppa 并隔离旧 A1 缓存', () => {
   ['pages/level/index.js', 'pages/listening-plan/index.js'].forEach((file) => {
     const source = read(file);
     const preA1Block = source.match(/'Pre A1':\s*\[([\s\S]*?)\],\s*A1:/)[1];
     const a1Block = source.match(/\bA1:\s*\[([\s\S]*?)\],\s*A2:/)[1];
     const a2Block = source.match(/\bA2:\s*\[([\s\S]*?)\],\s*B1:/)[1];
 
-    assert.doesNotMatch(preA1Block, /category: 'peppa'/);
+    assert.match(preA1Block, /category: 'peppa'/);
     assert.match(preA1Block, /category: 'littlebear'/);
     assert.doesNotMatch(a1Block, /category: 'littlebear'/);
     assert.doesNotMatch(a2Block, /category: 'littlebear'/);
-    assert.match(a1Block, /category: 'peppa'/);
+    assert.doesNotMatch(a1Block, /category: 'peppa'/);
     assert.doesNotMatch(a2Block, /category: 'peppa'/);
-    assert.match(source, /listeningPlanOverviewSnapshotV7/);
+    assert.match(source, /listeningPlanOverviewSnapshotV8/);
+    assert.match(source, /levelId === 'A1' && item\.category === 'peppa'/);
+    assert.match(source, /Peppa Pig · 第1–3季/);
   });
+
+  const detailSource = read('pages/listening-material/index.js');
+  assert.match(detailSource, /category === 'littlebear' \|\| category === 'peppa' \? 'Pre A1'/);
+
+  const catalog = require('../utils/i18n-catalog-home');
+  assert.equal(catalog.level['zh-CN'].peppaSeasons, 'Peppa Pig · 第1–3季');
+  assert.equal(catalog.level.en.peppaSeasons, 'Peppa Pig · Seasons 1–3');
+});
+
+test('Peppa 保留旧分类、任务 ID 和线上存储路径', () => {
+  const engine = read('cloudfunctions/yoyo/lib/listening-plan-engine.js');
+  const catalogEngine = read('cloudfunctions/yoyo/lib/catalog-engine.js');
+  assert.match(engine, /category: 'peppa', levelIds: \['Pre A1', 'A1'\]/);
+  assert.match(catalogEngine, /`peppa-\$\{index \+ 1\}`/);
+  assert.match(catalogEngine, /`peppa-s\$\{season\}-\$\{episode\}`/);
+  assert.match(catalogEngine, /A1\/Peppa\/第1季/);
+  assert.match(catalogEngine, /A1\/Peppa\/第\$\{season\}季/);
+  assert.doesNotMatch(catalogEngine, /Pre A1\/Peppa/);
 });
 
 test('静谧图书馆听力学习包限制三栏和单按钮宽度', () => {
