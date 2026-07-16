@@ -433,6 +433,17 @@ function isLessonTrainingMode(member, planRunType, cloudStudyWriteAllowed) {
     && String((member && member.studyRole) || '') === 'student';
 }
 
+function getLessonCloudDebugState(detail) {
+  const syncDebug = detail && detail.syncDebug;
+  const reason = String((syncDebug && syncDebug.reason) || '');
+  const isPlayableSnapshotFallback = reason === 'canonical-task-missing'
+    || reason.startsWith('dashboard-load-failed:');
+  return {
+    showCloudDebug: !isPlayableSnapshotFallback && !!(detail && detail.showCloudDebug),
+    syncDebug: isPlayableSnapshotFallback ? null : syncDebug
+  };
+}
+
 function buildLocalMemberFromLastRole() {
   let role = '';
   try {
@@ -1813,14 +1824,15 @@ Page({
     this.targetDate = detail.targetDate || this.targetDate;
     this.planDayIndex = detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const normalizedTask = labels.normalizeTask(detail.task);
+    const cloudDebugState = getLessonCloudDebugState(detail);
     this.updateDailyListeningQueue(detail.dailyQueueTasks || detail.categoryTasks, normalizedTask);
     const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     const studyWriteAllowed = isLessonTrainingMode(detail.currentMember, this.planRunType, detail.studyWriteAllowed);
     this.setData(page.buildCloudPageData(this.data, {
       syncMode: detail.syncMode,
       isReviewBuild: detail.isReviewBuild,
-      showCloudDebug: detail.showCloudDebug,
-      syncDebug: detail.syncDebug,
+      showCloudDebug: cloudDebugState.showCloudDebug,
+      syncDebug: cloudDebugState.syncDebug,
       child: detail.child,
       task: normalizedTask,
       todayRecord: detail.todayRecord,
@@ -1868,11 +1880,13 @@ Page({
       hasTask: detail && detail.task ? 'yes' : 'no',
       hasAudio: detail && detail.task && hasTaskAudioSource(detail.task) ? 'yes' : 'no'
     });
+    const cloudDebugState = getLessonCloudDebugState(detail);
     if (detail && detail.syncMode === 'cloud-error' && hasSnapshotTask) {
       this.setData(page.buildCloudPageData(this.data, {
         lessonLoading: false,
         syncMode: 'cloud',
-        syncDebug: detail.syncDebug || this.data.syncDebug
+        showCloudDebug: cloudDebugState.showCloudDebug,
+        syncDebug: cloudDebugState.syncDebug
       }));
       return detail;
     }
@@ -1896,8 +1910,8 @@ Page({
     this.setData(page.buildCloudPageData(this.data, {
       syncMode: detail.syncMode,
       isReviewBuild: detail.isReviewBuild,
-      showCloudDebug: detail.showCloudDebug,
-      syncDebug: detail.syncDebug,
+      showCloudDebug: cloudDebugState.showCloudDebug,
+      syncDebug: cloudDebugState.syncDebug,
       lessonLoading: false,
       child: detail.child,
       task: normalizedTask,

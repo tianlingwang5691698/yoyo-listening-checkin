@@ -47,30 +47,6 @@ function buildProgressFromTask(task) {
   };
 }
 
-function buildSnapshotHydrationDebug(reason, detail, ctx) {
-  const value = [
-    reason,
-    `category=${detail.category || ''}`,
-    `taskId=${detail.taskId || ''}`,
-    `planDayIndex=${detail.planDayIndex || 0}`,
-    `targetChildId=${(ctx.child && ctx.child.childId) || ''}`,
-    `targetFamilyId=${(ctx.family && ctx.family.familyId) || ''}`
-  ].filter(Boolean).join('；');
-  return {
-    showCloudDebug: true,
-    syncDebug: {
-      mode: 'cloud',
-      show: true,
-      reason,
-      publicReason: '',
-      resourceLines: [
-        `DEBUG: pages/lesson.refreshPage -> store.getTaskDetail -> cloud.getTaskDetail -> snapshotHydration：${value}`
-      ],
-      text: `DEBUG: pages/lesson.refreshPage -> store.getTaskDetail -> cloud.getTaskDetail -> snapshotHydration：${value}`
-    }
-  };
-}
-
 async function getTaskDetail(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getTaskDetail'
@@ -85,7 +61,6 @@ async function getTaskDetail(event) {
     let hydratedTask = snapshotTask;
     let dailyQueueTasks = [hydratedTask];
     let planDayIndex = Number(payload.planDayIndex || snapshotTask.planDayIndex || 0);
-    let hydrationDebug = null;
     if (snapshotTask.catalogSummary) {
       const canonicalTasks = await study.resolveStandaloneCategoryTasks(snapshotTask.category, '', today);
       const canonicalTask = canonicalTasks.find((item) => item.taskId === snapshotTask.taskId);
@@ -118,20 +93,9 @@ async function getTaskDetail(event) {
           hydratedTask = canonicalTask;
           dailyQueueTasks = dashboard.dailyTasks || [canonicalTask];
           planDayIndex = Number(dashboard.planDayIndex || canonicalTask.planDayIndex || planDayIndex || 0);
-        } else {
-          hydrationDebug = buildSnapshotHydrationDebug('canonical-task-missing', {
-            category: snapshotTask.category,
-            taskId: snapshotTask.taskId,
-            planDayIndex,
-            dailyTaskCount: (dashboard.dailyTasks || []).length
-          }, ctx);
         }
       } catch (error) {
-        hydrationDebug = buildSnapshotHydrationDebug(`dashboard-load-failed:${error.message || String(error)}`, {
-          category: snapshotTask.category,
-          taskId: snapshotTask.taskId,
-          planDayIndex
-        }, ctx);
+        // The playable snapshot remains the fallback when today's plan cannot hydrate it.
       }
     }
     return Object.assign({
@@ -158,7 +122,7 @@ async function getTaskDetail(event) {
       studyWriteAllowed: planRunType !== 'preview' && study.isStudyWriteAllowed(ctx),
       studyWriteMessage: planRunType === 'preview' ? '预览模式，不计入打卡' : (study.isStudyWriteAllowed(ctx) ? '' : '家长模式，不计入打卡'),
       checkinReady: false
-    }, hydrationDebug || {});
+    });
   }
   const isPreview = planRunType === 'preview';
   const isCatalogBrowse = isPreview && String(payload.source || '') === 'catalog' && CATALOG_BROWSE_CATEGORIES.includes(payload.category);

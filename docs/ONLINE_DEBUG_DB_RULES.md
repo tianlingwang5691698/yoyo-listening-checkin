@@ -86,6 +86,14 @@
 
 ## 已知案例
 
+### 2026-07-16 继续学习课程显示 canonical-task-missing DEBUG
+
+1. 现象：学生从首页“继续学习”进入音频课程，音频可播放但页面显示 `snapshotHydration: canonical-task-missing`。
+2. 查询：`pages/home.openCompleted -> pages/level-stage.tryOpenResumeTask -> pages/lesson.refreshPage -> store.getTaskDetail -> cloud.getTaskDetail`。
+3. 结论：首页缓存中的继续任务仍可播放，但已不在云端当前日任务列表；这是允许的快照回退，不是学生端故障。
+4. 修复：云函数不再为可播放快照回退返回 `showCloudDebug`；前端过滤旧缓存中的同类调试结果。
+5. 是否需要发版：云函数需部署；旧缓存过滤需要重新发布小程序前端。
+
 ### 2026-07-16 音频已播放仍显示暂不可用与长音频首播慢
 
 1. 现象：音频已经开始播放，页面仍可能延迟显示“音频暂不可用”；Magic Tree House、Unlock 4 等长音频点击后等待数秒。

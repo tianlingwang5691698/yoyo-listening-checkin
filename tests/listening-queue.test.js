@@ -112,6 +112,12 @@ test('继续学习和任务表选课进入课程后都等待手动播放', () =>
   assert.doesNotMatch(lessonSource, /query\.autoPlay/);
 });
 
+test('继续学习的可播放快照回退不向学生显示云端 DEBUG', () => {
+  const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
+  assert.match(lessonSource, /getLessonCloudDebugState\(detail\)[\s\S]*canonical-task-missing[\s\S]*dashboard-load-failed:/);
+  assert.match(lessonSource, /isPlayableSnapshotFallback \? null : syncDebug/);
+});
+
 test('手动进入其他课程后立即更新最新继续目标', () => {
   const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
   assert.match(lessonSource, /applyTaskSnapshot\(task\)[\s\S]*this\.writeActiveListeningLessonSnapshot\(normalizedTask\);[\s\S]*this\.prefetchTaskAudio/);

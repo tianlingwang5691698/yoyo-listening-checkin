@@ -116,3 +116,31 @@ test('课程页用公共摘要补齐完整长音频分片', async (t) => {
   assert.equal(result.task.audioSegments.length, 2);
   assert.equal(result.categoryTasks.length, 1);
 });
+
+test('继续学习快照不在今日任务时保留音频且不向学生显示调试信息', async (t) => {
+  t.mock.method(study, 'prepareRequestContext', async () => ({
+    ctx: { member: { studyRole: 'student' }, child: { childId: 'child-1' } },
+    today: '2026-07-16'
+  }));
+  t.mock.method(study, 'getDashboardData', async () => ({ dailyTasks: [], planDayIndex: 2 }));
+  t.mock.method(study, 'isStudyWriteAllowed', () => true);
+
+  const result = await taskService.getTaskDetail({
+    payload: {
+      view: 'lesson',
+      planRunType: 'normal',
+      category: 'unlock1thirdedition',
+      taskId: 'unlock1thirdedition-1',
+      taskSnapshot: {
+        taskId: 'unlock1thirdedition-1',
+        category: 'unlock1thirdedition',
+        audioUrl: 'https://example.com/1.mp3',
+        durationSec: 54
+      }
+    }
+  });
+
+  assert.equal(result.task.taskId, 'unlock1thirdedition-1');
+  assert.equal(result.showCloudDebug, false);
+  assert.equal(result.syncDebug, null);
+});
