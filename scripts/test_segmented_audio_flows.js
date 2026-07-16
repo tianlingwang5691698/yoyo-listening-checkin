@@ -127,6 +127,20 @@ async function testCrossSegment(miniProgram, config) {
       : null;
   }, 10000, 100);
   if (!sought) throw new Error(`${config.category}/${taskId} seek/transcript sync timeout`);
+  const durationSec = Number(sought.task.durationSec || 0);
+  await lesson.callMethod('changeAudioProgress', { detail: { value: 500 } });
+  const sliderSought = await waitFor(async () => {
+    const data = await lesson.data();
+    const sliderPosition = Number(await lesson.callMethod('getCurrentAudioPositionSeconds') || 0);
+    const targetPosition = durationSec / 2;
+    return Math.abs(sliderPosition - targetPosition) <= 1
+      && data.progressPercent >= 49
+      && data.progressPercent <= 51
+      && !data.progress.completedToday
+      ? Object.assign({}, data, { sliderPosition })
+      : null;
+  }, 10000, 100);
+  if (!sliderSought) throw new Error(`${config.category}/${taskId} slider seek triggered completion or timed out`);
   await lesson.callMethod('toggleAudio');
   return {
     category: config.category,
@@ -134,6 +148,7 @@ async function testCrossSegment(miniProgram, config) {
     segmentCount: before.task.audioSegments.length,
     crossedAtMs: Math.floor(position * 1000),
     seekedAtMs: Math.floor(Number(sought.seekPosition || 0) * 1000),
+    sliderSeekedAtMs: Math.floor(Number(sliderSought.sliderPosition || 0) * 1000),
     activeLineId: sought.activeLineId || '',
     playbackMode: sought.audioPlaybackMode,
     passed: true

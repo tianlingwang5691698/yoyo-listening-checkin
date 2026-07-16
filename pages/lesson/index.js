@@ -670,6 +670,14 @@ Page({
   hasActiveAudioSegments() {
     return this.audioSegments.length > 0 && !this.audioSegmentFallbackActive;
   },
+  hasCompleteAudioSegmentManifest(task) {
+    const expectedCount = Math.max(0, Number((task || this.data.task || {}).audioSegmentCount || 0));
+    return !expectedCount || this.audioSegments.length >= expectedCount;
+  },
+  getLoadedAudioSegmentEndSeconds() {
+    const lastSegment = this.audioSegments[this.audioSegments.length - 1];
+    return lastSegment ? Number(lastSegment.startSec || 0) + Number(lastSegment.durationSec || 0) : 0;
+  },
   getCurrentAudioPositionSeconds() {
     const localPosition = Number((this.innerAudioContext && this.innerAudioContext.currentTime) || 0);
     return this.hasActiveAudioSegments()
@@ -785,6 +793,10 @@ Page({
       if (options.play) this.innerAudioContext.play();
       return true;
     }
+    if (!this.hasCompleteAudioSegmentManifest()
+      && positionSec > this.getLoadedAudioSegmentEndSeconds()) {
+      return false;
+    }
     const segmentIndex = segmentedAudio.getSegmentIndexAtTime(this.audioSegments, positionSec);
     if (segmentIndex === this.audioSegmentIndex) {
       const localPosition = segmentedAudio.getSegmentLocalTime(this.audioSegments, segmentIndex, positionSec);
@@ -796,6 +808,9 @@ Page({
   },
   async handleSegmentedAudioEnded() {
     if (!this.hasActiveAudioSegments()) return false;
+    if (!this.hasCompleteAudioSegmentManifest()) {
+      return this.fallbackSegmentedAudio('segment-manifest-incomplete', this.getLoadedAudioSegmentEndSeconds());
+    }
     const nextIndex = this.audioSegmentIndex + 1;
     if (nextIndex >= this.audioSegments.length) return false;
     const nextPosition = this.audioSegments[nextIndex].startSec;
@@ -1140,6 +1155,7 @@ Page({
       });
     });
     this.innerAudioContext.onEnded(async () => {
+      if (this.audioSegmentSwitching || this.audioSegmentInternalSwitch) return;
       if (await this.handleSegmentedAudioEnded()) return;
       this.stopPreciseTranscriptSync();
       this.cancelAudioSeekConfirmation();
@@ -1714,7 +1730,8 @@ Page({
     if (!task || task.isPendingAsset || !this.innerAudioContext) {
       return;
     }
-    const prefetchKey = `${task.category || this.category}:${task.taskId || this.taskId}`;
+    const taskSegmentCount = this.getTaskAudioSegments(task).length;
+    const prefetchKey = `${task.category || this.category}:${task.taskId || this.taskId}:${task.audioSegmentVersion || ''}:${taskSegmentCount}`;
     if (this.audioPrefetchKey === prefetchKey && (this.data.audioReady || (this.innerAudioContext && this.innerAudioContext.src))) {
       return;
     }
@@ -1729,7 +1746,21 @@ Page({
           hasTask: resolvedTask ? 'yes' : 'no',
           hasUrl: resolvedTask && resolvedTask.audioUrl ? 'yes' : 'no'
         });
-        this.audioPrefetchKey = '';
+        if (this.audioPrefetchKey === prefetchKey) this.audioPrefetchKey = '';
+        return;
+      }
+      const preserveFallbackPlayback = this.audioSegmentFallbackActive
+        && this.data.task
+        && this.data.task.taskId === resolvedTask.taskId
+        && this.innerAudioContext
+        && this.innerAudioContext.src;
+      if (preserveFallbackPlayback) {
+        this.setData({
+          task: resolvedTask,
+          currentAudio: buildCurrentAudio(resolvedTask, this.innerAudioContext.src, 'static-fallback'),
+          audioSource: resolvedTask.audioSource || 'none',
+          audioPlaybackMode: 'static-fallback'
+        });
         return;
       }
       this.resetAudioSegmentState(resolvedTask, resolvedTask.audioUrl);
@@ -1758,10 +1789,16 @@ Page({
           audioError: '',
           audioErrorText: '',
           audioErrorDetail: ''
+        }, () => {
+          if (this.audioSeekConfirmationActive
+            && this.audioProgressDragging
+            && this.hasCompleteAudioSegmentManifest(resolvedTask)) {
+            this.seekAudioTo(this.pendingAudioSeekSeconds, { play: !!this.data.isPlaying });
+          }
         });
       }
     } catch (error) {
-      this.audioPrefetchKey = '';
+      if (this.audioPrefetchKey === prefetchKey) this.audioPrefetchKey = '';
       this.markLessonRoute('audioResolveFailed', {
         error: (error && (error.errMsg || error.message)) || String(error || '')
       });

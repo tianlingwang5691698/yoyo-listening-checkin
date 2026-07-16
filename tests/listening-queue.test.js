@@ -161,6 +161,11 @@ test('Magic Tree House 拖拽期间预览文本并在 seek 落点重新同步', 
   assert.match(lessonSource, /audioSeekConfirmationActive = true/);
   assert.match(lessonSource, /AUDIO_SEEK_CONFIRM_TIMEOUT_MS = 1200[\s\S]*AUDIO_SEEK_CONFIRM_MAX_RETRIES = 1/);
   assert.match(lessonSource, /retryCount < AUDIO_SEEK_CONFIRM_MAX_RETRIES[\s\S]*this\.seekAudioTo\(targetSeconds, \{ play: !!this\.data\.isPlaying \}\)/);
+  assert.match(lessonSource, /taskSegmentCount = this\.getTaskAudioSegments\(task\)\.length[\s\S]*audioSegmentVersion[\s\S]*taskSegmentCount/);
+  assert.match(lessonSource, /this\.audioPrefetchKey !== prefetchKey[\s\S]*if \(this\.audioPrefetchKey === prefetchKey\) this\.audioPrefetchKey = ''/);
+  assert.match(lessonSource, /!this\.hasCompleteAudioSegmentManifest\(\)[\s\S]*positionSec > this\.getLoadedAudioSegmentEndSeconds\(\)[\s\S]*return false/);
+  assert.match(lessonSource, /audioSeekConfirmationActive[\s\S]*audioProgressDragging[\s\S]*hasCompleteAudioSegmentManifest\(resolvedTask\)[\s\S]*seekAudioTo\(this\.pendingAudioSeekSeconds/);
+  assert.match(lessonSource, /onEnded\(async \(\) => \{\s*if \(this\.audioSegmentSwitching \|\| this\.audioSegmentInternalSwitch\) return;/);
   assert.match(lessonSource, /for \(let index = 1; index < lines\.length; index \+= 1\)[\s\S]*timeMs < Number\(lines\[index\]\.startMs/);
   assert.match(lessonSource, /timeMs < activeLineEndMs/);
 });
