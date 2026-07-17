@@ -26,10 +26,11 @@ test('成长页不再自行请求、合并或渲染日报详情', () => {
   assert.doesNotMatch(recordTemplate, /selectedDayReport|loadSelectedDay|openReportItem|playAttempt/);
 });
 
-test('日报详情只用真实进度并支持返回原课程', () => {
+test('日报详情合并当日计划快照与真实进度并支持返回原课程', () => {
   assert.match(reportServiceSource, /getChildProgressRecordsByDate\(scope, date\)/);
   assert.match(reportServiceSource, /getCompletionItemsByDate\(scope, date\)/);
-  assert.match(reportServiceSource, /recordSourceVersion: 'daily-progress-v1'/);
+  assert.match(reportServiceSource, /report && report\.items/);
+  assert.match(reportServiceSource, /daily-plan-snapshot-v2/);
   assert.match(parentDetailSource, /openReportItem\(event\)/);
   assert.match(parentDetailSource, /planRunType: 'preview'/);
   assert.match(parentDetailSource, /buildGrammarClassroomUrl\(item, \{ review: false \}\)/);

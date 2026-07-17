@@ -710,7 +710,7 @@ async function clearTodayUnconfirmedListens(ctx) {
   };
 }
 
-async function upsertDailyReport(scope, date) {
+async function upsertDailyReport(scope, date, options = {}) {
   return reportEngine.upsertDailyReport(scope, date, {
     getChildProgressRecords,
     getCheckins,
@@ -730,7 +730,7 @@ async function upsertDailyReport(scope, date) {
     findCompletionItemsByDate: getCompletionItemsByDate,
     findFamilyMembersByFamilyId: (familyId) => familyRepository.findMembersByFamilyId(familyId),
     upsertReport: (nextScope, nextDate, report) => reportRepository.upsert(nextScope, nextDate, report)
-  });
+  }, options);
 }
 
 async function getDashboardData(ctx, options = {}) {

@@ -48,7 +48,7 @@ function findReportTask(report, progress) {
 }
 
 function buildActualReportItems(report, progressRecords) {
-  return dedupeProgressRecords(progressRecords).map((progress) => {
+  const progressItems = dedupeProgressRecords(progressRecords).map((progress) => {
     const category = String(progress.category || '');
     const sourceTask = findReportTask(report, progress);
     const decorated = study.decorateTask(sourceTask, Object.assign({}, progress, {
@@ -57,6 +57,22 @@ function buildActualReportItems(report, progressRecords) {
     }), category);
     return reportEngine.buildReportItem(category, decorated);
   });
+  const progressByKey = new Map(progressItems.map((item) => [progressRecordKey(item), item]));
+  const merged = [];
+  const seen = new Set();
+  (report && report.items || []).forEach((item) => {
+    const key = progressRecordKey(item);
+    if (!key || key === ':' || seen.has(key)) return;
+    merged.push(progressByKey.get(key) || item);
+    seen.add(key);
+  });
+  progressItems.forEach((item) => {
+    const key = progressRecordKey(item);
+    if (!key || key === ':' || seen.has(key)) return;
+    merged.push(item);
+    seen.add(key);
+  });
+  return merged;
 }
 
 function calculateActualMinutes(items) {
@@ -78,7 +94,9 @@ async function synchronizeReportRecords(report, scope, date) {
     totalMinutes: calculateActualMinutes(items),
     completedCategories: Array.from(new Set(items.filter((item) => item.completedToday).map((item) => item.category))),
     completionItems: completionRecords.dedupeCompletionItems(currentCompletionItems || []),
-    recordSourceVersion: 'daily-progress-v1'
+    recordSourceVersion: report && report.planSnapshotCaptured
+      ? 'daily-plan-snapshot-v2'
+      : (report && report.recordSourceVersion) || 'daily-progress-v1'
   });
 }
 
@@ -276,7 +294,9 @@ async function getDailyReportByDate(event) {
       report = existing;
     }
   }
-  if (!report) report = await study.upsertDailyReport(scope, date);
+  if (!report) report = await study.upsertDailyReport(scope, date, {
+    includePlannedTasks: date === today
+  });
   report = await synchronizeReportRecords(report, scope, date);
   if (payload.summaryOnly) {
     const completionItems = report.completionItems || [];
@@ -333,7 +353,9 @@ async function getParentDashboard(event) {
     for (let i = 0; i < dates.length; i += 1) {
       const date = dates[i];
       const existing = await reportRepository.findByScopeAndDate(scope, date);
-      recentReports.push(existing && !needsCompletionRefresh(existing) ? existing : await study.upsertDailyReport(scope, date));
+      recentReports.push(existing && !needsCompletionRefresh(existing)
+        ? existing
+        : await study.upsertDailyReport(scope, date, { includePlannedTasks: date === today }));
     }
   }
   const summarizeReport = (report) => {

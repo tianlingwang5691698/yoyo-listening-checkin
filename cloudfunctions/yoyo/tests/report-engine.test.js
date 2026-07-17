@@ -63,7 +63,7 @@ test('日报生成已完成分类和总时长', async () => {
   assert.equal(saved.reportId, 'family-1_child-1_2026-04-21');
 });
 
-test('已有打卡但没有任务进度时不伪造历史任务', async () => {
+test('历史日期没有当日快照时不按计划补造任务', async () => {
   const report = await reportEngine.upsertDailyReport({
     familyId: 'family-1',
     childId: 'child-1',
@@ -102,13 +102,13 @@ test('已有打卡但没有任务进度时不伪造历史任务', async () => {
     }],
     findFamilyMembersByFamilyId: async () => [],
     upsertReport: async () => {}
-  });
+  }, { includePlannedTasks: false });
 
   assert.equal(report.items.length, 0);
   assert.equal(report.totalMinutes, 0);
 });
 
-test('已有 partial completedCategories 也不反推未发生任务', async () => {
+test('历史日期即使有分类打卡也不反推未发生任务', async () => {
   const report = await reportEngine.upsertDailyReport({
     familyId: 'family-1',
     childId: 'child-1',
@@ -147,7 +147,7 @@ test('已有 partial completedCategories 也不反推未发生任务', async () 
     }],
     findFamilyMembersByFamilyId: async () => [],
     upsertReport: async () => {}
-  });
+  }, { includePlannedTasks: false });
 
   assert.equal(report.items.length, 0);
 });
@@ -183,8 +183,12 @@ test('自定义计划日报不按旧 checkin 兜底完成新增任务', async ()
   });
 
   assert.equal(report.planSource, 'custom-listening');
-  assert.equal(report.items.length, 1);
+  assert.equal(report.items.length, 2);
   assert.equal(report.items[0].completedToday, true);
+  assert.equal(report.items[1].completedToday, false);
+  assert.equal(report.items[1].completionEvidence, 'dailyPlanSnapshot');
+  assert.equal(report.planSnapshotCaptured, true);
+  assert.equal(report.recordSourceVersion, 'daily-plan-snapshot-v2');
 });
 
 test('日报生成包含当天 Peppa 复听任务和时长', async () => {

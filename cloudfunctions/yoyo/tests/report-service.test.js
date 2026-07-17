@@ -118,7 +118,7 @@ test('getParentDashboard summaryOnly 不等待完整 dashboard', async (t) => {
   assert.deepEqual(result.stats, {});
 });
 
-test('历史日报只返回当天真实任务并同步最新听力学习包', async (t) => {
+test('历史日报保留当日未完成快照并用真实进度覆盖状态', async (t) => {
   t.mock.method(study, 'prepareRequestContext', async () => ({
     ctx: { child: { childId: 'child-1' } },
     today: '2026-07-17'
@@ -129,11 +129,16 @@ test('历史日报只返回当天真实任务并同步最新听力学习包', as
     items: [{
       category: 'grammar',
       taskId: 'grammar-noun-1',
-      completedToday: true,
-      playCount: 1,
+      title: '名词第 1 课',
+      completedToday: false,
+      playCount: 0,
+      repeatTarget: 1,
+      completionEvidence: 'dailyPlanSnapshot',
       taskSnapshot: { completedToday: false, playCount: 0 }
     }],
-    completionItems: []
+    completionItems: [],
+    planSnapshotCaptured: true,
+    recordSourceVersion: 'daily-plan-snapshot-v2'
   }));
   t.mock.method(study, 'getChildProgressRecordsByDate', async () => [{
     category: 'unlock1',
@@ -166,9 +171,10 @@ test('历史日报只返回当天真实任务并同步最新听力学习包', as
     payload: { date: '2026-07-16', summaryOnly: true }
   });
 
-  assert.deepEqual(result.report.items.map((item) => item.taskId), ['unlock1-19']);
+  assert.deepEqual(result.report.items.map((item) => item.taskId), ['grammar-noun-1', 'unlock1-19']);
+  assert.equal(result.report.items[0].completedToday, false);
   assert.equal(result.report.totalMinutes, 1);
   assert.equal(result.report.completionItemCount, 1);
   assert.equal(result.report.completionItems[0].recordId, 'pack-1');
-  assert.equal(result.report.recordSourceVersion, 'daily-progress-v1');
+  assert.equal(result.report.recordSourceVersion, 'daily-plan-snapshot-v2');
 });

@@ -64,12 +64,12 @@ function buildReportItem(category, task) {
     playMoments: Array.isArray(source.playMoments) ? source.playMoments : [],
     repeatTarget,
     completedToday: !!source.completedToday,
-    completionEvidence: 'dailyTaskProgress',
+    completionEvidence: hasTaskProgress(source) ? 'dailyTaskProgress' : 'dailyPlanSnapshot',
     updatedAt: source.updatedAt || ''
   };
 }
 
-async function upsertDailyReport(scope, date, deps) {
+async function upsertDailyReport(scope, date, deps, options = {}) {
   const startedAt = Date.now();
   const progressRecords = await deps.getChildProgressRecords(scope);
   const checkins = await deps.getCheckins(scope);
@@ -112,8 +112,9 @@ async function upsertDailyReport(scope, date, deps) {
           planDayIndex: todayPlan.dayIndex
         }))
   }));
+  const includePlannedTasks = options.includePlannedTasks !== false;
   const items = groupedTasks.flatMap((group) => group.tasks
-    .filter(hasTaskProgress)
+    .filter((task) => includePlannedTasks || hasTaskProgress(task))
     .map((task) => buildReportItem(group.category, task)));
   const attempts = deps.findAttemptsByDate ? await deps.findAttemptsByDate(scope, date) : [];
   const completionItems = completionRecords.dedupeCompletionItems(
@@ -167,6 +168,8 @@ async function upsertDailyReport(scope, date, deps) {
     planPhase: todayPlan.phase.key,
     planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
     listeningPlanId: useCustomListeningPlan ? (activeListeningPlan.planId || activeListeningPlan._id || '') : '',
+    recordSourceVersion: includePlannedTasks ? 'daily-plan-snapshot-v2' : 'daily-progress-v1',
+    planSnapshotCaptured: includePlannedTasks,
     items,
     speakingAttempts,
     completionItems: completionItems.map((item) => Object.assign({}, item, {
