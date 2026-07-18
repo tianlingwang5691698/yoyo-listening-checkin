@@ -1,0 +1,9 @@
+<view class="word-practice-nav theme-{{theme}}" style="{{navStyle}}"><view class="word-practice-back" bindtap="handleBack">‹</view><view class="word-practice-nav-title">{{texts.navTitle}}</view></view>
+<view class="theme-{{theme}} language-{{language}} word-practice-page" style="{{pageTopStyle}}">
+  <view class="word-practice-head"><view class="word-practice-kicker">WORD PRACTICE</view><view class="word-practice-title">{{texts.title}}</view><view class="word-practice-copy">{{sourceTitle || texts.copy}}</view></view>
+  <view class="word-practice-list">
+    <view class="word-practice-card" data-mode="word-meaning" bindtap="chooseMode"><view class="word-practice-mark">A</view><view class="word-practice-main"><view class="word-practice-card-title">{{texts.wordMeaning}}</view><view class="word-practice-card-copy">{{texts.wordMeaningCopy}}</view></view><view class="word-practice-arrow">›</view></view>
+    <view class="word-practice-card" data-mode="audio-meaning" bindtap="chooseMode"><view class="word-practice-mark audio-mark">♪</view><view class="word-practice-main"><view class="word-practice-card-title">{{texts.audioMeaning}}</view><view class="word-practice-card-copy">{{texts.audioMeaningCopy}}</view></view><view class="word-practice-arrow">›</view></view>
+    <view class="word-practice-card" data-mode="dictation" bindtap="chooseMode"><view class="word-practice-mark spell-mark">Aa</view><view class="word-practice-main"><view class="word-practice-card-title">{{texts.dictation}}</view><view class="word-practice-card-copy">{{texts.dictationCopy}}</view></view><view class="word-practice-arrow">›</view></view>
+  </view>
+</view>

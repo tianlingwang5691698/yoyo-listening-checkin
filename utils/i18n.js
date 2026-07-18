@@ -14,6 +14,8 @@ const PAGE_SCOPE_BY_ROUTE = {
   'pages/reading/index': 'reading',
   'pages/reading/detail/index': 'readingDetail',
   'pages/reading/flashcards/index': 'flashcards',
+  'pages/reading/flashcards/practice/index': 'vocabularyPractice',
+  'pages/reading/flashcards/recognition/index': 'vocabularyPractice',
   'pages/reading/flashcards/dictation/index': 'vocabularyDictation',
   'pages/reading/flashcards/dictation/library/index': 'vocabularyDictation',
   'pages/grammar/index': 'grammar',

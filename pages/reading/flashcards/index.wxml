@@ -17,9 +17,9 @@
           <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.reviewFolderTitle}}</view><view class="vocab-practice-card-copy">{{texts.reviewFolderCopy}}</view></view>
           <view class="vocab-practice-arrow">›</view>
         </view>
-        <view class="vocab-practice-card dictation-practice" bindtap="openDictationShelf">
-          <view class="vocab-practice-icon listen-spell-symbol"><view class="headphone-band"></view><view class="headphone-ear left"></view><view class="headphone-ear right"></view><view class="spell-wave"><text></text><text></text><text></text></view></view>
-          <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.dictationPracticeTitle}}</view><view class="vocab-practice-card-copy">{{texts.dictationPracticeCopy}}</view></view>
+        <view class="vocab-practice-card word-practice-hub" bindtap="openWordPractice">
+          <view class="vocab-practice-icon practice-hub-symbol"><text>A</text><text>♪</text><text>Aa</text></view>
+          <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.wordPracticeTitle}}</view><view class="vocab-practice-card-copy">{{texts.wordPracticeCopy}}</view></view>
           <view class="vocab-practice-arrow">›</view>
         </view>
       </view>
@@ -298,9 +298,9 @@
         <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.reviewFolderTitle}}</view><view class="vocab-practice-card-copy">{{texts.reviewFolderCopy}}</view></view>
         <view class="vocab-practice-arrow">›</view>
       </view>
-      <view class="vocab-practice-card dictation-practice" bindtap="openDictationShelf">
-        <view class="vocab-practice-icon listen-spell-symbol"><view class="headphone-band"></view><view class="headphone-ear left"></view><view class="headphone-ear right"></view><view class="spell-wave"><text></text><text></text><text></text></view></view>
-        <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.dictationPracticeTitle}}</view><view class="vocab-practice-card-copy">{{texts.dictationPracticeCopy}}</view></view>
+      <view class="vocab-practice-card word-practice-hub" bindtap="openWordPractice">
+        <view class="vocab-practice-icon practice-hub-symbol"><text>A</text><text>♪</text><text>Aa</text></view>
+        <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.wordPracticeTitle}}</view><view class="vocab-practice-card-copy">{{texts.wordPracticeCopy}}</view></view>
         <view class="vocab-practice-arrow">›</view>
       </view>
     </view>
@@ -579,13 +579,13 @@
 
 <view class="dictation-jump-mask theme-{{theme}} language-{{language}}" wx:if="{{dictationPromptVisible}}" catchtap="dismissDictationPrompt">
   <view class="dictation-jump-dialog" catchtap="noop">
-    <view class="dictation-jump-mark">D</view>
-    <view class="dictation-jump-title">{{texts.dictationPromptTitle}}</view>
+    <view class="dictation-jump-mark">练</view>
+    <view class="dictation-jump-title">{{texts.practicePromptTitle}}</view>
     <view class="dictation-jump-source">{{dictationPromptSourceTitle}}</view>
-    <view class="dictation-jump-copy">{{repeatMode ? texts.dictationPromptRepeatCopy : texts.dictationPromptPlanCopy}}</view>
+    <view class="dictation-jump-copy">{{repeatMode ? texts.practicePromptRepeatCopy : texts.practicePromptPlanCopy}}</view>
     <view class="dictation-jump-actions">
       <button class="dictation-jump-later" disabled="{{dictationJumping}}" bindtap="dismissDictationPrompt">{{texts.notNow}}</button>
-      <button class="dictation-jump-go" disabled="{{dictationJumping}}" bindtap="openCompletedDictation">{{dictationJumping ? texts.openingDictation : texts.goDictation}}</button>
+      <button class="dictation-jump-go" disabled="{{dictationJumping}}" bindtap="openCompletedPractice">{{dictationJumping ? texts.openingPractice : texts.startPractice}}</button>
     </view>
   </view>
 </view>

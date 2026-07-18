@@ -1,0 +1,1562 @@
+{
+  "generatedAt": "2026-07-18T14:43:39.617Z",
+  "model": "gpt-5.6-sol",
+  "input": "data/dictionary-import/school-examples-v1/senior/list-4.json",
+  "questionCount": 36,
+  "unsuitableCount": 0,
+  "unsuitable": [],
+  "questions": [
+    {
+      "targetWord": "on",
+      "targetMeaning": "prep. 在…上；在…时候；在…地方；关于；adv. 继续",
+      "distractors": [
+        {
+          "word": "declare",
+          "meaning": "v. 宣布，声明；断言；申报（应纳税额）"
+        },
+        {
+          "word": "grade",
+          "meaning": "n. 等级；（中小学的）学年；成绩，分数"
+        },
+        {
+          "word": "need",
+          "meaning": "v. 需要；modal v. 必须；n. 需要，需求"
+        }
+      ]
+    },
+    {
+      "targetWord": "free",
+      "targetMeaning": "adj. 自由的，空闲的；免费的",
+      "distractors": [
+        {
+          "word": "merciful",
+          "meaning": "adj. 仁慈的；宽大的"
+        },
+        {
+          "word": "slight",
+          "meaning": "adj. 轻微的， 细小的"
+        },
+        {
+          "word": "unfair",
+          "meaning": "adj. 不公平的，不公正的"
+        }
+      ]
+    },
+    {
+      "targetWord": "real",
+      "targetMeaning": "adj. 真实的， 确实的",
+      "distractors": [
+        {
+          "word": "expensive",
+          "meaning": "adj. 昂贵的，高消费的"
+        },
+        {
+          "word": "free",
+          "meaning": "adj. 自由的，空闲的；免费的"
+        },
+        {
+          "word": "extraordinary",
+          "meaning": "adj. 非常的；非凡的"
+        }
+      ]
+    },
+    {
+      "targetWord": "challenge",
+      "targetMeaning": "n. 挑战；挑战性；v. 挑战",
+      "distractors": [
+        {
+          "word": "land",
+          "meaning": "n. 陆地；v. 登陆；降落"
+        },
+        {
+          "word": "cycle",
+          "meaning": "n. 周期；循环；v. 骑自行车；使循环"
+        },
+        {
+          "word": "bit",
+          "meaning": "n. 一点，一些，少量"
+        }
+      ]
+    },
+    {
+      "targetWord": "very",
+      "targetMeaning": "adv. 很，非常；adj. 正是的，恰好的",
+      "distractors": [
+        {
+          "word": "anyway",
+          "meaning": "adv. 不管怎样"
+        },
+        {
+          "word": "annoy",
+          "meaning": "v. 使烦恼， 使生气；骚扰"
+        },
+        {
+          "word": "nowhere",
+          "meaning": "adv. 任何地方都不；无处"
+        }
+      ]
+    },
+    {
+      "targetWord": "expensive",
+      "targetMeaning": "adj. 昂贵的，高消费的",
+      "distractors": [
+        {
+          "word": "political",
+          "meaning": "adj. 政治的"
+        },
+        {
+          "word": "unfair",
+          "meaning": "adj. 不公平的，不公正的"
+        },
+        {
+          "word": "real",
+          "meaning": "adj. 真实的， 确实的"
+        }
+      ]
+    },
+    {
+      "targetWord": "nowhere",
+      "targetMeaning": "adv. 任何地方都不；无处",
+      "distractors": [
+        {
+          "word": "seldom",
+          "meaning": "adv. 很少，不常"
+        },
+        {
+          "word": "anyway",
+          "meaning": "adv. 不管怎样"
+        },
+        {
+          "word": "very",
+          "meaning": "adv. 很，非常；adj. 正是的，恰好的"
+        }
+      ]
+    },
+    {
+      "targetWord": "land",
+      "targetMeaning": "n. 陆地；v. 登陆；降落",
+      "distractors": [
+        {
+          "word": "decision",
+          "meaning": "n. 决定；决议"
+        },
+        {
+          "word": "fact",
+          "meaning": "n. 事实， 现实"
+        },
+        {
+          "word": "challenge",
+          "meaning": "n. 挑战；挑战性；v. 挑战"
+        }
+      ]
+    },
+    {
+      "targetWord": "spot",
+      "targetMeaning": "n. 斑点，污点；场所，地点；v. 弄脏；认出，发现",
+      "distractors": [
+        {
+          "word": "mind",
+          "meaning": "n. 思想；v. 介意"
+        },
+        {
+          "word": "situation",
+          "meaning": "n. 形势， 情况"
+        },
+        {
+          "word": "journey",
+          "meaning": "n. 旅行， 路程"
+        }
+      ]
+    },
+    {
+      "targetWord": "political",
+      "targetMeaning": "adj. 政治的",
+      "distractors": [
+        {
+          "word": "merciful",
+          "meaning": "adj. 仁慈的；宽大的"
+        },
+        {
+          "word": "real",
+          "meaning": "adj. 真实的， 确实的"
+        },
+        {
+          "word": "extraordinary",
+          "meaning": "adj. 非常的；非凡的"
+        }
+      ]
+    },
+    {
+      "targetWord": "extraordinary",
+      "targetMeaning": "adj. 非常的；非凡的",
+      "distractors": [
+        {
+          "word": "expensive",
+          "meaning": "adj. 昂贵的，高消费的"
+        },
+        {
+          "word": "free",
+          "meaning": "adj. 自由的，空闲的；免费的"
+        },
+        {
+          "word": "slight",
+          "meaning": "adj. 轻微的， 细小的"
+        }
+      ]
+    },
+    {
+      "targetWord": "shock",
+      "targetMeaning": "v. 使震惊；n. 震动，冲击",
+      "distractors": [
+        {
+          "word": "persuade",
+          "meaning": "v. 说服，劝说；使相信"
+        },
+        {
+          "word": "convince",
+          "meaning": "v. 使确信，使信服"
+        },
+        {
+          "word": "die",
+          "meaning": "v. 死亡；消失；熄灭"
+        }
+      ]
+    },
+    {
+      "targetWord": "bit",
+      "targetMeaning": "n. 一点，一些，少量",
+      "distractors": [
+        {
+          "word": "land",
+          "meaning": "n. 陆地；v. 登陆；降落"
+        },
+        {
+          "word": "challenge",
+          "meaning": "n. 挑战；挑战性；v. 挑战"
+        },
+        {
+          "word": "frost",
+          "meaning": "n. 霜"
+        }
+      ]
+    },
+    {
+      "targetWord": "obey",
+      "targetMeaning": "v. 服从，顺从",
+      "distractors": [
+        {
+          "word": "punish",
+          "meaning": "v. 惩罚， 处罚"
+        },
+        {
+          "word": "warn",
+          "meaning": "v. 警告；预告"
+        },
+        {
+          "word": "announce",
+          "meaning": "v. 宣布， 宣告"
+        }
+      ]
+    },
+    {
+      "targetWord": "grade",
+      "targetMeaning": "n. 等级；（中小学的）学年；成绩，分数",
+      "distractors": [
+        {
+          "word": "cycle",
+          "meaning": "n. 周期；循环；v. 骑自行车；使循环"
+        },
+        {
+          "word": "bit",
+          "meaning": "n. 一点，一些，少量"
+        },
+        {
+          "word": "spot",
+          "meaning": "n. 斑点，污点；场所，地点；v. 弄脏；认出，发现"
+        }
+      ]
+    },
+    {
+      "targetWord": "journey",
+      "targetMeaning": "n. 旅行， 路程",
+      "distractors": [
+        {
+          "word": "fact",
+          "meaning": "n. 事实， 现实"
+        },
+        {
+          "word": "mind",
+          "meaning": "n. 思想；v. 介意"
+        },
+        {
+          "word": "decision",
+          "meaning": "n. 决定；决议"
+        }
+      ]
+    },
+    {
+      "targetWord": "announce",
+      "targetMeaning": "v. 宣布， 宣告",
+      "distractors": [
+        {
+          "word": "shock",
+          "meaning": "v. 使震惊；n. 震动，冲击"
+        },
+        {
+          "word": "punish",
+          "meaning": "v. 惩罚， 处罚"
+        },
+        {
+          "word": "obey",
+          "meaning": "v. 服从，顺从"
+        }
+      ]
+    },
+    {
+      "targetWord": "merciful",
+      "targetMeaning": "adj. 仁慈的；宽大的",
+      "distractors": [
+        {
+          "word": "slight",
+          "meaning": "adj. 轻微的， 细小的"
+        },
+        {
+          "word": "extraordinary",
+          "meaning": "adj. 非常的；非凡的"
+        },
+        {
+          "word": "political",
+          "meaning": "adj. 政治的"
+        }
+      ]
+    },
+    {
+      "targetWord": "persuade",
+      "targetMeaning": "v. 说服，劝说；使相信",
+      "distractors": [
+        {
+          "word": "shock",
+          "meaning": "v. 使震惊；n. 震动，冲击"
+        },
+        {
+          "word": "annoy",
+          "meaning": "v. 使烦恼， 使生气；骚扰"
+        },
+        {
+          "word": "die",
+          "meaning": "v. 死亡；消失；熄灭"
+        }
+      ]
+    },
+    {
+      "targetWord": "decision",
+      "targetMeaning": "n. 决定；决议",
+      "distractors": [
+        {
+          "word": "situation",
+          "meaning": "n. 形势， 情况"
+        },
+        {
+          "word": "grade",
+          "meaning": "n. 等级；（中小学的）学年；成绩，分数"
+        },
+        {
+          "word": "journey",
+          "meaning": "n. 旅行， 路程"
+        }
+      ]
+    },
+    {
+      "targetWord": "cycle",
+      "targetMeaning": "n. 周期；循环；v. 骑自行车；使循环",
+      "distractors": [
+        {
+          "word": "frost",
+          "meaning": "n. 霜"
+        },
+        {
+          "word": "challenge",
+          "meaning": "n. 挑战；挑战性；v. 挑战"
+        },
+        {
+          "word": "spot",
+          "meaning": "n. 斑点，污点；场所，地点；v. 弄脏；认出，发现"
+        }
+      ]
+    },
+    {
+      "targetWord": "seldom",
+      "targetMeaning": "adv. 很少，不常",
+      "distractors": [
+        {
+          "word": "nowhere",
+          "meaning": "adv. 任何地方都不；无处"
+        },
+        {
+          "word": "announce",
+          "meaning": "v. 宣布， 宣告"
+        },
+        {
+          "word": "on",
+          "meaning": "prep. 在…上；在…时候；在…地方；关于；adv. 继续"
+        }
+      ]
+    },
+    {
+      "targetWord": "need",
+      "targetMeaning": "v. 需要；modal v. 必须；n. 需要，需求",
+      "distractors": [
+        {
+          "word": "persuade",
+          "meaning": "v. 说服，劝说；使相信"
+        },
+        {
+          "word": "convince",
+          "meaning": "v. 使确信，使信服"
+        },
+        {
+          "word": "declare",
+          "meaning": "v. 宣布，声明；断言；申报（应纳税额）"
+        }
+      ]
+    },
+    {
+      "targetWord": "annoy",
+      "targetMeaning": "v. 使烦恼， 使生气；骚扰",
+      "distractors": [
+        {
+          "word": "obey",
+          "meaning": "v. 服从，顺从"
+        },
+        {
+          "word": "warn",
+          "meaning": "v. 警告；预告"
+        },
+        {
+          "word": "need",
+          "meaning": "v. 需要；modal v. 必须；n. 需要，需求"
+        }
+      ]
+    },
+    {
+      "targetWord": "anyway",
+      "targetMeaning": "adv. 不管怎样",
+      "distractors": [
+        {
+          "word": "very",
+          "meaning": "adv. 很，非常；adj. 正是的，恰好的"
+        },
+        {
+          "word": "nowhere",
+          "meaning": "adv. 任何地方都不；无处"
+        },
+        {
+          "word": "seldom",
+          "meaning": "adv. 很少，不常"
+        }
+      ]
+    },
+    {
+      "targetWord": "punish",
+      "targetMeaning": "v. 惩罚， 处罚",
+      "distractors": [
+        {
+          "word": "obey",
+          "meaning": "v. 服从，顺从"
+        },
+        {
+          "word": "warn",
+          "meaning": "v. 警告；预告"
+        },
+        {
+          "word": "announce",
+          "meaning": "v. 宣布， 宣告"
+        }
+      ]
+    },
+    {
+      "targetWord": "mind",
+      "targetMeaning": "n. 思想；v. 介意",
+      "distractors": [
+        {
+          "word": "fact",
+          "meaning": "n. 事实， 现实"
+        },
+        {
+          "word": "journey",
+          "meaning": "n. 旅行， 路程"
+        },
+        {
+          "word": "decision",
+          "meaning": "n. 决定；决议"
+        }
+      ]
+    },
+    {
+      "targetWord": "situation",
+      "targetMeaning": "n. 形势， 情况",
+      "distractors": [
+        {
+          "word": "bit",
+          "meaning": "n. 一点，一些，少量"
+        },
+        {
+          "word": "land",
+          "meaning": "n. 陆地；v. 登陆；降落"
+        },
+        {
+          "word": "mind",
+          "meaning": "n. 思想；v. 介意"
+        }
+      ]
+    },
+    {
+      "targetWord": "die",
+      "targetMeaning": "v. 死亡；消失；熄灭",
+      "distractors": [
+        {
+          "word": "persuade",
+          "meaning": "v. 说服，劝说；使相信"
+        },
+        {
+          "word": "shock",
+          "meaning": "v. 使震惊；n. 震动，冲击"
+        },
+        {
+          "word": "convince",
+          "meaning": "v. 使确信，使信服"
+        }
+      ]
+    },
+    {
+      "targetWord": "frost",
+      "targetMeaning": "n. 霜",
+      "distractors": [
+        {
+          "word": "cycle",
+          "meaning": "n. 周期；循环；v. 骑自行车；使循环"
+        },
+        {
+          "word": "grade",
+          "meaning": "n. 等级；（中小学的）学年；成绩，分数"
+        },
+        {
+          "word": "situation",
+          "meaning": "n. 形势， 情况"
+        }
+      ]
+    },
+    {
+      "targetWord": "convince",
+      "targetMeaning": "v. 使确信，使信服",
+      "distractors": [
+        {
+          "word": "punish",
+          "meaning": "v. 惩罚， 处罚"
+        },
+        {
+          "word": "annoy",
+          "meaning": "v. 使烦恼， 使生气；骚扰"
+        },
+        {
+          "word": "die",
+          "meaning": "v. 死亡；消失；熄灭"
+        }
+      ]
+    },
+    {
+      "targetWord": "fact",
+      "targetMeaning": "n. 事实， 现实",
+      "distractors": [
+        {
+          "word": "spot",
+          "meaning": "n. 斑点，污点；场所，地点；v. 弄脏；认出，发现"
+        },
+        {
+          "word": "decision",
+          "meaning": "n. 决定；决议"
+        },
+        {
+          "word": "frost",
+          "meaning": "n. 霜"
+        }
+      ]
+    },
+    {
+      "targetWord": "slight",
+      "targetMeaning": "adj. 轻微的， 细小的",
+      "distractors": [
+        {
+          "word": "real",
+          "meaning": "adj. 真实的， 确实的"
+        },
+        {
+          "word": "expensive",
+          "meaning": "adj. 昂贵的，高消费的"
+        },
+        {
+          "word": "merciful",
+          "meaning": "adj. 仁慈的；宽大的"
+        }
+      ]
+    },
+    {
+      "targetWord": "unfair",
+      "targetMeaning": "adj. 不公平的，不公正的",
+      "distractors": [
+        {
+          "word": "political",
+          "meaning": "adj. 政治的"
+        },
+        {
+          "word": "slight",
+          "meaning": "adj. 轻微的， 细小的"
+        },
+        {
+          "word": "free",
+          "meaning": "adj. 自由的，空闲的；免费的"
+        }
+      ]
+    },
+    {
+      "targetWord": "declare",
+      "targetMeaning": "v. 宣布，声明；断言；申报（应纳税额）",
+      "distractors": [
+        {
+          "word": "annoy",
+          "meaning": "v. 使烦恼， 使生气；骚扰"
+        },
+        {
+          "word": "persuade",
+          "meaning": "v. 说服，劝说；使相信"
+        },
+        {
+          "word": "need",
+          "meaning": "v. 需要；modal v. 必须；n. 需要，需求"
+        }
+      ]
+    },
+    {
+      "targetWord": "warn",
+      "targetMeaning": "v. 警告；预告",
+      "distractors": [
+        {
+          "word": "obey",
+          "meaning": "v. 服从，顺从"
+        },
+        {
+          "word": "punish",
+          "meaning": "v. 惩罚， 处罚"
+        },
+        {
+          "word": "declare",
+          "meaning": "v. 宣布，声明；断言；申报（应纳税额）"
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "questions": [
+      {
+        "targetWord": "on",
+        "targetPos": "prep./adv.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "declare",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，与目标词义无重叠。"
+          },
+          {
+            "word": "grade",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，与目标词义无重叠。"
+          },
+          {
+            "word": "need",
+            "pos": "v./modal v./n.",
+            "suitable": true,
+            "reason": "释义准确，与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "free",
+        "targetPos": "adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "merciful",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且不是目标词的近义项。"
+          },
+          {
+            "word": "slight",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义有清楚区别。"
+          },
+          {
+            "word": "unfair",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "real",
+        "targetPos": "adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "expensive",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义基本准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "free",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "extraordinary",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "“非常的；非凡的”与“真实的；确实的”可清楚区分。"
+          }
+        ]
+      },
+      {
+        "targetWord": "challenge",
+        "targetPos": "n./v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "land",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，词性结构相近且与目标词义无重叠。"
+          },
+          {
+            "word": "cycle",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，词性结构相近且与目标词义无重叠。"
+          },
+          {
+            "word": "bit",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，名词义与目标词无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "very",
+        "targetPos": "adv./adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "anyway",
+            "pos": "adv.",
+            "suitable": true,
+            "reason": "释义准确，副词义与目标词明显不同。"
+          },
+          {
+            "word": "annoy",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "虽词性不同，但释义准确且无语义重叠。"
+          },
+          {
+            "word": "nowhere",
+            "pos": "adv.",
+            "suitable": true,
+            "reason": "释义准确，副词义与目标词明显不同。"
+          }
+        ]
+      },
+      {
+        "targetWord": "expensive",
+        "targetPos": "adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "political",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "unfair",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "real",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "nowhere",
+        "targetPos": "adv.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "seldom",
+            "pos": "adv.",
+            "suitable": true,
+            "reason": "表示低频率而非地点不存在，区别清楚。"
+          },
+          {
+            "word": "anyway",
+            "pos": "adv.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "very",
+            "pos": "adv./adj.",
+            "suitable": true,
+            "reason": "释义准确，其副词及形容词义均与目标词不同。"
+          }
+        ]
+      },
+      {
+        "targetWord": "land",
+        "targetPos": "n./v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "decision",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，名词义与目标词无重叠。"
+          },
+          {
+            "word": "fact",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，名词义与目标词无重叠。"
+          },
+          {
+            "word": "challenge",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，词性结构相近且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "spot",
+        "targetPos": "n./v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "mind",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，词性结构相近且与目标词义无重叠。"
+          },
+          {
+            "word": "situation",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "“形势、情况”不等于目标词的“地点”等义项。"
+          },
+          {
+            "word": "journey",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，名词义与目标词无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "political",
+        "targetPos": "adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "merciful",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "real",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "extraordinary",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "extraordinary",
+        "targetPos": "adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "expensive",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义基本准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "free",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "slight",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，与“非凡的”区别明显。"
+          }
+        ]
+      },
+      {
+        "targetWord": "shock",
+        "targetPos": "v./n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "persuade",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，其“说服”义与“使震惊”无重叠。"
+          },
+          {
+            "word": "convince",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，其“使确信”义与目标词无重叠。"
+          },
+          {
+            "word": "die",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，与目标词的动词及名词义均不同。"
+          }
+        ]
+      },
+      {
+        "targetWord": "bit",
+        "targetPos": "n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "land",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          },
+          {
+            "word": "challenge",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          },
+          {
+            "word": "frost",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "obey",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "punish",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致；惩罚与服从并非同义。"
+          },
+          {
+            "word": "warn",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "announce",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "grade",
+        "targetPos": "n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "cycle",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          },
+          {
+            "word": "bit",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "spot",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "journey",
+        "targetPos": "n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "fact",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "mind",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          },
+          {
+            "word": "decision",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "announce",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "shock",
+            "pos": "v./n.",
+            "suitable": true,
+            "reason": "释义准确，其动词义与“宣布”无重叠。"
+          },
+          {
+            "word": "punish",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "obey",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "merciful",
+        "targetPos": "adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "slight",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "extraordinary",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "political",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "persuade",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "shock",
+            "pos": "v./n.",
+            "suitable": true,
+            "reason": "释义准确，其动词义与“说服”无重叠。"
+          },
+          {
+            "word": "annoy",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "die",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "decision",
+        "targetPos": "n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "situation",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "grade",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "journey",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "cycle",
+        "targetPos": "n./v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "frost",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，名词义与目标词无重叠。"
+          },
+          {
+            "word": "challenge",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，词性结构相近且与目标词义无重叠。"
+          },
+          {
+            "word": "spot",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，词性结构相近且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "seldom",
+        "targetPos": "adv.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "nowhere",
+            "pos": "adv.",
+            "suitable": true,
+            "reason": "表示地点不存在而非低频率，区别清楚。"
+          },
+          {
+            "word": "announce",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "虽词性不同，但释义准确且无语义重叠。"
+          },
+          {
+            "word": "on",
+            "pos": "prep./adv.",
+            "suitable": true,
+            "reason": "释义准确，其副词及介词义均与目标词不同。"
+          }
+        ]
+      },
+      {
+        "targetWord": "need",
+        "targetPos": "v./modal v./n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "persuade",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，其动词义与“需要、必须”无重叠。"
+          },
+          {
+            "word": "convince",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，其动词义与目标词无重叠。"
+          },
+          {
+            "word": "declare",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，其动词义与目标词无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "annoy",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "obey",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "warn",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "need",
+            "pos": "v./modal v./n.",
+            "suitable": true,
+            "reason": "释义准确，其动词及其他词性义均与目标词不同。"
+          }
+        ]
+      },
+      {
+        "targetWord": "anyway",
+        "targetPos": "adv.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "very",
+            "pos": "adv./adj.",
+            "suitable": true,
+            "reason": "释义准确，其副词义与目标词明显不同。"
+          },
+          {
+            "word": "nowhere",
+            "pos": "adv.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "seldom",
+            "pos": "adv.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "punish",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "obey",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致；服从与惩罚并非同义。"
+          },
+          {
+            "word": "warn",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "警告可能先于惩罚，但二者并非同义或翻译重叠。"
+          },
+          {
+            "word": "announce",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "mind",
+        "targetPos": "n./v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "fact",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          },
+          {
+            "word": "journey",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          },
+          {
+            "word": "decision",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "“决定”可由思想产生，但不是“思想”或“介意”的同义项。"
+          }
+        ]
+      },
+      {
+        "targetWord": "situation",
+        "targetPos": "n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "bit",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "land",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          },
+          {
+            "word": "mind",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词及动词义均与目标词不同。"
+          }
+        ]
+      },
+      {
+        "targetWord": "die",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "persuade",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "shock",
+            "pos": "v./n.",
+            "suitable": true,
+            "reason": "释义准确，其动词义与目标词无重叠。"
+          },
+          {
+            "word": "convince",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "frost",
+        "targetPos": "n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "cycle",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词义与目标词无重叠。"
+          },
+          {
+            "word": "grade",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "situation",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "convince",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "punish",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "annoy",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "die",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "fact",
+        "targetPos": "n.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "spot",
+            "pos": "n./v.",
+            "suitable": true,
+            "reason": "释义准确，其名词及动词义均与目标词不同。"
+          },
+          {
+            "word": "decision",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且不是“事实”的同义项。"
+          },
+          {
+            "word": "frost",
+            "pos": "n.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "slight",
+        "targetPos": "adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "real",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "expensive",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义基本准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "merciful",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          }
+        ]
+      },
+      {
+        "targetWord": "unfair",
+        "targetPos": "adj.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "political",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "slight",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "free",
+            "pos": "adj.",
+            "suitable": true,
+            "reason": "释义准确；“自由的、空闲的、免费的”均不等于“不公平的”。"
+          }
+        ]
+      },
+      {
+        "targetWord": "declare",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "annoy",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "persuade",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与“宣布、声明”无重叠。"
+          },
+          {
+            "word": "need",
+            "pos": "v./modal v./n.",
+            "suitable": true,
+            "reason": "释义准确，其各词性义均与目标词不同。"
+          }
+        ]
+      },
+      {
+        "targetWord": "warn",
+        "targetPos": "v.",
+        "allSuitable": true,
+        "distractors": [
+          {
+            "word": "obey",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "释义准确，词性一致且与目标词义无重叠。"
+          },
+          {
+            "word": "punish",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "警告与惩罚可能相关，但并非同义或翻译重叠。"
+          },
+          {
+            "word": "declare",
+            "pos": "v.",
+            "suitable": true,
+            "reason": "“宣布、声明”不等于“警告、预告”，区别足够清楚。"
+          }
+        ]
+      }
+    ]
+  }
+}

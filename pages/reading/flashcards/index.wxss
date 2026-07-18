@@ -1787,6 +1787,8 @@
 .folder-body text:nth-child(3) { right: 9rpx; height: 30rpx; transform: rotate(6deg); }
 
 .listen-spell-symbol { border: 1rpx solid rgba(74, 119, 141, 0.18); border-radius: 50%; background: radial-gradient(circle at 50% 46%, #f8fcfd 0 32%, #d8e9f0 33% 62%, #b8d4df 63%); box-shadow: 0 10rpx 24rpx rgba(65, 111, 134, 0.16); }
+.practice-hub-symbol { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; gap: 4rpx; padding: 12rpx 9rpx; border: 1rpx solid rgba(74,119,141,.18); border-radius: 22rpx; background: linear-gradient(145deg,#dbeaf1,#b5d2de); }
+.practice-hub-symbol text { display: flex; align-items: center; justify-content: center; height: 56rpx; border-radius: 9rpx; background: rgba(255,255,255,.72); color: #416f86; font-size: 19rpx; font-weight: 700; }
 .headphone-band { position: absolute; left: 26rpx; top: 22rpx; width: 48rpx; height: 48rpx; border: 7rpx solid #416f86; border-bottom: 0; border-radius: 32rpx 32rpx 0 0; }
 .headphone-ear { position: absolute; top: 58rpx; width: 12rpx; height: 24rpx; border-radius: 8rpx; background: #416f86; }
 .headphone-ear.left { left: 22rpx; }.headphone-ear.right { right: 22rpx; }
@@ -1807,6 +1809,8 @@
 .theme-library .folder-tab { background: #7a624b; }
 .theme-library .folder-body { border-radius: 3rpx; background: #4b6571; }
 .theme-library .listen-spell-symbol { border-color: rgba(115,88,55,.24); border-radius: 6rpx; background: #eadfcd; box-shadow: none; }
+.theme-library .practice-hub-symbol { border-color: rgba(115,88,55,.24); border-radius: 6rpx; background: #e4d5bb; }
+.theme-library .practice-hub-symbol text { border-radius: 3rpx; background: #f7efdf; color: #6b5744; }
 .theme-library .dictation-practice { background: #f3e8d4; }
 .language-en .vocab-practice-card-title { font-size: 29rpx; }
 .language-en .vocab-practice-card-copy { font-size: 22rpx; }

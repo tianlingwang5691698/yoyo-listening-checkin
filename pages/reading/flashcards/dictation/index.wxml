@@ -23,7 +23,7 @@
     <view class="dictation-audio-hint" wx:if="{{audioFailed && !revealed}}"><text>{{texts.audioFailedHint}}</text><text>{{current.meaning}}</text></view>
     <input class="dictation-input {{revealed ? (current.correct ? 'is-correct' : 'is-wrong') : ''}}" value="{{inputValue}}" disabled="{{revealed}}" focus="{{!revealed}}" placeholder="{{texts.placeholder}}" bindinput="handleInput" bindconfirm="submitCurrent" />
     <view class="dictation-answer" wx:if="{{revealed}}"><view class="dictation-result {{current.correct ? 'is-correct' : 'is-wrong'}}">{{current.correct ? texts.correct : texts.wrong}}</view><view><text>{{texts.answer}}</text><text class="dictation-answer-word">{{current.word}}</text></view><view wx:if="{{!current.correct}}"><text>{{texts.yours}}</text><text class="dictation-answer-word">{{current.input}}</text></view><view class="dictation-meaning">{{current.phonetic}} {{current.meaning}}</view></view>
-    <button class="dictation-action primary" wx:if="{{!revealed}}" bindtap="submitCurrent">{{texts.submit}}</button><button class="dictation-action primary" wx:else bindtap="nextCard">{{currentIndex + 1 >= cards.length ? texts.finish : texts.next}}</button>
+    <button class="dictation-action primary" wx:if="{{!revealed}}" bindtap="submitCurrent">{{texts.submit}}</button><button class="dictation-action primary" wx:elif="{{!current.correct}}" bindtap="nextCard">{{currentIndex + 1 >= cards.length ? texts.finish : texts.next}}</button>
   </view>
 
   <view class="dictation-card study" wx:if="{{mode === 'wrong-study' && current}}"><view class="dictation-progress">{{currentIndex + 1}} / {{cards.length}}</view><view class="study-word" bindtap="playCurrent">{{current.word}}</view><view class="study-phonetic">{{current.phonetic}}</view><view class="study-meaning">{{current.meaning}}</view><view class="study-wrong" wx:if="{{current.lastInput}}">{{texts.yours}}：{{current.lastInput}}</view><button class="dictation-play" bindtap="playCurrent">{{texts.play}}</button><button class="dictation-action primary" bindtap="nextStudyCard">{{currentIndex + 1 >= cards.length ? texts.studyDone : texts.studyNext}}</button></view>
@@ -34,5 +34,6 @@
     <view class="complete-mark">✓</view><view class="complete-title">{{texts.completeTitle}}</view>
     <view class="complete-numbers"><view><text>{{totalCount}}</text><text>{{texts.total}}</text></view><view><text>{{correctCount}}</text><text>{{texts.correct}}</text></view><view><text>{{wrongCount}}</text><text>{{texts.wrong}}</text></view><view><text>{{accuracy}}%</text><text>{{texts.accuracy}}</text></view></view>
     <button class="dictation-action primary" disabled="{{saving}}" bindtap="backToMenu">{{texts.back}}</button>
+    <button class="dictation-change-mode" disabled="{{saving}}" bindtap="changePracticeMode">{{texts.changeMode}}</button>
   </view>
 </view>

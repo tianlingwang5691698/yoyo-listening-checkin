@@ -3,6 +3,7 @@ const store = require('../../../../utils/store');
 const effects = require('../../../../utils/effects');
 const i18n = require('../../../../utils/i18n');
 const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../../utils/vocabulary-definitions');
+const { resolveVocabularyEntry } = require('../../../../utils/vocabulary-phonetics');
 const {
   buildDictionaryVoiceUrls,
   buildDictionaryVoiceSegments,
@@ -12,6 +13,7 @@ const {
 const text = (key, fallback) => i18n.getPageText('vocabularyDictation', key, undefined, fallback);
 const SESSION_LIMIT = 20;
 const DICTATION_AUDIO_TOTAL_TIMEOUT_MS = 5000;
+const CORRECT_AUTO_ADVANCE_MS = 800;
 
 function defaultPracticeCount(total) {
   const available = Math.max(0, Number(total || 0));
@@ -51,23 +53,25 @@ function isCorrectSpelling(word, input) {
   return answers.includes(normalizeSpelling(input));
 }
 
-function mapBookCard(entry, index) {
-  const word = String(entry.word || entry.wordLower || '').trim();
+function mapBookCard(entry, index, sourceId) {
+  const resolved = resolveVocabularyEntry(sourceId || entry.sourceId, entry.word || entry.wordLower, entry.phonetic);
+  const word = resolved.word;
   return {
     key: `${normalizeSpelling(word)}:${index}`,
     word,
-    phonetic: String(entry.phonetic || '').trim(),
+    phonetic: resolved.phonetic,
     meaning: Array.isArray(entry.definitions) ? formatVocabularyDefinitions(entry.definitions) : formatVocabularyMeaning(entry.meaning),
     input: '',
     correct: false
   };
 }
 
-function mapWrongCard(entry, index) {
+function mapWrongCard(entry, index, sourceId) {
+  const resolved = resolveVocabularyEntry(sourceId || entry.sourceId, entry.word, entry.phonetic);
   return {
-    key: `${normalizeSpelling(entry.word)}:${index}`,
-    word: entry.word || '',
-    phonetic: entry.phonetic || '',
+    key: `${normalizeSpelling(resolved.word)}:${index}`,
+    word: resolved.word,
+    phonetic: resolved.phonetic,
     meaning: formatVocabularyMeaning(entry.meaning),
     wrongCount: Number(entry.wrongCount || 0),
     lastInput: entry.lastInput || '',
@@ -120,6 +124,7 @@ Page({
     this.loadData();
   },
   onUnload() {
+    this.clearCorrectAdvanceTimer();
     this.clearAudioStartTimer();
     if (this.audioContext) this.audioContext.destroy();
   },
@@ -136,7 +141,7 @@ Page({
       wx.showToast({ title: text('loadFailed', '词表读取失败'), icon: 'none' });
       return;
     }
-    this.allCards = words.rows.map(mapBookCard).filter((item) => item.word);
+    this.allCards = words.rows.map((item, index) => mapBookCard(item, index, this.data.sourceId)).filter((item) => item.word);
     this.setData({ loading: false, sourceTitle: this.data.sourceTitle || text('title', '听音写词'), availableCount: this.allCards.length, practiceCount: defaultPracticeCount(this.allCards.length) });
     if (!this.allCards.length) wx.showToast({ title: text('noLearned', '该词表还没有已背单词'), icon: 'none' });
     if (this.dictationPerf) this.dictationPerf.ready('pageReady', { source: 'learned-only', cacheHit: !!words.__cacheHit, total: this.allCards.length, elapsed: Date.now() - startedAt });
@@ -149,7 +154,7 @@ Page({
       ] });
       return;
     }
-    const wrongWords = (dictation.wrongWords || []).map(mapWrongCard).filter((item) => item.word);
+    const wrongWords = (dictation.wrongWords || []).map((item, index) => mapWrongCard(item, index, this.data.sourceId)).filter((item) => item.word);
     const todayAttempts = dictation.attempts || [];
     this.setData({
       debugLines: [],
@@ -185,6 +190,7 @@ Page({
     if (value !== this.data.practiceCount) this.setData({ practiceCount: value });
   },
   startDictation(cards, practiceMode) {
+    this.clearCorrectAdvanceTimer();
     if (!cards.length) {
       wx.showToast({ title: text('emptyWrong', '还没有错词'), icon: 'none' });
       return;
@@ -216,9 +222,12 @@ Page({
       results: this.data.results.concat(result),
       correctCount: this.data.correctCount + (result.correct ? 1 : 0),
       wrongCount: this.data.wrongCount + (result.correct ? 0 : 1)
+    }, () => {
+      if (result.correct) this.scheduleCorrectAdvance();
     });
   },
   nextCard() {
+    this.clearCorrectAdvanceTimer();
     const nextIndex = this.data.currentIndex + 1;
     if (nextIndex >= this.data.cards.length) {
       this.finishSession();
@@ -235,6 +244,7 @@ Page({
     this.setData({ currentIndex: nextIndex, current: this.data.cards[nextIndex] }, () => this.playCurrent());
   },
   async finishSession() {
+    this.clearCorrectAdvanceTimer();
     const totalCount = this.data.results.length;
     const accuracy = totalCount ? Math.round(this.data.correctCount * 100 / totalCount) : 0;
     this.setData({ mode: 'complete', saving: !this.data.previewMode, totalCount, accuracy });
@@ -368,10 +378,27 @@ Page({
     clearTimeout(this.audioStartTimer);
     this.audioStartTimer = null;
   },
+  scheduleCorrectAdvance() {
+    this.clearCorrectAdvanceTimer();
+    this.correctAdvanceTimer = setTimeout(() => {
+      this.correctAdvanceTimer = null;
+      this.nextCard();
+    }, CORRECT_AUTO_ADVANCE_MS);
+  },
+  clearCorrectAdvanceTimer() {
+    if (!this.correctAdvanceTimer) return;
+    clearTimeout(this.correctAdvanceTimer);
+    this.correctAdvanceTimer = null;
+  },
   openHistory() {
     wx.navigateTo({ url: '/pages/practice-history/index?type=vocabulary' });
   },
+  changePracticeMode() {
+    if (this.data.saving) return;
+    wx.redirectTo({ url: `/pages/reading/flashcards/practice/index?level=${encodeURIComponent(this.data.level)}&title=${encodeURIComponent(this.data.sourceTitle)}` });
+  },
   backToMenu() {
+    this.clearCorrectAdvanceTimer();
     this.clearAudioStartTimer();
     if (this.data.mode === 'menu') {
       wx.navigateBack({ delta: 1 });

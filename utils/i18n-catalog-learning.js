@@ -70,8 +70,8 @@ Object.assign(module.exports.flashcards['zh-CN'], { unlockSecondBook: 'Unlock �
 Object.assign(module.exports.flashcards.en, { unlockSecondBook: 'Unlock Second Edition', unlockThirdBook: 'Unlock Third Edition' });
 Object.assign(module.exports.flashcards['zh-CN'], { ieltsBook: '雅思词汇 乱序', ieltsMark: '雅' });
 Object.assign(module.exports.flashcards.en, { ieltsBook: 'IELTS Vocabulary', ieltsMark: 'I' });
-Object.assign(module.exports.flashcards['zh-CN'], { practiceHomeTitle: '词汇练习', practiceHomeCopy: '选择背诵或听写练习', reviewFolderTitle: '单词背诵', reviewFolderCopy: '我的词库与分级词汇书', dictationPracticeTitle: '听音拼写练习', dictationPracticeCopy: '从已背单词中选择听写', libraryTitle: '单词背诵', libraryCopy: '选择词库或词汇书继续背诵' });
-Object.assign(module.exports.flashcards.en, { practiceHomeTitle: 'Vocabulary Practice', practiceHomeCopy: 'Choose review or listening dictation', reviewFolderTitle: 'Word Review', reviewFolderCopy: 'My Vocabulary and graded word books', dictationPracticeTitle: 'Listen & Spell Practice', dictationPracticeCopy: 'Dictation from words already learned', libraryTitle: 'Word Review', libraryCopy: 'Choose a vocabulary set or word book' });
+Object.assign(module.exports.flashcards['zh-CN'], { practiceHomeTitle: '词汇练习', practiceHomeCopy: '选择单词背诵或单词练习', reviewFolderTitle: '单词背诵', reviewFolderCopy: '我的词库与分级词汇书', wordPracticeTitle: '单词练习', wordPracticeCopy: '看词选义、听音选义与听音拼写', libraryTitle: '单词背诵', libraryCopy: '选择词库或词汇书继续背诵', practicePromptTitle: '要趁热练习吗？', practicePromptPlanCopy: '今天的背诵已完成，选择一种方式巩固本次已背单词。', practicePromptRepeatCopy: '已完成当天复习，可以继续做识义或拼写练习。', startPractice: '开始练习', openingPractice: '正在打开…' });
+Object.assign(module.exports.flashcards.en, { practiceHomeTitle: 'Vocabulary Practice', practiceHomeCopy: 'Choose word review or word practice', reviewFolderTitle: 'Word Review', reviewFolderCopy: 'My Vocabulary and graded word books', wordPracticeTitle: 'Word Practice', wordPracticeCopy: 'Choose meanings by word or sound, or spell by sound', libraryTitle: 'Word Review', libraryCopy: 'Choose a vocabulary set or word book', practicePromptTitle: 'Ready to practise?', practicePromptPlanCopy: 'Your review is complete. Choose a practice mode for the words you just learned.', practicePromptRepeatCopy: 'Your review is complete. Continue with meaning or spelling practice.', startPractice: 'Start Practice', openingPractice: 'Opening…' });
 Object.assign(module.exports.vocabularyDictation['zh-CN'], { total: '总数', accuracy: '正确率' });
 Object.assign(module.exports.vocabularyDictation.en, { total: 'Total', accuracy: 'Accuracy' });
 Object.assign(module.exports.vocabularyDictation['zh-CN'], { unlockSecondBook: 'Unlock 第二版词汇书', unlockThirdBook: 'Unlock 第三版词汇书' });
@@ -96,3 +96,16 @@ Object.assign(module.exports.lesson['zh-CN'], { speak: '发音', collapse: '收�
 Object.assign(module.exports.lesson.en, { speak: 'Pronounce', collapse: 'Collapse', expand: 'Expand', expandTranscript: 'Show Transcript', effectiveListeningInsufficientPrefix: 'Listen for ', effectiveListeningInsufficientSuffix: ' more seconds' });
 Object.assign(module.exports.vocabularyDictation['zh-CN'], { navTitle: '听音写词' });
 Object.assign(module.exports.vocabularyDictation.en, { navTitle: 'Listen and Spell' });
+Object.assign(module.exports.vocabularyDictation['zh-CN'], { practiceShelfTitle: '选择练习词表', practiceShelfCopy: '仅练习学生已背单词' });
+Object.assign(module.exports.vocabularyDictation.en, { practiceShelfTitle: 'Choose a Word List', practiceShelfCopy: 'Practice words already studied' });
+Object.assign(module.exports.vocabularyDictation['zh-CN'], { changeMode: '换一种练习' });
+Object.assign(module.exports.vocabularyDictation.en, { changeMode: 'Choose Another Mode' });
+
+module.exports.vocabularyPractice = {
+  'zh-CN': {
+    navTitle: '单词练习', title: '单词练习', copy: '选择一种练习方式', wordMeaning: '看词选义', wordMeaningCopy: '看到单词，选择正确中文词义', audioMeaning: '听音选义', audioMeaningCopy: '只听发音，选择正确中文词义', dictation: '听音拼写', dictationCopy: '听发音，输入完整单词', learnedWords: '已背单词', wordUnit: '词', thisPractice: '本次题数', start: '开始练习', loadFailed: '词表读取失败', needFourWords: '至少背过 4 个单词才能练习', optionsUnavailable: '暂时无法生成有效选项', parentPreview: '家长预览 · 不记录成绩', audioFailed: '发音暂时无法播放', replay: '重播', skip: '跳过', correct: '回答正确', wrong: '回答错误', next: '下一题', finish: '查看结果', complete: '练习完成', correctCount: '正确', wrongCount: '错误', accuracy: '正确率', again: '再练一次', changeMode: '换一种练习'
+  },
+  en: {
+    navTitle: 'Word Practice', title: 'Word Practice', copy: 'Choose a practice mode', wordMeaning: 'Word to Meaning', wordMeaningCopy: 'See a word and choose its meaning', audioMeaning: 'Sound to Meaning', audioMeaningCopy: 'Hear a word and choose its meaning', dictation: 'Listen and Spell', dictationCopy: 'Hear a word and type its spelling', learnedWords: 'Words Studied', wordUnit: 'words', thisPractice: 'questions', start: 'Start Practice', loadFailed: 'Could not load this word list', needFourWords: 'Study at least 4 words before practising', optionsUnavailable: 'Could not build valid options', parentPreview: 'Parent Preview · Results are not saved', audioFailed: 'Audio is unavailable', replay: 'Replay', skip: 'Skip', correct: 'Correct', wrong: 'Incorrect', next: 'Next', finish: 'View Results', complete: 'Practice Complete', correctCount: 'Correct', wrongCount: 'Wrong', accuracy: 'Accuracy', again: 'Practice Again', changeMode: 'Choose Another Mode'
+  }
+};

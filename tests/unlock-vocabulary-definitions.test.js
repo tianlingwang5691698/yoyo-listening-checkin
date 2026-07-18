@@ -29,6 +29,13 @@ test('缓存中的已拼接释义同样可以归一化', () => {
   );
 });
 
+test('高中词表 OCR 残留使用统一释义层修正', () => {
+  assert.equal(formatVocabularyMeaning('adj. 政治的 ｛／ 呵嚣＼必'), 'adj. 政治的');
+  assert.equal(formatVocabularyMeaning('adj. 自由幽，空闲的；免费的'), 'adj. 自由的，空闲的；免费的');
+  assert.equal(formatVocabularyMeaning('adj. 很， 非常 adj.： 惜好的， 正好的'), 'adv. 很，非常；adj. 正是的，恰好的');
+  assert.equal(formatVocabularyDefinitions(['n. 周期', '循环 v. 骑自行车， 循环 v. 便循环']), 'n. 周期；循环；v. 骑自行车；使循环');
+});
+
 test('Unlock 页面与构建脚本都使用词性归一化', () => {
   const root = path.resolve(__dirname, '..');
   const flashcards = fs.readFileSync(path.join(root, 'pages/reading/flashcards/index.js'), 'utf8');

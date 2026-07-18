@@ -1,0 +1,31 @@
+<view class="recognition-nav theme-{{theme}}" style="{{navStyle}}"><view class="recognition-back" bindtap="handleBack">‹</view><view class="recognition-nav-title">{{practiceMode === 'audio-meaning' ? texts.audioMeaning : texts.wordMeaning}}</view></view>
+<view class="theme-{{theme}} language-{{language}} recognition-page" style="{{pageTopStyle}}">
+  <view class="recognition-preview" wx:if="{{previewMode}}">{{texts.parentPreview}}</view>
+  <view class="recognition-debug" wx:if="{{debugLines.length}}"><text selectable="{{true}}" wx:for="{{debugLines}}" wx:key="*this">{{item}}</text></view>
+  <view class="recognition-hero"><view class="recognition-kicker">{{practiceMode === 'audio-meaning' ? 'LISTEN · CHOOSE' : 'WORD · CHOOSE'}}</view><view class="recognition-title">{{sourceTitle}}</view><view class="recognition-copy">{{practiceMode === 'audio-meaning' ? texts.audioMeaningCopy : texts.wordMeaningCopy}}</view></view>
+
+  <view class="recognition-menu" wx:if="{{mode === 'menu'}}">
+    <view class="recognition-count-head"><text>{{texts.learnedWords}}</text><text>{{availableCount}} {{texts.wordUnit}}</text></view>
+    <view class="recognition-count-controls"><button disabled="{{practiceCount <= 1}}" data-delta="-1" bindtap="changePracticeCount">−</button><view><text>{{practiceCount}}</text><text>{{texts.thisPractice}}</text></view><button disabled="{{practiceCount >= availableCount || practiceCount >= 20}}" data-delta="1" bindtap="changePracticeCount">+</button></view>
+    <slider min="1" max="{{availableCount > 20 ? 20 : (availableCount || 1)}}" step="1" value="{{practiceCount || 1}}" disabled="{{availableCount < 4}}" activeColor="{{theme === 'library' ? '#6f5741' : '#315d73'}}" backgroundColor="{{theme === 'library' ? '#d7c8ad' : '#c9dce5'}}" block-color="{{theme === 'library' ? '#f7f0e3' : '#ffffff'}}" block-size="22" bindchanging="handlePracticeSlider" bindchange="handlePracticeSlider" />
+    <button class="recognition-start" disabled="{{loading || availableCount < 4}}" bindtap="startPractice">{{texts.start}}</button>
+  </view>
+
+  <view class="recognition-question" wx:if="{{mode === 'question' && current}}">
+    <view class="recognition-progress"><text>{{currentIndex + 1}} / {{cards.length}}</text><text>{{correctCount}} ✓</text></view>
+    <view class="recognition-prompt">
+      <view class="recognition-word" wx:if="{{practiceMode === 'word-meaning' || revealed}}">{{current.word}}</view>
+      <button class="recognition-word-audio {{audioLoading ? 'is-loading' : ''}} {{audioFailed ? 'is-failed' : ''}}" wx:if="{{practiceMode === 'word-meaning' || revealed}}" aria-label="{{texts.replay}}" bindtap="playCurrent">♪</button>
+      <button class="recognition-audio {{audioLoading ? 'is-loading' : ''}}" wx:else bindtap="playCurrent">♪</button>
+      <view class="recognition-phonetic" wx:if="{{revealed && current.phonetic}}">{{current.phonetic}}</view>
+      <view class="recognition-inline-audio-failed" wx:if="{{audioFailed && !revealed && practiceMode === 'word-meaning'}}">{{texts.audioFailed}}</view>
+      <view class="recognition-audio-failed" wx:if="{{audioFailed && !revealed && practiceMode === 'audio-meaning'}}"><text>{{texts.audioFailed}}</text><view><button bindtap="playCurrent">{{texts.replay}}</button><button bindtap="skipAudioQuestion">{{texts.skip}}</button></view></view>
+    </view>
+    <view class="recognition-options">
+      <button class="recognition-option {{revealed && item.correct ? 'is-correct' : ''}} {{revealed && selectedKey === item.key && !item.correct ? 'is-wrong' : ''}}" wx:for="{{current.options}}" wx:key="key" data-key="{{item.key}}" bindtap="selectOption"><text class="recognition-option-key">{{item.label}}</text><text>{{item.text}}</text><text class="recognition-option-status is-correct" wx:if="{{revealed && item.correct}}">✓</text><text class="recognition-option-status is-wrong" wx:elif="{{revealed && selectedKey === item.key}}">×</text></button>
+    </view>
+    <view class="recognition-feedback" wx:if="{{revealed}}"><view class="recognition-result {{current.correct ? 'is-correct' : 'is-wrong'}}">{{current.correct ? texts.correct : texts.wrong}}</view><view class="recognition-answer">{{current.word}} · {{current.meaning}}</view><view class="recognition-example" wx:if="{{current.example}}">{{current.example}}<text wx:if="{{current.exampleMeaning}}">{{current.exampleMeaning}}</text></view><button wx:if="{{!current.correct}}" bindtap="nextQuestion">{{currentIndex + 1 >= cards.length ? texts.finish : texts.next}}</button></view>
+  </view>
+
+  <view class="recognition-complete" wx:if="{{mode === 'complete'}}"><view class="recognition-complete-mark">✓</view><view class="recognition-complete-title">{{texts.complete}}</view><view class="recognition-score"><view><text>{{correctCount}}</text><text>{{texts.correctCount}}</text></view><view><text>{{wrongCount}}</text><text>{{texts.wrongCount}}</text></view><view><text>{{accuracy}}%</text><text>{{texts.accuracy}}</text></view></view><button class="recognition-again" bindtap="retryPractice">{{texts.again}}</button><button class="recognition-change" bindtap="changePracticeMode">{{texts.changeMode}}</button></view>
+</view>

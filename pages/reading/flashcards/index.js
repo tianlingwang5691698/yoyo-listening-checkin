@@ -3,6 +3,7 @@ const store = require('../../../utils/store');
 const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
 const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../utils/vocabulary-definitions');
+const { resolveVocabularyEntry } = require('../../../utils/vocabulary-phonetics');
 const {
   canUseDictionaryVoice,
   buildDictionaryVoiceUrls,
@@ -193,23 +194,27 @@ function getPhoneticBody(value) {
 
 function normalizeCard(item, index) {
   const type = item.type || (item.pattern ? 'pattern' : (item.phrase ? 'phrase' : 'word'));
-  const displayText = item.text || item.word || item.phrase || item.pattern || '';
+  const resolved = type === 'word'
+    ? resolveVocabularyEntry(item.sourceId, item.word || item.text, item.phonetic)
+    : { word: item.word, phonetic: item.phonetic };
+  const normalizedItem = type === 'word' ? Object.assign({}, item, { word: resolved.word, text: resolved.word, phonetic: resolved.phonetic }) : item;
+  const displayText = normalizedItem.text || normalizedItem.word || normalizedItem.phrase || normalizedItem.pattern || '';
   const longestTokenLength = String(displayText).split(/\s+/).reduce((max, token) => Math.max(max, token.length), 0);
   const displaySizeClass = longestTokenLength >= 18
     ? 'is-word-extra-long'
     : ((longestTokenLength >= 12 || String(displayText).length >= 28) ? 'is-word-long' : '');
-  const phoneticBody = getPhoneticBody(item.phonetic);
+  const phoneticBody = getPhoneticBody(normalizedItem.phonetic);
   const displayPhonetic = phoneticBody ? `/${phoneticBody}/` : '';
-  const isUnlockBook = /^dictionary-book-unlock-/.test(String(item.sourceId || ''));
-  const audioText = normalizeDictionaryVoiceText(item.word || item.phrase || item.pattern || displayText);
-  return Object.assign({}, item, {
+  const isUnlockBook = /^dictionary-book-unlock-/.test(String(normalizedItem.sourceId || ''));
+  const audioText = normalizeDictionaryVoiceText(normalizedItem.word || normalizedItem.phrase || normalizedItem.pattern || displayText);
+  return Object.assign({}, normalizedItem, {
     type,
     displayText,
     displaySizeClass,
-    phonetic: formatPhonetic(item.phonetic),
+    phonetic: formatPhonetic(normalizedItem.phonetic),
     phoneticBody,
     displayPhonetic,
-    meaning: isUnlockBook ? formatVocabularyMeaning(item.meaning) : item.meaning,
+    meaning: type === 'word' || isUnlockBook ? formatVocabularyMeaning(item.meaning) : item.meaning,
     audioText,
     canSpeak: canUseDictionaryVoice(audioText),
     typeLabel: TYPE_LABELS[type] || text('word', '生词'),
@@ -1216,6 +1221,9 @@ Page({
   openDictationShelf() {
     wx.navigateTo({ url: '/pages/reading/flashcards/dictation/library/index' });
   },
+  openWordPractice() {
+    wx.navigateTo({ url: '/pages/reading/flashcards/practice/index' });
+  },
   openReviewFolder() {
     this.setData({ sourceMode: 'bookshelf', mode: 'library' });
     this.prefetchVocabularySources();
@@ -1859,14 +1867,14 @@ Page({
       check();
     });
   },
-  async openCompletedDictation() {
+  async openCompletedPractice() {
     if (this.data.dictationJumping || !isBookSource(this.data.activeSourceId)) return;
     this.setData({ dictationJumping: true });
     await this.waitForReviewSync();
     const level = String(this.data.activeSourceId || '').replace(/^dictionary-book-/, '');
     const title = this.data.dictationPromptSourceTitle || getDictationSourceTitle(this.data.activeSourceId, this.data.activeSourceTitle);
     this.setData({ dictationPromptVisible: false, dictationPromptPending: false, dictationJumping: false });
-    wx.navigateTo({ url: `/pages/reading/flashcards/dictation/index?level=${encodeURIComponent(level)}&title=${encodeURIComponent(title)}` });
+    wx.navigateTo({ url: `/pages/reading/flashcards/practice/index?level=${encodeURIComponent(level)}&title=${encodeURIComponent(title)}` });
   },
   repeatCurrentCard(shouldPersist) {
     const cards = this.data.cards.slice();

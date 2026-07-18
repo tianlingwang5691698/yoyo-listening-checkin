@@ -59,6 +59,10 @@ Page({
     unlockLevel: 0,
     unlockUnit: 0,
     standardStage: '',
+    practiceMode: 'dictation',
+    navTitle: '',
+    kicker: '',
+    showRecords: true,
     title: '',
     subtitle: '',
     items: [],
@@ -68,11 +72,21 @@ Page({
     navStyle: '',
     pageTopStyle: ''
   }),
-  onLoad() {
+  onLoad(options) {
     this.perf = page.startPagePerf('vocabulary-dictation-library');
     page.syncTheme(this);
     const texts = getTexts();
-    this.setData(Object.assign({}, getNavLayout(), { title: texts.shelfTitle, subtitle: texts.shelfCopy, items: sourceItems(texts) }), () => this.perf.ready('pageReady', { stage: 'sources', total: 5, cacheHit: true }));
+    const practiceMode = ['word-meaning', 'audio-meaning'].includes(String(options.practiceMode || '')) ? String(options.practiceMode) : 'dictation';
+    const isDictation = practiceMode === 'dictation';
+    this.setData(Object.assign({}, getNavLayout(), {
+      practiceMode,
+      navTitle: isDictation ? texts.shelfTitle : texts.practiceShelfTitle,
+      kicker: isDictation ? 'LISTEN · SPELL · REVIEW' : 'CHOOSE A WORD LIST',
+      showRecords: isDictation,
+      title: isDictation ? texts.shelfTitle : texts.practiceShelfTitle,
+      subtitle: isDictation ? texts.shelfCopy : texts.practiceShelfCopy,
+      items: sourceItems(texts)
+    }), () => this.perf.ready('pageReady', { stage: 'sources', total: 5, cacheHit: true, practiceMode }));
     this.loadCounts();
   },
   onShow() {
@@ -158,7 +172,8 @@ Page({
   },
   showSources() {
     const texts = getTexts();
-    this.setData({ stage: 'sources', title: texts.shelfTitle, subtitle: texts.shelfCopy, unlockEdition: 'v2', unlockLevel: 0, unlockUnit: 0, items: this.withCounts(sourceItems(texts), 'sources') });
+    const isDictation = this.data.practiceMode === 'dictation';
+    this.setData({ stage: 'sources', title: isDictation ? texts.shelfTitle : texts.practiceShelfTitle, subtitle: isDictation ? texts.shelfCopy : texts.practiceShelfCopy, unlockEdition: 'v2', unlockLevel: 0, unlockUnit: 0, items: this.withCounts(sourceItems(texts), 'sources') });
   },
   showLevels(edition) {
     const texts = getTexts();
@@ -197,7 +212,11 @@ Page({
       return;
     }
     this.setData({ loadingKey: level, debugLines: [] });
-    wx.navigateTo({ url: `/pages/reading/flashcards/dictation/index?level=${encodeURIComponent(level)}&title=${encodeURIComponent(title)}` });
+    const base = `level=${encodeURIComponent(level)}&title=${encodeURIComponent(title)}`;
+    const url = this.data.practiceMode === 'dictation'
+      ? `/pages/reading/flashcards/dictation/index?${base}`
+      : `/pages/reading/flashcards/recognition/index?${base}&practiceMode=${encodeURIComponent(this.data.practiceMode)}`;
+    wx.navigateTo({ url });
   },
   openHistory() {
     wx.navigateTo({ url: '/pages/practice-history/index?type=vocabulary' });

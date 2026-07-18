@@ -30,6 +30,8 @@ tmp/listening-upload/
 data/dictionary-import/source/
 data/dictionary-import/output/audio/
 data/dictionary-import/output/
+data/dictionary-import/distractor-audits/all-vocabulary-checkpoint.json
+data/dictionary-import/ielts-phonetics-v2/checkpoint.json
 
 # Local Tencent CloudBase upload credentials/interface files
 SecretKey.csv

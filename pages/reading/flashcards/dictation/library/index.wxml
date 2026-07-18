@@ -1,6 +1,6 @@
-<view class="dictation-library-nav theme-{{theme}}" style="{{navStyle}}"><view class="dictation-library-back" bindtap="handleBack">‹</view><view class="dictation-library-nav-title">{{texts.shelfTitle}}</view></view>
+<view class="dictation-library-nav theme-{{theme}}" style="{{navStyle}}"><view class="dictation-library-back" bindtap="handleBack">‹</view><view class="dictation-library-nav-title">{{navTitle}}</view></view>
 <view class="theme-{{theme}} language-{{language}} dictation-library-page" style="{{pageTopStyle}}">
-  <view class="dictation-library-head"><view><view class="dictation-library-kicker">LISTEN · SPELL · REVIEW</view><view class="dictation-library-title">{{title}}</view><view class="dictation-library-copy">{{subtitle}}</view></view><view class="dictation-library-record" bindtap="openHistory">{{texts.records}}</view></view>
+  <view class="dictation-library-head"><view><view class="dictation-library-kicker">{{kicker}}</view><view class="dictation-library-title">{{title}}</view><view class="dictation-library-copy">{{subtitle}}</view></view><view class="dictation-library-record" wx:if="{{showRecords}}" bindtap="openHistory">{{texts.records}}</view></view>
   <view class="dictation-library-debug" wx:if="{{debugLines.length}}"><text selectable="{{true}}" wx:for="{{debugLines}}" wx:key="*this">{{item}}</text></view>
   <view class="dictation-library-list">
     <view class="dictation-library-book {{loadingKey === item.key ? 'is-loading' : ''}}" wx:for="{{items}}" wx:key="key" data-key="{{item.key}}" bindtap="chooseItem">

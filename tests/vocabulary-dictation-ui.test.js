@@ -13,14 +13,15 @@ test('计划完成和当天重复背诵使用独立音效键', () => {
   assert.match(source, /this\.playCompletionSfx\(\);\s*this\.scheduleDictationPrompt\(\);/);
 });
 
-test('词书背诵完成弹窗可选取消或直达听写', () => {
+test('词书背诵完成弹窗可选取消或直达单词练习', () => {
   const source = read('pages/reading/flashcards/index.js');
   const template = read('pages/reading/flashcards/index.wxml');
   assert.match(source, /isBookSource\(this\.data\.activeSourceId\)/);
-  assert.match(source, /async openCompletedDictation\(\)/);
+  assert.match(source, /async openCompletedPractice\(\)/);
   assert.match(source, /await this\.waitForReviewSync\(\)/);
   assert.match(template, /bindtap="dismissDictationPrompt"/);
-  assert.match(template, /bindtap="openCompletedDictation"/);
+  assert.match(source, /flashcards\/practice\/index\?level=/);
+  assert.match(template, /bindtap="openCompletedPractice"/);
 });
 
 test('听写引导弹窗支持两套主题和中英文', () => {
@@ -28,10 +29,10 @@ test('听写引导弹窗支持两套主题和中英文', () => {
   const catalog = require('../utils/i18n-catalog-learning').flashcards;
   assert.match(styles, /\.dictation-jump-dialog/);
   assert.match(styles, /\.theme-library \.dictation-jump-dialog/);
-  assert.ok(catalog['zh-CN'].dictationPromptTitle);
-  assert.ok(catalog.en.dictationPromptTitle);
-  assert.ok(catalog['zh-CN'].goDictation);
-  assert.ok(catalog.en.goDictation);
+  assert.ok(catalog['zh-CN'].practicePromptTitle);
+  assert.ok(catalog.en.practicePromptTitle);
+  assert.ok(catalog['zh-CN'].startPractice);
+  assert.ok(catalog.en.startPractice);
 });
 
 test('弹窗按钮等宽对称，弹窗前锁定完成页返回', () => {
@@ -57,12 +58,13 @@ test('长单词缩小且不在单词内断行，短语只按空格换行', () =>
   assert.match(styles, /overflow-wrap: normal/);
 });
 
-test('词汇首页只保留单词背诵和听音拼写两个同级入口', () => {
+test('词汇首页保留单词背诵和单词练习两个同级入口', () => {
   const source = read('pages/reading/flashcards/index.js');
   const template = read('pages/reading/flashcards/index.wxml');
   assert.match(source, /sourceMode: 'practice-home'/);
   assert.equal((template.match(/bindtap="openReviewFolder"/g) || []).length, 2);
-  assert.equal((template.match(/bindtap="openDictationShelf"/g) || []).length, 2);
+  assert.equal((template.match(/bindtap="openWordPractice"/g) || []).length, 2);
+  assert.match(source, /openWordPractice\(\)/);
   assert.doesNotMatch(template, /class="book-card book-dictation"/);
   assert.doesNotMatch(template, /class="library-vocab-book book-dictation"/);
 });
@@ -94,16 +96,64 @@ test('初中、高中和雅思词书按 List 分层进入', () => {
   assert.match(source, /return \{ newLimit: total, reviewLimit: total \}/);
 });
 
-test('单词背诵文件夹和听写图标在两套主题中独立设计', () => {
+test('单词背诵和单词练习图标在两套主题中独立设计', () => {
   const styles = read('pages/reading/flashcards/index.wxss');
   const catalog = require('../utils/i18n-catalog-learning').flashcards;
   assert.match(styles, /\.folder-symbol/);
-  assert.match(styles, /\.listen-spell-symbol/);
-  assert.match(styles, /\.headphone-band/);
+  assert.match(styles, /\.practice-hub-symbol/);
   assert.match(styles, /\.theme-library \.folder-symbol/);
-  assert.match(styles, /\.theme-library \.listen-spell-symbol/);
+  assert.match(styles, /\.theme-library \.practice-hub-symbol/);
   assert.equal(catalog['zh-CN'].reviewFolderTitle, '单词背诵');
   assert.equal(catalog.en.reviewFolderTitle, 'Word Review');
+});
+
+test('单词练习下分看词选义、听音选义和听音拼写', () => {
+  const app = read('app.json');
+  const menu = read('pages/reading/flashcards/practice/index.wxml');
+  const menuSource = read('pages/reading/flashcards/practice/index.js');
+  const recognition = read('pages/reading/flashcards/recognition/index.js');
+  const recognitionTemplate = read('pages/reading/flashcards/recognition/index.wxml');
+  assert.match(app, /flashcards\/practice\/index/);
+  assert.match(app, /flashcards\/recognition\/index/);
+  assert.match(menu, /data-mode="word-meaning"/);
+  assert.match(menu, /data-mode="audio-meaning"/);
+  assert.match(menu, /data-mode="dictation"/);
+  assert.match(menuSource, /dictation\/library\/index\?\$\{query\}/);
+  assert.match(recognition, /getVocabularyDictationSourceWords/);
+  assert.match(recognition, /createDictionaryVoicePlayer/);
+  assert.match(recognitionTemplate, /bindtap="skipAudioQuestion"/);
+});
+
+test('识义反馈和练习按键保持高亮居中', () => {
+  const template = read('pages/reading/flashcards/recognition/index.wxml');
+  const styles = read('pages/reading/flashcards/recognition/index.wxss');
+  assert.doesNotMatch(template, /class="recognition-option[^>]*disabled=/);
+  assert.match(template, /recognition-option-status is-correct/);
+  assert.match(styles, /\.recognition-option\.is-correct\{[^}]*background:#dff2e6/);
+  assert.match(styles, /\.recognition-count-controls button\{[^}]*width:76rpx/);
+  assert.match(styles, /\.recognition-start,\.recognition-feedback button,\.recognition-again,\.recognition-change\{[^}]*align-items:center[^}]*justify-content:center[^}]*width:100%/);
+});
+
+test('看词选义每题自动发音并可手动重播', () => {
+  const source = read('pages/reading/flashcards/recognition/index.js');
+  const template = read('pages/reading/flashcards/recognition/index.wxml');
+  assert.equal((source.match(/\}, \(\) => this\.playCurrent\(\)\);/g) || []).length, 2);
+  assert.match(template, /class="recognition-word-audio/);
+  assert.match(template, /practiceMode === 'word-meaning' \|\| revealed/);
+  assert.match(template, /practiceMode === 'audio-meaning'/);
+});
+
+test('三种单词练习答对后自动进入下一题', () => {
+  const recognition = read('pages/reading/flashcards/recognition/index.js');
+  const recognitionTemplate = read('pages/reading/flashcards/recognition/index.wxml');
+  const dictation = read('pages/reading/flashcards/dictation/index.js');
+  const dictationTemplate = read('pages/reading/flashcards/dictation/index.wxml');
+  assert.match(recognition, /CORRECT_AUTO_ADVANCE_MS = 600/);
+  assert.match(recognition, /if \(correct\) this\.scheduleCorrectAdvance\(\)/);
+  assert.match(recognitionTemplate, /wx:if="\{\{!current\.correct\}\}" bindtap="nextQuestion"/);
+  assert.match(dictation, /CORRECT_AUTO_ADVANCE_MS = 800/);
+  assert.match(dictation, /if \(result\.correct\) this\.scheduleCorrectAdvance\(\)/);
+  assert.match(dictationTemplate, /wx:elif="\{\{!current\.correct\}\}" bindtap="nextCard"/);
 });
 
 test('背词卡与词库列表发音入口统一为小音符', () => {

@@ -1,0 +1,4218 @@
+{
+  "generatedAt": "2026-07-18T16:12:24.343Z",
+  "model": "gpt-5.4-mini",
+  "sourceCount": 248,
+  "wordCount": 13902,
+  "excludedWordCount": 311,
+  "blockedPairCount": 653,
+  "posOverrideCount": 327,
+  "runtimeSourceCount": 226,
+  "modelSourceCounts": {
+    "gpt-5.6-sol": 96,
+    "gpt-5.4-mini": 152
+  },
+  "sources": [
+    {
+      "sourceId": "dictionary-book-junior-list-1",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-1.json",
+      "fingerprint": "79687927a340459665340be562630b5cb9148842f191f864ad96155c4a3745df",
+      "wordCount": 53,
+      "excludedWords": [
+        "reply"
+      ],
+      "blockedPairs": [
+        "heaven|sky"
+      ],
+      "posOverrides": {
+        "still": "adv",
+        "should": "modal"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-2",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-2.json",
+      "fingerprint": "4ff6fdbe9ae382ffa5d00b82a26581795cc94b8ddd093c3b79ab56e88ee5bf78",
+      "wordCount": 53,
+      "excludedWords": [],
+      "blockedPairs": [
+        "difference|divide",
+        "like|want"
+      ],
+      "posOverrides": {
+        "tonight": "adv",
+        "abroad": "adv",
+        "soon": "adv",
+        "only": "adv",
+        "can": "modal",
+        "anymore": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-3",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-3.json",
+      "fingerprint": "006efec1c7f315dea0ea2fd9f65ab08b86bd68c6d9673db9a153fb8c4b359c2a",
+      "wordCount": 50,
+      "excludedWords": [
+        "lap",
+        "late"
+      ],
+      "blockedPairs": [
+        "late|recent",
+        "move|slide"
+      ],
+      "posOverrides": {
+        "everywhere": "adv",
+        "its": "det",
+        "again": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-4",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-4.json",
+      "fingerprint": "bc973a80617458eb99a25e05c6a4bcd960a03a28625602c9237cf34ae476e7c3",
+      "wordCount": 56,
+      "excludedWords": [],
+      "blockedPairs": [
+        "ache|hunger",
+        "business|labor",
+        "instance|way",
+        "key|solution",
+        "solution|way"
+      ],
+      "posOverrides": {
+        "ever": "adv",
+        "upstairs": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-5",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-5.json",
+      "fingerprint": "023bd9b03cc68abe855fa24644c181317ce42772d03d25ebd01c8af045603720",
+      "wordCount": 52,
+      "excludedWords": [],
+      "blockedPairs": [
+        "emotion|sense",
+        "everybody|owner",
+        "fight|pound",
+        "fight|trouble",
+        "let|make",
+        "line|queue",
+        "line|string",
+        "lose|lost",
+        "queue|string"
+      ],
+      "posOverrides": {
+        "fast": "adv",
+        "specially": "adv",
+        "maybe": "adv",
+        "so": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-6",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-6.json",
+      "fingerprint": "b6430c016320c79ceb85725408079ec7aa84f8330423246044613a860f4e511a",
+      "wordCount": 54,
+      "excludedWords": [],
+      "blockedPairs": [
+        "band|group",
+        "produce|program"
+      ],
+      "posOverrides": {
+        "down": "adv",
+        "twice": "adv",
+        "yesterday": "adv",
+        "up": "adv",
+        "probably": "adv",
+        "especially": "adv",
+        "immediately": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-7",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-7.json",
+      "fingerprint": "fe8ac59bab9504ca1c9c539171c29e22f6942223f4354c8922e610841c8c76d2",
+      "wordCount": 50,
+      "excludedWords": [
+        "dismiss",
+        "riendship"
+      ],
+      "blockedPairs": [
+        "cut|drop",
+        "feel|receive",
+        "fly|rush",
+        "teen|young",
+        "travel|walk"
+      ],
+      "posOverrides": {
+        "indoors": "adv",
+        "also": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-8",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-8.json",
+      "fingerprint": "917a27e3de3c333f6f76f42e28c626a7dd5fa3464e52129161c627987b37c4b4",
+      "wordCount": 52,
+      "excludedWords": [],
+      "blockedPairs": [
+        "bear|shoulder",
+        "body|set",
+        "class|degree",
+        "creature|life",
+        "stamp|tag",
+        "ton|wealth"
+      ],
+      "posOverrides": {
+        "perhaps": "adv",
+        "hardly": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-9",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-9.json",
+      "fingerprint": "95d47354582d3f4f4c30a27a3ce606b67ba70824dc3a4ffc3d2cfaa964f71f61",
+      "wordCount": 57,
+      "excludedWords": [
+        "overseas"
+      ],
+      "blockedPairs": [
+        "cost|price",
+        "exchange|market",
+        "little|while"
+      ],
+      "posOverrides": {
+        "aloud": "adv",
+        "pretty": "adv",
+        "overseas": "adv",
+        "very": "adv",
+        "already": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-10",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-10.json",
+      "fingerprint": "8be5301962adb070d4ef7497f3bd88d3db4a28db32a480f5433ef4bfcf5f7761",
+      "wordCount": 57,
+      "excludedWords": [],
+      "blockedPairs": [
+        "check|examine"
+      ],
+      "posOverrides": {
+        "forward": "adv",
+        "may": "modal",
+        "anywhere": "adv",
+        "always": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-11",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-11.json",
+      "fingerprint": "98771d72b8a8eb3b0730184cdc2da1320daee329b3753d04cd8c3ccada2d322a",
+      "wordCount": 53,
+      "excludedWords": [
+        "answer"
+      ],
+      "blockedPairs": [
+        "character|style",
+        "expect|predict",
+        "fit|right",
+        "gentleman|polite",
+        "right|true"
+      ],
+      "posOverrides": {
+        "today": "adv",
+        "just": "adv",
+        "tomorrow": "adv",
+        "then": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-12",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-12.json",
+      "fingerprint": "8c4c7da8a8b25a332c849cbfb7d3ddf657c1fec11c38ad234412f2aafdc18ea8",
+      "wordCount": 54,
+      "excludedWords": [],
+      "blockedPairs": [
+        "information|notice",
+        "modest|simple"
+      ],
+      "posOverrides": {
+        "shall": "modal",
+        "ago": "adv",
+        "away": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-13",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-13.json",
+      "fingerprint": "90eff8222993c24cb04aab1b36c7211c0d4221ae8a737b06b36b3986b195a989",
+      "wordCount": 52,
+      "excludedWords": [
+        "frustrate",
+        "professional"
+      ],
+      "blockedPairs": [
+        "able|could",
+        "catch|find",
+        "catch|meet",
+        "climb|jump",
+        "mend|service",
+        "through|wide"
+      ],
+      "posOverrides": {
+        "casually": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-14",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-14.json",
+      "fingerprint": "72098b7124105aefe43056e3982f8f5267b6c2337347a693b42d46527b95f10c",
+      "wordCount": 55,
+      "excludedWords": [],
+      "blockedPairs": [
+        "great|main",
+        "song|voice",
+        "table|watch",
+        "yeah|yes"
+      ],
+      "posOverrides": {
+        "yeah": "adv",
+        "yes": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-15",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-15.json",
+      "fingerprint": "b070b6b8c2045317795b73fef4bc0312911d8e0a57eb3f0dbf8366e78798258f",
+      "wordCount": 52,
+      "excludedWords": [],
+      "blockedPairs": [
+        "fun|pleasure",
+        "place|point",
+        "rubbish|trash"
+      ],
+      "posOverrides": {
+        "possibly": "adv",
+        "out": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-16",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-16.json",
+      "fingerprint": "7f4bfaa63eb2ce2e91d001babb35419d7498c3b486064763f11f1d19b444a8dc",
+      "wordCount": 49,
+      "excludedWords": [
+        "back"
+      ],
+      "blockedPairs": [
+        "college|school",
+        "movie|picture",
+        "world|worldwide"
+      ],
+      "posOverrides": {
+        "now": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-17",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-17.json",
+      "fingerprint": "5f6e4c9ced0610f50f39de459eb2f445bb9384fd37db4af5b47a1a4e96e562ac",
+      "wordCount": 54,
+      "excludedWords": [
+        "take"
+      ],
+      "blockedPairs": [
+        "bad|poor",
+        "cause|create",
+        "cause|draw",
+        "collect|take",
+        "create|draw",
+        "government|rule",
+        "grade|result",
+        "habit|rule",
+        "hold|take"
+      ],
+      "posOverrides": {
+        "too": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-18",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-18.json",
+      "fingerprint": "edab4cba6ac7607ef90e6228529272440f287b60cad4533de30e4c8b71fb8bcd",
+      "wordCount": 51,
+      "excludedWords": [],
+      "blockedPairs": [
+        "almost|near",
+        "carry|transportation",
+        "chance|moment",
+        "experience|taste",
+        "office|serve",
+        "shape|thing"
+      ],
+      "posOverrides": {
+        "almost": "adv",
+        "near": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-19",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-19.json",
+      "fingerprint": "0ee02bcddddecc24ffd620a470325a05798b64329641f6ba57d62b829ad0153f",
+      "wordCount": 50,
+      "excludedWords": [
+        "before",
+        "time"
+      ],
+      "blockedPairs": [
+        "big|monster",
+        "crazy|fever",
+        "importance|stress"
+      ],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-20",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-20.json",
+      "fingerprint": "893cfd47017156ecbeb84525c425c78dd91c2316d0ae2db18a5f1f3a902f8a84",
+      "wordCount": 55,
+      "excludedWords": [],
+      "blockedPairs": [
+        "act|show",
+        "golden|prize",
+        "kid|teenager",
+        "prize|treasure"
+      ],
+      "posOverrides": {
+        "specifically": "adv",
+        "why": "adv",
+        "sometimes": "adv",
+        "once": "adv",
+        "else": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-21",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-21.json",
+      "fingerprint": "90fb1069aba47f3d75844ed383862d5735875c3c9bc068834ce77d1764986e8e",
+      "wordCount": 53,
+      "excludedWords": [
+        "supply"
+      ],
+      "blockedPairs": [
+        "association|bridge",
+        "break|off",
+        "hard|terrible"
+      ],
+      "posOverrides": {
+        "off": "adv",
+        "more": "adv",
+        "somewhere": "adv",
+        "never": "adv",
+        "rather": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-22",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-22.json",
+      "fingerprint": "d00cb8a84a8f3fcc365b1040232343000cece7d617ec9514cc5ac325db7b0a90",
+      "wordCount": 53,
+      "excludedWords": [],
+      "blockedPairs": [
+        "bill|list",
+        "full|total",
+        "hurt|pain"
+      ],
+      "posOverrides": {
+        "when": "adv",
+        "yet": "adv",
+        "not": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-23",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-23.json",
+      "fingerprint": "1707b72ecd1cbbf0214b0fe36561df79f00179e98bc670b1e98616d9bd922f9f",
+      "wordCount": 50,
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "easily": "adv",
+        "around": "adv",
+        "instead": "adv",
+        "far": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-24",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-24.json",
+      "fingerprint": "27430b0ac488946800d8ddb7bc488a07ffd902eb1fc54094f4d8c525cd7165ab",
+      "wordCount": 56,
+      "excludedWords": [],
+      "blockedPairs": [
+        "building|structure",
+        "build|structure",
+        "do|have",
+        "good|well",
+        "insist|opinion"
+      ],
+      "posOverrides": {
+        "our": "det",
+        "even": "adv",
+        "well": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-25",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-25.json",
+      "fingerprint": "8b8f14f9a43be0ee690935c6dee6d45e2dff4bf6f9c09b4301d12bab1282d69b",
+      "wordCount": 55,
+      "excludedWords": [],
+      "blockedPairs": [
+        "become|get",
+        "beyond|over",
+        "beyond|past",
+        "confident|trust",
+        "consider|regard",
+        "cover|guard",
+        "cover|skin",
+        "during|over",
+        "feed|food",
+        "fine|pleasant",
+        "fine|sound",
+        "front|surface",
+        "gallery|hall",
+        "kind|pleasant",
+        "look|regard",
+        "look|sound",
+        "over|past",
+        "skin|surface"
+      ],
+      "posOverrides": {
+        "often": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-26",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-26.json",
+      "fingerprint": "724c07a5bace7deca6089ecc7403b1f3e2df37545a10d2931cb726a6f52fc6dc",
+      "wordCount": 49,
+      "excludedWords": [],
+      "blockedPairs": [
+        "large|lot"
+      ],
+      "posOverrides": {
+        "with": "prep",
+        "together": "adv",
+        "as": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-27",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-27.json",
+      "fingerprint": "14eb772d90bfbb5b17a84bc5cb4fd318e7c3c44e5b83fd0e15113c88c9fece23",
+      "wordCount": 52,
+      "excludedWords": [
+        "land",
+        "return",
+        "stage",
+        "wheat"
+      ],
+      "blockedPairs": [
+        "earth|land",
+        "flag|sign",
+        "forbid|prevent",
+        "popular|popularity",
+        "rest|retire",
+        "rest|stick"
+      ],
+      "posOverrides": {
+        "later": "adv",
+        "therefore": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-28",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-28.json",
+      "fingerprint": "5214b84820874494094b1e4e60f4b156af50f37e67f3194cef1728765187965a",
+      "wordCount": 55,
+      "excludedWords": [
+        "burn",
+        "in"
+      ],
+      "blockedPairs": [
+        "careless|free",
+        "describe|say",
+        "low|sad",
+        "stand|stomach"
+      ],
+      "posOverrides": {
+        "along": "adv",
+        "might": "modal",
+        "however": "adv",
+        "how": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-29",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-29.json",
+      "fingerprint": "09a1a2c271cf3f55b3d35a4a054859efa0fc0363a66cf32216252bb6128d7855",
+      "wordCount": 53,
+      "excludedWords": [
+        "recycle"
+      ],
+      "blockedPairs": [
+        "aid|assistant"
+      ],
+      "posOverrides": {
+        "your": "det",
+        "nor": "conj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-30",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-30.json",
+      "fingerprint": "14228bfb8e46052c726907747950c9535e3765d9932c8f3dd9ee83553ef7322e",
+      "wordCount": 49,
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-31",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-31.json",
+      "fingerprint": "eaafac43455da12a0fbccf68315086ab3e5d587b4583bb29183908d9903b970e",
+      "wordCount": 54,
+      "excludedWords": [],
+      "blockedPairs": [
+        "sweep|tidy"
+      ],
+      "posOverrides": {
+        "will": "modal",
+        "really": "adv",
+        "there": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-junior-list-32",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/junior/list-32.json",
+      "fingerprint": "bb13ab50e1a45c200640b9b5ef577e50ea163eb3b1a8572bf326410cd430187f",
+      "wordCount": 52,
+      "excludedWords": [
+        "round"
+      ],
+      "blockedPairs": [
+        "ability|brain",
+        "encourage|wake",
+        "much|plenty",
+        "much|quite",
+        "realize|understand"
+      ],
+      "posOverrides": {
+        "quite": "adv",
+        "anyway": "adv",
+        "their": "det"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-1",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-1.json",
+      "fingerprint": "c0f818731c1ef8aa8bb8154b3deb048a92070b0a0de6da3c4d1f72d985626411",
+      "wordCount": 33,
+      "excludedWords": [
+        "climate",
+        "defeat",
+        "different",
+        "seize",
+        "shot",
+        "stupid"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-2",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-2.json",
+      "fingerprint": "5c6a90125846072a47c768b8af1cbe0e7084850fbf8599417c5dd7c13160a5c8",
+      "wordCount": 32,
+      "excludedWords": [
+        "budget",
+        "environment"
+      ],
+      "blockedPairs": [
+        "find|sense"
+      ],
+      "posOverrides": {
+        "anyhow": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-3",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-3.json",
+      "fingerprint": "f3948fe4a89bbd2986d433d1109282f26d6a094301d3ade02f9d42c3b9060e35",
+      "wordCount": 31,
+      "excludedWords": [
+        "back",
+        "dismiss",
+        "early"
+      ],
+      "blockedPairs": [
+        "give|hand"
+      ],
+      "posOverrides": {
+        "how": "adv",
+        "somewhere": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-4",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-4.json",
+      "fingerprint": "ae20cc5b9a637792b10e7fce1f4f850c7426228e339f9650f282375deeef8a62",
+      "wordCount": 36,
+      "excludedWords": [],
+      "blockedPairs": [
+        "announce|declare",
+        "bit|slight",
+        "convince|persuade",
+        "extraordinary|very",
+        "fact|real"
+      ],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-5",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-5.json",
+      "fingerprint": "555022d16b4af8c2293a0a950d2b74c4285d01c99c309ec2f135ed3a25a1091c",
+      "wordCount": 34,
+      "excludedWords": [
+        "bare",
+        "cause",
+        "consider",
+        "corrnction",
+        "distinction",
+        "embarrass",
+        "energy",
+        "evident",
+        "forward",
+        "geography",
+        "hammer",
+        "identity",
+        "laugh",
+        "limit",
+        "only",
+        "plenty"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-6",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-6.json",
+      "fingerprint": "fa07fd92fb05d3e8fd2dcd2be6501a4622832261d320fc8e14a49f5f6e9409f4",
+      "wordCount": 26,
+      "excludedWords": [
+        "address",
+        "afraid",
+        "disadvantage",
+        "especially",
+        "guidance",
+        "health",
+        "key",
+        "pull",
+        "puzzle",
+        "tense"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "partly": "adv",
+        "especially": "adv",
+        "about": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-7",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-7.json",
+      "fingerprint": "517686bebcaca180ddabe0eb0eed32b624cd0a74b8a684755927edfdb1535c57",
+      "wordCount": 33,
+      "excludedWords": [
+        "account",
+        "beneath",
+        "difficulty",
+        "education",
+        "effect",
+        "equal",
+        "gentle",
+        "process",
+        "way",
+        "worried"
+      ],
+      "blockedPairs": [
+        "process|way"
+      ],
+      "posOverrides": {
+        "outdoors": "adv",
+        "always": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-8",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-8.json",
+      "fingerprint": "8921fbf82d3b3b70b15670744e576307a5f3980c15b3128781335e285aa69a9c",
+      "wordCount": 31,
+      "excludedWords": [
+        "annual",
+        "bush",
+        "commitment",
+        "compulsory",
+        "helicopter",
+        "iron",
+        "load",
+        "promise",
+        "respect",
+        "secure",
+        "sink",
+        "stand",
+        "stop",
+        "swallow",
+        "test",
+        "thought",
+        "worth"
+      ],
+      "blockedPairs": [
+        "commitment|promise"
+      ],
+      "posOverrides": {
+        "stand": "v"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-9",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-9.json",
+      "fingerprint": "6d449f655b83d82adec5bf00cb00ea724094cfa896c36c486be72f63ef181e3e",
+      "wordCount": 31,
+      "excludedWords": [],
+      "blockedPairs": [
+        "adolescent|teenager"
+      ],
+      "posOverrides": {
+        "interesting": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-10",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-10.json",
+      "fingerprint": "d39b87a7c302b31f0907387117a8ee0633f4933c252c3236e224e9ca92908529",
+      "wordCount": 33,
+      "excludedWords": [],
+      "blockedPairs": [
+        "beyond|past"
+      ],
+      "posOverrides": {
+        "fortunate": "adj",
+        "however": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-11",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-11.json",
+      "fingerprint": "ff8eb63fa889a290502e5129fa0eb81f32270d1ee6ce7f0275dc440067486167",
+      "wordCount": 27,
+      "excludedWords": [],
+      "blockedPairs": [
+        "delighted|pleasant"
+      ],
+      "posOverrides": {
+        "moral": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-12",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-12.json",
+      "fingerprint": "ac39e4dd600ba98bd202dcfdd82a0ebb89e90b7df69ad49729f783b225b86462",
+      "wordCount": 34,
+      "excludedWords": [
+        "earthquake"
+      ],
+      "blockedPairs": [
+        "conclusion|consequence"
+      ],
+      "posOverrides": {
+        "already": "adv",
+        "downstairs": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-13",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-13.json",
+      "fingerprint": "d4fcbd639f64d241815e310167255e8cfb0cb3b9febe8bd0a35c36de74fbac3e",
+      "wordCount": 32,
+      "excludedWords": [
+        "bent",
+        "breath",
+        "chemical",
+        "companion",
+        "cry",
+        "direct",
+        "exhibition",
+        "have",
+        "loose",
+        "project",
+        "relax",
+        "tasty",
+        "windy"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "indeed": "adv",
+        "chemical": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-14",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-14.json",
+      "fingerprint": "6ce1e143d0712b3a862f023c27d16e80d48bf8059ce376a4c5d07d15935bff86",
+      "wordCount": 31,
+      "excludedWords": [
+        "allocate",
+        "ban",
+        "below",
+        "between",
+        "classic",
+        "concern",
+        "elder",
+        "fortune",
+        "greet",
+        "heel",
+        "polite"
+      ],
+      "blockedPairs": [
+        "couple|double"
+      ],
+      "posOverrides": {
+        "maybe": "adv",
+        "where": "adv",
+        "regardless": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-15",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-15.json",
+      "fingerprint": "5295b2138b5b8b74253879ebd79bbfa2c6b8d98f7c84f75cc7fe3ba6fd96a72e",
+      "wordCount": 31,
+      "excludedWords": [
+        "meanwhile"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "meanwhile": "adv",
+        "personally": "adv",
+        "quite": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-16",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-16.json",
+      "fingerprint": "e04e3a56bd563a026c470f203e1de4d527f877db9d2415d6cff32e3797dcfc2b",
+      "wordCount": 30,
+      "excludedWords": [
+        "garbage"
+      ],
+      "blockedPairs": [
+        "match|suitable"
+      ],
+      "posOverrides": {
+        "never": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-17",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-17.json",
+      "fingerprint": "04cf2c7ae906bfc25027a8b7c180bffd6767e8ad2c02faeaae539613c63c62d7",
+      "wordCount": 30,
+      "excludedWords": [
+        "chew",
+        "greedy",
+        "kiss",
+        "prevent",
+        "sere"
+      ],
+      "blockedPairs": [
+        "bored|hate"
+      ],
+      "posOverrides": {
+        "every": "det",
+        "civil": "adj",
+        "hardly": "adv",
+        "aloud": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-18",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-18.json",
+      "fingerprint": "ed0f7e77cc61c919b48d16f2d872746797db6cc8d3c8674d340ea3a44d420625",
+      "wordCount": 31,
+      "excludedWords": [
+        "beneficial",
+        "careless"
+      ],
+      "blockedPairs": [
+        "around|nearby",
+        "around|round",
+        "inspect|watch"
+      ],
+      "posOverrides": {
+        "around": "adv",
+        "beneficial": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-19",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-19.json",
+      "fingerprint": "bbd75ff0c0b51524cb4142cba57dbf15c1e723ef5a35786559e987b3a2cdd294",
+      "wordCount": 31,
+      "excludedWords": [],
+      "blockedPairs": [
+        "lesson|subject"
+      ],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-20",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-20.json",
+      "fingerprint": "7b816da3678cfa663e035853d99fe62b837bd7feba5cda94d0949a9e6739c464",
+      "wordCount": 35,
+      "excludedWords": [
+        "either",
+        "percent"
+      ],
+      "blockedPairs": [
+        "arrange|design",
+        "arrange|schedule",
+        "coach|conduct",
+        "design|schedule",
+        "frighten|terrify"
+      ],
+      "posOverrides": {
+        "either": "det",
+        "ahead": "adv",
+        "sometimes": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-21",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-21.json",
+      "fingerprint": "5d73b0f995d75f7ec98d6f942005663c51910e959f235297ada9fe58bd686fe9",
+      "wordCount": 29,
+      "excludedWords": [],
+      "blockedPairs": [
+        "able|power"
+      ],
+      "posOverrides": {
+        "nearly": "adv",
+        "active": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-22",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-22.json",
+      "fingerprint": "1614d413010174456c5bf44eb08265ea5e100975d60343854c7584948bbc59ac",
+      "wordCount": 29,
+      "excludedWords": [
+        "dive"
+      ],
+      "blockedPairs": [
+        "finish|manage",
+        "pity|shame",
+        "raise|up"
+      ],
+      "posOverrides": {
+        "up": "adv",
+        "nor": "conj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-23",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-23.json",
+      "fingerprint": "c917b0e77ba7f6750e607071557fd1ffce0f2c3bc4b8f22adb9534046da7dd26",
+      "wordCount": 26,
+      "excludedWords": [],
+      "blockedPairs": [
+        "clothing|wash",
+        "deliver|post",
+        "force|powerful",
+        "influence|powerful",
+        "succeed|successful"
+      ],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-24",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-24.json",
+      "fingerprint": "f01382c7bb8d22caaecf7f1100e35144eb273525dedfe1a5f166831ffbb46a7c",
+      "wordCount": 27,
+      "excludedWords": [
+        "entry",
+        "rem"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "thus": "adv",
+        "passive": "adj",
+        "then": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-25",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-25.json",
+      "fingerprint": "393f162d4de824da5b495e39f5d7b55767ba30625ff5f4fed656cd7be761edff",
+      "wordCount": 22,
+      "excludedWords": [
+        "everywhere"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "almost": "adv",
+        "everywhere": "adv",
+        "probably": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-26",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-26.json",
+      "fingerprint": "2647ec7c3fbd877dde543366b7c07587cce55b03bcd1e55f42e7887894943c6e",
+      "wordCount": 31,
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "usual": "adj",
+        "twice": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-27",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-27.json",
+      "fingerprint": "09bcb776c334d9bd7f230bd50b0ce5806dfc4cdf6943896f2a6d1e69bf83fe4b",
+      "wordCount": 31,
+      "excludedWords": [
+        "applicant",
+        "care",
+        "kick",
+        "middle",
+        "possess",
+        "pound",
+        "rely",
+        "well",
+        "withdraw"
+      ],
+      "blockedPairs": [
+        "fairly|just",
+        "immediately|soon"
+      ],
+      "posOverrides": {
+        "immediately": "adv",
+        "just": "adv",
+        "well": "adv",
+        "fairly": "adv",
+        "soon": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-28",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-28.json",
+      "fingerprint": "18715d51c89a35b373b6c0a15e72ae50fc61d713ade3b5d7b5ee03f002dbc235",
+      "wordCount": 31,
+      "excludedWords": [
+        "adapt",
+        "aspect",
+        "cash",
+        "eastern",
+        "selfish",
+        "smell",
+        "speed",
+        "supply"
+      ],
+      "blockedPairs": [
+        "deserve|worthy"
+      ],
+      "posOverrides": {
+        "absolute": "adj",
+        "positive": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-29",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-29.json",
+      "fingerprint": "adfe63720f8fdee4c2a4ed03fb591860461868c0bb97b045af380714282576c7",
+      "wordCount": 30,
+      "excludedWords": [
+        "answer",
+        "circle",
+        "drawer",
+        "engme"
+      ],
+      "blockedPairs": [
+        "personal|private"
+      ],
+      "posOverrides": {
+        "forever": "adv",
+        "therefore": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-30",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-30.json",
+      "fingerprint": "7a5832640c5404957a1e89fd2a8bbc482048f49f84d119501d34b61cb6c31c04",
+      "wordCount": 31,
+      "excludedWords": [
+        "aver"
+      ],
+      "blockedPairs": [
+        "devote|devotion",
+        "enjoyable|glad"
+      ],
+      "posOverrides": {
+        "abroad": "adv",
+        "often": "adv",
+        "aver": "v",
+        "weak": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-31",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-31.json",
+      "fingerprint": "200777f3181c859263fb2faf56a198ccef0131eaf0aaf4fb2cad7c89207e1631",
+      "wordCount": 31,
+      "excludedWords": [
+        "pale"
+      ],
+      "blockedPairs": [
+        "also|even"
+      ],
+      "posOverrides": {
+        "otherwise": "adv",
+        "also": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-32",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-32.json",
+      "fingerprint": "af8805765f6409e91f4fcb3dbbb65b37334c7b56ad80b0b2dfe01d1067727d6c",
+      "wordCount": 33,
+      "excludedWords": [
+        "length",
+        "professor",
+        "smile"
+      ],
+      "blockedPairs": [
+        "prize|reward"
+      ],
+      "posOverrides": {
+        "approximately": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-33",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-33.json",
+      "fingerprint": "fe5a5e81f7bc10d69924a8fcbd9cdba1661e77a0146bdf821a7fc518463c743b",
+      "wordCount": 32,
+      "excludedWords": [],
+      "blockedPairs": [
+        "mark|note",
+        "single|unique"
+      ],
+      "posOverrides": {
+        "spoken": "adj",
+        "why": "adv",
+        "main": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-34",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-34.json",
+      "fingerprint": "e1b5e35c482857d6a37a6d199aadf267fd0389c0bf649a82a8562b8c672e277d",
+      "wordCount": 22,
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "perhaps": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-35",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-35.json",
+      "fingerprint": "7fd8a0e5bbec15d33ccafd11fcf0707efb6ced58045cec816b18ea4feb4c44a8",
+      "wordCount": 29,
+      "excludedWords": [
+        "mercy",
+        "pamc",
+        "prmt"
+      ],
+      "blockedPairs": [
+        "bring|carry"
+      ],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-36",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-36.json",
+      "fingerprint": "ac944449bfbddae919e3fcd132ff3c1a3b69413cf0be4707cf56c4daac1c6b8a",
+      "wordCount": 29,
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "aside": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-37",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-37.json",
+      "fingerprint": "3179e8dbe7dc624cb3b159a38c61e01814fb8ff260b7930474242847978b5559",
+      "wordCount": 32,
+      "excludedWords": [
+        "wealthy"
+      ],
+      "blockedPairs": [
+        "alike|resemble"
+      ],
+      "posOverrides": {
+        "wealthy": "adj",
+        "ever": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-38",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-38.json",
+      "fingerprint": "e35f53bba57ab5fd6926ab60bd07faaab78803fa2b67bacb634795398bd0904c",
+      "wordCount": 29,
+      "excludedWords": [
+        "amaze",
+        "composition",
+        "insert"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "too": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-39",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-39.json",
+      "fingerprint": "287faefa7df8a6920bd0cb6850b73b0d30c56960f271c0bea0addeff563bab47",
+      "wordCount": 26,
+      "excludedWords": [
+        "admission",
+        "aid",
+        "anywhere",
+        "harmful",
+        "once",
+        "pump",
+        "worthwhile"
+      ],
+      "blockedPairs": [
+        "amount|quantity"
+      ],
+      "posOverrides": {
+        "yet": "adv",
+        "anywhere": "adv",
+        "once": "adv",
+        "rather": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-senior-list-40",
+      "cloudPath": "dictionary_books/word-lists-examples-v2/senior/list-40.json",
+      "fingerprint": "fb180337dae8eae38596ff11bc5785caac1fc458bd1d1f0bf06a50e02902b80d",
+      "wordCount": 81,
+      "excludedWords": [
+        "accom",
+        "alcoholic",
+        "allergic",
+        "ambition",
+        "ankle",
+        "anniversary",
+        "childhood",
+        "cigarette"
+      ],
+      "blockedPairs": [
+        "abundant|ample",
+        "acquire|acquisition",
+        "adequate|ample",
+        "administration|authority"
+      ],
+      "posOverrides": {
+        "somehow": "adv",
+        "instead": "adv",
+        "alongside": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-1",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-1.json",
+      "fingerprint": "e31265fbae2d110a117c1250e1ff773f1ae7a411542f968b40c098e45cfde29c",
+      "wordCount": 76,
+      "excludedWords": [],
+      "blockedPairs": [
+        "barely|merely",
+        "commonwealth|consortium",
+        "easy-going|optional",
+        "equal|equity",
+        "equal|fair",
+        "equity|fair",
+        "forfeit|yield",
+        "hierarchy|leadership"
+      ],
+      "posOverrides": {
+        "roll film": "n",
+        "equity": "n",
+        "ventilation": "n"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-2",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-2.json",
+      "fingerprint": "dc40517b615562a5d13f565854bc66e2e5c1407330bd269f1e727a7b1b1ef9a4",
+      "wordCount": 74,
+      "excludedWords": [
+        "dour"
+      ],
+      "blockedPairs": [
+        "item|point",
+        "point|score",
+        "point|viewpoint",
+        "preserve|secure",
+        "surge|variation"
+      ],
+      "posOverrides": {
+        "dour": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-3",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-3.json",
+      "fingerprint": "a3961aba8c8f6f7b582ffdee8bfd79c2b894a7962ba47b30313d7f6da54015a3",
+      "wordCount": 77,
+      "excludedWords": [
+        "atomic",
+        "bare",
+        "theoretical"
+      ],
+      "blockedPairs": [
+        "counterpart|transcript",
+        "disagree|disharmony",
+        "disagree|dispute",
+        "dispute|exchange",
+        "gadget|instrument",
+        "gadget|mechanism",
+        "illusion|notion",
+        "include|inclusive",
+        "instrument|mechanism",
+        "originate|spring"
+      ],
+      "posOverrides": {
+        "shave": "v"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-4",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-4.json",
+      "fingerprint": "0f7fb96bfbca8d027babef1ad3ab1f3f81fc3743ed9443bd5485ca6642adb48d",
+      "wordCount": 73,
+      "excludedWords": [
+        "brief",
+        "consequently",
+        "humble",
+        "ignorant",
+        "judgment",
+        "leopard",
+        "minimise",
+        "mould",
+        "preparation",
+        "quote",
+        "regulate",
+        "trapeze"
+      ],
+      "blockedPairs": [
+        "counter|reverse",
+        "discretion|judgment",
+        "exile|expel",
+        "mastery|regulate"
+      ],
+      "posOverrides": {
+        "fauna": "n"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-5",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-5.json",
+      "fingerprint": "c4f54d2057727962f631ee9ee0ca44a684274a2c235895a696fe574a9e03dffc",
+      "wordCount": 74,
+      "excludedWords": [],
+      "blockedPairs": [
+        "destiny|fate",
+        "hide|shade",
+        "widespread|world-wide"
+      ],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-6",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-6.json",
+      "fingerprint": "9ddfcd680200c30a5e221abd73dadb6d0dc90fee3c77067f9037dd98a83deff4",
+      "wordCount": 73,
+      "excludedWords": [
+        "calculate",
+        "literacy"
+      ],
+      "blockedPairs": [
+        "approximately|mainly",
+        "circulation|distribution",
+        "discover|discovery",
+        "entitle|license",
+        "feature|property",
+        "heritage|tradition",
+        "particular|specific",
+        "purchase|subscription"
+      ],
+      "posOverrides": {},
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-7",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-7.json",
+      "fingerprint": "d8214b8b30a494899dd9e2acb02166bf5cca900a74d00b4b90a688a78e784173",
+      "wordCount": 79,
+      "excludedWords": [
+        "cassette",
+        "deputy",
+        "reserve",
+        "volcan"
+      ],
+      "blockedPairs": [
+        "acclaim|approve",
+        "apparently|transparent",
+        "approve|warrant",
+        "blaze|illuminate",
+        "block|exclude",
+        "carry|distribute",
+        "demonstrate|illuminate",
+        "devastate|eliminate",
+        "devastate|undermine",
+        "dimension|dimensional",
+        "distribute|rank",
+        "eliminate|exclude",
+        "exterior|image",
+        "illuminate|stimulate",
+        "intend|intention",
+        "resistant|unyielding"
+      ],
+      "posOverrides": {
+        "notice board": "n"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-8",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-8.json",
+      "fingerprint": "8c2adb619f7d13b3cb330fe22131f7995ff07890b2f1adc68a3444b253ae9e65",
+      "wordCount": 75,
+      "excludedWords": [
+        "abandon",
+        "auditorium",
+        "creep",
+        "damp",
+        "devote",
+        "exaggerate",
+        "hinterland",
+        "hurdle",
+        "illustrate",
+        "incoming",
+        "narrator",
+        "redevelopment",
+        "smart",
+        "throughout",
+        "zone layer"
+      ],
+      "blockedPairs": [
+        "apt|smart",
+        "architecture|composition",
+        "celebrity|publicity",
+        "collate|comparison",
+        "deem|reckon",
+        "hurdle|restriction",
+        "illustrate|interpretation",
+        "infer|reckon"
+      ],
+      "posOverrides": {
+        "auditorium": "n",
+        "zone layer": "phr",
+        "devote": "v"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-9",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-9.json",
+      "fingerprint": "99f489ee87faa8fbe5a9c15c63b62d85f05ef9e4d62bec99b2ba252437295dfd",
+      "wordCount": 70,
+      "excludedWords": [
+        "appreciate",
+        "assistant",
+        "nickel",
+        "orientate",
+        "stere"
+      ],
+      "blockedPairs": [
+        "avenue|procedure",
+        "commit|pledge",
+        "conform|orientate",
+        "foremost|splendid"
+      ],
+      "posOverrides": {
+        "concentration": "n",
+        "plagiarism": "n",
+        "stere": "n"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-10",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-10.json",
+      "fingerprint": "3e803984189e8cdda08bc12afd1fa796a8ff7fd78e66933e6e1f5f2470ac98c6",
+      "wordCount": 74,
+      "excludedWords": [
+        "forg",
+        "stripe"
+      ],
+      "blockedPairs": [
+        "abundance|bulk",
+        "arrangement|schedule",
+        "barrier|screen",
+        "detect|perceive",
+        "replace|swap"
+      ],
+      "posOverrides": {
+        "visa": "n",
+        "restrict": "v"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-11",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-11.json",
+      "fingerprint": "212de05bae81ed7497b23dd27e09deb5cb23522a4ea2b39e446c25d2de92ff8f",
+      "wordCount": 73,
+      "excludedWords": [
+        "bookrest"
+      ],
+      "blockedPairs": [
+        "barge|intrusion",
+        "exceptional|marvellous",
+        "primitive|rude"
+      ],
+      "posOverrides": {
+        "accompany": "v",
+        "level": "n",
+        "marvellous": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-12",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-12.json",
+      "fingerprint": "c95a5794077f47c5ee086438e8d48d2159dcbd7c47fe4df087f1f5d8a7d6852e",
+      "wordCount": 73,
+      "excludedWords": [
+        "asthma",
+        "coach",
+        "earthwork"
+      ],
+      "blockedPairs": [
+        "bound|fatal",
+        "coach|instruct",
+        "compact|reduce",
+        "critical|magnitude",
+        "critical|significant",
+        "fatal|magnitude",
+        "fatal|significant",
+        "impression|sensation",
+        "magnitude|significant",
+        "memorandum|summary"
+      ],
+      "posOverrides": {
+        "attribute": "v"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-13",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-13.json",
+      "fingerprint": "6bfc1b18af10c670230a65416f8bbb08ac0b7fabeb2a64e1f9ad5169449f7da0",
+      "wordCount": 76,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "inductive": "adj",
+        "treatment": "n",
+        "bring out": "phr",
+        "bump int": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-14",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-14.json",
+      "fingerprint": "01df077183d4ef562560ae1f8f8ddbbe3435a496ef66e0abbaec5538993e12ba",
+      "wordCount": 69,
+      "excludedWords": [
+        "overhead",
+        "shrink",
+        "splint",
+        "topsoil"
+      ],
+      "blockedPairs": [
+        "account|enlighten",
+        "advisable|convenient",
+        "assessment|observation",
+        "blueprint|format",
+        "blueprint|layout",
+        "format|layout",
+        "influence|interplay",
+        "prerequisite|requirement"
+      ],
+      "posOverrides": {
+        "advisable": "adj"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-15",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-15.json",
+      "fingerprint": "0971a85744277bd01c285f3a7a6d23149af9a8a2d05110084319300a82db5b8a",
+      "wordCount": 76,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "suspend": "v",
+        "sulphuric acid": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-16",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-16.json",
+      "fingerprint": "1bcac1e2e0ffe5793d19869ebd5a833c1c8a830e9702ef033f52bae9b400894c",
+      "wordCount": 74,
+      "excludedWords": [
+        "contrast",
+        "parcel",
+        "simulate"
+      ],
+      "blockedPairs": [
+        "commitment|guarantee",
+        "contain|stem",
+        "establish|institute"
+      ],
+      "posOverrides": {
+        "sincere": "adj",
+        "label": "v",
+        "vice versa": "adv"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-17",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-17.json",
+      "fingerprint": "2787be51ad0608522d09e69a048edf692da641f5a8a12bf7cc9158e05e690e42",
+      "wordCount": 71,
+      "excludedWords": [
+        "accommodation",
+        "advice",
+        "agency",
+        "attract",
+        "besides",
+        "mechanic",
+        "pedal",
+        "resident",
+        "static"
+      ],
+      "blockedPairs": [
+        "attitude|posture",
+        "branch|section",
+        "degrade|depress",
+        "deliver|release",
+        "depress|frustrate",
+        "impulse|propel"
+      ],
+      "posOverrides": {
+        "employ": "v",
+        "chaos": "n",
+        "empire": "n"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-18",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-18.json",
+      "fingerprint": "97b85e2b2f5d941a0101a821273bd8a114c8c12c2230d9f569c9c7c6dc7f707e",
+      "wordCount": 71,
+      "excludedWords": [
+        "consolation",
+        "crash",
+        "excavation",
+        "fallow",
+        "glacial",
+        "material",
+        "oak",
+        "poultry",
+        "premium",
+        "settle",
+        "succession"
+      ],
+      "blockedPairs": [
+        "appliance|facility",
+        "brochure|prospectus",
+        "chill|glacial",
+        "fierce|violent"
+      ],
+      "posOverrides": {
+        "exhibition": "n",
+        "at random": "phr"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-19",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-19.json",
+      "fingerprint": "f81acb69b03956ec564f7515d586dfe3b76f20f48daeffadffca7dff68872765",
+      "wordCount": 76,
+      "excludedWords": [
+        "pudding"
+      ],
+      "blockedPairs": [
+        "calendar|itinerary",
+        "constitution|structure",
+        "expedition|trek",
+        "imitate|mock"
+      ],
+      "posOverrides": {
+        "eruption": "n",
+        "microbiology": "n",
+        "imitate": "v"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-20",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-20.json",
+      "fingerprint": "24f6476dca80b87690a190ac35216b4f78827927caf11588b2b41e58ba823350",
+      "wordCount": 73,
+      "excludedWords": [],
+      "blockedPairs": [
+        "aggravation|irritate",
+        "bore|irritate",
+        "commence|preface",
+        "crush|demolition",
+        "crush|spoil",
+        "demolition|spoil",
+        "pamper|spoil",
+        "plush|sleek"
+      ],
+      "posOverrides": {
+        "retain": "v"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-21",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-21.json",
+      "fingerprint": "05112a2dc358f4f3b5cd7881669e7792042f24fddf31bcf986a85c758054574a",
+      "wordCount": 74,
+      "excludedWords": [
+        "puli up stakes"
+      ],
+      "blockedPairs": [
+        "coincide|consistent",
+        "coincide|correspond",
+        "consistent|correspond",
+        "envisage|fancy",
+        "robust|vigorous"
+      ],
+      "posOverrides": {
+        "in accordance": "phr",
+        "get off track": "phr",
+        "puli up stakes": "phr"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-22",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-22.json",
+      "fingerprint": "f3d5a27a9c9f2a17164d56da74b9783644681cc18df62b666b3ca41ec07f1067",
+      "wordCount": 68,
+      "excludedWords": [],
+      "blockedPairs": [
+        "absurd|bizarre",
+        "capacity|faculty",
+        "discriminate|separate",
+        "install|mount",
+        "institution|ritual",
+        "interpret|rendition",
+        "preliminary|rudimentary"
+      ],
+      "posOverrides": {
+        "distort": "v",
+        "and so forth": "phr",
+        "institution": "n"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-23",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-23.json",
+      "fingerprint": "4892ebb6814c341f2140b8988391d7c38937126163d5622de5df6cccb218b5bf",
+      "wordCount": 72,
+      "excludedWords": [
+        "blame"
+      ],
+      "blockedPairs": [
+        "endanger|impair",
+        "facilitate|foster",
+        "inescapable|inevitable",
+        "rekindle|revival"
+      ],
+      "posOverrides": {
+        "revival": "n",
+        "spot on": "phr",
+        "snap up": "phr",
+        "hang on": "phr"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-24",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-24.json",
+      "fingerprint": "138f4aab3f3703b0b711cdbcefa3fffd7cc8753a3fd38d4d966933fdf6ecb248",
+      "wordCount": 71,
+      "excludedWords": [
+        "iandfill",
+        "n the horizon"
+      ],
+      "blockedPairs": [
+        "adjunct|complementary",
+        "adjunct|supplement",
+        "authorise|in favour of",
+        "complementary|supplement",
+        "concur|uniform",
+        "engage|engross"
+      ],
+      "posOverrides": {
+        "in favour of": "phr",
+        "pore over": "phr",
+        "less than": "phr",
+        "n the horizon": "phr"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-25",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-25.json",
+      "fingerprint": "1a4047d4168ad121a5c18d0dbaa61e656920f8e20c0a53b823cefed2e93de2f8",
+      "wordCount": 70,
+      "excludedWords": [
+        "dusk",
+        "hybrid",
+        "inhale"
+      ],
+      "blockedPairs": [
+        "advantageous|instrumental",
+        "conception|stance",
+        "conduct|operate",
+        "converse|negotiate",
+        "manoeuvre|operate"
+      ],
+      "posOverrides": {
+        "hybrid": "n",
+        "for the sake of": "phr"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-26",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-26.json",
+      "fingerprint": "ac46a2d544f9a83eafc8f73255785ea662a1e7f07b118b0672ac9c9b36cf3308",
+      "wordCount": 73,
+      "excludedWords": [],
+      "blockedPairs": [
+        "challenge|hassle",
+        "duplicate|reproduce",
+        "duplicate|transcription",
+        "gigantic|vast",
+        "guideline|platform",
+        "location|venue"
+      ],
+      "posOverrides": {
+        "elicitation": "n",
+        "hurl": "v",
+        "in vain": "phr"
+      },
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-27",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-27.json",
+      "fingerprint": "f1fc8e9962a70ca40f1d015f33f796f8a0034cbc9e74a44b27049ba84734d620",
+      "wordCount": 73,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "attainable|feasible",
+        "contradict|contradiction",
+        "essential|indispensable"
+      ],
+      "posOverrides": {
+        "premier": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-28",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-28.json",
+      "fingerprint": "29282a59e734a4fa0d92d34fb884aa436da08cb02df17308d33a513e1e7709f4",
+      "wordCount": 73,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "realm|universe",
+        "switch|transition"
+      ],
+      "posOverrides": {
+        "statistically": "adv",
+        "solve": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-29",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-29.json",
+      "fingerprint": "7480094b55b123addc1fc49955062958365c0533996eb990d30082021a7a33cd",
+      "wordCount": 74,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "groan"
+      ],
+      "blockedPairs": [
+        "exemplify|illustration",
+        "scour|scrub"
+      ],
+      "posOverrides": {
+        "currently": "adv",
+        "id card": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-30",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-30.json",
+      "fingerprint": "43fc9480b0f78eef972627842d90b0a6297acc18b03b07b1adf71a1f06e2f667",
+      "wordCount": 68,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "diagram|figure",
+        "figure|form"
+      ],
+      "posOverrides": {
+        "allergic": "adj",
+        "raw material": "phr",
+        "as iffthough": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-31",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-31.json",
+      "fingerprint": "ecb0cd994a4cd9a0a002ca3e3ab760833a6a7c51f44f19284e669141df16a729",
+      "wordCount": 73,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "hithert": "adv"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-32",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-32.json",
+      "fingerprint": "934693ebe8273d643d38d68e2457402e27af7f89d5406f461445b3767b20be63",
+      "wordCount": 72,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "aeroplane"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "confirm": "v",
+        "apart": "adv",
+        "reputation": "n",
+        "stir": "v",
+        "calcium": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-33",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-33.json",
+      "fingerprint": "e4d97d18341a4c9930d10818b0209ef62f3275cc6c7f5ffc08c21f1690da07a8",
+      "wordCount": 75,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "stare"
+      ],
+      "blockedPairs": [
+        "livestock|stock"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-34",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-34.json",
+      "fingerprint": "a8bc695b110ba9772c4c197d00c09fc844a4ab3b71f2d0eac30ae7a8dc3bb278",
+      "wordCount": 73,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "circumscribe|constrain",
+        "complete|fulfil",
+        "consequent|subsequent"
+      ],
+      "posOverrides": {
+        "mixture": "n",
+        "discipline": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-35",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-35.json",
+      "fingerprint": "30dce6b03eb3f1671bda32d65cf9f22841a3e685ce3abd6e60ae4ce624756530",
+      "wordCount": 77,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "sausage"
+      ],
+      "blockedPairs": [
+        "highlight|stress"
+      ],
+      "posOverrides": {
+        "compile": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-36",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-36.json",
+      "fingerprint": "f1cb31705f0cbd74144c76be426a1fb472f19ede29d8fc41c80e407e226612b6",
+      "wordCount": 75,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "camouflage|pretend",
+        "chief|principal",
+        "multiply|propagate"
+      ],
+      "posOverrides": {
+        "unbeatable": "adj",
+        "replenish": "v",
+        "triangle": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-37",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-37.json",
+      "fingerprint": "5853489350376cd6b5b2cb94f37dfbe77b1ceb09a87eae06369af5570e2a0c00",
+      "wordCount": 73,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "outsell"
+      ],
+      "blockedPairs": [
+        "bulge|protrude"
+      ],
+      "posOverrides": {
+        "maintain": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-38",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-38.json",
+      "fingerprint": "70d963b36a3dfe6a14617df2158d5ec789d5f71c35fe6b399227194a5bc3b58b",
+      "wordCount": 75,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "brood|contemplate"
+      ],
+      "posOverrides": {
+        "reclaim": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-39",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-39.json",
+      "fingerprint": "d7ad3461096705047c3076b2592ebe54ccb292eb0cc60467290cc88f7e023630",
+      "wordCount": 77,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "board"
+      ],
+      "blockedPairs": [
+        "appraisal|estimate",
+        "peripheral|periphery"
+      ],
+      "posOverrides": {
+        "censure": "v",
+        "tick off": "phr",
+        "churn": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-40",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-40.json",
+      "fingerprint": "c8c20166c60bc84cd875fcac286a6749299fa03791d5263d93963d37876809e3",
+      "wordCount": 75,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "decouple"
+      ],
+      "blockedPairs": [
+        "colossal|enormous",
+        "principle|theory"
+      ],
+      "posOverrides": {
+        "scrutiny": "n",
+        "portion": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-41",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-41.json",
+      "fingerprint": "2a243effc547290315d2edb2eb4fbf77f2f2759ae6a01e7447cf043e455fb11d",
+      "wordCount": 76,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "allege|assert",
+        "assure|certify",
+        "baffle|bewilder"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-42",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-42.json",
+      "fingerprint": "3b1cac2f911ab29acca872ec32942bbc817be6155ed2879708436cdff9d1dabc",
+      "wordCount": 71,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "aggressive|militant",
+        "component|module",
+        "conclusion|finale",
+        "manifest|noticeable",
+        "notable|noticeable"
+      ],
+      "posOverrides": {
+        "debris": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-43",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-43.json",
+      "fingerprint": "71c8ed05dec0f33d832f014c956366c6dd520a8628ab03e34b10d7196d9aa76c",
+      "wordCount": 77,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "renewal"
+      ],
+      "blockedPairs": [
+        "in addition|plus",
+        "outline|overview"
+      ],
+      "posOverrides": {
+        "requisition": "n",
+        "rescue": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-44",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-44.json",
+      "fingerprint": "e45e736824c98918045964132c0ab6ec11f91f52537ca47ca856c698d7aaa428",
+      "wordCount": 82,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "relative|relevant"
+      ],
+      "posOverrides": {
+        "lead t": "v",
+        "hug": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-45",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-45.json",
+      "fingerprint": "3b7e74fba88d95ae5989317c4e1124866003c9ade59d1143df2171019df5b1dc",
+      "wordCount": 74,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "embry",
+        "in addition t",
+        "we",
+        "zone"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-46",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-46.json",
+      "fingerprint": "6912b11c02898df3ab07a82e41c4c5286aad5f161603d7e4a51a5d45ee26541a",
+      "wordCount": 80,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "mosquit"
+      ],
+      "blockedPairs": [
+        "alienate|estrange",
+        "allure|seduce",
+        "assault|offensive",
+        "inhumane|ruthless"
+      ],
+      "posOverrides": {
+        "combat": "n",
+        "allure": "n",
+        "oxygen": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-47",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-47.json",
+      "fingerprint": "0106cb40c40a42b2ebd4252360c187d15fef6fba2509279eaabf5571a099ffa5",
+      "wordCount": 77,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "disparage|smear",
+        "lax|lenient",
+        "libel|smear",
+        "obscene|vulgar"
+      ],
+      "posOverrides": {
+        "obscene": "adj",
+        "transplant": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-ielts-list-48",
+      "cloudPath": "dictionary_books/word-lists-examples-v1/ielts/list-48.json",
+      "fingerprint": "17eaf4969fdfae67065713fd01a0fca444f8b01ce3383ef21d44491dc2f25876",
+      "wordCount": 79,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "ecliptic"
+      ],
+      "blockedPairs": [
+        "begrudge|grudge",
+        "brutal|vicious",
+        "infiltrate|invasive",
+        "trespass|violate"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u1-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-1/ls.json",
+      "fingerprint": "3bec61887425738372756b04041d5b27a603c0de1c0c39e443ad361c359e747b",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "shop|store"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u1-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-1/rw.json",
+      "fingerprint": "0dfe9d00b0168b49d4fb1ab785a3696b8503736c6087b52fc2c955aa0852bd5d",
+      "wordCount": 56,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "village"
+      ],
+      "blockedPairs": [
+        "birthday|date of birth",
+        "job|work"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u2-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-2/ls.json",
+      "fingerprint": "f361cafa170a8e67d0bdcbae00a24c5a1378a8457b84b68081b594c758b022ff",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u2-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-2/rw.json",
+      "fingerprint": "36003f350a73103e8d1dc412f514f3a8ff9e64279bff98fdbe22f6bebfc7318d",
+      "wordCount": 60,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u3-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-3/ls.json",
+      "fingerprint": "e4f3723b5080524d40ed119802a9dd772f5f4dadf495ec89f183977ffde464b2",
+      "wordCount": 61,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "outdoor": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u3-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-3/rw.json",
+      "fingerprint": "3de160f4269d7b2bbf909ebc4e01df6dfa016b79be963eb004cc690bcb687774",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u4-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-4/ls.json",
+      "fingerprint": "e143ba7fad83b3f367b4bc365c916081b402ea7ffb5c6153722afbb305ef4158",
+      "wordCount": 59,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u4-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-4/rw.json",
+      "fingerprint": "fd8f9ed2cb6f18dcfc76fc5a9de0971bc2e4870ee6d18c0456a3eba288f90282",
+      "wordCount": 52,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u5-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-5/ls.json",
+      "fingerprint": "b8a0ddd2efe672b5e3b543d0908e5a7f0f7e666efe8dbbd39f7d5695d89ea8ec",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "job|work",
+        "problem|question"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u5-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-5/rw.json",
+      "fingerprint": "9bd20bfbc83fc7e9358855534472207efe3cb7d314c583d9c08fedc2a2f31e19",
+      "wordCount": 52,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "care for|look after",
+        "fitness|healthy",
+        "fit|fitness",
+        "fit|healthy"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u6-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-6/ls.json",
+      "fingerprint": "4920da891767b51b50286ed852a33e4aa1386e396a92a764a9e77fe95140339b",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u6-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-6/rw.json",
+      "fingerprint": "0ae54d16a9ceb389d49b84faf3d680c3ec7bd4b572464995eadf70b17d246856",
+      "wordCount": 51,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "apartment|flat"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u7-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-7/ls.json",
+      "fingerprint": "7aa56ab7af9b99747c3103b640e13e63eef65a551d857df8f50accb6796f67cf",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u7-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-7/rw.json",
+      "fingerprint": "3838bc94819b631553f45821259658c7f3cf02568df19b2ca3d21eb432538a49",
+      "wordCount": 44,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u8-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-8/ls.json",
+      "fingerprint": "b4d14b0746dc69854bbd0fc11830c9d9ed6b3641adf74341cdb5f5f705f775e7",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "metro|underground",
+        "traffic|transport"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-1-u8-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-1/unit-8/rw.json",
+      "fingerprint": "c8d30d3341e1121bb15f9b289309f003a8fd2c566e5fb596c73ee8467926da49",
+      "wordCount": 45,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "traffic|transport"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u1-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-1/ls.json",
+      "fingerprint": "b00cf196095eadd75e7bd2a51a325c8b3a2f4f7ef856e1cb6237875c57788405",
+      "wordCount": 112,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "trade"
+      ],
+      "blockedPairs": [
+        "amazing|fantastic",
+        "forest|wood"
+      ],
+      "posOverrides": {
+        "outdoor": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u1-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-1/rw.json",
+      "fingerprint": "55607bbae4bb3a5af35d7182a5473a3198c1a7023db330a0687a1c4046643a21",
+      "wordCount": 56,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u2-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-2/ls.json",
+      "fingerprint": "8b1b0ffa7b97bec1572de8fd2de81701f70787c1d73852bc03ab09c71dfa8414",
+      "wordCount": 80,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "competition|race"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u2-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-2/rw.json",
+      "fingerprint": "d56b0360db05075cddaa7337d7df545255214359996d7075b88268ffc5847238",
+      "wordCount": 63,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "attend|take part in",
+        "gift|present",
+        "jewel|jewllery"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u3-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-3/ls.json",
+      "fingerprint": "f747da895490816c1aa386848347045237f05df6b7e5abea8589629822f90610",
+      "wordCount": 105,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "collection"
+      ],
+      "blockedPairs": [
+        "develop|development",
+        "research|study"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u3-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-3/rw.json",
+      "fingerprint": "f9f41a6484c2bed603d4ab8f30d10390f591e6c12185d8023dfd3f2badabc049",
+      "wordCount": 66,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "advantage|benefit",
+        "collect|gather",
+        "educate|education"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u4-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-4/ls.json",
+      "fingerprint": "8af936a651d3e98441c5bf09f0b22c465d725c611f07aa422e3b674c3f10574f",
+      "wordCount": 94,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "according"
+      ],
+      "blockedPairs": [
+        "effect|impact",
+        "unhappy|upset"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u4-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-4/rw.json",
+      "fingerprint": "9f11f7a23a2dfede27012867ad2bf0b1e1c076c2ca961d0f71c91a19a475ad0d",
+      "wordCount": 60,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "drop|fall",
+        "increase|rise"
+      ],
+      "posOverrides": {
+        "be different from": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u5-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-5/ls.json",
+      "fingerprint": "26dc5bc5e3e3d4a9ac8ca248a4077a858bee858ec98a201d90ec6e8eeeb90dfb",
+      "wordCount": 63,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "compete|match",
+        "difficult|hard"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u5-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-5/rw.json",
+      "fingerprint": "a9a447792c48dc2335887a1e74b92ae54242fd5ccacef0d28524dab8d58f92f6",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "compete|competition",
+        "throw|toss"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u6-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-6/ls.json",
+      "fingerprint": "c7ab5964fdea905eb46470d4eabfee7aaeef84848ee6e730aa6eee2486199d28",
+      "wordCount": 103,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "employee|worker"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u6-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-6/rw.json",
+      "fingerprint": "0b675a854cea023792c79ec56571e3bca9cb6dcbb5f3dfaaa104ad370e42deb7",
+      "wordCount": 66,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "department|section",
+        "lead to|result",
+        "lead to|result in",
+        "result|result in"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u7-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-7/ls.json",
+      "fingerprint": "36202434f9c2f49a8a35eec963373d69af4376f85f5450183eddfe0e38aab122",
+      "wordCount": 155,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "amazing|extraordinary",
+        "amazing|remarkable",
+        "amazing|surprising",
+        "clean|neat",
+        "extraordinary|remarkable",
+        "extraordinary|surprising",
+        "funny|interesting",
+        "odd|unusual",
+        "remarkable|surprising"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u7-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-7/rw.json",
+      "fingerprint": "0b95127748641ae3ea026a623ec708d86e897f3c5bdbe1c849b6141c667c5cb3",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "admire|respect",
+        "excellent|incredible"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u8-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-8/ls.json",
+      "fingerprint": "c1f7697b504cd63f77c117b3ffa989135baa91b5f62dcedb9abfb5340ba61ccf",
+      "wordCount": 121,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "alternative|option",
+        "amazing|surprising",
+        "effect|impact",
+        "information|message",
+        "journey|travel",
+        "journey|trip",
+        "programme|project",
+        "travel|trip"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-2-u8-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-2/unit-8/rw.json",
+      "fingerprint": "bd4f6ad02db5112570e352fb9f8b0bab76e23c80c1b6f713f648ce34b82ce724",
+      "wordCount": 59,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "condition|conditions",
+        "exploration|explore",
+        "research|study"
+      ],
+      "posOverrides": {
+        "in order to": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u1-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-1/ls.json",
+      "fingerprint": "05fff5f896188658bccc0b2e3638912347f338daa9932ff2fd08e523d8b973f5",
+      "wordCount": 38,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "argue|argument",
+        "argue|debate",
+        "argument|debate"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u1-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-1/rw.json",
+      "fingerprint": "822d8e66a35c472984294f5eb61105831f7690d471d475a21e5a7dd5f575917f",
+      "wordCount": 63,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "destroy|destruction",
+        "die out|extinct",
+        "die out|extinction",
+        "extinct|extinction"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u2-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-2/ls.json",
+      "fingerprint": "32ee347a6e0dba6ff70f01b02945227513f1ce21cde136c5dfcbccccba90b05a",
+      "wordCount": 59,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "affordable|cheap"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u2-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-2/rw.json",
+      "fingerprint": "9ccd042aabf42c7c931d9266c1c70ec29d5dc0ebe34dd424f6725145fa4ebe97",
+      "wordCount": 61,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "medical condition"
+      ],
+      "blockedPairs": [
+        "manufacturing|production"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u3-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-3/ls.json",
+      "fingerprint": "81fbd2ac1221f7c4fb00652e2b21287e1a1ba2e6eb3b2a95849b1d1e6acc7cc6",
+      "wordCount": 61,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "license|permit"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u3-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-3/rw.json",
+      "fingerprint": "b5e323d1f55aa6c6bbd957523570e85926cfed5d3a2b1c7a484afe4e2f5b8b99",
+      "wordCount": 61,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "convince|persuade",
+        "in the suburb|on the outskir",
+        "traffic congestion|traffic jam"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u4-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-4/ls.json",
+      "fingerprint": "a58adc9978eb7bafe0976b9e2ddcc43542cdf74c27143900d336271f94c2e459",
+      "wordCount": 56,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "custom|tradition",
+        "festival|holiday",
+        "gift|present",
+        "text|text message"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u4-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-4/rw.json",
+      "fingerprint": "a69a336a676ecf5eb808761961a13d98d034eb63c14cd2e6b02d67fdeb5236e7",
+      "wordCount": 62,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "ceremony|ritual",
+        "custom|tradition",
+        "custom|traditional practice",
+        "ritual|traditional practice"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u5-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-5/ls.json",
+      "fingerprint": "1366f0c38a67690d3773971a311aac753e2704d4c0c2a4c66dfbe1846b02e0ff",
+      "wordCount": 59,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "fitness|health",
+        "fitness|well-being",
+        "health|well-being",
+        "treat|treatment"
+      ],
+      "posOverrides": {
+        "focus on": "phr",
+        "take up": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u5-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-5/rw.json",
+      "fingerprint": "e09a34d24d4a5f68118194739bd82ade6655dd09a19f137262a086e13440f3e0",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "obese|obesity"
+      ],
+      "posOverrides": {
+        "consist of": "phr",
+        "manage weight": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u6-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-6/ls.json",
+      "fingerprint": "caf44b1b396ac747703f31f20a34cd21603781fc5ec79a2a882f2016bed4c263",
+      "wordCount": 55,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u6-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-6/rw.json",
+      "fingerprint": "1c537b8a61f2297f8df01e24ce2c1eecf3a6b268ddfa1d14d3d294ae9799754d",
+      "wordCount": 58,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u7-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-7/ls.json",
+      "fingerprint": "fd4deb303e21a13c7284f397f661cc20ec97b9379da1014131df17823abd5349",
+      "wordCount": 51,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u7-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-7/rw.json",
+      "fingerprint": "e54726828f17a7fb67810b9567857bff85d04e310df9ffe71f8b5f00a3f1f099",
+      "wordCount": 59,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "offshore|overseas"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u8-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-8/ls.json",
+      "fingerprint": "8101158928e8e4989e7ee0310e0bb56824971d63ccca714b99f7c0abdc6508c3",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "programme|project"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-3-u8-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-3/unit-8/rw.json",
+      "fingerprint": "e5270a1a3823a929c50b72992fb720a936d53288bff407151b3eb5ebafdfd161",
+      "wordCount": 58,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "crash|take a dive",
+        "decline|depression",
+        "decline|recession",
+        "depression|recession",
+        "income|revenue",
+        "stock market|stocks and shares"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u1-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-1/ls.json",
+      "fingerprint": "43e0878367235f970a79d624233e0d18848d5d77860899e60799695f51a9800a",
+      "wordCount": 18,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u1-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-1/rw.json",
+      "fingerprint": "9045440a972a93cf019ba4cbbe3c9e579851bac410f5775f3b6fa22b36824211",
+      "wordCount": 25,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u2-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-2/ls.json",
+      "fingerprint": "5e2e30226b0cf778362741db41b0f2155ea95e84175cb8a8a1f61657882610ed",
+      "wordCount": 16,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u2-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-2/rw.json",
+      "fingerprint": "1b895308d7580ff86bbc56033822b1426228f18144cfb188a833c5a12adb4133",
+      "wordCount": 36,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "semester|term"
+      ],
+      "posOverrides": {
+        "principle": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u3-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-3/ls.json",
+      "fingerprint": "39623e41da0ba5ed102b563061afa84418d811e8ca1af53e819e516ae0a0af94",
+      "wordCount": 21,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "contract"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "in favour of": "prep"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u3-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-3/rw.json",
+      "fingerprint": "4a8e114e1157256b1dee9de2a2f10ecad1d85776bc7a8bf475a6c85e2cb26f1f",
+      "wordCount": 29,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "fund"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u4-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-4/ls.json",
+      "fingerprint": "d48f0ba5e7b923e9e8fa34259398ebc0c7a989aede7f9a0fe812993df9fff56b",
+      "wordCount": 20,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "affect|impact"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u4-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-4/rw.json",
+      "fingerprint": "8c00c611c3178c7eafdf28a905acd9f88ef0ea7d5a756d60e6100ce07182abce",
+      "wordCount": 22,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u5-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-5/ls.json",
+      "fingerprint": "99b1dd7380b0cdfb7247c52b40b0d7976a348856bc727491fbfb757e58221bc8",
+      "wordCount": 20,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "acquire|obtain",
+        "convert|transform"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u5-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-5/rw.json",
+      "fingerprint": "135bef54fe0a3de131a1413983cec58e3825706fc7d9897de0a0dcced1ffbf2e",
+      "wordCount": 32,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u6-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-6/ls.json",
+      "fingerprint": "73f64ea7d1eaa1933346eec3309fc10351293b4fd221048a9e4508abc840c6aa",
+      "wordCount": 21,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "capacity|potential",
+        "generate|source"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u6-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-6/rw.json",
+      "fingerprint": "5a3ffe33d1f1dc7a87418302b5ed632325672537365853a255c3b920ecfc14d9",
+      "wordCount": 20,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "address|consult",
+        "adopt|utilize",
+        "generate|instigate",
+        "urgent|vital"
+      ],
+      "posOverrides": {
+        "offshore": "adv"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u7-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-7/ls.json",
+      "fingerprint": "23dd31cdceead394e9a385eb85685bc5038df28d79efe90b91e43bba53ec3df4",
+      "wordCount": 16,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "comment"
+      ],
+      "blockedPairs": [
+        "analyze|interpret",
+        "comment|criticism",
+        "display|reveal",
+        "identity|right",
+        "restore|reveal"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u7-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-7/rw.json",
+      "fingerprint": "9fc9713a8fae9c804e4ce00dd7b7330df8e0282682f126cbaebc022b815d9b29",
+      "wordCount": 22,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "abstract|conceptual",
+        "aesthetic|decorative",
+        "avant-garde|contemporary",
+        "figurative|notion",
+        "monumental|significance",
+        "objective|perceive"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u8-ls",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-8/ls.json",
+      "fingerprint": "089ac3bcd4ceee1b66c693073df97cdb8931af56b9b0c5dd6398eb379df68e41",
+      "wordCount": 18,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "asset|property",
+        "assist|cooperate",
+        "contribute|devote",
+        "ensure|permit"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-4-u8-rw",
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-8/rw.json",
+      "fingerprint": "320f611185f78589913b772dcc432286dbebc07051f9e212811ac2a467f73667",
+      "wordCount": 21,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "a range of|range",
+        "capacity|proportion",
+        "focus on|sum up",
+        "identify with|rely on"
+      ],
+      "posOverrides": {
+        "in brief": "phr",
+        "in contrast": "phr",
+        "in theory": "phr",
+        "sum up": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u1-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-1/ls.json",
+      "fingerprint": "5f406f5680bc10735fb872bcc6ee858022561ce365fda670a8a68b918d3244ee",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "buyer"
+      ],
+      "blockedPairs": [
+        "shop|store"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u1-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-1/rw.json",
+      "fingerprint": "3c18bd8fa146e3b6a5487a63fd480564a70221d0156bbf6962ae19f7c172d1ee",
+      "wordCount": 56,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "job|work",
+        "life|live"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u2-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-2/ls.json",
+      "fingerprint": "64018488672079baa234cd7245ed1b176ff965d0ebe36d25ff7b6df147392717",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "sea"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "forest": "n",
+        "red": "adj",
+        "orange": "adj",
+        "warm": "adj",
+        "sunny": "adj",
+        "famous": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u2-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-2/rw.json",
+      "fingerprint": "22b51c05aac2a338f5a645e24c058af40e81c6d1319e6a8afc8fe4a8f4d3f91e",
+      "wordCount": 56,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "cloudy": "adj",
+        "sunny": "adj",
+        "monday": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u3-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-3/ls.json",
+      "fingerprint": "f253970d1dd05aebc0197ec014d8475ec938b99566abf9c23abdf4c858862ed6",
+      "wordCount": 61,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "make": "v",
+        "outdoor": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u3-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-3/rw.json",
+      "fingerprint": "0d8be0236376c2eea8f74fa1cbb319ef8ffedd600df162d3d76cefbb65927ebb",
+      "wordCount": 52,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "community greenhouse|greenhouse"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u4-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-4/ls.json",
+      "fingerprint": "a927dd3c9bb0fd260af75b0569e6b8a61dde1c2ef3f5f424f5c38c435c345d10",
+      "wordCount": 91,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "phone|smartphone"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u4-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-4/rw.json",
+      "fingerprint": "c06224f67b222c3a29e742157b3c34f22181148ec597f1621cdff0bda792cfa6",
+      "wordCount": 49,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "amazing|fantastic",
+        "scenery|view"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u5-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-5/ls.json",
+      "fingerprint": "9cd41f5ec5b4032cb5904e95ed39253156c4df9715e74376cd23042593ef36ff",
+      "wordCount": 86,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "billion": "num",
+        "thousand": "num",
+        "important": "adj",
+        "popular": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u5-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-5/rw.json",
+      "fingerprint": "d508d2dfec80aec1c830c79ec06859843206ade2b946527110e3e0dd9555ec84",
+      "wordCount": 54,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "care for|look after",
+        "fit|healthy"
+      ],
+      "posOverrides": {
+        "friendly": "adj",
+        "interesting": "adj",
+        "throughout": "prep"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u6-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-6/ls.json",
+      "fingerprint": "12a1f725cf58c775c1824cdafcb88a2e148fe62711fa387eb163782286747e90",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "combine",
+        "country",
+        "declaration",
+        "example",
+        "house",
+        "independence",
+        "live",
+        "restaurant",
+        "wall"
+      ],
+      "blockedPairs": [
+        "home|house"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u6-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-6/rw.json",
+      "fingerprint": "7c65b47aac2fd3f6417c2cca75c0c87a8860208548ab9e3d769abfd3b9e9fa14",
+      "wordCount": 59,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "better",
+        "professor",
+        "worse"
+      ],
+      "blockedPairs": [
+        "apartment|flat"
+      ],
+      "posOverrides": {
+        "everywhere": "adv"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u7-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-7/ls.json",
+      "fingerprint": "59fabe7a5ec2cab8b0ce9c438dc3a88d7a426d70bcd66305e4606eab38568dae",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "shop": "n",
+        "expensive": "adj",
+        "perfect": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u7-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-7/rw.json",
+      "fingerprint": "5a3ce6bfbcd2413e966a75570511a11d3941c979f2bea219f9a9a8c8521510d2",
+      "wordCount": 53,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u8-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-8/ls.json",
+      "fingerprint": "70f9f376b2da04f4fee6868b9f132261921e28fe26ccb688ec052b1c997eb7f3",
+      "wordCount": 86,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "petrol"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {
+        "transport": "n",
+        "online": "adj",
+        "fast": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-1-u8-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-1/unit-8/rw.json",
+      "fingerprint": "a8a6871ee144806b464137e2dccdbd5440edd1ce0e1916a62582ee8fb445e410",
+      "wordCount": 43,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u1-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-1/ls.json",
+      "fingerprint": "96549cf790438b6296fba602062a1240011f87f2d739510284535858e6bc87f2",
+      "wordCount": 112,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "amazing|fantastic",
+        "forest|wood",
+        "strange|unusual"
+      ],
+      "posOverrides": {
+        "outdoor": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u1-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-1/rw.json",
+      "fingerprint": "7d2a793c87f28f880fd1622f7ee9d3626a22ca48149f9794f691ee6ce05373ba",
+      "wordCount": 56,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "area"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u2-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-2/ls.json",
+      "fingerprint": "54ae3487730c5b7b3eae76d0bc015c6a91f828b3e383056ba27a859f179c3b26",
+      "wordCount": 60,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "celebration|festival"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u2-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-2/rw.json",
+      "fingerprint": "9e0cbd158878883507f2e377882e095e078a9f92308f3475d6f8f83f443d5b1e",
+      "wordCount": 37,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "gift|present",
+        "jewel|jewellery"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u3-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-3/ls.json",
+      "fingerprint": "6ca26ff7f419dc2784e9cd1f19508a4963e8e614e7b3a853892a0c2ed212e513",
+      "wordCount": 90,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "develop|development",
+        "research|study"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u3-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-3/rw.json",
+      "fingerprint": "3d0577481649b46aa56c333dceb4f64e8d0a18df3adaacf9bb37703e5427e093",
+      "wordCount": 64,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "advantage|benefit",
+        "celebrities|celebrity",
+        "educate|education",
+        "password|passwords",
+        "viewer|viewers"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u4-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-4/ls.json",
+      "fingerprint": "576325dd425ad26ec5a8d0ead911ac2c88d90491de2b9c9d640ed7037f07a85a",
+      "wordCount": 94,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "according"
+      ],
+      "blockedPairs": [
+        "effect|impact",
+        "unhappy|upset"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u4-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-4/rw.json",
+      "fingerprint": "ec34db567b08b3d1edea7ac7d02988adba2f0687b4d8e3c4e6175d65b509a064",
+      "wordCount": 58,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "drop|fall",
+        "precipitation|rainfall",
+        "rotate|rotating",
+        "survival|survive"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u5-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-5/ls.json",
+      "fingerprint": "90ce37cd37e0fc24a4d61c2ad1f04e363166d3143191ab7d92a7bb0aa39b37ef",
+      "wordCount": 63,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "difficult|hard"
+      ],
+      "posOverrides": {
+        "mentally": "adv"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u5-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-5/rw.json",
+      "fingerprint": "bb00f52a8c7a131513b6aa35dbc793b74d13266264b34d077526f09ab726ba0d",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "injured|injury",
+        "throw|toss"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u6-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-6/ls.json",
+      "fingerprint": "b42e630a7f645396cd4bffc2298531c589273a99a1aaad59dadebf628e4df741",
+      "wordCount": 89,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "bright"
+      ],
+      "blockedPairs": [
+        "complete|finish",
+        "program|project",
+        "research|study"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u6-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-6/rw.json",
+      "fingerprint": "3080940ea9302321fcbb82287a406020314a3445ea7f1b7f6b3cd8b9e0a50fd3",
+      "wordCount": 72,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "employ|employs",
+        "introduce|introduced",
+        "mend|repair",
+        "partner|partners"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u7-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-7/ls.json",
+      "fingerprint": "498dc91097aed38b287351f2ba05d874d097ac6e79266414c14f90f18dd54fcc",
+      "wordCount": 104,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "amazing|surprising",
+        "extraordinary|remarkable"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u7-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-7/rw.json",
+      "fingerprint": "b49fbbea0658515a860a772e93a7c8cff390d65d4e9cae5522649ede4466791b",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "excellent|incredible"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u8-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-8/ls.json",
+      "fingerprint": "a2ffa099546915a88e758f33906045703ce3fddd14414012305a083ef644bee4",
+      "wordCount": 66,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "alternative|option",
+        "effect|impact",
+        "journey|travel"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-2-u8-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-2/unit-8/rw.json",
+      "fingerprint": "f9a4f9f7ce503176fcc6c27a204a4317f899421cedefb1dc2f340184142119dc",
+      "wordCount": 76,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "come back|go back",
+        "come back|return",
+        "condition|conditions",
+        "go back|return",
+        "particular|specific",
+        "research|study"
+      ],
+      "posOverrides": {
+        "orbit": "n"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u1-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-1/ls.json",
+      "fingerprint": "9a9bd7bc06ea7077d0601fae5745b4143b50ff1b46e60f0b8b84b5501a952df8",
+      "wordCount": 55,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "argument|debate",
+        "environment|habitat"
+      ],
+      "posOverrides": {
+        "issue": "n",
+        "climate change": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u1-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-1/rw.json",
+      "fingerprint": "f3e577a4a451b0527ab977829869c483297fa989f1645c13914f9e532895dca9",
+      "wordCount": 65,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "compete|contend",
+        "destroy|destruction",
+        "die out|disappear",
+        "die out|extinct",
+        "die out|extinction",
+        "extinct|extinction",
+        "take actions|take steps"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u2-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-2/ls.json",
+      "fingerprint": "dd8cd04c4287b28dedd93250552b4c5004b12a8385005d68968412b25e183a76",
+      "wordCount": 54,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {
+        "heat": "v",
+        "oil": "n",
+        "gas": "n",
+        "accurate": "adj",
+        "expensive": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u2-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-2/rw.json",
+      "fingerprint": "16d7e589eaa66efa8624844b076f9cfe4357188f7602e4cf8a7805bd0704315b",
+      "wordCount": 63,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "constant|continuous"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u3-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-3/ls.json",
+      "fingerprint": "33556d11b33d93b7fd5f24c37fd3281b804b2791c445f3a112172d9e50a3c329",
+      "wordCount": 48,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "avoid|prevent"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u3-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-3/rw.json",
+      "fingerprint": "9ca66ce5baa4f7856cf18a70902824f72b50331e16e3a8583125b1590553873b",
+      "wordCount": 68,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "compete",
+        "story"
+      ],
+      "blockedPairs": [
+        "a variety of|alternative",
+        "access|connect",
+        "attempt|consider",
+        "congested|road rage",
+        "healthcare|service",
+        "motorcycle|vehicle",
+        "on the outskirts|urban",
+        "public transport|transport",
+        "solution|solutions to problems",
+        "traffic congestion|traffic jam"
+      ],
+      "posOverrides": {
+        "compete": "v",
+        "overall": "adv",
+        "create": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u4-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-4/ls.json",
+      "fingerprint": "ca71f5fccb3b05d3110c1102ec7f15419c8129e5002a4e3d8c617377b6c28ea1",
+      "wordCount": 42,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "acceptable|agreement",
+        "celebration|festival",
+        "culture|multicultural",
+        "custom|tradition",
+        "generation|generation gap",
+        "global|local",
+        "interact|interaction",
+        "social|social network"
+      ],
+      "posOverrides": {
+        "agreement": "n",
+        "frighten": "v",
+        "commercial": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u4-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-4/rw.json",
+      "fingerprint": "c4c0644935365995a5ce5f46a17c826e2d16f297991fcccf7d987c5129ec1391",
+      "wordCount": 72,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "custom|traditional practice",
+        "tradition|traditional practice"
+      ],
+      "posOverrides": {
+        "pass down": "phr"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u5-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-5/ls.json",
+      "fingerprint": "5f4c0d89a46c7219b343891053a86399533be64458d1798e90111d986616c3a5",
+      "wordCount": 59,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "fitness|health",
+        "fitness|well-being",
+        "health|well-being",
+        "join in|participate",
+        "treat|treatment"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u5-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-5/rw.json",
+      "fingerprint": "67e7b0ba93fa9fbf1561906540f0ef117070949f38a5812e1a06432c98d9a26b",
+      "wordCount": 64,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "obese|obesity",
+        "participate|participation",
+        "promote|promotion",
+        "reduce|reduction",
+        "sale|sell",
+        "solve|tackle"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u6-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-6/ls.json",
+      "fingerprint": "ac71b7f849a7166895dea17a720327c10093cfd64fa3deec5771e5cbe042c2b7",
+      "wordCount": 64,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "mechanical"
+      ],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u6-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-6/rw.json",
+      "fingerprint": "8e4b362f659422556bb77ec6bcfbd62b0fcc9346104d9868491ed5025936fb59",
+      "wordCount": 62,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u7-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-7/ls.json",
+      "fingerprint": "de31bfc32c7e7cf068122591a38cc05a25a44d6fa7e621e3d4af44da4f957dc1",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u7-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-7/rw.json",
+      "fingerprint": "af166175107b6ddfb37b85576d606a96ae3a0291be2e0a8a1c6bf9f7654e0ee7",
+      "wordCount": 65,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "apart from|except for",
+        "apart from|other than",
+        "except for|other than",
+        "instead of|rather than",
+        "offshore|overseas"
+      ],
+      "posOverrides": {
+        "overseas": "adv"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u8-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-8/ls.json",
+      "fingerprint": "b19d1ad730f5a6ec6ad1250c84284e77625234d8481bd361bb9b5f06a6965412",
+      "wordCount": 48,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "encourage|encouragement"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-3-u8-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-3/unit-8/rw.json",
+      "fingerprint": "e4d2bc8820227e3f3f98eabd611240f9d3d3d15f2f02a32b2516f0273f9f8e89",
+      "wordCount": 62,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "a sharp decrease|decrease sharply",
+        "a sharp rise|rise sharply",
+        "finance|financial",
+        "fluctuate|fluctuate considerably",
+        "income|revenue",
+        "invest|investment"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u1-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-1/ls.json",
+      "fingerprint": "c1cef201e6895ebf4b69a58a4cbeee189d6647dab2afdf576714b4d01ac99545",
+      "wordCount": 44,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "accounts for|make up"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u1-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-1/rw.json",
+      "fingerprint": "9dbdf66d10912075320b88dce2383dfd5b4f4be3f32a28ccb2f35cd95bef650c",
+      "wordCount": 71,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "advantage|selling point",
+        "domestic|household",
+        "feature|specialty"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u2-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-2/ls.json",
+      "fingerprint": "17050a7cf3ba6a50bce23ec79559f221ee90ed15637a1a46a03b6c5780bded04",
+      "wordCount": 47,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "admission|entrance",
+        "complex|complicated",
+        "professional|technical"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u2-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-2/rw.json",
+      "fingerprint": "22bd38d2ff28b817d576867ce6b7fa5689fb0def2b8324d1dcc04c893721556e",
+      "wordCount": 63,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "concrete|specific"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u3-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-3/ls.json",
+      "fingerprint": "9cd240624edebdd808590616aa445e851b71d44876f2305dfef97ab94efb21fd",
+      "wordCount": 53,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "therapy|treatment"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u3-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-3/rw.json",
+      "fingerprint": "89c458d39cfb66a577e14aac98a1c7f2cde2267f88c94927d0c4ea33143655ed",
+      "wordCount": 65,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "drug|medicine",
+        "remedy|therapy",
+        "remedy|treatment",
+        "therapy|treatment"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u4-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-4/ls.json",
+      "fingerprint": "3f6cc1c2a05968b35b862c57b25b46c36271a02c6d27dab2de6db56205220892",
+      "wordCount": 49,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "ecosystem"
+      ],
+      "blockedPairs": [
+        "region|territory"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u4-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-4/rw.json",
+      "fingerprint": "71217ce8bb0a37a7b42c1914c7202cdf40e5aa46ab9cfe708a6e172fc57db801",
+      "wordCount": 62,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "storage"
+      ],
+      "blockedPairs": [
+        "construct|construction",
+        "foster|promote",
+        "mitigate|mitigation"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u5-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-5/ls.json",
+      "fingerprint": "bd1a69535c3332715e344779f9cc9e57fccc968ed75bc43f62799cb89d5c14be",
+      "wordCount": 62,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "character|features",
+        "construct|construction",
+        "contemporary|current",
+        "lease|rent"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u5-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-5/rw.json",
+      "fingerprint": "88ccb1e2cd0bb6510ae27a0ee071ee2efaa632f97ca90dc7f05d180c1acdead1",
+      "wordCount": 53,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "icon|symbol"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u6-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-6/ls.json",
+      "fingerprint": "babe141cbef7410edcee346cc717eaebd97de4710b35b0c3db6272cbe9c57844",
+      "wordCount": 50,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "consumption"
+      ],
+      "blockedPairs": [
+        "generate|generation"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u6-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-6/rw.json",
+      "fingerprint": "70b2aea0267e6d30a5d74bb27599317f15037fb6201461d439fb9516a7c3d1b8",
+      "wordCount": 60,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "banning",
+        "evidenced",
+        "offshore"
+      ],
+      "blockedPairs": [
+        "endanger|impact",
+        "essential|mandatory",
+        "fuel|gasoline",
+        "install|recharge",
+        "rely|rely on"
+      ],
+      "posOverrides": {
+        "offshore": "adj",
+        "banning": "v",
+        "evidenced": "v"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u7-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-7/ls.json",
+      "fingerprint": "7ab58d3244b17a61749f29040ff87f46a44205db89ac9fb71ef5a3a1e71a1fed",
+      "wordCount": 67,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "display",
+        "mass"
+      ],
+      "blockedPairs": [
+        "appreciate|interpret",
+        "approval|permission",
+        "artistic|creative",
+        "artwork|composition",
+        "attraction|focus on",
+        "display|exhibit",
+        "display|exhibition",
+        "express|expression",
+        "graphic|image",
+        "recommend|recommendation",
+        "repair|restore"
+      ],
+      "posOverrides": {
+        "display": "v",
+        "mass": "adj"
+      }
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u7-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-7/rw.json",
+      "fingerprint": "20ccbccf8b078cc7570ef743c78d6b069b597a0822c77f5c9dfdba7672ebd234",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "imagination",
+        "preserve"
+      ],
+      "blockedPairs": [
+        "appreciate|appreciation",
+        "device|equipment",
+        "subject matter|theme"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u8-ls",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-8/ls.json",
+      "fingerprint": "1936fad847e480efcd7ab0ac67134240efb372967def844426c29a2b1815541c",
+      "wordCount": 67,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [],
+      "blockedPairs": [
+        "connect with|contact",
+        "retire|retirement"
+      ],
+      "posOverrides": {}
+    },
+    {
+      "sourceId": "dictionary-book-unlock-v3-4-u8-rw",
+      "cloudPath": "dictionary_books/unlock-v3/level-4/unit-8/rw.json",
+      "fingerprint": "d6d5d7612f1b8a9b023cf9f0cf387a02417735be5f86c738cfe7e8c3239b8ca3",
+      "wordCount": 57,
+      "model": "gpt-5.4-mini",
+      "excludedWords": [
+        "saving account"
+      ],
+      "blockedPairs": [
+        "according to|report",
+        "ageing|elderly",
+        "beneficial|benefit",
+        "budget|expenditure",
+        "challenge|cope with",
+        "income|savings"
+      ],
+      "posOverrides": {
+        "luxury": "n",
+        "benefit": "n",
+        "report": "n"
+      }
+    }
+  ]
+}

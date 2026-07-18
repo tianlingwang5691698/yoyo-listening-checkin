@@ -27,13 +27,14 @@
 .dictation-count-controls text:last-child { margin-top: 4rpx; color: #78909e; font-size: 21rpx; }
 .dictation-count-slider { margin: 16rpx -10rpx 0; }
 .dictation-count-hint { margin-top: -4rpx; color: #8ba0ad; font-size: 20rpx; text-align: center; }
-.dictation-action, .dictation-history, .dictation-wrong-actions button, .dictation-play { box-sizing: border-box; margin: 18rpx 0 0; border: 0; border-radius: 18rpx; font-size: 28rpx; }
-.dictation-action::after, .dictation-history::after, .dictation-wrong-actions button::after, .dictation-play::after { border: 0; }
+.dictation-action, .dictation-history, .dictation-change-mode, .dictation-wrong-actions button, .dictation-play { box-sizing: border-box; margin: 18rpx 0 0; border: 0; border-radius: 18rpx; font-size: 28rpx; }
+.dictation-action::after, .dictation-history::after, .dictation-change-mode::after, .dictation-wrong-actions button::after, .dictation-play::after { border: 0; }
 .dictation-action.primary { display: flex; align-items: center; justify-content: center; width: 100%; height: 92rpx; margin: 0; padding: 0 24rpx; line-height: 1.2; background: #315d73; color: #fff; text-align: center; }
 .dictation-card > .dictation-action.primary { margin-top: 24rpx; }
 .dictation-wrong-actions { display: flex; gap: 16rpx; margin-top: 18rpx; }
 .dictation-wrong-actions button { flex: 1; min-width: 0; min-height: 84rpx; margin: 0; padding: 12rpx; background: #dcebf1; color: #244c60; }
 .dictation-history { width: 100%; height: 76rpx; margin: 8rpx 0 0; padding: 0; line-height: 76rpx; background: transparent; color: #315d73; text-align: center; }
+.dictation-change-mode { width: 100%; height: 76rpx; margin: 12rpx 0 0; padding: 0; line-height: 76rpx; background: transparent; color: #315d73; text-align: center; }
 .dictation-progress { text-align: right; color: #7895a7; }
 .dictation-play { display: flex; align-items: center; justify-content: center; width: 240rpx; height: 82rpx; margin: 30rpx auto; padding: 0 20rpx; line-height: 1.2; background: #dcebf1; color: #244c60; text-align: center; }
 .dictation-audio-hint { margin: -10rpx 0 22rpx; padding: 18rpx 20rpx; border-radius: 16rpx; background: #fff3cf; color: #785d22; font-size: 24rpx; line-height: 1.55; text-align: center; }
@@ -79,6 +80,7 @@
 .theme-library .dictation-input { border-color: #b9aa91; background: #fffdf7; }
 .theme-library .dictation-count-picker { background: rgba(235,225,207,.72); }
 .theme-library .dictation-count-hint { color: #8a7b69; }
+.theme-library .dictation-change-mode { color: #6f5741; }
 .language-en .dictation-wrong-actions button { font-size: 22rpx; line-height: 1.3; }
 .language-en .dictation-play { font-size: 26rpx; }
 .language-en .complete-numbers text:last-child { font-size: 20rpx; }
