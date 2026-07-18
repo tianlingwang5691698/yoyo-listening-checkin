@@ -690,7 +690,7 @@ function normalizeExamType(value) {
 
 function buildCategoryTree(passages, latestByPassageId) {
   const completionReady = !!latestByPassageId;
-  const examTypes = ['一模', '二模', '真题', '春考', '秋考'];
+  const examTypes = ['一模', '二模', '春考', '秋考'];
   const groups = examTypes.map((examType) => {
     const districtMap = {};
     passages.forEach((passage) => {
@@ -718,7 +718,7 @@ function buildCategoryTree(passages, latestByPassageId) {
     });
     return {
       key: examType,
-      label: examType === '真题' ? '真题卷' : (examType === '春考' || examType === '秋考' ? `高中${examType}` : examType),
+      label: examType,
       count: Object.values(districtMap).reduce((sum, item) => sum + item.count, 0),
       nodeUnit: examType === '春考' || examType === '秋考' ? '份卷' : '',
       districts: Object.keys(districtMap).sort((left, right) => String(districtMap[right].label).localeCompare(String(districtMap[left].label), 'zh-CN')).map((district) => ({

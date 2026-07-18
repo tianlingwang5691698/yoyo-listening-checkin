@@ -8,6 +8,36 @@ const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
 const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV2';
 const READING_DIRECTORY_VERSION = 'senior-2009-v2';
 const READING_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+const HIDDEN_READING_EXAM_TYPES = new Set(['真题']);
+const READING_STAGE_EXAM_TYPES = {
+  junior: ['一模', '二模'],
+  senior: ['春考', '秋考']
+};
+
+function filterVisibleCategoryTree(categoryTree) {
+  return (Array.isArray(categoryTree) ? categoryTree : []).map((root) => {
+    const groups = (Array.isArray(root.groups) ? root.groups : [])
+      .filter((group) => !HIDDEN_READING_EXAM_TYPES.has(group.key))
+      .map((group) => Object.assign({}, group, {
+        label: group.key
+      }));
+    const stages = Object.keys(READING_STAGE_EXAM_TYPES).map((stageKey) => {
+      const stageGroups = groups.filter((group) => READING_STAGE_EXAM_TYPES[stageKey].includes(group.key));
+      return {
+        key: stageKey,
+        label: stageKey === 'junior' ? text('junior', '初中') : text('senior', '高中'),
+        meta: stageGroups.map((group) => group.label).join('、'),
+        count: stageGroups.reduce((sum, group) => sum + Number(group.count || 0), 0),
+        groups: stageGroups
+      };
+    }).filter((stage) => stage.groups.length);
+    return Object.assign({}, root, {
+      groups,
+      stages,
+      count: stages.reduce((sum, stage) => sum + stage.count, 0)
+    });
+  });
+}
 
 function isCompletePassageSnapshot(passage) {
   return !!(passage
@@ -17,9 +47,17 @@ function isCompletePassageSnapshot(passage) {
     && passage.questions.length);
 }
 
-function pickGroup(categoryTree, selectedExamType) {
+function pickStage(categoryTree, selectedStage) {
   const root = categoryTree && categoryTree[0] ? categoryTree[0] : null;
-  const groups = root && Array.isArray(root.groups) ? root.groups : [];
+  const stages = root && Array.isArray(root.stages) ? root.stages : [];
+  return stages.find((stage) => stage.key === selectedStage)
+    || stages.find((stage) => stage.count)
+    || stages[0]
+    || null;
+}
+
+function pickGroup(stage, selectedExamType) {
+  const groups = stage && Array.isArray(stage.groups) ? stage.groups : [];
   return groups.find((group) => group.key === selectedExamType)
     || groups.find((group) => group.count)
     || groups[0]
@@ -44,7 +82,9 @@ Page({
     directoryLoaded: false,
     directoryLoading: false,
     navigationLevel: 'root',
-    selectedExamType: text('subtitle', '二模'),
+    selectedStage: 'junior',
+    selectedStageNode: null,
+    selectedExamType: '一模',
     selectedGroup: null,
     selectedDistrict: '',
     selectedDistrictNode: null,
@@ -52,6 +92,7 @@ Page({
     completedCount: 0,
     totalCount: 0,
     isRootLevel: true,
+    isStageLevel: false,
     isExamLevel: false,
     isDistrictLevel: false,
     selectedHeader: text('eyebrow', '中考阅读'),
@@ -60,8 +101,9 @@ Page({
   }),
   applyReadingHome(data) {
     data = data || {};
-    const categoryTree = data.categoryTree || [];
-    const selectedGroup = pickGroup(categoryTree, this.data.selectedExamType);
+    const categoryTree = filterVisibleCategoryTree(data.categoryTree);
+    const selectedStageNode = pickStage(categoryTree, this.data.selectedStage);
+    const selectedGroup = pickGroup(selectedStageNode, this.data.selectedExamType);
     const selectedDistrictNode = pickDistrict(selectedGroup, this.data.selectedDistrict);
     const hasDirectory = !!(categoryTree && categoryTree.length);
     this.setData(page.buildCloudPageData(this.data, {
@@ -72,17 +114,23 @@ Page({
       categoryTree,
       directoryLoaded: hasDirectory || this.data.directoryLoaded,
       directoryLoading: false,
+      selectedStage: selectedStageNode ? selectedStageNode.key : '',
+      selectedStageNode,
+      selectedExamType: selectedGroup ? selectedGroup.key : '',
       selectedGroup,
       selectedDistrict: selectedDistrictNode ? selectedDistrictNode.key : '',
       selectedDistrictNode,
       isRootLevel: this.data.navigationLevel === 'root',
+      isStageLevel: this.data.navigationLevel === 'stage',
       isExamLevel: this.data.navigationLevel === 'exam',
       isDistrictLevel: this.data.navigationLevel === 'district',
       selectedHeader: this.data.navigationLevel === 'root'
         ? ((categoryTree[0] && categoryTree[0].label) || text('eyebrow', '中考阅读'))
-        : (this.data.navigationLevel === 'exam'
-          ? ((selectedGroup && selectedGroup.label) || text('navTitle', '阅读'))
-          : `${selectedGroup && selectedGroup.label ? selectedGroup.label : text('navTitle', '阅读')} · ${selectedDistrictNode && selectedDistrictNode.label ? selectedDistrictNode.label : ''}`),
+        : (this.data.navigationLevel === 'stage'
+          ? ((selectedStageNode && selectedStageNode.label) || text('navTitle', '阅读'))
+          : (this.data.navigationLevel === 'exam'
+            ? ((selectedGroup && selectedGroup.label) || text('navTitle', '阅读'))
+            : `${selectedGroup && selectedGroup.label ? selectedGroup.label : text('navTitle', '阅读')} · ${selectedDistrictNode && selectedDistrictNode.label ? selectedDistrictNode.label : ''}`)),
       memoryPlan: data.memoryPlan || this.data.memoryPlan || null,
       completedCount: data.completedCount || this.data.completedCount || 0,
       totalCount: data.totalCount || data.dailyCount || this.data.totalCount || 0,
@@ -186,9 +234,29 @@ Page({
       this.backOneLevel();
     }
   },
+  selectStage(event) {
+    const stage = event.currentTarget.dataset.stage || '';
+    const selectedStageNode = pickStage(this.data.categoryTree, stage);
+    const selectedGroup = pickGroup(selectedStageNode, '');
+    const selectedDistrictNode = pickDistrict(selectedGroup, '');
+    this.setData({
+      navigationLevel: 'stage',
+      selectedStage: stage,
+      selectedStageNode,
+      selectedExamType: selectedGroup ? selectedGroup.key : '',
+      selectedGroup,
+      selectedDistrict: selectedDistrictNode ? selectedDistrictNode.key : '',
+      selectedDistrictNode,
+      isRootLevel: false,
+      isStageLevel: true,
+      isExamLevel: false,
+      isDistrictLevel: false,
+      selectedHeader: selectedStageNode && selectedStageNode.label ? selectedStageNode.label : text('navTitle', '阅读')
+    });
+  },
   selectExamType(event) {
     const examType = event.currentTarget.dataset.examType || '';
-    const selectedGroup = pickGroup(this.data.categoryTree, examType);
+    const selectedGroup = pickGroup(this.data.selectedStageNode, examType);
     const selectedDistrictNode = pickDistrict(selectedGroup, '');
     this.setData({
       navigationLevel: 'exam',
@@ -197,6 +265,7 @@ Page({
       selectedDistrict: selectedDistrictNode ? selectedDistrictNode.key : '',
       selectedDistrictNode,
       isRootLevel: false,
+      isStageLevel: false,
       isExamLevel: true,
       isDistrictLevel: false,
       selectedHeader: selectedGroup && selectedGroup.label ? selectedGroup.label : text('navTitle', '阅读')
@@ -210,6 +279,7 @@ Page({
       selectedDistrict: district,
       selectedDistrictNode,
       isRootLevel: false,
+      isStageLevel: false,
       isExamLevel: false,
       isDistrictLevel: true,
       selectedHeader: `${this.data.selectedGroup && this.data.selectedGroup.label ? this.data.selectedGroup.label : text('navTitle', '阅读')} · ${selectedDistrictNode && selectedDistrictNode.label ? selectedDistrictNode.label : district}`
@@ -220,15 +290,27 @@ Page({
       navigationLevel: 'root',
       selectedDistrictNode: null,
       isRootLevel: true,
+      isStageLevel: false,
       isExamLevel: false,
       isDistrictLevel: false,
       selectedHeader: this.data.categoryRoot && this.data.categoryRoot.label ? this.data.categoryRoot.label : text('eyebrow', '中考阅读')
+    });
+  },
+  backToStage() {
+    this.setData({
+      navigationLevel: 'stage',
+      isRootLevel: false,
+      isStageLevel: true,
+      isExamLevel: false,
+      isDistrictLevel: false,
+      selectedHeader: this.data.selectedStageNode && this.data.selectedStageNode.label ? this.data.selectedStageNode.label : text('navTitle', '阅读')
     });
   },
   backToExam() {
     this.setData({
       navigationLevel: 'exam',
       isRootLevel: false,
+      isStageLevel: false,
       isExamLevel: true,
       isDistrictLevel: false,
       selectedHeader: this.data.selectedGroup && this.data.selectedGroup.label ? this.data.selectedGroup.label : text('navTitle', '阅读')
@@ -240,6 +322,10 @@ Page({
       return;
     }
     if (this.data.isExamLevel) {
+      this.backToStage();
+      return;
+    }
+    if (this.data.isStageLevel) {
       this.backToRoot();
       return;
     }

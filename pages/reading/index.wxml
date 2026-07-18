@@ -33,7 +33,9 @@
           <view class="library-breadcrumb" wx:if="{{!isRootLevel}}">
             <text bindtap="backToRoot">{{texts.eyebrow}}</text>
             <text> / </text>
-            <text wx:if="{{isExamLevel}}">{{selectedGroup.label}}</text>
+            <text bindtap="backToStage">{{selectedStageNode.label}}</text>
+            <text wx:if="{{isExamLevel}}"> / {{selectedGroup.label}}</text>
+            <text wx:if="{{isDistrictLevel}}"> / </text>
             <text wx:if="{{isDistrictLevel}}" bindtap="backToExam">{{selectedGroup.label}}</text>
             <text wx:if="{{isDistrictLevel}}"> / {{selectedDistrictNode.label}}</text>
           </view>
@@ -51,7 +53,18 @@
 
       <block wx:elif="{{categoryRoot}}">
         <view class="library-root-ledger" wx:if="{{isRootLevel}}">
-          <view class="library-ledger-row" wx:for="{{categoryRoot.groups}}" wx:key="key" data-exam-type="{{item.key}}" bindtap="selectExamType">
+          <view class="library-ledger-row" wx:for="{{categoryRoot.stages}}" wx:key="key" data-stage="{{item.key}}" bindtap="selectStage">
+            <view class="ledger-tab">{{index + 1}}</view>
+            <view class="ledger-body">
+              <view class="ledger-title">{{item.label}}</view>
+              <view class="ledger-meta">{{item.meta}} · {{item.count}}{{texts.articleUnit}}</view>
+            </view>
+            <view class="ledger-corner">{{texts.enter}}</view>
+          </view>
+        </view>
+
+        <view class="library-root-ledger" wx:elif="{{isStageLevel}}">
+          <view class="library-ledger-row" wx:for="{{selectedStageNode.groups}}" wx:key="key" data-exam-type="{{item.key}}" bindtap="selectExamType">
             <view class="ledger-tab">{{index + 1}}</view>
             <view class="ledger-body">
               <view class="ledger-title">{{item.label}}</view>
@@ -135,13 +148,29 @@
         <view class="reading-breadcrumb" wx:if="{{!isRootLevel}}">
           <text bindtap="backToRoot">{{texts.eyebrow}}</text>
           <text> / </text>
-          <text wx:if="{{isExamLevel}}">{{selectedGroup.label}}</text>
+          <text bindtap="backToStage">{{selectedStageNode.label}}</text>
+          <text wx:if="{{isExamLevel}}"> / {{selectedGroup.label}}</text>
+          <text wx:if="{{isDistrictLevel}}"> / </text>
           <text wx:if="{{isDistrictLevel}}" bindtap="backToExam">{{selectedGroup.label}}</text>
           <text wx:if="{{isDistrictLevel}}"> / {{selectedDistrictNode.label}}</text>
         </view>
 
         <view class="paper-group-grid" wx:if="{{isRootLevel}}">
-          <view class="directory-row paper-group-panel" wx:for="{{categoryRoot.groups}}" wx:key="key" data-exam-type="{{item.key}}" bindtap="selectExamType">
+          <view class="directory-row paper-group-panel" wx:for="{{categoryRoot.stages}}" wx:key="key" data-stage="{{item.key}}" bindtap="selectStage">
+            <view class="directory-mark paper-stack-mark">
+              <view class="paper-stack-line"></view>
+              <view class="paper-stack-line"></view>
+            </view>
+            <view class="directory-main">
+              <view class="directory-title">{{item.label}}</view>
+              <view class="directory-meta">{{item.meta}} · {{item.count}}{{texts.articleUnit}}</view>
+            </view>
+            <view class="directory-arrow">›</view>
+          </view>
+        </view>
+
+        <view class="paper-group-grid" wx:elif="{{isStageLevel}}">
+          <view class="directory-row paper-group-panel" wx:for="{{selectedStageNode.groups}}" wx:key="key" data-exam-type="{{item.key}}" bindtap="selectExamType">
             <view class="directory-mark paper-stack-mark">
               <view class="paper-stack-line"></view>
               <view class="paper-stack-line"></view>
