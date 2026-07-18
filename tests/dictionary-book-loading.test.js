@@ -17,17 +17,21 @@ test('词书读取使用轻量云函数', () => {
   assert.match(functionSource, /keepAlive: true/);
 });
 
-test('轻量云函数支持初中、高中和 Unlock 词书', () => {
+test('轻量云函数支持初中、高中、雅思和 Unlock 词书', () => {
   const { resolveBook } = dictionaryBookFunction._test;
   assert.equal(resolveBook('junior').cloudPath, 'dictionary_books/word-dictionary-junior.json');
   assert.equal(resolveBook('senior').cloudPath, 'dictionary_books/word-dictionary-senior.json');
+  assert.equal(resolveBook('junior-list-2').cloudPath, 'dictionary_books/word-lists-examples-v2/junior/list-2.json');
+  assert.equal(resolveBook('senior-list-40').cloudPath, 'dictionary_books/word-lists-examples-v2/senior/list-40.json');
+  assert.equal(resolveBook('ielts-list-48').cloudPath, 'dictionary_books/word-lists-examples-v1/ielts/list-48.json');
+  assert.equal(resolveBook('ielts-list-49'), null);
   assert.equal(resolveBook('unlock-3-u2-ls').cloudPath, 'dictionary_books/unlock-v2/level-3/unit-2/ls.json');
   assert.equal(resolveBook('unlock-v3-3-u2-ls').cloudPath, 'dictionary_books/unlock-v3/level-3/unit-2/ls.json');
   assert.equal(resolveBook('unknown'), null);
 });
 
 test('Unlock 例句缓存升级并保留页面展示', () => {
-  assert.match(pageSource, /FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071303/);
+  assert.match(pageSource, /FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071803/);
   assert.match(pageTemplate, /current\.example/);
   assert.match(pageTemplate, /item\.example/);
   assert.match(pageTemplate, /item\.exampleMeaning/);

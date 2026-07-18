@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const path = require('path');
+const fs = require('fs');
 
 const appConfig = require('../app-config');
 
@@ -12,6 +13,11 @@ try {
 }
 
 const ROOT = path.join(__dirname, '..');
+function credential() {
+  const lines = fs.readFileSync(path.join(ROOT, 'SecretKey.csv'), 'utf8').trim().split(/\r?\n/);
+  const values = lines[1].split(',').map((item) => item.trim());
+  return { secretId: values[0], secretKey: values[1] };
+}
 const BOOKS = [
   {
     level: 'junior',
@@ -23,14 +29,24 @@ const BOOKS = [
     localPath: path.join(ROOT, 'data', 'dictionary-import', 'output', 'word-dictionary-senior.json'),
     cloudPath: 'dictionary_books/word-dictionary-senior.json'
   }
-];
+].concat(...[['junior', 32], ['senior', 40]].map(([level, count]) => Array.from({ length: count }, (_, index) => ({
+  level: `${level}-list-${index + 1}`,
+  localPath: path.join(ROOT, 'data', 'dictionary-import', 'output', level, `list-${index + 1}.json`),
+  cloudPath: `dictionary_books/word-lists-v1/${level}/list-${index + 1}.json`
+}))));
 
 async function main() {
   const dryRun = !process.argv.includes('--apply');
   const onlyArg = process.argv.find((arg) => arg.startsWith('--level='));
-  const books = onlyArg ? BOOKS.filter((book) => book.level === onlyArg.split('=')[1]) : BOOKS;
-  if (!books.length) throw new Error('level must be junior or senior');
-  const app = cloudbase.init({ env: appConfig.cloudEnvId });
+  const onlyLevel = onlyArg ? onlyArg.split('=')[1] : '';
+  const includeLegacy = process.argv.includes('--include-legacy');
+  const books = BOOKS.filter((book) => {
+    if (!includeLegacy && (book.level === 'junior' || book.level === 'senior')) return false;
+    if (!onlyLevel) return true;
+    return book.level === onlyLevel || book.level.startsWith(`${onlyLevel}-list-`);
+  });
+  if (!books.length) throw new Error('level must be junior, senior, or a list level');
+  const app = cloudbase.init({ env: appConfig.cloudEnvId, ...credential() });
   const results = [];
   for (const book of books) {
     if (dryRun) {

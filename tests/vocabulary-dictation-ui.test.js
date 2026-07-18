@@ -79,6 +79,21 @@ test('Unlock 第二版和第三版使用独立词书入口及进度键', () => {
   assert.match(dictation, /dictionary-book-unlock-\[1-4\]-/);
 });
 
+test('初中、高中和雅思词书按 List 分层进入', () => {
+  const source = read('pages/reading/flashcards/index.js');
+  const template = read('pages/reading/flashcards/index.wxml');
+  const dictation = read('pages/reading/flashcards/dictation/library/index.js');
+  assert.match(source, /level: 'junior'[\s\S]*?listCount: 32/);
+  assert.match(source, /level: 'senior'[\s\S]*?listCount: 40/);
+  assert.match(source, /level: 'ielts'[\s\S]*?listCount: 48/);
+  assert.match(template, /sourceMode === 'standard-lists'/);
+  assert.match(template, /bindtap="openStandardBook"/);
+  assert.match(dictation, /stage: 'standard-lists'/);
+  assert.match(dictation, /standardStage: stage, title, subtitle: getTexts\(\)\.chooseList, items/);
+  assert.match(source, /isStandardListSource\(sourceId\) && !hasStoredPlanSettings\(sourceId\)/);
+  assert.match(source, /return \{ newLimit: total, reviewLimit: total \}/);
+});
+
 test('单词背诵文件夹和听写图标在两套主题中独立设计', () => {
   const styles = read('pages/reading/flashcards/index.wxss');
   const catalog = require('../utils/i18n-catalog-learning').flashcards;

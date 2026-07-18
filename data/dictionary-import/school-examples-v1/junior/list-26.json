@@ -1,0 +1,743 @@
+[
+  {
+    "word": "search",
+    "wordLower": "search",
+    "level": "junior",
+    "phonetic": "/sɜ:tʃ/",
+    "definitions": [
+      "n. / v. 搜索，寻找",
+      "搜查"
+    ],
+    "example": "We searched the classroom for my missing book.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们在教室里寻找我丢失的书。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "chopsticks",
+    "wordLower": "chopsticks",
+    "level": "junior",
+    "phonetic": "/ˈtʃɒpstiks/",
+    "definitions": [
+      "n. 筷子"
+    ],
+    "example": "She can eat noodles with chopsticks.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "她会用筷子吃面条。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "we",
+    "wordLower": "we",
+    "level": "junior",
+    "phonetic": "/wi/",
+    "definitions": [
+      "pron. 我们"
+    ],
+    "example": "We often play basketball after school.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们经常放学后打篮球。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "six",
+    "wordLower": "six",
+    "level": "junior",
+    "phonetic": "/siks/",
+    "definitions": [
+      "num. 六，六个"
+    ],
+    "example": "There are six apples in the bag.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "袋子里有六个苹果。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "picnic",
+    "wordLower": "picnic",
+    "level": "junior",
+    "phonetic": "/ˈpiknik/",
+    "definitions": [
+      "n. 野餐 v. ［picnicked-picnicked, picnicking］ 去野餐"
+    ],
+    "example": "Our family had a picnic by the lake.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们一家人在湖边野餐。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "nearby",
+    "wordLower": "nearby",
+    "level": "junior",
+    "phonetic": "/ˌniəˈbai/",
+    "definitions": [
+      "adj. 附近的 adj. 在附近"
+    ],
+    "example": "There is a small library nearby.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "附近有一家小图书馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hers",
+    "wordLower": "hers",
+    "level": "junior",
+    "phonetic": "/hɜ:z/",
+    "definitions": [
+      "pron. 她的（所有物）"
+    ],
+    "example": "This blue schoolbag is hers.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "这个蓝色书包是她的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "with",
+    "wordLower": "with",
+    "level": "junior",
+    "phonetic": "/wið/",
+    "definitions": [
+      "pron. 和…一起，跟，同",
+      "具有，带有",
+      "用，v.藉",
+      "对…，关于",
+      "随着"
+    ],
+    "example": "I went to the museum with my classmates.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我和同学们一起去了博物馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "shut",
+    "wordLower": "shut",
+    "level": "junior",
+    "phonetic": "/ʃʌt/",
+    "definitions": [
+      "v. ［shut-shut, shutting］ 关闭，关上",
+      "打烊"
+    ],
+    "example": "Please shut the window before leaving the room.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "离开房间前请关上窗户。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "marry",
+    "wordLower": "marry",
+    "level": "junior",
+    "phonetic": "/ˈmæri/",
+    "definitions": [
+      "v. 娶，嫁，和…结婚"
+    ],
+    "example": "My aunt plans to marry her college friend.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我姑姑打算和她的大学朋友结婚。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "native",
+    "wordLower": "native",
+    "level": "junior",
+    "phonetic": "/ˈneitiv/",
+    "definitions": [
+      "adj. 出生地的",
+      "当地（人）的 n. 土生土长者，本国人"
+    ],
+    "example": "These native plants grow well in this area.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "这些当地植物在这个地区长得很好。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "original",
+    "wordLower": "original",
+    "level": "junior",
+    "phonetic": "/əˈridʒənl/",
+    "definitions": [
+      "adj. 最初的，原始的",
+      "新颖的，有创意的",
+      "原创性的 n. 原件"
+    ],
+    "example": "This painting is an original work by my sister.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "这幅画是我姐姐的原创作品。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "purse",
+    "wordLower": "purse",
+    "level": "junior",
+    "phonetic": "/pɜ:s/",
+    "definitions": [
+      "n. 钱包",
+      "女用小包"
+    ],
+    "example": "She keeps her keys in a small purse.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "她把钥匙放在一个小手提包里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "are",
+    "wordLower": "are",
+    "level": "junior",
+    "phonetic": "/a:r/",
+    "definitions": [
+      "v. 存在，是（be动词的复数形式）"
+    ],
+    "example": "My parents are both English teachers.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我的父母都是英语老师。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "discussion",
+    "wordLower": "discussion",
+    "level": "junior",
+    "phonetic": "/diˈskʌʃn/",
+    "definitions": [
+      "n. 讨论，谈论"
+    ],
+    "example": "We had a discussion about the school trip.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们讨论了学校旅行。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "ninety",
+    "wordLower": "ninety",
+    "level": "junior",
+    "phonetic": "/ˈnainti/",
+    "definitions": [
+      "num. 九十，九十个"
+    ],
+    "example": "There are ninety students in the school hall.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "学校礼堂里有九十名学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sing",
+    "wordLower": "sing",
+    "level": "junior",
+    "phonetic": "/siŋ/",
+    "definitions": [
+      "v. ［sang-sung］ 唱（歌），演唱",
+      "鸡鸣"
+    ],
+    "example": "They sing together in the school music club.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "他们在学校音乐社团一起唱歌。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mix",
+    "wordLower": "mix",
+    "level": "junior",
+    "phonetic": "/miks/",
+    "definitions": [
+      "v. 使混合，配制",
+      "相混，搞混 n. 混合，搅和"
+    ],
+    "example": "Mix the milk and eggs in a bowl.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "把牛奶和鸡蛋放在碗里混合。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "postman",
+    "wordLower": "postman",
+    "level": "junior",
+    "phonetic": "/ˈpəʊstmən/",
+    "definitions": [
+      "n. 邮递员"
+    ],
+    "example": "The postman brings letters to our street every morning.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "邮递员每天早上把信件送到我们这条街。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "smell",
+    "wordLower": "smell",
+    "level": "junior",
+    "phonetic": "/smel/",
+    "definitions": [
+      "n. 气味",
+      "臭味",
+      "嗅觉 v. ［smelt-smelt］ 散发（或有）…的气味",
+      "嗅，闻到",
+      "察觉"
+    ],
+    "example": "The flowers have a sweet smell.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "这些花有一股香甜的气味。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sauce",
+    "wordLower": "sauce",
+    "level": "junior",
+    "phonetic": "/sɔ:s/",
+    "definitions": [
+      "n. 沙司",
+      "调味汁，酱汁",
+      "佐料"
+    ],
+    "example": "She put some tomato sauce on her noodles.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "她在面条上放了一些番茄酱。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "deaf",
+    "wordLower": "deaf",
+    "level": "junior",
+    "phonetic": "/def/",
+    "definitions": [
+      "adj. 聋的",
+      "不愿听的，装聋的"
+    ],
+    "example": "The deaf student uses signs to communicate with others.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "这名失聪的学生用手势与他人交流。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "thought",
+    "wordLower": "thought",
+    "level": "junior",
+    "phonetic": "/θɔ:t/",
+    "definitions": [
+      "n. 想法，见解",
+      "思考，思维",
+      "关心，注意",
+      "思想，思潮"
+    ],
+    "example": "I had a thought about our science project.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我对我们的科学项目有了一个想法。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sir",
+    "wordLower": "sir",
+    "level": "junior",
+    "phonetic": "/sɜ:(r)/",
+    "definitions": [
+      "n. 先生",
+      "［S-］ 爵士"
+    ],
+    "example": "Excuse me, sir, is this your umbrella?",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "打扰一下，先生，这是您的雨伞吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fetch",
+    "wordLower": "fetch",
+    "level": "junior",
+    "phonetic": "/fetʃ/",
+    "definitions": [
+      "v. 拿来",
+      "请来，叫来"
+    ],
+    "example": "Please fetch my notebook from the classroom.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "请从教室把我的笔记本拿来。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "those",
+    "wordLower": "those",
+    "level": "junior",
+    "phonetic": "/ðəʊz/",
+    "definitions": [
+      "pron. 那些"
+    ],
+    "example": "Those are the books I borrowed yesterday.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "那些是我昨天借的书。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "save",
+    "wordLower": "save",
+    "level": "junior",
+    "phonetic": "/seiv/",
+    "definitions": [
+      "v. 救助，搭救，拯救",
+      "储蓄",
+      "贮存，保存 prep. 除…之外"
+    ],
+    "example": "I save some money every month.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我每个月存一些钱。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "baby",
+    "wordLower": "baby",
+    "level": "junior",
+    "phonetic": "/ˈbeibi/",
+    "definitions": [
+      "n. 婴儿"
+    ],
+    "example": "The baby is sleeping quietly in the room.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "婴儿正在房间里安静地睡觉。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "zebra",
+    "wordLower": "zebra",
+    "level": "junior",
+    "phonetic": "/ˈzi:brə/",
+    "definitions": [
+      "n. 斑马"
+    ],
+    "example": "The zebra has black and white stripes.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "斑马身上有黑白相间的条纹。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "that",
+    "wordLower": "that",
+    "level": "junior",
+    "phonetic": "/ðæt/",
+    "definitions": [
+      "adj. / pron. 那，那个 conj./adj. 那样，那么"
+    ],
+    "example": "That is the bus to our school.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "那是开往我们学校的公共汽车。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "forty",
+    "wordLower": "forty",
+    "level": "junior",
+    "phonetic": "/ˈfɔ:ti/",
+    "definitions": [
+      "num. 四十"
+    ],
+    "example": "Our classroom has forty new chairs.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们的教室有四十把新椅子。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "surprise",
+    "wordLower": "surprise",
+    "level": "junior",
+    "phonetic": "/səˈpraiz/",
+    "definitions": [
+      "n. 惊奇，诧异",
+      "令人惊奇（或意想不到）的事物"
+    ],
+    "example": "The birthday gift was a wonderful surprise.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "这份生日礼物是一个美好的惊喜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mother",
+    "wordLower": "mother",
+    "level": "junior",
+    "phonetic": "/ˈmʌðə(r)/",
+    "definitions": [
+      "n. 母亲，妈妈"
+    ],
+    "example": "My mother cooks dinner for us every evening.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我妈妈每天晚上为我们做晚饭。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "soft",
+    "wordLower": "soft",
+    "level": "junior",
+    "phonetic": "/sɒft/",
+    "definitions": [
+      "adj. 柔软的，细嫩的，光滑的",
+      "（声音）轻的，轻柔的",
+      "（颜色、 光线等）柔和的",
+      "温和的，温柔的",
+      "不含酒精的",
+      "柔弱的，娇嫩的"
+    ],
+    "example": "This blanket is warm and soft.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "这条毯子既温暖又柔软。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "computer",
+    "wordLower": "computer",
+    "level": "junior",
+    "phonetic": "/kəmˈpju:tə(r)/",
+    "definitions": [
+      "n. 计算机，电脑"
+    ],
+    "example": "I use the computer to finish my homework.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我用电脑完成家庭作业。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "criticize",
+    "wordLower": "criticize",
+    "level": "junior",
+    "phonetic": "/ˈkritisaiz/",
+    "definitions": [
+      "v. 批评",
+      "评论",
+      "非难"
+    ],
+    "example": "Do not criticize others for small mistakes.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "不要因为小错误而批评别人。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "court",
+    "wordLower": "court",
+    "level": "junior",
+    "phonetic": "/kɔ:t/",
+    "definitions": [
+      "n. 法庭，法院",
+      "宫廷，朝廷",
+      "球场 v. 献殷勤",
+      "追求，求爱",
+      "招致， 导致"
+    ],
+    "example": "The students are playing basketball on the court.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "学生们正在球场上打篮球。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "together",
+    "wordLower": "together",
+    "level": "junior",
+    "phonetic": "/təˈgeðə(r)/",
+    "definitions": [
+      "adj. 在一起，共同",
+      "一致地，协调地"
+    ],
+    "example": "We often walk to school together.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们经常一起步行去学校。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "long",
+    "wordLower": "long",
+    "level": "junior",
+    "phonetic": "/lɒŋ/",
+    "definitions": [
+      "adj. 长的",
+      "长期的 v. 渴望，热望 adj. 长期地"
+    ],
+    "example": "She has long black hair.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "她有一头黑色的长发。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "strange",
+    "wordLower": "strange",
+    "level": "junior",
+    "phonetic": "/streindʒ/",
+    "definitions": [
+      "adj. 奇怪的，奇异的",
+      "陌生的，生疏的",
+      "外地的，异乡的"
+    ],
+    "example": "I heard a strange noise outside the window.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我听到窗外有一个奇怪的声音。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "decide",
+    "wordLower": "decide",
+    "level": "junior",
+    "phonetic": "/diˈsaid/",
+    "definitions": [
+      "v. 决定，对…作出抉择",
+      "使下决心"
+    ],
+    "example": "We decided to visit the museum on Sunday.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们决定星期日去参观博物馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "as",
+    "wordLower": "as",
+    "level": "junior",
+    "phonetic": "/əz; æz/",
+    "definitions": [
+      "adj. 同样，一样地 prep. 当做，作为",
+      "像，如同"
+    ],
+    "example": "She works as an English teacher at our school.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "她在我们学校当英语老师。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "large",
+    "wordLower": "large",
+    "level": "junior",
+    "phonetic": "/la:dʒ/",
+    "definitions": [
+      "adj. 大的",
+      "（数量）多的，众多的"
+    ],
+    "example": "A large group of students joined the activity.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "一大群学生参加了这项活动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "wrong",
+    "wordLower": "wrong",
+    "level": "junior",
+    "phonetic": "/rɒŋ/",
+    "definitions": [
+      "adj. 错误的，不正确的",
+      "不道德的，不正当的，不合法的 n. 错误",
+      "坏事",
+      "不公正的行为，冤屈"
+    ],
+    "example": "Your answer is wrong, so please try again.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "你的答案不正确，所以请再试一次。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "yours",
+    "wordLower": "yours",
+    "level": "junior",
+    "phonetic": "/jɔ:z/",
+    "definitions": [
+      "pron. 你（们）的（所有物）"
+    ],
+    "example": "My bag is blue, and yours is green.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我的书包是蓝色的，你的是绿色的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "safety",
+    "wordLower": "safety",
+    "level": "junior",
+    "phonetic": "/ˈseifti/",
+    "definitions": [
+      "n. 安全，保险",
+      "安全设备，保险装置",
+      "安全场所"
+    ],
+    "example": "Students must follow these rules for their safety.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "为了自身安全，学生们必须遵守这些规则。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lot",
+    "wordLower": "lot",
+    "level": "junior",
+    "phonetic": "/lɒt/",
+    "definitions": [
+      "n. 许多，大量",
+      "签，抽签",
+      "一块地，场地"
+    ],
+    "example": "We had a lot of fun at the party.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们在聚会上玩得很开心。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "exhibition",
+    "wordLower": "exhibition",
+    "level": "junior",
+    "phonetic": "/ˌeksiˈbiʃn/",
+    "definitions": [
+      "n. 展览（会）"
+    ],
+    "example": "Our school held an art exhibition last week.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "我们学校上周举办了一场艺术展览。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "awful",
+    "wordLower": "awful",
+    "level": "junior",
+    "phonetic": "/ˈɔ:fl/",
+    "definitions": [
+      "adj. 极坏的",
+      "糟糕的，令人不快的",
+      "可怕的",
+      "非常的"
+    ],
+    "example": "The weather was awful, so we stayed home.",
+    "list": 26,
+    "source": "local-import",
+    "exampleMeaning": "天气很糟糕，所以我们待在家里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

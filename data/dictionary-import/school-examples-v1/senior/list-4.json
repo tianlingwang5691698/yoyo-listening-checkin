@@ -1,0 +1,527 @@
+[
+  {
+    "word": "free",
+    "wordLower": "free",
+    "level": "senior",
+    "phonetic": "/fri:/",
+    "definitions": [
+      "adj. 自由幽，空闲的",
+      "免费的"
+    ],
+    "example": "Admission to the science museum is free on Sundays.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "这家科学博物馆星期日免费开放。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "very",
+    "wordLower": "very",
+    "level": "senior",
+    "phonetic": "/ˈveri/",
+    "definitions": [
+      "adj. 很， 非常 adj.： 惜好的， 正好的"
+    ],
+    "example": "This is the very place where we first met.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "这正是我们第一次见面的地方。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "land",
+    "wordLower": "land",
+    "level": "senior",
+    "phonetic": "/lænd/",
+    "definitions": [
+      "n. 陆地 v. 登陆",
+      "（但巨）降落"
+    ],
+    "example": "Our plane is expected to land before sunset.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "我们的飞机预计在日落前降落。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "political",
+    "wordLower": "political",
+    "level": "senior",
+    "phonetic": "/pəˈlɪtɪkəl/",
+    "definitions": [
+      "adj. 政治的 ｛／ 呵嚣＼必"
+    ],
+    "example": "She plans to study political science at university.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "她计划在大学学习政治学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bit",
+    "wordLower": "bit",
+    "level": "senior",
+    "phonetic": "/bit/",
+    "definitions": [
+      "n. 一点，一些，少量"
+    ],
+    "example": "I felt a bit nervous before giving my speech.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "演讲前我感到有点紧张。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "journey",
+    "wordLower": "journey",
+    "level": "senior",
+    "phonetic": "/ˈʤərni/",
+    "definitions": [
+      "n. 旅行， 路程"
+    ],
+    "example": "The train journey through the mountains took nearly six hours.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "穿越山区的火车旅程花了将近六个小时。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "merciful",
+    "wordLower": "merciful",
+    "level": "senior",
+    "phonetic": "/ˈmərsɪfəl/",
+    "definitions": [
+      "adj. 仁慈的",
+      "宽大的"
+    ],
+    "example": "The teacher was merciful and gave us another day to finish.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "老师很宽大，又给了我们一天时间来完成任务。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cycle",
+    "wordLower": "cycle",
+    "level": "senior",
+    "phonetic": "/ˈsaɪkəl/",
+    "definitions": [
+      "n. 周期",
+      "循环 v. 骑自行车， 循环 v. 便循环"
+    ],
+    "example": "Many students cycle to school when the weather is pleasant.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "天气宜人时，许多学生骑自行车上学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "annoy",
+    "wordLower": "annoy",
+    "level": "senior",
+    "phonetic": "/əˈnɔɪ/",
+    "definitions": [
+      "v. 使烦恼， 使生气",
+      "骚扰"
+    ],
+    "example": "Loud conversations in the library may annoy other students.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "在图书馆大声交谈可能会使其他学生感到烦恼。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mind",
+    "wordLower": "mind",
+    "level": "senior",
+    "phonetic": "/maind/",
+    "definitions": [
+      "n. 思想 v. 介意 annoy"
+    ],
+    "example": "Would you mind opening the window for some fresh air?",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "你介意打开窗户透透气吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "die",
+    "wordLower": "die",
+    "level": "senior",
+    "phonetic": "/dai/",
+    "definitions": [
+      "v. 死亡",
+      "消失",
+      "熄灭"
+    ],
+    "example": "The fire began to die as the night grew colder.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "随着夜晚变冷，火开始熄灭。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fact",
+    "wordLower": "fact",
+    "level": "senior",
+    "phonetic": "/fækt/",
+    "definitions": [
+      "n. 事实， 现实"
+    ],
+    "example": "It is a fact that regular exercise improves our health.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼有益健康，这是一个事实。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "declare",
+    "wordLower": "declare",
+    "level": "senior",
+    "phonetic": "/dɪˈklɛr/",
+    "definitions": [
+      "v. 宣布， 声明",
+      "断言",
+      "申报（应纳税局）"
+    ],
+    "example": "Travelers must declare valuable goods when they enter the country.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "旅客入境时必须申报贵重物品。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "warn",
+    "wordLower": "warn",
+    "level": "senior",
+    "phonetic": "/wɔ:n/",
+    "definitions": [
+      "v. 警告",
+      "预告"
+    ],
+    "example": "Teachers often warn students about the dangers of sharing passwords.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "老师经常警告学生不要忽视分享密码的危险。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "obey",
+    "wordLower": "obey",
+    "level": "senior",
+    "phonetic": "/əˈbei/",
+    "definitions": [
+      "v. 服从．顺从"
+    ],
+    "example": "Students must obey the safety rules during every laboratory experiment.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "学生在每次实验中都必须遵守安全规则。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "grade",
+    "wordLower": "grade",
+    "level": "senior",
+    "phonetic": "/greid/",
+    "definitions": [
+      "n. 等级",
+      "（申小学的）学军",
+      "成绩， 分数"
+    ],
+    "example": "Mia received a high grade on her biology report.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "米娅的生物报告得了高分。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "expensive",
+    "wordLower": "expensive",
+    "level": "senior",
+    "phonetic": "/ɪkˈspɛnsɪv/",
+    "definitions": [
+      "adj. 昂贵的，高消费的"
+    ],
+    "example": "Maintaining old equipment can be more expensive than replacing it.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "维护旧设备可能比更换设备更加昂贵。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "announce",
+    "wordLower": "announce",
+    "level": "senior",
+    "phonetic": "/əˈnaʊns/",
+    "definitions": [
+      "v. 宣布， 宣告"
+    ],
+    "example": "The school will announce the competition results at tomorrow's meeting.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "学校将在明天的会议上宣布比赛结果。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "nowhere",
+    "wordLower": "nowhere",
+    "level": "senior",
+    "phonetic": "/ˈnoʊˌwɛr/",
+    "definitions": [
+      "adj. 任何地晴都不",
+      "无处"
+    ],
+    "example": "We searched every classroom, but the missing notebook was nowhere to be found.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "我们找遍了每间教室，但那本丢失的笔记本无处可寻。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "persuade",
+    "wordLower": "persuade",
+    "level": "senior",
+    "phonetic": "/pərsˈweɪd/",
+    "definitions": [
+      "v. 说服，劝说",
+      "使相信"
+    ],
+    "example": "Leo persuaded his classmates to take part in the science fair.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "利奥说服了同学们参加科学展览。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "decision",
+    "wordLower": "decision",
+    "level": "senior",
+    "phonetic": "/dɪˈsɪʒən/",
+    "definitions": [
+      "n. 决定",
+      "决议"
+    ],
+    "example": "Choosing the right course can be an important decision.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "选择合适的课程可能是一个重要的决定。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "real",
+    "wordLower": "real",
+    "level": "senior",
+    "phonetic": "/ˈri:əl/",
+    "definitions": [
+      "adj. 真实的， 确实的"
+    ],
+    "example": "The evidence showed that the problem was real, not imaginary.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "证据表明这个问题是真实的，并非想象出来的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "seldom",
+    "wordLower": "seldom",
+    "level": "senior",
+    "phonetic": "/ˈseldəm/",
+    "definitions": [
+      "adj. 很少， 不常"
+    ],
+    "example": "Since she lives near school, she seldom takes the bus.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "因为她住在学校附近，所以很少乘公共汽车。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "need",
+    "wordLower": "need",
+    "level": "senior",
+    "phonetic": "/ni:d/",
+    "definitions": [
+      "v. 需要 modal v. 必须 n. 需要， 需求"
+    ],
+    "example": "Plants need enough sunlight and water to grow well.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "植物需要充足的阳光和水才能生长良好。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "spot",
+    "wordLower": "spot",
+    "level": "senior",
+    "phonetic": "/spɒt/",
+    "definitions": [
+      "n. 斑点， 污点",
+      "场所， 地点 v. ( spotted,"
+    ],
+    "example": "We found a quiet spot in the library to study.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "我们在图书馆找到了一个安静的地方学习。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "anyway",
+    "wordLower": "anyway",
+    "level": "senior",
+    "phonetic": "/ˈeniwei/",
+    "definitions": [
+      "adj. 不管怎样"
+    ],
+    "example": "The weather looked uncertain, but we continued our field trip anyway.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "天气看起来不太稳定，但我们不管怎样还是继续了实地考察。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "punish",
+    "wordLower": "punish",
+    "level": "senior",
+    "phonetic": "/ˈpʌniʃ/",
+    "definitions": [
+      "v. 惩罚， 处罚"
+    ],
+    "example": "Schools should not punish students before hearing their full explanation.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "学校不应在听取学生的完整解释前处罚他们。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "challenge",
+    "wordLower": "challenge",
+    "level": "senior",
+    "phonetic": "/ˈtʃæləndʒ/",
+    "definitions": [
+      "n. 挑战",
+      "挑战性 v. 挑战"
+    ],
+    "example": "Learning to manage time is a common challenge for new students.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "学习管理时间对新生来说是一项常见的挑战。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "situation",
+    "wordLower": "situation",
+    "level": "senior",
+    "phonetic": "/ˌsitʃuˈeiʃn/",
+    "definitions": [
+      "n. 形势， 情况"
+    ],
+    "example": "The teacher remained calm and explained the situation clearly to everyone.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "老师保持冷静，并向大家清楚地说明了情况。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "extraordinary",
+    "wordLower": "extraordinary",
+    "level": "senior",
+    "phonetic": "/ˌɛkstrəˈɔrdəˌnɛri/",
+    "definitions": [
+      "adj. 非常的",
+      "非凡的"
+    ],
+    "example": "Her extraordinary progress resulted from months of patient practice.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "她非凡的进步来自数月耐心的练习。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "frost",
+    "wordLower": "frost",
+    "level": "senior",
+    "phonetic": "/frɔst/",
+    "definitions": [
+      "n. 霜"
+    ],
+    "example": "A thin layer of frost covered the grass early this morning.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "今天清晨，草地上覆盖着一层薄霜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "convince",
+    "wordLower": "convince",
+    "level": "senior",
+    "phonetic": "/kənˈvɪns/",
+    "definitions": [
+      "v. 便确信，使信服"
+    ],
+    "example": "The clear data convinced the committee that the plan could succeed.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "清晰的数据使委员会确信该计划能够成功。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "shock",
+    "wordLower": "shock",
+    "level": "senior",
+    "phonetic": "/ʃɒk/",
+    "definitions": [
+      "v. 使震惊 n. 震动， 冲击"
+    ],
+    "example": "The sudden cancellation shocked everyone who had prepared for the event.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "突然取消活动使所有为此做过准备的人感到震惊。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "slight",
+    "wordLower": "slight",
+    "level": "senior",
+    "phonetic": "/slaɪt/",
+    "definitions": [
+      "adj. 轻微的， 细小的"
+    ],
+    "example": "Even a slight change in temperature can affect the experiment's results.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "即使温度发生轻微变化，也会影响实验结果。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "unfair",
+    "wordLower": "unfair",
+    "level": "senior",
+    "phonetic": "/ˌɔnˈfɛr/",
+    "definitions": [
+      "a呻． 不公平的， 不公正的"
+    ],
+    "example": "It is unfair to judge students by a single test result.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "仅凭一次考试成绩评价学生是不公平的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "on",
+    "wordLower": "on",
+    "level": "senior",
+    "phonetic": "/ɔ:n/",
+    "definitions": [
+      "prep. 在· ·上",
+      "在… 时候",
+      "在·· 地万",
+      "关于 adj. 继续"
+    ],
+    "example": "The science club meets in the school library on Friday afternoons.",
+    "list": 4,
+    "source": "local-import",
+    "exampleMeaning": "科学俱乐部每周五下午在学校图书馆活动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

@@ -1,0 +1,818 @@
+[
+  {
+    "word": "staff",
+    "wordLower": "staff",
+    "level": "junior",
+    "phonetic": "/sta:f/",
+    "definitions": [
+      "n. 全体职工，工作人员",
+      "杠，棒",
+      "参谋部 v. 为…配备人员，任职于"
+    ],
+    "example": "The school staff work hard to help students.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "学校全体工作人员努力帮助学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "dull",
+    "wordLower": "dull",
+    "level": "junior",
+    "phonetic": "/dʌl/",
+    "definitions": [
+      "adj. 乏味的，单调的",
+      "（色彩等）晦暗的",
+      "愚钝的，笨的",
+      "钝的"
+    ],
+    "example": "The long speech was dull, so I felt sleepy.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "那场长篇演讲很乏味，所以我感到困倦。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "metal",
+    "wordLower": "metal",
+    "level": "junior",
+    "phonetic": "/ˈmetl/",
+    "definitions": [
+      "n. 金属"
+    ],
+    "example": "This strong box is made of metal.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "这个结实的箱子是金属制成的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "perhaps",
+    "wordLower": "perhaps",
+    "level": "junior",
+    "phonetic": "/pəˈhæps/",
+    "definitions": [
+      "adj. 或许，大概，可能"
+    ],
+    "example": "Perhaps we can finish the work before lunch.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "或许我们能在午饭前完成这项工作。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "huge",
+    "wordLower": "huge",
+    "level": "junior",
+    "phonetic": "/hju:dʒ/",
+    "definitions": [
+      "adj. 庞大的，巨大的"
+    ],
+    "example": "A huge tree stands in front of our school.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我们学校前面有一棵大树。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "degree",
+    "wordLower": "degree",
+    "level": "junior",
+    "phonetic": "/diˈgri:/",
+    "definitions": [
+      "n. 度，度数",
+      "程度",
+      "学位",
+      "地位，身份"
+    ],
+    "example": "My sister has a degree in English.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我姐姐拥有英语专业的学位。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "body",
+    "wordLower": "body",
+    "level": "junior",
+    "phonetic": "/ˈbɒdi/",
+    "definitions": [
+      "n. 身体，躯体",
+      "躯干，主体",
+      "尸体",
+      "物体",
+      "（视作整体的）一群， 一批"
+    ],
+    "example": "Regular exercise keeps your body strong and healthy.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼能使你的身体强壮而健康。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pretend",
+    "wordLower": "pretend",
+    "level": "junior",
+    "phonetic": "/priˈtend/",
+    "definitions": [
+      "v. 假装，佯作"
+    ],
+    "example": "Children sometimes pretend to be doctors when they play.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "孩子们玩耍时有时会假装成医生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lie",
+    "wordLower": "lie",
+    "level": "junior",
+    "phonetic": "/lai/",
+    "definitions": [
+      "v. ［lay-lain, lying］ 躺，平放",
+      "位于",
+      "处于（某种状态）",
+      "（问 题、事情等）在于",
+      "［lied-lied, lying］ 说谎 n. 谎话，假话"
+    ],
+    "example": "I like to lie on the grass and watch clouds.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我喜欢躺在草地上看云。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tag",
+    "wordLower": "tag",
+    "level": "junior",
+    "phonetic": "/tæg/",
+    "definitions": [
+      "n. 标签",
+      "附加语 v. ［tagged-tagged, tagging］ 给…加标签",
+      "添加"
+    ],
+    "example": "There is a price tag on the blue shirt.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "那件蓝色衬衫上有一个价格标签。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "homeless",
+    "wordLower": "homeless",
+    "level": "junior",
+    "phonetic": "/ˈhəʊmləs/",
+    "definitions": [
+      "adj. 无家的，无家可归的"
+    ],
+    "example": "The center provides homeless people with food and beds.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "这个中心为无家可归的人提供食物和床位。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "shoulder",
+    "wordLower": "shoulder",
+    "level": "junior",
+    "phonetic": "/ˈʃəʊldə(r)/",
+    "definitions": [
+      "n. 肩（部） v. 肩负，承担"
+    ],
+    "example": "My schoolbag feels heavy on my right shoulder.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我的书包压在右肩上感觉很重。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hit",
+    "wordLower": "hit",
+    "level": "junior",
+    "phonetic": "/hit/",
+    "definitions": [
+      "v. ［hit-hit",
+      "hitting］ 打，击中",
+      "碰撞"
+    ],
+    "example": "She hit the ball across the playground.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "她把球击过了操场。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hand",
+    "wordLower": "hand",
+    "level": "junior",
+    "phonetic": "/hænd/",
+    "definitions": [
+      "n. 手",
+      "指针",
+      "帮助，援助",
+      "手艺，技能 v. 交，给"
+    ],
+    "example": "Please hand your homework to the teacher.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "请把你的作业交给老师。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "rat",
+    "wordLower": "rat",
+    "level": "junior",
+    "phonetic": "/ræt/",
+    "definitions": [
+      "n. 鼠"
+    ],
+    "example": "A rat ran across the kitchen floor.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "一只老鼠跑过了厨房地板。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "particular",
+    "wordLower": "particular",
+    "level": "junior",
+    "phonetic": "/pəˈtikjələ(r)/",
+    "definitions": [
+      "adj. 特定的，某一的",
+      "不寻常的，特别的，特有的",
+      "（过分）讲究 的，挑剔的",
+      "详细的，详尽的 n. 详情，细目"
+    ],
+    "example": "Is there any particular reason for your choice?",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "你的选择有什么特别的理由吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "stay",
+    "wordLower": "stay",
+    "level": "junior",
+    "phonetic": "/stei/",
+    "definitions": [
+      "v. 逗留，暂住",
+      "保持，继续是",
+      "停止，延缓 n. 逗留，停留"
+    ],
+    "example": "Please stay quiet while others are reading.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "别人阅读时，请保持安静。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "law",
+    "wordLower": "law",
+    "level": "junior",
+    "phonetic": "/lɔ:/",
+    "definitions": [
+      "n. 法律，法规",
+      "法学",
+      "律师行业",
+      "规律，法则"
+    ],
+    "example": "Everyone must follow the law.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "每个人都必须遵守法律。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "son",
+    "wordLower": "son",
+    "level": "junior",
+    "phonetic": "/sʌn/",
+    "definitions": [
+      "n. 儿子",
+      "孩子"
+    ],
+    "example": "Their son walks to school every morning.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "他们的儿子每天早上步行上学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "comfortable",
+    "wordLower": "comfortable",
+    "level": "junior",
+    "phonetic": "/ˈkʌmftəbl/",
+    "definitions": [
+      "adj. 舒适的，舒服的",
+      "宽裕的，小康的"
+    ],
+    "example": "This chair is soft and comfortable.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "这把椅子柔软又舒适。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hardly",
+    "wordLower": "hardly",
+    "level": "junior",
+    "phonetic": "/ˈha:dli/",
+    "definitions": [
+      "adj. 几乎不，简直不",
+      "刚刚，仅仅"
+    ],
+    "example": "I could hardly hear her in the noisy room.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "在嘈杂的房间里，我几乎听不见她说话。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "store",
+    "wordLower": "store",
+    "level": "junior",
+    "phonetic": "/stɔ:(r)/",
+    "definitions": [
+      "n. 商店，店铺",
+      "贮存，储备",
+      "储备品",
+      "仓库 v. 贮藏，储备，存储"
+    ],
+    "example": "We store our winter clothes in this box.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我们把冬天的衣服存放在这个箱子里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "raincoat",
+    "wordLower": "raincoat",
+    "level": "junior",
+    "phonetic": "/ˈreinkəʊt/",
+    "definitions": [
+      "n. 雨衣"
+    ],
+    "example": "Take your raincoat because it may rain later.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "带上你的雨衣，因为稍后可能会下雨。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "noise",
+    "wordLower": "noise",
+    "level": "junior",
+    "phonetic": "/nɔiz/",
+    "definitions": [
+      "n. 声音，响声",
+      "噪音"
+    ],
+    "example": "The noise outside kept me awake last night.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "昨晚外面的噪音让我无法入睡。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fire",
+    "wordLower": "fire",
+    "level": "junior",
+    "phonetic": "/ˈfaiə(r)/",
+    "definitions": [
+      "n. 火，炉火",
+      "火灾，失火",
+      "射击，火力 v. 放（枪、炮等），射出 （子弹等）",
+      "解雇，开除"
+    ],
+    "example": "We sat by the fire to keep warm.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我们坐在炉火旁取暖。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "drive",
+    "wordLower": "drive",
+    "level": "junior",
+    "phonetic": "/draiv/",
+    "definitions": [
+      "v. ［drove-driven］ 驾驶",
+      "驾车送（人）",
+      "迫使，驱使",
+      "推动 n. 驱 车旅行",
+      "干劲"
+    ],
+    "example": "My mother drives me to school on rainy days.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "下雨天妈妈开车送我去学校。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "stamp",
+    "wordLower": "stamp",
+    "level": "junior",
+    "phonetic": "/stæmp/",
+    "definitions": [
+      "n. 邮票，印花",
+      "印，图章",
+      "标志，印记",
+      "跺脚，顿足"
+    ],
+    "example": "He put a stamp on the envelope.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "他在信封上贴了一张邮票。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "edge",
+    "wordLower": "edge",
+    "level": "junior",
+    "phonetic": "/edʒ/",
+    "definitions": [
+      "n. 边，边缘",
+      "刀口，刃",
+      "优势，优越地位"
+    ],
+    "example": "Do not stand too close to the edge.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "不要站得离边缘太近。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "medal",
+    "wordLower": "medal",
+    "level": "junior",
+    "phonetic": "/ˈmedl/",
+    "definitions": [
+      "n. 奖牌，奖章"
+    ],
+    "example": "She won a medal in the swimming race.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "她在游泳比赛中赢得了一枚奖牌。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "neighbor",
+    "wordLower": "neighbor",
+    "level": "junior",
+    "phonetic": "/ˈneibə(r)/",
+    "definitions": [
+      "n. 邻居",
+      "邻国"
+    ],
+    "example": "Our neighbor often helps us water the flowers.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我们的邻居经常帮我们浇花。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "remember",
+    "wordLower": "remember",
+    "level": "junior",
+    "phonetic": "/riˈmembə(r)/",
+    "definitions": [
+      "v. 记得，记住",
+      "缅怀",
+      "代…问候"
+    ],
+    "example": "Remember to turn off the lights before leaving.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "记得离开前关灯。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "smart",
+    "wordLower": "smart",
+    "level": "junior",
+    "phonetic": "/sma:t/",
+    "definitions": [
+      "adj. 聪明的，精明的，高明的",
+      "漂亮的 n. 剧痛"
+    ],
+    "example": "The smart student quickly solved the math problem.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "那个聪明的学生很快解出了这道数学题。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "leg",
+    "wordLower": "leg",
+    "level": "junior",
+    "phonetic": "/leg/",
+    "definitions": [
+      "n. 腿，腿部",
+      "（桌、椅等的）腿，（建筑物的）支柱"
+    ],
+    "example": "He hurt his leg while playing football.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "他踢足球时伤了腿。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "relation",
+    "wordLower": "relation",
+    "level": "junior",
+    "phonetic": "/riˈleiʃn/",
+    "definitions": [
+      "n. 关系，关联",
+      "亲属，亲戚"
+    ],
+    "example": "There is a close relation between sleep and health.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "睡眠和健康之间有密切的关系。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "singer",
+    "wordLower": "singer",
+    "level": "junior",
+    "phonetic": "/ˈsiŋə(r)/",
+    "definitions": [
+      "n. 歌手"
+    ],
+    "example": "The singer has a beautiful and clear voice.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "这位歌手有一副优美而清亮的嗓音。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "nine",
+    "wordLower": "nine",
+    "level": "junior",
+    "phonetic": "/nain/",
+    "definitions": [
+      "num. 九，九个"
+    ],
+    "example": "There are nine students in the music club.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "音乐社团里有九名学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "swing",
+    "wordLower": "swing",
+    "level": "junior",
+    "phonetic": "/swiŋ/",
+    "definitions": [
+      "v. ［swang-swung］ （使）摇摆，（使）摇荡"
+    ],
+    "example": "The children swung happily in the school playground.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "孩子们在学校操场上开心地荡秋千。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "creature",
+    "wordLower": "creature",
+    "level": "junior",
+    "phonetic": "/ˈkri:tʃə(r)/",
+    "definitions": [
+      "n. 生物，动物，人",
+      "创造物，产物"
+    ],
+    "example": "The forest is home to many small creatures.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "这片森林是许多小动物的家园。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "worry",
+    "wordLower": "worry",
+    "level": "junior",
+    "phonetic": "/ˈwʌri/",
+    "definitions": [
+      "v. 担心，（使）发愁",
+      "困扰，折磨 n. 担心，发愁，忧虑"
+    ],
+    "example": "Do not worry about tomorrow's English test.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "不要担心明天的英语考试。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "southeast",
+    "wordLower": "southeast",
+    "level": "junior",
+    "phonetic": "/ˌsaʊˈθi:st/",
+    "definitions": [
+      "n. 东南（方），东南（部） adj. 向东南 adj. 东南方的，东南部的， 来自东南的"
+    ],
+    "example": "Our town lies in the southeast of the province.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我们镇位于该省的东南部。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "custom",
+    "wordLower": "custom",
+    "level": "junior",
+    "phonetic": "/ˈkʌstəm/",
+    "definitions": [
+      "n. 习惯，风俗",
+      "惯例",
+      "［pl.］ 海关",
+      "关税"
+    ],
+    "example": "Eating dumplings at this festival is a local custom.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "在这个节日吃饺子是当地的风俗。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bear",
+    "wordLower": "bear",
+    "level": "junior",
+    "phonetic": "/beə(r)/",
+    "definitions": [
+      "n. 熊 v. ［bore-borne］ 负担",
+      "忍受"
+    ],
+    "example": "We saw a brown bear near the river.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我们在河边看到了一只棕熊。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "joy",
+    "wordLower": "joy",
+    "level": "junior",
+    "phonetic": "/dʒɔi/",
+    "definitions": [
+      "n. 欢乐，喜悦",
+      "乐事，乐趣"
+    ],
+    "example": "Her face was full of joy after the game.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "比赛结束后，她的脸上充满喜悦。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "ton",
+    "wordLower": "ton",
+    "level": "junior",
+    "phonetic": "/tʌn/",
+    "definitions": [
+      "n. 吨",
+      "大量，许多"
+    ],
+    "example": "The truck can carry one ton of rice.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "这辆卡车能装载一吨大米。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "wealth",
+    "wordLower": "wealth",
+    "level": "junior",
+    "phonetic": "/welθ/",
+    "definitions": [
+      "n. 财富，财产",
+      "丰富，大量"
+    ],
+    "example": "Good health is more important than wealth.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "健康比财富更重要。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "direct",
+    "wordLower": "direct",
+    "level": "junior",
+    "phonetic": "/diˈrekt; dai-/",
+    "definitions": [
+      "adj. 直接的",
+      "率直的，坦率的",
+      "顺行的 adj. 直接地 v. 把…对准，针 对",
+      "管理",
+      "指导",
+      "给…指路",
+      "导演",
+      "指挥"
+    ],
+    "example": "This direct bus takes us to the museum.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "这趟直达公交车把我们送到博物馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "class",
+    "wordLower": "class",
+    "level": "junior",
+    "phonetic": "/kla:s/",
+    "definitions": [
+      "n. 阶级，社会等级",
+      "班，班级",
+      "课",
+      "种类，门类",
+      "等级，级别"
+    ],
+    "example": "Our class is preparing for the school sports day.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "我们班正在为学校运动会做准备。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "agree",
+    "wordLower": "agree",
+    "level": "junior",
+    "phonetic": "/əˈgri:/",
+    "definitions": [
+      "v. 同意，赞同",
+      "相符，一致"
+    ],
+    "example": "Most students agree with the new class rule.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "大多数学生赞同这条新的班规。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tiger",
+    "wordLower": "tiger",
+    "level": "junior",
+    "phonetic": "/ˈtaigə(r)/",
+    "definitions": [
+      "n. 虎"
+    ],
+    "example": "A tiger has dark stripes on its body.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "老虎身上有深色的条纹。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "life",
+    "wordLower": "life",
+    "level": "junior",
+    "phonetic": "/laif/",
+    "definitions": [
+      "n. 生命，性命",
+      "一生，寿命",
+      "生活，生存",
+      "人生",
+      "生物",
+      "生气，活 力"
+    ],
+    "example": "Regular exercise can make your life healthier.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼可以让你的生活更健康。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "amazing",
+    "wordLower": "amazing",
+    "level": "junior",
+    "phonetic": "/əˈmeiziŋ/",
+    "definitions": [
+      "adj. 令人惊异的"
+    ],
+    "example": "The view from the top was truly amazing.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "从山顶看到的景色确实令人惊叹。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "set",
+    "wordLower": "set",
+    "level": "junior",
+    "phonetic": "/set/",
+    "definitions": [
+      "n. （一）套，（一）副，（一）批",
+      "装置",
+      "机组 v. ［set-set, setting］ 放，安置，安装",
+      "调整，校正",
+      "树立，设定",
+      "（日、月等）落 山，下沉",
+      "凝结，凝固 adj. 不变的，固定的"
+    ],
+    "example": "My parents bought me a set of colored pencils.",
+    "list": 8,
+    "source": "local-import",
+    "exampleMeaning": "父母给我买了一套彩色铅笔。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

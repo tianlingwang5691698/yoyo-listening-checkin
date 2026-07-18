@@ -1,0 +1,75 @@
+{
+  "sources": [
+    "word-dictionary-junior.json",
+    "word-dictionary-senior.json"
+  ],
+  "stages": {
+    "junior": {
+      "files": 32,
+      "rows": 1690,
+      "preserved": 1690,
+      "backfilled": 0,
+      "missing": 0
+    },
+    "senior": {
+      "files": 40,
+      "rows": 1263,
+      "preserved": 0,
+      "backfilled": 1253,
+      "missing": 10
+    }
+  },
+  "missing": [
+    {
+      "stage": "senior",
+      "list": 1,
+      "word": "accept"
+    },
+    {
+      "stage": "senior",
+      "list": 1,
+      "word": "defeat"
+    },
+    {
+      "stage": "senior",
+      "list": 1,
+      "word": "evidence"
+    },
+    {
+      "stage": "senior",
+      "list": 1,
+      "word": "freedom"
+    },
+    {
+      "stage": "senior",
+      "list": 1,
+      "word": "confirm"
+    },
+    {
+      "stage": "senior",
+      "list": 5,
+      "word": "corrnction"
+    },
+    {
+      "stage": "senior",
+      "list": 29,
+      "word": "engme"
+    },
+    {
+      "stage": "senior",
+      "list": 35,
+      "word": "prmt"
+    },
+    {
+      "stage": "senior",
+      "list": 35,
+      "word": "pamc"
+    },
+    {
+      "stage": "senior",
+      "list": 40,
+      "word": "accom"
+    }
+  ],
+  "generatedAt": "2026-07-18T07:54:31.165Z"
+}

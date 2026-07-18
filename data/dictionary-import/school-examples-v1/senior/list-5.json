@@ -1,0 +1,499 @@
+[
+  {
+    "word": "screen",
+    "wordLower": "screen",
+    "level": "senior",
+    "phonetic": "/skri:n/",
+    "definitions": [
+      "n. 幕，荧光屏"
+    ],
+    "example": "The teacher displayed the experiment results on a large screen.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "老师把实验结果展示在大屏幕上。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pay",
+    "wordLower": "pay",
+    "level": "senior",
+    "phonetic": "/pei/",
+    "definitions": [
+      "v. 付钱， 偿还 n. 工资"
+    ],
+    "example": "Many students take part-time jobs to pay for their daily expenses.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "许多学生做兼职来支付日常开支。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "goal",
+    "wordLower": "goal",
+    "level": "senior",
+    "phonetic": "/goʊl/",
+    "definitions": [
+      "n. 目标",
+      "进球得分",
+      "（足球）球门"
+    ],
+    "example": "Her main goal is to improve her spoken English this term.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "她的主要目标是本学期提高英语口语水平。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "consider",
+    "wordLower": "consider",
+    "level": "senior",
+    "phonetic": "/kənˈsidə(r)/",
+    "definitions": [
+      "v. 弩虑",
+      "认为"
+    ],
+    "example": "We should consider the possible effects before making a final decision.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "在作出最终决定前，我们应该考虑可能产生的影响。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "simple",
+    "wordLower": "simple",
+    "level": "senior",
+    "phonetic": "/ˈsimpl/",
+    "definitions": [
+      "adj. 简单的， 简易的"
+    ],
+    "example": "The teacher gave us a simple method for solving the problem.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "老师教给我们一种解决这个问题的简单方法。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "select",
+    "wordLower": "select",
+    "level": "senior",
+    "phonetic": "/səˈlɛkt/",
+    "definitions": [
+      "v. 选择， 挑选，选拔 adj. 精选的"
+    ],
+    "example": "Students may select two subjects according to their interests and strengths.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "学生可以根据自己的兴趣和优势选择两门科目。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "only",
+    "wordLower": "only",
+    "level": "senior",
+    "phonetic": "/ˈəʊnli/",
+    "definitions": [
+      "adj. adj. 唯一的， 仅育的 adj. 只， 仅仅"
+    ],
+    "example": "This is the only bus that goes directly to the museum.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "这是唯一一辆直达博物馆的公交车。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "drive",
+    "wordLower": "drive",
+    "level": "senior",
+    "phonetic": "/draiv/",
+    "definitions": [
+      "v. 驾驶， 开（车）",
+      "驱赶"
+    ],
+    "example": "My father taught me how to drive safely in bad weather.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "父亲教我如何在恶劣天气中安全驾驶。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "basement",
+    "wordLower": "basement",
+    "level": "senior",
+    "phonetic": "/ˈbeɪsmənt/",
+    "definitions": [
+      "n. 地下室"
+    ],
+    "example": "We store old furniture and unused boxes in the basement.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "我们把旧家具和不用的箱子存放在地下室。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "identity",
+    "wordLower": "identity",
+    "level": "senior",
+    "phonetic": "/aɪˈdɛntəˌti/",
+    "definitions": [
+      "n. 身份",
+      "一致",
+      "特性 f一"
+    ],
+    "example": "You must show proof of identity before entering the examination room.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "进入考场前，你必须出示身份证明。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hammer",
+    "wordLower": "hammer",
+    "level": "senior",
+    "phonetic": "/ˈhæmər/",
+    "definitions": [
+      "n. 锤子， 锣锤 v. 敲， 锤击 C在刷 、"
+    ],
+    "example": "He used a hammer to fix the loose leg of the desk.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "他用锤子修理桌子松动的桌腿。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "throw",
+    "wordLower": "throw",
+    "level": "senior",
+    "phonetic": "/θroʊ/",
+    "definitions": [
+      "v. 投， 掷， 扔"
+    ],
+    "example": "Please do not throw plastic bottles into the ordinary rubbish bin.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "请不要把塑料瓶扔进普通垃圾桶。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "embarrass",
+    "wordLower": "embarrass",
+    "level": "senior",
+    "phonetic": "/ɪmˈbɛrəs/",
+    "definitions": [
+      "v. 使困窘， 使尴舱，使局促不安"
+    ],
+    "example": "Try not to embarrass others by pointing out their mistakes in public.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "尽量不要通过当众指出别人的错误使他们难堪。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "energy",
+    "wordLower": "energy",
+    "level": "senior",
+    "phonetic": "/ˈenədʒi/",
+    "definitions": [
+      "n. 惰为",
+      "能量",
+      "能源"
+    ],
+    "example": "Regular exercise can give you more energy for study and work.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼能让你有更多精力学习和工作。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "festival",
+    "wordLower": "festival",
+    "level": "senior",
+    "phonetic": "/ˈfestivl/",
+    "definitions": [
+      "n. 节日 adj. 节日的，喜庆的"
+    ],
+    "example": "The annual food festival attracts visitors from nearby towns and villages.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "一年一度的美食节吸引了附近城镇和村庄的游客。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "expect",
+    "wordLower": "expect",
+    "level": "senior",
+    "phonetic": "/ikˈspekt/",
+    "definitions": [
+      "v. 预料",
+      "期望",
+      "要求"
+    ],
+    "example": "Teachers expect students to complete their assignments carefully and on time.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "老师要求学生认真并按时完成作业。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "camp",
+    "wordLower": "camp",
+    "level": "senior",
+    "phonetic": "/kæmp/",
+    "definitions": [
+      "n.!v. 野营，宿营"
+    ],
+    "example": "We plan to camp beside the lake during the summer holiday.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "我们计划暑假期间在湖边露营。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "analysis",
+    "wordLower": "analysis",
+    "level": "senior",
+    "phonetic": "/æˈnælɪsɪs/",
+    "definitions": [
+      "n. 分析",
+      "解析"
+    ],
+    "example": "Careful analysis of the data revealed several changes in student behavior.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "对数据的仔细分析揭示了学生行为的若干变化。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "evident",
+    "wordLower": "evident",
+    "level": "senior",
+    "phonetic": "/ˈɛvədənt/",
+    "definitions": [
+      "adj. 明显的．显然曲"
+    ],
+    "example": "It became evident that regular practice had improved her writing.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "很明显，经常练习提高了她的写作水平。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "smoke",
+    "wordLower": "smoke",
+    "level": "senior",
+    "phonetic": "/sməʊk/",
+    "definitions": [
+      "n. 烟 v. 冒烟",
+      "吸烟"
+    ],
+    "example": "Thin smoke rose from the kitchen while dinner was being prepared.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "准备晚餐时，厨房里升起了薄薄的烟雾。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "deaf",
+    "wordLower": "deaf",
+    "level": "senior",
+    "phonetic": "/def/",
+    "definitions": [
+      "adj. 聋的"
+    ],
+    "example": "The school provides special learning support for deaf students.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "学校为聋哑学生提供特殊的学习支持。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "plenty",
+    "wordLower": "plenty",
+    "level": "senior",
+    "phonetic": "/ˈplenti/",
+    "definitions": [
+      "n. 充足，大量，辛富"
+    ],
+    "example": "We have plenty of time to finish the science project.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "我们有充足的时间完成这个科学项目。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "humorous",
+    "wordLower": "humorous",
+    "level": "senior",
+    "phonetic": "/ˈhju:mərəs/",
+    "definitions": [
+      "adj. 幽默的"
+    ],
+    "example": "Our humorous teacher often makes difficult lessons more enjoyable.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "我们幽默的老师经常使困难的课程更有趣。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "geography",
+    "wordLower": "geography",
+    "level": "senior",
+    "phonetic": "/ʤiˈɑgrəfi/",
+    "definitions": [
+      "n. 饱理学"
+    ],
+    "example": "Geography helps students understand different places and natural environments.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "地理学帮助学生了解不同的地方和自然环境。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "corrnction",
+    "wordLower": "corrnction",
+    "level": "senior",
+    "phonetic": "",
+    "definitions": [
+      "n. 改正"
+    ],
+    "example": "The teacher made a correction to the final sentence of my essay.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "老师改正了我作文的最后一句话。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bare",
+    "wordLower": "bare",
+    "level": "senior",
+    "phonetic": "/bɛr/",
+    "definitions": [
+      "v. 使赤裸",
+      "露出 adj.",
+      "东裸的",
+      "光秃的"
+    ],
+    "example": "The trees looked bare after all their leaves had fallen.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "树叶全部落下后，这些树看起来光秃秃的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "action",
+    "wordLower": "action",
+    "level": "senior",
+    "phonetic": "/ˈækʃən/",
+    "definitions": [
+      "n. 行动"
+    ],
+    "example": "Immediate action is needed to reduce waste in our school.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "我们需要立即采取行动，减少学校里的浪费。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "laugh",
+    "wordLower": "laugh",
+    "level": "senior",
+    "phonetic": "/la:f/",
+    "definitions": [
+      "n. 笑，大笑，笑声",
+      "闹笑 v. 笑， 大笑"
+    ],
+    "example": "His funny story gave everyone in the classroom a good laugh.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "他的有趣故事让教室里的每个人都开怀大笑。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cause",
+    "wordLower": "cause",
+    "level": "senior",
+    "phonetic": "/kɔ:z/",
+    "definitions": [
+      "n. 原因，起因 旷． 促使，引起"
+    ],
+    "example": "Lack of sleep is a common cause of poor concentration.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "睡眠不足是注意力不集中的常见原因。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "destroy",
+    "wordLower": "destroy",
+    "level": "senior",
+    "phonetic": "/diˈstrɔi/",
+    "definitions": [
+      "v. 破坏，毁坏"
+    ],
+    "example": "Too much heat can destroy the useful materials in some foods.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "温度过高会破坏某些食物中的有用成分。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "forward",
+    "wordLower": "forward",
+    "level": "senior",
+    "phonetic": "/ˈfɔ:wəd/",
+    "definitions": [
+      "adj. 旱的",
+      "前边的 adj. 向前， 前进"
+    ],
+    "example": "She stepped forward to explain her idea to the whole class.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "她走上前去，向全班解释自己的想法。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "distinction",
+    "wordLower": "distinction",
+    "level": "senior",
+    "phonetic": "/dɪˈstɪŋkʃən/",
+    "definitions": [
+      "n. 区另U",
+      "差到"
+    ],
+    "example": "There is an important distinction between knowing facts and understanding them.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "知道事实和理解事实之间有重要的区别。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "limit",
+    "wordLower": "limit",
+    "level": "senior",
+    "phonetic": "/ˈlɪmət/",
+    "definitions": [
+      "v. 限制，限",
+      "E",
+      "减少"
+    ],
+    "example": "The school plans to limit the amount of paper it uses.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "学校计划限制纸张的使用量。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "expand",
+    "wordLower": "expand",
+    "level": "senior",
+    "phonetic": "/ɪkˈspænd/",
+    "definitions": [
+      "v. 扩张",
+      "发展"
+    ],
+    "example": "The library will expand its study area for senior students.",
+    "list": 5,
+    "source": "local-import",
+    "exampleMeaning": "图书馆将扩建供高中生使用的学习区域。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

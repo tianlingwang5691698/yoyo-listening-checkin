@@ -1,0 +1,491 @@
+[
+  {
+    "word": "advice",
+    "wordLower": "advice",
+    "level": "senior",
+    "phonetic": "/ədˈvais/",
+    "definitions": [
+      "n. 忠告， 劝告， 建议"
+    ],
+    "example": "My teacher gave me useful advice on choosing a course.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "老师就如何选择课程给了我有用的建议。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "professor",
+    "wordLower": "professor",
+    "level": "senior",
+    "phonetic": "/prəˈfɛsər/",
+    "definitions": [
+      "n. 教搜"
+    ],
+    "example": "The professor explained the difficult idea with a simple example.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "教授用一个简单的例子解释了这个难懂的概念。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "enough",
+    "wordLower": "enough",
+    "level": "senior",
+    "phonetic": "/ɪˈnəf/",
+    "definitions": [
+      "n./adj./acv. 足够（的柏）",
+      "充足（的础）"
+    ],
+    "example": "We have enough time to finish the project before Friday.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "我们有足够的时间在周五之前完成这个项目。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fair",
+    "wordLower": "fair",
+    "level": "senior",
+    "phonetic": "/fɛr/",
+    "definitions": [
+      "adj. 公平咽",
+      "晴朗的",
+      "自蓄的 n. 集市， 展览会"
+    ],
+    "example": "The teacher made a fair decision after hearing both sides.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "老师听取双方的意见后作出了公平的决定。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sweep",
+    "wordLower": "sweep",
+    "level": "senior",
+    "phonetic": "/swi:p/",
+    "definitions": [
+      "v. 扫除， 打扫"
+    ],
+    "example": "Please sweep the classroom floor before the meeting begins.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "请在会议开始前打扫教室地面。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "length",
+    "wordLower": "length",
+    "level": "senior",
+    "phonetic": "/lɛŋθ/",
+    "definitions": [
+      "n. 伏， tE:度"
+    ],
+    "example": "The swimming pool is twice the length of our classroom.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "这个游泳池的长度是我们教室的两倍。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "shake",
+    "wordLower": "shake",
+    "level": "senior",
+    "phonetic": "/ʃeik/",
+    "definitions": [
+      "v. 使摇动",
+      "震动"
+    ],
+    "example": "The windows began to shake during the strong wind.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "刮大风时，窗户开始震动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "reservation",
+    "wordLower": "reservation",
+    "level": "senior",
+    "phonetic": "/ˌrɛzərˈveɪʃən/",
+    "definitions": [
+      "n. （旅馆房闹等的）预订",
+      "预约"
+    ],
+    "example": "I made a reservation at the hotel for two nights.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "我在这家酒店预订了两个晚上的房间。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "approximately",
+    "wordLower": "approximately",
+    "level": "senior",
+    "phonetic": "/əˈprɑksəmətli/",
+    "definitions": [
+      "adj. 近似地， 大约"
+    ],
+    "example": "The journey takes approximately three hours by bus.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "乘公共汽车走这段路大约需要三个小时。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hope",
+    "wordLower": "hope",
+    "level": "senior",
+    "phonetic": "/həʊp/",
+    "definitions": [
+      "n.l v. 希望"
+    ],
+    "example": "We hope the weather will improve before the school trip.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "我们希望学校旅行前天气会好转。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "guide",
+    "wordLower": "guide",
+    "level": "senior",
+    "phonetic": "/gaid/",
+    "definitions": [
+      "n. 向导，导游 v. 指导",
+      "指sl - -introduce"
+    ],
+    "example": "A local guide showed us around the ancient town.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "一位当地导游带领我们参观了这座古镇。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "near",
+    "wordLower": "near",
+    "level": "senior",
+    "phonetic": "/niə(r)/",
+    "definitions": [
+      "prep. 在… 附近，靠近 adj. 近的 adj. 附近， 邻近"
+    ],
+    "example": "Our new school is near the city library.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "我们的新学校在市图书馆附近。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "something",
+    "wordLower": "something",
+    "level": "senior",
+    "phonetic": "/ˈsʌmθiŋ/",
+    "definitions": [
+      "pron. 某事",
+      "某吻"
+    ],
+    "example": "There is something important that we need to discuss today.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "今天有一件重要的事情需要我们讨论。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lose",
+    "wordLower": "lose",
+    "level": "senior",
+    "phonetic": "/lu:z/",
+    "definitions": [
+      "v. 失去，丢失"
+    ],
+    "example": "You may lose confidence if you always compare yourself with others.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "如果你总是和别人比较，你可能会失去信心。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "charge",
+    "wordLower": "charge",
+    "level": "senior",
+    "phonetic": "/ʧɑrʤ/",
+    "definitions": [
+      "v. 收费： 指控",
+      "索价",
+      "充电 n. 费用， 价钱"
+    ],
+    "example": "The hotel does not charge guests for using the swimming pool.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "这家酒店不向客人收取使用游泳池的费用。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "all",
+    "wordLower": "all",
+    "level": "senior",
+    "phonetic": "/ɔ:l/",
+    "definitions": [
+      "adj.伊ron./adj. （三者以上）全部"
+    ],
+    "example": "All the students completed the experiment within an hour.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "所有学生都在一小时内完成了实验。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "range",
+    "wordLower": "range",
+    "level": "senior",
+    "phonetic": "/reɪnʤ/",
+    "definitions": [
+      "n. 范围",
+      "射程",
+      "山脉",
+      "种类 v. 排列"
+    ],
+    "example": "The course offers a wide range of practical activities.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "这门课程提供各种各样的实践活动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "foreign",
+    "wordLower": "foreign",
+    "level": "senior",
+    "phonetic": "/ˈfɒrən/",
+    "definitions": [
+      "adj. 外国的"
+    ],
+    "example": "Learning a foreign language can help us understand other cultures.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "学习一门外语可以帮助我们了解其他文化。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "front",
+    "wordLower": "front",
+    "level": "senior",
+    "phonetic": "/frʌnt/",
+    "definitions": [
+      "adj. 前面的",
+      "前部的 n. 前面",
+      "前部， 前线"
+    ],
+    "example": "Please leave your completed form at the front desk.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "请把填好的表格留在前台。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hire",
+    "wordLower": "hire",
+    "level": "senior",
+    "phonetic": "/haɪər/",
+    "definitions": [
+      "v. 租用"
+    ],
+    "example": "We decided to hire bicycles and explore the island.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "我们决定租用自行车游览这座岛。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "spread",
+    "wordLower": "spread",
+    "level": "senior",
+    "phonetic": "/sprɛd/",
+    "definitions": [
+      "n.lv. ( spread, spread, sp reading ） 延伸， 展开",
+      "传播"
+    ],
+    "example": "False information can spread quickly through social media.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "虚假信息会通过社交媒体迅速传播。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tired",
+    "wordLower": "tired",
+    "level": "senior",
+    "phonetic": "/taɪərd/",
+    "definitions": [
+      "adj. 疲劳的， 累的",
+      "厌烦的"
+    ],
+    "example": "Many students are tired of doing the same exercise repeatedly.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "许多学生厌倦了反复做同一道练习。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "smile",
+    "wordLower": "smile",
+    "level": "senior",
+    "phonetic": "/smail/",
+    "definitions": [
+      "n.l饥 饿笑"
+    ],
+    "example": "Her warm smile made the new student feel welcome.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "她温暖的微笑让新同学感到自己很受欢迎。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "prize",
+    "wordLower": "prize",
+    "level": "senior",
+    "phonetic": "/praiz/",
+    "definitions": [
+      "n. 奖赏， 奖昆，奖金"
+    ],
+    "example": "The winner received a prize for her excellent speech.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "获胜者因出色的演讲而获得了奖品。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "outer",
+    "wordLower": "outer",
+    "level": "senior",
+    "phonetic": "/ˈaʊtər/",
+    "definitions": [
+      "adj. 外部的"
+    ],
+    "example": "The outer wall protects the building from wind and rain.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "外墙保护建筑物免受风雨侵袭。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "appearance",
+    "wordLower": "appearance",
+    "level": "senior",
+    "phonetic": "/əˈpɪrəns/",
+    "definitions": [
+      "n. 出现，露面",
+      "窑貌，外表"
+    ],
+    "example": "You should not judge others only by their appearance.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "你不应该只凭外表判断他人。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "look",
+    "wordLower": "look",
+    "level": "senior",
+    "phonetic": "/lʊk/",
+    "definitions": [
+      "n. [ C J 看， 瞧 v. 看，瞧",
+      "看起来",
+      "注意"
+    ],
+    "example": "The situation may look simple, but it requires careful thought.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "这种情况可能看起来很简单，但需要认真思考。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "one",
+    "wordLower": "one",
+    "level": "senior",
+    "phonetic": "/wʌn/",
+    "definitions": [
+      "num./pron. 一个（人或物）",
+      "任何人（泛指）"
+    ],
+    "example": "One should consider the results before making an important decision.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "任何人在作出重要决定前都应该考虑后果。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "predict",
+    "wordLower": "predict",
+    "level": "senior",
+    "phonetic": "/priˈdikt/",
+    "definitions": [
+      "v. 预言",
+      "预报"
+    ],
+    "example": "Scientists cannot always predict when extreme weather will occur.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "科学家并不总能预测极端天气何时发生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fit",
+    "wordLower": "fit",
+    "level": "senior",
+    "phonetic": "/fit/",
+    "definitions": [
+      "v. （使）适合 adj. 适合的",
+      "健箴的"
+    ],
+    "example": "Regular exercise helps us stay fit and reduce stress.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼有助于我们保持健康并减轻压力。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "that",
+    "wordLower": "that",
+    "level": "senior",
+    "phonetic": "/ðæt/",
+    "definitions": [
+      "adj伊ran. 那， 那个 conj. （引导从旬， 无词义） adj. 那么， 那样"
+    ],
+    "example": "The survey shows that most students enjoy outdoor activities.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "调查显示，大多数学生喜欢户外活动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "function",
+    "wordLower": "function",
+    "level": "senior",
+    "phonetic": "/ˈfəŋkʃən/",
+    "definitions": [
+      "n. 功能， 你用， 职责",
+      "函数 v. ~作用",
+      "行使职责"
+    ],
+    "example": "The main function of this device is to measure temperature.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "这个设备的主要功能是测量温度。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "reward",
+    "wordLower": "reward",
+    "level": "senior",
+    "phonetic": "/rɪˈwɔrd/",
+    "definitions": [
+      "n. 奖赏",
+      "报答",
+      "报酬",
+      "回报"
+    ],
+    "example": "A sense of achievement is often the best reward for hard work.",
+    "list": 32,
+    "source": "local-import",
+    "exampleMeaning": "成就感往往是努力付出的最好回报。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

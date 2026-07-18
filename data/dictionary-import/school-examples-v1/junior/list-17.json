@@ -1,0 +1,855 @@
+[
+  {
+    "word": "tasty",
+    "wordLower": "tasty",
+    "level": "junior",
+    "phonetic": "/ˈteisti/",
+    "definitions": [
+      "adj. 美味的",
+      "引起食欲的 n. 好吃的东西",
+      "吸引人的东西"
+    ],
+    "example": "The soup is warm and tasty.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这汤温热可口。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "marriage",
+    "wordLower": "marriage",
+    "level": "junior",
+    "phonetic": "/ˈmæridʒ/",
+    "definitions": [
+      "n. 结婚，婚姻，婚礼"
+    ],
+    "example": "Their long marriage has been happy and peaceful.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "他们长久的婚姻一直幸福而平静。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "grade",
+    "wordLower": "grade",
+    "level": "junior",
+    "phonetic": "/greid/",
+    "definitions": [
+      "n. 等级，级别",
+      "成绩，分数",
+      "（学校的）年级 v. 将…分等级",
+      "对… 进行评分"
+    ],
+    "example": "Lucy got a good grade in English.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "露西的英语取得了好成绩。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "road",
+    "wordLower": "road",
+    "level": "junior",
+    "phonetic": "/rəʊd/",
+    "definitions": [
+      "n. 路，道路",
+      "途径"
+    ],
+    "example": "This road leads to our school.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这条路通向我们的学校。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "result",
+    "wordLower": "result",
+    "level": "junior",
+    "phonetic": "/riˈzʌlt/",
+    "definitions": [
+      "n. 结果",
+      "效果",
+      "成绩，成果"
+    ],
+    "example": "She was pleased with her exam result.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "她对自己的考试成绩感到满意。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "any",
+    "wordLower": "any",
+    "level": "junior",
+    "phonetic": "/ˈeni/",
+    "definitions": [
+      "pron. 无论哪个，无论哪些 adj. 任一的，任何的",
+      "什么，一些",
+      "丝 毫的"
+    ],
+    "example": "You may choose any book on this shelf.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "你可以选择这个书架上的任何一本书。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "football",
+    "wordLower": "football",
+    "level": "junior",
+    "phonetic": "/ˈfʊtbɔ:l/",
+    "definitions": [
+      "n. 足球",
+      "橄榄球"
+    ],
+    "example": "The students play football after school every Friday.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "学生们每周五放学后踢足球。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "room",
+    "wordLower": "room",
+    "level": "junior",
+    "phonetic": "/ru:m/",
+    "definitions": [
+      "n. 房间，室",
+      "空间，地方",
+      "余地"
+    ],
+    "example": "There is enough room for another chair.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这里有足够的空间再放一把椅子。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cause",
+    "wordLower": "cause",
+    "level": "junior",
+    "phonetic": "/kɔ:z/",
+    "definitions": [
+      "n. 原因，理由 v. 使发生，引起",
+      "使遭受",
+      "给…带来"
+    ],
+    "example": "Too much rain can cause problems for farmers.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "雨水过多会给农民带来问题。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bad",
+    "wordLower": "bad",
+    "level": "junior",
+    "phonetic": "/bæd/",
+    "definitions": [
+      "adj. 坏的",
+      "不利的",
+      "差的，有缺陷的",
+      "邪恶的，道德败坏的",
+      "严重 的，厉害的",
+      "腐烂的，腐败的"
+    ],
+    "example": "Too much screen time is bad for your eyes.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "看屏幕时间过长对眼睛有害。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "unhealthy",
+    "wordLower": "unhealthy",
+    "level": "junior",
+    "phonetic": "/ʌnˈhelθi/",
+    "definitions": [
+      "adj. 不健康的"
+    ],
+    "example": "Eating too much sugar is unhealthy.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "吃太多糖是不健康的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "holiday",
+    "wordLower": "holiday",
+    "level": "junior",
+    "phonetic": "/ˈhɒlədei/",
+    "definitions": [
+      "n. 假期，假日"
+    ],
+    "example": "We always visit our grandparents during the summer holiday.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "暑假期间，我们总是去看望祖父母。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "draw",
+    "wordLower": "draw",
+    "level": "junior",
+    "phonetic": "/drɔ:/",
+    "definitions": [
+      "v. ［drew-drawn］ 画，描绘",
+      "拖，拉",
+      "拔出，抽出",
+      "提取，汲 取",
+      "引起",
+      "吸引",
+      "推断出",
+      "打成平局 n. 平局，和局",
+      "抽签，抽彩"
+    ],
+    "example": "Please draw a picture of your favorite animal.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "请画一幅你最喜欢的动物的图画。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "create",
+    "wordLower": "create",
+    "level": "junior",
+    "phonetic": "/kriˈeit/",
+    "definitions": [
+      "v. 创造",
+      "创作",
+      "引起，产生"
+    ],
+    "example": "Students can create beautiful pictures with these colored pencils.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "学生们可以用这些彩色铅笔创作美丽的图画。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "wish",
+    "wordLower": "wish",
+    "level": "junior",
+    "phonetic": "/wiʃ/",
+    "definitions": [
+      "v. 希望，想要",
+      "但愿",
+      "祝，祝愿",
+      "盼望，企求"
+    ],
+    "example": "I wish you good luck in the competition.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我祝你在比赛中好运。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "exam",
+    "wordLower": "exam",
+    "level": "junior",
+    "phonetic": "/igˈzæm/",
+    "definitions": [
+      "n. 考试",
+      "试题",
+      "检查，调查"
+    ],
+    "example": "She studied hard for the English exam.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "她为英语考试努力学习。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "art",
+    "wordLower": "art",
+    "level": "junior",
+    "phonetic": "/a:t/",
+    "definitions": [
+      "n. 美术，艺术",
+      "技术，技艺",
+      "［pl.］ 人文科学，文科"
+    ],
+    "example": "We learned how to paint in art class.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我们在美术课上学习了如何画画。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sweet",
+    "wordLower": "sweet",
+    "level": "junior",
+    "phonetic": "/swi:t/",
+    "definitions": [
+      "adj. 甜的",
+      "和蔼的，温柔的",
+      "可爱的，讨人喜欢的",
+      "芳香的，悦耳 的，悦目的"
+    ],
+    "example": "These fresh strawberries taste very sweet.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这些新鲜的草莓尝起来很甜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "donate",
+    "wordLower": "donate",
+    "level": "junior",
+    "phonetic": "/dəʊˈneit/",
+    "definitions": [
+      "v. 捐赠，赠送"
+    ],
+    "example": "Many students donate their old books to the library.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "许多学生把旧书捐给图书馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "too",
+    "wordLower": "too",
+    "level": "junior",
+    "phonetic": "/tu:/",
+    "definitions": [
+      "adj. 也，还",
+      "太，过于",
+      "很，非常"
+    ],
+    "example": "This bag is too heavy for me to carry.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这个包太重了，我搬不动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "him",
+    "wordLower": "him",
+    "level": "junior",
+    "phonetic": "/him/",
+    "definitions": [
+      "pron. 他"
+    ],
+    "example": "I met him at the school gate this morning.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "今天早上我在校门口遇见了他。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "rule",
+    "wordLower": "rule",
+    "level": "junior",
+    "phonetic": "/ru:l/",
+    "definitions": [
+      "n. 规则，规章",
+      "习惯，惯例，惯常的事",
+      "统治，管辖"
+    ],
+    "example": "Our school has a rule against running in the halls.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我们学校有一条禁止在走廊里奔跑的规定。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "autumn",
+    "wordLower": "autumn",
+    "level": "junior",
+    "phonetic": "/ˈɔ:təm/",
+    "definitions": [
+      "n. 秋，秋季"
+    ],
+    "example": "The leaves turn yellow and red in autumn.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "树叶在秋天变成黄色和红色。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "yellow",
+    "wordLower": "yellow",
+    "level": "junior",
+    "phonetic": "/ˈjeləʊ/",
+    "definitions": [
+      "adj. 黄的 n. 黄色"
+    ],
+    "example": "She wore a yellow dress to the party.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "她穿了一条黄色连衣裙去参加聚会。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "these",
+    "wordLower": "these",
+    "level": "junior",
+    "phonetic": "/ði:z/",
+    "definitions": [
+      "pron. 这些"
+    ],
+    "example": "These are the books I borrowed from the library.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这些是我从图书馆借的书。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "advertisement",
+    "wordLower": "advertisement",
+    "level": "junior",
+    "phonetic": "/ədˈvɜ:tismənt;ˌædvərˈtaizmənt/",
+    "definitions": [
+      "n. 广告，公告",
+      "广告活动，宣传"
+    ],
+    "example": "I saw an advertisement for a new language course.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我看到了一则新语言课程的广告。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "whom",
+    "wordLower": "whom",
+    "level": "junior",
+    "phonetic": "/hu:m/",
+    "definitions": [
+      "pron. （who的宾格）谁"
+    ],
+    "example": "Whom did you invite to the school party?",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "你邀请了谁参加学校聚会？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "rise",
+    "wordLower": "rise",
+    "level": "junior",
+    "phonetic": "/raiz/",
+    "definitions": [
+      "v. ［rose-risen］ 升起，上升",
+      "起立",
+      "起床",
+      "上涨，增加",
+      "反抗， 起义"
+    ],
+    "example": "The sun begins to rise over the mountains.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "太阳开始从群山上方升起。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "term",
+    "wordLower": "term",
+    "level": "junior",
+    "phonetic": "/tɜ:m/",
+    "definitions": [
+      "n. 措词，术语",
+      "期限，任期",
+      "学期",
+      "［pl.］ 条款，条件",
+      "关系"
+    ],
+    "example": "We will learn about plants this term.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这学期我们将学习有关植物的知识。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "operation",
+    "wordLower": "operation",
+    "level": "junior",
+    "phonetic": "/ˌɒpəˈreiʃn/",
+    "definitions": [
+      "n. 操作，运转，经营",
+      "手术",
+      "（军事）行动，活动",
+      "运算"
+    ],
+    "example": "The safe operation of this machine requires careful training.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "安全操作这台机器需要认真培训。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "coal",
+    "wordLower": "coal",
+    "level": "junior",
+    "phonetic": "/kəʊl/",
+    "definitions": [
+      "n. 煤，煤块"
+    ],
+    "example": "People once used coal to heat their homes.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "人们过去用煤给家里取暖。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "until",
+    "wordLower": "until",
+    "level": "junior",
+    "phonetic": "/ənˈtil/",
+    "definitions": [
+      "prep. / conj. 直到…时，到…为止",
+      "直到…（才）"
+    ],
+    "example": "I did not leave until the rain stopped.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "直到雨停了，我才离开。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "habit",
+    "wordLower": "habit",
+    "level": "junior",
+    "phonetic": "/ˈhæbit/",
+    "definitions": [
+      "n. 习惯，习性"
+    ],
+    "example": "Reading before bed is a good habit.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "睡前阅读是一个好习惯。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tour",
+    "wordLower": "tour",
+    "level": "junior",
+    "phonetic": "/tʊə(r)/",
+    "definitions": [
+      "n. / v. 旅行，旅游"
+    ],
+    "example": "We took a tour of the old town.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我们游览了这座古城。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "regular",
+    "wordLower": "regular",
+    "level": "junior",
+    "phonetic": "/ˈregjələ(r)/",
+    "definitions": [
+      "adj. 规则的",
+      "有规律的，定期的",
+      "整齐的，匀称的",
+      "正规的，正式 的",
+      "常规的，经常的"
+    ],
+    "example": "Regular exercise helps us stay healthy.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "有规律的锻炼有助于我们保持健康。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "polar",
+    "wordLower": "polar",
+    "level": "junior",
+    "phonetic": "/ˈpəʊlə(r)/",
+    "definitions": [
+      "adj. 地极的，近地极的",
+      "磁极的",
+      "正好相反的，截然对立的"
+    ],
+    "example": "Polar animals can live in extremely cold places.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "极地动物能生活在极其寒冷的地方。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "many",
+    "wordLower": "many",
+    "level": "junior",
+    "phonetic": "/ˈmeni/",
+    "definitions": [
+      "adj. 许多的，多的 pron. 许多人，许多"
+    ],
+    "example": "Many students ride their bikes to school.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "许多学生骑自行车上学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "them",
+    "wordLower": "them",
+    "level": "junior",
+    "phonetic": "/ðəm/",
+    "definitions": [
+      "pron. 他（她、它）们"
+    ],
+    "example": "These books are useful, so please keep them.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这些书很有用，所以请留着它们。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "single",
+    "wordLower": "single",
+    "level": "junior",
+    "phonetic": "/ˈsiŋgl/",
+    "definitions": [
+      "adj. 单一的，单个的",
+      "未婚的，独身的",
+      "（床或房间）单人的",
+      "单 程的"
+    ],
+    "example": "There was not a single cloud in the sky.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "天空中一朵云也没有。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "church",
+    "wordLower": "church",
+    "level": "junior",
+    "phonetic": "/tʃɜ:tʃ/",
+    "definitions": [
+      "n. 教堂",
+      "礼拜",
+      "教会（组织）"
+    ],
+    "example": "The old church stands near the town square.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "那座古老的教堂坐落在城镇广场附近。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "subway",
+    "wordLower": "subway",
+    "level": "junior",
+    "phonetic": "/ˈsʌbwei/",
+    "definitions": [
+      "n. 地铁",
+      "地道，地下过道"
+    ],
+    "example": "We usually take the subway to the museum.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我们通常乘地铁去博物馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pro",
+    "wordLower": "pro",
+    "level": "junior",
+    "phonetic": "/prəʊ/",
+    "definitions": [
+      "n. ［pl. pros］ 投票赞成者",
+      "赞成的意见（或理由）",
+      "从事某种职 业的人，职业运动员 adj. 赞成的",
+      "正面的 adj. 赞成地 prep. 赞成"
+    ],
+    "example": "We discussed the pros and cons of studying abroad.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我们讨论了出国留学的利与弊。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pen",
+    "wordLower": "pen",
+    "level": "junior",
+    "phonetic": "/pen/",
+    "definitions": [
+      "n. 钢笔",
+      "圆珠笔",
+      "（牲畜等的）围栏"
+    ],
+    "example": "She wrote her name with a blue pen.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "她用一支蓝色钢笔写下了自己的名字。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "calendar",
+    "wordLower": "calendar",
+    "level": "junior",
+    "phonetic": "/ˈkælində(r)/",
+    "definitions": [
+      "n. 日历，月历",
+      "日程表"
+    ],
+    "example": "I marked the school trip on my calendar.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我在日历上标出了学校旅行的日期。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hold",
+    "wordLower": "hold",
+    "level": "junior",
+    "phonetic": "/həʊld/",
+    "definitions": [
+      "v. ［held-held］ 拿，握",
+      "使保持某种状态（或姿势）",
+      "掌握（权 力），担任（职务等）",
+      "容纳，包含",
+      "托住，支撑",
+      "举行，主持"
+    ],
+    "example": "Our school will hold a sports meeting next Friday.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我们学校下周五将举行运动会。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "earthquake",
+    "wordLower": "earthquake",
+    "level": "junior",
+    "phonetic": "/ˈɜ:θkweik/",
+    "definitions": [
+      "n. 地震"
+    ],
+    "example": "We learned how to stay safe during an earthquake.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我们学习了如何在地震中保证安全。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "collect",
+    "wordLower": "collect",
+    "level": "junior",
+    "phonetic": "/kəˈlekt/",
+    "definitions": [
+      "v. 收集，采集",
+      "收（账、欠款等）",
+      "领取",
+      "聚集，汇集 adj. （打电 话）由对方付费的"
+    ],
+    "example": "My brother likes to collect stamps from different countries.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "我哥哥喜欢收集不同国家的邮票。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "seventeen",
+    "wordLower": "seventeen",
+    "level": "junior",
+    "phonetic": "/ˌsevnˈti:n/",
+    "definitions": [
+      "num. 十七，十七个"
+    ],
+    "example": "Seventeen students joined the reading club this term.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这学期有十七名学生加入了阅读社团。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "poor",
+    "wordLower": "poor",
+    "level": "junior",
+    "phonetic": "/pʊə/",
+    "definitions": [
+      "adj. 贫困的，贫穷的",
+      "可怜的",
+      "低劣的，差的"
+    ],
+    "example": "The hotel had poor service and dirty rooms.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "这家旅馆服务差，房间也不干净。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "government",
+    "wordLower": "government",
+    "level": "junior",
+    "phonetic": "/ˈgʌvənmənt/",
+    "definitions": [
+      "n. 政府",
+      "内阁",
+      "治理，统治",
+      "方法",
+      "政体"
+    ],
+    "example": "The city government keeps public parks clean.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "市政府负责保持公共公园整洁。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "haircut",
+    "wordLower": "haircut",
+    "level": "junior",
+    "phonetic": "/ˈheə(r)kʌt/",
+    "definitions": [
+      "n. 理发"
+    ],
+    "example": "I got a haircut before the new term began.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "新学期开始前，我理了发。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "dear",
+    "wordLower": "dear",
+    "level": "junior",
+    "phonetic": "/diə(r)/",
+    "definitions": [
+      "adj. 亲爱的",
+      "昂贵的 int. 啊，哎呀 n. 亲爱的人"
+    ],
+    "example": "Dear Grandma, thank you for your lovely gift.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "亲爱的奶奶，谢谢您送给我的可爱礼物。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "take",
+    "wordLower": "take",
+    "level": "junior",
+    "phonetic": "/teik/",
+    "definitions": [
+      "v. ［took-taken］ 带（去），携带",
+      "需要，花费",
+      "拿，取得",
+      "接 受",
+      "吃，喝，服（药等）",
+      "乘（车），上（船）",
+      "测定，量（体温、尺"
+    ],
+    "example": "Please take this book to your English teacher.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "请把这本书带给你的英语老师。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mirror",
+    "wordLower": "mirror",
+    "level": "junior",
+    "phonetic": "/ˈmirə(r)/",
+    "definitions": [
+      "n. 镜子 v. 反映",
+      "反射，映照"
+    ],
+    "example": "She looked at herself in the mirror.",
+    "list": 17,
+    "source": "local-import",
+    "exampleMeaning": "她看着镜子里的自己。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

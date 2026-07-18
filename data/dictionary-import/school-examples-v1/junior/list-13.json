@@ -1,0 +1,806 @@
+[
+  {
+    "word": "wide",
+    "wordLower": "wide",
+    "level": "junior",
+    "phonetic": "/waid/",
+    "definitions": [
+      "adj. 宽阔的",
+      "广泛的",
+      "远离目标的，偏离的 adj. 全部地，充分地"
+    ],
+    "example": "Our new classroom is wide and bright.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们的新教室宽敞明亮。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "able",
+    "wordLower": "able",
+    "level": "junior",
+    "phonetic": "/ˈeibl/",
+    "definitions": [
+      "adj. 能够…的，得以…的",
+      "有才干的，能力出众的"
+    ],
+    "example": "Lucy is able to finish the task alone.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "露西能够独自完成这项任务。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "period",
+    "wordLower": "period",
+    "level": "junior",
+    "phonetic": "/ˈpiəriəd/",
+    "definitions": [
+      "n. （一段）时间，时期，时代",
+      "学时，课时",
+      "句号，句点"
+    ],
+    "example": "We have an English class in the third period.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们第三节课上英语。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "through",
+    "wordLower": "through",
+    "level": "junior",
+    "phonetic": "/θru:/",
+    "definitions": [
+      "prep. 穿过，通过",
+      "在整个…期间，从头到尾",
+      "凭借，经由 adj. 从 头到尾，自始至终",
+      "直达地",
+      "彻底地，完全地 adj. 完成的，结束的",
+      "直 达的，直通的"
+    ],
+    "example": "We walked through the forest after lunch.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "午饭后，我们穿过了森林。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "north",
+    "wordLower": "north",
+    "level": "junior",
+    "phonetic": "/nɔ:θ/",
+    "definitions": [
+      "n. 北（方），北部 adj. 北方的，北部的",
+      "来自北方的 adj. 向北方"
+    ],
+    "example": "The north of the country is colder.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这个国家的北部更冷。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pride",
+    "wordLower": "pride",
+    "level": "junior",
+    "phonetic": "/praid/",
+    "definitions": [
+      "n. 自豪，骄傲",
+      "引以为傲的人或物",
+      "自尊，自尊心",
+      "自负",
+      "傲慢"
+    ],
+    "example": "She takes pride in her excellent schoolwork.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "她为自己出色的学业感到自豪。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "rock",
+    "wordLower": "rock",
+    "level": "junior",
+    "phonetic": "/rɒk/",
+    "definitions": [
+      "n. 岩石，石块",
+      "摇滚乐 v. 摇，摇动"
+    ],
+    "example": "He picked up a small rock by the river.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "他在河边捡起了一块小石头。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "meet",
+    "wordLower": "meet",
+    "level": "junior",
+    "phonetic": "/mi:t/",
+    "definitions": [
+      "v. ［met-met］ 遇见，碰到",
+      "（迎）接",
+      "和…见面，和…会面"
+    ],
+    "example": "Let us meet outside the library after school.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "放学后我们在图书馆外见面吧。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pork",
+    "wordLower": "pork",
+    "level": "junior",
+    "phonetic": "/pɔ:k/",
+    "definitions": [
+      "n. 猪肉"
+    ],
+    "example": "My father cooked pork and vegetables for dinner.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我爸爸晚餐做了猪肉和蔬菜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bed",
+    "wordLower": "bed",
+    "level": "junior",
+    "phonetic": "/bed/",
+    "definitions": [
+      "n. 床",
+      "床位",
+      "（苗）床",
+      "河床",
+      "（湖或海）底"
+    ],
+    "example": "Small stones covered the bed of the river.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "小石头覆盖着河床。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fourth",
+    "wordLower": "fourth",
+    "level": "junior",
+    "phonetic": "/fɔ:θ/",
+    "definitions": [
+      "num. 第四 n. 四分之一"
+    ],
+    "example": "Amy finished fourth in the school running race.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "埃米在学校赛跑中获得了第四名。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "panda",
+    "wordLower": "panda",
+    "level": "junior",
+    "phonetic": "/ˈpændə/",
+    "definitions": [
+      "n. 熊猫"
+    ],
+    "example": "The panda is eating bamboo under the tree.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "那只熊猫正在树下吃竹子。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "me",
+    "wordLower": "me",
+    "level": "junior",
+    "phonetic": "/mi:/",
+    "definitions": [
+      "pron. 我"
+    ],
+    "example": "My teacher asked me to clean the board.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "老师让我擦黑板。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mend",
+    "wordLower": "mend",
+    "level": "junior",
+    "phonetic": "/mend/",
+    "definitions": [
+      "v. 修理，修补",
+      "改良，改进",
+      "修正，改正",
+      "恢复健康，痊愈"
+    ],
+    "example": "Grandpa helped me mend my broken schoolbag.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "爷爷帮我修补了破损的书包。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "casually",
+    "wordLower": "casually",
+    "level": "junior",
+    "phonetic": "/ˈkæʒuəli/",
+    "definitions": [
+      "adj. 偶然地",
+      "随便地",
+      "临时地"
+    ],
+    "example": "He casually put his bag on the chair.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "他随手把书包放在了椅子上。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pour",
+    "wordLower": "pour",
+    "level": "junior",
+    "phonetic": "/pɔ:(r)/",
+    "definitions": [
+      "v. 灌，倒",
+      "倾泻，流出"
+    ],
+    "example": "Please pour some milk into my glass.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "请往我的杯子里倒一些牛奶。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "frustrate",
+    "wordLower": "frustrate",
+    "level": "junior",
+    "phonetic": "/ˈfrʌstreit/",
+    "definitions": [
+      "v. 使沮丧，使灰心",
+      "失败"
+    ],
+    "example": "The repeated mistakes frustrated the young student.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "反复出现的错误使那名年轻学生感到沮丧。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "must",
+    "wordLower": "must",
+    "level": "junior",
+    "phonetic": "/mʌst/",
+    "definitions": [
+      "v. aux. 必须，应该，务必",
+      "必定，一定 n. 必须做的事",
+      "必备之物"
+    ],
+    "example": "Students must follow the rules in the library.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "学生在图书馆里必须遵守规定。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "goat",
+    "wordLower": "goat",
+    "level": "junior",
+    "phonetic": "/gəʊt/",
+    "definitions": [
+      "n. 山羊"
+    ],
+    "example": "The white goat is standing near the tree.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "那只白山羊正站在树旁。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "handbag",
+    "wordLower": "handbag",
+    "level": "junior",
+    "phonetic": "/ˈhændbæg/",
+    "definitions": [
+      "n. （女用）手提包"
+    ],
+    "example": "She keeps her keys in a small handbag.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "她把钥匙放在一个小手提包里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "professional",
+    "wordLower": "professional",
+    "level": "junior",
+    "phonetic": "/prəˈfeʃənl/",
+    "definitions": [
+      "adj. 职业的",
+      "专业的 n. 专业人员",
+      "自由职业者"
+    ],
+    "example": "My aunt is a professional photographer.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我姑姑是一名职业摄影师。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "attempt",
+    "wordLower": "attempt",
+    "level": "junior",
+    "phonetic": "/əˈtempt/",
+    "definitions": [
+      "n. / v. 尝试，企图",
+      "努力"
+    ],
+    "example": "He made another attempt to solve the problem.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "他再次尝试解决这个问题。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "boy",
+    "wordLower": "boy",
+    "level": "junior",
+    "phonetic": "/bɔi/",
+    "definitions": [
+      "n. 男孩"
+    ],
+    "example": "The boy is waiting for the school bus.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "那个男孩正在等校车。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "flu",
+    "wordLower": "flu",
+    "level": "junior",
+    "phonetic": "/flu:/",
+    "definitions": [
+      "n. 流行性感冒"
+    ],
+    "example": "Lucy stayed home because she had the flu.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "露西因为得了流感而待在家里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "play",
+    "wordLower": "play",
+    "level": "junior",
+    "phonetic": "/plei/",
+    "definitions": [
+      "v. 玩，游戏",
+      "演奏，播放",
+      "扮演，演出",
+      "参加（比赛），打（球 等）"
+    ],
+    "example": "We often play basketball after school.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们经常放学后打篮球。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mail",
+    "wordLower": "mail",
+    "level": "junior",
+    "phonetic": "/meil/",
+    "definitions": [
+      "n. 邮政，邮递",
+      "邮件，邮包",
+      "电子邮件 v. 邮寄"
+    ],
+    "example": "Please mail this letter before Friday.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "请在星期五之前寄出这封信。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "jump",
+    "wordLower": "jump",
+    "level": "junior",
+    "phonetic": "/dʒʌmp/",
+    "definitions": [
+      "n. / v. 跳跃，跳过",
+      "猛涨，激增"
+    ],
+    "example": "The cat can jump onto the table easily.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这只猫能轻松地跳到桌子上。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "copy",
+    "wordLower": "copy",
+    "level": "junior",
+    "phonetic": "/ˈkɒpi/",
+    "definitions": [
+      "n. 复印件，副本",
+      "（一）本，（一）份 v. 抄写",
+      "复印",
+      "抄袭",
+      "模 仿，仿效"
+    ],
+    "example": "Please make a copy of this page.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "请复印一份这一页。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "scary",
+    "wordLower": "scary",
+    "level": "junior",
+    "phonetic": "/ˈskeəri/",
+    "definitions": [
+      "adj. 恐怖的，吓人的"
+    ],
+    "example": "That scary movie gave me bad dreams.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "那部恐怖电影让我做了噩梦。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "escape",
+    "wordLower": "escape",
+    "level": "junior",
+    "phonetic": "/iˈskeip/",
+    "definitions": [
+      "v. 逃脱，逃走",
+      "避免，躲避 n. 逃脱，逃跑",
+      "逃避"
+    ],
+    "example": "The bird escaped through the open window.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "那只鸟从开着的窗户逃走了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tragedy",
+    "wordLower": "tragedy",
+    "level": "junior",
+    "phonetic": "/ˈtrædʒədi/",
+    "definitions": [
+      "n. 惨事，灾难",
+      "悲剧（艺术）"
+    ],
+    "example": "The sudden loss of the old theater was a tragedy.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "那座老剧院的突然消失是一场悲剧。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "clever",
+    "wordLower": "clever",
+    "level": "junior",
+    "phonetic": "/ˈklevə(r)/",
+    "definitions": [
+      "adj. 聪明的，机灵的",
+      "灵巧的，精巧的"
+    ],
+    "example": "The clever student found a simple answer.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "那个聪明的学生找到了一个简单的答案。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "coin",
+    "wordLower": "coin",
+    "level": "junior",
+    "phonetic": "/kɔin/",
+    "definitions": [
+      "n. 硬币，钱币 v. 创造（新词）"
+    ],
+    "example": "I found a coin under my desk.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我在课桌下面发现了一枚硬币。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "find",
+    "wordLower": "find",
+    "level": "junior",
+    "phonetic": "/faind/",
+    "definitions": [
+      "v. ［found-found］ 找到，发现",
+      "发觉，感到 n. （有价值的）发现 物"
+    ],
+    "example": "Can you find your name on the list?",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "你能在名单上找到你的名字吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "borrow",
+    "wordLower": "borrow",
+    "level": "junior",
+    "phonetic": "/ˈbɒrəʊ/",
+    "definitions": [
+      "v. 借，借入",
+      "借用，采用"
+    ],
+    "example": "May I borrow your dictionary for a minute?",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我可以借用一下你的词典吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "toilet",
+    "wordLower": "toilet",
+    "level": "junior",
+    "phonetic": "/ˈtɔilət/",
+    "definitions": [
+      "n. 厕所，盥洗室"
+    ],
+    "example": "Excuse me, where is the nearest toilet?",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "打扰一下，最近的厕所在哪里？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "same",
+    "wordLower": "same",
+    "level": "junior",
+    "phonetic": "/seim/",
+    "definitions": [
+      "adj. 同一的",
+      "相同的，同样的 pron. 同样的人（或事物）"
+    ],
+    "example": "We are in the same English class.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们在同一个英语班。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "alive",
+    "wordLower": "alive",
+    "level": "junior",
+    "phonetic": "/əˈlaiv/",
+    "definitions": [
+      "adj. 活着的，在世的",
+      "（继续）存在的，在起作用的",
+      "有活力的， 活跃的，有生气的",
+      "注意到的",
+      "敏感的",
+      "充满的"
+    ],
+    "example": "The small tree is still alive after winter.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "冬天过后，这棵小树仍然活着。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "disturb",
+    "wordLower": "disturb",
+    "level": "junior",
+    "phonetic": "/diˈstɜ:b/",
+    "definitions": [
+      "v. 弄乱，打乱",
+      "打扰",
+      "使烦恼"
+    ],
+    "example": "Please do not disturb me while I am studying.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我学习时请不要打扰我。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "blow",
+    "wordLower": "blow",
+    "level": "junior",
+    "phonetic": "/bləʊ/",
+    "definitions": [
+      "v. ［blew-blown］ 吹，吹气",
+      "吹奏",
+      "吹牛 n. 一击"
+    ],
+    "example": "The wind blew the leaves across the playground.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "风把树叶吹过了操场。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "name",
+    "wordLower": "name",
+    "level": "junior",
+    "phonetic": "/neim/",
+    "definitions": [
+      "n. 名字，名称",
+      "名声，名誉"
+    ],
+    "example": "Please write your name at the top.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "请在顶部写下你的名字。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "whose",
+    "wordLower": "whose",
+    "level": "junior",
+    "phonetic": "/hu:z/",
+    "definitions": [
+      "pron. （who的所有格）谁的",
+      "那个（人）的，那些（人）的"
+    ],
+    "example": "I helped a girl whose bike was broken.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我帮助了一个自行车坏了的女孩。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sausage",
+    "wordLower": "sausage",
+    "level": "junior",
+    "phonetic": "/ˈsɒsidʒ/",
+    "definitions": [
+      "n. 香肠，腊肠"
+    ],
+    "example": "He ate a sausage and some bread for breakfast.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "他早餐吃了一根香肠和一些面包。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "could",
+    "wordLower": "could",
+    "level": "junior",
+    "phonetic": "/kʊd/",
+    "definitions": [
+      "v. aux. ［can的过去式］ 可以，能，可能"
+    ],
+    "example": "Lucy could swim when she was six.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "露西六岁时就会游泳了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "gold",
+    "wordLower": "gold",
+    "level": "junior",
+    "phonetic": "/gəʊld/",
+    "definitions": [
+      "n. 金，黄金",
+      "金色 adj. 金的，金制的",
+      "金色的"
+    ],
+    "example": "Her grandmother wears a gold ring.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "她的祖母戴着一枚金戒指。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "climb",
+    "wordLower": "climb",
+    "level": "junior",
+    "phonetic": "/ˈklaim/",
+    "definitions": [
+      "v. 攀登，爬",
+      "上升，增长"
+    ],
+    "example": "We climbed the hill before lunch.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们午饭前爬上了那座小山。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "catch",
+    "wordLower": "catch",
+    "level": "junior",
+    "phonetic": "/kætʃ/",
+    "definitions": [
+      "v. ［caught-caught］ 抓住，接住",
+      "偶然（或突然）撞见",
+      "染上， 感染",
+      "赶上，追上",
+      "引起，吸引",
+      "听清楚，领会"
+    ],
+    "example": "Run faster, or you will not catch the bus.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "跑快点，否则你会赶不上公共汽车。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "chicken",
+    "wordLower": "chicken",
+    "level": "junior",
+    "phonetic": "/ˈtʃikin/",
+    "definitions": [
+      "n. 小鸡",
+      "鸡肉"
+    ],
+    "example": "We had chicken and vegetables for dinner.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们晚餐吃了鸡肉和蔬菜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "service",
+    "wordLower": "service",
+    "level": "junior",
+    "phonetic": "/ˈsɜ:vis/",
+    "definitions": [
+      "n. 公共设施，公共事业",
+      "公用机构，服务机构",
+      "服务，劳务",
+      "维 修，保养"
+    ],
+    "example": "This shop provides good service to its customers.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这家商店为顾客提供良好的服务。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "slow",
+    "wordLower": "slow",
+    "level": "junior",
+    "phonetic": "/sləʊ/",
+    "definitions": [
+      "adj. 慢的",
+      "迟钝的，不灵巧的",
+      "不忙碌的 v. （使）慢下来，减速 adj. 慢慢地"
+    ],
+    "example": "The bus is slow because of the heavy traffic.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "由于交通拥堵，这辆公共汽车开得很慢。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bottle",
+    "wordLower": "bottle",
+    "level": "junior",
+    "phonetic": "/ˈbɒtl/",
+    "definitions": [
+      "n. 瓶子"
+    ],
+    "example": "She filled the bottle with clean water.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "她把瓶子装满了干净的水。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fifty",
+    "wordLower": "fifty",
+    "level": "junior",
+    "phonetic": "/ˈfifti/",
+    "definitions": [
+      "num. 五十"
+    ],
+    "example": "There are fifty students in our school club.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们学校的社团里有五十名学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

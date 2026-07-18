@@ -1,0 +1,480 @@
+[
+  {
+    "word": "let",
+    "wordLower": "let",
+    "level": "senior",
+    "phonetic": "/let/",
+    "definitions": [
+      "v. 让"
+    ],
+    "example": "The teacher let us discuss the problem in small groups.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "老师让我们分成小组讨论这个问题。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mark",
+    "wordLower": "mark",
+    "level": "senior",
+    "phonetic": "/ma:k/",
+    "definitions": [
+      "n. 标记",
+      "分数 v. 做记号，标记"
+    ],
+    "example": "Please mark the important dates on your calendar.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "请在日历上标出重要日期。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "clerk",
+    "wordLower": "clerk",
+    "level": "senior",
+    "phonetic": "/kla:k/",
+    "definitions": [
+      "n. 书记员",
+      "办事员",
+      "职员"
+    ],
+    "example": "The hotel clerk helped us find our missing luggage.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "酒店职员帮助我们找到了丢失的行李。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "quarrel",
+    "wordLower": "quarrel",
+    "level": "senior",
+    "phonetic": "/kˈwɔrəl/",
+    "definitions": [
+      "n./ v. 争吵， 吵架"
+    ],
+    "example": "The two friends had a quarrel over a small misunderstanding.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "这两个朋友因一个小误会吵了一架。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "single",
+    "wordLower": "single",
+    "level": "senior",
+    "phonetic": "/ˈsiŋgl/",
+    "definitions": [
+      "adj. 单一凹，直在个的"
+    ],
+    "example": "Not a single student was absent from the meeting.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "没有一个学生缺席这次会议。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "peace",
+    "wordLower": "peace",
+    "level": "senior",
+    "phonetic": "/pi:s/",
+    "definitions": [
+      "n. 和平",
+      "安宁"
+    ],
+    "example": "After a busy week, she enjoyed the peace of the countryside.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "忙碌一周后，她享受着乡村的宁静。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "silent",
+    "wordLower": "silent",
+    "level": "senior",
+    "phonetic": "/ˈsailənt/",
+    "definitions": [
+      "adj. 无声的， 沉默的"
+    ],
+    "example": "The classroom became silent as soon as the exam began.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "考试一开始，教室就安静了下来。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "corrupt",
+    "wordLower": "corrupt",
+    "level": "senior",
+    "phonetic": "/kərəpt/",
+    "definitions": [
+      "adj. 腐贩的， 贪污的",
+      "堕落的 v. 腐烂，腐败",
+      "堕落 ~ c-~ -"
+    ],
+    "example": "Dishonest behavior can corrupt the values of an entire organization.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "不诚实的行为会腐蚀整个组织的价值观。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "while",
+    "wordLower": "while",
+    "level": "senior",
+    "phonetic": "/wail/",
+    "definitions": [
+      "conj. 正当 ← 的时候",
+      "然而 n. 一小会儿， 一段时间"
+    ],
+    "example": "Some students study best in silence, while others prefer soft music.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "有些学生在安静中学习效果最好，而另一些学生喜欢轻柔的音乐。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "atmosphere",
+    "wordLower": "atmosphere",
+    "level": "senior",
+    "phonetic": "/ˈætməsˌfɪr/",
+    "definitions": [
+      "n. 气氛",
+      "大气"
+    ],
+    "example": "The teacher created a relaxed atmosphere for group discussion.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "老师为小组讨论营造了轻松的气氛。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "furniture",
+    "wordLower": "furniture",
+    "level": "senior",
+    "phonetic": "/ˈfɜ:nitʃə(r)/",
+    "definitions": [
+      "n. （总称乎家具"
+    ],
+    "example": "We bought some simple furniture for the new apartment.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "我们为新公寓买了一些简单的家具。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "electricity",
+    "wordLower": "electricity",
+    "level": "senior",
+    "phonetic": "/ɪˌlɛkˈtrɪsəti/",
+    "definitions": [
+      "n. 电",
+      "电流"
+    ],
+    "example": "The storm cut off the electricity for several hours.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "暴风雨导致停电数小时。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "note",
+    "wordLower": "note",
+    "level": "senior",
+    "phonetic": "/nəʊt/",
+    "definitions": [
+      "n. 便条",
+      "笔巨",
+      "注释 v. 记录",
+      "注意"
+    ],
+    "example": "Please note the main differences between the two methods.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "请注意这两种方法之间的主要区别。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "spoken",
+    "wordLower": "spoken",
+    "level": "senior",
+    "phonetic": "/ˈspəʊkən/",
+    "definitions": [
+      "a功’ 口语的"
+    ],
+    "example": "Spoken English often differs from formal written English.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "英语口语通常与正式书面英语不同。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cover",
+    "wordLower": "cover",
+    "level": "senior",
+    "phonetic": "/ˈkʌvə(r)/",
+    "definitions": [
+      "n. 盖子",
+      "罩",
+      "封面 v. 覆盖i",
+      "掩盖",
+      "包括",
+      "报道"
+    ],
+    "example": "The course will cover basic skills in reading and writing.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "这门课程将包括基本的读写技能。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "with",
+    "wordLower": "with",
+    "level": "senior",
+    "phonetic": "/wið/",
+    "definitions": [
+      "prep. 与",
+      "伴随",
+      "青",
+      "v."
+    ],
+    "example": "She discussed the science project with her classmates after school.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "放学后，她与同学们讨论了科学项目。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "clone",
+    "wordLower": "clone",
+    "level": "senior",
+    "phonetic": "/kloʊn/",
+    "definitions": [
+      "n./v. 克隆， 无性繁殖"
+    ],
+    "example": "Scientists can clone some plants from a single healthy cell.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "科学家可以用一个健康细胞克隆某些植物。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "friendly",
+    "wordLower": "friendly",
+    "level": "senior",
+    "phonetic": "/ˈfrɛndli/",
+    "definitions": [
+      "adj. 友好的 ζ"
+    ],
+    "example": "The hotel staff were friendly and willing to help us.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "酒店工作人员很友好，也愿意帮助我们。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "skate",
+    "wordLower": "skate",
+    "level": "senior",
+    "phonetic": "/skeit/",
+    "definitions": [
+      "v. j胁，滑冰 H噩啤l l.血酶~"
+    ],
+    "example": "Many people skate on the frozen lake during winter.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "冬天，许多人在结冰的湖面上滑冰。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sail",
+    "wordLower": "sail",
+    "level": "senior",
+    "phonetic": "/seil/",
+    "definitions": [
+      "v. 航行， 开航 n. 帆：航行"
+    ],
+    "example": "We plan to sail along the coast during the holiday.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "我们计划假期沿着海岸航行。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "agree",
+    "wordLower": "agree",
+    "level": "senior",
+    "phonetic": "/əˈgri:/",
+    "definitions": [
+      "v. 罔意",
+      "应允"
+    ],
+    "example": "Most students agree that regular exercise improves their health.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "大多数学生都同意经常锻炼有益健康。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "case",
+    "wordLower": "case",
+    "level": "senior",
+    "phonetic": "/keis/",
+    "definitions": [
+      "n. 情况",
+      "病例",
+      "案件",
+      "窑器"
+    ],
+    "example": "In this case, asking the teacher for advice is sensible.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "在这种情况下，向老师寻求建议是明智的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "why",
+    "wordLower": "why",
+    "level": "senior",
+    "phonetic": "/wai/",
+    "definitions": [
+      "ad•v.／co叫l： 为什么 int. （表示应惊或不满意）叹曰",
+      "什么"
+    ],
+    "example": "The survey explains why many teenagers need more sleep.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "这项调查解释了为什么许多青少年需要更多睡眠。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "patient",
+    "wordLower": "patient",
+    "level": "senior",
+    "phonetic": "/ˈpeɪʃənt/",
+    "definitions": [
+      "n. 病人 adj. 耐l山的 patient"
+    ],
+    "example": "You need to be patient when learning a difficult skill.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "学习一项困难的技能时，你需要有耐心。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "nation",
+    "wordLower": "nation",
+    "level": "senior",
+    "phonetic": "/ˈneɪʃən/",
+    "definitions": [
+      "n. 民族",
+      "国家"
+    ],
+    "example": "Education plays an important role in the development of a nation.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "教育在一个国家的发展中发挥着重要作用。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bath",
+    "wordLower": "bath",
+    "level": "senior",
+    "phonetic": "/bæθ/",
+    "definitions": [
+      "n. [ C J 洗澡",
+      "浴室",
+      "澡盆"
+    ],
+    "example": "A warm bath helped her relax after a busy day.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "忙碌一天后，洗个热水澡帮助她放松下来。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lap",
+    "wordLower": "lap",
+    "level": "senior",
+    "phonetic": "/læp/",
+    "definitions": [
+      "n. 大腿",
+      "（跑道的）一"
+    ],
+    "example": "Each runner had to complete one more lap around the track.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "每名跑步者都必须绕跑道再跑一圈。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "trap",
+    "wordLower": "trap",
+    "level": "senior",
+    "phonetic": "/træp/",
+    "definitions": [
+      "v. 使陷入困境 n. 陷阱，罔套"
+    ],
+    "example": "Heavy snow trapped the travelers in a remote mountain village overnight.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "大雪使旅客们一夜之间被困在一个偏远的山村里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "magic",
+    "wordLower": "magic",
+    "level": "senior",
+    "phonetic": "/ˈmædʒik/",
+    "definitions": [
+      "n. 魔法， 魔术 adj. 青魔力的"
+    ],
+    "example": "The magician amazed the audience with a simple but clever magic trick.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "魔术师用一个简单却巧妙的魔术让观众惊叹不已。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "unique",
+    "wordLower": "unique",
+    "level": "senior",
+    "phonetic": "/juˈnik/",
+    "definitions": [
+      "adj. 峰一的",
+      "独特的"
+    ],
+    "example": "Each student has a unique way of solving the same problem.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "每个学生都有解决同一问题的独特方法。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "main",
+    "wordLower": "main",
+    "level": "senior",
+    "phonetic": "/mein/",
+    "definitions": [
+      "ac事． 主要的"
+    ],
+    "example": "The main purpose of this meeting is to discuss our study plan.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "这次会议的主要目的是讨论我们的学习计划。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "adore",
+    "wordLower": "adore",
+    "level": "senior",
+    "phonetic": "/əˈdɔr/",
+    "definitions": [
+      "v. 爱慕， 崇拜"
+    ],
+    "example": "Many children adore their grandparents and enjoy spending time with them.",
+    "list": 33,
+    "source": "local-import",
+    "exampleMeaning": "许多孩子非常敬爱祖父母，并喜欢和他们共度时光。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

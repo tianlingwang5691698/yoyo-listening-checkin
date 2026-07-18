@@ -1,0 +1,874 @@
+[
+  {
+    "word": "our",
+    "wordLower": "our",
+    "level": "junior",
+    "phonetic": "/ˈaʊə(r)/",
+    "definitions": [
+      "pron. 我们的"
+    ],
+    "example": "Our classroom is clean and bright.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们的教室干净又明亮。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sixteenth",
+    "wordLower": "sixteenth",
+    "level": "junior",
+    "phonetic": "/ˈsiksˈti:nθ/",
+    "definitions": [
+      "num. 第十六（个） n. 十六分之一"
+    ],
+    "example": "Her sixteenth birthday is next Friday.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "她的十六岁生日是下周五。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "twenty",
+    "wordLower": "twenty",
+    "level": "junior",
+    "phonetic": "/ˈtwenti/",
+    "definitions": [
+      "num. 二十，二十个"
+    ],
+    "example": "There are twenty students in our art club.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们的美术社团有二十名学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "building",
+    "wordLower": "building",
+    "level": "junior",
+    "phonetic": "/ˈbildiŋ/",
+    "definitions": [
+      "n. 建筑物，房屋",
+      "建筑"
+    ],
+    "example": "The tallest building in our town is a library.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们镇上最高的建筑物是一座图书馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "important",
+    "wordLower": "important",
+    "level": "junior",
+    "phonetic": "/imˈpɔ:tnt/",
+    "definitions": [
+      "adj. 重要的，重大的",
+      "有势力的，有地位的"
+    ],
+    "example": "Getting enough sleep is important for students.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "获得充足的睡眠对学生很重要。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "model",
+    "wordLower": "model",
+    "level": "junior",
+    "phonetic": "/ˈmɒdl/",
+    "definitions": [
+      "n. 模型",
+      "模特儿",
+      "模范，典型"
+    ],
+    "example": "We built a model of the bridge in class.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们在课堂上制作了一座桥的模型。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mistake",
+    "wordLower": "mistake",
+    "level": "junior",
+    "phonetic": "/miˈsteik/",
+    "definitions": [
+      "n. 错误",
+      "过失 v. ［mistook-mistaken］ 误解，误会，弄错",
+      "把…误 认为"
+    ],
+    "example": "I made a mistake in my math homework.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我在数学作业中犯了一个错误。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "they",
+    "wordLower": "they",
+    "level": "junior",
+    "phonetic": "/ðei/",
+    "definitions": [
+      "pron. 他（她、它）们"
+    ],
+    "example": "They often play basketball after school.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "他们经常放学后打篮球。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "instrument",
+    "wordLower": "instrument",
+    "level": "junior",
+    "phonetic": "/ˈinstrəmənt/",
+    "definitions": [
+      "n. 乐器",
+      "仪器，器械"
+    ],
+    "example": "The piano is my favorite musical instrument.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "钢琴是我最喜欢的乐器。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "coach",
+    "wordLower": "coach",
+    "level": "junior",
+    "phonetic": "/kəʊtʃ/",
+    "definitions": [
+      "n. 教练，指导",
+      "长途公共汽车",
+      "（客机的）经济舱 v. 训练",
+      "指导， 辅导"
+    ],
+    "example": "Our coach teaches us how to play basketball.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们的教练教我们如何打篮球。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "elementary",
+    "wordLower": "elementary",
+    "level": "junior",
+    "phonetic": "/ˌeliˈmentri/",
+    "definitions": [
+      "adj. 基本的，基础的",
+      "初级的，小学的"
+    ],
+    "example": "This book teaches elementary English grammar.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "这本书教授基础英语语法。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "call",
+    "wordLower": "call",
+    "level": "junior",
+    "phonetic": "/kɔ:l/",
+    "definitions": [
+      "v. 把…叫做，把…称为",
+      "打电话给",
+      "叫，大声说出",
+      "召唤，传唤",
+      "召开，召集",
+      "访问，拜访 n. 喊叫，鸣叫",
+      "（一次）电话，通电话",
+      "访 问，拜访"
+    ],
+    "example": "Please call me when you arrive at school.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "你到学校时请给我打电话。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "talented",
+    "wordLower": "talented",
+    "level": "junior",
+    "phonetic": "/ˈtæləntid/",
+    "definitions": [
+      "adj. 有才能的，有才干的",
+      "天才的"
+    ],
+    "example": "Lisa is a talented young piano player.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "莉萨是一位有才华的年轻钢琴演奏者。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mixture",
+    "wordLower": "mixture",
+    "level": "junior",
+    "phonetic": "/ˈmikstʃə(r)/",
+    "definitions": [
+      "n. 混合",
+      "混合物"
+    ],
+    "example": "The cake mixture is ready for the oven.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "蛋糕混合料已经可以放进烤箱了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "duty",
+    "wordLower": "duty",
+    "level": "junior",
+    "phonetic": "/ˈdju:ti/",
+    "definitions": [
+      "n. 责任，义务",
+      "职责，职务",
+      "税，关税"
+    ],
+    "example": "It is our duty to keep the classroom clean.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "保持教室清洁是我们的责任。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "note",
+    "wordLower": "note",
+    "level": "junior",
+    "phonetic": "/nəʊt/",
+    "definitions": [
+      "n. 短笺，便条",
+      "记录，笔记",
+      "注解",
+      "音调，音符"
+    ],
+    "example": "My mother left a note on the table.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我妈妈在桌上留了一张便条。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "unhappy",
+    "wordLower": "unhappy",
+    "level": "junior",
+    "phonetic": "/ʌnˈhæpi/",
+    "definitions": [
+      "adj. 不快乐的",
+      "不幸的，悲惨的"
+    ],
+    "example": "Ben felt unhappy because he missed the school trip.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "本因为错过了学校旅行而感到不开心。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "doll",
+    "wordLower": "doll",
+    "level": "junior",
+    "phonetic": "/dɒl/",
+    "definitions": [
+      "n. 玩偶，玩具娃娃"
+    ],
+    "example": "The little girl keeps her doll beside her bed.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "小女孩把她的玩具娃娃放在床边。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "stream",
+    "wordLower": "stream",
+    "level": "junior",
+    "phonetic": "/stri:m/",
+    "definitions": [
+      "n. 小河，溪流",
+      "流，一股",
+      "一连串 v. 流（出），涌（出）"
+    ],
+    "example": "A clear stream runs behind our village.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "一条清澈的小溪从我们村庄后面流过。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "below",
+    "wordLower": "below",
+    "level": "junior",
+    "phonetic": "/biˈləʊ/",
+    "definitions": [
+      "prep. 在…下面，到…下面",
+      "在…以下",
+      "低于"
+    ],
+    "example": "Please write your name below the picture.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "请把你的名字写在图片下面。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "kill",
+    "wordLower": "kill",
+    "level": "junior",
+    "phonetic": "/kil/",
+    "definitions": [
+      "v. 杀死，扼杀",
+      "终止，否决",
+      "使疼痛，使非常痛苦",
+      "消磨，打发 （时间）"
+    ],
+    "example": "We played a word game to kill time.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们玩了一个文字游戏来打发时间。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fold",
+    "wordLower": "fold",
+    "level": "junior",
+    "phonetic": "/fəʊld/",
+    "definitions": [
+      "n. 褶痕，褶缝 v. 折叠，合拢"
+    ],
+    "example": "Fold the paper in half before cutting it.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "剪纸之前先把纸对折。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "discuss",
+    "wordLower": "discuss",
+    "level": "junior",
+    "phonetic": "/diˈskʌs/",
+    "definitions": [
+      "v. 谈论，讨论，论述"
+    ],
+    "example": "We will discuss the class trip after lunch.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "午饭后我们将讨论班级旅行。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "peace",
+    "wordLower": "peace",
+    "level": "junior",
+    "phonetic": "/pi:s/",
+    "definitions": [
+      "n. 和平，和睦",
+      "平静，安宁，安静"
+    ],
+    "example": "I enjoy the peace of the quiet garden.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我喜欢这座安静花园的宁静。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "good",
+    "wordLower": "good",
+    "level": "junior",
+    "phonetic": "/gʊd/",
+    "definitions": [
+      "adj. 好的，令人满意的",
+      "有道德的，高尚的",
+      "有本事的，擅长的",
+      "好心的，慈善的",
+      "乖的，恭顺的",
+      "适合的，有益的 n. 善，好事",
+      "好 处，利益",
+      "［pl.］ 货物，商品"
+    ],
+    "example": "Regular exercise is good for your health.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼对你的健康有益。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "toy",
+    "wordLower": "toy",
+    "level": "junior",
+    "phonetic": "/tɔi/",
+    "definitions": [
+      "n. 玩具 v. 漫不经心地考虑",
+      "摆弄"
+    ],
+    "example": "The child put his favorite toy on the bed.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "那个孩子把他最喜欢的玩具放在床上。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "final",
+    "wordLower": "final",
+    "level": "junior",
+    "phonetic": "/ˈfainl/",
+    "definitions": [
+      "adj. 最后的，最终的",
+      "决定性的，确定性的 n. 期末考试",
+      "决赛"
+    ],
+    "example": "We are studying hard for the final.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们正在为期末考试努力学习。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "none",
+    "wordLower": "none",
+    "level": "junior",
+    "phonetic": "/nʌn/",
+    "definitions": [
+      "pron. 没有一人（或物），没有一点儿 adj. 一点也不，毫不，毫无"
+    ],
+    "example": "I offered some cake, but none was left.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我想拿些蛋糕，但一点儿也没剩下。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "even",
+    "wordLower": "even",
+    "level": "junior",
+    "phonetic": "/ˈi:vn/",
+    "definitions": [
+      "adj. 甚至",
+      "即使 adj. 平的",
+      "均匀的，平稳的",
+      "相等的，均衡的",
+      "偶 数的"
+    ],
+    "example": "Eight is an even number.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "八是一个偶数。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "insist",
+    "wordLower": "insist",
+    "level": "junior",
+    "phonetic": "/inˈsist/",
+    "definitions": [
+      "v. 坚持要求，强调",
+      "坚决主张",
+      "坚持说，固执地声称"
+    ],
+    "example": "My parents insist that I finish my homework first.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我父母坚持要求我先完成家庭作业。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "winter",
+    "wordLower": "winter",
+    "level": "junior",
+    "phonetic": "/ˈwintə(r)/",
+    "definitions": [
+      "n. 冬，冬季",
+      "萧条期，衰退期 adj. 冬天的"
+    ],
+    "example": "We often make snowmen in winter.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们经常在冬天堆雪人。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "party",
+    "wordLower": "party",
+    "level": "junior",
+    "phonetic": "/ˈpa:ti/",
+    "definitions": [
+      "n. 社交聚会",
+      "党，政党",
+      "一方，当事人"
+    ],
+    "example": "She invited all her classmates to her birthday party.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "她邀请了所有同学参加她的生日聚会。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "opinion",
+    "wordLower": "opinion",
+    "level": "junior",
+    "phonetic": "/əˈpinjən/",
+    "definitions": [
+      "n. 意见，主张"
+    ],
+    "example": "In my opinion, this book is worth reading.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "在我看来，这本书值得一读。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "guess",
+    "wordLower": "guess",
+    "level": "junior",
+    "phonetic": "/ges/",
+    "definitions": [
+      "n. 推测，猜测 v. 猜测",
+      "以为，相信"
+    ],
+    "example": "Can you guess the answer to this question?",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "你能猜出这道题的答案吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pool",
+    "wordLower": "pool",
+    "level": "junior",
+    "phonetic": "/pu:l/",
+    "definitions": [
+      "n. 池塘，水池",
+      "游泳池",
+      "（液体等的）一摊，一片"
+    ],
+    "example": "The children are swimming in the pool.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "孩子们正在游泳池里游泳。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "nineteen",
+    "wordLower": "nineteen",
+    "level": "junior",
+    "phonetic": "/ˌnainˈti:n/",
+    "definitions": [
+      "num. 十九，十九个"
+    ],
+    "example": "There are nineteen students in our music club.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们的音乐社团里有十九名学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "money",
+    "wordLower": "money",
+    "level": "junior",
+    "phonetic": "/ˈmʌni/",
+    "definitions": [
+      "n. 钱，货币"
+    ],
+    "example": "He saved enough money to buy a new bike.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "他存了足够的钱买一辆新自行车。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "do",
+    "wordLower": "do",
+    "level": "junior",
+    "phonetic": "/du:/",
+    "definitions": [
+      "v. ［did-done］ 做，从事",
+      "实行，进行",
+      "尽力",
+      "可用",
+      "制作",
+      "算 出，解答"
+    ],
+    "example": "Can you do this math problem by yourself?",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "你能独自解答这道数学题吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "watermelon",
+    "wordLower": "watermelon",
+    "level": "junior",
+    "phonetic": "/ˈwɔ:təˌmelən/",
+    "definitions": [
+      "n. 西瓜"
+    ],
+    "example": "We shared a large watermelon after lunch.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "午饭后，我们一起吃了一个大西瓜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "have",
+    "wordLower": "have",
+    "level": "junior",
+    "phonetic": "/hæv/",
+    "definitions": [
+      "v. aux. 已经，曾经 v. 有",
+      "进行，从事",
+      "享受，经受",
+      "使，让",
+      "必 须，不得不"
+    ],
+    "example": "I have to finish this project today.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我今天必须完成这个项目。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "protect",
+    "wordLower": "protect",
+    "level": "junior",
+    "phonetic": "/prəˈtekt/",
+    "definitions": [
+      "v. 保护，保卫"
+    ],
+    "example": "We should protect animals and their homes.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我们应该保护动物及其家园。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "build",
+    "wordLower": "build",
+    "level": "junior",
+    "phonetic": "/bild/",
+    "definitions": [
+      "v. ［built-built］ 建造，修建",
+      "建立，创立 n. 体型，体格"
+    ],
+    "example": "They plan to build a bridge over the river.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "他们计划在河上建一座桥。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "grandchild",
+    "wordLower": "grandchild",
+    "level": "junior",
+    "phonetic": "/ˈgræntʃaild/",
+    "definitions": [
+      "n. （外）孙子",
+      "（外）孙女"
+    ],
+    "example": "Their first grandchild was born last month.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "他们的第一个孙辈上个月出生了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "birth",
+    "wordLower": "birth",
+    "level": "junior",
+    "phonetic": "/bɜ:θ/",
+    "definitions": [
+      "n. 出生，分娩",
+      "出身",
+      "起源，根源"
+    ],
+    "example": "The baby weighed three kilos at birth.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "这个婴儿出生时重三千克。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "swim",
+    "wordLower": "swim",
+    "level": "junior",
+    "phonetic": "/swim/",
+    "definitions": [
+      "v. ［swam-swum, swimming］ 游泳",
+      "眩晕",
+      "浸，泡 n. 游泳"
+    ],
+    "example": "We often swim in the lake during summer.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "夏天我们经常在湖里游泳。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "twentieth",
+    "wordLower": "twentieth",
+    "level": "junior",
+    "phonetic": "/ˈtwentiθ/",
+    "definitions": [
+      "num. 第二十（个） n. 二十分之一"
+    ],
+    "example": "May twentieth is our school sports day.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "五月二十日是我们学校的运动会。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "praise",
+    "wordLower": "praise",
+    "level": "junior",
+    "phonetic": "/preiz/",
+    "definitions": [
+      "v. 赞扬，表扬 n. 称赞，赞美",
+      "赞美的话"
+    ],
+    "example": "The teacher praised Lily for her hard work.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "老师表扬了莉莉的努力学习。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "solid",
+    "wordLower": "solid",
+    "level": "junior",
+    "phonetic": "/ˈsɒlid/",
+    "definitions": [
+      "adj. 固体的",
+      "实心的",
+      "结实的，稳固的",
+      "可靠的",
+      "纯质的，纯色的 n. 固体"
+    ],
+    "example": "This table is solid and strong enough.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "这张桌子很结实，也足够坚固。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "husband",
+    "wordLower": "husband",
+    "level": "junior",
+    "phonetic": "/ˈhʌzbənd/",
+    "definitions": [
+      "n. 丈夫"
+    ],
+    "example": "Her husband usually cooks dinner for the family.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "她的丈夫通常为家人做晚饭。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "farm",
+    "wordLower": "farm",
+    "level": "junior",
+    "phonetic": "/fa:m/",
+    "definitions": [
+      "n. 农场",
+      "养殖场 v. 耕作"
+    ],
+    "example": "My grandparents grow vegetables on their farm.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "我的祖父母在他们的农场种蔬菜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "well",
+    "wordLower": "well",
+    "level": "junior",
+    "phonetic": "/wel/",
+    "definitions": [
+      "adj. 好",
+      "妥善地，有利地",
+      "令人满意地",
+      "完全地",
+      "充分地，足够 地",
+      "很，相当"
+    ],
+    "example": "You did very well in the English test.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "你在英语考试中表现得很好。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "thirsty",
+    "wordLower": "thirsty",
+    "level": "junior",
+    "phonetic": "/ˈθɜ:sti/",
+    "definitions": [
+      "adj. 口渴的",
+      "渴望的，渴求的"
+    ],
+    "example": "I felt thirsty after playing basketball outside.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "在外面打完篮球后，我感到口渴。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mess",
+    "wordLower": "mess",
+    "level": "junior",
+    "phonetic": "/mes/",
+    "definitions": [
+      "n. 凌乱的状态，脏乱的状态",
+      "混乱的局面，困境 v. 弄糟，弄脏"
+    ],
+    "example": "Please clean up the mess in your room.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "请把你房间里的脏乱东西收拾干净。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "culture",
+    "wordLower": "culture",
+    "level": "junior",
+    "phonetic": "/ˈkʌltʃə(r)/",
+    "definitions": [
+      "n. 文化",
+      "文明",
+      "教养，教育"
+    ],
+    "example": "Food is an important part of Chinese culture.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "饮食是中国文化的重要组成部分。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "structure",
+    "wordLower": "structure",
+    "level": "junior",
+    "phonetic": "/ˈstrʌktʃə(r)/",
+    "definitions": [
+      "n. 结构，构造",
+      "建筑物 v. 构造，建造"
+    ],
+    "example": "The bridge has a simple but strong structure.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "这座桥的结构简单但坚固。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "meal",
+    "wordLower": "meal",
+    "level": "junior",
+    "phonetic": "/mi:l/",
+    "definitions": [
+      "n. 膳食，一餐，一顿（饭）",
+      "进餐"
+    ],
+    "example": "Breakfast is the first meal of the day.",
+    "list": 24,
+    "source": "local-import",
+    "exampleMeaning": "早餐是一天中的第一顿饭。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

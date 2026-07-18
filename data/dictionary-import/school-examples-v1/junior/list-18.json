@@ -1,0 +1,790 @@
+[
+  {
+    "word": "city",
+    "wordLower": "city",
+    "level": "junior",
+    "phonetic": "/ˈsiti/",
+    "definitions": [
+      "n. 城市，都市"
+    ],
+    "example": "Many young people move to the city for work.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "许多年轻人搬到城市工作。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "stupid",
+    "wordLower": "stupid",
+    "level": "junior",
+    "phonetic": "/ˈstju:pid/",
+    "definitions": [
+      "adj. 愚蠢的，迟钝的",
+      "无聊的",
+      "恼人的"
+    ],
+    "example": "It was stupid to go out without an umbrella.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "不带伞就出门是愚蠢的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "wine",
+    "wordLower": "wine",
+    "level": "junior",
+    "phonetic": "/wain/",
+    "definitions": [
+      "n. （葡萄）酒"
+    ],
+    "example": "Dad added a little wine to the sauce.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "爸爸在酱汁里加了一点葡萄酒。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "guilty",
+    "wordLower": "guilty",
+    "level": "junior",
+    "phonetic": "/ˈgilti/",
+    "definitions": [
+      "adj. 有罪的，犯罪的",
+      "感到惭愧的，内疚的"
+    ],
+    "example": "I felt guilty about breaking my promise.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我因没有遵守诺言而感到内疚。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "shape",
+    "wordLower": "shape",
+    "level": "junior",
+    "phonetic": "/ʃeip/",
+    "definitions": [
+      "n. 形状，体形",
+      "幻象",
+      "状况，状态"
+    ],
+    "example": "The swimming pool is in the shape of a heart.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "这个游泳池是心形的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "dead",
+    "wordLower": "dead",
+    "level": "junior",
+    "phonetic": "/ded/",
+    "definitions": [
+      "adj. 死的",
+      "无感觉的",
+      "呆板的 n. 死者 adj. 完全地",
+      "绝对地"
+    ],
+    "example": "The plant is dead because nobody watered it.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "这株植物因为没人浇水而枯死了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "obey",
+    "wordLower": "obey",
+    "level": "junior",
+    "phonetic": "/əˈbei/",
+    "definitions": [
+      "v. 服从，听从"
+    ],
+    "example": "Students must obey the rules in the library.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "学生必须遵守图书馆的规定。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "almost",
+    "wordLower": "almost",
+    "level": "junior",
+    "phonetic": "/ˈɔ:lməʊst/",
+    "definitions": [
+      "adj. 几乎，差不多"
+    ],
+    "example": "It is almost time for our class to begin.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我们的课差不多要开始了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "seventh",
+    "wordLower": "seventh",
+    "level": "junior",
+    "phonetic": "/ˈsevnθ/",
+    "definitions": [
+      "num. 第七（个） n. 七分之一"
+    ],
+    "example": "Our classroom is on the seventh floor.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我们的教室在七楼。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "chance",
+    "wordLower": "chance",
+    "level": "junior",
+    "phonetic": "/tʃa:ns/",
+    "definitions": [
+      "n. 可能性",
+      "机会，机遇",
+      "偶然的事 v. 碰巧，偶然发生",
+      "偶然看见"
+    ],
+    "example": "This activity gives us a chance to make new friends.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "这项活动给了我们结交新朋友的机会。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "microwave",
+    "wordLower": "microwave",
+    "level": "junior",
+    "phonetic": "/ˈmaikrəweiv/",
+    "definitions": [
+      "n. 微波",
+      "微波炉"
+    ],
+    "example": "You can heat the soup in the microwave.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "你可以用微波炉加热汤。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "doubt",
+    "wordLower": "doubt",
+    "level": "junior",
+    "phonetic": "/daʊt/",
+    "definitions": [
+      "n. 疑惑，怀疑 v. 怀疑，不相信"
+    ],
+    "example": "I doubt that we can finish the work today.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我怀疑我们今天能否完成这项工作。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "master",
+    "wordLower": "master",
+    "level": "junior",
+    "phonetic": "/ˈma:stə(r)/",
+    "definitions": [
+      "n. （男）主人，雇主",
+      "能手",
+      "名家，大师 v. 掌握，精通",
+      "征服 adj. 主要的，最重要的"
+    ],
+    "example": "She worked hard to master the new language.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "她努力学习以掌握这门新语言。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cheer",
+    "wordLower": "cheer",
+    "level": "junior",
+    "phonetic": "/tʃiə(r)/",
+    "definitions": [
+      "v. 使振奋，使高兴",
+      "为…欢呼，为…喝彩 n. 欢呼，喝彩"
+    ],
+    "example": "Our classmates came to cheer for the school team.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我们的同学来为校队加油。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "oak",
+    "wordLower": "oak",
+    "level": "junior",
+    "phonetic": "/əʊk/",
+    "definitions": [
+      "n. 橡树",
+      "橡木"
+    ],
+    "example": "We sat under a tall oak during lunch.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "午饭时，我们坐在一棵高大的橡树下。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "spot",
+    "wordLower": "spot",
+    "level": "junior",
+    "phonetic": "/spɒt/",
+    "definitions": [
+      "n. 地点，处所",
+      "斑点，污点",
+      "少量"
+    ],
+    "example": "This quiet park is a good spot for a picnic.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "这个安静的公园是野餐的好地方。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "taste",
+    "wordLower": "taste",
+    "level": "junior",
+    "phonetic": "/teist/",
+    "definitions": [
+      "n. 滋味",
+      "味觉，口味",
+      "鉴赏力",
+      "兴趣，爱好 v. 有…味道",
+      "品尝",
+      "体 验，感受"
+    ],
+    "example": "Taste the soup and tell me what you think.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "尝尝这汤，然后告诉我你的看法。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "circle",
+    "wordLower": "circle",
+    "level": "junior",
+    "phonetic": "/ˈsɜ:kl/",
+    "definitions": [
+      "n. 圆，圆"
+    ],
+    "example": "The children sat in a circle on the floor.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "孩子们围成一圈坐在地板上。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "medium",
+    "wordLower": "medium",
+    "level": "junior",
+    "phonetic": "/ˈmi:diəm/",
+    "definitions": [
+      "adj. 中等的",
+      "平均的 n. 媒介，工具",
+      "手段，方法"
+    ],
+    "example": "She ordered a medium bowl of noodles.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "她点了一碗中份面条。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "greet",
+    "wordLower": "greet",
+    "level": "junior",
+    "phonetic": "/gri:t/",
+    "definitions": [
+      "v. 问候，迎接",
+      "对…作出反应"
+    ],
+    "example": "Students greet their teachers every morning.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "学生们每天早上向老师问好。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "dangerous",
+    "wordLower": "dangerous",
+    "level": "junior",
+    "phonetic": "/ˈdeindʒərəs/",
+    "definitions": [
+      "adj. 危险的，不安全的"
+    ],
+    "example": "It is dangerous to swim here alone.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "独自在这里游泳很危险。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "perfect",
+    "wordLower": "perfect",
+    "level": "junior",
+    "phonetic": "/ˈpɜ:fikt/",
+    "definitions": [
+      "adj. 完美的，无瑕的",
+      "完全的，十足的",
+      "最佳的，理想的"
+    ],
+    "example": "This park is perfect for a family picnic.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "这个公园是家庭野餐的理想场所。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lion",
+    "wordLower": "lion",
+    "level": "junior",
+    "phonetic": "/ˈlaiən/",
+    "definitions": [
+      "n. 狮子"
+    ],
+    "example": "The lion rested quietly under a tree.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "那头狮子静静地在树下休息。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "coffee",
+    "wordLower": "coffee",
+    "level": "junior",
+    "phonetic": "/ˈkɒfi/",
+    "definitions": [
+      "n. 咖啡，咖啡豆",
+      "咖啡树",
+      "咖啡色"
+    ],
+    "example": "My father drinks a cup of coffee each morning.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我爸爸每天早上喝一杯咖啡。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "thing",
+    "wordLower": "thing",
+    "level": "junior",
+    "phonetic": "/θiŋ/",
+    "definitions": [
+      "n. 事，事情，事件",
+      "物，东西",
+      "局面，情况，事态",
+      "所有物，用品"
+    ],
+    "example": "Please put that thing back on the desk.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "请把那个东西放回书桌上。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "go",
+    "wordLower": "go",
+    "level": "junior",
+    "phonetic": "/gəʊ/",
+    "definitions": [
+      "v. ［went-gone］ 去",
+      "离开",
+      "变得，成为",
+      "运转，运行",
+      "被放置",
+      "伸展",
+      "通往"
+    ],
+    "example": "I go to school by bus every day.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我每天乘公共汽车去上学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "experience",
+    "wordLower": "experience",
+    "level": "junior",
+    "phonetic": "/ikˈspiəriəns/",
+    "definitions": [
+      "n. 经历，阅历",
+      "经验，体验 v. 经历，体验，感受"
+    ],
+    "example": "Visiting the farm was a fun experience.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "参观农场是一次有趣的经历。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fry",
+    "wordLower": "fry",
+    "level": "junior",
+    "phonetic": "/frai/",
+    "definitions": [
+      "v. 油煎，油炸"
+    ],
+    "example": "Fry the eggs for two minutes on each side.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "把鸡蛋每面煎两分钟。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "transportation",
+    "wordLower": "transportation",
+    "level": "junior",
+    "phonetic": "/ˌtrænspɔ:ˈteiʃn/",
+    "definitions": [
+      "n. 运输，运输系统",
+      "运输工具"
+    ],
+    "example": "Buses are an important form of public transportation.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "公共汽车是一种重要的公共交通工具。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "serve",
+    "wordLower": "serve",
+    "level": "junior",
+    "phonetic": "/sɜ:v/",
+    "definitions": [
+      "v. 为…服务",
+      "任（职）",
+      "招待，接待，伺候",
+      "符合，适用于，满 足",
+      "供应",
+      "发（球）"
+    ],
+    "example": "They serve fresh fruit with every meal.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "他们每餐都供应新鲜水果。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "avenue",
+    "wordLower": "avenue",
+    "level": "junior",
+    "phonetic": "/ˈævənju:/",
+    "definitions": [
+      "n. 林荫道",
+      "道路，大街"
+    ],
+    "example": "Their school is on a wide avenue.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "他们的学校位于一条宽阔的大街上。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "weak",
+    "wordLower": "weak",
+    "level": "junior",
+    "phonetic": "/wi:k/",
+    "definitions": [
+      "adj. 虚弱的，无力的",
+      "（能力等）弱的，差的",
+      "微弱的，稀薄的"
+    ],
+    "example": "He still felt weak after being ill.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "他生病后仍然感到虚弱。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fish",
+    "wordLower": "fish",
+    "level": "junior",
+    "phonetic": "/fiʃ/",
+    "definitions": [
+      "n. 鱼 v. 钓（鱼），捕（鱼）"
+    ],
+    "example": "We saw many colorful fish in the lake.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我们在湖里看到了许多色彩鲜艳的鱼。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "rapid",
+    "wordLower": "rapid",
+    "level": "junior",
+    "phonetic": "/ˈræpid/",
+    "definitions": [
+      "adj. 迅速的，快的"
+    ],
+    "example": "The rapid rise in temperature surprised us.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "气温的迅速上升使我们感到惊讶。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "ride",
+    "wordLower": "ride",
+    "level": "junior",
+    "phonetic": "/raid/",
+    "definitions": [
+      "v. 骑（马）",
+      "乘（车）"
+    ],
+    "example": "She rides the bus to school each morning.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "她每天早上乘公共汽车上学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "meaning",
+    "wordLower": "meaning",
+    "level": "junior",
+    "phonetic": "/ˈmi:niŋ/",
+    "definitions": [
+      "n. 意思，含义",
+      "意义"
+    ],
+    "example": "Do you know the meaning of this word?",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "你知道这个单词的意思吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "everyone",
+    "wordLower": "everyone",
+    "level": "junior",
+    "phonetic": "/ˈevriwʌn/",
+    "definitions": [
+      "pron. 每人，人人，各人"
+    ],
+    "example": "Everyone enjoyed the school trip last Friday.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "每个人都很喜欢上周五的学校旅行。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "moment",
+    "wordLower": "moment",
+    "level": "junior",
+    "phonetic": "/ˈməʊmənt/",
+    "definitions": [
+      "n. 片刻，瞬间，时刻",
+      "机会，时机"
+    ],
+    "example": "This is the perfect moment to ask for help.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "这是寻求帮助的最佳时机。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bathroom",
+    "wordLower": "bathroom",
+    "level": "junior",
+    "phonetic": "/ˈba:θru:m/",
+    "definitions": [
+      "n. 浴室",
+      "盥洗室"
+    ],
+    "example": "She is washing her hands in the bathroom.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "她正在盥洗室里洗手。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "ancient",
+    "wordLower": "ancient",
+    "level": "junior",
+    "phonetic": "/ˈeinʃənt/",
+    "definitions": [
+      "adj. 古代的，古老的",
+      "年老的，看上去很老的"
+    ],
+    "example": "We learned about ancient China in history class.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我们在历史课上了解了古代中国。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "park",
+    "wordLower": "park",
+    "level": "junior",
+    "phonetic": "/pa:k/",
+    "definitions": [
+      "n. 公园",
+      "停车场 v. 停放（车辆等）"
+    ],
+    "example": "You can park your bicycle beside the school gate.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "你可以把自行车停在校门旁边。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "near",
+    "wordLower": "near",
+    "level": "junior",
+    "phonetic": "/niə(r)/",
+    "definitions": [
+      "adj. 近，在近处 prep. 靠近，接近 adj. 近的，接近的",
+      "亲近的"
+    ],
+    "example": "Our new home is near the train station.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我们的新家靠近火车站。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "refrigerator",
+    "wordLower": "refrigerator",
+    "level": "junior",
+    "phonetic": "/riˈfridʒəreitə(r)/",
+    "definitions": [
+      "n. 电冰箱"
+    ],
+    "example": "There is some fresh milk in the refrigerator.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "冰箱里有一些鲜牛奶。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "skate",
+    "wordLower": "skate",
+    "level": "junior",
+    "phonetic": "/skeit/",
+    "definitions": [
+      "n. 冰鞋 v. 溜冰，滑冰"
+    ],
+    "example": "We often skate on the lake in winter.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我们冬天经常在湖面上滑冰。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sure",
+    "wordLower": "sure",
+    "level": "junior",
+    "phonetic": "/ʃʊə(r)/",
+    "definitions": [
+      "adj. 肯定的，有把握的",
+      "一定的，必然的",
+      "可靠的，稳妥的 adj. 确 实",
+      "当然"
+    ],
+    "example": "I am sure that my answer is correct.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我确信我的答案是正确的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cry",
+    "wordLower": "cry",
+    "level": "junior",
+    "phonetic": "/krai/",
+    "definitions": [
+      "v. 哭，哭泣",
+      "叫喊，鸣，叫",
+      "大声地说 n. 哭",
+      "哭声",
+      "叫喊",
+      "叫声"
+    ],
+    "example": "The little boy began to cry after falling down.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "那个小男孩摔倒后哭了起来。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "first",
+    "wordLower": "first",
+    "level": "junior",
+    "phonetic": "/fɜ:st/",
+    "definitions": [
+      "num. 第一 adj. 最先的，最早的 adj. 先，在首位",
+      "第一次，首次"
+    ],
+    "example": "She cooked dinner by herself for the first time.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "她第一次独自做了晚饭。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "among",
+    "wordLower": "among",
+    "level": "junior",
+    "phonetic": "/əˈmʌŋ/",
+    "definitions": [
+      "prep. 在…之中，在…之间"
+    ],
+    "example": "Lucy is the tallest student among the five girls.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "露西是这五个女孩中最高的学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "conjunction",
+    "wordLower": "conjunction",
+    "level": "junior",
+    "phonetic": "/kənˈdʒʌŋkʃn/",
+    "definitions": [
+      "n. 联合",
+      "连词"
+    ],
+    "example": "And is a conjunction that joins words or sentences.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "and是一个连接单词或句子的连词。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "carry",
+    "wordLower": "carry",
+    "level": "junior",
+    "phonetic": "/ˈkæri/",
+    "definitions": [
+      "v. 提，挑，背",
+      "运送，运载",
+      "输送，传送，传播",
+      "携带，怀着",
+      "支 撑"
+    ],
+    "example": "Please carry these books to the classroom.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "请把这些书搬到教室。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "office",
+    "wordLower": "office",
+    "level": "junior",
+    "phonetic": "/ˈɒfis/",
+    "definitions": [
+      "n. 办公室，办事处，营业所",
+      "处，所，局",
+      "公职，官职，职责",
+      "帮 忙，服务"
+    ],
+    "example": "Our teachers are having a meeting in the office.",
+    "list": 18,
+    "source": "local-import",
+    "exampleMeaning": "我们的老师正在办公室开会。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

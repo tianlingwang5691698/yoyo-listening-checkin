@@ -68,12 +68,16 @@ Object.assign(module.exports.flashcards.en, {
 });
 Object.assign(module.exports.flashcards['zh-CN'], { unlockSecondBook: 'Unlock 第二版词汇书', unlockThirdBook: 'Unlock 第三版词汇书' });
 Object.assign(module.exports.flashcards.en, { unlockSecondBook: 'Unlock Second Edition', unlockThirdBook: 'Unlock Third Edition' });
+Object.assign(module.exports.flashcards['zh-CN'], { ieltsBook: '雅思词汇 乱序', ieltsMark: '雅' });
+Object.assign(module.exports.flashcards.en, { ieltsBook: 'IELTS Vocabulary', ieltsMark: 'I' });
 Object.assign(module.exports.flashcards['zh-CN'], { practiceHomeTitle: '词汇练习', practiceHomeCopy: '选择背诵或听写练习', reviewFolderTitle: '单词背诵', reviewFolderCopy: '我的词库与分级词汇书', dictationPracticeTitle: '听音拼写练习', dictationPracticeCopy: '从已背单词中选择听写', libraryTitle: '单词背诵', libraryCopy: '选择词库或词汇书继续背诵' });
 Object.assign(module.exports.flashcards.en, { practiceHomeTitle: 'Vocabulary Practice', practiceHomeCopy: 'Choose review or listening dictation', reviewFolderTitle: 'Word Review', reviewFolderCopy: 'My Vocabulary and graded word books', dictationPracticeTitle: 'Listen & Spell Practice', dictationPracticeCopy: 'Dictation from words already learned', libraryTitle: 'Word Review', libraryCopy: 'Choose a vocabulary set or word book' });
 Object.assign(module.exports.vocabularyDictation['zh-CN'], { total: '总数', accuracy: '正确率' });
 Object.assign(module.exports.vocabularyDictation.en, { total: 'Total', accuracy: 'Accuracy' });
 Object.assign(module.exports.vocabularyDictation['zh-CN'], { unlockSecondBook: 'Unlock 第二版词汇书', unlockThirdBook: 'Unlock 第三版词汇书' });
 Object.assign(module.exports.vocabularyDictation.en, { unlockSecondBook: 'Unlock Second Edition', unlockThirdBook: 'Unlock Third Edition' });
+Object.assign(module.exports.vocabularyDictation['zh-CN'], { ieltsBookShort: '雅思词汇书', ieltsMark: '雅' });
+Object.assign(module.exports.vocabularyDictation.en, { ieltsBookShort: 'IELTS Vocabulary', ieltsMark: 'I' });
 Object.assign(module.exports.practiceHistory['zh-CN'], { readingMeta: '阅读', grammarMeta: '语法', writingMeta: '写作' });
 Object.assign(module.exports.practiceHistory.en, { readingMeta: 'Reading', grammarMeta: 'Grammar', writingMeta: 'Writing' });
 Object.assign(module.exports.practiceHistory['zh-CN'], { microLesson: '词法微课', microLessonCompleted: '完成 1 节微课' });

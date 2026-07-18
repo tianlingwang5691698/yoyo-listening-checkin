@@ -58,6 +58,7 @@ def read_csv(path, level):
                 "phonetic": clean_phonetic(row.get("phonetic")),
                 "definitions": definitions,
                 "example": str(row.get("example") or "").strip(),
+                "list": int(row.get("list") or 0),
                 "source": "local-import"
             })
     return rows
@@ -108,12 +109,17 @@ def main():
 
     level_counts = {}
     for level, level_entries in entries_by_level.items():
-        rows = sorted(level_entries.values(), key=lambda x: x["wordLower"])
+        rows = list(level_entries.values())
         for item in rows:
             item.pop("levelRank", None)
             item["phonetic"] = display_phonetic(item.get("phonetic"))
         level_counts[level] = len(rows)
         (OUTPUT / f"word-dictionary-{level}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+        for list_number in sorted({item["list"] for item in rows if item.get("list")}):
+            list_rows = [item for item in rows if item.get("list") == list_number]
+            list_dir = OUTPUT / level
+            list_dir.mkdir(parents=True, exist_ok=True)
+            (list_dir / f"list-{list_number}.json").write_text(json.dumps(list_rows, ensure_ascii=False, indent=2), encoding="utf-8")
     legacy_dictionary = OUTPUT / "word-dictionary.json"
     if legacy_dictionary.exists():
         legacy_dictionary.unlink()

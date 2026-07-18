@@ -1,0 +1,828 @@
+[
+  {
+    "word": "today",
+    "wordLower": "today",
+    "level": "junior",
+    "phonetic": "/təˈdei/",
+    "definitions": [
+      "adj. / n. 今天",
+      "现今"
+    ],
+    "example": "We have an English test today.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们今天有一场英语考试。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "family",
+    "wordLower": "family",
+    "level": "junior",
+    "phonetic": "/ˈfæməli/",
+    "definitions": [
+      "n. 家",
+      "家庭成员",
+      "子女",
+      "家族，氏族"
+    ],
+    "example": "My family often eats dinner together.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我的家人经常一起吃晚饭。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lunch",
+    "wordLower": "lunch",
+    "level": "junior",
+    "phonetic": "/lʌntʃ/",
+    "definitions": [
+      "n. 午餐"
+    ],
+    "example": "We usually have lunch in the school dining hall.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们通常在学校食堂吃午餐。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "gentleman",
+    "wordLower": "gentleman",
+    "level": "junior",
+    "phonetic": "/ˈdʒentlmən/",
+    "definitions": [
+      "n. 有教养的人，彬彬有礼的人",
+      "先生，男士"
+    ],
+    "example": "The gentleman held the door open for us.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "那位先生为我们扶着门。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "himself",
+    "wordLower": "himself",
+    "level": "junior",
+    "phonetic": "/himˈself/",
+    "definitions": [
+      "pron. 他自己",
+      "他亲自，他本人"
+    ],
+    "example": "Tom made the model plane by himself.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "汤姆独自制作了这架飞机模型。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "who",
+    "wordLower": "who",
+    "level": "junior",
+    "phonetic": "/hu:/",
+    "definitions": [
+      "pron. 谁，什么人",
+      "…的人",
+      "他，她，他们"
+    ],
+    "example": "Who is standing beside our new teacher?",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "谁正站在我们的新老师旁边？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sand",
+    "wordLower": "sand",
+    "level": "junior",
+    "phonetic": "/sænd/",
+    "definitions": [
+      "n. 沙",
+      "［pl.］ 沙滩，沙地 v. 用砂纸磨光"
+    ],
+    "example": "The children built a castle in the sand.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "孩子们在沙地上建了一座城堡。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "accessory",
+    "wordLower": "accessory",
+    "level": "junior",
+    "phonetic": "/əkˈsesəri/",
+    "definitions": [
+      "n. 附件，零件，配件",
+      "（妇女手提包之类的）装饰品"
+    ],
+    "example": "This small light is a useful bicycle accessory.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "这盏小灯是一个实用的自行车配件。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fit",
+    "wordLower": "fit",
+    "level": "junior",
+    "phonetic": "/fit/",
+    "definitions": [
+      "v. ［fitted/fit-fitted/fit, fitting］ 合适，合身",
+      "安装，安放",
+      "相称， 相协调 adj. 相称的，适合的",
+      "健康的，强健的"
+    ],
+    "example": "These shoes fit me very well.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "这双鞋我穿着非常合脚。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "character",
+    "wordLower": "character",
+    "level": "junior",
+    "phonetic": "/ˈkærəktə(r)/",
+    "definitions": [
+      "n. 性格",
+      "特色，特性",
+      "人物，角色",
+      "（书写或印刷）符号，（汉） 字"
+    ],
+    "example": "My favorite character in the story is the brave girl.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "这个故事中我最喜欢的角色是那个勇敢的女孩。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "study",
+    "wordLower": "study",
+    "level": "junior",
+    "phonetic": "/ˈstʌdi/",
+    "definitions": [
+      "v. 学习",
+      "研究，调查",
+      "细察，仔细端详 n. 学习",
+      "研究，调查，研究 成果",
+      "书房"
+    ],
+    "example": "We study English at school every day.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们每天在学校学习英语。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "disabled",
+    "wordLower": "disabled",
+    "level": "junior",
+    "phonetic": "/disˈeibld/",
+    "definitions": [
+      "adj. 有残疾的"
+    ],
+    "example": "The school has ramps for disabled students.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "学校为残疾学生修建了坡道。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "turn",
+    "wordLower": "turn",
+    "level": "junior",
+    "phonetic": "/tɜ:n/",
+    "definitions": [
+      "v. 转动，旋转",
+      "扭转，（使）转向",
+      "（使）变化，（使）变成"
+    ],
+    "example": "The leaves turn yellow in autumn.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "树叶在秋天变黄。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "expect",
+    "wordLower": "expect",
+    "level": "junior",
+    "phonetic": "/ikˈspekt/",
+    "definitions": [
+      "v. 预期",
+      "指望，盼望",
+      "要求"
+    ],
+    "example": "We expect the bus to arrive soon.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们预计公共汽车很快就会到达。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pair",
+    "wordLower": "pair",
+    "level": "junior",
+    "phonetic": "/peə(r)/",
+    "definitions": [
+      "n. 一双，一对，一副",
+      "一对夫妇，一对情侣 v. （使）成对，（使） 配对"
+    ],
+    "example": "I bought a new pair of sports shoes.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我买了一双新运动鞋。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "keen",
+    "wordLower": "keen",
+    "level": "junior",
+    "phonetic": "/ki:n/",
+    "definitions": [
+      "adj. 热心的",
+      "激烈的",
+      "敏锐的"
+    ],
+    "example": "She is keen to join the school art club.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "她很想加入学校美术社团。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "video",
+    "wordLower": "video",
+    "level": "junior",
+    "phonetic": "/ˈvidiəʊ/",
+    "definitions": [
+      "n. 录像",
+      "录像带 adj. 录像的 v. 制作…的录像"
+    ],
+    "example": "We watched a short video about sea animals.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们观看了一段关于海洋动物的短视频。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "semester",
+    "wordLower": "semester",
+    "level": "junior",
+    "phonetic": "/siˈmestə(r)/",
+    "definitions": [
+      "n. 学期"
+    ],
+    "example": "We have five new subjects this semester.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "这学期我们有五门新课程。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "just",
+    "wordLower": "just",
+    "level": "junior",
+    "phonetic": "/dʒʌst/",
+    "definitions": [
+      "adj. 正好，恰恰正是",
+      "只是，仅仅",
+      "刚才",
+      "确实，真正地",
+      "非常",
+      "勉强地"
+    ],
+    "example": "I have just finished my homework.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我刚刚完成了家庭作业。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "theme",
+    "wordLower": "theme",
+    "level": "junior",
+    "phonetic": "/θi:m/",
+    "definitions": [
+      "n. 主题，题目"
+    ],
+    "example": "Friendship is the main theme of the story.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "友谊是这个故事的主题。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tomorrow",
+    "wordLower": "tomorrow",
+    "level": "junior",
+    "phonetic": "/təˈmɒrəʊ/",
+    "definitions": [
+      "adj. （在）明天 n. 明天",
+      "来日，未来"
+    ],
+    "example": "We will visit the science museum tomorrow.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们明天将参观科学博物馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "boil",
+    "wordLower": "boil",
+    "level": "junior",
+    "phonetic": "/bɔil/",
+    "definitions": [
+      "v. 沸腾，煮沸 n. 沸腾"
+    ],
+    "example": "Boil the water before making tea.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "泡茶前先把水烧开。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "noodle",
+    "wordLower": "noodle",
+    "level": "junior",
+    "phonetic": "/ˈnu:dl/",
+    "definitions": [
+      "n. 面条"
+    ],
+    "example": "My mother cooked noodles for lunch.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我妈妈午饭做了面条。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "beat",
+    "wordLower": "beat",
+    "level": "junior",
+    "phonetic": "/bi:t/",
+    "definitions": [
+      "v. ［beat-beaten］ （接连地）打，击，敲",
+      "打败，胜过",
+      "（心脏 等）跳动"
+    ],
+    "example": "Our school team beat them in the final game.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们校队在决赛中打败了他们。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lifestyle",
+    "wordLower": "lifestyle",
+    "level": "junior",
+    "phonetic": "/ˈlaifstail/",
+    "definitions": [
+      "n. 生活方式"
+    ],
+    "example": "Regular exercise is part of a healthy lifestyle.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼是健康生活方式的一部分。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pop",
+    "wordLower": "pop",
+    "level": "junior",
+    "phonetic": "/pɒp/",
+    "definitions": [
+      "v. ［popped-popped, popping］ 发出砰的一声",
+      "射击",
+      "（突然）冒 出 n. 流行音乐",
+      "砰的一声 adj. 流行的，通俗的"
+    ],
+    "example": "My sister enjoys listening to pop music.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我姐姐喜欢听流行音乐。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "leaf",
+    "wordLower": "leaf",
+    "level": "junior",
+    "phonetic": "/li:f/",
+    "definitions": [
+      "n. 叶，叶子",
+      "（书刊的）张，页",
+      "薄金属片"
+    ],
+    "example": "A green leaf fell from the tree.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "一片绿叶从树上落了下来。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "right",
+    "wordLower": "right",
+    "level": "junior",
+    "phonetic": "/rait/",
+    "definitions": [
+      "adj. 正确的",
+      "正当的，公正的",
+      "右边的",
+      "合适的",
+      "健康的，正常 的",
+      "直（角）的"
+    ],
+    "example": "Your answer to this question is right.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "你对这道题的回答是正确的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "excellent",
+    "wordLower": "excellent",
+    "level": "junior",
+    "phonetic": "/ˈeksələnt/",
+    "definitions": [
+      "adj. 优秀的，卓越的，杰出的"
+    ],
+    "example": "She did an excellent job on the school project.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "她出色地完成了学校项目。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "heat",
+    "wordLower": "heat",
+    "level": "junior",
+    "phonetic": "/hi:t/",
+    "definitions": [
+      "n. 热，炎热",
+      "体温，热度",
+      "激动",
+      "激烈 v. 加热，（使）变热"
+    ],
+    "example": "The heat from the fire kept us warm.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "火的热量使我们保持温暖。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "society",
+    "wordLower": "society",
+    "level": "junior",
+    "phonetic": "/səˈsaiəti/",
+    "definitions": [
+      "n. 社会",
+      "阶层",
+      "社交界",
+      "社团",
+      "协会"
+    ],
+    "example": "Everyone can help make society a better place.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "每个人都能帮助社会变得更美好。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "polite",
+    "wordLower": "polite",
+    "level": "junior",
+    "phonetic": "/pəˈlait/",
+    "definitions": [
+      "adj. 有礼貌的，客气的",
+      "有教养的，文雅的"
+    ],
+    "example": "It is polite to say thank you.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "说谢谢是有礼貌的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "shop",
+    "wordLower": "shop",
+    "level": "junior",
+    "phonetic": "/ʃɒp/",
+    "definitions": [
+      "n. 商店，店铺",
+      "工厂，车间"
+    ],
+    "example": "The shop sells fruit, bread, and milk.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "这家商店出售水果、面包和牛奶。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "chip",
+    "wordLower": "chip",
+    "level": "junior",
+    "phonetic": "/tʃip/",
+    "definitions": [
+      "n. 碎片",
+      "芯片 v. 削（或凿）下（屑片或碎片）"
+    ],
+    "example": "This tiny chip stores a lot of information.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "这枚小小的芯片储存了大量信息。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "letter",
+    "wordLower": "letter",
+    "level": "junior",
+    "phonetic": "/ˈletə(r)/",
+    "definitions": [
+      "n. 信，函件",
+      "字母"
+    ],
+    "example": "Please write your name in capital letters.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "请用大写字母写你的名字。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "start",
+    "wordLower": "start",
+    "level": "junior",
+    "phonetic": "/sta:t/",
+    "definitions": [
+      "v. 发动",
+      "创办，开办",
+      "开始，着手",
+      "动身，出发",
+      "吃惊，惊奇"
+    ],
+    "example": "The school bus starts at seven every morning.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "校车每天早上七点发动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "resolution",
+    "wordLower": "resolution",
+    "level": "junior",
+    "phonetic": "/ˌrezəˈlu:ʃn/",
+    "definitions": [
+      "n. 正式决定，决议",
+      "坚决，决心",
+      "解决，解答",
+      "分辨率，清晰度"
+    ],
+    "example": "My New Year resolution is to exercise every day.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我的新年决心是每天锻炼。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "predict",
+    "wordLower": "predict",
+    "level": "junior",
+    "phonetic": "/priˈdikt/",
+    "definitions": [
+      "v. 预言，预测"
+    ],
+    "example": "Scientists predict that tomorrow will be warmer.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "科学家预测明天会更暖和。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "date",
+    "wordLower": "date",
+    "level": "junior",
+    "phonetic": "/deit/",
+    "definitions": [
+      "n. 日期，日子",
+      "时期，年代",
+      "约会，约会的对象",
+      "枣"
+    ],
+    "example": "Please write the date at the top of the page.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "请在页面顶部写上日期。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "although",
+    "wordLower": "although",
+    "level": "junior",
+    "phonetic": "/ɔ:lˈðəʊ/",
+    "definitions": [
+      "conj. 虽然，尽管",
+      "然而"
+    ],
+    "example": "Although it was raining, we still played outside.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "尽管下着雨，我们仍然在外面玩。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "unusual",
+    "wordLower": "unusual",
+    "level": "junior",
+    "phonetic": "/ʌnˈju:ʒuəl/",
+    "definitions": [
+      "adj. 不平常的，少有的",
+      "独特的，与众不同的"
+    ],
+    "example": "It is unusual to see snow here in May.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "五月在这里看到雪是很少见的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "answer",
+    "wordLower": "answer",
+    "level": "junior",
+    "phonetic": "/ˈa:nsə(r)/",
+    "definitions": [
+      "n."
+    ],
+    "example": "I finally found the answer to the math problem.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我终于找到了这道数学题的答案。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "true",
+    "wordLower": "true",
+    "level": "junior",
+    "phonetic": "/tru:/",
+    "definitions": [
+      "adj. 真实的，确实的",
+      "真正的，真的",
+      "忠诚的，忠实的",
+      "准确的， 精确的"
+    ],
+    "example": "The story is based on a true event.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "这个故事以一个真实事件为基础。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "porridge",
+    "wordLower": "porridge",
+    "level": "junior",
+    "phonetic": "/ˈpɒridʒ/",
+    "definitions": [
+      "n. 粥，麦片粥"
+    ],
+    "example": "I usually have porridge and eggs for breakfast.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我早餐通常吃粥和鸡蛋。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "style",
+    "wordLower": "style",
+    "level": "junior",
+    "phonetic": "/stail/",
+    "definitions": [
+      "n. 风格，文体",
+      "式样，类型",
+      "流行式样，时尚"
+    ],
+    "example": "Her simple writing style is easy to understand.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "她简洁的写作风格很容易理解。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "flat",
+    "wordLower": "flat",
+    "level": "junior",
+    "phonetic": "/flæt/",
+    "definitions": [
+      "adj. 平的，平坦的",
+      "（价格）固定的，（收费）统一的",
+      "单调的， 沉闷的",
+      "扁平的，浅的 n. 一套房间，公寓套房 adj. 平直地",
+      "直截了当 地，断然地"
+    ],
+    "example": "My aunt lives in a small flat near school.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我姑姑住在学校附近的一套小公寓里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "ruler",
+    "wordLower": "ruler",
+    "level": "junior",
+    "phonetic": "/ˈru:lə(r)/",
+    "definitions": [
+      "n. 统治者，支配者",
+      "（直）尺"
+    ],
+    "example": "Use a ruler to draw a straight line.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "用尺子画一条直线。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cousin",
+    "wordLower": "cousin",
+    "level": "junior",
+    "phonetic": "/ˈkʌzn/",
+    "definitions": [
+      "n. 堂（表）兄弟，堂（表）姐妹"
+    ],
+    "example": "My cousin and I attend the same school.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我和我的堂（表）兄弟（姐妹）在同一所学校上学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "dumpling",
+    "wordLower": "dumpling",
+    "level": "junior",
+    "phonetic": "/ˈdʌmpliŋ/",
+    "definitions": [
+      "n. 饺子"
+    ],
+    "example": "We made dumplings together for the family dinner.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们一起为家庭聚餐包了饺子。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sock",
+    "wordLower": "sock",
+    "level": "junior",
+    "phonetic": "/sɒk/",
+    "definitions": [
+      "v. 重击，痛打 n. ［pl.］ 短袜"
+    ],
+    "example": "I need a clean pair of socks.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我需要一双干净的短袜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "manage",
+    "wordLower": "manage",
+    "level": "junior",
+    "phonetic": "/ˈmænidʒ/",
+    "definitions": [
+      "v. 管理，控制",
+      "操纵，应付",
+      "设法做到"
+    ],
+    "example": "She managed to finish her homework before dinner.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "她设法在晚饭前完成了家庭作业。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "traditional",
+    "wordLower": "traditional",
+    "level": "junior",
+    "phonetic": "/trəˈdiʃənl/",
+    "definitions": [
+      "adj. 传统的，惯例的",
+      "口传的，传说的"
+    ],
+    "example": "We eat traditional food during the Spring Festival.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "我们在春节期间吃传统食物。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "then",
+    "wordLower": "then",
+    "level": "junior",
+    "phonetic": "/ðen/",
+    "definitions": [
+      "n. / adj. 当时，在那时",
+      "那么，因而",
+      "然后，于是"
+    ],
+    "example": "Finish your homework, and then you can play.",
+    "list": 11,
+    "source": "local-import",
+    "exampleMeaning": "完成家庭作业，然后你就可以玩了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

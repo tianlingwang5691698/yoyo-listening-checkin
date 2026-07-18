@@ -23,6 +23,7 @@ function sourceItems(texts) {
   return [
     { key: 'junior', mark: texts.juniorMark || '初', title: texts.juniorBookShort, meta: texts.randomWords },
     { key: 'senior', mark: texts.seniorMark || '高', title: texts.seniorBookShort, meta: texts.randomWords },
+    { key: 'ielts', mark: texts.ieltsMark || '雅', title: texts.ieltsBookShort, meta: texts.randomWords },
     { key: 'unlock-v2', mark: 'U2', title: texts.unlockSecondBook || 'Unlock 第二版词汇书', meta: 'Level 1–4 · Unit 1–8' },
     { key: 'unlock-v3', mark: 'U3', title: texts.unlockThirdBook || 'Unlock 第三版词汇书', meta: 'Level 1–4 · Unit 1–8' }
   ];
@@ -45,12 +46,19 @@ function unitItems() {
   return [1, 2, 3, 4, 5, 6, 7, 8].map((unit) => ({ key: String(unit), mark: `U${unit}`, title: `Unit ${unit}`, meta: 'LS / RW' }));
 }
 
+function standardListItems(stage) {
+  const count = stage === 'junior' ? 32 : (stage === 'senior' ? 40 : 48);
+  const titles = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, ielts: getTexts().ieltsBookShort };
+  return Array.from({ length: count }, (_, index) => ({ key: String(index + 1), mark: `L${index + 1}`, title: `List ${index + 1}`, meta: titles[stage] }));
+}
+
 Page({
   data: page.createCloudPageData({
     stage: 'sources',
     unlockEdition: 'v2',
     unlockLevel: 0,
     unlockUnit: 0,
+    standardStage: '',
     title: '',
     subtitle: '',
     items: [],
@@ -64,7 +72,7 @@ Page({
     this.perf = page.startPagePerf('vocabulary-dictation-library');
     page.syncTheme(this);
     const texts = getTexts();
-    this.setData(Object.assign({}, getNavLayout(), { title: texts.shelfTitle, subtitle: texts.shelfCopy, items: sourceItems(texts) }), () => this.perf.ready('pageReady', { stage: 'sources', total: 4, cacheHit: true }));
+    this.setData(Object.assign({}, getNavLayout(), { title: texts.shelfTitle, subtitle: texts.shelfCopy, items: sourceItems(texts) }), () => this.perf.ready('pageReady', { stage: 'sources', total: 5, cacheHit: true }));
     this.loadCounts();
   },
   onShow() {
@@ -73,6 +81,10 @@ Page({
     this.localizeCurrentStage();
   },
   handleBack() {
+    if (this.data.stage === 'standard-lists') {
+      this.showSources();
+      return;
+    }
     if (this.data.stage === 'sections') {
       this.showUnits(this.data.unlockLevel);
       return;
@@ -91,7 +103,12 @@ Page({
     const key = String(event.currentTarget.dataset.key || '');
     if (this.data.stage === 'sources') {
       if (key === 'unlock-v2' || key === 'unlock-v3') this.showLevels(key === 'unlock-v3' ? 'v3' : 'v2');
-      else this.openBook(key, key === 'junior' ? getTexts().juniorBookShort : getTexts().seniorBookShort);
+      else this.showStandardLists(key);
+      return;
+    }
+    if (this.data.stage === 'standard-lists') {
+      const title = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, ielts: getTexts().ieltsBookShort }[this.data.standardStage];
+      this.openBook(`${this.data.standardStage}-list-${key}`, `${title} · List ${key}`);
       return;
     }
     if (this.data.stage === 'levels') {
@@ -118,7 +135,7 @@ Page({
     this.sourceCounts = result.counts || {};
     this.setData({ countsLoaded: true, debugLines: [], items: this.withCounts(this.data.items, this.data.stage) });
   },
-  withCounts(items, stage) {
+  withCounts(items, stage, standardStage) {
     const counts = this.sourceCounts || {};
     const sumPrefix = (prefix) => Object.keys(counts).filter((key) => key.indexOf(prefix) === 0).reduce((sum, key) => sum + Number(counts[key] || 0), 0);
     return (items || []).map((item) => {
@@ -126,7 +143,9 @@ Page({
       if (stage === 'sources') {
         if (item.key === 'unlock-v2') learnedCount = Object.keys(counts).filter((key) => /^dictionary-book-unlock-[1-4]-/.test(key)).reduce((sum, key) => sum + Number(counts[key] || 0), 0);
         else if (item.key === 'unlock-v3') learnedCount = sumPrefix('dictionary-book-unlock-v3-');
-        else learnedCount = Number(counts[`dictionary-book-${item.key}`] || 0);
+        else learnedCount = sumPrefix(`dictionary-book-${item.key}-list-`);
+      } else if (stage === 'standard-lists') {
+        learnedCount = Number(counts[`dictionary-book-${standardStage || this.data.standardStage}-list-${item.key}`] || 0);
       } else if (stage === 'levels') {
         learnedCount = sumPrefix(unlockCountPrefix(this.data.unlockEdition, item.key));
       } else if (stage === 'units') {
@@ -146,6 +165,11 @@ Page({
     const unlockEdition = edition || this.data.unlockEdition || 'v2';
     this.setData({ stage: 'levels', title: unlockEdition === 'v3' ? (texts.unlockThirdBook || 'Unlock 第三版词汇书') : (texts.unlockSecondBook || 'Unlock 第二版词汇书'), subtitle: texts.chooseLevel, unlockEdition, unlockLevel: 0, unlockUnit: 0 }, () => this.setData({ items: this.withCounts(levelItems(), 'levels') }));
   },
+  showStandardLists(stage) {
+    const title = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, ielts: getTexts().ieltsBookShort }[stage];
+    const items = this.withCounts(standardListItems(stage), 'standard-lists', stage);
+    this.setData({ stage: 'standard-lists', standardStage: stage, title, subtitle: getTexts().chooseList, items });
+  },
   showUnits(level) {
     this.setData({ stage: 'units', title: `Unlock ${level} ${this.data.unlockEdition === 'v3' ? '第三版' : '第二版'}`, subtitle: getTexts().chooseUnit, unlockLevel: level, unlockUnit: 0 }, () => this.setData({ items: this.withCounts(unitItems(), 'units') }));
   },
@@ -161,6 +185,7 @@ Page({
     if (this.data.stage === 'levels') this.showLevels(this.data.unlockEdition);
     else if (this.data.stage === 'units') this.showUnits(this.data.unlockLevel);
     else if (this.data.stage === 'sections') this.showSections(this.data.unlockLevel, this.data.unlockUnit);
+    else if (this.data.stage === 'standard-lists') this.showStandardLists(this.data.standardStage);
     else this.showSources();
   },
   openBook(level, title) {

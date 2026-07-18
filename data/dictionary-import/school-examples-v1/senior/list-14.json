@@ -1,0 +1,454 @@
+[
+  {
+    "word": "angry",
+    "wordLower": "angry",
+    "level": "senior",
+    "phonetic": "/ˈæŋgri/",
+    "definitions": [
+      "adj. 生气的，愤怒的"
+    ],
+    "example": "She was angry because nobody had listened to her advice.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "她很生气，因为没有人听取她的建议。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "wipe",
+    "wordLower": "wipe",
+    "level": "senior",
+    "phonetic": "/waɪp/",
+    "definitions": [
+      "v. 擦",
+      "扫"
+    ],
+    "example": "Please wipe the table before putting the dishes on it.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "把餐具放到桌上之前，请先擦一下桌子。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "between",
+    "wordLower": "between",
+    "level": "senior",
+    "phonetic": "/biˈtwi:n/",
+    "definitions": [
+      "prep. 在（两者） L.间",
+      "在 · · 申间"
+    ],
+    "example": "The library is located between the classroom building and the gym.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "图书馆位于教学楼和体育馆之间。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "couple",
+    "wordLower": "couple",
+    "level": "senior",
+    "phonetic": "/ˈkʌpl/",
+    "definitions": [
+      "n. 夫妇",
+      "（一）对， （一）双"
+    ],
+    "example": "The elderly couple take a walk together every morning.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "这对老年夫妇每天早晨一起散步。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "output",
+    "wordLower": "output",
+    "level": "senior",
+    "phonetic": "/ˈaʊtˌpʊt/",
+    "definitions": [
+      "n. 产量， 输出量"
+    ],
+    "example": "The factory increased its output by improving production methods.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "这家工厂通过改进生产方式提高了产量。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "classic",
+    "wordLower": "classic",
+    "level": "senior",
+    "phonetic": "/ˈklæsɪk/",
+    "definitions": [
+      "adj. 经典的， 一沛的"
+    ],
+    "example": "This classic novel remains popular among young readers today.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "这部经典小说如今仍深受年轻读者喜爱。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "know",
+    "wordLower": "know",
+    "level": "senior",
+    "phonetic": "/nəʊ/",
+    "definitions": [
+      "v. 知道， 了解",
+      "认识",
+      "懂得"
+    ],
+    "example": "Most students know how important regular exercise is.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "大多数学生都知道经常锻炼有多么重要。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "although",
+    "wordLower": "although",
+    "level": "senior",
+    "phonetic": "/ɔ:lˈðəʊ/",
+    "definitions": [
+      "conj. 虽然， 尽管"
+    ],
+    "example": "Although the task was difficult, we completed it on time.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "尽管任务很困难，我们还是按时完成了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "maybe",
+    "wordLower": "maybe",
+    "level": "senior",
+    "phonetic": "/ˈmeibi/",
+    "definitions": [
+      "adj. 可能， 大概， 也许"
+    ],
+    "example": "Maybe we should check the information before making a decision.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "也许我们应该在作决定前核实一下信息。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "double",
+    "wordLower": "double",
+    "level": "senior",
+    "phonetic": "/ˈdʌbl/",
+    "definitions": [
+      "adj. 两倍的",
+      "双重的 n. 两个",
+      "双打 v. 加倍 double"
+    ],
+    "example": "This room is double the size of our old classroom.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "这个房间是我们原来教室的两倍大。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "allocate",
+    "wordLower": "allocate",
+    "level": "senior",
+    "phonetic": "/ˈæləˌkeɪt/",
+    "definitions": [
+      "v. 分配",
+      "配给t 拨出"
+    ],
+    "example": "The teacher will allocate enough time for each group discussion.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "老师会为每次小组讨论分配足够的时间。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "practical",
+    "wordLower": "practical",
+    "level": "senior",
+    "phonetic": "/ˈpræktɪkəl/",
+    "definitions": [
+      "adj. 实际的",
+      "适用的",
+      "实用的",
+      "应用的"
+    ],
+    "example": "The course offers practical advice on managing study time effectively.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "这门课程提供有效管理学习时间的实用建议。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "where",
+    "wordLower": "where",
+    "level": "senior",
+    "phonetic": "/wɛr/",
+    "definitions": [
+      "adj.Iconj. 那儿",
+      "何处"
+    ],
+    "example": "Do you know where the school meeting will be held?",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "你知道学校会议将在哪里举行吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "approve",
+    "wordLower": "approve",
+    "level": "senior",
+    "phonetic": "/əˈpruv/",
+    "definitions": [
+      "v. 批准，通过 v. 赞成",
+      "满意"
+    ],
+    "example": "The school committee approved the plan for the new reading room.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "学校委员会批准了新阅览室的方案。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "polite",
+    "wordLower": "polite",
+    "level": "senior",
+    "phonetic": "/pəˈlait/",
+    "definitions": [
+      "adj. 育礼貌的， 育教养的"
+    ],
+    "example": "It is polite to thank others for their help.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "感谢别人的帮助是有礼貌的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "concern",
+    "wordLower": "concern",
+    "level": "senior",
+    "phonetic": "/kənˈsərn/",
+    "definitions": [
+      "n. 关系",
+      "关l山 v. 涉及，关系到"
+    ],
+    "example": "This report concerns the effects of sleep on learning.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "这份报告涉及睡眠对学习的影响。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "elder",
+    "wordLower": "elder",
+    "level": "senior",
+    "phonetic": "/ˈeldə(r)/",
+    "definitions": [
+      "adj. 1:1=~的 1 长者，前辈"
+    ],
+    "example": "Young people can learn valuable lessons from their elders.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "年轻人可以从长辈那里学到宝贵的经验。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "chapter",
+    "wordLower": "chapter",
+    "level": "senior",
+    "phonetic": "/ˈʧæptər/",
+    "definitions": [
+      "n. 章"
+    ],
+    "example": "The final chapter explains how the main character changes.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "最后一章解释了主人公是如何改变的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "regardless",
+    "wordLower": "regardless",
+    "level": "senior",
+    "phonetic": "/rəˈgɑrdləs/",
+    "definitions": [
+      "adj. 不管，不顾",
+      "不加理会"
+    ],
+    "example": "We will continue the outdoor activity regardless of the weather.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "不管天气如何，我们都会继续进行户外活动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "heel",
+    "wordLower": "heel",
+    "level": "senior",
+    "phonetic": "/hi:l/",
+    "definitions": [
+      "n. 脚后跟 启~ betow"
+    ],
+    "example": "My new shoes are rubbing against my heel.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "我的新鞋正磨着我的脚后跟。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "below",
+    "wordLower": "below",
+    "level": "senior",
+    "phonetic": "/biˈləʊ/",
+    "definitions": [
+      "prep. 庄…下面 adj. 在下面 τ皿E冒"
+    ],
+    "example": "The temperature fell below zero during the night.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "夜间气温降到了零度以下。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "popular",
+    "wordLower": "popular",
+    "level": "senior",
+    "phonetic": "/ˈpɒpjələ(r)/",
+    "definitions": [
+      "adj. 流行的，受欢迎的",
+      "大众的"
+    ],
+    "example": "Online courses have become increasingly popular among senior students.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "网络课程在高中生中越来越受欢迎。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "document",
+    "wordLower": "document",
+    "level": "senior",
+    "phonetic": "/ˈdɑkjəmɛnt/",
+    "definitions": [
+      "n. 文件， 文献"
+    ],
+    "example": "Please read the document carefully before signing your name.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "签名前请仔细阅读这份文件。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "ban",
+    "wordLower": "ban",
+    "level": "senior",
+    "phonetic": "/bæn/",
+    "definitions": [
+      "v. 禁.Lt",
+      "取缔 n. 禁令"
+    ],
+    "example": "The school decided to ban mobile phones during examinations.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "学校决定禁止在考试期间使用手机。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "consistent",
+    "wordLower": "consistent",
+    "level": "senior",
+    "phonetic": "/kənˈsɪstənt/",
+    "definitions": [
+      "adj. 一致的， 连贯的"
+    ],
+    "example": "Her actions are consistent with the values she supports.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "她的行为与她所支持的价值观一致。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "chief",
+    "wordLower": "chief",
+    "level": "senior",
+    "phonetic": "/ʧif/",
+    "definitions": [
+      "adj. 主要的， 首要的 n. 领导"
+    ],
+    "example": "The chief purpose of the meeting is to discuss safety.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "这次会议的主要目的是讨论安全问题。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "worldwide",
+    "wordLower": "worldwide",
+    "level": "senior",
+    "phonetic": "/ˈwɜ:ldwaid/",
+    "definitions": [
+      "adj. 遍及全球的， 世界各地的"
+    ],
+    "example": "The discovery attracted worldwide attention from scientists and students.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "这一发现引起了全世界科学家和学生的关注。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "greet",
+    "wordLower": "greet",
+    "level": "senior",
+    "phonetic": "/gri:t/",
+    "definitions": [
+      "v. i问候， 向 ··致饭"
+    ],
+    "example": "The teacher stood at the door to greet every student.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "老师站在门口迎接每一名学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fortune",
+    "wordLower": "fortune",
+    "level": "senior",
+    "phonetic": "/ˈfɔrʧən/",
+    "definitions": [
+      "n. 财严",
+      "运气"
+    ],
+    "example": "Good planning played a greater role than fortune in their success.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "在他们的成功中，周密的计划比运气发挥了更大的作用。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "guarantee",
+    "wordLower": "guarantee",
+    "level": "senior",
+    "phonetic": "/ˌgɛrənˈti/",
+    "definitions": [
+      "v.ln. 保证， 担保"
+    ],
+    "example": "Regular practice does not guarantee success, but it greatly improves your chances.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "经常练习不能保证成功，但会大大提高你成功的可能性。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "brief",
+    "wordLower": "brief",
+    "level": "senior",
+    "phonetic": "/brif/",
+    "definitions": [
+      "adj. 简洁的"
+    ],
+    "example": "The manager gave a brief introduction before the presentation began.",
+    "list": 14,
+    "source": "local-import",
+    "exampleMeaning": "演示开始前，经理作了简短的介绍。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

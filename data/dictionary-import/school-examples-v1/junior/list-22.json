@@ -1,0 +1,820 @@
+[
+  {
+    "word": "keep",
+    "wordLower": "keep",
+    "level": "junior",
+    "phonetic": "/ki:p/",
+    "definitions": [
+      "v. ［kept-kept］ 使保持（某种状态），使继续",
+      "阻止，防止",
+      "履 行，遵守",
+      "保存，保留",
+      "供养，饲养",
+      "经营，料理",
+      "守卫，看守"
+    ],
+    "example": "Please keep the classroom clean and quiet.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "请保持教室干净、安静。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "when",
+    "wordLower": "when",
+    "level": "junior",
+    "phonetic": "/wen/",
+    "definitions": [
+      "adj. 什么时候，何时",
+      "在…的时候 conj. 在…时，当…时",
+      "然后"
+    ],
+    "example": "Please wash your hands when you get home.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "到家时请洗手。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "author",
+    "wordLower": "author",
+    "level": "junior",
+    "phonetic": "/ˈɔ:θə(r)/",
+    "definitions": [
+      "n. 作家，作者",
+      "创始人，发起者"
+    ],
+    "example": "The author wrote many interesting stories for children.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "这位作家为孩子们写了许多有趣的故事。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "total",
+    "wordLower": "total",
+    "level": "junior",
+    "phonetic": "/ˈtəʊtl/",
+    "definitions": [
+      "adj. 总的，全部的",
+      "完全的，彻底的 n. 总数，总计 v. 合计，总计"
+    ],
+    "example": "The total cost of the books was fifty yuan.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "这些书的总价是五十元。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "globe",
+    "wordLower": "globe",
+    "level": "junior",
+    "phonetic": "/gləʊb/",
+    "definitions": [
+      "n. 地球，世界",
+      "地球仪",
+      "球体"
+    ],
+    "example": "Our teacher showed us China on the globe.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "老师在地球仪上给我们指出了中国。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "mention",
+    "wordLower": "mention",
+    "level": "junior",
+    "phonetic": "/ˈmenʃn/",
+    "definitions": [
+      "n. / v. 提及，说起"
+    ],
+    "example": "He did not mention the test during lunch.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "午饭时他没有提到那场考试。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "work",
+    "wordLower": "work",
+    "level": "junior",
+    "phonetic": "/wɜ:k/",
+    "definitions": [
+      "v. 工作，（使）劳动",
+      "（使）运转",
+      "（使）起作用，（使） 有效",
+      "生产，经营"
+    ],
+    "example": "This old clock still works well.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "这只旧钟仍然运转良好。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cabbage",
+    "wordLower": "cabbage",
+    "level": "junior",
+    "phonetic": "/ˈkæbidʒ/",
+    "definitions": [
+      "n. 卷心菜，洋白菜"
+    ],
+    "example": "My mother added some cabbage to the soup.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我妈妈在汤里加了一些卷心菜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tenth",
+    "wordLower": "tenth",
+    "level": "junior",
+    "phonetic": "/tenθ/",
+    "definitions": [
+      "num. 第十（个） n. 十分之一"
+    ],
+    "example": "Linda came tenth in the school race.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "琳达在学校赛跑中获得了第十名。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hallway",
+    "wordLower": "hallway",
+    "level": "junior",
+    "phonetic": "/ˈhɔ:lwei/",
+    "definitions": [
+      "n. 走廊，"
+    ],
+    "example": "Students are waiting quietly in the hallway.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "学生们正在走廊里安静地等候。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "yet",
+    "wordLower": "yet",
+    "level": "junior",
+    "phonetic": "/jet/",
+    "definitions": [
+      "adj. 还，尚，仍然",
+      "已经",
+      "甚至，更 conj. 然而，但是"
+    ],
+    "example": "Tom has not finished his homework yet.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "汤姆还没有完成他的家庭作业。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "soap",
+    "wordLower": "soap",
+    "level": "junior",
+    "phonetic": "/səʊp/",
+    "definitions": [
+      "n. 肥皂"
+    ],
+    "example": "Please wash your hands with soap.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "请用肥皂洗手。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "dialogue",
+    "wordLower": "dialogue",
+    "level": "junior",
+    "phonetic": "/ˈdaiəlɒg/",
+    "definitions": [
+      "n. 对话"
+    ],
+    "example": "We practiced the English dialogue after class.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我们课后练习了这段英语对话。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "not",
+    "wordLower": "not",
+    "level": "junior",
+    "phonetic": "/nɒt/",
+    "definitions": [
+      "adj. 不，没，不是"
+    ],
+    "example": "This book is not difficult to understand.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "这本书并不难理解。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hear",
+    "wordLower": "hear",
+    "level": "junior",
+    "phonetic": "/hiə(r)/",
+    "definitions": [
+      "v. ［heard-heard］ 听见",
+      "听到，得知",
+      "审讯，听证",
+      "收到…的信 （或电话等）"
+    ],
+    "example": "I can hear birds singing outside.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我能听见鸟儿在外面歌唱。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pain",
+    "wordLower": "pain",
+    "level": "junior",
+    "phonetic": "/pein/",
+    "definitions": [
+      "n. 痛，疼痛",
+      "痛苦，悲痛",
+      "［pl.］ 辛苦，苦心 v. 使痛苦"
+    ],
+    "example": "She felt a sharp pain in her knee.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "她感到膝盖一阵剧痛。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bill",
+    "wordLower": "bill",
+    "level": "junior",
+    "phonetic": "/bil/",
+    "definitions": [
+      "n. 账单",
+      "议案，法案",
+      "纸币，钞票",
+      "单子，节目单",
+      "招贴，海报"
+    ],
+    "example": "Dad paid the restaurant bill after dinner.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "晚饭后，爸爸付了餐厅的账单。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "positive",
+    "wordLower": "positive",
+    "level": "junior",
+    "phonetic": "/ˈpɒzətiv/",
+    "definitions": [
+      "adj. 积极的，正面的",
+      "肯定的"
+    ],
+    "example": "Try to stay positive when things are difficult.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "遇到困难时，尽量保持积极的心态。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "gray",
+    "wordLower": "gray",
+    "level": "junior",
+    "phonetic": "/grei/",
+    "definitions": [
+      "adj. 灰色的",
+      "阴沉的 n. 灰色"
+    ],
+    "example": "He wore a gray coat to school.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "他穿着一件灰色外套去上学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fiction",
+    "wordLower": "fiction",
+    "level": "junior",
+    "phonetic": "/ˈfikʃn/",
+    "definitions": [
+      "n. 小说"
+    ],
+    "example": "My sister enjoys reading science fiction.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我姐姐喜欢读科幻小说。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pear",
+    "wordLower": "pear",
+    "level": "junior",
+    "phonetic": "/peə(r)/",
+    "definitions": [
+      "n. 梨（树）"
+    ],
+    "example": "She ate a sweet pear after lunch.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "午饭后，她吃了一个香甜的梨。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tower",
+    "wordLower": "tower",
+    "level": "junior",
+    "phonetic": "/ˈtaʊə(r)/",
+    "definitions": [
+      "n. 塔",
+      "高楼 v. 高于，优于"
+    ],
+    "example": "We climbed the old tower on Sunday.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "星期天，我们登上了那座古塔。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "dig",
+    "wordLower": "dig",
+    "level": "junior",
+    "phonetic": "/dig/",
+    "definitions": [
+      "v. ［dug-dug, digging］ 挖，掘",
+      "戳，刺",
+      "搜寻，探究，细查 n. 戳，捅"
+    ],
+    "example": "They began to dig a hole in the garden.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "他们开始在花园里挖一个洞。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "death",
+    "wordLower": "death",
+    "level": "junior",
+    "phonetic": "/deθ/",
+    "definitions": [
+      "n. 死，死亡",
+      "毁灭"
+    ],
+    "example": "Too little water caused the plant's death.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "水太少导致了这株植物的死亡。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "safe",
+    "wordLower": "safe",
+    "level": "junior",
+    "phonetic": "/seif/",
+    "definitions": [
+      "n. 保险箱，保险柜 adj. 安全的，平安的",
+      "牢靠的，可靠的",
+      "谨慎 的，稳健的"
+    ],
+    "example": "Keep your money safe in this box.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "把你的钱安全地放在这个盒子里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "age",
+    "wordLower": "age",
+    "level": "junior",
+    "phonetic": "/eidʒ/",
+    "definitions": [
+      "n. 年龄",
+      "老年",
+      "时代，时期",
+      "很长的一段时间"
+    ],
+    "example": "Children usually start school at the age of six.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "孩子们通常六岁开始上学。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "straight",
+    "wordLower": "straight",
+    "level": "junior",
+    "phonetic": "/streit/",
+    "definitions": [
+      "adj. 直的，笔直的",
+      "连续的，不间断的",
+      "直率的",
+      "整齐的，端正 的",
+      "正直的"
+    ],
+    "example": "Walk straight ahead and turn left at the bank.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "一直向前走，然后在银行处左转。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "onion",
+    "wordLower": "onion",
+    "level": "junior",
+    "phonetic": "/ˈʌnjən/",
+    "definitions": [
+      "n. 洋葱，洋葱类植物"
+    ],
+    "example": "My mother added some onion to the soup.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我妈妈在汤里加了一些洋葱。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "afford",
+    "wordLower": "afford",
+    "level": "junior",
+    "phonetic": "/əˈfɔ:d/",
+    "definitions": [
+      "v. 买得起，负担得起",
+      "提供，给予"
+    ],
+    "example": "We cannot afford a new computer this year.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我们今年买不起一台新电脑。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "ground",
+    "wordLower": "ground",
+    "level": "junior",
+    "phonetic": "/graund/",
+    "definitions": [
+      "n. 地，地面",
+      "场地，场所",
+      "根据，原因"
+    ],
+    "example": "The ground was still wet after the heavy rain.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "大雨过后，地面仍然是湿的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cap",
+    "wordLower": "cap",
+    "level": "junior",
+    "phonetic": "/kæp/",
+    "definitions": [
+      "n. 帽子，便帽",
+      "盖，罩，套 v. 覆盖",
+      "笼罩"
+    ],
+    "example": "Tom wore a blue cap to the park.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "汤姆戴着一顶蓝色便帽去了公园。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "animal",
+    "wordLower": "animal",
+    "level": "junior",
+    "phonetic": "/ˈæniml/",
+    "definitions": [
+      "n. 动物，兽，牲畜 adj. 动物的，野兽的"
+    ],
+    "example": "Wild animals need clean water and safe places to live.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "野生动物需要干净的水和安全的栖息地。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "card",
+    "wordLower": "card",
+    "level": "junior",
+    "phonetic": "/ka:d/",
+    "definitions": [
+      "n. 卡，卡片",
+      "请帖",
+      "贺卡",
+      "纸牌"
+    ],
+    "example": "I made a birthday card for my best friend.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我为我最好的朋友制作了一张生日贺卡。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "escalator",
+    "wordLower": "escalator",
+    "level": "junior",
+    "phonetic": "/ˈeskəleitə(r)/",
+    "definitions": [
+      "n. 〈美〉自动扶梯"
+    ],
+    "example": "We took the escalator to the second floor.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我们乘自动扶梯到了二楼。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "heart",
+    "wordLower": "heart",
+    "level": "junior",
+    "phonetic": "/ha:rt/",
+    "definitions": [
+      "n. 心，心脏",
+      "内心，感情",
+      "勇气，热忱",
+      "中心，要点"
+    ],
+    "example": "Regular exercise keeps your heart strong and healthy.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼能使你的心脏保持强健和健康。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "surf",
+    "wordLower": "surf",
+    "level": "junior",
+    "phonetic": "/sɜ:f/",
+    "definitions": [
+      "n. 拍岸浪花",
+      "拍岸涛声",
+      "拍岸碎浪 v. 冲浪",
+      "（互联网上）冲浪，浏 览"
+    ],
+    "example": "I often surf the Internet after finishing my homework.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我经常在完成作业后上网浏览。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "breakfast",
+    "wordLower": "breakfast",
+    "level": "junior",
+    "phonetic": "/ˈbrekfəst/",
+    "definitions": [
+      "n. 早餐"
+    ],
+    "example": "I usually have eggs and milk for breakfast.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我早餐通常吃鸡蛋、喝牛奶。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "guide",
+    "wordLower": "guide",
+    "level": "junior",
+    "phonetic": "/gaid/",
+    "definitions": [
+      "n. 导游，领路人",
+      "指南，手册 v. 给…导游，给…领路",
+      "指导，引导"
+    ],
+    "example": "Our guide showed us around the old town.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我们的导游带我们参观了这座古镇。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "weekend",
+    "wordLower": "weekend",
+    "level": "junior",
+    "phonetic": "/ˈwi:kˌend/",
+    "definitions": [
+      "n. 周末 adj. 周末的"
+    ],
+    "example": "We often visit our grandparents at the weekend.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我们经常在周末看望祖父母。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "practice",
+    "wordLower": "practice",
+    "level": "junior",
+    "phonetic": "/ˈpræktis/",
+    "definitions": [
+      "n. 实践",
+      "实践行动",
+      "练习",
+      "惯例，习俗"
+    ],
+    "example": "Daily practice will help you improve your English.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "每天练习会帮助你提高英语水平。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "schoolbag",
+    "wordLower": "schoolbag",
+    "level": "junior",
+    "phonetic": "/ˈsku:lbæg/",
+    "definitions": [
+      "n. 书包"
+    ],
+    "example": "Lucy put her new books in her schoolbag.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "露西把新书放进了书包。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "kilo",
+    "wordLower": "kilo",
+    "level": "junior",
+    "phonetic": "/ˈki:ləʊ/",
+    "definitions": [
+      "n. 千克"
+    ],
+    "example": "Dad bought a kilo of apples at the market.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "爸爸在市场买了一千克苹果。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "other",
+    "wordLower": "other",
+    "level": "junior",
+    "phonetic": "/ˈʌðə(r)/",
+    "definitions": [
+      "adj. 别的，其他的，另外的",
+      "另一的，其余的"
+    ],
+    "example": "Some students read while other students played chess.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "一些学生在读书，而其他学生在下棋。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "matter",
+    "wordLower": "matter",
+    "level": "junior",
+    "phonetic": "/ˈmætə(r)/",
+    "definitions": [
+      "n. 事情，情况",
+      "物质",
+      "麻烦事，毛病 v. 要紧，有关系"
+    ],
+    "example": "Your ideas matter to everyone in the group.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "你的想法对小组里的每个人都很重要。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "full",
+    "wordLower": "full",
+    "level": "junior",
+    "phonetic": "/fʊl/",
+    "definitions": [
+      "adj. 满的，装满的",
+      "完全的，完整的"
+    ],
+    "example": "The basket is full of fresh vegetables.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "篮子里装满了新鲜蔬菜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pressure",
+    "wordLower": "pressure",
+    "level": "junior",
+    "phonetic": "/ˈpreʃə(r)/",
+    "definitions": [
+      "n. 压（力）",
+      "压强",
+      "强制，压迫 v. 对…施加压力（或影响）",
+      "迫 使，说服"
+    ],
+    "example": "She felt pressure before her important math exam.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "她在重要的数学考试前感到压力。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "diet",
+    "wordLower": "diet",
+    "level": "junior",
+    "phonetic": "/ˈdaiət/",
+    "definitions": [
+      "n. 日常饮食",
+      "（病人或减肥者的）特种饮食，规定饮食 v. 进特种饮 食，节食"
+    ],
+    "example": "A healthy diet includes plenty of fruit and vegetables.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "健康的日常饮食包括大量水果和蔬菜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hurt",
+    "wordLower": "hurt",
+    "level": "junior",
+    "phonetic": "/hɜ:t/",
+    "definitions": [
+      "v. ［hurt-hurt］ 使受伤，弄痛",
+      "伤…的感情",
+      "危害，损害 n. 伤害， 痛苦"
+    ],
+    "example": "I hurt my knee while playing basketball yesterday.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我昨天打篮球时弄伤了膝盖。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "enemy",
+    "wordLower": "enemy",
+    "level": "junior",
+    "phonetic": "/ˈenəmi/",
+    "definitions": [
+      "n. 敌人，仇敌"
+    ],
+    "example": "In the story, the king's enemy lived across the river.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "在故事中，国王的敌人住在河对岸。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "supermarket",
+    "wordLower": "supermarket",
+    "level": "junior",
+    "phonetic": "/ˈsu:pəma:kit/",
+    "definitions": [
+      "n. 超市"
+    ],
+    "example": "My father buys fresh vegetables at the supermarket.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我爸爸在超市买新鲜蔬菜。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "nature",
+    "wordLower": "nature",
+    "level": "junior",
+    "phonetic": "/ˈneitʃə(r)/",
+    "definitions": [
+      "n. 大自然，自然界",
+      "本性，性格，性情",
+      "性质，类型"
+    ],
+    "example": "We should protect nature and keep rivers clean.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "我们应该保护大自然，并保持河流清洁。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "vocabulary",
+    "wordLower": "vocabulary",
+    "level": "junior",
+    "phonetic": "/vəˈkæbjələri/",
+    "definitions": [
+      "n. 词汇",
+      "词汇量",
+      "词汇表"
+    ],
+    "example": "Reading English stories can improve your vocabulary.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "阅读英语故事可以增加你的词汇量。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "list",
+    "wordLower": "list",
+    "level": "junior",
+    "phonetic": "/list/",
+    "definitions": [
+      "n. 表",
+      "目录，名单 v. 把…编列成表",
+      "列举"
+    ],
+    "example": "Please make a list of things you need.",
+    "list": 22,
+    "source": "local-import",
+    "exampleMeaning": "请把你需要的东西列一张清单。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

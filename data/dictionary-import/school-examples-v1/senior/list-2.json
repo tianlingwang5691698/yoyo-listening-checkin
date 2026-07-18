@@ -1,0 +1,472 @@
+[
+  {
+    "word": "band",
+    "wordLower": "band",
+    "level": "senior",
+    "phonetic": "/bænd/",
+    "definitions": [
+      "n. 乐队",
+      "带予",
+      "镶边"
+    ],
+    "example": "The school band will perform at the graduation ceremony.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "学校乐队将在毕业典礼上演出。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "budget",
+    "wordLower": "budget",
+    "level": "senior",
+    "phonetic": "/ˈbəʤɪt/",
+    "definitions": [
+      "n.l v. 币ij算"
+    ],
+    "example": "Our class planned the trip on a limited budget.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "我们班在有限的预算内规划了这次旅行。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "unit",
+    "wordLower": "unit",
+    "level": "senior",
+    "phonetic": "/ˈju:nit/",
+    "definitions": [
+      "n. 单元",
+      "单位"
+    ],
+    "example": "This unit introduces several useful ways to protect the environment.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "本单元介绍了几种保护环境的实用方法。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "harm",
+    "wordLower": "harm",
+    "level": "senior",
+    "phonetic": "/hɑrm/",
+    "definitions": [
+      "n.lvt. 仍害，损伤"
+    ],
+    "example": "Too much screen time may harm your eyesight.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "看屏幕时间过长可能会损害你的视力。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "wealth",
+    "wordLower": "wealth",
+    "level": "senior",
+    "phonetic": "/welθ/",
+    "definitions": [
+      "n. 财富"
+    ],
+    "example": "Education can help people create wealth through knowledge and skills.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "教育可以帮助人们通过知识和技能创造财富。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "else",
+    "wordLower": "else",
+    "level": "senior",
+    "phonetic": "/els/",
+    "definitions": [
+      "adj. 别的， 真他的"
+    ],
+    "example": "Does anyone else have a different solution to this problem?",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "还有其他人对这个问题有不同的解决办法吗？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "blow",
+    "wordLower": "blow",
+    "level": "senior",
+    "phonetic": "/bləʊ/",
+    "definitions": [
+      "n. 击， 打击 v. （ blew, blow门， b lowing ） v.（气）"
+    ],
+    "example": "A cool wind blew through the open classroom window.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "一阵凉风从敞开的教室窗户吹了进来。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "messy",
+    "wordLower": "messy",
+    "level": "senior",
+    "phonetic": "/ˈmɛsi/",
+    "definitions": [
+      "adj. 乱t八糟的"
+    ],
+    "example": "His desk was so messy that he lost his notebook.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "他的书桌太乱了，以至于找不到笔记本。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "pleasure",
+    "wordLower": "pleasure",
+    "level": "senior",
+    "phonetic": "/ˈpleʒə(r)/",
+    "definitions": [
+      "n. 高兴， 愉快"
+    ],
+    "example": "Many students read novels for pleasure after finishing their homework.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "许多学生做完作业后读小说消遣。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "collar",
+    "wordLower": "collar",
+    "level": "senior",
+    "phonetic": "/ˈkɑlər/",
+    "definitions": [
+      "n. 衣领"
+    ],
+    "example": "She turned up her coat collar to keep warm.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "她竖起外套衣领来保暖。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "exchange",
+    "wordLower": "exchange",
+    "level": "senior",
+    "phonetic": "/iksˈtʃeindʒ/",
+    "definitions": [
+      "n.!v. 交换",
+      "交流",
+      "兑换"
+    ],
+    "example": "Students can exchange ideas while working on the group project.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "学生们可以在完成小组项目时交流想法。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "interview",
+    "wordLower": "interview",
+    "level": "senior",
+    "phonetic": "/ˈintəvju:/",
+    "definitions": [
+      "n.!v. 采访",
+      "会见",
+      "面试"
+    ],
+    "example": "She prepared carefully for her university admission interview.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "她认真准备了大学入学面试。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bunch",
+    "wordLower": "bunch",
+    "level": "senior",
+    "phonetic": "/bənʧ/",
+    "definitions": [
+      "n. 窜， 束"
+    ],
+    "example": "He bought a bunch of flowers for his mother.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "他给母亲买了一束花。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "find",
+    "wordLower": "find",
+    "level": "senior",
+    "phonetic": "/faind/",
+    "definitions": [
+      "v. 找到， 发现",
+      "感到"
+    ],
+    "example": "Many students find it difficult to manage their time effectively.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "许多学生感到有效管理时间很困难。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "space",
+    "wordLower": "space",
+    "level": "senior",
+    "phonetic": "/speis/",
+    "definitions": [
+      "n. 空白处",
+      "空地",
+      "空间",
+      "末空"
+    ],
+    "example": "There is enough space in the library for group activities.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "图书馆里有足够的空间开展小组活动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "invite",
+    "wordLower": "invite",
+    "level": "senior",
+    "phonetic": "/inˈvait/",
+    "definitions": [
+      "v. 邀请",
+      "招待"
+    ],
+    "example": "We invited our classmates to join the weekend study group.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "我们邀请同学们加入周末学习小组。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fan",
+    "wordLower": "fan",
+    "level": "senior",
+    "phonetic": "/fæn/",
+    "definitions": [
+      "n. （电影、运动等的）迷，狂热的爱好者、支持者",
+      "风扇"
+    ],
+    "example": "My brother has been a basketball fan since primary school.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "我哥哥从小学起就是一名篮球迷。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "score",
+    "wordLower": "score",
+    "level": "senior",
+    "phonetic": "/skɔ:(r)/",
+    "definitions": [
+      "n. [ C J 得分， 分数",
+      "二十",
+      "许多， 很多 v. 得分"
+    ],
+    "example": "Our team scored twice during the final ten minutes of the match.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "我们队在比赛最后十分钟内两次得分。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "acute",
+    "wordLower": "acute",
+    "level": "senior",
+    "phonetic": "/əˈkjut/",
+    "definitions": [
+      "adj. 尖锐的",
+      "敏锐的",
+      "严重的",
+      "（疾病）急性的"
+    ],
+    "example": "The region faces an acute shortage of clean drinking water.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "该地区面临着严重的清洁饮用水短缺问题。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sleepy",
+    "wordLower": "sleepy",
+    "level": "senior",
+    "phonetic": "/sˈlipi/",
+    "definitions": [
+      "adj. 想睦的，困倦的，瞌睡的"
+    ],
+    "example": "I felt sleepy after staying up late to finish my homework.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "我熬夜完成作业后感到很困。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "respond",
+    "wordLower": "respond",
+    "level": "senior",
+    "phonetic": "/rɪˈspɑnd/",
+    "definitions": [
+      "v. 回答，回应",
+      "做出反应"
+    ],
+    "example": "Students responded positively to the changes in the school timetable.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "学生们对学校课程表的调整做出了积极反应。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "anyhow",
+    "wordLower": "anyhow",
+    "level": "senior",
+    "phonetic": "/ˈɛniˌhaʊ/",
+    "definitions": [
+      "adj. dv. 不管怎样"
+    ],
+    "example": "The journey may be difficult, but we must continue anyhow.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "旅程也许会很艰难，但不管怎样我们都必须继续。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "downtown",
+    "wordLower": "downtown",
+    "level": "senior",
+    "phonetic": "/ˈdaʊnˈtaʊn/",
+    "definitions": [
+      "n./adj. 市区（的）， 闹市区（的）"
+    ],
+    "example": "The downtown area becomes especially busy during the evening rush hour.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "市区在晚高峰期间变得格外繁忙。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "which",
+    "wordLower": "which",
+    "level": "senior",
+    "phonetic": "/witʃ/",
+    "definitions": [
+      "pron. 哪一个",
+      "哪一些"
+    ],
+    "example": "Which of these courses would be most useful for your future career?",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "这些课程中哪一门对你未来的职业最有用？",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sense",
+    "wordLower": "sense",
+    "level": "senior",
+    "phonetic": "/sens/",
+    "definitions": [
+      "n. 感觉，意识"
+    ],
+    "example": "She had a strong sense that something important was about to happen.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "她强烈地感觉到某件重要的事情即将发生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "disagree",
+    "wordLower": "disagree",
+    "level": "senior",
+    "phonetic": "/dɪsəˈgri/",
+    "definitions": [
+      "v. 意见不一致， 待不同意见"
+    ],
+    "example": "Experts disagree about the best way to reduce air pollution.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "专家们对减少空气污染的最佳方法意见不一。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "dozen",
+    "wordLower": "dozen",
+    "level": "senior",
+    "phonetic": "/ˈdʌzn/",
+    "definitions": [
+      "n. 十二个",
+      "许多"
+    ],
+    "example": "We bought two dozen notebooks for the students in our class.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "我们为班里的学生买了二十四本笔记本。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "compete",
+    "wordLower": "compete",
+    "level": "senior",
+    "phonetic": "/kəmˈpit/",
+    "definitions": [
+      "v. 比赛， 竞赛"
+    ],
+    "example": "Students from several schools will compete in the science competition.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "来自几所学校的学生将参加这场科学竞赛。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "guess",
+    "wordLower": "guess",
+    "level": "senior",
+    "phonetic": "/ges/",
+    "definitions": [
+      "v. 猜， 猜测",
+      "认为"
+    ],
+    "example": "I guess the meeting will finish before lunchtime today.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "我想今天的会议会在午饭前结束。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sour",
+    "wordLower": "sour",
+    "level": "senior",
+    "phonetic": "/ˈsaʊə(r)/",
+    "definitions": [
+      "adj. 酸的"
+    ],
+    "example": "The milk smelled sour, so I decided not to drink it.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "牛奶闻起来发酸，所以我决定不喝了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "voyage",
+    "wordLower": "voyage",
+    "level": "senior",
+    "phonetic": "/vɔɪəʤ/",
+    "definitions": [
+      "n. 航仔， 航海， 旅行"
+    ],
+    "example": "The long sea voyage gave researchers time to study ocean wildlife.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "漫长的海上航行让研究人员有时间研究海洋生物。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "environment",
+    "wordLower": "environment",
+    "level": "senior",
+    "phonetic": "/inˈvairənmənt/",
+    "definitions": [
+      "n. Iif\\镜"
+    ],
+    "example": "A quiet learning environment helps students focus on difficult tasks.",
+    "list": 2,
+    "source": "local-import",
+    "exampleMeaning": "安静的学习环境有助于学生专注于困难的任务。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

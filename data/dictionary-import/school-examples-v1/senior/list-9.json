@@ -1,0 +1,450 @@
+[
+  {
+    "word": "article",
+    "wordLower": "article",
+    "level": "senior",
+    "phonetic": "/ˈa:tikl/",
+    "definitions": [
+      "n. 文章",
+      "东西",
+      "物局",
+      "冠词"
+    ],
+    "example": "She wrote an article about healthy eating for the school newspaper.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "她为校报写了一篇关于健康饮食的文章。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "put",
+    "wordLower": "put",
+    "level": "senior",
+    "phonetic": "/pʊt/",
+    "definitions": [
+      "v. 放， 摆"
+    ],
+    "example": "Please put the finished exercises on the teacher's desk.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "请把完成的练习放在老师的桌上。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "possibility",
+    "wordLower": "possibility",
+    "level": "senior",
+    "phonetic": "/ˌpɑsəˈbɪləˌti/",
+    "definitions": [
+      "n. 可能， 可能性"
+    ],
+    "example": "There is a strong possibility that the event will be delayed.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "这项活动很有可能会被推迟。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "error",
+    "wordLower": "error",
+    "level": "senior",
+    "phonetic": "/ˈɛrər/",
+    "definitions": [
+      "n. 错误"
+    ],
+    "example": "A small error in the calculation changed the final result.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "计算中的一个小错误改变了最终结果。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fun",
+    "wordLower": "fun",
+    "level": "senior",
+    "phonetic": "/fʌn/",
+    "definitions": [
+      "n. 乐趣，娱乐"
+    ],
+    "example": "Playing games with friends can be great fun after school.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "放学后和朋友一起玩游戏会很有乐趣。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bid",
+    "wordLower": "bid",
+    "level": "senior",
+    "phonetic": "/bɪd/",
+    "definitions": [
+      "v./n. 出价， 投标"
+    ],
+    "example": "Several companies will bid for the school construction project.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "几家公司将竞标这项学校建设工程。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "reduce",
+    "wordLower": "reduce",
+    "level": "senior",
+    "phonetic": "/rɪˈdus/",
+    "definitions": [
+      "v. E我夕， 缩减"
+    ],
+    "example": "Taking public transport can reduce traffic and air pollution.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "乘坐公共交通工具可以减少交通拥堵和空气污染。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "flash",
+    "wordLower": "flash",
+    "level": "senior",
+    "phonetic": "/flæʃ/",
+    "definitions": [
+      "n. 闪，闪光",
+      "转瞬间 v. （便）闪光， （使）闪现"
+    ],
+    "example": "Lightning flashed across the sky during the summer storm.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "夏日暴雨中，闪电划过天空。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "treasure",
+    "wordLower": "treasure",
+    "level": "senior",
+    "phonetic": "/ˈtreʒə(r)/",
+    "definitions": [
+      "n. 金银财宝， 财富"
+    ],
+    "example": "The ancient coins were regarded as valuable national treasure.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "这些古钱币被视为珍贵的国家财富。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "represent",
+    "wordLower": "represent",
+    "level": "senior",
+    "phonetic": "/ˌrɛprɪˈzɛnt/",
+    "definitions": [
+      "v. 代表",
+      "表现"
+    ],
+    "example": "These figures represent the number of students in each class.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "这些数字代表每个班级的学生人数。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "surrounding",
+    "wordLower": "surrounding",
+    "level": "senior",
+    "phonetic": "/sərˈaʊndɪŋ/",
+    "definitions": [
+      "adj. 周围的 n. 围绕",
+      "［ pl. ］ 环烧"
+    ],
+    "example": "The hotel offers excellent views of the surrounding mountains.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "这家酒店可以欣赏到周围群山的美景。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "recite",
+    "wordLower": "recite",
+    "level": "senior",
+    "phonetic": "/riˈsait/",
+    "definitions": [
+      "v. 背诵"
+    ],
+    "example": "Students must recite the poem from memory in class tomorrow.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "学生们明天必须在课堂上背诵这首诗。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "shape",
+    "wordLower": "shape",
+    "level": "senior",
+    "phonetic": "/ʃeip/",
+    "definitions": [
+      "n. 形状， 外形 v. 便成形",
+      "制造， 塑造"
+    ],
+    "example": "Early experiences often shape a person's character and values.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "早期经历常常塑造一个人的性格和价值观。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "suppose",
+    "wordLower": "suppose",
+    "level": "senior",
+    "phonetic": "/səˈpoʊz/",
+    "definitions": [
+      "v. 猜想， 假定 v. 料想"
+    ],
+    "example": "I suppose the meeting will finish before six this evening.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "我想今天晚上的会议会在六点前结束。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lack",
+    "wordLower": "lack",
+    "level": "senior",
+    "phonetic": "/læk/",
+    "definitions": [
+      "n.lv. 缺乏， 缺少"
+    ],
+    "example": "Many students lack the confidence to speak English in class.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "许多学生缺乏在课堂上说英语的信心。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "race",
+    "wordLower": "race",
+    "level": "senior",
+    "phonetic": "/reis/",
+    "definitions": [
+      "n. 种族",
+      "比赛 v. 赛跑，比赛"
+    ],
+    "example": "She trained hard for the five-kilometer race at school.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "她为学校的五公里比赛刻苦训练。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "adolescent",
+    "wordLower": "adolescent",
+    "level": "senior",
+    "phonetic": "/ˌædəˈlɛsənt/",
+    "definitions": [
+      "n. [ C J 青少1:f adj. 青春期的"
+    ],
+    "example": "The program helps each adolescent develop useful communication skills.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "该项目帮助每名青少年培养实用的沟通技能。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "habit",
+    "wordLower": "habit",
+    "level": "senior",
+    "phonetic": "/ˈhæbit/",
+    "definitions": [
+      "n. 习惯， 写性 Ji画 面画"
+    ],
+    "example": "Reading before bed has become a daily habit for me.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "睡前阅读已经成为我的日常习惯。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "significance",
+    "wordLower": "significance",
+    "level": "senior",
+    "phonetic": "/sɪgˈnɪfɪkəns/",
+    "definitions": [
+      "n. 意义，重要性"
+    ],
+    "example": "Few students understood the historical significance of the discovery.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "很少有学生理解这一发现的历史意义。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hurry",
+    "wordLower": "hurry",
+    "level": "senior",
+    "phonetic": "/ˈhʌri/",
+    "definitions": [
+      "v. 赶快",
+      "急忙 n. 匆忙，仓促"
+    ],
+    "example": "There is no need to hurry because the library closes late.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "不必着急，因为图书馆很晚才关门。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "attention",
+    "wordLower": "attention",
+    "level": "senior",
+    "phonetic": "/əˈtenʃn/",
+    "definitions": [
+      "n. 注意",
+      "关／~＼"
+    ],
+    "example": "Please pay close attention to the teacher's instructions.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "请密切注意老师的指示。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "interesting",
+    "wordLower": "interesting",
+    "level": "senior",
+    "phonetic": "/ˈɪntəˌrɛstɪŋ/",
+    "definitions": [
+      "a吟． 育趣的"
+    ],
+    "example": "The science club organized an interesting experiment after school.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "科学社团放学后组织了一项有趣的实验。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "stress",
+    "wordLower": "stress",
+    "level": "senior",
+    "phonetic": "/stres/",
+    "definitions": [
+      "n. 压刀 v. 强调"
+    ],
+    "example": "Regular exercise can help students reduce stress during exams.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼可以帮助学生缓解考试期间的压力。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "impress",
+    "wordLower": "impress",
+    "level": "senior",
+    "phonetic": "/imˈpres/",
+    "definitions": [
+      "v. 留下印象"
+    ],
+    "example": "Her clear explanation impressed everyone in the classroom.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "她清楚的讲解给教室里的每个人都留下了深刻印象。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "percentage",
+    "wordLower": "percentage",
+    "level": "senior",
+    "phonetic": "/pərˈsɛnɪʤ/",
+    "definitions": [
+      "n. 百分率",
+      "比例"
+    ],
+    "example": "A high percentage of students chose to join the activity.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "很大比例的学生选择参加这项活动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "non-stop",
+    "wordLower": "non-stop",
+    "level": "senior",
+    "phonetic": "/ˌnɑnˈstɑp/",
+    "definitions": [
+      "adj.I adj. 不停的（地），不间断的（地）"
+    ],
+    "example": "The non-stop rain forced us to cancel the outdoor activity.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "持续不断的雨迫使我们取消了户外活动。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "behave",
+    "wordLower": "behave",
+    "level": "senior",
+    "phonetic": "/biˈheiv/",
+    "definitions": [
+      "v. 表现",
+      "行为得体"
+    ],
+    "example": "Students should behave politely when visiting a public museum.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "学生参观公共博物馆时应举止得体。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "steep",
+    "wordLower": "steep",
+    "level": "senior",
+    "phonetic": "/stip/",
+    "definitions": [
+      "adj. 险峻的，陡峭的"
+    ],
+    "example": "We climbed slowly because the path was narrow and steep.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "我们慢慢攀登，因为小路又窄又陡。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "survival",
+    "wordLower": "survival",
+    "level": "senior",
+    "phonetic": "/sərˈvaɪvəl/",
+    "definitions": [
+      "n. 幸存",
+      "笠存"
+    ],
+    "example": "Clean water is essential for the survival of all living things.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "清洁的水对所有生物的生存都至关重要。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "divide",
+    "wordLower": "divide",
+    "level": "senior",
+    "phonetic": "/diˈvaid/",
+    "definitions": [
+      "v. 分， 划分",
+      "除以"
+    ],
+    "example": "The teacher divided the class into four discussion groups.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "老师把全班分成了四个讨论小组。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "teenager",
+    "wordLower": "teenager",
+    "level": "senior",
+    "phonetic": "/ˈti:neidʒə(r)/",
+    "definitions": [
+      "n. (13～ 19 岁的）青少军， 十几岁的少军"
+    ],
+    "example": "As a teenager, he learned to manage his time wisely.",
+    "list": 9,
+    "source": "local-import",
+    "exampleMeaning": "十几岁时，他学会了合理安排时间。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

@@ -1,0 +1,438 @@
+[
+  {
+    "word": "include",
+    "wordLower": "include",
+    "level": "senior",
+    "phonetic": "/inˈklu:d/",
+    "definitions": [
+      "v. 包舍， 包括"
+    ],
+    "example": "The school trip will include visits to two science museums.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "这次学校旅行将包括参观两座科学博物馆。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "crazy",
+    "wordLower": "crazy",
+    "level": "senior",
+    "phonetic": "/ˈkreizi/",
+    "definitions": [
+      "adj. 疯涯的"
+    ],
+    "example": "It sounds crazy to finish the whole project tonight.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "今晚完成整个项目听起来很疯狂。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "challenging",
+    "wordLower": "challenging",
+    "level": "senior",
+    "phonetic": "/ˈʧælənʤɪŋ/",
+    "definitions": [
+      "adj. 真育挑战性的"
+    ],
+    "example": "Learning to manage time effectively can be challenging for students.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "对学生来说，学会有效管理时间可能很有挑战性。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "exact",
+    "wordLower": "exact",
+    "level": "senior",
+    "phonetic": "/ɪgˈzækt/",
+    "definitions": [
+      "adj. 精确的， 准确的， 确切的"
+    ],
+    "example": "Please tell me the exact time when the meeting begins.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "请告诉我会议开始的确切时间。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "sure",
+    "wordLower": "sure",
+    "level": "senior",
+    "phonetic": "/ʃʊə(r)/",
+    "definitions": [
+      "adj. 确信， 肯定 adj. （口语〉的确， 一定， 当然"
+    ],
+    "example": "I am sure that regular practice will improve your writing.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "我确信经常练习会提高你的写作水平。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "lecture",
+    "wordLower": "lecture",
+    "level": "senior",
+    "phonetic": "/ˈlɛkʧər/",
+    "definitions": [
+      "n. [ C： 讲课， 演讲"
+    ],
+    "example": "The professor gave an interesting lecture on modern technology.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "教授做了一场关于现代科技的有趣讲座。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "feel",
+    "wordLower": "feel",
+    "level": "senior",
+    "phonetic": "/fi:l/",
+    "definitions": [
+      "v. 感觉",
+      "触摸",
+      "认为 v. 摸索， 寻找 link. v. 觉得",
+      "摸起来"
+    ],
+    "example": "Many students feel nervous before an important examination.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "许多学生在重要考试前感到紧张。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "congratulate",
+    "wordLower": "congratulate",
+    "level": "senior",
+    "phonetic": "/kənˈgræʧəˌleɪt/",
+    "definitions": [
+      "v. 祝贺，恭贺"
+    ],
+    "example": "We congratulated her on winning the school writing competition.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "我们祝贺她赢得学校写作比赛。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "never",
+    "wordLower": "never",
+    "level": "senior",
+    "phonetic": "/ˈnevə(r)/",
+    "definitions": [
+      "adj. 决不",
+      "从来没商"
+    ],
+    "example": "He never leaves the classroom without turning off the lights.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "他离开教室时从不会忘记关灯。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "illegal",
+    "wordLower": "illegal",
+    "level": "senior",
+    "phonetic": "/ˌɪˈligəl/",
+    "definitions": [
+      "adj. 违法的， 非法的"
+    ],
+    "example": "It is illegal to sell certain products without permission.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "未经许可销售某些产品是违法的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "victory",
+    "wordLower": "victory",
+    "level": "senior",
+    "phonetic": "/ˈvɪktəri/",
+    "definitions": [
+      "n. [ C J 胜利"
+    ],
+    "example": "The debate team celebrated its victory after months of preparation.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "辩论队在准备数月后庆祝了胜利。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "survive",
+    "wordLower": "survive",
+    "level": "senior",
+    "phonetic": "/sərˈvaɪv/",
+    "definitions": [
+      "v. 幸存，主还 v. 比…活得长"
+    ],
+    "example": "These plants can survive even during a long dry season.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "这些植物即使在漫长的旱季也能存活。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "satisfaction",
+    "wordLower": "satisfaction",
+    "level": "senior",
+    "phonetic": "/ˌsætɪsˈfækʃən/",
+    "definitions": [
+      "n. 满意"
+    ],
+    "example": "She felt great satisfaction after completing the difficult task.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "完成这项困难的任务后，她感到非常满意。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "rule",
+    "wordLower": "rule",
+    "level": "senior",
+    "phonetic": "/ru:l/",
+    "definitions": [
+      "n. 规日Ll，规定",
+      "统治 v. 统治",
+      "支配"
+    ],
+    "example": "Every student must follow the school rule about library use.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "每名学生都必须遵守学校关于图书馆使用的规定。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "suitable",
+    "wordLower": "suitable",
+    "level": "senior",
+    "phonetic": "/ˈsu:təbl/",
+    "definitions": [
+      "adj. 合适的，适宣的"
+    ],
+    "example": "This online course is suitable for students at different levels.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "这门网络课程适合不同水平的学生。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "remark",
+    "wordLower": "remark",
+    "level": "senior",
+    "phonetic": "/rɪˈmɑrk/",
+    "definitions": [
+      "n.／ v. 陈述，评论 suitable"
+    ],
+    "example": "Her positive remark encouraged the team to continue their work.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "她积极的评论鼓励团队继续工作。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "copy",
+    "wordLower": "copy",
+    "level": "senior",
+    "phonetic": "/ˈkɒpi/",
+    "definitions": [
+      "n. 把！｝本，副本",
+      "一本（份、册… ） v. 复制",
+      "纷写",
+      "复印"
+    ],
+    "example": "Please make a copy of the report for each student.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "请为每名学生复印一份报告。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "fantastic",
+    "wordLower": "fantastic",
+    "level": "senior",
+    "phonetic": "/fænˈtæstɪk/",
+    "definitions": [
+      "adj. 极好的， 美妙的， 很棒的",
+      "奇异的"
+    ],
+    "example": "We had a fantastic time at the school art festival.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "我们在学校艺术节上度过了一段美妙的时光。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "whom",
+    "wordLower": "whom",
+    "level": "senior",
+    "phonetic": "/hu:m/",
+    "definitions": [
+      "pron. 谁"
+    ],
+    "example": "The student whom the teacher praised won the writing competition.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "老师表扬的那名学生赢得了写作比赛。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "differ",
+    "wordLower": "differ",
+    "level": "senior",
+    "phonetic": "/ˈdɪfər/",
+    "definitions": [
+      "v. 不一致，青区别"
+    ],
+    "example": "The two plans differ greatly in cost and environmental impact.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "这两个计划在成本和环境影响方面有很大不同。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "accident",
+    "wordLower": "accident",
+    "level": "senior",
+    "phonetic": "/ˈæksidənt/",
+    "definitions": [
+      "n. 事昧， 意外事件 • accident"
+    ],
+    "example": "She broke the glass by accident while cleaning the kitchen.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "她打扫厨房时不小心打破了玻璃杯。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "hear",
+    "wordLower": "hear",
+    "level": "senior",
+    "phonetic": "/hiə(r)/",
+    "definitions": [
+      "v. 昕见，听说，得知 -~~ Y百阳圆"
+    ],
+    "example": "I was pleased to hear that you passed the exam.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "听说你通过了考试，我很高兴。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "portable",
+    "wordLower": "portable",
+    "level": "senior",
+    "phonetic": "/ˈpɔrtəbəl/",
+    "definitions": [
+      "adj. 轻便的， 便携的",
+      "手握的"
+    ],
+    "example": "This portable computer is light enough to carry anywhere.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "这台便携式电脑很轻，可以随身携带。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "still",
+    "wordLower": "still",
+    "level": "senior",
+    "phonetic": "/stil/",
+    "definitions": [
+      "adj.： 静.Lt的， 平静的 adj. 仍然， 还"
+    ],
+    "example": "The lake remained still under the clear night sky.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "在晴朗的夜空下，湖面依然平静。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "garbage",
+    "wordLower": "garbage",
+    "level": "senior",
+    "phonetic": "/ˈgɑrbɪʤ/",
+    "definitions": [
+      "n. tu股"
+    ],
+    "example": "Residents should separate food waste from other household garbage.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "居民应该将厨余垃圾与其他生活垃圾分开。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "promote",
+    "wordLower": "promote",
+    "level": "senior",
+    "phonetic": "/prəˈmoʊt/",
+    "definitions": [
+      "v. 但进",
+      "提升",
+      "推销"
+    ],
+    "example": "The campaign aims to promote healthy eating among teenagers.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "这项活动旨在促进青少年健康饮食。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "settle",
+    "wordLower": "settle",
+    "level": "senior",
+    "phonetic": "/ˈsɛtəl/",
+    "definitions": [
+      "v. 安家，定居 v. 解决（问题）"
+    ],
+    "example": "Both sides worked together to settle the disagreement peacefully.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "双方共同努力，和平解决了分歧。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "date",
+    "wordLower": "date",
+    "level": "senior",
+    "phonetic": "/deit/",
+    "definitions": [
+      "n. 曰期",
+      "约会 v. 约会",
+      "注明日期"
+    ],
+    "example": "Check the date on the package before buying the food.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "购买食品前要查看包装上的日期。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "match",
+    "wordLower": "match",
+    "level": "senior",
+    "phonetic": "/mætʃ/",
+    "definitions": [
+      "v. 相配， 相称 n. 比赛",
+      "火柴 match"
+    ],
+    "example": "The curtains match the color of the living room walls.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "这些窗帘与客厅墙壁的颜色很相配。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "conference",
+    "wordLower": "conference",
+    "level": "senior",
+    "phonetic": "/ˈkɒnfərəns/",
+    "definitions": [
+      "n. （正式的）会议"
+    ],
+    "example": "Teachers attended a conference on improving classroom learning.",
+    "list": 16,
+    "source": "local-import",
+    "exampleMeaning": "教师们参加了一场关于改善课堂学习的会议。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

@@ -54,7 +54,7 @@
           <view class="library-vocab-book-body"><view class="library-vocab-book-title">{{item.title}}</view><view class="library-vocab-book-meta">{{item.meta}}</view></view>
           <view class="library-vocab-book-stamp">{{texts.cardSet}}</view><view class="library-vocab-book-arrow"></view>
         </view>
-        <view class="library-vocab-book book-{{item.level}} {{importingBook === item.level ? 'is-loading' : ''}}" wx:for="{{standardDictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
+        <view class="library-vocab-book book-{{item.level}}" wx:for="{{standardDictionaryBooks}}" wx:key="level" bindtap="openStandardBook" data-level="{{item.level}}">
           <view class="library-vocab-spine-mark">{{item.coverMark}}</view>
           <view class="library-vocab-book-body">
             <view class="library-vocab-book-title">{{item.title}}</view>
@@ -64,6 +64,13 @@
           <view class="library-vocab-book-stamp">{{texts.cardSet}}</view>
           <view class="library-vocab-book-arrow"></view>
         </view>
+      </view>
+    </block>
+
+    <block wx:elif="{{sourceMode === 'standard-lists'}}">
+      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">{{activeStandardTitle}}</view><view class="library-vocab-subtitle">{{texts.selectList}}</view></view></view>
+      <view class="library-vocab-shelf">
+        <view class="library-vocab-book book-{{activeStandardStage}} {{importingBook === item.level ? 'is-loading' : ''}}" wx:for="{{activeStandardLists}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}"><view class="library-vocab-spine-mark">{{item.coverMark}}</view><view class="library-vocab-book-body"><view class="library-vocab-book-title">List {{item.list}}</view><view class="library-vocab-book-meta">{{activeStandardTitle}}</view></view><view class="library-vocab-book-arrow"></view></view>
       </view>
     </block>
 
@@ -328,7 +335,7 @@
         <view class="book-action">{{texts.enter}}</view>
       </view>
       <view class="book-card book-unlock" wx:for="{{unlockEditions}}" wx:key="edition" bindtap="openUnlockEdition" data-edition="{{item.edition}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view><view class="book-lines"><text></text><text></text><text></text></view></view><view class="book-main"><view class="book-title">{{item.title}}</view><view class="book-meta">{{item.meta}}</view></view><view class="book-tag">{{texts.cardSet}}</view><view class="book-action">{{texts.enter}}</view></view>
-      <view class="book-card book-{{item.level}}" wx:for="{{standardDictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
+      <view class="book-card book-{{item.level}}" wx:for="{{standardDictionaryBooks}}" wx:key="level" bindtap="openStandardBook" data-level="{{item.level}}">
         <view class="book-depth"></view>
         <view class="book-cover">
           <view class="book-spine"></view>
@@ -343,6 +350,11 @@
         <view class="book-action {{importingBook === item.level ? 'is-loading' : ''}}">{{texts.enter}}</view>
       </view>
     </view>
+  </block>
+
+  <block wx:elif="{{sourceMode === 'standard-lists'}}">
+    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">{{activeStandardTitle}}</view><view class="progress-copy">{{texts.selectList}}</view></view></view>
+    <view class="book-list shelf-board"><view class="book-card book-{{activeStandardStage}}" wx:for="{{activeStandardLists}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view></view><view class="book-main"><view class="book-title">List {{item.list}}</view><view class="book-meta">{{activeStandardTitle}}</view></view><view class="book-action {{importingBook === item.level ? 'is-loading' : ''}}">{{texts.enter}}</view></view></view>
   </block>
 
   <block wx:elif="{{sourceMode === 'unlock-levels'}}">

@@ -92,7 +92,11 @@ def parse_junior(text):
     lines = [line.strip() for line in text.splitlines()]
     rows = []
     seen = set()
+    current_list = 0
     for i, line in enumerate(lines[:-2]):
+        if line.lower() == "word list" and re.fullmatch(r"\d{1,2}", clean_space(lines[i + 1])):
+            current_list = int(clean_space(lines[i + 1]))
+            continue
         if not is_word_line(line):
             continue
         next_line = clean_space(lines[i + 1])
@@ -123,6 +127,7 @@ def parse_junior(text):
                 "phonetic": clean_phonetic(next_line),
                 "definition": definition,
                 "example": "",
+                "list": current_list,
             })
             seen.add(word)
     return rows
@@ -136,8 +141,16 @@ def parse_senior(text):
     rows = []
     seen = set()
     in_word_lists = False
+    current_list = 0
     for raw in text.splitlines():
-        if re.search(r"Wo.?d List\s+1\s+\+-\s+3", raw) or re.match(r"^\s*member\s{2,}n", raw):
+        header = re.search(r"Word\s+List\s+([0-9]+|[1I]O)\b", raw, re.I)
+        first_list_header = bool(re.search(r"MP3-01\s+Word\s+List\s+1\b", raw, re.I))
+        if header and (in_word_lists or first_list_header):
+            value = header.group(1).upper().replace("I", "1").replace("O", "0")
+            number = int(value)
+            if number == current_list + 1 or (current_list == 0 and number == 1):
+                current_list = number
+        if first_list_header or re.search(r"Wo.?d List\s+1\s+\+-\s+3", raw) or re.match(r"^\s*member\s{2,}n", raw):
             in_word_lists = True
         if not in_word_lists:
             continue
@@ -167,6 +180,7 @@ def parse_senior(text):
             "phonetic": "",
             "definition": definition,
             "example": "",
+            "list": current_list,
         })
         seen.add(word)
     return rows
@@ -177,7 +191,7 @@ def write_csv(level, rows):
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "words.csv"
     with out_path.open("w", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["word", "phonetic", "definition", "example"])
+        writer = csv.DictWriter(f, fieldnames=["word", "phonetic", "definition", "example", "list"])
         writer.writeheader()
         writer.writerows(rows)
     return out_path

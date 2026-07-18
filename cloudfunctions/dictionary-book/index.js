@@ -15,7 +15,8 @@ const STANDARD_BOOKS = {
     level: 'senior',
     title: '高中英语词汇 乱序',
     cloudPath: 'dictionary_books/word-dictionary-senior.json'
-  }
+  },
+  ielts: { level: 'ielts', title: '雅思词汇词根+联想记忆法：乱序版', cloudPath: 'dictionary_books/word-dictionary-ielts.json' }
 };
 
 function normalize(value) {
@@ -25,6 +26,18 @@ function normalize(value) {
 function resolveBook(level) {
   const normalizedLevel = normalize(level);
   if (STANDARD_BOOKS[normalizedLevel]) return STANDARD_BOOKS[normalizedLevel];
+  const standardMatch = normalizedLevel.match(/^(junior|senior|ielts)-list-(\d{1,2})$/);
+  if (standardMatch) {
+    const stage = standardMatch[1];
+    const list = Number(standardMatch[2]);
+    const max = stage === 'junior' ? 32 : (stage === 'senior' ? 40 : 48);
+    if (list < 1 || list > max) return null;
+    return {
+      level: `${stage}-list-${list}`,
+      title: `${STANDARD_BOOKS[stage].title} List ${list}`,
+      cloudPath: `dictionary_books/${stage === 'ielts' ? 'word-lists-examples-v1' : 'word-lists-examples-v2'}/${stage}/list-${list}.json`
+    };
+  }
   const match = normalizedLevel.match(/^unlock-(?:(v3)-)?([1-4])-u([1-8])-(ls|rw)$/);
   if (!match) return null;
   const edition = match[1] ? 3 : 2;

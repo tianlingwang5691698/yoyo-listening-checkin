@@ -1,0 +1,465 @@
+[
+  {
+    "word": "period",
+    "wordLower": "period",
+    "level": "senior",
+    "phonetic": "/ˈpiəriəd/",
+    "definitions": [
+      "n. 时期，时代"
+    ],
+    "example": "The country experienced rapid growth during that period.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这个国家在那个时期经历了快速发展。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "breath",
+    "wordLower": "breath",
+    "level": "senior",
+    "phonetic": "/breθ/",
+    "definitions": [
+      "n. 气思，呼吸"
+    ],
+    "example": "She took a deep breath before giving her speech.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "她在演讲前深吸了一口气。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "bent",
+    "wordLower": "bent",
+    "level": "senior",
+    "phonetic": "/bɛnt/",
+    "definitions": [
+      "adj. 弯的 n. （某万面的）天赋，爱好"
+    ],
+    "example": "The bicycle wheel was bent and needed to be repaired.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "自行车轮弯了，需要修理。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "chance",
+    "wordLower": "chance",
+    "level": "senior",
+    "phonetic": "/tʃa:ns/",
+    "definitions": [
+      "n. 机会",
+      "可能性"
+    ],
+    "example": "The exchange program gave students a chance to experience another culture.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这个交流项目给了学生体验另一种文化的机会。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "park",
+    "wordLower": "park",
+    "level": "senior",
+    "phonetic": "/pa:k/",
+    "definitions": [
+      "n. 公园",
+      "停车场 v. 停放（汽车）"
+    ],
+    "example": "You cannot park your car in front of the school gate.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "你不能把车停在学校门口。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "project",
+    "wordLower": "project",
+    "level": "senior",
+    "phonetic": "/ˈprɑʤɛkt/",
+    "definitions": [
+      "n. 顶目， 工程"
+    ],
+    "example": "Our science project focuses on reducing food waste at school.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们的科学项目重点研究如何减少学校里的食物浪费。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "trick",
+    "wordLower": "trick",
+    "level": "senior",
+    "phonetic": "/trɪk/",
+    "definitions": [
+      "n. [ C J 诡计，把戏"
+    ],
+    "example": "The performer amazed the audience with a simple card trick.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "表演者用一个简单的纸牌把戏令观众惊叹。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "cry",
+    "wordLower": "cry",
+    "level": "senior",
+    "phonetic": "/krai/",
+    "definitions": [
+      "n. 隔i",
+      "哭声 v. 眠o叫",
+      "哭"
+    ],
+    "example": "The baby began to cry when the room became dark.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "房间变暗时，婴儿开始哭了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "rent",
+    "wordLower": "rent",
+    "level": "senior",
+    "phonetic": "/rent/",
+    "definitions": [
+      "n. 租金 v. 租用",
+      "出租"
+    ],
+    "example": "The monthly rent includes the cost of water and electricity.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "每月的租金包括水电费。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "nationality",
+    "wordLower": "nationality",
+    "level": "senior",
+    "phonetic": "/ˌnæʃəˈnælɪti/",
+    "definitions": [
+      "n. 国籍",
+      "民族"
+    ],
+    "example": "Please state your name, age, and nationality on the form.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "请在表格上填写你的姓名、年龄和国籍。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "symptom",
+    "wordLower": "symptom",
+    "level": "senior",
+    "phonetic": "/ˈsɪmptəm/",
+    "definitions": [
+      "n. 症状",
+      "征兆"
+    ],
+    "example": "A high fever can be a symptom of illness.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "高烧可能是疾病的一种症状。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "windy",
+    "wordLower": "windy",
+    "level": "senior",
+    "phonetic": "/ˈwɪndi/",
+    "definitions": [
+      "adj. 育风的， 多凤的"
+    ],
+    "example": "It was too windy to play badminton outside.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "外面风太大了，不适合打羽毛球。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "indeed",
+    "wordLower": "indeed",
+    "level": "senior",
+    "phonetic": "/ˌɪnˈdid/",
+    "definitions": [
+      "adj. 确实， 实在"
+    ],
+    "example": "The final exam was indeed more difficult than expected.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "期末考试确实比预想的更难。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "have",
+    "wordLower": "have",
+    "level": "senior",
+    "phonetic": "/hæv/",
+    "definitions": [
+      "v. 育， 筐， 令 aux. v. 帮朋构成完成时态"
+    ],
+    "example": "We have already completed our science project.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "我们已经完成了科学课题。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "prove",
+    "wordLower": "prove",
+    "level": "senior",
+    "phonetic": "/pru:v/",
+    "definitions": [
+      "v. 证明， 证实 v. 证明是， 结果是， 原来是"
+    ],
+    "example": "The experiment may prove that the new method is effective.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这项实验可能会证明新方法是有效的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "advance",
+    "wordLower": "advance",
+    "level": "senior",
+    "phonetic": "/ədˈvæns/",
+    "definitions": [
+      "v./n. 推进， 前进"
+    ],
+    "example": "Recent advances in technology have improved online education.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "近来的技术进步改善了在线教育。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "wise",
+    "wordLower": "wise",
+    "level": "senior",
+    "phonetic": "/waiz/",
+    "definitions": [
+      "adj. 聪明的， 明智的 wise ⑩"
+    ],
+    "example": "It is wise to consider all the facts before deciding.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "在作决定之前考虑所有事实是明智的。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "culture",
+    "wordLower": "culture",
+    "level": "senior",
+    "phonetic": "/ˈkʌltʃə(r)/",
+    "definitions": [
+      "n. 文化"
+    ],
+    "example": "Studying abroad helps students understand another culture better.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "出国留学有助于学生更好地了解另一种文化。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "companion",
+    "wordLower": "companion",
+    "level": "senior",
+    "phonetic": "/kəmˈpænjən/",
+    "definitions": [
+      "n. 罔伴， 同事"
+    ],
+    "example": "My dog became my closest companion during the long holiday.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "在漫长的假期里，我的狗成了我最亲密的伙伴。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "train",
+    "wordLower": "train",
+    "level": "senior",
+    "phonetic": "/trein/",
+    "definitions": [
+      "v. 培训 ｜｜， 训练 n. 火车"
+    ],
+    "example": "The company trains new employees to communicate with customers effectively.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "公司培训新员工，使他们能与顾客有效沟通。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "relax",
+    "wordLower": "relax",
+    "level": "senior",
+    "phonetic": "/rɪˈlæks/",
+    "definitions": [
+      "v. 版松，轻松"
+    ],
+    "example": "Soft music helps me relax after a stressful day.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "柔和的音乐帮助我在紧张的一天后放松下来。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "honest",
+    "wordLower": "honest",
+    "level": "senior",
+    "phonetic": "/ˈɒnist/",
+    "definitions": [
+      "adj. 诚实的， 正直的"
+    ],
+    "example": "Please be honest about the reason for your absence.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "请如实说明你缺席的原因。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "disease",
+    "wordLower": "disease",
+    "level": "senior",
+    "phonetic": "/diˈzi:z/",
+    "definitions": [
+      "n. 病， 疾病"
+    ],
+    "example": "Regular exercise can reduce the risk of heart disease.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "经常锻炼可以降低患心脏病的风险。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "direct",
+    "wordLower": "direct",
+    "level": "senior",
+    "phonetic": "/diˈrekt; dai-/",
+    "definitions": [
+      "adj. 窒攘的",
+      "直达的 v. 指挥，指导",
+      "导演"
+    ],
+    "example": "This direct flight takes only three hours to reach the city.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这趟直达航班只需三小时就能到达那座城市。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "tasty",
+    "wordLower": "tasty",
+    "level": "senior",
+    "phonetic": "/ˈteisti/",
+    "definitions": [
+      "adj. 昧道好的 tasty"
+    ],
+    "example": "The soup is both healthy and surprisingly tasty.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这道汤既健康又出乎意料地美味。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "loose",
+    "wordLower": "loose",
+    "level": "senior",
+    "phonetic": "/lus/",
+    "definitions": [
+      "adj. 松敲的",
+      "宽松的"
+    ],
+    "example": "These trousers are too loose around my waist.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "这条裤子的腰部对我来说太宽松了。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "chemical",
+    "wordLower": "chemical",
+    "level": "senior",
+    "phonetic": "/ˈkɛmɪkəl/",
+    "definitions": [
+      "a呵， 化学的 n. H：",
+      "学得U55"
+    ],
+    "example": "The laboratory stores each chemical in a clearly marked bottle.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "实验室把每种化学品都存放在标记清楚的瓶子里。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "widespread",
+    "wordLower": "widespread",
+    "level": "senior",
+    "phonetic": "/ˈwaɪdˈsprɛd/",
+    "definitions": [
+      "adj. 分布广的",
+      "普遍的",
+      "广泛的"
+    ],
+    "example": "There is widespread concern about the effects of air pollution.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "人们普遍担忧空气污染的影响。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "handwriting",
+    "wordLower": "handwriting",
+    "level": "senior",
+    "phonetic": "/ˈhænˌdraɪtɪŋ/",
+    "definitions": [
+      "n. 书法"
+    ],
+    "example": "Her neat handwriting makes her answers easy to read.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "她工整的笔迹使她的答案易于阅读。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "anything",
+    "wordLower": "anything",
+    "level": "senior",
+    "phonetic": "/ˈeniθiŋ/",
+    "definitions": [
+      "pron. 某事（物）",
+      "任何事（物）"
+    ],
+    "example": "You can ask me anything about the science project.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "关于这个科学项目，你可以问我任何事情。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "knowledge",
+    "wordLower": "knowledge",
+    "level": "senior",
+    "phonetic": "/ˈnɑlɪʤ/",
+    "definitions": [
+      "n. 知识， 学问"
+    ],
+    "example": "Reading widely can increase our knowledge of the world.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "广泛阅读可以增加我们对世界的了解。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  },
+  {
+    "word": "exhibition",
+    "wordLower": "exhibition",
+    "level": "senior",
+    "phonetic": "/ˌeksiˈbiʃn/",
+    "definitions": [
+      "n. 展览，展览会",
+      "展自"
+    ],
+    "example": "The school held an exhibition of students' artwork last week.",
+    "list": 13,
+    "source": "local-import",
+    "exampleMeaning": "学校上周举办了一场学生艺术作品展。",
+    "exampleSource": "model:gpt-5.6-sol:school-level-audited"
+  }
+]

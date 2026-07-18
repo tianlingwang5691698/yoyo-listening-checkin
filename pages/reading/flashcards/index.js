@@ -62,6 +62,21 @@ const UNLOCK_EDITIONS = [
   { key: 'v3', edition: 3, title: text('unlockThirdBook', 'Unlock 第三版词汇书'), coverMark: 'U3', meta: text('unlockMeta', 'Level 1–4 · Unit 1–8') }
 ];
 
+const STANDARD_BOOK_GROUPS = [
+  { level: 'junior', title: text('juniorBook', '初中英语词汇 乱序'), coverMark: text('juniorMark', '初'), listCount: 32 },
+  { level: 'senior', title: text('seniorBook', '高中英语词汇 乱序'), coverMark: text('seniorMark', '高'), listCount: 40 },
+  { level: 'ielts', title: text('ieltsBook', '雅思词汇 乱序'), coverMark: text('ieltsMark', '雅'), listCount: 48 }
+];
+
+function getStandardListLevel(stage, list) {
+  return `${stage}-list-${list}`;
+}
+
+function getStandardListCloudPath(stage, list) {
+  const release = stage === 'ielts' ? 'word-lists-examples-v1' : 'word-lists-examples-v2';
+  return `dictionary_books/${release}/${stage}/list-${list}.json`;
+}
+
 function getUnlockBookLevel(edition, unlockLevel, unit, section) {
   return Number(edition) === 3
     ? `unlock-v3-${unlockLevel}-u${unit}-${section}`
@@ -73,8 +88,18 @@ function getUnlockCloudPath(edition, unlockLevel, unit, section) {
 }
 
 const DEFAULT_DICTIONARY_BOOKS = [
-  { level: 'junior', title: text('juniorBook', '初中英语词汇 乱序'), coverMark: text('juniorMark', '初'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-junior.json' },
-  { level: 'senior', title: text('seniorBook', '高中英语词汇 乱序'), coverMark: text('seniorMark', '高'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' },
+  ...STANDARD_BOOK_GROUPS.flatMap((group) => Array.from({ length: group.listCount }, (_, index) => {
+    const list = index + 1;
+    return {
+      level: getStandardListLevel(group.level, list),
+      stage: group.level,
+      list,
+      title: `${group.title} List ${list}`,
+      coverMark: `L${list}`,
+      imported: 0,
+      cloudPath: getStandardListCloudPath(group.level, list)
+    };
+  })),
   ...[2, 3].flatMap((unlockEdition) => [1, 2, 3, 4].flatMap((unlockLevel) => [1, 2, 3, 4, 5, 6, 7, 8].flatMap((unit) => ['ls', 'rw'].map((section) => ({
     level: getUnlockBookLevel(unlockEdition, unlockLevel, unit, section),
     unlockEdition,
@@ -87,7 +112,7 @@ const DEFAULT_DICTIONARY_BOOKS = [
     cloudPath: getUnlockCloudPath(unlockEdition, unlockLevel, unit, section)
   })))))
 ];
-const STANDARD_DICTIONARY_BOOKS = DEFAULT_DICTIONARY_BOOKS.filter((book) => !book.unlockLevel);
+const STANDARD_DICTIONARY_BOOKS = STANDARD_BOOK_GROUPS;
 const UNLOCK_LEVELS = [1, 2, 3, 4].map((level) => ({
   level,
   title: `Unlock ${level}`,
@@ -97,7 +122,7 @@ const UNLOCK_LEVELS = [1, 2, 3, 4].map((level) => ({
 const FLASHCARD_SOURCE_CACHE_PREFIX = 'flashcardSourceCache:';
 const FLASHCARD_SOURCE_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
 const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
-const FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071303;
+const FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071803;
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
 const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v4-';
@@ -280,6 +305,12 @@ function getDictationSourceTitle(sourceId, fallback) {
   const level = String(sourceId || '').replace(/^dictionary-book-/, '');
   if (level === 'junior') return text('juniorBook', '初中英语词汇 乱序');
   if (level === 'senior') return text('seniorBook', '高中英语词汇 乱序');
+  if (level === 'ielts') return text('ieltsBook', '雅思词汇 乱序');
+  const standardMatch = level.match(/^(junior|senior|ielts)-list-(\d+)$/);
+  if (standardMatch) {
+    const titles = { junior: text('juniorBook', '初中英语词汇 乱序'), senior: text('seniorBook', '高中英语词汇 乱序'), ielts: text('ieltsBook', '雅思词汇 乱序') };
+    return `${titles[standardMatch[1]]} · List ${standardMatch[2]}`;
+  }
   const match = level.match(/^unlock-(?:(v3)-)?(\d+)-u(\d+)-(ls|rw)$/i);
   if (match) return `Unlock ${match[2]} ${match[1] ? '第三版' : '第二版'} · Unit ${match[3]} · ${match[4].toUpperCase()}`;
   return fallback || text('dictationShelf', '听音拼写');
@@ -291,6 +322,10 @@ function getEffectiveSettings(settings, library, sourceId) {
     newLimit: normalizeLimit(settings && settings.newLimit, total),
     reviewLimit: normalizeLimit(settings && settings.reviewLimit, total)
   };
+}
+
+function isStandardListSource(sourceId) {
+  return /^dictionary-book-(junior|senior|ielts)-list-\d+$/.test(String(sourceId || ''));
 }
 
 function buildPlanState(library, settings, today) {
@@ -319,7 +354,7 @@ function buildPlanSummary(library, settings) {
     mastered,
     reviewing,
     fresh,
-    todayPlan: Number((settings && settings.newLimit) || 0) + Number((settings && settings.reviewLimit) || 0)
+    todayPlan: Math.min(total, Number((settings && settings.newLimit) || 0) + Number((settings && settings.reviewLimit) || 0))
   };
 }
 
@@ -524,6 +559,23 @@ function readPlanSettings(sourceId, fallback) {
   } catch (error) {
     return fallback || {};
   }
+}
+
+function hasStoredPlanSettings(sourceId) {
+  try {
+    const stored = wx.getStorageSync(getPlanSettingsKey(sourceId));
+    return !!(stored && typeof stored === 'object' && (stored.newLimit != null || stored.reviewLimit != null));
+  } catch (error) {
+    return false;
+  }
+}
+
+function getSourcePlanSettings(sourceId, library, fallback) {
+  if (isStandardListSource(sourceId) && !hasStoredPlanSettings(sourceId)) {
+    const total = Math.max(LIMIT_MIN, (library || []).length || LIMIT_DEFAULT_MAX);
+    return { newLimit: total, reviewLimit: total };
+  }
+  return readPlanSettings(sourceId, fallback);
 }
 
 function writePlanSettings(sourceId, settings) {
@@ -739,6 +791,9 @@ Page({
     logs: [],
     dictionaryBooks: DEFAULT_DICTIONARY_BOOKS,
     standardDictionaryBooks: STANDARD_DICTIONARY_BOOKS,
+    activeStandardStage: '',
+    activeStandardTitle: '',
+    activeStandardLists: [],
     unlockEditions: UNLOCK_EDITIONS,
     unlockLevels: UNLOCK_LEVELS,
     activeUnlockEdition: 0,
@@ -827,8 +882,8 @@ Page({
       unlockEditions,
       activeUnlockEditionTitle: activeUnlockEdition ? activeUnlockEdition.title : this.data.activeUnlockEditionTitle,
       dictionaryBooks: mergeDictionaryBooks(this.data.dictionaryBooks).map((book) => Object.assign({}, book, {
-        title: book.level === 'senior' ? text('seniorBook', book.title) : (book.level === 'junior' ? text('juniorBook', book.title) : book.title),
-        coverMark: book.level === 'senior' ? text('seniorMark', book.coverMark) : (book.level === 'junior' ? text('juniorMark', book.coverMark) : book.coverMark)
+        title: book.level === 'senior' ? text('seniorBook', book.title) : (book.level === 'junior' ? text('juniorBook', book.title) : (book.level === 'ielts' ? text('ieltsBook', book.title) : book.title)),
+        coverMark: book.level === 'senior' ? text('seniorMark', book.coverMark) : (book.level === 'junior' ? text('juniorMark', book.coverMark) : (book.level === 'ielts' ? text('ieltsMark', book.coverMark) : book.coverMark))
       })),
       activeSourceTitle: this.data.activeSourceId ? this.data.activeSourceTitle : text('myLibrary', '我的词库')
     }), () => {
@@ -889,42 +944,9 @@ Page({
       const currentTargetPart = `${currentTarget.targetFamilyId || 'self'}:${currentTarget.targetChildId || 'self'}`;
       if (!data || data.syncMode === 'cloud-error' || currentTargetPart !== targetPart) return;
       writeSourceCache('', this.buildFlashcardData(data, '', readSourceCache('')));
-      STANDARD_DICTIONARY_BOOKS.forEach((sourceBook) => {
-        const sourceId = getBookSourceId(sourceBook.level);
-        const cachedBook = readSourceCache(sourceId);
-        if (cachedBook && (cachedBook.library || []).length) {
-          writeSourceCache(sourceId, this.buildFlashcardData(data, sourceId, cachedBook));
-        }
-      });
     };
     const reviewRequest = store.getFlashcardReview({ scope: 'personal' }, cacheVocabularyProgress);
     reviewRequest.then(cacheVocabularyProgress).catch(() => {});
-    if (this.sourcePrefetchTimer) clearTimeout(this.sourcePrefetchTimer);
-    this.sourcePrefetchTimer = setTimeout(async () => {
-      this.sourcePrefetchTimer = null;
-      for (let index = 0; index < STANDARD_DICTIONARY_BOOKS.length; index += 1) {
-        const book = normalizeBook(STANDARD_DICTIONARY_BOOKS[index]);
-        const sourceId = getBookSourceId(book.level);
-        if (readSourceCache(sourceId)) continue;
-        try {
-          const bookData = await loadBookCardsFromStorage(book);
-          const currentTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
-          const currentTargetPart = `${currentTarget.targetFamilyId || 'self'}:${currentTarget.targetChildId || 'self'}`;
-          if (currentTargetPart !== targetPart) return;
-          const baseCache = {
-            library: bookData.cards || [],
-            settings: readPlanSettings(sourceId, this.data.settings),
-            today: effects.todayKey(),
-            logs: [],
-            dictionaryBooks: this.data.dictionaryBooks
-          };
-          const reviewData = await store.getFlashcardReview({ sourceId }).catch(() => null);
-          writeSourceCache(sourceId, reviewData && reviewData.syncMode !== 'cloud-error'
-            ? this.buildFlashcardData(reviewData, sourceId, baseCache)
-            : baseCache);
-        } catch (error) {}
-      }
-    }, 500);
   },
   buildFlashcardData(data, activeSourceId, cached) {
     const rawLibrary = data && Array.isArray(data.library) ? data.library : [];
@@ -942,7 +964,7 @@ Page({
     } else if (activeSourceId && cached && cached.library && cached.library.length) {
       library = mergeCachedCardState(library, cached.library).map(normalizeCard);
     }
-    const sourceSettings = readPlanSettings(activeSourceId, settings);
+    const sourceSettings = getSourcePlanSettings(activeSourceId, library, settings);
     const effectiveSettings = getEffectiveSettings(sourceSettings, library, activeSourceId);
     const limitOptions = buildLimitOptions(library.length || LIMIT_DEFAULT_MAX);
     const cards = (activeSourceId
@@ -1116,7 +1138,7 @@ Page({
         const localCards = bookData.cards || [];
         const debugLines = buildBookDebugLines('cloud-json', book, { rows, cards: localCards });
         this.setData({ flashcardDebugLines: shouldShowBookDebug(debugLines) ? debugLines : [] });
-        const sourceSettings = readPlanSettings(sourceId, this.data.settings);
+        const sourceSettings = getSourcePlanSettings(sourceId, localCards, this.data.settings);
         const effectiveSettings = getEffectiveSettings(sourceSettings, localCards, sourceId);
         const limitOptions = buildLimitOptions(localCards.length);
         const cards = buildDueCards(localCards, effectiveSettings, this.data.today);
@@ -1212,6 +1234,17 @@ Page({
       activeUnlockSections: []
     });
   },
+  openStandardBook(event) {
+    const stage = event.currentTarget.dataset.level || '';
+    const group = STANDARD_BOOK_GROUPS.find((item) => item.level === stage);
+    if (!group) return;
+    this.setData({
+      sourceMode: 'standard-lists',
+      activeStandardStage: stage,
+      activeStandardTitle: group.title,
+      activeStandardLists: DEFAULT_DICTIONARY_BOOKS.filter((book) => book.stage === stage)
+    });
+  },
   chooseUnlockLevel(event) {
     const level = Number(event.currentTarget.dataset.level || 0);
     const group = UNLOCK_LEVELS.find((item) => item.level === level);
@@ -1232,6 +1265,10 @@ Page({
     });
   },
   backToBookshelf() {
+    if (this.data.sourceMode === 'standard-lists') {
+      this.setData({ sourceMode: 'bookshelf', activeStandardStage: '', activeStandardTitle: '', activeStandardLists: [] });
+      return;
+    }
     if (this.data.sourceMode === 'library' && /^dictionary-book-unlock-/.test(this.data.activeSourceId || '')) {
       this.setData({ sourceMode: 'unlock-sections', mode: 'library', planSettingsVisible: false, libraryVisible: false });
       return;
