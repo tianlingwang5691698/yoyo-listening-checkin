@@ -255,6 +255,57 @@
   font-weight: 700;
 }
 
+.translation-analysis,
+.library-translation-analysis {
+  margin-top: 18rpx;
+  padding-top: 18rpx;
+  border-top: 1rpx solid rgba(77, 128, 101, 0.22);
+}
+
+.translation-analysis-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.translation-verdict {
+  flex: 0 0 auto;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.translation-verdict.status-correct { color: #3f7c5d; }
+.translation-verdict.status-partial { color: #8a6a2f; }
+.translation-verdict.status-incorrect { color: #9a554f; }
+
+.translation-analysis-row {
+  margin-top: 12rpx;
+  line-height: 1.65;
+}
+
+.translation-analysis-row text {
+  font-weight: 700;
+}
+
+.translation-correction {
+  margin-top: 12rpx;
+  padding-left: 16rpx;
+  border-left: 4rpx solid rgba(99, 151, 183, 0.42);
+}
+
+.translation-correction-reason {
+  margin-top: 4rpx;
+  color: var(--writing-soft);
+  font-size: 24rpx;
+}
+
+.translation-analysis-summary {
+  margin-top: 22rpx;
+  color: var(--writing-muted);
+  line-height: 1.65;
+}
+
 .translation-submit {
   margin-top: 28rpx;
 }
@@ -389,21 +440,6 @@
   color: var(--writing-muted);
   font-size: var(--font-body-size);
   line-height: var(--line-body);
-}
-
-.writing-debug {
-  margin-top: 16rpx;
-  padding: 16rpx 18rpx;
-  border-radius: 18rpx;
-  background: rgba(191, 215, 232, 0.24);
-  color: var(--writing-muted);
-  font-size: var(--font-caption-size);
-  line-height: 1.5;
-  word-break: break-all;
-}
-
-.writing-debug text {
-  display: block;
 }
 
 .review-card {
@@ -829,6 +865,19 @@
   font-weight: 700;
 }
 
+.library-translation-analysis {
+  border-top-color: rgba(79, 116, 87, 0.24);
+}
+
+.library-translation-analysis .translation-correction {
+  border-left-color: rgba(153, 112, 65, 0.42);
+}
+
+.library-translation-analysis .translation-correction-reason,
+.writing-library-page .translation-analysis-summary {
+  color: var(--library-writing-muted);
+}
+
 .library-translation-submit {
   margin-top: 28rpx;
 }
@@ -939,28 +988,6 @@
   color: var(--library-writing-error);
   font-size: var(--font-body-size);
   line-height: var(--line-body);
-}
-
-.library-writing-debug {
-  margin-top: 16rpx;
-  padding: 18rpx 20rpx;
-  border: 1rpx dashed rgba(155, 95, 84, 0.48);
-  border-radius: 6rpx;
-  background: rgba(255, 253, 247, 0.84);
-  color: var(--library-writing-error);
-  font-size: 22rpx;
-  line-height: 1.5;
-  word-break: break-all;
-}
-
-.library-writing-debug text {
-  display: block;
-}
-
-.library-debug-title {
-  margin-bottom: 8rpx;
-  font-size: var(--font-caption-size);
-  font-weight: 600;
 }
 
 .library-review-letter {

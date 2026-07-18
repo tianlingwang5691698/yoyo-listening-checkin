@@ -6,11 +6,22 @@ const test = require('node:test');
 const root = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 
-test('写作提交在同一云调用内完成批改并持久化', () => {
+test('写作提交先快速落库，再由独立长时调用完成批改', () => {
   const service = read('cloudfunctions/yoyo/services/writing.service.js');
-  assert.match(service, /async function submitWritingAttempt[\s\S]*?await gradeWritingAttempt\(Object\.assign\(\{\}, event/);
+  const submitBlock = service.match(/async function submitWritingAttempt[\s\S]*?\n}\n\nasync function gradeWritingAttempt/)[0];
+  assert.doesNotMatch(submitBlock, /await gradeWritingAttempt/);
+  assert.match(submitBlock, /attempt: savedAttempt,[\s\S]*?pending: true,[\s\S]*?resumable: true/);
   assert.match(service, /async function gradeWritingAttempt[\s\S]*?review: command\.set\(review\)[\s\S]*?saveWritingCompletion/);
   assert.match(service, /const shouldResume = \['grading-pending', 'grading-failed'\][\s\S]*?gradingAgeMs > 170000/);
+});
+
+test('写作批改使用独立配置并固定 gpt-5.6-sol', () => {
+  const service = read('cloudfunctions/yoyo/services/writing.service.js');
+  assert.match(service, /endpoint: process\.env\.WRITING_SCORE_ENDPOINT \|\| ''/);
+  assert.match(service, /apiKey: process\.env\.WRITING_SCORE_API_KEY \|\| ''/);
+  assert.match(service, /model: process\.env\.WRITING_SCORE_MODEL \|\| 'gpt-5\.6-sol'/);
+  assert.doesNotMatch(service, /WRITING_SCORE_(?:ENDPOINT|API_KEY|MODEL)[^\n]*READING_STUDY/);
+  assert.doesNotMatch(service, /WRITING_SCORE_FALLBACK_MODEL|fallbackModel/);
 });
 
 test('阅读提交先保存解析，记录页缺失时自动续接', () => {

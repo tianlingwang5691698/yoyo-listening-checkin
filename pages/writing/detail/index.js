@@ -80,7 +80,8 @@ function buildTranslationQuestions(prompt) {
     sourceText: cleanPromptText(question.sourceText),
     requiredWord: cleanPromptText(question.requiredWord),
     referenceAnswers: Array.isArray(question.referenceAnswers) ? question.referenceAnswers.map(cleanPromptText).filter(Boolean) : [],
-    inputValue: ''
+    inputValue: '',
+    analysis: null
   }));
 }
 
@@ -124,6 +125,8 @@ Page({
     isTranslation: false,
     translationQuestions: [],
     translationSubmitted: false,
+    translationAnalyzing: false,
+    translationAnalysisSummary: '',
     essayText: '',
     wordCount: 0,
     editorFocused: false,
@@ -131,7 +134,6 @@ Page({
     grading: false,
     review: null,
     reviewCelebrating: false,
-    writingDebugLines: [],
     errorText: ''
   }),
   async onLoad(options) {
@@ -159,7 +161,9 @@ Page({
       promptDisplay: initialPromptReady && !initialTranslation ? buildPromptDisplay(prompt) : null,
       isTranslation: initialTranslation,
       translationQuestions: initialTranslation ? buildTranslationQuestions(prompt) : [],
-      translationSubmitted: false
+      translationSubmitted: false,
+      translationAnalyzing: false,
+      translationAnalysisSummary: ''
     });
     await new Promise((resolve) => wx.nextTick(resolve));
     this.writingPerf.ready('pageReady', {
@@ -184,7 +188,9 @@ Page({
       promptDisplay: isTranslation ? null : buildPromptDisplay(prompt),
       isTranslation,
       translationQuestions: isTranslation ? buildTranslationQuestions(prompt) : [],
-      translationSubmitted: false
+      translationSubmitted: false,
+      translationAnalyzing: false,
+      translationAnalysisSummary: ''
     });
     this.writingPerf.mark('cloudRefresh', {
       source,
@@ -204,8 +210,7 @@ Page({
     this.setData({
       essayText,
       wordCount: countWords(essayText),
-      errorText: '',
-      writingDebugLines: []
+      errorText: ''
     });
   },
   onEditorFocus() {
@@ -217,18 +222,54 @@ Page({
   onTranslationInput(event) {
     const index = Number(event.currentTarget.dataset.index);
     const translationQuestions = (this.data.translationQuestions || []).map((question, questionIndex) => (
-      questionIndex === index ? Object.assign({}, question, { inputValue: event.detail.value || '' }) : question
+      questionIndex === index ? Object.assign({}, question, { inputValue: event.detail.value || '', analysis: null }) : question
     ));
-    this.setData({ translationQuestions, translationSubmitted: false, errorText: '' });
+    this.setData({ translationQuestions, translationSubmitted: false, translationAnalysisSummary: '', errorText: '' });
   },
-  submitTranslation() {
+  async submitTranslation() {
     const questions = this.data.translationQuestions || [];
     if (!questions.length || questions.some((question) => !String(question.inputValue || '').trim())) {
       this.setData({ errorText: '请先完成全部翻译题。' });
       wx.showToast({ title: '请先完成全部翻译题', icon: 'none' });
       return;
     }
-    this.setData({ translationSubmitted: true, errorText: '' });
+    const prompt = this.data.prompt || {};
+    this.setData({ translationAnalyzing: true, translationSubmitted: false, translationAnalysisSummary: '', errorText: '' });
+    try {
+      const result = await store.analyzeWritingTranslation({
+        prompt: {
+          _id: prompt._id || '',
+          title: prompt.title || '',
+          directions: prompt.directions || ''
+        },
+        questions: questions.map((question) => ({
+          number: question.number,
+          sourceText: question.sourceText,
+          requiredWord: question.requiredWord,
+          referenceAnswers: question.referenceAnswers,
+          studentTranslation: question.inputValue
+        }))
+      });
+      if (result && result.syncMode === 'cloud-error') {
+        throw new Error((result.cloudError && result.cloudError.message) || '翻译分析失败');
+      }
+      const analyses = Array.isArray(result && result.analyses) ? result.analyses : [];
+      if (!analyses.length) throw new Error('translation-analysis-missing');
+      const byNumber = new Map(analyses.map((item) => [String(item.number), item]));
+      this.setData({
+        translationQuestions: questions.map((question) => Object.assign({}, question, {
+          analysis: byNumber.get(String(question.number)) || null
+        })),
+        translationSubmitted: true,
+        translationAnalysisSummary: result.summary || '',
+        errorText: ''
+      });
+    } catch (error) {
+      this.setData({ errorText: '分析失败，可以再点一次提交。' });
+      wx.showToast({ title: '分析失败，可重试', icon: 'none' });
+    } finally {
+      this.setData({ translationAnalyzing: false });
+    }
   },
   async submitEssay() {
     const prompt = this.data.prompt;
@@ -245,7 +286,7 @@ Page({
     }
     const wordCount = countWords(essay);
     this.reviewEffectPlayed = false;
-    this.setData({ submitting: true, wordCount, errorText: '', reviewCelebrating: false, writingDebugLines: [] });
+    this.setData({ submitting: true, wordCount, errorText: '', reviewCelebrating: false });
     try {
       const result = await store.submitWritingAttempt({ prompt, promptId: prompt._id, essay });
       if (result && result.syncMode === 'cloud-error') {
@@ -284,11 +325,7 @@ Page({
       }).catch((error) => {
         this.setData({
           grading: false,
-          errorText: text('gradingFailed', '批改失败，可以再点一次提交。'),
-          writingDebugLines: [
-            `DEBUG: pages/writing/detail.submitEssay -> store.gradeWritingAttempt -> cloud.gradeWritingAttempt -> review：missing`,
-            `attemptId=${attemptId || 'missing'}；cloudError.message=${error && error.message ? error.message : String(error || '')}`
-          ]
+          errorText: text('gradingFailed', '批改失败，可以再点一次提交。')
         });
       });
       const item = {
@@ -304,11 +341,7 @@ Page({
       completed.addCompletedItem(item);
     } catch (error) {
       this.setData({
-        errorText: text('gradingFailed', '批改失败，可以再点一次提交。'),
-        writingDebugLines: [
-          `DEBUG: pages/writing/detail.submitEssay -> store.submitWritingAttempt -> cloud.submitWritingAttempt -> attempt：missing`,
-          `cloudError.message=${error && error.message ? error.message : String(error || '')}`
-        ]
+        errorText: text('gradingFailed', '批改失败，可以再点一次提交。')
       });
       wx.showToast({ title: text('retryFailed', '批改失败，可重试'), icon: 'none' });
     } finally {

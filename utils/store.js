@@ -33,6 +33,7 @@ const MUTATION_ACTIONS = {
   rescoreSpeakingAttempt: true,
   completeTodayCheckin: true,
   submitReadingAttempt: true,
+  analyzeWritingTranslation: true,
   submitWritingAttempt: true,
   gradeWritingAttempt: true,
   addDictionaryWord: true,
@@ -1002,6 +1003,13 @@ async function submitWritingAttempt(options) {
   }, { useCache: false });
 }
 
+async function analyzeWritingTranslation(options) {
+  return callCloud('analyzeWritingTranslation', withSelectedStudent(options || {}), {
+    analyses: [],
+    summary: ''
+  }, { useCache: false });
+}
+
 async function gradeWritingAttempt(attemptId) {
   return callCloud('gradeWritingAttempt', withSelectedStudent({ attemptId }), {
     attempt: null,
@@ -1387,6 +1395,7 @@ module.exports = {
   lookupWord,
   addDictionaryWord,
   submitReadingAttempt,
+  analyzeWritingTranslation,
   submitWritingAttempt,
   gradeWritingAttempt,
   getWritingAttempts,

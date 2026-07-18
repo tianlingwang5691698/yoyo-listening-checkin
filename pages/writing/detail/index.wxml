@@ -32,10 +32,24 @@
               <view class="library-translation-reference" wx:if="{{translationSubmitted}}">
                 <view class="library-translation-reference-title">参考译文</view>
                 <view wx:for="{{item.referenceAnswers}}" wx:for-item="answer" wx:key="*this">{{answer}}</view>
+                <view class="library-translation-analysis" wx:if="{{item.analysis}}">
+                  <view class="translation-analysis-head">
+                    <view class="library-translation-reference-title">模型讲解</view>
+                    <view class="translation-verdict status-{{item.analysis.status}}">{{item.analysis.verdict}}</view>
+                  </view>
+                  <view class="translation-analysis-row" wx:if="{{item.analysis.recommendedTranslation}}"><text>推荐译文：</text>{{item.analysis.recommendedTranslation}}</view>
+                  <view class="translation-analysis-row" wx:if="{{item.analysis.analysis}}"><text>分析：</text>{{item.analysis.analysis}}</view>
+                  <view class="translation-analysis-row" wx:if="{{item.analysis.keyPoints.length}}"><text>关键点：</text><view wx:for="{{item.analysis.keyPoints}}" wx:key="*this">· {{item}}</view></view>
+                  <view class="translation-correction" wx:for="{{item.analysis.corrections}}" wx:key="original">
+                    <view>{{item.original}} → {{item.corrected}}</view>
+                    <view class="translation-correction-reason">{{item.reason}}</view>
+                  </view>
+                </view>
               </view>
             </view>
           </view>
-          <button class="library-submit-button library-translation-submit" bindtap="submitTranslation">提交翻译</button>
+          <view class="translation-analysis-summary" wx:if="{{translationSubmitted && translationAnalysisSummary}}">{{translationAnalysisSummary}}</view>
+          <button class="library-submit-button library-translation-submit" loading="{{translationAnalyzing}}" disabled="{{translationAnalyzing}}" bindtap="submitTranslation">{{translationAnalyzing ? '分析讲解中' : '提交翻译'}}</button>
           <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
         </block>
         <block wx:else>
@@ -67,10 +81,6 @@
       </view>
       <button class="library-submit-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitEssay">{{texts.submit}}</button>
       <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
-      <view class="library-writing-debug" wx:if="{{writingDebugLines.length}}">
-        <view class="library-debug-title">{{texts.report}}</view>
-        <text selectable="{{true}}" wx:for="{{writingDebugLines}}" wx:key="*this">{{item}}</text>
-      </view>
     </view>
 
     <view class="library-review-letter library-review-pending" wx:if="{{!isTranslation && grading}}">
@@ -174,10 +184,24 @@
             <view class="translation-reference" wx:if="{{translationSubmitted}}">
               <view class="translation-reference-title">参考译文</view>
               <view wx:for="{{item.referenceAnswers}}" wx:for-item="answer" wx:key="*this">{{answer}}</view>
+              <view class="translation-analysis" wx:if="{{item.analysis}}">
+                <view class="translation-analysis-head">
+                  <view class="translation-reference-title">模型讲解</view>
+                  <view class="translation-verdict status-{{item.analysis.status}}">{{item.analysis.verdict}}</view>
+                </view>
+                <view class="translation-analysis-row" wx:if="{{item.analysis.recommendedTranslation}}"><text>推荐译文：</text>{{item.analysis.recommendedTranslation}}</view>
+                <view class="translation-analysis-row" wx:if="{{item.analysis.analysis}}"><text>分析：</text>{{item.analysis.analysis}}</view>
+                <view class="translation-analysis-row" wx:if="{{item.analysis.keyPoints.length}}"><text>关键点：</text><view wx:for="{{item.analysis.keyPoints}}" wx:key="*this">· {{item}}</view></view>
+                <view class="translation-correction" wx:for="{{item.analysis.corrections}}" wx:key="original">
+                  <view>{{item.original}} → {{item.corrected}}</view>
+                  <view class="translation-correction-reason">{{item.reason}}</view>
+                </view>
+              </view>
             </view>
           </view>
         </view>
-        <button class="submit-button translation-submit" bindtap="submitTranslation">提交翻译</button>
+        <view class="translation-analysis-summary" wx:if="{{translationSubmitted && translationAnalysisSummary}}">{{translationAnalysisSummary}}</view>
+        <button class="submit-button translation-submit" loading="{{translationAnalyzing}}" disabled="{{translationAnalyzing}}" bindtap="submitTranslation">{{translationAnalyzing ? '分析讲解中' : '提交翻译'}}</button>
         <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
       </block>
       <block wx:else>
@@ -213,9 +237,6 @@
     </view>
     <button class="submit-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitEssay">{{texts.submit}}</button>
     <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
-    <view class="writing-debug" wx:if="{{writingDebugLines.length}}">
-      <text selectable="{{true}}" wx:for="{{writingDebugLines}}" wx:key="*this">{{item}}</text>
-    </view>
   </view>
 
   <view class="review-card" wx:if="{{!isTranslation && grading}}">

@@ -72,9 +72,9 @@ function extractMessageText(data) {
 
 function getModelConfig() {
   return {
-    endpoint: process.env.WRITING_SCORE_ENDPOINT || process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '',
-    apiKey: process.env.WRITING_SCORE_API_KEY || process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '',
-    model: process.env.WRITING_SCORE_MODEL || process.env.READING_STUDY_MODEL || process.env.SPEAKING_CONTENT_SCORE_MODEL || 'gpt-5.5'
+    endpoint: process.env.WRITING_SCORE_ENDPOINT || '',
+    apiKey: process.env.WRITING_SCORE_API_KEY || '',
+    model: process.env.WRITING_SCORE_MODEL || 'gpt-5.6-sol'
   };
 }
 
@@ -103,6 +103,81 @@ function normalizeReview(data, prompt) {
       : [],
     polishedVersion: normalizeText(data.polishedVersion || data.polished || '').slice(0, 1200)
   };
+}
+
+function normalizeTranslationAnalysis(data, questions) {
+  const items = Array.isArray(data && data.items) ? data.items : [];
+  return {
+    summary: normalizeText(data && data.summary),
+    analyses: questions.map((question) => {
+      const matched = items.find((item) => String(item && item.number) === String(question.number)) || {};
+      const status = ['correct', 'partial', 'incorrect'].includes(matched.status) ? matched.status : 'partial';
+      return {
+        number: question.number,
+        status,
+        verdict: normalizeText(matched.verdict || (status === 'correct' ? '准确' : status === 'incorrect' ? '需要修改' : '基本准确')),
+        recommendedTranslation: normalizeText(matched.recommendedTranslation || question.referenceAnswers[0] || ''),
+        analysis: normalizeText(matched.analysis || '请对照推荐译文检查句子结构、必用词和表达准确性。'),
+        keyPoints: Array.isArray(matched.keyPoints) ? matched.keyPoints.map(normalizeText).filter(Boolean).slice(0, 5) : [],
+        corrections: Array.isArray(matched.corrections)
+          ? matched.corrections.map((item) => ({
+            original: normalizeText(item && item.original),
+            corrected: normalizeText(item && item.corrected),
+            reason: normalizeText(item && item.reason)
+          })).filter((item) => item.original || item.corrected).slice(0, 6)
+          : []
+      };
+    })
+  };
+}
+
+async function analyzeWritingTranslation(event) {
+  const payload = (event && event.payload) || {};
+  await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'analyzeWritingTranslation'
+  }));
+  const prompt = payload.prompt || {};
+  const questions = (Array.isArray(payload.questions) ? payload.questions : []).slice(0, 10).map((question) => ({
+    number: Number(question && question.number || 0),
+    sourceText: normalizeText(question && question.sourceText),
+    requiredWord: normalizeText(question && question.requiredWord),
+    referenceAnswers: Array.isArray(question && question.referenceAnswers)
+      ? question.referenceAnswers.map(normalizeText).filter(Boolean).slice(0, 4)
+      : [],
+    studentTranslation: normalizeText(question && question.studentTranslation).slice(0, 1200)
+  })).filter((question) => question.number && question.sourceText && question.studentTranslation);
+  if (!questions.length) {
+    throw new Error('missing-writing-translation-payload');
+  }
+  const config = getModelConfig();
+  if (!config.endpoint || !config.apiKey) {
+    throw new Error('writing-model-not-configured');
+  }
+  const data = await postJson(config.endpoint, {
+    authorization: `Bearer ${config.apiKey}`
+  }, {
+    model: config.model,
+    temperature: 0.1,
+    messages: [{
+      role: 'user',
+      content: [
+        '你是上海英语考试翻译题阅卷老师。请逐题分析学生的中译英答案。',
+        '只返回JSON，不要Markdown。',
+        '必须核对中文原意、必用词、语法、搭配、时态语态和表达自然度。',
+        '参考译文只作为判断依据之一；语义准确的其他表达也应认可。',
+        'status 只能是 correct、partial、incorrect。讲解使用简明中文。',
+        '格式：{"summary":"总体评价","items":[{"number":72,"status":"correct|partial|incorrect","verdict":"准确/基本准确/需要修改","recommendedTranslation":"推荐译文","analysis":"具体分析","keyPoints":["关键点"],"corrections":[{"original":"学生原片段","corrected":"修改后","reason":"原因"}]}]}',
+        `试卷：${normalizeText(prompt.title || '')}`,
+        `说明：${normalizeText(prompt.directions || '')}`,
+        `题目与作答：${JSON.stringify(questions)}`
+      ].join('\n')
+    }]
+  });
+  const parsed = parseJsonText(extractMessageText(data));
+  if (!Array.isArray(parsed.items) || !parsed.items.length) {
+    throw new Error('writing-translation-analysis-invalid');
+  }
+  return normalizeTranslationAnalysis(parsed, questions);
 }
 
 function buildCompletionPayload(prompt, attempt, progressText) {
@@ -226,33 +301,17 @@ async function submitWritingAttempt(event) {
     savedAttempt,
     '批改中'
   );
-  try {
-    const graded = await gradeWritingAttempt(Object.assign({}, event, {
-      payload: Object.assign({}, payload, { attemptId })
-    }));
-    return Object.assign({
-      prompt: {
-        _id: promptId,
-        title: prompt.title || '',
-        prompt: prompt.prompt || ''
-      }
-    }, graded);
-  } catch (error) {
-    return {
-      prompt: {
-        _id: promptId,
-        title: prompt.title || '',
-        prompt: prompt.prompt || ''
-      },
-      attempt: Object.assign({}, savedAttempt, {
-        status: 'grading-failed',
-        gradeError: String(error && error.message || error || '')
-      }),
-      review: null,
-      pending: true,
-      resumable: true
-    };
-  }
+  return {
+    prompt: {
+      _id: promptId,
+      title: prompt.title || '',
+      prompt: prompt.prompt || ''
+    },
+    attempt: savedAttempt,
+    review: null,
+    pending: true,
+    resumable: true
+  };
 }
 
 async function gradeWritingAttempt(event) {
@@ -420,8 +479,13 @@ async function getWritingAttemptDetail(event) {
 }
 
 module.exports = {
+  analyzeWritingTranslation,
   submitWritingAttempt,
   gradeWritingAttempt,
   getWritingAttempts,
-  getWritingAttemptDetail
+  getWritingAttemptDetail,
+  _test: {
+    getModelConfig,
+    normalizeTranslationAnalysis
+  }
 };
