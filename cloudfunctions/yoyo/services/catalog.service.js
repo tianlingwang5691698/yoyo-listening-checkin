@@ -5,14 +5,22 @@ const { CLOUD_ASSET_BASE_URL } = require('../lib/constants');
 const MATERIAL_PATHS = {
   writingEm1: '_content/writing-em1/writing-prompts.json',
   writingEm2: '_content/writing-em2/writing-prompts.json',
+  writingSeniorSpring: '_content/writing-senior-spring/writing-prompts.json',
+  writingSeniorAutumn: '_content/writing-senior-autumn/writing-prompts.json',
   listeningEm1: '_content/listening-em1/listening-practice.json',
-  listeningEm2: '_content/listening-em2/listening-practice.json'
+  listeningEm2: '_content/listening-em2/listening-practice.json',
+  listeningSeniorSpring: '_content/listening-senior-spring/listening-practice.json',
+  listeningSeniorAutumn: '_content/listening-senior-autumn/listening-practice.json'
 };
 const MATERIAL_ITEM_DIRS = {
   writingEm1: '_content/writing-em1/items-v1',
   writingEm2: '_content/writing-em2/items-v1',
   listeningEm1: '_content/listening-em1/items-v1',
-  listeningEm2: '_content/listening-em2/items-v1'
+  listeningEm2: '_content/listening-em2/items-v1',
+  writingSeniorSpring: '_content/writing-senior-spring/items-v1',
+  writingSeniorAutumn: '_content/writing-senior-autumn/items-v1',
+  listeningSeniorSpring: '_content/listening-senior-spring/items-v1',
+  listeningSeniorAutumn: '_content/listening-senior-autumn/items-v1'
 };
 
 let bundledMaterialIndex = null;
@@ -43,6 +51,11 @@ function slimWritingItem(item) {
     examType: item && item.examType,
     stage: item && item.stage,
     category: item && item.category,
+    contentType: item && item.contentType,
+    contentRevision: item && item.contentRevision,
+    paperId: item && item.paperId,
+    paperOrder: item && item.paperOrder,
+    questionCount: item && item.questionCount,
     minWords: item && item.minWords,
     score: item && item.score
   };
@@ -62,6 +75,7 @@ function slimMaterialItem(item) {
     audioCloudPath: item && item.audioCloudPath,
     audioFileId: item && item.audioFileId,
     audioSource: item && item.audioSource,
+    durationSec: Number(item && item.durationSec || 0),
     hasAudio: !!(item && item.hasAudio),
     hasTranscript: !!(item && item.hasTranscript)
   };
@@ -74,8 +88,12 @@ function loadBundledMaterialIndex() {
     bundledMaterialIndex = {
       writingEm1: (raw.writingEm1 || []).map(slimWritingItem),
       writingEm2: (raw.writingEm2 || []).map(slimWritingItem),
+      writingSeniorSpring: (raw.writingSeniorSpring || []).map(slimWritingItem),
+      writingSeniorAutumn: (raw.writingSeniorAutumn || []).map(slimWritingItem),
       listeningEm1: (raw.listeningEm1 || []).map(slimMaterialItem),
-      listeningEm2: (raw.listeningEm2 || []).map(slimMaterialItem)
+      listeningEm2: (raw.listeningEm2 || []).map(slimMaterialItem),
+      listeningSeniorSpring: (raw.listeningSeniorSpring || []).map(slimMaterialItem),
+      listeningSeniorAutumn: (raw.listeningSeniorAutumn || []).map(slimMaterialItem)
     };
   } catch (error) {
     bundledMaterialIndex = null;
@@ -91,7 +109,9 @@ function materialKeysFor(moduleId, itemId) {
   const prefix = moduleId === 'listening' ? 'listening' : 'writing';
   if (/^sh-em1-/i.test(itemId)) return [`${prefix}Em1`];
   if (/^sh-em2-/i.test(itemId)) return [`${prefix}Em2`];
-  return [`${prefix}Em1`, `${prefix}Em2`];
+  if (/^sh-spring-/i.test(itemId)) return [`${prefix}SeniorSpring`];
+  if (/^sh-autumn-/i.test(itemId)) return [`${prefix}SeniorAutumn`];
+  return [`${prefix}Em1`, `${prefix}Em2`, `${prefix}SeniorSpring`, `${prefix}SeniorAutumn`];
 }
 
 function matchesMaterialId(item, itemId) {
@@ -124,6 +144,14 @@ function downloadMaterialItemJson(cloudPath) {
   });
 }
 
+async function loadMaterialItemJson(cloudPath) {
+  try {
+    return await downloadMaterialItemJson(cloudPath);
+  } catch (error) {
+    return require('../adapters/storage.adapter').downloadCloudJson(cloudPath, { skipCdn: true });
+  }
+}
+
 async function loadMaterialItem(moduleId, itemId) {
   const cached = materialItemCache[itemId];
   if (cached && Date.now() - cached.savedAt < MATERIAL_ITEM_CACHE_MAX_AGE_MS) return cached.item;
@@ -131,7 +159,7 @@ async function loadMaterialItem(moduleId, itemId) {
   const keys = materialKeysFor(moduleId, itemId);
   const candidates = await Promise.all(keys.map(async (key) => {
     try {
-      return await downloadMaterialItemJson(`${MATERIAL_ITEM_DIRS[key]}/${fileName}`);
+      return await loadMaterialItemJson(`${MATERIAL_ITEM_DIRS[key]}/${fileName}`);
     } catch (error) {
       return null;
     }
@@ -150,21 +178,33 @@ async function getMaterialIndex(event) {
     return {
       writingEm1: shouldLoadWriting ? bundled.writingEm1 : [],
       writingEm2: shouldLoadWriting ? bundled.writingEm2 : [],
+      writingSeniorSpring: shouldLoadWriting ? bundled.writingSeniorSpring : [],
+      writingSeniorAutumn: shouldLoadWriting ? bundled.writingSeniorAutumn : [],
       listeningEm1: shouldLoadListening ? bundled.listeningEm1 : [],
-      listeningEm2: shouldLoadListening ? bundled.listeningEm2 : []
+      listeningEm2: shouldLoadListening ? bundled.listeningEm2 : [],
+      listeningSeniorSpring: shouldLoadListening ? bundled.listeningSeniorSpring : [],
+      listeningSeniorAutumn: shouldLoadListening ? bundled.listeningSeniorAutumn : []
     };
   }
-  const [writingEm1, writingEm2, listeningEm1, listeningEm2] = await Promise.all([
+  const [writingEm1, writingEm2, writingSeniorSpring, writingSeniorAutumn, listeningEm1, listeningEm2, listeningSeniorSpring, listeningSeniorAutumn] = await Promise.all([
     shouldLoadWriting ? loadList(MATERIAL_PATHS.writingEm1) : [],
     shouldLoadWriting ? loadList(MATERIAL_PATHS.writingEm2) : [],
+    shouldLoadWriting ? loadList(MATERIAL_PATHS.writingSeniorSpring) : [],
+    shouldLoadWriting ? loadList(MATERIAL_PATHS.writingSeniorAutumn) : [],
     shouldLoadListening ? loadList(MATERIAL_PATHS.listeningEm1) : [],
-    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningEm2) : []
+    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningEm2) : [],
+    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningSeniorSpring) : [],
+    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningSeniorAutumn) : []
   ]);
   return {
     writingEm1: writingEm1.map(slimWritingItem),
     writingEm2: writingEm2.map(slimWritingItem),
+    writingSeniorSpring: writingSeniorSpring.map(slimWritingItem),
+    writingSeniorAutumn: writingSeniorAutumn.map(slimWritingItem),
     listeningEm1: listeningEm1.map(slimMaterialItem),
-    listeningEm2: listeningEm2.map(slimMaterialItem)
+    listeningEm2: listeningEm2.map(slimMaterialItem),
+    listeningSeniorSpring: listeningSeniorSpring.map(slimMaterialItem),
+    listeningSeniorAutumn: listeningSeniorAutumn.map(slimMaterialItem)
   };
 }
 
@@ -186,8 +226,8 @@ async function getMaterialItem(event) {
     return { item: directItem };
   }
   const paths = moduleId === 'listening'
-    ? [MATERIAL_PATHS.listeningEm1, MATERIAL_PATHS.listeningEm2]
-    : [MATERIAL_PATHS.writingEm1, MATERIAL_PATHS.writingEm2];
+    ? [MATERIAL_PATHS.listeningEm1, MATERIAL_PATHS.listeningEm2, MATERIAL_PATHS.listeningSeniorSpring, MATERIAL_PATHS.listeningSeniorAutumn]
+    : [MATERIAL_PATHS.writingEm1, MATERIAL_PATHS.writingEm2, MATERIAL_PATHS.writingSeniorSpring, MATERIAL_PATHS.writingSeniorAutumn];
   const lists = await Promise.all(paths.map(loadList));
   const item = lists.flat().find((row) => row && [
     row._id,

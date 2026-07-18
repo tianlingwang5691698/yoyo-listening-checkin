@@ -18,7 +18,10 @@ const WORD_DICTIONARY_COLLECTION = 'wordDictionary';
 const READING_PASSAGE_COLLECTION = 'readingPassages';
 const READING_CONTENT_PATH = '_content/reading/reading-passages.json';
 const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
-const MIN_DATABASE_READING_PASSAGE_COUNT = 778;
+const READING_SENIOR_CONTENT_PATHS = [
+  '_content/reading-senior-autumn/years/2009/v2/reading-passages.json'
+];
+const MIN_DATABASE_READING_PASSAGE_COUNT = 785;
 let samplePassageCache = null;
 let passageDirectoryCache = null;
 let bundledPassageDirectory = null;
@@ -41,6 +44,9 @@ function normalizePassage(item) {
     examType: item.examType || '',
     section: item.section || '',
     sectionLabel: item.sectionLabel || '',
+    paperId: item.paperId || '',
+    paperTitle: item.paperTitle || '',
+    paperOrder: Number(item.paperOrder || 0),
     difficultyLevel: item.difficultyLevel || 0,
     difficultyLabel: item.difficultyLabel || '',
     sourceType: item.sourceType || '',
@@ -101,7 +107,7 @@ async function loadPassages() {
   const cloudStoragePassages = [];
   try {
     const cloudContents = await Promise.all(
-      [READING_EM1_CONTENT_PATH, READING_CONTENT_PATH].map(async (path) => {
+      [READING_EM1_CONTENT_PATH, READING_CONTENT_PATH].concat(READING_SENIOR_CONTENT_PATHS).map(async (path) => {
         try {
           return await storageAdapter.downloadCloudJson(path);
         } catch (error) {
@@ -141,6 +147,9 @@ function normalizePassageDirectoryItem(item) {
     examType: String(passage.examType || ''),
     section: String(passage.section || ''),
     sectionLabel: String(passage.sectionLabel || ''),
+    paperId: String(passage.paperId || ''),
+    paperTitle: String(passage.paperTitle || ''),
+    paperOrder: Number(passage.paperOrder || 0),
     difficultyLevel: Number(passage.difficultyLevel || 0),
     difficultyLabel: String(passage.difficultyLabel || ''),
     questionCount: Number(passage.questionCount || (passage.questions || []).length || 0),
@@ -181,6 +190,9 @@ async function loadPassageDirectory() {
         examType: true,
         section: true,
         sectionLabel: true,
+        paperId: true,
+        paperTitle: true,
+        paperOrder: true,
         difficultyLevel: true,
         difficultyLabel: true,
         questionCount: true,
@@ -314,12 +326,17 @@ function createPassageSummary(passage) {
   if (!passage) {
     return null;
   }
+  const meta = [passage.year, passage.district, passage.examType, passage.sectionLabel || passage.section, passage.difficultyLabel]
+    .filter(Boolean)
+    .filter((value, index, values) => values.indexOf(value) === index)
+    .join(' · ');
   return {
     _id: passage._id,
     title: passage.title,
-    meta: [passage.year, passage.district, passage.examType, passage.sectionLabel || passage.section, passage.difficultyLabel].filter(Boolean).join(' · '),
+    meta,
     questionCount: Number(passage.questionCount || (passage.questions || []).length || 0),
-    status: passage.status
+    status: passage.status,
+    paperOrder: Number(passage.paperOrder || 0)
   };
 }
 
@@ -665,7 +682,7 @@ function parseJsonText(text) {
 }
 
 function normalizeExamType(value) {
-  if (value === '一模' || value === '二模' || value === '真题') {
+  if (value === '一模' || value === '二模' || value === '真题' || value === '春考' || value === '秋考') {
     return value;
   }
   return value && String(value).includes('真题') ? '真题' : String(value || '二模');
@@ -673,23 +690,27 @@ function normalizeExamType(value) {
 
 function buildCategoryTree(passages, latestByPassageId) {
   const completionReady = !!latestByPassageId;
-  const examTypes = ['一模', '二模', '真题'];
+  const examTypes = ['一模', '二模', '真题', '春考', '秋考'];
   const groups = examTypes.map((examType) => {
     const districtMap = {};
     passages.forEach((passage) => {
       if (normalizeExamType(passage.examType) !== examType) {
         return;
       }
+      const isSeniorPaper = examType === '春考' || examType === '秋考';
       const district = passage.district || '未分区';
-      if (!districtMap[district]) {
-        districtMap[district] = {
+      const nodeKey = isSeniorPaper ? (passage.paperId || `${examType}-${passage.year}`) : district;
+      const nodeLabel = isSeniorPaper ? (passage.paperTitle || `${passage.year} 上海高考${examType}英语真题`) : district;
+      if (!districtMap[nodeKey]) {
+        districtMap[nodeKey] = {
+          label: nodeLabel,
           count: 0,
           passages: []
         };
       }
       const latestAttempt = completionReady && latestByPassageId[passage._id] ? latestByPassageId[passage._id] : null;
-      districtMap[district].count += 1;
-      districtMap[district].passages.push(Object.assign(createPassageSummary(passage), {
+      districtMap[nodeKey].count += 1;
+      districtMap[nodeKey].passages.push(Object.assign(createPassageSummary(passage), {
         completionReady,
         completed: !!(latestAttempt && latestAttempt.status === 'completed'),
         latestAttempt
@@ -697,21 +718,22 @@ function buildCategoryTree(passages, latestByPassageId) {
     });
     return {
       key: examType,
-      label: examType === '真题' ? '真题卷' : examType,
+      label: examType === '真题' ? '真题卷' : (examType === '春考' || examType === '秋考' ? `高中${examType}` : examType),
       count: Object.values(districtMap).reduce((sum, item) => sum + item.count, 0),
-      districts: Object.keys(districtMap).sort().map((district) => ({
+      nodeUnit: examType === '春考' || examType === '秋考' ? '份卷' : '',
+      districts: Object.keys(districtMap).sort((left, right) => String(districtMap[right].label).localeCompare(String(districtMap[left].label), 'zh-CN')).map((district) => ({
         key: district,
-        label: district,
+        label: districtMap[district].label,
         count: districtMap[district].count,
         completionReady,
         completedCount: districtMap[district].passages.filter((item) => item.completed).length,
-        passages: districtMap[district].passages
+        passages: districtMap[district].passages.sort((left, right) => Number(left.paperOrder || 0) - Number(right.paperOrder || 0) || String(left._id).localeCompare(String(right._id)))
       }))
     };
   });
   return [{
-    key: 'middle-school-reading',
-    label: '中考阅读',
+    key: 'exam-reading',
+    label: '英语真题阅读',
     count: passages.length,
     groups
   }];

@@ -24,12 +24,16 @@ function sectionForNumber(number) {
 
 function buildQuestions(item) {
   let lastSection = '';
+  let lastGroup = '';
   return (item.questions || []).map((question) => {
     const section = question.sectionKey
       ? { key: question.sectionKey, title: question.sectionTitle || '' }
       : sectionForNumber(Number(question.number || 0));
     const showSectionTitle = section.key !== lastSection && !(section.key === 'A' && item.images && item.images.length);
+    const groupKey = String(question.groupKey || '');
+    const showGroupTitle = !!groupKey && groupKey !== lastGroup;
     lastSection = section.key;
+    if (groupKey) lastGroup = groupKey;
     return {
       number: question.number,
       prompt: question.prompt,
@@ -37,6 +41,12 @@ function buildQuestions(item) {
       sectionKey: section.key,
       sectionTitle: section.title,
       showSectionTitle,
+      groupKey,
+      groupTitle: question.groupTitle || '',
+      groupInstruction: question.groupInstruction || '',
+      showGroupTitle,
+      formTitle: question.formTitle || '',
+      givenRows: Array.isArray(question.givenRows) ? question.givenRows : [],
       optionsList: Object.keys(question.options || {}).map((key) => ({
         key,
         text: question.options[key],
@@ -214,11 +224,14 @@ Page({
       maxAgeMs: 5 * 60 * 1000
     }) : null;
     const item = withImageDisplayMode(unwrapListeningItem(snapshot) || legacyItem || null);
+    const knownDuration = Number(item && item.durationSec || 0);
     const studyCompleted = item ? !!wx.getStorageSync(studyDoneKey(item)) : false;
     this.setData({
       item,
       questions: item ? buildQuestions(item) : [],
       answerSummary: item ? buildAnswerSummary(item) : '',
+      audioDuration: knownDuration,
+      audioDurationText: formatAudioTime(knownDuration),
       studyCompleted,
       audioLocked: false,
       debugLines: itemId ? [] : buildDetailDebugLines({
@@ -279,6 +292,7 @@ Page({
     }
   },
   async prepareAudio(cloudPath) {
+    const knownDuration = Number(this.data.item && this.data.item.durationSec || 0);
     if (this.audioMetaTimer) {
       clearTimeout(this.audioMetaTimer);
       this.audioMetaTimer = null;
@@ -299,10 +313,10 @@ Page({
       audioError: '',
       audioSrc: '',
       isPlaying: false,
-      audioDuration: 0,
+      audioDuration: knownDuration,
       audioCurrentTime: 0,
       audioCurrentText: '00:00',
-      audioDurationText: '00:00',
+      audioDurationText: formatAudioTime(knownDuration),
       audioProgress: 0,
       audioSliderMax: AUDIO_SLIDER_MAX,
       audioSeeking: false,
@@ -540,7 +554,8 @@ Page({
     const questions = (this.data.questions || []).map((question) => {
       const userAnswer = String(question.selectedAnswer || question.inputValue || '').trim();
       const answer = String(question.answer || '').trim();
-      const correct = !!answer && userAnswer.toLowerCase() === answer.toLowerCase();
+      const acceptedAnswers = answer.split('/').map((value) => value.trim().toLowerCase()).filter(Boolean);
+      const correct = !!answer && acceptedAnswers.includes(userAnswer.toLowerCase());
       if (correct) correctCount += 1;
       return Object.assign({}, question, { checked: true, correct });
     });

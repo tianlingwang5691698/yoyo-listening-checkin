@@ -6,6 +6,8 @@ const test = require('node:test');
 const servicePath = path.join(__dirname, '..', 'services', 'catalog.service.js');
 const source = fs.readFileSync(servicePath, 'utf8');
 const indexSource = fs.readFileSync(path.join(__dirname, '..', 'index.js'), 'utf8');
+const storeSource = fs.readFileSync(path.join(__dirname, '..', '..', '..', 'utils', 'store.js'), 'utf8');
+const materialPageSource = fs.readFileSync(path.join(__dirname, '..', '..', '..', 'pages', 'material', 'index.js'), 'utf8');
 const directory = require('../data/material-directory.json');
 
 test('听力与写作目录使用轻量摘要且详情优先按 id 读取单条文件', () => {
@@ -19,6 +21,17 @@ test('听力与写作目录使用轻量摘要且详情优先按 id 读取单条�
   assert.equal(directory.listeningEm2.length, 76);
   assert.equal(directory.writingEm1.length, 159);
   assert.equal(directory.writingEm2.length, 181);
+  assert.equal(directory.listeningSeniorSpring.length, 0);
+  assert.equal(directory.listeningSeniorAutumn.length, 1);
+  assert.equal(directory.writingSeniorSpring.length, 0);
+  assert.equal(directory.writingSeniorAutumn.length, 2);
+  assert.equal(directory.writingSeniorAutumn[0].contentType, 'translation');
+  assert.equal(directory.writingSeniorAutumn[0].questionCount, 6);
+  assert.equal(Object.hasOwn(directory.writingSeniorAutumn[0], 'questions'), false);
   assert.equal(Object.hasOwn(directory.listeningEm2[0], 'questions'), false);
   assert.equal(Object.hasOwn(directory.writingEm2[0], 'prompt'), false);
+  assert.match(storeSource, /catalogVersion: 'senior-2009-v5'/);
+  assert.match(materialPageSource, /materialHomeSnapshotV3/);
+  assert.match(materialPageSource, /MATERIAL_CATALOG_VERSION/);
+  assert.equal(directory.listeningSeniorAutumn[0].durationSec, 906.71);
 });

@@ -12,6 +12,10 @@ const SOURCE_PATHS = [
   '_content/reading-em1/reading-passages.json',
   '_content/reading/reading-passages.json'
 ];
+const LOCAL_SOURCE_PATHS = [
+  'data/reading-senior-spring/reading-passages.json',
+  'data/reading-senior-autumn/reading-passages.json'
+];
 
 function downloadJson(cloudPath) {
   const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
@@ -38,6 +42,9 @@ function downloadJson(cloudPath) {
 
 async function main() {
   const sources = await Promise.all(SOURCE_PATHS.map(downloadJson));
+  LOCAL_SOURCE_PATHS.forEach((localPath) => {
+    sources.push(JSON.parse(fs.readFileSync(path.join(ROOT, localPath), 'utf8')));
+  });
   const passages = sources.flatMap((raw) => Array.isArray(raw) ? raw : (raw.passages || raw.items || []));
   const directory = passages.map((item) => ({
     _id: item._id,
@@ -47,12 +54,15 @@ async function main() {
     examType: item.examType || '',
     section: item.section || '',
     sectionLabel: item.sectionLabel || '',
+    paperId: item.paperId || '',
+    paperTitle: item.paperTitle || '',
+    paperOrder: Number(item.paperOrder || 0),
     difficultyLevel: Number(item.difficultyLevel || 0),
     difficultyLabel: item.difficultyLabel || '',
     questionCount: Array.isArray(item.questions) ? item.questions.length : Number(item.questionCount || 0),
     status: item.status || 'sample'
   }));
-  if (directory.length !== 778 || new Set(directory.map((item) => item._id)).size !== directory.length) {
+  if (directory.length !== 785 || new Set(directory.map((item) => item._id)).size !== directory.length) {
     throw new Error(`reading-directory-validation-failed:${directory.length}`);
   }
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(directory)}\n`);

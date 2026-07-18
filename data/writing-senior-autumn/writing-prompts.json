@@ -1,0 +1,88 @@
+[
+  {
+    "_id": "sh-autumn-2009-translation",
+    "title": "2009 上海高考秋考 I. Translation",
+    "year": 2009,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 2,
+    "paperId": "sh-autumn-2009",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2009年上海秋季高考英语真题及答案.doc",
+    "directions": "Directions: Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 6,
+    "questions": [
+      {
+        "number": 1,
+        "sourceText": "网球运动在上海越来越流行了。",
+        "requiredWord": "popular",
+        "referenceAnswers": [
+          "Tennis is getting more and more popular in Shanghai."
+        ]
+      },
+      {
+        "number": 2,
+        "sourceText": "我认为你们的建议和他们的一样有价值。",
+        "requiredWord": "as…as",
+        "referenceAnswers": [
+          "I think your suggestion is as valuable as theirs."
+        ]
+      },
+      {
+        "number": 3,
+        "sourceText": "只喝一杯咖啡就会使我整晚睡不着。",
+        "requiredWord": "keep",
+        "referenceAnswers": [
+          "Drinking only a cup of coffee will keep me awake all night."
+        ]
+      },
+      {
+        "number": 4,
+        "sourceText": "为了纪念那些勇敢的消防战士，一部电影即将开拍。",
+        "requiredWord": "memory",
+        "referenceAnswers": [
+          "A film will be made/shot in memory of those brave fire fighters."
+        ]
+      },
+      {
+        "number": 5,
+        "sourceText": "过了三天她才想起把雨衣忘在语言实验室了。",
+        "requiredWord": "remember",
+        "referenceAnswers": [
+          "It was three days later that she remembered leaving/having left her raincoat in the language lab."
+        ]
+      },
+      {
+        "number": 6,
+        "sourceText": "尽管山高林密，医护人员还是迅速地赶到出事地点，实施援救。",
+        "requiredWord": "despite",
+        "referenceAnswers": [
+          "Despite the high mountains and thick forests, the doctors and nurses rushed to the scene of the accident for the rescue/to carry out the rescue."
+        ]
+      }
+    ],
+    "score": 20
+  },
+  {
+    "_id": "sh-autumn-2009-writing",
+    "title": "2009 上海高考秋考作文",
+    "year": 2009,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2009年上海秋季高考英语真题及答案.doc",
+    "prompt": "Directions: Write an English composition in 120 - 150 words according to the instructions given below in Chinese. 某海外学校举办英语夏令营，开设了如下课程：园艺（gardening）、烹饪（cooking）、防身术（self-defence）、护理（nursing）。假如你是王跃华（不可以用自己的真实姓名），写一封申请信，报名参加其中一门课程的学习。信的内容必须包括： 你感兴趣的课程 你期望从这门课程中学到什么 为什么想学这些内容",
+    "minWords": 120,
+    "score": 25
+  }
+]

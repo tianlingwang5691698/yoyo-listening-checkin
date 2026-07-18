@@ -1,0 +1,34 @@
+{
+  "topicId": "sentence:inversion",
+  "topic": "倒装句",
+  "questions": [
+    {
+      "_id": "sh-autumn-2009-grammar-q38",
+      "sourceSetId": "sh-autumn-2009-grammar",
+      "year": 2009,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2009年上海秋季高考英语真题及答案.doc",
+      "number": 38,
+      "prompt": "Hearing the dog barking fiercely, away ______.",
+      "options": {
+        "A": "fleeing the thief",
+        "B": "was fleeing the thief",
+        "C": "the thief was fleeing",
+        "D": "fled the thief"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:inversion",
+      "subtopic": "倒装句",
+      "topicId": "sentence:inversion",
+      "topic": "倒装句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

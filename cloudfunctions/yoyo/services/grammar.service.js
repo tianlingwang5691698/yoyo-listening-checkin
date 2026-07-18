@@ -18,6 +18,8 @@ const EM1_CONTENT_PATHS = {
   questions: '_content/grammar-em1/shanghai-em2-grammar-questions.json',
   topicDir: '_content/grammar-em1/topics'
 };
+const SENIOR_SPRING_CONTENT_ROOTS = [];
+const SENIOR_AUTUMN_CONTENT_ROOTS = ['_content/grammar-senior-autumn/years/2009/v2'];
 const WRONG_COLLECTION = 'grammarWrongQuestions';
 const PROGRESS_COLLECTION = 'grammarTopicProgress';
 const EXPLANATION_COLLECTION = 'grammarQuestionExplanations';
@@ -179,12 +181,44 @@ async function safeDownloadJson(path, fallback) {
 function contentPathsFor(event) {
   const payload = (event && event.payload) || {};
   const exam = String(payload.examId || payload.examType || event.examId || event.examType || '').trim();
-  return exam === 'em1' || exam === '一模' ? EM1_CONTENT_PATHS : CONTENT_PATHS;
+  const roots = exam === 'spring' || exam === '春考'
+    ? SENIOR_SPRING_CONTENT_ROOTS
+    : (exam === 'autumn' || exam === '秋考' ? SENIOR_AUTUMN_CONTENT_ROOTS : null);
+  if (roots) {
+    return roots.map((root) => ({
+      topicTypes: `${root}/grammar-topic-types.json`,
+      byTopic: `${root}/shanghai-senior-grammar-by-topic.json`,
+      questions: `${root}/shanghai-senior-grammar-questions.json`,
+      topicDir: `${root}/topics`
+    }));
+  }
+  return [exam === 'em1' || exam === '一模' ? EM1_CONTENT_PATHS : CONTENT_PATHS];
+}
+
+function mergeTopicTypes(lists) {
+  const categories = new Map();
+  (lists || []).flat().forEach((topic) => {
+    if (!topic || !topic.topicId) return;
+    const current = categories.get(topic.topicId) || { topicId: topic.topicId, topic: topic.topic, count: 0, children: [], childMap: new Map() };
+    current.count += Number(topic.count || 0);
+    (topic.children || []).forEach((child) => {
+      const childCurrent = current.childMap.get(child.topicId) || { topicId: child.topicId, topic: child.topic, count: 0 };
+      childCurrent.count += Number(child.count || 0);
+      current.childMap.set(child.topicId, childCurrent);
+    });
+    categories.set(topic.topicId, current);
+  });
+  return Array.from(categories.values()).map((topic) => ({
+    topicId: topic.topicId,
+    topic: topic.topic,
+    count: topic.count,
+    children: Array.from(topic.childMap.values())
+  }));
 }
 
 async function getGrammarHome(event) {
-  const paths = contentPathsFor(event);
-  const rawTopicTypes = await safeDownloadJson(paths.topicTypes, []);
+  const pathSets = contentPathsFor(event);
+  const rawTopicTypes = mergeTopicTypes(await Promise.all(pathSets.map((paths) => safeDownloadJson(paths.topicTypes, []))));
   const topicTypes = rawTopicTypes.map((topic) => ({
     topicId: topic.topicId,
     topic: topic.topic,
@@ -201,12 +235,17 @@ async function getGrammarHome(event) {
 
 async function getGrammarTopic(event) {
   const payload = (event && event.payload) || {};
-  const paths = contentPathsFor(event);
+  const pathSets = contentPathsFor(event);
   const topicId = String(payload.topicId || event.topicId || '').trim();
   if (!topicId) {
     return { topic: null, questions: [], source: 'skipped-no-topic' };
   }
-  const topic = await safeDownloadJson(`${paths.topicDir}/${topicFileName(topicId)}`, null);
+  const topics = (await Promise.all(pathSets.map((paths) => safeDownloadJson(`${paths.topicDir}/${topicFileName(topicId)}`, null)))).filter(Boolean);
+  const topic = topics.length ? {
+    topicId,
+    topic: topics.find((item) => item.topic)?.topic || '',
+    questions: topics.flatMap((item) => item.questions || [])
+  } : null;
   return {
     topic,
     questions: topic ? (topic.questions || []) : [],

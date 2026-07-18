@@ -55,7 +55,7 @@
             <view class="ledger-tab">{{index + 1}}</view>
             <view class="ledger-body">
               <view class="ledger-title">{{item.label}}</view>
-              <view class="ledger-meta">{{item.districts.length}}{{texts.districtUnit}} · {{item.count}}{{texts.articleUnit}}</view>
+              <view class="ledger-meta">{{item.districts.length}}{{item.nodeUnit || texts.districtUnit}} · {{item.count}}{{texts.articleUnit}}</view>
             </view>
             <view class="ledger-corner">{{texts.enter}}</view>
           </view>
@@ -148,7 +148,7 @@
             </view>
             <view class="directory-main">
               <view class="directory-title">{{item.label}}</view>
-              <view class="directory-meta">{{item.districts.length}}{{texts.districtUnit}} · {{item.count}}{{texts.articleUnit}}</view>
+              <view class="directory-meta">{{item.districts.length}}{{item.nodeUnit || texts.districtUnit}} · {{item.count}}{{texts.articleUnit}}</view>
             </view>
             <view class="directory-arrow">›</view>
           </view>

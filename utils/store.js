@@ -535,18 +535,22 @@ async function getDashboard(options, onRefresh) {
 }
 
 async function getMaterialIndex(options, onRefresh) {
-  let payload = {};
+  let payload = { catalogVersion: 'senior-2009-v5' };
   let refreshHandler = onRefresh;
   if (typeof options === 'function') {
     refreshHandler = options;
   } else {
-    payload = Object.assign({}, options || {});
+    payload = Object.assign({ catalogVersion: 'senior-2009-v5' }, options || {});
   }
   return callCloud('getMaterialIndex', payload, {
     writingEm1: [],
     writingEm2: [],
+    writingSeniorSpring: [],
+    writingSeniorAutumn: [],
     listeningEm1: [],
-    listeningEm2: []
+    listeningEm2: [],
+    listeningSeniorSpring: [],
+    listeningSeniorAutumn: []
   }, { onRefresh: refreshHandler });
 }
 

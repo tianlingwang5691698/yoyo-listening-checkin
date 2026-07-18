@@ -8,5 +8,6 @@
 - 处理任何音频转码、分片、上传或播放性能任务前，先读并严格执行 `docs/AUDIO_UPLOAD_STANDARD.md`。
 - 修改音频导航、系列列表、计划设置、课程页、公共缓存或相关接口前，先读并严格执行 `docs/AUDIO_PAGE_RULES.md`；公共资源、学生计划和学习进度必须分层。
 - 处理上海中考英语一模/二模同类结构化任务前，先读 `docs/SHANGHAI_EM2_STRUCTURING_RULES.md`。
+- 处理上海高中春考/秋考真题结构化、上传或页面接入前，先读 `docs/SHANGHAI_SENIOR_STRUCTURING_RULES.md`。
 - 设计、整理或开发语法课堂前，先读 `docs/GRAMMAR_CLASSROOM_RULES.md`。
 - 所有线上内容上传（听力、阅读、语法、写作、词汇、transcript 等）必须增量上传：只能让线上用户看到内容增加；不得覆盖、删除、重命名已有线上可用内容；最终上传必须和线上存储结构兼容，不要求改云函数或前端，不影响线上上一个版本用户。

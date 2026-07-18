@@ -23,7 +23,7 @@ test('阅读目录只查询轻量字段且详情按 id 读取单篇', () => {
 });
 
 test('阅读数据库未完整导入时保留云存储兼容回退', () => {
-  assert.match(source, /MIN_DATABASE_READING_PASSAGE_COUNT = 778/);
+  assert.match(source, /MIN_DATABASE_READING_PASSAGE_COUNT = 785/);
   assert.match(source, /passages\.length >= MIN_DATABASE_READING_PASSAGE_COUNT/);
   assert.match(source, /const passages = \(await loadPassages\(\)\)\.map/);
 });

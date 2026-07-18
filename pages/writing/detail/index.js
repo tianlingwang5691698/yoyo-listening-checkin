@@ -7,10 +7,85 @@ const i18n = require('../../../utils/i18n');
 
 const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fallback);
 
-const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
+const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV2';
+
+const LEGACY_REQUIREMENT_POINTS = {
+  'sh-autumn-2009-writing': [
+    '你感兴趣的课程',
+    '你期望从这门课程中学到什么',
+    '为什么想学这些内容'
+  ]
+};
+
+function cleanPromptText(value) {
+  return String(value || '').replace(/\u00a0/g, ' ').replace(/[ \t]+/g, ' ').trim();
+}
+
+function splitExplicitRequirements(value) {
+  const normalized = String(value || '')
+    .replace(/\r/g, '\n')
+    .replace(/(?:^|\s)[●•▪◦]\s*/g, '\n')
+    .replace(/(?:^|\s)(?:\d+[.、)]|[（(][一二三四五六七八九\d]+[）)])\s*/g, '\n');
+  return normalized.split(/\n+/).map(cleanPromptText).filter(Boolean);
+}
+
+function buildPromptDisplay(prompt) {
+  const raw = cleanPromptText(prompt && prompt.prompt);
+  if (!raw) return { directions: '', scenario: '', requirementsTitle: '', requirements: [] };
+  const directionsMatch = raw.match(/^Directions\s*:\s*[^\u3400-\u9fff]*(?=[\u3400-\u9fff])/i);
+  const directions = cleanPromptText((prompt && prompt.directions) || (directionsMatch && directionsMatch[0]));
+  const body = cleanPromptText(directionsMatch ? raw.slice(directionsMatch[0].length) : raw);
+  let scenario = cleanPromptText(prompt && prompt.scenario);
+  let requirementsTitle = cleanPromptText(prompt && prompt.requirementsTitle);
+  let requirements = Array.isArray(prompt && prompt.requirements)
+    ? prompt.requirements.map(cleanPromptText).filter(Boolean)
+    : [];
+  if (!scenario) {
+    const marker = body.match(/(?:信的)?内容(?:必须)?包括(?:如下)?\s*[:：]/);
+    if (marker) {
+      scenario = cleanPromptText(body.slice(0, marker.index));
+      requirementsTitle = requirementsTitle || cleanPromptText(marker[0]);
+      if (!requirements.length) requirements = splitExplicitRequirements(body.slice(marker.index + marker[0].length));
+    } else {
+      scenario = body;
+    }
+  }
+  const legacy = LEGACY_REQUIREMENT_POINTS[String(prompt && prompt._id || '')] || [];
+  if (legacy.length && requirements.length < 2) requirements = legacy.slice();
+  if (legacy.length) {
+    const firstPointIndex = scenario.indexOf(legacy[0]);
+    if (firstPointIndex >= 0) scenario = cleanPromptText(scenario.slice(0, firstPointIndex));
+  }
+  return {
+    directions,
+    scenario,
+    requirementsTitle: requirements.length ? (requirementsTitle || '写作要点：') : '',
+    requirements
+  };
+}
+
+function isTranslationTask(prompt) {
+  return String(prompt && prompt.contentType || '') === 'translation';
+}
+
+function isWritingTaskReady(prompt) {
+  return !!(prompt && (isTranslationTask(prompt)
+    ? Array.isArray(prompt.questions) && prompt.questions.length
+    : prompt.prompt));
+}
+
+function buildTranslationQuestions(prompt) {
+  return (prompt && prompt.questions || []).map((question) => ({
+    number: Number(question.number || 0),
+    sourceText: cleanPromptText(question.sourceText),
+    requiredWord: cleanPromptText(question.requiredWord),
+    referenceAnswers: Array.isArray(question.referenceAnswers) ? question.referenceAnswers.map(cleanPromptText).filter(Boolean) : [],
+    inputValue: ''
+  }));
+}
 
 function findPrompt(materialIndex, promptId) {
-  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || []);
+  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || [], (materialIndex || {}).writingSeniorSpring || [], (materialIndex || {}).writingSeniorAutumn || []);
   return all.find((item) => item && item._id === promptId) || null;
 }
 
@@ -45,6 +120,10 @@ function normalizeReview(review, prompt) {
 Page({
   data: page.createCloudPageData({
     prompt: null,
+    promptDisplay: null,
+    isTranslation: false,
+    translationQuestions: [],
+    translationSubmitted: false,
     essayText: '',
     wordCount: 0,
     editorFocused: false,
@@ -73,8 +152,15 @@ Page({
     } catch (error) {
       prompt = prompt || null;
     }
-    const initialPromptReady = !!(prompt && (!promptId || prompt._id === promptId) && prompt.prompt);
-    this.setData({ prompt: initialPromptReady ? prompt : null });
+    const initialPromptReady = !!(prompt && (!promptId || prompt._id === promptId) && isWritingTaskReady(prompt));
+    const initialTranslation = initialPromptReady && isTranslationTask(prompt);
+    this.setData({
+      prompt: initialPromptReady ? prompt : null,
+      promptDisplay: initialPromptReady && !initialTranslation ? buildPromptDisplay(prompt) : null,
+      isTranslation: initialTranslation,
+      translationQuestions: initialTranslation ? buildTranslationQuestions(prompt) : [],
+      translationSubmitted: false
+    });
     await new Promise((resolve) => wx.nextTick(resolve));
     this.writingPerf.ready('pageReady', {
       source: initialPromptReady ? source : 'fallback',
@@ -82,7 +168,7 @@ Page({
       promptId,
       hasPrompt: initialPromptReady
     });
-    if (!prompt || (promptId && prompt._id !== promptId) || !prompt.prompt) {
+    if (!prompt || (promptId && prompt._id !== promptId) || !isWritingTaskReady(prompt)) {
       const result = await store.getMaterialItem({ moduleId: 'writing', itemId: promptId });
       prompt = (result && result.item) || null;
       source = result && result.__cacheHit ? 'cache' : 'cloud';
@@ -92,7 +178,14 @@ Page({
       prompt = findPrompt(materialIndex, promptId);
       source = materialIndex && materialIndex.__cacheHit ? 'cache' : 'cloud';
     }
-    this.setData({ prompt });
+    const isTranslation = isTranslationTask(prompt);
+    this.setData({
+      prompt,
+      promptDisplay: isTranslation ? null : buildPromptDisplay(prompt),
+      isTranslation,
+      translationQuestions: isTranslation ? buildTranslationQuestions(prompt) : [],
+      translationSubmitted: false
+    });
     this.writingPerf.mark('cloudRefresh', {
       source,
       cacheHit: source === 'snapshot' || source === 'storage' || source === 'cache',
@@ -120,6 +213,22 @@ Page({
   },
   onEditorBlur() {
     this.setData({ editorFocused: false });
+  },
+  onTranslationInput(event) {
+    const index = Number(event.currentTarget.dataset.index);
+    const translationQuestions = (this.data.translationQuestions || []).map((question, questionIndex) => (
+      questionIndex === index ? Object.assign({}, question, { inputValue: event.detail.value || '' }) : question
+    ));
+    this.setData({ translationQuestions, translationSubmitted: false, errorText: '' });
+  },
+  submitTranslation() {
+    const questions = this.data.translationQuestions || [];
+    if (!questions.length || questions.some((question) => !String(question.inputValue || '').trim())) {
+      this.setData({ errorText: '请先完成全部翻译题。' });
+      wx.showToast({ title: '请先完成全部翻译题', icon: 'none' });
+      return;
+    }
+    this.setData({ translationSubmitted: true, errorText: '' });
   },
   async submitEssay() {
     const prompt = this.data.prompt;

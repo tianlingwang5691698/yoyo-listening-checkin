@@ -4,7 +4,8 @@
       <view class="library-file-meta">{{prompt.examType}} · {{prompt.district}}</view>
       <view class="library-file-title">{{prompt.title}}</view>
       <view class="library-file-rules">
-        <text>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
+        <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
+        <text wx:else>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
         <text>{{texts.fullScore}}{{prompt.score || 20}}{{texts.scoreUnit}}</text>
       </view>
     </view>
@@ -20,10 +21,38 @@
         <view class="library-section-title">{{texts.promptPaper}}</view>
         <view class="library-proof-small">{{texts.original}}</view>
       </view>
-      <view class="library-prompt-text">{{prompt.prompt}}</view>
+      <view class="library-prompt-content">
+        <block wx:if="{{isTranslation}}">
+          <view class="library-prompt-directions">{{prompt.directions}}</view>
+          <view class="library-translation-list">
+            <view class="library-translation-item" wx:for="{{translationQuestions}}" wx:key="number">
+              <view class="library-translation-number">{{item.number}}.</view>
+              <view class="library-translation-source">{{item.sourceText}} <text>（{{item.requiredWord}}）</text></view>
+              <textarea class="library-translation-input" value="{{item.inputValue}}" data-index="{{index}}" maxlength="800" auto-height="{{true}}" cursor-spacing="160" placeholder="请输入英文译文" bindinput="onTranslationInput"></textarea>
+              <view class="library-translation-reference" wx:if="{{translationSubmitted}}">
+                <view class="library-translation-reference-title">参考译文</view>
+                <view wx:for="{{item.referenceAnswers}}" wx:for-item="answer" wx:key="*this">{{answer}}</view>
+              </view>
+            </view>
+          </view>
+          <button class="library-submit-button library-translation-submit" bindtap="submitTranslation">提交翻译</button>
+          <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
+        </block>
+        <block wx:else>
+          <view class="library-prompt-directions" wx:if="{{promptDisplay.directions}}">{{promptDisplay.directions}}</view>
+          <view class="library-prompt-scenario" wx:if="{{promptDisplay.scenario}}">{{promptDisplay.scenario}}</view>
+          <view class="library-requirements-title" wx:if="{{promptDisplay.requirements.length}}">{{promptDisplay.requirementsTitle}}</view>
+          <view class="library-requirements-list" wx:if="{{promptDisplay.requirements.length}}">
+            <view class="library-requirement-item" wx:for="{{promptDisplay.requirements}}" wx:key="*this">
+              <view class="library-requirement-dot"></view>
+              <view class="library-requirement-text">{{item}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
     </view>
 
-    <view class="library-manuscript-editor">
+    <view class="library-manuscript-editor" wx:if="{{!isTranslation}}">
       <view class="library-editor-head">
         <view>
           <view class="library-section-title">{{texts.editor}}</view>
@@ -44,14 +73,14 @@
       </view>
     </view>
 
-    <view class="library-review-letter library-review-pending" wx:if="{{grading}}">
+    <view class="library-review-letter library-review-pending" wx:if="{{!isTranslation && grading}}">
       <view class="library-report-ruler"></view>
       <view class="library-section-title">{{texts.grading}}</view>
       <view class="library-review-note">{{texts.gradingCopy}}</view>
       <view class="library-proof-runner"></view>
     </view>
 
-    <view class="library-review-letter {{reviewCelebrating ? 'is-celebrating' : ''}}" wx:if="{{review}}">
+    <view class="library-review-letter {{reviewCelebrating ? 'is-celebrating' : ''}}" wx:if="{{!isTranslation && review}}">
       <view class="library-report-ruler"></view>
       <view class="library-review-effect" wx:if="{{reviewCelebrating}}">
         <view class="library-ink-dot dot-one"></view>
@@ -118,7 +147,8 @@
     <view class="eyebrow">{{prompt.examType}} · {{prompt.district}}</view>
     <view class="title">{{prompt.title}}</view>
     <view class="meta">
-      <text>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
+      <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
+      <text wx:else>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
       <text>{{texts.fullScore}}{{prompt.score || 20}}{{texts.scoreUnit}}</text>
     </view>
   </view>
@@ -128,14 +158,43 @@
     <view class="prompt-paper-head">
       <view class="section-title">{{texts.promptPaper}}</view>
       <view class="prompt-rules">
-        <text>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
+        <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
+        <text wx:else>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
         <text>{{prompt.score || 20}}{{texts.scoreUnit}}</text>
       </view>
     </view>
-    <view class="prompt-text">{{prompt.prompt}}</view>
+    <view class="prompt-content">
+      <block wx:if="{{isTranslation}}">
+        <view class="prompt-directions">{{prompt.directions}}</view>
+        <view class="translation-list">
+          <view class="translation-item" wx:for="{{translationQuestions}}" wx:key="number">
+            <view class="translation-number">{{item.number}}.</view>
+            <view class="translation-source">{{item.sourceText}} <text>（{{item.requiredWord}}）</text></view>
+            <textarea class="translation-input" value="{{item.inputValue}}" data-index="{{index}}" maxlength="800" auto-height="{{true}}" cursor-spacing="160" placeholder="请输入英文译文" bindinput="onTranslationInput"></textarea>
+            <view class="translation-reference" wx:if="{{translationSubmitted}}">
+              <view class="translation-reference-title">参考译文</view>
+              <view wx:for="{{item.referenceAnswers}}" wx:for-item="answer" wx:key="*this">{{answer}}</view>
+            </view>
+          </view>
+        </view>
+        <button class="submit-button translation-submit" bindtap="submitTranslation">提交翻译</button>
+        <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
+      </block>
+      <block wx:else>
+        <view class="prompt-directions" wx:if="{{promptDisplay.directions}}">{{promptDisplay.directions}}</view>
+        <view class="prompt-scenario" wx:if="{{promptDisplay.scenario}}">{{promptDisplay.scenario}}</view>
+        <view class="requirements-title" wx:if="{{promptDisplay.requirements.length}}">{{promptDisplay.requirementsTitle}}</view>
+        <view class="requirements-list" wx:if="{{promptDisplay.requirements.length}}">
+          <view class="requirement-item" wx:for="{{promptDisplay.requirements}}" wx:key="*this">
+            <view class="requirement-dot"></view>
+            <view class="requirement-text">{{item}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
   </view>
 
-  <view class="editor-card">
+  <view class="editor-card" wx:if="{{!isTranslation}}">
     <view class="editor-head">
       <view>
         <view class="section-title">{{texts.editor}}</view>
@@ -159,13 +218,13 @@
     </view>
   </view>
 
-  <view class="review-card" wx:if="{{grading}}">
+  <view class="review-card" wx:if="{{!isTranslation && grading}}">
     <view class="report-ruler"></view>
     <view class="section-title">{{texts.grading}}</view>
     <view class="review-block">{{texts.gradingCopy}}</view>
   </view>
 
-  <view class="review-card {{reviewCelebrating ? 'is-celebrating' : ''}}" wx:if="{{review}}">
+  <view class="review-card {{reviewCelebrating ? 'is-celebrating' : ''}}" wx:if="{{!isTranslation && review}}">
     <view class="report-ruler"></view>
     <view class="review-effect" wx:if="{{reviewCelebrating}}">
       <view class="review-effect-dot dot-one"></view>

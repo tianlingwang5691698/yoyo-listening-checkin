@@ -648,7 +648,7 @@ async function hydrateGrammarItems(items) {
 }
 
 function findWritingPrompt(materialIndex, promptId) {
-  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || []);
+  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || [], (materialIndex || {}).writingSeniorSpring || [], (materialIndex || {}).writingSeniorAutumn || []);
   return all.find((item) => item && item._id === promptId) || null;
 }
 

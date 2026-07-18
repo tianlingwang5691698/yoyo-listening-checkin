@@ -1,0 +1,62 @@
+{
+  "topicId": "clause:adverbial",
+  "topic": "状语从句",
+  "questions": [
+    {
+      "_id": "sh-autumn-2009-grammar-q28",
+      "sourceSetId": "sh-autumn-2009-grammar",
+      "year": 2009,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2009年上海秋季高考英语真题及答案.doc",
+      "number": 28,
+      "prompt": "The Great Wall is _______ tourist attraction that millions of people pour in every year.",
+      "options": {
+        "A": "so a well-known",
+        "B": "a so well-known",
+        "C": "such well-known a",
+        "D": "such a well-known"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:adverbial",
+      "subtopic": "状语从句",
+      "topicId": "clause:adverbial",
+      "topic": "状语从句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    },
+    {
+      "_id": "sh-autumn-2009-grammar-q32",
+      "sourceSetId": "sh-autumn-2009-grammar",
+      "year": 2009,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2009年上海秋季高考英语真题及答案.doc",
+      "number": 32,
+      "prompt": "You can’t borrow books from the school library _______ you get your student card.",
+      "options": {
+        "A": "before",
+        "B": "if",
+        "C": "while",
+        "D": "as"
+      },
+      "answer": "A",
+      "questionType": "grammar-choice",
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:adverbial",
+      "subtopic": "状语从句",
+      "topicId": "clause:adverbial",
+      "topic": "状语从句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

@@ -67,7 +67,7 @@
         <view class="library-row-no">{{index + 1}}</view>
         <view class="library-row-main">
           <view class="library-row-title">{{item.stage}}</view>
-          <view class="library-row-meta">{{item.count}} {{itemUnit}}</view>
+          <view class="library-row-meta">{{item.contentSummary || (item.count + ' ' + itemUnit)}}</view>
         </view>
         <view class="library-row-arrow">›</view>
       </view>
@@ -177,7 +177,7 @@
     <view class="library-district-tabs">
       <view class="library-district-tab" wx:for="{{districts}}" wx:key="district" data-district="{{item.district}}" bindtap="selectDistrict">
         <view class="library-district-name">{{item.district}}</view>
-        <view class="library-district-count">{{item.count}} {{itemUnit}}</view>
+        <view class="library-district-count">{{item.contentSummary || (item.count + ' ' + itemUnit)}}</view>
       </view>
     </view>
     <view class="library-empty-slip" wx:if="{{!districts.length}}">{{texts.empty}}</view>
@@ -191,8 +191,8 @@
     <view class="library-manuscript-list">
       <view class="library-manuscript-row" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item.materialItemId}}" bindtap="openItem">
         <view class="library-manuscript-main">
-          <view class="library-manuscript-title">{{item.title}}</view>
-          <view class="library-manuscript-meta">{{item.year}} · {{item.district}} · {{item.examType}}</view>
+          <view class="library-manuscript-title">{{item.displayTitle || item.title}}</view>
+          <view class="library-manuscript-meta">{{item.taskSummary || (item.year + ' · ' + item.district + ' · ' + item.examType)}}</view>
           <view class="library-manuscript-prompt" wx:if="{{expandedItemId === item.materialItemId}}">{{item.prompt}}</view>
         </view>
         <view class="library-proof-stamp">{{texts.writing}}</view>
@@ -261,7 +261,7 @@
         <view class="directory-orb">{{index + 1}}</view>
         <view class="directory-main">
           <view class="directory-title">{{item.stage}}</view>
-          <view class="directory-meta">{{item.count}} {{itemUnit}}</view>
+          <view class="directory-meta">{{item.contentSummary || (item.count + ' ' + itemUnit)}}</view>
         </view>
         <view class="directory-arrow">›</view>
       </view>
@@ -321,8 +321,8 @@
           <view></view>
         </view>
         <view class="task-main">
-          <view class="task-title">{{item.title}}</view>
-          <view class="task-meta">{{item.year}} · {{item.district}} · {{item.examType}}</view>
+          <view class="task-title">{{item.displayTitle || item.title}}</view>
+          <view class="task-meta">{{item.taskSummary || (item.year + ' · ' + item.district + ' · ' + item.examType)}}</view>
           <view class="material-detail" wx:if="{{expandedItemId === item.materialItemId}}">
             <view wx:if="{{moduleId === 'writing'}}">{{item.prompt}}</view>
             <view wx:else>

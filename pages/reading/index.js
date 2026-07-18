@@ -5,7 +5,8 @@ const i18n = require('../../utils/i18n');
 
 const text = (key, fallback) => i18n.getPageText('reading', key, undefined, fallback);
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
-const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV1';
+const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV2';
+const READING_DIRECTORY_VERSION = 'senior-2009-v2';
 const READING_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 function isCompletePassageSnapshot(passage) {
@@ -124,7 +125,7 @@ Page({
         groups: 0
       });
     }
-    const data = await store.getReadingHome({ directoryOnly: true }, (fresh) => {
+    const data = await store.getReadingHome({ directoryOnly: true, directoryVersion: READING_DIRECTORY_VERSION }, (fresh) => {
       this.applyReadingHome(fresh);
       if (fresh && fresh.syncMode !== 'cloud-error') {
         snapshotStore.write(READING_HOME_SNAPSHOT_KEY, 'directory', fresh, { source: 'reading-home' });
@@ -161,7 +162,7 @@ Page({
     }
     this.setData({ directoryLoading: true });
     try {
-      const data = await store.getReadingHome({ directoryOnly: true });
+      const data = await store.getReadingHome({ directoryOnly: true, directoryVersion: READING_DIRECTORY_VERSION });
       this.applyReadingHome(data);
     } catch (error) {
       this.setData({ directoryLoading: false });

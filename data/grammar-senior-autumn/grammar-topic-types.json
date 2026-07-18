@@ -1,0 +1,92 @@
+[
+  {
+    "topicId": "verb",
+    "topic": "动词类",
+    "count": 7,
+    "children": [
+      {
+        "topicId": "verb:modal",
+        "topic": "情态动词",
+        "count": 1
+      },
+      {
+        "topicId": "verb:nonfinite",
+        "topic": "非谓语",
+        "count": 4
+      },
+      {
+        "topicId": "verb:tense-voice",
+        "topic": "时态语态",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "topicId": "lexical",
+    "topic": "词法类",
+    "count": 2,
+    "children": [
+      {
+        "topicId": "lexical:preposition",
+        "topic": "介词",
+        "count": 1
+      },
+      {
+        "topicId": "lexical:pronoun",
+        "topic": "代词",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "topicId": "clause",
+    "topic": "从句类",
+    "count": 5,
+    "children": [
+      {
+        "topicId": "clause:adverbial",
+        "topic": "状语从句",
+        "count": 2
+      },
+      {
+        "topicId": "clause:noun",
+        "topic": "名词性从句",
+        "count": 2
+      },
+      {
+        "topicId": "clause:relative",
+        "topic": "定语从句",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "topicId": "sentence",
+    "topic": "句型结构类",
+    "count": 2,
+    "children": [
+      {
+        "topicId": "sentence:inversion",
+        "topic": "倒装句",
+        "count": 1
+      },
+      {
+        "topicId": "sentence:tag-question",
+        "topic": "反意疑问句",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "topicId": "logic",
+    "topic": "连词逻辑类",
+    "count": 0,
+    "children": []
+  },
+  {
+    "topicId": "communicative",
+    "topic": "情景交际类",
+    "count": 0,
+    "children": []
+  }
+]

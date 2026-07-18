@@ -6,9 +6,20 @@ const i18n = require('../../utils/i18n');
 const text = (key, fallback) => i18n.getPageText('material', key, undefined, fallback);
 
 const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
-const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
-const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
+const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV2';
+const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV3';
 const MATERIAL_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+const MATERIAL_CATALOG_VERSION = 'senior-2009-v5';
+
+function writingItemType(item) {
+  const id = getMaterialItemId(item);
+  return String(item && item.contentType || (id.includes('-translation') ? 'translation' : 'guided-writing'));
+}
+
+function writingDisplayTitle(item) {
+  if (getMaterialItemId(item) === 'sh-autumn-2009-writing') return 'II. Guided Writing · 作文';
+  return item.title || '';
+}
 
 function getMaterialHomeSnapshotKey(moduleId) {
   return `${MATERIAL_HOME_SNAPSHOT_KEY}:${moduleId}`;
@@ -24,6 +35,10 @@ function buildMaterials(materialIndex) {
       exams: [
         { examId: 'em2', exam: text('em2', '二模'), items: materialIndex.writingEm2 || [] },
         { examId: 'em1', exam: text('em1', '一模'), items: materialIndex.writingEm1 || [] }
+      ],
+      seniorExams: [
+        { examId: 'spring', exam: text('spring', '春考'), items: materialIndex.writingSeniorSpring || [] },
+        { examId: 'autumn', exam: text('autumn', '秋考'), items: materialIndex.writingSeniorAutumn || [] }
       ]
     },
     listening: {
@@ -34,6 +49,10 @@ function buildMaterials(materialIndex) {
       exams: [
         { examId: 'em2', exam: text('em2', '二模'), items: materialIndex.listeningEm2 || [] },
         { examId: 'em1', exam: text('em1', '一模'), items: materialIndex.listeningEm1 || [] }
+      ],
+      seniorExams: [
+        { examId: 'spring', exam: text('spring', '春考'), items: materialIndex.listeningSeniorSpring || [] },
+        { examId: 'autumn', exam: text('autumn', '秋考'), items: materialIndex.listeningSeniorAutumn || [] }
       ]
     }
   };
@@ -42,7 +61,9 @@ function buildMaterials(materialIndex) {
 function groupByDistrict(items) {
   const map = {};
   (items || []).forEach((item) => {
-    const district = item.district || text('other', '其他');
+    const isWritingItem = !(item.audioCloudPath || item.audioUrl || item.hasAudio);
+    const isSeniorWritingItem = isWritingItem && item.stage === '高中' && Number(item.year || 0) > 0;
+    const district = isSeniorWritingItem ? `${item.year}年` : (item.district || text('other', '其他'));
     if (!map[district]) {
       map[district] = {
         district,
@@ -52,12 +73,41 @@ function groupByDistrict(items) {
     }
     map[district].count += 1;
     const materialItemId = getMaterialItemId(item) || `${district}:${map[district].count}`;
+    const itemType = isWritingItem ? writingItemType(item) : '';
+    if (isWritingItem && itemType === 'translation') {
+      map[district].translationQuestionCount = Number(map[district].translationQuestionCount || 0) + Number(item.questionCount || 0);
+    } else if (isWritingItem) {
+      map[district].writingTaskCount = Number(map[district].writingTaskCount || 0) + 1;
+    }
     map[district].items.push(Object.assign({}, item, {
       stableId: materialItemId,
-      materialItemId
+      materialItemId,
+      contentType: itemType || item.contentType || '',
+      displayTitle: isWritingItem ? writingDisplayTitle(item) : item.title,
+      taskSummary: isWritingItem
+        ? (itemType === 'translation'
+          ? `翻译 ${Number(item.questionCount || 0)} 题 · ${Number(item.score || 0)} 分`
+          : `作文 1 题${item.minWords ? ` · 不少于 ${item.minWords} 词` : ''}${item.score ? ` · ${item.score} 分` : ''}`)
+        : ''
     }));
   });
-  return Object.keys(map).sort().map((key) => map[key]);
+  return Object.keys(map).sort((left, right) => {
+    const leftYear = Number(String(left).replace(/年$/, ''));
+    const rightYear = Number(String(right).replace(/年$/, ''));
+    if (leftYear && rightYear) return rightYear - leftYear;
+    return left.localeCompare(right, 'zh-CN');
+  }).map((key) => {
+    const group = map[key];
+    group.items.sort((left, right) => {
+      const leftOrder = left.contentType === 'translation' ? 1 : 2;
+      const rightOrder = right.contentType === 'translation' ? 1 : 2;
+      return leftOrder - rightOrder;
+    });
+    group.contentSummary = group.translationQuestionCount
+      ? `翻译 ${group.translationQuestionCount} 题 · 作文 ${group.writingTaskCount || 0} 题`
+      : '';
+    return group;
+  });
 }
 
 function getMaterialItemId(item) {
@@ -65,13 +115,16 @@ function getMaterialItemId(item) {
 }
 
 function buildStages(config) {
-  const exams = (config.exams || []).map((exam) => ({
+  const buildExams = (source) => (source || []).map((exam) => ({
     examId: exam.examId,
     exam: exam.exam,
     count: (exam.items || []).length,
     districts: groupByDistrict(exam.items || [])
   }));
+  const exams = buildExams(config.exams);
+  const seniorExams = buildExams(config.seniorExams);
   const juniorCount = exams.reduce((sum, exam) => sum + exam.count, 0);
+  const seniorCount = seniorExams.reduce((sum, exam) => sum + exam.count, 0);
   return [
     {
       stageId: 'junior',
@@ -82,8 +135,8 @@ function buildStages(config) {
     {
       stageId: 'senior',
       stage: text('senior', '高中'),
-      count: 0,
-      exams: []
+      count: seniorCount,
+      exams: seniorExams
     }
   ];
 }
@@ -105,17 +158,17 @@ function applyMaterialConfig(pageInstance, moduleId, materialIndex, extraData) {
 function hasMaterialContent(moduleId, materialIndex) {
   const index = materialIndex || {};
   if (moduleId === 'listening') {
-    return !!((index.listeningEm1 || []).length || (index.listeningEm2 || []).length);
+    return !!((index.listeningEm1 || []).length || (index.listeningEm2 || []).length || (index.listeningSeniorSpring || []).length || (index.listeningSeniorAutumn || []).length);
   }
-  return !!((index.writingEm1 || []).length || (index.writingEm2 || []).length);
+  return !!((index.writingEm1 || []).length || (index.writingEm2 || []).length || (index.writingSeniorSpring || []).length || (index.writingSeniorAutumn || []).length);
 }
 
 function countMaterialItems(moduleId, materialIndex) {
   const index = materialIndex || {};
   if (moduleId === 'listening') {
-    return (index.listeningEm1 || []).length + (index.listeningEm2 || []).length;
+    return (index.listeningEm1 || []).length + (index.listeningEm2 || []).length + (index.listeningSeniorSpring || []).length + (index.listeningSeniorAutumn || []).length;
   }
-  return (index.writingEm1 || []).length + (index.writingEm2 || []).length;
+  return (index.writingEm1 || []).length + (index.writingEm2 || []).length + (index.writingSeniorSpring || []).length + (index.writingSeniorAutumn || []).length;
 }
 
 function buildMaterialDebug(moduleId, materialIndex) {
@@ -181,7 +234,7 @@ Page({
     });
     const snapshotIndex = snapshot && hasMaterialContent(moduleId, snapshot.materialIndex) ? snapshot.materialIndex : null;
     const cachedMaterialIndex = !snapshotIndex && store.getCachedReadResult
-      ? store.getCachedReadResult('getMaterialIndex', { moduleId })
+      ? store.getCachedReadResult('getMaterialIndex', { moduleId, catalogVersion: MATERIAL_CATALOG_VERSION })
       : null;
     const firstMaterialIndex = snapshotIndex || (hasMaterialContent(moduleId, cachedMaterialIndex) ? cachedMaterialIndex : null);
     if (firstMaterialIndex) {
@@ -256,7 +309,7 @@ Page({
     const stages = (this.data.stages || []).map((stage) => Object.assign({}, stage, {
       stage: stage.stageId === 'senior' ? text('senior', '高中') : text('junior', '初中'),
       exams: (stage.exams || []).map((exam) => Object.assign({}, exam, {
-        exam: exam.examId === 'em1' ? text('em1', '一模') : text('em2', '二模')
+        exam: exam.examId === 'em1' ? text('em1', '一模') : (exam.examId === 'em2' ? text('em2', '二模') : (exam.examId === 'spring' ? text('spring', '春考') : text('autumn', '秋考')))
       }))
     }));
     this.setData({
@@ -266,7 +319,7 @@ Page({
       itemUnit: config.itemUnit,
       stages,
       exams: (this.data.exams || []).map((exam) => Object.assign({}, exam, {
-        exam: exam.examId === 'em1' ? text('em1', '一模') : text('em2', '二模')
+        exam: exam.examId === 'em1' ? text('em1', '一模') : (exam.examId === 'em2' ? text('em2', '二模') : (exam.examId === 'spring' ? text('spring', '春考') : text('autumn', '秋考')))
       }))
     });
   },

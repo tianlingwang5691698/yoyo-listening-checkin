@@ -16,7 +16,7 @@ const FLASHCARD_ITEMS_KEY = 'readingFlashcardItemsV1';
 const EBBINGHAUS_REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
 
 function buildOptionList(options) {
-  return ['A', 'B', 'C', 'D'].filter((key) => options && options[key]).map((key) => ({
+  return ['A', 'B', 'C', 'D', 'E', 'F'].filter((key) => options && options[key]).map((key) => ({
     key,
     text: options[key],
     tokens: tokenizeChunkText(options[key]),
@@ -34,7 +34,7 @@ function normalizeAnswerText(value) {
 
 function formatAnswerDisplay(value) {
   const text = String(value || '').trim();
-  return /^[A-D]$/.test(text) ? text.toLowerCase() : text;
+  return /^[A-F]$/.test(text) ? text.toLowerCase() : text;
 }
 
 function findClozeBlanks(text) {

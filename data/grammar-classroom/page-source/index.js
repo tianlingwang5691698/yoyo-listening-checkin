@@ -7,8 +7,8 @@ const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-pl
 
 const text = (key, fallback) => i18n.getPageText('grammar', key, undefined, fallback);
 
-const GRAMMAR_TOPIC_SNAPSHOT_KEY = 'grammarTopicSnapshotV1';
-const GRAMMAR_HOME_SNAPSHOT_KEY = 'grammarHomeSnapshotV1';
+const GRAMMAR_TOPIC_SNAPSHOT_KEY = 'grammarTopicSnapshotV2';
+const GRAMMAR_HOME_SNAPSHOT_KEY = 'grammarHomeSnapshotV2';
 const GRAMMAR_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 function buildThirdPersonPractice(english) {
@@ -535,10 +535,13 @@ function buildExams(em2Topics, em1Topics) {
   ];
 }
 
-function buildStages(em2Topics, em1Topics) {
+function buildStages(em2Topics, em1Topics, springTopics, autumnTopics) {
   em2Topics = em2Topics || [];
   em1Topics = em1Topics || [];
+  springTopics = springTopics || [];
+  autumnTopics = autumnTopics || [];
   const juniorCount = em2Topics.concat(em1Topics).reduce((sum, item) => sum + Number(item.count || 0), 0);
+  const seniorCount = springTopics.concat(autumnTopics).reduce((sum, item) => sum + Number(item.count || 0), 0);
   return [
     {
       stageId: 'junior',
@@ -549,8 +552,11 @@ function buildStages(em2Topics, em1Topics) {
     {
       stageId: 'senior',
       stage: text('senior', '高中'),
-      count: 0,
-      exams: []
+      count: seniorCount,
+      exams: [
+        { examId: 'spring', exam: text('spring', '春考'), count: springTopics.reduce((sum, item) => sum + Number(item.count || 0), 0), topics: springTopics },
+        { examId: 'autumn', exam: text('autumn', '秋考'), count: autumnTopics.reduce((sum, item) => sum + Number(item.count || 0), 0), topics: autumnTopics }
+      ]
     }
   ];
 }
@@ -676,6 +682,8 @@ Page({
     wrongTopics: [],
     em2Topics: [],
     em1Topics: [],
+    springTopics: [],
+    autumnTopics: [],
     em1Loaded: false,
     em1Loading: false,
     mode: 'topics',
@@ -786,6 +794,8 @@ Page({
     });
     let em2Topics = [];
     let em1Topics = [];
+    let springTopics = [];
+    let autumnTopics = [];
     let readyReported = false;
     const reportReady = (source) => {
       if (readyReported || !this.grammarPerf) return;
@@ -797,12 +807,14 @@ Page({
       });
     };
     const applyHomeTopics = (source) => {
-      const stages = buildStages(em2Topics, em1Topics);
+      const stages = buildStages(em2Topics, em1Topics, springTopics, autumnTopics);
       if (stages.length) {
         snapshotStore.write(GRAMMAR_HOME_SNAPSHOT_KEY, 'home', {
           stages,
           em2Topics,
-          em1Topics
+          em1Topics,
+          springTopics,
+          autumnTopics
         }, { source: 'grammar-home' });
       }
       const selectedStage = this.data.selectedStageId
@@ -812,6 +824,8 @@ Page({
         stages,
         em2Topics,
         em1Topics,
+        springTopics,
+        autumnTopics,
         em1Loaded: !!em1Topics.length,
         em1Loading: false,
         selectedStage,
@@ -822,10 +836,14 @@ Page({
     if (snapshot && Array.isArray(snapshot.stages)) {
       em2Topics = snapshot.em2Topics || [];
       em1Topics = snapshot.em1Topics || [];
+      springTopics = snapshot.springTopics || [];
+      autumnTopics = snapshot.autumnTopics || [];
       this.setData({
         stages: snapshot.stages,
         em2Topics,
         em1Topics,
+        springTopics,
+        autumnTopics,
         em1Loaded: true,
         em1Loading: false
       });
@@ -854,6 +872,14 @@ Page({
       }).then((data) => {
         em1Topics = buildTopics(data);
         applyHomeTopics(data && data.__cacheHit ? 'em1-cache' : 'em1-cloud');
+      }).catch(() => {}),
+      store.getGrammarHome({ examId: 'autumn' }, (fresh) => {
+        autumnTopics = buildTopics(fresh);
+        applyHomeTopics('autumn-refresh');
+        if (this.grammarPerf) this.grammarPerf.mark('cloudRefresh', { examId: 'autumn', topics: autumnTopics.length });
+      }).then((data) => {
+        autumnTopics = buildTopics(data);
+        applyHomeTopics(data && data.__cacheHit ? 'autumn-cache' : 'autumn-cloud');
       }).catch(() => {})
     ]).then(() => reportReady('empty')).catch(() => reportReady('empty'));
   },
@@ -890,7 +916,7 @@ Page({
         stage: item.stageId === 'senior' ? text('senior', '高中') : text('junior', '初中')
       })),
       stageCategories: (this.data.stageCategories || []).map((item) => Object.assign({}, item, {
-        exam: item.examId === 'em1' ? text('em1', '一模') : text('em2', '二模')
+        exam: item.examId === 'em1' ? text('em1', '一模') : (item.examId === 'em2' ? text('em2', '二模') : (item.examId === 'spring' ? text('spring', '春考') : text('autumn', '秋考')))
       }))
     });
   },
@@ -1045,7 +1071,7 @@ Page({
     }
     this.setData({
       mode: 'topics',
-      stages: buildStages(em2Topics, this.data.em1Topics || []),
+      stages: buildStages(em2Topics, this.data.em1Topics || [], this.data.springTopics || [], this.data.autumnTopics || []),
       em2Topics,
       topics: [],
       selectedStageId: '',
@@ -1071,7 +1097,7 @@ Page({
     try {
       const em1Data = await store.getGrammarHome({ examId: 'em1' });
       const em1Topics = buildTopics(em1Data);
-      const stages = buildStages(this.data.em2Topics || [], em1Topics);
+      const stages = buildStages(this.data.em2Topics || [], em1Topics, this.data.springTopics || [], this.data.autumnTopics || []);
       const selectedStage = stages.find((item) => item.stageId === this.data.selectedStageId) || null;
       this.setData({
         stages,

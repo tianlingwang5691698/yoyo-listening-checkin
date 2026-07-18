@@ -36,6 +36,9 @@ SecretKey.csv
 腾讯cloudbase 上传文件和文件夹 接口/
 
 # Local generated checkpoints and backups
+tmp/
+data/backups/
+data/dictionary-import/*-backup-*/
 data/cloud-backups/
 data/cloud-repair/
 data/grammar/gpt-classification-24-progress.json

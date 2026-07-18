@@ -1,0 +1,26 @@
+{
+  "examId": "autumn",
+  "year": 2009,
+  "model": "gpt-5.6-sol",
+  "reviewedAt": "2026-07-18",
+  "classificationRevision": 2,
+  "rule": "Classify by the correct answer and the single primary tested grammar point; distractor keywords must not determine the topic.",
+  "questions": [
+    { "number": 25, "categoryId": "lexical", "category": "词法类", "subtopicId": "lexical:preposition", "subtopic": "介词", "basis": "among 表示处于14人之中。" },
+    { "number": 26, "categoryId": "lexical", "category": "词法类", "subtopicId": "lexical:pronoun", "subtopic": "代词", "basis": "none of them 考查不定代词的否定范围。" },
+    { "number": 27, "categoryId": "verb", "category": "动词类", "subtopicId": "verb:modal", "subtopic": "情态动词", "basis": "must have been 表示对过去事实的肯定推测。" },
+    { "number": 28, "categoryId": "clause", "category": "从句类", "subtopicId": "clause:adverbial", "subtopic": "状语从句", "basis": "考查 such a + adj. + n. + that 结果结构。" },
+    { "number": 29, "categoryId": "verb", "category": "动词类", "subtopicId": "verb:tense-voice", "subtopic": "时态语态", "basis": "售罄发生在 went 之前，应用过去完成时 had sold out。" },
+    { "number": 30, "categoryId": "sentence", "category": "句型结构类", "subtopicId": "sentence:tag-question", "subtopic": "反意疑问句", "basis": "陈述部分含否定意义的 never，附加问句用肯定式 has she。" },
+    { "number": 31, "categoryId": "verb", "category": "动词类", "subtopicId": "verb:nonfinite", "subtopic": "非谓语", "basis": "killing 是现在分词短语作结果状语。" },
+    { "number": 32, "categoryId": "clause", "category": "从句类", "subtopicId": "clause:adverbial", "subtopic": "状语从句", "basis": "before 引导时间状语从句。" },
+    { "number": 33, "categoryId": "verb", "category": "动词类", "subtopicId": "verb:nonfinite", "subtopic": "非谓语", "basis": "affected by 是过去分词短语后置修饰 those。" },
+    { "number": 34, "categoryId": "clause", "category": "从句类", "subtopicId": "clause:relative", "subtopic": "定语从句", "basis": "where 在定语从句中作地点状语，修饰 house。" },
+    { "number": 35, "categoryId": "verb", "category": "动词类", "subtopicId": "verb:nonfinite", "subtopic": "非谓语", "basis": "suggest 表示建议时接动名词 doing。" },
+    { "number": 36, "categoryId": "verb", "category": "动词类", "subtopicId": "verb:tense-voice", "subtopic": "时态语态", "basis": "were being warned 同时考查过去进行时和被动语态。" },
+    { "number": 37, "categoryId": "clause", "category": "从句类", "subtopicId": "clause:noun", "subtopic": "名词性从句", "basis": "whether 从句是真正主语，It 为形式主语。" },
+    { "number": 38, "categoryId": "sentence", "category": "句型结构类", "subtopicId": "sentence:inversion", "subtopic": "倒装句", "basis": "方位副词 away 前置触发完全倒装。" },
+    { "number": 39, "categoryId": "verb", "category": "动词类", "subtopicId": "verb:nonfinite", "subtopic": "非谓语", "basis": "threaten 后接不定式 to do。" },
+    { "number": 40, "categoryId": "clause", "category": "从句类", "subtopicId": "clause:noun", "subtopic": "名词性从句", "basis": "how he can react 作介词 of 的宾语。" }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "topicId": "clause:noun",
+  "topic": "名词性从句",
+  "questions": [
+    {
+      "_id": "sh-autumn-2009-grammar-q37",
+      "sourceSetId": "sh-autumn-2009-grammar",
+      "year": 2009,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2009年上海秋季高考英语真题及答案.doc",
+      "number": 37,
+      "prompt": "It is not immediately clear _______ the financial crisis will soon be over.",
+      "options": {
+        "A": "since",
+        "B": "what",
+        "C": "when",
+        "D": "whether"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:noun",
+      "subtopic": "名词性从句",
+      "topicId": "clause:noun",
+      "topic": "名词性从句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    },
+    {
+      "_id": "sh-autumn-2009-grammar-q40",
+      "sourceSetId": "sh-autumn-2009-grammar",
+      "year": 2009,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2009年上海秋季高考英语真题及答案.doc",
+      "number": 40,
+      "prompt": "As a new diplomat, he often thinks of ______ he can react more appropriately on such occasions.",
+      "options": {
+        "A": "what",
+        "B": "which",
+        "C": "that",
+        "D": "how"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:noun",
+      "subtopic": "名词性从句",
+      "topicId": "clause:noun",
+      "topic": "名词性从句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

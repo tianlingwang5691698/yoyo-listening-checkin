@@ -15,7 +15,7 @@ const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
 const HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV2';
-const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
+const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV3';
 const LISTENING_PLAN_OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV5';
 const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
 
@@ -940,20 +940,21 @@ Page({
     });
   },
   prefetchReadingHome() {
-    const snapshot = snapshotStore.read('readingHomeSnapshotV1', {
+    const readingDirectoryVersion = 'senior-2009-v2';
+    const snapshot = snapshotStore.read('readingHomeSnapshotV2', {
       id: 'directory',
       maxAgeMs: 7 * 24 * 60 * 60 * 1000
     });
     if (snapshot && ((snapshot.categoryTree || [])[0] || {}).count) {
       return;
     }
-    store.getReadingHome({ directoryOnly: true }, (fresh) => {
+    store.getReadingHome({ directoryOnly: true, directoryVersion: readingDirectoryVersion }, (fresh) => {
       if (fresh && fresh.syncMode !== 'cloud-error' && ((fresh.categoryTree || [])[0] || {}).count) {
-        snapshotStore.write('readingHomeSnapshotV1', 'directory', fresh, { source: 'home-reading-refresh' });
+        snapshotStore.write('readingHomeSnapshotV2', 'directory', fresh, { source: 'home-reading-refresh' });
       }
     }).then((data) => {
       if (data && data.syncMode !== 'cloud-error' && ((data.categoryTree || [])[0] || {}).count) {
-        snapshotStore.write('readingHomeSnapshotV1', 'directory', data, { source: 'home-reading-prefetch' });
+        snapshotStore.write('readingHomeSnapshotV2', 'directory', data, { source: 'home-reading-prefetch' });
       }
     }).catch(() => {});
   },

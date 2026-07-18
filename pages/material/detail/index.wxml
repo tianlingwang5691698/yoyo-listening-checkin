@@ -61,6 +61,17 @@
     </view>
     <view class="library-question-row" wx:for="{{questions}}" wx:key="number">
       <view class="library-section-heading in-list" wx:if="{{item.showSectionTitle}}">{{item.sectionTitle}}</view>
+      <view class="library-listening-group-head" wx:if="{{item.showGroupTitle}}">
+        <view class="library-listening-group-title">{{item.groupTitle}}</view>
+        <view class="library-listening-group-instruction" wx:if="{{item.groupInstruction}}">{{item.groupInstruction}}</view>
+      </view>
+      <view class="library-listening-form" wx:if="{{item.formTitle || item.givenRows.length}}">
+        <view class="library-listening-form-title" wx:if="{{item.formTitle}}">{{item.formTitle}}</view>
+        <view class="library-listening-form-row" wx:for="{{item.givenRows}}" wx:for-item="given" wx:key="label">
+          <view class="library-listening-form-label">{{given.label}}:</view>
+          <view class="library-listening-form-value">{{given.value}}</view>
+        </view>
+      </view>
       <view class="library-question-title">{{item.number}}. {{item.prompt}}</view>
       <view class="library-option-list" wx:if="{{item.optionsList.length}}">
         <view class="library-option-row {{option.isWide ? 'is-wide' : ''}} {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
@@ -201,6 +212,17 @@
     </view>
     <view class="question-row" wx:for="{{questions}}" wx:key="number">
       <view class="section-heading in-list" wx:if="{{item.showSectionTitle}}">{{item.sectionTitle}}</view>
+      <view class="listening-group-head" wx:if="{{item.showGroupTitle}}">
+        <view class="listening-group-title">{{item.groupTitle}}</view>
+        <view class="listening-group-instruction" wx:if="{{item.groupInstruction}}">{{item.groupInstruction}}</view>
+      </view>
+      <view class="listening-form" wx:if="{{item.formTitle || item.givenRows.length}}">
+        <view class="listening-form-title" wx:if="{{item.formTitle}}">{{item.formTitle}}</view>
+        <view class="listening-form-row" wx:for="{{item.givenRows}}" wx:for-item="given" wx:key="label">
+          <view class="listening-form-label">{{given.label}}:</view>
+          <view class="listening-form-value">{{given.value}}</view>
+        </view>
+      </view>
       <view class="question-title">{{item.number}}. {{item.prompt}}</view>
       <view class="option-list" wx:if="{{item.optionsList.length}}">
         <view class="option-row {{option.isWide ? 'is-wide' : ''}} {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
