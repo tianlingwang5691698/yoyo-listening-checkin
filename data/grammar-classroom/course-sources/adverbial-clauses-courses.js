@@ -24,7 +24,7 @@ const NARRATIONS={
 最后看 I will tell you as soon as I know。主句 will tell 明确指向将来，从句虽然也说将来的“知道”，却用一般现在时 know，不说 will know。原因是这个连接语已经把它放进未来时间安排里，不需要再用普通 will 重复标记。判断时先看你要表达的是“马上跟着发生”，还是“一旦条件成立”。前者使用表示“一……就……”的连接语，后者可用 once。谈将来时，再检查从句是否误加了 will。`),
  'place-where-wherever':narration('place-where-wherever',`地点状语从句不是单独说一个地点名，而是用一整套主谓关系回答“在哪里”。先看 Stay where you are。<#0.7#>主干只有 Stay，也就是“待着”。where you are 里面有 you 和 are，整个小句子说明 stay 的地点：待在你现在所在的位置。它不是 stay 的宾语，而是给动作补地点范围。
 再看 Where there is water, life can exist。where there is water 概括的不是某一个已知地点，而是所有“有水的地方”；主句说这些地方可能有生命。句首地点从句先搭好一个空间背景，后面的结论在这个范围内成立。<#0.8#>
-最后看 Wherever you go, I will follow you。wherever 比 where 更开放，意思是无论你去哪个地方，主句结果都不改变。选择时先问范围是否有限：只是指出动作发生的地方，用 where；想把所有可能地点都包括进去，用 wherever。判断地点从句时仍要检查内部主谓；本页三个地点从句都有自己的主语和谓语，有了这套骨架，它才是从句，而不只是一个地点词。`),
+最后看 Wherever you go, I will follow you。wherever 比 where 更开放，意思是无论你去哪个地方，主句结果都不改变。选择时先问范围是否有限：只是指出动作发生的地方，用 where；想把所有可能地点都包括进去，用 wherever。判断地点从句时仍要检查内部主谓；这三个地点从句都有自己的主语和谓语，有了这套骨架，它才是从句，而不只是一个地点词。`),
  'reason-because-since-as':narration('reason-because-since-as',`because、since 和 as 都能给原因，但说话人把原因放在多重要的位置，并不一样。先看 We stayed inside because it was raining。<#0.7#>如果别人问“为什么待在里面”，because it was raining 就是直接答案。because 把下雨作为重点原因，解释力度最清楚。
 第二句 Since everyone is here, we can begin。everyone is here 更像双方都看得到、都能接受的前提。说话人不是重点追问原因，而是借这个已知背景推出“可以开始”。since 在这里接近“既然”。<#0.8#>
 再看 As it was getting late, we went home。天色渐晚被轻轻放在句首当背景，真正要推进的信息是 we went home。as 表原因时通常比 because 弱，也常前置。选择时不要把三个词当成随意替换：需要正面回答 why，用 because；原因已经明显，拿来作为推理前提，用 since；只是顺带铺一个较弱背景，可用 as。先判断原因是不是句子的焦点，再决定连接词。`),
@@ -45,7 +45,7 @@ Though he was tired, he kept working 表达同样的转折预期，though 一般
 最后看 Even if it rains, we will go。这里下雨还没确定，只是假设一个可能情况；无论是否发生，去这件事都不变。even though 引出的是已经承认的事实，even if 引出的是尚未确定的假设。判断时先找“本来会阻止什么”的因素，再看它是事实还是可能。普通事实让步用 although 或 though；想加强反差用 even though；情况尚未发生，只是假设也不改变结果，用 even if。`),
  'concession-while-no-matter':narration('concession-while-no-matter',`这一节的让步不是简单说“但是”，而是说明无论出现哪一种情况，主句结论仍然不变。先看 While I understand your point, I disagree。<#0.7#>我理解你的观点，却仍不同意。while 在这里不表示两个动作同时发生，而是把“理解”和“不同意”放在一起形成对比，接近“虽然”。
 No matter what happens, stay calm 把可能发生的所有事情都包括进来：不管发生什么，保持冷静这条指令不变。Wherever she goes, she makes friends 也是同样思路，wherever 表示“无论哪里”，不论地点怎样变化，结果都成立。<#0.8#>
-最后看 Whoever calls, do not answer。不论打来电话的是谁，指令都不改变。判断 wh-ever 时不能只看到 ever 就下结论，要看整块内容在句中做什么。本页这些从句都给主句加“无论哪种情况”的让步范围。选择时，对比两个立场可用 while；想展开所有可能，用 no matter 加疑问词，或用 whatever、wherever、whoever 这样的形式。`),
+最后看 Whoever calls, do not answer。不论打来电话的是谁，指令都不改变。判断 wh-ever 时不能只看到 ever 就下结论，要看整块内容在句中做什么。这些从句都给主句加“无论哪种情况”的让步范围。选择时，对比两个立场可用 while；想展开所有可能，用 no matter 加疑问词，或用 whatever、wherever、whoever 这样的形式。`),
  'comparison-clauses':narration('comparison-clauses',`比较从句的任务，是给比较词提供一个基准。先看 Mia runs faster than I do。<#0.7#>主干先说 Mia runs faster，但 faster 必须回答“比谁更快”。than I do 提供参照，do 代替前面已经出现的 runs，避免把相同的“跑”再完整说一遍。这个 do 不是新的动作意思，只是把相同谓语简洁地接住。
 第二句 This room is as bright as that one is。第一个 as 和 bright 组成 as bright，表示达到同等亮度；第二个 as 引出比较对象 that one。后面的 is 对应前面的 is bright，重复的 bright 可以省掉。<#0.8#>
 再看 She is taller than me / than I am。than me 在日常口语中很常见，可以看成较短的比较短语；than I am 明确写出主语和谓语，是完整比较从句，也更正式。判断时先找比较中心，是 faster、taller，还是 as bright；再找它跟谁比。比较从句里与前面重复的内容常被助动词代替或直接省略，所以不要因为句子短，就误认为结构不完整。`),

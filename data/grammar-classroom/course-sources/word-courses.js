@@ -12,32 +12,32 @@ const NOUN_REMAINING_NARRATIONS = {
     text: `排练节目时，同一个人可以一会儿当主持人，一会儿当摄影师。名词放进句子，也会承担不同任务。先听。<#0.4#>The young teacher smiled。<#0.8#>谁笑了？不是只有 teacher，而是 The young teacher 整体。这个名词短语站在动作 smiled 前，负责说清“谁做动作”，语法上叫主语。<#0.7#>再听 We visited the museum。动作是 visited，the museum 回答“参观了什么”，所以它是宾语。Amy is our monitor 里，our monitor 没有承受动作，而是在 is 后说明 Amy 的身份，这个位置叫表语。可见，看到名词不能马上断定它就是主语，要看它和谓语是什么关系。<#0.8#>还有两种容易混的任务。She gave Tom a book 里，Tom 是收到东西的人，叫间接宾语；a book 是被给出的东西，叫直接宾语。They elected Tom captain 里，Tom 是宾语，captain 接着补充 Tom 被选成什么，叫宾语补足语。<#0.7#>判断时先圈出完整名词短语，再找谓语：谓语前回答“谁做”多半是主语；动作后回答“谁或什么”多半是宾语；系动词后说明身份是表语；宾语后再给身份，就是宾语补足语。`,
   },
   countability: {
-    id: 'noun:countability', version: 'v1', lengthText: '379 字 · 约 2 分钟',
-    text: `往购物袋里装东西时，有些东西能一件件数，有些要先装进一个单位再数。页面先给出。<#0.4#>a book · two books。<#0.8#>book 能分出一本、两本，所以数量变多时名词也变成复数 books。这类能直接按个数计算的，叫可数名词。<#0.7#>再看。<#0.4#>some water · a glass of water。<#0.8#>water 在这里表示没有切分单位的水，不能为了表示很多就随手加复数词尾；a glass of water 先用 glass 划出一份，再说明这一份装的是水。<#0.7#>第三组是。<#0.4#>some advice · a piece of advice。<#0.8#>advice 不是液体，但英语通常把“建议”看成不可数的内容整体。a piece of advice 用 piece 划出一条，advice 本身保持原形。<#0.8#>判断时先看名词能否直接和数量搭配并形成单复数；若不能，就找页面所示的容器或单位词。最后还要结合当前词义，因为同一个词换到不同语境，可数性也可能改变。`,
+    id: 'noun:countability', version: 'v2', lengthText: '379 字 · 约 2 分钟',
+    text: `往购物袋里装东西时，有些东西能一件件数，有些要先装进一个单位再数。先看这一组。<#0.4#>a book · two books。<#0.8#>book 能分出一本、两本，所以数量变多时名词也变成复数 books。这类能直接按个数计算的，叫可数名词。<#0.7#>再看。<#0.4#>some water · a glass of water。<#0.8#>water 在这里表示没有切分单位的水，不能为了表示很多就随手加复数词尾；a glass of water 先用 glass 划出一份，再说明这一份装的是水。<#0.7#>第三组是。<#0.4#>some advice · a piece of advice。<#0.8#>advice 不是液体，但英语通常把“建议”看成不可数的内容整体。a piece of advice 用 piece 划出一条，advice 本身保持原形。<#0.8#>判断时先看名词能否直接和数量搭配并形成单复数；若不能，就找例句所示的容器或单位词。最后还要结合当前词义，因为同一个词换到不同语境，可数性也可能改变。`,
   },
   'regular-plural': {
-    id: 'noun:regular-plural', version: 'v1', lengthText: '325 字 · 约 2 分钟',
-    text: `整理仓库清单时，一件和多件要用不同词形。页面第一组是。<#0.4#>book → books　map → maps。<#0.8#>这两个词直接在末尾加 s，是最常见的复数路线。<#0.7#>第二组是。<#0.4#>box → boxes　watch → watches。<#0.8#>这类词尾原本就不容易和一个 s 分开读，所以加 es，多出更清楚的尾音。判断时既看结尾字母，也要听结尾声音。<#0.7#>第三组是。<#0.4#>city → cities　knife → knives。<#0.8#>city 把末尾 y 调整后再加 es；knife 则把 fe 调整成 ves。这些变化都比直接加 s 多一步，不能混在一起背。<#0.8#>术语上，能按常见词尾模式变化的叫规则复数。动笔时按页面顺序检查：普通结尾先考虑直接加 s；特殊尾音考虑 es；看到辅音字母加 y，再检查是否变 ies；遇到 f 或 fe 的词，按这个词的实际复数形式核对。`,
+    id: 'noun:regular-plural', version: 'v2', lengthText: '325 字 · 约 2 分钟',
+    text: `整理仓库清单时，一件和多件要用不同词形。第一组写的是。<#0.4#>book → books　map → maps。<#0.8#>这两个词直接在末尾加 s，是最常见的复数路线。<#0.7#>第二组是。<#0.4#>box → boxes　watch → watches。<#0.8#>这类词尾原本就不容易和一个 s 分开读，所以加 es，多出更清楚的尾音。判断时既看结尾字母，也要听结尾声音。<#0.7#>第三组是。<#0.4#>city → cities　knife → knives。<#0.8#>city 把末尾 y 调整后再加 es；knife 则把 fe 调整成 ves。这些变化都比直接加 s 多一步，不能混在一起背。<#0.8#>术语上，能按常见词尾模式变化的叫规则复数。动笔时按这组顺序检查：普通结尾先考虑直接加 s；特殊尾音考虑 es；看到辅音字母加 y，再检查是否变 ies；遇到 f 或 fe 的词，按这个词的实际复数形式核对。`,
   },
   'irregular-plural': {
-    id: 'noun:irregular-plural', version: 'v1', lengthText: '341 字 · 约 2 分钟',
-    text: `有些名词变成多个时，不走普通的 s 或 es 路线。页面第一组是。<#0.4#>man → men　woman → women。<#0.8#>它们通过词内部元音变化表示复数，不是在末尾直接添词尾。<#0.7#>第二组是。<#0.4#>child → children　person → people。<#0.8#>这两组变化更明显，复数形式必须和单词一起记，不能临场按规则拼出来。这类形式叫不规则复数。<#0.7#>第三组是。<#0.4#>sheep → sheep　fish → fish/fishes。<#0.8#>sheep 单数和复数外形相同，数量要靠前面的限定信息和句中谓语判断。fish 常用同形复数 fish；fishes 可在强调不同鱼类时出现，意义范围不同。<#0.8#>判断时先找数量信号，再看当前名词能不能走普通复数规则；若属于页面这些不规则类型，就直接调出对应形式。遇到单复数同形的词，不看外壳猜数量，要连同上下文和谓语一起判断。`,
+    id: 'noun:irregular-plural', version: 'v2', lengthText: '341 字 · 约 2 分钟',
+    text: `有些名词变成多个时，不走普通的 s 或 es 路线。第一组写的是。<#0.4#>man → men　woman → women。<#0.8#>它们通过词内部元音变化表示复数，不是在末尾直接添词尾。<#0.7#>第二组是。<#0.4#>child → children　person → people。<#0.8#>这两组变化更明显，复数形式必须和单词一起记，不能临场按规则拼出来。这类形式叫不规则复数。<#0.7#>第三组是。<#0.4#>sheep → sheep　fish → fish/fishes。<#0.8#>sheep 单数和复数外形相同，数量要靠前面的限定信息和句中谓语判断。fish 常用同形复数 fish；fishes 可在强调不同鱼类时出现，意义范围不同。<#0.8#>判断时先找数量信号，再看当前名词能不能走普通复数规则；若属于例句这些不规则类型，就直接调出对应形式。遇到单复数同形的词，不看外壳猜数量，要连同上下文和谓语一起判断。`,
   },
   possessive: {
-    id: 'noun:possessive', version: 'v1', lengthText: '431 字 · 约 2 分钟',
-    text: `课桌上有几本书，贴上 Tom's book，就能看出这本书和 Tom 有所属关系。撇号不是装饰，它把前面的名词变成“与谁有关”的标记。单数名词 Tom 后通常加撇号 s；不以 s 结尾的不规则复数也按这类形式处理。<#0.8#>如果物品属于多位学生，页面写 the students' classroom。students 已经是以 s 结尾的规则复数，所以只在末尾加撇号。先判断原词是不是复数，再决定撇号放在哪里，不能只凭耳朵。<#0.7#>所有格也不只是“人的东西”。today's news 表示今天对应的新闻，学校、公司、城市等组织地点也常自然使用撇号 s。所以“有生命才用撇号 s”会误导。<#0.8#>再看 the roof of the house。roof 是房屋的一部分，of 把部分和整体连起来，中文通常说“房子的屋顶”。英语究竟选撇号 s 还是 of，要看关系类型和习惯。<#0.7#>操作时先找真正被说明的中心名词，再确认前面的名词是单数、普通复数还是不规则复数；最后判断是在表达所属、时间和组织关系，还是部分与整体。形式和关系都对上，所有格才选得准。`,
+    id: 'noun:possessive', version: 'v2', lengthText: '431 字 · 约 2 分钟',
+    text: `课桌上有几本书，贴上 Tom's book，就能看出这本书和 Tom 有所属关系。撇号不是装饰，它把前面的名词变成“与谁有关”的标记。单数名词 Tom 后通常加撇号 s；不以 s 结尾的不规则复数也按这类形式处理。<#0.8#>如果物品属于多位学生，例句写 the students' classroom。students 已经是以 s 结尾的规则复数，所以只在末尾加撇号。先判断原词是不是复数，再决定撇号放在哪里，不能只凭耳朵。<#0.7#>所有格也不只是“人的东西”。today's news 表示今天对应的新闻，学校、公司、城市等组织地点也常自然使用撇号 s。所以“有生命才用撇号 s”会误导。<#0.8#>再看 the roof of the house。roof 是房屋的一部分，of 把部分和整体连起来，中文通常说“房子的屋顶”。英语究竟选撇号 s 还是 of，要看关系类型和习惯。<#0.7#>操作时先找真正被说明的中心名词，再确认前面的名词是单数、普通复数还是不规则复数；最后判断是在表达所属、时间和组织关系，还是部分与整体。形式和关系都对上，所有格才选得准。`,
   },
   'noun-modifier': {
-    id: 'noun:noun-modifier', version: 'v1', lengthText: '413 字 · 约 2 分钟',
-    text: `看到 a shoe shop，先别逐词翻成“一个鞋一个商店”。真正决定这是什么东西的是最后的 shop：它是一家商店；前面的 shoe 只是说明商店卖什么、属于什么类型。这里 shoe 仍是名词，但放在另一个名词前做修饰，语法上叫名词作定语。<#0.8#>再看 two apple trees。数量 two 数的是树，所以中心名词 trees 变复数；apple 只标明树的种类，通常保持单数。<#0.7#>复合名词常把多个词压成一个概念，中文也常合并表达。分析时仍要找中心：最后的名词通常决定整个短语是一家店、一棵树还是一次会议，也决定单复数落在哪里。<#0.8#>不过“前面的名词永远单数”也不是绝对规则。页面第三个例子 a sports meeting 里，sports 保留已经形成的复数形式，这类约定要按真实表达记住。<#0.7#>判断时从右往左做三步：先圈出最后的中心名词；再问前面的名词说明用途、材料还是类型；最后把数量变化放到中心词上。若见到 sports 这类惯用复数修饰语，再单独核对页面或词典中的实际形式。`,
+    id: 'noun:noun-modifier', version: 'v2', lengthText: '411 字 · 约 2 分钟',
+    text: `看到 a shoe shop，先别逐词翻成“一个鞋一个商店”。真正决定这是什么东西的是最后的 shop：它是一家商店；前面的 shoe 只是说明商店卖什么、属于什么类型。这里 shoe 仍是名词，但放在另一个名词前做修饰，语法上叫名词作定语。<#0.8#>再看 two apple trees。数量 two 数的是树，所以中心名词 trees 变复数；apple 只标明树的种类，通常保持单数。<#0.7#>复合名词常把多个词压成一个概念，中文也常合并表达。分析时仍要找中心：最后的名词通常决定整个短语是一家店、一棵树还是一次会议，也决定单复数落在哪里。<#0.8#>不过“前面的名词永远单数”也不是绝对规则。第三个例子是 a sports meeting，sports 保留已经形成的复数形式，这类约定要按真实表达记住。<#0.7#>判断时从右往左做三步：先圈出最后的中心名词；再问前面的名词说明用途、材料还是类型；最后把数量变化放到中心词上。若见到 sports 这类惯用复数修饰语，再单独核对例句或词典中的实际形式。`,
   },
   'noun-types': {
-    id: 'noun:noun-types', version: 'v1', lengthText: '450 字 · 约 2 分钟',
-    text: `打开地图，China 是一个国家的专名，country 是“国家”这一类事物的通名；翻到日历，Monday 是某一天的名称，day 只是类别。给特定对象命名、通常首字母大写的叫专有名词；表示一类人或物的叫普通名词。<#0.8#>厨房里的 water、rice，木桌的材料 wood，都在说物质本身，这类叫物质名词，通常按不可数使用。love、courage、knowledge 看不见，却给感情、品质和知识概念命名，叫抽象名词，也常按不可数处理。<#0.7#>不过类别不是给单词贴上一张永远不变的标签。页面用 coffee → two coffees 展示：coffee 表示饮料这种物质时常按不可数理解；two coffees 则把它切成两份或两杯，词义变成可数的份数。<#0.8#>同样，抽象概念在表示一次具体经历、一个种类时，也可能出现可数用法。决定形式的是当前句子想表达什么，而不是词典里排在最前面的中文意思。<#0.7#>判断时先问：它是在叫某个独特名称、一整个类别、一种物质，还是一个抽象概念？再看语境有没有把物质或概念切成种类、份数或具体实例，最后决定是否大写、能否计数。`,
+    id: 'noun:noun-types', version: 'v2', lengthText: '450 字 · 约 2 分钟',
+    text: `打开地图，China 是一个国家的专名，country 是“国家”这一类事物的通名；翻到日历，Monday 是某一天的名称，day 只是类别。给特定对象命名、通常首字母大写的叫专有名词；表示一类人或物的叫普通名词。<#0.8#>厨房里的 water、rice，木桌的材料 wood，都在说物质本身，这类叫物质名词，通常按不可数使用。love、courage、knowledge 看不见，却给感情、品质和知识概念命名，叫抽象名词，也常按不可数处理。<#0.7#>不过类别不是给单词贴上一张永远不变的标签。例句用 coffee → two coffees 展示：coffee 表示饮料这种物质时常按不可数理解；two coffees 则把它切成两份或两杯，词义变成可数的份数。<#0.8#>同样，抽象概念在表示一次具体经历、一个种类时，也可能出现可数用法。决定形式的是当前句子想表达什么，而不是词典里排在最前面的中文意思。<#0.7#>判断时先问：它是在叫某个独特名称、一整个类别、一种物质，还是一个抽象概念？再看语境有没有把物质或概念切成种类、份数或具体实例，最后决定是否大写、能否计数。`,
   },
   'collective-noun': {
-    id: 'noun:collective-noun', version: 'v1', lengthText: '455 字 · 约 2 分钟',
-    text: `球场记分牌上，一支队伍作为一个整体参赛，可以说 The team is strong。这里关注的是“这支队”这个单位，所以谓语用单数 is。team 这种用一个词装下许多成员的名词，叫集体名词。<#0.8#>如果镜头转到更衣室，页面写 The team are arguing among themselves。复数 are 把注意力放到一个个成员身上。英式英语可以采用这种成员视角；美式英语通常仍把 team 当单数，或明确说成员，避免视角含糊。<#0.8#>再听 The police are working。police 和普通 team 不一样，它本身按复数处理，谓语要跟着复数关系。people 表示“人们”时也通常配复数谓语。<#0.7#>My family lives in Shanghai 里，family 表示一个家庭整体，所以 lives 用单数；如果英式语境强调家人各自的意见，才可能采用成员视角。<#0.7#>判断时不要只数现实中有几个人。先看这个词在语法上属于普通集体名词，还是 police、people 这类复数词；再看说话者把它当一个单位，还是突出成员分别行动；最后保持同一段话的英式或美式用法一致。`,
+    id: 'noun:collective-noun', version: 'v2', lengthText: '455 字 · 约 2 分钟',
+    text: `球场记分牌上，一支队伍作为一个整体参赛，可以说 The team is strong。这里关注的是“这支队”这个单位，所以谓语用单数 is。team 这种用一个词装下许多成员的名词，叫集体名词。<#0.8#>如果镜头转到更衣室，例句是 The team are arguing among themselves。复数 are 把注意力放到一个个成员身上。英式英语可以采用这种成员视角；美式英语通常仍把 team 当单数，或明确说成员，避免视角含糊。<#0.8#>再听 The police are working。police 和普通 team 不一样，它本身按复数处理，谓语要跟着复数关系。people 表示“人们”时也通常配复数谓语。<#0.7#>My family lives in Shanghai 里，family 表示一个家庭整体，所以 lives 用单数；如果英式语境强调家人各自的意见，才可能采用成员视角。<#0.7#>判断时不要只数现实中有几个人。先看这个词在语法上属于普通集体名词，还是 police、people 这类复数词；再看说话者把它当一个单位，还是突出成员分别行动；最后保持同一段话的英式或美式用法一致。`,
   },
   'noun-boss': {
     id: 'noun:noun-boss', version: 'v1', lengthText: '538 字 · 约 2 分钟',
@@ -90,16 +90,16 @@ const PRONOUN_REMAINING_NARRATIONS = {
     text: `双胞胎一起做作业，一个帮另一个，另一个也帮回来，可以说 The twins help each other。动作不是各自回到自己身上，而是在两个参与者之间来回流动。each other 这种表示彼此作用的形式，叫相互代词。<#0.8#>The players talked to one another 也把说话动作连到其他队员。现代英语中 each other 和 one another 通常可以互换，不必机械规定“两个人只能用前者、三个人以上只能用后者”；真正重要的是场景里至少有不同参与者互相发生作用。<#0.8#>对比 They looked at themselves。这里每个人看的对象是自己，动作分别返回各自主语，所以用反身代词 themselves。前两句是参与者彼此作用，第三句是动作回到各自本人。<#0.7#>判断时画箭头最直接：箭头从一个参与者指向另一个，同时反向发生，用相互代词；箭头从每个主语绕回自己，用反身代词。若动词本身需要介词，还要把介词连同关系一起保留。`,
   },
   'substitute-pronoun': {
-    id: 'pronoun:substitute-pronoun', version: 'v1', lengthText: '463 字 · 约 2 分钟',
-    text: `手里的笔坏了，你想买一支新的，页面说 My pen is broken；I need a new one。one 代替的是 pen 这一类名词，指同类中的另一支，不是原来那支。<#0.8#>These shoes are tight；show me the larger ones。前面是复数 shoes，所以用 ones，larger 继续说明要同类鞋中更大的那些。one 和 ones 都替代可数名词类别，但要跟着单复数变化。<#0.7#>杯子脏了，要求再拿一个，页面是 This cup is dirty；give me another。another 表示开放范围里的“再一个”或“另一个”单数对象，后面不必重复 cup。<#0.8#>如果范围明确只有两个，就用 One answer is correct；the other is wrong。one 先提出一个，the other 锁定剩下的那个。多于两个时，范围和数量还要随语境继续判断。<#0.7#>操作时先问代词是在指回原来的具体对象，还是替代同类中的另一个；再看单数还是复数、范围是否恰好两个。同类单数或复数看 one、ones，开放范围的另一个看 another，两个中的剩余项看 the other。`,
+    id: 'pronoun:substitute-pronoun', version: 'v2', lengthText: '463 字 · 约 2 分钟',
+    text: `手里的笔坏了，你想买一支新的，可以说 My pen is broken；I need a new one。one 代替的是 pen 这一类名词，指同类中的另一支，不是原来那支。<#0.8#>These shoes are tight；show me the larger ones。前面是复数 shoes，所以用 ones，larger 继续说明要同类鞋中更大的那些。one 和 ones 都替代可数名词类别，但要跟着单复数变化。<#0.7#>杯子脏了，要求再拿一个，可以说 This cup is dirty；give me another。another 表示开放范围里的“再一个”或“另一个”单数对象，后面不必重复 cup。<#0.8#>如果范围明确只有两个，就用 One answer is correct；the other is wrong。one 先提出一个，the other 锁定剩下的那个。多于两个时，范围和数量还要随语境继续判断。<#0.7#>操作时先问代词是在指回原来的具体对象，还是替代同类中的另一个；再看单数还是复数、范围是否恰好两个。同类单数或复数看 one、ones，开放范围的另一个看 another，两个中的剩余项看 the other。`,
   },
   'pronoun-agreement': {
     id: 'pronoun:pronoun-agreement', version: 'v1', lengthText: '514 字 · 约 2 分钟',
     text: `接力传话时，代词必须把信息准确交回前面的对象。Lucy said she was ready。she 指回 Lucy，两者都是第三人称单数，语境也已经说明是 Lucy，所以读者不会换错人。这个被代词指回的对象叫先行词，代词要和它在人称、数量及已知信息上协调。<#0.8#>The students finished their work 中，先行词 students 是复数，物主形式就用 their。即使中间出现 work 这样的单数名词，也不能改用 its，因为决定代词的是它真正指向谁，不是离它最近的词。<#0.8#>如果说 If anyone calls, tell them I am busy，anyone 形式上按单数处理，但来电者的性别未知，现代标准英语自然使用单数 they 的宾格 them。Every student should bring their ID 也是逐个学生，却不限定性别，their 是包容而标准的回指。<#0.7#>单数 they 不等于把先行词变成复数；谓语和其他表达仍要按各自结构判断，并在同一语境保持代词形式一致。<#0.7#>检查时先用箭头连出每个代词的先行词，再核对第一、第二、第三人称和单复数；性别未知、不重要或对象使用 they 时，可选 they、them、their。最后从头读一遍，确认没有被中间名词带偏。`,
   },
   'pronoun-ambiguity': {
-    id: 'pronoun:pronoun-ambiguity', version: 'v1', lengthText: '459 字 · 约 2 分钟',
-    text: `Tom 遇见 Jack 之后，有人笑了。若只写 When Tom met Jack, he smiled，he 在人称和单数上同时匹配 Tom 与 Jack，语法形式没有错，画面却有两个可能答案。读者不知道是谁笑，这就是指代歧义。<#0.8#>最直接的修复就是页面第二句 When Tom met Jack, Tom smiled。虽然重复了 Tom，却换来了唯一明确的意思。代词的价值是减少重复，但清楚永远比少写一个词更重要。<#0.7#>再看 Put the vase on the table and clean it。it 既可能指 vase，也可能指 table。要消除歧义，就应重复真正要清洁的对象，不能指望读者猜场景。<#0.8#>不过清晰不等于禁止代词。Students lose focus when they are tired 中，前面只有 students 是合理的复数人物先行词，they 指向唯一，使用自然。<#0.7#>检查时从每个代词向前找所有在人称、数量和意义上可能匹配的对象。若候选超过一个，就重复目标名词、调整语序或拆句；若只有一个合理候选，保留代词即可。最后让句子脱离你脑中的画面再读一次，看陌生读者能否立刻确定指向。`,
+    id: 'pronoun:pronoun-ambiguity', version: 'v2', lengthText: '459 字 · 约 2 分钟',
+    text: `Tom 遇见 Jack 之后，有人笑了。若只写 When Tom met Jack, he smiled，he 在人称和单数上同时匹配 Tom 与 Jack，语法形式没有错，画面却有两个可能答案。读者不知道是谁笑，这就是指代歧义。<#0.8#>最直接的修复就是改成第二句 When Tom met Jack, Tom smiled。虽然重复了 Tom，却换来了唯一明确的意思。代词的价值是减少重复，但清楚永远比少写一个词更重要。<#0.7#>再看 Put the vase on the table and clean it。it 既可能指 vase，也可能指 table。要消除歧义，就应重复真正要清洁的对象，不能指望读者猜场景。<#0.8#>不过清晰不等于禁止代词。Students lose focus when they are tired 中，前面只有 students 是合理的复数人物先行词，they 指向唯一，使用自然。<#0.7#>检查时从每个代词向前找所有在人称、数量和意义上可能匹配的对象。若候选超过一个，就重复目标名词、调整语序或拆句；若只有一个合理候选，保留代词即可。最后让句子脱离你脑中的画面再读一次，看陌生读者能否立刻确定指向。`,
   },
   'pronoun-boss': {
     id: 'pronoun:pronoun-boss', version: 'v1', lengthText: '598 字 · 约 2 分钟',

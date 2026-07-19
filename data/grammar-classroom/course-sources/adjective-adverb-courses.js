@@ -134,10 +134,10 @@ I am sure that he is right 中，sure 表示确信，that he is right 把“确�
   },
   'adjective-degree': {
     id: 'adjective:adjective-degree', version: 'v1',
-    text: `冬天走进一个房间，冷可以有一点冷、很冷等不同强弱。页面先说：<#0.4#>The room is very cold。<#0.8#>very 把 cold 的程度明显提高。cold 能放在一条连续刻度上，这种性质叫可分级。
+    text: `冬天走进一个房间，冷可以有一点冷、很冷等不同强弱。先看例句：<#0.4#>The room is very cold。<#0.8#>very 把 cold 的程度明显提高。cold 能放在一条连续刻度上，这种性质叫可分级。
 再看答案：<#0.4#>The answer is absolutely correct。<#0.8#>correct 在这里把答案放到“正确”这个明确状态，absolutely 强调完全达到，而不是只把普通程度往上推。表示终点或绝对状态的形容词，常和 absolutely、completely 这一类强调词配合。<#0.7#>
 第三句是 This task is slightly difficult。difficult 也有程度差别，slightly 把它压到较低位置，意思是任务只有一点难。它和第一句正好展示同一条程度刻度可以向高处或低处调整。
-判断时先问形容词表达的性质能不能自然分成一点、很、更加。能，就按可分级处理，再根据页面语境选择 very 或 slightly 等程度词；如果词义本身像到达一个完整终点，就优先考虑 absolutely、completely 一类表达。最后检查程度词和形容词想表达的刻度是否匹配。`,
+判断时先问形容词表达的性质能不能自然分成一点、很、更加。能，就按可分级处理，再根据当前语境选择 very 或 slightly 等程度词；如果词义本身像到达一个完整终点，就优先考虑 absolutely、completely 一类表达。最后检查程度词和形容词想表达的刻度是否匹配。`,
     lengthText: '462 字 · 约 2 分钟'
   },
   'adjective-comparative-form': {
@@ -146,7 +146,7 @@ I am sure that he is right 中，sure 表示确信，that he is right 把“确�
 第二句 Amy is happier today 展示词尾 y 的变化。happy 是辅音字母加 y 结尾，要把 y 变成 i，再加 er。<#0.7#>
 第三句 This is the most useful tool here 中，useful 较长，不硬接词尾，而是在前面用 most 构成最高级。<#0.7#>第四句 My bag is bigger than yours 里，big 是重读的“辅音、元音、辅音”短词，要先双写末字母 g，再加 er。
 最后看 Today is better than yesterday。better 不能从 good 按普通拼写推出，它属于要单独记住的不规则比较级。
-操作时按页面顺序核对五类：普通短词直接加 er 或 est；辅音加 y 先变 i；较长词用 more 或 most；重读短词必要时双写末字母；最后单独检查 good、bad、many、much 等不规则形式。`,
+操作时按例句顺序核对五类：普通短词直接加 er 或 est；辅音加 y 先变 i；较长词用 more 或 most；重读短词必要时双写末字母；最后单独检查 good、bad、many、much 等不规则形式。`,
     lengthText: '434 字 · 约 2 分钟'
   },
   'adjective-comparison': {
@@ -564,7 +564,7 @@ The bag is too heavy 中，too 不说明时间地点，而是把 heavy 推到“
     id: 'adverb:multiple-adverb-order', version: 'v1',
     text: `一句话同时有“唱得很美、在舞台上、昨晚”，怎样排才不挤？中性说法是：<#0.4#>She sang beautifully on stage last night。<#0.8#>先交代方式 beautifully，再说地点 on stage，最后放时间 last night。这是多个句尾状语常见的“方式、地点、时间”顺序。
 顺序不是铁板一块。<#0.4#>Yesterday, we worked quietly in the library。<#0.8#>Yesterday 被提到句首，先搭起昨天这个背景，后面再说怎样工作、在哪里工作。前置的时间或地点状语常与主句用逗号分开。<#0.7#>
-She carefully opened the box 把 carefully 放在动词前，让“动作很小心”更早进入听者注意。这个页面位置强调的是方式，而前两句主要展示多个状语在句首和句尾怎样排布。
+She carefully opened the box 把 carefully 放在动词前，让“动作很小心”更早进入听者注意。这个句中位置强调的是方式，而前两句主要展示多个状语在句首和句尾怎样排布。
 排列时先把每个状语标成方式、地点或时间；都放句尾时先试方式、地点、时间；若某个信息要承接上文或搭背景，就把它前置并加逗号；最后朗读检查，避免把方式副词硬塞到动词与宾语之间。`,
     lengthText: '423 字 · 约 2 分钟'
   },
@@ -573,7 +573,7 @@ She carefully opened the box 把 carefully 放在动词前，让“动作很小�
     text: `闻到花香时，英语说：<#0.4#>The flowers smell sweet。<#0.8#>这里 smell 是“闻起来”，像一座桥把 flowers 和 sweet 连起来。sweet 说明花本身的性质，所以在这里是形容词。
 如果孩子主动去闻花，句子变成：<#0.4#>The child smelled the flower carefully。<#0.8#>smelled 现在是行为动作，carefully 回答孩子“怎样闻”，所以用副词。判断形式前，要先分清动词是在连接主语状态，还是在表示真实动作。<#0.7#>
 词尾也会骗人。The train moves fast 里，fast 没有 ly，却直接说明 moves 的方式。Our new neighbour is friendly 中，friendly 虽然以 ly 结尾，却通过 is 说明 neighbour，所以是形容词。
-选择时先问被说明的是人或物的状态，还是动作发生的方式。系动词后说明主语，用形容词；行为动词旁说明动作，通常用副词。接着检查页面中的 fast 和 friendly 这类形式，不能只靠 ly 词尾下结论。`,
+选择时先问被说明的是人或物的状态，还是动作发生的方式。系动词后说明主语，用形容词；行为动词旁说明动作，通常用副词。接着检查例句中的 fast 和 friendly 这类形式，不能只靠 ly 词尾下结论。`,
     lengthText: '422 字 · 约 2 分钟'
   },
   'adverb-comparison': {
@@ -635,9 +635,9 @@ Tell me how you solved it 里，how 保留“怎样”的意义，引出一整�
     id: 'adverb:adverb-traps', version: 'v1',
     text: `有些副词只差两个字母，意思却拐到另一条路。<#0.4#>He works hard every day。<#0.8#>hard 修饰 works，表示“努力地”。如果换成 hardly，句子就变成“他几乎不工作”，不是“更努力”。
 再听：<#0.4#>I have hardly seen her lately。<#0.8#>hardly 表示“几乎没见过”，lately 表示“最近”。这里两个 ly 形式都不能从 hard 和 late 的表面意思直接推出来。<#0.7#>
-页面第二句同时放入 hardly 和 lately，正好展示 ly 形式可能形成独立词义。lately 只谈最近一段时间，不能按 late 的“迟”直接推导。类似词必须把整组意义分开存，而不是把 ly 当作普通构词尾。
+第二句同时放入 hardly 和 lately，正好展示 ly 形式可能形成独立词义。lately 只谈最近一段时间，不能按 late 的“迟”直接推导。类似词必须把整组意义分开存，而不是把 ly 当作普通构词尾。
 遇到 hard 或 hardly，先问句子要表达努力，还是几乎不；遇到 late 或 lately，先问是某次到得迟，还是最近这段时间。选完后把中文意思完整代回原句检查，若逻辑突然反转，就说明掉进了同形近形词陷阱。`,
-    lengthText: '383 字 · 约 2 分钟'
+    lengthText: '381 字 · 约 2 分钟'
   }
 };
 

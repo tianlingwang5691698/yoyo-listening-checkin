@@ -46,7 +46,7 @@ Mia told me that she was ready 则把接收者 me 直接放在 told 后面，再
 They talked about the plan 说的是双方围绕计划交谈，about the plan 是话题，不是某一句被转述的具体内容。选择动词时先看交流方式：只报告一句内容，用 say；强调告诉谁，用 tell 加人；表示双方交谈，用 talk，并用 about 标话题。动词换了，后面的结构也要跟着换，不能把中文一个“说”字套进同一骨架。`),
   'yes-no-questions':narration('yes-no-questions',`一般疑问句只需要回答“是”或“不是”。转述时，这个二选一的感觉要保留，但问句外形要收起来。She asked if I was ready 中，if 表示答案尚未确定；原来的直接问句不再倒装，主语回到谓语前。<#0.8#>
 He asked whether Tom had left 也是同样逻辑。原问句把助动词放在 Tom 前面，嵌入 asked 后恢复 Tom 在前、had 在后的陈述语序。whether 与 if 都能引出一般疑问转述，whether 在较正式或需要明确“是否”时尤其常见。<#0.8#>
-They discussed whether to leave 展示了另一种简洁形式。讨论的主语与行动承担者明确时，“我们是否离开”可以压缩成页面里的不定式结构。检查这类句子时，不要留下问号和倒装：先用 if 或 whether 保留“是否”，再把主语放回助动词前；条件合适时，还可以压缩为“是否加不定式”。`),
+They discussed whether to leave 展示了另一种简洁形式。讨论的主语与行动承担者明确时，“我们是否离开”可以压缩成这种不定式结构。检查这类句子时，不要留下问号和倒装：先用 if 或 whether 保留“是否”，再把主语放回助动词前；条件合适时，还可以压缩为“是否加不定式”。`),
   'wh-questions':narration('wh-questions',`特殊疑问句已经自带信息缺口，所以转述时保留原来的疑问词，不再加 if 或 whether。She asked where I lived 中，where 继续表示“哪里”，原问句里的助动词消失，语序恢复为主语在前。asked 已经承担提问功能，里面不用再摆出问句外形。<#0.8#>
 He asked why she left 展示同样变化。why 保留，原问句中的 did 只是帮助形成疑问，进入从句后去掉，left 放在主语 she 后面。<#0.8#>
 They asked who broke the window 看起来没有明显变序，因为 who 本身就是原问句的主语，后面直接接 broke。这不是例外口诀，而是原句本来就是“疑问词作主语”的顺序。转换时先保留 where、why、who 等疑问词，再检查它在从句中做什么；如果原句用了 do、does、did 或倒装，要恢复陈述语序；如果疑问词本身作主语，就不要凭感觉再加助动词。`),
@@ -54,7 +54,7 @@ They asked who broke the window 看起来没有明显变序，因为 who 本身�
 She asked me to help her 不是一般疑问。原话里的 Please 表明请求，所以用 asked me to help；原说话人的 me 变为 her，因为现在是别人转述她的请求。ask 后的 me 是请求对象，不是被询问的问题答案。<#0.8#>
 否定命令看 He warned me not to touch it。原来的否定祈使形式进入转述后，不保留 don’t，而把否定放在不定式前。报告动词还可以用 warned，说明这不只是普通命令，还带警告意味。操作顺序是：判断命令、请求还是警告；确定听话人；用合适的报告动词接人和不定式；否定词放在不定式标记前。`),
   'advice-suggestion':narration('advice-suggestion',`“你应该休息”和“我们早点走吧”都像建议，但英语会根据有没有明确劝告对象选择不同骨架。The doctor advised me to rest 中，me 是医生劝的人，to rest 是劝我做的事，所以 advise 后可以接被劝的人和不定式。<#0.8#>
-Mia suggested leaving early 不需要接一个被建议的人，suggest 后直接用 doing 表示建议的行动。也可以展开成页面第三句的 that 从句。注意 suggest 不能照搬 advise 的“人加不定式”结构。<#0.8#>
+Mia suggested leaving early 不需要接一个被建议的人，suggest 后直接用 doing 表示建议的行动。也可以展开成第三句的 that 从句。注意 suggest 不能照搬 advise 的“人加不定式”结构。<#0.8#>
 The evidence suggests that he was there 又不是“证据在提建议”。这里 suggests 表示“暗示、表明”，that 从句陈述证据指向的事实，因此用 was，不用建议性原形。判断时先看功能：对某人劝告，用 advise 人 to do；提出行动方案，用 suggest doing 或 suggest that 从句；主语是 evidence 一类事物时，suggest 往往表示暗示。`),
   'exclamations-responses':narration('exclamations-responses',`有些原话不是普通陈述，而是在感叹、道谢或答应。转述时要保留它完成的交际动作，不必复制原来的句型。She exclaimed that the view was wonderful 把原话的强烈感受保留下来，但嵌入 that 从句后，语序回到普通陈述顺序，不再保留感叹句外形。<#0.8#>
 Tom thanked me for my help 直接按“道谢”这个功能转述。thanked 表明动作是感谢，me 是被感谢的人，for my help 说明感谢原因。逐词写 said that 并不能同样清楚地表现这个功能。<#0.8#>

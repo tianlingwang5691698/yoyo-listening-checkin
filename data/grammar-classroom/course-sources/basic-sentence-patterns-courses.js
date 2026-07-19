@@ -453,7 +453,7 @@ const REMAINING_PATTERN_NARRATIONS = {
   },
   'transformations-skeleton': {
     id: 'basic-sentence-patterns:transformations-skeleton', version: 'v1',
-    text: `句子变成否定、疑问或被动以后，单词位置和动词形式会变化，但谁和谁发生关系，仍然能追踪。<#0.6#>She does not like coffee。<#0.8#>does 和 not 帮助构成否定，真正表达“喜欢”的是 like，coffee 仍是这个动作直接涉及的宾语。因此加入否定，没有把主谓宾骨架变掉。<#0.8#>Did Tom open the door？<#0.6#>Did 被提前，用来发问；open 还原成原形。判断时要把 Did 和 open 合起来看成完整谓语，Tom 仍是主语，the door 仍是宾语。疑问语序不能把三个关系打乱。<#0.8#>The door was opened by Tom。<#0.6#>被动句把承受动作的 the door 放到主语位置，was opened 是完整谓语；by Tom 补出动作执行者。这里要按页面当前结构判断，而不是只看中文里谁做事。<#0.8#>遇到转换句，先找助动词和主要动词组成的完整谓语，再追问当前主语是谁、动作指向谁。形式变化是外壳，核心关系才是判型证据。`, lengthText: ''
+    text: `句子变成否定、疑问或被动以后，单词位置和动词形式会变化，但谁和谁发生关系，仍然能追踪。<#0.6#>She does not like coffee。<#0.8#>does 和 not 帮助构成否定，真正表达“喜欢”的是 like，coffee 仍是这个动作直接涉及的宾语。因此加入否定，没有把主谓宾骨架变掉。<#0.8#>Did Tom open the door？<#0.6#>Did 被提前，用来发问；open 还原成原形。判断时要把 Did 和 open 合起来看成完整谓语，Tom 仍是主语，the door 仍是宾语。疑问语序不能把三个关系打乱。<#0.8#>The door was opened by Tom。<#0.6#>被动句把承受动作的 the door 放到主语位置，was opened 是完整谓语；by Tom 补出动作执行者。这里要按句子当前结构判断，而不是只看中文里谁做事。<#0.8#>遇到转换句，先找助动词和主要动词组成的完整谓语，再追问当前主语是谁、动作指向谁。形式变化是外壳，核心关系才是判型证据。`, lengthText: ''
   },
   'one-verb-many-patterns': {
     id: 'basic-sentence-patterns:one-verb-many-patterns', version: 'v1',

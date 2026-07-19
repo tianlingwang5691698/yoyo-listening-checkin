@@ -204,6 +204,7 @@ test('全部语法课程提供中文共享微课讲解', () => {
       });
       assert.match(narration.text, /[\u4e00-\u9fff]/, `${builderName}/${lesson.id} narration must be Chinese`);
       assert.doesNotMatch(narration.text, /同学们|这节课|今天我们/, `${builderName}/${lesson.id} narration contains filler`);
+      assert.doesNotMatch(narration.text, /页面|本页|当前页/, `${builderName}/${lesson.id} narration contains page-dependent copy`);
       assert.doesNotMatch(narration.text.slice(0, 60), /(?:^|[，。！？；\s])(?:的本质[，,]?(?:是|在于)|是指|指的是)/, `${builderName}/${lesson.id} narration starts with an abstract definition`);
       assert.ok(matchesDisplayedExample, `${builderName}/${lesson.id} narration does not explain a displayed example`);
       assert.deepEqual(unexplainedEnglishRuns, [], `${builderName}/${lesson.id} narration contains examples not displayed on the page`);
@@ -223,8 +224,11 @@ test('全部语法课程提供中文共享微课讲解', () => {
   assert.equal(manifest.lessons.length, 484);
   narrations.forEach((narration) => {
     const key = `${narration.id}:${narration.version}:zh-CN`;
-    assert.equal(manifest.hashes[key], narrationHash(narration.text), `manifest mismatch: ${key}`);
+    const approvedHashes = Array.isArray(manifest.hashes[key]) ? manifest.hashes[key] : [manifest.hashes[key]];
+    assert.ok(approvedHashes.includes(narrationHash(narration.text)), `manifest mismatch: ${key}`);
   });
+  assert.ok(manifest.hashes['noun:countability:v1:zh-CN'], 'previous countability narration approval must remain available');
+  assert.ok(Array.isArray(manifest.hashes['adjective:adjective-degree:v1:zh-CN']), 'same-version legacy narration hashes must remain approved');
 
   const classroomPage = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   assert.match(classroomPage, /const language = 'zh-CN'/);
@@ -803,7 +807,15 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   assert.match(grammarService, /getCachedNarrationAudio/);
   assert.match(grammarService, /grammar-narration-manifest\.json/);
   assert.match(grammarService, /sharedApprovalKey = `\$\{narrationId\}:\$\{version\}:zh-CN`/);
-  assert.match(grammarService, /approvalKey, textHash, model, voice, speed, emotion/);
+  assert.match(grammarService, /approvalKey, textHash, model, voice, speed, emotion, NARRATION_PRONUNCIATION_VERSION/);
+  assert.match(grammarService, /pronunciation_dict: NARRATION_PRONUNCIATION_DICT/);
+  assert.match(grammarService, /'不可数\/\(bu4\)\(ke3\)\(shu3\)'/);
+  assert.match(grammarService, /'复数\/\(fu4\)\(shu4\)'/);
+  assert.match(grammarService, /NARRATION_PRONUNCIATION_VERSION = 'zh-polyphone-v2'/);
+  assert.match(grammarService, /Array\.isArray\(approved\) \? approved\.includes\(textHash\)/);
+  const narrationManifestBuilder = fs.readFileSync(path.join(__dirname, '../scripts/build_grammar_narration_manifest.js'), 'utf8');
+  assert.match(narrationManifestBuilder, /readPreviousHashes\(\)/);
+  assert.match(narrationManifestBuilder, /addApprovedHash\(key, hash\(lessonNarration\.text\)\)/);
   assert.match(grammarService, /GRAMMAR_TTS_EMOTION \|\| 'fluent'/);
   assert.match(grammarService, /GRAMMAR_TTS_SPEED \|\| 0\.95/);
   assert.match(grammarService, /runTransaction/);

@@ -291,7 +291,7 @@ The students in the library read quietly。<#0.8#>in the library 紧跟 students
   'integrated-analysis': `综合分析不是一次给每个词贴标签，而是先抓骨架，再把说明性内容挂回它真正修饰的中心。遇到不确定，还要用提问、替换和语境验证。<#0.8#>
 My brother Tom sent me a photo yesterday。<#0.8#>主干先看 sent 前后的关系：My brother Tom 是主语，me 是接收者，a photo 是被传递的东西。Tom 与 brother 指同一个人，作同位语；yesterday 再补充时间。<#0.8#>
 The young scientist explained the result to us clearly。<#0.8#>explained 直接带 the result，to 把关系指向 us，clearly 回答怎样解释。直接宾语、介词宾语和方式状语要分开，不能全并成一块。<#0.8#>
-She saw the man with a telescope。<#0.8#>with a telescope 可能跟 man 连在一起，说明是哪一个人；也可能修饰 saw，说明看的工具。页面没有更多语境时，两种结构都要保留。<#0.8#>
+She saw the man with a telescope。<#0.8#>with a telescope 可能跟 man 连在一起，说明是哪一个人；也可能修饰 saw，说明看的工具。句子没有更多语境时，两种结构都要保留。<#0.8#>
 完整步骤是：找限定谓语，划主干槽位，框出短语或从句边界，把定语和状语挂回中心，最后用语义检查。无法由语境排除的歧义，不要强行只留一个答案。`
 };
 

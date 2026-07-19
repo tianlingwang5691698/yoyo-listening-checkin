@@ -78,7 +78,7 @@ The woman whom we invited arrived 里，从句主语已经是 we，invited 后�
 We visited a house whose roof was red 把 whose 用到了事物上，表示屋顶属于房子的组成部分。The company whose products sell well is expanding 也是事物关系：products 属于 company 的产品范围，所以 whose 不只指人。<#0.8#>
 The house, the roof of which was damaged, was repaired 展示了更正式的另一种说法：the roof of which 指房子的屋顶。判断 whose 时先找后面紧跟的名词，再问“这个名词和先行词是什么所属或部分整体关系”。whose 加名词整体进入从句，可能作主语，也可能作其他成分。不要把 whose 单独当主语，更不要因为先行词是物就一律排除它。`),
  'which':relativeNarration('which',`The machine which saves energy is expensive 中，先行词是 machine，which 代表它，在从句里执行 saves energy，所以作主语，不能省。整个 which saves energy 后置说明是哪台机器。<#0.8#>
-The phone which I bought works well 里，从句主语是 I，bought 后缺买的对象，which 代替 phone 作宾语。宾语位置在限制性从句中可以省略关系词，但页面这句保留 which，结构更容易看清。<#0.8#>
+The phone which I bought works well 里，从句主语是 I，bought 后缺买的对象，which 代替 phone 作宾语。宾语位置在限制性从句中可以省略关系词，但这句保留 which，结构更容易看清。<#0.8#>
 The tool with which we opened the box was old 中，with 被提前到 which 前，which 作介词宾语，表示“用这个工具”。判断 which 的功能，要把先行词代回从句：机器执行节能，phone 是购买的对象，tool 是打开箱子所使用的工具。它可以补主语、宾语，也可以跟在介词后作介词宾语。重点不是记 which 等于“哪个”，而是确认它指向事物，并看从句内部到底空了什么位置。`),
  'that-relative':relativeNarration('that-relative',`The book that explains the rule is useful 中，that 指向 the book，在从句里作 explains 的主语，所以不能省。它所在的限制性从句负责从许多书中指出“解释这条规则的那本”。<#0.8#>
 The song that we heard was beautiful 里，从句主语是 we，heard 后缺听到的对象，that 作宾语。这里若省掉 that，保留的从句主语和谓语仍能显示宾语缺口，因此限制性结构中可以省。<#0.8#>
@@ -99,7 +99,7 @@ The reason for which he resigned is unclear 用更正式的 for which 表达同�
 This is the way in which the machine works 用 in which 更正式地表达“以这种方式运转”。I remember the way you solved the problem 则把关系标记省掉，you solved the problem 的主谓宾仍完整，听者能从 the way 恢复“以这种方式”的关系。<#0.8#>
 这组结构最容易出现重复。the way 本身已经表示方式，后面通常用 that、in which，或直接零关系词，不能再叠加 how。判断时先保留 the way 作为被说明的名词，再选一种连接方式即可。三句表面不同，核心都一样：从句不在说另一个 way，而是在展示动作怎样发生。避免把多个都表示“方式”的标记堆在一起。`),
  'preposition-relative':relativeNarration('preposition-relative',`The colleague with whom I worked has left 中，把介词 with 放在关系词前，whom 作 with 的宾语，结构正式而清楚。还原后表示“我和这位同事一起工作”。<#0.8#>
-The colleague I worked with has left 把 with 留在句尾，并省掉宾语关系词，更接近日常表达。The topic about which we spoke was difficult 同样把 about 提前；若后置，可以让关系词留在 spoken 结构后，但页面这句展示的是正式前置。<#0.8#>
+The colleague I worked with has left 把 with 留在句尾，并省掉宾语关系词，更接近日常表达。The topic about which we spoke was difficult 同样把 about 提前；若后置，可以让关系词留在 spoken 结构后，但这句展示的是正式前置。<#0.8#>
 She has three sisters, two of whom are doctors 不是普通的“介词加关系词”位置变化。two of whom 表示三位姐妹中的两位，of 建立部分与整体关系，不能把 whom 省掉。判断时先还原从句原本需要哪个介词，再决定正式前置还是自然后置。介词前置后，指人用 whom，指物用 which，不能用 that，也不能省；介词后置时，宾语关系词常可省。`),
  'restrictive-relative':relativeNarration('restrictive-relative',`Students who work hard make progress 中，students 范围很大，who work hard 把它缩小到努力学习的那些学生。去掉从句，意思会变成所有学生都进步，指称范围发生变化，所以从句是识别对象所必需的，不用逗号隔开。<#0.8#>
 The book that I need is unavailable 也是在许多书中筛选我需要的那本；that 作 need 的宾语。The device that saves energy costs more 则筛选能节能的设备，that 在从句里作主语。<#0.8#>

@@ -40,6 +40,16 @@ const legacyHashes = {
   'preposition:prep-essence:v1:en': '7742c616aaf5bd88bb8d2df644226a9e63e85f40321f3122944388dfa511655f'
 };
 
+function readPreviousHashes() {
+  if (!fs.existsSync(outputPath)) return {};
+  try {
+    const previous = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+    return previous && previous.hashes && typeof previous.hashes === 'object' ? previous.hashes : {};
+  } catch (error) {
+    return {};
+  }
+}
+
 function hash(text) {
   return crypto.createHash('sha256').update(String(text || '')).digest('hex');
 }
@@ -63,8 +73,19 @@ function validateNarrationAgainstLesson(fileName, builderName, lesson, narration
   if (order.some((exampleIndex, index) => index > 0 && exampleIndex < order[index - 1])) throw new Error(`Narration explains examples out of page order: ${fileName}/${builderName}/${lesson.id}`);
 }
 
-const hashes = Object.assign({}, legacyHashes);
+const hashes = Object.assign({}, legacyHashes, readPreviousHashes());
 const lessons = [];
+
+function addApprovedHash(key, value) {
+  const previous = hashes[key];
+  if (!previous) {
+    hashes[key] = value;
+    return;
+  }
+  const approved = Array.isArray(previous) ? previous.slice() : [previous];
+  if (!approved.includes(value)) approved.push(value);
+  hashes[key] = approved.length === 1 ? approved[0] : approved;
+}
 
 sourceFiles.forEach((fileName) => {
   const exportsObject = require(path.join(sourceDir, fileName));
@@ -91,8 +112,7 @@ sourceFiles.forEach((fileName) => {
         throw new Error(`English interface must reuse Chinese narration: ${fileName}/${builderName}/${courseLesson.id}`);
       }
       const key = `${lessonNarration.id}:${lessonNarration.version}:zh-CN`;
-      if (hashes[key] && hashes[key] !== hash(lessonNarration.text)) throw new Error(`Narration key collision: ${key}`);
-      hashes[key] = hash(lessonNarration.text);
+      addApprovedHash(key, hash(lessonNarration.text));
       lessons.push({ id: lessonNarration.id, version: lessonNarration.version, lessonId: courseLesson.id, source: fileName });
     });
   });

@@ -1407,19 +1407,19 @@
     },
     {
       "id": "noun:collective-noun",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "collective-noun",
       "source": "word-courses.js"
     },
     {
       "id": "noun:countability",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "countability",
       "source": "word-courses.js"
     },
     {
       "id": "noun:irregular-plural",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "irregular-plural",
       "source": "word-courses.js"
     },
@@ -1443,25 +1443,25 @@
     },
     {
       "id": "noun:noun-modifier",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "noun-modifier",
       "source": "word-courses.js"
     },
     {
       "id": "noun:noun-types",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "noun-types",
       "source": "word-courses.js"
     },
     {
       "id": "noun:possessive",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "possessive",
       "source": "word-courses.js"
     },
     {
       "id": "noun:regular-plural",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "regular-plural",
       "source": "word-courses.js"
     },
@@ -1857,7 +1857,7 @@
     },
     {
       "id": "pronoun:pronoun-ambiguity",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "pronoun-ambiguity",
       "source": "word-courses.js"
     },
@@ -1893,7 +1893,7 @@
     },
     {
       "id": "pronoun:substitute-pronoun",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "substitute-pronoun",
       "source": "word-courses.js"
     },
@@ -2907,10 +2907,16 @@
     }
   ],
   "hashes": {
-    "adjective:adjective-comparative-form:v1:zh-CN": "3b9e3ec615a1a98496c0b17870f6c04fcbfb585eb3f1a9f59f8c402cb15562bf",
+    "adjective:adjective-comparative-form:v1:zh-CN": [
+      "3b9e3ec615a1a98496c0b17870f6c04fcbfb585eb3f1a9f59f8c402cb15562bf",
+      "9390d28feed942f67b8332299e474f1b8ec5ab3e821d5569c694561d16b29296"
+    ],
     "adjective:adjective-comparison:v1:zh-CN": "f1df5e9a230547ecf48f9047d74873dc8214d72fc7147b8ede56709d8e269cd0",
     "adjective:adjective-complements:v1:zh-CN": "1a01eb4ca50816f1cc43e74e46b38c2b9bda30086a517a5c61dda0fdd5f02550",
-    "adjective:adjective-degree:v1:zh-CN": "7613d6cbfa2c435e6a66024337a82a8a0697f0a1ddef6308249aef8d00bf2e6d",
+    "adjective:adjective-degree:v1:zh-CN": [
+      "7613d6cbfa2c435e6a66024337a82a8a0697f0a1ddef6308249aef8d00bf2e6d",
+      "cdf4e2e651b5c29c619c4c15e4824d8dd8381346b665c8b66382d30ed9e54c59"
+    ],
     "adjective:adjective-essence:v2:zh-CN": "acbf31268d3508c47a8b0095ef5a48ae01a6bf5fcb72ec1c824e5d973bcc74d6",
     "adjective:adjective-jobs:v1:zh-CN": "f82f112c1dd4de186e77d68498dff5780fed52583577fcc50027375b4f51737a",
     "adjective:adjective-nominal:v1:zh-CN": "dbe96591f97fb79f6898c46f6e418c0852b02787634748c5154ec1e551473296",
@@ -2922,34 +2928,49 @@
     "adjective:comparison-boundaries:v2:zh-CN": "81d7b7d60a768091d68fc5d8bd5d1f88702ab05dac55dcadef8d47e0c3b0de9b",
     "adjective:compound-adjectives:v1:zh-CN": "6300120867f34163a3039ec381d80a9e8d05c44acc2ea16adeaaa98efb3cb571",
     "adjective:participle-adjectives:v1:zh-CN": "3b45904158b6972ae9bb6f455206b02bc0ff1e40f5a5fd634e3ab0b635be37d1",
-    "adverb:adjective-or-adverb:v1:zh-CN": "34949a84ad8c6bd3dc6a5880816a0566e559a14b48ce3cd9897eddec5997b01e",
+    "adverb:adjective-or-adverb:v1:zh-CN": [
+      "34949a84ad8c6bd3dc6a5880816a0566e559a14b48ce3cd9897eddec5997b01e",
+      "3beeef9262f118cf04e6542e615b3309466af2ac42800cdb0301679a2fca2bff"
+    ],
     "adverb:adverb-comparison:v1:zh-CN": "a96aa969afb9bf9a99a2d821b8194bfda242d83cd157c51c2a4cf3e97400865e",
     "adverb:adverb-essence:v2:zh-CN": "7493e3fec7d8647c2bab827eced841b20802007f99872c72acb7c0ee6030f8b1",
     "adverb:adverb-formation:v1:zh-CN": "36234286c478747f3e58bd1dfb5091bd779076e250a67eb0a2f70d8b58cd5f80",
     "adverb:adverb-jobs:v1:zh-CN": "0fa7674d1f34f2dbd099c30f3c7d7d5b8ac32d6e23bafff321b1c7379cb1eb15",
     "adverb:adverb-position:v1:zh-CN": "f0c7e65f39265fdf87123c2e35499f3f5d63a968288053c18f6f3af01b9be714",
     "adverb:adverb-scope:v1:zh-CN": "453b5985a5896650a3fd0c2be1f18e5dd691c4fe7930862168c5ff0765bff82b",
-    "adverb:adverb-traps:v1:zh-CN": "489716c2f696b1176cba2bd0f4cb861571188930c84bf95294d60e8bb700555f",
+    "adverb:adverb-traps:v1:zh-CN": [
+      "489716c2f696b1176cba2bd0f4cb861571188930c84bf95294d60e8bb700555f",
+      "55e8d42bf3a1b64c16f5d57cc70192468fb957cf08c76a6295c8443f67542782"
+    ],
     "adverb:adverb-types:v1:zh-CN": "41c96d3faf974a50dd0101211755d7638ef8077663341a133fee4a67027ea906",
     "adverb:adverbial-boundary:v1:zh-CN": "b75666b5828a9784d9efda0476170d9facdf05d74182b77b2a156867ffc725ca",
     "adverb:conjunctive-adverbs:v1:zh-CN": "c445eac9a5ad0240b628921d9398e05c8a04bbbc88db94c329be68111157649c",
     "adverb:degree-patterns:v2:zh-CN": "1284f3225a07e3824f1a25ab709aac40777fdb86ec4077c46b12d8e2c934735b",
     "adverb:interrogative-relative-adverbs:v1:zh-CN": "20e246055c2009abf325a6d5f3d338daecda23c8f164f83b8269e04a9cd19602",
-    "adverb:multiple-adverb-order:v1:zh-CN": "25f543002533506f0769a69e32c0d574d2554f241615030193f1c4de5e88c7fc",
+    "adverb:multiple-adverb-order:v1:zh-CN": [
+      "25f543002533506f0769a69e32c0d574d2554f241615030193f1c4de5e88c7fc",
+      "0a0a4f94c758a141ec8dcc97d089c1a1803069ba4aad877ea1596b4ca6941353"
+    ],
     "adverb:negative-limiting-adverbs:v1:zh-CN": "5a8109a169443e896020d9bd450b86c18af6385e2ffe4fdeff073d59d2dc85d0",
     "adverb:sentence-adverbs:v1:zh-CN": "914fad76adf4da57d98394719811e8775eb48ab94710e856631254586255e9ad",
     "adverbial-clauses:adverbial-function-position:v3:zh-CN": "fc0e7effcb754d3a67dcc3ef67c0b3ecbcff543aabb65dbf05acf2b68afe4f16",
     "adverbial-clauses:adverbial-integration:v3:zh-CN": "3b334ca6bffbb71d35cabc608aaba33d17525a94b4892c723ac4974b1df0dac3",
     "adverbial-clauses:comparison-clauses:v3:zh-CN": "7331a40ec0cca15f2282bed4ff4d5e00280c5204b54bc0f1db2e35812ebccc30",
     "adverbial-clauses:concession-although-even:v3:zh-CN": "e740dadc8bcadca6697cb1787114891f36ed425abd29753e1eed17f45568996f",
-    "adverbial-clauses:concession-while-no-matter:v3:zh-CN": "fa7504e137aefe299faee8d557c064bd042c3d37ce650fd44a036b03860d15de",
+    "adverbial-clauses:concession-while-no-matter:v3:zh-CN": [
+      "fa7504e137aefe299faee8d557c064bd042c3d37ce650fd44a036b03860d15de",
+      "0647cb25a456592cbabdcdeb4b962845a87376035e4dade2fe2211bfe26e56c1"
+    ],
     "adverbial-clauses:condition-if:v3:zh-CN": "78a9d3fe2cb056f3789b3d900afd35c8b7c201c7cdeb14481801e5f7ccf09795",
     "adverbial-clauses:condition-unless-provided:v3:zh-CN": "b97fda60ec19588452b7798e90986699f75c06cbf2c687453ad14d6601eef0f4",
     "adverbial-clauses:ellipsis-participle:v3:zh-CN": "7121490acc394ca7281ad4c9868f369c2025b7290b2dbf72942c615e1aba4023",
     "adverbial-clauses:future-present-rule:v3:zh-CN": "ce746a62bb7f82b39b5573af6027c3d83a788f5f7edf8cd458cc10348e7d23c8",
     "adverbial-clauses:manner-as-as-if:v3:zh-CN": "7696f2d72d9503b605abec38c756a0cc6b65443f1dad4bb4c4958a4dcb77693f",
     "adverbial-clauses:paired-conjunction-boundaries:v3:zh-CN": "893ea58cafa3da0b6098c0105fe3ccaf7cbd3f9fe5d5af4962c6e7733b7ec8fa",
-    "adverbial-clauses:place-where-wherever:v3:zh-CN": "39561c3ed692cd85d9dbbc5a305a87b1806905718cc63f75cbabc9ee1d1f5f7b",
+    "adverbial-clauses:place-where-wherever:v3:zh-CN": [
+      "39561c3ed692cd85d9dbbc5a305a87b1806905718cc63f75cbabc9ee1d1f5f7b",
+      "8af061989a4a0b57a41e9dad46f194317f72ba22f59dcb8166acc0af11248929"
+    ],
     "adverbial-clauses:purpose-clauses:v3:zh-CN": "11814fd10ad76209899f86763db7e1cee5a686e08971f00046eb9cbdeb289bb1",
     "adverbial-clauses:reason-because-since-as:v3:zh-CN": "b48d5e6d6887c24e8eb7459120566a0f9dcff43bba0aca55a952fe8d554f119a",
     "adverbial-clauses:result-so-such:v3:zh-CN": "0145676a34a62a87dec2a8ec9b42da560d21407081d8a73c7d16f57bdbb6956d",
@@ -2988,7 +3009,10 @@
     "basic-sentence-patterns:pattern-svoc:v2:zh-CN": "2ade6b7faef8011f9456bcc8846cd8599349f2acff77e224bca4cc334182b907",
     "basic-sentence-patterns:pattern-svoo:v2:zh-CN": "82a84ba53794e848ae608bd1b54d22fd3760e259c8491f229ea9b85c9ac19731",
     "basic-sentence-patterns:svoo-vs-svoc:v1:zh-CN": "99d68e01c94115f8ebc0fb5bd4575155049a8cd501f11876f1b0826885fc4cb0",
-    "basic-sentence-patterns:transformations-skeleton:v1:zh-CN": "cb6ad2127e721e1297d71e355609c403a8e65aff99a56d2864ae088d8d3574ed",
+    "basic-sentence-patterns:transformations-skeleton:v1:zh-CN": [
+      "cb6ad2127e721e1297d71e355609c403a8e65aff99a56d2864ae088d8d3574ed",
+      "4a2a1c3e9310926c7910211c98c42bfb68cc750210f718c6ffcf6b14e2d2f63d"
+    ],
     "cohesion-reference:articles-given-new:v3:zh-CN": "38036f7c9a8afd9ffeec51312273c1bd2bbcf2613ccb221dc1ace149bf6eb90b",
     "cohesion-reference:basic-logical-connectors:v3:zh-CN": "c0e0e5222422ea63836b340372eb7a918ec91234d416abc6f639c9d63cf4d864",
     "cohesion-reference:cohesion-integration:v3:zh-CN": "09b00864e01ea1d703bfd21a2b8d9b92ebfed0a7c91d836286fe4a4e607d35c7",
@@ -3001,7 +3025,10 @@
     "cohesion-reference:forward-reference:v3:zh-CN": "371da0d9568c9a02931593e440a9008bbfc3c98bd3f6bcd0c39a8b00d1076db6",
     "cohesion-reference:keyword-repetition:v3:zh-CN": "42309317e01e05a9131c39b273be766d270613d51b1d5588730a2d3d89358b00",
     "cohesion-reference:lexical-relations:v3:zh-CN": "70b39a3705bd75c5bbc42b828b95098d4c4ca00ea01eab8ded1350e8ff982cbf",
-    "cohesion-reference:one-ones-substitution:v3:zh-CN": "dc20f466746b175fa321ad11d661da66bec34aecc5b36bbfc1713a7c2c67a9f2",
+    "cohesion-reference:one-ones-substitution:v3:zh-CN": [
+      "dc20f466746b175fa321ad11d661da66bec34aecc5b36bbfc1713a7c2c67a9f2",
+      "d47222dc4f37f61ff4b571b98b64eea99bf1b4ab60cbb4eb004aad459fd7f91f"
+    ],
     "cohesion-reference:paragraph-topic-chain:v3:zh-CN": "2b61a4fbaed16de6396b119ce005c06458e10f0d3217fa575be71083a02ad5da",
     "cohesion-reference:personal-reference-chain:v3:zh-CN": "31afca1b6e2488b6e8cfb9487337378cd36af634b2c93e35b1293c8d7ef9f427",
     "cohesion-reference:possessive-reference:v3:zh-CN": "d8fc08026a3086150aa017e7e0280c013bc579eaeb3541f3cf22c4329c321a4c",
@@ -3022,7 +3049,10 @@
     "common-expression:explicit-subject:v4:zh-CN": "7197e747a02879cd02349a162b981647eb2bc7349246778524403f4c1545dcb5",
     "common-expression:inanimate-subject:v4:zh-CN": "b74c4201fdf53e08972bee7c7d1e5f9cdc660a8cad2171d17de8bbbdca0c002e",
     "common-expression:integrated-expression:v4:zh-CN": "30c42e903bb555d5c03c5b5580e49d3006fcab8d891a2d7802ab968a2f78fbb4",
-    "common-expression:light-verb-collocations:v4:zh-CN": "115f4db365549a72c568d8d22ed2d84f05d2457475d1decdf7cd7c1ac2061d8b",
+    "common-expression:light-verb-collocations:v4:zh-CN": [
+      "115f4db365549a72c568d8d22ed2d84f05d2457475d1decdf7cd7c1ac2061d8b",
+      "5e91a9de4f7b4c5bc9fa6b6b0386dcabf359a54fef7338f9be026f586ff82400"
+    ],
     "common-expression:negation-scope-expression:v4:zh-CN": "041f8858c1566d584d7f2005c1ef9908a27312973da886174deac0011a905183",
     "common-expression:nominalization-concision:v4:zh-CN": "dd254d2ad7f38954af7f04a5dd7878d88cbd775512d3df2e1df53f8fac752239",
     "common-expression:people-general-subject:v4:zh-CN": "1019fbff9ff1d1445cd370dbdd074bf8e9be2d87e5fe062ab4e5b43ddefd120b",
@@ -3036,8 +3066,14 @@
     "conjunction:conj-boundary:v1:zh-CN": "d47beb8a1627a2c2c6b4a40f83bfc53eb88c8b3b068f383c1f6c57f19ceaf919",
     "conjunction:conj-but-so:v1:zh-CN": "257bdbe044ed765521b86a4b69b5d92890d690e193ee82da6df0e60a10065277",
     "conjunction:conj-concession-purpose:v1:zh-CN": "7b12be5a2f56f369d08bad7e25bf2725200e97f366a8aa7e293907b5b4bec031",
-    "conjunction:conj-correlative:v1:zh-CN": "0c00c4c4aea582386c77a93f1f7dbffe1861450f0b0e4cf5358f434ace990c69",
-    "conjunction:conj-essence:v3:zh-CN": "827e32cf3cdd095ebcc18489c3f2bd634958d1467f7cf35e171a98edb67c0c43",
+    "conjunction:conj-correlative:v1:zh-CN": [
+      "0c00c4c4aea582386c77a93f1f7dbffe1861450f0b0e4cf5358f434ace990c69",
+      "e89a26d55f7a24dea6c2202baa60286e7154d59c50db98af71605ec5ba696d42"
+    ],
+    "conjunction:conj-essence:v3:zh-CN": [
+      "827e32cf3cdd095ebcc18489c3f2bd634958d1467f7cf35e171a98edb67c0c43",
+      "0edc888fa75af11080e24135035feeddd8a0f55b8211b8956e543f9c93a0a2c8"
+    ],
     "conjunction:conj-for-nor-yet:v1:zh-CN": "94f21eff69874e9e21619599be72c4c0aa6eed26ba89de66e1623ed2b862653c",
     "conjunction:conj-integration:v1:zh-CN": "c1f4e151e0a539379cdd9f99ca2849d1fba85959bae20a7493437d81d9ac2123",
     "conjunction:conj-near-agreement:v1:zh-CN": "d3bcb9c5a0f1528a251837c92dbc598221ced49b23538799d74d2e5fe135d154",
@@ -3142,15 +3178,22 @@
     "noun-clauses:what-vs-that:v4:zh-CN": "e699b3d67777cab2ac713346f83025b5f238608c224c21a60570e3739c846c51",
     "noun-clauses:whether-if-boundaries:v4:zh-CN": "cba8e4b8c8af330f66c25af490484322b900b79af89fe1e83770f7809dcf605f",
     "noun:collective-noun:v1:zh-CN": "4032fc0ed93a995890dca53b826655fc8b71c7948a1d15035061eea0d285c804",
+    "noun:collective-noun:v2:zh-CN": "58ba0a2e6afb73e5bcffc97fe38ad279aacf55fc8119e3b991354dded4ae2f8e",
     "noun:countability:v1:zh-CN": "ebb129b9b304eff6c8ae78b0c6bd2eef5b4d82c7400da072adcdbd8da753145e",
+    "noun:countability:v2:zh-CN": "ce17c50f41de98c0cb680a748215bd54c63f99f79154fd2d11a73827e138fc00",
     "noun:irregular-plural:v1:zh-CN": "9d19694349559aa5dea2e7478bad167c13898e302add3e5608e99d1e3abd3e2c",
+    "noun:irregular-plural:v2:zh-CN": "1be9e47a04ee50dd3567be8051a700f93f0f2ff5b01a00d84f09ea706b325f15",
     "noun:noun-boss:v1:zh-CN": "3687a8127d7d92ce05537e10edaba298440d814fe1a89390fdd8ed243fd0347d",
     "noun:noun-functions:v1:zh-CN": "29aa764cb0ce232ba5c489dd7f575fd21292dc799f2a6dfc938dd01df418dc41",
     "noun:noun-job:v2:zh-CN": "6e7dae962f89f17f647683b378d1232a4f0743872a6e97ca081247a49a676c15",
     "noun:noun-modifier:v1:zh-CN": "17a4a560831f765bba16383df63a1679d340b7f4f3afe1427fae21dd9c8c0f68",
+    "noun:noun-modifier:v2:zh-CN": "3bf2496ea2d7c053c22bdaf368ab4c953958e91e8644bcc85d32534dc860df46",
     "noun:noun-types:v1:zh-CN": "eb20635cfe70d43cde9c8a26742120ea7442096aebd342f8398cc11aa8925f34",
+    "noun:noun-types:v2:zh-CN": "f342cf0b9481e6be48d61fa058bd0b5b00f9b3a1a2b8e250ff3cd8f69f22e6fc",
     "noun:possessive:v1:zh-CN": "8eecdc44bc29bdc249c49db8a1c8bd440fe4e50510fe2a342214d5f3a77319be",
+    "noun:possessive:v2:zh-CN": "eac58b6188507a8eb416ac1a99ee5c6d28d9df26471120f02e0e187a19d947ab",
     "noun:regular-plural:v1:zh-CN": "fdbd741f8427690c83305a67b3571d4687a6932693bdfa60e6dab73816300eab",
+    "noun:regular-plural:v2:zh-CN": "9a2c74b9dbc5973d7a36a7dde230855cce6a1351a3c45da301b617f3df7bfe0a",
     "numeral:approximate:v1:zh-CN": "ecd13cdec09b9ea8a71c599e33d2ad07fe69442d904a93b7fbdeb5519b64a957",
     "numeral:cardinals:v1:zh-CN": "51e15edb86d8722c90f178b7b5092c5b07897639b068720fc4f80de9d58daa08",
     "numeral:date-time:v1:zh-CN": "30da67a9654b35cdfca916fb20746108e1f902777a5784096d7c0c901f428d18",
@@ -3199,7 +3242,10 @@
     "preposition:prep-essence:v6:zh-CN": "20ea797dd0980665800ff6fae80bc82924b7ae41cc7674966fd274a335fc99aa",
     "preposition:prep-essence:v8:zh-CN": "d42a7cedd825da27c862b68a59bde671614df34ee82a5a3d23823b6e47a7ad62",
     "preposition:prep-form-contrast:v1:zh-CN": "1372c4873e95bca3150a9795a35ec6aa7e313d95c7df85bab904f4ccfd85168c",
-    "preposition:prep-forms:v2:zh-CN": "d713948962c7e5caf6a5ff14e96ee8fcd45a326f3f0c8602ba3a72697b9a2a40",
+    "preposition:prep-forms:v2:zh-CN": [
+      "d713948962c7e5caf6a5ff14e96ee8fcd45a326f3f0c8602ba3a72697b9a2a40",
+      "7b51d7b91c0cd1c224976e4dde55dc860ed0b5218297599bb6c77d8ce7907b87"
+    ],
     "preposition:prep-integration:v2:zh-CN": "435628215375c4513072712e21a37500e5aed847b4273ecade81c0a38498634e",
     "preposition:prep-material-comparison:v1:zh-CN": "195f00be7a9b98e1b8959c8fee2bc10abe14a3b8410f790930fc173359679b43",
     "preposition:prep-means:v1:zh-CN": "95fae3e5f92718029401d6187654e4f6f8b0df328161b692a8883b4feddd0d1f",
@@ -3224,14 +3270,19 @@
     "pronoun:possessive-pronoun:v1:zh-CN": "0a7f1196be32aa3f38873a96eb9127c15a4b6fc094fa216a3c7314bcc64f1b4a",
     "pronoun:pronoun-agreement:v1:zh-CN": "06453c3bb927632135fd2813ec85e86cc166e1f4086148e6701058ad15c9e553",
     "pronoun:pronoun-ambiguity:v1:zh-CN": "2dcb6dce83599020164e4ac73d402542b8d18ba9561e33c63640a746f3d2dba0",
+    "pronoun:pronoun-ambiguity:v2:zh-CN": "cd90fa3fc407599c457c8d0b67951f8792b9d0309545c1939449c166751f5a6e",
     "pronoun:pronoun-boss:v1:zh-CN": "97acc5f1727bca2b10aa1cdd5e7c30d5230da24d39e0cf75664677cbb506d4d3",
     "pronoun:pronoun-essence:v3:zh-CN": "dd8755e4f9ae62df71f1b8967a3a2038529f77120e850039024e0c49198627bf",
     "pronoun:reciprocal:v1:zh-CN": "cba9185dfe31feac5fad89e8e362c94e9a7e701832bee51cd3491456fb77f14c",
     "pronoun:reflexive:v1:zh-CN": "7522872ad21ce54331dd7ae923261bb64dd6fce9f4194cc8b224117ff9075682",
     "pronoun:relative-pronoun:v1:zh-CN": "dc296dcb632800e28c16859848159cb36aabd1be7a1604217e1d52d63eded3e2",
     "pronoun:substitute-pronoun:v1:zh-CN": "7031d18bf5f6f0d5b9f7533a89f42ef25033f8c7e680061d3666b4940a1e60dd",
+    "pronoun:substitute-pronoun:v2:zh-CN": "f2a746662cc36e2851f55a1bc52892f2f9b9b7b6f84e1365af17682ba43862d0",
     "punctuation:apostrophe-contractions:v4:zh-CN": "5e822d98805c2d32c1e1eb369c3a967db61d9564ede4f9a24eee27b07e12c31a",
-    "punctuation:apostrophe-possession:v4:zh-CN": "7b6ad2de96460113e9b96f91beaf7656d96f696e896b8e932015f31d69e3f9a1",
+    "punctuation:apostrophe-possession:v4:zh-CN": [
+      "7b6ad2de96460113e9b96f91beaf7656d96f696e896b8e932015f31d69e3f9a1",
+      "a6be839581ceef452ded3e67789300f97550ab5f008368264b20f17b9c5e9c71"
+    ],
     "punctuation:capitalization-basics:v4:zh-CN": "4de6eb2630d93cdf434c0c201c437eecf48afe3dd5c8133bcd40c529b09dd5a6",
     "punctuation:capitalization-dates-titles:v4:zh-CN": "b8609fe2f3a4a2f35080627546f5ebd6895d3546ba039da2db26895608e3e65d",
     "punctuation:colon:v4:zh-CN": "f9478c4839785227c7afe18701eaa70ad80ce803ca1c1195cf6ef5e0a2436f5b",
@@ -3239,12 +3290,18 @@
     "punctuation:comma-apposition-parenthetical:v4:zh-CN": "ab17d3fc67b29832edb6125dd12f11ea04b56e2333e4990255b2f32a94061810",
     "punctuation:comma-coordination:v4:zh-CN": "240b913efaf3d4ba6537362f986fbf9fe48589ccf1f18533aca069019c2a1a4e",
     "punctuation:comma-lists:v4:zh-CN": "3c2b7601ee91bf5a262f923c698a8c12e46633fbf0cec669f92b10049177e38c",
-    "punctuation:comma-nonrestrictive:v4:zh-CN": "92c32fd471f6e064bae37205343cf80b5a2ceb69e54abde36d7d61ceae991117",
+    "punctuation:comma-nonrestrictive:v4:zh-CN": [
+      "92c32fd471f6e064bae37205343cf80b5a2ceb69e54abde36d7d61ceae991117",
+      "99db00f094029ae92044cfd248378a8fced806d7d6236e6facae03e99211527f"
+    ],
     "punctuation:dash-parentheses:v4:zh-CN": "4a5cd62324740ae92a9cb0c02f08abd964ab28b8f734cb4abcfafcb5ed8f94d3",
     "punctuation:fragments:v4:zh-CN": "da92c80e3c76847fe0907b3e3630ae0da0ca955e28a146091df20af4c06eb647",
     "punctuation:hyphens:v4:zh-CN": "46326c8f1848af6f11284c46da268f9144ca92c7de3e100769182acfd5d20a7b",
     "punctuation:integrated-proofreading:v4:zh-CN": "0aaf2b66d37861ac1c7436eb7193b11becee16f04c5ffff443ebc1ecd36c9363",
-    "punctuation:numbers-abbreviations:v4:zh-CN": "b4715f68db06c91931d7451bb4d75c02b4bb44c98fa26d91e6cd9de39978fdae",
+    "punctuation:numbers-abbreviations:v4:zh-CN": [
+      "b4715f68db06c91931d7451bb4d75c02b4bb44c98fa26d91e6cd9de39978fdae",
+      "ac173b6ef7c920d0b81c7aa9876edf8304e61321a9500528291975d4294ccd9b"
+    ],
     "punctuation:punctuation-capitalization-essence:v4:zh-CN": "09bc6697025416bec5b67ec571e629e24eaed9653b22996e4ee997bfb899ec88",
     "punctuation:quotation-punctuation:v4:zh-CN": "ae69741c57364908076bb5312b589c1805f908ee2b95de8a42b0d00b513a9d40",
     "punctuation:quote-style-boundary:v4:zh-CN": "1888ffe4baba1e9897076115ba5713efaaeb3e002e935f6f53f0130dedd8b1c6",
@@ -3253,7 +3310,10 @@
     "punctuation:terminal-marks:v4:zh-CN": "5cd885c6115e11e45ec1f7bd3cb44cfdae2d593bb527e45042504da4291ee0ad",
     "relative-clauses:nonrestrictive-relative:v4:zh-CN": "14a83566611449817e070afd3a13beed0481225c03aa639670736d381b768258",
     "relative-clauses:object-relative-omission:v4:zh-CN": "3891de5c955ea4ddaa61f28f59009834e5c088095a991350baba5cf6818f559e",
-    "relative-clauses:preposition-relative:v4:zh-CN": "732f8ef909335e159732c7318f49a47c08f1d96de27394c438ba770ae5bdc383",
+    "relative-clauses:preposition-relative:v4:zh-CN": [
+      "732f8ef909335e159732c7318f49a47c08f1d96de27394c438ba770ae5bdc383",
+      "013b6b97aa70733f2283d15031f48f2bbb0a7c38bdfdb165ac8f7a5509f20b91"
+    ],
     "relative-clauses:reduced-relatives:v4:zh-CN": "80e04c22bdfbbf4233ec9fdba889c9f96b5402e6f391f3f04ccbbabe66a21f85",
     "relative-clauses:relative-agreement:v4:zh-CN": "cfc319b87b867f8e0671818e88c371426401a47d525f34ceb11c5a8222e4dba6",
     "relative-clauses:relative-boundary:v3:zh-CN": "5f1ef01c120502272b36cd0e284cdb3a54d9bea3b4599834e1f4048d5a864e78",
@@ -3269,10 +3329,16 @@
     "relative-clauses:that-constraints:v4:zh-CN": "31a4479e096cdabea2d9d9c78f8100b7520f46ed8369c55e9ac128e0b9faecf3",
     "relative-clauses:that-relative:v4:zh-CN": "f0f33442c1bca3ddcf3fc81073c146f3e59abd194a22a4299233ee2ac3b831ac",
     "relative-clauses:what-boundary:v4:zh-CN": "5b5f3248173d54e396587ca8d45a12703f969f8f45b0b69b9d47629cfcf9b927",
-    "relative-clauses:which:v4:zh-CN": "e7046ab347122abb3a5eb566e76b1a308c093aa0c6f3047c6ea0a87ffa3776a1",
+    "relative-clauses:which:v4:zh-CN": [
+      "e7046ab347122abb3a5eb566e76b1a308c093aa0c6f3047c6ea0a87ffa3776a1",
+      "0df26164e7c809c2dcdb5eeed6bac4fe604f65594f4c5317f8309ac0487416c8"
+    ],
     "relative-clauses:who-whom:v4:zh-CN": "6dcd10ae9b5395e290ee7a72af392596c395790f990dbbde8d185b3aa6b088d7",
     "relative-clauses:whose:v4:zh-CN": "5754114f5753e0515af0d86c804ab4f3680464826400f095ee541091f1ae4d4d",
-    "reported-speech:advice-suggestion:v4:zh-CN": "82c16daaf094df907810a3fa8c78b71cbdb781d765e583a9bbdb445bf96b2e40",
+    "reported-speech:advice-suggestion:v4:zh-CN": [
+      "82c16daaf094df907810a3fa8c78b71cbdb781d765e583a9bbdb445bf96b2e40",
+      "e4656aaf72e7e1f8f745f3ab46ab458ce67a4e5afc71f7cca38b36e1b17c5cb1"
+    ],
     "reported-speech:ambiguity-boundaries:v4:zh-CN": "cc293142270e22e4753d34ea5e2a12d309aaa4547fd301858fbd67e0fa994c3e",
     "reported-speech:backshift-past-future:v4:zh-CN": "895002eb6e053fafca69bde9bbe26d88544af4ae53f9927d674c3c887ec081f5",
     "reported-speech:backshift-present:v4:zh-CN": "6b50bb12685e147e760c4d60c0d159c746a4c91028cbecb62ad24195efbe817e",
@@ -3292,7 +3358,10 @@
     "reported-speech:say-tell-verbs:v4:zh-CN": "8ad18308077c7db8427fe58efcbd4e46bef7fd5a9ffcc91c0e93fdba95afbc8e",
     "reported-speech:statements-that:v4:zh-CN": "1ba3b6fdef054da6a7ef7b449b69c4a6cc673966408de23ebc4e42bf9a540c9d",
     "reported-speech:wh-questions:v4:zh-CN": "1c5f3a571465f248bbe25928bc6f4bd75711fa5e20616b7e208442d99174ee98",
-    "reported-speech:yes-no-questions:v4:zh-CN": "06733680b40b4ab69ba309ed7bd8de5a3d6768261915f019d45d5f2958ab6643",
+    "reported-speech:yes-no-questions:v4:zh-CN": [
+      "06733680b40b4ab69ba309ed7bd8de5a3d6768261915f019d45d5f2958ab6643",
+      "664fabbdd1be80b0558f76333a93eb16c184b6f125bd4c71660a5dffdaac2c86"
+    ],
     "sentence-elements:adverbial-cause-purpose-result:v1:zh-CN": "ed952611267c1e980f49428dd4ccdb92422a05e7c6461a9847bce7dbe2a45eb8",
     "sentence-elements:adverbial-condition-concession-comment:v1:zh-CN": "b97f3c3163bf017be4bb581356ffd6dd846290ff403f85a473d8745b6f825b32",
     "sentence-elements:adverbial-manner-degree:v1:zh-CN": "48b1f818c7441624b57e04642d049f33987841494a50ecdad9c39ca59f0c47c7",
@@ -3307,7 +3376,10 @@
     "sentence-elements:element-levels:v3:zh-CN": "a7547764c082954319724c6122659d402949f3c50455490e7005f00a78ce641e",
     "sentence-elements:existential-there:v1:zh-CN": "72703de5ec1de4630f53e82e3945ed70bb4c89c9bd455fb65505aca33017b8c1",
     "sentence-elements:indirect-object:v1:zh-CN": "1c185e6c7a4df012870611809a46cbe15ddf740db0ed59e6996dd6898fc2725c",
-    "sentence-elements:integrated-analysis:v1:zh-CN": "981ab02ccc5289a49c434d7bbab8a224c1e066e39d615df6bdacf14bb4ce258f",
+    "sentence-elements:integrated-analysis:v1:zh-CN": [
+      "981ab02ccc5289a49c434d7bbab8a224c1e066e39d615df6bdacf14bb4ce258f",
+      "bc575cb42ec16864242f6bff82c515c9e2973897e97673290e5ecdbccde26706"
+    ],
     "sentence-elements:nested-analysis:v1:zh-CN": "65d9fc1ca64c928dd302d63bca9b8b24759d7892f46adbd0715f43ce2008a8a3",
     "sentence-elements:nonfinite-elements:v2:zh-CN": "77e8a3f761f10185d331bcd23f74123c0765f3d6f7609baaaed2bd9edaf69e11",
     "sentence-elements:object-complement:v1:zh-CN": "34c5d04bec3789f8810c011c8c416ced2c36a5c364469c90df00397cb14c08eb",
@@ -3330,7 +3402,10 @@
     "special-structures:imperative-negative:v1:zh-CN": "7817f25b348695e3cbe51f843fe9c7d95f30a4ba1e70f2e5a9e85f5de0472aab",
     "special-structures:integrated-special-structures:v1:zh-CN": "1a002b0d115a8016d4ff1fe22727002b898513ad0d8c95142cfda6c218e1c469",
     "special-structures:inversion-foundation:v1:zh-CN": "c2baae2f27608d3f9ec2a63c309a2ffbad77585aafb322f248534d23162cc3ea",
-    "special-structures:inversion-full-locative:v1:zh-CN": "82c1d8c5e49eafb4445f57019a024336dfc7c6359c57862506a17d74c9d27870",
+    "special-structures:inversion-full-locative:v1:zh-CN": [
+      "82c1d8c5e49eafb4445f57019a024336dfc7c6359c57862506a17d74c9d27870",
+      "c40afd2ca7dd80eebc9d0fa8ac7d0c2e3a565e36e9e4a183a23f0f5fc2391e8f"
+    ],
     "special-structures:inversion-negative:v1:zh-CN": "8404b6f71b84567bc8d8ae1959670db977a829a7c92570cbd1ac8b5050cc44fb",
     "special-structures:inversion-only-so-neither:v1:zh-CN": "a10de70aca893cb6ab694a8bc315210d9a37af90ceac259883e5a71bc2fd7b4a",
     "special-structures:parentheticals:v1:zh-CN": "6b9ef258be11ac134b831c366065ff3df4270c6148a1fcc91376f805271b2fe8",
@@ -3343,7 +3418,10 @@
     "special-structures:subjunctive-suggestion:v1:zh-CN": "3cfca0fe3161f4b7241318a7ee1a47cf2c13487bbe5a502dfb1d7479e509ac0c",
     "special-structures:subjunctive-wish:v1:zh-CN": "487eb9fe3eefb2b237a58b9fd015246776204e33478988d6dcd3c6086d354ed9",
     "special-structures:substitution-do-so-not:v1:zh-CN": "2fa850f36e87853380b3cb1560d455d3951ed5a73911e83e488df26fccd522f9",
-    "special-structures:substitution-one-ones:v1:zh-CN": "69e3468032b4738f76f1c8a4dd8ab39eff8d0c779d264df6df90278308f353db",
+    "special-structures:substitution-one-ones:v1:zh-CN": [
+      "69e3468032b4738f76f1c8a4dd8ab39eff8d0c779d264df6df90278308f353db",
+      "c8e1bac3be44b42840fb7f8252339cb57ace2583072a7ea0277639e01d40915a"
+    ],
     "verb:agreement-complex:v1:zh-CN": "06233f9e1875ada71337bff1420b4ca8add8bad0906abf01aa6243437193595e",
     "verb:aux-modal:v1:zh-CN": "1d3d93e1451209dac111d1e81b1d551093eae568b7ac853a13fdf9acaf0f5e48",
     "verb:auxiliary-system:v1:zh-CN": "c327e21d760c6145fbe09f1c5ad2818e72aef4edcaae677643bdfc3fe228d0d0",
@@ -3357,7 +3435,10 @@
     "verb:gerund:v1:zh-CN": "9ed65d9b60dcb73c4cd9803c1ad3cd82d891f5d1be716490e90417054be86bde",
     "verb:infinitive:v1:zh-CN": "687d2777e86377eec3286f365728e0ed354808928c9f03394a84fdd51fff6fb4",
     "verb:ing-forms:v1:zh-CN": "714f41a213555e4f2c485206f2c2de84cc19f61933755767335f936eafdea106",
-    "verb:linking:v1:zh-CN": "eb160084d521968fd62a96a1ebd41667fd4107996eceee1d31ba7606d31986b4",
+    "verb:linking:v1:zh-CN": [
+      "eb160084d521968fd62a96a1ebd41667fd4107996eceee1d31ba7606d31986b4",
+      "b400b8cf53f1b422a8ab2b6160fecfe06b742fa7a6735a484c4fdf53ef8d63ea"
+    ],
     "verb:modal-meanings:v1:zh-CN": "d268022d050cef9310ac43804cfb733683ff74c597c5b45cc39e1a8fee74f218",
     "verb:nonfinite-advanced:v1:zh-CN": "51aeca2d6410dd23998e6d536d4b8c0b68d0c8e1b557f710f5839f1b6a8b2b6c",
     "verb:nonfinite:v1:zh-CN": "b69222d4feb1ebb31802d094905b3aff3633573f5d76cd56bc388c4232dd23ae",
@@ -3380,23 +3461,50 @@
     "verb:verb-five-forms:v1:zh-CN": "68e30fc0112dbca359b542ae7ae9f2781b1c97e367bdc41583c3d9ec78791a34",
     "verb:verb-jobs:v3:zh-CN": "6bf6aa557acc1a3f8d3096079a081fceda243ad46a3edd2acf097b64ef464109",
     "verb:voice:v1:zh-CN": "a98f08bc3c8a80824fd139763954c6160bf1cd4f1fe27c1c80a3727d86c83d0a",
-    "word-formation:abstract-noun-suffixes:v1:zh-CN": "5d0afcb97de49b5bdc52830262249994d2eab17a94b3c5ad05b847e750361526",
+    "word-formation:abstract-noun-suffixes:v1:zh-CN": [
+      "5d0afcb97de49b5bdc52830262249994d2eab17a94b3c5ad05b847e750361526",
+      "1debbeff7a80b62c3d1c65e0b6f40274cc30c9e7e77718fc5290f813fb781913"
+    ],
     "word-formation:adjective-suffixes:v1:zh-CN": "85d1ed5b3d13b94999974cbe6348cd71a4636e624df0d2bf7d2131813afde160",
-    "word-formation:adverb-suffix:v1:zh-CN": "bd0c85d02f1d07191ce534af0648c4f6a0422bb131c73d4657d15a02f2a9575f",
+    "word-formation:adverb-suffix:v1:zh-CN": [
+      "bd0c85d02f1d07191ce534af0648c4f6a0422bb131c73d4657d15a02f2a9575f",
+      "bad1bd120fd0ab5fc82c59260d74719a4330a4a71e94469815c3e803485285f3"
+    ],
     "word-formation:compounds:v1:zh-CN": "598640c7be66593845ffed31e4a8c293766cbc89b6f0d1b5e47912a7bcc87424",
     "word-formation:conversion:v1:zh-CN": "d3b69a908aede13ddfb090722f41ca1b833b0f6162c7a6a7a74083374d169e5d",
     "word-formation:derivation-inflection:v1:zh-CN": "4a25861fe042a763f377e64c8662708729dc3af975add89925fdacf699fa5ce0",
     "word-formation:layered-derivation:v1:zh-CN": "cba56267aa384eedd77cc3cafe6cbefeec30cb523e891a76c877a9b21c547b1f",
-    "word-formation:meaning-prefixes:v1:zh-CN": "69276bde72c91a074f0ecf50ce65bc392131e89faa176c11b4d9026782a8525d",
-    "word-formation:negative-prefixes:v1:zh-CN": "fa4212c754cc3db9703d1d89bdf5fa4915895cf7b708363e145094378c067825",
+    "word-formation:meaning-prefixes:v1:zh-CN": [
+      "69276bde72c91a074f0ecf50ce65bc392131e89faa176c11b4d9026782a8525d",
+      "c80170c32e8aab958977cf981c9356ef0ba4c8c89aff01963f736398e192f194"
+    ],
+    "word-formation:negative-prefixes:v1:zh-CN": [
+      "fa4212c754cc3db9703d1d89bdf5fa4915895cf7b708363e145094378c067825",
+      "024e0d18aae48c4dfbd4f506dadb1e358cbc211924ed7c69d70290ea33dac86e"
+    ],
     "word-formation:participial-adjectives:v1:zh-CN": "2da3b806a4d5acaf2dfc4dc2432678b4a565ecc7f49874fad5dfac0745f3bb90",
-    "word-formation:person-noun-suffixes:v1:zh-CN": "64dd7a1918ccda378f2031d609e780939f20cd7a2d17b20ee4367299d59127be",
-    "word-formation:prefix-assimilation:v1:zh-CN": "a2b6cfedeab1888633d471b7e0b60648af846bd621811e7950232c4753d4f560",
-    "word-formation:suffix-sound-stress:v1:zh-CN": "1e0c3d7d70e9510b82da6f29b5fa3decd5887a78fd19a39976c5d666853998ed",
+    "word-formation:person-noun-suffixes:v1:zh-CN": [
+      "64dd7a1918ccda378f2031d609e780939f20cd7a2d17b20ee4367299d59127be",
+      "97f658172e48e338815ff980c8981de4eb8514afd53f68e8ae8b4abcc30419ba"
+    ],
+    "word-formation:prefix-assimilation:v1:zh-CN": [
+      "a2b6cfedeab1888633d471b7e0b60648af846bd621811e7950232c4753d4f560",
+      "507827654aaa921591caeb74e863f249ac463761ed658a1fad26a6be9fcb8458"
+    ],
+    "word-formation:suffix-sound-stress:v1:zh-CN": [
+      "1e0c3d7d70e9510b82da6f29b5fa3decd5887a78fd19a39976c5d666853998ed",
+      "88ad2e93f967a2473f8a29f4d718aae5184c33db5efeef4d40713c482999df85"
+    ],
     "word-formation:suffix-spelling:v1:zh-CN": "46731db522c870381d8f911a5a28b1a7914db483c1e4d28a1ae4ab03e619a458",
-    "word-formation:verb-suffixes:v1:zh-CN": "f640577c2977f71810af5418b93bd38563420547452c878f22edcca2ff8b48d0",
+    "word-formation:verb-suffixes:v1:zh-CN": [
+      "f640577c2977f71810af5418b93bd38563420547452c878f22edcca2ff8b48d0",
+      "23ea0f50d16a27ffce37711ede2d6343af40371bd62e8aec8ded6ef81df5e969"
+    ],
     "word-formation:word-class-slots:v1:zh-CN": "be8e979b9ed3ace212f6637bd2344147b90c4b2e97c275957ec80dc7c42e794b",
-    "word-formation:word-inference:v2:zh-CN": "c73b1f40e96950b1e49ac98db155d21d6b74926fc81555487d56dc984440ab27",
+    "word-formation:word-inference:v2:zh-CN": [
+      "c73b1f40e96950b1e49ac98db155d21d6b74926fc81555487d56dc984440ab27",
+      "976d8791ee62bfe5286bc2cc9734e26570f2b63efa89fdbbd753b352a68f11c4"
+    ],
     "word-formation:word-parts:v2:zh-CN": "bb05d4b266511f3a59d5f60ce652fb2233a89c6a896ec1aa85bf63afe292592b"
   }
 }

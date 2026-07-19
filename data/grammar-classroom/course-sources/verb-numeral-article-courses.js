@@ -220,7 +220,7 @@ const reviseNarration = (item, replacements, prefix = '') => {
 if (BUILD_TARGET === 'all' || BUILD_TARGET === 'verb') {
 reviseNarration(VERB_FIRST_LESSON_NARRATION, [['A bird flies', '一只鸟作主语时，fly 会变成 flies']]);
 reviseNarration(VERB_NARRATIONS.linking, [
-  ['The flower smells sweet', '页面的感官系动词例句'], ['She tasted the soup', '当 tasted 表示真正品尝时'], ['The soup tastes good', '当 tastes 只连接汤和它的味道时']
+  ['The flower smells sweet', '感官系动词例句'], ['She tasted the soup', '当 tasted 表示真正品尝时'], ['The soup tastes good', '当 tastes 只连接汤和它的味道时']
 ]);
 reviseNarration(VERB_NARRATIONS['finite-forms'], [['He is ready 和 They are ready', '主语从单数换成复数时']]);
 reviseNarration(VERB_NARRATIONS['third-person-form'], [

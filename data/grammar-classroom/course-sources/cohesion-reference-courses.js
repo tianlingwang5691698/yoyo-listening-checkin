@@ -90,7 +90,7 @@ const COHESION_NARRATIONS={
 最后看 The server failed twice. These incidents delayed the launch. <#0.8#>failed twice 表示发生了两次故障，These incidents 把两次事件合在一起，并说明它们造成延期。使用复数指示词时，先数清前文到底有几项，再检查概括名词是否准确覆盖全部内容。不能把一件事误说成多件，也不能用一个过大的词把不同性质的信息硬装在一起。`),
  'one-ones-substitution':narration('one-ones-substitution',`货架上有很多同类物品时，我们常保留区别信息，把重复的类别名省掉。I need a pen. Do you have a blue one? <#0.7#>前面已经说到 pen，后面只需保留 blue，再用 one 代替“一支笔”。one 表示同一类别中的另一个单数可数物，不是回指原来那一支。
 再看 These shoes are heavy. I prefer the light ones. <#0.7#>shoes 是复数，想选的是较轻的那些，所以用 ones。light 留下对比，ones 保留“鞋”这个类别和复数信息。
-第三组是 This coffee is bitter. I would like some from that pot. <#0.8#>coffee 在这里当作不可数饮品，不能用 one 表示一杯或一种，页面用 some 指一定量。判断替代形式时，先看被省去的中心名词是不是可数：单数可数用 one，复数可数用 ones；不可数物质通常用 some 等数量表达。还要注意，one 和 ones 前面可带形容词，让读者知道选的是同类中的哪一个或哪一些。`),
+第三组是 This coffee is bitter. I would like some from that pot. <#0.8#>coffee 在这里当作不可数饮品，不能用 one 表示一杯或一种，这里用 some 指一定量。判断替代形式时，先看被省去的中心名词是不是可数：单数可数用 one，复数可数用 ones；不可数物质通常用 some 等数量表达。还要注意，one 和 ones 前面可带形容词，让读者知道选的是同类中的哪一个或哪一些。`),
  'do-substitution':narration('do-substitution',`重复一整段动作会显得拖沓，英语常留下一个操作词，让读者从前文恢复相同谓语。Mia studies harder than Tom does. <#0.7#>does 的主语是 Tom，它接住前面的 studies，比较的是两个人学习的程度。does 不额外说明 Tom 学得怎样，差异由 harder 这个比较关系给出。
 再看 Can Mia swim? Yes, she can. <#0.7#>短答里的 can 接住问句中的能力判断，主语 she 仍指 Mia。这里恢复的是完整意思，不只是孤立的 swim。
 第三组是 Mia likes tea, and her friends do too. <#0.8#>do 代替前面的“喜欢茶”，但形式跟新的复数主语 her friends 配合，所以不用 does。识别谓语替代时，先找前面哪一段动作可以恢复，再看新分句的主语是谁，最后让 do、does、did 或情态词在时态和单复数上匹配。替代的目的是避免重复，不是创造一个新的“做”动作。`),

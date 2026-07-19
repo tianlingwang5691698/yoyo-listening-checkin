@@ -29,6 +29,15 @@ const EXPLANATION_COLLECTION = 'grammarQuestionExplanations';
 const NARRATION_AUDIO_COLLECTION = 'grammarLessonNarrationAudios';
 const NARRATION_JOB_STALE_MS = 4 * 60 * 1000;
 const NARRATION_HASHES = narrationManifest.hashes || {};
+const NARRATION_PRONUNCIATION_VERSION = 'zh-polyphone-v2';
+const NARRATION_PRONUNCIATION_DICT = {
+  tone: [
+    '不可数/(bu4)(ke3)(shu3)',
+    '可数/(ke3)(shu3)',
+    '计数/(ji4)(shu3)',
+    '复数/(fu4)(shu4)'
+  ]
+};
 const CLASSROOM_RELEASE_CACHE_MS = 30 * 1000;
 const CLASSROOM_CONTENT_CACHE_MS = 60 * 1000;
 const CLASSROOM_CACHE_MAX_ITEMS = 200;
@@ -653,6 +662,10 @@ function narrationHash(text) {
   return crypto.createHash('sha256').update(String(text || '')).digest('hex');
 }
 
+function isApprovedNarrationHash(approved, textHash) {
+  return Array.isArray(approved) ? approved.includes(textHash) : approved === textHash;
+}
+
 function decodeNarrationAudio(response) {
   const raw = String(response && response.data && response.data.audio || response && response.audio || '').trim();
   if (!raw) throw new Error('grammar-narration-audio-empty');
@@ -754,8 +767,8 @@ async function getGrammarNarrationAudio(event) {
   const textHash = narrationHash(text);
   const sharedApprovalKey = `${narrationId}:${version}:zh-CN`;
   const requestedApprovalKey = `${narrationId}:${version}:${requestedLanguage}`;
-  const approvalKey = NARRATION_HASHES[sharedApprovalKey] === textHash ? sharedApprovalKey : requestedApprovalKey;
-  if (!narrationId || !version || !text || NARRATION_HASHES[approvalKey] !== textHash) {
+  const approvalKey = isApprovedNarrationHash(NARRATION_HASHES[sharedApprovalKey], textHash) ? sharedApprovalKey : requestedApprovalKey;
+  if (!narrationId || !version || !text || !isApprovedNarrationHash(NARRATION_HASHES[approvalKey], textHash)) {
     throw new Error('grammar-narration-not-approved');
   }
   const language = approvalKey.endsWith(':en') ? 'en' : 'zh-CN';
@@ -769,7 +782,7 @@ async function getGrammarNarrationAudio(event) {
   const speed = Number.isFinite(speedValue) ? Math.min(2, Math.max(0.5, speedValue)) : 0.95;
   if (!endpoint || !apiKey) throw new Error('grammar-narration-missing-env');
 
-  const cacheKey = narrationHash([approvalKey, textHash, model, voice, speed, emotion, 'mp3'].join('|')).slice(0, 40);
+  const cacheKey = narrationHash([approvalKey, textHash, model, voice, speed, emotion, NARRATION_PRONUNCIATION_VERSION, 'mp3'].join('|')).slice(0, 40);
   const cached = await getCachedNarrationAudio(cacheKey);
   if (cached) {
     return {
@@ -783,7 +796,7 @@ async function getGrammarNarrationAudio(event) {
     };
   }
 
-  const metadata = { narrationId, version, language, textHash, model, voice, emotion, speed };
+  const metadata = { narrationId, version, language, textHash, model, voice, emotion, speed, pronunciationVersion: NARRATION_PRONUNCIATION_VERSION };
   const job = await acquireNarrationJob(cacheKey, metadata);
   if (job.state === 'generating') {
     return { audioUrl: '', cacheKey, cached: false, generating: true, retryAfterMs: 3000, model, voice };
@@ -797,22 +810,23 @@ async function getGrammarNarrationAudio(event) {
 
   try {
     const response = await postJson(endpoint, apiKey, {
-    model,
-    text,
-    stream: false,
-    voice_setting: {
-      voice_id: voice,
-      speed,
-      vol: 1,
-      pitch: 0,
-      emotion
-    },
-    audio_setting: {
-      sample_rate: 32000,
-      bitrate: 128000,
-      format: 'mp3',
-      channel: 1
-    },
+      model,
+      text,
+      stream: false,
+      voice_setting: {
+        voice_id: voice,
+        speed,
+        vol: 1,
+        pitch: 0,
+        emotion
+      },
+      audio_setting: {
+        sample_rate: 32000,
+        bitrate: 128000,
+        format: 'mp3',
+        channel: 1
+      },
+      pronunciation_dict: NARRATION_PRONUNCIATION_DICT,
       subtitle_enable: false
     }, 150000);
     if (response && response.base_resp && Number(response.base_resp.status_code || 0) !== 0) {

@@ -56,8 +56,8 @@ function grouped(english, lessons, zhTitle, enTitle, coreCount, sectionSpecs) {
 
 const PREPOSITION_REMAINING_NARRATIONS = {
   'prep-forms': {
-    id: 'preposition:prep-forms', version: 'v2', lengthText: '341 字 · 约 2 分钟',
-    text: `约好午饭后见面，页面第一句是。<#0.4#>We met after lunch。<#0.8#>after 只有一个词，后面带 lunch，把见面安排在午饭之后。这种单个词直接建立关系的，叫简单介词。<#0.7#>再看。<#0.4#>The game stopped because of the rain。<#0.8#>这里建立原因关系的部分由两个词组成，却要合起来理解，不能只拿其中一个词分析。这类整体叫复合介词。<#0.7#>第三句是。<#0.4#>The cat came out of the box。<#0.8#>这里的关系词组也要整体看，它从盒子内部出发，交代猫离开的起点。页面三组关系结构都是介词连同后面对象组成的介词短语。<#0.8#>本节只解决“介词长什么样”：它可能是一个词，也可能是几个词组成的固定整体。判断时先找后面的参照对象，再向前确认究竟由一个词还是一组词共同建立关系；一组词若缺一部分就失去原意，就按整体识别。`
+    id: 'preposition:prep-forms', version: 'v2', lengthText: '338 字 · 约 2 分钟',
+    text: `约好午饭后见面，第一句是。<#0.4#>We met after lunch。<#0.8#>after 只有一个词，后面带 lunch，把见面安排在午饭之后。这种单个词直接建立关系的，叫简单介词。<#0.7#>再看。<#0.4#>The game stopped because of the rain。<#0.8#>这里建立原因关系的部分由两个词组成，却要合起来理解，不能只拿其中一个词分析。这类整体叫复合介词。<#0.7#>第三句是。<#0.4#>The cat came out of the box。<#0.8#>这里的关系词组也要整体看，它从盒子内部出发，交代猫离开的起点。这三组关系结构都是介词连同后面对象组成的介词短语。<#0.8#>本节只解决“介词长什么样”：它可能是一个词，也可能是几个词组成的固定整体。判断时先找后面的参照对象，再向前确认究竟由一个词还是一组词共同建立关系；一组词若缺一部分就失去原意，就按整体识别。`
   },
   'prep-object': {
     id: 'preposition:prep-object', version: 'v1', lengthText: '357 字 · 约 2 分钟',

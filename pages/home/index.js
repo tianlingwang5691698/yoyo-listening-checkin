@@ -4,6 +4,7 @@ const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
+const dailyReportRoute = require('../../utils/daily-report-route');
 const {
   ACTIVE_LISTENING_LESSON_MAX_AGE_MS,
   getListeningOwnerId,
@@ -1163,9 +1164,8 @@ Page({
       });
       return;
     }
-    writeTodayCompletedCache(this.data.child, this.data.todayCompletedItems || []);
     wx.navigateTo({
-      url: buildCompletedUrl(this.data.child)
+      url: dailyReportRoute.buildDailyReportDetailUrl(todayString())
     });
   },
   openFamilyPage() {

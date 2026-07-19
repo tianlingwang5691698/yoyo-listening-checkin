@@ -63,13 +63,13 @@ The exam was harder than I expected 中，harder 先提出比较，than I expect
 判断时先抓主句，再问附加从句回答什么：回答“在什么地方”用 where；回答“看起来仿佛怎样”用 as if 或 as though；跟在比较级后补“比什么标准”用 than。最后确认这些从句整体都在给主句补关系，而不是占主句的主语或宾语槽位。`,
   lengthText:'415 字 · 约 2 分钟'
  },
- 'conj-correlative':{
+  'conj-correlative':{
   id:'conjunction:conj-correlative',version:'v1',
   text:`有些连词像一副成对耳机，只戴一边，结构就不完整。<#0.4#>Both Tom and Amy are ready。<#0.8#>both 先告诉读者“两者都包括”，and 接出第二项。Tom 和 Amy 共同作主语，因此谓语用复数 are。
 再看：<#0.4#>She not only sings but also dances。<#0.8#>not only 和 but also 成对，表示“不但唱歌，而且跳舞”。更重要的是，两边连接的都是谓语动词 sings 和 dances，形式与层级保持平行。<#0.7#>
-页面第二句的两端都是动作，读者能顺着同一结构理解。若两端的句法身份不同，就会找不到并列点。either...or 表示两者选一，neither...nor 表示两者都不，也同样要求两端对齐。
-操作时先把成对标记一起圈出，不能漏掉搭档；再分别划出两端真正连接的内容；检查两边是否同为名词、动词、短语或分句。both...and 表两者都，either...or 表选择，neither...nor 表两者都不，页面第二组表示递进添加。`,
-  lengthText:'410 字 · 约 2 分钟'
+第二句的两端都是动作，读者能顺着同一结构理解。若两端的句法身份不同，就会找不到并列点。either...or 表示两者选一，neither...nor 表示两者都不，也同样要求两端对齐。
+操作时先把成对标记一起圈出，不能漏掉搭档；再分别划出两端真正连接的内容；检查两边是否同为名词、动词、短语或分句。both...and 表两者都，either...or 表选择，neither...nor 表两者都不，第二组表示递进添加。`,
+  lengthText:'406 字 · 约 2 分钟'
  },
  'conj-near-agreement':{
   id:'conjunction:conj-near-agreement',version:'v1',
@@ -172,9 +172,9 @@ function buildConjunctionCourse(english){
   text:`说话时，我们经常要把两块信息接起来：茶和咖啡、想去但是没时间、因为下雨所以离开。and、but、because 就像不同形状的连接扣，不只负责把内容接住，还告诉听者两边是一起出现、发生转折，还是在解释原因。这样的词叫连词。<#0.8#>
 先听。<#0.4#>Tea and coffee are available。<#0.8#>and 左边是 Tea，右边是 coffee，它把两个同等的东西并排放在“有什么可选”的位置，两样都包括。这里连的是两个词。<#0.8#>
 再听。<#0.4#>We left because it was late。<#0.8#>because 左边的 We left 已经能单独说清一件事；右边的 it was late 也有“谁”和“怎么样”。because 把后面这件事接成离开的原因。后半句不能在这里和前半句平起平坐，而是依靠前半句，这种关系叫从属。<#0.8#>
-回到页面两句，第一句的 and 连接两个同等的词，第二句的 because 连接主句和依附它的原因从句。可见，连词能连接多长的内容、两边是否同等，都要从当前句子结构判断。<#0.7#>
+回到这两句，第一句的 and 连接两个同等的词，第二句的 because 连接主句和依附它的原因从句。可见，连词能连接多长的内容、两边是否同等，都要从当前句子结构判断。<#0.7#>
 判断连词时，先在它左右各画一道线，找出真正被连接的两块；再看每块是一个词、一组词，还是各自都有主语和谓语的完整分句；最后判断两边是同等并排，还是一边给另一边补原因、时间或条件。`,
-  lengthText:'497 字 · 约 2 分钟'
+  lengthText:'496 字 · 约 2 分钟'
  };
  byId['conj-essence'].analyses[0][0].role='subject';
  byId['conj-essence'].analyses[0][2].role='subject';

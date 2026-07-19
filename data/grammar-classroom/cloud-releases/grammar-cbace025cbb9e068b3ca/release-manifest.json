@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "grammar-cbace025cbb9e068b3ca",
+  "releaseHash": "cbace025cbb9e068b3ca93133563d1f61be20f3ddb97d421954692e6bb841186",
+  "topicCount": 25,
+  "lessonCount": 484,
+  "narrationCount": 484,
+  "topics": [
+    {
+      "topicId": "noun",
+      "relativePath": "topics/noun.json",
+      "lessonCount": 10,
+      "narrationCount": 10,
+      "contentVersion": "sha256-0bda4df0a007450a",
+      "contentHash": "0bda4df0a007450af84656769fffe3fb961bdc766d3d340e1947eb5548c4667c",
+      "fileHash": "337b4bad3eed4141c51a73087b4f33b533c05e2f96ef1ab49fc3eca7bd3bfe1f",
+      "bytes": 249453
+    },
+    {
+      "topicId": "pronoun",
+      "relativePath": "topics/pronoun.json",
+      "lessonCount": 15,
+      "narrationCount": 15,
+      "contentVersion": "sha256-7f8375cd9844a84a",
+      "contentHash": "7f8375cd9844a84a6074e7a7ae4fbec560b2cb66b2fda0da1d9975d6d64faf53",
+      "fileHash": "cd82c8eaf5ada3725abe64742989ac96339b7cf1fd88b9d45bcda4b28dd74573",
+      "bytes": 568944
+    },
+    {
+      "topicId": "verb",
+      "relativePath": "topics/verb.json",
+      "lessonCount": 36,
+      "narrationCount": 36,
+      "contentVersion": "sha256-3dd701045c00a4cb",
+      "contentHash": "3dd701045c00a4cbb86fc32e1ea00c4cecb6a1b87820e152747ab07eef63e7a1",
+      "fileHash": "04bfd2afdfc565522ba326599df195893d39a4ec035ab6886e75611b8ed94e99",
+      "bytes": 889312
+    },
+    {
+      "topicId": "numeral",
+      "relativePath": "topics/numeral.json",
+      "lessonCount": 12,
+      "narrationCount": 12,
+      "contentVersion": "sha256-73c0ca9efa2078c8",
+      "contentHash": "73c0ca9efa2078c83b0c7b50315e0be90162f57cefa93cdb7c693dfea15d39be",
+      "fileHash": "b21300d4b7c366a54e35b332d352c8adc053b8c54b223f66da486d7cb01e788b",
+      "bytes": 290776
+    },
+    {
+      "topicId": "article",
+      "relativePath": "topics/article.json",
+      "lessonCount": 15,
+      "narrationCount": 15,
+      "contentVersion": "sha256-eea1cc05623839c5",
+      "contentHash": "eea1cc05623839c569b63571a797dca167c05ef93dc9e8562d9fd65d3222d2fd",
+      "fileHash": "3b99b5d9f5af46f0f014e99ff5f0467d748f2fa8f0273746d4da82a4110eb360",
+      "bytes": 469256
+    },
+    {
+      "topicId": "adjective",
+      "relativePath": "topics/adjective.json",
+      "lessonCount": 15,
+      "narrationCount": 15,
+      "contentVersion": "sha256-c85c77e819b6739d",
+      "contentHash": "c85c77e819b6739deb97a410eb1ccaa24247b169e82a54dd367a9057565776df",
+      "fileHash": "69c5414fde992517fbd94a35066df79725d0ac1025f131619e743e3d93a9c262",
+      "bytes": 483985
+    },
+    {
+      "topicId": "adverb",
+      "relativePath": "topics/adverb.json",
+      "lessonCount": 16,
+      "narrationCount": 16,
+      "contentVersion": "sha256-11a7b55e964083b9",
+      "contentHash": "11a7b55e964083b9278361f34b225417585e543b0f3de3d1a14693b520d20a35",
+      "fileHash": "c06d8c0e371bbcc2e9ce05d676a8418f0b644550954f1a347ef9c441c5ac4f56",
+      "bytes": 511311
+    },
+    {
+      "topicId": "preposition",
+      "relativePath": "topics/preposition.json",
+      "lessonCount": 25,
+      "narrationCount": 25,
+      "contentVersion": "sha256-f3f82116201ce632",
+      "contentHash": "f3f82116201ce632a77e68600f9642748d3ee662b73e81656be837fe6d2c7c6f",
+      "fileHash": "afba3ca25a83168afb38fb7b3068cd34cabb79b56562a14b46197143981c7e71",
+      "bytes": 714211
+    },
+    {
+      "topicId": "conjunction",
+      "relativePath": "topics/conjunction.json",
+      "lessonCount": 14,
+      "narrationCount": 14,
+      "contentVersion": "sha256-3a89e423791cdec8",
+      "contentHash": "3a89e423791cdec80b7acd91f700c4725a6b5ac756c388ff5d5ba258cf8e71ab",
+      "fileHash": "7c545001e914d5dbefb27fa60674e4571e718e711440982feb971426f1b96037",
+      "bytes": 304877
+    },
+    {
+      "topicId": "interjection",
+      "relativePath": "topics/interjection.json",
+      "lessonCount": 10,
+      "narrationCount": 10,
+      "contentVersion": "sha256-7e20668749a560d2",
+      "contentHash": "7e20668749a560d27eeb86dc4546adaa98ea6ae7ff0ad63a8d5515ca8418a229",
+      "fileHash": "dd29616f6bf70172176c3bcd5a7cbab9db2a35b2af7be965630ddb36614aeb99",
+      "bytes": 252093
+    },
+    {
+      "topicId": "word-formation",
+      "relativePath": "topics/word-formation.json",
+      "lessonCount": 18,
+      "narrationCount": 18,
+      "contentVersion": "sha256-840e7608dff37331",
+      "contentHash": "840e7608dff37331728f5c802d732dd8d25266cda98cb9fe3353beda6e91e836",
+      "fileHash": "75e9afbcdf03b0ade02dd37f13fe969466505dc2065323f7df2055e235854e82",
+      "bytes": 396911
+    },
+    {
+      "topicId": "sentence-elements",
+      "relativePath": "topics/sentence-elements.json",
+      "lessonCount": 23,
+      "narrationCount": 23,
+      "contentVersion": "sha256-9ced864b26097e4f",
+      "contentHash": "9ced864b26097e4f6302966b1d2356881ceeac58ccb6653288725de7b4d75881",
+      "fileHash": "306e44b0d2a0f5c43987d53513801e9f8a851fda3928501cc3b68d09b5de0b44",
+      "bytes": 683706
+    },
+    {
+      "topicId": "basic-patterns",
+      "relativePath": "topics/basic-patterns.json",
+      "lessonCount": 16,
+      "narrationCount": 16,
+      "contentVersion": "sha256-6e3ef7afc5d3a852",
+      "contentHash": "6e3ef7afc5d3a85267b7dd85ae60d9751ea8048c51b6c202d41d76a0103412c3",
+      "fileHash": "57e8b5146f0bfbc034143fce68461cae6f347c9a1b920f66b0bbfaeb23967352",
+      "bytes": 461375
+    },
+    {
+      "topicId": "predicate-system",
+      "relativePath": "topics/predicate-system.json",
+      "lessonCount": 20,
+      "narrationCount": 20,
+      "contentVersion": "sha256-a1e0be08fafb6c3f",
+      "contentHash": "a1e0be08fafb6c3fbe9e8d37b6bca13764cac112d24d88d271e29140e94b7bdd",
+      "fileHash": "27dfbfb1b7775b4daf505d42f4aed53bc3d6976b26ba07239dce23191f2d2b70",
+      "bytes": 553672
+    },
+    {
+      "topicId": "nonfinite-system",
+      "relativePath": "topics/nonfinite-system.json",
+      "lessonCount": 19,
+      "narrationCount": 19,
+      "contentVersion": "sha256-3c664a3e06cdd870",
+      "contentHash": "3c664a3e06cdd870d7fbf85d9cc435599e6ac25463bc163be6306b0ea51517cb",
+      "fileHash": "aa27acee851d575ca043c8c2fd268a3641638e509de4d314949a84533d470e55",
+      "bytes": 633616
+    },
+    {
+      "topicId": "special-structures",
+      "relativePath": "topics/special-structures.json",
+      "lessonCount": 28,
+      "narrationCount": 28,
+      "contentVersion": "sha256-6cb8974edaf1c2b6",
+      "contentHash": "6cb8974edaf1c2b64dbec111358ed6a3bfa210f8c3154973434bf96228242acf",
+      "fileHash": "85113a7c3bbbd44859327ebe2c9cec3779a5def0a78ac73b1f1e71a2008da5e7",
+      "bytes": 794537
+    },
+    {
+      "topicId": "coordination",
+      "relativePath": "topics/coordination.json",
+      "lessonCount": 22,
+      "narrationCount": 22,
+      "contentVersion": "sha256-3b9c9b8b3a93c4cf",
+      "contentHash": "3b9c9b8b3a93c4cf60f6ffad13e55c2153157181e85b29edac4ee04f9e13b82f",
+      "fileHash": "946954be40a63ee14b365b2b03ff8ddae03f14180228cb20e4a01487bad28a32",
+      "bytes": 625733
+    },
+    {
+      "topicId": "noun-clauses",
+      "relativePath": "topics/noun-clauses.json",
+      "lessonCount": 22,
+      "narrationCount": 22,
+      "contentVersion": "sha256-77f23aa462c0ee98",
+      "contentHash": "77f23aa462c0ee986e4c989ba7aa1e3478eb911efd48233a7dfec9ac8ff9471d",
+      "fileHash": "e719379f4348fb28e3b59d3ed84d728f24ee8b1ce2798f98d279ef4efd6b3059",
+      "bytes": 684721
+    },
+    {
+      "topicId": "relative-clauses",
+      "relativePath": "topics/relative-clauses.json",
+      "lessonCount": 21,
+      "narrationCount": 21,
+      "contentVersion": "sha256-bfe4233e18821e41",
+      "contentHash": "bfe4233e18821e41c5187da62b3e8882c6679c238f985d436822122124e00d2e",
+      "fileHash": "ed4633f93bd4a73951c021a03e79cd58a5575b09ee03c271ddf9a28fc097f26f",
+      "bytes": 707781
+    },
+    {
+      "topicId": "adverbial-clauses",
+      "relativePath": "topics/adverbial-clauses.json",
+      "lessonCount": 20,
+      "narrationCount": 20,
+      "contentVersion": "sha256-dbc17f7c27f82100",
+      "contentHash": "dbc17f7c27f821000bdf51a9d455a7e06f48fe5b72abd9044f8bd6d6377261b2",
+      "fileHash": "192dfd7a866961e79cf1e43028979790f95a701675def4785c3c6d1ee9540a84",
+      "bytes": 630032
+    },
+    {
+      "topicId": "reported-speech",
+      "relativePath": "topics/reported-speech.json",
+      "lessonCount": 21,
+      "narrationCount": 21,
+      "contentVersion": "sha256-af9c37707d153599",
+      "contentHash": "af9c37707d153599d68ae918a6b862e74bef67c5b93aae442b6b9323616194dc",
+      "fileHash": "631468049c926f54e554d1343eb0bf6785f09778b52b46470099cd7bfee2f891",
+      "bytes": 597560
+    },
+    {
+      "topicId": "cohesion-reference",
+      "relativePath": "topics/cohesion-reference.json",
+      "lessonCount": 22,
+      "narrationCount": 22,
+      "contentVersion": "sha256-3ac8780933216799",
+      "contentHash": "3ac878093321679900176d44d9ba140824820340f85ae11dff4e7d83613e42df",
+      "fileHash": "7041db7cffa2408425b20665d929382d978818a220e50b069140803b086c1dd1",
+      "bytes": 687559
+    },
+    {
+      "topicId": "information-order",
+      "relativePath": "topics/information-order.json",
+      "lessonCount": 22,
+      "narrationCount": 22,
+      "contentVersion": "sha256-88aa84e3acd6bc9c",
+      "contentHash": "88aa84e3acd6bc9cacb8e78d58530de6a61794e5436070cd68947dbfba8cf0a9",
+      "fileHash": "0edc0d0e4df0b4d0df2dbbdf2563ccdbe79d38d11f7a8b23684114156a83e141",
+      "bytes": 693831
+    },
+    {
+      "topicId": "punctuation",
+      "relativePath": "topics/punctuation.json",
+      "lessonCount": 21,
+      "narrationCount": 21,
+      "contentVersion": "sha256-a1f987da2c28d26c",
+      "contentHash": "a1f987da2c28d26c534ff92f5e40003c84e9af105a9c4e574239ca0bd006daf5",
+      "fileHash": "eccb65c9182bd203e071edbcd86b0698f5f26e2f8d9d80220e4ab8e32e709552",
+      "bytes": 557770
+    },
+    {
+      "topicId": "common-expression",
+      "relativePath": "topics/common-expression.json",
+      "lessonCount": 21,
+      "narrationCount": 21,
+      "contentVersion": "sha256-aa88ec0ec5afb2bd",
+      "contentHash": "aa88ec0ec5afb2bd6c01d8b2274131e7e39fa4c1f282a9b16edffd436f1cd59d",
+      "fileHash": "5ddac576f242663d59a31727bbfbb6301f1a9254b6197f28530b477296ff0e5f",
+      "bytes": 559382
+    }
+  ],
+  "manifestHash": "14a2c8b857cf6e8ab657881e63bfc51d336dac6c251aeb6854e7d57303997ebf"
+}
