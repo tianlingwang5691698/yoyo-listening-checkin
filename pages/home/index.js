@@ -389,6 +389,46 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
   });
 }
 
+function buildVocabularyPlanTaskGroup(plan) {
+  if (!plan || !plan.active) return null;
+  const completedToday = !!plan.completedToday;
+  const task = {
+    category: 'vocabulary',
+    taskId: plan.planId || 'yoyo-junior-list-plan',
+    title: plan.title || `初中词汇第${Number(plan.round || 1)}轮 · List ${Number(plan.currentList || 1)}`,
+    meta: plan.summary || '主学 1 个 List · 复习到期 List',
+    orderText: '1',
+    completedToday,
+    stateText: completedToday ? t('completed') : t('start'),
+    taskSnapshot: {
+      category: 'vocabulary',
+      taskId: plan.planId || 'yoyo-junior-list-plan',
+      title: plan.summary || '',
+      displayTitle: plan.title || '',
+      completedToday
+    },
+    disabled: false
+  };
+  return {
+    category: 'vocabulary',
+    categoryLabel: t('vocabulary'),
+    title: task.title,
+    taskCountText: t('taskCount', { count: 1 }),
+    textType: '背诵',
+    minutesText: '',
+    minutes: 0,
+    durationSec: 0,
+    taskId: task.taskId,
+    tasks: [task],
+    taskSnapshot: task.taskSnapshot,
+    disabled: false,
+    expanded: true,
+    stateText: task.stateText,
+    planRunType: 'normal',
+    planDayIndex: 0
+  };
+}
+
 function buildTodayCompletedItems(groupedDailyTasks) {
   let speakingAttempts = [];
   try {
@@ -497,6 +537,7 @@ Page({
     language: i18n.getLanguage(),
     texts: i18n.getPageTexts('home'),
     vocabularySummary: buildVocabularySummary(),
+    vocabularyPlan: null,
     todayGoalMinutes: 0,
     todayDoneMinutes: 0,
     todayProgressPercent: 0,
@@ -538,6 +579,12 @@ Page({
     wx.setStorageSync('lastStudyRole', nextStudyRole);
     const groupedDailyTasks = labels.normalizeHomeTaskGroups(data.groupedDailyTasks || []);
     const needsListeningPlanSetup = !!data.needsListeningPlanSetup || data.planSource === 'none';
+    const vocabularyPlan = data.vocabularyPlan || null;
+    const listeningTaskStatus = buildListeningTaskStatus(groupedDailyTasks, { needsListeningPlanSetup });
+    if (vocabularyPlan && vocabularyPlan.active && !vocabularyPlan.completedToday && !listeningTaskStatus.setupRequired) {
+      listeningTaskStatus.pending = true;
+      listeningTaskStatus.action = t('continueLearning');
+    }
     if (data && data.syncMode !== 'cloud-error' && data.child) {
       snapshotStore.write(HOME_DASHBOARD_SNAPSHOT_KEY, buildHomeDashboardSnapshotId(data.child), data, { source: 'home-dashboard' });
     }
@@ -561,8 +608,9 @@ Page({
       groupedDailyTasks,
       hasGroupedTasks: !!groupedDailyTasks.length,
       listeningSummary: buildListeningSummary(groupedDailyTasks, { needsListeningPlanSetup }),
-      listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks, { needsListeningPlanSetup }),
+      listeningTaskStatus,
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
+      vocabularyPlan,
       todayCompletedItems: buildTodayCompletedItems(groupedDailyTasks),
       ...buildHomeVisualMetrics(groupedDailyTasks, {
         stats: data.stats || contracts.createStatsDefaults(),
@@ -1143,7 +1191,8 @@ Page({
       const phase = this.data.planSource === 'custom-listening'
         ? 'custom'
         : getCurrentPhaseKey(this.data.planPhaseLabel);
-      const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks);
+      const vocabularyTaskGroup = buildVocabularyPlanTaskGroup(this.data.vocabularyPlan);
+      const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks).concat(vocabularyTaskGroup ? [vocabularyTaskGroup] : []);
       const totalMinutes = taskGroups.reduce((sum, item) => sum + Number(item.minutes || 0), 0);
       const expandedGroupKey = findNextListeningGroupKey(this.data.groupedDailyTasks);
       const snapshotId = buildStageSnapshotId(this.data.child, phase);

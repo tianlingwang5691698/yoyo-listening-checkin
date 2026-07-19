@@ -25,6 +25,7 @@
           <view class="fixed-plan-item-title">{{item.title}}</view>
           <view class="fixed-plan-item-range">{{item.rangeText}}</view>
           <view class="fixed-plan-item-daily">{{item.dailyText}}</view>
+          <view class="fixed-plan-item-daily" wx:if="{{item.progressText}}">{{item.progressText}}</view>
         </view>
         <view class="fixed-plan-item-action">{{texts.viewContent}}</view>
       </view>
@@ -102,6 +103,7 @@
           <view class="fixed-plan-item-title">{{item.title}}</view>
           <view class="fixed-plan-item-range type-caption">{{item.rangeText}}</view>
           <view class="fixed-plan-item-daily type-caption">{{item.dailyText}}</view>
+          <view class="fixed-plan-item-daily type-caption" wx:if="{{item.progressText}}">{{item.progressText}}</view>
         </view>
         <view class="fixed-plan-item-action">{{texts.viewContent}}</view>
       </view>

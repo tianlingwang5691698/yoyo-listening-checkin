@@ -27,6 +27,7 @@ test('日报内容档案按模块加载听力、口语和词汇明细', () => {
   assert.equal(catalog['zh-CN'].vocabulary, '词汇');
   assert.equal(catalog['zh-CN'].speaking, '口语');
   assert.equal(catalog['zh-CN'].memorizationProgress, '复习 {reviewed} 词 · 不熟 {unfamiliar} 词');
+  assert.equal(catalog['zh-CN'].vocabularyPlanProgress, '主学 {main} 词 · 到期复习 {review} 词 · 不熟 {unfamiliar} 词');
   assert.equal(catalog['zh-CN'].dictationProgress, '正确 {correct}/{total} · 错词 {wrong}');
   assert.equal(catalog.en.vocabulary, 'Vocabulary');
 });

@@ -5,7 +5,7 @@ const PLAN_SLOT_COUNT = 24;
 const GRAMMAR_PLAN_START_DAY = 86;
 const FIXED_SLOT_PLAN_DAY = 86;
 const FIXED_SLOT_PLAN_STARTED_AT = '2026-07-15';
-const GRAMMAR_DAILY_COUNT = 3;
+const GRAMMAR_DAILY_COUNT = 5;
 const GRAMMAR_TOPICS = [
   ['noun', '名词', 10],
   ['pronoun', '代词', 15],

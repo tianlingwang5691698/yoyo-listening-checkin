@@ -707,6 +707,24 @@ async function getFlashcardDue(onRefresh) {
   }, { onRefresh });
 }
 
+async function getJuniorVocabularyPlan(onRefresh) {
+  return callCloud('getJuniorVocabularyPlan', withSelectedStudent({}), {
+    active: false,
+    today: '',
+    round: 1,
+    currentList: 1,
+    reviewLists: [],
+    cards: [],
+    library: [],
+    settings: { newLimit: 0, reviewLimit: 0 },
+    completedToday: false
+  }, { onRefresh, useCache: false });
+}
+
+async function completeJuniorVocabularyPlan() {
+  return callCloud('completeJuniorVocabularyPlan', withSelectedStudent({}), { saved: false }, { useCache: false });
+}
+
 async function updateFlashcardReview(flashcardKey, result, card) {
   return callCloud('updateFlashcardReview', withSelectedStudent({ flashcardKey, result, card: card || null }), { saved: false }, { useCache: false });
 }
@@ -1367,6 +1385,8 @@ module.exports = {
   getListeningStudyPack,
   getFlashcardReview,
   getFlashcardDue,
+  getJuniorVocabularyPlan,
+  completeJuniorVocabularyPlan,
   updateFlashcardReview,
   saveFlashcardSettings,
   addDictionaryBook,

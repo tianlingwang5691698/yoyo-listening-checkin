@@ -9,10 +9,11 @@ const LEVEL_STAGE_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const YOYO_FIXED_PLAN_OUTLINE = {
   cycleDays: 72,
   items: [
-    { category: 'grammar', slotCount: 3, startNo: 1, endNo: 168, totalCount: 168 },
+    { category: 'grammar', slotCount: 5, startNo: 1, endNo: 168, totalCount: 168 },
     { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
     { category: 'peppa', slotCount: 5, startNo: 73, endNo: 157, totalCount: 85 },
-    { category: 'unlock1', slotCount: 3, startNo: 1, endNo: 24, totalCount: 24 }
+    { category: 'unlock1', slotCount: 3, startNo: 1, endNo: 24, totalCount: 24 },
+    { category: 'vocabulary', slotCount: 1, startNo: 1, endNo: 32, totalCount: 1690, round: 1, currentList: 1 }
   ]
 };
 
@@ -53,6 +54,9 @@ function getTextType(task) {
   }
   if (task.category === 'grammar') {
     return t('course');
+  }
+  if (task.category === 'vocabulary') {
+    return t('memorization');
   }
   if (task.transcriptTrackId) {
     return task.syncGranularity === 'line' ? t('sentenceSync') : t('wordSync');
@@ -147,7 +151,8 @@ function buildFixedPlanOutline(outline) {
     grammar: '词法微课',
     newconcept1: 'New Concept 1',
     peppa: 'Peppa',
-    unlock1: 'Unlock 1 听口 第二版'
+    unlock1: 'Unlock 1 听口 第二版',
+    vocabulary: '初中词汇'
   };
   return {
     cycleDays: Number(outline.cycleDays || 72),
@@ -155,6 +160,14 @@ function buildFixedPlanOutline(outline) {
       const startNo = Number(item.startNo || 1);
       const endNo = item.category === 'newconcept1' ? 76 : Number(item.endNo || 0);
       const totalCount = item.category === 'newconcept1' ? 76 : Number(item.totalCount || 0);
+      if (item.category === 'vocabulary') {
+        return Object.assign({}, item, {
+          title: categoryTitles.vocabulary,
+          rangeText: t('listRangeSummary', { total: totalCount || 1690 }),
+          dailyText: t('dailyVocabularyStudy'),
+          progressText: t('vocabularyPlanProgress', { round: Number(item.round || 1), list: Number(item.currentList || 1) })
+        });
+      }
       const unit = item.category === 'grammar' ? t('microLessonUnit') : item.category === 'newconcept1' ? t('lessonUnit') : t('episodeUnit');
       const dailyUnit = item.category === 'grammar'
         ? t('dailyMicroLessonUnit')
@@ -212,7 +225,9 @@ Page({
   applyOverview(data, phase, levelId, preferredExpandedGroupKey, snapshotId) {
     const categories = (data.categories || []).map(labels.normalizeCategory);
     const displayPhase = data.planPhase || phase;
-    const fixedPlanOutline = buildFixedPlanOutline(data.fixedPlanOutline || (this.fixedPlanMode ? YOYO_FIXED_PLAN_OUTLINE : null));
+    const fixedPlanOutline = this.fixedPlanMode
+      ? buildFixedPlanOutline(data.fixedPlanOutline || YOYO_FIXED_PLAN_OUTLINE)
+      : null;
     const hasTaskGroups = !fixedPlanOutline && shouldShowTaskGroups(displayPhase) && categories.length > 0;
     const expandedState = {};
     (this.data.taskGroups || []).forEach((item) => {
@@ -293,7 +308,7 @@ Page({
       this.tryOpenResumeTask();
     }
     const refresh = async () => {
-      const data = await store.getLevelOverview({ phase }, (fresh) => {
+      const data = await store.getLevelOverview({ phase, fixed: this.fixedPlanMode }, (fresh) => {
         this.applyOverview(fresh, phase, levelId, preferredExpandedGroupKey, snapshotId);
         if (this.levelStagePerf) {
           this.levelStagePerf.mark('cloudRefresh', { phase, groups: (fresh.categories || []).length });
@@ -392,6 +407,10 @@ Page({
       });
       return;
     }
+    if (category === 'vocabulary') {
+      wx.navigateTo({ url: '/pages/reading/flashcards/index?dailyPlan=junior-list' });
+      return;
+    }
     const routeQuery = [
       planRunType !== 'normal' ? `planRunType=${encodeURIComponent(planRunType)}` : '',
       targetDate ? `targetDate=${encodeURIComponent(targetDate)}` : '',
@@ -407,6 +426,10 @@ Page({
     const category = String(event.currentTarget.dataset.category || '');
     if (category === 'grammar') {
       wx.navigateTo({ url: '/grammar-package/pages/classroom/index?topic=noun' });
+      return;
+    }
+    if (category === 'vocabulary') {
+      wx.navigateTo({ url: '/pages/reading/flashcards/index?dailyPlan=junior-list' });
       return;
     }
     if (category) {

@@ -787,6 +787,13 @@ Page({
     total: 0,
     empty: false,
     repeatMode: false,
+    dailyPlanMode: false,
+    dailyPlanRound: 1,
+    dailyPlanCurrentList: 1,
+    dailyPlanReviewLists: [],
+    dailyPlanReviewListsText: '',
+    dailyPlanPracticeLevel: '',
+    completionEncouragement: '',
     repeatSessionId: '',
     todayRepeatTotal: 0,
     repeatLimit: 1,
@@ -850,9 +857,20 @@ Page({
     flashcardDebugLines: [],
     previewMode: store.getDeviceStudyRole() !== 'student'
   }),
+  onLoad(options) {
+    if (String((options && options.dailyPlan) || '') !== 'junior-list') return;
+    this.dailyPlanMode = true;
+    this.setData({
+      dailyPlanMode: true,
+      sourceMode: 'library',
+      activeSourceTitle: text('juniorDailyPlanTitle', '初中词汇今日计划'),
+      loading: true
+    });
+    this.loadJuniorDailyPlan();
+  },
   onUnload() {
     this.flushReviewQueue(true);
-    this.syncVocabularyCompletion(true);
+    if (!this.dailyPlanMode) this.syncVocabularyCompletion(true);
     if (this.autoSpeakTimer) {
       clearTimeout(this.autoSpeakTimer);
       this.autoSpeakTimer = null;
@@ -900,6 +918,7 @@ Page({
         });
       }
     });
+    if (this.dailyPlanMode) return;
     if (this.data.mode === 'review') return;
     if (this.data.sourceMode === 'practice-home') return;
     if (this.data.sourceMode === 'bookshelf') {
@@ -924,6 +943,64 @@ Page({
       library: [],
       libraryGroups: this.getRenderedLibraryGroups(library)
     }));
+  },
+  async loadJuniorDailyPlan() {
+    try {
+      let data = await store.getJuniorVocabularyPlan();
+      if (!data.active) throw new Error('junior-list-plan-inactive');
+      if (!data.completedToday && !(data.cards || []).length && !this.data.previewMode) {
+        const completed = await store.completeJuniorVocabularyPlan();
+        if (completed && completed.saved) data = Object.assign({}, data, completed, { cards: [], completedToday: true });
+      }
+      const library = (data.library || []).map(normalizeCard);
+      const cards = (data.cards || []).map(normalizeCard);
+      const reviewLists = data.reviewLists || [];
+      const completedToday = !!data.completedToday;
+      this.dailyPlanCards = cards.slice();
+      this.setFlashcardLibrary(library);
+      this.setData({
+        sourceMode: 'library',
+        mode: completedToday ? 'review' : 'library',
+        activeSourceId: data.currentSourceId || `dictionary-book-junior-list-${Number(data.currentList || 1)}`,
+        activeSourceTitle: data.title || text('juniorDailyPlanTitle', '初中词汇今日计划'),
+        dailyPlanMode: true,
+        dailyPlanRound: Number(data.round || 1),
+        dailyPlanCurrentList: Number(data.currentList || 1),
+        dailyPlanReviewLists: reviewLists,
+        dailyPlanReviewListsText: reviewLists.length ? reviewLists.map((item) => `List ${item}`).join('、') : text('noDueReview', '今天暂无到期复习'),
+        dailyPlanPracticeLevel: data.practiceLevel || `junior-list-${Number(data.currentList || 1)}`,
+        completionEncouragement: data.encouragement || '',
+        library: [],
+        libraryGroups: [],
+        cards,
+        currentIndex: 0,
+        current: cards[0] || null,
+        total: cards.length,
+        empty: !cards.length && !completedToday,
+        reviewCompleted: completedToday,
+        reviewDone: completedToday ? Number((data.mainWords || 0) + (data.reviewWords || 0)) : 0,
+        reviewSessionTotal: completedToday ? Number((data.mainWords || 0) + (data.reviewWords || 0)) : cards.length,
+        dueCount: cards.length,
+        newDueCount: Number(data.newDueCount == null ? cards.filter((item) => item.planRole === 'current').length : data.newDueCount),
+        reviewDueCount: Number(data.reviewDueCount == null ? cards.filter((item) => item.planRole === 'review').length : data.reviewDueCount),
+        settings: data.settings || { newLimit: 0, reviewLimit: 0 },
+        isBookPlan: true,
+        isUnlimitedPlan: true,
+        planSummary: buildPlanSummary(library, data.settings || {}),
+        progress: data.progress || { total: library.length, mastered: 0, reviewing: 0, fresh: 0 },
+        phoneticPreview: buildPhoneticPreview(library),
+        loading: false,
+        flashcardDebugLines: []
+      });
+    } catch (error) {
+      this.setFlashcardLibrary([]);
+      this.setData({
+        loading: false,
+        empty: true,
+        flashcardDebugLines: [`DEBUG: reading/flashcards.loadJuniorDailyPlan -> store.getJuniorVocabularyPlan -> cloud.getJuniorVocabularyPlan: ${error.message || 'failed'}`]
+      });
+      wx.showToast({ title: text('loadFailed', '词书读取失败'), icon: 'none' });
+    }
   },
   startSourcePerf(sourceId) {
     this.sourcePerfId = sourceId || 'all';
@@ -1273,6 +1350,10 @@ Page({
     });
   },
   backToBookshelf() {
+    if (this.dailyPlanMode) {
+      wx.navigateBack({ delta: 1 });
+      return;
+    }
     if (this.data.sourceMode === 'standard-lists') {
       this.setData({ sourceMode: 'bookshelf', activeStandardStage: '', activeStandardTitle: '', activeStandardLists: [] });
       return;
@@ -1669,7 +1750,7 @@ Page({
     this.persistActiveSourceState();
   },
   persistActiveSourceState() {
-    if (this.data.previewMode) return;
+    if (this.data.previewMode || this.dailyPlanMode) return;
     const activeSourceId = this.data.activeSourceId || '';
     writeSourceCache(activeSourceId, {
       library: this.getFlashcardLibrary(),
@@ -1774,7 +1855,7 @@ Page({
     }
   },
   syncVocabularyCompletion(force) {
-    if (this.data.previewMode) return;
+    if (this.data.previewMode || this.dailyPlanMode) return;
     const stats = this.vocabularySessionStats || {};
     if (!stats.reviewed || (!force && stats.reviewed % 5 !== 0)) return;
     if (this.lastVocabularyCompletionSyncedReviewed === stats.reviewed) return;
@@ -1826,7 +1907,11 @@ Page({
         this.flushReviewQueue(true);
       }
       this.playCompletionSfx();
-      this.scheduleDictationPrompt();
+      if (this.dailyPlanMode && !this.data.previewMode) {
+        this.finishJuniorDailyPlan();
+      } else {
+        this.scheduleDictationPrompt();
+      }
       return;
     }
     this.scheduleAutoSpeakCurrent();
@@ -1847,6 +1932,29 @@ Page({
         });
       }
     }, 900);
+  },
+  async finishJuniorDailyPlan() {
+    this.setData({ dictationPromptPending: true });
+    await this.waitForReviewSync();
+    try {
+      const result = await store.completeJuniorVocabularyPlan();
+      if (!result || !result.saved) throw new Error((result && result.reason) || 'plan-completion-failed');
+      this.setData({
+        completionEncouragement: result.encouragement || this.data.completionEncouragement,
+        newDueCount: Number(result.mainWords || this.data.newDueCount || 0),
+        reviewDueCount: Number(result.reviewWords || this.data.reviewDueCount || 0),
+        dailyPlanReviewLists: result.reviewLists || this.data.dailyPlanReviewLists,
+        dictationPromptPending: false,
+        flashcardDebugLines: []
+      });
+      this.scheduleDictationPrompt();
+    } catch (error) {
+      this.setData({
+        dictationPromptPending: false,
+        flashcardDebugLines: [`DEBUG: reading/flashcards.finishJuniorDailyPlan -> waitForReviewSync -> store.completeJuniorVocabularyPlan: ${error.message || 'failed'}`]
+      });
+      wx.showToast({ title: text('planSaveFailed', '今日词汇计划保存失败'), icon: 'none' });
+    }
   },
   dismissDictationPrompt() {
     if (this.data.dictationJumping) return;
@@ -1871,7 +1979,9 @@ Page({
     if (this.data.dictationJumping || !isBookSource(this.data.activeSourceId)) return;
     this.setData({ dictationJumping: true });
     await this.waitForReviewSync();
-    const level = String(this.data.activeSourceId || '').replace(/^dictionary-book-/, '');
+    const level = this.dailyPlanMode
+      ? this.data.dailyPlanPracticeLevel
+      : String(this.data.activeSourceId || '').replace(/^dictionary-book-/, '');
     const title = this.data.dictationPromptSourceTitle || getDictationSourceTitle(this.data.activeSourceId, this.data.activeSourceTitle);
     this.setData({ dictationPromptVisible: false, dictationPromptPending: false, dictationJumping: false });
     wx.navigateTo({ url: `/pages/reading/flashcards/practice/index?level=${encodeURIComponent(level)}&title=${encodeURIComponent(title)}` });
@@ -1900,7 +2010,9 @@ Page({
     this.scheduleAudioPrefetchAroundCurrent();
   },
   startReview() {
-    const cards = buildReviewQueue(this.getFlashcardLibrary(), this.data.settings, this.data.today);
+    const cards = this.dailyPlanMode
+      ? (this.dailyPlanCards || []).map((item) => Object.assign({}, item))
+      : buildReviewQueue(this.getFlashcardLibrary(), this.data.settings, this.data.today);
     const current = cards[0] || null;
     const previewMode = store.getDeviceStudyRole() !== 'student';
     if (previewMode) {
@@ -1947,6 +2059,10 @@ Page({
     if (!this.data.repeatMode) {
       this.syncVocabularyCompletion(true);
       this.flushReviewQueue(true);
+    }
+    if (this.dailyPlanMode && !this.data.previewMode) {
+      wx.navigateBack({ delta: 1 });
+      return;
     }
     if (this.data.previewMode && this.previewSourceSnapshot) {
       const snapshot = this.previewSourceSnapshot;

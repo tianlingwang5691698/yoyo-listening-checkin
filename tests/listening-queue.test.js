@@ -231,6 +231,6 @@ test('佑佑固定计划页不回退显示日任务快照', () => {
   const levelSource = fs.readFileSync(path.join(__dirname, '../pages/level/index.js'), 'utf8');
   const stageSource = fs.readFileSync(path.join(__dirname, '../pages/level-stage/index.js'), 'utf8');
   assert.match(levelSource, /level-stage\/index\?levelId=A1&phase=\$\{phase\}&fixed=1/);
-  assert.match(stageSource, /data\.fixedPlanOutline \|\| \(this\.fixedPlanMode \? YOYO_FIXED_PLAN_OUTLINE : null\)/);
+  assert.match(stageSource, /this\.fixedPlanMode[\s\S]*?buildFixedPlanOutline\(data\.fixedPlanOutline \|\| YOYO_FIXED_PLAN_OUTLINE\)[\s\S]*?: null/);
   assert.match(stageSource, /snapshot && !this\.fixedPlanMode/);
 });

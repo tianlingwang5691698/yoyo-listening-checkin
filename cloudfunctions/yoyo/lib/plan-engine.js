@@ -124,6 +124,33 @@ function buildFixedPlanBySlots(progressRecords, childId, date, deps) {
     const catalog = getPlanCatalog(category, deps);
     const baseTasks = basePlan.byCategory[category] || [];
     const slotCount = baseTasks.length;
+    if (category === 'grammar') {
+      const completedTaskIds = new Set((progressRecords || [])
+        .filter((item) => (
+          item.childId === childId
+            && item.category === 'grammar'
+            && String(item.planSource || 'fixed-yoyo') === 'fixed-yoyo'
+            && String(item.planRunType || 'normal') === 'normal'
+            && String(item.date || '') >= deps.planLib.FIXED_SLOT_PLAN_STARTED_AT
+            && String(item.date || '') < date
+            && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 1))
+        ))
+        .map((item) => item.taskId)
+        .filter(Boolean));
+      const tasks = catalog.filter((task) => !completedTaskIds.has(task.taskId)).slice(0, slotCount);
+      byCategory[category] = tasks.map((task, slotOffset) => Object.assign({}, task, {
+        repeatTarget: 1,
+        planSlotIndex: slotOffset + 1,
+        planSlotCount: tasks.length
+      }));
+      byCategory[category].forEach((task) => flatTasks.push(Object.assign({}, task, {
+        planDayIndex: dayIndex,
+        planPhase: basePlan.phase.key,
+        planPhaseLabel: basePlan.phase.label,
+        planBatchSize: tasks.length
+      })));
+      return;
+    }
     byCategory[category] = baseTasks.map((baseTask, slotOffset) => {
       const slotIndex = slotOffset + 1;
       const completedCount = deps.fixedPlanSummary && deps.getCompletedCountBeforeDate

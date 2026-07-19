@@ -80,6 +80,9 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'newconcept4') {
     return 'New Concept 4';
   }
+  if (category === 'vocabulary') {
+    return '词汇';
+  }
   return label || category || '';
 }
 

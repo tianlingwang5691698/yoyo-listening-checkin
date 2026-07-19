@@ -80,3 +80,40 @@ test('听写专用词源只返回拼写必需字段', () => {
   assert.equal(fields.reviewSchedule, undefined);
   assert.equal(fields.example, undefined);
 });
+
+test('初中词汇 List 计划完成 List 32 后进入下一轮 List 1', () => {
+  const helpers = flashcardService._test;
+  const next = helpers.advanceJuniorListPlanState({ round: 1, currentList: 32 }, '2026-08-20');
+  assert.equal(next.round, 2);
+  assert.equal(next.currentList, 1);
+  assert.equal(next.lastCompletedRound, 1);
+  assert.equal(next.lastCompletedList, 32);
+});
+
+test('初中词汇 List 计划同一天保持已完成轮次与 List', () => {
+  const helpers = flashcardService._test;
+  const descriptor = helpers.getJuniorListPlanDescriptor({
+    round: 2,
+    currentList: 2,
+    lastCompletedDate: '2026-08-21',
+    lastCompletedRound: 2,
+    lastCompletedList: 1
+  }, '2026-08-21');
+  assert.equal(descriptor.completedToday, true);
+  assert.equal(descriptor.round, 2);
+  assert.equal(descriptor.currentList, 1);
+  assert.equal(descriptor.practiceLevel, 'junior-list-1');
+});
+
+test('初中词汇第 2 轮仍完整复习当前 List，不跳过已掌握词', () => {
+  const helpers = flashcardService._test;
+  const today = '2026-08-21';
+  const rows = [
+    { flashcardKey: 'a', status: 'mastered', lastReviewDate: '2026-08-20' },
+    { flashcardKey: 'b', status: 'reviewing', nextReviewDate: '2026-09-01', lastReviewDate: '2026-08-20' }
+  ];
+
+  assert.deepEqual(helpers.selectJuniorCurrentCards(rows, 2, today).map((item) => item.flashcardKey), ['a', 'b']);
+  assert.equal(helpers.isJuniorCurrentListComplete(rows, 2, 2, today), false);
+  assert.equal(helpers.isJuniorCurrentListComplete(rows.map((item) => Object.assign({}, item, { lastReviewDate: today })), 2, 2, today), true);
+});

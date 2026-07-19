@@ -347,6 +347,13 @@ function getVocabularyProgressText(item, latestAttempt) {
     const wrong = Number(attempt.wrongCount || Math.max(0, total - correct));
     return formatText(tr('dictationProgress'), { correct, total, wrong });
   }
+  if (attempt.newLearned != null || attempt.reviewWords != null) {
+    return formatText(tr('vocabularyPlanProgress'), {
+      main: Number(attempt.mainWords || attempt.newLearned || 0),
+      review: Number(attempt.reviewWords || 0),
+      unfamiliar: Number(attempt.unfamiliar || 0)
+    });
+  }
   return formatText(tr('memorizationProgress'), {
     reviewed: Number(attempt.reviewed || 0),
     unfamiliar: Number(attempt.unfamiliar || 0)

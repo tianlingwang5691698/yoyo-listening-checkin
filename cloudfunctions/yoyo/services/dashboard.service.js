@@ -1,4 +1,5 @@
 const study = require('../facades/study.facade');
+const flashcardService = require('./flashcard.service');
 
 function resolveDashboardOptions(view) {
   if (view === 'home') {
@@ -55,6 +56,9 @@ async function getDashboard(event) {
   ]);
   if (view === 'record' && dashboard.stats && cumulativeMinutes !== null && cumulativeMinutes !== undefined) {
     dashboard.stats.totalMinutes = Math.max(0, Number(cumulativeMinutes || 0));
+  }
+  if (view === 'home' && study.isYoyoChild(dashboard.child)) {
+    dashboard.vocabularyPlan = await flashcardService.getJuniorListPlanSummary(ctx, study.getTodayString());
   }
   return dashboard;
 }

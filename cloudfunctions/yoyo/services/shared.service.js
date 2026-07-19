@@ -273,14 +273,20 @@ async function saveProgressRecord(record) {
 }
 
 async function getFixedPlanHomeState(scope, date) {
-  const [summary, todayRecords] = await Promise.all([
+  const [summary, todayRecords, grammarRecords] = await Promise.all([
     fixedPlanSummaryRepository.findByScope(scope),
-    progressRepository.findForHomeDate(scope, date)
+    progressRepository.findForHomeDate(scope, date),
+    progressRepository.findByScopeAndCategory(scope, 'grammar')
   ]);
   if (summary && Number(summary.version || 0) === fixedPlanSummary.SUMMARY_VERSION) {
+    const progressById = {};
+    fixedPlanSummary.buildProgressRecords(summary, todayRecords).concat(grammarRecords).forEach((record) => {
+      const key = record.progressId || record._id || `${record.date}:${record.category}:${record.taskId}`;
+      progressById[key] = record;
+    });
     return {
       summary,
-      progressRecords: fixedPlanSummary.buildProgressRecords(summary, todayRecords),
+      progressRecords: Object.values(progressById),
       source: 'fixed-plan-summary'
     };
   }

@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 
 const levelService = require('../services/level.service');
 const study = require('../facades/study.facade');
+const flashcardService = require('../services/flashcard.service');
 
 test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   const grammarTasks = [{
@@ -44,6 +45,16 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   t.mock.method(study, 'getPlanCatalog', () => grammarTasks);
   t.mock.method(study, 'getCatalog', () => []);
   t.mock.method(study, 'getResourceDebugSnapshot', () => ({}));
+  t.mock.method(study, 'isYoyoChild', () => true);
+  t.mock.method(flashcardService, 'getJuniorListPlanSummary', async () => ({
+    active: true,
+    planId: 'yoyo-junior-list-plan',
+    round: 2,
+    currentList: 3,
+    title: '初中词汇第2轮 · List 3',
+    summary: '主学 List 3 · 艾宾浩斯复习到期 List',
+    completedToday: false
+  }));
 
   const result = await levelService.getLevelOverview({ payload: { phase: 'round-2' } });
 
@@ -51,4 +62,8 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   assert.equal(result.fixedPlanOutline.progression, 'independent-slots');
   const newConcept = result.fixedPlanOutline.items.find((item) => item.category === 'newconcept1');
   assert.deepEqual([newConcept.startNo, newConcept.endNo, newConcept.totalCount], [1, 76, 76]);
+  const vocabulary = result.fixedPlanOutline.items.find((item) => item.category === 'vocabulary');
+  assert.deepEqual([vocabulary.startNo, vocabulary.endNo, vocabulary.totalCount], [1, 32, 1690]);
+  const vocabularyCategory = result.categories.find((item) => item.category === 'vocabulary');
+  assert.equal(vocabularyCategory.todayTask.displayTitle, '初中词汇第2轮 · List 3');
 });

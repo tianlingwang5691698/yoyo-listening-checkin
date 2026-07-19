@@ -50,8 +50,9 @@ test('固定计划摘要当天完成不提前推进，次日才推进', () => {
     familyId: 'family-1',
     childId: 'child-1'
   });
-  const sameDay = planEngine.buildFixedPlanBySlots([], 'child-1', '2026-07-15', Object.assign({}, deps, { fixedPlanSummary: summary }));
-  const nextDay = planEngine.buildFixedPlanBySlots([], 'child-1', '2026-07-16', Object.assign({}, deps, { fixedPlanSummary: summary }));
+  const progress = [record({ taskId: initial.byCategory.grammar[0].taskId })];
+  const sameDay = planEngine.buildFixedPlanBySlots(progress, 'child-1', '2026-07-15', Object.assign({}, deps, { fixedPlanSummary: summary }));
+  const nextDay = planEngine.buildFixedPlanBySlots(progress, 'child-1', '2026-07-16', Object.assign({}, deps, { fixedPlanSummary: summary }));
   assert.equal(sameDay.byCategory.grammar[0].taskId, initial.byCategory.grammar[0].taskId);
   assert.notEqual(nextDay.byCategory.grammar[0].taskId, initial.byCategory.grammar[0].taskId);
 });

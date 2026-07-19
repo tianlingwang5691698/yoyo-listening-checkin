@@ -809,9 +809,30 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   assert.match(grammarService, /sharedApprovalKey = `\$\{narrationId\}:\$\{version\}:zh-CN`/);
   assert.match(grammarService, /approvalKey, textHash, model, voice, speed, emotion, NARRATION_PRONUNCIATION_VERSION/);
   assert.match(grammarService, /pronunciation_dict: NARRATION_PRONUNCIATION_DICT/);
-  assert.match(grammarService, /'不可数\/\(bu4\)\(ke3\)\(shu3\)'/);
-  assert.match(grammarService, /'复数\/\(fu4\)\(shu4\)'/);
-  assert.match(grammarService, /NARRATION_PRONUNCIATION_VERSION = 'zh-polyphone-v2'/);
+  const pronunciationBlock = grammarService.match(/const NARRATION_PRONUNCIATION_ENTRIES = \[([\s\S]*?)\n\];/);
+  assert.ok(pronunciationBlock, 'pronunciation entries must remain structured');
+  const pronunciationEntries = [...pronunciationBlock[1].matchAll(/\['([^']+)', '(\([^']+\))'\]/g)]
+    .map((match) => [match[1], match[2]]);
+  const pronunciationMap = new Map(pronunciationEntries);
+  assert.equal(pronunciationEntries.length, 238);
+  assert.equal(pronunciationMap.size, pronunciationEntries.length, 'pronunciation words must be unique');
+  assert.ok(pronunciationEntries.every(([word]) => [...word].length >= 2), 'single-character pronunciation entries are forbidden');
+  Object.entries({
+    单复数: '(dan1)(fu4)(shu4)', 不可数: '(bu4)(ke3)(shu3)', 可数: '(ke3)(shu3)', 计数: '(ji4)(shu3)',
+    单数: '(dan1)(shu4)', 复数: '(fu4)(shu4)', 数词: '(shu4)(ci2)', 数量: '(shu4)(liang4)', 数字: '(shu4)(zi4)',
+    重音: '(zhong4)(yin1)', 重复: '(chong2)(fu4)', 重新: '(chong2)(xin1)', 先行词: '(xian1)(xing2)(ci2)', 银行: '(yin2)(hang2)',
+    还原: '(huan2)(yuan2)', 还是: '(hai2)(shi4)', 作为: '(zuo4)(wei2)', 因为: '(yin1)(wei4)',
+    当作: '(dang4)(zuo4)', 当前: '(dang1)(qian2)', 时间: '(shi2)(jian1)', 间接: '(jian4)(jie1)',
+    部分: '(bu4)(fen4)', 分句: '(fen1)(ju4)', 对应: '(dui4)(ying4)', 应该: '(ying1)(gai1)',
+    相机: '(xiang4)(ji1)', 角色: '(jue2)(se4)', 学校: '(xue2)(xiao4)', 校对: '(jiao4)(dui4)',
+    对称: '(dui4)(chen4)', 测量: '(ce4)(liang2)', 重量: '(zhong4)(liang4)', 处理: '(chu3)(li3)', 某处: '(mou3)(chu4)',
+    出差: '(chu1)(chai1)', 空格: '(kong4)(ge2)', 空间: '(kong1)(jian1)', 更正式: '(geng4)(zheng4)(shi4)', 更正: '(geng1)(zheng4)',
+    强调: '(qiang2)(diao4)', 调整: '(tiao2)(zheng3)', 强行: '(qiang3)(xing2)', 头发: '(tou2)(fa5)',
+    频率: '(pin2)(lv4)', 坦率: '(tan3)(shuai4)', 省略: '(sheng3)(lve4)', 选中: '(xuan3)(zhong4)',
+    要求: '(yao1)(qiu2)', 需要: '(xu1)(yao4)', 一只: '(yi4)(zhi1)', 物质: '(wu4)(zhi4)'
+  }).forEach(([word, pronunciation]) => assert.equal(pronunciationMap.get(word), pronunciation, `wrong pronunciation entry: ${word}`));
+  assert.match(grammarService, /right\[0\]\.length - left\[0\]\.length/);
+  assert.match(grammarService, /NARRATION_PRONUNCIATION_VERSION = 'zh-polyphone-v4'/);
   assert.match(grammarService, /Array\.isArray\(approved\) \? approved\.includes\(textHash\)/);
   const narrationManifestBuilder = fs.readFileSync(path.join(__dirname, '../scripts/build_grammar_narration_manifest.js'), 'utf8');
   assert.match(narrationManifestBuilder, /readPreviousHashes\(\)/);

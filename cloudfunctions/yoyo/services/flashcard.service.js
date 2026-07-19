@@ -7,6 +7,9 @@ const COLLECTION = 'studyFlashcards';
 const SETTINGS_COLLECTION = 'studyFlashcardSettings';
 const LOG_COLLECTION = 'studyFlashcardReviewLogs';
 const DICTATION_COLLECTION = 'vocabularyDictationAttempts';
+const JUNIOR_LIST_PLAN_ID = 'yoyo-junior-list-plan';
+const JUNIOR_LIST_COUNT = 32;
+const JUNIOR_LIST_SOURCE_IDS = Array.from({ length: JUNIOR_LIST_COUNT }, (_, index) => `dictionary-book-junior-list-${index + 1}`);
 const DICTIONARY_BOOKS = [
   { level: 'junior', title: '新东方 初中英语词汇词根+联想记忆法：乱序版', cloudPath: 'dictionary_books/word-dictionary-junior.json' },
   { level: 'senior', title: '高中英语词汇 乱序', cloudPath: 'dictionary_books/word-dictionary-senior.json' },
@@ -47,6 +50,7 @@ const CLIENT_CARD_FIELDS = {
   nextReviewDate: true,
   firstLearnedDate: true,
   lastReviewDate: true,
+  lastUnfamiliarDate: true,
   unfamiliarCount: true,
   audioUrl: true,
   audioFileId: true,
@@ -151,6 +155,69 @@ function normalizeSettings(settings) {
   };
 }
 
+function normalizeJuniorListPlanState(value) {
+  const source = value && typeof value === 'object' ? value : {};
+  return {
+    active: source.active !== false,
+    round: Math.max(1, Number(source.round || 1)),
+    currentList: Math.max(1, Math.min(JUNIOR_LIST_COUNT, Number(source.currentList || 1))),
+    lastCompletedDate: normalizeText(source.lastCompletedDate),
+    lastCompletedRound: Math.max(0, Number(source.lastCompletedRound || 0)),
+    lastCompletedList: Math.max(0, Math.min(JUNIOR_LIST_COUNT, Number(source.lastCompletedList || 0))),
+    lastMainWords: Math.max(0, Number(source.lastMainWords || 0)),
+    lastReviewWords: Math.max(0, Number(source.lastReviewWords || 0)),
+    lastReviewLists: (Array.isArray(source.lastReviewLists) ? source.lastReviewLists : []).map(Number).filter(Boolean),
+    lastEncouragement: normalizeText(source.lastEncouragement)
+  };
+}
+
+function getJuniorListPlanDescriptor(state, today) {
+  const normalized = normalizeJuniorListPlanState(state);
+  const completedToday = normalized.lastCompletedDate === today;
+  const round = completedToday && normalized.lastCompletedRound ? normalized.lastCompletedRound : normalized.round;
+  const currentList = completedToday && normalized.lastCompletedList ? normalized.lastCompletedList : normalized.currentList;
+  return {
+    planId: JUNIOR_LIST_PLAN_ID,
+    active: normalized.active,
+    round,
+    currentList,
+    completedToday,
+    currentSourceId: `dictionary-book-junior-list-${currentList}`,
+    practiceLevel: `junior-list-${currentList}`,
+    title: `初中词汇第${round}轮 · List ${currentList}`,
+    summary: `主学 List ${currentList} · 艾宾浩斯复习到期 List`
+  };
+}
+
+function advanceJuniorListPlanState(state, today) {
+  const normalized = normalizeJuniorListPlanState(state);
+  const completedRound = normalized.round;
+  const completedList = normalized.currentList;
+  return Object.assign({}, normalized, {
+    round: completedList >= JUNIOR_LIST_COUNT ? completedRound + 1 : completedRound,
+    currentList: completedList >= JUNIOR_LIST_COUNT ? 1 : completedList + 1,
+    lastCompletedDate: today,
+    lastCompletedRound: completedRound,
+    lastCompletedList: completedList
+  });
+}
+
+function selectJuniorCurrentCards(currentRows, round, today) {
+  if (Number(round || 1) === 1) {
+    return (currentRows || []).filter((item) => item.status === 'new');
+  }
+  return (currentRows || []).filter((item) => item.lastReviewDate !== today);
+}
+
+function isJuniorCurrentListComplete(currentRows, sourceCount, round, today) {
+  const rows = currentRows || [];
+  if (!sourceCount || rows.length !== sourceCount) return false;
+  if (Number(round || 1) === 1) {
+    return rows.every((item) => item.status !== 'new' && !!item.firstLearnedDate);
+  }
+  return rows.every((item) => item.lastReviewDate === today);
+}
+
 function makeFlashcard(ctx, today, source, type, card) {
   const text = cardText(card, type);
   const schedule = makeSchedule(today);
@@ -234,6 +301,243 @@ async function getSettings(ctx) {
   } catch (error) {
     return normalizeSettings(DEFAULT_SETTINGS);
   }
+}
+
+async function saveJuniorListPlanState(ctx, state) {
+  const now = new Date().toISOString();
+  const result = await dbAdapter.collection(SETTINGS_COLLECTION)
+    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+    .limit(1)
+    .get();
+  const current = result && result.data && result.data[0];
+  if (current && current._id) {
+    await dbAdapter.collection(SETTINGS_COLLECTION).doc(current._id).update({
+      data: { juniorListPlan: state, updatedAt: now }
+    });
+    return;
+  }
+  await dbAdapter.collection(SETTINGS_COLLECTION).add({
+    data: {
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      newLimit: DEFAULT_SETTINGS.newLimit,
+      reviewLimit: DEFAULT_SETTINGS.reviewLimit,
+      juniorListPlan: state,
+      createdAt: now,
+      updatedAt: now
+    }
+  });
+}
+
+function getJuniorBook(level) {
+  return DICTIONARY_BOOKS.find((item) => item.level === level) || null;
+}
+
+function mergePlanBookRows(ctx, today, book, rows, progressRows, planRole, listNumber) {
+  const progressByKey = new Map((progressRows || []).map((item) => [item.flashcardKey, item]));
+  return (rows || []).map((entry) => {
+    const word = normalizeText(entry.word || entry.wordLower).toLowerCase();
+    const base = makeFlashcard(ctx, today, {
+      sourceType: `dictionaryBook:${book.level}`,
+      sourceId: `dictionary-book-${book.level}`,
+      title: book.title
+    }, 'word', {
+      word,
+      phonetic: entry.phonetic || '',
+      meaning: Array.isArray(entry.definitions) ? entry.definitions.join('；') : (entry.meaning || ''),
+      example: entry.example || '',
+      exampleMeaning: entry.exampleMeaning || entry.exampleTranslation || ''
+    });
+    return Object.assign({}, base, progressByKey.get(base.flashcardKey) || {}, {
+      planRole,
+      planList: listNumber
+    });
+  }).filter((item) => item.word);
+}
+
+async function getJuniorListPlanSummary(ctx, today) {
+  if (!study.isYoyoChild(ctx.child)) return null;
+  const settings = await getSettings(ctx);
+  const state = normalizeJuniorListPlanState(settings.juniorListPlan);
+  return Object.assign(getJuniorListPlanDescriptor(state, today), {
+    lastMainWords: state.lastMainWords,
+    lastReviewWords: state.lastReviewWords,
+    lastReviewLists: state.lastReviewLists,
+    lastEncouragement: state.lastEncouragement
+  });
+}
+
+async function getJuniorVocabularyPlan(event) {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getJuniorVocabularyPlan' }));
+  const descriptor = await getJuniorListPlanSummary(ctx, today);
+  if (!descriptor || !descriptor.active) {
+    return { active: false, cards: [], library: [] };
+  }
+  if (descriptor.completedToday) {
+    return Object.assign({}, descriptor, {
+      today,
+      cards: [],
+      library: [],
+      settings: { newLimit: 0, reviewLimit: 0 },
+      newDueCount: Number(descriptor.lastMainWords || 0),
+      reviewDueCount: Number(descriptor.lastReviewWords || 0),
+      mainWords: Number(descriptor.lastMainWords || 0),
+      reviewWords: Number(descriptor.lastReviewWords || 0),
+      reviewLists: descriptor.lastReviewLists || [],
+      encouragement: descriptor.lastEncouragement
+        || `今天完成了第${descriptor.round}轮 List ${descriptor.currentList}，坚持得很好。`
+    });
+  }
+  const command = dbAdapter.getCommand();
+  const progressRows = [];
+  for (let skip = 0; skip < 5000; skip += 100) {
+    const progressResult = await dbAdapter.collection(COLLECTION)
+      .where({
+        familyId: ctx.family.familyId,
+        childId: ctx.child.childId,
+        sourceId: command.in(JUNIOR_LIST_SOURCE_IDS)
+      })
+      .field(CLIENT_CARD_FIELDS)
+      .skip(skip)
+      .limit(100)
+      .get();
+    const batch = resultRows(progressResult);
+    progressRows.push(...batch);
+    if (batch.length < 100) break;
+  }
+  const currentBook = getJuniorBook(`junior-list-${descriptor.currentList}`);
+  const currentBookRows = await storageAdapter.downloadCloudJson(currentBook.cloudPath);
+  const currentRows = mergePlanBookRows(ctx, today, currentBook, currentBookRows, progressRows, 'current', descriptor.currentList);
+  const currentCards = selectJuniorCurrentCards(currentRows, descriptor.round, today);
+  const reviewCards = progressRows.filter((item) => (
+    item.sourceId !== descriptor.currentSourceId
+      && item.status !== 'new'
+      && isDue(item, today)
+      && item.lastReviewDate !== today
+  )).map((item) => Object.assign({}, item, {
+    planRole: 'review',
+    planList: Number(String(item.sourceId || '').match(/junior-list-(\d+)$/)?.[1] || 0)
+  })).sort((left, right) => (
+    String(left.nextReviewDate || '').localeCompare(String(right.nextReviewDate || ''))
+      || Number(left.planList || 0) - Number(right.planList || 0)
+      || String(left.word || left.text || '').localeCompare(String(right.word || right.text || ''))
+  ));
+  const reviewLists = Array.from(new Set(reviewCards.map((item) => item.planList).filter(Boolean))).sort((a, b) => a - b);
+  const cards = reviewCards.concat(currentCards);
+  const library = reviewCards.concat(currentRows);
+  return Object.assign({}, descriptor, {
+    today,
+    cards,
+    library,
+    reviewLists,
+    settings: { newLimit: currentRows.length, reviewLimit: reviewCards.length },
+    dueCount: cards.length,
+    newDueCount: currentCards.length,
+    reviewDueCount: reviewCards.length,
+    progress: {
+      total: library.length,
+      mastered: library.filter((item) => item.status === 'mastered').length,
+      reviewing: library.filter((item) => item.status === 'reviewing').length,
+      fresh: library.filter((item) => item.status === 'new').length
+    },
+    logs: [],
+    encouragement: reviewLists.length
+      ? `今天完成 List ${descriptor.currentList}，并复习 ${reviewLists.length} 个到期 List，坚持得很好。`
+      : `今天完成 List ${descriptor.currentList}，开局很扎实。`
+  });
+}
+
+function resultRows(result) {
+  return result && Array.isArray(result.data) ? result.data : [];
+}
+
+async function completeJuniorVocabularyPlan(event) {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'completeJuniorVocabularyPlan' }));
+  if (!study.isStudyWriteAllowed(ctx)) return { saved: false, reason: 'preview-role' };
+  const settings = await getSettings(ctx);
+  const state = normalizeJuniorListPlanState(settings.juniorListPlan);
+  const descriptor = getJuniorListPlanDescriptor(state, today);
+  if (!study.isYoyoChild(ctx.child) || descriptor.completedToday) {
+    return Object.assign({ saved: !!descriptor.completedToday }, descriptor);
+  }
+  const command = dbAdapter.getCommand();
+  const rows = [];
+  for (let skip = 0; skip < 5000; skip += 100) {
+    const result = await dbAdapter.collection(COLLECTION).where({
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      sourceId: command.in(JUNIOR_LIST_SOURCE_IDS)
+    }).field(CLIENT_CARD_FIELDS).skip(skip).limit(100).get();
+    const batch = resultRows(result);
+    rows.push(...batch);
+    if (batch.length < 100) break;
+  }
+  const currentRows = rows.filter((item) => item.sourceId === descriptor.currentSourceId);
+  const currentBook = getJuniorBook(`junior-list-${descriptor.currentList}`);
+  const currentBookRows = currentBook ? await storageAdapter.downloadCloudJson(currentBook.cloudPath) : [];
+  const currentComplete = isJuniorCurrentListComplete(currentRows, currentBookRows.length, descriptor.round, today);
+  const remainingDue = rows.filter((item) => (
+    item.sourceId !== descriptor.currentSourceId
+      && item.status !== 'new'
+      && isDue(item, today)
+      && item.lastReviewDate !== today
+  ));
+  if (!currentComplete || remainingDue.length) {
+    return Object.assign({ saved: false, reason: 'plan-incomplete' }, descriptor);
+  }
+  const newLearned = descriptor.round === 1
+    ? currentRows.filter((item) => item.firstLearnedDate === today).length
+    : 0;
+  const reviewedRows = rows.filter((item) => item.lastReviewDate === today && item.firstLearnedDate !== today);
+  const reviewedCurrent = descriptor.round > 1 ? currentRows.filter((item) => item.lastReviewDate === today).length : 0;
+  const reviewedDueRows = reviewedRows.filter((item) => item.sourceId !== descriptor.currentSourceId);
+  const unfamiliar = rows.filter((item) => item.lastUnfamiliarDate === today).length;
+  const reviewed = newLearned + reviewedRows.length;
+  const reviewLists = Array.from(new Set(reviewedDueRows.map((item) => Number(String(item.sourceId || '').match(/junior-list-(\d+)$/)?.[1] || 0)).filter(Boolean))).sort((a, b) => a - b);
+  await completionService.upsertStudyCompletion(ctx, today, {
+    type: 'vocabulary',
+    targetId: JUNIOR_LIST_PLAN_ID,
+    category: 'vocabulary',
+    taskId: JUNIOR_LIST_PLAN_ID,
+    title: descriptor.title,
+    meta: descriptor.summary,
+    progressText: `完成 ${reviewed} 词 · 不熟 ${unfamiliar} 词`,
+    latestAttempt: {
+      reviewed,
+      newLearned,
+      mainWords: descriptor.round === 1 ? newLearned : reviewedCurrent,
+      reviewWords: reviewedDueRows.length,
+      unfamiliar,
+      round: descriptor.round,
+      currentList: descriptor.currentList,
+      reviewLists,
+      sourceId: descriptor.currentSourceId,
+      sourceTitle: descriptor.title,
+      date: today
+    }
+  });
+  const encouragement = reviewLists.length
+    ? `今天完成 List ${descriptor.currentList}，并复习 ${reviewLists.length} 个到期 List，坚持得很好。`
+    : `今天完成 List ${descriptor.currentList}，开局很扎实。`;
+  const nextState = Object.assign(advanceJuniorListPlanState(state, today), {
+    lastMainWords: descriptor.round === 1 ? newLearned : reviewedCurrent,
+    lastReviewWords: reviewedDueRows.length,
+    lastReviewLists: reviewLists,
+    lastEncouragement: encouragement
+  });
+  await saveJuniorListPlanState(ctx, nextState);
+  return Object.assign({
+    saved: true,
+    reviewed,
+    newLearned,
+    mainWords: descriptor.round === 1 ? newLearned : reviewedCurrent,
+    reviewWords: reviewedDueRows.length,
+    unfamiliar,
+    reviewLists,
+    encouragement,
+    nextRound: nextState.round,
+    nextList: nextState.currentList
+  }, descriptor, { completedToday: true });
 }
 
 async function saveSettings(event) {
@@ -924,6 +1228,9 @@ module.exports = {
   upsertStudyPackFlashcards,
   getFlashcardReview,
   getFlashcardDue,
+  getJuniorVocabularyPlan,
+  completeJuniorVocabularyPlan,
+  getJuniorListPlanSummary,
   updateFlashcardReview,
   saveSettings,
   saveFlashcardAudio,
@@ -946,6 +1253,11 @@ module.exports = {
     normalizeSpelling,
     acceptedSpellings,
     normalizeDictationQuestion,
-    isLearnedFlashcard
+    isLearnedFlashcard,
+    normalizeJuniorListPlanState,
+    getJuniorListPlanDescriptor,
+    advanceJuniorListPlanState,
+    selectJuniorCurrentCards,
+    isJuniorCurrentListComplete
   }
 };

@@ -2872,6 +2872,15 @@
 .language-en .library-vocab-title,
 .language-en .progress-title { font-size: 38rpx; line-height: 1.16; }
 
+.complete-encouragement {
+  max-width: 560rpx;
+  margin: 18rpx auto 0;
+  color: var(--text-secondary, #557080);
+  font-size: 28rpx;
+  line-height: 1.55;
+  text-align: center;
+}
+
 .book-dictation .book-cover {
   background:
     linear-gradient(150deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 38%),

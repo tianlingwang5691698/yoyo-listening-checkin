@@ -10,7 +10,8 @@ test('计划完成和当天重复背诵使用独立音效键', () => {
   const source = read('pages/reading/flashcards/index.js');
   assert.match(source, /repeat-today-\$\{current\.repeatSessionId/);
   assert.match(source, /repeatSessionId: String\(Date\.now\(\)\)/);
-  assert.match(source, /this\.playCompletionSfx\(\);\s*this\.scheduleDictationPrompt\(\);/);
+  assert.match(source, /this\.playCompletionSfx\(\);/);
+  assert.match(source, /this\.finishJuniorDailyPlan\(\);[\s\S]*?this\.scheduleDictationPrompt\(\);/);
 });
 
 test('词书背诵完成弹窗可选取消或直达单词练习', () => {

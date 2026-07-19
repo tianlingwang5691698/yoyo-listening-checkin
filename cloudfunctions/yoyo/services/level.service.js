@@ -1,4 +1,5 @@
 const study = require('../facades/study.facade');
+const flashcardService = require('./flashcard.service');
 
 const LEVEL_CATEGORY_GROUPS = {
   A2: ['newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook'],
@@ -16,6 +17,9 @@ async function getLevelOverview(event) {
   const requestedPhase = String(payload.phase || '').trim();
   const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
   const isA1PhaseOverview = requestedPhase === 'round-1' || requestedPhase === 'round-2';
+  const vocabularyPlan = isA1PhaseOverview && study.isYoyoChild(ctx.child)
+    ? await flashcardService.getJuniorListPlanSummary(ctx, today)
+    : null;
   const dashboard = await study.getDashboardData(ctx, {
     includeDailyTasks: requestedPhase === 'custom',
     includeHomeTaskGroups: false,
@@ -123,10 +127,11 @@ async function getLevelOverview(event) {
       cycleDays: 72,
       progression: 'independent-slots',
       items: [
-        { category: 'grammar', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('grammar').length, totalCount: study.getPlanCatalog('grammar').length },
+        { category: 'grammar', slotCount: 5, startNo: 1, endNo: study.getPlanCatalog('grammar').length, totalCount: study.getPlanCatalog('grammar').length },
         { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
         { category: 'peppa', slotCount: 5, startNo: 73, endNo: study.getPlanCatalog('peppa').length, totalCount: Math.max(0, study.getPlanCatalog('peppa').length - 72) },
-        { category: 'unlock1', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('unlock1').length, totalCount: study.getPlanCatalog('unlock1').length }
+        { category: 'unlock1', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('unlock1').length, totalCount: study.getPlanCatalog('unlock1').length },
+        { category: 'vocabulary', slotCount: 1, startNo: 1, endNo: 32, totalCount: 1690, round: vocabularyPlan && vocabularyPlan.round, currentList: vocabularyPlan && vocabularyPlan.currentList }
       ]
     }
     : null;
@@ -161,7 +166,39 @@ async function getLevelOverview(event) {
         planRunType: 'normal',
         planDayIndex: dashboard.planDayIndex
       };
-    }),
+    }).concat(vocabularyPlan ? [{
+      category: 'vocabulary',
+      categoryLabel: '词汇',
+      totalCount: 1690,
+      completedCount: vocabularyPlan.completedToday ? 1 : 0,
+      todayTask: {
+        category: 'vocabulary',
+        taskId: vocabularyPlan.planId,
+        title: vocabularyPlan.summary,
+        displayTitle: vocabularyPlan.title,
+        completedToday: vocabularyPlan.completedToday,
+        repeatTarget: 1,
+        playCount: vocabularyPlan.completedToday ? 1 : 0,
+        planSlotIndex: 1,
+        planSlotCount: 1
+      },
+      tasks: [{
+        category: 'vocabulary',
+        taskId: vocabularyPlan.planId,
+        title: vocabularyPlan.summary,
+        displayTitle: vocabularyPlan.title,
+        completedToday: vocabularyPlan.completedToday,
+        repeatTarget: 1,
+        playCount: vocabularyPlan.completedToday ? 1 : 0,
+        planSlotIndex: 1,
+        planSlotCount: 1
+      }],
+      isPendingAsset: false,
+      todayTaskCount: 1,
+      plannedDurationSec: 0,
+      planRunType: 'normal',
+      planDayIndex: dashboard.planDayIndex
+    }] : []),
     a2Categories: LEVEL_CATEGORY_GROUPS.A2.flatMap((categoryId) => standaloneOverviews[categoryId].overview),
     b1Categories: LEVEL_CATEGORY_GROUPS.B1.flatMap((categoryId) => standaloneOverviews[categoryId].overview),
     b2Categories: LEVEL_CATEGORY_GROUPS.B2.flatMap((categoryId) => standaloneOverviews[categoryId].overview),

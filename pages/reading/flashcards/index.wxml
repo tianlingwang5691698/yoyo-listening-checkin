@@ -101,7 +101,9 @@
           <view class="library-vocab-drawer-head">
             <view class="library-vocab-head-copy">
               <view class="library-vocab-title">{{activeSourceTitle || texts.myLibrary}} <text wx:if="{{demoMode}}" class="library-vocab-demo">{{texts.demo}}</text></view>
-              <view class="library-vocab-subtitle" wx:if="{{!loading}}">{{texts.learned}} {{planSummary.learned}} / {{planSummary.total}} · {{texts.checkin}} {{vocabCheckinDays}} {{texts.days}}</view>
+              <view class="library-vocab-subtitle" wx:if="{{!loading && dailyPlanMode}}">{{texts.roundLabel}}{{dailyPlanRound}} · {{texts.mainListLabel}} List {{dailyPlanCurrentList}}</view>
+              <view class="library-vocab-subtitle" wx:if="{{!loading && dailyPlanMode}}">{{texts.dueReviewLabel}}：{{dailyPlanReviewListsText}}</view>
+              <view class="library-vocab-subtitle" wx:elif="{{!loading}}">{{texts.learned}} {{planSummary.learned}} / {{planSummary.total}} · {{texts.checkin}} {{vocabCheckinDays}} {{texts.days}}</view>
               <view class="vocab-data-skeleton" wx:else></view>
               <view class="library-vocab-phonetic" wx:if="{{phoneticPreview}}">{{phoneticPreview}}</view>
             </view>
@@ -138,7 +140,7 @@
           <text selectable="{{true}}" wx:for="{{flashcardDebugLines}}" wx:key="*this">{{item}}</text>
         </view>
 
-        <view class="library-vocab-handles">
+        <view class="library-vocab-handles" wx:if="{{!dailyPlanMode}}">
           <view bindtap="togglePlanSettings">{{texts.adjust}}</view>
           <view bindtap="toggleLibraryVisible">{{libraryVisible ? texts.collapse : texts.viewLibrary}}</view>
         </view>
@@ -218,8 +220,9 @@
           <view class="library-vocab-archive"><text></text><text></text><text></text></view>
           <view class="library-vocab-complete-stamp">{{texts.complete}}</view>
           <view class="library-vocab-complete-title">{{repeatMode ? texts.repeatCompleteTitle : texts.completeTitle}}</view>
+          <view class="complete-encouragement" wx:if="{{completionEncouragement}}">{{completionEncouragement}}</view>
           <view class="complete-summary library-vocab-complete-summary">
-            <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
+            <view class="complete-summary-item"><text class="complete-summary-label">{{dailyPlanMode ? texts.completeMainList : texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
             <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeReview}}</text><text class="complete-summary-value">{{reviewDueCount}}</text></view>
           </view>
           <button class="library-vocab-complete-action" disabled="{{dictationPromptPending || dictationPromptVisible}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">{{texts.returnLibrary}}</button>
@@ -378,7 +381,9 @@
         <view class="progress-head">
           <view class="hero-copy">
             <view class="progress-title">{{activeSourceTitle || texts.myLibrary}} <text wx:if="{{demoMode}}" class="demo-tag">{{texts.demo}}</text></view>
-            <view class="progress-copy" wx:if="{{!loading}}">{{texts.learned}} {{planSummary.learned}} / {{planSummary.total}} · {{texts.checkin}} {{vocabCheckinDays}} {{texts.days}}</view>
+            <view class="progress-copy" wx:if="{{!loading && dailyPlanMode}}">{{texts.roundLabel}}{{dailyPlanRound}} · {{texts.mainListLabel}} List {{dailyPlanCurrentList}}</view>
+            <view class="progress-copy" wx:if="{{!loading && dailyPlanMode}}">{{texts.dueReviewLabel}}：{{dailyPlanReviewListsText}}</view>
+            <view class="progress-copy" wx:elif="{{!loading}}">{{texts.learned}} {{planSummary.learned}} / {{planSummary.total}} · {{texts.checkin}} {{vocabCheckinDays}} {{texts.days}}</view>
             <view class="vocab-data-skeleton" wx:else></view>
             <view class="phonetic-preview" wx:if="{{phoneticPreview}}">{{phoneticPreview}}</view>
           </view>
@@ -418,7 +423,7 @@
         <text selectable="{{true}}" wx:for="{{flashcardDebugLines}}" wx:key="*this">{{item}}</text>
       </view>
 
-      <view class="sublevel-actions">
+      <view class="sublevel-actions" wx:if="{{!dailyPlanMode}}">
         <view bindtap="togglePlanSettings">{{texts.adjust}}</view>
         <view bindtap="toggleLibraryVisible">{{libraryVisible ? texts.collapse : texts.viewLibrary}}</view>
       </view>
@@ -513,8 +518,9 @@
         <view class="complete-stack"><text></text><text></text><text></text></view>
         <view class="complete-badge">{{texts.complete}}</view>
         <view class="complete-title">{{repeatMode ? texts.repeatCompleteTitle : texts.completeTitle}}</view>
+        <view class="complete-encouragement" wx:if="{{completionEncouragement}}">{{completionEncouragement}}</view>
         <view class="complete-summary">
-          <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
+          <view class="complete-summary-item"><text class="complete-summary-label">{{dailyPlanMode ? texts.completeMainList : texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
           <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeReview}}</text><text class="complete-summary-value">{{reviewDueCount}}</text></view>
         </view>
         <button class="complete-action" disabled="{{dictationPromptPending || dictationPromptVisible}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">{{texts.returnLibrary}}</button>
@@ -579,7 +585,7 @@
 
 <view class="dictation-jump-mask theme-{{theme}} language-{{language}}" wx:if="{{dictationPromptVisible}}" catchtap="dismissDictationPrompt">
   <view class="dictation-jump-dialog" catchtap="noop">
-    <view class="dictation-jump-mark">练</view>
+    <view class="dictation-jump-mark">{{texts.practiceMark}}</view>
     <view class="dictation-jump-title">{{texts.practicePromptTitle}}</view>
     <view class="dictation-jump-source">{{dictationPromptSourceTitle}}</view>
     <view class="dictation-jump-copy">{{repeatMode ? texts.practicePromptRepeatCopy : texts.practicePromptPlanCopy}}</view>
