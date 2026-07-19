@@ -15,17 +15,18 @@ const FLASHCARD_WORDS_KEY = 'readingFlashcardWordsV1';
 const FLASHCARD_ITEMS_KEY = 'readingFlashcardItemsV1';
 const EBBINGHAUS_REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
 
-function buildOptionList(options) {
-  return ['A', 'B', 'C', 'D', 'E', 'F'].filter((key) => options && options[key]).map((key) => ({
+function buildOptionList(options, optionImages) {
+  return ['A', 'B', 'C', 'D', 'E', 'F'].filter((key) => (options && options[key]) || (optionImages && optionImages[key] && optionImages[key].src)).map((key) => ({
     key,
-    text: options[key],
-    tokens: tokenizeChunkText(options[key]),
+    text: options && options[key] || '',
+    image: optionImages && optionImages[key] || null,
+    tokens: tokenizeChunkText(options && options[key] || ''),
     selected: false
   }));
 }
 
 function hasOptions(question) {
-  return !!(question && question.options && buildOptionList(question.options).length);
+  return !!(question && buildOptionList(question.options, question.optionImages).length);
 }
 
 function normalizeAnswerText(value) {
@@ -115,8 +116,9 @@ function normalizePassage(passage, answers, submitted, review) {
     return null;
   }
   const cleanPassageText = stripQuestionBlockFromPassage(passage.passage);
-  const isClozePassage = String(passage.section || '').toUpperCase() === 'C'
-    || (passage.questions || []).some((question) => question.questionType === 'blank');
+  const inlineClozeBlanks = findClozeBlanks(passage.passage);
+  const isClozePassage = inlineClozeBlanks.length > 0
+    && (passage.questions || []).some((question) => question.questionType === 'blank');
   const sourceQuestions = isClozePassage ? buildClozeQuestions(passage) : (passage.questions || []);
   const analysisByNumber = ((review && review.analysis) || []).reduce((map, item) => {
     if (item && item.number !== undefined && item.number !== null) {
@@ -130,13 +132,16 @@ function normalizePassage(passage, answers, submitted, review) {
     const userAnswer = String(answers[String(question.number)] || '');
     const rawAnswer = String(question.answer || '').trim();
     const answer = type === 'choice' ? rawAnswer.toUpperCase() : rawAnswer;
-    const answerDisplay = formatAnswerDisplay(answer);
+    const acceptedAnswers = type === 'blank' && Array.isArray(question.acceptedAnswers) && question.acceptedAnswers.length
+      ? question.acceptedAnswers.map((item) => String(item || '').trim()).filter(Boolean)
+      : [answer].filter(Boolean);
+    const answerDisplay = acceptedAnswers.map(formatAnswerDisplay).join(' / ');
     const selected = type === 'choice' ? userAnswer.trim().toUpperCase() : userAnswer;
     const selectedDisplay = formatAnswerDisplay(selected);
     const isCorrect = submitted && answer ? (
       type === 'choice'
         ? selected === answer
-        : normalizeAnswerText(selected) === normalizeAnswerText(answer)
+        : acceptedAnswers.some((item) => normalizeAnswerText(selected) === normalizeAnswerText(item))
     ) : null;
     return Object.assign({}, question, {
       type,
@@ -145,10 +150,11 @@ function normalizePassage(passage, answers, submitted, review) {
       selectedDisplay,
       inputValue: type === 'blank' ? selected : '',
       answer,
+      acceptedAnswers,
       answerDisplay,
       isCorrect,
       reviewAnalysis,
-      optionsList: buildOptionList(question.options).map((option) => Object.assign({}, option, {
+      optionsList: buildOptionList(question.options, question.optionImages).map((option) => Object.assign({}, option, {
         selected: option.key === selected,
         correct: !!submitted && !!answer && option.key === answer,
         wrong: !!submitted && !!answer && option.key === selected && selected !== answer

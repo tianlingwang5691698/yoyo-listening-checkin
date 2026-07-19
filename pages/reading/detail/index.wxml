@@ -72,6 +72,9 @@
               </view>
             </view>
           </view>
+          <view class="passage-source-images" wx:if="{{passage.images && passage.images.length}}">
+            <image class="passage-source-image" wx:for="{{passage.images}}" wx:key="src" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+          </view>
         </view>
       </view>
 
@@ -134,6 +137,7 @@
                   <text class="option-badge wrong" wx:elif="{{option.wrong}}">{{texts.yours}}</text>
                 </view>
                 <view class="option-text">
+                  <image class="option-source-image" wx:if="{{option.image && option.image.src}}" src="{{option.image.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
                   <block wx:if="{{submitted}}">
                     <text wx:for="{{option.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
                   </block>
@@ -344,6 +348,9 @@
               </view>
             </view>
           </view>
+          <view class="passage-source-images" wx:if="{{passage.images && passage.images.length}}">
+            <image class="passage-source-image" wx:for="{{passage.images}}" wx:key="src" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+          </view>
         </view>
       </view>
 
@@ -405,6 +412,7 @@
                   <text class="option-badge wrong" wx:elif="{{option.wrong}}">{{texts.yours}}</text>
                 </view>
                 <view class="option-text">
+                  <image class="option-source-image" wx:if="{{option.image && option.image.src}}" src="{{option.image.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
                   <block wx:if="{{submitted}}">
                     <text wx:for="{{option.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
                   </block>

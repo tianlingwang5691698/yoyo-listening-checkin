@@ -62,7 +62,7 @@ async function main() {
     questionCount: Array.isArray(item.questions) ? item.questions.length : Number(item.questionCount || 0),
     status: item.status || 'sample'
   }));
-  if (directory.length !== 785 || new Set(directory.map((item) => item._id)).size !== directory.length) {
+  if (directory.length !== 925 || new Set(directory.map((item) => item._id)).size !== directory.length) {
     throw new Error(`reading-directory-validation-failed:${directory.length}`);
   }
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(directory)}\n`);

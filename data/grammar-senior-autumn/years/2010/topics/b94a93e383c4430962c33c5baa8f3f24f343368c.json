@@ -1,0 +1,62 @@
+{
+  "topicId": "verb:tense-voice",
+  "topic": "时态语态",
+  "questions": [
+    {
+      "_id": "sh-autumn-2010-grammar-q28",
+      "sourceSetId": "sh-autumn-2010-grammar",
+      "year": 2010,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2010年上海秋季高考英语真题及答案.doc",
+      "number": 28,
+      "prompt": "Every few years, the coal workers _____ their lungs X-rayed to ensure their health.",
+      "options": {
+        "A": "are having",
+        "B": "have",
+        "C": "have had",
+        "D": "had had"
+      },
+      "answer": "B",
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "topicId": "verb:tense-voice",
+      "topic": "时态语态",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    },
+    {
+      "_id": "sh-autumn-2010-grammar-q31",
+      "sourceSetId": "sh-autumn-2010-grammar",
+      "year": 2010,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2010年上海秋季高考英语真题及答案.doc",
+      "number": 31,
+      "prompt": "The church tower which _____ will be open to tourists soon. The work is almost finished.",
+      "options": {
+        "A": "has restored",
+        "B": "has been restored",
+        "C": "is restoring",
+        "D": "is being restored"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "topicId": "verb:tense-voice",
+      "topic": "时态语态",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

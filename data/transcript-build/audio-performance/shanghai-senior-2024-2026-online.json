@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-18T17:25:05.323Z",
+  "rows": [
+    {
+      "session": "spring",
+      "year": 2024,
+      "itemId": "sh-spring-2024-listening",
+      "cloudPath": "_content/listening-senior-spring/audio/sh-spring-2024-listening-c28a462caf-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    },
+    {
+      "session": "autumn",
+      "year": 2024,
+      "itemId": "sh-autumn-2024-listening",
+      "cloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2024-listening-b7bc2bb8fd-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    },
+    {
+      "session": "spring",
+      "year": 2025,
+      "itemId": "sh-spring-2025-listening",
+      "cloudPath": "_content/listening-senior-spring/audio/sh-spring-2025-listening-fb7daa540d-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    }
+  ],
+  "onlineDirectory": {
+    "material": {
+      "wallMs": 360,
+      "functionMs": 3,
+      "writingSpring": [
+        "sh-spring-2024-summary-writing",
+        "sh-spring-2024-translation",
+        "sh-spring-2024-writing",
+        "sh-spring-2025-summary-writing",
+        "sh-spring-2025-translation",
+        "sh-spring-2025-writing",
+        "sh-spring-2026-summary-writing",
+        "sh-spring-2026-translation",
+        "sh-spring-2026-writing"
+      ],
+      "writingAutumn": [
+        "sh-autumn-2024-summary-writing",
+        "sh-autumn-2024-translation",
+        "sh-autumn-2024-writing",
+        "sh-autumn-2025-summary-writing",
+        "sh-autumn-2025-translation",
+        "sh-autumn-2025-writing"
+      ],
+      "listeningSpring": [
+        "sh-spring-2024-listening",
+        "sh-spring-2025-listening"
+      ],
+      "listeningAutumn": [
+        "sh-autumn-2024-listening"
+      ]
+    },
+    "reading": {
+      "wallMs": 278,
+      "functionMs": 11,
+      "springCount": 42,
+      "autumnCount": 56,
+      "springPapers": [
+        "sh-spring-2026",
+        "sh-spring-2025",
+        "sh-spring-2024"
+      ],
+      "autumnPapers": [
+        "sh-autumn-2025",
+        "sh-autumn-2024"
+      ]
+    }
+  },
+  "expected": {
+    "writingSpring": 9,
+    "writingAutumn": 6,
+    "listeningSpring": [
+      "sh-spring-2024-listening",
+      "sh-spring-2025-listening"
+    ],
+    "listeningAutumn": [
+      "sh-autumn-2024-listening"
+    ],
+    "springReadingCount": 42,
+    "autumnReadingCount": 56,
+    "springPapers": [
+      "sh-spring-2026",
+      "sh-spring-2025",
+      "sh-spring-2024"
+    ],
+    "autumnPapers": [
+      "sh-autumn-2025",
+      "sh-autumn-2024"
+    ]
+  }
+}

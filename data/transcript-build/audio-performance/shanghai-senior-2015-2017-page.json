@@ -1,0 +1,224 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-18T18:37:02.748Z",
+  "papers": [
+    {
+      "session": "autumn",
+      "year": 2015,
+      "reading": {
+        "paperId": "sh-autumn-2015",
+        "shellMs": 4282,
+        "indexReadyMs": 27,
+        "clozeReadyMs": 11,
+        "sectionCReadyMs": 13,
+        "imageReadyMs": 9,
+        "imageCount": 1
+      },
+      "writing": {
+        "paperId": "sh-autumn-2015",
+        "shellMs": 4078,
+        "indexReadyMs": 16,
+        "translationReadyMs": 3,
+        "summaryReadyMs": 0,
+        "writingReadyMs": 3,
+        "translationCount": 5,
+        "requirementCount": 2,
+        "imageCount": 1
+      },
+      "listening": {
+        "paperId": "sh-autumn-2015",
+        "itemId": "sh-autumn-2015-listening",
+        "shellMs": 3903,
+        "indexReadyMs": 8,
+        "duration": "16:44",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3878,
+            "detailReadyMs": 7,
+            "clickToPlayMs": 15
+          },
+          {
+            "round": 2,
+            "shellMs": 3919,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 15
+          },
+          {
+            "round": 3,
+            "shellMs": 3881,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 12
+          }
+        ]
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2016,
+      "reading": {
+        "paperId": "sh-autumn-2016",
+        "shellMs": 4085,
+        "indexReadyMs": 37,
+        "clozeReadyMs": 9,
+        "sectionCReadyMs": 10,
+        "imageReadyMs": 0,
+        "imageCount": 0
+      },
+      "writing": {
+        "paperId": "sh-autumn-2016",
+        "shellMs": 3939,
+        "indexReadyMs": 15,
+        "translationReadyMs": 3,
+        "summaryReadyMs": 0,
+        "writingReadyMs": 3,
+        "translationCount": 5,
+        "requirementCount": 2,
+        "imageCount": 0
+      },
+      "listening": {
+        "paperId": "sh-autumn-2016",
+        "itemId": "sh-autumn-2016-listening",
+        "shellMs": 3904,
+        "indexReadyMs": 6,
+        "duration": "18:13",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3873,
+            "detailReadyMs": 8,
+            "clickToPlayMs": 16
+          },
+          {
+            "round": 2,
+            "shellMs": 3894,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 12
+          },
+          {
+            "round": 3,
+            "shellMs": 3885,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 12
+          }
+        ]
+      }
+    },
+    {
+      "session": "spring",
+      "year": 2017,
+      "reading": {
+        "paperId": "sh-spring-2017",
+        "shellMs": 4001,
+        "indexReadyMs": 36,
+        "clozeReadyMs": 6,
+        "sectionCReadyMs": 12,
+        "imageReadyMs": 0,
+        "imageCount": 0
+      },
+      "writing": {
+        "paperId": "sh-spring-2017",
+        "shellMs": 3956,
+        "indexReadyMs": 15,
+        "translationReadyMs": 4,
+        "summaryReadyMs": 3,
+        "writingReadyMs": 2,
+        "translationCount": 4,
+        "requirementCount": 2,
+        "imageCount": 0
+      },
+      "listening": {
+        "paperId": "sh-spring-2017",
+        "itemId": "sh-spring-2017-listening",
+        "shellMs": 3913,
+        "indexReadyMs": 8,
+        "duration": "14:39",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3869,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 20
+          },
+          {
+            "round": 2,
+            "shellMs": 3885,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 14
+          },
+          {
+            "round": 3,
+            "shellMs": 3885,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 14
+          }
+        ]
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2017,
+      "reading": {
+        "paperId": "sh-autumn-2017",
+        "shellMs": 4000,
+        "indexReadyMs": 32,
+        "clozeReadyMs": 9,
+        "sectionCReadyMs": 12,
+        "imageReadyMs": 0,
+        "imageCount": 0
+      },
+      "writing": {
+        "paperId": "sh-autumn-2017",
+        "shellMs": 3946,
+        "indexReadyMs": 16,
+        "translationReadyMs": 3,
+        "summaryReadyMs": 2,
+        "writingReadyMs": 2,
+        "translationCount": 4,
+        "requirementCount": 2,
+        "imageCount": 0
+      },
+      "listening": {
+        "paperId": "sh-autumn-2017",
+        "itemId": "sh-autumn-2017-listening",
+        "shellMs": 3892,
+        "indexReadyMs": 8,
+        "duration": "28:16",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3872,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 15
+          },
+          {
+            "round": 2,
+            "shellMs": 3887,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 15
+          },
+          {
+            "round": 3,
+            "shellMs": 3895,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 12
+          }
+        ]
+      }
+    }
+  ],
+  "screenshots": {
+    "reading2015": "/tmp/shanghai-senior-2015-2017/reading-2015-poster.png",
+    "writing2015": "/tmp/shanghai-senior-2015-2017/writing-2015-guided.png",
+    "listening2015": "/tmp/shanghai-senior-2015-2017/listening-2015.png"
+  },
+  "grammar": {
+    "accepted": 0,
+    "reason": "These papers use inline Grammar and Vocabulary Section A cloze passages"
+  },
+  "thresholds": {
+    "clickToPlayMs": 500
+  },
+  "exceptions": [],
+  "maxClickToPlayMs": 20
+}

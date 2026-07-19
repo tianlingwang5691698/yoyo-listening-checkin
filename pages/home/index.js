@@ -15,7 +15,7 @@ const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
 const HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV2';
-const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV3';
+const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV4';
 const LISTENING_PLAN_OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV5';
 const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
 

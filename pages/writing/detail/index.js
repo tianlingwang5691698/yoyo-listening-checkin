@@ -31,7 +31,7 @@ function splitExplicitRequirements(value) {
 
 function buildPromptDisplay(prompt) {
   const raw = cleanPromptText(prompt && prompt.prompt);
-  if (!raw) return { directions: '', scenario: '', requirementsTitle: '', requirements: [] };
+  if (!raw) return { directions: '', scenario: '', requirementsTitle: '', requirements: [], promptTable: null, promptStarter: '' };
   const directionsMatch = raw.match(/^Directions\s*:\s*[^\u3400-\u9fff]*(?=[\u3400-\u9fff])/i);
   const directions = cleanPromptText((prompt && prompt.directions) || (directionsMatch && directionsMatch[0]));
   const body = cleanPromptText(directionsMatch ? raw.slice(directionsMatch[0].length) : raw);
@@ -60,7 +60,11 @@ function buildPromptDisplay(prompt) {
     directions,
     scenario,
     requirementsTitle: requirements.length ? (requirementsTitle || '写作要点：') : '',
-    requirements
+    requirements,
+    promptTable: prompt && prompt.promptTable && Array.isArray(prompt.promptTable.headers) && Array.isArray(prompt.promptTable.rows)
+      ? prompt.promptTable
+      : null,
+    promptStarter: cleanPromptText(prompt && prompt.promptStarter)
   };
 }
 
@@ -83,6 +87,14 @@ function buildTranslationQuestions(prompt) {
     inputValue: '',
     analysis: null
   }));
+}
+
+function buildPromptImages(prompt) {
+  return (prompt && Array.isArray(prompt.images) ? prompt.images : []).map((image) => ({
+    cloudPath: cleanPromptText(image && image.cloudPath),
+    alt: cleanPromptText(image && image.alt) || '作文题原图',
+    src: cleanPromptText(image && (image.src || image.url))
+  })).filter((image) => image.cloudPath || image.src);
 }
 
 function findPrompt(materialIndex, promptId) {
@@ -122,6 +134,7 @@ Page({
   data: page.createCloudPageData({
     prompt: null,
     promptDisplay: null,
+    promptImages: [],
     isTranslation: false,
     translationQuestions: [],
     translationSubmitted: false,
@@ -159,6 +172,7 @@ Page({
     this.setData({
       prompt: initialPromptReady ? prompt : null,
       promptDisplay: initialPromptReady && !initialTranslation ? buildPromptDisplay(prompt) : null,
+      promptImages: initialPromptReady && !initialTranslation ? buildPromptImages(prompt) : [],
       isTranslation: initialTranslation,
       translationQuestions: initialTranslation ? buildTranslationQuestions(prompt) : [],
       translationSubmitted: false,
@@ -186,12 +200,14 @@ Page({
     this.setData({
       prompt,
       promptDisplay: isTranslation ? null : buildPromptDisplay(prompt),
+      promptImages: isTranslation ? [] : buildPromptImages(prompt),
       isTranslation,
       translationQuestions: isTranslation ? buildTranslationQuestions(prompt) : [],
       translationSubmitted: false,
       translationAnalyzing: false,
       translationAnalysisSummary: ''
     });
+    if (!isTranslation) await this.resolvePromptImages(prompt);
     this.writingPerf.mark('cloudRefresh', {
       source,
       cacheHit: source === 'snapshot' || source === 'storage' || source === 'cache',
@@ -204,6 +220,22 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+  },
+  async resolvePromptImages(prompt) {
+    const promptId = String(prompt && prompt._id || '');
+    const images = buildPromptImages(prompt);
+    if (!images.some((image) => image.cloudPath && !image.src)) return;
+    const resolved = await Promise.all(images.map(async (image) => {
+      if (image.src || !image.cloudPath) return image;
+      try {
+        return Object.assign({}, image, { src: await store.getTempFileURL(image.cloudPath) });
+      } catch (error) {
+        return image;
+      }
+    }));
+    if (String(this.data.prompt && this.data.prompt._id || '') === promptId) {
+      this.setData({ promptImages: resolved });
+    }
   },
   onEssayInput(event) {
     const essayText = event.detail.value || '';

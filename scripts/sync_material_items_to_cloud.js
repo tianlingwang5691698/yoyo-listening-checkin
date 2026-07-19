@@ -19,7 +19,7 @@ const SOURCES = [
   { key: 'listeningSeniorSpring', cloudPath: '_content/listening-senior-spring/listening-practice.json', itemDir: '_content/listening-senior-spring/items-v1', localPath: 'data/listening-senior-spring/listening-practice.json' },
   { key: 'listeningSeniorAutumn', cloudPath: '_content/listening-senior-autumn/listening-practice.json', itemDir: '_content/listening-senior-autumn/items-v1', localPath: 'data/listening-senior-autumn/listening-practice.json' }
 ];
-const EXPECTED_COUNTS = { writingEm1: 159, writingEm2: 181, writingSeniorSpring: 0, writingSeniorAutumn: 2, listeningEm1: 67, listeningEm2: 76, listeningSeniorSpring: 0, listeningSeniorAutumn: 1 };
+const EXPECTED_COUNTS = { writingEm1: 159, writingEm2: 181, writingSeniorSpring: 29, writingSeniorAutumn: 31, listeningEm1: 67, listeningEm2: 76, listeningSeniorSpring: 8, listeningSeniorAutumn: 10 };
 
 function request(cloudPath, method = 'GET') {
   const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
@@ -64,7 +64,7 @@ function slimWritingItem(item) {
     category: item.category, contentType: item.contentType,
     contentRevision: item.contentRevision, paperId: item.paperId,
     paperOrder: item.paperOrder, questionCount: item.questionCount,
-    minWords: item.minWords, score: item.score
+    minWords: item.minWords, maxWords: item.maxWords, score: item.score
   };
 }
 

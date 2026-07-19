@@ -9,8 +9,11 @@
 - 阅读完形、单篇阅读和标题匹配分开建模；正文不得混入题干、选项或答案。
 - 同一年份试卷必须使用 `paperId` 归档，按原卷大题、Section 和原题号顺序展示；不得把 `Section B (A–D)` 展平成无归属的 BA–BD。
 - 语法与词汇的语篇选词填空可使用阅读式页面建模，但标题必须保留 `Grammar and Vocabulary Section B`，不得误标为阅读 Section B。
+- 当年原卷没有独立语法选择题时，`Grammar and Vocabulary Section A` 放入阅读区，位于 Section B 之前；空格必须嵌入原文原位置，保留原题号和括号提示词，不得拆成文章外的独立题卡。
 - 写作只保留情境、任务、字数和注意事项；删除范文、解析、评分标准。原卷用圆点或编号列出的写作要点必须保留为 `requirements[]`，每点独立展示，不得压成连续段落。
+- 写作题中的原卷表格必须保留表头、行标题和单元格顺序，使用 `promptTable` 独立展示，不得粘连到写作要点。
 - 第 II 卷含翻译时，写作入口按原卷顺序展示 `I. Translation` 和 `II. Guided Writing`。翻译每题使用独立输入区，括号提示词必须保留；参考译文只能在学生完成全部题目并提交后显示。
+- 现代卷含 `Summary Writing` 时，同一年写作入口按原卷 `Summary Writing → Translation → Guided Writing` 排序；概要写作保留原文、原题号和“不超过 N 词”，不得混入参考答案或范文。
 - 语法只收录题干、完整选项和可验证答案；按真正考点归类，细分考点题目按 `sha1(topicId).json` 拆分。
 - 语法分类发布前必须由 `gpt-5.6-sol` 逐题复核，并保留模型、分类版本、逐题主考点和依据的审计文件。分类以正确答案和唯一核心考点为准，禁止因干扰项中的情态动词、非谓语或从句关键词误分。
 - 听力题号必须连续，选择题和填空题分型；并列可接受答案用 `/` 保留。
@@ -43,8 +46,8 @@
 1. 一次只处理一个明确年份、一个考试类型；先核对原卷、答案卷、音频和线上现有版本，再开始清洗。
 2. 听力按原卷保留 Section A/B/C、题组说明、信息表标题、静态字段及其穿插位置；题号连续，音频转码、时长、播放性能按音频标准验收。
 3. 语法选择题先由 `gpt-5.6-sol` 逐题确认唯一主考点，再生成分类和题目分片；干扰项关键词不得参与主分类。
-4. 阅读按当年原卷顺序归档：Grammar and Vocabulary Section B、Reading Section A、Section B (A–D)、Section C；文章、题目、选项不得黏连或跨 Section。
-5. 写作入口先按考试类型、再按年份归组；同一年卷内按 `Translation → Guided Writing` 排列。翻译逐题独立，作文情境与要点逐条独立。
+4. 阅读按当年原卷顺序归档：Grammar and Vocabulary Section A、Section B、Reading Section A、Section B (A–D)、Section C；文章、题目、选项不得黏连或跨 Section。
+5. 写作入口先按考试类型、再按年份归组；无概要写作时按 `Translation → Guided Writing`，有概要写作时按 `Summary Writing → Translation → Guided Writing` 排列。翻译逐题独立，作文情境与要点逐条独立。
 6. 所有修订使用新 `_id` 或新版本目录；旧线上文件不覆盖、不删除、不改名，目录只能增加可用内容。
 7. 上传顺序固定为：本地生成与审计 → 回归测试 → 云端 dry-run → 新路径上传 → 公网逐文件 SHA1 → 云函数目录切换 → 云端接口直调 → CLI + `miniprogram-automator` 页面验收。
 8. 验收必须覆盖：年份分组、原卷 Section 顺序、题号与题量、静态字段位置、作文要点、翻译答案显隐、语法分类、总时长和首播性能；任一项失败不得推进下一年份。

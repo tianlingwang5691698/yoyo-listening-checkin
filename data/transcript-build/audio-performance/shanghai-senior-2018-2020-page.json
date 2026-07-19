@@ -1,0 +1,272 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-18T18:09:20.419Z",
+  "reading": {
+    "spring": {
+      "shellMs": 4313,
+      "indexReadyMs": 27,
+      "papers": [
+        {
+          "year": 2018,
+          "clozeReadyMs": 8,
+          "sectionCReadyMs": 11
+        },
+        {
+          "year": 2019,
+          "clozeReadyMs": 6,
+          "sectionCReadyMs": 8
+        },
+        {
+          "year": 2020,
+          "clozeReadyMs": 6,
+          "sectionCReadyMs": 8
+        }
+      ]
+    },
+    "autumn": {
+      "shellMs": 4032,
+      "indexReadyMs": 39,
+      "papers": [
+        {
+          "year": 2018,
+          "clozeReadyMs": 9,
+          "sectionCReadyMs": 13
+        },
+        {
+          "year": 2019,
+          "clozeReadyMs": 7,
+          "sectionCReadyMs": 11
+        },
+        {
+          "year": 2020,
+          "clozeReadyMs": 10,
+          "sectionCReadyMs": 13
+        }
+      ]
+    }
+  },
+  "writing": {
+    "spring": {
+      "shellMs": 4124,
+      "indexReadyMs": 16,
+      "papers": [
+        {
+          "year": 2018,
+          "translationReadyMs": 3,
+          "writingReadyMs": 3,
+          "requirementCount": 2
+        },
+        {
+          "year": 2019,
+          "translationReadyMs": 2,
+          "writingReadyMs": 3,
+          "requirementCount": 2
+        },
+        {
+          "year": 2020,
+          "translationReadyMs": 3,
+          "writingReadyMs": 3,
+          "requirementCount": 1
+        }
+      ]
+    },
+    "autumn": {
+      "shellMs": 3924,
+      "indexReadyMs": 15,
+      "papers": [
+        {
+          "year": 2018,
+          "translationReadyMs": 3,
+          "writingReadyMs": 3,
+          "requirementCount": 2
+        },
+        {
+          "year": 2019,
+          "translationReadyMs": 3,
+          "writingReadyMs": 3,
+          "requirementCount": 2
+        },
+        {
+          "year": 2020,
+          "translationReadyMs": 3,
+          "writingReadyMs": 3,
+          "requirementCount": 2
+        }
+      ]
+    }
+  },
+  "listening": {
+    "spring": {
+      "shellMs": 3919,
+      "indexReadyMs": 10,
+      "papers": [
+        {
+          "year": 2018,
+          "itemId": "sh-spring-2018-listening",
+          "duration": "15:53",
+          "rounds": [
+            {
+              "round": 1,
+              "shellMs": 3883,
+              "detailReadyMs": 8,
+              "clickToPlayMs": 15
+            },
+            {
+              "round": 2,
+              "shellMs": 3896,
+              "detailReadyMs": 5,
+              "clickToPlayMs": 12
+            },
+            {
+              "round": 3,
+              "shellMs": 3891,
+              "detailReadyMs": 6,
+              "clickToPlayMs": 12
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "itemId": "sh-spring-2019-listening",
+          "duration": "16:03",
+          "rounds": [
+            {
+              "round": 1,
+              "shellMs": 3877,
+              "detailReadyMs": 4,
+              "clickToPlayMs": 13
+            },
+            {
+              "round": 2,
+              "shellMs": 3878,
+              "detailReadyMs": 5,
+              "clickToPlayMs": 13
+            },
+            {
+              "round": 3,
+              "shellMs": 3877,
+              "detailReadyMs": 4,
+              "clickToPlayMs": 11
+            }
+          ]
+        },
+        {
+          "year": 2020,
+          "itemId": "sh-spring-2020-listening",
+          "duration": "16:11",
+          "rounds": [
+            {
+              "round": 1,
+              "shellMs": 3894,
+              "detailReadyMs": 6,
+              "clickToPlayMs": 14
+            },
+            {
+              "round": 2,
+              "shellMs": 3887,
+              "detailReadyMs": 6,
+              "clickToPlayMs": 13
+            },
+            {
+              "round": 3,
+              "shellMs": 3883,
+              "detailReadyMs": 6,
+              "clickToPlayMs": 13
+            }
+          ]
+        }
+      ]
+    },
+    "autumn": {
+      "shellMs": 3919,
+      "indexReadyMs": 8,
+      "papers": [
+        {
+          "year": 2018,
+          "itemId": "sh-autumn-2018-listening",
+          "duration": "16:23",
+          "rounds": [
+            {
+              "round": 1,
+              "shellMs": 3886,
+              "detailReadyMs": 4,
+              "clickToPlayMs": 13
+            },
+            {
+              "round": 2,
+              "shellMs": 3892,
+              "detailReadyMs": 6,
+              "clickToPlayMs": 13
+            },
+            {
+              "round": 3,
+              "shellMs": 3894,
+              "detailReadyMs": 6,
+              "clickToPlayMs": 13
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "itemId": "sh-autumn-2019-listening",
+          "duration": "16:15",
+          "rounds": [
+            {
+              "round": 1,
+              "shellMs": 3874,
+              "detailReadyMs": 6,
+              "clickToPlayMs": 14
+            },
+            {
+              "round": 2,
+              "shellMs": 3883,
+              "detailReadyMs": 5,
+              "clickToPlayMs": 13
+            },
+            {
+              "round": 3,
+              "shellMs": 3902,
+              "detailReadyMs": 5,
+              "clickToPlayMs": 13
+            }
+          ]
+        },
+        {
+          "year": 2020,
+          "itemId": "sh-autumn-2020-listening",
+          "duration": "16:03",
+          "rounds": [
+            {
+              "round": 1,
+              "shellMs": 3870,
+              "detailReadyMs": 7,
+              "clickToPlayMs": 21
+            },
+            {
+              "round": 2,
+              "shellMs": 3891,
+              "detailReadyMs": 5,
+              "clickToPlayMs": 11
+            },
+            {
+              "round": 3,
+              "shellMs": 3894,
+              "detailReadyMs": 5,
+              "clickToPlayMs": 13
+            }
+          ]
+        }
+      ]
+    },
+    "maxClickToPlayMs": 21
+  },
+  "screenshots": {
+    "reading": "/tmp/shanghai-senior-2018-2020/reading-2020-autumn-section-c.png",
+    "writing": "/tmp/shanghai-senior-2018-2020/writing-2020-autumn-guided.png",
+    "listening": "/tmp/shanghai-senior-2018-2020/listening-2020-autumn.png"
+  },
+  "thresholds": {
+    "clickToPlayMs": 500
+  },
+  "exceptions": []
+}

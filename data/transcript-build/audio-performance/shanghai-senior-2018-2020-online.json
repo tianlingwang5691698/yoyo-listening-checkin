@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-18T18:07:51.536Z",
+  "audio": [
+    {
+      "session": "spring",
+      "year": 2018,
+      "itemId": "sh-spring-2018-listening",
+      "cloudPath": "_content/listening-senior-spring/audio/sh-spring-2018-listening-f30eb06747-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    },
+    {
+      "session": "spring",
+      "year": 2019,
+      "itemId": "sh-spring-2019-listening",
+      "cloudPath": "_content/listening-senior-spring/audio/sh-spring-2019-listening-251d294421-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    },
+    {
+      "session": "spring",
+      "year": 2020,
+      "itemId": "sh-spring-2020-listening",
+      "cloudPath": "_content/listening-senior-spring/audio/sh-spring-2020-listening-cc42dd52b9-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    },
+    {
+      "session": "autumn",
+      "year": 2018,
+      "itemId": "sh-autumn-2018-listening",
+      "cloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2018-listening-8f60faf1a8-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    },
+    {
+      "session": "autumn",
+      "year": 2019,
+      "itemId": "sh-autumn-2019-listening",
+      "cloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2019-listening-96118039f4-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    },
+    {
+      "session": "autumn",
+      "year": 2020,
+      "itemId": "sh-autumn-2020-listening",
+      "cloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2020-listening-6404fa4b61-64k-mono.mp3",
+      "tempReady": true,
+      "tempCode": "SUCCESS",
+      "publicStatus": 200
+    }
+  ],
+  "calls": {
+    "material": {
+      "wallMs": 384,
+      "functionMs": 8
+    },
+    "reading": {
+      "wallMs": 240,
+      "functionMs": 32
+    }
+  },
+  "directory": {
+    "spring": {
+      "readingCount": 63,
+      "readingPapers": [
+        "sh-spring-2020",
+        "sh-spring-2019",
+        "sh-spring-2018"
+      ],
+      "writingIds": [
+        "sh-spring-2018-summary-writing",
+        "sh-spring-2018-translation",
+        "sh-spring-2018-writing",
+        "sh-spring-2019-summary-writing",
+        "sh-spring-2019-translation",
+        "sh-spring-2019-writing",
+        "sh-spring-2020-summary-writing",
+        "sh-spring-2020-translation",
+        "sh-spring-2020-writing"
+      ],
+      "listeningIds": [
+        "sh-spring-2018-listening",
+        "sh-spring-2019-listening",
+        "sh-spring-2020-listening"
+      ]
+    },
+    "autumn": {
+      "readingCount": 77,
+      "readingPapers": [
+        "sh-autumn-2020",
+        "sh-autumn-2019",
+        "sh-autumn-2018"
+      ],
+      "writingIds": [
+        "sh-autumn-2018-summary-writing",
+        "sh-autumn-2018-translation",
+        "sh-autumn-2018-writing",
+        "sh-autumn-2019-summary-writing",
+        "sh-autumn-2019-translation",
+        "sh-autumn-2019-writing",
+        "sh-autumn-2020-summary-writing",
+        "sh-autumn-2020-translation",
+        "sh-autumn-2020-writing"
+      ],
+      "listeningIds": [
+        "sh-autumn-2018-listening",
+        "sh-autumn-2019-listening",
+        "sh-autumn-2020-listening"
+      ]
+    }
+  }
+}

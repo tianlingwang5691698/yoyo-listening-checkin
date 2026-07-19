@@ -5,8 +5,8 @@ const i18n = require('../../utils/i18n');
 
 const text = (key, fallback) => i18n.getPageText('reading', key, undefined, fallback);
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
-const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV2';
-const READING_DIRECTORY_VERSION = 'senior-2009-v2';
+const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV6';
+const READING_DIRECTORY_VERSION = 'senior-2026-v3';
 const READING_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const HIDDEN_READING_EXAM_TYPES = new Set(['真题']);
 const READING_STAGE_EXAM_TYPES = {

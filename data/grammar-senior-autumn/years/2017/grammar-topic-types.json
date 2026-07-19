@@ -1,0 +1,44 @@
+[
+  {
+    "topicId": "verb",
+    "topic": "动词类",
+    "count": 1,
+    "children": [
+      {
+        "topicId": "verb:modal",
+        "topic": "情态动词",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "topicId": "lexical",
+    "topic": "词法类",
+    "count": 0,
+    "children": []
+  },
+  {
+    "topicId": "clause",
+    "topic": "从句类",
+    "count": 0,
+    "children": []
+  },
+  {
+    "topicId": "sentence",
+    "topic": "句型结构类",
+    "count": 0,
+    "children": []
+  },
+  {
+    "topicId": "logic",
+    "topic": "连词逻辑类",
+    "count": 0,
+    "children": []
+  },
+  {
+    "topicId": "communicative",
+    "topic": "情景交际类",
+    "count": 0,
+    "children": []
+  }
+]

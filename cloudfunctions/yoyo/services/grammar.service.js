@@ -19,7 +19,10 @@ const EM1_CONTENT_PATHS = {
   topicDir: '_content/grammar-em1/topics'
 };
 const SENIOR_SPRING_CONTENT_ROOTS = [];
-const SENIOR_AUTUMN_CONTENT_ROOTS = ['_content/grammar-senior-autumn/years/2009/v2'];
+const SENIOR_AUTUMN_CONTENT_ROOTS = [
+  '_content/grammar-senior-autumn/years/2009/v2',
+  '_content/grammar-senior-autumn/years/2010/v2'
+];
 const WRONG_COLLECTION = 'grammarWrongQuestions';
 const PROGRESS_COLLECTION = 'grammarTopicProgress';
 const EXPLANATION_COLLECTION = 'grammarQuestionExplanations';

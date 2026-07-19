@@ -1,8 +1,48 @@
 # 小程序设计语言与改动记录
 
+### 2026-07-19 上海高考 2018-2020 春考/秋考增量
+
+- 六套阅读按 `Grammar and Vocabulary Section A-B → Reading Section A → Section B (A-C) → Section C` 展示，题号 21-70；Grammar Section A 保持文章内横线填空。
+- 六套写作按 `Summary Writing → Translation → Guided Writing` 展示；翻译 72-75，作文 76，原卷隐含要点拆为独立行。
+- 六套听力保留 Section A/B、三个题组、1-20 题和总时长；2020 秋考源文件无 transcript，不补造。
+- 新增 48 个年份级不可变云端对象并逐条 SHA1 校验；目录缓存升级为 `senior-2026-v2`。
+- 单次 `miniprogram-automator` 批量验收通过，18 次首播最慢 21ms。
+
+### 2026-07-19 上海高考 2024-2026 春考/秋考增量
+
+- 阅读按整卷固定顺序展示 `Grammar and Vocabulary Section A-B → Reading Section A → Section B (A-C) → Section C`，题号统一为 21-70；Grammar Section A 保持文章内横线填空。
+- 写作按同年卷展示 `Summary Writing → Translation → Guided Writing`，翻译 72-75 独立输入，作文要点逐条显示。
+- 2024 春考、2024 秋考、2025 春考听力保留 Section A/B、1-20 题和总时长；三轮首播最慢 24ms。
+- 2025 秋考、2026 春考无源音频，不显示听力；2026 秋考源卷缺失，不补造、不发布。
+- 本轮只新增年份级不可变内容；云端 34 个文件逐条 SHA1 通过，页面目录缓存版本升级为 `senior-2026-v1`。
+
+### 2026-07-18 上海高考 2017 春考/秋考增量
+
+- 阅读按原卷保留 `Grammar and Vocabulary Section A-B → Reading Section A → Section B (A-C) → Section C`；Section A 使用文章内横线填空。
+- 2017 春考第 57 题四张课堂布局图按 A-D 放入对应选项，第 60-62 题保留原卷商品图。
+- 写作按同年卷显示 `Summary Writing → Translation → Guided Writing`；秋考作文保留“主题、时间、路线”原表。
+- 听力保留 Section A/B、20 道原题、真实 transcript 和总时长；本轮只新增 2017 年份级不可变内容。
+
 ### 2026-07-19 阅读入口初中目录调整
 
 - 阅读根目录按“初中 / 高中”分层；初中进入后展示“一模 / 二模”，高中进入后展示“春考 / 秋考”。“真题卷”不再展示，旧目录缓存同步适配，底层题库内容不删除，并为后续雅思阅读预留同级入口。
+
+### 2026-07-18 上海高考 2016 秋考增量
+
+- 板块：听力、阅读、写作。
+- 阅读按原卷保留 `Grammar and Vocabulary Section A-B → Reading Section A → Section B (A-C) → Section C`；Section A 16 题在文章内部横线作答，Section B (B) 保留气候图，Section C 显示为开放题。
+- 写作按年份组合 `I. Translation → II. Guided Writing`，保留调研图和两条独立要求。
+- 听力保留 Section A/B/C、Class Diary、Sue Walter 表格字段与 18:14 总时长。
+- 阅读、听力和写作目录缓存升级，已安装用户不复用缺少 2016 秋考的旧年份列表。
+- 新内容只使用 2016 年份级不可变路径；无独立语法选择题，不补造语法课堂数据。
+
+### 2026-07-18 上海高考 2010 秋考增量
+
+- 板块：阅读、写作、语法课堂。
+- 阅读按原卷保留 `Grammar and Vocabulary Section B → Reading Section A → Section B (A-C) → Section C → Section D`；开放题 81-84 独立输入。
+- 写作按年份组合 `I. Translation → II. Guided Writing`，作文三项要求独立分行，并在要求后展示本地原卷内嵌课堂图片。
+- 语法 25-40 由 `gpt-5.6-sol` 逐题复核；本地 Word 缺少听力 1-24 题正文，因此 2010 听力拒收，不用答案补造题目。
+- 新内容只使用 2010 年份级不可变路径；2009 目录、详情和资源保持不变。
 
 ### 2026-07-18 单词识义与拼写练习分层
 
@@ -4785,6 +4825,36 @@
 - 2026-07-18：高中写作入口新增同年卷任务顺序。2009 秋考目录显示“翻译 6 题 · 作文 1 题”，进入后依次为 `I. Translation`、`II. Guided Writing`；6 道翻译题使用独立卡片和独立输入框，全部完成并提交后才显示参考译文，避免题目黏连。
 - 2026-07-18：高中写作目录由“考试类型下混排所有任务”调整为“考试类型 → 年份 → 当年任务”。每个年份文件夹内固定按 `Translation → Guided Writing` 排列；2009 秋考的翻译与作文归入同一个 `2009年` 文件夹，后续年份不再混排。
 
+## 2026-07-18 · 2010 秋考 Section D 开放题
+
+- 阅读详情仅在正文含原卷编号空格时进入完形填空模式；Section D 开放回答题保留独立题卡，不再被误合并到正文。
+
+## 2026-07-18 · 2023 春考写作原卷信息
+
+- 2023 春考作文的两个编号要求独立展示，`Dear Tom：` 在要求后作为原卷起始语单独保留。
+- 本地文档未提供字数和分值时，页面不显示推测值；末页参考范文图片不进入题目。
+
+## 2026-07-18 · 2022 春考/秋考现代卷面结构
+
+- 阅读按 `Grammar and Vocabulary Section B → Reading Section A → Section B (A-C) → Section C` 展示，保留原题号 31-70。
+- 同一年写作区按原卷 `IV. Summary Writing → V. Translation → VI. Guided Writing` 排列；概要写作显示“不超过 60 词”，翻译与作文继续使用独立任务。
+- 春考与秋考听力均保留 Section A/B、三组 Section B 题组标题、20 道原题、真实总时长和官方听力文本。
+- Grammar and Vocabulary Section A 为无选项语篇填空，不满足当前语法选择题发布模型，保留拒收报告，不补造选项或分类。
+- 阅读目录缓存升级为 2022 专用版本，避免已访问用户继续看到 2009 年旧目录快照。
+- 听力播放按钮仅在音频 `onCanplay` 后解除加载态，避免新年份音频首次点击时仍等待网络缓冲。
+
+## 2026-07-18 · 2021 春考/秋考原卷结构
+
+- 两套阅读按 `Grammar and Vocabulary Section B → Reading Section A → Section B (A-C) → Section C` 展示，保留 31-70 题顺序。
+- 春考写作按 `Summary Writing → Translation → Guided Writing`；秋考缺失完整 Summary Directions，仅收录 `Translation → Guided Writing`。
+- 秋考作文课程信息使用三列独立表格展示，不再粘连到两个写作要点。
+- 阅读与素材目录缓存升级为 2021 回填版本，已访问用户可立即看到新年份。
+
+## 2026-07-18 · 高中 Section A 内联填空
+
+- 2021、2022 春考/秋考没有独立语法选择题，`Grammar and Vocabulary Section A` 进入阅读区并排在 Section B 前。
+- 输入框直接嵌入文章原横线位置，保留题号与 `(come)` 类提示词；并列正确答案均可判定为正确。
+
 ## 2026-07-19 · 写作批改独立模型配置
 
 - 写作批改只读取独立 `WRITING_SCORE_*` 配置，固定使用 `gpt-5.6-sol`，不回退其他模型。
@@ -4795,3 +4865,8 @@
 
 - 翻译题提交后使用写作专用 `gpt-5.6-sol` 逐题核对原意、必用词、语法、搭配和表达自然度，并展示推荐译文、关键点与具体修改。
 - 翻译分析、家长预览批改和历史记录自动续批统一使用 180 秒客户端等待上限。
+
+## 2026-07-19 · 2015–2017 上海高考真题验收
+
+- 2015 秋考新增阅读、写作和听力；2016 秋考、2017 春秋考完成线上完整性复核，缺少源卷的 2015/2016 春考不补造。
+- 单次 `miniprogram-automator` 会话验证原卷 Section 顺序、Section A 内联填空、翻译与作文同年排序、独立写作要点、原图、听力 Section 和总时长；四套音频三轮首播最慢 20ms。

@@ -7,9 +7,9 @@ const text = (key, fallback) => i18n.getPageText('material', key, undefined, fal
 
 const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
 const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV2';
-const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV3';
+const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV4';
 const MATERIAL_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
-const MATERIAL_CATALOG_VERSION = 'senior-2009-v5';
+const MATERIAL_CATALOG_VERSION = 'senior-2026-v3';
 
 function writingItemType(item) {
   const id = getMaterialItemId(item);
@@ -76,6 +76,8 @@ function groupByDistrict(items) {
     const itemType = isWritingItem ? writingItemType(item) : '';
     if (isWritingItem && itemType === 'translation') {
       map[district].translationQuestionCount = Number(map[district].translationQuestionCount || 0) + Number(item.questionCount || 0);
+    } else if (isWritingItem && itemType === 'summary-writing') {
+      map[district].summaryWritingTaskCount = Number(map[district].summaryWritingTaskCount || 0) + 1;
     } else if (isWritingItem) {
       map[district].writingTaskCount = Number(map[district].writingTaskCount || 0) + 1;
     }
@@ -87,7 +89,9 @@ function groupByDistrict(items) {
       taskSummary: isWritingItem
         ? (itemType === 'translation'
           ? `翻译 ${Number(item.questionCount || 0)} 题 · ${Number(item.score || 0)} 分`
-          : `作文 1 题${item.minWords ? ` · 不少于 ${item.minWords} 词` : ''}${item.score ? ` · ${item.score} 分` : ''}`)
+          : (itemType === 'summary-writing'
+            ? `概要写作 1 题${item.maxWords ? ` · 不超过 ${item.maxWords} 词` : ''}${item.score ? ` · ${item.score} 分` : ''}`
+            : `作文 1 题${item.minWords ? ` · 不少于 ${item.minWords} 词` : ''}${item.score ? ` · ${item.score} 分` : ''}`))
         : ''
     }));
   });
@@ -99,13 +103,16 @@ function groupByDistrict(items) {
   }).map((key) => {
     const group = map[key];
     group.items.sort((left, right) => {
-      const leftOrder = left.contentType === 'translation' ? 1 : 2;
-      const rightOrder = right.contentType === 'translation' ? 1 : 2;
+      const fallbackOrder = (item) => item.contentType === 'summary-writing' ? 1 : (item.contentType === 'translation' ? 2 : 3);
+      const leftOrder = Number(left.paperOrder || fallbackOrder(left));
+      const rightOrder = Number(right.paperOrder || fallbackOrder(right));
       return leftOrder - rightOrder;
     });
-    group.contentSummary = group.translationQuestionCount
-      ? `翻译 ${group.translationQuestionCount} 题 · 作文 ${group.writingTaskCount || 0} 题`
-      : '';
+    const summaryParts = [];
+    if (group.summaryWritingTaskCount) summaryParts.push(`概要写作 ${group.summaryWritingTaskCount} 题`);
+    if (group.translationQuestionCount) summaryParts.push(`翻译 ${group.translationQuestionCount} 题`);
+    if (group.writingTaskCount) summaryParts.push(`作文 ${group.writingTaskCount} 题`);
+    group.contentSummary = summaryParts.length > 1 ? summaryParts.join(' · ') : '';
     return group;
   });
 }

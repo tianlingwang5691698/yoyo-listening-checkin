@@ -1,0 +1,138 @@
+{
+  "examId": "autumn",
+  "year": 2010,
+  "model": "gpt-5.6-sol",
+  "reviewedAt": "2026-07-18",
+  "classificationRevision": 2,
+  "rule": "Classify by the correct answer and the single primary tested grammar point; distractor keywords must not determine the topic.",
+  "questions": [
+    {
+      "number": 25,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:preposition",
+      "subtopic": "介词",
+      "rationale": "along 表示沿着林荫大道慢跑，核心考查介词的路径意义。"
+    },
+    {
+      "number": 26,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:usage",
+      "subtopic": "词义与用法",
+      "rationale": "a three-hour journey 中数词和单数名词构成连字符复合形容词作定语。"
+    },
+    {
+      "number": 27,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:pronoun",
+      "subtopic": "代词",
+      "rationale": "depend on 的宾语与主语 we 同指，应用反身代词 ourselves。"
+    },
+    {
+      "number": 28,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "rationale": "Every few years 表示周期性习惯，限定谓语用一般现在时 have。"
+    },
+    {
+      "number": 29,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:modal",
+      "subtopic": "情态动词",
+      "rationale": "should have done 表示过去本应完成却未完成的事。"
+    },
+    {
+      "number": 30,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:usage",
+      "subtopic": "词义与用法",
+      "rationale": "as far as 表示距离范围到本地市场为止，与 travelled 的路程语义匹配。"
+    },
+    {
+      "number": 31,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "rationale": "教堂钟塔正在被修复且工程尚未完成，应用现在进行时被动语态 is being restored。"
+    },
+    {
+      "number": 32,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "have difficulty (in) doing 要求动名词 finding 作介词 in 省略后的补足成分。"
+    },
+    {
+      "number": 33,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "colleagues 与 amuse 为被动关系，过去分词 amused 作 keep 的宾语补足语。"
+    },
+    {
+      "number": 34,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:adverbial",
+      "subtopic": "状语从句",
+      "rationale": "However serious a problem 引导让步状语从句，采用 however + 形容词 + a + 名词的语序。"
+    },
+    {
+      "number": 35,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "approach 的逻辑主语与主句主语 we 一致且为主动关系，用现在分词 Approaching 作状语。"
+    },
+    {
+      "number": 36,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:noun",
+      "subtopic": "名词性从句",
+      "rationale": "that 引导的从句位于系动词 is 后作表语，从句成分完整且 that 不充当成分。"
+    },
+    {
+      "number": 37,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:noun",
+      "subtopic": "名词性从句",
+      "rationale": "which lane he is entering 作 know 的宾语，疑问词后使用陈述语序。"
+    },
+    {
+      "number": 38,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:relative",
+      "subtopic": "定语从句",
+      "rationale": "return to an energy source 决定介词 to，to which 引导定语从句修饰 source of energy。"
+    },
+    {
+      "number": 39,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:adverbial",
+      "subtopic": "状语从句",
+      "rationale": "Unless 引导否定条件状语从句，表示除非经理反对，否则就接纳 Tom。"
+    },
+    {
+      "number": 40,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "to reduce 是不定式后置修饰 the only way，we can imagine 是插入其间的定语从句。"
+    }
+  ]
+}

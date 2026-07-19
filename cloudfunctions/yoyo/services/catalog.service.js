@@ -57,6 +57,7 @@ function slimWritingItem(item) {
     paperOrder: item && item.paperOrder,
     questionCount: item && item.questionCount,
     minWords: item && item.minWords,
+    maxWords: item && item.maxWords,
     score: item && item.score
   };
 }
@@ -119,6 +120,13 @@ function matchesMaterialId(item, itemId) {
     .some((value) => String(value || '').trim() === itemId));
 }
 
+function applyMaterialContentPatches(item) {
+  if (!item || item._id !== 'sh-autumn-2010-translation') return item;
+  const directions = String(item.directions || '').trim();
+  if (!/\bin the$/i.test(directions)) return item;
+  return Object.assign({}, item, { directions: `${directions} brackets.` });
+}
+
 function downloadMaterialItemJson(cloudPath) {
   const baseUrl = String(CLOUD_ASSET_BASE_URL || '').replace(/\/+$/, '');
   const url = encodeURI(`${baseUrl}/${cloudPath}`);
@@ -164,7 +172,7 @@ async function loadMaterialItem(moduleId, itemId) {
       return null;
     }
   }));
-  const item = candidates.find((candidate) => matchesMaterialId(candidate, itemId)) || null;
+  const item = applyMaterialContentPatches(candidates.find((candidate) => matchesMaterialId(candidate, itemId)) || null);
   if (item) materialItemCache[itemId] = { savedAt: Date.now(), item };
   return item;
 }

@@ -5,8 +5,9 @@
       <view class="library-file-title">{{prompt.title}}</view>
       <view class="library-file-rules">
         <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
-        <text wx:else>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
-        <text>{{texts.fullScore}}{{prompt.score || 20}}{{texts.scoreUnit}}</text>
+        <text wx:elif="{{prompt.maxWords}}">不超过 {{prompt.maxWords}} 词</text>
+        <text wx:elif="{{prompt.minWords}}">{{texts.minWords}}{{prompt.minWords}}{{texts.words}}</text>
+        <text wx:if="{{prompt.score}}">{{texts.fullScore}}{{prompt.score}}{{texts.scoreUnit}}</text>
       </view>
     </view>
 
@@ -61,6 +62,19 @@
               <view class="library-requirement-dot"></view>
               <view class="library-requirement-text">{{item}}</view>
             </view>
+          </view>
+          <view class="library-prompt-table" wx:if="{{promptDisplay.promptTable}}">
+            <view class="library-prompt-table-row library-prompt-table-head">
+              <view class="library-prompt-table-cell" wx:for="{{promptDisplay.promptTable.headers}}" wx:key="*this">{{item}}</view>
+            </view>
+            <view class="library-prompt-table-row" wx:for="{{promptDisplay.promptTable.rows}}" wx:for-item="row" wx:key="label">
+              <view class="library-prompt-table-cell library-prompt-table-label">{{row.label}}</view>
+              <view class="library-prompt-table-cell" wx:for="{{row.values}}" wx:for-item="value" wx:key="*this">{{value}}</view>
+            </view>
+          </view>
+          <view class="library-prompt-starter" wx:if="{{promptDisplay.promptStarter}}">{{promptDisplay.promptStarter}}</view>
+          <view class="library-prompt-images" wx:if="{{promptImages.length}}">
+            <image class="library-prompt-image" wx:for="{{promptImages}}" wx:key="cloudPath" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
           </view>
         </block>
       </view>
@@ -158,8 +172,9 @@
     <view class="title">{{prompt.title}}</view>
     <view class="meta">
       <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
-      <text wx:else>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
-      <text>{{texts.fullScore}}{{prompt.score || 20}}{{texts.scoreUnit}}</text>
+      <text wx:elif="{{prompt.maxWords}}">不超过 {{prompt.maxWords}} 词</text>
+      <text wx:elif="{{prompt.minWords}}">{{texts.minWords}}{{prompt.minWords}}{{texts.words}}</text>
+      <text wx:if="{{prompt.score}}">{{texts.fullScore}}{{prompt.score}}{{texts.scoreUnit}}</text>
     </view>
   </view>
 
@@ -169,8 +184,9 @@
       <view class="section-title">{{texts.promptPaper}}</view>
       <view class="prompt-rules">
         <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
-        <text wx:else>{{texts.minWords}}{{prompt.minWords || 60}}{{texts.words}}</text>
-        <text>{{prompt.score || 20}}{{texts.scoreUnit}}</text>
+        <text wx:elif="{{prompt.maxWords}}">不超过 {{prompt.maxWords}} 词</text>
+        <text wx:elif="{{prompt.minWords}}">{{texts.minWords}}{{prompt.minWords}}{{texts.words}}</text>
+        <text wx:if="{{prompt.score}}">{{prompt.score}}{{texts.scoreUnit}}</text>
       </view>
     </view>
     <view class="prompt-content">
@@ -213,6 +229,19 @@
             <view class="requirement-dot"></view>
             <view class="requirement-text">{{item}}</view>
           </view>
+        </view>
+        <view class="prompt-table" wx:if="{{promptDisplay.promptTable}}">
+          <view class="prompt-table-row prompt-table-head">
+            <view class="prompt-table-cell" wx:for="{{promptDisplay.promptTable.headers}}" wx:key="*this">{{item}}</view>
+          </view>
+          <view class="prompt-table-row" wx:for="{{promptDisplay.promptTable.rows}}" wx:for-item="row" wx:key="label">
+            <view class="prompt-table-cell prompt-table-label">{{row.label}}</view>
+            <view class="prompt-table-cell" wx:for="{{row.values}}" wx:for-item="value" wx:key="*this">{{value}}</view>
+          </view>
+        </view>
+        <view class="prompt-starter" wx:if="{{promptDisplay.promptStarter}}">{{promptDisplay.promptStarter}}</view>
+        <view class="prompt-images" wx:if="{{promptImages.length}}">
+          <image class="prompt-image" wx:for="{{promptImages}}" wx:key="cloudPath" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
         </view>
       </block>
     </view>

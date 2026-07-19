@@ -360,7 +360,7 @@ Page({
         audioLoading: false,
         audioError: text('audioPlayFailed', '音频播放失败')
       }));
-      this.setData({ audioSrc: src, audioLoading: false });
+      this.setData({ audioSrc: src });
     } catch (error) {
       this.setData({ audioLoading: false, audioError: text('audioLoadFailed', '音频暂时无法加载') });
     }

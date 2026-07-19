@@ -1,0 +1,62 @@
+{
+  "topicId": "lexical:usage",
+  "topic": "词义与用法",
+  "questions": [
+    {
+      "_id": "sh-autumn-2010-grammar-q26",
+      "sourceSetId": "sh-autumn-2010-grammar",
+      "year": 2010,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2010年上海秋季高考英语真题及答案.doc",
+      "number": 26,
+      "prompt": "It took us quite a long time to get to the amusement park. It was _____ journey.",
+      "options": {
+        "A": "three hour",
+        "B": "a three-hours",
+        "C": "a three-hour",
+        "D": "three hours"
+      },
+      "answer": "C",
+      "questionType": "grammar-choice",
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:usage",
+      "subtopic": "词义与用法",
+      "topicId": "lexical:usage",
+      "topic": "词义与用法",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    },
+    {
+      "_id": "sh-autumn-2010-grammar-q30",
+      "sourceSetId": "sh-autumn-2010-grammar",
+      "year": 2010,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2010年上海秋季高考英语真题及答案.doc",
+      "number": 30,
+      "prompt": "In ancient times, people rarely travelled long distances and most farmers only travelled _____ the local market.",
+      "options": {
+        "A": "longer than",
+        "B": "more than",
+        "C": "as much as",
+        "D": "as far as"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:usage",
+      "subtopic": "词义与用法",
+      "topicId": "lexical:usage",
+      "topic": "词义与用法",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-18T17:20:50.397Z",
+  "sourceMissing": [
+    {
+      "session": "autumn",
+      "year": 2026,
+      "reason": "source-paper-missing"
+    }
+  ],
+  "reading": {
+    "spring": {
+      "shellMs": 4017,
+      "indexReadyMs": 42,
+      "papers": [
+        {
+          "year": 2024,
+          "clozeReadyMs": 10,
+          "sectionCReadyMs": 13
+        },
+        {
+          "year": 2025,
+          "clozeReadyMs": 8,
+          "sectionCReadyMs": 11
+        },
+        {
+          "year": 2026,
+          "clozeReadyMs": 10,
+          "sectionCReadyMs": 12
+        }
+      ]
+    },
+    "autumn": {
+      "shellMs": 4060,
+      "indexReadyMs": 37,
+      "papers": [
+        {
+          "year": 2024,
+          "clozeReadyMs": 10,
+          "sectionCReadyMs": 13
+        },
+        {
+          "year": 2025,
+          "clozeReadyMs": 10,
+          "sectionCReadyMs": 14
+        }
+      ]
+    }
+  },
+  "writing": {
+    "spring": {
+      "shellMs": 4079,
+      "indexReadyMs": 16,
+      "papers": [
+        {
+          "year": 2024,
+          "summaryReadyMs": 3,
+          "translationReadyMs": 3,
+          "writingReadyMs": 2,
+          "requirementCount": 2
+        },
+        {
+          "year": 2025,
+          "summaryReadyMs": 3,
+          "translationReadyMs": 3,
+          "writingReadyMs": 3,
+          "requirementCount": 2
+        },
+        {
+          "year": 2026,
+          "summaryReadyMs": 5,
+          "translationReadyMs": 4,
+          "writingReadyMs": 3,
+          "requirementCount": 2
+        }
+      ]
+    },
+    "autumn": {
+      "shellMs": 3961,
+      "indexReadyMs": 15,
+      "papers": [
+        {
+          "year": 2024,
+          "summaryReadyMs": 3,
+          "translationReadyMs": 2,
+          "writingReadyMs": 4,
+          "requirementCount": 1
+        },
+        {
+          "year": 2025,
+          "summaryReadyMs": 4,
+          "translationReadyMs": 4,
+          "writingReadyMs": 3,
+          "requirementCount": 2
+        }
+      ]
+    }
+  },
+  "listening": {
+    "index": {
+      "spring": {
+        "shellMs": 3925,
+        "indexReadyMs": 11,
+        "targetIds": [
+          "sh-spring-2024-listening",
+          "sh-spring-2025-listening"
+        ]
+      },
+      "autumn": {
+        "shellMs": 3900,
+        "indexReadyMs": 11,
+        "targetIds": [
+          "sh-autumn-2024-listening"
+        ]
+      }
+    },
+    "items": [
+      {
+        "itemId": "sh-spring-2024-listening",
+        "duration": "20:49",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3888,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 15
+          },
+          {
+            "round": 2,
+            "shellMs": 3895,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 14
+          },
+          {
+            "round": 3,
+            "shellMs": 3907,
+            "detailReadyMs": 7,
+            "clickToPlayMs": 13
+          }
+        ]
+      },
+      {
+        "itemId": "sh-spring-2025-listening",
+        "duration": "15:22",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3890,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 16
+          },
+          {
+            "round": 2,
+            "shellMs": 3934,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 14
+          },
+          {
+            "round": 3,
+            "shellMs": 3897,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 14
+          }
+        ]
+      },
+      {
+        "itemId": "sh-autumn-2024-listening",
+        "duration": "17:31",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3927,
+            "detailReadyMs": 8,
+            "clickToPlayMs": 24
+          },
+          {
+            "round": 2,
+            "shellMs": 3899,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 12
+          },
+          {
+            "round": 3,
+            "shellMs": 3884,
+            "detailReadyMs": 7,
+            "clickToPlayMs": 13
+          }
+        ]
+      }
+    ],
+    "maxClickToPlayMs": 24
+  },
+  "screenshots": {
+    "reading": "/tmp/shanghai-senior-2024-2026/reading-2025-autumn-section-c.png",
+    "writing": "/tmp/shanghai-senior-2024-2026/writing-2025-autumn-guided.png",
+    "listening": "/tmp/shanghai-senior-2024-2026/listening-2024-autumn.png"
+  },
+  "thresholds": {
+    "clickToPlayMs": 500
+  },
+  "exceptions": []
+}

@@ -58,9 +58,10 @@ function addJson(entries, localPath, cloudPath, value) {
   entries.push({ localPath, cloudPath, body, sha1: sha1(body) });
 }
 
-function buildEntries(selectedSessions, selectedYears) {
+function buildEntries(selectedSessions, selectedYears, selectedModules = new Set(['reading', 'writing', 'listening', 'grammar'])) {
   const entries = [];
-  MODULES.filter(([moduleName]) => selectedSessions.has(moduleName.endsWith('-spring') ? 'spring' : 'autumn')).forEach(([moduleName, fileName]) => {
+  MODULES.filter(([moduleName]) => selectedSessions.has(moduleName.endsWith('-spring') ? 'spring' : 'autumn')
+    && selectedModules.has(moduleName.split('-')[0])).forEach(([moduleName, fileName]) => {
     const localPath = path.join(ROOT, 'data', moduleName, fileName);
     const items = JSON.parse(fs.readFileSync(localPath, 'utf8'));
     const selectedItems = items.filter((item) => !selectedYears.size || selectedYears.has(Number(item.year || item.sourceYear)));
@@ -85,6 +86,22 @@ function buildEntries(selectedSessions, selectedYears) {
         });
       });
     }
+    if (moduleName.startsWith('writing-') || moduleName.startsWith('reading-')) {
+      const seenImages = new Set();
+      selectedItems.flatMap((item) => [
+        ...(Array.isArray(item.images) ? item.images : []),
+        ...(Array.isArray(item.questions) ? item.questions.flatMap((question) => Object.values(question.optionImages || {})) : [])
+      ]).forEach((image) => {
+        const cloudPath = String(image && image.cloudPath || '').trim();
+        const localRelativePath = String(image && image.localPath || '').trim();
+        if (!cloudPath || !localRelativePath || seenImages.has(cloudPath)) return;
+        if (!cloudPath.startsWith(`_content/${moduleName}/years/`)) {
+          throw new Error(`content-image-path-invalid:${cloudPath}`);
+        }
+        addFile(entries, path.join(ROOT, localRelativePath), cloudPath);
+        seenImages.add(cloudPath);
+      });
+    }
     if (moduleName.startsWith('listening-')) {
       const audioDir = path.join(ROOT, 'data', moduleName, 'audio');
       if (fs.existsSync(audioDir)) {
@@ -94,9 +111,12 @@ function buildEntries(selectedSessions, selectedYears) {
       }
     }
   });
-  GRAMMAR_MODULES.filter((moduleName) => selectedSessions.has(moduleName.endsWith('-spring') ? 'spring' : 'autumn')).forEach((moduleName) => {
+  GRAMMAR_MODULES.filter((moduleName) => selectedModules.has('grammar') && selectedSessions.has(moduleName.endsWith('-spring') ? 'spring' : 'autumn')).forEach((moduleName) => {
     const moduleDir = path.join(ROOT, 'data', moduleName);
-    const questions = JSON.parse(fs.readFileSync(path.join(moduleDir, 'shanghai-senior-grammar-questions.json'), 'utf8'));
+    const selectedYearList = Array.from(selectedYears).sort();
+    const selectedYearDir = selectedYearList.length === 1 ? path.join(moduleDir, 'years', String(selectedYearList[0])) : '';
+    const sourceDir = selectedYearDir && fs.existsSync(path.join(selectedYearDir, 'shanghai-senior-grammar-questions.json')) ? selectedYearDir : moduleDir;
+    const questions = JSON.parse(fs.readFileSync(path.join(sourceDir, 'shanghai-senior-grammar-questions.json'), 'utf8'));
     const years = Array.from(new Set(questions.map((item) => Number(item.year)).filter((year) => !selectedYears.size || selectedYears.has(year)))).sort();
     if (!years.length) return;
     if (years.length !== 1 || questions.some((item) => Number(item.year) !== years[0])) {
@@ -105,8 +125,8 @@ function buildEntries(selectedSessions, selectedYears) {
     const revision = Math.max(1, ...questions.map((item) => Number(item.classificationRevision || 1)));
     const cloudRoot = `_content/${moduleName}/years/${years[0]}${revision > 1 ? `/v${revision}` : ''}`;
     ['grammar-topic-types.json', 'shanghai-senior-grammar-by-topic.json', 'shanghai-senior-grammar-questions.json']
-      .forEach((name) => addFile(entries, path.join(moduleDir, name), `${cloudRoot}/${name}`));
-    const topicsDir = path.join(moduleDir, 'topics');
+      .forEach((name) => addFile(entries, path.join(sourceDir, name), `${cloudRoot}/${name}`));
+    const topicsDir = path.join(sourceDir, 'topics');
     fs.readdirSync(topicsDir).filter((name) => name.endsWith('.json')).sort().forEach((name) => {
       addFile(entries, path.join(topicsDir, name), `${cloudRoot}/topics/${name}`);
     });
@@ -133,8 +153,11 @@ async function main() {
   const selectedSessions = new Set((sessionArg ? sessionArg.slice('--sessions='.length) : 'spring,autumn').split(',').filter((value) => ['spring', 'autumn'].includes(value)));
   const yearsArg = process.argv.find((value) => value.startsWith('--years='));
   const selectedYears = new Set((yearsArg ? yearsArg.slice('--years='.length) : '').split(',').filter(Boolean).map(Number));
+  const modulesArg = process.argv.find((value) => value.startsWith('--modules='));
+  const selectedModules = new Set((modulesArg ? modulesArg.slice('--modules='.length) : 'reading,writing,listening,grammar').split(',').filter((value) => ['reading', 'writing', 'listening', 'grammar'].includes(value)));
   if (!selectedSessions.size) throw new Error('no-valid-session-selected');
-  const entries = buildEntries(selectedSessions, selectedYears);
+  if (!selectedModules.size) throw new Error('no-valid-module-selected');
+  const entries = buildEntries(selectedSessions, selectedYears, selectedModules);
   const results = [];
   await mapLimit(entries, 8, async (entry) => {
     const remote = await request(entry.cloudPath);

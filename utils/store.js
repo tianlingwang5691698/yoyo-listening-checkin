@@ -536,12 +536,12 @@ async function getDashboard(options, onRefresh) {
 }
 
 async function getMaterialIndex(options, onRefresh) {
-  let payload = { catalogVersion: 'senior-2009-v5' };
+  let payload = { catalogVersion: 'senior-2026-v3' };
   let refreshHandler = onRefresh;
   if (typeof options === 'function') {
     refreshHandler = options;
   } else {
-    payload = Object.assign({ catalogVersion: 'senior-2009-v5' }, options || {});
+    payload = Object.assign({ catalogVersion: 'senior-2026-v3' }, options || {});
   }
   return callCloud('getMaterialIndex', payload, {
     writingEm1: [],

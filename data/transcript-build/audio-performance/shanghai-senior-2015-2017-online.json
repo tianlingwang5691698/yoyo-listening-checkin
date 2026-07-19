@@ -1,0 +1,258 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-18T18:32:40.998Z",
+  "calls": {
+    "material": {
+      "wallMs": 364,
+      "functionMs": 6
+    },
+    "reading": {
+      "wallMs": 210,
+      "functionMs": 19
+    }
+  },
+  "reading": [
+    {
+      "session": "autumn",
+      "year": 2015,
+      "reading": 7,
+      "writing": 2,
+      "listening": 1,
+      "path": "_content/reading-senior-autumn/years/2015/v2/reading-passages.json",
+      "status": 200,
+      "count": 7,
+      "questionCount": 57,
+      "directoryVisible": true
+    },
+    {
+      "session": "autumn",
+      "year": 2016,
+      "reading": 7,
+      "writing": 2,
+      "listening": 1,
+      "path": "_content/reading-senior-autumn/years/2016/v2/reading-passages.json",
+      "status": 200,
+      "count": 7,
+      "questionCount": 57,
+      "directoryVisible": true
+    },
+    {
+      "session": "spring",
+      "year": 2017,
+      "reading": 7,
+      "writing": 3,
+      "listening": 1,
+      "path": "_content/reading-senior-spring/years/2017/v2/reading-passages.json",
+      "status": 200,
+      "count": 7,
+      "questionCount": 50,
+      "directoryVisible": true
+    },
+    {
+      "session": "autumn",
+      "year": 2017,
+      "reading": 7,
+      "writing": 3,
+      "listening": 1,
+      "path": "_content/reading-senior-autumn/years/2017/v2/reading-passages.json",
+      "status": 200,
+      "count": 7,
+      "questionCount": 50,
+      "directoryVisible": true
+    }
+  ],
+  "writing": [
+    {
+      "session": "autumn",
+      "year": 2015,
+      "reading": 7,
+      "writing": 2,
+      "listening": 1,
+      "items": [
+        {
+          "id": "sh-autumn-2015-translation",
+          "visible": true,
+          "present": true,
+          "questionCount": 5,
+          "requirementCount": 0
+        },
+        {
+          "id": "sh-autumn-2015-writing",
+          "visible": true,
+          "present": true,
+          "questionCount": 0,
+          "requirementCount": 2
+        }
+      ]
+    },
+    {
+      "session": "autumn",
+      "year": 2016,
+      "reading": 7,
+      "writing": 2,
+      "listening": 1,
+      "items": [
+        {
+          "id": "sh-autumn-2016-translation",
+          "visible": true,
+          "present": true,
+          "questionCount": 5,
+          "requirementCount": 0
+        },
+        {
+          "id": "sh-autumn-2016-writing",
+          "visible": true,
+          "present": true,
+          "questionCount": 0,
+          "requirementCount": 2
+        }
+      ]
+    },
+    {
+      "session": "spring",
+      "year": 2017,
+      "reading": 7,
+      "writing": 3,
+      "listening": 1,
+      "items": [
+        {
+          "id": "sh-spring-2017-summary-writing",
+          "visible": true,
+          "present": true,
+          "questionCount": 0,
+          "requirementCount": 0
+        },
+        {
+          "id": "sh-spring-2017-translation",
+          "visible": true,
+          "present": true,
+          "questionCount": 4,
+          "requirementCount": 0
+        },
+        {
+          "id": "sh-spring-2017-writing",
+          "visible": true,
+          "present": true,
+          "questionCount": 0,
+          "requirementCount": 2
+        }
+      ]
+    },
+    {
+      "session": "autumn",
+      "year": 2017,
+      "reading": 7,
+      "writing": 3,
+      "listening": 1,
+      "items": [
+        {
+          "id": "sh-autumn-2017-summary-writing",
+          "visible": true,
+          "present": true,
+          "questionCount": 0,
+          "requirementCount": 0
+        },
+        {
+          "id": "sh-autumn-2017-translation",
+          "visible": true,
+          "present": true,
+          "questionCount": 4,
+          "requirementCount": 0
+        },
+        {
+          "id": "sh-autumn-2017-writing",
+          "visible": true,
+          "present": true,
+          "questionCount": 0,
+          "requirementCount": 2
+        }
+      ]
+    }
+  ],
+  "listening": [
+    {
+      "session": "autumn",
+      "year": 2015,
+      "reading": 7,
+      "writing": 2,
+      "listening": 1,
+      "id": "sh-autumn-2015-listening",
+      "cloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2015-listening-27a19e90bd-64k-mono.mp3",
+      "visible": true,
+      "present": true,
+      "questionCount": 24,
+      "durationSec": 1004.304,
+      "publicStatus": 200,
+      "tempReady": true,
+      "tempCode": "SUCCESS"
+    },
+    {
+      "session": "autumn",
+      "year": 2016,
+      "reading": 7,
+      "writing": 2,
+      "listening": 1,
+      "id": "sh-autumn-2016-listening",
+      "cloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2016-listening-9eeeeb39e9-64k-mono.mp3",
+      "visible": true,
+      "present": true,
+      "questionCount": 24,
+      "durationSec": 1093.669,
+      "publicStatus": 200,
+      "tempReady": true,
+      "tempCode": "SUCCESS"
+    },
+    {
+      "session": "spring",
+      "year": 2017,
+      "reading": 7,
+      "writing": 3,
+      "listening": 1,
+      "id": "sh-spring-2017-listening",
+      "cloudPath": "_content/listening-senior-spring/audio/sh-spring-2017-listening-0a6a157d3a-64k-mono.mp3",
+      "visible": true,
+      "present": true,
+      "questionCount": 20,
+      "durationSec": 879.779,
+      "publicStatus": 200,
+      "tempReady": true,
+      "tempCode": "SUCCESS"
+    },
+    {
+      "session": "autumn",
+      "year": 2017,
+      "reading": 7,
+      "writing": 3,
+      "listening": 1,
+      "id": "sh-autumn-2017-listening",
+      "cloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2017-listening-0d65d4e0ba-64k-mono.mp3",
+      "visible": true,
+      "present": true,
+      "questionCount": 20,
+      "durationSec": 1696.747,
+      "publicStatus": 200,
+      "tempReady": true,
+      "tempCode": "SUCCESS"
+    }
+  ],
+  "assets": [
+    {
+      "cloudPath": "_content/reading-senior-autumn/years/2015/assets/sh-autumn-2015-reading-1-234e0a58eb.png",
+      "status": 200
+    },
+    {
+      "cloudPath": "_content/writing-senior-autumn/years/2015/assets/sh-autumn-2015-writing-1-8afcd7b0f9.png",
+      "status": 200
+    }
+  ],
+  "missingSource": [
+    {
+      "session": "spring",
+      "year": 2015
+    },
+    {
+      "session": "spring",
+      "year": 2016
+    }
+  ]
+}

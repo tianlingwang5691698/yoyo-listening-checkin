@@ -4,6 +4,7 @@ const storageAdapter = require('../adapters/storage.adapter');
 const completion = require('./completion.service');
 const crypto = require('crypto');
 const https = require('https');
+const { CLOUD_ASSET_BASE_URL } = require('../lib/constants');
 
 const DEFAULT_READING_DAILY_COUNT = 3;
 const MAX_READING_DAILY_COUNT = 20;
@@ -19,9 +20,29 @@ const READING_PASSAGE_COLLECTION = 'readingPassages';
 const READING_CONTENT_PATH = '_content/reading/reading-passages.json';
 const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
 const READING_SENIOR_CONTENT_PATHS = [
-  '_content/reading-senior-autumn/years/2009/v2/reading-passages.json'
+  '_content/reading-senior-autumn/years/2009/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2010/reading-passages.json',
+  '_content/reading-senior-autumn/years/2015/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2016/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2017/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2017/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2018/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2018/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2019/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2019/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2020/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2020/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2021/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2021/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2022/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2022/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2024/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2024/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2025/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2025/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2026/v2/reading-passages.json'
 ];
-const MIN_DATABASE_READING_PASSAGE_COUNT = 785;
+const MIN_DATABASE_READING_PASSAGE_COUNT = 841;
 let samplePassageCache = null;
 let passageDirectoryCache = null;
 let bundledPassageDirectory = null;
@@ -36,6 +57,11 @@ function todayIndex(today) {
 }
 
 function normalizePassage(item) {
+  const normalizeImage = (image) => ({
+    src: image && (image.src || image.url) || (image && image.cloudPath ? `${String(CLOUD_ASSET_BASE_URL || '').replace(/\/+$/, '')}/${image.cloudPath}` : ''),
+    cloudPath: image && image.cloudPath || '',
+    alt: image && image.alt || ''
+  });
   return {
     _id: item._id || item.id,
     title: item.title || '阅读练习',
@@ -51,8 +77,11 @@ function normalizePassage(item) {
     difficultyLabel: item.difficultyLabel || '',
     sourceType: item.sourceType || '',
     passage: item.passage || '',
+    images: (Array.isArray(item.images) ? item.images : []).map(normalizeImage).filter((image) => image.src),
     translation: item.translation || item.fullTranslation || '',
-    questions: Array.isArray(item.questions) ? item.questions : [],
+    questions: (Array.isArray(item.questions) ? item.questions : []).map((question) => Object.assign({}, question, {
+      optionImages: Object.fromEntries(Object.entries(question.optionImages || {}).map(([key, image]) => [key, normalizeImage(image)]).filter(([, image]) => image.src))
+    })),
     answerSentences: Array.isArray(item.answerSentences) ? item.answerSentences : [],
     phrases: Array.isArray(item.phrases) ? item.phrases : [],
     vocabulary: Array.isArray(item.vocabulary) ? item.vocabulary : [],

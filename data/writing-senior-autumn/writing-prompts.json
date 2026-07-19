@@ -84,5 +84,1234 @@
     "prompt": "Directions: Write an English composition in 120 - 150 words according to the instructions given below in Chinese. 某海外学校举办英语夏令营，开设了如下课程：园艺（gardening）、烹饪（cooking）、防身术（self-defence）、护理（nursing）。假如你是王跃华（不可以用自己的真实姓名），写一封申请信，报名参加其中一门课程的学习。信的内容必须包括： 你感兴趣的课程 你期望从这门课程中学到什么 为什么想学这些内容",
     "minWords": 120,
     "score": 25
+  },
+  {
+    "_id": "sh-autumn-2010-translation",
+    "title": "2010 上海高考秋考 I. Translation",
+    "year": 2010,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2010",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2010年上海秋季高考英语真题及答案.doc",
+    "directions": "Directions: Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 5,
+    "questions": [
+      {
+        "number": 1,
+        "sourceText": "这本杂志花了我 20 多元。",
+        "requiredWord": "cost",
+        "referenceAnswers": [
+          "This magazine cost/costs me more than 20 yuan."
+        ]
+      },
+      {
+        "number": 2,
+        "sourceText": "雨天我总是比平时起得晚。",
+        "requiredWord": "than",
+        "referenceAnswers": [
+          "I always get up later than usual on rainy days."
+        ]
+      },
+      {
+        "number": 3,
+        "sourceText": "看到奶奶有些睡意，他拉上窗帘并把电视的音量调低了。",
+        "requiredWord": "turn",
+        "referenceAnswers": [
+          "Seeing Grandma a little sleepy, he drew the curtains and turned the TV down."
+        ]
+      },
+      {
+        "number": 4,
+        "sourceText": "乍一看，这块手表没有什么特别之处，但实际上它是一部手机。",
+        "requiredWord": "there be",
+        "referenceAnswers": [
+          "At first sight, there is nothing special about this watch, but in fact it is a mobile phone."
+        ]
+      },
+      {
+        "number": 5,
+        "sourceText": "我们一致同意一旦得出调查结论，就尽早让公众知晓。",
+        "requiredWord": "once",
+        "referenceAnswers": [
+          "We all agree that once the conclusion of the investigation is drawn, it will be made known to the public as soon as possible."
+        ]
+      }
+    ],
+    "score": 20
+  },
+  {
+    "_id": "sh-autumn-2010-writing",
+    "title": "2010 上海高考秋考作文",
+    "year": 2010,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2010",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2010年上海秋季高考英语真题及答案.doc",
+    "prompt": "Directions: Write an English composition in 120 - 150 words according to the instructions given below in Chinese. 下图是小学新生的课堂一角，对照你当时的上课情况，作出比较并谈谈你的感受。你的作文必须包括： ●描述图片里学生上课的场景 ●比较你同时期的上课情况 ●简单谈谈你的感受",
+    "directions": "Directions: Write an English composition in 120 - 150 words according to the instructions given below in Chinese.",
+    "scenario": "下图是小学新生的课堂一角，对照你当时的上课情况，作出比较并谈谈你的感受。",
+    "requirementsTitle": "你的作文必须包括：",
+    "requirements": [
+      "描述图片里学生上课的场景",
+      "比较你同时期的上课情况",
+      "简单谈谈你的感受"
+    ],
+    "images": [
+      {
+        "cloudPath": "_content/writing-senior-autumn/years/2010/assets/sh-autumn-2010-writing-1-f1ee816a23.jpeg",
+        "localPath": "data/writing-senior-autumn/images/sh-autumn-2010-writing-1-f1ee816a23.jpeg",
+        "alt": "2010 上海高考秋考作文题原图"
+      }
+    ],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2015-translation",
+    "title": "2015 上海高考秋考 I. Translation",
+    "year": 2015,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2015",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2015年上海秋季高考英语真题及答案.doc",
+    "directions": "Directions: Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 5,
+    "questions": [
+      {
+        "number": 1,
+        "sourceText": "美食是人们造访上海的乐趣之一。",
+        "requiredWord": "visit",
+        "referenceAnswers": [
+          "Delicious food is one of the pleasures for people to visit Shanghai."
+        ]
+      },
+      {
+        "number": 2,
+        "sourceText": "街头艺术家运用创意将鲜艳明亮的色彩带进了老社区。",
+        "requiredWord": "bring",
+        "referenceAnswers": [
+          "Street artists have brought brilliant colours to old neighbourhoods with their creativity."
+        ]
+      },
+      {
+        "number": 3,
+        "sourceText": "在你生命中，如果有一个人你需要对他说对不起，那么就去向他道歉吧。",
+        "requiredWord": "apology",
+        "referenceAnswers": [
+          "If there is someone is your life to whom you need to say sorry, go ahead and make an apology."
+        ]
+      },
+      {
+        "number": 4,
+        "sourceText": "这个游戏的独特之处在于它让孩子学会如何应对现实生活中的问题。",
+        "requiredWord": "what",
+        "referenceAnswers": [
+          "What makes the game unique is that it helps children learn how to cope with problems in real life."
+        ]
+      },
+      {
+        "number": 5,
+        "sourceText": "申请材料需要精心准备，这样你心仪的学校才会对你的能力有全面，准确地了解。",
+        "requiredWord": "in order that",
+        "referenceAnswers": [
+          "The applications should be carefully prepared in order that the school you like can have an overall and accurate knowledge of your abilities."
+        ]
+      }
+    ],
+    "score": 20
+  },
+  {
+    "_id": "sh-autumn-2015-writing",
+    "title": "2015 上海高考秋考作文",
+    "year": 2015,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2015",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2015年上海秋季高考英语真题及答案.doc",
+    "questionNumber": 0,
+    "prompt": "Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese. 学校即将举办 “读书节”，目前正广泛征集“读书节”宣传册图片。假设你是该校学生潘阳，你已找到以下三幅图片，决定给读书节组委会写一封信，推荐其中一幅，你的信须包括以下内容： 1. 简单描述你想推荐的那幅图片； 2. 阐述你用这幅图片宣传“读书节”的理由。 上海英语",
+    "directions": "Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese.",
+    "scenario": "学校即将举办 “读书节”，目前正广泛征集“读书节”宣传册图片。假设你是该校学生潘阳，你已找到以下三幅图片，决定给读书节组委会写一封信，推荐其中一幅，你的信须包括以下内容：",
+    "requirementsTitle": "写作要求：",
+    "requirements": [
+      "简单描述你想推荐的那幅图片；",
+      "阐述你用这幅图片宣传“读书节”的理由。"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [
+      {
+        "cloudPath": "_content/writing-senior-autumn/years/2015/assets/sh-autumn-2015-writing-1-8afcd7b0f9.png",
+        "localPath": "data/writing-senior-autumn/images/sh-autumn-2015-writing-1-8afcd7b0f9.png",
+        "alt": "2015 上海高考秋考作文题原图"
+      }
+    ],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2016-translation",
+    "title": "2016 上海高考秋考 I. Translation",
+    "year": 2016,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2016",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2016年上海秋季高考英语真题（空白卷）.docx",
+    "directions": "Directions:Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 5,
+    "questions": [
+      {
+        "number": 23,
+        "sourceText": "我真希望自己的文章有朝一日能见报．",
+        "requiredWord": "hope",
+        "referenceAnswers": [
+          "I really hope that my article will be published in a newspaper someday．"
+        ]
+      },
+      {
+        "number": 24,
+        "sourceText": "二十世纪末中国经济迅速发展．",
+        "requiredWord": "witness",
+        "referenceAnswers": [
+          "The late twentieth century witnessed the rapid development of China's economy．"
+        ]
+      },
+      {
+        "number": 25,
+        "sourceText": "为买一双运动鞋而通宵排队有意义吗？",
+        "requiredWord": "point",
+        "referenceAnswers": [
+          "What is the point of/in lining up for the whole night just to buy a pair of sports shoes？/Is there any point （in） lining up for the whole night just to buy a pair of sports shoes？"
+        ]
+      },
+      {
+        "number": 26,
+        "sourceText": "虽然当时我年幼，不理解这部电影的含义，但我记得我的家人都感动得落泪了．",
+        "requiredWord": "too…to…",
+        "referenceAnswers": [
+          "Although I was then too young to understand the meaning of the film，I remember my family were moved to tears．"
+        ]
+      },
+      {
+        "number": 27,
+        "sourceText": "我阿姨苦读四年之后获得了文凭，那一刻她欣喜万分．",
+        "requiredWord": "The moment…",
+        "referenceAnswers": [
+          "The moment my aunt gained her diploma after four years of hard work，she was filled with joy．"
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2016-writing",
+    "title": "2016 上海高考秋考 II. Guided Writing",
+    "year": 2016,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2016",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2016年上海秋季高考英语真题（空白卷）.docx",
+    "questionNumber": 28,
+    "prompt": "Directions: Write an English composition in 120- 150 words according to the instructions given below in Chinese. 28．（24 分）假设你是中华中学学生姚平，最近参加了一项研究性学习调研，课题为\"父母是否以子女为荣\"．通过调研你校学生及其父母，结果发现双方对此问题的看法有差异（数据如图所示）．根据图表写一份报告，在报告中，你必须： 1．描述调研数据； 2．分析可能导致这一结果的原因",
+    "directions": "Directions: Write an English composition in 120- 150 words according to the instructions given below in Chinese.",
+    "scenario": "假设你是中华中学学生姚平，最近参加了一项研究性学习调研，课题为\"父母是否以子女为荣\"．通过调研你校学生及其父母，结果发现双方对此问题的看法有差异（数据如图所示）．根据图表写一份报告，",
+    "requirementsTitle": "在报告中，你必须：",
+    "requirements": [
+      "描述调研数据；",
+      "分析可能导致这一结果的原因"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [
+      {
+        "cloudPath": "_content/writing-senior-autumn/years/2016/assets/sh-autumn-2016-writing-1-3ed41eca3e.png",
+        "localPath": "data/writing-senior-autumn/images/sh-autumn-2016-writing-1-3ed41eca3e.png",
+        "alt": "2016 上海高考秋考作文题原图"
+      }
+    ],
+    "minWords": 120,
+    "score": 24
+  },
+  {
+    "_id": "sh-autumn-2017-summary-writing",
+    "title": "2017 上海高考秋考 IV. Summary Writing",
+    "year": 2017,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2017",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2017年上海秋季高考英语真题（原卷版）.docx",
+    "questionNumber": 71,
+    "prompt": "Directions：Read the following passage ．Summarize the main idea and the main point （ s ） of the passage in no more than 60 words ． Use your own words as far as possible． Learning by Rote in the Digital Age Rote learning has become seen as an outdated method of teaching ． The dictionary defines learning 'by rote' as ： 'from memory ， without thought of the meaning ： in a mechanical way'． The decline of rote learning has been quickened by technology ． No one needs to memorize friends' phone numbers or email addresses because such data is conveniently stored and accessible electronically．And why remember when and where World War Two broke out when you can find the answer on the Internet in about 6 seconds ？ But now there are voices for a need to return to rote learning． In fact ， memorizing key data is essential to learning any skill ． Doctoring requires knowledge of medicine and lawyering requires knowledge of cases and laws．Of course， being able to recall things will not further your understanding of those things，but without memorizing these foundation elements，you cannot progress to a deeper understanding of a subject． While the Internet and computers have weakened the need for us 10 remember things，it may well be that mobile learning can help bring this style of learning back to life by making it more convenient and more fun． Drilling yourself with flashcards or by repetition is usually hard and boring work ， which is why most people need their multiplication tables to be drilled into them by teachers or parents ． Rote learning without a willing third party can be a battle of discipline and motivation．But mobile learning can make those flashcards and drills more appropriate to individual study ； our digital devices can challenge and inform us at the same time and also keep us motivated，whether through game-like structures or recording our progress． Once you've acquired the essentials of a subject by rote learning ， you will find it easier to go deeper in the application of knowledge which is important．",
+    "directions": "Directions：Read the following passage ．Summarize the main idea and the main point （ s ） of the passage in no more than 60 words ． Use your own words as far as possible．",
+    "scenario": "Learning by Rote in the Digital Age Rote learning has become seen as an outdated method of teaching ． The dictionary defines learning 'by rote' as ： 'from memory ， without thought of the meaning ： in a mechanical way'． The decline of rote learning has been quickened by technology ． No one needs to memorize friends' phone numbers or email addresses because such data is conveniently stored and accessible electronically．And why remember when and where World War Two broke out when you can find the answer on the Internet in about 6 seconds ？ But now there are voices for a need to return to rote learning． In fact ， memorizing key data is essential to learning any skill ． Doctoring requires knowledge of medicine and lawyering requires knowledge of cases and laws．Of course， being able to recall things will not further your understanding of those things，but without memorizing these foundation elements，you cannot progress to a deeper understanding of a subject． While the Internet and computers have weakened the need for us 10 remember things，it may well be that mobile learning can help bring this style of learning back to life by making it more convenient and more fun． Drilling yourself with flashcards or by repetition is usually hard and boring work ， which is why most people need their multiplication tables to be drilled into them by teachers or parents ． Rote learning without a willing third party can be a battle of discipline and motivation．But mobile learning can make those flashcards and drills more appropriate to individual study ； our digital devices can challenge and inform us at the same time and also keep us motivated，whether through game-like structures or recording our progress． Once you've acquired the essentials of a subject by rote learning ， you will find it easier to go deeper in the application of knowledge which is important．",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
+    "_id": "sh-autumn-2017-translation",
+    "title": "2017 上海高考秋考 V. Translation",
+    "year": 2017,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2017",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2017年上海秋季高考英语真题（原卷版）.docx",
+    "directions": "",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "李雷宁愿受罚也不愿说谎．",
+        "requiredWord": "would rather",
+        "referenceAnswers": [
+          "Li Lei would rather be punished than tell a lie"
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "在投资项目的过程中出现了一些问题．",
+        "requiredWord": "arise",
+        "referenceAnswers": [
+          "There were some problems arising in the process of investing the project"
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "在过去三年中，他一直致力于研究信息的传播速度和人们生活节奏的关系．",
+        "requiredWord": "commit",
+        "referenceAnswers": [
+          "He has always been committed to studying the relationship between the spreading speed of information and people's pace of life in the last 3 years"
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "有人声称这个减肥丸效果显著，立竿见影，且对身体无害．但事实远非如此．",
+        "requiredWord": "It",
+        "referenceAnswers": [
+          "It is claimed that this diet pills have an effective and immediate effect and do no harm to health，but it is far from the truth"
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2017-writing",
+    "title": "2017 上海高考秋考 VI. Guided Writing",
+    "year": 2017,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2017",
+    "paperOrder": 3,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2017年上海秋季高考英语真题（原卷版）.docx",
+    "questionNumber": 76,
+    "prompt": "Direction ： Write an English composition in 120- 150 words according to the instructions given below in Chinese． 你是※※中学的※※，你校学生会组织一次徒步活动，已在校园网发布方案，征求师生的修改意见．你需要写一封邮件，包括以下两点： 1．提出你觉得需要改进的地方； 2．需要改进的原因．",
+    "directions": "",
+    "scenario": "Direction ： Write an English composition in 120- 150 words according to the instructions given below in Chinese． 你是※※中学的※※，你校学生会组织一次徒步活动，已在校园网发布方案，征求师生的修改意见．你需要写一封邮件，包括以下两点：",
+    "requirementsTitle": "写作要求：",
+    "requirements": [
+      "提出你觉得需要改进的地方；",
+      "需要改进的原因．"
+    ],
+    "promptTable": {
+      "headers": [
+        "项目",
+        "方案"
+      ],
+      "rows": [
+        {
+          "label": "主题",
+          "values": [
+            "发现上海"
+          ]
+        },
+        {
+          "label": "时间",
+          "values": [
+            "5月1日（周日）下午3点"
+          ]
+        },
+        {
+          "label": "路线",
+          "values": [
+            "从人民广场出发，途径南京东路，到达外滩（the Bund），全程徒步，之后再徒步原路返回人民广场．"
+          ]
+        }
+      ]
+    },
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2018-summary-writing",
+    "title": "2018 上海高考秋考 IV. Summary Writing",
+    "year": 2018,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2018",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2018年上海秋季高考英语真题（空白卷）.docx",
+    "questionNumber": 71,
+    "prompt": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible. Becoming an attractive employee The 2008 financial crisis created an unstable job market. Fast-forward to the present, and the economy has not fully recovered. Thus, it’s of vital importance for job seekers to carefully strategize their approach to job application. And it is especially important for those new to the workforce. They should look at making themselves as attractive as possible to employers. For young people, information technology skills will play an increasing role in the future As the generation to have grown up in the Information Age, they are quite confident when it comes to showing off their interests and skills in this field. This makes them a natural fit for companies seeking expertise in technology, marketing, and networking. They should emphasize these skills when applying for jobs that require the ability to multitask. Another attractive quality is experience. It is important that an applicant’s resume list any activities that involved teamwork and goal-driven responsibilities. Membership in a sports or social club and participation as a volunteer are good examples of this. These activities involve goal management and planning, along with the ability to focus while competing on a team. When hiring committees see this, they see a candidate who is capable of working in a variety of environments. Finally, an attractive quality when job-hunting is a great attitude toward a potential job. Young job seekers are known to be overconfident because they have been praised for everything they have done. But they must realize that the employment market is about how an employee will be a good fit for a company, not the other way around. In fact, in an interview, an important question to ask is: “What would be expected of me as an employee?” In today’s tough job market. young job seekers need to provide a potential employer with good reasons to hire them. 71._______________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ __",
+    "directions": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible.",
+    "scenario": "Becoming an attractive employee The 2008 financial crisis created an unstable job market. Fast-forward to the present, and the economy has not fully recovered. Thus, it’s of vital importance for job seekers to carefully strategize their approach to job application. And it is especially important for those new to the workforce. They should look at making themselves as attractive as possible to employers. For young people, information technology skills will play an increasing role in the future As the generation to have grown up in the Information Age, they are quite confident when it comes to showing off their interests and skills in this field. This makes them a natural fit for companies seeking expertise in technology, marketing, and networking. They should emphasize these skills when applying for jobs that require the ability to multitask. Another attractive quality is experience. It is important that an applicant’s resume list any activities that involved teamwork and goal-driven responsibilities. Membership in a sports or social club and participation as a volunteer are good examples of this. These activities involve goal management and planning, along with the ability to focus while competing on a team. When hiring committees see this, they see a candidate who is capable of working in a variety of environments. Finally, an attractive quality when job-hunting is a great attitude toward a potential job. Young job seekers are known to be overconfident because they have been praised for everything they have done. But they must realize that the employment market is about how an employee will be a good fit for a company, not the other way around. In fact, in an interview, an important question to ask is: “What would be expected of me as an employee?” In today’s tough job market. young job seekers need to provide a potential employer with good reasons to hire them. 71._______________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ __",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
+    "_id": "sh-autumn-2018-translation",
+    "title": "2018 上海高考秋考 V. Translation",
+    "year": 2018,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2018",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2018年上海秋季高考英语真题（空白卷）.docx",
+    "directions": "Directions:Translate the following sentences into English, using the words given in the brackets",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "她们中谁可能当过排球教练？",
+        "requiredWord": "may",
+        "referenceAnswers": [
+          "Who among them may have coached a volleyball team? Who may have been a volleyball coach among them? May any of them have worked as a volleyball coach?"
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "我看见他换上徒步鞋，向草坪走去。",
+        "requiredWord": "make for",
+        "referenceAnswers": [
+          "I saw him change into hiking boots and walk toward the lawn. I saw him put on his hiking shoes and make for the lawn. I saw him put on his hiking shoes, making for the lawn"
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "妈妈将闹钟设为每六小时响一次，提醒自己该给宝宝量体温了。",
+        "requiredWord": "reminder",
+        "referenceAnswers": [
+          "Mom sets the alarm clock to ring every six hours as a reminder for herself to take the baby’s temperature. Mom sets the alarm clock ringing every six hours as a reminder to take her baby's temperature. Mom sets the alarm clock for (once) every six hours as a reminder to take her baby's temperature. Mom sets up an alarm clock which goes off every six hours as a reminder to take her baby's temperature"
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "在这个村落里，人们通常每餐只吃八分饱，但这种健康的饮食习惯最初是为了应对食物短缺的困境。",
+        "requiredWord": "until",
+        "referenceAnswers": [
+          "People in this village usually eat until they are satisfied，but this healthy diet came from the shortage of food in the early days. In this village people usually eat until they are 80 percent full for each meal, but this healthy way of eating was originally developed to deal with /address the poor/hard conditions/situation of food shortage. In this village, people usually eat every meal until they are 80 percent full, but this healthy eating habit was to deal with the shortage of food initially. In the village, people always don’t stop having each meal until they feel almost full, but this healthy diet habit was to deal with the food short situation originally"
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2018-writing",
+    "title": "2018 上海高考秋考 VI. Guided Writing",
+    "year": 2018,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2018",
+    "paperOrder": 3,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2018年上海秋季高考英语真题（空白卷）.docx",
+    "questionNumber": 76,
+    "prompt": "(共 25 分) Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese 假设你是明启中学高三学生卢平，你校英语报向全体高三学生征文，题目为\"My teachers\"，你有意投稿，撰写一篇文章，内容包括： 1. 对遇到过的老师进行分类 2. 具体描述每一类老师的特征",
+    "directions": "",
+    "scenario": "(共 25 分) Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese 假设你是明启中学高三学生卢平，你校英语报向全体高三学生征文，题目为\"My teachers\"，你有意投稿，撰写一篇文章，内容包括：",
+    "requirementsTitle": "写作要求：",
+    "requirements": [
+      "对遇到过的老师进行分类",
+      "具体描述每一类老师的特征"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2019-summary-writing",
+    "title": "2019 上海高考秋考 IV. Summary Writing",
+    "year": 2019,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2019",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2019年上海秋季高考英语真题（空白卷）.docx",
+    "questionNumber": 71,
+    "prompt": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible. It's undeniable: Being among the first to try out a new piece of technology is cool. There's the excitement of doing what has never been done before-the feeling that you're living in the future. And when you're the sole member of your social circle with the latest hot gadget, people stare in fascination. They ask you questions. They see you as the holder of powerful, secret knowledge-for a little while, until the next big thing comes along. People tend to underestimate the costs of this temporary coolness, which they pay in more ways than one. Don't fall into the early adopter trap. Don't join the first wave of consumers who invest in the latest media- hyped hardware; instead, wait and see. To put it frankly, early adoption is a bad investment. First, the earliest versions of devices are not only expensive, they are also the most expensive that those devices will ever be. Companies are presumably attempting to recover the cost of production as fast as they can, and they know that there are serious tech-lovers who will pay a great deal to be first. Once the revenues from early adopters' purchases are safely in their hands, they can cut the price and shift to the next marketing phase: selling the product to everyone else. This is why the cost of the original iPhone dropped about U. S. $200 only eight months after its release. Plus, electronics hardly ever become more expensive because intense competition in the industry puts downward pressure on prices over time. Prices of gadgets will fall shortly after release, and they will likely keep falling. Many new TV models drop significantly in price as little as ten days after hitting the market. Further, electronics rapidly depreciate because they become obsolete (废弃的) so quickly. This means that early adopters pay the maximum price for an item that does not hold onto its value. The resale price of a cell phone or laptop can drop by fifty percent within just a few months. Speaking of becoming obsolete, those who are first to leap into a new technology risk wasting money and time on something that will never catch on. Another good reason to resist the early-adoption temptation is that the first version of a product typically has defects that cost a lot in time and frustration. Such problems are so common with new technology that early adopters are basically unpaid beta testers and troubleshooters. Unless this sounds to you like a fun way to spend your time, don’t be among the first users. If you wait to learn what the problems are with a new electronic gadget, you can look forward to a smoother experience-or choose a less troublesome product. 71._______________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ __",
+    "directions": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible.",
+    "scenario": "It's undeniable: Being among the first to try out a new piece of technology is cool. There's the excitement of doing what has never been done before-the feeling that you're living in the future. And when you're the sole member of your social circle with the latest hot gadget, people stare in fascination. They ask you questions. They see you as the holder of powerful, secret knowledge-for a little while, until the next big thing comes along. People tend to underestimate the costs of this temporary coolness, which they pay in more ways than one. Don't fall into the early adopter trap. Don't join the first wave of consumers who invest in the latest media- hyped hardware; instead, wait and see. To put it frankly, early adoption is a bad investment. First, the earliest versions of devices are not only expensive, they are also the most expensive that those devices will ever be. Companies are presumably attempting to recover the cost of production as fast as they can, and they know that there are serious tech-lovers who will pay a great deal to be first. Once the revenues from early adopters' purchases are safely in their hands, they can cut the price and shift to the next marketing phase: selling the product to everyone else. This is why the cost of the original iPhone dropped about U. S. $200 only eight months after its release. Plus, electronics hardly ever become more expensive because intense competition in the industry puts downward pressure on prices over time. Prices of gadgets will fall shortly after release, and they will likely keep falling. Many new TV models drop significantly in price as little as ten days after hitting the market. Further, electronics rapidly depreciate because they become obsolete (废弃的) so quickly. This means that early adopters pay the maximum price for an item that does not hold onto its value. The resale price of a cell phone or laptop can drop by fifty percent within just a few months. Speaking of becoming obsolete, those who are first to leap into a new technology risk wasting money and time on something that will never catch on. Another good reason to resist the early-adoption temptation is that the first version of a product typically has defects that cost a lot in time and frustration. Such problems are so common with new technology that early adopters are basically unpaid beta testers and troubleshooters. Unless this sounds to you like a fun way to spend your time, don’t be among the first users. If you wait to learn what the problems are with a new electronic gadget, you can look forward to a smoother experience-or choose a less troublesome product. 71._______________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ __",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
+    "_id": "sh-autumn-2019-translation",
+    "title": "2019 上海高考秋考 V. Translation",
+    "year": 2019,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2019",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2019年上海秋季高考英语真题（空白卷）.docx",
+    "directions": "Directions:Translate the following sentences into English, using the words given in the brackets",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "爷爷有点耳背，对他耐心一点。",
+        "requiredWord": "patient",
+        "referenceAnswers": [
+          "Grandpa is sort of deaf,so/ and be more patient with him"
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "和学生时代的他相比，那名士兵简直判若两人。",
+        "requiredWord": "How",
+        "referenceAnswers": [
+          "How different a person the soldier now is from what he was at school!"
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "随着体力逐渐恢复正常，那名业余自行车手的夺冠之梦不再遥不可及。",
+        "requiredWord": "normal",
+        "referenceAnswers": [
+          "As his physical strength returns to normal, the amateur cyclist’s dream of winning championship will no longer be beyond reach"
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "值得一提的是，在王老师影响下，她的同事们更关注孩子们的努力，而不是他们的成绩。",
+        "requiredWord": "as…as…",
+        "referenceAnswers": [
+          "Wang, her colleagues don’t concern as more achievements as their efforts. (or What is worth mentioning is that under Mrs. (Mr.) Wang's influence her colleagues lay not as much emphasis on their kids’ performance as on their effort.)",
+          "It's worth mentioning that under the influence of Mrs ( Mr) Wang, her colleagues don’t concern as more achievements as their efforts. (or What is worth mentioning is that under Mrs. (Mr.) Wang's influence her colleagues lay not as much emphasis on their kids’ performance as on their effort.)"
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2019-writing",
+    "title": "2019 上海高考秋考 VI. Guided Writing",
+    "year": 2019,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2019",
+    "paperOrder": 3,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2019年上海秋季高考英语真题（空白卷）.docx",
+    "questionNumber": 76,
+    "prompt": "(共 25 分) Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese 假如你是李敏，在一本英文旅游杂志上，你发现了这样一条信息：某古城景区对当地人收费 5 美元，对外国人收费 15 美元，针对这一情况，请你以李敏的口吻给该杂志编辑写一封信，具体要求如下： 1. 介绍一下你在杂志上看到的内容； 2. 针对此事自己的态度以及理由。",
+    "directions": "",
+    "scenario": "(共 25 分) Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese 假如你是李敏，在一本英文旅游杂志上，你发现了这样一条信息：某古城景区对当地人收费 5 美元，对外国人收费 15 美元，针对这一情况，请你以李敏的口吻给该杂志编辑写一封信，具体要求如下：",
+    "requirementsTitle": "写作要求：",
+    "requirements": [
+      "介绍一下你在杂志上看到的内容；",
+      "针对此事自己的态度以及理由。"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2020-summary-writing",
+    "title": "2020 上海高考秋考 IV. Summary Writing",
+    "year": 2020,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2020",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2020年上海秋季高考英语真题（空白卷）.docx",
+    "questionNumber": 71,
+    "prompt": "Directions ： Read the following passage. Summarize the main idea and the main point （ s ） of the passage in no more than 60 words. Use your own words as far as possible. 71. Scientists Discover Animal Language It is human beings' pride that we are the only species on the Planet that can speak and think.However，recent research cast doubt on that common belief. Zuberbuhler ， a psychologist at St.Andrews University ， and his colleagues recorded thousands of calls made by Diana monkeys and noticed that the monkeys adapted their calls to change the meaning to warn one another about different situations.For example， they made a 'krack' alarm call at the sight of tiger.However，when they merely repeated calls made by other monkeys they added an 'oo'. The researchers found that the same calls would be recognised by other species，like Campbell's monkeys.So they are communicating across species. \"And since then we have found that hornbill birds can understand these calls and they too can understand all the different meanings\"，said Zuberbuhler. What is also surprising is that signs of intelligence have been found in birds，whose small brains were long assumed to be a complete barrier to sentence.However ， all is changing fast.A few years ago Irene Pepperberg of the Massachusetts Institute of Technology taught a parrot to recognise and count up to six objects and describe their shapes，which couldn't have been achieved if birds were unable to memorize. Last year ， that was topped by Alex Kacelnik ， a professor of behavioral ecology at Oxford，who discovered that crows（乌鸦） are capable of using tools in complex orders，the first time such behaviour has been observed in non-humans.In an experiment seven crows successfully grabbed a piece of food placed out of reach using three different lengths of stick.Crucially，they were able to complete the task without any special training，suggesting the birds were capable of a level of abstract reasoning normally associated only with humans. All this is powerful evidence against the idea that people are unique. _______",
+    "directions": "Directions ： Read the following passage. Summarize the main idea and the main point （ s ） of the passage in no more than 60 words. Use your own words as far as possible.",
+    "scenario": "Scientists Discover Animal Language It is human beings' pride that we are the only species on the Planet that can speak and think.However，recent research cast doubt on that common belief. Zuberbuhler ， a psychologist at St.Andrews University ， and his colleagues recorded thousands of calls made by Diana monkeys and noticed that the monkeys adapted their calls to change the meaning to warn one another about different situations.For example， they made a 'krack' alarm call at the sight of tiger.However，when they merely repeated calls made by other monkeys they added an 'oo'. The researchers found that the same calls would be recognised by other species，like Campbell's monkeys.So they are communicating across species. \"And since then we have found that hornbill birds can understand these calls and they too can understand all the different meanings\"，said Zuberbuhler. What is also surprising is that signs of intelligence have been found in birds，whose small brains were long assumed to be a complete barrier to sentence.However ， all is changing fast.A few years ago Irene Pepperberg of the Massachusetts Institute of Technology taught a parrot to recognise and count up to six objects and describe their shapes，which couldn't have been achieved if birds were unable to memorize. Last year ， that was topped by Alex Kacelnik ， a professor of behavioral ecology at Oxford，who discovered that crows（乌鸦） are capable of using tools in complex orders，the first time such behaviour has been observed in non-humans.In an experiment seven crows successfully grabbed a piece of food placed out of reach using three different lengths of stick.Crucially，they were able to complete the task without any special training，suggesting the birds were capable of a level of abstract reasoning normally associated only with humans. All this is powerful evidence against the idea that people are unique. _______",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
+    "_id": "sh-autumn-2020-translation",
+    "title": "2020 上海高考秋考 V. Translation",
+    "year": 2020,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2020",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2020年上海秋季高考英语真题（空白卷）.docx",
+    "directions": "",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "你介意替我去参加会议吗？",
+        "requiredWord": "substitute",
+        "referenceAnswers": [
+          "Would you mind my substituting you for the meeting？",
+          "Would you mind my substituting you for the meeting"
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "为了让妈妈好好休息，小王把水槽和碗柜擦的干干净净。",
+        "requiredWord": "in order",
+        "referenceAnswers": [
+          "In order to make his mother have a good rest，Xiao Wang cleaned the sink and cupboard./In order for his mom to have a good rest，Xiao Wang cleaned up the sink and cupboard",
+          "In order to make his mother have a good rest ， Xiao Wang cleaned the sink and cupboard./In order for his mom to have a good rest，Xiao Wang cleaned up the sink and cupboard"
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "春暖花开的四月是欣赏这个南方小镇美景的最佳时机。",
+        "requiredWord": "when",
+        "referenceAnswers": [
+          "April ， when it gets warmer and flowers start blooming ， is the best time to appreciate the beautiful scenery of this southern town",
+          "April ， when it gets warmer and flowers start blooming，is the best time to appreciate the beautiful scenery of this southern town"
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "面对网店的挑战，这个百年老店多措并举，终于转危为机，再创辉煌。",
+        "requiredWord": "turn",
+        "referenceAnswers": [
+          "In the face of the challenge from online shops，this store with a long history of about one hundred years took various measures and finally turned the crisis into an opportunity to create glory again",
+          "In the face of the challenge from online shops ， this store with a long history of about one hundred years took various measures and finally turned the crisis into an opportunity to create glory again"
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2020-writing",
+    "title": "2020 上海高考秋考 VI. Guided Writing",
+    "year": 2020,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2020",
+    "paperOrder": 3,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2020年上海秋季高考英语真题（空白卷）.docx",
+    "questionNumber": 76,
+    "prompt": "Directions ： Write an English composition in 120- 150 words according to the instructions given below in Chinese. 明启中学的高三学生李华邀请王磊参加下周五郊外的露天音乐会，但王磊由于路远，交通不便等原因犹豫不决，写封邮件说服他一起去。信的内容包括： 63.提出解决问题的方法； 64.阐释音乐会的重要性。",
+    "directions": "Directions ： Write an English composition in 120- 150 words according to the instructions given below in Chinese.",
+    "scenario": "明启中学的高三学生李华邀请王磊参加下周五郊外的露天音乐会，但王磊由于路远，交通不便等原因犹豫不决，写封邮件说服他一起去。信的内容包括：",
+    "requirementsTitle": "写作要求：",
+    "requirements": [
+      "提出解决问题的方法；",
+      "阐释音乐会的重要性。"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2021-translation",
+    "title": "2021 上海高考秋考 V. Translation",
+    "year": 2021,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2021",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2021年上海秋季高考英语真题（空白卷）.docx",
+    "directions": "",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "你坐会儿，我来看管这六件行李。",
+        "requiredWord": "look",
+        "referenceAnswers": [
+          "You can sit for a while，and I will look after these six pieces of luggage/baggage."
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "打喷嚏的时候务必用纸巾遮住口鼻。",
+        "requiredWord": "Do",
+        "referenceAnswers": [
+          "Do cover your nose and mouth with a tissue when you sneeze."
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "这位头发花白的外交官与老友不期而遇，脑海中浮现出那段为理想而奋斗的青春岁月。",
+        "requiredWord": "remind",
+        "referenceAnswers": [
+          "An encounter with his old friend reminded the grey- haired diplomat of the youthful days when they were striving for their ideals."
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "这位先驱者的故居是间不起眼的木屋，现正修复中，游客有望在六月底一睹其真容。",
+        "requiredWord": "under",
+        "referenceAnswers": [
+          "The former residence of the pioneer is a humble wooden house ， which is now under restoration，and visitors are likely to see its real look at the end of June."
+        ]
+      }
+    ],
+    "score": 20
+  },
+  {
+    "_id": "sh-autumn-2021-writing",
+    "title": "2021 上海高考秋考 VI. Guided Writing",
+    "year": 2021,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2021",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2021年上海秋季高考英语真题（空白卷）.docx",
+    "questionNumber": 76,
+    "prompt": "假如你是明启中学高三学生李华，收到外国朋友 Bill 的邮件，告诉你他准备学习汉语，现有两门汉语课程供他选择（课程信息如下表所示），但他对课程选择有些茫然，想听取你的建议。 给 Bill 回复一封邮件，在邮件中你必须： （1）推荐其中一门课程； （2）通过比较两门课程的信息，说明你推荐该课程的理由。",
+    "directions": "",
+    "scenario": "假如你是明启中学高三学生李华，收到外国朋友 Bill 的邮件，告诉你他准备学习汉语，现有两门汉语课程供他选择（课程信息如下表所示），但他对课程选择有些茫然，想听取你的建议。 给 Bill 回复一封邮件，在邮件中你必须：",
+    "requirementsTitle": "写作要求：",
+    "requirements": [
+      "推荐其中一门课程；",
+      "通过比较两门课程的信息，说明你推荐该课程的理由。"
+    ],
+    "promptTable": {
+      "headers": [
+        "课程名称",
+        "汉语听说",
+        "汉语读写"
+      ],
+      "rows": [
+        {
+          "label": "课程内容",
+          "values": [
+            "日常会话",
+            "故事读写"
+          ]
+        },
+        {
+          "label": "授课安排",
+          "values": [
+            "每周一、四晚7：00-8：30，共8周",
+            "每周五晚7：00-8：30，共16周"
+          ]
+        },
+        {
+          "label": "授课语言",
+          "values": [
+            "全中文",
+            "中英双语"
+          ]
+        }
+      ]
+    },
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2022-summary-writing",
+    "title": "2022 上海高考秋考 IV. Summary Writing",
+    "year": 2022,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2022",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2022年上海秋季高考英语真题（空白卷）.doc",
+    "questionNumber": 71,
+    "prompt": "Directions: Read the following passage. Summarize the main idea and the main point(s) of the passage in no more than 60 words. Use your own words as far as possible. Is there a correlation between high IQ and creative genius? Really, the phrasing of the question contradicts very much correlation, as “creativity” is in no way measured through IQ standardized testing, and creativity is the greatest determinant of a genius as, like you say, it is a genius. Innovation upon any subject requires a drive to create. As ones IQ increases , there is an increased probability that they are a genius because their level of creativity has a higher probability of ascending (升高) them to genius level. However if the odds are against them, there is an average probability that they are a genius since they are average percent genius. This is because genius and IQ are composed of different mental constructs as IQ measures a standard comprehension level, while creativity measures the way in which this comprehension is used. For example, if your IQ is 180, the percentage that you are a genius is subtracted by the amount of creativity necessary to become a genius. This is inductive of the influence that the brain has on awareness. The brain gains perceptive awareness upon “creating” thoughts in a continuous cyclic process, and if you were very “intelligent” but could not generate thoughts, you could not be an intellectual being. However, one who is alive can never stop thinking, so the correlation of IQ and genius would objectively appear as a negative exponential function. There are few exceptionally creative people out there, just as there are few exceptionally intelligent people, and one does not occur with the other. Possessing a high level of intelligence is a platform of understanding for the creative thinking skills to make up originality. When one bears informal thinking skills, they typically occupy heightened intuitive awareness, and vivid imaginative qualities. Critical thinking skills allow one to make sense of the resultant creative output within its surrounding context of knowledge. However, not all “geniuses” from our subjective intelligence range necessarily have high levels of creativity. One's level of intelligence can be so high that their platform of understanding generalizes ideas where a genius with lower levels of intelligence must use creativity in order to attain a sort of qualitative equivalence. Examples of people like this throughout history include the likes of John von Neumann and Christopher Langan.",
+    "directions": "Directions: Read the following passage. Summarize the main idea and the main point(s) of the passage in no more than 60 words. Use your own words as far as possible.",
+    "scenario": "Is there a correlation between high IQ and creative genius? Really, the phrasing of the question contradicts very much correlation, as “creativity” is in no way measured through IQ standardized testing, and creativity is the greatest determinant of a genius as, like you say, it is a genius. Innovation upon any subject requires a drive to create. As ones IQ increases , there is an increased probability that they are a genius because their level of creativity has a higher probability of ascending (升高) them to genius level. However if the odds are against them, there is an average probability that they are a genius since they are average percent genius. This is because genius and IQ are composed of different mental constructs as IQ measures a standard comprehension level, while creativity measures the way in which this comprehension is used. For example, if your IQ is 180, the percentage that you are a genius is subtracted by the amount of creativity necessary to become a genius. This is inductive of the influence that the brain has on awareness. The brain gains perceptive awareness upon “creating” thoughts in a continuous cyclic process, and if you were very “intelligent” but could not generate thoughts, you could not be an intellectual being. However, one who is alive can never stop thinking, so the correlation of IQ and genius would objectively appear as a negative exponential function. There are few exceptionally creative people out there, just as there are few exceptionally intelligent people, and one does not occur with the other. Possessing a high level of intelligence is a platform of understanding for the creative thinking skills to make up originality. When one bears informal thinking skills, they typically occupy heightened intuitive awareness, and vivid imaginative qualities. Critical thinking skills allow one to make sense of the resultant creative output within its surrounding context of knowledge. However, not all “geniuses” from our subjective intelligence range necessarily have high levels of creativity. One's level of intelligence can be so high that their platform of understanding generalizes ideas where a genius with lower levels of intelligence must use creativity in order to attain a sort of qualitative equivalence. Examples of people like this throughout history include the likes of John von Neumann and Christopher Langan.",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
+    "_id": "sh-autumn-2022-translation",
+    "title": "2022 上海高考秋考 V. Translation",
+    "year": 2022,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2022",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2022年上海秋季高考英语真题（空白卷）.doc",
+    "directions": "Directions: Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "妈妈忘了两天前刚给邻居买过黄瓜。",
+        "requiredWord": "forget",
+        "referenceAnswers": [
+          "My mother has forgotten that she bought cucumbers for the neighbour two days ago. Mother forgot buying cucumbers for neighbors two days ago. Mum forgot buying some cucumbers for the neighbour. Mum forgot that she had just bought some cucumbers for her neighbour."
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "每逢节假日, 我们都会去郊区露营, 为的就是享受悠闲惬意的生活。",
+        "requiredWord": "so that",
+        "referenceAnswers": [
+          "My family go to the suburbs to camp every holiday so that we can enjoy our leisurely and comfortable life. During holidays or festivals, my family would go camping in the countryside so that we could enjoy a leisurely life. Every holiday, we will go camping in the suburbs so that we can experience a carefree / relaxing/leisurely and pleasant / comfortable easy life."
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "切莫苛求运动强度和频率, 细水长流才能见效。",
+        "requiredWord": "a difference",
+        "referenceAnswers": [
+          "Do not highly demand the intensity and frequency of exercise, because it is the persistence that makes a difference. Don't be too demanding for exercise intensity and frequency, for long-term insistence can make a difference. Never pursue/seek high intensity and frequency n when exercising because doing it step by step but perseveringly makes a difference."
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "这条运河历经数百年才修建而成, 如今虽无昔日繁荣之景, 但仍然是横跨东西的重要水路。",
+        "requiredWord": "as... as",
+        "referenceAnswers": [
+          "Although this canal, which took hundreds of years to be constructed, is no longer as prosperous as it used to be, it is still an important waterway running from the east to the west. It took hundreds of years to build the canal. Although not as busy as it used to be, it still remains the major watercourse spanning the east and the west. It took hundreds of years to build this canal , and though ( it is ) not as busy as it used to be, it is still an important waterway connecting the east and west. 作文：略 2022 年高考英语听力试题文字稿 Section A Directions:In Section A, you will hear ten short conversations between two speakers. At the end of each conversation, a question will be asked about what was said. The conversations and the questions will be spoken only once. After you hear a conversation and the question about it, read the four possible answers on your paper, and decide which one is the best answer to the question you have heard."
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2022-writing",
+    "title": "2022 上海高考秋考 VI. Guided Writing",
+    "year": 2022,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2022",
+    "paperOrder": 3,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2022年上海秋季高考英语真题（空白卷）.doc",
+    "questionNumber": 0,
+    "prompt": "Directions : Write an English composition in 120 - 150 words according to the instructions given below in Chinese. 假使你是明启中学的高三学生李华, 你的学校正在组织“走进历史”主题活动, 拟从三个活动形式里选择一个：走访老战士、表演历史剧和制作短视频。学校正在向全体师生征求建议。必须包含: (1) 你的选择; (2) 你的理由。",
+    "directions": "Directions : Write an English composition in 120 - 150 words according to the instructions given below in Chinese.",
+    "scenario": "假使你是明启中学的高三学生李华, 你的学校正在组织“走进历史”主题活动, 拟从三个活动形式里选择一个：走访老战士、表演历史剧和制作短视频。学校正在向全体师生征求建议。必须包含:",
+    "requirementsTitle": "写作要求：",
+    "requirements": [
+      "你的选择;",
+      "你的理由。"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2024-summary-writing",
+    "title": "2024 上海高考秋考 IV. Summary Writing",
+    "year": 2024,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2024",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2024年6月上海市秋季高考英语全真试卷（网络搜集回忆版））.docx",
+    "questionNumber": 71,
+    "prompt": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible. Obstacles to the correct decision Life is full of choices, some inconsequential, some really significant. But sometimes it can be hard to make the correct one. What are the obstacles that stand between us and a good outcome? Some of us just find it hard to decide. Alice Boyes, writing for Harvard Business Review, tells us this can be connected to perfectionism, where people attempt to find a perfect solution to any problem and are unable to move forward when they can’t find one. It might seem that being indecisive would stop us making the right decision, but in fact it could actually help us make the correct ones. Susan Krauss in Psychology Today reminds us that people often make bad decisions because they base them on preconceptions rather than the context in which things happen. She highlights a paper by researcher Iris Schneider which finds that indecisive people are more likely to look at different perspectives and use them to come to a better decision. So, it could be that a more significant barrier to making the best choice is our cognitive biases. David Robson tells us that intelligence can sometimes stop people making the right decision. People sometimes use intelligence to invent justifications for irrational beliefs. He believes that humility is key to making a good decision. People who can accept that they might be wrong are more likely to consider different viewpoints. He is backed up on this by Jeff Bezos. Tech CEO Jason Fried recalls the Amazon founder saying how the people who were right a lot of the time were the people who often changed their minds. So, maybe rather than indecision, it might be intelligence and decisiveness, backed up by our biases that actually stop us making good choices while humility and indecisiveness could help us pick the best option. 71.__________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________",
+    "directions": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible.",
+    "scenario": "Obstacles to the correct decision Life is full of choices, some inconsequential, some really significant. But sometimes it can be hard to make the correct one. What are the obstacles that stand between us and a good outcome? Some of us just find it hard to decide. Alice Boyes, writing for Harvard Business Review, tells us this can be connected to perfectionism, where people attempt to find a perfect solution to any problem and are unable to move forward when they can’t find one. It might seem that being indecisive would stop us making the right decision, but in fact it could actually help us make the correct ones. Susan Krauss in Psychology Today reminds us that people often make bad decisions because they base them on preconceptions rather than the context in which things happen. She highlights a paper by researcher Iris Schneider which finds that indecisive people are more likely to look at different perspectives and use them to come to a better decision. So, it could be that a more significant barrier to making the best choice is our cognitive biases. David Robson tells us that intelligence can sometimes stop people making the right decision. People sometimes use intelligence to invent justifications for irrational beliefs. He believes that humility is key to making a good decision. People who can accept that they might be wrong are more likely to consider different viewpoints. He is backed up on this by Jeff Bezos. Tech CEO Jason Fried recalls the Amazon founder saying how the people who were right a lot of the time were the people who often changed their minds. So, maybe rather than indecision, it might be intelligence and decisiveness, backed up by our biases that actually stop us making good choices while humility and indecisiveness could help us pick the best option. 71.__________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
+    "_id": "sh-autumn-2024-translation",
+    "title": "2024 上海高考秋考 V. Translation",
+    "year": 2024,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2024",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2024年6月上海市秋季高考英语全真试卷（网络搜集回忆版））.docx",
+    "directions": "Directions:Translate the following sentences into English, using the words given in the brackets",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "这个包又脏又粘，他却没想过要洗洗。",
+        "requiredWord": "occur",
+        "referenceAnswers": [
+          "It hasn’t occurred to him to wash the bag though it is sticky and dirty."
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "这个村庄位于山间，这使得普通的车辆很难到达那里。",
+        "requiredWord": "inaccessible",
+        "referenceAnswers": [
+          "The village is located among hills, which makes it inaccessible to ordinary cars."
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "实验结果与我们所期望的大相径庭，但我们相信探索越多，就越可能成功。",
+        "requiredWord": "likely",
+        "referenceAnswers": [
+          "The result of the experiment is totally different from/contrary to what we expected, but we believe that the more we explore, the more likely we are to/will succeed."
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "无论手头的事情多么重要或微不足道，我们都应该谨慎对待我们做的每一个决定，因为失之毫厘，差以千里。",
+        "requiredWord": "difference",
+        "referenceAnswers": [
+          "No matter how significant or insignificant the matter at hand is, we should be cautious about every resolution (that) we make, because one false step will make a great difference./However significant or insignificant the matter at hand is, we should be cautious about every resolution (that) we make, becasue one false step will make a great difference."
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2024-writing",
+    "title": "2024 上海高考秋考 VI. Guided Writing",
+    "year": 2024,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2024",
+    "paperOrder": 3,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2024年6月上海市秋季高考英语全真试卷（网络搜集回忆版））.docx",
+    "questionNumber": 76,
+    "prompt": "(共 25 分) Write an English composition in 120-150 words according to the instructions given below in Chinese. 你是明启中学的高三学生李明，你们学校英语报开设了一个“排忧解难”专栏，你的校友 Lynn 发出求助，请根据她的来信写封回信： 写作要求：1. 提出你的建议； 2. 说明你的理由。 Lynn 的来信大意内容如下： I'm a high school student. l want to do some cooking, but my parents don't allow me to do so. How can I change their mind? _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ ______________________________________________________________________________________",
+    "directions": "",
+    "scenario": "(共 25 分) Write an English composition in 120-150 words according to the instructions given below in Chinese. 你是明启中学的高三学生李明，你们学校英语报开设了一个“排忧解难”专栏，你的校友 Lynn 发出求助，请根据她的来信写封回信： 写作要求：1. 提出你的建议；",
+    "requirementsTitle": "写作要求：",
+    "requirements": [
+      "说明你的理由。 Lynn 的来信大意内容如下： I'm a high school student. l want to do some cooking, but my parents don't allow me to do so. How can I change their mind? _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ _________________________________________________________________________________ ______________________________________________________________________________________"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2025-summary-writing",
+    "title": "2025 上海高考秋考 IV. Summary Writing",
+    "year": 2025,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2025",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2025年高考英语试卷（上海）（秋考）（空白卷）.docx",
+    "questionNumber": 71,
+    "prompt": "Directions: Read the following passage. Summarize the main idea and the main point(s) of the passage in no more than 60 words. Use your own words as far as possible. Art Gallery Visits The lasting rainy winter is a season that feels heavy with depression. Luckily, I have a way to escape from the winter blues - visiting art galleries. Engaging with art closely, particularly in winter, is a life enhancer and a relief from loneliness, sadness, and frustration. When viewing things we find beautiful, activity in the pleasure and reward centres of the brain goes up. So when I don't have the time, or energy to take on challenging new themes in the gallery, I return to the comfort of my favourites: the blue in David Hockney's swimming pool, Agnes Martin's faint, delicate lines, or John Constable's cloudy Brighton summers. The comforting properties of these artworks are best experienced during winter. And did you know that even on the busiest of days, in the busiest galleries, there is potential for mindfulness? Mindfulness is hard to catch for me - my head feels like a mix of shopping lists, decade-old angers, and random song bits I can't name, but time spent in a gallery is the closest I get to being truly present. Part of this is down to \"slow looking”, the practice of taking time to really absorb an artwork rather than giving it a glance, reading the accompanying description, having another quick look and moving on. The experience can be powerful and informative. Often, I visit galleries alone to gather my thoughts. I just want the company of form, colour, material. But sometimes I'll take my daughter. To me, joy was walking her and watching as her eyes widened in curiosity, tiny fingers pointing: \"Do you see what I see?” Telling her: \"Yes ... but also no.” That we all see these things in a different way is such an important lesson that reaches into every part of our lives. Remembering that perception is personal is precious for me. This knowledge keeps me in a good state. ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _____________________________________________________________________________",
+    "directions": "Directions: Read the following passage. Summarize the main idea and the main point(s) of the passage in no more than 60 words. Use your own words as far as possible.",
+    "scenario": "Art Gallery Visits The lasting rainy winter is a season that feels heavy with depression. Luckily, I have a way to escape from the winter blues - visiting art galleries. Engaging with art closely, particularly in winter, is a life enhancer and a relief from loneliness, sadness, and frustration. When viewing things we find beautiful, activity in the pleasure and reward centres of the brain goes up. So when I don't have the time, or energy to take on challenging new themes in the gallery, I return to the comfort of my favourites: the blue in David Hockney's swimming pool, Agnes Martin's faint, delicate lines, or John Constable's cloudy Brighton summers. The comforting properties of these artworks are best experienced during winter. And did you know that even on the busiest of days, in the busiest galleries, there is potential for mindfulness? Mindfulness is hard to catch for me - my head feels like a mix of shopping lists, decade-old angers, and random song bits I can't name, but time spent in a gallery is the closest I get to being truly present. Part of this is down to \"slow looking”, the practice of taking time to really absorb an artwork rather than giving it a glance, reading the accompanying description, having another quick look and moving on. The experience can be powerful and informative. Often, I visit galleries alone to gather my thoughts. I just want the company of form, colour, material. But sometimes I'll take my daughter. To me, joy was walking her and watching as her eyes widened in curiosity, tiny fingers pointing: \"Do you see what I see?” Telling her: \"Yes ... but also no.” That we all see these things in a different way is such an important lesson that reaches into every part of our lives. Remembering that perception is personal is precious for me. This knowledge keeps me in a good state. ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _____________________________________________________________________________",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
+    "_id": "sh-autumn-2025-translation",
+    "title": "2025 上海高考秋考 V. Translation",
+    "year": 2025,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2025",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2025年高考英语试卷（上海）（秋考）（空白卷）.docx",
+    "directions": "Directions: Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "这块布料轻薄又速干，最适合做运动装。(cloth)",
+        "requiredWord": "汉译英",
+        "referenceAnswers": [
+          "This cloth is light, thin and quick-drying, making it perfect for sportswear."
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "他回答得吞吞吐吐，从某种意义上说，就是婉拒你的邀请。(equal)",
+        "requiredWord": "汉译英",
+        "referenceAnswers": [
+          "He speaks hesitantly and, in a sense, it’s equal to politely declining / turning down your invitation."
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "水果采摘让游客身心放松，也帮助果农增加了至少三分之二的销量，一举两得。(by)",
+        "requiredWord": "汉译英",
+        "referenceAnswers": [
+          "Fruit picking helps tourists relax body and mind and boosts farmers’ sales by at least two-thirds, achieving two goals with one action / a win-win situation."
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "无论压力多大，这位天才运动员都能稳定发挥，在各大赛事中摘金夺银，为国争光。（However）",
+        "requiredWord": "汉译英",
+        "referenceAnswers": [
+          "However great the pressure is, this talented/genius athlete can always perform steadily, winning gold and silver medals in various competitions/events to honor the country."
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2025-writing",
+    "title": "2025 上海高考秋考 VI. Guided Writing",
+    "year": 2025,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2025",
+    "paperOrder": 3,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2025年高考英语试卷（上海）（秋考）（空白卷）.docx",
+    "questionNumber": 76,
+    "prompt": "Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese. 学校英语报举办征文活动，请学生谈谈对“Don’t be afraid to get your feet wet if you want to learn how to swim.”这句话的理解。写一篇征文稿，在文中你必须： 1) 简述你对这句话的理解; 2) 结合一个具体事例加以说明。 注：文中不得出现考生姓名、学校等真实个人信息。 ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _____________________________________________________________________________",
+    "directions": "Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese.",
+    "scenario": "学校英语报举办征文活动，请学生谈谈对“Don’t be afraid to get your feet wet if you want to learn how to swim.”这句话的理解。写一篇征文稿，",
+    "requirementsTitle": "在文中你必须：",
+    "requirements": [
+      "简述你对这句话的理解;",
+      "结合一个具体事例加以说明。 注：文中不得出现考生姓名、学校等真实个人信息。 ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _____________________________________________________________________________"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
   }
 ]
