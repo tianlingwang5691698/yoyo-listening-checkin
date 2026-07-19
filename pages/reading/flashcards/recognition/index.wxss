@@ -40,8 +40,8 @@
 .recognition-answer{margin-top:12rpx;font-size:25rpx;font-weight:600;line-height:1.5}
 .recognition-example{margin-top:12rpx;color:#657d8c;font-size:23rpx;line-height:1.55}
 .recognition-example text{display:block;margin-top:5rpx}
-.recognition-complete{text-align:center}
-.recognition-complete-mark{display:flex;align-items:center;justify-content:center;width:92rpx;height:92rpx;margin:0 auto;border-radius:50%;background:#dff0e6;color:#34704d;font-size:48rpx}
+.recognition-complete{position:relative;overflow:hidden;padding:48rpx 28rpx;text-align:center}
+.recognition-complete-mark{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;width:92rpx;height:92rpx;margin:0 auto;border-radius:50%;background:#5d9b78;color:#fff;font-size:48rpx;animation:vocabCompletePop .88s cubic-bezier(.2,1.35,.28,1) both}
 .recognition-complete-title{margin-top:18rpx;font-size:38rpx;font-weight:700}
 .recognition-score{display:grid;grid-template-columns:repeat(3,1fr);gap:12rpx;margin-top:28rpx}
 .recognition-score view{padding:18rpx 6rpx;border-radius:15rpx;background:#edf5f8}
@@ -49,6 +49,13 @@
 .recognition-score text:first-child{font-size:36rpx;font-weight:700}
 .recognition-score text:last-child{margin-top:5rpx;color:#718a99;font-size:20rpx}
 .recognition-change{height:80rpx;margin-top:14rpx;border:1rpx solid rgba(76,119,142,.18);border-radius:18rpx;background:#e8f1f5;color:#426a80;font-size:26rpx}
+.recognition-complete-title,.recognition-score,.recognition-complete button{position:relative;z-index:2}
+.celebrate-burst{position:absolute;top:18rpx;left:50%;z-index:1;width:240rpx;height:240rpx;transform:translateX(-50%);pointer-events:none;animation:vocabBurstFade 1.5s ease-out both}
+.celebrate-burst text{position:absolute;top:50%;left:50%;width:8rpx;height:76rpx;border-radius:999rpx;background:rgba(239,178,103,.58);transform-origin:50% 100%}
+.celebrate-burst text:nth-child(1){transform:translate(-50%,-100%) rotate(0deg)}.celebrate-burst text:nth-child(2){transform:translate(-50%,-100%) rotate(60deg)}.celebrate-burst text:nth-child(3){transform:translate(-50%,-100%) rotate(120deg)}.celebrate-burst text:nth-child(4){transform:translate(-50%,-100%) rotate(180deg)}.celebrate-burst text:nth-child(5){transform:translate(-50%,-100%) rotate(240deg)}.celebrate-burst text:nth-child(6){transform:translate(-50%,-100%) rotate(300deg)}
+.confetti-layer{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.confetti{position:absolute;top:-36rpx;width:12rpx;height:30rpx;border-radius:4rpx;opacity:0;animation:vocabConfettiFall 2.6s ease-in-out infinite}
+.confetti-1{left:8%;background:#8db7d4}.confetti-2{left:16%;background:#efb267;animation-delay:.18s}.confetti-3{left:25%;background:#86aaa1;animation-delay:.34s}.confetti-4{left:34%;background:#c57d2d;animation-delay:.08s}.confetti-5{left:43%;background:#8db7d4;animation-delay:.5s}.confetti-6{left:52%;background:#efb267;animation-delay:.26s}.confetti-7{left:60%;background:#86aaa1;animation-delay:.62s}.confetti-8{left:68%;background:#c57d2d;animation-delay:.42s}.confetti-9{left:76%;background:#8db7d4;animation-delay:.12s}.confetti-10{left:84%;background:#efb267;animation-delay:.56s}.confetti-11{left:91%;background:#86aaa1;animation-delay:.3s}.confetti-12{left:47%;background:#c57d2d;animation-delay:.72s}
 .theme-library.recognition-page{background:#eee7d8;color:#2f2924}
 .theme-library .recognition-hero{border-radius:8rpx;background:linear-gradient(90deg,#2b211b,#14283a)}
 .theme-library .recognition-menu,.theme-library .recognition-question,.theme-library .recognition-complete{border-color:rgba(69,54,42,.18);border-radius:7rpx;background:#f7efdf;box-shadow:0 12rpx 28rpx rgba(43,33,27,.12)}
@@ -60,6 +67,9 @@
 @keyframes recognitionPulse{0%,100%{opacity:.55;transform:scale(.94)}
 50%{opacity:1;transform:scale(1.04)}
 }
+@keyframes vocabCompletePop{0%{opacity:0;transform:scale(.72)}70%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes vocabBurstFade{0%{opacity:0;transform:translateX(-50%) scale(.55) rotate(-12deg)}35%{opacity:1}100%{opacity:0;transform:translateX(-50%) scale(1.25) rotate(8deg)}}
+@keyframes vocabConfettiFall{0%{opacity:0;transform:translateY(-20rpx) rotate(0)}18%{opacity:1}100%{opacity:0;transform:translateY(620rpx) rotate(420deg)}}
 
 /* Normalize native button sizing and keep practice controls centered. */
 .recognition-count-controls button{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:76rpx;min-width:76rpx;padding:0;justify-self:center;line-height:1;text-align:center}

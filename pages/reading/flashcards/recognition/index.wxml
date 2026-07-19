@@ -27,5 +27,13 @@
     <view class="recognition-feedback" wx:if="{{revealed}}"><view class="recognition-result {{current.correct ? 'is-correct' : 'is-wrong'}}">{{current.correct ? texts.correct : texts.wrong}}</view><view class="recognition-answer">{{current.word}} · {{current.meaning}}</view><view class="recognition-example" wx:if="{{current.example}}">{{current.example}}<text wx:if="{{current.exampleMeaning}}">{{current.exampleMeaning}}</text></view><button wx:if="{{!current.correct}}" bindtap="nextQuestion">{{currentIndex + 1 >= cards.length ? texts.finish : texts.next}}</button></view>
   </view>
 
-  <view class="recognition-complete" wx:if="{{mode === 'complete'}}"><view class="recognition-complete-mark">✓</view><view class="recognition-complete-title">{{texts.complete}}</view><view class="recognition-score"><view><text>{{correctCount}}</text><text>{{texts.correctCount}}</text></view><view><text>{{wrongCount}}</text><text>{{texts.wrongCount}}</text></view><view><text>{{accuracy}}%</text><text>{{texts.accuracy}}</text></view></view><button class="recognition-again" bindtap="retryPractice">{{texts.again}}</button><button class="recognition-change" bindtap="changePracticeMode">{{texts.changeMode}}</button></view>
+  <view class="recognition-complete" wx:if="{{mode === 'complete'}}">
+    <view class="confetti-layer"><text wx:for="{{['1','2','3','4','5','6','7','8','9','10','11','12']}}" wx:key="*this" class="confetti confetti-{{item}}"></text></view>
+    <view class="celebrate-burst"><text></text><text></text><text></text><text></text><text></text><text></text></view>
+    <view class="recognition-complete-mark">✓</view>
+    <view class="recognition-complete-title">{{texts.complete}}</view>
+    <view class="recognition-score"><view><text>{{correctCount}}</text><text>{{texts.correctCount}}</text></view><view><text>{{wrongCount}}</text><text>{{texts.wrongCount}}</text></view><view><text>{{accuracy}}%</text><text>{{texts.accuracy}}</text></view></view>
+    <button class="recognition-again" bindtap="retryPractice">{{texts.again}}</button>
+    <button class="recognition-change" bindtap="changePracticeMode">{{texts.changeMode}}</button>
+  </view>
 </view>

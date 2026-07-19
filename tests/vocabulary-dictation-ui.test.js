@@ -157,6 +157,22 @@ test('三种单词练习答对后自动进入下一题', () => {
   assert.match(dictationTemplate, /wx:elif="\{\{!current\.correct\}\}" bindtap="nextCard"/);
 });
 
+test('三种单词练习完成后统一显示庆祝特效并播放完成音效', () => {
+  const recognition = read('pages/reading/flashcards/recognition/index.js');
+  const recognitionTemplate = read('pages/reading/flashcards/recognition/index.wxml');
+  const recognitionStyles = read('pages/reading/flashcards/recognition/index.wxss');
+  const dictation = read('pages/reading/flashcards/dictation/index.js');
+  const dictationTemplate = read('pages/reading/flashcards/dictation/index.wxml');
+  assert.match(recognition, /effects\.playComplete\(/);
+  assert.match(dictation, /effects\.playComplete\(/);
+  assert.match(recognitionTemplate, /class="confetti-layer"/);
+  assert.match(recognitionTemplate, /class="celebrate-burst"/);
+  assert.match(dictationTemplate, /class="confetti-layer"/);
+  assert.match(dictationTemplate, /class="celebrate-burst"/);
+  assert.match(recognitionStyles, /@keyframes vocabConfettiFall/);
+  assert.match(recognitionStyles, /@keyframes vocabCompletePop/);
+});
+
 test('背词卡与词库列表发音入口统一为小音符', () => {
   const template = read('pages/reading/flashcards/index.wxml');
   const styles = read('pages/reading/flashcards/index.wxss');
