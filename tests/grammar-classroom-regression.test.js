@@ -808,6 +808,7 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   assert.match(grammarService, /getHistoricalNarrationAudio/);
   assert.match(grammarService, /item\.textHash === identity\.textHash/);
   assert.match(grammarService, /historicalCache: true/);
+  assert.match(grammarService, /GRAMMAR_TTS_MODEL \|\| 'speech-2\.8-turbo'/);
   assert.match(grammarService, /grammar-narration-manifest\.json/);
   assert.match(grammarService, /sharedApprovalKey = `\$\{narrationId\}:\$\{version\}:zh-CN`/);
   assert.match(grammarService, /approvalKey, textHash, model, voice, speed, emotion, NARRATION_PRONUNCIATION_VERSION/);
