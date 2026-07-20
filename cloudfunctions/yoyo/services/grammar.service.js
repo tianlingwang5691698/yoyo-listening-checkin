@@ -958,6 +958,25 @@ async function getCachedNarrationAudio(cacheKey) {
   return null;
 }
 
+async function getHistoricalNarrationAudio(identity) {
+  const result = await dbAdapter.collection(NARRATION_AUDIO_COLLECTION)
+    .where({ narrationId: identity.narrationId })
+    .limit(20)
+    .get();
+  const items = ((result && result.data) || [])
+    .filter((item) => item.active
+      && item.status === 'ready'
+      && item.version === identity.version
+      && item.language === identity.language
+      && item.textHash === identity.textHash)
+    .sort((left, right) => String(right.createdAt || '').localeCompare(String(left.createdAt || '')));
+  for (let index = 0; index < items.length; index += 1) {
+    const resolved = await resolveNarrationAudio(items[index]);
+    if (resolved) return resolved;
+  }
+  return null;
+}
+
 async function acquireNarrationJob(cacheKey, metadata) {
   const now = new Date().toISOString();
   return dbAdapter.db.runTransaction(async (transaction) => {
@@ -1038,6 +1057,20 @@ async function getGrammarNarrationAudio(event) {
       cached: true,
       model,
       voice
+    };
+  }
+
+  const historical = await getHistoricalNarrationAudio({ narrationId, version, language, textHash });
+  if (historical) {
+    return {
+      audioUrl: historical.audioUrl,
+      audioFileId: historical.audioFileId || '',
+      audioCloudPath: historical.audioCloudPath || '',
+      cacheKey: historical.cacheKey || cacheKey,
+      cached: true,
+      historicalCache: true,
+      model: historical.model || model,
+      voice: historical.voice || voice
     };
   }
 
