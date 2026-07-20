@@ -39,6 +39,7 @@ SecretKey.csv
 
 # Local generated checkpoints and backups
 tmp/
+output/
 data/backups/
 data/dictionary-import/*-backup-*/
 data/cloud-backups/
