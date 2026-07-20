@@ -91,9 +91,31 @@ test('词法微课完成后先写学习记录再生成日报', async () => {
   }
 });
 
+test('家长试听试做不写词法微课计划记录', async () => {
+  const study = require('../cloudfunctions/yoyo/facades/study.facade');
+  const taskService = require('../cloudfunctions/yoyo/services/task.service');
+  const originalPrepareRequestContext = study.prepareRequestContext;
+  const originalNormalizeStudyRole = study.normalizeStudyRole;
+  study.prepareRequestContext = async () => ({
+    today: '2026-07-20',
+    ctx: { member: { memberId: 'parent-1', studyRole: 'parent' } }
+  });
+  study.normalizeStudyRole = () => 'parent';
+  try {
+    await assert.rejects(
+      taskService.completeGrammarPlanTask({ payload: { taskId: 'grammar-noun-1' } }),
+      /家长模式不计入打卡/
+    );
+  } finally {
+    study.prepareRequestContext = originalPrepareRequestContext;
+    study.normalizeStudyRole = originalNormalizeStudyRole;
+  }
+});
+
 test('固定计划和统一日报详情按课程口径展示词法微课', () => {
   const dashboard = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/lib/dashboard-engine.js'), 'utf8');
   const levelStage = fs.readFileSync(path.join(root, 'pages/level-stage/index.js'), 'utf8');
+  const home = fs.readFileSync(path.join(root, 'pages/home/index.js'), 'utf8');
   const record = fs.readFileSync(path.join(root, 'pages/record/index.js'), 'utf8');
   const classroom = fs.readFileSync(path.join(root, 'grammar-package/pages/classroom/index.js'), 'utf8');
   const classroomTemplate = fs.readFileSync(path.join(root, 'grammar-package/pages/classroom/index.wxml'), 'utf8');
@@ -104,10 +126,14 @@ test('固定计划和统一日报详情按课程口径展示词法微课', () =>
   assert.match(dashboard, /task\.category === 'grammar'[\s\S]*?return '课程'/);
   assert.match(dashboard, /task\.category === 'grammar'[\s\S]*?`\$\{task\.playCount \|\| 0\}\/1 节`/);
   assert.match(levelStage, /task\.category === 'grammar'[\s\S]*?return t\('course'\)/);
+  assert.match(home, /category === 'grammar'[\s\S]*?getDeviceStudyRole[\s\S]*?&preview=1/);
+  assert.match(levelStage, /category === 'grammar'[\s\S]*?getDeviceStudyRole[\s\S]*?&preview=1/);
   assert.match(record, /dailyReportRoute\.buildDailyReportDetailUrl\(date\)/);
   assert.match(classroom, /store\.getStudyCompletionDetail\(this\.reviewRecordId\)/);
   assert.match(classroom, /questions: this\.buildCompletedQuestionResults\(\)/);
   assert.match(classroom, /this\.reviewMode \|\| this\.previewMode/);
+  assert.match(classroom, /previewMode: this\.previewMode/);
+  assert.match(classroomTemplate, /wx:if="\{\{previewMode\}\}"/);
   assert.match(classroomTemplate, /wx:for="\{\{reviewQuestions\}\}"/);
   assert.match(practiceHistory, /detailReady: questions\.length > 0/);
   assert.match(practiceTemplate, /item\.detailQuestions && item\.detailQuestions\.length/);

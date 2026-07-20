@@ -145,6 +145,7 @@ function uiText(english) {
     yourAnswer: english ? 'Your answer' : '作答',
     firstAnswer: english ? 'First answer' : '首次作答',
     correctAnswer: english ? 'Correct answer' : '正确答案',
+    parentPreview: english ? 'Parent preview · Not saved to student records' : '家长试听试做 · 不计入学生记录',
     parentPreviewDone: english ? 'Parent preview is not recorded' : '家长预览不记录'
   };
 }
@@ -190,6 +191,7 @@ Page({
     narrationDuration: 0,
     narrationTimeText: '00:00 / 00:00',
     reviewMode: false,
+    previewMode: false,
     reviewLoading: false,
     reviewSummary: '',
     reviewQuestions: [],
@@ -203,7 +205,7 @@ Page({
     this.reviewRecordId = String(options.recordId || '');
     this.reviewMode = options.mode === 'review' && !!this.reviewRecordId;
     this.previewMode = !this.reviewMode && String(options.preview || '') === '1';
-    this.setData({ reviewMode: this.reviewMode, reviewLoading: this.reviewMode });
+    this.setData({ reviewMode: this.reviewMode, previewMode: this.previewMode, reviewLoading: this.reviewMode });
     this.plannedEntry = {
       topic: String(options.topic || ''),
       lessonNumber: Math.max(1, Number(options.lessonNumber || 1)),

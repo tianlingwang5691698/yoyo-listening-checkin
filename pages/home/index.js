@@ -1080,8 +1080,10 @@ Page({
       const group = (this.data.groupedDailyTasks || []).find((item) => item.category === 'grammar');
       const task = group && (group.tasks || []).find((item) => item.taskId === taskId);
       if (!task) return;
+      const studyRole = store.getDeviceStudyRole ? store.getDeviceStudyRole() : this.data.studyRole;
+      const previewQuery = studyRole === 'student' ? '' : '&preview=1';
       wx.navigateTo({
-        url: `/grammar-package/pages/classroom/index?topic=${encodeURIComponent(task.topic || '')}&lessonNumber=${Number(task.lessonNumber || 1)}&taskId=${encodeURIComponent(task.taskId || '')}`
+        url: `/grammar-package/pages/classroom/index?topic=${encodeURIComponent(task.topic || '')}&lessonNumber=${Number(task.lessonNumber || 1)}&taskId=${encodeURIComponent(task.taskId || '')}${previewQuery}`
       });
       return;
     }

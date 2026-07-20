@@ -12,6 +12,8 @@
     <view class="debug-back" wx:else bindtap="handleTopBack">{{courseLoadFallback ? ui.cachedCourse : ui.loadError}} · {{ui.back}}</view>
   </view>
 
+  <view class="preview-banner" wx:if="{{previewMode}}">{{ui.parentPreview}}</view>
+
   <view class="classroom-shell">
     <view class="hero-card" wx:if="{{screen === 'system'}}">
       <view class="hero-eyebrow">{{ui.eyebrow}}</view>

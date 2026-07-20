@@ -402,8 +402,10 @@ Page({
     }
     if (category === 'grammar') {
       const task = taskRow.taskSnapshot || {};
+      const deviceStudyRole = store.getDeviceStudyRole ? store.getDeviceStudyRole() : 'parent';
+      const previewQuery = planRunType === 'preview' || deviceStudyRole !== 'student' ? '&preview=1' : '';
       wx.navigateTo({
-        url: `/grammar-package/pages/classroom/index?topic=${encodeURIComponent(task.topic || '')}&lessonNumber=${Number(task.lessonNumber || 1)}&taskId=${encodeURIComponent(task.taskId || taskId || '')}`
+        url: `/grammar-package/pages/classroom/index?topic=${encodeURIComponent(task.topic || '')}&lessonNumber=${Number(task.lessonNumber || 1)}&taskId=${encodeURIComponent(task.taskId || taskId || '')}${previewQuery}`
       });
       return;
     }
@@ -425,7 +427,9 @@ Page({
   openFixedPlanItem(event) {
     const category = String(event.currentTarget.dataset.category || '');
     if (category === 'grammar') {
-      wx.navigateTo({ url: '/grammar-package/pages/classroom/index?topic=noun' });
+      const deviceStudyRole = store.getDeviceStudyRole ? store.getDeviceStudyRole() : 'parent';
+      const previewQuery = deviceStudyRole === 'student' ? '' : '&preview=1';
+      wx.navigateTo({ url: `/grammar-package/pages/classroom/index?topic=noun${previewQuery}` });
       return;
     }
     if (category === 'vocabulary') {

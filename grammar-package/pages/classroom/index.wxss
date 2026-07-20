@@ -6,6 +6,7 @@ page { background: #f4fafc; }
 .topbar-chevron { font-size: 48rpx; line-height: 64rpx; }
 .topbar-back-text { margin-left: 4rpx; font-size: 25rpx; font-weight: 650; }
 .topbar-title { font-size: 31rpx; font-weight: 650; }
+.preview-banner { margin: 0 24rpx 12rpx; padding: 16rpx 22rpx; border: 1rpx solid var(--line); border-radius: 18rpx; background: var(--soft); color: var(--accent); font-size: 24rpx; font-weight: 700; line-height: 1.4; text-align: center; }
 .classroom-shell { padding: 12rpx 24rpx 40rpx; }
 .hero-card, .content-card { border: 1rpx solid var(--line); background: var(--card); box-shadow: 0 14rpx 40rpx rgba(54,92,113,.08); border-radius: 30rpx; }
 .hero-card { padding: 34rpx; margin-bottom: 20rpx; }
