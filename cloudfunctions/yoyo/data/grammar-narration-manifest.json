@@ -1413,7 +1413,7 @@
     },
     {
       "id": "noun:countability",
-      "version": "v2",
+      "version": "v3",
       "lessonId": "countability",
       "source": "word-courses.js"
     },
@@ -1425,7 +1425,7 @@
     },
     {
       "id": "noun:noun-boss",
-      "version": "v1",
+      "version": "v2",
       "lessonId": "noun-boss",
       "source": "word-courses.js"
     },
@@ -1455,7 +1455,7 @@
     },
     {
       "id": "noun:possessive",
-      "version": "v2",
+      "version": "v3",
       "lessonId": "possessive",
       "source": "word-courses.js"
     },
@@ -1983,7 +1983,7 @@
     },
     {
       "id": "punctuation:numbers-abbreviations",
-      "version": "v4",
+      "version": "v5",
       "lessonId": "numbers-abbreviations",
       "source": "punctuation-courses.js"
     },
@@ -3181,9 +3181,11 @@
     "noun:collective-noun:v2:zh-CN": "58ba0a2e6afb73e5bcffc97fe38ad279aacf55fc8119e3b991354dded4ae2f8e",
     "noun:countability:v1:zh-CN": "ebb129b9b304eff6c8ae78b0c6bd2eef5b4d82c7400da072adcdbd8da753145e",
     "noun:countability:v2:zh-CN": "ce17c50f41de98c0cb680a748215bd54c63f99f79154fd2d11a73827e138fc00",
+    "noun:countability:v3:zh-CN": "3381002b63f63cf4d08aa114dc0ab097e5016fee2f4d520644cb9ab0f69a13a9",
     "noun:irregular-plural:v1:zh-CN": "9d19694349559aa5dea2e7478bad167c13898e302add3e5608e99d1e3abd3e2c",
     "noun:irregular-plural:v2:zh-CN": "1be9e47a04ee50dd3567be8051a700f93f0f2ff5b01a00d84f09ea706b325f15",
     "noun:noun-boss:v1:zh-CN": "3687a8127d7d92ce05537e10edaba298440d814fe1a89390fdd8ed243fd0347d",
+    "noun:noun-boss:v2:zh-CN": "f20e454dd8b11b4ef30528a961341c8096db01f57a690612208c0a0bcbf35dab",
     "noun:noun-functions:v1:zh-CN": "29aa764cb0ce232ba5c489dd7f575fd21292dc799f2a6dfc938dd01df418dc41",
     "noun:noun-job:v2:zh-CN": "6e7dae962f89f17f647683b378d1232a4f0743872a6e97ca081247a49a676c15",
     "noun:noun-modifier:v1:zh-CN": "17a4a560831f765bba16383df63a1679d340b7f4f3afe1427fae21dd9c8c0f68",
@@ -3192,6 +3194,7 @@
     "noun:noun-types:v2:zh-CN": "f342cf0b9481e6be48d61fa058bd0b5b00f9b3a1a2b8e250ff3cd8f69f22e6fc",
     "noun:possessive:v1:zh-CN": "8eecdc44bc29bdc249c49db8a1c8bd440fe4e50510fe2a342214d5f3a77319be",
     "noun:possessive:v2:zh-CN": "eac58b6188507a8eb416ac1a99ee5c6d28d9df26471120f02e0e187a19d947ab",
+    "noun:possessive:v3:zh-CN": "b5baa7839208366bd41bc9ec32fcf17d6e3ebb5a26eebb768682e5b50c7a8f68",
     "noun:regular-plural:v1:zh-CN": "fdbd741f8427690c83305a67b3571d4687a6932693bdfa60e6dab73816300eab",
     "noun:regular-plural:v2:zh-CN": "9a2c74b9dbc5973d7a36a7dde230855cce6a1351a3c45da301b617f3df7bfe0a",
     "numeral:approximate:v1:zh-CN": "ecd13cdec09b9ea8a71c599e33d2ad07fe69442d904a93b7fbdeb5519b64a957",
@@ -3302,6 +3305,7 @@
       "b4715f68db06c91931d7451bb4d75c02b4bb44c98fa26d91e6cd9de39978fdae",
       "ac173b6ef7c920d0b81c7aa9876edf8304e61321a9500528291975d4294ccd9b"
     ],
+    "punctuation:numbers-abbreviations:v5:zh-CN": "3c6bdbaaf88668e58406de4d6c2bf88c989e40979d4a572b84946f9d1eaea790",
     "punctuation:punctuation-capitalization-essence:v4:zh-CN": "09bc6697025416bec5b67ec571e629e24eaed9653b22996e4ee997bfb899ec88",
     "punctuation:quotation-punctuation:v4:zh-CN": "ae69741c57364908076bb5312b589c1805f908ee2b95de8a42b0d00b513a9d40",
     "punctuation:quote-style-boundary:v4:zh-CN": "1888ffe4baba1e9897076115ba5713efaaeb3e002e935f6f53f0130dedd8b1c6",

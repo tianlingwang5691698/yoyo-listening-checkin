@@ -204,7 +204,7 @@ test('全部语法课程提供中文共享微课讲解', () => {
       });
       assert.match(narration.text, /[\u4e00-\u9fff]/, `${builderName}/${lesson.id} narration must be Chinese`);
       assert.doesNotMatch(narration.text, /同学们|这节课|今天我们/, `${builderName}/${lesson.id} narration contains filler`);
-      assert.doesNotMatch(narration.text, /页面|本页|当前页/, `${builderName}/${lesson.id} narration contains page-dependent copy`);
+      assert.doesNotMatch(narration.text, /页面|本页|当前页|书桌上|课桌上|例句所示|界面(?:里|中|内|上)|卡片(?:里|中|内|上)|屏幕上(?:显示|写着)/, `${builderName}/${lesson.id} narration contains container-dependent copy`);
       assert.doesNotMatch(narration.text.slice(0, 60), /(?:^|[，。！？；\s])(?:的本质[，,]?(?:是|在于)|是指|指的是)/, `${builderName}/${lesson.id} narration starts with an abstract definition`);
       assert.ok(matchesDisplayedExample, `${builderName}/${lesson.id} narration does not explain a displayed example`);
       assert.deepEqual(unexplainedEnglishRuns, [], `${builderName}/${lesson.id} narration contains examples not displayed on the page`);

@@ -12,8 +12,8 @@ const NOUN_REMAINING_NARRATIONS = {
     text: `排练节目时，同一个人可以一会儿当主持人，一会儿当摄影师。名词放进句子，也会承担不同任务。先听。<#0.4#>The young teacher smiled。<#0.8#>谁笑了？不是只有 teacher，而是 The young teacher 整体。这个名词短语站在动作 smiled 前，负责说清“谁做动作”，语法上叫主语。<#0.7#>再听 We visited the museum。动作是 visited，the museum 回答“参观了什么”，所以它是宾语。Amy is our monitor 里，our monitor 没有承受动作，而是在 is 后说明 Amy 的身份，这个位置叫表语。可见，看到名词不能马上断定它就是主语，要看它和谓语是什么关系。<#0.8#>还有两种容易混的任务。She gave Tom a book 里，Tom 是收到东西的人，叫间接宾语；a book 是被给出的东西，叫直接宾语。They elected Tom captain 里，Tom 是宾语，captain 接着补充 Tom 被选成什么，叫宾语补足语。<#0.7#>判断时先圈出完整名词短语，再找谓语：谓语前回答“谁做”多半是主语；动作后回答“谁或什么”多半是宾语；系动词后说明身份是表语；宾语后再给身份，就是宾语补足语。`,
   },
   countability: {
-    id: 'noun:countability', version: 'v2', lengthText: '379 字 · 约 2 分钟',
-    text: `往购物袋里装东西时，有些东西能一件件数，有些要先装进一个单位再数。先看这一组。<#0.4#>a book · two books。<#0.8#>book 能分出一本、两本，所以数量变多时名词也变成复数 books。这类能直接按个数计算的，叫可数名词。<#0.7#>再看。<#0.4#>some water · a glass of water。<#0.8#>water 在这里表示没有切分单位的水，不能为了表示很多就随手加复数词尾；a glass of water 先用 glass 划出一份，再说明这一份装的是水。<#0.7#>第三组是。<#0.4#>some advice · a piece of advice。<#0.8#>advice 不是液体，但英语通常把“建议”看成不可数的内容整体。a piece of advice 用 piece 划出一条，advice 本身保持原形。<#0.8#>判断时先看名词能否直接和数量搭配并形成单复数；若不能，就找例句所示的容器或单位词。最后还要结合当前词义，因为同一个词换到不同语境，可数性也可能改变。`,
+    id: 'noun:countability', version: 'v3', lengthText: '380 字 · 约 2 分钟',
+    text: `往购物袋里装东西时，有些东西能一件件数，有些要先装进一个单位再数。先看这一组。<#0.4#>a book · two books。<#0.8#>book 能分出一本、两本，所以数量变多时名词也变成复数 books。这类能直接按个数计算的，叫可数名词。<#0.7#>再看。<#0.4#>some water · a glass of water。<#0.8#>water 在这里表示没有切分单位的水，不能为了表示很多就随手加复数词尾；a glass of water 先用 glass 划出一份，再说明这一份装的是水。<#0.7#>第三组是。<#0.4#>some advice · a piece of advice。<#0.8#>advice 不是液体，但英语通常把“建议”看成不可数的内容整体。a piece of advice 用 piece 划出一条，advice 本身保持原形。<#0.8#>判断时先看名词能否直接和数量搭配并形成单复数；若不能，就判断是否需要容器词或单位词。最后还要结合当前词义，因为同一个词换到不同语境，可数性也可能改变。`,
   },
   'regular-plural': {
     id: 'noun:regular-plural', version: 'v2', lengthText: '325 字 · 约 2 分钟',
@@ -24,8 +24,8 @@ const NOUN_REMAINING_NARRATIONS = {
     text: `有些名词变成多个时，不走普通的 s 或 es 路线。第一组写的是。<#0.4#>man → men　woman → women。<#0.8#>它们通过词内部元音变化表示复数，不是在末尾直接添词尾。<#0.7#>第二组是。<#0.4#>child → children　person → people。<#0.8#>这两组变化更明显，复数形式必须和单词一起记，不能临场按规则拼出来。这类形式叫不规则复数。<#0.7#>第三组是。<#0.4#>sheep → sheep　fish → fish/fishes。<#0.8#>sheep 单数和复数外形相同，数量要靠前面的限定信息和句中谓语判断。fish 常用同形复数 fish；fishes 可在强调不同鱼类时出现，意义范围不同。<#0.8#>判断时先找数量信号，再看当前名词能不能走普通复数规则；若属于例句这些不规则类型，就直接调出对应形式。遇到单复数同形的词，不看外壳猜数量，要连同上下文和谓语一起判断。`,
   },
   possessive: {
-    id: 'noun:possessive', version: 'v2', lengthText: '431 字 · 约 2 分钟',
-    text: `课桌上有几本书，贴上 Tom's book，就能看出这本书和 Tom 有所属关系。撇号不是装饰，它把前面的名词变成“与谁有关”的标记。单数名词 Tom 后通常加撇号 s；不以 s 结尾的不规则复数也按这类形式处理。<#0.8#>如果物品属于多位学生，例句写 the students' classroom。students 已经是以 s 结尾的规则复数，所以只在末尾加撇号。先判断原词是不是复数，再决定撇号放在哪里，不能只凭耳朵。<#0.7#>所有格也不只是“人的东西”。today's news 表示今天对应的新闻，学校、公司、城市等组织地点也常自然使用撇号 s。所以“有生命才用撇号 s”会误导。<#0.8#>再看 the roof of the house。roof 是房屋的一部分，of 把部分和整体连起来，中文通常说“房子的屋顶”。英语究竟选撇号 s 还是 of，要看关系类型和习惯。<#0.7#>操作时先找真正被说明的中心名词，再确认前面的名词是单数、普通复数还是不规则复数；最后判断是在表达所属、时间和组织关系，还是部分与整体。形式和关系都对上，所有格才选得准。`,
+    id: 'noun:possessive', version: 'v3', lengthText: '411 字 · 约 2 分钟',
+    text: `先看 Tom's book。它表示 book 与 Tom 的所属关系。撇号不是装饰，它把前面的名词变成“与谁有关”的标记。单数名词 Tom 后通常加撇号 s；不以 s 结尾的不规则复数也按这类形式处理。<#0.8#>再看 the students' classroom。students 已经是以 s 结尾的规则复数，所以只在末尾加撇号。先判断原词是不是复数，再决定撇号放在哪里，不能只凭耳朵。<#0.7#>所有格也不只是“人的东西”。today's news 表示今天对应的新闻，学校、公司、城市等组织地点也常自然使用撇号 s。所以“有生命才用撇号 s”会误导。<#0.8#>再看 the roof of the house。roof 是房屋的一部分，of 把部分和整体连起来，中文通常说“房子的屋顶”。英语究竟选撇号 s 还是 of，要看关系类型和习惯。<#0.7#>操作时先找真正被说明的中心名词，再确认前面的名词是单数、普通复数还是不规则复数；最后判断是在表达所属、时间和组织关系，还是部分与整体。形式和关系都对上，所有格才选得准。`,
   },
   'noun-modifier': {
     id: 'noun:noun-modifier', version: 'v2', lengthText: '411 字 · 约 2 分钟',
@@ -40,8 +40,8 @@ const NOUN_REMAINING_NARRATIONS = {
     text: `球场记分牌上，一支队伍作为一个整体参赛，可以说 The team is strong。这里关注的是“这支队”这个单位，所以谓语用单数 is。team 这种用一个词装下许多成员的名词，叫集体名词。<#0.8#>如果镜头转到更衣室，例句是 The team are arguing among themselves。复数 are 把注意力放到一个个成员身上。英式英语可以采用这种成员视角；美式英语通常仍把 team 当单数，或明确说成员，避免视角含糊。<#0.8#>再听 The police are working。police 和普通 team 不一样，它本身按复数处理，谓语要跟着复数关系。people 表示“人们”时也通常配复数谓语。<#0.7#>My family lives in Shanghai 里，family 表示一个家庭整体，所以 lives 用单数；如果英式语境强调家人各自的意见，才可能采用成员视角。<#0.7#>判断时不要只数现实中有几个人。先看这个词在语法上属于普通集体名词，还是 police、people 这类复数词；再看说话者把它当一个单位，还是突出成员分别行动；最后保持同一段话的英式或美式用法一致。`,
   },
   'noun-boss': {
-    id: 'noun:noun-boss', version: 'v1', lengthText: '538 字 · 约 2 分钟',
-    text: `书桌上写着 two children's books，看起来有两个复数信号，却各管一件事。children 已经是 child 的不规则复数，表示多个孩子；后面的撇号 s 建立“孩子们与书”的关系；最后 books 才表示有两本书。不能写 childrens，也不能把 two 错当成在数 children。<#0.8#>再看 three pieces of information。真正要表达的是三条信息，但 information 在这里不可数，不能写 informations。负责接受数字 three 的是 pieces，of information 再说明每一份是什么内容。<#0.7#>the windows of the classroom 里，中心名词 windows 表示多个窗户，所以复数落在 windows；of the classroom 只是交代窗户属于哪个整体。中文会把这层关系移到前面，说“教室的窗户”，英语结构仍从中心词 windows 开始理解。<#0.8#>综合题常把复数、所有格和名词修饰叠在一起，难点不是多背一个词尾，而是先弄清每个标记作用在哪个名词上。<#0.7#>下笔按三步：第一，圈出整个短语最核心的东西，并确认数字到底数谁；第二，判断中心词可数还是不可数，需要复数还是量词；第三，再处理谁属于谁，以及用撇号所有格还是 of。每一步只解决一个关系，复杂短语就会拆开。`,
+    id: 'noun:noun-boss', version: 'v2', lengthText: '535 字 · 约 2 分钟',
+    text: `先看短语 two children's books。它有两个复数信号，却各管一件事。children 已经是 child 的不规则复数，表示多个孩子；后面的撇号 s 建立“孩子们与书”的关系；最后 books 才表示有两本书。不能写 childrens，也不能把 two 错当成在数 children。<#0.8#>再看 three pieces of information。真正要表达的是三条信息，但 information 在这里不可数，不能写 informations。负责接受数字 three 的是 pieces，of information 再说明每一份是什么内容。<#0.7#>the windows of the classroom 里，中心名词 windows 表示多个窗户，所以复数落在 windows；of the classroom 只是交代窗户属于哪个整体。中文会把这层关系移到前面，说“教室的窗户”，英语结构仍从中心词 windows 开始理解。<#0.8#>综合题常把复数、所有格和名词修饰叠在一起，难点不是多背一个词尾，而是先弄清每个标记作用在哪个名词上。<#0.7#>下笔按三步：第一，圈出整个短语最核心的东西，并确认数字到底数谁；第二，判断中心词可数还是不可数，需要复数还是量词；第三，再处理谁属于谁，以及用撇号所有格还是 of。每一步只解决一个关系，复杂短语就会拆开。`,
   },
 };
 const PRONOUN_FIRST_LESSON_NARRATION = {
