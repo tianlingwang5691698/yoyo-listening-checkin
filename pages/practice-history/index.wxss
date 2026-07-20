@@ -473,3 +473,162 @@
 .language-en view,
 .language-en text { overflow-wrap: normal; word-break: normal; }
 .language-en .history-title { font-size: 40rpx; line-height: 1.16; }
+
+.theme-voyage.practice-history-page {
+  --voyage-ink: #17334b;
+  --voyage-paper: #fff5dc;
+  --voyage-paper-deep: #f1dfb8;
+  --voyage-brass: #b37c35;
+  --voyage-red: #c84f39;
+  --voyage-blue: #1f70a8;
+  padding-top: 52rpx;
+  background:
+    linear-gradient(180deg, #389dd0 0, #82cee8 300rpx, transparent 610rpx),
+    #dff3f8;
+  color: var(--voyage-ink);
+}
+
+.theme-voyage .history-hero,
+.theme-voyage .history-record,
+.theme-voyage .history-tabs,
+.theme-voyage .history-debug,
+.theme-voyage .history-empty {
+  border: 3rpx solid var(--voyage-brass);
+  border-radius: 14rpx;
+  background:
+    linear-gradient(105deg, rgba(155, 102, 40, 0.06) 0 2rpx, transparent 2rpx 34rpx),
+    var(--voyage-paper);
+  box-shadow: 0 8rpx 0 rgba(101, 62, 23, 0.18);
+}
+
+.theme-voyage .history-hero {
+  position: relative;
+  min-height: 196rpx;
+  padding: 36rpx 164rpx 34rpx 34rpx;
+  overflow: visible;
+  border-top: 12rpx solid var(--voyage-red);
+}
+
+.theme-voyage .history-eyebrow,
+.theme-voyage .history-copy,
+.theme-voyage .history-record-meta,
+.theme-voyage .history-passage,
+.theme-voyage .history-writing-text,
+.theme-voyage .history-analysis,
+.theme-voyage .history-list-line,
+.theme-voyage .history-correction,
+.theme-voyage .history-review-row {
+  color: #755f45;
+}
+
+.theme-voyage .history-title,
+.theme-voyage .history-record-title,
+.theme-voyage .history-section-title,
+.theme-voyage .history-question-no,
+.theme-voyage .history-question-prompt {
+  color: var(--voyage-ink);
+  font-family: "Songti SC", serif;
+}
+
+.theme-voyage .history-archive-mark.is-voyage {
+  position: absolute;
+  top: 28rpx;
+  right: 28rpx;
+  width: 104rpx;
+  height: 118rpx;
+  border: 4rpx double var(--voyage-brass);
+  border-radius: 50rpx 50rpx 10rpx 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--voyage-blue);
+  color: #fff5dc;
+  transform: rotate(3deg);
+  box-shadow: 0 6rpx 0 #174f75;
+}
+
+.theme-voyage .history-archive-mark.is-voyage .history-archive-number {
+  font-size: 46rpx;
+  line-height: 1;
+}
+
+.theme-voyage .history-archive-mark.is-voyage text {
+  margin-top: 8rpx;
+  font-size: 15rpx;
+}
+
+.theme-voyage .history-tabs {
+  background: var(--voyage-paper-deep);
+}
+
+.theme-voyage .history-tab {
+  border-radius: 8rpx;
+  color: #755f45;
+}
+
+.theme-voyage .history-tab.is-active {
+  background: var(--voyage-blue);
+  color: #fff5dc;
+}
+
+.theme-voyage .history-record {
+  border-left: 10rpx solid var(--voyage-blue);
+}
+
+.theme-voyage.history-grammar .history-record { border-left-color: var(--voyage-brass); }
+.theme-voyage.history-writing .history-record { border-left-color: var(--voyage-red); }
+.theme-voyage.history-vocabulary .history-record { border-left-color: #3f907c; }
+
+.theme-voyage .history-record-stamp.is-voyage {
+  flex-shrink: 0;
+  width: 58rpx;
+  height: 58rpx;
+  border: 3rpx double var(--voyage-brass);
+  border-radius: 50%;
+  background: var(--voyage-paper-deep);
+  color: var(--voyage-red);
+  font-size: 27rpx;
+  line-height: 54rpx;
+  text-align: center;
+  font-weight: 700;
+}
+
+.theme-voyage .history-result,
+.theme-voyage .history-arrow {
+  color: var(--voyage-red);
+}
+
+.theme-voyage .history-result {
+  max-width: 160rpx;
+  white-space: normal;
+  text-align: right;
+  overflow-wrap: break-word;
+}
+
+.theme-voyage .history-detail {
+  border-top-color: rgba(179, 124, 53, 0.36);
+  background: rgba(241, 223, 184, 0.42);
+}
+
+.theme-voyage .history-section,
+.theme-voyage .history-question {
+  border: 2rpx solid rgba(179, 124, 53, 0.38);
+  border-radius: 10rpx;
+  background: var(--voyage-paper-deep);
+}
+
+.theme-voyage .history-option {
+  border-color: rgba(179, 124, 53, 0.38);
+  border-radius: 8rpx;
+  background: rgba(255, 245, 220, 0.7);
+  color: #755f45;
+}
+
+.theme-voyage .history-ai-row,
+.theme-voyage .history-explain-action,
+.theme-voyage .history-wrong-action {
+  border-color: var(--voyage-brass);
+  border-radius: 8rpx;
+  color: var(--voyage-blue);
+}

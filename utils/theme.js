@@ -2,7 +2,8 @@ const THEME_STORAGE_KEY = 'uiTheme';
 
 const THEMES = [
   { key: 'warm', label: '雾蓝玻璃' },
-  { key: 'library', label: '图书馆静谧' }
+  { key: 'library', label: '图书馆静谧' },
+  { key: 'voyage', label: '伟大航路' }
 ];
 
 const THEME_MAP = THEMES.reduce((map, item) => {
@@ -12,7 +13,8 @@ const THEME_MAP = THEMES.reduce((map, item) => {
 
 const WINDOW_COLORS = {
   warm: { backgroundColor: '#F6FBFD', frontColor: '#000000' },
-  library: { backgroundColor: '#FAF5EA', frontColor: '#000000' }
+  library: { backgroundColor: '#FAF5EA', frontColor: '#000000' },
+  voyage: { backgroundColor: '#5DB8DC', frontColor: '#000000' }
 };
 
 const SLIDER_COLORS = {
@@ -25,6 +27,11 @@ const SLIDER_COLORS = {
     activeColor: '#B89562',
     backgroundColor: 'rgba(184, 149, 98, 0.22)',
     blockColor: '#FAF5EA'
+  },
+  voyage: {
+    activeColor: '#176A99',
+    backgroundColor: 'rgba(44, 122, 157, 0.22)',
+    blockColor: '#FFF4D6'
   }
 };
 

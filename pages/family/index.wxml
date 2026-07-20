@@ -110,6 +110,7 @@
   </view>
 
   <view class="family-hero product-hero">
+    <view class="voyage-crew-badge" wx:if="{{theme === 'voyage'}}">⚓</view>
     <view class="family-map">
       <view class="family-node node-parent">{{texts.parentMark}}</view>
       <view class="family-link"></view>

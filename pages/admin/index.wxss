@@ -424,3 +424,127 @@
 .language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .library-title, .language-en .product-title, .language-en .section-title { letter-spacing: 0; }
 .language-en .admin-tab, .language-en .ledger-tab { font-size: 21rpx; }
+
+.theme-voyage.admin-page {
+  padding-top: 48rpx;
+  background:
+    linear-gradient(180deg, #389dd0 0, #82cee8 310rpx, transparent 620rpx),
+    #dff3f8;
+  color: #17334b;
+}
+
+.theme-voyage .admin-hero,
+.theme-voyage .section-panel,
+.theme-voyage .admin-error,
+.theme-voyage .empty-state {
+  border: 3rpx solid #b37c35;
+  border-radius: 16rpx;
+  background:
+    linear-gradient(105deg, rgba(155, 102, 40, 0.06) 0 2rpx, transparent 2rpx 34rpx),
+    #fff5dc;
+  box-shadow: 0 9rpx 0 rgba(101, 62, 23, 0.18);
+}
+
+.theme-voyage .admin-hero {
+  position: relative;
+  min-height: 220rpx;
+  padding-right: 146rpx;
+  overflow: visible;
+  border-top: 12rpx solid #c84f39;
+}
+
+.voyage-captain-badge {
+  position: absolute;
+  top: 30rpx;
+  right: 28rpx;
+  width: 82rpx;
+  height: 82rpx;
+  border: 4rpx double #8a5a25;
+  border-radius: 50%;
+  background: #1f70a8;
+  color: #fff5dc;
+  font-size: 48rpx;
+  line-height: 80rpx;
+  text-align: center;
+  box-shadow: 0 6rpx 0 #174f75;
+}
+
+.theme-voyage .admin-hero .product-title,
+.theme-voyage .section-title,
+.theme-voyage .admin-name,
+.theme-voyage .admin-error-title,
+.theme-voyage .admin-simple-value {
+  color: #17334b;
+  font-family: "Songti SC", serif;
+}
+
+.theme-voyage .admin-hero .product-copy,
+.theme-voyage .admin-activity,
+.theme-voyage .admin-error-copy,
+.theme-voyage .admin-simple-label {
+  color: #755f45;
+}
+
+.theme-voyage .admin-total,
+.theme-voyage .detail-toggle,
+.theme-voyage .admin-count,
+.theme-voyage .member-role {
+  color: #c84f39;
+}
+
+.theme-voyage .admin-tabs {
+  border: 2rpx solid #b37c35;
+  border-radius: 10rpx;
+  background: #f1dfb8;
+}
+
+.theme-voyage .admin-tab {
+  border-radius: 7rpx;
+  color: #755f45;
+}
+
+.theme-voyage .admin-tab.is-active {
+  background: #1f70a8;
+  color: #fff5dc;
+}
+
+.theme-voyage .admin-card {
+  margin-top: 16rpx;
+  padding: 22rpx;
+  border: 2rpx solid rgba(179, 124, 53, 0.4);
+  border-radius: 10rpx;
+  background: #f3e2bb;
+}
+
+.theme-voyage .admin-simple-row {
+  border-top: 1rpx dashed rgba(179, 124, 53, 0.42);
+}
+
+.theme-voyage .admin-retry {
+  border: 2rpx solid #b37c35;
+  border-radius: 8rpx;
+  background: #1f70a8;
+  color: #fff5dc;
+}
+
+.theme-voyage .admin-skeleton view {
+  border: 2rpx solid rgba(179, 124, 53, 0.3);
+  border-radius: 10rpx;
+  background: #f1dfb8;
+}
+
+.theme-voyage.language-en .section-head {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.theme-voyage.language-en .admin-tabs {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.theme-voyage.language-en .admin-tab {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}

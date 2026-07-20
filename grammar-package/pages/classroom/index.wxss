@@ -165,3 +165,153 @@ page { background: #f4fafc; }
   .narration-controls { grid-template-columns: 112rpx minmax(0, 1fr) 112rpx; }
   .footer-button { font-size: 23rpx; }
 }
+
+/* Grand Voyage: grammar classroom as the captain's chart room. */
+.theme-voyage.classroom-page {
+  --bg: #f1e2be;
+  --card: #f8e9c3;
+  --line: #b4874d;
+  --ink: #173d55;
+  --muted: #715f45;
+  --accent: #a66d2c;
+  --soft: #ead09b;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, #55bde3 0 112rpx, #0f7eaa 113rpx 170rpx, #e4cd98 171rpx, #f2e5c5 100%);
+  color: var(--ink);
+}
+
+.theme-voyage .page-topbar {
+  height: 102rpx;
+  border-bottom: 5rpx solid #c18a3e;
+  background: linear-gradient(180deg, #1d5f7f, #173f57);
+  box-shadow: 0 7rpx 0 #6c3f20;
+  color: #fff2ca;
+}
+.theme-voyage .topbar-back { color: #fff2ca; }
+.theme-voyage .topbar-title { font-family: "Songti SC", STSong, serif; font-weight: 800; }
+.theme-voyage .classroom-shell { padding: 28rpx 24rpx 48rpx; }
+
+.theme-voyage .hero-card,
+.theme-voyage .content-card {
+  position: relative;
+  border: 4rpx solid #8f592c;
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(96,63,29,.025) 0 2rpx, transparent 2rpx 18rpx),
+    #f8e9c3;
+  box-shadow: 0 9rpx 0 #6f421f, 0 18rpx 34rpx rgba(68,55,31,.17), inset 0 0 24rpx rgba(104,64,25,.1);
+}
+
+.theme-voyage .hero-card {
+  min-height: 238rpx;
+  padding: 38rpx 220rpx 34rpx 36rpx;
+}
+.theme-voyage .hero-card::after {
+  content: "N";
+  position: absolute;
+  right: 42rpx;
+  top: 40rpx;
+  width: 132rpx;
+  height: 132rpx;
+  border: 8rpx double #b47a31;
+  border-radius: 50%;
+  background: conic-gradient(from 45deg, #a83b31 0 12.5%, #f1db9b 0 25%, #1e668c 0 37.5%, #f1db9b 0 50%, #a83b31 0 62.5%, #f1db9b 0 75%, #1e668c 0 87.5%, #f1db9b 0);
+  box-shadow: inset 0 0 0 14rpx #f5e4b7;
+  color: #68421f;
+  font-size: 18rpx;
+  line-height: 122rpx;
+  text-align: center;
+}
+.theme-voyage .hero-eyebrow,
+.theme-voyage .section-kicker,
+.theme-voyage .lesson-progress { color: #a56c2c; letter-spacing: 2rpx; }
+.theme-voyage .hero-title,
+.theme-voyage .lesson-title { color: var(--ink); font-family: "Songti SC", STSong, serif; font-weight: 800; }
+.theme-voyage .hero-copy,
+.theme-voyage .section-title,
+.theme-voyage .topic-meta,
+.theme-voyage .course-group-copy,
+.theme-voyage .lesson-meta { color: var(--muted); }
+.theme-voyage .syntax-demo { position: relative; z-index: 1; }
+.theme-voyage .syntax-chip { border-radius: 4rpx; background: rgba(255,246,216,.78); }
+
+.theme-voyage .content-card { padding: 32rpx 28rpx; }
+.theme-voyage .content-card::before {
+  content: "";
+  position: absolute;
+  inset: 13rpx;
+  border: 2rpx dashed rgba(122,77,33,.19);
+  pointer-events: none;
+}
+.theme-voyage .content-card > view { position: relative; z-index: 1; }
+
+.theme-voyage .domain-item,
+.theme-voyage .domain-course-item,
+.theme-voyage .topic-item,
+.theme-voyage .verb-map-item,
+.theme-voyage .section-map-item,
+.theme-voyage .lesson-row {
+  border: 3rpx solid #ac783d;
+  border-radius: 5rpx;
+  background: linear-gradient(90deg, #efd5a2, #fff0c7 18%, #f3dfb4);
+  box-shadow: 0 5rpx 0 #80502a;
+}
+.theme-voyage .domain-code,
+.theme-voyage .verb-map-code,
+.theme-voyage .section-map-no,
+.theme-voyage .lesson-no {
+  border-right: 3rpx solid #b27d3f;
+  border-radius: 3rpx;
+  background: #1d607f;
+  color: #fff1c7;
+}
+.theme-voyage .topic-title,
+.theme-voyage .course-group-title { color: #293b3d; font-family: "Songti SC", STSong, serif; font-weight: 800; }
+.theme-voyage .topic-count,
+.theme-voyage .section-map-meta,
+.theme-voyage .row-arrow { color: #a66d2c; }
+.theme-voyage .inline-back { border: 3rpx solid #9c6733; border-radius: 5rpx; background: #f2dba9; color: #65421f; }
+.theme-voyage .lesson-level { border: 2rpx solid rgba(112,71,31,.22); border-radius: 4rpx; }
+
+.theme-voyage .narration-card {
+  border: 3rpx solid #9f6a34;
+  border-radius: 6rpx;
+  background: linear-gradient(90deg, #e5c890, #f4dfb1);
+  box-shadow: inset 0 0 18rpx rgba(101,61,25,.12);
+}
+.theme-voyage .narration-button,
+.theme-voyage .narration-control { border-radius: 5rpx; }
+.theme-voyage .narration-button { border: 3rpx solid #c08a42; background: #1c5f7e; color: #fff2ca; }
+.theme-voyage .narration-control { border: 3rpx solid #a8753b; background: #fff0c6; color: #704a23; }
+.theme-voyage .narration-button.is-playing { background: #2f7767; }
+
+.theme-voyage .sentence-card {
+  border: 3rpx solid #aa783f;
+  border-radius: 5rpx;
+  background: rgba(255,241,204,.82);
+  box-shadow: 0 5rpx 0 rgba(112,69,31,.22);
+}
+.theme-voyage .sentence-note { border-left-color: #a66d2c; background: rgba(230,207,160,.62); }
+.theme-voyage .rule-card { border: 3rpx solid #8e6837; border-left: 8rpx solid #2f7767; border-radius: 5rpx; background: #ead9ad; }
+.theme-voyage .rule-label { color: #2f6a5c; }
+
+.theme-voyage .option-item,
+.theme-voyage .review-option {
+  border: 3rpx solid #b1844d;
+  border-radius: 5rpx;
+  background: rgba(255,247,220,.82);
+  box-shadow: inset 0 -3rpx rgba(112,71,31,.08);
+}
+.theme-voyage .option-key { color: #9a642a; font-family: Georgia, serif; font-weight: 800; }
+.theme-voyage .option-item.is-correct,
+.theme-voyage .review-option.is-answer { border-color: #477b60; background: #dce8d2; color: #27553d; }
+.theme-voyage .option-item.is-wrong,
+.theme-voyage .review-option.is-selected-wrong { border-color: #a64b42; background: #efd4ca; color: #7e352f; }
+.theme-voyage .feedback { border-radius: 5rpx; }
+
+.theme-voyage .footer-actions { background: linear-gradient(to bottom, rgba(242,229,197,0), #f2e5c5 24%); }
+.theme-voyage .footer-button { border-radius: 5rpx; }
+.theme-voyage .back-button { border: 3rpx solid #9e6a35; background: #f4ddad; color: #654422; }
+.theme-voyage .next-button { border: 3rpx solid #c0873f; background: linear-gradient(180deg, #c7473a, #a42e2a); box-shadow: 0 6rpx 0 #74391f; color: #fff2ca; }
+.theme-voyage .next-button.is-disabled { border-color: #b69c73; background: #d8c6a2; box-shadow: none; color: #88775f; }

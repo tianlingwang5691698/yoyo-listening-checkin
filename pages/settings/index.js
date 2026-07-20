@@ -21,6 +21,7 @@ const FALLBACK_TEXT = {
     adminBadge: '管理者',
     warmTheme: '雾蓝玻璃',
     libraryTheme: '图书馆静谧',
+    voyageTheme: '伟大航路',
     zhHans: '中文简体',
     english: 'English'
   },
@@ -40,6 +41,7 @@ const FALLBACK_TEXT = {
     adminBadge: 'ADMIN',
     warmTheme: 'Mist Glass',
     libraryTheme: 'Quiet Library',
+    voyageTheme: 'Grand Voyage',
     zhHans: '中文简体',
     english: 'English'
   }

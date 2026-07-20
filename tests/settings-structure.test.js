@@ -6,13 +6,45 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 
-test('settings page is registered and profile has one settings entry', () => {
+test('settings page is registered and every profile theme has one settings entry', () => {
   const app = JSON.parse(read('app.json'));
+  const profileJs = read('pages/profile/index.js');
   const profile = read('pages/profile/index.wxml');
   assert.ok(app.pages.includes('pages/settings/index'));
-  assert.equal((profile.match(/bindtap="openSettingsPage"/g) || []).length, 2);
+  assert.equal((profile.match(/bindtap="openSettingsPage"/g) || []).length, 3);
   assert.equal(profile.includes('openAdminPage'), false);
   assert.equal(profile.includes("studyRole === 'parent')}}\" bindtap=\"openAdminPage"), false);
+  assert.match(profileJs, /openParentPage\(\)[\s\S]*url: '\/pages\/parent\/index',[\s\S]*animationType: 'none',[\s\S]*animationDuration: 0/);
+  assert.match(profileJs, /openSettingsPage\(\)[\s\S]*url: '\/pages\/settings\/index',[\s\S]*animationType: 'none',[\s\S]*animationDuration: 0/);
+});
+
+test('settings and profile render warm, library, and voyage explicitly', () => {
+  const settingsJs = read('pages/settings/index.js');
+  const settingsWxml = read('pages/settings/index.wxml');
+  const profileWxml = read('pages/profile/index.wxml');
+
+  assert.match(settingsJs, /voyageTheme: '伟大航路'/);
+  assert.match(settingsJs, /voyageTheme: 'Grand Voyage'/);
+  assert.equal((settingsWxml.match(/data-theme="warm"/g) || []).length, 3);
+  assert.equal((settingsWxml.match(/data-theme="library"/g) || []).length, 3);
+  assert.equal((settingsWxml.match(/data-theme="voyage"/g) || []).length, 3);
+  assert.match(settingsWxml, /wx:elif="\{\{theme === 'voyage'\}\}"/);
+  assert.match(settingsWxml, /wx:elif="\{\{theme === 'warm'\}\}"/);
+  assert.match(profileWxml, /wx:elif="\{\{theme === 'voyage'\}\}"/);
+  assert.match(profileWxml, /wx:elif="\{\{theme === 'warm'\}\}"/);
+  assert.equal(settingsWxml.includes('<block wx:else>'), false);
+  assert.equal(profileWxml.includes('<block wx:else>'), false);
+});
+
+test('voyage settings emblem stays outside the title flow', () => {
+  const settingsWxss = read('pages/settings/index.wxss');
+  const emblemRules = [...settingsWxss.matchAll(/\.voyage-settings-emblem\s*\{([^}]*)\}/g)];
+  assert.ok(emblemRules.length > 0);
+  assert.match(emblemRules.at(-1)[1], /position:\s*absolute/);
+  assert.doesNotMatch(
+    settingsWxss,
+    /\.voyage-settings-emblem\s*,\s*\.voyage-row-icon\s*\{[^}]*position:\s*relative/
+  );
 });
 
 test('settings is local-first and admin visibility is cloud-authoritative', () => {

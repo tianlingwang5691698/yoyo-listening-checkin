@@ -1806,3 +1806,139 @@
 
 .language-en .speaking-level-tab,
 .language-en .library-level-tab { font-size: 18rpx; }
+
+/* Voyage speaking deck: chart room, brass microphone, and voyage score ledger. */
+.theme-voyage.speaking-page {
+  padding-top: 50rpx;
+  padding-bottom: 132rpx;
+  background:
+    linear-gradient(180deg, #46b6df 0, #dff3ee 310rpx, transparent 311rpx),
+    repeating-linear-gradient(13deg, rgba(95, 67, 32, 0.025) 0 2rpx, transparent 2rpx 24rpx),
+    #f1e0ba;
+  color: #17384c;
+}
+
+.theme-voyage .speaking-title {
+  color: #14384f;
+  font-family: "Songti SC", "STSong", serif;
+  font-size: 50rpx;
+  font-weight: 800;
+  text-shadow: 0 2rpx rgba(255, 255, 255, 0.54);
+}
+
+.theme-voyage .speaking-copy { color: #31596d; }
+
+.theme-voyage .speaking-entry-card,
+.theme-voyage .voice-cabin,
+.theme-voyage .score-card {
+  border: 5rpx solid #8f5b2d;
+  border-radius: 8rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(91, 61, 31, 0.026) 0 2rpx, transparent 2rpx 15rpx),
+    linear-gradient(100deg, #e8cb8e, #fff2ca 8%, #f6e5b6 90%, #d9b879);
+  box-shadow: 0 18rpx 34rpx rgba(4, 78, 105, 0.22), inset 0 0 24rpx rgba(104, 67, 31, 0.1);
+}
+
+.theme-voyage .entry-card-glow,
+.theme-voyage .cabin-glow {
+  background: radial-gradient(circle, rgba(56, 151, 185, 0.26) 0, rgba(56, 151, 185, 0) 70%);
+}
+
+.theme-voyage .entry-card-label,
+.theme-voyage .prompt-label,
+.theme-voyage .speaking-card-label,
+.theme-voyage .speaking-more-label { color: #755b3c; }
+
+.theme-voyage .entry-card-title,
+.theme-voyage .prompt-text,
+.theme-voyage .speaking-ielts-title { color: #173b50; font-family: "Songti SC", "STSong", serif; font-weight: 800; }
+
+.theme-voyage .entry-level-readout {
+  border: 4rpx solid #c49338;
+  border-radius: 50%;
+  background: #176a99;
+  color: #fff8e7;
+  box-shadow: inset 0 0 0 4rpx rgba(255, 246, 214, 0.3);
+}
+
+.theme-voyage .speaking-level-tab {
+  border: 2rpx solid rgba(143, 94, 42, 0.46);
+  border-radius: 7rpx;
+  background: rgba(255, 248, 221, 0.88);
+  color: #65533e;
+}
+
+.theme-voyage .speaking-level-tab.is-active {
+  border-color: #c49338;
+  background: #176a99;
+  color: #fff8e7;
+  box-shadow: 0 5rpx 0 #7f5227;
+}
+
+.theme-voyage .speaking-entry-visual {
+  border: 8rpx solid #c49338;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f7e6b7 0 38%, #176a99 39% 67%, #11425d 68%);
+  box-shadow: inset 0 0 0 5rpx rgba(255, 248, 222, 0.5), 0 12rpx 22rpx rgba(52, 44, 29, 0.2);
+}
+
+.theme-voyage .entry-orbit { border-color: rgba(255, 244, 210, 0.54); }
+.theme-voyage .entry-mic { border-color: #f4cf78; background: #173f57; }
+.theme-voyage .entry-wave view { background: #f4cf78; }
+
+.theme-voyage .speaking-entry-button,
+.theme-voyage .hold-button {
+  border: 4rpx solid #c1843c;
+  border-radius: 8rpx;
+  background: linear-gradient(180deg, #cf4d3e, #a92f2b);
+  box-shadow: 0 7rpx 0 #743a25;
+  color: #fff7df;
+  font-family: "Songti SC", "STSong", serif;
+  font-weight: 800;
+}
+
+.theme-voyage .speaking-ielts-row,
+.theme-voyage .prompt-panel,
+.theme-voyage .task-node,
+.theme-voyage .score-item {
+  border: 3rpx solid rgba(143, 94, 42, 0.4);
+  border-radius: 7rpx;
+  background: rgba(255, 249, 226, 0.88);
+}
+
+.theme-voyage .speaking-ielts-mark { border-color: #c49338; background: #176a99; }
+.theme-voyage .speaking-ielts-state,
+.theme-voyage .speaking-ielts-arrow,
+.theme-voyage .prompt-tag,
+.theme-voyage .speaking-card-state { color: #a34432; }
+
+.theme-voyage .listen-button {
+  border: 3rpx solid #c49338;
+  border-radius: 7rpx;
+  background: #176a99;
+  color: #fff8e7;
+  box-shadow: 0 5rpx 0 #7f5227;
+}
+
+.theme-voyage .task-node.is-active { border-color: #c49338; background: #176a99; }
+.theme-voyage .task-node.is-active .exercise-title,
+.theme-voyage .task-node.is-active .exercise-meta { color: #fff8e7; }
+.theme-voyage .task-node.is-active .node-pulse { border-color: #f4cf78; background: #cf4d3e; }
+
+.theme-voyage .record-orbit {
+  border: 8rpx solid #c49338;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f7e6b7 0 38%, #176a99 39% 67%, #11425d 68%);
+  box-shadow: inset 0 0 0 5rpx rgba(255, 248, 222, 0.5), 0 12rpx 22rpx rgba(52, 44, 29, 0.2);
+}
+
+.theme-voyage .ring-outer,
+.theme-voyage .ring-mid { border-color: rgba(255, 244, 210, 0.54); background: transparent; }
+.theme-voyage .mic-sound-circle { border-color: #f4cf78; background: rgba(18, 64, 88, 0.88); }
+.theme-voyage .mic-sound-circle::before,
+.theme-voyage .mic-sound-circle::after { border-color: #f4cf78; }
+.theme-voyage .mic-stem,
+.theme-voyage .wave-bar { background: #f4cf78; }
+
+.theme-voyage .meter-track { border-color: rgba(143, 94, 42, 0.4); background: rgba(113, 77, 38, 0.16); }
+.theme-voyage .meter-fill { background: linear-gradient(90deg, #176a99, #2e9caa); }

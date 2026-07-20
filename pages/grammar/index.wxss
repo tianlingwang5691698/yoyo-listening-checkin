@@ -1857,3 +1857,169 @@
 .language-en text { overflow-wrap: normal; word-break: normal; }
 .language-en .library-title,
 .language-en .grammar-title { font-size: 42rpx; line-height: 1.15; }
+
+/* Grand Voyage: grammar charts, captain notes and brass answer controls. */
+.theme-voyage.grammar-page {
+  --grammar-bg: #f1e2bf;
+  --grammar-bg-soft: #e7d09f;
+  --grammar-card: #f8e9c4;
+  --grammar-card-soft: rgba(255,241,202,.76);
+  --grammar-blue: #173d55;
+  --grammar-muted: #715f46;
+  --grammar-soft: #806d50;
+  --grammar-line: rgba(141,88,39,.28);
+  --grammar-line-strong: rgba(141,88,39,.5);
+  --grammar-mist: rgba(35,113,146,.16);
+  --grammar-sage: #2f7767;
+  --grammar-sage-soft: rgba(47,119,103,.15);
+  --grammar-coral: #a83b31;
+  --grammar-coral-soft: rgba(168,59,49,.14);
+  min-height: 100vh;
+  padding: 62rpx 26rpx 150rpx;
+  background:
+    linear-gradient(180deg, #62c3e7 0 210rpx, #117fac 211rpx 278rpx, #e5cf9d 279rpx, #f3e6c6 100%);
+  color: var(--grammar-blue);
+}
+
+.theme-voyage .grammar-hero {
+  padding: 38rpx 224rpx 34rpx 38rpx;
+  border: 5rpx solid #885128;
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(95,62,28,.025) 0 2rpx, transparent 2rpx 18rpx),
+    #f7e6ba;
+  box-shadow: 0 10rpx 0 #663b20, 0 22rpx 38rpx rgba(3,67,92,.24), inset 0 0 28rpx rgba(101,61,25,.14);
+}
+
+.theme-voyage .grammar-hero::after {
+  right: 42rpx;
+  top: 34rpx;
+  width: 134rpx;
+  height: 134rpx;
+  border: 8rpx double #b47a31;
+  border-radius: 50%;
+  background: conic-gradient(from 45deg, #a83b31 0 12.5%, #f1db9b 0 25%, #1e668c 0 37.5%, #f1db9b 0 50%, #a83b31 0 62.5%, #f1db9b 0 75%, #1e668c 0 87.5%, #f1db9b 0);
+  box-shadow: inset 0 0 0 14rpx #f5e4b7;
+  opacity: 1;
+}
+
+.theme-voyage .grammar-hero-main { max-width: none; }
+.theme-voyage .grammar-hero-visual { display: none; }
+.theme-voyage .grammar-eyebrow { color: #a06a2d; letter-spacing: 2rpx; }
+.theme-voyage .grammar-title { color: var(--grammar-blue); font-family: "Songti SC", STSong, serif; font-size: 52rpx; font-weight: 800; }
+.theme-voyage .grammar-copy { color: var(--grammar-muted); }
+
+.theme-voyage .grammar-actions {
+  margin-top: 28rpx;
+  padding: 5rpx;
+  border: 3rpx solid #8c582c;
+  border-radius: 6rpx;
+  background: #d0a75c;
+  box-shadow: 0 7rpx 0 #704321;
+}
+.theme-voyage .grammar-action { border-radius: 3rpx; color: #62401f; }
+.theme-voyage .grammar-action.is-active { background: #173f57; color: #fff1c8; box-shadow: inset 0 0 0 2rpx #e3be66; }
+
+.theme-voyage .grammar-card,
+.theme-voyage .directory-card,
+.theme-voyage .practice-card,
+.theme-voyage .classroom-card {
+  position: relative;
+  border: 4rpx solid #95602f;
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(14deg, rgba(102,67,30,.025) 0 2rpx, transparent 2rpx 20rpx),
+    #f8e9c4;
+  box-shadow: 0 9rpx 0 #744622, 0 18rpx 32rpx rgba(72,56,30,.16), inset 0 0 24rpx rgba(103,63,25,.1);
+}
+
+.theme-voyage .directory-card::after { display: none; }
+
+.theme-voyage .grammar-card::before,
+.theme-voyage .directory-card::before,
+.theme-voyage .practice-card::before,
+.theme-voyage .classroom-card::before {
+  content: "";
+  position: absolute;
+  inset: 13rpx;
+  border: 2rpx dashed rgba(124,79,34,.2);
+  pointer-events: none;
+}
+
+.theme-voyage .grammar-card-top,
+.theme-voyage .directory-content,
+.theme-voyage .question-list,
+.theme-voyage .classroom-card > view { position: relative; z-index: 1; }
+.theme-voyage .grammar-card-label,
+.theme-voyage .grammar-card-state { color: #a16b2d; font-weight: 800; }
+
+.theme-voyage .directory-row,
+.theme-voyage .classroom-topic,
+.theme-voyage .verb-map-item,
+.theme-voyage .micro-course-item {
+  border: 3rpx solid #ae7a40;
+  border-radius: 5rpx;
+  background: linear-gradient(90deg, #efd6a5, #fff0c8 18%, #f4dfb4);
+  box-shadow: 0 5rpx 0 #81502a;
+}
+
+.theme-voyage .directory-mark,
+.theme-voyage .micro-course-no {
+  border: 3rpx solid #d3aa58;
+  border-radius: 4rpx;
+  background: #1d607f;
+  color: #fff1c8;
+}
+.theme-voyage .directory-title,
+.theme-voyage .classroom-topic-title,
+.theme-voyage .verb-map-item-title,
+.theme-voyage .micro-course-title { color: #263b3f; font-family: "Songti SC", STSong, serif; font-weight: 800; }
+.theme-voyage .directory-meta,
+.theme-voyage .classroom-topic-meta,
+.theme-voyage .verb-map-item-copy,
+.theme-voyage .micro-course-meta { color: #796548; }
+.theme-voyage .directory-arrow,
+.theme-voyage .classroom-topic-arrow,
+.theme-voyage .verb-map-item-arrow,
+.theme-voyage .micro-course-arrow { color: #aa7130; font-weight: 800; }
+
+.theme-voyage .question-row {
+  border: 4rpx solid #986332;
+  border-radius: 7rpx;
+  background: #f8e8c1;
+  box-shadow: 0 7rpx 0 #744522;
+}
+.theme-voyage .question-row::before { background: #b47b36; border-color: #714220; }
+.theme-voyage .question-meta { color: #a06a2d; font-weight: 700; }
+.theme-voyage .question-prompt,
+.theme-voyage .classroom-question { color: #263b41; font-family: Georgia, "Songti SC", serif; font-weight: 700; }
+
+.theme-voyage .option-item,
+.theme-voyage .classroom-option {
+  border: 3rpx solid #b1844d;
+  border-radius: 5rpx;
+  background: rgba(255,247,220,.82);
+  box-shadow: inset 0 -3rpx rgba(112,71,31,.08);
+}
+.theme-voyage .option-key { color: #9a642a; font-family: Georgia, serif; font-weight: 800; }
+.theme-voyage .option-item.is-selected { border-color: #1c6788; background: #d9e7e4; }
+.theme-voyage .option-item.is-correct,
+.theme-voyage .classroom-option.is-correct { border-color: #477b60; background: #dce8d2; color: #27553d; }
+.theme-voyage .option-item.is-wrong,
+.theme-voyage .classroom-option.is-wrong { border-color: #a64b42; background: #efd4ca; color: #7e352f; }
+
+.theme-voyage .classroom-footer-button.is-back { border: 3rpx solid #9e6a35; border-radius: 5rpx; background: #f4ddad; color: #654422; }
+.theme-voyage .classroom-footer-button.is-next,
+.theme-voyage .grammar-explain-action {
+  border: 3rpx solid #c0873f;
+  border-radius: 5rpx;
+  background: linear-gradient(180deg, #c7473a, #a42e2a);
+  color: #fff2ca;
+  box-shadow: 0 6rpx 0 #74391f;
+}
+
+.theme-voyage .classroom-notice,
+.theme-voyage .sentence-analysis,
+.theme-voyage .classroom-examples { border-radius: 5rpx; background: rgba(255,244,210,.75); border-color: #b3874d; }
+.theme-voyage .classroom-notice { border-left-color: #2f7767; }
+.theme-voyage .dictionary-sheet { border: 5rpx solid #8c572c; border-radius: 8rpx 8rpx 0 0; background: #f7e8c3; }

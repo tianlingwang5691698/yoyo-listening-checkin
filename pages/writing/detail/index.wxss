@@ -1272,3 +1272,120 @@
   font-weight: 700;
   color: var(--ink);
 }
+
+/* Voyage writing room: ship manifest, captain's log, and sealed review. */
+.theme-voyage.writing-page {
+  padding-top: 48rpx;
+  padding-bottom: 110rpx;
+  background:
+    linear-gradient(180deg, #47b5df 0, #dff3ee 300rpx, transparent 301rpx),
+    repeating-linear-gradient(13deg, rgba(95, 67, 32, 0.025) 0 2rpx, transparent 2rpx 24rpx),
+    #f1dfb8;
+}
+
+.theme-voyage.writing-page::before {
+  background: radial-gradient(circle, rgba(255, 243, 184, 0.75) 0, rgba(255, 243, 184, 0) 68%);
+}
+
+.theme-voyage .writing-hero {
+  border: 4rpx solid #93602f;
+  border-radius: 8rpx;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(26, 112, 154, 0.14), transparent 30%),
+    repeating-linear-gradient(0deg, rgba(91, 61, 31, 0.026) 0 2rpx, transparent 2rpx 15rpx),
+    linear-gradient(100deg, #e7c98a, #fff2c8 8%, #f5e2b1 88%, #d6b370);
+  box-shadow: 0 18rpx 34rpx rgba(4, 78, 105, 0.22), inset 0 0 24rpx rgba(104, 67, 31, 0.1);
+}
+
+.theme-voyage .writing-hero .eyebrow,
+.theme-voyage .writing-hero .meta { color: #71583b; }
+
+.theme-voyage .writing-hero .title {
+  color: #14384f;
+  font-family: "Songti SC", "STSong", serif;
+  font-weight: 800;
+}
+
+.theme-voyage .word-pill { border: 3rpx solid #c49338; border-radius: 7rpx; background: #176a99; color: #fff8e7; }
+
+.theme-voyage .prompt-card,
+.theme-voyage .editor-card,
+.theme-voyage .review-card {
+  border: 4rpx solid rgba(142, 94, 43, 0.56);
+  border-radius: 8rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(91, 61, 31, 0.026) 0 2rpx, transparent 2rpx 15rpx),
+    linear-gradient(100deg, #e8cb8e, #fff2ca 8%, #f6e5b6 90%, #d9b879);
+  box-shadow: 0 15rpx 28rpx rgba(41, 71, 72, 0.16), inset 0 0 24rpx rgba(104, 67, 31, 0.1);
+}
+
+.theme-voyage .prompt-card { border-left-width: 18rpx; border-left-color: #176a99; }
+.theme-voyage .prompt-paper-head,
+.theme-voyage .editor-head,
+.theme-voyage .review-top { border-bottom-color: rgba(137, 90, 40, 0.28); }
+
+.theme-voyage .section-title,
+.theme-voyage .requirements-title,
+.theme-voyage .translation-reference-title {
+  color: #173b50;
+  font-family: "Songti SC", "STSong", serif;
+  font-weight: 800;
+}
+
+.theme-voyage .prompt-rules,
+.theme-voyage .prompt-directions,
+.theme-voyage .prompt-scenario,
+.theme-voyage .editor-subtitle,
+.theme-voyage .reason { color: #705a40; }
+
+.theme-voyage .requirement-dot { background: #c49338; box-shadow: 0 0 0 4rpx rgba(196, 147, 56, 0.2); }
+
+.theme-voyage .prompt-table,
+.theme-voyage .translation-item,
+.theme-voyage .translation-reference,
+.theme-voyage .translation-analysis,
+.theme-voyage .translation-analysis-summary,
+.theme-voyage .review-block,
+.theme-voyage .review-list {
+  border-color: rgba(141, 92, 39, 0.4);
+  border-radius: 7rpx;
+  background: rgba(255, 249, 226, 0.86);
+}
+
+.theme-voyage .translation-number { border: 3rpx solid #c49338; background: #176a99; color: #fff8e7; }
+
+.theme-voyage .translation-input,
+.theme-voyage .essay-input {
+  border: 3rpx solid rgba(142, 94, 43, 0.46);
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 53rpx, rgba(25, 91, 124, 0.12) 54rpx, transparent 55rpx),
+    rgba(255, 251, 235, 0.94);
+  color: #273a42;
+}
+
+.theme-voyage .paragraph-tabs {
+  border: 3rpx solid #9a6635;
+  border-radius: 7rpx;
+  background: #ead09a;
+}
+
+.theme-voyage .paragraph-tabs view.is-active { background: #176a99; color: #fff8e7; }
+
+.theme-voyage .submit-button,
+.theme-voyage .translation-submit {
+  border: 4rpx solid #c1843c;
+  border-radius: 8rpx;
+  background: linear-gradient(180deg, #cf4d3e, #a92f2b);
+  box-shadow: 0 7rpx 0 #743a25;
+  color: #fff7df;
+  font-family: "Songti SC", "STSong", serif;
+  font-weight: 800;
+}
+
+.theme-voyage .review-card.is-celebrating { animation: voyageWritingSeal 0.72s ease-out; }
+
+@keyframes voyageWritingSeal {
+  0% { transform: translateY(10rpx) rotate(-0.4deg); }
+  100% { transform: translateY(0) rotate(0); }
+}

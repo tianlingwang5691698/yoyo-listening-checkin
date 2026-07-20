@@ -1214,7 +1214,9 @@ Page({
       return;
     }
     wx.navigateTo({
-      url: dailyReportRoute.buildDailyReportDetailUrl(todayString())
+      url: dailyReportRoute.buildDailyReportDetailUrl(todayString()),
+      animationType: 'none',
+      animationDuration: 0
     });
   },
   openFamilyPage() {

@@ -1,4 +1,53 @@
-<view class="theme-{{theme}} page-shell library-plan-page language-{{language}}" wx:if="{{theme === 'library'}}">
+<view class="theme-{{theme}} page-shell voyage-plan-page language-{{language}}" wx:if="{{theme === 'voyage'}}">
+  <view class="voyage-logbook-head">
+    <view class="voyage-logbook-kicker">{{texts.eyebrow}}</view>
+    <view class="voyage-logbook-title">{{texts.title}}</view>
+    <view class="voyage-logbook-subtitle">{{selectedLevel}} · {{texts.subtitle}}</view>
+    <view class="voyage-logbook-compass"><view></view></view>
+  </view>
+
+  <view class="voyage-plan-fixed" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
+    <view><view class="voyage-plan-row-title">{{texts.currentPlan}}</view><view class="voyage-plan-muted">A1 · {{fixedPlan.planPhaseLabel || texts.phase2}} · {{texts.fixedPlanKept}}</view></view>
+    <view class="voyage-plan-link">{{texts.view}}</view>
+  </view>
+
+  <view class="voyage-current-route">
+    <view><view class="voyage-plan-row-title">{{texts.todayRuler}}</view><view class="voyage-plan-muted">{{planSummaryText}}</view></view>
+    <view class="voyage-daily-seal">{{dailyTotal}}</view>
+  </view>
+
+  <view class="voyage-selected-route" wx:if="{{selectedRows.length}}">
+    <view class="voyage-selected-row" wx:for="{{selectedRows}}" wx:key="category" data-category="{{item.category}}" data-level-id="{{item.levelId}}" bindtap="openMaterial">
+      <view class="voyage-selected-point"></view>
+      <view class="voyage-selected-main"><view>{{item.title}}</view><text>{{item.meta}}</text></view>
+      <view class="voyage-plan-link">{{texts.edit}}</view>
+    </view>
+  </view>
+
+  <view class="voyage-plan-empty" wx:if="{{!selectedRows.length}}"><view>{{texts.empty}}</view><text>{{texts.emptyHint}}</text></view>
+
+  <view class="voyage-plan-section">{{texts.addMaterial}}</view>
+  <view class="voyage-plan-tabs">
+    <view class="voyage-plan-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" wx:for="{{levelTabs}}" wx:key="levelId" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel"><view></view><text>{{item.levelId}}</text></view>
+  </view>
+
+  <view class="voyage-plan-catalog">
+    <view class="voyage-plan-material {{item.disabled ? 'is-disabled' : ''}}" wx:for="{{materials}}" wx:key="category" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtap="openMaterial">
+      <view class="voyage-material-port"><view></view></view>
+      <view class="voyage-selected-main"><view>{{item.title}}</view><text>{{item.countText}}</text></view>
+      <view class="voyage-plan-link">{{item.stateText}}</view>
+    </view>
+  </view>
+
+  <view class="voyage-plan-empty" wx:if="{{!levelLoading && !materials.length}}"><view>{{texts.allAdded}}</view><text>{{texts.allAddedHint}}</text></view>
+
+  <view class="voyage-plan-actions">
+    <view class="voyage-plan-clear {{selectedRows.length ? '' : 'is-disabled'}}" bindtap="clearPlan">{{texts.clear}}</view>
+    <view class="voyage-plan-done" bindtap="finishPlan">{{texts.done}}</view>
+  </view>
+</view>
+
+<view class="theme-{{theme}} page-shell library-plan-page language-{{language}}" wx:elif="{{theme === 'library'}}">
   <view class="library-plan-header">
     <view class="library-eyebrow">{{texts.eyebrow}}</view>
     <view class="library-plan-title">{{texts.title}}</view>

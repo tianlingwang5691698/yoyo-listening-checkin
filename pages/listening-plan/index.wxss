@@ -589,6 +589,35 @@
   font-weight: 600;
 }
 
+/* Voyage theme: captain's route logbook. */
+.voyage-plan-page { min-height: 100vh; padding: 42rpx 28rpx 190rpx; background: linear-gradient(180deg,#176a99 0 228rpx,transparent 229rpx), repeating-linear-gradient(12deg,rgba(100,71,36,.026) 0 2rpx,transparent 2rpx 21rpx), #f4e7c8; color: #102f43; }
+.voyage-logbook-head { position: relative; min-height: 188rpx; padding-right: 126rpx; color: #fff4d6; }
+.voyage-logbook-kicker { font-size: 18rpx; font-weight: 700; letter-spacing: 0; opacity: .72; }
+.voyage-logbook-title { margin-top: 10rpx; font-family: "Songti SC","STSong",serif; font-size: 50rpx; line-height: 1.18; font-weight: 800; }
+.voyage-logbook-subtitle { margin-top: 10rpx; font-size: 22rpx; line-height: 1.4; opacity: .82; }
+.voyage-logbook-compass { position: absolute; top: 8rpx; right: 6rpx; width: 94rpx; height: 94rpx; border: 7rpx double #d5a64b; border-radius: 50%; background: #fff4d6; box-shadow: 0 10rpx 20rpx rgba(7,42,59,.25); }
+.voyage-logbook-compass::before,.voyage-logbook-compass::after { content: ""; position: absolute; top: 42rpx; left: 13rpx; width: 68rpx; border-top: 3rpx solid #8d622f; }.voyage-logbook-compass::after { transform: rotate(90deg); }.voyage-logbook-compass view { position: absolute; top: 19rpx; left: 43rpx; width: 7rpx; height: 54rpx; background: linear-gradient(180deg,#bf4938 0 50%,#176a99 50%); transform: rotate(38deg); }
+.voyage-plan-fixed,.voyage-current-route,.voyage-plan-empty,.voyage-plan-catalog { border: 3rpx solid #95652f; border-radius: 6rpx; background: repeating-linear-gradient(0deg,rgba(96,67,34,.024) 0 2rpx,transparent 2rpx 16rpx),#fff4d6; box-shadow: 0 10rpx 22rpx rgba(42,70,71,.14); }
+.voyage-plan-fixed { min-height: 110rpx; display: flex; align-items: center; justify-content: space-between; gap: 20rpx; padding: 20rpx 24rpx; border-color: #318d7b; background: #e2f0e7; }
+.voyage-current-route { min-height: 140rpx; display: flex; align-items: center; justify-content: space-between; gap: 24rpx; margin-top: 20rpx; padding: 26rpx 28rpx; }
+.voyage-plan-row-title { font-family: "Songti SC","STSong",serif; font-size: 29rpx; line-height: 1.3; font-weight: 800; }
+.voyage-plan-muted { margin-top: 7rpx; color: #6c5d49; font-size: 21rpx; line-height: 1.45; }
+.voyage-plan-link { max-width: 150rpx; color: #176a99; font-size: 21rpx; line-height: 1.35; font-weight: 700; text-align: right; }
+.voyage-daily-seal { flex: 0 0 88rpx; width: 88rpx; height: 88rpx; display: flex; align-items: center; justify-content: center; border: 7rpx double #bf4938; border-radius: 50%; box-sizing: border-box; color: #bf4938; font-size: 30rpx; font-weight: 800; transform: rotate(5deg); }
+.voyage-selected-route,.voyage-plan-catalog { position: relative; margin-top: 20rpx; }.voyage-selected-route::before,.voyage-plan-catalog::before { content: ""; position: absolute; top: 36rpx; bottom: 36rpx; left: 48rpx; border-left: 4rpx dashed rgba(23,106,153,.34); }
+.voyage-selected-row,.voyage-plan-material { position: relative; min-height: 112rpx; display: grid; grid-template-columns: 48rpx minmax(0,1fr) auto; align-items: center; gap: 16rpx; padding: 18rpx 22rpx; border: 3rpx solid #9b6c35; border-radius: 6rpx; background: #fff4d6; }
+.voyage-selected-row + .voyage-selected-row { margin-top: 14rpx; }
+.voyage-selected-point,.voyage-material-port { z-index: 1; width: 40rpx; height: 40rpx; display: flex; align-items: center; justify-content: center; border: 4rpx solid #176a99; border-radius: 50%; box-sizing: border-box; background: #fff4d6; }.voyage-selected-point::after,.voyage-material-port view { content: ""; width: 12rpx; height: 12rpx; border-radius: 50%; background: #d5a64b; }
+.voyage-selected-main { min-width: 0; }.voyage-selected-main view { font-family: "Songti SC","STSong",serif; font-size: 27rpx; line-height: 1.35; font-weight: 700; word-break: normal; overflow-wrap: normal; }.voyage-selected-main text { display: block; margin-top: 6rpx; color: #6c5d49; font-size: 20rpx; line-height: 1.4; }
+.voyage-plan-empty { margin-top: 20rpx; padding: 34rpx; text-align: center; }.voyage-plan-empty view { font-size: 27rpx; font-weight: 700; }.voyage-plan-empty text { display: block; margin-top: 8rpx; color: #6c5d49; font-size: 21rpx; }
+.voyage-plan-section { margin: 34rpx 6rpx 18rpx; font-family: "Songti SC","STSong",serif; font-size: 31rpx; font-weight: 800; }
+.voyage-plan-tabs { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 8rpx; margin-bottom: 18rpx; }
+.voyage-plan-tab { min-width: 0; height: 72rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6rpx; border-bottom: 3rpx dashed rgba(23,106,153,.32); color: #6c5d49; font-size: 21rpx; font-weight: 700; }.voyage-plan-tab view { width: 13rpx; height: 13rpx; border: 3rpx solid currentColor; border-radius: 50%; box-sizing: border-box; }.voyage-plan-tab.is-active { border-bottom-style: solid; border-color: #176a99; color: #176a99; }.voyage-plan-tab.is-active view { background: #bf4938; }.voyage-plan-tab.is-disabled,.voyage-plan-material.is-disabled { opacity: .4; }
+.voyage-plan-catalog { padding: 10rpx 18rpx; }.voyage-plan-material { border: 0; border-bottom: 2rpx solid rgba(137,94,43,.17); box-shadow: none; }.voyage-plan-material:last-child { border-bottom: 0; }
+.voyage-plan-actions { position: fixed; z-index: 20; right: 24rpx; bottom: calc(20rpx + env(safe-area-inset-bottom)); left: 24rpx; display: grid; grid-template-columns: 1fr 1.6fr; gap: 14rpx; padding: 14rpx; border: 3rpx solid #8f632e; border-radius: 8rpx; background: rgba(255,244,214,.97); box-shadow: 0 14rpx 34rpx rgba(34,63,68,.24); }
+.voyage-plan-clear,.voyage-plan-done { height: 82rpx; display: flex; align-items: center; justify-content: center; border: 3rpx solid #a3743b; border-radius: 5rpx; box-sizing: border-box; color: #102f43; font-size: 27rpx; font-weight: 700; }.voyage-plan-done { border-color: #8c542c; background: #bf4938; color: #fff4d6; box-shadow: inset 0 3rpx rgba(255,255,255,.18),0 6rpx 0 #743820; }.voyage-plan-clear.is-disabled { opacity: .38; }
+.language-en .voyage-logbook-title { font-size: 41rpx; }
+
 .library-clear-action {
   border: 1rpx solid rgba(184, 149, 98, 0.42);
   color: #14283a;

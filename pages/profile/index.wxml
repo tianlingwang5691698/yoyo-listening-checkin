@@ -46,7 +46,53 @@
     </view>
   </view>
 
-  <block wx:else>
+  <view wx:elif="{{theme === 'voyage'}}" class="voyage-profile">
+    <view class="voyage-profile-hero">
+      <view class="voyage-profile-seal">
+        <view class="voyage-wheel"><view></view></view>
+        <view class="voyage-role">{{currentMember.studyRole === 'parent' ? texts.parent : texts.student}}</view>
+      </view>
+      <view class="voyage-profile-main" wx:if="{{profileHydrated}}">
+        <view class="voyage-kicker">VOYAGE LOG</view>
+        <view class="voyage-profile-name">{{profileNickname}}</view>
+        <view class="voyage-profile-code" wx:if="{{currentMember && currentMember.studyRole === 'student'}}">{{texts.studentId}} {{childCodeText}}</view>
+        <view class="voyage-profile-code" wx:else>{{currentMember.studyRole === 'student' ? texts.student : texts.parent}}</view>
+        <view class="voyage-profile-quote">{{dailyEncouragement.english}}</view>
+        <view class="voyage-profile-cn" wx:if="{{language !== 'en'}}">{{dailyEncouragement.chinese}}</view>
+      </view>
+      <view class="voyage-profile-main" wx:else>
+        <view class="voyage-skeleton title"></view>
+        <view class="voyage-skeleton line"></view>
+        <view class="voyage-skeleton short"></view>
+      </view>
+    </view>
+
+    <view class="voyage-note is-error" wx:if="{{profileHydrated && syncMode === 'cloud-error'}}">{{texts.syncFailed}}</view>
+    <view class="voyage-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+    </view>
+
+    <view class="voyage-profile-entries" wx:if="{{profileHydrated}}">
+      <view class="voyage-profile-entry report-entry" bindtap="openParentPage">
+        <view class="voyage-entry-mark report-mark"><view></view></view>
+        <view class="voyage-entry-main">
+          <view class="voyage-entry-title">{{texts.dailyReport}}</view>
+          <view class="voyage-entry-copy">{{texts.dailyReportDescription}}</view>
+        </view>
+        <view class="voyage-entry-arrow">›</view>
+      </view>
+      <view class="voyage-profile-entry settings-entry" bindtap="openSettingsPage">
+        <view class="voyage-entry-mark settings-mark"><view></view></view>
+        <view class="voyage-entry-main">
+          <view class="voyage-entry-title">{{texts.settings}}</view>
+          <view class="voyage-entry-copy">{{texts.settingsDescription}}</view>
+        </view>
+        <view class="voyage-entry-arrow">›</view>
+      </view>
+    </view>
+  </view>
+
+  <block wx:elif="{{theme === 'warm'}}">
     <view class="profile-atmosphere">
       <view class="light-ray ray-one"></view>
       <view class="light-ray ray-two"></view>

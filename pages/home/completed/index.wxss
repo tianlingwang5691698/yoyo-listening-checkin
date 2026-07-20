@@ -630,3 +630,143 @@
   line-height: 1.5;
   word-break: break-all;
 }
+
+.theme-voyage.completed-page {
+  --text-main: #17334b;
+  --text-strong: #17334b;
+  --text-muted: #755f45;
+  --text-soft: #8a7253;
+  --accent: #c84f39;
+  --accent-deep: #a53c2d;
+  padding-top: 46rpx;
+  background:
+    linear-gradient(180deg, #389dd0 0, #82cee8 330rpx, transparent 650rpx),
+    #dff3f8;
+}
+
+.theme-voyage .completed-hero,
+.theme-voyage .completed-card,
+.theme-voyage .debug-card,
+.theme-voyage .empty-state {
+  border: 3rpx solid #b37c35;
+  border-radius: 16rpx;
+  background:
+    linear-gradient(105deg, rgba(155, 102, 40, 0.06) 0 2rpx, transparent 2rpx 34rpx),
+    #fff5dc;
+  box-shadow: 0 9rpx 0 rgba(101, 62, 23, 0.18);
+  backdrop-filter: none;
+}
+
+.theme-voyage .completed-hero {
+  min-height: 300rpx;
+  overflow: visible;
+  border-top: 12rpx solid #c84f39;
+}
+
+.voyage-medal {
+  position: absolute;
+  z-index: 4;
+  top: -36rpx;
+  left: 50%;
+  margin-left: -44rpx;
+  width: 88rpx;
+  height: 88rpx;
+  border: 4rpx double #82551f;
+  border-radius: 50%;
+  background: #f0bd4f;
+  color: #c84f39;
+  font-size: 46rpx;
+  line-height: 84rpx;
+  text-align: center;
+  box-shadow: 0 7rpx 0 #8b5c25;
+}
+
+.theme-voyage .completed-row-main {
+  grid-template-columns: 70rpx minmax(0, 1fr);
+}
+
+.theme-voyage .completed-action {
+  grid-column: 2;
+  justify-self: start;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+.theme-voyage .completed-hero::before {
+  top: auto;
+  bottom: 24rpx;
+  background: repeating-linear-gradient(90deg, #c9a365 0 16rpx, transparent 16rpx 28rpx);
+}
+
+.theme-voyage .completed-hero-glow {
+  background: rgba(244, 195, 92, 0.28);
+  box-shadow: none;
+}
+
+.theme-voyage .completed-subtitle,
+.theme-voyage .completed-meta,
+.theme-voyage .completed-copy,
+.theme-voyage .attempt-subscore,
+.theme-voyage .attempt-text,
+.theme-voyage .attempt-feedback {
+  color: #755f45;
+}
+
+.theme-voyage .completed-count {
+  border: 3rpx double #b37c35;
+  border-radius: 12rpx;
+  background: #f1dfb8;
+  box-shadow: none;
+  transform: rotate(2deg);
+}
+
+.theme-voyage .completed-count view,
+.theme-voyage .completed-count text,
+.theme-voyage .completed-title,
+.theme-voyage .attempt-title {
+  color: #17334b;
+}
+
+.theme-voyage .completed-wave view {
+  border-radius: 3rpx;
+  background: linear-gradient(180deg, #2d85b8, #174f75);
+}
+
+.theme-voyage .completed-card {
+  min-height: 210rpx;
+  border-left: 12rpx solid #1f70a8;
+}
+
+.theme-voyage .completed-card::after {
+  background: repeating-linear-gradient(170deg, rgba(179, 124, 53, 0.18) 0 4rpx, transparent 4rpx 16rpx);
+}
+
+.theme-voyage .completed-index {
+  border-color: #b37c35;
+  border-radius: 8rpx;
+  background: #f0dfb8;
+  color: #c84f39;
+}
+
+.theme-voyage .completed-type {
+  border: 1rpx solid #b37c35;
+  border-radius: 6rpx;
+  background: #f1dfb8;
+  color: #755f45;
+}
+
+.theme-voyage .completed-action,
+.theme-voyage .attempt-button {
+  border: 2rpx solid #b37c35;
+  border-radius: 9rpx;
+  background: #1f70a8;
+  color: #fff5dc;
+}
+
+.theme-voyage .attempt-detail {
+  border-color: rgba(179, 124, 53, 0.42);
+  border-radius: 10rpx;
+  background: #f3e2bb;
+}

@@ -1,8 +1,8 @@
 const store = require('../../../utils/store');
 const page = require('../../../utils/page');
 const { getActiveGrammarTaskKey } = require('../../../utils/grammar-resume');
+const { getTheme, applyWindowTheme } = require('../../../utils/theme');
 
-const THEME_KEY = 'uiTheme';
 const LANGUAGE_KEY = 'yoyoLanguageV1';
 const PLANNED_RESUME_PREFIX = 'grammarPlannedResumeV1:';
 const PLANNED_AUDIO_COMPLETE_RATIO = 0.95;
@@ -443,15 +443,14 @@ Page({
   },
 
   syncPreferences() {
-    const storedTheme = wx.getStorageSync(THEME_KEY);
     const storedLanguage = wx.getStorageSync(LANGUAGE_KEY);
-    const theme = storedTheme === 'library' ? 'library' : 'warm';
+    const theme = getTheme();
     const language = storedLanguage === 'en' ? 'en' : 'zh-CN';
     const languageChanged = this.data.language !== language && this.data.screen !== 'system';
     this.setData({ theme, language, ui: uiText(language === 'en') });
     if (languageChanged) this.backToSystem();
     wx.setNavigationBarTitle({ title: language === 'en' ? 'Grammar Micro-Lessons' : '语法微课堂' });
-    wx.setNavigationBarColor({ frontColor: '#000000', backgroundColor: theme === 'library' ? '#FAF5EA' : '#F6FBFD' });
+    applyWindowTheme(theme);
   },
 
   reportPerformance(id, value) {

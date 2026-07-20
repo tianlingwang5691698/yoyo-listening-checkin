@@ -84,3 +84,32 @@
 .language-en .dictation-wrong-actions button { font-size: 22rpx; line-height: 1.3; }
 .language-en .dictation-play { font-size: 26rpx; }
 .language-en .complete-numbers text:last-child { font-size: 20rpx; }
+
+/* Grand Voyage: brass dictation console and captain reward seal. */
+.theme-voyage.dictation-nav { border-bottom: 5rpx solid #c18a3e; background: linear-gradient(180deg,#1e6382,#173f57); box-shadow: 0 7rpx 0 #6d4021; color:#fff2ca; }
+.theme-voyage .dictation-back,
+.theme-voyage .dictation-nav-title { color:#fff2ca; }
+.theme-voyage.dictation-page { background: linear-gradient(180deg,#54bde3 0 112rpx,#107da9 113rpx 170rpx,#e4ce9c 171rpx,#f3e6c6 100%); color:#173d55; }
+.theme-voyage .dictation-hero { position:relative; min-height:150rpx; padding:30rpx 176rpx 28rpx 30rpx; border:5rpx solid #8d572c; border-radius:7rpx; background:#f8e8bf; box-shadow:0 9rpx 0 #693d20,0 20rpx 34rpx rgba(4,66,89,.2); }
+.theme-voyage .dictation-hero::after { content:"Aa"; position:absolute; right:34rpx; top:22rpx; width:104rpx; height:104rpx; border:7rpx double #b47a31; border-radius:50%; background:#1d6381; box-shadow:inset 0 0 0 9rpx #e6c96f; color:#fff0c4; font:700 31rpx/96rpx Georgia,serif; text-align:center; }
+.theme-voyage .dictation-kicker { color:#a36b2c; }
+.theme-voyage .dictation-title { color:#173d55; font-family:"Songti SC",STSong,serif; }
+.theme-voyage .dictation-menu,
+.theme-voyage .dictation-card,
+.theme-voyage .dictation-complete,
+.theme-voyage .dictation-today { border:4rpx solid #95602f; border-radius:7rpx; background:#f8e9c4; box-shadow:0 8rpx 0 #744622,0 17rpx 30rpx rgba(72,56,30,.15); backdrop-filter:none; }
+.theme-voyage .dictation-today-bar { border:2rpx solid #976331; border-radius:3rpx; background:#ddc189; }
+.theme-voyage .dictation-today-bar view { background:#1d6687; }
+.theme-voyage .dictation-count-picker { border:3rpx solid #a57239; border-radius:5rpx; background:#ead3a1; }
+.theme-voyage .dictation-count-head { color:#755f43; }
+.theme-voyage .dictation-count-total { color:#173d55; }
+.theme-voyage .dictation-count-controls button { border:3rpx solid #a8753a; border-radius:5rpx; background:#d5a958; color:#633f1e; }
+.theme-voyage .dictation-action.primary { border:4rpx solid #c0883f; border-radius:6rpx; background:linear-gradient(180deg,#c9493b,#a42e2a); box-shadow:0 7rpx 0 #74391f; color:#fff2ca; font-weight:800; }
+.theme-voyage .dictation-wrong-actions button,
+.theme-voyage .dictation-history,
+.theme-voyage .dictation-change-mode { border:3rpx solid #9e6934; border-radius:5rpx; background:#f1d9a7; color:#65421f; }
+.theme-voyage .dictation-play { border:4rpx solid #d0a64e; border-radius:50%; background:#1d6381; color:#fff1c8; box-shadow:0 6rpx 0 #704321; }
+.theme-voyage .dictation-input { border:4rpx solid #a87338; border-radius:6rpx; background:#fff2cd; color:#173d55; }
+.theme-voyage .dictation-answer { border:3rpx solid #a8753a; border-radius:5rpx; background:#ead7aa; }
+.theme-voyage .complete-mark { border:8rpx double #b87d31; background:#1d6381; box-shadow:inset 0 0 0 7rpx #f1dc9a; color:#f3cf65; }
+.theme-voyage .complete-title { color:#a83b31; font-family:"Songti SC",STSong,serif; }

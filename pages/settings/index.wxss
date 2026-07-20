@@ -70,9 +70,144 @@
 
 .settings-options {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12rpx;
   margin-left: 96rpx;
+}
+
+/* 伟大航路 */
+.theme-voyage.settings-page {
+  background: #dff3fb;
+  color: #17334b;
+}
+
+.voyage-settings-hero {
+  position: relative;
+  min-height: 210rpx;
+  padding: 42rpx 34rpx 34rpx 126rpx;
+  overflow: hidden;
+  border: 3rpx solid #a87935;
+  border-radius: 16rpx;
+  background: linear-gradient(180deg, #fffaf0 0%, #f4e2ba 100%);
+  box-shadow: 0 12rpx 0 rgba(112, 72, 28, 0.2);
+  box-sizing: border-box;
+}
+
+.voyage-settings-hero::after {
+  content: "";
+  position: absolute;
+  right: -42rpx;
+  bottom: -70rpx;
+  width: 210rpx;
+  height: 210rpx;
+  border: 3rpx solid rgba(42, 104, 151, 0.18);
+  border-radius: 50%;
+}
+
+.voyage-settings-emblem {
+  position: absolute;
+  left: 30rpx;
+  top: 48rpx;
+  width: 72rpx;
+  height: 72rpx;
+  border: 3rpx solid #b8873d;
+  border-radius: 50%;
+  background: #1f70a8;
+  color: #fff6db;
+  font-size: 38rpx;
+  line-height: 72rpx;
+  text-align: center;
+  box-shadow: 0 5rpx 0 #744921;
+}
+
+.voyage-settings-hero .settings-title {
+  color: #17334b;
+  font-family: "Songti SC", serif;
+}
+
+.voyage-settings-hero .settings-subtitle {
+  margin-top: 14rpx;
+  color: #6f5b43;
+}
+
+.theme-voyage .settings-section-label {
+  color: #236c9d;
+}
+
+.voyage-settings-card,
+.voyage-admin-card {
+  padding: 8rpx 24rpx;
+  border: 3rpx solid #b8873d;
+  border-radius: 14rpx;
+  background: #fff7e5;
+  box-shadow: 0 9rpx 0 rgba(112, 72, 28, 0.16);
+}
+
+.voyage-settings-card .with-divider {
+  border-top: 1rpx dashed rgba(133, 92, 42, 0.36);
+}
+
+.voyage-row-icon {
+  flex-shrink: 0;
+  width: 66rpx;
+  height: 66rpx;
+  border: 2rpx solid #b8873d;
+  border-radius: 50%;
+  background: #e9f5f9;
+  color: #1f70a8;
+  font-size: 30rpx;
+  line-height: 66rpx;
+  text-align: center;
+  font-weight: 700;
+}
+
+.theme-voyage .settings-row-title {
+  font-family: "Songti SC", serif;
+}
+
+.theme-voyage .settings-row-description {
+  color: #77634b;
+}
+
+.theme-voyage .settings-arrow {
+  color: #c24a35;
+}
+
+.voyage-options .settings-option {
+  border: 2rpx solid #c99a55;
+  border-radius: 12rpx;
+  background: #f3e4c4;
+  color: #745834;
+}
+
+.voyage-options .settings-option.is-active {
+  border-color: #153e61;
+  background: #1f70a8;
+  color: #fffaf0;
+  box-shadow: inset 0 -5rpx 0 rgba(16, 49, 75, 0.28);
+}
+
+.voyage-options.language-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.voyage-admin-card {
+  min-height: 112rpx;
+  margin-top: 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.voyage-admin-badge {
+  flex-shrink: 0;
+  padding: 10rpx 14rpx;
+  border: 2rpx solid #b8873d;
+  border-radius: 8rpx;
+  background: #c84f39;
+  color: #fff7e5;
+  font-size: 20rpx;
+  font-weight: 700;
 }
 
 .settings-option {
@@ -312,3 +447,55 @@
 .language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .settings-title, .language-en .settings-row-title { letter-spacing: 0; }
 .language-en .settings-option { font-size: 24rpx; }
+
+.voyage-settings-emblem view,
+.voyage-row-icon.family-mark view {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 34rpx;
+  height: 34rpx;
+  border: 4rpx solid currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.voyage-settings-emblem view::before,
+.voyage-settings-emblem view::after,
+.voyage-row-icon.family-mark view::before,
+.voyage-row-icon.family-mark view::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -10rpx;
+  width: 4rpx;
+  height: 46rpx;
+  border-radius: 999rpx;
+  background: currentColor;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.voyage-settings-emblem view::after,
+.voyage-row-icon.family-mark view::after {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.voyage-row-icon {
+  position: relative;
+}
+
+.voyage-settings-emblem {
+  position: absolute;
+}
+
+.voyage-row-icon.appearance-mark view {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28rpx;
+  height: 28rpx;
+  border: 4rpx solid currentColor;
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-sizing: border-box;
+}

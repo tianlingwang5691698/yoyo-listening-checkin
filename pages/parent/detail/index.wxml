@@ -228,6 +228,7 @@
 
   <block wx:else>
   <view class="report-hero">
+    <view class="voyage-daily-seal" wx:if="{{theme === 'voyage'}}">⚓</view>
     <view class="hero-glow"></view>
     <view class="hero-head">
       <view>

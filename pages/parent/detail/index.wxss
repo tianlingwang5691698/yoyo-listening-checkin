@@ -981,3 +981,160 @@
 .language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .library-title, .language-en .hero-title, .language-en .section-title, .language-en .sheet-title { letter-spacing: 0; }
 .language-en button { font-size: 23rpx; }
+
+.theme-voyage.parent-detail-page {
+  padding-top: 34rpx;
+  background:
+    linear-gradient(180deg, #389dd0 0, #82cee8 340rpx, transparent 670rpx),
+    #dff3f8;
+}
+
+.theme-voyage .report-hero,
+.theme-voyage .rhythm-panel,
+.theme-voyage .voice-panel,
+.theme-voyage .content-panel {
+  border: 3rpx solid #b37c35;
+  border-radius: 16rpx;
+  background:
+    linear-gradient(105deg, rgba(155, 102, 40, 0.06) 0 2rpx, transparent 2rpx 34rpx),
+    #fff5dc;
+  box-shadow: 0 9rpx 0 rgba(101, 62, 23, 0.18);
+}
+
+.theme-voyage .report-hero {
+  margin-top: 18rpx;
+  overflow: visible;
+  border-top: 12rpx solid #c84f39;
+}
+
+.voyage-daily-seal {
+  position: absolute;
+  z-index: 3;
+  top: -34rpx;
+  right: 28rpx;
+  width: 82rpx;
+  height: 82rpx;
+  border: 3rpx double #8a5a25;
+  border-radius: 50%;
+  background: #1f70a8;
+  color: #fff5dc;
+  font-size: 42rpx;
+  line-height: 80rpx;
+  text-align: center;
+  box-shadow: 0 6rpx 0 #174f75;
+}
+
+.theme-voyage .hero-orbit {
+  display: none;
+}
+
+.theme-voyage .metric-pill {
+  min-width: 0;
+}
+
+.theme-voyage .metric-label {
+  overflow-wrap: break-word;
+}
+
+.theme-voyage .hero-glow {
+  background: radial-gradient(circle, rgba(244, 195, 92, 0.28), transparent 68%);
+}
+
+.theme-voyage .hero-title,
+.theme-voyage .section-title,
+.theme-voyage .node-title,
+.theme-voyage .sheet-title,
+.theme-voyage .voice-score {
+  color: #17334b;
+  font-family: "Songti SC", serif;
+}
+
+.theme-voyage .hero-kicker,
+.theme-voyage .section-kicker,
+.theme-voyage .node-label,
+.theme-voyage .hero-copy,
+.theme-voyage .quiet-note,
+.theme-voyage .sheet-copy,
+.theme-voyage .detail-loading {
+  color: #755f45;
+}
+
+.theme-voyage .hero-orbit text {
+  border-color: #b37c35;
+}
+
+.theme-voyage .hero-orbit text:nth-child(3) {
+  background: #c84f39;
+}
+
+.theme-voyage .metric-pill,
+.theme-voyage .metric-pill.is-soft,
+.theme-voyage .metric-pill.is-warm {
+  border: 2rpx solid rgba(179, 124, 53, 0.42);
+  border-radius: 10rpx;
+  background: #f1dfb8;
+}
+
+.theme-voyage .metric-value,
+.theme-voyage .metric-label {
+  color: #17334b;
+}
+
+.theme-voyage .panel-note,
+.theme-voyage .node-status,
+.theme-voyage .load-action,
+.theme-voyage .detail-toggle,
+.theme-voyage .attempt-play {
+  border: 2rpx solid #b37c35;
+  border-radius: 10rpx;
+  background: #1f70a8;
+  color: #fff5dc;
+}
+
+.theme-voyage .rhythm-track {
+  background: #b37c35;
+}
+
+.theme-voyage .node-mark {
+  border-color: #fff5dc;
+  background: #c84f39;
+}
+
+.theme-voyage .node-card,
+.theme-voyage .load-dossier,
+.theme-voyage .voice-card,
+.theme-voyage .study-dossier,
+.theme-voyage .detail-sheet,
+.theme-voyage .analysis-card,
+.theme-voyage .mini-card,
+.theme-voyage .question-card {
+  border: 2rpx solid rgba(179, 124, 53, 0.42);
+  border-radius: 10rpx;
+  background: #f3e2bb;
+  box-shadow: none;
+}
+
+.theme-voyage .sound-pass {
+  background: #d8c18f;
+}
+
+.theme-voyage .pass-bar {
+  background: #1f70a8;
+}
+
+.theme-voyage .dossier-spine {
+  background: #c84f39;
+}
+
+.theme-voyage .voice-ring {
+  border-color: #b37c35;
+  background: #f1dfb8;
+}
+
+.theme-voyage .voice-bands text {
+  background: #1f70a8;
+}
+
+.theme-voyage .attempt-play-icon {
+  background: #fff5dc;
+}

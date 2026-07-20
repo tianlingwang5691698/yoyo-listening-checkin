@@ -277,7 +277,9 @@ Page({
     if (!item) return;
     if (['reading', 'reading-study', 'grammar', 'writing'].includes(item.type)) {
       wx.navigateTo({
-        url: `/pages/parent/detail/index?date=${item.date || todayString()}`
+        url: `/pages/parent/detail/index?date=${item.date || todayString()}`,
+        animationType: 'none',
+        animationDuration: 0
       });
       return;
     }

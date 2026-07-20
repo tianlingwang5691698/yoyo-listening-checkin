@@ -34,6 +34,7 @@
 
   <block wx:else>
     <view class="identity-hero product-hero">
+      <view class="voyage-passport-emblem" wx:if="{{theme === 'voyage'}}">☸</view>
       <view class="product-title type-page-title">{{texts.title}}</view>
       <view class="product-copy">{{texts.subtitle}}</view>
     </view>

@@ -1014,3 +1014,180 @@
 .language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .library-growth-title, .language-en .record-title, .language-en .type-section-title { letter-spacing: 0; }
 .language-en .summary-label, .language-en .library-stat-cell text { font-size: 20rpx; }
+
+.theme-voyage.record-page {
+  --text-main: #17334b;
+  --text-strong: #17334b;
+  --text-muted: #755f45;
+  --text-soft: #8a7253;
+  --accent: #c84f39;
+  --accent-deep: #a53c2d;
+  --growth: #1f70a8;
+  --growth-deep: #15577f;
+  --calendar-cell-bg: #f4e3bc;
+  --calendar-cell-text: #735a39;
+  --calendar-completed-bg: #1f70a8;
+  --calendar-completed-text: #fff8e8;
+  padding-top: 34rpx;
+  background:
+    linear-gradient(180deg, rgba(57, 159, 211, 0.96) 0, rgba(130, 210, 235, 0.84) 340rpx, transparent 680rpx),
+    #dff3f8;
+}
+
+.theme-voyage .record-hero,
+.theme-voyage .section-panel,
+.theme-voyage .record-debug {
+  border: 3rpx solid #b37c35;
+  border-radius: 16rpx;
+  background:
+    linear-gradient(105deg, rgba(155, 102, 40, 0.07) 0 2rpx, transparent 2rpx 34rpx),
+    #fff5dc;
+  box-shadow: 0 10rpx 0 rgba(101, 62, 23, 0.18);
+  backdrop-filter: none;
+}
+
+.theme-voyage .record-hero {
+  position: relative;
+  min-height: 520rpx;
+  overflow: visible;
+}
+
+.theme-voyage .record-hero-top {
+  padding-right: 104rpx;
+}
+
+.theme-voyage .record-hero::before {
+  left: 42rpx;
+  right: 42rpx;
+  top: auto;
+  bottom: 28rpx;
+  height: 2rpx;
+  background: repeating-linear-gradient(90deg, #c9a365 0 16rpx, transparent 16rpx 28rpx);
+}
+
+.voyage-log-ribbon {
+  position: absolute;
+  z-index: 3;
+  top: -24rpx;
+  right: 28rpx;
+  width: 92rpx;
+  height: 112rpx;
+  border: 3rpx solid #7c4e20;
+  border-radius: 46rpx 46rpx 12rpx 12rpx;
+  background: #c84f39;
+  color: #fff4d6;
+  box-shadow: 0 7rpx 0 #713f1c;
+}
+
+.voyage-log-ribbon text {
+  display: block;
+  font-size: 54rpx;
+  line-height: 104rpx;
+  text-align: center;
+}
+
+.theme-voyage .growth-hero-glow {
+  background: rgba(246, 204, 112, 0.28);
+  box-shadow: none;
+}
+
+.theme-voyage .growth-hero-pattern view {
+  border-radius: 4rpx;
+  background: linear-gradient(180deg, #caa15c, #82602f);
+}
+
+.theme-voyage .record-eyebrow,
+.theme-voyage .metric-label,
+.theme-voyage .summary-label,
+.theme-voyage .section-copy,
+.theme-voyage .catchup-copy {
+  color: #755f45;
+}
+
+.theme-voyage .metric-switch {
+  border: 2rpx solid #c69a58;
+  border-radius: 12rpx;
+  background: #f0dfb8;
+}
+
+.theme-voyage .metric-tab {
+  border-radius: 8rpx;
+  color: #755f45;
+}
+
+.theme-voyage .metric-tab.is-active,
+.theme-voyage .detail-link,
+.theme-voyage .catchup-state {
+  background: #1f70a8;
+  color: #fff7df;
+}
+
+.theme-voyage .metric-orbit {
+  border: 4rpx double #b9823b;
+  background: #f2dfb5;
+}
+
+.theme-voyage .orbit-ring {
+  border-color: #1f70a8;
+}
+
+.theme-voyage .summary-item {
+  min-width: 0;
+  border-color: rgba(174, 119, 52, 0.34);
+  background: rgba(241, 220, 177, 0.7);
+}
+
+.theme-voyage .summary-label {
+  overflow-wrap: break-word;
+}
+
+.theme-voyage .calendar-card {
+  position: relative;
+  padding-top: 42rpx;
+}
+
+.theme-voyage .calendar-card > .section-head {
+  padding-right: 84rpx;
+}
+
+.voyage-calendar-compass {
+  position: absolute;
+  top: 20rpx;
+  right: 24rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border: 3rpx double #b37c35;
+  border-radius: 50%;
+  color: #c84f39;
+  font-size: 32rpx;
+  line-height: 58rpx;
+  text-align: center;
+  transform: rotate(45deg);
+}
+
+.theme-voyage .calendar-slide {
+  border: 2rpx solid rgba(179, 124, 53, 0.36);
+  border-radius: 10rpx;
+  background: #f3e2bb;
+}
+
+.theme-voyage .calendar-cell {
+  border-radius: 6rpx;
+}
+
+.theme-voyage .calendar-cell.is-selected .calendar-dot {
+  box-shadow: 0 0 0 5rpx rgba(200, 79, 57, 0.32);
+}
+
+.theme-voyage .track-rail {
+  border-left-color: #b37c35;
+}
+
+.theme-voyage .track-pin {
+  border-color: #fff5dc;
+  background: #c84f39;
+}
+
+.theme-voyage .day-card {
+  border-left: 12rpx solid #c84f39;
+}

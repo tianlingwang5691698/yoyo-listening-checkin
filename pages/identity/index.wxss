@@ -207,3 +207,105 @@
 .language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .library-title, .language-en .product-title, .language-en .role-title { letter-spacing: 0; }
 .language-en button { font-size: 24rpx; }
+
+.theme-voyage.identity-page {
+  padding: 48rpx 28rpx 150rpx;
+  background:
+    linear-gradient(180deg, #389dd0 0, #82cee8 310rpx, transparent 620rpx),
+    #dff3f8;
+  color: #17334b;
+}
+
+.theme-voyage .identity-hero,
+.theme-voyage .role-switch,
+.theme-voyage .bind-card {
+  border: 3rpx solid #b37c35;
+  border-radius: 16rpx;
+  background:
+    linear-gradient(105deg, rgba(155, 102, 40, 0.06) 0 2rpx, transparent 2rpx 34rpx),
+    #fff5dc;
+  box-shadow: 0 9rpx 0 rgba(101, 62, 23, 0.18);
+}
+
+.theme-voyage .identity-hero {
+  position: relative;
+  min-height: 210rpx;
+  padding: 38rpx 138rpx 34rpx 32rpx;
+  overflow: visible;
+  border-top: 12rpx solid #c84f39;
+}
+
+.voyage-passport-emblem {
+  position: absolute;
+  top: 30rpx;
+  right: 28rpx;
+  width: 82rpx;
+  height: 82rpx;
+  border: 4rpx double #8a5a25;
+  border-radius: 50%;
+  background: #1f70a8;
+  color: #fff5dc;
+  font-size: 48rpx;
+  line-height: 80rpx;
+  text-align: center;
+  box-shadow: 0 6rpx 0 #174f75;
+}
+
+.theme-voyage .identity-hero .product-title,
+.theme-voyage .section-title,
+.theme-voyage .role-title,
+.theme-voyage .student-code {
+  color: #17334b;
+  font-family: "Songti SC", serif;
+}
+
+.theme-voyage .identity-hero .product-copy,
+.theme-voyage .section-copy,
+.theme-voyage .role-copy {
+  color: #755f45;
+}
+
+.theme-voyage .role-switch {
+  margin-top: 22rpx;
+  padding: 10rpx;
+  gap: 10rpx;
+  background: #f1dfb8;
+}
+
+.theme-voyage .role-option {
+  border: 2rpx solid transparent;
+  border-radius: 10rpx;
+  background: rgba(255, 245, 220, 0.58);
+}
+
+.theme-voyage .role-option.is-active {
+  border-color: #b37c35;
+  background: #1f70a8;
+}
+
+.theme-voyage .role-option.is-active .role-title,
+.theme-voyage .role-option.is-active .role-copy {
+  color: #fff5dc;
+}
+
+.theme-voyage .form-input {
+  border: 2rpx solid rgba(179, 124, 53, 0.48);
+  border-radius: 10rpx;
+  background: #f3e2bb;
+  color: #17334b;
+}
+
+.theme-voyage .button-primary {
+  border: 3rpx solid #8a5a25;
+  border-radius: 12rpx;
+  background: #c84f39;
+  color: #fff5dc;
+  box-shadow: inset 0 -6rpx 0 rgba(107, 42, 32, 0.28);
+}
+
+.theme-voyage .student-code {
+  padding: 26rpx 18rpx;
+  border: 4rpx double #b37c35;
+  border-radius: 10rpx;
+  background: #f1dfb8;
+}

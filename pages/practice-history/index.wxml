@@ -3,7 +3,7 @@
     <view class="history-eyebrow">{{config.eyebrow}}</view>
     <view class="history-title">{{config.title}}</view>
     <view class="history-copy">{{config.copy}}</view>
-    <view class="history-archive-mark" wx:if="{{theme === 'library'}}">
+    <view class="history-archive-mark {{theme === 'voyage' ? 'is-voyage' : ''}}" wx:if="{{theme === 'library' || theme === 'voyage'}}">
       <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
       <text>ARCHIVE</text>
     </view>
@@ -21,7 +21,7 @@
   <view class="history-list" wx:if="{{records.length}}">
     <view class="history-record {{expandedId === item.id ? 'is-expanded' : ''}}" wx:for="{{records}}" wx:key="id">
       <view class="history-summary" data-id="{{item.id}}" bindtap="toggleRecord">
-        <view class="history-record-stamp" wx:if="{{theme === 'library'}}">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
+        <view class="history-record-stamp {{theme === 'voyage' ? 'is-voyage' : ''}}" wx:if="{{theme === 'library' || theme === 'voyage'}}">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
         <view class="history-summary-main">
           <view class="history-record-title">{{item.title}}</view>
           <view class="history-record-meta">{{item.dateLabel}} · {{item.meta}}</view>

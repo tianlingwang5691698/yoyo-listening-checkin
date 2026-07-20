@@ -132,6 +132,7 @@
 <block wx:else>
 <view class="theme-{{theme}} language-{{language}} page-shell record-page">
   <view class="record-hero product-hero">
+    <view class="voyage-log-ribbon" wx:if="{{theme === 'voyage'}}"><text>☸</text></view>
     <view class="growth-hero-glow"></view>
     <view class="growth-hero-pattern">
       <view></view>
@@ -199,6 +200,7 @@
   </view>
 
   <view class="calendar-card section-panel heatmap-card">
+    <view class="voyage-calendar-compass" wx:if="{{theme === 'voyage'}}">◈</view>
     <view class="section-head">
       <view>
         <view class="type-section-title">{{texts.calendarHeatmap}}</view>

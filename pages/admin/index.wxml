@@ -56,6 +56,7 @@
 
   <block wx:else>
     <view class="admin-hero product-hero">
+      <view class="voyage-captain-badge" wx:if="{{theme === 'voyage'}}">☸</view>
       <view class="product-title type-page-title">{{texts.navTitle}}</view>
       <view class="product-copy">{{texts.defaultCopy}}</view>
       <view class="admin-total">{{activeTotal}} {{texts.activeUsers}}</view>

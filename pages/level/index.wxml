@@ -1,5 +1,65 @@
 <view class="theme-{{theme}} page-shell level-page language-{{language}}">
-  <block wx:if="{{theme === 'library'}}">
+  <block wx:if="{{theme === 'voyage'}}">
+    <view class="voyage-level-head">
+      <view class="voyage-level-heading">
+        <view class="voyage-level-kicker">{{texts.archiveKicker}}</view>
+        <view class="voyage-level-title">{{texts.title}}</view>
+        <view class="voyage-level-subtitle">{{texts.subtitle}}</view>
+      </view>
+      <view class="voyage-level-compass" aria-hidden="true"><view></view><text>N</text></view>
+    </view>
+
+    <view class="voyage-plan-chart" bindtap="openPlanSettings">
+      <view class="voyage-plan-pin" aria-hidden="true"></view>
+      <view class="voyage-plan-main">
+        <view class="voyage-plan-label">{{texts.listeningPlan}}</view>
+        <view class="voyage-plan-copy">{{planSummaryText}}</view>
+      </view>
+      <view class="voyage-plan-action">{{texts.setupPlan}} <text>›</text></view>
+    </view>
+
+    <view class="voyage-fixed-route" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
+      <view class="voyage-fixed-mark" aria-hidden="true"><view></view></view>
+      <view class="voyage-fixed-main">
+        <view class="voyage-fixed-title">{{texts.currentPlan}}</view>
+        <view class="voyage-fixed-meta">A1 · {{fixedPlan.planPhaseLabel || texts.phase2}} · {{texts.fixedPlanUnaffected}}</view>
+      </view>
+      <view class="voyage-fixed-action">{{texts.view}}</view>
+    </view>
+
+    <view class="voyage-chart-tabs">
+      <block wx:for="{{levelTabs}}" wx:key="levelId">
+        <view class="voyage-chart-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel">
+          <view class="voyage-chart-coordinate"></view>
+          <text>{{item.levelId}}</text>
+        </view>
+      </block>
+    </view>
+
+    <view class="voyage-harbor-list">
+      <view class="voyage-catalog-error" wx:if="{{syncMode === 'cloud-error'}}">{{texts.syncError}}</view>
+      <block wx:if="{{levelLoading && !materials.length}}">
+        <view class="voyage-harbor-row is-skeleton"></view>
+        <view class="voyage-harbor-row is-skeleton is-short"></view>
+        <view class="voyage-harbor-row is-skeleton"></view>
+      </block>
+      <block wx:elif="{{materials.length}}">
+        <block wx:for="{{materials}}" wx:key="category">
+          <view class="voyage-harbor-row {{item.disabled ? 'is-disabled' : ''}} {{item.selected ? 'is-selected' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtouchstart="prefetchMaterial" bindtap="openMaterial">
+            <view class="voyage-harbor-point"><view></view></view>
+            <view class="voyage-harbor-main">
+              <view class="voyage-harbor-title">{{item.title}}</view>
+              <view class="voyage-harbor-meta">{{item.countText}}</view>
+            </view>
+            <view class="voyage-harbor-state">{{item.stateText}}</view>
+          </view>
+        </block>
+      </block>
+      <view class="voyage-harbor-empty" wx:else>{{texts.emptyLevel}}</view>
+    </view>
+  </block>
+
+  <block wx:elif="{{theme === 'library'}}">
     <view class="audio-library-head">
       <view>
         <view class="audio-library-kicker">{{texts.archiveKicker}}</view>

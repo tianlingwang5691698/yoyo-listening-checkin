@@ -240,12 +240,16 @@ Page({
   },
   openParentPage() {
     wx.navigateTo({
-      url: '/pages/parent/index'
+      url: '/pages/parent/index',
+      animationType: 'none',
+      animationDuration: 0
     });
   },
   openSettingsPage() {
     wx.navigateTo({
-      url: '/pages/settings/index'
+      url: '/pages/settings/index',
+      animationType: 'none',
+      animationDuration: 0
     });
   }
 });

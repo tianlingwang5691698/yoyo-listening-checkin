@@ -257,8 +257,10 @@
   </view>
 </view>
 
-<view class="theme-{{theme}} language-{{language}} page-shell lesson-page" wx:elif="{{task}}">
+<view class="theme-{{theme}} language-{{language}} page-shell lesson-page {{theme === 'voyage' ? 'voyage-cabin-page' : ''}}" wx:elif="{{task}}">
+  <view class="voyage-cabin-frame" wx:if="{{theme === 'voyage'}}" aria-hidden="true"><view class="voyage-cabin-porthole"></view><view class="voyage-cabin-rivet rivet-one"></view><view class="voyage-cabin-rivet rivet-two"></view></view>
   <view class="lesson-hero product-hero tone-{{task.coverTone}} cover-variant-{{task.coverVariant}}">
+    <view class="voyage-hero-compass" wx:if="{{theme === 'voyage'}}" aria-hidden="true"><view></view><text>N</text></view>
     <view class="lesson-hero-top">
       <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
       <view class="status-badge {{studyWriteAllowed ? (task.completedToday ? '' : 'is-warn') : 'is-muted'}}">{{studyWriteAllowed ? (task.completedToday ? texts.complete : texts.training) : texts.previewing}}</view>
@@ -300,6 +302,7 @@
   </view>
 
   <view class="section-panel player-card">
+    <view class="voyage-console-label" wx:if="{{theme === 'voyage'}}" aria-hidden="true"><view></view><view></view></view>
     <view class="lesson-complete-effect" wx:if="{{lessonCelebrateVisible}}">
       <view class="lesson-complete-ring"></view>
       <view class="lesson-complete-mark">{{texts.complete}}</view>
@@ -320,6 +323,7 @@
     </view>
     <view class="custom-player" wx:if="{{!task.isPendingAsset}}">
       <view class="player-panel quest-{{task.category}}">
+        <view class="voyage-console-dial" wx:if="{{theme === 'voyage'}}" aria-hidden="true"><view></view></view>
         <view class="player-info-block">
           <view class="player-info-top">
             <view>

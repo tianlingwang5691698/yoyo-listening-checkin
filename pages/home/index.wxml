@@ -1,4 +1,169 @@
-<view wx:if="{{theme === 'library'}}" class="theme-library page-shell library-home-page language-{{language}}">
+<view wx:if="{{theme === 'voyage'}}" class="theme-voyage page-shell voyage-home-page language-{{language}}">
+  <view class="voyage-sky" aria-hidden="true">
+    <image class="voyage-ocean-art" src="../../assets/voyage/home-ocean-hero.jpg" mode="aspectFill" />
+    <view class="voyage-sun"></view>
+    <view class="voyage-cloud cloud-left"></view>
+    <view class="voyage-cloud cloud-right"></view>
+    <view class="voyage-gull gull-one"></view>
+    <view class="voyage-gull gull-two"></view>
+  </view>
+  <view class="voyage-sea" aria-hidden="true">
+    <view class="voyage-wave wave-far"></view>
+    <view class="voyage-wave wave-near"></view>
+    <view class="voyage-ship">
+      <view class="voyage-ship-mast"></view>
+      <view class="voyage-ship-sail sail-main"></view>
+      <view class="voyage-ship-sail sail-side"></view>
+      <view class="voyage-ship-flag"></view>
+      <view class="voyage-ship-hull"><view></view><text></text></view>
+    </view>
+  </view>
+
+  <view class="voyage-header" style="{{homeNavStyle}}">
+    <view class="voyage-avatar"><image src="../../assets/voyage/explorer-avatar.jpg" mode="aspectFill" /></view>
+    <view class="voyage-welcome">
+      <view class="voyage-greeting">{{greeting}}{{texts.greetingSeparator}}{{child.nickname || texts.classmate}}</view>
+      <view class="voyage-date"><view class="voyage-calendar"></view><text>{{todayDisplay}} · Day {{checkinDayCount}}</text></view>
+    </view>
+  </view>
+
+  <view class="voyage-alert" wx:if="{{!homeLoading && syncMode === 'cloud-error'}}">
+    <view>{{texts.syncUnavailableTitle}}</view>
+    <text>{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || texts.syncUnavailableDescription}}</text>
+  </view>
+  <view class="voyage-mode-notice" wx:if="{{modeChangedNoticeVisible}}">{{texts.parentModeRestored}}</view>
+
+  <view class="voyage-nickname-sheet" wx:if="{{nicknameRequired && !identityConfirmVisible && !entryPosterVisible}}">
+    <view class="voyage-sheet-title">{{texts.nicknameRequiredTitle}}</view>
+    <view class="voyage-sheet-copy">{{texts.nicknameRequiredDescription}}</view>
+    <view class="voyage-nickname-edit">
+      <input class="voyage-nickname-input" placeholder="{{texts.nicknameExample}}" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
+      <view class="voyage-nickname-save" bindtap="saveRequiredNickname">{{texts.save}}</view>
+    </view>
+  </view>
+
+  <view class="voyage-role-sheet" wx:if="{{identityConfirmVisible && !entryPosterVisible}}">
+    <view>{{texts.identityDevicePrompt}}</view>
+    <view class="voyage-role-actions">
+      <button data-role="parent" bindtap="confirmStudyIdentity">{{texts.identityIAmParent}}</button>
+      <button class="is-primary" data-role="student" bindtap="confirmStudyIdentity">{{texts.identityIAmStudent}}</button>
+    </view>
+  </view>
+
+  <view class="voyage-scroll {{homeDataReady ? (listeningTaskStatus.setupRequired ? 'is-plan-empty' : 'is-plan-ready') : 'is-data-pending'}}" bindtap="openCompleted">
+    <view class="voyage-scroll-rope" aria-hidden="true"></view>
+    <view class="voyage-scroll-roll roll-left"></view>
+    <view class="voyage-scroll-roll roll-right"></view>
+    <view class="voyage-scroll-corner corner-top"></view>
+    <view class="voyage-scroll-corner corner-bottom"></view>
+    <view class="voyage-compass" aria-hidden="true">
+      <view class="voyage-compass-ring"></view>
+      <text class="voyage-compass-cardinal compass-n">N</text>
+      <text class="voyage-compass-cardinal compass-e">E</text>
+      <text class="voyage-compass-cardinal compass-s">S</text>
+      <text class="voyage-compass-cardinal compass-w">W</text>
+      <view class="voyage-compass-needle"></view>
+      <view class="voyage-compass-pin"></view>
+    </view>
+    <view class="voyage-scroll-title">{{texts.todayListening}}</view>
+    <view class="voyage-audio-row">
+      <view class="voyage-play"><view></view></view>
+      <view class="voyage-waveform">
+        <view wx:for="{{waveBars}}" wx:key="*this" class="voyage-wave-bar wave-{{item}}"></view>
+      </view>
+    </view>
+    <view class="voyage-progress-head" wx:if="{{homeDataReady}}">
+      <view>{{listeningTaskStatus.setupRequired ? texts.planStatus : texts.todayGoal}} <text wx:if="{{!listeningTaskStatus.setupRequired}}">{{todayProgressPercent}}%</text></view>
+      <text wx:if="{{listeningTaskStatus.setupRequired}}">{{texts.pendingSetup}}</text>
+      <text wx:else>{{todayDoneMinutes}} / {{todayGoalMinutes}} {{texts.minute}}</text>
+    </view>
+    <view class="voyage-progress-head home-data-skeleton" wx:else></view>
+    <view class="voyage-route-track">
+      <view class="voyage-route-complete" style="width: {{homeDataReady && !listeningTaskStatus.setupRequired ? todayProgressPercent : 0}}%;"></view>
+      <view class="voyage-route-dot dot-one"></view>
+      <view class="voyage-route-dot dot-two"></view>
+      <view class="voyage-route-dot dot-three"></view>
+      <view class="voyage-route-dot dot-four"></view>
+      <view class="voyage-route-boat" style="left: {{homeDataReady && !listeningTaskStatus.setupRequired ? todayProgressPercent : 0}}%;"><view></view></view>
+    </view>
+    <view class="voyage-primary-action" wx:if="{{homeDataReady}}"><text>{{listeningTaskStatus.action}}</text><view>›</view></view>
+    <view class="voyage-primary-action is-skeleton" wx:else></view>
+  </view>
+
+  <view class="voyage-map">
+    <view class="voyage-map-route route-a"></view>
+    <view class="voyage-map-route route-b"></view>
+    <view class="voyage-island island-left"></view>
+    <view class="voyage-island island-right"></view>
+    <view class="voyage-module-grid">
+      <view class="voyage-module module-listening" bindtap="openListening">
+        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-listening.jpg" mode="aspectFill" /></view>
+        <view class="voyage-ribbon">{{texts.listening}}</view>
+      </view>
+      <view class="voyage-module module-reading" bindtap="openReading">
+        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-reading.jpg" mode="aspectFill" /></view>
+        <view class="voyage-ribbon">{{texts.reading}}</view>
+      </view>
+      <view class="voyage-module module-grammar" bindtap="openGrammar">
+        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-grammar.jpg" mode="aspectFill" /></view>
+        <view class="voyage-ribbon">{{texts.grammar}}</view>
+      </view>
+      <view class="voyage-module module-vocabulary" bindtap="openVocabulary">
+        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-vocabulary.jpg" mode="aspectFill" /></view>
+        <view class="voyage-ribbon">{{texts.vocabulary}}</view>
+      </view>
+      <view class="voyage-module module-writing" bindtap="openWriting">
+        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-writing.jpg" mode="aspectFill" /></view>
+        <view class="voyage-ribbon">{{texts.writing}}</view>
+      </view>
+      <view class="voyage-module module-speaking" bindtap="openSpeaking">
+        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-speaking.jpg" mode="aspectFill" /></view>
+        <view class="voyage-ribbon">{{texts.speaking}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="voyage-empty-note" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? texts.setupPlanFirst : texts.noTasksToday}}</view>
+
+  <view class="voyage-entry-poster is-page-{{entryPosterPage}}" wx:if="{{entryPosterVisible}}">
+    <image class="voyage-poster-ocean" src="../../assets/voyage/home-ocean-hero.jpg" mode="aspectFill" aria-hidden="true" />
+    <view class="voyage-poster-sun-glow" aria-hidden="true"></view>
+    <view class="voyage-poster-skip" bindtap="closeEntryPoster">{{texts.posterSkip}}</view>
+    <view class="voyage-poster-sheet">
+      <view class="voyage-poster-sheet-rope" aria-hidden="true"></view>
+      <block wx:if="{{entryPosterPage === 0}}">
+        <view class="voyage-poster-compass">
+          <view class="voyage-poster-compass-ring"></view>
+          <text class="voyage-poster-cardinal cardinal-n">N</text>
+          <text class="voyage-poster-cardinal cardinal-e">E</text>
+          <text class="voyage-poster-cardinal cardinal-s">S</text>
+          <text class="voyage-poster-cardinal cardinal-w">W</text>
+          <view class="voyage-poster-needle"></view>
+          <view class="voyage-poster-pin"></view>
+        </view>
+        <view class="voyage-poster-kicker">LISTEN · LEARN · VOYAGE</view>
+        <view class="voyage-poster-title">{{texts.posterIntroTitle}}</view>
+        <view class="voyage-poster-lead">{{texts.posterIntroLead}}</view>
+        <view class="voyage-poster-copy">{{texts.posterStory}}</view>
+        <view class="voyage-poster-action" bindtap="showNextEntryPosterPage">{{texts.posterNext}}<text>›</text></view>
+      </block>
+      <block wx:else>
+        <view class="voyage-poster-map-mark"><view></view></view>
+        <view class="voyage-poster-kicker">CHOOSE YOUR CREW</view>
+        <view class="voyage-poster-title is-guide">{{texts.posterGuideTitle}}</view>
+        <view class="voyage-poster-copy">{{texts.posterGuideStep1}} {{texts.posterGuideStep2}}</view>
+        <view class="voyage-poster-back" bindtap="showPrevEntryPosterPage">{{texts.posterBack}}</view>
+        <view class="voyage-poster-role-actions">
+          <button data-role="parent" bindtap="confirmStudyIdentity">{{texts.identityIAmParent}}</button>
+          <button class="is-primary" data-role="student" bindtap="confirmStudyIdentity">{{texts.identityIAmStudent}}</button>
+        </view>
+      </block>
+      <view class="voyage-poster-dots"><view class="{{entryPosterPage === 0 ? 'is-active' : ''}}"></view><view class="{{entryPosterPage === 1 ? 'is-active' : ''}}"></view></view>
+    </view>
+  </view>
+</view>
+
+<view wx:elif="{{theme === 'library'}}" class="theme-library page-shell library-home-page language-{{language}}">
   <image class="library-home-background" src="../../assets/library/library-home-user-bg.jpg" mode="widthFix" />
   <view class="library-home-header" style="{{homeNavStyle}}">
     <view>

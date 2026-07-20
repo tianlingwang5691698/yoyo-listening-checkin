@@ -14,13 +14,13 @@ module.exports = {
       navTitle: '设置', languageIcon: '文', title: '设置', subtitle: '管理账号、外观与显示语言', accountSection: '账号', preferenceSection: '偏好',
       familyTitle: '家庭与账号', familyDescription: '管理身份、学号与家庭成员', appearanceTitle: '外观主题', appearanceDescription: '选择你喜欢的界面风格',
       languageTitle: '语言', languageDescription: '设置界面显示语言', adminTitle: '后台管理', adminDescription: '查看用户与学习数据', adminBadge: '管理者',
-      warmTheme: '雾蓝玻璃', libraryTheme: '图书馆静谧', zhHans: '中文简体', english: 'English'
+      warmTheme: '雾蓝玻璃', libraryTheme: '图书馆静谧', voyageTheme: '伟大航路', zhHans: '中文简体', english: 'English'
     },
     en: {
       navTitle: 'Settings', languageIcon: 'A', title: 'Settings', subtitle: 'Account, appearance, and language', accountSection: 'Account', preferenceSection: 'Preferences',
       familyTitle: 'Family & Account', familyDescription: 'Identity, student ID, and family', appearanceTitle: 'Appearance', appearanceDescription: 'Choose an interface style',
       languageTitle: 'Language', languageDescription: 'Choose display language', adminTitle: 'Admin', adminDescription: 'Users and learning activity', adminBadge: 'ADMIN',
-      warmTheme: 'Mist Glass', libraryTheme: 'Quiet Library', zhHans: 'Simplified Chinese', english: 'English'
+      warmTheme: 'Mist Glass', libraryTheme: 'Quiet Library', voyageTheme: 'Grand Voyage', zhHans: 'Simplified Chinese', english: 'English'
     }
   },
   family: {

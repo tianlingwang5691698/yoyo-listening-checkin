@@ -806,7 +806,9 @@ Page({
         : this.data.monthCells
     });
     wx.navigateTo({
-      url: dailyReportRoute.buildDailyReportDetailUrl(date)
+      url: dailyReportRoute.buildDailyReportDetailUrl(date),
+      animationType: 'none',
+      animationDuration: 0
     });
   },
   openCatchupTask(event) {

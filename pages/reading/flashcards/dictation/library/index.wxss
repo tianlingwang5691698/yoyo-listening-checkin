@@ -1,1 +1,211 @@
-.dictation-library-nav{position:fixed;left:0;right:0;top:0;z-index:90;background:rgba(246,251,253,.94);border-bottom:1rpx solid rgba(141,183,212,.18);backdrop-filter:blur(22rpx)}.dictation-library-back{position:absolute;left:24rpx;bottom:12rpx;width:56rpx;height:56rpx;font-size:60rpx;line-height:48rpx;text-align:center}.dictation-library-nav-title{position:absolute;left:140rpx;right:140rpx;bottom:20rpx;font-size:32rpx;font-weight:600;text-align:center}.dictation-library-page{box-sizing:border-box;min-height:100vh;padding:38rpx 28rpx calc(60rpx + env(safe-area-inset-bottom));background:linear-gradient(180deg,#f6fbfd,#edf6fa);color:#17314f}.dictation-library-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20rpx;margin-bottom:28rpx}.dictation-library-kicker{font-size:19rpx;letter-spacing:2.5rpx;color:#7895a7}.dictation-library-title{margin-top:10rpx;font-size:42rpx;font-weight:700}.dictation-library-copy{margin-top:8rpx;color:#6c8494;font-size:24rpx}.dictation-library-record{flex:none;padding:15rpx 20rpx;border-radius:999rpx;background:rgba(255,255,255,.72);color:#4f7184;font-size:26rpx;line-height:1.25;white-space:nowrap;box-shadow:0 8rpx 20rpx rgba(71,112,138,.1)}.dictation-library-list{display:flex;flex-direction:column;gap:18rpx}.dictation-library-book{display:flex;align-items:center;min-height:126rpx;padding:20rpx 22rpx;border:1rpx solid rgba(255,255,255,.84);border-radius:26rpx;background:rgba(255,255,255,.76);box-shadow:0 16rpx 38rpx rgba(71,112,138,.1);backdrop-filter:blur(22rpx)}.dictation-library-book.is-loading{opacity:.64}.dictation-library-mark{display:flex;align-items:center;justify-content:center;flex:none;width:72rpx;height:82rpx;border-radius:14rpx;background:linear-gradient(145deg,#6f9fb7,#416f86);color:#fff;font-size:25rpx;font-weight:700}.dictation-library-main{min-width:0;flex:1;margin-left:22rpx}.dictation-library-book-title{font-size:30rpx;font-weight:650}.dictation-library-meta{margin-top:8rpx;color:#7690a0;font-size:23rpx}.dictation-library-arrow{margin-left:16rpx;color:#7792a1;font-size:50rpx}.dictation-library-debug{margin-bottom:20rpx;padding:18rpx;border-radius:14rpx;background:#fff1ef;color:#9a4038;font-size:22rpx;line-height:1.6}.dictation-library-debug text{display:block}.theme-library.dictation-library-page{background:#eee7d8;color:#2f2924}.theme-library .dictation-library-record{border:1rpx solid rgba(69,54,42,.18);border-radius:4rpx;background:#f3e8d4;color:#5f554b}.theme-library .dictation-library-book{border-color:rgba(69,54,42,.16);border-radius:6rpx;background:rgba(249,245,234,.9);box-shadow:0 14rpx 30rpx rgba(62,49,38,.1)}.theme-library .dictation-library-mark{border-radius:3rpx;background:#496b7a;font-family:"Songti SC",STSong,serif}.theme-library .dictation-library-book-title{font-family:"Songti SC",STSong,serif}.theme-library .dictation-library-meta{color:#766b60}
+.dictation-library-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 90;
+  background: rgba(246, 251, 253, 0.94);
+  border-bottom: 1rpx solid rgba(141, 183, 212, 0.18);
+  backdrop-filter: blur(22rpx);
+}
+.dictation-library-back {
+  position: absolute;
+  left: 24rpx;
+  bottom: 12rpx;
+  width: 56rpx;
+  height: 56rpx;
+  font-size: 60rpx;
+  line-height: 48rpx;
+  text-align: center;
+}
+.dictation-library-nav-title {
+  position: absolute;
+  left: 140rpx;
+  right: 140rpx;
+  bottom: 20rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.dictation-library-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 38rpx 28rpx calc(60rpx + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, #f6fbfd, #edf6fa);
+  color: #17314f;
+}
+.dictation-library-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-bottom: 28rpx;
+}
+.dictation-library-kicker {
+  font-size: 19rpx;
+  letter-spacing: 2.5rpx;
+  color: #7895a7;
+}
+.dictation-library-title {
+  margin-top: 10rpx;
+  font-size: 42rpx;
+  font-weight: 700;
+}
+.dictation-library-copy {
+  margin-top: 8rpx;
+  color: #6c8494;
+  font-size: 24rpx;
+}
+.dictation-library-record {
+  flex: none;
+  padding: 15rpx 20rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.72);
+  color: #4f7184;
+  font-size: 26rpx;
+  line-height: 1.25;
+  white-space: nowrap;
+  box-shadow: 0 8rpx 20rpx rgba(71, 112, 138, 0.1);
+}
+.dictation-library-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+.dictation-library-book {
+  display: flex;
+  align-items: center;
+  min-height: 126rpx;
+  padding: 20rpx 22rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.84);
+  border-radius: 26rpx;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 16rpx 38rpx rgba(71, 112, 138, 0.1);
+  backdrop-filter: blur(22rpx);
+}
+.dictation-library-book.is-loading {
+  opacity: 0.64;
+}
+.dictation-library-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 72rpx;
+  height: 82rpx;
+  border-radius: 14rpx;
+  background: linear-gradient(145deg, #6f9fb7, #416f86);
+  color: #fff;
+  font-size: 25rpx;
+  font-weight: 700;
+}
+.dictation-library-main {
+  min-width: 0;
+  flex: 1;
+  margin-left: 22rpx;
+}
+.dictation-library-book-title {
+  font-size: 30rpx;
+  font-weight: 650;
+}
+.dictation-library-meta {
+  margin-top: 8rpx;
+  color: #7690a0;
+  font-size: 23rpx;
+}
+.dictation-library-arrow {
+  margin-left: 16rpx;
+  color: #7792a1;
+  font-size: 50rpx;
+}
+.dictation-library-debug {
+  margin-bottom: 20rpx;
+  padding: 18rpx;
+  border-radius: 14rpx;
+  background: #fff1ef;
+  color: #9a4038;
+  font-size: 22rpx;
+  line-height: 1.6;
+}
+.dictation-library-debug text {
+  display: block;
+}
+.theme-library.dictation-library-page {
+  background: #eee7d8;
+  color: #2f2924;
+}
+.theme-library .dictation-library-record {
+  border: 1rpx solid rgba(69, 54, 42, 0.18);
+  border-radius: 4rpx;
+  background: #f3e8d4;
+  color: #5f554b;
+}
+.theme-library .dictation-library-book {
+  border-color: rgba(69, 54, 42, 0.16);
+  border-radius: 6rpx;
+  background: rgba(249, 245, 234, 0.9);
+  box-shadow: 0 14rpx 30rpx rgba(62, 49, 38, 0.1);
+}
+.theme-library .dictation-library-mark {
+  border-radius: 3rpx;
+  background: #496b7a;
+  font-family: "Songti SC", STSong, serif;
+}
+.theme-library .dictation-library-book-title {
+  font-family: "Songti SC", STSong, serif;
+}
+.theme-library .dictation-library-meta {
+  color: #766b60;
+}
+
+.theme-voyage.dictation-library-nav {
+  border-bottom: 5rpx solid #c18a3e;
+  background: linear-gradient(180deg, #1e6382, #173f57);
+  box-shadow: 0 7rpx 0 #6d4021;
+  color: #fff2ca;
+}
+.theme-voyage .dictation-library-back,
+.theme-voyage .dictation-library-nav-title { color: #fff2ca; }
+.theme-voyage.dictation-library-page {
+  background: linear-gradient(180deg, #54bde3 0 112rpx, #107da9 113rpx 170rpx, #e4ce9c 171rpx, #f3e6c6 100%);
+  color: #173d55;
+}
+.theme-voyage .dictation-library-head {
+  position: relative;
+  min-height: 180rpx;
+  padding: 34rpx 190rpx 32rpx 32rpx;
+  border: 5rpx solid #8d572c;
+  border-radius: 7rpx;
+  background: #f8e8bf;
+  box-shadow: 0 9rpx 0 #693d20, 0 20rpx 34rpx rgba(4,66,89,.2);
+}
+.theme-voyage .dictation-library-head::after {
+  content: "Aa";
+  position: absolute;
+  right: 36rpx;
+  top: 28rpx;
+  width: 116rpx;
+  height: 116rpx;
+  border: 7rpx double #b47a31;
+  border-radius: 50%;
+  background: #1d6381;
+  box-shadow: inset 0 0 0 10rpx #e6c96f;
+  color: #fff0c4;
+  font: 700 34rpx/108rpx Georgia, serif;
+  text-align: center;
+}
+.theme-voyage .dictation-library-kicker { color: #a36b2c; }
+.theme-voyage .dictation-library-title { color: #173d55; font-family: "Songti SC", STSong, serif; }
+.theme-voyage .dictation-library-copy { color: #705d43; }
+.theme-voyage .dictation-library-record { border: 2rpx solid #a67034; border-radius: 4rpx; background: #ecd3a0; color: #68441f; box-shadow: none; }
+.theme-voyage .dictation-library-list { margin-top: 28rpx; }
+.theme-voyage .dictation-library-book {
+  border: 4rpx solid #a16c35;
+  border-radius: 6rpx;
+  background: linear-gradient(90deg, #ecd09b, #fff0c7 18%, #f2dcb0);
+  box-shadow: 0 7rpx 0 #784824;
+}
+.theme-voyage .dictation-library-mark { border: 4rpx solid #d2a952; border-radius: 5rpx; background: #1d6381; color: #fff1c8; }
+.theme-voyage .dictation-library-book-title { color: #293b3d; font-family: "Songti SC", STSong, serif; }
+.theme-voyage .dictation-library-meta { color: #796448; }
+.theme-voyage .dictation-library-arrow { color: #aa7130; font-weight: 800; }

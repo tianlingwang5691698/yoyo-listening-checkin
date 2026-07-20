@@ -7,6 +7,7 @@ const root = path.resolve(__dirname, '..');
 const recordSource = fs.readFileSync(path.join(root, 'pages/record/index.js'), 'utf8');
 const recordTemplate = fs.readFileSync(path.join(root, 'pages/record/index.wxml'), 'utf8');
 const homeSource = fs.readFileSync(path.join(root, 'pages/home/index.js'), 'utf8');
+const completedSource = fs.readFileSync(path.join(root, 'pages/home/completed/index.js'), 'utf8');
 const parentSource = fs.readFileSync(path.join(root, 'pages/parent/index.js'), 'utf8');
 const parentDetailSource = fs.readFileSync(path.join(root, 'pages/parent/detail/index.js'), 'utf8');
 const parentDetailTemplate = fs.readFileSync(path.join(root, 'pages/parent/detail/index.wxml'), 'utf8');
@@ -18,6 +19,10 @@ test('成长记录和日报使用同一个日期详情入口', () => {
   assert.match(recordSource, /dailyReportRoute\.buildDailyReportDetailUrl\(date\)/);
   assert.match(homeSource, /dailyReportRoute\.buildDailyReportDetailUrl\(todayString\(\)\)/);
   assert.match(parentSource, /dailyReportRoute\.buildDailyReportDetailUrl\(date\)/);
+  for (const source of [recordSource, homeSource, parentSource, completedSource]) {
+    assert.match(source, /\/pages\/parent\/detail\/index|buildDailyReportDetailUrl/);
+    assert.match(source, /animationType: 'none',[\s\S]*animationDuration: 0/);
+  }
   assert.equal((recordTemplate.match(/bindtap="openDailyDetail"/g) || []).length, 2);
   assert.equal((recordTemplate.match(/bindtap="selectDate"/g) || []).length, 2);
 });

@@ -843,3 +843,136 @@
 .language-en text { overflow-wrap: normal; word-break: normal; }
 .language-en .catalogue-title,
 .language-en .reading-title { font-size: 42rpx; line-height: 1.15; }
+
+/* Grand Voyage: reading directory as a treasure-chart archive. */
+.theme-voyage.reading-page {
+  --voyage-ink: #173a50;
+  --voyage-muted: #6f5b40;
+  --voyage-brass: #b27a31;
+  --voyage-red: #a83b31;
+  min-height: 100vh;
+  padding: 62rpx 28rpx 150rpx;
+  background:
+    radial-gradient(circle at 8% 16%, rgba(255,255,255,.72) 0 42rpx, transparent 44rpx),
+    linear-gradient(180deg, #69c7eb 0 250rpx, #1685b5 251rpx 326rpx, #ead5a8 327rpx, #f4e8ca 100%);
+  color: var(--voyage-ink);
+}
+
+.theme-voyage .reading-atmosphere { display: none; }
+
+.theme-voyage .reading-hero {
+  min-height: 232rpx;
+  padding: 38rpx 210rpx 34rpx 38rpx;
+  border: 5rpx solid #875128;
+  border-radius: 8rpx;
+  background:
+    linear-gradient(90deg, rgba(255,247,218,.96), rgba(242,220,174,.94)),
+    #f4e2b7;
+  box-shadow: 0 12rpx 0 #6a3d20, 0 24rpx 38rpx rgba(4,69,95,.24), inset 0 0 28rpx rgba(109,67,28,.16);
+}
+
+.theme-voyage .reading-hero::before {
+  content: "N";
+  position: absolute;
+  right: 44rpx;
+  top: 34rpx;
+  width: 128rpx;
+  height: 128rpx;
+  border: 8rpx double var(--voyage-brass);
+  border-radius: 50%;
+  background: conic-gradient(from 45deg, #a83b31 0 12.5%, #f1d78d 0 25%, #1e668c 0 37.5%, #f1d78d 0 50%, #a83b31 0 62.5%, #f1d78d 0 75%, #1e668c 0 87.5%, #f1d78d 0);
+  color: #63401f;
+  font-size: 18rpx;
+  line-height: 118rpx;
+  text-align: center;
+  box-shadow: inset 0 0 0 13rpx #f4e4b9;
+}
+
+.theme-voyage .reading-hero::after {
+  right: 105rpx;
+  top: 31rpx;
+  width: 5rpx;
+  height: 136rpx;
+  border: 0;
+  border-radius: 999rpx;
+  background: #704824;
+  transform: rotate(38deg);
+  opacity: .84;
+}
+
+.theme-voyage .hero-pages { display: none; }
+.theme-voyage .reading-eyebrow { color: var(--voyage-brass); font-weight: 800; letter-spacing: 2rpx; }
+.theme-voyage .reading-title { color: var(--voyage-ink); font-family: "Songti SC", STSong, serif; font-size: 52rpx; font-weight: 800; }
+.theme-voyage .reading-copy { color: var(--voyage-muted); }
+
+.theme-voyage .reading-history-tabs {
+  margin: 30rpx 0 0;
+  padding: 5rpx;
+  border: 3rpx solid #8f5c2d;
+  border-radius: 6rpx;
+  background: #d0a75f;
+  box-shadow: 0 7rpx 0 #754322;
+}
+
+.theme-voyage .reading-history-tab {
+  border-radius: 3rpx;
+  color: #654321;
+  font-weight: 700;
+}
+
+.theme-voyage .reading-history-tab.is-active { background: #183f57; color: #fff4d0; box-shadow: inset 0 0 0 2rpx #e1bd67; }
+
+.theme-voyage .reading-card {
+  position: relative;
+  margin-top: 28rpx;
+  padding: 30rpx 26rpx 34rpx;
+  border: 4rpx solid #9a6532;
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(12deg, rgba(100,67,31,.025) 0 2rpx, transparent 2rpx 18rpx),
+    #f7e8c2;
+  box-shadow: 0 18rpx 34rpx rgba(50,61,54,.18), inset 0 0 26rpx rgba(105,67,27,.12);
+}
+
+.theme-voyage .reading-card::before {
+  content: "";
+  position: absolute;
+  inset: 14rpx;
+  border: 2rpx dashed rgba(122,78,34,.25);
+  pointer-events: none;
+}
+
+.theme-voyage .reading-card-top,
+.theme-voyage .reading-breadcrumb { position: relative; z-index: 1; }
+.theme-voyage .reading-card-label { color: var(--voyage-ink); font-family: "Songti SC", STSong, serif; font-size: 34rpx; }
+.theme-voyage .reading-card-state,
+.theme-voyage .directory-back-icon { color: var(--voyage-red); font-weight: 700; }
+.theme-voyage .reading-breadcrumb { color: #765534; }
+
+.theme-voyage .paper-group-grid,
+.theme-voyage .district-drawer-list,
+.theme-voyage .reading-sheet-list { position: relative; z-index: 1; gap: 16rpx; }
+
+.theme-voyage .directory-row {
+  border: 3rpx solid #a36f38;
+  border-radius: 6rpx;
+  background: linear-gradient(90deg, #f1d9a8, #fff1c9 20%, #f3dfb4);
+  box-shadow: 0 6rpx 0 #7e4c27;
+}
+
+.theme-voyage .paper-group-panel::before { background: var(--voyage-red); }
+.theme-voyage .directory-mark { border-color: #b9843d; background: #1f688b; color: #fff2cb; }
+.theme-voyage .directory-title,
+.theme-voyage .task-title { color: #2c332e; font-family: "Songti SC", STSong, serif; font-weight: 800; }
+.theme-voyage .directory-meta,
+.theme-voyage .task-meta { color: #78654a; }
+.theme-voyage .directory-arrow { color: var(--voyage-brass); font-weight: 800; }
+.theme-voyage .task-state { border: 2rpx solid #9a6632; border-radius: 4rpx; background: #f3d78f; color: #6b421f; }
+.theme-voyage .task-state.is-done { background: #397867; color: #fff4d5; }
+
+.theme-voyage .empty-state {
+  border: 3rpx dashed #a36f38;
+  border-radius: 7rpx;
+  background: #f6e4bb;
+  color: #775838;
+}

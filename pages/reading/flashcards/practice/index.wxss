@@ -1,1 +1,220 @@
-.word-practice-nav{position:fixed;top:0;left:0;right:0;z-index:90;border-bottom:1rpx solid rgba(141,183,212,.18);background:rgba(246,251,253,.94);backdrop-filter:blur(22rpx)}.word-practice-back{position:absolute;left:24rpx;bottom:12rpx;width:56rpx;height:56rpx;font-size:60rpx;line-height:48rpx;text-align:center}.word-practice-nav-title{position:absolute;left:140rpx;right:140rpx;bottom:20rpx;font-size:32rpx;font-weight:600;text-align:center}.word-practice-page{box-sizing:border-box;min-height:100vh;padding:38rpx 28rpx calc(60rpx + env(safe-area-inset-bottom));background:linear-gradient(180deg,#f6fbfd,#edf6fa);color:#17314f}.word-practice-head{padding:34rpx 34rpx 36rpx;border:1rpx solid rgba(255,255,255,.88);border-radius:26rpx;background:linear-gradient(135deg,rgba(34,59,77,.96),rgba(28,52,72,.94));box-shadow:0 18rpx 42rpx rgba(33,66,89,.16)}.word-practice-kicker{color:#c6a167;font-size:19rpx;letter-spacing:2.6rpx}.word-practice-title{margin-top:12rpx;color:#fff;font-size:42rpx;font-weight:700}.word-practice-copy{margin-top:10rpx;color:rgba(255,255,255,.72);font-size:24rpx;line-height:1.5}.word-practice-list{display:flex;flex-direction:column;gap:20rpx;margin-top:28rpx}.word-practice-card{display:flex;align-items:center;box-sizing:border-box;min-height:154rpx;padding:22rpx;border:1rpx solid rgba(255,255,255,.86);border-radius:24rpx;background:rgba(255,255,255,.8);box-shadow:0 15rpx 34rpx rgba(71,112,138,.1)}.word-practice-card:active{opacity:.92;transform:scale(.993)}.word-practice-mark{display:flex;align-items:center;justify-content:center;flex:none;width:86rpx;height:86rpx;border-radius:20rpx;background:linear-gradient(145deg,#6f9fb7,#416f86);color:#fff;font-family:Georgia,serif;font-size:34rpx;font-weight:700}.word-practice-mark.audio-mark{border-radius:50%;font-size:42rpx}.word-practice-mark.spell-mark{font-size:28rpx}.word-practice-main{min-width:0;flex:1;margin-left:24rpx}.word-practice-card-title{font-size:31rpx;font-weight:700}.word-practice-card-copy{margin-top:8rpx;color:#718a9a;font-size:23rpx;line-height:1.45}.word-practice-arrow{margin-left:14rpx;color:#7894a4;font-size:50rpx}.theme-library.word-practice-page{background:#eee7d8;color:#2f2924}.theme-library .word-practice-head{border-color:rgba(115,88,55,.22);border-radius:10rpx;background:linear-gradient(90deg,rgba(43,33,27,.96),rgba(20,40,58,.94))}.theme-library .word-practice-title,.theme-library .word-practice-card-title{font-family:"Songti SC",STSong,serif}.theme-library .word-practice-card{border-color:rgba(69,54,42,.18);border-radius:7rpx;background:#f7efdf;box-shadow:0 12rpx 28rpx rgba(43,33,27,.12)}.theme-library .word-practice-mark{border-radius:5rpx;background:#496b7a}.theme-library .word-practice-card-copy{color:#766b60}.theme-library .word-practice-arrow{color:#a7824d}.language-en .word-practice-card-title{font-size:28rpx}.language-en .word-practice-card-copy{font-size:21rpx}
+.word-practice-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  border-bottom: 1rpx solid rgba(141, 183, 212, 0.18);
+  background: rgba(246, 251, 253, 0.94);
+  backdrop-filter: blur(22rpx);
+}
+.word-practice-back {
+  position: absolute;
+  left: 24rpx;
+  bottom: 12rpx;
+  width: 56rpx;
+  height: 56rpx;
+  font-size: 60rpx;
+  line-height: 48rpx;
+  text-align: center;
+}
+.word-practice-nav-title {
+  position: absolute;
+  left: 140rpx;
+  right: 140rpx;
+  bottom: 20rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.word-practice-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 38rpx 28rpx calc(60rpx + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, #f6fbfd, #edf6fa);
+  color: #17314f;
+}
+.word-practice-head {
+  padding: 34rpx 34rpx 36rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.88);
+  border-radius: 26rpx;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 59, 77, 0.96),
+    rgba(28, 52, 72, 0.94)
+  );
+  box-shadow: 0 18rpx 42rpx rgba(33, 66, 89, 0.16);
+}
+.word-practice-kicker {
+  color: #c6a167;
+  font-size: 19rpx;
+  letter-spacing: 2.6rpx;
+}
+.word-practice-title {
+  margin-top: 12rpx;
+  color: #fff;
+  font-size: 42rpx;
+  font-weight: 700;
+}
+.word-practice-copy {
+  margin-top: 10rpx;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+.word-practice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin-top: 28rpx;
+}
+.word-practice-card {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 154rpx;
+  padding: 22rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.86);
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15rpx 34rpx rgba(71, 112, 138, 0.1);
+}
+.word-practice-card:active {
+  opacity: 0.92;
+  transform: scale(0.993);
+}
+.word-practice-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 20rpx;
+  background: linear-gradient(145deg, #6f9fb7, #416f86);
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.word-practice-mark.audio-mark {
+  border-radius: 50%;
+  font-size: 42rpx;
+}
+.word-practice-mark.spell-mark {
+  font-size: 28rpx;
+}
+.word-practice-main {
+  min-width: 0;
+  flex: 1;
+  margin-left: 24rpx;
+}
+.word-practice-card-title {
+  font-size: 31rpx;
+  font-weight: 700;
+}
+.word-practice-card-copy {
+  margin-top: 8rpx;
+  color: #718a9a;
+  font-size: 23rpx;
+  line-height: 1.45;
+}
+.word-practice-arrow {
+  margin-left: 14rpx;
+  color: #7894a4;
+  font-size: 50rpx;
+}
+.theme-library.word-practice-page {
+  background: #eee7d8;
+  color: #2f2924;
+}
+.theme-library .word-practice-head {
+  border-color: rgba(115, 88, 55, 0.22);
+  border-radius: 10rpx;
+  background: linear-gradient(
+    90deg,
+    rgba(43, 33, 27, 0.96),
+    rgba(20, 40, 58, 0.94)
+  );
+}
+.theme-library .word-practice-title,
+.theme-library .word-practice-card-title {
+  font-family: "Songti SC", STSong, serif;
+}
+.theme-library .word-practice-card {
+  border-color: rgba(69, 54, 42, 0.18);
+  border-radius: 7rpx;
+  background: #f7efdf;
+  box-shadow: 0 12rpx 28rpx rgba(43, 33, 27, 0.12);
+}
+.theme-library .word-practice-mark {
+  border-radius: 5rpx;
+  background: #496b7a;
+}
+.theme-library .word-practice-card-copy {
+  color: #766b60;
+}
+.theme-library .word-practice-arrow {
+  color: #a7824d;
+}
+.language-en .word-practice-card-title {
+  font-size: 28rpx;
+}
+.language-en .word-practice-card-copy {
+  font-size: 21rpx;
+}
+
+.theme-voyage.word-practice-nav {
+  border-bottom: 5rpx solid #c18a3e;
+  background: linear-gradient(180deg, #1e6382, #173f57);
+  box-shadow: 0 7rpx 0 #6d4021;
+  color: #fff2ca;
+}
+.theme-voyage .word-practice-back,
+.theme-voyage .word-practice-nav-title { color: #fff2ca; }
+.theme-voyage.word-practice-page {
+  background: linear-gradient(180deg, #54bde3 0 112rpx, #107da9 113rpx 170rpx, #e4ce9c 171rpx, #f3e6c6 100%);
+  color: #173d55;
+}
+.theme-voyage .word-practice-head {
+  position: relative;
+  padding-right: 190rpx;
+  border: 5rpx solid #8d572c;
+  border-radius: 7rpx;
+  background: repeating-linear-gradient(0deg, rgba(99,64,29,.025) 0 2rpx, transparent 2rpx 18rpx), #f8e8bf;
+  box-shadow: 0 9rpx 0 #693d20, 0 20rpx 34rpx rgba(4,66,89,.22);
+}
+.theme-voyage .word-practice-head::after {
+  content: "ABC";
+  position: absolute;
+  right: 34rpx;
+  top: 32rpx;
+  width: 116rpx;
+  height: 116rpx;
+  border: 7rpx double #b47a31;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f5e5b7 0 42%, #1d6381 43% 70%, #d9ad4d 71%);
+  color: #fff0c4;
+  font: 700 25rpx/108rpx Georgia, serif;
+  text-align: center;
+}
+.theme-voyage .word-practice-kicker { color: #a36b2c; }
+.theme-voyage .word-practice-title { color: #173d55; font-family: "Songti SC", STSong, serif; }
+.theme-voyage .word-practice-copy { color: #705d43; }
+.theme-voyage .word-practice-card {
+  border: 4rpx solid #a16c35;
+  border-radius: 6rpx;
+  background: linear-gradient(90deg, #ecd09b, #fff0c7 18%, #f2dcb0);
+  box-shadow: 0 7rpx 0 #784824;
+}
+.theme-voyage .word-practice-mark {
+  border: 4rpx solid #d2a952;
+  border-radius: 5rpx;
+  background: #1d6381;
+  color: #fff1c8;
+  box-shadow: 0 4rpx 0 #6f421f;
+}
+.theme-voyage .word-practice-mark.audio-mark { border-radius: 50%; }
+.theme-voyage .word-practice-card-title { color: #293b3d; font-family: "Songti SC", STSong, serif; }
+.theme-voyage .word-practice-card-copy { color: #796448; }
+.theme-voyage .word-practice-arrow { color: #aa7130; font-weight: 800; }

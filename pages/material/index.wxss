@@ -1083,3 +1083,131 @@
 .language-en text { overflow-wrap: normal; word-break: normal; }
 .language-en .library-book-title,
 .language-en .material-title { font-size: 42rpx; line-height: 1.15; }
+
+/* Voyage catalogue: expedition chart and mission drawers. */
+.theme-voyage.material-page {
+  padding-top: 56rpx;
+  padding-bottom: 96rpx;
+  background:
+    linear-gradient(180deg, rgba(70, 184, 228, 0.96) 0, rgba(225, 244, 239, 0.92) 300rpx, transparent 301rpx),
+    repeating-linear-gradient(14deg, rgba(97, 68, 32, 0.025) 0 2rpx, transparent 2rpx 25rpx),
+    #f3e3be;
+}
+
+.theme-voyage .material-hero {
+  min-height: 238rpx;
+  padding: 38rpx 38rpx 34rpx;
+  overflow: visible;
+  border: 4rpx solid #996333;
+  border-radius: 8rpx;
+  background:
+    radial-gradient(circle at 84% 20%, rgba(39, 126, 159, 0.13), transparent 32%),
+    repeating-linear-gradient(0deg, rgba(91, 61, 31, 0.026) 0 2rpx, transparent 2rpx 15rpx),
+    linear-gradient(100deg, #e8cb8e, #fff2ca 9%, #f6e5b6 88%, #d6b474);
+  box-shadow: 0 18rpx 34rpx rgba(7, 87, 117, 0.24), inset 0 0 26rpx rgba(108, 70, 31, 0.12);
+}
+
+.theme-voyage .material-hero::before,
+.theme-voyage .material-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -13rpx;
+  bottom: -13rpx;
+  width: 27rpx;
+  border: 4rpx solid #70411f;
+  border-radius: 18rpx;
+  background: repeating-linear-gradient(90deg, #8b4f27 0 7rpx, #c27b3d 8rpx 14rpx);
+}
+
+.theme-voyage .material-hero::before { left: -15rpx; }
+.theme-voyage .material-hero::after { right: -15rpx; }
+
+.theme-voyage .material-eyebrow,
+.theme-voyage .material-copy { color: #6d573c; }
+
+.theme-voyage .material-title {
+  color: #14384f;
+  font-family: "Songti SC", "STSong", serif;
+  font-size: 50rpx;
+  font-weight: 800;
+}
+
+.theme-voyage .material-wave,
+.theme-voyage .material-paper-mark {
+  flex-basis: 154rpx;
+  min-height: 154rpx;
+  border: 7rpx solid #b68235;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff4cf 0 60%, #e4bd69 61% 68%, #176a99 69%);
+  box-shadow: inset 0 0 0 4rpx rgba(255, 250, 224, 0.72), 0 8rpx 0 rgba(106, 62, 26, 0.24);
+}
+
+.theme-voyage .material-wave-bar { width: 9rpx; background: #176a99; }
+
+.theme-voyage .material-card {
+  margin-top: 28rpx;
+  padding: 26rpx 24rpx;
+  border: 3rpx solid rgba(142, 94, 43, 0.5);
+  border-radius: 8rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(91, 61, 31, 0.025) 0 2rpx, transparent 2rpx 15rpx),
+    #f8e9c2;
+  box-shadow: 0 12rpx 24rpx rgba(40, 78, 83, 0.14);
+}
+
+.theme-voyage .material-card-label,
+.theme-voyage .material-card-state { color: #684a2d; }
+
+.theme-voyage .directory-row,
+.theme-voyage .drawer-row,
+.theme-voyage .task-row {
+  border: 3rpx solid rgba(151, 100, 44, 0.46);
+  border-radius: 7rpx;
+  background:
+    linear-gradient(90deg, rgba(28, 103, 149, 0.12) 0 13rpx, transparent 13rpx),
+    rgba(255, 247, 219, 0.92);
+  box-shadow: 0 6rpx 0 rgba(102, 63, 28, 0.2);
+}
+
+.theme-voyage .directory-row::after { background: #c49338; }
+
+.theme-voyage .directory-orb,
+.theme-voyage .directory-back-icon {
+  border: 5rpx solid #c49338;
+  background: #176a99;
+  color: #fff7dd;
+  box-shadow: inset 0 0 0 3rpx rgba(255, 247, 218, 0.38);
+}
+
+.theme-voyage .directory-title,
+.theme-voyage .task-title {
+  color: #173b50;
+  font-family: "Songti SC", "STSong", serif;
+  font-weight: 800;
+}
+
+.theme-voyage .directory-meta,
+.theme-voyage .task-meta,
+.theme-voyage .material-detail { color: #705b42; }
+
+.theme-voyage .directory-arrow,
+.theme-voyage .task-state { color: #a34432; font-weight: 800; }
+
+.theme-voyage .task-wave view { background: #1d719d; }
+
+.theme-voyage .writing-history-tabs {
+  border: 3rpx solid #9a6635;
+  border-radius: 7rpx;
+  background: #ead09a;
+  box-shadow: 0 7rpx 0 rgba(104, 62, 26, 0.2);
+}
+
+.theme-voyage .writing-history-tab { color: #68492c; }
+.theme-voyage .writing-history-tab.is-active { border-radius: 5rpx; background: #176a99; color: #fff8e7; }
+
+.theme-voyage .material-debug {
+  border-color: #a93e33;
+  background: #f8ded2;
+  color: #8e3029;
+}

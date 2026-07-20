@@ -9,7 +9,7 @@
     <view class="dictation-count-picker">
       <view class="dictation-count-head"><text>{{texts.learnedWords}}</text><text class="dictation-count-total">{{availableCount}} {{texts.wordUnit}}</text></view>
       <view class="dictation-count-controls"><button disabled="{{practiceCount <= 1}}" data-delta="-1" bindtap="changePracticeCount">−</button><view><text>{{practiceCount}}</text><text>{{texts.thisPractice}}</text></view><button disabled="{{practiceCount >= availableCount}}" data-delta="1" bindtap="changePracticeCount">+</button></view>
-      <slider class="dictation-count-slider" min="1" max="{{availableCount || 1}}" step="1" value="{{practiceCount || 1}}" disabled="{{!availableCount}}" activeColor="{{theme === 'library' ? '#6f5741' : '#315d73'}}" backgroundColor="{{theme === 'library' ? '#d7c8ad' : '#c9dce5'}}" block-color="{{theme === 'library' ? '#f7f0e3' : '#ffffff'}}" block-size="22" bindchanging="handlePracticeSlider" bindchange="handlePracticeSlider" />
+      <slider class="dictation-count-slider" min="1" max="{{availableCount || 1}}" step="1" value="{{practiceCount || 1}}" disabled="{{!availableCount}}" activeColor="{{theme === 'library' ? '#6f5741' : (theme === 'voyage' ? '#b27a31' : '#315d73')}}" backgroundColor="{{theme === 'library' ? '#d7c8ad' : (theme === 'voyage' ? '#dfc28a' : '#c9dce5')}}" block-color="{{theme === 'library' ? '#f7f0e3' : (theme === 'voyage' ? '#fff0c7' : '#ffffff')}}" block-size="22" bindchanging="handlePracticeSlider" bindchange="handlePracticeSlider" />
       <view class="dictation-count-hint">{{texts.slideHint}}</view>
     </view>
     <button class="dictation-action primary" disabled="{{loading || !availableCount}}" bindtap="startAllDictation">{{texts.startAll}}</button>

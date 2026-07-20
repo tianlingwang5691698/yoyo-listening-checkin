@@ -1,5 +1,59 @@
 <view class="theme-{{theme}} page-shell level-stage-page language-{{language}}">
-  <block wx:if="{{theme === 'library'}}">
+  <block wx:if="{{theme === 'voyage'}}">
+    <view class="voyage-stage-manifest">
+      <view class="voyage-stage-kicker">{{stage.levelId}} · {{stage.stageText}}</view>
+      <view class="voyage-stage-title">{{stage.title}}</view>
+      <view class="voyage-stage-hint">{{stage.hint}}</view>
+      <view class="voyage-stage-seal" wx:if="{{!fixedPlanOutline}}"><text>{{texts.estimatedTotal}}</text><view>{{totalMinutesText}}</view></view>
+    </view>
+
+    <view class="voyage-stage-note" wx:if="{{syncMode === 'cloud-error' && hasTaskGroups}}">{{texts.usingRecent}}</view>
+
+    <view class="voyage-fixed-manifest" wx:if="{{fixedPlanOutline}}">
+      <view class="voyage-cycle-plaque">
+        <view>{{texts.planCycle}}</view><text>{{fixedPlanOutline.cycleDays}} {{texts.checkinDayUnit}}</text><view>{{texts.fixedPlanRule}}</view>
+      </view>
+      <view class="voyage-fixed-item" wx:for="{{fixedPlanOutline.items}}" wx:key="category" data-category="{{item.category}}" bindtap="openFixedPlanItem">
+        <view class="voyage-checkpoint"><text>{{index + 1}}</text></view>
+        <view class="voyage-fixed-item-main">
+          <view class="voyage-fixed-item-title">{{item.title}}</view>
+          <view class="voyage-fixed-item-meta">{{item.rangeText}} · {{item.dailyText}}</view>
+          <view class="voyage-fixed-item-meta" wx:if="{{item.progressText}}">{{item.progressText}}</view>
+        </view>
+        <view class="voyage-fixed-item-action">{{texts.viewContent}}</view>
+      </view>
+    </view>
+
+    <view class="voyage-stage-loading" wx:elif="{{!hydrated && !hasTaskGroups}}"><view></view><view></view><view class="is-short"></view></view>
+
+    <view class="voyage-route-groups" wx:elif="{{hasTaskGroups}}">
+      <block wx:for="{{taskGroups}}" wx:for-index="groupIndex" wx:key="groupKey">
+        <view class="voyage-route-group {{item.disabled ? 'is-disabled' : ''}}">
+          <view class="voyage-route-group-head" data-group-index="{{groupIndex}}" bindtap="toggleTaskGroup">
+            <view class="voyage-port-number">{{groupIndex + 1}}</view>
+            <view class="voyage-route-group-main">
+              <view class="voyage-route-group-name">{{item.categoryLabel}}</view>
+              <view class="voyage-route-group-meta">{{item.taskCountText}} · {{item.title}} · {{item.textType}}</view>
+            </view>
+            <view class="voyage-route-group-side"><text>{{item.minutesText}}</text><view>{{item.expanded ? texts.collapse : item.stateText}}</view></view>
+          </view>
+          <view class="voyage-checkpoint-list" wx:if="{{item.expanded}}">
+            <block wx:for="{{item.tasks}}" wx:for-item="task" wx:for-index="taskIndex" wx:key="taskId">
+              <view class="voyage-checkpoint-row {{task.completedToday ? 'is-done' : ''}}" data-group-index="{{groupIndex}}" data-task-index="{{taskIndex}}" catchtap="openTask">
+                <view class="voyage-checkpoint-order">{{task.orderText}}</view>
+                <view class="voyage-checkpoint-main"><view>{{task.title}}</view><text>{{task.meta}}</text></view>
+                <view class="voyage-checkpoint-state">{{task.stateText}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="voyage-stage-empty" wx:else><view>{{syncMode === 'cloud-error' ? texts.syncFailed : texts.noCombo}}</view><text>{{syncMode === 'cloud-error' ? texts.retryLater : texts.moreComing}}</text></view>
+  </block>
+
+  <block wx:elif="{{theme === 'library'}}">
     <view class="audio-index-cover">
       <view>
         <view class="audio-index-kicker">{{stage.levelId}} · {{stage.stageText}}</view>
