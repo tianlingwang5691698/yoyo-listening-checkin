@@ -568,11 +568,13 @@
 .voyage-fixed-meta { margin-top: 7rpx; color: #567066; font-size: 21rpx; line-height: 1.4; }
 .voyage-fixed-action { color: #236c60; font-size: 22rpx; font-weight: 700; }
 .voyage-chart-tabs { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 10rpx; margin: 28rpx 4rpx 22rpx; }
-.voyage-chart-tab { min-width: 0; height: 72rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6rpx; border-bottom: 3rpx dashed rgba(255,244,214,.48); color: #fff4d6; font-size: 22rpx; font-weight: 700; }
+.voyage-chart-tab { min-width: 0; height: 72rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6rpx; border-bottom: 3rpx dashed rgba(23,79,109,.34); color: #174f6d; font-size: 22rpx; font-weight: 700; }
 .voyage-chart-coordinate { width: 14rpx; height: 14rpx; border: 3rpx solid currentColor; border-radius: 50%; box-sizing: border-box; }
-.voyage-chart-tab.is-active { border-bottom-style: solid; border-bottom-color: #d5a64b; color: #ffd975; }
-.voyage-chart-tab.is-active .voyage-chart-coordinate { background: #bf4938; box-shadow: 0 0 0 5rpx rgba(255,244,214,.16); }
-.voyage-chart-tab.is-disabled,.voyage-harbor-row.is-disabled { opacity: .4; }
+.voyage-chart-tab.is-active { border-bottom-style: solid; border-bottom-color: #b8873d; color: #a43e32; }
+.voyage-chart-tab.is-active .voyage-chart-coordinate { border-color: #a43e32; background: #d5a64b; box-shadow: 0 0 0 5rpx rgba(184,135,61,.18); }
+.voyage-chart-tab.is-disabled { border-bottom-color: rgba(111,98,80,.28); color: #6f6250; opacity: 1; }
+.voyage-chart-tab.is-disabled .voyage-chart-coordinate { border-color: #6f6250; background: #efe0bd; }
+.voyage-harbor-row.is-disabled { opacity: .4; }
 .voyage-harbor-list { padding: 16rpx 20rpx 20rpx; }
 .voyage-harbor-list::before { content: ""; position: absolute; top: 42rpx; bottom: 42rpx; left: 55rpx; border-left: 4rpx dashed rgba(23,106,153,.34); }
 .voyage-harbor-row { position: relative; min-height: 118rpx; display: grid; grid-template-columns: 54rpx minmax(0,1fr) auto; align-items: center; gap: 16rpx; padding: 18rpx 14rpx; border-bottom: 2rpx solid rgba(137,94,43,.18); }
