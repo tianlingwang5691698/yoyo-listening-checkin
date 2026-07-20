@@ -47,6 +47,16 @@ test('voyage settings emblem stays outside the title flow', () => {
   );
 });
 
+test('voyage entry poster keeps the design and content credit', () => {
+  const homeWxml = read('pages/home/index.wxml');
+  const homeWxss = read('pages/home/index.wxss');
+  const voyagePoster = homeWxml.match(/<view class="voyage-entry-poster[\s\S]*?<\/view>\s*<\/view>\s*\n\s*<view wx:elif=/);
+  assert.ok(voyagePoster);
+  assert.match(voyagePoster[0], /voyage-poster-credit/);
+  assert.match(voyagePoster[0], /\{\{texts\.posterCreditName\}\}/);
+  assert.match(homeWxss, /\.voyage-poster-credit-seal/);
+});
+
 test('settings is local-first and admin visibility is cloud-authoritative', () => {
   const settings = read('pages/settings/index.js');
   assert.match(settings, /ready\('pageReady',[\s\S]*cacheHit: true/);

@@ -3592,6 +3592,44 @@
   transform: rotate(-45deg);
 }
 
+.voyage-poster-credit {
+  width: 300rpx;
+  min-height: 94rpx;
+  margin: 24rpx auto 0;
+  padding: 10rpx 18rpx 10rpx 12rpx;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  border: 3rpx solid rgba(139, 82, 40, 0.7);
+  border-radius: 5rpx;
+  background: rgba(255, 241, 200, 0.7);
+  box-sizing: border-box;
+  box-shadow: 0 7rpx 14rpx rgba(88, 55, 27, 0.12);
+  transform: rotate(-2deg);
+}
+
+.voyage-poster-credit-seal {
+  width: 70rpx;
+  height: 70rpx;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5rpx double #a43e32;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #a43e32;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.voyage-poster-credit-seal text { font-size: 19rpx; font-weight: 800; }
+.voyage-poster-credit-seal view { margin-top: 5rpx; font-size: 10rpx; letter-spacing: 1rpx; }
+.voyage-poster-credit-copy { min-width: 0; color: #705337; }
+.voyage-poster-credit-copy text { display: block; font-size: 17rpx; letter-spacing: 2rpx; }
+.voyage-poster-credit-copy view { margin-top: 6rpx; color: #173a50; font-family: "Songti SC", "STSong", serif; font-size: 28rpx; font-weight: 800; }
+
 .voyage-poster-back {
   margin-top: 26rpx;
   color: #50666b;

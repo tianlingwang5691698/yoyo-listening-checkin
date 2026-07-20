@@ -152,6 +152,10 @@
         <view class="voyage-poster-kicker">CHOOSE YOUR CREW</view>
         <view class="voyage-poster-title is-guide">{{texts.posterGuideTitle}}</view>
         <view class="voyage-poster-copy">{{texts.posterGuideStep1}} {{texts.posterGuideStep2}}</view>
+        <view class="voyage-poster-credit">
+          <view class="voyage-poster-credit-seal"><text>WTL</text><view>CAPTAIN</view></view>
+          <view class="voyage-poster-credit-copy"><text>{{texts.posterCreditLabel}}</text><view>{{texts.posterCreditName}}</view></view>
+        </view>
         <view class="voyage-poster-back" bindtap="showPrevEntryPosterPage">{{texts.posterBack}}</view>
         <view class="voyage-poster-role-actions">
           <button data-role="parent" bindtap="confirmStudyIdentity">{{texts.identityIAmParent}}</button>
