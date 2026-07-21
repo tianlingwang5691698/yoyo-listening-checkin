@@ -1,0 +1,34 @@
+{
+  "topicId": "verb:modal",
+  "topic": "情态动词",
+  "questions": [
+    {
+      "_id": "sh-autumn-2012-grammar-q28",
+      "sourceSetId": "sh-autumn-2012-grammar",
+      "year": 2012,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+      "number": 28,
+      "prompt": "The new law states that people ________ drive after drinking alcohol.",
+      "options": {
+        "A": "wouldn't",
+        "B": "needn't",
+        "C": "won't",
+        "D": "mustn't"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:modal",
+      "subtopic": "情态动词",
+      "topicId": "verb:modal",
+      "topic": "情态动词",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

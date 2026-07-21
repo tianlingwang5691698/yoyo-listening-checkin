@@ -1,0 +1,66 @@
+{
+  "_id": "ielts-academic-11-test-2-writing-task-1",
+  "id": "ielts-academic-11-test-2-writing-task-1",
+  "title": "Cambridge IELTS 11 Test 2 Writing Task 1",
+  "year": 2016,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-11-test-2",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑11真题.pdf",
+  "book": "Cambridge IELTS 11 Academic",
+  "bookNumber": 11,
+  "testNumber": 2,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The charts below show the proportions of British students at one university in England who were able to speak other languages in addition to English, in 2000 and 2010.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+  "scenario": "The charts below show the proportions of British students at one university in England who were able to speak other languages in addition to English, in 2000 and 2010.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "pie charts",
+    "title": "% of British Students able to speak languages other than English, 2000\n% of British Students able to speak languages other than English, 2010",
+    "labels": [
+      "2000",
+      "Other language(s) spoken",
+      "No other language",
+      "French only",
+      "German only",
+      "Spanish only",
+      "Another language",
+      "Two other languages",
+      "2010",
+      "Other language(s) spoken",
+      "No other language",
+      "French only",
+      "German only",
+      "Spanish only",
+      "Another language",
+      "Two other languages"
+    ],
+    "units": "%",
+    "notes": [
+      "2000: No other language 20; French only 15; German only 10; Spanish only 30; Another language 15; Two other languages 10.",
+      "2010: No other language 10; French only 10; German only 10; Spanish only 35; Another language 20; Two other languages 15."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-11/writing/visuals-v3/test-2-task-1-visual-167984d631.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-11/writing/visuals-v3/test-2-task-1-visual-167984d631.jpg",
+      "alt": "Cambridge IELTS 11 Test 2 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

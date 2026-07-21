@@ -1,0 +1,57 @@
+{
+  "_id": "ielts-academic-19-test-3-writing-task-1",
+  "id": "ielts-academic-19-test-3-writing-task-1",
+  "title": "Cambridge IELTS 19 Test 3 Writing Task 1",
+  "year": 2024,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-19-test-3",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑19（A类）.pdf",
+  "book": "Cambridge IELTS 19 Academic",
+  "bookNumber": 19,
+  "testNumber": 3,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The diagram below shows how a biofuel called ethanol is produced.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "process diagram",
+    "title": "Biofuel production: how ethanol is made",
+    "labels": [
+      "Energy",
+      "sunlight + carbon dioxide",
+      "Plants and trees grow",
+      "Harvesting",
+      "Pre-processing",
+      "Cellulose",
+      "Processing",
+      "Sugars",
+      "Microbes added",
+      "Ethanol",
+      "Carbon Dioxide"
+    ],
+    "units": "",
+    "notes": []
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-19/writing/visuals-v3/test-3-task-1-visual-b098cbf693.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-19/writing/visuals-v3/test-3-task-1-visual-b098cbf693.jpg",
+      "alt": "Cambridge IELTS 19 Test 3 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

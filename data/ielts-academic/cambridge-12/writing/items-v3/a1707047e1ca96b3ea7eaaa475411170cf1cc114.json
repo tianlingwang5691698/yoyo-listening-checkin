@@ -1,0 +1,66 @@
+{
+  "_id": "ielts-academic-12-test-5-writing-task-1",
+  "id": "ielts-academic-12-test-5-writing-task-1",
+  "title": "Cambridge IELTS 12 Test 5 Writing Task 1",
+  "year": 2017,
+  "city": "Cambridge",
+  "district": "Test 5",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-12-test-5",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑12真题.pdf",
+  "book": "Cambridge IELTS 12 Academic",
+  "bookNumber": 12,
+  "testNumber": 5,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The bar chart below shows the percentage of Australian men and women in different age groups who did regular physical activity in 2010.",
+  "scenario": "The bar chart compares the percentages of Australian men and women in six age groups who did regular physical activity in 2010.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "bar chart",
+    "title": "Percentage of Australian men and women doing regular physical activity: 2010",
+    "labels": [
+      "Percentage (%)",
+      "Age group",
+      "15 to 24",
+      "25 to 34",
+      "35 to 44",
+      "45 to 54",
+      "55 to 64",
+      "65 and over",
+      "Male",
+      "Female"
+    ],
+    "units": "Percentage (%)",
+    "notes": [
+      "Year: 2010",
+      "Legend: Male, Female",
+      "15 to 24: Male 52.8%, Female 47.7%",
+      "25 to 34: Male 42.2%, Female 48.9%",
+      "35 to 44: Male 39.5%, Female 52.5%",
+      "45 to 54: Male 43.1%, Female 53.3%",
+      "55 to 64: Male 45.1%, Female 53%",
+      "65 and over: Male 46.7%, Female 47.1%"
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-12/writing/visuals-v3/test-5-task-1-visual-a6248a4f39.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-12/writing/visuals-v3/test-5-task-1-visual-a6248a4f39.jpg",
+      "alt": "Cambridge IELTS 12 Test 5 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

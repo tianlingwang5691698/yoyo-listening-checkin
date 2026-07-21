@@ -1,0 +1,79 @@
+{
+  "_id": "ielts-academic-13-test-2-writing-task-1",
+  "id": "ielts-academic-13-test-2-writing-task-1",
+  "title": "Cambridge IELTS 13 Test 2 Writing Task 1",
+  "year": 2018,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-13-test-2",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑13真题.pdf",
+  "book": "Cambridge IELTS 13 Academic",
+  "bookNumber": 13,
+  "testNumber": 2,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The chart below shows the percentage of households in owned and rented accommodation in England and Wales between 1918 and 2011.",
+  "scenario": "The chart compares the percentages of households living in owned and rented accommodation in England and Wales from 1918 to 2011.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "bar chart",
+    "title": "Households owning and renting accommodation in England and Wales 1918 to 2011",
+    "labels": [
+      "% of households",
+      "1918",
+      "1939",
+      "1953",
+      "1961",
+      "1971",
+      "1981",
+      "1991",
+      "2001",
+      "2011",
+      "households in owned accommodation",
+      "households in rented accommodation",
+      "0",
+      "10",
+      "20",
+      "30",
+      "40",
+      "50",
+      "60",
+      "70",
+      "80",
+      "90"
+    ],
+    "units": "% of households",
+    "notes": [
+      "1918: owned accommodation approximately 22%; rented accommodation approximately 78%.",
+      "1939: owned accommodation approximately 31%; rented accommodation approximately 69%.",
+      "1953: owned accommodation approximately 32%; rented accommodation approximately 68%.",
+      "1961: owned accommodation approximately 42%; rented accommodation approximately 58%.",
+      "1971: owned accommodation 50%; rented accommodation 50%.",
+      "1981: owned accommodation 60%; rented accommodation 40%.",
+      "1991: owned accommodation approximately 68%; rented accommodation approximately 32%.",
+      "2001: owned accommodation approximately 69%; rented accommodation approximately 31%.",
+      "2011: owned accommodation approximately 64%; rented accommodation approximately 36%."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-13/writing/visuals-v3/test-2-task-1-visual-804dfbe331.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-13/writing/visuals-v3/test-2-task-1-visual-804dfbe331.jpg",
+      "alt": "Cambridge IELTS 13 Test 2 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

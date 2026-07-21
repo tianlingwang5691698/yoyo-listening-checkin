@@ -1,0 +1,69 @@
+{
+  "_id": "ielts-academic-19-test-4-writing-task-1",
+  "id": "ielts-academic-19-test-4-writing-task-1",
+  "title": "Cambridge IELTS 19 Test 4 Writing Task 1",
+  "year": 2024,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-19-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑19（A类）.pdf",
+  "book": "Cambridge IELTS 19 Academic",
+  "bookNumber": 19,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The charts below give information on the location and types of dance classes young people in a town in Australia are currently attending.",
+  "scenario": "The charts show the location of dance classes and the types of dance classes attended by two age groups.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Pie chart and horizontal bar chart",
+    "title": "Location of dance classes; Types of dance classes (by age group)",
+    "labels": [
+      "Community halls & other — 18%",
+      "Private studios — 48%",
+      "School halls (after-school) — 24%",
+      "College-based studios — 10%",
+      "Under 11",
+      "11–16",
+      "Ballet",
+      "Tap",
+      "Modern",
+      "0",
+      "100",
+      "200",
+      "300",
+      "400",
+      "500",
+      "600",
+      "700",
+      "Number of students"
+    ],
+    "units": "Percent for location of dance classes; number of students for types of dance classes",
+    "notes": [
+      "The pie chart categories are Private studios, School halls (after-school), College-based studios, and Community halls & other.",
+      "The bar chart compares Under 11 and 11–16 age groups for Ballet, Tap and Modern.",
+      "Clearly visible bar values are approximately: Ballet — Under 11: 600, 11–16: 300; Tap — Under 11: 450, 11–16: just over 400; Modern — Under 11: 300, 11–16: just over 500."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-19/writing/visuals-v3/test-4-task-1-visual-446ab9795b.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-19/writing/visuals-v3/test-4-task-1-visual-446ab9795b.jpg",
+      "alt": "Cambridge IELTS 19 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

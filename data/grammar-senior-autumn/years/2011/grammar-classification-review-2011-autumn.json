@@ -1,0 +1,138 @@
+{
+  "examId": "autumn",
+  "year": 2011,
+  "model": "gpt-5.6-sol",
+  "reviewedAt": "2026-07-21",
+  "classificationRevision": 2,
+  "rule": "Classify by the correct answer and the single primary tested grammar point; distractor keywords must not determine the topic.",
+  "questions": [
+    {
+      "number": 25,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:preposition",
+      "subtopic": "介词",
+      "rationale": "through表示“帮助某人度过困难时期”，正确体现介词的搭配用法。"
+    },
+    {
+      "number": 26,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:pronoun",
+      "subtopic": "代词",
+      "rationale": "another表示三者或三者以上中的“另一个”，正确体现不定代词的用法。"
+    },
+    {
+      "number": 27,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "It is no use后接动名词作真正主语，体现非谓语动词的用法。"
+    },
+    {
+      "number": 28,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:modal",
+      "subtopic": "情态动词",
+      "rationale": "needn't表示“没有必要”，正确体现情态动词的意义。"
+    },
+    {
+      "number": 29,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:usage",
+      "subtopic": "词义与用法",
+      "rationale": "little修饰不可数名词money，so little表示“如此少的钱”，体现限定词的用法。"
+    },
+    {
+      "number": 30,
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:tag-question",
+      "subtopic": "反意疑问句",
+      "rationale": "主句为否定形式doesn't matter，反意疑问部分应用肯定形式does it。"
+    },
+    {
+      "number": 31,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "rationale": "队员是被营救的，且动作发生在过去，故用一般过去时的被动语态。"
+    },
+    {
+      "number": 32,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "saved作后置定语修饰fish，表示被动完成，体现过去分词作非谓语。"
+    },
+    {
+      "number": 33,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "realizing作伴随状语表示主动关系，体现现在分词作非谓语。"
+    },
+    {
+      "number": 34,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "rationale": "主句为过去时，宾语从句表示过去将来，故用would sign。"
+    },
+    {
+      "number": 35,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:noun",
+      "subtopic": "名词性从句",
+      "rationale": "that引导同位语从句说明evidence的具体内容，体现名词性从句。"
+    },
+    {
+      "number": 36,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:adverbial",
+      "subtopic": "状语从句",
+      "rationale": "until引导时间状语从句，表示“直到DVD发行”。"
+    },
+    {
+      "number": 37,
+      "categoryId": "logic",
+      "category": "连词逻辑类",
+      "subtopicId": "logic:clause-link",
+      "subtopic": "从属连词",
+      "rationale": "in order that引导目的关系的从句，体现从属连词的连接作用。"
+    },
+    {
+      "number": 38,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:noun",
+      "subtopic": "名词性从句",
+      "rationale": "what引导宾语从句并在从句中作understand的宾语，体现名词性从句。"
+    },
+    {
+      "number": 39,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:relative",
+      "subtopic": "定语从句",
+      "rationale": "which指代taxis并在从句中作hire的宾语，体现定语从句。"
+    },
+    {
+      "number": 40,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "seem后接不定式表示正在逐渐失去，体现不定式的进行式用法。"
+    }
+  ]
+}

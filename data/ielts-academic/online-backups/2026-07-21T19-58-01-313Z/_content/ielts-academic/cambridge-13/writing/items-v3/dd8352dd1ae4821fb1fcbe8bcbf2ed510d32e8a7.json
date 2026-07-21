@@ -1,0 +1,66 @@
+{
+  "_id": "ielts-academic-13-test-3-writing-task-1",
+  "id": "ielts-academic-13-test-3-writing-task-1",
+  "title": "Cambridge IELTS 13 Test 3 Writing Task 1",
+  "year": 2018,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-13-test-3",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑13真题.pdf",
+  "book": "Cambridge IELTS 13 Academic",
+  "bookNumber": 13,
+  "testNumber": 3,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The bar chart below shows the top ten countries for the production and consumption of electricity in 2014.",
+  "scenario": "The bar chart compares electricity production and consumption in the ten highest-ranked countries in 2014.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "bar chart",
+    "title": "The top ten countries for the production and consumption of electricity in 2014",
+    "labels": [
+      "Rank",
+      "Country",
+      "Electricity",
+      "1 China: Production 5,398; Consumption 5,322",
+      "2 United States: Production 4,099; Consumption 3,866",
+      "3 Russia: Production 1,057; Consumption 1,038",
+      "4 Japan: Production 936.2; Consumption 856.7",
+      "5 India: Production 871; Consumption 698.8",
+      "6 Canada: Production 618.9; Consumption 499.9",
+      "7 France: Production 561.2; Consumption 462.9",
+      "8 Brazil: Production 530.7; Consumption 455.8",
+      "9 Germany: Production 526.6; Consumption 582.5",
+      "10 Korea, Rep.: Production 485.1; Consumption 449.5",
+      "Production (billion kWh)",
+      "Consumption (billion kWh)"
+    ],
+    "units": "billion kWh",
+    "notes": [
+      "Year: 2014",
+      "Categories: China, United States, Russia, Japan, India, Canada, France, Brazil, Germany, Korea, Rep.",
+      "Legend: Production (billion kWh); Consumption (billion kWh)"
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-13/writing/visuals-v3/test-3-task-1-visual-47ad1b9c9d.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-13/writing/visuals-v3/test-3-task-1-visual-47ad1b9c9d.jpg",
+      "alt": "Cambridge IELTS 13 Test 3 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

@@ -1,0 +1,71 @@
+{
+  "_id": "ielts-academic-19-test-1-writing-task-1",
+  "id": "ielts-academic-19-test-1-writing-task-1",
+  "title": "Cambridge IELTS 19 Test 1 Writing Task 1",
+  "year": 2024,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-19-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑19（A类）.pdf",
+  "book": "Cambridge IELTS 19 Academic",
+  "bookNumber": 19,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The graph below gives information on the numbers of participants for different activities at one social centre in Melbourne, Australia for the period 2000 to 2020.",
+  "scenario": "The graph below gives information on the numbers of participants for different activities at one social centre in Melbourne, Australia for the period 2000 to 2020.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "line graph",
+    "title": "Number of participants, by activity 2000-2020",
+    "labels": [
+      "Number of participants",
+      "Year",
+      "2000",
+      "2005",
+      "2010",
+      "2015",
+      "2020",
+      "Film club",
+      "Martial arts",
+      "Amateur dramatics",
+      "Table tennis",
+      "Musical performances",
+      "0",
+      "10",
+      "20",
+      "30",
+      "40",
+      "50",
+      "60",
+      "70"
+    ],
+    "units": "Number of participants",
+    "notes": [
+      "The graph covers five activities at one social centre in Melbourne, Australia.",
+      "The horizontal axis shows years from 2000 to 2020 at five-year intervals.",
+      "The vertical axis shows the number of participants from 0 to 70 at intervals of 10."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-19/writing/visuals-v3/test-1-task-1-visual-dc6a98446c.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-19/writing/visuals-v3/test-1-task-1-visual-dc6a98446c.jpg",
+      "alt": "Cambridge IELTS 19 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

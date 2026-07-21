@@ -1,0 +1,65 @@
+{
+  "_id": "ielts-academic-10-test-2-writing-task-1",
+  "id": "ielts-academic-10-test-2-writing-task-1",
+  "title": "Cambridge IELTS 10 Test 2 Writing Task 1",
+  "year": 2015,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-10-test-2",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑10真题.pdf",
+  "book": "Cambridge IELTS 10 Academic",
+  "bookNumber": 10,
+  "testNumber": 2,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The tables below give information about sales of Fairtrade*-labelled coffee and bananas in 1999 and 2004 in five European countries.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The tables below give information about sales of Fairtrade*-labelled coffee and bananas in 1999 and 2004 in five European countries.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "tables",
+    "title": "Sales of Fairtrade-labelled coffee and bananas (1999 & 2004)",
+    "labels": [
+      "Coffee",
+      "1999 (millions of euros)",
+      "2004 (millions of euros)",
+      "UK: 1.5 (1999), 20 (2004)",
+      "Switzerland: 3 (1999), 6 (2004)",
+      "Denmark: 1.8 (1999), 2 (2004)",
+      "Belgium: 1 (1999), 1.7 (2004)",
+      "Sweden: 0.8 (1999), 1 (2004)",
+      "Bananas",
+      "1999 (millions of euros)",
+      "2004 (millions of euros)",
+      "Switzerland: 15 (1999), 47 (2004)",
+      "UK: 1 (1999), 5.5 (2004)",
+      "Belgium: 0.6 (1999), 4 (2004)",
+      "Sweden: 1.8 (1999), 1 (2004)",
+      "Denmark: 2 (1999), 0.9 (2004)"
+    ],
+    "units": "millions of euros",
+    "notes": [
+      "* Fairtrade: a category of products for which farmers from developing countries have been paid an officially agreed fair price."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-10/writing/visuals-v3/test-2-task-1-visual-15835bb263.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-10/writing/visuals-v3/test-2-task-1-visual-15835bb263.jpg",
+      "alt": "Cambridge IELTS 10 Test 2 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

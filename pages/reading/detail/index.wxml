@@ -121,7 +121,16 @@
       <block wx:if="{{!passage.isClozePassage}}">
         <view class="question-side-notes library-question-notes">
           <view class="question-card library-question-slip" wx:for="{{passage.questions}}" wx:key="number">
+            <view class="reading-question-source-pages" wx:if="{{item.sourceImages && item.sourceImages.length}}">
+              <image class="reading-question-source-page" wx:for="{{item.sourceImages}}" wx:for-item="sourceImage" wx:key="cloudPath" src="{{sourceImage.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+            </view>
             <view class="answer-locator"></view>
+            <view class="reading-question-group-head" wx:if="{{item.showGroupHeader}}">
+              <view class="reading-question-group-range">{{item.groupRangeTitle}}</view>
+              <view class="reading-question-group-title" wx:if="{{item.groupTitle}}">{{item.groupTitle}}</view>
+              <view class="reading-question-group-instruction" wx:if="{{item.groupInstruction}}">{{item.groupInstruction}}</view>
+            </view>
+            <view class="reading-note-heading" wx:if="{{item.showNoteHeading}}">{{item.noteHeading}}</view>
             <view class="library-question-number">{{texts.questionPrefix}}{{item.number}}{{texts.questionSuffix}}</view>
             <view class="question-title">
               <block wx:if="{{submitted}}">
@@ -396,7 +405,16 @@
       <block wx:if="{{!passage.isClozePassage}}">
         <view class="question-side-notes">
           <view class="question-card" wx:for="{{passage.questions}}" wx:key="number">
+            <view class="reading-question-source-pages" wx:if="{{item.sourceImages && item.sourceImages.length}}">
+              <image class="reading-question-source-page" wx:for="{{item.sourceImages}}" wx:for-item="sourceImage" wx:key="cloudPath" src="{{sourceImage.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+            </view>
             <view class="answer-locator"></view>
+            <view class="reading-question-group-head" wx:if="{{item.showGroupHeader}}">
+              <view class="reading-question-group-range">{{item.groupRangeTitle}}</view>
+              <view class="reading-question-group-title" wx:if="{{item.groupTitle}}">{{item.groupTitle}}</view>
+              <view class="reading-question-group-instruction" wx:if="{{item.groupInstruction}}">{{item.groupInstruction}}</view>
+            </view>
+            <view class="reading-note-heading" wx:if="{{item.showNoteHeading}}">{{item.noteHeading}}</view>
             <view class="question-title">
               <text>{{item.number}}. </text>
               <block wx:if="{{submitted}}">

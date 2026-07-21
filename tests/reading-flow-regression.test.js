@@ -19,6 +19,8 @@ test('阅读保持普通分包且详情路径参数安全传递', () => {
     'index',
     'detail/index',
     'flashcards/index',
+    'flashcards/practice/index',
+    'flashcards/recognition/index',
     'flashcards/dictation/index',
     'flashcards/dictation/library/index'
   ]);

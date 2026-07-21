@@ -1,0 +1,62 @@
+{
+  "topicId": "verb:tense-voice",
+  "topic": "时态语态",
+  "questions": [
+    {
+      "_id": "sh-autumn-2012-grammar-q26",
+      "sourceSetId": "sh-autumn-2012-grammar",
+      "year": 2012,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+      "number": 26,
+      "prompt": "Is honesty the best policy? We _ that it is when we are little.",
+      "options": {
+        "A": "will teach",
+        "B": "teach",
+        "C": "are taught",
+        "D": "will be taught"
+      },
+      "answer": "C",
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "topicId": "verb:tense-voice",
+      "topic": "时态语态",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    },
+    {
+      "_id": "sh-autumn-2012-grammar-q30",
+      "sourceSetId": "sh-autumn-2012-grammar",
+      "year": 2012,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+      "number": 30,
+      "prompt": "- I hear that Jason is planning to buy a car. - I know. By next month, he _ enough for a used one.",
+      "options": {
+        "A": "will have saved",
+        "B": "will be saving",
+        "C": "has saved",
+        "D": "saves"
+      },
+      "answer": "A",
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "topicId": "verb:tense-voice",
+      "topic": "时态语态",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "_id": "ielts-academic-16-test-2-writing-task-1",
+  "id": "ielts-academic-16-test-2-writing-task-1",
+  "title": "Cambridge IELTS 16 Test 2 Writing Task 1",
+  "year": 2021,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-16-test-2",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑16真题.pdf",
+  "book": "Cambridge IELTS 16 Academic",
+  "bookNumber": 16,
+  "testNumber": 2,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The diagram below shows the manufacturing process for making sugar from sugar cane.",
+  "scenario": "The diagram shows how sugar is produced from sugar cane in a seven-stage process, beginning with growing the crop and ending with drying and cooling the sugar.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "process diagram",
+    "title": "How sugar is produced from sugar cane",
+    "labels": [
+      "1 Growing (12-18 months)",
+      "Sugar canes",
+      "2 Harvesting",
+      "3 Crushing",
+      "Sugar canes",
+      "Juice",
+      "4 Purifying juice",
+      "Limestone filter",
+      "5 Evaporator (juice becomes syrup)",
+      "Heat",
+      "6 Centrifuge (separates sugar crystals from syrup)",
+      "7 Drying and cooling",
+      "Sugar"
+    ],
+    "units": "months",
+    "notes": [
+      "Sugar cane is harvested either mechanically or by hand.",
+      "The harvested sugar cane is crushed to produce juice.",
+      "The juice is purified using a limestone filter.",
+      "The purified juice is heated in an evaporator and becomes syrup.",
+      "A centrifuge separates sugar crystals from the syrup.",
+      "The sugar is dried and cooled."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-16/writing/visuals-v3/test-2-task-1-visual-fcf50c5377.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-16/writing/visuals-v3/test-2-task-1-visual-fcf50c5377.jpg",
+      "alt": "Cambridge IELTS 16 Test 2 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

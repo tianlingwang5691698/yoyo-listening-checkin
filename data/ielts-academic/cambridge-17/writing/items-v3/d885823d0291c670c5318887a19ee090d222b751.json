@@ -1,0 +1,65 @@
+{
+  "_id": "ielts-academic-17-test-2-writing-task-1",
+  "id": "ielts-academic-17-test-2-writing-task-1",
+  "title": "Cambridge IELTS 17 Test 2 Writing Task 1",
+  "year": 2022,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-17-test-2",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思17（A类）.pdf",
+  "book": "Cambridge IELTS 17 Academic",
+  "bookNumber": 17,
+  "testNumber": 2,
+  "directions": "You should spend about 20 minutes on this task.\nWrite at least 150 words.",
+  "prompt": "The table and charts below give information on the police budget for 2017 and 2018 in one area of Britain. The table shows where the money came from and the charts show how it was distributed.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The table and charts below give information on the police budget for 2017 and 2018 in one area of Britain. The table shows where the money came from and the charts show how it was distributed.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "table and two pie charts",
+    "title": "Police Budget 2017–2018 (in £m)",
+    "labels": [
+      "Sources",
+      "2017",
+      "2018",
+      "National Government",
+      "Local Taxes",
+      "Other sources (eg grants)",
+      "Total",
+      "How the money was spent",
+      "Salaries (officers and staff)",
+      "Technology",
+      "Buildings and transport"
+    ],
+    "units": "£m for the table; percentages for the pie charts",
+    "notes": [
+      "Table: National Government — 2017: 175.5m; 2018: 177.8m.",
+      "Table: Local Taxes — 2017: 91.2m; 2018: 102.3m.",
+      "Table: Other sources (eg grants) — 2017: 38m; 2018: 38.5m.",
+      "Table: Total — 2017: 304.7m; 2018: 318.6m.",
+      "2017 spending: Salaries (officers and staff) 75%; Technology 8%; Buildings and transport 17%.",
+      "2018 spending: Salaries (officers and staff) 69%; Technology 14%; Buildings and transport 17%."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-17/writing/visuals-v3/test-2-task-1-visual-7ba5cacb56.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-17/writing/visuals-v3/test-2-task-1-visual-7ba5cacb56.jpg",
+      "alt": "Cambridge IELTS 17 Test 2 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

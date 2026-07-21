@@ -21,7 +21,9 @@ const EM1_CONTENT_PATHS = {
 const SENIOR_SPRING_CONTENT_ROOTS = [];
 const SENIOR_AUTUMN_CONTENT_ROOTS = [
   '_content/grammar-senior-autumn/years/2009/v2',
-  '_content/grammar-senior-autumn/years/2010/v2'
+  '_content/grammar-senior-autumn/years/2010/v2',
+  '_content/grammar-senior-autumn/years/2011/v2',
+  '_content/grammar-senior-autumn/years/2012/v2'
 ];
 const WRONG_COLLECTION = 'grammarWrongQuestions';
 const PROGRESS_COLLECTION = 'grammarTopicProgress';

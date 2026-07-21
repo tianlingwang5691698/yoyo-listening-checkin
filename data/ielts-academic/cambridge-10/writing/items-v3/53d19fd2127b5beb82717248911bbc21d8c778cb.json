@@ -1,0 +1,53 @@
+{
+  "_id": "ielts-academic-10-test-3-writing-task-1",
+  "id": "ielts-academic-10-test-3-writing-task-1",
+  "title": "Cambridge IELTS 10 Test 3 Writing Task 1",
+  "year": 2015,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-10-test-3",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑10真题.pdf",
+  "book": "Cambridge IELTS 10 Academic",
+  "bookNumber": 10,
+  "testNumber": 3,
+  "directions": "You should spend about 20 minutes on this task. Write at least 150 words.",
+  "prompt": "The charts below show what UK graduate and postgraduate students who did not go into full-time work did after leaving college in 2008.",
+  "scenario": "The charts show the destinations of UK graduates and postgraduates, excluding full-time work, in 2008.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant."
+  ],
+  "visualData": {
+    "type": "bar charts",
+    "title": "Destination of UK graduates (excluding full-time work) 2008; Destination of UK postgraduates (excluding full-time work) 2008",
+    "labels": [
+      "Part-time work",
+      "Voluntary work",
+      "Further study",
+      "Unemployment"
+    ],
+    "units": "number of students",
+    "notes": [
+      "UK graduates: Part-time work 17,735; Voluntary work 3,500; Further study 29,665; Unemployment 16,235.",
+      "UK postgraduates: Part-time work 2,535; Voluntary work 345; Further study 2,725; Unemployment 1,625."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-10/writing/visuals-v3/test-3-task-1-visual-9c9756200b.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-10/writing/visuals-v3/test-3-task-1-visual-9c9756200b.jpg",
+      "alt": "Cambridge IELTS 10 Test 3 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

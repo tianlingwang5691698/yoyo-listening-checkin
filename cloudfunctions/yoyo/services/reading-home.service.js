@@ -3,8 +3,19 @@ const dateLib = require('../lib/date');
 let directory = null;
 
 function normalizeExamType(value) {
-  if (value === '一模' || value === '二模' || value === '真题' || value === '春考' || value === '秋考') return value;
+  if (value === '一模' || value === '二模' || value === '真题' || value === '春考' || value === '秋考' || value === 'IELTS Academic') return value;
+  if (/^Cambridge IELTS (?:1[0-9]|20|21)$/.test(String(value || ''))) return String(value);
   return value && String(value).includes('真题') ? '真题' : String(value || '二模');
+}
+
+function isIeltsExamType(value) {
+  return value === 'IELTS Academic' || /^Cambridge IELTS (?:1[0-9]|20|21)$/.test(String(value || ''));
+}
+
+function ieltsBookNumber(value) {
+  if (value === 'IELTS Academic') return 21;
+  const match = String(value || '').match(/(\d+)$/);
+  return Number(match && match[1] || 0);
 }
 
 function loadDirectory() {
@@ -30,14 +41,19 @@ function createPassageSummary(passage) {
 }
 
 function buildCategoryTree(passages) {
-  const groups = ['一模', '二模', '春考', '秋考'].map((examType) => {
+  const ieltsExamTypes = Array.from(new Set(passages.map((item) => normalizeExamType(item.examType)).filter(isIeltsExamType)))
+    .sort((left, right) => ieltsBookNumber(right) - ieltsBookNumber(left));
+  const groups = ['一模', '二模', '春考', '秋考'].concat(ieltsExamTypes).map((examType) => {
     const districtMap = {};
     passages.forEach((passage) => {
       if (normalizeExamType(passage.examType) !== examType) return;
       const isSeniorPaper = examType === '春考' || examType === '秋考';
+      const isIeltsPaper = isIeltsExamType(examType);
       const district = passage.district || '未分区';
-      const nodeKey = isSeniorPaper ? (passage.paperId || `${examType}-${passage.year}`) : district;
-      const nodeLabel = isSeniorPaper ? (passage.paperTitle || `${passage.year} 上海高考${examType}英语真题`) : district;
+      const nodeKey = (isSeniorPaper || isIeltsPaper) ? (passage.paperId || `${examType}-${passage.year}`) : district;
+      const nodeLabel = isIeltsPaper
+        ? (passage.paperTitle || district)
+        : (isSeniorPaper ? (passage.paperTitle || `${passage.year} 上海高考${examType}英语真题`) : district);
       if (!districtMap[nodeKey]) districtMap[nodeKey] = { label: nodeLabel, count: 0, passages: [] };
       districtMap[nodeKey].count += 1;
       districtMap[nodeKey].passages.push(Object.assign(createPassageSummary(passage), {
@@ -50,7 +66,7 @@ function buildCategoryTree(passages) {
       key: examType,
       label: examType,
       count: Object.values(districtMap).reduce((sum, item) => sum + item.count, 0),
-      nodeUnit: examType === '春考' || examType === '秋考' ? '份卷' : '',
+      nodeUnit: examType === '春考' || examType === '秋考' || isIeltsExamType(examType) ? '份卷' : '',
       districts: Object.keys(districtMap).sort((left, right) => String(districtMap[right].label).localeCompare(String(districtMap[left].label), 'zh-CN')).map((district) => ({
         key: district,
         label: districtMap[district].label,

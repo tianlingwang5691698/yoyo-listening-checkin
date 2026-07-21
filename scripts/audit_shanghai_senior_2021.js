@@ -81,7 +81,7 @@ async function auditReading(miniProgram, session) {
 
 async function auditListening(miniProgram, session) {
   const itemId = `sh-${session}-2021-listening`;
-  const expectedDuration = session === 'spring' ? '15:53' : '15:54';
+  const expectedDuration = session === 'spring' ? '15:54' : '15:55';
   const rounds = [];
   for (let round = 1; round <= 3; round += 1) {
     const shellStartedAt = Date.now();

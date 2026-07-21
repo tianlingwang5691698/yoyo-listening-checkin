@@ -304,26 +304,33 @@ test('2018-2020 春考与秋考按原卷结构完整收录', () => {
   }
 });
 
-test('2023 春考只收录本地完整的翻译与作文并保持原卷顺序', () => {
+test('2023 春考按概要写作、翻译与作文保持原卷顺序', () => {
   const writing = readJson('data/writing-senior-spring/writing-prompts.json').filter((item) => Number(item.year) === 2023);
   const listening = readJson('data/listening-senior-spring/listening-practice.json').filter((item) => Number(item.year) === 2023);
   const report = readJson('data/imports/shanghai-senior-1990-2023/formal/clean-report.json').papers
     .find((item) => item.year === 2023 && item.session === 'spring');
-  assert.deepEqual(writing.map((item) => item._id), ['sh-spring-2023-translation', 'sh-spring-2023-writing']);
-  assert.deepEqual(writing.map((item) => item.paperOrder), [1, 2]);
-  assert.deepEqual(writing[0].questions.map((item) => item.number), [72, 73, 74, 75]);
-  assert.ok(writing[0].questions.every((item) => item.sourceText && item.requiredWord && item.referenceAnswers.length === 1));
-  assert.deepEqual(writing[1].requirements, ['向 Tom 反映同学的想法', '向 tom 提出建议并说明理由']);
-  assert.equal(writing[1].promptStarter, 'Dear Tom：');
-  assert.deepEqual(writing[1].images, []);
-  assert.equal(writing[1].minWords, 0);
-  assert.equal(writing[1].score, 0);
-  assert.equal(listening.length, 0);
-  assert.equal(report.listening.accepted, false);
+  assert.deepEqual(writing.map((item) => item._id), ['sh-spring-2023-summary-writing', 'sh-spring-2023-translation', 'sh-spring-2023-writing']);
+  assert.deepEqual(writing.map((item) => item.paperOrder), [1, 2, 3]);
+  assert.equal(writing[0].questionNumber, 71);
+  assert.equal(writing[0].maxWords, 60);
+  assert.deepEqual(writing[1].questions.map((item) => item.number), [72, 73, 74, 75]);
+  assert.ok(writing[1].questions.every((item) => item.sourceText && item.requiredWord && item.referenceAnswers.length === 1));
+  assert.deepEqual(writing[2].requirements, ['向 Tom 反映同学的想法:', '向 Tom 提出建议并说明理由。']);
+  assert.deepEqual(writing[2].images, []);
+  assert.equal(writing[2].minWords, 120);
+  assert.equal(writing[2].score, 0);
+  assert.equal(listening.length, 1);
+  assert.equal(listening[0].questions.length, 20);
+  assert.ok(listening[0].transcript);
+  assert.match(listening[0].audioLocalPath, /sh-spring-2023-listening-[a-f0-9]+-64k-mono\.mp3$/);
+  assert.equal(report.listening.accepted, true);
   assert.equal(report.listening.hasTranscript, true);
-  assert.equal(report.listening.hasAudio, false);
-  assert.equal(report.listening.questions, 0);
-  assert.equal(report.reading.length, 0);
+  assert.equal(report.listening.hasAudio, true);
+  assert.equal(report.listening.questions, 20);
+  assert.ok(report.reading.length);
+  assert.ok(report.reading.every((item) => item.accepted));
+  assert.equal(report.summaryWriting.accepted, true);
+  assert.equal(report.grammarCloze.accepted, true);
   assert.equal(report.grammar.accepted, false);
 });
 

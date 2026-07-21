@@ -1,0 +1,34 @@
+{
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The plans below show a college cafe before it was redesigned and how it looks now.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Two floor plans comparing a college cafe before redesign and today",
+    "title": "Cafe before redesign; Cafe today",
+    "labels": [
+      "Cafe before redesign",
+      "Kitchen",
+      "Serving area (food and drink)",
+      "Staff dining room",
+      "Tables and chairs",
+      "Toilets",
+      "Cafe today",
+      "Kitchen",
+      "Hot meals",
+      "Take away food",
+      "Coffee bar",
+      "Tables and chairs",
+      "Outdoor seating",
+      "Toilets"
+    ],
+    "units": "",
+    "notes": [
+      "The first plan shows the cafe before redesign.",
+      "The second plan shows the cafe today."
+    ]
+  },
+  "uncertain": []
+}

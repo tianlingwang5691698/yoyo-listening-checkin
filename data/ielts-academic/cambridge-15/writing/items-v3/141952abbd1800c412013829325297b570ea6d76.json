@@ -1,0 +1,63 @@
+{
+  "_id": "ielts-academic-15-test-2-writing-task-1",
+  "id": "ielts-academic-15-test-2-writing-task-1",
+  "title": "Cambridge IELTS 15 Test 2 Writing Task 1",
+  "year": 2020,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-15-test-2",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑15真题.pdf",
+  "book": "Cambridge IELTS 15 Academic",
+  "bookNumber": 15,
+  "testNumber": 2,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The graph below shows the number of tourists visiting a particular Caribbean island between 2010 and 2017.",
+  "scenario": "The graph shows the number of tourists visiting a particular Caribbean island between 2010 and 2017, divided into visitors staying on cruise ships, visitors staying on the island, and the total.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "line graph",
+    "title": "Number of tourists visiting a Caribbean island (2010-2017)",
+    "labels": [
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "Visitors staying on cruise ships",
+      "Visitors staying on island",
+      "Total"
+    ],
+    "units": "Millions of visitors",
+    "notes": [
+      "The vertical scale runs from 0 to 4 million in increments of 0.5 million.",
+      "Visitors staying on cruise ships: 0.25 million in 2010, 0.5 million in 2011, 0.25 million in 2012, 0.5 million in 2013, 1 million in 2014, 1.25 million in 2015, 1.5 million in 2016 and 2 million in 2017.",
+      "Visitors staying on island: 0.75 million in 2010, 0.75 million in 2011, 1.25 million in 2012, 1.5 million in 2013, 1.5 million in 2014, 1.5 million in 2015, 1.25 million in 2016 and 1.5 million in 2017.",
+      "Total: 1 million in 2010, 1.25 million in 2011, 1.5 million in 2012, 2 million in 2013, 2.5 million in 2014, 2.75 million in 2015, 2.75 million in 2016 and 3.5 million in 2017."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-15/writing/visuals-v3/test-2-task-1-visual-77babb1120.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-15/writing/visuals-v3/test-2-task-1-visual-77babb1120.jpg",
+      "alt": "Cambridge IELTS 15 Test 2 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

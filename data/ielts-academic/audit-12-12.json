@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-21T19:11:53.867Z",
+  "books": [
+    {
+      "book": 12,
+      "listeningTests": 4,
+      "readingPassages": 12,
+      "writingTasks": 8,
+      "speakingTests": 4,
+      "audio": [
+        {
+          "test": 5,
+          "durationSec": 1834.74,
+          "size": 14677965,
+          "cloudPath": "_content/ielts-academic/cambridge-12/listening/audio/cambridge-ielts-12-test-5-4adc616f2f-64k-mono.mp3"
+        },
+        {
+          "test": 6,
+          "durationSec": 1957.82,
+          "size": 15662637,
+          "cloudPath": "_content/ielts-academic/cambridge-12/listening/audio/cambridge-ielts-12-test-6-258847b74f-64k-mono.mp3"
+        },
+        {
+          "test": 7,
+          "durationSec": 1982.56,
+          "size": 15860493,
+          "cloudPath": "_content/ielts-academic/cambridge-12/listening/audio/cambridge-ielts-12-test-7-9462712a88-64k-mono.mp3"
+        },
+        {
+          "test": 8,
+          "durationSec": 1787,
+          "size": 14296077,
+          "cloudPath": "_content/ielts-academic/cambridge-12/listening/audio/cambridge-ielts-12-test-8-c84e53edbf-64k-mono.mp3"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "listeningTests": 4,
+    "listeningQuestions": 160,
+    "readingPassages": 12,
+    "readingQuestions": 160,
+    "writingTasks": 8,
+    "speakingTests": 4
+  }
+}

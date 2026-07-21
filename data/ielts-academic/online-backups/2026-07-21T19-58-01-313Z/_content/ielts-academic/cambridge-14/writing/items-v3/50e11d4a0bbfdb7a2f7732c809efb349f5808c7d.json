@@ -1,0 +1,75 @@
+{
+  "_id": "ielts-academic-14-test-4-writing-task-1",
+  "id": "ielts-academic-14-test-4-writing-task-1",
+  "title": "Cambridge IELTS 14 Test 4 Writing Task 1",
+  "year": 2019,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-14-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑14真题.pdf",
+  "book": "Cambridge IELTS 14 Academic",
+  "bookNumber": 14,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The plans below show a public park when it first opened in 1920 and the same park today.",
+  "scenario": "The plans compare the layout of Grange Park in 1920 with its layout today.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "two plans",
+    "title": "GRANGE PARK (1920); GRANGE PARK (today)",
+    "labels": [
+      "ARNOLD AVENUE",
+      "ELDON STREET",
+      "Entrance",
+      "Rose garden",
+      "Seats",
+      "Stage for musicians",
+      "Fountain",
+      "Pond for water plants",
+      "Glasshouse",
+      "Café",
+      "Children’s play area",
+      "Amphitheatre for concerts",
+      "Water feature",
+      "Entrance underground car park"
+    ],
+    "units": "",
+    "notes": [
+      "1920 plan: Arnold Avenue is along the north side and Eldon Street along the south side.",
+      "1920 plan: entrances are shown in the middle of the north and south boundaries.",
+      "1920 plan: rose gardens are in the north-west, north-east and south-west areas.",
+      "1920 plan: a stage for musicians is west of the central fountain.",
+      "1920 plan: a pond for water plants is in the north-east area and a glasshouse is in the south-east area.",
+      "1920 plan: seats are shown beside the north-west and south-west boundaries, near both central entrances, and beside the east boundary.",
+      "Today’s plan: Arnold Avenue is along the north side and Eldon Street along the south side.",
+      "Today’s plan: entrances remain in the middle of the north and south boundaries.",
+      "Today’s plan: one rose garden remains in the north-west, and another rose garden occupies the centre with seats on all four sides.",
+      "Today’s plan: an amphitheatre for concerts is on the west side.",
+      "Today’s plan: a café and children’s play area are in the north-east area.",
+      "Today’s plan: a water feature is in the south-east area.",
+      "Today’s plan: an entrance to an underground car park is shown at the south-east side."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-14/writing/visuals-v3/test-4-task-1-visual-765c54a633.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-14/writing/visuals-v3/test-4-task-1-visual-765c54a633.jpg",
+      "alt": "Cambridge IELTS 14 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

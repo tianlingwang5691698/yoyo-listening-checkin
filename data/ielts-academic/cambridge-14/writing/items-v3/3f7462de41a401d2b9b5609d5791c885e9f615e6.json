@@ -1,0 +1,66 @@
+{
+  "_id": "ielts-academic-14-test-3-writing-task-1",
+  "id": "ielts-academic-14-test-3-writing-task-1",
+  "title": "Cambridge IELTS 14 Test 3 Writing Task 1",
+  "year": 2019,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-14-test-3",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑14真题.pdf",
+  "book": "Cambridge IELTS 14 Academic",
+  "bookNumber": 14,
+  "testNumber": 3,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The diagram below shows how electricity is generated in a hydroelectric power station.",
+  "scenario": "The diagram shows a hydroelectric power station operating through a day-and-night cycle between a high-level reservoir and a low-level reservoir.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "process diagram",
+    "title": "Hydroelectric power station",
+    "labels": [
+      "River",
+      "High-level reservoir",
+      "Dam",
+      "Intake (Day: open, Night: closed)",
+      "Flow of water to generate electricity (day)",
+      "Flow of water during pumping (night)",
+      "Power station",
+      "Generator",
+      "Power lines",
+      "National grid",
+      "Day",
+      "Night",
+      "Low-level reservoir",
+      "Reversible turbines",
+      "Day: operate generator",
+      "Night: pump water into high-level reservoir"
+    ],
+    "units": "",
+    "notes": [
+      "During the day, the intake is open and water flows from the high-level reservoir through the reversible turbines to the low-level reservoir. The turbines operate the generator, and electricity is transmitted by power lines to the national grid.",
+      "At night, the intake is closed and the reversible turbines pump water from the low-level reservoir back into the high-level reservoir."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-14/writing/visuals-v3/test-3-task-1-visual-2713b7070c.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-14/writing/visuals-v3/test-3-task-1-visual-2713b7070c.jpg",
+      "alt": "Cambridge IELTS 14 Test 3 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

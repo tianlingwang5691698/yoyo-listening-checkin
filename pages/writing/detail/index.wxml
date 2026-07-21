@@ -4,8 +4,8 @@
       <view class="library-file-meta">{{prompt.examType}} · {{prompt.district}}</view>
       <view class="library-file-title">{{prompt.title}}</view>
       <view class="library-file-rules">
-        <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
-        <text wx:elif="{{prompt.maxWords}}">不超过 {{prompt.maxWords}} 词</text>
+        <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}}{{texts.questionUnit}}</text>
+        <text wx:elif="{{prompt.maxWords}}">{{texts.maxWords}}{{prompt.maxWords}}{{texts.words}}</text>
         <text wx:elif="{{prompt.minWords}}">{{texts.minWords}}{{prompt.minWords}}{{texts.words}}</text>
         <text wx:if="{{prompt.score}}">{{texts.fullScore}}{{prompt.score}}{{texts.scoreUnit}}</text>
       </view>
@@ -29,18 +29,18 @@
             <view class="library-translation-item" wx:for="{{translationQuestions}}" wx:key="number">
               <view class="library-translation-number">{{item.number}}.</view>
               <view class="library-translation-source">{{item.sourceText}} <text>（{{item.requiredWord}}）</text></view>
-              <textarea class="library-translation-input" value="{{item.inputValue}}" data-index="{{index}}" maxlength="800" auto-height="{{true}}" cursor-spacing="160" placeholder="请输入英文译文" bindinput="onTranslationInput"></textarea>
+              <textarea class="library-translation-input" value="{{item.inputValue}}" data-index="{{index}}" maxlength="800" auto-height="{{true}}" cursor-spacing="160" placeholder="{{texts.translationPlaceholder}}" bindinput="onTranslationInput"></textarea>
               <view class="library-translation-reference" wx:if="{{translationSubmitted}}">
-                <view class="library-translation-reference-title">参考译文</view>
+                <view class="library-translation-reference-title">{{texts.referenceTranslation}}</view>
                 <view wx:for="{{item.referenceAnswers}}" wx:for-item="answer" wx:key="*this">{{answer}}</view>
                 <view class="library-translation-analysis" wx:if="{{item.analysis}}">
                   <view class="translation-analysis-head">
-                    <view class="library-translation-reference-title">模型讲解</view>
+                    <view class="library-translation-reference-title">{{texts.modelExplanation}}</view>
                     <view class="translation-verdict status-{{item.analysis.status}}">{{item.analysis.verdict}}</view>
                   </view>
-                  <view class="translation-analysis-row" wx:if="{{item.analysis.recommendedTranslation}}"><text>推荐译文：</text>{{item.analysis.recommendedTranslation}}</view>
-                  <view class="translation-analysis-row" wx:if="{{item.analysis.analysis}}"><text>分析：</text>{{item.analysis.analysis}}</view>
-                  <view class="translation-analysis-row" wx:if="{{item.analysis.keyPoints.length}}"><text>关键点：</text><view wx:for="{{item.analysis.keyPoints}}" wx:key="*this">· {{item}}</view></view>
+                  <view class="translation-analysis-row" wx:if="{{item.analysis.recommendedTranslation}}"><text>{{texts.recommendedTranslation}}</text>{{item.analysis.recommendedTranslation}}</view>
+                  <view class="translation-analysis-row" wx:if="{{item.analysis.analysis}}"><text>{{texts.analysisLabel}}</text>{{item.analysis.analysis}}</view>
+                  <view class="translation-analysis-row" wx:if="{{item.analysis.keyPoints.length}}"><text>{{texts.keyPoints}}</text><view wx:for="{{item.analysis.keyPoints}}" wx:key="*this">· {{item}}</view></view>
                   <view class="translation-correction" wx:for="{{item.analysis.corrections}}" wx:key="original">
                     <view>{{item.original}} → {{item.corrected}}</view>
                     <view class="translation-correction-reason">{{item.reason}}</view>
@@ -50,7 +50,7 @@
             </view>
           </view>
           <view class="translation-analysis-summary" wx:if="{{translationSubmitted && translationAnalysisSummary}}">{{translationAnalysisSummary}}</view>
-          <button class="library-submit-button library-translation-submit" loading="{{translationAnalyzing}}" disabled="{{translationAnalyzing}}" bindtap="submitTranslation">{{translationAnalyzing ? '分析讲解中' : '提交翻译'}}</button>
+          <button class="library-submit-button library-translation-submit" loading="{{translationAnalyzing}}" disabled="{{translationAnalyzing}}" bindtap="submitTranslation">{{translationAnalyzing ? texts.analyzingTranslation : texts.submitTranslation}}</button>
           <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
         </block>
         <block wx:else>
@@ -74,7 +74,10 @@
           </view>
           <view class="library-prompt-starter" wx:if="{{promptDisplay.promptStarter}}">{{promptDisplay.promptStarter}}</view>
           <view class="library-prompt-images" wx:if="{{promptImages.length}}">
-            <image class="library-prompt-image" wx:for="{{promptImages}}" wx:key="cloudPath" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
+            <view class="prompt-image-frame" wx:for="{{promptImages}}" wx:key="cloudPath" data-src="{{item.src}}" bindtap="previewPromptImage">
+              <image class="library-prompt-image" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
+              <view class="prompt-image-zoom" aria-label="{{texts.zoomChart}}"></view>
+            </view>
           </view>
         </block>
       </view>
@@ -171,8 +174,8 @@
     <view class="eyebrow">{{prompt.examType}} · {{prompt.district}}</view>
     <view class="title">{{prompt.title}}</view>
     <view class="meta">
-      <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
-      <text wx:elif="{{prompt.maxWords}}">不超过 {{prompt.maxWords}} 词</text>
+      <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}}{{texts.questionUnit}}</text>
+      <text wx:elif="{{prompt.maxWords}}">{{texts.maxWords}}{{prompt.maxWords}}{{texts.words}}</text>
       <text wx:elif="{{prompt.minWords}}">{{texts.minWords}}{{prompt.minWords}}{{texts.words}}</text>
       <text wx:if="{{prompt.score}}">{{texts.fullScore}}{{prompt.score}}{{texts.scoreUnit}}</text>
     </view>
@@ -183,8 +186,8 @@
     <view class="prompt-paper-head">
       <view class="section-title">{{texts.promptPaper}}</view>
       <view class="prompt-rules">
-        <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}} 题</text>
-        <text wx:elif="{{prompt.maxWords}}">不超过 {{prompt.maxWords}} 词</text>
+        <text wx:if="{{isTranslation}}">{{prompt.questionCount || translationQuestions.length}}{{texts.questionUnit}}</text>
+        <text wx:elif="{{prompt.maxWords}}">{{texts.maxWords}}{{prompt.maxWords}}{{texts.words}}</text>
         <text wx:elif="{{prompt.minWords}}">{{texts.minWords}}{{prompt.minWords}}{{texts.words}}</text>
         <text wx:if="{{prompt.score}}">{{prompt.score}}{{texts.scoreUnit}}</text>
       </view>
@@ -196,18 +199,18 @@
           <view class="translation-item" wx:for="{{translationQuestions}}" wx:key="number">
             <view class="translation-number">{{item.number}}.</view>
             <view class="translation-source">{{item.sourceText}} <text>（{{item.requiredWord}}）</text></view>
-            <textarea class="translation-input" value="{{item.inputValue}}" data-index="{{index}}" maxlength="800" auto-height="{{true}}" cursor-spacing="160" placeholder="请输入英文译文" bindinput="onTranslationInput"></textarea>
+            <textarea class="translation-input" value="{{item.inputValue}}" data-index="{{index}}" maxlength="800" auto-height="{{true}}" cursor-spacing="160" placeholder="{{texts.translationPlaceholder}}" bindinput="onTranslationInput"></textarea>
             <view class="translation-reference" wx:if="{{translationSubmitted}}">
-              <view class="translation-reference-title">参考译文</view>
+              <view class="translation-reference-title">{{texts.referenceTranslation}}</view>
               <view wx:for="{{item.referenceAnswers}}" wx:for-item="answer" wx:key="*this">{{answer}}</view>
               <view class="translation-analysis" wx:if="{{item.analysis}}">
                 <view class="translation-analysis-head">
-                  <view class="translation-reference-title">模型讲解</view>
+                  <view class="translation-reference-title">{{texts.modelExplanation}}</view>
                   <view class="translation-verdict status-{{item.analysis.status}}">{{item.analysis.verdict}}</view>
                 </view>
-                <view class="translation-analysis-row" wx:if="{{item.analysis.recommendedTranslation}}"><text>推荐译文：</text>{{item.analysis.recommendedTranslation}}</view>
-                <view class="translation-analysis-row" wx:if="{{item.analysis.analysis}}"><text>分析：</text>{{item.analysis.analysis}}</view>
-                <view class="translation-analysis-row" wx:if="{{item.analysis.keyPoints.length}}"><text>关键点：</text><view wx:for="{{item.analysis.keyPoints}}" wx:key="*this">· {{item}}</view></view>
+                <view class="translation-analysis-row" wx:if="{{item.analysis.recommendedTranslation}}"><text>{{texts.recommendedTranslation}}</text>{{item.analysis.recommendedTranslation}}</view>
+                <view class="translation-analysis-row" wx:if="{{item.analysis.analysis}}"><text>{{texts.analysisLabel}}</text>{{item.analysis.analysis}}</view>
+                <view class="translation-analysis-row" wx:if="{{item.analysis.keyPoints.length}}"><text>{{texts.keyPoints}}</text><view wx:for="{{item.analysis.keyPoints}}" wx:key="*this">· {{item}}</view></view>
                 <view class="translation-correction" wx:for="{{item.analysis.corrections}}" wx:key="original">
                   <view>{{item.original}} → {{item.corrected}}</view>
                   <view class="translation-correction-reason">{{item.reason}}</view>
@@ -217,7 +220,7 @@
           </view>
         </view>
         <view class="translation-analysis-summary" wx:if="{{translationSubmitted && translationAnalysisSummary}}">{{translationAnalysisSummary}}</view>
-        <button class="submit-button translation-submit" loading="{{translationAnalyzing}}" disabled="{{translationAnalyzing}}" bindtap="submitTranslation">{{translationAnalyzing ? '分析讲解中' : '提交翻译'}}</button>
+        <button class="submit-button translation-submit" loading="{{translationAnalyzing}}" disabled="{{translationAnalyzing}}" bindtap="submitTranslation">{{translationAnalyzing ? texts.analyzingTranslation : texts.submitTranslation}}</button>
         <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
       </block>
       <block wx:else>
@@ -241,7 +244,10 @@
         </view>
         <view class="prompt-starter" wx:if="{{promptDisplay.promptStarter}}">{{promptDisplay.promptStarter}}</view>
         <view class="prompt-images" wx:if="{{promptImages.length}}">
-          <image class="prompt-image" wx:for="{{promptImages}}" wx:key="cloudPath" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
+          <view class="prompt-image-frame" wx:for="{{promptImages}}" wx:key="cloudPath" data-src="{{item.src}}" bindtap="previewPromptImage">
+            <image class="prompt-image" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
+            <view class="prompt-image-zoom" aria-label="{{texts.zoomChart}}"></view>
+          </view>
         </view>
       </block>
     </view>

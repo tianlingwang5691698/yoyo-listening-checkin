@@ -536,12 +536,12 @@ async function getDashboard(options, onRefresh) {
 }
 
 async function getMaterialIndex(options, onRefresh) {
-  let payload = { catalogVersion: 'senior-2026-v3' };
+  let payload = { catalogVersion: 'ielts-academic-10-21-v1' };
   let refreshHandler = onRefresh;
   if (typeof options === 'function') {
     refreshHandler = options;
   } else {
-    payload = Object.assign({ catalogVersion: 'senior-2026-v3' }, options || {});
+    payload = Object.assign({ catalogVersion: 'ielts-academic-10-21-v1' }, options || {});
   }
   return callCloud('getMaterialIndex', payload, {
     writingEm1: [],
@@ -551,12 +551,15 @@ async function getMaterialIndex(options, onRefresh) {
     listeningEm1: [],
     listeningEm2: [],
     listeningSeniorSpring: [],
-    listeningSeniorAutumn: []
+    listeningSeniorAutumn: [],
+    writingIelts: [],
+    listeningIelts: [],
+    speakingIelts: []
   }, { onRefresh: refreshHandler });
 }
 
 async function getMaterialItem(options, onRefresh) {
-  return callCloud('getMaterialItem', Object.assign({}, options || {}), {
+  return callCloud('getMaterialItem', Object.assign({ catalogVersion: 'ielts-academic-10-21-v1' }, options || {}), {
     item: null
   }, { onRefresh });
 }
@@ -944,7 +947,7 @@ async function getReadingHome(options, onRefresh) {
 }
 
 async function getReadingPassage(options, onRefresh) {
-  return callCloud('getReadingPassage', withSelectedStudent(Object.assign({}, options || {})), {
+  return callCloud('getReadingPassage', withSelectedStudent(Object.assign({ contentVersion: 'ielts-academic-10-21-v1' }, options || {})), {
     today: '',
     passage: null,
     latestAttempt: null

@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-21T17:17:30.897Z",
+  "counts": {
+    "writing": 48,
+    "listening": 24,
+    "speaking": 24,
+    "reading": 72
+  },
+  "timings": {
+    "materialCold": 387,
+    "materialWarm": 153,
+    "readingCold": 202,
+    "readingWarm": 174
+  },
+  "samples": [
+    {
+      "book": 21,
+      "writingId": "ielts-academic-21-test-1-writing-task-1",
+      "listeningId": "ielts-academic-21-test-1-listening",
+      "speakingId": "ielts-academic-21-test-1-speaking",
+      "readingId": "ielts-academic-21-test-4-reading-passage-1",
+      "durationSec": 1874.81,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 797
+    },
+    {
+      "book": 20,
+      "writingId": "ielts-academic-20-test-1-writing-task-1",
+      "listeningId": "ielts-academic-20-test-1-listening",
+      "speakingId": "ielts-academic-20-test-1-speaking",
+      "readingId": "ielts-academic-20-test-4-reading-passage-1",
+      "durationSec": 1947.85,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 825
+    },
+    {
+      "book": 19,
+      "writingId": "ielts-academic-19-test-1-writing-task-1",
+      "listeningId": "ielts-academic-19-test-1-listening",
+      "speakingId": "ielts-academic-19-test-1-speaking",
+      "readingId": "ielts-academic-19-test-4-reading-passage-1",
+      "durationSec": 1744.92,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 907
+    },
+    {
+      "book": 18,
+      "writingId": "ielts-academic-18-test-1-writing-task-1",
+      "listeningId": "ielts-academic-18-test-1-listening",
+      "speakingId": "ielts-academic-18-test-1-speaking",
+      "readingId": "ielts-academic-18-test-4-reading-passage-1",
+      "durationSec": 1757.92,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 855
+    },
+    {
+      "book": 17,
+      "writingId": "ielts-academic-17-test-1-writing-task-1",
+      "listeningId": "ielts-academic-17-test-1-listening",
+      "speakingId": "ielts-academic-17-test-1-speaking",
+      "readingId": "ielts-academic-17-test-4-reading-passage-1",
+      "durationSec": 1728.61,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 802
+    },
+    {
+      "book": 16,
+      "writingId": "ielts-academic-16-test-1-writing-task-1",
+      "listeningId": "ielts-academic-16-test-1-listening",
+      "speakingId": "ielts-academic-16-test-1-speaking",
+      "readingId": "ielts-academic-16-test-4-reading-passage-1",
+      "durationSec": 1747.37,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 876
+    }
+  ]
+}

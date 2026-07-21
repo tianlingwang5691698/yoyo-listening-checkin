@@ -1,0 +1,69 @@
+{
+  "_id": "ielts-academic-12-test-7-writing-task-1",
+  "id": "ielts-academic-12-test-7-writing-task-1",
+  "title": "Cambridge IELTS 12 Test 7 Writing Task 1",
+  "year": 2017,
+  "city": "Cambridge",
+  "district": "Test 7",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-12-test-7",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑12真题.pdf",
+  "book": "Cambridge IELTS 12 Academic",
+  "bookNumber": 12,
+  "testNumber": 7,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The chart below shows how frequently people in the USA ate in fast food restaurants between 2003 and 2013.",
+  "scenario": "The chart compares the frequency with which people in the USA ate at fast food restaurants in 2003, 2006 and 2013.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "grouped bar chart",
+    "title": "Frequency of eating at fast food restaurants among people in the USA (2003–2013)",
+    "labels": [
+      "Every day",
+      "Several times a week",
+      "Once a week",
+      "Once or twice a month",
+      "A few times a year",
+      "Never",
+      "2003",
+      "2006",
+      "2013",
+      "0%",
+      "5%",
+      "10%",
+      "15%",
+      "20%",
+      "25%",
+      "30%",
+      "35%",
+      "40%"
+    ],
+    "units": "% of people",
+    "notes": [
+      "Vertical axis: % of people.",
+      "Horizontal categories: Every day; Several times a week; Once a week; Once or twice a month; A few times a year; Never.",
+      "Legend: 2003, 2006 and 2013."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-12/writing/visuals-v3/test-7-task-1-visual-4a6475b44d.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-12/writing/visuals-v3/test-7-task-1-visual-4a6475b44d.jpg",
+      "alt": "Cambridge IELTS 12 Test 7 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

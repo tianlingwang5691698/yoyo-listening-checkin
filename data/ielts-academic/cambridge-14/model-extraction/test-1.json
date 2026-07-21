@@ -1,0 +1,1942 @@
+{
+  "listening": {
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "Nationality: ...",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Personal information",
+        "givenRows": [
+          {
+            "label": "Type of crime",
+            "value": "Personal information theft"
+          },
+          {
+            "label": "Name",
+            "value": "Louise Taylor"
+          },
+          {
+            "label": "Date of birth",
+            "value": "14 December 1977"
+          },
+          {
+            "label": "Occupation",
+            "value": "interior designer"
+          },
+          {
+            "label": "Reason for visit",
+            "value": "business (to buy antique 2 ...)"
+          },
+          {
+            "label": "Length of stay",
+            "value": "two months"
+          },
+          {
+            "label": "Current address",
+            "value": "3 ... Apartments (No. 15)"
+          }
+        ],
+        "answer": "Canadian",
+        "acceptedAnswers": [
+          "Canadian"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 2,
+        "prompt": "Reason for visit: business (to buy antique ...)",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Personal information",
+        "givenRows": [
+          {
+            "label": "Type of crime",
+            "value": "Personal information theft"
+          },
+          {
+            "label": "Name",
+            "value": "Louise Taylor"
+          },
+          {
+            "label": "Nationality",
+            "value": "1 ..."
+          },
+          {
+            "label": "Date of birth",
+            "value": "14 December 1977"
+          },
+          {
+            "label": "Occupation",
+            "value": "interior designer"
+          },
+          {
+            "label": "Length of stay",
+            "value": "two months"
+          },
+          {
+            "label": "Current address",
+            "value": "3 ... Apartments (No. 15)"
+          }
+        ],
+        "answer": "furniture",
+        "acceptedAnswers": [
+          "furniture"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 3,
+        "prompt": "Current address: ... Apartments (No. 15)",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Personal information",
+        "givenRows": [
+          {
+            "label": "Type of crime",
+            "value": "Personal information theft"
+          },
+          {
+            "label": "Name",
+            "value": "Louise Taylor"
+          },
+          {
+            "label": "Nationality",
+            "value": "1 ..."
+          },
+          {
+            "label": "Date of birth",
+            "value": "14 December 1977"
+          },
+          {
+            "label": "Occupation",
+            "value": "interior designer"
+          },
+          {
+            "label": "Reason for visit",
+            "value": "business (to buy antique 2 ...)"
+          },
+          {
+            "label": "Length of stay",
+            "value": "two months"
+          }
+        ],
+        "answer": "Park",
+        "acceptedAnswers": [
+          "Park"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 4,
+        "prompt": "Items stolen: a wallet containing approximately £...",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Details of theft",
+        "givenRows": [
+          {
+            "label": "Items stolen",
+            "value": "a wallet containing approximately £4 ...; a 5 ..."
+          },
+          {
+            "label": "Date of theft",
+            "value": "6 ..."
+          },
+          {
+            "label": "Possible time and place of theft",
+            "value": "outside the 7 ... at about 4 pm"
+          }
+        ],
+        "answer": "250 (sterling)",
+        "acceptedAnswers": [
+          "250",
+          "250 sterling"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 5,
+        "prompt": "Items stolen: a ...",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Details of theft",
+        "givenRows": [
+          {
+            "label": "Items stolen",
+            "value": "a wallet containing approximately £4 ...; a 5 ..."
+          },
+          {
+            "label": "Date of theft",
+            "value": "6 ..."
+          },
+          {
+            "label": "Possible time and place of theft",
+            "value": "outside the 7 ... at about 4 pm"
+          }
+        ],
+        "answer": "phone",
+        "acceptedAnswers": [
+          "phone"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 6,
+        "prompt": "Date of theft: ...",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Details of theft",
+        "givenRows": [
+          {
+            "label": "Items stolen",
+            "value": "a wallet containing approximately £4 ...; a 5 ..."
+          },
+          {
+            "label": "Possible time and place of theft",
+            "value": "outside the 7 ... at about 4 pm"
+          }
+        ],
+        "answer": "10(th) September",
+        "acceptedAnswers": [
+          "10 September",
+          "10th September"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 7,
+        "prompt": "Possible time and place of theft: outside the ... at about 4 pm",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Details of theft",
+        "givenRows": [
+          {
+            "label": "Items stolen",
+            "value": "a wallet containing approximately £4 ...; a 5 ..."
+          },
+          {
+            "label": "Date of theft",
+            "value": "6 ..."
+          }
+        ],
+        "answer": "museum",
+        "acceptedAnswers": [
+          "museum"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 8,
+        "prompt": "some boys asked for the ... then ran off",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Details of suspect",
+        "givenRows": [
+          {
+            "label": "Location",
+            "value": "outside the 7 ... at about 4 pm"
+          },
+          {
+            "label": "Details of suspect",
+            "value": "some boys asked for the 8 ... then ran off; one had a T-shirt with a picture of a tiger; he was about 12, slim build with 9 ... hair"
+          }
+        ],
+        "answer": "time",
+        "acceptedAnswers": [
+          "time"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 9,
+        "prompt": "he was about 12, slim build with ... hair",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "Details of suspect",
+        "givenRows": [
+          {
+            "label": "Location",
+            "value": "outside the 7 ... at about 4 pm"
+          },
+          {
+            "label": "Details of suspect",
+            "value": "some boys asked for the 8 ... then ran off; one had a T-shirt with a picture of a tiger; he was about 12, slim build with 9 ... hair"
+          }
+        ],
+        "answer": "blond(e)",
+        "acceptedAnswers": [
+          "blond",
+          "blonde"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 10,
+        "prompt": "Crime reference number allocated: ...",
+        "options": {},
+        "sectionKey": "PART 1",
+        "sectionTitle": "PART 1 · Questions 1-10",
+        "groupKey": "crime-report-form",
+        "groupTitle": "CRIME REPORT FORM",
+        "groupInstruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+        "formTitle": "CRIME REPORT FORM",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "87954 82361",
+        "acceptedAnswers": [
+          "87954 82361"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 11,
+        "prompt": "Which TWO pieces of advice for the first week of an apprenticeship does the manager give?",
+        "options": {
+          "A": "get to know colleagues",
+          "B": "learn from any mistakes",
+          "C": "ask lots of questions",
+          "D": "react positively to feedback",
+          "E": "enjoy new challenges"
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-11-12",
+        "groupTitle": "Induction talk for new apprentices",
+        "groupInstruction": "Questions 11 and 12. Choose TWO letters, A-E.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "A",
+        "acceptedAnswers": [
+          "A",
+          "C"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 12,
+        "prompt": "Which TWO pieces of advice for the first week of an apprenticeship does the manager give?",
+        "options": {
+          "A": "get to know colleagues",
+          "B": "learn from any mistakes",
+          "C": "ask lots of questions",
+          "D": "react positively to feedback",
+          "E": "enjoy new challenges"
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-11-12",
+        "groupTitle": "Induction talk for new apprentices",
+        "groupInstruction": "Questions 11 and 12. Choose TWO letters, A-E.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "C",
+        "acceptedAnswers": [
+          "A",
+          "C"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 13,
+        "prompt": "Which TWO things does the manager say mentors can help with?",
+        "options": {
+          "A": "confidence-building",
+          "B": "making career plans",
+          "C": "completing difficult tasks",
+          "D": "making a weekly timetable",
+          "E": "reviewing progress"
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-13-14",
+        "groupTitle": "Induction talk for new apprentices",
+        "groupInstruction": "Questions 13 and 14. Choose TWO letters, A-E.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "B",
+        "acceptedAnswers": [
+          "B",
+          "E"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 14,
+        "prompt": "Which TWO things does the manager say mentors can help with?",
+        "options": {
+          "A": "confidence-building",
+          "B": "making career plans",
+          "C": "completing difficult tasks",
+          "D": "making a weekly timetable",
+          "E": "reviewing progress"
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-13-14",
+        "groupTitle": "Induction talk for new apprentices",
+        "groupInstruction": "Questions 13 and 14. Choose TWO letters, A-E.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "E",
+        "acceptedAnswers": [
+          "B",
+          "E"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 15,
+        "prompt": "Using the internet",
+        "options": {
+          "A": "It is encouraged.",
+          "B": "There are some restrictions.",
+          "C": "It is against the rules."
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-15-20",
+        "groupTitle": "Company policy for apprentices",
+        "groupInstruction": "What does the manager say about each of the following aspects of the company policy for apprentices? Write the correct letter, A, B or C, next to Questions 15-20.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "B",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 16,
+        "prompt": "Flexible working",
+        "options": {
+          "A": "It is encouraged.",
+          "B": "There are some restrictions.",
+          "C": "It is against the rules."
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-15-20",
+        "groupTitle": "Company policy for apprentices",
+        "groupInstruction": "What does the manager say about each of the following aspects of the company policy for apprentices? Write the correct letter, A, B or C, next to Questions 15-20.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "B",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 17,
+        "prompt": "Booking holidays",
+        "options": {
+          "A": "It is encouraged.",
+          "B": "There are some restrictions.",
+          "C": "It is against the rules."
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-15-20",
+        "groupTitle": "Company policy for apprentices",
+        "groupInstruction": "What does the manager say about each of the following aspects of the company policy for apprentices? Write the correct letter, A, B or C, next to Questions 15-20.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "C",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 18,
+        "prompt": "Working overtime",
+        "options": {
+          "A": "It is encouraged.",
+          "B": "There are some restrictions.",
+          "C": "It is against the rules."
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-15-20",
+        "groupTitle": "Company policy for apprentices",
+        "groupInstruction": "What does the manager say about each of the following aspects of the company policy for apprentices? Write the correct letter, A, B or C, next to Questions 15-20.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "A",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 19,
+        "prompt": "Wearing trainers",
+        "options": {
+          "A": "It is encouraged.",
+          "B": "There are some restrictions.",
+          "C": "It is against the rules."
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-15-20",
+        "groupTitle": "Company policy for apprentices",
+        "groupInstruction": "What does the manager say about each of the following aspects of the company policy for apprentices? Write the correct letter, A, B or C, next to Questions 15-20.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "A",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 20,
+        "prompt": "Bringing food to work",
+        "options": {
+          "A": "It is encouraged.",
+          "B": "There are some restrictions.",
+          "C": "It is against the rules."
+        },
+        "sectionKey": "PART 2",
+        "sectionTitle": "PART 2 · Questions 11-20",
+        "groupKey": "questions-15-20",
+        "groupTitle": "Company policy for apprentices",
+        "groupInstruction": "What does the manager say about each of the following aspects of the company policy for apprentices? Write the correct letter, A, B or C, next to Questions 15-20.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "C",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 21,
+        "prompt": "Carla and Rob were surprised to learn that coastal cities",
+        "options": {
+          "A": "contain nearly half the world's population.",
+          "B": "include most of the world's largest cities.",
+          "C": "are growing twice as fast as other cities."
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-21-25",
+        "groupTitle": "Cities built by the sea",
+        "groupInstruction": "Questions 21-25. Choose the correct letter, A, B or C.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "B",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 22,
+        "prompt": "According to Rob, building coastal cities near to rivers",
+        "options": {
+          "A": "may bring pollution to the cities.",
+          "B": "may reduce the land available for agriculture.",
+          "C": "may mean the countryside is spoiled by industry."
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-21-25",
+        "groupTitle": "Cities built by the sea",
+        "groupInstruction": "Questions 21-25. Choose the correct letter, A, B or C.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "A",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 23,
+        "prompt": "What mistake was made when building water drainage channels in Miami in the 1950s?",
+        "options": {
+          "A": "There were not enough of them.",
+          "B": "They were made of unsuitable materials.",
+          "C": "They did not allow for the effects of climate change."
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-21-25",
+        "groupTitle": "Cities built by the sea",
+        "groupInstruction": "Questions 21-25. Choose the correct letter, A, B or C.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "C",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 24,
+        "prompt": "What do Rob and Carla think that the authorities in Miami should do immediately?",
+        "options": {
+          "A": "take measures to restore ecosystems",
+          "B": "pay for a new flood prevention system",
+          "C": "stop disposing of waste materials into the ocean"
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-21-25",
+        "groupTitle": "Cities built by the sea",
+        "groupInstruction": "Questions 21-25. Choose the correct letter, A, B or C.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "B",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 25,
+        "prompt": "What do they agree should be the priority for international action?",
+        "options": {
+          "A": "greater coordination of activities",
+          "B": "more sharing of information",
+          "C": "agreement on shared policies"
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-21-25",
+        "groupTitle": "Cities built by the sea",
+        "groupInstruction": "Questions 21-25. Choose the correct letter, A, B or C.",
+        "formTitle": "",
+        "noteHeading": "",
+        "givenRows": [],
+        "answer": "A",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 26,
+        "prompt": "Historical background",
+        "options": {
+          "A": "use visuals",
+          "B": "keep it short",
+          "C": "involve other students",
+          "D": "check the information is accurate",
+          "E": "provide a handout",
+          "F": "focus on one example",
+          "G": "do online research"
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-26-30",
+        "groupTitle": "Parts of the presentation",
+        "groupInstruction": "What decision do the students make about each of the following parts of their presentation? Choose FIVE answers from the box and write the correct letter, A-G, next to Questions 26-30.",
+        "formTitle": "",
+        "noteHeading": "Decisions",
+        "givenRows": [],
+        "answer": "B",
+        "acceptedAnswers": [
+          "B"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 27,
+        "prompt": "Geographical factors",
+        "options": {
+          "A": "use visuals",
+          "B": "keep it short",
+          "C": "involve other students",
+          "D": "check the information is accurate",
+          "E": "provide a handout",
+          "F": "focus on one example",
+          "G": "do online research"
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-26-30",
+        "groupTitle": "Parts of the presentation",
+        "groupInstruction": "What decision do the students make about each of the following parts of their presentation? Choose FIVE answers from the box and write the correct letter, A-G, next to Questions 26-30.",
+        "formTitle": "",
+        "noteHeading": "Decisions",
+        "givenRows": [],
+        "answer": "A",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 28,
+        "prompt": "Past mistakes",
+        "options": {
+          "A": "use visuals",
+          "B": "keep it short",
+          "C": "involve other students",
+          "D": "check the information is accurate",
+          "E": "provide a handout",
+          "F": "focus on one example",
+          "G": "do online research"
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-26-30",
+        "groupTitle": "Parts of the presentation",
+        "groupInstruction": "What decision do the students make about each of the following parts of their presentation? Choose FIVE answers from the box and write the correct letter, A-G, next to Questions 26-30.",
+        "formTitle": "",
+        "noteHeading": "Decisions",
+        "givenRows": [],
+        "answer": "F",
+        "acceptedAnswers": [
+          "F"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 29,
+        "prompt": "Future risks",
+        "options": {
+          "A": "use visuals",
+          "B": "keep it short",
+          "C": "involve other students",
+          "D": "check the information is accurate",
+          "E": "provide a handout",
+          "F": "focus on one example",
+          "G": "do online research"
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-26-30",
+        "groupTitle": "Parts of the presentation",
+        "groupInstruction": "What decision do the students make about each of the following parts of their presentation? Choose FIVE answers from the box and write the correct letter, A-G, next to Questions 26-30.",
+        "formTitle": "",
+        "noteHeading": "Decisions",
+        "givenRows": [],
+        "answer": "G",
+        "acceptedAnswers": [
+          "G"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 30,
+        "prompt": "International implications",
+        "options": {
+          "A": "use visuals",
+          "B": "keep it short",
+          "C": "involve other students",
+          "D": "check the information is accurate",
+          "E": "provide a handout",
+          "F": "focus on one example",
+          "G": "do online research"
+        },
+        "sectionKey": "PART 3",
+        "sectionTitle": "PART 3 · Questions 21-30",
+        "groupKey": "questions-26-30",
+        "groupTitle": "Parts of the presentation",
+        "groupInstruction": "What decision do the students make about each of the following parts of their presentation? Choose FIVE answers from the box and write the correct letter, A-G, next to Questions 26-30.",
+        "formTitle": "",
+        "noteHeading": "Decisions",
+        "givenRows": [],
+        "answer": "C",
+        "acceptedAnswers": [
+          "C"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 31,
+        "prompt": "More energy required because of growth in population and ...",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Introduction",
+        "givenRows": [
+          {
+            "label": "What's needed",
+            "value": "renewable energy sources; methods that won't create pollution"
+          }
+        ],
+        "answer": "industry",
+        "acceptedAnswers": [
+          "industry"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 32,
+        "prompt": "Advantage: waves provide a ... source of renewable energy",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Wave energy",
+        "givenRows": [
+          {
+            "label": "Electricity generation",
+            "value": "Electricity can be generated using offshore or onshore systems"
+          },
+          {
+            "label": "Onshore systems",
+            "value": "may use a reservoir"
+          }
+        ],
+        "answer": "constant",
+        "acceptedAnswers": [
+          "constant"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 33,
+        "prompt": "Problems: waves can move in any ...",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Wave energy",
+        "givenRows": [
+          {
+            "label": "Problems",
+            "value": "waves can move in any 33 ...; movement of sand, etc. on the 34 ... of the ocean may be affected"
+          }
+        ],
+        "answer": "direction",
+        "acceptedAnswers": [
+          "direction"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 34,
+        "prompt": "Problems: movement of sand, etc. on the ... of the ocean may be affected",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Wave energy",
+        "givenRows": [
+          {
+            "label": "Problems",
+            "value": "waves can move in any 33 ...; movement of sand, etc. on the 34 ... of the ocean may be affected"
+          }
+        ],
+        "answer": "floor",
+        "acceptedAnswers": [
+          "floor"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 35,
+        "prompt": "Tides are more ... than waves",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Tidal energy",
+        "givenRows": [],
+        "answer": "predictable",
+        "acceptedAnswers": [
+          "predictable"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 36,
+        "prompt": "Planned tidal lagoon in Wales: will be created in a ... at Swansea",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Tidal energy",
+        "givenRows": [
+          {
+            "label": "Planned tidal lagoon in Wales",
+            "value": "breakwater (dam) containing 16 turbines; rising tide forces water through turbines, generating electricity; stored water is released through 37 ..., driving the turbines in the reverse direction"
+          }
+        ],
+        "answer": "bay",
+        "acceptedAnswers": [
+          "bay"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 37,
+        "prompt": "stored water is released through ..., driving the turbines in the reverse direction",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Tidal energy",
+        "givenRows": [
+          {
+            "label": "Planned tidal lagoon in Wales",
+            "value": "will be created in a 36 ... at Swansea; breakwater (dam) containing 16 turbines; rising tide forces water through turbines, generating electricity"
+          }
+        ],
+        "answer": "gates",
+        "acceptedAnswers": [
+          "gates"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 38,
+        "prompt": "Advantages: no ... is required to make it work",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Tidal energy",
+        "givenRows": [
+          {
+            "label": "Advantages",
+            "value": "not dependent on weather; no 38 ... is required to make it work; likely to create a number of 39 ..."
+          }
+        ],
+        "answer": "fuel",
+        "acceptedAnswers": [
+          "fuel"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 39,
+        "prompt": "Advantages: likely to create a number of ...",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Tidal energy",
+        "givenRows": [
+          {
+            "label": "Advantages",
+            "value": "not dependent on weather; no 38 ... is required to make it work"
+          }
+        ],
+        "answer": "jobs",
+        "acceptedAnswers": [
+          "jobs"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      },
+      {
+        "number": 40,
+        "prompt": "Problem: may harm fish and birds, e.g. by affecting ... and building up silt",
+        "options": {},
+        "sectionKey": "PART 4",
+        "sectionTitle": "PART 4 · Questions 31-40",
+        "groupKey": "marine-renewable-energy",
+        "groupTitle": "Marine renewable energy (ocean energy)",
+        "groupInstruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "formTitle": "",
+        "noteHeading": "Tidal energy",
+        "givenRows": [
+          {
+            "label": "Ocean thermal energy conversion",
+            "value": "Uses a difference in temperature between the surface and lower levels; water brought to the surface in a pipe"
+          }
+        ],
+        "answer": "migration",
+        "acceptedAnswers": [
+          "migration"
+        ],
+        "visualRequired": false,
+        "sourcePage": 0
+      }
+    ],
+    "transcript": "SECTION 1\n\nOFFICER: Good morning. What can I do for you?\nLOUISE: I want to report a theft. I had some things stolen out of my bag yesterday.\nOFFICER: I'm sorry to hear that. Right, so I'll need to take a few details. Can I start with your name?\nLOUISE: Louise Taylor.\nOFFICER: OK, thank you. And are you resident in the UK?\nLOUISE: No, I'm actually Canadian, though my mother was British.\nOFFICER: And your date of birth?\nLOUISE: December 14th, 1977.\nOFFICER: So you're just visiting this country?\nLOUISE: That's right. I come over most summers on business. I'm an interior designer and I come over to buy old furniture, antiques, you know. There are some really lovely things around here, but you need to get out to the small towns. I've had a really good trip this year, until this happened.\nOFFICER: OK. So you've been here quite a while?\nLOUISE: Yes, I'm here for two months. I go back next week.\nOFFICER: So may I ask where you're staying now?\nLOUISE: Well, at present I've got a place at Park Apartments, that's on King Street. I was staying at the Riverside Apartments on the same street, but the apartment there was only available for six weeks, so I had to find another one.\nOFFICER: OK. And the apartment number?\nLOUISE: Fifteen.\nOFFICER: Right. Now, I need to take some details of the theft. So you said you had some things stolen out of your bag?\nLOUISE: That's right.\nOFFICER: And were you actually carrying the bag when the theft took place?\nLOUISE: Yes. I really can't understand it. I had my backpack on. And I went into a supermarket to buy a few things and when I opened it up my wallet wasn't there.\nOFFICER: And what did your wallet have in it?\nLOUISE: Well, fortunately I don't keep my credit cards in that wallet - I keep them with my passport in an inside compartment in my backpack. But there was quite a bit of cash there ... about £250 sterling, I should think. I withdrew £300 from my account yesterday, but I did a bit of shopping, so I must have already spent about £50 of that.\nOFFICER: OK.\nLOUISE: At first I thought, oh, I must have left the wallet back in the apartment, but then I realised my phone had gone as well. It was only a week old, and that's when I realised I'd been robbed. Anyway, at least they didn't take the keys to my rental car.\nOFFICER: Yes. So you say the theft occurred yesterday?\nLOUISE: Yes.\nOFFICER: So that was September the tenth. And do you have any idea at all of where or when the things might possibly have been stolen?\nLOUISE: Well, at first I couldn't believe it because the bag had been on my back ever since I left the apartment after lunch. It's just a small backpack, but I generally use it when I'm travelling because it seems safer than a handbag. Anyway, I met up with a friend, and we spent a couple of hours in the museum. But I do remember that as we were leaving there, at about 4 o'clock, a group of young boys ran up to us, and they were really crowding round us, and they were asking us what time it was, then all of a sudden they ran off.\nOFFICER: Can you remember anything about them?\nLOUISE: The one who did most of the talking was wearing a T-shirt with a picture of something ... let's see ... a tiger.\nOFFICER: Right. Any idea of how old he might have been?\nLOUISE: Around twelve years old?\nOFFICER: And can you remember anything else about his appearance?\nLOUISE: Not much. He was quite thin ...\nOFFICER: Colour of hair?\nLOUISE: I do remember that he was blond. All the others were dark-haired.\nOFFICER: And any details of the others?\nLOUISE: Not really. They came and went so quickly.\nOFFICER: Right. So what I'm going to do now is give you a crime reference number, so you can contact your insurance company. So this is ten digits: 87954 82361.\nLOUISE: Thank you. So should I ...\n\nSECTION 2\n\nJANET PARKER: Good morning everyone. My name's Janet Parker and I'm the human resources manager. We're very happy to welcome you to your new apprenticeship. I hope that the next six months will be a positive and enjoyable experience for you.\n\nI'd like to start with some general advice about being an apprentice. Most of you have very little or no experience of working for a big organisation and the first week or so may be quite challenging. There will be a lot of new information to take in, but don't worry too much about trying to remember everything. The important thing is to check with someone if you're not sure what to do - you'll find your supervisor is very approachable and won't mind explaining things or helping you out. You're here to learn, so make the most of that opportunity. You'll be spending time in different departments during your first week, so make an effort to talk to as many people as possible about their work - you'll make some new friends and find out lots of useful information.\n\nAs well as having a supervisor, you'll each be assigned a mentor. This person will be someone who's recently completed an apprenticeship and you'll meet with them on a weekly basis. Their role is to provide help and support throughout your apprenticeship. Of course, this doesn't mean they'll actually do any of your work for you - instead they'll be asking you about what goals you've achieved so far, as well as helping you to identify any areas for improvement. You can also discuss your more long-term ambitions with them as well.\n\nNow I just want to run through a few company policies for our apprenticeship scheme with you ... Most importantly, the internet. As part of your job you'll be doing some research online, so obviously you'll have unlimited access for that, but please don't use it for personal use - you'll have your own phones for that.\n\nSome of you have already asked me about flexible working. After your probationary three-month period, some of you will be eligible for this, but it will depend on which department you're in and what your personal circumstances are. So please don't assume you'll automatically be permitted to do this.\n\nI want to make sure there's no confusion about our holiday policy. Apart from any statutory public holidays, we ask that you don't book any holidays until after your six-month apprenticeship has finished. Time off should only be taken if you are unwell. Please speak to your supervisor if this is going to be a problem.\n\nYou'll be expected to work a 40-hour week, but there may be opportunities to do overtime during busy periods. Although you're not required to do this, it can be valuable experience, so we advise you to take it up if possible. Obviously, we understand that people do have commitments outside work, so don't worry if there are times when you are unavailable.\n\nAs you know, we don't have a formal dress code here - you may wear casual clothes as long as they're practical - and the only restriction for shoes we have is on high heels for health and safety reasons. Comfortable shoes like trainers are preferable.\n\nThere's a heavily subsidised canteen on site where you can get hot meals or salads cheaply. Snacks and drinks are also provided, so we've decided to introduce a no packed lunch policy. This is partly to encourage healthy eating at work and partly to stop people from eating at their workstation, which is unhygienic.\n\nOK, moving on to ...\n\nSECTION 3\n\nTUTOR: OK, so what I'd like you to do now is to talk to your partner about your presentations on urban planning. You should have done most of the reading now, so I'd like you to share your ideas and talk about the structure of your presentation and what you need to do next.\nCARLA: OK, Rob. I'm glad we chose quite a specific topic - cities built next to the sea. It made it much easier to find relevant information.\nROB: Yeah. And cities are growing so quickly - I mean, we know that more than half the world's population lives in cities now.\nCARLA: Yeah, though that's all cities, not just ones on the coast. But most of the biggest cities are actually built by the sea. I'd not realised that before.\nROB: Nor me. And what's more, a lot of them are built at places where rivers come out into the sea. But apparently this can be a problem.\nCARLA: Why?\nROB: Well, as the city expands, agriculture and industry tend to spread further inland along the rivers, and so agriculture moves even further inland up the river. That's not necessarily a problem, except it means more and more pollutants are discharged into the rivers.\nCARLA: So these are brought downstream to the cities?\nROB: Right.\nCARLA: Hmm. Did you read that article about Miami, on the east coast of the USA?\nROB: No.\nCARLA: Well, apparently back in the 1950s they built channels to drain away the water in case of flooding.\nROB: Sounds sensible.\nCARLA: Yeah, they spent quite a lot of money on them. But what they didn't take into account was global warming. So they built the drainage channels too close to sea level, and now sea levels are rising, they're more or less useless. If there's a lot of rain, the water can't run away, there's nowhere for it to go. The whole design was faulty.\nROB: So what are the authorities doing about it now?\nCARLA: I don't know. I did read that they're aiming to stop disposing of waste water into the ocean over the next ten years.\nROB: But that won't help with flood prevention now, will it?\nCARLA: No. Really they just need to find the money for something to replace the drainage channels, in order to protect against flooding now. But in the long term they need to consider the whole ecosystem.\nROB: Right. Really, though, coastal cities can't deal with their problems on their own, can they? I mean, they've got to start acting together at an international level instead of just doing their own thing.\nCARLA: Absolutely. The thing is, everyone knows what the problems are and environmentalists have a pretty good idea of what we should be doing about them, so they should be able to work together to some extent. But it's going to be a long time before countries come to a decision on what principles they're prepared to abide by.\nROB: Yes, if they ever do.\nCARLA: So I think we've probably got enough for our presentation. It's only fifteen minutes.\nROB: OK. So I suppose we'll begin with some general historical background about why coastal cities were established. But we don't want to spend too long on that, the other students will already know a bit about it. It's all to do with communications and so on.\nCARLA: Yes. We should mention some geographical factors, things like wetlands and river estuaries and coastal erosion and so on. We could have some maps of different cities with these features marked.\nROB: On a handout, you mean? Or some slides everyone can see?\nCARLA: Yeah, that'd be better.\nROB: It'd be good to go into past mistakes in a bit more detail. Did you read that case study of the problems there were in New Orleans with flooding a few years ago?\nCARLA: Yes. We could use that as the basis for that part of the talk. I don't think the other students will have read it, but they'll remember hearing about the flooding at the time.\nROB: OK. So that's probably enough background. So then we'll go on to talk about what action's being taken to deal with the problems of coastal cities.\nCARLA: OK. What else do we need to talk about?\nROB: Maybe something on future risks, looking more at the long term, if populations continue to grow.\nCARLA: Yeah. We'll need to do a bit of work there, haven't got much information, have you?\nROB: No. We'll need to look at some websites. Shouldn't take too long.\nCARLA: OK. And I think we should end by talking about international implications. Maybe we could ask people in the audience. We've got people from quite a lot of different places.\nROB: That'd be interesting, if we have time, yes. So now shall we ...\n\nSECTION 4\n\nProducing enough energy to meet our needs has become a serious problem. Demand is rising rapidly, because of the world's increasing population and expanding industry. Burning fossil fuels, like gas, coal and oil, seriously damages the environment and they'll eventually run out. For a number of years now, scientists have been working out how we can derive energy from renewable sources, such as the sun and wind, without causing pollution.\n\nToday I'll outline marine renewable energy - also called ocean energy - which harnesses the movement of the oceans. Marine renewable energy can be divided into three main categories: wave energy, tidal energy and ocean thermal energy conversion, and I'll say a few words about each one.\n\nFirst, wave energy. Numerous devices have been invented to harvest wave energy, with names such as Wave Dragon, the Penguin and Mighty Whale, and research is going on to try and come up with a really efficient method. This form of energy has plenty of potential, as the source is constant, and there's no danger of waves coming to a standstill. Electricity can be generated using onshore systems using a reservoir, or offshore systems. But the problem with ocean waves is that they're erratic, with the wind making them travel in every direction. This adds to the difficulty of creating efficient technology: ideally all the waves would travel smoothly and regularly along the same straight line. Another drawback is that sand and other sediment on the ocean floor might be stopped from flowing normally, which can lead to environmental problems.\n\nThe second category of marine energy that I'll mention is tidal energy. One major advantage of using the tide, rather than waves, as a source of energy is that it's predictable: we know the exact times of high and low tides for years to come. For tidal energy to be effective, the difference between high and low tides needs to be at least five metres, and this occurs naturally in only about forty places on Earth. But the right conditions can be created by constructing a tidal lagoon, an area of sea water separated from the sea.\n\nOne current plan is to create a tidal lagoon on the coast of Wales. This will be an area of water within a bay at Swansea, sheltered by a U-shaped breakwater, or dam, built out from the coast. The breakwater will contain sixteen hydro turbines, and as the tide rises, water rushes through the breakwater, activating the turbines, which turn a generator to produce electricity. Then for three hours as the tide goes out, the water is held back within the breakwater, increasing the difference in water level, until it's several metres higher within the lagoon than in the open sea. Then in order to release the stored water, gates in the breakwater are opened. It pours powerfully out of the lagoon, driving the turbines in the breakwater in the opposite direction and again generating thousands of megawatts of electricity.\n\nAs there are two high tides a day, this lagoon scheme would generate electricity four times a day, every day, for a total of around 14 hours in every 24, and enough electricity for over 150,000 homes.\n\nThis system has quite a lot in its favour: unlike solar and wind energy, it doesn't depend on the weather; the turbines are operated without the need for fuel, so it doesn't create any greenhouse gas emissions; and very little maintenance is needed. It's estimated that electricity generated in this way will be relatively cheap and that manufacturing the components would create more than 2,000 jobs - a big boost to the local economy.\n\nOn the other hand, there are fears that lagoons might harm both fish and birds, for example by disturbing migration patterns and causing a build-up of silt, affecting local ecosystems.\n\nThere are other forms of tidal energy, but I'll go on to the third category of marine energy: ocean thermal energy conversion. This depends on there being a big difference in temperature between surface water and the water a couple of kilometres below the surface, and this occurs in tropical coastal areas. The idea is to bring cold water up to the surface using a submerged pipe. The concept dates back to 1881."
+  },
+  "reading": [
+    {
+      "passageNumber": 1,
+      "title": "THE IMPORTANCE OF CHILDREN'S PLAY",
+      "passage": "Brick by brick, six-year-old Alice is building a magical kingdom. Imagining fairy-tale turrets and fire-breathing dragons, wicked witches and gallant heroes, she's creating an enchanting world. Although she isn't aware of it, this fantasy is helping her take her first steps towards her capacity for creativity and so it will have important repercussions in her adult life.\n\nMinutes later, Alice has abandoned the kingdom in favour of playing schools with her younger brother. When she bosses him around as his 'teacher', she's practising how to regulate her emotions through pretence. Later on, when they tire of this and settle down with a board game, she's learning about the need to follow rules and take turns with a partner.\n\n'Play in all its rich variety is one of the highest achievements of the human species,' says Dr David Whitebread from the Faculty of Education at the University of Cambridge, UK. 'It underpins how we develop as intellectual, problem-solving adults and is crucial to our success as a highly adaptable species.'\n\nRecognising the importance of play is not new: over two millennia ago, the Greek philosopher Plato extolled its virtues as a means of developing skills for adult life, and ideas about play-based learning have been developing since the 19th century.\n\nBut we live in changing times, and Whitebread is mindful of a worldwide decline in play, pointing out that over half the people in the world now live in cities. 'The opportunities for free play, which I experienced almost every day of my childhood, are becoming increasingly scarce,' he says. Outdoor play is curtailed by perceptions of risk to do with traffic, as well as parents' increased wish to protect their children from being the victims of crime, and by the emphasis on 'earlier is better' which is leading to greater competition in academic learning and schools.\n\nInternational bodies like the United Nations and the European Union have begun to develop policies concerned with children's right to play, and to consider implications for leisure facilities and educational programmes. But what they often lack is the evidence to base policies on.\n\n'The type of play we are interested in is child-initiated, spontaneous and unpredictable - but, as soon as you ask a five-year-old to play, then you as the researcher have intervened,' explains Dr Sara Baker. 'And we want to know what the long-term impact of play is. It's a real challenge.'\n\nDr Jenny Gibson agrees, pointing out that although some of the steps in the puzzle of how and why play is important have been looked at, there is very little data on the impact it has on the child's later life. Now, thanks to the university's new Centre for Research on Play in Education, Development and Learning (PEDAL), Whitebread, Baker, Gibson and a team of researchers hope to provide evidence on the role played by play in how a child develops.\n\n'A strong possibility is that play supports the early development of children's self-control,' explains Baker. 'This is our ability to develop awareness of our own thinking processes - it influences how effectively we go about undertaking challenging activities.'\n\nIn a study carried out by Baker with toddlers and young pre-schoolers, she found that children with greater self-control solved problems more quickly when exploring an unfamiliar set-up requiring scientific reasoning. 'This sort of evidence makes us think that giving children the chance to play will make them more successful problem-solvers in the long run.'\n\nIf playful experiences do facilitate this aspect of development, say the researchers, it could be extremely significant for educational practices, because the ability to self-regulate has been shown to be a key predictor of academic performance.\n\nGibson adds: 'Playful behaviour is also an important indicator of healthy social and emotional development. In my previous research, I investigated how observing children at play can give us important clues about their well-being and can even be useful in the diagnosis of neurodevelopmental disorders like autism.'\n\nWhitebread's recent research has involved developing a play-based approach to supporting children's writing. 'Many primary school children find writing difficult, but we showed in a previous study that a playful stimulus was far more effective than an instructional one.' Children wrote longer and better-structured stories when they first played with dolls representing characters in the story. In the latest study, children first created their story with Lego*, with similar results. 'Many teachers commented that they had always previously had children saying they didn't know what to write about. With the Lego building, however, not a single child said this through the whole year of the project.'\n\nWhitebread, who directs PEDAL, trained as a primary school teacher in the early 1970s, when, as he describes, 'the teaching of young children was largely a quiet backwater, untroubled by any serious intellectual debate or controversy.' Now, the landscape is very different, with hotly debated topics such as school starting age. 'Somehow the importance of play has been lost in recent decades. It's regarded as something trivial, or even as something negative that contrasts with \"work\". Let's not lose sight of its benefits, and the fundamental contributions it makes to human achievements in the arts, sciences and technology. Let's make sure children have a rich diet of play experiences.'\n\n* Lego: coloured plastic building blocks and other pieces that can be joined together",
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "building a 'magical kingdom' may help develop ...",
+          "options": {},
+          "groupKey": "questions-1-8",
+          "groupTitle": "Children's play",
+          "groupInstruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+          "noteHeading": "Uses of children's play",
+          "answer": "creativity",
+          "acceptedAnswers": [
+            "creativity"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 2,
+          "prompt": "board games involve ... and turn-taking",
+          "options": {},
+          "groupKey": "questions-1-8",
+          "groupTitle": "Children's play",
+          "groupInstruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+          "noteHeading": "Uses of children's play",
+          "answer": "rules",
+          "acceptedAnswers": [
+            "rules"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 3,
+          "prompt": "populations of ... have grown",
+          "options": {},
+          "groupKey": "questions-1-8",
+          "groupTitle": "Children's play",
+          "groupInstruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+          "noteHeading": "Recent changes affecting children's play",
+          "answer": "cities",
+          "acceptedAnswers": [
+            "cities"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 4,
+          "prompt": "opportunities for free play are limited due to fear of ...",
+          "options": {},
+          "groupKey": "questions-1-8",
+          "groupTitle": "Children's play",
+          "groupInstruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+          "noteHeading": "Recent changes affecting children's play",
+          "answer": "traffic",
+          "acceptedAnswers": [
+            "traffic",
+            "crime"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 5,
+          "prompt": "opportunities for free play are limited due to fear of ...",
+          "options": {},
+          "groupKey": "questions-1-8",
+          "groupTitle": "Children's play",
+          "groupInstruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+          "noteHeading": "Recent changes affecting children's play",
+          "answer": "crime",
+          "acceptedAnswers": [
+            "traffic",
+            "crime"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 6,
+          "prompt": "increased ... in schools",
+          "options": {},
+          "groupKey": "questions-1-8",
+          "groupTitle": "Children's play",
+          "groupInstruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+          "noteHeading": "Recent changes affecting children's play",
+          "answer": "competition",
+          "acceptedAnswers": [
+            "competition"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 7,
+          "prompt": "it is difficult to find ... to support new policies",
+          "options": {},
+          "groupKey": "questions-1-8",
+          "groupTitle": "Children's play",
+          "groupInstruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+          "noteHeading": "International policies on children's play",
+          "answer": "evidence",
+          "acceptedAnswers": [
+            "evidence"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 8,
+          "prompt": "research needs to study the impact of play on the rest of the child's ...",
+          "options": {},
+          "groupKey": "questions-1-8",
+          "groupTitle": "Children's play",
+          "groupInstruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+          "noteHeading": "International policies on children's play",
+          "answer": "life",
+          "acceptedAnswers": [
+            "life"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 9,
+          "prompt": "Children with good self-control are known to be likely to do well at school later on.",
+          "options": {
+            "TRUE": "if the statement agrees with the information",
+            "FALSE": "if the statement contradicts the information",
+            "NOT GIVEN": "if there is no information on this"
+          },
+          "groupKey": "questions-9-13",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.",
+          "noteHeading": "",
+          "answer": "TRUE",
+          "acceptedAnswers": [
+            "TRUE"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 10,
+          "prompt": "The way a child plays may provide information about possible medical problems.",
+          "options": {
+            "TRUE": "if the statement agrees with the information",
+            "FALSE": "if the statement contradicts the information",
+            "NOT GIVEN": "if there is no information on this"
+          },
+          "groupKey": "questions-9-13",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.",
+          "noteHeading": "",
+          "answer": "TRUE",
+          "acceptedAnswers": [
+            "TRUE"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 11,
+          "prompt": "Playing with dolls was found to benefit girls' writing more than boys' writing.",
+          "options": {
+            "TRUE": "if the statement agrees with the information",
+            "FALSE": "if the statement contradicts the information",
+            "NOT GIVEN": "if there is no information on this"
+          },
+          "groupKey": "questions-9-13",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.",
+          "noteHeading": "",
+          "answer": "NOT GIVEN",
+          "acceptedAnswers": [
+            "NOT GIVEN"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 12,
+          "prompt": "Children had problems thinking up ideas when they first created the story with Lego.",
+          "options": {
+            "TRUE": "if the statement agrees with the information",
+            "FALSE": "if the statement contradicts the information",
+            "NOT GIVEN": "if there is no information on this"
+          },
+          "groupKey": "questions-9-13",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.",
+          "noteHeading": "",
+          "answer": "FALSE",
+          "acceptedAnswers": [
+            "FALSE"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 13,
+          "prompt": "People nowadays regard children's play as less significant than they did in the past.",
+          "options": {
+            "TRUE": "if the statement agrees with the information",
+            "FALSE": "if the statement contradicts the information",
+            "NOT GIVEN": "if there is no information on this"
+          },
+          "groupKey": "questions-9-13",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.",
+          "noteHeading": "",
+          "answer": "TRUE",
+          "acceptedAnswers": [
+            "TRUE"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        }
+      ]
+    },
+    {
+      "passageNumber": 2,
+      "title": "The growth of bike-sharing schemes around the world",
+      "passage": "How Dutch engineer Luud Schimmelpennink helped to devise urban bike-sharing schemes\n\nA\nThe original idea for an urban bike-sharing scheme dates back to a summer's day in Amsterdam in 1965. Provo, the organisation that came up with the idea, was a group of Dutch activists who wanted to change society. They believed the scheme, which was known as the Witte Fietsenplan, was an answer to the perceived threats of air pollution and consumerism. In the centre of Amsterdam, they painted a small number of used bikes white. They also distributed leaflets describing the dangers of cars and inviting people to use the white bikes. The bikes were then left unlocked at various locations around the city, to be used by anyone in need of transport.\n\nB\nLuud Schimmelpennink, a Dutch industrial engineer who still lives and cycles in Amsterdam, was heavily involved in the original scheme. He recalls how the scheme succeeded in attracting a great deal of attention - particularly when it came to publicising Provo's aims - but struggled to get off the ground. The police were opposed to Provo's initiatives and almost as soon as the white bikes were distributed around the city, they removed them. However, for Schimmelpennink and for bike-sharing schemes in general, this was just the beginning. 'The first Witte Fietsenplan was just a symbolic thing,' he says. 'We painted a few bikes white, that was all. Things got more serious when I became a member of the Amsterdam city council two years later.'\n\nC\nSchimmelpennink seized this opportunity to present a more elaborate Witte Fietsenplan to the city council. 'My idea was that the municipality of Amsterdam would distribute 10,000 white bikes over the city, for everyone to use,' he explains. 'I made serious calculations. It turned out that a white bicycle - per person, per kilometre - would cost the municipality only 10% of what it contributed to public transport per person per kilometre.' Nevertheless, the council unanimously rejected the plan. 'They said that the bicycle belongs to the past. They saw a glorious future for the car,' says Schimmelpennink. But he was not in the least discouraged.\n\nD\nSchimmelpennink never stopped believing in bike-sharing, and in the mid-90s, two Danes asked for his help to set up a system in Copenhagen. The result was the world's first large-scale bike-share programme. It worked on a deposit: 'You dropped a coin in the bike and when you returned it, you got your money back.' After setting up the Danish system, Schimmelpennink decided to try his luck again in the Netherlands - and this time he succeeded in arousing the interest of the Dutch Ministry of Transport. 'Times had changed,' he recalls. 'People had become more environmentally conscious, and the Danish experiment had proved that bike-sharing was a real possibility.' A new Witte Fietsenplan was launched in 1999 in Amsterdam. However, riding a white bike was no longer free; it cost one guilder per trip and payment was made with a chip card developed by the Dutch bank Postbank. Schimmelpennink designed conspicuous, sturdy white bikes locked in special racks which could be opened with the chip card - the plan started with 250 bikes, distributed over five stations.\n\nE\nTheo Molenaar, who was a system designer for the project, worked alongside Schimmelpennink. 'I remember when we were testing the bike racks, he announced that he had already designed better ones. But of course, we had to go through with the ones we had.' The system, however, was prone to vandalism and theft. 'After every weekend there would always be a couple of bikes missing,' Molenaar says. 'I really have no idea what people did with them, because they could instantly be recognised as white bikes.' But the biggest blow came when Postbank decided to abolish the chip card, because it wasn't profitable. 'That chip card was pivotal to the system,' Molenaar says. 'To continue the project we would have needed to set up another system, but the business partner had lost interest.'\n\nF\nSchimmelpennink was disappointed, but - characteristically - not for long. In 2002 he got a call from the French advertising corporation JCDecaux, who wanted to set up his bike-sharing scheme in Vienna. 'That went really well. After Vienna, they set up a system in Lyon. Then in 2007, Paris followed. That was a decisive moment in the history of bike-sharing.' The huge and unexpected success of the Parisian bike-sharing programme, which now boasts more than 20,000 bicycles, inspired cities all over the world to set up their own schemes, all modelled on Schimmelpennink's. 'It's wonderful that this happened,' he says. 'But financially I didn't really benefit from it, because I never filed for a patent.'\n\nG\nIn Amsterdam today, 38% of all trips are made by bike and, along with Copenhagen, it is regarded as one of the two most cycle-friendly capitals in the world - but the city never got another Witte Fietsenplan. Molenaar believes this may be because everybody in Amsterdam already has a bike. Schimmelpennink, however, cannot see that this changes Amsterdam's need for a bike-sharing scheme. 'People who travel on the underground don't carry their bikes around. But often they need additional transport to reach their final destination.' Although he thinks it is strange that a city like Amsterdam does not have a successful bike-sharing scheme, he is optimistic about the future. 'In the '60s we didn't stand a chance because people were prepared to give their lives to keep cars in the city. But that mentality has totally changed. Today everybody longs for cities that are not dominated by cars.'",
+      "questions": [
+        {
+          "number": 14,
+          "prompt": "a description of how people misused a bike-sharing scheme",
+          "options": {
+            "A": "Paragraph A",
+            "B": "Paragraph B",
+            "C": "Paragraph C",
+            "D": "Paragraph D",
+            "E": "Paragraph E",
+            "F": "Paragraph F",
+            "G": "Paragraph G"
+          },
+          "groupKey": "questions-14-18",
+          "groupTitle": "",
+          "groupInstruction": "Reading Passage 2 has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 14-18 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "",
+          "answer": "E",
+          "acceptedAnswers": [
+            "E"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 15,
+          "prompt": "an explanation of why a proposed bike-sharing scheme was turned down",
+          "options": {
+            "A": "Paragraph A",
+            "B": "Paragraph B",
+            "C": "Paragraph C",
+            "D": "Paragraph D",
+            "E": "Paragraph E",
+            "F": "Paragraph F",
+            "G": "Paragraph G"
+          },
+          "groupKey": "questions-14-18",
+          "groupTitle": "",
+          "groupInstruction": "Reading Passage 2 has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 14-18 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "",
+          "answer": "C",
+          "acceptedAnswers": [
+            "C"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 16,
+          "prompt": "a reference to a person being unable to profit from their work",
+          "options": {
+            "A": "Paragraph A",
+            "B": "Paragraph B",
+            "C": "Paragraph C",
+            "D": "Paragraph D",
+            "E": "Paragraph E",
+            "F": "Paragraph F",
+            "G": "Paragraph G"
+          },
+          "groupKey": "questions-14-18",
+          "groupTitle": "",
+          "groupInstruction": "Reading Passage 2 has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 14-18 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "",
+          "answer": "F",
+          "acceptedAnswers": [
+            "F"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 17,
+          "prompt": "an explanation of the potential savings a bike-sharing scheme would bring",
+          "options": {
+            "A": "Paragraph A",
+            "B": "Paragraph B",
+            "C": "Paragraph C",
+            "D": "Paragraph D",
+            "E": "Paragraph E",
+            "F": "Paragraph F",
+            "G": "Paragraph G"
+          },
+          "groupKey": "questions-14-18",
+          "groupTitle": "",
+          "groupInstruction": "Reading Passage 2 has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 14-18 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "",
+          "answer": "C",
+          "acceptedAnswers": [
+            "C"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 18,
+          "prompt": "a reference to the problems a bike-sharing scheme was intended to solve",
+          "options": {
+            "A": "Paragraph A",
+            "B": "Paragraph B",
+            "C": "Paragraph C",
+            "D": "Paragraph D",
+            "E": "Paragraph E",
+            "F": "Paragraph F",
+            "G": "Paragraph G"
+          },
+          "groupKey": "questions-14-18",
+          "groupTitle": "",
+          "groupInstruction": "Reading Passage 2 has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 14-18 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "",
+          "answer": "A",
+          "acceptedAnswers": [
+            "A"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 19,
+          "prompt": "Which TWO of the following statements are made in the text about the Amsterdam bike-sharing scheme of 1999?",
+          "options": {
+            "A": "It was initially opposed by a government department.",
+            "B": "It failed when a partner in the scheme withdrew support.",
+            "C": "It aimed to be more successful than the Copenhagen scheme.",
+            "D": "It was made possible by a change in people's attitudes.",
+            "E": "It attracted interest from a range of bike designers."
+          },
+          "groupKey": "questions-19-20",
+          "groupTitle": "",
+          "groupInstruction": "Choose TWO letters, A-E. Write the correct letters in boxes 19 and 20 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "B",
+          "acceptedAnswers": [
+            "B",
+            "D"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 20,
+          "prompt": "Which TWO of the following statements are made in the text about the Amsterdam bike-sharing scheme of 1999?",
+          "options": {
+            "A": "It was initially opposed by a government department.",
+            "B": "It failed when a partner in the scheme withdrew support.",
+            "C": "It aimed to be more successful than the Copenhagen scheme.",
+            "D": "It was made possible by a change in people's attitudes.",
+            "E": "It attracted interest from a range of bike designers."
+          },
+          "groupKey": "questions-19-20",
+          "groupTitle": "",
+          "groupInstruction": "Choose TWO letters, A-E. Write the correct letters in boxes 19 and 20 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "D",
+          "acceptedAnswers": [
+            "B",
+            "D"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 21,
+          "prompt": "Which TWO of the following statements are made in the text about Amsterdam today?",
+          "options": {
+            "A": "The majority of residents would like to prevent all cars from entering the city.",
+            "B": "There is little likelihood of the city having another bike-sharing scheme.",
+            "C": "More trips in the city are made by bike than by any other form of transport.",
+            "D": "A bike-sharing scheme would benefit residents who use public transport.",
+            "E": "The city has a reputation as a place that welcomes cyclists."
+          },
+          "groupKey": "questions-21-22",
+          "groupTitle": "",
+          "groupInstruction": "Choose TWO letters, A-E. Write the correct letters in boxes 21 and 22 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "D",
+          "acceptedAnswers": [
+            "D",
+            "E"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 22,
+          "prompt": "Which TWO of the following statements are made in the text about Amsterdam today?",
+          "options": {
+            "A": "The majority of residents would like to prevent all cars from entering the city.",
+            "B": "There is little likelihood of the city having another bike-sharing scheme.",
+            "C": "More trips in the city are made by bike than by any other form of transport.",
+            "D": "A bike-sharing scheme would benefit residents who use public transport.",
+            "E": "The city has a reputation as a place that welcomes cyclists."
+          },
+          "groupKey": "questions-21-22",
+          "groupTitle": "",
+          "groupInstruction": "Choose TWO letters, A-E. Write the correct letters in boxes 21 and 22 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "E",
+          "acceptedAnswers": [
+            "D",
+            "E"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 23,
+          "prompt": "The people who belonged to this group were ... .",
+          "options": {},
+          "groupKey": "questions-23-26",
+          "groupTitle": "The first urban bike-sharing scheme",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 23-26 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "activists",
+          "acceptedAnswers": [
+            "activists"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 24,
+          "prompt": "They were concerned about damage to the environment and about ..., and believed that the bike-sharing scheme would draw attention to these issues.",
+          "options": {},
+          "groupKey": "questions-23-26",
+          "groupTitle": "The first urban bike-sharing scheme",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 23-26 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "consumerism",
+          "acceptedAnswers": [
+            "consumerism"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 25,
+          "prompt": "As well as painting some bikes white, they handed out ... that condemned the use of cars.",
+          "options": {},
+          "groupKey": "questions-23-26",
+          "groupTitle": "The first urban bike-sharing scheme",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 23-26 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "leaflets",
+          "acceptedAnswers": [
+            "leaflets"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 26,
+          "prompt": "However, the scheme was not a great success: almost as quickly as Provo left the bikes around the city, the ... took them away. According to Schimmelpennink, the scheme was intended to be symbolic. The idea was to get people thinking about the issues.",
+          "options": {},
+          "groupKey": "questions-23-26",
+          "groupTitle": "The first urban bike-sharing scheme",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 23-26 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "police",
+          "acceptedAnswers": [
+            "police"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        }
+      ]
+    },
+    {
+      "passageNumber": 3,
+      "title": "Motivational factors and the hospitality industry",
+      "passage": "A critical ingredient in the success of hotels is developing and maintaining superior performance from their employees. How is that accomplished? What Human Resource Management (HRM) practices should organizations invest in to acquire and retain great employees?\n\nSome hotels aim to provide superior working conditions for their employees. The idea originated from workplaces - usually in the non-service sector - that emphasized fun and enjoyment as part of work-life balance. By contrast, the service sector, and more specifically hotels, has traditionally not extended these practices to address basic employee needs, such as good working conditions.\n\nPfeffer (1994) emphasizes that in order to succeed in a global business environment, organizations must make investment in Human Resource Management (HRM) to allow them to acquire employees who possess better skills and capabilities than their competitors. This investment will be to their competitive advantage. Despite this recognition of the importance of employee development, the hospitality industry has historically been dominated by underdeveloped HR practices (Lucas, 2002).\n\nLucas also points out that 'The substance of HRM practices does not appear to be designed to foster constructive relations with employees or to represent a managerial approach that enables developing and drawing out the full potential of people, even though employees may be broadly satisfied with many aspects of their work' (Lucas, 2002).\n\nIn addition, or maybe as a result, high employee turnover has been a recurring problem throughout the hospitality industry. Among the many cited reasons are low compensation, inadequate benefits, poor working conditions and compromised employee morale and attitudes (Maroudas et al., 2008).\n\nNg and Sorensen (2008) demonstrated that when managers provide recognition to employees, motivate employees to work together, and remove obstacles preventing effective performance, employees feel more obligated to stay with the company. This was succinctly summarized by Michel et al. (2013): '[Providing support to employees] gives them the confidence to perform their jobs better and the motivation to stay with the organization.' Hospitality organizations can therefore enhance employee motivation and retention through the development and improvement of their working conditions. These conditions are inherently linked to the working environment.\n\nWhile it seems likely that employees' reactions to their job characteristics could be affected by a predisposition to view their work environment negatively, no evidence exists to support this hypothesis (Spector et al., 2000). However, given the opportunity, many people will find something to complain about in relation to their workplace (Poulston, 2009). There is a strong link between the perceptions of employees and particular factors of their work environment that are separate from the work itself, including company policies, salary and vacations.\n\nSuch conditions are particularly troubling for the luxury hotel market, where high-quality service, requiring a sophisticated approach to HRM, is recognized as a critical source of competitive advantage (Maroudas et al., 2008). In a real sense, the services of hotel employees represent their industry (Schneider and Bowen, 1993). This representation has commonly been limited to guest experiences. This suggests that there has been a dichotomy between the guest environment provided in luxury hotels and the working conditions of their employees.\n\nIt is therefore essential for hotel management to develop HRM practices that enable them to inspire and retain competent employees. This requires an understanding of what motivates employees at different levels of management and different stages of their careers (Enz and Siguaw, 2000). This implies that it is beneficial for hotel managers to understand what practices are most favorable to increase employee satisfaction and retention.\n\nHerzberg (1966) proposes that people have two major types of needs, the first being extrinsic motivation factors relating to the context in which work is performed, rather than the work itself. These include working conditions and job security. When these factors are unfavorable, job dissatisfaction may result. Significantly, though, just fulfilling these needs does not result in satisfaction, but only in the reduction of dissatisfaction (Maroudas et al., 2008).\n\nEmployees also have intrinsic motivation needs or motivators, which include such factors as achievement and recognition. Unlike extrinsic factors, motivator factors may ideally result in job satisfaction (Maroudas et al., 2008). Herzberg's (1966) theory discusses the need for a balance of these two types of needs.\n\nThe impact of fun as a motivating factor at work has also been explored. For example, Tews, Michel and Stafford (2013) conducted a study focusing on staff from a chain of themed restaurants in the United States. It was found that fun activities had a favorable impact on performance and manager support for fun had a favorable impact in reducing turnover. Their findings support the view that fun may indeed have a beneficial effect, but the framing of that fun must be carefully aligned with both organizational goals and employee characteristics. 'Managers must learn how to achieve the delicate balance of allowing employees the freedom to enjoy themselves at work while simultaneously maintaining high levels of performance' (Tews et al., 2013).\n\nDeery (2008) has recommended several actions that can be adopted at the organizational level to retain good staff as well as assist in balancing work and family life. Those particularly appropriate to the hospitality industry include allowing adequate breaks during the working day, staff functions that involve families, and providing health and well-being opportunities.",
+      "questions": [
+        {
+          "number": 27,
+          "prompt": "Hotel managers need to know what would encourage good staff to remain.",
+          "options": {
+            "A": "Pfeffer",
+            "B": "Lucas",
+            "C": "Maroudas et al.",
+            "D": "Ng and Sorensen",
+            "E": "Enz and Siguaw",
+            "F": "Deery"
+          },
+          "groupKey": "questions-27-31",
+          "groupTitle": "",
+          "groupInstruction": "Look at the following statements (Questions 27-31) and the list of researchers below. Match each statement with the correct researcher, A-F. Write the correct letter, A-F, in boxes 27-31 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "List of Researchers",
+          "answer": "E",
+          "acceptedAnswers": [
+            "E"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 28,
+          "prompt": "The actions of managers may make staff feel they shouldn't move to a different employer.",
+          "options": {
+            "A": "Pfeffer",
+            "B": "Lucas",
+            "C": "Maroudas et al.",
+            "D": "Ng and Sorensen",
+            "E": "Enz and Siguaw",
+            "F": "Deery"
+          },
+          "groupKey": "questions-27-31",
+          "groupTitle": "",
+          "groupInstruction": "Look at the following statements (Questions 27-31) and the list of researchers below. Match each statement with the correct researcher, A-F. Write the correct letter, A-F, in boxes 27-31 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "List of Researchers",
+          "answer": "D",
+          "acceptedAnswers": [
+            "D"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 29,
+          "prompt": "Little is done in the hospitality industry to help workers improve their skills.",
+          "options": {
+            "A": "Pfeffer",
+            "B": "Lucas",
+            "C": "Maroudas et al.",
+            "D": "Ng and Sorensen",
+            "E": "Enz and Siguaw",
+            "F": "Deery"
+          },
+          "groupKey": "questions-27-31",
+          "groupTitle": "",
+          "groupInstruction": "Look at the following statements (Questions 27-31) and the list of researchers below. Match each statement with the correct researcher, A-F. Write the correct letter, A-F, in boxes 27-31 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "List of Researchers",
+          "answer": "B",
+          "acceptedAnswers": [
+            "B"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 30,
+          "prompt": "Staff are less likely to change jobs if cooperation is encouraged.",
+          "options": {
+            "A": "Pfeffer",
+            "B": "Lucas",
+            "C": "Maroudas et al.",
+            "D": "Ng and Sorensen",
+            "E": "Enz and Siguaw",
+            "F": "Deery"
+          },
+          "groupKey": "questions-27-31",
+          "groupTitle": "",
+          "groupInstruction": "Look at the following statements (Questions 27-31) and the list of researchers below. Match each statement with the correct researcher, A-F. Write the correct letter, A-F, in boxes 27-31 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "List of Researchers",
+          "answer": "D",
+          "acceptedAnswers": [
+            "D"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 31,
+          "prompt": "Dissatisfaction with pay is not the only reason why hospitality workers change jobs.",
+          "options": {
+            "A": "Pfeffer",
+            "B": "Lucas",
+            "C": "Maroudas et al.",
+            "D": "Ng and Sorensen",
+            "E": "Enz and Siguaw",
+            "F": "Deery"
+          },
+          "groupKey": "questions-27-31",
+          "groupTitle": "",
+          "groupInstruction": "Look at the following statements (Questions 27-31) and the list of researchers below. Match each statement with the correct researcher, A-F. Write the correct letter, A-F, in boxes 27-31 on your answer sheet. NB You may use any letter more than once.",
+          "noteHeading": "List of Researchers",
+          "answer": "C",
+          "acceptedAnswers": [
+            "C"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 32,
+          "prompt": "One reason for high staff turnover in the hospitality industry is poor morale.",
+          "options": {
+            "YES": "if the statement agrees with the claims of the writer",
+            "NO": "if the statement contradicts the claims of the writer",
+            "NOT GIVEN": "if it is impossible to say what the writer thinks about this"
+          },
+          "groupKey": "questions-32-35",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? In boxes 32-35 on your answer sheet, write YES if the statement agrees with the claims of the writer, NO if the statement contradicts the claims of the writer, or NOT GIVEN if it is impossible to say what the writer thinks about this.",
+          "noteHeading": "",
+          "answer": "YES",
+          "acceptedAnswers": [
+            "YES"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 33,
+          "prompt": "Research has shown that staff have a tendency to dislike their workplace.",
+          "options": {
+            "YES": "if the statement agrees with the claims of the writer",
+            "NO": "if the statement contradicts the claims of the writer",
+            "NOT GIVEN": "if it is impossible to say what the writer thinks about this"
+          },
+          "groupKey": "questions-32-35",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? In boxes 32-35 on your answer sheet, write YES if the statement agrees with the claims of the writer, NO if the statement contradicts the claims of the writer, or NOT GIVEN if it is impossible to say what the writer thinks about this.",
+          "noteHeading": "",
+          "answer": "NO",
+          "acceptedAnswers": [
+            "NO"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 34,
+          "prompt": "An improvement in working conditions and job security makes staff satisfied with their jobs.",
+          "options": {
+            "YES": "if the statement agrees with the claims of the writer",
+            "NO": "if the statement contradicts the claims of the writer",
+            "NOT GIVEN": "if it is impossible to say what the writer thinks about this"
+          },
+          "groupKey": "questions-32-35",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? In boxes 32-35 on your answer sheet, write YES if the statement agrees with the claims of the writer, NO if the statement contradicts the claims of the writer, or NOT GIVEN if it is impossible to say what the writer thinks about this.",
+          "noteHeading": "",
+          "answer": "NO",
+          "acceptedAnswers": [
+            "NO"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 35,
+          "prompt": "Staff should be allowed to choose when they take breaks during the working day.",
+          "options": {
+            "YES": "if the statement agrees with the claims of the writer",
+            "NO": "if the statement contradicts the claims of the writer",
+            "NOT GIVEN": "if it is impossible to say what the writer thinks about this"
+          },
+          "groupKey": "questions-32-35",
+          "groupTitle": "",
+          "groupInstruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? In boxes 32-35 on your answer sheet, write YES if the statement agrees with the claims of the writer, NO if the statement contradicts the claims of the writer, or NOT GIVEN if it is impossible to say what the writer thinks about this.",
+          "noteHeading": "",
+          "answer": "NOT GIVEN",
+          "acceptedAnswers": [
+            "NOT GIVEN"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 36,
+          "prompt": "Tews, Michel and Stafford carried out research on staff in an American chain of ... .",
+          "options": {},
+          "groupKey": "questions-36-40",
+          "groupTitle": "Fun at work",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 36-40 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "restaurants",
+          "acceptedAnswers": [
+            "restaurants"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 37,
+          "prompt": "They discovered that activities designed for staff to have fun improved their ...",
+          "options": {},
+          "groupKey": "questions-36-40",
+          "groupTitle": "Fun at work",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 36-40 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "performance",
+          "acceptedAnswers": [
+            "performance"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 38,
+          "prompt": "and that management involvement led to lower staff ... .",
+          "options": {},
+          "groupKey": "questions-36-40",
+          "groupTitle": "Fun at work",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 36-40 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "turnover",
+          "acceptedAnswers": [
+            "turnover"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 39,
+          "prompt": "They also found that the activities needed to fit with both the company's ...",
+          "options": {},
+          "groupKey": "questions-36-40",
+          "groupTitle": "Fun at work",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 36-40 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "goals",
+          "acceptedAnswers": [
+            "goals"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        },
+        {
+          "number": 40,
+          "prompt": "and the ... of the staff. A balance was required between a degree of freedom and maintaining work standards.",
+          "options": {},
+          "groupKey": "questions-36-40",
+          "groupTitle": "Fun at work",
+          "groupInstruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 36-40 on your answer sheet.",
+          "noteHeading": "",
+          "answer": "characteristics",
+          "acceptedAnswers": [
+            "characteristics"
+          ],
+          "visualRequired": false,
+          "sourcePage": 0
+        }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "taskNumber": 1,
+      "directions": "You should spend about 20 minutes on this task.",
+      "prompt": "The charts below show the average percentages in typical meals of three types of nutrients, all of which may be unhealthy if eaten too much.",
+      "scenario": "Three pie charts compare the average percentages of sodium, saturated fat and added sugar in breakfast, lunch, dinner and snacks consumed in the USA.",
+      "requirements": [
+        "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+        "Write at least 150 words."
+      ],
+      "visualData": {
+        "type": "Three pie charts",
+        "title": "Average percentages of sodium, saturated fats and added sugars in typical meals consumed in the USA",
+        "labels": [
+          "Sodium",
+          "Saturated fat",
+          "Added sugar",
+          "Breakfast",
+          "Lunch",
+          "Dinner",
+          "Snacks"
+        ],
+        "units": "percentages (%)",
+        "notes": [
+          "Sodium: Breakfast 14%, Lunch 29%, Dinner 43%, Snacks 14%.",
+          "Saturated fat: Breakfast 16%, Lunch 26%, Dinner 37%, Snacks 21%.",
+          "Added sugar: Breakfast 16%, Lunch 19%, Dinner 23%, Snacks 42%."
+        ]
+      }
+    },
+    {
+      "taskNumber": 2,
+      "directions": "You should spend about 40 minutes on this task. Write about the following topic:",
+      "prompt": "Some people believe that it is best to accept a bad situation, such as an unsatisfactory job or shortage of money. Others argue that it is better to try and improve such situations.",
+      "scenario": "",
+      "requirements": [
+        "Discuss both these views and give your own opinion.",
+        "Give reasons for your answer and include any relevant examples from your own knowledge or experience.",
+        "Write at least 250 words."
+      ],
+      "visualData": {
+        "type": "",
+        "title": "",
+        "labels": [],
+        "units": "",
+        "notes": []
+      }
+    }
+  ],
+  "speaking": {
+    "exercises": [
+      {
+        "part": 1,
+        "prompt": "What job would you like to have ten years from now? [Why?]"
+      },
+      {
+        "part": 1,
+        "prompt": "How useful will English be for your future? [Why/Why not?]"
+      },
+      {
+        "part": 1,
+        "prompt": "How much travelling do you hope to do in the future? [Why/Why not?]"
+      },
+      {
+        "part": 1,
+        "prompt": "How do you think your life will change in the future? [Why/Why not?]"
+      },
+      {
+        "part": 2,
+        "prompt": "Describe a book that you enjoyed reading because you had to think a lot.\n\nYou should say:\nwhat this book was\nwhy you decided to read it\nwhat reading this book made you think about\nand explain why you enjoyed reading this book."
+      },
+      {
+        "part": 3,
+        "prompt": "What are the most popular types of children's books in your country?"
+      },
+      {
+        "part": 3,
+        "prompt": "What are the benefits of parents reading books to their children?"
+      },
+      {
+        "part": 3,
+        "prompt": "Should parents always let children choose the books they read?"
+      },
+      {
+        "part": 3,
+        "prompt": "How popular are electronic books in your country?"
+      },
+      {
+        "part": 3,
+        "prompt": "What are the advantages of parents reading electronic books (compared to printed books)?"
+      },
+      {
+        "part": 3,
+        "prompt": "Will electronic books ever completely replace printed books in the future?"
+      }
+    ]
+  },
+  "uncertain": []
+}

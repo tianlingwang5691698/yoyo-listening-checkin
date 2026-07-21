@@ -1,0 +1,64 @@
+{
+  "_id": "ielts-academic-10-test-4-writing-task-1",
+  "id": "ielts-academic-10-test-4-writing-task-1",
+  "title": "Cambridge IELTS 10 Test 4 Writing Task 1",
+  "year": 2015,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-10-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑10真题.pdf",
+  "book": "Cambridge IELTS 10 Academic",
+  "bookNumber": 10,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The diagrams below show the life cycle of a species of large fish called the salmon.",
+  "scenario": "The diagrams show the salmon life cycle through the upper river, lower river and open sea, including three growth stages.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "life-cycle diagram",
+    "title": "",
+    "labels": [
+      "upper river (slow moving)",
+      "approx 5-6 months",
+      "reeds",
+      "small stones",
+      "salmon eggs",
+      "lower river (fast flowing)",
+      "approx 4 years",
+      "open sea",
+      "approx 5 years",
+      "1 ‘fry’",
+      "3-8cm",
+      "2 ‘smolt’",
+      "12-15cm",
+      "3 ‘adult salmon’",
+      "70-76cm"
+    ],
+    "units": "months, years and centimetres (cm)",
+    "notes": [
+      "The cycle is shown with directional arrows from salmon eggs in the upper river to fry, then to the lower river, smolt, the open sea, adult salmon and back to the upper river."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-10/writing/visuals-v3/test-4-task-1-visual-2f18677b34.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-10/writing/visuals-v3/test-4-task-1-visual-2f18677b34.jpg",
+      "alt": "Cambridge IELTS 10 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

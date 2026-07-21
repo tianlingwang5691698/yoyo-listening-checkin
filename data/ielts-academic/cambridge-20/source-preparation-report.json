@@ -1,0 +1,296 @@
+{
+  "bookNumber": 20,
+  "year": 2025,
+  "sourcePdf": "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑桥雅思20学术类.pdf",
+  "textPdf": "/tmp/ielts-ocr/cambridge-20-ocr.pdf",
+  "audioRoot": "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio",
+  "tests": {
+    "1": {
+      "layout": {
+        "listening": [
+          12,
+          17
+        ],
+        "reading": [
+          18,
+          30
+        ],
+        "writing": [
+          31,
+          32
+        ],
+        "speaking": 33,
+        "transcript": [
+          99,
+          104
+        ],
+        "answers": [
+          120,
+          121
+        ],
+        "reviewPages": [
+          22,
+          27
+        ]
+      },
+      "visualPages": [],
+      "audio": {
+        "localPath": "data/ielts-academic/cambridge-20/listening/audio/cambridge-ielts-20-test-1-3fed683cf3-64k-mono.mp3",
+        "cloudPath": "_content/ielts-academic/cambridge-20/listening/audio/cambridge-ielts-20-test-1-3fed683cf3-64k-mono.mp3",
+        "durationSec": 1947.85,
+        "sourceDurationSec": 1947.79,
+        "durationDiffSec": 0.06,
+        "size": 15582861,
+        "sources": [
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T1 P1.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T1 P2.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T1 P3.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T1 P4.mp3"
+        ],
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "32000",
+              "channels": 1,
+              "bit_rate": "64000"
+            }
+          ],
+          "format": {
+            "duration": "1947.852000",
+            "size": "15582861",
+            "bit_rate": "64000"
+          }
+        }
+      },
+      "writingVisual": {
+        "localPath": "data/ielts-academic/cambridge-20/writing/visuals-v3/test-1-task-1-visual-cf53e192f4.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-20/writing/visuals-v3/test-1-task-1-visual-cf53e192f4.jpg",
+        "alt": "Cambridge IELTS 20 Test 1 Writing Task 1 visual"
+      },
+      "speakingPage": {
+        "localPath": "data/ielts-academic/cambridge-20/speaking/source-pages-v1/test-1-speaking-e40b544130.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-20/speaking/source-pages-v1/test-1-speaking-e40b544130.jpg",
+        "alt": "Cambridge IELTS 20 Test 1 Speaking original page"
+      }
+    },
+    "2": {
+      "layout": {
+        "listening": [
+          34,
+          39
+        ],
+        "reading": [
+          40,
+          51
+        ],
+        "writing": [
+          52,
+          53
+        ],
+        "speaking": 54,
+        "transcript": [
+          105,
+          108
+        ],
+        "answers": [
+          122,
+          123
+        ],
+        "reviewPages": [
+          105,
+          109
+        ]
+      },
+      "visualPages": [],
+      "audio": {
+        "localPath": "data/ielts-academic/cambridge-20/listening/audio/cambridge-ielts-20-test-2-4893751d39-64k-mono.mp3",
+        "cloudPath": "_content/ielts-academic/cambridge-20/listening/audio/cambridge-ielts-20-test-2-4893751d39-64k-mono.mp3",
+        "durationSec": 1757.7,
+        "sourceDurationSec": 1757.66,
+        "durationDiffSec": 0.036,
+        "size": 14061645,
+        "sources": [
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T2 P1.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T2 P2.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T2 P3.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T2 P4.mp3"
+        ],
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "32000",
+              "channels": 1,
+              "bit_rate": "64000"
+            }
+          ],
+          "format": {
+            "duration": "1757.700000",
+            "size": "14061645",
+            "bit_rate": "64000"
+          }
+        }
+      },
+      "writingVisual": {
+        "localPath": "data/ielts-academic/cambridge-20/writing/visuals-v3/test-2-task-1-visual-93ff1a2eee.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-20/writing/visuals-v3/test-2-task-1-visual-93ff1a2eee.jpg",
+        "alt": "Cambridge IELTS 20 Test 2 Writing Task 1 visual"
+      },
+      "speakingPage": {
+        "localPath": "data/ielts-academic/cambridge-20/speaking/source-pages-v1/test-2-speaking-8319a3e578.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-20/speaking/source-pages-v1/test-2-speaking-8319a3e578.jpg",
+        "alt": "Cambridge IELTS 20 Test 2 Speaking original page"
+      }
+    },
+    "3": {
+      "layout": {
+        "listening": [
+          55,
+          60
+        ],
+        "reading": [
+          61,
+          73
+        ],
+        "writing": [
+          74,
+          75
+        ],
+        "speaking": 76,
+        "transcript": [
+          109,
+          114
+        ],
+        "answers": [
+          124,
+          125
+        ],
+        "reviewPages": [
+          65
+        ]
+      },
+      "visualPages": [
+        57
+      ],
+      "audio": {
+        "localPath": "data/ielts-academic/cambridge-20/listening/audio/cambridge-ielts-20-test-3-9067d34bdb-64k-mono.mp3",
+        "cloudPath": "_content/ielts-academic/cambridge-20/listening/audio/cambridge-ielts-20-test-3-9067d34bdb-64k-mono.mp3",
+        "durationSec": 1862.42,
+        "sourceDurationSec": 1862.38,
+        "durationDiffSec": 0.048,
+        "size": 14899437,
+        "sources": [
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T3 P1.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T3 P2.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T3 P3.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T3 P4.mp3"
+        ],
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "32000",
+              "channels": 1,
+              "bit_rate": "64000"
+            }
+          ],
+          "format": {
+            "duration": "1862.424000",
+            "size": "14899437",
+            "bit_rate": "64000"
+          }
+        }
+      },
+      "writingVisual": {
+        "localPath": "data/ielts-academic/cambridge-20/writing/visuals-v3/test-3-task-1-visual-19e73b2ef6.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-20/writing/visuals-v3/test-3-task-1-visual-19e73b2ef6.jpg",
+        "alt": "Cambridge IELTS 20 Test 3 Writing Task 1 visual"
+      },
+      "speakingPage": {
+        "localPath": "data/ielts-academic/cambridge-20/speaking/source-pages-v1/test-3-speaking-eb7704eeb1.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-20/speaking/source-pages-v1/test-3-speaking-eb7704eeb1.jpg",
+        "alt": "Cambridge IELTS 20 Test 3 Speaking original page"
+      }
+    },
+    "4": {
+      "layout": {
+        "listening": [
+          77,
+          82
+        ],
+        "reading": [
+          83,
+          95
+        ],
+        "writing": [
+          96,
+          97
+        ],
+        "speaking": 98,
+        "transcript": [
+          115,
+          119
+        ],
+        "answers": [
+          126,
+          127
+        ],
+        "reviewPages": [
+          83,
+          87,
+          115
+        ]
+      },
+      "visualPages": [],
+      "audio": {
+        "localPath": "data/ielts-academic/cambridge-20/listening/audio/cambridge-ielts-20-test-4-2cbef786bc-64k-mono.mp3",
+        "cloudPath": "_content/ielts-academic/cambridge-20/listening/audio/cambridge-ielts-20-test-4-2cbef786bc-64k-mono.mp3",
+        "durationSec": 1882.51,
+        "sourceDurationSec": 1882.46,
+        "durationDiffSec": 0.048,
+        "size": 15060141,
+        "sources": [
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T4 P1.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T4 P2.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T4 P3.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/IELTS 20 Audio/T4 P4.mp3"
+        ],
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "32000",
+              "channels": 1,
+              "bit_rate": "64000"
+            }
+          ],
+          "format": {
+            "duration": "1882.512000",
+            "size": "15060141",
+            "bit_rate": "64000"
+          }
+        }
+      },
+      "writingVisual": {
+        "localPath": "data/ielts-academic/cambridge-20/writing/visuals-v3/test-4-task-1-visual-fee16028e4.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-20/writing/visuals-v3/test-4-task-1-visual-fee16028e4.jpg",
+        "alt": "Cambridge IELTS 20 Test 4 Writing Task 1 visual"
+      },
+      "speakingPage": {
+        "localPath": "data/ielts-academic/cambridge-20/speaking/source-pages-v1/test-4-speaking-a9c475c1ea.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-20/speaking/source-pages-v1/test-4-speaking-a9c475c1ea.jpg",
+        "alt": "Cambridge IELTS 20 Test 4 Speaking original page"
+      }
+    }
+  },
+  "errors": []
+}

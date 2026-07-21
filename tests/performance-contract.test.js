@@ -135,7 +135,7 @@ test('音频系列列表使用公共轻量缓存和并发预取', () => {
   assert.doesNotMatch(materialSource, /getTargetSnapshotPart/);
   assert.doesNotMatch(materialSource, /await planSelectionPromise/);
   assert.match(levelSource, /Promise\.all\(\[worker\(\), worker\(\)\]\)/);
-  assert.equal((levelTemplate.match(/bindtouchstart="prefetchMaterial"/g) || []).length, 2);
+  assert.equal((levelTemplate.match(/bindtouchstart="prefetchMaterial"/g) || []).length, 3);
   assert.match(storeSource, /PUBLIC_READ_ACTIONS = \{\s*getListeningMaterialCatalog: true/);
   assert.match(storeSource, /immutablePrefix = 'yoyoCloudReadCacheV4:getListeningMaterialCatalog:'/);
 });

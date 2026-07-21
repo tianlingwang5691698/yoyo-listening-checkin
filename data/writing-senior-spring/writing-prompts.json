@@ -687,8 +687,36 @@
     "score": 25
   },
   {
+    "_id": "sh-spring-2023-summary-writing",
+    "title": "2023 上海高考春考 IV. Summary Writing",
+    "year": 2023,
+    "city": "上海",
+    "district": "春考",
+    "examType": "春考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-spring-2023",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2023年上海春季高考英语真题（原卷版）.docx",
+    "questionNumber": 71,
+    "prompt": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible. Fiction Reading For many people, nothing is more enjoyable than spending a whole afternoon reading a good novel. But are novels simply a pleasant way to pass the time, or could it be true that reading fiction actually benefits our lives? One of the joys of fiction is that it can take us to places that our lives won't.It can transport us to 17th- century France, or to war-tom Germany. It can take us to a future world in which artificial intelligence takes over and books are banned , or a fantasy world where people battle it out for food. Fiction can also introduce us to a whole range of people that we haven't yet met. And this, according to Carrie Oates, a novelist and academic , is perhaps the real benefit of stories.In one of her studies, participants were asked to read either a short story by Chekhov, or a version of the story in documentary form. Those who were given the fictionalized version were found to be more likely to sympathize with the characters, thus going through greater changes in personality. in another study, she showed participants photos of the eyes of people who were feeling and thinking different things. The people who read fiction were better able to interpret those thoughts and feelings than those who didn't read. Oates explains that when we read fiction , we enter into the minds of the characters. We think about why they behave in a certain way, and what they are likely to do next. Just as we might become more knowledgeable about psychology and astronomy if we read about psychology and astronomy , we get better at this kind of social thinking if we read fiction. This improves our understanding of the thoughts and feelings of those around us in real life. 71. ______________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ ___________________________________-",
+    "directions": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible.",
+    "scenario": "Fiction Reading For many people, nothing is more enjoyable than spending a whole afternoon reading a good novel. But are novels simply a pleasant way to pass the time, or could it be true that reading fiction actually benefits our lives? One of the joys of fiction is that it can take us to places that our lives won't.It can transport us to 17th- century France, or to war-tom Germany. It can take us to a future world in which artificial intelligence takes over and books are banned , or a fantasy world where people battle it out for food. Fiction can also introduce us to a whole range of people that we haven't yet met. And this, according to Carrie Oates, a novelist and academic , is perhaps the real benefit of stories.In one of her studies, participants were asked to read either a short story by Chekhov, or a version of the story in documentary form. Those who were given the fictionalized version were found to be more likely to sympathize with the characters, thus going through greater changes in personality. in another study, she showed participants photos of the eyes of people who were feeling and thinking different things. The people who read fiction were better able to interpret those thoughts and feelings than those who didn't read. Oates explains that when we read fiction , we enter into the minds of the characters. We think about why they behave in a certain way, and what they are likely to do next. Just as we might become more knowledgeable about psychology and astronomy if we read about psychology and astronomy , we get better at this kind of social thinking if we read fiction. This improves our understanding of the thoughts and feelings of those around us in real life. 71. ______________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ _________________________________________________________________________________________ ___________________________________-",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
     "_id": "sh-spring-2023-translation",
-    "title": "2023 上海高考春考 I. Translation",
+    "title": "2023 上海高考春考 V. Translation",
     "year": 2023,
     "city": "上海",
     "district": "春考",
@@ -699,42 +727,42 @@
     "contentType": "translation",
     "contentRevision": 1,
     "paperId": "sh-spring-2023",
-    "paperOrder": 1,
+    "paperOrder": 2,
     "sourceType": "shanghai-gaokao",
-    "sourceFile": "2023年上海春季高考英语真题及答案（听力-翻译-作文部分）.docx",
-    "directions": "",
+    "sourceFile": "2023年上海春季高考英语真题（原卷版）.docx",
+    "directions": "Directions:Translate the following sentences into English, using the words given in the brackets",
     "questionCount": 4,
     "questions": [
       {
         "number": 72,
-        "sourceText": "他接到通知，实验结果一时半会儿出不来。",
+        "sourceText": "他接到通知，实验结果一时半会还出不来。",
         "requiredWord": "inform",
         "referenceAnswers": [
-          "He has been informed that the results of the experiment aren’ t out/ready yet / won’ t be available for a while / in a short time."
+          "___________________________________________________________________________________ ⏩参考答案： He was informed that the results of the experiment would not be available for sometime. \\\\ He was informed that there would be some time before the finding of the experiment came out. 翻译要点：实验结果出不来，通知；一时半会"
         ]
       },
       {
         "number": 73,
-        "sourceText": "如果不精心安排，明天的美术馆之行将会变成走马观花。",
-        "requiredWord": "If",
+        "sourceText": "若不精心安排，明天的美术馆之行就会变成走马观花。",
+        "requiredWord": "if",
         "referenceAnswers": [
-          "If not carefully arranged, tomorrow’ s trip to the art gallery will become a quick/brief/casual glance at/over things."
+          "______________________________________________________________________________________ ⏩参考答案： If not planned carefully, tomorrow's visit to the art gallery will turn out to be a brief tour/ visit/ a passing glance. 翻译要点：美术馆之行，visit to the art gallery；走马观花，a brief tour."
         ]
       },
       {
         "number": 74,
-        "sourceText": "对于喜剧演员来说，没有什么比在表演中听到观众的阵阵笑声更有成就感的了。",
+        "sourceText": "对喜剧演员来说，没有什么比演出中听到观众得阵阵笑声更有成就感了",
         "requiredWord": "there be",
         "referenceAnswers": [
-          "For comedians, there is nothing more fulfilling than hearing bursts of laughter from the audience during a performance."
+          "_____________________________________________________________________________________ ⏩参考答案： For a comedian, there is nothing more satisfying/ gratifying/ rewarding/fulfilling than hearing the bursts of laughter of the audience during his performance/ show. 翻译要点：喜剧演员，comedian；演出中，during a performance；观众得阵阵笑声，bursts of laughter from the audience；有成就感， fulfilling."
         ]
       },
       {
         "number": 75,
-        "sourceText": "上任以来，镇长始终将了解民生、听取民意作为重中之重，利用工作之余走访了小镇上的每家每户。",
+        "sourceText": "上任以来，镇长始终将了解民生、听取民意视为重中之重，利用工作之余走访了镇上的每家户。",
         "requiredWord": "call on",
         "referenceAnswers": [
-          "Since taking office, the mayor has always made it a priority to know/learn about people’s livelihood and listen to public opinion, and calls on every household in town in his spare time."
+          "Section A Directions: In Section A, you will hear ten short conversations between two speakers. At the end of each conversation, a question will be asked about what was said. The conversations and the questions will be spoken only once. After you hear a conversation and the question about it, read the four possible answers on your paper, and decide which one is the best answer to the question you have heard"
         ]
       }
     ],
@@ -742,7 +770,7 @@
   },
   {
     "_id": "sh-spring-2023-writing",
-    "title": "2023 上海高考春考作文",
+    "title": "2023 上海高考春考 VI. Guided Writing",
     "year": 2023,
     "city": "上海",
     "district": "春考",
@@ -753,20 +781,22 @@
     "contentType": "guided-writing",
     "contentRevision": 1,
     "paperId": "sh-spring-2023",
-    "paperOrder": 2,
+    "paperOrder": 3,
     "sourceType": "shanghai-gaokao",
-    "sourceFile": "2023年上海春季高考英语真题及答案（听力-翻译-作文部分）.docx",
-    "prompt": "你们班的口语课外教 Tom 发现你们班课上互动不积极，委托你了解同学们的想法， 经过你对全班同学看法的了解，有些同学表示对课堂上讨论的话题不感兴趣， 有些同学害怕犯错，不敢开。 1）向 Tom 反映同学的想法（2）向 tom 提出建议并说明理由 Dear Tom：",
+    "sourceFile": "2023年上海春季高考英语真题（原卷版）.docx",
+    "questionNumber": 76,
+    "prompt": "(共 25 分) Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese. 你们班的口语课外教 Tom 发现你们班课上互动不积极，委托你了解同学们的想法，经过你对全班同学看法的了解，有些同学表示对课堂上讨论的话题不感兴趣，有些同学害怕犯错，不敢开口。 1. 向 Tom 反映同学的想法: 2. 向 Tom 提出建议并说明理由。",
     "directions": "",
-    "scenario": "你们班的口语课外教 Tom 发现你们班课上互动不积极，委托你了解同学们的想法， 经过你对全班同学看法的了解，有些同学表示对课堂上讨论的话题不感兴趣， 有些同学害怕犯错，不敢开。",
+    "scenario": "(共 25 分) Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese. 你们班的口语课外教 Tom 发现你们班课上互动不积极，委托你了解同学们的想法，经过你对全班同学看法的了解，有些同学表示对课堂上讨论的话题不感兴趣，有些同学害怕犯错，不敢开口。",
     "requirementsTitle": "写作要求：",
     "requirements": [
-      "向 Tom 反映同学的想法",
-      "向 tom 提出建议并说明理由"
+      "向 Tom 反映同学的想法:",
+      "向 Tom 提出建议并说明理由。"
     ],
-    "promptStarter": "Dear Tom：",
+    "promptTable": null,
+    "promptStarter": "",
     "images": [],
-    "minWords": 0,
+    "minWords": 120,
     "score": 0
   },
   {

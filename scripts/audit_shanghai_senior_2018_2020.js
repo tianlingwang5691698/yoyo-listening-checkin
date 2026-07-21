@@ -16,12 +16,12 @@ const CLI_PATH = [
 
 const YEARS = [2018, 2019, 2020];
 const DURATIONS = {
-  'spring-2018': '15:53',
-  'spring-2019': '16:03',
+  'spring-2018': '15:54',
+  'spring-2019': '16:04',
   'spring-2020': '16:11',
   'autumn-2018': '16:23',
-  'autumn-2019': '16:15',
-  'autumn-2020': '16:03'
+  'autumn-2019': '16:16',
+  'autumn-2020': '16:04'
 };
 const REQUIREMENT_COUNTS = {
   'spring-2018': 2,

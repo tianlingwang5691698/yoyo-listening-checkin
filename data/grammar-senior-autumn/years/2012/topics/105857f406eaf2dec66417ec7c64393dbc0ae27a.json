@@ -1,0 +1,34 @@
+{
+  "topicId": "clause:adverbial",
+  "topic": "状语从句",
+  "questions": [
+    {
+      "_id": "sh-autumn-2012-grammar-q40",
+      "sourceSetId": "sh-autumn-2012-grammar",
+      "year": 2012,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+      "number": 40,
+      "prompt": "The map is one of the best tools a man has _ _ he goes to a new place.",
+      "options": {
+        "A": "whenever",
+        "B": "whatever",
+        "C": "wherever",
+        "D": "however"
+      },
+      "answer": "A",
+      "questionType": "grammar-choice",
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:adverbial",
+      "subtopic": "状语从句",
+      "topicId": "clause:adverbial",
+      "topic": "状语从句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

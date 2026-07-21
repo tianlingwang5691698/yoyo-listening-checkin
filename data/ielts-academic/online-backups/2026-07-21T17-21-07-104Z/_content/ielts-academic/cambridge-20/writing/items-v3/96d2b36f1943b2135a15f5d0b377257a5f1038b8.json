@@ -1,0 +1,55 @@
+{
+  "_id": "ielts-academic-20-test-4-writing-task-1",
+  "id": "ielts-academic-20-test-4-writing-task-1",
+  "title": "Cambridge IELTS 20 Test 4 Writing Task 1",
+  "year": 2025,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-20-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思20学术类.pdf",
+  "book": "Cambridge IELTS 20 Academic",
+  "bookNumber": 20,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The diagram below shows how fabric is manufactured from bamboo.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "process diagram",
+    "title": "How bamboo fabric is made",
+    "labels": [
+      "1 Plant bamboo plants (Spring)",
+      "2 Harvest (Autumn)",
+      "3 Cut into strips",
+      "4 Crush strips (to make liquid pulp)",
+      "5 Filter (separate long fibres from liquid)",
+      "6 Soften fibres (add water and amine oxide)",
+      "7 Spin (to make yarn)",
+      "8 Weave (to make fabric)",
+      "9 Finished fabric"
+    ],
+    "units": "",
+    "notes": []
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-20/writing/visuals-v3/test-4-task-1-visual-fee16028e4.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-20/writing/visuals-v3/test-4-task-1-visual-fee16028e4.jpg",
+      "alt": "Cambridge IELTS 20 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

@@ -371,6 +371,1465 @@
     "images": []
   },
   {
+    "_id": "sh-autumn-2011-listening",
+    "title": "2011 上海高考秋考听力",
+    "year": 2011,
+    "sourceYear": 2011,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2011年上海秋季高考英语真题及答案.doc",
+    "audioCloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2011-listening-5b4b73ed6a-64k-mono.mp3",
+    "audioLocalPath": "data/listening-senior-autumn/audio/sh-autumn-2011-listening-5b4b73ed6a-64k-mono.mp3",
+    "durationSec": 923.742,
+    "hasAudio": true,
+    "hasTranscript": true,
+    "transcript": "Section A 1.W: It’s nice of you to come here to pick me up, Mr. Smith. M: Don’t mention it. How was the flight? Q: Where does the conversation most probably take place? 2.W: I wonder if there is a service charge for our meal. M: I think so. The menu said the service charge is 10%. Q: How much is the service charge if the food costs 50 dollars? 3.M: Here is your room key and the checkout time is 12 noon. W: Thanks for reminding me. Q: What is the most probable relationship between the two speakers? 4.W: Sorry, sir. We are working on your order right now and we’ll be delivering it soon. M: Soon? How soon is soon? Q: How does the man feel? 5.M: Hi, Jane. It’s been ages. You haven’t changed a bit! W: Except for the hair! Q: What does the woman mean? 6.W: OK, Mathew. Time for bed. M: But mom, the talent show is starting in 5 minutes. Q: What does the man mean? 7.M: Hi, Jenny. How are you getting on with your packing? W: I’m still deciding what to take with me. Q: What can we learn about Jenny? 8.M: Everybody is here except John. Shall we start the meeting? W: If we wait for John. We might be here all night. Q: What does the woman mean? 9.M: I’m glad you are finally moving. W: I can’t tell you how happy I am. I won’t have to listen to my neighbor’s TV. Q: What can we learn about the woman? 10.M: Oh, we left our road map at home. W: Well, since we haven’t gone very far. We might as well just turn around. Q: What will the speakers probably do? Section B Blank 11-13 are based on the following Passage. The Common Wealth is a group of 54 countries. The member states all use English as a common working language and have similar legal and education systems, but represent nearly every religion, race and political system on the planet. The Common Wealth is active in a huge number of areas such as health and economics. The heads of government meeting is held every two years where the leaders of the member states get together to discuss current issues. Common Wealth Day is held in the second week of March every year when Common Wealth’s citizens, particularly children, have a chance to celebrate their friendship. The Common Wealth also holds sporting and arts events. There is an annual writer’s price and a yearly arts and crafts competition. Perhaps the most well-known event sponsored by organization is the Common Wealth games, which is held every four years in one of the member countries. The games have gained another name, the friendly games because of their reputation for good-natured competitiveness. Questions: 1.What do the member states of the Common Wealth have in common? 2.What do people do on Common Wealth Day according to the passage? 3.What is the passage mainly about? Blank 14-16 are based on the following speech. There is a popular belief that a college education is something to be endured in order to become qualified to obtain certain kinds of jobs or to go to graduate school. This is not what we are trying to do at Harvard. The most obvious goal of a college educationer is to give knowledge, but it is far from the most important. Remarkably few of the facts you learn here will remain in your memory for many years, and some of those that do might be proved false by new knowledge. At Harvard, we have looked to other things we can give that will last a little longer. Among these things are certain habits of mind, such as the ability to have more critical analysis, to make more accurate and logical use of information and so forth. In addition to these habits of thought, it is our hope that we can help you develop certain attitudes of mind like a willingness to accept uncertainty and the lack of definite truth. Beyond providing these qualities, a college education should try to lay a foundation for the creative use of leisure time which can be cultivated in the classroom. Yet, the cultivation of this ability will also occur outside of the classroom. For example, on sports fields, in music rooms, and so on. Questions: 1.Which of the following is regarded as the most important at Harvard? 2.Which quality mentioned below can be cultivated both inside and outside the classroom? 3.What is the speech mainly about? Section C Blank 17-20 are based on the following conversation. W: Good morning! Green Sense. Can I help you? M: Hello, my name is Mary White and I want to complain about a sea food restaurant. W: OK, can I take down your telephone number? M: My phone number is 655038. W: Good! So what would you like to complain about? M: Actually two things. First, the restaurant dumps its rubbish on the street and you can imagine what that attracts-rats! W: Right! I’ve got that! And the second problem? M: The restaurant doesn’t put bottles and cans in recycling bins. It’s not responsible. W: Got it! What’s the address of the sea food restaurant? M: It’s 449 Shanghai Street. W: OK! We’ll look into it and call you back. M: Thank you. Goodbye! Complete the form. WriteONE WORD for each answer. Blank 21-24 are based on the following conversation. W: What’s the article about? M: It’s basically about memory. And it says you’ve got three memories: short term, medium term and long term. W: Um… M: They say that short term memory lasts only a few seconds. So you just sort of read something and you remember the beginning of the sentence just until you get to the end of the sentence. W: Um… M: And then medium term memory. The example they give is something like trying to remember that you’ve got to buy bread. W: Like a sort of a shopping list of things to do? M: Yeah! After you buy bread, you don’t need to store that memory. So it’s erased. W: Just sort of a day-to-day management. M: Eh…then long-term memory. They are talking about the major events that happen in your life such as your wedding. W: And you never forget them. M: Yeah…I suppose so. Permanent memory.",
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "At a train station.",
+          "B": "At an airport",
+          "C": "At a travel agency",
+          "D": "At a bus station."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 2,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "$5.",
+          "B": "$10.",
+          "C": "$15.",
+          "D": "$50."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 3,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Receptionist and guest.",
+          "B": "Salesperson and customer.",
+          "C": "Doctor and patient.",
+          "D": "Waiter and diner."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 4,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Excited.",
+          "B": "Dissatisfied.",
+          "C": "Bored.",
+          "D": "Exhausted."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 5,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Her hair has changed.",
+          "B": "She isn’t satisfied with her hair style.",
+          "C": "She prefers to wear long hair.",
+          "D": "The man has changed his hair style."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 6,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "It is too early to watch the Talent Show.",
+          "B": "He will go to bed in five minutes.",
+          "C": "He would rather watch TV than go to bed.",
+          "D": "He is old enough to stay up."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 7,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She has got everything ready.",
+          "B": "She never hesitates over what to take.",
+          "C": "She hates packing by herself.",
+          "D": "She needs more time for packing."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 8,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "They should wait for John for a while.",
+          "B": "They should stay here for the night.",
+          "C": "They should start the meeting right away.",
+          "D": "They should call John at once."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 9,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She is unwilling to move into a new flat.",
+          "B": "Her neighbors get along well with her.",
+          "C": "She can’t tell the man why she is moving.",
+          "D": "Her neighbors usually play their TV loud."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 10,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Ask for directions.",
+          "B": "Try a different route.",
+          "C": "Go back for the map.",
+          "D": "Cancel their trip."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 11,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "A political system.",
+          "B": "Religion.",
+          "C": "Working language.",
+          "D": "Race."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 12,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Discuss current issues.",
+          "B": "Join in a writing competition.",
+          "C": "Attend an arts and crafts competition.",
+          "D": "Celebrate their friendship."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 13,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "The Commonwealth Games.",
+          "B": "An important holiday.",
+          "C": "The Commonwealth members.",
+          "D": "An international association. Questions 14 through 16 are based on the following news."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 14,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Equipping students with knowledge.",
+          "B": "Qualifying students for certain jobs.",
+          "C": "Developing students’ habits of mind.",
+          "D": "Helping students to go to graduate school."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 15,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "The ability to have critical analysis.",
+          "B": "Creative use of leisure time.",
+          "C": "Logical use of information.",
+          "D": "Willingness to accept uncertainty."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 16,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Goals to reach in a college education.",
+          "B": "Roles of knowledge in students’ growth.",
+          "C": "Qualifications needed for a job.",
+          "D": "Importance of after-class activities."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 17,
+        "prompt": "Phone No.: _____",
+        "answer": "655038",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "Complaint Form",
+        "givenRows": [
+          {
+            "label": "Caller",
+            "value": "Mary White"
+          }
+        ]
+      },
+      {
+        "number": 18,
+        "prompt": "Location of Problem: A _____ restaurant, 449 Shanghai Street",
+        "answer": "seafood",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 19,
+        "prompt": "Details: It dumps its _____ on the street.",
+        "answer": "rubbish",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 20,
+        "prompt": "Details: It doesn't put bottles and cans in _____ bins.",
+        "answer": "recycling",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 21,
+        "prompt": "How long does short memory last? It lasts only _____.",
+        "answer": "a few seconds",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 22,
+        "prompt": "What is an example of medium term memory? Buying bread, a sort of _____ of things to do.",
+        "answer": "a shopping list",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 23,
+        "prompt": "What is long term memory concerned with? _____ that happen in your life such as your wedding.",
+        "answer": "Major events",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 24,
+        "prompt": "How is long term memory different from the others? It _____.",
+        "answer": "is permanent",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      }
+    ],
+    "images": []
+  },
+  {
+    "_id": "sh-autumn-2012-listening",
+    "title": "2012 上海高考秋考听力",
+    "year": 2012,
+    "sourceYear": 2012,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+    "audioCloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2012-listening-e7fb589098-64k-mono.mp3",
+    "audioLocalPath": "data/listening-senior-autumn/audio/sh-autumn-2012-listening-e7fb589098-64k-mono.mp3",
+    "durationSec": 941.375,
+    "hasAudio": true,
+    "hasTranscript": false,
+    "transcript": "",
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "At a library.",
+          "B": "At a hotel.",
+          "C": "At a bank.",
+          "D": "At an airport."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 2,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Relaxed.",
+          "B": "Annoyed.",
+          "C": "Worried.",
+          "D": "Satisfied"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 3,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Doctor and patient.",
+          "B": "Shop owner and customer.",
+          "C": "Secretary and boss.",
+          "D": "Receptionist and guest."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 4,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "He would have thrown $300 around.",
+          "B": "$300 is not enough for the concert.",
+          "C": "Sandy shouldn't have given that much.",
+          "D": "Dave must be mad with the money"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 5,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She lives close to the man.",
+          "B": "She changes her mind at last.",
+          "C": "She will turn to her manager.",
+          "D": "She declines the man's offer."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 6,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "2",
+          "B": "3．",
+          "C": "4．",
+          "D": "5"
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 7,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Both of them drink too much coffee.",
+          "B": "The woman doesn't like coffee at all.",
+          "C": "They help each other stop drinking coffee.",
+          "D": "The man is uninterested in the woman's story"
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 8,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "He doesn't mind helping the woman.",
+          "B": "He hesitates whether to help or not.",
+          "C": "He'll help if the woman doesn't mind",
+          "D": "He can't help move the cupboard."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 9,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "He's planning to find a new job.",
+          "B": "He prefers to keep his house in a mess.",
+          "C": "He's too busy to clean his house",
+          "D": "He has already cleaned his new house,"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 10,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She doesn't agree with the man.",
+          "B": "She is good at finding a place to stay.",
+          "C": "She could hardly find the truth.",
+          "D": "She had no travel experience in Britain."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 11,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Use the company's equipment.",
+          "B": "Give orders to robots",
+          "C": "Make decisions for the company.",
+          "D": "Act as Big Brother."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 12,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Employees gain full freedom.",
+          "B": "Employees suspect one another.",
+          "C": "Employees' children are happy.",
+          "D": "Employees enjoy working there."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 13,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Reward.",
+          "B": "Safety.",
+          "C": "Trust.",
+          "D": "Honesty Questions 14 through 16 are based on the following passage"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 14,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Canada had a smaller population.",
+          "B": "Land was cheaper in Canada.",
+          "C": "They wanted to continue the Revolution.",
+          "D": "They were against Britain."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 15,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "They standardized Canadian English.",
+          "B": "They settled there after the Revolution.",
+          "C": "They enjoy a very high social position.",
+          "D": "They make up a small part of the population"
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 16,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "It is considered unique to some extent.",
+          "B": "It is greatly influenced by French.",
+          "C": "It is mainly linked to British culture.",
+          "D": "It dates back to the late 17th century."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 17,
+        "prompt": "Department: The _____ Department",
+        "answer": "History",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "Class Registration Form",
+        "givenRows": [
+          {
+            "label": "Name",
+            "value": "Andrew Smith"
+          }
+        ]
+      },
+      {
+        "number": 18,
+        "prompt": "Student ID: _____",
+        "answer": "HD3309",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 19,
+        "prompt": "Class: The _____ class",
+        "answer": "photography",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 20,
+        "prompt": "Time: _____, 2:00-4:00 p.m.",
+        "answer": "Tuesday",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 21,
+        "prompt": "The members were from different cities with different _____ and cultures.",
+        "answer": "religions",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 22,
+        "prompt": "Different people can be _____.",
+        "answer": "good friends / more than friends /like a family",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 23,
+        "prompt": "They treated her as _____.",
+        "answer": "their daughter",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 24,
+        "prompt": "Sometimes _____ can say more than words.",
+        "answer": "a simple smile",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      }
+    ],
+    "images": []
+  },
+  {
+    "_id": "sh-autumn-2013-listening",
+    "title": "2013 上海高考秋考听力",
+    "year": 2013,
+    "sourceYear": 2013,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2013年上海秋季高考英语真题及答案.doc",
+    "audioCloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2013-listening-827e6a9745-64k-mono.mp3",
+    "audioLocalPath": "data/listening-senior-autumn/audio/sh-autumn-2013-listening-827e6a9745-64k-mono.mp3",
+    "durationSec": 980.637,
+    "hasAudio": true,
+    "hasTranscript": false,
+    "transcript": "",
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "What is the man's job?",
+        "options": {
+          "A": "A basketball player.",
+          "B": "A laundry worker.",
+          "C": "A window washer.",
+          "D": "A rock climber"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 2,
+        "prompt": "What does the woman imply?",
+        "options": {
+          "A": "She is not hungry.",
+          "B": "She wants to cook.",
+          "C": "She is not tired.",
+          "D": "She wants to dine out."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 3,
+        "prompt": "What does the woman think of her hometown?",
+        "options": {
+          "A": "Promising",
+          "B": "Isolated",
+          "C": "Crowded",
+          "D": "Modern"
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 4,
+        "prompt": "Where will the speakers probably go?",
+        "options": {
+          "A": "To a stationery shop.",
+          "B": "To a gymnasium.",
+          "C": "To a paint store.",
+          "D": "To a news stand."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 5,
+        "prompt": "What does the woman mean?",
+        "options": {
+          "A": "The man can see a different view.",
+          "B": "The food is not tasty enough.",
+          "C": "The man cannot afford the food.",
+          "D": "The food is worth the price."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 6,
+        "prompt": "What does the woman imply?",
+        "options": {
+          "A": "She reads different kinds of books.",
+          "B": "She also finds the book difficult to read.",
+          "C": "She is impressed by the characters.",
+          "D": "She knows well how to remember names."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 7,
+        "prompt": "What can we learn from the conversation?",
+        "options": {
+          "A": "The man will go to the post office.",
+          "B": "The post office is closed for the day.",
+          "C": "The woman is expecting the newspaper.",
+          "D": "The delivery boy has been dismissed."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 8,
+        "prompt": "What can we learn about the woman?",
+        "options": {
+          "A": "She is not sure if she can join them.",
+          "B": "She will skip the class to see the film.",
+          "C": "She will ask the professor for leave.",
+          "D": "She does not want to see a film."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 9,
+        "prompt": "What does the man mean?",
+        "options": {
+          "A": "Fashion designing is a booming business.",
+          "B": "School learning is a must for fashion designers.",
+          "C": "He hopes to attend a good fashion school.",
+          "D": "The woman should become a fashion designer."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 10,
+        "prompt": "What does the man mean?",
+        "options": {
+          "A": "Few people drive within the speed limit.",
+          "B": "Drivers usually obey traffic rules.",
+          "C": "The speed limit is really reasonable.",
+          "D": "The police stop most drivers for speeding"
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 11,
+        "prompt": "What was the speaker's previous job?",
+        "options": {
+          "A": "A book publisher.",
+          "B": "A company manager.",
+          "C": "A magazine editor.",
+          "D": "A school principal."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 12,
+        "prompt": "What helps to make the speaker productive according to the passage?",
+        "options": {
+          "A": "Some training experience.",
+          "B": "A happy family.",
+          "C": "Russian assistants' help.",
+          "D": "A good memory."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 13,
+        "prompt": "What does the passage mainly tell us?",
+        "options": {
+          "A": "Lynn’s devotion to the family.",
+          "B": "Lynn’s busy and successful life.",
+          "C": "Lynn’s great performance at work.",
+          "D": "Lynn’s efficiency in conducting programs."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 14,
+        "prompt": "What kind of questions are usually asked in the traditional interview?",
+        "options": {
+          "A": "Economic questions.",
+          "B": "Routine questions.",
+          "C": "Academic questions.",
+          "D": "Challenging questions."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 15,
+        "prompt": "What does the case interview focus on about the candidate?",
+        "options": {
+          "A": "Work experience.",
+          "B": "Educational qualifications.",
+          "C": "Problem-solving abilities.",
+          "D": "Information-gathering abilities."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 16,
+        "prompt": "What does the speaker mainly talk about?",
+        "options": {
+          "A": "Features of different types of interview.",
+          "B": "Skills in asking interview questions.",
+          "C": "Changes in three interview models.",
+          "D": "Suggestions for different job interviews."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 17,
+        "prompt": "Date: 8th _____",
+        "answer": "November",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "Latest Conference Information",
+        "givenRows": []
+      },
+      {
+        "number": 18,
+        "prompt": "Place: Palace _____, Shanghai",
+        "answer": "Center",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 19,
+        "prompt": "Registration fee: $ _____",
+        "answer": "850",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 20,
+        "prompt": "Speech topic: Opportunities and Risks in the _____ Market",
+        "answer": "African",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": [
+          {
+            "label": "Speaker",
+            "value": "Carla Marisco from Milan University"
+          }
+        ]
+      },
+      {
+        "number": 21,
+        "prompt": "What was David's schoolwork like? He was able to get his schoolwork done _____.",
+        "answer": "with good grades",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "An Interview with David, a Skateboarding Lover",
+        "givenRows": []
+      },
+      {
+        "number": 22,
+        "prompt": "What was his only problem at school? He was unable to _____ in class.",
+        "answer": "sit still",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 23,
+        "prompt": "Why did he say the new headmaster was wonderful? He let students _____ of their own.",
+        "answer": "plan P.E. classes",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 24,
+        "prompt": "How was his new style different from other skaters? It was robot-like, with _____.",
+        "answer": "new tricks",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      }
+    ],
+    "images": []
+  },
+  {
+    "_id": "sh-autumn-2014-listening",
+    "title": "2014 上海高考秋考听力",
+    "year": 2014,
+    "sourceYear": 2014,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2014年上海秋季高考英语真题及答案.doc",
+    "audioCloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2014-listening-417ee35cc8-64k-mono.mp3",
+    "audioLocalPath": "data/listening-senior-autumn/audio/sh-autumn-2014-listening-417ee35cc8-64k-mono.mp3",
+    "durationSec": 1008.457,
+    "hasAudio": true,
+    "hasTranscript": false,
+    "transcript": "",
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "A policewoman.",
+          "B": "A judge.",
+          "C": "A reporter.",
+          "D": "A waitress."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 2,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Confident.",
+          "B": "Puzzled.",
+          "C": "Satisfied.",
+          "D": "Worried."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 3,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "At a restaurant.",
+          "B": "At a car rental agency.",
+          "C": "In a bank.",
+          "D": "In a driving school."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 4,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "A disaster.",
+          "B": "A new roof.",
+          "C": "A performance.",
+          "D": "A TV station."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 5,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Catch the train.",
+          "B": "Meet Jane.",
+          "C": "Get some stationery.",
+          "D": "Clean the backyard."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 6,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Ask for something cheaper.",
+          "B": "Buy the vase she really likes.",
+          "C": "Protect herself from being hurt.",
+          "D": "Bargain with the shop assistant."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 7,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Use a computer in the lab.",
+          "B": "Take a chemistry course.",
+          "C": "Help him revise his report.",
+          "D": "Get her computer repaired."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 8,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Amused.",
+          "B": "Embarrassed.",
+          "C": "Shocked.",
+          "D": "Sympathetic."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 9,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She doesn't plan to continue studying next year.",
+          "B": "She has already told the man about her plan.",
+          "C": "She isn't planning to leave her university.",
+          "D": "She recently visited a different university."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 10,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "It spoke highly of the mayor.",
+          "B": "It misinterpreted the mayor's speech.",
+          "C": "It made the mayor's view clearer.",
+          "D": "It carried the mayor's speech accurately."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 11,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "70.",
+          "B": "20.",
+          "C": "25.",
+          "D": "75."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 12,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "The houses there can't be sold.",
+          "B": "It is a place for work and holiday.",
+          "C": "The cabins and facilities are shared.",
+          "D": "It is run by the residents themselves."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 13,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "A skiing resort.",
+          "B": "A special community.",
+          "C": "A splendid mountain.",
+          "D": "A successful businesswoman. Questions 14 through 16 are based on the following news."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 14,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Those who often sent text messages.",
+          "B": "Those who suffered from heart disease.",
+          "C": "Those who did no physical exercise.",
+          "D": "Those who were unmarried."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 15,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "They responded more slowly than usual.",
+          "B": "They sent more messages.",
+          "C": "They typed 10 percent faster on average.",
+          "D": "They edited more passages."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 16,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Why chemical therapy works.",
+          "B": "Why marriage helps fight cancer.",
+          "C": "How unmarried people survive cancer.",
+          "D": "How cancer is detected after marriage."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 17,
+        "prompt": "Travel purpose: for a(n) _____ in London",
+        "answer": "conference",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "Travellers' Survey Sheet",
+        "givenRows": []
+      },
+      {
+        "number": 18,
+        "prompt": "Comments on the airport environment / facilities · Likes: _____",
+        "answer": "daylight",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 19,
+        "prompt": "Likes: _____ walkways",
+        "answer": "moving",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 20,
+        "prompt": "Dislikes: _____ shops; small trolleys",
+        "answer": "overcrowded",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-17-20",
+        "groupTitle": "Blanks 17 through 20 are based on the following conversation.",
+        "groupInstruction": "Write ONE WORD for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 21,
+        "prompt": "What is critical thinking in reading? Assessing the writer's ideas and thinking about the _____ of what the writer is saying.",
+        "answer": "implications and conclusions",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 22,
+        "prompt": "What is the first step in reading an academic text critically? Finding out the argument and the writer's main line of _____.",
+        "answer": "reasoning",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 23,
+        "prompt": "What may serve as the evidence? _____, survey results, examples, etc.",
+        "answer": "Figures",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      },
+      {
+        "number": 24,
+        "prompt": "What is the key to critical thinking? To read actively and _____.",
+        "answer": "keep questioning",
+        "questionType": "blank",
+        "sectionKey": "C",
+        "sectionTitle": "Section C · Listen and complete the form.",
+        "groupKey": "C-21-24",
+        "groupTitle": "Blanks 21 through 24 are based on the following conversation.",
+        "groupInstruction": "Write NO MORE THAN THREE WORDS for each answer.",
+        "formTitle": "",
+        "givenRows": []
+      }
+    ],
+    "images": []
+  },
+  {
     "_id": "sh-autumn-2015-listening",
     "title": "2015 上海高考秋考听力",
     "year": 2015,
@@ -3007,6 +4466,327 @@
           "B": "He wants to split the rent to save money.",
           "C": "He hopes to have the same schedule with his roommate.",
           "D": "He just wants to hitchhike (搭顺风车) to class."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-17-20",
+        "groupTitle": "Questions 17 through 20 are based on the following conversation."
+      }
+    ],
+    "images": []
+  },
+  {
+    "_id": "sh-autumn-2023-listening",
+    "title": "2023 上海高考秋考听力",
+    "year": 2023,
+    "sourceYear": 2023,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2023年上海秋季高考英语真题（原卷版）.docx",
+    "audioCloudPath": "_content/listening-senior-autumn/audio/sh-autumn-2023-listening-1b856b0d2c-64k-mono.mp3",
+    "audioLocalPath": "data/listening-senior-autumn/audio/sh-autumn-2023-listening-1b856b0d2c-64k-mono.mp3",
+    "durationSec": 978.648,
+    "hasAudio": true,
+    "hasTranscript": true,
+    "transcript": "I. Listening Comprehension Section A Directions: In Section A, you will hear ten short conversations between two speakers. At the end of each conversation, a question will be asked about what was said.The conversations and the questions will be spoken only once.After you hear a conversation and the question about it, read the four possible answers on your paper, and decide which one is the best answer to the question you have heard. 1. M: Mrs. Wang, would you please tell me on which day the letters are delivered and what time does the milkman call? W: Sure. The postman will be here every Thursday afternoon. The milk comes every morning at around six. Q: When does the postman come? 2. M: So all the houses are equipped with a dishwasher and a dryer? W: Right! And also the kitchen appliances. But I'm afraid you are responsible for your own lamps. Q: What does the man have to prepare by himself? 3. M: Why have you chosen a rabbit instead of, let's say, a dog or a cat as your pet? W: I can't stand walking dogs. Cats may suit my lifestyle more, but rabbits are my favorite. Q: What can we learn about the woman? 4. M: Reception, may I help you? W: This is Lee in room 215. The people in the next room are playing music too loud and I can't sleep. Q: Why does the man make this phone call? 5. M: Happy new year, Ming Ming! Any good resolutions?W: I've registered for a guitar class. I'll take up French cooking, find a new job and no more chocolates. Q: What has the man decided to do? 6. W: What do you think of joining a book club? M: If we join one, we can keep up with all the latest books.It isn't any more expensive than going to a movie. Q: What does the man imply? 7. W: I'm putting on some weight, should I go on a diet? M: You'd better eat more natural food rather than packaged food. Snack on vegetable sticks instead of chips. Q: What does the man suggest the woman do ? 8. M: Doesn't it strike you as odd that our spring outing will be put off till the end of this month? W: Yes,it would be too hot, then. Q: What does the woman imply? 9. W: How was the fireworks show last night? M: I really don't enjoy it. There was such a big crowd that we couldn't get very close, even though we got there an hour before it started. Q: What does the man mean? 10. M: I'll be promoted to editor in chief, but I wonder whether I'm a good fit. W: Come on, you deserve it. Your work has been valued all these years. Q: What does the woman mean? Section B Directions: In Section B, you will hear two short passages and one longer conversation. After each passage or conversation, you will be asked several questions. The passages and the conversation will be read twice, but the questions will be spoken only once. When you hear a question, read the four possible answers on your paper, and decide which one is the best answer to the question you have heard. Questions 11 through 13 are based on the following talk. When people think of life in Europe hundreds of years ago, they often think of castles built of stones with huge towers. The kitchen, a very important place in a castle, was usually located a good distance away from other castle rooms and buildings, especially the great hall, which was a large room where people gathered for meals and other activities.This was because of the danger of fires. The kitchen staff needed to use fire for cooking. But since the kitchen was busy all day and every day, sometimes kitchen fires grew out of control, and could spread to other parts of the castle. Each kitchen also had a garden where vegetables were grown. Back then, food could not be kept in refrigerators like today. Some vegetables could be stored underground, but not for long, so most vegetables were picked fresh from the castle garden as they were needed. But of course, dinner in the castle consisted of many other things like bread, meat, and fish. So to prepare a full meal, many cooks were needed. The castle kitchen employed a whole team of people. Some of them made bread and others prepared desserts, or cooked meat dishes.Now, listen again. Questions: 11.Why was the kitchen located far away from other castle rooms and buildings? 12.What can be learned about the vegetables for meals in the castle? 13. What is the talk mainly about? Questions 14 through 16 are based on the following talk. Digital advertising is booming, and this year it has become a $72 billion industry. For the first time, more money has been spent on it than on TV ads. The explanation is simple: Online video ads are growing both in popularity for consumers and effectiveness for brands. To make video advertising easier for you, we published a new e-book\"A Guide to Online Video Advertising\", which features an in-depth look at the growing trends and the best opportunities for marketers. In general, people are watching more video than ever on their smartphones and tablets to consume content.Increasingly, consumers are turning their attention away from TV screens and towards digital brand messaging in the form of videos. Online video ads have proven to be more engaging than traditional TV buys, as viewers report heightened emotional response and a greater likelihood of taking action.In fact, young viewers show greater emotional engagement towards brand messages than non-branded content. This means that with brand messages, online video ads may produce a better emotional effect on the audience. So it is crucial for advertisers to develop a strategy for effectively and efficiently reaching audiences across multiple devices. Now, listen again. Questions: 14. Which of the following is a reason why digital advertising is growing into a big industry? 15. Which of the following will young viewers find most emotionally engaging? 16. What is the talk mainly about? Questions 17 through 20 are based on the following conversation. M: Jane, it's already eight o'clock. Why are you still in the office? W: Oh, nothing. I just don't want to go back to my apartment yet. M: Uh-oh, what's wrong? W: Well, it's because of the girl I share my apartment with. M: You mean Mary, your friend since college? W: Yes, it's just some small things that make me feel bad. She forgets to close the fridge door after taking a cold drink. And she never cares to take the garbage out or fetch the mails. M: Well, if I were you, I would talk to Mary about what's bothering me. W: I can't do that. We've been friends for years. M: Are you afraid you will offend her or something?W: Yeah, perhaps. I still want to be friends with her. M: Better to get things out in the open. It's likely that she is just unaware of it. If you don't talk to her about how you feel, you could end up going your separate ways.W: I'll think about it. Questions: 17. According to the conversation, what is Jane's problem? 18.What can be learned about Mary? 19. Why does Jane choose not to talk to Mary about her thoughts? 20. What does the man suggest Jane do? That's the end of Listening Comprehension.",
+    "questions": [
+      {
+        "number": 1,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Every morning at 6: 00.",
+          "B": "Every Thursday afternoon.",
+          "C": "Every day at 6:00 p.m.",
+          "D": "Every Tuesday morning."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 2,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Dishwasher.",
+          "B": "Dryer.",
+          "C": "Kitchen appliances.",
+          "D": "His own lamps."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 3,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She can bear walking dogs.",
+          "B": "Rabbits suit her lifestyle most",
+          "C": "She prefers rabbits to cats.",
+          "D": "She doesn't like cats."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 4,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "The music in the next room disturbed his rest.",
+          "B": "The room he lives in is leaking water.",
+          "C": "He wants the front desk staff to help him order takeout.",
+          "D": "He encountered danger in his own room."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 5,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Take some guitar lessons.",
+          "B": "Go to France.",
+          "C": "Spend more time at work.",
+          "D": "Eat more chocolates."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 6,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Reading a book is better than seeing a movie.",
+          "B": "Seeing a movie doesn't deserve the money.",
+          "C": "Joining a book club is economical.",
+          "D": "It's never too later to read books."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 7,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Eat more natural food.",
+          "B": "Eat more packaged food.",
+          "C": "Eat less vegetable sticks.",
+          "D": "Eat more chips."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 8,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "It's hot to have a spring outing now.",
+          "B": "It's strange to postpone the spring outing.",
+          "C": "It is wise to postpone the spring outing.",
+          "D": "It may be colder at the end of this month."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 9,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "They should have arrived an hour earlier.",
+          "B": "He doesn't enjoy the design of the fireworks",
+          "C": "The fireworks show started an hour later than planned",
+          "D": "The experience was far from satisfactory"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 10,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "The man is worth the promotion.",
+          "B": "The man's work is finally recognized",
+          "C": "The man is the best fit for the position",
+          "D": "The man has been undervalued"
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "A",
+        "sectionTitle": "Section A · Listen and choose the best answer."
+      },
+      {
+        "number": 11,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "To avoid fire accidents.",
+          "B": "To avoid smoke and noise.",
+          "C": "To accommodate more rubbish.",
+          "D": "To make room for activities."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 12,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "They were usually stored underground to keep them fresh.",
+          "B": "They were kept in refrigerators to prevent them going bad.",
+          "C": "They were transported from the kitchen to save time.",
+          "D": "They were picked fresh from the castle garden as needed."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 13,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Life in Europe.",
+          "B": "The castle kitchen.",
+          "C": "Food in the castle",
+          "D": "Developments of castles. Questions 14 through 16 are based on the following talk."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-11-13",
+        "groupTitle": "Questions 11 through 13 are based on the following passage."
+      },
+      {
+        "number": 14,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "It is more economical and more efficient.",
+          "B": "It is more popular and more effective",
+          "C": "It is more difficult and more valuable.",
+          "D": "It is more complicated and more excellent"
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 15,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Brand messages in online video ads.",
+          "B": "Non-brand contents in online video ads.",
+          "C": "Brand messages in TV ads.",
+          "D": "Non-brand contents in TV ads."
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 16,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "The importance of brands.",
+          "B": "A new e-book guide.",
+          "C": "Digital advertising.",
+          "D": "Strategies of advertising. Questions 17 through 20 are based on the following conversation."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-14-16",
+        "groupTitle": "Questions 14 through 16 are based on the following passage."
+      },
+      {
+        "number": 17,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She is misunderstood by her friend.",
+          "B": "She isn't getting along well with her roommate.",
+          "C": "She has trouble making new friends in new places.",
+          "D": "She doesn't want to be friends with Mary any more."
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-17-20",
+        "groupTitle": "Questions 17 through 20 are based on the following conversation."
+      },
+      {
+        "number": 18,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She doesn't like being friends with jane.",
+          "B": "She makes jane feel bad on purpose.",
+          "C": "She fails to do part of her duty.",
+          "D": "She will surely change her behavior."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-17-20",
+        "groupTitle": "Questions 17 through 20 are based on the following conversation."
+      },
+      {
+        "number": 19,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "She can still tolerate Mary.",
+          "B": "She doesn't think Mary will change",
+          "C": "she is afraid she will offend Mary.",
+          "D": "She is afraid of losing this friend."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "sectionKey": "B",
+        "sectionTitle": "Section B · Listen and choose the best answer.",
+        "groupKey": "B-17-20",
+        "groupTitle": "Questions 17 through 20 are based on the following conversation."
+      },
+      {
+        "number": 20,
+        "prompt": "Listen and choose the best answer.",
+        "options": {
+          "A": "Forget about the trivial things.",
+          "B": "Tell Mary through a third person.",
+          "C": "Tell Mary directly about her feelings.",
+          "D": "Don't be friends with Marry any more."
         },
         "answer": "C",
         "questionType": "choice",

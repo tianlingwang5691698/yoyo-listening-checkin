@@ -1,0 +1,385 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-21T10:28:16.504Z",
+  "papers": [
+    {
+      "session": "autumn",
+      "year": 2011,
+      "reading": {
+        "paperId": "sh-autumn-2011",
+        "shellMs": 4130,
+        "indexReadyMs": 43,
+        "sectionIds": [
+          "sh-autumn-2011-grammar-vocabulary-b",
+          "sh-autumn-2011-reading-a",
+          "sh-autumn-2011-reading-ba",
+          "sh-autumn-2011-reading-bb",
+          "sh-autumn-2011-reading-bc",
+          "sh-autumn-2011-reading-c",
+          "sh-autumn-2011-reading-d"
+        ],
+        "questionCount": 44,
+        "clozeReadyMs": 0
+      },
+      "writing": {
+        "paperId": "sh-autumn-2011",
+        "shellMs": 4124,
+        "indexReadyMs": 14,
+        "itemIds": [
+          "sh-autumn-2011-translation"
+        ],
+        "translationReadyMs": 9,
+        "translationCount": 5,
+        "summaryReadyMs": 0,
+        "writingReadyMs": 0,
+        "requirementCount": 0
+      },
+      "listening": {
+        "paperId": "sh-autumn-2011",
+        "itemId": "sh-autumn-2011-listening",
+        "shellMs": 4244,
+        "indexReadyMs": 15,
+        "duration": "15:24",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 4026,
+            "detailReadyMs": 7,
+            "clickToPlayMs": 20
+          },
+          {
+            "round": 2,
+            "shellMs": 3925,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 17
+          },
+          {
+            "round": 3,
+            "shellMs": 3919,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 19
+          }
+        ]
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2012,
+      "reading": {
+        "paperId": "sh-autumn-2012",
+        "shellMs": 4162,
+        "indexReadyMs": 54,
+        "sectionIds": [
+          "sh-autumn-2012-grammar-vocabulary-b",
+          "sh-autumn-2012-reading-a",
+          "sh-autumn-2012-reading-ba",
+          "sh-autumn-2012-reading-bb",
+          "sh-autumn-2012-reading-bc",
+          "sh-autumn-2012-reading-c",
+          "sh-autumn-2012-reading-d"
+        ],
+        "questionCount": 44,
+        "clozeReadyMs": 0
+      },
+      "writing": {
+        "paperId": "sh-autumn-2012",
+        "shellMs": 3999,
+        "indexReadyMs": 11,
+        "itemIds": [
+          "sh-autumn-2012-translation",
+          "sh-autumn-2012-writing"
+        ],
+        "translationReadyMs": 3,
+        "translationCount": 5,
+        "summaryReadyMs": 0,
+        "writingReadyMs": 3,
+        "requirementCount": 2
+      },
+      "listening": {
+        "paperId": "sh-autumn-2012",
+        "itemId": "sh-autumn-2012-listening",
+        "shellMs": 3952,
+        "indexReadyMs": 9,
+        "duration": "15:41",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 4185,
+            "detailReadyMs": 83,
+            "clickToPlayMs": 24
+          },
+          {
+            "round": 2,
+            "shellMs": 5288,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 24
+          },
+          {
+            "round": 3,
+            "shellMs": 3976,
+            "detailReadyMs": 4,
+            "clickToPlayMs": 16
+          }
+        ]
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2013,
+      "reading": {
+        "paperId": "sh-autumn-2013",
+        "skipped": true,
+        "reason": "source paper has no reading content",
+        "shellMs": 4101,
+        "indexReadyMs": 41
+      },
+      "writing": {
+        "paperId": "sh-autumn-2013",
+        "shellMs": 3983,
+        "indexReadyMs": 20,
+        "itemIds": [
+          "sh-autumn-2013-translation",
+          "sh-autumn-2013-writing"
+        ],
+        "translationReadyMs": 4,
+        "translationCount": 5,
+        "summaryReadyMs": 0,
+        "writingReadyMs": 3,
+        "requirementCount": 2
+      },
+      "listening": {
+        "paperId": "sh-autumn-2013",
+        "itemId": "sh-autumn-2013-listening",
+        "shellMs": 3950,
+        "indexReadyMs": 8,
+        "duration": "16:21",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3932,
+            "detailReadyMs": 9,
+            "clickToPlayMs": 21
+          },
+          {
+            "round": 2,
+            "shellMs": 3936,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 11
+          },
+          {
+            "round": 3,
+            "shellMs": 3934,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 14
+          }
+        ]
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2014,
+      "reading": {
+        "paperId": "sh-autumn-2014",
+        "shellMs": 4092,
+        "indexReadyMs": 39,
+        "sectionIds": [
+          "sh-autumn-2014-grammar-vocabulary-a",
+          "sh-autumn-2014-grammar-vocabulary-b",
+          "sh-autumn-2014-reading-a",
+          "sh-autumn-2014-reading-ba",
+          "sh-autumn-2014-reading-bb",
+          "sh-autumn-2014-reading-bc",
+          "sh-autumn-2014-reading-c"
+        ],
+        "questionCount": 57,
+        "clozeReadyMs": 10
+      },
+      "writing": {
+        "paperId": "sh-autumn-2014",
+        "shellMs": 4031,
+        "indexReadyMs": 15,
+        "itemIds": [
+          "sh-autumn-2014-translation",
+          "sh-autumn-2014-writing"
+        ],
+        "translationReadyMs": 4,
+        "translationCount": 5,
+        "summaryReadyMs": 0,
+        "writingReadyMs": 5,
+        "requirementCount": 2
+      },
+      "listening": {
+        "paperId": "sh-autumn-2014",
+        "itemId": "sh-autumn-2014-listening",
+        "shellMs": 3968,
+        "indexReadyMs": 12,
+        "duration": "16:48",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3962,
+            "detailReadyMs": 7,
+            "clickToPlayMs": 19
+          },
+          {
+            "round": 2,
+            "shellMs": 3952,
+            "detailReadyMs": 3,
+            "clickToPlayMs": 13
+          },
+          {
+            "round": 3,
+            "shellMs": 3970,
+            "detailReadyMs": 5,
+            "clickToPlayMs": 14
+          }
+        ]
+      }
+    },
+    {
+      "session": "spring",
+      "year": 2023,
+      "reading": {
+        "paperId": "sh-spring-2023",
+        "shellMs": 4134,
+        "indexReadyMs": 44,
+        "sectionIds": [
+          "sh-spring-2023-grammar-vocabulary-a",
+          "sh-spring-2023-reading-a",
+          "sh-spring-2023-reading-ba",
+          "sh-spring-2023-reading-bb",
+          "sh-spring-2023-reading-bc",
+          "sh-spring-2023-reading-c"
+        ],
+        "questionCount": 40,
+        "clozeReadyMs": 9
+      },
+      "writing": {
+        "paperId": "sh-spring-2023",
+        "shellMs": 3977,
+        "indexReadyMs": 18,
+        "itemIds": [
+          "sh-spring-2023-summary-writing",
+          "sh-spring-2023-translation",
+          "sh-spring-2023-writing"
+        ],
+        "translationReadyMs": 4,
+        "translationCount": 4,
+        "summaryReadyMs": 4,
+        "writingReadyMs": 3,
+        "requirementCount": 2
+      },
+      "listening": {
+        "paperId": "sh-spring-2023",
+        "itemId": "sh-spring-2023-listening",
+        "shellMs": 3961,
+        "indexReadyMs": 10,
+        "duration": "16:03",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3932,
+            "detailReadyMs": 7,
+            "clickToPlayMs": 18
+          },
+          {
+            "round": 2,
+            "shellMs": 3935,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 15
+          },
+          {
+            "round": 3,
+            "shellMs": 3911,
+            "detailReadyMs": 6,
+            "clickToPlayMs": 13
+          }
+        ]
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2023,
+      "reading": {
+        "paperId": "sh-autumn-2023",
+        "shellMs": 4108,
+        "indexReadyMs": 72,
+        "sectionIds": [
+          "sh-autumn-2023-grammar-vocabulary-a",
+          "sh-autumn-2023-grammar-vocabulary-b",
+          "sh-autumn-2023-reading-a",
+          "sh-autumn-2023-reading-ba",
+          "sh-autumn-2023-reading-bb",
+          "sh-autumn-2023-reading-bc",
+          "sh-autumn-2023-reading-c"
+        ],
+        "questionCount": 50,
+        "clozeReadyMs": 10
+      },
+      "writing": {
+        "paperId": "sh-autumn-2023",
+        "shellMs": 3967,
+        "indexReadyMs": 16,
+        "itemIds": [
+          "sh-autumn-2023-summary-writing",
+          "sh-autumn-2023-translation",
+          "sh-autumn-2023-writing"
+        ],
+        "translationReadyMs": 3,
+        "translationCount": 4,
+        "summaryReadyMs": 5,
+        "writingReadyMs": 4,
+        "requirementCount": 2
+      },
+      "listening": {
+        "paperId": "sh-autumn-2023",
+        "itemId": "sh-autumn-2023-listening",
+        "shellMs": 4017,
+        "indexReadyMs": 15,
+        "duration": "16:19",
+        "rounds": [
+          {
+            "round": 1,
+            "shellMs": 3954,
+            "detailReadyMs": 72,
+            "clickToPlayMs": 13
+          },
+          {
+            "round": 2,
+            "shellMs": 3965,
+            "detailReadyMs": 8,
+            "clickToPlayMs": 17
+          },
+          {
+            "round": 3,
+            "shellMs": 3961,
+            "detailReadyMs": 7,
+            "clickToPlayMs": 15
+          }
+        ]
+      }
+    }
+  ],
+  "grammar": {
+    "shellMs": 4022,
+    "indexReadyMs": 12,
+    "total": 64,
+    "sampledTopicId": "lexical:preposition",
+    "sampledYears": [
+      2009,
+      2010,
+      2011,
+      2012
+    ]
+  },
+  "screenshots": {
+    "reading2023SpringCloze": "/tmp/shanghai-senior-2011-2014-2023/reading-2023-spring-cloze.png",
+    "writing2023AutumnOrder": "/tmp/shanghai-senior-2011-2014-2023/writing-2023-autumn-order.png",
+    "listening2011": "/tmp/shanghai-senior-2011-2014-2023/listening-2011.png"
+  },
+  "thresholds": {
+    "clickToPlayMs": 500
+  },
+  "exceptions": [],
+  "maxClickToPlayMs": 24
+}

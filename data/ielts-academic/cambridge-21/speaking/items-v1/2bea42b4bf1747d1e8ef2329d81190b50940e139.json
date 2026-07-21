@@ -1,0 +1,114 @@
+{
+  "_id": "ielts-academic-21-test-2-speaking",
+  "id": "ielts-academic-21-test-2-speaking",
+  "title": "Cambridge IELTS 21 Test 2 Speaking",
+  "year": 2026,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思21（A类）.pdf",
+  "book": "Cambridge IELTS 21 Academic",
+  "testNumber": 2,
+  "images": [
+    {
+      "cloudPath": "_content/ielts-academic/cambridge-21/assets/pages/c21-page-054-5c2cd2647e.jpg",
+      "localPath": "data/ielts-academic/cambridge-21/assets/pages/c21-page-054-5c2cd2647e.jpg",
+      "alt": "Cambridge IELTS 21 Test 2 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "How well do you know the capital city of your country?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Do you think cities are exciting places to live?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Why do some people dislike living in a city?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "If you could visit any city in the world, where would you go?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a time when you read or heard something that you thought was not true. You should say: where you read/heard this; what you read/heard; why you thought it was not true; and explain how you felt about reading/hearing this thing that you thought was not true.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Do you think children are more honest than adults?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Why do adults tell children it's important to be honest?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Do you think there are sometimes good reasons for adults not to tell children the truth?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Are there any claims in advertisements that are sometimes not true?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Why do people still buy things even when they know advertisements aren't completely accurate?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-2-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Do you think advertisements that are dishonest should be banned?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 1,
+  "status": "published-candidate"
+}

@@ -1,0 +1,34 @@
+{
+  "topicId": "sentence:emphasis",
+  "topic": "强调句",
+  "questions": [
+    {
+      "_id": "sh-autumn-2012-grammar-q37",
+      "sourceSetId": "sh-autumn-2012-grammar",
+      "year": 2012,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+      "number": 37,
+      "prompt": "- Was it by cutting down staff _ _she saved the firm? - No, it was by improving work efficiency.",
+      "options": {
+        "A": "when",
+        "B": "what",
+        "C": "how",
+        "D": "that"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:emphasis",
+      "subtopic": "强调句",
+      "topicId": "sentence:emphasis",
+      "topic": "强调句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

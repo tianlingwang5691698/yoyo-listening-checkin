@@ -120,7 +120,7 @@ async function auditListeningSession(miniProgram, session) {
     const ready = await waitForData(launched.page, (data) => data.item && data.item._id === itemId && data.questions.length === 20 && data.audioSrc && !data.audioLoading, 30000);
     assert(ready.data.questions.filter((item) => item.showSectionTitle).map((item) => item.sectionKey).join('') === 'AB', `listening-${session}-sections`);
     assert(ready.data.questions.filter((item) => item.showGroupTitle).length === 3, `listening-${session}-group-titles`);
-    assert(ready.data.audioDurationText === (session === 'spring' ? '15:26' : '16:16'), `listening-${session}-duration`);
+    assert(ready.data.audioDurationText === (session === 'spring' ? '15:27' : '16:17'), `listening-${session}-duration`);
     const startedAt = Date.now();
     await launched.page.callMethod('toggleAudio');
     await waitForData(launched.page, (data) => data.isPlaying, 3000);

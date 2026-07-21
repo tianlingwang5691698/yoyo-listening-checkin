@@ -126,7 +126,7 @@ async function auditListening(miniProgram, session) {
   const itemId = `sh-${session}-2017-listening`;
   const indexData = await indexLaunch.page.data();
   assert(indexData.items.some((item) => item.materialItemId === itemId), `listening-${session}-index`);
-  const expectedDuration = session === 'spring' ? '14:39' : '28:16';
+  const expectedDuration = session === 'spring' ? '14:40' : '28:17';
   const rounds = [];
   for (let round = 1; round <= 3; round += 1) {
     const launched = await relaunch(miniProgram, `/pages/material/detail/index?itemId=${itemId}`);

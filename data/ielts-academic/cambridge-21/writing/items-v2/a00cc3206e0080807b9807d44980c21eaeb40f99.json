@@ -1,0 +1,63 @@
+{
+  "_id": "ielts-academic-21-test-1-writing-task-1",
+  "id": "ielts-academic-21-test-1-writing-task-1",
+  "title": "Cambridge IELTS 21 Test 1 Writing Task 1",
+  "year": 2026,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 2,
+  "paperId": "ielts-academic-21-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思21（A类）.pdf",
+  "book": "Cambridge IELTS 21 Academic",
+  "testNumber": 1,
+  "prompt": "The graph below gives information about the number of jobs in four sectors of the economy in the US between 1960 and 2020.",
+  "directions": "You should spend about 20 minutes on this task. Write at least 150 words.",
+  "images": [
+    {
+      "cloudPath": "_content/ielts-academic/cambridge-21/writing/visuals-v2/test-1-task-1-line-graph-99c6e5dcf1.jpg",
+      "localPath": "data/ielts-academic/cambridge-21/writing/visuals-v2/test-1-task-1-line-graph-99c6e5dcf1.jpg",
+      "alt": "Cambridge IELTS 21 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate",
+  "dataFormat": "structured-text-v2",
+  "scenario": "Number of jobs in four sectors of the economy in the US, 1960-2020",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant."
+  ],
+  "visualData": {
+    "type": "line graph",
+    "title": "Number of jobs in four sectors of the economy in the US, 1960-2020",
+    "labels": [
+      "0",
+      "5",
+      "10",
+      "15",
+      "20",
+      "25",
+      "1960",
+      "1980",
+      "2000",
+      "2020",
+      "Year",
+      "Manufacturing",
+      "Retail",
+      "Agriculture",
+      "Healthcare"
+    ],
+    "units": "Millions of jobs",
+    "notes": [
+      "The horizontal axis shows years from 1960 to 2020.",
+      "The vertical axis uses a scale from 0 to 25."
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "_id": "ielts-academic-18-test-3-writing-task-1",
+  "id": "ielts-academic-18-test-3-writing-task-1",
+  "title": "Cambridge IELTS 18 Test 3 Writing Task 1",
+  "year": 2023,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-18-test-3",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思真题18.pdf",
+  "book": "Cambridge IELTS 18 Academic",
+  "bookNumber": 18,
+  "testNumber": 3,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The diagram below shows the floor plan of a public library 20 years ago and how it looks now.",
+  "scenario": "The floor plans compare the Central Library 20 years ago with the Central Library today.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "floor plans",
+    "title": "Central Library",
+    "labels": [
+      "Central Library 20 years ago",
+      "CDs, videos, computer games",
+      "Children’s books",
+      "Adult fiction books",
+      "Adult non-fiction books",
+      "Reading room (newspapers & magazines)",
+      "Tables & chairs",
+      "Enquiry desk (tickets, book returns, etc.)",
+      "Entrance",
+      "Central Library today",
+      "Sofa",
+      "Storytelling events",
+      "Children’s fiction books",
+      "Lecture room",
+      "Adult fiction books",
+      "Information desk",
+      "All reference books",
+      "Self-service machines",
+      "Computer room",
+      "Café",
+      "Entrance"
+    ],
+    "units": "",
+    "notes": [
+      "The first floor plan shows the Central Library 20 years ago.",
+      "The second floor plan shows the Central Library today."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-18/writing/visuals-v3/test-3-task-1-visual-07f6339add.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-18/writing/visuals-v3/test-3-task-1-visual-07f6339add.jpg",
+      "alt": "Cambridge IELTS 18 Test 3 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

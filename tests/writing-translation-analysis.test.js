@@ -18,8 +18,8 @@ test('翻译提交调用写作专用模型并逐题展示讲解', () => {
   assert.match(cloudIndex, /analyzeWritingTranslation: serviceAction\('writing', 'analyzeWritingTranslation'\)/);
   assert.match(store, /async function analyzeWritingTranslation[\s\S]*?callCloud\('analyzeWritingTranslation'/);
   assert.match(page, /await store\.analyzeWritingTranslation/);
-  assert.match(view, /模型讲解/);
-  assert.match(view, /推荐译文/);
+  assert.match(view, /texts\.modelExplanation/);
+  assert.match(view, /texts\.recommendedTranslation/);
 });
 
 test('翻译分析、家长预览和历史续批使用 180 秒等待上限', () => {

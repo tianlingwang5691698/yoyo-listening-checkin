@@ -241,6 +241,11 @@
   margin-top: 28rpx;
 }
 
+.prompt-image-frame {
+  position: relative;
+  width: 100%;
+}
+
 .prompt-image,
 .library-prompt-image {
   width: 100%;
@@ -251,6 +256,41 @@
 .prompt-image {
   border: 1rpx solid rgba(46, 80, 112, 0.18);
   background: #fff;
+}
+
+.prompt-image-zoom {
+  position: absolute;
+  top: 14rpx;
+  right: 14rpx;
+  width: 54rpx;
+  height: 54rpx;
+  border: 1rpx solid rgba(23, 49, 79, 0.28);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 5rpx 14rpx rgba(23, 49, 79, 0.14);
+}
+
+.prompt-image-zoom::before {
+  content: "";
+  position: absolute;
+  left: 14rpx;
+  top: 12rpx;
+  width: 18rpx;
+  height: 18rpx;
+  border: 4rpx solid #17314f;
+  border-radius: 50%;
+}
+
+.prompt-image-zoom::after {
+  content: "";
+  position: absolute;
+  left: 33rpx;
+  top: 32rpx;
+  width: 12rpx;
+  height: 4rpx;
+  background: #17314f;
+  transform: rotate(45deg);
+  transform-origin: left center;
 }
 
 .translation-list {

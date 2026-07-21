@@ -1,0 +1,70 @@
+{
+  "_id": "ielts-academic-17-test-4-writing-task-1",
+  "id": "ielts-academic-17-test-4-writing-task-1",
+  "title": "Cambridge IELTS 17 Test 4 Writing Task 1",
+  "year": 2022,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-17-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思17（A类）.pdf",
+  "book": "Cambridge IELTS 17 Academic",
+  "bookNumber": 17,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The graph below shows the number of shops that closed and the number of new shops that opened in one country between 2011 and 2018.",
+  "scenario": "The graph below shows the number of shops that closed and the number of new shops that opened in one country between 2011 and 2018.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "line graph",
+    "title": "Number of shop closures and openings 2011–2018",
+    "labels": [
+      "Closures",
+      "Openings",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "0",
+      "1,000",
+      "2,000",
+      "3,000",
+      "4,000",
+      "5,000",
+      "6,000",
+      "7,000",
+      "8,000",
+      "9,000"
+    ],
+    "units": "number of shops",
+    "notes": [
+      "The solid line represents Closures.",
+      "The dashed line represents Openings."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-17/writing/visuals-v3/test-4-task-1-visual-4c7f03c8cd.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-17/writing/visuals-v3/test-4-task-1-visual-4c7f03c8cd.jpg",
+      "alt": "Cambridge IELTS 17 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

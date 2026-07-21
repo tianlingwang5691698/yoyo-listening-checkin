@@ -7,7 +7,7 @@ const i18n = require('../../../utils/i18n');
 
 const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fallback);
 
-const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV2';
+const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV4';
 
 const LEGACY_REQUIREMENT_POINTS = {
   'sh-autumn-2009-writing': [
@@ -59,7 +59,7 @@ function buildPromptDisplay(prompt) {
   return {
     directions,
     scenario,
-    requirementsTitle: requirements.length ? (requirementsTitle || '写作要点：') : '',
+    requirementsTitle: requirements.length ? (requirementsTitle || text('requirementsTitle', '写作要点：')) : '',
     requirements,
     promptTable: prompt && prompt.promptTable && Array.isArray(prompt.promptTable.headers) && Array.isArray(prompt.promptTable.rows)
       ? prompt.promptTable
@@ -92,13 +92,13 @@ function buildTranslationQuestions(prompt) {
 function buildPromptImages(prompt) {
   return (prompt && Array.isArray(prompt.images) ? prompt.images : []).map((image) => ({
     cloudPath: cleanPromptText(image && image.cloudPath),
-    alt: cleanPromptText(image && image.alt) || '作文题原图',
+    alt: cleanPromptText(image && image.alt) || text('promptImageAlt', '作文题原图'),
     src: cleanPromptText(image && (image.src || image.url))
   })).filter((image) => image.cloudPath || image.src);
 }
 
 function findPrompt(materialIndex, promptId) {
-  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || [], (materialIndex || {}).writingSeniorSpring || [], (materialIndex || {}).writingSeniorAutumn || []);
+  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || [], (materialIndex || {}).writingSeniorSpring || [], (materialIndex || {}).writingSeniorAutumn || [], (materialIndex || {}).writingIelts || []);
   return all.find((item) => item && item._id === promptId) || null;
 }
 
@@ -237,6 +237,12 @@ Page({
       this.setData({ promptImages: resolved });
     }
   },
+  previewPromptImage(event) {
+    const current = String(event.currentTarget.dataset.src || '').trim();
+    const urls = (this.data.promptImages || []).map((image) => image.src).filter(Boolean);
+    if (!current || !urls.length) return;
+    wx.previewImage({ current, urls });
+  },
   onEssayInput(event) {
     const essayText = event.detail.value || '';
     this.setData({
@@ -261,8 +267,8 @@ Page({
   async submitTranslation() {
     const questions = this.data.translationQuestions || [];
     if (!questions.length || questions.some((question) => !String(question.inputValue || '').trim())) {
-      this.setData({ errorText: '请先完成全部翻译题。' });
-      wx.showToast({ title: '请先完成全部翻译题', icon: 'none' });
+      this.setData({ errorText: text('translationIncomplete', '请先完成全部翻译题。') });
+      wx.showToast({ title: text('translationIncompleteToast', '请先完成全部翻译题'), icon: 'none' });
       return;
     }
     const prompt = this.data.prompt || {};
@@ -297,8 +303,8 @@ Page({
         errorText: ''
       });
     } catch (error) {
-      this.setData({ errorText: '分析失败，可以再点一次提交。' });
-      wx.showToast({ title: '分析失败，可重试', icon: 'none' });
+      this.setData({ errorText: text('translationAnalysisFailed', '分析失败，可以再点一次提交。') });
+      wx.showToast({ title: text('translationAnalysisFailedToast', '分析失败，可重试'), icon: 'none' });
     } finally {
       this.setData({ translationAnalyzing: false });
     }

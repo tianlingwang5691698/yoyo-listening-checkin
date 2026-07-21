@@ -62,7 +62,12 @@ Page({
     questionLoading: false,
     result: null,
     resultCelebrating: false,
-    errorText: ''
+    errorText: '',
+    ieltsTests: [],
+    ieltsLoading: false,
+    ieltsExpanded: false,
+    ieltsMode: false,
+    ieltsSourceImages: []
   }),
 
   onLoad() {
@@ -88,7 +93,7 @@ Page({
         errorText: ''
       });
       if (res.tempFilePath) {
-        setTimeout(() => this.submitPronunciation(), 120);
+        setTimeout(() => (this.data.ieltsMode ? this.submitIeltsSpeaking() : this.submitPronunciation()), 120);
       }
     });
     this.recorderManager.onError(() => {
@@ -124,6 +129,7 @@ Page({
 
   onShow() {
     page.syncTheme(this);
+    if (this.data.ieltsMode) return;
     const currentId = this.data.activeId;
     const exercises = localizeExercises();
     this.setData({
@@ -168,7 +174,9 @@ Page({
       recordDurationMs: 0,
       recordDurationText: '',
       result: null,
-      errorText: ''
+      errorText: '',
+      ieltsMode: false,
+      ieltsSourceImages: []
     });
   },
 
@@ -185,21 +193,88 @@ Page({
     }
     this.setData({
       viewMode: 'home',
+      selectedLevel: this.previousSpeakingLevel || this.data.selectedLevel,
       questionPlaying: false,
       questionLoading: false,
       tempFilePath: '',
       recordDurationMs: 0,
       recordDurationText: '',
       result: null,
-      errorText: ''
+      errorText: '',
+      ieltsMode: false,
+      ieltsSourceImages: []
     });
+    this.previousSpeakingLevel = '';
   },
 
-  openIeltsSpeaking() {
-    wx.showToast({
-      title: text('ieltsComingSoon', '雅思口语即将开放'),
-      icon: 'none'
-    });
+  async openIeltsSpeaking() {
+    if (this.data.ieltsExpanded) {
+      this.setData({ ieltsExpanded: false });
+      return;
+    }
+    if (this.data.ieltsTests.length) {
+      this.setData({ ieltsExpanded: true });
+      return;
+    }
+    this.setData({ ieltsLoading: true, errorText: '' });
+    try {
+      const result = await store.getMaterialIndex({ moduleId: 'speaking' });
+      const tests = (result.speakingIelts || []).map((item) => {
+        const id = String(item._id || item.id || '');
+        const match = id.match(/^ielts-academic-(1[0-9]|20|21)-test-(\d+)-/i);
+        return {
+          id,
+          title: item.title || 'IELTS Speaking',
+          bookNumber: Number(item.bookNumber || (match && match[1]) || 21),
+          testNumber: Number(item.testNumber || (match && match[2]) || 0),
+          meta: item.district || `Test ${Number(item.testNumber || (match && match[2]) || 0)}`
+        };
+      }).filter((item) => item.id).sort((left, right) => right.bookNumber - left.bookNumber || left.testNumber - right.testNumber)
+        .map((item, index, rows) => Object.assign({}, item, {
+          bookLabel: `Cambridge IELTS ${item.bookNumber}`,
+          showBookHeader: !index || rows[index - 1].bookNumber !== item.bookNumber
+        }));
+      this.setData({ ieltsTests: tests, ieltsExpanded: true });
+    } catch (error) {
+      this.setData({ errorText: text('ieltsLoadFailed', '雅思口语加载失败') });
+    } finally {
+      this.setData({ ieltsLoading: false });
+    }
+  },
+
+  async selectIeltsTest(event) {
+    const itemId = String(event.currentTarget.dataset.itemId || '');
+    if (!itemId || this.data.ieltsLoading) return;
+    this.setData({ ieltsLoading: true, errorText: '' });
+    try {
+      const result = await store.getMaterialItem({ moduleId: 'speaking', itemId });
+      const item = result && result.item;
+      const exercises = (item && item.exercises || []).map((exercise) => Object.assign({}, exercise, {
+        id: String(exercise.id || ''),
+        title: exercise.title || `Part ${exercise.part || ''}`,
+        meta: exercise.meta || `${exercise.maxDurationSec || 60}${text('secondUnit', ' 秒')}`
+      })).filter((exercise) => exercise.id && exercise.prompt);
+      if (!exercises.length) throw new Error('empty-ielts-speaking');
+      this.previousSpeakingLevel = this.data.selectedLevel;
+      this.setData({
+        viewMode: 'practice',
+        selectedLevel: 'IELTS',
+        exercises,
+        activeId: exercises[0].id,
+        activeExercise: exercises[0],
+        ieltsMode: true,
+        ieltsSourceImages: item.images || [],
+        tempFilePath: '',
+        recordDurationMs: 0,
+        recordDurationText: '',
+        result: null,
+        errorText: ''
+      });
+    } catch (error) {
+      this.setData({ errorText: text('ieltsLoadFailed', '雅思口语加载失败') });
+    } finally {
+      this.setData({ ieltsLoading: false });
+    }
   },
 
   selectExercise(event) {
@@ -267,7 +342,7 @@ Page({
       errorText: ''
     });
     this.recorderManager.start({
-      duration: 20000,
+      duration: Math.min(180000, Math.max(20000, Number(this.data.activeExercise && this.data.activeExercise.maxDurationSec || 20) * 1000)),
       sampleRate: 16000,
       numberOfChannels: 1,
       encodeBitRate: 64000,
@@ -325,6 +400,43 @@ Page({
       this.setData({
         errorText: text('scoreFailed', '评分暂时没有成功，请稍后再试。')
       });
+    } finally {
+      this.setData({ submitting: false });
+    }
+  },
+  async submitIeltsSpeaking() {
+    if (!this.data.tempFilePath || this.data.submitting) return;
+    const active = this.data.activeExercise;
+    this.setData({ submitting: true, errorText: '', result: null });
+    try {
+      const upload = await store.createSpeakingUploadUrl({
+        category: 'ielts-speaking',
+        taskId: active.id,
+        attemptType: 'ielts_speaking'
+      });
+      const fileId = await store.uploadSpeakingAudio(upload.cloudPath, this.data.tempFilePath);
+      const response = await store.submitSpeakingAttempt({
+        category: 'ielts-speaking',
+        taskId: active.id,
+        attemptType: 'ielts_speaking',
+        promptText: active.prompt,
+        answerAudioFileId: fileId,
+        answerCloudPath: upload.cloudPath,
+        answerDurationMs: this.data.recordDurationMs
+      });
+      const attempt = response.attempt || {};
+      this.setData({
+        result: {
+          score: Number(attempt.score || 0),
+          accuracy: Number(attempt.contentGrammarScore || attempt.score || 0),
+          fluency: Number(attempt.pronunciationFluencyScore || attempt.score || 0),
+          completion: Number(attempt.score || 0)
+        },
+        tempFilePath: ''
+      });
+      this.playScoreEffect();
+    } catch (error) {
+      this.setData({ errorText: text('scoreFailed', '评分暂时没有成功，请稍后再试。') });
     } finally {
       this.setData({ submitting: false });
     }

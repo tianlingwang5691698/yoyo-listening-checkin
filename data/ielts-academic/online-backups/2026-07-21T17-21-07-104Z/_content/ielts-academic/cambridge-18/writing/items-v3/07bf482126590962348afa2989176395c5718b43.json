@@ -1,0 +1,57 @@
+{
+  "_id": "ielts-academic-18-test-1-writing-task-1",
+  "id": "ielts-academic-18-test-1-writing-task-1",
+  "title": "Cambridge IELTS 18 Test 1 Writing Task 1",
+  "year": 2023,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-18-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思真题18.pdf",
+  "book": "Cambridge IELTS 18 Academic",
+  "bookNumber": 18,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The graph below gives information about the percentage of the population in four Asian countries living in cities from 1970 to 2020, with predictions for 2030 and 2040.",
+  "scenario": "The graph shows the percentage of the population living in cities in the Philippines, Malaysia, Thailand and Indonesia from 1970 to 2040.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "line graph",
+    "title": "Percentage of the population living in cities",
+    "labels": [
+      "Vertical axis: Percentage (%) of total population",
+      "Vertical-axis labels: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90",
+      "Horizontal axis: Year",
+      "Years: 1970, 1980, 1990, 2000, 2010, 2020, 2030, 2040",
+      "Legend: Philippines",
+      "Legend: Malaysia",
+      "Legend: Thailand",
+      "Legend: Indonesia"
+    ],
+    "units": "Percentage (%) of total population",
+    "notes": [
+      "The graph covers 1970 to 2020, with predictions for 2030 and 2040."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-18/writing/visuals-v3/test-1-task-1-visual-01ba8ecc47.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-18/writing/visuals-v3/test-1-task-1-visual-01ba8ecc47.jpg",
+      "alt": "Cambridge IELTS 18 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

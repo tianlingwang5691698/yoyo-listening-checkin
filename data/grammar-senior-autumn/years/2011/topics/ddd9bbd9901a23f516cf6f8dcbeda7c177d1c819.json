@@ -1,0 +1,34 @@
+{
+  "topicId": "lexical:usage",
+  "topic": "词义与用法",
+  "questions": [
+    {
+      "_id": "sh-autumn-2011-grammar-q29",
+      "sourceSetId": "sh-autumn-2011-grammar",
+      "year": 2011,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2011年上海秋季高考英语真题及答案.doc",
+      "number": 29,
+      "prompt": "When Mom looked back on the early days of their marriage, she wondered how they had managed with ______ money.",
+      "options": {
+        "A": "so few",
+        "B": "such few",
+        "C": "so little",
+        "D": "such little"
+      },
+      "answer": "C",
+      "questionType": "grammar-choice",
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:usage",
+      "subtopic": "词义与用法",
+      "topicId": "lexical:usage",
+      "topic": "词义与用法",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

@@ -22,6 +22,9 @@ const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
 const READING_SENIOR_CONTENT_PATHS = [
   '_content/reading-senior-autumn/years/2009/v2/reading-passages.json',
   '_content/reading-senior-autumn/years/2010/reading-passages.json',
+  '_content/reading-senior-autumn/years/2011/reading-passages.json',
+  '_content/reading-senior-autumn/years/2012/reading-passages.json',
+  '_content/reading-senior-autumn/years/2014/v2/reading-passages.json',
   '_content/reading-senior-autumn/years/2015/v2/reading-passages.json',
   '_content/reading-senior-autumn/years/2016/v2/reading-passages.json',
   '_content/reading-senior-spring/years/2017/v2/reading-passages.json',
@@ -36,13 +39,30 @@ const READING_SENIOR_CONTENT_PATHS = [
   '_content/reading-senior-autumn/years/2021/v2/reading-passages.json',
   '_content/reading-senior-spring/years/2022/v2/reading-passages.json',
   '_content/reading-senior-autumn/years/2022/v2/reading-passages.json',
+  '_content/reading-senior-spring/years/2023/v2/reading-passages.json',
+  '_content/reading-senior-autumn/years/2023/v2/reading-passages.json',
   '_content/reading-senior-spring/years/2024/v2/reading-passages.json',
   '_content/reading-senior-autumn/years/2024/v2/reading-passages.json',
   '_content/reading-senior-spring/years/2025/v2/reading-passages.json',
   '_content/reading-senior-autumn/years/2025/v2/reading-passages.json',
   '_content/reading-senior-spring/years/2026/v2/reading-passages.json'
 ];
-const MIN_DATABASE_READING_PASSAGE_COUNT = 841;
+const READING_IELTS_CONTENT_PATHS = [
+  '_content/ielts-academic/cambridge-10/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-11/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-12/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-13/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-14/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-15/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-16/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-17/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-18/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-19/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-20/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-21/reading/v2/reading-passages.json',
+  '_content/ielts-academic/cambridge-21/reading/reading-passages.json'
+];
+const MIN_DATABASE_READING_PASSAGE_COUNT = 1103;
 let samplePassageCache = null;
 let passageDirectoryCache = null;
 let bundledPassageDirectory = null;
@@ -76,10 +96,13 @@ function normalizePassage(item) {
     difficultyLevel: item.difficultyLevel || 0,
     difficultyLabel: item.difficultyLabel || '',
     sourceType: item.sourceType || '',
+    contentRevision: Number(item.contentRevision || 0),
+    dataFormat: item.dataFormat || '',
     passage: item.passage || '',
     images: (Array.isArray(item.images) ? item.images : []).map(normalizeImage).filter((image) => image.src),
     translation: item.translation || item.fullTranslation || '',
     questions: (Array.isArray(item.questions) ? item.questions : []).map((question) => Object.assign({}, question, {
+      sourceImages: (Array.isArray(question.sourceImages) ? question.sourceImages : []).map(normalizeImage).filter((image) => image.src),
       optionImages: Object.fromEntries(Object.entries(question.optionImages || {}).map(([key, image]) => [key, normalizeImage(image)]).filter(([, image]) => image.src))
     })),
     answerSentences: Array.isArray(item.answerSentences) ? item.answerSentences : [],
@@ -136,7 +159,7 @@ async function loadPassages() {
   const cloudStoragePassages = [];
   try {
     const cloudContents = await Promise.all(
-      [READING_EM1_CONTENT_PATH, READING_CONTENT_PATH].concat(READING_SENIOR_CONTENT_PATHS).map(async (path) => {
+      [READING_EM1_CONTENT_PATH, READING_CONTENT_PATH].concat(READING_IELTS_CONTENT_PATHS, READING_SENIOR_CONTENT_PATHS).map(async (path) => {
         try {
           return await storageAdapter.downloadCloudJson(path);
         } catch (error) {
@@ -152,7 +175,12 @@ async function loadPassages() {
       }
     });
     if (cloudStoragePassages.length) {
-      const passages = cloudStoragePassages.map(normalizePassage).filter((item) => item._id && item.passage && hasUsableReadingQuestions(item));
+      const seen = new Set();
+      const passages = cloudStoragePassages.map(normalizePassage).filter((item) => {
+        if (!item._id || seen.has(item._id) || !(item.passage || item.images.length) || !hasUsableReadingQuestions(item)) return false;
+        seen.add(item._id);
+        return true;
+      });
       passageListCache = { savedAt: Date.now(), passages };
       return passages;
     }
@@ -161,7 +189,7 @@ async function loadPassages() {
   }
   const cloudPassages = await readCollection('readingPassages', 200);
   const list = cloudPassages.length ? cloudPassages : loadSamplePassages();
-  const passages = list.map(normalizePassage).filter((item) => item._id && item.passage && hasUsableReadingQuestions(item));
+  const passages = list.map(normalizePassage).filter((item) => item._id && (item.passage || item.images.length) && hasUsableReadingQuestions(item));
   passageListCache = { savedAt: Date.now(), passages };
   return passages;
 }
@@ -251,7 +279,7 @@ async function getDatabasePassageById(passageId) {
     const raw = result && result.data;
     const row = Array.isArray(raw) ? raw[0] : raw;
     const passage = row ? normalizePassage(row) : null;
-    return passage && passage._id && passage.passage && hasUsableReadingQuestions(passage) ? passage : null;
+    return passage && passage._id && (passage.passage || passage.images.length) && hasUsableReadingQuestions(passage) ? passage : null;
   } catch (error) {
     return null;
   }
@@ -337,6 +365,10 @@ async function pickPlannedPassage(ctx, passages, today) {
 }
 
 async function findPassageById(passageId, today) {
+  if (/^ielts-academic-(?:1[0-9]|20|21)-/i.test(String(passageId || ''))) {
+    const cloudPassage = (await loadPassages()).find((item) => item._id === passageId);
+    if (cloudPassage) return cloudPassage;
+  }
   const databasePassage = await getDatabasePassageById(passageId);
   if (databasePassage) {
     return databasePassage;
@@ -711,15 +743,28 @@ function parseJsonText(text) {
 }
 
 function normalizeExamType(value) {
-  if (value === '一模' || value === '二模' || value === '真题' || value === '春考' || value === '秋考') {
+  if (value === '一模' || value === '二模' || value === '真题' || value === '春考' || value === '秋考' || value === 'IELTS Academic') {
     return value;
   }
+  if (/^Cambridge IELTS (?:1[0-9]|20|21)$/.test(String(value || ''))) return String(value);
   return value && String(value).includes('真题') ? '真题' : String(value || '二模');
+}
+
+function isIeltsExamType(value) {
+  return value === 'IELTS Academic' || /^Cambridge IELTS (?:1[0-9]|20|21)$/.test(String(value || ''));
+}
+
+function ieltsBookNumber(value) {
+  if (value === 'IELTS Academic') return 21;
+  const match = String(value || '').match(/(\d+)$/);
+  return Number(match && match[1] || 0);
 }
 
 function buildCategoryTree(passages, latestByPassageId) {
   const completionReady = !!latestByPassageId;
-  const examTypes = ['一模', '二模', '春考', '秋考'];
+  const ieltsExamTypes = Array.from(new Set(passages.map((item) => normalizeExamType(item.examType)).filter(isIeltsExamType)))
+    .sort((left, right) => ieltsBookNumber(right) - ieltsBookNumber(left));
+  const examTypes = ['一模', '二模', '春考', '秋考'].concat(ieltsExamTypes);
   const groups = examTypes.map((examType) => {
     const districtMap = {};
     passages.forEach((passage) => {
@@ -727,9 +772,12 @@ function buildCategoryTree(passages, latestByPassageId) {
         return;
       }
       const isSeniorPaper = examType === '春考' || examType === '秋考';
+      const isIeltsPaper = isIeltsExamType(examType);
       const district = passage.district || '未分区';
-      const nodeKey = isSeniorPaper ? (passage.paperId || `${examType}-${passage.year}`) : district;
-      const nodeLabel = isSeniorPaper ? (passage.paperTitle || `${passage.year} 上海高考${examType}英语真题`) : district;
+      const nodeKey = (isSeniorPaper || isIeltsPaper) ? (passage.paperId || `${examType}-${passage.year}`) : district;
+      const nodeLabel = isIeltsPaper
+        ? (passage.paperTitle || district)
+        : (isSeniorPaper ? (passage.paperTitle || `${passage.year} 上海高考${examType}英语真题`) : district);
       if (!districtMap[nodeKey]) {
         districtMap[nodeKey] = {
           label: nodeLabel,
@@ -749,7 +797,7 @@ function buildCategoryTree(passages, latestByPassageId) {
       key: examType,
       label: examType,
       count: Object.values(districtMap).reduce((sum, item) => sum + item.count, 0),
-      nodeUnit: examType === '春考' || examType === '秋考' ? '份卷' : '',
+      nodeUnit: examType === '春考' || examType === '秋考' || isIeltsExamType(examType) ? '份卷' : '',
       districts: Object.keys(districtMap).sort((left, right) => String(districtMap[right].label).localeCompare(String(districtMap[left].label), 'zh-CN')).map((district) => ({
         key: district,
         label: districtMap[district].label,
@@ -1025,8 +1073,8 @@ function getReadingStudyModelConfig() {
   return {
     endpoint: process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '',
     apiKey: process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '',
-    model: 'gpt-5.5',
-    fallbackModel: 'deepseek-v4-pro'
+    model: process.env.READING_STUDY_MODEL || 'gpt-5.5',
+    fallbackModel: process.env.READING_STUDY_FALLBACK_MODEL || 'deepseek-v4-pro'
   };
 }
 

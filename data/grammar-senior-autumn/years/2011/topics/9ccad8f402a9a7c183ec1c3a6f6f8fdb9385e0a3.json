@@ -1,0 +1,34 @@
+{
+  "topicId": "sentence:tag-question",
+  "topic": "反意疑问句",
+  "questions": [
+    {
+      "_id": "sh-autumn-2011-grammar-q30",
+      "sourceSetId": "sh-autumn-2011-grammar",
+      "year": 2011,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2011年上海秋季高考英语真题及答案.doc",
+      "number": 30,
+      "prompt": "It doesn’t matter if they want to come to your party, _______?",
+      "options": {
+        "A": "doesn’t it",
+        "B": "does it",
+        "C": "don’t they",
+        "D": "do they"
+      },
+      "answer": "B",
+      "questionType": "grammar-choice",
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:tag-question",
+      "subtopic": "反意疑问句",
+      "topicId": "sentence:tag-question",
+      "topic": "反意疑问句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

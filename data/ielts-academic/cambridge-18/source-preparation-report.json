@@ -1,0 +1,280 @@
+{
+  "bookNumber": 18,
+  "year": 2023,
+  "sourcePdf": "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/真题4-18/剑18+音频/剑桥雅思真题18.pdf",
+  "textPdf": "/tmp/ielts-ocr/cambridge-18-ocr.pdf",
+  "audioRoot": "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频",
+  "tests": {
+    "1": {
+      "layout": {
+        "listening": [
+          12,
+          17
+        ],
+        "reading": [
+          18,
+          30
+        ],
+        "writing": [
+          31,
+          32
+        ],
+        "speaking": 33,
+        "transcript": [
+          101,
+          105
+        ],
+        "answers": [
+          121,
+          122
+        ]
+      },
+      "visualPages": [],
+      "audio": {
+        "localPath": "data/ielts-academic/cambridge-18/listening/audio/cambridge-ielts-18-test-1-4e645c6f34-64k-mono.mp3",
+        "cloudPath": "_content/ielts-academic/cambridge-18/listening/audio/cambridge-ielts-18-test-1-4e645c6f34-64k-mono.mp3",
+        "durationSec": 1757.92,
+        "sourceDurationSec": 1757.83,
+        "durationDiffSec": 0.088,
+        "size": 14063373,
+        "sources": [
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 1/Test 1 Part 1.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 1/Test 1 Part 2.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 1/Test 1 Part 3.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 1/Test 1 Part 4.mp3"
+        ],
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "32000",
+              "channels": 1,
+              "bit_rate": "64000"
+            }
+          ],
+          "format": {
+            "duration": "1757.916000",
+            "size": "14063373",
+            "bit_rate": "64000"
+          }
+        }
+      },
+      "writingVisual": {
+        "localPath": "data/ielts-academic/cambridge-18/writing/visuals-v3/test-1-task-1-visual-01ba8ecc47.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-18/writing/visuals-v3/test-1-task-1-visual-01ba8ecc47.jpg",
+        "alt": "Cambridge IELTS 18 Test 1 Writing Task 1 visual"
+      },
+      "speakingPage": {
+        "localPath": "data/ielts-academic/cambridge-18/speaking/source-pages-v1/test-1-speaking-aa50d937c3.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-18/speaking/source-pages-v1/test-1-speaking-aa50d937c3.jpg",
+        "alt": "Cambridge IELTS 18 Test 1 Speaking original page"
+      }
+    },
+    "2": {
+      "layout": {
+        "listening": [
+          34,
+          40
+        ],
+        "reading": [
+          41,
+          53
+        ],
+        "writing": [
+          54,
+          55
+        ],
+        "speaking": 56,
+        "transcript": [
+          106,
+          110
+        ],
+        "answers": [
+          123,
+          124
+        ]
+      },
+      "visualPages": [
+        37
+      ],
+      "audio": {
+        "localPath": "data/ielts-academic/cambridge-18/listening/audio/cambridge-ielts-18-test-2-908a258aae-64k-mono.mp3",
+        "cloudPath": "_content/ielts-academic/cambridge-18/listening/audio/cambridge-ielts-18-test-2-908a258aae-64k-mono.mp3",
+        "durationSec": 1760.04,
+        "sourceDurationSec": 1759.94,
+        "durationDiffSec": 0.096,
+        "size": 14080365,
+        "sources": [
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 2/Test 2 Part 1.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 2/Test 2 Part 2.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 2/Test 2 Part 3.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 2/Test 2 Part 4.mp3"
+        ],
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "32000",
+              "channels": 1,
+              "bit_rate": "64000"
+            }
+          ],
+          "format": {
+            "duration": "1760.040000",
+            "size": "14080365",
+            "bit_rate": "64000"
+          }
+        }
+      },
+      "writingVisual": {
+        "localPath": "data/ielts-academic/cambridge-18/writing/visuals-v3/test-2-task-1-visual-76158cc076.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-18/writing/visuals-v3/test-2-task-1-visual-76158cc076.jpg",
+        "alt": "Cambridge IELTS 18 Test 2 Writing Task 1 visual"
+      },
+      "speakingPage": {
+        "localPath": "data/ielts-academic/cambridge-18/speaking/source-pages-v1/test-2-speaking-1e6d3a2dc6.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-18/speaking/source-pages-v1/test-2-speaking-1e6d3a2dc6.jpg",
+        "alt": "Cambridge IELTS 18 Test 2 Speaking original page"
+      }
+    },
+    "3": {
+      "layout": {
+        "listening": [
+          57,
+          62
+        ],
+        "reading": [
+          63,
+          76
+        ],
+        "writing": [
+          77,
+          78
+        ],
+        "speaking": 79,
+        "transcript": [
+          111,
+          115
+        ],
+        "answers": [
+          125,
+          126
+        ]
+      },
+      "visualPages": [],
+      "audio": {
+        "localPath": "data/ielts-academic/cambridge-18/listening/audio/cambridge-ielts-18-test-3-74d8efa1b6-64k-mono.mp3",
+        "cloudPath": "_content/ielts-academic/cambridge-18/listening/audio/cambridge-ielts-18-test-3-74d8efa1b6-64k-mono.mp3",
+        "durationSec": 1752.98,
+        "sourceDurationSec": 1752.89,
+        "durationDiffSec": 0.093,
+        "size": 14023917,
+        "sources": [
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 3/Test 3 Part 1.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 3/Test 3 Part 2.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 3/Test 3 Part 3.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 3/Test 3 Part 4.mp3"
+        ],
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "32000",
+              "channels": 1,
+              "bit_rate": "64000"
+            }
+          ],
+          "format": {
+            "duration": "1752.984000",
+            "size": "14023917",
+            "bit_rate": "64000"
+          }
+        }
+      },
+      "writingVisual": {
+        "localPath": "data/ielts-academic/cambridge-18/writing/visuals-v3/test-3-task-1-visual-07f6339add.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-18/writing/visuals-v3/test-3-task-1-visual-07f6339add.jpg",
+        "alt": "Cambridge IELTS 18 Test 3 Writing Task 1 visual"
+      },
+      "speakingPage": {
+        "localPath": "data/ielts-academic/cambridge-18/speaking/source-pages-v1/test-3-speaking-1cfdf94a11.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-18/speaking/source-pages-v1/test-3-speaking-1cfdf94a11.jpg",
+        "alt": "Cambridge IELTS 18 Test 3 Speaking original page"
+      }
+    },
+    "4": {
+      "layout": {
+        "listening": [
+          80,
+          85
+        ],
+        "reading": [
+          86,
+          97
+        ],
+        "writing": [
+          98,
+          99
+        ],
+        "speaking": 100,
+        "transcript": [
+          116,
+          120
+        ],
+        "answers": [
+          127,
+          128
+        ]
+      },
+      "visualPages": [],
+      "audio": {
+        "localPath": "data/ielts-academic/cambridge-18/listening/audio/cambridge-ielts-18-test-4-7f7610c89d-64k-mono.mp3",
+        "cloudPath": "_content/ielts-academic/cambridge-18/listening/audio/cambridge-ielts-18-test-4-7f7610c89d-64k-mono.mp3",
+        "durationSec": 1794.56,
+        "sourceDurationSec": 1794.48,
+        "durationDiffSec": 0.087,
+        "size": 14356557,
+        "sources": [
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 4/Test 4 Part 1.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 4/Test 4 Part 2.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 4/Test 4 Part 3.mp3",
+          "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑雅听力音频/18音频/Test 4/Test 4 Part 4.mp3"
+        ],
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "32000",
+              "channels": 1,
+              "bit_rate": "64000"
+            }
+          ],
+          "format": {
+            "duration": "1794.564000",
+            "size": "14356557",
+            "bit_rate": "64000"
+          }
+        }
+      },
+      "writingVisual": {
+        "localPath": "data/ielts-academic/cambridge-18/writing/visuals-v3/test-4-task-1-visual-344820306c.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-18/writing/visuals-v3/test-4-task-1-visual-344820306c.jpg",
+        "alt": "Cambridge IELTS 18 Test 4 Writing Task 1 visual"
+      },
+      "speakingPage": {
+        "localPath": "data/ielts-academic/cambridge-18/speaking/source-pages-v1/test-4-speaking-ee780ecc06.jpg",
+        "cloudPath": "_content/ielts-academic/cambridge-18/speaking/source-pages-v1/test-4-speaking-ee780ecc06.jpg",
+        "alt": "Cambridge IELTS 18 Test 4 Speaking original page"
+      }
+    }
+  },
+  "errors": []
+}

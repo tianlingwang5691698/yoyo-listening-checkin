@@ -1,0 +1,65 @@
+{
+  "_id": "ielts-academic-15-test-3-writing-task-1",
+  "id": "ielts-academic-15-test-3-writing-task-1",
+  "title": "Cambridge IELTS 15 Test 3 Writing Task 1",
+  "year": 2020,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-15-test-3",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑15真题.pdf",
+  "book": "Cambridge IELTS 15 Academic",
+  "bookNumber": 15,
+  "testNumber": 3,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The diagram below shows how instant noodles are manufactured.",
+  "scenario": "The diagram shows the manufacturing process for instant noodles.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "process diagram",
+    "title": "Manufacturing instant noodles",
+    "labels": [
+      "1 Storage silos",
+      "FLOUR",
+      "2 Mixer",
+      "Water + oil",
+      "Rollers",
+      "3 Dough sheets",
+      "4 Dough strips",
+      "5 Noodles discs",
+      "6 Cooking (oil) + drying",
+      "Cups",
+      "7 Vegetables + spices",
+      "8 Labelling + sealing",
+      "Labels"
+    ],
+    "units": "",
+    "notes": [
+      "Flour is stored in silos and sent to a mixer, where water and oil are added.",
+      "The dough passes through rollers to form dough sheets, which are cut into dough strips and shaped into noodle discs.",
+      "The noodle discs are cooked in oil and dried, then placed into cups.",
+      "Vegetables and spices are added before the cups are labelled and sealed."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-15/writing/visuals-v3/test-3-task-1-visual-7c4b286d86.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-15/writing/visuals-v3/test-3-task-1-visual-7c4b286d86.jpg",
+      "alt": "Cambridge IELTS 15 Test 3 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

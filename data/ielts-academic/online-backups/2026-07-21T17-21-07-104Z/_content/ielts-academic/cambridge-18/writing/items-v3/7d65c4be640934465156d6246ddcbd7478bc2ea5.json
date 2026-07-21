@@ -1,0 +1,81 @@
+{
+  "_id": "ielts-academic-18-test-4-writing-task-1",
+  "id": "ielts-academic-18-test-4-writing-task-1",
+  "title": "Cambridge IELTS 18 Test 4 Writing Task 1",
+  "year": 2023,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-18-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思真题18.pdf",
+  "book": "Cambridge IELTS 18 Academic",
+  "bookNumber": 18,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The graph below shows the average monthly change in the prices of three metals during 2014.",
+  "scenario": "The graph below shows the average monthly change in the prices of three metals during 2014.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "line graph",
+    "title": "Average monthly change in prices of copper, nickel and zinc (2014)",
+    "labels": [
+      "Month",
+      "J",
+      "F",
+      "M",
+      "A",
+      "M",
+      "J",
+      "J",
+      "A",
+      "S",
+      "O",
+      "N",
+      "D",
+      "% change in price compared with previous month",
+      "-4",
+      "-3",
+      "-2",
+      "-1",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "Copper",
+      "Nickel",
+      "Zinc",
+      "2014"
+    ],
+    "units": "% change in price compared with previous month",
+    "notes": [
+      "The horizontal axis shows the months from January to December.",
+      "The vertical axis ranges from -4 to 7.",
+      "The legend identifies Copper, Nickel and Zinc."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-18/writing/visuals-v3/test-4-task-1-visual-344820306c.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-18/writing/visuals-v3/test-4-task-1-visual-344820306c.jpg",
+      "alt": "Cambridge IELTS 18 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

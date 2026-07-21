@@ -1,0 +1,136 @@
+{
+  "sourcePdf": "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/剑桥雅思21（A类）.pdf",
+  "sourceAudioRoot": "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频",
+  "listeningTests": 4,
+  "listeningQuestions": 160,
+  "readingPassages": 12,
+  "readingQuestions": 160,
+  "writingTasks": 8,
+  "speakingTests": 4,
+  "speakingExercises": 44,
+  "audio": {
+    "1": {
+      "localPath": "data/ielts-academic/cambridge-21/listening/audio/cambridge-ielts-21-test-1-67f3d6e5a6-64k-mono.mp3",
+      "cloudPath": "_content/ielts-academic/cambridge-21/listening/audio/cambridge-ielts-21-test-1-67f3d6e5a6-64k-mono.mp3",
+      "durationSec": 1874.81,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "32000",
+            "channels": 1,
+            "bit_rate": "64000"
+          }
+        ],
+        "format": {
+          "duration": "1874.808000",
+          "size": "14998509",
+          "bit_rate": "64000"
+        }
+      },
+      "sources": [
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T1P1.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T1P1.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T1P2.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T1P2.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T1P3.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T1P3.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T1P4.mp3"
+      ]
+    },
+    "2": {
+      "localPath": "data/ielts-academic/cambridge-21/listening/audio/cambridge-ielts-21-test-2-5eaffd8246-64k-mono.mp3",
+      "cloudPath": "_content/ielts-academic/cambridge-21/listening/audio/cambridge-ielts-21-test-2-5eaffd8246-64k-mono.mp3",
+      "durationSec": 1776.24,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "32000",
+            "channels": 1,
+            "bit_rate": "64000"
+          }
+        ],
+        "format": {
+          "duration": "1776.240000",
+          "size": "14209965",
+          "bit_rate": "64000"
+        }
+      },
+      "sources": [
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T2P1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T2P2.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T2P2.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T2P3.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T2P3.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T2P4.mp3"
+      ]
+    },
+    "3": {
+      "localPath": "data/ielts-academic/cambridge-21/listening/audio/cambridge-ielts-21-test-3-f98d9ee543-64k-mono.mp3",
+      "cloudPath": "_content/ielts-academic/cambridge-21/listening/audio/cambridge-ielts-21-test-3-f98d9ee543-64k-mono.mp3",
+      "durationSec": 1796.26,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "32000",
+            "channels": 1,
+            "bit_rate": "64000"
+          }
+        ],
+        "format": {
+          "duration": "1796.256000",
+          "size": "14370093",
+          "bit_rate": "64000"
+        }
+      },
+      "sources": [
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T3P1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T3P2.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T3P2.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T3P3.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T3P3.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T1/C21T3P4.mp3"
+      ]
+    },
+    "4": {
+      "localPath": "data/ielts-academic/cambridge-21/listening/audio/cambridge-ielts-21-test-4-e3b3f64669-64k-mono.mp3",
+      "cloudPath": "_content/ielts-academic/cambridge-21/listening/audio/cambridge-ielts-21-test-4-e3b3f64669-64k-mono.mp3",
+      "durationSec": 1694.34,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "32000",
+            "channels": 1,
+            "bit_rate": "64000"
+          }
+        ],
+        "format": {
+          "duration": "1694.340000",
+          "size": "13554765",
+          "bit_rate": "64000"
+        }
+      },
+      "sources": [
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T4/C21T4P1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T4/C21T4P2.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T4/C21T4P2.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T4/C21T4P3.1.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T4/C21T4P3.2.mp3",
+        "/Users/wangtianlong/工作/01_教学与备考/备考/雅思总类/核心资料库/雅思真题/雅思A类全套4-21/C21音频/C21T4/C21T4P4.mp3"
+      ]
+    }
+  },
+  "sampleWritingAnswersImported": false,
+  "errors": []
+}

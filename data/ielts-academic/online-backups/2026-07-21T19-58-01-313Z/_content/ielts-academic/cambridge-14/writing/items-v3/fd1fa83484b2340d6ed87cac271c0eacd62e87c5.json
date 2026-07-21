@@ -1,0 +1,58 @@
+{
+  "_id": "ielts-academic-14-test-1-writing-task-1",
+  "id": "ielts-academic-14-test-1-writing-task-1",
+  "title": "Cambridge IELTS 14 Test 1 Writing Task 1",
+  "year": 2019,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-14-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑14真题.pdf",
+  "book": "Cambridge IELTS 14 Academic",
+  "bookNumber": 14,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The charts below show the average percentages in typical meals of three types of nutrients, all of which may be unhealthy if eaten too much.",
+  "scenario": "Three pie charts compare the average percentages of sodium, saturated fat and added sugar in breakfast, lunch, dinner and snacks consumed in the USA.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Three pie charts",
+    "title": "Average percentages of sodium, saturated fats and added sugars in typical meals consumed in the USA",
+    "labels": [
+      "Sodium",
+      "Saturated fat",
+      "Added sugar",
+      "Breakfast",
+      "Lunch",
+      "Dinner",
+      "Snacks"
+    ],
+    "units": "percentages (%)",
+    "notes": [
+      "Sodium: Breakfast 14%, Lunch 29%, Dinner 43%, Snacks 14%.",
+      "Saturated fat: Breakfast 16%, Lunch 26%, Dinner 37%, Snacks 21%.",
+      "Added sugar: Breakfast 16%, Lunch 19%, Dinner 23%, Snacks 42%."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-14/writing/visuals-v3/test-1-task-1-visual-3438144766.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-14/writing/visuals-v3/test-1-task-1-visual-3438144766.jpg",
+      "alt": "Cambridge IELTS 14 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

@@ -1,0 +1,71 @@
+{
+  "_id": "ielts-academic-13-test-1-writing-task-1",
+  "id": "ielts-academic-13-test-1-writing-task-1",
+  "title": "Cambridge IELTS 13 Test 1 Writing Task 1",
+  "year": 2018,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-13-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑13真题.pdf",
+  "book": "Cambridge IELTS 13 Academic",
+  "bookNumber": 13,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The two maps below show road access to a city hospital in 2007 and in 2010.",
+  "scenario": "The maps compare road access to a city hospital in 2007 and in 2010.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "two maps",
+    "title": "City Hospital",
+    "labels": [
+      "City Hospital 2007",
+      "City Hospital 2010",
+      "Ring Road",
+      "CITY HOSPITAL",
+      "Hospital Rd",
+      "City Road",
+      "Car park: staff and public",
+      "Bus stop",
+      "Bus station",
+      "Staff car park",
+      "Public car park",
+      "roundabout",
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "units": "",
+    "notes": [
+      "The 2007 map shows the City Hospital enclosed by Ring Road. Hospital Rd runs south from Ring Road to City Road.",
+      "In 2007, six bus stops are shown along Hospital Rd, with three on each side.",
+      "In 2007, a combined staff and public car park is east of Hospital Rd, between Ring Road and City Road.",
+      "The 2010 map shows roundabouts at the junction of Hospital Rd and Ring Road and at the junction of Hospital Rd and City Road.",
+      "In 2010, a bus station is west of Hospital Rd and is connected to both roundabouts.",
+      "In 2010, the staff car park is east of Hospital Rd and south of Ring Road.",
+      "In 2010, the public car park is east of Ring Road, with access from Ring Road."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-13/writing/visuals-v3/test-1-task-1-visual-058b228c1f.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-13/writing/visuals-v3/test-1-task-1-visual-058b228c1f.jpg",
+      "alt": "Cambridge IELTS 13 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

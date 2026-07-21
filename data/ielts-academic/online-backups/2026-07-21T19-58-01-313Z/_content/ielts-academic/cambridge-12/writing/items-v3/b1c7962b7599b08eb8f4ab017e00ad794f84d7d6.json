@@ -1,0 +1,64 @@
+{
+  "_id": "ielts-academic-12-test-6-writing-task-1",
+  "id": "ielts-academic-12-test-6-writing-task-1",
+  "title": "Cambridge IELTS 12 Test 6 Writing Task 1",
+  "year": 2017,
+  "city": "Cambridge",
+  "district": "Test 6",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-12-test-6",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑12真题.pdf",
+  "book": "Cambridge IELTS 12 Academic",
+  "bookNumber": 12,
+  "testNumber": 6,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The maps below show the centre of a small town called Islip as it is now, and plans for its development.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "maps",
+    "title": "Islip town centre now; Islip town centre: planned development",
+    "labels": [
+      "Countryside",
+      "Shops",
+      "Main road",
+      "Housing",
+      "Park",
+      "School",
+      "Bus station",
+      "Shopping centre",
+      "Car park",
+      "New housing",
+      "Pedestrians only",
+      "Dual carriageway",
+      "N",
+      "W",
+      "E",
+      "S"
+    ],
+    "units": "",
+    "notes": [
+      "The maps show the present layout and planned development of the centre of Islip."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-12/writing/visuals-v3/test-6-task-1-visual-952502e6ec.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-12/writing/visuals-v3/test-6-task-1-visual-952502e6ec.jpg",
+      "alt": "Cambridge IELTS 12 Test 6 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

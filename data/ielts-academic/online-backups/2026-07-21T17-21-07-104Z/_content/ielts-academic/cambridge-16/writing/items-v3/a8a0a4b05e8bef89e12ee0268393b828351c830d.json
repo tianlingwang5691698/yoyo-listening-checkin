@@ -1,0 +1,78 @@
+{
+  "_id": "ielts-academic-16-test-1-writing-task-1",
+  "id": "ielts-academic-16-test-1-writing-task-1",
+  "title": "Cambridge IELTS 16 Test 1 Writing Task 1",
+  "year": 2021,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-16-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑16真题.pdf",
+  "book": "Cambridge IELTS 16 Academic",
+  "bookNumber": 16,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The charts below show the changes in ownership of electrical appliances and amount of time spent doing housework in households in one country between 1920 and 2019.",
+  "scenario": "The charts compare the percentage of households with a washing machine, refrigerator and vacuum cleaner, and the number of hours of housework per week per household, between 1920 and 2019.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Two line charts",
+    "title": "Percentage of households with electrical appliances (1920–2019); Number of hours of housework* per week, per household (1920–2019)",
+    "labels": [
+      "Percentage of households",
+      "Number of hours per week",
+      "Year",
+      "1920",
+      "1940",
+      "1960",
+      "1980",
+      "2000",
+      "2019",
+      "0",
+      "10",
+      "20",
+      "30",
+      "40",
+      "50",
+      "60",
+      "70",
+      "80",
+      "90",
+      "100",
+      "Washing machine",
+      "Refrigerator",
+      "Vacuum cleaner",
+      "Hours per week"
+    ],
+    "units": "Percentage of households; number of hours per week per household",
+    "notes": [
+      "Electrical-appliance ownership values shown for 1920, 1940, 1960, 1980, 2000 and 2019.",
+      "Washing machine: 40%, 60%, 70%, 65%, 70%, 75%.",
+      "Refrigerator: 0%, 55%, 90%, 100%, 100%, 100%.",
+      "Vacuum cleaner: 30%, 50%, 70%, 90%, 100%, 100%.",
+      "Hours of housework per week per household: 50, 35, 20, 15, 15, 10.",
+      "*housework = washing clothes, preparing meals, cleaning"
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-16/writing/visuals-v3/test-1-task-1-visual-57e364ce95.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-16/writing/visuals-v3/test-1-task-1-visual-57e364ce95.jpg",
+      "alt": "Cambridge IELTS 16 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

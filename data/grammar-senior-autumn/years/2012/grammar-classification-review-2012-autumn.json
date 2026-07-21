@@ -1,0 +1,138 @@
+{
+  "examId": "autumn",
+  "year": 2012,
+  "model": "gpt-5.6-sol",
+  "reviewedAt": "2026-07-21",
+  "classificationRevision": 2,
+  "rule": "Classify by the correct answer and the single primary tested grammar point; distractor keywords must not determine the topic.",
+  "questions": [
+    {
+      "number": 25,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:preposition",
+      "subtopic": "介词",
+      "rationale": "正确答案without表示“没有”，在句中作介词引出缺少激情的条件。"
+    },
+    {
+      "number": 26,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "rationale": "正确答案are taught使用一般现在时的被动语态，表示从小受到的教育。"
+    },
+    {
+      "number": 27,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "正确答案to go构成不定式短语，作allow的宾语补足语。"
+    },
+    {
+      "number": 28,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:modal",
+      "subtopic": "情态动词",
+      "rationale": "正确答案mustn't表示法律规定的禁止，符合句意。"
+    },
+    {
+      "number": 29,
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:inversion",
+      "subtopic": "倒装句",
+      "rationale": "正确答案did she manage体现“Only加状语”置于句首时的部分倒装。"
+    },
+    {
+      "number": 30,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:tense-voice",
+      "subtopic": "时态语态",
+      "rationale": "正确答案will have saved使用将来完成时，表示到将来某时已经完成的动作。"
+    },
+    {
+      "number": 31,
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:pronoun",
+      "subtopic": "代词",
+      "rationale": "正确答案each指代两只手套中的一只，表示逐个概念。"
+    },
+    {
+      "number": 32,
+      "categoryId": "logic",
+      "category": "连词逻辑类",
+      "subtopicId": "logic:clause-link",
+      "subtopic": "从属连词",
+      "rationale": "正确答案unless是表示“除非”的条件从属连词，符合句中的否定条件关系。"
+    },
+    {
+      "number": 33,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "正确答案thinking of使用动名词形式，作have trouble的宾语。"
+    },
+    {
+      "number": 34,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:noun",
+      "subtopic": "名词性从句",
+      "rationale": "正确答案that引导同位语从句，具体说明idea的内容。"
+    },
+    {
+      "number": 35,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:relative",
+      "subtopic": "定语从句",
+      "rationale": "正确答案whom在定语从句中作介词from的宾语，指代人。"
+    },
+    {
+      "number": 36,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "正确答案founded是过去分词短语，作club的后置定语。"
+    },
+    {
+      "number": 37,
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:emphasis",
+      "subtopic": "强调句",
+      "rationale": "正确答案that与It was构成强调句型，强调方式状语by cutting down staff。"
+    },
+    {
+      "number": 38,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:noun",
+      "subtopic": "名词性从句",
+      "rationale": "正确答案what引导主语从句，并在从句中作looking for的宾语。"
+    },
+    {
+      "number": 39,
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:nonfinite",
+      "subtopic": "非谓语",
+      "rationale": "正确答案involving是现在分词短语，作concept的后置定语。"
+    },
+    {
+      "number": 40,
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:adverbial",
+      "subtopic": "状语从句",
+      "rationale": "正确答案whenever引导时间状语从句，表示每当去新地方时。"
+    }
+  ]
+}

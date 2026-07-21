@@ -1,0 +1,64 @@
+{
+  "_id": "ielts-academic-12-test-8-writing-task-1",
+  "id": "ielts-academic-12-test-8-writing-task-1",
+  "title": "Cambridge IELTS 12 Test 8 Writing Task 1",
+  "year": 2017,
+  "city": "Cambridge",
+  "district": "Test 8",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-12-test-8",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑12真题.pdf",
+  "book": "Cambridge IELTS 12 Academic",
+  "bookNumber": 12,
+  "testNumber": 8,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The diagram below shows how geothermal energy is used to produce electricity.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "process diagram",
+    "title": "Geothermal power plant",
+    "labels": [
+      "Cold water",
+      "4.5 km",
+      "The injection well",
+      "Cold water pumped down",
+      "Geothermal zone (hot rocks)",
+      "The production well",
+      "Hot water pumped up",
+      "Condenser",
+      "Steam",
+      "Turbine",
+      "Generator",
+      "powered by steam",
+      "powered by turbine and produces electricity"
+    ],
+    "units": "km",
+    "notes": [
+      "Cold water is pumped down through the injection well.",
+      "Hot water is pumped up through the production well.",
+      "Steam powers the turbine.",
+      "The turbine powers the generator, which produces electricity."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-12/writing/visuals-v3/test-8-task-1-visual-6f95392087.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-12/writing/visuals-v3/test-8-task-1-visual-6f95392087.jpg",
+      "alt": "Cambridge IELTS 12 Test 8 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

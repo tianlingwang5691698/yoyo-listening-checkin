@@ -1,0 +1,80 @@
+{
+  "_id": "ielts-academic-11-test-1-writing-task-1",
+  "id": "ielts-academic-11-test-1-writing-task-1",
+  "title": "Cambridge IELTS 11 Test 1 Writing Task 1",
+  "year": 2016,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-11-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑11真题.pdf",
+  "book": "Cambridge IELTS 11 Academic",
+  "bookNumber": 11,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The charts below show the percentage of water used for different purposes in six areas of the world.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "six pie charts",
+    "title": "Percentage of water used for different purposes in six areas of the world",
+    "labels": [
+      "NORTH AMERICA",
+      "SOUTH AMERICA",
+      "EUROPE",
+      "AFRICA",
+      "CENTRAL ASIA",
+      "SOUTH EAST ASIA",
+      "Industrial use",
+      "Agricultural use",
+      "Domestic use",
+      "39%",
+      "13%",
+      "48%",
+      "71%",
+      "19%",
+      "10%",
+      "32%",
+      "15%",
+      "53%",
+      "84%",
+      "9%",
+      "7%",
+      "88%",
+      "7%",
+      "5%",
+      "81%",
+      "7%",
+      "12%"
+    ],
+    "units": "%",
+    "notes": [
+      "NORTH AMERICA: Industrial use 48%, Agricultural use 39%, Domestic use 13%.",
+      "SOUTH AMERICA: Industrial use 10%, Agricultural use 71%, Domestic use 19%.",
+      "EUROPE: Industrial use 53%, Agricultural use 32%, Domestic use 15%.",
+      "AFRICA: Industrial use 7%, Agricultural use 84%, Domestic use 9%.",
+      "CENTRAL ASIA: Industrial use 5%, Agricultural use 88%, Domestic use 7%.",
+      "SOUTH EAST ASIA: Industrial use 12%, Agricultural use 81%, Domestic use 7%."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-11/writing/visuals-v3/test-1-task-1-visual-2147275042.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-11/writing/visuals-v3/test-1-task-1-visual-2147275042.jpg",
+      "alt": "Cambridge IELTS 11 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

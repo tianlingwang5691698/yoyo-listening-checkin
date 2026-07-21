@@ -1,0 +1,162 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-21T20:01:52.090Z",
+  "counts": {
+    "writing": 96,
+    "listening": 48,
+    "speaking": 48,
+    "reading": 144
+  },
+  "timings": {
+    "materialCold": 477,
+    "materialWarm": 245,
+    "readingCold": 281,
+    "readingWarm": 234
+  },
+  "samples": [
+    {
+      "book": 21,
+      "writingId": "ielts-academic-21-test-1-writing-task-1",
+      "listeningId": "ielts-academic-21-test-1-listening",
+      "speakingId": "ielts-academic-21-test-1-speaking",
+      "readingId": "ielts-academic-21-test-4-reading-passage-1",
+      "durationSec": 1874.81,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 232
+    },
+    {
+      "book": 20,
+      "writingId": "ielts-academic-20-test-1-writing-task-1",
+      "listeningId": "ielts-academic-20-test-1-listening",
+      "speakingId": "ielts-academic-20-test-1-speaking",
+      "readingId": "ielts-academic-20-test-4-reading-passage-1",
+      "durationSec": 1947.85,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 884
+    },
+    {
+      "book": 19,
+      "writingId": "ielts-academic-19-test-1-writing-task-1",
+      "listeningId": "ielts-academic-19-test-1-listening",
+      "speakingId": "ielts-academic-19-test-1-speaking",
+      "readingId": "ielts-academic-19-test-4-reading-passage-1",
+      "durationSec": 1744.92,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 769
+    },
+    {
+      "book": 18,
+      "writingId": "ielts-academic-18-test-1-writing-task-1",
+      "listeningId": "ielts-academic-18-test-1-listening",
+      "speakingId": "ielts-academic-18-test-1-speaking",
+      "readingId": "ielts-academic-18-test-4-reading-passage-1",
+      "durationSec": 1757.92,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 880
+    },
+    {
+      "book": 17,
+      "writingId": "ielts-academic-17-test-1-writing-task-1",
+      "listeningId": "ielts-academic-17-test-1-listening",
+      "speakingId": "ielts-academic-17-test-1-speaking",
+      "readingId": "ielts-academic-17-test-4-reading-passage-1",
+      "durationSec": 1728.61,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 869
+    },
+    {
+      "book": 16,
+      "writingId": "ielts-academic-16-test-1-writing-task-1",
+      "listeningId": "ielts-academic-16-test-1-listening",
+      "speakingId": "ielts-academic-16-test-1-speaking",
+      "readingId": "ielts-academic-16-test-4-reading-passage-1",
+      "durationSec": 1747.37,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 690
+    },
+    {
+      "book": 15,
+      "writingId": "ielts-academic-15-test-1-writing-task-1",
+      "listeningId": "ielts-academic-15-test-1-listening",
+      "speakingId": "ielts-academic-15-test-1-speaking",
+      "readingId": "ielts-academic-15-test-4-reading-passage-1",
+      "durationSec": 1857.64,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 961
+    },
+    {
+      "book": 14,
+      "writingId": "ielts-academic-14-test-1-writing-task-1",
+      "listeningId": "ielts-academic-14-test-1-listening",
+      "speakingId": "ielts-academic-14-test-1-speaking",
+      "readingId": "ielts-academic-14-test-4-reading-passage-1",
+      "durationSec": 1838.74,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 837
+    },
+    {
+      "book": 13,
+      "writingId": "ielts-academic-13-test-1-writing-task-1",
+      "listeningId": "ielts-academic-13-test-1-listening",
+      "speakingId": "ielts-academic-13-test-1-speaking",
+      "readingId": "ielts-academic-13-test-4-reading-passage-1",
+      "durationSec": 1702.26,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 1183
+    },
+    {
+      "book": 12,
+      "writingId": "ielts-academic-12-test-5-writing-task-1",
+      "listeningId": "ielts-academic-12-test-5-listening",
+      "speakingId": "ielts-academic-12-test-5-speaking",
+      "readingId": "ielts-academic-12-test-8-reading-passage-1",
+      "durationSec": 1834.74,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 819
+    },
+    {
+      "book": 11,
+      "writingId": "ielts-academic-11-test-1-writing-task-1",
+      "listeningId": "ielts-academic-11-test-1-listening",
+      "speakingId": "ielts-academic-11-test-1-speaking",
+      "readingId": "ielts-academic-11-test-4-reading-passage-1",
+      "durationSec": 1980.04,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 1088
+    },
+    {
+      "book": 10,
+      "writingId": "ielts-academic-10-test-1-writing-task-1",
+      "listeningId": "ielts-academic-10-test-1-listening",
+      "speakingId": "ielts-academic-10-test-1-speaking",
+      "readingId": "ielts-academic-10-test-4-reading-passage-1",
+      "durationSec": 1626.19,
+      "audioStatus": 200,
+      "imageStatus": 200,
+      "tempReady": true,
+      "detailWallMs": 924
+    }
+  ]
+}

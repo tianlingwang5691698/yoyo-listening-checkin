@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-21T14:02:44.562Z",
+  "listening": {
+    "shellMs": 4999,
+    "indexReadyMs": 15,
+    "rounds": [
+      {
+        "test": 1,
+        "round": 1,
+        "shellMs": 4011,
+        "detailReadyMs": 201,
+        "clickToPlayMs": 12
+      },
+      {
+        "test": 1,
+        "round": 2,
+        "shellMs": 3987,
+        "detailReadyMs": 10,
+        "clickToPlayMs": 25
+      },
+      {
+        "test": 1,
+        "round": 3,
+        "shellMs": 3965,
+        "detailReadyMs": 11,
+        "clickToPlayMs": 23
+      },
+      {
+        "test": 2,
+        "round": 1,
+        "shellMs": 3971,
+        "detailReadyMs": 9,
+        "clickToPlayMs": 21
+      },
+      {
+        "test": 2,
+        "round": 2,
+        "shellMs": 4067,
+        "detailReadyMs": 7,
+        "clickToPlayMs": 21
+      },
+      {
+        "test": 2,
+        "round": 3,
+        "shellMs": 4006,
+        "detailReadyMs": 9,
+        "clickToPlayMs": 23
+      },
+      {
+        "test": 3,
+        "round": 1,
+        "shellMs": 3932,
+        "detailReadyMs": 2043,
+        "clickToPlayMs": 11
+      },
+      {
+        "test": 3,
+        "round": 2,
+        "shellMs": 4022,
+        "detailReadyMs": 8,
+        "clickToPlayMs": 21
+      },
+      {
+        "test": 3,
+        "round": 3,
+        "shellMs": 4005,
+        "detailReadyMs": 11,
+        "clickToPlayMs": 24
+      },
+      {
+        "test": 4,
+        "round": 1,
+        "shellMs": 3968,
+        "detailReadyMs": 80,
+        "clickToPlayMs": 14
+      },
+      {
+        "test": 4,
+        "round": 2,
+        "shellMs": 3978,
+        "detailReadyMs": 11,
+        "clickToPlayMs": 22
+      },
+      {
+        "test": 4,
+        "round": 3,
+        "shellMs": 4008,
+        "detailReadyMs": 69,
+        "clickToPlayMs": 34
+      }
+    ],
+    "testMeta": [
+      {
+        "test": 1,
+        "durationText": "31:15",
+        "transcript": true
+      },
+      {
+        "test": 2,
+        "durationText": "29:36",
+        "transcript": true
+      },
+      {
+        "test": 3,
+        "durationText": "29:56",
+        "transcript": true
+      },
+      {
+        "test": 4,
+        "durationText": "28:14",
+        "transcript": true
+      }
+    ]
+  },
+  "writing": {
+    "shellMs": 4050,
+    "indexReadyMs": 16,
+    "detailReadyMs": 5,
+    "screenshot": "/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/output/ielts-academic-21/writing-test-2-task-1-hd.png",
+    "previewInvoked": true
+  },
+  "reading": {
+    "shellMs": 8085,
+    "indexReadyMs": 36,
+    "detailReadyMs": 17,
+    "screenshot": "/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/output/ielts-academic-21/reading-test-1-passage-1.png"
+  },
+  "speaking": {
+    "shellMs": 7981,
+    "indexReadyMs": 9,
+    "detailReadyMs": 11,
+    "screenshot": "/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/output/ielts-academic-21/speaking-test-1.png"
+  },
+  "threshold": {
+    "clickToPlayMs": 500
+  },
+  "exceptions": [],
+  "maxClickToPlayMs": 34
+}

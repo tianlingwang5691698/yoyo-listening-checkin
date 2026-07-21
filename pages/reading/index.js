@@ -5,28 +5,35 @@ const i18n = require('../../utils/i18n');
 
 const text = (key, fallback) => i18n.getPageText('reading', key, undefined, fallback);
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
-const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV6';
-const READING_DIRECTORY_VERSION = 'senior-2026-v3';
+const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV9';
+const READING_DIRECTORY_VERSION = 'ielts-academic-10-21-v1';
 const READING_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const HIDDEN_READING_EXAM_TYPES = new Set(['真题']);
 const READING_STAGE_EXAM_TYPES = {
   junior: ['一模', '二模'],
-  senior: ['春考', '秋考']
+  senior: ['春考', '秋考'],
+  ielts: ['IELTS Academic']
 };
+
+function isIeltsExamType(value) {
+  return value === 'IELTS Academic' || /^Cambridge IELTS (?:1[0-9]|20|21)$/.test(String(value || ''));
+}
 
 function filterVisibleCategoryTree(categoryTree) {
   return (Array.isArray(categoryTree) ? categoryTree : []).map((root) => {
     const groups = (Array.isArray(root.groups) ? root.groups : [])
       .filter((group) => !HIDDEN_READING_EXAM_TYPES.has(group.key))
       .map((group) => Object.assign({}, group, {
-        label: group.key
+        label: group.key === 'IELTS Academic' ? 'Cambridge IELTS 21' : group.key
       }));
     const stages = Object.keys(READING_STAGE_EXAM_TYPES).map((stageKey) => {
-      const stageGroups = groups.filter((group) => READING_STAGE_EXAM_TYPES[stageKey].includes(group.key));
+      const stageGroups = groups.filter((group) => stageKey === 'ielts'
+        ? isIeltsExamType(group.key)
+        : READING_STAGE_EXAM_TYPES[stageKey].includes(group.key));
       return {
         key: stageKey,
-        label: stageKey === 'junior' ? text('junior', '初中') : text('senior', '高中'),
-        meta: stageGroups.map((group) => group.label).join('、'),
+        label: stageKey === 'junior' ? text('junior', '初中') : (stageKey === 'senior' ? text('senior', '高中') : '雅思'),
+        meta: stageKey === 'ielts' ? 'Cambridge IELTS 10–21' : stageGroups.map((group) => group.label).join('、'),
         count: stageGroups.reduce((sum, group) => sum + Number(group.count || 0), 0),
         groups: stageGroups
       };
@@ -42,7 +49,7 @@ function filterVisibleCategoryTree(categoryTree) {
 function isCompletePassageSnapshot(passage) {
   return !!(passage
     && passage._id
-    && String(passage.passage || '').trim()
+    && (String(passage.passage || '').trim() || (Array.isArray(passage.images) && passage.images.length))
     && Array.isArray(passage.questions)
     && passage.questions.length);
 }

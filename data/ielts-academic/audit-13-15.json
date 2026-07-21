@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-21T19:02:59.706Z",
+  "books": [
+    {
+      "book": 13,
+      "listeningTests": 4,
+      "readingPassages": 12,
+      "writingTasks": 8,
+      "speakingTests": 4,
+      "audio": [
+        {
+          "test": 1,
+          "durationSec": 1702.26,
+          "size": 13618125,
+          "cloudPath": "_content/ielts-academic/cambridge-13/listening/audio/cambridge-ielts-13-test-1-3a7809716f-64k-mono.mp3"
+        },
+        {
+          "test": 2,
+          "durationSec": 1935.58,
+          "size": 15484653,
+          "cloudPath": "_content/ielts-academic/cambridge-13/listening/audio/cambridge-ielts-13-test-2-cc97174b76-64k-mono.mp3"
+        },
+        {
+          "test": 3,
+          "durationSec": 1728.76,
+          "size": 13830093,
+          "cloudPath": "_content/ielts-academic/cambridge-13/listening/audio/cambridge-ielts-13-test-3-fbc7cdcb61-64k-mono.mp3"
+        },
+        {
+          "test": 4,
+          "durationSec": 1808.93,
+          "size": 14471469,
+          "cloudPath": "_content/ielts-academic/cambridge-13/listening/audio/cambridge-ielts-13-test-4-8d70c024d3-64k-mono.mp3"
+        }
+      ]
+    },
+    {
+      "book": 14,
+      "listeningTests": 4,
+      "readingPassages": 12,
+      "writingTasks": 8,
+      "speakingTests": 4,
+      "audio": [
+        {
+          "test": 1,
+          "durationSec": 1838.74,
+          "size": 14709933,
+          "cloudPath": "_content/ielts-academic/cambridge-14/listening/audio/cambridge-ielts-14-test-1-6bc51d6de1-64k-mono.mp3"
+        },
+        {
+          "test": 2,
+          "durationSec": 2408.08,
+          "size": 19264653,
+          "cloudPath": "_content/ielts-academic/cambridge-14/listening/audio/cambridge-ielts-14-test-2-675308cd31-64k-mono.mp3"
+        },
+        {
+          "test": 3,
+          "durationSec": 1792.98,
+          "size": 14343885,
+          "cloudPath": "_content/ielts-academic/cambridge-14/listening/audio/cambridge-ielts-14-test-3-37b933b424-64k-mono.mp3"
+        },
+        {
+          "test": 4,
+          "durationSec": 1945.98,
+          "size": 15567885,
+          "cloudPath": "_content/ielts-academic/cambridge-14/listening/audio/cambridge-ielts-14-test-4-820ec75a74-64k-mono.mp3"
+        }
+      ]
+    },
+    {
+      "book": 15,
+      "listeningTests": 4,
+      "readingPassages": 12,
+      "writingTasks": 8,
+      "speakingTests": 4,
+      "audio": [
+        {
+          "test": 1,
+          "durationSec": 1857.64,
+          "size": 14861133,
+          "cloudPath": "_content/ielts-academic/cambridge-15/listening/audio/cambridge-ielts-15-test-1-7cd472292e-64k-mono.mp3"
+        },
+        {
+          "test": 2,
+          "durationSec": 1862.6,
+          "size": 14900877,
+          "cloudPath": "_content/ielts-academic/cambridge-15/listening/audio/cambridge-ielts-15-test-2-f52d7bf4d6-64k-mono.mp3"
+        },
+        {
+          "test": 3,
+          "durationSec": 1771.63,
+          "size": 14173101,
+          "cloudPath": "_content/ielts-academic/cambridge-15/listening/audio/cambridge-ielts-15-test-3-274abd4df9-64k-mono.mp3"
+        },
+        {
+          "test": 4,
+          "durationSec": 1741.9,
+          "size": 13935213,
+          "cloudPath": "_content/ielts-academic/cambridge-15/listening/audio/cambridge-ielts-15-test-4-8027f4ba15-64k-mono.mp3"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "listeningTests": 12,
+    "listeningQuestions": 480,
+    "readingPassages": 36,
+    "readingQuestions": 480,
+    "writingTasks": 24,
+    "speakingTests": 12
+  }
+}

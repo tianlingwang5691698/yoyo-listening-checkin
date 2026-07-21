@@ -1,0 +1,64 @@
+{
+  "_id": "ielts-academic-20-test-1-writing-task-1",
+  "id": "ielts-academic-20-test-1-writing-task-1",
+  "title": "Cambridge IELTS 20 Test 1 Writing Task 1",
+  "year": 2025,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-20-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思20学术类.pdf",
+  "book": "Cambridge IELTS 20 Academic",
+  "bookNumber": 20,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The first table below shows changes in the total population of New York City from 1800 to 2000. The second and third tables show changes in the population of the five districts of the city (Manhattan, Brooklyn, Bronx, Queens, Staten Island) over the same period.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Three tables",
+    "title": "New York City population, 1800 to 2000",
+    "labels": [
+      "New York City (all five districts)",
+      "Year",
+      "Population",
+      "1800: 79,216",
+      "1900: 3,437,202",
+      "2000: 8,009,185",
+      "Manhattan",
+      "As percentage (%) of total population",
+      "1800: 60,515; 76%",
+      "1900: 1,850,093; 54%",
+      "2000: 1,538,096; 19%",
+      "Other districts (Brooklyn, Bronx, Queens, Staten Island)",
+      "1800: 18,701; 24%",
+      "1900: 1,587,109; 46%",
+      "2000: 6,471,089; 81%"
+    ],
+    "units": "Population; percentage (%) of total population",
+    "notes": [
+      "Years shown: 1800, 1900 and 2000.",
+      "The Manhattan and other-district tables divide the total population into Manhattan and the combined populations of Brooklyn, Bronx, Queens and Staten Island."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-20/writing/visuals-v3/test-1-task-1-visual-cf53e192f4.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-20/writing/visuals-v3/test-1-task-1-visual-cf53e192f4.jpg",
+      "alt": "Cambridge IELTS 20 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

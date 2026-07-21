@@ -1,0 +1,60 @@
+{
+  "_id": "ielts-academic-15-test-1-writing-task-1",
+  "id": "ielts-academic-15-test-1-writing-task-1",
+  "title": "Cambridge IELTS 15 Test 1 Writing Task 1",
+  "year": 2020,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-15-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑15真题.pdf",
+  "book": "Cambridge IELTS 15 Academic",
+  "bookNumber": 15,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The chart below shows the results of a survey about people's coffee and tea buying and drinking habits in five Australian cities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "scenario": "The chart below shows the results of a survey about people's coffee and tea buying and drinking habits in five Australian cities.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "bar chart",
+    "title": "Coffee and tea buying and drinking habits in five cities in Australia",
+    "labels": [
+      "Percentage of city residents",
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Adelaide",
+      "Hobart",
+      "Bought fresh coffee in last 4 weeks",
+      "Bought instant coffee in last 4 weeks",
+      "Went to a cafe for coffee or tea in last 4 weeks"
+    ],
+    "units": "percentage (%)",
+    "notes": [
+      "Bought fresh coffee in the last 4 weeks: Sydney 44%, Melbourne 43%, Brisbane 34%, Adelaide 35%, Hobart 39%.",
+      "Bought instant coffee in the last 4 weeks: Sydney 45%, Melbourne 48%, Brisbane 53%, Adelaide 50%, Hobart 54%.",
+      "Went to a cafe for coffee or tea in the last 4 weeks: Sydney 61%, Melbourne 64%, Brisbane 56%, Adelaide 49%, Hobart 63%."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-15/writing/visuals-v3/test-1-task-1-visual-cb5885a625.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-15/writing/visuals-v3/test-1-task-1-visual-cb5885a625.jpg",
+      "alt": "Cambridge IELTS 15 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

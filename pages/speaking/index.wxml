@@ -54,8 +54,17 @@
         <view class="library-ielts-title">{{texts.ieltsSpeaking}}</view>
         <view class="library-ielts-meta">Part 1 · Part 2 · Part 3</view>
       </view>
-      <view class="library-ielts-state">{{texts.comingSoon}}</view>
+      <view class="library-ielts-state">{{ieltsLoading ? texts.loading : (ieltsTests.length ? ieltsTests.length + texts.setUnit : 'Cambridge 21')}}</view>
       <view class="library-ielts-arrow">›</view>
+    </view>
+    <view class="ielts-test-list" wx:if="{{ieltsExpanded}}">
+      <block wx:for="{{ieltsTests}}" wx:key="id">
+        <view class="ielts-book-header" wx:if="{{item.showBookHeader}}">{{item.bookLabel}}</view>
+        <view class="ielts-test-row" data-item-id="{{item.id}}" bindtap="selectIeltsTest">
+          <view><view class="ielts-test-title">{{item.title}}</view><view class="ielts-test-meta">{{item.meta}} · Part 1-3</view></view>
+          <view class="ielts-test-arrow">›</view>
+        </view>
+      </block>
     </view>
   </block>
 
@@ -73,6 +82,9 @@
           <button class="library-listen-button {{questionPlaying ? 'is-playing' : ''}} {{questionLoading ? 'is-loading' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? texts.preparing : (questionPlaying ? texts.stopPlay : texts.listen)}}</button>
         </view>
         <view class="library-prompt-meta">{{selectedLevel}} · {{activeExercise.title}} · {{activeExercise.meta}}</view>
+        <view class="ielts-source-pages" wx:if="{{ieltsMode && ieltsSourceImages.length}}">
+          <image class="ielts-source-page" wx:for="{{ieltsSourceImages}}" wx:key="cloudPath" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+        </view>
         <view class="library-playback-slot {{questionPlaying || questionLoading ? 'is-active' : ''}}">
           <view class="library-slot-bar is-one"></view>
           <view class="library-slot-bar is-two"></view>
@@ -166,24 +178,36 @@
         <view class="speaking-ielts-title">{{texts.ieltsSpeaking}}</view>
         <view class="speaking-ielts-meta">Part 1 · Part 2 · Part 3</view>
       </view>
-      <view class="speaking-ielts-state">{{texts.comingSoon}}</view>
+      <view class="speaking-ielts-state">{{ieltsLoading ? texts.loading : (ieltsTests.length ? ieltsTests.length + texts.setUnit : 'Cambridge 21')}}</view>
       <view class="speaking-ielts-arrow">›</view>
+    </view>
+    <view class="ielts-test-list" wx:if="{{ieltsExpanded}}">
+      <block wx:for="{{ieltsTests}}" wx:key="id">
+        <view class="ielts-book-header" wx:if="{{item.showBookHeader}}">{{item.bookLabel}}</view>
+        <view class="ielts-test-row" data-item-id="{{item.id}}" bindtap="selectIeltsTest">
+          <view><view class="ielts-test-title">{{item.title}}</view><view class="ielts-test-meta">{{item.meta}} · Part 1-3</view></view>
+          <view class="ielts-test-arrow">›</view>
+        </view>
+      </block>
     </view>
   </block>
 
   <block wx:else>
     <view class="speaking-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
 
-    <view class="voice-cabin card">
+      <view class="voice-cabin card">
       <view class="cabin-glow"></view>
-      <view class="prompt-panel">
+        <view class="prompt-panel">
         <view class="prompt-label">{{texts.today}}</view>
         <view class="prompt-text">{{activeExercise.prompt}}</view>
         <view class="prompt-actions">
           <view class="prompt-tag">{{selectedLevel}} · {{activeExercise.title}}</view>
           <button class="listen-button" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? texts.preparing : (questionPlaying ? texts.stopPlay : texts.listen)}}</button>
+          </view>
+          <view class="ielts-source-pages" wx:if="{{ieltsMode && ieltsSourceImages.length}}">
+            <image class="ielts-source-page" wx:for="{{ieltsSourceImages}}" wx:key="cloudPath" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+          </view>
         </view>
-      </view>
 
       <view class="task-dial">
         <view class="task-node {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">

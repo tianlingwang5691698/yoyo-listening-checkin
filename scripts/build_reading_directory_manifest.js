@@ -14,7 +14,19 @@ const SOURCE_PATHS = [
 ];
 const LOCAL_SOURCE_PATHS = [
   'data/reading-senior-spring/reading-passages.json',
-  'data/reading-senior-autumn/reading-passages.json'
+  'data/reading-senior-autumn/reading-passages.json',
+  'data/ielts-academic/cambridge-21/reading/reading-passages.json',
+  'data/ielts-academic/cambridge-20/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-19/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-18/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-17/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-16/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-15/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-14/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-13/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-12/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-11/reading/v2/reading-passages.json',
+  'data/ielts-academic/cambridge-10/reading/v2/reading-passages.json'
 ];
 
 function downloadJson(cloudPath) {
@@ -62,7 +74,7 @@ async function main() {
     questionCount: Array.isArray(item.questions) ? item.questions.length : Number(item.questionCount || 0),
     status: item.status || 'sample'
   }));
-  if (directory.length !== 925 || new Set(directory.map((item) => item._id)).size !== directory.length) {
+  if (directory.length !== 1103 || new Set(directory.map((item) => item._id)).size !== directory.length) {
     throw new Error(`reading-directory-validation-failed:${directory.length}`);
   }
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(directory)}\n`);

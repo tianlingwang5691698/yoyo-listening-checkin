@@ -23,7 +23,7 @@ test('阅读目录只查询轻量字段且详情按 id 读取单篇', () => {
 });
 
 test('阅读数据库未完整导入时保留云存储兼容回退', () => {
-  assert.match(source, /MIN_DATABASE_READING_PASSAGE_COUNT = 841/);
+  assert.match(source, /MIN_DATABASE_READING_PASSAGE_COUNT = 1103/);
   assert.match(source, /passages\.length >= MIN_DATABASE_READING_PASSAGE_COUNT/);
   assert.match(source, /const passages = \(await loadPassages\(\)\)\.map/);
   for (const year of [2018, 2019, 2020]) {
@@ -31,6 +31,14 @@ test('阅读数据库未完整导入时保留云存储兼容回退', () => {
     assert.match(source, new RegExp(`reading-senior-autumn/years/${year}/v2/reading-passages\\.json`));
   }
   assert.match(source, /reading-senior-autumn\/years\/2015\/v2\/reading-passages\.json/);
+  assert.match(source, /ielts-academic\/cambridge-21\/reading\/v2\/reading-passages\.json/);
+  for (const book of [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) {
+    assert.match(source, new RegExp(`ielts-academic/cambridge-${book}/reading/v2/reading-passages\\.json`));
+  }
+  assert.match(source, /ielts-academic-\(\?:1\[0-9\]\|20\|21\)-/);
+  assert.match(source, /seen\.has\(item\._id\)/);
+  assert.match(source, /contentRevision: Number\(item\.contentRevision/);
+  assert.match(source, /dataFormat: item\.dataFormat/);
 });
 
 test('阅读题目解析只命中完整模型缓存，总请求时间不超过云函数上限', () => {

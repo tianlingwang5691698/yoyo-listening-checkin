@@ -1,0 +1,115 @@
+{
+  "_id": "ielts-academic-20-test-3-speaking",
+  "id": "ielts-academic-20-test-3-speaking",
+  "title": "Cambridge IELTS 20 Test 3 Speaking",
+  "year": 2025,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思20学术类.pdf",
+  "book": "Cambridge IELTS 20 Academic",
+  "bookNumber": 20,
+  "testNumber": 3,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-20/speaking/source-pages-v1/test-3-speaking-eb7704eeb1.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-20/speaking/source-pages-v1/test-3-speaking-eb7704eeb1.jpg",
+      "alt": "Cambridge IELTS 20 Test 3 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Did you enjoy going to museums when you were a child?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Are there any interesting museums near where you live now?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Do you think it is best to go to museums by yourself or with friends?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "When you visit another city or country, do you think it's important to go to a museum there?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a piece of work you did for your job or your studies that you felt very satisfied with. You should say: what this piece of work was why you did this piece of work who or what helped you to do this work and explain why you felt so satisfied with this piece of work.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "What are some aspects of people's lives that they can often be dissatisfied with?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Would you say that having ambitions in life is always a positive thing?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "What do you believe the most important components are of a satisfying life?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "What makes a job more satisfying: a high salary or having good colleagues?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Do you think people need to change jobs regularly if they want to stay satisfied at work?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-3-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Is it possible to find job satisfaction in all types of work?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 1,
+  "status": "published-candidate"
+}

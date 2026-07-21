@@ -9,6 +9,7 @@ const appConfig = require('../app-config');
 
 const ROOT = path.join(__dirname, '..');
 const OUTPUT_PATH = path.join(ROOT, 'cloudfunctions', 'yoyo', 'data', 'material-directory.json');
+const IELTS_BOOKS = [21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10];
 const SOURCES = [
   { key: 'writingEm1', cloudPath: '_content/writing-em1/writing-prompts.json', itemDir: '_content/writing-em1/items-v1' },
   { key: 'writingEm2', cloudPath: '_content/writing-em2/writing-prompts.json', itemDir: '_content/writing-em2/items-v1' },
@@ -17,9 +18,12 @@ const SOURCES = [
   { key: 'listeningEm1', cloudPath: '_content/listening-em1/listening-practice.json', itemDir: '_content/listening-em1/items-v1' },
   { key: 'listeningEm2', cloudPath: '_content/listening-em2/listening-practice.json', itemDir: '_content/listening-em2/items-v1' },
   { key: 'listeningSeniorSpring', cloudPath: '_content/listening-senior-spring/listening-practice.json', itemDir: '_content/listening-senior-spring/items-v1', localPath: 'data/listening-senior-spring/listening-practice.json' },
-  { key: 'listeningSeniorAutumn', cloudPath: '_content/listening-senior-autumn/listening-practice.json', itemDir: '_content/listening-senior-autumn/items-v1', localPath: 'data/listening-senior-autumn/listening-practice.json' }
+  { key: 'listeningSeniorAutumn', cloudPath: '_content/listening-senior-autumn/listening-practice.json', itemDir: '_content/listening-senior-autumn/items-v1', localPath: 'data/listening-senior-autumn/listening-practice.json' },
+  { key: 'writingIelts', localPaths: IELTS_BOOKS.map((book) => `data/ielts-academic/cambridge-${book}/writing/index.json`), skipItems: true },
+  { key: 'listeningIelts', localPaths: IELTS_BOOKS.map((book) => `data/ielts-academic/cambridge-${book}/listening/index.json`), skipItems: true },
+  { key: 'speakingIelts', localPaths: IELTS_BOOKS.map((book) => `data/ielts-academic/cambridge-${book}/speaking/index.json`), skipItems: true }
 ];
-const EXPECTED_COUNTS = { writingEm1: 159, writingEm2: 181, writingSeniorSpring: 29, writingSeniorAutumn: 31, listeningEm1: 67, listeningEm2: 76, listeningSeniorSpring: 8, listeningSeniorAutumn: 10 };
+const EXPECTED_COUNTS = { writingEm1: 159, writingEm2: 181, writingSeniorSpring: 30, writingSeniorAutumn: 41, listeningEm1: 67, listeningEm2: 76, listeningSeniorSpring: 9, listeningSeniorAutumn: 15, writingIelts: 96, listeningIelts: 48, speakingIelts: 48 };
 
 function request(cloudPath, method = 'GET') {
   const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
@@ -64,7 +68,8 @@ function slimWritingItem(item) {
     category: item.category, contentType: item.contentType,
     contentRevision: item.contentRevision, paperId: item.paperId,
     paperOrder: item.paperOrder, questionCount: item.questionCount,
-    minWords: item.minWords, maxWords: item.maxWords, score: item.score
+    minWords: item.minWords, maxWords: item.maxWords, score: item.score,
+    book: item.book, bookNumber: Number(item.bookNumber || 0), testNumber: Number(item.testNumber || 0)
   };
 }
 
@@ -75,7 +80,8 @@ function slimListeningItem(item) {
     stage: item.stage, audioUrl: item.audioUrl, audioCloudPath: item.audioCloudPath,
     audioFileId: item.audioFileId, audioSource: item.audioSource,
     durationSec: Number(item.durationSec || 0),
-    hasAudio: !!item.hasAudio, hasTranscript: !!item.hasTranscript
+    hasAudio: !!item.hasAudio, hasTranscript: !!item.hasTranscript,
+    book: item.book, bookNumber: Number(item.bookNumber || 0), testNumber: Number(item.testNumber || 0)
   };
 }
 
@@ -100,10 +106,12 @@ async function mapLimit(items, limit, worker) {
 async function main() {
   const apply = process.argv.includes('--apply');
   const downloaded = await Promise.all(SOURCES.map(async (source) => {
-    const raw = source.localPath
-      ? JSON.parse(fs.readFileSync(path.join(ROOT, source.localPath), 'utf8'))
-      : await downloadJson(source.cloudPath);
-    const items = Array.isArray(raw) ? raw : (raw.items || raw.prompts || raw.sets || []);
+    const raws = source.localPaths
+      ? source.localPaths.map((localPath) => JSON.parse(fs.readFileSync(path.join(ROOT, localPath), 'utf8')))
+      : [source.localPath
+        ? JSON.parse(fs.readFileSync(path.join(ROOT, source.localPath), 'utf8'))
+        : await downloadJson(source.cloudPath)];
+    const items = raws.flatMap((raw) => Array.isArray(raw) ? raw : (raw.items || raw.prompts || raw.sets || []));
     if (items.length !== EXPECTED_COUNTS[source.key]) {
       throw new Error(`material-count-mismatch:${source.key}:${items.length}`);
     }
@@ -120,7 +128,7 @@ async function main() {
   });
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(directory)}\n`);
 
-  const uploads = downloaded.flatMap(({ source, items }) => items.map((item) => ({
+  const uploads = downloaded.filter(({ source }) => !source.skipItems).flatMap(({ source, items }) => items.map((item) => ({
     cloudPath: `${source.itemDir}/${itemFileName(itemId(item))}`,
     body: Buffer.from(JSON.stringify(item))
   })));

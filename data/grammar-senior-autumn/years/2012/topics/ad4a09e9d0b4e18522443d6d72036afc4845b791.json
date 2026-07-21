@@ -1,0 +1,34 @@
+{
+  "topicId": "clause:relative",
+  "topic": "定语从句",
+  "questions": [
+    {
+      "_id": "sh-autumn-2012-grammar-q35",
+      "sourceSetId": "sh-autumn-2012-grammar",
+      "year": 2012,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+      "number": 35,
+      "prompt": "Have you sent thank-you notes to the relatives from _ _ you received gifts?",
+      "options": {
+        "A": "which",
+        "B": "them",
+        "C": "that",
+        "D": "whom"
+      },
+      "answer": "D",
+      "questionType": "grammar-choice",
+      "categoryId": "clause",
+      "category": "从句类",
+      "subtopicId": "clause:relative",
+      "subtopic": "定语从句",
+      "topicId": "clause:relative",
+      "topic": "定语从句",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

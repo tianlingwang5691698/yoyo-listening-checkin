@@ -10,7 +10,10 @@ const MATERIAL_PATHS = {
   listeningEm1: '_content/listening-em1/listening-practice.json',
   listeningEm2: '_content/listening-em2/listening-practice.json',
   listeningSeniorSpring: '_content/listening-senior-spring/listening-practice.json',
-  listeningSeniorAutumn: '_content/listening-senior-autumn/listening-practice.json'
+  listeningSeniorAutumn: '_content/listening-senior-autumn/listening-practice.json',
+  writingIelts: '_content/ielts-academic/cambridge-21/writing/index.json',
+  listeningIelts: '_content/ielts-academic/cambridge-21/listening/index.json',
+  speakingIelts: '_content/ielts-academic/cambridge-21/speaking/index.json'
 };
 const MATERIAL_ITEM_DIRS = {
   writingEm1: '_content/writing-em1/items-v1',
@@ -20,7 +23,21 @@ const MATERIAL_ITEM_DIRS = {
   writingSeniorSpring: '_content/writing-senior-spring/items-v1',
   writingSeniorAutumn: '_content/writing-senior-autumn/items-v1',
   listeningSeniorSpring: '_content/listening-senior-spring/items-v1',
-  listeningSeniorAutumn: '_content/listening-senior-autumn/items-v1'
+  listeningSeniorAutumn: '_content/listening-senior-autumn/items-v1',
+  writingIelts: '_content/ielts-academic/cambridge-21/writing/items-v1',
+  listeningIelts: '_content/ielts-academic/cambridge-21/listening/items-v1',
+  speakingIelts: '_content/ielts-academic/cambridge-21/speaking/items-v1'
+};
+const MATERIAL_ITEM_PRIORITY_DIRS = {
+  writingIelts: [
+    '_content/ielts-academic/cambridge-21/writing/items-v3',
+    '_content/ielts-academic/cambridge-21/writing/items-v2',
+    MATERIAL_ITEM_DIRS.writingIelts
+  ],
+  listeningIelts: [
+    '_content/ielts-academic/cambridge-21/listening/items-v2',
+    MATERIAL_ITEM_DIRS.listeningIelts
+  ]
 };
 
 let bundledMaterialIndex = null;
@@ -58,7 +75,10 @@ function slimWritingItem(item) {
     questionCount: item && item.questionCount,
     minWords: item && item.minWords,
     maxWords: item && item.maxWords,
-    score: item && item.score
+    score: item && item.score,
+    book: item && item.book,
+    bookNumber: Number(item && item.bookNumber || 0),
+    testNumber: Number(item && item.testNumber || 0)
   };
 }
 
@@ -78,7 +98,10 @@ function slimMaterialItem(item) {
     audioSource: item && item.audioSource,
     durationSec: Number(item && item.durationSec || 0),
     hasAudio: !!(item && item.hasAudio),
-    hasTranscript: !!(item && item.hasTranscript)
+    hasTranscript: !!(item && item.hasTranscript),
+    book: item && item.book,
+    bookNumber: Number(item && item.bookNumber || 0),
+    testNumber: Number(item && item.testNumber || 0)
   };
 }
 
@@ -94,7 +117,10 @@ function loadBundledMaterialIndex() {
       listeningEm1: (raw.listeningEm1 || []).map(slimMaterialItem),
       listeningEm2: (raw.listeningEm2 || []).map(slimMaterialItem),
       listeningSeniorSpring: (raw.listeningSeniorSpring || []).map(slimMaterialItem),
-      listeningSeniorAutumn: (raw.listeningSeniorAutumn || []).map(slimMaterialItem)
+      listeningSeniorAutumn: (raw.listeningSeniorAutumn || []).map(slimMaterialItem),
+      writingIelts: (raw.writingIelts || []).map(slimWritingItem),
+      listeningIelts: (raw.listeningIelts || []).map(slimMaterialItem),
+      speakingIelts: (raw.speakingIelts || []).map(slimMaterialItem)
     };
   } catch (error) {
     bundledMaterialIndex = null;
@@ -107,12 +133,26 @@ function materialItemFileName(itemId) {
 }
 
 function materialKeysFor(moduleId, itemId) {
+  if (/^ielts-academic-(?:1[0-9]|20|21)-/i.test(itemId)) {
+    if (moduleId === 'speaking') return ['speakingIelts'];
+    return [moduleId === 'listening' ? 'listeningIelts' : 'writingIelts'];
+  }
   const prefix = moduleId === 'listening' ? 'listening' : 'writing';
   if (/^sh-em1-/i.test(itemId)) return [`${prefix}Em1`];
   if (/^sh-em2-/i.test(itemId)) return [`${prefix}Em2`];
   if (/^sh-spring-/i.test(itemId)) return [`${prefix}SeniorSpring`];
   if (/^sh-autumn-/i.test(itemId)) return [`${prefix}SeniorAutumn`];
   return [`${prefix}Em1`, `${prefix}Em2`, `${prefix}SeniorSpring`, `${prefix}SeniorAutumn`];
+}
+
+function ieltsMaterialItemDirectories(moduleId, itemId) {
+  const match = String(itemId || '').match(/^ielts-academic-(1[0-9]|20|21)-/i);
+  if (!match) return [];
+  const book = match[1];
+  const root = `_content/ielts-academic/cambridge-${book}`;
+  if (moduleId === 'speaking') return [`${root}/speaking/items-v1`];
+  if (moduleId === 'listening') return [`${root}/listening/items-v2`, `${root}/listening/items-v1`];
+  return [`${root}/writing/items-v3`, `${root}/writing/items-v2`, `${root}/writing/items-v1`];
 }
 
 function matchesMaterialId(item, itemId) {
@@ -125,6 +165,24 @@ function applyMaterialContentPatches(item) {
   const directions = String(item.directions || '').trim();
   if (!/\bin the$/i.test(directions)) return item;
   return Object.assign({}, item, { directions: `${directions} brackets.` });
+}
+
+function normalizeMaterialImage(image) {
+  const source = image || {};
+  const cloudPath = String(source.cloudPath || '').trim();
+  return Object.assign({}, source, {
+    src: source.src || source.url || (cloudPath ? `${String(CLOUD_ASSET_BASE_URL || '').replace(/\/+$/, '')}/${cloudPath}` : '')
+  });
+}
+
+function normalizeMaterialImages(item) {
+  if (!item) return item;
+  return Object.assign({}, item, {
+    images: (Array.isArray(item.images) ? item.images : []).map(normalizeMaterialImage),
+    questions: (Array.isArray(item.questions) ? item.questions : []).map((question) => Object.assign({}, question, {
+      sourceImages: (Array.isArray(question.sourceImages) ? question.sourceImages : []).map(normalizeMaterialImage)
+    }))
+  });
 }
 
 function downloadMaterialItemJson(cloudPath) {
@@ -164,15 +222,21 @@ async function loadMaterialItem(moduleId, itemId) {
   const cached = materialItemCache[itemId];
   if (cached && Date.now() - cached.savedAt < MATERIAL_ITEM_CACHE_MAX_AGE_MS) return cached.item;
   const fileName = materialItemFileName(itemId);
+  const ieltsDirectories = ieltsMaterialItemDirectories(moduleId, itemId);
   const keys = materialKeysFor(moduleId, itemId);
-  const candidates = await Promise.all(keys.map(async (key) => {
+  const directories = ieltsDirectories.length
+    ? ieltsDirectories
+    : keys.flatMap((key) => MATERIAL_ITEM_PRIORITY_DIRS[key] || [MATERIAL_ITEM_DIRS[key]]);
+  const paths = directories.map((directory) => `${directory}/${fileName}`);
+  const candidates = [];
+  for (const cloudPath of paths) {
     try {
-      return await loadMaterialItemJson(`${MATERIAL_ITEM_DIRS[key]}/${fileName}`);
+      candidates.push(await loadMaterialItemJson(cloudPath));
     } catch (error) {
-      return null;
+      candidates.push(null);
     }
-  }));
-  const item = applyMaterialContentPatches(candidates.find((candidate) => matchesMaterialId(candidate, itemId)) || null);
+  }
+  const item = normalizeMaterialImages(applyMaterialContentPatches(candidates.find((candidate) => matchesMaterialId(candidate, itemId)) || null));
   if (item) materialItemCache[itemId] = { savedAt: Date.now(), item };
   return item;
 }
@@ -181,6 +245,7 @@ async function getMaterialIndex(event) {
   const moduleId = String((event && event.payload && event.payload.moduleId) || '').trim();
   const shouldLoadWriting = !moduleId || moduleId === 'writing';
   const shouldLoadListening = !moduleId || moduleId === 'listening';
+  const shouldLoadSpeaking = !moduleId || moduleId === 'speaking';
   const bundled = loadBundledMaterialIndex();
   if (bundled) {
     return {
@@ -191,10 +256,13 @@ async function getMaterialIndex(event) {
       listeningEm1: shouldLoadListening ? bundled.listeningEm1 : [],
       listeningEm2: shouldLoadListening ? bundled.listeningEm2 : [],
       listeningSeniorSpring: shouldLoadListening ? bundled.listeningSeniorSpring : [],
-      listeningSeniorAutumn: shouldLoadListening ? bundled.listeningSeniorAutumn : []
+      listeningSeniorAutumn: shouldLoadListening ? bundled.listeningSeniorAutumn : [],
+      writingIelts: shouldLoadWriting ? bundled.writingIelts : [],
+      listeningIelts: shouldLoadListening ? bundled.listeningIelts : [],
+      speakingIelts: shouldLoadSpeaking ? bundled.speakingIelts : []
     };
   }
-  const [writingEm1, writingEm2, writingSeniorSpring, writingSeniorAutumn, listeningEm1, listeningEm2, listeningSeniorSpring, listeningSeniorAutumn] = await Promise.all([
+  const [writingEm1, writingEm2, writingSeniorSpring, writingSeniorAutumn, listeningEm1, listeningEm2, listeningSeniorSpring, listeningSeniorAutumn, writingIelts, listeningIelts, speakingIelts] = await Promise.all([
     shouldLoadWriting ? loadList(MATERIAL_PATHS.writingEm1) : [],
     shouldLoadWriting ? loadList(MATERIAL_PATHS.writingEm2) : [],
     shouldLoadWriting ? loadList(MATERIAL_PATHS.writingSeniorSpring) : [],
@@ -202,7 +270,10 @@ async function getMaterialIndex(event) {
     shouldLoadListening ? loadList(MATERIAL_PATHS.listeningEm1) : [],
     shouldLoadListening ? loadList(MATERIAL_PATHS.listeningEm2) : [],
     shouldLoadListening ? loadList(MATERIAL_PATHS.listeningSeniorSpring) : [],
-    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningSeniorAutumn) : []
+    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningSeniorAutumn) : [],
+    shouldLoadWriting ? loadList(MATERIAL_PATHS.writingIelts) : [],
+    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningIelts) : [],
+    shouldLoadSpeaking ? loadList(MATERIAL_PATHS.speakingIelts) : []
   ]);
   return {
     writingEm1: writingEm1.map(slimWritingItem),
@@ -212,7 +283,10 @@ async function getMaterialIndex(event) {
     listeningEm1: listeningEm1.map(slimMaterialItem),
     listeningEm2: listeningEm2.map(slimMaterialItem),
     listeningSeniorSpring: listeningSeniorSpring.map(slimMaterialItem),
-    listeningSeniorAutumn: listeningSeniorAutumn.map(slimMaterialItem)
+    listeningSeniorAutumn: listeningSeniorAutumn.map(slimMaterialItem),
+    writingIelts: writingIelts.map(slimWritingItem),
+    listeningIelts: listeningIelts.map(slimMaterialItem),
+    speakingIelts: speakingIelts.map(slimMaterialItem)
   };
 }
 
@@ -234,8 +308,10 @@ async function getMaterialItem(event) {
     return { item: directItem };
   }
   const paths = moduleId === 'listening'
-    ? [MATERIAL_PATHS.listeningEm1, MATERIAL_PATHS.listeningEm2, MATERIAL_PATHS.listeningSeniorSpring, MATERIAL_PATHS.listeningSeniorAutumn]
-    : [MATERIAL_PATHS.writingEm1, MATERIAL_PATHS.writingEm2, MATERIAL_PATHS.writingSeniorSpring, MATERIAL_PATHS.writingSeniorAutumn];
+    ? [MATERIAL_PATHS.listeningEm1, MATERIAL_PATHS.listeningEm2, MATERIAL_PATHS.listeningSeniorSpring, MATERIAL_PATHS.listeningSeniorAutumn, MATERIAL_PATHS.listeningIelts]
+    : (moduleId === 'speaking'
+      ? [MATERIAL_PATHS.speakingIelts]
+      : [MATERIAL_PATHS.writingEm1, MATERIAL_PATHS.writingEm2, MATERIAL_PATHS.writingSeniorSpring, MATERIAL_PATHS.writingSeniorAutumn, MATERIAL_PATHS.writingIelts]);
   const lists = await Promise.all(paths.map(loadList));
   const item = lists.flat().find((row) => row && [
     row._id,

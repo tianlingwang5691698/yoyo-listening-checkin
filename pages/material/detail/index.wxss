@@ -1321,6 +1321,17 @@
   font-family: "Songti SC", "STSong", serif;
   font-weight: 800;
 }
+.listening-source-pages {
+  width: 100%;
+  margin: 20rpx 0 24rpx;
+}
+
+.listening-source-page {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border: 1rpx solid rgba(38, 48, 58, 0.14);
+}
 
 /* Dragon theme: listening trial console and training answer sheet. */
 .theme-dragon.listening-detail-page {

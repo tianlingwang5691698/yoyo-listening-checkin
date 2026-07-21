@@ -5,11 +5,27 @@ const i18n = require('../../utils/i18n');
 
 const text = (key, fallback) => i18n.getPageText('material', key, undefined, fallback);
 
-const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
-const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV2';
-const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV4';
+const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV2';
+const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV4';
+const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV6';
 const MATERIAL_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
-const MATERIAL_CATALOG_VERSION = 'senior-2026-v3';
+const MATERIAL_CATALOG_VERSION = 'ielts-academic-10-21-v1';
+
+function buildIeltsExams(items) {
+  const grouped = {};
+  (items || []).forEach((item) => {
+    const id = getMaterialItemId(item);
+    const match = id.match(/^ielts-academic-(1[0-9]|20|21)-/i);
+    const bookNumber = Number(item && item.bookNumber || (match && match[1]) || 21);
+    if (!grouped[bookNumber]) grouped[bookNumber] = [];
+    grouped[bookNumber].push(item);
+  });
+  return Object.keys(grouped).map(Number).sort((left, right) => right - left).map((bookNumber) => ({
+    examId: `cambridge${bookNumber}`,
+    exam: `Cambridge IELTS ${bookNumber}`,
+    items: grouped[bookNumber]
+  }));
+}
 
 function writingItemType(item) {
   const id = getMaterialItemId(item);
@@ -39,6 +55,9 @@ function buildMaterials(materialIndex) {
       seniorExams: [
         { examId: 'spring', exam: text('spring', '春考'), items: materialIndex.writingSeniorSpring || [] },
         { examId: 'autumn', exam: text('autumn', '秋考'), items: materialIndex.writingSeniorAutumn || [] }
+      ],
+      ieltsExams: [
+        ...buildIeltsExams(materialIndex.writingIelts || [])
       ]
     },
     listening: {
@@ -53,6 +72,9 @@ function buildMaterials(materialIndex) {
       seniorExams: [
         { examId: 'spring', exam: text('spring', '春考'), items: materialIndex.listeningSeniorSpring || [] },
         { examId: 'autumn', exam: text('autumn', '秋考'), items: materialIndex.listeningSeniorAutumn || [] }
+      ],
+      ieltsExams: [
+        ...buildIeltsExams(materialIndex.listeningIelts || [])
       ]
     }
   };
@@ -130,8 +152,10 @@ function buildStages(config) {
   }));
   const exams = buildExams(config.exams);
   const seniorExams = buildExams(config.seniorExams);
+  const ieltsExams = buildExams(config.ieltsExams);
   const juniorCount = exams.reduce((sum, exam) => sum + exam.count, 0);
   const seniorCount = seniorExams.reduce((sum, exam) => sum + exam.count, 0);
+  const ieltsCount = ieltsExams.reduce((sum, exam) => sum + exam.count, 0);
   return [
     {
       stageId: 'junior',
@@ -144,8 +168,14 @@ function buildStages(config) {
       stage: text('senior', '高中'),
       count: seniorCount,
       exams: seniorExams
+    },
+    {
+      stageId: 'ielts',
+      stage: '雅思',
+      count: ieltsCount,
+      exams: ieltsExams
     }
-  ];
+  ].filter((stage) => stage.count > 0);
 }
 
 function applyMaterialConfig(pageInstance, moduleId, materialIndex, extraData) {
@@ -165,17 +195,17 @@ function applyMaterialConfig(pageInstance, moduleId, materialIndex, extraData) {
 function hasMaterialContent(moduleId, materialIndex) {
   const index = materialIndex || {};
   if (moduleId === 'listening') {
-    return !!((index.listeningEm1 || []).length || (index.listeningEm2 || []).length || (index.listeningSeniorSpring || []).length || (index.listeningSeniorAutumn || []).length);
+    return !!((index.listeningEm1 || []).length || (index.listeningEm2 || []).length || (index.listeningSeniorSpring || []).length || (index.listeningSeniorAutumn || []).length || (index.listeningIelts || []).length);
   }
-  return !!((index.writingEm1 || []).length || (index.writingEm2 || []).length || (index.writingSeniorSpring || []).length || (index.writingSeniorAutumn || []).length);
+  return !!((index.writingEm1 || []).length || (index.writingEm2 || []).length || (index.writingSeniorSpring || []).length || (index.writingSeniorAutumn || []).length || (index.writingIelts || []).length);
 }
 
 function countMaterialItems(moduleId, materialIndex) {
   const index = materialIndex || {};
   if (moduleId === 'listening') {
-    return (index.listeningEm1 || []).length + (index.listeningEm2 || []).length + (index.listeningSeniorSpring || []).length + (index.listeningSeniorAutumn || []).length;
+    return (index.listeningEm1 || []).length + (index.listeningEm2 || []).length + (index.listeningSeniorSpring || []).length + (index.listeningSeniorAutumn || []).length + (index.listeningIelts || []).length;
   }
-  return (index.writingEm1 || []).length + (index.writingEm2 || []).length + (index.writingSeniorSpring || []).length + (index.writingSeniorAutumn || []).length;
+  return (index.writingEm1 || []).length + (index.writingEm2 || []).length + (index.writingSeniorSpring || []).length + (index.writingSeniorAutumn || []).length + (index.writingIelts || []).length;
 }
 
 function buildMaterialDebug(moduleId, materialIndex) {
@@ -314,9 +344,9 @@ Page({
     page.syncTheme(this);
     const config = buildMaterials({})[this.data.moduleId] || buildMaterials({}).listening;
     const stages = (this.data.stages || []).map((stage) => Object.assign({}, stage, {
-      stage: stage.stageId === 'senior' ? text('senior', '高中') : text('junior', '初中'),
+      stage: stage.stageId === 'senior' ? text('senior', '高中') : (stage.stageId === 'ielts' ? '雅思' : text('junior', '初中')),
       exams: (stage.exams || []).map((exam) => Object.assign({}, exam, {
-        exam: exam.examId === 'em1' ? text('em1', '一模') : (exam.examId === 'em2' ? text('em2', '二模') : (exam.examId === 'spring' ? text('spring', '春考') : text('autumn', '秋考')))
+        exam: String(exam.examId || '').startsWith('cambridge') ? exam.exam : (exam.examId === 'em1' ? text('em1', '一模') : (exam.examId === 'em2' ? text('em2', '二模') : (exam.examId === 'spring' ? text('spring', '春考') : text('autumn', '秋考'))))
       }))
     }));
     this.setData({
@@ -326,7 +356,7 @@ Page({
       itemUnit: config.itemUnit,
       stages,
       exams: (this.data.exams || []).map((exam) => Object.assign({}, exam, {
-        exam: exam.examId === 'em1' ? text('em1', '一模') : (exam.examId === 'em2' ? text('em2', '二模') : (exam.examId === 'spring' ? text('spring', '春考') : text('autumn', '秋考')))
+        exam: String(exam.examId || '').startsWith('cambridge') ? exam.exam : (exam.examId === 'em1' ? text('em1', '一模') : (exam.examId === 'em2' ? text('em2', '二模') : (exam.examId === 'spring' ? text('spring', '春考') : text('autumn', '秋考'))))
       }))
     });
   },

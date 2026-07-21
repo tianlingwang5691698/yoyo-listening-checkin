@@ -1,0 +1,68 @@
+{
+  "_id": "ielts-academic-17-test-3-writing-task-1",
+  "id": "ielts-academic-17-test-3-writing-task-1",
+  "title": "Cambridge IELTS 17 Test 3 Writing Task 1",
+  "year": 2022,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-17-test-3",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思17（A类）.pdf",
+  "book": "Cambridge IELTS 17 Academic",
+  "bookNumber": 17,
+  "testNumber": 3,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The chart below gives information about how families in one country spent their weekly income in 1968 and in 2018.",
+  "scenario": "The chart compares average weekly spending by families in one country in 1968 and 2018 as percentages of weekly income.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "horizontal bar chart",
+    "title": "1968 and 2018: average weekly spending by families",
+    "labels": [
+      "1968",
+      "2018",
+      "Food",
+      "Housing",
+      "Fuel and power",
+      "Clothing and footwear",
+      "Household goods",
+      "Personal goods",
+      "Transport",
+      "Leisure",
+      "0",
+      "5",
+      "10",
+      "15",
+      "20",
+      "25",
+      "30",
+      "35",
+      "40"
+    ],
+    "units": "% of weekly income",
+    "notes": [
+      "Two bars are shown for each category, one for 1968 and one for 2018."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-17/writing/visuals-v3/test-3-task-1-visual-fcee8b07c7.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-17/writing/visuals-v3/test-3-task-1-visual-fcee8b07c7.jpg",
+      "alt": "Cambridge IELTS 17 Test 3 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

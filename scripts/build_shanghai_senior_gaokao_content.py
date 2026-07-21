@@ -147,6 +147,17 @@ def read_document(path: Path) -> str:
     return ''
 
 
+def read_textutil_document(path: Path) -> str:
+    result = subprocess.run(
+        ['textutil', '-convert', 'txt', '-stdout', str(path)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        timeout=120,
+        check=False,
+    )
+    return clean(result.stdout.decode('utf-8', errors='ignore'))
+
+
 def rewrite_grouped_task(text: str, start_pattern: str, end_pattern: str, target_start: int, count: int, label: str = '') -> str:
     start = re.search(start_pattern, text, re.I | re.M)
     if not start:
@@ -167,6 +178,41 @@ def rewrite_grouped_task(text: str, start_pattern: str, end_pattern: str, target
 
 
 def normalize_primary_document(session: str, year: int, text: str) -> str:
+    if session == 'autumn' and year == 2012:
+        return re.sub(r'(?<!\d)(41\s*[.．、]\s*)1(?=\s|$)', r'\1I', text)
+    if session == 'autumn' and year == 2013:
+        normalized = text
+        listening_end = re.search(r'(?m)^\s*第\s*II\s*卷\s*$', normalized, re.I)
+        listening = normalized[:listening_end.start()] if listening_end else normalized
+        tail = normalized[listening_end.start():] if listening_end else ''
+        markers = list(re.finditer(r'(?m)^\s*(\d{1,2})\s*[.．、]\s*$', listening))
+        for index in reversed(range(len(markers))):
+            marker = markers[index]
+            number = int(marker.group(1))
+            if not 1 <= number <= 10:
+                continue
+            end = markers[index + 1].start() if index + 1 < len(markers) else len(listening)
+            block = listening[marker.end():end]
+            question = re.search(r'(?m)^\s*Q\s*[:：]\s*([^\n]+)', block, re.I)
+            answer = re.search(r'(?m)^\s*【\s*答\s*案\s*】', block)
+            if not question or not answer or question.end() >= answer.start():
+                continue
+            option_lines = [compact(line) for line in block[question.end():answer.start()].splitlines() if compact(line)]
+            if len(option_lines) != 4:
+                continue
+            cleaned_options = []
+            for key, value in zip('ABCD', option_lines):
+                value = re.sub(r'^(?:[A-D]|1[12]|[（(]\s*[1-4]\s*[）)])\s*[.．、]?\s*', '', value, count=1, flags=re.I)
+                cleaned_options.append(value)
+            replacement = '\n'.join([
+                f'{number}. {compact(question.group(1))}',
+                *[f'{key}. {value}' for key, value in zip('ABCD', cleaned_options)],
+                clean(block[answer.start():]),
+            ]) + '\n'
+            listening = listening[:marker.start()] + replacement + listening[end:]
+        return (listening + tail).replace('lnfomation-gathering abilities', 'Information-gathering abilities')
+    if session == 'autumn' and year == 2014:
+        return re.sub(r'(?<!\d)(43\s*[.．、]\s*)1(?=\s|$)', r'\1I', text)
     if session == 'autumn' and year == 2015:
         normalized = text
         normalized = re.sub(r'(?<=[A-Z])(?=1[45]\s*[、.．])', ' ', normalized)
@@ -231,6 +277,43 @@ def normalize_primary_document(session: str, year: int, text: str) -> str:
         if session == 'autumn':
             normalized = re.sub(r"(B\s*[.．]\s*Giving some help to poor farmers\s*[.．]\s*)D(\s*[.．]\s*Store['’]s address)", r'\1C\2', normalized)
             normalized = re.sub(r'(?m)^\s*效[.。]\s*$', '', normalized)
+        return normalized
+    if year == 2023:
+        normalized = text
+        if session == 'spring':
+            normalized = re.sub(r'(?m)^(\s*)[•·]?\s*A\s*[.．]\s*Disappointed\b', r'\g<1>1. A. Disappointed', normalized, count=1)
+            normalized = normalized.replace('B，There is only one subspecies of scarlet macaws.', 'B. There is only one subspecies of scarlet macaws.')
+            normalized = re.sub(r'(?m)^\s*[•·]\s*(Before you stock up at cafe)', r'A. \1', normalized, count=1)
+            normalized = re.sub(r'(?m)^\s*[•·]\s*(Coffee has its advantages)', r'B. \1', normalized, count=1)
+            normalized = re.sub(r'(?m)^\s*[•·]\s*(_+\s*Some side effects)', r'(69)\1', normalized, count=1)
+        else:
+            normalized = re.sub(r'(?m)(D\. It may be colder at the end of this\s+month\.)\s*9\s*[.．]', r'\1\n9.', normalized, count=1)
+            normalized = re.sub(r'(?m)^\s*1[lI]\s*[.．]', '11.', normalized, count=1)
+            normalized = re.sub(r'(D\. To make room for activities\.)\s*12\s*[.．]', r'\1\n12.', normalized, count=1)
+            normalized = re.sub(r'(D\. It is more complicated and more excellent)\s+15\s*[.．]', r'\1\n15.', normalized, count=1)
+            normalized = re.sub(r"(?m)^\s*(She isn't getting along well with her roommate\.)", r'B. \1', normalized, count=1)
+            normalized = re.sub(r'(?m)^\s*(She has trouble making new friends in new places\.)', r'C. \1', normalized, count=1)
+            normalized = re.sub(r"(?m)^\s*(She doesn't want to be friends with Mary any more\.)", r'D. \1', normalized, count=1)
+            normalized = normalized.replace('C, The villagers wove', 'C. The villagers wove')
+            normalized = re.sub(r'(?m)^\s*6[lI]\s*[.．]', '61.', normalized, count=1)
+            normalized = normalized.replace('D, A speech on the environmental and economic crisis.', 'D. A speech on the environmental and economic crisis.')
+            normalized = re.sub(r'[（(]\s*([1-5])\s*[）)]', r'[\1]', normalized)
+            normalized = normalized.replace('C, It is unlikely that this discrepancy occurred by chance.', 'C. It is unlikely that this discrepancy occurred by chance.')
+            normalized = re.sub(r'(D\. Hubble\'s tension is the most exciting development in cosmology in decades\.)\s*65\s*[.．]', r'\1\n65.', normalized, count=1)
+            normalized = normalized.replace(
+                'B. They improved the comparison between\nC.They raised the uncertainty',
+                'B. They improved the comparison between those Cepheids and their more distant cousins.\nC. They raised the uncertainty',
+            )
+            normalized = re.sub(
+                r'B\. They improved the comparison between\s+C\.?\s*They raised the uncertainty',
+                'B. They improved the comparison between those Cepheids and their more distant cousins.\nC. They raised the uncertainty',
+                normalized,
+                count=1,
+            )
+            normalized = re.sub(r'[（(]\s*6\s+9\s*[）)]\s*(?:_\s*)+', '(69) ________ ', normalized, count=1)
+            normalized = normalized.replace('teachers(68)dove in to', 'teachers dove in to')
+            normalized = re.sub(r'(?<!\d)2[lI](?=\s*[）)])', '21', normalized, count=1)
+            normalized = re.sub(r'(Directions\s*:\s*Translate[^\n]*?brackets)\s+(72\s*[.．])', r'\1\n\2', normalized, count=1, flags=re.I)
         return normalized
     if session == 'autumn' and year == 2017:
         normalized = text
@@ -380,6 +463,9 @@ def normalize_primary_document(session: str, year: int, text: str) -> str:
 
 def normalization_corrections(session: str, year: int) -> list[str]:
     corrections = {
+        ('autumn', 2012): ['41 answer OCR 1 normalized to I'],
+        ('autumn', 2013): ['restored A-D labels for Listening questions 1-10 from the four source option lines'],
+        ('autumn', 2014): ['43 answer OCR 1 normalized to I'],
         ('autumn', 2015): ['14, 15, 29, 39 and 24 answer numbers joined to the previous answer', '39 answer OCR bean normalized to been'],
         ('spring', 2018): ['46 missing option A label', '61 OCR number 6l'],
         ('autumn', 2018): ['21 OCR number 2l', '52 duplicated as 51', '61 OCR number 6l'],
@@ -456,7 +542,7 @@ def extract_answer_map(text: str) -> dict[int, str]:
     for marker in re.finditer(r'【\s*答\s*案\s*】', normalized):
         block = normalized[marker.end():marker.end() + 500]
         block = re.split(r'【', block, maxsplit=1)[0]
-        for number, letter in re.findall(r'(\d{1,3})\s*[.．、]\s*([A-K])(?=\s|$)', block):
+        for number, letter in re.findall(r'(\d{1,3})\s*[.．、]\s*([A-K])(?:[.．、])?(?=\s|$)', block):
             answers[int(number)] = letter
     for match in re.finditer(r'(?m)^\s*(\d{1,3})\s*[.．、]\s*[^\n]{5,500}?\s+([A-D])\s*$', clean(text).upper()):
         answers[int(match.group(1))] = match.group(2)
@@ -474,7 +560,7 @@ def extract_answer_map(text: str) -> dict[int, str]:
         letters = re.sub(r'\s+', '', match.group(2))
         for offset, letter in enumerate(letters):
             answers.setdefault(start + offset, letter)
-    for match in re.finditer(r'(?:^|\s)(\d{1,3})\s*[.\uff0e、\uff09)]?\s*([A-J])(?=\s|$)', normalized):
+    for match in re.finditer(r'(?:^|\s)(\d{1,3})\s*[.\uff0e、\uff09)]?\s*([A-K])(?=\s|$)', normalized):
         answers.setdefault(int(match.group(1)), match.group(2))
     for match in re.finditer(r'(?:^|[\s;；,，])(\d{1,3})\s*[.\uff0e、]\s*([A-D])(?=[\s;；,，]|$)', normalized):
         answers[int(match.group(1))] = match.group(2)
@@ -548,6 +634,15 @@ def extract_grouped_listening_answer_map(text: str) -> dict[int, str]:
     listening = section(text, [r'Listening Comprehension', r'(?:I|\u2160)\.?\s*Listening'], [r'Grammar and Vocabulary'])
     compact_listening = compact(listening).upper()
     answers = {}
+    for start, end in ((1, 5), (6, 10), (11, 13), (14, 16), (17, 20)):
+        expected = end - start + 1
+        match = re.search(
+            rf'(?<!\d){start}\s*(?:-|~|～|至|`|’|\')\s*{end}\s*[.：:]?\s*([A-D](?:\s*[A-D]){{{expected - 1}}})',
+            compact_listening,
+        )
+        if match:
+            for offset, letter in enumerate(re.sub(r'\s+', '', match.group(1))):
+                answers[start + offset] = letter
     range_match = re.search(r'1\s*(?:-|~|～|至)\s*10\s*[.：:]?\s*([A-D](?:\s*[A-D]){9})', compact_listening)
     if range_match:
         for offset, letter in enumerate(re.sub(r'\s+', '', range_match.group(1))):
@@ -668,6 +763,38 @@ def parse_choice_questions(text: str, answers: dict[int, str], number_min: int, 
     return questions
 
 
+def parse_unnumbered_choice_questions(text: str, answers: dict[int, str], start_number: int, count: int):
+    raw = section(text, [r'(?m)^\s*Section\s+A\b'], [r'(?m)^\s*Section\s+B\b'])
+    directions = re.search(r'Directions\s*[:：][\s\S]*?heard[.．]', raw, re.I)
+    if directions:
+        raw = raw[directions.end():]
+    positions = option_positions(raw)
+    if len(positions) < count * 4:
+        return []
+    questions = []
+    for offset in range(count):
+        group = positions[offset * 4:(offset + 1) * 4]
+        if [item.group(1).upper() for item in group] != list('ABCD'):
+            return []
+        options = {}
+        for index, item in enumerate(group):
+            global_index = offset * 4 + index
+            end = positions[global_index + 1].start() if global_index + 1 < len(positions) else len(raw)
+            options[item.group(1).upper()] = compact(raw[item.end():end])
+        number = start_number + offset
+        answer = answers.get(number, '')
+        if answer not in 'ABCD' or not all(options.get(key) for key in 'ABCD'):
+            return []
+        questions.append({
+            'number': number,
+            'prompt': 'Listen and choose the best answer.',
+            'options': options,
+            'answer': answer,
+            'questionType': 'choice',
+        })
+    return questions
+
+
 def clean_passage(section_text: str) -> str:
     value = clean(section_text)
     value = re.sub(
@@ -717,17 +844,17 @@ def reading_sections(text: str):
 
 
 def build_matching_reading(session: str, year: int, section_id: str, raw: str, full_text: str, source_file: str, answers: dict[int, str]):
-    answer_marker = re.search(r'参\s*考\s*答\s*案', full_text)
+    answer_marker = re.search(r'参\s*考\s*答\s*案|上海英语英语参考|上海英语参考答案', full_text)
     answer_tail = full_text[answer_marker.end():] if answer_marker else ''
     heading_rows = re.findall(r'(?m)^\s*([A-F])(?:\s*[.\uff0e、]\s*|\s+)([^\n]{5,160})$', raw)
     if len({key for key, _ in heading_rows}) != 6:
         heading_rows = re.findall(r'(?m)^\s*([A-F])(?:\s*[.\uff0e、]\s*|\s+)([^\n]{5,160})$', answer_tail)
     headings = {key: compact(value) for key, value in heading_rows}
-    paragraph_markers = list(re.finditer(r'(?m)^\s*(\d{2,3})\s*[.\uff0e、]\s*$', raw))
+    paragraph_markers = list(re.finditer(r'(?m)^\s*(\d{2,3})\s*[.\uff0e、]\s*(.*)$', raw))
     paragraphs = []
     for index, marker in enumerate(paragraph_markers):
         end = paragraph_markers[index + 1].start() if index + 1 < len(paragraph_markers) else len(raw)
-        value = clean(raw[marker.end():end])
+        value = clean('\n'.join(value for value in (marker.group(2), raw[marker.end():end]) if value))
         value = re.split(r'(?m)^\s*\d{2,3}\s*[.\uff0e、]\s*[A-F]\s*\.?\s*$', value, maxsplit=1)[0]
         value = re.sub(r'SHAPE\s+\\\*\s+MERGEFORMAT', '', value, flags=re.I)
         value = compact(value)
@@ -815,6 +942,7 @@ def build_vocabulary_cloze_item(session: str, year: int, text: str, source_file:
     options = {}
     corrections = []
     last_option = None
+    expected_option_count = 10 if session == 'autumn' and year in {2011, 2012} else 11
     for match in option_matches:
         key = match.group(1).upper()
         value = compact(match.group(2))
@@ -823,7 +951,7 @@ def build_vocabulary_cloze_item(session: str, year: int, text: str, source_file:
             key = 'F'
         options.setdefault(key, value)
         last_option = match
-        if len(options) == 11:
+        if len(options) == expected_option_count:
             break
     passage = clean(raw[last_option.end():]) if last_option else ''
     passage = re.sub(r'^(?:Directions\s*:)?\s*Complete the following passage[\s\S]*?you need\.?', '', passage, count=1, flags=re.I)
@@ -835,6 +963,12 @@ def build_vocabulary_cloze_item(session: str, year: int, text: str, source_file:
     modern_numbers = [number for number in range(31, 41) if re.search(rf'(?<!\d){number}(?!\d)', passage)]
     if modern_numbers == list(range(31, 41)):
         numbers = modern_numbers
+    legacy_numbers = [number for number in range(41, 50) if re.search(rf'(?<!\d){number}(?!\d)', passage)]
+    if session == 'autumn' and year in {2011, 2012} and legacy_numbers == list(range(41, 50)):
+        numbers = legacy_numbers
+    legacy_ten_numbers = [number for number in range(41, 51) if re.search(rf'(?<!\d){number}(?!\d)', passage)]
+    if legacy_ten_numbers == list(range(41, 51)):
+        numbers = legacy_ten_numbers
     for number in numbers:
         passage = re.sub(rf'(?<!\d){number}\s*[.]', f'({number}) ________', passage)
         passage = re.sub(rf'[（(]\s*{number}\s*[）)]\s*(?:[_\uff3f]+\s*)?', f'_____{number}_____', passage, count=1)
@@ -843,7 +977,7 @@ def build_vocabulary_cloze_item(session: str, year: int, text: str, source_file:
     valid = bool(
         numbers
         and list(options) == expected_option_keys
-        and len(passage) >= 500
+        and len(passage) >= 400
         and all(answers.get(number) in options for number in numbers)
         and all(re.search(rf'(?:(?:_|\uff3f)+\s*{number}\s*(?:_|\uff3f)+|[（(]\s*{number}\s*[）)]|(?<!\d){number}\s*[.])', passage) for number in numbers)
     )
@@ -962,6 +1096,8 @@ def build_grammar_cloze_reading_item(session: str, year: int, text: str, answer_
     raw = grammar[:section_b.start()] if section_b else grammar
     raw = re.sub(r'(?is)^\s*(?:(?:II|\u2161)\.?\s*)?Grammar and Vocabulary\s*', '', raw, count=1)
     raw = re.sub(r'(?is)^\s*Section\s+A\s*', '', raw, count=1)
+    if re.search(r'Beneath each[^.]{0,180}four choices', raw, re.I | re.S):
+        return None, {'section': 'Grammar-Vocabulary-A', 'passageChars': 0, 'questions': 0, 'accepted': False, 'reason': 'choice-grammar-not-cloze'}
     first_task = re.search(r'(?m)^\s*\d{1,3}\s*[.．、]\s*[（(]\s*\d+\s*分\s*[）)]', raw)
     if first_task:
         raw = raw[first_task.start():]
@@ -1215,11 +1351,12 @@ def build_reading_items(session: str, year: int, text: str, source_file: str, an
             continue
         blocks = [(section_id, raw)]
         if section_id == 'B':
-            markers = list(re.finditer(r'(?m)^\s*\(([A-D])\)\s*$', raw, re.I))
+            markers = list(re.finditer(r'(?m)^\s*[（(]([A-D])[）)]\s*[.．、]?\s*(.*)$', raw, re.I))
             blocks = []
             for index, marker in enumerate(markers):
                 end = markers[index + 1].start() if index + 1 < len(markers) else len(raw)
-                blocks.append((f'B{marker.group(1).upper()}', raw[marker.end():end]))
+                block = '\n'.join(value for value in (marker.group(2), raw[marker.end():end]) if value)
+                blocks.append((f'B{marker.group(1).upper()}', block))
             if not blocks:
                 blocks = split_unlabelled_modern_reading_b(raw)
         for block_id, block in blocks:
@@ -1364,7 +1501,7 @@ def extract_document_section_images(source_path: Path, start_pattern: str, end_p
 
 def prepare_writing_images(source_path: Path, session: str, year: int) -> list[dict]:
     assets = extract_document_section_images(source_path, r'Guided Writing', r'【答案】|参考范文|Sample Writing')
-    if not assets:
+    if not assets and not (session == 'autumn' and year == 2011):
         all_assets = extract_document_images(source_path)
         assets = all_assets if len(all_assets) == 1 else []
     if not assets:
@@ -1448,7 +1585,7 @@ def build_writing_item(session: str, year: int, text: str, source_path: Path):
     raw = section(
         text,
         [r'Guided Writing', r'(?:II|III|IV|V|\u2161|\u2162|\u2163|\u2164)\.?\s*Writing\b', r'作文'],
-        [r'【答案】', r'【解析】', r'参\s*考\s*答\s*案', r'答案要点及评分标准', r'参考范文', r'Sample Writing', r'Listening (?:Comprehension|Script)', r'听力(?:原文|文本|文字)'],
+        [r'【答案】', r'【解析】', r'参\s*考\s*答\s*案', r'上海英语英语参考', r'上海英语参考答案', r'答案要点及评分标准', r'参考范文', r'Sample Writing', r'(?m)^\s*To whom it may concern\s*[:：]', r'Listening (?:Comprehension|Script)', r'听力(?:原文|文本|文字)'],
     )
     prompt_table = extract_writing_prompt_table(source_path)
     prompt = compact(raw)
@@ -1467,7 +1604,7 @@ def build_writing_item(session: str, year: int, text: str, source_path: Path):
     if question_number_match:
         prompt = compact(prompt[question_number_match.end():])
     prompt = re.sub(r'^作文部分\s*', '', prompt)
-    prompt = re.split(r'\s*(?:【答案】|【解析】|【分析】|【点评】|参\s*考\s*答\s*案|参考范文|Sample Writing|绝密★启用前|英语试卷\s*答案)', prompt, maxsplit=1, flags=re.I)[0]
+    prompt = re.split(r'\s*(?:【答案】|【解析】|【分析】|【点评】|参\s*考\s*答\s*案|上海英语英语参考|上海英语参考答案|参考范文|Sample Writing|To whom it may concern\s*[:：]|绝密★启用前|英语试卷\s*答案)', prompt, maxsplit=1, flags=re.I)[0]
     prompt = re.split(r'\s*(?:○{2,}|二○一○年全国普通高等学校招生统一考试|上海英语卷\s+答案要点)', prompt, maxsplit=1)[0]
     prompt = re.sub(r'(\d)\s*-\s*-\s*(\d)', r'\1 - \2', prompt)
     prompt = re.sub(r'(\d{2,3})\s*-\s*[lI]\s*(\d{2})', r'\1 - 1\2', prompt)
@@ -1489,7 +1626,10 @@ def build_writing_item(session: str, year: int, text: str, source_path: Path):
     score = int(score_match.group(1)) if score_match else 0
     if score_match:
         body = compact(body[score_match.end():])
-    requirement_marker = re.search(r'(?:你的作文|内容)必须包括\s*[:：]|在[^：]{0,40}中[，,]?\s*你必须\s*[:：]', body)
+    requirement_marker = re.search(
+        r'(?:你的作文|内容)必须包括\s*[:：]|内容包括\s*[:：]|你的信必须满足以下要求\s*[:：]|邮件须包括以下内容\s*[:：]|在[^：]{0,40}中[，,]?\s*你必须\s*[:：]',
+        body,
+    )
     numbered_source = body[requirement_marker.end():] if requirement_marker else body
     numbered_markers = list(re.finditer(r'(?:[（(]\d+[）)]|(?:^|\s)\d+[）).．,、])\s*', numbered_source))
     scenario_end = requirement_marker.start() if requirement_marker else (numbered_markers[0].start() if numbered_markers else len(body))
@@ -1519,7 +1659,7 @@ def build_writing_item(session: str, year: int, text: str, source_path: Path):
     if prompt_starter:
         requirements = [compact(value.replace(prompt_starter, '')) for value in requirements]
         requirements = [value for value in requirements if value]
-    requires_image = bool(re.search(r'下图|如图|图表|(?:以下|下列)?\s*[三3]\s*幅图片', scenario))
+    requires_image = bool(re.search(r'下图|如图|图表|以下启事|(?:以下|下列)?\s*[三3]\s*幅图片', scenario))
     images = prepare_writing_images(source_path, session, year) if requires_image else []
     if requires_image and not images:
         return None, {'promptChars': len(prompt), 'accepted': False, 'reason': 'required-writing-image-missing'}
@@ -1616,8 +1756,8 @@ def build_summary_writing_item(session: str, year: int, text: str, source_file: 
 
 
 def extract_translation_reference_candidates(answer_source: str, question_numbers: list[int]) -> dict[int, list[str]]:
-    heading_pattern = r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\.?\s*)?Translation\b[^\n]*'
-    guided_pattern = r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\.?\s*)?Guided Writing\b[^\n]*'
+    heading_pattern = r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\s*[.．、]?\s*)?Translation\b[^\n]*'
+    guided_pattern = r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\s*[.．、]?\s*)?Guided Writing\b[^\n]*'
     candidates = defaultdict(list)
     for heading in re.finditer(heading_pattern, answer_source, re.I):
         tail = answer_source[heading.start():]
@@ -1658,8 +1798,8 @@ def extract_translation_reference_candidates(answer_source: str, question_number
 
 
 def build_translation_item(session: str, year: int, text: str, source_file: str, answer_text: str = ''):
-    translation_heading_pattern = r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\.?\s*)?Translation\b[^\n]*'
-    guided_heading_pattern = r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\.?\s*)?Guided Writing\b[^\n]*'
+    translation_heading_pattern = r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\s*[.．、]?\s*)?Translation\b[^\n]*'
+    guided_heading_pattern = r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\s*[.．、]?\s*)?Guided Writing\b[^\n]*'
     translation_headings = list(re.finditer(translation_heading_pattern, text, re.I))
 
     def translation_block(heading):
@@ -1682,7 +1822,11 @@ def build_translation_item(session: str, year: int, text: str, source_file: str,
     questions = []
     for index, marker in enumerate(markers):
         end = markers[index + 1].start() if index + 1 < len(markers) else len(raw)
-        source_text = compact(raw[marker.end():end])
+        question_block = clean(raw[marker.end():end])
+        source_text = compact(question_block)
+        first_line = next((compact(line) for line in question_block.splitlines() if compact(line)), '')
+        if first_line and re.search(r'[\u3400-\u9fff]', first_line) and re.search(r'[（(][^（）()]+[）)]\s*[.．_＿]*$', first_line):
+            source_text = first_line
         source_text = re.sub(r'^\s*[（(]\s*\d+\s*分\s*[）)]\s*', '', source_text)
         source_text = re.sub(r'\s*[（(]\s*汉译英\s*[）)]\s*$', '', source_text)
         keyword_match = re.search(r'[（(]\s*([^（）()]+?)\s*[）)]\s*[.．_＿]*\s*$', source_text)
@@ -1714,6 +1858,14 @@ def build_translation_item(session: str, year: int, text: str, source_file: str,
         value = compact(match.group(2))
         if re.search(r'[A-Za-z]', value) and not re.search(r'[\u3400-\u9fff]', value):
             inline_answers[number] = value
+    if session == 'autumn' and year == 2013:
+        for index, marker in enumerate(markers):
+            number = int(marker.group(1))
+            end = markers[index + 1].start() if index + 1 < len(markers) else len(raw)
+            lines = [compact(line) for line in clean(raw[marker.end():end]).splitlines() if compact(line)]
+            english = next((line.rstrip('.． ') for line in lines[1:] if re.match(r'^[A-Z]', line) and len(re.findall(r'[A-Za-z]{2,}', line)) >= 3), '')
+            if english:
+                inline_answers[number] = english
     answer_source = answer_text or text
     answer_headings = list(re.finditer(translation_heading_pattern, answer_source, re.I))
 
@@ -1803,6 +1955,73 @@ def build_translation_item(session: str, year: int, text: str, source_file: str,
     if reliable_references and all(question['number'] in reliable_references for question in questions):
         for question in questions:
             question['referenceAnswers'] = reliable_references[question['number']]
+    if session == 'autumn' and year == 2012 and len(questions) == 5:
+        marker = re.search(r'翻译\s*共\s*20\s*分', answer_source)
+        if marker:
+            tail = answer_source[marker.end():]
+            reference_rows = list(re.finditer(r'(?m)^\s*([1-5])\s*[.．、]\s*', tail))
+            references = {}
+            for index, item in enumerate(reference_rows):
+                end = reference_rows[index + 1].start() if index + 1 < len(reference_rows) else len(tail)
+                value = compact(tail[item.end():end]).rstrip('.． ')
+                if re.match(r'^[A-Z]', value) and not re.search(r'[\u3400-\u9fff]', value):
+                    references[int(item.group(1))] = value
+            if all(question['number'] in references for question in questions):
+                for question in questions:
+                    question['referenceAnswers'] = [references[question['number']]]
+    if session == 'autumn' and year == 2011 and len(questions) == 5:
+        marker = re.search(r'(?m)^\s*1\s*[.．、]\s*(?=Why\s+(?:not|don[’\']?t\s+you))', answer_source, re.I)
+        if marker:
+            tail = answer_source[marker.start():]
+            listening_marker = re.search(r'(?m)^\s*Listening\s+Comprehension\s*$', tail, re.I)
+            if listening_marker:
+                tail = tail[:listening_marker.start()]
+            answer_markers_2011 = list(re.finditer(r'(?m)^\s*([1-5])\s*[.．、]\s*', tail))
+            references = {}
+            for index, item in enumerate(answer_markers_2011):
+                end = answer_markers_2011[index + 1].start() if index + 1 < len(answer_markers_2011) else len(tail)
+                value = compact(tail[item.end():end]).rstrip('.． ')
+                value = value.replace('As forparents', 'As for parents')
+                value = value.replace('No longer hasshe', 'No longer has she')
+                value = value.replace('(that)suits', '(that) suits')
+                if re.match(r'^[A-Z]', value) and not re.search(r'[\u3400-\u9fff]', value):
+                    references[int(item.group(1))] = value
+            if all(question['number'] in references for question in questions):
+                for question in questions:
+                    question['referenceAnswers'] = [references[question['number']]]
+    if session == 'autumn' and year == 2014 and len(questions) == 5:
+        marker = re.search(r'I\s*[.．、]?\s*翻译\s*共\s*22\s*分', answer_source, re.I)
+        if marker:
+            tail = answer_source[marker.end():]
+            writing_marker = re.search(r'(?m)^\s*(?:II|\u2161)\s*[.．、]?\s*(?:写作|Guided Writing)', tail, re.I)
+            if writing_marker:
+                tail = tail[:writing_marker.start()]
+            answer_markers_2014 = list(re.finditer(r'(?m)^\s*([1-5])\s*[.．、]\s*', tail))
+            references = {}
+            for index, item in enumerate(answer_markers_2014):
+                end = answer_markers_2014[index + 1].start() if index + 1 < len(answer_markers_2014) else len(tail)
+                value = compact(tail[item.end():end]).rstrip('.． ')
+                if re.match(r'^[A-Z]', value) and not re.search(r'[\u3400-\u9fff]', value):
+                    references[int(item.group(1))] = value
+            if all(question['number'] in references for question in questions):
+                for question in questions:
+                    question['referenceAnswers'] = [references[question['number']]]
+    if session == 'autumn' and year == 2023 and len(questions) == 4:
+        references = {}
+        for number in range(72, 76):
+            marker = re.search(rf'(?m)^\s*{number}\s*[.．、]\s*(?:⏩\s*)?参考答案\s*[:：]?', answer_source)
+            if not marker:
+                continue
+            tail = answer_source[marker.end():]
+            next_marker = re.search(rf'(?m)^\s*(?:{number + 1}\s*[.．、]\s*(?:⏩\s*)?参考答案|(?:VI|Ⅵ)\s*[.．]?\s*Guided Writing)', tail, re.I)
+            value = clean(tail[:next_marker.start()] if next_marker else tail)
+            value = re.split(r'\s*解析\s*[:：]', value, maxsplit=1)[0]
+            candidate = compact(value).rstrip('.． ')
+            if re.match(r'^[A-Z]', candidate) and not re.search(r'[\u3400-\u9fff]', candidate):
+                references[number] = candidate
+        if all(question['number'] in references for question in questions):
+            for question in questions:
+                question['referenceAnswers'] = [references[question['number']]]
     if session == 'autumn' and year == 2017:
         for question in questions:
             if question['number'] == 72 and question['referenceAnswers']:
@@ -1978,8 +2197,8 @@ def build_grammar_questions(session: str, year: int, text: str, source_file: str
 
 def extract_transcript(texts: list[str]) -> str:
     for text in texts:
-        start_pattern = r'Listening (?:Comprehension )?(?:Script|Text)|听力(?:原文|文本|文字稿|文稿)|录音(?:原文|文字稿)'
-        for start in re.finditer(start_pattern, text, re.I):
+        start_pattern = r'Listening (?:Comprehension )?(?:Script|Text)|^Listening\s+Comprehension\s*$|听力(?:原文|文本|文字稿|文稿)|录音(?:原文|文字稿)'
+        for start in re.finditer(start_pattern, text, re.I | re.M):
             tail = text[start.end():]
             ends = [match.start() for pattern in (r'参考答案', r'答案解析', r'Grammar and Vocabulary') if (match := re.search(pattern, tail, re.I))]
             raw = tail[:min(ends)] if ends else tail
@@ -2020,7 +2239,7 @@ def extract_listening_text_answers(text: str, number_min: int, number_max: int):
         [r'Grammar and Vocabulary', r'(?:II|\u2161)\.?\s*Grammar'],
     )
     result = {}
-    for marker in re.finditer(r'【\s*解\s*答\s*】', first_part):
+    for marker in re.finditer(r'【\s*(?:解\s*答|答\s*案)\s*】', first_part):
         block = first_part[marker.end():]
         block = re.split(r'【\s*(?:点评|答案|分析)\s*】', block, maxsplit=1)[0]
         markers = list(re.finditer(r'(?:^|\s)(\d{1,3})\s*[.\uff0e、]\s*', block))
@@ -2045,11 +2264,19 @@ def extract_listening_text_answers(text: str, number_min: int, number_max: int):
         answer = compact(compact_first_part[match.end():end])
         if answer and len(answer) <= 80:
             result.setdefault(number, answer)
+    for marker in re.finditer(r'【\s*答\s*案\s*】', first_part):
+        block = first_part[marker.end():]
+        block = re.split(r'【\s*(?:解析|分析|点评|答案)\s*】', block, maxsplit=1)[0]
+        for number, value in re.findall(r'(?m)^\s*(\d{1,3})\s*[.．、]?\s*([^\n]+)', block):
+            number = int(number)
+            answer = compact(value).rstrip('.． ')
+            if number_min <= number <= number_max and answer and len(answer) <= 80 and not re.search(r'[\u3400-\u9fff]', answer):
+                result[number] = answer
     return result
 
 
 def extract_numbered_short_answer_map(text: str, number_min: int, number_max: int):
-    marker = re.search(r'参\s*考\s*答\s*案', text)
+    marker = re.search(r'参\s*考\s*答\s*案|上海英语英语参考|上海英语参考答案', text)
     if not marker:
         return {}
     tail = compact(text[marker.end():])
@@ -2087,9 +2314,19 @@ def extract_reference_text_answers(text: str, number_min: int, number_max: int):
             answer = compact(block[marker.end():end].splitlines()[0]).rstrip('.． ')
             if answer and not re.search(r'[\u3400-\u9fff]', answer) and len(answer) <= 240:
                 result[number] = answer
-    marker = re.search(r'参\s*考\s*答\s*案|答案要点及评分标准', text)
+    marker = re.search(r'参\s*考\s*答\s*案|上海英语英语参考|上海英语参考答案|答案要点及评分标准', text)
     if not marker:
         return result
+    raw_tail = text[marker.end():]
+    raw_matches = list(re.finditer(r'(?m)^\s*(\d{1,3})\s*[.\uff0e、]\s*([^\n]+)', raw_tail))
+    for item in raw_matches:
+        number = int(item.group(1))
+        if not number_min <= number <= number_max:
+            continue
+        answer = compact(item.group(2)).rstrip('.． ')
+        answer = re.split(r'\s+(?=\d{1,3}\s*[.．、])', answer, maxsplit=1)[0]
+        if answer and len(answer) <= 240:
+            result[number] = answer
     tail = compact(text[marker.end():])
     matches = list(re.finditer(r'(?:^|\s)(\d{1,3})\s*[.\uff0e、]?\s+', tail))
     for index, match in enumerate(matches):
@@ -2200,10 +2437,24 @@ def build_listening_item(session: str, year: int, text: str, source_file: str, a
     raw = section(
         text,
         [r'Listening Comprehension', r'(?:I|\u2160)\.?\s*Listening'],
-        [r'Grammar and Vocabulary', r'(?:II|\u2161)\.?\s*Grammar'],
+        [r'Grammar and Vocabulary', r'(?:II|\u2161)\.?\s*Grammar', r'(?m)^\s*第\s*II\s*卷\s*$', r'(?m)^\s*(?:I|\u2160)\.?\s*Translation\b'],
     )
     questions = parse_choice_questions(raw, answers, 1, 20, 'Listen and choose the best answer.')
+    if session == 'autumn' and year == 2011 and not any(question['number'] <= 10 for question in questions):
+        questions.extend(parse_unnumbered_choice_questions(raw, answers, 1, 10))
+    listening_prompt_overrides = {}
+    if session == 'autumn' and year == 2013:
+        listening_prompt_overrides = {
+            11: "What was the speaker's previous job?",
+            12: 'What helps to make the speaker productive according to the passage?',
+            13: 'What does the passage mainly tell us?',
+            14: 'What kind of questions are usually asked in the traditional interview?',
+            15: 'What does the case interview focus on about the candidate?',
+            16: 'What does the speaker mainly talk about?',
+        }
     for question in questions:
+        if question['number'] in listening_prompt_overrides:
+            question['prompt'] = listening_prompt_overrides[question['number']]
         if re.fullmatch(r'[（(]\s*\d+\s*分\s*[）)]', question.get('prompt', '')):
             question['prompt'] = 'Listen and choose the best answer.'
         question['options'] = {
@@ -2222,6 +2473,61 @@ def build_listening_item(session: str, year: int, text: str, source_file: str, a
             question['groupKey'] = 'B-17-20'
             question['groupTitle'] = 'Questions 17 through 20 are based on the following conversation.'
     blank_prompts = extract_listening_blank_prompts(raw)
+    form_title_overrides = {}
+    given_rows_overrides = {}
+    if session == 'autumn' and year == 2011:
+        if 24 in text_answers:
+            text_answers[24] = re.sub(r'\s+25\s*[-–—].*$', '', text_answers[24]).strip()
+        blank_prompts.update({
+            17: 'Phone No.: _____',
+            18: 'Location of Problem: A _____ restaurant, 449 Shanghai Street',
+            19: 'Details: It dumps its _____ on the street.',
+            20: "Details: It doesn't put bottles and cans in _____ bins.",
+            21: 'How long does short memory last? It lasts only _____.',
+            22: 'What is an example of medium term memory? Buying bread, a sort of _____ of things to do.',
+            23: 'What is long term memory concerned with? _____ that happen in your life such as your wedding.',
+            24: 'How is long term memory different from the others? It _____.',
+        })
+        form_title_overrides[17] = 'Complaint Form'
+        given_rows_overrides[17] = [{'label': 'Caller', 'value': 'Mary White'}]
+    if session == 'autumn' and year == 2012:
+        blank_prompts.update({
+            17: 'Department: The _____ Department',
+            18: 'Student ID: _____',
+            19: 'Class: The _____ class',
+            20: 'Time: _____, 2:00-4:00 p.m.',
+            21: 'The members were from different cities with different _____ and cultures.',
+            22: 'Different people can be _____.',
+            23: 'They treated her as _____.',
+            24: 'Sometimes _____ can say more than words.',
+        })
+        form_title_overrides[17] = 'Class Registration Form'
+        given_rows_overrides[17] = [{'label': 'Name', 'value': 'Andrew Smith'}]
+    if session == 'autumn' and year == 2013:
+        blank_prompts.update({
+            17: 'Date: 8th _____',
+            18: 'Place: Palace _____, Shanghai',
+            19: 'Registration fee: $ _____',
+            20: 'Speech topic: Opportunities and Risks in the _____ Market',
+            21: "What was David's schoolwork like? He was able to get his schoolwork done _____.",
+            22: 'What was his only problem at school? He was unable to _____ in class.',
+            23: 'Why did he say the new headmaster was wonderful? He let students _____ of their own.',
+            24: 'How was his new style different from other skaters? It was robot-like, with _____.',
+        })
+        form_title_overrides.update({17: 'Latest Conference Information', 21: 'An Interview with David, a Skateboarding Lover'})
+        given_rows_overrides[20] = [{'label': 'Speaker', 'value': 'Carla Marisco from Milan University'}]
+    if session == 'autumn' and year == 2014:
+        blank_prompts.update({
+            17: 'Travel purpose: for a(n) _____ in London',
+            18: 'Comments on the airport environment / facilities · Likes: _____',
+            19: 'Likes: _____ walkways',
+            20: 'Dislikes: _____ shops; small trolleys',
+            21: "What is critical thinking in reading? Assessing the writer's ideas and thinking about the _____ of what the writer is saying.",
+            22: "What is the first step in reading an academic text critically? Finding out the argument and the writer's main line of _____.",
+            23: 'What may serve as the evidence? _____, survey results, examples, etc.',
+            24: 'What is the key to critical thinking? To read actively and _____.',
+        })
+        form_title_overrides[17] = "Travellers' Survey Sheet"
     if session == 'autumn' and year == 2015:
         blank_prompts.update({
             17: 'SRT Service Notes · Account No.: _____',
@@ -2261,8 +2567,8 @@ def build_listening_item(session: str, year: int, text: str, source_file: str, a
                 'groupKey': 'C-17-20' if number <= 20 else 'C-21-24',
                 'groupTitle': 'Blanks 17 through 20 are based on the following conversation.' if number <= 20 else 'Blanks 21 through 24 are based on the following conversation.',
                 'groupInstruction': ('Write NO MORE THAN ONE WORD for each answer.' if session == 'autumn' and year == 2015 else 'Write ONE WORD for each answer.') if number <= 20 else 'Write NO MORE THAN THREE WORDS for each answer.',
-                'formTitle': ('SRT Service Notes' if session == 'autumn' and year == 2015 else ('Class Diary (June 13-19)' if session == 'autumn' and year == 2016 else form_context.get('formTitle', ''))) if number == 17 else '',
-                'givenRows': form_context.get('givenRowsBefore', {}).get(number, []),
+                'formTitle': form_title_overrides.get(number, ('SRT Service Notes' if session == 'autumn' and year == 2015 else ('Class Diary (June 13-19)' if session == 'autumn' and year == 2016 else form_context.get('formTitle', '') if number == 17 else ''))),
+                'givenRows': given_rows_overrides.get(number, form_context.get('givenRowsBefore', {}).get(number, [])),
             })
     questions.sort(key=lambda question: question['number'])
     prefix = SESSIONS[session]['prefix']
@@ -2430,6 +2736,8 @@ def main():
             ),
             (source_path, primary),
         )
+        if year == 2023:
+            listening_primary = read_textutil_document(listening_source_path) or listening_primary
         primary = normalize_primary_document(session, year, primary)
         listening_primary = normalize_primary_document(session, year, listening_primary)
         combined = '\n'.join(normalize_primary_document(session, year, value) for _, value in texts)
@@ -2441,7 +2749,7 @@ def main():
         answers.update(extract_grouped_listening_answer_map(combined))
         answers.update(extract_inline_listening_answer_map(combined))
         text_answers = extract_listening_text_answers(combined, 1, 30)
-        if session == 'autumn' and year == 2015:
+        if session == 'autumn' and year in {2011, 2012, 2014, 2015}:
             text_answers.update(extract_numbered_short_answer_map(combined, 17, 24))
         reading_text_answers = extract_reference_text_answers(combined, 67, 120)
         explicit_transcripts = [read_document(path) for path in transcript_docs.get(key, [])]
@@ -2456,6 +2764,8 @@ def main():
         transcript = extract_explicit_transcript(explicit_transcripts)
         if not transcript:
             transcript = extract_transcript([value for _, value in texts])
+        if re.search(r'【\s*(?:答案|解析|分析|点评)\s*】', transcript):
+            transcript = ''
         grammar_cloze, grammar_cloze_report = build_grammar_cloze_reading_item(session, year, primary, supporting_text, source_path.name)
         vocabulary_cloze, vocabulary_cloze_report = build_vocabulary_cloze_item(session, year, primary, source_path.name, answers)
         readings, reading_report = build_reading_items(session, year, primary, source_path.name, answers, reading_text_answers)
@@ -2464,6 +2774,24 @@ def main():
             image_item = next((item for item in readings if item.get('section') == 'BB'), None)
             if image_item and reading_images:
                 image_item['images'] = reading_images
+        if session == 'autumn' and year == 2012:
+            reading_images = prepare_reading_images(source_path, session, year)
+            image_item = next((item for item in readings if item.get('section') == 'BB'), None)
+            if image_item and len(reading_images) >= 2:
+                image_item['images'] = reading_images[:2]
+        if session == 'autumn' and year == 2011:
+            reading_images = prepare_reading_images(source_path, session, year)
+            image_item = next((item for item in readings if item.get('section') == 'BB'), None)
+            if image_item and reading_images:
+                image_item['images'] = reading_images[:1]
+        if session == 'autumn' and year == 2014:
+            reading_images = prepare_reading_images(source_path, session, year)
+            ba_item = next((item for item in readings if item.get('section') == 'BA'), None)
+            bb_item = next((item for item in readings if item.get('section') == 'BB'), None)
+            if ba_item and reading_images:
+                ba_item['images'] = reading_images[:1]
+            if bb_item and len(reading_images) >= 3:
+                bb_item['images'] = reading_images[1:3]
         if session == 'autumn' and year == 2016:
             reading_images = prepare_reading_images(source_path, session, year)
             image_item = next((item for item in readings if item.get('section') == 'BB'), None)
@@ -2508,7 +2836,7 @@ def main():
                 translation['title'] = f'{year} 上海高考{SESSIONS[session]["label"]} V. Translation'
             if writing:
                 writing['title'] = f'{year} 上海高考{SESSIONS[session]["label"]} VI. Guided Writing'
-        elif session == 'autumn' and year == 2016 and writing:
+        elif session == 'autumn' and 2012 <= year <= 2016 and writing:
             writing['title'] = f'{year} 上海高考{SESSIONS[session]["label"]} II. Guided Writing'
         if translation:
             outputs[session]['writing'].append(translation)

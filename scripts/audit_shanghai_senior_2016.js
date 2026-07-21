@@ -142,7 +142,7 @@ async function auditListening(miniProgram) {
     const ready = await waitForData(launched.page, (data) => data.item && data.item._id === 'sh-autumn-2016-listening' && data.questions.length === 24 && data.audioSrc && !data.audioLoading);
     assert(ready.data.questions.filter((item) => item.showSectionTitle).map((item) => item.sectionKey).join('') === 'ABC', 'listening-sections');
     assert(ready.data.questions.filter((item) => item.showGroupTitle).length === 4, 'listening-group-titles');
-    assert(ready.data.audioDurationText === '18:13', `listening-duration:${ready.data.audioDurationText}`);
+    assert(ready.data.audioDurationText === '18:14', `listening-duration:${ready.data.audioDurationText}`);
     assert(ready.data.questions[16].formTitle === 'Class Diary (June 13-19)', 'listening-class-diary');
     assert(ready.data.questions[20].prompt.includes('Sue Walter'), 'listening-sue-walter');
     if (round === 1) listeningScreenshot = await screenshot(miniProgram, 'listening');

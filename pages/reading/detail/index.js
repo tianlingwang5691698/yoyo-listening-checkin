@@ -6,11 +6,12 @@ const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
 const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../../utils/dictionary-voice');
 const { createDictionaryVoicePlayer } = require('../../../utils/dictionary-voice-player');
+const { splitReadingNotePrompt, formatReadingQuestionRange } = require('../../../utils/reading-question-display');
 
 const text = (key, fallback) => i18n.getPageText('readingDetail', key, undefined, fallback);
 
 const STUDY_PACK_STORAGE_PREFIX = 'readingStudyPack:';
-const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
+const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV2';
 const FLASHCARD_WORDS_KEY = 'readingFlashcardWordsV1';
 const FLASHCARD_ITEMS_KEY = 'readingFlashcardItemsV1';
 const EBBINGHAUS_REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
@@ -126,9 +127,18 @@ function normalizePassage(passage, answers, submitted, review) {
     }
     return map;
   }, {});
+  let lastGroupKey = '';
+  let lastNoteHeading = '';
   const questions = sourceQuestions.map((question) => {
     const reviewAnalysis = analysisByNumber[String(question.number)] || null;
     const type = hasOptions(question) ? 'choice' : 'blank';
+    const groupKey = String(question.groupKey || '');
+    const showGroupHeader = !!groupKey && groupKey !== lastGroupKey;
+    if (showGroupHeader) lastNoteHeading = '';
+    const promptDisplay = splitReadingNotePrompt(question.prompt, question.groupInstruction);
+    const showNoteHeading = !!promptDisplay.heading && promptDisplay.heading !== lastNoteHeading;
+    if (groupKey) lastGroupKey = groupKey;
+    if (promptDisplay.heading) lastNoteHeading = promptDisplay.heading;
     const userAnswer = String(answers[String(question.number)] || '');
     const rawAnswer = String(question.answer || '').trim();
     const answer = type === 'choice' ? rawAnswer.toUpperCase() : rawAnswer;
@@ -145,7 +155,12 @@ function normalizePassage(passage, answers, submitted, review) {
     ) : null;
     return Object.assign({}, question, {
       type,
-      promptTokens: tokenizeChunkText(question.prompt || ''),
+      prompt: promptDisplay.prompt,
+      promptTokens: tokenizeChunkText(promptDisplay.prompt),
+      groupRangeTitle: formatReadingQuestionRange(groupKey),
+      showGroupHeader,
+      noteHeading: promptDisplay.heading,
+      showNoteHeading,
       selected,
       selectedDisplay,
       inputValue: type === 'blank' ? selected : '',

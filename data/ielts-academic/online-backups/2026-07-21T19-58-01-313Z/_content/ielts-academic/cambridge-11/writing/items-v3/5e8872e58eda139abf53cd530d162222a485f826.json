@@ -1,0 +1,62 @@
+{
+  "_id": "ielts-academic-11-test-4-writing-task-1",
+  "id": "ielts-academic-11-test-4-writing-task-1",
+  "title": "Cambridge IELTS 11 Test 4 Writing Task 1",
+  "year": 2016,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-11-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑11真题.pdf",
+  "book": "Cambridge IELTS 11 Academic",
+  "bookNumber": 11,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The table below shows the numbers of visitors to Ashdown Museum during the year before and the year after it was refurbished. The charts show the result of surveys asking visitors how satisfied they were with their visit, during the same two periods.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The table below shows the numbers of visitors to Ashdown Museum during the year before and the year after it was refurbished. The charts show the result of surveys asking visitors how satisfied they were with their visit, during the same two periods.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "table and pie charts",
+    "title": "Total number of visitors to Ashdown Museum",
+    "labels": [
+      "During the year before refurbishment:",
+      "During the year after refurbishment:",
+      "Results of surveys of visitor satisfaction",
+      "Year before refurbishment",
+      "Year after refurbishment",
+      "Very satisfied",
+      "Satisfied",
+      "Dissatisfied",
+      "Very dissatisfied",
+      "No response"
+    ],
+    "units": "number of visitors; percentage values",
+    "notes": [
+      "During the year before refurbishment: 74,000",
+      "During the year after refurbishment: 92,000",
+      "Year before refurbishment: Very satisfied 15, Satisfied 30, Dissatisfied 40, Very dissatisfied 10, No response 5",
+      "Year after refurbishment: Very satisfied 35, Satisfied 40, Dissatisfied 15, Very dissatisfied 5, No response 5"
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-11/writing/visuals-v3/test-4-task-1-visual-ef793b0e86.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-11/writing/visuals-v3/test-4-task-1-visual-ef793b0e86.jpg",
+      "alt": "Cambridge IELTS 11 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

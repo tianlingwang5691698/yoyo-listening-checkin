@@ -1,0 +1,64 @@
+{
+  "_id": "ielts-academic-15-test-4-writing-task-1",
+  "id": "ielts-academic-15-test-4-writing-task-1",
+  "title": "Cambridge IELTS 15 Test 4 Writing Task 1",
+  "year": 2020,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-15-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑15真题.pdf",
+  "book": "Cambridge IELTS 15 Academic",
+  "bookNumber": 15,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The chart below shows what Anthropology graduates from one university did after finishing their undergraduate degree course. The table shows the salaries of the anthropologists in work after five years.",
+  "scenario": "The chart below shows what Anthropology graduates from one university did after finishing their undergraduate degree course. The table shows the salaries of the anthropologists in work after five years.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Pie chart and table",
+    "title": "Destination of Anthropology graduates (from one university); Salaries of Anthropology graduates (after 5 years' work)",
+    "labels": [
+      "Full-time work: 52%",
+      "Part-time work: 15%",
+      "Part-time work + postgrad study: 5%",
+      "Full-time postgrad study: 8%",
+      "Unemployed: 12%",
+      "Not known: 8%",
+      "Type of employment",
+      "$25,000-49,999",
+      "$50,000-74,999",
+      "$75,000-99,999",
+      "$100,000+",
+      "Freelance consultants: 5%, 15%, 40%, 40%",
+      "Government sector: 5%, 15%, 30%, 50%",
+      "Private companies: 10%, 35%, 25%, 30%"
+    ],
+    "units": "Percentages; annual salary in dollars",
+    "notes": [
+      "The pie chart shows graduates' destinations after finishing their undergraduate degree course.",
+      "The table shows salary distributions after five years' work for freelance consultants, the government sector and private companies."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-15/writing/visuals-v3/test-4-task-1-visual-bf1615e859.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-15/writing/visuals-v3/test-4-task-1-visual-bf1615e859.jpg",
+      "alt": "Cambridge IELTS 15 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

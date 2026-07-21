@@ -1,0 +1,235 @@
+{
+  "passed": true,
+  "checkedAt": "2026-07-21T10:04:01.337Z",
+  "calls": {
+    "material": {
+      "wallMs": 369,
+      "functionMs": 21
+    },
+    "reading": {
+      "wallMs": 277,
+      "functionMs": 31
+    },
+    "grammar": {
+      "wallMs": 1725,
+      "functionMs": 1609
+    }
+  },
+  "grammarCount": 64,
+  "rows": [
+    {
+      "session": "autumn",
+      "year": 2011,
+      "reading": 7,
+      "writing": 1,
+      "listening": 24,
+      "readingRevision": 1,
+      "readingOnline": {
+        "cloudPath": "_content/reading-senior-autumn/years/2011/reading-passages.json",
+        "status": 200,
+        "count": 7,
+        "visible": true
+      },
+      "writingOnline": [
+        {
+          "id": "sh-autumn-2011-translation",
+          "visible": true,
+          "present": true
+        }
+      ],
+      "listeningOnline": {
+        "id": "sh-autumn-2011-listening",
+        "visible": true,
+        "present": true,
+        "questionCount": 24,
+        "durationSec": 923.742,
+        "publicStatus": 200,
+        "tempReady": true
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2012,
+      "reading": 7,
+      "writing": 2,
+      "listening": 24,
+      "readingRevision": 1,
+      "readingOnline": {
+        "cloudPath": "_content/reading-senior-autumn/years/2012/reading-passages.json",
+        "status": 200,
+        "count": 7,
+        "visible": true
+      },
+      "writingOnline": [
+        {
+          "id": "sh-autumn-2012-translation",
+          "visible": true,
+          "present": true
+        },
+        {
+          "id": "sh-autumn-2012-writing",
+          "visible": true,
+          "present": true
+        }
+      ],
+      "listeningOnline": {
+        "id": "sh-autumn-2012-listening",
+        "visible": true,
+        "present": true,
+        "questionCount": 24,
+        "durationSec": 941.375,
+        "publicStatus": 200,
+        "tempReady": true
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2013,
+      "reading": 0,
+      "writing": 2,
+      "listening": 24,
+      "readingRevision": 0,
+      "readingOnline": {
+        "status": 0,
+        "count": 0,
+        "visible": false
+      },
+      "writingOnline": [
+        {
+          "id": "sh-autumn-2013-translation",
+          "visible": true,
+          "present": true
+        },
+        {
+          "id": "sh-autumn-2013-writing",
+          "visible": true,
+          "present": true
+        }
+      ],
+      "listeningOnline": {
+        "id": "sh-autumn-2013-listening",
+        "visible": true,
+        "present": true,
+        "questionCount": 24,
+        "durationSec": 980.637,
+        "publicStatus": 200,
+        "tempReady": true
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2014,
+      "reading": 7,
+      "writing": 2,
+      "listening": 24,
+      "readingRevision": 2,
+      "readingOnline": {
+        "cloudPath": "_content/reading-senior-autumn/years/2014/v2/reading-passages.json",
+        "status": 200,
+        "count": 7,
+        "visible": true
+      },
+      "writingOnline": [
+        {
+          "id": "sh-autumn-2014-translation",
+          "visible": true,
+          "present": true
+        },
+        {
+          "id": "sh-autumn-2014-writing",
+          "visible": true,
+          "present": true
+        }
+      ],
+      "listeningOnline": {
+        "id": "sh-autumn-2014-listening",
+        "visible": true,
+        "present": true,
+        "questionCount": 24,
+        "durationSec": 1008.457,
+        "publicStatus": 200,
+        "tempReady": true
+      }
+    },
+    {
+      "session": "spring",
+      "year": 2023,
+      "reading": 6,
+      "writing": 3,
+      "listening": 20,
+      "readingRevision": 2,
+      "readingOnline": {
+        "cloudPath": "_content/reading-senior-spring/years/2023/v2/reading-passages.json",
+        "status": 200,
+        "count": 6,
+        "visible": true
+      },
+      "writingOnline": [
+        {
+          "id": "sh-spring-2023-summary-writing",
+          "visible": true,
+          "present": true
+        },
+        {
+          "id": "sh-spring-2023-translation",
+          "visible": true,
+          "present": true
+        },
+        {
+          "id": "sh-spring-2023-writing",
+          "visible": true,
+          "present": true
+        }
+      ],
+      "listeningOnline": {
+        "id": "sh-spring-2023-listening",
+        "visible": true,
+        "present": true,
+        "questionCount": 20,
+        "durationSec": 963.265,
+        "publicStatus": 200,
+        "tempReady": true
+      }
+    },
+    {
+      "session": "autumn",
+      "year": 2023,
+      "reading": 7,
+      "writing": 3,
+      "listening": 20,
+      "readingRevision": 2,
+      "readingOnline": {
+        "cloudPath": "_content/reading-senior-autumn/years/2023/v2/reading-passages.json",
+        "status": 200,
+        "count": 7,
+        "visible": true
+      },
+      "writingOnline": [
+        {
+          "id": "sh-autumn-2023-summary-writing",
+          "visible": true,
+          "present": true
+        },
+        {
+          "id": "sh-autumn-2023-translation",
+          "visible": true,
+          "present": true
+        },
+        {
+          "id": "sh-autumn-2023-writing",
+          "visible": true,
+          "present": true
+        }
+      ],
+      "listeningOnline": {
+        "id": "sh-autumn-2023-listening",
+        "visible": true,
+        "present": true,
+        "questionCount": 20,
+        "durationSec": 978.648,
+        "publicStatus": 200,
+        "tempReady": true
+      }
+    }
+  ]
+}

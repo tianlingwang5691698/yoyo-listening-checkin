@@ -1,0 +1,34 @@
+{
+  "directions": "You should spend about 20 minutes on this task.\n\nWrite at least 150 words.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The diagram below shows how one type of desert, known as a rain-shadow desert, is formed.",
+  "requirements": [
+    "Select and report the main features.",
+    "Make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "process diagram",
+    "title": "The formation of rain-shadow deserts",
+    "labels": [
+      "Rain falls",
+      "Clouds form",
+      "Dry air continues over mountain",
+      "Moist air rises and cools",
+      "Windward side",
+      "Leeward side",
+      "Winds approach coast",
+      "Winds pushed upward",
+      "Dry winds reach inland areas",
+      "Sea",
+      "Inland",
+      "Rain-shadow desert",
+      "Thousands of kilometres"
+    ],
+    "units": "Thousands of kilometres",
+    "notes": [
+      "The diagram shows moist coastal air rising and cooling on the windward side of a mountain, rain falling, and dry air continuing over the mountain to form a rain-shadow desert inland."
+    ]
+  },
+  "uncertain": []
+}

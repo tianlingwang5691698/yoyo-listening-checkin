@@ -1,0 +1,71 @@
+{
+  "_id": "ielts-academic-13-test-4-writing-task-1",
+  "id": "ielts-academic-13-test-4-writing-task-1",
+  "title": "Cambridge IELTS 13 Test 4 Writing Task 1",
+  "year": 2018,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-13-test-4",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑13真题.pdf",
+  "book": "Cambridge IELTS 13 Academic",
+  "bookNumber": 13,
+  "testNumber": 4,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The plans below show the layout of a university's sports centre now, and how it will look after redevelopment.",
+  "scenario": "The plans compare the present layout of a university sports centre with its future layout after redevelopment.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Two plans",
+    "title": "UNIVERSITY SPORTS CENTRE",
+    "labels": [
+      "UNIVERSITY SPORTS CENTRE (present)",
+      "UNIVERSITY SPORTS CENTRE (future plans)",
+      "Outdoor courts",
+      "Changing room",
+      "Gym",
+      "25m Pool",
+      "Seating",
+      "Reception",
+      "Leisure pool",
+      "Sports shop",
+      "Sports hall",
+      "Dance studio",
+      "Café",
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "units": "25m",
+    "notes": [
+      "The present plan shows a central 25m pool, with a changing room to the west, seating to the east, a gym to the north and reception at the southern entrance.",
+      "Outdoor courts are shown on both the west and east sides of the present sports centre.",
+      "The future plan encloses and expands the site. The 25m pool, central changing room, seating, gym, reception and southern entrance remain visible.",
+      "The future western side contains a leisure pool, a changing room and a sports shop.",
+      "The future eastern side contains a sports hall, two dance studios, a changing room and a café.",
+      "Compass symbols show north at the top, east to the right, south at the bottom and west to the left."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-13/writing/visuals-v3/test-4-task-1-visual-67fbffd33c.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-13/writing/visuals-v3/test-4-task-1-visual-67fbffd33c.jpg",
+      "alt": "Cambridge IELTS 13 Test 4 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

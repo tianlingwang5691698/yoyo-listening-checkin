@@ -60,13 +60,16 @@
       </view>
     </view>
     <view class="library-question-row" wx:for="{{questions}}" wx:key="number">
+      <view class="listening-source-pages" wx:if="{{item.sourceImages.length}}">
+        <image class="listening-source-page" wx:for="{{item.sourceImages}}" wx:for-item="sourceImage" wx:key="cloudPath" src="{{sourceImage.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+      </view>
       <view class="library-section-heading in-list" wx:if="{{item.showSectionTitle}}">{{item.sectionTitle}}</view>
       <view class="library-listening-group-head" wx:if="{{item.showGroupTitle}}">
         <view class="library-listening-group-title">{{item.groupTitle}}</view>
         <view class="library-listening-group-instruction" wx:if="{{item.groupInstruction}}">{{item.groupInstruction}}</view>
       </view>
-      <view class="library-listening-form" wx:if="{{item.formTitle || item.givenRows.length}}">
-        <view class="library-listening-form-title" wx:if="{{item.formTitle}}">{{item.formTitle}}</view>
+      <view class="library-listening-form" wx:if="{{item.showFormTitle || item.givenRows.length}}">
+        <view class="library-listening-form-title" wx:if="{{item.showFormTitle}}">{{item.formTitle}}</view>
         <view class="library-listening-form-row" wx:for="{{item.givenRows}}" wx:for-item="given" wx:key="label">
           <view class="library-listening-form-label">{{given.label}}:</view>
           <view class="library-listening-form-value">{{given.value}}</view>
@@ -211,13 +214,16 @@
       </view>
     </view>
     <view class="question-row" wx:for="{{questions}}" wx:key="number">
+      <view class="listening-source-pages" wx:if="{{item.sourceImages.length}}">
+        <image class="listening-source-page" wx:for="{{item.sourceImages}}" wx:for-item="sourceImage" wx:key="cloudPath" src="{{sourceImage.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+      </view>
       <view class="section-heading in-list" wx:if="{{item.showSectionTitle}}">{{item.sectionTitle}}</view>
       <view class="listening-group-head" wx:if="{{item.showGroupTitle}}">
         <view class="listening-group-title">{{item.groupTitle}}</view>
         <view class="listening-group-instruction" wx:if="{{item.groupInstruction}}">{{item.groupInstruction}}</view>
       </view>
-      <view class="listening-form" wx:if="{{item.formTitle || item.givenRows.length}}">
-        <view class="listening-form-title" wx:if="{{item.formTitle}}">{{item.formTitle}}</view>
+      <view class="listening-form" wx:if="{{item.showFormTitle || item.givenRows.length}}">
+        <view class="listening-form-title" wx:if="{{item.showFormTitle}}">{{item.formTitle}}</view>
         <view class="listening-form-row" wx:for="{{item.givenRows}}" wx:for-item="given" wx:key="label">
           <view class="listening-form-label">{{given.label}}:</view>
           <view class="listening-form-value">{{given.value}}</view>

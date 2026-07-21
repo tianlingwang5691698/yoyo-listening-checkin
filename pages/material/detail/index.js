@@ -2,11 +2,13 @@ const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 const snapshotStore = require('../../../utils/snapshot');
 const i18n = require('../../../utils/i18n');
+const { formatAudioTime, formatAudioDuration } = require('../../../utils/audio-time');
+const { stripRepeatedQuestionTitles } = require('../../../utils/listening-question-display');
 
 const text = (key, fallback) => i18n.getPageText('materialDetail', key, undefined, fallback);
 
 const PICTURE_LABELS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
+const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV2';
 const AUDIO_SLIDER_MAX = 1000;
 
 function sectionForNumber(number) {
@@ -25,6 +27,7 @@ function sectionForNumber(number) {
 function buildQuestions(item) {
   let lastSection = '';
   let lastGroup = '';
+  let lastFormTitle = '';
   return (item.questions || []).map((question) => {
     const section = question.sectionKey
       ? { key: question.sectionKey, title: question.sectionTitle || '' }
@@ -32,11 +35,14 @@ function buildQuestions(item) {
     const showSectionTitle = section.key !== lastSection && !(section.key === 'A' && item.images && item.images.length);
     const groupKey = String(question.groupKey || '');
     const showGroupTitle = !!groupKey && groupKey !== lastGroup;
+    const formTitle = String(question.formTitle || '').trim();
+    const showFormTitle = !!formTitle && formTitle !== lastFormTitle;
     lastSection = section.key;
     if (groupKey) lastGroup = groupKey;
+    if (formTitle) lastFormTitle = formTitle;
     return {
       number: question.number,
-      prompt: question.prompt,
+      prompt: stripRepeatedQuestionTitles(question.prompt, formTitle, question.groupTitle),
       questionType: question.questionType || 'blank',
       sectionKey: section.key,
       sectionTitle: section.title,
@@ -45,8 +51,10 @@ function buildQuestions(item) {
       groupTitle: question.groupTitle || '',
       groupInstruction: question.groupInstruction || '',
       showGroupTitle,
-      formTitle: question.formTitle || '',
+      formTitle,
+      showFormTitle,
       givenRows: Array.isArray(question.givenRows) ? question.givenRows : [],
+      sourceImages: Array.isArray(question.sourceImages) ? question.sourceImages : [],
       optionsList: Object.keys(question.options || {}).map((key) => ({
         key,
         text: question.options[key],
@@ -80,13 +88,6 @@ function getListeningStudyError(result) {
     return `${text('generate', '生成')} failed: ${message}`;
   }
   return `${text('generate', '生成')} failed`;
-}
-
-function formatAudioTime(seconds) {
-  const value = Math.max(0, Math.floor(Number(seconds) || 0));
-  const minutes = Math.floor(value / 60);
-  const rest = value % 60;
-  return `${minutes < 10 ? '0' : ''}${minutes}:${rest < 10 ? '0' : ''}${rest}`;
 }
 
 function normalizeAudioTime(value, max) {
@@ -218,12 +219,15 @@ Page({
   onLoad(options = {}) {
     this.materialDetailPerf = page.startPagePerf('material-detail');
     const legacyItem = unwrapListeningItem(wx.getStorageSync('currentListeningSetV1') || null);
-    const itemId = decodeItemId(options.itemId || getListeningItemId(legacyItem) || '');
+    const requestedItemId = decodeItemId(options.itemId || '');
+    const legacyItemId = getListeningItemId(legacyItem);
+    const itemId = requestedItemId || legacyItemId;
+    const matchingLegacyItem = !requestedItemId || legacyItemId === itemId ? legacyItem : null;
     const snapshot = itemId ? snapshotStore.read(LISTENING_SET_SNAPSHOT_KEY, {
       id: itemId,
       maxAgeMs: 5 * 60 * 1000
     }) : null;
-    const item = withImageDisplayMode(unwrapListeningItem(snapshot) || legacyItem || null);
+    const item = withImageDisplayMode(unwrapListeningItem(snapshot) || matchingLegacyItem || null);
     const knownDuration = Number(item && item.durationSec || 0);
     const studyCompleted = item ? !!wx.getStorageSync(studyDoneKey(item)) : false;
     this.setData({
@@ -231,7 +235,7 @@ Page({
       questions: item ? buildQuestions(item) : [],
       answerSummary: item ? buildAnswerSummary(item) : '',
       audioDuration: knownDuration,
-      audioDurationText: formatAudioTime(knownDuration),
+      audioDurationText: formatAudioDuration(knownDuration),
       studyCompleted,
       audioLocked: false,
       debugLines: itemId ? [] : buildDetailDebugLines({
@@ -316,7 +320,7 @@ Page({
       audioDuration: knownDuration,
       audioCurrentTime: 0,
       audioCurrentText: '00:00',
-      audioDurationText: formatAudioTime(knownDuration),
+      audioDurationText: formatAudioDuration(knownDuration),
       audioProgress: 0,
       audioSliderMax: AUDIO_SLIDER_MAX,
       audioSeeking: false,
@@ -375,7 +379,7 @@ Page({
       audioDuration: nextDuration,
       audioCurrentTime: nextCurrent,
       audioCurrentText: formatAudioTime(nextCurrent),
-      audioDurationText: formatAudioTime(nextDuration),
+      audioDurationText: formatAudioDuration(nextDuration),
       audioProgress: nextDuration ? Math.round((nextCurrent / nextDuration) * AUDIO_SLIDER_MAX) : 0
     });
   },

@@ -183,6 +183,353 @@
     "score": 25
   },
   {
+    "_id": "sh-autumn-2011-translation",
+    "title": "2011 上海高考秋考 I. Translation",
+    "year": 2011,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2011",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2011年上海秋季高考英语真题及答案.doc",
+    "directions": "Directions : Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 5,
+    "questions": [
+      {
+        "number": 1,
+        "sourceText": "你为什么不在网上订票呢？",
+        "requiredWord": "Why",
+        "referenceAnswers": [
+          "Why not/ Why don’t you book tickets online / reserve the ticket(s) on the Internet?"
+        ]
+      },
+      {
+        "number": 2,
+        "sourceText": "我常把王海误认为他的双胞胎弟弟， 因为他们长得太像了。",
+        "requiredWord": "mistake",
+        "referenceAnswers": [
+          "I often mistake Wang Hai for his twin brother because they look so similar / very much alike"
+        ]
+      },
+      {
+        "number": 3,
+        "sourceText": "对父母而言， 没有什么能与孩子的身心健康相比。",
+        "requiredWord": "compare",
+        "referenceAnswers": [
+          "As for parents, nothing can be compared with their children’s physical and mental health"
+        ]
+      },
+      {
+        "number": 4,
+        "sourceText": "自从出国留学后， 她就不再和我们保持联系了。",
+        "requiredWord": "No longer",
+        "referenceAnswers": [
+          "No longer has she kept in touch with us since she went abroad for further study / education"
+        ]
+      },
+      {
+        "number": 5,
+        "sourceText": "如果能找到任何适合你的学习方法， 你的学习效率就可能明显提高。",
+        "requiredWord": "whatever",
+        "referenceAnswers": [
+          "If you can find whatever learning method (that) suits you, your study / learning efficiency is likely to improve remarkably"
+        ]
+      }
+    ],
+    "score": 20
+  },
+  {
+    "_id": "sh-autumn-2012-translation",
+    "title": "2012 上海高考秋考 I. Translation",
+    "year": 2012,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2012",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+    "directions": "Directions: Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 5,
+    "questions": [
+      {
+        "number": 1,
+        "sourceText": "她五年前开始拉小提琴。",
+        "requiredWord": "play",
+        "referenceAnswers": [
+          "She began to play the violin five years ago"
+        ]
+      },
+      {
+        "number": 2,
+        "sourceText": "由于天气恶劣，航班延误了好几个小时。",
+        "requiredWord": "owing",
+        "referenceAnswers": [
+          "Owing to bad weather, the flight was delayed for a couple of hours"
+        ]
+      },
+      {
+        "number": 3,
+        "sourceText": "每位设计师都希望自己的作品能经受时间的考验。",
+        "requiredWord": "stand",
+        "referenceAnswers": [
+          "Every designer hopes that his work can stand the test of time"
+        ]
+      },
+      {
+        "number": 4,
+        "sourceText": "能否抵御网络游戏的诱惑是摆在中学生面前的一道难题。",
+        "requiredWord": "It",
+        "referenceAnswers": [
+          "It is a difficult problem for high school students whether they can resist the temptation of online games"
+        ]
+      },
+      {
+        "number": 5,
+        "sourceText": "在展览会上，公司销售经理展示了孩子们翘首以盼的新型电子玩具。",
+        "requiredWord": "demonstrate",
+        "referenceAnswers": [
+          "At the exhibition, the company’s sales manager demonstrated the new type of electronic toys (which/that) children were looking forward to"
+        ]
+      }
+    ],
+    "score": 20
+  },
+  {
+    "_id": "sh-autumn-2012-writing",
+    "title": "2012 上海高考秋考 II. Guided Writing",
+    "year": 2012,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2012",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+    "questionNumber": 0,
+    "prompt": "Directions: Write an English composition in 120 - 150 words according to the instructions given below in Chinese. 上周一，你在一所小学观摩了小女孩 Amy 所在班级的两堂绘画课（如图所示），回家后你用英语写了一篇日记，内容包括： ● 对两堂绘画课的具体描述； ● 你从中获得的启发。",
+    "directions": "Directions: Write an English composition in 120 - 150 words according to the instructions given below in Chinese.",
+    "scenario": "上周一，你在一所小学观摩了小女孩 Amy 所在班级的两堂绘画课（如图所示），回家后你用英语写了一篇日记，",
+    "requirementsTitle": "内容包括：",
+    "requirements": [
+      "对两堂绘画课的具体描述；",
+      "你从中获得的启发。"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [
+      {
+        "cloudPath": "_content/writing-senior-autumn/years/2012/assets/sh-autumn-2012-writing-1-fa232447b7.png",
+        "localPath": "data/writing-senior-autumn/images/sh-autumn-2012-writing-1-fa232447b7.png",
+        "alt": "2012 上海高考秋考作文题原图"
+      }
+    ],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2013-translation",
+    "title": "2013 上海高考秋考 I. Translation",
+    "year": 2013,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2013",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2013年上海秋季高考英语真题及答案.doc",
+    "directions": "Directions: Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 5,
+    "questions": [
+      {
+        "number": 1,
+        "sourceText": "今年元旦我们玩得很开心。",
+        "requiredWord": "enjoy",
+        "referenceAnswers": [
+          "We enjoyed ourselves very much on this New Year's Day"
+        ]
+      },
+      {
+        "number": 2,
+        "sourceText": "舅舅昨天寄给我一张卡片，祝贺我 18 岁生日。",
+        "requiredWord": "congratulate",
+        "referenceAnswers": [
+          "My uncle sent me a card to congratulate me on my eighteenth birthday yesterday"
+        ]
+      },
+      {
+        "number": 3,
+        "sourceText": "经过多年的建设，这个小镇现在和地震前一样充满了活力。",
+        "requiredWord": "as...as",
+        "referenceAnswers": [
+          "After years of construction, this town is as lively now as it used to be before the earthquake"
+        ]
+      },
+      {
+        "number": 4,
+        "sourceText": "演出以一段五十多岁的人耳熟能详的经典音乐开始。",
+        "requiredWord": "familiar",
+        "referenceAnswers": [
+          "The show started with a piece of music familiar to people in their fifties"
+        ]
+      },
+      {
+        "number": 5,
+        "sourceText": "她一看完那个关于已灭绝物种的电视节目，就立志加入野生动物保护组织。",
+        "requiredWord": "No sooner",
+        "referenceAnswers": [
+          "No sooner had she finished watching that programme about those extinct species, than she decided to join the Wildlife Conservation Organization"
+        ]
+      }
+    ],
+    "score": 20
+  },
+  {
+    "_id": "sh-autumn-2013-writing",
+    "title": "2013 上海高考秋考 II. Guided Writing",
+    "year": 2013,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2013",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2013年上海秋季高考英语真题及答案.doc",
+    "questionNumber": 0,
+    "prompt": "Directions: Write an English composition in 120-150 words according to the instructions given in Chinese. 上海博物馆拟举办一次名画展，现就展出场所（博物馆还是社区图书馆）征集公众意见，假设你是王敏，给上海博物馆写一封信表达你的想法。你的信必须满足以下要求： 1. 简述你写信的目的及你对场所的选择； 2. 说明你的理由（从便利性，专业性等方面对这两个场所进行对比）",
+    "directions": "Directions: Write an English composition in 120-150 words according to the instructions given in Chinese.",
+    "scenario": "上海博物馆拟举办一次名画展，现就展出场所（博物馆还是社区图书馆）征集公众意见，假设你是王敏，给上海博物馆写一封信表达你的想法。",
+    "requirementsTitle": "你的信必须满足以下要求：",
+    "requirements": [
+      "简述你写信的目的及你对场所的选择；",
+      "说明你的理由（从便利性，专业性等方面对这两个场所进行对比）"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2014-translation",
+    "title": "2014 上海高考秋考 I. Translation",
+    "year": 2014,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2014",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2014年上海秋季高考英语真题及答案.doc",
+    "directions": "Directions: Translate the following sentences into English, using the words given in the brackets.",
+    "questionCount": 5,
+    "questions": [
+      {
+        "number": 1,
+        "sourceText": "我习惯睡前听点轻音乐。",
+        "requiredWord": "accustomed",
+        "referenceAnswers": [
+          "I'm accustomed to listening to some light music before sleep"
+        ]
+      },
+      {
+        "number": 2,
+        "sourceText": "将来过怎样的生活取决于你自己。",
+        "requiredWord": "be up to",
+        "referenceAnswers": [
+          "It's up to you what kind of life you will lead in the future"
+        ]
+      },
+      {
+        "number": 3,
+        "sourceText": "没有什么比获准参加太空旅行项目更令人兴奋的了。",
+        "requiredWord": "than",
+        "referenceAnswers": [
+          "There is nothing more exciting than being allowed to take part in the space travel program"
+        ]
+      },
+      {
+        "number": 4,
+        "sourceText": "家长嘱咐孩子别在河边嬉戏，以免遭遇不测。",
+        "requiredWord": "for fear",
+        "referenceAnswers": [
+          "Parents ask their kids not to play by the river for fear that something terrible might happen"
+        ]
+      },
+      {
+        "number": 5,
+        "sourceText": "虽然现代社会物资丰富，给予消费者更多的选择，但也使不少人变成购物狂。",
+        "requiredWord": "turn",
+        "referenceAnswers": [
+          "While modern society, rich in material resources, has given consumers more choices, it also turns many of them into crazy shoppers"
+        ]
+      }
+    ],
+    "score": 20
+  },
+  {
+    "_id": "sh-autumn-2014-writing",
+    "title": "2014 上海高考秋考 II. Guided Writing",
+    "year": 2014,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2014",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2014年上海秋季高考英语真题及答案.doc",
+    "questionNumber": 0,
+    "prompt": "Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese. 学校英语报正在酝酿改版，拟从现有的三个栏目（健康、娱乐、文化）中去除一个，并从三个备选栏目（时尚、职业规划、读者反馈）中挑选一个纳入该报。假设你是该校学生程飞，给校报编辑写一封电子邮件，表达你的观点。邮件须包括以下内容： 1．你建议去除的栏目及去除的理由； 2．你建议增加的栏目及增加的理由。",
+    "directions": "Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese.",
+    "scenario": "学校英语报正在酝酿改版，拟从现有的三个栏目（健康、娱乐、文化）中去除一个，并从三个备选栏目（时尚、职业规划、读者反馈）中挑选一个纳入该报。假设你是该校学生程飞，给校报编辑写一封电子邮件，表达你的观点。",
+    "requirementsTitle": "邮件须包括以下内容：",
+    "requirements": [
+      "你建议去除的栏目及去除的理由；",
+      "你建议增加的栏目及增加的理由。"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
     "_id": "sh-autumn-2015-translation",
     "title": "2015 上海高考秋考 I. Translation",
     "year": 2015,
@@ -1082,6 +1429,119 @@
     "requirements": [
       "你的选择;",
       "你的理由。"
+    ],
+    "promptTable": null,
+    "promptStarter": "",
+    "images": [],
+    "minWords": 120,
+    "score": 25
+  },
+  {
+    "_id": "sh-autumn-2023-summary-writing",
+    "title": "2023 上海高考秋考 IV. Summary Writing",
+    "year": 2023,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "summary-writing",
+    "category": "高中概要写作",
+    "contentType": "summary-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2023",
+    "paperOrder": 1,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2023年上海秋季高考英语真题（原卷版）.docx",
+    "questionNumber": 71,
+    "prompt": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible. Teenagers should be pulled of the sofa For many years, scientists thought that the human brain was fully mature before the teen years. They thought that a person's brain growth was complete and the structure was more or less fixed by the age of 3. However, more recent research shows that although the brain reaches its maximum size between the ages of 12 and 14, brain development is not yet complete. The brain's functionally different sections communicate with each other through synapses- connections between nerve(神经)cells.Scientists have found that synapses grow or die away, depending on how much they are used to process information, The good news is that teenagers do have the potential, through choice and behavior , to shape their brain development. The brain automatically gets rid of the synapses that it doesn't need in order to make the remaining ones more efficient. During the time the brain is removing synapses , the cells and connections that are used survive, while the ones that are not used die away. For example , if a teenager is doing music , sports or academic studies, those are the cells and connections that will become part of the brain's operating system. But unfortunately, if he or she is lying on the sofa, watching TV and playing computer games, those are the brain cells and connections that will remain into adulthood. Therefore, what you do with your teenage years could have an effect on the rest of your life, What is important is that learning how synapses grow or die away can help teenagers be better equipped to make more intelligent choices, thus motivating them to take a moment before acting to consider the consequences of their actions. If you don't want to become an adult who is buried in the sofa all day long, pull yourself out of it when you are still a teenager. 71. -",
+    "directions": "Directions: Read the following passage. Summarize the main idea and the main point( s)of the passage in no more than 60 words. Use your own words as far as possible.",
+    "scenario": "Teenagers should be pulled of the sofa For many years, scientists thought that the human brain was fully mature before the teen years. They thought that a person's brain growth was complete and the structure was more or less fixed by the age of 3. However, more recent research shows that although the brain reaches its maximum size between the ages of 12 and 14, brain development is not yet complete. The brain's functionally different sections communicate with each other through synapses- connections between nerve(神经)cells.Scientists have found that synapses grow or die away, depending on how much they are used to process information, The good news is that teenagers do have the potential, through choice and behavior , to shape their brain development. The brain automatically gets rid of the synapses that it doesn't need in order to make the remaining ones more efficient. During the time the brain is removing synapses , the cells and connections that are used survive, while the ones that are not used die away. For example , if a teenager is doing music , sports or academic studies, those are the cells and connections that will become part of the brain's operating system. But unfortunately, if he or she is lying on the sofa, watching TV and playing computer games, those are the brain cells and connections that will remain into adulthood. Therefore, what you do with your teenage years could have an effect on the rest of your life, What is important is that learning how synapses grow or die away can help teenagers be better equipped to make more intelligent choices, thus motivating them to take a moment before acting to consider the consequences of their actions. If you don't want to become an adult who is buried in the sofa all day long, pull yourself out of it when you are still a teenager. 71. -",
+    "requirementsTitle": "",
+    "requirements": [],
+    "promptStarter": "",
+    "images": [],
+    "minWords": 0,
+    "maxWords": 60,
+    "score": 10
+  },
+  {
+    "_id": "sh-autumn-2023-translation",
+    "title": "2023 上海高考秋考 V. Translation",
+    "year": 2023,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "translation",
+    "category": "高中翻译",
+    "contentType": "translation",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2023",
+    "paperOrder": 2,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2023年上海秋季高考英语真题（原卷版）.docx",
+    "directions": "Directions:Translate the following sentences into English, using the words given in the brackets",
+    "questionCount": 4,
+    "questions": [
+      {
+        "number": 72,
+        "sourceText": "正如预期的那样，艺术节引起了学生对于民俗文化的兴趣",
+        "requiredWord": "generate",
+        "referenceAnswers": [
+          "As is expected, Art Festival has generated students’ interest in folk culture. /As (was) expected, the art festival generated the tourists’/visitors’ interest in folk culture"
+        ]
+      },
+      {
+        "number": 73,
+        "sourceText": "你是否意识到这个地区的每一个部落有自己的不成文的规则？",
+        "requiredWord": "aware",
+        "referenceAnswers": [
+          "Have you been aware that every tribe in this area has its own unwritten rules?"
+        ]
+      },
+      {
+        "number": 74,
+        "sourceText": "这家重点实验室将和当地职业学校签订合作协议，为学生提供不一般的互动体验。",
+        "requiredWord": "sign",
+        "referenceAnswers": [
+          "The key laboratory will sign cooperation agreements with local vocational schools, which will bring students an unusual interactive experience. /The key laboratory/lab will sign a cooperation agreement with local vocational schools to provide students with unusual interactive experiences"
+        ]
+      },
+      {
+        "number": 75,
+        "sourceText": "这部电视连续剧的剧情围绕某一虚拟的华南城市展开，在剧中汽车工业一直是该城市的骄傲。",
+        "requiredWord": "where",
+        "referenceAnswers": [
+          "The TV series revolves around a certain virtual southern Chinese city, where the car industry has always been the pride. /This TV series revolves around a fictional city in southern China, where the auto industry has long been a source of pride. /The plot of this TV series revolves around a fictional city in southern China, where the auto industry has always been the pride of the city"
+        ]
+      }
+    ],
+    "score": 15
+  },
+  {
+    "_id": "sh-autumn-2023-writing",
+    "title": "2023 上海高考秋考 VI. Guided Writing",
+    "year": 2023,
+    "city": "上海",
+    "district": "秋考",
+    "examType": "秋考",
+    "stage": "高中",
+    "section": "writing",
+    "category": "高中作文",
+    "contentType": "guided-writing",
+    "contentRevision": 1,
+    "paperId": "sh-autumn-2023",
+    "paperOrder": 3,
+    "sourceType": "shanghai-gaokao",
+    "sourceFile": "2023年上海秋季高考英语真题（原卷版）.docx",
+    "questionNumber": 76,
+    "prompt": "(共 25 分) Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese. 你是明启中学高三学生吴磊，你校英语节即将举行主题为“ 快乐童年”的展览，邀请每个同学提供一件生活中物品参展，并撰写展品介绍供参观者阅读，要求描述展品以及选择原因。 内容必须包括： 1）对该物品的简要描述 2）你选择该物品参展的原因",
+    "directions": "",
+    "scenario": "(共 25 分) Directions: Write an English composition in 120-150 words according to the instructions given below in Chinese. 你是明启中学高三学生吴磊，你校英语节即将举行主题为“ 快乐童年”的展览，邀请每个同学提供一件生活中物品参展，并撰写展品介绍供参观者阅读，要求描述展品以及选择原因。",
+    "requirementsTitle": "内容必须包括：",
+    "requirements": [
+      "对该物品的简要描述",
+      "你选择该物品参展的原因"
     ],
     "promptTable": null,
     "promptStarter": "",

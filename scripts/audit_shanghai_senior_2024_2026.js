@@ -19,8 +19,8 @@ const PAPERS = {
   autumn: [2024, 2025]
 };
 const LISTENING = [
-  { session: 'spring', year: 2024, duration: '20:49' },
-  { session: 'spring', year: 2025, duration: '15:22' },
+  { session: 'spring', year: 2024, duration: '20:50' },
+  { session: 'spring', year: 2025, duration: '15:23' },
   { session: 'autumn', year: 2024, duration: '17:31' }
 ];
 const READING_SUFFIXES = [

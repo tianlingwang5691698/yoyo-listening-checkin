@@ -22,11 +22,12 @@ Page({
     pageTopStyle: ''
   }),
   onLoad(options) {
+    this.perf = page.startPagePerf('vocabulary-practice');
     page.syncTheme(this);
     this.setData(Object.assign({}, getNavLayout(), {
       level: decodeURIComponent(String(options.level || '')),
       sourceTitle: decodeURIComponent(String(options.title || ''))
-    }));
+    }), () => this.perf.ready('pageReady', { cacheHit: true, mode: 'menu' }));
   },
   onShow() {
     page.syncTheme(this);

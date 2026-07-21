@@ -1,0 +1,59 @@
+{
+  "_id": "ielts-academic-11-test-3-writing-task-1",
+  "id": "ielts-academic-11-test-3-writing-task-1",
+  "title": "Cambridge IELTS 11 Test 3 Writing Task 1",
+  "year": 2016,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-11-test-3",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑11真题.pdf",
+  "book": "Cambridge IELTS 11 Academic",
+  "bookNumber": 11,
+  "testNumber": 3,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The graph below shows average carbon dioxide (CO₂) emissions per person in the United Kingdom, Sweden, Italy and Portugal between 1967 and 2007.",
+  "scenario": "The graph below shows average carbon dioxide (CO₂) emissions per person in the United Kingdom, Sweden, Italy and Portugal between 1967 and 2007.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "line graph",
+    "title": "Average carbon dioxide (CO₂) emissions per person, 1967–2007",
+    "labels": [
+      "CO₂ emissions in metric tonnes",
+      "1967",
+      "1977",
+      "1987",
+      "1997",
+      "2007",
+      "United Kingdom",
+      "Sweden",
+      "Italy",
+      "Portugal"
+    ],
+    "units": "metric tonnes",
+    "notes": [
+      "Legend categories: United Kingdom, Sweden, Italy and Portugal"
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-11/writing/visuals-v3/test-3-task-1-visual-ab195336f6.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-11/writing/visuals-v3/test-3-task-1-visual-ab195336f6.jpg",
+      "alt": "Cambridge IELTS 11 Test 3 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

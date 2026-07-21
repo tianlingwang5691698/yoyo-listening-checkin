@@ -1,0 +1,74 @@
+{
+  "_id": "ielts-academic-17-test-1-writing-task-1",
+  "id": "ielts-academic-17-test-1-writing-task-1",
+  "title": "Cambridge IELTS 17 Test 1 Writing Task 1",
+  "year": 2022,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-17-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思17（A类）.pdf",
+  "book": "Cambridge IELTS 17 Academic",
+  "bookNumber": 17,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The maps below show an industrial area in the town of Norbiton, and planned future development of the site.",
+  "scenario": "The maps compare the current Norbiton industrial area with its planned future development.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Two maps showing the current industrial area and its planned future development",
+    "title": "Norbiton industrial area now; Planned future development",
+    "labels": [
+      "Norbiton industrial area now",
+      "Planned future development",
+      "Farmland",
+      "River",
+      "Town",
+      "Factory",
+      "Housing",
+      "Shops",
+      "Medical centre",
+      "Playground",
+      "School",
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "units": "",
+    "notes": [
+      "In the current map, a main road runs east–west along the southern edge. A road leads north from it to a central roundabout, and another road extends east from the roundabout.",
+      "Eight factories are shown around the central roundabout and along the road extending east.",
+      "The river runs across the northern part of the site, with farmland beyond it. The town lies to the west.",
+      "In the planned development, the factories are replaced by housing and community facilities.",
+      "A second roundabout is added on the main road south of the existing roundabout.",
+      "A road extends north from the existing roundabout, crosses the river and ends in a loop, with housing beyond the river.",
+      "Additional roads extend northwest and southwest from the existing roundabout.",
+      "Shops and a medical centre are planned southwest of the existing roundabout.",
+      "A playground and school are planned east of the existing roundabout.",
+      "Housing is shown northwest of the existing roundabout, beside the northward road, beyond the river, and along the roads east of the roundabout.",
+      "The legends are ‘= Factory’ for the current map and ‘= Housing’ for the planned map."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-17/writing/visuals-v3/test-1-task-1-visual-3ec50930e0.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-17/writing/visuals-v3/test-1-task-1-visual-3ec50930e0.jpg",
+      "alt": "Cambridge IELTS 17 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

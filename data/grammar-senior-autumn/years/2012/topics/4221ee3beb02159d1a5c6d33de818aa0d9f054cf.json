@@ -1,0 +1,34 @@
+{
+  "topicId": "lexical:preposition",
+  "topic": "介词",
+  "questions": [
+    {
+      "_id": "sh-autumn-2012-grammar-q25",
+      "sourceSetId": "sh-autumn-2012-grammar",
+      "year": 2012,
+      "city": "上海",
+      "district": "秋考",
+      "examType": "秋考",
+      "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+      "number": 25,
+      "prompt": "passion, people won't have the motivation or the joy necessary for creative thinking.",
+      "options": {
+        "A": "For",
+        "B": "Without",
+        "C": "Beneath",
+        "D": "By"
+      },
+      "answer": "B",
+      "questionType": "grammar-choice",
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:preposition",
+      "subtopic": "介词",
+      "topicId": "lexical:preposition",
+      "topic": "介词",
+      "stage": "高中",
+      "classificationModel": "gpt-5.6-sol",
+      "classificationRevision": 2
+    }
+  ]
+}

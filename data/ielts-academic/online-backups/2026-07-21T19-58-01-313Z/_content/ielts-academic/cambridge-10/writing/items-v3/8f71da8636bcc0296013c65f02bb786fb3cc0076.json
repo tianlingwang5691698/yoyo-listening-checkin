@@ -1,0 +1,61 @@
+{
+  "_id": "ielts-academic-10-test-1-writing-task-1",
+  "id": "ielts-academic-10-test-1-writing-task-1",
+  "title": "Cambridge IELTS 10 Test 1 Writing Task 1",
+  "year": 2015,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-10-test-1",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑10真题.pdf",
+  "book": "Cambridge IELTS 10 Academic",
+  "bookNumber": 10,
+  "testNumber": 1,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "The first chart below shows how energy is used in an average Australian household. The second chart shows the greenhouse gas emissions which result from this energy use.",
+  "scenario": "Two pie charts compare Australian household energy use with the greenhouse gas emissions which result from this energy use.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Two pie charts",
+    "title": "Australian household energy use; Australian household greenhouse gas emissions",
+    "labels": [
+      "Australian household energy use: heating 42%",
+      "Australian household energy use: water heating 30%",
+      "Australian household energy use: other appliances 15%",
+      "Australian household energy use: refrigeration 7%",
+      "Australian household energy use: lighting 4%",
+      "Australian household energy use: cooling 2%",
+      "Australian household greenhouse gas emissions: water heating 32%",
+      "Australian household greenhouse gas emissions: other appliances 28%",
+      "Australian household greenhouse gas emissions: heating 15%",
+      "Australian household greenhouse gas emissions: refrigeration 14%",
+      "Australian household greenhouse gas emissions: lighting 8%",
+      "Australian household greenhouse gas emissions: cooling 3%"
+    ],
+    "units": "percent (%)",
+    "notes": [
+      "Categories shown in both charts: heating, water heating, refrigeration, other appliances, lighting, cooling."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-10/writing/visuals-v3/test-1-task-1-visual-beb6ee2940.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-10/writing/visuals-v3/test-1-task-1-visual-beb6ee2940.jpg",
+      "alt": "Cambridge IELTS 10 Test 1 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

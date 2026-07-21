@@ -1,0 +1,65 @@
+{
+  "_id": "ielts-academic-20-test-2-writing-task-1",
+  "id": "ielts-academic-20-test-2-writing-task-1",
+  "title": "Cambridge IELTS 20 Test 2 Writing Task 1",
+  "year": 2025,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "dataFormat": "structured-text-v3",
+  "paperId": "ielts-academic-20-test-2",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思20学术类.pdf",
+  "book": "Cambridge IELTS 20 Academic",
+  "bookNumber": 20,
+  "testNumber": 2,
+  "directions": "You should spend about 20 minutes on this task.",
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "scenario": "The plans below show the site of a farm in 1950 and the same site today.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "plans",
+    "title": "Beechwood Farm",
+    "labels": [
+      "1950",
+      "Today",
+      "Farmhouse",
+      "Chickens",
+      "Parking",
+      "Soft fruits",
+      "Holiday cottages",
+      "Fruit trees",
+      "Sheep",
+      "Vegetables",
+      "Barn",
+      "River",
+      "Track",
+      "Road",
+      "Farm shop",
+      "Camping field",
+      "Solar panels"
+    ],
+    "units": "",
+    "notes": [
+      "Two plans show the same farm site in 1950 and today."
+    ]
+  },
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-20/writing/visuals-v3/test-2-task-1-visual-93ff1a2eee.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-20/writing/visuals-v3/test-2-task-1-visual-93ff1a2eee.jpg",
+      "alt": "Cambridge IELTS 20 Test 2 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate"
+}

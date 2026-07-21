@@ -1,0 +1,62 @@
+{
+  "_id": "ielts-academic-21-test-2-writing-task-1",
+  "id": "ielts-academic-21-test-2-writing-task-1",
+  "title": "Cambridge IELTS 21 Test 2 Writing Task 1",
+  "year": 2026,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "section": "Writing Task 1",
+  "category": "IELTS Academic Writing",
+  "contentType": "ielts-writing-task-1",
+  "contentRevision": 3,
+  "paperId": "ielts-academic-21-test-2",
+  "paperOrder": 1,
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思21（A类）.pdf",
+  "book": "Cambridge IELTS 21 Academic",
+  "testNumber": 2,
+  "prompt": "Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "directions": "You should spend about 20 minutes on this task.",
+  "images": [
+    {
+      "cloudPath": "_content/ielts-academic/cambridge-21/writing/visuals-v3/test-2-task-1-cafe-plans-9acd9eef19.jpg",
+      "localPath": "data/ielts-academic/cambridge-21/writing/visuals-v3/test-2-task-1-cafe-plans-9acd9eef19.jpg",
+      "alt": "Cambridge IELTS 21 Test 2 Writing Task 1 visual"
+    }
+  ],
+  "minWords": 150,
+  "score": 9,
+  "status": "published-candidate",
+  "dataFormat": "structured-text-v3",
+  "scenario": "The plans below show a college cafe before it was redesigned and how it looks now.",
+  "requirements": [
+    "Write at least 150 words."
+  ],
+  "visualData": {
+    "type": "Two floor plans comparing a college cafe before redesign and today",
+    "title": "Cafe before redesign; Cafe today",
+    "labels": [
+      "Cafe before redesign",
+      "Kitchen",
+      "Serving area (food and drink)",
+      "Staff dining room",
+      "Tables and chairs",
+      "Toilets",
+      "Cafe today",
+      "Kitchen",
+      "Hot meals",
+      "Take away food",
+      "Coffee bar",
+      "Tables and chairs",
+      "Outdoor seating",
+      "Toilets"
+    ],
+    "units": "",
+    "notes": [
+      "The first plan shows the cafe before redesign.",
+      "The second plan shows the cafe today."
+    ]
+  }
+}

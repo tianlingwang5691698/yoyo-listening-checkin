@@ -149,6 +149,8 @@ async function mapLimit(items, limit, worker) {
 
 async function main() {
   const apply = process.argv.includes('--apply');
+  const addOnly = process.argv.includes('--add-only');
+  const inventory = process.argv.includes('--inventory');
   const sessionArg = process.argv.find((value) => value.startsWith('--sessions='));
   const selectedSessions = new Set((sessionArg ? sessionArg.slice('--sessions='.length) : 'spring,autumn').split(',').filter((value) => ['spring', 'autumn'].includes(value)));
   const yearsArg = process.argv.find((value) => value.startsWith('--years='));
@@ -160,14 +162,23 @@ async function main() {
   const entries = buildEntries(selectedSessions, selectedYears, selectedModules);
   const results = [];
   await mapLimit(entries, 8, async (entry) => {
-    const remote = await request(entry.cloudPath);
+    const existenceOnly = inventory && /\.mp3$/i.test(entry.cloudPath);
+    const remote = await request(entry.cloudPath, existenceOnly ? 'HEAD' : 'GET');
     if (remote.statusCode === 404) {
       results.push({ cloudPath: entry.cloudPath, action: 'add', bytes: entry.body.length, sha1: entry.sha1 });
       return;
     }
     if (remote.statusCode !== 200) throw new Error(`remote-status-${remote.statusCode}:${entry.cloudPath}`);
+    if (existenceOnly) {
+      results.push({ cloudPath: entry.cloudPath, action: 'reuse', bytes: entry.body.length, sha1: entry.sha1, verifiedBy: 'HEAD' });
+      return;
+    }
     const remoteSha1 = sha1(remote.body);
-    if (remoteSha1 !== entry.sha1) throw new Error(`immutable-path-conflict:${entry.cloudPath}:${remoteSha1}:${entry.sha1}`);
+    if (remoteSha1 !== entry.sha1) {
+      if (!inventory && !addOnly) throw new Error(`immutable-path-conflict:${entry.cloudPath}:${remoteSha1}:${entry.sha1}`);
+      results.push({ cloudPath: entry.cloudPath, action: 'conflict', bytes: entry.body.length, remoteSha1, sha1: entry.sha1 });
+      return;
+    }
     results.push({ cloudPath: entry.cloudPath, action: 'reuse', bytes: entry.body.length, sha1: entry.sha1 });
   });
   results.sort((a, b) => a.cloudPath.localeCompare(b.cloudPath));
@@ -176,30 +187,39 @@ async function main() {
     total: results.length,
     add: results.filter((item) => item.action === 'add').length,
     reuse: results.filter((item) => item.action === 'reuse').length,
-    conflict: 0,
+    conflict: results.filter((item) => item.action === 'conflict').length,
     missing: 0,
     results
   };
   fs.mkdirSync(REPORT_DIR, { recursive: true });
   fs.writeFileSync(path.join(REPORT_DIR, 'upload-preflight.json'), `${JSON.stringify(summary, null, 2)}\n`);
   if (!apply) {
-    console.log(JSON.stringify({ mode: 'dry-run', total: summary.total, add: summary.add, reuse: summary.reuse }, null, 2));
+    console.log(JSON.stringify({ mode: inventory ? 'inventory' : 'dry-run', total: summary.total, add: summary.add, reuse: summary.reuse, conflict: summary.conflict }, null, 2));
     return;
   }
+  if (summary.conflict && !addOnly) throw new Error(`apply-blocked-by-conflicts:${summary.conflict}`);
   const app = cloudbase.init(Object.assign({ env: appConfig.cloudEnvId }, credentials()));
   const additions = entries.filter((entry) => results.find((item) => item.cloudPath === entry.cloudPath).action === 'add');
   await mapLimit(additions, 5, async (entry) => {
     await app.uploadFile({ cloudPath: entry.cloudPath, fileContent: entry.body });
   });
   const verified = [];
-  await mapLimit(entries, 8, async (entry) => {
+  const verifiableEntries = entries.filter((entry) => results.find((item) => item.cloudPath === entry.cloudPath).action !== 'conflict');
+  await mapLimit(verifiableEntries, 8, async (entry) => {
     const remote = await request(entry.cloudPath);
     if (remote.statusCode !== 200 || sha1(remote.body) !== entry.sha1) {
       throw new Error(`post-upload-verify-failed:${entry.cloudPath}:${remote.statusCode}`);
     }
     verified.push(entry.cloudPath);
   });
-  const report = { mode: 'apply', total: entries.length, added: additions.length, reused: entries.length - additions.length, verified: verified.length };
+  const report = {
+    mode: addOnly ? 'apply-add-only' : 'apply',
+    total: entries.length,
+    added: additions.length,
+    reused: results.filter((item) => item.action === 'reuse').length,
+    conflictsSkipped: results.filter((item) => item.action === 'conflict').length,
+    verified: verified.length
+  };
   fs.writeFileSync(path.join(REPORT_DIR, 'upload-report.json'), `${JSON.stringify(report, null, 2)}\n`);
   console.log(JSON.stringify(report, null, 2));
 }

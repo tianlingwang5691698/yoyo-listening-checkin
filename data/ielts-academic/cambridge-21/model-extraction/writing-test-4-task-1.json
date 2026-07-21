@@ -1,0 +1,50 @@
+{
+  "directions": "You should spend about 20 minutes on this task.\n\nWrite at least 150 words.",
+  "prompt": "The chart and table below show the results of a survey of library users at a university.",
+  "scenario": "A survey of library users at a university.",
+  "requirements": [
+    "Summarise the information by selecting and reporting the main features, and make comparisons where relevant."
+  ],
+  "visualData": {
+    "type": "Pie chart and table",
+    "title": "Categories of library users; Library user satisfaction (%)",
+    "labels": [
+      "Distance learning (all courses)",
+      "Academic staff",
+      "Part-time postgraduate",
+      "Full-time undergraduate",
+      "Full-time postgraduate",
+      "Very satisfied",
+      "Fairly satisfied",
+      "Not satisfied",
+      "Library opening hours",
+      "Helpfulness of staff",
+      "Availability of books",
+      "Availability of journals",
+      "Reliability of wi-fi"
+    ],
+    "units": "Percent (%)",
+    "notes": [
+      "The pie chart shows full-time undergraduates 44%, full-time postgraduates 25%, part-time postgraduates 16%, distance-learning users 8%, and academic staff 7%.",
+      "The table reports satisfaction percentages for library opening hours, helpfulness of staff, availability of books, availability of journals, and reliability of wi-fi."
+    ],
+    "pieChart": [
+      { "category": "Full-time undergraduate", "percent": 44 },
+      { "category": "Full-time postgraduate", "percent": 25 },
+      { "category": "Part-time postgraduate", "percent": 16 },
+      { "category": "Distance learning (all courses)", "percent": 8 },
+      { "category": "Academic staff", "percent": 7 }
+    ],
+    "table": {
+      "headers": ["Category", "Very satisfied", "Fairly satisfied", "Not satisfied"],
+      "rows": [
+        ["Library opening hours", 65, 35, 0],
+        ["Helpfulness of staff", 95, 5, 0],
+        ["Availability of books", 50, 40, 10],
+        ["Availability of journals", 45, 35, 20],
+        ["Reliability of wi-fi", 48, 33, 19]
+      ]
+    }
+  },
+  "uncertain": []
+}
