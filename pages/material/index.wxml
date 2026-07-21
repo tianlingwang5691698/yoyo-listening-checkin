@@ -256,8 +256,8 @@
       <view class="material-card-label">{{showCefrEntry ? texts.examListening : texts.stage}}</view>
       <view class="material-card-state" wx:if="{{stages.length}}">{{stages.length}}{{texts.categoryUnit}}</view>
     </view>
-    <scroll-view class="channel-rail" scroll-x="{{true}}" enable-flex="{{true}}">
-      <view class="directory-row channel-tile stage-tile" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
+    <view class="stage-list">
+      <view class="directory-row stage-row" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
         <view class="directory-orb">{{index + 1}}</view>
         <view class="directory-main">
           <view class="directory-title">{{item.stage}}</view>
@@ -269,7 +269,7 @@
         <view class="material-skeleton-tile"></view>
         <view class="material-skeleton-tile is-short"></view>
       </view>
-    </scroll-view>
+    </view>
   </view>
 
   <view class="material-card drawer-card card" wx:elif="{{selectedStageId && !selectedExamId}}">
