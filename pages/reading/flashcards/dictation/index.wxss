@@ -113,3 +113,63 @@
 .theme-voyage .dictation-answer { border:3rpx solid #a8753a; border-radius:5rpx; background:#ead7aa; }
 .theme-voyage .complete-mark { border:8rpx double #b87d31; background:#1d6381; box-shadow:inset 0 0 0 7rpx #f1dc9a; color:#f3cf65; }
 .theme-voyage .complete-title { color:#a83b31; font-family:"Songti SC",STSong,serif; }
+
+page { overflow-x: hidden; }
+.dictation-nav,
+.dictation-page,
+.dictation-hero,
+.dictation-menu,
+.dictation-card,
+.dictation-complete,
+.dictation-today,
+.dictation-count-picker,
+.dictation-answer,
+.complete-numbers { max-width: 100%; min-width: 0; box-sizing: border-box; }
+.dictation-page { overflow-x: hidden; }
+.dictation-nav-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dictation-count-head > text:first-child,
+.dictation-today > view:first-child > text:first-child { min-width: 0; }
+.language-en .dictation-title,
+.language-en .dictation-count-head,
+.language-en .dictation-wrong-actions button,
+.language-en .dictation-answer,
+.language-en .study-word,
+.language-en .study-meaning { word-break: normal; overflow-wrap: normal; }
+.theme-dragon.dictation-nav { border-bottom: 6rpx solid #f7c843; background: #102f68; box-shadow: 0 7rpx 0 #f4511e; color: #fff8dc; }
+.theme-dragon .dictation-back,
+.theme-dragon .dictation-nav-title { color: #fff8dc; }
+.theme-dragon.dictation-page { background: #fff3c9; color: #102f68; }
+.theme-dragon .dictation-hero { padding: 28rpx 30rpx; border: 4rpx solid #12356f; border-top: 10rpx solid #f4511e; border-radius: 8rpx; background: #fff9df; box-shadow: 0 8rpx 0 #12356f; }
+.theme-dragon .dictation-kicker { color: #d64014; }
+.theme-dragon .dictation-title { color: #102f68; }
+.theme-dragon .dictation-menu,
+.theme-dragon .dictation-card,
+.theme-dragon .dictation-complete,
+.theme-dragon .dictation-today { border: 4rpx solid #12356f; border-radius: 7rpx; background: #fffdf0; box-shadow: 0 7rpx 0 #f4511e; backdrop-filter: none; }
+.theme-dragon .dictation-today-bar { border: 2rpx solid #12356f; border-radius: 4rpx; background: #f5d76b; }
+.theme-dragon .dictation-today-bar view { background: #f4511e; }
+.theme-dragon .dictation-count-picker { border: 3rpx solid #12356f; border-radius: 6rpx; background: #fff0ac; }
+.theme-dragon .dictation-count-head,
+.theme-dragon .dictation-count-hint { color: #665b48; }
+.theme-dragon .dictation-count-total { color: #102f68; }
+.theme-dragon .dictation-count-controls button { border: 3rpx solid #12356f; background: #f7cf4b; color: #102f68; }
+.theme-dragon .dictation-action.primary { border: 3rpx solid #12356f; border-radius: 6rpx; background: #f4511e; box-shadow: 0 6rpx 0 #102f68; color: #fff; font-weight: 800; }
+.theme-dragon .dictation-wrong-actions button,
+.theme-dragon .dictation-history,
+.theme-dragon .dictation-change-mode { border: 3rpx solid #12356f; border-radius: 6rpx; background: #fff0ac; color: #102f68; }
+.theme-dragon .dictation-play { border: 4rpx solid #12356f; border-radius: 50%; background: #f7cf4b; color: #102f68; box-shadow: 0 6rpx 0 #f4511e; }
+.theme-dragon .dictation-input { border: 4rpx solid #12356f; border-radius: 6rpx; background: #fffdf0; color: #102f68; }
+.theme-dragon .dictation-answer { border: 3rpx solid #12356f; border-radius: 6rpx; background: #fff0ac; }
+.theme-dragon .complete-mark { border: 6rpx solid #12356f; background: #f7cf4b; color: #102f68; box-shadow: 0 6rpx 0 #f4511e; }
+.theme-dragon .complete-numbers view { padding: 12rpx 4rpx; border: 2rpx solid #12356f; border-radius: 5rpx; background: #fff0ac; }
+@media (max-width: 340px) {
+  .dictation-page { padding-left: 20rpx; padding-right: 20rpx; }
+  .dictation-menu,
+  .dictation-card,
+  .dictation-complete { padding-left: 20rpx; padding-right: 20rpx; }
+  .dictation-wrong-actions { gap: 8rpx; }
+  .language-en .dictation-wrong-actions button { padding: 10rpx 6rpx; font-size: 19rpx; }
+  .complete-numbers { gap: 6rpx; }
+  .complete-numbers text:first-child { font-size: 32rpx; }
+  .complete-numbers text:last-child { font-size: 17rpx; }
+}

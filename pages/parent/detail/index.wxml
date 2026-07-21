@@ -1,4 +1,4 @@
-<view class="theme-{{theme}} language-{{language}} page-shell parent-detail-page">
+<view class="theme-{{theme}} language-{{language}} page-shell parent-detail-page report-detail-page">
   <view wx:if="{{theme === 'library'}}" class="library-parent-detail">
     <view class="library-report-envelope">
       <view class="library-card-head">
@@ -229,6 +229,9 @@
   <block wx:else>
   <view class="report-hero">
     <view class="voyage-daily-seal" wx:if="{{theme === 'voyage'}}">⚓</view>
+    <view class="dragon-daily-seal" wx:if="{{theme === 'dragon'}}">
+      <text>★</text><text>★</text><text>★</text><text>★</text>
+    </view>
     <view class="hero-glow"></view>
     <view class="hero-head">
       <view>

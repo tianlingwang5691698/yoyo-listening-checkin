@@ -70,7 +70,7 @@
 
 .settings-options {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12rpx;
   margin-left: 96rpx;
 }
@@ -499,3 +499,22 @@
   transform: translate(-50%, -50%) rotate(45deg);
   box-sizing: border-box;
 }
+
+/* Dragon theme settings: compact training console. */
+.theme-dragon.settings-page { background: #fff7dc; color: #102e62; }
+.theme-dragon .voyage-settings-hero { min-height: 205rpx; padding-left: 128rpx; border: 5rpx solid #102e62; border-radius: 8rpx; background: #ffd83d; box-shadow: 0 10rpx 0 #f45a16; }
+.theme-dragon .voyage-settings-hero::after { border-color: rgba(16, 46, 98, 0.16); }
+.theme-dragon .voyage-settings-emblem { position: absolute; left: 30rpx; top: 48rpx; border: 5rpx solid #f45a16; background: #ff9e19; box-shadow: inset 0 0 0 4rpx #ffd83d, 0 6rpx 0 rgba(16, 46, 98, 0.22); }
+.theme-dragon .voyage-settings-emblem::after { content: "★"; position: absolute; inset: 0; color: #c92818; font-size: 31rpx; line-height: 62rpx; text-align: center; }
+.theme-dragon .voyage-settings-emblem view { display: none; }
+.theme-dragon .voyage-settings-hero .settings-title,
+.theme-dragon .voyage-settings-hero .settings-subtitle,
+.theme-dragon .settings-row-title { color: #102e62; }
+.theme-dragon .voyage-settings-card,
+.theme-dragon .voyage-admin-card { border: 4rpx solid #102e62; border-radius: 8rpx; background: #fffdf1; box-shadow: 0 8rpx 0 rgba(16, 46, 98, 0.16); }
+.theme-dragon .voyage-row-icon { border: 3rpx solid #102e62; background: #ffd83d; color: #102e62; }
+.theme-dragon .settings-row-description { color: #6b7287; }
+.theme-dragon .settings-arrow { color: #f45a16; }
+.theme-dragon .voyage-options .settings-option { min-height: 70rpx; border: 3rpx solid #102e62; border-radius: 7rpx; background: #fff4c7; color: #102e62; }
+.theme-dragon .voyage-options .settings-option.is-active { border-color: #102e62; background: #f45a16; color: #ffffff; box-shadow: 0 5rpx 0 #a92e0a; }
+.theme-dragon .voyage-admin-badge { border-color: #102e62; background: #f45a16; color: #ffffff; }

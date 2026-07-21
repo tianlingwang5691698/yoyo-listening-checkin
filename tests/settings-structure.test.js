@@ -18,22 +18,79 @@ test('settings page is registered and every profile theme has one settings entry
   assert.match(profileJs, /openSettingsPage\(\)[\s\S]*url: '\/pages\/settings\/index',[\s\S]*animationType: 'none',[\s\S]*animationDuration: 0/);
 });
 
-test('settings and profile render warm, library, and voyage explicitly', () => {
+test('settings and profile render warm, library, voyage, and dragon explicitly', () => {
   const settingsJs = read('pages/settings/index.js');
   const settingsWxml = read('pages/settings/index.wxml');
   const profileWxml = read('pages/profile/index.wxml');
 
   assert.match(settingsJs, /voyageTheme: '伟大航路'/);
   assert.match(settingsJs, /voyageTheme: 'Grand Voyage'/);
+  assert.match(settingsJs, /dragonTheme: '龙珠修炼'/);
+  assert.match(settingsJs, /dragonTheme: 'Dragon Training'/);
   assert.equal((settingsWxml.match(/data-theme="warm"/g) || []).length, 3);
   assert.equal((settingsWxml.match(/data-theme="library"/g) || []).length, 3);
   assert.equal((settingsWxml.match(/data-theme="voyage"/g) || []).length, 3);
-  assert.match(settingsWxml, /wx:elif="\{\{theme === 'voyage'\}\}"/);
+  assert.equal((settingsWxml.match(/data-theme="dragon"/g) || []).length, 3);
+  assert.match(settingsWxml, /wx:elif="\{\{theme === 'voyage' \|\| theme === 'dragon'\}\}"/);
   assert.match(settingsWxml, /wx:elif="\{\{theme === 'warm'\}\}"/);
-  assert.match(profileWxml, /wx:elif="\{\{theme === 'voyage'\}\}"/);
+  assert.match(profileWxml, /wx:elif="\{\{theme === 'voyage' \|\| theme === 'dragon'\}\}"/);
   assert.match(profileWxml, /wx:elif="\{\{theme === 'warm'\}\}"/);
   assert.equal(settingsWxml.includes('<block wx:else>'), false);
   assert.equal(profileWxml.includes('<block wx:else>'), false);
+});
+
+test('dragon theme uses dedicated home art and global theme tokens', () => {
+  const themeJs = read('utils/theme.js');
+  const themeEntry = read('styles/theme-current.wxss');
+  const homeWxml = read('pages/home/index.wxml');
+  const dragonWxss = read('styles/themes/dragon.wxss');
+
+  assert.match(themeJs, /key: 'dragon', label: '龙珠修炼'/);
+  assert.match(themeEntry, /themes\/dragon\.wxss/);
+  assert.match(homeWxml, /assets\/dragon\/shenron-home\.jpg/);
+  assert.match(homeWxml, /assets\/dragon\/goku\.png/);
+  assert.match(homeWxml, /assets\/dragon\/tournament-hero\.jpg/);
+  assert.match(dragonWxss, /\.theme-dragon/);
+});
+
+test('dragon theme covers the deep-customized learning and report pages', () => {
+  const themedPages = [
+    'grammar-package/pages/classroom/index.wxml',
+    'pages/reading/flashcards/index.wxml',
+    'pages/reading/flashcards/practice/index.wxml',
+    'pages/reading/flashcards/recognition/index.wxml',
+    'pages/reading/flashcards/dictation/index.wxml',
+    'pages/reading/flashcards/dictation/library/index.wxml',
+    'pages/lesson/index.wxml',
+    'pages/listening-material/index.wxml',
+    'pages/material/index.wxml',
+    'pages/material/detail/index.wxml',
+    'pages/parent/detail/index.wxml',
+    'pages/practice-history/index.wxml',
+    'pages/home/completed/index.wxml',
+    'pages/record/index.wxml',
+  ];
+
+  themedPages.forEach((file) => {
+    assert.match(read(file), /theme-\{\{theme\}\}/, `${file} must expose the theme class`);
+  });
+
+  const lesson = read('pages/lesson/index.wxml');
+  const listeningMaterial = read('pages/listening-material/index.wxml');
+  const classroom = read('grammar-package/pages/classroom/index.wxml');
+  const flashcards = read('pages/reading/flashcards/index.wxml');
+  const recognition = read('pages/reading/flashcards/recognition/index.wxml');
+  const dictation = read('pages/reading/flashcards/dictation/index.wxml');
+  const dragonWxss = read('styles/themes/dragon.wxss');
+
+  assert.match(lesson, /activeColor="\{\{themeSlider\.activeColor\}\}"/);
+  assert.equal((listeningMaterial.match(/activeColor="\{\{themeSlider\.activeColor\}\}"/g) || []).length, 8);
+  [classroom, flashcards, recognition, dictation].forEach((source) => {
+    assert.match(source, /theme === 'dragon'/);
+  });
+  assert.match(dragonWxss, /max-width:\s*100vw/);
+  assert.match(dragonWxss, /overflow-x:\s*hidden/);
+  assert.doesNotMatch(read('pages/record/index.wxml'), />修<\/view>/);
 });
 
 test('voyage settings emblem stays outside the title flow', () => {

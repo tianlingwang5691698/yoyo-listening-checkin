@@ -316,3 +316,93 @@ page { background: #f4fafc; }
 .theme-voyage .back-button { border: 3rpx solid #9e6a35; background: #f4ddad; color: #654422; }
 .theme-voyage .next-button { border: 3rpx solid #c0873f; background: linear-gradient(180deg, #c7473a, #a42e2a); box-shadow: 0 6rpx 0 #74391f; color: #fff2ca; }
 .theme-voyage .next-button.is-disabled { border-color: #b69c73; background: #d8c6a2; box-shadow: none; color: #88775f; }
+
+/* Dragon training: cream paper, navy frames, orange actions and gold status. */
+page { overflow-x: hidden; }
+.classroom-page,
+.classroom-shell,
+.hero-card,
+.content-card,
+.topic-main,
+.sentence-card,
+.option-item,
+.review-option { max-width: 100%; min-width: 0; box-sizing: border-box; }
+.classroom-page { overflow-x: hidden; }
+.topbar-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.option-item > text:last-child,
+.review-option > text:last-child { min-width: 0; }
+.language-en .topic-title,
+.language-en .topic-meta,
+.language-en .section-title,
+.language-en .lesson-title,
+.language-en .lesson-meta,
+.language-en .question-text,
+.language-en .option-item,
+.language-en .review-option,
+.language-en .note-body,
+.language-en .note-detail,
+.language-en .rule-line { word-break: normal; overflow-wrap: normal; }
+
+.theme-dragon.classroom-page {
+  --bg: #fff3c9;
+  --card: #fff9df;
+  --line: #12356f;
+  --ink: #102f68;
+  --muted: #665b48;
+  --accent: #f4511e;
+  --soft: #f7cf4b;
+  background: linear-gradient(rgba(18,53,111,.035) 1rpx, transparent 1rpx), #fff3c9;
+  background-size: 100% 36rpx;
+}
+.theme-dragon .page-topbar { border-bottom: 6rpx solid #f7c843; background: #102f68; box-shadow: 0 7rpx 0 #f4511e; color: #fff8dc; }
+.theme-dragon .topbar-back { color: #fff8dc; }
+.theme-dragon .hero-card,
+.theme-dragon .content-card { border: 4rpx solid #12356f; border-radius: 8rpx; background: #fff9df; box-shadow: 0 8rpx 0 #f4511e, 0 18rpx 34rpx rgba(18,53,111,.14); }
+.theme-dragon .hero-card { border-top: 10rpx solid #f4511e; }
+.theme-dragon .hero-eyebrow,
+.theme-dragon .section-kicker,
+.theme-dragon .lesson-progress,
+.theme-dragon .topic-count,
+.theme-dragon .section-map-meta { color: #d64014; }
+.theme-dragon .syntax-chip { border: 2rpx solid #12356f; border-bottom-width: 6rpx; border-radius: 5rpx; background: #fffdf0; }
+.theme-dragon .domain-item,
+.theme-dragon .domain-course-item,
+.theme-dragon .topic-item,
+.theme-dragon .verb-map-item,
+.theme-dragon .section-map-item,
+.theme-dragon .lesson-row,
+.theme-dragon .sentence-card,
+.theme-dragon .option-item,
+.theme-dragon .review-option { border: 3rpx solid #12356f; border-radius: 6rpx; background: #fffdf0; box-shadow: 0 4rpx 0 rgba(18,53,111,.18); }
+.theme-dragon .domain-code,
+.theme-dragon .verb-map-code,
+.theme-dragon .section-map-no,
+.theme-dragon .lesson-no { border: 3rpx solid #12356f; border-radius: 50%; background: #f7cf4b; color: #102f68; }
+.theme-dragon .inline-back,
+.theme-dragon .back-button { border: 3rpx solid #12356f; border-radius: 5rpx; background: #fff5c9; color: #102f68; }
+.theme-dragon .level-core,
+.theme-dragon .level-advanced { border: 2rpx solid #12356f; border-radius: 4rpx; background: #f7cf4b; color: #102f68; }
+.theme-dragon .narration-card { border: 3rpx solid #12356f; border-radius: 6rpx; background: #fff2b7; }
+.theme-dragon .narration-button,
+.theme-dragon .next-button { border: 3rpx solid #12356f; border-radius: 6rpx; background: #f4511e; color: #fff; box-shadow: 0 5rpx 0 #102f68; }
+.theme-dragon .narration-button.is-playing { background: #e13f12; }
+.theme-dragon .narration-control { border: 3rpx solid #12356f; border-radius: 6rpx; background: #fff9df; color: #102f68; }
+.theme-dragon .rule-card { border: 3rpx solid #12356f; border-left: 10rpx solid #f4511e; border-radius: 5rpx; background: #fff0ac; }
+.theme-dragon .rule-label { color: #c73b14; }
+.theme-dragon .footer-actions { background: linear-gradient(to bottom, rgba(255,243,201,0), #fff3c9 24%); }
+.theme-dragon .option-key,
+.theme-dragon .review-question-no { color: #d64014; }
+.theme-dragon .option-item.is-correct,
+.theme-dragon .review-option.is-answer { border-color: #2f7b4f; background: #e3f1cf; }
+.theme-dragon .option-item.is-wrong,
+.theme-dragon .review-option.is-selected-wrong { border-color: #ba3f35; background: #fae1d1; }
+
+@media (max-width: 340px) {
+  .language-en .topbar-title { font-size: 25rpx; }
+  .theme-dragon .content-card { padding: 24rpx 20rpx; }
+  .theme-dragon .domain-item,
+  .theme-dragon .domain-course-item,
+  .theme-dragon .topic-item,
+  .theme-dragon .section-map-item,
+  .theme-dragon .lesson-row { padding-left: 14rpx; padding-right: 14rpx; }
+}

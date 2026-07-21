@@ -63,6 +63,9 @@
 <view class="theme-{{theme}} page-shell completed-page language-{{language}}">
   <view class="completed-hero">
     <view class="voyage-medal" wx:if="{{theme === 'voyage'}}">★</view>
+    <view class="dragon-completed-medal" wx:if="{{theme === 'dragon'}}">
+      <text>★</text><text>★</text><text>★</text><text>★</text>
+    </view>
     <view class="completed-hero-glow"></view>
     <view class="completed-header">
       <view>

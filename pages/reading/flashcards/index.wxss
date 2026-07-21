@@ -3069,3 +3069,142 @@
 .theme-voyage .dictation-jump-dialog { border: 5rpx solid #8d572c; border-radius: 8rpx 8rpx 0 0; background: #f7e7be; }
 .theme-voyage .limit-picker-action.confirm,
 .theme-voyage .dictation-jump-go { border-radius: 5rpx; background: #a83b31; color: #fff2ca; }
+
+/* Dragon training vocabulary deck. */
+page { overflow-x: hidden; }
+.flashcard-nav,
+.flashcard-page,
+.bookshelf-head,
+.library-hero,
+.book-list,
+.book-card,
+.book-main,
+.vocab-practice-head,
+.vocab-practice-list,
+.vocab-practice-card,
+.vocab-practice-main,
+.today-repeat-panel,
+.vocab-settings-panel,
+.limit-panel,
+.review-log,
+.vocab-library-shelf,
+.vocab-group,
+.vocab-item,
+.vocab-card-top,
+.vocab-word-main,
+.study-card,
+.study-card-head,
+.study-back,
+.flashcard-actions,
+.review-complete-card,
+.dictation-jump-dialog { max-width: 100%; min-width: 0; box-sizing: border-box; }
+.flashcard-nav-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.book-title,
+.book-meta,
+.vocab-practice-card-title,
+.vocab-practice-card-copy,
+.progress-title,
+.progress-copy,
+.vocab-text,
+.vocab-meaning,
+.vocab-example,
+.study-meaning,
+.study-example { min-width: 0; }
+.language-en .book-title,
+.language-en .book-meta,
+.language-en .vocab-practice-title,
+.language-en .vocab-practice-copy,
+.language-en .vocab-practice-card-title,
+.language-en .vocab-practice-card-copy,
+.language-en .progress-title,
+.language-en .progress-copy,
+.language-en .vocab-text,
+.language-en .vocab-meaning,
+.language-en .vocab-example,
+.language-en .study-word,
+.language-en .study-meaning,
+.language-en .study-example { word-break: normal; overflow-wrap: normal; }
+
+.theme-dragon.flashcard-nav { border-bottom: 6rpx solid #f7c843; background: #102f68; box-shadow: 0 7rpx 0 #f4511e; color: #fff8dc; }
+.theme-dragon .flashcard-back,
+.theme-dragon .flashcard-nav-title { color: #fff8dc; }
+.theme-dragon.flashcard-page { background: #fff3c9; color: #102f68; }
+.theme-dragon .bookshelf-head,
+.theme-dragon .library-hero,
+.theme-dragon .vocab-practice-head { border: 4rpx solid #12356f; border-top: 10rpx solid #f4511e; border-radius: 8rpx; background: #fff9df; box-shadow: 0 8rpx 0 #12356f; backdrop-filter: none; }
+.theme-dragon .bookshelf-head::after { border-radius: 3rpx; background: #f7cf4b; }
+.theme-dragon .progress-title,
+.theme-dragon .vocab-practice-title { color: #102f68; }
+.theme-dragon .progress-copy,
+.theme-dragon .hero-copy,
+.theme-dragon .vocab-practice-copy { color: #665b48; }
+.theme-dragon .vocab-practice-kicker { color: #d64014; }
+.theme-dragon .book-card,
+.theme-dragon .vocab-practice-card { border: 4rpx solid #12356f; border-radius: 7rpx; background: #fffdf0; box-shadow: 0 7rpx 0 #f4511e; backdrop-filter: none; }
+.theme-dragon .book-cover,
+.theme-dragon .vocab-practice-icon { border: 3rpx solid #12356f; border-radius: 50%; background: #f7cf4b; color: #102f68; box-shadow: 0 4rpx 0 #f4511e; }
+.theme-dragon .folder-symbol,
+.theme-dragon .practice-hub-symbol { background: #f7cf4b; }
+.theme-dragon .folder-tab,
+.theme-dragon .folder-body { background: #102f68; }
+.theme-dragon .practice-hub-symbol text { border: 2rpx solid #12356f; border-radius: 50%; background: #fff9df; color: #102f68; }
+.theme-dragon .book-title,
+.theme-dragon .vocab-practice-card-title { color: #102f68; }
+.theme-dragon .book-meta,
+.theme-dragon .vocab-practice-card-copy { color: #665b48; }
+.theme-dragon .book-action,
+.theme-dragon .vocab-practice-arrow { color: #f4511e; font-weight: 800; }
+.theme-dragon .hero-tags view { border: 2rpx solid #12356f; border-radius: 4rpx; background: #f7cf4b; color: #102f68; }
+.theme-dragon .progress-bar { height: 16rpx; border: 3rpx solid #12356f; border-radius: 4rpx; background: #f5d76b; }
+.theme-dragon .progress-fill { border-radius: 2rpx; background: #f4511e; }
+.theme-dragon .today-repeat-panel,
+.theme-dragon .vocab-settings-panel,
+.theme-dragon .limit-panel,
+.theme-dragon .review-log,
+.theme-dragon .vocab-library-shelf { border: 4rpx solid #12356f; border-radius: 7rpx; background: #fff9df; box-shadow: 0 7rpx 0 #f4511e; }
+.theme-dragon .stepper,
+.theme-dragon .today-repeat-controls { border: 3rpx solid #12356f; border-radius: 6rpx; background: #fff0ac; }
+.theme-dragon .stepper-btn,
+.theme-dragon .today-repeat-step { border: 2rpx solid #12356f; border-radius: 50%; background: #f7cf4b; color: #102f68; }
+.theme-dragon .stepper-value,
+.theme-dragon .today-repeat-value { color: #102f68; }
+.theme-dragon .start-review,
+.theme-dragon .complete-action,
+.theme-dragon .flashcard-actions .strong { border: 3rpx solid #12356f; border-radius: 6rpx; background: #f4511e; box-shadow: 0 6rpx 0 #102f68; color: #fff; font-weight: 800; }
+.theme-dragon .sublevel-actions view,
+.theme-dragon .flashcard-actions .weak,
+.theme-dragon .source-back { border: 3rpx solid #12356f; border-radius: 6rpx; background: #fff0ac; color: #102f68; }
+.theme-dragon.flashcard-page.is-review { background: #fff3c9; }
+.theme-dragon .review-full-head { border-bottom: 4rpx solid #f4511e; color: #102f68; }
+.theme-dragon .review-exit { color: #102f68; }
+.theme-dragon .study-card { border: 5rpx solid #12356f; border-radius: 8rpx; background: #fffdf0; box-shadow: 0 9rpx 0 #f4511e, 0 20rpx 36rpx rgba(18,53,111,.16); }
+.theme-dragon .memory-stack-mark text { border: 1rpx solid #12356f; border-radius: 2rpx; background: #f7cf4b; }
+.theme-dragon .study-age,
+.theme-dragon .study-choice-tag,
+.theme-dragon .study-easy-action { border: 2rpx solid #12356f; border-radius: 5rpx; background: #fff0ac; color: #102f68; }
+.theme-dragon .study-word { color: #102f68; }
+.theme-dragon .study-speak { border: 3rpx solid #12356f; background: #f7cf4b; color: #102f68; box-shadow: 0 4rpx 0 #f4511e; }
+.theme-dragon .study-back { border-color: #12356f; background: #fff9df; }
+.theme-dragon .study-example { border-left-color: #f4511e; background: #fff0ac; }
+.theme-dragon .review-complete-card { border: 5rpx solid #12356f; border-radius: 8rpx; background: #fff9df; box-shadow: 0 9rpx 0 #f4511e; }
+.theme-dragon .complete-badge { border: 6rpx solid #12356f; background: #f7cf4b; color: #102f68; box-shadow: 0 6rpx 0 #f4511e; }
+.theme-dragon .complete-title { color: #d64014; }
+.theme-dragon .limit-picker-sheet,
+.theme-dragon .dictation-jump-dialog { border: 5rpx solid #12356f; border-radius: 8rpx 8rpx 0 0; background: #fff9df; }
+.theme-dragon .limit-picker-action.confirm,
+.theme-dragon .dictation-jump-go { border-radius: 5rpx; background: #f4511e; color: #fff; }
+
+@media (max-width: 340px) {
+  .flashcard-page { padding-left: 20rpx; padding-right: 20rpx; }
+  .bookshelf-head,
+  .library-hero,
+  .vocab-practice-head { padding-left: 20rpx; padding-right: 20rpx; }
+  .book-card,
+  .vocab-practice-card { padding-left: 16rpx; padding-right: 14rpx; }
+  .book-cover { width: 72rpx; }
+  .vocab-practice-icon { width: 82rpx; height: 82rpx; }
+  .vocab-practice-main { margin-left: 16rpx; }
+  .language-en .vocab-practice-card-title { font-size: 25rpx; }
+  .language-en .vocab-practice-card-copy { font-size: 20rpx; }
+  .study-card { padding-left: 18rpx; padding-right: 18rpx; }
+}

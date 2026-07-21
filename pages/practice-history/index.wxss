@@ -632,3 +632,225 @@
   border-radius: 8rpx;
   color: var(--voyage-blue);
 }
+
+.theme-dragon.practice-history-page {
+  --dragon-ink: #102e62;
+  --dragon-paper: #fffdf1;
+  --dragon-yellow: #ffd83d;
+  --dragon-orange: #f45a16;
+  --dragon-green: #32a269;
+  width: 100%;
+  max-width: 100vw;
+  padding-top: 42rpx;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background:
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.018) 0 3rpx, transparent 3rpx 28rpx),
+    #fff7dc;
+  color: var(--dragon-ink);
+}
+
+.theme-dragon .history-hero,
+.theme-dragon .history-record,
+.theme-dragon .history-tabs,
+.theme-dragon .history-debug,
+.theme-dragon .history-empty {
+  width: 100%;
+  max-width: 100%;
+  border: 4rpx solid var(--dragon-ink);
+  border-radius: 8rpx;
+  background: var(--dragon-paper);
+  box-shadow: 0 8rpx 0 rgba(16, 46, 98, 0.16);
+  box-sizing: border-box;
+}
+
+.theme-dragon .history-hero {
+  position: relative;
+  min-height: 216rpx;
+  padding: 36rpx 164rpx 34rpx 32rpx;
+  overflow: visible;
+  border-top: 14rpx solid var(--dragon-orange);
+  background: var(--dragon-yellow);
+}
+
+.theme-dragon .history-eyebrow,
+.theme-dragon .history-copy,
+.theme-dragon .history-record-meta,
+.theme-dragon .history-passage,
+.theme-dragon .history-writing-text,
+.theme-dragon .history-analysis,
+.theme-dragon .history-list-line,
+.theme-dragon .history-correction,
+.theme-dragon .history-review-row {
+  color: #69728a;
+}
+
+.theme-dragon .history-title,
+.theme-dragon .history-record-title,
+.theme-dragon .history-section-title,
+.theme-dragon .history-question-no,
+.theme-dragon .history-question-prompt,
+.theme-dragon .history-empty-title {
+  color: var(--dragon-ink);
+  font-weight: 800;
+}
+
+.theme-dragon .history-archive-mark.is-dragon {
+  position: absolute;
+  top: 28rpx;
+  right: 28rpx;
+  width: 106rpx;
+  height: 106rpx;
+  border: 5rpx solid var(--dragon-ink);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--dragon-orange);
+  color: #fff;
+  box-shadow: 0 7rpx 0 #a92e0a;
+  box-sizing: border-box;
+}
+
+.theme-dragon .history-archive-mark.is-dragon::before {
+  content: "★★★★";
+  position: absolute;
+  top: 13rpx;
+  color: #b51f0a;
+  font-size: 12rpx;
+  letter-spacing: 0;
+}
+
+.theme-dragon .history-archive-mark.is-dragon .history-archive-number {
+  margin-top: 12rpx;
+  font-size: 40rpx;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.theme-dragon .history-archive-mark.is-dragon text {
+  margin-top: 4rpx;
+  font-size: 13rpx;
+  font-weight: 800;
+}
+
+.theme-dragon .history-tabs {
+  gap: 8rpx;
+  background: #ffedb0;
+}
+
+.theme-dragon .history-tab {
+  border-radius: 5rpx;
+  color: #69728a;
+  font-weight: 700;
+}
+
+.theme-dragon .history-tab.is-active {
+  border: 3rpx solid var(--dragon-ink);
+  background: var(--dragon-orange);
+  color: #fff;
+  box-shadow: 0 4rpx 0 #a92e0a;
+}
+
+.theme-dragon .history-record {
+  border-left: 12rpx solid var(--dragon-orange);
+}
+
+.theme-dragon.history-grammar .history-record { border-left-color: var(--dragon-yellow); }
+.theme-dragon.history-writing .history-record { border-left-color: var(--dragon-orange); }
+.theme-dragon.history-vocabulary .history-record { border-left-color: var(--dragon-green); }
+
+.theme-dragon .history-record-stamp.is-dragon {
+  flex-shrink: 0;
+  width: 58rpx;
+  height: 58rpx;
+  border: 3rpx solid var(--dragon-ink);
+  border-radius: 50%;
+  background: var(--dragon-yellow);
+  color: var(--dragon-ink);
+  font-size: 26rpx;
+  line-height: 52rpx;
+  text-align: center;
+  font-weight: 800;
+  box-sizing: border-box;
+}
+
+.theme-dragon .history-summary {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.theme-dragon .history-result,
+.theme-dragon .history-arrow {
+  color: var(--dragon-orange);
+}
+
+.theme-dragon .history-result {
+  max-width: 148rpx;
+  white-space: normal;
+  text-align: right;
+}
+
+.theme-dragon .history-detail {
+  border-top-color: rgba(16, 46, 98, 0.24);
+  background: #fff7dc;
+}
+
+.theme-dragon .history-section,
+.theme-dragon .history-question {
+  max-width: 100%;
+  border: 3rpx solid rgba(16, 46, 98, 0.38);
+  border-radius: 7rpx;
+  background: var(--dragon-paper);
+  box-sizing: border-box;
+}
+
+.theme-dragon .history-option {
+  max-width: 100%;
+  border: 2rpx solid rgba(16, 46, 98, 0.28);
+  border-radius: 6rpx;
+  background: #fffef7;
+  color: #69728a;
+  box-sizing: border-box;
+}
+
+.theme-dragon .history-option.is-answer {
+  border-color: var(--dragon-green);
+  background: #dff2e4;
+  color: #1c744b;
+}
+
+.theme-dragon .history-option.is-selected-wrong {
+  border-color: #c93c22;
+  background: #ffe1d7;
+}
+
+.theme-dragon .history-ai-row,
+.theme-dragon .history-explain-action,
+.theme-dragon .history-wrong-action {
+  border: 3rpx solid var(--dragon-ink);
+  border-radius: 6rpx;
+  background: var(--dragon-yellow);
+  color: var(--dragon-ink);
+  font-weight: 800;
+}
+
+.theme-dragon .history-wrong-action.is-added {
+  background: #dff2e4;
+  color: #1c744b;
+}
+
+.theme-dragon .history-record-title,
+.theme-dragon .history-record-meta,
+.theme-dragon .history-question-prompt,
+.theme-dragon .history-passage,
+.theme-dragon .history-writing-text,
+.theme-dragon .history-analysis,
+.theme-dragon .history-list-line,
+.theme-dragon .history-correction,
+.theme-dragon .history-review-row,
+.theme-dragon .history-option text {
+  min-width: 0;
+  max-width: 100%;
+}

@@ -46,14 +46,14 @@
     </view>
   </view>
 
-  <view wx:elif="{{theme === 'voyage'}}" class="voyage-profile">
+  <view wx:elif="{{theme === 'voyage' || theme === 'dragon'}}" class="voyage-profile">
     <view class="voyage-profile-hero">
       <view class="voyage-profile-seal">
         <view class="voyage-wheel"><view></view></view>
         <view class="voyage-role">{{currentMember.studyRole === 'parent' ? texts.parent : texts.student}}</view>
       </view>
       <view class="voyage-profile-main" wx:if="{{profileHydrated}}">
-        <view class="voyage-kicker">VOYAGE LOG</view>
+        <view class="voyage-kicker">{{theme === 'dragon' ? 'TRAINING RECORD' : 'VOYAGE LOG'}}</view>
         <view class="voyage-profile-name">{{profileNickname}}</view>
         <view class="voyage-profile-code" wx:if="{{currentMember && currentMember.studyRole === 'student'}}">{{texts.studentId}} {{childCodeText}}</view>
         <view class="voyage-profile-code" wx:else>{{currentMember.studyRole === 'student' ? texts.student : texts.parent}}</view>

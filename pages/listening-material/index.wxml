@@ -1,4 +1,4 @@
-<view class="theme-{{theme}} page-shell voyage-material-page language-{{language}}" wx:if="{{theme === 'voyage'}}">
+<view class="theme-{{theme}} page-shell voyage-material-page language-{{language}}" wx:if="{{theme === 'voyage' || theme === 'dragon'}}">
   <view class="voyage-material-head">
     <view class="voyage-material-level">{{levelId}}</view>
     <view class="voyage-material-title">{{categoryLabel}}</view>
@@ -11,15 +11,15 @@
     <view class="voyage-range-heading"><view>{{texts.rangeRuler}}</view><text>{{startNo}} - {{endNo}}</text></view>
     <view class="voyage-control-row">
       <view class="voyage-control-head"><view>{{texts.startNo}}</view><view class="voyage-stepper"><text data-field="startNo" data-delta="-1" bindtap="stepValue">−</text><view>{{startNo}}</view><text data-field="startNo" data-delta="1" bindtap="stepValue">+</text></view></view>
-      <slider min="1" max="{{sliderMax}}" value="{{startNo}}" activeColor="#176A99" backgroundColor="rgba(108,93,73,.22)" block-color="#D5A64B" block-size="18" bindchange="changeStart" />
+      <slider min="1" max="{{sliderMax}}" value="{{startNo}}" activeColor="{{themeSlider.activeColor}}" backgroundColor="{{themeSlider.backgroundColor}}" block-color="{{themeSlider.blockColor}}" block-size="18" bindchange="changeStart" />
     </view>
     <view class="voyage-control-row">
       <view class="voyage-control-head"><view>{{texts.endNo}}</view><view class="voyage-stepper"><text data-field="endNo" data-delta="-1" bindtap="stepValue">−</text><view>{{endNo}}</view><text data-field="endNo" data-delta="1" bindtap="stepValue">+</text></view></view>
-      <slider min="1" max="{{sliderMax}}" value="{{endNo}}" activeColor="#176A99" backgroundColor="rgba(108,93,73,.22)" block-color="#D5A64B" block-size="18" bindchange="changeEnd" />
+      <slider min="1" max="{{sliderMax}}" value="{{endNo}}" activeColor="{{themeSlider.activeColor}}" backgroundColor="{{themeSlider.backgroundColor}}" block-color="{{themeSlider.blockColor}}" block-size="18" bindchange="changeEnd" />
     </view>
     <view class="voyage-rhythm-grid">
-      <view class="voyage-control-row"><view class="voyage-control-head"><view>{{texts.dailyCount}}</view><view class="voyage-stepper"><text data-field="dailyCount" data-delta="-1" bindtap="stepValue">−</text><view>{{dailyCount}}</view><text data-field="dailyCount" data-delta="1" bindtap="stepValue">+</text></view></view><slider min="1" max="10" value="{{dailyCount}}" activeColor="#176A99" backgroundColor="rgba(108,93,73,.22)" block-color="#D5A64B" block-size="18" bindchange="changeDailyCount" /></view>
-      <view class="voyage-control-row"><view class="voyage-control-head"><view>{{texts.repeatCount}}</view><view class="voyage-stepper"><text data-field="repeatTarget" data-delta="-1" bindtap="stepValue">−</text><view>{{repeatTarget}}</view><text data-field="repeatTarget" data-delta="1" bindtap="stepValue">+</text></view></view><slider min="1" max="5" value="{{repeatTarget}}" activeColor="#176A99" backgroundColor="rgba(108,93,73,.22)" block-color="#D5A64B" block-size="18" bindchange="changeRepeatTarget" /></view>
+      <view class="voyage-control-row"><view class="voyage-control-head"><view>{{texts.dailyCount}}</view><view class="voyage-stepper"><text data-field="dailyCount" data-delta="-1" bindtap="stepValue">−</text><view>{{dailyCount}}</view><text data-field="dailyCount" data-delta="1" bindtap="stepValue">+</text></view></view><slider min="1" max="10" value="{{dailyCount}}" activeColor="{{themeSlider.activeColor}}" backgroundColor="{{themeSlider.backgroundColor}}" block-color="{{themeSlider.blockColor}}" block-size="18" bindchange="changeDailyCount" /></view>
+      <view class="voyage-control-row"><view class="voyage-control-head"><view>{{texts.repeatCount}}</view><view class="voyage-stepper"><text data-field="repeatTarget" data-delta="-1" bindtap="stepValue">−</text><view>{{repeatTarget}}</view><text data-field="repeatTarget" data-delta="1" bindtap="stepValue">+</text></view></view><slider min="1" max="5" value="{{repeatTarget}}" activeColor="{{themeSlider.activeColor}}" backgroundColor="{{themeSlider.backgroundColor}}" block-color="{{themeSlider.blockColor}}" block-size="18" bindchange="changeRepeatTarget" /></view>
     </view>
     <view class="voyage-plan-signature">
       <view><view>{{texts.planRange}}</view><text>{{startNo}} - {{endNo}} · {{dailyCountText}}</text><text>{{planDurationText}}</text></view>

@@ -426,3 +426,28 @@
 .custom-tabbar.theme-voyage .tabbar-text {
   font-size: 21rpx;
 }
+
+.custom-tabbar.theme-dragon { left: 0; right: 0; bottom: 0; height: calc(104rpx + env(safe-area-inset-bottom)); padding: 8rpx 22rpx calc(7rpx + env(safe-area-inset-bottom)); border: 0; border-top: 5rpx solid #102e62; border-radius: 0; background: #fffdf1; box-shadow: 0 -9rpx 0 #f45a16; backdrop-filter: none; }
+.custom-tabbar.theme-dragon .tabbar-item { height: 84rpx; gap: 4rpx; color: #687185; font-weight: 700; }
+.custom-tabbar.theme-dragon .tabbar-item.is-active { color: #f45a16; }
+.custom-tabbar.theme-dragon .tabbar-item.is-active .tabbar-icon { filter: none; }
+.custom-tabbar.theme-dragon .tabbar-icon { width: 42rpx; height: 42rpx; transform: scale(0.88); }
+.custom-tabbar.theme-dragon .tabbar-icon::before,
+.custom-tabbar.theme-dragon .tabbar-icon::after,
+.custom-tabbar.theme-dragon .tabbar-icon view,
+.custom-tabbar.theme-dragon .tabbar-icon view::before,
+.custom-tabbar.theme-dragon .tabbar-icon view::after { margin: 0; border-radius: 0; background: transparent; transform: none; opacity: 1; }
+.custom-tabbar.theme-dragon .tabbar-icon-0::before { left: 3rpx; top: 3rpx; width: 36rpx; height: 36rpx; border: 4rpx solid currentColor; border-radius: 50%; background: #ff9e19; box-shadow: inset 0 0 0 4rpx #ffd83d; }
+.custom-tabbar.theme-dragon .tabbar-icon-0::after { content: "★"; left: 5rpx; top: 3rpx; width: 32rpx; height: 36rpx; color: #c92818; font-size: 23rpx; line-height: 36rpx; text-align: center; }
+.custom-tabbar.theme-dragon .tabbar-icon-0 view { display: none; }
+.custom-tabbar.theme-dragon .tabbar-icon-1::before { left: 3rpx; top: 6rpx; width: 36rpx; height: 28rpx; border: 4rpx solid currentColor; border-radius: 8rpx; }
+.custom-tabbar.theme-dragon .tabbar-icon-1 view,
+.custom-tabbar.theme-dragon .tabbar-icon-1 view::before,
+.custom-tabbar.theme-dragon .tabbar-icon-1 view::after { bottom: 9rpx; width: 5rpx; border-radius: 3rpx; background: currentColor; }
+.custom-tabbar.theme-dragon .tabbar-icon-2::before { left: 4rpx; top: 5rpx; width: 34rpx; height: 32rpx; border: 4rpx solid currentColor; border-radius: 7rpx; }
+.custom-tabbar.theme-dragon .tabbar-icon-2 view,
+.custom-tabbar.theme-dragon .tabbar-icon-2 view::before,
+.custom-tabbar.theme-dragon .tabbar-icon-2 view::after { left: 10rpx; width: 20rpx; height: 4rpx; border-radius: 3rpx; background: currentColor; }
+.custom-tabbar.theme-dragon .tabbar-icon-3::before { left: 8rpx; top: 3rpx; width: 26rpx; height: 26rpx; border: 4rpx solid currentColor; border-radius: 50%; }
+.custom-tabbar.theme-dragon .tabbar-icon-3 view { left: 4rpx; bottom: 1rpx; width: 34rpx; height: 17rpx; border: 4rpx solid currentColor; border-bottom: 0; border-radius: 22rpx 22rpx 0 0; }
+.custom-tabbar.theme-dragon .tabbar-text { font-size: 20rpx; }

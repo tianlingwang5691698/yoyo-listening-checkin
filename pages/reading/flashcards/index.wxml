@@ -415,7 +415,7 @@
           <view class="today-repeat-value"><text>{{repeatLimit}}</text><text>/ {{todayRepeatTotal}} {{texts.repeatUnit}}</text></view>
           <view class="today-repeat-step" data-delta="1" bindtap="changeRepeatLimit">+</view>
         </view>
-        <slider class="today-repeat-slider" min="1" max="{{todayRepeatTotal || 1}}" step="1" value="{{repeatLimit || 1}}" activeColor="{{theme === 'voyage' ? '#b27a31' : '#315d73'}}" backgroundColor="{{theme === 'voyage' ? '#dfc28a' : '#c9dce5'}}" block-color="{{theme === 'voyage' ? '#fff0c7' : '#ffffff'}}" block-size="22" bindchanging="handleRepeatSlider" bindchange="handleRepeatSlider" />
+        <slider class="today-repeat-slider" min="1" max="{{todayRepeatTotal || 1}}" step="1" value="{{repeatLimit || 1}}" activeColor="{{theme === 'voyage' ? '#b27a31' : (theme === 'dragon' ? '#f4511e' : '#315d73')}}" backgroundColor="{{theme === 'voyage' ? '#dfc28a' : (theme === 'dragon' ? '#f2c14e' : '#c9dce5')}}" block-color="{{theme === 'voyage' ? '#fff0c7' : (theme === 'dragon' ? '#fff8dc' : '#ffffff')}}" block-size="22" bindchanging="handleRepeatSlider" bindchange="handleRepeatSlider" />
         <button class="today-repeat-action start-review" bindtap="startTodayRepeat">{{texts.startRepeat}}</button>
       </view>
       <button wx:else class="start-review {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" bindtap="startReview">{{previewMode ? texts.previewStart : texts.start}}</button>

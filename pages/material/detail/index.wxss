@@ -1321,3 +1321,220 @@
   font-family: "Songti SC", "STSong", serif;
   font-weight: 800;
 }
+
+/* Dragon theme: listening trial console and training answer sheet. */
+.theme-dragon.listening-detail-page {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 52rpx 28rpx 96rpx;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, rgba(94, 185, 236, 0.34), transparent 260rpx),
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.018) 0 3rpx, transparent 3rpx 28rpx),
+    #fff7dc;
+}
+
+.theme-dragon .audio-card,
+.theme-dragon .study-card,
+.theme-dragon .question-card,
+.theme-dragon .floating-study-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 8rpx 0 rgba(16, 46, 98, 0.16);
+}
+
+.theme-dragon .audio-card {
+  overflow: hidden;
+  border-bottom: 10rpx solid #f45a16;
+  background: #12346c;
+  color: #ffffff;
+  box-shadow: 0 9rpx 0 rgba(16, 46, 98, 0.24);
+}
+
+.theme-dragon .audio-card::after {
+  right: -58rpx;
+  bottom: -70rpx;
+  width: 190rpx;
+  height: 190rpx;
+  border: 6rpx solid rgba(255, 216, 61, 0.58);
+  background: rgba(244, 90, 22, 0.2);
+}
+
+.theme-dragon .detail-eyebrow,
+.theme-dragon .audio-subtitle,
+.theme-dragon .audio-time,
+.theme-dragon .audio-copy {
+  color: #ffe98c;
+}
+
+.theme-dragon .detail-title,
+.theme-dragon .audio-title {
+  min-width: 0;
+  color: #ffffff;
+  font-weight: 800;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.theme-dragon .audio-stage {
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 4rpx solid #ffd83d;
+  border-radius: 8rpx;
+  background: #082a61;
+}
+
+.theme-dragon .audio-orbit {
+  border-color: rgba(255, 216, 61, 0.58);
+}
+
+.theme-dragon .audio-bars view {
+  border-radius: 2rpx;
+  background: linear-gradient(180deg, #ffd83d, #f45a16);
+}
+
+.theme-dragon .audio-step,
+.theme-dragon .audio-main,
+.theme-dragon .mini-button {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #ffd83d;
+  color: #102e62;
+  box-shadow: 0 5rpx 0 rgba(16, 46, 98, 0.25);
+  font-weight: 800;
+}
+
+.theme-dragon .audio-main,
+.theme-dragon .submit-button,
+.theme-dragon .study-complete-button {
+  border: 4rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #f45a16;
+  color: #ffffff;
+  box-shadow: 0 7rpx 0 #a92e0a;
+}
+
+.theme-dragon .audio-slider {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.theme-dragon .question-row,
+.theme-dragon .study-item,
+.theme-dragon .transcript-box,
+.theme-dragon .answer-summary-box,
+.theme-dragon .picture-cell,
+.theme-dragon .picture-composite,
+.theme-dragon .listening-form {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 3rpx solid rgba(16, 46, 98, 0.34);
+  border-radius: 7rpx;
+  background: #fffef7;
+}
+
+.theme-dragon .question-title,
+.theme-dragon .study-title,
+.theme-dragon .section-heading,
+.theme-dragon .listening-group-title,
+.theme-dragon .listening-form-title {
+  min-width: 0;
+  color: #102e62;
+  font-weight: 800;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.theme-dragon .listening-group-head {
+  max-width: 100%;
+  box-sizing: border-box;
+  border-left: 7rpx solid #f45a16;
+  border-radius: 7rpx;
+  background: #fff0c0;
+}
+
+.theme-dragon .option-list,
+.theme-dragon .picture-grid,
+.theme-dragon .study-tabs,
+.theme-dragon .listening-form-row {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.theme-dragon .option-row {
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 3rpx solid rgba(16, 46, 98, 0.42);
+  border-radius: 7rpx;
+  background: #fffdf1;
+  color: #102e62;
+}
+
+.theme-dragon .option-row.is-selected {
+  border-color: #f45a16;
+  background: #fff0c0;
+  color: #102e62;
+  box-shadow: inset 0 -5rpx 0 rgba(244, 90, 22, 0.14);
+}
+
+.theme-dragon .study-tab {
+  min-width: 0;
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #fff4c7;
+  color: #102e62;
+  font-weight: 700;
+}
+
+.theme-dragon .study-tab.is-active {
+  background: #ffd83d;
+  color: #102e62;
+  box-shadow: inset 0 -5rpx 0 #d28b0a;
+}
+
+.theme-dragon .listening-source-pages,
+.theme-dragon .listening-source-page {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.theme-dragon .listening-source-page {
+  border: 3rpx solid rgba(16, 46, 98, 0.3);
+  border-radius: 6rpx;
+}
+
+.theme-dragon .detail-debug {
+  max-width: 100%;
+  box-sizing: border-box;
+  border-color: #f45a16;
+  background: #fff0c0;
+  color: #8b3214;
+}
+
+@media (max-width: 360px) {
+  .theme-dragon .audio-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .theme-dragon .audio-step {
+    min-width: 0;
+  }
+
+  .theme-dragon .listening-form-row {
+    grid-template-columns: 130rpx minmax(0, 1fr);
+  }
+}

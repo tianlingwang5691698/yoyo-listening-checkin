@@ -1,4 +1,4 @@
-<view class="theme-{{theme}} page-shell voyage-plan-page language-{{language}}" wx:if="{{theme === 'voyage'}}">
+<view class="theme-{{theme}} page-shell voyage-plan-page language-{{language}}" wx:if="{{theme === 'voyage' || theme === 'dragon'}}">
   <view class="voyage-logbook-head">
     <view class="voyage-logbook-kicker">{{texts.eyebrow}}</view>
     <view class="voyage-logbook-title">{{texts.title}}</view>

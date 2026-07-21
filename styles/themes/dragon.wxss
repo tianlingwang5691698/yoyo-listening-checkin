@@ -1,0 +1,471 @@
+.theme-dragon,
+.custom-tabbar.theme-dragon {
+  --bg-cream: #fff7dc;
+  --bg-warm: #f5d67e;
+  --surface: #fffdf1;
+  --surface-soft: #ffedb0;
+  --surface-subtle: #fff4cf;
+  --surface-glass: rgba(255, 253, 241, 0.94);
+  --surface-raised: #fffdf1;
+  --control-muted-bg: rgba(16, 46, 98, 0.1);
+  --control-strong-bg: rgba(255, 216, 61, 0.52);
+  --text-main: #12346c;
+  --text-strong: #082a61;
+  --text-muted: #69728a;
+  --text-soft: #8b7559;
+  --text-inverse: #ffffff;
+  --accent: #f45a16;
+  --accent-deep: #c73a0c;
+  --accent-soft: rgba(244, 90, 22, 0.13);
+  --accent-contrast: #ffffff;
+  --growth: #32a269;
+  --growth-deep: #1c744b;
+  --growth-soft: #dff2e4;
+  --reward: #f2b526;
+  --reward-soft: rgba(255, 216, 61, 0.24);
+  --calendar-cell-bg: #fff0ba;
+  --calendar-cell-text: #665b4e;
+  --calendar-completed-bg: #32a269;
+  --calendar-completed-text: #ffffff;
+  --calendar-selected-ring: rgba(244, 90, 22, 0.48);
+  --calendar-catchup-ring: rgba(255, 216, 61, 0.62);
+  --warning: #dc8e10;
+  --warning-soft: #fff0bd;
+  --danger: #c93c22;
+  --danger-soft: #ffe1d7;
+  --border-soft: rgba(16, 46, 98, 0.18);
+  --border-strong: rgba(16, 46, 98, 0.72);
+  --shadow-soft: 0 7rpx 0 rgba(16, 46, 98, 0.12);
+  --shadow-card: 0 9rpx 0 rgba(16, 46, 98, 0.16);
+  --shadow-accent: 0 9rpx 0 #a92e0a;
+  --radius-xl: 10rpx;
+  --radius-lg: 8rpx;
+  --radius-md: 7rpx;
+  --radius-sm: 6rpx;
+  --radius-pill: 999rpx;
+  --space-page-x: 28rpx;
+  --space-card: 28rpx;
+  --tabbar-bg: #fffdf1;
+  --tabbar-text: #687185;
+  --tabbar-active: #f45a16;
+  --tabbar-border: #102e62;
+  --font-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-body-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-title-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-number-family: "DIN Alternate", "Helvetica Neue", sans-serif;
+  --font-brand-size: 40rpx;
+  --font-page-title-size: 42rpx;
+  --font-card-title-size: 34rpx;
+  --font-section-title-size: 30rpx;
+  --font-body-size: 26rpx;
+  --font-caption-size: 22rpx;
+  --font-control-size: 28rpx;
+  --font-eyebrow-size: 20rpx;
+  --font-product-copy-size: 25rpx;
+  --font-code-size: 68rpx;
+  --font-display-size: 104rpx;
+  --font-brand-weight: 800;
+  --font-title-weight: 800;
+  --font-section-weight: 800;
+  --font-section-heading-weight: 800;
+  --font-body-weight: 400;
+  --font-caption-weight: 600;
+  --font-badge-weight: 800;
+  --font-strong-number-weight: 800;
+  --line-title: 1.24;
+  --line-section: 1.3;
+  --line-body: 1.55;
+  --line-caption: 1.35;
+  color: var(--text-main);
+  font-family: var(--font-body-family);
+}
+
+.theme-dragon.page-shell,
+.theme-dragon.page-container,
+.theme-dragon.classroom-page,
+.theme-dragon.word-practice-page,
+.theme-dragon.recognition-page,
+.theme-dragon.dictation-page,
+.theme-dragon.dictation-library-page {
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background:
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.018) 0 3rpx, transparent 3rpx 28rpx),
+    #fff7dc;
+  color: var(--text-main);
+}
+
+.theme-dragon .card,
+.theme-dragon .card-main,
+.theme-dragon .section-panel,
+.theme-dragon .form-panel,
+.theme-dragon .task-cell,
+.theme-dragon .directory-row,
+.theme-dragon .task-row,
+.theme-dragon .stage-row,
+.theme-dragon .report-row,
+.theme-dragon .catchup-row,
+.theme-dragon .profile-row,
+.theme-dragon .student-row,
+.theme-dragon .trend-row,
+.theme-dragon .completed-card,
+.theme-dragon .completed-row-main,
+.theme-dragon .study-area-card,
+.theme-dragon .wordbook-card,
+.theme-dragon .test-card,
+.theme-dragon .fixed-card,
+.theme-dragon .selected-row,
+.theme-dragon .episode-row,
+.theme-dragon .task-group-row,
+.theme-dragon .program-card,
+.theme-dragon .prompt-card,
+.theme-dragon .editor-card,
+.theme-dragon .review-card,
+.theme-dragon .question-card,
+.theme-dragon .study-card,
+.theme-dragon .calendar-card,
+.theme-dragon .report-card,
+.theme-dragon .admin-card {
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 9rpx 0 rgba(16, 46, 98, 0.16);
+}
+
+.theme-dragon .type-brand,
+.theme-dragon .type-page-title,
+.theme-dragon .type-card-title,
+.theme-dragon .type-section-title,
+.theme-dragon .section-title,
+.theme-dragon .product-title,
+.theme-dragon .profile-name,
+.theme-dragon .row-title,
+.theme-dragon .stage-row-title,
+.theme-dragon .question-title,
+.theme-dragon .study-title {
+  color: #102e62;
+  font-family: var(--font-title-family);
+  font-weight: 800;
+}
+
+.theme-dragon .button-primary,
+.theme-dragon .plan-action,
+.theme-dragon .choice-action,
+.theme-dragon .start-review,
+.theme-dragon .highlight-button,
+.theme-dragon .submit-button,
+.theme-dragon .translation-submit,
+.theme-dragon .study-complete-button,
+.theme-dragon .audio-main,
+.theme-dragon .player-action.primary {
+  border: 4rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #f45a16;
+  box-shadow: 0 8rpx 0 #a92e0a;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.theme-dragon .button-ghost,
+.theme-dragon .button-secondary,
+.theme-dragon .mini-button,
+.theme-dragon .mini-action,
+.theme-dragon .row-action,
+.theme-dragon .detail-link,
+.theme-dragon .step-control,
+.theme-dragon .stepper-btn,
+.theme-dragon .player-action,
+.theme-dragon .audio-step {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #ffd83d;
+  color: #102e62;
+  box-shadow: 0 5rpx 0 rgba(16, 46, 98, 0.22);
+  font-weight: 700;
+}
+
+.theme-dragon .pill,
+.theme-dragon .status-badge,
+.theme-dragon .theme-chip,
+.theme-dragon .level-tab,
+.theme-dragon .metric-tab,
+.theme-dragon .review-tab,
+.theme-dragon .study-tab,
+.theme-dragon .admin-tab,
+.theme-dragon .lesson-study-tab,
+.theme-dragon .repeat-chip,
+.theme-dragon .paragraph-tabs view {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #fff4c7;
+  color: #102e62;
+}
+
+.theme-dragon .level-tab.is-active,
+.theme-dragon .metric-tab.is-active,
+.theme-dragon .review-tab.is-active,
+.theme-dragon .study-tab.is-active,
+.theme-dragon .admin-tab.is-active,
+.theme-dragon .theme-chip.is-active,
+.theme-dragon .lesson-study-tab.is-active,
+.theme-dragon .repeat-chip.is-active,
+.theme-dragon .paragraph-tabs view.is-active {
+  border-color: #102e62;
+  background: #ffd83d;
+  color: #102e62;
+  box-shadow: 0 5rpx 0 #d28b0a;
+}
+
+.theme-dragon input,
+.theme-dragon textarea,
+.theme-dragon .form-input,
+.theme-dragon .answer-input,
+.theme-dragon .translation-input,
+.theme-dragon .essay-input {
+  border: 3rpx solid rgba(16, 46, 98, 0.62);
+  border-radius: 7rpx;
+  background: #fffef7;
+  color: #102e62;
+}
+
+.theme-dragon .progress-rail,
+.theme-dragon .meter-track,
+.theme-dragon .player-progress,
+.theme-dragon .progress-track {
+  background: rgba(16, 46, 98, 0.16);
+}
+
+.theme-dragon .progress-rail-fill,
+.theme-dragon .meter-fill,
+.theme-dragon .progress-fill,
+.theme-dragon .player-progress-fill {
+  background: linear-gradient(90deg, #ffd83d, #f45a16);
+}
+
+.theme-dragon .is-complete,
+.theme-dragon .is-done,
+.theme-dragon .status-success,
+.theme-dragon .answer-correct {
+  --accent: #32a269;
+}
+
+.theme-dragon .empty-state,
+.theme-dragon .error-state {
+  border: 3rpx dashed #f45a16;
+  border-radius: 8rpx;
+  background: #fff4c7;
+}
+
+/* Shared voyage markup becomes a power-training interface in the dragon theme. */
+.theme-dragon.level-page,
+.theme-dragon.level-stage-page,
+.theme-dragon.voyage-plan-page,
+.theme-dragon.voyage-material-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, #5eb9ec 0 260rpx, transparent 261rpx),
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.02) 0 3rpx, transparent 3rpx 28rpx),
+    #fff7dc;
+  color: #102e62;
+}
+
+.theme-dragon .voyage-level-head,
+.theme-dragon .voyage-logbook-head,
+.theme-dragon .voyage-stage-manifest,
+.theme-dragon .voyage-material-head {
+  color: #ffffff;
+  text-shadow: 0 3rpx 0 rgba(16, 46, 98, 0.42);
+}
+
+.theme-dragon .voyage-level-title,
+.theme-dragon .voyage-logbook-title,
+.theme-dragon .voyage-stage-title,
+.theme-dragon .voyage-material-title {
+  font-family: var(--font-title-family);
+  font-weight: 800;
+}
+
+.theme-dragon .voyage-level-compass,
+.theme-dragon .voyage-logbook-compass {
+  border: 6rpx solid #f45a16;
+  background: #ff9e19;
+  box-shadow: inset 0 0 0 5rpx #ffd83d, 0 8rpx 0 rgba(16, 46, 98, 0.28);
+}
+
+.theme-dragon .voyage-level-compass::after,
+.theme-dragon .voyage-logbook-compass::after {
+  content: "★";
+  position: absolute;
+  inset: 0;
+  color: #cc2518;
+  font-size: 38rpx;
+  line-height: 82rpx;
+  text-align: center;
+}
+
+.theme-dragon .voyage-level-compass view,
+.theme-dragon .voyage-level-compass text,
+.theme-dragon .voyage-logbook-compass view {
+  display: none;
+}
+
+.theme-dragon .voyage-plan-chart,
+.theme-dragon .voyage-fixed-route,
+.theme-dragon .voyage-harbor-list,
+.theme-dragon .voyage-plan-fixed,
+.theme-dragon .voyage-current-route,
+.theme-dragon .voyage-plan-empty,
+.theme-dragon .voyage-plan-catalog,
+.theme-dragon .voyage-selected-row,
+.theme-dragon .voyage-plan-material,
+.theme-dragon .voyage-route-group,
+.theme-dragon .voyage-cycle-plaque,
+.theme-dragon .voyage-fixed-item,
+.theme-dragon .voyage-material-form,
+.theme-dragon .voyage-record-list {
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 8rpx 0 rgba(16, 46, 98, 0.16);
+}
+
+.theme-dragon .voyage-plan-chart,
+.theme-dragon .voyage-current-route,
+.theme-dragon .voyage-stage-manifest,
+.theme-dragon .voyage-material-head {
+  border-bottom: 12rpx solid #f45a16;
+}
+
+.theme-dragon .voyage-chart-tab,
+.theme-dragon .voyage-plan-tab {
+  border-bottom: 4rpx solid rgba(16, 46, 98, 0.24);
+  color: #102e62;
+}
+
+.theme-dragon .voyage-chart-tab.is-active,
+.theme-dragon .voyage-plan-tab.is-active {
+  border-color: #f45a16;
+  color: #f45a16;
+}
+
+.theme-dragon .voyage-chart-coordinate,
+.theme-dragon .voyage-harbor-point,
+.theme-dragon .voyage-selected-point,
+.theme-dragon .voyage-material-port,
+.theme-dragon .voyage-checkpoint,
+.theme-dragon .voyage-port-number,
+.theme-dragon .voyage-checkpoint-order {
+  border-color: #102e62;
+  background: #ffd83d;
+  color: #102e62;
+}
+
+.theme-dragon .voyage-harbor-list::before,
+.theme-dragon .voyage-plan-catalog::before,
+.theme-dragon .voyage-selected-route::before {
+  border-color: rgba(244, 90, 22, 0.48);
+}
+
+.theme-dragon .voyage-plan-action,
+.theme-dragon .voyage-plan-link,
+.theme-dragon .voyage-fixed-action,
+.theme-dragon .voyage-harbor-state,
+.theme-dragon .voyage-fixed-item-action,
+.theme-dragon .voyage-checkpoint-state {
+  color: #e44910;
+  font-weight: 800;
+}
+
+.theme-dragon .voyage-daily-seal,
+.theme-dragon .voyage-stage-seal {
+  border-color: #f45a16;
+  background: #ffd83d;
+  color: #102e62;
+}
+
+.theme-dragon .voyage-plan-done,
+.theme-dragon .voyage-save-action {
+  border-color: #102e62;
+  background: #f45a16;
+  color: #ffffff;
+  box-shadow: 0 7rpx 0 #a92e0a;
+}
+
+.theme-dragon .voyage-plan-actions {
+  border-color: #102e62;
+  background: rgba(255, 253, 241, 0.98);
+}
+
+/* Account, reports, classrooms, and learning details. */
+.theme-dragon.profile-page,
+.theme-dragon.settings-page,
+.theme-dragon.record-page,
+.theme-dragon.parent-page,
+.theme-dragon.parent-detail-page,
+.theme-dragon.completed-page,
+.theme-dragon.lesson-page,
+.theme-dragon.reading-page,
+.theme-dragon.grammar-page,
+.theme-dragon.writing-page,
+.theme-dragon.speaking-page,
+.theme-dragon.admin-page,
+.theme-dragon.family-page,
+.theme-dragon.identity-page,
+.theme-dragon.practice-history-page {
+  overflow-x: hidden;
+  background:
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.018) 0 3rpx, transparent 3rpx 28rpx),
+    #fff7dc;
+}
+
+.theme-dragon .product-hero,
+.theme-dragon .record-hero,
+.theme-dragon .parent-hero,
+.theme-dragon .report-hero,
+.theme-dragon .lesson-hero,
+.theme-dragon .writing-hero,
+.theme-dragon .speaking-entry-card,
+.theme-dragon .admin-hero {
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #ffd83d;
+  box-shadow: 0 10rpx 0 #f45a16;
+  color: #102e62;
+}
+
+.theme-dragon .option-row,
+.theme-dragon .answer-row,
+.theme-dragon .lesson-study-item,
+.theme-dragon .attempt-card,
+.theme-dragon .translation-item,
+.theme-dragon .review-block,
+.theme-dragon .score-item,
+.theme-dragon .task-node {
+  border: 3rpx solid rgba(16, 46, 98, 0.42);
+  border-radius: 7rpx;
+  background: #fffef7;
+}
+
+.theme-dragon .option-row.is-selected,
+.theme-dragon .answer-row.is-selected {
+  border-color: #f45a16;
+  background: #fff0c0;
+}
+
+.theme-dragon .dictionary-sheet,
+.theme-dragon .privacy-dialog,
+.theme-dragon .completion-card {
+  border: 5rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 12rpx 0 rgba(16, 46, 98, 0.24);
+}
+
+.theme-dragon .dictionary-mask,
+.theme-dragon .privacy-mask,
+.theme-dragon .completion-card-mask {
+  background: rgba(8, 25, 58, 0.72);
+}

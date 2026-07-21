@@ -1017,3 +1017,23 @@
   border: 5rpx dotted currentColor;
   border-radius: 50%;
 }
+
+/* Dragon theme profile: training record and power-level entries. */
+.theme-dragon.profile-page { background: #fff7dc; }
+.theme-dragon .voyage-profile-hero { min-height: 300rpx; border: 5rpx solid #102e62; border-radius: 8rpx; background: #ffd83d; box-shadow: 0 11rpx 0 #f45a16; }
+.theme-dragon .voyage-profile-hero::after { border-color: rgba(16, 46, 98, 0.18); }
+.theme-dragon .voyage-profile-seal { border: 5rpx solid #f45a16; background: #ff9e19; box-shadow: inset 0 0 0 5rpx #ffd83d, 0 7rpx 0 rgba(16, 46, 98, 0.24); }
+.theme-dragon .voyage-wheel::after { content: "★"; position: absolute; inset: 0; color: #c92818; font-size: 38rpx; line-height: 82rpx; text-align: center; }
+.theme-dragon .voyage-wheel view { display: none; }
+.theme-dragon .voyage-role { color: #102e62; font-weight: 800; }
+.theme-dragon .voyage-kicker { color: #f45a16; }
+.theme-dragon .voyage-profile-name,
+.theme-dragon .voyage-profile-code,
+.theme-dragon .voyage-profile-quote,
+.theme-dragon .voyage-profile-cn { color: #102e62; }
+.theme-dragon .voyage-profile-entry { min-height: 132rpx; border: 4rpx solid #102e62; border-radius: 8rpx; background: #fffdf1; box-shadow: 0 8rpx 0 rgba(16, 46, 98, 0.16); }
+.theme-dragon .voyage-profile-entry.settings-entry { border-color: #f45a16; }
+.theme-dragon .voyage-entry-mark { border-color: #102e62; background: #ffd83d; color: #102e62; }
+.theme-dragon .voyage-entry-title,
+.theme-dragon .voyage-entry-arrow { color: #102e62; }
+.theme-dragon .voyage-entry-copy { color: #6b7287; }

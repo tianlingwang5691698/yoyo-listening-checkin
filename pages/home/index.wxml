@@ -1,6 +1,7 @@
-<view wx:if="{{theme === 'voyage'}}" class="theme-voyage page-shell voyage-home-page language-{{language}}">
+<view wx:if="{{theme === 'voyage' || theme === 'dragon'}}" class="theme-{{theme}} page-shell voyage-home-page {{theme === 'dragon' ? 'dragon-home-page' : ''}} language-{{language}}">
   <view class="voyage-sky" aria-hidden="true">
-    <image class="voyage-ocean-art" src="../../assets/voyage/home-ocean-hero.jpg" mode="aspectFill" />
+    <image wx:if="{{theme === 'dragon'}}" class="voyage-ocean-art dragon-shenron-art" src="../../assets/dragon/shenron-home.jpg" mode="widthFix" />
+    <image wx:else class="voyage-ocean-art" src="../../assets/voyage/home-ocean-hero.jpg" mode="aspectFill" />
     <view class="voyage-sun"></view>
     <view class="voyage-cloud cloud-left"></view>
     <view class="voyage-cloud cloud-right"></view>
@@ -20,7 +21,10 @@
   </view>
 
   <view class="voyage-header" style="{{homeNavStyle}}">
-    <view class="voyage-avatar"><image src="../../assets/voyage/explorer-avatar.jpg" mode="aspectFill" /></view>
+    <view class="voyage-avatar">
+      <image wx:if="{{theme === 'dragon'}}" class="dragon-avatar-image" src="../../assets/dragon/goku.png" mode="widthFix" />
+      <image wx:else src="../../assets/voyage/explorer-avatar.jpg" mode="aspectFill" />
+    </view>
     <view class="voyage-welcome">
       <view class="voyage-greeting">{{greeting}}{{texts.greetingSeparator}}{{child.nickname || texts.classmate}}</view>
       <view class="voyage-date"><view class="voyage-calendar"></view><text>{{todayDisplay}} · Day {{checkinDayCount}}</text></view>
@@ -97,27 +101,27 @@
     <view class="voyage-island island-right"></view>
     <view class="voyage-module-grid">
       <view class="voyage-module module-listening" bindtap="openListening">
-        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-listening.jpg" mode="aspectFill" /></view>
+        <view class="voyage-badge"><text wx:if="{{theme === 'dragon'}}" class="dragon-module-glyph">{{texts.dragonListeningGlyph}}</text><image wx:else class="voyage-module-sprite" src="../../assets/voyage/badge-listening.jpg" mode="aspectFill" /></view>
         <view class="voyage-ribbon">{{texts.listening}}</view>
       </view>
       <view class="voyage-module module-reading" bindtap="openReading">
-        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-reading.jpg" mode="aspectFill" /></view>
+        <view class="voyage-badge"><text wx:if="{{theme === 'dragon'}}" class="dragon-module-glyph">{{texts.dragonReadingGlyph}}</text><image wx:else class="voyage-module-sprite" src="../../assets/voyage/badge-reading.jpg" mode="aspectFill" /></view>
         <view class="voyage-ribbon">{{texts.reading}}</view>
       </view>
       <view class="voyage-module module-grammar" bindtap="openGrammar">
-        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-grammar.jpg" mode="aspectFill" /></view>
+        <view class="voyage-badge"><text wx:if="{{theme === 'dragon'}}" class="dragon-module-glyph">{{texts.dragonGrammarGlyph}}</text><image wx:else class="voyage-module-sprite" src="../../assets/voyage/badge-grammar.jpg" mode="aspectFill" /></view>
         <view class="voyage-ribbon">{{texts.grammar}}</view>
       </view>
       <view class="voyage-module module-vocabulary" bindtap="openVocabulary">
-        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-vocabulary.jpg" mode="aspectFill" /></view>
+        <view class="voyage-badge"><text wx:if="{{theme === 'dragon'}}" class="dragon-module-glyph">{{texts.dragonVocabularyGlyph}}</text><image wx:else class="voyage-module-sprite" src="../../assets/voyage/badge-vocabulary.jpg" mode="aspectFill" /></view>
         <view class="voyage-ribbon">{{texts.vocabulary}}</view>
       </view>
       <view class="voyage-module module-writing" bindtap="openWriting">
-        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-writing.jpg" mode="aspectFill" /></view>
+        <view class="voyage-badge"><text wx:if="{{theme === 'dragon'}}" class="dragon-module-glyph">{{texts.dragonWritingGlyph}}</text><image wx:else class="voyage-module-sprite" src="../../assets/voyage/badge-writing.jpg" mode="aspectFill" /></view>
         <view class="voyage-ribbon">{{texts.writing}}</view>
       </view>
       <view class="voyage-module module-speaking" bindtap="openSpeaking">
-        <view class="voyage-badge"><image class="voyage-module-sprite" src="../../assets/voyage/badge-speaking.jpg" mode="aspectFill" /></view>
+        <view class="voyage-badge"><text wx:if="{{theme === 'dragon'}}" class="dragon-module-glyph">{{texts.dragonSpeakingGlyph}}</text><image wx:else class="voyage-module-sprite" src="../../assets/voyage/badge-speaking.jpg" mode="aspectFill" /></view>
         <view class="voyage-ribbon">{{texts.speaking}}</view>
       </view>
     </view>
@@ -126,7 +130,7 @@
   <view class="voyage-empty-note" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? texts.setupPlanFirst : texts.noTasksToday}}</view>
 
   <view class="voyage-entry-poster is-page-{{entryPosterPage}}" wx:if="{{entryPosterVisible}}">
-    <image class="voyage-poster-ocean" src="../../assets/voyage/home-ocean-hero.jpg" mode="aspectFill" aria-hidden="true" />
+    <image class="voyage-poster-ocean" src="{{theme === 'dragon' ? '../../assets/dragon/tournament-hero.jpg' : '../../assets/voyage/home-ocean-hero.jpg'}}" mode="aspectFill" aria-hidden="true" />
     <view class="voyage-poster-sun-glow" aria-hidden="true"></view>
     <view class="voyage-poster-skip" bindtap="closeEntryPoster">{{texts.posterSkip}}</view>
     <view class="voyage-poster-sheet">
@@ -141,9 +145,9 @@
           <view class="voyage-poster-needle"></view>
           <view class="voyage-poster-pin"></view>
         </view>
-        <view class="voyage-poster-kicker">LISTEN · LEARN · VOYAGE</view>
-        <view class="voyage-poster-title">{{texts.posterIntroTitle}}</view>
-        <view class="voyage-poster-lead">{{texts.posterIntroLead}}</view>
+        <view class="voyage-poster-kicker">{{theme === 'dragon' ? 'TRAIN · LEARN · BREAK LIMITS' : 'LISTEN · LEARN · VOYAGE'}}</view>
+        <view class="voyage-poster-title">{{theme === 'dragon' ? texts.dragonPosterTitle : texts.posterIntroTitle}}</view>
+        <view class="voyage-poster-lead">{{theme === 'dragon' ? texts.dragonPosterLead : texts.posterIntroLead}}</view>
         <view class="voyage-poster-copy">{{texts.posterStory}}</view>
         <view class="voyage-poster-action" bindtap="showNextEntryPosterPage">{{texts.posterNext}}<text>›</text></view>
       </block>

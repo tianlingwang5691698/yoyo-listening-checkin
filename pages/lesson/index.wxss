@@ -2590,3 +2590,251 @@
 .theme-voyage .sync-debug,.theme-voyage .speaking-debug { border-left: 6rpx solid #bf4938; border-radius: 0; background: rgba(191,73,56,.08); color: #843a31; }
 .theme-voyage .result-card { border: 4rpx solid #95652f; border-radius: 7rpx; background: #fff4d6; }.theme-voyage .result-badge { color: #bf4938; }.theme-voyage .result-title { color: #102f43; }.theme-voyage .result-copy { color: #6c5d49; }
 .language-en.theme-voyage .lesson-title { font-size: 35rpx; }
+
+/* Dragon theme: compact power-training console. */
+.theme-dragon.dragon-training-page {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 42rpx 28rpx 150rpx;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, rgba(94, 185, 236, 0.34), transparent 250rpx),
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.018) 0 3rpx, transparent 3rpx 28rpx),
+    #fff7dc;
+}
+
+.theme-dragon .lesson-hero {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 218rpx;
+  padding: 30rpx 142rpx 30rpx 28rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 5rpx solid #102e62;
+  border-bottom: 12rpx solid #f45a16;
+  border-radius: 8rpx;
+  background: #ffd83d;
+  box-shadow: 0 9rpx 0 rgba(16, 46, 98, 0.2);
+}
+
+.theme-dragon .lesson-hero::after {
+  content: "★";
+  position: absolute;
+  top: 42rpx;
+  right: 30rpx;
+  width: 82rpx;
+  height: 82rpx;
+  border: 6rpx solid #f45a16;
+  border-radius: 50%;
+  background: #ff9e19;
+  color: #c92e18;
+  box-shadow: inset 0 0 0 5rpx #ffd83d, 0 6rpx 0 rgba(16, 46, 98, 0.24);
+  font-size: 38rpx;
+  line-height: 82rpx;
+  text-align: center;
+}
+
+.theme-dragon .lesson-title,
+.theme-dragon .media-title,
+.theme-dragon .section-title {
+  min-width: 0;
+  color: #102e62;
+  font-weight: 800;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.theme-dragon .lesson-copy,
+.theme-dragon .lesson-mode,
+.theme-dragon .section-copy {
+  color: #5f6372;
+}
+
+.theme-dragon .section-panel {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 9rpx 0 rgba(16, 46, 98, 0.16);
+}
+
+.theme-dragon .player-card {
+  padding: 28rpx 24rpx 30rpx;
+  border-bottom: 10rpx solid #f45a16;
+}
+
+.theme-dragon .pass-steps {
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10rpx;
+}
+
+.theme-dragon .pass-step {
+  min-width: 0;
+  min-height: 66rpx;
+  padding: 8rpx;
+  box-sizing: border-box;
+  border: 3rpx solid #102e62;
+  border-radius: 6rpx;
+  background: #fff4c7;
+  color: #102e62;
+  font-weight: 700;
+}
+
+.theme-dragon .pass-step.is-current {
+  border-color: #102e62;
+  background: #ffd83d;
+  color: #102e62;
+  box-shadow: inset 0 -5rpx 0 #eaa817;
+}
+
+.theme-dragon .pass-step.is-done {
+  border-color: #1c744b;
+  background: #dff2e4;
+  color: #1c744b;
+  box-shadow: inset 0 -5rpx 0 rgba(28, 116, 75, 0.2);
+}
+
+.theme-dragon .player-panel {
+  width: 100%;
+  max-width: 100%;
+  padding: 28rpx 22rpx 24rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 5rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #12346c;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 4rpx rgba(255, 216, 61, 0.16);
+}
+
+.theme-dragon .player-panel .media-title,
+.theme-dragon .player-panel .player-status,
+.theme-dragon .player-panel .player-progress-label,
+.theme-dragon .player-panel .player-time {
+  color: #ffffff;
+}
+
+.theme-dragon .player-wave {
+  max-width: 100%;
+  border: 3rpx solid rgba(255, 216, 61, 0.48);
+  border-radius: 7rpx;
+  background: rgba(8, 42, 97, 0.68);
+}
+
+.theme-dragon .player-wave view {
+  border-radius: 2rpx;
+  background: linear-gradient(180deg, #ffd83d, #f45a16);
+}
+
+.theme-dragon .player-toggle {
+  border: 6rpx solid #ffd83d;
+  background: #f45a16;
+  box-shadow: 0 8rpx 0 #8d280b;
+}
+
+.theme-dragon .player-progress {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.theme-dragon .player-progress-slider {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.theme-dragon .player-action,
+.theme-dragon .transcript-pill,
+.theme-dragon .mini-action {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #ffd83d;
+  color: #102e62;
+  box-shadow: 0 5rpx 0 rgba(16, 46, 98, 0.28);
+  font-weight: 800;
+}
+
+.theme-dragon .player-action.primary,
+.theme-dragon .record-action.is-ready {
+  background: #f45a16;
+  color: #ffffff;
+  box-shadow: 0 6rpx 0 #a92e0a;
+}
+
+.theme-dragon .lesson-study-card,
+.theme-dragon .transcript-card,
+.theme-dragon .speaking-card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 8rpx 0 rgba(16, 46, 98, 0.14);
+}
+
+.theme-dragon .lesson-study-item,
+.theme-dragon .transcript-focus,
+.theme-dragon .speaking-prompt,
+.theme-dragon .speaking-feedback,
+.theme-dragon .record-status,
+.theme-dragon .attempt-card,
+.theme-dragon .score-item,
+.theme-dragon .score-dimension-item {
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 3rpx solid rgba(16, 46, 98, 0.38);
+  border-radius: 7rpx;
+  background: #fffef7;
+}
+
+.theme-dragon .transcript-focus-line.is-active {
+  border: 3rpx solid #f45a16;
+  border-radius: 6rpx;
+  background: #fff0c0;
+}
+
+.theme-dragon .transcript-word.is-active,
+.theme-dragon .card-index {
+  background: #ffd83d;
+  color: #102e62;
+}
+
+.theme-dragon .dictionary-sheet,
+.theme-dragon .privacy-dialog,
+.theme-dragon .completion-card {
+  width: calc(100% - 48rpx);
+  max-width: 560rpx;
+  box-sizing: border-box;
+  border: 5rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 10rpx 0 rgba(16, 46, 98, 0.24);
+}
+
+.theme-dragon .result-card {
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+}
+
+@media (max-width: 360px) {
+  .theme-dragon .lesson-hero {
+    padding-right: 28rpx;
+  }
+
+  .theme-dragon .lesson-hero::after {
+    display: none;
+  }
+}

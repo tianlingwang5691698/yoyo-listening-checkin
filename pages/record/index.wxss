@@ -1194,3 +1194,280 @@
 .theme-voyage .day-card {
   border-left: 12rpx solid #c84f39;
 }
+
+.theme-dragon.record-page {
+  --text-main: #102e62;
+  --text-strong: #102e62;
+  --text-muted: #69728a;
+  --text-soft: #8b7559;
+  --accent: #f45a16;
+  --accent-deep: #c73a0c;
+  --growth: #32a269;
+  --growth-deep: #1c744b;
+  --calendar-cell-bg: #fff0ba;
+  --calendar-cell-text: #665b4e;
+  --calendar-completed-bg: #32a269;
+  --calendar-completed-text: #fff;
+  width: 100%;
+  max-width: 100vw;
+  padding-top: 34rpx;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background:
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.018) 0 3rpx, transparent 3rpx 28rpx),
+    #fff7dc;
+}
+
+.theme-dragon .record-hero,
+.theme-dragon .section-panel,
+.theme-dragon .record-debug {
+  width: 100%;
+  max-width: 100%;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 9rpx 0 rgba(16, 46, 98, 0.16);
+  backdrop-filter: none;
+  box-sizing: border-box;
+}
+
+.theme-dragon .record-hero {
+  position: relative;
+  min-height: 520rpx;
+  overflow: visible;
+  border-top: 14rpx solid #f45a16;
+  background: #ffd83d;
+}
+
+.dragon-growth-emblem {
+  position: absolute;
+  z-index: 4;
+  top: -40rpx;
+  right: 26rpx;
+  width: 92rpx;
+  height: 92rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 18rpx);
+  align-content: center;
+  justify-content: center;
+  gap: 1rpx 5rpx;
+  border: 5rpx solid #102e62;
+  border-radius: 50%;
+  background: #f45a16;
+  color: #b51f0a;
+  box-shadow: 0 7rpx 0 #9f2e0b;
+  box-sizing: border-box;
+}
+
+.dragon-growth-emblem text {
+  font-size: 17rpx;
+  line-height: 17rpx;
+  text-align: center;
+}
+
+.theme-dragon .record-hero-top {
+  padding-right: 92rpx;
+}
+
+.theme-dragon .record-hero::before {
+  left: 34rpx;
+  right: 34rpx;
+  top: auto;
+  bottom: 26rpx;
+  height: 5rpx;
+  background: #f45a16;
+}
+
+.theme-dragon .growth-hero-glow {
+  background: rgba(255, 253, 241, 0.5);
+  box-shadow: none;
+}
+
+.theme-dragon .growth-hero-pattern view {
+  border-radius: 3rpx;
+  background: #f45a16;
+}
+
+.theme-dragon .record-title,
+.theme-dragon .metric-value,
+.theme-dragon .summary-value,
+.theme-dragon .type-section-title,
+.theme-dragon .catchup-title,
+.theme-dragon .month-title {
+  color: #102e62;
+  font-weight: 800;
+}
+
+.theme-dragon .record-eyebrow,
+.theme-dragon .metric-label,
+.theme-dragon .summary-label,
+.theme-dragon .section-copy,
+.theme-dragon .catchup-copy,
+.theme-dragon .catchup-purpose,
+.theme-dragon .week-label,
+.theme-dragon .calendar-swipe-hint,
+.theme-dragon .day-count {
+  color: #69728a;
+}
+
+.theme-dragon .status-badge {
+  border: 3rpx solid #102e62;
+  border-radius: 6rpx;
+  background: #fffdf1;
+  color: #102e62;
+  font-weight: 800;
+}
+
+.theme-dragon .metric-switch {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #ffedb0;
+}
+
+.theme-dragon .metric-tab {
+  border-radius: 5rpx;
+  color: #69728a;
+}
+
+.theme-dragon .metric-tab.is-active,
+.theme-dragon .detail-link,
+.theme-dragon .catchup-state {
+  border: 2rpx solid #102e62;
+  border-radius: 5rpx;
+  background: #f45a16;
+  color: #fff;
+  box-shadow: 0 4rpx 0 #a92e0a;
+}
+
+.theme-dragon .metric-orbit {
+  border: 5rpx solid #102e62;
+  background: #fffdf1;
+  box-sizing: border-box;
+}
+
+.theme-dragon .orbit-ring {
+  border-color: rgba(16, 46, 98, 0.16);
+  border-top-color: #32a269;
+  border-right-color: #f45a16;
+}
+
+.theme-dragon .orbit-core {
+  background: #ffd83d;
+  color: #102e62;
+  font-weight: 800;
+}
+
+.theme-dragon .summary-item {
+  min-width: 0;
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #fffdf1;
+}
+
+.theme-dragon .calendar-card {
+  position: relative;
+  padding-top: 42rpx;
+}
+
+.theme-dragon .calendar-card > .section-head {
+  padding-right: 76rpx;
+}
+
+.dragon-calendar-mark {
+  position: absolute;
+  z-index: 2;
+  top: 18rpx;
+  right: 22rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid #102e62;
+  border-radius: 50%;
+  background: #ffd83d;
+  color: #102e62;
+  font-size: 26rpx;
+  line-height: 54rpx;
+  text-align: center;
+  font-weight: 800;
+  box-sizing: border-box;
+}
+
+.theme-dragon .calendar-slide {
+  max-width: 100%;
+  border: 3rpx solid rgba(16, 46, 98, 0.4);
+  border-radius: 7rpx;
+  background: #fff7dc;
+  box-sizing: border-box;
+}
+
+.theme-dragon .month-arrow {
+  border: 3rpx solid #102e62;
+  border-radius: 50%;
+  background: #ffd83d;
+  color: #102e62;
+  box-sizing: border-box;
+}
+
+.theme-dragon .calendar-dot {
+  border: 2rpx solid rgba(16, 46, 98, 0.2);
+  border-radius: 7rpx;
+  background: #fff0ba;
+  color: #665b4e;
+  box-sizing: border-box;
+}
+
+.theme-dragon .calendar-cell.heat-1 .calendar-dot {
+  background: #ffe580;
+}
+
+.theme-dragon .calendar-cell.heat-2 .calendar-dot {
+  background: #a7d9b8;
+}
+
+.theme-dragon .calendar-cell.heat-3 .calendar-dot,
+.theme-dragon .calendar-cell.is-completed .calendar-dot {
+  background: #32a269;
+  color: #fff;
+}
+
+.theme-dragon .calendar-cell.is-selected .calendar-dot {
+  box-shadow: inset 0 0 0 4rpx #f45a16;
+}
+
+.theme-dragon .track-rail::before {
+  width: 4rpx;
+  background: #f45a16;
+}
+
+.theme-dragon .track-node {
+  max-width: 100%;
+  border: 3rpx solid rgba(16, 46, 98, 0.38);
+  border-radius: 7rpx;
+  background: #fffef7;
+  box-sizing: border-box;
+}
+
+.theme-dragon .track-pin {
+  border: 3rpx solid #102e62;
+  background: #ffd83d;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.theme-dragon .track-pin::after {
+  background: #f45a16;
+}
+
+.theme-dragon .catchup-row.is-done .track-pin {
+  background: #32a269;
+}
+
+.theme-dragon .day-card {
+  border-left: 12rpx solid #f45a16;
+}
+
+.theme-dragon .record-hero-top > view:first-child,
+.theme-dragon .row-between > view:first-child,
+.theme-dragon .track-main,
+.theme-dragon .section-head > view:first-child {
+  min-width: 0;
+}

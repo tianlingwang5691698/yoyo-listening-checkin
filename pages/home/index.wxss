@@ -3720,3 +3720,403 @@
 .voyage-module-icon {
   display: none;
 }
+
+/* Dragon theme home: Goku and Shenron hero with a compact training dashboard. */
+.theme-dragon.voyage-home-page {
+  padding: 0 34rpx calc(164rpx + env(safe-area-inset-bottom));
+  background: #fff7dc;
+  color: #102e62;
+}
+
+.theme-dragon .voyage-sky,
+.theme-dragon .voyage-ocean-art {
+  height: 650rpx;
+}
+
+.theme-dragon .voyage-ocean-art {
+  filter: saturate(1.08) brightness(1.08);
+}
+
+.theme-dragon .dragon-shenron-art {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  height: auto;
+}
+
+.theme-dragon .voyage-header {
+  min-height: 146rpx;
+  margin-top: 160rpx;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.theme-dragon .voyage-avatar {
+  position: relative;
+  flex-basis: 98rpx;
+  width: 98rpx;
+  height: 98rpx;
+  padding: 5rpx;
+  border: 5rpx solid #ffd83d;
+  background: #f45a16;
+  box-shadow: 0 7rpx 0 rgba(16, 46, 98, 0.3);
+}
+
+.theme-dragon .voyage-avatar image {
+  border: 0;
+  background: #ffffff;
+}
+
+.theme-dragon .voyage-avatar .dragon-avatar-image {
+  position: absolute;
+  top: -5rpx;
+  left: -24rpx;
+  width: 142rpx;
+  height: auto;
+  max-width: none;
+  background: transparent;
+}
+
+.theme-dragon .voyage-welcome {
+  margin-left: 10rpx;
+  padding: 17rpx 22rpx;
+  border: 4rpx solid #ffffff;
+  border-radius: 9rpx;
+  background: rgba(16, 46, 98, 0.9);
+  box-shadow: 0 7rpx 0 rgba(4, 20, 47, 0.28);
+}
+
+.theme-dragon .voyage-greeting,
+.theme-dragon .voyage-date {
+  color: #ffffff;
+  font-family: "PingFang SC", sans-serif;
+  text-shadow: none;
+}
+
+.theme-dragon .voyage-greeting {
+  font-size: 35rpx;
+  font-weight: 800;
+}
+
+.theme-dragon .voyage-date {
+  margin-top: 7rpx;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 21rpx;
+}
+
+.theme-dragon .voyage-calendar { display: none; }
+
+.theme-dragon .voyage-alert,
+.theme-dragon .voyage-mode-notice,
+.theme-dragon .voyage-nickname-sheet,
+.theme-dragon .voyage-role-sheet {
+  border: 4rpx solid #102e62;
+  background: #fffdf1;
+  color: #102e62;
+}
+
+.theme-dragon .voyage-scroll {
+  min-height: 430rpx;
+  margin-top: 48rpx;
+  padding: 38rpx 34rpx 34rpx;
+  border: 5rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 12rpx 0 #f45a16;
+}
+
+.theme-dragon .voyage-scroll-rope,
+.theme-dragon .voyage-scroll-roll,
+.theme-dragon .voyage-scroll-corner {
+  display: none;
+}
+
+.theme-dragon .voyage-compass {
+  top: -32rpx;
+  right: 24rpx;
+  width: 88rpx;
+  height: 88rpx;
+  border: 5rpx solid #f45a16;
+  background: #ff9e19;
+  box-shadow: inset 0 0 0 4rpx #ffd83d, 0 6rpx 0 rgba(16, 46, 98, 0.24);
+  transform: none;
+}
+
+.theme-dragon .voyage-compass::after {
+  content: "★";
+  position: absolute;
+  inset: 0;
+  color: #ca2718;
+  font-size: 38rpx;
+  line-height: 78rpx;
+  text-align: center;
+}
+
+.theme-dragon .voyage-compass-ring,
+.theme-dragon .voyage-compass-cardinal,
+.theme-dragon .voyage-compass-needle,
+.theme-dragon .voyage-compass-pin {
+  display: none;
+}
+
+.theme-dragon .voyage-scroll-title {
+  padding-right: 78rpx;
+  color: #102e62;
+  font-family: "PingFang SC", sans-serif;
+  font-size: 43rpx;
+  font-weight: 800;
+}
+
+.theme-dragon .voyage-audio-row {
+  margin-top: 22rpx;
+}
+
+.theme-dragon .voyage-play {
+  width: 70rpx;
+  height: 70rpx;
+  flex-basis: 70rpx;
+  border: 5rpx solid #102e62;
+  background: #f45a16;
+  box-shadow: 0 6rpx 0 #a92e0a;
+}
+
+.theme-dragon .voyage-play view {
+  top: 16rpx;
+  left: 24rpx;
+}
+
+.theme-dragon .voyage-wave-bar { background: #102e62; }
+.theme-dragon .voyage-progress-head { color: #667087; }
+.theme-dragon .voyage-progress-head view text { color: #f45a16; }
+
+.theme-dragon .voyage-route-track {
+  height: 38rpx;
+  border-top: 5rpx solid rgba(16, 46, 98, 0.2);
+}
+
+.theme-dragon .voyage-route-complete {
+  top: -5rpx;
+  height: 5rpx;
+  background: linear-gradient(90deg, #ffd83d, #f45a16);
+}
+
+.theme-dragon .voyage-route-dot {
+  border-color: #102e62;
+  background: #ffd83d;
+}
+
+.theme-dragon .voyage-route-boat {
+  top: -28rpx;
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: -14rpx;
+  border: 4rpx solid #f45a16;
+  border-radius: 50%;
+  background: #ff9e19;
+}
+
+.theme-dragon .voyage-route-boat view { display: none; }
+
+.theme-dragon .voyage-primary-action {
+  height: 78rpx;
+  margin-top: 4rpx;
+  border: 4rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #f45a16;
+  box-shadow: 0 7rpx 0 #a92e0a;
+  color: #ffffff;
+  font-family: "PingFang SC", sans-serif;
+  font-size: 29rpx;
+  text-shadow: none;
+}
+
+.theme-dragon .voyage-map {
+  min-height: 540rpx;
+  margin: 40rpx 0 0;
+  padding: 78rpx 0 8rpx;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.theme-dragon .voyage-map::before {
+  content: "修炼地图";
+  top: 0;
+  left: 0;
+  right: auto;
+  height: auto;
+  padding-left: 32rpx;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #102e62;
+  font-size: 34rpx;
+  line-height: 54rpx;
+  font-weight: 800;
+}
+
+.theme-dragon .voyage-map::after {
+  content: "";
+  position: absolute;
+  top: 8rpx;
+  left: 0;
+  width: 18rpx;
+  height: 42rpx;
+  background: #f45a16;
+  transform: skew(-16deg);
+}
+
+.theme-dragon .voyage-map-route,
+.theme-dragon .voyage-island {
+  display: none;
+}
+
+.theme-dragon .voyage-module-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18rpx;
+}
+
+.theme-dragon .voyage-module {
+  min-height: 128rpx;
+  display: grid;
+  grid-template-columns: 72rpx minmax(0, 1fr);
+  align-items: center;
+  gap: 18rpx;
+  padding: 20rpx;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 7rpx 0 rgba(16, 46, 98, 0.16);
+}
+
+.theme-dragon .voyage-module:nth-child(2),
+.theme-dragon .voyage-module:nth-child(5) {
+  border-color: #f45a16;
+}
+
+.theme-dragon .voyage-badge {
+  width: 68rpx;
+  height: 68rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4rpx solid #102e62;
+  border-radius: 50%;
+  background: #ffd83d;
+  box-shadow: none;
+}
+
+.theme-dragon .voyage-badge::before,
+.theme-dragon .voyage-badge::after { display: none; }
+
+.dragon-module-glyph {
+  color: #102e62;
+  font-size: 30rpx;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.theme-dragon .voyage-ribbon {
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #102e62;
+  font-family: "PingFang SC", sans-serif;
+  font-size: 27rpx;
+  text-align: left;
+}
+
+.theme-dragon .voyage-entry-poster {
+  background: #fff7dc;
+}
+
+.theme-dragon .voyage-poster-ocean {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 620rpx;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.theme-dragon .voyage-poster-sun-glow { display: none; }
+
+.theme-dragon .voyage-poster-skip {
+  top: 58rpx;
+  right: 34rpx;
+  left: auto;
+  border: 3rpx solid #ffffff;
+  border-radius: 30rpx;
+  background: rgba(16, 46, 98, 0.9);
+  color: #ffffff;
+}
+
+.theme-dragon .voyage-poster-sheet {
+  top: 610rpx;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 56rpx 54rpx calc(154rpx + env(safe-area-inset-bottom));
+  border: 0;
+  border-top: 12rpx solid #f45a16;
+  border-radius: 0;
+  background: #fff7dc;
+  box-shadow: inset 0 8rpx 0 #102e62;
+}
+
+.theme-dragon .voyage-poster-sheet::before,
+.theme-dragon .voyage-poster-sheet::after,
+.theme-dragon .voyage-poster-sheet-rope,
+.theme-dragon .voyage-poster-compass {
+  display: none;
+}
+
+.theme-dragon .voyage-poster-kicker {
+  color: #f45a16;
+  font-size: 18rpx;
+  font-weight: 800;
+}
+
+.theme-dragon .voyage-poster-title {
+  color: #102e62;
+  font-family: "PingFang SC", sans-serif;
+  font-size: 49rpx;
+}
+
+.theme-dragon .voyage-poster-lead,
+.theme-dragon .voyage-poster-copy {
+  color: #687087;
+}
+
+.theme-dragon .voyage-poster-action,
+.theme-dragon .voyage-poster-role-actions button.is-primary {
+  border-color: #102e62;
+  background: #f45a16;
+  box-shadow: 0 8rpx 0 #a92e0a;
+  color: #ffffff;
+}
+
+.theme-dragon .voyage-poster-role-actions button {
+  border: 4rpx solid #102e62;
+  background: #ffd83d;
+  color: #102e62;
+}
+
+.theme-dragon .voyage-poster-map-mark {
+  border-color: #f45a16;
+  background: #ffd83d;
+}
+
+.theme-dragon .voyage-poster-credit {
+  border-color: #102e62;
+  background: #fffdf1;
+}
+
+.theme-dragon .voyage-poster-dots view { border-color: #f45a16; }
+.theme-dragon .voyage-poster-dots view.is-active { background: #f45a16; }

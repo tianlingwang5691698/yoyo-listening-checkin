@@ -1141,3 +1141,216 @@
 .theme-voyage .attempt-play-icon {
   background: #fff5dc;
 }
+
+.theme-dragon.parent-detail-page,
+.theme-dragon.report-detail-page {
+  width: 100%;
+  max-width: 100vw;
+  padding-top: 34rpx;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background:
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.018) 0 3rpx, transparent 3rpx 28rpx),
+    #fff7dc;
+}
+
+.theme-dragon .report-hero,
+.theme-dragon .rhythm-panel,
+.theme-dragon .voice-panel,
+.theme-dragon .content-panel {
+  width: 100%;
+  max-width: 100%;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 9rpx 0 rgba(16, 46, 98, 0.16);
+  box-sizing: border-box;
+}
+
+.theme-dragon .report-hero {
+  margin-top: 18rpx;
+  padding-top: 42rpx;
+  overflow: visible;
+  border-top: 14rpx solid #f45a16;
+  background: #ffd83d;
+}
+
+.dragon-daily-seal {
+  position: absolute;
+  z-index: 4;
+  top: -42rpx;
+  right: 24rpx;
+  width: 92rpx;
+  height: 92rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 18rpx);
+  align-content: center;
+  justify-content: center;
+  gap: 1rpx 5rpx;
+  border: 5rpx solid #102e62;
+  border-radius: 50%;
+  background: #f45a16;
+  color: #b51f0a;
+  box-shadow: 0 7rpx 0 #9f2e0b;
+  box-sizing: border-box;
+}
+
+.dragon-daily-seal text {
+  font-size: 17rpx;
+  line-height: 17rpx;
+  text-align: center;
+}
+
+.theme-dragon .hero-glow,
+.theme-dragon .hero-orbit {
+  display: none;
+}
+
+.theme-dragon .hero-head > view:first-child,
+.theme-dragon .node-top > view:first-child,
+.theme-dragon .dossier-head > view:first-child,
+.theme-dragon .voice-card-head > view:first-child {
+  min-width: 0;
+}
+
+.theme-dragon .hero-title,
+.theme-dragon .section-title,
+.theme-dragon .node-title,
+.theme-dragon .sheet-title,
+.theme-dragon .voice-score {
+  color: #102e62;
+  font-weight: 800;
+}
+
+.theme-dragon .hero-kicker,
+.theme-dragon .section-kicker,
+.theme-dragon .node-label,
+.theme-dragon .quiet-note,
+.theme-dragon .sheet-copy,
+.theme-dragon .detail-loading,
+.theme-dragon .pass-copy,
+.theme-dragon .voice-meta,
+.theme-dragon .voice-detail,
+.theme-dragon .voice-advice {
+  color: #69728a;
+}
+
+.theme-dragon .hero-copy {
+  color: #102e62;
+  font-weight: 700;
+}
+
+.theme-dragon .hero-metrics {
+  gap: 12rpx;
+}
+
+.theme-dragon .metric-pill,
+.theme-dragon .metric-pill.is-soft,
+.theme-dragon .metric-pill.is-warm {
+  min-width: 0;
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #fffdf1;
+  box-shadow: 0 5rpx 0 rgba(16, 46, 98, 0.12);
+}
+
+.theme-dragon .metric-value,
+.theme-dragon .metric-label {
+  color: #102e62;
+}
+
+.theme-dragon .metric-label {
+  min-width: 0;
+}
+
+.theme-dragon .panel-note,
+.theme-dragon .node-status,
+.theme-dragon .load-action,
+.theme-dragon .detail-toggle,
+.theme-dragon .attempt-play {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #f45a16;
+  color: #fff;
+  box-shadow: 0 5rpx 0 #a92e0a;
+}
+
+.theme-dragon .rhythm-track {
+  width: 4rpx;
+  background: #f45a16;
+}
+
+.theme-dragon .node-mark {
+  border: 3rpx solid #102e62;
+  background: #ffd83d;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.theme-dragon .node-mark text {
+  left: 6rpx;
+  top: 6rpx;
+  background: #f45a16;
+}
+
+.theme-dragon .rhythm-node.is-done .node-mark {
+  background: #32a269;
+  box-shadow: 0 0 0 7rpx rgba(50, 162, 105, 0.14);
+}
+
+.theme-dragon .node-card,
+.theme-dragon .load-dossier,
+.theme-dragon .voice-card,
+.theme-dragon .study-dossier,
+.theme-dragon .detail-sheet,
+.theme-dragon .analysis-card,
+.theme-dragon .mini-card,
+.theme-dragon .question-card {
+  max-width: 100%;
+  border: 3rpx solid rgba(16, 46, 98, 0.42);
+  border-radius: 7rpx;
+  background: #fffef7;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.theme-dragon .sound-pass {
+  background: #ffe99a;
+  border: 2rpx solid rgba(16, 46, 98, 0.26);
+}
+
+.theme-dragon .pass-bar {
+  background: #32a269;
+}
+
+.theme-dragon .dossier-spine {
+  background: #f45a16;
+}
+
+.theme-dragon .voice-ring {
+  border: 5rpx solid #102e62;
+  background: #ffd83d;
+}
+
+.theme-dragon .voice-bands text {
+  background: #f45a16;
+}
+
+.theme-dragon .attempt-play-icon {
+  background: #fff;
+}
+
+.theme-dragon .sheet-copy,
+.theme-dragon .node-title,
+.theme-dragon .quiet-note,
+.theme-dragon .voice-quote,
+.theme-dragon .answer-chip {
+  max-width: 100%;
+}
+
+.theme-dragon .analysis-grid,
+.theme-dragon .voice-summary,
+.theme-dragon .dossier-grid {
+  min-width: 0;
+  max-width: 100%;
+}

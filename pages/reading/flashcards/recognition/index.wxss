@@ -94,3 +94,30 @@
 .theme-library .recognition-word-audio.is-failed{background:#ead4c6;color:#8c5544}
 
 .theme-voyage.recognition-nav{border-bottom:5rpx solid #c18a3e;background:linear-gradient(180deg,#1e6382,#173f57);box-shadow:0 7rpx 0 #6d4021;color:#fff2ca}.theme-voyage .recognition-back,.theme-voyage .recognition-nav-title{color:#fff2ca}.theme-voyage.recognition-page{background:linear-gradient(180deg,#54bde3 0 112rpx,#107da9 113rpx 170rpx,#e4ce9c 171rpx,#f3e6c6 100%);color:#173d55}.theme-voyage .recognition-hero{position:relative;padding-right:174rpx;border:5rpx solid #8d572c;border-radius:7rpx;background:#f8e8bf;box-shadow:0 9rpx 0 #693d20,0 20rpx 34rpx rgba(4,66,89,.2)}.theme-voyage .recognition-hero::after{content:"?";position:absolute;right:34rpx;top:24rpx;width:102rpx;height:102rpx;border:7rpx double #b47a31;border-radius:50%;background:#1d6381;box-shadow:inset 0 0 0 9rpx #e6c96f;color:#fff0c4;font:700 42rpx/94rpx Georgia,serif;text-align:center}.theme-voyage .recognition-kicker{color:#a36b2c}.theme-voyage .recognition-title{color:#173d55;font-family:"Songti SC",STSong,serif}.theme-voyage .recognition-copy{color:#705d43}.theme-voyage .recognition-menu,.theme-voyage .recognition-question,.theme-voyage .recognition-complete{border:4rpx solid #95602f;border-radius:7rpx;background:#f8e9c4;box-shadow:0 8rpx 0 #744622,0 17rpx 30rpx rgba(72,56,30,.15)}.theme-voyage .recognition-count-controls button{border:3rpx solid #a8753a;border-radius:5rpx;background:#d5a958;color:#633f1e}.theme-voyage .recognition-start,.theme-voyage .recognition-feedback button,.theme-voyage .recognition-again{border:4rpx solid #c0883f;border-radius:6rpx;background:linear-gradient(180deg,#c9493b,#a42e2a);box-shadow:0 7rpx 0 #74391f;color:#fff2ca}.theme-voyage .recognition-change{border:3rpx solid #9e6934;border-radius:5rpx;background:#f1d9a7;color:#65421f}.theme-voyage .recognition-audio,.theme-voyage .recognition-word-audio{border:4rpx solid #d0a64e;border-radius:50%;background:#1d6381;color:#fff1c8;box-shadow:0 6rpx 0 #704321}.theme-voyage .recognition-option{border:3rpx solid #b1844d;border-radius:5rpx;background:rgba(255,247,220,.82);box-shadow:inset 0 -3rpx rgba(112,71,31,.08)}.theme-voyage .recognition-option-key{border-radius:3rpx;background:#d4a654;color:#68441f;font-family:Georgia,serif;font-weight:800}.theme-voyage .recognition-option.is-correct{border-color:#477b60;background:#dce8d2;color:#27553d}.theme-voyage .recognition-option.is-wrong{border-color:#a64b42;background:#efd4ca;color:#7e352f}.theme-voyage .recognition-complete-mark{border:8rpx double #b87d31;background:#1d6381;box-shadow:inset 0 0 0 7rpx #f1dc9a;color:#f3cf65}.theme-voyage .recognition-complete-title{color:#a83b31;font-family:"Songti SC",STSong,serif}
+
+page{overflow-x:hidden}
+.recognition-nav,.recognition-page,.recognition-hero,.recognition-menu,.recognition-question,.recognition-complete,.recognition-prompt,.recognition-options,.recognition-option,.recognition-feedback{max-width:100%;min-width:0;box-sizing:border-box}
+.recognition-page{overflow-x:hidden}
+.recognition-nav-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.recognition-option>text:nth-child(2){min-width:0}
+.language-en .recognition-title,.language-en .recognition-copy,.language-en .recognition-word,.language-en .recognition-option,.language-en .recognition-answer,.language-en .recognition-example{word-break:normal;overflow-wrap:normal}
+.theme-dragon.recognition-nav{border-bottom:6rpx solid #f7c843;background:#102f68;box-shadow:0 7rpx 0 #f4511e;color:#fff8dc}
+.theme-dragon .recognition-back,.theme-dragon .recognition-nav-title{color:#fff8dc}
+.theme-dragon.recognition-page{background:#fff3c9;color:#102f68}
+.theme-dragon .recognition-hero{border:4rpx solid #12356f;border-top:10rpx solid #f4511e;border-radius:8rpx;background:#fff9df;box-shadow:0 8rpx 0 #12356f}
+.theme-dragon .recognition-kicker{color:#d64014}
+.theme-dragon .recognition-title{color:#102f68}
+.theme-dragon .recognition-copy{color:#665b48}
+.theme-dragon .recognition-menu,.theme-dragon .recognition-question,.theme-dragon .recognition-complete{border:4rpx solid #12356f;border-radius:7rpx;background:#fffdf0;box-shadow:0 7rpx 0 #f4511e}
+.theme-dragon .recognition-count-head,.theme-dragon .recognition-progress{color:#665b48}
+.theme-dragon .recognition-count-controls button{border:3rpx solid #12356f;border-radius:50%;background:#f7cf4b;color:#102f68}
+.theme-dragon .recognition-start,.theme-dragon .recognition-feedback button,.theme-dragon .recognition-again{border:3rpx solid #12356f;border-radius:6rpx;background:#f4511e;box-shadow:0 5rpx 0 #102f68;color:#fff}
+.theme-dragon .recognition-change{border:3rpx solid #12356f;border-radius:6rpx;background:#fff0ac;color:#102f68}
+.theme-dragon .recognition-audio,.theme-dragon .recognition-word-audio{border:4rpx solid #12356f;background:#f7cf4b;color:#102f68;box-shadow:0 5rpx 0 #f4511e}
+.theme-dragon .recognition-option{border:3rpx solid #12356f;border-radius:6rpx;background:#fff9df;color:#102f68}
+.theme-dragon .recognition-option-key{border:2rpx solid #12356f;border-radius:50%;background:#f7cf4b;color:#102f68}
+.theme-dragon .recognition-option.is-correct{border-color:#2f7b4f;background:#e3f1cf;color:#22593b}
+.theme-dragon .recognition-option.is-wrong{border-color:#ba3f35;background:#fae1d1;color:#87352e}
+.theme-dragon .recognition-complete-mark{border:6rpx solid #12356f;background:#f7cf4b;color:#102f68;box-shadow:0 6rpx 0 #f4511e}
+.theme-dragon .recognition-score view{border:2rpx solid #12356f;border-radius:5rpx;background:#fff0ac}
+@media(max-width:340px){.recognition-page{padding-left:20rpx;padding-right:20rpx}.recognition-menu,.recognition-question,.recognition-complete{padding-left:20rpx;padding-right:20rpx}.recognition-option{grid-template-columns:46rpx minmax(0,1fr) 30rpx;padding-left:12rpx;padding-right:12rpx;font-size:23rpx}.recognition-score{gap:6rpx}.recognition-score text:last-child{font-size:18rpx}}

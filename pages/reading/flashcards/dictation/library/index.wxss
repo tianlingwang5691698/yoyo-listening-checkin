@@ -209,3 +209,39 @@
 .theme-voyage .dictation-library-book-title { color: #293b3d; font-family: "Songti SC", STSong, serif; }
 .theme-voyage .dictation-library-meta { color: #796448; }
 .theme-voyage .dictation-library-arrow { color: #aa7130; font-weight: 800; }
+
+page { overflow-x: hidden; }
+.dictation-library-nav,
+.dictation-library-page,
+.dictation-library-head,
+.dictation-library-head > view:first-child,
+.dictation-library-list,
+.dictation-library-book,
+.dictation-library-main { max-width: 100%; min-width: 0; box-sizing: border-box; }
+.dictation-library-page { overflow-x: hidden; }
+.dictation-library-nav-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dictation-library-record{font-size:26rpx;white-space:nowrap}
+.language-en .dictation-library-title,
+.language-en .dictation-library-copy,
+.language-en .dictation-library-book-title,
+.language-en .dictation-library-meta { word-break: normal; overflow-wrap: normal; }
+.theme-dragon.dictation-library-nav { border-bottom: 6rpx solid #f7c843; background: #102f68; box-shadow: 0 7rpx 0 #f4511e; color: #fff8dc; }
+.theme-dragon .dictation-library-back,
+.theme-dragon .dictation-library-nav-title { color: #fff8dc; }
+.theme-dragon.dictation-library-page { background: #fff3c9; color: #102f68; }
+.theme-dragon .dictation-library-head { padding: 26rpx; border: 4rpx solid #12356f; border-top: 10rpx solid #f4511e; border-radius: 8rpx; background: #fff9df; box-shadow: 0 8rpx 0 #12356f; }
+.theme-dragon .dictation-library-kicker { color: #d64014; }
+.theme-dragon .dictation-library-copy { color: #665b48; }
+.theme-dragon .dictation-library-record { border: 3rpx solid #12356f; border-radius: 5rpx; background: #f7cf4b; color: #102f68; box-shadow: none; }
+.theme-dragon .dictation-library-book { border: 4rpx solid #12356f; border-radius: 7rpx; background: #fffdf0; box-shadow: 0 7rpx 0 #f4511e; backdrop-filter: none; }
+.theme-dragon .dictation-library-mark { border: 3rpx solid #12356f; border-radius: 50%; background: #f7cf4b; color: #102f68; }
+.theme-dragon .dictation-library-book-title { color: #102f68; }
+.theme-dragon .dictation-library-meta { color: #665b48; }
+.theme-dragon .dictation-library-arrow { color: #f4511e; font-weight: 800; }
+@media (max-width: 340px) {
+  .dictation-library-page { padding-left: 20rpx; padding-right: 20rpx; }
+  .dictation-library-head { align-items: flex-start; padding: 22rpx 18rpx; }
+  .dictation-library-record { padding: 12rpx 8rpx; }
+  .dictation-library-book { padding-left: 16rpx; padding-right: 14rpx; }
+  .dictation-library-main { margin-left: 14rpx; }
+}

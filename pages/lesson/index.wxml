@@ -257,7 +257,7 @@
   </view>
 </view>
 
-<view class="theme-{{theme}} language-{{language}} page-shell lesson-page {{theme === 'voyage' ? 'voyage-cabin-page' : ''}}" wx:elif="{{task}}">
+<view class="theme-{{theme}} language-{{language}} page-shell lesson-page {{theme === 'voyage' ? 'voyage-cabin-page' : ''}} {{theme === 'dragon' ? 'dragon-training-page' : ''}}" wx:elif="{{task}}">
   <view class="voyage-cabin-frame" wx:if="{{theme === 'voyage'}}" aria-hidden="true"><view class="voyage-cabin-porthole"></view><view class="voyage-cabin-rivet rivet-one"></view><view class="voyage-cabin-rivet rivet-two"></view></view>
   <view class="lesson-hero product-hero tone-{{task.coverTone}} cover-variant-{{task.coverVariant}}">
     <view class="voyage-hero-compass" wx:if="{{theme === 'voyage'}}" aria-hidden="true"><view></view><text>N</text></view>
@@ -350,7 +350,7 @@
             <view class="player-progress-label">{{isPlaying ? texts.playing : audioReady ? texts.paused : texts.waiting}}</view>
             <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
           </view>
-          <slider class="player-progress-slider" min="0" max="{{audioProgressSliderMax}}" value="{{progressPercent * 10}}" disabled="{{!audioReady}}" activeColor="#86AAA1" backgroundColor="rgba(191,215,232,.56)" block-color="#F7FBFD" block-size="16" bindchanging="changingAudioProgress" bindchange="changeAudioProgress" />
+          <slider class="player-progress-slider" min="0" max="{{audioProgressSliderMax}}" value="{{progressPercent * 10}}" disabled="{{!audioReady}}" activeColor="{{themeSlider.activeColor}}" backgroundColor="{{themeSlider.backgroundColor}}" block-color="{{themeSlider.blockColor}}" block-size="16" bindchanging="changingAudioProgress" bindchange="changeAudioProgress" />
         </view>
         <view class="player-actions action-row">
           <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">{{texts.seconds5}}</button>
