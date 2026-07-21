@@ -983,7 +983,10 @@
 .language-en button { font-size: 23rpx; }
 
 .theme-voyage.parent-detail-page {
+  width: 100%;
+  max-width: 100vw;
   padding-top: 34rpx;
+  overflow-x: hidden;
   background:
     linear-gradient(180deg, #389dd0 0, #82cee8 340rpx, transparent 670rpx),
     #dff3f8;
