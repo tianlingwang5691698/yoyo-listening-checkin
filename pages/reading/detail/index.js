@@ -7,6 +7,8 @@ const i18n = require('../../../utils/i18n');
 const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../../utils/dictionary-voice');
 const { createDictionaryVoicePlayer } = require('../../../utils/dictionary-voice-player');
 const { splitReadingNotePrompt, formatReadingQuestionRange } = require('../../../utils/reading-question-display');
+const { buildReadingParagraphRanges, normalizeReadingPassageText } = require('../../../utils/reading-paragraph-display');
+const ieltsParagraphMetadata = require('./ielts-paragraph-metadata');
 
 const text = (key, fallback) => i18n.getPageText('readingDetail', key, undefined, fallback);
 
@@ -116,7 +118,10 @@ function normalizePassage(passage, answers, submitted, review) {
   if (!passage) {
     return null;
   }
-  const cleanPassageText = stripQuestionBlockFromPassage(passage.passage);
+  const cleanPassageText = normalizeReadingPassageText(
+    passage._id || passage.id,
+    stripQuestionBlockFromPassage(passage.passage)
+  );
   const inlineClozeBlanks = findClozeBlanks(passage.passage);
   const isClozePassage = inlineClozeBlanks.length > 0
     && (passage.questions || []).some((question) => question.questionType === 'blank');
@@ -176,13 +181,21 @@ function normalizePassage(passage, answers, submitted, review) {
       }))
     });
   });
+  const passageId = passage._id || passage.id;
+  const paragraphRanges = buildReadingParagraphRanges(passageId, cleanPassageText, questions, ieltsParagraphMetadata[passageId]);
   return Object.assign({}, passage, {
     passage: cleanPassageText,
     sectionDisplay: passage.sectionLabel || (passage.section ? `阅读 ${passage.section}` : '阅读'),
     difficultyDisplay: passage.difficultyLabel || '',
     isClozePassage,
     questions,
-    clozePassageParts: isClozePassage ? buildClozePassageParts(passage, questions) : []
+    clozePassageParagraphs: isClozePassage ? paragraphRanges.map((range) => ({
+      index: range.index,
+      label: range.label,
+      hasOriginalSourceLabel: !!range.hasOriginalSourceLabel,
+      sourceLabelText: range.sourceLabelText || '',
+      parts: buildClozePassageParts({ passage: cleanPassageText.slice(range.contentStart || range.start, range.end) }, questions)
+    })) : []
   });
 }
 
@@ -285,7 +298,7 @@ function splitSentenceRanges(source) {
     return [];
   }
   const ranges = [];
-  const marks = '.!?。！？';
+  const marks = '.．!?。！？';
   let start = 0;
   for (let index = 0; index < text.length; index += 1) {
     const ch = text[index];
@@ -423,6 +436,36 @@ function buildPassageSegments(text, review, mode) {
       chunks: shouldColorWholeSentence ? [] : buildSentenceChunks(source, sentenceRange, ranges)
     }, shouldColorWholeSentence ? meta : { tone: 'normal', label: '', note: '' });
   }));
+}
+
+function buildPassageParagraphs(passage, review, mode) {
+  if (!passage) return [];
+  const source = String(passage.passage || '');
+  const passageId = passage._id || passage.id;
+  const ranges = buildReadingParagraphRanges(passageId, source, passage.questions, ieltsParagraphMetadata[passageId]);
+  if (!ranges.length) return [];
+  return ranges.map((range) => {
+    const contentStart = range.contentStart || range.start;
+    const segments = buildPassageSegments(source.slice(contentStart, range.end), review, mode).map((segment) => Object.assign({}, segment, {
+      start: segment.start + contentStart,
+      end: segment.end + contentStart
+    }));
+    return {
+      index: range.index,
+      label: range.label,
+      hasOriginalSourceLabel: !!range.hasOriginalSourceLabel,
+      sourceLabelText: range.sourceLabelText || '',
+      segments
+    };
+  }).filter((paragraph) => paragraph.segments.length);
+}
+
+function buildStandalonePassageSegments(passage, review, mode) {
+  if (!passage) return [];
+  const source = String(passage.passage || '');
+  const passageId = passage._id || passage.id;
+  if (buildReadingParagraphRanges(passageId, source, passage.questions, ieltsParagraphMetadata[passageId]).length) return [];
+  return buildPassageSegments(source, review, mode);
 }
 
 function pickSentenceAt(text, start, end) {
@@ -900,6 +943,7 @@ Page({
       { key: 'all', label: text('all', '全部') }
     ],
     passageSegments: [],
+    passageParagraphs: [],
     wordCards: [],
     phraseCards: [],
     sentencePatternCards: [],
@@ -1034,7 +1078,8 @@ Page({
       attempt: latestAttempt,
       review: mergedReview,
       activeHighlight,
-      passageSegments: buildPassageSegments(passage ? passage.passage : '', mergedReview, activeHighlight),
+      passageSegments: buildStandalonePassageSegments(passage, mergedReview, activeHighlight),
+      passageParagraphs: buildPassageParagraphs(passage, mergedReview, activeHighlight),
       wordCards: mergedReview ? mergedReview.vocabularyCards : [],
       phraseCards: mergedReview ? mergedReview.phraseCards : [],
       sentencePatternCards: mergedReview ? mergedReview.sentencePatternCards : [],
@@ -1084,10 +1129,12 @@ Page({
   },
   applyReview(review) {
     const normalized = normalizeReview(review);
+    const passage = normalizePassage(this.data.passage, this.data.answers, this.data.submitted, normalized);
     this.setData({
       review: normalized,
-      passage: normalizePassage(this.data.passage, this.data.answers, this.data.submitted, normalized),
-      passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', normalized, this.data.activeHighlight),
+      passage,
+      passageSegments: buildStandalonePassageSegments(passage, normalized, this.data.activeHighlight),
+      passageParagraphs: buildPassageParagraphs(passage, normalized, this.data.activeHighlight),
       wordCards: normalized ? normalized.vocabularyCards : [],
       phraseCards: normalized ? normalized.phraseCards : [],
       sentencePatternCards: normalized ? normalized.sentencePatternCards : [],
@@ -1260,7 +1307,8 @@ Page({
     const activeHighlight = this.data.activeHighlight === mode ? 'none' : mode;
     this.setData({
       activeHighlight,
-      passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', this.data.review, activeHighlight)
+      passageSegments: buildStandalonePassageSegments(this.data.passage, this.data.review, activeHighlight),
+      passageParagraphs: buildPassageParagraphs(this.data.passage, this.data.review, activeHighlight)
     });
     const sectionMap = { word: 'vocabulary', phrase: 'phrases', pattern: 'patterns', all: 'cards' };
     if (sectionMap[activeHighlight]) {
@@ -1522,7 +1570,8 @@ Page({
         passage: normalizePassage(this.data.passage, this.data.answers, true, normalizeReview(result.review)),
         activeHighlight: 'answer',
         showReviewDetails: true,
-        passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', normalizeReview(result.review), 'answer'),
+        passageSegments: buildStandalonePassageSegments(this.data.passage, normalizeReview(result.review), 'answer'),
+        passageParagraphs: buildPassageParagraphs(this.data.passage, normalizeReview(result.review), 'answer'),
         scoreText: buildScoreText(result.attempt),
         reviewSummary: buildReviewSummary(result.attempt),
         submitted: true,

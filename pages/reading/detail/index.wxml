@@ -28,16 +28,76 @@
         </view>
         <view class="paper-body library-article-body">
           <block wx:if="{{passage.isClozePassage}}">
-            <view class="cloze-passage-text library-cloze-text" wx:if="{{!submitted}}">
-              <block wx:for="{{passage.clozePassageParts}}" wx:key="index">
-                <text wx:if="{{item.type === 'text'}}">{{item.text}}</text>
-                <view wx:else class="cloze-inline library-cloze-inline">
-                  <text class="cloze-inline-initial" wx:if="{{item.initial}}">{{item.initial}}</text>
-                  <input class="cloze-inline-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="{{item.number}}" />
+            <view class="cloze-passage-stack" wx:if="{{!submitted}}">
+              <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
+                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <view class="passage-paragraph-content">
+                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
+                  <view class="passage-paragraph-main cloze-passage-text library-cloze-text">
+                    <block wx:for="{{paragraph.parts}}" wx:key="index" wx:for-item="part">
+                      <text wx:if="{{part.type === 'text'}}">{{part.text}}</text>
+                      <view wx:else class="cloze-inline library-cloze-inline">
+                        <text class="cloze-inline-initial" wx:if="{{part.initial}}">{{part.initial}}</text>
+                        <input class="cloze-inline-input {{part.isCorrect === true ? 'is-correct' : ''}} {{part.isCorrect === false ? 'is-wrong' : ''}}" value="{{part.inputValue}}" disabled="{{submitted}}" data-number="{{part.number}}" bindinput="inputAnswer" placeholder="{{part.number}}" />
+                      </view>
+                    </block>
+                  </view>
                 </view>
-              </block>
+              </view>
             </view>
             <view class="passage-text cloze-highlight-text" wx:else>
+              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
+                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <view class="passage-paragraph-content">
+                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
+                  <view class="passage-paragraph-main">
+                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
+                  <block wx:if="{{segment.chunks && segment.chunks.length}}">
+                    <text wx:for="{{segment.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    </text>
+                  </block>
+                  <block wx:else>
+                    <text wx:if="{{segment.label}}" class="segment-label">{{segment.label}}</text>
+                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    <text wx:if="{{segment.note}}" class="segment-note">{{segment.note}}</text>
+                  </block>
+                  <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === segment.start}}">
+                    {{sentenceTranslating ? texts.translating : selectedSentenceTranslation}}
+                  </view>
+                </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="passage-text" wx:else>
+            <block wx:if="{{passageParagraphs.length}}">
+              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
+                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <view class="passage-paragraph-content">
+                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
+                  <view class="passage-paragraph-main">
+                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
+                  <block wx:if="{{segment.chunks && segment.chunks.length}}">
+                    <text wx:for="{{segment.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    </text>
+                  </block>
+                  <block wx:else>
+                    <text wx:if="{{segment.label}}" class="segment-label">{{segment.label}}</text>
+                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    <text wx:if="{{segment.note}}" class="segment-note">{{segment.note}}</text>
+                  </block>
+                  <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === segment.start}}">
+                    {{sentenceTranslating ? texts.translating : selectedSentenceTranslation}}
+                  </view>
+                </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <block wx:else>
               <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
                 <block wx:if="{{item.chunks && item.chunks.length}}">
                   <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
@@ -53,24 +113,7 @@
                   {{sentenceTranslating ? texts.translating : selectedSentenceTranslation}}
                 </view>
               </view>
-            </view>
-          </block>
-          <view class="passage-text" wx:else>
-            <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
-              <block wx:if="{{item.chunks && item.chunks.length}}">
-                <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                  <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
-                </text>
-              </block>
-              <block wx:else>
-                <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text>
-                <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
-                <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
-              </block>
-              <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === item.start}}">
-                {{sentenceTranslating ? texts.translating : selectedSentenceTranslation}}
-              </view>
-            </view>
+            </block>
           </view>
           <view class="passage-source-images" wx:if="{{passage.images && passage.images.length}}">
             <image class="passage-source-image" wx:for="{{passage.images}}" wx:key="src" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
@@ -313,16 +356,76 @@
         </view>
         <view class="paper-body">
           <block wx:if="{{passage.isClozePassage}}">
-            <view class="cloze-passage-text" wx:if="{{!submitted}}">
-              <block wx:for="{{passage.clozePassageParts}}" wx:key="index">
-                <text wx:if="{{item.type === 'text'}}">{{item.text}}</text>
-                <view wx:else class="cloze-inline">
-                  <text class="cloze-inline-initial" wx:if="{{item.initial}}">{{item.initial}}</text>
-                  <input class="cloze-inline-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="{{item.number}}" />
+            <view class="cloze-passage-stack" wx:if="{{!submitted}}">
+              <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
+                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <view class="passage-paragraph-content">
+                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
+                  <view class="passage-paragraph-main cloze-passage-text">
+                    <block wx:for="{{paragraph.parts}}" wx:key="index" wx:for-item="part">
+                      <text wx:if="{{part.type === 'text'}}">{{part.text}}</text>
+                      <view wx:else class="cloze-inline">
+                        <text class="cloze-inline-initial" wx:if="{{part.initial}}">{{part.initial}}</text>
+                        <input class="cloze-inline-input {{part.isCorrect === true ? 'is-correct' : ''}} {{part.isCorrect === false ? 'is-wrong' : ''}}" value="{{part.inputValue}}" disabled="{{submitted}}" data-number="{{part.number}}" bindinput="inputAnswer" placeholder="{{part.number}}" />
+                      </view>
+                    </block>
+                  </view>
                 </view>
-              </block>
+              </view>
             </view>
             <view class="passage-text cloze-highlight-text" wx:else>
+              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
+                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <view class="passage-paragraph-content">
+                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
+                  <view class="passage-paragraph-main">
+                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
+                  <block wx:if="{{segment.chunks && segment.chunks.length}}">
+                    <text wx:for="{{segment.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    </text>
+                  </block>
+                  <block wx:else>
+                    <text wx:if="{{segment.label}}" class="segment-label">{{segment.label}}</text>
+                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    <text wx:if="{{segment.note}}" class="segment-note">{{segment.note}}</text>
+                  </block>
+                  <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === segment.start}}">
+                    {{sentenceTranslating ? texts.translating : selectedSentenceTranslation}}
+                  </view>
+                </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="passage-text" wx:else>
+            <block wx:if="{{passageParagraphs.length}}">
+              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
+                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <view class="passage-paragraph-content">
+                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
+                  <view class="passage-paragraph-main">
+                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
+                  <block wx:if="{{segment.chunks && segment.chunks.length}}">
+                    <text wx:for="{{segment.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    </text>
+                  </block>
+                  <block wx:else>
+                    <text wx:if="{{segment.label}}" class="segment-label">{{segment.label}}</text>
+                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    <text wx:if="{{segment.note}}" class="segment-note">{{segment.note}}</text>
+                  </block>
+                  <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === segment.start}}">
+                    {{sentenceTranslating ? texts.translating : selectedSentenceTranslation}}
+                  </view>
+                </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <block wx:else>
               <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
                 <block wx:if="{{item.chunks && item.chunks.length}}">
                   <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
@@ -338,24 +441,7 @@
                   {{sentenceTranslating ? texts.translating : selectedSentenceTranslation}}
                 </view>
               </view>
-            </view>
-          </block>
-          <view class="passage-text" wx:else>
-            <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
-              <block wx:if="{{item.chunks && item.chunks.length}}">
-                <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                  <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
-                </text>
-              </block>
-              <block wx:else>
-                <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text>
-                <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
-                <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
-              </block>
-              <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === item.start}}">
-                {{sentenceTranslating ? texts.translating : selectedSentenceTranslation}}
-              </view>
-            </view>
+            </block>
           </view>
           <view class="passage-source-images" wx:if="{{passage.images && passage.images.length}}">
             <image class="passage-source-image" wx:for="{{passage.images}}" wx:key="src" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
