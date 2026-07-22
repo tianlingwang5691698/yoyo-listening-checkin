@@ -444,6 +444,14 @@ function buildReviewQueue(library, settings, today) {
   return buildDueCards(library || [], settings || {}, today || '');
 }
 
+function buildPreviewReviewQueue(library, settings, today) {
+  const dueCards = buildReviewQueue(library, settings, today);
+  if (dueCards.length) return dueCards;
+  const rows = library || [];
+  const limit = Math.max(1, Number(settings && settings.newLimit || 0), Number(settings && settings.reviewLimit || 0));
+  return rows.slice(0, Math.min(rows.length, limit));
+}
+
 function buildTodayPracticeCards(library, today) {
   return (library || []).filter((item) => (
     item.firstLearnedDate === today || item.lastReviewDate === today
@@ -2025,11 +2033,13 @@ Page({
     this.scheduleAudioPrefetchAroundCurrent();
   },
   startReview() {
+    const previewMode = store.getDeviceStudyRole() !== 'student';
     const cards = this.dailyPlanMode
       ? (this.dailyPlanCards || []).map((item) => Object.assign({}, item))
-      : buildReviewQueue(this.getFlashcardLibrary(), this.data.settings, this.data.today);
+      : (previewMode
+        ? buildPreviewReviewQueue(this.getFlashcardLibrary(), this.data.settings, this.data.today)
+        : buildReviewQueue(this.getFlashcardLibrary(), this.data.settings, this.data.today));
     const current = cards[0] || null;
-    const previewMode = store.getDeviceStudyRole() !== 'student';
     if (previewMode) {
       this.previewSourceSnapshot = {
         library: this.getFlashcardLibrary().map((item) => Object.assign({}, item)),
