@@ -3224,3 +3224,4 @@ page { overflow-x: hidden; }
   .language-en .vocab-practice-card-copy { font-size: 20rpx; }
   .study-card { padding-left: 18rpx; padding-right: 18rpx; }
 }
+.vocabulary-session-duration { margin: 24rpx 0; color: #536b78; font-size: 28rpx; font-weight: 700; text-align: center; }

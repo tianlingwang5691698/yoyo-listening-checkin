@@ -121,3 +121,4 @@ page{overflow-x:hidden}
 .theme-dragon .recognition-complete-mark{border:6rpx solid #12356f;background:#f7cf4b;color:#102f68;box-shadow:0 6rpx 0 #f4511e}
 .theme-dragon .recognition-score view{border:2rpx solid #12356f;border-radius:5rpx;background:#fff0ac}
 @media(max-width:340px){.recognition-page{padding-left:20rpx;padding-right:20rpx}.recognition-menu,.recognition-question,.recognition-complete{padding-left:20rpx;padding-right:20rpx}.recognition-option{grid-template-columns:46rpx minmax(0,1fr) 30rpx;padding-left:12rpx;padding-right:12rpx;font-size:23rpx}.recognition-score{gap:6rpx}.recognition-score text:last-child{font-size:18rpx}}
+.recognition-duration { margin: 24rpx 0; color: #536b78; font-size: 28rpx; font-weight: 700; text-align: center; }

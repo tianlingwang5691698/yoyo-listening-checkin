@@ -173,3 +173,4 @@ page { overflow-x: hidden; }
   .complete-numbers text:first-child { font-size: 32rpx; }
   .complete-numbers text:last-child { font-size: 17rpx; }
 }
+.dictation-duration { margin: 24rpx 0; color: #536b78; font-size: 28rpx; font-weight: 700; text-align: center; }

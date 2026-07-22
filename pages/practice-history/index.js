@@ -4,6 +4,21 @@ const i18n = require('../../utils/i18n');
 
 const text = (key, fallback) => i18n.getPageText('practiceHistory', key, undefined, fallback);
 
+function formatDuration(seconds) {
+  const total = Math.max(0, Math.round(Number(seconds || 0)));
+  if (!total) return '';
+  const minutes = Math.floor(total / 60);
+  const rest = total % 60;
+  return minutes ? `${minutes}${text('minuteUnit', '分')}${rest}${text('secondUnit', '秒')}` : `${rest}${text('secondUnit', '秒')}`;
+}
+
+function vocabularyModeLabel(mode) {
+  if (mode === 'word-meaning') return text('wordMeaning', '看词选义');
+  if (mode === 'audio-meaning') return text('audioMeaning', '听音选义');
+  if (mode === 'wrong-dictation') return text('wrongDictation', '错词听写');
+  return text('vocabularyEyebrow', '听音写词');
+}
+
 const MODULES = {
   reading: {
     title: text('readingTitle', '阅读记录'),
@@ -99,7 +114,8 @@ function normalizeVocabulary(item, index) {
   return {
     id: String(item.recordId || item.id || `vocabulary-${index}`),
     title: item.sourceTitle || text('vocabularyTitle', '词汇听写'),
-    meta: item.practiceMode === 'wrong-dictation' ? text('wrongDictation', '错词听写') : text('vocabularyEyebrow', '听音写词'),
+    meta: vocabularyModeLabel(item.practiceMode),
+    durationText: formatDuration(item.durationSec),
     dateLabel: cleanDate(item.date, item.updatedAt),
     summary: `${correctCount}/${totalCount}${text('wordUnit', ' 词')}`,
     attempt: item,
@@ -382,6 +398,7 @@ Page({
         word: item.word || '',
         input: item.input || '',
         meaning: item.meaning || '',
+        answer: item.answer || item.word || '',
         phonetic: item.phonetic || '',
         correct: !!item.correct
       }))

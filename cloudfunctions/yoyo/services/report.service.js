@@ -115,7 +115,8 @@ function getGrammarQuestionCount(item) {
 function getVocabularyWordCount(item) {
   const attempt = getLatestAttempt(item);
   const reviewed = Number(attempt.reviewed || 0);
-  return reviewed > 0 ? reviewed : 1;
+  const totalCount = Number(attempt.totalCount || attempt.answeredCount || 0);
+  return reviewed > 0 ? reviewed : (totalCount > 0 ? totalCount : 1);
 }
 
 function buildTodayLearningStats(report) {

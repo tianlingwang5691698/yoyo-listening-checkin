@@ -4,6 +4,7 @@ const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
 const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../utils/vocabulary-definitions');
 const { resolveVocabularyEntry } = require('../../../utils/vocabulary-phonetics');
+const { createVocabularySessionTimer, formatDuration } = require('../../../utils/vocabulary-session-timer');
 const {
   canUseDictionaryVoice,
   buildDictionaryVoiceUrls,
@@ -840,6 +841,8 @@ Page({
     reviewDone: 0,
     reviewSessionTotal: 0,
     reviewCompleted: false,
+    studyDurationSec: 0,
+    studyDurationText: '',
     dictationPromptVisible: false,
     dictationPromptPending: false,
     dictationJumping: false,
@@ -871,6 +874,7 @@ Page({
     this.loadJuniorDailyPlan();
   },
   onUnload() {
+    if (this.vocabularySessionTimer) this.vocabularySessionTimer.pause();
     this.flushReviewQueue(true);
     if (!this.dailyPlanMode) this.syncVocabularyCompletion(true);
     if (this.autoSpeakTimer) {
@@ -893,10 +897,12 @@ Page({
       this.flashcardAudioContext.destroy();
       this.flashcardAudioContext = null;
     }
+    if (this.vocabularySessionTimer) this.vocabularySessionTimer.reset();
   },
   onShow() {
     this.flashcardPerf = page.startPagePerf('flashcards');
     page.syncTheme(this);
+    if (this.vocabularySessionTimer && this.data.mode === 'review' && !this.data.reviewCompleted) this.vocabularySessionTimer.resume();
     const unlockEditions = UNLOCK_EDITIONS.map((item) => Object.assign({}, item, {
       title: item.edition === 3 ? text('unlockThirdBook', item.title) : text('unlockSecondBook', item.title),
       meta: text('unlockMeta', item.meta)
@@ -928,6 +934,9 @@ Page({
       return;
     }
     this.loadCards();
+  },
+  onHide() {
+    if (this.vocabularySessionTimer) this.vocabularySessionTimer.pause();
   },
   getFlashcardLibrary() {
     return this.flashcardLibrary || [];
@@ -1872,7 +1881,8 @@ Page({
       latestAttempt: Object.assign({}, stats, {
         sourceId: this.data.activeSourceId || '',
         sourceTitle,
-        date: this.data.today || ''
+        date: this.data.today || '',
+        durationSec: this.getVocabularySessionDuration()
       })
     }).catch(() => null);
   },
@@ -1899,6 +1909,8 @@ Page({
     });
     if (shouldPersist) this.persistActiveSourceState();
     if (reviewCompleted) {
+      const durationSec = this.stopVocabularySessionTimer();
+      this.setData({ studyDurationSec: durationSec, studyDurationText: formatDuration(durationSec, this.data.language) });
       const todayRepeatTotal = buildTodayPracticeCards(this.getFlashcardLibrary(), this.data.today).length;
       this.setData({
         todayRepeatTotal,
@@ -1939,7 +1951,7 @@ Page({
     this.setData({ dictationPromptPending: true });
     await this.waitForReviewSync();
     try {
-      const result = await store.completeJuniorVocabularyPlan();
+      const result = await store.completeJuniorVocabularyPlan({ durationSec: this.getVocabularySessionDuration() });
       if (!result || !result.saved) throw new Error((result && result.reason) || 'plan-completion-failed');
       this.setData({
         completionEncouragement: result.encouragement || this.data.completionEncouragement,
@@ -2035,6 +2047,8 @@ Page({
       reviewDone: 0,
       reviewSessionTotal: cards.length,
       reviewCompleted: false,
+      studyDurationSec: 0,
+      studyDurationText: formatDuration(0, this.data.language),
       repeatMode: false,
       total: cards.length,
       dueCount: cards.length,
@@ -2049,6 +2063,7 @@ Page({
     });
     this.vocabularySessionStats = null;
     this.lastVocabularyCompletionSyncedReviewed = 0;
+    if (cards.length) this.startVocabularySessionTimer();
     this.scheduleAutoSpeakCurrent();
     this.scheduleAudioPrefetchAroundCurrent();
   },
@@ -2062,6 +2077,7 @@ Page({
       this.syncVocabularyCompletion(true);
       this.flushReviewQueue(true);
     }
+    if (this.vocabularySessionTimer) this.vocabularySessionTimer.reset();
     if (this.dailyPlanMode && !this.data.previewMode) {
       wx.navigateBack({ delta: 1 });
       return;
@@ -2106,6 +2122,8 @@ Page({
       reviewDone: 0,
       reviewSessionTotal: cards.length,
       reviewCompleted: false,
+      studyDurationSec: 0,
+      studyDurationText: formatDuration(0, this.data.language),
       total: cards.length,
       newDueCount: 0,
       reviewDueCount: cards.length,
@@ -2115,6 +2133,7 @@ Page({
       audioPlaying: false,
       audioCompleted: isAudioCompletedForCard(current)
     }, () => {
+      this.startVocabularySessionTimer();
       repeatPerf.ready('pageReady', {
         cacheHit: true,
         source: 'memory',
@@ -2123,6 +2142,26 @@ Page({
       this.scheduleAutoSpeakCurrent();
       this.scheduleAudioPrefetchAroundCurrent();
     });
+  },
+  startVocabularySessionTimer() {
+    if (!this.vocabularySessionTimer) {
+      this.vocabularySessionTimer = createVocabularySessionTimer((durationSec) => {
+        if (this.data.mode === 'review' && !this.data.reviewCompleted) {
+          this.setData({ studyDurationSec: durationSec, studyDurationText: formatDuration(durationSec, this.data.language) });
+        }
+      });
+    }
+    this.vocabularySessionDurationSec = null;
+    this.vocabularySessionTimer.start();
+  },
+  getVocabularySessionDuration() {
+    if (this.vocabularySessionDurationSec != null) return Number(this.vocabularySessionDurationSec || 0);
+    return this.vocabularySessionTimer ? this.vocabularySessionTimer.getElapsedSec() : Number(this.data.studyDurationSec || 0);
+  },
+  stopVocabularySessionTimer() {
+    const durationSec = this.vocabularySessionTimer ? this.vocabularySessionTimer.stop() : Number(this.data.studyDurationSec || 0);
+    this.vocabularySessionDurationSec = durationSec;
+    return durationSec;
   },
   async markRemembered() {
     if (!this.data.cardRevealed) {

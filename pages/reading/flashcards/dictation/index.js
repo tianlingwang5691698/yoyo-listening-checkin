@@ -4,6 +4,7 @@ const effects = require('../../../../utils/effects');
 const i18n = require('../../../../utils/i18n');
 const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../../utils/vocabulary-definitions');
 const { resolveVocabularyEntry } = require('../../../../utils/vocabulary-phonetics');
+const { createVocabularySessionTimer, formatDuration } = require('../../../../utils/vocabulary-session-timer');
 const {
   buildDictionaryVoiceUrls,
   buildDictionaryVoiceSegments,
@@ -97,6 +98,8 @@ Page({
     wrongCount: 0,
     totalCount: 0,
     accuracy: 0,
+    durationSec: 0,
+    durationText: '',
     audioFailed: false,
     todayAttempts: [],
     todayCorrect: 0,
@@ -127,6 +130,7 @@ Page({
     this.clearCorrectAdvanceTimer();
     this.clearAudioStartTimer();
     if (this.audioContext) this.audioContext.destroy();
+    if (this.sessionTimer) this.sessionTimer.reset();
   },
   async loadData() {
     const startedAt = Date.now();
@@ -166,6 +170,10 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+    if (this.sessionTimer && this.data.mode === 'dictation') this.sessionTimer.resume();
+  },
+  onHide() {
+    if (this.sessionTimer) this.sessionTimer.pause();
   },
   startAllDictation() {
     this.startDictation(randomCards(this.allCards, this.data.practiceCount || SESSION_LIMIT), 'dictation');
@@ -196,9 +204,10 @@ Page({
       return;
     }
     this.sessionStartedAt = new Date().toISOString();
+    this.startSessionTimer();
     this.practiceMode = practiceMode;
     const sessionCards = cards.map((item) => Object.assign({}, item, { input: '', correct: false }));
-    this.setData({ mode: 'dictation', cards: sessionCards, current: sessionCards[0], currentIndex: 0, inputValue: '', revealed: false, results: [], correctCount: 0, wrongCount: 0, audioFailed: false }, () => this.playCurrent());
+    this.setData({ mode: 'dictation', cards: sessionCards, current: sessionCards[0], currentIndex: 0, inputValue: '', revealed: false, results: [], correctCount: 0, wrongCount: 0, durationSec: 0, durationText: formatDuration(0, this.data.language), audioFailed: false }, () => this.playCurrent());
   },
   startWrongStudy() {
     const cards = (this.data.wrongWords || []).slice(0, 50);
@@ -247,7 +256,8 @@ Page({
     this.clearCorrectAdvanceTimer();
     const totalCount = this.data.results.length;
     const accuracy = totalCount ? Math.round(this.data.correctCount * 100 / totalCount) : 0;
-    this.setData({ mode: 'complete', saving: !this.data.previewMode, totalCount, accuracy });
+    const durationSec = this.sessionTimer ? this.sessionTimer.stop() : 0;
+    this.setData({ mode: 'complete', saving: !this.data.previewMode, totalCount, accuracy, durationSec, durationText: formatDuration(durationSec, this.data.language) });
     effects.playComplete({
       voiceKey: 'flashcardComplete',
       voiceDelayMs: 1000,
@@ -260,6 +270,7 @@ Page({
       sourceTitle: this.data.sourceTitle,
       practiceMode: this.practiceMode,
       startedAt: this.sessionStartedAt,
+      durationSec,
       questions: this.data.results.map((item) => ({ word: item.word, phonetic: item.phonetic, meaning: item.meaning, input: item.input }))
     });
     if (!result.saved) {
@@ -311,6 +322,14 @@ Page({
     this.audioContext.src = this.dictationAudioFallbackUrls[0];
     this.startDictationAudioAttemptTimer(word, playToken);
     this.audioContext.play();
+  },
+  startSessionTimer() {
+    if (!this.sessionTimer) {
+      this.sessionTimer = createVocabularySessionTimer((durationSec) => {
+        if (this.data.mode === 'dictation') this.setData({ durationSec, durationText: formatDuration(durationSec, this.data.language) });
+      });
+    }
+    this.sessionTimer.start();
   },
   tryNextDictationAudioFallback() {
     const urls = this.dictationAudioFallbackUrls || [];
@@ -404,7 +423,8 @@ Page({
       wx.navigateBack({ delta: 1 });
       return;
     }
-    this.setData({ mode: 'menu', current: null, cards: [], inputValue: '', revealed: false });
+    if (this.sessionTimer) this.sessionTimer.reset();
+    this.setData({ mode: 'menu', current: null, cards: [], inputValue: '', revealed: false, durationSec: 0, durationText: '' });
     this.loadData();
   }
 });

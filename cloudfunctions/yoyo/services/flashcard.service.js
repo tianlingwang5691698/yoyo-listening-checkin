@@ -461,6 +461,7 @@ function resultRows(result) {
 }
 
 async function completeJuniorVocabularyPlan(event) {
+  const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'completeJuniorVocabularyPlan' }));
   if (!study.isStudyWriteAllowed(ctx)) return { saved: false, reason: 'preview-role' };
   const settings = await getSettings(ctx);
@@ -520,7 +521,8 @@ async function completeJuniorVocabularyPlan(event) {
       reviewLists,
       sourceId: descriptor.currentSourceId,
       sourceTitle: descriptor.title,
-      date: today
+      date: today,
+      durationSec: Math.max(0, Math.min(86400, Math.round(Number(payload.durationSec || 0))))
     }
   });
   const encouragement = reviewLists.length
@@ -993,15 +995,17 @@ function acceptedSpellings(word) {
   return values.length ? values : [normalizeSpelling(raw)];
 }
 
-function normalizeDictationQuestion(item) {
+function normalizeDictationQuestion(item, practiceMode) {
   const word = normalizeText(item && item.word);
   const input = normalizeText(item && item.input);
+  const isRecognition = practiceMode === 'word-meaning' || practiceMode === 'audio-meaning';
   return {
     word,
     phonetic: normalizeText(item && item.phonetic),
     meaning: normalizeText(item && item.meaning),
     input,
-    correct: acceptedSpellings(word).includes(normalizeSpelling(input))
+    answer: normalizeText(item && item.answer),
+    correct: isRecognition ? !!(item && item.correct) : acceptedSpellings(word).includes(normalizeSpelling(input))
   };
 }
 
@@ -1019,6 +1023,7 @@ function dictationSummary(item) {
     sourceId: item.sourceId || '',
     sourceTitle: item.sourceTitle || '',
     practiceMode: item.practiceMode || 'dictation',
+    durationSec: Math.max(0, Number(item.durationSec || 0)),
     totalCount: Number(item.totalCount || questions.length || 0),
     answeredCount: Number(item.answeredCount || questions.length || 0),
     correctCount: Number(item.correctCount || questions.filter((question) => question.correct).length || 0),
@@ -1050,8 +1055,9 @@ async function saveVocabularyDictationAttempt(event) {
   if (isPreviewWrite(ctx)) return { saved: false, reason: 'preview-role' };
   const sourceId = normalizeText(payload.sourceId);
   const sourceTitle = normalizeText(payload.sourceTitle);
+  const practiceMode = normalizeText(payload.practiceMode) || 'dictation';
   const startedAt = normalizeText(payload.startedAt) || new Date().toISOString();
-  const questions = (Array.isArray(payload.questions) ? payload.questions : []).slice(0, 200).map(normalizeDictationQuestion).filter((item) => item.word);
+  const questions = (Array.isArray(payload.questions) ? payload.questions : []).slice(0, 200).map((item) => normalizeDictationQuestion(item, practiceMode)).filter((item) => item.word);
   if (!sourceId || !questions.length) return { saved: false, reason: 'missing-content' };
   const correctCount = questions.filter((item) => item.correct).length;
   const wrongCount = questions.length - correctCount;
@@ -1069,7 +1075,8 @@ async function saveVocabularyDictationAttempt(event) {
     date: today,
     sourceId,
     sourceTitle,
-    practiceMode: normalizeText(payload.practiceMode) || 'dictation',
+    practiceMode,
+    durationSec: Math.max(0, Math.min(86400, Math.round(Number(payload.durationSec || 0)))),
     totalCount: questions.length,
     answeredCount: questions.length,
     correctCount,
@@ -1092,64 +1099,60 @@ async function saveVocabularyDictationAttempt(event) {
     await dbAdapter.collection(DICTATION_COLLECTION).add({ data: Object.assign({}, record, { createdAt: now }) });
   }
 
-  const wrongRecordId = [ctx.family.familyId, ctx.child.childId, 'dictation-wrong', sourceId].join('_');
-  const wrongResult = await dbAdapter.collection(DICTATION_COLLECTION).where({
-    familyId: record.familyId,
-    childId: record.childId,
-    recordId: wrongRecordId
-  }).limit(1).get();
-  const currentWrong = wrongResult && wrongResult.data && wrongResult.data[0];
-  const wrongMap = (currentWrong && Array.isArray(currentWrong.wrongWords) ? currentWrong.wrongWords : []).reduce((map, item) => {
-    const key = normalizeSpelling(item.word);
-    if (key) map[key] = Object.assign({}, item);
-    return map;
-  }, {});
-  questions.forEach((question) => {
-    const key = normalizeSpelling(question.word);
-    const current = wrongMap[key];
-    if (question.correct) {
-      if (!current) return;
-      const correctStreak = Number(current.correctStreak || 0) + 1;
-      if (correctStreak >= 2) delete wrongMap[key];
-      else wrongMap[key] = Object.assign({}, current, { correctStreak, lastCorrectAt: now });
-      return;
-    }
-    wrongMap[key] = Object.assign({}, current || {}, {
-      word: question.word,
-      phonetic: question.phonetic,
-      meaning: question.meaning,
-      wrongCount: Number(current && current.wrongCount || 0) + 1,
-      correctStreak: 0,
-      lastInput: question.input,
-      lastWrongAt: now
+  const isSpellingPractice = practiceMode === 'dictation' || practiceMode === 'wrong-dictation';
+  let wrongWords = [];
+  if (isSpellingPractice) {
+    const wrongRecordId = [ctx.family.familyId, ctx.child.childId, 'dictation-wrong', sourceId].join('_');
+    const wrongResult = await dbAdapter.collection(DICTATION_COLLECTION).where({
+      familyId: record.familyId,
+      childId: record.childId,
+      recordId: wrongRecordId
+    }).limit(1).get();
+    const currentWrong = wrongResult && wrongResult.data && wrongResult.data[0];
+    const wrongMap = (currentWrong && Array.isArray(currentWrong.wrongWords) ? currentWrong.wrongWords : []).reduce((map, item) => {
+      const key = normalizeSpelling(item.word);
+      if (key) map[key] = Object.assign({}, item);
+      return map;
+    }, {});
+    questions.forEach((question) => {
+      const key = normalizeSpelling(question.word);
+      const current = wrongMap[key];
+      if (question.correct) {
+        if (!current) return;
+        const correctStreak = Number(current.correctStreak || 0) + 1;
+        if (correctStreak >= 2) delete wrongMap[key];
+        else wrongMap[key] = Object.assign({}, current, { correctStreak, lastCorrectAt: now });
+        return;
+      }
+      wrongMap[key] = Object.assign({}, current || {}, {
+        word: question.word,
+        phonetic: question.phonetic,
+        meaning: question.meaning,
+        wrongCount: Number(current && current.wrongCount || 0) + 1,
+        correctStreak: 0,
+        lastInput: question.input,
+        lastWrongAt: now
+      });
     });
-  });
-  const wrongRecord = {
-    recordType: 'wrongBook',
-    recordId: wrongRecordId,
-    familyId: record.familyId,
-    childId: record.childId,
-    sourceId,
-    sourceTitle,
-    wrongWords: Object.values(wrongMap).sort((a, b) => Number(b.wrongCount || 0) - Number(a.wrongCount || 0)).slice(0, 500),
-    updatedAt: now
-  };
-  if (currentWrong && currentWrong._id) {
-    await dbAdapter.collection(DICTATION_COLLECTION).doc(currentWrong._id).update({ data: wrongRecord });
-  } else {
-    await dbAdapter.collection(DICTATION_COLLECTION).add({ data: Object.assign({}, wrongRecord, { createdAt: now }) });
+    wrongWords = Object.values(wrongMap).sort((a, b) => Number(b.wrongCount || 0) - Number(a.wrongCount || 0)).slice(0, 500);
+    const wrongRecord = { recordType: 'wrongBook', recordId: wrongRecordId, familyId: record.familyId, childId: record.childId, sourceId, sourceTitle, wrongWords, updatedAt: now };
+    if (currentWrong && currentWrong._id) {
+      await dbAdapter.collection(DICTATION_COLLECTION).doc(currentWrong._id).update({ data: wrongRecord });
+    } else {
+      await dbAdapter.collection(DICTATION_COLLECTION).add({ data: Object.assign({}, wrongRecord, { createdAt: now }) });
+    }
   }
 
   await completionService.upsertStudyCompletion(ctx, today, {
     type: 'vocabulary',
     targetId: sourceId,
-    section: 'dictation',
+    section: isSpellingPractice ? 'dictation' : `practice-${practiceMode}`,
     title: sourceTitle || '听音写词',
-    meta: '词汇听写',
-    progressText: `听写 ${correctCount}/${questions.length} · 错词 ${wrongCount}`,
-    latestAttempt: Object.assign(dictationSummary(record), { wrongBookCount: wrongRecord.wrongWords.length })
+    meta: isSpellingPractice ? '词汇听写' : '单词练习',
+    progressText: `${practiceMode === 'word-meaning' ? '看词选义' : (practiceMode === 'audio-meaning' ? '听音选义' : '听写')} ${correctCount}/${questions.length} · 错词 ${wrongCount}`,
+    latestAttempt: Object.assign(dictationSummary(record), { wrongBookCount: wrongWords.length })
   });
-  return { saved: true, attempt: dictationSummary(record), wrongWords: wrongRecord.wrongWords };
+  return { saved: true, attempt: dictationSummary(record), wrongWords };
 }
 
 async function getVocabularyDictationData(event) {
@@ -1161,7 +1164,7 @@ async function getVocabularyDictationData(event) {
     listDictationAttempts(ctx, sourceId),
     dbAdapter.collection(DICTATION_COLLECTION).where({ familyId: ctx.family.familyId, childId: ctx.child.childId, sourceId, recordType: 'wrongBook' }).limit(1).get()
   ]);
-  const attempts = attemptRows.filter((item) => item.date === today).map(dictationSummary).sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
+  const attempts = attemptRows.filter((item) => item.date === today && ['dictation', 'wrong-dictation'].includes(item.practiceMode || 'dictation')).map(dictationSummary).sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
   const wrongBook = wrongResult && wrongResult.data && wrongResult.data[0];
   return { today, attempts, wrongWords: wrongBook && Array.isArray(wrongBook.wrongWords) ? wrongBook.wrongWords : [] };
 }

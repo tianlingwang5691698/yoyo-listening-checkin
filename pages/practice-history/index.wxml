@@ -24,7 +24,7 @@
         <view class="history-record-stamp {{theme === 'voyage' ? 'is-voyage' : (theme === 'dragon' ? 'is-dragon' : '')}}" wx:if="{{theme === 'library' || theme === 'voyage' || theme === 'dragon'}}">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
         <view class="history-summary-main">
           <view class="history-record-title">{{item.title}}</view>
-          <view class="history-record-meta">{{item.dateLabel}} · {{item.meta}}</view>
+          <view class="history-record-meta">{{item.dateLabel}} · {{item.meta}}<text wx:if="{{item.durationText}}"> · {{texts.durationLabel}} {{item.durationText}}</text></view>
         </view>
         <view class="history-result">{{item.summary}}</view>
         <view class="history-arrow">{{expandedId === item.id ? '−' : '›'}}</view>
@@ -122,7 +122,7 @@
         <block wx:if="{{type === 'vocabulary' && item.detailReady}}">
           <view class="history-question" wx:for="{{item.detailQuestions}}" wx:key="number" wx:for-item="question">
             <view class="history-question-no">{{question.number}}. {{question.word}}</view>
-            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}"><text>{{texts.childAnswerLabel}}{{question.input || texts.unanswered}}</text><text wx:if="{{!question.correct}}">{{texts.correctAnswer}}{{question.word}}</text></view>
+            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}"><text>{{texts.childAnswerLabel}}{{question.input || texts.unanswered}}</text><text wx:if="{{!question.correct}}">{{texts.correctAnswer}}{{question.answer}}</text></view>
             <view class="history-analysis" wx:if="{{question.phonetic || question.meaning}}">{{question.phonetic}} {{question.meaning}}</view>
           </view>
         </block>

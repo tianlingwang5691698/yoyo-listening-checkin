@@ -113,6 +113,16 @@ function formatDuration(ms) {
   return seconds ? formatText(tr('seconds'), { count: seconds }) : '';
 }
 
+function formatStudyDuration(seconds) {
+  const total = Math.max(0, Math.round(Number(seconds || 0)));
+  if (!total) return '';
+  const minutes = Math.floor(total / 60);
+  const rest = total % 60;
+  return minutes
+    ? formatText(tr('studyMinutesSeconds'), { minutes, seconds: rest })
+    : formatText(tr('studySeconds'), { seconds: rest });
+}
+
 function normalizeSpeakingAttempt(item, index) {
   const safeItem = item || {};
   const score = Number(safeItem.score || 0);
@@ -327,7 +337,12 @@ function getArchiveRecordLabel(item, isListeningStudyPack) {
     return tr('grammarMicroLesson');
   }
   if (safeItem.type === 'vocabulary') {
-    return safeItem.section === 'dictation' ? tr('dictation') : tr('memorization');
+    if (safeItem.section === 'dictation') return tr('dictation');
+    if (String(safeItem.section || '').indexOf('practice-') === 0) {
+      const mode = safeItem.latestAttempt && safeItem.latestAttempt.practiceMode;
+      return mode === 'word-meaning' ? tr('wordMeaning') : tr('audioMeaning');
+    }
+    return tr('memorization');
   }
   if (isListeningStudyPack || safeItem.type === 'reading-study') return tr('studyPack');
   return '';
@@ -348,23 +363,28 @@ function getArchiveMeta(item, recordLabel) {
 function getVocabularyProgressText(item, latestAttempt) {
   const safeItem = item || {};
   const attempt = latestAttempt || {};
-  if (safeItem.section === 'dictation') {
+  const durationText = formatStudyDuration(attempt.durationSec);
+  let progress = '';
+  if (safeItem.section === 'dictation' || String(safeItem.section || '').indexOf('practice-') === 0) {
     const total = Number(attempt.totalCount || attempt.answeredCount || 0);
     const correct = Number(attempt.correctCount || 0);
     const wrong = Number(attempt.wrongCount || Math.max(0, total - correct));
-    return formatText(tr('dictationProgress'), { correct, total, wrong });
+    progress = formatText(tr('dictationProgress'), { correct, total, wrong });
+    return durationText ? `${progress} · ${tr('durationLabel')} ${durationText}` : progress;
   }
   if (attempt.newLearned != null || attempt.reviewWords != null) {
-    return formatText(tr('vocabularyPlanProgress'), {
+    progress = formatText(tr('vocabularyPlanProgress'), {
       main: Number(attempt.mainWords || attempt.newLearned || 0),
       review: Number(attempt.reviewWords || 0),
       unfamiliar: Number(attempt.unfamiliar || 0)
     });
+    return durationText ? `${progress} · ${tr('durationLabel')} ${durationText}` : progress;
   }
-  return formatText(tr('memorizationProgress'), {
+  progress = formatText(tr('memorizationProgress'), {
     reviewed: Number(attempt.reviewed || 0),
     unfamiliar: Number(attempt.unfamiliar || 0)
   });
+  return durationText ? `${progress} · ${tr('durationLabel')} ${durationText}` : progress;
 }
 
 function isPlaceholderAnalysis(value) {

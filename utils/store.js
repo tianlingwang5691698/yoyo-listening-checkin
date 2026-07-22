@@ -725,8 +725,8 @@ async function getJuniorVocabularyPlan(onRefresh) {
   }, { onRefresh, useCache: false });
 }
 
-async function completeJuniorVocabularyPlan() {
-  return callCloud('completeJuniorVocabularyPlan', withSelectedStudent({}), { saved: false }, { useCache: false });
+async function completeJuniorVocabularyPlan(options) {
+  return callCloud('completeJuniorVocabularyPlan', withSelectedStudent(options || {}), { saved: false }, { useCache: false });
 }
 
 async function updateFlashcardReview(flashcardKey, result, card) {

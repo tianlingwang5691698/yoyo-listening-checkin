@@ -18,7 +18,7 @@
   </view>
 
   <view class="dictation-card" wx:if="{{mode === 'dictation' && current}}">
-    <view class="dictation-progress">{{currentIndex + 1}} / {{cards.length}}</view>
+    <view class="dictation-progress">{{currentIndex + 1}} / {{cards.length}} · {{texts.durationLabel}} {{durationText}}</view>
     <button class="dictation-play" bindtap="playCurrent">{{revealed ? texts.replay : texts.play}}</button>
     <view class="dictation-audio-hint" wx:if="{{audioFailed && !revealed}}"><text>{{texts.audioFailedHint}}</text><text>{{current.meaning}}</text></view>
     <input class="dictation-input {{revealed ? (current.correct ? 'is-correct' : 'is-wrong') : ''}}" value="{{inputValue}}" disabled="{{revealed}}" focus="{{!revealed}}" placeholder="{{texts.placeholder}}" bindinput="handleInput" bindconfirm="submitCurrent" />
@@ -33,6 +33,7 @@
     <view class="celebrate-burst"><text></text><text></text><text></text><text></text><text></text><text></text></view>
     <view class="complete-mark">✓</view><view class="complete-title">{{texts.completeTitle}}</view>
     <view class="complete-numbers"><view><text>{{totalCount}}</text><text>{{texts.total}}</text></view><view><text>{{correctCount}}</text><text>{{texts.correct}}</text></view><view><text>{{wrongCount}}</text><text>{{texts.wrong}}</text></view><view><text>{{accuracy}}%</text><text>{{texts.accuracy}}</text></view></view>
+    <view class="dictation-duration">{{texts.thisDuration}} {{durationText}}</view>
     <button class="dictation-action primary" disabled="{{saving}}" bindtap="backToMenu">{{texts.back}}</button>
     <button class="dictation-change-mode" disabled="{{saving}}" bindtap="changePracticeMode">{{texts.changeMode}}</button>
   </view>

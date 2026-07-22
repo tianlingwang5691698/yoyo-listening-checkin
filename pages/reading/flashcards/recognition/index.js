@@ -5,6 +5,7 @@ const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../
 const { createDictionaryVoicePlayer } = require('../../../../utils/dictionary-voice-player');
 const { buildRecognitionQuestions, isRecognitionTargetAllowed } = require('../../../../utils/vocabulary-recognition');
 const { resolveVocabularyEntry } = require('../../../../utils/vocabulary-phonetics');
+const { createVocabularySessionTimer, formatDuration } = require('../../../../utils/vocabulary-session-timer');
 
 const SESSION_LIMIT = 20;
 const MINIMUM_WORDS = 4;
@@ -67,6 +68,9 @@ Page({
     wrongCount: 0,
     skippedCount: 0,
     accuracy: 0,
+    durationSec: 0,
+    durationText: '',
+    saving: false,
     availableCount: 0,
     practiceCount: 0,
     audioLoading: false,
@@ -92,9 +96,14 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+    if (this.sessionTimer && this.data.mode === 'question') this.sessionTimer.resume();
+  },
+  onHide() {
+    if (this.sessionTimer) this.sessionTimer.pause();
   },
   onUnload() {
     this.clearCorrectAdvanceTimer();
+    if (this.sessionTimer) this.sessionTimer.reset();
     if (this.voicePlayer) this.voicePlayer.destroy();
   },
   async loadCards() {
@@ -155,6 +164,7 @@ Page({
       return;
     }
     this.sessionStartedAt = new Date().toISOString();
+    this.startSessionTimer();
     this.setData({
       mode: 'question',
       cards,
@@ -167,6 +177,9 @@ Page({
       wrongCount: 0,
       skippedCount: 0,
       accuracy: 0,
+      durationSec: 0,
+      durationText: formatDuration(0, this.data.language),
+      saving: false,
       audioFailed: false,
       audioLoading: false
     }, () => this.playCurrent());
@@ -230,11 +243,49 @@ Page({
     this.clearCorrectAdvanceTimer();
     const answered = Number(this.data.correctCount || 0) + Number(this.data.wrongCount || 0);
     const accuracy = answered ? Math.round(this.data.correctCount * 100 / answered) : 0;
-    this.setData({ mode: 'complete', accuracy, audioLoading: false });
+    const durationSec = this.sessionTimer ? this.sessionTimer.stop() : 0;
+    this.setData({ mode: 'complete', accuracy, durationSec, durationText: formatDuration(durationSec, this.data.language), audioLoading: false, saving: !this.data.previewMode });
     effects.playComplete({ voiceKey: 'flashcardComplete', voiceDelayMs: 800, onceKey: `recognition:${this.data.sourceId}:${this.sessionStartedAt || Date.now()}` });
-    if (!this.data.previewMode) this.saveLocalAttempt(accuracy);
+    if (!this.data.previewMode) this.saveAttempt(accuracy, durationSec);
   },
-  saveLocalAttempt(accuracy) {
+  startSessionTimer() {
+    if (!this.sessionTimer) {
+      this.sessionTimer = createVocabularySessionTimer((durationSec) => {
+        if (this.data.mode === 'question') this.setData({ durationSec, durationText: formatDuration(durationSec, this.data.language) });
+      });
+    }
+    this.sessionTimer.start();
+  },
+  async saveAttempt(accuracy, durationSec) {
+    this.saveLocalAttempt(accuracy, durationSec);
+    const result = await store.saveVocabularyDictationAttempt({
+      attemptId: `${this.data.sourceId}:${this.data.practiceMode}:${this.sessionStartedAt}`,
+      sourceId: this.data.sourceId,
+      sourceTitle: this.data.sourceTitle,
+      practiceMode: this.data.practiceMode,
+      startedAt: this.sessionStartedAt,
+      durationSec,
+      questions: this.data.results.map((item) => ({
+        word: item.word,
+        phonetic: item.phonetic,
+        meaning: item.meaning,
+        input: item.selectedText || '',
+        answer: item.meaning,
+        correct: !!item.correct
+      }))
+    });
+    if (!result.saved) {
+      const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+      this.setData({ saving: false, debugLines: [
+        `DEBUG: reading/flashcards/recognition.saveAttempt -> store.saveVocabularyDictationAttempt -> cloud.saveVocabularyDictationAttempt.saved：${result.saved}`,
+        `sourceId=${this.data.sourceId}；targetChildId=${target.targetChildId || 'self'}；syncMode=${result.syncMode || 'unknown'}；cloudError.message=${result.cloudError && result.cloudError.message || result.reason || 'missing'}`
+      ] });
+      wx.showToast({ title: this.data.texts.saveFailed || '记录保存失败', icon: 'none' });
+      return;
+    }
+    this.setData({ saving: false, debugLines: [] });
+  },
+  saveLocalAttempt(accuracy, durationSec) {
     try {
       const key = localAttemptKey(this.data.sourceId, this.data.practiceMode);
       const attempts = wx.getStorageSync(key) || [];
@@ -246,14 +297,16 @@ Page({
         correctCount: this.data.correctCount,
         wrongCount: this.data.wrongCount,
         skippedCount: this.data.skippedCount,
-        accuracy
+        accuracy,
+        durationSec
       });
       wx.setStorageSync(key, attempts.slice(0, 20));
     } catch (error) {}
   },
   retryPractice() {
     this.clearCorrectAdvanceTimer();
-    this.setData({ mode: 'menu' });
+    if (this.sessionTimer) this.sessionTimer.reset();
+    this.setData({ mode: 'menu', durationSec: 0, durationText: '', saving: false });
   },
   changePracticeMode() {
     wx.redirectTo({ url: `/pages/reading/flashcards/practice/index?level=${encodeURIComponent(this.data.level)}&title=${encodeURIComponent(this.data.sourceTitle)}` });
@@ -275,7 +328,8 @@ Page({
         this.voicePlayer.destroy();
         this.voicePlayer = null;
       }
-      this.setData({ mode: 'menu', audioLoading: false });
+      if (this.sessionTimer) this.sessionTimer.reset();
+      this.setData({ mode: 'menu', audioLoading: false, durationSec: 0, durationText: '' });
       return;
     }
     wx.navigateBack({ delta: 1 });
