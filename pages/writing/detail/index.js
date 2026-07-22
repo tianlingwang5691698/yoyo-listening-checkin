@@ -10,28 +10,13 @@ const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fall
 
 const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV4';
 
-const LEGACY_REQUIREMENT_POINTS = {
-  'sh-autumn-2009-writing': [
-    '你感兴趣的课程',
-    '你期望从这门课程中学到什么',
-    '为什么想学这些内容'
-  ]
-};
-
 function buildPromptDisplay(prompt) {
-  const display = promptDisplay.buildPromptDisplay(prompt, {
+  return promptDisplay.buildPromptDisplay(prompt, {
     taskTitle: text('taskTitle', '写作任务'),
     referenceTitle: text('referenceTitle', '参考问题'),
     requirementsTitle: text('requirementsTitle', '写作要点'),
     noticeTitle: text('noticeTitle', '注意事项')
   });
-  const legacy = LEGACY_REQUIREMENT_POINTS[String(prompt && prompt._id || '')] || [];
-  if (legacy.length && display.requirements.length < 2) display.requirements = legacy.slice();
-  if (legacy.length) {
-    const firstPointIndex = display.scenario.indexOf(legacy[0]);
-    if (firstPointIndex >= 0) display.scenario = promptDisplay.cleanPromptText(display.scenario.slice(0, firstPointIndex));
-  }
-  return display;
 }
 
 const cleanPromptText = promptDisplay.cleanPromptText;
