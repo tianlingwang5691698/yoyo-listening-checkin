@@ -700,6 +700,44 @@ test('跟读评分必须收到腾讯 SOE 有效结果', () => {
   assert.match(engineSource, /sampleRate:\s*16000|server_engine_type/);
 });
 
+test('雅思评分提交 Part 并展示官方四项 Band', async () => {
+  let submitted = null;
+  const page = createPageInstance(loadSpeakingPage({
+    getDeviceStudyRole() { return 'student'; },
+    async createSpeakingUploadUrl() { return { cloudPath: '_speaking/ielts-answer.mp3' }; },
+    async uploadSpeakingAudio() { return 'cloud://test/ielts-answer.mp3'; },
+    async submitSpeakingAttempt(payload) {
+      submitted = payload;
+      return {
+        attempt: {
+          status: 'scored',
+          ieltsPart: 3,
+          ieltsOverallBand: 7.5,
+          ieltsFluencyCoherenceBand: 7,
+          ieltsLexicalResourceBand: 8,
+          ieltsGrammaticalRangeAccuracyBand: 7,
+          ieltsPronunciationBand: 8,
+          feedback: '观点展开清楚，下一步增加更灵活的复杂句。'
+        }
+      };
+    }
+  }));
+  page.playScoreEffect = () => {};
+  page.data.tempFilePath = '/tmp/ielts-answer.mp3';
+  page.data.recordDurationMs = 42000;
+  page.data.activeId = 'ielts-21-part-3-topic-1-question-2';
+  page.data.activeExercise = { id: 'ielts-21-part-3', prompt: 'Why do cities need public parks?' };
+  page.data.activeIeltsQuestion = { part: 3 };
+
+  await page.submitIeltsSpeaking();
+
+  assert.equal(submitted.ieltsPart, 3);
+  assert.equal(submitted.questionViewKey, 'ielts-21-part-3-topic-1-question-2');
+  assert.equal(page.data.result.overallBand, 7.5);
+  assert.equal(page.data.result.lexicalResourceBand, 8);
+  assert.equal(page.data.result.pronunciationBand, 8);
+});
+
 test('佑佑每日跟读直达指定段落片段而不是整段', () => {
   const page = createPageInstance(loadSpeakingPage({}));
   page.queueQuestionAutoPlay = () => {};

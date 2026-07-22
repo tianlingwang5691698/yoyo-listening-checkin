@@ -1127,6 +1127,109 @@ function parseContentScoreData(data) {
   };
 }
 
+function roundIeltsOverallBand(value) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return 0;
+  return Math.max(0, Math.min(9, Math.round(numeric * 2) / 2));
+}
+
+function normalizeIeltsCriterionBand(value) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return 0;
+  return Math.max(0, Math.min(9, Math.round(numeric)));
+}
+
+function inferIeltsPart(payload) {
+  const direct = Number(payload && payload.ieltsPart || 0);
+  if ([1, 2, 3].includes(direct)) return direct;
+  const source = [
+    payload && payload.questionViewKey,
+    payload && payload.taskId,
+    payload && payload.promptText
+  ].filter(Boolean).join(' ');
+  const match = source.match(/part[\s_-]*([123])/i);
+  return match ? Number(match[1]) : 0;
+}
+
+function getTencentSoeEvidenceScore(soeResult) {
+  if (!soeResult) return NaN;
+  const weighted = [
+    [Number(soeResult.score), 0.4],
+    [Number(soeResult.accuracy), 0.3],
+    [Number(soeResult.fluency), 0.2],
+    [Number(soeResult.completion), 0.1]
+  ].filter(([value]) => Number.isFinite(value));
+  if (!weighted.length) return NaN;
+  const totalWeight = weighted.reduce((sum, item) => sum + item[1], 0);
+  return weighted.reduce((sum, item) => sum + (item[0] * item[1]), 0) / totalWeight;
+}
+
+function mapTencentSoeToIeltsPronunciationBand(soeResult) {
+  const evidence = getTencentSoeEvidenceScore(soeResult);
+  if (!Number.isFinite(evidence)) return 0;
+  if (evidence >= 97) return 9;
+  if (evidence >= 91) return 8;
+  if (evidence >= 84) return 7;
+  if (evidence >= 75) return 6;
+  if (evidence >= 65) return 5;
+  if (evidence >= 52) return 4;
+  if (evidence >= 38) return 3;
+  if (evidence >= 22) return 2;
+  return 1;
+}
+
+function getIeltsPartInstruction(part) {
+  if (part === 2) {
+    return 'Part 2 is the long turn: assess sustained speech, coverage and logical organisation of the cue-card topic. Use duration as evidence; a very short answer cannot fully demonstrate topic development.';
+  }
+  if (part === 3) {
+    return 'Part 3 is an abstract discussion: assess how well the candidate explains opinions and analyses, discusses or speculates about the issue with relevant development.';
+  }
+  return 'Part 1 is an interview on familiar topics: assess a direct, relevant and naturally extended answer. Do not penalise an appropriately concise answer as if it were a Part 2 long turn.';
+}
+
+function buildIeltsScoreBody(payload, transcript, soeResult) {
+  const part = inferIeltsPart(payload);
+  const soeEvidence = getTencentSoeEvidenceScore(soeResult);
+  return {
+    temperature: 0,
+    messages: [{
+      role: 'user',
+      content: [
+        'You are an IELTS Speaking practice assessor. Apply the official public IELTS Speaking Band Descriptors strictly.',
+        'Assess only these three criteria from the transcript and delivery evidence: Fluency and Coherence, Lexical Resource, and Grammatical Range and Accuracy.',
+        'Return JSON only: {"fluencyCoherenceBand": integer, "lexicalResourceBand": integer, "grammaticalRangeAccuracyBand": integer, "feedback": "concise Chinese feedback", "suggestedAnswer": "natural English example"}.',
+        'Each criterion must be a whole Band from 1 to 9. Select the highest band whose positive features are fully demonstrated; do not award half bands for criteria.',
+        'Fluency and Coherence: continuity, hesitation/repetition/self-correction, logical sequencing, cohesive devices and topic development. Use the Tencent delivery evidence and duration, but do not invent audio features.',
+        'Lexical Resource: range, precision, appropriacy, collocation, less-common or idiomatic language, and paraphrase.',
+        'Grammatical Range and Accuracy: range and flexibility of structures, error-free sentences, simple/complex forms, and whether errors impede communication.',
+        'Do not score factual correctness or agreement with the opinion. Judge the language performance and relevance to the prompt.',
+        getIeltsPartInstruction(part),
+        'Pronunciation is scored separately from the audio by Tencent SOE; do not output a pronunciation band.',
+        `IELTS part: ${part || 'unknown'}`,
+        `Prompt:\n${payload.promptText || payload.questionText || ''}`,
+        `Student transcript:\n${transcript}`,
+        `Recorded duration milliseconds: ${Number(payload.answerDurationMs || 0)}`,
+        `Tencent SOE delivery evidence (0-100, not an IELTS band): ${Number.isFinite(soeEvidence) ? Math.round(soeEvidence) : 'unavailable'}`,
+        'Feedback must briefly identify one demonstrated strength and one specific next improvement tied to the awarded descriptors.'
+      ].join('\n')
+    }]
+  };
+}
+
+function parseIeltsScoreData(data) {
+  const content = data && data.choices && data.choices[0] && data.choices[0].message
+    ? data.choices[0].message.content
+    : '';
+  const parsed = parseJsonResponseText(extractMessageText(content)) || {};
+  return {
+    parsed,
+    fluencyCoherenceBand: normalizeIeltsCriterionBand(parsed.fluencyCoherenceBand),
+    lexicalResourceBand: normalizeIeltsCriterionBand(parsed.lexicalResourceBand),
+    grammaticalRangeAccuracyBand: normalizeIeltsCriterionBand(parsed.grammaticalRangeAccuracyBand)
+  };
+}
+
 async function scoreSpeakingAttempt(payload) {
   const endpoint = String(process.env.SPEAKING_SCORE_ENDPOINT || '').trim();
   const transcribeEndpoint = normalizeTranscribeEndpoint(process.env.SPEAKING_TRANSCRIBE_ENDPOINT || inferTranscribeEndpoint(endpoint)).trim();
@@ -1162,6 +1265,8 @@ async function scoreSpeakingAttempt(payload) {
       errorType: 'configuration'
     };
   }
+  const isIeltsAttempt = String(payload.attemptType || '') === 'ielts_speaking';
+  const ieltsPart = inferIeltsPart(payload);
   try {
     console.log('[speaking-score-stage]', JSON.stringify({
       stage: 'download-audio-start',
@@ -1188,6 +1293,7 @@ async function scoreSpeakingAttempt(payload) {
     let transcript = '';
     let transcriptModel = '';
     let pronunciationScore = null;
+    let pronunciationResult = null;
     let transcribeError = null;
     for (const model of transcribeModels) {
       if (transcript) {
@@ -1251,6 +1357,7 @@ async function scoreSpeakingAttempt(payload) {
       try {
         const soeResult = await evaluateWithTencentSoe(audioBuffer, payload, transcript);
         if (soeResult) {
+          pronunciationResult = soeResult;
           pronunciationScore = soeResult.score;
           console.log('[speaking-score-stage]', JSON.stringify({
             stage: 'tencent-soe-ok',
@@ -1271,7 +1378,17 @@ async function scoreSpeakingAttempt(payload) {
         }));
       }
     }
-    if (requireTencentSoeScore && !Number.isFinite(Number(pronunciationScore))) {
+    if (isIeltsAttempt && !pronunciationResult) {
+      return {
+        score: 0,
+        transcript,
+        feedback: '发音证据暂时不可用，录音已保存，请稍后重新评分。',
+        status: 'score-pending',
+        error: 'missing-tencent-soe-evidence',
+        errorType: 'pronunciation-evidence'
+      };
+    }
+    if (!isIeltsAttempt && requireTencentSoeScore && !Number.isFinite(Number(pronunciationScore))) {
       pronunciationScore = estimateFluencyScore(transcript);
       console.warn('[speaking-score-stage]', JSON.stringify({
         stage: 'tencent-soe-fallback',
@@ -1288,7 +1405,7 @@ async function scoreSpeakingAttempt(payload) {
       attemptType: payload.attemptType || '',
       attemptIndex: payload.attemptIndex || 0
     }));
-    const contentBody = {
+    const contentBody = isIeltsAttempt ? buildIeltsScoreBody(payload, transcript, pronunciationResult) : {
       temperature: 0,
       messages: [{
         role: 'user',
@@ -1309,9 +1426,13 @@ async function scoreSpeakingAttempt(payload) {
       }]
     };
     let contentResult = await postJsonWithModelFallback(endpoint, authHeaders, contentBody, contentModel, fallbackContentModel, 'content-score');
-    let contentParsed = parseContentScoreData(contentResult.data);
+    let contentParsed = isIeltsAttempt ? parseIeltsScoreData(contentResult.data) : parseContentScoreData(contentResult.data);
+    const hasValidIeltsBands = (value) => value
+      && value.fluencyCoherenceBand > 0
+      && value.lexicalResourceBand > 0
+      && value.grammaticalRangeAccuracyBand > 0;
     if (
-      (!Number.isFinite(contentParsed.rawContentScore) || contentParsed.rawContentScore <= 0)
+      (isIeltsAttempt ? !hasValidIeltsBands(contentParsed) : (!Number.isFinite(contentParsed.rawContentScore) || contentParsed.rawContentScore <= 0))
       && fallbackContentModel
       && fallbackContentModel !== contentResult.model
     ) {
@@ -1326,7 +1447,7 @@ async function scoreSpeakingAttempt(payload) {
         model: fallbackContentModel,
         data: await postJsonWithRetry(endpoint, authHeaders, Object.assign({}, contentBody, { model: fallbackContentModel }), 'content-score-fallback')
       };
-      contentParsed = parseContentScoreData(contentResult.data);
+      contentParsed = isIeltsAttempt ? parseIeltsScoreData(contentResult.data) : parseContentScoreData(contentResult.data);
     }
     console.log('[speaking-score-stage]', JSON.stringify({
       stage: 'content-model-ok',
@@ -1336,6 +1457,48 @@ async function scoreSpeakingAttempt(payload) {
       attemptIndex: payload.attemptIndex || 0
     }));
     const parsed = contentParsed.parsed;
+    if (isIeltsAttempt) {
+      const pronunciationBand = mapTencentSoeToIeltsPronunciationBand(pronunciationResult);
+      if (!hasValidIeltsBands(contentParsed) || !pronunciationBand) {
+        return {
+          score: 0,
+          transcript,
+          feedback: '模型评分暂时失败，录音已保存，请重新提交评分。',
+          status: 'score-pending',
+          error: 'invalid-ielts-band-json',
+          errorType: 'model-output'
+        };
+      }
+      const overallBand = roundIeltsOverallBand((
+        contentParsed.fluencyCoherenceBand
+        + contentParsed.lexicalResourceBand
+        + contentParsed.grammaticalRangeAccuracyBand
+        + pronunciationBand
+      ) / 4);
+      const contentBandAverage = (
+        contentParsed.fluencyCoherenceBand
+        + contentParsed.lexicalResourceBand
+        + contentParsed.grammaticalRangeAccuracyBand
+      ) / 3;
+      return {
+        score: Math.round((overallBand / 9) * 100),
+        pronunciationFluencyScore: Math.round(getTencentSoeEvidenceScore(pronunciationResult)),
+        contentGrammarScore: Math.round((contentBandAverage / 9) * 100),
+        transcript,
+        feedback: buildFeedbackWithSuggestedAnswer(parsed.feedback, parsed.suggestedAnswer),
+        status: 'scored',
+        ieltsOverallBand: overallBand,
+        ieltsFluencyCoherenceBand: contentParsed.fluencyCoherenceBand,
+        ieltsLexicalResourceBand: contentParsed.lexicalResourceBand,
+        ieltsGrammaticalRangeAccuracyBand: contentParsed.grammaticalRangeAccuracyBand,
+        ieltsPronunciationBand: pronunciationBand,
+        ieltsPart,
+        ieltsAssessmentScope: 'practice-answer',
+        ieltsDescriptorVersion: 'official-public-speaking-band-descriptors',
+        scoreModel: contentResult.model,
+        pronunciationProvider: 'tencent-soe'
+      };
+    }
     const looseParsed = contentParsed.looseParsed;
     const rawContentScore = contentParsed.rawContentScore;
     if (!Number.isFinite(rawContentScore) || rawContentScore <= 0) {
@@ -1442,6 +1605,11 @@ function summarizeAttempts(items) {
 module.exports = {
   findQuestionFromTranscript,
   buildSourceTextFromTranscript,
+  roundIeltsOverallBand,
+  inferIeltsPart,
+  mapTencentSoeToIeltsPronunciationBand,
+  buildIeltsScoreBody,
+  parseIeltsScoreData,
   evaluateSpeakingPronunciation,
   scoreSpeakingAttempt,
   synthesizeFeedbackAudio,

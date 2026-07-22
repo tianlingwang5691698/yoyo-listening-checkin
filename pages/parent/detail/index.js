@@ -130,10 +130,12 @@ function normalizeSpeakingAttempt(item, index) {
   const pronunciationScore = Number(safeItem.pronunciationFluencyScore || 0);
   const completionScore = Number(safeItem.pronunciationCompletionScore || 0);
   const contentScore = Number(safeItem.contentGrammarScore || 0);
+  const ieltsOverallBand = Number(safeItem.ieltsOverallBand || 0);
+  const isIelts = safeItem.attemptType === 'ielts_speaking' && ieltsOverallBand > 0;
   const isRepeatRecording = safeItem.attemptType === 'unlock_sentence_repeat' || safeItem.attemptType === 'standalone_sentence_repeat';
   return {
     key: safeItem.attemptId || `${safeItem.taskId || 'task'}-${safeItem.attemptIndex || index}-${safeItem.createdAt || index}`,
-    title: isRepeatRecording ? tr('followRecording') : tr('answerRecording'),
+    title: isRepeatRecording ? tr('followRecording') : (isIelts ? `IELTS Speaking · Part ${Number(safeItem.ieltsPart || 0)}` : tr('answerRecording')),
     questionText: safeItem.questionText || tr('thisRecording'),
     studentTranscript: safeItem.studentTranscript || '',
     feedback: safeItem.feedback || '',
@@ -142,11 +144,19 @@ function normalizeSpeakingAttempt(item, index) {
     pronunciationScore,
     completionScore,
     contentScore,
+    isIelts,
+    ieltsOverallBand,
+    ieltsFluencyCoherenceBand: Number(safeItem.ieltsFluencyCoherenceBand || 0),
+    ieltsLexicalResourceBand: Number(safeItem.ieltsLexicalResourceBand || 0),
+    ieltsGrammaticalRangeAccuracyBand: Number(safeItem.ieltsGrammaticalRangeAccuracyBand || 0),
+    ieltsPronunciationBand: Number(safeItem.ieltsPronunciationBand || 0),
     status: safeItem.status || '',
-    scoreText: safeItem.status === 'score-pending' ? tr('scorePending') : (score ? formatText(tr('score'), { score }) : tr('saved')),
-    scoreDetailText: isRepeatRecording && (accuracyScore || pronunciationScore || completionScore)
+    scoreText: safeItem.status === 'score-pending' ? tr('scorePending') : (isIelts ? `Band ${ieltsOverallBand}` : (score ? formatText(tr('score'), { score }) : tr('saved'))),
+    scoreDetailText: isIelts
+      ? `流利与连贯 ${Number(safeItem.ieltsFluencyCoherenceBand || 0)} · 词汇 ${Number(safeItem.ieltsLexicalResourceBand || 0)} · 语法 ${Number(safeItem.ieltsGrammaticalRangeAccuracyBand || 0)} · 发音 ${Number(safeItem.ieltsPronunciationBand || 0)}`
+      : (isRepeatRecording && (accuracyScore || pronunciationScore || completionScore)
       ? formatText(tr('repeatScoreDetail'), { accuracy: accuracyScore, fluency: pronunciationScore, completion: completionScore })
-      : ((pronunciationScore || contentScore) ? formatText(tr('pronunciationContent'), { pronunciation: pronunciationScore || 0, content: contentScore || 0 }) : ''),
+      : ((pronunciationScore || contentScore) ? formatText(tr('pronunciationContent'), { pronunciation: pronunciationScore || 0, content: contentScore || 0 }) : '')),
     answerDurationText: formatDuration(safeItem.answerDurationMs),
     createdTimeText: formatClock(safeItem.createdAt),
     answerAudioFileId: safeItem.answerAudioFileId || '',

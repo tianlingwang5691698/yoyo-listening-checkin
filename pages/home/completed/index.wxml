@@ -37,7 +37,8 @@
               <view>{{attempt.displayTitle}}</view>
               <text>{{attempt.scoreText}}</text>
             </view>
-            <view class="library-return-attempt-copy">{{texts.pronunciationFluency}} {{attempt.pronunciationFluencyScore || 0}} / {{texts.contentGrammar}} {{attempt.contentGrammarScore || 0}}</view>
+            <view class="library-return-attempt-copy" wx:if="{{attempt.isIelts}}">流利与连贯 {{attempt.ieltsFluencyCoherenceBand}} · 词汇 {{attempt.ieltsLexicalResourceBand}} · 语法 {{attempt.ieltsGrammaticalRangeAccuracyBand}} · 发音 {{attempt.ieltsPronunciationBand}}</view>
+            <view class="library-return-attempt-copy" wx:else>{{texts.pronunciationFluency}} {{attempt.pronunciationFluencyScore || 0}} / {{texts.contentGrammar}} {{attempt.contentGrammarScore || 0}}</view>
             <view class="library-return-attempt-copy" wx:if="{{attempt.questionText}}">{{texts.questionPrefix}}{{attempt.questionText}}</view>
             <view class="library-return-attempt-copy" wx:if="{{attempt.studentTranscript}}">{{texts.answerPrefix}}{{attempt.studentTranscript}}</view>
             <view class="library-return-attempt-feedback">{{attempt.feedback || texts.noAnalysis}}</view>
@@ -115,7 +116,8 @@
             <view class="attempt-title">{{attempt.displayTitle}}</view>
             <view class="attempt-score">{{attempt.scoreText}}</view>
           </view>
-          <view class="attempt-subscore">{{texts.pronunciationFluency}} {{attempt.pronunciationFluencyScore || 0}} / {{texts.contentGrammar}} {{attempt.contentGrammarScore || 0}}</view>
+          <view class="attempt-subscore" wx:if="{{attempt.isIelts}}">流利与连贯 {{attempt.ieltsFluencyCoherenceBand}} · 词汇 {{attempt.ieltsLexicalResourceBand}} · 语法 {{attempt.ieltsGrammaticalRangeAccuracyBand}} · 发音 {{attempt.ieltsPronunciationBand}}</view>
+          <view class="attempt-subscore" wx:else>{{texts.pronunciationFluency}} {{attempt.pronunciationFluencyScore || 0}} / {{texts.contentGrammar}} {{attempt.contentGrammarScore || 0}}</view>
           <view class="attempt-text" wx:if="{{attempt.questionText}}">{{texts.questionPrefix}}{{attempt.questionText}}</view>
           <view class="attempt-text" wx:if="{{attempt.studentTranscript}}">{{texts.answerPrefix}}{{attempt.studentTranscript}}</view>
           <view class="attempt-feedback">{{attempt.feedback || texts.noAnalysis}}</view>

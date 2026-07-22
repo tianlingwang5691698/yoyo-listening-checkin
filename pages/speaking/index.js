@@ -1698,6 +1698,8 @@ Page({
   async submitIeltsSpeaking() {
     if (!this.data.tempFilePath || this.data.submitting) return;
     const active = this.data.activeExercise;
+    const activeQuestion = this.data.activeIeltsQuestion || {};
+    const ieltsPart = Number(activeQuestion.part || 0);
     const planRunType = store.getDeviceStudyRole && store.getDeviceStudyRole() === 'student' ? 'normal' : 'preview';
     this.setData({ submitting: true, errorText: '', result: null });
     try {
@@ -1712,6 +1714,8 @@ Page({
         category: 'ielts-speaking',
         taskId: active.id,
         attemptType: 'ielts_speaking',
+        ieltsPart,
+        questionViewKey: this.data.activeId,
         promptText: active.prompt,
         answerAudioFileId: fileId,
         answerCloudPath: upload.cloudPath,
@@ -1719,12 +1723,19 @@ Page({
         planRunType
       });
       const attempt = response.attempt || {};
+      if (attempt.status !== 'scored' || !Number(attempt.ieltsOverallBand || 0)) {
+        throw new Error(attempt.scoreError || 'ielts-score-pending');
+      }
       this.setData({
         result: {
-          score: Number(attempt.score || 0),
-          accuracy: Number(attempt.contentGrammarScore || attempt.score || 0),
-          fluency: Number(attempt.pronunciationFluencyScore || attempt.score || 0),
-          completion: Number(attempt.score || 0)
+          isIeltsBand: true,
+          overallBand: Number(attempt.ieltsOverallBand || 0),
+          fluencyCoherenceBand: Number(attempt.ieltsFluencyCoherenceBand || 0),
+          lexicalResourceBand: Number(attempt.ieltsLexicalResourceBand || 0),
+          grammaticalRangeAccuracyBand: Number(attempt.ieltsGrammaticalRangeAccuracyBand || 0),
+          pronunciationBand: Number(attempt.ieltsPronunciationBand || 0),
+          ieltsPart: Number(attempt.ieltsPart || ieltsPart || 0),
+          feedback: attempt.feedback || ''
         },
         tempFilePath: ''
       });

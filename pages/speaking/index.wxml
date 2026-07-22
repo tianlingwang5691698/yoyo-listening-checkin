@@ -138,6 +138,17 @@
             <button class="ielts-score-button is-focus" wx:if="{{tempFilePath && !recording && !submitting}}" catchtap="scoreIeltsAnswer">{{texts.scoreAnswer}}</button>
             <view class="ielts-inline-state is-focus" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
               <view class="ielts-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+              <view class="ielts-band-result" wx:elif="{{result && result.isIeltsBand}}">
+                <view class="ielts-band-summary"><view><text>练习预估</text><text class="ielts-band-overall">Band {{result.overallBand}}</text></view><text>Part {{result.ieltsPart}}</text></view>
+                <view class="ielts-band-grid">
+                  <view><text>流利与连贯</text><text class="ielts-band-value">{{result.fluencyCoherenceBand}}</text><text class="ielts-band-en">Fluency &amp; Coherence</text></view>
+                  <view><text>词汇资源</text><text class="ielts-band-value">{{result.lexicalResourceBand}}</text><text class="ielts-band-en">Lexical Resource</text></view>
+                  <view><text>语法范围与准确性</text><text class="ielts-band-value">{{result.grammaticalRangeAccuracyBand}}</text><text class="ielts-band-en">Grammar</text></view>
+                  <view><text>发音</text><text class="ielts-band-value">{{result.pronunciationBand}}</text><text class="ielts-band-en">Pronunciation</text></view>
+                </view>
+                <view class="ielts-band-feedback" wx:if="{{result.feedback}}">{{result.feedback}}</view>
+                <view class="ielts-band-note">正式成绩由 IELTS 考官根据完整三部分评定</view>
+              </view>
               <view class="ielts-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
               <view class="ielts-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
             </view>
@@ -334,6 +345,17 @@
                 <button class="ielts-score-button is-focus" wx:if="{{tempFilePath && !recording && !submitting}}" catchtap="scoreIeltsAnswer">{{texts.scoreAnswer}}</button>
                 <view class="ielts-inline-state is-focus" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
                   <view class="ielts-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+                  <view class="ielts-band-result" wx:elif="{{result && result.isIeltsBand}}">
+                    <view class="ielts-band-summary"><view><text>练习预估</text><text class="ielts-band-overall">Band {{result.overallBand}}</text></view><text>Part {{result.ieltsPart}}</text></view>
+                    <view class="ielts-band-grid">
+                      <view><text>流利与连贯</text><text class="ielts-band-value">{{result.fluencyCoherenceBand}}</text><text class="ielts-band-en">Fluency &amp; Coherence</text></view>
+                      <view><text>词汇资源</text><text class="ielts-band-value">{{result.lexicalResourceBand}}</text><text class="ielts-band-en">Lexical Resource</text></view>
+                      <view><text>语法范围与准确性</text><text class="ielts-band-value">{{result.grammaticalRangeAccuracyBand}}</text><text class="ielts-band-en">Grammar</text></view>
+                      <view><text>发音</text><text class="ielts-band-value">{{result.pronunciationBand}}</text><text class="ielts-band-en">Pronunciation</text></view>
+                    </view>
+                    <view class="ielts-band-feedback" wx:if="{{result.feedback}}">{{result.feedback}}</view>
+                    <view class="ielts-band-note">正式成绩由 IELTS 考官根据完整三部分评定</view>
+                  </view>
                   <view class="ielts-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
                   <view class="ielts-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
                 </view>

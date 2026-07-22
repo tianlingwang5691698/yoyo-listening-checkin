@@ -31,7 +31,12 @@ function normalizeItems(items) {
   return (items || []).map((item, index) => {
     const attempts = (item.attempts || []).map((attempt, attemptIndex) => Object.assign({}, attempt, {
       displayTitle: t('attempt', { n: attemptIndex + 1 }),
-      scoreText: attempt.status === 'score-pending' ? t('pendingScore') : `${Number(attempt.score || 0)} ${t('points')}`
+      isIelts: attempt.attemptType === 'ielts_speaking' && Number(attempt.ieltsOverallBand || 0) > 0,
+      scoreText: attempt.status === 'score-pending'
+        ? t('pendingScore')
+        : (attempt.attemptType === 'ielts_speaking' && Number(attempt.ieltsOverallBand || 0) > 0
+          ? `Band ${Number(attempt.ieltsOverallBand)}`
+          : `${Number(attempt.score || 0)} ${t('points')}`)
     }));
     const latestAttempt = attempts.length ? attempts[attempts.length - 1] : null;
     return Object.assign({}, item, {
