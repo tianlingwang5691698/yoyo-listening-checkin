@@ -1,5 +1,10 @@
 # 小程序设计语言与改动记录
 
+### 2026-07-22 v10.2.0 主包减包
+
+- 口语页从主包迁入普通分包，页面路径、四主题交互和公共模块依赖保持不变；进入口语时才加载页面代码。
+- 修复主包源码 2060KB 超过微信 2048KB 上传限制；版本号统一更新为 `v10.2.0`。
+
 ### 2026-07-22 写作评分按考试任务展示
 
 - IELTS Writing Task 1/2 批改报告按 Task Achievement/Response、Coherence and Cohesion、Lexical Resource、Grammatical Range and Accuracy 展示四项 Band 分。

@@ -108,6 +108,15 @@ test('小程序上传包排除非运行时工程目录', () => {
   });
 });
 
+test('口语页使用普通分包，避免主包超过 2MB', () => {
+  const app = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8'));
+  const speakingPackage = (app.subPackages || []).find((item) => item.root === 'pages/speaking');
+  assert.ok(speakingPackage, '口语页必须注册在普通分包');
+  assert.notEqual(speakingPackage.independent, true, '口语页依赖主包公共模块，不能设为独立分包');
+  assert.deepEqual(speakingPackage.pages, ['index']);
+  assert.equal((app.pages || []).includes('pages/speaking/index'), false);
+});
+
 test('阶段详情只加载轻量语法目录', () => {
   const catalogPath = path.join(root, 'cloudfunctions/yoyo/data/grammar-plan-catalog.json');
   const raw = fs.readFileSync(catalogPath, 'utf8');
