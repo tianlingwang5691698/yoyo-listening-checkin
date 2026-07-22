@@ -274,8 +274,8 @@ Page({
     levels: SPEAKING_LEVELS,
     selectedLevel: 'A2',
     repeatSeries: getSpeakingSeries('A2'),
-    selectedSeriesId: getSpeakingSeries('A2')[0].id,
-    selectedSeries: getSpeakingSeries('A2')[0],
+    selectedSeriesId: '',
+    selectedSeries: {},
     repeatAudios: [],
     selectedAudioIndex: 0,
     selectedAudioId: '',
@@ -287,6 +287,10 @@ Page({
     repeatParagraphLoading: false,
     repeatLoadError: '',
     audioPickerVisible: false,
+    audioPickerType: '',
+    audioPickerTitle: '',
+    audioPickerUnit: '',
+    audioPickerSelectedId: '',
     audioPickerQuery: '',
     audioPickerAudios: [],
     audioPickerScrollIntoView: '',
@@ -327,7 +331,7 @@ Page({
     ieltsSourceExpanded: false
   }),
 
-  onLoad() {
+  onLoad(options = {}) {
     this.speakingPerf = page.startPagePerf('speaking');
     page.syncTheme(this);
     this.repeatCatalogCache = {};
@@ -338,10 +342,16 @@ Page({
     this.questionPlaybackRequestToken = 0;
     this.ieltsIntroPlaybackRequestToken = 0;
     this.selectedRepeatTask = null;
-    let selectedLevel = 'A2';
+    this.repeatPlanRequest = String(options.dailyPlan || '') === 'unlock1'
+      ? {
+        audioTaskId: String(options.audioTaskId || ''),
+        paragraphIndex: Math.max(1, Number(options.paragraphIndex || 1))
+      }
+      : null;
+    let selectedLevel = this.repeatPlanRequest ? 'A1' : 'A2';
     try {
       const storedLevel = String(wx.getStorageSync(SPEAKING_LEVEL_KEY) || '');
-      if (SPEAKING_LEVELS.some((item) => item.id === storedLevel)) {
+      if (!this.repeatPlanRequest && SPEAKING_LEVELS.some((item) => item.id === storedLevel)) {
         selectedLevel = storedLevel;
       }
     } catch (error) {}
@@ -349,8 +359,8 @@ Page({
     this.setData({
       selectedLevel,
       repeatSeries,
-      selectedSeriesId: repeatSeries[0].id,
-      selectedSeries: repeatSeries[0]
+      selectedSeriesId: '',
+      selectedSeries: {}
     });
     this.recorderManager = wx.getRecorderManager();
     this.recorderManager.onStop((res) => this.handleRecordingStopped(res));
@@ -431,6 +441,41 @@ Page({
       cacheHit: true,
       exercises: 0
     });
+    if (this.repeatPlanRequest) {
+      wx.nextTick(() => this.openDailyRepeatPlan());
+    }
+  },
+
+  async openDailyRepeatPlan() {
+    const request = this.repeatPlanRequest;
+    if (!request) return;
+    const selectedSeries = getSpeakingSeries('A1').find((item) => item.id === 'unlock1');
+    this.setData({
+      selectedLevel: 'A1',
+      repeatSeries: getSpeakingSeries('A1'),
+      selectedSeriesId: 'unlock1',
+      selectedSeries,
+      viewMode: 'repeat-select',
+      pageTitle: '今日 Unlock 1 跟读',
+      pageCopy: '逐句听原音并完成跟读评分。'
+    });
+    const catalog = await this.loadRepeatSeriesCatalog(selectedSeries);
+    const audioIndex = (this.data.repeatAudios || []).findIndex((item) => item.taskId === request.audioTaskId);
+    if (!catalog || audioIndex < 0) {
+      console.warn(`[speaking-daily-plan] pages/speaking.openDailyRepeatPlan -> catalog/audio: missing; taskId=${request.audioTaskId}`);
+      this.setData({ repeatLoadError: '今日跟读内容加载失败，请返回后重试。' });
+      return;
+    }
+    await this.selectRepeatAudio({ currentTarget: { dataset: { audioIndex } } });
+    const paragraphId = `${request.audioTaskId}-paragraph-${request.paragraphIndex}`;
+    const paragraph = (this.data.repeatParagraphs || []).find((item) => item.id === paragraphId);
+    if (!paragraph) {
+      console.warn(`[speaking-daily-plan] pages/speaking.openDailyRepeatPlan -> transcript/paragraph: missing; taskId=${request.audioTaskId}; paragraphIndex=${request.paragraphIndex}`);
+      this.setData({ repeatLoadError: '今日指定段落加载失败，请返回后重试。' });
+      return;
+    }
+    this.selectRepeatParagraph({ currentTarget: { dataset: { paragraphId } } });
+    this.startSelectedRepeat();
   },
 
   onShow() {
@@ -507,9 +552,7 @@ Page({
       ieltsSourceImages: [],
       ieltsSourceExpanded: false
     });
-    if (!this.data.repeatAudios.length) {
-      await this.loadRepeatLevel(this.data.selectedLevel);
-    }
+    if (!this.data.repeatSeries.length) await this.loadRepeatLevel(this.data.selectedLevel);
   },
 
   loadRepeatCatalog(levelId, series) {
@@ -548,12 +591,14 @@ Page({
 
   async loadRepeatLevel(selectedLevel) {
     const repeatSeries = getSpeakingSeries(selectedLevel);
-    const selectedSeries = repeatSeries[0];
+    this.repeatRequestToken += 1;
+    this.repeatTranscriptToken = '';
+    this.selectedRepeatTask = null;
     this.setData({
       selectedLevel,
       repeatSeries,
-      selectedSeriesId: selectedSeries.id,
-      selectedSeries,
+      selectedSeriesId: '',
+      selectedSeries: {},
       repeatAudios: [],
       selectedAudioIndex: 0,
       selectedAudioId: '',
@@ -563,18 +608,24 @@ Page({
       selectedParagraph: {},
       repeatLoadError: '',
       audioPickerVisible: false,
+      audioPickerType: '',
+      audioPickerTitle: '',
+      audioPickerUnit: '',
+      audioPickerSelectedId: '',
       audioPickerQuery: '',
       audioPickerAudios: [],
       audioPickerScrollIntoView: '',
       audioPickerListHeight: '58vh'
     });
-    return this.loadRepeatSeriesCatalog(selectedSeries);
+    return null;
   },
 
   async selectRepeatSeries(event) {
     const seriesId = String(event.currentTarget.dataset.seriesId || '');
     const selectedSeries = (this.data.repeatSeries || []).find((item) => item.id === seriesId);
-    if (!selectedSeries || selectedSeries.id === this.data.selectedSeriesId) return;
+    if (!selectedSeries) return;
+    this.closeRepeatAudioPicker();
+    if (selectedSeries.id === this.data.selectedSeriesId && this.data.repeatAudios.length) return;
     this.setData({ selectedSeriesId: selectedSeries.id, selectedSeries });
     await this.loadRepeatSeriesCatalog(selectedSeries);
   },
@@ -597,6 +648,10 @@ Page({
       selectedParagraphId: '',
       selectedParagraph: {},
       audioPickerVisible: false,
+      audioPickerType: '',
+      audioPickerTitle: '',
+      audioPickerUnit: '',
+      audioPickerSelectedId: '',
       audioPickerQuery: '',
       audioPickerAudios: [],
       audioPickerScrollIntoView: '',
@@ -611,15 +666,13 @@ Page({
       }
       if (!tasks.length) throw new Error('empty-audio-catalog');
       this.repeatCatalogCache[cacheKey] = result;
-      const selectedAudio = tasks[0];
       this.setData({
         repeatAudios: tasks,
         selectedAudioIndex: 0,
-        selectedAudioId: selectedAudio.id,
-        selectedAudio,
+        selectedAudioId: '',
+        selectedAudio: {},
         repeatAudioLoading: false
       });
-      this.loadRepeatTranscript(selectedAudio, requestToken);
       return result;
     } catch (error) {
       if (requestToken !== this.repeatRequestToken) return null;
@@ -650,6 +703,10 @@ Page({
       selectedAudioId: selectedAudio.id,
       selectedAudio,
       audioPickerVisible: false,
+      audioPickerType: '',
+      audioPickerTitle: '',
+      audioPickerUnit: '',
+      audioPickerSelectedId: '',
       audioPickerQuery: '',
       audioPickerAudios: [],
       audioPickerScrollIntoView: '',
@@ -664,11 +721,62 @@ Page({
 
   openRepeatAudioPicker() {
     if (this.data.repeatAudioLoading || !(this.data.repeatAudios || []).length) return;
-    const selectedAudioIndex = Math.max(0, Number(this.data.selectedAudioIndex || 0));
+    this.openRepeatContentPicker({
+      type: 'audio',
+      title: text('selectAudio', '选择音频'),
+      unit: text('audioUnit', ' 个音频'),
+      items: this.data.repeatAudios,
+      selectedId: this.data.selectedAudioId
+    });
+  },
+
+  openRepeatSeriesPicker() {
+    const items = (this.data.repeatSeries || []).map((item, index) => ({
+      id: item.id,
+      pickerIndex: index,
+      displayTitle: item.title,
+      meta: this.data.selectedLevel,
+      searchText: `${index + 1} ${item.title}`.toLowerCase().replace(/\s+/g, '')
+    }));
+    if (!items.length) return;
+    this.openRepeatContentPicker({
+      type: 'series',
+      title: text('selectSeries', '选择系列'),
+      unit: text('seriesUnit', ' 个系列'),
+      items,
+      selectedId: this.data.selectedSeriesId
+    });
+  },
+
+  openRepeatParagraphPicker() {
+    const items = (this.data.repeatParagraphs || []).map((item, index) => Object.assign({}, item, {
+      pickerIndex: index,
+      displayTitle: item.title,
+      searchText: `${index + 1} ${item.title} ${item.preview}`.toLowerCase().replace(/\s+/g, '')
+    }));
+    if (!items.length || this.data.repeatParagraphLoading) return;
+    this.openRepeatContentPicker({
+      type: 'paragraph',
+      title: text('selectParagraph', '选择段落'),
+      unit: text('paragraphUnit', ' 段'),
+      items,
+      selectedId: this.data.selectedParagraphId
+    });
+  },
+
+  openRepeatContentPicker(options) {
+    const config = options || {};
+    const items = Array.isArray(config.items) ? config.items : [];
+    const selectedIndex = Math.max(0, items.findIndex((item) => item.id === config.selectedId));
+    this.repeatPickerItems = items;
     this.setData({
       audioPickerVisible: true,
+      audioPickerType: config.type || '',
+      audioPickerTitle: config.title || '',
+      audioPickerUnit: config.unit || '',
+      audioPickerSelectedId: config.selectedId || '',
       audioPickerQuery: '',
-      audioPickerAudios: this.data.repeatAudios,
+      audioPickerAudios: items,
       audioPickerScrollIntoView: '',
       audioPickerListHeight: '58vh'
     });
@@ -676,7 +784,7 @@ Page({
     this.audioPickerScrollTimer = setTimeout(() => {
       this.audioPickerScrollTimer = null;
       if (this.data.audioPickerVisible) {
-        this.setData({ audioPickerScrollIntoView: `repeat-audio-option-${selectedAudioIndex}` });
+        this.setData({ audioPickerScrollIntoView: `repeat-audio-option-${selectedIndex}` });
       }
     }, 80);
   },
@@ -688,19 +796,25 @@ Page({
     }
     this.setData({
       audioPickerVisible: false,
+      audioPickerType: '',
+      audioPickerTitle: '',
+      audioPickerUnit: '',
+      audioPickerSelectedId: '',
       audioPickerQuery: '',
       audioPickerAudios: [],
       audioPickerScrollIntoView: '',
       audioPickerListHeight: '58vh'
     });
+    this.repeatPickerItems = [];
   },
 
   filterRepeatAudios(event) {
     const audioPickerQuery = String(event.detail && event.detail.value || '');
     const query = labels.decodeHtmlEntities(audioPickerQuery).toLowerCase().replace(/\s+/g, '');
+    const sourceItems = this.repeatPickerItems || [];
     const audioPickerAudios = query
-      ? (this.data.repeatAudios || []).filter((item) => String(item.searchText || '').includes(query))
-      : this.data.repeatAudios;
+      ? sourceItems.filter((item) => String(item.searchText || '').includes(query))
+      : sourceItems;
     const audioPickerListHeight = query && audioPickerAudios.length < 5
       ? `${Math.max(180, audioPickerAudios.length * 104 + 28)}rpx`
       : '58vh';
@@ -713,12 +827,26 @@ Page({
   },
 
   clearRepeatAudioSearch() {
+    const items = this.repeatPickerItems || [];
+    const selectedIndex = Math.max(0, items.findIndex((item) => item.id === this.data.audioPickerSelectedId));
     this.setData({
       audioPickerQuery: '',
-      audioPickerAudios: this.data.repeatAudios,
-      audioPickerScrollIntoView: `repeat-audio-option-${Math.max(0, Number(this.data.selectedAudioIndex || 0))}`,
+      audioPickerAudios: items,
+      audioPickerScrollIntoView: `repeat-audio-option-${selectedIndex}`,
       audioPickerListHeight: '58vh'
     });
+  },
+
+  selectRepeatPickerItem(event) {
+    const dataset = event && event.currentTarget && event.currentTarget.dataset || {};
+    const pickerType = this.data.audioPickerType;
+    if (pickerType === 'series') {
+      return this.selectRepeatSeries({ currentTarget: { dataset: { seriesId: dataset.pickerId } } });
+    }
+    if (pickerType === 'paragraph') {
+      return this.selectRepeatParagraph({ currentTarget: { dataset: { paragraphId: dataset.pickerId } } });
+    }
+    return this.selectRepeatAudio({ currentTarget: { dataset: { audioIndex: dataset.pickerIndex } } });
   },
 
   stopPickerEvent() {},
@@ -760,8 +888,8 @@ Page({
       this.selectedRepeatTask = Object.assign({}, fullTask, result.task || {});
       this.setData({
         repeatParagraphs: paragraphs,
-        selectedParagraphId: paragraphs[0].id,
-        selectedParagraph: paragraphs[0],
+        selectedParagraphId: '',
+        selectedParagraph: {},
         repeatParagraphLoading: false
       });
       return result;
@@ -781,6 +909,7 @@ Page({
     const paragraphId = String(event.currentTarget.dataset.paragraphId || '');
     const selectedParagraph = (this.data.repeatParagraphs || []).find((item) => item.id === paragraphId);
     if (!selectedParagraph) return;
+    this.closeRepeatAudioPicker();
     this.setData({ selectedParagraphId: selectedParagraph.id, selectedParagraph });
   },
 

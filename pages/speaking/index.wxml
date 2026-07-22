@@ -10,7 +10,7 @@
 
   <block wx:if="{{viewMode === 'home'}}">
     <view class="speaking-mode-list is-library">
-      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtouchstart="prefetchRepeatEntry" bindtap="openRepeatPractice">
+      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
         <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
         <view class="speaking-mode-copy">
           <view class="speaking-mode-title">{{texts.gradedRepeat}}</view>
@@ -45,6 +45,15 @@
   <block wx:elif="{{viewMode === 'repeat-select'}}">
     <view class="library-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
     <view class="repeat-selector is-library">
+      <view class="repeat-step-track">
+        <view class="repeat-step is-done"><text>1</text><view>{{texts.selectLevel}}</view></view>
+        <view class="repeat-step-line {{selectedSeriesId ? 'is-done' : ''}}"></view>
+        <view class="repeat-step {{selectedSeriesId ? 'is-done' : 'is-current'}}"><text>2</text><view>{{texts.selectSeries}}</view></view>
+        <view class="repeat-step-line {{selectedAudioId ? 'is-done' : ''}}"></view>
+        <view class="repeat-step {{selectedAudioId ? 'is-done' : (selectedSeriesId ? 'is-current' : '')}}"><text>3</text><view>{{texts.selectAudio}}</view></view>
+        <view class="repeat-step-line {{selectedParagraphId ? 'is-done' : ''}}"></view>
+        <view class="repeat-step {{selectedParagraphId ? 'is-done' : (selectedAudioId ? 'is-current' : '')}}"><text>4</text><view>{{texts.selectParagraph}}</view></view>
+      </view>
       <view class="repeat-selector-section">
         <view class="repeat-selector-heading"><view>{{texts.selectLevel}}</view><text>{{selectedLevel}}</text></view>
         <view class="library-level-tabs">
@@ -53,37 +62,35 @@
       </view>
       <view class="repeat-selector-section">
         <view class="repeat-selector-heading"><view>{{texts.selectSeries}}</view><text>{{repeatSeries.length}}{{texts.seriesUnit}}</text></view>
-        <scroll-view class="repeat-series-scroll" scroll-x="{{true}}" enable-flex="{{true}}" show-scrollbar="{{false}}">
-          <view class="repeat-series-row">
-            <view class="repeat-series-tab {{selectedSeriesId === item.id ? 'is-active' : ''}}" wx:for="{{repeatSeries}}" wx:key="id" data-series-id="{{item.id}}" bindtouchstart="prefetchRepeatSeries" bindtap="selectRepeatSeries">{{item.title}}</view>
-          </view>
-        </scroll-view>
+        <view class="repeat-audio-picker" hover-class="is-pressed" bindtap="openRepeatSeriesPicker">
+          <view class="repeat-picker-step">2</view>
+          <view class="repeat-audio-copy"><view>{{selectedSeries.title || texts.selectSeries}}</view><text>{{selectedSeriesId ? selectedLevel : texts.chooseSeriesHint}}</text></view>
+          <view class="repeat-picker-arrow">›</view>
+        </view>
       </view>
-      <view class="repeat-selector-section">
+      <view class="repeat-selector-section" wx:if="{{selectedSeriesId}}">
         <view class="repeat-selector-heading"><view>{{texts.selectAudio}}</view><text>{{repeatAudios.length}}{{texts.audioUnit}}</text></view>
         <view class="repeat-load-state" wx:if="{{repeatAudioLoading}}">{{texts.loadingAudio}}</view>
         <view wx:elif="{{repeatAudios.length}}" class="repeat-audio-picker" hover-class="is-pressed" bindtap="openRepeatAudioPicker">
-          <view class="repeat-audio-play"><view></view></view>
-          <view class="repeat-audio-copy"><view>{{selectedAudio.displayTitle}}</view><text>{{selectedAudio.meta}}</text></view>
-          <view class="repeat-picker-arrow">⌄</view>
+          <view class="repeat-picker-step">3</view>
+          <view class="repeat-audio-copy"><view>{{selectedAudio.displayTitle || texts.selectAudio}}</view><text>{{selectedAudioId ? selectedAudio.meta : texts.chooseAudioHint}}</text></view>
+          <view class="repeat-picker-arrow">›</view>
         </view>
+        <view class="repeat-load-state is-error" wx:elif="{{repeatLoadError}}">{{repeatLoadError}}</view>
         <view class="repeat-load-state" wx:else>{{texts.noAudio}}</view>
       </view>
-      <view class="repeat-selector-section">
+      <view class="repeat-selector-section" wx:if="{{selectedAudioId}}">
         <view class="repeat-selector-heading"><view>{{texts.selectParagraph}}</view><text>{{repeatParagraphs.length}}{{texts.paragraphUnit}}</text></view>
         <view class="repeat-load-state" wx:if="{{repeatParagraphLoading}}">{{texts.loadingParagraphs}}</view>
-        <scroll-view class="repeat-paragraph-scroll" wx:elif="{{repeatParagraphs.length}}" scroll-y="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
-          <view class="repeat-paragraph-list">
-            <view class="repeat-paragraph-row {{selectedParagraphId === item.id ? 'is-active' : ''}}" wx:for="{{repeatParagraphs}}" wx:key="id" data-paragraph-id="{{item.id}}" bindtap="selectRepeatParagraph">
-              <view class="repeat-paragraph-top"><view>{{item.title}}</view><text>{{item.meta}}</text></view>
-              <view class="repeat-paragraph-preview">{{item.preview}}</view>
-            </view>
-          </view>
-        </scroll-view>
+        <view wx:elif="{{repeatParagraphs.length}}" class="repeat-audio-picker" hover-class="is-pressed" bindtap="openRepeatParagraphPicker">
+          <view class="repeat-picker-step">4</view>
+          <view class="repeat-audio-copy"><view>{{selectedParagraph.title || texts.selectParagraph}}</view><text>{{selectedParagraphId ? selectedParagraph.meta : texts.chooseParagraphHint}}</text></view>
+          <view class="repeat-picker-arrow">›</view>
+        </view>
         <view class="repeat-load-state is-error" wx:elif="{{repeatLoadError}}">{{repeatLoadError}}</view>
         <view class="repeat-load-state" wx:else>{{texts.noTranscript}}</view>
       </view>
-      <button class="repeat-start-button {{!selectedParagraphId || repeatParagraphLoading ? 'is-disabled' : ''}}" disabled="{{!selectedParagraphId || repeatParagraphLoading}}" hover-class="is-pressed" bindtap="startSelectedRepeat">{{texts.startParagraph}}</button>
+      <button class="repeat-start-button" wx:if="{{selectedParagraphId && !repeatParagraphLoading}}" hover-class="is-pressed" bindtap="startSelectedRepeat">{{texts.startParagraph}}</button>
     </view>
   </block>
 
@@ -188,7 +195,7 @@
 
   <block wx:if="{{viewMode === 'home'}}">
     <view class="speaking-mode-list">
-      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtouchstart="prefetchRepeatEntry" bindtap="openRepeatPractice">
+      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
         <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
         <view class="speaking-mode-copy">
           <view class="speaking-mode-title">{{texts.gradedRepeat}}</view>
@@ -223,6 +230,15 @@
   <block wx:elif="{{viewMode === 'repeat-select'}}">
     <view class="speaking-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
     <view class="repeat-selector">
+      <view class="repeat-step-track">
+        <view class="repeat-step is-done"><text>1</text><view>{{texts.selectLevel}}</view></view>
+        <view class="repeat-step-line {{selectedSeriesId ? 'is-done' : ''}}"></view>
+        <view class="repeat-step {{selectedSeriesId ? 'is-done' : 'is-current'}}"><text>2</text><view>{{texts.selectSeries}}</view></view>
+        <view class="repeat-step-line {{selectedAudioId ? 'is-done' : ''}}"></view>
+        <view class="repeat-step {{selectedAudioId ? 'is-done' : (selectedSeriesId ? 'is-current' : '')}}"><text>3</text><view>{{texts.selectAudio}}</view></view>
+        <view class="repeat-step-line {{selectedParagraphId ? 'is-done' : ''}}"></view>
+        <view class="repeat-step {{selectedParagraphId ? 'is-done' : (selectedAudioId ? 'is-current' : '')}}"><text>4</text><view>{{texts.selectParagraph}}</view></view>
+      </view>
       <view class="repeat-selector-section">
         <view class="repeat-selector-heading"><view>{{texts.selectLevel}}</view><text>{{selectedLevel}}</text></view>
         <view class="speaking-level-tabs">
@@ -231,37 +247,35 @@
       </view>
       <view class="repeat-selector-section">
         <view class="repeat-selector-heading"><view>{{texts.selectSeries}}</view><text>{{repeatSeries.length}}{{texts.seriesUnit}}</text></view>
-        <scroll-view class="repeat-series-scroll" scroll-x="{{true}}" enable-flex="{{true}}" show-scrollbar="{{false}}">
-          <view class="repeat-series-row">
-            <view class="repeat-series-tab {{selectedSeriesId === item.id ? 'is-active' : ''}}" wx:for="{{repeatSeries}}" wx:key="id" data-series-id="{{item.id}}" bindtouchstart="prefetchRepeatSeries" bindtap="selectRepeatSeries">{{item.title}}</view>
-          </view>
-        </scroll-view>
+        <view class="repeat-audio-picker" hover-class="is-pressed" bindtap="openRepeatSeriesPicker">
+          <view class="repeat-picker-step">2</view>
+          <view class="repeat-audio-copy"><view>{{selectedSeries.title || texts.selectSeries}}</view><text>{{selectedSeriesId ? selectedLevel : texts.chooseSeriesHint}}</text></view>
+          <view class="repeat-picker-arrow">›</view>
+        </view>
       </view>
-      <view class="repeat-selector-section">
+      <view class="repeat-selector-section" wx:if="{{selectedSeriesId}}">
         <view class="repeat-selector-heading"><view>{{texts.selectAudio}}</view><text>{{repeatAudios.length}}{{texts.audioUnit}}</text></view>
         <view class="repeat-load-state" wx:if="{{repeatAudioLoading}}">{{texts.loadingAudio}}</view>
         <view wx:elif="{{repeatAudios.length}}" class="repeat-audio-picker" hover-class="is-pressed" bindtap="openRepeatAudioPicker">
-          <view class="repeat-audio-play"><view></view></view>
-          <view class="repeat-audio-copy"><view>{{selectedAudio.displayTitle}}</view><text>{{selectedAudio.meta}}</text></view>
-          <view class="repeat-picker-arrow">⌄</view>
+          <view class="repeat-picker-step">3</view>
+          <view class="repeat-audio-copy"><view>{{selectedAudio.displayTitle || texts.selectAudio}}</view><text>{{selectedAudioId ? selectedAudio.meta : texts.chooseAudioHint}}</text></view>
+          <view class="repeat-picker-arrow">›</view>
         </view>
+        <view class="repeat-load-state is-error" wx:elif="{{repeatLoadError}}">{{repeatLoadError}}</view>
         <view class="repeat-load-state" wx:else>{{texts.noAudio}}</view>
       </view>
-      <view class="repeat-selector-section">
+      <view class="repeat-selector-section" wx:if="{{selectedAudioId}}">
         <view class="repeat-selector-heading"><view>{{texts.selectParagraph}}</view><text>{{repeatParagraphs.length}}{{texts.paragraphUnit}}</text></view>
         <view class="repeat-load-state" wx:if="{{repeatParagraphLoading}}">{{texts.loadingParagraphs}}</view>
-        <scroll-view class="repeat-paragraph-scroll" wx:elif="{{repeatParagraphs.length}}" scroll-y="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
-          <view class="repeat-paragraph-list">
-            <view class="repeat-paragraph-row {{selectedParagraphId === item.id ? 'is-active' : ''}}" wx:for="{{repeatParagraphs}}" wx:key="id" data-paragraph-id="{{item.id}}" bindtap="selectRepeatParagraph">
-              <view class="repeat-paragraph-top"><view>{{item.title}}</view><text>{{item.meta}}</text></view>
-              <view class="repeat-paragraph-preview">{{item.preview}}</view>
-            </view>
-          </view>
-        </scroll-view>
+        <view wx:elif="{{repeatParagraphs.length}}" class="repeat-audio-picker" hover-class="is-pressed" bindtap="openRepeatParagraphPicker">
+          <view class="repeat-picker-step">4</view>
+          <view class="repeat-audio-copy"><view>{{selectedParagraph.title || texts.selectParagraph}}</view><text>{{selectedParagraphId ? selectedParagraph.meta : texts.chooseParagraphHint}}</text></view>
+          <view class="repeat-picker-arrow">›</view>
+        </view>
         <view class="repeat-load-state is-error" wx:elif="{{repeatLoadError}}">{{repeatLoadError}}</view>
         <view class="repeat-load-state" wx:else>{{texts.noTranscript}}</view>
       </view>
-      <button class="repeat-start-button {{!selectedParagraphId || repeatParagraphLoading ? 'is-disabled' : ''}}" disabled="{{!selectedParagraphId || repeatParagraphLoading}}" hover-class="is-pressed" bindtap="startSelectedRepeat">{{texts.startParagraph}}</button>
+      <button class="repeat-start-button" wx:if="{{selectedParagraphId && !repeatParagraphLoading}}" hover-class="is-pressed" bindtap="startSelectedRepeat">{{texts.startParagraph}}</button>
     </view>
   </block>
 
@@ -360,22 +374,22 @@
     <view class="repeat-audio-drawer-handle"></view>
     <view class="repeat-audio-drawer-head">
       <view>
-        <view class="repeat-audio-drawer-title">{{texts.selectAudio}}</view>
-        <view class="repeat-audio-drawer-count">{{audioPickerAudios.length}}{{texts.audioUnit}}</view>
+        <view class="repeat-audio-drawer-title">{{audioPickerTitle}}</view>
+        <view class="repeat-audio-drawer-count">{{audioPickerAudios.length}}{{audioPickerUnit}}</view>
       </view>
       <view class="repeat-audio-drawer-close" hover-class="is-pressed" bindtap="closeRepeatAudioPicker">×</view>
     </view>
     <view class="repeat-audio-search">
-          <input class="repeat-audio-search-input" value="{{audioPickerQuery}}" placeholder="{{texts.searchAudio}}" placeholder-class="repeat-audio-search-placeholder" confirm-type="search" bindinput="filterRepeatAudios" />
+          <input class="repeat-audio-search-input" value="{{audioPickerQuery}}" placeholder="{{texts.searchContent}}" placeholder-class="repeat-audio-search-placeholder" confirm-type="search" bindinput="filterRepeatAudios" />
       <view class="repeat-audio-search-clear" wx:if="{{audioPickerQuery}}" hover-class="is-pressed" bindtap="clearRepeatAudioSearch">×</view>
     </view>
     <scroll-view class="repeat-audio-option-scroll" style="height: {{audioPickerListHeight}};" scroll-y="{{true}}" enhanced="{{true}}" bounces="{{true}}" show-scrollbar="{{false}}" scroll-with-animation="{{true}}" scroll-into-view="{{audioPickerScrollIntoView}}">
-      <view class="repeat-audio-option {{selectedAudioId === item.id ? 'is-active' : ''}}" id="repeat-audio-option-{{item.pickerIndex}}" wx:for="{{audioPickerAudios}}" wx:key="id" data-audio-index="{{item.pickerIndex}}" hover-class="is-pressed" bindtap="selectRepeatAudio">
+      <view class="repeat-audio-option {{audioPickerSelectedId === item.id ? 'is-active' : ''}}" id="repeat-audio-option-{{item.pickerIndex}}" wx:for="{{audioPickerAudios}}" wx:key="id" data-picker-id="{{item.id}}" data-picker-index="{{item.pickerIndex}}" hover-class="is-pressed" bindtap="selectRepeatPickerItem">
         <view class="repeat-audio-option-number">{{item.pickerIndex + 1}}</view>
-        <view class="repeat-audio-option-copy"><view>{{item.displayTitle}}</view><text>{{item.meta}}</text></view>
+        <view class="repeat-audio-option-copy"><view>{{item.displayTitle}}</view><text>{{item.meta}}</text><text class="repeat-audio-option-preview" wx:if="{{audioPickerType === 'paragraph'}}">{{item.preview}}</text></view>
         <view class="repeat-audio-option-state"><view></view></view>
       </view>
-          <view class="repeat-audio-option-empty" wx:if="{{!audioPickerAudios.length}}">{{texts.noMatchingAudio}}</view>
+          <view class="repeat-audio-option-empty" wx:if="{{!audioPickerAudios.length}}">{{texts.noMatchingContent}}</view>
     </scroll-view>
   </view>
 </view>

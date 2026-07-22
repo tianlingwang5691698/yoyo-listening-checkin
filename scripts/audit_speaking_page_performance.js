@@ -5,7 +5,8 @@ const path = require('node:path');
 const automator = require('miniprogram-automator');
 
 const ROOT = path.resolve(__dirname, '..');
-const REPORT_PATH = path.join(ROOT, 'data', 'transcript-build', 'audio-performance', 'speaking-page-performance-20260722.json');
+const BASELINE_REPORT_PATH = path.join(ROOT, 'data', 'transcript-build', 'audio-performance', 'speaking-page-performance-20260722.json');
+const REPORT_PATH = path.join(ROOT, 'data', 'transcript-build', 'audio-performance', 'speaking-layered-performance-20260722.json');
 const PROGRESS_PATH = path.join('/tmp', 'speaking-page-performance-20260722.progress.json');
 const CLI_PATH = [
   process.env.WECHAT_DEVTOOLS_CLI,
@@ -158,14 +159,51 @@ async function measureIelts(page) {
   };
 }
 
+async function measureRepeatSelectorEntries(page) {
+  const results = [];
+  for (const theme of THEMES) {
+    await page.setData({ theme });
+    const startedAt = Date.now();
+    await callPageMethod(page, 'openRepeatPractice');
+    const ready = await waitForData(page, (data) => data.viewMode === 'repeat-select' && data.theme === theme);
+    const paragraphRows = await page.$$('.repeat-paragraph-row');
+    const visibleSections = await page.$$('.repeat-selector-section');
+    const onDemand = !ready.data.selectedSeriesId
+      && !ready.data.repeatAudios.length
+      && !ready.data.repeatParagraphs.length
+      && !ready.data.repeatAudioLoading
+      && !ready.data.repeatParagraphLoading;
+    results.push({
+      theme,
+      selectorReadyMs: Date.now() - startedAt,
+      automationPollMs: ready.ms,
+      visibleSectionCount: visibleSections.length,
+      renderedParagraphRows: paragraphRows.length,
+      catalogLoaded: ready.data.repeatAudios.length > 0,
+      transcriptLoaded: ready.data.repeatParagraphs.length > 0,
+      onDemand,
+      passed: onDemand && paragraphRows.length === 0 && visibleSections.length === 2
+    });
+    await callPageMethod(page, 'backToSpeakingHome');
+    await waitForData(page, (data) => data.viewMode === 'home');
+  }
+  return results;
+}
+
 async function measureSeriesRound(page, series, round) {
   await page.setData({
     theme: THEMES[(round - 1) % THEMES.length],
     viewMode: 'repeat-select',
     selectedLevel: series.levelId,
     repeatSeries: SERIES.filter((item) => item.levelId === series.levelId),
-    selectedSeriesId: series.id,
-    selectedSeries: series,
+    selectedSeriesId: '',
+    selectedSeries: {},
+    repeatAudios: [],
+    selectedAudioId: '',
+    selectedAudio: {},
+    repeatParagraphs: [],
+    selectedParagraphId: '',
+    selectedParagraph: {},
     ieltsMode: false,
     errorText: ''
   });
@@ -177,13 +215,16 @@ async function measureSeriesRound(page, series, round) {
     prefetchToCatalogMs = Date.now() - prefetchStartedAt;
   }
   const catalogStartedAt = Date.now();
-  await callPageMethod(page, 'loadRepeatSeriesCatalog', series);
+  await callPageMethod(page, 'selectRepeatSeries', { currentTarget: { dataset: { seriesId: series.id } } });
   const catalog = await waitForData(page, (data) => !data.repeatAudioLoading
     && data.selectedSeriesId === series.id
     && data.repeatAudios.length > 0, 20000);
   const catalogMs = Date.now() - catalogStartedAt;
+  const transcriptStartedAt = Date.now();
+  await callPageMethod(page, 'selectRepeatAudio', { currentTarget: { dataset: { audioIndex: 0 } } });
   const transcript = await waitForData(page, (data) => !data.repeatParagraphLoading
     && (data.repeatParagraphs.length > 0 || data.repeatLoadError), 30000);
+  const transcriptReadyMs = Date.now() - transcriptStartedAt;
 
   const catalogTargetMs = round === 1 ? COLD_TARGET_MS : CACHE_TARGET_MS;
   return {
@@ -199,7 +240,8 @@ async function measureSeriesRound(page, series, round) {
     catalogTargetMs,
     prefetchDwellMs: round === 1 ? IELTS_PREFETCH_DWELL_MS : 0,
     prefetchToCatalogMs,
-    transcriptReadyMs: transcript.ms,
+    transcriptReadyMs,
+    paragraphSelectedByDefault: !!transcript.data.selectedParagraphId,
     passed: catalogMs <= catalogTargetMs
   };
 }
@@ -216,10 +258,13 @@ async function measureThemePlayback(page) {
     errorText: ''
   });
   await callPageMethod(page, 'loadRepeatSeriesCatalog', series);
+  const catalog = await waitForData(page, (data) => !data.repeatAudioLoading && data.repeatAudios.length > 0, 20000);
+  await callPageMethod(page, 'selectRepeatAudio', { currentTarget: { dataset: { audioIndex: 0 } } });
   const ready = await waitForData(page, (data) => !data.repeatParagraphLoading && data.repeatParagraphs.length > 0, 30000);
+  await callPageMethod(page, 'selectRepeatParagraph', { currentTarget: { dataset: { paragraphId: ready.data.repeatParagraphs[0].id } } });
   const results = [];
   for (const theme of THEMES) {
-    await page.setData({ theme, viewMode: 'repeat-select', selectedParagraph: ready.data.selectedParagraph });
+    await page.setData({ theme, viewMode: 'repeat-select' });
     await callPageMethod(page, 'startSelectedRepeat');
     await page.setData({ viewMode: 'repeat-select' });
     await page.waitFor(160);
@@ -272,6 +317,7 @@ async function main() {
     const ielts = await measureIelts(page);
     await callPageMethod(page, 'backToSpeakingHome');
     await waitForData(page, (data) => data.viewMode === 'home');
+    const selectorEntries = await measureRepeatSelectorEntries(page);
 
     for (let seriesIndex = 0; seriesIndex < SERIES.length; seriesIndex += 1) {
       const series = SERIES[seriesIndex];
@@ -320,7 +366,7 @@ async function main() {
     const report = {
       generatedAt: new Date().toISOString(),
       complete: true,
-      passed: !failures.length && !playbackFailures.length && !exceptions.length && ielts.passed,
+      passed: !failures.length && !playbackFailures.length && !exceptions.length && ielts.passed && selectorEntries.every((item) => item.passed),
       thresholds: {
         cachedCatalogMs: CACHE_TARGET_MS,
         coldCatalogMs: COLD_TARGET_MS,
@@ -339,10 +385,13 @@ async function main() {
         homeLoadsNoCatalogOrTranscript: themes.every((item) => item.onDemandHome),
         ieltsIndexAfterEntryOnly: true,
         ieltsItemAfterTestSelectionOnly: true,
-        repeatCatalogAfterEntryOnly: true,
+        repeatEntryLoadsNoCatalogOrTranscript: selectorEntries.every((item) => item.onDemand),
+        repeatCatalogAfterSeriesSelectionOnly: true,
         transcriptAfterCurrentAudioSelectionOnly: true,
-        catalogDoesNotAwaitTranscript: true
+        catalogDoesNotAwaitTranscript: true,
+        paragraphTextOnlyInsideExplicitPicker: selectorEntries.every((item) => item.renderedParagraphRows === 0)
       },
+      selectorEntries,
       themes,
       ielts,
       rounds: ROUNDS,
@@ -357,6 +406,22 @@ async function main() {
       exceptions,
       samples
     };
+    let baseline = null;
+    try {
+      baseline = JSON.parse(fs.readFileSync(BASELINE_REPORT_PATH, 'utf8'));
+    } catch (error) {}
+    const baselineA2 = baseline && (baseline.samples || baseline.series || []).find((item) => item.category === 'newconcept2' && item.round === 1);
+    report.comparison = {
+      baselineReport: path.relative(ROOT, BASELINE_REPORT_PATH),
+      beforeEntryBehavior: '进入选择页后自动加载首个系列、首个音频和 transcript',
+      afterEntryBehavior: '进入选择页只渲染级别和系列，后续逐层按需加载',
+      beforeFirstTranscriptReadyMs: baselineA2 ? Number(baselineA2.transcriptReadyMs || 0) : null,
+      afterSelectorReadyMaxMs: Math.max(...selectorEntries.map((item) => item.selectorReadyMs)),
+      beforeInitialParagraphRows: baselineA2 ? Number(baselineA2.paragraphCount || 0) : null,
+      afterInitialParagraphRows: Math.max(...selectorEntries.map((item) => item.renderedParagraphRows)),
+      initialNetworkStagesBefore: 3,
+      initialNetworkStagesAfter: 0
+    };
     fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true });
     fs.writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`);
     console.log(JSON.stringify({
@@ -366,6 +431,8 @@ async function main() {
       maxColdCatalogMs: report.maxColdCatalogMs,
       maxCachedCatalogMs: report.maxCachedCatalogMs,
       maxClickToPlayMs: report.maxClickToPlayMs,
+      selectorEntries: report.selectorEntries,
+      comparison: report.comparison,
       ielts: report.ielts,
       failures: report.failures,
       playbackFailures: report.playbackFailures,

@@ -158,10 +158,11 @@ test('音频课程快照首屏不等待完整详情补齐', () => {
   assert.match(source, /finishLessonShowRefresh\(detail\)/);
 });
 
-test('口语首页和目录按需加载，系列目录不等待 transcript', () => {
+test('口语首页与分层选择按需加载，选音频后才读取 transcript', () => {
   const source = fs.readFileSync(path.join(root, 'pages/speaking/index.js'), 'utf8');
   const onLoadSource = source.slice(source.indexOf('  onLoad() {'), source.indexOf('  onShow() {'));
   const repeatSource = source.slice(source.indexOf('  async loadRepeatSeriesCatalog(series) {'), source.indexOf('  async selectRepeatAudio(event) {'));
+  const audioSource = source.slice(source.indexOf('  async selectRepeatAudio(event) {'), source.indexOf('  openRepeatAudioPicker() {'));
   const ieltsIndexSource = source.slice(source.indexOf('  async openIeltsSpeaking() {'), source.indexOf('  async selectIeltsTest(event) {'));
   const ieltsItemSource = source.slice(source.indexOf('  async selectIeltsTest(event) {'), source.indexOf('  queueIeltsIntroAutoPlay() {'));
   const template = fs.readFileSync(path.join(root, 'pages/speaking/index.wxml'), 'utf8');
@@ -169,12 +170,13 @@ test('口语首页和目录按需加载，系列目录不等待 transcript', () 
   assert.doesNotMatch(onLoadSource, /getMaterialIndex|getMaterialItem|getListeningMaterialCatalog|getTaskTranscript|synthesizeIeltsPromptAudio/);
   assert.match(repeatSource, /store\.getListeningMaterialCatalog/);
   assert.match(source, /loadRepeatCatalog\(levelId, series\)/);
-  assert.match(repeatSource, /this\.loadRepeatTranscript\(selectedAudio, requestToken\);\s*return result;/);
-  assert.doesNotMatch(repeatSource, /await this\.loadRepeatTranscript/);
+  assert.doesNotMatch(repeatSource, /loadRepeatTranscript/);
+  assert.match(audioSource, /await this\.loadRepeatTranscript\(selectedAudio, this\.repeatRequestToken\)/);
   assert.match(ieltsIndexSource, /store\.getMaterialIndex\(\{ moduleId: 'speaking' \}\)/);
   assert.match(source, /loadIeltsItem\(itemId\)/);
   assert.match(source, /store\.getMaterialItem\(\{ moduleId: 'speaking', itemId: key \}\)/);
   assert.equal((template.match(/bindtouchstart="prefetchIeltsTest"/g) || []).length, 2);
-  assert.equal((template.match(/bindtouchstart="prefetchRepeatEntry"/g) || []).length, 2);
-  assert.equal((template.match(/bindtouchstart="prefetchRepeatSeries"/g) || []).length, 2);
+  assert.equal((template.match(/bindtouchstart="prefetchRepeatEntry"/g) || []).length, 0);
+  assert.equal((template.match(/bindtouchstart="prefetchRepeatSeries"/g) || []).length, 0);
+  assert.equal((template.match(/class="repeat-paragraph-row/g) || []).length, 0);
 });

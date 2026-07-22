@@ -60,7 +60,7 @@ function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-test('分级跟读读取系列全部音频，并按 transcript 生成多段', async () => {
+test('分级跟读按级别、系列、音频、段落逐层按需加载', async () => {
   const tasks = Array.from({ length: 6 }, (_, index) => ({
     taskId: `newconcept2-${index + 1}`,
     category: 'newconcept2',
@@ -89,12 +89,18 @@ test('分级跟读读取系列全部音频，并按 transcript 生成多段', as
   const page = createPageInstance(loadSpeakingPage(store));
 
   await page.loadRepeatLevel('A2');
-  await wait(0);
+  assert.equal(page.data.selectedSeriesId, '');
+  assert.equal(page.data.repeatAudios.length, 0);
+  assert.equal(page.data.repeatParagraphs.length, 0);
+
+  page.openRepeatSeriesPicker();
+  assert.equal(page.data.audioPickerType, 'series');
+  assert.equal(page.data.audioPickerAudios.length, 7);
+  await page.selectRepeatPickerItem({ currentTarget: { dataset: { pickerId: 'newconcept2', pickerIndex: '0' } } });
 
   assert.equal(page.data.repeatAudios.length, 6);
-  assert.equal(page.data.selectedAudioId, 'newconcept2-1');
-  assert.equal(page.data.repeatParagraphs.length, 2);
-  assert.equal(page.data.repeatParagraphs[1].sentences[0].text, 'Thank you.');
+  assert.equal(page.data.selectedAudioId, '');
+  assert.equal(page.data.repeatParagraphs.length, 0);
 
   page.openRepeatAudioPicker();
   assert.equal(page.data.audioPickerVisible, true);
@@ -102,12 +108,21 @@ test('分级跟读读取系列全部音频，并按 transcript 生成多段', as
   page.filterRepeatAudios({ detail: { value: 'Lesson 5' } });
   assert.equal(page.data.audioPickerAudios.length, 1);
   assert.equal(page.data.audioPickerListHeight, '180rpx');
-  await page.selectRepeatAudio({ currentTarget: { dataset: { audioIndex: '4' } } });
+  await page.selectRepeatPickerItem({ currentTarget: { dataset: { pickerId: 'newconcept2-5', pickerIndex: '4' } } });
   assert.equal(page.data.selectedAudioId, 'newconcept2-5');
   assert.equal(page.data.audioPickerVisible, false);
+  assert.equal(page.data.repeatParagraphs.length, 2);
+  assert.equal(page.data.selectedParagraphId, '');
+  assert.equal(page.data.repeatParagraphs[1].sentences[0].text, 'Thank you.');
+
+  page.openRepeatParagraphPicker();
+  assert.equal(page.data.audioPickerType, 'paragraph');
+  assert.equal(page.data.audioPickerAudios.length, 2);
+  page.selectRepeatPickerItem({ currentTarget: { dataset: { pickerId: page.data.repeatParagraphs[1].id, pickerIndex: '1' } } });
+  assert.equal(page.data.selectedParagraphId, page.data.repeatParagraphs[1].id);
 });
 
-test('分级跟读目录先完成，transcript 在后台按当前音频补齐', async () => {
+test('分级跟读目录先完成，选择音频后才读取 transcript', async () => {
   let releaseDetail;
   const detailPending = new Promise((resolve) => { releaseDetail = resolve; });
   const page = createPageInstance(loadSpeakingPage({
@@ -124,17 +139,22 @@ test('分级跟读目录先完成，transcript 在后台按当前音频补齐', 
   }));
 
   await page.loadRepeatLevel('A2');
+  await page.selectRepeatSeries({ currentTarget: { dataset: { seriesId: 'newconcept2' } } });
 
   assert.equal(page.data.repeatAudioLoading, false);
   assert.equal(page.data.repeatAudios.length, 1);
+  assert.equal(page.data.repeatParagraphLoading, false);
+  assert.equal(page.data.repeatParagraphs.length, 0);
+
+  const selectingAudio = page.selectRepeatAudio({ currentTarget: { dataset: { audioIndex: '0' } } });
   assert.equal(page.data.repeatParagraphLoading, true);
   assert.equal(page.data.repeatParagraphs.length, 0);
 
   releaseDetail();
-  await wait(0);
-  await wait(0);
+  await selectingAudio;
   assert.equal(page.data.repeatParagraphLoading, false);
   assert.equal(page.data.repeatParagraphs.length, 1);
+  assert.equal(page.data.selectedParagraphId, '');
 });
 
 test('分级跟读系列触摸预取与点击复用同一目录请求', async () => {

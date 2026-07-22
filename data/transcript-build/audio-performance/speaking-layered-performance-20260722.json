@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-07-22T22:30:00+08:00",
+  "complete": false,
+  "passed": null,
+  "scope": "four-theme-layered-repeat-selector",
+  "baselineReport": "data/transcript-build/audio-performance/speaking-page-performance-20260722.json",
+  "verified": {
+    "unitAndContractTests": "28/28",
+    "entryNetworkStagesBefore": 3,
+    "entryNetworkStagesAfter": 0,
+    "initialParagraphRowsBefore": 4,
+    "initialParagraphRowsAfter": 0,
+    "a2NewConcept2ColdTranscriptReadyMsBefore": 2287,
+    "catalogAfterSeriesSelectionOnly": true,
+    "transcriptAfterAudioSelectionOnly": true,
+    "paragraphAfterExplicitSelectionOnly": true
+  },
+  "baseline": {
+    "maxColdCatalogMs": 783,
+    "maxCachedCatalogMs": 81,
+    "maxThemeRenderMs": 26,
+    "maxClickToPlayMs": 88
+  },
+  "automation": {
+    "tool": "miniprogram-automator",
+    "singleSession": true,
+    "status": "blocked-before-page-launch",
+    "error": "routeTo appLaunch timeout",
+    "measurementsAccepted": false
+  },
+  "note": "The failed developer-tools session produced no page timing samples. Re-run scripts/audit_speaking_page_performance.js in a fresh task before release."
+}
