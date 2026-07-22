@@ -31,8 +31,8 @@
             <view class="cloze-passage-stack" wx:if="{{!submitted}}">
               <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
                 <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
-                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                   <view class="passage-paragraph-main cloze-passage-text library-cloze-text">
                     <block wx:for="{{paragraph.parts}}" wx:key="index" wx:for-item="part">
                       <text wx:if="{{part.type === 'text'}}">{{part.text}}</text>
@@ -48,8 +48,8 @@
             <view class="passage-text cloze-highlight-text" wx:else>
               <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
                 <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
-                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                   <view class="passage-paragraph-main">
                 <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
                   <block wx:if="{{segment.chunks && segment.chunks.length}}">
@@ -75,8 +75,8 @@
             <block wx:if="{{passageParagraphs.length}}">
               <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
                 <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
-                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                   <view class="passage-paragraph-main">
                 <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
                   <block wx:if="{{segment.chunks && segment.chunks.length}}">
@@ -359,8 +359,8 @@
             <view class="cloze-passage-stack" wx:if="{{!submitted}}">
               <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
                 <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
-                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                   <view class="passage-paragraph-main cloze-passage-text">
                     <block wx:for="{{paragraph.parts}}" wx:key="index" wx:for-item="part">
                       <text wx:if="{{part.type === 'text'}}">{{part.text}}</text>
@@ -376,8 +376,8 @@
             <view class="passage-text cloze-highlight-text" wx:else>
               <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
                 <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
-                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                   <view class="passage-paragraph-main">
                 <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
                   <block wx:if="{{segment.chunks && segment.chunks.length}}">
@@ -403,8 +403,8 @@
             <block wx:if="{{passageParagraphs.length}}">
               <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
                 <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+                <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
-                  <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                   <view class="passage-paragraph-main">
                 <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
                   <block wx:if="{{segment.chunks && segment.chunks.length}}">

@@ -125,7 +125,7 @@
 
 .passage-paragraph {
   margin-bottom: 28rpx;
-  padding: 22rpx 22rpx 18rpx;
+  padding: 18rpx 16rpx;
   border: 1rpx solid rgba(141, 183, 212, 0.32);
   border-radius: 18rpx;
   background: rgba(247, 251, 253, 0.82);
@@ -150,24 +150,30 @@
 }
 
 .passage-paragraph-content {
-  display: flex;
-  align-items: flex-start;
+  display: block;
   width: 100%;
   min-width: 0;
 }
 
 .passage-paragraph-main {
-  flex: 1;
+  width: 100%;
   min-width: 0;
 }
 
 .passage-source-label {
-  flex: 0 0 42rpx;
-  width: 42rpx;
-  margin: 4rpx 14rpx 0 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42rpx;
+  min-height: 42rpx;
+  margin-bottom: 12rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  background: rgba(141, 183, 212, 0.18);
+  box-sizing: border-box;
   color: #17648f;
-  font-size: 34rpx;
-  line-height: 1.25;
+  font-size: 28rpx;
+  line-height: 1;
   font-weight: 800;
   text-align: center;
 }
@@ -1551,6 +1557,8 @@
 }
 
 .library-reading-detail .passage-source-label {
+  border-radius: 2rpx;
+  background: rgba(184, 149, 98, 0.15);
   color: #7a4f20;
 }
 

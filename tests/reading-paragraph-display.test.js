@@ -103,9 +103,14 @@ test('初中和高中 934 篇阅读全部覆盖成完整段落', () => {
 
 test('普通阅读和文内填空都使用段落区块', () => {
   const template = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxml'), 'utf8');
+  const styles = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');
   assert.match(template, /passageParagraphs/);
   assert.match(template, /passage\.clozePassageParagraphs/);
   assert.doesNotMatch(template, /passage\.clozePassageParts/);
   assert.match(template, /!paragraph\.hasOriginalSourceLabel/);
   assert.match(template, /passage-source-label/);
+  assert.equal((template.match(/passage-source-label/g) || []).length, 6);
+  assert.doesNotMatch(template, /passage-paragraph-content">\s*<text class="passage-source-label"/);
+  assert.match(styles, /\.passage-paragraph-content\s*\{[^}]*display:\s*block/);
+  assert.match(styles, /\.passage-paragraph-main\s*\{[^}]*width:\s*100%/);
 });
