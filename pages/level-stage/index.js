@@ -152,6 +152,7 @@ function buildFixedPlanOutline(outline) {
     newconcept1: 'New Concept 1',
     peppa: 'Peppa',
     unlock1: 'Unlock 1 听口 第二版',
+    speaking: 'Unlock 1 每日跟读',
     vocabulary: '初中词汇'
   };
   return {
@@ -166,6 +167,13 @@ function buildFixedPlanOutline(outline) {
           rangeText: t('listRangeSummary', { total: totalCount || 1690 }),
           dailyText: t('dailyVocabularyStudy'),
           progressText: t('vocabularyPlanProgress', { round: Number(item.round || 1), list: Number(item.currentList || 1) })
+        });
+      }
+      if (item.category === 'speaking') {
+        return Object.assign({}, item, {
+          title: categoryTitles.speaking,
+          rangeText: '现有 135 段完整覆盖',
+          dailyText: '每天逐句跟读 2 段 · 约5–8分钟'
         });
       }
       const unit = item.category === 'grammar' ? t('microLessonUnit') : item.category === 'newconcept1' ? t('lessonUnit') : t('episodeUnit');
@@ -413,6 +421,13 @@ Page({
       wx.navigateTo({ url: '/pages/reading/flashcards/index?dailyPlan=junior-list' });
       return;
     }
+    if (category === 'speaking') {
+      const task = taskRow.taskSnapshot || taskRow;
+      wx.navigateTo({
+        url: `/pages/speaking/index?dailyPlan=unlock1&audioTaskId=${encodeURIComponent(task.audioTaskId || '')}&paragraphIndex=${Number(task.paragraphIndex || 1)}`
+      });
+      return;
+    }
     const routeQuery = [
       planRunType !== 'normal' ? `planRunType=${encodeURIComponent(planRunType)}` : '',
       targetDate ? `targetDate=${encodeURIComponent(targetDate)}` : '',
@@ -434,6 +449,10 @@ Page({
     }
     if (category === 'vocabulary') {
       wx.navigateTo({ url: '/pages/reading/flashcards/index?dailyPlan=junior-list' });
+      return;
+    }
+    if (category === 'speaking') {
+      wx.navigateTo({ url: '/pages/speaking/index' });
       return;
     }
     if (category) {

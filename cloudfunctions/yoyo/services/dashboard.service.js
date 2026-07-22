@@ -1,5 +1,6 @@
 const study = require('../facades/study.facade');
 const flashcardService = require('./flashcard.service');
+const unlock1SpeakingPlanService = require('./unlock1-speaking-plan.service');
 
 function resolveDashboardOptions(view) {
   if (view === 'home') {
@@ -58,7 +59,15 @@ async function getDashboard(event) {
     dashboard.stats.totalMinutes = Math.max(0, Number(cumulativeMinutes || 0));
   }
   if (view === 'home' && study.isYoyoChild(dashboard.child)) {
-    dashboard.vocabularyPlan = await flashcardService.getJuniorListPlanSummary(ctx, study.getTodayString());
+    const today = study.getTodayString();
+    const [vocabularyPlan, speakingPlan] = await Promise.all([
+      flashcardService.getJuniorListPlanSummary(ctx, today),
+      dashboard.planSource === 'fixed-yoyo' && dashboard.planPhase === 'round-2'
+        ? unlock1SpeakingPlanService.getDailyPlanSummary(ctx, today, dashboard.planDayIndex)
+        : null
+    ]);
+    dashboard.vocabularyPlan = vocabularyPlan;
+    dashboard.speakingPlan = speakingPlan;
   }
   return dashboard;
 }

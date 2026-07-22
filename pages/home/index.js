@@ -429,6 +429,41 @@ function buildVocabularyPlanTaskGroup(plan) {
   };
 }
 
+function buildSpeakingPlanTaskGroup(plan) {
+  if (!plan || !plan.active || !Array.isArray(plan.tasks) || !plan.tasks.length) return null;
+  const tasks = plan.tasks.map((sourceTask, index) => ({
+    taskId: sourceTask.taskId,
+    title: sourceTask.displayTitle || sourceTask.title,
+    meta: sourceTask.progressText || `${Number(sourceTask.sentenceCount || 0)}句`,
+    orderText: `${index + 1}`,
+    completedToday: !!sourceTask.completedToday,
+    stateText: sourceTask.completedToday ? t('completed') : t('start'),
+    taskSnapshot: sourceTask,
+    audioTaskId: sourceTask.audioTaskId,
+    paragraphIndex: sourceTask.paragraphIndex,
+    disabled: false
+  }));
+  const nextTask = tasks.find((item) => !item.completedToday) || tasks[0];
+  return {
+    category: 'speaking',
+    categoryLabel: '口语跟读',
+    title: plan.title,
+    taskCountText: t('taskCount', { count: tasks.length }),
+    textType: '逐句跟读',
+    minutesText: '约5–8分钟',
+    minutes: 6,
+    durationSec: 360,
+    taskId: nextTask.taskId,
+    tasks,
+    taskSnapshot: nextTask.taskSnapshot,
+    disabled: false,
+    expanded: true,
+    stateText: plan.completedToday ? t('completed') : '›',
+    planRunType: 'normal',
+    planDayIndex: Number(nextTask.taskSnapshot.planDayIndex || 0)
+  };
+}
+
 function buildTodayCompletedItems(groupedDailyTasks) {
   let speakingAttempts = [];
   try {
@@ -538,6 +573,7 @@ Page({
     texts: i18n.getPageTexts('home'),
     vocabularySummary: buildVocabularySummary(),
     vocabularyPlan: null,
+    speakingPlan: null,
     todayGoalMinutes: 0,
     todayDoneMinutes: 0,
     todayProgressPercent: 0,
@@ -580,8 +616,13 @@ Page({
     const groupedDailyTasks = labels.normalizeHomeTaskGroups(data.groupedDailyTasks || []);
     const needsListeningPlanSetup = !!data.needsListeningPlanSetup || data.planSource === 'none';
     const vocabularyPlan = data.vocabularyPlan || null;
+    const speakingPlan = data.speakingPlan || null;
     const listeningTaskStatus = buildListeningTaskStatus(groupedDailyTasks, { needsListeningPlanSetup });
     if (vocabularyPlan && vocabularyPlan.active && !vocabularyPlan.completedToday && !listeningTaskStatus.setupRequired) {
+      listeningTaskStatus.pending = true;
+      listeningTaskStatus.action = t('continueLearning');
+    }
+    if (speakingPlan && speakingPlan.active && !speakingPlan.completedToday && !listeningTaskStatus.setupRequired) {
       listeningTaskStatus.pending = true;
       listeningTaskStatus.action = t('continueLearning');
     }
@@ -611,6 +652,7 @@ Page({
       listeningTaskStatus,
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
       vocabularyPlan,
+      speakingPlan,
       todayCompletedItems: buildTodayCompletedItems(groupedDailyTasks),
       ...buildHomeVisualMetrics(groupedDailyTasks, {
         stats: data.stats || contracts.createStatsDefaults(),
@@ -1194,9 +1236,14 @@ Page({
         ? 'custom'
         : getCurrentPhaseKey(this.data.planPhaseLabel);
       const vocabularyTaskGroup = buildVocabularyPlanTaskGroup(this.data.vocabularyPlan);
-      const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks).concat(vocabularyTaskGroup ? [vocabularyTaskGroup] : []);
+      const speakingTaskGroup = buildSpeakingPlanTaskGroup(this.data.speakingPlan);
+      const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks)
+        .concat(speakingTaskGroup ? [speakingTaskGroup] : [])
+        .concat(vocabularyTaskGroup ? [vocabularyTaskGroup] : []);
       const totalMinutes = taskGroups.reduce((sum, item) => sum + Number(item.minutes || 0), 0);
-      const expandedGroupKey = findNextListeningGroupKey(this.data.groupedDailyTasks);
+      const expandedGroupKey = findNextListeningGroupKey(this.data.groupedDailyTasks)
+        || (speakingTaskGroup && !this.data.speakingPlan.completedToday ? 'speaking' : '')
+        || (vocabularyTaskGroup && !this.data.vocabularyPlan.completedToday ? 'vocabulary' : '');
       const snapshotId = buildStageSnapshotId(this.data.child, phase);
       snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, snapshotId, {
         phase,

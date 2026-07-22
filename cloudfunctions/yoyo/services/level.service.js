@@ -1,5 +1,6 @@
 const study = require('../facades/study.facade');
 const flashcardService = require('./flashcard.service');
+const unlock1SpeakingPlanService = require('./unlock1-speaking-plan.service');
 
 const LEVEL_CATEGORY_GROUPS = {
   A2: ['newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook'],
@@ -31,6 +32,12 @@ async function getLevelOverview(event) {
     includeFamily: false,
     includeStats: true
   });
+  const speakingPlan = isA1PhaseOverview
+    && requestedPhase === 'round-2'
+    && dashboard.planSource === 'fixed-yoyo'
+    && study.isYoyoChild(ctx.child)
+    ? await unlock1SpeakingPlanService.getDailyPlanSummary(ctx, today, dashboard.planDayIndex)
+    : null;
   if (requestedPhase === 'custom') {
     const dailyTasks = dashboard.planSource === 'custom-listening' ? (dashboard.dailyTasks || []) : [];
     const categoryIds = [];
@@ -131,6 +138,7 @@ async function getLevelOverview(event) {
         { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
         { category: 'peppa', slotCount: 5, startNo: 73, endNo: study.getPlanCatalog('peppa').length, totalCount: Math.max(0, study.getPlanCatalog('peppa').length - 72) },
         { category: 'unlock1', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('unlock1').length, totalCount: study.getPlanCatalog('unlock1').length },
+        { category: 'speaking', slotCount: 2, startNo: 1, endNo: 135, totalCount: 135 },
         { category: 'vocabulary', slotCount: 1, startNo: 1, endNo: 32, totalCount: 1690, round: vocabularyPlan && vocabularyPlan.round, currentList: vocabularyPlan && vocabularyPlan.currentList }
       ]
     }
@@ -166,7 +174,19 @@ async function getLevelOverview(event) {
         planRunType: 'normal',
         planDayIndex: dashboard.planDayIndex
       };
-    }).concat(vocabularyPlan ? [{
+    }).concat(speakingPlan ? [{
+      category: 'speaking',
+      categoryLabel: '口语跟读',
+      totalCount: 135,
+      completedCount: speakingPlan.completedCount,
+      todayTask: speakingPlan.tasks.find((item) => !item.completedToday) || speakingPlan.tasks[0],
+      tasks: speakingPlan.tasks,
+      isPendingAsset: false,
+      todayTaskCount: speakingPlan.totalCount,
+      plannedDurationSec: speakingPlan.tasks.reduce((sum, item) => sum + Number(item.durationSec || 0), 0),
+      planRunType: 'normal',
+      planDayIndex: dashboard.planDayIndex
+    }] : []).concat(vocabularyPlan ? [{
       category: 'vocabulary',
       categoryLabel: '词汇',
       totalCount: 1690,

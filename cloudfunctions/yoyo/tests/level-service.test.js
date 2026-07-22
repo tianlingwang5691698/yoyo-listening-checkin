@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const levelService = require('../services/level.service');
 const study = require('../facades/study.facade');
 const flashcardService = require('../services/flashcard.service');
+const unlock1SpeakingPlanService = require('../services/unlock1-speaking-plan.service');
 
 test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   const grammarTasks = [{
@@ -55,6 +56,20 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
     summary: '主学 List 3 · 艾宾浩斯复习到期 List',
     completedToday: false
   }));
+  t.mock.method(unlock1SpeakingPlanService, 'getDailyPlanSummary', async () => ({
+    active: true,
+    completedCount: 0,
+    totalCount: 2,
+    tasks: [{
+      category: 'speaking',
+      taskId: 'unlock1-1-paragraph-1',
+      audioTaskId: 'unlock1-1',
+      paragraphIndex: 1,
+      sentenceCount: 5,
+      durationSec: 175,
+      completedToday: false
+    }]
+  }));
 
   const result = await levelService.getLevelOverview({ payload: { phase: 'round-2' } });
 
@@ -66,4 +81,5 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   assert.deepEqual([vocabulary.startNo, vocabulary.endNo, vocabulary.totalCount], [1, 32, 1690]);
   const vocabularyCategory = result.categories.find((item) => item.category === 'vocabulary');
   assert.equal(vocabularyCategory.todayTask.displayTitle, '初中词汇第2轮 · List 3');
+  assert.equal(result.categories.find((item) => item.category === 'speaking').todayTask.taskId, 'unlock1-1-paragraph-1');
 });
