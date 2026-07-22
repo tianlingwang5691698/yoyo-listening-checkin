@@ -1632,6 +1632,7 @@ Page({
     effects.playComplete({
       voiceKey: 'flashcardComplete',
       voiceDelayMs: 1000,
+      studentOnly: false,
       onceKey: buildCompletionRewardKey(this.data)
     });
   },

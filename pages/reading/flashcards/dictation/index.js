@@ -261,6 +261,7 @@ Page({
     effects.playComplete({
       voiceKey: 'flashcardComplete',
       voiceDelayMs: 1000,
+      studentOnly: false,
       onceKey: `dictation:${this.data.sourceId}:${this.sessionStartedAt || Date.now()}`
     });
     if (this.data.previewMode) return;

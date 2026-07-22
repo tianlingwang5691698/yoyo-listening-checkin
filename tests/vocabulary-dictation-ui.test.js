@@ -158,6 +158,7 @@ test('三种单词练习答对后自动进入下一题', () => {
 });
 
 test('三种单词练习完成后统一显示庆祝特效并播放完成音效', () => {
+  const flashcards = read('pages/reading/flashcards/index.js');
   const recognition = read('pages/reading/flashcards/recognition/index.js');
   const recognitionTemplate = read('pages/reading/flashcards/recognition/index.wxml');
   const recognitionStyles = read('pages/reading/flashcards/recognition/index.wxss');
@@ -165,6 +166,9 @@ test('三种单词练习完成后统一显示庆祝特效并播放完成音效',
   const dictationTemplate = read('pages/reading/flashcards/dictation/index.wxml');
   assert.match(recognition, /effects\.playComplete\(/);
   assert.match(dictation, /effects\.playComplete\(/);
+  assert.match(flashcards, /playCompletionSfx\(\)[\s\S]*?studentOnly: false/);
+  assert.match(recognition, /effects\.playComplete\(\{[^}]*studentOnly: false/);
+  assert.match(dictation, /effects\.playComplete\(\{[\s\S]*?studentOnly: false/);
   assert.match(recognitionTemplate, /class="confetti-layer"/);
   assert.match(recognitionTemplate, /class="celebrate-burst"/);
   assert.match(dictationTemplate, /class="confetti-layer"/);

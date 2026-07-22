@@ -245,7 +245,7 @@ Page({
     const accuracy = answered ? Math.round(this.data.correctCount * 100 / answered) : 0;
     const durationSec = this.sessionTimer ? this.sessionTimer.stop() : 0;
     this.setData({ mode: 'complete', accuracy, durationSec, durationText: formatDuration(durationSec, this.data.language), audioLoading: false, saving: !this.data.previewMode });
-    effects.playComplete({ voiceKey: 'flashcardComplete', voiceDelayMs: 800, onceKey: `recognition:${this.data.sourceId}:${this.sessionStartedAt || Date.now()}` });
+    effects.playComplete({ voiceKey: 'flashcardComplete', voiceDelayMs: 800, studentOnly: false, onceKey: `recognition:${this.data.sourceId}:${this.sessionStartedAt || Date.now()}` });
     if (!this.data.previewMode) this.saveAttempt(accuracy, durationSec);
   },
   startSessionTimer() {
