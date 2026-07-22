@@ -84,6 +84,10 @@ Object.assign(module.exports.vocabularyDictation['zh-CN'], { cet4BookShort: '四
 Object.assign(module.exports.vocabularyDictation.en, { cet4BookShort: 'CET-4 Vocabulary', cet4Mark: 'C4' });
 Object.assign(module.exports.practiceHistory['zh-CN'], { readingMeta: '阅读', grammarMeta: '语法', writingMeta: '写作' });
 Object.assign(module.exports.practiceHistory.en, { readingMeta: 'Reading', grammarMeta: 'Grammar', writingMeta: 'Writing' });
+Object.assign(module.exports.practiceHistory['zh-CN'], { enterRecord: '进入记录', collapseRecord: '收起', parentReadOnly: '家长查看 · 只读' });
+Object.assign(module.exports.practiceHistory.en, { enterRecord: 'View record', collapseRecord: 'Collapse', parentReadOnly: 'Parent view · Read only' });
+Object.assign(module.exports.practiceHistory['zh-CN'], { myMarks: '我的标记' });
+Object.assign(module.exports.practiceHistory.en, { myMarks: 'My marks' });
 Object.assign(module.exports.practiceHistory['zh-CN'], { microLesson: '词法微课', microLessonCompleted: '完成 1 节微课' });
 Object.assign(module.exports.practiceHistory.en, { microLesson: 'Grammar Micro-lesson', microLessonCompleted: 'Completed 1 micro-lesson' });
 Object.assign(module.exports.practiceHistory['zh-CN'], { vocabularyTitle: '词汇听写记录', vocabularyEyebrow: '听音写词', vocabularyCopy: '回看每次听写、错词和订正结果。', noVocabulary: '还没有词汇听写记录', wrongDictation: '错词听写', wordUnit: ' 词' });
@@ -123,3 +127,11 @@ module.exports.vocabularyPractice = {
 };
 Object.assign(module.exports.vocabularyPractice['zh-CN'], { durationLabel: '用时', thisDuration: '本次用时', saveFailed: '记录保存失败' });
 Object.assign(module.exports.vocabularyPractice.en, { durationLabel: 'Time', thisDuration: 'Time spent', saveFailed: 'Could not save the record' });
+Object.assign(module.exports.readingDetail['zh-CN'], {
+  manualMarkHint: '点词标黄，连续点标蓝；长按整句标绿',
+  clearManualMarks: '清除标记'
+});
+Object.assign(module.exports.readingDetail.en, {
+  manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press a sentence for green.',
+  clearManualMarks: 'Clear marks'
+});

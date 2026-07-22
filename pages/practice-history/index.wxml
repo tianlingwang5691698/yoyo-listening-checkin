@@ -3,6 +3,7 @@
     <view class="history-eyebrow">{{config.eyebrow}}</view>
     <view class="history-title">{{config.title}}</view>
     <view class="history-copy">{{config.copy}}</view>
+    <view class="history-parent-badge" wx:if="{{isParentView}}">{{texts.parentReadOnly}}</view>
     <view class="history-archive-mark {{theme === 'voyage' ? 'is-voyage' : (theme === 'dragon' ? 'is-dragon' : '')}}" wx:if="{{theme === 'library' || theme === 'voyage' || theme === 'dragon'}}">
       <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
       <text>ARCHIVE</text>
@@ -27,7 +28,7 @@
           <view class="history-record-meta">{{item.dateLabel}} · {{item.meta}}<text wx:if="{{item.durationText}}"> · {{texts.durationLabel}} {{item.durationText}}</text></view>
         </view>
         <view class="history-result">{{item.summary}}</view>
-        <view class="history-arrow">{{expandedId === item.id ? '−' : '›'}}</view>
+        <view class="history-entry-action">{{expandedId === item.id ? texts.collapseRecord : texts.enterRecord}}</view>
       </view>
 
       <view class="history-detail" wx:if="{{expandedId === item.id}}">
@@ -37,6 +38,12 @@
           <view class="history-section" wx:if="{{item.passageText}}">
             <view class="history-section-title">{{texts.original}}</view>
             <view class="history-passage">{{item.passageText}}</view>
+          </view>
+          <view class="history-section history-manual-marks" wx:if="{{item.manualMarkItems.length}}">
+            <view class="history-section-title">{{texts.myMarks}}</view>
+            <view class="history-mark-list">
+              <view class="history-mark-item is-{{mark.type}}" wx:for="{{item.manualMarkItems}}" wx:key="index" wx:for-item="mark">{{mark.text}}</view>
+            </view>
           </view>
           <view class="history-ai-row" data-id="{{item.id}}" bindtap="loadReadingCachedAnalysis">{{item.aiAnalysisLoaded ? texts.analysisLoaded : (item.aiAnalysisLoading ? texts.analysisLoading : texts.viewAnalysis)}}</view>
           <view class="history-ai-status" wx:if="{{item.aiAnalysisStatus}}">{{item.aiAnalysisStatus}}</view>
@@ -52,7 +59,7 @@
               <text class="history-standard-answer">{{texts.correctAnswer}}{{question.answer || texts.none}}</text>
             </view>
             <view class="history-analysis" wx:if="{{question.analysis}}">{{question.analysis}}</view>
-            <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
+            <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !isParentView && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
           </view>
         </block>
 
@@ -76,7 +83,7 @@
             <view class="history-analysis" wx:if="{{question.analysis}}">{{question.analysis}}</view>
             <view class="history-ai-status" wx:elif="{{question.analysisStatus}}">{{question.analysisStatus}}</view>
             <view class="history-explain-action" wx:else data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="loadGrammarExplanation">{{question.explaining ? texts.explanationLoading : texts.viewExplanation}}</view>
-            <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
+            <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !isParentView && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
             </view>
           </block>
         </block>

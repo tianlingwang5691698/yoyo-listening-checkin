@@ -19,6 +19,14 @@ function vocabularyModeLabel(mode) {
   return text('vocabularyEyebrow', '听音写词');
 }
 
+function buildTexts() {
+  const catalog = require('../../utils/i18n-catalog-learning').practiceHistory['zh-CN'];
+  return Object.keys(catalog).reduce((texts, key) => {
+    texts[key] = text(key);
+    return texts;
+  }, {});
+}
+
 const MODULES = {
   reading: {
     title: text('readingTitle', '阅读记录'),
@@ -77,6 +85,7 @@ function normalizeReading(item, index) {
     detailReady: false,
     detailLoading: false,
     passageText: '',
+    manualMarkItems: [],
     detailQuestions: [],
     aiAnalysisLoaded: false,
     aiAnalysisLoading: false,
@@ -262,13 +271,16 @@ Page({
     records: [],
     viewMode: 'history',
     expandedId: '',
-    debugLines: []
+    debugLines: [],
+    isParentView: false,
+    texts: buildTexts()
   }),
   onLoad(options) {
     this.historyPerf = page.startPagePerf('practice-history');
     const type = MODULES[options && options.type] ? options.type : 'reading';
     const config = MODULES[type];
-    this.setData({ type, config });
+    const isParentView = store.getDeviceStudyRole && store.getDeviceStudyRole() === 'parent';
+    this.setData({ type, config, isParentView, texts: buildTexts() });
     wx.setNavigationBarTitle({ title: config.title });
     wx.nextTick(() => {
       if (!this.historyPerf) return;
@@ -283,6 +295,7 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+    const isParentView = store.getDeviceStudyRole && store.getDeviceStudyRole() === 'parent';
     const type = this.data.type;
     const config = type === 'grammar'
       ? { title: text('grammarTitle'), eyebrow: text('grammarEyebrow'), copy: text('grammarCopy'), empty: text('noGrammar') }
@@ -291,7 +304,7 @@ Page({
         : type === 'vocabulary'
           ? { title: text('vocabularyTitle'), eyebrow: text('vocabularyEyebrow'), copy: text('vocabularyCopy'), empty: text('noVocabulary') }
         : { title: text('readingTitle'), eyebrow: text('readingEyebrow'), copy: text('readingCopy'), empty: text('noReading') };
-    this.setData({ config });
+    this.setData({ config, isParentView, texts: buildTexts() });
   },
   onUnload() {
     Object.keys(this.readingDebugTimers || {}).forEach((key) => clearTimeout(this.readingDebugTimers[key]));
@@ -469,6 +482,7 @@ Page({
       aiAnalysisLoaded: analysesReady,
       aiAnalysisStatus: analysesReady ? text('analysisLoaded', '已从云端加载 AI 解析') : text('noAnalysis', '这篇阅读尚未生成 AI 解析'),
       passageText: (passage && passage.passage) || '',
+      manualMarkItems: (attempt.manualMarks && Array.isArray(attempt.manualMarks.items) ? attempt.manualMarks.items : []).filter((item) => item && item.text),
       detailQuestions: detailQuestions.map((question) => Object.assign({}, question, {
         inWrongBook: wrongIds.has(question.questionId)
       }))
@@ -542,6 +556,7 @@ Page({
     }));
   },
   async addWrongQuestion(event) {
+    if (this.data.isParentView) return;
     const recordId = String(event.currentTarget.dataset.recordId || '');
     const questionId = String(event.currentTarget.dataset.questionId || '');
     const record = (this.data.records || []).find((item) => item.id === recordId);

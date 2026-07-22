@@ -381,6 +381,18 @@ Page({
       icon: 'none'
     });
   },
+  openStudentPracticeHistory(event) {
+    const index = Number(event.currentTarget.dataset.index) || 0;
+    const target = this.data.studentCards[index];
+    if (!target) {
+      return;
+    }
+    store.setSelectedStudentTarget(target);
+    store.setLastParentStudentTarget(target);
+    wx.navigateTo({
+      url: '/pages/practice-history/index?type=reading&parentView=1'
+    });
+  },
   async leaveFamily() {
     const confirmed = await new Promise((resolve) => {
       wx.showModal({

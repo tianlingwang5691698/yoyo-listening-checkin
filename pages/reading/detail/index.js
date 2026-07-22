@@ -8,6 +8,7 @@ const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../.
 const { createDictionaryVoicePlayer } = require('../../../utils/dictionary-voice-player');
 const { splitReadingNotePrompt, formatReadingQuestionRange } = require('../../../utils/reading-question-display');
 const { buildReadingParagraphRanges, normalizeReadingPassageText } = require('../../../utils/reading-paragraph-display');
+const { toggleWordMark, toggleSentenceMark, countReadingMarks, buildReadingMarkItems } = require('../../../utils/reading-manual-marks');
 const ieltsParagraphMetadata = require('./ielts-paragraph-metadata');
 
 const text = (key, fallback) => i18n.getPageText('readingDetail', key, undefined, fallback);
@@ -73,8 +74,14 @@ function buildClozeQuestions(passage) {
   }));
 }
 
-function buildClozePassageParts(passage, questions) {
+function buildClozePassageParts(passage, questions, baseOffset) {
   const source = String((passage && passage.passage) || '');
+  const offset = Number(baseOffset || 0);
+  const sentenceRanges = splitSentenceRanges(source).map((range) => ({
+    start: range.start + offset,
+    end: range.end + offset
+  }));
+  const wordIndexes = {};
   const questionMap = (questions || []).reduce((map, question) => {
     map[String(question.number)] = question;
     return map;
@@ -85,7 +92,12 @@ function buildClozePassageParts(passage, questions) {
   let match;
   while ((match = regex.exec(source))) {
     if (match.index > cursor) {
-      parts.push({ type: 'text', text: source.slice(cursor, match.index) });
+      const partText = source.slice(cursor, match.index);
+      parts.push({
+        type: 'text',
+        text: partText,
+        tokens: decorateClozeTokens(partText, offset + cursor, sentenceRanges, wordIndexes)
+      });
     }
     const number = Number(match[2]);
     const question = questionMap[String(number)] || {};
@@ -100,7 +112,12 @@ function buildClozePassageParts(passage, questions) {
     cursor = match.index + match[0].length;
   }
   if (cursor < source.length) {
-    parts.push({ type: 'text', text: source.slice(cursor) });
+    const partText = source.slice(cursor);
+    parts.push({
+      type: 'text',
+      text: partText,
+      tokens: decorateClozeTokens(partText, offset + cursor, sentenceRanges, wordIndexes)
+    });
   }
   return parts;
 }
@@ -194,7 +211,11 @@ function normalizePassage(passage, answers, submitted, review) {
       label: range.label,
       hasOriginalSourceLabel: !!range.hasOriginalSourceLabel,
       sourceLabelText: range.sourceLabelText || '',
-      parts: buildClozePassageParts({ passage: cleanPassageText.slice(range.contentStart || range.start, range.end) }, questions)
+      parts: buildClozePassageParts(
+        { passage: cleanPassageText.slice(range.contentStart || range.start, range.end) },
+        questions,
+        range.contentStart || range.start
+      )
     })) : []
   });
 }
@@ -378,8 +399,9 @@ function buildSentenceChunks(source, sentenceRange, ranges) {
   return chunks.length ? chunks : [{ text: source.slice(sentenceRange.start, sentenceRange.end), tone: 'normal', highlight: false, className: 'passage-chunk' }];
 }
 
-function tokenizeChunkText(text) {
+function tokenizeChunkText(text, baseOffset) {
   const source = String(text || '');
+  const offset = Number(baseOffset || 0);
   if (!source) return [];
   const tokens = [];
   const regex = /[A-Za-z][A-Za-z'-]*/g;
@@ -387,15 +409,70 @@ function tokenizeChunkText(text) {
   let match;
   while ((match = regex.exec(source))) {
     if (match.index > cursor) {
-      tokens.push({ text: source.slice(cursor, match.index), isWord: false });
+      tokens.push({ text: source.slice(cursor, match.index), isWord: false, start: offset + cursor, end: offset + match.index });
     }
-    tokens.push({ text: match[0], isWord: true, word: match[0].toLowerCase() });
+    tokens.push({
+      text: match[0],
+      isWord: true,
+      word: match[0].toLowerCase(),
+      start: offset + match.index,
+      end: offset + match.index + match[0].length
+    });
     cursor = match.index + match[0].length;
   }
   if (cursor < source.length) {
-    tokens.push({ text: source.slice(cursor), isWord: false });
+    tokens.push({ text: source.slice(cursor), isWord: false, start: offset + cursor, end: offset + source.length });
   }
-  return tokens.length ? tokens : [{ text: source, isWord: false }];
+  return tokens.length ? tokens : [{ text: source, isWord: false, start: offset, end: offset + source.length }];
+}
+
+function decorateClozeTokens(textValue, absoluteStart, sentenceRanges, wordIndexes) {
+  const ranges = sentenceRanges || [];
+  return tokenizeChunkText(textValue, absoluteStart).map((token) => {
+    const range = ranges.find((item) => token.start >= item.start && token.start < item.end)
+      || ranges[ranges.length - 1]
+      || { start: absoluteStart, end: absoluteStart + String(textValue || '').length };
+    const sentenceKey = String(range.start);
+    const decorated = Object.assign({}, token, {
+      sentenceKey,
+      sentenceStart: range.start,
+      sentenceEnd: range.end
+    });
+    if (token.isWord) {
+      const wordIndex = Number(wordIndexes[sentenceKey] || 0);
+      wordIndexes[sentenceKey] = wordIndex + 1;
+      decorated.wordIndex = wordIndex;
+      decorated.markKey = `${sentenceKey}:${wordIndex}`;
+    }
+    return decorated;
+  });
+}
+
+function decorateReadingSegments(segments) {
+  return (segments || []).map((segment) => {
+    const sentenceKey = String(segment.start);
+    let wordIndex = 0;
+    const decorateTokens = (tokens) => (tokens || []).map((token) => {
+      const decorated = Object.assign({}, token, {
+        sentenceKey,
+        sentenceStart: segment.start,
+        sentenceEnd: segment.end
+      });
+      if (token.isWord) {
+        decorated.wordIndex = wordIndex;
+        decorated.markKey = `${sentenceKey}:${wordIndex}`;
+        wordIndex += 1;
+      }
+      return decorated;
+    });
+    return Object.assign({}, segment, {
+      markKey: sentenceKey,
+      chunks: (segment.chunks || []).map((chunk) => Object.assign({}, chunk, {
+        tokens: decorateTokens(chunk.tokens)
+      })),
+      tokens: decorateTokens(segment.tokens)
+    });
+  });
 }
 
 function attachChunkTokens(segments) {
@@ -446,10 +523,10 @@ function buildPassageParagraphs(passage, review, mode) {
   if (!ranges.length) return [];
   return ranges.map((range) => {
     const contentStart = range.contentStart || range.start;
-    const segments = buildPassageSegments(source.slice(contentStart, range.end), review, mode).map((segment) => Object.assign({}, segment, {
+    const segments = decorateReadingSegments(buildPassageSegments(source.slice(contentStart, range.end), review, mode).map((segment) => Object.assign({}, segment, {
       start: segment.start + contentStart,
       end: segment.end + contentStart
-    }));
+    })));
     return {
       index: range.index,
       label: range.label,
@@ -465,7 +542,7 @@ function buildStandalonePassageSegments(passage, review, mode) {
   const source = String(passage.passage || '');
   const passageId = passage._id || passage.id;
   if (buildReadingParagraphRanges(passageId, source, passage.questions, ieltsParagraphMetadata[passageId]).length) return [];
-  return buildPassageSegments(source, review, mode);
+  return decorateReadingSegments(buildPassageSegments(source, review, mode));
 }
 
 function pickSentenceAt(text, start, end) {
@@ -944,6 +1021,11 @@ Page({
     ],
     passageSegments: [],
     passageParagraphs: [],
+    readingTokenMarks: {},
+    readingSentenceMarks: {},
+    readingMarkCount: 0,
+    readingMarkHint: text('manualMarkHint', '点词标黄，连续点标蓝；长按整句标绿'),
+    clearReadingMarksText: text('clearManualMarks', '清除标记'),
     wordCards: [],
     phraseCards: [],
     sentencePatternCards: [],
@@ -1062,6 +1144,9 @@ Page({
     const latestAttempt = data.latestAttempt || null;
     const answers = latestAttempt && latestAttempt.answers ? latestAttempt.answers : this.data.answers;
     const submitted = !!latestAttempt;
+    const savedManualMarks = (latestAttempt && latestAttempt.manualMarks) || {};
+    const readingTokenMarks = savedManualMarks.tokenMarks || {};
+    const readingSentenceMarks = savedManualMarks.sentenceMarks || {};
     const review = latestAttempt && latestAttempt.review ? normalizeReview(latestAttempt.review) : null;
     const cachedPack = data.passage && data.passage._id ? getPhoneStudyPack(data.passage._id) : null;
     const mergedReview = cachedPack && cachedPack.studyPack
@@ -1088,6 +1173,9 @@ Page({
       scoreText: buildScoreText(latestAttempt),
       reviewSummary: buildReviewSummary(latestAttempt),
       submitted,
+      readingTokenMarks,
+      readingSentenceMarks,
+      readingMarkCount: countReadingMarks(readingTokenMarks, readingSentenceMarks),
       showReviewDetails: submitted,
       questionAnalysisReady,
       hasScore: !!latestAttempt && latestAttempt.score !== null && latestAttempt.score !== undefined
@@ -1327,8 +1415,53 @@ Page({
       sentenceTranslating: false
     });
   },
+  handleReadingTokenTap(event) {
+    if (this.data.submitted) {
+      return this.lookupPassageWord(event);
+    }
+    const dataset = event.currentTarget.dataset || {};
+    const markKey = String(dataset.markKey || '');
+    if (!markKey || !dataset.isWord) return;
+    if (this._readingLongPressSentenceKey === String(dataset.sentenceKey || '')
+      && Date.now() - Number(this._readingLongPressAt || 0) < 700) {
+      return;
+    }
+    const readingTokenMarks = toggleWordMark(
+      this.data.readingTokenMarks,
+      dataset.sentenceKey,
+      Number(dataset.wordIndex)
+    );
+    this.setData({
+      readingTokenMarks,
+      readingMarkCount: countReadingMarks(readingTokenMarks, this.data.readingSentenceMarks)
+    });
+  },
+  handleReadingSentenceLongPress(event) {
+    if (this.data.submitted) return;
+    const dataset = event.currentTarget.dataset || {};
+    const rawSentenceKey = dataset.sentenceKey !== undefined && dataset.sentenceKey !== ''
+      ? dataset.sentenceKey
+      : (dataset.markKey !== undefined && dataset.markKey !== '' ? dataset.markKey : dataset.start);
+    const sentenceKey = String(rawSentenceKey === undefined || rawSentenceKey === null ? '' : rawSentenceKey);
+    if (!sentenceKey) return;
+    this._readingLongPressSentenceKey = sentenceKey;
+    this._readingLongPressAt = Date.now();
+    const readingSentenceMarks = toggleSentenceMark(this.data.readingSentenceMarks, sentenceKey);
+    this.setData({
+      readingSentenceMarks,
+      readingMarkCount: countReadingMarks(this.data.readingTokenMarks, readingSentenceMarks)
+    });
+  },
+  clearReadingMarks() {
+    this.setData({
+      readingTokenMarks: {},
+      readingSentenceMarks: {},
+      readingMarkCount: 0
+    });
+  },
   async translatePassageSentence(event) {
     if (!this.data.submitted) {
+      this.handleReadingSentenceLongPress(event);
       return;
     }
     const start = Number(event.currentTarget.dataset.start || 0);
@@ -1559,7 +1692,16 @@ Page({
     try {
       const result = await store.submitReadingAttempt({
         passageId: this.data.passage._id,
-        answers: this.data.answers
+        answers: this.data.answers,
+        manualMarks: {
+          tokenMarks: this.data.readingTokenMarks,
+          sentenceMarks: this.data.readingSentenceMarks,
+          items: buildReadingMarkItems(
+            this.data.passage.passage,
+            this.data.readingTokenMarks,
+            this.data.readingSentenceMarks
+          )
+        }
       });
       if (!result || result.syncMode === 'cloud-error' || !result.attempt || !result.review || !(result.review.analysis || []).length) {
         throw new Error((result && result.cloudError && result.cloudError.message) || text('analysisFailed', '解析生成失败'));

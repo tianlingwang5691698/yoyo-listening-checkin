@@ -36,6 +36,20 @@
   line-height: var(--line-body);
 }
 
+.history-parent-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48rpx;
+  margin-top: 18rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  background: rgba(108, 146, 137, 0.14);
+  color: #486d64;
+  font-size: 23rpx;
+  line-height: 48rpx;
+  font-weight: 600;
+}
+
 .history-list {
   margin-top: 24rpx;
 }
@@ -106,13 +120,19 @@
   font-weight: 600;
 }
 
-.history-arrow {
+.history-entry-action {
   flex-shrink: 0;
-  width: 28rpx;
-  color: #8db7d4;
-  font-size: 34rpx;
-  line-height: 1;
+  box-sizing: border-box;
+  min-height: 56rpx;
+  padding: 0 16rpx;
+  border: 2rpx solid #17314f;
+  border-radius: 999rpx;
+  color: #17314f;
+  font-size: 23rpx;
+  line-height: 52rpx;
+  font-weight: 600;
   text-align: center;
+  white-space: nowrap;
 }
 
 .history-detail {
@@ -134,6 +154,31 @@
   font-size: var(--font-section-title-size);
   line-height: var(--line-section);
   font-weight: 600;
+}
+
+.history-mark-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 18rpx;
+}
+
+.history-mark-item {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 8rpx 12rpx;
+  border-radius: 7rpx;
+  color: #17314f;
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.history-mark-item.is-word { background: rgba(255, 210, 69, 0.58); }
+.history-mark-item.is-phrase { background: rgba(91, 169, 233, 0.34); }
+.history-mark-item.is-sentence {
+  width: 100%;
+  background: rgba(92, 177, 119, 0.20);
+  box-shadow: inset 4rpx 0 0 rgba(46, 129, 77, 0.48);
 }
 
 .history-passage,
@@ -444,9 +489,11 @@
 }
 
 .theme-library .history-result,
-.theme-library .history-arrow {
+.theme-library .history-entry-action {
   color: #8a6f4a;
 }
+
+.theme-library .history-entry-action { border-color: #8a6f4a; border-radius: 4rpx; }
 
 .theme-library .history-tabs {
   border-color: rgba(184, 149, 98, 0.34);
@@ -595,9 +642,11 @@
 }
 
 .theme-voyage .history-result,
-.theme-voyage .history-arrow {
+.theme-voyage .history-entry-action {
   color: var(--voyage-red);
 }
+
+.theme-voyage .history-entry-action { border-color: var(--voyage-red); border-radius: 6rpx; }
 
 .theme-voyage .history-result {
   max-width: 160rpx;
@@ -782,9 +831,11 @@
 }
 
 .theme-dragon .history-result,
-.theme-dragon .history-arrow {
+.theme-dragon .history-entry-action {
   color: var(--dragon-orange);
 }
+
+.theme-dragon .history-entry-action { border-color: var(--dragon-orange); border-radius: 5rpx; }
 
 .theme-dragon .history-result {
   max-width: 148rpx;

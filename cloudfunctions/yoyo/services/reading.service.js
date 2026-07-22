@@ -1802,6 +1802,22 @@ async function submitReadingAttempt(event) {
     throw new Error('reading-passage-not-found');
   }
   const grade = gradeAnswers(passage, payload.answers || {});
+  const rawManualMarks = payload.manualMarks || {};
+  const manualMarks = {
+    tokenMarks: Object.keys(rawManualMarks.tokenMarks || {}).slice(0, 600).reduce((map, key) => {
+      const tone = rawManualMarks.tokenMarks[key];
+      if (/^\d+:\d+$/.test(key) && (tone === 'word' || tone === 'phrase')) map[key] = tone;
+      return map;
+    }, {}),
+    sentenceMarks: Object.keys(rawManualMarks.sentenceMarks || {}).slice(0, 120).reduce((map, key) => {
+      if (/^\d+$/.test(key) && rawManualMarks.sentenceMarks[key]) map[key] = true;
+      return map;
+    }, {}),
+    items: (Array.isArray(rawManualMarks.items) ? rawManualMarks.items : []).slice(0, 120).map((item) => ({
+      type: ['word', 'phrase', 'sentence'].includes(item && item.type) ? item.type : 'word',
+      text: normalizeText(item && item.text).slice(0, 500)
+    })).filter((item) => item.text)
+  };
   let review = keepQuestionReviewOnly(buildReview(passage, grade, null));
   const attempt = {
     passageId: passage._id,
@@ -1811,6 +1827,7 @@ async function submitReadingAttempt(event) {
     childId: ctx.child.childId,
     userId: ctx.user.userId,
     answers: payload.answers || {},
+    manualMarks,
     score: grade.score,
     totalScore: grade.totalScore,
     pointPerQuestion: grade.pointPerQuestion,

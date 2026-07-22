@@ -202,3 +202,5 @@ module.exports.parentDetail.en.grammarMicroLesson = 'Grammar Micro-lesson';
 
 Object.assign(module.exports.record['zh-CN'], { syncingDuration: '同步中' });
 Object.assign(module.exports.record.en, { syncingDuration: 'Syncing' });
+Object.assign(module.exports.family['zh-CN'], { enterRecords: '进入记录' });
+Object.assign(module.exports.family.en, { enterRecords: 'View records' });

@@ -348,6 +348,34 @@
   white-space: nowrap;
 }
 
+.student-card-actions {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-end;
+  gap: 10rpx;
+}
+
+.student-record-entry {
+  box-sizing: border-box;
+  min-height: 58rpx;
+  padding: 0 18rpx;
+  border: 2rpx solid #17314f;
+  border-radius: 999rpx;
+  background: #17314f;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 54rpx;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.student-record-entry.is-library {
+  border-color: #8c693d;
+  border-radius: 8px;
+  background: #8c693d;
+}
+
 .care-actions {
   position: relative;
   z-index: 1;

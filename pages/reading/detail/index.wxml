@@ -26,6 +26,10 @@
             <text class="button-dot" wx:if="{{activeHighlight === item.key}}"></text>
           </view>
         </view>
+        <view class="reading-mark-toolbar" wx:if="{{!submitted}}">
+          <text class="reading-mark-hint">{{readingMarkHint}}</text>
+          <text class="reading-mark-clear" wx:if="{{readingMarkCount}}" bindtap="clearReadingMarks">{{clearReadingMarksText}}</text>
+        </view>
         <view class="paper-body library-article-body">
           <block wx:if="{{passage.isClozePassage}}">
             <view class="cloze-passage-stack" wx:if="{{!submitted}}">
@@ -35,7 +39,9 @@
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main cloze-passage-text library-cloze-text">
                     <block wx:for="{{paragraph.parts}}" wx:key="index" wx:for-item="part">
-                      <text wx:if="{{part.type === 'text'}}">{{part.text}}</text>
+                      <text wx:if="{{part.type === 'text'}}" class="cloze-reading-fragment">
+                        <text wx:for="{{part.tokens}}" wx:key="index" wx:for-item="token" class="cloze-reading-token {{readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" data-start="{{token.sentenceStart}}" data-end="{{token.sentenceEnd}}" catchtap="handleReadingTokenTap" catchlongpress="handleReadingSentenceLongPress">{{token.text}}</text>
+                      </text>
                       <view wx:else class="cloze-inline library-cloze-inline">
                         <text class="cloze-inline-initial" wx:if="{{part.initial}}">{{part.initial}}</text>
                         <input class="cloze-inline-input {{part.isCorrect === true ? 'is-correct' : ''}} {{part.isCorrect === false ? 'is-wrong' : ''}}" value="{{part.inputValue}}" disabled="{{submitted}}" data-number="{{part.number}}" bindinput="inputAnswer" placeholder="{{part.number}}" />
@@ -51,15 +57,15 @@
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main">
-                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
+                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}} {{!submitted && readingSentenceMarks[segment.markKey] ? 'reading-mark-sentence' : ''}}" data-mark-key="{{segment.markKey}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
                   <block wx:if="{{segment.chunks && segment.chunks.length}}">
                     <text wx:for="{{segment.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                     </text>
                   </block>
                   <block wx:else>
                     <text wx:if="{{segment.label}}" class="segment-label">{{segment.label}}</text>
-                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                     <text wx:if="{{segment.note}}" class="segment-note">{{segment.note}}</text>
                   </block>
                   <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === segment.start}}">
@@ -78,15 +84,15 @@
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main">
-                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
+                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}} {{!submitted && readingSentenceMarks[segment.markKey] ? 'reading-mark-sentence' : ''}}" data-mark-key="{{segment.markKey}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
                   <block wx:if="{{segment.chunks && segment.chunks.length}}">
                     <text wx:for="{{segment.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                     </text>
                   </block>
                   <block wx:else>
                     <text wx:if="{{segment.label}}" class="segment-label">{{segment.label}}</text>
-                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                     <text wx:if="{{segment.note}}" class="segment-note">{{segment.note}}</text>
                   </block>
                   <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === segment.start}}">
@@ -98,15 +104,15 @@
               </view>
             </block>
             <block wx:else>
-              <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
+              <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}} {{!submitted && readingSentenceMarks[item.markKey] ? 'reading-mark-sentence' : ''}}" data-mark-key="{{item.markKey}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
                 <block wx:if="{{item.chunks && item.chunks.length}}">
                   <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                    <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                   </text>
                 </block>
                 <block wx:else>
                   <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text>
-                  <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                  <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                   <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
                 </block>
                 <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === item.start}}">
@@ -354,6 +360,10 @@
             <text class="button-dot" wx:if="{{activeHighlight === item.key}}"></text>
           </view>
         </view>
+        <view class="reading-mark-toolbar" wx:if="{{!submitted}}">
+          <text class="reading-mark-hint">{{readingMarkHint}}</text>
+          <text class="reading-mark-clear" wx:if="{{readingMarkCount}}" bindtap="clearReadingMarks">{{clearReadingMarksText}}</text>
+        </view>
         <view class="paper-body">
           <block wx:if="{{passage.isClozePassage}}">
             <view class="cloze-passage-stack" wx:if="{{!submitted}}">
@@ -363,7 +373,9 @@
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main cloze-passage-text">
                     <block wx:for="{{paragraph.parts}}" wx:key="index" wx:for-item="part">
-                      <text wx:if="{{part.type === 'text'}}">{{part.text}}</text>
+                      <text wx:if="{{part.type === 'text'}}" class="cloze-reading-fragment">
+                        <text wx:for="{{part.tokens}}" wx:key="index" wx:for-item="token" class="cloze-reading-token {{readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" data-start="{{token.sentenceStart}}" data-end="{{token.sentenceEnd}}" catchtap="handleReadingTokenTap" catchlongpress="handleReadingSentenceLongPress">{{token.text}}</text>
+                      </text>
                       <view wx:else class="cloze-inline">
                         <text class="cloze-inline-initial" wx:if="{{part.initial}}">{{part.initial}}</text>
                         <input class="cloze-inline-input {{part.isCorrect === true ? 'is-correct' : ''}} {{part.isCorrect === false ? 'is-wrong' : ''}}" value="{{part.inputValue}}" disabled="{{submitted}}" data-number="{{part.number}}" bindinput="inputAnswer" placeholder="{{part.number}}" />
@@ -379,15 +391,15 @@
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main">
-                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
+                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}} {{!submitted && readingSentenceMarks[segment.markKey] ? 'reading-mark-sentence' : ''}}" data-mark-key="{{segment.markKey}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
                   <block wx:if="{{segment.chunks && segment.chunks.length}}">
                     <text wx:for="{{segment.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                     </text>
                   </block>
                   <block wx:else>
                     <text wx:if="{{segment.label}}" class="segment-label">{{segment.label}}</text>
-                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                     <text wx:if="{{segment.note}}" class="segment-note">{{segment.note}}</text>
                   </block>
                   <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === segment.start}}">
@@ -406,15 +418,15 @@
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main">
-                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
+                <view wx:for="{{paragraph.segments}}" wx:key="index" wx:for-item="segment" class="passage-segment segment-{{segment.tone}} {{!submitted && readingSentenceMarks[segment.markKey] ? 'reading-mark-sentence' : ''}}" data-mark-key="{{segment.markKey}}" data-start="{{segment.start}}" data-end="{{segment.end}}" bindlongpress="translatePassageSentence">
                   <block wx:if="{{segment.chunks && segment.chunks.length}}">
                     <text wx:for="{{segment.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                     </text>
                   </block>
                   <block wx:else>
                     <text wx:if="{{segment.label}}" class="segment-label">{{segment.label}}</text>
-                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                    <text wx:for="{{segment.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                     <text wx:if="{{segment.note}}" class="segment-note">{{segment.note}}</text>
                   </block>
                   <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === segment.start}}">
@@ -426,15 +438,15 @@
               </view>
             </block>
             <block wx:else>
-              <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
+              <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}} {{!submitted && readingSentenceMarks[item.markKey] ? 'reading-mark-sentence' : ''}}" data-mark-key="{{item.markKey}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
                 <block wx:if="{{item.chunks && item.chunks.length}}">
                   <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                    <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                      <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                   </text>
                 </block>
                 <block wx:else>
                   <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text>
-                  <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                  <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}} {{!submitted && readingSentenceMarks[token.sentenceKey] ? 'reading-mark-sentence-token' : ''}} {{!submitted && readingTokenMarks[token.markKey] ? 'reading-mark-' + readingTokenMarks[token.markKey] : ''}}" data-is-word="{{token.isWord}}" data-word="{{token.word}}" data-mark-key="{{token.markKey}}" data-word-index="{{token.wordIndex}}" data-sentence-key="{{token.sentenceKey}}" catchtap="handleReadingTokenTap">{{token.text}}</text>
                   <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
                 </block>
                 <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === item.start}}">

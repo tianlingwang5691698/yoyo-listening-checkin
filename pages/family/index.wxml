@@ -59,7 +59,10 @@
               <view class="entry-title">{{item.nickname}}</view>
               <view class="entry-copy">{{texts.studentIdPrefix}}{{item.childLoginCode || texts.pendingSync}}</view>
             </view>
-            <view class="library-stamp is-ok" wx:if="{{item.isCurrent}}">{{texts.current}}</view>
+            <view class="student-card-actions">
+              <view class="library-stamp is-ok" wx:if="{{item.isCurrent}}">{{texts.current}}</view>
+              <view class="student-record-entry is-library" data-index="{{index}}" catchtap="openStudentPracticeHistory">{{texts.enterRecords}}</view>
+            </view>
           </view>
         </block>
         <view class="library-copy" wx:if="{{studentCards.length === 1}}">{{texts.addMoreStudents}}</view>
@@ -181,7 +184,10 @@
             <view class="row-title">{{item.nickname}}</view>
             <view class="row-copy">{{texts.studentIdPrefix}}{{item.childLoginCode || texts.pendingSync}}</view>
           </view>
-          <view class="student-current" wx:if="{{item.isCurrent}}">{{texts.current}}</view>
+          <view class="student-card-actions">
+            <view class="student-current" wx:if="{{item.isCurrent}}">{{texts.current}}</view>
+            <view class="student-record-entry" data-index="{{index}}" catchtap="openStudentPracticeHistory">{{texts.enterRecords}}</view>
+          </view>
         </view>
       </block>
     </view>
