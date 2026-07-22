@@ -1,5 +1,13 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-23 IELTS Part 1 内容评分 12 秒超时
+
+1. 现象：家长试做 IELTS 10 Test 1 Part 1 后显示评分失败。
+2. 查询：`pages/speaking.submitIeltsSpeaking -> submitSpeakingAttempt -> Tencent ASR -> Tencent SOE -> gpt-5.6-sol`。
+3. 结论：录音上传、ASR 转写和 SOE 评分均成功，SOE 为 88；`gpt-5.6-sol` 在默认 12 秒后触发 `score-timeout / model-busy`。
+4. 修复：内容评分 HTTP 等待上限提高到 240 秒，`yoyo` 云函数总超时提高到 300 秒，小程序调用等待提高到 320 秒，为录音下载、ASR、SOE 和结果回传预留时间。
+5. 是否需要发版：`yoyo` 云函数和超时配置已部署并立即生效；客户端 320 秒等待需随下一版小程序发布。
+
 ### 2026-07-22 IELTS 口语评分身份分流
 
 1. 现象：IELTS 回答需要学生进入口语记录和日报，同时允许家长试做但不得写学生数据。

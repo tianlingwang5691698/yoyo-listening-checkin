@@ -132,3 +132,16 @@ test('IELTS 四项等权汇总为 0.5 Band，并按三个 Part 使用不同任�
   assert.match(part3Prompt, /abstract discussion/);
   assert.match(part3Prompt, /official public IELTS Speaking Band Descriptors/);
 });
+
+test('口语内容评分最长等待 240 秒', () => {
+  const previous = process.env.SPEAKING_MODEL_HTTP_TIMEOUT_MS;
+  try {
+    process.env.SPEAKING_MODEL_HTTP_TIMEOUT_MS = '240000';
+    assert.equal(speakingEngine.getSpeakingHttpTimeoutMs(), 240000);
+    process.env.SPEAKING_MODEL_HTTP_TIMEOUT_MS = '300000';
+    assert.equal(speakingEngine.getSpeakingHttpTimeoutMs(), 240000);
+  } finally {
+    if (previous === undefined) delete process.env.SPEAKING_MODEL_HTTP_TIMEOUT_MS;
+    else process.env.SPEAKING_MODEL_HTTP_TIMEOUT_MS = previous;
+  }
+});

@@ -23,8 +23,8 @@ function sleep(ms) {
 }
 
 function getSpeakingHttpTimeoutMs() {
-  const value = Number(process.env.SPEAKING_MODEL_HTTP_TIMEOUT_MS || 12000);
-  return Math.max(5000, Math.min(22000, Number.isFinite(value) ? value : 12000));
+  const value = Number(process.env.SPEAKING_MODEL_HTTP_TIMEOUT_MS || 240000);
+  return Math.max(5000, Math.min(240000, Number.isFinite(value) ? value : 240000));
 }
 
 function getSpeakingRetryCount() {
@@ -1603,6 +1603,7 @@ function summarizeAttempts(items) {
 }
 
 module.exports = {
+  getSpeakingHttpTimeoutMs,
   findQuestionFromTranscript,
   buildSourceTextFromTranscript,
   roundIeltsOverallBand,
