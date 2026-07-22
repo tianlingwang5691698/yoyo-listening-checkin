@@ -36,6 +36,7 @@ const MUTATION_ACTIONS = {
   analyzeWritingTranslation: true,
   submitWritingAttempt: true,
   gradeWritingAttempt: true,
+  generateWritingBandSample: true,
   addDictionaryWord: true,
   recordGrammarWrong: true,
   addPracticeWrongQuestion: true,
@@ -1047,6 +1048,14 @@ async function gradeWritingAttempt(attemptId) {
   }, { useCache: false });
 }
 
+async function generateWritingBandSample(options) {
+  return callCloud('generateWritingBandSample', withSelectedStudent(options || {}), {
+    sample: null,
+    bandSamples: [],
+    cached: false
+  }, { useCache: false });
+}
+
 async function getWritingAttempts(options, onRefresh) {
   return callCloud('getWritingAttempts', withSelectedStudent(Object.assign({}, options || {})), {
     attempts: []
@@ -1443,6 +1452,7 @@ module.exports = {
   analyzeWritingTranslation,
   submitWritingAttempt,
   gradeWritingAttempt,
+  generateWritingBandSample,
   getWritingAttempts,
   getWritingAttemptDetail,
   getGrammarHome,

@@ -671,6 +671,172 @@
     rgba(255, 255, 255, 0.64);
 }
 
+.writing-estimate-label {
+  margin-top: 6rpx;
+  color: #5d7188;
+  font-size: 21rpx;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.writing-weighting-note,
+.writing-rubric-version {
+  margin-top: 14rpx;
+  padding: 14rpx 18rpx;
+  border-left: 4rpx solid #527fa1;
+  background: rgba(82, 127, 161, 0.09);
+  color: #425e78;
+  font-size: 22rpx;
+  line-height: 1.55;
+}
+
+.writing-rubric-version {
+  margin-top: 8rpx;
+  border-left-color: #6d9188;
+  background: rgba(109, 145, 136, 0.09);
+}
+
+.writing-test-estimate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10rpx 18rpx;
+  margin-top: 12rpx;
+  padding: 18rpx 20rpx;
+  border: 2rpx solid rgba(109, 145, 136, 0.38);
+  border-radius: 16rpx;
+  background: rgba(232, 244, 239, 0.82);
+}
+
+.writing-test-estimate-label {
+  color: #355e56;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.writing-test-estimate-parts,
+.writing-test-estimate-formula {
+  margin-top: 5rpx;
+  color: #57756e;
+  font-size: 21rpx;
+  line-height: 1.45;
+}
+
+.writing-test-estimate-score {
+  color: #2f6f62;
+  font-size: 31rpx;
+  font-weight: 800;
+}
+
+.writing-test-estimate-formula {
+  width: 100%;
+}
+
+.criterion-detail {
+  padding-bottom: 22rpx;
+}
+
+.criterion-evidence,
+.criterion-descriptor,
+.criterion-limiters,
+.criterion-actions,
+.band-sample-notes,
+.band-sample-target {
+  margin-top: 14rpx;
+  padding: 14rpx 16rpx;
+  border-radius: 12rpx;
+  font-size: 24rpx;
+  line-height: 1.65;
+}
+
+.criterion-evidence { background: rgba(82, 127, 161, 0.1); }
+.criterion-descriptor { background: rgba(109, 145, 136, 0.1); }
+.criterion-limiters { background: rgba(201, 105, 79, 0.1); color: #7d3c2d; }
+.criterion-actions { background: rgba(181, 137, 66, 0.12); color: #6e5224; }
+.criterion-descriptor text { font-weight: 700; }
+
+.criterion-subtitle {
+  margin-bottom: 6rpx;
+  font-size: 22rpx;
+  line-height: 1.4;
+  font-weight: 800;
+  letter-spacing: 1rpx;
+}
+
+.band-sample-panel,
+.band-sample-card {
+  margin-top: 24rpx;
+  padding: 20rpx 22rpx;
+  border: 1rpx solid rgba(82, 127, 161, 0.28);
+  border-radius: 18rpx;
+  background: rgba(246, 251, 253, 0.82);
+}
+
+.band-sample-copy {
+  color: #5d7188;
+  font-size: 23rpx;
+  line-height: 1.55;
+}
+
+.band-sample-buttons {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 16rpx;
+}
+
+.band-sample-button {
+  flex: 1;
+  min-width: 0;
+  min-height: 70rpx;
+  margin: 0;
+  padding: 0 14rpx;
+  border: 2rpx solid rgba(82, 127, 161, 0.52);
+  border-radius: 14rpx;
+  background: #e4f0f6;
+  color: #244f70;
+  font-size: 24rpx;
+  line-height: 66rpx;
+  font-weight: 700;
+}
+
+.band-sample-button.is-strong {
+  background: #2c668e;
+  color: #ffffff;
+}
+
+.band-sample-button::after { border: 0; }
+.band-sample-button[disabled] { opacity: 0.58; }
+
+.band-sample-error {
+  margin-top: 12rpx;
+  color: #a34732;
+  font-size: 22rpx;
+}
+
+.band-sample-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.band-sample-score {
+  flex-shrink: 0;
+  color: #2c668e;
+  font-size: 25rpx;
+  font-weight: 800;
+}
+
+.band-sample-essay {
+  margin-top: 14rpx;
+  color: var(--writing-ink);
+  font-size: var(--font-body-size);
+  line-height: 1.82;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .review-card.is-celebrating {
   animation: writingReviewLift 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -1251,6 +1417,47 @@
   word-break: break-word;
 }
 
+.writing-library-page .band-sample-essay {
+  color: var(--library-writing-ink);
+}
+
+.writing-library-page .writing-estimate-label { color: #725a3d; }
+.writing-library-page .writing-weighting-note,
+.writing-library-page .writing-rubric-version {
+  border-left-color: #8a6738;
+  background: rgba(184, 149, 98, 0.12);
+  color: #644b30;
+}
+.writing-library-page .writing-test-estimate {
+  border-color: rgba(127, 140, 120, 0.5);
+  border-radius: 6rpx;
+  background: rgba(232, 236, 221, 0.76);
+}
+.writing-library-page .writing-test-estimate-label,
+.writing-library-page .writing-test-estimate-score { color: #4f6748; }
+.writing-library-page .writing-test-estimate-parts,
+.writing-library-page .writing-test-estimate-formula { color: #63705e; }
+.writing-library-page .criterion-evidence,
+.writing-library-page .criterion-descriptor,
+.writing-library-page .criterion-limiters,
+.writing-library-page .criterion-actions,
+.writing-library-page .band-sample-notes,
+.writing-library-page .band-sample-target,
+.writing-library-page .band-sample-panel,
+.writing-library-page .band-sample-card {
+  border-radius: 6rpx;
+  border-color: rgba(184, 149, 98, 0.34);
+  background: rgba(243, 232, 212, 0.5);
+}
+.writing-library-page .band-sample-button {
+  border-color: #8a6738;
+  border-radius: 6rpx;
+  background: #efe0c3;
+  color: #5d421f;
+}
+.writing-library-page .band-sample-button.is-strong { background: #74532c; color: #fffaf0; }
+.writing-library-page .band-sample-score { color: #74532c; }
+
 .library-review-letter.is-celebrating {
   animation: libraryStampLand 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -1466,6 +1673,82 @@
 }
 
 .theme-voyage .review-card.is-celebrating { animation: voyageWritingSeal 0.72s ease-out; }
+
+.theme-voyage .writing-weighting-note,
+.theme-voyage .writing-rubric-version,
+.theme-voyage .criterion-evidence,
+.theme-voyage .criterion-descriptor,
+.theme-voyage .criterion-limiters,
+.theme-voyage .criterion-actions,
+.theme-voyage .band-sample-panel,
+.theme-voyage .band-sample-card,
+.theme-voyage .band-sample-notes,
+.theme-voyage .band-sample-target {
+  border-color: rgba(141, 92, 39, 0.42);
+  background: rgba(255, 249, 226, 0.86);
+  color: #4d4334;
+}
+
+.theme-voyage .band-sample-button {
+  border: 3rpx solid #176a99;
+  border-radius: 7rpx;
+  background: #fff0c7;
+  color: #173b50;
+}
+
+.theme-voyage .band-sample-button.is-strong {
+  border-color: #8f332d;
+  background: #a83b31;
+  color: #fff8e7;
+}
+
+.theme-voyage .band-sample-score { color: #8f332d; }
+.theme-voyage .writing-test-estimate {
+  border-color: rgba(141, 92, 39, 0.5);
+  border-radius: 7rpx;
+  background: rgba(255, 244, 207, 0.88);
+}
+.theme-voyage .writing-test-estimate-label,
+.theme-voyage .writing-test-estimate-score { color: #8f332d; }
+.theme-voyage .writing-test-estimate-parts,
+.theme-voyage .writing-test-estimate-formula { color: #624d36; }
+
+.theme-dragon .writing-weighting-note,
+.theme-dragon .writing-rubric-version,
+.theme-dragon .criterion-evidence,
+.theme-dragon .criterion-descriptor,
+.theme-dragon .criterion-limiters,
+.theme-dragon .criterion-actions,
+.theme-dragon .band-sample-panel,
+.theme-dragon .band-sample-card,
+.theme-dragon .band-sample-notes,
+.theme-dragon .band-sample-target {
+  border-color: rgba(20, 55, 92, 0.36);
+  background: rgba(255, 249, 226, 0.92);
+  color: #173653;
+}
+
+.theme-dragon .band-sample-button {
+  border: 3rpx solid #173653;
+  background: #fff4d6;
+  color: #173653;
+}
+
+.theme-dragon .band-sample-button.is-strong {
+  border-color: #173653;
+  background: #d85819;
+  color: #ffffff;
+}
+
+.theme-dragon .band-sample-score { color: #b84312; }
+.theme-dragon .writing-test-estimate {
+  border-color: #173653;
+  background: #fff4d6;
+}
+.theme-dragon .writing-test-estimate-label,
+.theme-dragon .writing-test-estimate-score { color: #b84312; }
+.theme-dragon .writing-test-estimate-parts,
+.theme-dragon .writing-test-estimate-formula { color: #314e69; }
 
 @keyframes voyageWritingSeal {
   0% { transform: translateY(10rpx) rotate(-0.4deg); }

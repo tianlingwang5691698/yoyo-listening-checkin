@@ -71,15 +71,25 @@ function normalizeReview(review, prompt) {
     structure: '',
     language: '',
     spelling: '',
+    strengths: [],
     problems: [],
     suggestions: [],
     grammarCorrections: [],
-    polishedVersion: ''
+    polishedVersion: '',
+    criterionDetails: [],
+    bandSamples: [],
+    isIelts: false,
+    estimateLabel: '',
+    weightingNote: '',
+    rubricVersion: ''
   }, review || {}, {
     totalScore,
+    strengths: Array.isArray(review && review.strengths) ? review.strengths : [],
     problems: Array.isArray(review && review.problems) ? review.problems : [],
     suggestions: Array.isArray(review && review.suggestions) ? review.suggestions : [],
-    grammarCorrections: Array.isArray(review && review.grammarCorrections) ? review.grammarCorrections : []
+    grammarCorrections: Array.isArray(review && review.grammarCorrections) ? review.grammarCorrections : [],
+    criterionDetails: Array.isArray(review && review.criterionDetails) ? review.criterionDetails : [],
+    bandSamples: Array.isArray(review && review.bandSamples) ? review.bandSamples : []
   });
 }
 
@@ -94,11 +104,15 @@ Page({
     translationAnalyzing: false,
     translationAnalysisSummary: '',
     essayText: '',
+    submittedEssayText: '',
     wordCount: 0,
     editorFocused: false,
     submitting: false,
     grading: false,
     review: null,
+    currentAttemptId: '',
+    bandSampleGeneratingDelta: 0,
+    bandSampleError: '',
     reviewCelebrating: false,
     errorText: ''
   }),
@@ -277,7 +291,16 @@ Page({
     }
     const wordCount = countWords(essay);
     this.reviewEffectPlayed = false;
-    this.setData({ submitting: true, wordCount, errorText: '', reviewCelebrating: false });
+    this.setData({
+      submitting: true,
+      submittedEssayText: essay,
+      wordCount,
+      errorText: '',
+      reviewCelebrating: false,
+      currentAttemptId: '',
+      bandSampleGeneratingDelta: 0,
+      bandSampleError: ''
+    });
     try {
       const result = await store.submitWritingAttempt({ prompt, promptId: prompt._id, essay });
       if (result && result.syncMode === 'cloud-error') {
@@ -287,11 +310,11 @@ Page({
       const attemptId = (attempt && (attempt.attemptId || attempt._id)) || '';
       if (result.review && !result.pending) {
         const review = normalizeReview(result.review, prompt);
-        this.setData({ review, grading: false, errorText: '' });
+        this.setData({ review, currentAttemptId: attemptId, grading: false, errorText: '' });
         this.playWritingReviewEffect();
         return;
       }
-      this.setData({ grading: true, errorText: text('gradingStatus', '作文已提交，正在批改。') });
+      this.setData({ currentAttemptId: attemptId, grading: true, errorText: text('gradingStatus', '作文已提交，正在批改。') });
       if (!attemptId) {
         throw new Error('missing-writing-attempt-id');
       }
@@ -300,7 +323,7 @@ Page({
           throw new Error((graded.cloudError && graded.cloudError.message) || text('retryFailed', '批改失败'));
         }
         const review = normalizeReview(graded.review, prompt);
-        this.setData({ review, grading: false, errorText: '' });
+        this.setData({ review, currentAttemptId: attemptId, grading: false, errorText: '' });
         this.playWritingReviewEffect();
         const item = {
           id: `${completed.todayString()}:writing:${prompt._id}`,
@@ -337,6 +360,38 @@ Page({
       wx.showToast({ title: text('retryFailed', '批改失败，可重试'), icon: 'none' });
     } finally {
       this.setData({ submitting: false });
+    }
+  },
+  async generateBandSample(event) {
+    const delta = Number(event.currentTarget.dataset.delta) === 2 ? 2 : 1;
+    const review = this.data.review;
+    const prompt = this.data.prompt;
+    if (!review || !review.isIelts || this.data.bandSampleGeneratingDelta) return;
+    this.setData({ bandSampleGeneratingDelta: delta, bandSampleError: '' });
+    try {
+      const attemptId = String(this.data.currentAttemptId || '');
+      const result = await store.generateWritingBandSample({
+        attemptId,
+        delta,
+        prompt: attemptId ? null : prompt,
+        essay: attemptId ? '' : (this.data.submittedEssayText || this.data.essayText),
+        review: attemptId ? null : review
+      });
+      if (result && result.syncMode === 'cloud-error') {
+        throw new Error((result.cloudError && result.cloudError.message) || '升档范文生成失败');
+      }
+      const bandSamples = Array.isArray(result && result.bandSamples) && result.bandSamples.length
+        ? result.bandSamples
+        : [].concat(review.bandSamples || [], result && result.sample || []).filter(Boolean);
+      this.setData({
+        review: normalizeReview(Object.assign({}, review, { bandSamples }), prompt),
+        bandSampleError: ''
+      });
+    } catch (error) {
+      this.setData({ bandSampleError: '升档范文生成失败，可以再试一次。' });
+      wx.showToast({ title: '生成失败，可重试', icon: 'none' });
+    } finally {
+      this.setData({ bandSampleGeneratingDelta: 0 });
     }
   },
   playWritingReviewEffect() {
