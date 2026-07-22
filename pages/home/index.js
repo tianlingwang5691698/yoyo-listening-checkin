@@ -396,7 +396,7 @@ function buildVocabularyPlanTaskGroup(plan) {
     category: 'vocabulary',
     taskId: plan.planId || 'yoyo-junior-list-plan',
     title: plan.title || `初中词汇第${Number(plan.round || 1)}轮 · List ${Number(plan.currentList || 1)}`,
-    meta: plan.summary || '主学 1 个 List · 复习到期 List',
+    meta: plan.summary || '主背 1 个 List · 复习不熟词',
     orderText: '1',
     completedToday,
     stateText: completedToday ? t('completed') : t('start'),

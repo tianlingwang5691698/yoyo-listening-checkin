@@ -105,7 +105,7 @@ test('初中词汇 List 计划同一天保持已完成轮次与 List', () => {
   assert.equal(descriptor.practiceLevel, 'junior-list-1');
 });
 
-test('初中词汇第 2 轮仍完整复习当前 List，不跳过已掌握词', () => {
+test('初中词汇第 2 轮从 List 1 开始完整重背当前 List', () => {
   const helpers = flashcardService._test;
   const today = '2026-08-21';
   const rows = [
@@ -116,4 +116,12 @@ test('初中词汇第 2 轮仍完整复习当前 List，不跳过已掌握词', 
   assert.deepEqual(helpers.selectJuniorCurrentCards(rows, 2, today).map((item) => item.flashcardKey), ['a', 'b']);
   assert.equal(helpers.isJuniorCurrentListComplete(rows, 2, 2, today), false);
   assert.equal(helpers.isJuniorCurrentListComplete(rows.map((item) => Object.assign({}, item, { lastReviewDate: today })), 2, 2, today), true);
+});
+
+test('佑佑计划只复习尚未掌握的不熟词', () => {
+  const helpers = flashcardService._test;
+  const today = '2026-08-21';
+  assert.equal(helpers.isJuniorUnfamiliarReviewDue({ status: 'reviewing', lastUnfamiliarDate: '2026-08-20', lastReviewDate: '2026-08-20' }, today), true);
+  assert.equal(helpers.isJuniorUnfamiliarReviewDue({ status: 'reviewing', lastUnfamiliarDate: '2026-08-19', lastReviewDate: '2026-08-20' }, today), false);
+  assert.equal(helpers.isJuniorUnfamiliarReviewDue({ status: 'reviewing', lastUnfamiliarDate: today, lastReviewDate: today }, today), false);
 });

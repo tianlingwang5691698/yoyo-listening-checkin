@@ -101,7 +101,7 @@
           <view class="library-vocab-drawer-head">
             <view class="library-vocab-head-copy">
               <view class="library-vocab-title">{{activeSourceTitle || texts.myLibrary}} <text wx:if="{{demoMode}}" class="library-vocab-demo">{{texts.demo}}</text></view>
-              <view class="library-vocab-subtitle" wx:if="{{!loading && dailyPlanMode}}">{{texts.roundLabel}}{{dailyPlanRound}} · {{texts.mainListLabel}} List {{dailyPlanCurrentList}}</view>
+              <view class="library-vocab-subtitle" wx:if="{{!loading && dailyPlanMode}}">{{texts.roundLabel}}{{dailyPlanRound}}{{texts.roundSuffix}} · {{dailyPlanRound === 1 ? texts.newListLabel : texts.revisitListLabel}} List {{dailyPlanCurrentList}}</view>
               <view class="library-vocab-subtitle" wx:if="{{!loading && dailyPlanMode}}">{{texts.dueReviewLabel}}：{{dailyPlanReviewListsText}}</view>
               <view class="library-vocab-subtitle" wx:elif="{{!loading}}">{{texts.learned}} {{planSummary.learned}} / {{planSummary.total}} · {{texts.checkin}} {{vocabCheckinDays}} {{texts.days}}</view>
               <view class="vocab-data-skeleton" wx:else></view>
@@ -381,7 +381,7 @@
         <view class="progress-head">
           <view class="hero-copy">
             <view class="progress-title">{{activeSourceTitle || texts.myLibrary}} <text wx:if="{{demoMode}}" class="demo-tag">{{texts.demo}}</text></view>
-            <view class="progress-copy" wx:if="{{!loading && dailyPlanMode}}">{{texts.roundLabel}}{{dailyPlanRound}} · {{texts.mainListLabel}} List {{dailyPlanCurrentList}}</view>
+            <view class="progress-copy" wx:if="{{!loading && dailyPlanMode}}">{{texts.roundLabel}}{{dailyPlanRound}}{{texts.roundSuffix}} · {{dailyPlanRound === 1 ? texts.newListLabel : texts.revisitListLabel}} List {{dailyPlanCurrentList}}</view>
             <view class="progress-copy" wx:if="{{!loading && dailyPlanMode}}">{{texts.dueReviewLabel}}：{{dailyPlanReviewListsText}}</view>
             <view class="progress-copy" wx:elif="{{!loading}}">{{texts.learned}} {{planSummary.learned}} / {{planSummary.total}} · {{texts.checkin}} {{vocabCheckinDays}} {{texts.days}}</view>
             <view class="vocab-data-skeleton" wx:else></view>

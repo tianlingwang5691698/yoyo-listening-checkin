@@ -185,7 +185,7 @@ function getJuniorListPlanDescriptor(state, today) {
     currentSourceId: `dictionary-book-junior-list-${currentList}`,
     practiceLevel: `junior-list-${currentList}`,
     title: `初中词汇第${round}轮 · List ${currentList}`,
-    summary: `主学 List ${currentList} · 艾宾浩斯复习到期 List`
+    summary: `${round === 1 ? '新学' : '重背'} List ${currentList} · 复习不熟词`
   };
 }
 
@@ -216,6 +216,17 @@ function isJuniorCurrentListComplete(currentRows, sourceCount, round, today) {
     return rows.every((item) => item.status !== 'new' && !!item.firstLearnedDate);
   }
   return rows.every((item) => item.lastReviewDate === today);
+}
+
+function isJuniorUnfamiliarPending(item) {
+  if (!item || item.status === 'new' || !item.lastUnfamiliarDate) return false;
+  return !item.lastReviewDate || String(item.lastReviewDate) <= String(item.lastUnfamiliarDate);
+}
+
+function isJuniorUnfamiliarReviewDue(item, today) {
+  return isJuniorUnfamiliarPending(item)
+    && String(item.lastUnfamiliarDate) < String(today)
+    && item.lastReviewDate !== today;
 }
 
 function makeFlashcard(ctx, today, source, type, card) {
@@ -411,9 +422,7 @@ async function getJuniorVocabularyPlan(event) {
   const currentCards = selectJuniorCurrentCards(currentRows, descriptor.round, today);
   const reviewCards = progressRows.filter((item) => (
     item.sourceId !== descriptor.currentSourceId
-      && item.status !== 'new'
-      && isDue(item, today)
-      && item.lastReviewDate !== today
+      && isJuniorUnfamiliarReviewDue(item, today)
   )).map((item) => Object.assign({}, item, {
     planRole: 'review',
     planList: Number(String(item.sourceId || '').match(/junior-list-(\d+)$/)?.[1] || 0)
@@ -442,7 +451,7 @@ async function getJuniorVocabularyPlan(event) {
     },
     logs: [],
     encouragement: reviewLists.length
-      ? `今天完成 List ${descriptor.currentList}，并复习 ${reviewLists.length} 个到期 List，坚持得很好。`
+      ? `今天完成 List ${descriptor.currentList}，并复习 ${reviewCards.length} 个不熟词，坚持得很好。`
       : `今天完成 List ${descriptor.currentList}，开局很扎实。`
   });
 }
@@ -474,13 +483,11 @@ async function completeJuniorVocabularyPlan(event) {
   }
   const currentRows = rows.filter((item) => item.sourceId === descriptor.currentSourceId);
   const currentBook = getJuniorBook(`junior-list-${descriptor.currentList}`);
-  const currentBookRows = currentBook ? await storageAdapter.downloadCloudJson(currentBook.cloudPath) : [];
+  const currentBookRows = await storageAdapter.downloadCloudJson(currentBook.cloudPath);
   const currentComplete = isJuniorCurrentListComplete(currentRows, currentBookRows.length, descriptor.round, today);
   const remainingDue = rows.filter((item) => (
     item.sourceId !== descriptor.currentSourceId
-      && item.status !== 'new'
-      && isDue(item, today)
-      && item.lastReviewDate !== today
+      && isJuniorUnfamiliarReviewDue(item, today)
   ));
   if (!currentComplete || remainingDue.length) {
     return Object.assign({ saved: false, reason: 'plan-incomplete' }, descriptor);
@@ -517,7 +524,7 @@ async function completeJuniorVocabularyPlan(event) {
     }
   });
   const encouragement = reviewLists.length
-    ? `今天完成 List ${descriptor.currentList}，并复习 ${reviewLists.length} 个到期 List，坚持得很好。`
+    ? `今天完成 List ${descriptor.currentList}，并复习 ${reviewedDueRows.length} 个不熟词，坚持得很好。`
     : `今天完成 List ${descriptor.currentList}，开局很扎实。`;
   const nextState = Object.assign(advanceJuniorListPlanState(state, today), {
     lastMainWords: descriptor.round === 1 ? newLearned : reviewedCurrent,
@@ -1258,6 +1265,8 @@ module.exports = {
     getJuniorListPlanDescriptor,
     advanceJuniorListPlanState,
     selectJuniorCurrentCards,
-    isJuniorCurrentListComplete
+    isJuniorCurrentListComplete,
+    isJuniorUnfamiliarPending,
+    isJuniorUnfamiliarReviewDue
   }
 };
