@@ -124,6 +124,14 @@ test('阅读英文正确与作答标签保持小号单行', () => {
   assert.match(wxss, /\.language-en \.option-badge[\s\S]*?font-size: 16rpx[\s\S]*?white-space: nowrap/);
 });
 
+test('阅读文章纸张背景覆盖四套主题', () => {
+  const wxss = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');
+  assert.match(wxss, /\.reading-detail[\s\S]*?\.reading-paper[\s\S]*?\.paper-body/);
+  assert.match(wxss, /\.library-reading-detail[\s\S]*?\.library-article-paper[\s\S]*?\.library-article-body/);
+  assert.match(wxss, /\.theme-voyage \.paper-body[\s\S]*?#fff8e6/);
+  assert.match(wxss, /\.theme-dragon\.reading-detail[\s\S]*?#fff2c8[\s\S]*?\.theme-dragon \.paper-body[\s\S]*?#fffdf1/);
+});
+
 test('阅读标准答案与正确项保持同一绿色语义', () => {
   const detailTemplate = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxml'), 'utf8');
   const detailStyle = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');

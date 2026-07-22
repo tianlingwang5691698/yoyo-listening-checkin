@@ -2123,6 +2123,22 @@
 .theme-voyage .passage-head { padding-right: 74rpx; border-bottom: 3rpx double rgba(122,78,34,.38); }
 .theme-voyage .passage-meta { color: var(--voyage-brass); font-weight: 700; }
 .theme-voyage .passage-title { color: var(--voyage-ink); font-family: "Songti SC", STSong, serif; font-weight: 800; }
+.theme-voyage .paper-body {
+  border-color: rgba(141, 92, 39, 0.28);
+  background:
+    repeating-linear-gradient(180deg, transparent 0 58rpx, rgba(141, 92, 39, 0.055) 59rpx),
+    #fff8e6;
+}
+.theme-voyage .passage-paragraph {
+  border-color: rgba(141, 92, 39, 0.26);
+  border-radius: 7rpx;
+  background: rgba(255, 250, 233, 0.88);
+}
+.theme-voyage .passage-paragraph-label {
+  border-radius: 4rpx;
+  background: rgba(175, 120, 50, 0.16);
+  color: #795327;
+}
 .theme-voyage .paper-body,
 .theme-voyage .passage-text,
 .theme-voyage .cloze-passage-text { color: #343930; }
@@ -2221,6 +2237,85 @@
 }
 .theme-voyage .dictionary-audio,
 .theme-voyage .dictionary-add { border-radius: 5rpx; background: #1c5c79; color: #fff2cb; }
+
+/* Dragon: warm training paper with low-glare contrast for long-form reading. */
+.theme-dragon.reading-detail {
+  min-height: 100vh;
+  padding: 34rpx 24rpx 150rpx;
+  background:
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.018) 0 3rpx, transparent 3rpx 28rpx),
+    #fff2c8;
+  color: #12346c;
+}
+
+.theme-dragon .detail-atmosphere { display: none; }
+
+.theme-dragon .reading-paper {
+  padding: 34rpx 28rpx 38rpx 34rpx;
+  border: 4rpx solid #102e62;
+  border-radius: 10rpx;
+  background: #fff8dd;
+  box-shadow: 0 9rpx 0 rgba(16, 46, 98, 0.16);
+}
+
+.theme-dragon .paper-corner {
+  width: 64rpx;
+  height: 64rpx;
+  border: 3rpx solid #102e62;
+  border-top: 0;
+  border-right: 0;
+  border-radius: 0 6rpx 0 10rpx;
+  background: #ffd83d;
+  box-shadow: none;
+}
+
+.theme-dragon .paper-margin-line {
+  left: 18rpx;
+  background: linear-gradient(180deg, transparent, rgba(244, 90, 22, 0.42), transparent);
+}
+
+.theme-dragon .passage-head {
+  padding-right: 58rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 3rpx solid rgba(16, 46, 98, 0.24);
+}
+
+.theme-dragon .passage-meta { color: #6b6680; }
+.theme-dragon .passage-title { color: #102e62; font-weight: 800; }
+
+.theme-dragon .paper-body {
+  border: 2rpx solid rgba(16, 46, 98, 0.22);
+  border-radius: 8rpx;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 60rpx, rgba(16, 46, 98, 0.045) 61rpx),
+    #fffdf1;
+  box-shadow: none;
+}
+
+.theme-dragon .passage-text,
+.theme-dragon .cloze-passage-text { color: #17355f; }
+
+.theme-dragon .passage-paragraph {
+  border: 2rpx solid rgba(16, 46, 98, 0.20);
+  border-radius: 8rpx;
+  background: rgba(255, 250, 229, 0.86);
+}
+
+.theme-dragon .passage-paragraph-label {
+  border-radius: 5rpx;
+  background: rgba(255, 216, 61, 0.34);
+  color: #244573;
+}
+
+.theme-dragon .reading-mark-toolbar {
+  border: 2rpx solid rgba(16, 46, 98, 0.22);
+  border-radius: 7rpx;
+  background: #fff3c4;
+}
+
+.theme-dragon .reading-mark-hint,
+.theme-dragon .reading-mark-clear { color: #244573; }
+
 .reading-question-source-pages {
   width: 100%;
   margin: 0 0 24rpx;
