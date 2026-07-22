@@ -135,3 +135,9 @@ Object.assign(module.exports.readingDetail.en, {
   manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press a sentence for green.',
   clearManualMarks: 'Clear marks'
 });
+Object.assign(module.exports.grammar['zh-CN'], { manualMarkHint: '点词标黄，连续点标蓝；长按题干标绿', clearManualMarks: '清除标记' });
+Object.assign(module.exports.grammar.en, { manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press the question for green.', clearManualMarks: 'Clear marks' });
+Object.assign(module.exports.writing['zh-CN'], { manualMarkHint: '点词标黄，连续点标蓝；长按题目句标绿', clearManualMarks: '清除标记' });
+Object.assign(module.exports.writing.en, { manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press a prompt line for green.', clearManualMarks: 'Clear marks' });
+Object.assign(module.exports.lesson['zh-CN'], { manualMarkHint: '点词标黄，连续点标蓝；长按当前句标绿', clearManualMarks: '清除标记' });
+Object.assign(module.exports.lesson.en, { manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press the current line for green.', clearManualMarks: 'Clear marks' });

@@ -3,6 +3,7 @@ const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
 const completion = require('./completion.service');
+const { sanitizeManualMarks } = require('../lib/manual-mark-engine');
 
 const COLLECTION = 'writingAttempts';
 const IELTS_WRITING_RUBRIC_VERSION = 'IELTS public Writing band descriptors · May 2023';
@@ -505,7 +506,7 @@ function normalizeTranslationAnalysis(data, questions) {
 
 async function analyzeWritingTranslation(event) {
   const payload = (event && event.payload) || {};
-  await study.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'analyzeWritingTranslation'
   }));
   const prompt = payload.prompt || {};
@@ -549,7 +550,50 @@ async function analyzeWritingTranslation(event) {
   if (!Array.isArray(parsed.items) || !parsed.items.length) {
     throw new Error('writing-translation-analysis-invalid');
   }
-  return normalizeTranslationAnalysis(parsed, questions);
+  const analysis = normalizeTranslationAnalysis(parsed, questions);
+  if (study.isStudyWriteAllowed(ctx)) {
+    const now = new Date().toISOString();
+    const correctCount = analysis.analyses.filter((item) => item.status === 'correct').length;
+    const attempt = {
+      promptId: String(prompt._id || '').trim(),
+      title: prompt.title || '翻译练习',
+      prompt: prompt.directions || '',
+      promptMeta: {
+        contentType: 'translation',
+        directions: prompt.directions || ''
+      },
+      date: today,
+      essay: questions.map((question) => `${question.number}. ${question.studentTranslation}`).join('\n'),
+      translationQuestions: questions,
+      manualMarks: sanitizeManualMarks(payload.manualMarks),
+      wordCount: questions.reduce((count, question) => count + (question.studentTranslation.match(/[A-Za-z]+(?:[-'][A-Za-z]+)?/g) || []).length, 0),
+      score: correctCount,
+      totalScore: questions.length,
+      review: {
+        summary: analysis.summary,
+        analyses: analysis.analyses,
+        score: correctCount,
+        totalScore: questions.length
+      },
+      status: 'graded',
+      createdAt: now,
+      updatedAt: now,
+      gradedAt: now
+    };
+    const created = await dbAdapter.collection(COLLECTION).add({
+      data: Object.assign({}, attempt, {
+        familyId: ctx.family.familyId,
+        childId: ctx.child.childId,
+        userId: ctx.user.userId,
+        memberId: ctx.member.memberId
+      })
+    });
+    const attemptId = created && created._id ? created._id : '';
+    const savedAttempt = Object.assign({}, attempt, { attemptId, _id: attemptId });
+    await saveWritingCompletion(ctx, today, Object.assign({}, prompt, { _id: attempt.promptId }), savedAttempt, `${questions.length} 题已分析`);
+    return Object.assign({}, analysis, { attempt: savedAttempt });
+  }
+  return analysis;
 }
 
 function buildCompletionPayload(prompt, attempt, progressText) {
@@ -782,6 +826,7 @@ async function submitWritingAttempt(event) {
     },
     date: today,
     essay,
+    manualMarks: sanitizeManualMarks(payload.manualMarks),
     wordCount: (essay.match(/[A-Za-z]+(?:[-'][A-Za-z]+)?/g) || []).length,
     score: 0,
     totalScore,
@@ -976,6 +1021,8 @@ function formatAttempt(record) {
     score: Number(item.score || review.score || 0),
     totalScore: Number(item.totalScore || review.totalScore || 20),
     review,
+    manualMarks: item.manualMarks || null,
+    translationQuestions: Array.isArray(item.translationQuestions) ? item.translationQuestions : [],
     status: item.status || (review && review.summary ? 'graded' : ''),
     gradeError: item.gradeError || '',
     createdAt: item.createdAt || '',

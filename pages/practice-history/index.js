@@ -113,6 +113,7 @@ function normalizeGrammar(item, index) {
     isMicroLesson,
     detailReady: questions.length > 0,
     detailLoading: false,
+    manualMarkItems: (attempt.manualMarks && attempt.manualMarks.items) || [],
     detailQuestions: buildGrammarDetailQuestions(questions, item)
   };
 }
@@ -230,7 +231,8 @@ function normalizeWriting(attempt, index) {
       }, review)
     }),
     detailReady: false,
-    detailLoading: false
+    detailLoading: false,
+    manualMarkItems: (attempt.manualMarks && attempt.manualMarks.items) || []
   };
 }
 
@@ -519,6 +521,7 @@ Page({
       detailLoading: false,
       detailReady: true,
       attempt: (item && item.latestAttempt) || record.attempt,
+      manualMarkItems: (item && item.latestAttempt && item.latestAttempt.manualMarks && item.latestAttempt.manualMarks.items) || [],
       detailQuestions
     });
     this.resumeGrammarAnalyses(record.id, detailQuestions);
@@ -651,7 +654,8 @@ Page({
     this.updateRecord(record.id, {
       detailLoading: false,
       detailReady: true,
-      attempt: normalized.attempt
+      attempt: normalized.attempt,
+      manualMarkItems: normalized.manualMarkItems
     });
     if (['grading-pending', 'grading', 'grading-failed'].includes(normalized.attempt.status)) {
       this.writingResumeTimers = this.writingResumeTimers || {};

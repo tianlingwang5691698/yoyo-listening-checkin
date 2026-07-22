@@ -4,6 +4,7 @@ const completed = require('../../utils/completed');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-player');
+const { tokenizeScopedText, toggleScopedTokenMark, toggleScopedSentenceMark, countScopedMarks, buildManualMarks } = require('../../utils/scoped-manual-marks');
 
 const text = (key, fallback) => i18n.getPageText('grammar', key, undefined, fallback);
 
@@ -562,6 +563,7 @@ function buildStages(em2Topics, em1Topics, springTopics, autumnTopics) {
 }
 
 function buildQuestion(item, index) {
+  const markScope = `grammar-${String(item._id || item.id || index)}`;
   const answer = String(item.answer || '').trim().toUpperCase();
   const optionsList = ['A', 'B', 'C', 'D'].filter((key) => item.options && item.options[key]).map((key) => ({
     key,
@@ -574,7 +576,8 @@ function buildQuestion(item, index) {
   return Object.assign({}, item, {
     answer,
     sequenceNumber: Number(index || 0) + 1,
-    promptTokens: tokenizeText(item.prompt || ''),
+    markScope,
+    promptTokens: tokenizeScopedText(item.prompt || '', markScope),
     selectedAnswer: '',
     isAnswered: false,
     isCorrect: false,
@@ -644,6 +647,11 @@ function recordGrammarCompleted(state, answeredCount) {
     isCorrect: !!question.isCorrect,
     explanation: question.explanation || null
   }));
+  const isFinal = answeredCount >= (state.selectedQuestions || []).length;
+  const markSources = (state.selectedQuestions || []).reduce((map, question) => {
+    map[question.markScope] = question.prompt || question.question || '';
+    return map;
+  }, {});
   const item = {
     id: `grammar:${state.selectedExamId || 'grammar'}:${topicId}`,
     type: 'grammar',
@@ -655,7 +663,8 @@ function recordGrammarCompleted(state, answeredCount) {
     latestAttempt: {
       answeredCount: answeredCount || answeredQuestions.length,
       totalCount: (state.selectedQuestions || []).length,
-      questions: answeredQuestions
+      questions: answeredQuestions,
+      manualMarks: isFinal ? buildManualMarks(markSources, state.grammarTokenMarks, state.grammarSentenceMarks) : undefined
     }
   };
   completed.addCompletedItem(item);
@@ -706,6 +715,9 @@ Page({
     classroom: buildClassroomText(),
     expandedQuestionId: '',
     answeredCount: 0,
+    grammarTokenMarks: {},
+    grammarSentenceMarks: {},
+    grammarMarkCount: 0,
     dictionaryVisible: false,
     dictionaryLoading: false,
     dictionaryAudioLoading: false,
@@ -1164,7 +1176,10 @@ Page({
         selectedQuestions: [],
         selectedTopicOffset: 0,
         expandedQuestionId: '',
-        answeredCount: 0
+        answeredCount: 0,
+        grammarTokenMarks: {},
+        grammarSentenceMarks: {},
+        grammarMarkCount: 0
       });
       return;
     }
@@ -1222,7 +1237,10 @@ Page({
       selectedQuestions: restoredQuestions,
       selectedTopicOffset: resumeIndex,
       expandedQuestionId: '',
-      answeredCount
+      answeredCount,
+      grammarTokenMarks: {},
+      grammarSentenceMarks: {},
+      grammarMarkCount: 0
     }, () => {
       if (resumeIndex > 0) this.scrollToResumeQuestion(resumeIndex);
     });
@@ -1294,8 +1312,42 @@ Page({
       selectedQuestions: [],
       selectedTopicOffset: 0,
       expandedQuestionId: '',
-      answeredCount: 0
+      answeredCount: 0,
+      grammarTokenMarks: {},
+      grammarSentenceMarks: {},
+      grammarMarkCount: 0
     });
+  },
+  handleGrammarTokenTap(event) {
+    const dataset = event.currentTarget.dataset || {};
+    const question = (this.data.selectedQuestions || []).find((item) => item._id === dataset.questionId);
+    if (!question || !dataset.word) return;
+    if (question.isAnswered) {
+      this.openDictionaryWord(event);
+      return;
+    }
+    const scope = String(dataset.markScope || question.markScope || '');
+    if (!scope) return;
+    const grammarTokenMarks = toggleScopedTokenMark(this.data.grammarTokenMarks, scope, Number(dataset.wordIndex));
+    this.setData({
+      grammarTokenMarks,
+      grammarMarkCount: countScopedMarks(grammarTokenMarks, this.data.grammarSentenceMarks)
+    });
+  },
+  handleGrammarSentenceMark(event) {
+    const dataset = event.currentTarget.dataset || {};
+    const question = (this.data.selectedQuestions || []).find((item) => item._id === dataset.questionId);
+    if (!question || question.isAnswered) return;
+    const scope = String(dataset.markScope || question.markScope || '');
+    if (!scope) return;
+    const grammarSentenceMarks = toggleScopedSentenceMark(this.data.grammarSentenceMarks, scope);
+    this.setData({
+      grammarSentenceMarks,
+      grammarMarkCount: countScopedMarks(this.data.grammarTokenMarks, grammarSentenceMarks)
+    });
+  },
+  clearGrammarMarks() {
+    this.setData({ grammarTokenMarks: {}, grammarSentenceMarks: {}, grammarMarkCount: 0 });
   },
   async selectOption(event) {
     const questionId = event.currentTarget.dataset.questionId;

@@ -526,6 +526,7 @@ function normalizeCompletionItem(item, index) {
     correctText: !isVocabulary && !isGrammarMicroLesson && totalCount
       ? formatText(tr('questionCount'), { correct: correctCount, total: totalCount })
       : '',
+    manualMarkItems: (latestAttempt.manualMarks && latestAttempt.manualMarks.items) || [],
     reviewSummary: review.summary || review.feedback || '',
     reviewContent: review.content || '',
     reviewLanguage: review.language || '',

@@ -144,6 +144,10 @@
           <button wx:if="{{!item.isVocabulary}}" class="detail-toggle library-detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack || item.isGrammarMicroLesson ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-loading" wx:if="{{item.detailLoading}}">{{texts.loadingDetail}}</view>
+            <view class="detail-sheet manual-mark-sheet" wx:if="{{item.manualMarkItems.length}}">
+              <view class="sheet-title">{{texts.myMarks}}</view>
+              <view class="manual-mark-list"><view class="manual-mark-item is-{{mark.type}}" wx:for="{{item.manualMarkItems}}" wx:key="index" wx:for-item="mark">{{mark.text}}</view></view>
+            </view>
             <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">
               <view class="sheet-title">{{texts.source}}</view>
               <view class="sheet-copy">{{item.passage.passage}}</view>
@@ -404,6 +408,10 @@
         <button wx:if="{{!item.isVocabulary}}" class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack || item.isGrammarMicroLesson ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-loading" wx:if="{{item.detailLoading}}">{{texts.loadingDetail}}</view>
+            <view class="detail-sheet manual-mark-sheet" wx:if="{{item.manualMarkItems.length}}">
+              <view class="sheet-title">{{texts.myMarks}}</view>
+              <view class="manual-mark-list"><view class="manual-mark-item is-{{mark.type}}" wx:for="{{item.manualMarkItems}}" wx:key="index" wx:for-item="mark">{{mark.text}}</view></view>
+            </view>
             <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">
               <view class="sheet-title">{{texts.source}}</view>
               <view class="sheet-copy">{{item.passage.passage}}</view>

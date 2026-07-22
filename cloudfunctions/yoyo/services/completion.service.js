@@ -1,6 +1,7 @@
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const completionRecords = require('../lib/completion-records');
+const { sanitizeManualMarks } = require('../lib/manual-mark-engine');
 
 const COLLECTION = 'studyCompletedItems';
 
@@ -28,6 +29,12 @@ async function upsertStudyCompletion(ctx, today, payload) {
     section
   ].filter(Boolean).join('_');
   const now = new Date().toISOString();
+  const latestAttempt = payload.latestAttempt && typeof payload.latestAttempt === 'object'
+    ? Object.assign({}, payload.latestAttempt)
+    : null;
+  if (latestAttempt && latestAttempt.manualMarks) {
+    latestAttempt.manualMarks = sanitizeManualMarks(latestAttempt.manualMarks);
+  }
   const record = {
     recordId,
     familyId: ctx.family.familyId,
@@ -50,7 +57,7 @@ async function upsertStudyCompletion(ctx, today, payload) {
     audioFileId: String(payload.audioFileId || (taskSnapshot && taskSnapshot.audioFileId) || ''),
     audioSource: String(payload.audioSource || (taskSnapshot && taskSnapshot.audioSource) || ''),
     taskSnapshot,
-    latestAttempt: payload.latestAttempt || null,
+    latestAttempt,
     completedToday: true,
     updatedAt: now
   };

@@ -64,6 +64,10 @@
         </block>
 
         <block wx:if="{{type === 'grammar'}}">
+          <view class="history-section history-manual-marks" wx:if="{{item.manualMarkItems.length}}">
+            <view class="history-section-title">{{texts.myMarks}}</view>
+            <view class="history-mark-list"><view class="history-mark-item is-{{mark.type}}" wx:for="{{item.manualMarkItems}}" wx:key="index" wx:for-item="mark">{{mark.text}}</view></view>
+          </view>
           <view class="history-section" wx:if="{{item.isMicroLesson}}">
             <view class="history-section-title">{{texts.microLesson}}</view>
             <view class="history-analysis">{{item.summary}}</view>
@@ -89,6 +93,10 @@
         </block>
 
         <block wx:if="{{type === 'writing' && item.detailReady}}">
+          <view class="history-section history-manual-marks" wx:if="{{item.manualMarkItems.length}}">
+            <view class="history-section-title">{{texts.myMarks}}</view>
+            <view class="history-mark-list"><view class="history-mark-item is-{{mark.type}}" wx:for="{{item.manualMarkItems}}" wx:key="index" wx:for-item="mark">{{mark.text}}</view></view>
+          </view>
           <view class="history-section">
             <view class="history-section-title">{{texts.prompt}}</view>
             <view class="history-writing-text">{{item.attempt.prompt || item.title}}</view>

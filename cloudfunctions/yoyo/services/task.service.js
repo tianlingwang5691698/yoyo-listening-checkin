@@ -1,5 +1,6 @@
 const study = require('../facades/study.facade');
 const completion = require('./completion.service');
+const { sanitizeManualMarks } = require('../lib/manual-mark-engine');
 
 const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const CATALOG_BROWSE_CATEGORIES = ['song', 'littlebear', 'newconcept1', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'peppa', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
@@ -409,7 +410,27 @@ async function markTaskListened(event, context) {
     makeupForDate: planRunType === 'catchup' ? targetDate : '',
     updatedAt: now
   };
+  if (record.completedToday) {
+    record.manualMarks = sanitizeManualMarks(payload.manualMarks);
+  }
   await study.saveProgressRecord(record);
+  if (record.completedToday && record.manualMarks && record.manualMarks.items.length) {
+    await completion.upsertStudyCompletion(ctx, targetDate, {
+      type: 'listening',
+      section: 'manual-marks',
+      targetId: `${category}:${task.taskId}`,
+      category,
+      taskId: task.taskId,
+      title: task.displayTitle || task.title || task.audioTitle || '听力练习',
+      meta: task.categoryLabel || category,
+      progressText: '已完成听力练习',
+      latestAttempt: {
+        manualMarks: record.manualMarks,
+        playCount: nextPlayCount,
+        status: 'completed'
+      }
+    });
+  }
   if (record.planSource === 'fixed-yoyo' && record.planRunType === 'normal' && record.planSlotIndex > 0) {
     await study.syncFixedPlanProgressSummary(scope, record);
   }

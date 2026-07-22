@@ -204,3 +204,5 @@ Object.assign(module.exports.record['zh-CN'], { syncingDuration: '同步中' });
 Object.assign(module.exports.record.en, { syncingDuration: 'Syncing' });
 Object.assign(module.exports.family['zh-CN'], { enterRecords: '进入记录' });
 Object.assign(module.exports.family.en, { enterRecords: 'View records' });
+Object.assign(module.exports.parentDetail['zh-CN'], { myMarks: '我的标记' });
+Object.assign(module.exports.parentDetail.en, { myMarks: 'My marks' });

@@ -5,6 +5,7 @@ const snapshotStore = require('../../../utils/snapshot');
 const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
 const promptDisplay = require('../../../utils/writing-prompt-display');
+const { tokenizeScopedText, toggleScopedTokenMark, toggleScopedSentenceMark, countScopedMarks, buildManualMarks } = require('../../../utils/scoped-manual-marks');
 
 const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fallback);
 
@@ -32,14 +33,45 @@ function isWritingTaskReady(prompt) {
 }
 
 function buildTranslationQuestions(prompt) {
-  return (prompt && prompt.questions || []).map((question) => ({
+  return (prompt && prompt.questions || []).map((question, index) => {
+    const markScope = `writing-translation-${Number(question.number || index + 1)}`;
+    return {
     number: Number(question.number || 0),
     sourceText: cleanPromptText(question.sourceText),
+    markScope,
+    sourceTokens: tokenizeScopedText(cleanPromptText(question.sourceText), markScope),
     requiredWord: cleanPromptText(question.requiredWord),
     referenceAnswers: Array.isArray(question.referenceAnswers) ? question.referenceAnswers.map(cleanPromptText).filter(Boolean) : [],
     inputValue: '',
     analysis: null
-  }));
+    };
+  });
+}
+
+function buildWritingMarkLines(display) {
+  const source = display || {};
+  const entries = [];
+  const add = (textValue, label) => {
+    const value = cleanPromptText(textValue);
+    if (!value) return;
+    const scope = `writing-prompt-${entries.length}`;
+    entries.push({ scope, label: label || '', text: value, tokens: tokenizeScopedText(value, scope) });
+  };
+  add(source.directions, '');
+  add(source.scenario, source.scenarioTitle);
+  (source.requirements || []).forEach((item, index) => add(item, index === 0 ? source.requirementsTitle : ''));
+  (source.notices || []).forEach((item, index) => add(item, index === 0 ? source.noticeTitle : ''));
+  add(source.promptStarter, '');
+  return entries;
+}
+
+function getWritingMarkSources(state) {
+  return [].concat(state.writingMarkLines || [], state.translationQuestions || []).reduce((map, item) => {
+    const scope = item.scope || item.markScope;
+    const value = item.text || item.sourceText;
+    if (scope && value) map[scope] = value;
+    return map;
+  }, {});
 }
 
 function buildPromptImages(prompt) {
@@ -103,6 +135,10 @@ Page({
     translationSubmitted: false,
     translationAnalyzing: false,
     translationAnalysisSummary: '',
+    writingMarkLines: [],
+    writingTokenMarks: {},
+    writingSentenceMarks: {},
+    writingMarkCount: 0,
     essayText: '',
     submittedEssayText: '',
     wordCount: 0,
@@ -136,9 +172,11 @@ Page({
     }
     const initialPromptReady = !!(prompt && (!promptId || prompt._id === promptId) && isWritingTaskReady(prompt));
     const initialTranslation = initialPromptReady && isTranslationTask(prompt);
+    const initialDisplay = initialPromptReady && !initialTranslation ? buildPromptDisplay(prompt) : null;
     this.setData({
       prompt: initialPromptReady ? prompt : null,
-      promptDisplay: initialPromptReady && !initialTranslation ? buildPromptDisplay(prompt) : null,
+      promptDisplay: initialDisplay,
+      writingMarkLines: buildWritingMarkLines(initialDisplay),
       promptImages: initialPromptReady && !initialTranslation ? buildPromptImages(prompt) : [],
       isTranslation: initialTranslation,
       translationQuestions: initialTranslation ? buildTranslationQuestions(prompt) : [],
@@ -164,9 +202,11 @@ Page({
       source = materialIndex && materialIndex.__cacheHit ? 'cache' : 'cloud';
     }
     const isTranslation = isTranslationTask(prompt);
+    const nextPromptDisplay = isTranslation ? null : buildPromptDisplay(prompt);
     this.setData({
       prompt,
-      promptDisplay: isTranslation ? null : buildPromptDisplay(prompt),
+      promptDisplay: nextPromptDisplay,
+      writingMarkLines: buildWritingMarkLines(nextPromptDisplay),
       promptImages: isTranslation ? [] : buildPromptImages(prompt),
       isTranslation,
       translationQuestions: isTranslation ? buildTranslationQuestions(prompt) : [],
@@ -224,6 +264,30 @@ Page({
   onEditorBlur() {
     this.setData({ editorFocused: false });
   },
+  handleWritingTokenTap(event) {
+    if (this.data.submitting || this.data.translationSubmitted) return;
+    const dataset = event.currentTarget.dataset || {};
+    if (!dataset.word || !dataset.markScope) return;
+    const writingTokenMarks = toggleScopedTokenMark(this.data.writingTokenMarks, dataset.markScope, Number(dataset.wordIndex));
+    this.setData({
+      writingTokenMarks,
+      writingMarkCount: countScopedMarks(writingTokenMarks, this.data.writingSentenceMarks)
+    });
+  },
+  handleWritingSentenceMark(event) {
+    if (this.data.submitting || this.data.translationSubmitted) return;
+    const scope = String((event.currentTarget.dataset || {}).markScope || '');
+    if (!scope) return;
+    const writingSentenceMarks = toggleScopedSentenceMark(this.data.writingSentenceMarks, scope);
+    this.setData({
+      writingSentenceMarks,
+      writingMarkCount: countScopedMarks(this.data.writingTokenMarks, writingSentenceMarks)
+    });
+  },
+  clearWritingMarks() {
+    if (this.data.submitting || this.data.translationSubmitted) return;
+    this.setData({ writingTokenMarks: {}, writingSentenceMarks: {}, writingMarkCount: 0 });
+  },
   onTranslationInput(event) {
     const index = Number(event.currentTarget.dataset.index);
     const translationQuestions = (this.data.translationQuestions || []).map((question, questionIndex) => (
@@ -253,7 +317,8 @@ Page({
           requiredWord: question.requiredWord,
           referenceAnswers: question.referenceAnswers,
           studentTranslation: question.inputValue
-        }))
+        })),
+        manualMarks: buildManualMarks(getWritingMarkSources(this.data), this.data.writingTokenMarks, this.data.writingSentenceMarks)
       });
       if (result && result.syncMode === 'cloud-error') {
         throw new Error((result.cloudError && result.cloudError.message) || '翻译分析失败');
@@ -302,7 +367,12 @@ Page({
       bandSampleError: ''
     });
     try {
-      const result = await store.submitWritingAttempt({ prompt, promptId: prompt._id, essay });
+      const result = await store.submitWritingAttempt({
+        prompt,
+        promptId: prompt._id,
+        essay,
+        manualMarks: buildManualMarks(getWritingMarkSources(this.data), this.data.writingTokenMarks, this.data.writingSentenceMarks)
+      });
       if (result && result.syncMode === 'cloud-error') {
         throw new Error((result.cloudError && result.cloudError.message) || text('retryFailed', '批改失败'));
       }

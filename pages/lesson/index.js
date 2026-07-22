@@ -11,6 +11,7 @@ const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../u
 const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-player');
 const { getTaskAudioDisplayTitle } = require('../../utils/audio-title');
 const segmentedAudio = require('../../utils/segmented-audio');
+const { toggleScopedTokenMark, toggleScopedSentenceMark, countScopedMarks, buildManualMarks } = require('../../utils/scoped-manual-marks');
 const {
   addEffectiveListeningSeconds,
   getRequiredListeningSeconds,
@@ -413,6 +414,22 @@ function buildLessonStudyItem(task, category, taskId, transcript) {
   };
 }
 
+function getListeningMarkSources(lines) {
+  return (lines || []).reduce((map, line, index) => {
+    map[`listening-${String(line.lineId || index)}`] = line.text || '';
+    return map;
+  }, {});
+}
+
+function getSavedListeningMarks(task) {
+  const marks = (task && task.manualMarks) || {};
+  return {
+    listeningTokenMarks: marks.tokenMarks || {},
+    listeningSentenceMarks: marks.sentenceMarks || {},
+    listeningMarkCount: countScopedMarks(marks.tokenMarks, marks.sentenceMarks)
+  };
+}
+
 function hasLessonStudyCards(studyPack) {
   return studyPack
     && ((studyPack.vocabularyCards || []).length
@@ -505,6 +522,9 @@ Page({
     transcriptLoadFailed: false,
     transcriptManualVisible: false,
     transcriptExpanded: false,
+    listeningTokenMarks: {},
+    listeningSentenceMarks: {},
+    listeningMarkCount: 0,
     passSteps: [],
     completionCardVisible: false,
     speakingPanelVisible: false,
@@ -623,6 +643,9 @@ Page({
     this.setData(page.buildCloudPageData(this.data, {
       lessonLoading: false,
       task: normalizedTask,
+      listeningTokenMarks: getSavedListeningMarks(normalizedTask).listeningTokenMarks,
+      listeningSentenceMarks: getSavedListeningMarks(normalizedTask).listeningSentenceMarks,
+      listeningMarkCount: getSavedListeningMarks(normalizedTask).listeningMarkCount,
       progress,
       passSteps: buildPassSteps(progress),
       currentAudio: previewAudio,
@@ -1839,6 +1862,9 @@ Page({
       syncDebug: cloudDebugState.syncDebug,
       child: detail.child,
       task: normalizedTask,
+      listeningTokenMarks: getSavedListeningMarks(normalizedTask).listeningTokenMarks,
+      listeningSentenceMarks: getSavedListeningMarks(normalizedTask).listeningSentenceMarks,
+      listeningMarkCount: getSavedListeningMarks(normalizedTask).listeningMarkCount,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
       passSteps: buildPassSteps(detail.progress),
@@ -1919,6 +1945,9 @@ Page({
       lessonLoading: false,
       child: detail.child,
       task: normalizedTask,
+      listeningTokenMarks: getSavedListeningMarks(normalizedTask).listeningTokenMarks,
+      listeningSentenceMarks: getSavedListeningMarks(normalizedTask).listeningSentenceMarks,
+      listeningMarkCount: getSavedListeningMarks(normalizedTask).listeningMarkCount,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
       passSteps: buildPassSteps(detail.progress),
@@ -2062,6 +2091,9 @@ Page({
     this.setData(page.buildCloudPageData(this.data, {
       task: normalizedTask,
       progress,
+      listeningTokenMarks: {},
+      listeningSentenceMarks: {},
+      listeningMarkCount: 0,
       passSteps: buildPassSteps(progress),
       scriptSource: null,
       transcriptTrack: null,
@@ -2282,6 +2314,27 @@ Page({
       await this.loadTranscript();
     }
     this.setData({ transcriptExpanded: true, transcriptManualVisible: true });
+  },
+  handleListeningMarkToken(event) {
+    const dataset = event.currentTarget.dataset || {};
+    if (!dataset.word || !dataset.markScope) return;
+    const listeningTokenMarks = toggleScopedTokenMark(this.data.listeningTokenMarks, dataset.markScope, Number(dataset.wordIndex));
+    this.setData({
+      listeningTokenMarks,
+      listeningMarkCount: countScopedMarks(listeningTokenMarks, this.data.listeningSentenceMarks)
+    });
+  },
+  handleListeningSentenceMark(event) {
+    const scope = String((event.currentTarget.dataset || {}).markScope || '');
+    if (!scope) return;
+    const listeningSentenceMarks = toggleScopedSentenceMark(this.data.listeningSentenceMarks, scope);
+    this.setData({
+      listeningSentenceMarks,
+      listeningMarkCount: countScopedMarks(this.data.listeningTokenMarks, listeningSentenceMarks)
+    });
+  },
+  clearListeningMarks() {
+    this.setData({ listeningTokenMarks: {}, listeningSentenceMarks: {}, listeningMarkCount: 0 });
   },
   async startSpeakingRecord() {
     if (!this.recorderManager) {
@@ -3474,7 +3527,12 @@ Page({
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex,
       completeOnListen: options.continuousQueue ? false : true,
-      continuousQueueV1: !!options.continuousQueue
+      continuousQueueV1: !!options.continuousQueue,
+      manualMarks: buildManualMarks(
+        getListeningMarkSources(this.data.transcriptLines),
+        this.data.listeningTokenMarks,
+        this.data.listeningSentenceMarks
+      )
     });
     if (detail && detail.syncMode === 'cloud-error') {
       wx.showToast({
@@ -3502,6 +3560,9 @@ Page({
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
       task: normalizedTask,
+      listeningTokenMarks: getSavedListeningMarks(normalizedTask).listeningTokenMarks,
+      listeningSentenceMarks: getSavedListeningMarks(normalizedTask).listeningSentenceMarks,
+      listeningMarkCount: getSavedListeningMarks(normalizedTask).listeningMarkCount,
       stats: detail.stats,
       todayRecord: detail.todayRecord,
       progress: detail.progress,

@@ -85,6 +85,10 @@
       <button class="audio-paper-action" wx:if="{{lessonStudyPack}}" bindtap="toggleLessonStudyPack">{{lessonStudyExpanded ? texts.collapse : texts.expand}}</button>
       <button class="audio-paper-action" wx:else loading="{{lessonStudyLoading}}" disabled="{{lessonStudyLoading}}" bindtap="loadLessonStudyPack">{{texts.generate}}</button>
     </view>
+    <view class="listening-mark-toolbar">
+      <text>{{texts.manualMarkHint}}</text>
+      <text class="listening-mark-clear" wx:if="{{listeningMarkCount}}" bindtap="clearListeningMarks">{{texts.clearManualMarks}}</text>
+    </view>
     <view class="audio-study-error" wx:if="{{lessonStudyError}}">{{lessonStudyError}}</view>
     <view class="audio-study-tabs" wx:if="{{lessonStudyPack && lessonStudyExpanded}}">
       <button class="audio-study-tab {{lessonStudyTab === item.key ? 'is-active' : ''}}" wx:for="{{lessonStudyTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectLessonStudyTab">{{item.label}}</button>
@@ -146,9 +150,9 @@
     <view class="audio-tape-lines" wx:if="{{transcriptLines.length}}">
       <view class="audio-tape-line is-side {{prevLine ? 'is-ready' : 'is-empty'}}" wx:if="{{prevLine}}" data-index="{{activeLineIndex - 1}}" bindtap="seekToLine">{{prevLine.text}}</view>
       <view class="audio-tape-line is-side is-empty" wx:else> </view>
-      <view class="audio-tape-line is-active" wx:if="{{activeLine}}" data-index="{{activeLineIndex}}" bindtap="seekToLine">
+      <view class="audio-tape-line is-active {{listeningSentenceMarks['listening-' + activeLine.lineId] ? 'manual-mark-sentence' : ''}}" wx:if="{{activeLine}}" data-index="{{activeLineIndex}}" data-mark-scope="listening-{{activeLine.lineId}}" bindtap="seekToLine" bindlongpress="handleListeningSentenceMark">
         <block wx:if="{{transcriptSyncGranularity === 'word' && activeLine.words && activeLine.words.length}}">
-          <text class="audio-transcript-word {{index === activeWordIndex ? 'is-active' : ''}}" wx:for="{{activeLine.words}}" wx:key="wordId">{{item.text}} </text>
+          <text class="audio-transcript-word {{index === activeWordIndex ? 'is-active' : ''}} {{listeningTokenMarks['listening-' + activeLine.lineId + ':' + index] ? 'manual-mark-' + listeningTokenMarks['listening-' + activeLine.lineId + ':' + index] : ''}}" wx:for="{{activeLine.words}}" wx:key="wordId" data-word="{{item.text}}" data-word-index="{{index}}" data-mark-scope="listening-{{activeLine.lineId}}" catchtap="handleListeningMarkToken">{{item.text}} </text>
         </block>
         <block wx:else>{{activeLine.text}}</block>
       </view>
@@ -437,6 +441,10 @@
       </view>
       <button class="pill transcript-pill" bindtap="toggleTranscript">{{texts.collapse}}</button>
     </view>
+    <view class="listening-mark-toolbar">
+      <text>{{texts.manualMarkHint}}</text>
+      <text class="listening-mark-clear" wx:if="{{listeningMarkCount}}" bindtap="clearListeningMarks">{{texts.clearManualMarks}}</text>
+    </view>
 
     <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
       <view
@@ -452,14 +460,16 @@
       </view>
 
       <view
-        class="transcript-focus-line is-active"
+        class="transcript-focus-line is-active {{listeningSentenceMarks['listening-' + activeLine.lineId] ? 'manual-mark-sentence' : ''}}"
         wx:if="{{activeLine}}"
         data-index="{{activeLineIndex}}"
+        data-mark-scope="listening-{{activeLine.lineId}}"
         bindtap="seekToLine"
+        bindlongpress="handleListeningSentenceMark"
       >
         <view class="transcript-focus-text" wx:if="{{transcriptSyncGranularity === 'word' && activeLine.words && activeLine.words.length}}">
           <block wx:for="{{activeLine.words}}" wx:key="wordId">
-            <text class="transcript-word {{index === activeWordIndex ? 'is-active' : ''}}">{{item.text}} </text>
+            <text class="transcript-word {{index === activeWordIndex ? 'is-active' : ''}} {{listeningTokenMarks['listening-' + activeLine.lineId + ':' + index] ? 'manual-mark-' + listeningTokenMarks['listening-' + activeLine.lineId + ':' + index] : ''}}" data-word="{{item.text}}" data-word-index="{{index}}" data-mark-scope="listening-{{activeLine.lineId}}" catchtap="handleListeningMarkToken">{{item.text}} </text>
           </block>
         </view>
         <view class="transcript-focus-text" wx:else>{{activeLine.text}}</view>

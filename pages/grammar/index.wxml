@@ -262,6 +262,10 @@
           </view>
         </view>
         <view class="library-resume-note" wx:if="{{selectedTopicOffset > 0}}">{{texts.resumePrefix}}{{selectedTopicOffset + 1}}{{texts.resumeSuffix}}</view>
+        <view class="manual-mark-toolbar" wx:if="{{selectedQuestions.length}}">
+          <text>{{texts.manualMarkHint}}</text>
+          <text class="manual-mark-clear" wx:if="{{grammarMarkCount}}" bindtap="clearGrammarMarks">{{texts.clearManualMarks}}</text>
+        </view>
 
         <view class="library-complete-proof" wx:if="{{selectedQuestions.length === 0}}">
           <view class="library-complete-clip"></view>
@@ -273,9 +277,8 @@
         <view class="library-proof-sheet" wx:else>
           <view id="grammar-question-{{index}}" class="library-question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
             <view class="library-question-meta">{{texts.questionNo}}{{item.sequenceNumber}} · {{item.year}} · {{item.district}} · {{texts.originalNo}}{{item.number}}</view>
-            <view class="library-question-prompt" wx:if="{{!item.isAnswered}}">{{item.prompt}}</view>
-            <view class="library-question-prompt library-token-line" wx:else>
-              <text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{token.word ? 'library-lookup-token' : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" catchtap="openDictionaryWord">{{token.text}}</text>
+            <view class="library-question-prompt library-token-line {{grammarSentenceMarks[item.markScope] ? 'manual-mark-sentence' : ''}}" data-question-id="{{item._id}}" data-mark-scope="{{item.markScope}}" bindlongpress="handleGrammarSentenceMark">
+              <text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{item.isAnswered && token.word ? 'library-lookup-token' : ''}} {{grammarTokenMarks[token.markKey] ? 'manual-mark-' + grammarTokenMarks[token.markKey] : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{item.markScope}}" catchtap="handleGrammarTokenTap">{{token.text}}</text>
             </view>
             <view class="library-options">
               <view class="library-option {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-question-id="{{item._id}}" data-option="{{option.key}}" bindtap="selectOption">
@@ -586,6 +589,10 @@
       <view class="directory-back-icon" bindtap="backToCategory">{{texts.backSubtopic}}</view>
     </view>
     <view class="directory-meta" wx:if="{{selectedTopicOffset > 0}}">{{texts.resumePrefix}}{{selectedTopicOffset + 1}}{{texts.resumeSuffix}}</view>
+    <view class="manual-mark-toolbar" wx:if="{{selectedQuestions.length}}">
+      <text>{{texts.manualMarkHint}}</text>
+      <text class="manual-mark-clear" wx:if="{{grammarMarkCount}}" bindtap="clearGrammarMarks">{{texts.clearManualMarks}}</text>
+    </view>
     <view class="directory-meta" wx:if="{{selectedQuestions.length === 0}}">{{texts.topicDone}}</view>
     <view class="question-list">
       <view id="grammar-question-{{index}}" class="question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
@@ -595,9 +602,8 @@
             <view></view><view></view><view></view><view></view><view></view>
           </view>
         </view>
-        <view class="question-prompt" wx:if="{{!item.isAnswered}}">{{item.prompt}}</view>
-        <view class="question-prompt token-line" wx:else>
-          <text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{token.word ? 'lookup-token' : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" catchtap="openDictionaryWord">{{token.text}}</text>
+        <view class="question-prompt token-line {{grammarSentenceMarks[item.markScope] ? 'manual-mark-sentence' : ''}}" data-question-id="{{item._id}}" data-mark-scope="{{item.markScope}}" bindlongpress="handleGrammarSentenceMark">
+          <text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{item.isAnswered && token.word ? 'lookup-token' : ''}} {{grammarTokenMarks[token.markKey] ? 'manual-mark-' + grammarTokenMarks[token.markKey] : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{item.markScope}}" catchtap="handleGrammarTokenTap">{{token.text}}</text>
         </view>
         <view class="option-grid">
           <view class="option-item {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-question-id="{{item._id}}" data-option="{{option.key}}" bindtap="selectOption">

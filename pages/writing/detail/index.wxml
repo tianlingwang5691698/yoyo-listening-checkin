@@ -23,12 +23,16 @@
         <view class="library-proof-small">{{texts.original}}</view>
       </view>
       <view class="library-prompt-content">
+        <view class="writing-mark-toolbar">
+          <text>{{texts.manualMarkHint}}</text>
+          <text class="writing-mark-clear" wx:if="{{writingMarkCount}}" bindtap="clearWritingMarks">{{texts.clearManualMarks}}</text>
+        </view>
         <block wx:if="{{isTranslation}}">
           <view class="library-prompt-directions">{{prompt.directions}}</view>
           <view class="library-translation-list">
             <view class="library-translation-item" wx:for="{{translationQuestions}}" wx:key="number">
               <view class="library-translation-number">{{item.number}}.</view>
-              <view class="library-translation-source">{{item.sourceText}} <text>（{{item.requiredWord}}）</text></view>
+              <view class="library-translation-source {{writingSentenceMarks[item.markScope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{item.markScope}}" bindlongpress="handleWritingSentenceMark"><text wx:for="{{item.sourceTokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{item.markScope}}" catchtap="handleWritingTokenTap">{{token.text}}</text> <text>（{{item.requiredWord}}）</text></view>
               <textarea class="library-translation-input" value="{{item.inputValue}}" data-index="{{index}}" maxlength="800" auto-height="{{true}}" cursor-spacing="160" placeholder="{{texts.translationPlaceholder}}" bindinput="onTranslationInput"></textarea>
               <view class="library-translation-reference" wx:if="{{translationSubmitted}}">
                 <view class="library-translation-reference-title">{{texts.referenceTranslation}}</view>
@@ -54,21 +58,11 @@
           <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
         </block>
         <block wx:else>
-          <view class="library-prompt-directions" wx:if="{{promptDisplay.directions}}">{{promptDisplay.directions}}</view>
-          <view class="library-prompt-section" wx:if="{{promptDisplay.scenario}}">
-            <view class="library-prompt-section-title">{{promptDisplay.scenarioTitle}}</view>
-            <view class="library-prompt-scenario">{{promptDisplay.scenario}}</view>
-          </view>
-          <view class="library-requirements-title" wx:if="{{promptDisplay.requirements.length}}">{{promptDisplay.requirementsTitle}}</view>
-          <view class="library-requirements-list" wx:if="{{promptDisplay.requirements.length}}">
-            <view class="library-requirement-item" wx:for="{{promptDisplay.requirements}}" wx:key="*this">
-              <view class="library-requirement-dot"></view>
-              <view class="library-requirement-text">{{item}}</view>
+          <view class="writing-mark-lines">
+            <view class="writing-mark-line {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" wx:for="{{writingMarkLines}}" wx:key="scope" wx:for-item="line" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
+              <view class="library-prompt-section-title" wx:if="{{line.label}}">{{line.label}}</view>
+              <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
             </view>
-          </view>
-          <view class="library-prompt-notice" wx:if="{{promptDisplay.notices.length}}">
-            <view class="library-prompt-section-title">{{promptDisplay.noticeTitle}}</view>
-            <view wx:for="{{promptDisplay.notices}}" wx:key="*this">{{item}}</view>
           </view>
           <view class="library-prompt-table" wx:if="{{promptDisplay.promptTable}}">
             <view class="library-prompt-table-row library-prompt-table-head">
@@ -79,7 +73,6 @@
               <view class="library-prompt-table-cell" wx:for="{{row.values}}" wx:for-item="value" wx:key="*this">{{value}}</view>
             </view>
           </view>
-          <view class="library-prompt-starter" wx:if="{{promptDisplay.promptStarter}}">{{promptDisplay.promptStarter}}</view>
           <view class="library-prompt-images" wx:if="{{promptImages.length}}">
             <view class="prompt-image-frame" wx:for="{{promptImages}}" wx:key="cloudPath" data-src="{{item.src}}" bindtap="previewPromptImage">
               <image class="library-prompt-image" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
@@ -258,12 +251,16 @@
       </view>
     </view>
     <view class="prompt-content">
+      <view class="writing-mark-toolbar">
+        <text>{{texts.manualMarkHint}}</text>
+        <text class="writing-mark-clear" wx:if="{{writingMarkCount}}" bindtap="clearWritingMarks">{{texts.clearManualMarks}}</text>
+      </view>
       <block wx:if="{{isTranslation}}">
         <view class="prompt-directions">{{prompt.directions}}</view>
         <view class="translation-list">
           <view class="translation-item" wx:for="{{translationQuestions}}" wx:key="number">
             <view class="translation-number">{{item.number}}.</view>
-            <view class="translation-source">{{item.sourceText}} <text>（{{item.requiredWord}}）</text></view>
+            <view class="translation-source {{writingSentenceMarks[item.markScope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{item.markScope}}" bindlongpress="handleWritingSentenceMark"><text wx:for="{{item.sourceTokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{item.markScope}}" catchtap="handleWritingTokenTap">{{token.text}}</text> <text>（{{item.requiredWord}}）</text></view>
             <textarea class="translation-input" value="{{item.inputValue}}" data-index="{{index}}" maxlength="800" auto-height="{{true}}" cursor-spacing="160" placeholder="{{texts.translationPlaceholder}}" bindinput="onTranslationInput"></textarea>
             <view class="translation-reference" wx:if="{{translationSubmitted}}">
               <view class="translation-reference-title">{{texts.referenceTranslation}}</view>
@@ -289,21 +286,11 @@
         <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
       </block>
       <block wx:else>
-        <view class="prompt-directions" wx:if="{{promptDisplay.directions}}">{{promptDisplay.directions}}</view>
-        <view class="prompt-section" wx:if="{{promptDisplay.scenario}}">
-          <view class="prompt-section-title">{{promptDisplay.scenarioTitle}}</view>
-          <view class="prompt-scenario">{{promptDisplay.scenario}}</view>
-        </view>
-        <view class="requirements-title" wx:if="{{promptDisplay.requirements.length}}">{{promptDisplay.requirementsTitle}}</view>
-        <view class="requirements-list" wx:if="{{promptDisplay.requirements.length}}">
-          <view class="requirement-item" wx:for="{{promptDisplay.requirements}}" wx:key="*this">
-            <view class="requirement-dot"></view>
-            <view class="requirement-text">{{item}}</view>
+        <view class="writing-mark-lines">
+          <view class="writing-mark-line {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" wx:for="{{writingMarkLines}}" wx:key="scope" wx:for-item="line" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
+            <view class="prompt-section-title" wx:if="{{line.label}}">{{line.label}}</view>
+            <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
           </view>
-        </view>
-        <view class="prompt-notice" wx:if="{{promptDisplay.notices.length}}">
-          <view class="prompt-section-title">{{promptDisplay.noticeTitle}}</view>
-          <view wx:for="{{promptDisplay.notices}}" wx:key="*this">{{item}}</view>
         </view>
         <view class="prompt-table" wx:if="{{promptDisplay.promptTable}}">
           <view class="prompt-table-row prompt-table-head">
@@ -314,7 +301,6 @@
             <view class="prompt-table-cell" wx:for="{{row.values}}" wx:for-item="value" wx:key="*this">{{value}}</view>
           </view>
         </view>
-        <view class="prompt-starter" wx:if="{{promptDisplay.promptStarter}}">{{promptDisplay.promptStarter}}</view>
         <view class="prompt-images" wx:if="{{promptImages.length}}">
           <view class="prompt-image-frame" wx:for="{{promptImages}}" wx:key="cloudPath" data-src="{{item.src}}" bindtap="previewPromptImage">
             <image class="prompt-image" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>

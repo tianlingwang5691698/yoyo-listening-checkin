@@ -272,6 +272,7 @@ function decorateTask(task, progress, category, deps) {
     questionAnswerRequired: speakingMode === 'nce-question-answer',
     sentenceRepeatRequired: speakingMode === 'unlock-sentence-repeat',
     completedToday: progress.completedToday,
+    manualMarks: progress.manualMarks || null,
     updatedAt: progress.updatedAt || '',
     transcriptStatus: transcriptTrackId ? 'ready' : (task.textSource ? 'pending' : 'none'),
     transcriptBatch: task.transcriptBatch || null,
