@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const {
   analyzeOriginalIeltsParagraphLabels,
-  buildReadingParagraphRanges
+  buildReadingParagraphRanges,
+  normalizeReadingPassageText
 } = require('../utils/reading-paragraph-display');
 const ieltsParagraphMetadata = require('../pages/reading/detail/ielts-paragraph-metadata');
 
@@ -17,6 +18,14 @@ test('无原始换段的中高考阅读会按句群拆成清晰段落', () => {
   assert.equal(ranges[0].label, '第 1 段');
   assert.equal(ranges[0].start, 0);
   assert.equal(ranges[ranges.length - 1].end, source.length);
+});
+
+test('初中阅读正文不把 OCR 题型说明算入第 1 段', () => {
+  const source = 'answer (根据短文内容，选择最恰当的答案) (12分) John Brown has always been a hardworking student.';
+  const normalized = normalizeReadingPassageText('sh-em1-2014-长宁-reading-a', source);
+  assert.equal(normalized, 'John Brown has always been a hardworking student.');
+  assert.equal(buildReadingParagraphRanges('sh-em1-2014-长宁-reading-a', normalized)[0].start, 0);
+  assert.equal(normalizeReadingPassageText('sh-em1-demo-reading-d', 'Answer the questions. Passage text.'), 'Answer the questions. Passage text.');
 });
 
 test('IELTS 优先保留原文 A-F 字母段标', () => {

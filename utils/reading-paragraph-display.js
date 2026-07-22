@@ -1,7 +1,9 @@
 function normalizeReadingPassageText(passageId, passageText) {
   const source = String(passageText || '');
-  if (passageId !== 'sh-em1-2014-宝山-reading-a') return source;
-  return source.replace(/^answer（根据短文内容，选择最恰当的答案）\s*\(\s*12分\)\s*/i, '');
+  if (!/^sh-em\d.*-reading-a$/.test(String(passageId || ''))) return source;
+  return source
+    .replace(/^answer\b[.：:]?\s*(?:[（(]\s*根据(?:短文|文章|对话)内容，?\s*选择最恰当的答案\s*[）)]\s*[：:]?)?\s*(?:[（(]\s*12分\s*[）)])?\s*/i, '')
+    .replace(/^根据(?:短文|文章|对话)内容，?\s*选择最恰当的答案[.。：:]?\s*/i, '');
 }
 
 function rangesFromSeparator(source, separator) {
