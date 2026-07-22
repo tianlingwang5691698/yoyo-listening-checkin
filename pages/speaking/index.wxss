@@ -198,6 +198,20 @@
   box-sizing: border-box;
 }
 
+.repeat-sentence-score.is-scoring {
+  min-width: 76rpx;
+  border-color: rgba(207, 142, 62, 0.38);
+  background: rgba(255, 246, 218, 0.94);
+  color: #9b6828;
+  font-size: 18rpx;
+}
+
+.repeat-sentence-score.is-error {
+  border-color: rgba(180, 56, 47, 0.3);
+  background: rgba(255, 239, 235, 0.94);
+  color: #a83b32;
+}
+
 .repeat-sentence-play {
   position: relative;
   flex: 0 0 58rpx;
@@ -240,14 +254,14 @@
 
 .repeat-inline-actions {
   width: 100%;
-  padding: 0 14rpx 24rpx 78rpx;
+  padding: 0 24rpx 24rpx;
   box-sizing: border-box;
 }
 
 .repeat-inline-record {
   width: 230rpx;
   height: 64rpx;
-  margin: 0;
+  margin: 0 auto;
   padding: 0 18rpx;
   border: 0;
   border-radius: 8rpx;
@@ -291,18 +305,42 @@
 .repeat-inline-choice-button.is-pressed { opacity: 0.82; transform: translateY(1rpx); }
 
 .repeat-inline-state {
+  width: 100%;
   margin-top: 14rpx;
-  padding: 14rpx 16rpx;
-  border-left: 4rpx solid #df7f68;
-  border-radius: 0 8rpx 8rpx 0;
+  padding: 16rpx 18rpx 18rpx;
+  border: 2rpx solid rgba(223, 127, 104, 0.34);
+  border-radius: 8rpx;
   background: rgba(255, 255, 255, 0.72);
   color: #607087;
   font-size: 22rpx;
   line-height: 1.55;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.repeat-inline-result text { color: #17314f; font-weight: 800; }
-.repeat-inline-result view { margin-top: 4rpx; }
+.repeat-inline-result-total { display: block; color: #17314f; font-weight: 800; text-align: center; }
+
+.repeat-inline-metrics {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  margin-top: 12rpx;
+}
+
+.repeat-inline-metric {
+  min-width: 0;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7rpx;
+  color: #607087;
+  text-align: center;
+}
+
+.repeat-inline-metric + .repeat-inline-metric { border-left: 1rpx solid rgba(96, 112, 135, 0.2); }
+.repeat-inline-metric text:first-child { font-size: 20rpx; font-weight: 600; }
+.repeat-inline-metric text:last-child { color: #17314f; font-size: 23rpx; font-weight: 800; }
 .repeat-inline-progress { color: #df7f68; font-weight: 700; }
 .repeat-inline-error { color: #b4382f; }
 
@@ -332,7 +370,7 @@
 .repeat-sentence-list.is-library .repeat-inline-choice-button { border-color: var(--library-speaking-ink); }
 .repeat-sentence-list.is-library .repeat-inline-choice-button.is-secondary { background: rgba(255, 253, 247, 0.9); color: var(--library-speaking-ink); }
 .repeat-sentence-list.is-library .repeat-inline-choice-button.is-primary { background: var(--library-speaking-ink); color: #faf5ea; }
-.repeat-sentence-list.is-library .repeat-inline-state { border-left-color: var(--library-speaking-brass); background: rgba(255, 253, 247, 0.78); }
+.repeat-sentence-list.is-library .repeat-inline-state { border-color: rgba(184, 149, 98, 0.42); background: rgba(255, 253, 247, 0.78); }
 
 @keyframes repeatSentenceWave {
   from { transform: scaleY(0.48); opacity: 0.6; }
@@ -2621,7 +2659,7 @@
 .theme-dragon .repeat-inline-choice-button { border: 3rpx solid #102e62; }
 .theme-dragon .repeat-inline-choice-button.is-secondary { background: #fffef7; color: #102e62; }
 .theme-dragon .repeat-inline-choice-button.is-primary { background: #f45a16; color: #fff; }
-.theme-dragon .repeat-inline-state { border-left-color: #f45a16; background: #fffdf1; }
+.theme-dragon .repeat-inline-state { border-color: #f45a16; background: #fffdf1; }
 
 .language-en button,
 .language-en view,
@@ -3176,7 +3214,7 @@
 .theme-voyage .repeat-inline-choice-button { border-color: #c49338; }
 .theme-voyage .repeat-inline-choice-button.is-secondary { background: #fff9e2; color: #a34432; }
 .theme-voyage .repeat-inline-choice-button.is-primary { background: #176a99; color: #fff7df; }
-.theme-voyage .repeat-inline-state { border-left-color: #c49338; background: rgba(255, 249, 226, 0.88); }
+.theme-voyage .repeat-inline-state { border-color: #c49338; background: rgba(255, 249, 226, 0.88); }
 
 /* IELTS single-question exam flow shared by warm, voyage and dragon themes. */
 .ielts-exam-sheet {
@@ -3312,7 +3350,7 @@
 .theme-warm .repeat-sentence-item.is-active { background: rgba(237, 246, 250, 0.9); box-shadow: inset 6rpx 0 0 #8db7d4; }
 .theme-warm .repeat-inline-record { background: #17314f; }
 .theme-warm .repeat-inline-record.is-recording { background: #b4382f; }
-.theme-warm .repeat-inline-state { border-left-color: #8db7d4; background: rgba(255, 255, 255, 0.72); }
+.theme-warm .repeat-inline-state { border-color: rgba(141, 183, 212, 0.52); background: rgba(255, 255, 255, 0.72); }
 
 .theme-voyage .ielts-exam-sheet {
   --ielts-exam-ink: #173b50;

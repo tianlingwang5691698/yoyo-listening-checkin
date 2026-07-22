@@ -256,6 +256,55 @@ test('逐句练习纵向展示全文，播放完成后在当前句内跟读', as
   assert.match(source, /handleRecordingStopped[\s\S]+submitPronunciation/);
 });
 
+test('分句原音不把 cloud 文件标识直接交给真机播放器', async () => {
+  const definition = loadSpeakingPage({});
+  const page = createPageInstance(definition);
+  page.queueQuestionAutoPlay = () => {};
+  page.data.selectedParagraph = {
+    id: 'paragraph-cloud-audio',
+    sentences: [{ text: 'Cloud audio sentence.', startMs: 500, endMs: 1800 }]
+  };
+  page.selectedRepeatTask = {
+    audioUrl: 'cloud://test-env/A1/audio.mp3',
+    audioFileId: 'cloud://test-env/A1/audio.mp3',
+    audioCloudPath: 'A1/audio.mp3'
+  };
+
+  page.startSelectedRepeat();
+
+  assert.equal(page.data.exercises[0].audioUrl, 'https://example.test/A1/audio.mp3');
+  assert.equal(page.data.exercises[0].audioFileId, 'cloud://test-env/A1/audio.mp3');
+  assert.equal(page.data.exercises[0].audioStartSec, 0.5);
+  assert.equal(page.data.exercises[0].audioEndSec, 1.8);
+});
+
+test('分句公开地址播放失败时自动切换 CloudBase 临时地址', async () => {
+  const page = createPageInstance(loadSpeakingPage({
+    async getTempFileURL() { return 'https://temp.example.test/audio.mp3'; }
+  }));
+  let stopCount = 0;
+  page.questionAudioContext = {
+    src: 'https://public.example.test/audio.mp3',
+    stop() { stopCount += 1; }
+  };
+  page.questionPlaybackRequestToken = 3;
+  page.pendingQuestionClip = {
+    src: 'https://public.example.test/audio.mp3',
+    audioFileId: 'cloud://test-env/audio.mp3',
+    fallbackTried: false,
+    seekRequested: true,
+    started: false
+  };
+
+  await page.handleQuestionAudioError({ errCode: 10001 });
+
+  assert.equal(stopCount, 1);
+  assert.equal(page.pendingQuestionClip.fallbackTried, true);
+  assert.equal(page.pendingQuestionClip.src, 'https://temp.example.test/audio.mp3');
+  assert.equal(page.questionAudioContext.src, 'https://temp.example.test/audio.mp3');
+  assert.equal(page.data.errorText, '');
+});
+
 test('分级跟读以预览模式评分并保留录音', async () => {
   const calls = [];
   const page = createPageInstance(loadSpeakingPage({
@@ -327,6 +376,60 @@ test('学生分级跟读使用正常记录模式', async () => {
 
   assert.equal(calls[0].planRunType, 'normal');
   assert.equal(calls[1].planRunType, 'normal');
+});
+
+test('上一句后台评分时可以切换并录制下一句，结果仍回到原句', async () => {
+  let finishScoring;
+  const scorePending = new Promise((resolve) => { finishScoring = resolve; });
+  const page = createPageInstance(loadSpeakingPage({
+    async createSpeakingUploadUrl() { return { cloudPath: '_speaking/background.mp3' }; },
+    async uploadSpeakingAudio() { return 'cloud://test/background.mp3'; },
+    async evaluateSpeakingPronunciation() {
+      await scorePending;
+      return { pronunciation: { score: 88, accuracy: 90, fluency: 84, completion: 100 } };
+    }
+  }));
+  let scoreEffects = 0;
+  page.playScoreEffect = () => { scoreEffects += 1; };
+  page.queueQuestionAutoPlay = () => {};
+  page.questionAudioContext = { stop() {} };
+  page.recorderManager = { start() {}, stop() {} };
+  page.setData({
+    activeId: 'sentence-1',
+    activeExercise: { id: 'sentence-1', prompt: 'First sentence.' },
+    exercises: [
+      { id: 'sentence-1', prompt: 'First sentence.' },
+      { id: 'sentence-2', prompt: 'Second sentence.' }
+    ],
+    tempFilePath: '/tmp/first.mp3',
+    recordDurationMs: 1600,
+    recordDurationText: '1 秒',
+    repeatPromptReady: true
+  });
+
+  const scoring = page.submitPronunciation();
+  await wait(0);
+  assert.equal(page.data.submitting, false);
+  assert.equal(page.data.exercises[0].repeatScoring, true);
+
+  page.selectExercise({ currentTarget: { dataset: { id: 'sentence-2' } } });
+  assert.equal(page.data.activeId, 'sentence-2');
+  page.setData({ repeatPromptReady: true });
+  page.toggleRepeatRecording();
+  assert.equal(page.data.recording, true);
+
+  finishScoring();
+  await scoring;
+  assert.equal(page.data.activeId, 'sentence-2');
+  assert.equal(page.data.result, null);
+  assert.equal(page.data.exercises[0].repeatScoring, false);
+  assert.equal(page.data.exercises[0].repeatResult.score, 88);
+  assert.equal(scoreEffects, 0);
+
+  page.setData({ recording: false });
+  page.selectExercise({ currentTarget: { dataset: { id: 'sentence-1' } } });
+  assert.equal(page.data.result.score, 88);
+  assert.equal(page.data.tempFilePath, '/tmp/first.mp3');
 });
 
 test('分级跟读评分后可以回放或停止自己的录音', () => {

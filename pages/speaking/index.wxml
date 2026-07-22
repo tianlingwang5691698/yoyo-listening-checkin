@@ -162,19 +162,28 @@
           <view class="repeat-sentence-main" data-id="{{item.id}}" hover-class="is-pressed" bindtap="selectExercise">
             <view class="repeat-sentence-number">{{index + 1}}</view>
             <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}">{{item.prompt}}</view>
-            <view class="repeat-sentence-score" wx:if="{{item.repeatResult}}">{{item.repeatResult.score || 0}}</view>
+            <view class="repeat-sentence-score is-scoring" wx:if="{{item.repeatScoring}}">{{texts.scoring}}</view>
+            <view class="repeat-sentence-score" wx:elif="{{item.repeatResult}}">{{item.repeatResult.score || 0}}</view>
+            <view class="repeat-sentence-score is-error" wx:elif="{{item.repeatScoreError}}">重试</view>
             <view class="repeat-sentence-play {{activeId === item.id && (questionPlaying || questionLoading) ? 'is-playing' : ''}}"><view></view><text></text><text></text><text></text></view>
           </view>
           <view class="repeat-inline-actions" wx:if="{{activeId === item.id && repeatPromptReady && !questionPlaying && !questionLoading}}">
-            <button class="repeat-inline-record {{recording ? 'is-recording' : ''}}" wx:if="{{!tempFilePath && !result && !submitting}}" hover-class="is-pressed" bindtap="toggleRepeatRecording">{{recording ? texts.endRepeat : texts.startRepeat}}</button>
-            <view class="repeat-inline-choice" wx:if="{{tempFilePath && !recording && !submitting}}">
+            <button class="repeat-inline-record {{recording ? 'is-recording' : ''}}" wx:if="{{!tempFilePath && !result && !submitting && !repeatScoring}}" hover-class="is-pressed" bindtap="toggleRepeatRecording">{{recording ? texts.endRepeat : texts.startRepeat}}</button>
+            <view class="repeat-inline-choice" wx:if="{{tempFilePath && !recording && !submitting && !repeatScoring}}">
               <button class="repeat-inline-choice-button is-secondary" hover-class="is-pressed" bindtap="restartRepeatRecording">{{texts.restartRepeat}}</button>
               <button class="repeat-inline-choice-button is-primary" hover-class="is-pressed" bindtap="replayRepeatRecording">{{answerPlaying ? texts.stopPlayback : texts.replayRecording}}</button>
             </view>
-            <view class="repeat-inline-state" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
+            <view class="repeat-inline-state" wx:if="{{recording || tempFilePath || submitting || repeatScoring || result || errorText}}">
               <view class="repeat-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
-              <view class="repeat-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
-              <view class="repeat-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
+              <view class="repeat-inline-result" wx:elif="{{result}}">
+                <text class="repeat-inline-result-total">{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text>
+                <view class="repeat-inline-metrics">
+                  <view class="repeat-inline-metric"><text>{{texts.accuracy}}</text><text>{{result.accuracy || 0}}</text></view>
+                  <view class="repeat-inline-metric"><text>{{texts.fluency}}</text><text>{{result.fluency || 0}}</text></view>
+                  <view class="repeat-inline-metric"><text>{{texts.completeness}}</text><text>{{result.completion || 0}}</text></view>
+                </view>
+              </view>
+              <view class="repeat-inline-progress" wx:else>{{repeatScoring || submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
             </view>
           </view>
         </view>
@@ -350,19 +359,28 @@
           <view class="repeat-sentence-main" data-id="{{item.id}}" hover-class="is-pressed" bindtap="selectExercise">
             <view class="repeat-sentence-number">{{index + 1}}</view>
             <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}">{{item.prompt}}</view>
-            <view class="repeat-sentence-score" wx:if="{{item.repeatResult}}">{{item.repeatResult.score || 0}}</view>
+            <view class="repeat-sentence-score is-scoring" wx:if="{{item.repeatScoring}}">{{texts.scoring}}</view>
+            <view class="repeat-sentence-score" wx:elif="{{item.repeatResult}}">{{item.repeatResult.score || 0}}</view>
+            <view class="repeat-sentence-score is-error" wx:elif="{{item.repeatScoreError}}">重试</view>
             <view class="repeat-sentence-play {{activeId === item.id && (questionPlaying || questionLoading) ? 'is-playing' : ''}}"><view></view><text></text><text></text><text></text></view>
           </view>
           <view class="repeat-inline-actions" wx:if="{{activeId === item.id && repeatPromptReady && !questionPlaying && !questionLoading}}">
-            <button class="repeat-inline-record {{recording ? 'is-recording' : ''}}" wx:if="{{!tempFilePath && !result && !submitting}}" hover-class="is-pressed" bindtap="toggleRepeatRecording">{{recording ? texts.endRepeat : texts.startRepeat}}</button>
-            <view class="repeat-inline-choice" wx:if="{{tempFilePath && !recording && !submitting}}">
+            <button class="repeat-inline-record {{recording ? 'is-recording' : ''}}" wx:if="{{!tempFilePath && !result && !submitting && !repeatScoring}}" hover-class="is-pressed" bindtap="toggleRepeatRecording">{{recording ? texts.endRepeat : texts.startRepeat}}</button>
+            <view class="repeat-inline-choice" wx:if="{{tempFilePath && !recording && !submitting && !repeatScoring}}">
               <button class="repeat-inline-choice-button is-secondary" hover-class="is-pressed" bindtap="restartRepeatRecording">{{texts.restartRepeat}}</button>
               <button class="repeat-inline-choice-button is-primary" hover-class="is-pressed" bindtap="replayRepeatRecording">{{answerPlaying ? texts.stopPlayback : texts.replayRecording}}</button>
             </view>
-            <view class="repeat-inline-state" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
+            <view class="repeat-inline-state" wx:if="{{recording || tempFilePath || submitting || repeatScoring || result || errorText}}">
               <view class="repeat-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
-              <view class="repeat-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
-              <view class="repeat-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
+              <view class="repeat-inline-result" wx:elif="{{result}}">
+                <text class="repeat-inline-result-total">{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text>
+                <view class="repeat-inline-metrics">
+                  <view class="repeat-inline-metric"><text>{{texts.accuracy}}</text><text>{{result.accuracy || 0}}</text></view>
+                  <view class="repeat-inline-metric"><text>{{texts.fluency}}</text><text>{{result.fluency || 0}}</text></view>
+                  <view class="repeat-inline-metric"><text>{{texts.completeness}}</text><text>{{result.completion || 0}}</text></view>
+                </view>
+              </view>
+              <view class="repeat-inline-progress" wx:else>{{repeatScoring || submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
             </view>
           </view>
         </view>

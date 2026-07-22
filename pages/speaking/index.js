@@ -70,6 +70,10 @@ function buildCloudAssetUrl(cloudPath) {
   return `${baseUrl}/${normalizedPath.split('/').map(encodeUrlPathSegment).join('/')}`;
 }
 
+function isHttpAudioUrl(value) {
+  return /^https?:\/\//i.test(String(value || '').trim());
+}
+
 function formatClock(seconds) {
   const value = Math.max(0, Math.floor(Number(seconds || 0)));
   const minutes = String(Math.floor(value / 60)).padStart(2, '0');
@@ -138,14 +142,20 @@ function resolveExerciseAudioClip(task, sentence) {
   });
   if (segment) {
     const segmentStart = Number(segment.startSec || 0);
+    const segmentAudioUrl = String(segment.audioUrl || '').trim();
     return {
-      audioUrl: String(segment.audioUrl || buildCloudAssetUrl(segment.audioCloudPath) || ''),
+      audioUrl: String((isHttpAudioUrl(segmentAudioUrl) ? segmentAudioUrl : '') || buildCloudAssetUrl(segment.audioCloudPath) || segmentAudioUrl || segment.audioFileId || ''),
+      audioFileId: String(segment.audioFileId || (segmentAudioUrl.startsWith('cloud://') ? segmentAudioUrl : '') || ''),
+      audioCloudPath: String(segment.audioCloudPath || ''),
       audioStartSec: Math.max(0, startSec - segmentStart),
       audioEndSec: Math.max(0.05, endSec - segmentStart)
     };
   }
+  const taskAudioUrl = String(task && task.audioUrl || '').trim();
   return {
-    audioUrl: String((task && (task.audioUrl || task.audioFileId)) || buildCloudAssetUrl(task && task.audioCloudPath) || ''),
+    audioUrl: String((isHttpAudioUrl(taskAudioUrl) ? taskAudioUrl : '') || buildCloudAssetUrl(task && task.audioCloudPath) || taskAudioUrl || (task && task.audioFileId) || ''),
+    audioFileId: String((task && task.audioFileId) || (taskAudioUrl.startsWith('cloud://') ? taskAudioUrl : '') || ''),
+    audioCloudPath: String(task && task.audioCloudPath || ''),
     audioStartSec: startSec,
     audioEndSec: endSec
   };
@@ -305,6 +315,7 @@ Page({
     recordDurationText: '',
     answerPlaying: false,
     submitting: false,
+    repeatScoring: false,
     questionPlaying: false,
     questionLoading: false,
     repeatPromptReady: false,
@@ -337,6 +348,7 @@ Page({
     this.repeatCatalogCache = {};
     this.repeatCatalogInflight = {};
     this.repeatPracticeSessions = {};
+    this.repeatScoringRequests = {};
     this.repeatRequestToken = 0;
     this.ieltsItemCache = {};
     this.ieltsItemInflight = {};
@@ -408,18 +420,7 @@ Page({
     this.questionAudioContext.onStop(() => {
       this.setData({ questionPlaying: false, ieltsCueLineIndex: -1 });
     });
-    this.questionAudioContext.onError(() => {
-      this.pendingQuestionClip = null;
-      this.setData({
-        questionPlaying: false,
-        questionLoading: false,
-        repeatPromptReady: this.data.ieltsMode ? this.data.repeatPromptReady : true,
-        ieltsCueLineIndex: -1,
-        ieltsPromptReady: this.data.ieltsMode ? true : this.data.ieltsPromptReady,
-        ieltsQuestionRevealed: this.data.ieltsMode ? true : this.data.ieltsQuestionRevealed,
-        errorText: text('playFailed', '问题播放失败，请稍后再试。')
-      });
-    });
+    this.questionAudioContext.onError((error) => this.handleQuestionAudioError(error));
     this.answerAudioContext = wx.createInnerAudioContext();
     this.answerAudioContext.obeyMuteSwitch = false;
     this.answerAudioContext.onPlay(() => this.setData({ answerPlaying: true }));
@@ -546,6 +547,7 @@ Page({
       recordDurationMs: 0,
       recordDurationText: '',
       result: null,
+      repeatScoring: false,
       errorText: '',
       repeatPromptReady: false,
       ieltsMode: false,
@@ -929,6 +931,7 @@ Page({
       : allExercises;
     if (!exercises.length) return;
     this.repeatPracticeSessions = {};
+    this.repeatScoringRequests = {};
     this.setData({
       viewMode: 'practice',
       pageTitle: text('practiceTitle', '分级句子跟读'),
@@ -940,6 +943,7 @@ Page({
       recordDurationMs: 0,
       recordDurationText: '',
       result: null,
+      repeatScoring: false,
       errorText: '',
       repeatPromptReady: false,
       ieltsMode: false,
@@ -954,9 +958,10 @@ Page({
   },
 
   backToSpeakingHome() {
-    if (this.data.recording || this.data.submitting) {
+    const hasRepeatScoring = Object.keys(this.repeatScoringRequests || {}).length > 0;
+    if (this.data.recording || this.data.submitting || hasRepeatScoring) {
       wx.showToast({
-        title: text('finishCurrent', '请先完成本次录音'),
+        title: hasRepeatScoring ? text('finishScoring', '请等待评分完成') : text('finishCurrent', '请先完成本次录音'),
         icon: 'none'
       });
       return;
@@ -991,6 +996,7 @@ Page({
       recordDurationMs: 0,
       recordDurationText: '',
       result: null,
+      repeatScoring: false,
       errorText: '',
       ieltsMode: false,
       ieltsSessionStarted: true,
@@ -1314,7 +1320,7 @@ Page({
   },
 
   selectExercise(event) {
-    if (this.data.recording || this.data.submitting) return;
+    if (this.data.recording || (this.data.ieltsMode && this.data.submitting)) return;
     this.stopAnswerPlayback();
     const id = event.currentTarget.dataset.id;
     const exercises = this.data.exercises || [];
@@ -1332,10 +1338,11 @@ Page({
       recordDurationMs: Number(session.recordDurationMs || 0),
       recordDurationText: session.recordDurationText || '',
       result: session.result || null,
+      repeatScoring: Boolean(session.scoring || activeExercise.repeatScoring),
       questionPlaying: false,
       questionLoading: false,
       repeatPromptReady: false,
-      errorText: ''
+      errorText: session.errorText || ''
     });
     this.queueQuestionAutoPlay();
   },
@@ -1386,6 +1393,42 @@ Page({
     this.questionAudioContext.play();
   },
 
+  async handleQuestionAudioError(error) {
+    const clip = this.pendingQuestionClip;
+    const requestToken = this.questionPlaybackRequestToken;
+    if (!this.data.ieltsMode && clip && !clip.fallbackTried && clip.audioFileId) {
+      clip.fallbackTried = true;
+      try {
+        const fallbackSrc = await store.getTempFileURL(clip.audioFileId);
+        if (requestToken !== this.questionPlaybackRequestToken || this.pendingQuestionClip !== clip) return;
+        if (fallbackSrc && fallbackSrc !== clip.src) {
+          if (this.questionClipSeekTimer) {
+            clearTimeout(this.questionClipSeekTimer);
+            this.questionClipSeekTimer = null;
+          }
+          clip.src = fallbackSrc;
+          clip.seekRequested = false;
+          clip.started = false;
+          this.questionAudioContext.stop();
+          this.pendingQuestionClip = clip;
+          this.questionAudioContext.src = fallbackSrc;
+          return;
+        }
+      } catch (fallbackError) {}
+    }
+    console.warn(`[speaking-original-audio] pages/speaking.questionAudioContext.onError -> temp-url-fallback: ${String(error && (error.errCode || error.errMsg) || 'unknown')}`);
+    this.pendingQuestionClip = null;
+    this.setData({
+      questionPlaying: false,
+      questionLoading: false,
+      repeatPromptReady: this.data.ieltsMode ? this.data.repeatPromptReady : true,
+      ieltsCueLineIndex: -1,
+      ieltsPromptReady: this.data.ieltsMode ? true : this.data.ieltsPromptReady,
+      ieltsQuestionRevealed: this.data.ieltsMode ? true : this.data.ieltsQuestionRevealed,
+      errorText: text('playFailed', '问题播放失败，请稍后再试。')
+    });
+  },
+
   playOriginalQuestionClip(active) {
     const src = String(active && active.audioUrl || '').trim();
     if (!src) throw new Error('empty-original-audio');
@@ -1393,6 +1436,8 @@ Page({
       src,
       startSec: Math.max(0, Number(active.audioStartSec || 0)),
       endSec: Math.max(Number(active.audioStartSec || 0) + 0.05, Number(active.audioEndSec || 0)),
+      audioFileId: String(active.audioFileId || ''),
+      fallbackTried: false,
       seekRequested: false,
       started: false
     };
@@ -1419,8 +1464,16 @@ Page({
     const requestToken = ++this.questionPlaybackRequestToken;
     this.setData({ questionLoading: true, errorText: '' });
     try {
-      if (!this.data.ieltsMode && active.audioUrl) {
-        this.playOriginalQuestionClip(active);
+      if (!this.data.ieltsMode && (active.audioUrl || active.audioFileId || active.audioCloudPath)) {
+        let originalAudioUrl = String(active.audioUrl || '').trim();
+        if (!isHttpAudioUrl(originalAudioUrl)) {
+          originalAudioUrl = buildCloudAssetUrl(active.audioCloudPath)
+            || (active.audioFileId ? await store.getTempFileURL(active.audioFileId) : '')
+            || (originalAudioUrl.startsWith('cloud://') ? await store.getTempFileURL(originalAudioUrl) : originalAudioUrl);
+        }
+        if (requestToken !== this.questionPlaybackRequestToken) return;
+        if (!originalAudioUrl) throw new Error('empty-original-audio');
+        this.playOriginalQuestionClip(Object.assign({}, active, { audioUrl: originalAudioUrl }));
         return;
       }
       let result;
@@ -1514,7 +1567,7 @@ Page({
   },
 
   replayRepeatRecording() {
-    if (!this.answerAudioContext || !this.data.tempFilePath || this.data.recording || this.data.submitting) return;
+    if (!this.answerAudioContext || !this.data.tempFilePath || this.data.recording || this.data.submitting || this.data.repeatScoring) return;
     if (this.data.answerPlaying) {
       this.stopAnswerPlayback();
       return;
@@ -1529,7 +1582,7 @@ Page({
   },
 
   toggleRepeatRecording() {
-    if (this.data.ieltsMode || this.data.submitting || this.data.questionLoading || this.data.questionPlaying) return;
+    if (this.data.ieltsMode || this.data.submitting || this.data.repeatScoring || this.data.questionLoading || this.data.questionPlaying) return;
     if (this.data.recording) {
       this.stopRecord();
       return;
@@ -1538,12 +1591,12 @@ Page({
   },
 
   restartRepeatRecording() {
-    if (this.data.recording || this.data.submitting) return;
+    if (this.data.recording || this.data.submitting || this.data.repeatScoring) return;
     this.stopAnswerPlayback();
     const activeId = String(this.data.activeId || '');
     if (activeId && this.repeatPracticeSessions) delete this.repeatPracticeSessions[activeId];
     const exercises = (this.data.exercises || []).map((item) => item.id === activeId
-      ? Object.assign({}, item, { repeatResult: null })
+      ? Object.assign({}, item, { repeatResult: null, repeatScoring: false, repeatScoreError: false })
       : item);
     this.setData({
       exercises,
@@ -1551,17 +1604,39 @@ Page({
       recordDurationMs: 0,
       recordDurationText: '',
       result: null,
+      repeatScoring: false,
       errorText: ''
     }, () => this.startRecord());
   },
 
   async submitPronunciation() {
-    if (!this.data.tempFilePath || this.data.submitting) {
+    if (!this.data.tempFilePath) {
       return;
     }
     const active = this.data.activeExercise || {};
+    const activeId = String(active.id || '');
+    if (!activeId) return;
+    if (!this.repeatScoringRequests) this.repeatScoringRequests = {};
+    if (this.repeatScoringRequests[activeId]) return;
+    this.repeatScoringRequests[activeId] = true;
+    const recording = {
+      tempFilePath: this.data.tempFilePath,
+      recordDurationMs: this.data.recordDurationMs,
+      recordDurationText: this.data.recordDurationText
+    };
     const planRunType = store.getDeviceStudyRole && store.getDeviceStudyRole() === 'student' ? 'normal' : 'preview';
-    this.setData({ submitting: true, errorText: '', result: null });
+    if (!this.repeatPracticeSessions) this.repeatPracticeSessions = {};
+    this.repeatPracticeSessions[activeId] = Object.assign({}, recording, {
+      result: null,
+      scoring: true,
+      errorText: ''
+    });
+    const scoringExercises = (this.data.exercises || []).map((item) => item.id === activeId
+      ? Object.assign({}, item, { repeatResult: null, repeatScoring: true, repeatScoreError: false })
+      : item);
+    const scoringPatch = { exercises: scoringExercises };
+    if (this.data.activeId === activeId) Object.assign(scoringPatch, { repeatScoring: true, errorText: '', result: null });
+    this.setData(scoringPatch);
     try {
       const upload = await store.createSpeakingUploadUrl({
         category: 'speaking',
@@ -1569,42 +1644,55 @@ Page({
         attemptType: 'standalone_sentence_repeat',
         planRunType
       });
-      const fileId = await store.uploadSpeakingAudio(upload.cloudPath, this.data.tempFilePath);
+      const fileId = await store.uploadSpeakingAudio(upload.cloudPath, recording.tempFilePath);
       const response = await store.evaluateSpeakingPronunciation({
         category: 'speaking',
         taskId: active.id,
         attemptType: 'standalone_sentence_repeat',
         answerAudioFileId: fileId,
         answerCloudPath: upload.cloudPath,
-        answerDurationMs: this.data.recordDurationMs,
+        answerDurationMs: recording.recordDurationMs,
         refText: active.prompt,
         planRunType
       });
       const pronunciation = response.pronunciation || null;
       if (pronunciation) {
         if (!this.repeatPracticeSessions) this.repeatPracticeSessions = {};
-        this.repeatPracticeSessions[active.id] = {
+        this.repeatPracticeSessions[activeId] = {
           result: pronunciation,
-          tempFilePath: this.data.tempFilePath,
-          recordDurationMs: this.data.recordDurationMs,
-          recordDurationText: this.data.recordDurationText
+          tempFilePath: recording.tempFilePath,
+          recordDurationMs: recording.recordDurationMs,
+          recordDurationText: recording.recordDurationText,
+          scoring: false,
+          errorText: ''
         };
       }
-      this.setData({
+      const successPatch = {
         exercises: (this.data.exercises || []).map((item) => item.id === active.id
-          ? Object.assign({}, item, { repeatResult: pronunciation })
-          : item),
-        result: pronunciation
-      });
-      if (pronunciation) {
+          ? Object.assign({}, item, { repeatResult: pronunciation, repeatScoring: false, repeatScoreError: false })
+          : item)
+      };
+      if (this.data.activeId === activeId) Object.assign(successPatch, { result: pronunciation, repeatScoring: false, errorText: '' });
+      this.setData(successPatch);
+      if (pronunciation && this.data.activeId === activeId && !this.data.recording) {
         this.playScoreEffect();
       }
     } catch (error) {
-      this.setData({
-        errorText: text('scoreFailed', '评分暂时没有成功，请稍后再试。')
+      const errorText = text('scoreFailed', '评分暂时没有成功，请稍后再试。');
+      this.repeatPracticeSessions[activeId] = Object.assign({}, recording, {
+        result: null,
+        scoring: false,
+        errorText
       });
+      const failurePatch = {
+        exercises: (this.data.exercises || []).map((item) => item.id === activeId
+          ? Object.assign({}, item, { repeatResult: null, repeatScoring: false, repeatScoreError: true })
+          : item)
+      };
+      if (this.data.activeId === activeId) Object.assign(failurePatch, { repeatScoring: false, errorText });
+      this.setData(failurePatch);
     } finally {
-      this.setData({ submitting: false });
+      delete this.repeatScoringRequests[activeId];
     }
   },
   async submitIeltsSpeaking() {
