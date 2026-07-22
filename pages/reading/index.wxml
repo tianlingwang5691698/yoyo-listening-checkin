@@ -16,7 +16,6 @@
       <view class="catalogue-copy">
         <view class="catalogue-kicker">{{texts.eyebrow}}</view>
         <view class="catalogue-title">{{texts.title}}</view>
-        <view class="catalogue-subtitle">{{texts.subtitle}}</view>
       </view>
       <view class="catalogue-page-tag">READ</view>
     </view>
@@ -127,7 +126,6 @@
       </view>
       <view class="reading-eyebrow">{{texts.eyebrow}}</view>
       <view class="reading-title">{{texts.title}}</view>
-      <view class="reading-copy">{{texts.subtitle}}</view>
     </view>
 
     <view class="reading-history-tabs">

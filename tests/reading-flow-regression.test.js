@@ -28,6 +28,13 @@ test('阅读保持普通分包且详情路径参数安全传递', () => {
   assert.match(readingDetailSource, /decodeURIComponent\(passageId\)/);
 });
 
+test('阅读首页不显示不完整的学段说明', () => {
+  const template = fs.readFileSync(path.join(root, 'pages/reading/index.wxml'), 'utf8');
+  const catalog = fs.readFileSync(path.join(root, 'utils/i18n-catalog-learning.js'), 'utf8');
+  assert.doesNotMatch(template, /texts\.subtitle|catalogue-subtitle|reading-copy/);
+  assert.doesNotMatch(catalog, /初中、高中|Junior and Senior High/);
+});
+
 test('阅读学习包术语解析不会覆盖翻译函数', () => {
   assert.match(readingDetailSource, /function termEntries[\s\S]*?const termText = pickText/);
   assert.doesNotMatch(readingDetailSource, /function termEntries[\s\S]*?const text = pickText/);

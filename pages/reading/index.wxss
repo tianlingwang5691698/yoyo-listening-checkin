@@ -206,13 +206,6 @@
   font-weight: 600;
 }
 
-.reading-copy {
-  margin-top: 16rpx;
-  color: #607087;
-  font-size: 26rpx;
-  line-height: 1.45;
-}
-
 .reading-card {
   margin-top: 30rpx;
   padding: 28rpx 24rpx 26rpx;
@@ -594,13 +587,6 @@
   font-weight: 600;
 }
 
-.catalogue-subtitle {
-  margin-top: 16rpx;
-  color: var(--lib-text-secondary);
-  font-size: 26rpx;
-  line-height: 1.45;
-}
-
 .catalogue-page-tag {
   position: absolute;
   right: 42rpx;
@@ -903,8 +889,6 @@
 .theme-voyage .hero-pages { display: none; }
 .theme-voyage .reading-eyebrow { color: var(--voyage-brass); font-weight: 800; letter-spacing: 2rpx; }
 .theme-voyage .reading-title { color: var(--voyage-ink); font-family: "Songti SC", STSong, serif; font-size: 52rpx; font-weight: 800; }
-.theme-voyage .reading-copy { color: var(--voyage-muted); }
-
 .theme-voyage .reading-history-tabs {
   margin: 30rpx 0 0;
   padding: 5rpx;
