@@ -66,6 +66,7 @@ const UNLOCK_EDITIONS = [
 const STANDARD_BOOK_GROUPS = [
   { level: 'junior', title: text('juniorBook', '初中英语词汇 乱序'), coverMark: text('juniorMark', '初'), listCount: 32 },
   { level: 'senior', title: text('seniorBook', '高中英语词汇 乱序'), coverMark: text('seniorMark', '高'), listCount: 40 },
+  { level: 'cet4', title: text('cet4Book', '四级词汇 乱序'), coverMark: text('cet4Mark', '四'), listCount: 35 },
   { level: 'ielts', title: text('ieltsBook', '雅思词汇 乱序'), coverMark: text('ieltsMark', '雅'), listCount: 48 }
 ];
 
@@ -74,7 +75,7 @@ function getStandardListLevel(stage, list) {
 }
 
 function getStandardListCloudPath(stage, list) {
-  const release = stage === 'ielts' ? 'word-lists-examples-v1' : 'word-lists-examples-v2';
+  const release = stage === 'cet4' ? 'cet4-v1' : (stage === 'ielts' ? 'word-lists-examples-v1' : 'word-lists-examples-v2');
   return `dictionary_books/${release}/${stage}/list-${list}.json`;
 }
 
@@ -310,10 +311,11 @@ function getDictationSourceTitle(sourceId, fallback) {
   const level = String(sourceId || '').replace(/^dictionary-book-/, '');
   if (level === 'junior') return text('juniorBook', '初中英语词汇 乱序');
   if (level === 'senior') return text('seniorBook', '高中英语词汇 乱序');
+  if (level === 'cet4') return text('cet4Book', '四级词汇 乱序');
   if (level === 'ielts') return text('ieltsBook', '雅思词汇 乱序');
-  const standardMatch = level.match(/^(junior|senior|ielts)-list-(\d+)$/);
+  const standardMatch = level.match(/^(junior|senior|cet4|ielts)-list-(\d+)$/);
   if (standardMatch) {
-    const titles = { junior: text('juniorBook', '初中英语词汇 乱序'), senior: text('seniorBook', '高中英语词汇 乱序'), ielts: text('ieltsBook', '雅思词汇 乱序') };
+    const titles = { junior: text('juniorBook', '初中英语词汇 乱序'), senior: text('seniorBook', '高中英语词汇 乱序'), cet4: text('cet4Book', '四级词汇 乱序'), ielts: text('ieltsBook', '雅思词汇 乱序') };
     return `${titles[standardMatch[1]]} · List ${standardMatch[2]}`;
   }
   const match = level.match(/^unlock-(?:(v3)-)?(\d+)-u(\d+)-(ls|rw)$/i);
@@ -330,7 +332,7 @@ function getEffectiveSettings(settings, library, sourceId) {
 }
 
 function isStandardListSource(sourceId) {
-  return /^dictionary-book-(junior|senior|ielts)-list-\d+$/.test(String(sourceId || ''));
+  return /^dictionary-book-(junior|senior|cet4|ielts)-list-\d+$/.test(String(sourceId || ''));
 }
 
 function buildPlanState(library, settings, today) {
@@ -905,8 +907,8 @@ Page({
       unlockEditions,
       activeUnlockEditionTitle: activeUnlockEdition ? activeUnlockEdition.title : this.data.activeUnlockEditionTitle,
       dictionaryBooks: mergeDictionaryBooks(this.data.dictionaryBooks).map((book) => Object.assign({}, book, {
-        title: book.level === 'senior' ? text('seniorBook', book.title) : (book.level === 'junior' ? text('juniorBook', book.title) : (book.level === 'ielts' ? text('ieltsBook', book.title) : book.title)),
-        coverMark: book.level === 'senior' ? text('seniorMark', book.coverMark) : (book.level === 'junior' ? text('juniorMark', book.coverMark) : (book.level === 'ielts' ? text('ieltsMark', book.coverMark) : book.coverMark))
+        title: book.level === 'senior' ? text('seniorBook', book.title) : (book.level === 'junior' ? text('juniorBook', book.title) : (book.level === 'cet4' ? text('cet4Book', book.title) : (book.level === 'ielts' ? text('ieltsBook', book.title) : book.title))),
+        coverMark: book.level === 'senior' ? text('seniorMark', book.coverMark) : (book.level === 'junior' ? text('juniorMark', book.coverMark) : (book.level === 'cet4' ? text('cet4Mark', book.coverMark) : (book.level === 'ielts' ? text('ieltsMark', book.coverMark) : book.coverMark)))
       })),
       activeSourceTitle: this.data.activeSourceId ? this.data.activeSourceTitle : text('myLibrary', '我的词库')
     }), () => {

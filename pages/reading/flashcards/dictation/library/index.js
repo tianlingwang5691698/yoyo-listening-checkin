@@ -23,6 +23,7 @@ function sourceItems(texts) {
   return [
     { key: 'junior', mark: texts.juniorMark || '初', title: texts.juniorBookShort, meta: texts.randomWords },
     { key: 'senior', mark: texts.seniorMark || '高', title: texts.seniorBookShort, meta: texts.randomWords },
+    { key: 'cet4', mark: texts.cet4Mark || '四', title: texts.cet4BookShort, meta: texts.randomWords },
     { key: 'ielts', mark: texts.ieltsMark || '雅', title: texts.ieltsBookShort, meta: texts.randomWords },
     { key: 'unlock-v2', mark: 'U2', title: texts.unlockSecondBook || 'Unlock 第二版词汇书', meta: 'Level 1–4 · Unit 1–8' },
     { key: 'unlock-v3', mark: 'U3', title: texts.unlockThirdBook || 'Unlock 第三版词汇书', meta: 'Level 1–4 · Unit 1–8' }
@@ -47,8 +48,8 @@ function unitItems() {
 }
 
 function standardListItems(stage) {
-  const count = stage === 'junior' ? 32 : (stage === 'senior' ? 40 : 48);
-  const titles = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, ielts: getTexts().ieltsBookShort };
+  const count = stage === 'junior' ? 32 : (stage === 'senior' ? 40 : (stage === 'cet4' ? 35 : 48));
+  const titles = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, cet4: getTexts().cet4BookShort, ielts: getTexts().ieltsBookShort };
   return Array.from({ length: count }, (_, index) => ({ key: String(index + 1), mark: `L${index + 1}`, title: `List ${index + 1}`, meta: titles[stage] }));
 }
 
@@ -86,7 +87,7 @@ Page({
       title: isDictation ? texts.shelfTitle : texts.practiceShelfTitle,
       subtitle: isDictation ? texts.shelfCopy : texts.practiceShelfCopy,
       items: sourceItems(texts)
-    }), () => this.perf.ready('pageReady', { stage: 'sources', total: 5, cacheHit: true, practiceMode }));
+    }), () => this.perf.ready('pageReady', { stage: 'sources', total: 6, cacheHit: true, practiceMode }));
     this.loadCounts();
   },
   onShow() {
@@ -121,7 +122,7 @@ Page({
       return;
     }
     if (this.data.stage === 'standard-lists') {
-      const title = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, ielts: getTexts().ieltsBookShort }[this.data.standardStage];
+      const title = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, cet4: getTexts().cet4BookShort, ielts: getTexts().ieltsBookShort }[this.data.standardStage];
       this.openBook(`${this.data.standardStage}-list-${key}`, `${title} · List ${key}`);
       return;
     }
@@ -181,7 +182,7 @@ Page({
     this.setData({ stage: 'levels', title: unlockEdition === 'v3' ? (texts.unlockThirdBook || 'Unlock 第三版词汇书') : (texts.unlockSecondBook || 'Unlock 第二版词汇书'), subtitle: texts.chooseLevel, unlockEdition, unlockLevel: 0, unlockUnit: 0 }, () => this.setData({ items: this.withCounts(levelItems(), 'levels') }));
   },
   showStandardLists(stage) {
-    const title = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, ielts: getTexts().ieltsBookShort }[stage];
+    const title = { junior: getTexts().juniorBookShort, senior: getTexts().seniorBookShort, cet4: getTexts().cet4BookShort, ielts: getTexts().ieltsBookShort }[stage];
     const items = this.withCounts(standardListItems(stage), 'standard-lists', stage);
     this.setData({ stage: 'standard-lists', standardStage: stage, title, subtitle: getTexts().chooseList, items });
   },

@@ -39,7 +39,7 @@
 
 正式新增词条至少必须有 `word`、`wordLower`、非空 `definitions`、所属位置和来源。面向背诵页面发布的最终版本原则上还必须有 `phonetic`、`example`、`exampleMeaning`；确因原始资料缺失而暂缺时，必须进入缺失报告并经任务说明明确放行。
 
-### 2. 初中、高中、雅思 List
+### 2. 初中、高中、四级、雅思 List
 
 必须额外包含：
 
@@ -50,8 +50,8 @@
 }
 ```
 
-- `level` 只能使用既有值：`junior`、`senior`、`ielts`。
-- `list` 必须与原书目录一致：初中 1–32，高中 1–40，雅思 1–48。
+- `level` 只能使用既有值：`junior`、`senior`、`cet4`、`ielts`。
+- `list` 必须与原书目录一致：初中 1–32，高中 1–40，四级 1–35，雅思 1–48。
 - 同一 `level + list + wordLower` 不得重复；跨 List 重复必须能由原书核验，不自动去重到别的 List。
 
 ### 3. Unlock 词汇
@@ -116,6 +116,7 @@
 
 - 初高中分 List 正式路径沿用 `dictionary_books/word-lists-examples-v2/<stage>/list-<n>.json`。
 - 雅思分 List 路径沿用 `dictionary_books/word-lists-examples-v1/ielts/list-<n>.json`。
+- 四级分 List 使用独立不可变 release：`dictionary_books/cet4-v1/cet4/list-<n>.json`。
 - Unlock 第二版沿用 `dictionary_books/unlock-v2/level-<n>/unit-<n>/<ls|rw>.json`。
 - Unlock 第三版沿用现有 `unlock-v3` 路径；不得写入第二版目录。
 - 旧整本词书、旧 release、旧 `sourceId` 必须继续保留，不能因新分 List 数据上线而删除或改名。
@@ -150,4 +151,3 @@
 - 单独记录路径、词条键、旧值、新值、证据和影响版本。
 - 修复脚本只修改明确列出的字段，禁止顺带重排或格式化全文件。
 - 上传前后分别验证旧版和新版读取兼容。
-

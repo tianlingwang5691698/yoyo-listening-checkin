@@ -324,6 +324,12 @@
     linear-gradient(135deg, rgba(96, 112, 135, 0.82), rgba(190, 215, 232, 0.9));
 }
 
+.book-cet4 .book-cover {
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.56) 0%, rgba(255, 255, 255, 0) 38%),
+    linear-gradient(135deg, rgba(104, 151, 143, 0.88), rgba(211, 232, 222, 0.92));
+}
+
 .book-unlock .book-cover {
   background: linear-gradient(145deg, #506f83, #294858);
 }
@@ -372,6 +378,10 @@
 
 .book-senior .book-symbol {
   color: rgba(56, 72, 96, 0.9);
+}
+
+.book-cet4 .book-symbol {
+  color: rgba(48, 96, 87, 0.92);
 }
 
 .book-lines {
@@ -1983,6 +1993,12 @@
   background:
     linear-gradient(90deg, rgba(20, 40, 58, 0.18), rgba(20, 40, 58, 0) 42rpx),
     #D9D1BE;
+}
+
+.library-vocab-book.book-cet4 {
+  background:
+    linear-gradient(90deg, rgba(61, 112, 100, 0.22), rgba(61, 112, 100, 0) 42rpx),
+    #D7E3D6;
 }
 
 .library-vocab-book.book-unlock {

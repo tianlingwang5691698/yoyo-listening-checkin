@@ -26,16 +26,16 @@ function normalize(value) {
 function resolveBook(level) {
   const normalizedLevel = normalize(level);
   if (STANDARD_BOOKS[normalizedLevel]) return STANDARD_BOOKS[normalizedLevel];
-  const standardMatch = normalizedLevel.match(/^(junior|senior|ielts)-list-(\d{1,2})$/);
+  const standardMatch = normalizedLevel.match(/^(junior|senior|cet4|ielts)-list-(\d{1,2})$/);
   if (standardMatch) {
     const stage = standardMatch[1];
     const list = Number(standardMatch[2]);
-    const max = stage === 'junior' ? 32 : (stage === 'senior' ? 40 : 48);
+    const max = stage === 'junior' ? 32 : (stage === 'senior' ? 40 : (stage === 'cet4' ? 35 : 48));
     if (list < 1 || list > max) return null;
     return {
       level: `${stage}-list-${list}`,
-      title: `${STANDARD_BOOKS[stage].title} List ${list}`,
-      cloudPath: `dictionary_books/${stage === 'ielts' ? 'word-lists-examples-v1' : 'word-lists-examples-v2'}/${stage}/list-${list}.json`
+      title: `${stage === 'cet4' ? '新东方 四级词汇词根+联想记忆法：乱序版' : STANDARD_BOOKS[stage].title} List ${list}`,
+      cloudPath: `dictionary_books/${stage === 'cet4' ? 'cet4-v1' : (stage === 'ielts' ? 'word-lists-examples-v1' : 'word-lists-examples-v2')}/${stage}/list-${list}.json`
     };
   }
   const match = normalizedLevel.match(/^unlock-(?:(v3)-)?([1-4])-u([1-8])-(ls|rw)$/);

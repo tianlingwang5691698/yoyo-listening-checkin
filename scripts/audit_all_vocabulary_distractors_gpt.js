@@ -22,7 +22,7 @@ const POS_VALUES = new Set(['n', 'v', 'adj', 'adv', 'prep', 'conj', 'pron', 'det
 
 function enumerateSources() {
   const sources = [];
-  [['junior', 32, 'word-lists-examples-v2'], ['senior', 40, 'word-lists-examples-v2'], ['ielts', 48, 'word-lists-examples-v1']]
+  [['junior', 32, 'word-lists-examples-v2'], ['senior', 40, 'word-lists-examples-v2'], ['cet4', 35, 'cet4-v1'], ['ielts', 48, 'word-lists-examples-v1']]
     .forEach(([stage, count, release]) => {
       for (let list = 1; list <= count; list += 1) {
         sources.push({

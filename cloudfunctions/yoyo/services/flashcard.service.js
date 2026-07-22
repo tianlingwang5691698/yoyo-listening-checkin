@@ -13,10 +13,10 @@ const JUNIOR_LIST_SOURCE_IDS = Array.from({ length: JUNIOR_LIST_COUNT }, (_, ind
 const DICTIONARY_BOOKS = [
   { level: 'junior', title: '新东方 初中英语词汇词根+联想记忆法：乱序版', cloudPath: 'dictionary_books/word-dictionary-junior.json' },
   { level: 'senior', title: '高中英语词汇 乱序', cloudPath: 'dictionary_books/word-dictionary-senior.json' },
-  ...[['junior', 32, '新东方 初中英语词汇词根+联想记忆法：乱序版'], ['senior', 40, '高中英语词汇 乱序'], ['ielts', 48, '雅思词汇词根+联想记忆法：乱序版']].flatMap(([stage, count, title]) => Array.from({ length: count }, (_, index) => ({
+  ...[['junior', 32, '新东方 初中英语词汇词根+联想记忆法：乱序版'], ['senior', 40, '高中英语词汇 乱序'], ['cet4', 35, '新东方 四级词汇词根+联想记忆法：乱序版'], ['ielts', 48, '雅思词汇词根+联想记忆法：乱序版']].flatMap(([stage, count, title]) => Array.from({ length: count }, (_, index) => ({
     level: `${stage}-list-${index + 1}`,
     title: `${title} List ${index + 1}`,
-    cloudPath: `dictionary_books/${stage === 'ielts' ? 'word-lists-examples-v1' : 'word-lists-examples-v2'}/${stage}/list-${index + 1}.json`
+    cloudPath: `dictionary_books/${stage === 'cet4' ? 'cet4-v1' : (stage === 'ielts' ? 'word-lists-examples-v1' : 'word-lists-examples-v2')}/${stage}/list-${index + 1}.json`
   }))),
   ...[2, 3].flatMap((edition) => [1, 2, 3, 4].flatMap((unlockLevel) => [1, 2, 3, 4, 5, 6, 7, 8].flatMap((unit) => ['ls', 'rw'].map((section) => ({
     level: edition === 3 ? `unlock-v3-${unlockLevel}-u${unit}-${section}` : `unlock-${unlockLevel}-u${unit}-${section}`,

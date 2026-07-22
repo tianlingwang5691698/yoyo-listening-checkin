@@ -17,17 +17,30 @@ test('词书读取使用轻量云函数', () => {
   assert.match(functionSource, /keepAlive: true/);
 });
 
-test('轻量云函数支持初中、高中、雅思和 Unlock 词书', () => {
+test('轻量云函数支持初中、高中、四级、雅思和 Unlock 词书', () => {
   const { resolveBook } = dictionaryBookFunction._test;
   assert.equal(resolveBook('junior').cloudPath, 'dictionary_books/word-dictionary-junior.json');
   assert.equal(resolveBook('senior').cloudPath, 'dictionary_books/word-dictionary-senior.json');
   assert.equal(resolveBook('junior-list-2').cloudPath, 'dictionary_books/word-lists-examples-v2/junior/list-2.json');
   assert.equal(resolveBook('senior-list-40').cloudPath, 'dictionary_books/word-lists-examples-v2/senior/list-40.json');
+  assert.equal(resolveBook('cet4-list-35').cloudPath, 'dictionary_books/cet4-v1/cet4/list-35.json');
+  assert.equal(resolveBook('cet4-list-36'), null);
   assert.equal(resolveBook('ielts-list-48').cloudPath, 'dictionary_books/word-lists-examples-v1/ielts/list-48.json');
   assert.equal(resolveBook('ielts-list-49'), null);
   assert.equal(resolveBook('unlock-3-u2-ls').cloudPath, 'dictionary_books/unlock-v2/level-3/unit-2/ls.json');
   assert.equal(resolveBook('unlock-v3-3-u2-ls').cloudPath, 'dictionary_books/unlock-v3/level-3/unit-2/ls.json');
   assert.equal(resolveBook('unknown'), null);
+});
+
+test('四级词书按 35 个 List 进入背诵与听写书架', () => {
+  const dictationLibrary = fs.readFileSync(path.join(root, 'pages/reading/flashcards/dictation/library/index.js'), 'utf8');
+  const serviceSource = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/services/flashcard.service.js'), 'utf8');
+  assert.match(pageSource, /level: 'cet4'[\s\S]*?listCount: 35/);
+  assert.match(pageSource, /stage === 'cet4' \? 'cet4-v1'/);
+  assert.match(dictationLibrary, /key: 'cet4'/);
+  assert.match(dictationLibrary, /stage === 'cet4' \? 35/);
+  assert.match(serviceSource, /\['cet4', 35,/);
+  assert.match(serviceSource, /stage === 'cet4' \? 'cet4-v1'/);
 });
 
 test('Unlock 例句缓存升级并保留页面展示', () => {
