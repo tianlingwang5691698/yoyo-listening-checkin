@@ -336,6 +336,7 @@ Page({
     page.syncTheme(this);
     this.repeatCatalogCache = {};
     this.repeatCatalogInflight = {};
+    this.repeatPracticeSessions = {};
     this.repeatRequestToken = 0;
     this.ieltsItemCache = {};
     this.ieltsItemInflight = {};
@@ -927,6 +928,7 @@ Page({
       ? allExercises.slice(request.sentenceStartIndex - 1, request.sentenceEndIndex)
       : allExercises;
     if (!exercises.length) return;
+    this.repeatPracticeSessions = {};
     this.setData({
       viewMode: 'practice',
       pageTitle: text('practiceTitle', '分级句子跟读'),
@@ -1317,6 +1319,7 @@ Page({
     const id = event.currentTarget.dataset.id;
     const exercises = this.data.exercises || [];
     const activeExercise = exercises.find((item) => item.id === id) || exercises[0];
+    const session = this.repeatPracticeSessions && this.repeatPracticeSessions[activeExercise.id] || {};
     if (this.questionAudioContext) {
       this.questionPlaybackRequestToken += 1;
       this.pendingQuestionClip = null;
@@ -1325,10 +1328,10 @@ Page({
     this.setData({
       activeId: activeExercise.id,
       activeExercise,
-      tempFilePath: '',
-      recordDurationMs: 0,
-      recordDurationText: '',
-      result: null,
+      tempFilePath: session.tempFilePath || '',
+      recordDurationMs: Number(session.recordDurationMs || 0),
+      recordDurationText: session.recordDurationText || '',
+      result: session.result || null,
       questionPlaying: false,
       questionLoading: false,
       repeatPromptReady: false,
@@ -1537,7 +1540,13 @@ Page({
   restartRepeatRecording() {
     if (this.data.recording || this.data.submitting) return;
     this.stopAnswerPlayback();
+    const activeId = String(this.data.activeId || '');
+    if (activeId && this.repeatPracticeSessions) delete this.repeatPracticeSessions[activeId];
+    const exercises = (this.data.exercises || []).map((item) => item.id === activeId
+      ? Object.assign({}, item, { repeatResult: null })
+      : item);
     this.setData({
+      exercises,
       tempFilePath: '',
       recordDurationMs: 0,
       recordDurationText: '',
@@ -1571,10 +1580,23 @@ Page({
         refText: active.prompt,
         planRunType
       });
+      const pronunciation = response.pronunciation || null;
+      if (pronunciation) {
+        if (!this.repeatPracticeSessions) this.repeatPracticeSessions = {};
+        this.repeatPracticeSessions[active.id] = {
+          result: pronunciation,
+          tempFilePath: this.data.tempFilePath,
+          recordDurationMs: this.data.recordDurationMs,
+          recordDurationText: this.data.recordDurationText
+        };
+      }
       this.setData({
-        result: response.pronunciation || null
+        exercises: (this.data.exercises || []).map((item) => item.id === active.id
+          ? Object.assign({}, item, { repeatResult: pronunciation })
+          : item),
+        result: pronunciation
       });
-      if (response.pronunciation) {
+      if (pronunciation) {
         this.playScoreEffect();
       }
     } catch (error) {

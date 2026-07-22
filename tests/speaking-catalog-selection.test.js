@@ -275,8 +275,14 @@ test('分级跟读以预览模式评分并保留录音', async () => {
   page.playScoreEffect = () => {};
   page.setData({
     activeExercise: { id: 'sentence-1', prompt: 'Read this sentence.' },
+    activeId: 'sentence-1',
+    exercises: [
+      { id: 'sentence-1', prompt: 'Read this sentence.' },
+      { id: 'sentence-2', prompt: 'Read the next sentence.' }
+    ],
     tempFilePath: '/tmp/repeat.mp3',
-    recordDurationMs: 1800
+    recordDurationMs: 1800,
+    recordDurationText: '1 秒'
   });
 
   await page.submitPronunciation();
@@ -285,6 +291,15 @@ test('分级跟读以预览模式评分并保留录音', async () => {
   assert.equal(calls[2][1].planRunType, 'preview');
   assert.equal(page.data.tempFilePath, '/tmp/repeat.mp3');
   assert.equal(page.data.result.score, 91);
+  assert.equal(page.data.exercises[0].repeatResult.score, 91);
+
+  page.questionAudioContext = { stop() {} };
+  page.queueQuestionAutoPlay = () => {};
+  page.selectExercise({ currentTarget: { dataset: { id: 'sentence-2' } } });
+  assert.equal(page.data.result, null);
+  page.selectExercise({ currentTarget: { dataset: { id: 'sentence-1' } } });
+  assert.equal(page.data.result.score, 91);
+  assert.equal(page.data.tempFilePath, '/tmp/repeat.mp3');
 });
 
 test('学生分级跟读使用正常记录模式', async () => {

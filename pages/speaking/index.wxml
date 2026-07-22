@@ -162,6 +162,7 @@
           <view class="repeat-sentence-main" data-id="{{item.id}}" hover-class="is-pressed" bindtap="selectExercise">
             <view class="repeat-sentence-number">{{index + 1}}</view>
             <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}">{{item.prompt}}</view>
+            <view class="repeat-sentence-score" wx:if="{{item.repeatResult}}">{{item.repeatResult.score || 0}}</view>
             <view class="repeat-sentence-play {{activeId === item.id && (questionPlaying || questionLoading) ? 'is-playing' : ''}}"><view></view><text></text><text></text><text></text></view>
           </view>
           <view class="repeat-inline-actions" wx:if="{{activeId === item.id && repeatPromptReady && !questionPlaying && !questionLoading}}">
@@ -349,6 +350,7 @@
           <view class="repeat-sentence-main" data-id="{{item.id}}" hover-class="is-pressed" bindtap="selectExercise">
             <view class="repeat-sentence-number">{{index + 1}}</view>
             <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}">{{item.prompt}}</view>
+            <view class="repeat-sentence-score" wx:if="{{item.repeatResult}}">{{item.repeatResult.score || 0}}</view>
             <view class="repeat-sentence-play {{activeId === item.id && (questionPlaying || questionLoading) ? 'is-playing' : ''}}"><view></view><text></text><text></text><text></text></view>
           </view>
           <view class="repeat-inline-actions" wx:if="{{activeId === item.id && repeatPromptReady && !questionPlaying && !questionLoading}}">
