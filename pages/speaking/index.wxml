@@ -10,7 +10,7 @@
 
   <block wx:if="{{viewMode === 'home'}}">
     <view class="speaking-mode-list is-library">
-      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
+      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtouchstart="prefetchRepeatEntry" bindtap="openRepeatPractice">
         <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
         <view class="speaking-mode-copy">
           <view class="speaking-mode-title">{{texts.gradedRepeat}}</view>
@@ -34,7 +34,7 @@
     <view class="ielts-test-list" wx:if="{{ieltsExpanded}}">
       <block wx:for="{{ieltsTests}}" wx:key="id">
         <view class="ielts-book-header" wx:if="{{item.showBookHeader}}">{{item.bookLabel}}</view>
-        <view class="ielts-test-row" data-item-id="{{item.id}}" bindtap="selectIeltsTest">
+        <view class="ielts-test-row" data-item-id="{{item.id}}" bindtouchstart="prefetchIeltsTest" bindtap="selectIeltsTest">
           <view><view class="ielts-test-title">{{item.title}}</view><view class="ielts-test-meta">{{item.meta}} · Part 1-3</view></view>
           <view class="ielts-test-arrow">›</view>
         </view>
@@ -55,7 +55,7 @@
         <view class="repeat-selector-heading"><view>{{texts.selectSeries}}</view><text>{{repeatSeries.length}}{{texts.seriesUnit}}</text></view>
         <scroll-view class="repeat-series-scroll" scroll-x="{{true}}" enable-flex="{{true}}" show-scrollbar="{{false}}">
           <view class="repeat-series-row">
-            <view class="repeat-series-tab {{selectedSeriesId === item.id ? 'is-active' : ''}}" wx:for="{{repeatSeries}}" wx:key="id" data-series-id="{{item.id}}" bindtap="selectRepeatSeries">{{item.title}}</view>
+            <view class="repeat-series-tab {{selectedSeriesId === item.id ? 'is-active' : ''}}" wx:for="{{repeatSeries}}" wx:key="id" data-series-id="{{item.id}}" bindtouchstart="prefetchRepeatSeries" bindtap="selectRepeatSeries">{{item.title}}</view>
           </view>
         </scroll-view>
       </view>
@@ -188,7 +188,7 @@
 
   <block wx:if="{{viewMode === 'home'}}">
     <view class="speaking-mode-list">
-      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
+      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtouchstart="prefetchRepeatEntry" bindtap="openRepeatPractice">
         <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
         <view class="speaking-mode-copy">
           <view class="speaking-mode-title">{{texts.gradedRepeat}}</view>
@@ -212,7 +212,7 @@
     <view class="ielts-test-list" wx:if="{{ieltsExpanded}}">
       <block wx:for="{{ieltsTests}}" wx:key="id">
         <view class="ielts-book-header" wx:if="{{item.showBookHeader}}">{{item.bookLabel}}</view>
-        <view class="ielts-test-row" data-item-id="{{item.id}}" bindtap="selectIeltsTest">
+        <view class="ielts-test-row" data-item-id="{{item.id}}" bindtouchstart="prefetchIeltsTest" bindtap="selectIeltsTest">
           <view><view class="ielts-test-title">{{item.title}}</view><view class="ielts-test-meta">{{item.meta}} · Part 1-3</view></view>
           <view class="ielts-test-arrow">›</view>
         </view>
@@ -233,7 +233,7 @@
         <view class="repeat-selector-heading"><view>{{texts.selectSeries}}</view><text>{{repeatSeries.length}}{{texts.seriesUnit}}</text></view>
         <scroll-view class="repeat-series-scroll" scroll-x="{{true}}" enable-flex="{{true}}" show-scrollbar="{{false}}">
           <view class="repeat-series-row">
-            <view class="repeat-series-tab {{selectedSeriesId === item.id ? 'is-active' : ''}}" wx:for="{{repeatSeries}}" wx:key="id" data-series-id="{{item.id}}" bindtap="selectRepeatSeries">{{item.title}}</view>
+            <view class="repeat-series-tab {{selectedSeriesId === item.id ? 'is-active' : ''}}" wx:for="{{repeatSeries}}" wx:key="id" data-series-id="{{item.id}}" bindtouchstart="prefetchRepeatSeries" bindtap="selectRepeatSeries">{{item.title}}</view>
           </view>
         </scroll-view>
       </view>

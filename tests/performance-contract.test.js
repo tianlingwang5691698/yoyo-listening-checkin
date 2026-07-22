@@ -155,11 +155,17 @@ test('口语首页和目录按需加载，系列目录不等待 transcript', () 
   const repeatSource = source.slice(source.indexOf('  async loadRepeatSeriesCatalog(series) {'), source.indexOf('  async selectRepeatAudio(event) {'));
   const ieltsIndexSource = source.slice(source.indexOf('  async openIeltsSpeaking() {'), source.indexOf('  async selectIeltsTest(event) {'));
   const ieltsItemSource = source.slice(source.indexOf('  async selectIeltsTest(event) {'), source.indexOf('  queueIeltsIntroAutoPlay() {'));
+  const template = fs.readFileSync(path.join(root, 'pages/speaking/index.wxml'), 'utf8');
 
   assert.doesNotMatch(onLoadSource, /getMaterialIndex|getMaterialItem|getListeningMaterialCatalog|getTaskTranscript|synthesizeIeltsPromptAudio/);
   assert.match(repeatSource, /store\.getListeningMaterialCatalog/);
+  assert.match(source, /loadRepeatCatalog\(levelId, series\)/);
   assert.match(repeatSource, /this\.loadRepeatTranscript\(selectedAudio, requestToken\);\s*return result;/);
   assert.doesNotMatch(repeatSource, /await this\.loadRepeatTranscript/);
   assert.match(ieltsIndexSource, /store\.getMaterialIndex\(\{ moduleId: 'speaking' \}\)/);
-  assert.match(ieltsItemSource, /store\.getMaterialItem\(\{ moduleId: 'speaking', itemId \}\)/);
+  assert.match(source, /loadIeltsItem\(itemId\)/);
+  assert.match(source, /store\.getMaterialItem\(\{ moduleId: 'speaking', itemId: key \}\)/);
+  assert.equal((template.match(/bindtouchstart="prefetchIeltsTest"/g) || []).length, 2);
+  assert.equal((template.match(/bindtouchstart="prefetchRepeatEntry"/g) || []).length, 2);
+  assert.equal((template.match(/bindtouchstart="prefetchRepeatSeries"/g) || []).length, 2);
 });

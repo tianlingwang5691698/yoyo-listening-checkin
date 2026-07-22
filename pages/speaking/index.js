@@ -331,7 +331,10 @@ Page({
     this.speakingPerf = page.startPagePerf('speaking');
     page.syncTheme(this);
     this.repeatCatalogCache = {};
+    this.repeatCatalogInflight = {};
     this.repeatRequestToken = 0;
+    this.ieltsItemCache = {};
+    this.ieltsItemInflight = {};
     this.questionPlaybackRequestToken = 0;
     this.ieltsIntroPlaybackRequestToken = 0;
     this.selectedRepeatTask = null;
@@ -509,6 +512,40 @@ Page({
     }
   },
 
+  loadRepeatCatalog(levelId, series) {
+    const selectedSeries = series || {};
+    const cacheKey = `${levelId}:${selectedSeries.id || ''}`;
+    if (!selectedSeries.id) return Promise.resolve(null);
+    if (!this.repeatCatalogCache) this.repeatCatalogCache = {};
+    if (!this.repeatCatalogInflight) this.repeatCatalogInflight = {};
+    if (this.repeatCatalogCache[cacheKey]) return Promise.resolve(this.repeatCatalogCache[cacheKey]);
+    if (this.repeatCatalogInflight[cacheKey]) return this.repeatCatalogInflight[cacheKey];
+    const request = store.getListeningMaterialCatalog({
+      levelId,
+      category: selectedSeries.id
+    }).then((result) => {
+      if (result && result.syncMode !== 'cloud-error' && (result.tasks || []).length) {
+        this.repeatCatalogCache[cacheKey] = result;
+      }
+      return result;
+    }).finally(() => {
+      delete this.repeatCatalogInflight[cacheKey];
+    });
+    this.repeatCatalogInflight[cacheKey] = request;
+    return request;
+  },
+
+  prefetchRepeatEntry() {
+    const selectedSeries = this.data.selectedSeries || getSpeakingSeries(this.data.selectedLevel)[0];
+    this.loadRepeatCatalog(this.data.selectedLevel, selectedSeries);
+  },
+
+  prefetchRepeatSeries(event) {
+    const seriesId = String(event && event.currentTarget && event.currentTarget.dataset && event.currentTarget.dataset.seriesId || '');
+    const selectedSeries = (this.data.repeatSeries || []).find((item) => item.id === seriesId);
+    if (selectedSeries) this.loadRepeatCatalog(this.data.selectedLevel, selectedSeries);
+  },
+
   async loadRepeatLevel(selectedLevel) {
     const repeatSeries = getSpeakingSeries(selectedLevel);
     const selectedSeries = repeatSeries[0];
@@ -566,10 +603,7 @@ Page({
       audioPickerListHeight: '58vh'
     });
     try {
-      const result = this.repeatCatalogCache[cacheKey] || await store.getListeningMaterialCatalog({
-        levelId,
-        category: selectedSeries.id
-      });
+      const result = await this.loadRepeatCatalog(levelId, selectedSeries);
       if (requestToken !== this.repeatRequestToken) return null;
       const tasks = (result && result.tasks || []).map(normalizeRepeatAudio).filter((item) => item.taskId);
       if (result && result.syncMode === 'cloud-error') {
@@ -867,12 +901,36 @@ Page({
     }
   },
 
+  loadIeltsItem(itemId) {
+    const key = String(itemId || '');
+    if (!key) return Promise.resolve(null);
+    if (!this.ieltsItemCache) this.ieltsItemCache = {};
+    if (!this.ieltsItemInflight) this.ieltsItemInflight = {};
+    if (this.ieltsItemCache[key]) return Promise.resolve(this.ieltsItemCache[key]);
+    if (this.ieltsItemInflight[key]) return this.ieltsItemInflight[key];
+    const request = store.getMaterialItem({ moduleId: 'speaking', itemId: key })
+      .then((result) => {
+        if (result && result.item) this.ieltsItemCache[key] = result;
+        return result;
+      })
+      .finally(() => {
+        delete this.ieltsItemInflight[key];
+      });
+    this.ieltsItemInflight[key] = request;
+    return request;
+  },
+
+  prefetchIeltsTest(event) {
+    const itemId = String(event && event.currentTarget && event.currentTarget.dataset && event.currentTarget.dataset.itemId || '');
+    if (itemId) this.loadIeltsItem(itemId);
+  },
+
   async selectIeltsTest(event) {
     const itemId = String(event.currentTarget.dataset.itemId || '');
     if (!itemId || this.data.ieltsLoading) return;
     this.setData({ ieltsLoading: true, errorText: '' });
     try {
-      const result = await store.getMaterialItem({ moduleId: 'speaking', itemId });
+      const result = await this.loadIeltsItem(itemId);
       const item = result && result.item;
       const exercises = (item && item.exercises || []).map((exercise) => Object.assign({}, exercise, {
         id: String(exercise.id || ''),

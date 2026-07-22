@@ -137,6 +137,29 @@ test('分级跟读目录先完成，transcript 在后台按当前音频补齐', 
   assert.equal(page.data.repeatParagraphs.length, 1);
 });
 
+test('分级跟读系列触摸预取与点击复用同一目录请求', async () => {
+  let requestCount = 0;
+  let releaseRequest;
+  const pending = new Promise((resolve) => { releaseRequest = resolve; });
+  const page = createPageInstance(loadSpeakingPage({
+    async getListeningMaterialCatalog() {
+      requestCount += 1;
+      await pending;
+      return { tasks: [{ taskId: 'newconcept2-1', category: 'newconcept2', title: 'Lesson 1' }] };
+    }
+  }));
+  page.data.selectedLevel = 'A2';
+  page.data.repeatSeries = [{ id: 'newconcept2', title: 'New Concept 2' }];
+  const event = { currentTarget: { dataset: { seriesId: 'newconcept2' } } };
+
+  page.prefetchRepeatSeries(event);
+  const selected = page.loadRepeatCatalog('A2', page.data.repeatSeries[0]);
+  assert.equal(requestCount, 1);
+  releaseRequest();
+  await selected;
+  assert.equal(requestCount, 1);
+});
+
 test('逐句练习纵向展示全文，播放完成后在当前句内跟读', async () => {
   const definition = loadSpeakingPage({});
   const page = createPageInstance(definition);
@@ -203,7 +226,7 @@ test('逐句练习纵向展示全文，播放完成后在当前句内跟读', as
   assert.match(wxml, /bindtap="restartRepeatRecording"/);
   assert.match(wxml, /bindtap="replayRepeatRecording"/);
   assert.doesNotMatch(wxml, /bindtap="scoreRepeatRecording"/);
-  assert.doesNotMatch(wxml, /holdToRecordStart|holdToRecordEnd|bindtouchstart|bindtouchend/);
+  assert.doesNotMatch(wxml, /holdToRecordStart|holdToRecordEnd|bindtouchstart="(?:hold|startRecord)|bindtouchend/);
   assert.doesNotMatch(wxml, /library-task-tabs|library-record-desk|task-dial|record-orbit/);
   assert.doesNotMatch(wxml, /class="(?:library-)?listen-button/);
   assert.doesNotMatch(wxml, /<picker[^>]+selectRepeatAudio/);
@@ -453,6 +476,29 @@ test('四套主题雅思开场使用独立音频，结束前不触发第1题状�
   await page.playIeltsIntro();
   assert.equal(calls.length, 2);
   assert.equal(playCount, 2);
+});
+
+test('雅思试卷触摸预取与点击复用同一详情请求', async () => {
+  let requestCount = 0;
+  let releaseRequest;
+  const pending = new Promise((resolve) => { releaseRequest = resolve; });
+  const page = createPageInstance(loadSpeakingPage({
+    async getMaterialItem() {
+      requestCount += 1;
+      await pending;
+      return { item: null };
+    }
+  }));
+  page.ieltsItemCache = {};
+  page.ieltsItemInflight = {};
+  const event = { currentTarget: { dataset: { itemId: 'ielts-academic-21-test-1-speaking' } } };
+
+  page.prefetchIeltsTest(event);
+  const selected = page.loadIeltsItem(event.currentTarget.dataset.itemId);
+  assert.equal(requestCount, 1);
+  releaseRequest();
+  await selected;
+  assert.equal(requestCount, 1);
 });
 
 test('Part 2 播放进度只高亮当前句', () => {

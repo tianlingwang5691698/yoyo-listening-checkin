@@ -18,6 +18,7 @@ const SERIES_FILTER = new Set(String(process.env.SPEAKING_PERF_SERIES || '').spl
 const CACHE_TARGET_MS = 200;
 const COLD_TARGET_MS = 800;
 const PLAY_TARGET_MS = 500;
+const IELTS_PREFETCH_DWELL_MS = 350;
 const POLL_INTERVAL_MS = 20;
 const THEMES = ['warm', 'library', 'voyage', 'dragon'];
 const ALL_SERIES = [
@@ -138,6 +139,9 @@ async function measureIelts(page) {
   const catalog = await waitForData(page, (data) => data.ieltsExpanded && data.ieltsTests.length === 48, 20000);
   const catalogMs = Date.now() - catalogStartedAt;
   const itemId = 'ielts-academic-20-test-4-speaking';
+  const prefetchStartedAt = Date.now();
+  await callPageMethod(page, 'prefetchIeltsTest', { currentTarget: { dataset: { itemId } } });
+  await page.waitFor(IELTS_PREFETCH_DWELL_MS);
   const detailStartedAt = Date.now();
   await callPageMethod(page, 'selectIeltsTest', { currentTarget: { dataset: { itemId } } });
   const detail = await waitForData(page, (data) => data.ieltsMode && data.ieltsParts.length === 3 && data.ieltsItemId === itemId, 20000);
@@ -146,6 +150,8 @@ async function measureIelts(page) {
   return {
     catalogMs,
     detailMs,
+    prefetchToDetailMs: Date.now() - prefetchStartedAt,
+    prefetchDwellMs: IELTS_PREFETCH_DWELL_MS,
     tests: catalog.data.ieltsTests.length,
     exercises: detail.data.exercises.length,
     passed: catalogMs <= COLD_TARGET_MS && detailMs <= COLD_TARGET_MS
@@ -163,6 +169,13 @@ async function measureSeriesRound(page, series, round) {
     ieltsMode: false,
     errorText: ''
   });
+  let prefetchToCatalogMs = 0;
+  if (round === 1) {
+    const prefetchStartedAt = Date.now();
+    await callPageMethod(page, 'prefetchRepeatSeries', { currentTarget: { dataset: { seriesId: series.id } } });
+    await page.waitFor(IELTS_PREFETCH_DWELL_MS);
+    prefetchToCatalogMs = Date.now() - prefetchStartedAt;
+  }
   const catalogStartedAt = Date.now();
   await callPageMethod(page, 'loadRepeatSeriesCatalog', series);
   const catalog = await waitForData(page, (data) => !data.repeatAudioLoading
@@ -184,6 +197,8 @@ async function measureSeriesRound(page, series, round) {
     transcriptStatus: transcript.data.repeatParagraphs.length ? 'ready' : 'unavailable',
     catalogMs,
     catalogTargetMs,
+    prefetchDwellMs: round === 1 ? IELTS_PREFETCH_DWELL_MS : 0,
+    prefetchToCatalogMs,
     transcriptReadyMs: transcript.ms,
     passed: catalogMs <= catalogTargetMs
   };
@@ -316,6 +331,8 @@ async function main() {
         singleSession: true,
         pollIntervalMs: POLL_INTERVAL_MS,
         fixedAutoPlaySuppressionMs: 160,
+        ieltsPrefetchDwellMs: IELTS_PREFETCH_DWELL_MS,
+        repeatPrefetchDwellMs: IELTS_PREFETCH_DWELL_MS,
         fixedWaitExcludedFromClickToPlay: true
       },
       onDemand: {
