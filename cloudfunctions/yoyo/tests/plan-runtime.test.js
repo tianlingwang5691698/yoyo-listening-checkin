@@ -262,6 +262,52 @@ test('佑佑语法固定计划按已完成课程连续推进', () => {
   ]);
 });
 
+test('佑佑 Unlock 1 当前课本轮结束后按三轮练习册计划推进', () => {
+  const catalogs = {
+    newconcept1: Array.from({ length: 76 }, (_, index) => ({ taskId: `nce-${index}`, category: 'newconcept1' })),
+    peppa: Array.from({ length: 100 }, (_, index) => ({ taskId: `peppa-${index}`, category: 'peppa' })),
+    unlock1: Array.from({ length: 24 }, (_, index) => ({ taskId: `unlock-${index + 1}`, category: 'unlock1' })),
+    unlock1workbook: Array.from({ length: 12 }, (_, index) => ({ taskId: `workbook-${index + 1}`, category: 'unlock1workbook' }))
+  };
+  const deps = {
+    planSlotCount: 24,
+    getCatalog: (category) => catalogs[category] || [],
+    planLib: planRuntime
+  };
+  const completed = (category, counts) => counts.flatMap((count, offset) => (
+    Array.from({ length: count }, (_, index) => ({
+      childId: 'child-yoyo', category, taskId: `${category}-${offset + 1}-${index + 1}`,
+      date: `2026-08-${String((index % 20) + 1).padStart(2, '0')}`,
+      planSource: 'fixed-yoyo', planRunType: 'normal', planSlotIndex: offset + 1,
+      repeatTarget: 1, completedToday: true
+    }))
+  ));
+  const textbookDone = completed('unlock1', [8, 8, 8]);
+
+  const firstRound = planEngine.buildFixedPlanBySlots(textbookDone, 'child-yoyo', '2026-08-20', deps);
+  assert.deepEqual(firstRound.byCategory.unlock1.map((task) => task.originalTaskId), ['workbook-1']);
+  assert.equal(firstRound.byCategory.unlock1[0].category, 'unlock1workbook');
+  assert.equal(firstRound.byCategory.unlock1[0].repeatTarget, 3);
+  assert.ok(firstRound.displayCategoryOrder.includes('unlock1workbook'));
+  assert.ok(!firstRound.displayCategoryOrder.includes('unlock1'));
+
+  const firstRoundDone = textbookDone.concat(completed('unlock1workbook', [12, 0, 0]));
+  const secondRound = planEngine.buildFixedPlanBySlots(firstRoundDone, 'child-yoyo', '2026-09-20', deps);
+  assert.deepEqual(secondRound.byCategory.unlock1.map((task) => task.originalTaskId), ['workbook-1', 'workbook-2', 'workbook-3']);
+  assert.ok(secondRound.byCategory.unlock1.every((task) => task.repeatTarget === 1));
+
+  const secondRoundDone = textbookDone.concat(completed('unlock1workbook', [16, 4, 4]));
+  const thirdRound = planEngine.buildFixedPlanBySlots(secondRoundDone, 'child-yoyo', '2026-10-20', deps);
+  assert.deepEqual(thirdRound.byCategory.unlock1.map((task) => task.originalTaskId), ['workbook-1', 'workbook-2', 'workbook-3']);
+  assert.ok(thirdRound.byCategory.unlock1.every((task) => task.taskId.endsWith('_round_3')));
+
+  const allDone = textbookDone.concat(completed('unlock1workbook', [20, 8, 8]));
+  assert.deepEqual(
+    planEngine.buildFixedPlanBySlots(allDone, 'child-yoyo', '2026-11-20', deps).byCategory.unlock1,
+    []
+  );
+});
+
 test('佑佑从每天 3 节切到 5 节后不跳过第 10 节', () => {
   const catalog = planRuntime.buildGrammarCatalog();
   const progress = catalog.slice(0, 9).map((task, index) => ({

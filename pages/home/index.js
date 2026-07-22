@@ -431,6 +431,8 @@ function buildVocabularyPlanTaskGroup(plan) {
 
 function buildSpeakingPlanTaskGroup(plan) {
   if (!plan || !plan.active || !Array.isArray(plan.tasks) || !plan.tasks.length) return null;
+  const durationSec = plan.tasks.reduce((sum, task) => sum + Number(task.durationSec || 0), 0);
+  const minutes = Math.max(1, Math.round(durationSec / 60));
   const tasks = plan.tasks.map((sourceTask, index) => ({
     taskId: sourceTask.taskId,
     title: sourceTask.displayTitle || sourceTask.title,
@@ -450,9 +452,9 @@ function buildSpeakingPlanTaskGroup(plan) {
     title: plan.title,
     taskCountText: t('taskCount', { count: tasks.length }),
     textType: '逐句跟读',
-    minutesText: '约5–8分钟',
-    minutes: 6,
-    durationSec: 360,
+    minutesText: `约${Math.max(1, minutes - 1)}–${minutes + 1}分钟`,
+    minutes,
+    durationSec,
     taskId: nextTask.taskId,
     tasks,
     taskSnapshot: nextTask.taskSnapshot,

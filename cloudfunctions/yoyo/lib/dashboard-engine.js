@@ -310,7 +310,7 @@ async function getDashboardData(ctx, deps, options = {}) {
   const planCategoryOrder = useCustomListeningPlan
     ? (todayPlan.categoryOrder || Object.keys(todayPlan.byCategory || {}))
     : useFixedYoyoPlan
-      ? deps.getPlanCategoryOrder(planDayIndex)
+      ? (todayPlan.displayCategoryOrder || deps.getPlanCategoryOrder(planDayIndex))
       : [];
   const shouldBuildDailyTasks = includeDailyTasks || includeCategorySummaries || includeCatchupState || includeTaskProgressSummary;
   const baseDailyTasks = shouldBuildDailyTasks
@@ -432,7 +432,8 @@ async function getDashboardData(ctx, deps, options = {}) {
   if (includeCategorySummaries) {
     result.categorySummaries = categorySummaries;
     result.peppaTask = categorySummaries.find((item) => item.category === 'peppa');
-    result.unlockTask = categorySummaries.find((item) => item.category === 'unlock1');
+    result.unlockTask = categorySummaries.find((item) => item.category === 'unlock1')
+      || categorySummaries.find((item) => item.category === 'unlock1workbook');
     result.songTask = categorySummaries.find((item) => item.category === 'song');
   }
   if (includePlanDebug) {

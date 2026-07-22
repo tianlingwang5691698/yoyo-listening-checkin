@@ -60,15 +60,16 @@ function decoratePlannedTasks(progressRecords, childId, category, date, tasks, o
       planPhaseLabel: task.planPhaseLabel || (options.planDayIndex ? getPlanPhase(options.planDayIndex).label : ''),
       planDayIndex: options.planDayIndex || task.planDayIndex || 0
     });
+    const taskCategory = plannedTask.category || category;
     const progress = getTaskProgressForDate(
       progressRecords,
       childId,
-      category,
+      taskCategory,
       date,
       plannedTask.taskId,
       { allowLegacyRecord: tasks.length === 1 && index === 0 }
     );
-    return Object.assign({}, decorateTask(plannedTask, progress, category), {
+    return Object.assign({}, decorateTask(plannedTask, progress, taskCategory), {
       planRunType: options.planRunType || 'normal',
       targetDate: options.targetDate || date,
       planDayIndex: plannedTask.planDayIndex,

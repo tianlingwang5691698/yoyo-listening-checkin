@@ -62,9 +62,11 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
     totalCount: 2,
     tasks: [{
       category: 'speaking',
-      taskId: 'unlock1-1-paragraph-1',
-      audioTaskId: 'unlock1-1',
+      taskId: 'unlock1workbook-1-paragraph-1-sentences-1-5',
+      audioTaskId: 'unlock1workbook-1',
       paragraphIndex: 1,
+      sentenceStartIndex: 1,
+      sentenceEndIndex: 5,
       sentenceCount: 5,
       durationSec: 175,
       completedToday: false
@@ -81,5 +83,5 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   assert.deepEqual([vocabulary.startNo, vocabulary.endNo, vocabulary.totalCount], [1, 32, 1690]);
   const vocabularyCategory = result.categories.find((item) => item.category === 'vocabulary');
   assert.equal(vocabularyCategory.todayTask.displayTitle, '初中词汇第2轮 · List 3');
-  assert.equal(result.categories.find((item) => item.category === 'speaking').todayTask.taskId, 'unlock1-1-paragraph-1');
+  assert.equal(result.categories.find((item) => item.category === 'speaking').todayTask.taskId, 'unlock1workbook-1-paragraph-1-sentences-1-5');
 });

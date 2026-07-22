@@ -1,4 +1,7 @@
 const PEPPA_REVIEW_DAILY_COUNT = 2;
+const UNLOCK1_WORKBOOK_CATEGORY = 'unlock1workbook';
+const UNLOCK1_WORKBOOK_FIRST_ROUND_REPEAT_TARGET = 3;
+const UNLOCK1_WORKBOOK_FAST_ROUNDS = 2;
 
 function normalizePlannedTask(task, category, dayIndex, deps) {
   if (deps.planLib.getPlanPhase(dayIndex).key === 'round-2') {
@@ -115,12 +118,111 @@ function buildPlanForDay(dayIndex, deps, options = {}) {
   };
 }
 
+function getFixedCompletedCount(progressRecords, childId, category, slotIndex, date, deps) {
+  if (deps.fixedPlanSummary && deps.getCompletedCountBeforeDate) {
+    return deps.getCompletedCountBeforeDate(deps.fixedPlanSummary, category, slotIndex, date);
+  }
+  return (progressRecords || []).filter((item) => (
+    item.childId === childId
+      && item.category === category
+      && String(item.planSource || 'fixed-yoyo') === 'fixed-yoyo'
+      && String(item.planRunType || 'normal') === 'normal'
+      && String(item.date || '') >= deps.planLib.FIXED_SLOT_PLAN_STARTED_AT
+      && String(item.date || '') < date
+      && Number(item.planSlotIndex || 0) === slotIndex
+      && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 1))
+  )).length;
+}
+
+function buildUnlock1WorkbookTask(source, round, slotIndex, slotCount, repeatTarget) {
+  if (!source) return null;
+  return Object.assign({}, source, {
+    taskId: `${source.taskId}__fixed_listening_round_${round}`,
+    originalTaskId: source.taskId,
+    category: UNLOCK1_WORKBOOK_CATEGORY,
+    repeatTarget,
+    planSlotIndex: slotIndex,
+    planSlotCount: slotCount,
+    listeningStage: `workbook-round-${round}`
+  });
+}
+
+function buildFixedUnlock1Tasks(progressRecords, childId, date, deps) {
+  const textbookCatalog = getPlanCatalog('unlock1', deps);
+  const textbookSlotCount = Math.min(3, textbookCatalog.length);
+  const textbookCounts = Array.from({ length: textbookSlotCount }, (_, offset) => (
+    getFixedCompletedCount(progressRecords, childId, 'unlock1', offset + 1, date, deps)
+  ));
+  const textbookTargetPerSlot = textbookSlotCount
+    ? Math.ceil(textbookCatalog.length / textbookSlotCount)
+    : 0;
+  const textbookPending = textbookCounts.some((count, offset) => (
+    offset + count * textbookSlotCount < textbookCatalog.length
+  ));
+  if (textbookPending) {
+    return textbookCounts.map((count, offset) => {
+      const source = textbookCatalog[offset + count * textbookSlotCount];
+      return source ? Object.assign({}, source, {
+        repeatTarget: 1,
+        planSlotIndex: offset + 1,
+        planSlotCount: textbookSlotCount,
+        listeningStage: 'textbook-current-round'
+      }) : null;
+    }).filter(Boolean);
+  }
+  if (!textbookTargetPerSlot) return [];
+
+  const workbookCatalog = deps.getCatalog(UNLOCK1_WORKBOOK_CATEGORY) || [];
+  const workbookCounts = [1, 2, 3].map((slotIndex) => (
+    getFixedCompletedCount(progressRecords, childId, UNLOCK1_WORKBOOK_CATEGORY, slotIndex, date, deps)
+  ));
+  if (workbookCounts[0] < workbookCatalog.length) {
+    return [buildUnlock1WorkbookTask(
+      workbookCatalog[workbookCounts[0]],
+      1,
+      1,
+      1,
+      UNLOCK1_WORKBOOK_FIRST_ROUND_REPEAT_TARGET
+    )].filter(Boolean);
+  }
+
+  const fastTasksPerSlot = Math.ceil(workbookCatalog.length / 3);
+  for (let roundOffset = 0; roundOffset < UNLOCK1_WORKBOOK_FAST_ROUNDS; roundOffset += 1) {
+    const round = roundOffset + 2;
+    const baselines = [
+      workbookCatalog.length + roundOffset * fastTasksPerSlot,
+      roundOffset * fastTasksPerSlot,
+      roundOffset * fastTasksPerSlot
+    ];
+    const roundPending = workbookCounts.some((count, offset) => count < baselines[offset] + fastTasksPerSlot);
+    if (!roundPending) continue;
+    return workbookCounts.map((count, offset) => {
+      const completedInRound = Math.max(0, count - baselines[offset]);
+      if (completedInRound >= fastTasksPerSlot) return null;
+      const source = workbookCatalog[offset + completedInRound * 3];
+      return buildUnlock1WorkbookTask(source, round, offset + 1, 3, 1);
+    }).filter(Boolean);
+  }
+  return [];
+}
+
 function buildFixedPlanBySlots(progressRecords, childId, date, deps) {
   const dayIndex = deps.planLib.FIXED_SLOT_PLAN_DAY;
   const basePlan = buildPlanForDay(dayIndex, deps);
   const byCategory = {};
   const flatTasks = [];
   deps.planLib.getPlanCategoryOrder(dayIndex).forEach((category) => {
+    if (category === 'unlock1') {
+      const tasks = buildFixedUnlock1Tasks(progressRecords, childId, date, deps);
+      byCategory[category] = tasks;
+      tasks.forEach((task) => flatTasks.push(Object.assign({}, task, {
+        planDayIndex: dayIndex,
+        planPhase: basePlan.phase.key,
+        planPhaseLabel: basePlan.phase.label,
+        planBatchSize: tasks.length
+      })));
+      return;
+    }
     const catalog = getPlanCatalog(category, deps);
     const baseTasks = basePlan.byCategory[category] || [];
     const slotCount = baseTasks.length;
@@ -153,18 +255,7 @@ function buildFixedPlanBySlots(progressRecords, childId, date, deps) {
     }
     byCategory[category] = baseTasks.map((baseTask, slotOffset) => {
       const slotIndex = slotOffset + 1;
-      const completedCount = deps.fixedPlanSummary && deps.getCompletedCountBeforeDate
-        ? deps.getCompletedCountBeforeDate(deps.fixedPlanSummary, category, slotIndex, date)
-        : (progressRecords || []).filter((item) => (
-          item.childId === childId
-            && item.category === category
-            && String(item.planSource || 'fixed-yoyo') === 'fixed-yoyo'
-            && String(item.planRunType || 'normal') === 'normal'
-            && String(item.date || '') >= deps.planLib.FIXED_SLOT_PLAN_STARTED_AT
-            && String(item.date || '') < date
-            && Number(item.planSlotIndex || 0) === slotIndex
-            && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 1))
-        )).length;
+      const completedCount = getFixedCompletedCount(progressRecords, childId, category, slotIndex, date, deps);
       const baseIndex = catalog.findIndex((task) => task.taskId === baseTask.taskId);
       const nextIndex = baseIndex < 0 ? -1 : baseIndex + completedCount * slotCount;
       const source = category === 'grammar'
@@ -187,7 +278,13 @@ function buildFixedPlanBySlots(progressRecords, childId, date, deps) {
     dayIndex,
     phase: basePlan.phase,
     byCategory,
-    flatTasks
+    flatTasks,
+    displayCategoryOrder: deps.planLib.getPlanCategoryOrder(dayIndex).flatMap((category) => {
+      if (category !== 'unlock1') return [category];
+      const unlockTasks = byCategory.unlock1 || [];
+      if (!unlockTasks.length) return [];
+      return [unlockTasks[0].category || 'unlock1'];
+    })
   };
 }
 

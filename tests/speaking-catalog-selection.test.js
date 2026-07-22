@@ -581,3 +581,32 @@ test('跟读评分必须收到腾讯 SOE 有效结果', () => {
   assert.match(engineSource, /evaluateWithTencentSoeNew/);
   assert.match(engineSource, /sampleRate:\s*16000|server_engine_type/);
 });
+
+test('佑佑每日跟读直达指定段落片段而不是整段', () => {
+  const page = createPageInstance(loadSpeakingPage({}));
+  page.queueQuestionAutoPlay = () => {};
+  page.data.selectedAudio = { taskId: 'unlock1workbook-1' };
+  page.selectedRepeatTask = { taskId: 'unlock1workbook-1', audioUrl: 'https://example.test/workbook.mp3' };
+  page.data.selectedParagraph = {
+    id: 'unlock1workbook-1-paragraph-1',
+    sentences: Array.from({ length: 5 }, (_, index) => ({
+      text: `Sentence ${index + 1}`,
+      startMs: index * 1000,
+      endMs: (index + 1) * 1000
+    }))
+  };
+  page.repeatPlanRequest = {
+    audioTaskId: 'unlock1workbook-1',
+    paragraphIndex: 1,
+    sentenceStartIndex: 2,
+    sentenceEndIndex: 4
+  };
+
+  page.startSelectedRepeat();
+
+  assert.deepEqual(page.data.exercises.map((item) => item.id), [
+    'unlock1workbook-1-paragraph-1-sentence-2',
+    'unlock1workbook-1-paragraph-1-sentence-3',
+    'unlock1workbook-1-paragraph-1-sentence-4'
+  ]);
+});

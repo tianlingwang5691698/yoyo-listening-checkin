@@ -342,10 +342,13 @@ Page({
     this.questionPlaybackRequestToken = 0;
     this.ieltsIntroPlaybackRequestToken = 0;
     this.selectedRepeatTask = null;
-    this.repeatPlanRequest = String(options.dailyPlan || '') === 'unlock1'
+    this.repeatPlanRequest = String(options.dailyPlan || '') === 'unlock1speaking'
       ? {
+        audioCategory: ['unlock1workbook', 'unlock1'].includes(String(options.audioCategory || '')) ? String(options.audioCategory) : 'unlock1workbook',
         audioTaskId: String(options.audioTaskId || ''),
-        paragraphIndex: Math.max(1, Number(options.paragraphIndex || 1))
+        paragraphIndex: Math.max(1, Number(options.paragraphIndex || 1)),
+        sentenceStartIndex: Math.max(1, Number(options.sentenceStart || 1)),
+        sentenceEndIndex: Math.max(1, Number(options.sentenceEnd || options.sentenceStart || 1))
       }
       : null;
     let selectedLevel = this.repeatPlanRequest ? 'A1' : 'A2';
@@ -449,14 +452,14 @@ Page({
   async openDailyRepeatPlan() {
     const request = this.repeatPlanRequest;
     if (!request) return;
-    const selectedSeries = getSpeakingSeries('A1').find((item) => item.id === 'unlock1');
+    const selectedSeries = getSpeakingSeries('A1').find((item) => item.id === request.audioCategory);
     this.setData({
       selectedLevel: 'A1',
       repeatSeries: getSpeakingSeries('A1'),
-      selectedSeriesId: 'unlock1',
+      selectedSeriesId: request.audioCategory,
       selectedSeries,
       viewMode: 'repeat-select',
-      pageTitle: '今日 Unlock 1 跟读',
+      pageTitle: request.audioCategory === 'unlock1workbook' ? '今日 Unlock 1 练习册跟读' : '今日 Unlock 1 课本跟读',
       pageCopy: '逐句听原音并完成跟读评分。'
     });
     const catalog = await this.loadRepeatSeriesCatalog(selectedSeries);
@@ -915,7 +918,14 @@ Page({
 
   startSelectedRepeat() {
     const paragraph = this.data.selectedParagraph;
-    const exercises = buildParagraphExercises(paragraph, this.selectedRepeatTask || this.data.selectedAudio);
+    const allExercises = buildParagraphExercises(paragraph, this.selectedRepeatTask || this.data.selectedAudio);
+    const request = this.repeatPlanRequest;
+    const isDailySegment = request
+      && request.audioTaskId === String((this.data.selectedAudio || {}).taskId || '')
+      && request.paragraphIndex === Number((paragraph && paragraph.id || '').split('-paragraph-')[1] || 0);
+    const exercises = isDailySegment
+      ? allExercises.slice(request.sentenceStartIndex - 1, request.sentenceEndIndex)
+      : allExercises;
     if (!exercises.length) return;
     this.setData({
       viewMode: 'practice',

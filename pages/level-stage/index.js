@@ -12,7 +12,7 @@ const YOYO_FIXED_PLAN_OUTLINE = {
     { category: 'grammar', slotCount: 5, startNo: 1, endNo: 168, totalCount: 168 },
     { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
     { category: 'peppa', slotCount: 5, startNo: 73, endNo: 157, totalCount: 85 },
-    { category: 'unlock1', slotCount: 3, startNo: 1, endNo: 24, totalCount: 24 },
+    { category: 'unlock1', slotCount: 3, startNo: 1, endNo: 24, totalCount: 24, workbookCount: 12 },
     { category: 'vocabulary', slotCount: 1, startNo: 1, endNo: 32, totalCount: 1690, round: 1, currentList: 1 }
   ]
 };
@@ -172,8 +172,15 @@ function buildFixedPlanOutline(outline) {
       if (item.category === 'speaking') {
         return Object.assign({}, item, {
           title: categoryTitles.speaking,
-          rangeText: '现有 135 段完整覆盖',
-          dailyText: '每天逐句跟读 2 段 · 约5–8分钟'
+          rangeText: '练习册32天 → 课本45天',
+          dailyText: '练习册约8–12句；课本每天3段'
+        });
+      }
+      if (item.category === 'unlock1') {
+        return Object.assign({}, item, {
+          title: categoryTitles.unlock1,
+          rangeText: `当前课本轮 → 练习册第二版 ${Number(item.workbookCount || 12)} 集`,
+          dailyText: '第1轮每天1集×3遍；第2–3轮每天3集×1遍'
         });
       }
       const unit = item.category === 'grammar' ? t('microLessonUnit') : item.category === 'newconcept1' ? t('lessonUnit') : t('episodeUnit');
@@ -424,7 +431,7 @@ Page({
     if (category === 'speaking') {
       const task = taskRow.taskSnapshot || taskRow;
       wx.navigateTo({
-        url: `/pages/speaking/index?dailyPlan=unlock1&audioTaskId=${encodeURIComponent(task.audioTaskId || '')}&paragraphIndex=${Number(task.paragraphIndex || 1)}`
+        url: `/pages/speaking/index?dailyPlan=unlock1speaking&audioCategory=${encodeURIComponent(task.audioCategory || 'unlock1workbook')}&audioTaskId=${encodeURIComponent(task.audioTaskId || '')}&paragraphIndex=${Number(task.paragraphIndex || 1)}&sentenceStart=${Number(task.sentenceStartIndex || 1)}&sentenceEnd=${Number(task.sentenceEndIndex || task.sentenceStartIndex || 1)}`
       });
       return;
     }

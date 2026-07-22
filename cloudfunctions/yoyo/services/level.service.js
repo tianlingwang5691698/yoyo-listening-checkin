@@ -137,8 +137,8 @@ async function getLevelOverview(event) {
         { category: 'grammar', slotCount: 5, startNo: 1, endNo: study.getPlanCatalog('grammar').length, totalCount: study.getPlanCatalog('grammar').length },
         { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
         { category: 'peppa', slotCount: 5, startNo: 73, endNo: study.getPlanCatalog('peppa').length, totalCount: Math.max(0, study.getPlanCatalog('peppa').length - 72) },
-        { category: 'unlock1', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('unlock1').length, totalCount: study.getPlanCatalog('unlock1').length },
-        { category: 'speaking', slotCount: 2, startNo: 1, endNo: 135, totalCount: 135 },
+        { category: 'unlock1', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('unlock1').length, totalCount: study.getPlanCatalog('unlock1').length, workbookCount: study.getPlanCatalog('unlock1workbook').length },
+        { category: 'speaking', slotCount: 1, startNo: 1, endNo: 77, totalCount: 77 },
         { category: 'vocabulary', slotCount: 1, startNo: 1, endNo: 32, totalCount: 1690, round: vocabularyPlan && vocabularyPlan.round, currentList: vocabularyPlan && vocabularyPlan.currentList }
       ]
     }
@@ -177,7 +177,7 @@ async function getLevelOverview(event) {
     }).concat(speakingPlan ? [{
       category: 'speaking',
       categoryLabel: '口语跟读',
-      totalCount: 135,
+      totalCount: 77,
       completedCount: speakingPlan.completedCount,
       todayTask: speakingPlan.tasks.find((item) => !item.completedToday) || speakingPlan.tasks[0],
       tasks: speakingPlan.tasks,

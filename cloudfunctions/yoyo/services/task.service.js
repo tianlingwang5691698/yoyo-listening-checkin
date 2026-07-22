@@ -272,7 +272,8 @@ async function getTaskTranscript(event) {
   });
   if (STANDALONE_LEVEL_CATEGORIES.includes(requestedCategory)) {
     const standaloneTasks = await study.resolveStandaloneCategoryTasks(requestedCategory, ctx.child.childId, today);
-    task = standaloneTasks.find((item) => item.taskId === task.taskId) || standaloneTasks[0] || task;
+    const sourceTaskId = String(task.originalTaskId || task.taskId || '');
+    task = standaloneTasks.find((item) => item.taskId === sourceTaskId) || standaloneTasks[0] || task;
   }
   task = task.taskId ? task : study.decorateTask(null, study.buildEmptyProgress(), requestedCategory);
   const transcriptBundle = await study.getTranscriptBundle(task);
