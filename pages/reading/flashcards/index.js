@@ -1641,7 +1641,7 @@ Page({
       voiceKey: 'flashcardComplete',
       voiceDelayMs: 1000,
       studentOnly: false,
-      onceKey: buildCompletionRewardKey(this.data)
+      onceKey: this.data.previewMode ? '' : buildCompletionRewardKey(this.data)
     });
   },
   scheduleAutoSpeakCurrent() {

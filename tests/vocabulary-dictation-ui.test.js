@@ -167,6 +167,7 @@ test('三种单词练习完成后统一显示庆祝特效并播放完成音效',
   assert.match(recognition, /effects\.playComplete\(/);
   assert.match(dictation, /effects\.playComplete\(/);
   assert.match(flashcards, /playCompletionSfx\(\)[\s\S]*?studentOnly: false/);
+  assert.match(flashcards, /onceKey: this\.data\.previewMode \? '' : buildCompletionRewardKey/);
   assert.match(recognition, /effects\.playComplete\(\{[^}]*studentOnly: false/);
   assert.match(dictation, /effects\.playComplete\(\{[\s\S]*?studentOnly: false/);
   assert.match(recognitionTemplate, /class="confetti-layer"/);
@@ -175,6 +176,13 @@ test('三种单词练习完成后统一显示庆祝特效并播放完成音效',
   assert.match(dictationTemplate, /class="celebrate-burst"/);
   assert.match(recognitionStyles, /@keyframes vocabConfettiFall/);
   assert.match(recognitionStyles, /@keyframes vocabCompletePop/);
+});
+
+test('完成提示音保持原音量，后续英文鼓励语音提高音量', () => {
+  const effects = read('utils/effects.js');
+  assert.match(effects, /COMPLETE_SFX_VOLUME = 0\.55/);
+  assert.match(effects, /COMPLETE_VOICE_VOLUME = 0\.9/);
+  assert.match(effects, /options && options\.voiceKey[\s\S]*?!item\.includesVoice/);
 });
 
 test('背词卡与词库列表发音入口统一为小音符', () => {

@@ -15,6 +15,8 @@ const COMPLETE_SFX_VARIANTS = [
 const DEVICE_STUDY_ROLE_KEY = 'yoyoDeviceStudyRoleV1';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const COMPLETION_PLAYED_PREFIX = 'yoyoCompletionEffectPlayedV1:';
+const COMPLETE_SFX_VOLUME = 0.55;
+const COMPLETE_VOICE_VOLUME = 0.9;
 const VOICE_SRC_MAP = {
   flashcardComplete: '/assets/audio/voice/flashcard-complete-great-work.mp3',
   listeningComplete: '/assets/audio/voice/listening-complete-great-listening.mp3',
@@ -73,7 +75,10 @@ function canPlayReward(options) {
   return claimOnce(settings.onceKey);
 }
 
-function pickCompleteVariant() {
+function pickCompleteVariant(options) {
+  if (options && options.voiceKey) {
+    return COMPLETE_SFX_VARIANTS.find((item) => !item.includesVoice) || COMPLETE_SFX_VARIANTS[0];
+  }
   const index = Math.floor(Math.random() * COMPLETE_SFX_VARIANTS.length);
   return COMPLETE_SFX_VARIANTS[index] || COMPLETE_SFX_VARIANTS[0];
 }
@@ -89,7 +94,7 @@ function getCompleteAudioContext() {
   if (!completeAudioContext) {
     completeAudioContext = wx.createInnerAudioContext();
     completeAudioContext.obeyMuteSwitch = true;
-    completeAudioContext.volume = 0.55;
+    completeAudioContext.volume = COMPLETE_SFX_VOLUME;
   }
   return completeAudioContext;
 }
@@ -99,7 +104,7 @@ function getVoiceAudioContext() {
   if (!voiceAudioContext) {
     voiceAudioContext = wx.createInnerAudioContext();
     voiceAudioContext.obeyMuteSwitch = true;
-    voiceAudioContext.volume = 0.65;
+    voiceAudioContext.volume = COMPLETE_VOICE_VOLUME;
   }
   return voiceAudioContext;
 }
@@ -108,7 +113,7 @@ function playComplete(options) {
   if (!canPlayReward(options)) return false;
   const audio = getCompleteAudioContext();
   if (!audio) return false;
-  const variant = pickCompleteVariant();
+  const variant = pickCompleteVariant(options);
   try {
     audio.stop();
     audio.src = variant.src;
@@ -157,7 +162,7 @@ async function playCompleteAndWait(options) {
   if (!canPlayReward(options)) return false;
   const audio = getCompleteAudioContext();
   if (!audio) return false;
-  const variant = pickCompleteVariant();
+  const variant = pickCompleteVariant(options);
   clearVoiceTimer();
   const waits = [playAudioAndWait(audio, variant.src, 8000)];
   if (!variant.includesVoice && options && options.voiceKey) {
