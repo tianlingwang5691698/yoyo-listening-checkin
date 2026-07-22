@@ -12,7 +12,7 @@ const TRANSCRIPT_BUNDLE_PATHS = {
   petethecat: ['_transcripts/A2/pete-the-cat/bundle-sentence-v1.json'],
   magictreehouse: ['_transcripts/A2/magic-tree-house/bundle-sentence-v1.json'],
   magictreehouseb1: ['_transcripts/B1/magic-tree-house/bundle-sentence-v1.json'],
-  unlock1: ['_transcripts/A1/unlock1/bundle.json'],
+  unlock1: ['_transcripts/A1/unlock1/bundle-wordaligned-v2.json', '_transcripts/A1/unlock1/bundle.json'],
   unlock1thirdedition: ['_transcripts/A1/unlock1-third-edition/bundle-wordaligned-v1.json'],
   unlock1workbook: ['_transcripts/A1/unlock1/workbook-bundle-wordaligned-v2.json'],
   unlock1workbookthirdedition: ['_transcripts/A1/unlock1-workbook-third-edition/bundle-wordaligned-v2.json', '_transcripts/A1/unlock1-workbook-third-edition/bundle-wordaligned-v1.json'],

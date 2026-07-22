@@ -1,0 +1,211 @@
+{
+  "_id": "ielts-academic-17-test-4-speaking",
+  "id": "ielts-academic-17-test-4-speaking",
+  "title": "Cambridge IELTS 17 Test 4 Speaking",
+  "year": 2022,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思17（A类）.pdf",
+  "book": "Cambridge IELTS 17 Academic",
+  "bookNumber": 17,
+  "testNumber": 4,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-17/speaking/source-pages-v1/test-4-speaking-8eda6d1209.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-17/speaking/source-pages-v1/test-4-speaking-8eda6d1209.jpg",
+      "alt": "Cambridge IELTS 17 Test 4 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Maps Do you think it’s better to use a paper map or a map on your phone? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Maps When was the last time you needed to use a map? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Maps If you visit a new city, do you always use a map to find your way around? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Maps In general, do you find it easy to read maps? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe an occasion when you had to do something in a hurry. You should say: what you had to do why you had to do this in a hurry how well you did this and explain how you felt about having to do this in a hurry.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Arriving late Do you think it’s OK to arrive late when meeting a friend?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Arriving late What should happen to people who arrive late for work?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Arriving late Can you suggest how people can make sure they don’t arrive late?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Managing study time Is it better to study for long periods or in shorter blocks of time?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Managing study time What are the likely effects of students not managing their study time well?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-4-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Managing study time How important is it for students to have enough leisure time?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Maps",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-1-1",
+              "number": 1,
+              "prompt": "Do you think it’s better to use a paper map or a map on your phone? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-1-2",
+              "number": 2,
+              "prompt": "When was the last time you needed to use a map? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-1-3",
+              "number": 3,
+              "prompt": "If you visit a new city, do you always use a map to find your way around? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-1-4",
+              "number": 4,
+              "prompt": "In general, do you find it easy to read maps? [Why/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-17-test-4-speaking-part-2-1",
+          "task": "Describe an occasion when you had to do something in a hurry.",
+          "cuePoints": [
+            "what you had to do",
+            "why you had to do this in a hurry",
+            "how well you did this"
+          ],
+          "closingPrompt": "and explain how you felt about having to do this in a hurry."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Arriving late",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-3-1",
+              "number": 1,
+              "prompt": "Do you think it’s OK to arrive late when meeting a friend?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-3-2",
+              "number": 2,
+              "prompt": "What should happen to people who arrive late for work?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-3-3",
+              "number": 3,
+              "prompt": "Can you suggest how people can make sure they don’t arrive late?"
+            }
+          ]
+        },
+        {
+          "title": "Managing study time",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Is it better to study for long periods or in shorter blocks of time?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-3-5",
+              "number": 2,
+              "prompt": "What are the likely effects of students not managing their study time well?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-4-speaking-part-3-6",
+              "number": 3,
+              "prompt": "How important is it for students to have enough leisure time?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

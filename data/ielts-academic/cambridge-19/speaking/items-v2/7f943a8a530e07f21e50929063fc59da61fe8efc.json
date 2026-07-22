@@ -1,0 +1,211 @@
+{
+  "_id": "ielts-academic-19-test-3-speaking",
+  "id": "ielts-academic-19-test-3-speaking",
+  "title": "Cambridge IELTS 19 Test 3 Speaking",
+  "year": 2024,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑19（A类）.pdf",
+  "book": "Cambridge IELTS 19 Academic",
+  "bookNumber": 19,
+  "testNumber": 3,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-19/speaking/source-pages-v1/test-3-speaking-7fb2b74ed6.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-19/speaking/source-pages-v1/test-3-speaking-7fb2b74ed6.jpg",
+      "alt": "Cambridge IELTS 19 Test 3 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Holidays: Do you prefer spending holidays with friends or with family? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Holidays: What kind of holiday accommodation do you like to stay in? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Holidays: What plans do you have for your next holiday?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Holidays: Is your city or region a good place for other people to visit on holiday? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a car journey you made that took longer than expected. You should say: - where you were going - who you were with - how you felt during the journey and explain why this car journey took longer than expected.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Driving a car: How interested are young people in your country in learning to drive?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Driving a car: What are the differences between driving in the countryside and driving in the city?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Driving a car: Do you consider most drivers where you live to be good drivers?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Electric cars: How popular are electric cars in your country?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Electric cars: In what ways could more people be persuaded to buy electric cars?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-3-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Electric cars: Do you think all cars will be electric one day?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Holidays",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-1-1",
+              "number": 1,
+              "prompt": "Do you prefer spending holidays with friends or with family? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-1-2",
+              "number": 2,
+              "prompt": "What kind of holiday accommodation do you like to stay in? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-1-3",
+              "number": 3,
+              "prompt": "What plans do you have for your next holiday?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-1-4",
+              "number": 4,
+              "prompt": "Is your city or region a good place for other people to visit on holiday? [Why/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-19-test-3-speaking-part-2-1",
+          "task": "Describe a car journey you made that took longer than expected.",
+          "cuePoints": [
+            "where you were going",
+            "who you were with",
+            "how you felt during the journey"
+          ],
+          "closingPrompt": "and explain why this car journey took longer than expected."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Driving a car",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-3-1",
+              "number": 1,
+              "prompt": "How interested are young people in your country in learning to drive?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-3-2",
+              "number": 2,
+              "prompt": "What are the differences between driving in the countryside and driving in the city?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-3-3",
+              "number": 3,
+              "prompt": "Do you consider most drivers where you live to be good drivers?"
+            }
+          ]
+        },
+        {
+          "title": "Electric cars",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-3-4",
+              "number": 1,
+              "prompt": "How popular are electric cars in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-3-5",
+              "number": 2,
+              "prompt": "In what ways could more people be persuaded to buy electric cars?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-3-speaking-part-3-6",
+              "number": 3,
+              "prompt": "Do you think all cars will be electric one day?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

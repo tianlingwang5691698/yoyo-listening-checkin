@@ -1,0 +1,250 @@
+{
+  "_id": "ielts-academic-17-test-3-speaking",
+  "id": "ielts-academic-17-test-3-speaking",
+  "title": "Cambridge IELTS 17 Test 3 Speaking",
+  "year": 2022,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思17（A类）.pdf",
+  "book": "Cambridge IELTS 17 Academic",
+  "bookNumber": 17,
+  "testNumber": 3,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-17/speaking/source-pages-v1/test-3-speaking-e43e0ba251.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-17/speaking/source-pages-v1/test-3-speaking-e43e0ba251.jpg",
+      "alt": "Cambridge IELTS 17 Test 3 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Drinks",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "What do you like to drink with your dinner? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Do you drink a lot of water every day? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Do you prefer drinking tea or coffee? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-1-5",
+      "part": 1,
+      "title": "Part 1 · 5",
+      "meta": "45 秒",
+      "prompt": "If people visit you in your home, what do you usually offer them to drink? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a monument (e.g., a statue or sculpture) that you like. You should say: what this monument is where this monument is what it looks like and explain why you like this monument.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Public monuments",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "What kinds of monuments do tourists in your country enjoy visiting?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Why do you think there are often statues of famous people in public places?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Do you agree that old monuments and buildings should always be preserved?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Architecture",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Why is architecture such a popular university subject?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-3-7",
+      "part": 3,
+      "title": "Part 3 · 7",
+      "meta": "60 秒",
+      "prompt": "In what ways has the design of homes changed in recent years?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-3-speaking-part-3-8",
+      "part": 3,
+      "title": "Part 3 · 8",
+      "meta": "60 秒",
+      "prompt": "To what extent does the design of buildings affect people’s moods?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 14,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Drinks",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-1-1",
+              "number": 1,
+              "prompt": "What do you like to drink with your dinner? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-1-2",
+              "number": 2,
+              "prompt": "What do you like to drink with your dinner? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-1-3",
+              "number": 3,
+              "prompt": "Do you drink a lot of water every day? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-1-4",
+              "number": 4,
+              "prompt": "Do you prefer drinking tea or coffee? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-1-5",
+              "number": 5,
+              "prompt": "If people visit you in your home, what do you usually offer them to drink? [Why/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-17-test-3-speaking-part-2-1",
+          "task": "Describe a monument (e.g., a statue or sculpture) that you like.",
+          "cuePoints": [
+            "what this monument is",
+            "where this monument is",
+            "what it looks like"
+          ],
+          "closingPrompt": "and explain why you like this monument."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Public monuments",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What kinds of monuments do tourists in your country enjoy visiting?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-3-2",
+              "number": 2,
+              "prompt": "What kinds of monuments do tourists in your country enjoy visiting?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-3-3",
+              "number": 3,
+              "prompt": "Why do you think there are often statues of famous people in public places?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-3-4",
+              "number": 4,
+              "prompt": "Do you agree that old monuments and buildings should always be preserved?"
+            }
+          ]
+        },
+        {
+          "title": "Architecture",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-3-5",
+              "number": 1,
+              "prompt": "Why is architecture such a popular university subject?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-3-6",
+              "number": 2,
+              "prompt": "Why is architecture such a popular university subject?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-3-7",
+              "number": 3,
+              "prompt": "In what ways has the design of homes changed in recent years?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-3-speaking-part-3-8",
+              "number": 4,
+              "prompt": "To what extent does the design of buildings affect people’s moods?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "_id": "ielts-academic-16-test-1-speaking",
+  "id": "ielts-academic-16-test-1-speaking",
+  "title": "Cambridge IELTS 16 Test 1 Speaking",
+  "year": 2021,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑16真题.pdf",
+  "book": "Cambridge IELTS 16 Academic",
+  "bookNumber": 16,
+  "testNumber": 1,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-16/speaking/source-pages-v1/test-1-speaking-6df83c0f79.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-16/speaking/source-pages-v1/test-1-speaking-6df83c0f79.jpg",
+      "alt": "Cambridge IELTS 16 Test 1 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Who do you spend most time studying/working with? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "What kinds of things do you study/work on with other people? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Are there times when you study/work better by yourself? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Is it important to like the people you study/work with? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a tourist attraction you enjoyed visiting. You should say: what this tourist attraction is when and why you visited it what you did there and explain why you enjoyed visiting this tourist attraction.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Different kinds of tourist attractions What are the most popular tourist attractions in your country?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Different kinds of tourist attractions How do the types of tourist attractions that younger people like to visit compare with those that older people like to visit?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Different kinds of tourist attractions Do you agree that some tourist attractions (e.g. national museums/galleries) should be free to visit?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "The importance of international tourism Why is tourism important to a country?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "The importance of international tourism What are the benefits to individuals of visiting another country as tourists?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-16-test-1-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "The importance of international tourism How necessary is it for tourists to learn the language of the country they’re visiting?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "People you study/work with",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-1-1",
+              "number": 1,
+              "prompt": "Who do you spend most time studying/working with? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-1-2",
+              "number": 2,
+              "prompt": "What kinds of things do you study/work on with other people? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-1-3",
+              "number": 3,
+              "prompt": "Are there times when you study/work better by yourself? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-1-4",
+              "number": 4,
+              "prompt": "Is it important to like the people you study/work with? [Why/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-16-test-1-speaking-part-2-1",
+          "task": "Describe a tourist attraction you enjoyed visiting.",
+          "cuePoints": [
+            "what this tourist attraction is",
+            "when and why you visited it",
+            "what you did there"
+          ],
+          "closingPrompt": "and explain why you enjoyed visiting this tourist attraction."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Different kinds of tourist attractions",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What are the most popular tourist attractions in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-3-2",
+              "number": 2,
+              "prompt": "How do the types of tourist attractions that younger people like to visit compare with those that older people like to visit?"
+            },
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-3-3",
+              "number": 3,
+              "prompt": "Do you agree that some tourist attractions (e.g. national museums/galleries) should be free to visit?"
+            }
+          ]
+        },
+        {
+          "title": "The importance of international tourism",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Why is tourism important to a country?"
+            },
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-3-5",
+              "number": 2,
+              "prompt": "What are the benefits to individuals of visiting another country as tourists?"
+            },
+            {
+              "exerciseId": "ielts-academic-16-test-1-speaking-part-3-6",
+              "number": 3,
+              "prompt": "How necessary is it for tourists to learn the language of the country they’re visiting?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -113,7 +113,7 @@ def load_asr_words(whisper_data):
                 "endMs": int(round(float(end) * 1000)),
             }
         )
-    while words and re.fullmatch(r"\d+(?:\.\d+)+", words[0]["word"]):
+    while words and re.fullmatch(r"(?:\d+(?:\.\d+)*|\.\d+)", words[0]["word"]):
         words.pop(0)
     return words
 
@@ -495,7 +495,12 @@ def segment_words_to_project_words(canonical_text, asr_words, line_id, segment_s
     return built
 
 
-def build_track(file_name: str, whisper_json_path: Path, canonical_map_path: Path):
+def build_track(
+    file_name: str,
+    whisper_json_path: Path,
+    canonical_map_path: Path,
+    global_alignment: bool = False,
+):
     canonical_map = load_canonical_map(canonical_map_path)
     if file_name not in canonical_map:
         raise KeyError(f"Canonical entry not found for {file_name}")
@@ -503,7 +508,7 @@ def build_track(file_name: str, whisper_json_path: Path, canonical_map_path: Pat
     canonical_lines = track_config["canonicalSegments"]
     whisper_data = json.loads(whisper_json_path.read_text(encoding="utf-8"))
 
-    if is_dialogue_series(canonical_lines):
+    if is_dialogue_series(canonical_lines) and not global_alignment:
         asr_segments = load_asr_segments(whisper_data)
         assignments = assign_line_windows_dialogue(canonical_lines, asr_segments)
         lines = allocate_missing_lines(canonical_lines, assignments, asr_segments, track_config["contentId"])
@@ -579,12 +584,18 @@ def main():
         required=True,
         help="Path to the canonical map JSON generated from the source series module.",
     )
+    parser.add_argument(
+        "--global-alignment",
+        action="store_true",
+        help="Use one global word sequence instead of dialogue segment matching.",
+    )
     args = parser.parse_args()
 
     track = build_track(
         file_name=args.file_name,
         whisper_json_path=Path(args.whisper_json).expanduser().resolve(),
         canonical_map_path=Path(args.canonical_map).expanduser().resolve(),
+        global_alignment=args.global_alignment,
     )
     output_path = Path(args.output_json).expanduser().resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)

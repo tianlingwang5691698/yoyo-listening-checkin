@@ -1,0 +1,210 @@
+{
+  "_id": "ielts-academic-21-test-4-speaking",
+  "id": "ielts-academic-21-test-4-speaking",
+  "title": "Cambridge IELTS 21 Test 4 Speaking",
+  "year": 2026,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思21（A类）.pdf",
+  "book": "Cambridge IELTS 21 Academic",
+  "testNumber": 4,
+  "images": [
+    {
+      "cloudPath": "_content/ielts-academic/cambridge-21/assets/pages/c21-page-097-7663de632f.jpg",
+      "localPath": "data/ielts-academic/cambridge-21/assets/pages/c21-page-097-7663de632f.jpg",
+      "alt": "Cambridge IELTS 21 Test 4 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "When do you usually eat bread?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "How important is bread in your culture?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Have you tried any kinds of bread from other countries?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Would you be interested in learning how to make bread?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a person you know who is very competitive. You should say: who this person is; what this person is competitive about; how successful this person is; and explain why you think this person is so competitive.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "What kinds of competitions do people like to enter in your country?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "What do you think is the best kind of prize to win in a competition?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Why do people like watching quiz shows and other competitions on TV?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "How important is it to be very competitive at sport?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Do you think sportspeople perform better when they play against competitors who are stronger than they are?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-4-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Why do some people think that taking part in sport is more important than winning?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Bread",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-1-1",
+              "number": 1,
+              "prompt": "When do you usually eat bread?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-1-2",
+              "number": 2,
+              "prompt": "How important is bread in your culture?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-1-3",
+              "number": 3,
+              "prompt": "Have you tried any kinds of bread from other countries?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-1-4",
+              "number": 4,
+              "prompt": "Would you be interested in learning how to make bread?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-21-test-4-speaking-part-2-1",
+          "task": "Describe a person you know who is very competitive.",
+          "cuePoints": [
+            "who this person is",
+            "what this person is competitive about",
+            "how successful this person is"
+          ],
+          "closingPrompt": "and explain why you think this person is so competitive."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Competitions",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What kinds of competitions do people like to enter in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-3-2",
+              "number": 2,
+              "prompt": "What do you think is the best kind of prize to win in a competition?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-3-3",
+              "number": 3,
+              "prompt": "Why do people like watching quiz shows and other competitions on TV?"
+            }
+          ]
+        },
+        {
+          "title": "Being competitive in sports",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-3-4",
+              "number": 1,
+              "prompt": "How important is it to be very competitive at sport?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-3-5",
+              "number": 2,
+              "prompt": "Do you think sportspeople perform better when they play against competitors who are stronger than they are?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-4-speaking-part-3-6",
+              "number": 3,
+              "prompt": "Why do some people think that taking part in sport is more important than winning?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

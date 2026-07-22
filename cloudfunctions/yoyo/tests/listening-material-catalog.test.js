@@ -66,6 +66,32 @@ test('公共音频目录不读取学生上下文和计划', async (t) => {
   assert.equal(result.tasks.length, 1);
 });
 
+test('Unlock 1 公共目录复用静态正式清单，不重复刷新训练池', async (t) => {
+  let runtimeCatalogRefreshed = false;
+  t.mock.method(study, 'getCatalog', () => [{
+    taskId: 'unlock1-1',
+    category: 'unlock1',
+    title: 'Unlock 1.1',
+    durationSec: 85,
+    audioUrl: 'https://example.com/unlock1-1.mp3'
+  }]);
+  t.mock.method(study, 'refreshRuntimeCatalogs', async () => {
+    runtimeCatalogRefreshed = true;
+    return {};
+  });
+  t.mock.method(study, 'resolveStandaloneCategoryTasks', async () => study.getCatalog('unlock1'));
+  t.mock.method(study, 'getCategoryLabel', () => 'Unlock 1 听口 第二版');
+  t.mock.method(study, 'getTodayString', () => '2026-07-22');
+
+  const result = await listeningPlanService.getListeningMaterialCatalog({
+    payload: { levelId: 'A1', category: 'unlock1' }
+  });
+
+  assert.equal(runtimeCatalogRefreshed, false);
+  assert.equal(result.totalCount, 1);
+  assert.equal(result.tasks[0].taskId, 'unlock1-1');
+});
+
 test('New Concept 公共目录使用线上生成的静态正式清单', () => {
   const expected = { newconcept1: 72, newconcept2: 98, newconcept3: 60, newconcept4: 48 };
   Object.entries(expected).forEach(([category, count]) => {

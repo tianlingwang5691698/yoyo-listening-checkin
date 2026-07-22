@@ -93,10 +93,10 @@
           <view class="history-section" wx:if="{{item.attempt.review.summary}}">
             <view class="history-section-title">{{texts.report}}</view>
             <view class="history-analysis">{{item.attempt.review.summary}}</view>
-            <view class="history-review-row" wx:if="{{item.attempt.review.content}}"><text>{{texts.content}}</text><view>{{item.attempt.review.content}}</view></view>
-            <view class="history-review-row" wx:if="{{item.attempt.review.structure}}"><text>{{texts.structure}}</text><view>{{item.attempt.review.structure}}</view></view>
-            <view class="history-review-row" wx:if="{{item.attempt.review.language}}"><text>{{texts.language}}</text><view>{{item.attempt.review.language}}</view></view>
-            <view class="history-review-row" wx:if="{{item.attempt.review.spelling}}"><text>{{texts.spelling}}</text><view>{{item.attempt.review.spelling}}</view></view>
+            <view class="history-review-row" wx:if="{{item.attempt.review.content}}"><text>{{item.attempt.review.contentLabel || texts.content}}</text><view>{{item.attempt.review.content}}</view></view>
+            <view class="history-review-row" wx:if="{{item.attempt.review.structure}}"><text>{{item.attempt.review.structureLabel || texts.structure}}</text><view>{{item.attempt.review.structure}}</view></view>
+            <view class="history-review-row" wx:if="{{item.attempt.review.language}}"><text>{{item.attempt.review.languageLabel || texts.language}}</text><view>{{item.attempt.review.language}}</view></view>
+            <view class="history-review-row" wx:if="{{item.attempt.review.spelling}}"><text>{{item.attempt.review.spellingLabel || texts.spelling}}</text><view>{{item.attempt.review.spelling}}</view></view>
           </view>
           <view class="history-section" wx:if="{{item.attempt.review.problems.length}}">
             <view class="history-section-title">{{texts.improvements}}</view>
@@ -115,7 +115,7 @@
             </view>
           </view>
           <view class="history-section" wx:if="{{item.attempt.review.polishedVersion}}">
-            <view class="history-section-title">{{texts.rewrite}}</view>
+            <view class="history-section-title">{{item.attempt.review.polishedTitle || texts.rewrite}}</view>
             <view class="history-writing-text">{{item.attempt.review.polishedVersion}}</view>
           </view>
         </block>

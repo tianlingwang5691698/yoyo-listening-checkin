@@ -1,0 +1,251 @@
+{
+  "_id": "ielts-academic-11-test-1-speaking",
+  "id": "ielts-academic-11-test-1-speaking",
+  "title": "Cambridge IELTS 11 Test 1 Speaking",
+  "year": 2016,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑11真题.pdf",
+  "book": "Cambridge IELTS 11 Academic",
+  "bookNumber": 11,
+  "testNumber": 1,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-11/speaking/source-pages-v1/test-1-speaking-ca34a0ee74.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-11/speaking/source-pages-v1/test-1-speaking-ca34a0ee74.jpg",
+      "alt": "Cambridge IELTS 11 Test 1 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "What sorts of food do you like eating most? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Who normally does the cooking in your home? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Do you watch cookery programmes on TV? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "In general, do you prefer eating out or eating at home? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a house/apartment that someone you know lives in. You should say: - whose house/apartment this is - where the house/apartment is - what it looks like inside - and explain what you like or dislike about this person's house/apartment.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "What kinds of home are most popular in your country? Why is this?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "What do you think are the advantages of living in a house rather than an apartment?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Do you think that everyone would like to live in a larger home? Why is that?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "How easy is it to find a place to live in your country?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Do you think it's better to rent or to buy a place to live in? Why?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-1-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Do you agree that there is a right age for young adults to stop living with their parents? Why is that?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Food and cooking",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-1-1",
+              "number": 1,
+              "prompt": "What sorts of food do you like eating most?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-1-1",
+              "number": 2,
+              "prompt": "[Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-1-2",
+              "number": 3,
+              "prompt": "Who normally does the cooking in your home?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-1-2",
+              "number": 4,
+              "prompt": "[Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-1-3",
+              "number": 5,
+              "prompt": "Do you watch cookery programmes on TV?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-1-3",
+              "number": 6,
+              "prompt": "[Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-1-4",
+              "number": 7,
+              "prompt": "In general, do you prefer eating out or eating at home?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-1-4",
+              "number": 8,
+              "prompt": "[Why?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-11-test-1-speaking-part-2-1",
+          "task": "Describe a house/apartment that someone you know lives in.",
+          "cuePoints": [
+            "whose house/apartment this is",
+            "where the house/apartment is",
+            "what it looks like inside"
+          ],
+          "closingPrompt": "and explain what you like or dislike about this person’s house/apartment."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Different types of home",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What kinds of home are most popular in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-1",
+              "number": 2,
+              "prompt": "Why is this?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-2",
+              "number": 3,
+              "prompt": "What do you think are the advantages of living in a house rather than an apartment?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-3",
+              "number": 4,
+              "prompt": "Do you think that everyone would like to live in a larger home?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-3",
+              "number": 5,
+              "prompt": "Why is that?"
+            }
+          ]
+        },
+        {
+          "title": "Finding a place to live",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-4",
+              "number": 1,
+              "prompt": "How easy is it to find a place to live in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-5",
+              "number": 2,
+              "prompt": "Do you think it’s better to rent or to buy a place to live in?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-5",
+              "number": 3,
+              "prompt": "Why?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-6",
+              "number": 4,
+              "prompt": "Do you agree that there is a right age for young adults to stop living with their parents?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-1-speaking-part-3-6",
+              "number": 5,
+              "prompt": "Why is that?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

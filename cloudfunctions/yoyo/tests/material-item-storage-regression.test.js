@@ -18,6 +18,7 @@ test('听力与写作目录使用轻量摘要且详情优先按 id 读取单条�
   assert.match(source, /ieltsMaterialItemDirectories/);
   assert.match(source, /const root = `_content\/ielts-academic\/cambridge-\$\{book\}`/);
   assert.match(source, /\$\{root\}\/listening\/items-v2/);
+  assert.match(source, /\$\{root\}\/speaking\/items-v2/);
   assert.match(source, /\$\{root\}\/writing\/items-v3/);
   assert.doesNotMatch(source.split('\n').slice(0, 5).join('\n'), /shared\.service|storage\.adapter/);
   assert.match(indexSource, /'getMaterialIndex'/);
@@ -39,7 +40,7 @@ test('听力与写作目录使用轻量摘要且详情优先按 id 读取单条�
   assert.equal(directory.writingIelts.length, 96);
   assert.equal(directory.listeningIelts.length, 48);
   assert.equal(directory.speakingIelts.length, 48);
-  assert.match(storeSource, /catalogVersion: 'ielts-academic-10-21-v1'/);
+  assert.match(storeSource, /catalogVersion: 'ielts-academic-10-21-v2'/);
   assert.match(materialPageSource, /materialHomeSnapshotV6/);
   assert.match(materialPageSource, /buildIeltsExams/);
   assert.match(materialPageSource, /MATERIAL_CATALOG_VERSION/);

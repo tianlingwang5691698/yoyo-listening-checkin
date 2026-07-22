@@ -1,0 +1,56 @@
+{
+  "readyForUpload": true,
+  "sourceBundle": "data/transcript-build/unlock1-second-edition-v2/A1/unlock1/cloud-backup/bundle-v1-before-v2-20260722.json",
+  "outputBundle": "data/transcript-build/unlock1-second-edition-v2/A1/unlock1/bundle-wordaligned-v2.json",
+  "trackCountBefore": 24,
+  "trackCountAfter": 24,
+  "repairedTrackCount": 5,
+  "unchangedTrackCount": 19,
+  "repairs": [
+    {
+      "trackId": "track-unlock1-1-2",
+      "fileName": "Unlock2e_A1_1.2",
+      "durationSec": 85.461,
+      "oldLineCount": 9,
+      "newLineCount": 30,
+      "oldLastEndMs": 30823,
+      "newLastEndMs": 85461
+    },
+    {
+      "trackId": "track-unlock1-1-5",
+      "fileName": "Unlock2e_A1_1.5",
+      "durationSec": 144.903,
+      "oldLineCount": 17,
+      "newLineCount": 38,
+      "oldLastEndMs": 62395,
+      "newLastEndMs": 144903
+    },
+    {
+      "trackId": "track-unlock1-2-2",
+      "fileName": "Unlock2e_A1_2.2",
+      "durationSec": 120.061,
+      "oldLineCount": 21,
+      "newLineCount": 30,
+      "oldLastEndMs": 66272,
+      "newLastEndMs": 120061
+    },
+    {
+      "trackId": "track-unlock1-2-5",
+      "fileName": "Unlock2e_A1_2.5",
+      "durationSec": 132.221,
+      "oldLineCount": 18,
+      "newLineCount": 34,
+      "oldLastEndMs": 104994,
+      "newLastEndMs": 132221
+    },
+    {
+      "trackId": "track-unlock1-3-3",
+      "fileName": "Unlock2e_A1_3.3",
+      "durationSec": 160.481,
+      "oldLineCount": 18,
+      "newLineCount": 48,
+      "oldLastEndMs": 137636,
+      "newLastEndMs": 160481
+    }
+  ]
+}

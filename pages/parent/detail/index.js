@@ -116,20 +116,27 @@ function formatDuration(ms) {
 function normalizeSpeakingAttempt(item, index) {
   const safeItem = item || {};
   const score = Number(safeItem.score || 0);
+  const accuracyScore = Number(safeItem.pronunciationAccuracyScore || 0);
   const pronunciationScore = Number(safeItem.pronunciationFluencyScore || 0);
+  const completionScore = Number(safeItem.pronunciationCompletionScore || 0);
   const contentScore = Number(safeItem.contentGrammarScore || 0);
+  const isRepeatRecording = safeItem.attemptType === 'unlock_sentence_repeat' || safeItem.attemptType === 'standalone_sentence_repeat';
   return {
     key: safeItem.attemptId || `${safeItem.taskId || 'task'}-${safeItem.attemptIndex || index}-${safeItem.createdAt || index}`,
-    title: safeItem.attemptType === 'unlock_sentence_repeat' ? tr('followRecording') : tr('answerRecording'),
+    title: isRepeatRecording ? tr('followRecording') : tr('answerRecording'),
     questionText: safeItem.questionText || tr('thisRecording'),
     studentTranscript: safeItem.studentTranscript || '',
     feedback: safeItem.feedback || '',
     score,
+    accuracyScore,
     pronunciationScore,
+    completionScore,
     contentScore,
     status: safeItem.status || '',
     scoreText: safeItem.status === 'score-pending' ? tr('scorePending') : (score ? formatText(tr('score'), { score }) : tr('saved')),
-    scoreDetailText: (pronunciationScore || contentScore) ? formatText(tr('pronunciationContent'), { pronunciation: pronunciationScore || 0, content: contentScore || 0 }) : '',
+    scoreDetailText: isRepeatRecording && (accuracyScore || pronunciationScore || completionScore)
+      ? formatText(tr('repeatScoreDetail'), { accuracy: accuracyScore, fluency: pronunciationScore, completion: completionScore })
+      : ((pronunciationScore || contentScore) ? formatText(tr('pronunciationContent'), { pronunciation: pronunciationScore || 0, content: contentScore || 0 }) : ''),
     answerDurationText: formatDuration(safeItem.answerDurationMs),
     createdTimeText: formatClock(safeItem.createdAt),
     answerAudioFileId: safeItem.answerAudioFileId || '',

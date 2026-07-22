@@ -1,0 +1,405 @@
+{
+  "tests": [
+    {
+      "itemId": "ielts-academic-11-test-1-speaking",
+      "part1": {
+        "topic": "Food and cooking",
+        "questions": [
+          {
+            "exerciseId": "ielts-academic-11-test-1-speaking-part-1-1",
+            "prompt": "What sorts of food do you like eating most?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-1-speaking-part-1-1",
+            "prompt": "[Why?]"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-1-speaking-part-1-2",
+            "prompt": "Who normally does the cooking in your home?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-1-speaking-part-1-2",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-1-speaking-part-1-3",
+            "prompt": "Do you watch cookery programmes on TV?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-1-speaking-part-1-3",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-1-speaking-part-1-4",
+            "prompt": "In general, do you prefer eating out or eating at home?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-1-speaking-part-1-4",
+            "prompt": "[Why?]"
+          }
+        ]
+      },
+      "part2": {
+        "exerciseId": "ielts-academic-11-test-1-speaking-part-2-1",
+        "task": "Describe a house/apartment that someone you know lives in.",
+        "cuePoints": [
+          "whose house/apartment this is",
+          "where the house/apartment is",
+          "what it looks like inside"
+        ],
+        "closingPrompt": "and explain what you like or dislike about this person’s house/apartment."
+      },
+      "part3": {
+        "topics": [
+          {
+            "title": "Different types of home",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-1",
+                "prompt": "What kinds of home are most popular in your country?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-1",
+                "prompt": "Why is this?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-2",
+                "prompt": "What do you think are the advantages of living in a house rather than an apartment?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-3",
+                "prompt": "Do you think that everyone would like to live in a larger home?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-3",
+                "prompt": "Why is that?"
+              }
+            ]
+          },
+          {
+            "title": "Finding a place to live",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-4",
+                "prompt": "How easy is it to find a place to live in your country?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-5",
+                "prompt": "Do you think it’s better to rent or to buy a place to live in?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-5",
+                "prompt": "Why?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-6",
+                "prompt": "Do you agree that there is a right age for young adults to stop living with their parents?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-1-speaking-part-3-6",
+                "prompt": "Why is that?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "itemId": "ielts-academic-11-test-2-speaking",
+      "part1": {
+        "topic": "Friends",
+        "questions": [
+          {
+            "exerciseId": "ielts-academic-11-test-2-speaking-part-1-1",
+            "prompt": "How often do you go out with friends?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-2-speaking-part-1-1",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-2-speaking-part-1-2",
+            "prompt": "Tell me about your best friend at school."
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-2-speaking-part-1-3",
+            "prompt": "How friendly are you with your neighbours?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-2-speaking-part-1-3",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-2-speaking-part-1-4",
+            "prompt": "Which is more important to you, friends or family?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-2-speaking-part-1-4",
+            "prompt": "[Why?]"
+          }
+        ]
+      },
+      "part2": {
+        "exerciseId": "ielts-academic-11-test-2-speaking-part-2-1",
+        "task": "Describe a writer you would like to meet.",
+        "cuePoints": [
+          "who the writer is",
+          "what you know about this writer already",
+          "what you would like to find out about him/her"
+        ],
+        "closingPrompt": "and explain why you would like to meet this writer."
+      },
+      "part3": {
+        "topics": [
+          {
+            "title": "Reading and children",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-1",
+                "prompt": "What kinds of book are most popular with children in your country?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-1",
+                "prompt": "Why do you think that is?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-2",
+                "prompt": "Why do you think some children do not read books very often?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-3",
+                "prompt": "How do you think children can be encouraged to read more?"
+              }
+            ]
+          },
+          {
+            "title": "Reading for different purposes",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-4",
+                "prompt": "Are there any occasions when reading at speed is a useful skill to have?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-4",
+                "prompt": "What are they?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-5",
+                "prompt": "Are there any jobs where people need to read a lot?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-5",
+                "prompt": "What are they?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-6",
+                "prompt": "Do you think that reading novels is more interesting than reading factual books?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-2-speaking-part-3-6",
+                "prompt": "Why is that?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "itemId": "ielts-academic-11-test-3-speaking",
+      "part1": {
+        "topic": "Photographs",
+        "questions": [
+          {
+            "exerciseId": "ielts-academic-11-test-3-speaking-part-1-1",
+            "prompt": "What type of photos do you like taking?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-3-speaking-part-1-1",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-3-speaking-part-1-2",
+            "prompt": "What do you do with photos you take?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-3-speaking-part-1-2",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-3-speaking-part-1-3",
+            "prompt": "When you visit other places, do you take photos or buy postcards?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-3-speaking-part-1-3",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-3-speaking-part-1-4",
+            "prompt": "Do you like people taking photos of you?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-3-speaking-part-1-4",
+            "prompt": "[Why/Why not?]"
+          }
+        ]
+      },
+      "part2": {
+        "exerciseId": "ielts-academic-11-test-3-speaking-part-2-1",
+        "task": "Describe a day when you thought the weather was perfect.",
+        "cuePoints": [
+          "where you were on this day",
+          "what the weather was like on this day",
+          "what you did during the day"
+        ],
+        "closingPrompt": "and explain why you thought the weather was perfect on this day."
+      },
+      "part3": {
+        "topics": [
+          {
+            "title": "Types of weather",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-1",
+                "prompt": "What types of weather do people in your country dislike most?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-1",
+                "prompt": "Why is that?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-2",
+                "prompt": "What jobs can be affected by different weather conditions?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-2",
+                "prompt": "Why?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-3",
+                "prompt": "Are there any important festivals in your country that celebrate a season or type of weather?"
+              }
+            ]
+          },
+          {
+            "title": "Weather forecasts",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-4",
+                "prompt": "How important do you think it is for everyone to check what the next day’s weather will be?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-4",
+                "prompt": "Why?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-5",
+                "prompt": "What is the best way to get accurate information about the weather?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-6",
+                "prompt": "How easy or difficult is it to predict the weather in your country?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-3-speaking-part-3-6",
+                "prompt": "Why is that?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "itemId": "ielts-academic-11-test-4-speaking",
+      "part1": {
+        "topic": "Names",
+        "questions": [
+          {
+            "exerciseId": "ielts-academic-11-test-4-speaking-part-1-1",
+            "prompt": "How did your parents choose your name(s)?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-4-speaking-part-1-2",
+            "prompt": "Does your name have any special meaning?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-4-speaking-part-1-3",
+            "prompt": "Is your name common or unusual in your country?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-4-speaking-part-1-4",
+            "prompt": "If you could change your name, would you?"
+          },
+          {
+            "exerciseId": "ielts-academic-11-test-4-speaking-part-1-4",
+            "prompt": "[Why/Why not?]"
+          }
+        ]
+      },
+      "part2": {
+        "exerciseId": "ielts-academic-11-test-4-speaking-part-2-1",
+        "task": "Describe a TV documentary you watched that was particularly interesting.",
+        "cuePoints": [
+          "what the documentary was about",
+          "why you decided to watch it",
+          "what you learnt during the documentary"
+        ],
+        "closingPrompt": "and explain why the TV documentary was particularly interesting."
+      },
+      "part3": {
+        "topics": [
+          {
+            "title": "Different types of TV programmes",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-1",
+                "prompt": "What are the most popular kinds of TV programmes in your country?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-1",
+                "prompt": "Why is this?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-2",
+                "prompt": "Do you think there are too many game shows on TV nowadays?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-2",
+                "prompt": "Why?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-3",
+                "prompt": "Do you think TV is the main way for people to get the news in your country?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-3",
+                "prompt": "What other ways are there?"
+              }
+            ]
+          },
+          {
+            "title": "TV advertising",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-4",
+                "prompt": "What types of products are advertised most often on TV?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-5",
+                "prompt": "Do you think that people pay attention to adverts on TV?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-5",
+                "prompt": "Why do you think that is?"
+              },
+              {
+                "exerciseId": "ielts-academic-11-test-4-speaking-part-3-6",
+                "prompt": "How important are regulations on TV advertising?"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "uncertain": []
+}

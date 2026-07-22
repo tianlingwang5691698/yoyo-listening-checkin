@@ -1,0 +1,18 @@
+{
+  "envId": "youshengenglish-6glk12rd6c6e719b",
+  "category": "unlock1",
+  "taskId": "unlock1-1",
+  "trackId": "track-unlock1-1-2",
+  "bundlePath": "_transcripts/A1/unlock1/bundle-wordaligned-v2.json",
+  "bundleBytes": 870587,
+  "lineCount": 30,
+  "lastEndMs": 85461,
+  "calls": [
+    { "wallMs": 1141, "functionMs": 775 },
+    { "wallMs": 906, "functionMs": 668 },
+    { "wallMs": 898, "functionMs": 634 }
+  ],
+  "maxWallMs": 1141,
+  "targetWallMs": 1200,
+  "passed": true
+}

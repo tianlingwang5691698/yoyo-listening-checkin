@@ -1,0 +1,250 @@
+{
+  "_id": "ielts-academic-19-test-2-speaking",
+  "id": "ielts-academic-19-test-2-speaking",
+  "title": "Cambridge IELTS 19 Test 2 Speaking",
+  "year": 2024,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑19（A类）.pdf",
+  "book": "Cambridge IELTS 19 Academic",
+  "bookNumber": 19,
+  "testNumber": 2,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-19/speaking/source-pages-v1/test-2-speaking-df1ed41c42.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-19/speaking/source-pages-v1/test-2-speaking-df1ed41c42.jpg",
+      "alt": "Cambridge IELTS 19 Test 2 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Travelling by plane",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Have you travelled a lot by plane? [To where?/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Why do you think some people enjoy travelling by plane?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Would you like to live near an airport? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-1-5",
+      "part": 1,
+      "title": "Part 1 · 5",
+      "meta": "45 秒",
+      "prompt": "In the future, do you think that you will travel by plane more often? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a person from your country who has won a prize, award or medal. You should say: who this person is which prize, award or medal they received what they did to win this and explain whether you think it was right that this person received this prize, award or medal.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Rewards for children at school",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "What types of school prizes do children in your country receive?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "What do you think are the advantages of rewarding schoolchildren for good work?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Do you agree that it's more important for children to receive rewards from their parents than from teachers?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Rewards for sportspeople",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Do you think that some sportspeople (e.g., top footballers) are paid too much money?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-3-7",
+      "part": 3,
+      "title": "Part 3 · 7",
+      "meta": "60 秒",
+      "prompt": "Should everyone on a team get the same prize money when they win?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-2-speaking-part-3-8",
+      "part": 3,
+      "title": "Part 3 · 8",
+      "meta": "60 秒",
+      "prompt": "Do you agree with the view that, in sport, taking part is more important than winning?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 14,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Travelling by plane",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-1-1",
+              "number": 1,
+              "prompt": "Have you travelled a lot by plane? [To where?/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-1-2",
+              "number": 2,
+              "prompt": "Have you travelled a lot by plane? [To where?/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-1-3",
+              "number": 3,
+              "prompt": "Why do you think some people enjoy travelling by plane?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-1-4",
+              "number": 4,
+              "prompt": "Would you like to live near an airport? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-1-5",
+              "number": 5,
+              "prompt": "In the future, do you think that you will travel by plane more often? [Why/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-19-test-2-speaking-part-2-1",
+          "task": "Describe a person from your country who has won a prize, award or medal.",
+          "cuePoints": [
+            "who this person is",
+            "which prize, award or medal they received",
+            "what they did to win this"
+          ],
+          "closingPrompt": "and explain whether you think it was right that this person received this prize, award or medal."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Rewards for children at school",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What types of school prizes do children in your country receive?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-3-2",
+              "number": 2,
+              "prompt": "What types of school prizes do children in your country receive?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-3-3",
+              "number": 3,
+              "prompt": "What do you think are the advantages of rewarding schoolchildren for good work?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-3-4",
+              "number": 4,
+              "prompt": "Do you agree that it's more important for children to receive rewards from their parents than from teachers?"
+            }
+          ]
+        },
+        {
+          "title": "Rewards for sportspeople",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-3-5",
+              "number": 1,
+              "prompt": "Do you think that some sportspeople (e.g., top footballers) are paid too much money?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-3-6",
+              "number": 2,
+              "prompt": "Do you think that some sportspeople (e.g., top footballers) are paid too much money?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-3-7",
+              "number": 3,
+              "prompt": "Should everyone on a team get the same prize money when they win?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-2-speaking-part-3-8",
+              "number": 4,
+              "prompt": "Do you agree with the view that, in sport, taking part is more important than winning?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

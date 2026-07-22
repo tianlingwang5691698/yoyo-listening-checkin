@@ -41,6 +41,7 @@ const MUTATION_ACTIONS = {
   addPracticeWrongQuestion: true,
   recordGrammarProgress: true,
   getGrammarNarrationAudio: true,
+  synthesizeIeltsPromptAudio: true,
   recordStudyCompletion: true,
   saveVocabularyDictationAttempt: true,
   refreshInviteCode: true,
@@ -559,7 +560,7 @@ async function getMaterialIndex(options, onRefresh) {
 }
 
 async function getMaterialItem(options, onRefresh) {
-  return callCloud('getMaterialItem', Object.assign({ catalogVersion: 'ielts-academic-10-21-v1' }, options || {}), {
+  return callCloud('getMaterialItem', Object.assign({ catalogVersion: 'ielts-academic-10-21-v2' }, options || {}), {
     item: null
   }, { onRefresh });
 }
@@ -838,9 +839,16 @@ async function submitSpeakingAttempt(options) {
 }
 
 async function evaluateSpeakingPronunciation(options) {
-  return callCloud('evaluateSpeakingPronunciation', withSelectedStudent(options || {}), {
+  const result = await callCloud('evaluateSpeakingPronunciation', withSelectedStudent(options || {}), {
     pronunciation: null
   });
+  if (result && result.syncMode === 'cloud-error') {
+    throw new Error((result.cloudError && result.cloudError.message) || '腾讯 SOE 评分失败');
+  }
+  if (!result || !result.pronunciation) {
+    throw new Error('tencent-soe-pronunciation-missing');
+  }
+  return result;
 }
 
 async function rescoreSpeakingAttempt(options) {
@@ -1218,6 +1226,20 @@ async function getGrammarNarrationAudio(options) {
   }, { useCache: false });
 }
 
+async function synthesizeIeltsPromptAudio(options) {
+  return callCloud('synthesizeIeltsPromptAudio', Object.assign({}, options || {}), {
+    audioUrl: '',
+    audioFileId: '',
+    audioCloudPath: '',
+    cacheKey: '',
+    cached: false,
+    generating: false,
+    retryAfterMs: 0,
+    model: '',
+    voice: ''
+  }, { useCache: false });
+}
+
 async function recordStudyCompletion(item) {
   return callCloud('recordStudyCompletion', withSelectedStudent(item || {}), { saved: false }, { useCache: false });
 }
@@ -1433,6 +1455,7 @@ module.exports = {
   getGrammarClassroomCourse,
   recordGrammarProgress,
   getGrammarNarrationAudio,
+  synthesizeIeltsPromptAudio,
   recordStudyCompletion,
   completeGrammarPlanTask,
   getStudyCompletions,

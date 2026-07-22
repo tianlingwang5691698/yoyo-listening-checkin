@@ -1,0 +1,211 @@
+{
+  "_id": "ielts-academic-12-test-7-speaking",
+  "id": "ielts-academic-12-test-7-speaking",
+  "title": "Cambridge IELTS 12 Test 7 Speaking",
+  "year": 2017,
+  "city": "Cambridge",
+  "district": "Test 7",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑12真题.pdf",
+  "book": "Cambridge IELTS 12 Academic",
+  "bookNumber": 12,
+  "testNumber": 7,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-12/speaking/source-pages-v1/test-7-speaking-bd34caf589.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-12/speaking/source-pages-v1/test-7-speaking-bd34caf589.jpg",
+      "alt": "Cambridge IELTS 12 Test 7 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Where do you buy most of your clothes? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "How often do you buy new clothes for yourself? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "How do you decide which clothes to buy? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Have the kinds of clothes you like changed in recent years? [Why?/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe an interesting discussion you had about how you spend your money. You should say: who you had the discussion with why you discussed this topic what the result of the discussion was and explain why this discussion was interesting for you.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Why do some parents give their children money to spend each week?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Do you agree that schools should teach children how to manage money?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Do you think it is a good idea for students to earn money while studying?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Do you think it is true that in today's society money cannot buy happiness?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "What disadvantages are there in a society where the gap between rich and poor is very large?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-12-test-7-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Do you think richer countries have a responsibility to help poorer countries?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Clothes",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-1-1",
+              "number": 1,
+              "prompt": "Where do you buy most of your clothes? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-1-2",
+              "number": 2,
+              "prompt": "How often do you buy new clothes for yourself? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-1-3",
+              "number": 3,
+              "prompt": "How do you decide which clothes to buy? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-1-4",
+              "number": 4,
+              "prompt": "Have the kinds of clothes you like changed in recent years? [Why?/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-12-test-7-speaking-part-2-1",
+          "task": "Describe an interesting discussion you had about how you spend your money.",
+          "cuePoints": [
+            "who you had the discussion with",
+            "why you discussed this topic",
+            "what the result of the discussion was"
+          ],
+          "closingPrompt": "and explain why this discussion was interesting for you."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Money and young people",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-3-1",
+              "number": 1,
+              "prompt": "Why do some parents give their children money to spend each week?"
+            },
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-3-2",
+              "number": 2,
+              "prompt": "Do you agree that schools should teach children how to manage money?"
+            },
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-3-3",
+              "number": 3,
+              "prompt": "Do you think it is a good idea for students to earn money while studying?"
+            }
+          ]
+        },
+        {
+          "title": "Money and society",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Do you think it is true that in today's society money cannot buy happiness?"
+            },
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-3-5",
+              "number": 2,
+              "prompt": "What disadvantages are there in a society where the gap between rich and poor is very large?"
+            },
+            {
+              "exerciseId": "ielts-academic-12-test-7-speaking-part-3-6",
+              "number": 3,
+              "prompt": "Do you think richer countries have a responsibility to help poorer countries?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "model": "gpt-5.6-sol",
+  "generatedAt": "2026-07-22T03:34:32.537Z",
+  "books": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "tests": 48,
+  "exercises": 533,
+  "uncertainCount": 0,
+  "reports": [
+    {
+      "book": 10,
+      "tests": 4,
+      "exercises": 43
+    },
+    {
+      "book": 11,
+      "tests": 4,
+      "exercises": 44
+    },
+    {
+      "book": 12,
+      "tests": 4,
+      "exercises": 44
+    },
+    {
+      "book": 13,
+      "tests": 4,
+      "exercises": 47
+    },
+    {
+      "book": 14,
+      "tests": 4,
+      "exercises": 44
+    },
+    {
+      "book": 15,
+      "tests": 4,
+      "exercises": 44
+    },
+    {
+      "book": 16,
+      "tests": 4,
+      "exercises": 44
+    },
+    {
+      "book": 17,
+      "tests": 4,
+      "exercises": 50
+    },
+    {
+      "book": 18,
+      "tests": 4,
+      "exercises": 43
+    },
+    {
+      "book": 19,
+      "tests": 4,
+      "exercises": 50
+    },
+    {
+      "book": 20,
+      "tests": 4,
+      "exercises": 36
+    },
+    {
+      "book": 21,
+      "tests": 4,
+      "exercises": 44
+    }
+  ]
+}

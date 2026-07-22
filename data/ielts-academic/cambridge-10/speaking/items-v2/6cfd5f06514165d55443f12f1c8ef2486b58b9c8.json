@@ -1,0 +1,256 @@
+{
+  "_id": "ielts-academic-10-test-2-speaking",
+  "id": "ielts-academic-10-test-2-speaking",
+  "title": "Cambridge IELTS 10 Test 2 Speaking",
+  "year": 2015,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑10真题.pdf",
+  "book": "Cambridge IELTS 10 Academic",
+  "bookNumber": 10,
+  "testNumber": 2,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-10/speaking/source-pages-v1/test-2-speaking-7ed84182ae.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-10/speaking/source-pages-v1/test-2-speaking-7ed84182ae.jpg",
+      "alt": "Cambridge IELTS 10 Test 2 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Music What types of music do you like to listen to? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Music At what times of day do you like to listen to music? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Music Did you learn to play a musical instrument when you were a child? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Music Do you think all children should learn to play a musical instrument? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a shop near where you live that you sometimes use. You should say: what sorts of product or service it sells what the shop looks like where it is located and explain why you use this shop.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Local business What types of local business are there in your neighbourhood? Are there any restaurants, shops or dentists for example?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Local business Do you think local businesses are important for a neighbourhood? In what way?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Local business How do large shopping malls and commercial centres affect small local businesses? Why do you think that is?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "People and business Why do some people want to start their own business?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "People and business Are there any disadvantages to running a business? Which is the most serious?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-10-test-2-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "People and business What are the most important qualities that a good business person needs? Why is that?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Music",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-1-1",
+              "number": 1,
+              "prompt": "What types of music do you like to listen to?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-1-1",
+              "number": 2,
+              "prompt": "[Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-1-2",
+              "number": 3,
+              "prompt": "At what times of day do you like to listen to music?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-1-2",
+              "number": 4,
+              "prompt": "[Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-1-3",
+              "number": 5,
+              "prompt": "Did you learn to play a musical instrument when you were a child?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-1-3",
+              "number": 6,
+              "prompt": "[Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-1-4",
+              "number": 7,
+              "prompt": "Do you think all children should learn to play a musical instrument?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-1-4",
+              "number": 8,
+              "prompt": "[Why/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-10-test-2-speaking-part-2-1",
+          "task": "Describe a shop near where you live that you sometimes use.",
+          "cuePoints": [
+            "what sorts of product or service it sells",
+            "what the shop looks like",
+            "where it is located"
+          ],
+          "closingPrompt": "and explain why you use this shop."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Local business",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What types of local business are there in your neighbourhood?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-1",
+              "number": 2,
+              "prompt": "Are there any restaurants, shops or dentists for example?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-2",
+              "number": 3,
+              "prompt": "Do you think local businesses are important for a neighbourhood?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-2",
+              "number": 4,
+              "prompt": "In what way?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-3",
+              "number": 5,
+              "prompt": "How do large shopping malls and commercial centres affect small local businesses?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-3",
+              "number": 6,
+              "prompt": "Why do you think that is?"
+            }
+          ]
+        },
+        {
+          "title": "People and business",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Why do some people want to start their own business?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-5",
+              "number": 2,
+              "prompt": "Are there any disadvantages to running a business?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-5",
+              "number": 3,
+              "prompt": "Which is the most serious?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-6",
+              "number": 4,
+              "prompt": "What are the most important qualities that a good business person needs?"
+            },
+            {
+              "exerciseId": "ielts-academic-10-test-2-speaking-part-3-6",
+              "number": 5,
+              "prompt": "Why is that?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

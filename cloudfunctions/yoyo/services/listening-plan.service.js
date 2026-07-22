@@ -92,7 +92,7 @@ async function getListeningMaterialCatalog(event) {
       catalogVersion: 'public-v1'
     };
   }
-  if (category === 'unlock1' || !study.getCatalog(category).length) {
+  if (!study.getCatalog(category).length) {
     await study.refreshRuntimeCatalogs(false, [category]);
   }
   const tasks = await study.resolveStandaloneCategoryTasks(category, '', study.getTodayString());

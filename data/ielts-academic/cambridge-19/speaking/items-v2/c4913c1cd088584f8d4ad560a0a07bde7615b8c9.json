@@ -1,0 +1,211 @@
+{
+  "_id": "ielts-academic-19-test-4-speaking",
+  "id": "ielts-academic-19-test-4-speaking",
+  "title": "Cambridge IELTS 19 Test 4 Speaking",
+  "year": 2024,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑19（A类）.pdf",
+  "book": "Cambridge IELTS 19 Academic",
+  "bookNumber": 19,
+  "testNumber": 4,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-19/speaking/source-pages-v1/test-4-speaking-5f0e1cac10.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-19/speaking/source-pages-v1/test-4-speaking-5f0e1cac10.jpg",
+      "alt": "Cambridge IELTS 19 Test 4 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Do you have a favourite café? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Do you often go to cafés by yourself? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "What do you think helps to make a café very popular? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Why do some people prefer cafés that are part of large chains, rather than small, local cafés?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a place you visited that has beautiful views. You should say: where this place is when and why you visited it what views you can see from this place and explain why you think these views are so beautiful.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Do you agree that most beauty products are a waste of money?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "How does the beauty industry advertise its products so successfully?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "What do you think of the view that beauty products should not be advertised to children?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Why do many people equate youth with beauty?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Do you think that being beautiful could affect a person’s success in life?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-19-test-4-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Why might society’s ideas about beauty change over time?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Cafés",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-1-1",
+              "number": 1,
+              "prompt": "Do you have a favourite café? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-1-2",
+              "number": 2,
+              "prompt": "Do you often go to cafés by yourself? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-1-3",
+              "number": 3,
+              "prompt": "What do you think helps to make a café very popular? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-1-4",
+              "number": 4,
+              "prompt": "Why do some people prefer cafés that are part of large chains, rather than small, local cafés?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-19-test-4-speaking-part-2-1",
+          "task": "Describe a place you visited that has beautiful views.",
+          "cuePoints": [
+            "where this place is",
+            "when and why you visited it",
+            "what views you can see from this place"
+          ],
+          "closingPrompt": "and explain why you think these views are so beautiful."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "The beauty industry",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-3-1",
+              "number": 1,
+              "prompt": "Do you agree that most beauty products are a waste of money?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-3-2",
+              "number": 2,
+              "prompt": "How does the beauty industry advertise its products so successfully?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-3-3",
+              "number": 3,
+              "prompt": "What do you think of the view that beauty products should not be advertised to children?"
+            }
+          ]
+        },
+        {
+          "title": "Beauty and culture",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Why do many people equate youth with beauty?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-3-5",
+              "number": 2,
+              "prompt": "Do you think that being beautiful could affect a person’s success in life?"
+            },
+            {
+              "exerciseId": "ielts-academic-19-test-4-speaking-part-3-6",
+              "number": 3,
+              "prompt": "Why might society’s ideas about beauty change over time?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "_id": "ielts-academic-20-test-1-speaking",
+  "id": "ielts-academic-20-test-1-speaking",
+  "title": "Cambridge IELTS 20 Test 1 Speaking",
+  "year": 2025,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思20学术类.pdf",
+  "book": "Cambridge IELTS 20 Academic",
+  "bookNumber": 20,
+  "testNumber": 1,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-20/speaking/source-pages-v1/test-1-speaking-e40b544130.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-20/speaking/source-pages-v1/test-1-speaking-e40b544130.jpg",
+      "alt": "Cambridge IELTS 20 Test 1 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "How much walking do you do in your daily life?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Did you walk more when you were at school than now?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "What places are there to go for a walk near where you live?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Would you ever like to go on a walking holiday?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a play or a film you have seen that you would like to see again with friends. You should say: what play or film you'd like to go to see again who you would go with what other people have said about this play or film and explain why you would like to see this play or film again with friends.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "What are the most popular kinds of plays or shows at theatres in your country?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "How easy is it to get tickets to the theatre?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Do you think theatres need to do more to attract younger audiences?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "What do you think attracts people to working as an actor?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "What are some of the qualities that a person needs to have if they want to become an actor?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-20-test-1-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Can you think of any disadvantages of working as an actor?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Walking",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-1-1",
+              "number": 1,
+              "prompt": "How much walking do you do in your daily life?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-1-2",
+              "number": 2,
+              "prompt": "Did you walk more when you were at school than now?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-1-3",
+              "number": 3,
+              "prompt": "What places are there to go for a walk near where you live?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-1-4",
+              "number": 4,
+              "prompt": "Would you ever like to go on a walking holiday?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-20-test-1-speaking-part-2-1",
+          "task": "Describe a play or a film you have seen that you would like to see again with friends.",
+          "cuePoints": [
+            "what play or film you'd like to go to see again",
+            "who you would go with",
+            "what other people have said about this play or film"
+          ],
+          "closingPrompt": "and explain why you would like to see this play or film again with friends."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Theatres today",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What are the most popular kinds of plays or shows at theatres in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-3-2",
+              "number": 2,
+              "prompt": "How easy is it to get tickets to the theatre?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-3-3",
+              "number": 3,
+              "prompt": "Do you think theatres need to do more to attract younger audiences?"
+            }
+          ]
+        },
+        {
+          "title": "Actors",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-3-4",
+              "number": 1,
+              "prompt": "What do you think attracts people to working as an actor?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-3-5",
+              "number": 2,
+              "prompt": "What are some of the qualities that a person needs to have if they want to become an actor?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-1-speaking-part-3-6",
+              "number": 3,
+              "prompt": "Can you think of any disadvantages of working as an actor?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

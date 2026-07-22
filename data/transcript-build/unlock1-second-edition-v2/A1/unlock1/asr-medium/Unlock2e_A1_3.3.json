@@ -1,0 +1,2766 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "3.3 Good morning everybody. Good morning. So, today we're going to look at lifestyles. The lifestyles of teenagers. So, who's between the ages of 13 and 19? I am. I'm 19. Me too. Then you are all teenagers. Anyone else? OK, so let's talk about sleep. How many hours do you sleep every night? Yes, Abdel. Um, I sleep maybe six or seven hours every night? OK, anyone else? Yes, Beatrice, how many hours do you sleep? I don't sleep a lot. I sleep maybe five hours. OK. Yes, Anna, and you? Not enough. I only sleep five or six hours a night during the week. You're right. That's not enough. Especially for teenagers. How many hours do you think teenagers need? A lot. Yes, you're right about that. Teenagers need ten or more hours every night. So, what do you usually do at night? Are you busy? Yes, Abdul. At night I like to play computer games. Okay. Anyone else? Yes, Madiha. Well, I usually watch TV. I go online or text friends. And then you do the homework for this class, of course. So, let me ask you. What do you do on Saturday and Sunday? Yes, Sung-oh. Well, I also play computer games on Saturday and Sunday. Right. And what about you, Mimi? Um, well, I watch TV or go online. What else do you do? Do you exercise? Exercise is also very important for teenagers. It's important for all of us. Do you exercise, Sandra? Er, to be honest, I don't really exercise. Anyone else? Well, let's think of some things teenagers need to do to stay healthy and do well in your courses.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.0,
+      "text": " 3.3",
+      "tokens": [
+        50364,
+        805,
+        13,
+        18,
+        50414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " 3",
+          "start": 0.0,
+          "end": 0.34,
+          "probability": 0.42629384994506836
+        },
+        {
+          "word": ".3",
+          "start": 0.34,
+          "end": 1.0,
+          "probability": 0.9905280470848083
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.48,
+      "end": 4.76,
+      "text": " Good morning everybody.",
+      "tokens": [
+        50508,
+        2205,
+        2446,
+        2201,
+        13,
+        50586
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " Good",
+          "start": 2.48,
+          "end": 3.18,
+          "probability": 0.6477136611938477
+        },
+        {
+          "word": " morning",
+          "start": 3.18,
+          "end": 3.64,
+          "probability": 0.9436547756195068
+        },
+        {
+          "word": " everybody.",
+          "start": 3.64,
+          "end": 4.76,
+          "probability": 0.5880821943283081
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.98,
+      "end": 5.9,
+      "text": " Good morning.",
+      "tokens": [
+        50608,
+        2205,
+        2446,
+        13,
+        50688
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " Good",
+          "start": 4.98,
+          "end": 5.38,
+          "probability": 0.5946208834648132
+        },
+        {
+          "word": " morning.",
+          "start": 5.38,
+          "end": 5.9,
+          "probability": 0.9551195502281189
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 6.72,
+      "end": 11.18,
+      "text": " So, today we're going to look at lifestyles.",
+      "tokens": [
+        50700,
+        407,
+        11,
+        965,
+        321,
+        434,
+        516,
+        281,
+        574,
+        412,
+        4545,
+        7819,
+        904,
+        13,
+        50916
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " So,",
+          "start": 6.64,
+          "end": 7.1,
+          "probability": 0.38793855905532837
+        },
+        {
+          "word": " today",
+          "start": 7.72,
+          "end": 8.26,
+          "probability": 0.9868564009666443
+        },
+        {
+          "word": " we're",
+          "start": 8.26,
+          "end": 8.84,
+          "probability": 0.8187975883483887
+        },
+        {
+          "word": " going",
+          "start": 8.84,
+          "end": 9.14,
+          "probability": 0.9976316690444946
+        },
+        {
+          "word": " to",
+          "start": 9.14,
+          "end": 9.34,
+          "probability": 0.9959040284156799
+        },
+        {
+          "word": " look",
+          "start": 9.34,
+          "end": 9.58,
+          "probability": 0.9974116683006287
+        },
+        {
+          "word": " at",
+          "start": 9.58,
+          "end": 10.14,
+          "probability": 0.9972125887870789
+        },
+        {
+          "word": " lifestyles.",
+          "start": 10.14,
+          "end": 11.18,
+          "probability": 0.9299082159996033
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 11.74,
+      "end": 13.48,
+      "text": " The lifestyles of teenagers.",
+      "tokens": [
+        50944,
+        440,
+        4545,
+        7819,
+        904,
+        295,
+        23618,
+        13,
+        51044
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " The",
+          "start": 11.74,
+          "end": 11.94,
+          "probability": 0.9488029479980469
+        },
+        {
+          "word": " lifestyles",
+          "start": 11.94,
+          "end": 12.62,
+          "probability": 0.9936327934265137
+        },
+        {
+          "word": " of",
+          "start": 12.62,
+          "end": 12.84,
+          "probability": 0.9986823201179504
+        },
+        {
+          "word": " teenagers.",
+          "start": 12.84,
+          "end": 13.48,
+          "probability": 0.9973360896110535
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 14.44,
+      "end": 19.18,
+      "text": " So, who's between the ages of 13 and 19?",
+      "tokens": [
+        51076,
+        407,
+        11,
+        567,
+        311,
+        1296,
+        264,
+        12357,
+        295,
+        3705,
+        293,
+        1294,
+        30,
+        51326
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " So,",
+          "start": 14.44,
+          "end": 14.78,
+          "probability": 0.9732632040977478
+        },
+        {
+          "word": " who's",
+          "start": 15.1,
+          "end": 15.52,
+          "probability": 0.9303048551082611
+        },
+        {
+          "word": " between",
+          "start": 15.52,
+          "end": 16.04,
+          "probability": 0.994553804397583
+        },
+        {
+          "word": " the",
+          "start": 16.04,
+          "end": 16.34,
+          "probability": 0.9787034392356873
+        },
+        {
+          "word": " ages",
+          "start": 16.34,
+          "end": 16.82,
+          "probability": 0.9963422417640686
+        },
+        {
+          "word": " of",
+          "start": 16.82,
+          "end": 17.38,
+          "probability": 0.9937208890914917
+        },
+        {
+          "word": " 13",
+          "start": 17.38,
+          "end": 18.0,
+          "probability": 0.8935263752937317
+        },
+        {
+          "word": " and",
+          "start": 18.0,
+          "end": 18.58,
+          "probability": 0.9855685830116272
+        },
+        {
+          "word": " 19?",
+          "start": 18.58,
+          "end": 19.18,
+          "probability": 0.9965537786483765
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 19.76,
+      "end": 21.54,
+      "text": " I am. I'm 19.",
+      "tokens": [
+        51348,
+        286,
+        669,
+        13,
+        286,
+        478,
+        1294,
+        13,
+        51438
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " I",
+          "start": 19.76,
+          "end": 20.08,
+          "probability": 0.887651801109314
+        },
+        {
+          "word": " am.",
+          "start": 20.08,
+          "end": 20.46,
+          "probability": 0.9254490733146667
+        },
+        {
+          "word": " I'm",
+          "start": 20.7,
+          "end": 21.06,
+          "probability": 0.8935820162296295
+        },
+        {
+          "word": " 19.",
+          "start": 21.06,
+          "end": 21.54,
+          "probability": 0.9741435050964355
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 21.8,
+      "end": 22.16,
+      "text": " Me too.",
+      "tokens": [
+        51440,
+        1923,
+        886,
+        13,
+        51490
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " Me",
+          "start": 21.8,
+          "end": 22.04,
+          "probability": 0.6676870584487915
+        },
+        {
+          "word": " too.",
+          "start": 22.04,
+          "end": 22.16,
+          "probability": 0.9497480392456055
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 23.400000000000002,
+      "end": 25.34,
+      "text": " Then you are all teenagers.",
+      "tokens": [
+        51534,
+        1396,
+        291,
+        366,
+        439,
+        23618,
+        13,
+        51634
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " Then",
+          "start": 23.279999999999998,
+          "end": 23.74,
+          "probability": 0.6523938775062561
+        },
+        {
+          "word": " you",
+          "start": 23.74,
+          "end": 24.04,
+          "probability": 0.9372254014015198
+        },
+        {
+          "word": " are",
+          "start": 24.04,
+          "end": 24.28,
+          "probability": 0.9527546167373657
+        },
+        {
+          "word": " all",
+          "start": 24.28,
+          "end": 24.6,
+          "probability": 0.9949354529380798
+        },
+        {
+          "word": " teenagers.",
+          "start": 24.6,
+          "end": 25.34,
+          "probability": 0.9990346431732178
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 26.24,
+      "end": 27.0,
+      "text": " Anyone else?",
+      "tokens": [
+        51672,
+        14643,
+        1646,
+        30,
+        51722
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34695351841938066,
+      "compression_ratio": 1.4407894736842106,
+      "no_speech_prob": 0.34185469150543213,
+      "words": [
+        {
+          "word": " Anyone",
+          "start": 26.24,
+          "end": 26.6,
+          "probability": 0.9814188480377197
+        },
+        {
+          "word": " else?",
+          "start": 26.6,
+          "end": 27.0,
+          "probability": 0.9990002512931824
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2700,
+      "start": 27.0,
+      "end": 30.98,
+      "text": " OK, so let's talk about sleep.",
+      "tokens": [
+        50364,
+        2264,
+        11,
+        370,
+        718,
+        311,
+        751,
+        466,
+        2817,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16885757446289062,
+      "compression_ratio": 1.6283783783783783,
+      "no_speech_prob": 0.9392420053482056,
+      "words": [
+        {
+          "word": " OK,",
+          "start": 27.0,
+          "end": 28.36,
+          "probability": 0.31100156903266907
+        },
+        {
+          "word": " so",
+          "start": 28.92,
+          "end": 29.18,
+          "probability": 0.9547500610351562
+        },
+        {
+          "word": " let's",
+          "start": 29.18,
+          "end": 29.64,
+          "probability": 0.9717036187648773
+        },
+        {
+          "word": " talk",
+          "start": 29.64,
+          "end": 29.96,
+          "probability": 0.9974308609962463
+        },
+        {
+          "word": " about",
+          "start": 29.96,
+          "end": 30.48,
+          "probability": 0.9988157749176025
+        },
+        {
+          "word": " sleep.",
+          "start": 30.48,
+          "end": 30.98,
+          "probability": 0.9840271472930908
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2700,
+      "start": 32.0,
+      "end": 34.96,
+      "text": " How many hours do you sleep every night?",
+      "tokens": [
+        50564,
+        1012,
+        867,
+        2496,
+        360,
+        291,
+        2817,
+        633,
+        1818,
+        30,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16885757446289062,
+      "compression_ratio": 1.6283783783783783,
+      "no_speech_prob": 0.9392420053482056,
+      "words": [
+        {
+          "word": " How",
+          "start": 32.0,
+          "end": 32.0,
+          "probability": 0.7082582116127014
+        },
+        {
+          "word": " many",
+          "start": 32.0,
+          "end": 32.48,
+          "probability": 0.9979113936424255
+        },
+        {
+          "word": " hours",
+          "start": 32.48,
+          "end": 33.02,
+          "probability": 0.9986050724983215
+        },
+        {
+          "word": " do",
+          "start": 33.02,
+          "end": 33.32,
+          "probability": 0.9937551021575928
+        },
+        {
+          "word": " you",
+          "start": 33.32,
+          "end": 33.68,
+          "probability": 0.9909811615943909
+        },
+        {
+          "word": " sleep",
+          "start": 33.68,
+          "end": 34.12,
+          "probability": 0.9986528158187866
+        },
+        {
+          "word": " every",
+          "start": 34.12,
+          "end": 34.54,
+          "probability": 0.9939927458763123
+        },
+        {
+          "word": " night?",
+          "start": 34.54,
+          "end": 34.96,
+          "probability": 0.9994183778762817
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2700,
+      "start": 35.74,
+      "end": 36.86,
+      "text": " Yes, Abdel.",
+      "tokens": [
+        50764,
+        1079,
+        11,
+        2847,
+        18105,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16885757446289062,
+      "compression_ratio": 1.6283783783783783,
+      "no_speech_prob": 0.9392420053482056,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 35.74,
+          "end": 36.02,
+          "probability": 0.9250556230545044
+        },
+        {
+          "word": " Abdel.",
+          "start": 36.28,
+          "end": 36.86,
+          "probability": 0.7394734621047974
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2700,
+      "start": 37.3,
+      "end": 42.46,
+      "text": " Um, I sleep maybe six or seven hours every night?",
+      "tokens": [
+        50864,
+        3301,
+        11,
+        286,
+        2817,
+        1310,
+        2309,
+        420,
+        3407,
+        2496,
+        633,
+        1818,
+        30,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16885757446289062,
+      "compression_ratio": 1.6283783783783783,
+      "no_speech_prob": 0.9392420053482056,
+      "words": [
+        {
+          "word": " Um,",
+          "start": 37.3,
+          "end": 37.44,
+          "probability": 0.23346710205078125
+        },
+        {
+          "word": " I",
+          "start": 38.36,
+          "end": 38.7,
+          "probability": 0.9940588474273682
+        },
+        {
+          "word": " sleep",
+          "start": 38.7,
+          "end": 39.08,
+          "probability": 0.9963700771331787
+        },
+        {
+          "word": " maybe",
+          "start": 39.08,
+          "end": 39.88,
+          "probability": 0.9539023637771606
+        },
+        {
+          "word": " six",
+          "start": 39.88,
+          "end": 40.32,
+          "probability": 0.6065275073051453
+        },
+        {
+          "word": " or",
+          "start": 40.32,
+          "end": 40.82,
+          "probability": 0.9843793511390686
+        },
+        {
+          "word": " seven",
+          "start": 40.82,
+          "end": 41.24,
+          "probability": 0.9911120533943176
+        },
+        {
+          "word": " hours",
+          "start": 41.24,
+          "end": 41.74,
+          "probability": 0.99825519323349
+        },
+        {
+          "word": " every",
+          "start": 41.74,
+          "end": 42.14,
+          "probability": 0.9451503157615662
+        },
+        {
+          "word": " night?",
+          "start": 42.14,
+          "end": 42.46,
+          "probability": 0.9996167421340942
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 2700,
+      "start": 43.28,
+      "end": 44.9,
+      "text": " OK, anyone else?",
+      "tokens": [
+        51164,
+        2264,
+        11,
+        2878,
+        1646,
+        30,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16885757446289062,
+      "compression_ratio": 1.6283783783783783,
+      "no_speech_prob": 0.9392420053482056,
+      "words": [
+        {
+          "word": " OK,",
+          "start": 43.28,
+          "end": 43.86,
+          "probability": 0.9803010821342468
+        },
+        {
+          "word": " anyone",
+          "start": 44.2,
+          "end": 44.52,
+          "probability": 0.9847760796546936
+        },
+        {
+          "word": " else?",
+          "start": 44.52,
+          "end": 44.9,
+          "probability": 0.9995868802070618
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 2700,
+      "start": 45.94,
+      "end": 49.2,
+      "text": " Yes, Beatrice, how many hours do you sleep?",
+      "tokens": [
+        51264,
+        1079,
+        11,
+        16031,
+        21299,
+        11,
+        577,
+        867,
+        2496,
+        360,
+        291,
+        2817,
+        30,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16885757446289062,
+      "compression_ratio": 1.6283783783783783,
+      "no_speech_prob": 0.9392420053482056,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 45.94,
+          "end": 46.42,
+          "probability": 0.9938822984695435
+        },
+        {
+          "word": " Beatrice,",
+          "start": 46.68,
+          "end": 47.28,
+          "probability": 0.967861533164978
+        },
+        {
+          "word": " how",
+          "start": 47.64,
+          "end": 47.96,
+          "probability": 0.9878191947937012
+        },
+        {
+          "word": " many",
+          "start": 47.96,
+          "end": 48.16,
+          "probability": 0.9987764954566956
+        },
+        {
+          "word": " hours",
+          "start": 48.16,
+          "end": 48.46,
+          "probability": 0.999245285987854
+        },
+        {
+          "word": " do",
+          "start": 48.46,
+          "end": 48.68,
+          "probability": 0.9967629909515381
+        },
+        {
+          "word": " you",
+          "start": 48.68,
+          "end": 48.88,
+          "probability": 0.9992712140083313
+        },
+        {
+          "word": " sleep?",
+          "start": 48.88,
+          "end": 49.2,
+          "probability": 0.9994055032730103
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 2700,
+      "start": 49.62,
+      "end": 54.92,
+      "text": " I don't sleep a lot. I sleep maybe five hours.",
+      "tokens": [
+        51464,
+        286,
+        500,
+        380,
+        2817,
+        257,
+        688,
+        13,
+        286,
+        2817,
+        1310,
+        1732,
+        2496,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16885757446289062,
+      "compression_ratio": 1.6283783783783783,
+      "no_speech_prob": 0.9392420053482056,
+      "words": [
+        {
+          "word": " I",
+          "start": 49.62,
+          "end": 49.9,
+          "probability": 0.9974585175514221
+        },
+        {
+          "word": " don't",
+          "start": 49.9,
+          "end": 50.32,
+          "probability": 0.9977414011955261
+        },
+        {
+          "word": " sleep",
+          "start": 50.32,
+          "end": 50.86,
+          "probability": 0.999384880065918
+        },
+        {
+          "word": " a",
+          "start": 50.86,
+          "end": 51.18,
+          "probability": 0.9942469000816345
+        },
+        {
+          "word": " lot.",
+          "start": 51.18,
+          "end": 51.48,
+          "probability": 0.9997009038925171
+        },
+        {
+          "word": " I",
+          "start": 52.28,
+          "end": 52.58,
+          "probability": 0.9985575079917908
+        },
+        {
+          "word": " sleep",
+          "start": 52.58,
+          "end": 53.04,
+          "probability": 0.9985210299491882
+        },
+        {
+          "word": " maybe",
+          "start": 53.04,
+          "end": 53.8,
+          "probability": 0.9770854711532593
+        },
+        {
+          "word": " five",
+          "start": 53.8,
+          "end": 54.4,
+          "probability": 0.8905622363090515
+        },
+        {
+          "word": " hours.",
+          "start": 54.4,
+          "end": 54.92,
+          "probability": 0.9990516304969788
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5492,
+      "start": 54.92,
+      "end": 58.8,
+      "text": " OK. Yes, Anna, and you?",
+      "tokens": [
+        50364,
+        2264,
+        13,
+        1079,
+        11,
+        12899,
+        11,
+        293,
+        291,
+        30,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13714632173863853,
+      "compression_ratio": 1.547486033519553,
+      "no_speech_prob": 0.8489614725112915,
+      "words": [
+        {
+          "word": " OK.",
+          "start": 54.92,
+          "end": 55.98,
+          "probability": 0.11996715515851974
+        },
+        {
+          "word": " Yes,",
+          "start": 57.0,
+          "end": 57.46,
+          "probability": 0.9668958783149719
+        },
+        {
+          "word": " Anna,",
+          "start": 57.64,
+          "end": 57.94,
+          "probability": 0.9542239904403687
+        },
+        {
+          "word": " and",
+          "start": 58.04,
+          "end": 58.44,
+          "probability": 0.9936005473136902
+        },
+        {
+          "word": " you?",
+          "start": 58.44,
+          "end": 58.8,
+          "probability": 0.9985381364822388
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5492,
+      "start": 59.44,
+      "end": 64.76,
+      "text": " Not enough. I only sleep five or six hours a night during the week.",
+      "tokens": [
+        50564,
+        1726,
+        1547,
+        13,
+        286,
+        787,
+        2817,
+        1732,
+        420,
+        2309,
+        2496,
+        257,
+        1818,
+        1830,
+        264,
+        1243,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13714632173863853,
+      "compression_ratio": 1.547486033519553,
+      "no_speech_prob": 0.8489614725112915,
+      "words": [
+        {
+          "word": " Not",
+          "start": 59.44,
+          "end": 59.72,
+          "probability": 0.9636408090591431
+        },
+        {
+          "word": " enough.",
+          "start": 59.72,
+          "end": 60.12,
+          "probability": 0.9987401366233826
+        },
+        {
+          "word": " I",
+          "start": 60.82,
+          "end": 61.08,
+          "probability": 0.9957364797592163
+        },
+        {
+          "word": " only",
+          "start": 61.08,
+          "end": 61.48,
+          "probability": 0.9955750703811646
+        },
+        {
+          "word": " sleep",
+          "start": 61.48,
+          "end": 61.8,
+          "probability": 0.9955500364303589
+        },
+        {
+          "word": " five",
+          "start": 61.8,
+          "end": 62.32,
+          "probability": 0.6779801249504089
+        },
+        {
+          "word": " or",
+          "start": 62.32,
+          "end": 62.58,
+          "probability": 0.9847763776779175
+        },
+        {
+          "word": " six",
+          "start": 62.58,
+          "end": 62.98,
+          "probability": 0.9970294237136841
+        },
+        {
+          "word": " hours",
+          "start": 62.98,
+          "end": 63.36,
+          "probability": 0.9977107048034668
+        },
+        {
+          "word": " a",
+          "start": 63.36,
+          "end": 63.62,
+          "probability": 0.9878724813461304
+        },
+        {
+          "word": " night",
+          "start": 63.62,
+          "end": 63.88,
+          "probability": 0.9976436495780945
+        },
+        {
+          "word": " during",
+          "start": 63.88,
+          "end": 64.24,
+          "probability": 0.9881298542022705
+        },
+        {
+          "word": " the",
+          "start": 64.24,
+          "end": 64.42,
+          "probability": 0.9972448348999023
+        },
+        {
+          "word": " week.",
+          "start": 64.42,
+          "end": 64.76,
+          "probability": 0.9991552829742432
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 5492,
+      "start": 65.22,
+      "end": 69.58,
+      "text": " You're right. That's not enough. Especially for teenagers.",
+      "tokens": [
+        50864,
+        509,
+        434,
+        558,
+        13,
+        663,
+        311,
+        406,
+        1547,
+        13,
+        8545,
+        337,
+        23618,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13714632173863853,
+      "compression_ratio": 1.547486033519553,
+      "no_speech_prob": 0.8489614725112915,
+      "words": [
+        {
+          "word": " You're",
+          "start": 65.22,
+          "end": 65.48,
+          "probability": 0.9503102898597717
+        },
+        {
+          "word": " right.",
+          "start": 65.48,
+          "end": 65.94,
+          "probability": 0.9991461038589478
+        },
+        {
+          "word": " That's",
+          "start": 66.36,
+          "end": 66.76,
+          "probability": 0.9912458062171936
+        },
+        {
+          "word": " not",
+          "start": 66.76,
+          "end": 67.0,
+          "probability": 0.9968907237052917
+        },
+        {
+          "word": " enough.",
+          "start": 67.0,
+          "end": 67.58,
+          "probability": 0.9994470477104187
+        },
+        {
+          "word": " Especially",
+          "start": 68.06,
+          "end": 68.68,
+          "probability": 0.982761561870575
+        },
+        {
+          "word": " for",
+          "start": 68.68,
+          "end": 69.06,
+          "probability": 0.996479332447052
+        },
+        {
+          "word": " teenagers.",
+          "start": 69.06,
+          "end": 69.58,
+          "probability": 0.9976289868354797
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 5492,
+      "start": 70.78,
+      "end": 73.98,
+      "text": " How many hours do you think teenagers need?",
+      "tokens": [
+        51114,
+        1012,
+        867,
+        2496,
+        360,
+        291,
+        519,
+        23618,
+        643,
+        30,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13714632173863853,
+      "compression_ratio": 1.547486033519553,
+      "no_speech_prob": 0.8489614725112915,
+      "words": [
+        {
+          "word": " How",
+          "start": 70.78,
+          "end": 70.94,
+          "probability": 0.9810896515846252
+        },
+        {
+          "word": " many",
+          "start": 70.94,
+          "end": 71.26,
+          "probability": 0.9983507394790649
+        },
+        {
+          "word": " hours",
+          "start": 71.26,
+          "end": 71.68,
+          "probability": 0.9990760087966919
+        },
+        {
+          "word": " do",
+          "start": 71.68,
+          "end": 71.98,
+          "probability": 0.9945218563079834
+        },
+        {
+          "word": " you",
+          "start": 71.98,
+          "end": 72.32,
+          "probability": 0.9726709723472595
+        },
+        {
+          "word": " think",
+          "start": 72.32,
+          "end": 72.88,
+          "probability": 0.9988614320755005
+        },
+        {
+          "word": " teenagers",
+          "start": 72.88,
+          "end": 73.5,
+          "probability": 0.9920348525047302
+        },
+        {
+          "word": " need?",
+          "start": 73.5,
+          "end": 73.98,
+          "probability": 0.9979771971702576
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 5492,
+      "start": 74.62,
+      "end": 75.32,
+      "text": " A lot.",
+      "tokens": [
+        51314,
+        316,
+        688,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13714632173863853,
+      "compression_ratio": 1.547486033519553,
+      "no_speech_prob": 0.8489614725112915,
+      "words": [
+        {
+          "word": " A",
+          "start": 74.62,
+          "end": 75.04,
+          "probability": 0.9602247476577759
+        },
+        {
+          "word": " lot.",
+          "start": 75.04,
+          "end": 75.32,
+          "probability": 0.980694055557251
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 5492,
+      "start": 76.94,
+      "end": 83.08,
+      "text": " Yes, you're right about that. Teenagers need ten or more hours every night.",
+      "tokens": [
+        51414,
+        1079,
+        11,
+        291,
+        434,
+        558,
+        466,
+        300,
+        13,
+        33297,
+        8776,
+        643,
+        2064,
+        420,
+        544,
+        2496,
+        633,
+        1818,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13714632173863853,
+      "compression_ratio": 1.547486033519553,
+      "no_speech_prob": 0.8489614725112915,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 76.94,
+          "end": 77.28,
+          "probability": 0.9371299147605896
+        },
+        {
+          "word": " you're",
+          "start": 77.28,
+          "end": 77.58,
+          "probability": 0.9750533401966095
+        },
+        {
+          "word": " right",
+          "start": 77.58,
+          "end": 77.8,
+          "probability": 0.9986569881439209
+        },
+        {
+          "word": " about",
+          "start": 77.8,
+          "end": 78.04,
+          "probability": 0.9955518841743469
+        },
+        {
+          "word": " that.",
+          "start": 78.04,
+          "end": 78.74,
+          "probability": 0.9996548891067505
+        },
+        {
+          "word": " Teenagers",
+          "start": 79.44,
+          "end": 80.0,
+          "probability": 0.9924410581588745
+        },
+        {
+          "word": " need",
+          "start": 80.0,
+          "end": 80.44,
+          "probability": 0.9978082776069641
+        },
+        {
+          "word": " ten",
+          "start": 80.44,
+          "end": 80.9,
+          "probability": 0.712449312210083
+        },
+        {
+          "word": " or",
+          "start": 80.9,
+          "end": 81.24,
+          "probability": 0.9928485155105591
+        },
+        {
+          "word": " more",
+          "start": 81.24,
+          "end": 81.66,
+          "probability": 0.9995019435882568
+        },
+        {
+          "word": " hours",
+          "start": 81.66,
+          "end": 82.12,
+          "probability": 0.9989327788352966
+        },
+        {
+          "word": " every",
+          "start": 82.12,
+          "end": 82.6,
+          "probability": 0.9980474710464478
+        },
+        {
+          "word": " night.",
+          "start": 82.6,
+          "end": 83.08,
+          "probability": 0.9994294047355652
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 8308,
+      "start": 83.08,
+      "end": 87.08,
+      "text": " So, what do you usually do at night?",
+      "tokens": [
+        50364,
+        407,
+        11,
+        437,
+        360,
+        291,
+        2673,
+        360,
+        412,
+        1818,
+        30,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13644766520304852,
+      "compression_ratio": 1.3687150837988826,
+      "no_speech_prob": 0.8777651190757751,
+      "words": [
+        {
+          "word": " So,",
+          "start": 83.08,
+          "end": 84.42,
+          "probability": 0.22000470757484436
+        },
+        {
+          "word": " what",
+          "start": 84.94,
+          "end": 85.16,
+          "probability": 0.9856305718421936
+        },
+        {
+          "word": " do",
+          "start": 85.16,
+          "end": 85.32,
+          "probability": 0.9915286302566528
+        },
+        {
+          "word": " you",
+          "start": 85.32,
+          "end": 85.58,
+          "probability": 0.9965387582778931
+        },
+        {
+          "word": " usually",
+          "start": 85.58,
+          "end": 86.04,
+          "probability": 0.9952076077461243
+        },
+        {
+          "word": " do",
+          "start": 86.04,
+          "end": 86.44,
+          "probability": 0.994152843952179
+        },
+        {
+          "word": " at",
+          "start": 86.44,
+          "end": 86.72,
+          "probability": 0.99456387758255
+        },
+        {
+          "word": " night?",
+          "start": 86.72,
+          "end": 87.08,
+          "probability": 0.9983506202697754
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 8308,
+      "start": 87.9,
+      "end": 88.7,
+      "text": " Are you busy?",
+      "tokens": [
+        50564,
+        2014,
+        291,
+        5856,
+        30,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13644766520304852,
+      "compression_ratio": 1.3687150837988826,
+      "no_speech_prob": 0.8777651190757751,
+      "words": [
+        {
+          "word": " Are",
+          "start": 87.9,
+          "end": 88.06,
+          "probability": 0.9199592471122742
+        },
+        {
+          "word": " you",
+          "start": 88.06,
+          "end": 88.3,
+          "probability": 0.9994433522224426
+        },
+        {
+          "word": " busy?",
+          "start": 88.3,
+          "end": 88.7,
+          "probability": 0.9952446818351746
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 8308,
+      "start": 89.34,
+      "end": 93.96,
+      "text": " Yes, Abdul. At night I like to play computer games.",
+      "tokens": [
+        50664,
+        1079,
+        11,
+        42591,
+        13,
+        1711,
+        1818,
+        286,
+        411,
+        281,
+        862,
+        3820,
+        2813,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13644766520304852,
+      "compression_ratio": 1.3687150837988826,
+      "no_speech_prob": 0.8777651190757751,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 89.34,
+          "end": 89.68,
+          "probability": 0.9520052671432495
+        },
+        {
+          "word": " Abdul.",
+          "start": 89.94,
+          "end": 90.22,
+          "probability": 0.8381751775741577
+        },
+        {
+          "word": " At",
+          "start": 90.72,
+          "end": 90.88,
+          "probability": 0.9921047687530518
+        },
+        {
+          "word": " night",
+          "start": 90.88,
+          "end": 91.26,
+          "probability": 0.9980588555335999
+        },
+        {
+          "word": " I",
+          "start": 91.26,
+          "end": 91.74,
+          "probability": 0.4328438341617584
+        },
+        {
+          "word": " like",
+          "start": 91.74,
+          "end": 92.04,
+          "probability": 0.9952890872955322
+        },
+        {
+          "word": " to",
+          "start": 92.04,
+          "end": 92.4,
+          "probability": 0.9984614849090576
+        },
+        {
+          "word": " play",
+          "start": 92.4,
+          "end": 92.7,
+          "probability": 0.9987640380859375
+        },
+        {
+          "word": " computer",
+          "start": 92.7,
+          "end": 93.3,
+          "probability": 0.9910126328468323
+        },
+        {
+          "word": " games.",
+          "start": 93.3,
+          "end": 93.96,
+          "probability": 0.9927999973297119
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 8308,
+      "start": 94.6,
+      "end": 96.8,
+      "text": " Okay. Anyone else?",
+      "tokens": [
+        50914,
+        1033,
+        13,
+        14643,
+        1646,
+        30,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13644766520304852,
+      "compression_ratio": 1.3687150837988826,
+      "no_speech_prob": 0.8777651190757751,
+      "words": [
+        {
+          "word": " Okay.",
+          "start": 94.6,
+          "end": 95.14,
+          "probability": 0.3100165128707886
+        },
+        {
+          "word": " Anyone",
+          "start": 96.04,
+          "end": 96.4,
+          "probability": 0.9849473834037781
+        },
+        {
+          "word": " else?",
+          "start": 96.4,
+          "end": 96.8,
+          "probability": 0.9983102083206177
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 8308,
+      "start": 97.9,
+      "end": 99.32,
+      "text": " Yes, Madiha.",
+      "tokens": [
+        51064,
+        1079,
+        11,
+        5326,
+        72,
+        1641,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13644766520304852,
+      "compression_ratio": 1.3687150837988826,
+      "no_speech_prob": 0.8777651190757751,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 97.9,
+          "end": 98.44,
+          "probability": 0.9928267002105713
+        },
+        {
+          "word": " Madiha.",
+          "start": 98.78,
+          "end": 99.32,
+          "probability": 0.8688945571581522
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 8308,
+      "start": 99.72,
+      "end": 101.7,
+      "text": " Well, I usually watch TV.",
+      "tokens": [
+        51164,
+        1042,
+        11,
+        286,
+        2673,
+        1159,
+        3558,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13644766520304852,
+      "compression_ratio": 1.3687150837988826,
+      "no_speech_prob": 0.8777651190757751,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 99.72,
+          "end": 100.12,
+          "probability": 0.9304601550102234
+        },
+        {
+          "word": " I",
+          "start": 100.4,
+          "end": 100.6,
+          "probability": 0.9983775615692139
+        },
+        {
+          "word": " usually",
+          "start": 100.6,
+          "end": 100.92,
+          "probability": 0.9979324340820312
+        },
+        {
+          "word": " watch",
+          "start": 100.92,
+          "end": 101.2,
+          "probability": 0.9988768696784973
+        },
+        {
+          "word": " TV.",
+          "start": 101.2,
+          "end": 101.7,
+          "probability": 0.9555776119232178
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 8308,
+      "start": 102.28,
+      "end": 105.08,
+      "text": " I go online or text friends.",
+      "tokens": [
+        51314,
+        286,
+        352,
+        2950,
+        420,
+        2487,
+        1855,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13644766520304852,
+      "compression_ratio": 1.3687150837988826,
+      "no_speech_prob": 0.8777651190757751,
+      "words": [
+        {
+          "word": " I",
+          "start": 102.28,
+          "end": 102.52,
+          "probability": 0.9960045218467712
+        },
+        {
+          "word": " go",
+          "start": 102.52,
+          "end": 102.82,
+          "probability": 0.9969351291656494
+        },
+        {
+          "word": " online",
+          "start": 102.82,
+          "end": 103.42,
+          "probability": 0.9593164920806885
+        },
+        {
+          "word": " or",
+          "start": 103.42,
+          "end": 104.18,
+          "probability": 0.7144924998283386
+        },
+        {
+          "word": " text",
+          "start": 104.18,
+          "end": 104.58,
+          "probability": 0.9960756897926331
+        },
+        {
+          "word": " friends.",
+          "start": 104.58,
+          "end": 105.08,
+          "probability": 0.9968401193618774
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 8308,
+      "start": 105.5,
+      "end": 108.98,
+      "text": " And then you do the homework for this class, of course.",
+      "tokens": [
+        51464,
+        400,
+        550,
+        291,
+        360,
+        264,
+        14578,
+        337,
+        341,
+        1508,
+        11,
+        295,
+        1164,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13644766520304852,
+      "compression_ratio": 1.3687150837988826,
+      "no_speech_prob": 0.8777651190757751,
+      "words": [
+        {
+          "word": " And",
+          "start": 105.5,
+          "end": 105.78,
+          "probability": 0.9763708114624023
+        },
+        {
+          "word": " then",
+          "start": 105.78,
+          "end": 106.06,
+          "probability": 0.9897679686546326
+        },
+        {
+          "word": " you",
+          "start": 106.06,
+          "end": 106.26,
+          "probability": 0.9742252230644226
+        },
+        {
+          "word": " do",
+          "start": 106.26,
+          "end": 106.52,
+          "probability": 0.9980531930923462
+        },
+        {
+          "word": " the",
+          "start": 106.52,
+          "end": 106.76,
+          "probability": 0.9889772534370422
+        },
+        {
+          "word": " homework",
+          "start": 106.76,
+          "end": 107.16,
+          "probability": 0.9879960417747498
+        },
+        {
+          "word": " for",
+          "start": 107.16,
+          "end": 107.5,
+          "probability": 0.9935085773468018
+        },
+        {
+          "word": " this",
+          "start": 107.5,
+          "end": 107.8,
+          "probability": 0.9904506802558899
+        },
+        {
+          "word": " class,",
+          "start": 107.8,
+          "end": 108.24,
+          "probability": 0.9957619309425354
+        },
+        {
+          "word": " of",
+          "start": 108.24,
+          "end": 108.54,
+          "probability": 0.9984713196754456
+        },
+        {
+          "word": " course.",
+          "start": 108.54,
+          "end": 108.98,
+          "probability": 0.9986604452133179
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 10898,
+      "start": 108.98,
+      "end": 114.78,
+      "text": " So, let me ask you. What do you do on Saturday and Sunday?",
+      "tokens": [
+        50364,
+        407,
+        11,
+        718,
+        385,
+        1029,
+        291,
+        13,
+        708,
+        360,
+        291,
+        360,
+        322,
+        8803,
+        293,
+        7776,
+        30,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17759831385179,
+      "compression_ratio": 1.5080213903743316,
+      "no_speech_prob": 0.591959536075592,
+      "words": [
+        {
+          "word": " So,",
+          "start": 108.98,
+          "end": 109.86,
+          "probability": 0.3282279372215271
+        },
+        {
+          "word": " let",
+          "start": 110.12,
+          "end": 110.4,
+          "probability": 0.9859325289726257
+        },
+        {
+          "word": " me",
+          "start": 110.4,
+          "end": 110.62,
+          "probability": 0.9994044303894043
+        },
+        {
+          "word": " ask",
+          "start": 110.62,
+          "end": 110.98,
+          "probability": 0.9981410503387451
+        },
+        {
+          "word": " you.",
+          "start": 110.98,
+          "end": 111.38,
+          "probability": 0.997763991355896
+        },
+        {
+          "word": " What",
+          "start": 111.78,
+          "end": 111.98,
+          "probability": 0.9679132699966431
+        },
+        {
+          "word": " do",
+          "start": 111.98,
+          "end": 112.2,
+          "probability": 0.9956684112548828
+        },
+        {
+          "word": " you",
+          "start": 112.2,
+          "end": 112.44,
+          "probability": 0.9988951086997986
+        },
+        {
+          "word": " do",
+          "start": 112.44,
+          "end": 112.68,
+          "probability": 0.996101975440979
+        },
+        {
+          "word": " on",
+          "start": 112.68,
+          "end": 113.14,
+          "probability": 0.995060384273529
+        },
+        {
+          "word": " Saturday",
+          "start": 113.14,
+          "end": 113.72,
+          "probability": 0.9767672419548035
+        },
+        {
+          "word": " and",
+          "start": 113.72,
+          "end": 114.32,
+          "probability": 0.975740373134613
+        },
+        {
+          "word": " Sunday?",
+          "start": 114.32,
+          "end": 114.78,
+          "probability": 0.9978435039520264
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 10898,
+      "start": 115.82,
+      "end": 117.8,
+      "text": " Yes, Sung-oh.",
+      "tokens": [
+        50664,
+        1079,
+        11,
+        24857,
+        12,
+        1445,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17759831385179,
+      "compression_ratio": 1.5080213903743316,
+      "no_speech_prob": 0.591959536075592,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 115.82,
+          "end": 116.26,
+          "probability": 0.8464404344558716
+        },
+        {
+          "word": " Sung",
+          "start": 117.26,
+          "end": 117.48,
+          "probability": 0.34964513778686523
+        },
+        {
+          "word": "-oh.",
+          "start": 117.48,
+          "end": 117.8,
+          "probability": 0.48616500198841095
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 10898,
+      "start": 118.2,
+      "end": 122.38,
+      "text": " Well, I also play computer games on Saturday and Sunday.",
+      "tokens": [
+        50814,
+        1042,
+        11,
+        286,
+        611,
+        862,
+        3820,
+        2813,
+        322,
+        8803,
+        293,
+        7776,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17759831385179,
+      "compression_ratio": 1.5080213903743316,
+      "no_speech_prob": 0.591959536075592,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 118.2,
+          "end": 118.6,
+          "probability": 0.8724449872970581
+        },
+        {
+          "word": " I",
+          "start": 118.82,
+          "end": 119.02,
+          "probability": 0.9966375827789307
+        },
+        {
+          "word": " also",
+          "start": 119.02,
+          "end": 119.52,
+          "probability": 0.9968221187591553
+        },
+        {
+          "word": " play",
+          "start": 119.52,
+          "end": 119.8,
+          "probability": 0.9951074123382568
+        },
+        {
+          "word": " computer",
+          "start": 119.8,
+          "end": 120.3,
+          "probability": 0.9945912957191467
+        },
+        {
+          "word": " games",
+          "start": 120.3,
+          "end": 120.64,
+          "probability": 0.9955829977989197
+        },
+        {
+          "word": " on",
+          "start": 120.64,
+          "end": 121.08,
+          "probability": 0.99677973985672
+        },
+        {
+          "word": " Saturday",
+          "start": 121.08,
+          "end": 121.54,
+          "probability": 0.9953977465629578
+        },
+        {
+          "word": " and",
+          "start": 121.54,
+          "end": 121.84,
+          "probability": 0.9950122237205505
+        },
+        {
+          "word": " Sunday.",
+          "start": 121.84,
+          "end": 122.38,
+          "probability": 0.9985195994377136
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 10898,
+      "start": 123.06,
+      "end": 125.32,
+      "text": " Right. And what about you, Mimi?",
+      "tokens": [
+        51014,
+        1779,
+        13,
+        400,
+        437,
+        466,
+        291,
+        11,
+        46709,
+        30,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17759831385179,
+      "compression_ratio": 1.5080213903743316,
+      "no_speech_prob": 0.591959536075592,
+      "words": [
+        {
+          "word": " Right.",
+          "start": 123.06,
+          "end": 123.6,
+          "probability": 0.9889091849327087
+        },
+        {
+          "word": " And",
+          "start": 123.68,
+          "end": 124.1,
+          "probability": 0.9674013257026672
+        },
+        {
+          "word": " what",
+          "start": 124.1,
+          "end": 124.3,
+          "probability": 0.9677160382270813
+        },
+        {
+          "word": " about",
+          "start": 124.3,
+          "end": 124.62,
+          "probability": 0.9995131492614746
+        },
+        {
+          "word": " you,",
+          "start": 124.62,
+          "end": 125.0,
+          "probability": 0.9986724853515625
+        },
+        {
+          "word": " Mimi?",
+          "start": 125.16,
+          "end": 125.32,
+          "probability": 0.850024938583374
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 10898,
+      "start": 125.82,
+      "end": 130.1,
+      "text": " Um, well, I watch TV or go online.",
+      "tokens": [
+        51164,
+        3301,
+        11,
+        731,
+        11,
+        286,
+        1159,
+        3558,
+        420,
+        352,
+        2950,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17759831385179,
+      "compression_ratio": 1.5080213903743316,
+      "no_speech_prob": 0.591959536075592,
+      "words": [
+        {
+          "word": " Um,",
+          "start": 125.82,
+          "end": 126.54,
+          "probability": 0.20627595484256744
+        },
+        {
+          "word": " well,",
+          "start": 126.7,
+          "end": 127.3,
+          "probability": 0.8779416084289551
+        },
+        {
+          "word": " I",
+          "start": 127.36,
+          "end": 127.74,
+          "probability": 0.9985138773918152
+        },
+        {
+          "word": " watch",
+          "start": 127.74,
+          "end": 128.24,
+          "probability": 0.9962536096572876
+        },
+        {
+          "word": " TV",
+          "start": 128.24,
+          "end": 128.76,
+          "probability": 0.9686910510063171
+        },
+        {
+          "word": " or",
+          "start": 128.76,
+          "end": 129.2,
+          "probability": 0.9493305087089539
+        },
+        {
+          "word": " go",
+          "start": 129.2,
+          "end": 129.56,
+          "probability": 0.9954772591590881
+        },
+        {
+          "word": " online.",
+          "start": 129.56,
+          "end": 130.1,
+          "probability": 0.9759191870689392
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 10898,
+      "start": 130.46,
+      "end": 133.34,
+      "text": " What else do you do? Do you exercise?",
+      "tokens": [
+        51414,
+        708,
+        1646,
+        360,
+        291,
+        360,
+        30,
+        1144,
+        291,
+        5380,
+        30,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17759831385179,
+      "compression_ratio": 1.5080213903743316,
+      "no_speech_prob": 0.591959536075592,
+      "words": [
+        {
+          "word": " What",
+          "start": 130.46,
+          "end": 130.68,
+          "probability": 0.99774169921875
+        },
+        {
+          "word": " else",
+          "start": 130.68,
+          "end": 130.92,
+          "probability": 0.9983433485031128
+        },
+        {
+          "word": " do",
+          "start": 130.92,
+          "end": 131.1,
+          "probability": 0.995975911617279
+        },
+        {
+          "word": " you",
+          "start": 131.1,
+          "end": 131.22,
+          "probability": 0.9996065497398376
+        },
+        {
+          "word": " do?",
+          "start": 131.22,
+          "end": 131.68,
+          "probability": 0.9991815686225891
+        },
+        {
+          "word": " Do",
+          "start": 132.28,
+          "end": 132.48,
+          "probability": 0.9951276779174805
+        },
+        {
+          "word": " you",
+          "start": 132.48,
+          "end": 132.72,
+          "probability": 0.999367892742157
+        },
+        {
+          "word": " exercise?",
+          "start": 132.72,
+          "end": 133.34,
+          "probability": 0.9973320960998535
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 10898,
+      "start": 134.16,
+      "end": 137.62,
+      "text": " Exercise is also very important for teenagers.",
+      "tokens": [
+        51564,
+        44307,
+        307,
+        611,
+        588,
+        1021,
+        337,
+        23618,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17759831385179,
+      "compression_ratio": 1.5080213903743316,
+      "no_speech_prob": 0.591959536075592,
+      "words": [
+        {
+          "word": " Exercise",
+          "start": 134.16,
+          "end": 134.86,
+          "probability": 0.9804418087005615
+        },
+        {
+          "word": " is",
+          "start": 134.86,
+          "end": 135.22,
+          "probability": 0.9986612796783447
+        },
+        {
+          "word": " also",
+          "start": 135.22,
+          "end": 135.78,
+          "probability": 0.9965834021568298
+        },
+        {
+          "word": " very",
+          "start": 135.78,
+          "end": 136.18,
+          "probability": 0.9951915740966797
+        },
+        {
+          "word": " important",
+          "start": 136.18,
+          "end": 136.8,
+          "probability": 0.9994962215423584
+        },
+        {
+          "word": " for",
+          "start": 136.8,
+          "end": 137.04,
+          "probability": 0.9976690411567688
+        },
+        {
+          "word": " teenagers.",
+          "start": 137.04,
+          "end": 137.62,
+          "probability": 0.9987620115280151
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 13762,
+      "start": 137.62,
+      "end": 142.66,
+      "text": " It's important for all of us. Do you exercise, Sandra?",
+      "tokens": [
+        50364,
+        467,
+        311,
+        1021,
+        337,
+        439,
+        295,
+        505,
+        13,
+        1144,
+        291,
+        5380,
+        11,
+        28184,
+        30,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1611220589999495,
+      "compression_ratio": 1.3571428571428572,
+      "no_speech_prob": 0.3959212303161621,
+      "words": [
+        {
+          "word": " It's",
+          "start": 137.62,
+          "end": 138.84,
+          "probability": 0.7865064144134521
+        },
+        {
+          "word": " important",
+          "start": 138.84,
+          "end": 139.2,
+          "probability": 0.998072624206543
+        },
+        {
+          "word": " for",
+          "start": 139.2,
+          "end": 139.42,
+          "probability": 0.9952670335769653
+        },
+        {
+          "word": " all",
+          "start": 139.42,
+          "end": 139.68,
+          "probability": 0.9951569437980652
+        },
+        {
+          "word": " of",
+          "start": 139.68,
+          "end": 139.84,
+          "probability": 0.9980601668357849
+        },
+        {
+          "word": " us.",
+          "start": 139.84,
+          "end": 140.34,
+          "probability": 0.9990923404693604
+        },
+        {
+          "word": " Do",
+          "start": 141.16,
+          "end": 141.36,
+          "probability": 0.9793272614479065
+        },
+        {
+          "word": " you",
+          "start": 141.36,
+          "end": 141.66,
+          "probability": 0.998700737953186
+        },
+        {
+          "word": " exercise,",
+          "start": 141.66,
+          "end": 142.18,
+          "probability": 0.9921090006828308
+        },
+        {
+          "word": " Sandra?",
+          "start": 142.18,
+          "end": 142.66,
+          "probability": 0.9644734263420105
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 13762,
+      "start": 143.5,
+      "end": 147.66,
+      "text": " Er, to be honest, I don't really exercise.",
+      "tokens": [
+        50614,
+        3300,
+        11,
+        281,
+        312,
+        3245,
+        11,
+        286,
+        500,
+        380,
+        534,
+        5380,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1611220589999495,
+      "compression_ratio": 1.3571428571428572,
+      "no_speech_prob": 0.3959212303161621,
+      "words": [
+        {
+          "word": " Er,",
+          "start": 143.5,
+          "end": 144.24,
+          "probability": 0.5415605902671814
+        },
+        {
+          "word": " to",
+          "start": 144.24,
+          "end": 144.36,
+          "probability": 0.9924221634864807
+        },
+        {
+          "word": " be",
+          "start": 144.36,
+          "end": 144.6,
+          "probability": 0.9995806813240051
+        },
+        {
+          "word": " honest,",
+          "start": 144.6,
+          "end": 145.24,
+          "probability": 0.9994630217552185
+        },
+        {
+          "word": " I",
+          "start": 145.44,
+          "end": 145.48,
+          "probability": 0.9978256821632385
+        },
+        {
+          "word": " don't",
+          "start": 145.48,
+          "end": 145.96,
+          "probability": 0.9986819922924042
+        },
+        {
+          "word": " really",
+          "start": 145.96,
+          "end": 146.6,
+          "probability": 0.9906136989593506
+        },
+        {
+          "word": " exercise.",
+          "start": 146.6,
+          "end": 147.66,
+          "probability": 0.9949455857276917
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 13762,
+      "start": 148.26,
+      "end": 156.48,
+      "text": " Anyone else? Well, let's think of some things teenagers need to do to stay healthy and do well in your courses.",
+      "tokens": [
+        50864,
+        14643,
+        1646,
+        30,
+        1042,
+        11,
+        718,
+        311,
+        519,
+        295,
+        512,
+        721,
+        23618,
+        643,
+        281,
+        360,
+        281,
+        1754,
+        4627,
+        293,
+        360,
+        731,
+        294,
+        428,
+        7712,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1611220589999495,
+      "compression_ratio": 1.3571428571428572,
+      "no_speech_prob": 0.3959212303161621,
+      "words": [
+        {
+          "word": " Anyone",
+          "start": 148.26,
+          "end": 148.6,
+          "probability": 0.980823278427124
+        },
+        {
+          "word": " else?",
+          "start": 148.6,
+          "end": 149.02,
+          "probability": 0.9985339641571045
+        },
+        {
+          "word": " Well,",
+          "start": 149.84,
+          "end": 150.06,
+          "probability": 0.9634072780609131
+        },
+        {
+          "word": " let's",
+          "start": 150.14,
+          "end": 150.52,
+          "probability": 0.9962864816188812
+        },
+        {
+          "word": " think",
+          "start": 150.52,
+          "end": 150.96,
+          "probability": 0.9980453252792358
+        },
+        {
+          "word": " of",
+          "start": 150.96,
+          "end": 151.26,
+          "probability": 0.9940773248672485
+        },
+        {
+          "word": " some",
+          "start": 151.26,
+          "end": 151.54,
+          "probability": 0.9897979497909546
+        },
+        {
+          "word": " things",
+          "start": 151.54,
+          "end": 151.9,
+          "probability": 0.9966662526130676
+        },
+        {
+          "word": " teenagers",
+          "start": 151.9,
+          "end": 152.52,
+          "probability": 0.9900826811790466
+        },
+        {
+          "word": " need",
+          "start": 152.52,
+          "end": 152.92,
+          "probability": 0.9981847405433655
+        },
+        {
+          "word": " to",
+          "start": 152.92,
+          "end": 153.14,
+          "probability": 0.9993211030960083
+        },
+        {
+          "word": " do",
+          "start": 153.14,
+          "end": 153.4,
+          "probability": 0.9979792237281799
+        },
+        {
+          "word": " to",
+          "start": 153.4,
+          "end": 153.84,
+          "probability": 0.9767770171165466
+        },
+        {
+          "word": " stay",
+          "start": 153.84,
+          "end": 154.16,
+          "probability": 0.9976690411567688
+        },
+        {
+          "word": " healthy",
+          "start": 154.16,
+          "end": 154.66,
+          "probability": 0.999047577381134
+        },
+        {
+          "word": " and",
+          "start": 154.66,
+          "end": 155.12,
+          "probability": 0.9752630591392517
+        },
+        {
+          "word": " do",
+          "start": 155.12,
+          "end": 155.38,
+          "probability": 0.9767504334449768
+        },
+        {
+          "word": " well",
+          "start": 155.38,
+          "end": 155.6,
+          "probability": 0.9996999502182007
+        },
+        {
+          "word": " in",
+          "start": 155.6,
+          "end": 155.8,
+          "probability": 0.998327910900116
+        },
+        {
+          "word": " your",
+          "start": 155.8,
+          "end": 156.02,
+          "probability": 0.9950492978096008
+        },
+        {
+          "word": " courses.",
+          "start": 156.02,
+          "end": 156.48,
+          "probability": 0.9963405728340149
+        }
+      ]
+    }
+  ]
+}

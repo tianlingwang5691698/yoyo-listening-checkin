@@ -1,0 +1,445 @@
+{
+  "tests": [
+    {
+      "itemId": "ielts-academic-10-test-1-speaking",
+      "part1": {
+        "topic": "Weekends",
+        "questions": [
+          {
+            "exerciseId": "ielts-academic-10-test-1-speaking-part-1-1",
+            "prompt": "How do you usually spend your weekends?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-1-speaking-part-1-1",
+            "prompt": "[Why?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-1-speaking-part-1-2",
+            "prompt": "Which is your favourite part of the weekend?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-1-speaking-part-1-2",
+            "prompt": "[Why?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-1-speaking-part-1-3",
+            "prompt": "Do you think your weekends are long enough?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-1-speaking-part-1-3",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-1-speaking-part-1-4",
+            "prompt": "How important do you think it is to have free time at the weekends?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-1-speaking-part-1-4",
+            "prompt": "[Why?]"
+          }
+        ]
+      },
+      "part2": {
+        "exerciseId": "ielts-academic-10-test-1-speaking-part-2-1",
+        "task": "Describe someone you know who does something well.",
+        "cuePoints": [
+          "who this person is",
+          "how you know this person",
+          "what they do well"
+        ],
+        "closingPrompt": "and explain why you think this person is so good at doing this."
+      },
+      "part3": {
+        "topics": [
+          {
+            "title": "Skills and abilities",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-1",
+                "prompt": "What skills and abilities do people most want to have today?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-1",
+                "prompt": "Why?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-2",
+                "prompt": "Which skills should children learn at school?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-2",
+                "prompt": "Are there any skills which they should learn at home?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-2",
+                "prompt": "What are they?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-3",
+                "prompt": "Which skills do you think will be important in the future?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-3",
+                "prompt": "Why?"
+              }
+            ]
+          },
+          {
+            "title": "Salaries for skilled people",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-4",
+                "prompt": "Which kinds of jobs have the highest salaries in your country?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-4",
+                "prompt": "Why is this?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-5",
+                "prompt": "Are there any other jobs that you think should have high salaries?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-5",
+                "prompt": "Why do you think that?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-6",
+                "prompt": "Some people say it would be better for society if everyone got the same salary."
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-6",
+                "prompt": "What do you think about that?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-1-speaking-part-3-6",
+                "prompt": "Why?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "itemId": "ielts-academic-10-test-2-speaking",
+      "part1": {
+        "topic": "Music",
+        "questions": [
+          {
+            "exerciseId": "ielts-academic-10-test-2-speaking-part-1-1",
+            "prompt": "What types of music do you like to listen to?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-2-speaking-part-1-1",
+            "prompt": "[Why?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-2-speaking-part-1-2",
+            "prompt": "At what times of day do you like to listen to music?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-2-speaking-part-1-2",
+            "prompt": "[Why?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-2-speaking-part-1-3",
+            "prompt": "Did you learn to play a musical instrument when you were a child?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-2-speaking-part-1-3",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-2-speaking-part-1-4",
+            "prompt": "Do you think all children should learn to play a musical instrument?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-2-speaking-part-1-4",
+            "prompt": "[Why/Why not?]"
+          }
+        ]
+      },
+      "part2": {
+        "exerciseId": "ielts-academic-10-test-2-speaking-part-2-1",
+        "task": "Describe a shop near where you live that you sometimes use.",
+        "cuePoints": [
+          "what sorts of product or service it sells",
+          "what the shop looks like",
+          "where it is located"
+        ],
+        "closingPrompt": "and explain why you use this shop."
+      },
+      "part3": {
+        "topics": [
+          {
+            "title": "Local business",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-1",
+                "prompt": "What types of local business are there in your neighbourhood?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-1",
+                "prompt": "Are there any restaurants, shops or dentists for example?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-2",
+                "prompt": "Do you think local businesses are important for a neighbourhood?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-2",
+                "prompt": "In what way?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-3",
+                "prompt": "How do large shopping malls and commercial centres affect small local businesses?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-3",
+                "prompt": "Why do you think that is?"
+              }
+            ]
+          },
+          {
+            "title": "People and business",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-4",
+                "prompt": "Why do some people want to start their own business?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-5",
+                "prompt": "Are there any disadvantages to running a business?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-5",
+                "prompt": "Which is the most serious?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-6",
+                "prompt": "What are the most important qualities that a good business person needs?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-2-speaking-part-3-6",
+                "prompt": "Why is that?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "itemId": "ielts-academic-10-test-3-speaking",
+      "part1": {
+        "topic": "Travel",
+        "questions": [
+          {
+            "exerciseId": "ielts-academic-10-test-3-speaking-part-1-1",
+            "prompt": "Do you enjoy travelling?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-3-speaking-part-1-1",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-3-speaking-part-1-2",
+            "prompt": "Have you done much travelling?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-3-speaking-part-1-2",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-3-speaking-part-1-3",
+            "prompt": "Do you think it's better to travel alone or with other people?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-3-speaking-part-1-3",
+            "prompt": "[Why?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-3-speaking-part-1-4",
+            "prompt": "Where would you like to travel in the future?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-3-speaking-part-1-4",
+            "prompt": "[Why?]"
+          }
+        ]
+      },
+      "part2": {
+        "exerciseId": "ielts-academic-10-test-3-speaking-part-2-1",
+        "task": "Describe a child that you know.",
+        "cuePoints": [
+          "who this child is and how often you see him or her",
+          "how old this child is",
+          "what he or she is like"
+        ],
+        "closingPrompt": "and explain what you feel about this child."
+      },
+      "part3": {
+        "topics": [
+          {
+            "title": "Relationships between parents and children",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-1",
+                "prompt": "How much time do children spend with their parents in your country?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-1",
+                "prompt": "Do you think that is enough?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-2",
+                "prompt": "How important do you think spending time together is for the relationships between parents and children?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-2",
+                "prompt": "Why?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-3",
+                "prompt": "Have relationships between parents and children changed in recent years?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-3",
+                "prompt": "Why do you think that is?"
+              }
+            ]
+          },
+          {
+            "title": "Children’s free-time activities",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-4",
+                "prompt": "What are the most popular free-time activities with children today?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-5",
+                "prompt": "Do you think the free-time activities children do today are good for their health?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-5",
+                "prompt": "Why is that?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-6",
+                "prompt": "How do you think children's activities will change in the future?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-3-speaking-part-3-6",
+                "prompt": "Will this be a positive change?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "itemId": "ielts-academic-10-test-4-speaking",
+      "part1": {
+        "topic": "School",
+        "questions": [
+          {
+            "exerciseId": "ielts-academic-10-test-4-speaking-part-1-1",
+            "prompt": "Did you go to secondary/high school near to where you lived?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-4-speaking-part-1-1",
+            "prompt": "[Why/Why not?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-4-speaking-part-1-2",
+            "prompt": "What did you like about your secondary/high school?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-4-speaking-part-1-2",
+            "prompt": "[Why?]"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-4-speaking-part-1-3",
+            "prompt": "Tell me about anything you didn’t like at your school."
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-4-speaking-part-1-3",
+            "prompt": "How do you think your school could be improved?"
+          },
+          {
+            "exerciseId": "ielts-academic-10-test-4-speaking-part-1-3",
+            "prompt": "[Why/Why not?]"
+          }
+        ]
+      },
+      "part2": {
+        "exerciseId": "ielts-academic-10-test-4-speaking-part-2-1",
+        "task": "Describe something you don’t have now but would really like to own in the future.",
+        "cuePoints": [
+          "what this thing is",
+          "how long you have wanted to own it",
+          "where you first saw it"
+        ],
+        "closingPrompt": "and explain why you would like to own it."
+      },
+      "part3": {
+        "topics": [
+          {
+            "title": "Owning things",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-1",
+                "prompt": "What types of things do young people in your country most want to own today?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-1",
+                "prompt": "Why is this?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-2",
+                "prompt": "Why do some people feel they need to own things?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-3",
+                "prompt": "Do you think that owning lots of things makes people happy?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-3",
+                "prompt": "Why?"
+              }
+            ]
+          },
+          {
+            "title": "Salaries for skilled people",
+            "questions": [
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-4",
+                "prompt": "Do you think television and films can make people want to get new possessions?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-4",
+                "prompt": "Why do they have this effect?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-5",
+                "prompt": "Are there any benefits to society of people wanting to get new possessions?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-5",
+                "prompt": "Why do you think this is?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-6",
+                "prompt": "Do you think people will consider that having lots of possessions is a sign of success in the future?"
+              },
+              {
+                "exerciseId": "ielts-academic-10-test-4-speaking-part-3-6",
+                "prompt": "Why?"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "uncertain": []
+}

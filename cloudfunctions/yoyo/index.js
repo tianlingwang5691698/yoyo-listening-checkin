@@ -2,7 +2,7 @@ const https = require('https');
 
 process.env.SPEAKING_CONTENT_SCORE_MODEL = process.env.SPEAKING_CONTENT_SCORE_MODEL
   || process.env.SPEAKING_CONTENT_SCORE_MODE
-  || 'doubao-seed-2-1-pro-260628';
+  || 'gpt-5.6-sol';
 
 function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -232,7 +232,7 @@ async function scoreSpeakingAttemptLegacy(payload) {
   const audioModel = String(process.env.SPEAKING_AUDIO_TRANSCRIBE_MODEL || '').trim();
   const audioModels = [...new Set([audioModel].filter(Boolean))];
   const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'gpt-4o-transcribe').trim();
-  const contentModel = String(process.env.SPEAKING_CONTENT_SCORE_MODEL || 'doubao-seed-2-1-pro-260628').trim();
+  const contentModel = String(process.env.SPEAKING_CONTENT_SCORE_MODEL || 'gpt-5.6-sol').trim();
   if (!endpoint || !transcribeEndpoint) {
     return fallbackSpeakingScore(payload, 'missing-endpoint');
   }
@@ -423,6 +423,7 @@ const actionMap = {
   getTaskDetail: serviceAction('task', 'getTaskDetail'),
   getTaskTranscript: serviceAction('task', 'getTaskTranscript'),
   markTaskListened: serviceAction('task', 'markTaskListened'),
+  synthesizeIeltsPromptAudio: serviceAction('speaking', 'synthesizeIeltsPromptAudio'),
   createSpeakingUploadUrl: serviceAction('speaking', 'createSpeakingUploadUrl'),
   submitSpeakingAttempt: serviceAction('speaking', 'submitSpeakingAttempt'),
   evaluateSpeakingPronunciation: serviceAction('speaking', 'evaluateSpeakingPronunciation'),
@@ -503,6 +504,7 @@ const MONITORED_ACTIONS = new Set([
   'getTaskDetail',
   'getTaskTranscript',
   'markTaskListened',
+  'synthesizeIeltsPromptAudio',
   'createSpeakingUploadUrl',
   'submitSpeakingAttempt',
   'evaluateSpeakingPronunciation',

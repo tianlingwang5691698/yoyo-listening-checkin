@@ -1,0 +1,147 @@
+{
+  "_id": "ielts-academic-20-test-4-speaking",
+  "id": "ielts-academic-20-test-4-speaking",
+  "title": "Cambridge IELTS 20 Test 4 Speaking",
+  "year": 2025,
+  "city": "Cambridge",
+  "district": "Test 4",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思20学术类.pdf",
+  "book": "Cambridge IELTS 20 Academic",
+  "bookNumber": 20,
+  "testNumber": 4,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-20/speaking/source-pages-v1/test-4-speaking-a9c475c1ea.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-20/speaking/source-pages-v1/test-4-speaking-a9c475c1ea.jpg",
+      "alt": "Cambridge IELTS 20 Test 4 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-20-test-4-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Personal qualities What do you think your best personal qualities are? [Why?] Do you have the same personal qualities as your parents? [Why/Why not?] What personal qualities are important to you in a friend? [Why?] Do you think you have the personal qualities to be a good/successful leader? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-20-test-4-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a time when you had a long discussion about a news story. You should say: - what the news story was about - who you discussed this news story with - what people's opinions were and explain why you had such a long discussion about this news story.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-20-test-4-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "The news How do most people find out about the news in your country? Are people more interested in local news than national news? How important is it to know about international news? Discussion programmes on TV and radio Why are discussion programmes involving members of the public popular [on TV and radio]? What kinds of people want to take part in discussion programmes? Do discussion programmes influence people in a good or bad way?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 3,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Personal qualities",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-1-1",
+              "number": 1,
+              "prompt": "What do you think your best personal qualities are? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-1-1",
+              "number": 2,
+              "prompt": "Do you have the same personal qualities as your parents? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-1-1",
+              "number": 3,
+              "prompt": "What personal qualities are important to you in a friend? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-1-1",
+              "number": 4,
+              "prompt": "Do you think you have the personal qualities to be a good/successful leader? [Why/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-20-test-4-speaking-part-2-1",
+          "task": "Describe a time when you had a long discussion about a news story.",
+          "cuePoints": [
+            "what the news story was about",
+            "who you discussed this news story with",
+            "what people's opinions were"
+          ],
+          "closingPrompt": "and explain why you had such a long discussion about this news story."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "The news",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-3-1",
+              "number": 1,
+              "prompt": "How do most people find out about the news in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-3-1",
+              "number": 2,
+              "prompt": "Are people more interested in local news than national news?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-3-1",
+              "number": 3,
+              "prompt": "How important is it to know about international news?"
+            }
+          ]
+        },
+        {
+          "title": "Discussion programmes on TV and radio",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-3-1",
+              "number": 1,
+              "prompt": "Why are discussion programmes involving members of the public popular [on TV and radio]?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-3-1",
+              "number": 2,
+              "prompt": "What kinds of people want to take part in discussion programmes?"
+            },
+            {
+              "exerciseId": "ielts-academic-20-test-4-speaking-part-3-1",
+              "number": 3,
+              "prompt": "Do discussion programmes influence people in a good or bad way?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

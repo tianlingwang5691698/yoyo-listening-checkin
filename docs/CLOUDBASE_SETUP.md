@@ -110,6 +110,27 @@
 
 - [cloudfunctions/yoyo/package-lock.json](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/yoyo/package-lock.json)
 
+## 跟读评分云环境
+
+`yoyo` 云函数使用腾讯 SOE 新版 WebSocket 口语评测，正式环境必须保留以下变量：
+
+```text
+SPEAKING_PRONUNCIATION_PROVIDER=tencent-soe
+SPEAKING_CONTENT_SCORE_MODEL=gpt-5.6-sol
+SPEAKING_CONTENT_ALLOW_FALLBACK=0
+TENCENT_SOE_ENABLED=1
+TENCENT_SOE_VERSION=new
+TENCENT_SOE_REGION=ap-guangzhou
+TENCENT_SOE_ENGINE=16k_en
+TENCENT_SOE_REC_MODE=0
+TENCENT_SOE_SCORE_COEFF=1
+TENCENT_SOE_APP_ID=<SOE App ID>
+TENCENT_SECRET_ID=<Tencent Secret ID>
+TENCENT_SECRET_KEY=<Tencent Secret Key>
+```
+
+小程序跟读录音固定为 MP3、16kHz、单声道、64kbps。IELTS 回答由腾讯 SOE 评估发音与流利度，`gpt-5.6-sol` 评估内容、语法和反馈；学生写入 `taskAttempts` 并刷新日报，家长仅返回预览评分、不写数据库。
+
 ## 数据库集合
 
 - `families`
@@ -122,6 +143,7 @@
 - `subscriptionPreferences`
 - `deviceStudySessions`
 - `unlock1AudioTrainingPool`
+- `ieltsSpeakingPromptAudios`（IELTS 题目共享 TTS 缓存）
 
 ## Transcript 正式上传路径
 

@@ -150,7 +150,7 @@ function ieltsMaterialItemDirectories(moduleId, itemId) {
   if (!match) return [];
   const book = match[1];
   const root = `_content/ielts-academic/cambridge-${book}`;
-  if (moduleId === 'speaking') return [`${root}/speaking/items-v1`];
+  if (moduleId === 'speaking') return [`${root}/speaking/items-v2`, `${root}/speaking/items-v1`];
   if (moduleId === 'listening') return [`${root}/listening/items-v2`, `${root}/listening/items-v1`];
   return [`${root}/writing/items-v3`, `${root}/writing/items-v2`, `${root}/writing/items-v1`];
 }

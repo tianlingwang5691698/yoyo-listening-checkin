@@ -326,6 +326,13 @@ test('Unlock 1-4 听口练习册第三版使用独立静态目录', () => {
   ]);
 });
 
+test('Unlock 1 第二版 transcript 优先读取完整 v2 bundle', () => {
+  assert.deepEqual(TRANSCRIPT_BUNDLE_PATHS.unlock1, [
+    '_transcripts/A1/unlock1/bundle-wordaligned-v2.json',
+    '_transcripts/A1/unlock1/bundle.json'
+  ]);
+});
+
 test('B2 听力首屏只返回 Unlock 4 第三版数量摘要', () => {
   const materials = listeningPlanEngine.buildMaterialEntries('B2', {
     getCatalogSummary: catalogEngine.getCatalogSummary

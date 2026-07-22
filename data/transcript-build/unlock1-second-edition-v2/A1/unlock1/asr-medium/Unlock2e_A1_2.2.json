@@ -1,0 +1,2081 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "2.2 OK. So today I want to talk about a place with extreme temperatures. Take a look at the photos. What seasons do you see? Summer. Winter. Yes, that's right. Autumn. And... Spring. Yes. And they're all from one place, the central part of Hokkaido, in Japan. It has hot summers and cold winters. Let's look at photo A. What can we see? Well, it's a hot day in summer. And there's a beautiful lake and a beach. There's a blue sky and it's sunny. There are some beautiful lakes in central Hokkaido, so people like to swim and fish. Now here, in photo B, it's winter. There's lots of snow. It's also very cold. The temperature can get to minus 12 degrees Celsius. In photo C, you can see it's autumn. The temperature is a little cold, and the trees change colour to red and orange. There are many trees in Hokkaido, so it's very beautiful. And now we see spring in photo D. After the cold weather, spring is welcome in Hokkaido. The weather is warm, so the flowers grow. As you can see, Hokkaido is a place with four seasons and extreme temperatures in winter. But it's a beautiful place, so people like to do things outside.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.0,
+      "text": " 2.2",
+      "tokens": [
+        50364,
+        568,
+        13,
+        17,
+        50414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " 2",
+          "start": 0.0,
+          "end": 0.3,
+          "probability": 0.5139851570129395
+        },
+        {
+          "word": ".2",
+          "start": 0.3,
+          "end": 1.0,
+          "probability": 0.9929929375648499
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.04,
+      "end": 8.94,
+      "text": " OK. So today I want to talk about a place with extreme temperatures.",
+      "tokens": [
+        50474,
+        2264,
+        13,
+        407,
+        965,
+        286,
+        528,
+        281,
+        751,
+        466,
+        257,
+        1081,
+        365,
+        8084,
+        12633,
+        13,
+        50824
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " OK.",
+          "start": 2.04,
+          "end": 2.8,
+          "probability": 0.40373146533966064
+        },
+        {
+          "word": " So",
+          "start": 3.62,
+          "end": 4.18,
+          "probability": 0.9894706010818481
+        },
+        {
+          "word": " today",
+          "start": 4.18,
+          "end": 4.78,
+          "probability": 0.676767110824585
+        },
+        {
+          "word": " I",
+          "start": 4.78,
+          "end": 5.12,
+          "probability": 0.8015128374099731
+        },
+        {
+          "word": " want",
+          "start": 5.12,
+          "end": 5.44,
+          "probability": 0.9978475570678711
+        },
+        {
+          "word": " to",
+          "start": 5.44,
+          "end": 5.72,
+          "probability": 0.9976398944854736
+        },
+        {
+          "word": " talk",
+          "start": 5.72,
+          "end": 5.96,
+          "probability": 0.9993250370025635
+        },
+        {
+          "word": " about",
+          "start": 5.96,
+          "end": 6.34,
+          "probability": 0.9972091317176819
+        },
+        {
+          "word": " a",
+          "start": 6.34,
+          "end": 6.64,
+          "probability": 0.993381142616272
+        },
+        {
+          "word": " place",
+          "start": 6.64,
+          "end": 7.0,
+          "probability": 0.999480664730072
+        },
+        {
+          "word": " with",
+          "start": 7.0,
+          "end": 7.56,
+          "probability": 0.9939377307891846
+        },
+        {
+          "word": " extreme",
+          "start": 7.56,
+          "end": 8.2,
+          "probability": 0.9965574741363525
+        },
+        {
+          "word": " temperatures.",
+          "start": 8.2,
+          "end": 8.94,
+          "probability": 0.998166024684906
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.9,
+      "end": 11.34,
+      "text": " Take a look at the photos.",
+      "tokens": [
+        50854,
+        3664,
+        257,
+        574,
+        412,
+        264,
+        5787,
+        13,
+        50944
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " Take",
+          "start": 9.9,
+          "end": 10.2,
+          "probability": 0.9967398047447205
+        },
+        {
+          "word": " a",
+          "start": 10.2,
+          "end": 10.38,
+          "probability": 0.998314380645752
+        },
+        {
+          "word": " look",
+          "start": 10.38,
+          "end": 10.52,
+          "probability": 0.9994107484817505
+        },
+        {
+          "word": " at",
+          "start": 10.52,
+          "end": 10.7,
+          "probability": 0.9988996982574463
+        },
+        {
+          "word": " the",
+          "start": 10.7,
+          "end": 10.88,
+          "probability": 0.9959099292755127
+        },
+        {
+          "word": " photos.",
+          "start": 10.88,
+          "end": 11.34,
+          "probability": 0.9987081289291382
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 12.22,
+      "end": 13.88,
+      "text": " What seasons do you see?",
+      "tokens": [
+        50969,
+        708,
+        15050,
+        360,
+        291,
+        536,
+        30,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " What",
+          "start": 12.22,
+          "end": 12.54,
+          "probability": 0.9755743741989136
+        },
+        {
+          "word": " seasons",
+          "start": 12.54,
+          "end": 13.1,
+          "probability": 0.9906154870986938
+        },
+        {
+          "word": " do",
+          "start": 13.1,
+          "end": 13.36,
+          "probability": 0.9976266026496887
+        },
+        {
+          "word": " you",
+          "start": 13.36,
+          "end": 13.54,
+          "probability": 0.9993553757667542
+        },
+        {
+          "word": " see?",
+          "start": 13.54,
+          "end": 13.88,
+          "probability": 0.999289870262146
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 14.38,
+      "end": 14.94,
+      "text": " Summer.",
+      "tokens": [
+        51074,
+        16161,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " Summer.",
+          "start": 14.38,
+          "end": 14.94,
+          "probability": 0.9215526580810547
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 15.8,
+      "end": 16.24,
+      "text": " Winter.",
+      "tokens": [
+        51149,
+        16444,
+        13,
+        51194
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " Winter.",
+          "start": 15.8,
+          "end": 16.24,
+          "probability": 0.6005325317382812
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 16.94,
+      "end": 17.82,
+      "text": " Yes, that's right.",
+      "tokens": [
+        51199,
+        1079,
+        11,
+        300,
+        311,
+        558,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " Yes,",
+          "start": 16.94,
+          "end": 17.12,
+          "probability": 0.9134752154350281
+        },
+        {
+          "word": " that's",
+          "start": 17.12,
+          "end": 17.44,
+          "probability": 0.9951079487800598
+        },
+        {
+          "word": " right.",
+          "start": 17.44,
+          "end": 17.82,
+          "probability": 0.9995610117912292
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 18.24,
+      "end": 18.62,
+      "text": " Autumn.",
+      "tokens": [
+        51269,
+        45597,
+        13,
+        51304
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " Autumn.",
+          "start": 18.24,
+          "end": 18.62,
+          "probability": 0.9712079763412476
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 19.68,
+      "end": 20.08,
+      "text": " And...",
+      "tokens": [
+        51309,
+        400,
+        485,
+        51354
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " And...",
+          "start": 19.68,
+          "end": 20.08,
+          "probability": 0.5807165503501892
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 20.08,
+      "end": 20.46,
+      "text": " Spring.",
+      "tokens": [
+        51359,
+        14013,
+        13,
+        51404
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " Spring.",
+          "start": 20.08,
+          "end": 20.46,
+          "probability": 0.8543527126312256
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 21.24,
+      "end": 27.96,
+      "text": " Yes. And they're all from one place, the central part of Hokkaido, in Japan.",
+      "tokens": [
+        51419,
+        1079,
+        13,
+        400,
+        436,
+        434,
+        439,
+        490,
+        472,
+        1081,
+        11,
+        264,
+        5777,
+        644,
+        295,
+        46792,
+        2330,
+        2925,
+        11,
+        294,
+        3367,
+        13,
+        51769
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3285460679427437,
+      "compression_ratio": 1.3703703703703705,
+      "no_speech_prob": 0.36251214146614075,
+      "words": [
+        {
+          "word": " Yes.",
+          "start": 21.24,
+          "end": 21.94,
+          "probability": 0.9559375047683716
+        },
+        {
+          "word": " And",
+          "start": 22.24,
+          "end": 22.56,
+          "probability": 0.9904962778091431
+        },
+        {
+          "word": " they're",
+          "start": 22.56,
+          "end": 22.82,
+          "probability": 0.9701589345932007
+        },
+        {
+          "word": " all",
+          "start": 22.82,
+          "end": 23.1,
+          "probability": 0.9969504475593567
+        },
+        {
+          "word": " from",
+          "start": 23.1,
+          "end": 23.38,
+          "probability": 0.9988844990730286
+        },
+        {
+          "word": " one",
+          "start": 23.38,
+          "end": 23.72,
+          "probability": 0.9975587129592896
+        },
+        {
+          "word": " place,",
+          "start": 23.72,
+          "end": 24.24,
+          "probability": 0.9996007084846497
+        },
+        {
+          "word": " the",
+          "start": 24.8,
+          "end": 25.02,
+          "probability": 0.9919232726097107
+        },
+        {
+          "word": " central",
+          "start": 25.02,
+          "end": 25.48,
+          "probability": 0.9936980605125427
+        },
+        {
+          "word": " part",
+          "start": 25.48,
+          "end": 25.96,
+          "probability": 0.9991740584373474
+        },
+        {
+          "word": " of",
+          "start": 25.96,
+          "end": 26.2,
+          "probability": 0.9992521405220032
+        },
+        {
+          "word": " Hokkaido,",
+          "start": 26.2,
+          "end": 26.92,
+          "probability": 0.9962107141812643
+        },
+        {
+          "word": " in",
+          "start": 27.14,
+          "end": 27.4,
+          "probability": 0.997599184513092
+        },
+        {
+          "word": " Japan.",
+          "start": 27.4,
+          "end": 27.96,
+          "probability": 0.9983686804771423
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2796,
+      "start": 27.96,
+      "end": 31.78,
+      "text": " It has hot summers and cold winters.",
+      "tokens": [
+        50364,
+        467,
+        575,
+        2368,
+        46474,
+        293,
+        3554,
+        1942,
+        1559,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10453685847195712,
+      "compression_ratio": 1.542857142857143,
+      "no_speech_prob": 0.2927643358707428,
+      "words": [
+        {
+          "word": " It",
+          "start": 27.96,
+          "end": 28.7,
+          "probability": 0.6375070810317993
+        },
+        {
+          "word": " has",
+          "start": 28.7,
+          "end": 29.08,
+          "probability": 0.972018837928772
+        },
+        {
+          "word": " hot",
+          "start": 29.08,
+          "end": 29.52,
+          "probability": 0.9819126129150391
+        },
+        {
+          "word": " summers",
+          "start": 29.52,
+          "end": 29.96,
+          "probability": 0.9890602827072144
+        },
+        {
+          "word": " and",
+          "start": 29.96,
+          "end": 30.52,
+          "probability": 0.955868661403656
+        },
+        {
+          "word": " cold",
+          "start": 30.52,
+          "end": 31.02,
+          "probability": 0.9976080656051636
+        },
+        {
+          "word": " winters.",
+          "start": 31.02,
+          "end": 31.78,
+          "probability": 0.9978923499584198
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2796,
+      "start": 33.1,
+      "end": 34.84,
+      "text": " Let's look at photo A.",
+      "tokens": [
+        50564,
+        961,
+        311,
+        574,
+        412,
+        5052,
+        316,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10453685847195712,
+      "compression_ratio": 1.542857142857143,
+      "no_speech_prob": 0.2927643358707428,
+      "words": [
+        {
+          "word": " Let's",
+          "start": 33.1,
+          "end": 33.34,
+          "probability": 0.9709759950637817
+        },
+        {
+          "word": " look",
+          "start": 33.34,
+          "end": 33.66,
+          "probability": 0.9967082738876343
+        },
+        {
+          "word": " at",
+          "start": 33.66,
+          "end": 33.82,
+          "probability": 0.996737539768219
+        },
+        {
+          "word": " photo",
+          "start": 33.82,
+          "end": 34.2,
+          "probability": 0.8634703755378723
+        },
+        {
+          "word": " A.",
+          "start": 34.2,
+          "end": 34.84,
+          "probability": 0.8897407054901123
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2796,
+      "start": 35.36,
+      "end": 36.34,
+      "text": " What can we see?",
+      "tokens": [
+        50714,
+        708,
+        393,
+        321,
+        536,
+        30,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10453685847195712,
+      "compression_ratio": 1.542857142857143,
+      "no_speech_prob": 0.2927643358707428,
+      "words": [
+        {
+          "word": " What",
+          "start": 35.36,
+          "end": 35.56,
+          "probability": 0.9782689213752747
+        },
+        {
+          "word": " can",
+          "start": 35.56,
+          "end": 35.8,
+          "probability": 0.9981874823570251
+        },
+        {
+          "word": " we",
+          "start": 35.8,
+          "end": 36.04,
+          "probability": 0.9983420372009277
+        },
+        {
+          "word": " see?",
+          "start": 36.04,
+          "end": 36.34,
+          "probability": 0.9994196891784668
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 2796,
+      "start": 37.1,
+      "end": 39.9,
+      "text": " Well, it's a hot day in summer.",
+      "tokens": [
+        50814,
+        1042,
+        11,
+        309,
+        311,
+        257,
+        2368,
+        786,
+        294,
+        4266,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10453685847195712,
+      "compression_ratio": 1.542857142857143,
+      "no_speech_prob": 0.2927643358707428,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 37.1,
+          "end": 37.62,
+          "probability": 0.9568459391593933
+        },
+        {
+          "word": " it's",
+          "start": 37.78,
+          "end": 38.24,
+          "probability": 0.985519528388977
+        },
+        {
+          "word": " a",
+          "start": 38.24,
+          "end": 38.52,
+          "probability": 0.9772501587867737
+        },
+        {
+          "word": " hot",
+          "start": 38.52,
+          "end": 38.76,
+          "probability": 0.9775471687316895
+        },
+        {
+          "word": " day",
+          "start": 38.76,
+          "end": 39.14,
+          "probability": 0.9991230368614197
+        },
+        {
+          "word": " in",
+          "start": 39.14,
+          "end": 39.56,
+          "probability": 0.9969327449798584
+        },
+        {
+          "word": " summer.",
+          "start": 39.56,
+          "end": 39.9,
+          "probability": 0.9787977337837219
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 2796,
+      "start": 40.94,
+      "end": 44.22,
+      "text": " And there's a beautiful lake and a beach.",
+      "tokens": [
+        50964,
+        400,
+        456,
+        311,
+        257,
+        2238,
+        11001,
+        293,
+        257,
+        7534,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10453685847195712,
+      "compression_ratio": 1.542857142857143,
+      "no_speech_prob": 0.2927643358707428,
+      "words": [
+        {
+          "word": " And",
+          "start": 40.94,
+          "end": 41.26,
+          "probability": 0.9341384172439575
+        },
+        {
+          "word": " there's",
+          "start": 41.26,
+          "end": 41.72,
+          "probability": 0.9776799082756042
+        },
+        {
+          "word": " a",
+          "start": 41.72,
+          "end": 41.94,
+          "probability": 0.9950699806213379
+        },
+        {
+          "word": " beautiful",
+          "start": 41.94,
+          "end": 42.48,
+          "probability": 0.9985221028327942
+        },
+        {
+          "word": " lake",
+          "start": 42.48,
+          "end": 43.02,
+          "probability": 0.9989757537841797
+        },
+        {
+          "word": " and",
+          "start": 43.02,
+          "end": 43.6,
+          "probability": 0.8923525810241699
+        },
+        {
+          "word": " a",
+          "start": 43.6,
+          "end": 43.78,
+          "probability": 0.9884535670280457
+        },
+        {
+          "word": " beach.",
+          "start": 43.78,
+          "end": 44.22,
+          "probability": 0.9985141158103943
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 2796,
+      "start": 45.58,
+      "end": 48.16,
+      "text": " There's a blue sky and it's sunny.",
+      "tokens": [
+        51214,
+        821,
+        311,
+        257,
+        3344,
+        5443,
+        293,
+        309,
+        311,
+        20412,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10453685847195712,
+      "compression_ratio": 1.542857142857143,
+      "no_speech_prob": 0.2927643358707428,
+      "words": [
+        {
+          "word": " There's",
+          "start": 45.58,
+          "end": 46.02,
+          "probability": 0.9928102791309357
+        },
+        {
+          "word": " a",
+          "start": 46.02,
+          "end": 46.2,
+          "probability": 0.9955310225486755
+        },
+        {
+          "word": " blue",
+          "start": 46.2,
+          "end": 46.5,
+          "probability": 0.9987795948982239
+        },
+        {
+          "word": " sky",
+          "start": 46.5,
+          "end": 47.14,
+          "probability": 0.9996598958969116
+        },
+        {
+          "word": " and",
+          "start": 47.14,
+          "end": 47.42,
+          "probability": 0.8390164971351624
+        },
+        {
+          "word": " it's",
+          "start": 47.42,
+          "end": 47.78,
+          "probability": 0.9921044707298279
+        },
+        {
+          "word": " sunny.",
+          "start": 47.78,
+          "end": 48.16,
+          "probability": 0.9993444085121155
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 2796,
+      "start": 49.26,
+      "end": 52.64,
+      "text": " There are some beautiful lakes in central Hokkaido,",
+      "tokens": [
+        51414,
+        821,
+        366,
+        512,
+        2238,
+        25595,
+        294,
+        5777,
+        46792,
+        2330,
+        2925,
+        11,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10453685847195712,
+      "compression_ratio": 1.542857142857143,
+      "no_speech_prob": 0.2927643358707428,
+      "words": [
+        {
+          "word": " There",
+          "start": 49.26,
+          "end": 49.42,
+          "probability": 0.9949918389320374
+        },
+        {
+          "word": " are",
+          "start": 49.42,
+          "end": 49.7,
+          "probability": 0.996207594871521
+        },
+        {
+          "word": " some",
+          "start": 49.7,
+          "end": 49.98,
+          "probability": 0.9968864321708679
+        },
+        {
+          "word": " beautiful",
+          "start": 49.98,
+          "end": 50.6,
+          "probability": 0.9986492991447449
+        },
+        {
+          "word": " lakes",
+          "start": 50.6,
+          "end": 51.06,
+          "probability": 0.999123752117157
+        },
+        {
+          "word": " in",
+          "start": 51.06,
+          "end": 51.42,
+          "probability": 0.9977918863296509
+        },
+        {
+          "word": " central",
+          "start": 51.42,
+          "end": 51.9,
+          "probability": 0.868367612361908
+        },
+        {
+          "word": " Hokkaido,",
+          "start": 51.9,
+          "end": 52.64,
+          "probability": 0.9964200854301453
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 2796,
+      "start": 53.08,
+      "end": 55.66,
+      "text": " so people like to swim and fish.",
+      "tokens": [
+        51614,
+        370,
+        561,
+        411,
+        281,
+        7110,
+        293,
+        3506,
+        13,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.10453685847195712,
+      "compression_ratio": 1.542857142857143,
+      "no_speech_prob": 0.2927643358707428,
+      "words": [
+        {
+          "word": " so",
+          "start": 53.08,
+          "end": 53.44,
+          "probability": 0.9852966666221619
+        },
+        {
+          "word": " people",
+          "start": 53.44,
+          "end": 53.78,
+          "probability": 0.9853380918502808
+        },
+        {
+          "word": " like",
+          "start": 53.78,
+          "end": 54.14,
+          "probability": 0.9982976317405701
+        },
+        {
+          "word": " to",
+          "start": 54.14,
+          "end": 54.48,
+          "probability": 0.9995607733726501
+        },
+        {
+          "word": " swim",
+          "start": 54.48,
+          "end": 54.74,
+          "probability": 0.9988083839416504
+        },
+        {
+          "word": " and",
+          "start": 54.74,
+          "end": 55.16,
+          "probability": 0.9981265664100647
+        },
+        {
+          "word": " fish.",
+          "start": 55.16,
+          "end": 55.66,
+          "probability": 0.9977993369102478
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 5566,
+      "start": 56.76,
+      "end": 61.1,
+      "text": " Now here, in photo B, it's winter.",
+      "tokens": [
+        50364,
+        823,
+        510,
+        11,
+        294,
+        5052,
+        363,
+        11,
+        309,
+        311,
+        6355,
+        13,
+        50654
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17833489735921224,
+      "compression_ratio": 1.5308641975308641,
+      "no_speech_prob": 0.14669151604175568,
+      "words": [
+        {
+          "word": " Now",
+          "start": 56.76,
+          "end": 57.64,
+          "probability": 0.7350634932518005
+        },
+        {
+          "word": " here,",
+          "start": 57.64,
+          "end": 58.32,
+          "probability": 0.8073785305023193
+        },
+        {
+          "word": " in",
+          "start": 58.56,
+          "end": 58.9,
+          "probability": 0.9937354922294617
+        },
+        {
+          "word": " photo",
+          "start": 58.9,
+          "end": 59.34,
+          "probability": 0.8526661396026611
+        },
+        {
+          "word": " B,",
+          "start": 59.34,
+          "end": 59.9,
+          "probability": 0.8991035223007202
+        },
+        {
+          "word": " it's",
+          "start": 60.28,
+          "end": 60.64,
+          "probability": 0.9668115675449371
+        },
+        {
+          "word": " winter.",
+          "start": 60.64,
+          "end": 61.1,
+          "probability": 0.9742442965507507
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 5566,
+      "start": 62.04,
+      "end": 63.58,
+      "text": " There's lots of snow.",
+      "tokens": [
+        50654,
+        821,
+        311,
+        3195,
+        295,
+        5756,
+        13,
+        50804
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17833489735921224,
+      "compression_ratio": 1.5308641975308641,
+      "no_speech_prob": 0.14669151604175568,
+      "words": [
+        {
+          "word": " There's",
+          "start": 62.04,
+          "end": 62.44,
+          "probability": 0.9725847840309143
+        },
+        {
+          "word": " lots",
+          "start": 62.44,
+          "end": 62.78,
+          "probability": 0.9900503158569336
+        },
+        {
+          "word": " of",
+          "start": 62.78,
+          "end": 63.16,
+          "probability": 0.9992703795433044
+        },
+        {
+          "word": " snow.",
+          "start": 63.16,
+          "end": 63.58,
+          "probability": 0.9992897510528564
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 5566,
+      "start": 64.3,
+      "end": 66.36,
+      "text": " It's also very cold.",
+      "tokens": [
+        50804,
+        467,
+        311,
+        611,
+        588,
+        3554,
+        13,
+        50932
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17833489735921224,
+      "compression_ratio": 1.5308641975308641,
+      "no_speech_prob": 0.14669151604175568,
+      "words": [
+        {
+          "word": " It's",
+          "start": 64.3,
+          "end": 64.7,
+          "probability": 0.9917187690734863
+        },
+        {
+          "word": " also",
+          "start": 64.7,
+          "end": 65.28,
+          "probability": 0.9986780285835266
+        },
+        {
+          "word": " very",
+          "start": 65.28,
+          "end": 65.76,
+          "probability": 0.9945297837257385
+        },
+        {
+          "word": " cold.",
+          "start": 65.76,
+          "end": 66.36,
+          "probability": 0.9992154836654663
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 5566,
+      "start": 67.08,
+      "end": 70.72,
+      "text": " The temperature can get to minus 12 degrees Celsius.",
+      "tokens": [
+        50932,
+        440,
+        4292,
+        393,
+        483,
+        281,
+        3175,
+        2272,
+        5310,
+        22658,
+        13,
+        51189
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17833489735921224,
+      "compression_ratio": 1.5308641975308641,
+      "no_speech_prob": 0.14669151604175568,
+      "words": [
+        {
+          "word": " The",
+          "start": 67.08,
+          "end": 67.22,
+          "probability": 0.9851047396659851
+        },
+        {
+          "word": " temperature",
+          "start": 67.22,
+          "end": 67.84,
+          "probability": 0.9896703362464905
+        },
+        {
+          "word": " can",
+          "start": 67.84,
+          "end": 68.26,
+          "probability": 0.9984543323516846
+        },
+        {
+          "word": " get",
+          "start": 68.26,
+          "end": 68.44,
+          "probability": 0.9986653327941895
+        },
+        {
+          "word": " to",
+          "start": 68.44,
+          "end": 68.78,
+          "probability": 0.9949660897254944
+        },
+        {
+          "word": " minus",
+          "start": 68.78,
+          "end": 69.2,
+          "probability": 0.47027358412742615
+        },
+        {
+          "word": " 12",
+          "start": 69.2,
+          "end": 69.66,
+          "probability": 0.8522785902023315
+        },
+        {
+          "word": " degrees",
+          "start": 69.66,
+          "end": 70.16,
+          "probability": 0.8608002066612244
+        },
+        {
+          "word": " Celsius.",
+          "start": 70.16,
+          "end": 70.72,
+          "probability": 0.8007708787918091
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 5566,
+      "start": 72.12,
+      "end": 75.68,
+      "text": " In photo C, you can see it's autumn.",
+      "tokens": [
+        51189,
+        682,
+        5052,
+        383,
+        11,
+        291,
+        393,
+        536,
+        309,
+        311,
+        24604,
+        13,
+        51402
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17833489735921224,
+      "compression_ratio": 1.5308641975308641,
+      "no_speech_prob": 0.14669151604175568,
+      "words": [
+        {
+          "word": " In",
+          "start": 72.12,
+          "end": 72.36,
+          "probability": 0.9916514754295349
+        },
+        {
+          "word": " photo",
+          "start": 72.36,
+          "end": 72.98,
+          "probability": 0.9769263863563538
+        },
+        {
+          "word": " C,",
+          "start": 72.98,
+          "end": 73.44,
+          "probability": 0.9927197694778442
+        },
+        {
+          "word": " you",
+          "start": 73.86,
+          "end": 74.08,
+          "probability": 0.9972065091133118
+        },
+        {
+          "word": " can",
+          "start": 74.08,
+          "end": 74.44,
+          "probability": 0.9992052912712097
+        },
+        {
+          "word": " see",
+          "start": 74.44,
+          "end": 74.74,
+          "probability": 0.9994346499443054
+        },
+        {
+          "word": " it's",
+          "start": 74.74,
+          "end": 75.3,
+          "probability": 0.9830987453460693
+        },
+        {
+          "word": " autumn.",
+          "start": 75.3,
+          "end": 75.68,
+          "probability": 0.9738805890083313
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 5566,
+      "start": 76.44,
+      "end": 82.9,
+      "text": " The temperature is a little cold, and the trees change colour to red and orange.",
+      "tokens": [
+        51402,
+        440,
+        4292,
+        307,
+        257,
+        707,
+        3554,
+        11,
+        293,
+        264,
+        5852,
+        1319,
+        8267,
+        281,
+        2182,
+        293,
+        7671,
+        13,
+        51772
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17833489735921224,
+      "compression_ratio": 1.5308641975308641,
+      "no_speech_prob": 0.14669151604175568,
+      "words": [
+        {
+          "word": " The",
+          "start": 76.44,
+          "end": 76.64,
+          "probability": 0.9959413409233093
+        },
+        {
+          "word": " temperature",
+          "start": 76.64,
+          "end": 77.16,
+          "probability": 0.9954837560653687
+        },
+        {
+          "word": " is",
+          "start": 77.16,
+          "end": 77.64,
+          "probability": 0.9986556768417358
+        },
+        {
+          "word": " a",
+          "start": 77.64,
+          "end": 77.9,
+          "probability": 0.9973427653312683
+        },
+        {
+          "word": " little",
+          "start": 77.9,
+          "end": 78.14,
+          "probability": 0.9992671608924866
+        },
+        {
+          "word": " cold,",
+          "start": 78.14,
+          "end": 78.62,
+          "probability": 0.9989859461784363
+        },
+        {
+          "word": " and",
+          "start": 79.14,
+          "end": 79.36,
+          "probability": 0.9900744557380676
+        },
+        {
+          "word": " the",
+          "start": 79.36,
+          "end": 79.66,
+          "probability": 0.9979369640350342
+        },
+        {
+          "word": " trees",
+          "start": 79.66,
+          "end": 80.0,
+          "probability": 0.9927570223808289
+        },
+        {
+          "word": " change",
+          "start": 80.0,
+          "end": 80.6,
+          "probability": 0.9981814622879028
+        },
+        {
+          "word": " colour",
+          "start": 80.6,
+          "end": 81.08,
+          "probability": 0.6691384315490723
+        },
+        {
+          "word": " to",
+          "start": 81.08,
+          "end": 81.6,
+          "probability": 0.9778117537498474
+        },
+        {
+          "word": " red",
+          "start": 81.6,
+          "end": 82.04,
+          "probability": 0.9977255463600159
+        },
+        {
+          "word": " and",
+          "start": 82.04,
+          "end": 82.44,
+          "probability": 0.9949904084205627
+        },
+        {
+          "word": " orange.",
+          "start": 82.44,
+          "end": 82.9,
+          "probability": 0.9994377493858337
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 8290,
+      "start": 82.9,
+      "end": 88.24,
+      "text": " There are many trees in Hokkaido, so it's very beautiful.",
+      "tokens": [
+        50364,
+        821,
+        366,
+        867,
+        5852,
+        294,
+        46792,
+        2330,
+        2925,
+        11,
+        370,
+        309,
+        311,
+        588,
+        2238,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11621102200278753,
+      "compression_ratio": 1.5191256830601092,
+      "no_speech_prob": 0.21873699128627777,
+      "words": [
+        {
+          "word": " There",
+          "start": 82.9,
+          "end": 83.88,
+          "probability": 0.7844603657722473
+        },
+        {
+          "word": " are",
+          "start": 83.88,
+          "end": 84.12,
+          "probability": 0.995576024055481
+        },
+        {
+          "word": " many",
+          "start": 84.12,
+          "end": 84.52,
+          "probability": 0.9974888563156128
+        },
+        {
+          "word": " trees",
+          "start": 84.52,
+          "end": 85.04,
+          "probability": 0.9856637716293335
+        },
+        {
+          "word": " in",
+          "start": 85.04,
+          "end": 85.42,
+          "probability": 0.994307816028595
+        },
+        {
+          "word": " Hokkaido,",
+          "start": 85.42,
+          "end": 86.08,
+          "probability": 0.9975401163101196
+        },
+        {
+          "word": " so",
+          "start": 86.66,
+          "end": 86.88,
+          "probability": 0.985639214515686
+        },
+        {
+          "word": " it's",
+          "start": 86.88,
+          "end": 87.22,
+          "probability": 0.9578218758106232
+        },
+        {
+          "word": " very",
+          "start": 87.22,
+          "end": 87.6,
+          "probability": 0.9926527738571167
+        },
+        {
+          "word": " beautiful.",
+          "start": 87.6,
+          "end": 88.24,
+          "probability": 0.9982693195343018
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 8290,
+      "start": 90.36,
+      "end": 93.88,
+      "text": " And now we see spring in photo D.",
+      "tokens": [
+        50714,
+        400,
+        586,
+        321,
+        536,
+        5587,
+        294,
+        5052,
+        413,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11621102200278753,
+      "compression_ratio": 1.5191256830601092,
+      "no_speech_prob": 0.21873699128627777,
+      "words": [
+        {
+          "word": " And",
+          "start": 90.36,
+          "end": 90.46,
+          "probability": 0.9124395847320557
+        },
+        {
+          "word": " now",
+          "start": 90.46,
+          "end": 90.92,
+          "probability": 0.9897320866584778
+        },
+        {
+          "word": " we",
+          "start": 90.92,
+          "end": 91.2,
+          "probability": 0.9292904138565063
+        },
+        {
+          "word": " see",
+          "start": 91.2,
+          "end": 91.5,
+          "probability": 0.9967026114463806
+        },
+        {
+          "word": " spring",
+          "start": 91.5,
+          "end": 92.18,
+          "probability": 0.5976991057395935
+        },
+        {
+          "word": " in",
+          "start": 92.18,
+          "end": 92.72,
+          "probability": 0.9674512147903442
+        },
+        {
+          "word": " photo",
+          "start": 92.72,
+          "end": 93.2,
+          "probability": 0.5595606565475464
+        },
+        {
+          "word": " D.",
+          "start": 93.2,
+          "end": 93.88,
+          "probability": 0.8877660632133484
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 8290,
+      "start": 94.58,
+      "end": 98.9,
+      "text": " After the cold weather, spring is welcome in Hokkaido.",
+      "tokens": [
+        50914,
+        2381,
+        264,
+        3554,
+        5503,
+        11,
+        5587,
+        307,
+        2928,
+        294,
+        46792,
+        2330,
+        2925,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11621102200278753,
+      "compression_ratio": 1.5191256830601092,
+      "no_speech_prob": 0.21873699128627777,
+      "words": [
+        {
+          "word": " After",
+          "start": 94.58,
+          "end": 94.9,
+          "probability": 0.9793370962142944
+        },
+        {
+          "word": " the",
+          "start": 94.9,
+          "end": 95.24,
+          "probability": 0.9980562925338745
+        },
+        {
+          "word": " cold",
+          "start": 95.24,
+          "end": 95.6,
+          "probability": 0.9969481825828552
+        },
+        {
+          "word": " weather,",
+          "start": 95.6,
+          "end": 96.04,
+          "probability": 0.9937560558319092
+        },
+        {
+          "word": " spring",
+          "start": 96.4,
+          "end": 96.8,
+          "probability": 0.9777941107749939
+        },
+        {
+          "word": " is",
+          "start": 96.8,
+          "end": 97.3,
+          "probability": 0.9988977909088135
+        },
+        {
+          "word": " welcome",
+          "start": 97.3,
+          "end": 97.74,
+          "probability": 0.989257276058197
+        },
+        {
+          "word": " in",
+          "start": 97.74,
+          "end": 98.0,
+          "probability": 0.9975536465644836
+        },
+        {
+          "word": " Hokkaido.",
+          "start": 98.0,
+          "end": 98.9,
+          "probability": 0.998721698919932
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 8290,
+      "start": 99.52,
+      "end": 102.52,
+      "text": " The weather is warm, so the flowers grow.",
+      "tokens": [
+        51164,
+        440,
+        5503,
+        307,
+        4561,
+        11,
+        370,
+        264,
+        8085,
+        1852,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11621102200278753,
+      "compression_ratio": 1.5191256830601092,
+      "no_speech_prob": 0.21873699128627777,
+      "words": [
+        {
+          "word": " The",
+          "start": 99.52,
+          "end": 99.66,
+          "probability": 0.9847480654716492
+        },
+        {
+          "word": " weather",
+          "start": 99.66,
+          "end": 99.94,
+          "probability": 0.9958698153495789
+        },
+        {
+          "word": " is",
+          "start": 99.94,
+          "end": 100.38,
+          "probability": 0.9992035031318665
+        },
+        {
+          "word": " warm,",
+          "start": 100.38,
+          "end": 100.86,
+          "probability": 0.99904865026474
+        },
+        {
+          "word": " so",
+          "start": 101.1,
+          "end": 101.4,
+          "probability": 0.9976436495780945
+        },
+        {
+          "word": " the",
+          "start": 101.4,
+          "end": 101.7,
+          "probability": 0.9962097406387329
+        },
+        {
+          "word": " flowers",
+          "start": 101.7,
+          "end": 102.02,
+          "probability": 0.997621476650238
+        },
+        {
+          "word": " grow.",
+          "start": 102.02,
+          "end": 102.52,
+          "probability": 0.9973771572113037
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 8290,
+      "start": 103.4,
+      "end": 110.52,
+      "text": " As you can see, Hokkaido is a place with four seasons and extreme temperatures in winter.",
+      "tokens": [
+        51364,
+        1018,
+        291,
+        393,
+        536,
+        11,
+        46792,
+        2330,
+        2925,
+        307,
+        257,
+        1081,
+        365,
+        1451,
+        15050,
+        293,
+        8084,
+        12633,
+        294,
+        6355,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11621102200278753,
+      "compression_ratio": 1.5191256830601092,
+      "no_speech_prob": 0.21873699128627777,
+      "words": [
+        {
+          "word": " As",
+          "start": 103.4,
+          "end": 103.66,
+          "probability": 0.9920744895935059
+        },
+        {
+          "word": " you",
+          "start": 103.66,
+          "end": 103.84,
+          "probability": 0.9992154836654663
+        },
+        {
+          "word": " can",
+          "start": 103.84,
+          "end": 104.12,
+          "probability": 0.9980453252792358
+        },
+        {
+          "word": " see,",
+          "start": 104.12,
+          "end": 104.52,
+          "probability": 0.9995908141136169
+        },
+        {
+          "word": " Hokkaido",
+          "start": 104.84,
+          "end": 105.46,
+          "probability": 0.9974029461542765
+        },
+        {
+          "word": " is",
+          "start": 105.46,
+          "end": 105.66,
+          "probability": 0.9981287121772766
+        },
+        {
+          "word": " a",
+          "start": 105.66,
+          "end": 105.94,
+          "probability": 0.9951558113098145
+        },
+        {
+          "word": " place",
+          "start": 105.94,
+          "end": 106.26,
+          "probability": 0.9997223019599915
+        },
+        {
+          "word": " with",
+          "start": 106.26,
+          "end": 106.68,
+          "probability": 0.996780276298523
+        },
+        {
+          "word": " four",
+          "start": 106.68,
+          "end": 107.1,
+          "probability": 0.9273360967636108
+        },
+        {
+          "word": " seasons",
+          "start": 107.1,
+          "end": 107.68,
+          "probability": 0.9981375932693481
+        },
+        {
+          "word": " and",
+          "start": 107.68,
+          "end": 108.38,
+          "probability": 0.8151188492774963
+        },
+        {
+          "word": " extreme",
+          "start": 108.38,
+          "end": 109.04,
+          "probability": 0.9984503984451294
+        },
+        {
+          "word": " temperatures",
+          "start": 109.04,
+          "end": 109.76,
+          "probability": 0.9940313696861267
+        },
+        {
+          "word": " in",
+          "start": 109.76,
+          "end": 110.12,
+          "probability": 0.9968024492263794
+        },
+        {
+          "word": " winter.",
+          "start": 110.12,
+          "end": 110.52,
+          "probability": 0.9832661151885986
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 11052,
+      "start": 110.52,
+      "end": 117.02,
+      "text": " But it's a beautiful place, so people like to do things outside.",
+      "tokens": [
+        50364,
+        583,
+        309,
+        311,
+        257,
+        2238,
+        1081,
+        11,
+        370,
+        561,
+        411,
+        281,
+        360,
+        721,
+        2380,
+        13,
+        50692
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19108712673187256,
+      "compression_ratio": 0.9846153846153847,
+      "no_speech_prob": 0.3106977045536041,
+      "words": [
+        {
+          "word": " But",
+          "start": 110.52,
+          "end": 111.58,
+          "probability": 0.7697219252586365
+        },
+        {
+          "word": " it's",
+          "start": 111.58,
+          "end": 112.18,
+          "probability": 0.9474338293075562
+        },
+        {
+          "word": " a",
+          "start": 112.18,
+          "end": 112.42,
+          "probability": 0.9961515069007874
+        },
+        {
+          "word": " beautiful",
+          "start": 112.42,
+          "end": 112.94,
+          "probability": 0.9905403852462769
+        },
+        {
+          "word": " place,",
+          "start": 112.94,
+          "end": 113.42,
+          "probability": 0.9995560050010681
+        },
+        {
+          "word": " so",
+          "start": 113.9,
+          "end": 114.28,
+          "probability": 0.9791362881660461
+        },
+        {
+          "word": " people",
+          "start": 114.28,
+          "end": 114.64,
+          "probability": 0.9955356121063232
+        },
+        {
+          "word": " like",
+          "start": 114.64,
+          "end": 115.02,
+          "probability": 0.9976024031639099
+        },
+        {
+          "word": " to",
+          "start": 115.02,
+          "end": 115.32,
+          "probability": 0.9978271126747131
+        },
+        {
+          "word": " do",
+          "start": 115.32,
+          "end": 115.52,
+          "probability": 0.9970678687095642
+        },
+        {
+          "word": " things",
+          "start": 115.52,
+          "end": 116.12,
+          "probability": 0.997984766960144
+        },
+        {
+          "word": " outside.",
+          "start": 116.12,
+          "end": 117.02,
+          "probability": 0.9906272888183594
+        }
+      ]
+    }
+  ]
+}

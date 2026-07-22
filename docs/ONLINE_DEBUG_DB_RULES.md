@@ -1,5 +1,21 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-22 IELTS 口语评分身份分流
+
+1. 现象：IELTS 回答需要学生进入口语记录和日报，同时允许家长试做但不得写学生数据。
+2. 查询：`pages/speaking.submitIeltsSpeaking -> createSpeakingUploadUrl/submitSpeakingAttempt -> taskAttempts -> upsertDailyReport`，并核对设备 `studyRole`。
+3. 结论：仅依赖前端 `planRunType` 会让旧客户端或异常参数产生身份边界风险；口语内容评分旧密钥对 `gpt-5.6-sol` 返回 401。
+4. 修复：云端按真实设备身份强制 `student=normal / parent=preview`；学生评分写入 `taskAttempts` 并刷新日报，家长仅返回评分；口语内容评分复用已验证的写作 `gpt-5.6-sol` 端点和密钥，腾讯 SOE 配置保持独立。
+5. 是否需要发版：`yoyo` 云函数与环境变量已部署后立即生效；前端显式传递身份模式需随下一小程序版本发布。
+
+### 2026-07-22 学生分级跟读评分未进入记录和日报
+
+1. 现象：腾讯 SOE 已返回分数，但学生的口语记录和当日日报没有该次跟读。
+2. 查询：`pages/speaking.submitPronunciation -> evaluateSpeakingPronunciation -> taskAttempts -> upsertDailyReport -> dailyReports.speakingAttempts`。
+3. 结论：前端固定发送 `planRunType=preview`，且云端 SOE 接口只返回评分、不写 `taskAttempts`。
+4. 修复：学生发送 `normal` 并写入口语记录后刷新日报；家长继续使用 `preview`，不写学生数据。
+5. 是否需要发版：`yoyo` 云函数已部署；前端身份分流需重新发布小程序。
+
 ### 2026-07-17 成长记录与日报详情不一致
 
 1. 现象：相同学生和日期从成长记录、家长日报进入后，最终显示记录不同。

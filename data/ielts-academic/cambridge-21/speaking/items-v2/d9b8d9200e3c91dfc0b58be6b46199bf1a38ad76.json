@@ -1,0 +1,210 @@
+{
+  "_id": "ielts-academic-21-test-3-speaking",
+  "id": "ielts-academic-21-test-3-speaking",
+  "title": "Cambridge IELTS 21 Test 3 Speaking",
+  "year": 2026,
+  "city": "Cambridge",
+  "district": "Test 3",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思21（A类）.pdf",
+  "book": "Cambridge IELTS 21 Academic",
+  "testNumber": 3,
+  "images": [
+    {
+      "cloudPath": "_content/ielts-academic/cambridge-21/assets/pages/c21-page-075-6e40b931ea.jpg",
+      "localPath": "data/ielts-academic/cambridge-21/assets/pages/c21-page-075-6e40b931ea.jpg",
+      "alt": "Cambridge IELTS 21 Test 3 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "When you go shopping, do you usually pay for things by cash or by card?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Are you generally careful about how much money you spend?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "Have you ever spent money on something you didn't need?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "How important is it to you to save money for the future?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe an interesting garden or park you have seen. You should say: where this garden or park is; how big it is; what you saw in this garden/park; and explain why you think this garden/park is interesting.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "What are the advantages of having a home with a garden?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "How could people living in apartment blocks grow plants and vegetables?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "How interested are people in your country in TV shows and magazines about gardens?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Do you think that gardening is a hobby mainly for older people?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "What are the benefits for people of gardening as a hobby?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-21-test-3-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Will gardening be a more popular hobby in the future?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Spending and saving money",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-1-1",
+              "number": 1,
+              "prompt": "When you go shopping, do you usually pay for things by cash or by card?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-1-2",
+              "number": 2,
+              "prompt": "Are you generally careful about how much money you spend?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-1-3",
+              "number": 3,
+              "prompt": "Have you ever spent money on something you didn't need?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-1-4",
+              "number": 4,
+              "prompt": "How important is it to you to save money for the future?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-21-test-3-speaking-part-2-1",
+          "task": "Describe an interesting garden or park you have seen.",
+          "cuePoints": [
+            "where this garden or park is",
+            "how big it is",
+            "what you saw in this garden/park"
+          ],
+          "closingPrompt": "and explain why you think this garden/park is interesting."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Homes and gardens",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What are the advantages of having a home with a garden?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-3-2",
+              "number": 2,
+              "prompt": "How could people living in apartment blocks grow plants and vegetables?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-3-3",
+              "number": 3,
+              "prompt": "How interested are people in your country in TV shows and magazines about gardens?"
+            }
+          ]
+        },
+        {
+          "title": "Gardening as a hobby",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Do you think that gardening is a hobby mainly for older people?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-3-5",
+              "number": 2,
+              "prompt": "What are the benefits for people of gardening as a hobby?"
+            },
+            {
+              "exerciseId": "ielts-academic-21-test-3-speaking-part-3-6",
+              "number": 3,
+              "prompt": "Will gardening be a more popular hobby in the future?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "_id": "ielts-academic-17-test-1-speaking",
+  "id": "ielts-academic-17-test-1-speaking",
+  "title": "Cambridge IELTS 17 Test 1 Speaking",
+  "year": 2022,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思17（A类）.pdf",
+  "book": "Cambridge IELTS 17 Academic",
+  "bookNumber": 17,
+  "testNumber": 1,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-17/speaking/source-pages-v1/test-1-speaking-e6b9ff8c06.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-17/speaking/source-pages-v1/test-1-speaking-e6b9ff8c06.jpg",
+      "alt": "Cambridge IELTS 17 Test 1 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "History What did you study in history lessons when you were at school?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "History Did you enjoy studying history at school? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "History How often do you watch TV programmes about history now? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "History What period in history would you like to learn more about? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe the neighbourhood you lived in when you were a child. You should say: where in your town/city the neighbourhood was what kind of people lived there what it was like to live in this neighbourhood and explain whether you would like to live in this neighbourhood in the future.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Neighbours What sort of things can neighbours do to help each other?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Neighbours How well do people generally know their neighbours in your country?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "Neighbours How important do you think it is to have good neighbours?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Facilities in cities Which facilities are most important to people living in cities?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Facilities in cities How does shopping in small local shops differ from shopping in large city centre shops?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-17-test-1-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Facilities in cities Do you think that children should always go to the school nearest to where they live?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "History",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-1-1",
+              "number": 1,
+              "prompt": "What did you study in history lessons when you were at school?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-1-2",
+              "number": 2,
+              "prompt": "Did you enjoy studying history at school? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-1-3",
+              "number": 3,
+              "prompt": "How often do you watch TV programmes about history now? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-1-4",
+              "number": 4,
+              "prompt": "What period in history would you like to learn more about? [Why?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-17-test-1-speaking-part-2-1",
+          "task": "Describe the neighbourhood you lived in when you were a child.",
+          "cuePoints": [
+            "where in your town/city the neighbourhood was",
+            "what kind of people lived there",
+            "what it was like to live in this neighbourhood"
+          ],
+          "closingPrompt": "and explain whether you would like to live in this neighbourhood in the future."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Neighbours",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What sort of things can neighbours do to help each other?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-3-2",
+              "number": 2,
+              "prompt": "How well do people generally know their neighbours in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-3-3",
+              "number": 3,
+              "prompt": "How important do you think it is to have good neighbours?"
+            }
+          ]
+        },
+        {
+          "title": "Facilities in cities",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Which facilities are most important to people living in cities?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-3-5",
+              "number": 2,
+              "prompt": "How does shopping in small local shops differ from shopping in large city centre shops?"
+            },
+            {
+              "exerciseId": "ielts-academic-17-test-1-speaking-part-3-6",
+              "number": 3,
+              "prompt": "Do you think that children should always go to the school nearest to where they live?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

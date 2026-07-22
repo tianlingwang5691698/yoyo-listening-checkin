@@ -148,3 +148,18 @@ test('音频课程快照首屏不等待完整详情补齐', () => {
   assert.match(onShowSource, /if \(hasSnapshotTask\) \{[\s\S]*?refreshPromise[\s\S]*?return;/);
   assert.match(source, /finishLessonShowRefresh\(detail\)/);
 });
+
+test('口语首页和目录按需加载，系列目录不等待 transcript', () => {
+  const source = fs.readFileSync(path.join(root, 'pages/speaking/index.js'), 'utf8');
+  const onLoadSource = source.slice(source.indexOf('  onLoad() {'), source.indexOf('  onShow() {'));
+  const repeatSource = source.slice(source.indexOf('  async loadRepeatSeriesCatalog(series) {'), source.indexOf('  async selectRepeatAudio(event) {'));
+  const ieltsIndexSource = source.slice(source.indexOf('  async openIeltsSpeaking() {'), source.indexOf('  async selectIeltsTest(event) {'));
+  const ieltsItemSource = source.slice(source.indexOf('  async selectIeltsTest(event) {'), source.indexOf('  queueIeltsIntroAutoPlay() {'));
+
+  assert.doesNotMatch(onLoadSource, /getMaterialIndex|getMaterialItem|getListeningMaterialCatalog|getTaskTranscript|synthesizeIeltsPromptAudio/);
+  assert.match(repeatSource, /store\.getListeningMaterialCatalog/);
+  assert.match(repeatSource, /this\.loadRepeatTranscript\(selectedAudio, requestToken\);\s*return result;/);
+  assert.doesNotMatch(repeatSource, /await this\.loadRepeatTranscript/);
+  assert.match(ieltsIndexSource, /store\.getMaterialIndex\(\{ moduleId: 'speaking' \}\)/);
+  assert.match(ieltsItemSource, /store\.getMaterialItem\(\{ moduleId: 'speaking', itemId \}\)/);
+});

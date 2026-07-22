@@ -2,60 +2,34 @@
   <view class="library-speaking-header">
     <view>
       <view class="library-speaking-kicker">{{texts.corner}}</view>
-      <view class="library-speaking-title">{{viewMode === 'home' ? texts.homeTitle : texts.practiceTitle}}</view>
-      <view class="library-speaking-copy">{{viewMode === 'home' ? texts.homeCopy : texts.copy}}</view>
+      <view class="library-speaking-title">{{pageTitle}}</view>
+      <view class="library-speaking-copy">{{pageCopy}}</view>
     </view>
     <view class="library-speaking-seal"><view>VOICE</view><text>ROOM</text></view>
   </view>
 
   <block wx:if="{{viewMode === 'home'}}">
-    <view class="library-speaking-entry-sheet">
-      <view class="library-entry-rule"></view>
-      <view class="library-entry-top">
-        <view>
-          <view class="library-entry-label">{{texts.mainPractice}}</view>
-          <view class="library-entry-title">{{texts.gradedRepeat}}</view>
+    <view class="speaking-mode-list is-library">
+      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
+        <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
+        <view class="speaking-mode-copy">
+          <view class="speaking-mode-title">{{texts.gradedRepeat}}</view>
+          <view class="speaking-mode-meta">{{texts.repeatModeMeta}}</view>
+          <view class="speaking-mode-detail">Pre A1–B2 · {{texts.audioParagraph}}</view>
         </view>
-        <view class="library-entry-index">{{selectedLevel}}</view>
+        <view class="speaking-mode-arrow">›</view>
       </view>
 
-      <view class="library-level-tabs">
-        <view class="library-level-tab {{selectedLevel === item.id ? 'is-active' : ''}}" wx:for="{{levels}}" wx:key="id" data-level="{{item.id}}" bindtap="selectSpeakingLevel">{{item.label}}</view>
-      </view>
-
-      <view class="library-entry-desk">
-        <view class="library-entry-grain"></view>
-        <view class="library-entry-scale">
-          <view class="library-entry-tick tick-a"></view>
-          <view class="library-entry-tick tick-b"></view>
-          <view class="library-entry-tick tick-c"></view>
-          <view class="library-entry-tick tick-d"></view>
-          <view class="library-entry-tick tick-e"></view>
-          <view class="library-entry-tick tick-f"></view>
+      <view class="speaking-mode-row is-ielts" hover-class="is-pressed" bindtap="openIeltsSpeaking">
+        <view class="speaking-mode-icon"><view class="mode-part">P</view></view>
+        <view class="speaking-mode-copy">
+          <view class="speaking-mode-title">{{texts.ieltsSpeaking}}</view>
+          <view class="speaking-mode-meta">Part 1 · Part 2 · Part 3</view>
+          <view class="speaking-mode-detail">Cambridge IELTS 10–21</view>
         </view>
-        <view class="library-entry-mic">
-          <view class="library-entry-mic-head"></view>
-          <view class="library-entry-mic-yoke"></view>
-          <view class="library-entry-mic-stem"></view>
-        </view>
-        <view class="library-entry-wave">
-          <view></view><view></view><view></view><view></view><view></view>
-        </view>
+        <view class="speaking-mode-state">{{ieltsLoading ? texts.loading : (ieltsTests.length ? ieltsTests.length + texts.setUnit : '')}}</view>
+        <view class="speaking-mode-arrow">{{ieltsExpanded ? '⌃' : '›'}}</view>
       </view>
-
-      <view class="library-entry-meta">{{texts.selectedLevel}} · {{selectedLevel}}</view>
-      <button class="library-entry-button" hover-class="is-pressed" bindtap="openRepeatPractice">{{texts.startRepeat}}</button>
-    </view>
-
-    <view class="library-more-label">{{texts.morePractice}}</view>
-    <view class="library-ielts-row" hover-class="is-pressed" bindtap="openIeltsSpeaking">
-      <view class="library-ielts-spine"></view>
-      <view class="library-ielts-copy">
-        <view class="library-ielts-title">{{texts.ieltsSpeaking}}</view>
-        <view class="library-ielts-meta">Part 1 · Part 2 · Part 3</view>
-      </view>
-      <view class="library-ielts-state">{{ieltsLoading ? texts.loading : (ieltsTests.length ? ieltsTests.length + texts.setUnit : 'Cambridge 21')}}</view>
-      <view class="library-ielts-arrow">›</view>
     </view>
     <view class="ielts-test-list" wx:if="{{ieltsExpanded}}">
       <block wx:for="{{ieltsTests}}" wx:key="id">
@@ -68,66 +42,133 @@
     </view>
   </block>
 
-  <block wx:else>
+  <block wx:elif="{{viewMode === 'repeat-select'}}">
     <view class="library-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
+    <view class="repeat-selector is-library">
+      <view class="repeat-selector-section">
+        <view class="repeat-selector-heading"><view>{{texts.selectLevel}}</view><text>{{selectedLevel}}</text></view>
+        <view class="library-level-tabs">
+          <view class="library-level-tab {{selectedLevel === item.id ? 'is-active' : ''}}" wx:for="{{levels}}" wx:key="id" data-level="{{item.id}}" bindtap="selectSpeakingLevel">{{item.label}}</view>
+        </view>
+      </view>
+      <view class="repeat-selector-section">
+        <view class="repeat-selector-heading"><view>{{texts.selectSeries}}</view><text>{{repeatSeries.length}}{{texts.seriesUnit}}</text></view>
+        <scroll-view class="repeat-series-scroll" scroll-x="{{true}}" enable-flex="{{true}}" show-scrollbar="{{false}}">
+          <view class="repeat-series-row">
+            <view class="repeat-series-tab {{selectedSeriesId === item.id ? 'is-active' : ''}}" wx:for="{{repeatSeries}}" wx:key="id" data-series-id="{{item.id}}" bindtap="selectRepeatSeries">{{item.title}}</view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="repeat-selector-section">
+        <view class="repeat-selector-heading"><view>{{texts.selectAudio}}</view><text>{{repeatAudios.length}}{{texts.audioUnit}}</text></view>
+        <view class="repeat-load-state" wx:if="{{repeatAudioLoading}}">{{texts.loadingAudio}}</view>
+        <view wx:elif="{{repeatAudios.length}}" class="repeat-audio-picker" hover-class="is-pressed" bindtap="openRepeatAudioPicker">
+          <view class="repeat-audio-play"><view></view></view>
+          <view class="repeat-audio-copy"><view>{{selectedAudio.displayTitle}}</view><text>{{selectedAudio.meta}}</text></view>
+          <view class="repeat-picker-arrow">⌄</view>
+        </view>
+        <view class="repeat-load-state" wx:else>{{texts.noAudio}}</view>
+      </view>
+      <view class="repeat-selector-section">
+        <view class="repeat-selector-heading"><view>{{texts.selectParagraph}}</view><text>{{repeatParagraphs.length}}{{texts.paragraphUnit}}</text></view>
+        <view class="repeat-load-state" wx:if="{{repeatParagraphLoading}}">{{texts.loadingParagraphs}}</view>
+        <scroll-view class="repeat-paragraph-scroll" wx:elif="{{repeatParagraphs.length}}" scroll-y="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
+          <view class="repeat-paragraph-list">
+            <view class="repeat-paragraph-row {{selectedParagraphId === item.id ? 'is-active' : ''}}" wx:for="{{repeatParagraphs}}" wx:key="id" data-paragraph-id="{{item.id}}" bindtap="selectRepeatParagraph">
+              <view class="repeat-paragraph-top"><view>{{item.title}}</view><text>{{item.meta}}</text></view>
+              <view class="repeat-paragraph-preview">{{item.preview}}</view>
+            </view>
+          </view>
+        </scroll-view>
+        <view class="repeat-load-state is-error" wx:elif="{{repeatLoadError}}">{{repeatLoadError}}</view>
+        <view class="repeat-load-state" wx:else>{{texts.noTranscript}}</view>
+      </view>
+      <button class="repeat-start-button {{!selectedParagraphId || repeatParagraphLoading ? 'is-disabled' : ''}}" disabled="{{!selectedParagraphId || repeatParagraphLoading}}" hover-class="is-pressed" bindtap="startSelectedRepeat">{{texts.startParagraph}}</button>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="library-practice-nav" bindtap="backToSpeakingHome">‹ {{ieltsMode ? texts.backSpeaking : texts.backSelection}}</view>
 
     <block wx:if="{{activeExercise && exercises.length}}">
-      <view class="library-prompt-sheet {{recording ? 'is-muted' : ''}}">
+      <view class="library-prompt-sheet" wx:if="{{ieltsMode}}">
         <view class="library-sheet-rule"></view>
-        <view class="library-prompt-head">
-          <view>
-            <view class="library-prompt-label">{{texts.today}}</view>
-            <view class="library-prompt-text">{{activeExercise.prompt}}</view>
+        <view class="ielts-session-intro" wx:if="{{!ieltsSessionStarted}}">
+          <view class="ielts-intro-part">PART 1</view>
+          <view class="ielts-intro-title">{{activeIeltsQuestion.topicTitle || texts.ieltsOpeningTitle}}</view>
+          <view class="ielts-intro-copy">{{texts.ieltsOpeningCopy}}</view>
+          <view class="ielts-intro-script prompt-replay {{ieltsIntroPlaying ? 'is-speaking' : ''}} {{ieltsIntroLoading ? 'is-loading' : ''}}" hover-class="is-pressed" bindtap="playIeltsIntro">{{ieltsIntroText}}</view>
+          <button class="ielts-session-start" hover-class="is-pressed" bindtap="startIeltsSession">{{texts.startPartOne}}</button>
+        </view>
+
+        <view class="ielts-focus" wx:else>
+          <view class="ielts-focus-head">
+            <view><view class="ielts-focus-part">{{activeIeltsQuestion.partLabel}}</view><view class="ielts-focus-topic" wx:if="{{activeIeltsQuestion.topicTitle}}">{{activeIeltsQuestion.topicTitle}}</view></view>
+            <view class="ielts-focus-count">{{activeIeltsQuestion.partQuestionIndex}} / {{activeIeltsQuestion.partQuestionTotal}}</view>
           </view>
-          <button class="library-listen-button {{questionPlaying ? 'is-playing' : ''}} {{questionLoading ? 'is-loading' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? texts.preparing : (questionPlaying ? texts.stopPlay : texts.listen)}}</button>
+
+          <view class="ielts-listen-row">
+            <button class="ielts-play-button {{questionPlaying ? 'is-playing' : ''}} {{questionLoading ? 'is-loading' : ''}}" disabled="{{recording || submitting}}" aria-label="{{texts.listenQuestionShort}}" data-exercise-id="{{activeIeltsQuestion.exerciseId}}" data-view-key="{{activeIeltsQuestion.viewKey}}" data-prompt="{{activeIeltsQuestion.prompt}}" catchtap="playIeltsQuestion"><view class="ielts-play-icon"></view><view class="ielts-play-wave"><text></text><text></text><text></text></view></button>
+            <view class="ielts-listen-copy"><view>{{questionLoading ? texts.preparing : (questionPlaying ? texts.questionPlaying : (ieltsPromptReady ? texts.relistenQuestion : texts.listenQuestionShort))}}</view><text>{{texts.questionListenHint}}</text></view>
+            <button class="ielts-reveal-button" wx:if="{{activeIeltsQuestion.type === 'question'}}" data-exercise-id="{{activeIeltsQuestion.exerciseId}}" data-view-key="{{activeIeltsQuestion.viewKey}}" data-prompt="{{activeIeltsQuestion.prompt}}" catchtap="selectIeltsQuestion">{{ieltsQuestionRevealed ? texts.hideQuestion : texts.showQuestion}}</button>
+          </view>
+
+          <view class="ielts-focus-prompt" wx:if="{{activeIeltsQuestion.type === 'question'}}">
+            <view class="ielts-focus-question prompt-replay {{ieltsQuestionRevealed && questionPlaying ? 'is-speaking' : ''}}" wx:if="{{ieltsQuestionRevealed}}">{{activeIeltsQuestion.prompt}}</view>
+            <view class="ielts-focus-hidden" wx:else>{{texts.questionListenHint}}</view>
+          </view>
+
+          <view class="ielts-cue-card is-active" wx:else>
+            <view class="ielts-cue-task ielts-cue-line prompt-replay {{questionPlaying && ieltsCueLineIndex === 0 ? 'is-speaking' : ''}}">{{activeIeltsQuestion.task}}</view>
+            <view class="ielts-cue-label ielts-cue-line prompt-replay {{questionPlaying && ieltsCueLineIndex === 1 ? 'is-speaking' : ''}}">{{texts.youShouldSay}}</view>
+            <view class="ielts-cue-point ielts-cue-line prompt-replay {{questionPlaying && ieltsCueLineIndex === cueItemIndex + 2 ? 'is-speaking' : ''}}" wx:for="{{activeIeltsQuestion.cuePoints}}" wx:for-item="cueItem" wx:for-index="cueItemIndex" wx:key="*this"><text>•</text><view>{{cueItem}}</view></view>
+            <view class="ielts-cue-closing ielts-cue-line prompt-replay {{questionPlaying && ieltsCueLineIndex === activeIeltsQuestion.cuePoints.length + 2 ? 'is-speaking' : ''}}">{{activeIeltsQuestion.closingPrompt}}</view>
+          </view>
+
+          <view class="ielts-answer-zone">
+            <view class="ielts-answer-zone-head"><view>{{texts.ieltsAnswerArea}}</view><text>{{ieltsPromptReady ? texts.ieltsAnswerReady : texts.ieltsAnswerLocked}}</text></view>
+            <button class="ielts-focus-answer {{recording ? 'is-recording' : ''}}" disabled="{{!ieltsPromptReady || submitting || questionLoading || questionPlaying}}" data-exercise-id="{{activeIeltsQuestion.exerciseId}}" data-view-key="{{activeIeltsQuestion.viewKey}}" data-prompt="{{activeIeltsQuestion.prompt}}" catchtap="toggleIeltsAnswer">{{recording ? texts.endAnswer : (submitting ? texts.scoring : (tempFilePath ? texts.restartAnswer : texts.startAnswer))}}</button>
+            <button class="ielts-score-button is-focus" wx:if="{{tempFilePath && !recording && !submitting}}" catchtap="scoreIeltsAnswer">{{texts.scoreAnswer}}</button>
+            <view class="ielts-inline-state is-focus" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
+              <view class="ielts-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+              <view class="ielts-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
+              <view class="ielts-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
+            </view>
+          </view>
+
+          <view class="ielts-question-nav">
+            <button class="{{ieltsQuestionIndex === 0 ? 'is-disabled' : ''}}" disabled="{{ieltsQuestionIndex === 0}}" bindtap="previousIeltsQuestion">‹ {{texts.previousQuestion}}</button>
+            <button class="is-next {{ieltsQuestionIndex >= ieltsQuestionSequence.length - 1 ? 'is-disabled' : ''}}" disabled="{{ieltsQuestionIndex >= ieltsQuestionSequence.length - 1}}" bindtap="nextIeltsQuestion">{{texts.nextQuestion}} ›</button>
+          </view>
         </view>
-        <view class="library-prompt-meta">{{selectedLevel}} · {{activeExercise.title}} · {{activeExercise.meta}}</view>
-        <view class="ielts-source-pages" wx:if="{{ieltsMode && ieltsSourceImages.length}}">
-          <image class="ielts-source-page" wx:for="{{ieltsSourceImages}}" wx:key="cloudPath" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
+        <view class="ielts-source-toggle" wx:if="{{ieltsMode && ieltsSourceImages.length}}" bindtap="toggleIeltsSource">
+          <view><view class="ielts-source-title">{{texts.originalPage}}</view><view class="ielts-source-meta">{{ieltsSourceImages.length}} {{texts.pageUnit}}</view></view>
+          <view class="ielts-source-arrow">{{ieltsSourceExpanded ? '⌃' : '⌄'}}</view>
         </view>
-        <view class="library-playback-slot {{questionPlaying || questionLoading ? 'is-active' : ''}}">
-          <view class="library-slot-bar is-one"></view>
-          <view class="library-slot-bar is-two"></view>
-          <view class="library-slot-bar is-three"></view>
-          <view class="library-slot-bar is-four"></view>
-          <view class="library-slot-bar is-five"></view>
+        <view class="ielts-source-pages" wx:if="{{ieltsMode && ieltsSourceExpanded && ieltsSourceImages.length}}">
+          <image class="ielts-source-page" wx:for="{{ieltsSourceImages}}" wx:key="cloudPath" src="{{item.src}}" data-src="{{item.src}}" bindtap="previewIeltsSource" mode="widthFix" show-menu-by-longpress="{{true}}" />
         </view>
       </view>
 
-      <view class="library-task-tabs {{recording ? 'is-muted' : ''}}">
-        <view class="library-task-tab {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
-          <view class="library-tab-title">{{item.title}}</view>
-          <view class="library-tab-meta">{{item.meta}}</view>
-        </view>
-      </view>
-
-      <view class="library-record-desk {{recording ? 'is-recording' : ''}} {{submitting ? 'is-submitting' : ''}} {{tempFilePath ? 'is-ready' : ''}}">
-        <view class="library-desk-grain"></view>
-        <view class="library-breath-scale">
-          <view class="library-tick tick-1"></view><view class="library-tick tick-2"></view><view class="library-tick tick-3"></view><view class="library-tick tick-4"></view><view class="library-tick tick-5"></view><view class="library-tick tick-6"></view><view class="library-tick tick-7"></view><view class="library-tick tick-8"></view><view class="library-tick tick-9"></view><view class="library-tick tick-10"></view><view class="library-tick tick-11"></view><view class="library-tick tick-12"></view>
-        </view>
-        <view class="library-brass-mic">
-          <view class="library-mic-head"></view><view class="library-mic-yoke"></view><view class="library-mic-stem"></view><view class="library-mic-foot"></view>
-        </view>
-        <view class="library-voice-slot">
-          <view class="library-voice-line is-a"></view><view class="library-voice-line is-b"></view><view class="library-voice-line is-c"></view><view class="library-voice-line is-d"></view><view class="library-voice-line is-e"></view>
-        </view>
-        <view class="library-proof-ruler" wx:if="{{submitting}}"></view>
-        <button class="library-hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">{{recording ? texts.release : (submitting ? texts.scoring : texts.hold)}}</button>
-      </view>
-
-      <view class="library-record-note {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">{{submitting ? texts.scoring : (recording ? texts.recording : (tempFilePath ? (texts.recorded + recordDurationText) : texts.start))}}</view>
-      <view class="library-error-note" wx:if="{{errorText}}">{{errorText}}</view>
-
-      <view class="library-score-sheet {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
-        <view class="library-score-top">
-          <view><view class="library-score-label">{{texts.result}}</view><view class="library-score-value">{{result.score || 0}}{{texts.scoreUnit}}</view></view>
-          <view class="library-score-stamp">{{texts.note}}</view>
-        </view>
-        <view class="library-score-rulers">
-          <view class="library-score-ruler"><view class="library-ruler-head"><view class="library-ruler-label">{{texts.accuracy}}</view><view class="library-ruler-value">{{result.accuracy || 0}}</view></view><view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.accuracy || 0}}%;"></view></view></view>
-          <view class="library-score-ruler"><view class="library-ruler-head"><view class="library-ruler-label">{{texts.fluency}}</view><view class="library-ruler-value">{{result.fluency || 0}}</view></view><view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.fluency || 0}}%;"></view></view></view>
-          <view class="library-score-ruler"><view class="library-ruler-head"><view class="library-ruler-label">{{texts.completeness}}</view><view class="library-ruler-value">{{result.completion || 0}}</view></view><view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.completion || 0}}%;"></view></view></view>
+      <view class="repeat-sentence-list is-library" wx:if="{{!ieltsMode}}">
+        <view class="repeat-sentence-item {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id">
+          <view class="repeat-sentence-main" data-id="{{item.id}}" hover-class="is-pressed" bindtap="selectExercise">
+            <view class="repeat-sentence-number">{{index + 1}}</view>
+            <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}">{{item.prompt}}</view>
+            <view class="repeat-sentence-play {{activeId === item.id && (questionPlaying || questionLoading) ? 'is-playing' : ''}}"><view></view><text></text><text></text><text></text></view>
+          </view>
+          <view class="repeat-inline-actions" wx:if="{{activeId === item.id && repeatPromptReady && !questionPlaying && !questionLoading}}">
+            <button class="repeat-inline-record {{recording ? 'is-recording' : ''}}" wx:if="{{!tempFilePath && !result && !submitting}}" hover-class="is-pressed" bindtap="toggleRepeatRecording">{{recording ? texts.endRepeat : texts.startRepeat}}</button>
+            <view class="repeat-inline-choice" wx:if="{{tempFilePath && !recording && !submitting}}">
+              <button class="repeat-inline-choice-button is-secondary" hover-class="is-pressed" bindtap="restartRepeatRecording">{{texts.restartRepeat}}</button>
+              <button class="repeat-inline-choice-button is-primary" hover-class="is-pressed" bindtap="replayRepeatRecording">{{answerPlaying ? texts.stopPlayback : texts.replayRecording}}</button>
+            </view>
+            <view class="repeat-inline-state" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
+              <view class="repeat-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+              <view class="repeat-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
+              <view class="repeat-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
+            </view>
+          </view>
         </view>
       </view>
     </block>
@@ -141,45 +182,32 @@
 
 <view class="theme-{{theme}} language-{{language}} page-shell speaking-page" wx:else>
   <view class="speaking-header">
-    <view class="speaking-title">{{viewMode === 'home' ? texts.homeTitle : texts.practiceTitle}}</view>
-    <view class="speaking-copy">{{viewMode === 'home' ? texts.homeCopy : texts.copy}}</view>
+    <view class="speaking-title">{{pageTitle}}</view>
+    <view class="speaking-copy">{{pageCopy}}</view>
   </view>
 
   <block wx:if="{{viewMode === 'home'}}">
-    <view class="speaking-entry-card">
-      <view class="entry-card-glow"></view>
-      <view class="entry-card-top">
-        <view>
-          <view class="entry-card-label">{{texts.mainPractice}}</view>
-          <view class="entry-card-title">{{texts.gradedRepeat}}</view>
+    <view class="speaking-mode-list">
+      <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
+        <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
+        <view class="speaking-mode-copy">
+          <view class="speaking-mode-title">{{texts.gradedRepeat}}</view>
+          <view class="speaking-mode-meta">{{texts.repeatModeMeta}}</view>
+          <view class="speaking-mode-detail">Pre A1–B2 · {{texts.audioParagraph}}</view>
         </view>
-        <view class="entry-level-readout">{{selectedLevel}}</view>
+        <view class="speaking-mode-arrow">›</view>
       </view>
 
-      <view class="speaking-level-tabs">
-        <view class="speaking-level-tab {{selectedLevel === item.id ? 'is-active' : ''}}" wx:for="{{levels}}" wx:key="id" data-level="{{item.id}}" bindtap="selectSpeakingLevel">{{item.label}}</view>
+      <view class="speaking-mode-row is-ielts" hover-class="is-pressed" bindtap="openIeltsSpeaking">
+        <view class="speaking-mode-icon"><view class="mode-part">P</view></view>
+        <view class="speaking-mode-copy">
+          <view class="speaking-mode-title">{{texts.ieltsSpeaking}}</view>
+          <view class="speaking-mode-meta">Part 1 · Part 2 · Part 3</view>
+          <view class="speaking-mode-detail">Cambridge IELTS 10–21</view>
+        </view>
+        <view class="speaking-mode-state">{{ieltsLoading ? texts.loading : (ieltsTests.length ? ieltsTests.length + texts.setUnit : '')}}</view>
+        <view class="speaking-mode-arrow">{{ieltsExpanded ? '⌃' : '›'}}</view>
       </view>
-
-      <view class="speaking-entry-visual">
-        <view class="entry-orbit orbit-outer"></view>
-        <view class="entry-orbit orbit-inner"></view>
-        <view class="entry-mic"><view class="entry-mic-stem"></view></view>
-        <view class="entry-wave"><view></view><view></view><view></view><view></view><view></view></view>
-      </view>
-
-      <view class="entry-selected-level">{{texts.selectedLevel}} · {{selectedLevel}}</view>
-      <button class="speaking-entry-button" hover-class="is-pressed" bindtap="openRepeatPractice">{{texts.startRepeat}}</button>
-    </view>
-
-    <view class="speaking-more-label">{{texts.morePractice}}</view>
-    <view class="speaking-ielts-row" hover-class="is-pressed" bindtap="openIeltsSpeaking">
-      <view class="speaking-ielts-mark"><view></view></view>
-      <view class="speaking-ielts-copy">
-        <view class="speaking-ielts-title">{{texts.ieltsSpeaking}}</view>
-        <view class="speaking-ielts-meta">Part 1 · Part 2 · Part 3</view>
-      </view>
-      <view class="speaking-ielts-state">{{ieltsLoading ? texts.loading : (ieltsTests.length ? ieltsTests.length + texts.setUnit : 'Cambridge 21')}}</view>
-      <view class="speaking-ielts-arrow">›</view>
     </view>
     <view class="ielts-test-list" wx:if="{{ieltsExpanded}}">
       <block wx:for="{{ieltsTests}}" wx:key="id">
@@ -192,48 +220,162 @@
     </view>
   </block>
 
-  <block wx:else>
+  <block wx:elif="{{viewMode === 'repeat-select'}}">
     <view class="speaking-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
-
-      <view class="voice-cabin card">
-      <view class="cabin-glow"></view>
-        <view class="prompt-panel">
-        <view class="prompt-label">{{texts.today}}</view>
-        <view class="prompt-text">{{activeExercise.prompt}}</view>
-        <view class="prompt-actions">
-          <view class="prompt-tag">{{selectedLevel}} · {{activeExercise.title}}</view>
-          <button class="listen-button" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? texts.preparing : (questionPlaying ? texts.stopPlay : texts.listen)}}</button>
-          </view>
-          <view class="ielts-source-pages" wx:if="{{ieltsMode && ieltsSourceImages.length}}">
-            <image class="ielts-source-page" wx:for="{{ieltsSourceImages}}" wx:key="cloudPath" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" />
-          </view>
-        </view>
-
-      <view class="task-dial">
-        <view class="task-node {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
-          <view class="node-pulse"></view>
-          <view class="node-copy"><view class="exercise-title">{{item.title}}</view><view class="exercise-meta">{{item.meta}}</view></view>
+    <view class="repeat-selector">
+      <view class="repeat-selector-section">
+        <view class="repeat-selector-heading"><view>{{texts.selectLevel}}</view><text>{{selectedLevel}}</text></view>
+        <view class="speaking-level-tabs">
+          <view class="speaking-level-tab {{selectedLevel === item.id ? 'is-active' : ''}}" wx:for="{{levels}}" wx:key="id" data-level="{{item.id}}" bindtap="selectSpeakingLevel">{{item.label}}</view>
         </view>
       </view>
-
-      <view class="record-orbit {{recording ? 'is-recording' : (submitting ? 'is-submitting' : '')}}">
-        <view class="breath-ring ring-outer"></view><view class="breath-ring ring-mid"></view>
-        <view class="mic-sound-circle"><view class="mic-stem"></view></view>
-        <view class="wave-field"><view class="wave-bar bar-one"></view><view class="wave-bar bar-two"></view><view class="wave-bar bar-three"></view><view class="wave-bar bar-four"></view><view class="wave-bar bar-five"></view></view>
-        <button class="hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">{{recording ? texts.release : (submitting ? texts.scoring : texts.hold)}}</button>
+      <view class="repeat-selector-section">
+        <view class="repeat-selector-heading"><view>{{texts.selectSeries}}</view><text>{{repeatSeries.length}}{{texts.seriesUnit}}</text></view>
+        <scroll-view class="repeat-series-scroll" scroll-x="{{true}}" enable-flex="{{true}}" show-scrollbar="{{false}}">
+          <view class="repeat-series-row">
+            <view class="repeat-series-tab {{selectedSeriesId === item.id ? 'is-active' : ''}}" wx:for="{{repeatSeries}}" wx:key="id" data-series-id="{{item.id}}" bindtap="selectRepeatSeries">{{item.title}}</view>
+          </view>
+        </scroll-view>
       </view>
-
-      <view class="record-line {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">{{submitting ? texts.scoring : (recording ? texts.recording : (tempFilePath ? (texts.recorded + recordDurationText) : texts.start))}}</view>
-      <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
+      <view class="repeat-selector-section">
+        <view class="repeat-selector-heading"><view>{{texts.selectAudio}}</view><text>{{repeatAudios.length}}{{texts.audioUnit}}</text></view>
+        <view class="repeat-load-state" wx:if="{{repeatAudioLoading}}">{{texts.loadingAudio}}</view>
+        <view wx:elif="{{repeatAudios.length}}" class="repeat-audio-picker" hover-class="is-pressed" bindtap="openRepeatAudioPicker">
+          <view class="repeat-audio-play"><view></view></view>
+          <view class="repeat-audio-copy"><view>{{selectedAudio.displayTitle}}</view><text>{{selectedAudio.meta}}</text></view>
+          <view class="repeat-picker-arrow">⌄</view>
+        </view>
+        <view class="repeat-load-state" wx:else>{{texts.noAudio}}</view>
+      </view>
+      <view class="repeat-selector-section">
+        <view class="repeat-selector-heading"><view>{{texts.selectParagraph}}</view><text>{{repeatParagraphs.length}}{{texts.paragraphUnit}}</text></view>
+        <view class="repeat-load-state" wx:if="{{repeatParagraphLoading}}">{{texts.loadingParagraphs}}</view>
+        <scroll-view class="repeat-paragraph-scroll" wx:elif="{{repeatParagraphs.length}}" scroll-y="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
+          <view class="repeat-paragraph-list">
+            <view class="repeat-paragraph-row {{selectedParagraphId === item.id ? 'is-active' : ''}}" wx:for="{{repeatParagraphs}}" wx:key="id" data-paragraph-id="{{item.id}}" bindtap="selectRepeatParagraph">
+              <view class="repeat-paragraph-top"><view>{{item.title}}</view><text>{{item.meta}}</text></view>
+              <view class="repeat-paragraph-preview">{{item.preview}}</view>
+            </view>
+          </view>
+        </scroll-view>
+        <view class="repeat-load-state is-error" wx:elif="{{repeatLoadError}}">{{repeatLoadError}}</view>
+        <view class="repeat-load-state" wx:else>{{texts.noTranscript}}</view>
+      </view>
+      <button class="repeat-start-button {{!selectedParagraphId || repeatParagraphLoading ? 'is-disabled' : ''}}" disabled="{{!selectedParagraphId || repeatParagraphLoading}}" hover-class="is-pressed" bindtap="startSelectedRepeat">{{texts.startParagraph}}</button>
     </view>
+  </block>
 
-    <view class="score-card card {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
-      <view class="speaking-card-top"><view class="speaking-card-label">{{texts.result}}</view><view class="speaking-card-state">{{result.score || 0}}{{texts.scoreUnit}}</view></view>
-      <view class="score-meters">
-        <view class="score-item"><view class="score-row"><view class="score-label">{{texts.accuracy}}</view><view class="score-value">{{result.accuracy || 0}}</view></view><view class="meter-track"><view class="meter-fill" style="width: {{result.accuracy || 0}}%;"></view></view></view>
-        <view class="score-item"><view class="score-row"><view class="score-label">{{texts.fluency}}</view><view class="score-value">{{result.fluency || 0}}</view></view><view class="meter-track"><view class="meter-fill" style="width: {{result.fluency || 0}}%;"></view></view></view>
-        <view class="score-item"><view class="score-row"><view class="score-label">{{texts.completeness}}</view><view class="score-value">{{result.completion || 0}}</view></view><view class="meter-track"><view class="meter-fill" style="width: {{result.completion || 0}}%;"></view></view></view>
+  <block wx:else>
+    <view class="speaking-practice-nav" bindtap="backToSpeakingHome">‹ {{ieltsMode ? texts.backSpeaking : texts.backSelection}}</view>
+
+      <view class="voice-cabin {{ieltsMode ? 'card' : 'is-repeat-cabin'}}">
+      <view class="cabin-glow"></view>
+        <view class="prompt-panel" wx:if="{{ieltsMode}}">
+          <view class="ielts-exam-sheet">
+            <view class="ielts-session-intro" wx:if="{{!ieltsSessionStarted}}">
+              <view class="ielts-intro-part">PART 1</view>
+              <view class="ielts-intro-title">{{activeIeltsQuestion.topicTitle || texts.ieltsOpeningTitle}}</view>
+              <view class="ielts-intro-copy">{{texts.ieltsOpeningCopy}}</view>
+              <view class="ielts-intro-script prompt-replay {{ieltsIntroPlaying ? 'is-speaking' : ''}} {{ieltsIntroLoading ? 'is-loading' : ''}}" hover-class="is-pressed" bindtap="playIeltsIntro">{{ieltsIntroText}}</view>
+              <button class="ielts-session-start" hover-class="is-pressed" bindtap="startIeltsSession">{{texts.startPartOne}}</button>
+            </view>
+
+            <view class="ielts-focus" wx:else>
+              <view class="ielts-focus-head">
+                <view><view class="ielts-focus-part">{{activeIeltsQuestion.partLabel}}</view><view class="ielts-focus-topic" wx:if="{{activeIeltsQuestion.topicTitle}}">{{activeIeltsQuestion.topicTitle}}</view></view>
+                <view class="ielts-focus-count">{{activeIeltsQuestion.partQuestionIndex}} / {{activeIeltsQuestion.partQuestionTotal}}</view>
+              </view>
+
+              <view class="ielts-listen-row">
+                <button class="ielts-play-button {{questionPlaying ? 'is-playing' : ''}} {{questionLoading ? 'is-loading' : ''}}" disabled="{{recording || submitting}}" aria-label="{{texts.listenQuestionShort}}" data-exercise-id="{{activeIeltsQuestion.exerciseId}}" data-view-key="{{activeIeltsQuestion.viewKey}}" data-prompt="{{activeIeltsQuestion.prompt}}" catchtap="playIeltsQuestion"><view class="ielts-play-icon"></view><view class="ielts-play-wave"><text></text><text></text><text></text></view></button>
+                <view class="ielts-listen-copy"><view>{{questionLoading ? texts.preparing : (questionPlaying ? texts.questionPlaying : (ieltsPromptReady ? texts.relistenQuestion : texts.listenQuestionShort))}}</view><text>{{texts.questionListenHint}}</text></view>
+                <button class="ielts-reveal-button" wx:if="{{activeIeltsQuestion.type === 'question'}}" data-exercise-id="{{activeIeltsQuestion.exerciseId}}" data-view-key="{{activeIeltsQuestion.viewKey}}" data-prompt="{{activeIeltsQuestion.prompt}}" catchtap="selectIeltsQuestion">{{ieltsQuestionRevealed ? texts.hideQuestion : texts.showQuestion}}</button>
+              </view>
+
+              <view class="ielts-focus-prompt" wx:if="{{activeIeltsQuestion.type === 'question'}}">
+                <view class="ielts-focus-question prompt-replay {{ieltsQuestionRevealed && questionPlaying ? 'is-speaking' : ''}}" wx:if="{{ieltsQuestionRevealed}}">{{activeIeltsQuestion.prompt}}</view>
+                <view class="ielts-focus-hidden" wx:else>{{texts.questionListenHint}}</view>
+              </view>
+
+              <view class="ielts-cue-card is-active" wx:else>
+                <view class="ielts-cue-task ielts-cue-line prompt-replay {{questionPlaying && ieltsCueLineIndex === 0 ? 'is-speaking' : ''}}">{{activeIeltsQuestion.task}}</view>
+                <view class="ielts-cue-label ielts-cue-line prompt-replay {{questionPlaying && ieltsCueLineIndex === 1 ? 'is-speaking' : ''}}">{{texts.youShouldSay}}</view>
+                <view class="ielts-cue-point ielts-cue-line prompt-replay {{questionPlaying && ieltsCueLineIndex === cueItemIndex + 2 ? 'is-speaking' : ''}}" wx:for="{{activeIeltsQuestion.cuePoints}}" wx:for-item="cueItem" wx:for-index="cueItemIndex" wx:key="*this"><text>•</text><view>{{cueItem}}</view></view>
+                <view class="ielts-cue-closing ielts-cue-line prompt-replay {{questionPlaying && ieltsCueLineIndex === activeIeltsQuestion.cuePoints.length + 2 ? 'is-speaking' : ''}}">{{activeIeltsQuestion.closingPrompt}}</view>
+              </view>
+
+              <view class="ielts-answer-zone">
+                <view class="ielts-answer-zone-head"><view>{{texts.ieltsAnswerArea}}</view><text>{{ieltsPromptReady ? texts.ieltsAnswerReady : texts.ieltsAnswerLocked}}</text></view>
+                <button class="ielts-focus-answer {{recording ? 'is-recording' : ''}}" disabled="{{!ieltsPromptReady || submitting || questionLoading || questionPlaying}}" data-exercise-id="{{activeIeltsQuestion.exerciseId}}" data-view-key="{{activeIeltsQuestion.viewKey}}" data-prompt="{{activeIeltsQuestion.prompt}}" catchtap="toggleIeltsAnswer">{{recording ? texts.endAnswer : (submitting ? texts.scoring : (tempFilePath ? texts.restartAnswer : texts.startAnswer))}}</button>
+                <button class="ielts-score-button is-focus" wx:if="{{tempFilePath && !recording && !submitting}}" catchtap="scoreIeltsAnswer">{{texts.scoreAnswer}}</button>
+                <view class="ielts-inline-state is-focus" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
+                  <view class="ielts-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+                  <view class="ielts-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
+                  <view class="ielts-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
+                </view>
+              </view>
+
+              <view class="ielts-question-nav">
+                <button class="{{ieltsQuestionIndex === 0 ? 'is-disabled' : ''}}" disabled="{{ieltsQuestionIndex === 0}}" bindtap="previousIeltsQuestion">‹ {{texts.previousQuestion}}</button>
+                <button class="is-next {{ieltsQuestionIndex >= ieltsQuestionSequence.length - 1 ? 'is-disabled' : ''}}" disabled="{{ieltsQuestionIndex >= ieltsQuestionSequence.length - 1}}" bindtap="nextIeltsQuestion">{{texts.nextQuestion}} ›</button>
+              </view>
+            </view>
+          </view>
+          <view class="ielts-source-toggle" wx:if="{{ieltsMode && ieltsSourceImages.length}}" bindtap="toggleIeltsSource">
+            <view><view class="ielts-source-title">{{texts.originalPage}}</view><view class="ielts-source-meta">{{ieltsSourceImages.length}} {{texts.pageUnit}}</view></view>
+            <view class="ielts-source-arrow">{{ieltsSourceExpanded ? '⌃' : '⌄'}}</view>
+          </view>
+          <view class="ielts-source-pages" wx:if="{{ieltsMode && ieltsSourceExpanded && ieltsSourceImages.length}}">
+            <image class="ielts-source-page" wx:for="{{ieltsSourceImages}}" wx:key="cloudPath" src="{{item.src}}" data-src="{{item.src}}" bindtap="previewIeltsSource" mode="widthFix" show-menu-by-longpress="{{true}}" />
+          </view>
+        </view>
+
+      <view class="repeat-sentence-list" wx:if="{{!ieltsMode}}">
+        <view class="repeat-sentence-item {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id">
+          <view class="repeat-sentence-main" data-id="{{item.id}}" hover-class="is-pressed" bindtap="selectExercise">
+            <view class="repeat-sentence-number">{{index + 1}}</view>
+            <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}">{{item.prompt}}</view>
+            <view class="repeat-sentence-play {{activeId === item.id && (questionPlaying || questionLoading) ? 'is-playing' : ''}}"><view></view><text></text><text></text><text></text></view>
+          </view>
+          <view class="repeat-inline-actions" wx:if="{{activeId === item.id && repeatPromptReady && !questionPlaying && !questionLoading}}">
+            <button class="repeat-inline-record {{recording ? 'is-recording' : ''}}" wx:if="{{!tempFilePath && !result && !submitting}}" hover-class="is-pressed" bindtap="toggleRepeatRecording">{{recording ? texts.endRepeat : texts.startRepeat}}</button>
+            <view class="repeat-inline-choice" wx:if="{{tempFilePath && !recording && !submitting}}">
+              <button class="repeat-inline-choice-button is-secondary" hover-class="is-pressed" bindtap="restartRepeatRecording">{{texts.restartRepeat}}</button>
+              <button class="repeat-inline-choice-button is-primary" hover-class="is-pressed" bindtap="replayRepeatRecording">{{answerPlaying ? texts.stopPlayback : texts.replayRecording}}</button>
+            </view>
+            <view class="repeat-inline-state" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
+              <view class="repeat-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+              <view class="repeat-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
+              <view class="repeat-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
   </block>
+</view>
+
+<view class="repeat-audio-drawer-mask theme-{{theme}}" wx:if="{{audioPickerVisible}}" bindtap="closeRepeatAudioPicker" catchtouchmove="stopPickerEvent">
+  <view class="repeat-audio-drawer" catchtap="stopPickerEvent">
+    <view class="repeat-audio-drawer-handle"></view>
+    <view class="repeat-audio-drawer-head">
+      <view>
+        <view class="repeat-audio-drawer-title">{{texts.selectAudio}}</view>
+        <view class="repeat-audio-drawer-count">{{audioPickerAudios.length}}{{texts.audioUnit}}</view>
+      </view>
+      <view class="repeat-audio-drawer-close" hover-class="is-pressed" bindtap="closeRepeatAudioPicker">×</view>
+    </view>
+    <view class="repeat-audio-search">
+          <input class="repeat-audio-search-input" value="{{audioPickerQuery}}" placeholder="{{texts.searchAudio}}" placeholder-class="repeat-audio-search-placeholder" confirm-type="search" bindinput="filterRepeatAudios" />
+      <view class="repeat-audio-search-clear" wx:if="{{audioPickerQuery}}" hover-class="is-pressed" bindtap="clearRepeatAudioSearch">×</view>
+    </view>
+    <scroll-view class="repeat-audio-option-scroll" style="height: {{audioPickerListHeight}};" scroll-y="{{true}}" enhanced="{{true}}" bounces="{{true}}" show-scrollbar="{{false}}" scroll-with-animation="{{true}}" scroll-into-view="{{audioPickerScrollIntoView}}">
+      <view class="repeat-audio-option {{selectedAudioId === item.id ? 'is-active' : ''}}" id="repeat-audio-option-{{item.pickerIndex}}" wx:for="{{audioPickerAudios}}" wx:key="id" data-audio-index="{{item.pickerIndex}}" hover-class="is-pressed" bindtap="selectRepeatAudio">
+        <view class="repeat-audio-option-number">{{item.pickerIndex + 1}}</view>
+        <view class="repeat-audio-option-copy"><view>{{item.displayTitle}}</view><text>{{item.meta}}</text></view>
+        <view class="repeat-audio-option-state"><view></view></view>
+      </view>
+          <view class="repeat-audio-option-empty" wx:if="{{!audioPickerAudios.length}}">{{texts.noMatchingAudio}}</view>
+    </scroll-view>
+  </view>
 </view>

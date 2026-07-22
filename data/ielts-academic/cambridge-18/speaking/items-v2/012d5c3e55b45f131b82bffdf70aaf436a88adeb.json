@@ -1,0 +1,155 @@
+{
+  "_id": "ielts-academic-18-test-1-speaking",
+  "id": "ielts-academic-18-test-1-speaking",
+  "title": "Cambridge IELTS 18 Test 1 Speaking",
+  "year": 2023,
+  "city": "Cambridge",
+  "district": "Test 1",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思真题18.pdf",
+  "book": "Cambridge IELTS 18 Academic",
+  "bookNumber": 18,
+  "testNumber": 1,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-18/speaking/source-pages-v1/test-1-speaking-aa50d937c3.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-18/speaking/source-pages-v1/test-1-speaking-aa50d937c3.jpg",
+      "alt": "Cambridge IELTS 18 Test 1 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-18-test-1-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Paying bills What kinds of bills do you have to pay? How do you usually pay your bills — in cash or by another method? [Why?] Have you ever forgotten to pay a bill? [Why/Why not?] Is there anything you could do to make your bills cheaper? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-18-test-1-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe some food or drink that you learned to prepare. You should say: what food or drink you learned to prepare when and where you learned to prepare this how you learned to prepare this and explain how you felt about learning to prepare this food or drink.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-18-test-1-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "Young people and cooking What kinds of things can children learn to cook? Do you think it is important for children to learn to cook? Do you think young people should learn to cook at home or at school?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-18-test-1-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Working as a chef How enjoyable do you think it would be to work as a professional chef? What skills does a person need to be a great chef? How much influence do celebrity/TV chefs have on what ordinary people cook?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 4,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Paying bills",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-1-1",
+              "number": 1,
+              "prompt": "What kinds of bills do you have to pay?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-1-1",
+              "number": 2,
+              "prompt": "How do you usually pay your bills — in cash or by another method? [Why?]"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-1-1",
+              "number": 3,
+              "prompt": "Have you ever forgotten to pay a bill? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-1-1",
+              "number": 4,
+              "prompt": "Is there anything you could do to make your bills cheaper? [Why/Why not?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-18-test-1-speaking-part-2-1",
+          "task": "Describe some food or drink that you learned to prepare.",
+          "cuePoints": [
+            "what food or drink you learned to prepare",
+            "when and where you learned to prepare this",
+            "how you learned to prepare this"
+          ],
+          "closingPrompt": "and explain how you felt about learning to prepare this food or drink."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Young people and cooking",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What kinds of things can children learn to cook?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-3-1",
+              "number": 2,
+              "prompt": "Do you think it is important for children to learn to cook?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-3-1",
+              "number": 3,
+              "prompt": "Do you think young people should learn to cook at home or at school?"
+            }
+          ]
+        },
+        {
+          "title": "Working as a chef",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-3-2",
+              "number": 1,
+              "prompt": "How enjoyable do you think it would be to work as a professional chef?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-3-2",
+              "number": 2,
+              "prompt": "What skills does a person need to be a great chef?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-1-speaking-part-3-2",
+              "number": 3,
+              "prompt": "How much influence do celebrity/TV chefs have on what ordinary people cook?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1404 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.2 Hi, hello. I'm Carlos. I'm going to tell you about Coco. She's a student in our class. She's 18 and she's from Japan. Her family's from Sapporo. Her father's a teacher. She wants to study English at university. All right. Thank you, Carlos. So, Coco, it's your turn. Please introduce the student next to you. Hi. I'm going to tell you about Nihir. Nihir is 19. She's from Turkey. She has a brother. Her family has a hotel. Her mother and father are the managers. Nihir wants to study business at university. Thank you, Coco. Nihir, your turn. Hello. I'm going to tell you about Carlos. He's 19. He's from Peru. His father is an engineer and his mother is a doctor. Carlos wants to study computer science at university. Thank you, Nihir.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.0,
+      "text": " 1.2",
+      "tokens": [
+        50364,
+        502,
+        13,
+        17,
+        50414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.295792303587261,
+      "compression_ratio": 1.3986928104575163,
+      "no_speech_prob": 0.37470543384552,
+      "words": [
+        {
+          "word": " 1",
+          "start": 0.0,
+          "end": 0.32,
+          "probability": 0.3773477375507355
+        },
+        {
+          "word": ".2",
+          "start": 0.32,
+          "end": 1.0,
+          "probability": 0.9929239451885223
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 1.92,
+      "end": 5.26,
+      "text": " Hi, hello. I'm Carlos.",
+      "tokens": [
+        50474,
+        2421,
+        11,
+        7751,
+        13,
+        286,
+        478,
+        19646,
+        13,
+        50634
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.295792303587261,
+      "compression_ratio": 1.3986928104575163,
+      "no_speech_prob": 0.37470543384552,
+      "words": [
+        {
+          "word": " Hi,",
+          "start": 1.92,
+          "end": 2.66,
+          "probability": 0.43284156918525696
+        },
+        {
+          "word": " hello.",
+          "start": 2.88,
+          "end": 3.4,
+          "probability": 0.9098034501075745
+        },
+        {
+          "word": " I'm",
+          "start": 4.12,
+          "end": 4.64,
+          "probability": 0.9684231281280518
+        },
+        {
+          "word": " Carlos.",
+          "start": 4.64,
+          "end": 5.26,
+          "probability": 0.9652426242828369
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.32,
+      "end": 8.96,
+      "text": " I'm going to tell you about Coco.",
+      "tokens": [
+        50678,
+        286,
+        478,
+        516,
+        281,
+        980,
+        291,
+        466,
+        29787,
+        13,
+        50820
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.295792303587261,
+      "compression_ratio": 1.3986928104575163,
+      "no_speech_prob": 0.37470543384552,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 6.32,
+          "end": 6.7,
+          "probability": 0.9841760694980621
+        },
+        {
+          "word": " going",
+          "start": 6.7,
+          "end": 6.96,
+          "probability": 0.9986140727996826
+        },
+        {
+          "word": " to",
+          "start": 6.96,
+          "end": 7.28,
+          "probability": 0.9978824257850647
+        },
+        {
+          "word": " tell",
+          "start": 7.28,
+          "end": 7.52,
+          "probability": 0.9982621073722839
+        },
+        {
+          "word": " you",
+          "start": 7.52,
+          "end": 7.94,
+          "probability": 0.9978195428848267
+        },
+        {
+          "word": " about",
+          "start": 7.94,
+          "end": 8.48,
+          "probability": 0.9936085939407349
+        },
+        {
+          "word": " Coco.",
+          "start": 8.48,
+          "end": 8.96,
+          "probability": 0.8617038130760193
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 9.92,
+      "end": 12.38,
+      "text": " She's a student in our class.",
+      "tokens": [
+        50854,
+        1240,
+        311,
+        257,
+        3107,
+        294,
+        527,
+        1508,
+        13,
+        50984
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.295792303587261,
+      "compression_ratio": 1.3986928104575163,
+      "no_speech_prob": 0.37470543384552,
+      "words": [
+        {
+          "word": " She's",
+          "start": 9.92,
+          "end": 10.42,
+          "probability": 0.8372056484222412
+        },
+        {
+          "word": " a",
+          "start": 10.42,
+          "end": 10.66,
+          "probability": 0.9972057938575745
+        },
+        {
+          "word": " student",
+          "start": 10.66,
+          "end": 11.14,
+          "probability": 0.9989514350891113
+        },
+        {
+          "word": " in",
+          "start": 11.14,
+          "end": 11.52,
+          "probability": 0.9979867935180664
+        },
+        {
+          "word": " our",
+          "start": 11.52,
+          "end": 11.88,
+          "probability": 0.9983213543891907
+        },
+        {
+          "word": " class.",
+          "start": 11.88,
+          "end": 12.38,
+          "probability": 0.9971121549606323
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 13.48,
+      "end": 16.98,
+      "text": " She's 18 and she's from Japan.",
+      "tokens": [
+        51028,
+        1240,
+        311,
+        2443,
+        293,
+        750,
+        311,
+        490,
+        3367,
+        13,
+        51218
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.295792303587261,
+      "compression_ratio": 1.3986928104575163,
+      "no_speech_prob": 0.37470543384552,
+      "words": [
+        {
+          "word": " She's",
+          "start": 13.48,
+          "end": 14.0,
+          "probability": 0.8821061551570892
+        },
+        {
+          "word": " 18",
+          "start": 14.0,
+          "end": 14.66,
+          "probability": 0.6810508966445923
+        },
+        {
+          "word": " and",
+          "start": 14.66,
+          "end": 15.56,
+          "probability": 0.7175132632255554
+        },
+        {
+          "word": " she's",
+          "start": 15.56,
+          "end": 16.04,
+          "probability": 0.9766031205654144
+        },
+        {
+          "word": " from",
+          "start": 16.04,
+          "end": 16.34,
+          "probability": 0.9992627501487732
+        },
+        {
+          "word": " Japan.",
+          "start": 16.34,
+          "end": 16.98,
+          "probability": 0.9934108853340149
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 17.98,
+      "end": 20.26,
+      "text": " Her family's from Sapporo.",
+      "tokens": [
+        51260,
+        3204,
+        1605,
+        311,
+        490,
+        46814,
+        10780,
+        13,
+        51378
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.295792303587261,
+      "compression_ratio": 1.3986928104575163,
+      "no_speech_prob": 0.37470543384552,
+      "words": [
+        {
+          "word": " Her",
+          "start": 17.98,
+          "end": 18.32,
+          "probability": 0.9968133568763733
+        },
+        {
+          "word": " family's",
+          "start": 18.32,
+          "end": 19.08,
+          "probability": 0.8131056725978851
+        },
+        {
+          "word": " from",
+          "start": 19.08,
+          "end": 19.54,
+          "probability": 0.9985870122909546
+        },
+        {
+          "word": " Sapporo.",
+          "start": 19.54,
+          "end": 20.26,
+          "probability": 0.9971620738506317
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 21.48,
+      "end": 23.08,
+      "text": " Her father's a teacher.",
+      "tokens": [
+        51432,
+        3204,
+        3086,
+        311,
+        257,
+        5027,
+        13,
+        51520
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.295792303587261,
+      "compression_ratio": 1.3986928104575163,
+      "no_speech_prob": 0.37470543384552,
+      "words": [
+        {
+          "word": " Her",
+          "start": 21.48,
+          "end": 21.82,
+          "probability": 0.9976980090141296
+        },
+        {
+          "word": " father's",
+          "start": 21.82,
+          "end": 22.44,
+          "probability": 0.8664818406105042
+        },
+        {
+          "word": " a",
+          "start": 22.44,
+          "end": 22.62,
+          "probability": 0.9980766773223877
+        },
+        {
+          "word": " teacher.",
+          "start": 22.62,
+          "end": 23.08,
+          "probability": 0.996994137763977
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 24.12,
+      "end": 27.26,
+      "text": " She wants to study English at university.",
+      "tokens": [
+        51564,
+        1240,
+        2738,
+        281,
+        2979,
+        3669,
+        412,
+        5454,
+        13,
+        51734
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.295792303587261,
+      "compression_ratio": 1.3986928104575163,
+      "no_speech_prob": 0.37470543384552,
+      "words": [
+        {
+          "word": " She",
+          "start": 24.12,
+          "end": 24.5,
+          "probability": 0.9957669973373413
+        },
+        {
+          "word": " wants",
+          "start": 24.5,
+          "end": 24.88,
+          "probability": 0.997326135635376
+        },
+        {
+          "word": " to",
+          "start": 24.88,
+          "end": 25.26,
+          "probability": 0.9995537400245667
+        },
+        {
+          "word": " study",
+          "start": 25.26,
+          "end": 25.58,
+          "probability": 0.9989896416664124
+        },
+        {
+          "word": " English",
+          "start": 25.58,
+          "end": 26.18,
+          "probability": 0.985788881778717
+        },
+        {
+          "word": " at",
+          "start": 26.18,
+          "end": 26.54,
+          "probability": 0.9969493746757507
+        },
+        {
+          "word": " university.",
+          "start": 26.54,
+          "end": 27.26,
+          "probability": 0.7419966459274292
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2726,
+      "start": 27.26,
+      "end": 30.84,
+      "text": " All right. Thank you, Carlos.",
+      "tokens": [
+        50364,
+        1057,
+        558,
+        13,
+        1044,
+        291,
+        11,
+        19646,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1566310269492013,
+      "compression_ratio": 1.4101123595505618,
+      "no_speech_prob": 0.7612605094909668,
+      "words": [
+        {
+          "word": " All",
+          "start": 27.26,
+          "end": 28.82,
+          "probability": 0.30815234780311584
+        },
+        {
+          "word": " right.",
+          "start": 28.82,
+          "end": 29.36,
+          "probability": 0.9897841811180115
+        },
+        {
+          "word": " Thank",
+          "start": 29.74,
+          "end": 30.1,
+          "probability": 0.9876420497894287
+        },
+        {
+          "word": " you,",
+          "start": 30.1,
+          "end": 30.4,
+          "probability": 0.9791967272758484
+        },
+        {
+          "word": " Carlos.",
+          "start": 30.4,
+          "end": 30.84,
+          "probability": 0.9461898803710938
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2726,
+      "start": 32.62,
+      "end": 34.82,
+      "text": " So, Coco, it's your turn.",
+      "tokens": [
+        50564,
+        407,
+        11,
+        29787,
+        11,
+        309,
+        311,
+        428,
+        1261,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1566310269492013,
+      "compression_ratio": 1.4101123595505618,
+      "no_speech_prob": 0.7612605094909668,
+      "words": [
+        {
+          "word": " So,",
+          "start": 32.62,
+          "end": 32.78,
+          "probability": 0.9648653864860535
+        },
+        {
+          "word": " Coco,",
+          "start": 32.98,
+          "end": 33.1,
+          "probability": 0.7678746581077576
+        },
+        {
+          "word": " it's",
+          "start": 33.66,
+          "end": 34.02,
+          "probability": 0.988142728805542
+        },
+        {
+          "word": " your",
+          "start": 34.02,
+          "end": 34.4,
+          "probability": 0.9968152642250061
+        },
+        {
+          "word": " turn.",
+          "start": 34.4,
+          "end": 34.82,
+          "probability": 0.9991694688796997
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 2726,
+      "start": 35.48,
+      "end": 38.5,
+      "text": " Please introduce the student next to you.",
+      "tokens": [
+        50764,
+        2555,
+        5366,
+        264,
+        3107,
+        958,
+        281,
+        291,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1566310269492013,
+      "compression_ratio": 1.4101123595505618,
+      "no_speech_prob": 0.7612605094909668,
+      "words": [
+        {
+          "word": " Please",
+          "start": 35.48,
+          "end": 35.98,
+          "probability": 0.9945646524429321
+        },
+        {
+          "word": " introduce",
+          "start": 35.98,
+          "end": 36.64,
+          "probability": 0.9427797198295593
+        },
+        {
+          "word": " the",
+          "start": 36.64,
+          "end": 36.96,
+          "probability": 0.9919984936714172
+        },
+        {
+          "word": " student",
+          "start": 36.96,
+          "end": 37.38,
+          "probability": 0.9909008741378784
+        },
+        {
+          "word": " next",
+          "start": 37.38,
+          "end": 37.86,
+          "probability": 0.995215654373169
+        },
+        {
+          "word": " to",
+          "start": 37.86,
+          "end": 38.04,
+          "probability": 0.9994589686393738
+        },
+        {
+          "word": " you.",
+          "start": 38.04,
+          "end": 38.5,
+          "probability": 0.9997313618659973
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 2726,
+      "start": 38.92,
+      "end": 42.26,
+      "text": " Hi. I'm going to tell you about Nihir.",
+      "tokens": [
+        50914,
+        2421,
+        13,
+        286,
+        478,
+        516,
+        281,
+        980,
+        291,
+        466,
+        426,
+        4247,
+        347,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1566310269492013,
+      "compression_ratio": 1.4101123595505618,
+      "no_speech_prob": 0.7612605094909668,
+      "words": [
+        {
+          "word": " Hi.",
+          "start": 38.92,
+          "end": 39.26,
+          "probability": 0.7985143661499023
+        },
+        {
+          "word": " I'm",
+          "start": 39.88,
+          "end": 40.4,
+          "probability": 0.972585141658783
+        },
+        {
+          "word": " going",
+          "start": 40.4,
+          "end": 40.6,
+          "probability": 0.9985766410827637
+        },
+        {
+          "word": " to",
+          "start": 40.6,
+          "end": 40.86,
+          "probability": 0.9985100626945496
+        },
+        {
+          "word": " tell",
+          "start": 40.86,
+          "end": 41.08,
+          "probability": 0.9975855350494385
+        },
+        {
+          "word": " you",
+          "start": 41.08,
+          "end": 41.36,
+          "probability": 0.9978310465812683
+        },
+        {
+          "word": " about",
+          "start": 41.36,
+          "end": 41.8,
+          "probability": 0.9978068470954895
+        },
+        {
+          "word": " Nihir.",
+          "start": 41.8,
+          "end": 42.26,
+          "probability": 0.6184218923250834
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 2726,
+      "start": 43.18,
+      "end": 46.64,
+      "text": " Nihir is 19. She's from Turkey.",
+      "tokens": [
+        51114,
+        426,
+        4247,
+        347,
+        307,
+        1294,
+        13,
+        1240,
+        311,
+        490,
+        12647,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1566310269492013,
+      "compression_ratio": 1.4101123595505618,
+      "no_speech_prob": 0.7612605094909668,
+      "words": [
+        {
+          "word": " Nihir",
+          "start": 43.18,
+          "end": 43.72,
+          "probability": 0.996908704439799
+        },
+        {
+          "word": " is",
+          "start": 43.72,
+          "end": 44.06,
+          "probability": 0.997105062007904
+        },
+        {
+          "word": " 19.",
+          "start": 44.06,
+          "end": 44.66,
+          "probability": 0.881268322467804
+        },
+        {
+          "word": " She's",
+          "start": 45.26,
+          "end": 45.68,
+          "probability": 0.9252733886241913
+        },
+        {
+          "word": " from",
+          "start": 45.68,
+          "end": 46.02,
+          "probability": 0.9994731545448303
+        },
+        {
+          "word": " Turkey.",
+          "start": 46.02,
+          "end": 46.64,
+          "probability": 0.9966191053390503
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 2726,
+      "start": 47.42,
+      "end": 51.04,
+      "text": " She has a brother. Her family has a hotel.",
+      "tokens": [
+        51314,
+        1240,
+        575,
+        257,
+        3708,
+        13,
+        3204,
+        1605,
+        575,
+        257,
+        7622,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1566310269492013,
+      "compression_ratio": 1.4101123595505618,
+      "no_speech_prob": 0.7612605094909668,
+      "words": [
+        {
+          "word": " She",
+          "start": 47.42,
+          "end": 47.62,
+          "probability": 0.9810096025466919
+        },
+        {
+          "word": " has",
+          "start": 47.62,
+          "end": 47.88,
+          "probability": 0.9981943964958191
+        },
+        {
+          "word": " a",
+          "start": 47.88,
+          "end": 48.08,
+          "probability": 0.9990053772926331
+        },
+        {
+          "word": " brother.",
+          "start": 48.08,
+          "end": 48.42,
+          "probability": 0.9987442493438721
+        },
+        {
+          "word": " Her",
+          "start": 49.24,
+          "end": 49.46,
+          "probability": 0.9968775510787964
+        },
+        {
+          "word": " family",
+          "start": 49.46,
+          "end": 50.02,
+          "probability": 0.9986470341682434
+        },
+        {
+          "word": " has",
+          "start": 50.02,
+          "end": 50.46,
+          "probability": 0.9988124370574951
+        },
+        {
+          "word": " a",
+          "start": 50.46,
+          "end": 50.68,
+          "probability": 0.9986477494239807
+        },
+        {
+          "word": " hotel.",
+          "start": 50.68,
+          "end": 51.04,
+          "probability": 0.9974006414413452
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 2726,
+      "start": 52.08,
+      "end": 54.6,
+      "text": " Her mother and father are the managers.",
+      "tokens": [
+        51564,
+        3204,
+        2895,
+        293,
+        3086,
+        366,
+        264,
+        14084,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1566310269492013,
+      "compression_ratio": 1.4101123595505618,
+      "no_speech_prob": 0.7612605094909668,
+      "words": [
+        {
+          "word": " Her",
+          "start": 52.08,
+          "end": 52.34,
+          "probability": 0.9982107877731323
+        },
+        {
+          "word": " mother",
+          "start": 52.34,
+          "end": 52.78,
+          "probability": 0.9905779361724854
+        },
+        {
+          "word": " and",
+          "start": 52.78,
+          "end": 53.14,
+          "probability": 0.9990584254264832
+        },
+        {
+          "word": " father",
+          "start": 53.14,
+          "end": 53.56,
+          "probability": 0.9976473450660706
+        },
+        {
+          "word": " are",
+          "start": 53.56,
+          "end": 53.92,
+          "probability": 0.9989161491394043
+        },
+        {
+          "word": " the",
+          "start": 53.92,
+          "end": 54.16,
+          "probability": 0.979027271270752
+        },
+        {
+          "word": " managers.",
+          "start": 54.16,
+          "end": 54.6,
+          "probability": 0.9957677125930786
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 5460,
+      "start": 55.63999999999999,
+      "end": 59.3,
+      "text": " Nihir wants to study business at university.",
+      "tokens": [
+        50364,
+        426,
+        4247,
+        347,
+        2738,
+        281,
+        2979,
+        1606,
+        412,
+        5454,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.162286385722544,
+      "compression_ratio": 1.6058823529411765,
+      "no_speech_prob": 0.10058468580245972,
+      "words": [
+        {
+          "word": " Nihir",
+          "start": 55.63999999999999,
+          "end": 56.44,
+          "probability": 0.7498887578646342
+        },
+        {
+          "word": " wants",
+          "start": 56.44,
+          "end": 56.72,
+          "probability": 0.9791402816772461
+        },
+        {
+          "word": " to",
+          "start": 56.72,
+          "end": 56.96,
+          "probability": 0.9989317059516907
+        },
+        {
+          "word": " study",
+          "start": 56.96,
+          "end": 57.34,
+          "probability": 0.9951655864715576
+        },
+        {
+          "word": " business",
+          "start": 57.34,
+          "end": 57.92,
+          "probability": 0.5824286341667175
+        },
+        {
+          "word": " at",
+          "start": 57.92,
+          "end": 58.34,
+          "probability": 0.9959189295768738
+        },
+        {
+          "word": " university.",
+          "start": 58.34,
+          "end": 59.3,
+          "probability": 0.6718258261680603
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 5460,
+      "start": 60.24,
+      "end": 61.1,
+      "text": " Thank you, Coco.",
+      "tokens": [
+        50614,
+        1044,
+        291,
+        11,
+        29787,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.162286385722544,
+      "compression_ratio": 1.6058823529411765,
+      "no_speech_prob": 0.10058468580245972,
+      "words": [
+        {
+          "word": " Thank",
+          "start": 60.24,
+          "end": 60.4,
+          "probability": 0.9339176416397095
+        },
+        {
+          "word": " you,",
+          "start": 60.4,
+          "end": 60.7,
+          "probability": 0.9628844857215881
+        },
+        {
+          "word": " Coco.",
+          "start": 60.7,
+          "end": 61.1,
+          "probability": 0.5974515676498413
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 5460,
+      "start": 62.13999999999999,
+      "end": 64.28,
+      "text": " Nihir, your turn.",
+      "tokens": [
+        50714,
+        426,
+        4247,
+        347,
+        11,
+        428,
+        1261,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.162286385722544,
+      "compression_ratio": 1.6058823529411765,
+      "no_speech_prob": 0.10058468580245972,
+      "words": [
+        {
+          "word": " Nihir,",
+          "start": 62.13999999999999,
+          "end": 62.94,
+          "probability": 0.997144361337026
+        },
+        {
+          "word": " your",
+          "start": 63.38,
+          "end": 63.8,
+          "probability": 0.9836251139640808
+        },
+        {
+          "word": " turn.",
+          "start": 63.8,
+          "end": 64.28,
+          "probability": 0.9997326731681824
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 5460,
+      "start": 65.2,
+      "end": 68.14,
+      "text": " Hello. I'm going to tell you about Carlos.",
+      "tokens": [
+        50864,
+        2425,
+        13,
+        286,
+        478,
+        516,
+        281,
+        980,
+        291,
+        466,
+        19646,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.162286385722544,
+      "compression_ratio": 1.6058823529411765,
+      "no_speech_prob": 0.10058468580245972,
+      "words": [
+        {
+          "word": " Hello.",
+          "start": 65.2,
+          "end": 65.62,
+          "probability": 0.9032391905784607
+        },
+        {
+          "word": " I'm",
+          "start": 66.08,
+          "end": 66.5,
+          "probability": 0.8431299924850464
+        },
+        {
+          "word": " going",
+          "start": 66.5,
+          "end": 66.68,
+          "probability": 0.998838484287262
+        },
+        {
+          "word": " to",
+          "start": 66.68,
+          "end": 66.96,
+          "probability": 0.9976282715797424
+        },
+        {
+          "word": " tell",
+          "start": 66.96,
+          "end": 67.12,
+          "probability": 0.9989118576049805
+        },
+        {
+          "word": " you",
+          "start": 67.12,
+          "end": 67.28,
+          "probability": 0.9969481825828552
+        },
+        {
+          "word": " about",
+          "start": 67.28,
+          "end": 67.58,
+          "probability": 0.9984622001647949
+        },
+        {
+          "word": " Carlos.",
+          "start": 67.58,
+          "end": 68.14,
+          "probability": 0.969860851764679
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 5460,
+      "start": 68.82,
+      "end": 71.46,
+      "text": " He's 19. He's from Peru.",
+      "tokens": [
+        51064,
+        634,
+        311,
+        1294,
+        13,
+        634,
+        311,
+        490,
+        31571,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.162286385722544,
+      "compression_ratio": 1.6058823529411765,
+      "no_speech_prob": 0.10058468580245972,
+      "words": [
+        {
+          "word": " He's",
+          "start": 68.82,
+          "end": 69.16,
+          "probability": 0.9381713569164276
+        },
+        {
+          "word": " 19.",
+          "start": 69.16,
+          "end": 69.76,
+          "probability": 0.8383483290672302
+        },
+        {
+          "word": " He's",
+          "start": 70.4,
+          "end": 70.72,
+          "probability": 0.9695716798305511
+        },
+        {
+          "word": " from",
+          "start": 70.72,
+          "end": 70.96,
+          "probability": 0.9993690848350525
+        },
+        {
+          "word": " Peru.",
+          "start": 70.96,
+          "end": 71.46,
+          "probability": 0.9911075234413147
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 5460,
+      "start": 72.14,
+      "end": 75.78,
+      "text": " His father is an engineer and his mother is a doctor.",
+      "tokens": [
+        51214,
+        2812,
+        3086,
+        307,
+        364,
+        11403,
+        293,
+        702,
+        2895,
+        307,
+        257,
+        4631,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.162286385722544,
+      "compression_ratio": 1.6058823529411765,
+      "no_speech_prob": 0.10058468580245972,
+      "words": [
+        {
+          "word": " His",
+          "start": 72.14,
+          "end": 72.46,
+          "probability": 0.9969235062599182
+        },
+        {
+          "word": " father",
+          "start": 72.46,
+          "end": 72.82,
+          "probability": 0.9961919784545898
+        },
+        {
+          "word": " is",
+          "start": 72.82,
+          "end": 73.06,
+          "probability": 0.6395395994186401
+        },
+        {
+          "word": " an",
+          "start": 73.06,
+          "end": 73.34,
+          "probability": 0.997103750705719
+        },
+        {
+          "word": " engineer",
+          "start": 73.34,
+          "end": 73.72,
+          "probability": 0.9869307279586792
+        },
+        {
+          "word": " and",
+          "start": 73.72,
+          "end": 74.4,
+          "probability": 0.7016316056251526
+        },
+        {
+          "word": " his",
+          "start": 74.4,
+          "end": 74.68,
+          "probability": 0.9978238344192505
+        },
+        {
+          "word": " mother",
+          "start": 74.68,
+          "end": 74.94,
+          "probability": 0.9987642765045166
+        },
+        {
+          "word": " is",
+          "start": 74.94,
+          "end": 75.2,
+          "probability": 0.9820906519889832
+        },
+        {
+          "word": " a",
+          "start": 75.2,
+          "end": 75.32,
+          "probability": 0.9981653094291687
+        },
+        {
+          "word": " doctor.",
+          "start": 75.32,
+          "end": 75.78,
+          "probability": 0.9920624494552612
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 5460,
+      "start": 76.68,
+      "end": 80.1,
+      "text": " Carlos wants to study computer science at university.",
+      "tokens": [
+        51414,
+        19646,
+        2738,
+        281,
+        2979,
+        3820,
+        3497,
+        412,
+        5454,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.162286385722544,
+      "compression_ratio": 1.6058823529411765,
+      "no_speech_prob": 0.10058468580245972,
+      "words": [
+        {
+          "word": " Carlos",
+          "start": 76.68,
+          "end": 77.04,
+          "probability": 0.9991450309753418
+        },
+        {
+          "word": " wants",
+          "start": 77.04,
+          "end": 77.36,
+          "probability": 0.9957383871078491
+        },
+        {
+          "word": " to",
+          "start": 77.36,
+          "end": 77.62,
+          "probability": 0.9996802806854248
+        },
+        {
+          "word": " study",
+          "start": 77.62,
+          "end": 77.92,
+          "probability": 0.9976508021354675
+        },
+        {
+          "word": " computer",
+          "start": 77.92,
+          "end": 78.54,
+          "probability": 0.8777565360069275
+        },
+        {
+          "word": " science",
+          "start": 78.54,
+          "end": 79.1,
+          "probability": 0.9972758889198303
+        },
+        {
+          "word": " at",
+          "start": 79.1,
+          "end": 79.38,
+          "probability": 0.9978682994842529
+        },
+        {
+          "word": " university.",
+          "start": 79.38,
+          "end": 80.1,
+          "probability": 0.9230515956878662
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 5460,
+      "start": 81.14,
+      "end": 82.4,
+      "text": " Thank you, Nihir.",
+      "tokens": [
+        51664,
+        1044,
+        291,
+        11,
+        426,
+        4247,
+        347,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.162286385722544,
+      "compression_ratio": 1.6058823529411765,
+      "no_speech_prob": 0.10058468580245972,
+      "words": [
+        {
+          "word": " Thank",
+          "start": 81.14,
+          "end": 81.54,
+          "probability": 0.9966410398483276
+        },
+        {
+          "word": " you,",
+          "start": 81.54,
+          "end": 81.78,
+          "probability": 0.9949209094047546
+        },
+        {
+          "word": " Nihir.",
+          "start": 81.78,
+          "end": 82.4,
+          "probability": 0.995612104733785
+        }
+      ]
+    }
+  ]
+}

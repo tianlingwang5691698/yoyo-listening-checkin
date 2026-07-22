@@ -1,0 +1,2107 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "2.5 Ok, so good morning everybody. I'm Daniela. Ok, so I'm going to talk about two photos of a place in spring. I'm from Naples in Italy and I don't like to talk about cold places or places in winter. No, really it's true. Okay, so here's my first photo. This isn't in Italy, it's in Turkey. It's actually an island and there's a small town here. You can see there is a white building. It's a beautiful day in spring. Blue sky, very sunny, very nice. There's a nice forest and it's good to go there when it's a hot day. And there's the sea which is beautiful and blue. So I chose this photo because... Hello everybody. Okay, so I'm Altan. I'm from Samsun. Samsun is in Turkey. I'm Turkish and Samsun's a city by the Black Sea. But okay, so today I'm going to talk about a different place. Here's my first photo. It's a beautiful place. You can see there is a big mountain and there are trees here. It's sunny but it's a cold day in autumn. Can you see the color of the trees? All red and orange. So, where is this beautiful place? Well, it's in South Korea. This is Seoraksan National Park. It's a famous park. A lot of people go there. Here is another photo of the park.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.0,
+      "text": " 2.5",
+      "tokens": [
+        50364,
+        568,
+        13,
+        20,
+        50414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26211179766738624,
+      "compression_ratio": 1.366412213740458,
+      "no_speech_prob": 0.3876267373561859,
+      "words": [
+        {
+          "word": " 2",
+          "start": 0.0,
+          "end": 0.28,
+          "probability": 0.3553384244441986
+        },
+        {
+          "word": ".5",
+          "start": 0.28,
+          "end": 1.0,
+          "probability": 0.9920045137405396
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 1.74,
+      "end": 14.96,
+      "text": " Ok, so good morning everybody. I'm Daniela. Ok, so I'm going to talk about two photos",
+      "tokens": [
+        50414,
+        3477,
+        11,
+        370,
+        665,
+        2446,
+        2201,
+        13,
+        286,
+        478,
+        8033,
+        64,
+        13,
+        3477,
+        11,
+        370,
+        286,
+        478,
+        516,
+        281,
+        751,
+        466,
+        732,
+        5787,
+        51130
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26211179766738624,
+      "compression_ratio": 1.366412213740458,
+      "no_speech_prob": 0.3876267373561859,
+      "words": [
+        {
+          "word": " Ok,",
+          "start": 1.74,
+          "end": 2.72,
+          "probability": 0.28476613759994507
+        },
+        {
+          "word": " so",
+          "start": 3.08,
+          "end": 3.74,
+          "probability": 0.9567186832427979
+        },
+        {
+          "word": " good",
+          "start": 3.74,
+          "end": 4.36,
+          "probability": 0.5526964664459229
+        },
+        {
+          "word": " morning",
+          "start": 4.36,
+          "end": 4.96,
+          "probability": 0.9903261065483093
+        },
+        {
+          "word": " everybody.",
+          "start": 4.96,
+          "end": 5.86,
+          "probability": 0.8254384994506836
+        },
+        {
+          "word": " I'm",
+          "start": 6.7,
+          "end": 7.24,
+          "probability": 0.9500730335712433
+        },
+        {
+          "word": " Daniela.",
+          "start": 7.24,
+          "end": 8.16,
+          "probability": 0.8923878967761993
+        },
+        {
+          "word": " Ok,",
+          "start": 8.7,
+          "end": 8.94,
+          "probability": 0.623685896396637
+        },
+        {
+          "word": " so",
+          "start": 9.22,
+          "end": 10.46,
+          "probability": 0.9317112565040588
+        },
+        {
+          "word": " I'm",
+          "start": 10.46,
+          "end": 12.0,
+          "probability": 0.8218236565589905
+        },
+        {
+          "word": " going",
+          "start": 12.0,
+          "end": 12.26,
+          "probability": 0.9980397820472717
+        },
+        {
+          "word": " to",
+          "start": 12.26,
+          "end": 12.9,
+          "probability": 0.9984647035598755
+        },
+        {
+          "word": " talk",
+          "start": 12.9,
+          "end": 13.2,
+          "probability": 0.9973795413970947
+        },
+        {
+          "word": " about",
+          "start": 13.2,
+          "end": 13.82,
+          "probability": 0.9987516403198242
+        },
+        {
+          "word": " two",
+          "start": 13.82,
+          "end": 14.24,
+          "probability": 0.9077634811401367
+        },
+        {
+          "word": " photos",
+          "start": 14.24,
+          "end": 14.96,
+          "probability": 0.9982559084892273
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.96,
+      "end": 24.88,
+      "text": " of a place in spring. I'm from Naples in Italy and I don't like to talk about cold places",
+      "tokens": [
+        51130,
+        295,
+        257,
+        1081,
+        294,
+        5587,
+        13,
+        286,
+        478,
+        490,
+        6056,
+        2622,
+        294,
+        10705,
+        293,
+        286,
+        500,
+        380,
+        411,
+        281,
+        751,
+        466,
+        3554,
+        3190,
+        51616
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.26211179766738624,
+      "compression_ratio": 1.366412213740458,
+      "no_speech_prob": 0.3876267373561859,
+      "words": [
+        {
+          "word": " of",
+          "start": 14.96,
+          "end": 15.72,
+          "probability": 0.9875794053077698
+        },
+        {
+          "word": " a",
+          "start": 15.72,
+          "end": 15.96,
+          "probability": 0.9918262958526611
+        },
+        {
+          "word": " place",
+          "start": 15.96,
+          "end": 16.32,
+          "probability": 0.9992163181304932
+        },
+        {
+          "word": " in",
+          "start": 16.32,
+          "end": 16.82,
+          "probability": 0.9980560541152954
+        },
+        {
+          "word": " spring.",
+          "start": 16.82,
+          "end": 17.22,
+          "probability": 0.867699146270752
+        },
+        {
+          "word": " I'm",
+          "start": 18.02,
+          "end": 18.6,
+          "probability": 0.9883212745189667
+        },
+        {
+          "word": " from",
+          "start": 18.6,
+          "end": 19.02,
+          "probability": 0.9991173148155212
+        },
+        {
+          "word": " Naples",
+          "start": 19.02,
+          "end": 19.72,
+          "probability": 0.9994612634181976
+        },
+        {
+          "word": " in",
+          "start": 19.72,
+          "end": 20.34,
+          "probability": 0.7414606213569641
+        },
+        {
+          "word": " Italy",
+          "start": 20.34,
+          "end": 20.84,
+          "probability": 0.9969632029533386
+        },
+        {
+          "word": " and",
+          "start": 20.84,
+          "end": 21.78,
+          "probability": 0.6808703541755676
+        },
+        {
+          "word": " I",
+          "start": 21.78,
+          "end": 22.1,
+          "probability": 0.9914453029632568
+        },
+        {
+          "word": " don't",
+          "start": 22.1,
+          "end": 22.48,
+          "probability": 0.9974027276039124
+        },
+        {
+          "word": " like",
+          "start": 22.48,
+          "end": 22.82,
+          "probability": 0.9969007968902588
+        },
+        {
+          "word": " to",
+          "start": 22.82,
+          "end": 23.08,
+          "probability": 0.9964459538459778
+        },
+        {
+          "word": " talk",
+          "start": 23.08,
+          "end": 23.28,
+          "probability": 0.9988399147987366
+        },
+        {
+          "word": " about",
+          "start": 23.28,
+          "end": 23.78,
+          "probability": 0.9986392855644226
+        },
+        {
+          "word": " cold",
+          "start": 23.78,
+          "end": 24.22,
+          "probability": 0.9849358201026917
+        },
+        {
+          "word": " places",
+          "start": 24.22,
+          "end": 24.88,
+          "probability": 0.9967755675315857
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 2488,
+      "start": 24.88,
+      "end": 35.66,
+      "text": " or places in winter. No, really it's true. Okay, so here's my first photo. This isn't in Italy,",
+      "tokens": [
+        50364,
+        420,
+        3190,
+        294,
+        6355,
+        13,
+        883,
+        11,
+        534,
+        309,
+        311,
+        2074,
+        13,
+        1033,
+        11,
+        370,
+        510,
+        311,
+        452,
+        700,
+        5052,
+        13,
+        639,
+        1943,
+        380,
+        294,
+        10705,
+        11,
+        50896
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17766987044235755,
+      "compression_ratio": 1.3829787234042554,
+      "no_speech_prob": 0.11068535596132278,
+      "words": [
+        {
+          "word": " or",
+          "start": 24.88,
+          "end": 25.38,
+          "probability": 0.5926457047462463
+        },
+        {
+          "word": " places",
+          "start": 25.38,
+          "end": 25.92,
+          "probability": 0.9640787243843079
+        },
+        {
+          "word": " in",
+          "start": 25.92,
+          "end": 26.24,
+          "probability": 0.9960833787918091
+        },
+        {
+          "word": " winter.",
+          "start": 26.24,
+          "end": 26.64,
+          "probability": 0.9657476544380188
+        },
+        {
+          "word": " No,",
+          "start": 26.86,
+          "end": 27.18,
+          "probability": 0.9442466497421265
+        },
+        {
+          "word": " really",
+          "start": 27.66,
+          "end": 28.0,
+          "probability": 0.9580476880073547
+        },
+        {
+          "word": " it's",
+          "start": 28.0,
+          "end": 28.3,
+          "probability": 0.8037719130516052
+        },
+        {
+          "word": " true.",
+          "start": 28.3,
+          "end": 28.72,
+          "probability": 0.9983286261558533
+        },
+        {
+          "word": " Okay,",
+          "start": 29.56,
+          "end": 29.84,
+          "probability": 0.5817016363143921
+        },
+        {
+          "word": " so",
+          "start": 30.34,
+          "end": 30.94,
+          "probability": 0.9714670181274414
+        },
+        {
+          "word": " here's",
+          "start": 30.94,
+          "end": 31.42,
+          "probability": 0.8887847661972046
+        },
+        {
+          "word": " my",
+          "start": 31.42,
+          "end": 31.82,
+          "probability": 0.9985507130622864
+        },
+        {
+          "word": " first",
+          "start": 31.82,
+          "end": 32.32,
+          "probability": 0.9972333312034607
+        },
+        {
+          "word": " photo.",
+          "start": 32.32,
+          "end": 32.82,
+          "probability": 0.9987481832504272
+        },
+        {
+          "word": " This",
+          "start": 33.72,
+          "end": 34.22,
+          "probability": 0.9889516234397888
+        },
+        {
+          "word": " isn't",
+          "start": 34.22,
+          "end": 34.78,
+          "probability": 0.9963622987270355
+        },
+        {
+          "word": " in",
+          "start": 34.78,
+          "end": 35.22,
+          "probability": 0.9980863332748413
+        },
+        {
+          "word": " Italy,",
+          "start": 35.22,
+          "end": 35.66,
+          "probability": 0.9964459538459778
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 2488,
+      "start": 36.22,
+      "end": 46.88,
+      "text": " it's in Turkey. It's actually an island and there's a small town here. You can see there is a white",
+      "tokens": [
+        50924,
+        309,
+        311,
+        294,
+        12647,
+        13,
+        467,
+        311,
+        767,
+        364,
+        6077,
+        293,
+        456,
+        311,
+        257,
+        1359,
+        3954,
+        510,
+        13,
+        509,
+        393,
+        536,
+        456,
+        307,
+        257,
+        2418,
+        51460
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17766987044235755,
+      "compression_ratio": 1.3829787234042554,
+      "no_speech_prob": 0.11068535596132278,
+      "words": [
+        {
+          "word": " it's",
+          "start": 36.22,
+          "end": 36.7,
+          "probability": 0.9832048714160919
+        },
+        {
+          "word": " in",
+          "start": 36.7,
+          "end": 37.02,
+          "probability": 0.9984428286552429
+        },
+        {
+          "word": " Turkey.",
+          "start": 37.02,
+          "end": 37.54,
+          "probability": 0.9957196116447449
+        },
+        {
+          "word": " It's",
+          "start": 38.16,
+          "end": 38.64,
+          "probability": 0.9911720454692841
+        },
+        {
+          "word": " actually",
+          "start": 38.64,
+          "end": 39.28,
+          "probability": 0.9972423315048218
+        },
+        {
+          "word": " an",
+          "start": 39.28,
+          "end": 39.98,
+          "probability": 0.9931107759475708
+        },
+        {
+          "word": " island",
+          "start": 39.98,
+          "end": 40.48,
+          "probability": 0.9787071943283081
+        },
+        {
+          "word": " and",
+          "start": 40.48,
+          "end": 41.52,
+          "probability": 0.5385045409202576
+        },
+        {
+          "word": " there's",
+          "start": 41.52,
+          "end": 42.1,
+          "probability": 0.9400197565555573
+        },
+        {
+          "word": " a",
+          "start": 42.1,
+          "end": 42.5,
+          "probability": 0.9990553259849548
+        },
+        {
+          "word": " small",
+          "start": 42.5,
+          "end": 42.96,
+          "probability": 0.9992305040359497
+        },
+        {
+          "word": " town",
+          "start": 42.96,
+          "end": 43.42,
+          "probability": 0.9994231462478638
+        },
+        {
+          "word": " here.",
+          "start": 43.42,
+          "end": 43.94,
+          "probability": 0.9936218857765198
+        },
+        {
+          "word": " You",
+          "start": 44.5,
+          "end": 44.7,
+          "probability": 0.993767261505127
+        },
+        {
+          "word": " can",
+          "start": 44.7,
+          "end": 45.0,
+          "probability": 0.9995556473731995
+        },
+        {
+          "word": " see",
+          "start": 45.0,
+          "end": 45.32,
+          "probability": 0.9994646906852722
+        },
+        {
+          "word": " there",
+          "start": 45.32,
+          "end": 45.82,
+          "probability": 0.8997229337692261
+        },
+        {
+          "word": " is",
+          "start": 45.82,
+          "end": 46.06,
+          "probability": 0.9860756993293762
+        },
+        {
+          "word": " a",
+          "start": 46.06,
+          "end": 46.34,
+          "probability": 0.9984174966812134
+        },
+        {
+          "word": " white",
+          "start": 46.34,
+          "end": 46.88,
+          "probability": 0.9964255690574646
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 4688,
+      "start": 46.88,
+      "end": 57.28,
+      "text": " building. It's a beautiful day in spring. Blue sky, very sunny, very nice. There's a nice forest",
+      "tokens": [
+        50364,
+        2390,
+        13,
+        467,
+        311,
+        257,
+        2238,
+        786,
+        294,
+        5587,
+        13,
+        8510,
+        5443,
+        11,
+        588,
+        20412,
+        11,
+        588,
+        1481,
+        13,
+        821,
+        311,
+        257,
+        1481,
+        6719,
+        50876
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14070838689804077,
+      "compression_ratio": 1.4705882352941178,
+      "no_speech_prob": 0.36140432953834534,
+      "words": [
+        {
+          "word": " building.",
+          "start": 46.88,
+          "end": 47.44,
+          "probability": 0.5751209855079651
+        },
+        {
+          "word": " It's",
+          "start": 48.02,
+          "end": 48.38,
+          "probability": 0.9598838984966278
+        },
+        {
+          "word": " a",
+          "start": 48.38,
+          "end": 48.56,
+          "probability": 0.9968401193618774
+        },
+        {
+          "word": " beautiful",
+          "start": 48.56,
+          "end": 49.4,
+          "probability": 0.9868485927581787
+        },
+        {
+          "word": " day",
+          "start": 49.4,
+          "end": 49.86,
+          "probability": 0.9985970854759216
+        },
+        {
+          "word": " in",
+          "start": 49.86,
+          "end": 50.34,
+          "probability": 0.9910072684288025
+        },
+        {
+          "word": " spring.",
+          "start": 50.34,
+          "end": 51.0,
+          "probability": 0.9001703262329102
+        },
+        {
+          "word": " Blue",
+          "start": 51.42,
+          "end": 51.66,
+          "probability": 0.9728718400001526
+        },
+        {
+          "word": " sky,",
+          "start": 51.66,
+          "end": 52.5,
+          "probability": 0.9933755993843079
+        },
+        {
+          "word": " very",
+          "start": 52.82,
+          "end": 53.26,
+          "probability": 0.9854992628097534
+        },
+        {
+          "word": " sunny,",
+          "start": 53.26,
+          "end": 53.84,
+          "probability": 0.9988364577293396
+        },
+        {
+          "word": " very",
+          "start": 54.08,
+          "end": 54.38,
+          "probability": 0.9924675822257996
+        },
+        {
+          "word": " nice.",
+          "start": 54.38,
+          "end": 54.94,
+          "probability": 0.9983622431755066
+        },
+        {
+          "word": " There's",
+          "start": 55.68,
+          "end": 56.0,
+          "probability": 0.9077204465866089
+        },
+        {
+          "word": " a",
+          "start": 56.0,
+          "end": 56.18,
+          "probability": 0.9967392086982727
+        },
+        {
+          "word": " nice",
+          "start": 56.18,
+          "end": 56.54,
+          "probability": 0.9992130994796753
+        },
+        {
+          "word": " forest",
+          "start": 56.54,
+          "end": 57.28,
+          "probability": 0.996181845664978
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 4688,
+      "start": 57.28,
+      "end": 65.86,
+      "text": " and it's good to go there when it's a hot day. And there's the sea which is beautiful and blue.",
+      "tokens": [
+        50908,
+        293,
+        309,
+        311,
+        665,
+        281,
+        352,
+        456,
+        562,
+        309,
+        311,
+        257,
+        2368,
+        786,
+        13,
+        400,
+        456,
+        311,
+        264,
+        4158,
+        597,
+        307,
+        2238,
+        293,
+        3344,
+        13,
+        51300
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14070838689804077,
+      "compression_ratio": 1.4705882352941178,
+      "no_speech_prob": 0.36140432953834534,
+      "words": [
+        {
+          "word": " and",
+          "start": 57.28,
+          "end": 58.16,
+          "probability": 0.6888141632080078
+        },
+        {
+          "word": " it's",
+          "start": 58.16,
+          "end": 58.46,
+          "probability": 0.9949303865432739
+        },
+        {
+          "word": " good",
+          "start": 58.46,
+          "end": 58.64,
+          "probability": 0.9986849427223206
+        },
+        {
+          "word": " to",
+          "start": 58.64,
+          "end": 58.9,
+          "probability": 0.9992848038673401
+        },
+        {
+          "word": " go",
+          "start": 58.9,
+          "end": 59.12,
+          "probability": 0.9989854693412781
+        },
+        {
+          "word": " there",
+          "start": 59.12,
+          "end": 59.54,
+          "probability": 0.99659663438797
+        },
+        {
+          "word": " when",
+          "start": 59.54,
+          "end": 59.76,
+          "probability": 0.9838358163833618
+        },
+        {
+          "word": " it's",
+          "start": 59.76,
+          "end": 60.08,
+          "probability": 0.9973601698875427
+        },
+        {
+          "word": " a",
+          "start": 60.08,
+          "end": 60.26,
+          "probability": 0.9935095906257629
+        },
+        {
+          "word": " hot",
+          "start": 60.26,
+          "end": 60.48,
+          "probability": 0.9991130232810974
+        },
+        {
+          "word": " day.",
+          "start": 60.48,
+          "end": 61.02,
+          "probability": 0.9990599751472473
+        },
+        {
+          "word": " And",
+          "start": 61.38,
+          "end": 61.88,
+          "probability": 0.9730032086372375
+        },
+        {
+          "word": " there's",
+          "start": 61.88,
+          "end": 62.52,
+          "probability": 0.9740597307682037
+        },
+        {
+          "word": " the",
+          "start": 62.52,
+          "end": 62.84,
+          "probability": 0.9977220892906189
+        },
+        {
+          "word": " sea",
+          "start": 62.84,
+          "end": 63.3,
+          "probability": 0.9926092028617859
+        },
+        {
+          "word": " which",
+          "start": 63.3,
+          "end": 63.92,
+          "probability": 0.364715576171875
+        },
+        {
+          "word": " is",
+          "start": 63.92,
+          "end": 64.14,
+          "probability": 0.999163031578064
+        },
+        {
+          "word": " beautiful",
+          "start": 64.14,
+          "end": 64.84,
+          "probability": 0.9991212487220764
+        },
+        {
+          "word": " and",
+          "start": 64.84,
+          "end": 65.4,
+          "probability": 0.9914347529411316
+        },
+        {
+          "word": " blue.",
+          "start": 65.4,
+          "end": 65.86,
+          "probability": 0.9989114999771118
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 4688,
+      "start": 66.68,
+      "end": 69.44,
+      "text": " So I chose this photo because...",
+      "tokens": [
+        51348,
+        407,
+        286,
+        5111,
+        341,
+        5052,
+        570,
+        485,
+        51492
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14070838689804077,
+      "compression_ratio": 1.4705882352941178,
+      "no_speech_prob": 0.36140432953834534,
+      "words": [
+        {
+          "word": " So",
+          "start": 66.68,
+          "end": 67.0,
+          "probability": 0.9680849313735962
+        },
+        {
+          "word": " I",
+          "start": 67.0,
+          "end": 67.42,
+          "probability": 0.7600693702697754
+        },
+        {
+          "word": " chose",
+          "start": 67.42,
+          "end": 67.78,
+          "probability": 0.944757342338562
+        },
+        {
+          "word": " this",
+          "start": 67.78,
+          "end": 68.16,
+          "probability": 0.9991445541381836
+        },
+        {
+          "word": " photo",
+          "start": 68.16,
+          "end": 68.7,
+          "probability": 0.9988653659820557
+        },
+        {
+          "word": " because...",
+          "start": 68.7,
+          "end": 69.44,
+          "probability": 0.6879240423440933
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 6944,
+      "start": 71.60000000000001,
+      "end": 73.2,
+      "text": " Hello everybody.",
+      "tokens": [
+        50364,
+        2425,
+        2201,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18017140830435405,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.5514314770698547,
+      "words": [
+        {
+          "word": " Hello",
+          "start": 71.60000000000001,
+          "end": 72.4,
+          "probability": 0.2555324137210846
+        },
+        {
+          "word": " everybody.",
+          "start": 72.4,
+          "end": 73.2,
+          "probability": 0.6916556358337402
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 6944,
+      "start": 74.2,
+      "end": 76.36,
+      "text": " Okay, so I'm Altan.",
+      "tokens": [
+        50564,
+        1033,
+        11,
+        370,
+        286,
+        478,
+        15992,
+        282,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18017140830435405,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.5514314770698547,
+      "words": [
+        {
+          "word": " Okay,",
+          "start": 74.2,
+          "end": 74.2,
+          "probability": 0.6185677647590637
+        },
+        {
+          "word": " so",
+          "start": 74.72,
+          "end": 75.24,
+          "probability": 0.9823816418647766
+        },
+        {
+          "word": " I'm",
+          "start": 75.24,
+          "end": 75.9,
+          "probability": 0.9019829332828522
+        },
+        {
+          "word": " Altan.",
+          "start": 75.9,
+          "end": 76.36,
+          "probability": 0.9201800227165222
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 6944,
+      "start": 77.1,
+      "end": 78.54,
+      "text": " I'm from Samsun.",
+      "tokens": [
+        50714,
+        286,
+        478,
+        490,
+        12666,
+        409,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18017140830435405,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.5514314770698547,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 77.1,
+          "end": 77.18,
+          "probability": 0.9917003512382507
+        },
+        {
+          "word": " from",
+          "start": 77.18,
+          "end": 77.4,
+          "probability": 0.9989782571792603
+        },
+        {
+          "word": " Samsun.",
+          "start": 77.4,
+          "end": 78.54,
+          "probability": 0.813105434179306
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 6944,
+      "start": 79.52,
+      "end": 81.42,
+      "text": " Samsun is in Turkey.",
+      "tokens": [
+        50814,
+        12666,
+        409,
+        307,
+        294,
+        12647,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18017140830435405,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.5514314770698547,
+      "words": [
+        {
+          "word": " Samsun",
+          "start": 79.52,
+          "end": 80.32,
+          "probability": 0.9249728918075562
+        },
+        {
+          "word": " is",
+          "start": 80.32,
+          "end": 80.72,
+          "probability": 0.9891600012779236
+        },
+        {
+          "word": " in",
+          "start": 80.72,
+          "end": 80.98,
+          "probability": 0.994106650352478
+        },
+        {
+          "word": " Turkey.",
+          "start": 80.98,
+          "end": 81.42,
+          "probability": 0.9902598261833191
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 6944,
+      "start": 82.36,
+      "end": 85.8,
+      "text": " I'm Turkish and Samsun's a city by the Black Sea.",
+      "tokens": [
+        50964,
+        286,
+        478,
+        18565,
+        293,
+        12666,
+        409,
+        311,
+        257,
+        2307,
+        538,
+        264,
+        4076,
+        11352,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18017140830435405,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.5514314770698547,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 82.36,
+          "end": 82.56,
+          "probability": 0.9884440302848816
+        },
+        {
+          "word": " Turkish",
+          "start": 82.56,
+          "end": 83.08,
+          "probability": 0.988696813583374
+        },
+        {
+          "word": " and",
+          "start": 83.08,
+          "end": 83.76,
+          "probability": 0.7471380829811096
+        },
+        {
+          "word": " Samsun's",
+          "start": 83.76,
+          "end": 84.38,
+          "probability": 0.807396670182546
+        },
+        {
+          "word": " a",
+          "start": 84.38,
+          "end": 84.54,
+          "probability": 0.9657648205757141
+        },
+        {
+          "word": " city",
+          "start": 84.54,
+          "end": 84.8,
+          "probability": 0.9920382499694824
+        },
+        {
+          "word": " by",
+          "start": 84.8,
+          "end": 85.06,
+          "probability": 0.9946011304855347
+        },
+        {
+          "word": " the",
+          "start": 85.06,
+          "end": 85.22,
+          "probability": 0.9950345754623413
+        },
+        {
+          "word": " Black",
+          "start": 85.22,
+          "end": 85.48,
+          "probability": 0.933143675327301
+        },
+        {
+          "word": " Sea.",
+          "start": 85.48,
+          "end": 85.8,
+          "probability": 0.9858497977256775
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 6944,
+      "start": 87.42,
+      "end": 92.22,
+      "text": " But okay, so today I'm going to talk about a different place.",
+      "tokens": [
+        51214,
+        583,
+        1392,
+        11,
+        370,
+        965,
+        286,
+        478,
+        516,
+        281,
+        751,
+        466,
+        257,
+        819,
+        1081,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18017140830435405,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.5514314770698547,
+      "words": [
+        {
+          "word": " But",
+          "start": 87.42,
+          "end": 87.7,
+          "probability": 0.8673025965690613
+        },
+        {
+          "word": " okay,",
+          "start": 87.7,
+          "end": 88.72,
+          "probability": 0.5158007144927979
+        },
+        {
+          "word": " so",
+          "start": 88.84,
+          "end": 89.34,
+          "probability": 0.985878586769104
+        },
+        {
+          "word": " today",
+          "start": 89.34,
+          "end": 89.78,
+          "probability": 0.9794787764549255
+        },
+        {
+          "word": " I'm",
+          "start": 89.78,
+          "end": 90.64,
+          "probability": 0.8780200183391571
+        },
+        {
+          "word": " going",
+          "start": 90.64,
+          "end": 90.72,
+          "probability": 0.997897744178772
+        },
+        {
+          "word": " to",
+          "start": 90.72,
+          "end": 90.9,
+          "probability": 0.9991075396537781
+        },
+        {
+          "word": " talk",
+          "start": 90.9,
+          "end": 91.08,
+          "probability": 0.9992916584014893
+        },
+        {
+          "word": " about",
+          "start": 91.08,
+          "end": 91.32,
+          "probability": 0.9988740086555481
+        },
+        {
+          "word": " a",
+          "start": 91.32,
+          "end": 91.56,
+          "probability": 0.9913368225097656
+        },
+        {
+          "word": " different",
+          "start": 91.56,
+          "end": 91.84,
+          "probability": 0.999170184135437
+        },
+        {
+          "word": " place.",
+          "start": 91.84,
+          "end": 92.22,
+          "probability": 0.999387264251709
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 6944,
+      "start": 93.22,
+      "end": 94.4,
+      "text": " Here's my first photo.",
+      "tokens": [
+        51514,
+        1692,
+        311,
+        452,
+        700,
+        5052,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18017140830435405,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.5514314770698547,
+      "words": [
+        {
+          "word": " Here's",
+          "start": 93.22,
+          "end": 93.52,
+          "probability": 0.9750326573848724
+        },
+        {
+          "word": " my",
+          "start": 93.52,
+          "end": 93.76,
+          "probability": 0.998880922794342
+        },
+        {
+          "word": " first",
+          "start": 93.76,
+          "end": 94.0,
+          "probability": 0.9989373087882996
+        },
+        {
+          "word": " photo.",
+          "start": 94.0,
+          "end": 94.4,
+          "probability": 0.9988682270050049
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 6944,
+      "start": 95.16,
+      "end": 96.44,
+      "text": " It's a beautiful place.",
+      "tokens": [
+        51614,
+        467,
+        311,
+        257,
+        2238,
+        1081,
+        13,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.18017140830435405,
+      "compression_ratio": 1.4294478527607362,
+      "no_speech_prob": 0.5514314770698547,
+      "words": [
+        {
+          "word": " It's",
+          "start": 95.16,
+          "end": 95.54,
+          "probability": 0.9952968657016754
+        },
+        {
+          "word": " a",
+          "start": 95.54,
+          "end": 95.64,
+          "probability": 0.9993019104003906
+        },
+        {
+          "word": " beautiful",
+          "start": 95.64,
+          "end": 95.98,
+          "probability": 0.9991869330406189
+        },
+        {
+          "word": " place.",
+          "start": 95.98,
+          "end": 96.44,
+          "probability": 0.999560534954071
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 9644,
+      "start": 96.44,
+      "end": 101.34,
+      "text": " You can see there is a big mountain and there are trees here.",
+      "tokens": [
+        50364,
+        509,
+        393,
+        536,
+        456,
+        307,
+        257,
+        955,
+        6937,
+        293,
+        456,
+        366,
+        5852,
+        510,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14865803992611237,
+      "compression_ratio": 1.4731182795698925,
+      "no_speech_prob": 0.4138133227825165,
+      "words": [
+        {
+          "word": " You",
+          "start": 96.44,
+          "end": 97.38,
+          "probability": 0.7456983327865601
+        },
+        {
+          "word": " can",
+          "start": 97.38,
+          "end": 97.68,
+          "probability": 0.9930986762046814
+        },
+        {
+          "word": " see",
+          "start": 97.68,
+          "end": 98.0,
+          "probability": 0.9949935078620911
+        },
+        {
+          "word": " there",
+          "start": 98.0,
+          "end": 98.34,
+          "probability": 0.8651857376098633
+        },
+        {
+          "word": " is",
+          "start": 98.34,
+          "end": 98.48,
+          "probability": 0.6424717307090759
+        },
+        {
+          "word": " a",
+          "start": 98.48,
+          "end": 98.68,
+          "probability": 0.9752811789512634
+        },
+        {
+          "word": " big",
+          "start": 98.68,
+          "end": 98.84,
+          "probability": 0.9954676628112793
+        },
+        {
+          "word": " mountain",
+          "start": 98.84,
+          "end": 99.28,
+          "probability": 0.9911453127861023
+        },
+        {
+          "word": " and",
+          "start": 99.28,
+          "end": 99.96,
+          "probability": 0.825136661529541
+        },
+        {
+          "word": " there",
+          "start": 99.96,
+          "end": 100.14,
+          "probability": 0.9735808372497559
+        },
+        {
+          "word": " are",
+          "start": 100.14,
+          "end": 100.34,
+          "probability": 0.9958617091178894
+        },
+        {
+          "word": " trees",
+          "start": 100.34,
+          "end": 100.58,
+          "probability": 0.9781744480133057
+        },
+        {
+          "word": " here.",
+          "start": 100.58,
+          "end": 101.34,
+          "probability": 0.9933611154556274
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 9644,
+      "start": 102.12,
+      "end": 105.14,
+      "text": " It's sunny but it's a cold day in autumn.",
+      "tokens": [
+        50614,
+        467,
+        311,
+        20412,
+        457,
+        309,
+        311,
+        257,
+        3554,
+        786,
+        294,
+        24604,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14865803992611237,
+      "compression_ratio": 1.4731182795698925,
+      "no_speech_prob": 0.4138133227825165,
+      "words": [
+        {
+          "word": " It's",
+          "start": 102.12,
+          "end": 102.3,
+          "probability": 0.9417769908905029
+        },
+        {
+          "word": " sunny",
+          "start": 102.3,
+          "end": 102.6,
+          "probability": 0.995817244052887
+        },
+        {
+          "word": " but",
+          "start": 102.6,
+          "end": 103.5,
+          "probability": 0.3853532671928406
+        },
+        {
+          "word": " it's",
+          "start": 103.5,
+          "end": 103.96,
+          "probability": 0.9601126909255981
+        },
+        {
+          "word": " a",
+          "start": 103.96,
+          "end": 104.12,
+          "probability": 0.9923678040504456
+        },
+        {
+          "word": " cold",
+          "start": 104.12,
+          "end": 104.26,
+          "probability": 0.9820985794067383
+        },
+        {
+          "word": " day",
+          "start": 104.26,
+          "end": 104.52,
+          "probability": 0.9953019618988037
+        },
+        {
+          "word": " in",
+          "start": 104.52,
+          "end": 104.76,
+          "probability": 0.9969724416732788
+        },
+        {
+          "word": " autumn.",
+          "start": 104.76,
+          "end": 105.14,
+          "probability": 0.8842410445213318
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 9644,
+      "start": 106.6,
+      "end": 110.56,
+      "text": " Can you see the color of the trees? All red and orange.",
+      "tokens": [
+        50814,
+        1664,
+        291,
+        536,
+        264,
+        2017,
+        295,
+        264,
+        5852,
+        30,
+        1057,
+        2182,
+        293,
+        7671,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14865803992611237,
+      "compression_ratio": 1.4731182795698925,
+      "no_speech_prob": 0.4138133227825165,
+      "words": [
+        {
+          "word": " Can",
+          "start": 106.6,
+          "end": 106.76,
+          "probability": 0.9931582808494568
+        },
+        {
+          "word": " you",
+          "start": 106.76,
+          "end": 106.98,
+          "probability": 0.9987303614616394
+        },
+        {
+          "word": " see",
+          "start": 106.98,
+          "end": 107.16,
+          "probability": 0.9983658194541931
+        },
+        {
+          "word": " the",
+          "start": 107.16,
+          "end": 107.44,
+          "probability": 0.9984350800514221
+        },
+        {
+          "word": " color",
+          "start": 107.44,
+          "end": 107.62,
+          "probability": 0.7532904744148254
+        },
+        {
+          "word": " of",
+          "start": 107.62,
+          "end": 107.84,
+          "probability": 0.9986153841018677
+        },
+        {
+          "word": " the",
+          "start": 107.84,
+          "end": 108.04,
+          "probability": 0.9946051239967346
+        },
+        {
+          "word": " trees?",
+          "start": 108.04,
+          "end": 108.38,
+          "probability": 0.9880927205085754
+        },
+        {
+          "word": " All",
+          "start": 109.0,
+          "end": 109.32,
+          "probability": 0.931801974773407
+        },
+        {
+          "word": " red",
+          "start": 109.32,
+          "end": 109.64,
+          "probability": 0.987873375415802
+        },
+        {
+          "word": " and",
+          "start": 109.64,
+          "end": 110.1,
+          "probability": 0.9946224689483643
+        },
+        {
+          "word": " orange.",
+          "start": 110.1,
+          "end": 110.56,
+          "probability": 0.9925313591957092
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 9644,
+      "start": 111.7,
+      "end": 114.66,
+      "text": " So, where is this beautiful place?",
+      "tokens": [
+        51064,
+        407,
+        11,
+        689,
+        307,
+        341,
+        2238,
+        1081,
+        30,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14865803992611237,
+      "compression_ratio": 1.4731182795698925,
+      "no_speech_prob": 0.4138133227825165,
+      "words": [
+        {
+          "word": " So,",
+          "start": 111.7,
+          "end": 112.16,
+          "probability": 0.988244891166687
+        },
+        {
+          "word": " where",
+          "start": 112.74,
+          "end": 112.96,
+          "probability": 0.9684611558914185
+        },
+        {
+          "word": " is",
+          "start": 112.96,
+          "end": 113.2,
+          "probability": 0.9966973066329956
+        },
+        {
+          "word": " this",
+          "start": 113.2,
+          "end": 113.66,
+          "probability": 0.9985231757164001
+        },
+        {
+          "word": " beautiful",
+          "start": 113.66,
+          "end": 114.16,
+          "probability": 0.9949455857276917
+        },
+        {
+          "word": " place?",
+          "start": 114.16,
+          "end": 114.66,
+          "probability": 0.9992355108261108
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 9644,
+      "start": 115.68,
+      "end": 118.36,
+      "text": " Well, it's in South Korea.",
+      "tokens": [
+        51264,
+        1042,
+        11,
+        309,
+        311,
+        294,
+        4242,
+        6307,
+        13,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14865803992611237,
+      "compression_ratio": 1.4731182795698925,
+      "no_speech_prob": 0.4138133227825165,
+      "words": [
+        {
+          "word": " Well,",
+          "start": 115.68,
+          "end": 116.36,
+          "probability": 0.9809578657150269
+        },
+        {
+          "word": " it's",
+          "start": 117.16,
+          "end": 117.4,
+          "probability": 0.9499811232089996
+        },
+        {
+          "word": " in",
+          "start": 117.4,
+          "end": 117.6,
+          "probability": 0.9928475618362427
+        },
+        {
+          "word": " South",
+          "start": 117.6,
+          "end": 117.88,
+          "probability": 0.9861456155776978
+        },
+        {
+          "word": " Korea.",
+          "start": 117.88,
+          "end": 118.36,
+          "probability": 0.9899687170982361
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 9644,
+      "start": 119.44,
+      "end": 122.72,
+      "text": " This is Seoraksan National Park.",
+      "tokens": [
+        51464,
+        639,
+        307,
+        1100,
+        284,
+        5461,
+        282,
+        4862,
+        4964,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14865803992611237,
+      "compression_ratio": 1.4731182795698925,
+      "no_speech_prob": 0.4138133227825165,
+      "words": [
+        {
+          "word": " This",
+          "start": 119.44,
+          "end": 119.82,
+          "probability": 0.991817831993103
+        },
+        {
+          "word": " is",
+          "start": 119.82,
+          "end": 120.62,
+          "probability": 0.997836172580719
+        },
+        {
+          "word": " Seoraksan",
+          "start": 120.62,
+          "end": 121.6,
+          "probability": 0.8214166089892387
+        },
+        {
+          "word": " National",
+          "start": 121.6,
+          "end": 122.18,
+          "probability": 0.943325400352478
+        },
+        {
+          "word": " Park.",
+          "start": 122.18,
+          "end": 122.72,
+          "probability": 0.9849684834480286
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 9644,
+      "start": 123.3,
+      "end": 124.54,
+      "text": " It's a famous park.",
+      "tokens": [
+        51664,
+        467,
+        311,
+        257,
+        4618,
+        3884,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.14865803992611237,
+      "compression_ratio": 1.4731182795698925,
+      "no_speech_prob": 0.4138133227825165,
+      "words": [
+        {
+          "word": " It's",
+          "start": 123.3,
+          "end": 123.64,
+          "probability": 0.9856870174407959
+        },
+        {
+          "word": " a",
+          "start": 123.64,
+          "end": 123.8,
+          "probability": 0.9965558052062988
+        },
+        {
+          "word": " famous",
+          "start": 123.8,
+          "end": 124.08,
+          "probability": 0.9992809891700745
+        },
+        {
+          "word": " park.",
+          "start": 124.08,
+          "end": 124.54,
+          "probability": 0.9734396934509277
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 12454,
+      "start": 124.54,
+      "end": 126.78,
+      "text": " A lot of people go there.",
+      "tokens": [
+        50364,
+        316,
+        688,
+        295,
+        561,
+        352,
+        456,
+        13,
+        50516
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3174264907836914,
+      "compression_ratio": 0.9836065573770492,
+      "no_speech_prob": 0.4210343658924103,
+      "words": [
+        {
+          "word": " A",
+          "start": 124.54,
+          "end": 125.38,
+          "probability": 0.59615159034729
+        },
+        {
+          "word": " lot",
+          "start": 125.38,
+          "end": 125.58,
+          "probability": 0.9981125593185425
+        },
+        {
+          "word": " of",
+          "start": 125.58,
+          "end": 125.76,
+          "probability": 0.9959291815757751
+        },
+        {
+          "word": " people",
+          "start": 125.76,
+          "end": 125.94,
+          "probability": 0.9971625208854675
+        },
+        {
+          "word": " go",
+          "start": 125.94,
+          "end": 126.18,
+          "probability": 0.9889453053474426
+        },
+        {
+          "word": " there.",
+          "start": 126.18,
+          "end": 126.78,
+          "probability": 0.9948457479476929
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 12454,
+      "start": 127.58,
+      "end": 129.26,
+      "text": " Here is another photo of the park.",
+      "tokens": [
+        50516,
+        1692,
+        307,
+        1071,
+        5052,
+        295,
+        264,
+        3884,
+        13,
+        50598
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3174264907836914,
+      "compression_ratio": 0.9836065573770492,
+      "no_speech_prob": 0.4210343658924103,
+      "words": [
+        {
+          "word": " Here",
+          "start": 127.58,
+          "end": 127.7,
+          "probability": 0.9805706143379211
+        },
+        {
+          "word": " is",
+          "start": 127.7,
+          "end": 128.02,
+          "probability": 0.6499468684196472
+        },
+        {
+          "word": " another",
+          "start": 128.02,
+          "end": 128.32,
+          "probability": 0.9726124405860901
+        },
+        {
+          "word": " photo",
+          "start": 128.32,
+          "end": 128.68,
+          "probability": 0.9935500621795654
+        },
+        {
+          "word": " of",
+          "start": 128.68,
+          "end": 128.9,
+          "probability": 0.9934471249580383
+        },
+        {
+          "word": " the",
+          "start": 128.9,
+          "end": 129.06,
+          "probability": 0.9936299920082092
+        },
+        {
+          "word": " park.",
+          "start": 129.06,
+          "end": 129.26,
+          "probability": 0.9789116382598877
+        }
+      ]
+    }
+  ]
+}

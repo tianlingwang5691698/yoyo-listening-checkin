@@ -1,0 +1,1072 @@
+{
+  "trackId": "track-unlock1-1-2",
+  "contentId": "unlock1-1",
+  "mediaType": "audio",
+  "syncGranularity": "word",
+  "source": "whisperx",
+  "fileName": "Unlock2e_A1_1.2",
+  "lines": [
+    {
+      "lineId": "unlock1-1-1",
+      "text": "Carlos: Hi, hello.",
+      "startMs": 1920,
+      "endMs": 3400,
+      "words": [
+        {
+          "wordId": "unlock1-1-1-w1",
+          "text": "Carlos:",
+          "startMs": 1920,
+          "endMs": 1921
+        },
+        {
+          "wordId": "unlock1-1-1-w2",
+          "text": "Hi,",
+          "startMs": 1921,
+          "endMs": 2660
+        },
+        {
+          "wordId": "unlock1-1-1-w3",
+          "text": "hello.",
+          "startMs": 2880,
+          "endMs": 3400
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-2",
+      "text": "I'm Carlos.",
+      "startMs": 4120,
+      "endMs": 5260,
+      "words": [
+        {
+          "wordId": "unlock1-1-2-w1",
+          "text": "I'm",
+          "startMs": 4120,
+          "endMs": 4640
+        },
+        {
+          "wordId": "unlock1-1-2-w2",
+          "text": "Carlos.",
+          "startMs": 4640,
+          "endMs": 5260
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-3",
+      "text": "I'm going to tell you about Koko.",
+      "startMs": 6320,
+      "endMs": 8960,
+      "words": [
+        {
+          "wordId": "unlock1-1-3-w1",
+          "text": "I'm",
+          "startMs": 6320,
+          "endMs": 6700
+        },
+        {
+          "wordId": "unlock1-1-3-w2",
+          "text": "going",
+          "startMs": 6700,
+          "endMs": 6960
+        },
+        {
+          "wordId": "unlock1-1-3-w3",
+          "text": "to",
+          "startMs": 6960,
+          "endMs": 7280
+        },
+        {
+          "wordId": "unlock1-1-3-w4",
+          "text": "tell",
+          "startMs": 7280,
+          "endMs": 7520
+        },
+        {
+          "wordId": "unlock1-1-3-w5",
+          "text": "you",
+          "startMs": 7520,
+          "endMs": 7940
+        },
+        {
+          "wordId": "unlock1-1-3-w6",
+          "text": "about",
+          "startMs": 7940,
+          "endMs": 8480
+        },
+        {
+          "wordId": "unlock1-1-3-w7",
+          "text": "Koko.",
+          "startMs": 8480,
+          "endMs": 8960
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-4",
+      "text": "She's a student in our class.",
+      "startMs": 9920,
+      "endMs": 12380,
+      "words": [
+        {
+          "wordId": "unlock1-1-4-w1",
+          "text": "She's",
+          "startMs": 9920,
+          "endMs": 10420
+        },
+        {
+          "wordId": "unlock1-1-4-w2",
+          "text": "a",
+          "startMs": 10420,
+          "endMs": 10660
+        },
+        {
+          "wordId": "unlock1-1-4-w3",
+          "text": "student",
+          "startMs": 10660,
+          "endMs": 11140
+        },
+        {
+          "wordId": "unlock1-1-4-w4",
+          "text": "in",
+          "startMs": 11140,
+          "endMs": 11520
+        },
+        {
+          "wordId": "unlock1-1-4-w5",
+          "text": "our",
+          "startMs": 11520,
+          "endMs": 11880
+        },
+        {
+          "wordId": "unlock1-1-4-w6",
+          "text": "class.",
+          "startMs": 11880,
+          "endMs": 12380
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-5",
+      "text": "She's 18 and she's from Japan.",
+      "startMs": 13480,
+      "endMs": 16980,
+      "words": [
+        {
+          "wordId": "unlock1-1-5-w1",
+          "text": "She's",
+          "startMs": 13480,
+          "endMs": 14000
+        },
+        {
+          "wordId": "unlock1-1-5-w2",
+          "text": "18",
+          "startMs": 14000,
+          "endMs": 14660
+        },
+        {
+          "wordId": "unlock1-1-5-w3",
+          "text": "and",
+          "startMs": 14660,
+          "endMs": 15560
+        },
+        {
+          "wordId": "unlock1-1-5-w4",
+          "text": "she's",
+          "startMs": 15560,
+          "endMs": 16040
+        },
+        {
+          "wordId": "unlock1-1-5-w5",
+          "text": "from",
+          "startMs": 16040,
+          "endMs": 16340
+        },
+        {
+          "wordId": "unlock1-1-5-w6",
+          "text": "Japan.",
+          "startMs": 16340,
+          "endMs": 16980
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-6",
+      "text": "Her family's from Sapporo.",
+      "startMs": 17980,
+      "endMs": 20260,
+      "words": [
+        {
+          "wordId": "unlock1-1-6-w1",
+          "text": "Her",
+          "startMs": 17980,
+          "endMs": 18320
+        },
+        {
+          "wordId": "unlock1-1-6-w2",
+          "text": "family's",
+          "startMs": 18320,
+          "endMs": 19080
+        },
+        {
+          "wordId": "unlock1-1-6-w3",
+          "text": "from",
+          "startMs": 19080,
+          "endMs": 19540
+        },
+        {
+          "wordId": "unlock1-1-6-w4",
+          "text": "Sapporo.",
+          "startMs": 19540,
+          "endMs": 20260
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-7",
+      "text": "Her father's a teacher.",
+      "startMs": 21480,
+      "endMs": 23080,
+      "words": [
+        {
+          "wordId": "unlock1-1-7-w1",
+          "text": "Her",
+          "startMs": 21480,
+          "endMs": 21820
+        },
+        {
+          "wordId": "unlock1-1-7-w2",
+          "text": "father's",
+          "startMs": 21820,
+          "endMs": 22440
+        },
+        {
+          "wordId": "unlock1-1-7-w3",
+          "text": "a",
+          "startMs": 22440,
+          "endMs": 22620
+        },
+        {
+          "wordId": "unlock1-1-7-w4",
+          "text": "teacher.",
+          "startMs": 22620,
+          "endMs": 23080
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-8",
+      "text": "She wants to study English at university.",
+      "startMs": 24120,
+      "endMs": 27260,
+      "words": [
+        {
+          "wordId": "unlock1-1-8-w1",
+          "text": "She",
+          "startMs": 24120,
+          "endMs": 24500
+        },
+        {
+          "wordId": "unlock1-1-8-w2",
+          "text": "wants",
+          "startMs": 24500,
+          "endMs": 24880
+        },
+        {
+          "wordId": "unlock1-1-8-w3",
+          "text": "to",
+          "startMs": 24880,
+          "endMs": 25260
+        },
+        {
+          "wordId": "unlock1-1-8-w4",
+          "text": "study",
+          "startMs": 25260,
+          "endMs": 25580
+        },
+        {
+          "wordId": "unlock1-1-8-w5",
+          "text": "English",
+          "startMs": 25580,
+          "endMs": 26180
+        },
+        {
+          "wordId": "unlock1-1-8-w6",
+          "text": "at",
+          "startMs": 26180,
+          "endMs": 26540
+        },
+        {
+          "wordId": "unlock1-1-8-w7",
+          "text": "university.",
+          "startMs": 26540,
+          "endMs": 27260
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-9",
+      "text": "Kerry: All right!",
+      "startMs": 27260,
+      "endMs": 29360,
+      "words": [
+        {
+          "wordId": "unlock1-1-9-w1",
+          "text": "Kerry:",
+          "startMs": 27260,
+          "endMs": 27261
+        },
+        {
+          "wordId": "unlock1-1-9-w2",
+          "text": "All",
+          "startMs": 27261,
+          "endMs": 28820
+        },
+        {
+          "wordId": "unlock1-1-9-w3",
+          "text": "right!",
+          "startMs": 28820,
+          "endMs": 29360
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-10",
+      "text": "Thank you, Carlos.",
+      "startMs": 29740,
+      "endMs": 30840,
+      "words": [
+        {
+          "wordId": "unlock1-1-10-w1",
+          "text": "Thank",
+          "startMs": 29740,
+          "endMs": 30100
+        },
+        {
+          "wordId": "unlock1-1-10-w2",
+          "text": "you,",
+          "startMs": 30100,
+          "endMs": 30400
+        },
+        {
+          "wordId": "unlock1-1-10-w3",
+          "text": "Carlos.",
+          "startMs": 30400,
+          "endMs": 30840
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-11",
+      "text": "So, Koko.",
+      "startMs": 32620,
+      "endMs": 33100,
+      "words": [
+        {
+          "wordId": "unlock1-1-11-w1",
+          "text": "So,",
+          "startMs": 32620,
+          "endMs": 32780
+        },
+        {
+          "wordId": "unlock1-1-11-w2",
+          "text": "Koko.",
+          "startMs": 32980,
+          "endMs": 33100
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-12",
+      "text": "It's your turn.",
+      "startMs": 33660,
+      "endMs": 34820,
+      "words": [
+        {
+          "wordId": "unlock1-1-12-w1",
+          "text": "It's",
+          "startMs": 33660,
+          "endMs": 34020
+        },
+        {
+          "wordId": "unlock1-1-12-w2",
+          "text": "your",
+          "startMs": 34020,
+          "endMs": 34400
+        },
+        {
+          "wordId": "unlock1-1-12-w3",
+          "text": "turn.",
+          "startMs": 34400,
+          "endMs": 34820
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-13",
+      "text": "Please introduce the student next to you.",
+      "startMs": 35480,
+      "endMs": 38500,
+      "words": [
+        {
+          "wordId": "unlock1-1-13-w1",
+          "text": "Please",
+          "startMs": 35480,
+          "endMs": 35980
+        },
+        {
+          "wordId": "unlock1-1-13-w2",
+          "text": "introduce",
+          "startMs": 35980,
+          "endMs": 36640
+        },
+        {
+          "wordId": "unlock1-1-13-w3",
+          "text": "the",
+          "startMs": 36640,
+          "endMs": 36960
+        },
+        {
+          "wordId": "unlock1-1-13-w4",
+          "text": "student",
+          "startMs": 36960,
+          "endMs": 37380
+        },
+        {
+          "wordId": "unlock1-1-13-w5",
+          "text": "next",
+          "startMs": 37380,
+          "endMs": 37860
+        },
+        {
+          "wordId": "unlock1-1-13-w6",
+          "text": "to",
+          "startMs": 37860,
+          "endMs": 38040
+        },
+        {
+          "wordId": "unlock1-1-13-w7",
+          "text": "you.",
+          "startMs": 38040,
+          "endMs": 38500
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-14",
+      "text": "Koko: Hi!",
+      "startMs": 38500,
+      "endMs": 39260,
+      "words": [
+        {
+          "wordId": "unlock1-1-14-w1",
+          "text": "Koko:",
+          "startMs": 38500,
+          "endMs": 38920
+        },
+        {
+          "wordId": "unlock1-1-14-w2",
+          "text": "Hi!",
+          "startMs": 38920,
+          "endMs": 39260
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-15",
+      "text": "I'm going to tell you about Nehir.",
+      "startMs": 39880,
+      "endMs": 42260,
+      "words": [
+        {
+          "wordId": "unlock1-1-15-w1",
+          "text": "I'm",
+          "startMs": 39880,
+          "endMs": 40400
+        },
+        {
+          "wordId": "unlock1-1-15-w2",
+          "text": "going",
+          "startMs": 40400,
+          "endMs": 40600
+        },
+        {
+          "wordId": "unlock1-1-15-w3",
+          "text": "to",
+          "startMs": 40600,
+          "endMs": 40860
+        },
+        {
+          "wordId": "unlock1-1-15-w4",
+          "text": "tell",
+          "startMs": 40860,
+          "endMs": 41080
+        },
+        {
+          "wordId": "unlock1-1-15-w5",
+          "text": "you",
+          "startMs": 41080,
+          "endMs": 41360
+        },
+        {
+          "wordId": "unlock1-1-15-w6",
+          "text": "about",
+          "startMs": 41360,
+          "endMs": 41800
+        },
+        {
+          "wordId": "unlock1-1-15-w7",
+          "text": "Nehir.",
+          "startMs": 41800,
+          "endMs": 42260
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-16",
+      "text": "Nehir is 19.",
+      "startMs": 43180,
+      "endMs": 44660,
+      "words": [
+        {
+          "wordId": "unlock1-1-16-w1",
+          "text": "Nehir",
+          "startMs": 43180,
+          "endMs": 43720
+        },
+        {
+          "wordId": "unlock1-1-16-w2",
+          "text": "is",
+          "startMs": 43720,
+          "endMs": 44060
+        },
+        {
+          "wordId": "unlock1-1-16-w3",
+          "text": "19.",
+          "startMs": 44060,
+          "endMs": 44660
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-17",
+      "text": "She's from Turkey.",
+      "startMs": 45260,
+      "endMs": 46640,
+      "words": [
+        {
+          "wordId": "unlock1-1-17-w1",
+          "text": "She's",
+          "startMs": 45260,
+          "endMs": 45680
+        },
+        {
+          "wordId": "unlock1-1-17-w2",
+          "text": "from",
+          "startMs": 45680,
+          "endMs": 46020
+        },
+        {
+          "wordId": "unlock1-1-17-w3",
+          "text": "Turkey.",
+          "startMs": 46020,
+          "endMs": 46640
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-18",
+      "text": "She has a brother.",
+      "startMs": 47420,
+      "endMs": 48420,
+      "words": [
+        {
+          "wordId": "unlock1-1-18-w1",
+          "text": "She",
+          "startMs": 47420,
+          "endMs": 47620
+        },
+        {
+          "wordId": "unlock1-1-18-w2",
+          "text": "has",
+          "startMs": 47620,
+          "endMs": 47880
+        },
+        {
+          "wordId": "unlock1-1-18-w3",
+          "text": "a",
+          "startMs": 47880,
+          "endMs": 48080
+        },
+        {
+          "wordId": "unlock1-1-18-w4",
+          "text": "brother.",
+          "startMs": 48080,
+          "endMs": 48420
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-19",
+      "text": "Her family has a hotel.",
+      "startMs": 49240,
+      "endMs": 51040,
+      "words": [
+        {
+          "wordId": "unlock1-1-19-w1",
+          "text": "Her",
+          "startMs": 49240,
+          "endMs": 49460
+        },
+        {
+          "wordId": "unlock1-1-19-w2",
+          "text": "family",
+          "startMs": 49460,
+          "endMs": 50020
+        },
+        {
+          "wordId": "unlock1-1-19-w3",
+          "text": "has",
+          "startMs": 50020,
+          "endMs": 50460
+        },
+        {
+          "wordId": "unlock1-1-19-w4",
+          "text": "a",
+          "startMs": 50460,
+          "endMs": 50680
+        },
+        {
+          "wordId": "unlock1-1-19-w5",
+          "text": "hotel.",
+          "startMs": 50680,
+          "endMs": 51040
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-20",
+      "text": "Her mother and father are the managers.",
+      "startMs": 52080,
+      "endMs": 54600,
+      "words": [
+        {
+          "wordId": "unlock1-1-20-w1",
+          "text": "Her",
+          "startMs": 52080,
+          "endMs": 52340
+        },
+        {
+          "wordId": "unlock1-1-20-w2",
+          "text": "mother",
+          "startMs": 52340,
+          "endMs": 52780
+        },
+        {
+          "wordId": "unlock1-1-20-w3",
+          "text": "and",
+          "startMs": 52780,
+          "endMs": 53140
+        },
+        {
+          "wordId": "unlock1-1-20-w4",
+          "text": "father",
+          "startMs": 53140,
+          "endMs": 53560
+        },
+        {
+          "wordId": "unlock1-1-20-w5",
+          "text": "are",
+          "startMs": 53560,
+          "endMs": 53920
+        },
+        {
+          "wordId": "unlock1-1-20-w6",
+          "text": "the",
+          "startMs": 53920,
+          "endMs": 54160
+        },
+        {
+          "wordId": "unlock1-1-20-w7",
+          "text": "managers.",
+          "startMs": 54160,
+          "endMs": 54600
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-21",
+      "text": "Nehir wants to study Business at university.",
+      "startMs": 55640,
+      "endMs": 59300,
+      "words": [
+        {
+          "wordId": "unlock1-1-21-w1",
+          "text": "Nehir",
+          "startMs": 55640,
+          "endMs": 56440
+        },
+        {
+          "wordId": "unlock1-1-21-w2",
+          "text": "wants",
+          "startMs": 56440,
+          "endMs": 56720
+        },
+        {
+          "wordId": "unlock1-1-21-w3",
+          "text": "to",
+          "startMs": 56720,
+          "endMs": 56960
+        },
+        {
+          "wordId": "unlock1-1-21-w4",
+          "text": "study",
+          "startMs": 56960,
+          "endMs": 57340
+        },
+        {
+          "wordId": "unlock1-1-21-w5",
+          "text": "Business",
+          "startMs": 57340,
+          "endMs": 57920
+        },
+        {
+          "wordId": "unlock1-1-21-w6",
+          "text": "at",
+          "startMs": 57920,
+          "endMs": 58340
+        },
+        {
+          "wordId": "unlock1-1-21-w7",
+          "text": "university.",
+          "startMs": 58340,
+          "endMs": 59300
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-22",
+      "text": "Kerry: Thank you, Koko.",
+      "startMs": 59300,
+      "endMs": 61100,
+      "words": [
+        {
+          "wordId": "unlock1-1-22-w1",
+          "text": "Kerry:",
+          "startMs": 59300,
+          "endMs": 60240
+        },
+        {
+          "wordId": "unlock1-1-22-w2",
+          "text": "Thank",
+          "startMs": 60240,
+          "endMs": 60400
+        },
+        {
+          "wordId": "unlock1-1-22-w3",
+          "text": "you,",
+          "startMs": 60400,
+          "endMs": 60700
+        },
+        {
+          "wordId": "unlock1-1-22-w4",
+          "text": "Koko.",
+          "startMs": 60700,
+          "endMs": 61100
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-23",
+      "text": "Nehir, your turn!",
+      "startMs": 62140,
+      "endMs": 64280,
+      "words": [
+        {
+          "wordId": "unlock1-1-23-w1",
+          "text": "Nehir,",
+          "startMs": 62140,
+          "endMs": 62940
+        },
+        {
+          "wordId": "unlock1-1-23-w2",
+          "text": "your",
+          "startMs": 63380,
+          "endMs": 63800
+        },
+        {
+          "wordId": "unlock1-1-23-w3",
+          "text": "turn!",
+          "startMs": 63800,
+          "endMs": 64280
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-24",
+      "text": "Nehir: Hello.",
+      "startMs": 64280,
+      "endMs": 65620,
+      "words": [
+        {
+          "wordId": "unlock1-1-24-w1",
+          "text": "Nehir:",
+          "startMs": 64280,
+          "endMs": 65200
+        },
+        {
+          "wordId": "unlock1-1-24-w2",
+          "text": "Hello.",
+          "startMs": 65200,
+          "endMs": 65620
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-25",
+      "text": "I'm going to tell you about Carlos.",
+      "startMs": 66080,
+      "endMs": 68140,
+      "words": [
+        {
+          "wordId": "unlock1-1-25-w1",
+          "text": "I'm",
+          "startMs": 66080,
+          "endMs": 66500
+        },
+        {
+          "wordId": "unlock1-1-25-w2",
+          "text": "going",
+          "startMs": 66500,
+          "endMs": 66680
+        },
+        {
+          "wordId": "unlock1-1-25-w3",
+          "text": "to",
+          "startMs": 66680,
+          "endMs": 66960
+        },
+        {
+          "wordId": "unlock1-1-25-w4",
+          "text": "tell",
+          "startMs": 66960,
+          "endMs": 67120
+        },
+        {
+          "wordId": "unlock1-1-25-w5",
+          "text": "you",
+          "startMs": 67120,
+          "endMs": 67280
+        },
+        {
+          "wordId": "unlock1-1-25-w6",
+          "text": "about",
+          "startMs": 67280,
+          "endMs": 67580
+        },
+        {
+          "wordId": "unlock1-1-25-w7",
+          "text": "Carlos.",
+          "startMs": 67580,
+          "endMs": 68140
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-26",
+      "text": "He's 19.",
+      "startMs": 68820,
+      "endMs": 69760,
+      "words": [
+        {
+          "wordId": "unlock1-1-26-w1",
+          "text": "He's",
+          "startMs": 68820,
+          "endMs": 69160
+        },
+        {
+          "wordId": "unlock1-1-26-w2",
+          "text": "19.",
+          "startMs": 69160,
+          "endMs": 69760
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-27",
+      "text": "He's from Peru.",
+      "startMs": 70400,
+      "endMs": 71460,
+      "words": [
+        {
+          "wordId": "unlock1-1-27-w1",
+          "text": "He's",
+          "startMs": 70400,
+          "endMs": 70720
+        },
+        {
+          "wordId": "unlock1-1-27-w2",
+          "text": "from",
+          "startMs": 70720,
+          "endMs": 70960
+        },
+        {
+          "wordId": "unlock1-1-27-w3",
+          "text": "Peru.",
+          "startMs": 70960,
+          "endMs": 71460
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-28",
+      "text": "His father's an engineer and his mother's a doctor.",
+      "startMs": 72140,
+      "endMs": 75780,
+      "words": [
+        {
+          "wordId": "unlock1-1-28-w1",
+          "text": "His",
+          "startMs": 72140,
+          "endMs": 72460
+        },
+        {
+          "wordId": "unlock1-1-28-w2",
+          "text": "father's",
+          "startMs": 72460,
+          "endMs": 73060
+        },
+        {
+          "wordId": "unlock1-1-28-w3",
+          "text": "an",
+          "startMs": 73060,
+          "endMs": 73340
+        },
+        {
+          "wordId": "unlock1-1-28-w4",
+          "text": "engineer",
+          "startMs": 73340,
+          "endMs": 73720
+        },
+        {
+          "wordId": "unlock1-1-28-w5",
+          "text": "and",
+          "startMs": 73720,
+          "endMs": 74400
+        },
+        {
+          "wordId": "unlock1-1-28-w6",
+          "text": "his",
+          "startMs": 74400,
+          "endMs": 74680
+        },
+        {
+          "wordId": "unlock1-1-28-w7",
+          "text": "mother's",
+          "startMs": 74680,
+          "endMs": 75200
+        },
+        {
+          "wordId": "unlock1-1-28-w8",
+          "text": "a",
+          "startMs": 75200,
+          "endMs": 75320
+        },
+        {
+          "wordId": "unlock1-1-28-w9",
+          "text": "doctor.",
+          "startMs": 75320,
+          "endMs": 75780
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-29",
+      "text": "Carlos wants to study Computer Science at university.",
+      "startMs": 76680,
+      "endMs": 80100,
+      "words": [
+        {
+          "wordId": "unlock1-1-29-w1",
+          "text": "Carlos",
+          "startMs": 76680,
+          "endMs": 77040
+        },
+        {
+          "wordId": "unlock1-1-29-w2",
+          "text": "wants",
+          "startMs": 77040,
+          "endMs": 77360
+        },
+        {
+          "wordId": "unlock1-1-29-w3",
+          "text": "to",
+          "startMs": 77360,
+          "endMs": 77620
+        },
+        {
+          "wordId": "unlock1-1-29-w4",
+          "text": "study",
+          "startMs": 77620,
+          "endMs": 77920
+        },
+        {
+          "wordId": "unlock1-1-29-w5",
+          "text": "Computer",
+          "startMs": 77920,
+          "endMs": 78540
+        },
+        {
+          "wordId": "unlock1-1-29-w6",
+          "text": "Science",
+          "startMs": 78540,
+          "endMs": 79100
+        },
+        {
+          "wordId": "unlock1-1-29-w7",
+          "text": "at",
+          "startMs": 79100,
+          "endMs": 79380
+        },
+        {
+          "wordId": "unlock1-1-29-w8",
+          "text": "university.",
+          "startMs": 79380,
+          "endMs": 80100
+        }
+      ]
+    },
+    {
+      "lineId": "unlock1-1-30",
+      "text": "Kerry: Thank you, Nehir.",
+      "startMs": 80100,
+      "endMs": 82400,
+      "words": [
+        {
+          "wordId": "unlock1-1-30-w1",
+          "text": "Kerry:",
+          "startMs": 80100,
+          "endMs": 81140
+        },
+        {
+          "wordId": "unlock1-1-30-w2",
+          "text": "Thank",
+          "startMs": 81140,
+          "endMs": 81540
+        },
+        {
+          "wordId": "unlock1-1-30-w3",
+          "text": "you,",
+          "startMs": 81540,
+          "endMs": 81780
+        },
+        {
+          "wordId": "unlock1-1-30-w4",
+          "text": "Nehir.",
+          "startMs": 81780,
+          "endMs": 82400
+        }
+      ]
+    }
+  ]
+}

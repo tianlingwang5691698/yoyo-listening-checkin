@@ -1,0 +1,211 @@
+{
+  "_id": "ielts-academic-18-test-2-speaking",
+  "id": "ielts-academic-18-test-2-speaking",
+  "title": "Cambridge IELTS 18 Test 2 Speaking",
+  "year": 2023,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑桥雅思真题18.pdf",
+  "book": "Cambridge IELTS 18 Academic",
+  "bookNumber": 18,
+  "testNumber": 2,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-18/speaking/source-pages-v1/test-2-speaking-1e6d3a2dc6.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-18/speaking/source-pages-v1/test-2-speaking-1e6d3a2dc6.jpg",
+      "alt": "Cambridge IELTS 18 Test 2 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "Did you like studying science when you were at school? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "What do you remember about your science teachers at school?",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "How interested are you in science now? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "What do you think has been an important recent scientific development? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a tourist attraction in your country that you would recommend. You should say: what the tourist attraction is where in your country this tourist attraction is what visitors can see and do at this tourist attraction and explain why you would recommend this tourist attraction.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "What are the most popular museums and art galleries in ... / where you live?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Do you believe that all museums and art galleries should be free?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "What kinds of things make a museum or art gallery an interesting place to visit?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Why, do you think, do some people book package holidays rather than travelling independently?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Would you say that large numbers of tourists cause problems for local people?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-18-test-2-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "What sort of impact can large holiday resorts have on the environment?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Science",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-1-1",
+              "number": 1,
+              "prompt": "Did you like studying science when you were at school? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-1-2",
+              "number": 2,
+              "prompt": "What do you remember about your science teachers at school?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-1-3",
+              "number": 3,
+              "prompt": "How interested are you in science now? [Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-1-4",
+              "number": 4,
+              "prompt": "What do you think has been an important recent scientific development? [Why?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-18-test-2-speaking-part-2-1",
+          "task": "Describe a tourist attraction in your country that you would recommend.",
+          "cuePoints": [
+            "what the tourist attraction is",
+            "where in your country this tourist attraction is",
+            "what visitors can see and do at this tourist attraction"
+          ],
+          "closingPrompt": "and explain why you would recommend this tourist attraction."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Museums and art galleries",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What are the most popular museums and art galleries in ... / where you live?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-3-2",
+              "number": 2,
+              "prompt": "Do you believe that all museums and art galleries should be free?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-3-3",
+              "number": 3,
+              "prompt": "What kinds of things make a museum or art gallery an interesting place to visit?"
+            }
+          ]
+        },
+        {
+          "title": "The holiday industry",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Why, do you think, do some people book package holidays rather than travelling independently?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-3-5",
+              "number": 2,
+              "prompt": "Would you say that large numbers of tourists cause problems for local people?"
+            },
+            {
+              "exerciseId": "ielts-academic-18-test-2-speaking-part-3-6",
+              "number": 3,
+              "prompt": "What sort of impact can large holiday resorts have on the environment?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

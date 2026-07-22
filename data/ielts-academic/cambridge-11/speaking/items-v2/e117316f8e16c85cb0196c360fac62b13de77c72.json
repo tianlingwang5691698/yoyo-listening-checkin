@@ -1,0 +1,246 @@
+{
+  "_id": "ielts-academic-11-test-2-speaking",
+  "id": "ielts-academic-11-test-2-speaking",
+  "title": "Cambridge IELTS 11 Test 2 Speaking",
+  "year": 2016,
+  "city": "Cambridge",
+  "district": "Test 2",
+  "examType": "IELTS Academic",
+  "stage": "雅思",
+  "sourceType": "cambridge-ielts-academic",
+  "sourceFile": "剑11真题.pdf",
+  "book": "Cambridge IELTS 11 Academic",
+  "bookNumber": 11,
+  "testNumber": 2,
+  "images": [
+    {
+      "localPath": "data/ielts-academic/cambridge-11/speaking/source-pages-v1/test-2-speaking-3122cfca6d.jpg",
+      "cloudPath": "_content/ielts-academic/cambridge-11/speaking/source-pages-v1/test-2-speaking-3122cfca6d.jpg",
+      "alt": "Cambridge IELTS 11 Test 2 Speaking original page"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-1-1",
+      "part": 1,
+      "title": "Part 1 · 1",
+      "meta": "45 秒",
+      "prompt": "How often do you go out with friends? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-1-2",
+      "part": 1,
+      "title": "Part 1 · 2",
+      "meta": "45 秒",
+      "prompt": "Tell me about your best friend at school.",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-1-3",
+      "part": 1,
+      "title": "Part 1 · 3",
+      "meta": "45 秒",
+      "prompt": "How friendly are you with your neighbours? [Why/Why not?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-1-4",
+      "part": 1,
+      "title": "Part 1 · 4",
+      "meta": "45 秒",
+      "prompt": "Which is more important to you, friends or family? [Why?]",
+      "maxDurationSec": 45
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-2-1",
+      "part": 2,
+      "title": "Part 2 · 1",
+      "meta": "120 秒",
+      "prompt": "Describe a writer you would like to meet. You should say: who the writer is what you know about this writer already what you would like to find out about him/her and explain why you would like to meet this writer.",
+      "maxDurationSec": 120
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-3-1",
+      "part": 3,
+      "title": "Part 3 · 1",
+      "meta": "60 秒",
+      "prompt": "What kinds of book are most popular with children in your country? Why do you think that is?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-3-2",
+      "part": 3,
+      "title": "Part 3 · 2",
+      "meta": "60 秒",
+      "prompt": "Why do you think some children do not read books very often?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-3-3",
+      "part": 3,
+      "title": "Part 3 · 3",
+      "meta": "60 秒",
+      "prompt": "How do you think children can be encouraged to read more?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-3-4",
+      "part": 3,
+      "title": "Part 3 · 4",
+      "meta": "60 秒",
+      "prompt": "Are there any occasions when reading at speed is a useful skill to have? What are they?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-3-5",
+      "part": 3,
+      "title": "Part 3 · 5",
+      "meta": "60 秒",
+      "prompt": "Are there any jobs where people need to read a lot? What are they?",
+      "maxDurationSec": 60
+    },
+    {
+      "id": "ielts-academic-11-test-2-speaking-part-3-6",
+      "part": 3,
+      "title": "Part 3 · 6",
+      "meta": "60 秒",
+      "prompt": "Do you think that reading novels is more interesting than reading factual books? Why is that?",
+      "maxDurationSec": 60
+    }
+  ],
+  "questionCount": 11,
+  "contentRevision": 2,
+  "status": "published-candidate",
+  "dataFormat": "structured-speaking-v2",
+  "parts": [
+    {
+      "part": 1,
+      "label": "PART 1",
+      "topics": [
+        {
+          "title": "Friends",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-1-1",
+              "number": 1,
+              "prompt": "How often do you go out with friends?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-1-1",
+              "number": 2,
+              "prompt": "[Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-1-2",
+              "number": 3,
+              "prompt": "Tell me about your best friend at school."
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-1-3",
+              "number": 4,
+              "prompt": "How friendly are you with your neighbours?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-1-3",
+              "number": 5,
+              "prompt": "[Why/Why not?]"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-1-4",
+              "number": 6,
+              "prompt": "Which is more important to you, friends or family?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-1-4",
+              "number": 7,
+              "prompt": "[Why?]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "label": "PART 2",
+      "tasks": [
+        {
+          "exerciseId": "ielts-academic-11-test-2-speaking-part-2-1",
+          "task": "Describe a writer you would like to meet.",
+          "cuePoints": [
+            "who the writer is",
+            "what you know about this writer already",
+            "what you would like to find out about him/her"
+          ],
+          "closingPrompt": "and explain why you would like to meet this writer."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "label": "PART 3",
+      "topics": [
+        {
+          "title": "Reading and children",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-1",
+              "number": 1,
+              "prompt": "What kinds of book are most popular with children in your country?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-1",
+              "number": 2,
+              "prompt": "Why do you think that is?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-2",
+              "number": 3,
+              "prompt": "Why do you think some children do not read books very often?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-3",
+              "number": 4,
+              "prompt": "How do you think children can be encouraged to read more?"
+            }
+          ]
+        },
+        {
+          "title": "Reading for different purposes",
+          "questions": [
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-4",
+              "number": 1,
+              "prompt": "Are there any occasions when reading at speed is a useful skill to have?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-4",
+              "number": 2,
+              "prompt": "What are they?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-5",
+              "number": 3,
+              "prompt": "Are there any jobs where people need to read a lot?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-5",
+              "number": 4,
+              "prompt": "What are they?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-6",
+              "number": 5,
+              "prompt": "Do you think that reading novels is more interesting than reading factual books?"
+            },
+            {
+              "exerciseId": "ielts-academic-11-test-2-speaking-part-3-6",
+              "number": 6,
+              "prompt": "Why is that?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

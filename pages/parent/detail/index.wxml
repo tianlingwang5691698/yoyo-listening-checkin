@@ -162,19 +162,19 @@
                 <view class="sheet-copy">{{item.reviewSummary}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewContent}}">
-                <view class="sheet-title">{{texts.content}}</view>
+                <view class="sheet-title">{{item.latestAttempt.review.contentLabel || texts.content}}</view>
                 <view class="sheet-copy">{{item.reviewContent}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewLanguage}}">
-                <view class="sheet-title">{{texts.language}}</view>
+                <view class="sheet-title">{{item.latestAttempt.review.languageLabel || texts.language}}</view>
                 <view class="sheet-copy">{{item.reviewLanguage}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewStructure}}">
-                <view class="sheet-title">{{texts.structure}}</view>
+                <view class="sheet-title">{{item.latestAttempt.review.structureLabel || texts.structure}}</view>
                 <view class="sheet-copy">{{item.reviewStructure}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewSpelling}}">
-                <view class="sheet-title">{{texts.spelling}}</view>
+                <view class="sheet-title">{{item.latestAttempt.review.spellingLabel || texts.spelling}}</view>
                 <view class="sheet-copy">{{item.reviewSpelling}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewProblemsText}}">
@@ -422,19 +422,19 @@
                 <view class="sheet-copy">{{item.reviewSummary}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewContent}}">
-                <view class="sheet-title">{{texts.content}}</view>
+                <view class="sheet-title">{{item.latestAttempt.review.contentLabel || texts.content}}</view>
                 <view class="sheet-copy">{{item.reviewContent}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewLanguage}}">
-                <view class="sheet-title">{{texts.language}}</view>
+                <view class="sheet-title">{{item.latestAttempt.review.languageLabel || texts.language}}</view>
                 <view class="sheet-copy">{{item.reviewLanguage}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewStructure}}">
-                <view class="sheet-title">{{texts.structure}}</view>
+                <view class="sheet-title">{{item.latestAttempt.review.structureLabel || texts.structure}}</view>
                 <view class="sheet-copy">{{item.reviewStructure}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewSpelling}}">
-                <view class="sheet-title">{{texts.spelling}}</view>
+                <view class="sheet-title">{{item.latestAttempt.review.spellingLabel || texts.spelling}}</view>
                 <view class="sheet-copy">{{item.reviewSpelling}}</view>
               </view>
               <view class="analysis-card" wx:if="{{item.reviewProblemsText}}">

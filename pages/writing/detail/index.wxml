@@ -124,19 +124,19 @@
       <view class="library-review-summary" wx:if="{{review.summary}}">{{review.summary}}</view>
       <view class="library-review-grid">
         <view class="library-review-section" wx:if="{{review.content}}">
-          <view class="library-review-label">{{texts.content}}</view>
+          <view class="library-review-label">{{review.contentLabel || texts.content}}</view>
           <view>{{review.content}}</view>
         </view>
         <view class="library-review-section" wx:if="{{review.structure}}">
-          <view class="library-review-label">{{texts.structure}}</view>
+          <view class="library-review-label">{{review.structureLabel || texts.structure}}</view>
           <view>{{review.structure}}</view>
         </view>
         <view class="library-review-section" wx:if="{{review.language}}">
-          <view class="library-review-label">{{texts.language}}</view>
+          <view class="library-review-label">{{review.languageLabel || texts.language}}</view>
           <view>{{review.language}}</view>
         </view>
         <view class="library-review-section" wx:if="{{review.spelling}}">
-          <view class="library-review-label">{{texts.spelling}}</view>
+          <view class="library-review-label">{{review.spellingLabel || texts.spelling}}</view>
           <view>{{review.spelling}}</view>
         </view>
       </view>
@@ -157,7 +157,7 @@
         </view>
       </view>
       <view class="library-polished-paper" wx:if="{{review.polishedVersion}}">
-        <view class="library-review-label">{{texts.rewrite}}</view>
+        <view class="library-review-label">{{review.polishedTitle || texts.rewrite}}</view>
         <view>{{review.polishedVersion}}</view>
       </view>
     </view>
@@ -296,19 +296,19 @@
     </view>
     <view class="review-block" wx:if="{{review.summary}}">{{review.summary}}</view>
     <view class="review-list" wx:if="{{review.content}}">
-      <view class="list-title">{{texts.content}}</view>
+      <view class="list-title">{{review.contentLabel || texts.content}}</view>
       <view>{{review.content}}</view>
     </view>
     <view class="review-list" wx:if="{{review.structure}}">
-      <view class="list-title">{{texts.structure}}</view>
+      <view class="list-title">{{review.structureLabel || texts.structure}}</view>
       <view>{{review.structure}}</view>
     </view>
     <view class="review-list" wx:if="{{review.language}}">
-      <view class="list-title">{{texts.language}}</view>
+      <view class="list-title">{{review.languageLabel || texts.language}}</view>
       <view>{{review.language}}</view>
     </view>
     <view class="review-list" wx:if="{{review.spelling}}">
-      <view class="list-title">{{texts.spelling}}</view>
+      <view class="list-title">{{review.spellingLabel || texts.spelling}}</view>
       <view>{{review.spelling}}</view>
     </view>
     <view class="review-list" wx:if="{{review.problems.length}}">
@@ -328,7 +328,7 @@
       </view>
     </view>
     <view class="review-list polished" wx:if="{{review.polishedVersion}}">
-      <view class="list-title">{{texts.rewrite}}</view>
+      <view class="list-title">{{review.polishedTitle || texts.rewrite}}</view>
       <view>{{review.polishedVersion}}</view>
     </view>
   </view>
