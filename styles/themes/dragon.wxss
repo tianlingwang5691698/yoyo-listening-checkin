@@ -449,6 +449,18 @@
   background: #fffef7;
 }
 
+.theme-dragon .prompt-section {
+  border: 3rpx solid rgba(16, 46, 98, 0.36);
+  border-radius: 7rpx;
+  background: #fff9dc;
+}
+
+.theme-dragon .prompt-notice {
+  border-left-color: #f45a16;
+  background: #fff0c0;
+  color: #102e62;
+}
+
 .theme-dragon .option-row.is-selected,
 .theme-dragon .answer-row.is-selected {
   border-color: #f45a16;

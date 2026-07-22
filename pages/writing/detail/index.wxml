@@ -55,13 +55,20 @@
         </block>
         <block wx:else>
           <view class="library-prompt-directions" wx:if="{{promptDisplay.directions}}">{{promptDisplay.directions}}</view>
-          <view class="library-prompt-scenario" wx:if="{{promptDisplay.scenario}}">{{promptDisplay.scenario}}</view>
+          <view class="library-prompt-section" wx:if="{{promptDisplay.scenario}}">
+            <view class="library-prompt-section-title">{{promptDisplay.scenarioTitle}}</view>
+            <view class="library-prompt-scenario">{{promptDisplay.scenario}}</view>
+          </view>
           <view class="library-requirements-title" wx:if="{{promptDisplay.requirements.length}}">{{promptDisplay.requirementsTitle}}</view>
           <view class="library-requirements-list" wx:if="{{promptDisplay.requirements.length}}">
             <view class="library-requirement-item" wx:for="{{promptDisplay.requirements}}" wx:key="*this">
               <view class="library-requirement-dot"></view>
               <view class="library-requirement-text">{{item}}</view>
             </view>
+          </view>
+          <view class="library-prompt-notice" wx:if="{{promptDisplay.notices.length}}">
+            <view class="library-prompt-section-title">{{promptDisplay.noticeTitle}}</view>
+            <view wx:for="{{promptDisplay.notices}}" wx:key="*this">{{item}}</view>
           </view>
           <view class="library-prompt-table" wx:if="{{promptDisplay.promptTable}}">
             <view class="library-prompt-table-row library-prompt-table-head">
@@ -225,13 +232,20 @@
       </block>
       <block wx:else>
         <view class="prompt-directions" wx:if="{{promptDisplay.directions}}">{{promptDisplay.directions}}</view>
-        <view class="prompt-scenario" wx:if="{{promptDisplay.scenario}}">{{promptDisplay.scenario}}</view>
+        <view class="prompt-section" wx:if="{{promptDisplay.scenario}}">
+          <view class="prompt-section-title">{{promptDisplay.scenarioTitle}}</view>
+          <view class="prompt-scenario">{{promptDisplay.scenario}}</view>
+        </view>
         <view class="requirements-title" wx:if="{{promptDisplay.requirements.length}}">{{promptDisplay.requirementsTitle}}</view>
         <view class="requirements-list" wx:if="{{promptDisplay.requirements.length}}">
           <view class="requirement-item" wx:for="{{promptDisplay.requirements}}" wx:key="*this">
             <view class="requirement-dot"></view>
             <view class="requirement-text">{{item}}</view>
           </view>
+        </view>
+        <view class="prompt-notice" wx:if="{{promptDisplay.notices.length}}">
+          <view class="prompt-section-title">{{promptDisplay.noticeTitle}}</view>
+          <view wx:for="{{promptDisplay.notices}}" wx:key="*this">{{item}}</view>
         </view>
         <view class="prompt-table" wx:if="{{promptDisplay.promptTable}}">
           <view class="prompt-table-row prompt-table-head">

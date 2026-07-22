@@ -156,7 +156,35 @@
 }
 
 .prompt-scenario {
+  margin-top: 10rpx;
+}
+
+.prompt-section,
+.library-prompt-section {
   margin-top: 18rpx;
+  padding: 20rpx 22rpx;
+  border-radius: 16rpx;
+  background: rgba(236, 245, 250, 0.72);
+}
+
+.prompt-section-title,
+.library-prompt-section-title {
+  margin-bottom: 8rpx;
+  font-size: 24rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+}
+
+.prompt-notice,
+.library-prompt-notice {
+  margin-top: 22rpx;
+  padding: 18rpx 20rpx;
+  border-left: 6rpx solid var(--writing-coral);
+  border-radius: 10rpx;
+  background: rgba(223, 127, 104, 0.08);
+  color: var(--writing-muted);
+  font-size: 25rpx;
+  line-height: 1.65;
 }
 
 .requirements-title {
@@ -867,7 +895,18 @@
 }
 
 .library-prompt-scenario {
-  margin-top: 18rpx;
+  margin-top: 10rpx;
+}
+
+.writing-library-page .library-prompt-section {
+  background: rgba(255, 253, 247, 0.72);
+  border: 1rpx solid var(--library-writing-border);
+}
+
+.writing-library-page .library-prompt-notice {
+  border-left-color: var(--library-writing-error);
+  background: rgba(155, 95, 84, 0.07);
+  color: var(--library-writing-muted);
 }
 
 .library-requirements-title {
@@ -1379,6 +1418,9 @@
 .theme-voyage .reason { color: #705a40; }
 
 .theme-voyage .requirement-dot { background: #c49338; box-shadow: 0 0 0 4rpx rgba(196, 147, 56, 0.2); }
+
+.theme-voyage .prompt-section { background: rgba(255, 249, 226, 0.72); border: 2rpx solid rgba(141, 92, 39, 0.3); }
+.theme-voyage .prompt-notice { border-left-color: #b64036; background: rgba(182, 64, 54, 0.07); color: #705a40; }
 
 .theme-voyage .prompt-table,
 .theme-voyage .translation-item,

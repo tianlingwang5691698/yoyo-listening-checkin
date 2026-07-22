@@ -4,6 +4,7 @@ const completed = require('../../../utils/completed');
 const snapshotStore = require('../../../utils/snapshot');
 const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
+const promptDisplay = require('../../../utils/writing-prompt-display');
 
 const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fallback);
 
@@ -17,56 +18,23 @@ const LEGACY_REQUIREMENT_POINTS = {
   ]
 };
 
-function cleanPromptText(value) {
-  return String(value || '').replace(/\u00a0/g, ' ').replace(/[ \t]+/g, ' ').trim();
-}
-
-function splitExplicitRequirements(value) {
-  const normalized = String(value || '')
-    .replace(/\r/g, '\n')
-    .replace(/(?:^|\s)[●•▪◦]\s*/g, '\n')
-    .replace(/(?:^|\s)(?:\d+[.、)]|[（(][一二三四五六七八九\d]+[）)])\s*/g, '\n');
-  return normalized.split(/\n+/).map(cleanPromptText).filter(Boolean);
-}
-
 function buildPromptDisplay(prompt) {
-  const raw = cleanPromptText(prompt && prompt.prompt);
-  if (!raw) return { directions: '', scenario: '', requirementsTitle: '', requirements: [], promptTable: null, promptStarter: '' };
-  const directionsMatch = raw.match(/^Directions\s*:\s*[^\u3400-\u9fff]*(?=[\u3400-\u9fff])/i);
-  const directions = cleanPromptText((prompt && prompt.directions) || (directionsMatch && directionsMatch[0]));
-  const body = cleanPromptText(directionsMatch ? raw.slice(directionsMatch[0].length) : raw);
-  let scenario = cleanPromptText(prompt && prompt.scenario);
-  let requirementsTitle = cleanPromptText(prompt && prompt.requirementsTitle);
-  let requirements = Array.isArray(prompt && prompt.requirements)
-    ? prompt.requirements.map(cleanPromptText).filter(Boolean)
-    : [];
-  if (!scenario) {
-    const marker = body.match(/(?:信的)?内容(?:必须)?包括(?:如下)?\s*[:：]/);
-    if (marker) {
-      scenario = cleanPromptText(body.slice(0, marker.index));
-      requirementsTitle = requirementsTitle || cleanPromptText(marker[0]);
-      if (!requirements.length) requirements = splitExplicitRequirements(body.slice(marker.index + marker[0].length));
-    } else {
-      scenario = body;
-    }
-  }
+  const display = promptDisplay.buildPromptDisplay(prompt, {
+    taskTitle: text('taskTitle', '写作任务'),
+    referenceTitle: text('referenceTitle', '参考问题'),
+    requirementsTitle: text('requirementsTitle', '写作要点'),
+    noticeTitle: text('noticeTitle', '注意事项')
+  });
   const legacy = LEGACY_REQUIREMENT_POINTS[String(prompt && prompt._id || '')] || [];
-  if (legacy.length && requirements.length < 2) requirements = legacy.slice();
+  if (legacy.length && display.requirements.length < 2) display.requirements = legacy.slice();
   if (legacy.length) {
-    const firstPointIndex = scenario.indexOf(legacy[0]);
-    if (firstPointIndex >= 0) scenario = cleanPromptText(scenario.slice(0, firstPointIndex));
+    const firstPointIndex = display.scenario.indexOf(legacy[0]);
+    if (firstPointIndex >= 0) display.scenario = promptDisplay.cleanPromptText(display.scenario.slice(0, firstPointIndex));
   }
-  return {
-    directions,
-    scenario,
-    requirementsTitle: requirements.length ? (requirementsTitle || text('requirementsTitle', '写作要点：')) : '',
-    requirements,
-    promptTable: prompt && prompt.promptTable && Array.isArray(prompt.promptTable.headers) && Array.isArray(prompt.promptTable.rows)
-      ? prompt.promptTable
-      : null,
-    promptStarter: cleanPromptText(prompt && prompt.promptStarter)
-  };
+  return display;
 }
+
+const cleanPromptText = promptDisplay.cleanPromptText;
 
 function isTranslationTask(prompt) {
   return String(prompt && prompt.contentType || '') === 'translation';
