@@ -6,6 +6,16 @@ const study = require('../facades/study.facade');
 const attemptRepository = require('../repositories/attempt.repository');
 const speakingEngine = require('../lib/speaking-engine');
 
+test('SOE 跟读参考句剥离 transcript 说话人标签', () => {
+  assert.equal(
+    speakingEngine.stripTranscriptSpeakerLabel('Student 1: Is she a businesswoman?'),
+    'Is she a businesswoman?'
+  );
+  assert.equal(speakingEngine.stripTranscriptSpeakerLabel('Marie: No, she is not.'), 'No, she is not.');
+  assert.equal(speakingEngine.stripTranscriptSpeakerLabel('Kerry:Is she from Turkey?'), 'Is she from Turkey?');
+  assert.equal(speakingEngine.stripTranscriptSpeakerLabel('Question: Who is she?'), 'Question: Who is she?');
+});
+
 test('SOE 跟读总分由三个可见分项统一计算', () => {
   assert.equal(speakingEngine.calculatePronunciationScore(95, 96, 100), 96);
   const result = speakingEngine.extractTencentSoeScores([{
@@ -82,7 +92,7 @@ test('学生 SOE 跟读评分写入记录并刷新日报', async (t) => {
       answerAudioFileId: 'cloud://test/repeat.mp3',
       answerCloudPath: '_speaking/repeat.mp3',
       answerDurationMs: 1800,
-      refText: 'Read this sentence.'
+      refText: 'Student 1: Read this sentence.'
     }
   });
 

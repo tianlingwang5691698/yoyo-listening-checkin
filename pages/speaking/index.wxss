@@ -183,6 +183,19 @@
   font-weight: 600;
 }
 
+.repeat-sentence-speaker {
+  display: block;
+  margin-bottom: 2rpx;
+  color: #71869d;
+  font-size: 18rpx;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.theme-library .repeat-sentence-speaker { color: #8b6a3f; }
+.theme-voyage .repeat-sentence-speaker { color: #a15b39; }
+.theme-dragon .repeat-sentence-speaker { color: #d74d18; }
+
 .repeat-sentence-score {
   flex: 0 0 auto;
   min-width: 48rpx;

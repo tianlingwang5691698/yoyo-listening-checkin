@@ -480,21 +480,23 @@ async function evaluateSpeakingPronunciation(event) {
     action: 'evaluateSpeakingPronunciation'
   }));
   const payload = (event && event.payload) || {};
+  const promptText = speakingEngine.stripTranscriptSpeakerLabel(
+    payload.promptText || payload.refText || payload.questionText
+  );
   const attempt = normalizeAttemptPayload(Object.assign({}, payload, {
     targetDate: payload.targetDate || today,
-    promptText: payload.promptText || payload.refText || payload.questionText
+    promptText
   }));
   if (attempt.planRunType !== 'preview' && !study.isStudyWriteAllowed(ctx)) {
     throw new Error('家长模式不进行口语评分');
   }
   const result = await speakingEngine.evaluateSpeakingPronunciation(Object.assign({}, attempt, {
-    refText: payload.refText || attempt.promptText || attempt.questionText
+    refText: promptText || attempt.promptText || attempt.questionText
   }));
   if (attempt.planRunType === 'preview') {
     return { pronunciation: result };
   }
   const scope = study.getUserScope(ctx);
-  const promptText = payload.refText || attempt.promptText || attempt.questionText;
   const now = new Date().toISOString();
   const record = Object.assign({}, attempt, {
     familyId: scope.familyId,

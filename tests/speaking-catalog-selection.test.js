@@ -256,6 +256,34 @@ test('逐句练习纵向展示全文，播放完成后在当前句内跟读', as
   assert.match(source, /handleRecordingStopped[\s\S]+submitPronunciation/);
 });
 
+test('分级跟读把说话人标签与评分正文分离', () => {
+  const page = createPageInstance(loadSpeakingPage({}));
+  page.queueQuestionAutoPlay = () => {};
+  page.data.selectedParagraph = {
+    id: 'paragraph-speakers',
+    sentences: [
+      { text: 'Student 1: Is she a businesswoman?', startMs: 0, endMs: 1200 },
+      { text: 'Marie: No, she is not.', startMs: 1300, endMs: 2400 },
+      { text: 'Kerry:Is she from Turkey?', startMs: 2500, endMs: 3500 },
+      { text: 'Teacher:', startMs: 3600, endMs: 3700 }
+    ]
+  };
+  page.selectedRepeatTask = { audioUrl: 'https://example.test/audio.mp3' };
+
+  page.startSelectedRepeat();
+
+  assert.equal(page.data.exercises.length, 3);
+  assert.equal(page.data.exercises[0].speakerLabel, 'Student 1');
+  assert.equal(page.data.exercises[0].prompt, 'Is she a businesswoman?');
+  assert.equal(page.data.exercises[1].speakerLabel, 'Marie');
+  assert.equal(page.data.exercises[1].prompt, 'No, she is not.');
+  assert.equal(page.data.exercises[2].speakerLabel, 'Kerry');
+  assert.equal(page.data.exercises[2].prompt, 'Is she from Turkey?');
+
+  const wxml = fs.readFileSync(path.join(root, 'pages/speaking/index.wxml'), 'utf8');
+  assert.equal((wxml.match(/class="repeat-sentence-speaker"/g) || []).length, 2);
+});
+
 test('分句原音不把 cloud 文件标识直接交给真机播放器', async () => {
   const definition = loadSpeakingPage({});
   const page = createPageInstance(definition);

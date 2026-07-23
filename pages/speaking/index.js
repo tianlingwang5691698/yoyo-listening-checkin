@@ -99,6 +99,20 @@ function isHttpAudioUrl(value) {
   return /^https?:\/\//i.test(String(value || '').trim());
 }
 
+function splitRepeatSpeakerLabel(value) {
+  const source = String(value || '').replace(/\s+/g, ' ').trim();
+  const match = source.match(/^([A-Z][A-Za-z.'’-]*(?:\s+(?:[A-Z][A-Za-z.'’-]*|\d+)){0,3})\s*[:：]\s*(.*)$/);
+  if (!match) return { speakerLabel: '', text: source };
+  const speakerLabel = match[1].trim();
+  if (/^(?:note|notes|question|answer|example|track|part|section|unit|lesson|photo|picture|figure|table|task|exercise)\b/i.test(speakerLabel)) {
+    return { speakerLabel: '', text: source };
+  }
+  return {
+    speakerLabel,
+    text: String(match[2] || '').trim()
+  };
+}
+
 function formatClock(seconds) {
   const value = Math.max(0, Math.floor(Number(seconds || 0)));
   const minutes = String(Math.floor(value / 60)).padStart(2, '0');
@@ -125,7 +139,15 @@ function normalizeRepeatAudio(task, index) {
 }
 
 function buildTranscriptParagraphs(lines, taskId) {
-  const sourceLines = (Array.isArray(lines) ? lines : []).filter((line) => String(line && line.text || '').trim());
+  const sourceLines = (Array.isArray(lines) ? lines : []).map((line) => {
+    const sourceText = String(line && line.text || '').trim();
+    const speech = splitRepeatSpeakerLabel(sourceText);
+    return Object.assign({}, line, {
+      sourceText,
+      speakerLabel: speech.speakerLabel,
+      text: speech.text
+    });
+  }).filter((line) => line.text);
   const groups = [];
   let current = [];
   const flush = () => {
@@ -140,6 +162,8 @@ function buildTranscriptParagraphs(lines, taskId) {
       sentences: current.map((line) => ({
         lineId: String(line.lineId || ''),
         text: String(line.text || '').trim(),
+        speakerLabel: String(line.speakerLabel || ''),
+        sourceText: String(line.sourceText || line.text || '').trim(),
         startMs: Number(line.startMs || 0),
         endMs: Math.max(Number(line.endMs || 0), Number(line.startMs || 0) + 1)
       }))
@@ -188,14 +212,19 @@ function resolveExerciseAudioClip(task, sentence) {
 
 function buildParagraphExercises(paragraph, task) {
   return (paragraph && paragraph.sentences || []).map((sentence, index) => {
+    const speech = splitRepeatSpeakerLabel(sentence && sentence.text);
+    const prompt = speech.text;
+    if (!prompt) return null;
     const suffix = text('sentenceSuffix', '句');
     return Object.assign({
       id: `${paragraph.id}-sentence-${index + 1}`,
       title: `${text('sentencePrefix', '第')} ${index + 1}${suffix ? ` ${suffix}` : ''}`,
       meta: text('sentencePractice', '逐句跟读'),
-      prompt: sentence.text
+      prompt,
+      speakerLabel: String(sentence.speakerLabel || speech.speakerLabel || ''),
+      sourcePrompt: String(sentence.sourceText || sentence.text || '').trim()
     }, resolveExerciseAudioClip(task, sentence));
-  });
+  }).filter(Boolean);
 }
 
 function formatIeltsCuePrompt(task) {

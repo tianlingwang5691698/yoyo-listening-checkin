@@ -58,6 +58,8 @@
 
 ## 音频句级 transcript bundle
 
+- transcript 可保留 `Student 1:`、`Teacher:`、人物名等说话人标签作为来源信息，但分级跟读展示投影必须拆为独立 `speakerLabel + speechText`；角色标签不得进入播放正文、腾讯 SOE 参考句或漏读反馈。
+- 仅含说话人标签、冒号后无真实话语的行不得生成跟读句；原 transcript 和时间轴保持不变，旧线上数据由确定性展示兼容处理。
 - 句级 bundle 的时间轴必须来自 ASR/WhisperX/Whisper `word_timestamps` 等真实音频时间；禁止按句子长度、字符数或平均比例硬摊整段音频。
 - 官方文本优先作为 transcript 正文，ASR 只用于时间轴和漏句核对；若音频存在官方文本缺句，必须在清洗报告或 `scriptPatches` 中记录来源。
 - 每条音频必须抽查首句、末句和至少 1 个中间段：文本内容要与当前音频一致，首句时间不能落在 `Track 1.1` 等报幕标签上。

@@ -180,7 +180,7 @@
         <view class="repeat-sentence-item {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id">
           <view class="repeat-sentence-main" data-id="{{item.id}}" hover-class="is-pressed" bindtap="selectExercise">
             <view class="repeat-sentence-number">{{index + 1}}</view>
-            <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}">{{item.prompt}}</view>
+            <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}"><text class="repeat-sentence-speaker" wx:if="{{item.speakerLabel}}">{{item.speakerLabel}}</text><text>{{item.prompt}}</text></view>
             <view class="repeat-sentence-score is-scoring" wx:if="{{item.repeatScoring}}">{{texts.scoring}}</view>
             <view class="repeat-sentence-score" wx:elif="{{item.repeatResult}}">{{item.repeatResult.score || 0}}</view>
             <view class="repeat-sentence-score is-error" wx:elif="{{item.repeatScoreError}}">重试</view>
@@ -418,7 +418,7 @@
         <view class="repeat-sentence-item {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id">
           <view class="repeat-sentence-main" data-id="{{item.id}}" hover-class="is-pressed" bindtap="selectExercise">
             <view class="repeat-sentence-number">{{index + 1}}</view>
-            <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}">{{item.prompt}}</view>
+            <view class="repeat-sentence-text prompt-replay {{activeId === item.id && questionPlaying ? 'is-speaking' : ''}} {{activeId === item.id && questionLoading ? 'is-loading' : ''}}"><text class="repeat-sentence-speaker" wx:if="{{item.speakerLabel}}">{{item.speakerLabel}}</text><text>{{item.prompt}}</text></view>
             <view class="repeat-sentence-score is-scoring" wx:if="{{item.repeatScoring}}">{{texts.scoring}}</view>
             <view class="repeat-sentence-score" wx:elif="{{item.repeatResult}}">{{item.repeatResult.score || 0}}</view>
             <view class="repeat-sentence-score is-error" wx:elif="{{item.repeatScoreError}}">重试</view>

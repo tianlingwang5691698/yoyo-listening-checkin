@@ -8,6 +8,17 @@ function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function stripTranscriptSpeakerLabel(value) {
+  const source = normalizeText(value);
+  const match = source.match(/^([A-Z][A-Za-z.'’-]*(?:\s+(?:[A-Z][A-Za-z.'’-]*|\d+)){0,3})\s*[:：]\s*(.*)$/);
+  if (!match) return source;
+  const speakerLabel = match[1].trim();
+  if (/^(?:note|notes|question|answer|example|track|part|section|unit|lesson|photo|picture|figure|table|task|exercise)\b/i.test(speakerLabel)) {
+    return source;
+  }
+  return normalizeText(match[2]);
+}
+
 function getEnvValue(names) {
   for (const name of names) {
     const value = String(process.env[name] || '').trim();
@@ -1260,7 +1271,7 @@ async function evaluateSpeakingPronunciation(payload) {
   if (!audioBuffer || !audioBuffer.length) {
     throw new Error('empty-downloaded-audio');
   }
-  const refText = normalizeText(payload.promptText || payload.questionText || payload.refText);
+  const refText = stripTranscriptSpeakerLabel(payload.promptText || payload.questionText || payload.refText);
   if (!refText) {
     throw new Error('missing-pronunciation-ref-text');
   }
@@ -1808,6 +1819,7 @@ function summarizeAttempts(items) {
 
 module.exports = {
   getSpeakingHttpTimeoutMs,
+  stripTranscriptSpeakerLabel,
   calculatePronunciationScore,
   buildPronunciationFeedback,
   normalizePronunciationWordDetails,
