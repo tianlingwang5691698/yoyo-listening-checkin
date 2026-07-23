@@ -1776,3 +1776,141 @@
 .manual-mark-word { border-radius: 5rpx; background: rgba(255, 210, 69, 0.58); }
 .manual-mark-phrase { border-radius: 5rpx; background: rgba(91, 169, 233, 0.34); }
 .manual-mark-sentence { background: rgba(92, 177, 119, 0.20); box-shadow: inset 4rpx 0 0 rgba(46, 129, 77, 0.48); }
+
+/* 龙珠修炼：写作题纸和作答区使用与听力、阅读一致的训练卡。 */
+.theme-dragon.writing-page {
+  --writing-bg: #fff2c8;
+  --writing-bg-soft: #ffe9a3;
+  --writing-ink: #102e62;
+  --writing-muted: #526783;
+  --writing-soft: #6a7890;
+  --writing-blue: #ffd83d;
+  --writing-blue-soft: #ffe98c;
+  --writing-sage: #4fa26e;
+  --writing-coral: #f45a16;
+  --writing-coral-light: #ff7b35;
+  --writing-paper: #fffdf1;
+  --writing-line: rgba(16, 46, 98, 0.16);
+  background:
+    repeating-linear-gradient(135deg, rgba(16, 46, 98, 0.025) 0 2rpx, transparent 2rpx 28rpx),
+    #fff2c8;
+}
+
+.theme-dragon.writing-page::before {
+  border-color: rgba(16, 46, 98, 0.18);
+  opacity: 0.32;
+}
+
+.theme-dragon .writing-hero {
+  padding: 24rpx 28rpx;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: linear-gradient(135deg, #ffd83d, #ffe98c);
+  box-shadow: 0 8rpx 0 #f45a16;
+}
+
+.theme-dragon .writing-hero .title,
+.theme-dragon .section-title,
+.theme-dragon .requirements-title,
+.theme-dragon .translation-reference-title {
+  color: #102e62;
+  font-weight: 800;
+}
+
+.theme-dragon .writing-hero .eyebrow,
+.theme-dragon .writing-hero .meta,
+.theme-dragon .editor-subtitle {
+  color: #526783;
+}
+
+.theme-dragon .meta text,
+.theme-dragon .word-pill,
+.theme-dragon .level {
+  border: 2rpx solid #102e62;
+  border-radius: 5rpx;
+  background: #fff3c4;
+  color: #102e62;
+}
+
+.theme-dragon .prompt-card,
+.theme-dragon .editor-card,
+.theme-dragon .review-card {
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 8rpx 0 rgba(16, 46, 98, 0.18);
+}
+
+.theme-dragon .prompt-card {
+  border-left-width: 12rpx;
+  border-left-color: #f45a16;
+}
+
+.theme-dragon .paper-fold {
+  border-bottom-left-radius: 6rpx;
+  background: linear-gradient(135deg, transparent 0 49%, #ffd83d 50%);
+}
+
+.theme-dragon .prompt-section,
+.theme-dragon .prompt-table,
+.theme-dragon .translation-item,
+.theme-dragon .translation-reference,
+.theme-dragon .translation-analysis-summary,
+.theme-dragon .review-block,
+.theme-dragon .review-list {
+  border: 2rpx solid rgba(16, 46, 98, 0.30);
+  border-radius: 6rpx;
+  background: #fff3c4;
+}
+
+.theme-dragon .translation-item {
+  border-left: 7rpx solid #f45a16;
+}
+
+.theme-dragon .translation-number {
+  color: #f45a16;
+}
+
+.theme-dragon .translation-input,
+.theme-dragon .letter-editor,
+.theme-dragon .essay-input {
+  border-color: #102e62;
+  border-radius: 7rpx;
+  background-color: #fffef7;
+  color: #102e62;
+}
+
+.theme-dragon .letter-editor {
+  border: 3rpx solid #102e62;
+  box-shadow: inset 0 0 0 2rpx rgba(255, 216, 61, 0.28);
+}
+
+.theme-dragon .letter-editor-focused {
+  border-color: #f45a16;
+  box-shadow: inset 0 0 0 3rpx rgba(244, 90, 22, 0.12);
+}
+
+.theme-dragon .paper-margin {
+  border-color: rgba(244, 90, 22, 0.30);
+}
+
+.theme-dragon .paragraph-tabs view {
+  border-radius: 3rpx;
+  background: rgba(255, 216, 61, 0.48);
+}
+
+.theme-dragon .submit-button,
+.theme-dragon .translation-submit {
+  border: 4rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #f45a16;
+  color: #ffffff;
+  box-shadow: 0 7rpx 0 #a92e0a;
+  font-weight: 800;
+}
+
+.theme-dragon .error-text {
+  border: 2rpx solid rgba(16, 46, 98, 0.28);
+  border-radius: 6rpx;
+  background: #fff3c4;
+}

@@ -2387,6 +2387,112 @@
 .theme-dragon .reading-mark-hint,
 .theme-dragon .reading-mark-clear { color: #244573; }
 
+.theme-dragon .question-side-notes::before {
+  background: linear-gradient(180deg, #ffd83d, #f45a16, #ffd83d);
+}
+
+.theme-dragon .question-card,
+.theme-dragon .cloze-review-card,
+.theme-dragon .review-card,
+.theme-dragon .study-pack-panel,
+.theme-dragon .retry-card {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #fffdf1;
+  box-shadow: 0 7rpx 0 rgba(16, 46, 98, 0.18);
+}
+
+.theme-dragon .answer-locator,
+.theme-dragon .answer-locator::after {
+  background: #f45a16;
+}
+
+.theme-dragon .reading-question-group-head {
+  border: 2rpx solid rgba(16, 46, 98, 0.30);
+  border-left: 8rpx solid #f45a16;
+  border-radius: 6rpx;
+  background: #fff0c0;
+}
+
+.theme-dragon .reading-question-group-range,
+.theme-dragon .reading-question-group-title,
+.theme-dragon .question-title,
+.theme-dragon .reading-note-heading {
+  color: #102e62;
+  font-weight: 800;
+}
+
+.theme-dragon .option-row {
+  border: 3rpx solid rgba(16, 46, 98, 0.42);
+  border-left-width: 7rpx;
+  border-radius: 6rpx;
+  background: #fffef7;
+  color: #102e62;
+}
+
+.theme-dragon .option-key {
+  border: 2rpx solid #102e62;
+  border-radius: 4rpx;
+  background: #ffd83d;
+  color: #102e62;
+}
+
+.theme-dragon .option-row.is-selected {
+  border-color: #f45a16;
+  background: #fff0c0;
+  color: #102e62;
+}
+
+.theme-dragon .option-row.is-correct {
+  border-color: #28784c;
+  background: #dff0d6;
+  color: #185f39;
+}
+
+.theme-dragon .option-row.is-wrong {
+  border-color: #b83b20;
+  background: #f8d8c8;
+  color: #8b2c18;
+}
+
+.theme-dragon .blank-input,
+.theme-dragon .cloze-input {
+  border: 3rpx solid #102e62;
+  border-radius: 6rpx;
+  background: #fffef7;
+  color: #102e62;
+}
+
+.theme-dragon .blank-answer,
+.theme-dragon .answer-sentence,
+.theme-dragon .cloze-answer-box {
+  border: 2rpx solid rgba(16, 46, 98, 0.28);
+  border-radius: 6rpx;
+  background: #fff3c4;
+}
+
+.theme-dragon .submit-button,
+.theme-dragon .button-primary {
+  border: 4rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #f45a16;
+  color: #ffffff;
+  box-shadow: 0 7rpx 0 #a92e0a;
+}
+
+.theme-dragon .reading-ai-action {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #ffd83d;
+  color: #102e62;
+  font-weight: 800;
+}
+
+.theme-dragon .reading-result-card {
+  border-color: #102e62;
+  background: #fff3c4;
+}
+
 .reading-question-source-pages {
   width: 100%;
   margin: 0 0 24rpx;
