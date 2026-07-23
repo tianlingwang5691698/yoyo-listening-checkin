@@ -511,6 +511,7 @@ async function evaluateSpeakingPronunciation(event) {
     pronunciationCompletionScore: Number(result.completion || 0),
     contentGrammarScore: 0,
     feedback: result.feedback || '',
+    pronunciationWordDetails: Array.isArray(result.wordDetails) ? result.wordDetails.slice(0, 12) : [],
     scoreFormula: result.scoreFormula || '',
     providerSuggestedScore: result.providerSuggestedScore !== null
       && result.providerSuggestedScore !== ''

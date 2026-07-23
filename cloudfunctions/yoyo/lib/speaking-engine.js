@@ -50,28 +50,104 @@ function calculatePronunciationScore(accuracy, fluency, completion) {
   return Math.round((values[0] * 0.55) + (values[1] * 0.25) + (values[2] * 0.2));
 }
 
-function buildPronunciationFeedback(accuracy, fluency, completion) {
+function cleanPronunciationWord(value) {
+  const word = normalizeText(value).replace(/^[^A-Za-z]+|[^A-Za-z'-]+$/g, '');
+  return /^[A-Za-z][A-Za-z'-]*$/.test(word) ? word : '';
+}
+
+function normalizePronunciationWordDetails(items) {
+  const details = (Array.isArray(items) ? items : [])
+    .map((item) => {
+      const word = cleanPronunciationWord(
+        item && (item.referenceWord || item.ReferenceWord || item.word || item.Word)
+      );
+      if (!word) return null;
+      return {
+        word,
+        accuracy: clampScore(
+          item && (item.accuracy ?? item.PronAccuracy ?? item.pron_accuracy),
+          NaN
+        ),
+        fluency: normalizeSoeRatioScore(
+          item && (item.fluency ?? item.PronFluency ?? item.pron_fluency)
+        ),
+        matchTag: Number(item && (item.matchTag ?? item.MatchTag ?? item.match_tag))
+      };
+    })
+    .filter(Boolean);
+  const byWord = new Map();
+  details.forEach((item) => {
+    const key = item.word.toLowerCase();
+    const old = byWord.get(key);
+    const itemPriority = [2, 4, 3].includes(item.matchTag)
+      ? -100
+      : (Number.isFinite(item.accuracy) ? item.accuracy : 101);
+    const oldPriority = old && [2, 4, 3].includes(old.matchTag)
+      ? -100
+      : (old && Number.isFinite(old.accuracy) ? old.accuracy : 101);
+    if (!old || itemPriority < oldPriority) byWord.set(key, item);
+  });
+  return Array.from(byWord.values());
+}
+
+function buildPronunciationFeedback(accuracy, fluency, completion, wordDetails = []) {
   const metrics = [
     { key: 'accuracy', value: clampScore(accuracy, 0) },
     { key: 'fluency', value: clampScore(fluency, 0) },
     { key: 'completion', value: clampScore(completion, 0) }
   ];
-  if (metrics.every((item) => item.value >= 90)) {
-    return '发音准确、节奏流畅、内容完整。下一遍注意重音和语调变化，让表达更自然。';
-  }
+  const score = calculatePronunciationScore(accuracy, fluency, completion);
   const lowest = metrics.reduce((current, item) => (
     item.value < current.value ? item : current
   ));
-  const prefix = calculatePronunciationScore(accuracy, fluency, completion) >= 80
-    ? '整体完成良好。'
-    : '建议再跟读一次。';
-  if (lowest.key === 'accuracy') {
-    return `${prefix}放慢易错词，核对发音和单词重音。`;
+  const details = normalizePronunciationWordDetails(wordDetails);
+  const missed = details.filter((item) => [2, 4].includes(item.matchTag)).slice(0, 3);
+  const extra = details.filter((item) => item.matchTag === 1).slice(0, 2);
+  const weak = details
+    .filter((item) => (
+      item.matchTag === 3
+      || (![1, 2, 4].includes(item.matchTag) && Number.isFinite(item.accuracy) && item.accuracy < 80)
+    ))
+    .sort((left, right) => (
+      (Number.isFinite(left.accuracy) ? left.accuracy : -1)
+      - (Number.isFinite(right.accuracy) ? right.accuracy : -1)
+    ))
+    .slice(0, 3);
+  let performance = '本句需要再练，先保证每个词都读清楚。';
+  if (score >= 92) performance = '发音清楚，节奏稳定，句子完整。';
+  else if (score >= 82) performance = '整体准确，句子基本连贯。';
+  else if (score >= 70) performance = '已完成本句，部分发音或节奏还不稳定。';
+  if (missed.length) {
+    performance = score >= 82 ? '整体发音较清楚，但句子有漏读。' : '本句有漏读，完整度需要优先提高。';
+  } else if (weak.length && score >= 82) {
+    performance = '整体节奏稳定，但个别词发音还不准确。';
   }
-  if (lowest.key === 'fluency') {
-    return `${prefix}按意群朗读，减少不必要的停顿并注意连读。`;
+
+  const focusParts = [];
+  if (missed.length) focusParts.push(`漏读 ${missed.map((item) => `“${item.word}”`).join('、')}`);
+  if (weak.length) {
+    focusParts.push(weak.map((item) => (
+      Number.isFinite(item.accuracy) ? `“${item.word}” ${Math.round(item.accuracy)}分` : `“${item.word}”`
+    )).join('、'));
   }
-  return `${prefix}注意漏词或未读完整，确保每个词都清楚读出。`;
+  if (extra.length) focusParts.push(`多读 ${extra.map((item) => `“${item.word}”`).join('、')}`);
+  let focus = focusParts.join('；');
+  if (!focus) {
+    if (lowest.key === 'accuracy' && lowest.value < 90) focus = '部分词音还不够准确。';
+    else if (lowest.key === 'fluency' && lowest.value < 90) focus = '停顿和连接不够自然。';
+    else if (lowest.key === 'completion' && lowest.value < 90) focus = '有漏词或句尾没有读完整。';
+    else focus = '没有明显漏词，继续注意句子重音和语调起伏。';
+  }
+
+  let action = '减少逐词用力，让重读词更突出、非重读词更轻。';
+  if (missed.length && weak.length) action = '先补齐漏读词，再慢读低分词各两遍，最后完整读一遍。';
+  else if (missed.length) action = '先补齐漏读词，再从头完整读一遍。';
+  else if (weak.length) action = '先慢读这些词各两遍，再放回句子中连贯朗读。';
+  else if (lowest.key === 'fluency' && lowest.value < 90) action = '按意群连续读，只在标点处自然停顿。';
+  else if (lowest.key === 'accuracy' && lowest.value < 90) action = '放慢语速，先读准元音和单词重音。';
+  else if (lowest.key === 'completion' && lowest.value < 90) action = '对照原句逐词检查，确保句尾也读完整。';
+
+  return `表现：${performance}\n重点：${focus.replace(/。$/, '')}。\n下一遍：${action}`;
 }
 
 function readNumber(value) {
@@ -713,6 +789,74 @@ function stringifyTencentSoeResult(value) {
   }
 }
 
+function parseTencentSoeValue(value) {
+  if (typeof value !== 'string') return value;
+  const text = value.trim();
+  if (!text || !/^[{[]/.test(text)) return value;
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    return value;
+  }
+}
+
+function readTencentSoeObjectValue(value, names) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return undefined;
+  const wanted = new Set(names.map((name) => String(name).toLowerCase()));
+  const key = Object.keys(value).find((item) => wanted.has(String(item).toLowerCase()));
+  return key === undefined ? undefined : value[key];
+}
+
+function collectTencentSoeAggregateScores(value, results = []) {
+  const parsed = parseTencentSoeValue(value);
+  if (Array.isArray(parsed)) {
+    parsed.forEach((item) => collectTencentSoeAggregateScores(item, results));
+    return results;
+  }
+  if (!parsed || typeof parsed !== 'object') return results;
+  const accuracy = readTencentSoeObjectValue(parsed, ['PronAccuracy', 'pron_accuracy', 'pronAccuracy']);
+  const fluency = readTencentSoeObjectValue(parsed, ['PronFluency', 'pron_fluency', 'pronFluency']);
+  const completion = readTencentSoeObjectValue(parsed, ['PronCompletion', 'pron_completion', 'pronCompletion']);
+  const suggestedScore = readTencentSoeObjectValue(parsed, ['SuggestedScore', 'suggested_score', 'suggestedScore']);
+  if (completion !== undefined || suggestedScore !== undefined) {
+    results.push({ accuracy, fluency, completion, suggestedScore });
+  }
+  Object.keys(parsed).forEach((key) => collectTencentSoeAggregateScores(parsed[key], results));
+  return results;
+}
+
+function collectTencentSoeWordDetails(value, results = []) {
+  const parsed = parseTencentSoeValue(value);
+  if (Array.isArray(parsed)) {
+    parsed.forEach((item) => collectTencentSoeWordDetails(item, results));
+    return results;
+  }
+  if (!parsed || typeof parsed !== 'object') return results;
+  const word = readTencentSoeObjectValue(parsed, ['Word', 'word']);
+  const referenceWord = readTencentSoeObjectValue(parsed, ['ReferenceWord', 'reference_word', 'referenceWord']);
+  if (word !== undefined || referenceWord !== undefined) {
+    results.push({
+      word,
+      referenceWord,
+      accuracy: readTencentSoeObjectValue(parsed, ['PronAccuracy', 'pron_accuracy', 'pronAccuracy']),
+      fluency: readTencentSoeObjectValue(parsed, ['PronFluency', 'pron_fluency', 'pronFluency']),
+      matchTag: readTencentSoeObjectValue(parsed, ['MatchTag', 'match_tag', 'matchTag'])
+    });
+  }
+  Object.keys(parsed).forEach((key) => collectTencentSoeWordDetails(parsed[key], results));
+  return results;
+}
+
+function extractTencentSoeWordDetails(messages) {
+  for (let index = messages.length - 1; index >= 0; index -= 1) {
+    const details = normalizePronunciationWordDetails(
+      collectTencentSoeWordDetails(messages[index], [])
+    );
+    if (details.length) return details;
+  }
+  return [];
+}
+
 function collectTencentSoeNumbers(value, names, results = []) {
   if (value === null || value === undefined) {
     return results;
@@ -768,14 +912,24 @@ function extractTencentSoeScores(messages) {
   if (!resultText && !messages.length) {
     return null;
   }
+  const aggregates = messages.flatMap((message) => collectTencentSoeAggregateScores(message, []));
+  const aggregate = aggregates.length ? aggregates[aggregates.length - 1] : {};
+  const aggregateSuggestedScore = readNumber(aggregate.suggestedScore);
+  const aggregateAccuracy = readNumber(aggregate.accuracy);
+  const aggregateFluency = readNumber(aggregate.fluency);
+  const aggregateCompletion = readNumber(aggregate.completion);
   const suggestedScore = clampScore(
-    firstTencentSoeNumber(messages, ['SuggestedScore', 'suggested_score', 'suggestedScore'])
-      || readNamedNumber(resultText, 'SuggestedScore'),
+    Number.isFinite(aggregateSuggestedScore)
+      ? aggregateSuggestedScore
+      : (firstTencentSoeNumber(messages, ['SuggestedScore', 'suggested_score', 'suggestedScore'])
+        || readNamedNumber(resultText, 'SuggestedScore')),
     NaN
   );
   const topAccuracy = clampScore(
-    firstTencentSoeNumber(messages, ['PronAccuracy', 'pron_accuracy', 'pronAccuracy'])
-      || readNamedNumber(resultText, 'PronAccuracy'),
+    Number.isFinite(aggregateAccuracy)
+      ? aggregateAccuracy
+      : (firstTencentSoeNumber(messages, ['PronAccuracy', 'pron_accuracy', 'pronAccuracy'])
+        || readNamedNumber(resultText, 'PronAccuracy')),
     NaN
   );
   const wordAccuracy = clampScore(
@@ -785,8 +939,10 @@ function extractTencentSoeScores(messages) {
   );
   const accuracy = Number.isFinite(topAccuracy) ? topAccuracy : wordAccuracy;
   const topFluency = normalizeSoeRatioScore(
-    firstTencentSoeNumber(messages, ['PronFluency', 'pron_fluency', 'pronFluency'])
-      || readNamedNumber(resultText, 'PronFluency')
+    Number.isFinite(aggregateFluency)
+      ? aggregateFluency
+      : (firstTencentSoeNumber(messages, ['PronFluency', 'pron_fluency', 'pronFluency'])
+        || readNamedNumber(resultText, 'PronFluency'))
   );
   const wordFluency = normalizeSoeRatioScore(
     averageTencentSoeNumber(messages, ['PronFluency', 'pron_fluency', 'pronFluency'])
@@ -794,9 +950,12 @@ function extractTencentSoeScores(messages) {
   );
   const fluency = Number.isFinite(topFluency) ? topFluency : wordFluency;
   const completion = normalizeSoeRatioScore(
-    firstTencentSoeNumber(messages, ['PronCompletion', 'pron_completion', 'pronCompletion'])
-      || readNamedNumber(resultText, 'PronCompletion')
+    Number.isFinite(aggregateCompletion)
+      ? aggregateCompletion
+      : (firstTencentSoeNumber(messages, ['PronCompletion', 'pron_completion', 'pronCompletion'])
+        || readNamedNumber(resultText, 'PronCompletion'))
   );
+  const wordDetails = extractTencentSoeWordDetails(messages);
   const blended = calculatePronunciationScore(accuracy, fluency, completion);
   if (!Number.isFinite(blended)) {
     return null;
@@ -806,7 +965,8 @@ function extractTencentSoeScores(messages) {
     accuracy,
     fluency,
     completion,
-    feedback: buildPronunciationFeedback(accuracy, fluency, completion),
+    feedback: buildPronunciationFeedback(accuracy, fluency, completion, wordDetails),
+    wordDetails,
     scoreFormula: PRONUNCIATION_SCORE_FORMULA,
     providerSuggestedScore: Number.isFinite(suggestedScore) ? suggestedScore : null,
     rawResult: resultText
@@ -981,7 +1141,11 @@ async function evaluateWithTencentSoeNew(audioBuffer, payload, transcript) {
             status: 'success',
             accuracy: parsed.accuracy,
             fluency: parsed.fluency,
-            completion: parsed.completion
+            completion: parsed.completion,
+            feedback: parsed.feedback,
+            wordDetails: parsed.wordDetails,
+            scoreFormula: parsed.scoreFormula,
+            providerSuggestedScore: parsed.providerSuggestedScore
           });
         }
       } catch (error) {
@@ -1064,6 +1228,7 @@ async function evaluateWithTencentSoeLegacy(audioBuffer, payload, transcript) {
   const accuracy = clampScore(readNumber(result && result.PronAccuracy), NaN);
   const fluency = clampScore(readNumber(result && result.PronFluency) * 100, NaN);
   const completion = clampScore(readNumber(result && result.PronCompletion) * 100, NaN);
+  const wordDetails = normalizePronunciationWordDetails(result && result.Words);
   const blended = calculatePronunciationScore(accuracy, fluency, completion);
   if (!Number.isFinite(blended)) {
     throw new Error(`tencent-soe-no-valid-score:${result && result.Status ? result.Status : 'unknown'}`);
@@ -1075,7 +1240,8 @@ async function evaluateWithTencentSoeLegacy(audioBuffer, payload, transcript) {
     accuracy,
     fluency,
     completion,
-    feedback: buildPronunciationFeedback(accuracy, fluency, completion),
+    feedback: buildPronunciationFeedback(accuracy, fluency, completion, wordDetails),
+    wordDetails,
     scoreFormula: PRONUNCIATION_SCORE_FORMULA,
     providerSuggestedScore: Number.isFinite(suggestedScore) ? suggestedScore : null
   };
@@ -1115,7 +1281,8 @@ async function evaluateSpeakingPronunciation(payload) {
     accuracy,
     fluency,
     completion,
-    feedback: buildPronunciationFeedback(accuracy, fluency, completion),
+    feedback: buildPronunciationFeedback(accuracy, fluency, completion, result.wordDetails),
+    wordDetails: normalizePronunciationWordDetails(result.wordDetails),
     scoreFormula: result.scoreFormula || PRONUNCIATION_SCORE_FORMULA,
     providerSuggestedScore: result.providerSuggestedScore !== null
       && result.providerSuggestedScore !== ''
@@ -1643,6 +1810,7 @@ module.exports = {
   getSpeakingHttpTimeoutMs,
   calculatePronunciationScore,
   buildPronunciationFeedback,
+  normalizePronunciationWordDetails,
   extractTencentSoeScores,
   findQuestionFromTranscript,
   buildSourceTextFromTranscript,
